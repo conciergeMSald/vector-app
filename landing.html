@@ -1,0 +1,2797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VECTOR — Clarity. Direction. Possibility.</title>
+<meta name="description" content="VECTOR helps ambitious families navigate toward fulfilling futures with clarity, intention, and confidence. The algorithm of success, made visible.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ── TOKENS (inlined from vector-tokens.css) ── */
+:root {
+  --bg-primary:    #F4F1EC;
+  --bg-secondary:  #EDE9E2;
+  --bg-tertiary:   #E7DFD2;
+  --bg-dark:       #2C2C2C;
+  --bg-deep:       #0E1B2A;
+  --bg-white:      #FDFCFA;
+  --ink-primary:   #2C2C2C;
+  --ink-secondary: #5A5248;
+  --ink-tertiary:  #8A8278;
+  --ink-ghost:     #B0A89E;
+  --ink-inverse:   #F4F1EC;
+  --ink-inverse-dim:#C8BFB4;
+  --accent:        #C8A97A;
+  --accent-deep:   #A8854A;
+  --accent-pale:   #EDE3D4;
+  --accent-muted:  #D4BF9E;
+  --stone:         #CBBEAA;
+  --stone-light:   #DDD5C8;
+  --positive:      #4A6741;
+  --caution:       #8B6B3A;
+  --rule:          rgba(44,44,44,0.08);
+  --rule-accent:   rgba(200,169,122,0.25);
+  --rule-strong:   rgba(44,44,44,0.16);
+  --serif:         'Lora', Georgia, serif;
+  --sans:          'Inter', system-ui, sans-serif;
+  --text-xs:  11px; --text-sm: 13px; --text-base: 15px;
+  --text-md:  18px; --text-lg: 22px; --text-xl:  28px;
+  --text-2xl: 36px; --text-3xl: 48px; --text-4xl: 64px;
+  --text-hero: clamp(44px,6vw,80px);
+  --leading-tight: 1.2; --leading-normal: 1.6;
+  --leading-loose: 2.0; --leading-editorial: 2.3;
+  --tracking-tight: -0.02em; --tracking-wide: 0.06em;
+  --tracking-wider: 0.12em; --tracking-widest: 0.2em;
+  --weight-light: 300; --weight-regular: 400; --weight-medium: 500;
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
+  --space-5:24px; --space-6:32px; --space-7:48px; --space-8:64px;
+  --space-9:96px; --space-10:128px;
+  --section-pad: clamp(96px,11vw,160px);
+  --section-pad-sm: clamp(64px,7vw,100px);
+  --container: 880px; --container-wide: 1100px;
+  --dur-fast: 240ms; --dur-base: 400ms;
+  --dur-slow: 700ms; --dur-cinematic: 1100ms;
+  --ease-soft: cubic-bezier(0.25,0.1,0.25,1);
+  --ease-out:  cubic-bezier(0,0,0.2,1);
+  --border-thin: 0.5px; --border-base: 1px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{
+  background:var(--bg-primary);color:var(--ink-primary);
+  font-family:var(--sans);font-size:var(--text-base);
+  font-weight:var(--weight-light);line-height:var(--leading-loose);
+  overflow-x:hidden;
+}
+
+/* ── LAYOUT ── */
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--space-6);}
+.container-wide{max-width:var(--container-wide);margin:0 auto;padding:0 var(--space-6);}
+.section{padding:var(--section-pad) 0;}
+.section-sm{padding:var(--section-pad-sm) 0;}
+.section-alt{background:var(--bg-secondary);}
+.section-dark{background:var(--bg-dark);}
+
+/* ── REVEAL ── */
+.v-rise{
+  opacity:0;transform:translateY(14px);
+  transition:opacity var(--dur-slow) var(--ease-soft),
+             transform var(--dur-slow) var(--ease-soft);
+}
+.v-rise.visible{opacity:1;transform:translateY(0);}
+.v-rise:nth-child(2){transition-delay:80ms;}
+.v-rise:nth-child(3){transition-delay:160ms;}
+.v-rise:nth-child(4){transition-delay:240ms;}
+.v-rise:nth-child(5){transition-delay:320ms;}
+
+/* ── TYPE ── */
+.t-eyebrow{
+  font-family:var(--sans);font-size:var(--text-xs);
+  font-weight:var(--weight-regular);
+  letter-spacing:var(--tracking-widest);
+  text-transform:uppercase;color:var(--accent);
+}
+.t-hero{
+  font-family:var(--serif);font-size:var(--text-hero);
+  font-weight:var(--weight-light);line-height:var(--leading-tight);
+  letter-spacing:var(--tracking-tight);color:var(--ink-primary);
+}
+.t-hero em{font-style:italic;color:var(--ink-secondary);}
+.t-headline{
+  font-family:var(--serif);font-size:clamp(28px,4vw,48px);
+  font-weight:var(--weight-light);line-height:var(--leading-tight);
+  color:var(--ink-primary);
+}
+.t-headline em{font-style:italic;}
+.t-subhead{
+  font-family:var(--serif);font-size:var(--text-xl);
+  font-weight:var(--weight-light);line-height:var(--leading-normal);
+  color:var(--ink-primary);
+}
+.t-body{
+  font-family:var(--sans);font-size:var(--text-base);
+  font-weight:var(--weight-light);line-height:var(--leading-loose);
+  color:var(--ink-secondary);
+}
+.t-caption{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-wide);color:var(--ink-tertiary);
+}
+.t-quote{
+  font-family:var(--serif);font-style:italic;
+  font-weight:var(--weight-light);line-height:var(--leading-editorial);
+  color:var(--ink-secondary);
+}
+.t-data{
+  font-family:var(--sans);font-size:var(--text-sm);
+  font-weight:var(--weight-regular);letter-spacing:var(--tracking-wide);
+  color:var(--ink-secondary);
+}
+
+/* ── NAV ── */
+nav{
+  padding:var(--space-5) var(--space-6);
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:var(--border-thin) solid var(--rule);
+  position:sticky;top:0;
+  background:rgba(244,241,236,0.96);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  z-index:200;
+}
+.wordmark{
+  font-family:var(--serif);font-size:18px;
+  font-weight:var(--weight-light);
+  letter-spacing:var(--tracking-widest);
+  color:var(--ink-primary);text-decoration:none;
+}
+.nav-tagline{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);
+  text-transform:uppercase;color:var(--ink-tertiary);
+}
+.nav-links{display:flex;align-items:center;gap:var(--space-6);}
+.nav-link{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-wide);text-transform:uppercase;
+  color:var(--ink-tertiary);text-decoration:none;
+  transition:color var(--dur-base) var(--ease-soft);
+}
+.nav-link:hover{color:var(--ink-primary);}
+.nav-cta{
+  padding:10px 24px;background:var(--ink-primary);
+  color:var(--bg-primary);border:none;
+  font-family:var(--sans);font-size:var(--text-xs);
+  font-weight:var(--weight-regular);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  cursor:pointer;text-decoration:none;
+  transition:background var(--dur-base) var(--ease-soft);
+}
+.nav-cta:hover{background:var(--accent);}
+
+/* ── RULE ── */
+.v-rule{width:28px;height:1px;background:var(--accent);margin:var(--space-5) 0;}
+.v-rule-full{width:100%;height:var(--border-thin);background:var(--rule);}
+
+/* ── BUTTONS ── */
+.btn{
+  display:inline-flex;align-items:center;gap:var(--space-3);
+  padding:15px 36px;background:var(--ink-primary);
+  color:var(--bg-primary);border:none;
+  font-family:var(--sans);font-size:var(--text-xs);
+  font-weight:var(--weight-regular);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  cursor:pointer;text-decoration:none;
+  transition:background var(--dur-base) var(--ease-soft),
+             color var(--dur-base) var(--ease-soft);
+}
+.btn:hover{background:var(--accent);color:var(--bg-white);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:var(--space-3);
+  padding:13px 28px;background:transparent;
+  color:var(--ink-secondary);
+  border:var(--border-thin) solid var(--rule-strong);
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  cursor:pointer;text-decoration:none;
+  transition:border-color var(--dur-base) var(--ease-soft),
+             color var(--dur-base) var(--ease-soft);
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ── HERO ── */
+.hero{
+  padding:clamp(100px,12vw,160px) 0 clamp(80px,10vw,128px);
+  border-bottom:var(--border-thin) solid var(--rule);
+  text-align:center;
+}
+.hero-inner{
+  max-width:720px;
+  margin:0 auto;
+}
+.hero-subtext{
+  font-family:var(--sans);font-size:var(--text-md);
+  font-weight:var(--weight-light);line-height:var(--leading-loose);
+  color:var(--ink-secondary);max-width:560px;
+  margin:0 auto var(--space-8);
+}
+.hero-cta-row{
+  display:flex;align-items:center;justify-content:center;
+  gap:var(--space-5);flex-wrap:wrap;
+}
+.hero-note{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-wide);color:var(--ink-ghost);
+}
+
+/* ── DEMO CARD ── */
+.demo-card{
+  background:var(--bg-white);
+  border:var(--border-thin) solid var(--rule);
+  padding:var(--space-6);
+}
+.demo-label{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--accent);margin-bottom:var(--space-5);
+}
+.demo-careers{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:var(--space-5);}
+.demo-career{
+  padding:6px 12px;
+  border:var(--border-thin) solid var(--rule);
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-wide);text-transform:uppercase;
+  color:var(--ink-tertiary);cursor:pointer;background:transparent;
+  transition:all var(--dur-fast) var(--ease-soft);
+}
+.demo-career:hover,.demo-career.active{
+  border-color:var(--accent);color:var(--accent);
+  background:var(--accent-pale);
+}
+.demo-age-label{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--ink-tertiary);margin-bottom:var(--space-2);
+}
+.demo-age-num{
+  font-family:var(--serif);font-size:var(--text-2xl);
+  font-weight:var(--weight-light);color:var(--ink-primary);
+  line-height:1;margin-bottom:var(--space-3);
+}
+input[type=range]{width:100%;accent-color:var(--accent);margin-bottom:var(--space-5);}
+.demo-score-row{
+  background:var(--bg-dark);
+  padding:var(--space-5) var(--space-5);
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:var(--space-4);
+}
+.demo-score-num{
+  font-family:var(--serif);font-size:var(--text-3xl);
+  font-weight:var(--weight-light);color:var(--ink-inverse);
+  line-height:1;
+  transition:all var(--dur-slow) var(--ease-soft);
+}
+.demo-score-meta{text-align:right;}
+.demo-score-label{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--accent-muted);
+}
+.demo-score-sub{
+  font-family:var(--sans);font-size:var(--text-xs);
+  color:rgba(244,241,236,0.35);margin-top:3px;
+  letter-spacing:var(--tracking-wide);
+}
+.demo-link{
+  display:block;text-align:center;
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--ink-tertiary);text-decoration:none;
+  padding:var(--space-3) 0;
+  border-top:var(--border-thin) solid var(--rule);
+  transition:color var(--dur-base) var(--ease-soft);
+}
+.demo-link:hover{color:var(--accent);}
+
+/* ── STATEMENT BAND ── */
+.statement-band{
+  padding:clamp(80px,10vw,140px) 0;
+  border-top:var(--border-thin) solid var(--rule);
+  border-bottom:var(--border-thin) solid var(--rule);
+  background:var(--bg-secondary);
+}
+.statement-num{
+  font-family:var(--serif);font-size:clamp(80px,14vw,160px);
+  font-weight:var(--weight-light);color:var(--ink-primary);
+  line-height:1;letter-spacing:var(--tracking-tight);
+  opacity:0.12;
+}
+.statement-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-9);align-items:center;}
+.statement-text{
+  font-family:var(--serif);font-size:clamp(20px,2.5vw,30px);
+  font-weight:var(--weight-light);line-height:var(--leading-normal);
+  color:var(--ink-secondary);font-style:italic;
+}
+
+/* ── TRUTH SECTION ── */
+.truth-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-9);align-items:start;}
+.truth-body{max-width:440px;}
+.truth-body p{
+  font-family:var(--sans);font-size:var(--text-base);
+  font-weight:var(--weight-light);line-height:var(--leading-loose);
+  color:var(--ink-secondary);margin-bottom:var(--space-7);
+}
+.truth-body p strong{color:var(--ink-primary);font-weight:var(--weight-regular);}
+.truth-facts{}
+.truth-fact{
+  padding:var(--space-5) 0;
+  border-bottom:var(--border-thin) solid var(--rule);
+  display:flex;gap:var(--space-5);align-items:flex-start;
+}
+.truth-fact:first-child{border-top:var(--border-thin) solid var(--rule);}
+.truth-idx{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-wider);color:var(--accent);
+  min-width:20px;padding-top:3px;
+}
+.truth-item{
+  font-family:var(--serif);font-size:var(--text-md);
+  font-weight:var(--weight-light);color:var(--ink-primary);
+  line-height:var(--leading-normal);
+}
+.truth-item em{font-style:italic;color:var(--ink-secondary);}
+
+/* ── DARK BAND ── */
+.dark-band{background:var(--bg-dark);padding:var(--section-pad) 0;}
+.dark-band .t-eyebrow{color:var(--accent-muted);}
+.dark-band .t-headline{color:var(--ink-inverse);}
+.dark-band .t-headline em{color:var(--accent-muted);font-style:italic;}
+.dark-band .t-body{color:var(--ink-inverse-dim);}
+
+/* ── PROBLEM CARDS ── */
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}
+.problem-card{
+  background:rgba(253,252,250,0.04);
+  padding:var(--space-6) var(--space-5);
+}
+.problem-card-idx{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);
+  color:var(--accent-muted);text-transform:uppercase;
+  margin-bottom:var(--space-5);
+}
+.problem-card-title{
+  font-family:var(--serif);font-size:var(--text-lg);
+  font-weight:var(--weight-light);color:var(--ink-inverse);
+  line-height:var(--leading-normal);margin-bottom:var(--space-4);
+}
+.problem-card-body{
+  font-family:var(--sans);font-size:var(--text-sm);
+  font-weight:var(--weight-light);line-height:var(--leading-loose);
+  color:rgba(244,241,236,0.40);
+}
+
+/* ── VARIABLES ── */
+.var-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-9);align-items:end;margin-bottom:var(--space-7);}
+.var-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);}
+.var-item{
+  background:var(--bg-primary);padding:var(--space-5) var(--space-5);
+  transition:background var(--dur-base) var(--ease-soft);
+}
+.var-item:hover{background:var(--accent-pale);}
+.var-letter{
+  font-family:var(--serif);font-size:var(--text-3xl);
+  font-weight:var(--weight-light);color:var(--accent);
+  line-height:1;margin-bottom:var(--space-3);opacity:0.3;
+}
+.var-name{
+  font-family:var(--serif);font-size:var(--text-md);
+  font-weight:var(--weight-light);color:var(--ink-primary);
+  margin-bottom:var(--space-2);
+}
+.var-desc{
+  font-family:var(--sans);font-size:var(--text-xs);
+  color:var(--ink-tertiary);line-height:var(--leading-normal);
+}
+
+/* ── STORY ── */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-9);align-items:center;}
+.story-pull{
+  border-left:1px solid var(--accent-muted);
+  padding-left:var(--space-6);margin-bottom:var(--space-5);
+}
+.story-pull-attr{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--accent-muted);padding-left:var(--space-6);
+}
+
+/* ── WHO ── */
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}
+.who-card{background:var(--bg-primary);padding:var(--space-6) var(--space-5);}
+.who-who{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--accent);margin-bottom:var(--space-4);
+}
+.who-what{
+  font-family:var(--serif);font-size:var(--text-md);
+  font-weight:var(--weight-light);color:var(--ink-primary);
+  line-height:var(--leading-normal);font-style:italic;
+}
+
+/* ── MODES ── */
+.modes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5);}
+.mode-card{
+  background:var(--bg-white);
+  border:var(--border-thin) solid var(--rule);
+  padding:var(--space-6);position:relative;overflow:hidden;
+}
+.mode-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+}
+.mode-card.youth::before{background:var(--accent);}
+.mode-card.prime::before{background:var(--accent-deep);}
+.mode-card.pivot::before{background:#7A5C32;}
+.mode-age{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  margin-bottom:var(--space-5);
+}
+.mode-card.youth .mode-age{color:var(--accent);}
+.mode-card.prime .mode-age{color:var(--accent-deep);}
+.mode-card.pivot .mode-age{color:#7A5C32;}
+.mode-name{
+  font-family:var(--serif);font-size:var(--text-xl);
+  font-weight:var(--weight-light);color:var(--ink-primary);
+  margin-bottom:var(--space-3);
+}
+.mode-tagline{
+  font-family:var(--serif);font-style:italic;
+  font-size:var(--text-sm);color:var(--ink-tertiary);
+  line-height:var(--leading-normal);margin-bottom:var(--space-5);
+}
+.mode-body{
+  font-family:var(--sans);font-size:var(--text-xs);
+  color:var(--ink-tertiary);line-height:var(--leading-loose);
+}
+
+/* ── FEATURES ── */
+.feature-row{
+  display:grid;grid-template-columns:72px 1fr 1fr;
+  gap:var(--space-6);align-items:start;
+  padding:var(--space-6) 0;
+  border-bottom:var(--border-thin) solid var(--rule);
+}
+.feature-row:first-child{border-top:var(--border-thin) solid var(--rule);}
+.feature-idx{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);
+  color:var(--accent);padding-top:3px;
+}
+.feature-badge{
+  display:inline-block;
+  font-family:var(--sans);font-size:9px;
+  letter-spacing:var(--tracking-wide);text-transform:uppercase;
+  padding:3px 8px;margin-bottom:var(--space-3);
+}
+.badge-free{background:rgba(74,103,65,0.08);color:var(--positive);}
+.badge-paid{background:rgba(200,169,122,0.12);color:var(--accent-deep);}
+.feature-name{
+  font-family:var(--serif);font-size:var(--text-lg);
+  font-weight:var(--weight-light);color:var(--ink-primary);
+}
+.feature-desc{
+  font-family:var(--sans);font-size:var(--text-sm);
+  color:var(--ink-secondary);line-height:var(--leading-loose);
+}
+
+/* ── CENTRE LINE ── */
+.centre-line{
+  padding:var(--section-pad) 0;
+  text-align:center;
+  border-bottom:var(--border-thin) solid var(--rule);
+}
+.centre-line .t-headline{max-width:700px;margin:0 auto var(--space-5);}
+.centre-line .t-body{max-width:520px;margin:0 auto var(--space-7);}
+
+/* ── PRICING ── */
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);}
+.price-card{background:var(--bg-white);padding:var(--space-7) var(--space-6);}
+.price-card.featured{background:var(--bg-dark);}
+.price-tier{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--accent);margin-bottom:var(--space-6);
+}
+.price-card.featured .price-tier{color:var(--accent-muted);}
+.price-amount{
+  font-family:var(--serif);font-size:var(--text-4xl);
+  font-weight:var(--weight-light);color:var(--ink-primary);
+  line-height:1;margin-bottom:var(--space-2);
+}
+.price-card.featured .price-amount{color:var(--ink-inverse);}
+.price-period{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-wide);
+  color:var(--ink-tertiary);margin-bottom:var(--space-6);
+}
+.price-card.featured .price-period{color:rgba(244,241,236,0.35);}
+.price-divider{height:var(--border-thin);background:var(--rule);margin-bottom:var(--space-6);}
+.price-card.featured .price-divider{background:rgba(255,255,255,0.08);}
+.price-list{list-style:none;margin-bottom:var(--space-6);}
+.price-list li{
+  font-family:var(--sans);font-size:var(--text-sm);
+  font-weight:var(--weight-light);color:var(--ink-secondary);
+  padding:var(--space-3) 0;
+  border-bottom:var(--border-thin) solid var(--rule);
+  display:flex;align-items:center;gap:var(--space-3);
+}
+.price-card.featured .price-list li{
+  color:var(--ink-inverse-dim);
+  border-bottom-color:rgba(255,255,255,0.06);
+}
+.price-list li::before{
+  content:'';width:3px;height:3px;
+  background:var(--accent);border-radius:50%;flex-shrink:0;
+}
+.price-list li.dim{color:var(--ink-ghost);}
+.price-list li.dim::before{background:var(--rule);}
+.price-cta{
+  display:block;width:100%;padding:14px;
+  background:transparent;
+  border:var(--border-thin) solid var(--rule-accent);
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--accent);cursor:pointer;text-align:center;
+  text-decoration:none;
+  transition:all var(--dur-base) var(--ease-soft);
+}
+.price-cta:hover{background:var(--accent-pale);}
+.price-cta.featured-cta{
+  background:var(--accent);border-color:var(--accent);
+  color:var(--bg-white);
+}
+.price-cta.featured-cta:hover{background:var(--accent-deep);border-color:var(--accent-deep);}
+.pricing-note{
+  font-family:var(--serif);font-style:italic;
+  font-size:var(--text-md);font-weight:var(--weight-light);
+  color:var(--ink-secondary);line-height:var(--leading-editorial);
+  max-width:640px;margin:var(--space-7) auto 0;text-align:center;
+}
+
+/* ── EMAIL ── */
+.email-section{background:var(--bg-dark);padding:var(--section-pad) 0;text-align:center;}
+.email-section .t-headline{color:var(--ink-inverse);}
+.email-section .t-body{color:var(--ink-inverse-dim);max-width:440px;margin:var(--space-4) auto var(--space-7);}
+.email-row{display:flex;max-width:440px;margin:0 auto;}
+.email-inp{
+  flex:1;
+  border:var(--border-thin) solid rgba(255,255,255,0.12);
+  border-right:none;
+  padding:13px var(--space-5);
+  background:rgba(255,255,255,0.05);
+  font-family:var(--sans);font-size:var(--text-base);
+  color:var(--ink-inverse);outline:none;
+  transition:border-color var(--dur-base) var(--ease-soft);
+}
+.email-inp::placeholder{color:rgba(244,241,236,0.25);}
+.email-inp:focus{border-color:var(--accent-muted);}
+.email-btn{
+  padding:13px var(--space-5);
+  background:var(--accent);border:none;
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--bg-white);cursor:pointer;
+  transition:background var(--dur-base) var(--ease-soft);
+  white-space:nowrap;
+}
+.email-btn:hover{background:var(--accent-deep);}
+.email-note{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-wide);
+  color:rgba(244,241,236,0.2);margin-top:var(--space-4);
+}
+#emailSuccess{
+  display:none;
+  font-family:var(--serif);font-style:italic;
+  font-size:var(--text-lg);color:var(--accent-muted);
+}
+
+/* ── FOOTER ── */
+footer{
+  padding:var(--space-7) var(--space-6);
+  border-top:var(--border-thin) solid var(--rule);
+}
+.footer-inner{
+  max-width:var(--container);margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.footer-mark{
+  font-family:var(--serif);font-size:16px;
+  font-weight:var(--weight-light);
+  letter-spacing:var(--tracking-widest);color:var(--ink-primary);
+}
+.footer-sub{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-wide);
+  color:var(--ink-ghost);margin-top:3px;
+}
+.footer-links{display:flex;gap:var(--space-6);}
+.footer-link{
+  font-family:var(--sans);font-size:var(--text-xs);
+  letter-spacing:var(--tracking-wide);text-transform:uppercase;
+  color:var(--ink-tertiary);text-decoration:none;
+  transition:color var(--dur-base) var(--ease-soft);
+}
+.footer-link:hover{color:var(--accent);}
+.footer-copy{
+  font-family:var(--sans);font-size:var(--text-xs);
+  color:var(--ink-ghost);letter-spacing:var(--tracking-wide);
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-grid,.truth-grid,.statement-grid,.story-grid,.var-intro-grid{grid-template-columns:1fr;}
+  .problem-grid,.who-grid,.modes-grid{grid-template-columns:1fr;}
+  .var-grid{grid-template-columns:repeat(2,1fr);}
+  .feature-row{grid-template-columns:40px 1fr;}
+  .feature-desc{grid-column:2;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .nav-tagline{display:none;}
+}
+
+/* ════════════════════════════════════════════════════
+   INTRO SEQUENCE — ACT 1 + ACT 2
+   Total duration: ~14s then JS removes overlay
+════════════════════════════════════════════════════ */
+
+/* Master overlay */
+#intro{
+  position:fixed;inset:0;z-index:9999;
+  background:#F4F1EC;
+  display:none;
+  flex-direction:column;
+  align-items:center;justify-content:center;
+  overflow:hidden;
+  pointer-events:all;
+  transition:background 800ms ease;
+}
+#intro.active{
+  display:flex;
+  animation:introAutoHide 31s linear forwards;
+}
+/* Nuclear fallback: CSS alone will hide overlay after 31s no matter what */
+@keyframes introAutoHide{
+  0%,96%{opacity:1;pointer-events:all;}
+  99%{opacity:0;pointer-events:none;}
+  100%{opacity:0;pointer-events:none;visibility:hidden;}
+}
+/* Click anywhere to skip */
+#intro.active{cursor:pointer;}
+/* When dismissed, ensure nothing blocks the page */
+#intro[style*="display: none"],
+#intro[style*="display:none"]{
+  pointer-events:none !important;
+}
+#intro.going-dark{background:#0a0a0a;}
+#intro.fade-out{
+  opacity:0;
+  transition:opacity 800ms cubic-bezier(0,0,0.2,1);
+}
+
+/* ── ACT 1: COMPASS MARK ── */
+.intro-act1{
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:absolute;
+  transition:opacity 600ms ease, transform 600ms ease;
+}
+.intro-act1.dissolve{
+  opacity:0;
+  transform:translateY(-20px);
+}
+
+.intro-mark{
+  width:110px;height:110px;
+  margin-bottom:24px;
+  display:block;
+}
+
+/* Wrapper positions canvas exactly over SVG */
+.intro-mark-wrap{
+  position:relative;
+  width:110px;
+  height:110px;
+  margin-bottom:24px;
+}
+.intro-mark-wrap .intro-mark{
+  margin-bottom:0;
+  position:relative;
+  z-index:1;
+}
+#needleCanvas{
+  position:absolute;
+  top:0;left:0;
+  width:110px;height:110px;
+  z-index:2;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 500ms ease;
+}
+
+/* Circle draws clockwise from top */
+.intro-circle{
+  stroke-dasharray:276.5;
+  stroke-dashoffset:276.5;
+  animation:drawCircle 900ms cubic-bezier(0.4,0,0.2,1) 400ms forwards;
+}
+@keyframes drawCircle{to{stroke-dashoffset:0;}}
+
+/* V letterform draws */
+.intro-v{
+  stroke-dasharray:80;
+  stroke-dashoffset:80;
+  animation:drawV 600ms cubic-bezier(0,0,0.2,1) 1100ms forwards;
+}
+@keyframes drawV{to{stroke-dashoffset:0;}}
+
+/* Arrow stem */
+.intro-stem{
+  stroke-dasharray:16;
+  stroke-dashoffset:16;
+  animation:drawStem 300ms ease-out 1050ms forwards;
+}
+@keyframes drawStem{to{stroke-dashoffset:0;}}
+
+/* Arrow point drops in */
+.intro-arrow{
+  opacity:0;transform:translateY(-5px);
+  transform-origin:center;transform-box:fill-box;
+  animation:dropArrow 350ms cubic-bezier(0,0,0.2,1) 1050ms forwards;
+}
+@keyframes dropArrow{to{opacity:1;transform:translateY(0);}}
+
+/* Three dots pop with spring */
+.intro-dot{
+  opacity:0;transform:scale(0);
+  transform-origin:center;transform-box:fill-box;
+}
+.intro-dot:nth-child(1){animation:popDot 280ms cubic-bezier(0.34,1.56,0.64,1) 1450ms forwards;}
+.intro-dot:nth-child(2){animation:popDot 280ms cubic-bezier(0.34,1.56,0.64,1) 1530ms forwards;}
+.intro-dot:nth-child(3){animation:popDot 280ms cubic-bezier(0.34,1.56,0.64,1) 1610ms forwards;}
+@keyframes popDot{to{opacity:1;transform:scale(1);}}
+
+/* Wordmark rises */
+.intro-wordmark{
+  font-family:'Lora',Georgia,serif;
+  font-size:26px;font-weight:300;
+  letter-spacing:0.32em;color:#2C2C2C;
+  opacity:0;transform:translateY(5px);
+  animation:riseWord 600ms cubic-bezier(0,0,0.2,1) 1900ms forwards;
+  margin-bottom:10px;
+}
+@keyframes riseWord{to{opacity:1;transform:translateY(0);}}
+
+/* Tagline fades */
+.intro-tagline{
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:10px;font-weight:300;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:#8A8278;opacity:0;
+  animation:fadeOnly 500ms ease-out 2500ms forwards;
+}
+@keyframes fadeOnly{to{opacity:1;}}
+
+/* Mark breathes before exit */
+@keyframes markBreathe{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.04);}
+  100%{transform:scale(1);}
+}
+
+/* ── COMPASS NEEDLE ── */
+/* Needle drawn on canvas — no CSS transform needed */
+/* Static stem+arrow fade out when canvas needle takes over */
+.intro-stem.needle-active,
+.intro-arrow.needle-active{
+  opacity:0;
+  transition:opacity 500ms ease;
+}
+/* Pulse ring — canvas-drawn, no CSS needed */
+
+
+/* ── BRONZE RULE MOMENT ── */
+.intro-rule{
+  width:0;
+  height:1px;
+  background:#C8A97A;
+  opacity:0;
+  transition:width 600ms cubic-bezier(0.4,0,0.2,1),
+             opacity 400ms ease;
+  margin:0 auto;
+}
+.intro-rule.visible{
+  width:40px;
+  opacity:1;
+}
+
+/* ── ACT 2: PROVOCATION SENTENCES ── */
+.intro-act2{
+  position:absolute;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:0 40px;
+  opacity:0;
+  pointer-events:none;
+}
+.intro-act2.active{opacity:1;}
+
+.prov-line{
+  font-family:'Lora',Georgia,serif;
+  font-style:italic;
+  font-size:clamp(22px,3.5vw,36px);
+  font-weight:300;
+  line-height:1.4;
+  color:#2C2C2C;
+  opacity:0;
+  transition:opacity 700ms ease, color 800ms ease;
+  text-align:center;
+  max-width:680px;
+}
+.prov-line.on-dark{color:#F4F1EC;}
+.prov-line.visible{opacity:1;}
+.prov-line.fade{opacity:0;}
+
+/* ── DARK TRANSITION ── */
+#intro.going-dark .intro-wordmark,
+#intro.going-dark .intro-tagline{
+  color:#F4F1EC;
+}
+
+/* ════════════════════════════════════════════════════
+   PIECE 2 — BRANCHING TIMELINE VISUAL
+════════════════════════════════════════════════════ */
+
+.timeline-section{
+  padding:clamp(80px,10vw,140px) 0;
+  background:var(--bg-primary);
+  border-bottom:var(--border-thin) solid var(--rule);
+  overflow:hidden;
+}
+.timeline-intro{
+  text-align:center;
+  max-width:620px;
+  margin:0 auto var(--space-9);
+  padding:0 var(--space-6);
+}
+.timeline-headline{
+  font-family:var(--serif);
+  font-size:clamp(26px,3.5vw,42px);
+  font-weight:var(--weight-light);
+  line-height:var(--leading-tight);
+  color:var(--ink-primary);
+  margin-bottom:var(--space-5);
+}
+.timeline-headline em{font-style:italic;}
+.timeline-sub{
+  font-family:var(--sans);
+  font-size:var(--text-sm);
+  color:var(--ink-tertiary);
+  line-height:var(--leading-loose);
+  font-weight:var(--weight-light);
+}
+
+/* SVG canvas */
+.timeline-canvas-wrap{
+  position:relative;
+  width:100%;
+  max-width:960px;
+  margin:0 auto;
+  padding:0 var(--space-6);
+}
+#timelineSvg{
+  width:100%;
+  height:auto;
+  overflow:visible;
+}
+
+/* Branch labels */
+.branch-label-wrap{display:none;} /* removed — replaced by legend cards */
+
+/* Age markers */
+.age-marker{
+  font-family:var(--sans);
+  font-size:9px;
+  letter-spacing:var(--tracking-wide);
+  fill:var(--ink-ghost);
+}
+
+/* Bottom question */
+.timeline-question{
+  text-align:center;
+  margin-top:var(--space-8);
+  padding:0 var(--space-6);
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity 700ms ease 200ms, transform 700ms ease 200ms;
+}
+.timeline-question.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.timeline-q-text{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:clamp(18px,2.5vw,26px);
+  font-weight:var(--weight-light);
+  color:var(--ink-secondary);
+  margin-bottom:var(--space-4);
+}
+.timeline-q-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:var(--space-3);
+  font-family:var(--sans);
+  font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);
+  text-transform:uppercase;
+  color:var(--accent);
+  text-decoration:none;
+  border-bottom:1px solid var(--rule-accent);
+  padding-bottom:2px;
+  transition:color var(--dur-base) var(--ease-soft),
+             border-color var(--dur-base) var(--ease-soft);
+}
+.timeline-q-cta:hover{
+  color:var(--accent-deep);
+  border-color:var(--accent-deep);
+}
+
+/* ── INTERACTIVE LEGEND CARDS ── */
+.timeline-legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--space-3);
+  margin-top:var(--space-7);
+  margin-bottom:var(--space-4);
+  justify-content:center;
+}
+.legend-card{
+  flex:1 1 160px;
+  max-width:200px;
+  padding:var(--space-4) var(--space-5);
+  border:var(--border-thin) solid var(--rule);
+  background:var(--bg-white);
+  cursor:pointer;
+  transition:border-color 250ms ease,
+             background 250ms ease,
+             opacity 300ms ease;
+  user-select:none;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity 500ms ease, transform 500ms ease,
+             border-color 250ms ease, background 250ms ease;
+}
+.legend-card.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.legend-card:hover{
+  border-color:var(--accent);
+  background:var(--accent-pale);
+}
+.legend-card.active{
+  border-color:var(--accent);
+  background:var(--accent-pale);
+}
+.legend-card.dimmed{
+  opacity:0.3;
+}
+.lc-var{
+  font-family:var(--sans);
+  font-size:9px;
+  letter-spacing:var(--tracking-widest);
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:var(--space-2);
+}
+.lc-name{
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:var(--weight-light);
+  color:var(--ink-primary);
+  margin-bottom:var(--space-2);
+  font-style:italic;
+}
+.lc-story{
+  font-family:var(--sans);
+  font-size:11px;
+  color:var(--ink-tertiary);
+  line-height:1.7;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 400ms ease, opacity 300ms ease;
+  opacity:0;
+}
+.legend-card.active .lc-story{
+  max-height:100px;
+  opacity:1;
+}
+
+/* Tooltip — kept for desktop hover on SVG lines */
+.tl-tooltip{
+  position:fixed;
+  background:var(--bg-dark);
+  color:var(--ink-inverse);
+  padding:12px 16px;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity 200ms ease;
+  z-index:100;
+  max-width:240px;
+  transform:translate(-50%,-100%) translateY(-12px);
+}
+.tl-tooltip.visible{opacity:1;}
+.tl-tt-name{
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:var(--weight-light);
+  color:var(--ink-inverse);
+  margin-bottom:4px;
+}
+.tl-tt-var{
+  font-family:var(--sans);
+  font-size:9px;
+  letter-spacing:var(--tracking-widest);
+  text-transform:uppercase;
+  color:var(--accent-muted);
+  margin-bottom:6px;
+}
+.tl-tt-desc{
+  font-family:var(--sans);
+  font-size:11px;
+  color:var(--ink-inverse-dim);
+  line-height:1.7;
+}
+
+@keyframes patronPulse{
+  0%,100%{r:4.5;opacity:1;}
+  50%{r:7;opacity:0.6;}
+}
+
+/* Mobile: legend stacks full width, tooltip hidden */
+@media(max-width:680px){
+  .tl-tooltip{display:none;}
+  .timeline-headline{font-size:22px;}
+  .legend-card{flex:1 1 100%;max-width:100%;}
+}
+
+
+/* ════════════════════════════════════════════════════
+   PIECE 3 — THE CASE FILE
+   Real-person paragraph. No name. Total specificity.
+════════════════════════════════════════════════════ */
+
+.casefile-section{
+  padding:clamp(120px,14vw,200px) 0;
+  background:var(--bg-primary);
+  border-bottom:var(--border-thin) solid var(--rule);
+}
+
+/* Outer wrapper — constrained, centered, breathing */
+.casefile-wrap{
+  max-width:640px;
+  margin:0 auto;
+  padding:0 var(--space-6);
+  text-align:center;
+}
+
+/* Eyebrow above */
+.casefile-eyebrow{
+  font-family:var(--sans);
+  font-size:var(--text-xs);
+  letter-spacing:var(--tracking-widest);
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:var(--space-7);
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity 700ms ease, transform 700ms ease;
+}
+.casefile-eyebrow.visible{opacity:1;transform:translateY(0);}
+
+/* Each paragraph of the case file */
+.cf-para{
+  font-family:var(--serif);
+  font-size:clamp(17px,2.2vw,22px);
+  font-weight:var(--weight-light);
+  line-height:2.0;
+  color:var(--ink-secondary);
+  margin-bottom:var(--space-8);
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity 800ms ease, transform 800ms ease;
+}
+.cf-para.visible{opacity:1;transform:translateY(0);}
+
+/* The score line — monospace, data feel */
+.cf-score{
+  font-family:var(--sans);
+  font-size:var(--text-md);
+  font-weight:var(--weight-light);
+  letter-spacing:var(--tracking-wide);
+  color:var(--ink-tertiary);
+  margin-bottom:var(--space-6);
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity 800ms ease, transform 800ms ease;
+}
+.cf-score.visible{opacity:1;transform:translateY(0);}
+
+/* Score number — large, prominent */
+.cf-score-num{
+  font-family:var(--serif);
+  font-size:clamp(48px,8vw,80px);
+  font-weight:var(--weight-light);
+  color:var(--ink-primary);
+  line-height:1;
+  display:block;
+  margin-bottom:var(--space-3);
+  letter-spacing:var(--tracking-tight);
+}
+
+/* Variable breakdown — the eight scores inline */
+.cf-vars{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:var(--space-4) var(--space-5);
+  margin:var(--space-6) 0;
+  opacity:0;
+  transition:opacity 700ms ease;
+}
+.cf-vars.visible{opacity:1;}
+.cf-var-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+}
+.cf-var-name{
+  font-family:var(--sans);
+  font-size:9px;
+  letter-spacing:var(--tracking-widest);
+  text-transform:uppercase;
+  color:var(--ink-ghost);
+}
+.cf-var-score{
+  font-family:var(--serif);
+  font-size:var(--text-xl);
+  font-weight:var(--weight-light);
+  color:var(--ink-primary);
+  line-height:1;
+}
+.cf-var-score.low{color:var(--caution);}
+.cf-var-score.high{color:var(--accent);}
+
+/* The pivot moment — highlighted differently */
+.cf-pivot{
+  font-family:var(--serif);
+  font-size:clamp(17px,2.2vw,22px);
+  font-weight:var(--weight-light);
+  line-height:2.0;
+  color:var(--ink-primary);
+  margin-bottom:var(--space-8);
+  border-left:2px solid var(--accent);
+  padding-left:var(--space-6);
+  text-align:left;
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity 900ms ease, transform 900ms ease;
+}
+.cf-pivot.visible{opacity:1;transform:translateY(0);}
+
+/* The bronze rule */
+.cf-rule{
+  width:40px;
+  height:1px;
+  background:var(--accent);
+  margin:var(--space-7) auto;
+  opacity:0;
+  transition:opacity 600ms ease;
+}
+.cf-rule.visible{opacity:1;}
+
+/* The closing statement */
+.cf-close{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:clamp(18px,2.5vw,26px);
+  font-weight:var(--weight-light);
+  color:var(--ink-primary);
+  line-height:1.6;
+  margin-bottom:var(--space-7);
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity 900ms ease, transform 900ms ease;
+}
+.cf-close.visible{opacity:1;transform:translateY(0);}
+
+/* Case file headline */
+.cf-headline{
+  font-family:var(--serif);
+  font-size:clamp(24px,3.5vw,40px);
+  font-weight:var(--weight-light);
+  color:var(--ink-primary);
+  line-height:1.3;
+  margin-bottom:var(--space-8);
+  margin-top:var(--space-5);
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity 900ms ease, transform 900ms ease;
+}
+.cf-headline em{
+  font-style:italic;
+  color:var(--ink-secondary);
+}
+.cf-headline.visible{opacity:1;transform:translateY(0);}
+
+/* CTA beneath */
+.cf-cta-wrap{
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity 600ms ease, transform 600ms ease;
+}
+.cf-cta-wrap.visible{opacity:1;transform:translateY(0);}
+
+
+/* ── CENTRE STATEMENT SEQUENTIAL REVEAL ── */
+.cl-line{
+  display:block;
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity 900ms cubic-bezier(0,0,0.2,1),
+             transform 900ms cubic-bezier(0,0,0.2,1);
+}
+.cl-line.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+/* Line 2 gets extra weight — the gut punch */
+.cl-line-2{
+  font-style:italic;
+  color:var(--ink-primary);
+}
+/* Line 3 — the resolution, slightly muted until it arrives */
+.cl-line-3{
+  color:var(--ink-secondary);
+}
+</style>
+
+<script>
+(function(){
+  var seen = false;
+  try{ seen = !!sessionStorage.getItem('v_intro_seen'); }catch(e){}
+  if(seen){
+    // Already seen — mark html element so CSS hides intro before paint
+    document.documentElement.classList.add('intro-seen');
+  } else {
+    // First visit — activate intro as soon as DOM is ready
+    document.addEventListener('DOMContentLoaded', function(){
+      var el = document.getElementById('intro');
+      if(el) el.classList.add('active');
+    });
+  }
+})();
+</script>
+<style>
+/* If intro already seen, hide it before paint via html class */
+.intro-seen #intro{ display:none !important; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     INTRO SEQUENCE — ACT 1 + ACT 2
+     Act 1: Compass draws → mark dissolves upward
+     Act 2: Three provocation sentences → darkness → page opens
+═══════════════════════════════════════════════ -->
+<div id="intro" onclick="dismissIntro()" title="Click to continue">
+
+  <!-- ACT 1: Compass mark + wordmark -->
+  <div class="intro-act1" id="introAct1">
+    <!-- Mark wrapper — canvas overlays the SVG -->
+    <div class="intro-mark-wrap">
+      <svg class="intro-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle class="intro-circle" cx="50" cy="50" r="44" stroke="#C8A97A" stroke-width="1.2" fill="none"/>
+        <path class="intro-v" d="M34 30 L50 65 L66 30" stroke="#C8A97A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line class="intro-stem" x1="50" y1="6" x2="50" y2="21" stroke="#C8A97A" stroke-width="1.2"/>
+        <path class="intro-arrow" d="M50 6 L53.5 14 L50 12 L46.5 14 Z" fill="#C8A97A"/>
+        <circle class="intro-dot" cx="50" cy="72" r="2.2" fill="#C8A97A"/>
+        <circle class="intro-dot" cx="50" cy="79" r="2.2" fill="#C8A97A"/>
+        <circle class="intro-dot" cx="50" cy="86" r="2.2" fill="#C8A97A"/>
+      </svg>
+      <!-- Canvas needle — drawn via requestAnimationFrame, exact center rotation -->
+      <canvas id="needleCanvas" width="110" height="110"></canvas>
+    </div>
+    <div class="intro-wordmark">VECTOR</div>
+    <div class="intro-tagline">Clarity. Direction. Possibility.</div>
+  </div>
+
+  <!-- ACT 2: Provocation sentences -->
+  <div class="intro-act2" id="introAct2">
+    <div class="prov-line" id="prov1">You have been optimizing for the wrong thing.</div>
+    <div class="prov-line" id="prov2">Think of the most successful person you know personally.</div>
+    <div class="intro-rule" id="introRule"></div>
+    <div class="prov-line" id="prov3">Where did they go to school?</div>
+    <div class="prov-line" id="prov4">The algorithm already knows the answer.</div>
+  </div>
+
+</div>
+
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="wordmark" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+    <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="44" stroke="#C8A97A" stroke-width="1.2" fill="none"/>
+      <path d="M34 30 L50 65 L66 30" stroke="#C8A97A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M50 6 L53.5 14 L50 12 L46.5 14 Z" fill="#C8A97A"/>
+      <line x1="50" y1="6" x2="50" y2="21" stroke="#C8A97A" stroke-width="1.2"/>
+      <circle cx="50" cy="72" r="1.8" fill="#C8A97A"/>
+      <circle cx="50" cy="79" r="1.8" fill="#C8A97A"/>
+      <circle cx="50" cy="86" r="1.8" fill="#C8A97A"/>
+    </svg>
+    <span style="font-family:'Lora',Georgia,serif;font-size:17px;font-weight:300;letter-spacing:0.2em;color:#2C2C2C;">VECTOR</span>
+  </a>
+  <div class="nav-tagline">Clarity. Direction. Possibility.</div>
+  <div class="nav-links">
+    <a href="#how" class="nav-link">How it works</a>
+    <a href="#modes" class="nav-link">Who it's for</a>
+    <a href="#access" class="nav-link">Access</a>
+    <a href="VECTOR.html" class="nav-cta">Begin assessment</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="v-rise" style="margin-bottom:var(--space-7);">
+        <svg width="56" height="56" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="44" stroke="#C8A97A" stroke-width="1.2" fill="none"/>
+          <path d="M34 30 L50 65 L66 30" stroke="#C8A97A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M50 6 L53.5 14 L50 12 L46.5 14 Z" fill="#C8A97A"/>
+          <line x1="50" y1="6" x2="50" y2="21" stroke="#C8A97A" stroke-width="1.2"/>
+          <circle cx="50" cy="72" r="1.8" fill="#C8A97A"/>
+          <circle cx="50" cy="79" r="1.8" fill="#C8A97A"/>
+          <circle cx="50" cy="86" r="1.8" fill="#C8A97A"/>
+        </svg>
+      </div>
+      <div class="t-eyebrow v-rise" style="margin-bottom:var(--space-5);">Career trajectory intelligence</div>
+      <div class="v-rule" style="margin:0 auto var(--space-6);"></div>
+      <h1 class="t-hero v-rise" style="margin-bottom:var(--space-7);">
+        College is one decision.<br>
+        <em>Life is hundreds.</em>
+      </h1>
+      <p class="hero-subtext v-rise">
+        VECTOR maps the full trajectory — the eight variables that determine not whether you succeed, but how long it takes and what it costs along the way.
+      </p>
+      <div class="hero-cta-row v-rise">
+        <a href="VECTOR.html" class="btn">Begin your assessment</a>
+        <a href="#how" class="btn-ghost">See how it works</a>
+      </div>
+      <p class="hero-note v-rise" style="margin-top:var(--space-5);">
+        Free to begin. Three complete scenarios included.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT BAND -->
+<section class="statement-band">
+  <div class="container">
+    <div class="statement-grid">
+      <div class="v-rise">
+        <div class="statement-num" id="counterNum">0</div>
+      </div>
+      <div class="v-rise">
+        <div class="t-eyebrow" style="margin-bottom:var(--space-5);">The inconvenient truth</div>
+        <p class="statement-text">
+          "The middle class family in Tulsa is making a $180,000 decision with less information than they use to buy a car."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     PIECE 2 — BRANCHING TIMELINE VISUAL
+     Five characters. One starting point. Convergence arcs.
+═══════════════════════════════════════════════════ -->
+<section class="timeline-section" id="timeline">
+  <div class="container">
+
+    <!-- Intro copy -->
+    <div class="timeline-intro v-rise">
+      <div class="t-eyebrow" style="margin-bottom:var(--space-6);">Five decisions. One life.</div>
+      <h2 class="timeline-headline">
+        Same age. Same ambition.
+      </h2>
+      <h2 class="timeline-headline" style="margin-top:var(--space-5);margin-bottom:var(--space-7);">
+        <em>Completely different trajectories.</em>
+      </h2>
+      <p class="timeline-sub" style="margin-top:0;">
+        Five people. One starting point. Watch what five decisions do to a single life — and how each one recovers.
+      </p>
+    </div>
+
+    <!-- SVG Canvas -->
+    <div class="timeline-canvas-wrap">
+      <svg id="timelineSvg" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg"
+           preserveAspectRatio="xMidYMid meet">
+
+        <!-- Age axis labels -->
+        <text class="age-marker" x="80"  y="310" text-anchor="middle">Age 16</text>
+        <text class="age-marker" x="230" y="310" text-anchor="middle">Age 20</text>
+        <text class="age-marker" x="390" y="310" text-anchor="middle">Age 26</text>
+        <text class="age-marker" x="560" y="310" text-anchor="middle">Age 32</text>
+        <text class="age-marker" x="730" y="310" text-anchor="middle">Age 38</text>
+        <text class="age-marker" x="860" y="310" text-anchor="middle">Age 44</text>
+
+        <!-- Tick marks on axis -->
+        <line x1="80"  y1="295" x2="80"  y2="300" stroke="rgba(44,44,44,0.12)" stroke-width="1"/>
+        <line x1="230" y1="295" x2="230" y2="300" stroke="rgba(44,44,44,0.12)" stroke-width="1"/>
+        <line x1="390" y1="295" x2="390" y2="300" stroke="rgba(44,44,44,0.12)" stroke-width="1"/>
+        <line x1="560" y1="295" x2="560" y2="300" stroke="rgba(44,44,44,0.12)" stroke-width="1"/>
+        <line x1="730" y1="295" x2="730" y2="300" stroke="rgba(44,44,44,0.12)" stroke-width="1"/>
+        <line x1="860" y1="295" x2="860" y2="300" stroke="rgba(44,44,44,0.12)" stroke-width="1"/>
+
+        <!-- Horizontal baseline (faint) -->
+        <line x1="40" y1="298" x2="880" y2="298" stroke="rgba(44,44,44,0.06)" stroke-width="0.5"/>
+
+        <!-- ── TRUNK LINE ──
+             The shared starting path. All five begin here.
+             Draws left to right over 1.2s on scroll trigger. -->
+        <path id="tl-trunk"
+          d="M 40 200 C 80 200 90 200 140 200"
+          stroke="#2C2C2C" stroke-width="2.5" fill="none"
+          stroke-linecap="round"
+          stroke-dasharray="110" stroke-dashoffset="110"/>
+
+        <!-- ── BRANCH 1: The Harvard Graduate ──
+             Institution: right school, wrong city, no patron
+             Rises slightly early, then plateaus at 32, slow late recovery -->
+        <path id="tl-b1"
+          d="M 140 200 C 200 195 230 175 290 160 C 350 148 390 145 450 148 C 510 152 540 160 590 165 C 650 170 700 168 760 160 C 810 154 840 148 870 142"
+          stroke="#C8A97A" stroke-width="1.8" fill="none"
+          stroke-linecap="round" opacity="0.5"
+          stroke-dasharray="800" stroke-dashoffset="800"/>
+
+        <!-- ── BRANCH 2: The State School Kid ──
+             Geography: wrong school, right city at 22, right room at 26
+             Flat start, then sharp climb from 390, arrives early -->
+        <path id="tl-b2"
+          d="M 140 200 C 190 202 220 205 270 208 C 320 210 355 210 390 208 C 430 205 460 185 510 162 C 560 142 610 128 670 118 C 720 110 780 108 870 106"
+          stroke="#C8A97A" stroke-width="1.8" fill="none"
+          stroke-linecap="round" opacity="0.5"
+          stroke-dasharray="820" stroke-dashoffset="820"/>
+
+        <!-- ── BRANCH 3: The Early Bloomer ──
+             Network: strong start, stayed home, network stalled
+             Rises well early, levels around 28, modest late climb -->
+        <path id="tl-b3"
+          d="M 140 200 C 185 192 220 178 270 165 C 320 154 355 150 400 150 C 445 150 480 152 530 155 C 580 158 620 158 680 155 C 730 152 790 148 870 144"
+          stroke="#C8A97A" stroke-width="1.8" fill="none"
+          stroke-linecap="round" opacity="0.5"
+          stroke-dasharray="790" stroke-dashoffset="790"/>
+
+        <!-- ── BRANCH 4: The Late Starter ──
+             Patron: dips early (no patron, no direction), finds one at 32
+             Real dip to 230px, then sharp recovery, climbs past plateau -->
+        <path id="tl-b4"
+          d="M 140 200 C 185 205 215 215 260 225 C 305 235 340 238 390 235 C 430 232 460 228 500 220 C 540 210 570 185 610 160 C 650 136 700 118 760 108 C 810 100 840 98 870 96"
+          stroke="#C8A97A" stroke-width="1.8" fill="none"
+          stroke-linecap="round" opacity="0.5"
+          stroke-dasharray="830" stroke-dashoffset="830"/>
+
+        <!-- ── BRANCH 5: The JD Vance ──
+             Skill + one patron at 24: oscillates early then one relationship
+             changes everything — steepest climb, arrives earliest -->
+        <path id="tl-b5"
+          d="M 140 200 C 180 200 210 202 250 205 C 285 208 310 210 340 208 C 365 205 378 195 390 178 C 410 155 440 132 490 112 C 540 94 600 84 670 78 C 730 74 790 72 870 70"
+          stroke="#C8A97A" stroke-width="2" fill="none"
+          stroke-linecap="round" opacity="0.5"
+          stroke-dasharray="850" stroke-dashoffset="850"/>
+
+        <!-- ── PATRON DOT on Branch 5 ──
+             The single moment everything changed -->
+        <circle id="tl-patron-dot" cx="390" cy="178" r="4.5"
+          fill="#C8A97A" opacity="0"
+          data-tooltip="patron"/>
+
+        <!-- ── CONVERGENCE GLOW DOTS ──
+             Appear when branches converge toward success -->
+        <circle id="tl-conv1" cx="870" cy="142" r="3" fill="#C8A97A" opacity="0"/>
+        <circle id="tl-conv2" cx="870" cy="106" r="3" fill="#C8A97A" opacity="0"/>
+        <circle id="tl-conv3" cx="870" cy="144" r="3" fill="#C8A97A" opacity="0"/>
+        <circle id="tl-conv4" cx="870" cy="96"  r="3" fill="#C8A97A" opacity="0"/>
+        <circle id="tl-conv5" cx="870" cy="70"  r="3" fill="#C8A97A" opacity="0"/>
+
+        <!-- Hover hit areas (invisible, wider than paths for easy targeting) -->
+        <path id="hit-b1" d="M 140 200 C 200 195 230 175 290 160 C 350 148 390 145 450 148 C 510 152 540 160 590 165 C 650 170 700 168 760 160 C 810 154 840 148 870 142"
+          stroke="transparent" stroke-width="20" fill="none" style="cursor:pointer;"
+          data-char="The Harvard Graduate" data-var="Institutional Proximity"
+          data-desc="Right school. Wrong city. No patron found until 36. Arrived at 42 — technically successful, privately frustrated."
+          onmouseenter="showTooltip(event,this)" onmouseleave="hideTooltip()"/>
+        <path id="hit-b2" d="M 140 200 C 190 202 220 205 270 208 C 320 210 355 210 390 208 C 430 205 460 185 510 162 C 560 142 610 128 670 118 C 720 110 780 108 870 106"
+          stroke="transparent" stroke-width="20" fill="none" style="cursor:pointer;"
+          data-char="The State School Kid" data-var="Geographic Proximity"
+          data-desc="Mediocre institution. Moved to New York at 22. Right rooms by 26. One mentor changed everything. Arrived at 31."
+          onmouseenter="showTooltip(event,this)" onmouseleave="hideTooltip()"/>
+        <path id="hit-b3" d="M 140 200 C 185 192 220 178 270 165 C 320 154 355 150 400 150 C 445 150 480 152 530 155 C 580 158 620 158 680 155 C 730 152 790 148 870 144"
+          stroke="transparent" stroke-width="20" fill="none" style="cursor:pointer;"
+          data-char="The Early Bloomer" data-var="Network Inheritance"
+          data-desc="Strong grades. Strong school. Stayed close to home. Network never expanded. Still arriving. Technically fine."
+          onmouseenter="showTooltip(event,this)" onmouseleave="hideTooltip()"/>
+        <path id="hit-b4" d="M 140 200 C 185 205 215 215 260 225 C 305 235 340 238 390 235 C 430 232 460 228 500 220 C 540 210 570 185 610 160 C 650 136 700 118 760 108 C 810 100 840 98 870 96"
+          stroke="transparent" stroke-width="20" fill="none" style="cursor:pointer;"
+          data-char="The Late Starter" data-var="Patron Access"
+          data-desc="No direction for a decade. Found one patron at 32. Trajectory reversed completely. Arrived at 38. Now irreplaceable."
+          onmouseenter="showTooltip(event,this)" onmouseleave="hideTooltip()"/>
+        <path id="hit-b5" d="M 140 200 C 180 200 210 202 250 205 C 285 208 310 210 340 208 C 365 205 378 195 390 178 C 410 155 440 132 490 112 C 540 94 600 84 670 78 C 730 74 790 72 870 70"
+          stroke="transparent" stroke-width="20" fill="none" style="cursor:pointer;"
+          data-char="The JD Vance" data-var="Skill Depth + One Relationship"
+          data-desc="No inherited network. Wrong geography to start. One patron at 24 — the dot on the line. Arrived at 32. Now the person others name."
+          onmouseenter="showTooltip(event,this)" onmouseleave="hideTooltip()"/>
+
+      </svg>
+
+    </div><!-- /canvas-wrap -->
+
+    <!-- ── INTERACTIVE LEGEND CARDS ──
+         Click any card to highlight that branch, dim others.
+         Story line expands on selection. Deselects on second tap. -->
+    <div class="timeline-legend" id="timelineLegend">
+
+      <div class="legend-card" id="lc1" onclick="selectBranch(1)">
+        <div class="lc-var">Institution</div>
+        <div class="lc-name">The Harvard Graduate</div>
+        <div class="lc-story">Right school. Wrong city. No patron until 36. Arrived at 42 — credentialed, not positioned.</div>
+      </div>
+
+      <div class="legend-card" id="lc2" onclick="selectBranch(2)">
+        <div class="lc-var">Geography</div>
+        <div class="lc-name">The State School Kid</div>
+        <div class="lc-story">Mediocre institution. Moved at 22. Right rooms by 26. One mentor changed everything. Arrived at 31.</div>
+      </div>
+
+      <div class="legend-card" id="lc3" onclick="selectBranch(3)">
+        <div class="lc-var">Network</div>
+        <div class="lc-name">The Early Bloomer</div>
+        <div class="lc-story">Strong start. Stayed home. Network never expanded beyond what they were born into. Still arriving.</div>
+      </div>
+
+      <div class="legend-card" id="lc4" onclick="selectBranch(4)">
+        <div class="lc-var">Patron Access</div>
+        <div class="lc-name">The Late Starter</div>
+        <div class="lc-story">No direction for a decade. Found one patron at 32. Trajectory reversed completely. Arrived at 38.</div>
+      </div>
+
+      <div class="legend-card" id="lc5" onclick="selectBranch(5)">
+        <div class="lc-var">Skill + One Relationship</div>
+        <div class="lc-name">The JD Vance</div>
+        <div class="lc-story">No inherited network. One patron at 24 — the dot on the line. Arrived at 32. Now the person others name.</div>
+      </div>
+
+    </div>
+
+    <!-- The question that makes it personal -->
+    <div class="timeline-question" id="tlQuestion">
+      <p class="timeline-q-text">"Which line is your child on?"</p>
+      <a href="VECTOR.html" class="timeline-q-cta">
+        Find out — begin the assessment
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Tooltip (shared, positioned by JS) -->
+<div class="tl-tooltip" id="tlTooltip">
+  <div class="tl-tt-name" id="ttName"></div>
+  <div class="tl-tt-var" id="ttVar"></div>
+  <div class="tl-tt-desc" id="ttDesc"></div>
+</div>
+
+<!-- TRUTH -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="truth-grid">
+      <div class="v-rise">
+        <div class="t-eyebrow" style="margin-bottom:var(--space-4);">What the industry misses</div>
+        <div class="v-rule"></div>
+        <h2 class="t-headline" style="margin-bottom:var(--space-6);">
+          For forty years, a woman in every affluent suburb has charged $400 an hour to tell families where to send their children to college.
+        </h2>
+        <div class="truth-body">
+          <p>She is not selling information. The internet destroyed information scarcity years ago. She is selling <strong>anxiety reduction.</strong> Identity preservation. The feeling of control in a process that feels uncontrollable.</p>
+          <p>VECTOR is not a college counselor. VECTOR is what comes after the counselor becomes irrelevant — a platform that maps the full trajectory and puts that intelligence in the hands of every family.</p>
+        </div>
+      </div>
+      <div class="truth-facts v-rise">
+        <div class="truth-fact">
+          <div class="truth-idx">01</div>
+          <div class="truth-item">College is one variable. <em>Trajectory is the product of eight.</em></div>
+        </div>
+        <div class="truth-fact">
+          <div class="truth-idx">02</div>
+          <div class="truth-item">Most students have no idea what industries exist within twenty miles of their house.</div>
+        </div>
+        <div class="truth-fact">
+          <div class="truth-idx">03</div>
+          <div class="truth-item">The counselor optimizes for admissions. <em>VECTOR optimizes for life.</em></div>
+        </div>
+        <div class="truth-fact">
+          <div class="truth-idx">04</div>
+          <div class="truth-item">No single university degree should dictate someone's ability to reach their ideal career.</div>
+        </div>
+        <div class="truth-fact">
+          <div class="truth-idx">05</div>
+          <div class="truth-item">The real algorithm of success has always existed. <em>Nobody made it visible. Until now.</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     PIECE 3 — THE CASE FILE
+     No name. Total specificity. The reframe completes here.
+═══════════════════════════════════════════════════ -->
+<section class="casefile-section" id="casefile">
+  <div class="casefile-wrap">
+
+    <!-- Eyebrow -->
+    <div class="casefile-eyebrow" id="cfe0">
+      The algorithm in a real life
+    </div>
+
+    <!-- Headline — new -->
+    <h2 class="cf-headline" id="cfh1">
+      Baton Rouge. $34,000 a year.<br>
+      <em>Washington was the only dream he had.</em>
+    </h2>
+
+    <!-- Backstory — class origin -->
+    <p class="cf-para" id="cfb1">
+      His father drove a delivery truck.
+      His mother was an RN at the local hospital.
+    </p>
+
+    <p class="cf-para" id="cfb2">
+      Two people who worked hard their entire lives and had no visibility
+      into how careers at the highest levels are actually built.
+      They knew how to show up. They did not know which rooms to enter.
+    </p>
+
+    <p class="cf-para" id="cfb3">
+      He went to Louisiana State because it was affordable and close.
+      His high school counselor told him to think practically.
+      No one in the family had a contact in Washington, DC —
+      a connection at a law firm, or a friend who sat on a board.
+    </p>
+
+    <!-- Opening — the person, the year, the score -->
+    <p class="cf-para" id="cfe1">
+      He graduated from Louisiana State in 2003.
+    </p>
+
+    <!-- The score — large and prominent -->
+    <div class="cf-score" id="cfe2">
+      <span class="cf-score-num">31</span>
+      The algorithm would have scored him a 31.
+    </div>
+
+    <!-- The eight variables at that moment -->
+    <div class="cf-vars" id="cfe3">
+      <div class="cf-var-item">
+        <div class="cf-var-name">Institution</div>
+        <div class="cf-var-score low">3</div>
+      </div>
+      <div class="cf-var-item">
+        <div class="cf-var-name">Geography</div>
+        <div class="cf-var-score low">2</div>
+      </div>
+      <div class="cf-var-item">
+        <div class="cf-var-name">Network</div>
+        <div class="cf-var-score">4</div>
+      </div>
+      <div class="cf-var-item">
+        <div class="cf-var-name">Patron</div>
+        <div class="cf-var-score low">1</div>
+      </div>
+      <div class="cf-var-item">
+        <div class="cf-var-name">Capital</div>
+        <div class="cf-var-score">3</div>
+      </div>
+      <div class="cf-var-item">
+        <div class="cf-var-name">Skill</div>
+        <div class="cf-var-score">6</div>
+      </div>
+      <div class="cf-var-item">
+        <div class="cf-var-name">Visibility</div>
+        <div class="cf-var-score low">2</div>
+      </div>
+      <div class="cf-var-item">
+        <div class="cf-var-name">Luck Surface</div>
+        <div class="cf-var-score low">2</div>
+      </div>
+    </div>
+
+    <!-- What happened next — each move, each variable shift -->
+    <p class="cf-para" id="cfe4">
+      By every conventional measure, the trajectory was unremarkable.
+      Wrong school. Wrong city. No connections.
+      The kind of start that college counselors don't know how to advise around.
+    </p>
+
+    <!-- The first move -->
+    <div class="cf-pivot" id="cfe5">
+      He moved to Washington at twenty-two.
+      Geographic proximity became an eight.
+    </div>
+
+    <!-- The second move — the patron dot -->
+    <div class="cf-pivot" id="cfe6">
+      He found one person — a former deputy national security advisor —
+      at a dinner he almost didn't attend.
+      Patron access became a nine.
+    </div>
+
+    <!-- The arrival -->
+    <p class="cf-para" id="cfe7">
+      He arrived at his target role at thirty-one.
+    </p>
+
+    <!-- The comparison — the gut punch -->
+    <p class="cf-para" id="cfe8">
+      The Harvard graduate who sat beside him in that role arrived at thirty-four.
+    </p>
+
+    <!-- Bronze rule -->
+    <div class="cf-rule" id="cfe9"></div>
+
+    <!-- The closing verdict — updated -->
+    <p class="cf-close" id="cfe10">
+      The algorithm does not measure where you started.
+      It only asks what you did with the years between.
+    </p>
+
+    <!-- The implicit line — new -->
+    <p class="cf-para" style="font-size:clamp(14px,1.6vw,17px);color:var(--ink-tertiary);margin-top:var(--space-5);max-width:560px;line-height:var(--leading-loose);" id="cfe10b">
+      A truck driver and a nurse raised someone who arrived in Washington at thirty-one.
+      The algorithm already knew it was possible.
+      It just needed the right two decisions.
+    </p>
+
+    <!-- CTA -->
+    <div class="cf-cta-wrap" id="cfe11">
+      <a href="VECTOR.html" class="btn">
+        Run the algorithm on your trajectory
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p class="t-caption" style="margin-top:var(--space-4);color:var(--ink-ghost);">
+        Free to begin. Three complete scenarios included.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- DARK BAND — THE PROBLEM -->
+<section class="dark-band">
+  <div class="container">
+    <div class="t-eyebrow" style="margin-bottom:var(--space-6);">What the industry gets wrong</div>
+    <h2 class="t-headline v-rise" style="margin-bottom:var(--space-8);max-width:680px;">
+      Admissions strategy without <em>career visibility</em> is an incomplete answer.
+    </h2>
+    <div class="problem-grid v-rise">
+      <div class="problem-card">
+        <div class="problem-card-idx">01 — The wrong question</div>
+        <div class="problem-card-title">Will my child get into an elite school?</div>
+        <div class="problem-card-body">The question every counselor is paid to answer. The question that captures one moment in a forty-year trajectory and treats it as the whole story.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-idx">02 — The right question</div>
+        <div class="problem-card-title">Will my child build a resilient, meaningful, high-opportunity life?</div>
+        <div class="problem-card-body">The question VECTOR is built to answer. Nonlinear. Geographic. Relationship-driven. Skill-compound. The full picture, not the acceptance letter.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-idx">03 — The real gap</div>
+        <div class="problem-card-title">Nobody is helping students imagine adult life.</div>
+        <div class="problem-card-body">They are helping students optimize applications. That is a profoundly different job. VECTOR shows the student what adult life actually looks like and the clearest route to get there.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VARIABLES -->
+<section class="section">
+  <div class="container-wide">
+    <div class="var-intro-grid">
+      <h2 class="t-headline v-rise">The eight variables that determine <em>everything.</em></h2>
+      <p class="t-body v-rise" style="padding-top:var(--space-3);">These are not opinions. These are patterns extracted from thousands of career trajectories. Score yourself on each. VECTOR tells you your trajectory, your gap, and exactly which levers to pull first.</p>
+    </div>
+    <div class="var-grid v-rise">
+      <div class="var-item">
+        <div class="var-letter">I</div>
+        <div class="var-name">Institutional Proximity</div>
+        <div class="var-desc">Is your school a pipeline to your target?</div>
+      </div>
+      <div class="var-item">
+        <div class="var-letter">G</div>
+        <div class="var-name">Geographic Proximity</div>
+        <div class="var-desc">Are you physically near the opportunity?</div>
+      </div>
+      <div class="var-item">
+        <div class="var-letter">N</div>
+        <div class="var-name">Network Inheritance</div>
+        <div class="var-desc">What did you begin with?</div>
+      </div>
+      <div class="var-item">
+        <div class="var-letter">P</div>
+        <div class="var-name">Patron Access</div>
+        <div class="var-desc">Do you have one high-leverage champion?</div>
+      </div>
+      <div class="var-item">
+        <div class="var-letter">C</div>
+        <div class="var-name">Capital Runway</div>
+        <div class="var-desc">Can you afford to wait and take risks?</div>
+      </div>
+      <div class="var-item">
+        <div class="var-letter">S</div>
+        <div class="var-name">Skill Depth</div>
+        <div class="var-desc">How far along is your ten thousand hours?</div>
+      </div>
+      <div class="var-item">
+        <div class="var-letter">V</div>
+        <div class="var-name">Visibility</div>
+        <div class="var-desc">Who knows your name and why?</div>
+      </div>
+      <div class="var-item">
+        <div class="var-letter">L</div>
+        <div class="var-name">Luck Surface Area</div>
+        <div class="var-desc">How many high-value rooms are you in?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="story-grid">
+      <div class="v-rise">
+        <div class="t-eyebrow" style="margin-bottom:var(--space-4);">The algorithm in practice</div>
+        <div class="v-rule"></div>
+        <h2 class="t-subhead" style="margin-bottom:var(--space-6);">"I can't get to Washington, DC. So now what?"</h2>
+        <div class="t-body">
+          <p style="margin-bottom:var(--space-5);">You are seventeen. You are in Baton Rouge. You want to work in intelligence. You cannot afford Georgetown. You cannot relocate. Every resource you read tells you that the path runs through schools in cities that aren't yours.</p>
+          <p style="margin-bottom:var(--space-5);">Here is what the algorithm says.</p>
+          <p style="margin-bottom:var(--space-5);">You intern for your state representative — three miles from your house. Two summers. You publish two articles on national security policy that three people read.</p>
+          <p>At twenty-two you apply to Georgetown's graduate program. Your application includes a letter from a sitting congressman and a published research record. You are admitted. You arrive five years later than the undergraduate. You arrive better prepared than almost all of them.</p>
+        </div>
+      </div>
+      <div class="v-rise">
+        <div class="story-pull">
+          <p class="t-quote" style="font-size:var(--text-xl);">"The algorithm doesn't care where you started. It only asks what you're willing to do next."</p>
+        </div>
+        <p class="story-pull-attr">The Algorithm of Success</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="section">
+  <div class="container">
+    <h2 class="t-headline v-rise" style="margin-bottom:var(--space-8);">Who runs <em>the algorithm.</em></h2>
+    <div class="who-grid v-rise">
+      <div class="who-card">
+        <div class="who-who">The ambitious parent</div>
+        <div class="who-what">"I'm about to spend $180,000 on a college education. I needed to know it was pointed in the right direction."</div>
+      </div>
+      <div class="who-card">
+        <div class="who-who">The sixteen-year-old striver</div>
+        <div class="who-what">"Nobody told me that where you go to school matters far less than what you do while you're there."</div>
+      </div>
+      <div class="who-card">
+        <div class="who-who">The forty-five-year-old who's ready</div>
+        <div class="who-what">"Twenty years of pattern recognition, and I finally understand which direction to point it."</div>
+      </div>
+      <div class="who-card">
+        <div class="who-who">The first-generation student</div>
+        <div class="who-what">"My parents have no connections. VECTOR showed me exactly how to build in four years what others inherit."</div>
+      </div>
+      <div class="who-card">
+        <div class="who-who">The pre-med at fourteen</div>
+        <div class="who-what">"I found out the path to neurosurgery is sixteen years — and that I'm already three years ahead."</div>
+      </div>
+      <div class="who-card">
+        <div class="who-who">The school counselor</div>
+        <div class="who-what">"I've given career guidance for twenty years. This is the first tool that makes the invisible rules visible."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODES -->
+<section class="section section-alt" id="modes">
+  <div class="container">
+    <div class="t-eyebrow v-rise" style="margin-bottom:var(--space-4);">Three trajectories. One algorithm.</div>
+    <div class="v-rule"></div>
+    <h2 class="t-headline v-rise" style="margin-bottom:var(--space-8);max-width:600px;">
+      VECTOR reads you automatically. <em>The platform adapts.</em>
+    </h2>
+    <div class="modes-grid v-rise">
+      <div class="mode-card youth">
+        <div class="mode-age">Under 25 — Youth</div>
+        <div class="mode-name">The Builder</div>
+        <div class="mode-tagline">"Your trajectory starts now."</div>
+        <div class="mode-body">Institutional and geographic proximity weighted highest. The decisions made in the next two years compound for the next twenty.</div>
+      </div>
+      <div class="mode-card prime">
+        <div class="mode-age">25–40 — Prime</div>
+        <div class="mode-name">The Accelerator</div>
+        <div class="mode-tagline">"Your next move defines the decade."</div>
+        <div class="mode-body">The full algorithm balanced. You have credentials and experience. Now the question is sequencing. VECTOR maps the highest-leverage move available to you right now.</div>
+      </div>
+      <div class="mode-card pivot">
+        <div class="mode-age">40+ — Pivot</div>
+        <div class="mode-name">The Activator</div>
+        <div class="mode-tagline">"Twenty years of pattern recognition. Here's where to point it."</div>
+        <div class="mode-body">Patron access and visibility weighted highest. At this stage, who knows you and who champions you determines everything.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+  <div class="container">
+    <div class="t-eyebrow v-rise" style="margin-bottom:var(--space-4);">What the algorithm unlocks</div>
+    <div class="v-rule"></div>
+    <h2 class="t-headline v-rise" style="margin-bottom:var(--space-8);max-width:500px;">Everything included in your assessment.</h2>
+    <div class="v-rise">
+      <div class="feature-row">
+        <div class="feature-idx">01</div>
+        <div>
+          <div class="feature-badge badge-free">Included free</div>
+          <div class="feature-name">Vector Score + Gap Map</div>
+        </div>
+        <div class="feature-desc">Your score out of 100. A radar chart across all eight variables. Your timeline to target role. The single most critical variable holding you back — visible the moment the assessment ends.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-idx">02</div>
+        <div>
+          <div class="feature-badge badge-free">Included free</div>
+          <div class="feature-name">Score Recalculator</div>
+        </div>
+        <div class="feature-desc">Log a real-world move — secured a mentor, relocated, published something — and watch your score update in real time. The radar chart redraws. Years recovered appear in your timeline. The algorithm never stops running.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-idx">03</div>
+        <div>
+          <div class="feature-badge badge-paid">Full access</div>
+          <div class="feature-name">The VECTOR Report</div>
+        </div>
+        <div class="feature-desc">An eight-section personal trajectory brief. Variable analysis, critical gap interventions, geographic intelligence, three-year action plan, field intelligence, the algorithm's verdict. Delivered to your email. Downloadable as PDF.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-idx">04</div>
+        <div>
+          <div class="feature-badge badge-paid">Full access</div>
+          <div class="feature-name">The Counterfactual Engine</div>
+        </div>
+        <div class="feature-desc">What if you had taken that role at twenty-four? What if you relocate now? Run any past or future decision through the algorithm. See the trajectory delta — years gained or lost — and what changes next.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-idx">05</div>
+        <div>
+          <div class="feature-badge badge-paid">Full access</div>
+          <div class="feature-name">Unlimited Scenarios</div>
+        </div>
+        <div class="feature-desc">Every career. Every age. Every what-if. Run the algorithm as many times as you need. Your entire household, covered. Three free scenarios included for every new user.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CENTRE LINE -->
+<section class="centre-line section-alt" id="centreStatement">
+  <div class="container">
+    <div class="t-eyebrow v-rise" style="margin-bottom:var(--space-6);">The algorithm's perspective</div>
+    <div class="v-rule" style="margin:0 auto var(--space-8);"></div>
+    <h2 class="t-headline" style="margin:0 auto var(--space-9);line-height:1.5;">
+      <span class="cl-line cl-line-1" id="cl1">It takes ten years to become known.</span>
+      <span class="cl-line cl-line-2" id="cl2" style="margin-top:var(--space-5);display:block;">Twenty-five to become an overnight success.</span>
+      <span class="cl-line cl-line-3" id="cl3" style="margin-top:var(--space-5);display:block;">VECTOR shows you which years to choose.</span>
+    </h2>
+    <p class="t-body v-rise" id="cl4body" style="margin:0 auto var(--space-8);opacity:0;transform:translateY(10px);transition:opacity 800ms ease,transform 800ms ease;">
+      The path is long. The algorithm makes it shorter.<br>The only question is when you decide to start running it.
+    </p>
+    <div class="v-rise" id="cl4cta" style="opacity:0;transform:translateY(8px);transition:opacity 700ms ease,transform 700ms ease;">
+      <a href="VECTOR.html" class="btn">Begin your assessment</a>
+      <p class="t-caption" style="margin-top:var(--space-4);">Free. Three scenarios. Takes twelve minutes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="access">
+  <div class="container">
+    <div class="t-eyebrow v-rise" style="margin-bottom:var(--space-4);">Access</div>
+    <div class="v-rule"></div>
+    <h2 class="t-headline v-rise" style="margin-bottom:var(--space-8);">The most considered <em>$400</em> you will spend this year.</h2>
+    <div class="pricing-grid v-rise">
+      <div class="price-card">
+        <div class="price-tier">Free — Always</div>
+        <div class="price-amount">$0</div>
+        <div class="price-period">No credit card. No commitment.</div>
+        <div class="price-divider"></div>
+        <ul class="price-list">
+          <li>Three complete scenario assessments</li>
+          <li>All fifty-plus career paths</li>
+          <li>Vector Score and Drive Multiplier</li>
+          <li>Radar chart Gap Map</li>
+          <li>Score Recalculator — log moves, update score</li>
+          <li class="dim">Full VECTOR Report (first three sections)</li>
+          <li class="dim">Counterfactual Engine</li>
+          <li class="dim">Unlimited scenarios</li>
+        </ul>
+        <a href="VECTOR.html" class="price-cta">Begin free</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-tier">Full Access</div>
+        <div class="price-amount">$400</div>
+        <div class="price-period">Per year — your entire household</div>
+        <div class="price-divider"></div>
+        <ul class="price-list">
+          <li>Everything in Free</li>
+          <li>Unlimited scenarios — every career</li>
+          <li>Full eight-section VECTOR Report</li>
+          <li>PDF download and shareable link</li>
+          <li>Counterfactual Engine — past and future</li>
+          <li>Full intervention library with ninety-day plans</li>
+          <li>Next highest-leverage move after every log</li>
+          <li>Every household member covered</li>
+        </ul>
+        <a href="#" class="price-cta featured-cta" onclick="handlePaywall(event)">Unlock VECTOR — $400 per year</a>
+      </div>
+    </div>
+    <p class="pricing-note v-rise">
+      You are about to spend $180,000 on a college education.<br>
+      VECTOR costs $400 and tells you if it's pointed in the right direction.<br>
+      That's not $400 per hour. That's $400 per year.
+    </p>
+  </div>
+</section>
+
+<!-- EMAIL -->
+<section class="email-section">
+  <div class="container">
+    <h2 class="t-headline v-rise">Stay ahead of the algorithm.</h2>
+    <p class="t-body v-rise">Career intelligence and trajectory research — delivered to the people who take this seriously.</p>
+    <div class="v-rise">
+      <div class="email-row" id="emailForm">
+        <input class="email-inp" type="email" id="emailInp" placeholder="Your email address">
+        <button class="email-btn" onclick="submitEmail()">Join the list</button>
+      </div>
+      <div id="emailSuccess">You're in. The algorithm will find you.</div>
+      <p class="email-note">No noise. One email when something is worth your time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-mark">VECTOR</div>
+      <div class="footer-sub">Career trajectory intelligence</div>
+    </div>
+    <div class="footer-links">
+      <a href="VECTOR.html" class="footer-link">Assessment</a>
+      <a href="#modes" class="footer-link">Who it's for</a>
+      <a href="#access" class="footer-link">Access</a>
+    </div>
+    <div class="footer-copy">© 2025 VECTOR — Based on The Algorithm of Success</div>
+  </div>
+</footer>
+
+<script>
+// ── DISMISS INTRO (global — called by click and by sequence end) ──
+function dismissIntro(){
+  var el = document.getElementById('intro');
+  if(!el) return;
+  el.style.transition = 'opacity 600ms ease';
+  el.style.opacity = '0';
+  el.style.pointerEvents = 'none';
+  setTimeout(function(){
+    el.style.display = 'none';
+    el.classList.remove('active');
+    try{ sessionStorage.setItem('v_intro_seen','1'); }catch(e){}
+    document.documentElement.classList.add('intro-seen');
+    document.querySelectorAll('.v-rise').forEach(function(r){
+      r.classList.add('visible');
+    });
+  }, 600);
+}
+
+// ── STRIPE PLACEHOLDER ──
+const STRIPE_URL = null; // replace with live Stripe link
+
+// ── SCROLL REVEAL ──
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.v-rise').forEach(el => obs.observe(el));
+
+// ── COUNTER ──
+function animateCounter(el, target, ms) {
+  let n = 0;
+  const step = target / ((ms / 1000) * 60);
+  const t = setInterval(() => {
+    n += step;
+    if(n >= target){ n = target; clearInterval(t); }
+    el.textContent = Math.floor(n) + '%';
+  }, 1000/60);
+}
+const cObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      animateCounter(document.getElementById('counterNum'), 97, 1800);
+      cObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+const sb = document.querySelector('.statement-band');
+if(sb) cObs.observe(sb);
+
+// ── DEMO CARD REMOVED ──
+
+// ── EMAIL ──
+function submitEmail(){
+  const val = document.getElementById('emailInp').value.trim();
+  if(!val || !val.includes('@')){
+    document.getElementById('emailInp').style.borderColor = 'rgba(139,58,58,0.4)';
+    return;
+  }
+  localStorage.setItem('v_email', val);
+  document.getElementById('emailForm').style.display = 'none';
+  document.getElementById('emailSuccess').style.display = 'block';
+}
+document.getElementById('emailInp').addEventListener('keydown', e => {
+  if(e.key === 'Enter') submitEmail();
+});
+
+// ── PAYWALL CTA ──
+function handlePaywall(e){
+  e.preventDefault();
+  if(STRIPE_URL){ window.location.href = STRIPE_URL; return; }
+  const email = prompt('Enter your email to join the early access list for VECTOR Full Access — $400 per year:');
+  if(email && email.includes('@')){
+    localStorage.setItem('v_email', email);
+    localStorage.setItem('v_early_access', 'true');
+    alert("You're on the list. We'll reach out when full access opens.");
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// INTRO SEQUENCE ORCHESTRATOR — REVISED TIMING
+// Act 1: 0–4.2s   Compass draws, wordmark, breath, dissolves up
+// Act 2: 4.2–29s  Four sentences, bronze rule, darkness, page opens
+//
+// Timing philosophy:
+//   Each sentence stays until the reader has had time
+//   not just to read it but to respond to it internally.
+//   Sentence 2 is an instruction — it requires retrieval time.
+//   The darkness after sentence 4 is not dead time.
+//   It is the reader sitting with what just happened.
+// ═══════════════════════════════════════════════════════
+(function(){
+  var intro = document.getElementById('intro');
+  var act1  = document.getElementById('introAct1');
+  var act2  = document.getElementById('introAct2');
+  var rule  = document.getElementById('introRule');
+  var p1    = document.getElementById('prov1');
+  var p2    = document.getElementById('prov2');
+  var p3    = document.getElementById('prov3');
+  var p4    = document.getElementById('prov4');
+
+  // If intro already seen or not active, fire hero animations and exit
+  var introAlreadySeen = false;
+  try{ introAlreadySeen = !!sessionStorage.getItem('v_intro_seen'); }catch(e){}
+  if(introAlreadySeen || !intro || !intro.classList.contains('active')){
+    document.querySelectorAll('.v-rise').forEach(function(el){ el.classList.add('visible'); });
+    return;
+  }
+
+  // ── Absolute failsafe ──
+  // If sequence fails for any reason, force-dismiss after 32 seconds
+  var failsafe = setTimeout(function(){
+    if(intro && intro.style.display !== 'none'){
+      intro.style.transition = 'opacity 600ms ease';
+      intro.style.opacity = '0';
+      setTimeout(function(){
+        dismissIntro();
+      }, 600);
+    }
+  }, 32000);
+
+  // ── Utility: show element ──
+  function show(el){ if(el){ el.classList.add('visible'); el.classList.remove('fade'); } }
+
+  // ── Utility: fade element ──
+  function fade(el){ if(el){ el.classList.remove('visible'); el.classList.add('fade'); } }
+
+  // ── ACT 1: Compass sequence ──
+  // CSS draws circle/V/stem/arrow/dots from 0.4s–2.6s
+  // At 2.8s: canvas needle fades in, static stem+arrow fade out
+  // Canvas RAF drives needle through left→right→north sequence
+  // At 8.2s: act1 dissolves, act2 activates
+
+  // ── CANVAS NEEDLE ENGINE ──
+  // All rotation done in canvas — no SVG transform, no CSS transform.
+  // Rotates mathematically around exact canvas center. Works everywhere.
+
+  var needleStarted = false;
+
+  // Easing functions
+  function easeInOut(t){ return t<0.5 ? 2*t*t : -1+(4-2*t)*t; }
+  function easeOutBack(t){
+    var c1=1.70158, c3=c1+1;
+    return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);
+  }
+  function easeInOutCubic(t){ return t<0.5?4*t*t*t:(t-1)*(2*t-2)*(2*t-2)+1; }
+
+  // Draw the needle on canvas at a given angle (degrees, 0=north)
+  function drawNeedle(canvas, angleDeg, alpha){
+    var ctx = canvas.getContext('2d');
+    var w = canvas.width, h = canvas.height;
+    var cx = w/2, cy = h/2;
+    var rad = (angleDeg - 0) * Math.PI / 180; // 0° = north = up
+
+    ctx.clearRect(0, 0, w, h);
+    if(alpha <= 0) return;
+
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.translate(cx, cy);
+    ctx.rotate(rad);
+
+    // North point — bronze diamond
+    ctx.beginPath();
+    ctx.moveTo(0, -cy+4);      // tip (north)
+    ctx.lineTo(3,  -cy/2+8);   // right shoulder
+    ctx.lineTo(0,  -cy/2+14);  // waist
+    ctx.lineTo(-3, -cy/2+8);   // left shoulder
+    ctx.closePath();
+    ctx.fillStyle = '#C8A97A';
+    ctx.fill();
+
+    // Needle stem north — thin line from waist to near center
+    ctx.beginPath();
+    ctx.moveTo(0, -cy/2+14);
+    ctx.lineTo(0, -4);
+    ctx.strokeStyle = '#C8A97A';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // South point — muted grey diamond
+    ctx.beginPath();
+    ctx.moveTo(0, cy-4);       // tip (south)
+    ctx.lineTo(3,  cy/2-8);    // right shoulder
+    ctx.lineTo(0,  cy/2-14);   // waist
+    ctx.lineTo(-3, cy/2-8);    // left shoulder
+    ctx.closePath();
+    ctx.fillStyle = '#8A8278';
+    ctx.globalAlpha = alpha * 0.45;
+    ctx.fill();
+    ctx.globalAlpha = alpha;
+
+    // Needle stem south
+    ctx.beginPath();
+    ctx.moveTo(0, cy/2-14);
+    ctx.lineTo(0, 4);
+    ctx.strokeStyle = '#8A8278';
+    ctx.lineWidth = 1.2;
+    ctx.globalAlpha = alpha * 0.4;
+    ctx.stroke();
+    ctx.globalAlpha = alpha;
+
+    // Center pivot dot
+    ctx.beginPath();
+    ctx.arc(0, 0, 3, 0, Math.PI*2);
+    ctx.fillStyle = '#C8A97A';
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  // Animate needle through the full sequence using RAF
+  // Phases: left → hold → right → hold → north(spring)
+  function runNeedleSequence(canvas){
+    var startTime = null;
+
+    // Phase durations in ms
+    var p1dur = 1400; // drift left  0→-35
+    var p1hold= 800;  // hold left
+    var p2dur = 1200; // swing right -35→+40
+    var p2hold= 600;  // hold right
+    var p3dur = 1600; // return north +40→0 (with spring)
+    var total = p1dur+p1hold+p2dur+p2hold+p3dur;
+
+    function lerp(a,b,t){ return a+(b-a)*t; }
+
+    function frame(ts){
+      if(!startTime) startTime = ts;
+      var elapsed = ts - startTime;
+      var angle = 0;
+
+      if(elapsed < p1dur){
+        // Phase 1 — drift left
+        var t = easeInOut(elapsed/p1dur);
+        angle = lerp(0, -35, t);
+      } else if(elapsed < p1dur+p1hold){
+        // Hold left
+        angle = -35;
+      } else if(elapsed < p1dur+p1hold+p2dur){
+        // Phase 2 — swing right
+        var t = easeInOut((elapsed-p1dur-p1hold)/p2dur);
+        angle = lerp(-35, 40, t);
+      } else if(elapsed < p1dur+p1hold+p2dur+p2hold){
+        // Hold right
+        angle = 40;
+      } else if(elapsed < total){
+        // Phase 3 — spring back to north
+        var t = easeOutBack((elapsed-p1dur-p1hold+p2dur-p2hold-(p2dur))/p3dur);
+        // correct elapsed calc
+        var elapsed3 = elapsed - p1dur - p1hold - p2dur - p2hold;
+        t = easeOutBack(Math.min(1, elapsed3/p3dur));
+        angle = lerp(40, 0, t);
+      } else {
+        // Sequence complete — ensure exactly north
+        drawNeedle(canvas, 0, 1);
+        // Fire pulse
+        firePulse(canvas);
+        return;
+      }
+
+      drawNeedle(canvas, angle, 1);
+      requestAnimationFrame(frame);
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  // Draw expanding pulse ring on canvas
+  function firePulse(canvas){
+    var ctx = canvas.getContext('2d');
+    var cx = canvas.width/2, cy = canvas.height/2;
+    var r = 44, maxR = 58;
+    var startTime = null;
+    var duration = 900;
+
+    function pulseFrame(ts){
+      if(!startTime) startTime = ts;
+      var t = Math.min(1, (ts-startTime)/duration);
+      var currentR = r + (maxR-r)*t;
+      var alpha = 0.7*(1-t);
+
+      // Redraw needle first (north) then pulse ring on top
+      drawNeedle(canvas, 0, 1);
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(cx, cy, currentR, 0, Math.PI*2);
+      ctx.strokeStyle = '#C8A97A';
+      ctx.lineWidth = 1.2*(1-t*0.5);
+      ctx.globalAlpha = alpha;
+      ctx.stroke();
+      ctx.restore();
+
+      if(t < 1) requestAnimationFrame(pulseFrame);
+      else drawNeedle(canvas, 0, 1); // final clean frame
+    }
+    requestAnimationFrame(pulseFrame);
+  }
+
+  // Step 1 — At 2.8s: fade in canvas needle, fade out static stem+arrow
+  setTimeout(function(){
+    var canvas = document.getElementById('needleCanvas');
+    if(!canvas) return;
+    canvas.style.opacity = '1';
+
+    // Hide static stem and arrow
+    var stem  = act1 ? act1.querySelector('.intro-stem')  : null;
+    var arrow = act1 ? act1.querySelector('.intro-arrow') : null;
+    if(stem)  stem.classList.add('needle-active');
+    if(arrow) arrow.classList.add('needle-active');
+
+    // Draw initial north frame so canvas isn't blank during fade-in
+    drawNeedle(canvas, 0, 1);
+
+    // Start the swing sequence after fade-in completes (500ms)
+    setTimeout(function(){
+      runNeedleSequence(canvas);
+    }, 500);
+
+  }, 2800);
+
+  // Step 2 — At 8.2s: mark breathes
+  setTimeout(function(){
+    var mark = act1 ? act1.querySelector('.intro-mark-wrap') : null;
+    if(mark) mark.style.animation = 'markBreathe 800ms ease-in-out forwards';
+  }, 8200);
+
+  // Step 9 — Act1 dissolves upward, Act2 activates
+  // Slightly longer Act1 to honor the emotional weight of the needle settling
+  setTimeout(function(){
+    act1.classList.add('dissolve');
+    act2.classList.add('active');
+
+    // ── ACT 2: Provocation sequence ──
+    // All times below are relative to this point
+
+    // ── SENTENCE 1 ──
+    // "You have been optimizing for the wrong thing."
+    setTimeout(function(){ show(p1); }, 400);
+    setTimeout(function(){ fade(p1); }, 3900);
+
+    // ── SENTENCE 2 ──
+    // "Think of the most successful person you know personally."
+    setTimeout(function(){ show(p2); }, 4700);
+    setTimeout(function(){ fade(p2); }, 9200);
+
+    // ── BRONZE RULE MOMENT ──
+    setTimeout(function(){ show(rule); }, 9600);
+    setTimeout(function(){ fade(rule); }, 10400);
+
+    // ── SENTENCE 3 ──
+    // "Where did they go to school?"
+    setTimeout(function(){ show(p3); }, 10600);
+    setTimeout(function(){ fade(p3); }, 14400);
+
+    // ── DARKNESS TRANSITION ──
+    setTimeout(function(){
+      intro.classList.add('going-dark');
+      p4.classList.add('on-dark');
+    }, 15000);
+
+    // ── SENTENCE 4 ──
+    // "The algorithm already knows the answer."
+    setTimeout(function(){ show(p4); }, 15400);
+    setTimeout(function(){ fade(p4); }, 18900);
+
+    // ── PAGE OPENS ──
+    setTimeout(function(){
+      intro.classList.add('fade-out');
+      setTimeout(function(){
+        clearTimeout(failsafe);
+        dismissIntro();
+      }, 1000);
+    }, 19700);
+
+  }, 9000); // act1 dissolve — extended from 4200ms to 9000ms for needle sequence
+
+})();
+
+
+// ═══════════════════════════════════════════════════════
+// PIECE 2 — TIMELINE ANIMATION ENGINE
+// ═══════════════════════════════════════════════════════
+(function(){
+
+  var tlAnimated = false;
+
+  // ── Animate a single SVG path (stroke-dashoffset draw) ──
+  function drawPath(id, duration, delay, finalOpacity){
+    finalOpacity = finalOpacity || 1;
+    setTimeout(function(){
+      var el = document.getElementById(id);
+      if(!el) return;
+      var len = el.getTotalLength ? el.getTotalLength() :
+                parseFloat(el.getAttribute('stroke-dasharray')) || 800;
+      el.style.strokeDasharray  = len;
+      el.style.strokeDashoffset = len;
+      el.style.transition =
+        'stroke-dashoffset ' + duration + 'ms cubic-bezier(0.4,0,0.2,1),' +
+        'opacity 400ms ease';
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          el.style.strokeDashoffset = '0';
+          el.style.opacity = finalOpacity;
+        });
+      });
+    }, delay);
+  }
+
+  // ── Fade in an element ──
+  function fadeIn(id, delay, duration){
+    duration = duration || 500;
+    setTimeout(function(){
+      var el = document.getElementById(id);
+      if(!el) return;
+      el.style.transition = 'opacity ' + duration + 'ms ease';
+      el.style.opacity = '1';
+    }, delay);
+  }
+
+  // ── Full animation sequence ──
+  function runTimeline(){
+    if(tlAnimated) return;
+    tlAnimated = true;
+
+    // 1. Trunk draws (0ms)
+    drawPath('tl-trunk', 600, 0, 1);
+
+    // 2. Branches draw sequentially — each with increasing opacity
+    //    They peel off the trunk with staggered delays
+    drawPath('tl-b1', 2200, 400,  0.45);
+    drawPath('tl-b2', 2400, 600,  0.55);
+    drawPath('tl-b3', 2100, 500,  0.45);
+    drawPath('tl-b4', 2600, 700,  0.60);
+    drawPath('tl-b5', 2800, 800,  0.70);
+
+    // 3. Patron dot appears on Branch 5 at the inflection point
+    fadeIn('tl-patron-dot', 2200, 400);
+
+    // 4. Convergence dots light up at endpoints
+    fadeIn('tl-conv1', 3200, 600);
+    fadeIn('tl-conv2', 3400, 600);
+    fadeIn('tl-conv3', 3300, 600);
+    fadeIn('tl-conv4', 3600, 600);
+    fadeIn('tl-conv5', 3800, 600);
+
+    // 5. Legend cards appear — staggered
+    setTimeout(function(){
+      ['lc1','lc2','lc3','lc4','lc5'].forEach(function(id, i){
+        setTimeout(function(){
+          var el = document.getElementById(id);
+          if(el) el.classList.add('visible');
+        }, i * 120);
+      });
+    }, 3400);
+
+    // 6. Branch brightens on convergence (opacity transition)
+    setTimeout(function(){
+      ['tl-b2','tl-b4','tl-b5'].forEach(function(id){
+        var el = document.getElementById(id);
+        if(el){
+          el.style.transition += ', opacity 1200ms ease';
+          el.style.opacity = '0.9';
+        }
+      });
+    }, 4000);
+
+    // 7. Closing question fades in
+    setTimeout(function(){
+      var q = document.getElementById('tlQuestion');
+      if(q) q.classList.add('visible');
+    }, 4600);
+  }
+
+  // ── Scroll trigger ──
+  var section = document.getElementById('timeline');
+  if(section && 'IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          runTimeline();
+          obs.unobserve(section);
+        }
+      });
+    }, { threshold: 0.15 });
+    obs.observe(section);
+  }
+
+})();
+
+// ── SELECT BRANCH — legend card interaction ──
+var _activeBranch = null;
+
+function selectBranch(n){
+  var branches = [1,2,3,4,5];
+
+  if(_activeBranch === n){
+    // Deselect — restore all to default
+    _activeBranch = null;
+    branches.forEach(function(b){
+      var path = document.getElementById('tl-b'+b);
+      var card = document.getElementById('lc'+b);
+      if(path){ path.style.opacity='0.5'; path.style.strokeWidth='1.8'; }
+      if(card){ card.classList.remove('active','dimmed'); }
+    });
+    // Patron dot back to normal
+    var dot = document.getElementById('tl-patron-dot');
+    if(dot) dot.style.animation='';
+    return;
+  }
+
+  _activeBranch = n;
+
+  branches.forEach(function(b){
+    var path = document.getElementById('tl-b'+b);
+    var card = document.getElementById('lc'+b);
+    if(b === n){
+      // Highlight selected
+      if(path){ path.style.opacity='1'; path.style.strokeWidth = b===5?'2.8':'2.4'; }
+      if(card){ card.classList.add('active'); card.classList.remove('dimmed'); }
+    } else {
+      // Dim others
+      if(path){ path.style.opacity='0.1'; path.style.strokeWidth='1.8'; }
+      if(card){ card.classList.add('dimmed'); card.classList.remove('active'); }
+    }
+  });
+
+  // Patron dot pulses when Branch 5 (JD Vance) is selected
+  var dot = document.getElementById('tl-patron-dot');
+  if(dot){
+    if(n === 5){
+      dot.style.opacity = '1';
+      dot.style.animation = 'patronPulse 1.2s ease-in-out infinite';
+    } else {
+      dot.style.animation = '';
+      // Restore dot to its natural state
+      setTimeout(function(){ dot.style.opacity = _activeBranch ? '0' : ''; }, 300);
+    }
+  }
+}
+
+
+// ── TOOLTIP FUNCTIONS — global scope for inline SVG handlers ──
+function showTooltip(e, el){
+  var tooltip = document.getElementById('tlTooltip');
+  if(!tooltip) return;
+  var char = el.getAttribute('data-char');
+  var vari = el.getAttribute('data-var');
+  var desc = el.getAttribute('data-desc');
+  var ttName = document.getElementById('ttName');
+  var ttVar  = document.getElementById('ttVar');
+  var ttDesc = document.getElementById('ttDesc');
+  if(ttName) ttName.textContent = char;
+  if(ttVar)  ttVar.textContent  = vari;
+  if(ttDesc) ttDesc.textContent = desc;
+  tooltip.classList.add('visible');
+  tooltip.style.left = e.clientX + 'px';
+  tooltip.style.top  = (e.clientY - 12) + 'px';
+}
+function hideTooltip(){
+  var tooltip = document.getElementById('tlTooltip');
+  if(tooltip) tooltip.classList.remove('visible');
+}
+document.addEventListener('mousemove', function(e){
+  var tooltip = document.getElementById('tlTooltip');
+  if(tooltip && tooltip.classList.contains('visible')){
+    tooltip.style.left = e.clientX + 'px';
+    tooltip.style.top  = (e.clientY - 12) + 'px';
+  }
+});
+// ═══════════════════════════════════════════════════════
+// PIECE 3 — CASE FILE SCROLL REVEALS
+// Each element staggers in as reader scrolls through
+// ═══════════════════════════════════════════════════════
+(function(){
+  var caseEls = [
+    {id:'cfe0',  delay:0},
+    {id:'cfh1',  delay:80},
+    {id:'cfb1',  delay:160},
+    {id:'cfb2',  delay:240},
+    {id:'cfb3',  delay:320},
+    {id:'cfe1',  delay:160},
+    {id:'cfe2',  delay:240},
+    {id:'cfe3',  delay:360},
+    {id:'cfe4',  delay:100},
+    {id:'cfe5',  delay:180},
+    {id:'cfe6',  delay:280},
+    {id:'cfe7',  delay:100},
+    {id:'cfe8',  delay:200},
+    {id:'cfe9',  delay:300},
+    {id:'cfe10', delay:500},
+    {id:'cfe10b',delay:700},
+    {id:'cfe11', delay:900},
+  ];
+  if(!('IntersectionObserver' in window)){
+    caseEls.forEach(function(item){
+      var el=document.getElementById(item.id);
+      if(el) el.classList.add('visible');
+    });
+    return;
+  }
+  caseEls.forEach(function(item){
+    var el=document.getElementById(item.id);
+    if(!el) return;
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          setTimeout(function(){ el.classList.add('visible'); }, item.delay);
+          obs.unobserve(el);
+        }
+      });
+    },{threshold:0.2});
+    obs.observe(el);
+  });
+})();
+
+
+// ═══════════════════════════════════════════════════════
+// CENTRE STATEMENT — SEQUENTIAL LINE REVEAL
+// Line 1 triggers on scroll entry
+// Lines 2 and 3 follow with deliberate delays
+// Line 2 (the gut punch) gets extra hold before line 3
+// ═══════════════════════════════════════════════════════
+(function(){
+  var section = document.getElementById('centreStatement');
+  if(!section || !('IntersectionObserver' in window)) return;
+
+  var triggered = false;
+
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !triggered){
+        triggered = true;
+        obs.unobserve(section);
+
+        // Line 1: "It takes ten years to become known."
+        setTimeout(function(){
+          var el = document.getElementById('cl1');
+          if(el) el.classList.add('visible');
+        }, 200);
+
+        // Line 2: "Twenty-five to become an overnight success."
+        // 1400ms after line 1 — reader needs to sit with line 1 first
+        setTimeout(function(){
+          var el = document.getElementById('cl2');
+          if(el) el.classList.add('visible');
+        }, 1600);
+
+        // Line 3: "VECTOR shows you which years to choose."
+        // 1600ms after line 2 — the longest gap
+        // Line 2 contains the gut punch (16 + 25 = 41)
+        // The reader needs to do that math before the resolution arrives
+        setTimeout(function(){
+          var el = document.getElementById('cl3');
+          if(el) el.classList.add('visible');
+        }, 3200);
+
+        // Body paragraph — arrives after all three lines
+        setTimeout(function(){
+          var el = document.getElementById('cl4body');
+          if(el){ el.style.opacity='1'; el.style.transform='translateY(0)'; }
+        }, 4400);
+
+        // CTA — last
+        setTimeout(function(){
+          var el = document.getElementById('cl4cta');
+          if(el){ el.style.opacity='1'; el.style.transform='translateY(0)'; }
+        }, 5000);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  obs.observe(section);
+})();
+
+</script>
+</body>
+</html>
