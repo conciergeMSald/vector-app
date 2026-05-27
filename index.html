@@ -1298,20 +1298,20 @@ function renderFamilyDash(){
 function showPaywall(){}
 
 async function callClaude(prompt){
-  const r=await fetch('https://api.anthropic.com/v1/messages',{
-    method:'POST',
-    headers:{
-      'Content-Type':'application/json',
-      'x-api-key':'sk-ant-api03-s9V...9wAA',
-      'anthropic-version':'2023-06-01',
-      'anthropic-dangerous-direct-browser-access':'true'
-    },
-    body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1500,messages:[{role:'user',content:prompt}]})
-  });
-  const d=await r.json();
-  if(d.content&&d.content[0]&&d.content[0].text)return d.content[0].text;
-  throw new Error(JSON.stringify(d));
-}
+  const r=await fetch('https://api.anthropic.com/v1/messages', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': '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',
+    'anthropic-version': '2023-06-01',
+    'anthropic-dangerous-direct-browser-access': 'true'
+  },
+  body: JSON.stringify({
+    model: 'claude-sonnet-4-5',
+    max_tokens: 100,
+    messages: [{ role: 'user', content: 'Say hello' }]
+  })
+}).then(r=>r.json()).then(d=>console.log(d))
 
 function generateReport(){
   document.getElementById('reportLoad').style.display='block';
