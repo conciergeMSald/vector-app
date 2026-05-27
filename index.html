@@ -1239,17 +1239,7 @@ ${ageNote}
 
 Write the paragraphs now. Be specific. Be honest. Name real things.`;
 
-  fetch('https://vector-api.mattstearn.workers.dev',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({prompt:prompt})
-  })
-  .then(r=>r.json())
-  .then(d=>{
-    const txt=(d.content&&d.content[0]&&d.content[0].text)?d.content[0].text:getFallbackInsight();
-    finishInsight(txt);
-  })
-  .catch((err)=>{console.error('Insight error:',err);finishInsight(getFallbackInsight());});
+  callClaude(prompt).then(txt=>finishInsight(txt)).catch((err)=>{console.error('Insight error:',err);finishInsight(getFallbackInsight());});
 }
 
 function getFallbackInsight(){
@@ -1307,6 +1297,22 @@ function renderFamilyDash(){
 
 function showPaywall(){}
 
+async function callClaude(prompt){
+  const r=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'x-api-key':'sk-ant-api03-s9V...9wAA',
+      'anthropic-version':'2023-06-01',
+      'anthropic-dangerous-direct-browser-access':'true'
+    },
+    body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1500,messages:[{role:'user',content:prompt}]})
+  });
+  const d=await r.json();
+  if(d.content&&d.content[0]&&d.content[0].text)return d.content[0].text;
+  throw new Error(JSON.stringify(d));
+}
+
 function generateReport(){
   document.getElementById('reportLoad').style.display='block';
   if(document.getElementById('reportBtn'))document.getElementById('reportBtn').style.display='none';
@@ -1320,17 +1326,7 @@ function generateReport(){
 
   const rp='You are VECTOR, a sophisticated career trajectory intelligence engine. Generate a comprehensive printable VECTOR Report. Use clear section headers. Write as a private advisor — direct, honest, specific. No flattery. No filler. Every paragraph must contain actionable intelligence specific to this person.\n\nASSESSMENT DATA:\nAge: '+S.age+'\nGoal: '+c.n+'\nPeak compensation: '+c.pay+'\nVector Score: '+S.rawScore+'/100\nDrive Multiplier: '+S.driveMult+'x ('+driveClass+')\nMandatory training: '+(c.years>0?c.years+' years':'none')+'\nEarliest age at goal: '+Math.max(c.minAge,S.age+c.years)+(c.maxAge?'\nHard age cutoff: '+c.maxAge:'')+'\nAll variable scores: '+varBreakdown+'\nCritical gaps (4 or below): '+(lowVars.length>0?lowVars.join(', '):'None — all above 4')+'\nMoves committed: '+(moves||'None yet')+'\nGeographic context: '+geoLine+(S.hsCluster?'\nHigh school career interest cluster: '+S.hsCluster:'')+'\n\nGenerate these 8 sections. Be specific to this person\'s actual data throughout.\n\nSECTION 1 — EXECUTIVE SUMMARY\n3-4 sentences. The algorithm\'s overall read on this trajectory. State what the Vector Score means, the timeline, and the single most important insight for this specific person.\n\nSECTION 2 — VARIABLE ANALYSIS\nFor each of the 8 variables, write 2-3 sentences explaining what the score means for THIS person pursuing THIS career. For scores 4 and below, name what the gap is costing in years and opportunity.\n\nSECTION 3 — THE DRIVE ASSESSMENT VERDICT\nWhat the drive multiplier of '+S.driveMult+'x means for this trajectory. What it suggests about how this person operates. What the risk is if drive and positioning are misaligned.\n\nSECTION 4 — CRITICAL GAPS AND INTERVENTIONS\nFor each variable scoring 4 or below, provide a specific intervention with a 90-day timeline. Name real organizations, programs, and actions. Not generic advice.\n\nSECTION 5 — THE GEOGRAPHIC REALITY\n'+(metro?'Analyze what being in '+metro.metro+' means for pursuing '+c.n+'. Name specific local rooms, organizations, and connections that matter. Provide the geographic roadmap with intermediate steps and realistic timelines.':'Provide specific guidance on where this person needs to be geographically and the exact steps to close that gap.')+'\n\nSECTION 6 — THREE-YEAR ACTION PLAN\nYear 1, Year 2, Year 3. Three to four concrete actions per year. State the expected trajectory impact of each action. Be specific — name real things to do, not categories.\n\n'+(S.age<=18?'SECTION 7 — HIGH SCHOOL AND EARLY CAREER GUIDANCE\nThis person is '+S.age+' years old. Address the specific decisions available right now with the highest trajectory impact. Name specific summer programs, extracurricular choices, and the one decision that matters most this academic year.':'SECTION 7 — CAREER FIELD INTELLIGENCE\nProvide specific intelligence about the '+c.n+' career field that most people do not know. The unwritten rules. The hidden variables. The specific moves that separate the people who make it from the people who almost make it.')+'\n\nSECTION 8 — THE ALGORITHM\'S VERDICT\nOne final paragraph. The most honest and useful thing the algorithm can say to this specific person. Name the one variable that will determine whether they succeed or plateau. End with one action to take this week.\n\nWrite the full report now.';
 
-  fetch('https://vector-api.mattstearn.workers.dev',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({prompt:rp})
-  })
-  .then(r=>r.json())
-  .then(d=>{
-    const txt=(d.content&&d.content[0]&&d.content[0].text)?d.content[0].text:'Report generation encountered an error. Please try again.';
-    renderReport(txt);
-  })
-  .catch((err)=>renderReport('ERROR: '+err.message));
+  callClaude(rp).then(txt=>renderReport(txt)).catch((err)=>renderReport('ERROR: '+err.message));
 }
 
 function renderReport(text){
