@@ -1249,7 +1249,7 @@ Write the paragraphs now. Be specific. Be honest. Name real things.`;
     const txt=(d.content&&d.content[0]&&d.content[0].text)?d.content[0].text:getFallbackInsight();
     finishInsight(txt);
   })
-  .catch(()=>finishInsight(getFallbackInsight()));
+  .catch((err)=>{console.error('Insight error:',err);finishInsight(getFallbackInsight());});
 }
 
 function getFallbackInsight(){
@@ -1330,7 +1330,7 @@ function generateReport(){
     const txt=(d.content&&d.content[0]&&d.content[0].text)?d.content[0].text:'Report generation encountered an error. Please try again.';
     renderReport(txt);
   })
-  .catch(()=>renderReport('Report generation encountered a network error. Please try again.'));
+  .catch((err)=>renderReport('ERROR: '+err.message));
 }
 
 function renderReport(text){
