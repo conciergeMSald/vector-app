@@ -1721,21 +1721,21 @@ async function showAckScreen(data) {
   if (qlabel)    qlabel.style.opacity    = '0';
   if (qtext)     qtext.style.opacity     = '0';
   if (field)     field.style.opacity     = '0';
-  await pause(500);
-  await materialize(mark, 1000);
-  await pause(600);
-  await materialize(statement, 2200);
-  await pause(5000);
-  fadeOut(statement, 1600);
+  await pause(300);
+  await materialize(mark, 600);
+  await pause(300);
+  await materialize(statement, 1200);
   await pause(1800);
-  await materialize(qlabel, 1000);
+  fadeOut(statement, 800);
   await pause(400);
-  await materialize(qtext, 1800);
-  await pause(800);
-  if (sublabelEl && data.sublabel) await materialize(sublabelEl, 1200);
-  await pause(600);
-  await materialize(field, 1400);
-  setTimeout(function(){ textarea.focus(); }, 800);
+  await materialize(qlabel, 600);
+  await pause(200);
+  await materialize(qtext, 800);
+  await pause(300);
+  if (sublabelEl && data.sublabel) await materialize(sublabelEl, 600);
+  await pause(300);
+  await materialize(field, 600);
+  setTimeout(function(){ textarea.focus(); }, 400);
   textarea.addEventListener('input', onFirstInput, { once: true });
 }
 
