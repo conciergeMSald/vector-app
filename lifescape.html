@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <script src="crosswalk-db.js"></script>
+<script src="lifescape_curation_map_v1.js"></script>
 
 <style>
 /* ── TOKENS ─────────────────────────────────────────── */
@@ -209,6 +210,22 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .gen-progress{margin:1.5rem 0;height:2px;background:var(--rule);}
 .gen-progress-fill{height:2px;background:var(--gold);width:0%;transition:width 1s ease;}
 
+/* ── ORIENTING QUESTIONS (screen 2.5) ─────────────── */
+.orient-q{margin-bottom:2rem;}
+.orient-q-label{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
+.orient-options{display:flex;flex-wrap:wrap;gap:8px;}
+.orient-btn{padding:10px 18px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:13px;color:var(--ink3);cursor:pointer;transition:all .2s;border-radius:0;}
+.orient-btn:hover{border-color:var(--gl);color:var(--ink);}
+.orient-btn.sel{border-color:var(--gold);background:var(--gold-pale);color:var(--ink);}
+
+/* ── PROGRESSIVE REVEAL ─────────────────────────────── */
+.reveal-divider{margin:1.5rem 0 1rem;border-top:0.5px solid var(--rule);padding-top:1rem;}
+.reveal-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.tile-reveal{animation:tileReveal .3s ease forwards;opacity:0;}
+@keyframes tileReveal{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.show-all-link{display:block;text-align:center;font-size:12px;color:var(--ink4);cursor:pointer;margin-top:1.5rem;padding:.75rem 0;border-top:0.5px solid var(--rule);transition:color .2s;}
+.show-all-link:hover{color:var(--gold);}
+
 /* ── RESPONSIVE ───────────────────────────────────── */
 @media(max-width:600px){
   .ls-wordmark{font-size:36px;letter-spacing:5px;}
@@ -278,8 +295,54 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </select>
 
   <div class="hint-bar" id="s2-hint"></div>
-  <button class="ls-btn" onclick="validateAndGoTo(3)">Continue</button>
+  <button class="ls-btn" onclick="validateAndGoTo(25)">Continue</button>
   <button class="ls-btn-outline" onclick="goTo(1)">Back</button>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 2.5 — ORIENTING QUESTIONS                  -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-25">
+<div class="container">
+  <div class="ls-eyebrow">Step 2 of 4</div>
+  <div class="q">Three quick questions.</div>
+  <div class="q-sub">No right answers. This just helps us show you the most relevant tiles first.</div>
+
+  <!-- Q1 — Free time -->
+  <div class="orient-q">
+    <div class="orient-q-label" id="q1-label">When you have free time, you're more likely to be...</div>
+    <div class="orient-options" id="q1-options">
+      <button class="orient-btn" data-q="free_time" data-val="making" onclick="toggleOrient(this,'free_time','making',true)">Making or building something</button>
+      <button class="orient-btn" data-q="free_time" data-val="moving" onclick="toggleOrient(this,'free_time','moving',true)">Moving — sports, dance, fitness</button>
+      <button class="orient-btn" data-q="free_time" data-val="thinking" onclick="toggleOrient(this,'free_time','thinking',true)">Thinking, reading, figuring things out</button>
+      <button class="orient-btn" data-q="free_time" data-val="people" onclick="toggleOrient(this,'free_time','people',true)">Being with people</button>
+    </div>
+  </div>
+
+  <!-- Q2 — Self view -->
+  <div class="orient-q">
+    <div class="orient-q-label">Right now you'd describe yourself as...</div>
+    <div class="orient-options" id="q2-options">
+      <button class="orient-btn" data-q="self_view" data-val="know_what_i_like" onclick="toggleOrient(this,'self_view','know_what_i_like',false)">I know what I'm into</button>
+      <button class="orient-btn" data-q="self_view" data-val="still_figuring_out" onclick="toggleOrient(this,'self_view','still_figuring_out',false)">Still figuring it out</button>
+      <button class="orient-btn" data-q="self_view" data-val="both" onclick="toggleOrient(this,'self_view','both',false)">A little of both</button>
+    </div>
+  </div>
+
+  <!-- Q3 — Work style -->
+  <div class="orient-q">
+    <div class="orient-q-label">You work best...</div>
+    <div class="orient-options" id="q3-options">
+      <button class="orient-btn" data-q="work_style" data-val="on_my_own" onclick="toggleOrient(this,'work_style','on_my_own',false)">On my own</button>
+      <button class="orient-btn" data-q="work_style" data-val="with_people" onclick="toggleOrient(this,'work_style','with_people',false)">With other people</button>
+      <button class="orient-btn" data-q="work_style" data-val="depends" onclick="toggleOrient(this,'work_style','depends',false)">Depends on the day</button>
+    </div>
+  </div>
+
+  <div class="hint-bar" id="s25-hint"></div>
+  <button class="ls-btn" onclick="validateOrientAndGoTo(3)">Show me my tiles</button>
+  <button class="ls-btn-outline" onclick="goTo(2)">Back</button>
 </div>
 </div>
 
@@ -302,6 +365,17 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="eq-divider">
     <div class="eq-intro">A few more — just check anything that sounds like you.</div>
     <div class="tile-grid" id="eq-tile-grid"></div>
+  </div>
+
+  <div id="reveal-section" style="display:none">
+    <div class="reveal-divider">
+      <div class="reveal-label">Based on what you picked</div>
+      <div class="tile-grid" id="reveal-tile-grid"></div>
+    </div>
+  </div>
+
+  <div class="show-all-link" id="show-all-link" onclick="showAllTiles()" style="display:none">
+    Show me everything ↓
   </div>
 
   <div class="hint-bar" id="s3-hint"></div>
@@ -566,7 +640,7 @@ const LS_STATE = {
 };
 
 // ── SCREEN NAV ─────────────────────────────────────
-const SCREEN_PROGRESS = {1:0,2:25,3:50,4:75,5:90};
+const SCREEN_PROGRESS = {1:0,2:20,25:35,3:50,4:75,5:90};
 
 function goTo(n) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -575,6 +649,7 @@ function goTo(n) {
   window.scrollTo(0,0);
   if(n===3) renderTileGrid();
   if(n===2) updateS2Voice();
+  if(n===25) updateOrientVoice();
 }
 
 // ── VOICE FORK ─────────────────────────────────────
@@ -643,41 +718,76 @@ const CLUSTER_CLASS = {
 let _debounceTimer = null;
 
 function renderTileGrid() {
-  if(typeof VECTOR_CROSSWALK === 'undefined') {
+  if(typeof VECTOR_CROSSWALK === 'undefined' || typeof curateInitialTiles === 'undefined') {
     document.getElementById('activity-tile-grid').innerHTML =
       '<p style="color:var(--ink3);font-size:13px">Loading tiles...</p>';
     return;
   }
 
+  _revealShown = false;
+  _allTilesShown = false;
+
   const actGrid = document.getElementById('activity-tile-grid');
-  const eqGrid = document.getElementById('eq-tile-grid');
+  const eqGrid  = document.getElementById('eq-tile-grid');
   actGrid.innerHTML = '';
   eqGrid.innerHTML = '';
 
-  // Shuffle activity tiles for discovery browsing
-  const actTiles = VECTOR_CROSSWALK.filter(t => t.cluster !== 'eq');
-  const eqTiles  = VECTOR_CROSSWALK.filter(t => t.cluster === 'eq');
+  // ── Curated initial tile set from orienting answers ──
+  const curatedIds = curateInitialTiles(ORIENT_ANSWERS);
+  _shownTileIds = [...curatedIds];
 
-  // Gentle shuffle — mix clusters without sorting
-  const shuffled = [...actTiles].sort(() => Math.random() - 0.49);
+  // Render curated activity tiles
+  curatedIds.forEach(id => {
+    const tile = VECTOR_CROSSWALK.find(t => t.id === id);
+    if(!tile) return;
+    actGrid.appendChild(makeTileEl(tile));
+  });
 
-  shuffled.forEach(tile => {
-    const el = document.createElement('span');
-    el.className = 'tile ' + (CLUSTER_CLASS[tile.cluster]||'tile-make');
-    if(LS_STATE.selectedTileIds.has(tile.id)) el.classList.add('sel');
-    el.textContent = tile.label;
-    el.onclick = () => toggleTile(tile.id, el, tile.cluster);
+  // Show "show me everything" link
+  document.getElementById('show-all-link').style.display = 'block';
+
+  // ── EQ tiles — ordered by relevance to orienting answers ──
+  const eqOrder = typeof getEQPriority !== 'undefined'
+    ? getEQPriority(ORIENT_ANSWERS)
+    : VECTOR_CROSSWALK.filter(t=>t.cluster==='eq').map(t=>t.id);
+
+  eqOrder.forEach(id => {
+    const tile = VECTOR_CROSSWALK.find(t => t.id === id);
+    if(!tile) return;
+    eqGrid.appendChild(makeTileEl(tile));
+  });
+}
+
+function makeTileEl(tile) {
+  const el = document.createElement('span');
+  el.className = 'tile ' + (CLUSTER_CLASS[tile.cluster]||'tile-make');
+  if(LS_STATE.selectedTileIds.has(tile.id)) el.classList.add('sel');
+  el.textContent = tile.label;
+  el.dataset.tileId = tile.id;
+  el.onclick = () => toggleTile(tile.id, el, tile.cluster);
+  return el;
+}
+
+function showAllTiles() {
+  if(_allTilesShown) return;
+  _allTilesShown = true;
+
+  const actGrid = document.getElementById('activity-tile-grid');
+  const allActivityIds = VECTOR_CROSSWALK
+    .filter(t => t.cluster !== 'eq')
+    .map(t => t.id);
+
+  const newIds = allActivityIds.filter(id => !_shownTileIds.includes(id));
+  newIds.forEach(id => {
+    const tile = VECTOR_CROSSWALK.find(t => t.id === id);
+    if(!tile) return;
+    const el = makeTileEl(tile);
+    el.classList.add('tile-reveal');
     actGrid.appendChild(el);
   });
 
-  eqTiles.forEach(tile => {
-    const el = document.createElement('span');
-    el.className = 'tile tile-eq';
-    if(LS_STATE.selectedTileIds.has(tile.id)) el.classList.add('sel');
-    el.textContent = tile.label;
-    el.onclick = () => toggleTile(tile.id, el, 'eq');
-    eqGrid.appendChild(el);
-  });
+  _shownTileIds = [...allActivityIds];
+  document.getElementById('show-all-link').style.display = 'none';
 }
 
 function toggleTile(id, el, cluster) {
@@ -691,9 +801,46 @@ function toggleTile(id, el, cluster) {
       LS_STATE.selectedTileIds.add(id);
       el.classList.add('sel');
     }
-    document.getElementById('ls-tile-count').textContent = LS_STATE.selectedTileIds.size;
-    if(LS_STATE.selectedTileIds.size >= 3) clearHint('s3-hint');
+    const count = LS_STATE.selectedTileIds.size;
+    document.getElementById('ls-tile-count').textContent = count;
+    if(count >= 3) clearHint('s3-hint');
+
+    // Fire progressive reveal after 3 activity tile selections
+    // Only fires once, only for activity tiles (not EQ)
+    if(count === 3 && !_revealShown && !_allTilesShown && cluster !== 'eq') {
+      fireProgressiveReveal();
+    }
   }, 50);
+}
+
+function fireProgressiveReveal() {
+  if(typeof surfaceRelatedTiles === 'undefined') return;
+  _revealShown = true;
+
+  const selectedIds = Array.from(LS_STATE.selectedTileIds);
+  const revealed = surfaceRelatedTiles(selectedIds, _shownTileIds);
+  if(revealed.length === 0) return;
+
+  const revealSection = document.getElementById('reveal-section');
+  const revealGrid = document.getElementById('reveal-tile-grid');
+  revealGrid.innerHTML = '';
+
+  revealed.forEach((id, idx) => {
+    const tile = VECTOR_CROSSWALK.find(t => t.id === id);
+    if(!tile) return;
+    const el = makeTileEl(tile);
+    el.classList.add('tile-reveal');
+    el.style.animationDelay = (idx * 60) + 'ms';
+    revealGrid.appendChild(el);
+    _shownTileIds.push(id);
+  });
+
+  revealSection.style.display = 'block';
+
+  // Smooth scroll to reveal section
+  setTimeout(() => {
+    revealSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 200);
 }
 
 // ── ZIP RESOLVER ───────────────────────────────────
@@ -1030,6 +1177,58 @@ function stopLoadingMessages() { clearInterval(_loadMsgTimer); }
 
 function setGenProgress(pct) {
   document.getElementById('gen-progress-fill').style.width = pct+'%';
+}
+
+// ── ORIENTING QUESTIONS STATE ─────────────────────
+const ORIENT_ANSWERS = {
+  free_time: [],      // multi-select
+  self_view: 'both',  // single-select, default
+  work_style: 'depends' // single-select, default
+};
+
+let _shownTileIds = [];    // tiles currently shown in grid
+let _revealShown = false;  // whether progressive reveal has fired
+let _allTilesShown = false; // whether "show all" was tapped
+
+function updateOrientVoice() {
+  const p = LS_STATE.voice === 'parent';
+  document.getElementById('q1-label').textContent = p
+    ? 'When your child has free time, they are more likely to be...'
+    : 'When you have free time, you're more likely to be...';
+}
+
+function toggleOrient(btn, question, value, isMulti) {
+  if (isMulti) {
+    // Multi-select (Q1)
+    btn.classList.toggle('sel');
+    if (ORIENT_ANSWERS[question].includes(value)) {
+      ORIENT_ANSWERS[question] = ORIENT_ANSWERS[question].filter(v => v !== value);
+    } else {
+      ORIENT_ANSWERS[question].push(value);
+    }
+  } else {
+    // Single-select (Q2, Q3)
+    const container = btn.closest('.orient-options');
+    container.querySelectorAll('.orient-btn').forEach(b => b.classList.remove('sel'));
+    btn.classList.add('sel');
+    ORIENT_ANSWERS[question] = value;
+  }
+  clearHint('s25-hint');
+}
+
+function validateOrientAndGoTo(n) {
+  // All questions have defaults so no hard validation needed
+  // But encourage Q1 selection
+  if (ORIENT_ANSWERS.free_time.length === 0) {
+    showHint('s25-hint', 'Tap at least one option above to help us pick your tiles');
+    // Still allow proceed after 2 seconds — soft nudge only
+    setTimeout(() => {
+      clearHint('s25-hint');
+      goTo(n);
+    }, 2000);
+    return;
+  }
+  goTo(n);
 }
 
 // ── SUBMIT ─────────────────────────────────────────
