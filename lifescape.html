@@ -13,6 +13,7 @@
 <script src="geo_industry_db_Chicago_pass3.js"></script>
 <script src="geo_industry_db_NY_Boston_DC_pass4.js"></script>
 <script src="lifescape_curation_map_v1.js"></script>
+<script src="university-content.js"></script>
 <script src="lifescape_college_prefs_v2.js"></script>
 
 <style>
@@ -242,6 +243,24 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 @keyframes tileReveal{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 .show-all-link{display:block;text-align:center;font-size:12px;color:var(--ink4);cursor:pointer;margin-top:1.5rem;padding:.75rem 0;border-top:0.5px solid var(--rule);transition:color .2s;}
 .show-all-link:hover{color:var(--gold);}
+
+/* ── SCHOOL CARDS ─────────────────────────────────── */
+.school-card{border:0.5px solid var(--rule);padding:1.5rem;margin-bottom:1rem;background:var(--white);}
+.school-card-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.75rem;}
+.school-name{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);}
+.school-location{font-size:11px;color:var(--ink4);letter-spacing:.5px;margin-top:2px;}
+.school-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.75rem;}
+.school-badge{font-size:10px;padding:3px 10px;border:0.5px solid var(--gl);color:var(--gold);}
+.school-why{font-size:13px;color:var(--ink2);line-height:1.9;font-weight:300;}
+.school-generating{font-size:13px;color:var(--ink4);font-style:italic;text-align:center;padding:2rem 0;}
+
+/* Quick read school previews */
+.school-preview{display:flex;gap:1rem;align-items:flex-start;padding:.75rem 0;border-bottom:0.5px solid var(--rule);}
+.school-preview:last-child{border-bottom:none;}
+.school-preview-num{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--gl);flex-shrink:0;width:24px;}
+.school-preview-content{}
+.school-preview-name{font-family:var(--serif);font-size:15px;font-weight:400;color:var(--ink);margin-bottom:2px;}
+.school-preview-why{font-size:12px;color:var(--ink3);line-height:1.6;font-weight:300;}
 
 /* ── RESPONSIVE ───────────────────────────────────── */
 @media(max-width:600px){
@@ -637,7 +656,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="report-tabs">
     <button class="rtab active" id="rtab-quick" onclick="showReportTab('quick')">A first look</button>
     <button class="rtab" id="rtab-full" onclick="showReportTab('full')">In full</button>
-    <button class="rtab" id="rtab-counselor" onclick="showReportTab('counselor')">Counselor view</button>
+    <button class="rtab" id="rtab-schools" onclick="showReportTab('schools')">Where you fit</button>
+  <button class="rtab" id="rtab-counselor" onclick="showReportTab('counselor')">Counselor view</button>
   </div>
 
   <!-- ── QUICK READ ────────────────────────────────── -->
@@ -681,6 +701,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
           <div class="geo-text" id="geo-text-quick"></div>
         </div>
       </div>
+    </div>
+
+    <!-- School previews -->
+    <div class="report-section" id="quick-schools-section" style="display:none">
+      <div class="section-eyebrow">Schools that fit your Lifescape</div>
+      <div id="quick-schools-list"></div>
+      <div style="font-size:12px;color:var(--ink4);font-style:italic;margin-top:.75rem">Full matches in the "Where you fit" tab.</div>
     </div>
 
     <!-- Invitation -->
@@ -736,6 +763,20 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
   </div>
 
+  <!-- ── WHERE YOU FIT ───────────────────────────────── -->
+  <div class="rpanel" id="rpanel-schools">
+    <div class="report-section">
+      <div class="section-eyebrow">Schools matched to your Lifescape</div>
+      <div class="portrait-text" style="margin-bottom:1.5rem" id="schools-intro"></div>
+      <div id="schools-list">
+        <div class="industry-block">
+          <div class="industry-name">Finding your schools...</div>
+          <div class="industry-why">Your college matches are generating in the background.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ── COUNSELOR VIEW ─────────────────────────────── -->
   <div class="rpanel" id="rpanel-counselor">
 
@@ -763,6 +804,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div style="margin-bottom:2rem">
       <div class="section-eyebrow">Counselor action prompts</div>
       <div id="counselor-prompts"></div>
+    </div>
+
+    <div style="margin-bottom:2rem">
+      <div class="section-eyebrow">School recommendations</div>
+      <div id="counselor-schools"><div style="font-size:13px;color:var(--ink4);font-style:italic">Generating...</div></div>
     </div>
 
     <div>
@@ -1519,6 +1565,154 @@ function validateOrientAndGoTo(n) {
   goTo(n);
 }
 
+// ── CALL D — SCHOOL RECOMMENDATIONS ─────────────────
+function buildCallDPrompt(ctx, matchedSchools, schoolContentBlock) {
+  const prefSummary = [
+    ctx.college_prefs.conference && ctx.college_prefs.conference !== 'no_sports'
+      ? ctx.college_prefs.conference.replace('_',' ').toUpperCase()
+      : null,
+    ctx.college_prefs.campus_scale && ctx.college_prefs.campus_scale !== 'no_preference'
+      ? ctx.college_prefs.campus_scale.replace('_',' ')
+      : null,
+    ctx.college_prefs.regions && ctx.college_prefs.regions.length
+      ? ctx.college_prefs.regions.join(', ')
+      : null,
+    ctx.college_prefs.social_scene && ctx.college_prefs.social_scene !== 'no_preference'
+      ? ctx.college_prefs.social_scene.replace('_',' ')
+      : null
+  ].filter(Boolean).join(' · ');
+
+  return `You are the intelligence behind Lifescape, writing personalized college recommendations.
+
+VOICE INSTRUCTION:
+${ctx.voiceInstruction}
+
+GRADE CONTEXT:
+${ctx.gradeContext}
+
+STUDENT PROFILE:
+Name: ${ctx.name} | Grade: ${ctx.grade}
+Activity interests: ${ctx.activityTiles.join(', ')}
+EQ identity: ${ctx.eqTiles.join(', ')}
+RIASEC: ${ctx.topRIASEC}
+College preferences: ${prefSummary || 'Open'}
+Combination unlocks fired: ${ctx.comboSummary || 'none'}
+
+MATCHED SCHOOLS (ranked by fit):
+${matchedSchools.join(', ')}
+
+SCHOOL INTELLIGENCE:
+${schoolContentBlock}
+
+YOUR JOB:
+Write personalized college recommendations for the top 5-7 schools listed above.
+For each school write exactly this format:
+
+SCHOOL: [exact school name]
+MATCH: [one sentence — the single most specific reason this school fits THIS student's Lifescape profile. Reference something real from their tiles, combo unlocks, or preferences. Not generic program quality — a specific connection.]
+WHY: [2-3 sentences expanding on the fit. Use the school intelligence provided. Connect their industry pipeline or hidden pathway to something specific in the student's profile. End with one sentence that opens a door — a program, an opportunity, a question worth asking.]
+
+Write all ${Math.min(matchedSchools.length, 7)} schools in this format with no other text.
+
+CRITICAL RULES:
+- Never say "you should attend" or "this is the right school for you"
+- Never reference GPA, test scores, or admissions difficulty
+- Never use the word "prestigious" or "elite"
+- Every MATCH sentence must reference something specific from this student's actual profile
+- The WHY must use content from the school intelligence provided — not general knowledge
+- ${ctx.voice === 'parent' ? `Write in third person about ${ctx.name}` : `Write in second person to ${ctx.name}`}`;
+}
+
+function parseCallD(rawText) {
+  try {
+    const blocks = rawText.split(/
+(?=SCHOOL:)/g).filter(Boolean);
+    return blocks.map(block => {
+      const nameMatch = block.match(/^SCHOOL:\s*(.+)/m);
+      const matchMatch = block.match(/MATCH:\s*([\s\S]*?)(?=WHY:|$)/);
+      const whyMatch = block.match(/WHY:\s*([\s\S]*?)(?=
+
+SCHOOL:|$)/);
+      return {
+        name: nameMatch ? nameMatch[1].trim() : '',
+        match: matchMatch ? matchMatch[1].trim() : '',
+        why: whyMatch ? whyMatch[1].trim() : ''
+      };
+    }).filter(s => s.name && s.match);
+  } catch(e) { return []; }
+}
+
+function renderSchoolRecommendations(profile, callAData, callDData) {
+  if(!callDData || callDData.length === 0) return;
+
+  // Render Quick Read preview (top 3)
+  const quickList = document.getElementById('quick-schools-list');
+  const quickSection = document.getElementById('quick-schools-section');
+  if(quickList && callDData.length > 0) {
+    quickList.innerHTML = callDData.slice(0,3).map((s,i) => `
+      <div class="school-preview">
+        <div class="school-preview-num">${i+1}</div>
+        <div class="school-preview-content">
+          <div class="school-preview-name">${s.name}</div>
+          <div class="school-preview-why">${s.match}</div>
+        </div>
+      </div>`).join('');
+    quickSection.style.display = 'block';
+  }
+
+  // Render full Where You Fit tab
+  const schoolsList = document.getElementById('schools-list');
+  const schoolsIntro = document.getElementById('schools-intro');
+  if(!schoolsList) return;
+
+  const prefLabel = [
+    profile.college_prefs.conference !== 'no_sports' ? profile.college_prefs.conference.replace(/_/g,' ').toUpperCase() : null,
+    profile.college_prefs.campus_scale !== 'no_preference' ? profile.college_prefs.campus_scale.replace(/_/g,' ') : null
+  ].filter(Boolean).join(', ');
+
+  if(schoolsIntro) {
+    schoolsIntro.textContent = `${callDData.length} schools matched to ${profile.name}'s Lifescape${prefLabel ? ' — filtered for ' + prefLabel : ''}.`;
+  }
+
+  // Get conference badge label
+  const confLabels = {
+    sec:'SEC', big_ten:'Big Ten', acc:'ACC', big_12:'Big 12',
+    pac:'Pac-12', ivy:'Ivy / Ivy-equivalent', div1:'Division I', no_sports:''
+  };
+
+  schoolsList.innerHTML = callDData.map((s, i) => {
+    const schoolData = typeof UNIVERSITY_CONTENT !== 'undefined'
+      ? UNIVERSITY_CONTENT[s.name] : null;
+    const confLabel = confLabels[profile.college_prefs.conference] || '';
+    const scaleLabel = profile.college_prefs.campus_scale !== 'no_preference'
+      ? profile.college_prefs.campus_scale.replace(/_/g,' ') : '';
+
+    return `<div class="school-card">
+      <div class="school-card-head">
+        <div>
+          <div class="school-name">${s.name}</div>
+          <div class="school-location">${schoolData ? schoolData.location : ''}</div>
+        </div>
+        <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--gl)">${i+1}</div>
+      </div>
+      <div class="school-badges">
+        ${confLabel ? `<span class="school-badge">${confLabel}</span>` : ''}
+        ${scaleLabel ? `<span class="school-badge">${scaleLabel}</span>` : ''}
+        ${schoolData ? `<span class="school-badge">${schoolData.region}</span>` : ''}
+      </div>
+      <div class="school-why"><strong style="font-weight:500;color:var(--ink);display:block;margin-bottom:6px">${s.match}</strong>${s.why}</div>
+    </div>`;
+  }).join('');
+
+  // Also populate counselor view
+  const counselorSchools = document.getElementById('counselor-schools');
+  if(counselorSchools) {
+    counselorSchools.innerHTML = callDData.map((s,i) =>
+      `<div class="action-prompt"><div class="action-text"><strong>${i+1}. ${s.name}</strong> — ${s.match}</div></div>`
+    ).join('');
+  }
+}
+
 // ── SUBMIT ─────────────────────────────────────────
 async function submitLifescape() {
   if(LS_STATE.submitted) return;
@@ -1574,6 +1768,48 @@ async function submitLifescape() {
     renderFullReport(profile, callAData, callBData, callCData);
     renderCounselorView(profile, callAData, callBData, callCData);
 
+    // ── CALL D — School recommendations ──────────────
+    // Only fire if we have matched schools and university content
+    if(typeof matchUniversities !== 'undefined' && typeof UNIVERSITY_CONTENT !== 'undefined') {
+      try {
+        // Get ranked school list from college prefs engine
+        const matchedSchools = matchUniversities(
+          profile.college_prefs,
+          profile.riasec,
+          profile.naicsSectors,
+          profile.comboUnlocks
+        ).slice(0, 12); // Top 12 candidates for Claude to work with
+
+        // Get content for matched schools
+        const schoolContent = typeof getSchoolContent !== 'undefined'
+          ? getSchoolContent(matchedSchools)
+          : [];
+
+        if(schoolContent.length >= 3) {
+          const schoolContentBlock = typeof formatSchoolsForPrompt !== 'undefined'
+            ? formatSchoolsForPrompt(schoolContent.slice(0, 10))
+            : schoolContent.map(s => `${s.name}: ${s.hidden_pathway}`).join('\n\n');
+
+          // Build callD context (extends existing ctx)
+          const ctxD = {
+            ...ctx,
+            college_prefs: profile.college_prefs
+          };
+
+          const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0,7), schoolContentBlock);
+          const callDText = await fireCall(callDPrompt, 1400);
+          const callDData = parseCallD(callDText);
+
+          if(callDData.length > 0) {
+            renderSchoolRecommendations(profile, callAData, callDData);
+          }
+        }
+      } catch(callDErr) {
+        console.warn('callD failed gracefully:', callDErr.message);
+        // School tab shows graceful fallback — already set to "generating"
+      }
+    }
+
   } catch(err) {
     console.error('Lifescape error:', err);
     stopLoadingMessages();
@@ -1588,9 +1824,11 @@ async function submitLifescape() {
 
 // ── REPORT TABS ────────────────────────────────────
 function showReportTab(tab) {
-  ['quick','full','counselor'].forEach(t=>{
-    document.getElementById('rtab-'+t).classList.toggle('active',t===tab);
-    document.getElementById('rpanel-'+t).classList.toggle('active',t===tab);
+  ['quick','full','schools','counselor'].forEach(t=>{
+    const tabEl = document.getElementById('rtab-'+t);
+    const panelEl = document.getElementById('rpanel-'+t);
+    if(tabEl) tabEl.classList.toggle('active',t===tab);
+    if(panelEl) panelEl.classList.toggle('active',t===tab);
   });
   window.scrollTo(0,0);
 }
