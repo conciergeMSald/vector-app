@@ -1,0 +1,434 @@
+/**
+ * VECTOR Lifescape — College Preference Mapping
+ * Version: 2.0 — June 16, 2026
+ * Coverage: All 127 schools across V1 + V2 + V3 databases
+ *
+ * Maps student college preferences (conference, region, scale, social scene)
+ * to the university database pool. RIASEC + NAICS ranking fires within
+ * the filtered pool to produce final recommendations.
+ */
+
+// ─────────────────────────────────────────────────────────────
+// CONFERENCE → SCHOOL POOL MAP — 127 schools fully covered
+// ─────────────────────────────────────────────────────────────
+
+const CONFERENCE_POOLS = {
+
+  sec: [
+    "University of Georgia","University of Florida","University of Alabama",
+    "Auburn University","Louisiana State University","University of Tennessee",
+    "University of Arkansas","University of South Carolina","University of Kentucky",
+    "University of Louisville","Vanderbilt University","University of Mississippi",
+    "Mississippi State University","University of Oklahoma","Florida State University",
+    "Virginia Tech","Baylor University","North Carolina State University",
+    "University of Central Florida","University of South Florida",
+    "Florida Atlantic University","Stetson University"
+  ],
+
+  big_ten: [
+    "University of Michigan","Michigan State University","Indiana University",
+    "Ohio State University","Penn State University","University of Iowa",
+    "Iowa State University","University of Nebraska-Lincoln","University of Minnesota",
+    "Northwestern University","Purdue University","Rutgers University",
+    "University of Maryland College Park","University of Connecticut"
+  ],
+
+  acc: [
+    "Duke University","Wake Forest University","University of Virginia",
+    "Clemson University","University of Miami","Georgia Institute of Technology",
+    "North Carolina State University","Virginia Tech","Boston College",
+    "University of Pittsburgh","Syracuse University","Elon University",
+    "College of William and Mary"
+  ],
+
+  big_12: [
+    "University of Oklahoma","University of Kansas","University of Missouri",
+    "University of Arizona","Arizona State University","University of Colorado Boulder",
+    "Colorado State University","Brigham Young University","University of Utah",
+    "Baylor University","University of Central Florida"
+  ],
+
+  pac: [
+    "University of Oregon","Oregon State University","University of Washington",
+    "University of Colorado Boulder","University of Utah","University of Arizona",
+    "Arizona State University","Stanford University","UC San Diego",
+    "University of California Irvine","University of California Davis",
+    "University of California Santa Cruz",
+    "California Polytechnic State University San Luis Obispo",
+    "Pepperdine University","Santa Clara University","Gonzaga University",
+    "Boise State University","Colorado State University","University of Denver",
+    "University of San Diego","University of San Francisco",
+    "Saint Mary's College of California","California Institute of Technology",
+    "California State University Chico","California State University Fresno",
+    "California State University Fullerton","California State University Long Beach",
+    "California State University Los Angeles","California State University Northridge",
+    "UC Riverside"
+  ],
+
+  ivy: [
+    // True Ivies
+    "Harvard University","Yale University","Princeton University","Columbia University",
+    "University of Pennsylvania","Brown University","Cornell University","Dartmouth College",
+    // Ivy-equivalent: academic prestige first
+    "Massachusetts Institute of Technology","Stanford University","University of Chicago",
+    "Northwestern University","Duke University","Vanderbilt University",
+    "Georgetown University","University of Notre Dame","Emory University",
+    "Tulane University","Johns Hopkins University","Carnegie Mellon University",
+    "New York University","Boston College","University of Pittsburgh",
+    "Northeastern University","Case Western Reserve University",
+    "George Washington University","American University",
+    "United States Military Academy","College of William and Mary",
+    // Elite liberal arts
+    "Williams College","Amherst College","Bowdoin College","Middlebury College",
+    "Pomona College","Claremont McKenna College","Harvey Mudd College",
+    "Colorado College","Deep Springs College","University of the South",
+    // Elite specialty / technical
+    "Babson College","Webb Institute","Rose-Hulman Institute of Technology",
+    "Stevens Institute of Technology","Colorado School of Mines",
+    "Worcester Polytechnic Institute","Kettering University",
+    // Strong prestige schools
+    "Wake Forest University","University of Virginia","Villanova University",
+    "Boston University","Fordham University"
+  ],
+
+  div1: [
+    "University of Michigan","Ohio State University","University of Georgia",
+    "University of Florida","Clemson University","Auburn University",
+    "Louisiana State University","University of Tennessee","University of Oklahoma",
+    "University of Kansas","University of Oregon","University of Washington",
+    "Arizona State University","University of Arizona","Penn State University",
+    "Indiana University","Michigan State University","University of Iowa",
+    "University of Nebraska-Lincoln","University of Arkansas",
+    "University of South Carolina","University of Kentucky","University of Louisville",
+    "University of Utah","Boise State University","Oregon State University",
+    "University of Minnesota","University of Missouri","University of Colorado Boulder",
+    "Colorado State University","Butler University","Gonzaga University",
+    "Creighton University","Drake University","University of Alabama",
+    "Florida State University","North Carolina State University","Virginia Tech",
+    "Mississippi State University","University of Mississippi",
+    "University of South Florida","University of Central Florida",
+    "Florida Atlantic University","Baylor University","Rutgers University",
+    "Purdue University","Syracuse University","University of Connecticut",
+    "University of Maryland College Park","Brigham Young University",
+    "Iowa State University","University of Notre Dame","University of Pittsburgh",
+    "Boston College","Villanova University","Temple University","Drexel University",
+    "Northeastern University","Stetson University","Boston University",
+    "Fordham University","UC Riverside","California State University Fullerton",
+    "California State University Northridge","California State University Long Beach"
+  ],
+
+  no_sports: ["__ALL__"]
+};
+
+// ─────────────────────────────────────────────────────────────
+// REGION → SCHOOL POOL MAP — built from database region fields
+// ─────────────────────────────────────────────────────────────
+
+const REGION_POOLS = {
+
+  southeast: [
+    // Database region: Southeast + SEC New Members
+    "Vanderbilt University","University of Georgia","University of Florida",
+    "Auburn University","Louisiana State University","University of South Carolina",
+    "Clemson University","Wake Forest University","University of Miami",
+    "Duke University","University of Tennessee","University of Arkansas",
+    "University of Kentucky","University of Louisville","University of Virginia",
+    "Elon University","Georgia Institute of Technology","University of the South",
+    "University of Mississippi","Mississippi State University","University of Alabama",
+    "Florida State University","University of South Florida","University of Central Florida",
+    "Florida Atlantic University","Stetson University","Virginia Tech",
+    "North Carolina State University","Emory University","Tulane University",
+    "Baylor University","College of William and Mary","University of Oklahoma"
+  ],
+
+  southwest: [
+    "University of Arizona","Arizona State University","University of Oklahoma",
+    "University of Kansas","University of Arkansas","University of Colorado Boulder",
+    "Colorado State University","University of Denver","Baylor University",
+    "University of Utah","Brigham Young University"
+  ],
+
+  west_coast: [
+    // Database regions: West Coast + Pacific Northwest + Mountain West
+    "Stanford University","UC San Diego","University of California Irvine",
+    "University of California Davis","University of California Santa Cruz",
+    "California Polytechnic State University San Luis Obispo",
+    "California State University Long Beach","California State University Fullerton",
+    "California State University Northridge","California State University Los Angeles",
+    "California State University Chico","California State University Fresno",
+    "Claremont McKenna College","Pomona College","Harvey Mudd College",
+    "Pepperdine University","Santa Clara University","University of San Diego",
+    "Saint Mary's College of California","UC Riverside","University of San Francisco",
+    "California Institute of Technology","Colorado School of Mines",
+    "University of Oregon","Oregon State University",
+    "University of Washington","Gonzaga University",
+    "University of Utah","Brigham Young University",
+    "University of Colorado Boulder","Colorado State University",
+    "University of Denver","Boise State University","Colorado College",
+    "Deep Springs College"
+  ],
+
+  northeast: [
+    // Database regions: Northeast + New England + Mid-Atlantic
+    "Harvard University","Yale University","Princeton University",
+    "Columbia University","University of Pennsylvania","Brown University",
+    "Cornell University","Dartmouth College",
+    "Massachusetts Institute of Technology","Carnegie Mellon University",
+    "Boston University","Babson College","Williams College","Amherst College",
+    "Bowdoin College","Middlebury College","Stevens Institute of Technology",
+    "Worcester Polytechnic Institute","Georgetown University","University of Virginia",
+    "Villanova University","Fordham University","Drexel University","Temple University",
+    "Penn State University","Boston College","University of Pittsburgh",
+    "Syracuse University","New York University","United States Military Academy",
+    "Rutgers University","George Washington University","Webb Institute",
+    "American University","University of Connecticut","Northeastern University",
+    "Case Western Reserve University","University of Maryland College Park",
+    "Johns Hopkins University","Kettering University"
+  ],
+
+  midwest: [
+    "University of Michigan","Michigan State University","Indiana University",
+    "Ohio State University","University of Notre Dame","Northwestern University",
+    "University of Chicago","University of Iowa","Iowa State University","Drake University",
+    "University of Nebraska-Lincoln","Creighton University","University of Minnesota",
+    "University of Kansas","University of Missouri","Butler University",
+    "Rose-Hulman Institute of Technology","Purdue University",
+    "Case Western Reserve University"
+  ],
+
+  south_central: [
+    "Vanderbilt University","University of Tennessee","University of Kentucky",
+    "University of Louisville","University of the South","University of Arkansas",
+    "University of Oklahoma","University of Kansas","University of Missouri",
+    "Duke University","Wake Forest University","North Carolina State University",
+    "Elon University","College of William and Mary","Tulane University",
+    "University of Mississippi","Mississippi State University","Baylor University",
+    "University of Alabama","Virginia Tech"
+  ]
+
+};
+
+// ─────────────────────────────────────────────────────────────
+// CAMPUS SCALE FILTER
+// ─────────────────────────────────────────────────────────────
+
+const SCALE_MAP = {
+  big_university:    { min: 20000, max: 999999, label: "20,000+ students" },
+  medium_university: { min: 5000,  max: 25000,  label: "5,000-25,000 students" },
+  small_campus:      { min: 0,     max: 6000,   label: "Under 6,000 students" },
+  no_preference:     { min: 0,     max: 999999, label: "Any size" }
+};
+
+const SCHOOL_ENROLLMENT = {
+  "Vanderbilt University":7000,"University of Michigan":47000,"Indiana University":45000,
+  "University of Georgia":40000,"University of Florida":55000,"University of Oklahoma":28000,
+  "Louisiana State University":37000,"Auburn University":32000,
+  "University of South Carolina":35000,"Clemson University":27000,
+  "Wake Forest University":5500,"University of Miami":19000,
+  "University of Arizona":48000,"Arizona State University":83000,
+  "University of Virginia":25000,"Babson College":2400,"Boston University":34000,
+  "Dartmouth College":4500,"University of Utah":34000,"Georgetown University":20000,
+  "Duke University":17000,"University of Oregon":22000,"Stanford University":17000,
+  "Williams College":2200,"Amherst College":1900,"Bowdoin College":1900,
+  "Middlebury College":2700,"Pomona College":1700,"University of Chicago":7000,
+  "Penn State University":85000,"Stevens Institute of Technology":4000,
+  "UC San Diego":43000,"Massachusetts Institute of Technology":11500,
+  "Georgia Institute of Technology":44000,"Rose-Hulman Institute of Technology":2200,
+  "California Institute of Technology":2200,"Carnegie Mellon University":15000,
+  "Colorado School of Mines":7000,"Harvey Mudd College":900,
+  "Worcester Polytechnic Institute":6500,"University of Washington":47000,
+  "University of Pennsylvania":10000,"Princeton University":5500,
+  "Brown University":10000,"Harvard University":23000,"Yale University":14000,
+  "Cornell University":25000,"Columbia University":35000,"Gonzaga University":9000,
+  "Northwestern University":22000,"University of Denver":12000,"Elon University":7000,
+  "Fordham University":16000,"University of Kansas":27000,"University of Missouri":30000,
+  "University of Arkansas":29000,"University of Tennessee":35000,
+  "University of Colorado Boulder":37000,"Colorado State University":34000,
+  "University of California Davis":40000,"Santa Clara University":9000,
+  "Saint Mary's College of California":4000,"University of Nebraska-Lincoln":25000,
+  "Michigan State University":50000,"Creighton University":9000,
+  "University of Iowa":31000,"Drake University":5000,"Iowa State University":30000,
+  "Ohio State University":61000,"University of Notre Dame":12500,
+  "Villanova University":11000,"Temple University":37000,"Drexel University":24000,
+  "UC Riverside":26000,"California State University Long Beach":38000,
+  "California State University Fullerton":41000,"University of California Irvine":36000,
+  "California Polytechnic State University San Luis Obispo":22000,
+  "California State University Chico":18000,"California State University Fresno":25000,
+  "University of California Santa Cruz":19000,
+  "California State University Northridge":38000,
+  "California State University Los Angeles":27000,"Claremont McKenna College":1400,
+  "Pepperdine University":9000,"University of San Diego":9000,
+  "Oregon State University":33000,"Boise State University":26000,
+  "Brigham Young University":34000,"University of Kentucky":30000,
+  "University of Louisville":23000,"University of Minnesota":54000,
+  "Butler University":5000,"University of the South":1800,
+  "University of Mississippi":22000,"Mississippi State University":21000,
+  "University of Alabama":38000,"Florida State University":45000,
+  "University of South Florida":50000,"University of Central Florida":70000,
+  "Florida Atlantic University":30000,"Stetson University":4000,
+  "Virginia Tech":35000,"Boston College":14000,"University of Pittsburgh":29000,
+  "North Carolina State University":37000,"University of Maryland College Park":41000,
+  "Johns Hopkins University":6000,"Emory University":7000,"Tulane University":14000,
+  "Purdue University":44000,"Syracuse University":22000,"New York University":51000,
+  "United States Military Academy":4500,"Rutgers University":50000,
+  "George Washington University":17000,"Webb Institute":100,
+  "Colorado College":2200,"Deep Springs College":30,"Kettering University":2000,
+  "American University":8500,"University of Connecticut":32000,
+  "Northeastern University":20000,"Case Western Reserve University":5500,
+  "University of San Francisco":10000,"Baylor University":20000,
+  "College of William and Mary":6500
+};
+
+// ─────────────────────────────────────────────────────────────
+// SOCIAL SCENE AFFINITY
+// ─────────────────────────────────────────────────────────────
+
+const SOCIAL_SCENE_AFFINITY = {
+
+  greek_heavy: [
+    "University of Michigan","Indiana University","University of Georgia",
+    "University of Florida","Auburn University","Louisiana State University",
+    "University of Tennessee","University of Arkansas","University of South Carolina",
+    "Clemson University","University of Oklahoma","University of Kansas",
+    "Penn State University","Ohio State University","University of Virginia",
+    "Vanderbilt University","Wake Forest University","University of Missouri",
+    "University of Iowa","University of Nebraska-Lincoln","University of Alabama",
+    "University of Mississippi","Mississippi State University","Florida State University",
+    "North Carolina State University","Virginia Tech","Baylor University",
+    "University of Kentucky","University of Maryland College Park","Rutgers University",
+    "University of Minnesota","University of Pittsburgh","Syracuse University",
+    "Tulane University","University of Colorado Boulder","University of Arizona",
+    "Arizona State University","Michigan State University","Purdue University",
+    "Iowa State University"
+  ],
+
+  balanced: [
+    "Duke University","University of Miami","Northwestern University",
+    "Georgetown University","University of Notre Dame","Boston University",
+    "Elon University","University of Denver","Villanova University",
+    "Santa Clara University","Gonzaga University","University of Oregon",
+    "University of Washington","University of Utah","Pepperdine University",
+    "Emory University","New York University","Northeastern University",
+    "Boston College","George Washington University","American University",
+    "University of San Diego","University of San Francisco",
+    "University of Connecticut","Fordham University","Cornell University",
+    "Brown University","Drexel University","Colorado State University",
+    "University of Colorado Boulder","College of William and Mary",
+    "Johns Hopkins University","Brigham Young University","Creighton University",
+    "Butler University","Drake University"
+  ],
+
+  focused: [
+    "Massachusetts Institute of Technology","California Institute of Technology",
+    "Harvey Mudd College","Carnegie Mellon University","University of Chicago",
+    "Rose-Hulman Institute of Technology","Stevens Institute of Technology",
+    "Worcester Polytechnic Institute","Colorado School of Mines",
+    "Georgia Institute of Technology","Stanford University","Williams College",
+    "Amherst College","Bowdoin College","Middlebury College",
+    "Claremont McKenna College","Pomona College","Babson College",
+    "Johns Hopkins University","Webb Institute","Deep Springs College",
+    "Kettering University","Colorado College",
+    "California Polytechnic State University San Luis Obispo",
+    "United States Military Academy","UC San Diego","Case Western Reserve University",
+    "University of the South"
+  ]
+
+};
+
+// ─────────────────────────────────────────────────────────────
+// CORE MATCHING FUNCTION
+// ─────────────────────────────────────────────────────────────
+
+function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks) {
+  const { campus_scale, regions, conference, social_scene } = collegePrefs;
+
+  // Step 1 — Conference pool
+  let conferencePool = null;
+  if (conference && conference !== 'no_sports') {
+    conferencePool = CONFERENCE_POOLS[conference] || null;
+  }
+
+  // Step 2 — Region pool
+  let regionPool = null;
+  if (regions && regions.length > 0 && !regions.includes('no_preference')) {
+    regionPool = [];
+    regions.forEach(r => {
+      (REGION_POOLS[r] || []).forEach(school => {
+        if (!regionPool.includes(school)) regionPool.push(school);
+      });
+    });
+  }
+
+  // Step 3 — All school names
+  const allSchools = Object.keys(SCHOOL_ENROLLMENT);
+
+  // Step 4 — Intersection filter
+  let eligible = allSchools.filter(school => {
+    const inConf = conferencePool === null || conferencePool.includes(school);
+    const inRegion = regionPool === null || regionPool.includes(school);
+    return inConf && inRegion;
+  });
+
+  // Step 5 — Scale filter
+  if (campus_scale && campus_scale !== 'no_preference') {
+    const scale = SCALE_MAP[campus_scale];
+    eligible = eligible.filter(school => {
+      const enroll = SCHOOL_ENROLLMENT[school] || 10000;
+      return enroll >= scale.min && enroll <= scale.max;
+    });
+  }
+
+  // Step 6 — Score and sort
+  const scored = eligible.map(school => {
+    let score = 5; // base
+    if (social_scene && social_scene !== 'no_preference') {
+      const list = SOCIAL_SCENE_AFFINITY[social_scene] || [];
+      if (list.includes(school)) score += 10;
+    }
+    return { school, score };
+  });
+
+  return scored.sort((a, b) => b.score - a.score).map(s => s.school);
+}
+
+// ─────────────────────────────────────────────────────────────
+// PREFERENCE SUMMARY
+// ─────────────────────────────────────────────────────────────
+
+function summarizePreferences(collegePrefs) {
+  const { campus_scale, regions, conference, social_scene } = collegePrefs;
+  const confLabels = {
+    sec:'SEC', big_ten:'Big Ten', acc:'ACC', big_12:'Big 12',
+    pac:'Pac-12 / West Coast', ivy:'Ivy / Ivy-equivalent',
+    div1:'Division I', no_sports:'No sports preference'
+  };
+  const scaleLabels = {
+    big_university:'large university (20,000+)',
+    medium_university:'medium university (5,000-25,000)',
+    small_campus:'small campus (under 6,000)',
+    no_preference:'any size'
+  };
+  const regionLabels = {
+    southeast:'Southeast', southwest:'Southwest', west_coast:'West Coast',
+    northeast:'Northeast', midwest:'Midwest', south_central:'South / South-Central'
+  };
+  const socialLabels = {
+    greek_heavy:'Greek life and social culture important',
+    balanced:'Social but academics first',
+    focused:'Academically focused',
+    no_preference:'No social scene preference'
+  };
+  const parts = [];
+  if (conference && confLabels[conference]) parts.push(confLabels[conference]);
+  if (campus_scale && scaleLabels[campus_scale]) parts.push(scaleLabels[campus_scale]);
+  if (regions && regions.length && !regions.includes('no_preference')) {
+    parts.push(regions.map(r => regionLabels[r]).filter(Boolean).join(' or '));
+  }
+  if (social_scene && socialLabels[social_scene]) parts.push(socialLabels[social_scene]);
+  return parts.join(' · ');
+}
+
+if (typeof module !== 'undefined') module.exports = {
+  CONFERENCE_POOLS, REGION_POOLS, SCALE_MAP, SCHOOL_ENROLLMENT,
+  SOCIAL_SCENE_AFFINITY, matchUniversities, summarizePreferences
+};
