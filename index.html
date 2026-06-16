@@ -3379,6 +3379,46 @@ function findLocalCCs(zip, maxMiles) {
   return nearby;
 }
 
+var STATE_CC_MAP = {
+  'Alabama': 'Jefferson State CC',
+  'Arizona': 'Mesa Community College',
+  'California': 'Santa Monica College',
+  'Colorado': 'Community College of Denver',
+  'Connecticut': 'Manchester Community College',
+  'Florida': 'Valencia College',
+  'Georgia': 'Georgia State Perimeter College',
+  'Hawaii': 'Kapiolani Community College',
+  'Idaho': 'College of Western Idaho',
+  'Illinois': 'College of DuPage',
+  'Indiana': 'Ivy Tech Community College',
+  'Iowa': 'Des Moines Area CC',
+  'Kansas': 'Johnson County CC',
+  'Kentucky': 'Jefferson CC and TC',
+  'Louisiana': 'Delgado Community College',
+  'Maryland': 'Montgomery College',
+  'Massachusetts': 'Bunker Hill CC',
+  'Michigan': 'Washtenaw Community College',
+  'Minnesota': 'Minneapolis CC and TC',
+  'Missouri': 'St. Louis Community College',
+  'Nebraska': 'Metropolitan CC Omaha',
+  'Nevada': 'College of Southern Nevada',
+  'New Jersey': 'Bergen Community College',
+  'New Mexico': 'Central New Mexico CC',
+  'New York': 'LaGuardia Community College',
+  'North Carolina': 'Wake Technical CC',
+  'Ohio': 'Columbus State CC',
+  'Oklahoma': 'Tulsa Community College',
+  'Oregon': 'Portland Community College',
+  'Pennsylvania': 'Community College of Philadelphia',
+  'South Carolina': 'Trident Technical College',
+  'Tennessee': 'Nashville State CC',
+  'Texas': 'Austin Community College',
+  'Utah': 'Salt Lake Community College',
+  'Virginia': 'Northern Virginia CC',
+  'Washington': 'Bellevue College',
+  'Wisconsin': 'Milwaukee Area Technical',
+};
+
 function getCCsForState(state) {
   if (!state) return 'a local community college in their area';
   if (STATE_CC_MAP[state]) return STATE_CC_MAP[state];
