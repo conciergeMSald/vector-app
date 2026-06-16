@@ -8,6 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <script src="crosswalk-db.js"></script>
+<script src="geo_industry_db_LA_pass1.js"></script>
+<script src="geo_industry_db_BayArea_pass2.js"></script>
+<script src="geo_industry_db_Chicago_pass3.js"></script>
+<script src="geo_industry_db_NY_Boston_DC_pass4.js"></script>
 <script src="lifescape_curation_map_v1.js"></script>
 <script src="lifescape_college_prefs_v2.js"></script>
 
@@ -365,8 +369,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="screen" id="screen-3">
 <div class="container">
   <div class="ls-eyebrow">Step 2 of 4</div>
-  <div class="q" id="s3-q">What do you love doing?</div>
-  <div class="q-sub">Tap everything that sounds like you. There are no wrong answers. More is better.</div>
+  <div class="q" id="s3-q">What sounds interesting?</div>
+  <div class="q-sub">Tap anything that catches your eye — things you love, things you've never tried, things you're just curious about. There are no wrong answers.</div>
 
   <div class="tile-count-bar">
     <div class="tile-count-label">Selected</div>
@@ -626,7 +630,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="report-header">
     <div class="report-eyebrow">Your Lifescape</div>
     <div class="report-name" id="report-name"></div>
-    <div class="report-opening">"This is your Lifescape. It was built from who you are, not who you think you're supposed to be."</div>
+    <div class="report-opening">"This is what we found today, based on what you shared. Your Lifescape is not fixed. It evolves when you do."</div>
   </div>
 
   <!-- Report tabs -->
@@ -823,8 +827,8 @@ function updateS2Voice() {
     : "This is just for your Lifescape. Nothing is permanent. Nothing commits you to anything.";
   document.getElementById('s2-name-label').textContent = p ? "Child's first name" : "First name";
   document.getElementById('s3-q').textContent = p
-    ? "What does your child love doing?"
-    : "What do you love doing?";
+    ? "What sounds interesting to your child?"
+    : "What sounds interesting?";
 }
 
 // ── VALIDATIONS ────────────────────────────────────
@@ -995,31 +999,65 @@ function fireProgressiveReveal() {
 }
 
 // ── ZIP RESOLVER ───────────────────────────────────
-const ZIP_GEO_MAP = {
-  '91302':{neighborhood:'Calabasas / Hidden Hills',industries:['Cosmetic & personal care manufacturing (Chatsworth)','Food science & flavor development','Financial services','Entertainment & media production'],distance:'8 miles to Chatsworth industrial corridor'},
-  '911':{neighborhood:'San Fernando Valley',industries:['Cosmetic & personal care manufacturing','Aerospace components','Medical device manufacturing','Entertainment production'],distance:'nearby'},
-  '910':{neighborhood:'San Fernando Valley',industries:['Entertainment production','Manufacturing & aerospace','Healthcare services'],distance:'nearby'},
-  '913':{neighborhood:'Calabasas / Hidden Hills area',industries:['Financial services','Entertainment & media','Real estate development'],distance:'nearby'},
-  '90':{neighborhood:'Los Angeles metro',industries:['Entertainment & film production','Fashion & apparel manufacturing','Technology & software','Healthcare & biotech'],distance:'throughout the region'},
-  '94':{neighborhood:'San Francisco Bay Area',industries:['Technology & software','Biotech & life sciences','Venture capital','Clean energy'],distance:'throughout the region'},
-  '10':{neighborhood:'New York City metro',industries:['Finance & banking','Media & publishing','Fashion industry','Technology'],distance:'throughout the region'},
-  '60':{neighborhood:'Chicago metro',industries:['Finance & trading','Manufacturing','Healthcare','Architecture'],distance:'throughout the region'},
-  '73':{neighborhood:'Dallas / Fort Worth',industries:['Energy','Technology','Healthcare','Logistics'],distance:'throughout the region'},
-  '77':{neighborhood:'Houston metro',industries:['Energy & oil services','Healthcare','Aerospace'],distance:'throughout the region'},
-  '78':{neighborhood:'Austin / San Antonio',industries:['Technology','Healthcare','Music & entertainment'],distance:'throughout the region'},
-  '33':{neighborhood:'Miami metro',industries:['Healthcare','Finance','Real estate','Hospitality & tourism'],distance:'throughout the region'},
-  '98':{neighborhood:'Seattle metro',industries:['Technology','Aerospace','Healthcare','Retail & e-commerce'],distance:'throughout the region'},
-  '02':{neighborhood:'Boston metro',industries:['Biotech & life sciences','Education & research','Finance','Healthcare'],distance:'throughout the region'},
-  '20':{neighborhood:'Washington DC metro',industries:['Government & policy','Defense','Consulting','Nonprofit & advocacy'],distance:'throughout the region'},
-  'DEFAULT':{neighborhood:'your area',industries:['Healthcare & social services','Education','Technology','Manufacturing','Professional services'],distance:'in your region'}
-};
+// ZIP_GEO_MAP replaced by geo_industry_db_*.js files
 
 function resolveZIP(zip) {
-  if(!zip || zip.length < 5) return ZIP_GEO_MAP['DEFAULT'];
-  if(ZIP_GEO_MAP[zip]) return ZIP_GEO_MAP[zip];
-  if(ZIP_GEO_MAP[zip.slice(0,3)]) return ZIP_GEO_MAP[zip.slice(0,3)];
-  if(ZIP_GEO_MAP[zip.slice(0,2)]) return ZIP_GEO_MAP[zip.slice(0,2)];
-  return ZIP_GEO_MAP['DEFAULT'];
+  if(!zip || zip.length < 5) return _defaultGeo(zip);
+
+  // Check all four geo databases in order
+  const dbs = [
+    typeof GEO_INDUSTRY_DB !== 'undefined' ? GEO_INDUSTRY_DB : null,
+    typeof GEO_INDUSTRY_DB_BAYAREA !== 'undefined' ? GEO_INDUSTRY_DB_BAYAREA : null,
+    typeof GEO_INDUSTRY_DB_CHICAGO !== 'undefined' ? GEO_INDUSTRY_DB_CHICAGO : null,
+    typeof GEO_INDUSTRY_DB_EAST !== 'undefined' ? GEO_INDUSTRY_DB_EAST : null
+  ].filter(Boolean);
+
+  // Exact match
+  for(const db of dbs) {
+    if(db[zip]) return _normalizeGeoEntry(db[zip]);
+  }
+  // 3-digit prefix
+  for(const db of dbs) {
+    const p3 = zip.slice(0,3);
+    const m = Object.values(db).find(e => e.zip && e.zip.startsWith(p3));
+    if(m) return _normalizeGeoEntry(m);
+  }
+  // 2-digit prefix
+  for(const db of dbs) {
+    const p2 = zip.slice(0,2);
+    const m = Object.values(db).find(e => e.zip && e.zip.startsWith(p2));
+    if(m) return _normalizeGeoEntry(m);
+  }
+
+  return _defaultGeo(zip);
+}
+
+function _normalizeGeoEntry(entry) {
+  // Convert new cluster-based format to legacy industries/neighborhood/distance format
+  if(entry.industries) return entry; // already in legacy format
+  const topClusters = (entry.clusters || []).slice(0, 5);
+  return {
+    neighborhood: entry.neighborhood || entry.zip,
+    industries: topClusters.map(c => c.name + (c.anchor_employers && c.anchor_employers[0] ? ' — ' + c.anchor_employers[0] : '')),
+    distance: topClusters[0] ? topClusters[0].distance : 'nearby',
+    clusters: entry.clusters || [],
+    county: entry.county || ''
+  };
+}
+
+function _defaultGeo(zip) {
+  return {
+    neighborhood: 'your area',
+    industries: [
+      'Healthcare & Social Services',
+      'Technology & Software',
+      'Education & Research',
+      'Financial Services',
+      'Professional & Business Services'
+    ],
+    distance: 'in your region',
+    clusters: []
+  };
 }
 
 function handleZIPInput(val) {
@@ -1027,9 +1065,21 @@ function handleZIPInput(val) {
   const revealEl = document.getElementById('zip-reveal');
   if(val.length === 5) {
     const geo = resolveZIP(val);
-    document.getElementById('zip-reveal-content').innerHTML =
-      geo.industries.map(i => `<span style="display:block">${i}</span>`).join('') +
-      `<span style="display:block;font-size:11px;color:var(--gold);margin-top:6px;letter-spacing:1px">${geo.neighborhood} · ${geo.distance}</span>`;
+    const hasRichData = geo.clusters && geo.clusters.length > 0;
+
+    let contentHTML = '';
+    if(hasRichData) {
+      // Rich cluster format — show cluster names + top employer
+      contentHTML = geo.clusters.slice(0, 5).map(c =>
+        `<span style="display:block;margin-bottom:3px"><strong style="color:var(--ink)">${c.name}</strong> <span style="color:var(--ink4);font-size:11px">— ${c.distance}</span></span>`
+      ).join('');
+    } else {
+      // Legacy format
+      contentHTML = geo.industries.map(i => `<span style="display:block;margin-bottom:2px">${i}</span>`).join('');
+    }
+    contentHTML += `<span style="display:block;font-size:11px;color:var(--gold);margin-top:8px;letter-spacing:1px">${geo.neighborhood}${geo.county ? ' · ' + geo.county + ' County' : ''}</span>`;
+
+    document.getElementById('zip-reveal-content').innerHTML = contentHTML;
     revealEl.style.display = 'block';
     clearHint('s4-hint');
   } else {
