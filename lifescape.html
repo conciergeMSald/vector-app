@@ -9,6 +9,7 @@
 
 <script src="crosswalk-db.js"></script>
 <script src="lifescape_curation_map_v1.js"></script>
+<script src="lifescape_college_prefs_v2.js"></script>
 
 <style>
 /* ── TOKENS ─────────────────────────────────────────── */
@@ -218,6 +219,18 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .orient-btn:hover{border-color:var(--gl);color:var(--ink);}
 .orient-btn.sel{border-color:var(--gold);background:var(--gold-pale);color:var(--ink);}
 
+/* ── SCREEN 3.5 COLLEGE PREFS ──────────────────────── */
+.pref-section{margin-bottom:2rem;}
+.pref-q-label{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
+.pref-options{display:flex;flex-wrap:wrap;gap:8px;}
+.pref-btn{padding:9px 16px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:13px;color:var(--ink3);cursor:pointer;transition:all .2s;border-radius:0;text-align:left;}
+.pref-btn:hover{border-color:var(--gl);color:var(--ink);}
+.pref-btn.sel{border-color:var(--gold);background:var(--gold-pale);color:var(--ink);}
+.pref-btn-wide{width:100%;display:block;padding:11px 16px;margin-bottom:6px;}
+.pref-sub{font-size:11px;color:var(--ink4);display:block;margin-top:3px;font-weight:300;}
+.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;}
+@media(max-width:500px){.conf-grid{grid-template-columns:1fr;}}
+
 /* ── PROGRESSIVE REVEAL ─────────────────────────────── */
 .reveal-divider{margin:1.5rem 0 1rem;border-top:0.5px solid var(--rule);padding-top:1rem;}
 .reveal-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
@@ -379,8 +392,145 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </div>
 
   <div class="hint-bar" id="s3-hint"></div>
-  <button class="ls-btn" onclick="validateTilesAndGoTo(4)">Continue</button>
+  <button class="ls-btn" onclick="validateTilesAndGoTo(35)">Continue</button>
   <button class="ls-btn-outline" onclick="goTo(2)">Back</button>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 3.5 — COLLEGE PREFERENCES                  -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-35">
+<div class="container">
+  <div class="ls-eyebrow">Step 3 of 4</div>
+  <div class="q">Tell us about the college experience you want.</div>
+  <div class="q-sub">None of this is binding. It just helps us find schools that actually fit.</div>
+
+  <!-- Q1 — Campus Scale -->
+  <div class="pref-section">
+    <div class="pref-q-label">What kind of campus feels right?</div>
+    <div class="pref-options">
+      <button class="pref-btn" data-pref="campus_scale" data-val="big_university" onclick="selectPref(this,'campus_scale',false)">
+        Big university
+        <span class="pref-sub">20,000+ students — big game days, full experience</span>
+      </button>
+      <button class="pref-btn" data-pref="campus_scale" data-val="medium_university" onclick="selectPref(this,'campus_scale',false)">
+        Medium
+        <span class="pref-sub">Big enough to explore, small enough to matter</span>
+      </button>
+      <button class="pref-btn" data-pref="campus_scale" data-val="small_campus" onclick="selectPref(this,'campus_scale',false)">
+        Small campus
+        <span class="pref-sub">I want to know my professors</span>
+      </button>
+      <button class="pref-btn" data-pref="campus_scale" data-val="no_preference" onclick="selectPref(this,'campus_scale',false)">
+        No preference
+      </button>
+    </div>
+  </div>
+
+  <!-- Q2 — Region -->
+  <div class="pref-section">
+    <div class="pref-q-label">Where in the country?</div>
+    <div class="q-sub" style="margin-top:-.5rem;margin-bottom:1rem">Pick all that apply.</div>
+    <div class="pref-options">
+      <button class="pref-btn" data-pref="regions" data-val="southeast" onclick="selectPref(this,'regions',true)">
+        Southeast
+        <span class="pref-sub">Warm weather, SEC country</span>
+      </button>
+      <button class="pref-btn" data-pref="regions" data-val="southwest" onclick="selectPref(this,'regions',true)">
+        Southwest
+        <span class="pref-sub">Texas, Arizona, warm and dry</span>
+      </button>
+      <button class="pref-btn" data-pref="regions" data-val="west_coast" onclick="selectPref(this,'regions',true)">
+        West Coast
+        <span class="pref-sub">California, Oregon, Washington</span>
+      </button>
+      <button class="pref-btn" data-pref="regions" data-val="northeast" onclick="selectPref(this,'regions',true)">
+        Northeast
+        <span class="pref-sub">New England, Mid-Atlantic</span>
+      </button>
+      <button class="pref-btn" data-pref="regions" data-val="midwest" onclick="selectPref(this,'regions',true)">
+        Midwest
+        <span class="pref-sub">Big Ten territory</span>
+      </button>
+      <button class="pref-btn" data-pref="regions" data-val="south_central" onclick="selectPref(this,'regions',true)">
+        South
+        <span class="pref-sub">Tennessee, Carolinas, Louisiana</span>
+      </button>
+      <button class="pref-btn" data-pref="regions" data-val="no_preference" onclick="selectPref(this,'regions',false)">
+        Open to anywhere
+      </button>
+    </div>
+  </div>
+
+  <!-- Q3 — Conference -->
+  <div class="pref-section">
+    <div class="pref-q-label">Does the college sports scene matter to you?</div>
+    <div class="conf-grid">
+      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="sec" onclick="selectPref(this,'conference',false)">
+        SEC
+        <span class="pref-sub">Alabama, Georgia, LSU, Tennessee, Florida</span>
+      </button>
+      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="big_ten" onclick="selectPref(this,'conference',false)">
+        Big Ten
+        <span class="pref-sub">Michigan, Ohio State, Penn State, Purdue</span>
+      </button>
+      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="acc" onclick="selectPref(this,'conference',false)">
+        ACC
+        <span class="pref-sub">Duke, UNC, Virginia, Clemson, Miami</span>
+      </button>
+      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="big_12" onclick="selectPref(this,'conference',false)">
+        Big 12
+        <span class="pref-sub">Texas, Oklahoma, Kansas, Arizona State</span>
+      </button>
+      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="pac" onclick="selectPref(this,'conference',false)">
+        Pac-12 / West Coast
+        <span class="pref-sub">Oregon, Washington, Stanford, Utah</span>
+      </button>
+      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="ivy" onclick="selectPref(this,'conference',false)">
+        Ivy or equivalent
+        <span class="pref-sub">Academic prestige first</span>
+      </button>
+      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="div1" onclick="selectPref(this,'conference',false)">
+        Any Division I
+        <span class="pref-sub">Big sports, any conference</span>
+      </button>
+      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="no_sports" onclick="selectPref(this,'conference',false)">
+        Not important to me
+        <span class="pref-sub">Show me schools based on fit only</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Q4 — Social Scene -->
+  <div class="pref-section">
+    <div class="pref-q-label">What's your social vibe?</div>
+    <div class="pref-options">
+      <button class="pref-btn" data-pref="social_scene" data-val="greek_heavy" onclick="selectPref(this,'social_scene',false)">
+        Big Greek life and social scene
+      </button>
+      <button class="pref-btn" data-pref="social_scene" data-val="balanced" onclick="selectPref(this,'social_scene',false)">
+        Social but academics come first
+      </button>
+      <button class="pref-btn" data-pref="social_scene" data-val="focused" onclick="selectPref(this,'social_scene',false)">
+        I'm going to work, not party
+      </button>
+      <button class="pref-btn" data-pref="social_scene" data-val="no_preference" onclick="selectPref(this,'social_scene',false)">
+        No strong preference
+      </button>
+    </div>
+  </div>
+
+  <!-- Match preview -->
+  <div id="pref-preview" style="display:none;margin-bottom:1.5rem">
+    <div class="zip-reveal">
+      <div class="zip-reveal-label">Schools in your range</div>
+      <div class="zip-reveal-content" id="pref-preview-content"></div>
+    </div>
+  </div>
+
+  <button class="ls-btn" onclick="goTo(4)">Continue</button>
+  <button class="ls-btn-outline" onclick="goTo(3)">Back</button>
 </div>
 </div>
 
@@ -640,7 +790,7 @@ const LS_STATE = {
 };
 
 // ── SCREEN NAV ─────────────────────────────────────
-const SCREEN_PROGRESS = {1:0,2:20,25:35,3:50,4:75,5:90};
+const SCREEN_PROGRESS = {1:0,2:20,25:35,3:45,35:62,4:78,5:92};
 
 function goTo(n) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -650,6 +800,7 @@ function goTo(n) {
   if(n===3) renderTileGrid();
   if(n===2) updateS2Voice();
   if(n===25) updateOrientVoice();
+  if(n===35) updatePrefVoice();
 }
 
 // ── VOICE FORK ─────────────────────────────────────
@@ -918,6 +1069,12 @@ function assembleProfile() {
     grade: LS_STATE.grade,
     voice: LS_STATE.voice,
     reportFormat: LS_STATE.reportFormat,
+    college_prefs: {
+      campus_scale: COLLEGE_PREFS.campus_scale,
+      regions: [...COLLEGE_PREFS.regions],
+      conference: COLLEGE_PREFS.conference,
+      social_scene: COLLEGE_PREFS.social_scene
+    },
     activityTiles,
     eqTiles,
     allTileIds: selectedIds,
@@ -1149,6 +1306,10 @@ function captureToSheets(profile, callAData) {
     geo_neighborhood: profile.geoNeighborhood,
     has_eq_signal: profile._meta.hasEQSignal?'Y':'N',
     trajectory_sentence: callAData?.trajectory||'',
+    conference_pref: COLLEGE_PREFS.conference,
+    campus_scale_pref: COLLEGE_PREFS.campus_scale,
+    regions_pref: COLLEGE_PREFS.regions.join(' | '),
+    social_scene_pref: COLLEGE_PREFS.social_scene,
     cc_pathway_shown:'N'
   };
   fetch(SHEETS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(()=>{});
@@ -1177,6 +1338,75 @@ function stopLoadingMessages() { clearInterval(_loadMsgTimer); }
 
 function setGenProgress(pct) {
   document.getElementById('gen-progress-fill').style.width = pct+'%';
+}
+
+// ── COLLEGE PREFERENCE STATE ──────────────────────
+const COLLEGE_PREFS = {
+  campus_scale: 'no_preference',
+  regions: [],
+  conference: 'no_sports',
+  social_scene: 'no_preference'
+};
+
+function selectPref(btn, pref, isMulti) {
+  const container = btn.closest('.pref-section').querySelector('.pref-options, .conf-grid');
+
+  if (isMulti) {
+    // Multi-select (regions)
+    const val = btn.dataset.val;
+    if (val === 'no_preference') {
+      // Clear all others, select only no_preference
+      container.querySelectorAll('.pref-btn').forEach(b => b.classList.remove('sel'));
+      btn.classList.add('sel');
+      COLLEGE_PREFS[pref] = [];
+    } else {
+      // Deselect no_preference if it was selected
+      const noPrefs = container.querySelectorAll('[data-val="no_preference"]');
+      noPrefs.forEach(b => b.classList.remove('sel'));
+      COLLEGE_PREFS[pref] = COLLEGE_PREFS[pref].filter(v => v !== 'no_preference');
+
+      btn.classList.toggle('sel');
+      if (COLLEGE_PREFS[pref].includes(val)) {
+        COLLEGE_PREFS[pref] = COLLEGE_PREFS[pref].filter(v => v !== val);
+      } else {
+        COLLEGE_PREFS[pref].push(val);
+      }
+    }
+  } else {
+    // Single-select
+    container.querySelectorAll('.pref-btn').forEach(b => b.classList.remove('sel'));
+    btn.classList.add('sel');
+    COLLEGE_PREFS[pref] = btn.dataset.val;
+  }
+
+  updatePrefPreview();
+}
+
+function updatePrefPreview() {
+  const previewEl = document.getElementById('pref-preview');
+  const contentEl = document.getElementById('pref-preview-content');
+
+  // Only show preview if at least conference or region is set
+  const hasConf = COLLEGE_PREFS.conference && COLLEGE_PREFS.conference !== 'no_sports';
+  const hasRegion = COLLEGE_PREFS.regions && COLLEGE_PREFS.regions.length > 0;
+
+  if (!hasConf && !hasRegion) {
+    previewEl.style.display = 'none';
+    return;
+  }
+
+  // Use matchUniversities if available
+  if (typeof matchUniversities !== 'undefined') {
+    const matches = matchUniversities(COLLEGE_PREFS, [], [], []);
+    const count = matches.length;
+    const sample = matches.slice(0, 5);
+
+    contentEl.innerHTML = `
+      <span style="display:block;font-weight:500;color:var(--ink);margin-bottom:4px">${count} schools match your preferences</span>
+      <span style="display:block;color:var(--ink3);font-size:12px">${sample.join(', ')}${count > 5 ? ` and ${count - 5} more` : ''}</span>
+    `;
+    previewEl.style.display = 'block';
+  }
 }
 
 // ── ORIENTING QUESTIONS STATE ─────────────────────
@@ -1214,6 +1444,14 @@ function toggleOrient(btn, question, value, isMulti) {
     ORIENT_ANSWERS[question] = value;
   }
   clearHint('s25-hint');
+}
+
+function updatePrefVoice() {
+  const p = LS_STATE.voice === 'parent';
+  const qEl = document.querySelector('#screen-35 .q');
+  if(qEl) qEl.textContent = p
+    ? 'Tell us about the college experience your child wants.'
+    : 'Tell us about the college experience you want.';
 }
 
 function validateOrientAndGoTo(n) {
@@ -1457,7 +1695,11 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
     ['EQ tiles selected', profile.eqTiles.length],
     ['Combos fired', profile._meta.combosFireCount],
     ['Geo neighborhood', profile.geoNeighborhood],
-    ['Generated', new Date(profile._meta.timestamp).toLocaleDateString()]
+    ['Generated', new Date(profile._meta.timestamp).toLocaleDateString()],
+    ['Conference pref', profile.college_prefs?.conference || 'not set'],
+    ['Campus scale', profile.college_prefs?.campus_scale || 'not set'],
+    ['Regions', profile.college_prefs?.regions?.join(', ') || 'open'],
+    ['Social scene', profile.college_prefs?.social_scene || 'not set']
   ].map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join('');
 
   // RIASEC bars — computed from crosswalk, never hardcoded
