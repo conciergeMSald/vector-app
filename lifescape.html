@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lifescape — Powered by VECTOR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script src="crosswalk-db.js"></script>
+
+<style>
+/* ── TOKENS ─────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#0a0a0a;--ink2:#2e2e2e;--ink3:#6a6a6a;--ink4:#9a9a9a;
+  --gold:#8B7355;--gl:#C4A882;--gold-pale:#F5EFE6;
+  --rule:rgba(0,0,0,0.1);--bg:#fafaf8;--white:#ffffff;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  /* Tile cluster colors */
+  --make-bg:#EEEDFE;--make-txt:#3C3489;--make-bdr:#AFA9EC;--make-sel:#534AB7;
+  --move-bg:#FAECE7;--move-txt:#712B13;--move-bdr:#F0997B;--move-sel:#993C1D;
+  --think-bg:#E6F1FB;--think-txt:#0C447C;--think-bdr:#85B7EB;--think-sel:#185FA5;
+  --people-bg:#FBEAF0;--people-txt:#72243E;--people-bdr:#ED93B1;--people-sel:#993556;
+  --systems-bg:#EAF3DE;--systems-txt:#27500A;--systems-bdr:#97C459;--systems-sel:#3B6D11;
+  --eq-bg:#FAEEDA;--eq-txt:#633806;--eq-bdr:#EF9F27;--eq-sel:#854F0B;
+}
+
+/* ── BASE ───────────────────────────────────────────── */
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:100vh;}
+.container{max-width:780px;margin:0 auto;padding:0 1.5rem;}
+
+/* ── SCREENS ─────────────────────────────────────────── */
+.screen{display:none;min-height:100vh;padding:3rem 0;}
+.screen.active{display:block;animation:fadeUp .4s ease forwards;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── PROGRESS BAR ──────────────────────────────────── */
+.progress-track{position:fixed;top:0;left:0;right:0;height:2px;background:var(--rule);z-index:100;}
+.progress-fill{height:2px;background:var(--gold);transition:width .5s ease;}
+
+/* ── WORDMARK / HEADER ─────────────────────────────── */
+.ls-wordmark{font-family:var(--serif);font-size:48px;font-weight:300;letter-spacing:8px;color:var(--ink);margin-bottom:.5rem;}
+.ls-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;}
+.gold-rule{width:36px;height:1px;background:var(--gold);margin:1.5rem 0;}
+.q{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--ink);line-height:1.35;margin-bottom:.75rem;}
+.q-sub{font-size:13px;color:var(--ink3);line-height:1.8;margin-bottom:2rem;font-weight:300;}
+
+/* ── VOICE TOGGLE ──────────────────────────────────── */
+.voice-row{display:flex;gap:8px;margin-bottom:1.5rem;}
+.vbtn{flex:1;padding:11px;border:0.5px solid var(--rule);background:transparent;font-family:var(--sans);font-size:13px;color:var(--ink3);cursor:pointer;transition:all .2s;}
+.vbtn.active{border-color:var(--gold);background:var(--gold-pale);color:var(--ink);}
+
+/* ── PATH CARDS (screen 1) ─────────────────────────── */
+.path-card{padding:1.25rem 1.5rem;border:0.5px solid var(--rule);background:var(--white);margin-bottom:.75rem;cursor:pointer;transition:all .2s;}
+.path-card:hover{border-color:var(--gl);}
+.path-card.sel{border-color:var(--gold);background:var(--gold-pale);}
+.pc-title{font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:4px;color:var(--ink);}
+.pc-desc{font-size:12px;color:var(--ink3);line-height:1.7;font-weight:300;}
+
+/* ── INPUTS ────────────────────────────────────────── */
+.ls-input{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;font-size:18px;font-family:var(--serif);color:var(--ink);padding:10px 0;outline:none;transition:border-color .3s;margin-bottom:1.5rem;}
+.ls-input:focus{border-bottom-color:var(--gold);}
+.ls-input::placeholder{color:var(--ink4);}
+.ls-select{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;font-size:16px;font-family:var(--sans);color:var(--ink);padding:10px 0;outline:none;margin-bottom:1.5rem;cursor:pointer;-webkit-appearance:none;}
+.input-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;display:block;}
+
+/* ── TILE GRID ─────────────────────────────────────── */
+.tile-count-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding:.75rem 0;border-bottom:0.5px solid var(--rule);}
+.tile-count-label{font-size:12px;color:var(--ink3);}
+.tile-count-num{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--gold);}
+.tile-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;}
+
+/* Tiles — activity */
+.tile{padding:7px 15px;border-radius:0;font-size:13px;font-weight:400;border:0.5px solid;cursor:pointer;transition:all .15s;user-select:none;font-family:var(--sans);}
+.tile:hover{opacity:.8;}
+.tile-make{background:var(--make-bg);color:var(--make-txt);border-color:var(--make-bdr);}
+.tile-make.sel{background:var(--make-sel);color:#EEEDFE;border-color:var(--make-sel);}
+.tile-move{background:var(--move-bg);color:var(--move-txt);border-color:var(--move-bdr);}
+.tile-move.sel{background:var(--move-sel);color:#FAECE7;border-color:var(--move-sel);}
+.tile-think{background:var(--think-bg);color:var(--think-txt);border-color:var(--think-bdr);}
+.tile-think.sel{background:var(--think-sel);color:#E6F1FB;border-color:var(--think-sel);}
+.tile-people{background:var(--people-bg);color:var(--people-txt);border-color:var(--people-bdr);}
+.tile-people.sel{background:var(--people-sel);color:#FBEAF0;border-color:var(--people-sel);}
+.tile-systems{background:var(--systems-bg);color:var(--systems-txt);border-color:var(--systems-bdr);}
+.tile-systems.sel{background:var(--systems-sel);color:#EAF3DE;border-color:var(--systems-sel);}
+
+/* EQ tiles — slightly different shape */
+.tile-eq{background:var(--eq-bg);color:var(--eq-txt);border-color:var(--eq-bdr);border-radius:2px;font-style:italic;}
+.tile-eq.sel{background:var(--eq-sel);color:#FAEEDA;border-color:var(--eq-sel);}
+
+/* EQ section divider */
+.eq-divider{margin:2rem 0 1.5rem;border-top:0.5px solid var(--rule);padding-top:1.5rem;}
+.eq-intro{font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:var(--ink3);margin-bottom:1rem;}
+
+/* ── ZIP INPUT ─────────────────────────────────────── */
+.zip-reveal{background:var(--gold-pale);border:0.5px solid var(--gl);padding:1rem 1.25rem;margin-top:1rem;min-height:48px;}
+.zip-reveal-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+.zip-reveal-content{font-size:13px;color:var(--ink2);line-height:1.9;font-weight:300;}
+
+/* ── REPORT FORMAT CARDS ──────────────────────────── */
+.format-card{padding:1.25rem 1.5rem;border:0.5px solid var(--rule);background:var(--white);margin-bottom:.75rem;cursor:pointer;transition:all .2s;}
+.format-card:hover{border-color:var(--gl);}
+.format-card.sel{border-color:var(--gold);background:var(--gold-pale);}
+.fc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.fc-title{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink);}
+.fc-badge{font-size:10px;letter-spacing:1px;padding:3px 10px;border:0.5px solid var(--gl);color:var(--gold);}
+.fc-desc{font-size:12px;color:var(--ink3);line-height:1.7;font-weight:300;}
+
+/* ── CTA BUTTON ─────────────────────────────────────── */
+.ls-btn{width:100%;padding:14px;background:var(--ink);color:var(--white);border:none;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;letter-spacing:.5px;transition:opacity .2s;margin-top:1.5rem;}
+.ls-btn:hover{opacity:.85;}
+.ls-btn:disabled{opacity:.4;cursor:not-allowed;}
+.ls-btn-outline{width:100%;padding:12px;background:transparent;color:var(--ink);border:0.5px solid var(--rule);font-family:var(--sans);font-size:13px;cursor:pointer;margin-top:.75rem;transition:all .2s;}
+.ls-btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ── VALIDATION HINT ─────────────────────────────── */
+.hint-bar{font-size:12px;color:var(--gold);padding:.5rem 0;min-height:24px;font-weight:300;}
+
+/* ── LOADING STATE ──────────────────────────────────── */
+#screen-loading{text-align:center;padding:5rem 0;}
+.loading-wordmark{font-family:var(--serif);font-size:36px;font-weight:300;letter-spacing:6px;color:var(--ink);margin-bottom:1.5rem;}
+.loading-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;}
+.loading-dots{display:flex;justify-content:center;gap:8px;}
+.dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 1.4s ease infinite;}
+.dot:nth-child(2){animation-delay:.2s;}
+.dot:nth-child(3){animation-delay:.4s;}
+@keyframes pulse{0%,80%,100%{opacity:.2;}40%{opacity:1;}}
+.loading-messages{margin-top:2rem;font-size:13px;color:var(--ink3);font-style:italic;min-height:24px;}
+
+/* ── REPORT SCREENS ─────────────────────────────────── */
+/* Quick Read */
+.report-header{padding:3rem 0 2rem;border-bottom:0.5px solid var(--rule);margin-bottom:2.5rem;}
+.report-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.report-name{font-family:var(--serif);font-size:42px;font-weight:300;color:var(--ink);letter-spacing:2px;}
+.report-opening{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--ink3);line-height:1.9;margin:1.5rem 0 2rem;padding-left:1.5rem;border-left:2px solid var(--gold);}
+.report-section{margin-bottom:2.5rem;}
+.section-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+
+/* Quote block */
+.quote-block{padding:1.5rem;border:0.5px solid var(--gl);background:var(--gold-pale);margin-bottom:2rem;}
+.quote-text{font-family:var(--serif);font-size:20px;font-weight:300;font-style:italic;color:var(--ink);line-height:1.7;margin-bottom:.75rem;}
+.quote-attr{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);}
+
+/* Cluster cards */
+.cluster-card{padding:1.25rem 1.5rem;border:0.5px solid var(--rule);margin-bottom:.75rem;}
+.cluster-card-name{font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:6px;}
+.cluster-card-why{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;}
+.cluster-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:middle;}
+
+/* Trajectory */
+.trajectory-box{padding:1.75rem;background:var(--ink);color:var(--white);margin:2rem 0;}
+.trajectory-text{font-family:var(--serif);font-size:20px;font-weight:300;font-style:italic;line-height:1.8;}
+
+/* Geo spotlight */
+.geo-block{display:flex;gap:1rem;padding:1.25rem;border:0.5px solid var(--rule);background:var(--white);}
+.geo-icon{font-size:20px;flex-shrink:0;margin-top:2px;}
+.geo-name{font-family:var(--serif);font-size:16px;font-weight:400;color:var(--ink);margin-bottom:4px;}
+.geo-text{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;}
+
+/* Invitation */
+.invitation{text-align:center;font-family:var(--serif);font-size:16px;font-style:italic;color:var(--ink3);margin:2rem 0;padding:1.5rem 0;border-top:0.5px solid var(--rule);border-bottom:0.5px solid var(--rule);}
+
+/* Full report sections */
+.portrait-text{font-size:15px;color:var(--ink2);line-height:2;font-weight:300;}
+.industry-block{border:0.5px solid var(--rule);padding:1.25rem 1.5rem;margin-bottom:.75rem;background:var(--white);}
+.industry-name{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--ink);margin-bottom:6px;}
+.industry-why{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;margin-bottom:1rem;}
+.career-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.75rem;}
+.career-pill{font-size:11px;padding:3px 10px;border:0.5px solid var(--rule);color:var(--ink3);background:var(--bg);}
+.unexpected-pill{font-size:11px;padding:4px 10px;border:0.5px solid var(--gl);color:var(--gold);background:var(--gold-pale);}
+.combo-block{padding:1.25rem 1.5rem;border-left:2px solid var(--gold);margin-bottom:.75rem;background:var(--white);}
+.combo-text{font-size:13px;color:var(--ink2);line-height:1.9;font-weight:300;}
+
+/* Counselor note */
+.counselor-block{padding:1.5rem;border:0.5px solid var(--gl);background:var(--gold-pale);margin-top:2rem;}
+.counselor-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
+.counselor-text{font-size:13px;color:var(--ink2);line-height:1.9;font-weight:300;}
+
+/* Report tab toggle */
+.report-tabs{display:flex;gap:0;margin-bottom:2rem;border-bottom:0.5px solid var(--rule);}
+.rtab{padding:10px 20px;font-size:12px;letter-spacing:1px;text-transform:uppercase;border:none;background:transparent;cursor:pointer;color:var(--ink3);border-bottom:2px solid transparent;transition:all .2s;font-family:var(--sans);}
+.rtab.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+.rpanel{display:none;}
+.rpanel.active{display:block;animation:fadeUp .3s ease forwards;}
+
+/* Counselor view */
+.meta-table{width:100%;border-collapse:collapse;margin-bottom:1.5rem;}
+.meta-table tr{border-bottom:0.5px solid var(--rule);}
+.meta-table td{padding:10px 0;font-size:13px;}
+.meta-table td:first-child{color:var(--ink3);font-weight:300;width:45%;}
+.meta-table td:last-child{color:var(--ink);font-weight:400;}
+.riasec-row{display:flex;gap:8px;margin:.75rem 0;}
+.riasec-col{flex:1;text-align:center;}
+.riasec-score{font-family:var(--serif);font-size:26px;font-weight:400;color:var(--ink);}
+.riasec-bar-wrap{height:3px;background:var(--rule);margin:4px 0 3px;}
+.riasec-bar-fill{height:3px;background:var(--gold);}
+.riasec-code{font-size:11px;font-weight:500;color:var(--ink3);letter-spacing:1px;}
+.action-prompt{padding:.75rem 1rem;border-left:2px solid var(--gl);margin-bottom:.75rem;}
+.action-text{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;font-style:italic;}
+.flag-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:.5rem;}
+.flag-yes{font-size:11px;padding:3px 10px;background:rgba(46,110,58,.08);color:#2E6E3A;border:0.5px solid rgba(46,110,58,.2);}
+.flag-no{font-size:11px;padding:3px 10px;background:var(--bg);color:var(--ink4);border:0.5px solid var(--rule);}
+
+/* Generating progress bar */
+.gen-progress{margin:1.5rem 0;height:2px;background:var(--rule);}
+.gen-progress-fill{height:2px;background:var(--gold);width:0%;transition:width 1s ease;}
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media(max-width:600px){
+  .ls-wordmark{font-size:36px;letter-spacing:5px;}
+  .q{font-size:22px;}
+  .voice-row{flex-direction:column;}
+  .report-name{font-size:32px;}
+  .trajectory-text{font-size:17px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Progress bar -->
+<div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 1 — WHO'S HERE                             -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen active" id="screen-1">
+<div class="container" style="padding-top:4rem">
+  <div class="ls-eyebrow">Powered by VECTOR</div>
+  <div class="ls-wordmark">Lifescape</div>
+  <div class="gold-rule"></div>
+  <div class="q">Who's filling this out?</div>
+  <div class="q-sub">This shapes how we ask questions and how we write your results. Nothing is permanent. Nothing commits you to anything.</div>
+
+  <div class="voice-row">
+    <button class="vbtn active" id="vbtn-student" onclick="setVoice('student')">I'm the student</button>
+    <button class="vbtn" id="vbtn-parent" onclick="setVoice('parent')">I'm a parent</button>
+  </div>
+
+  <div class="path-card sel" id="pc-student" onclick="selectPath('student')">
+    <div class="pc-title">Student</div>
+    <div class="pc-desc">We'll ask you directly. You tell us what you love, what comes easy, what makes you lose track of time.</div>
+  </div>
+  <div class="path-card" id="pc-parent" onclick="selectPath('parent')">
+    <div class="pc-title">Parent</div>
+    <div class="pc-desc">You tell us about your child. We'll translate what you share into a profile that reflects who they really are.</div>
+  </div>
+
+  <button class="ls-btn" onclick="goTo(2)">Continue</button>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 2 — NAME + GRADE                           -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-2">
+<div class="container">
+  <div class="ls-eyebrow" id="s2-eyebrow">Step 1 of 4</div>
+  <div class="q" id="s2-q">Tell us your name and grade.</div>
+  <div class="q-sub" id="s2-sub">This is just for your Lifescape. Nothing is permanent. Nothing commits you to anything.</div>
+
+  <label class="input-label" id="s2-name-label">First name</label>
+  <input class="ls-input" id="ls-name" placeholder="First name" oninput="LS_STATE.name=this.value;updateHint()">
+
+  <label class="input-label">Grade</label>
+  <select class="ls-select" id="ls-grade" onchange="LS_STATE.grade=parseInt(this.value);updateHint()">
+    <option value="">Select grade</option>
+    <option value="7">Grade 7</option>
+    <option value="8">Grade 8</option>
+    <option value="9">Grade 9</option>
+    <option value="10">Grade 10</option>
+    <option value="11">Grade 11</option>
+    <option value="12">Grade 12</option>
+  </select>
+
+  <div class="hint-bar" id="s2-hint"></div>
+  <button class="ls-btn" onclick="validateAndGoTo(3)">Continue</button>
+  <button class="ls-btn-outline" onclick="goTo(1)">Back</button>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 3 — TILE SELECTION                         -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-3">
+<div class="container">
+  <div class="ls-eyebrow">Step 2 of 4</div>
+  <div class="q" id="s3-q">What do you love doing?</div>
+  <div class="q-sub">Tap everything that sounds like you. There are no wrong answers. More is better.</div>
+
+  <div class="tile-count-bar">
+    <div class="tile-count-label">Selected</div>
+    <div class="tile-count-num" id="ls-tile-count">0</div>
+  </div>
+
+  <div class="tile-grid" id="activity-tile-grid"></div>
+
+  <div class="eq-divider">
+    <div class="eq-intro">A few more — just check anything that sounds like you.</div>
+    <div class="tile-grid" id="eq-tile-grid"></div>
+  </div>
+
+  <div class="hint-bar" id="s3-hint"></div>
+  <button class="ls-btn" onclick="validateTilesAndGoTo(4)">Continue</button>
+  <button class="ls-btn-outline" onclick="goTo(2)">Back</button>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 4 — ZIP CODE                               -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-4">
+<div class="container">
+  <div class="ls-eyebrow">Step 3 of 4</div>
+  <div class="q">Where do you live?</div>
+  <div class="q-sub">Your ZIP code helps us find industries and opportunities close to home — ones most people never think to look for.</div>
+
+  <label class="input-label">ZIP code</label>
+  <input class="ls-input" id="ls-zip" placeholder="e.g. 91302" maxlength="5"
+    style="letter-spacing:.2em;font-size:24px;"
+    oninput="handleZIPInput(this.value)">
+
+  <div class="zip-reveal" id="zip-reveal" style="display:none">
+    <div class="zip-reveal-label">Nearby industries detected</div>
+    <div class="zip-reveal-content" id="zip-reveal-content"></div>
+  </div>
+
+  <div class="hint-bar" id="s4-hint"></div>
+  <button class="ls-btn" onclick="validateZIPAndGoTo(5)">Continue</button>
+  <button class="ls-btn-outline" onclick="goTo(3)">Back</button>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 5 — REPORT FORMAT                          -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-5">
+<div class="container">
+  <div class="ls-eyebrow">Step 4 of 4</div>
+  <div class="q">How would you like your Lifescape?</div>
+  <div class="q-sub">You can always read both. Your counselor receives everything automatically.</div>
+
+  <div class="format-card" id="fc-quick" onclick="selectFormat('quick')">
+    <div class="fc-head">
+      <div class="fc-title">A first look</div>
+      <div class="fc-badge">1 page</div>
+    </div>
+    <div class="fc-desc">Three industry clusters, your trajectory, and what's close to home. Built for a 90-second read.</div>
+  </div>
+
+  <div class="format-card" id="fc-full" onclick="selectFormat('full')">
+    <div class="fc-head">
+      <div class="fc-title">Your Lifescape, in full</div>
+      <div class="fc-badge">Deep dive</div>
+    </div>
+    <div class="fc-desc">Complete analysis — career emergence, industry intelligence, combination insights, and your life trajectory map.</div>
+  </div>
+
+  <div class="format-card sel" id="fc-both" onclick="selectFormat('both')">
+    <div class="fc-head">
+      <div class="fc-title">Both</div>
+      <div class="fc-badge">Recommended</div>
+    </div>
+    <div class="fc-desc">Quick read for you, full Lifescape for your counselor and parent. Everyone sees what they need.</div>
+  </div>
+
+  <button class="ls-btn" id="ls-submit-btn" onclick="submitLifescape()">Build my Lifescape</button>
+  <button class="ls-btn-outline" onclick="goTo(4)">Back</button>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN — LOADING                                  -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-loading">
+<div class="container">
+  <div style="text-align:center;padding:5rem 0;">
+    <div class="loading-wordmark">Lifescape</div>
+    <div class="loading-label">Building your landscape</div>
+    <div class="loading-dots">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="loading-messages" id="loading-message">Reading who you are...</div>
+    <div class="gen-progress" style="margin-top:2rem;max-width:300px;margin-left:auto;margin-right:auto;">
+      <div class="gen-progress-fill" id="gen-progress-fill"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN — REPORT                                   -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-report">
+<div class="container">
+
+  <!-- Report header -->
+  <div class="report-header">
+    <div class="report-eyebrow">Your Lifescape</div>
+    <div class="report-name" id="report-name"></div>
+    <div class="report-opening">"This is your Lifescape. It was built from who you are, not who you think you're supposed to be."</div>
+  </div>
+
+  <!-- Report tabs -->
+  <div class="report-tabs">
+    <button class="rtab active" id="rtab-quick" onclick="showReportTab('quick')">A first look</button>
+    <button class="rtab" id="rtab-full" onclick="showReportTab('full')">In full</button>
+    <button class="rtab" id="rtab-counselor" onclick="showReportTab('counselor')">Counselor view</button>
+  </div>
+
+  <!-- ── QUICK READ ────────────────────────────────── -->
+  <div class="rpanel active" id="rpanel-quick">
+
+    <!-- Quote -->
+    <div class="report-section">
+      <div class="section-eyebrow">For you</div>
+      <div class="quote-block" id="quick-quote">
+        <div class="quote-text" id="quote-text">Loading your quote...</div>
+        <div class="quote-attr" id="quote-attr"></div>
+      </div>
+    </div>
+
+    <!-- Three clusters -->
+    <div class="report-section">
+      <div class="section-eyebrow">Your three clusters</div>
+      <div id="quick-clusters">
+        <div class="cluster-card" style="border-left:3px solid var(--make-sel)">
+          <div class="cluster-card-name" style="color:var(--make-sel)">Generating your clusters...</div>
+          <div class="cluster-card-why">Your industry landscape is being built.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trajectory -->
+    <div class="report-section">
+      <div class="section-eyebrow">Your trajectory</div>
+      <div class="trajectory-box" id="quick-trajectory">
+        <div class="trajectory-text">Building your trajectory...</div>
+      </div>
+    </div>
+
+    <!-- Geo spotlight -->
+    <div class="report-section" id="quick-geo-section">
+      <div class="section-eyebrow">Close to home</div>
+      <div class="geo-block" id="quick-geo">
+        <div class="geo-icon">◎</div>
+        <div>
+          <div class="geo-name" id="geo-name-quick">Locating nearby industries...</div>
+          <div class="geo-text" id="geo-text-quick"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Invitation -->
+    <div class="invitation" id="quick-invitation">
+      There is more to your Lifescape. Your counselor has the full picture.
+    </div>
+  </div>
+
+  <!-- ── FULL REPORT ────────────────────────────────── -->
+  <div class="rpanel" id="rpanel-full">
+
+    <div class="report-section">
+      <div class="section-eyebrow">Who you are</div>
+      <div class="portrait-text" id="full-portrait">Your portrait is generating...</div>
+    </div>
+
+    <div class="report-section">
+      <div class="section-eyebrow">What you love</div>
+      <div class="portrait-text" id="full-activity"></div>
+    </div>
+
+    <div class="report-section">
+      <div class="section-eyebrow">Your industry landscape</div>
+      <div id="full-industries">
+        <div class="industry-block">
+          <div class="industry-name">Generating your landscape...</div>
+          <div class="industry-why">Your full Lifescape is building in the background.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="report-section" id="full-combo-section">
+      <div class="section-eyebrow">What we found when things combined</div>
+      <div id="full-combinations"></div>
+    </div>
+
+    <div class="report-section">
+      <div class="section-eyebrow">Close to home</div>
+      <div class="portrait-text" id="full-geo"></div>
+    </div>
+
+    <div class="report-section">
+      <div class="section-eyebrow">Your trajectory</div>
+      <div class="trajectory-box" id="full-trajectory">
+        <div class="trajectory-text">Building your trajectory...</div>
+      </div>
+    </div>
+
+    <div class="counselor-block" id="full-counselor-note" style="display:none">
+      <div class="counselor-label">A note for your counselor</div>
+      <div class="counselor-text" id="full-counselor-text"></div>
+    </div>
+
+  </div>
+
+  <!-- ── COUNSELOR VIEW ─────────────────────────────── -->
+  <div class="rpanel" id="rpanel-counselor">
+
+    <div style="margin-bottom:2rem">
+      <div class="section-eyebrow">Student profile</div>
+      <table class="meta-table" id="counselor-meta"></table>
+    </div>
+
+    <div style="margin-bottom:2rem">
+      <div class="section-eyebrow">RIASEC profile</div>
+      <div class="riasec-row" id="counselor-riasec"></div>
+      <div style="font-size:12px;color:var(--ink3);font-weight:300;margin-top:.75rem" id="riasec-interp"></div>
+    </div>
+
+    <div style="margin-bottom:2rem">
+      <div class="section-eyebrow">University match flags</div>
+      <div class="flag-badges" id="counselor-flags"></div>
+    </div>
+
+    <div style="margin-bottom:2rem">
+      <div class="section-eyebrow">Combination unlocks fired</div>
+      <div id="counselor-combos"></div>
+    </div>
+
+    <div style="margin-bottom:2rem">
+      <div class="section-eyebrow">Counselor action prompts</div>
+      <div id="counselor-prompts"></div>
+    </div>
+
+    <div>
+      <div class="section-eyebrow">Full counselor note</div>
+      <div class="portrait-text" id="counselor-full-note"></div>
+    </div>
+
+  </div>
+
+</div><!-- /container -->
+</div><!-- /screen-report -->
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCRIPTS                                           -->
+<!-- ══════════════════════════════════════════════════ -->
+<script>
+
+// ── CONFIG ─────────────────────────────────────────
+const API_ENDPOINT = 'https://api.abettercollegeconsultant.com/v1/messages';
+const SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxmhDOrAjTtgpD9WfP1pnMlcBd9cgl-U1bo6RS2i82tGb3t4eB3fO1sE3i3JgLIot38Cg/exec';
+
+// ── STATE ──────────────────────────────────────────
+const LS_STATE = {
+  name:'', grade:null, voice:'student',
+  selectedTileIds: new Set(),
+  zip:'', reportFormat:'both',
+  submitted:false,
+  callAResult:null, callBResult:null, callCResult:null
+};
+
+// ── SCREEN NAV ─────────────────────────────────────
+const SCREEN_PROGRESS = {1:0,2:25,3:50,4:75,5:90};
+
+function goTo(n) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-'+n).classList.add('active');
+  document.getElementById('progress-fill').style.width = (SCREEN_PROGRESS[n]||0)+'%';
+  window.scrollTo(0,0);
+  if(n===3) renderTileGrid();
+  if(n===2) updateS2Voice();
+}
+
+// ── VOICE FORK ─────────────────────────────────────
+function setVoice(v) {
+  LS_STATE.voice = v;
+  document.getElementById('vbtn-student').classList.toggle('active', v==='student');
+  document.getElementById('vbtn-parent').classList.toggle('active', v==='parent');
+  document.getElementById('pc-student').classList.toggle('sel', v==='student');
+  document.getElementById('pc-parent').classList.toggle('sel', v==='parent');
+}
+function selectPath(v) { setVoice(v); }
+
+function updateS2Voice() {
+  const p = LS_STATE.voice === 'parent';
+  document.getElementById('s2-q').textContent = p
+    ? "Tell us your child's name and grade."
+    : "Tell us your name and grade.";
+  document.getElementById('s2-sub').textContent = p
+    ? "This is for your child's Lifescape. Nothing is permanent. Nothing commits them to anything."
+    : "This is just for your Lifescape. Nothing is permanent. Nothing commits you to anything.";
+  document.getElementById('s2-name-label').textContent = p ? "Child's first name" : "First name";
+  document.getElementById('s3-q').textContent = p
+    ? "What does your child love doing?"
+    : "What do you love doing?";
+}
+
+// ── VALIDATIONS ────────────────────────────────────
+function validateAndGoTo(n) {
+  const name = document.getElementById('ls-name').value.trim();
+  const grade = document.getElementById('ls-grade').value;
+  if(!name) { showHint('s2-hint','Enter a name to continue'); return; }
+  if(!grade) { showHint('s2-hint','Select a grade to continue'); return; }
+  LS_STATE.name = name;
+  LS_STATE.grade = parseInt(grade);
+  clearHint('s2-hint');
+  goTo(n);
+}
+
+function validateTilesAndGoTo(n) {
+  if(LS_STATE.selectedTileIds.size < 3) {
+    showHint('s3-hint', `Select at least ${3 - LS_STATE.selectedTileIds.size} more to continue`);
+    return;
+  }
+  clearHint('s3-hint');
+  goTo(n);
+}
+
+function validateZIPAndGoTo(n) {
+  const zip = document.getElementById('ls-zip').value.trim();
+  if(zip.length < 5) { showHint('s4-hint','Enter a 5-digit ZIP code'); return; }
+  LS_STATE.zip = zip;
+  clearHint('s4-hint');
+  goTo(n);
+}
+
+function showHint(id, msg) { document.getElementById(id).textContent = msg; }
+function clearHint(id) { document.getElementById(id).textContent = ''; }
+function updateHint() { clearHint('s2-hint'); }
+
+// ── TILE RENDERING ─────────────────────────────────
+const CLUSTER_CLASS = {
+  make:'tile-make', move:'tile-move', think:'tile-think',
+  people:'tile-people', systems:'tile-systems', eq:'tile-eq'
+};
+
+let _debounceTimer = null;
+
+function renderTileGrid() {
+  if(typeof VECTOR_CROSSWALK === 'undefined') {
+    document.getElementById('activity-tile-grid').innerHTML =
+      '<p style="color:var(--ink3);font-size:13px">Loading tiles...</p>';
+    return;
+  }
+
+  const actGrid = document.getElementById('activity-tile-grid');
+  const eqGrid = document.getElementById('eq-tile-grid');
+  actGrid.innerHTML = '';
+  eqGrid.innerHTML = '';
+
+  // Shuffle activity tiles for discovery browsing
+  const actTiles = VECTOR_CROSSWALK.filter(t => t.cluster !== 'eq');
+  const eqTiles  = VECTOR_CROSSWALK.filter(t => t.cluster === 'eq');
+
+  // Gentle shuffle — mix clusters without sorting
+  const shuffled = [...actTiles].sort(() => Math.random() - 0.49);
+
+  shuffled.forEach(tile => {
+    const el = document.createElement('span');
+    el.className = 'tile ' + (CLUSTER_CLASS[tile.cluster]||'tile-make');
+    if(LS_STATE.selectedTileIds.has(tile.id)) el.classList.add('sel');
+    el.textContent = tile.label;
+    el.onclick = () => toggleTile(tile.id, el, tile.cluster);
+    actGrid.appendChild(el);
+  });
+
+  eqTiles.forEach(tile => {
+    const el = document.createElement('span');
+    el.className = 'tile tile-eq';
+    if(LS_STATE.selectedTileIds.has(tile.id)) el.classList.add('sel');
+    el.textContent = tile.label;
+    el.onclick = () => toggleTile(tile.id, el, 'eq');
+    eqGrid.appendChild(el);
+  });
+}
+
+function toggleTile(id, el, cluster) {
+  if(LS_STATE.submitted) return;
+  clearTimeout(_debounceTimer);
+  _debounceTimer = setTimeout(() => {
+    if(LS_STATE.selectedTileIds.has(id)) {
+      LS_STATE.selectedTileIds.delete(id);
+      el.classList.remove('sel');
+    } else {
+      LS_STATE.selectedTileIds.add(id);
+      el.classList.add('sel');
+    }
+    document.getElementById('ls-tile-count').textContent = LS_STATE.selectedTileIds.size;
+    if(LS_STATE.selectedTileIds.size >= 3) clearHint('s3-hint');
+  }, 50);
+}
+
+// ── ZIP RESOLVER ───────────────────────────────────
+const ZIP_GEO_MAP = {
+  '91302':{neighborhood:'Calabasas / Hidden Hills',industries:['Cosmetic & personal care manufacturing (Chatsworth)','Food science & flavor development','Financial services','Entertainment & media production'],distance:'8 miles to Chatsworth industrial corridor'},
+  '911':{neighborhood:'San Fernando Valley',industries:['Cosmetic & personal care manufacturing','Aerospace components','Medical device manufacturing','Entertainment production'],distance:'nearby'},
+  '910':{neighborhood:'San Fernando Valley',industries:['Entertainment production','Manufacturing & aerospace','Healthcare services'],distance:'nearby'},
+  '913':{neighborhood:'Calabasas / Hidden Hills area',industries:['Financial services','Entertainment & media','Real estate development'],distance:'nearby'},
+  '90':{neighborhood:'Los Angeles metro',industries:['Entertainment & film production','Fashion & apparel manufacturing','Technology & software','Healthcare & biotech'],distance:'throughout the region'},
+  '94':{neighborhood:'San Francisco Bay Area',industries:['Technology & software','Biotech & life sciences','Venture capital','Clean energy'],distance:'throughout the region'},
+  '10':{neighborhood:'New York City metro',industries:['Finance & banking','Media & publishing','Fashion industry','Technology'],distance:'throughout the region'},
+  '60':{neighborhood:'Chicago metro',industries:['Finance & trading','Manufacturing','Healthcare','Architecture'],distance:'throughout the region'},
+  '73':{neighborhood:'Dallas / Fort Worth',industries:['Energy','Technology','Healthcare','Logistics'],distance:'throughout the region'},
+  '77':{neighborhood:'Houston metro',industries:['Energy & oil services','Healthcare','Aerospace'],distance:'throughout the region'},
+  '78':{neighborhood:'Austin / San Antonio',industries:['Technology','Healthcare','Music & entertainment'],distance:'throughout the region'},
+  '33':{neighborhood:'Miami metro',industries:['Healthcare','Finance','Real estate','Hospitality & tourism'],distance:'throughout the region'},
+  '98':{neighborhood:'Seattle metro',industries:['Technology','Aerospace','Healthcare','Retail & e-commerce'],distance:'throughout the region'},
+  '02':{neighborhood:'Boston metro',industries:['Biotech & life sciences','Education & research','Finance','Healthcare'],distance:'throughout the region'},
+  '20':{neighborhood:'Washington DC metro',industries:['Government & policy','Defense','Consulting','Nonprofit & advocacy'],distance:'throughout the region'},
+  'DEFAULT':{neighborhood:'your area',industries:['Healthcare & social services','Education','Technology','Manufacturing','Professional services'],distance:'in your region'}
+};
+
+function resolveZIP(zip) {
+  if(!zip || zip.length < 5) return ZIP_GEO_MAP['DEFAULT'];
+  if(ZIP_GEO_MAP[zip]) return ZIP_GEO_MAP[zip];
+  if(ZIP_GEO_MAP[zip.slice(0,3)]) return ZIP_GEO_MAP[zip.slice(0,3)];
+  if(ZIP_GEO_MAP[zip.slice(0,2)]) return ZIP_GEO_MAP[zip.slice(0,2)];
+  return ZIP_GEO_MAP['DEFAULT'];
+}
+
+function handleZIPInput(val) {
+  LS_STATE.zip = val;
+  const revealEl = document.getElementById('zip-reveal');
+  if(val.length === 5) {
+    const geo = resolveZIP(val);
+    document.getElementById('zip-reveal-content').innerHTML =
+      geo.industries.map(i => `<span style="display:block">${i}</span>`).join('') +
+      `<span style="display:block;font-size:11px;color:var(--gold);margin-top:6px;letter-spacing:1px">${geo.neighborhood} · ${geo.distance}</span>`;
+    revealEl.style.display = 'block';
+    clearHint('s4-hint');
+  } else {
+    revealEl.style.display = 'none';
+  }
+}
+
+// ── FORMAT SELECTION ───────────────────────────────
+function selectFormat(fmt) {
+  LS_STATE.reportFormat = fmt;
+  ['quick','full','both'].forEach(f => {
+    document.getElementById('fc-'+f).classList.toggle('sel', f===fmt);
+  });
+}
+
+// ── PROFILE ASSEMBLY ──────────────────────────────
+function assembleProfile() {
+  const selectedIds = Array.from(LS_STATE.selectedTileIds);
+  const geo = resolveZIP(LS_STATE.zip);
+
+  const activityTiles = typeof VECTOR_CROSSWALK !== 'undefined'
+    ? selectedIds.filter(id => { const t=VECTOR_CROSSWALK.find(x=>x.id===id); return t&&t.cluster!=='eq'; })
+        .map(id => { const t=VECTOR_CROSSWALK.find(x=>x.id===id); return t?t.label:id; })
+    : selectedIds;
+
+  const eqTiles = typeof VECTOR_CROSSWALK !== 'undefined'
+    ? selectedIds.filter(id => { const t=VECTOR_CROSSWALK.find(x=>x.id===id); return t&&t.cluster==='eq'; })
+        .map(id => { const t=VECTOR_CROSSWALK.find(x=>x.id===id); return t?t.label:id; })
+    : [];
+
+  const comboUnlocks  = typeof getComboUnlocks  !== 'undefined' ? getComboUnlocks(selectedIds)  : [];
+  const riasec        = typeof getRIASECProfile  !== 'undefined' ? getRIASECProfile(selectedIds) : [];
+  const naicsSectors  = typeof getNAICSProfile   !== 'undefined' ? getNAICSProfile(selectedIds)  : [];
+
+  return {
+    name: LS_STATE.name,
+    grade: LS_STATE.grade,
+    voice: LS_STATE.voice,
+    reportFormat: LS_STATE.reportFormat,
+    activityTiles,
+    eqTiles,
+    allTileIds: selectedIds,
+    comboUnlocks,
+    riasec,
+    naicsSectors,
+    zip: LS_STATE.zip,
+    geoIndustries: geo.industries,
+    geoNeighborhood: geo.neighborhood,
+    geoDistance: geo.distance,
+    _meta: {
+      timestamp: new Date().toISOString(),
+      tileCount: selectedIds.length,
+      combosFireCount: comboUnlocks.length,
+      topRIASEC: riasec.slice(0,3).map(r=>r.code).join('-'),
+      topNAICS: naicsSectors.slice(0,3).map(n=>n.sector).join(','),
+      hasEQSignal: typeof hasEQSignal!=='undefined' ? hasEQSignal(selectedIds) : eqTiles.length>0,
+      geoSignalTiles: typeof getGeoSignalTiles!=='undefined' ? getGeoSignalTiles(selectedIds) : []
+    }
+  };
+}
+
+// ── PROMPT BUILDERS ────────────────────────────────
+function buildContext(profile) {
+  const gradeRegister = profile.grade <= 9 ? 'exploration' : profile.grade <= 11 ? 'planning' : 'decision';
+  const gradeContext = {
+    exploration: `Grade ${profile.grade} — exploration years. Every door is open. Register: possibility, not pressure. Nothing is locked. Everything is worth knowing about.`,
+    planning: `Grade ${profile.grade} — planning years. College is approaching. Register: forward-looking and grounded, not urgent.`,
+    decision: `Grade ${profile.grade} — decision year. Applications are live or imminent. Register: clear and confident, not pressured.`
+  }[gradeRegister];
+
+  const voiceInstruction = profile.voice === 'parent'
+    ? `Write about ${profile.name} in third person. Address the family, not the student directly. Warm, specific, never clinical.`
+    : `Write directly to ${profile.name} in second person. Smart, curious teenager who deserves honesty. Never talk down. Never oversell.`;
+
+  const comboSummary = profile.comboUnlocks.map(c =>
+    `${c.triggered_by.join(' + ')} unlocks: ${c.unlocks.join(', ')}`
+  ).join('\n');
+
+  return { ...profile, gradeRegister, gradeContext, voiceInstruction, comboSummary,
+    topRIASEC: profile.riasec.slice(0,3).map(r=>r.code).join('-') };
+}
+
+function buildCallAPrompt(ctx) {
+  return `You are the intelligence behind Lifescape — a tool that helps young people understand who they are and where they might go. You are a trusted advisor who tells the truth because you respect the person in front of you.
+
+VOICE INSTRUCTION:
+${ctx.voiceInstruction}
+
+GRADE CONTEXT:
+${ctx.gradeContext}
+
+STUDENT PROFILE:
+Name: ${ctx.name}
+Grade: ${ctx.grade}
+RIASEC profile: ${ctx.topRIASEC}
+Activity interests: ${ctx.activityTiles.join(', ')}
+EQ identity tiles selected: ${ctx.eqTiles.join(', ')}
+
+YOUR JOB — produce exactly three outputs separated by these exact dividers:
+
+---QUOTE---
+Find ONE short quote — 1 or 2 sentences maximum — from a historical figure, scientist, artist, athlete, musician, or cultural icon that genuinely connects to what this student's profile reveals. The quote should feel written for this specific person. Surprising — not the obvious famous quote everyone has seen. Should make a teenager want to screenshot it and send it to a friend. Include the person's name and a 3-5 word description in parentheses. Real people only. Verified real quotes only.
+
+---PORTRAIT---
+Write 3-4 sentences about who this student is — their emotional wiring, how they move through the world, what kind of person they are. Draw only from the EQ tiles and activity tiles. No career language. Pure character. Should make the student feel seen in a way they have never felt seen before. ${ctx.voice==='parent'?`Write in third person about ${ctx.name}.`:`Write in second person, directly to ${ctx.name}.`}
+
+---TRAJECTORY---
+Write one sentence — the single most important sentence in the entire Lifescape. Must:
+- Open with an unexpected, poetic phrase capturing who this person is becoming
+- Reference 2-3 specific things from their actual profile
+- End with a line that opens a door rather than closes one
+- Feel like something worth memorizing
+- Be genuinely original for this profile
+
+FORBIDDEN: assessment, results, data, score, ranked, you should become, most students like you, based on your answers, personality type
+
+Write only the three sections with their exact dividers. Nothing else.`;
+}
+
+function buildCallBPrompt(ctx) {
+  const naicsNames = {11:'Agriculture',21:'Mining & Energy',22:'Utilities',23:'Construction',31:'Manufacturing',32:'Manufacturing',33:'Manufacturing',42:'Wholesale',44:'Retail',45:'Retail',48:'Transportation',49:'Transportation',51:'Information & Media',52:'Finance & Insurance',53:'Real Estate',54:'Professional & Scientific Services',55:'Management',56:'Administrative Services',61:'Education',62:'Health Care & Social Assistance',71:'Arts, Entertainment & Recreation',72:'Food Service & Hospitality',81:'Personal & Consumer Services',92:'Government & Public Service'};
+  const topIndustries = ctx.naicsSectors.slice(0,5).map(n=>naicsNames[n.sector]||`Sector ${n.sector}`).join(', ');
+
+  return `You are the intelligence behind Lifescape, writing the industry section of a student's report.
+
+VOICE INSTRUCTION:
+${ctx.voiceInstruction}
+
+GRADE CONTEXT:
+${ctx.gradeContext}
+
+STUDENT PROFILE:
+Name: ${ctx.name} | Grade: ${ctx.grade}
+Activity interests: ${ctx.activityTiles.join(', ')}
+EQ identity: ${ctx.eqTiles.join(', ')}
+RIASEC: ${ctx.topRIASEC}
+Top industry sectors by signal strength: ${topIndustries}
+Combination unlocks fired:
+${ctx.comboSummary||'No combination unlocks — single-tile signals only'}
+
+YOUR JOB — produce exactly four sections with these exact dividers:
+
+---ACTIVITY---
+2-3 sentences describing what this student loves doing as a narrative paragraph, not a list. Draw from activity tiles. Real person, not a summary of checkboxes. ${ctx.voice==='parent'?`Third person about ${ctx.name}.`:`Second person to ${ctx.name}.`}
+
+---INDUSTRIES---
+Identify the 3 strongest industry clusters from this profile. For each:
+CLUSTER NAME: (short human name — e.g. "Creative healing arts" not a code)
+WHY IT SURFACED: 2 sentences connecting their specific tiles to this industry.
+CAREERS: 3-5 career titles as a comma-separated line. Possibilities, never prescriptions.
+UNEXPECTED: One career most counselors would never mention. One sentence on the connection.
+
+Then a paragraph labeled ALSO WORTH KNOWING covering 1-2 adjacent clusters. Start: "These surfaced too."
+
+---COMBINATIONS---
+For each combination unlock that fired, write one paragraph: what combined, what it unlocks, why that combination is rare and valuable. If no combos fired, write about the strongest single-tile signal.
+
+---COLLEGE---
+2-3 sentences. First time college appears in the report. Do not name specific schools. Describe the type of college environment that would serve this student. End with exactly: "Your counselor knows which ones."
+
+FORBIDDEN: assessment, results, data, score, ranked, you should become, most students like you, personality type`;
+}
+
+function buildCallCPrompt(ctx) {
+  const geoList = ctx.geoIndustries ? ctx.geoIndustries.join(', ') : 'No geo data available';
+  return `You are the intelligence behind Lifescape, writing geo and counselor sections.
+
+STUDENT PROFILE:
+Name: ${ctx.name} | Grade: ${ctx.grade}
+Activity interests: ${ctx.activityTiles.join(', ')}
+EQ identity: ${ctx.eqTiles.join(', ')}
+ZIP: ${ctx.zip}
+Nearby industries near ${ctx.geoNeighborhood||ctx.zip} (${ctx.geoDistance||'nearby'}): ${geoList}
+Combination unlocks: ${ctx.comboSummary||'none'}
+RIASEC: ${ctx.topRIASEC}
+
+YOUR JOB — produce exactly two sections with these exact dividers:
+
+---GEO---
+3-5 sentences about what is geographically close that connects to this profile. Name the neighborhood or city specifically. Draw a clear line between nearby industries and something specific from their tiles. Goal is surprise and delight — something real and close they never knew was relevant. ${ctx.voice==='parent'?`Third person about ${ctx.name}.`:`Second person to ${ctx.name}.`}
+
+---COUNSELOR---
+Three items, one expert to another:
+
+NOTE: 2-3 sentences. The single most important insight from this profile. What the counselor must know before their next session.
+
+STRONGEST UNLOCK: The single most valuable combination or tile signal. One sentence on why it matters for college planning.
+
+THREE PROMPTS: Three conversation-starter questions specific to this student's actual profile — not generic. Things that make the student think. Number them 1, 2, 3.
+
+FORBIDDEN: assessment, results, data, score, ranked, personality type`;
+}
+
+// ── PARSERS ────────────────────────────────────────
+function parseCallA(text) {
+  try {
+    return {
+      quote: (text.match(/---QUOTE---([\s\S]*?)---PORTRAIT---/)||[])[1]?.trim()||null,
+      portrait: (text.match(/---PORTRAIT---([\s\S]*?)---TRAJECTORY---/)||[])[1]?.trim()||null,
+      trajectory: (text.match(/---TRAJECTORY---([\s\S]*?)$/)||[])[1]?.trim()||null
+    };
+  } catch(e) { return {quote:null,portrait:null,trajectory:null}; }
+}
+function parseCallB(text) {
+  try {
+    return {
+      activity: (text.match(/---ACTIVITY---([\s\S]*?)---INDUSTRIES---/)||[])[1]?.trim()||null,
+      industries: (text.match(/---INDUSTRIES---([\s\S]*?)---COMBINATIONS---/)||[])[1]?.trim()||null,
+      combinations: (text.match(/---COMBINATIONS---([\s\S]*?)---COLLEGE---/)||[])[1]?.trim()||null,
+      college: (text.match(/---COLLEGE---([\s\S]*?)$/)||[])[1]?.trim()||null
+    };
+  } catch(e) { return {activity:null,industries:null,combinations:null,college:null}; }
+}
+function parseCallC(text) {
+  try {
+    return {
+      geo: (text.match(/---GEO---([\s\S]*?)---COUNSELOR---/)||[])[1]?.trim()||null,
+      counselor: (text.match(/---COUNSELOR---([\s\S]*?)$/)||[])[1]?.trim()||null
+    };
+  } catch(e) { return {geo:null,counselor:null}; }
+}
+
+// ── API CALL ───────────────────────────────────────
+async function fireCall(prompt, maxTokens, retryCount=0) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000);
+  try {
+    const res = await fetch(API_ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      signal: controller.signal,
+      body: JSON.stringify({
+        model:'claude-sonnet-4-6',
+        max_tokens: maxTokens,
+        messages:[{role:'user',content:prompt}]
+      })
+    });
+    clearTimeout(timeout);
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    const text = data.content?.[0]?.text;
+    if(!text) throw new Error('Empty response');
+    return text;
+  } catch(e) {
+    clearTimeout(timeout);
+    if(retryCount===0) {
+      await new Promise(r=>setTimeout(r,1500));
+      return fireCall(prompt, maxTokens, 1);
+    }
+    throw e;
+  }
+}
+
+// ── SHEETS CAPTURE ─────────────────────────────────
+function captureToSheets(profile, callAData) {
+  if(!SHEETS_ENDPOINT) return;
+  const payload = {
+    timestamp: profile._meta.timestamp,
+    name: profile.name, grade: profile.grade, zip: profile.zip,
+    voice_path: profile.voice, report_format: profile.reportFormat,
+    tile_count: profile._meta.tileCount,
+    activity_tiles: profile.activityTiles.join(' | '),
+    eq_tiles: profile.eqTiles.join(' | '),
+    combos_fired: profile.comboUnlocks.map(c=>c.unlocks[0]).join(' | '),
+    combo_count: profile._meta.combosFireCount,
+    top_riasec: profile._meta.topRIASEC,
+    top_naics: profile._meta.topNAICS,
+    geo_neighborhood: profile.geoNeighborhood,
+    has_eq_signal: profile._meta.hasEQSignal?'Y':'N',
+    trajectory_sentence: callAData?.trajectory||'',
+    cc_pathway_shown:'N'
+  };
+  fetch(SHEETS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(()=>{});
+}
+
+// ── LOADING MESSAGES ───────────────────────────────
+const LOADING_MSGS = [
+  'Reading who you are...',
+  'Mapping your interests to industries...',
+  'Finding what lives close to home...',
+  'Writing your trajectory...',
+  'Almost there...'
+];
+let _loadMsgIdx = 0;
+let _loadMsgTimer = null;
+
+function startLoadingMessages() {
+  _loadMsgIdx = 0;
+  document.getElementById('loading-message').textContent = LOADING_MSGS[0];
+  _loadMsgTimer = setInterval(() => {
+    _loadMsgIdx = Math.min(_loadMsgIdx+1, LOADING_MSGS.length-1);
+    document.getElementById('loading-message').textContent = LOADING_MSGS[_loadMsgIdx];
+  }, 4000);
+}
+function stopLoadingMessages() { clearInterval(_loadMsgTimer); }
+
+function setGenProgress(pct) {
+  document.getElementById('gen-progress-fill').style.width = pct+'%';
+}
+
+// ── SUBMIT ─────────────────────────────────────────
+async function submitLifescape() {
+  if(LS_STATE.submitted) return;
+  LS_STATE.submitted = true;
+  const btn = document.getElementById('ls-submit-btn');
+  btn.disabled=true; btn.textContent='Building your Lifescape...';
+
+  // Switch to loading screen
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-loading').classList.add('active');
+  document.getElementById('progress-fill').style.width='95%';
+  startLoadingMessages();
+  setGenProgress(5);
+
+  const profile = assembleProfile();
+  const ctx = buildContext(profile);
+
+  // Pre-populate report name
+  document.getElementById('report-name').textContent = profile.name;
+
+  try {
+    // ── CALL A — fires first ──────────────────────
+    const callAText = await fireCall(buildCallAPrompt(ctx), 600);
+    const callAData = parseCallA(callAText);
+    LS_STATE.callAResult = callAData;
+    setGenProgress(40);
+
+    // Capture to Sheets — non-blocking
+    captureToSheets(profile, callAData);
+
+    // Render Quick Read from callA immediately
+    renderQuickRead(profile, callAData);
+
+    // Switch to report — student sees their Lifescape now
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById('screen-report').classList.add('active');
+    document.getElementById('progress-fill').style.width='100%';
+    stopLoadingMessages();
+    window.scrollTo(0,0);
+
+    // ── CALL B + C — parallel ─────────────────────
+    const [callBText, callCText] = await Promise.all([
+      fireCall(buildCallBPrompt(ctx), 1200),
+      fireCall(buildCallCPrompt(ctx), 400)
+    ]);
+
+    const callBData = parseCallB(callBText);
+    const callCData = parseCallC(callCText);
+    LS_STATE.callBResult = callBData;
+    LS_STATE.callCResult = callCData;
+
+    // Render Full Report + Counselor View progressively
+    renderFullReport(profile, callAData, callBData, callCData);
+    renderCounselorView(profile, callAData, callBData, callCData);
+
+  } catch(err) {
+    console.error('Lifescape error:', err);
+    stopLoadingMessages();
+    // Show fallback Quick Read
+    renderFallback(profile);
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById('screen-report').classList.add('active');
+    LS_STATE.submitted = false;
+    btn.disabled=false; btn.textContent='Build my Lifescape';
+  }
+}
+
+// ── REPORT TABS ────────────────────────────────────
+function showReportTab(tab) {
+  ['quick','full','counselor'].forEach(t=>{
+    document.getElementById('rtab-'+t).classList.toggle('active',t===tab);
+    document.getElementById('rpanel-'+t).classList.toggle('active',t===tab);
+  });
+  window.scrollTo(0,0);
+}
+
+// ── RENDER: QUICK READ ─────────────────────────────
+function renderQuickRead(profile, callAData) {
+  // Quote
+  if(callAData?.quote) {
+    const lines = callAData.quote.split('\n').filter(Boolean);
+    const quoteLine = lines.find(l=>l.includes('"')||l.includes('\u201c'))||lines[0]||'';
+    const attrLine = lines.find(l=>l.includes('('))||lines[lines.length-1]||'';
+    document.getElementById('quote-text').textContent = quoteLine.replace(/[""]/g,'"').replace(/^"|"$/g,'');
+    document.getElementById('quote-attr').textContent = attrLine.replace(/^[-–—]\s*/,'');
+  }
+
+  // Trajectory
+  if(callAData?.trajectory) {
+    document.getElementById('quick-trajectory').innerHTML =
+      `<div class="trajectory-text">${callAData.trajectory}</div>`;
+  }
+
+  // Geo spotlight (from ZIP data — available immediately, no Claude needed)
+  const geo = resolveZIP(profile.zip);
+  if(geo && geo.industries[0]) {
+    document.getElementById('geo-name-quick').textContent =
+      `${geo.industries[0]} · ${geo.neighborhood}`;
+    document.getElementById('geo-text-quick').textContent =
+      `${geo.distance} from home — worth exploring with your counselor.`;
+  }
+
+  // Clusters placeholder — will update when callB resolves
+  document.getElementById('quick-clusters').innerHTML = `
+    <div class="cluster-card" style="border-left:3px solid var(--gold)">
+      <div class="cluster-card-name" style="color:var(--gold)">Your industry clusters are generating...</div>
+      <div class="cluster-card-why">The full picture is loading in the background. Check the "In full" tab in a moment.</div>
+    </div>`;
+}
+
+// ── RENDER: FULL REPORT ────────────────────────────
+function renderFullReport(profile, callAData, callBData, callCData) {
+  // Portrait
+  if(callAData?.portrait) {
+    document.getElementById('full-portrait').textContent = callAData.portrait;
+  }
+
+  // Activity narrative
+  if(callBData?.activity) {
+    document.getElementById('full-activity').textContent = callBData.activity;
+  }
+
+  // Industries — parse and render
+  if(callBData?.industries) {
+    renderIndustries(callBData.industries);
+  }
+
+  // Combinations
+  if(callBData?.combinations) {
+    document.getElementById('full-combinations').innerHTML =
+      callBData.combinations.split('\n\n').filter(Boolean)
+        .map(p=>`<div class="combo-block"><div class="combo-text">${p}</div></div>`)
+        .join('');
+  }
+
+  // Geo
+  if(callCData?.geo) {
+    document.getElementById('full-geo').textContent = callCData.geo;
+  }
+
+  // Trajectory (full version)
+  if(callAData?.trajectory) {
+    let fullTraj = callAData.trajectory;
+    if(callBData?.college) fullTraj += ' ' + callBData.college;
+    document.getElementById('full-trajectory').innerHTML =
+      `<div class="trajectory-text">${fullTraj}</div>`;
+  }
+
+  // Counselor note in full report
+  if(callCData?.counselor) {
+    const noteMatch = callCData.counselor.match(/NOTE:([\s\S]*?)(?:STRONGEST|$)/i);
+    if(noteMatch) {
+      document.getElementById('full-counselor-text').textContent = noteMatch[1].trim();
+      document.getElementById('full-counselor-note').style.display = 'block';
+    }
+  }
+
+  // Update Quick Read clusters now that callB has resolved
+  if(callBData?.industries) {
+    updateQuickReadClusters(callBData.industries);
+  }
+}
+
+function renderIndustries(industriesText) {
+  const blocks = industriesText.split(/\n(?=CLUSTER NAME:)/i).filter(Boolean);
+  const container = document.getElementById('full-industries');
+
+  if(blocks.length === 0) {
+    container.innerHTML = `<div class="industry-block"><div class="portrait-text">${industriesText}</div></div>`;
+    return;
+  }
+
+  const colors = ['var(--make-sel)','var(--think-sel)','var(--move-sel)'];
+  container.innerHTML = blocks.map((block, i) => {
+    const nameMatch = block.match(/CLUSTER NAME:\s*([^\n]+)/i);
+    const whyMatch = block.match(/WHY IT SURFACED:\s*([\s\S]*?)(?=CAREERS:|$)/i);
+    const careersMatch = block.match(/CAREERS:\s*([^\n]+)/i);
+    const unexpectedMatch = block.match(/UNEXPECTED:\s*([\s\S]*?)(?=\n\n|ALSO|$)/i);
+
+    const name = nameMatch?nameMatch[1].trim():'';
+    const why = whyMatch?whyMatch[1].trim():'';
+    const careers = careersMatch?careersMatch[1].split(',').map(c=>c.trim()).filter(Boolean):[];
+    const unexpected = unexpectedMatch?unexpectedMatch[1].trim():'';
+    const color = colors[i]||colors[0];
+
+    return `<div class="industry-block" style="border-left:3px solid ${color}">
+      <div class="industry-name">${name}</div>
+      <div class="industry-why">${why}</div>
+      <div class="career-pills">${careers.map(c=>`<span class="career-pill">${c}</span>`).join('')}</div>
+      ${unexpected?`<div style="margin-top:.5rem"><span class="unexpected-pill">✦ ${unexpected}</span></div>`:''}
+    </div>`;
+  }).join('') + (industriesText.includes('ALSO WORTH KNOWING')
+    ? `<div class="industry-block" style="border-left:3px solid var(--rule)">
+        <div class="portrait-text">${(industriesText.match(/ALSO WORTH KNOWING([\s\S]*?)$/i)||[])[1]?.trim()||''}</div>
+      </div>`
+    : '');
+}
+
+function updateQuickReadClusters(industriesText) {
+  const blocks = industriesText.split(/\n(?=CLUSTER NAME:)/i).filter(Boolean).slice(0,3);
+  if(blocks.length===0) return;
+  const colors = ['var(--make-sel)','var(--think-sel)','var(--move-sel)'];
+  const whyColors = ['var(--make-txt)','var(--think-txt)','var(--move-txt)'];
+  document.getElementById('quick-clusters').innerHTML = blocks.map((block,i)=>{
+    const name = (block.match(/CLUSTER NAME:\s*([^\n]+)/i)||[])[1]?.trim()||'';
+    const why = (block.match(/WHY IT SURFACED:\s*([\s\S]*?)(?=CAREERS:|$)/i)||[])[1]?.trim().split('.')[0]||'';
+    return `<div class="cluster-card" style="border-left:3px solid ${colors[i]}">
+      <div class="cluster-card-name" style="color:${colors[i]}">${name}</div>
+      <div class="cluster-card-why">${why}.</div>
+    </div>`;
+  }).join('');
+}
+
+// ── RENDER: COUNSELOR VIEW ─────────────────────────
+function renderCounselorView(profile, callAData, callBData, callCData) {
+  // Meta table
+  document.getElementById('counselor-meta').innerHTML = [
+    ['Name', profile.name],
+    ['Grade', `Grade ${profile.grade}`],
+    ['ZIP code', profile.zip],
+    ['Voice path', profile.voice === 'parent' ? 'Parent completed' : 'Student completed'],
+    ['Report format', profile.reportFormat],
+    ['Tiles selected', profile._meta.tileCount],
+    ['EQ tiles selected', profile.eqTiles.length],
+    ['Combos fired', profile._meta.combosFireCount],
+    ['Geo neighborhood', profile.geoNeighborhood],
+    ['Generated', new Date(profile._meta.timestamp).toLocaleDateString()]
+  ].map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+
+  // RIASEC bars — computed from crosswalk, never hardcoded
+  const riasec = profile.riasec;
+  if(riasec && riasec.length) {
+    const maxScore = Math.max(...riasec.map(r=>r.score),1);
+    document.getElementById('counselor-riasec').innerHTML = riasec.map(r=>`
+      <div class="riasec-col">
+        <div class="riasec-score">${r.score}</div>
+        <div class="riasec-bar-wrap"><div class="riasec-bar-fill" style="width:${Math.round((r.score/maxScore)*100)}%"></div></div>
+        <div class="riasec-code">${r.code}</div>
+      </div>`).join('');
+
+    const top = riasec[0]?.code;
+    const interp = {
+      A:'Artistic dominant — creative, expressive, values originality. Resists convention.',
+      S:'Social dominant — people-oriented, empathetic, drawn to helping professions.',
+      I:'Investigative dominant — analytical, curious, drawn to research and problem-solving.',
+      R:'Realistic dominant — hands-on, practical, drawn to building and fixing.',
+      E:'Enterprising dominant — leadership oriented, persuasive, business and advocacy driven.',
+      C:'Conventional dominant — organized, detail-oriented, drawn to structured systems.'
+    }[top]||'';
+    document.getElementById('riasec-interp').textContent = interp;
+  }
+
+  // University match flags
+  const hasCreativeScience = profile.riasec.some(r=>r.code==='A'&&r.score>=2) &&
+    profile.naicsSectors.some(n=>[62,54].includes(n.sector));
+  const hasInterdisciplinary = profile._meta.combosFireCount > 0 ||
+    new Set(profile.allTileIds.map(id=>{
+      const t = typeof VECTOR_CROSSWALK!=='undefined'?VECTOR_CROSSWALK.find(x=>x.id===id):null;
+      return t?t.cluster:null;
+    }).filter(Boolean)).size >= 3;
+
+  document.getElementById('counselor-flags').innerHTML = [
+    [hasInterdisciplinary,'Interdisciplinary signal: yes','Interdisciplinary signal: no signal'],
+    [hasCreativeScience,'Creative + science bridge: yes','Creative + science bridge: no signal'],
+    [profile._meta.hasEQSignal,'EQ signal: strong','EQ signal: not detected'],
+    [profile.geoNeighborhood!=='your area','Geo match: yes','Geo match: default region']
+  ].map(([test,yes,no])=>`<span class="${test?'flag-yes':'flag-no'}">${test?yes:no}</span>`).join('');
+
+  // Combo unlocks
+  if(profile.comboUnlocks.length) {
+    document.getElementById('counselor-combos').innerHTML = profile.comboUnlocks.map(c=>
+      `<div class="action-prompt"><div class="action-text">
+        <strong>${c.triggered_by.join(' + ')}</strong> → ${c.unlocks.join(', ')}
+      </div></div>`
+    ).join('');
+  } else {
+    document.getElementById('counselor-combos').innerHTML =
+      '<div style="font-size:13px;color:var(--ink3);font-weight:300">No combination unlocks fired — single-tile signals only.</div>';
+  }
+
+  // Counselor note + prompts
+  if(callCData?.counselor) {
+    document.getElementById('counselor-full-note').textContent = callCData.counselor;
+
+    const promptsMatch = callCData.counselor.match(/THREE PROMPTS:([\s\S]*?)$/i);
+    if(promptsMatch) {
+      const prompts = promptsMatch[1].trim().split(/\n/).filter(l=>l.match(/^\d\./));
+      document.getElementById('counselor-prompts').innerHTML = prompts.map(p=>
+        `<div class="action-prompt"><div class="action-text">${p.replace(/^\d\.\s*/,'')}</div></div>`
+      ).join('');
+    }
+  }
+}
+
+// ── FALLBACK RENDER ────────────────────────────────
+function renderFallback(profile) {
+  const geo = resolveZIP(profile.zip);
+  document.getElementById('quote-text').textContent =
+    '"The two most important days in your life are the day you are born and the day you find out why."';
+  document.getElementById('quote-attr').textContent = 'Mark Twain (author and satirist)';
+  document.getElementById('quick-trajectory').innerHTML =
+    `<div class="trajectory-text">You are someone whose particular combination of curiosity, feeling, and capability points toward fields most people never think to look — and that is exactly where the most interesting work is waiting.</div>`;
+  if(geo.industries[0]) {
+    document.getElementById('geo-name-quick').textContent = `${geo.industries[0]} · ${geo.neighborhood}`;
+    document.getElementById('geo-text-quick').textContent = `${geo.distance} from home — worth exploring with your counselor.`;
+  }
+}
+
+</script>
+</body>
+</html>

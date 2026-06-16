@@ -1343,6 +1343,521 @@ const VECTOR_CROSSWALK = [
     geo_signal: false,
     eq_multiplier: true,
     combo_unlocks: []
+  },
+
+  // ─────────────────────────────────────────────
+  // CONNECTOR CLUSTER — "The way I move through the world"
+  // These tiles identify the relationship-native, high-EQ social architect.
+  // Career emergence: finance, PE, BD, real estate, consulting, luxury, philanthropy
+  // Most valuable combo: connector + pattern_reader → highest-value advisory careers
+  // ─────────────────────────────────────────────
+
+  {
+    id: "i_can_talk_to_anyone",
+    label: "I can talk to literally anyone — it doesn't matter who they are",
+    cluster: "eq",
+    riasec: ["S", "E"],
+    naics_sectors: [52, 53, 54, 44, 71, 92],
+    industries: [
+      "Finance & Investment Banking",
+      "Real Estate",
+      "Business Development",
+      "Sales & Client Services",
+      "Luxury Goods & Hospitality",
+      "Political & Nonprofit Leadership"
+    ],
+    career_emergence: [
+      "Investment Banker", "Private Equity Associate", "Business Development Director",
+      "Real Estate Broker", "Luxury Sales Director", "Political Fundraiser",
+      "Talent Agent", "Executive Recruiter", "Philanthropic Advisor"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_see_connections_others_miss"], unlocks: ["Venture Capitalist", "Strategy Consultant", "Private Equity Partner", "Chief of Staff"] },
+      { with: ["i_remember_everything_about_people"], unlocks: ["Executive Recruiter", "Relationship Banker", "Major Gift Officer", "Client Partner"] },
+      { with: ["entrepreneurship"], unlocks: ["Founder / CEO", "Business Development Lead", "Sales Leader"] }
+    ]
+  },
+
+  {
+    id: "i_remember_everything_about_people",
+    label: "I remember everything about people — birthdays, what they're going through",
+    cluster: "eq",
+    riasec: ["S", "E"],
+    naics_sectors: [52, 53, 54, 62, 81],
+    industries: [
+      "Wealth Management & Private Banking",
+      "Executive Search & Recruiting",
+      "Client Services & Account Management",
+      "Luxury & Hospitality",
+      "Healthcare Client Relations"
+    ],
+    career_emergence: [
+      "Wealth Manager", "Private Banker", "Executive Recruiter",
+      "Account Director", "Client Success Leader", "Luxury Concierge",
+      "Major Gift Officer", "Relationship Manager"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_can_talk_to_anyone"], unlocks: ["Private Equity Relationship Partner", "Ultra-High-Net-Worth Advisor", "Chief Relationship Officer"] },
+      { with: ["i_know_everyone"], unlocks: ["Super Connector", "Industry Convener", "Conference / Summit Founder"] }
+    ]
+  },
+
+  {
+    id: "people_tell_me_personal_stuff",
+    label: "People I barely know end up telling me really personal stuff",
+    cluster: "eq",
+    riasec: ["S", "I"],
+    naics_sectors: [62, 54, 52],
+    industries: [
+      "Counseling & Therapy",
+      "Wealth Management",
+      "Executive Coaching",
+      "Human Resources",
+      "Journalism & Oral History"
+    ],
+    career_emergence: [
+      "Therapist", "Executive Coach", "Wealth Advisor",
+      "HR Business Partner", "Journalist", "Oral Historian",
+      "Crisis Communications Advisor", "Mediator"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_feel_things_deeply", "mental_health_wellness"], unlocks: ["Therapist", "Executive Coach", "Grief Counselor"] },
+      { with: ["i_can_talk_to_anyone", "i_remember_everything_about_people"], unlocks: ["Private Client Advisor", "Family Office Relationship Manager"] }
+    ]
+  },
+
+  {
+    id: "i_fix_friend_group_drama",
+    label: "I'm usually the one who fixes things when the friend group has drama",
+    cluster: "eq",
+    riasec: ["S", "E"],
+    naics_sectors: [54, 62, 92],
+    industries: [
+      "Mediation & Conflict Resolution",
+      "Human Resources & Organizational Development",
+      "Law & Negotiation",
+      "Nonprofit Leadership",
+      "Diplomacy & International Relations"
+    ],
+    career_emergence: [
+      "Mediator", "HR Director", "Labor Relations Specialist",
+      "Attorney / Negotiator", "Diplomat", "Nonprofit Executive Director",
+      "Organizational Psychologist", "Chief People Officer"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_can_talk_to_anyone", "i_cant_ignore_unfairness"], unlocks: ["Labor Attorney", "Civil Rights Mediator", "Union Negotiator"] },
+      { with: ["i_remember_everything_about_people"], unlocks: ["Chief People Officer", "Culture & OD Consultant"] }
+    ]
+  },
+
+  {
+    id: "i_talk_to_new_people_first",
+    label: "When someone new shows up, I'm the first to go talk to them",
+    cluster: "eq",
+    riasec: ["S", "E"],
+    naics_sectors: [54, 52, 44, 71],
+    industries: [
+      "Business Development",
+      "Sales Leadership",
+      "Event & Conference Management",
+      "Hospitality & Tourism",
+      "Recruiting & Talent Acquisition"
+    ],
+    career_emergence: [
+      "Business Development Manager", "Sales Director", "Event Producer",
+      "Hospitality Manager", "Talent Acquisition Lead", "Brand Ambassador",
+      "Conference Director", "Partnership Manager"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_know_everyone", "i_can_talk_to_anyone"], unlocks: ["Conference Founder", "Industry Convener", "Community Builder"] }
+    ]
+  },
+
+  {
+    id: "im_friends_with_older_people",
+    label: "I'm friends with people way older than me",
+    cluster: "eq",
+    riasec: ["S", "E", "I"],
+    naics_sectors: [52, 54, 53],
+    industries: [
+      "Finance & Investment",
+      "Real Estate",
+      "Mentorship & Advisory Networks",
+      "Executive Leadership",
+      "Board & Governance"
+    ],
+    career_emergence: [
+      "Investment Professional", "Real Estate Developer",
+      "Board Director", "C-Suite Executive", "Family Office Advisor",
+      "Strategic Advisor", "Angel Investor"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_can_talk_to_anyone", "i_see_connections_others_miss"], unlocks: ["Venture Capitalist", "Private Equity Partner", "Family Office CIO"] }
+    ]
+  },
+
+  {
+    id: "i_make_the_group_chat",
+    label: "I'm the one who makes the group chat — and keeps it alive",
+    cluster: "eq",
+    riasec: ["S", "E"],
+    naics_sectors: [54, 51, 71],
+    industries: [
+      "Community Building & Management",
+      "Media & Publishing",
+      "Event Production",
+      "Brand & Marketing",
+      "Alumni & Membership Organizations"
+    ],
+    career_emergence: [
+      "Community Manager", "Brand Strategist", "Event Producer",
+      "Media Entrepreneur", "Alumni Relations Director",
+      "Membership Organization Leader", "Newsletter Founder"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["i_know_everyone", "entrepreneurship"], unlocks: ["Community Platform Founder", "Media Company CEO", "Membership Club Founder"] }
+    ]
+  },
+
+  {
+    id: "i_know_everyone",
+    label: "I know everyone — and I mean everyone",
+    cluster: "eq",
+    riasec: ["S", "E"],
+    naics_sectors: [52, 53, 54, 71],
+    industries: [
+      "Finance & Private Equity",
+      "Real Estate",
+      "Executive Search",
+      "Business Development",
+      "Political & Civic Leadership"
+    ],
+    career_emergence: [
+      "Private Equity Professional", "Investment Banker",
+      "Real Estate Developer", "Executive Search Partner",
+      "Political Operative", "Civic Leader", "Industry Association CEO",
+      "Conference & Summit Producer"
+    ],
+    geo_signal: true,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_can_talk_to_anyone", "i_see_connections_others_miss"], unlocks: ["Venture Capitalist", "Private Equity Partner", "Super Connector", "Fund of Funds Manager"] },
+      { with: ["i_remember_everything_about_people"], unlocks: ["Executive Search Partner", "Relationship Capital Advisor", "Industry Convener"] },
+      { with: ["entrepreneurship"], unlocks: ["Serial Entrepreneur", "Venture Studio Founder", "Angel Investor"] }
+    ]
+  },
+
+  // ─────────────────────────────────────────────
+  // PATTERN READER CLUSTER — perceptive, instinctive, reads rooms and trends
+  // Career emergence: strategy, VC, investing, intelligence, journalism, policy
+  // ─────────────────────────────────────────────
+
+  {
+    id: "i_feel_the_vibe_immediately",
+    label: "I can walk into a room and immediately feel the vibe",
+    cluster: "eq",
+    riasec: ["S", "I", "A"],
+    naics_sectors: [54, 52, 92, 51],
+    industries: [
+      "Strategy Consulting",
+      "Intelligence & National Security",
+      "Journalism & Media",
+      "Organizational Leadership",
+      "Venture Capital"
+    ],
+    career_emergence: [
+      "Management Consultant", "Intelligence Analyst", "Journalist",
+      "Chief of Staff", "Venture Capitalist", "Crisis Communications Advisor",
+      "Organizational Psychologist", "Brand Strategist"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_see_connections_others_miss", "i_know_everyone"], unlocks: ["Venture Capitalist", "Macro Investor", "Geopolitical Analyst"] },
+      { with: ["i_usually_right_about_people"], unlocks: ["Intelligence Analyst", "Forensic Interviewer", "Crisis Negotiator"] }
+    ]
+  },
+
+  {
+    id: "i_usually_right_about_people",
+    label: "I'm usually right about people within five minutes of meeting them",
+    cluster: "eq",
+    riasec: ["S", "I"],
+    naics_sectors: [54, 52, 92, 62],
+    industries: [
+      "Executive Search & Talent",
+      "Venture Capital & Investing",
+      "Intelligence & Law Enforcement",
+      "Human Resources",
+      "Journalism"
+    ],
+    career_emergence: [
+      "Talent Scout", "Executive Search Partner", "Venture Capitalist",
+      "Intelligence Officer", "HR Business Partner",
+      "Investigative Journalist", "Casting Director", "Negotiator"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_feel_the_vibe_immediately", "i_can_talk_to_anyone"], unlocks: ["Venture Capitalist", "Talent Partner", "Chief People Officer"] },
+      { with: ["true_crime", "law_justice"], unlocks: ["Intelligence Analyst", "Criminal Profiler", "Investigative Journalist"] }
+    ]
+  },
+
+  {
+    id: "i_know_before_it_happens",
+    label: "I can tell when something's about to happen before it does",
+    cluster: "eq",
+    riasec: ["I", "S", "E"],
+    naics_sectors: [52, 54, 51, 92],
+    industries: [
+      "Investing & Asset Management",
+      "Strategy & Management Consulting",
+      "Intelligence & Policy",
+      "Journalism & Media",
+      "Venture Capital"
+    ],
+    career_emergence: [
+      "Hedge Fund Analyst", "Macro Investor", "Strategy Consultant",
+      "Intelligence Analyst", "Policy Advisor", "Investigative Journalist",
+      "Venture Capitalist", "Market Research Director"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_see_connections_others_miss"], unlocks: ["Macro Investor", "Geopolitical Risk Analyst", "Scenario Planning Consultant"] },
+      { with: ["data_statistics", "business_startups"], unlocks: ["Quantitative Analyst", "Hedge Fund Manager", "Algorithmic Trader"] }
+    ]
+  },
+
+  {
+    id: "i_see_connections_others_miss",
+    label: "I see how things are connected even when they seem totally different",
+    cluster: "eq",
+    riasec: ["I", "E", "A"],
+    naics_sectors: [52, 54, 51, 92],
+    industries: [
+      "Venture Capital & Private Equity",
+      "Strategy Consulting",
+      "Investment Banking",
+      "Intelligence & National Security",
+      "Journalism & Long-Form Media",
+      "Policy & Think Tanks"
+    ],
+    career_emergence: [
+      "Venture Capitalist", "Strategy Consultant", "Investment Banker",
+      "Intelligence Analyst", "Policy Researcher", "Investigative Journalist",
+      "Chief Strategy Officer", "Think Tank Director", "Angel Investor"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_can_talk_to_anyone", "i_know_everyone"], unlocks: ["Private Equity Partner", "Venture Capitalist", "Super Connector", "Industry Analyst"] },
+      { with: ["i_know_before_it_happens"], unlocks: ["Macro Investor", "Geopolitical Analyst", "Scenario Planning Director"] },
+      { with: ["entrepreneurship", "business_startups"], unlocks: ["Serial Entrepreneur", "Venture Studio Founder", "Portfolio Company Operator"] }
+    ]
+  },
+
+  {
+    id: "my_friends_say_i_have_good_instincts",
+    label: "My friends say I have good instincts — and they're usually right about that",
+    cluster: "eq",
+    riasec: ["I", "S", "E"],
+    naics_sectors: [52, 54, 51],
+    industries: [
+      "Investing & Finance",
+      "Strategy Consulting",
+      "Talent & Creative Industries",
+      "Business Development",
+      "Leadership & Executive Roles"
+    ],
+    career_emergence: [
+      "Investor", "Strategy Consultant", "Talent Agent",
+      "Business Development Executive", "Chief of Staff",
+      "Brand Advisor", "Creative Director", "Entrepreneur"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_see_connections_others_miss", "i_know_everyone"], unlocks: ["Venture Capitalist", "Strategic Advisor", "Industry Analyst"] }
+    ]
+  },
+
+  {
+    id: "i_notice_trends_early",
+    label: "I can tell when something's going to be huge before anyone else picks it up",
+    cluster: "eq",
+    riasec: ["I", "E", "A"],
+    naics_sectors: [52, 54, 44, 51],
+    industries: [
+      "Venture Capital & Early Stage Investing",
+      "Trend Forecasting & Brand Strategy",
+      "Fashion & Consumer Goods",
+      "Media & Entertainment",
+      "Market Research & Consumer Insights"
+    ],
+    career_emergence: [
+      "Venture Capitalist", "Trend Forecaster", "Brand Strategist",
+      "Consumer Insights Director", "Fashion Buyer", "Creative Director",
+      "Early Stage Investor", "Market Research Director"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_see_connections_others_miss", "entrepreneurship"], unlocks: ["Venture Capitalist", "Consumer Brand Founder", "Angel Investor"] },
+      { with: ["social_media_content", "fashion_personal_style"], unlocks: ["Trend Forecaster", "Fashion Director", "Brand Consultant"] }
+    ]
+  },
+
+  // ─────────────────────────────────────────────
+  // STILL FIGURING IT OUT — the most important cluster in the system
+  // These tiles identify the broadly curious, relationship-native, high-potential
+  // student who has been told implicitly that not knowing is a problem.
+  // It is not. This is the tile that changes how they see themselves.
+  // ─────────────────────────────────────────────
+
+  {
+    id: "good_at_a_lot_not_great_at_one",
+    label: "I'm pretty good at a lot of things but not great at any one thing yet",
+    cluster: "eq",
+    riasec: ["S", "E", "I"],
+    naics_sectors: [54, 52, 53, 44],
+    industries: [
+      "General Management & Leadership",
+      "Business Development",
+      "Entrepreneurship",
+      "Finance & Investing",
+      "Consulting"
+    ],
+    career_emergence: [
+      "General Manager", "Entrepreneur", "Business Development Executive",
+      "Management Consultant", "Chief of Staff", "Operations Director",
+      "Private Equity Generalist", "Startup Operator"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_can_talk_to_anyone", "i_know_everyone"], unlocks: ["Entrepreneur", "Business Developer", "General Partner"] },
+      { with: ["i_see_connections_others_miss"], unlocks: ["Generalist Investor", "Strategy Consultant", "Chief of Staff to CEO"] }
+    ]
+  },
+
+  {
+    id: "get_into_things_then_move_on",
+    label: "I get really into something and then move on to the next thing",
+    cluster: "eq",
+    riasec: ["I", "E", "A"],
+    naics_sectors: [54, 52, 51],
+    industries: [
+      "Entrepreneurship & Startups",
+      "Venture Capital",
+      "Journalism & Media",
+      "Consulting",
+      "Creative Direction"
+    ],
+    career_emergence: [
+      "Serial Entrepreneur", "Portfolio Career Professional",
+      "Venture Capitalist", "Journalist", "Consultant",
+      "Creative Director", "Podcast Host", "Startup Advisor"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["i_see_connections_others_miss", "entrepreneurship"], unlocks: ["Serial Entrepreneur", "Venture Capitalist", "Startup Studio Founder"] }
+    ]
+  },
+
+  {
+    id: "people_always_want_me_on_their_team",
+    label: "People always want me on their team even when they can't explain why",
+    cluster: "eq",
+    riasec: ["S", "E"],
+    naics_sectors: [54, 52, 92],
+    industries: [
+      "Team Leadership & Management",
+      "Organizational Culture",
+      "Operations & General Management",
+      "Sports & Athletics Management",
+      "Military & Public Service"
+    ],
+    career_emergence: [
+      "Team Leader", "Operations Director", "Chief of Staff",
+      "General Manager", "Athletic Director", "Military Officer",
+      "Political Campaign Manager", "Startup COO"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["im_one_who_holds_group_together", "i_can_talk_to_anyone"], unlocks: ["Chief Operating Officer", "General Manager", "Chief of Staff"] }
+    ]
+  },
+
+  {
+    id: "i_show_up_when_it_matters",
+    label: "I show up when it matters — people count on that",
+    cluster: "eq",
+    riasec: ["S", "E", "R"],
+    naics_sectors: [54, 92, 62],
+    industries: [
+      "Leadership & Management",
+      "Public Service & Military",
+      "Healthcare & Emergency Services",
+      "Nonprofit & Community Organizations",
+      "Operations & Logistics"
+    ],
+    career_emergence: [
+      "Operations Leader", "Military Officer", "Emergency Manager",
+      "Nonprofit Executive", "Logistics Director", "Chief of Staff",
+      "Political Leader", "Community Organizer"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_stay_calm_when_things_go_wrong"], unlocks: ["Emergency Manager", "Military Officer", "Crisis Operations Director"] },
+      { with: ["i_can_talk_to_anyone", "i_know_everyone"], unlocks: ["Political Leader", "Nonprofit CEO", "Community Foundation Director"] }
+    ]
+  },
+
+  {
+    id: "still_figuring_it_out",
+    label: "I don't have one big thing yet — and that feels okay",
+    cluster: "eq",
+    riasec: ["S", "E", "I"],
+    naics_sectors: [54, 52, 53, 51],
+    industries: [
+      "General Management",
+      "Entrepreneurship",
+      "Finance & Investing",
+      "Business Development",
+      "Leadership"
+    ],
+    career_emergence: [
+      "Entrepreneur", "General Manager", "Business Developer",
+      "Investor", "Consultant", "Chief of Staff",
+      "Operations Leader", "Startup Founder"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_can_talk_to_anyone", "i_know_everyone", "i_see_connections_others_miss"],
+        unlocks: ["Private Equity Partner", "Venture Capitalist", "Serial Entrepreneur", "Industry Leader"] },
+      { with: ["i_can_talk_to_anyone", "i_remember_everything_about_people"],
+        unlocks: ["Relationship Capital Professional", "Wealth Advisor", "Executive Recruiter"] }
+    ]
   }
 
 ];
