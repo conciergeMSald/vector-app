@@ -339,8 +339,123 @@ const SOCIAL_SCENE_AFFINITY = {
 // CORE MATCHING FUNCTION
 // ─────────────────────────────────────────────────────────────
 
-function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks) {
-  const { campus_scale, regions, conference, social_scene } = collegePrefs;
+// ── RELIGIOUS AFFILIATION MAP ────────────────────────────────────────────
+const RELIGIOUS_AFFILIATION = {
+  catholic: [
+    'University of Notre Dame','Georgetown University','Boston College',
+    'Gonzaga University','Villanova University','Fordham University',
+    'Santa Clara University','University of San Diego',
+    "Saint Mary's College of California",'University of San Francisco',
+    'Creighton University'
+  ],
+  lds: [
+    'Brigham Young University'
+  ],
+  protestant: [
+    'Baylor University','Wake Forest University','Emory University',
+    'Pepperdine University','Elon University','University of the South',
+    'Duke University','Boston University','Tulane University',
+    'Butler University','Drake University','Stetson University'
+  ],
+  jewish: [
+    'Columbia University','University of Pennsylvania','Brown University',
+    'Cornell University','George Washington University',
+    'American University','New York University','Tulane University'
+  ],
+  secular: ['__EXCLUDE_RELIGIOUS__'],
+  no_preference: ['__ALL__']
+};
+
+const RELIGIOUS_CULTURE_SCHOOLS = [
+  'Brigham Young University','Baylor University','Pepperdine University',
+  'University of the South','Stetson University'
+];
+
+// ── SCHOOL GPA RANGES (unweighted 4.0 scale) ─────────────────────────────
+const SCHOOL_GPA_RANGES = {
+  "Harvard University":{min:3.9},"Yale University":{min:3.9},
+  "Princeton University":{min:3.9},"Columbia University":{min:3.9},
+  "University of Pennsylvania":{min:3.9},"Brown University":{min:3.9},
+  "Cornell University":{min:3.8},"Dartmouth College":{min:3.9},
+  "Massachusetts Institute of Technology":{min:3.9},
+  "Stanford University":{min:3.9},"California Institute of Technology":{min:3.9},
+  "University of Chicago":{min:3.9},"Johns Hopkins University":{min:3.8},
+  "Northwestern University":{min:3.8},"Duke University":{min:3.8},
+  "Vanderbilt University":{min:3.8},"Georgetown University":{min:3.8},
+  "Carnegie Mellon University":{min:3.7},"Emory University":{min:3.7},
+  "University of Notre Dame":{min:3.8},"Williams College":{min:3.9},
+  "Amherst College":{min:3.9},"Bowdoin College":{min:3.8},
+  "Middlebury College":{min:3.7},"Pomona College":{min:3.8},
+  "Claremont McKenna College":{min:3.8},"Harvey Mudd College":{min:3.9},
+  "Webb Institute":{min:3.7},"Deep Springs College":{min:3.9},
+  "Colorado College":{min:3.7},"University of the South":{min:3.4},
+  "Boston College":{min:3.7},"University of Virginia":{min:3.8},
+  "Wake Forest University":{min:3.7},"Villanova University":{min:3.6},
+  "Georgia Institute of Technology":{min:3.7},"University of Michigan":{min:3.7},
+  "UC San Diego":{min:3.8},"University of California Irvine":{min:3.7},
+  "University of California Davis":{min:3.6},
+  "University of California Santa Cruz":{min:3.4},
+  "University of Washington":{min:3.6},"Ohio State University":{min:3.5},
+  "Penn State University":{min:3.4},"Purdue University":{min:3.5},
+  "Indiana University":{min:3.2},"University of Minnesota":{min:3.5},
+  "Michigan State University":{min:3.3},
+  "University of Maryland College Park":{min:3.5},
+  "Rutgers University":{min:3.3},"Babson College":{min:3.5},
+  "Boston University":{min:3.6},"Northeastern University":{min:3.6},
+  "New York University":{min:3.6},"George Washington University":{min:3.5},
+  "American University":{min:3.3},"Fordham University":{min:3.4},
+  "Drexel University":{min:3.3},"Syracuse University":{min:3.3},
+  "Temple University":{min:3.0},"University of Pittsburgh":{min:3.5},
+  "Case Western Reserve University":{min:3.7},
+  "Rose-Hulman Institute of Technology":{min:3.5},
+  "Stevens Institute of Technology":{min:3.5},
+  "Worcester Polytechnic Institute":{min:3.5},
+  "Colorado School of Mines":{min:3.5},"Kettering University":{min:3.0},
+  "United States Military Academy":{min:3.7},
+  "University of Georgia":{min:3.5},"University of Florida":{min:3.7},
+  "University of Alabama":{min:3.0},"Auburn University":{min:3.3},
+  "Louisiana State University":{min:3.0},"University of Tennessee":{min:3.2},
+  "University of Arkansas":{min:3.0},"University of South Carolina":{min:3.0},
+  "Clemson University":{min:3.5},"University of Mississippi":{min:2.8},
+  "Mississippi State University":{min:2.8},"Florida State University":{min:3.4},
+  "University of South Florida":{min:3.0},
+  "University of Central Florida":{min:3.2},
+  "Florida Atlantic University":{min:2.8},"Stetson University":{min:3.0},
+  "Northwestern University":{min:3.8},"University of Iowa":{min:3.0},
+  "Iowa State University":{min:3.0},"University of Nebraska-Lincoln":{min:3.0},
+  "University of Kentucky":{min:3.0},"University of Missouri":{min:3.0},
+  "Virginia Tech":{min:3.4},
+  "North Carolina State University":{min:3.5},
+  "University of Miami":{min:3.6},"Elon University":{min:3.3},
+  "College of William and Mary":{min:3.8},
+  "University of Oklahoma":{min:3.2},"University of Kansas":{min:3.0},
+  "Baylor University":{min:3.4},"University of Arizona":{min:3.0},
+  "Arizona State University":{min:2.8},
+  "University of Colorado Boulder":{min:3.0},
+  "Colorado State University":{min:3.0},"University of Denver":{min:3.3},
+  "University of Oregon":{min:3.2},"Oregon State University":{min:3.0},
+  "Boise State University":{min:2.8},"University of Utah":{min:3.0},
+  "Brigham Young University":{min:3.5},"Gonzaga University":{min:3.6},
+  "Pepperdine University":{min:3.5},"Santa Clara University":{min:3.5},
+  "University of San Diego":{min:3.4},"University of San Francisco":{min:3.2},
+  "Saint Mary's College of California":{min:3.2},
+  "California Polytechnic State University San Luis Obispo":{min:3.5},
+  "UC Riverside":{min:3.2},
+  "California State University Long Beach":{min:2.8},
+  "California State University Fullerton":{min:2.8},
+  "California State University Northridge":{min:2.5},
+  "California State University Los Angeles":{min:2.5},
+  "California State University Chico":{min:2.8},
+  "California State University Fresno":{min:2.8},
+  "Tulane University":{min:3.5},"Creighton University":{min:3.4},
+  "Butler University":{min:3.2},"Drake University":{min:3.2},
+  "University of Louisville":{min:3.0},"University of Connecticut":{min:3.4},
+  "University of the South":{min:3.4}
+};
+
+function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {
+  const { campus_scale, regions, conference, social_scene, religion } = collegePrefs;
+  const gpa = gpaData ? gpaData.normalized : null;
 
   // Step 1 — Conference pool
   let conferencePool = null;
@@ -378,13 +493,44 @@ function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks) {
     });
   }
 
+  // Step 5b — Religion filter (hard filter for specific affiliation)
+  if (religion && religion !== 'no_preference' && religion !== 'secular') {
+    const religionPool = RELIGIOUS_AFFILIATION[religion] || [];
+    if (religionPool.length > 0 && religionPool[0] !== '__ALL__') {
+      eligible = eligible.filter(school => religionPool.includes(school));
+    }
+  }
+
   // Step 6 — Score and sort
   const scored = eligible.map(school => {
     let score = 5; // base
+
+    // Social scene affinity bonus
     if (social_scene && social_scene !== 'no_preference') {
       const list = SOCIAL_SCENE_AFFINITY[social_scene] || [];
       if (list.includes(school)) score += 10;
     }
+
+    // Religion affiliation boost
+    if (religion && religion !== 'no_preference' && religion !== 'secular') {
+      if ((RELIGIOUS_AFFILIATION[religion] || []).includes(school)) score += 8;
+    }
+
+    // Secular preference — soft penalize strong religious culture schools
+    if (religion === 'secular') {
+      if (RELIGIOUS_CULTURE_SCHOOLS.includes(school)) score -= 10;
+    }
+
+    // GPA soft filter
+    if (gpa) {
+      const range = SCHOOL_GPA_RANGES[school];
+      if (range) {
+        if (gpa >= range.min) score += 5;
+        if (gpa >= range.min + 0.2) score += 3;
+        if (gpa < range.min - 0.3) score -= 8;
+      }
+    }
+
     return { school, score };
   });
 
@@ -396,7 +542,7 @@ function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks) {
 // ─────────────────────────────────────────────────────────────
 
 function summarizePreferences(collegePrefs) {
-  const { campus_scale, regions, conference, social_scene } = collegePrefs;
+  const { campus_scale, regions, conference, social_scene, religion } = collegePrefs;
   const confLabels = {
     sec:'SEC', big_ten:'Big Ten', acc:'ACC', big_12:'Big 12',
     pac:'Pac-12 / West Coast', ivy:'Ivy / Ivy-equivalent',
@@ -430,5 +576,6 @@ function summarizePreferences(collegePrefs) {
 
 if (typeof module !== 'undefined') module.exports = {
   CONFERENCE_POOLS, REGION_POOLS, SCALE_MAP, SCHOOL_ENROLLMENT,
-  SOCIAL_SCENE_AFFINITY, matchUniversities, summarizePreferences
+  SOCIAL_SCENE_AFFINITY, RELIGIOUS_AFFILIATION, RELIGIOUS_CULTURE_SCHOOLS,
+  SCHOOL_GPA_RANGES, matchUniversities, summarizePreferences
 };

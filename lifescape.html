@@ -244,6 +244,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .show-all-link{display:block;text-align:center;font-size:12px;color:var(--ink4);cursor:pointer;margin-top:1.5rem;padding:.75rem 0;border-top:0.5px solid var(--rule);transition:color .2s;}
 .show-all-link:hover{color:var(--gold);}
 
+/* ── GPA TOGGLE ────────────────────────────────────── */
+.gpa-toggle{padding:7px 14px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:12px;color:var(--ink4);cursor:pointer;transition:all .2s;}
+.gpa-toggle.sel{background:var(--gold-pale);border-color:var(--gold);color:var(--ink);}
+
 /* ── SCHOOL CARDS ─────────────────────────────────── */
 .school-card{border:0.5px solid var(--rule);padding:1.5rem;margin-bottom:1rem;background:var(--white);}
 .school-card-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.75rem;}
@@ -329,6 +333,21 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <option value="11">Grade 11</option>
     <option value="12">Grade 12</option>
   </select>
+
+  <!-- GPA -->
+  <div id="gpa-section">
+    <label class="input-label" id="gpa-label">GPA (optional)</label>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:.5rem">
+      <input class="ls-input" id="ls-gpa" placeholder="e.g. 3.8" type="number"
+        min="0" max="5" step="0.01" style="max-width:120px"
+        oninput="LS_STATE.gpa=parseFloat(this.value)||null">
+      <div style="display:flex;gap:0">
+        <button class="gpa-toggle" id="gpa-unweighted" onclick="setGPAType('unweighted')" style="border-right:none">Unweighted</button>
+        <button class="gpa-toggle sel" id="gpa-weighted" onclick="setGPAType('weighted')">Weighted</button>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--ink4)">Unweighted = 4.0 scale · Weighted = 5.0 scale with AP/IB</div>
+  </div>
 
   <div class="hint-bar" id="s2-hint"></div>
   <button class="ls-btn" onclick="validateAndGoTo(25)">Continue</button>
@@ -549,6 +568,36 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="zip-reveal">
       <div class="zip-reveal-label">Schools in your range</div>
       <div class="zip-reveal-content" id="pref-preview-content"></div>
+    </div>
+  </div>
+
+  <!-- Q5 — Religious preference -->
+  <div class="pref-section">
+    <div class="pref-q-label" id="s35-religion-q">Does religious affiliation matter?</div>
+    <div class="pref-options">
+      <button class="pref-btn" data-pref="religion" data-val="catholic" onclick="selectPref(this,'religion',false)">
+        Catholic
+        <span class="pref-sub">Notre Dame, Georgetown, Boston College, Gonzaga, Villanova</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="lds" onclick="selectPref(this,'religion',false)">
+        LDS / Mormon
+        <span class="pref-sub">Brigham Young University</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="protestant" onclick="selectPref(this,'religion',false)">
+        Protestant / Christian
+        <span class="pref-sub">Baylor, Wake Forest, Emory, Pepperdine, Elon, University of the South</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="jewish" onclick="selectPref(this,'religion',false)">
+        Jewish
+        <span class="pref-sub">Brandeis and schools with strong Hillel programs</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="secular" onclick="selectPref(this,'religion',false)">
+        Secular preferred
+        <span class="pref-sub">Show me schools without strong religious culture</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="no_preference" onclick="selectPref(this,'religion',false)">
+        No preference
+      </button>
     </div>
   </div>
 
@@ -831,7 +880,8 @@ const COLLEGE_PREFS = {
   campus_scale: 'no_preference',
   regions: [],
   conference: 'no_sports',
-  social_scene: 'no_preference'
+  social_scene: 'no_preference',
+  religion: 'no_preference'
 };
 
 // ── CONFIG ─────────────────────────────────────────
@@ -840,7 +890,7 @@ const SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxmhDOrAjTtgpD9
 
 // ── STATE ──────────────────────────────────────────
 const LS_STATE = {
-  name:'', grade:null, voice:'student',
+  name:'', grade:null, gpa:null, gpa_type:'weighted', voice:'student',
   selectedTileIds: new Set(),
   zip:'', reportFormat:'both',
   submitted:false,
@@ -881,6 +931,8 @@ function updateS2Voice() {
     ? "This is for your child's Lifescape. Nothing is permanent. Nothing commits them to anything."
     : "This is just for your Lifescape. Nothing is permanent. Nothing commits you to anything.";
   document.getElementById('s2-name-label').textContent = p ? "Child's first name" : "First name";
+  const gpaLabel = document.getElementById('gpa-label');
+  if(gpaLabel) gpaLabel.textContent = p ? "Child's GPA (optional)" : "GPA (optional)";
   document.getElementById('s3-q').textContent = p
     ? "What sounds interesting to your child?"
     : "What sounds interesting?";
@@ -1187,13 +1239,17 @@ function assembleProfile() {
   return {
     name: LS_STATE.name,
     grade: LS_STATE.grade,
+    gpa: LS_STATE.gpa,
+    gpa_type: LS_STATE.gpa_type,
+    gpa_normalized: normalizeGPA(LS_STATE.gpa, LS_STATE.gpa_type),
     voice: LS_STATE.voice,
     reportFormat: LS_STATE.reportFormat,
     college_prefs: {
       campus_scale: COLLEGE_PREFS.campus_scale,
       regions: Array.isArray(COLLEGE_PREFS.regions) ? [...COLLEGE_PREFS.regions] : [],
       conference: COLLEGE_PREFS.conference,
-      social_scene: COLLEGE_PREFS.social_scene
+      social_scene: COLLEGE_PREFS.social_scene,
+      religion: COLLEGE_PREFS.religion
     },
     activityTiles,
     eqTiles,
@@ -1426,10 +1482,14 @@ function captureToSheets(profile, callAData) {
     geo_neighborhood: profile.geoNeighborhood,
     has_eq_signal: profile._meta.hasEQSignal?'Y':'N',
     trajectory_sentence: callAData?.trajectory||'',
+    gpa: LS_STATE.gpa || '',
+    gpa_type: LS_STATE.gpa_type,
+    gpa_normalized: normalizeGPA(LS_STATE.gpa, LS_STATE.gpa_type) || '',
     conference_pref: COLLEGE_PREFS.conference,
     campus_scale_pref: COLLEGE_PREFS.campus_scale,
     regions_pref: Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(' | ') : (COLLEGE_PREFS.regions || 'open'),
     social_scene_pref: COLLEGE_PREFS.social_scene,
+    religion_pref: COLLEGE_PREFS.religion,
     cc_pathway_shown:'N'
   };
   fetch(SHEETS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(()=>{});
@@ -1529,6 +1589,23 @@ function updatePrefPreview() {
   }
 }
 
+// ── GPA HELPERS ────────────────────────────────────
+function setGPAType(type) {
+  LS_STATE.gpa_type = type;
+  document.getElementById('gpa-weighted').classList.toggle('sel', type === 'weighted');
+  document.getElementById('gpa-unweighted').classList.toggle('sel', type === 'unweighted');
+}
+
+// Normalize GPA to unweighted 4.0 scale for filtering
+function normalizeGPA(gpa, type) {
+  if (!gpa) return null;
+  if (type === 'weighted') {
+    // Rough conversion: weighted 4.0 = unweighted 3.5, weighted 5.0 = unweighted 4.0
+    return Math.min(4.0, (gpa / 5.0) * 4.0 + 0.3);
+  }
+  return Math.min(4.0, gpa);
+}
+
 // ── ORIENTING QUESTIONS STATE ─────────────────────
 const ORIENT_ANSWERS = {
   free_time: [],      // multi-select
@@ -1586,10 +1663,17 @@ function resetPrefState() {
   if (typeof COLLEGE_PREFS.campus_scale !== 'string') COLLEGE_PREFS.campus_scale = 'no_preference';
   if (typeof COLLEGE_PREFS.conference !== 'string') COLLEGE_PREFS.conference = 'no_sports';
   if (typeof COLLEGE_PREFS.social_scene !== 'string') COLLEGE_PREFS.social_scene = 'no_preference';
+  if (typeof COLLEGE_PREFS.religion !== 'string') COLLEGE_PREFS.religion = 'no_preference';
 }
 
 function updatePrefVoice() {
   const p = LS_STATE.voice === 'parent';
+
+  // Update religion question label
+  const relQ = document.getElementById('s35-religion-q');
+  if(relQ) relQ.textContent = p
+    ? "Does religious affiliation matter to your family?"
+    : "Does religious affiliation matter?";
 
   const qEl = document.querySelector('#screen-35 .q');
   if(qEl) qEl.textContent = p
@@ -1643,7 +1727,7 @@ GRADE CONTEXT:
 ${ctx.gradeContext}
 
 STUDENT PROFILE:
-Name: ${ctx.name} | Grade: ${ctx.grade}
+Name: ${ctx.name} | Grade: ${ctx.grade}${ctx.gpa ? ` | GPA: ${ctx.gpa} (${ctx.gpa_type})` : ''}
 Activity interests: ${ctx.activityTiles.join(', ')}
 EQ identity: ${ctx.eqTiles.join(', ')}
 RIASEC: ${ctx.topRIASEC}
@@ -1822,11 +1906,17 @@ async function submitLifescape() {
     if(typeof matchUniversities !== 'undefined' && typeof UNIVERSITY_CONTENT !== 'undefined') {
       try {
         // Get ranked school list from college prefs engine
+        const gpaData = profile.gpa ? {
+          raw: profile.gpa,
+          type: profile.gpa_type,
+          normalized: profile.gpa_normalized
+        } : null;
         const matchedSchools = matchUniversities(
           profile.college_prefs,
           profile.riasec,
           profile.naicsSectors,
-          profile.comboUnlocks
+          profile.comboUnlocks,
+          gpaData
         ).slice(0, 12); // Top 12 candidates for Claude to work with
 
         // Get content for matched schools
