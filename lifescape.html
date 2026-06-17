@@ -358,7 +358,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
   <!-- Q2 — Self view -->
   <div class="orient-q">
-    <div class="orient-q-label">Right now you'd describe yourself as...</div>
+    <div class="orient-q-label" id="q2-label">Right now you'd describe yourself as...</div>
     <div class="orient-options" id="q2-options">
       <button class="orient-btn" data-q="self_view" data-val="know_what_i_like" onclick="toggleOrient(this,'self_view','know_what_i_like',false)">I know what I'm into</button>
       <button class="orient-btn" data-q="self_view" data-val="still_figuring_out" onclick="toggleOrient(this,'self_view','still_figuring_out',false)">Still figuring it out</button>
@@ -368,7 +368,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
   <!-- Q3 — Work style -->
   <div class="orient-q">
-    <div class="orient-q-label">You work best...</div>
+    <div class="orient-q-label" id="q3-label">You work best...</div>
     <div class="orient-options" id="q3-options">
       <button class="orient-btn" data-q="work_style" data-val="on_my_own" onclick="toggleOrient(this,'work_style','on_my_own',false)">On my own</button>
       <button class="orient-btn" data-q="work_style" data-val="with_people" onclick="toggleOrient(this,'work_style','with_people',false)">With other people</button>
@@ -389,7 +389,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="container">
   <div class="ls-eyebrow">Step 2 of 4</div>
   <div class="q" id="s3-q">What sounds interesting?</div>
-  <div class="q-sub">Tap anything that catches your eye — things you love, things you've never tried, things you're just curious about. There are no wrong answers.</div>
+  <div class="q-sub" id="s3-sub">Tap anything that catches your eye — things you love, things you've never tried, things you're just curious about. There are no wrong answers.</div>
 
   <div class="tile-count-bar">
     <div class="tile-count-label">Selected</div>
@@ -427,7 +427,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="container">
   <div class="ls-eyebrow">Step 3 of 4</div>
   <div class="q">Tell us about the college experience you want.</div>
-  <div class="q-sub">None of this is binding. It just helps us find schools that actually fit.</div>
+  <div class="q-sub" id="s35-sub">None of this is binding. It just helps us find schools that actually fit.</div>
 
   <!-- Q1 — Campus Scale -->
   <div class="pref-section">
@@ -563,8 +563,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="screen" id="screen-4">
 <div class="container">
   <div class="ls-eyebrow">Step 3 of 4</div>
-  <div class="q">Where do you live?</div>
-  <div class="q-sub">Your ZIP code helps us find industries and opportunities close to home — ones most people never think to look for.</div>
+  <div class="q" id="s4-q">Where do you live?</div>
+  <div class="q-sub" id="s4-sub">Your ZIP code helps us find industries and opportunities close to home — ones most people never think to look for.</div>
 
   <label class="input-label">ZIP code</label>
   <input class="ls-input" id="ls-zip" placeholder="e.g. 91302" maxlength="5"
@@ -855,10 +855,11 @@ function goTo(n) {
   document.getElementById('screen-'+n).classList.add('active');
   document.getElementById('progress-fill').style.width = (SCREEN_PROGRESS[n]||0)+'%';
   window.scrollTo(0,0);
-  if(n===3) renderTileGrid();
+  if(n===3) { renderTileGrid(); updateS2Voice(); }
   if(n===2) updateS2Voice();
   if(n===25) updateOrientVoice();
-  if(n===35) updatePrefVoice();
+  if(n===35) { resetPrefState(); updatePrefVoice(); }
+  if(n===4) updateS2Voice();
 }
 
 // ── VOICE FORK ─────────────────────────────────────
@@ -883,6 +884,21 @@ function updateS2Voice() {
   document.getElementById('s3-q').textContent = p
     ? "What sounds interesting to your child?"
     : "What sounds interesting?";
+
+  const s3sub = document.getElementById('s3-sub');
+  if(s3sub) s3sub.textContent = p
+    ? "Tap anything that catches your eye — things your child loves, has never tried, or is just curious about. There are no wrong answers."
+    : "Tap anything that catches your eye — things you love, things you've never tried, things you're just curious about. There are no wrong answers.";
+
+  const s4q = document.getElementById('s4-q');
+  if(s4q) s4q.textContent = p
+    ? "Where does your child go to school?"
+    : "Where do you live?";
+
+  const s4sub = document.getElementById('s4-sub');
+  if(s4sub) s4sub.textContent = p
+    ? "Their ZIP code helps us find industries and opportunities close to home — ones most families never think to look for."
+    : "Your ZIP code helps us find industries and opportunities close to home — ones most people never think to look for.";
 }
 
 // ── VALIDATIONS ────────────────────────────────────
@@ -1175,7 +1191,7 @@ function assembleProfile() {
     reportFormat: LS_STATE.reportFormat,
     college_prefs: {
       campus_scale: COLLEGE_PREFS.campus_scale,
-      regions: [...COLLEGE_PREFS.regions],
+      regions: Array.isArray(COLLEGE_PREFS.regions) ? [...COLLEGE_PREFS.regions] : [],
       conference: COLLEGE_PREFS.conference,
       social_scene: COLLEGE_PREFS.social_scene
     },
@@ -1412,7 +1428,7 @@ function captureToSheets(profile, callAData) {
     trajectory_sentence: callAData?.trajectory||'',
     conference_pref: COLLEGE_PREFS.conference,
     campus_scale_pref: COLLEGE_PREFS.campus_scale,
-    regions_pref: COLLEGE_PREFS.regions.join(' | '),
+    regions_pref: Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(' | ') : (COLLEGE_PREFS.regions || 'open'),
     social_scene_pref: COLLEGE_PREFS.social_scene,
     cc_pathway_shown:'N'
   };
@@ -1478,6 +1494,11 @@ function selectPref(btn, pref, isMulti) {
     COLLEGE_PREFS[pref] = btn.dataset.val;
   }
 
+  // Safety: ensure regions is always an array
+  if (!Array.isArray(COLLEGE_PREFS.regions)) {
+    COLLEGE_PREFS.regions = [];
+  }
+
   updatePrefPreview();
 }
 
@@ -1521,9 +1542,23 @@ let _allTilesShown = false; // whether "show all" was tapped
 
 function updateOrientVoice() {
   const p = LS_STATE.voice === 'parent';
+
+  // Q1 — free time
   document.getElementById('q1-label').textContent = p
     ? "When your child has free time, they are more likely to be..."
     : "When you have free time, you're more likely to be...";
+
+  // Q2 — self view
+  const q2 = document.getElementById('q2-label');
+  if(q2) q2.textContent = p
+    ? "Right now you'd describe your child as..."
+    : "Right now you'd describe yourself as...";
+
+  // Q3 — work style
+  const q3 = document.getElementById('q3-label');
+  if(q3) q3.textContent = p
+    ? "Your child works best..."
+    : "You work best...";
 }
 
 function toggleOrient(btn, question, value, isMulti) {
@@ -1545,12 +1580,26 @@ function toggleOrient(btn, question, value, isMulti) {
   clearHint('s25-hint');
 }
 
+function resetPrefState() {
+  // Ensure all COLLEGE_PREFS fields are correct types
+  if (!Array.isArray(COLLEGE_PREFS.regions)) COLLEGE_PREFS.regions = [];
+  if (typeof COLLEGE_PREFS.campus_scale !== 'string') COLLEGE_PREFS.campus_scale = 'no_preference';
+  if (typeof COLLEGE_PREFS.conference !== 'string') COLLEGE_PREFS.conference = 'no_sports';
+  if (typeof COLLEGE_PREFS.social_scene !== 'string') COLLEGE_PREFS.social_scene = 'no_preference';
+}
+
 function updatePrefVoice() {
   const p = LS_STATE.voice === 'parent';
+
   const qEl = document.querySelector('#screen-35 .q');
   if(qEl) qEl.textContent = p
-    ? 'Tell us about the college experience your child wants.'
+    ? 'Tell us about the college experience your child is looking for.'
     : 'Tell us about the college experience you want.';
+
+  const subEl = document.getElementById('s35-sub');
+  if(subEl) subEl.textContent = p
+    ? "None of this is binding. It helps us find schools that actually fit your child."
+    : "None of this is binding. It just helps us find schools that actually fit.";
 }
 
 function validateOrientAndGoTo(n) {
@@ -1577,7 +1626,7 @@ function buildCallDPrompt(ctx, matchedSchools, schoolContentBlock) {
     ctx.college_prefs.campus_scale && ctx.college_prefs.campus_scale !== 'no_preference'
       ? ctx.college_prefs.campus_scale.replace('_',' ')
       : null,
-    ctx.college_prefs.regions && ctx.college_prefs.regions.length
+    ctx.college_prefs.regions && Array.isArray(ctx.college_prefs.regions) && ctx.college_prefs.regions.length
       ? ctx.college_prefs.regions.join(', ')
       : null,
     ctx.college_prefs.social_scene && ctx.college_prefs.social_scene !== 'no_preference'
