@@ -1363,9 +1363,9 @@ function parseCallC(text) {
 }
 
 // ── API CALL ───────────────────────────────────────
-async function fireCall(prompt, maxTokens, retryCount=0) {
+async function fireCall(prompt, maxTokens, retryCount=0, timeoutMs=30000) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 30000);
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const res = await fetch(API_ENDPOINT, {
       method:'POST',
@@ -1608,14 +1608,14 @@ SCHOOL INTELLIGENCE:
 ${schoolContentBlock}
 
 YOUR JOB:
-Write personalized college recommendations for the top 5-7 schools listed above.
+Write personalized college recommendations for the top 4-5 schools listed above.
 For each school write exactly this format:
 
 SCHOOL: [exact school name]
 MATCH: [one sentence — the single most specific reason this school fits THIS student's Lifescape profile. Reference something real from their tiles, combo unlocks, or preferences. Not generic program quality — a specific connection.]
 WHY: [2-3 sentences expanding on the fit. Use the school intelligence provided. Connect their industry pipeline or hidden pathway to something specific in the student's profile. End with one sentence that opens a door — a program, an opportunity, a question worth asking.]
 
-Write all ${Math.min(matchedSchools.length, 7)} schools in this format with no other text.
+Write all ${Math.min(matchedSchools.length, 5)} schools in this format with no other text.
 
 CRITICAL RULES:
 - Never say "you should attend" or "this is the right school for you"
@@ -1787,7 +1787,7 @@ async function submitLifescape() {
 
         if(schoolContent.length >= 3) {
           const schoolContentBlock = typeof formatSchoolsForPrompt !== 'undefined'
-            ? formatSchoolsForPrompt(schoolContent.slice(0, 10))
+            ? formatSchoolsForPrompt(schoolContent.slice(0, 7))
             : schoolContent.map(s => `${s.name}: ${s.hidden_pathway}`).join('\n\n');
 
           // Build callD context (extends existing ctx)
@@ -1796,8 +1796,8 @@ async function submitLifescape() {
             college_prefs: profile.college_prefs
           };
 
-          const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0,7), schoolContentBlock);
-          const callDText = await fireCall(callDPrompt, 1400);
+          const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0,5), schoolContentBlock);
+          const callDText = await fireCall(callDPrompt, 1200, 0, 55000);
           const callDData = parseCallD(callDText);
 
           if(callDData.length > 0) {
