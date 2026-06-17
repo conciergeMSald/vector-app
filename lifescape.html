@@ -826,6 +826,14 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 <script>
 
+// ── STATE — defined first so all functions can reference safely ──
+const COLLEGE_PREFS = {
+  campus_scale: 'no_preference',
+  regions: [],
+  conference: 'no_sports',
+  social_scene: 'no_preference'
+};
+
 // ── CONFIG ─────────────────────────────────────────
 const API_ENDPOINT = 'https://api.abettercollegeconsultant.com/v1/messages';
 const SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxmhDOrAjTtgpD9WfP1pnMlcBd9cgl-U1bo6RS2i82tGb3t4eB3fO1sE3i3JgLIot38Cg/exec';
@@ -1437,12 +1445,7 @@ function setGenProgress(pct) {
 }
 
 // ── COLLEGE PREFERENCE STATE ──────────────────────
-const COLLEGE_PREFS = {
-  campus_scale: 'no_preference',
-  regions: [],
-  conference: 'no_sports',
-  social_scene: 'no_preference'
-};
+// COLLEGE_PREFS moved to top of script
 
 function selectPref(btn, pref, isMulti) {
   const container = btn.closest('.pref-section').querySelector('.pref-options, .conf-grid');
