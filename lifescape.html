@@ -368,10 +368,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="orient-q">
     <div class="orient-q-label" id="q1-label">When you have free time, you're more likely to be...</div>
     <div class="orient-options" id="q1-options">
-      <button class="orient-btn" data-q="free_time" data-val="making" onclick="toggleOrient(this,'free_time','making',true)">Making or building something</button>
-      <button class="orient-btn" data-q="free_time" data-val="moving" onclick="toggleOrient(this,'free_time','moving',true)">Moving — sports, dance, fitness</button>
-      <button class="orient-btn" data-q="free_time" data-val="thinking" onclick="toggleOrient(this,'free_time','thinking',true)">Thinking, reading, figuring things out</button>
-      <button class="orient-btn" data-q="free_time" data-val="people" onclick="toggleOrient(this,'free_time','people',true)">Being with people</button>
+      <button class="orient-btn" id="q1-btn-making" data-q="free_time" data-val="making" onclick="toggleOrient(this,'free_time','making',true)">Making or building something</button>
+      <button class="orient-btn" id="q1-btn-moving" data-q="free_time" data-val="moving" onclick="toggleOrient(this,'free_time','moving',true)">Moving — sports, dance, fitness</button>
+      <button class="orient-btn" id="q1-btn-thinking" data-q="free_time" data-val="thinking" onclick="toggleOrient(this,'free_time','thinking',true)">Thinking, reading, figuring things out</button>
+      <button class="orient-btn" id="q1-btn-people" data-q="free_time" data-val="people" onclick="toggleOrient(this,'free_time','people',true)">Being with people</button>
     </div>
   </div>
 
@@ -379,9 +379,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="orient-q">
     <div class="orient-q-label" id="q2-label">Right now you'd describe yourself as...</div>
     <div class="orient-options" id="q2-options">
-      <button class="orient-btn" data-q="self_view" data-val="know_what_i_like" onclick="toggleOrient(this,'self_view','know_what_i_like',false)">I know what I'm into</button>
-      <button class="orient-btn" data-q="self_view" data-val="still_figuring_out" onclick="toggleOrient(this,'self_view','still_figuring_out',false)">Still figuring it out</button>
-      <button class="orient-btn" data-q="self_view" data-val="both" onclick="toggleOrient(this,'self_view','both',false)">A little of both</button>
+      <button class="orient-btn" id="q2-btn-know" data-q="self_view" data-val="know_what_i_like" onclick="toggleOrient(this,'self_view','know_what_i_like',false)">I know what I'm into</button>
+      <button class="orient-btn" id="q2-btn-figuring" data-q="self_view" data-val="still_figuring_out" onclick="toggleOrient(this,'self_view','still_figuring_out',false)">Still figuring it out</button>
+      <button class="orient-btn" id="q2-btn-both" data-q="self_view" data-val="both" onclick="toggleOrient(this,'self_view','both',false)">A little of both</button>
     </div>
   </div>
 
@@ -389,9 +389,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="orient-q">
     <div class="orient-q-label" id="q3-label">You work best...</div>
     <div class="orient-options" id="q3-options">
-      <button class="orient-btn" data-q="work_style" data-val="on_my_own" onclick="toggleOrient(this,'work_style','on_my_own',false)">On my own</button>
-      <button class="orient-btn" data-q="work_style" data-val="with_people" onclick="toggleOrient(this,'work_style','with_people',false)">With other people</button>
-      <button class="orient-btn" data-q="work_style" data-val="depends" onclick="toggleOrient(this,'work_style','depends',false)">Depends on the day</button>
+      <button class="orient-btn" id="q3-btn-own" data-q="work_style" data-val="on_my_own" onclick="toggleOrient(this,'work_style','on_my_own',false)">On my own</button>
+      <button class="orient-btn" id="q3-btn-people" data-q="work_style" data-val="with_people" onclick="toggleOrient(this,'work_style','with_people',false)">With other people</button>
+      <button class="orient-btn" id="q3-btn-depends" data-q="work_style" data-val="depends" onclick="toggleOrient(this,'work_style','depends',false)">Depends on the day</button>
     </div>
   </div>
 
@@ -705,7 +705,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="report-tabs">
     <button class="rtab active" id="rtab-quick" onclick="showReportTab('quick')">A first look</button>
     <button class="rtab" id="rtab-full" onclick="showReportTab('full')">In full</button>
-    <button class="rtab" id="rtab-schools" onclick="showReportTab('schools')">Where you fit</button>
+    <button class="rtab" id="rtab-schools" onclick="showReportTab('schools')">Where you may fit based on answers just provided</button>
   <button class="rtab" id="rtab-counselor" onclick="showReportTab('counselor')">Counselor view</button>
   </div>
 
@@ -803,6 +803,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <div class="trajectory-box" id="full-trajectory">
         <div class="trajectory-text">Building your trajectory...</div>
       </div>
+    </div>
+
+    <div class="report-section" id="full-emerging-section" style="display:none">
+      <div class="section-eyebrow">Emerging signals</div>
+      <div class="portrait-text" id="full-emerging"></div>
     </div>
 
     <div class="counselor-block" id="full-counselor-note" style="display:none">
@@ -1624,22 +1629,41 @@ let _allTilesShown = false; // whether "show all" was tapped
 function updateOrientVoice() {
   const p = LS_STATE.voice === 'parent';
 
-  // Q1 — free time
+  // Q1 — free time label
   document.getElementById('q1-label').textContent = p
     ? "When your child has free time, they are more likely to be..."
     : "When you have free time, you're more likely to be...";
 
-  // Q2 — self view
+  // Q1 — free time buttons (student-first is fine, these are activity descriptions)
+  // No change needed — "Making or building something" works for both voices
+
+  // Q2 — self view label
   const q2 = document.getElementById('q2-label');
   if(q2) q2.textContent = p
     ? "Right now you'd describe your child as..."
     : "Right now you'd describe yourself as...";
 
-  // Q3 — work style
+  // Q2 — self view buttons
+  const q2know = document.getElementById('q2-btn-know');
+  const q2fig  = document.getElementById('q2-btn-figuring');
+  const q2both = document.getElementById('q2-btn-both');
+  if(q2know) q2know.textContent = p ? "Knows what they're into"   : "I know what I'm into";
+  if(q2fig)  q2fig.textContent  = p ? "Still figuring it out"     : "Still figuring it out";
+  if(q2both) q2both.textContent = p ? "A little of both"          : "A little of both";
+
+  // Q3 — work style label
   const q3 = document.getElementById('q3-label');
   if(q3) q3.textContent = p
     ? "Your child works best..."
     : "You work best...";
+
+  // Q3 — work style buttons
+  const q3own     = document.getElementById('q3-btn-own');
+  const q3people  = document.getElementById('q3-btn-people');
+  const q3depends = document.getElementById('q3-btn-depends');
+  if(q3own)     q3own.textContent     = p ? "On their own"      : "On my own";
+  if(q3people)  q3people.textContent  = p ? "With other people" : "With other people";
+  if(q3depends) q3depends.textContent = p ? "Depends on the day": "Depends on the day";
 }
 
 function toggleOrient(btn, question, value, isMulti) {
@@ -1795,7 +1819,7 @@ function parseCallD(rawText) {
   }
 }
 
-function renderSchoolRecommendations(profile, callAData, callDData) {
+function renderSchoolRecommendations(profile, callAData, callDData, adjacentPicks, profileAdjacentPicks) {
   if(!callDData || callDData.length === 0) return;
 
   // Render Quick Read preview (top 3)
@@ -1824,7 +1848,7 @@ function renderSchoolRecommendations(profile, callAData, callDData) {
   ].filter(Boolean).join(', ');
 
   if(schoolsIntro) {
-    schoolsIntro.textContent = `${callDData.length} schools matched to ${profile.name}'s Lifescape${prefLabel ? ' — filtered for ' + prefLabel : ''}.`;
+    schoolsIntro.textContent = `${callDData.length} schools matched based on what ${profile.voice === 'parent' ? profile.name + ' shared' : 'you shared'}${prefLabel ? ' — filtered for ' + prefLabel : ''}. Update your answers to see a different picture.`;
   }
 
   // Get conference badge label
@@ -1857,12 +1881,62 @@ function renderSchoolRecommendations(profile, callAData, callDData) {
     </div>`;
   }).join('');
 
-  // Also populate counselor view
+  // ── Adjacent pick — "One more worth knowing" (Where You Fit tab) ─────────
+  if(adjacentPicks && adjacentPicks.length > 0 && schoolsList) {
+    const adjHtml = adjacentPicks.map(adj => {
+      const adjData = typeof UNIVERSITY_CONTENT !== 'undefined'
+        ? UNIVERSITY_CONTENT[adj.name] : null;
+      return `
+        <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:0.5px solid var(--rule)">
+          <div class="section-eyebrow" style="margin-bottom:.75rem">One more worth knowing</div>
+          <div class="school-card" style="border-left:2px solid var(--gl)">
+            <div class="school-card-head">
+              <div>
+                <div class="school-name">${adj.name}</div>
+                <div class="school-location">${adjData ? adjData.location : ''}</div>
+              </div>
+              <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink4);padding-top:6px">Adjacent</div>
+            </div>
+            <div class="school-why" style="color:var(--ink3)">
+              ${adjData ? adjData.hidden_pathway : 'A program-adjacent match worth exploring with your counselor.'}
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+    schoolsList.insertAdjacentHTML('beforeend', adjHtml);
+  }
+
+  // ── Counselor view — direct matches + profile-adjacent picks ──────────────
   const counselorSchools = document.getElementById('counselor-schools');
   if(counselorSchools) {
-    counselorSchools.innerHTML = callDData.map((s,i) =>
+    // Direct matches
+    let counselorHtml = `<div class="section-eyebrow" style="margin-bottom:.5rem">Direct matches</div>`;
+    counselorHtml += callDData.map((s,i) =>
       `<div class="action-prompt"><div class="action-text"><strong>${i+1}. ${s.name}</strong> — ${s.match}</div></div>`
     ).join('');
+
+    // Program-adjacent (also for counselor)
+    if(adjacentPicks && adjacentPicks.length > 0) {
+      counselorHtml += `<div class="section-eyebrow" style="margin-top:1.5rem;margin-bottom:.5rem">Program-adjacent</div>`;
+      counselorHtml += adjacentPicks.map(adj =>
+        `<div class="action-prompt"><div class="action-text"><strong>${adj.name}</strong> — program overlap, outside stated preferences</div></div>`
+      ).join('');
+    }
+
+    // Secondary profile matches (counselor only)
+    if(profileAdjacentPicks && profileAdjacentPicks.length > 0) {
+      counselorHtml += `<div class="section-eyebrow" style="margin-top:1.5rem;margin-bottom:.5rem">Secondary profile matches</div>`;
+      counselorHtml += profileAdjacentPicks.map(s =>
+        `<div class="action-prompt" style="border-left:2px solid var(--gl)">
+          <div class="action-text">
+            <strong>${s.name}</strong><br>
+            <span style="font-size:11px;color:var(--ink3);font-weight:300">${s.counselorReason}</span>
+          </div>
+        </div>`
+      ).join('');
+    }
+
+    counselorSchools.innerHTML = counselorHtml;
   }
 }
 
@@ -1972,8 +2046,33 @@ async function submitLifescape() {
           const callDData = parseCallD(callDText);
           console.log('[callD] parsed schools:', callDData.length, callDData.map(s=>s.name));
 
+          // Compute adjacent picks (do not send to Claude — derived from data)
+          let adjacentPicks = [];
+          let profileAdjacentPicks = [];
+          if(typeof getAdjacentMatches !== 'undefined') {
+            adjacentPicks = getAdjacentMatches(
+              matchedSchools,
+              profile.naicsSectors,
+              profile.comboUnlocks,
+              1  // 1 program-adjacent pick for "Where You Fit" tab
+            );
+          }
+          if(typeof getProfileAdjacentMatches !== 'undefined') {
+            profileAdjacentPicks = getProfileAdjacentMatches(
+              matchedSchools,
+              profile.riasec,
+              profile.naicsSectors,
+              3  // 3 secondary-profile picks for counselor only
+            );
+          }
+          console.log('[callD] adjacent picks:', adjacentPicks.map(s=>s.name));
+          console.log('[callD] profile adjacent:', profileAdjacentPicks.map(s=>s.name));
+
           if(callDData.length > 0) {
-            renderSchoolRecommendations(profile, callAData, callDData);
+            renderSchoolRecommendations(
+              profile, callAData, callDData,
+              adjacentPicks, profileAdjacentPicks
+            );
           } else {
             console.warn('[callD] parseCallD returned 0 schools — check raw response format');
           }
@@ -2089,12 +2188,19 @@ function renderFullReport(profile, callAData, callBData, callCData) {
     document.getElementById('full-geo').textContent = callCData.geo;
   }
 
-  // Trajectory (full version)
+  // Trajectory (full version) — trajectory only, clean
   if(callAData?.trajectory) {
-    let fullTraj = callAData.trajectory;
-    if(callBData?.college) fullTraj += ' ' + callBData.college;
     document.getElementById('full-trajectory').innerHTML =
-      `<div class="trajectory-text">${fullTraj}</div>`;
+      `<div class="trajectory-text">${callAData.trajectory}</div>`;
+  }
+
+  // Emerging signals — college/secondary industry paragraph as its own section
+  if(callBData?.college) {
+    const emergingEl = document.getElementById('full-emerging');
+    if(emergingEl) {
+      emergingEl.textContent = callBData.college;
+      document.getElementById('full-emerging-section').style.display = 'block';
+    }
   }
 
   // Counselor note in full report

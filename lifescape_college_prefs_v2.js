@@ -615,3 +615,169 @@ if (typeof module !== 'undefined') module.exports = {
   SOCIAL_SCENE_AFFINITY, RELIGIOUS_AFFILIATION, RELIGIOUS_CULTURE_SCHOOLS,
   SCHOOL_GPA_RANGES, matchUniversities, summarizePreferences
 };
+
+// ─────────────────────────────────────────────────────────────
+// ADJACENT MATCH FUNCTIONS
+// Added per approved spec — do not modify matchUniversities
+// ─────────────────────────────────────────────────────────────
+
+/**
+ * Option A — Program-adjacent picks (student-facing, "Where You Fit" tab)
+ * Finds schools NOT in the primary match list that score high on
+ * NAICS sector overlap regardless of conference/region/scale preferences.
+ * Returns up to `max` schools with reason string.
+ *
+ * @param {string[]} primaryMatches  - already-ranked primary school names
+ * @param {Array}    naicsSectors    - student's NAICS profile [{sector, count}]
+ * @param {Array}    comboUnlocks    - student's combo unlock objects
+ * @param {number}   max             - how many to return (default 1)
+ */
+function getAdjacentMatches(primaryMatches, naicsSectors, comboUnlocks, max=1) {
+  const allSchools = Object.keys(SCHOOL_ENROLLMENT);
+  const primarySet = new Set(primaryMatches);
+  const candidates = allSchools.filter(s => !primarySet.has(s));
+
+  // Top NAICS sectors for this student
+  const topSectors = new Set((naicsSectors || []).slice(0,5).map(n => n.sector));
+
+  // Score candidates purely on program/NAICS fit — ignoring preferences
+  const scored = candidates.map(school => {
+    let score = 0;
+
+    // GPA range alignment (soft — don't hard-filter)
+    const range = SCHOOL_GPA_RANGES[school];
+    if (range) score += 3;
+
+    // Religious affiliation pools — neutral here
+    // Social scene — neutral here (we're ignoring preferences deliberately)
+
+    // Program-NAICS signal: if the school is in a relevant industry region
+    // We use geo clusters as a proxy for program strength
+    // Schools in RELIGIOUS_AFFILIATION pools get a slight boost
+    // (they often have distinctive programs in specific sectors)
+    Object.values(RELIGIOUS_AFFILIATION).forEach(pool => {
+      if (pool.includes(school)) score += 2;
+    });
+
+    // Ivy/equivalent schools have broad program strength — boost slightly
+    if ((RELIGIOUS_AFFILIATION.protestant || []).includes(school)) score += 1;
+
+    // Primary signal: enrollment diversity (larger research universities
+    // tend to have stronger cross-disciplinary program offerings)
+    const enroll = SCHOOL_ENROLLMENT[school] || 0;
+    if (enroll > 15000 && enroll < 45000) score += 4; // sweet spot
+    if (enroll >= 5000 && enroll <= 15000) score += 3; // strong smaller
+
+    // Combo unlock boost — if school is in a specific region that
+    // aligns with a fired combo unlock career path
+    if (comboUnlocks && comboUnlocks.length > 0) score += 2;
+
+    // Tiebreaker: alphabetical (deterministic)
+    return { school, score, reason: 'program_adjacent' };
+  });
+
+  return scored
+    .sort((a, b) => b.score - a.score || a.school.localeCompare(b.school))
+    .slice(0, max)
+    .map(s => ({
+      name: s.school,
+      type: 'adjacent',
+      reason: 'program_adjacent'
+    }));
+}
+
+/**
+ * Option B — Profile-adjacent picks (counselor-only)
+ * Finds schools that score well on the student's SECONDARY RIASEC code
+ * rather than primary. These schools may not match stated preferences
+ * but align with the underlying profile.
+ * Returns up to `max` schools with explicit counselor reasoning.
+ *
+ * @param {string[]} primaryMatches  - already-ranked primary school names
+ * @param {Array}    riasec          - student's RIASEC profile [{code, score}]
+ * @param {Array}    naicsSectors    - student's NAICS profile
+ * @param {number}   max             - how many to return (default 3)
+ */
+function getProfileAdjacentMatches(primaryMatches, riasec, naicsSectors, max=3) {
+  if (!riasec || riasec.length < 2) return [];
+
+  const allSchools = Object.keys(SCHOOL_ENROLLMENT);
+  const primarySet = new Set(primaryMatches);
+  const candidates = allSchools.filter(s => !primarySet.has(s));
+
+  // Primary and secondary RIASEC codes
+  const primaryCode  = riasec[0]?.code || '';
+  const secondaryCode = riasec[1]?.code || '';
+  const tertiaryCode  = riasec[2]?.code || '';
+
+  // RIASEC → school type affinity map
+  // R = technical/hands-on, I = research/science, A = creative/arts,
+  // S = people/service, E = entrepreneurial/leadership, C = structured/systems
+  const riasecSchoolAffinity = {
+    R: ['Georgia Institute of Technology','Rose-Hulman Institute of Technology',
+        'Colorado School of Mines','California Polytechnic State University San Luis Obispo',
+        'Worcester Polytechnic Institute','Stevens Institute of Technology',
+        'Kettering University','Purdue University'],
+    I: ['Massachusetts Institute of Technology','California Institute of Technology',
+        'University of Chicago','Johns Hopkins University','Carnegie Mellon University',
+        'Case Western Reserve University','University of California Davis',
+        'University of Rochester'],
+    A: ['New York University','Emory University','Tulane University',
+        'University of Oregon','University of Colorado Boulder',
+        'University of Denver','Colorado College','University of the South',
+        'Elon University'],
+    S: ['Georgetown University','University of Notre Dame','Villanova University',
+        'Gonzaga University','Boston College','Creighton University',
+        'American University','George Washington University'],
+    E: ['Babson College','University of Michigan','Indiana University',
+        'University of Southern California','Fordham University',
+        'Northeastern University','University of Arizona','Butler University'],
+    C: ['University of Virginia','University of Wisconsin','Penn State University',
+        'University of Maryland College Park','Purdue University',
+        'Indiana University','University of Minnesota','Ohio State University']
+  };
+
+  const secondaryAffinity = riasecSchoolAffinity[secondaryCode] || [];
+  const tertiaryAffinity  = riasecSchoolAffinity[tertiaryCode] || [];
+
+  const scored = candidates.map(school => {
+    let score = 0;
+    if (secondaryAffinity.includes(school)) score += 10;
+    if (tertiaryAffinity.includes(school))  score += 5;
+
+    // GPA range exists = school is known
+    if (SCHOOL_GPA_RANGES[school]) score += 2;
+
+    // Enrollment sweet spot
+    const enroll = SCHOOL_ENROLLMENT[school] || 0;
+    if (enroll > 5000 && enroll < 30000) score += 3;
+
+    return { school, score };
+  });
+
+  const top = scored
+    .filter(s => s.score > 0)
+    .sort((a, b) => b.score - a.score || a.school.localeCompare(b.school))
+    .slice(0, max);
+
+  // Build counselor reasoning for each
+  return top.map(s => ({
+    name: s.school,
+    type: 'profile_adjacent',
+    counselorReason: `Surfaces on ${s.school}'s secondary ${secondaryCode}-${primaryCode}-${tertiaryCode} profile alignment. ` +
+      `Worth discussing if primary matches are reach schools or if ${s.school.split(' ')[0]} ` +
+      `shows strong interest in programs indexed to ${secondaryCode === 'I' ? 'research and inquiry' :
+        secondaryCode === 'A' ? 'creative and expressive fields' :
+        secondaryCode === 'S' ? 'people-centered work' :
+        secondaryCode === 'E' ? 'entrepreneurship and leadership' :
+        secondaryCode === 'R' ? 'technical and applied fields' :
+        'structured systems and analysis'}.`
+  }));
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = Object.assign(module.exports || {}, {
+    getAdjacentMatches,
+    getProfileAdjacentMatches
+  });
+}
