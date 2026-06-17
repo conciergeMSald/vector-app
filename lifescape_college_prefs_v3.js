@@ -1,7 +1,7 @@
 /**
  * VECTOR Lifescape — College Preference Mapping
  * Version: 3.0 — June 17, 2026
- * Coverage: All 195 schools across V1 + V2 + V3 + V4 databases
+ * Coverage: All 207 schools across V1 + V2 + V3 + V4 databases
  *
  * Maps student college preferences (conference, region, scale, social scene)
  * to the university database pool. RIASEC + NAICS ranking fires within
@@ -9,7 +9,7 @@
  */
 
 // ─────────────────────────────────────────────────────────────
-// CONFERENCE → SCHOOL POOL MAP — 195 schools fully covered
+// CONFERENCE → SCHOOL POOL MAP — 207 schools fully covered
 // ─────────────────────────────────────────────────────────────
 
 const CONFERENCE_POOLS = {
@@ -203,7 +203,10 @@ const REGION_POOLS = {
     "Flagler College",
     "James Madison University",
     "University of Memphis",
-    "Regent University"
+    "Regent University",
+    "Virginia Tech",
+    "College of William and Mary",,
+    "Davidson College"
   ],
 
   southwest: [
@@ -285,7 +288,15 @@ const REGION_POOLS = {
     "Berklee College of Music",
     "Pratt Institute",
     "Rochester Institute of Technology",
-    "Fashion Institute of Technology"
+    "Fashion Institute of Technology",
+    "Hamilton College",
+    "Swarthmore College",
+    "Haverford College",
+    "Vassar College",
+    "Colgate University",
+    "Colby College",
+    "Bates College",
+    "Bucknell University"
   ],
 
   midwest: [
@@ -309,7 +320,8 @@ const REGION_POOLS = {
     "Morehead State University",
     "North Dakota State University",
     "South Dakota State University",
-    "Grinnell College"
+    "Grinnell College",
+    "Macalester College"
   ],
 
   south_central: [
@@ -460,7 +472,19 @@ const SCHOOL_ENROLLMENT = {
   "University of New Mexico":23000,
   "New Mexico State University":14000,
   "California Lutheran University":3000,
-  "California State University San Bernardino":20000
+  "California State University San Bernardino":20000,
+  "Virginia Tech":28000,
+  "College of William and Mary":6500,
+  "Hamilton College":1900,
+  "Swarthmore College":1600,
+  "Haverford College":1400,
+  "Vassar College":2400,
+  "Colgate University":2900,
+  "Davidson College":1800,
+  "Macalester College":2100,
+  "Colby College":2000,
+  "Bates College":1700,
+  "Bucknell University":3600
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -508,7 +532,10 @@ const SOCIAL_SCENE_AFFINITY = {
     "Franklin and Marshall College",
     "University of Tulsa",
     "University of Idaho",
-    "University of Nevada Reno"
+    "University of Nevada Reno",
+    "Virginia Tech",
+    "Colgate University",
+    "Bucknell University"
   ],
 
   balanced: [
@@ -550,7 +577,8 @@ const SOCIAL_SCENE_AFFINITY = {
     "Montana State University",
     "University of New Mexico",
     "New Mexico State University",
-    "California Lutheran University"
+    "California Lutheran University",
+    "College of William and Mary"
   ],
 
   focused: [
@@ -565,7 +593,15 @@ const SOCIAL_SCENE_AFFINITY = {
     "Kettering University","Colorado College",
     "California Polytechnic State University San Luis Obispo",
     "United States Military Academy","UC San Diego","Case Western Reserve University",
-    "University of the South"
+    "University of the South",
+    "Hamilton College",
+    "Swarthmore College",
+    "Haverford College",
+    "Vassar College",
+    "Davidson College",
+    "Macalester College",
+    "Colby College",
+    "Bates College"
   ]
 
 };
@@ -601,7 +637,11 @@ const RELIGIOUS_AFFILIATION = {
     'Ohio Wesleyan University',
     'College of Wooster',
     'University of Tulsa',
-    'California Lutheran University'
+    'California Lutheran University',
+    'Swarthmore College',
+    'Haverford College',
+    'Davidson College',
+    'Macalester College'
   ],
   jewish: [
     'Columbia University','University of Pennsylvania','Brown University',
@@ -764,7 +804,19 @@ const SCHOOL_GPA_RANGES = {
   "University of New Mexico":{min:3.0},
   "New Mexico State University":{min:3.0},
   "California Lutheran University":{min:3.3},
-  "California State University San Bernardino":{min:3.0}
+  "California State University San Bernardino":{min:3.0},
+  "Virginia Tech":{min:3.5},
+  "College of William and Mary":{min:3.7},
+  "Hamilton College":{min:3.8},
+  "Swarthmore College":{min:3.9},
+  "Haverford College":{min:3.8},
+  "Vassar College":{min:3.8},
+  "Colgate University":{min:3.7},
+  "Davidson College":{min:3.7},
+  "Macalester College":{min:3.7},
+  "Colby College":{min:3.7},
+  "Bates College":{min:3.6},
+  "Bucknell University":{min:3.6}
 };
 
 function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {
