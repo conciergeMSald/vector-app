@@ -1459,7 +1459,7 @@ async function fireCall(prompt, maxTokens, retryCount=0, timeoutMs=30000) {
     clearTimeout(timeout);
     if(retryCount===0) {
       await new Promise(r=>setTimeout(r,1500));
-      return fireCall(prompt, maxTokens, 1);
+      return fireCall(prompt, maxTokens, 1, timeoutMs);
     }
     throw e;
   }
@@ -1741,38 +1741,54 @@ SCHOOL INTELLIGENCE:
 ${schoolContentBlock}
 
 YOUR JOB:
-Write personalized college recommendations for the top 4-5 schools listed above.
-For each school write exactly this format:
+Write personalized college recommendations. Output ONLY the school blocks below — no preamble, no intro sentence, no summary at the end. Start immediately with SCHOOL:
 
-SCHOOL: [exact school name]
+For each school use this EXACT format with no deviations:
+
+SCHOOL: [exact school name as listed above]
 MATCH: [one sentence — the single most specific reason this school fits THIS student's Lifescape profile. Reference something real from their tiles, combo unlocks, or preferences. Not generic program quality — a specific connection.]
-WHY: [2-3 sentences expanding on the fit. Use the school intelligence provided. Connect their industry pipeline or hidden pathway to something specific in the student's profile. End with one sentence that opens a door — a program, an opportunity, a question worth asking.]
+WHY: [2-3 sentences. Use the school intelligence provided. Connect the pipeline or hidden pathway to something in the student's profile. End with one sentence that opens a door.]
 
-Write all ${Math.min(matchedSchools.length, 5)} schools in this format with no other text.
+Write all ${Math.min(matchedSchools.length, 5)} schools in this format.
 
-CRITICAL RULES:
-- Never say "you should attend" or "this is the right school for you"
-- Never reference GPA, test scores, or admissions difficulty
-- Never use the word "prestigious" or "elite"
-- Every MATCH sentence must reference something specific from this student's actual profile
-- The WHY must use content from the school intelligence provided — not general knowledge
+RULES:
+- Start your response with "SCHOOL:" — nothing before it
+- Never say "you should attend" or reference admissions difficulty
+- Never use the word "prestigious" or "elite"  
+- Every MATCH must reference something from this student's actual tiles or interests
+- WHY must use the provided school intelligence, not generic facts
 - ${ctx.voice === 'parent' ? `Write in third person about ${ctx.name}` : `Write in second person to ${ctx.name}`}`;
 }
 
 function parseCallD(rawText) {
   try {
-    const blocks = rawText.split(/\n(?=SCHOOL:)/g).filter(Boolean);
+    if (!rawText) return [];
+
+    // Strip any preamble before the first SCHOOL: block
+    const firstSchool = rawText.indexOf('SCHOOL:');
+    if (firstSchool < 0) {
+      console.warn('[callD] No SCHOOL: found in response. Raw:', rawText.slice(0,300));
+      return [];
+    }
+    const cleaned = rawText.slice(firstSchool);
+
+    // Split on newline followed by SCHOOL:
+    const blocks = cleaned.split(/\n(?=SCHOOL:)/g).filter(s => s.trim());
+
     return blocks.map(block => {
       const nameMatch = block.match(/^SCHOOL:\s*(.+)/m);
-      const matchMatch = block.match(/MATCH:\s*([\s\S]*?)(?=WHY:|$)/);
-      const whyMatch = block.match(/WHY:\s*([\s\S]*?)(?=\n\nSCHOOL:|$)/);
+      const matchMatch = block.match(/MATCH:\s*([\s\S]*?)(?=\nWHY:|$)/);
+      const whyMatch = block.match(/WHY:\s*([\s\S]*?)(?=\n\nSCHOOL:|\nSCHOOL:|$)/);
       return {
         name: nameMatch ? nameMatch[1].trim() : '',
-        match: matchMatch ? matchMatch[1].trim() : '',
+        match: matchMatch ? matchMatch[1].trim().replace(/\n/g,' ') : '',
         why: whyMatch ? whyMatch[1].trim() : ''
       };
-    }).filter(s => s.name && s.match);
-  } catch(e) { return []; }
+    }).filter(s => s.name && s.name.length > 2 && s.match && s.match.length > 5);
+  } catch(e) {
+    console.warn('[callD] parse error:', e.message);
+    return [];
+  }
 }
 
 function renderSchoolRecommendations(profile, callAData, callDData) {
@@ -1917,31 +1933,48 @@ async function submitLifescape() {
           profile.naicsSectors,
           profile.comboUnlocks,
           gpaData
-        ).slice(0, 12); // Top 12 candidates for Claude to work with
+        ).slice(0, 12);
+
+        console.log('[callD] matchedSchools:', matchedSchools.slice(0,5));
+        console.log('[callD] UNIVERSITY_CONTENT keys sample:', Object.keys(UNIVERSITY_CONTENT).slice(0,3));
 
         // Get content for matched schools
         const schoolContent = typeof getSchoolContent !== 'undefined'
           ? getSchoolContent(matchedSchools)
           : [];
 
+        console.log('[callD] schoolContent.length:', schoolContent.length);
+        console.log('[callD] schoolContent sample:', schoolContent[0]?.name);
+
         if(schoolContent.length >= 3) {
           const schoolContentBlock = typeof formatSchoolsForPrompt !== 'undefined'
             ? formatSchoolsForPrompt(schoolContent.slice(0, 7))
             : schoolContent.map(s => `${s.name}: ${s.hidden_pathway}`).join('\n\n');
 
-          // Build callD context (extends existing ctx)
+          console.log('[callD] prompt block length:', schoolContentBlock.length);
+
           const ctxD = {
             ...ctx,
             college_prefs: profile.college_prefs
           };
 
           const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0,5), schoolContentBlock);
+          console.log('[callD] firing Claude, prompt length:', callDPrompt.length);
+
           const callDText = await fireCall(callDPrompt, 1200, 0, 55000);
+          console.log('[callD] raw response length:', callDText?.length);
+          console.log('[callD] raw response preview:', callDText?.slice(0,200));
+
           const callDData = parseCallD(callDText);
+          console.log('[callD] parsed schools:', callDData.length, callDData.map(s=>s.name));
 
           if(callDData.length > 0) {
             renderSchoolRecommendations(profile, callAData, callDData);
+          } else {
+            console.warn('[callD] parseCallD returned 0 schools — check raw response format');
           }
+        } else {
+          console.warn('[callD] not enough school content:', schoolContent.length, 'schools found for', matchedSchools.slice(0,5));
         }
       } catch(callDErr) {
         console.warn('callD failed gracefully:', callDErr.message);
