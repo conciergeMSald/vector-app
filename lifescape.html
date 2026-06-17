@@ -1628,14 +1628,11 @@ CRITICAL RULES:
 
 function parseCallD(rawText) {
   try {
-    const blocks = rawText.split(/
-(?=SCHOOL:)/g).filter(Boolean);
+    const blocks = rawText.split(/\n(?=SCHOOL:)/g).filter(Boolean);
     return blocks.map(block => {
       const nameMatch = block.match(/^SCHOOL:\s*(.+)/m);
       const matchMatch = block.match(/MATCH:\s*([\s\S]*?)(?=WHY:|$)/);
-      const whyMatch = block.match(/WHY:\s*([\s\S]*?)(?=
-
-SCHOOL:|$)/);
+      const whyMatch = block.match(/WHY:\s*([\s\S]*?)(?=\n\nSCHOOL:|$)/);
       return {
         name: nameMatch ? nameMatch[1].trim() : '',
         match: matchMatch ? matchMatch[1].trim() : '',
