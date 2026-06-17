@@ -14,55 +14,91 @@
 
 const CONFERENCE_POOLS = {
 
+  // ── SEC (2025-26 current: 16 members) ───────────────────────────────────
+  // Original 14 + Oklahoma + Texas (both joined July 2025)
+  // Missouri has been SEC since 2012
   sec: [
     "University of Georgia","University of Florida","University of Alabama",
     "Auburn University","Louisiana State University","University of Tennessee",
     "University of Arkansas","University of South Carolina","University of Kentucky",
-    "University of Louisville","Vanderbilt University","University of Mississippi",
-    "Mississippi State University","University of Oklahoma","Florida State University",
-    "Virginia Tech","Baylor University","North Carolina State University",
-    "University of Central Florida","University of South Florida",
-    "Florida Atlantic University","Stetson University"
+    "Vanderbilt University","University of Mississippi","Mississippi State University",
+    "University of Missouri","University of Oklahoma"
+    // Texas A&M not in our DB yet
+    // University of Texas not in our DB yet
   ],
 
+  // ── BIG TEN (2024-25 current: 18 members) ───────────────────────────────
+  // Added UCLA, USC, Oregon, Washington in 2024
   big_ten: [
     "University of Michigan","Michigan State University","Indiana University",
     "Ohio State University","Penn State University","University of Iowa",
     "Iowa State University","University of Nebraska-Lincoln","University of Minnesota",
     "Northwestern University","Purdue University","Rutgers University",
-    "University of Maryland College Park","University of Connecticut"
+    "University of Maryland College Park",
+    // 2024 additions from Pac-12
+    "University of Oregon","University of Washington"
+    // UCLA not in our DB
+    // USC not in our DB
+    // Illinois, Wisconsin not in our DB
   ],
 
+  // ── ACC (2024-25 current: 17 members + Notre Dame partial) ─────────────
+  // Added Cal, Stanford, SMU in 2024
   acc: [
     "Duke University","Wake Forest University","University of Virginia",
     "Clemson University","University of Miami","Georgia Institute of Technology",
     "North Carolina State University","Virginia Tech","Boston College",
-    "University of Pittsburgh","Syracuse University","Elon University",
-    "College of William and Mary"
+    "University of Pittsburgh","Syracuse University","University of Louisville",
+    "Florida State University","Elon University","College of William and Mary",
+    // 2024 additions from Pac-12
+    "Stanford University"
+    // Cal/Berkeley not in our DB
+    // SMU not in our DB
+    // Notre Dame (independent in football, ACC in other sports)
   ],
 
+  // ── BIG 12 (2024-25 current: 16 members) ────────────────────────────────
+  // Oklahoma + Texas LEFT for SEC in 2025
+  // Arizona, ASU, Colorado, Utah joined from Pac-12 in 2024
+  // BYU, UCF, Cincinnati, Houston joined 2023
   big_12: [
-    "University of Oklahoma","University of Kansas","University of Missouri",
-    "University of Arizona","Arizona State University","University of Colorado Boulder",
-    "Colorado State University","Brigham Young University","University of Utah",
-    "Baylor University","University of Central Florida"
+    "University of Kansas","Baylor University","University of Central Florida",
+    "Brigham Young University",
+    // 2024 additions from Pac-12:
+    "University of Arizona","Arizona State University",
+    "University of Colorado Boulder","University of Utah",
+    // Kansas State, Oklahoma State, TCU, Texas Tech, West Virginia, Iowa State
+    // Cincinnati, Houston not in our DB
   ],
 
+  // ── WEST COAST / PAC-12 LEGACY ─────────────────────────────────────────
+  // The old Pac-12 has dramatically changed. For students choosing "West Coast
+  // sports culture" we use school geography rather than conference membership.
+  // Oregon, Washington → Big Ten. Arizona, ASU, Colorado, Utah → Big 12.
+  // Stanford → ACC. Oregon State + Washington State remain in rebuilt Pac-12.
+  // We label this "West Coast" for students, not "Pac-12".
   pac: [
-    "University of Oregon","Oregon State University","University of Washington",
-    "University of Colorado Boulder","University of Utah","University of Arizona",
-    "Arizona State University","Stanford University","UC San Diego",
+    // Remaining Pac-12 (rebuilt 2026):
+    "Oregon State University",
+    // West Coast schools regardless of current conference:
+    "Stanford University","UC San Diego",
     "University of California Irvine","University of California Davis",
     "University of California Santa Cruz",
     "California Polytechnic State University San Luis Obispo",
     "Pepperdine University","Santa Clara University","Gonzaga University",
-    "Boise State University","Colorado State University","University of Denver",
+    "Boise State University","University of Denver",
     "University of San Diego","University of San Francisco",
     "Saint Mary's College of California","California Institute of Technology",
     "California State University Chico","California State University Fresno",
     "California State University Fullerton","California State University Long Beach",
     "California State University Los Angeles","California State University Northridge",
-    "UC Riverside"
+    "UC Riverside",
+    // Big 12 members who are geographically West Coast:
+    "University of Arizona","Arizona State University",
+    "University of Colorado Boulder","University of Utah","Brigham Young University",
+    "University of Central Florida",
+    // Big Ten members who are geographically West Coast:
+    "University of Oregon","University of Washington"
   ],
 
   ivy: [
