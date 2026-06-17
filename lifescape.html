@@ -102,6 +102,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .eq-divider{margin:2rem 0 1.5rem;border-top:0.5px solid var(--rule);padding-top:1.5rem;}
 .eq-intro{font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:var(--ink3);margin-bottom:1rem;}
 
+/* ── TILE CLUSTER SECTIONS ─────────────────────────── */
+.cluster-section{margin-bottom:1.75rem;}
+.cluster-section-header{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--ink4);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--rule);}
+.cluster-section .tile-grid{margin-bottom:0;}
+
 /* ── ZIP INPUT ─────────────────────────────────────── */
 .zip-reveal{background:var(--gold-pale);border:0.5px solid var(--gl);padding:1rem 1.25rem;margin-top:1rem;min-height:48px;}
 .zip-reveal-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
@@ -415,16 +420,20 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="tile-count-num" id="ls-tile-count">0</div>
   </div>
 
-  <div class="tile-grid" id="activity-tile-grid"></div>
+  <!-- Activity tiles — rendered in cluster sections by renderTileGrid() -->
+  <div id="activity-tile-grid"></div>
 
-  <div class="eq-divider">
-    <div class="eq-intro">A few more — just check anything that sounds like you.</div>
+  <!-- EQ section — who you are -->
+  <div class="eq-divider" id="eq-section">
+    <div class="cluster-section-header">Who you are</div>
+    <div class="eq-intro">Not what you do — how you see yourself.</div>
     <div class="tile-grid" id="eq-tile-grid"></div>
   </div>
 
+  <!-- Progressive reveal — appears inline, no scroll -->
   <div id="reveal-section" style="display:none">
     <div class="reveal-divider">
-      <div class="reveal-label">Based on what you picked</div>
+      <div class="reveal-label">Also worth considering</div>
       <div class="tile-grid" id="reveal-tile-grid"></div>
     </div>
   </div>
@@ -999,6 +1008,16 @@ const CLUSTER_CLASS = {
 
 let _debounceTimer = null;
 
+// Cluster display config — order, labels, sub-labels
+const CLUSTER_CONFIG = {
+  make:    { label: 'Make & Create',             sub: 'Building, cooking, designing, making things with your hands' },
+  move:    { label: 'Move & Compete',             sub: 'Sports, fitness, dance, physical challenge' },
+  think:   { label: 'Think & Explore',            sub: 'Science, research, ideas, asking why things work' },
+  people:  { label: 'People & Stories',           sub: 'Writing, connecting, performing, understanding others' },
+  systems: { label: 'Systems & How Things Work',  sub: 'Technology, engineering, business, building processes' },
+};
+const CLUSTER_ORDER = ['make','move','think','people','systems'];
+
 function renderTileGrid() {
   if(typeof VECTOR_CROSSWALK === 'undefined' || typeof curateInitialTiles === 'undefined') {
     document.getElementById('activity-tile-grid').innerHTML =
@@ -1018,11 +1037,34 @@ function renderTileGrid() {
   const curatedIds = curateInitialTiles(ORIENT_ANSWERS);
   _shownTileIds = [...curatedIds];
 
-  // Render curated activity tiles
-  curatedIds.forEach(id => {
-    const tile = VECTOR_CROSSWALK.find(t => t.id === id);
-    if(!tile) return;
-    actGrid.appendChild(makeTileEl(tile));
+  // ── Render curated activity tiles grouped by cluster ──
+  CLUSTER_ORDER.forEach(clusterKey => {
+    const clusterTiles = curatedIds
+      .map(id => VECTOR_CROSSWALK.find(t => t.id === id))
+      .filter(t => t && t.cluster === clusterKey);
+
+    if(clusterTiles.length === 0) return; // skip empty clusters
+
+    const cfg = CLUSTER_CONFIG[clusterKey];
+
+    // Create cluster section
+    const section = document.createElement('div');
+    section.className = 'cluster-section';
+    section.id = 'cluster-' + clusterKey;
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'cluster-section-header';
+    header.textContent = cfg.label;
+    section.appendChild(header);
+
+    // Tile grid within this cluster
+    const grid = document.createElement('div');
+    grid.className = 'tile-grid';
+    clusterTiles.forEach(tile => grid.appendChild(makeTileEl(tile)));
+    section.appendChild(grid);
+
+    actGrid.appendChild(section);
   });
 
   // Show "show me everything" link
@@ -1060,11 +1102,48 @@ function showAllTiles() {
     .map(t => t.id);
 
   const newIds = allActivityIds.filter(id => !_shownTileIds.includes(id));
+
   newIds.forEach(id => {
     const tile = VECTOR_CROSSWALK.find(t => t.id === id);
     if(!tile) return;
+
     const el = makeTileEl(tile);
     el.classList.add('tile-reveal');
+
+    // Find existing cluster section
+    let section = document.getElementById('cluster-' + tile.cluster);
+
+    if(!section && typeof CLUSTER_CONFIG !== 'undefined') {
+      // Cluster not in curated set — create it now in correct order
+      const cfg = CLUSTER_CONFIG[tile.cluster] || { label: tile.cluster, sub: '' };
+      section = document.createElement('div');
+      section.className = 'cluster-section';
+      section.id = 'cluster-' + tile.cluster;
+
+      const header = document.createElement('div');
+      header.className = 'cluster-section-header';
+      header.textContent = cfg.label;
+      section.appendChild(header);
+
+      const grid = document.createElement('div');
+      grid.className = 'tile-grid';
+      section.appendChild(grid);
+
+      // Insert before next cluster in order
+      const orderIdx = CLUSTER_ORDER.indexOf(tile.cluster);
+      let inserted = false;
+      for(let i = orderIdx + 1; i < CLUSTER_ORDER.length; i++) {
+        const nextSection = document.getElementById('cluster-' + CLUSTER_ORDER[i]);
+        if(nextSection) { actGrid.insertBefore(section, nextSection); inserted = true; break; }
+      }
+      if(!inserted) actGrid.appendChild(section);
+    }
+
+    // Append to cluster grid or fall back to actGrid
+    if(section) {
+      const grid = section.querySelector('.tile-grid');
+      if(grid) { grid.appendChild(el); return; }
+    }
     actGrid.appendChild(el);
   });
 
@@ -1118,11 +1197,7 @@ function fireProgressiveReveal() {
   });
 
   revealSection.style.display = 'block';
-
-  // Smooth scroll to reveal section
-  setTimeout(() => {
-    revealSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }, 200);
+  // No scroll — tiles appear below, student finds them naturally
 }
 
 // ── ZIP RESOLVER ───────────────────────────────────
