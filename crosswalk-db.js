@@ -490,6 +490,311 @@ const VECTOR_CROSSWALK = [
     ]
   },
 
+  // ── Team sports — Social/Enterprising signal: coordination, leadership, performing under collective pressure ──
+
+  {
+    id: "soccer",
+    label: "Soccer",
+    cluster: "move",
+    riasec: ["S", "E", "R"],
+    naics_sectors: [71, 61, 62],
+    industries: ["Athletics & Sports", "Sports Medicine", "Sports Management", "Coaching & Education", "International Sports"],
+    career_emergence: [
+      "Professional Athlete", "Coach", "Athletic Director", "Sports Medicine Physician",
+      "Sports Marketing Executive", "Sports Agent", "International Sports Diplomat"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["im_one_who_holds_group_together"], unlocks: ["Team Captain", "Athletic Director", "Head Coach"] },
+      { with: ["how_body_moves"], unlocks: ["Sports Medicine Physician", "Athletic Trainer", "Kinesiologist"] },
+      { with: ["people_always_want_me_on_their_team"], unlocks: ["Professional Athlete", "Team Captain", "Sports Recruiter"] }
+    ]
+  },
+
+  {
+    id: "basketball",
+    label: "Basketball",
+    cluster: "move",
+    riasec: ["S", "E", "R"],
+    naics_sectors: [71, 61, 62],
+    industries: ["Athletics & Sports", "Sports Medicine", "Sports Analytics", "Sports Management", "Broadcasting"],
+    career_emergence: [
+      "Professional Athlete", "Coach", "Sports Analyst", "Athletic Director",
+      "Sports Broadcaster", "Sports Agent", "Athletic Trainer"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["im_one_who_holds_group_together"], unlocks: ["Team Captain", "Head Coach", "Player Development Director"] },
+      { with: ["data_statistics"], unlocks: ["Sports Analyst", "Performance Data Scientist", "Scouting Director"] }
+    ]
+  },
+
+  {
+    id: "football",
+    label: "Football",
+    cluster: "move",
+    riasec: ["S", "E", "R"],
+    naics_sectors: [71, 61, 62],
+    industries: ["Athletics & Sports", "Sports Medicine", "Sports Management", "Coaching & Education", "Broadcasting"],
+    career_emergence: [
+      "Professional Athlete", "Coach", "Athletic Director", "Sports Medicine Physician",
+      "Strength & Conditioning Coach", "Sports Broadcaster", "Sports Agent"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["im_one_who_holds_group_together"], unlocks: ["Team Captain", "Offensive Coordinator", "Head Coach"] },
+      { with: ["how_body_moves"], unlocks: ["Sports Medicine Physician", "Strength & Conditioning Coach", "Orthopedic Surgeon"] }
+    ]
+  },
+
+  {
+    id: "baseball_softball",
+    label: "Baseball / Softball",
+    cluster: "move",
+    riasec: ["C", "R", "S"],
+    naics_sectors: [71, 61, 54],
+    industries: ["Athletics & Sports", "Sports Analytics", "Sports Management", "Broadcasting", "Coaching & Education"],
+    career_emergence: [
+      "Professional Athlete", "Coach", "Sports Analyst", "Scout",
+      "Sports Broadcaster", "Athletic Director", "Sports Agent"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["data_statistics"], unlocks: ["Sports Analyst", "Sabermetrics Analyst", "Scouting Director"] },
+      { with: ["i_ask_why"], unlocks: ["Sports Analyst", "Performance Strategist"] }
+    ]
+  },
+
+  {
+    id: "volleyball",
+    label: "Volleyball",
+    cluster: "move",
+    riasec: ["S", "E", "R"],
+    naics_sectors: [71, 61, 62],
+    industries: ["Athletics & Sports", "Sports Medicine", "Coaching & Education", "Sports Management"],
+    career_emergence: [
+      "Professional Athlete", "Coach", "Athletic Director", "Physical Therapist",
+      "Sports Medicine Physician", "Athletic Trainer"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["im_one_who_holds_group_together"], unlocks: ["Team Captain", "Head Coach"] },
+      { with: ["how_body_moves"], unlocks: ["Athletic Trainer", "Physical Therapist"] }
+    ]
+  },
+
+  {
+    id: "lacrosse",
+    label: "Lacrosse",
+    cluster: "move",
+    riasec: ["S", "E", "R"],
+    naics_sectors: [71, 61, 62],
+    industries: ["Athletics & Sports", "Sports Management", "Coaching & Education", "Sports Medicine"],
+    career_emergence: [
+      "Professional Athlete", "Coach", "Athletic Director", "Sports Medicine Physician",
+      "Sports Marketing Executive", "Athletic Trainer"
+    ],
+    geo_signal: true,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["im_one_who_holds_group_together"], unlocks: ["Team Captain", "Head Coach"] }
+    ]
+  },
+
+  // ── Individual competitive sports — Realistic/Conventional signal: self-measured discipline, data, solo accountability ──
+
+  {
+    id: "track_field",
+    label: "Track & field",
+    cluster: "move",
+    riasec: ["R", "C", "I"],
+    naics_sectors: [71, 61, 54],
+    industries: ["Athletics & Sports", "Sports Analytics", "Coaching & Education", "Exercise Science"],
+    career_emergence: [
+      "Professional Athlete", "Track Coach", "Exercise Physiologist", "Sports Analyst",
+      "Athletic Trainer", "Kinesiologist", "Sports Scientist"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["data_statistics"], unlocks: ["Sports Scientist", "Performance Data Analyst"] },
+      { with: ["how_body_moves"], unlocks: ["Exercise Physiologist", "Kinesiologist", "Sports Scientist"] }
+    ]
+  },
+
+  {
+    id: "swimming",
+    label: "Swimming",
+    cluster: "move",
+    riasec: ["R", "C", "I"],
+    naics_sectors: [71, 61, 62],
+    industries: ["Athletics & Sports", "Exercise Science", "Coaching & Education", "Sports Medicine"],
+    career_emergence: [
+      "Professional Athlete", "Swim Coach", "Exercise Physiologist", "Physical Therapist",
+      "Athletic Trainer", "Sports Scientist"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["how_body_moves"], unlocks: ["Exercise Physiologist", "Sports Scientist", "Physical Therapist"] }
+    ]
+  },
+
+  {
+    id: "gymnastics",
+    label: "Gymnastics",
+    cluster: "move",
+    riasec: ["R", "A", "C"],
+    naics_sectors: [71, 61, 62],
+    industries: ["Athletics & Sports", "Performing Arts", "Sports Medicine", "Coaching & Education"],
+    career_emergence: [
+      "Professional Athlete", "Gymnastics Coach", "Choreographer", "Physical Therapist",
+      "Sports Medicine Physician", "Athletic Trainer"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["how_body_moves"], unlocks: ["Physical Therapist", "Sports Medicine Physician", "Athletic Trainer"] },
+      { with: ["i_lose_track_of_time_making"], unlocks: ["Choreographer", "Routine Designer"] }
+    ]
+  },
+
+  {
+    id: "wrestling",
+    label: "Wrestling",
+    cluster: "move",
+    riasec: ["R", "C", "I"],
+    naics_sectors: [71, 61, 92],
+    industries: ["Athletics & Sports", "Coaching & Education", "Sports Medicine", "Public Safety / Law Enforcement"],
+    career_emergence: [
+      "Professional Athlete", "Wrestling Coach", "Strength & Conditioning Coach", "Athletic Trainer",
+      "Law Enforcement Officer", "Military Officer", "Sports Medicine Physician"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["i_stay_calm_when_things_go_wrong"], unlocks: ["Law Enforcement", "Military Officer", "Strength & Conditioning Coach"] }
+    ]
+  },
+
+  {
+    id: "tennis",
+    label: "Tennis",
+    cluster: "move",
+    riasec: ["R", "I", "C"],
+    naics_sectors: [71, 61, 81],
+    industries: ["Athletics & Sports", "Coaching & Education", "Sports Management", "Hospitality & Country Clubs"],
+    career_emergence: [
+      "Professional Athlete", "Tennis Coach", "Sports Psychologist", "Sports Management Executive",
+      "Athletic Director", "Country Club Director"
+    ],
+    geo_signal: true,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["i_ask_why"], unlocks: ["Sports Psychologist", "Performance Strategist"] }
+    ]
+  },
+
+  // ── Access/endurance-coded sports — distinct geography, often prep-school or club-team signal ──
+
+  {
+    id: "golf",
+    label: "Golf",
+    cluster: "move",
+    riasec: ["R", "E", "C"],
+    naics_sectors: [71, 81, 52],
+    industries: ["Athletics & Sports", "Hospitality & Country Clubs", "Sports Management", "Business & Finance"],
+    career_emergence: [
+      "Professional Athlete", "Golf Instructor", "Country Club General Manager", "Sports Management Executive",
+      "Golf Course Architect", "Sports Marketing Executive"
+    ],
+    geo_signal: true,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["i_know_everyone"], unlocks: ["Sports Marketing Executive", "Country Club General Manager", "Business Development Director"] }
+    ]
+  },
+
+  {
+    id: "crew_rowing",
+    label: "Crew / Rowing",
+    cluster: "move",
+    riasec: ["R", "C", "S"],
+    naics_sectors: [71, 61, 62],
+    industries: ["Athletics & Sports", "Coaching & Education", "Exercise Science", "Sports Medicine"],
+    career_emergence: [
+      "Professional Athlete", "Crew Coach", "Exercise Physiologist", "Sports Scientist",
+      "Athletic Trainer", "Sports Performance Coach"
+    ],
+    geo_signal: true,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["im_one_who_holds_group_together"], unlocks: ["Team Captain", "Crew Coach"] },
+      { with: ["how_body_moves"], unlocks: ["Exercise Physiologist", "Sports Scientist"] }
+    ]
+  },
+
+  {
+    id: "cross_country",
+    label: "Cross country",
+    cluster: "move",
+    riasec: ["R", "I", "C"],
+    naics_sectors: [71, 61, 62],
+    industries: ["Athletics & Sports", "Exercise Science", "Coaching & Education", "Sports Medicine"],
+    career_emergence: [
+      "Professional Athlete", "Distance Running Coach", "Exercise Physiologist", "Sports Scientist",
+      "Physical Therapist", "Sports Nutritionist"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["how_body_moves"], unlocks: ["Exercise Physiologist", "Sports Scientist"] },
+      { with: ["i_ask_why"], unlocks: ["Sports Scientist", "Performance Researcher"] }
+    ]
+  },
+
+  {
+    id: "fencing",
+    label: "Fencing",
+    cluster: "move",
+    riasec: ["R", "I", "C"],
+    naics_sectors: [71, 61, 92],
+    industries: ["Athletics & Sports", "Coaching & Education", "Sports Psychology"],
+    career_emergence: [
+      "Professional Athlete", "Fencing Coach", "Sports Psychologist", "Strategic Analyst",
+      "Military Officer", "Olympic Coach"
+    ],
+    geo_signal: true,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["i_ask_why"], unlocks: ["Sports Psychologist", "Strategic Analyst"] }
+    ]
+  },
+
+  {
+    id: "water_polo",
+    label: "Water polo",
+    cluster: "move",
+    riasec: ["S", "R", "E"],
+    naics_sectors: [71, 61, 62],
+    industries: ["Athletics & Sports", "Coaching & Education", "Sports Medicine", "Exercise Science"],
+    career_emergence: [
+      "Professional Athlete", "Water Polo Coach", "Athletic Trainer", "Exercise Physiologist",
+      "Sports Medicine Physician"
+    ],
+    geo_signal: true,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["im_one_who_holds_group_together"], unlocks: ["Team Captain", "Head Coach"] }
+    ]
+  },
+
+
   // ─────────────────────────────────────────────
   // THINK & EXPLORE
   // ─────────────────────────────────────────────
@@ -1857,6 +2162,31 @@ const VECTOR_CROSSWALK = [
         unlocks: ["Private Equity Partner", "Venture Capitalist", "Serial Entrepreneur", "Industry Leader"] },
       { with: ["i_can_talk_to_anyone", "i_remember_everything_about_people"],
         unlocks: ["Relationship Capital Professional", "Wealth Advisor", "Executive Recruiter"] }
+    ]
+  },
+
+  {
+    id: "im_the_one_they_count_on_to_perform",
+    label: "I'm the one my team counts on to perform when it actually matters",
+    cluster: "eq",
+    riasec: ["R", "E", "C"],
+    naics_sectors: [71, 54, 52],
+    industries: [
+      "Athletics & Sports",
+      "Performance Management",
+      "Sales & Business Development",
+      "Investment & Trading",
+      "Surgery & High-Stakes Medicine"
+    ],
+    career_emergence: [
+      "Professional Athlete", "Investment Banker", "Surgeon", "Trial Attorney",
+      "Closer / Top Sales Executive", "Elite Performer", "Trader"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["soccer", "basketball", "football", "volleyball", "lacrosse", "water_polo"], unlocks: ["Professional Athlete", "Elite Performer", "Star Player Development Track"] },
+      { with: ["i_stay_calm_when_things_go_wrong"], unlocks: ["Surgeon", "Trial Attorney", "Closer / Top Sales Executive"] }
     ]
   }
 
