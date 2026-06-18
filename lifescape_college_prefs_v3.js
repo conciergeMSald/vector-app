@@ -868,9 +868,72 @@ function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpa
     }
   }
 
+  // Step 6 — Build NAICS → major cluster map for program strength scoring
+  const NAICS_MAJOR_MAP = {
+    52: ['Business'],
+    51: ['Computer Science','Media & Communications','Arts & Design'],
+    54: ['Computer Science','Sciences','Engineering'],
+    62: ['Health Sciences'],
+    61: ['Education','Law & Policy'],
+    71: ['Arts & Design','Media & Communications','Performing Arts'],
+    23: ['Engineering','Arts & Design'],
+    92: ['Law & Policy'],
+    56: ['Business'],
+    81: ['Business','Entrepreneurship'],
+    72: ['Business','Entrepreneurship'],
+    44: ['Business'],
+    48: ['Engineering'],
+    33: ['Engineering'],
+    32: ['Sciences','Engineering'],
+    31: ['Sciences'],
+  };
+
+  // Derive student's desired major clusters from NAICS profile
+  const studentMajorClusters = new Set();
+  (naicsSectors || []).slice(0, 5).forEach(n => {
+    const clusters = NAICS_MAJOR_MAP[n.sector] || [];
+    clusters.forEach(c => studentMajorClusters.add(c));
+  });
+
   // Step 6 — Score and sort
   const scored = eligible.map(school => {
     let score = 5; // base
+
+    // ── Program strength boost — profile-aware specificity ────────────────
+    if (studentMajorClusters.size > 0 && typeof getMajorStrengths === 'function') {
+      const schoolMajors = getMajorStrengths(school);
+
+      const creativeSignalClusters = new Set(['Media & Communications','Performing Arts','Arts & Design']);
+      const stemSignalClusters     = new Set(['Engineering','Computer Science']);
+      const healthSignalClusters   = new Set(['Health Sciences']);
+      const businessSignalClusters = new Set(['Business','Entrepreneurship']);
+
+      // Determine student profile type from their major clusters
+      const studentCreativeCount  = [...studentMajorClusters].filter(c => creativeSignalClusters.has(c)).length;
+      const studentStemCount      = [...studentMajorClusters].filter(c => stemSignalClusters.has(c)).length;
+      const studentHealthCount    = [...studentMajorClusters].filter(c => healthSignalClusters.has(c)).length;
+      const studentBizCount       = [...studentMajorClusters].filter(c => businessSignalClusters.has(c)).length;
+
+      // School overlap by signal type
+      const creativeOverlap  = schoolMajors.filter(m => studentMajorClusters.has(m) && creativeSignalClusters.has(m));
+      const stemOverlap      = schoolMajors.filter(m => studentMajorClusters.has(m) && stemSignalClusters.has(m));
+      const healthOverlap    = schoolMajors.filter(m => studentMajorClusters.has(m) && healthSignalClusters.has(m));
+      const bizOverlap       = schoolMajors.filter(m => studentMajorClusters.has(m) && businessSignalClusters.has(m));
+
+      // Score based on profile type — reward domain-specific match
+      if (studentCreativeCount >= 2 && creativeOverlap.length >= 2) score += 25;
+      else if (studentCreativeCount >= 1 && creativeOverlap.length >= 1) score += 15;
+      else if (studentStemCount >= 2 && stemOverlap.length >= 2) score += 25;
+      else if (studentStemCount >= 1 && stemOverlap.length >= 1) score += 15;
+      else if (studentHealthCount >= 1 && healthOverlap.length >= 1) score += 20;
+      else if (studentBizCount >= 1 && bizOverlap.length >= 1) score += 15;
+      else {
+        // Fallback: general overlap
+        const generalOverlap = schoolMajors.filter(m => studentMajorClusters.has(m));
+        if (generalOverlap.length >= 2) score += 8;
+        else if (generalOverlap.length === 1) score += 4;
+      }
+    }
 
     // Social scene affinity bonus
     if (social_scene && social_scene !== 'no_preference') {
@@ -968,39 +1031,49 @@ function getAdjacentMatches(primaryMatches, naicsSectors, comboUnlocks, max=1) {
   const primarySet = new Set(primaryMatches);
   const candidates = allSchools.filter(s => !primarySet.has(s));
 
-  // Top NAICS sectors for this student
-  const topSectors = new Set((naicsSectors || []).slice(0,5).map(n => n.sector));
+  // NAICS → major cluster map — same mapping used in matchUniversities
+  const NAICS_MAJOR_MAP = {
+    52: ['Business'],
+    51: ['Computer Science','Media & Communications','Arts & Design'],
+    54: ['Computer Science','Sciences','Engineering'],
+    62: ['Health Sciences'],
+    61: ['Education','Law & Policy'],
+    71: ['Arts & Design','Media & Communications','Performing Arts'],
+    23: ['Engineering','Arts & Design'],
+    92: ['Law & Policy'],
+    56: ['Business'],
+    81: ['Business','Entrepreneurship'],
+    72: ['Business','Entrepreneurship'],
+    44: ['Business'],
+    48: ['Engineering'],
+    33: ['Engineering'],
+    32: ['Sciences','Engineering'],
+    31: ['Sciences'],
+  };
 
-  // Score candidates purely on program/NAICS fit — ignoring preferences
+  // Derive student's major clusters from NAICS profile — actual signal use
+  const studentMajorClusters = new Set();
+  (naicsSectors || []).slice(0, 5).forEach(n => {
+    (NAICS_MAJOR_MAP[n.sector] || []).forEach(c => studentMajorClusters.add(c));
+  });
+
+  // Score candidates on actual program/major fit — this is the real "adjacent" signal
   const scored = candidates.map(school => {
     let score = 0;
 
     // GPA range alignment (soft — don't hard-filter)
     const range = SCHOOL_GPA_RANGES[school];
-    if (range) score += 3;
+    if (range) score += 1;
 
-    // Religious affiliation pools — neutral here
-    // Social scene — neutral here (we're ignoring preferences deliberately)
+    // Program strength match — the actual signal this function should use
+    if (studentMajorClusters.size > 0 && typeof getMajorStrengths === 'function') {
+      const schoolMajors = getMajorStrengths(school);
+      const overlap = schoolMajors.filter(m => studentMajorClusters.has(m));
+      if (overlap.length >= 2) score += 20;
+      else if (overlap.length === 1) score += 10;
+    }
 
-    // Program-NAICS signal: if the school is in a relevant industry region
-    // We use geo clusters as a proxy for program strength
-    // Schools in RELIGIOUS_AFFILIATION pools get a slight boost
-    // (they often have distinctive programs in specific sectors)
-    Object.values(RELIGIOUS_AFFILIATION).forEach(pool => {
-      if (pool.includes(school)) score += 2;
-    });
-
-    // Ivy/equivalent schools have broad program strength — boost slightly
-    if ((RELIGIOUS_AFFILIATION.protestant || []).includes(school)) score += 1;
-
-    // Primary signal: enrollment diversity (larger research universities
-    // tend to have stronger cross-disciplinary program offerings)
-    const enroll = SCHOOL_ENROLLMENT[school] || 0;
-    if (enroll > 15000 && enroll < 45000) score += 4; // sweet spot
-    if (enroll >= 5000 && enroll <= 15000) score += 3; // strong smaller
-
-    // Combo unlock boost — if school is in a specific region that
-    // aligns with a fired combo unlock career path
+    // Combo unlock boost — student has fired a multi-tile combination
     if (comboUnlocks && comboUnlocks.length > 0) score += 2;
 
     // Tiebreaker: alphabetical (deterministic)
