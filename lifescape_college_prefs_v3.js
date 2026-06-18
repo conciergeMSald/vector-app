@@ -22,9 +22,7 @@ const CONFERENCE_POOLS = {
     "Auburn University","Louisiana State University","University of Tennessee",
     "University of Arkansas","University of South Carolina","University of Kentucky",
     "Vanderbilt University","University of Mississippi","Mississippi State University",
-    "University of Missouri","University of Oklahoma"
-    // Texas A&M not in our DB yet
-    // University of Texas not in our DB yet
+    "University of Missouri","University of Oklahoma",
     "Texas A&M University",
     "University of Texas at Austin",
   ],
@@ -38,8 +36,10 @@ const CONFERENCE_POOLS = {
     "Northwestern University","Purdue University","Rutgers University",
     "University of Maryland College Park",
     // 2024 additions from Pac-12
-    "University of Oregon","University of Washington"
-    // UCLA not in our DB
+    "University of Oregon","University of Washington",
+    "UC Berkeley",
+    "San Diego State University",
+    "UC Santa Barbara",
     // USC not in our DB
     // Illinois, Wisconsin not in our DB
     "University of Illinois Urbana-Champaign",
@@ -55,8 +55,8 @@ const CONFERENCE_POOLS = {
     "University of Pittsburgh","Syracuse University","University of Louisville",
     "Florida State University","Elon University","College of William and Mary",
     // 2024 additions from Pac-12
-    "Stanford University"
-    // Cal/Berkeley not in our DB
+    "Stanford University",
+    "UC Berkeley",
     // SMU not in our DB
     // Notre Dame (independent in football, ACC in other sports)
     "Southern Methodist University",
@@ -106,7 +106,7 @@ const CONFERENCE_POOLS = {
     "University of Colorado Boulder","University of Utah","Brigham Young University",
     "University of Central Florida",
     // Big Ten members who are geographically West Coast:
-    "University of Oregon","University of Washington"
+    "University of Oregon","University of Washington",
     "San Diego State University",
     "UC Santa Barbara",
     "University of Southern California",
