@@ -2277,14 +2277,27 @@ async function submitLifescape() {
     stopLoadingMessages();
     window.scrollTo(0,0);
 
-    // ── CALL B + C — parallel ─────────────────────
-    const [callBText, callCText] = await Promise.all([
-      fireCall(buildCallBPrompt(ctx), 1200),
-      fireCall(buildCallCPrompt(ctx), 400)
+    // ── CALL B + C — parallel, isolated ──────────────
+    const [callBResult, callCResult] = await Promise.allSettled([
+      fireCall(buildCallBPrompt(ctx), 1200, 0, 45000),
+      fireCall(buildCallCPrompt(ctx), 400, 0, 30000)
     ]);
 
-    const callBData = parseCallB(callBText);
-    const callCData = parseCallC(callCText);
+    // Graceful fallback — each call fails independently
+    const callBText = callBResult.status === 'fulfilled' ? callBResult.value : null;
+    const callCText = callCResult.status === 'fulfilled' ? callCResult.value : null;
+
+    if(callBResult.status === 'rejected') {
+      console.warn('[callB] failed:', callBResult.reason);
+      const el = document.getElementById('full-activity');
+      if(el) el.textContent = 'Industry and interest analysis is taking longer than expected. Your counselor will have the full picture.';
+    }
+    if(callCResult.status === 'rejected') {
+      console.warn('[callC] failed:', callCResult.reason);
+    }
+
+    const callBData = callBText ? parseCallB(callBText) : null;
+    const callCData = callCText ? parseCallC(callCText) : null;
     LS_STATE.callBResult = callBData;
     LS_STATE.callCResult = callCData;
 
