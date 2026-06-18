@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="lifescape_career_intelligence.js"></script>
+<script src="lifescape_onet_map.js"></script>
 <script src="crosswalk-db.js"></script>
 <script src="geo_industry_db_LA_pass1.js"></script>
 <script src="geo_industry_db_BayArea_pass2.js"></script>
@@ -954,6 +955,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     </div>
 
     <div style="margin-bottom:2rem">
+      <div class="section-eyebrow">Occupation intelligence</div>
+      <div id="counselor-occupations"><div style="font-size:13px;color:var(--ink4);font-style:italic">Generating...</div></div>
+    </div>
+
+    <div style="margin-bottom:2rem">
       <div class="section-eyebrow">Counselor action prompts</div>
       <div id="counselor-prompts"></div>
     </div>
@@ -1557,6 +1563,9 @@ Write only the three sections with their exact dividers. Nothing else.`;
 function buildCallBPrompt(ctx) {
   const naicsNames = {11:'Agriculture',21:'Mining & Energy',22:'Utilities',23:'Construction',31:'Manufacturing',32:'Manufacturing',33:'Manufacturing',42:'Wholesale',44:'Retail',45:'Retail',48:'Transportation',49:'Transportation',51:'Information & Media',52:'Finance & Insurance',53:'Real Estate',54:'Professional & Scientific Services',55:'Management',56:'Administrative Services',61:'Education',62:'Health Care & Social Assistance',71:'Arts, Entertainment & Recreation',72:'Food Service & Hospitality',81:'Personal & Consumer Services',92:'Government & Public Service'};
   const topIndustries = ctx.naicsSectors.slice(0,5).map(n=>naicsNames[n.sector]||`Sector ${n.sector}`).join(', ');
+  const onetBlock = typeof buildONETPromptBlock === 'function'
+    ? buildONETPromptBlock(ctx.naicsSectors, ctx.riasec)
+    : '';
 
   return `You are the intelligence behind Lifescape, writing the industry section of a student's report.
 
@@ -1572,7 +1581,7 @@ Activity interests: ${ctx.activityTiles.join(', ')}
 EQ identity: ${ctx.eqTiles.join(', ')}
 RIASEC: ${ctx.topRIASEC}
 Top industry sectors by signal strength: ${topIndustries}
-${(()=>{
+${onetBlock}${(()=>{
   const bf = ctx.big_five;
   if(!bf||bf.O===null) return '';
   const d = s => s>=3.5?'high':s<=2.5?'low':'moderate';
@@ -2622,6 +2631,13 @@ function updateQuickReadClusters(industriesText) {
 // ── RENDER: COUNSELOR VIEW ─────────────────────────
 function renderCounselorView(profile, callAData, callBData, callCData) {
   // Meta table
+  // ── Occupation intelligence block (counselor-only) ──────────────────────
+  const occupationEl = document.getElementById('counselor-occupations');
+  if(occupationEl && typeof buildONETCounselorBlock === 'function') {
+    const occHtml = buildONETCounselorBlock(profile.naicsSectors, profile.riasec, profile.name);
+    occupationEl.innerHTML = occHtml || '<div style="font-size:13px;color:var(--ink4)">No occupation data available.</div>';
+  }
+
   document.getElementById('counselor-meta').innerHTML = [
     ['Name', profile.name],
     ['Grade', `Grade ${profile.grade}`],
