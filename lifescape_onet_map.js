@@ -10,6 +10,7 @@ const NAICS_TO_ONET = {
   // NAICS 52 — Finance & Insurance
   52: {
     clusterName: 'Finance & Capital',
+    metros: ['New York NY','Charlotte NC','Chicago IL'],
     riasecAffinity: ['C','E','I'],
     titles: [
       'Investment Banker',
@@ -28,6 +29,7 @@ const NAICS_TO_ONET = {
   // NAICS 51 — Information & Media / Technology
   51: {
     clusterName: 'Technology & Media',
+    metros: ['San Francisco CA','Seattle WA','Austin TX'],
     riasecAffinity: ['I','R','A'],
     titles: [
       'Software Engineer',
@@ -46,6 +48,7 @@ const NAICS_TO_ONET = {
   // NAICS 54 — Professional, Scientific & Technical Services
   54: {
     clusterName: 'Professional & Scientific Services',
+    metros: ['Washington DC','Boston MA','San Francisco CA'],
     riasecAffinity: ['I','C','E'],
     titles: [
       'Management Consultant',
@@ -64,6 +67,7 @@ const NAICS_TO_ONET = {
   // NAICS 62 — Health Care & Social Assistance
   62: {
     clusterName: 'Health Care',
+    metros: ['Boston MA','Houston TX','Rochester MN'],
     riasecAffinity: ['S','I','R'],
     titles: [
       'Physician',
@@ -82,6 +86,7 @@ const NAICS_TO_ONET = {
   // NAICS 61 — Education
   61: {
     clusterName: 'Education & Public Service',
+    metros: ['Washington DC','Boston MA','New York NY'],
     riasecAffinity: ['S','A','E'],
     titles: [
       'School Administrator',
@@ -100,6 +105,7 @@ const NAICS_TO_ONET = {
   // NAICS 71 — Arts, Entertainment & Recreation
   71: {
     clusterName: 'Arts, Entertainment & Recreation',
+    metros: ['Los Angeles CA','New York NY','Nashville TN'],
     riasecAffinity: ['A','E','S'],
     titles: [
       'Film Director',
@@ -118,6 +124,7 @@ const NAICS_TO_ONET = {
   // NAICS 23 — Construction / Architecture
   23: {
     clusterName: 'Architecture & Built Environment',
+    metros: ['New York NY','Chicago IL','Los Angeles CA'],
     riasecAffinity: ['R','I','A'],
     titles: [
       'Architect',
@@ -136,6 +143,7 @@ const NAICS_TO_ONET = {
   // NAICS 92 — Government & Public Administration
   92: {
     clusterName: 'Government & Civic Leadership',
+    metros: ['Washington DC','Norfolk VA','San Antonio TX'],
     riasecAffinity: ['E','S','C'],
     titles: [
       'Foreign Service Officer',
@@ -154,6 +162,7 @@ const NAICS_TO_ONET = {
   // NAICS 56 — Administrative & Support / Business Operations
   56: {
     clusterName: 'Business Operations & Strategy',
+    metros: ['Chicago IL','Atlanta GA','Dallas TX'],
     riasecAffinity: ['E','C','S'],
     titles: [
       'Management Consultant',
@@ -172,6 +181,7 @@ const NAICS_TO_ONET = {
   // NAICS 81 — Personal & Consumer Services / Entrepreneurship
   81: {
     clusterName: 'Entrepreneurship & Consumer Markets',
+    metros: ['San Francisco CA','Austin TX','Miami FL'],
     riasecAffinity: ['E','A','R'],
     titles: [
       'Startup Founder',
@@ -190,6 +200,7 @@ const NAICS_TO_ONET = {
   // NAICS 72 — Food Service & Hospitality
   72: {
     clusterName: 'Hospitality & Experience Economy',
+    metros: ['Orlando FL','Las Vegas NV','New York NY'],
     riasecAffinity: ['E','S','A'],
     titles: [
       'Hotel General Manager',
@@ -208,6 +219,7 @@ const NAICS_TO_ONET = {
   // NAICS 44/45 — Retail & Consumer Products
   44: {
     clusterName: 'Retail & Consumer Products',
+    metros: ['New York NY','Minneapolis MN','Bentonville AR'],
     riasecAffinity: ['E','C','A'],
     titles: [
       'Brand Manager',
@@ -226,6 +238,7 @@ const NAICS_TO_ONET = {
   // NAICS 48/49 — Transportation & Logistics
   48: {
     clusterName: 'Transportation & Logistics',
+    metros: ['Atlanta GA','Memphis TN','Dallas TX'],
     riasecAffinity: ['R','C','E'],
     titles: [
       'Commercial Pilot',
@@ -315,3 +328,72 @@ function buildONETCounselorBlock(naicsSectors, riasec, studentName) {
     </div>
   `).join('');
 }
+
+// ── getCareerMetroMatch ────────────────────────────────────────────────────────
+// The Richard Florida layer: connects a student's career cluster to the metros
+// where that industry actually concentrates, then checks which of the student's
+// matched schools genuinely feed those metros — using each school's REAL grad
+// city data (getTopGradCities), not assumption.
+//
+// Normalizes on metro CORE NAME + STATE (e.g. "Boston" + "MA") rather than exact
+// string match, since real grad_cities data has legitimate variation
+// ("Boston MA" vs "Boston-Cambridge MA" vs "Boston-Cambridge-Newton MA").
+//
+// @param naicsSectors   student's NAICS profile [{sector, score}]
+// @param riasec         student's RIASEC profile [{code, score}]
+// @param matchedSchools array of school name strings already matched for this student
+// @returns { topCluster, targetMetros, schoolFit: [{school, feedsMetro, pct, metro}] }
+
+function _metroCore(cityString) {
+  // Extract the leading city name token(s) before the trailing state code,
+  // strip hyphenated metro extensions, lowercase for comparison
+  const m = cityString.match(/^([A-Za-z\s]+?)(?:-[A-Za-z\s]+)*\s+([A-Z]{2})$/);
+  if (!m) return null;
+  const core = m[1].trim().split(/\s+/)[0].toLowerCase(); // first word of city name
+  const state = m[2];
+  return { core, state, full: cityString };
+}
+
+function getCareerMetroMatch(naicsSectors, riasec, matchedSchools) {
+  const clusters = getONETClusters(naicsSectors, riasec);
+  if (!clusters.length || !matchedSchools || !matchedSchools.length) {
+    return { topCluster: null, targetMetros: [], schoolFit: [] };
+  }
+
+  // Top cluster drives the metro target — strongest signal
+  const topClusterRaw = naicsSectors && naicsSectors[0]
+    ? (typeof NAICS_TO_ONET !== 'undefined' ? NAICS_TO_ONET[naicsSectors[0].sector] : null)
+    : null;
+  const targetMetros = (topClusterRaw && topClusterRaw.metros) ? topClusterRaw.metros : [];
+  const targetCores = targetMetros.map(_metroCore).filter(Boolean);
+
+  // A school "feeds" a target metro only if concentration is meaningful (15%+),
+  // not just present — an 8% trickle isn't the same signal as a 65% pipeline
+  const MEANINGFUL_CONCENTRATION = 15;
+
+  const schoolFit = matchedSchools.map(school => {
+    const gradCities = (typeof getTopGradCities === 'function') ? getTopGradCities(school) : [];
+    let bestMatch = null;
+    for (const gc of gradCities) {
+      const gcCore = _metroCore(gc.city);
+      if (!gcCore) continue;
+      const hit = targetCores.find(tc => tc.core === gcCore.core && tc.state === gcCore.state);
+      if (hit && gc.pct >= MEANINGFUL_CONCENTRATION && (!bestMatch || gc.pct > bestMatch.pct)) {
+        bestMatch = { city: gc.city, pct: gc.pct };
+      }
+    }
+    return {
+      school,
+      feedsMetro: !!bestMatch,
+      metro: bestMatch ? bestMatch.city : null,
+      pct: bestMatch ? bestMatch.pct : null
+    };
+  });
+
+  return {
+    topCluster: clusters[0] ? clusters[0].clusterName : null,
+    targetMetros,
+    schoolFit
+  };
+}
+

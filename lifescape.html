@@ -1036,6 +1036,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <div id="counselor-occupations"><div style="font-size:13px;color:var(--ink4);font-style:italic">Generating...</div></div>
     </div>
 
+    <div style="margin-bottom:2rem" id="counselor-geo-fit-block">
+      <div class="section-eyebrow">Where this path actually lives</div>
+      <div id="counselor-geo-fit"></div>
+    </div>
+
     <div style="margin-bottom:2rem">
       <div class="section-eyebrow">Counselor action prompts</div>
       <div id="counselor-prompts"></div>
@@ -2497,6 +2502,20 @@ async function submitLifescape() {
           console.log('[callD] adjacent picks:', adjacentPicks.map(s=>s.name));
           console.log('[callD] profile adjacent:', profileAdjacentPicks.map(s=>s.name));
 
+          // ── Career-metro match (counselor-only, local data, zero AI cost) ────
+          if(typeof getCareerMetroMatch === 'function') {
+            try {
+              LS_STATE.careerMetroMatch = getCareerMetroMatch(
+                profile.naicsSectors,
+                profile.riasec,
+                matchedSchools.slice(0, 8)
+              );
+            } catch(metroErr) {
+              console.warn('[careerMetroMatch] failed gracefully:', metroErr.message);
+              LS_STATE.careerMetroMatch = null;
+            }
+          }
+
           if(callDData.length > 0) {
             renderSchoolRecommendations(
               profile, callAData, callDData,
@@ -2872,6 +2891,37 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
     }
   } else if(aaBlock) {
     aaBlock.style.display = 'none';
+  }
+
+  // ── Career-metro fit (counselor-only) — the Richard Florida layer ──────────
+  const geoFitEl = document.getElementById('counselor-geo-fit');
+  const geoFitBlock = document.getElementById('counselor-geo-fit-block');
+  const cmm = LS_STATE.careerMetroMatch;
+  if(geoFitEl && geoFitBlock) {
+    if(!cmm || !cmm.topCluster || !cmm.targetMetros || cmm.targetMetros.length === 0) {
+      geoFitBlock.style.display = 'none';
+    } else {
+      const name = profile.name || 'This student';
+      const feeders = cmm.schoolFit.filter(s => s.feedsMetro);
+      const metroList = cmm.targetMetros.join(', ');
+
+      let html = `<table class="meta-table">
+        <tr><td>Career path</td><td>${cmm.topCluster}</td></tr>
+        <tr><td>Where it concentrates nationally</td><td>${metroList}</td></tr>
+      </table>`;
+
+      if(feeders.length > 0) {
+        html += `<div class="action-prompt" style="margin-top:12px"><div class="action-text">
+          <strong>Schools with a real pipeline into this path's home metros:</strong> ${feeders.map(f=>`${f.school} (${f.metro} ${f.pct}%)`).join(', ')}.
+        </div></div>`;
+      } else {
+        html += `<div class="action-prompt" style="margin-top:12px"><div class="action-text">
+          <strong>Worth naming directly:</strong> none of ${name}'s currently matched schools show a strong documented pipeline into ${metroList} — where ${cmm.topCluster.toLowerCase()} actually concentrates. Worth a direct conversation about whether the right move is broadening the school search toward this geography, or treating it as a post-graduation relocation decision rather than a school-selection one.
+        </div></div>`;
+      }
+      geoFitEl.innerHTML = html;
+      geoFitBlock.style.display = '';
+    }
   }
 
   // Combo unlocks
