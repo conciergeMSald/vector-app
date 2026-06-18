@@ -95,7 +95,7 @@ const CONFERENCE_POOLS = {
     "UC Riverside",
     // Big 12 members who are geographically West Coast:
     "University of Arizona","Arizona State University",
-    "University of Colorado Boulder","University of Utah","Brigham Young University",
+    "University of Utah","Brigham Young University",
     "University of Central Florida",
     // Big Ten members who are geographically West Coast:
     "University of Oregon","University of Washington",
@@ -201,7 +201,7 @@ const REGION_POOLS = {
 
   southwest: [
     "University of Arizona","Arizona State University","University of Oklahoma",
-    "University of Kansas","University of Arkansas","University of Colorado Boulder",
+    "University of Kansas","University of Arkansas",
     "Colorado State University","University of Denver","Baylor University",
     "University of Utah","Brigham Young University",
     "Rice University",
