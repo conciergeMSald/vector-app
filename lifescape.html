@@ -280,70 +280,25 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   .trajectory-text{font-size:17px;}
 }
 
-/* ── BFI-10 STYLES ────────────────────────────────────────── */
-.bfi-scale-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  color: var(--color-text-tertiary, #999);
-  margin: 24px 0 8px;
-  padding: 0 40px;
-  letter-spacing: 0.02em;
-}
-.bfi-items { display: flex; flex-direction: column; gap: 20px; }
-.bfi-item { padding: 16px 0; border-bottom: 1px solid var(--color-border, #e8e4de); }
-.bfi-item:last-child { border-bottom: none; }
-.bfi-label { font-size: 15px; color: var(--color-text-primary, #1a1a1a); margin-bottom: 12px; line-height: 1.5; }
-.bfi-options { display: flex; gap: 8px; justify-content: center; }
-.bfi-btn {
-  width: 44px; height: 44px;
-  border: 1.5px solid var(--color-border, #e8e4de);
-  border-radius: 50%;
-  background: transparent;
-  font-size: 14px;
-  color: var(--color-text-secondary, #666);
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-.bfi-btn:hover { border-color: var(--color-gold, #C8A97A); color: var(--color-gold, #C8A97A); }
-.bfi-btn.bfi-selected {
-  background: var(--color-gold, #C8A97A);
-  border-color: var(--color-gold, #C8A97A);
-  color: #fff;
-  font-weight: 600;
-}
-
-/* ── WORLD SELECTION STYLES ───────────────────────────────── */
-.world-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 24px;
-}
-.world-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 18px 16px;
-  border: 1.5px solid var(--color-border, #e8e4de);
-  border-radius: 8px;
-  background: transparent;
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.15s ease;
-}
-.world-card:hover {
-  border-color: var(--color-gold, #C8A97A);
-  background: rgba(200,169,122,0.04);
-}
-.world-card.world-selected {
-  border-color: var(--color-gold, #C8A97A);
-  background: rgba(200,169,122,0.08);
-}
-.world-icon { font-size: 20px; margin-bottom: 8px; }
-.world-name { font-size: 14px; font-weight: 600; color: var(--color-text-primary, #1a1a1a); margin-bottom: 4px; }
-.world-desc { font-size: 12px; color: var(--color-text-secondary, #666); line-height: 1.4; }
-@media (max-width: 480px) { .world-grid { grid-template-columns: 1fr; } }
+/* BFI-10 */
+.bfi-scale-header{display:flex;justify-content:space-between;font-size:11px;color:#999;margin:24px 0 8px;padding:0 40px;letter-spacing:.02em}
+.bfi-items{display:flex;flex-direction:column;gap:20px}
+.bfi-item{padding:16px 0;border-bottom:1px solid #e8e4de}
+.bfi-item:last-child{border-bottom:none}
+.bfi-label{font-size:15px;color:#1a1a1a;margin-bottom:12px;line-height:1.5}
+.bfi-options{display:flex;gap:8px;justify-content:center}
+.bfi-btn{width:44px;height:44px;border:1.5px solid #e8e4de;border-radius:50%;background:transparent;font-size:14px;color:#666;cursor:pointer;transition:all .15s}
+.bfi-btn:hover{border-color:#C8A97A;color:#C8A97A}
+.bfi-btn.bfi-selected{background:#C8A97A;border-color:#C8A97A;color:#fff;font-weight:600}
+/* World Selection */
+.world-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+.world-card{display:flex;flex-direction:column;align-items:flex-start;padding:18px 16px;border:1.5px solid #e8e4de;border-radius:8px;background:transparent;cursor:pointer;text-align:left;transition:all .15s}
+.world-card:hover{border-color:#C8A97A;background:rgba(200,169,122,.04)}
+.world-card.world-selected{border-color:#C8A97A;background:rgba(200,169,122,.08)}
+.world-icon{font-size:20px;margin-bottom:8px}
+.world-name{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:4px}
+.world-desc{font-size:12px;color:#666;line-height:1.4}
+@media(max-width:480px){.world-grid{grid-template-columns:1fr}}
 
 </style>
 </head>
@@ -535,128 +490,25 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </div>
 
   <div class="bfi-items">
-
-    <div class="bfi-item" id="bfi-1">
-      <div class="bfi-label">I see myself as someone who is <strong>reserved</strong>.</div>
-      <div class="bfi-options">
-        <button class="bfi-btn" data-item="1" data-val="1" onclick="selectBFI(this,1,1)">1</button>
-        <button class="bfi-btn" data-item="1" data-val="2" onclick="selectBFI(this,1,2)">2</button>
-        <button class="bfi-btn" data-item="1" data-val="3" onclick="selectBFI(this,1,3)">3</button>
-        <button class="bfi-btn" data-item="1" data-val="4" onclick="selectBFI(this,1,4)">4</button>
-        <button class="bfi-btn" data-item="1" data-val="5" onclick="selectBFI(this,1,5)">5</button>
-      </div>
-    </div>
-
-    <div class="bfi-item" id="bfi-2">
-      <div class="bfi-label">I see myself as someone who is <strong>generally trusting</strong>.</div>
-      <div class="bfi-options">
-        <button class="bfi-btn" data-item="2" data-val="1" onclick="selectBFI(this,2,1)">1</button>
-        <button class="bfi-btn" data-item="2" data-val="2" onclick="selectBFI(this,2,2)">2</button>
-        <button class="bfi-btn" data-item="2" data-val="3" onclick="selectBFI(this,2,3)">3</button>
-        <button class="bfi-btn" data-item="2" data-val="4" onclick="selectBFI(this,2,4)">4</button>
-        <button class="bfi-btn" data-item="2" data-val="5" onclick="selectBFI(this,2,5)">5</button>
-      </div>
-    </div>
-
-    <div class="bfi-item" id="bfi-3">
-      <div class="bfi-label">I see myself as someone who <strong>tends to be lazy</strong>.</div>
-      <div class="bfi-options">
-        <button class="bfi-btn" data-item="3" data-val="1" onclick="selectBFI(this,3,1)">1</button>
-        <button class="bfi-btn" data-item="3" data-val="2" onclick="selectBFI(this,3,2)">2</button>
-        <button class="bfi-btn" data-item="3" data-val="3" onclick="selectBFI(this,3,3)">3</button>
-        <button class="bfi-btn" data-item="3" data-val="4" onclick="selectBFI(this,3,4)">4</button>
-        <button class="bfi-btn" data-item="3" data-val="5" onclick="selectBFI(this,3,5)">5</button>
-      </div>
-    </div>
-
-    <div class="bfi-item" id="bfi-4">
-      <div class="bfi-label">I see myself as someone who is <strong>relaxed, handles stress well</strong>.</div>
-      <div class="bfi-options">
-        <button class="bfi-btn" data-item="4" data-val="1" onclick="selectBFI(this,4,1)">1</button>
-        <button class="bfi-btn" data-item="4" data-val="2" onclick="selectBFI(this,4,2)">2</button>
-        <button class="bfi-btn" data-item="4" data-val="3" onclick="selectBFI(this,4,3)">3</button>
-        <button class="bfi-btn" data-item="4" data-val="4" onclick="selectBFI(this,4,4)">4</button>
-        <button class="bfi-btn" data-item="4" data-val="5" onclick="selectBFI(this,4,5)">5</button>
-      </div>
-    </div>
-
-    <div class="bfi-item" id="bfi-5">
-      <div class="bfi-label">I see myself as someone who has <strong>few artistic interests</strong>.</div>
-      <div class="bfi-options">
-        <button class="bfi-btn" data-item="5" data-val="1" onclick="selectBFI(this,5,1)">1</button>
-        <button class="bfi-btn" data-item="5" data-val="2" onclick="selectBFI(this,5,2)">2</button>
-        <button class="bfi-btn" data-item="5" data-val="3" onclick="selectBFI(this,5,3)">3</button>
-        <button class="bfi-btn" data-item="5" data-val="4" onclick="selectBFI(this,5,4)">4</button>
-        <button class="bfi-btn" data-item="5" data-val="5" onclick="selectBFI(this,5,5)">5</button>
-      </div>
-    </div>
-
-    <div class="bfi-item" id="bfi-6">
-      <div class="bfi-label">I see myself as someone who is <strong>outgoing, sociable</strong>.</div>
-      <div class="bfi-options">
-        <button class="bfi-btn" data-item="6" data-val="1" onclick="selectBFI(this,6,1)">1</button>
-        <button class="bfi-btn" data-item="6" data-val="2" onclick="selectBFI(this,6,2)">2</button>
-        <button class="bfi-btn" data-item="6" data-val="3" onclick="selectBFI(this,6,3)">3</button>
-        <button class="bfi-btn" data-item="6" data-val="4" onclick="selectBFI(this,6,4)">4</button>
-        <button class="bfi-btn" data-item="6" data-val="5" onclick="selectBFI(this,6,5)">5</button>
-      </div>
-    </div>
-
-    <div class="bfi-item" id="bfi-7">
-      <div class="bfi-label">I see myself as someone who <strong>tends to find fault with others</strong>.</div>
-      <div class="bfi-options">
-        <button class="bfi-btn" data-item="7" data-val="1" onclick="selectBFI(this,7,1)">1</button>
-        <button class="bfi-btn" data-item="7" data-val="2" onclick="selectBFI(this,7,2)">2</button>
-        <button class="bfi-btn" data-item="7" data-val="3" onclick="selectBFI(this,7,3)">3</button>
-        <button class="bfi-btn" data-item="7" data-val="4" onclick="selectBFI(this,7,4)">4</button>
-        <button class="bfi-btn" data-item="7" data-val="5" onclick="selectBFI(this,7,5)">5</button>
-      </div>
-    </div>
-
-    <div class="bfi-item" id="bfi-8">
-      <div class="bfi-label">I see myself as someone who <strong>does a thorough job</strong>.</div>
-      <div class="bfi-options">
-        <button class="bfi-btn" data-item="8" data-val="1" onclick="selectBFI(this,8,1)">1</button>
-        <button class="bfi-btn" data-item="8" data-val="2" onclick="selectBFI(this,8,2)">2</button>
-        <button class="bfi-btn" data-item="8" data-val="3" onclick="selectBFI(this,8,3)">3</button>
-        <button class="bfi-btn" data-item="8" data-val="4" onclick="selectBFI(this,8,4)">4</button>
-        <button class="bfi-btn" data-item="8" data-val="5" onclick="selectBFI(this,8,5)">5</button>
-      </div>
-    </div>
-
-    <div class="bfi-item" id="bfi-9">
-      <div class="bfi-label">I see myself as someone who <strong>gets nervous easily</strong>.</div>
-      <div class="bfi-options">
-        <button class="bfi-btn" data-item="9" data-val="1" onclick="selectBFI(this,9,1)">1</button>
-        <button class="bfi-btn" data-item="9" data-val="2" onclick="selectBFI(this,9,2)">2</button>
-        <button class="bfi-btn" data-item="9" data-val="3" onclick="selectBFI(this,9,3)">3</button>
-        <button class="bfi-btn" data-item="9" data-val="4" onclick="selectBFI(this,9,4)">4</button>
-        <button class="bfi-btn" data-item="9" data-val="5" onclick="selectBFI(this,9,5)">5</button>
-      </div>
-    </div>
-
-    <div class="bfi-item" id="bfi-10">
-      <div class="bfi-label">I see myself as someone who has <strong>an active imagination</strong>.</div>
-      <div class="bfi-options">
-        <button class="bfi-btn" data-item="10" data-val="1" onclick="selectBFI(this,10,1)">1</button>
-        <button class="bfi-btn" data-item="10" data-val="2" onclick="selectBFI(this,10,2)">2</button>
-        <button class="bfi-btn" data-item="10" data-val="3" onclick="selectBFI(this,10,3)">3</button>
-        <button class="bfi-btn" data-item="10" data-val="4" onclick="selectBFI(this,10,4)">4</button>
-        <button class="bfi-btn" data-item="10" data-val="5" onclick="selectBFI(this,10,5)">5</button>
-      </div>
-    </div>
-
+    <div class="bfi-item"><div class="bfi-label">I see myself as someone who is <strong>reserved</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,1,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,1,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,1,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,1,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,1,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label">I see myself as someone who is <strong>generally trusting</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,2,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,2,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,2,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,2,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,2,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label">I see myself as someone who <strong>tends to be lazy</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,3,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,3,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,3,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,3,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,3,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label">I see myself as someone who is <strong>relaxed, handles stress well</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,4,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,4,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,4,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,4,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,4,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label">I see myself as someone who has <strong>few artistic interests</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,5,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,5,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,5,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,5,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,5,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label">I see myself as someone who is <strong>outgoing, sociable</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,6,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,6,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,6,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,6,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,6,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label">I see myself as someone who <strong>tends to find fault with others</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,7,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,7,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,7,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,7,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,7,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label">I see myself as someone who <strong>does a thorough job</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,8,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,8,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,8,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,8,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,8,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label">I see myself as someone who <strong>gets nervous easily</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,9,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,9,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,9,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,9,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,9,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label">I see myself as someone who has <strong>an active imagination</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,10,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,10,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,10,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,10,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,10,5)">5</button></div></div>
   </div>
 
   <div id="bfi-error" style="display:none;color:#c0392b;margin:12px 0;font-size:14px;">Please answer all 10 statements before continuing.</div>
-
   <div style="display:flex;gap:12px;margin-top:32px;">
     <button class="ls-btn" onclick="validateBFIAndGoTo(37)">Continue</button>
     <button class="ls-btn-outline" onclick="goTo(3)">Back</button>
   </div>
 </div>
 </div>
-
 
 <!-- ══════════════════════════════════════════════════ -->
 <!-- SCREEN 37 — WORLD SELECTION                       -->
@@ -668,82 +520,29 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="q-sub">Choose one — or two if you genuinely live in both.</div>
 
   <div class="world-grid">
-
-    <button class="world-card" data-world="healing" onclick="selectWorld(this,'healing')">
-      <div class="world-icon">⚕</div>
-      <div class="world-name">The World of Healing</div>
-      <div class="world-desc">Medicine, mental health, care, restoration</div>
-    </button>
-
-    <button class="world-card" data-world="technology" onclick="selectWorld(this,'technology')">
-      <div class="world-icon">⚡</div>
-      <div class="world-name">The World of Technology</div>
-      <div class="world-desc">Building systems, software, engineering futures</div>
-    </button>
-
-    <button class="world-card" data-world="money" onclick="selectWorld(this,'money')">
-      <div class="world-icon">◈</div>
-      <div class="world-name">The World of Money</div>
-      <div class="world-desc">Finance, investment, markets, wealth creation</div>
-    </button>
-
-    <button class="world-card" data-world="ideas" onclick="selectWorld(this,'ideas')">
-      <div class="world-icon">◎</div>
-      <div class="world-name">The World of Ideas</div>
-      <div class="world-desc">Research, academia, knowledge, discovery</div>
-    </button>
-
-    <button class="world-card" data-world="persuasion" onclick="selectWorld(this,'persuasion')">
-      <div class="world-icon">◉</div>
-      <div class="world-name">The World of Persuasion</div>
-      <div class="world-desc">Marketing, media, storytelling, brand</div>
-    </button>
-
-    <button class="world-card" data-world="justice" onclick="selectWorld(this,'justice')">
-      <div class="world-icon">⚖</div>
-      <div class="world-name">The World of Justice</div>
-      <div class="world-desc">Law, policy, advocacy, social change</div>
-    </button>
-
-    <button class="world-card" data-world="building" onclick="selectWorld(this,'building')">
-      <div class="world-icon">◧</div>
-      <div class="world-name">The World of Building</div>
-      <div class="world-desc">Architecture, design, construction, making</div>
-    </button>
-
-    <button class="world-card" data-world="civic" onclick="selectWorld(this,'civic')">
-      <div class="world-icon">◈</div>
-      <div class="world-name">The World of Civic Life</div>
-      <div class="world-desc">Government, service, community, leadership</div>
-    </button>
-
-    <button class="world-card" data-world="beauty" onclick="selectWorld(this,'beauty')">
-      <div class="world-icon">◇</div>
-      <div class="world-name">The World of Beauty</div>
-      <div class="world-desc">Arts, fashion, aesthetics, creative expression</div>
-    </button>
-
-    <button class="world-card" data-world="power" onclick="selectWorld(this,'power')">
-      <div class="world-icon">▲</div>
-      <div class="world-name">The World of Power</div>
-      <div class="world-desc">Entrepreneurship, leadership, strategy, scale</div>
-    </button>
-
+    <button class="world-card" data-world="healing" onclick="selectWorld(this,'healing')"><div class="world-icon">⚕</div><div class="world-name">The World of Healing</div><div class="world-desc">Medicine, mental health, care, restoration</div></button>
+    <button class="world-card" data-world="technology" onclick="selectWorld(this,'technology')"><div class="world-icon">⚡</div><div class="world-name">The World of Technology</div><div class="world-desc">Building systems, software, engineering futures</div></button>
+    <button class="world-card" data-world="money" onclick="selectWorld(this,'money')"><div class="world-icon">◈</div><div class="world-name">The World of Money</div><div class="world-desc">Finance, investment, markets, wealth creation</div></button>
+    <button class="world-card" data-world="ideas" onclick="selectWorld(this,'ideas')"><div class="world-icon">◎</div><div class="world-name">The World of Ideas</div><div class="world-desc">Research, academia, knowledge, discovery</div></button>
+    <button class="world-card" data-world="persuasion" onclick="selectWorld(this,'persuasion')"><div class="world-icon">◉</div><div class="world-name">The World of Persuasion</div><div class="world-desc">Marketing, media, storytelling, brand</div></button>
+    <button class="world-card" data-world="justice" onclick="selectWorld(this,'justice')"><div class="world-icon">⚖</div><div class="world-name">The World of Justice</div><div class="world-desc">Law, policy, advocacy, social change</div></button>
+    <button class="world-card" data-world="building" onclick="selectWorld(this,'building')"><div class="world-icon">◧</div><div class="world-name">The World of Building</div><div class="world-desc">Architecture, design, construction, making</div></button>
+    <button class="world-card" data-world="civic" onclick="selectWorld(this,'civic')"><div class="world-icon">◈</div><div class="world-name">The World of Civic Life</div><div class="world-desc">Government, service, community, leadership</div></button>
+    <button class="world-card" data-world="beauty" onclick="selectWorld(this,'beauty')"><div class="world-icon">◇</div><div class="world-name">The World of Beauty</div><div class="world-desc">Arts, fashion, aesthetics, creative expression</div></button>
+    <button class="world-card" data-world="power" onclick="selectWorld(this,'power')"><div class="world-icon">▲</div><div class="world-name">The World of Power</div><div class="world-desc">Entrepreneurship, leadership, strategy, scale</div></button>
   </div>
 
   <div id="world-error" style="display:none;color:#c0392b;margin:12px 0;font-size:14px;">Please select at least one world before continuing.</div>
-
   <div style="display:flex;gap:12px;margin-top:32px;">
     <button class="ls-btn" onclick="validateWorldAndGoTo(35)">Continue</button>
     <button class="ls-btn-outline" onclick="goTo(36)">Back</button>
   </div>
 </div>
 </div>
-
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-35">
 <div class="container">
-  <div class="ls-eyebrow">Step 3 of 6</div>
+  <div class="ls-eyebrow">Step 5 of 6</div>
   <div class="q">Tell us about the college experience you want.</div>
   <div class="q-sub" id="s35-sub">None of this is binding. It just helps us find schools that actually fit.</div>
 
@@ -910,7 +709,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-4">
 <div class="container">
-  <div class="ls-eyebrow">Step 3 of 6</div>
+  <div class="ls-eyebrow">Step 3 of 4</div>
   <div class="q" id="s4-q">Where do you live?</div>
   <div class="q-sub" id="s4-sub">Your ZIP code helps us find industries and opportunities close to home — ones most people never think to look for.</div>
 
@@ -1198,9 +997,9 @@ const LS_STATE = {
   selectedTileIds: new Set(),
   zip:'', reportFormat:'both',
   submitted:false,
-  callAResult:null, big_five:{O:null,C:null,E:null,A:null,N:null},
+  big_five:{O:null,C:null,E:null,A:null,N:null},
   worlds_chosen:[],
-  callBResult:null, callCResult:null
+  callAResult:null, callBResult:null, callCResult:null
 };
 
 // ── SCREEN NAV ─────────────────────────────────────
@@ -2867,54 +2666,41 @@ function renderFallback(profile) {
 }
 
 
-// ── BFI-10 SCORING ─────────────────────────────────────────
-// Rammstedt & John (2007) — validated 10-item Big Five inventory
-// Reverse-scored items: 1 (E), 3 (C), 4 (N), 5 (O), 7 (A)
+// ── BFI-10 ─────────────────────────────────────────────────
 const BFI_RESPONSES = {};
-
 function selectBFI(btn, item, val) {
-  // Clear siblings
-  btn.closest('.bfi-options').querySelectorAll('.bfi-btn').forEach(b => b.classList.remove('bfi-selected'));
+  btn.closest('.bfi-options').querySelectorAll('.bfi-btn').forEach(b=>b.classList.remove('bfi-selected'));
   btn.classList.add('bfi-selected');
   BFI_RESPONSES[item] = val;
-  document.getElementById('bfi-error').style.display = 'none';
+  document.getElementById('bfi-error').style.display='none';
 }
-
 function scoreBFI() {
-  const r = BFI_RESPONSES;
-  const rev = v => 6 - v; // reverse scoring
+  const r=BFI_RESPONSES, rev=v=>6-v;
   return {
-    E: ((rev(r[1]||3)) + (r[6]||3)) / 2,   // Extraversion
-    A: ((r[2]||3) + rev(r[7]||3)) / 2,      // Agreeableness
-    C: (rev(r[3]||3) + (r[8]||3)) / 2,      // Conscientiousness
-    N: (rev(r[4]||3) + (r[9]||3)) / 2,      // Neuroticism
-    O: (rev(r[5]||3) + (r[10]||3)) / 2,     // Openness
+    E:((rev(r[1]||3))+(r[6]||3))/2,
+    A:((r[2]||3)+rev(r[7]||3))/2,
+    C:(rev(r[3]||3)+(r[8]||3))/2,
+    N:(rev(r[4]||3)+(r[9]||3))/2,
+    O:(rev(r[5]||3)+(r[10]||3))/2
   };
 }
-
 function validateBFIAndGoTo(n) {
-  // Check all 10 items answered
-  const answered = Object.keys(BFI_RESPONSES).length;
-  if (answered < 10) {
-    document.getElementById('bfi-error').style.display = 'block';
+  if(Object.keys(BFI_RESPONSES).length < 10) {
+    document.getElementById('bfi-error').style.display='block';
     return;
   }
-  // Score and store
-  SESSION.big_five = scoreBFI();
+  LS_STATE.big_five = scoreBFI();
   goTo(n);
 }
 
 // ── WORLD SELECTION ─────────────────────────────────────────
 const SELECTED_WORLDS = new Set();
-const MAX_WORLDS = 2;
-
 function selectWorld(btn, world) {
-  if (SELECTED_WORLDS.has(world)) {
+  if(SELECTED_WORLDS.has(world)) {
     SELECTED_WORLDS.delete(world);
     btn.classList.remove('world-selected');
   } else {
-    if (SELECTED_WORLDS.size >= MAX_WORLDS) {
-      // Deselect oldest
+    if(SELECTED_WORLDS.size >= 2) {
       const first = SELECTED_WORLDS.values().next().value;
       SELECTED_WORLDS.delete(first);
       document.querySelector(`.world-card[data-world="${first}"]`).classList.remove('world-selected');
@@ -2922,15 +2708,14 @@ function selectWorld(btn, world) {
     SELECTED_WORLDS.add(world);
     btn.classList.add('world-selected');
   }
-  document.getElementById('world-error').style.display = 'none';
+  document.getElementById('world-error').style.display='none';
 }
-
 function validateWorldAndGoTo(n) {
-  if (SELECTED_WORLDS.size === 0) {
-    document.getElementById('world-error').style.display = 'block';
+  if(SELECTED_WORLDS.size===0) {
+    document.getElementById('world-error').style.display='block';
     return;
   }
-  SESSION.worlds_chosen = Array.from(SELECTED_WORLDS);
+  LS_STATE.worlds_chosen = Array.from(SELECTED_WORLDS);
   goTo(n);
 }
 
