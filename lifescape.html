@@ -796,7 +796,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="report-header">
     <div class="report-eyebrow">Your Lifescape</div>
     <div class="report-name" id="report-name"></div>
-    <div class="report-opening">"This is what we found today, based on what you shared. Your Lifescape is not fixed. It evolves when you do."</div>
+    <div class="report-opening">"This is what we found in this moment, based on what you shared. Your Lifescape is not fixed. It evolves when you do."</div>
   </div>
 
   <!-- Report tabs -->
@@ -2437,8 +2437,8 @@ function updateReportVoice(profile) {
   // Report opening sentence
   const opening = document.querySelector('.report-opening');
   if(opening) opening.textContent = p
-    ? '"This is what we found today, based on what you shared. ' + name + "'s Lifescape is not fixed. It evolves as they do."
-    : '"This is what we found today, based on what you shared. Your Lifescape is not fixed. It evolves when you do."';
+    ? '"This is what we found in this moment, based on what you shared. ' + name + "'s Lifescape is not fixed. It evolves as they do."
+    : '"This is what we found in this moment, based on what you shared. Your Lifescape is not fixed. It evolves when you do."';
 
   // Loading message
   const loadMsg = document.getElementById('loading-message');
@@ -2619,7 +2619,7 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
     ['EQ tiles selected', profile.eqTiles.length],
     ['Combos fired', profile._meta.combosFireCount],
     ['Geo neighborhood', profile.geoNeighborhood],
-    ['Generated', new Date(profile._meta.timestamp).toLocaleDateString()],
+    ['Generated', new Date(profile._meta.timestamp).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}) + ' at ' + new Date(profile._meta.timestamp).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true})],
     ['Conference pref', profile.college_prefs?.conference || 'not set'],
     ['Campus scale', profile.college_prefs?.campus_scale || 'not set'],
     ['Regions', profile.college_prefs?.regions?.join(', ') || 'open'],
