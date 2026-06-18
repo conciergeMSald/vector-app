@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="lifescape_career_intelligence.js"></script>
 <script src="lifescape_onet_map.js"></script>
+<script src="lifescape_university_intelligence.js"></script>
 <script src="crosswalk-db.js"></script>
 <script src="geo_industry_db_LA_pass1.js"></script>
 <script src="geo_industry_db_BayArea_pass2.js"></script>
@@ -2217,9 +2218,18 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
 
     // Direct matches
     let counselorHtml = `<div class="section-eyebrow" style="margin-bottom:.5rem">Direct matches</div>`;
-    counselorHtml += callDData.map((s,i) =>
-      `<div class="action-prompt"><div class="action-text"><strong>${i+1}. ${s.name}</strong> — ${toCounselorVoice(s.match)}</div></div>`
-    ).join('');
+    counselorHtml += callDData.map((s,i) => {
+      const intel = typeof getUniversityIntel === 'function' ? getUniversityIntel(s.name) : null;
+      const majors = typeof getMajorStrengths === 'function' ? getMajorStrengths(s.name) : [];
+      const cities = typeof getTopGradCities === 'function' ? getTopGradCities(s.name) : [];
+      const majorLine = majors.length ? `<div style="font-size:11px;color:var(--gold);letter-spacing:1px;margin-top:4px;font-weight:500">${majors.join(' · ')}</div>` : '';
+      const cityLine = cities.length ? `<div style="font-size:11px;color:var(--ink4);margin-top:2px;font-weight:300">Grads → ${cities.map(c=>c.city+' '+c.pct+'%').join(' | ')}</div>` : '';
+      const hiddenLine = intel?.hidden_pathway ? `<div style="font-size:11px;color:var(--ink3);margin-top:4px;font-weight:300;line-height:1.5;font-style:italic">${intel.hidden_pathway.slice(0,180)}${intel.hidden_pathway.length>180?'…':''}</div>` : '';
+      return `<div class="action-prompt"><div class="action-text">
+        <strong>${i+1}. ${s.name}</strong> — ${toCounselorVoice(s.match)}
+        ${majorLine}${cityLine}${hiddenLine}
+      </div></div>`;
+    }).join('');
 
     // Program-adjacent (also for counselor)
     if(adjacentPicks && adjacentPicks.length > 0) {
@@ -2637,6 +2647,10 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
     const occHtml = buildONETCounselorBlock(profile.naicsSectors, profile.riasec, profile.name);
     occupationEl.innerHTML = occHtml || '<div style="font-size:13px;color:var(--ink4)">No occupation data available.</div>';
   }
+
+  // ── University intelligence — major strengths + grad cities (counselor-only) ─
+  // Injected into school recommendation cards post-callD via renderSchoolIntel()
+  window._uniIntelReady = typeof getUniversityIntel === 'function';
 
   document.getElementById('counselor-meta').innerHTML = [
     ['Name', profile.name],
