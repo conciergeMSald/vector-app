@@ -302,6 +302,21 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .world-desc{font-size:12px;color:#666;line-height:1.4}
 @media(max-width:480px){.world-grid{grid-template-columns:1fr}}
 
+/* Academic Affinity — Screen 38 */
+.aa-block{margin-top:32px}
+.aa-block:first-of-type{margin-top:24px}
+.aa-label{font-size:15px;color:#1a1a1a;margin-bottom:14px;line-height:1.5;font-weight:500}
+.aa-chip-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.aa-daypart-grid{display:flex;flex-direction:column;gap:8px}
+.aa-chip{padding:10px 16px;border:1.5px solid #e8e4de;border-radius:20px;background:transparent;font-size:13px;color:#444;cursor:pointer;transition:all .15s;text-align:left}
+.aa-chip:hover{border-color:#C8A97A;color:#C8A97A}
+.aa-chip.aa-chip-selected{background:#C8A97A;border-color:#C8A97A;color:#fff;font-weight:500}
+.aa-chip-none{display:block;width:100%;border-radius:8px;font-style:italic;color:#888;margin-top:4px}
+.aa-chip-none.aa-chip-selected{font-style:normal}
+.aa-daypart-btn{border-radius:8px;width:100%}
+.aa-skip-link{background:none;border:none;color:#999;font-size:13px;text-decoration:underline;cursor:pointer;margin-left:auto;padding:8px}
+.aa-skip-link:hover{color:#666}
+
 </style>
 </head>
 
@@ -344,7 +359,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-2">
 <div class="container">
-  <div class="ls-eyebrow" id="s2-eyebrow">Step 1 of 6</div>
+  <div class="ls-eyebrow" id="s2-eyebrow">Step 1 of 7</div>
   <div class="q" id="s2-q">Tell us your name and grade.</div>
   <div class="q-sub" id="s2-sub">This is just for your Lifescape. Nothing is permanent. Nothing commits you to anything.</div>
 
@@ -388,7 +403,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-25">
 <div class="container">
-  <div class="ls-eyebrow">Step 2 of 6</div>
+  <div class="ls-eyebrow">Step 2 of 7</div>
   <div class="q">Three quick questions.</div>
   <div class="q-sub" id="s25-sub">No right answers. This just helps us show you the most relevant tiles first.</div>
 
@@ -434,7 +449,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-3">
 <div class="container">
-  <div class="ls-eyebrow">Step 2 of 6</div>
+  <div class="ls-eyebrow">Step 2 of 7</div>
   <div class="q" id="s3-q">What sounds interesting?</div>
   <div class="q-sub" id="s3-sub">Tap anything that catches your eye — things you love, things you've never tried, things you're just curious about. There are no wrong answers.</div>
 
@@ -479,7 +494,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-36">
 <div class="container">
-  <div class="ls-eyebrow">Step 4 of 6</div>
+  <div class="ls-eyebrow">Step 4 of 7</div>
   <div class="q">Ten quick statements.</div>
   <div class="q-sub">Rate how well each describes you. No right answers.</div>
 
@@ -517,7 +532,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-37">
 <div class="container">
-  <div class="ls-eyebrow">Step 5 of 6</div>
+  <div class="ls-eyebrow">Step 5 of 7</div>
   <div class="q">Which of these worlds feels most like yours?</div>
   <div class="q-sub">Choose one — or two if you genuinely live in both.</div>
 
@@ -536,15 +551,71 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
   <div id="world-error" style="display:none;color:#c0392b;margin:12px 0;font-size:14px;">Please select at least one world before continuing.</div>
   <div style="display:flex;gap:12px;margin-top:32px;">
-    <button class="ls-btn" onclick="validateWorldAndGoTo(35)">Continue</button>
+    <button class="ls-btn" onclick="validateWorldAndGoTo(38)">Continue</button>
     <button class="ls-btn-outline" onclick="goTo(36)">Back</button>
   </div>
 </div>
 </div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 38 — ACADEMIC AFFINITY                     -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-38">
+<div class="container">
+  <div class="ls-eyebrow">Step 6 of 7</div>
+  <div class="q">A few things about your school days.</div>
+  <div class="q-sub">Nothing here is required. Answer what feels true — skip the rest.</div>
+
+  <div class="aa-block">
+    <div class="aa-label">Which classes come easily to you, or you genuinely enjoy?</div>
+    <div class="aa-chip-grid" id="aa-subjects">
+      <button class="aa-chip" data-val="english" onclick="toggleAASubject(this,'english')">English</button>
+      <button class="aa-chip" data-val="history" onclick="toggleAASubject(this,'history')">History / Social Studies</button>
+      <button class="aa-chip" data-val="math" onclick="toggleAASubject(this,'math')">Math</button>
+      <button class="aa-chip" data-val="biology" onclick="toggleAASubject(this,'biology')">Biology</button>
+      <button class="aa-chip" data-val="chem_physics" onclick="toggleAASubject(this,'chem_physics')">Chemistry / Physics</button>
+      <button class="aa-chip" data-val="foreign_language" onclick="toggleAASubject(this,'foreign_language')">Foreign Language</button>
+      <button class="aa-chip" data-val="art_design" onclick="toggleAASubject(this,'art_design')">Art / Design</button>
+      <button class="aa-chip" data-val="music_theater" onclick="toggleAASubject(this,'music_theater')">Music / Theater</button>
+      <button class="aa-chip" data-val="computer_science" onclick="toggleAASubject(this,'computer_science')">Computer Science</button>
+      <button class="aa-chip" data-val="business_econ" onclick="toggleAASubject(this,'business_econ')">Business / Economics</button>
+      <button class="aa-chip" data-val="engineering_shop" onclick="toggleAASubject(this,'engineering_shop')">Engineering / Shop</button>
+      <button class="aa-chip" data-val="psychology" onclick="toggleAASubject(this,'psychology')">Psychology</button>
+    </div>
+    <button class="aa-chip aa-chip-none" data-val="none_stand_out" onclick="toggleAANone(this)">None of these stand out to me — that's okay</button>
+  </div>
+
+  <div class="aa-block">
+    <div class="aa-label">What's something you're genuinely good at — in or out of school?</div>
+    <input class="ls-input" id="aa-strength" maxlength="80" placeholder="Spanish, reading people, fixing things, organizing events..."
+           oninput="LS_STATE.academic_affinity.strength=this.value">
+  </div>
+
+  <div class="aa-block">
+    <div class="aa-label">What part of the school day do you actually look forward to?</div>
+    <div class="aa-daypart-grid" id="aa-daypart">
+      <button class="aa-chip aa-daypart-btn" data-val="class" onclick="selectAADaypart(this,'class')">A specific class</button>
+      <button class="aa-chip aa-daypart-btn" data-val="activity" onclick="selectAADaypart(this,'activity')">Sports or a club</button>
+      <button class="aa-chip aa-daypart-btn" data-val="social" onclick="selectAADaypart(this,'social')">Lunch, honestly — the social part</button>
+      <button class="aa-chip aa-daypart-btn" data-val="freeperiod" onclick="selectAADaypart(this,'freeperiod')">Free period / time to think</button>
+      <button class="aa-chip aa-daypart-btn" data-val="other" onclick="selectAADaypart(this,'other')">Something else</button>
+    </div>
+    <input class="ls-input" id="aa-daypart-other" style="display:none;margin-top:10px;" maxlength="60" placeholder="Tell us"
+           oninput="LS_STATE.academic_affinity.daypart_other=this.value">
+  </div>
+
+  <div style="display:flex;gap:12px;margin-top:32px;align-items:center;">
+    <button class="ls-btn" onclick="goTo(35)">Continue</button>
+    <button class="ls-btn-outline" onclick="goTo(37)">Back</button>
+    <button class="aa-skip-link" onclick="goTo(35)">Skip this step</button>
+  </div>
+</div>
+</div>
+
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-35">
 <div class="container">
-  <div class="ls-eyebrow">Step 5 of 6</div>
+  <div class="ls-eyebrow">Step 7 of 7</div>
   <div class="q">Tell us about the college experience you want.</div>
   <div class="q-sub" id="s35-sub">None of this is binding. It just helps us find schools that actually fit.</div>
 
@@ -736,7 +807,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-5">
 <div class="container">
-  <div class="ls-eyebrow">Step 6 of 6</div>
+  <div class="ls-eyebrow">Step 4 of 4</div>
   <div class="q">How would you like your Lifescape?</div>
   <div class="q-sub">You can always read both. Your counselor receives everything automatically.</div>
 
@@ -955,6 +1026,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <div id="counselor-combos"></div>
     </div>
 
+    <div style="margin-bottom:2rem" id="counselor-academic-block">
+      <div class="section-eyebrow">Academic affinity</div>
+      <div id="counselor-academic"></div>
+    </div>
+
     <div style="margin-bottom:2rem">
       <div class="section-eyebrow">Occupation intelligence</div>
       <div id="counselor-occupations"><div style="font-size:13px;color:var(--ink4);font-style:italic">Generating...</div></div>
@@ -1006,6 +1082,7 @@ const LS_STATE = {
   submitted:false,
   big_five:{O:null,C:null,E:null,A:null,N:null},
   worlds_chosen:[],
+  academic_affinity:{subjects:[], strength:'', daypart:'', daypart_other:''},
   callAResult:null, callBResult:null, callCResult:null
 };
 
@@ -1483,6 +1560,9 @@ function assembleProfile() {
     geoDistance: geo.distance,
     big_five: LS_STATE.big_five || {O:null,C:null,E:null,A:null,N:null},
     worlds_chosen: Array.isArray(LS_STATE.worlds_chosen) ? [...LS_STATE.worlds_chosen] : [],
+    academic_affinity: LS_STATE.academic_affinity
+      ? {...LS_STATE.academic_affinity, subjects:[...(LS_STATE.academic_affinity.subjects||[])]}
+      : {subjects:[], strength:'', daypart:'', daypart_other:''},
     _meta: {
       timestamp: new Date().toISOString(),
       tileCount: selectedIds.length,
@@ -1589,6 +1669,26 @@ ${onetBlock}${(()=>{
   return 'Big Five: Openness '+d(bf.O)+' | Conscientiousness '+d(bf.C)+' | Extraversion '+d(bf.E)+' | Agreeableness '+d(bf.A)+' | Emotional stability '+d(6-bf.N);
 })()}
 ${ctx.worlds_chosen&&ctx.worlds_chosen.length>0?'Worlds chosen: '+ctx.worlds_chosen.join(', '):''}
+${(()=>{
+  const aa = ctx.academic_affinity;
+  if(!aa) return '';
+  const parts = [];
+  if(aa.subjects && aa.subjects.length > 0 && !aa.subjects.includes('none_stand_out')) {
+    parts.push('Subjects that come easily or are enjoyed: '+aa.subjects.join(', '));
+  }
+  if(aa.strength && aa.strength.trim()) {
+    parts.push('Self-identified strength: '+aa.strength.trim());
+  }
+  if(aa.daypart === 'social') {
+    parts.push('What they look forward to most: the social, relational part of the day — a People/Enterprising signal worth weighting even without strong academic anchor');
+  } else if(aa.daypart && aa.daypart !== 'other') {
+    const labels = {class:'a specific class',activity:'sports or a club',freeperiod:'free period / time to think'};
+    parts.push('What they look forward to most: '+(labels[aa.daypart]||aa.daypart));
+  } else if(aa.daypart === 'other' && aa.daypart_other) {
+    parts.push('What they look forward to most: '+aa.daypart_other);
+  }
+  return parts.length ? '\n── ACADEMIC AFFINITY (direct evidence, weight above inference) ──\n'+parts.join('\n') : '';
+})()}
 Combination unlocks fired:
 ${ctx.comboSummary||'No combination unlocks — single-tile signals only'}
 
@@ -2719,6 +2819,53 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
     [profile.geoNeighborhood!=='your area','Geo match: yes','Geo match: default region']
   ].map(([test,yes,no])=>`<span class="${test?'flag-yes':'flag-no'}">${test?yes:no}</span>`).join('');
 
+  // ── Academic affinity (counselor-only) ───────────────────────────────────
+  const aa = profile.academic_affinity;
+  const aaEl = document.getElementById('counselor-academic');
+  const aaBlock = document.getElementById('counselor-academic-block');
+  if(aa && aaEl && aaBlock) {
+    const subjectLabels = {
+      english:'English', history:'History / Social Studies', math:'Math',
+      biology:'Biology', chem_physics:'Chemistry / Physics', foreign_language:'Foreign Language',
+      art_design:'Art / Design', music_theater:'Music / Theater', computer_science:'Computer Science',
+      business_econ:'Business / Economics', engineering_shop:'Engineering / Shop', psychology:'Psychology'
+    };
+    const daypartLabels = {
+      class:'A specific class', activity:'Sports or a club',
+      social:'Lunch — the social, relational part of the day',
+      freeperiod:'Free period / time to think', other: aa.daypart_other || 'Something else'
+    };
+
+    const hasAnyData = (aa.subjects && aa.subjects.length > 0) || (aa.strength && aa.strength.trim()) || aa.daypart;
+
+    if(!hasAnyData) {
+      aaEl.innerHTML = '<div style="font-size:12px;color:var(--ink4);font-style:italic">Student skipped this step — no academic affinity data collected.</div>';
+    } else {
+      const rows = [];
+      if(aa.subjects && aa.subjects.length && !aa.subjects.includes('none_stand_out')) {
+        rows.push(`<tr><td>Subjects that come easily</td><td>${aa.subjects.map(s=>subjectLabels[s]||s).join(', ')}</td></tr>`);
+      } else if(aa.subjects && aa.subjects.includes('none_stand_out')) {
+        rows.push(`<tr><td>Subjects that come easily</td><td>None stand out — not an academic disengagement flag, just no clear subject anchor yet</td></tr>`);
+      }
+      if(aa.strength && aa.strength.trim()) {
+        rows.push(`<tr><td>Self-identified strength</td><td>${aa.strength.trim()}</td></tr>`);
+      }
+      if(aa.daypart) {
+        rows.push(`<tr><td>Looks forward to</td><td>${daypartLabels[aa.daypart]||aa.daypart}</td></tr>`);
+      }
+      aaEl.innerHTML = `<table class="meta-table">${rows.join('')}</table>`;
+
+      // Dignified note for the social/lunch signal specifically
+      if(aa.daypart === 'social') {
+        aaEl.innerHTML += `<div class="action-prompt" style="margin-top:12px"><div class="action-text">
+          <strong>Reading the social signal:</strong> ${profile.name || 'This student'}'s strongest pull toward the school day is relational, not academic — that's a real and useful data point, not an absence of one. It points toward Social/Enterprising strength: connection, organizing people, being the one others gravitate to. Worth exploring directly — leadership in informal settings, group dynamics, what draws them to be the connector — rather than reading it as a lack of direction.
+        </div></div>`;
+      }
+    }
+  } else if(aaBlock) {
+    aaBlock.style.display = 'none';
+  }
+
   // Combo unlocks
   if(profile.comboUnlocks.length) {
     document.getElementById('counselor-combos').innerHTML = profile.comboUnlocks.map(c=>
@@ -2811,6 +2958,50 @@ function validateWorldAndGoTo(n) {
   }
   LS_STATE.worlds_chosen = Array.from(SELECTED_WORLDS);
   goTo(n);
+}
+
+// ── SCREEN 38 — Academic Affinity ───────────────────────────────────────────
+function toggleAASubject(btn, val) {
+  // Selecting any subject clears the "none stand out" state
+  const noneBtn = document.querySelector('.aa-chip-none');
+  if(noneBtn) noneBtn.classList.remove('aa-chip-selected');
+  LS_STATE.academic_affinity.subjects = LS_STATE.academic_affinity.subjects.filter(s => s !== 'none_stand_out');
+
+  if(LS_STATE.academic_affinity.subjects.includes(val)) {
+    LS_STATE.academic_affinity.subjects = LS_STATE.academic_affinity.subjects.filter(s => s !== val);
+    btn.classList.remove('aa-chip-selected');
+  } else {
+    LS_STATE.academic_affinity.subjects.push(val);
+    btn.classList.add('aa-chip-selected');
+  }
+}
+
+function toggleAANone(btn) {
+  const isSelected = btn.classList.contains('aa-chip-selected');
+  // Clear all subject chips when toggling none
+  document.querySelectorAll('#aa-subjects .aa-chip').forEach(c => c.classList.remove('aa-chip-selected'));
+
+  if(isSelected) {
+    btn.classList.remove('aa-chip-selected');
+    LS_STATE.academic_affinity.subjects = [];
+  } else {
+    btn.classList.add('aa-chip-selected');
+    LS_STATE.academic_affinity.subjects = ['none_stand_out'];
+  }
+}
+
+function selectAADaypart(btn, val) {
+  document.querySelectorAll('#aa-daypart .aa-chip').forEach(c => c.classList.remove('aa-chip-selected'));
+  btn.classList.add('aa-chip-selected');
+  LS_STATE.academic_affinity.daypart = val;
+
+  const otherInput = document.getElementById('aa-daypart-other');
+  if(val === 'other') {
+    otherInput.style.display = 'block';
+  } else {
+    otherInput.style.display = 'none';
+    LS_STATE.academic_affinity.daypart_other = '';
+  }
 }
 
 </script>
