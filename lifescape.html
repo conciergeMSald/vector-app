@@ -1461,7 +1461,20 @@ Top industry sectors by signal strength: ${topIndustries}
 Combination unlocks fired:
 ${ctx.comboSummary||'No combination unlocks — single-tile signals only'}
 
-YOUR JOB — produce exactly four sections with these exact dividers:
+${(()=>{
+  try {
+    const worlds = ctx.worlds_chosen && ctx.worlds_chosen.length > 0
+      ? ctx.worlds_chosen
+      : (ctx.naicsSectors||[]).slice(0,2).map(n=>{
+          const id = typeof resolveWorldId==='function' ? resolveWorldId(String(n.sector||n)) : null;
+          return id;
+        }).filter(Boolean);
+    if (worlds.length > 0 && typeof buildCareerLandscape === 'function') {
+      return '── CAREER LANDSCAPE ──\n' + buildCareerLandscape(worlds, IBIS_WORLD_REGISTRY) + '\n\n';
+    }
+  } catch(e) {}
+  return '';
+})()}YOUR JOB — produce exactly four sections with these exact dividers:
 
 ---ACTIVITY---
 2-3 sentences describing what this student loves doing as a narrative paragraph, not a list. Draw from activity tiles. Real person, not a summary of checkboxes. ${ctx.voice==='parent'?`Third person about ${ctx.name}.`:`Second person to ${ctx.name}.`}
@@ -1502,7 +1515,18 @@ YOUR JOB — produce exactly two sections with these exact dividers:
 ---GEO---
 3-5 sentences about what is geographically close that connects to this profile. Name the neighborhood or city specifically. Draw a clear line between nearby industries and something specific from their tiles. Goal is surprise and delight — something real and close they never knew was relevant. ${ctx.voice==='parent'?`Third person about ${ctx.name}.`:`Second person to ${ctx.name}.`}
 
----COUNSELOR---
+${(()=>{
+  try {
+    if (typeof resolveRegionalBridgeKey === 'function' && typeof findBridgePath === 'function') {
+      const bridgeKey = resolveRegionalBridgeKey(ctx.zip||'');
+      const bp = bridgeKey ? findBridgePath({...ctx, bridgeKey}, bridgeKey) : null;
+      if (bp) {
+        return '---BRIDGE---\nCommunity College Pathway triggered:\nInstitution: ' + (bp.name||bp.institution||bridgeKey) + '\nNote: ' + (bp.note||bp.narrative||'Strong transfer pathway available') + '\n\n';
+      }
+    }
+  } catch(e) {}
+  return '';
+})()}---COUNSELOR---
 Three items, one expert to another:
 
 NOTE: 2-3 sentences. The single most important insight from this profile. What the counselor must know before their next session.
