@@ -38,7 +38,7 @@ const CONFERENCE_POOLS = {
     // 2024 additions from Pac-12
     "University of Oregon","University of Washington",
     "University of Illinois Urbana-Champaign",
-    "University of Wisconsin-Madison"
+    "University of Wisconsin-Madison","University of California Los Angeles"
   ],
 
   // ── ACC (2024-25 current: 17 members + Notre Dame partial) ─────────────
@@ -102,7 +102,7 @@ const CONFERENCE_POOLS = {
     "San Diego State University",
     "UC Santa Barbara",
     "University of Southern California",
-    "UC Berkeley"
+    "UC Berkeley","University of California Los Angeles"
   ],
 
   ivy: [
@@ -153,7 +153,7 @@ const CONFERENCE_POOLS = {
     "Iowa State University","University of Notre Dame","University of Pittsburgh",
     "Boston College","Villanova University","Temple University","Drexel University",
     "Northeastern University","Stetson University","Boston University",
-    "Fordham University","UC Riverside","California State University Fullerton",
+    "Fordham University","UC Riverside","University of Delaware","California State University Fullerton",
     "California State University Northridge","California State University Long Beach"
   ],
 
@@ -236,7 +236,7 @@ const REGION_POOLS = {
     "San Diego State University",
     "UC Santa Barbara",
     "University of Southern California",
-    "UC Berkeley",
+    "UC Berkeley","University of California Los Angeles",
     "Occidental College",
     "San Jose State University",
     "University of Idaho",
@@ -261,7 +261,7 @@ const REGION_POOLS = {
     "Penn State University","Boston College","University of Pittsburgh",
     "Syracuse University","New York University","United States Military Academy",
     "Rutgers University","George Washington University","Webb Institute",
-    "American University","University of Connecticut","Northeastern University",
+    "American University","University of Connecticut","University of Massachusetts Amherst","University of Delaware","Northeastern University",
     "Case Western Reserve University","University of Maryland College Park",
     "Johns Hopkins University","Kettering University",
     "Binghamton University",
@@ -388,17 +388,17 @@ const SCHOOL_ENROLLMENT = {
   "North Carolina State University":37000,"University of Maryland College Park":41000,
   "Johns Hopkins University":6000,"Emory University":7000,"Tulane University":14000,
   "Purdue University":44000,"Syracuse University":22000,"New York University":51000,
-  "United States Military Academy":4500,"Rutgers University":50000,
+  "United States Military Academy":4500,"Rutgers University":50000,"University of Delaware":24000,
   "George Washington University":17000,"Webb Institute":100,
   "Colorado College":2200,"Deep Springs College":30,"Kettering University":2000,
-  "American University":8500,"University of Connecticut":32000,
+  "American University":8500,"University of Connecticut":32000,"University of Massachusetts Amherst":32000,
   "Northeastern University":20000,"Case Western Reserve University":5500,
   "University of San Francisco":10000,"Baylor University":20000,
   "College of William and Mary":6500,
   "San Diego State University":36000,
   "UC Santa Barbara":26000,
   "University of Southern California":22000,
-  "UC Berkeley":33000,
+  "UC Berkeley":33000,"University of California Los Angeles":47000,
   "Rice University":4400,
   "Southern Methodist University":12000,
   "Texas Christian University":10000,
@@ -482,7 +482,7 @@ const SCHOOL_ENROLLMENT = {
 const SOCIAL_SCENE_AFFINITY = {
 
   greek_heavy: [
-    "University of Michigan","Indiana University","University of Georgia",
+    "University of Michigan","University of Massachusetts Amherst","University of Delaware","Indiana University","University of Georgia",
     "University of Florida","Auburn University","Louisiana State University",
     "University of Tennessee","University of Arkansas","University of South Carolina",
     "Clemson University","University of Oklahoma","University of Kansas",
@@ -526,7 +526,7 @@ const SOCIAL_SCENE_AFFINITY = {
   ],
 
   balanced: [
-    "Duke University","University of Miami","Northwestern University",
+    "Duke University","University of California Los Angeles","University of Miami","Northwestern University",
     "Georgetown University","University of Notre Dame","Boston University",
     "Elon University","University of Denver","Villanova University",
     "Santa Clara University","Gonzaga University","University of Oregon",
@@ -738,12 +738,12 @@ const SCHOOL_GPA_RANGES = {
   "California State University Fresno":{min:2.8},
   "Tulane University":{min:3.5},"Creighton University":{min:3.4},
   "Butler University":{min:3.2},"Drake University":{min:3.2},
-  "University of Louisville":{min:3.0},"University of Connecticut":{min:3.4},
+  "University of Louisville":{min:3.0},"University of Connecticut":{min:3.4},"University of Massachusetts Amherst":{min:3.5},"University of Delaware":{min:3.3},
   "University of the South":{min:3.4},
   "San Diego State University":{"min":3.3},
   "UC Santa Barbara":{"min":3.8},
   "University of Southern California":{"min":3.7},
-  "UC Berkeley":{"min":3.9},
+  "UC Berkeley":{"min":3.9},"University of California Los Angeles":{"min":3.9},
   "Rice University":{"min":3.9},
   "Southern Methodist University":{"min":3.5},
   "Texas Christian University":{"min":3.5},
