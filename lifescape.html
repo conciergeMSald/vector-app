@@ -1474,6 +1474,8 @@ function assembleProfile() {
     geoIndustries: geo.industries,
     geoNeighborhood: geo.neighborhood,
     geoDistance: geo.distance,
+    big_five: LS_STATE.big_five || {O:null,C:null,E:null,A:null,N:null},
+    worlds_chosen: Array.isArray(LS_STATE.worlds_chosen) ? [...LS_STATE.worlds_chosen] : [],
     _meta: {
       timestamp: new Date().toISOString(),
       tileCount: selectedIds.length,
@@ -1522,6 +1524,13 @@ Grade: ${ctx.grade}
 RIASEC profile: ${ctx.topRIASEC}
 Activity interests: ${ctx.activityTiles.join(', ')}
 EQ identity tiles selected: ${ctx.eqTiles.join(', ')}
+${(()=>{
+  const bf = ctx.big_five;
+  if(!bf||bf.O===null) return '';
+  const d = s => s>=3.5?'high':s<=2.5?'low':'moderate';
+  return 'Big Five personality signal: Openness '+d(bf.O)+' | Conscientiousness '+d(bf.C)+' | Extraversion '+d(bf.E)+' | Agreeableness '+d(bf.A)+' | Emotional stability '+d(6-bf.N);
+})()}
+${ctx.worlds_chosen&&ctx.worlds_chosen.length>0?'Worlds chosen: '+ctx.worlds_chosen.join(', '):''}
 
 YOUR JOB — produce exactly three outputs separated by these exact dividers:
 
@@ -1563,6 +1572,13 @@ Activity interests: ${ctx.activityTiles.join(', ')}
 EQ identity: ${ctx.eqTiles.join(', ')}
 RIASEC: ${ctx.topRIASEC}
 Top industry sectors by signal strength: ${topIndustries}
+${(()=>{
+  const bf = ctx.big_five;
+  if(!bf||bf.O===null) return '';
+  const d = s => s>=3.5?'high':s<=2.5?'low':'moderate';
+  return 'Big Five: Openness '+d(bf.O)+' | Conscientiousness '+d(bf.C)+' | Extraversion '+d(bf.E)+' | Agreeableness '+d(bf.A)+' | Emotional stability '+d(6-bf.N);
+})()}
+${ctx.worlds_chosen&&ctx.worlds_chosen.length>0?'Worlds chosen: '+ctx.worlds_chosen.join(', '):''}
 Combination unlocks fired:
 ${ctx.comboSummary||'No combination unlocks — single-tile signals only'}
 
