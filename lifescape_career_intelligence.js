@@ -1,3 +1,6 @@
+// Browser global shim
+const _g = typeof window !== 'undefined' ? window : typeof globalThis !== 'undefined' ? globalThis : {};
+
 /**
  * VECTOR Lifescape — Career Intelligence Layer
  * Version: 1.0 — June 17, 2026
@@ -20,7 +23,7 @@
 // WORLD_KEYWORDS
 // ─────────────────────────────────────────────────────────────
 
-const WORLD_KEYWORDS = {
+const WORLD_KEYWORDS = _g.WORLD_KEYWORDS = {
   'finance':     ['finance','banking','wall street','investment','hedge fund','private equity','goldman','jp morgan','venture capital','vc','financial','asset management'],
   'tech':        ['tech','software','ai','artificial intelligence','engineering','startup','silicon valley','computer','machine learning','data science','saas'],
   'healthcare':  ['medicine','healthcare','hospital','pharma','biotech','medical','physician','surgeon','clinical','nursing'],
@@ -47,7 +50,7 @@ const WORLD_KEYWORDS = {
 // IBIS_WORLD_REGISTRY
 // ─────────────────────────────────────────────────────────────
 
-const IBIS_WORLD_REGISTRY = {
+const IBIS_WORLD_REGISTRY = _g.IBIS_WORLD_REGISTRY = {
 
   healing: {
     id: 'healing',
@@ -218,7 +221,7 @@ const IBIS_WORLD_REGISTRY = {
 // WORLD_ALIAS
 // ─────────────────────────────────────────────────────────────
 
-const WORLD_ALIAS = {
+const WORLD_ALIAS = _g.WORLD_ALIAS = {
   // Direct IBIS IDs (pass-through)
   'defense':         'defense',
   'intelligence':    'defense',
@@ -285,7 +288,7 @@ const WORLD_ALIAS = {
 // BRIDGE_DB
 // ─────────────────────────────────────────────────────────────
 
-const BRIDGE_DB = {
+const BRIDGE_DB = _g.BRIDGE_DB = {
 
   /* ── CALIFORNIA ──────────────────────────────────────── */
   "San Francisco": {
@@ -1527,3 +1530,13 @@ if (typeof module !== 'undefined' && module.exports) {
     findBridgePath,
   };
 }
+
+
+// ── Global exposure for browser script tag usage ──
+_g.resolveWorldId = resolveWorldId;
+_g.resolveStateFromZip = resolveStateFromZip;
+_g.resolveRegionalBridgeKey = resolveRegionalBridgeKey;
+_g.scoreCareerPipeline = scoreCareerPipeline;
+_g.scoreIbisPipeline = scoreIbisPipeline;
+_g.buildCareerLandscape = buildCareerLandscape;
+_g.findBridgePath = findBridgePath;
