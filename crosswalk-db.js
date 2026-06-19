@@ -1002,6 +1002,85 @@ const VECTOR_CROSSWALK = [
     combo_unlocks: []
   },
 
+  // ── Competitive intellectual activities — rated/ranked, head-to-head, distinct from casual puzzle-solving ──
+
+  {
+    id: "chess",
+    label: "Chess",
+    cluster: "think",
+    riasec: ["I", "C", "E"],
+    naics_sectors: [54, 52, 51],
+    industries: ["Strategic Consulting", "Finance & Trading", "Software Engineering", "Education", "Game Theory & Analytics"],
+    career_emergence: [
+      "Quantitative Trader", "Management Consultant", "Game Theorist",
+      "Software Engineer", "Chess Coach", "Strategic Analyst", "Investment Analyst"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["data_statistics"], unlocks: ["Quantitative Trader", "Game Theorist", "Algorithmic Strategist"] },
+      { with: ["i_ask_why"], unlocks: ["Strategic Analyst", "Management Consultant"] }
+    ]
+  },
+
+  {
+    id: "debate_mock_un",
+    label: "Debate & Model UN",
+    cluster: "think",
+    riasec: ["E", "I", "S"],
+    naics_sectors: [54, 92, 61, 51],
+    industries: ["Law", "Policy & Government", "International Relations", "Diplomacy", "Management Consulting", "Journalism"],
+    career_emergence: [
+      "Attorney", "Diplomat", "Foreign Service Officer", "Policy Analyst",
+      "Management Consultant", "Legislative Aide", "International Relations Specialist", "Trial Lawyer"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["i_cant_ignore_unfairness"], unlocks: ["Civil Rights Attorney", "Policy Advocate", "Human Rights Lawyer"] },
+      { with: ["i_can_talk_to_anyone"], unlocks: ["Diplomat", "Trial Lawyer", "Political Campaign Strategist"] }
+    ]
+  },
+
+  {
+    id: "speech_forensics",
+    label: "Speech & forensics",
+    cluster: "think",
+    riasec: ["A", "E", "I"],
+    naics_sectors: [54, 61, 51, 71],
+    industries: ["Law", "Broadcasting & Media", "Education", "Public Relations", "Performing Arts"],
+    career_emergence: [
+      "Trial Attorney", "News Anchor", "Public Speaking Coach", "Communications Director",
+      "Professor", "Broadcast Journalist", "PR Executive"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["writing_stories"], unlocks: ["Broadcast Journalist", "Speechwriter", "Communications Director"] }
+    ]
+  },
+
+  // ── Speculative systems thinking — distinct from creative writing's narrative-output focus ──
+
+  {
+    id: "scifi_worldbuilding",
+    label: "Science fiction & speculative world-building",
+    cluster: "think",
+    riasec: ["I", "A", "R"],
+    naics_sectors: [54, 51, 71, 33],
+    industries: ["Research & Development", "Technology & Futurism", "Entertainment & Media", "Game Design", "Aerospace"],
+    career_emergence: [
+      "Futurist", "UX/Speculative Designer", "Technology Strategist", "Game World Designer",
+      "Science Communicator", "R&D Scientist", "Aerospace Engineer", "Concept Artist"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["writing_stories"], unlocks: ["Science Fiction Author", "Game World Designer", "Speculative Concept Artist"] },
+      { with: ["ai_machine_learning"], unlocks: ["AI Ethicist", "Technology Futurist", "Speculative Technology Designer"] }
+    ]
+  },
+
   // ─────────────────────────────────────────────
   // PEOPLE & STORIES
   // ─────────────────────────────────────────────
@@ -1274,6 +1353,25 @@ const VECTOR_CROSSWALK = [
     geo_signal: true,
     eq_multiplier: false,
     combo_unlocks: []
+  },
+
+  {
+    id: "robotics_competitions",
+    label: "Robotics competitions",
+    cluster: "systems",
+    riasec: ["R", "I", "E"],
+    naics_sectors: [33, 54, 51, 23],
+    industries: ["Robotics & Automation", "Aerospace", "Software Engineering", "Manufacturing", "Defense Technology"],
+    career_emergence: [
+      "Robotics Engineer", "Mechatronics Engineer", "Automation Engineer", "Software Engineer",
+      "Aerospace Engineer", "Controls Engineer", "Defense Technology Engineer"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["coding_programming"], unlocks: ["Robotics Software Engineer", "Embedded Systems Engineer"] },
+      { with: ["im_one_who_holds_group_together"], unlocks: ["Team Lead Engineer", "Technical Project Manager"] }
+    ]
   },
 
   {
