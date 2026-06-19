@@ -59,14 +59,35 @@ const TILE_POOLS = {
 
 // Always-included tiles — high signal, high recognizability for any student
 const ALWAYS_SHOW = [
+  // Make cluster anchor tiles
   'cooking',          // universal, triggers baking/cosmetic combos
   'playing_instrument', // high EQ combo potential
+  'writing_stories',  // strong signal across many paths
+  'photography',      // broad creative signal
+  // Move cluster — guaranteed minimum 5 visible regardless of free-time answer
+  'fitness_lifting',  // universal move tile
+  'soccer',           // highest-participation team sport
+  'dance',            // expressive movement
+  'basketball',       // second-highest participation
+  'track_field',      // individual competitive — broad reach
+  // Systems cluster — guaranteed minimum 5 visible
+  'engineering_challenges', // strong systems signal
+  'how_body_moves',         // body-systems crossover
+  'medical_science',        // broad health signal
+  'business_startups',      // entrepreneurial systems
+  'environment_sustainability', // climate/outdoor signal
+  // Think cluster — guaranteed minimum 5 visible
+  'psychology',       // most universal Think tile
+  'science_experiments', // second-most universal
   'coding_programming', // high IBIS coverage
+  'ai_machine_learning', // contemporary relevance
+  'data_statistics',  // completes Think minimum
+  // People cluster — guaranteed minimum 5 visible
+  'volunteering',     // broad civic signal
+  'teaching_tutoring', // most universal People tile
   'entrepreneurship', // cross-cluster signal
   'animal_care',      // strong EQ indicator
-  'fitness_lifting',  // universal move tile
-  'writing_stories',  // strong signal across many paths
-  'photography'       // broad creative signal
+  'mental_health_wellness' // completes People minimum
 ];
 
 // ─────────────────────────────────────────────────────────────
@@ -225,7 +246,7 @@ function curateInitialTiles(answers) {
   workStyleBonus.forEach(id => { scores[id] = (scores[id] || 0) + 3; });
 
   // Always-show tiles get a baseline score so they always appear
-  ALWAYS_SHOW.forEach(id => { scores[id] = Math.max(scores[id] || 0, 8); });
+  ALWAYS_SHOW.forEach(id => { scores[id] = Math.max(scores[id] || 0, 50); });
 
   // If no free_time answers given — show balanced default set
   if (free_time.length === 0) {
@@ -254,27 +275,39 @@ function curateInitialTiles(answers) {
 // ─────────────────────────────────────────────────────────────
 
 function ensureClusterBalance(sortedIds, free_time) {
-  const MIN_PER_CLUSTER = 2;
-  const result = [...sortedIds];
-  const clusterCounts = {};
+  const MIN_PER_CLUSTER = 5;   // every cluster guaranteed at least 5 visible tiles
+  const MAX_PER_CLUSTER = 9;   // no single cluster dominates — caps Make at 9 instead of 15
+  let result = [...sortedIds];
 
-  // Count how many tiles from each cluster are in top 32
+  // Pass 1 — enforce maximum per cluster: demote excess tiles beyond MAX to the back
+  const seen = {};
+  const kept = [];
+  const demoted = [];
+  result.forEach(id => {
+    const cluster = getCluster(id);
+    if (!cluster) { kept.push(id); return; }
+    seen[cluster] = (seen[cluster] || 0) + 1;
+    if (seen[cluster] <= MAX_PER_CLUSTER) kept.push(id);
+    else demoted.push(id);
+  });
+  result = [...kept, ...demoted];
+
+  // Pass 2 — enforce minimum per cluster: inject tiles if any cluster is under MIN
+  const clusterCounts = {};
   result.slice(0, 32).forEach(id => {
     const cluster = getCluster(id);
     if (cluster) clusterCounts[cluster] = (clusterCounts[cluster] || 0) + 1;
   });
 
-  // For any cluster with fewer than MIN tiles, inject the top-scored tile from that cluster
   Object.keys(TILE_POOLS).forEach(cluster => {
-    if ((clusterCounts[cluster] || 0) < MIN_PER_CLUSTER) {
-      const clusterTiles = TILE_POOLS[cluster];
-      // Find the highest-scored tile from this cluster not already in result
-      const toAdd = clusterTiles.find(id => !result.slice(0, 32).includes(id));
-      if (toAdd) {
-        // Insert at position 30 (before the last two slots)
-        result.splice(30, 0, toAdd);
-      }
-    }
+    let toFill = MIN_PER_CLUSTER - (clusterCounts[cluster] || 0);
+    if (toFill <= 0) return;
+    const clusterTiles = TILE_POOLS[cluster];
+    // Find highest-scored tiles from this cluster not already in top 32
+    const candidates = clusterTiles.filter(id => !result.slice(0, 32).includes(id));
+    candidates.slice(0, toFill).forEach((id, i) => {
+      result.splice(30 + i, 0, id);
+    });
   });
 
   return result;
