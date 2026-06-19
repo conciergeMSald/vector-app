@@ -318,8 +318,122 @@ LEAVE AND RETURN: UW-Madison → consulting/fintech in the Loop (22% Chicago). I
 LEAVE AND STAY GONE: UChicago economics → Wall Street (28% New York). Northwestern Medill → national journalism in New York (25%). UIUC CS elite → Bay Area tech (15%).
 
 Connect this student's specific profile to the corridor, name the trajectory type, and make the school connection explicit.`
-  }
+  },
 
+  // ── FLORIDA ───────────────────────────────────────────────────────────────
+  florida: {
+    name: 'Florida',
+    zipPrefixes: [
+      '330','331','332','333','334','335','336','337','338','339',
+      '340','341','342','343','344','345','346','347','348','349'
+    ],
+    corridors: [
+      {
+        name: 'Finance, Wealth Management & Private Equity',
+        anchor: 'Miami Brickell / Palm Beach / Coral Gables',
+        industries: ['Private Equity','Hedge Funds','Family Offices','Wealth Management','International Banking','Real Estate Finance'],
+        employers: ['Blackstone','Apollo Global','Citadel','Wells Fargo Private Bank','Northern Trust','Raymond James'],
+        naics: [52, 54]
+      },
+      {
+        name: 'Real Estate & Development',
+        anchor: 'Miami / Boca Raton / Orlando / Tampa',
+        industries: ['Commercial Real Estate','Residential Development','REIT Management','Construction','Property Management'],
+        employers: ['Lennar','PulteGroup','CBRE','JLL','Related Group'],
+        naics: [52, 23, 54]
+      },
+      {
+        name: 'Healthcare & Life Sciences',
+        anchor: 'Tampa Bay / Miami Medical District / Orlando',
+        industries: ['Hospital Systems','Pharmaceutical Distribution','Medical Devices','Health Insurance','Telehealth'],
+        employers: ['HCA Healthcare','AdventHealth','Moffitt Cancer Center','BayCare','Humana'],
+        naics: [62, 54]
+      },
+      {
+        name: 'Tourism, Hospitality & Entertainment',
+        anchor: 'Orlando (Theme Parks) / Miami Beach / Tampa',
+        industries: ['Theme Parks','Hotel & Resort Management','Cruise Lines','Event Management','Sports Entertainment'],
+        employers: ['Walt Disney World','Universal Orlando','SeaWorld','Royal Caribbean','Carnival Corp'],
+        naics: [71, 72, 48]
+      },
+      {
+        name: 'Latin American Business & International Trade',
+        anchor: 'Miami International / Doral / Coral Gables',
+        industries: ['International Trade','Latin American Banking','Import/Export','Logistics','Multinational Corporations'],
+        employers: ['Miami Port Authority','Bacardi','Burger King Corporate','World Fuel Services'],
+        naics: [48, 52, 42]
+      },
+      {
+        name: 'Aerospace, Defense & Technology',
+        anchor: 'Space Coast (Cape Canaveral / Melbourne) / Tampa Defense',
+        industries: ['Space Launch','Aerospace Engineering','Defense Contracting','Satellite Systems','Cyber Defense'],
+        employers: ['NASA','SpaceX Cape Canaveral','Boeing','Lockheed Martin','L3Harris','Northrop Grumman'],
+        naics: [33, 54, 92]
+      },
+      {
+        name: 'AgriTech, Logistics & Supply Chain',
+        anchor: 'Jacksonville / Tampa Port / Central Florida',
+        industries: ['Port Logistics','Supply Chain','Agricultural Technology','Food Processing','Distribution'],
+        employers: ['JAXPORT','Port Tampa Bay','Publix HQ','Darden Restaurants'],
+        naics: [48, 42, 11]
+      }
+    ],
+    trajectories: {
+      stay_close: {
+        label: 'Stay Close',
+        summary: 'Florida schools that put you directly inside the state\'s strongest corridors.',
+        connections: [
+          { school: 'University of Miami', corridor: 'Finance, Wealth Management & Private Equity', note: '55% Miami concentration — Business school inside the Brickell finance corridor. Latin American business network strongest in the country for Florida-rooted students.' },
+          { school: 'University of Florida', corridor: 'Healthcare & Life Sciences', note: '45% Florida placement — #1 public in the state, direct pipeline into Gainesville biotech, Tampa and Miami hospital networks.' },
+          { school: 'Florida State University', corridor: 'Finance, Wealth Management & Private Equity', note: '50% Florida placement — College of Business feeds Tallahassee government, Tampa finance, and the broader Florida professional network.' },
+          { school: 'University of Central Florida', corridor: 'Tourism, Hospitality & Entertainment', note: '65% Florida concentration — sits in the backyard of Disney, Universal, and SeaWorld. Hospitality, entertainment operations, simulation and gaming pipeline.' },
+          { school: 'Florida International University', corridor: 'Latin American Business & International Trade', note: '70% South Florida concentration — the undisputed pipeline into Miami\'s Latin American business corridor, international trade, and bilingual finance.' },
+          { school: 'University of South Florida', corridor: 'Healthcare & Life Sciences', note: '60% Tampa Bay concentration — inside Moffitt Cancer Center and BayCare recruiting zone. Health sciences, public health, biomedical engineering.' },
+          { school: 'Embry-Riddle Aeronautical University', corridor: 'Aerospace, Defense & Technology', note: '40% Florida placement — the premier aerospace university in the state, sitting between Cape Canaveral and the Melbourne corridor. NASA and SpaceX recruit directly on campus.' }
+        ]
+      },
+      leave_and_return: {
+        label: 'Leave and Return',
+        summary: 'Schools outside Florida that still pipeline back into the state\'s strongest corridors.',
+        connections: [
+          { school: 'University of Michigan', corridor: 'Finance, Wealth Management & Private Equity', note: '8% Florida placement — Ross School of Business has documented placement in Brickell and Palm Beach wealth management.' },
+          { school: 'Georgetown University', corridor: 'Latin American Business & International Trade', note: '6% Florida placement — Georgetown\'s Latin American studies and international affairs programs pipeline back into Miami\'s diplomatic and trade corridor.' },
+          { school: 'Vanderbilt University', corridor: 'Healthcare & Life Sciences', note: '7% Florida placement — Vanderbilt medical and health policy graduates return to Tampa and Miami health systems.' },
+          { school: 'Cornell University', corridor: 'Tourism, Hospitality & Entertainment', note: '5% Florida placement — Cornell Hotel Administration is the most credentialed pipeline into resort, cruise, and hospitality management in Florida.' },
+          { school: 'Tulane University', corridor: 'Finance, Wealth Management & Private Equity', note: '9% Florida placement — Gulf South network pipelines naturally back to Tampa, Fort Lauderdale, and Miami finance.' }
+        ]
+      },
+      leave_and_stay: {
+        label: 'Leave and Stay Gone',
+        summary: 'Schools that represent a genuine geographic bet away from Florida.',
+        connections: [
+          { school: 'University of Pennsylvania / Wharton', corridor: 'Northeast Finance', note: '35% Philadelphia/NYC — A Florida student who goes to Wharton is making a Wall Street bet, not a Florida bet.' },
+          { school: 'Northwestern University', corridor: 'Chicago Consulting & Media', note: '40% Chicago — Kellogg and Medill pipeline into Chicago consulting, media, and finance. Strong outcome, different geography.' },
+          { school: 'Stanford University', corridor: 'Bay Area Tech & Venture', note: '55% Bay Area — A Florida student at Stanford is almost certainly making a Silicon Valley bet. The Florida network does not reach Sand Hill Road.' },
+          { school: 'New York University', corridor: 'New York Finance & Media', note: '50% New York — NYU Stern and Tisch students overwhelmingly stay in New York. Entertainment and finance corridors with no Florida equivalent.' }
+        ]
+      }
+    },
+    callc_context: `FLORIDA REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
+
+This student lives in one of the most economically complex states in the country. Florida is not a single market — it is a collection of distinct corridors sharing geography: the Brickell finance district that rivals mid-tier Wall Street, the Orlando entertainment economy, the Space Coast aerospace cluster, the Miami international trade gateway, and the Tampa Bay health sciences hub.
+
+KEY CORRIDORS BY PROFILE MATCH:
+- Finance, Wealth Management & Private Equity (Miami Brickell / Palm Beach): Blackstone, Apollo, Citadel, family offices — serious money, real dealmaking
+- Real Estate & Development (statewide): Lennar, Related Group, CBRE — the industry that built Florida and keeps building it
+- Healthcare & Life Sciences (Tampa / Miami Medical District): HCA, Moffitt, AdventHealth — one of the fastest-growing health markets in the US
+- Tourism, Hospitality & Entertainment (Orlando / Miami Beach): Disney, Universal, Royal Caribbean, Carnival — a $100B+ industry hiding in plain sight
+- Latin American Business & International Trade (Miami / Doral): The US-Latin America commerce gateway — bilingual, bicultural, globally connected
+- Aerospace, Defense & Technology (Space Coast / Cape Canaveral): NASA, SpaceX, L3Harris — a legitimate aerospace corridor
+- AgriTech, Logistics & Supply Chain (Jacksonville / Tampa Port): JAXPORT, Publix HQ — infrastructure and distribution at national scale
+
+THREE TRAJECTORIES TO NAME EXPLICITLY:
+STAY CLOSE: FIU → Latin American business in Miami (70% in-state). UCF → Disney/Universal entertainment operations. USF → Tampa Bay health systems. Embry-Riddle → NASA and SpaceX on the Space Coast. UM → Brickell finance and international business.
+LEAVE AND RETURN: Michigan or Georgetown finance/law → return to Brickell or Palm Beach. Cornell Hotel → return to manage Orlando or Miami resort. Vanderbilt health → return to Tampa or Miami hospital systems. Tulane → Gulf South network back to Florida finance.
+LEAVE AND STAY GONE: Wharton → Wall Street, not Brickell. Stanford → Silicon Valley, not Miami. Northwestern → Chicago, not Tampa. NYU → New York finance and media, no Florida equivalent.
+
+Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it. If this student has family in Florida but lives elsewhere, name Florida as a legitimate Leave and Return destination with the specific corridor their interests map to.`
+  }
 };
 
 // ── resolveRegion ─────────────────────────────────────────────────────────────
@@ -372,8 +486,123 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'Manufacturing, Logistics & Supply Chain', naics: [33, 48, 42], riasec: ['R','C','I'] },
     { corridorName: 'Technology & Digital',               naics: [51, 54],     riasec: ['I','R','C'] },
     { corridorName: 'Consumer Goods & Retail',            naics: [44, 31, 72, 54], riasec: ['E','S','C'] }
+  ],
+  florida: [
+    { corridorName: 'Finance, Wealth Management & Private Equity', naics: [52, 54],     riasec: ['E','C','I'] },
+    { corridorName: 'Real Estate & Development',                   naics: [52, 23, 54], riasec: ['E','R','C'] },
+    { corridorName: 'Healthcare & Life Sciences',                  naics: [62, 54],     riasec: ['I','S','R'] },
+    { corridorName: 'Tourism, Hospitality & Entertainment',        naics: [71, 72, 48], riasec: ['E','S','A'] },
+    { corridorName: 'Latin American Business & International Trade',naics: [48, 52, 42],riasec: ['E','S','C'] },
+    { corridorName: 'Aerospace, Defense & Technology',             naics: [33, 54, 92], riasec: ['R','I','C'] },
+    { corridorName: 'AgriTech, Logistics & Supply Chain',          naics: [48, 42, 11], riasec: ['R','C','E'] }
   ]
 };
+
+// ── resolveStudentCorridor ────────────────────────────────────────────────────
+// Given a student's NAICS sectors, RIASEC codes, and regional key,
+// returns the single best-matching corridor for this student in this region.
+// Uses a weighted score: NAICS overlap (primary) + RIASEC affinity (secondary)
+//
+// @param naicsSectors  array of {sector, count/score} from getNAICSProfile()
+// @param riasec        array of {code, score} from getRIASECProfile()
+// @param regionalKey   'socal' | 'bayarea' | 'chicago'
+// @returns { corridorName, naics, riasec, score } | null
+
+function resolveStudentCorridor(naicsSectors, riasec, regionalKey) {
+  if (!naicsSectors || !naicsSectors.length || !regionalKey) return null;
+
+  const corridorMap = CORRIDOR_NAICS_MAP[regionalKey];
+  if (!corridorMap) return null;
+
+  // Student's top RIASEC codes (top 3, ordered)
+  const studentRIASEC = (riasec || []).slice(0, 3).map(r => r.code);
+  const studentRIASECSet = new Set(studentRIASEC);
+
+  // High-signal NAICS codes that are corridor-specific (not generic crossovers)
+  // NAICS 71 (Arts/Entertainment) almost uniquely signals Entertainment — boost it
+  // NAICS 52 (Finance) almost uniquely signals Finance — boost it
+  // NAICS 62 (Healthcare) almost uniquely signals Healthcare — boost it
+  // NAICS 44 (Retail/Consumer) almost uniquely signals CPG/Consumer — boost it
+  // NAICS 33 (Manufacturing) almost uniquely signals Aerospace/Industrial — boost it
+  const HIGH_SIGNAL_NAICS = new Set([71, 52, 62, 44, 31, 33, 48]);
+
+  // Score each corridor
+  const scored = corridorMap.map(corridor => {
+    let score = 0;
+
+    // Primary signal — NAICS overlap, weighted by position and specificity
+    naicsSectors.slice(0, 5).forEach((n, idx) => {
+      if (corridor.naics.includes(n.sector)) {
+        const baseWeight = (5 - idx) * 3; // top sector worth 15, 5th worth 3
+        // High-signal NAICS get a stronger boost when they appear in top-2 positions
+        // This ensures Finance(52), Healthcare(62), Entertainment(71) aren't beaten
+        // by generic 51/54 combinations even when both sectors are tied by count
+        const isTopPosition = idx <= 1;
+        const specificityBoost = HIGH_SIGNAL_NAICS.has(n.sector) ? (isTopPosition ? 14 : 8) : 0;
+        score += baseWeight + specificityBoost;
+      }
+    });
+
+    // Secondary signal — RIASEC affinity, ordered match matters
+    corridor.riasec.forEach((code, corridorRIASECIdx) => {
+      const studentIdx = studentRIASEC.indexOf(code);
+      if (studentIdx !== -1) {
+        // Both corridor position and student position matter
+        const corridorWeight = (3 - corridorRIASECIdx); // primary corridor code worth 3
+        const studentWeight = (3 - studentIdx);          // student's primary code worth 3
+        score += corridorWeight * studentWeight;
+      }
+    });
+
+    return { ...corridor, score };
+  });
+
+  // Return highest-scoring corridor, or null if no real match (score < 3)
+  const best = scored.sort((a, b) => b.score - a.score)[0];
+  return best && best.score >= 3 ? best : null;
+}
+
+// ── getStudentCorridorContext ─────────────────────────────────────────────────
+// Returns a short, prompt-ready string naming the student's matched corridor
+// Used to sharpen callC prompt beyond "here are all corridors"
+
+function getStudentCorridorContext(naicsSectors, riasec, zip) {
+  const region = resolveRegion(zip);
+  if (!region) return '';
+
+  const corridor = resolveStudentCorridor(naicsSectors, riasec, region.key);
+  if (!corridor) return '';
+
+  // Find the full corridor object from the region for employer/detail data
+  const fullCorridor = region.corridors.find(c => c.name === corridor.corridorName);
+  if (!fullCorridor) return `Student corridor match: ${corridor.corridorName}`;
+
+  return `STUDENT CORRIDOR MATCH: ${corridor.corridorName} (${fullCorridor.anchor})
+Key employers in this corridor: ${fullCorridor.employers.slice(0,4).join(', ')}
+Industries: ${fullCorridor.industries.slice(0,3).join(', ')}`;
+}
+
+// ── resolveRegion ─────────────────────────────────────────────────────────────
+// Returns the matching REGIONAL_INTELLIGENCE entry for a given ZIP code
+// Returns null if no region matches (graceful fallback to ZIP-only geo)
+
+function resolveRegion(zip) {
+  if (!zip || typeof zip !== 'string') return null;
+  const prefix = zip.trim().slice(0, 3);
+  for (const [key, region] of Object.entries(REGIONAL_INTELLIGENCE)) {
+    if (region.zipPrefixes.includes(prefix)) return { key, ...region };
+  }
+  return null;
+}
+
+// ── getRegionalCallCContext ───────────────────────────────────────────────────
+// Returns the callC prompt context string for a given ZIP
+// Returns empty string if no region matches
+
+function getRegionalCallCContext(zip) {
+  const region = resolveRegion(zip);
+  return region ? region.callc_context : '';
+}
 
 // ── resolveStudentCorridor ────────────────────────────────────────────────────
 // Given a student's NAICS sectors, RIASEC codes, and regional key,
