@@ -419,6 +419,22 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div style="font-size:11px;color:var(--ink4)">Unweighted = 4.0 scale · Weighted = 5.0 scale with AP/IB</div>
   </div>
 
+  <!-- Pronoun preference — optional, for report writing only -->
+  <div style="margin-top:1.75rem;" id="pronoun-section">
+    <label class="input-label" id="pronoun-label">How should your report refer to you?</label>
+    <div class="q-sub" id="pronoun-sub" style="font-size:13px;margin-bottom:1rem;margin-top:.25rem;">Optional — this is only used for how we write your report.</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;" id="pronoun-options">
+      <button class="tile" id="pron-he" style="font-size:12px;padding:8px 16px;"
+        onclick="selectPronoun('he_him',this)">He / Him</button>
+      <button class="tile" id="pron-she" style="font-size:12px;padding:8px 16px;"
+        onclick="selectPronoun('she_her',this)">She / Her</button>
+      <button class="tile" id="pron-they" style="font-size:12px;padding:8px 16px;"
+        onclick="selectPronoun('they_them',this)">They / Them</button>
+      <button class="tile" id="pron-skip" style="font-size:12px;padding:8px 16px;"
+        onclick="selectPronoun('prefer_not',this)">Prefer not to say</button>
+    </div>
+  </div>
+
   <div class="hint-bar" id="s2-hint"></div>
   <div style="display:flex;gap:10px;margin-top:1.5rem;"><button class="ls-btn-outline" style="width:auto;padding:12px 24px;margin-top:0" onclick="goTo(1)">Back</button><button class="ls-btn" style="flex:1;margin-top:0" onclick="validateAndGoTo(25)">Continue</button></div>
 </div>
@@ -1146,6 +1162,7 @@ const SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxmhDOrAjTtgpD9
 // ── STATE ──────────────────────────────────────────
 const LS_STATE = {
   name:'', grade:null, gpa:null, gpa_type:'weighted', voice:'student',
+  pronouns: null,
   selectedTileIds: new Set(),
   zip:'', family_locations:[],
   reportFormat:'both',
@@ -1202,6 +1219,26 @@ function setVoice(v) {
   if(s37sub) s37sub.textContent = p
     ? 'Choose one — or two if you believe they genuinely live in both.'
     : 'Choose one — or two if you genuinely live in both.';
+
+  // Pronoun question — switch label for parent voice
+  const pronLabel = document.getElementById('pronoun-label');
+  const pronSub = document.getElementById('pronoun-sub');
+  const pronSection = document.getElementById('pronoun-section');
+  if(pronLabel) pronLabel.textContent = p
+    ? 'How should ' + name + '\'s report refer to them?'
+    : 'How should your report refer to you?';
+  if(pronSub) pronSub.textContent = p
+    ? 'Optional — this is only used for how we write ' + name + '\'s report.'
+    : 'Optional — this is only used for how we write your report.';
+  // Update button labels for parent voice
+  const heBtn = document.getElementById('pron-he');
+  const sheBtn = document.getElementById('pron-she');
+  const theyBtn = document.getElementById('pron-they');
+  const skipBtn = document.getElementById('pron-skip');
+  if(heBtn) heBtn.textContent = p ? 'He / Him (his)' : 'He / Him';
+  if(sheBtn) sheBtn.textContent = p ? 'She / Her (hers)' : 'She / Her';
+  if(theyBtn) theyBtn.textContent = p ? 'They / Them (theirs)' : 'They / Them';
+  if(skipBtn) skipBtn.textContent = 'Prefer not to say';
 
   // Re-label any EQ tiles already rendered on screen
   document.querySelectorAll('.tile-eq[data-student-label]').forEach(el => {
@@ -1725,7 +1762,23 @@ function renderFamilyLocations() {
   `).join('');
 }
 
-// ── FORMAT SELECTION ───────────────────────────────
+// ── PRONOUN SELECTION ──────────────────────────────
+function selectPronoun(val, btn) {
+  LS_STATE.pronouns = val === 'prefer_not' ? null : val;
+  document.querySelectorAll('#pronoun-options .tile').forEach(b => {
+    b.classList.remove('sel');
+    // Remove all cluster color classes to reset to neutral
+    b.style.background = '';
+    b.style.color = '';
+    b.style.borderColor = '';
+  });
+  btn.classList.add('sel');
+  btn.style.background = 'var(--ink)';
+  btn.style.color = 'var(--white)';
+  btn.style.borderColor = 'var(--ink)';
+}
+
+
 function selectFormat(fmt) {
   LS_STATE.reportFormat = fmt;
   ['quick','full','both'].forEach(f => {
@@ -1774,6 +1827,7 @@ function assembleProfile() {
     riasec,
     naicsSectors,
     zip: LS_STATE.zip,
+    pronouns: LS_STATE.pronouns,
     family_locations: LS_STATE.family_locations || [],
     geoIndustries: geo.industries,
     geoNeighborhood: geo.neighborhood,
@@ -1805,9 +1859,18 @@ function buildContext(profile) {
     decision: `Grade ${profile.grade} — decision year. Applications are live or imminent. Register: clear and confident, not pressured.`
   }[gradeRegister];
 
+  // Pronoun instruction — explicit, never infer from name
+  const pronounMap = {
+    'he_him':   { subject:'he',   object:'him',  possessive:'his',   reflexive:'himself' },
+    'she_her':  { subject:'she',  object:'her',  possessive:'her',   reflexive:'herself' },
+    'they_them':{ subject:'they', object:'them', possessive:'their', reflexive:'themselves' },
+  };
+  const pronouns = pronounMap[profile.pronouns] || pronounMap['they_them'];
+  const pronounInstruction = `PRONOUN INSTRUCTION: Use ${pronouns.subject}/${pronouns.object}/${pronouns.possessive} pronouns for this student. Never infer gender from the name "${profile.name}" — use only the pronouns specified here.`;
+
   const voiceInstruction = profile.voice === 'parent'
-    ? `Write about ${profile.name} in third person. Address the family, not the student directly. Warm, specific, never clinical.`
-    : `Write directly to ${profile.name} in second person. Smart, curious teenager who deserves honesty. Never talk down. Never oversell.`;
+    ? `Write about ${profile.name} in third person. Address the family, not the student directly. Warm, specific, never clinical. ${pronounInstruction}`
+    : `Write directly to ${profile.name} in second person. Smart, curious teenager who deserves honesty. Never talk down. Never oversell. ${pronounInstruction}`;
 
   const comboSummary = profile.comboUnlocks.map(c =>
     `${c.triggered_by.map(s=>toSentenceCase(stripUnderscores(s))).join(' + ')} unlocks: ${c.unlocks.join(', ')}`
@@ -1846,7 +1909,7 @@ YOUR JOB — produce exactly three outputs separated by these exact dividers:
 Find ONE short quote — 1 or 2 sentences maximum — from a historical figure, scientist, artist, athlete, musician, or cultural icon that genuinely connects to what this student's profile reveals. The quote should feel written for this specific person. Surprising — not the obvious famous quote everyone has seen. Should make a teenager want to screenshot it and send it to a friend. Include the person's name and a 3-5 word description in parentheses. Real people only. Verified real quotes only.
 
 ---PORTRAIT---
-Write 3-4 sentences about who this student is — their emotional wiring, how they move through the world, what kind of person they are. Draw only from the EQ tiles and activity tiles. No career language. Pure character. Should make the student feel seen in a way they have never felt seen before. ${ctx.voice==='parent'?`Write in third person about ${ctx.name}. You may use their name naturally once.`:`Write in second person, directly to ${ctx.name}. You may use their name naturally once — not in the first word, but woven in.`}
+Write 3-4 sentences about who this student is — their emotional wiring, how they move through the world, what kind of person they are. Draw only from the EQ tiles and activity tiles. No career language. Pure character. Should make the student feel seen in a way they have never felt seen before. ${ctx.voice==='parent'?`Write in third person about ${ctx.name}. Follow the pronoun instruction above exactly.`:`Write in second person, directly to ${ctx.name}. Follow the pronoun instruction above exactly. You may use their name naturally once — not in the first word, but woven in.`}
 
 ---TRAJECTORY---
 Write one sentence — the single most important sentence in the entire Lifescape. Must:
@@ -2453,7 +2516,7 @@ RULES:
 - Never use the word "prestigious" or "elite"  
 - Every MATCH must reference something from this student's actual tiles or interests
 - WHY must use the provided school intelligence, not generic facts
-- ${ctx.voice === 'parent' ? `Write in third person about ${ctx.name}` : `Write in second person to ${ctx.name}`}`;
+- ${ctx.voice === 'parent' ? `Write in third person about ${ctx.name}. Follow the pronoun instruction in VOICE INSTRUCTION above exactly.` : `Write in second person to ${ctx.name}. Follow the pronoun instruction in VOICE INSTRUCTION above exactly.`}`;
 }
 
 function parseCallD(rawText) {
@@ -3050,6 +3113,7 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
     ['Grade', `Grade ${profile.grade}`],
     ['ZIP code', profile.zip],
     ['Family geography', profile.family_locations && profile.family_locations.length > 0 ? profile.family_locations.join(', ') : '—'],
+    ['Report pronouns', profile.pronouns ? profile.pronouns.replace('_','/')  : 'they/them (default)'],
     ['Voice path', profile.voice === 'parent' ? 'Parent completed' : 'Student completed'],
     ['Report format', profile.reportFormat],
     ['Tiles selected', profile._meta.tileCount],
