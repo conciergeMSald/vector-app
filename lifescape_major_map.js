@@ -601,7 +601,25 @@ const MAJOR_MAP = {
       program_keywords: ['pre-medicine', 'biology', 'medical school pipeline', 'MCAT prep', 'research lab'],
       entry_careers: ['Medical Scribe', 'Clinical Research Assistant', 'Lab Technician'],
       world_alignment: 'Think',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Medical School & Clinical Practice',
+          edge: 'Medicine is one of the few careers where the credential is also the license — and the path to that credential is more specific, more demanding, and more unforgiving of early missteps than almost any other professional track. A biology student who understands this early, who builds research experience, clinical exposure, and academic rigor in a deliberate sequence rather than a reactive one, arrives at the medical school application with a record that reflects preparation rather than recovery. Johns Hopkins, Duke, and Emory all have pre-medical advisory programs that have developed direct relationships with their affiliated medical schools, and the students who engage those programs as freshmen rather than juniors consistently outperform those who discover them late.'
+        },
+        {
+          domain: 'Biomedical Research & Scientific Discovery',
+          edge: 'The treatments that will save lives twenty years from now are being designed today by people who are asking questions that most clinicians do not have time to pursue. Biomedical research is the work that happens before the drug exists, before the treatment protocol is written, before the clinical trial is designed — and the people who do it have chosen a career where the timelines are long, the uncertainty is high, and the consequence of getting it right is measured in human lives. A biology student who develops genuine research instincts, who is drawn to the question behind the experiment rather than just the technique, is building toward a scientific career that the NIH, the Broad Institute, and the major research universities are consistently unable to staff at the level the work requires.'
+        },
+        {
+          domain: 'Biotechnology & Pharmaceutical Development',
+          edge: 'The companies that translate scientific discovery into treatments that reach patients are not run by scientists alone. They are run by people who understand enough biology to evaluate what the science is actually saying, and enough business to make decisions about which discoveries are worth pursuing and how to develop them into products. A biology student who develops genuine interest in the commercial application of biological science is building toward a career in biotechnology that exists at the intersection of discovery and deployment — one of the most consequential and best-compensated positions in the life sciences industry. Genentech, Amgen, and the major biotechnology companies all have structured associate programs that recruit biology graduates who combine scientific rigor with commercial awareness.'
+        },
+        {
+          domain: 'Global Health & International Medicine',
+          edge: 'The health problems that affect the largest number of people in the world are not the ones that receive the most research funding in developed countries. Infectious disease, maternal mortality, malnutrition, and the health consequences of poverty and displacement are the problems that global health professionals spend their careers addressing — in the field, in policy, and in the research institutions that try to produce knowledge faster than the problems evolve. A biology student who is drawn to health at a population scale, who thinks about disease as a social and political phenomenon as much as a biological one, is building toward a career in global health that organizations like the Gates Foundation, MSF, and the WHO are consistently trying to develop talent pipelines to fill.'
+        }
+      ]
     },
     {
       major_label: 'Nursing',
@@ -610,7 +628,25 @@ const MAJOR_MAP = {
       program_keywords: ['nursing', 'BSN', 'clinical', 'NCLEX', 'patient care', 'RN pipeline'],
       entry_careers: ['Registered Nurse', 'Clinical Care Coordinator', 'ICU Nurse'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Advanced Practice & Nurse Practitioner',
+          edge: 'The shortage of primary care physicians in the United States has created a structural opportunity for nurses who pursue advanced practice — nurse practitioners, certified nurse midwives, certified registered nurse anesthetists — to practice at a level of clinical independence and compensation that the profession has not historically offered. A nursing student who enters the BSN with the intention of continuing to an MSN or DNP is building a clinical career that does not require medical school, does not carry medical school debt, and in many states carries full practice authority. Vanderbilt\'s School of Nursing and Johns Hopkins School of Nursing both have direct pathways from BSN to advanced practice programs that have produced some of the most respected clinicians in the country.'
+        },
+        {
+          domain: 'Nursing Leadership & Healthcare Administration',
+          edge: 'The people who run hospitals, manage clinical departments, and set the operational standards that determine how care is delivered are almost always the ones who understood care from the inside before they moved to the outside. A nursing student who develops genuine interest in how healthcare systems function — not just clinically but operationally, financially, and organizationally — is building toward a leadership career in healthcare administration that most business-trained administrators cannot replicate because they have never actually taken care of a patient. The American Organization for Nursing Leadership runs fellowship programs that place clinically trained nurses directly into hospital administration tracks at major health systems.'
+        },
+        {
+          domain: 'Public Health Nursing & Community Health',
+          edge: 'The nurses who work outside hospital walls — in community health centers, public health departments, school systems, and home care settings — are addressing the health consequences of poverty, isolation, chronic disease, and the failures of a healthcare system that is organized around acute care rather than prevention. A nursing student who is drawn to the social determinants of health, who wants to understand why some communities are sicker than others and what it would take to change that, is building toward a practice in public health nursing that the CDC, major urban health departments, and community health organizations consistently describe as one of their most critical and hardest-to-fill needs.'
+        },
+        {
+          domain: 'Healthcare Technology & Clinical Informatics',
+          edge: 'Every electronic health record, every clinical decision support system, every patient monitoring platform in use today was built with input from clinicians — and the systems that work best are the ones where nurses were involved in their design. Clinical informatics is the discipline that sits between nursing practice and health technology, and the nurses who develop technology fluency alongside clinical expertise are building toward roles that every major health system now recognizes as essential and very few have the people to fill. Epic Systems and the major health technology companies both have clinical informatics roles that specifically seek nurses with technology backgrounds.'
+        }
+      ]
     },
     {
       major_label: 'Public Health',
@@ -619,7 +655,25 @@ const MAJOR_MAP = {
       program_keywords: ['public health', 'epidemiology', 'community health', 'MPH pipeline', 'health policy'],
       entry_careers: ['Health Educator', 'Community Outreach Coordinator', 'Public Health Analyst'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Epidemiology & Disease Surveillance',
+          edge: 'The professionals who tracked the spread of COVID-19, mapped the opioid epidemic, and identified the lead contamination in Flint\'s water supply were not physicians. They were epidemiologists — people trained to understand how disease moves through populations, what patterns reveal about causation, and what interventions have a realistic chance of changing the trajectory. A public health student who develops genuine quantitative depth alongside epidemiological thinking is building toward a career that the CDC, state health departments, and the major schools of public health describe as their most critical pipeline need. Johns Hopkins Bloomberg School of Public Health and Harvard T.H. Chan School of Public Health both have undergraduate public health programs with direct pathways into MPH programs that train the epidemiologists who respond when the next crisis arrives.'
+        },
+        {
+          domain: 'Health Policy & Government Affairs',
+          edge: 'The policies that determine what healthcare is available to whom, at what cost, and with what quality are not made by clinicians. They are made by people who understand both the health science and the political and economic systems through which health policy moves. A public health student who develops genuine policy instincts is building toward a career in health policy that sits at one of the most consequential intersections in American public life. The Robert Wood Johnson Foundation runs a fellowship program that has placed public health graduates into senior health policy roles at CMS, HHS, and major state health agencies — roles that shape the healthcare experience of millions of people.'
+        },
+        {
+          domain: 'Corporate Health & Employee Wellness',
+          edge: 'The largest employers in the country spend billions of dollars annually on employee health benefits, and most of them do not have a clear picture of whether those investments are improving health outcomes or simply covering costs. A public health student who develops expertise in population health management, workplace wellness program design, and health data analytics is building toward a corporate health career that exists inside every major employer and that is growing as organizations recognize the direct relationship between workforce health and organizational performance. Johnson & Johnson\'s health and wellness division and the major benefits consulting firms both recruit public health graduates into roles that combine analytical rigor with health expertise.'
+        },
+        {
+          domain: 'Global Health & International Development',
+          edge: 'The health problems that affect the most people in the world — malaria, tuberculosis, HIV, maternal and child mortality, malnutrition — are not primarily scientific problems. They are delivery problems: getting interventions that work to the people who need them, in the systems and communities where those people actually live. A public health student who develops genuine field orientation, who wants to work on the implementation side of global health rather than the research side, is building toward a career in international development where the USAID, the Gates Foundation, and the major global health implementing partners are consistently trying to build pipelines of people trained for exactly this work.'
+        }
+      ]
     },
     {
       major_label: 'Biochemistry / Biomedical Sciences',
@@ -628,7 +682,25 @@ const MAJOR_MAP = {
       program_keywords: ['biochemistry', 'biomedical', 'pharmaceutical', 'lab research', 'biotech pipeline'],
       entry_careers: ['Research Associate', 'Pharmaceutical Sales Associate', 'Biotech Lab Analyst'],
       world_alignment: 'Think',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Drug Discovery & Pharmaceutical Research',
+          edge: 'The molecules that become medicines pass through years of biochemical research before they are tested in a human being, and the people doing that work are not simply following protocols — they are making judgment calls about which hypotheses are worth pursuing, which experimental results are artifacts and which are real, and how to interpret data that was generated under conditions that were imperfect and that always will be. A biochemistry student who develops genuine experimental instincts, who can design a study and evaluate its limitations in the same breath, is building toward a research career in pharmaceutical development that Pfizer, Merck, and the major biotechnology companies consistently describe as their most critical and hardest-to-develop talent need.'
+        },
+        {
+          domain: 'Regulatory Affairs & Drug Approval',
+          edge: 'Every drug, medical device, and diagnostic test that reaches a patient in the United States has passed through a regulatory process that requires professionals who understand both the science and the legal and procedural framework governing what the FDA will and will not accept as evidence of safety and efficacy. Regulatory affairs is one of the most consequential and least visible careers in the life sciences industry — the people who do it determine whether treatments that work actually reach the patients who need them, and on what timeline. A biochemistry student who develops regulatory fluency alongside scientific training is building toward a career where the work is meaningful, the compensation is significant, and the supply of qualified professionals is consistently below demand.'
+        },
+        {
+          domain: 'Medical Devices & Diagnostic Technology',
+          edge: 'The instruments that measure what is happening inside a human body — blood glucose monitors, MRI machines, cancer diagnostic panels, cardiac monitors — are built by people who understand both the biology they are measuring and the engineering systems doing the measuring. Medical device development sits at the intersection of biochemistry, engineering, and clinical need, and the professionals who can work across all three are building toward a career in one of the most innovation-intensive sectors of the healthcare economy. Boston Scientific, Medtronic, and Abbott all have research and development programs that recruit biochemistry and biomedical sciences graduates who have developed both laboratory skills and translational thinking.'
+        },
+        {
+          domain: 'Forensic Science & Legal Investigation',
+          edge: 'The evidence that determines guilt or innocence in criminal proceedings is increasingly biochemical — DNA, toxicology, trace materials, biological fluids — and the scientists who analyze it and testify about it are operating in a context where the rigor of their methodology is subject to cross-examination by people who are paid to find its weaknesses. A biochemistry student who is drawn to the application of scientific analysis in legal contexts is building toward a forensic science career that the FBI crime laboratories, state forensic agencies, and private forensic consulting firms all describe as chronically understaffed relative to the volume and complexity of the cases they are asked to support.'
+        }
+      ]
     },
     {
       major_label: 'Kinesiology / Exercise Science',
@@ -637,7 +709,25 @@ const MAJOR_MAP = {
       program_keywords: ['kinesiology', 'exercise science', 'physical therapy pipeline', 'sports medicine', 'athletic training'],
       entry_careers: ['Athletic Trainer', 'Physical Therapy Aide', 'Strength & Conditioning Coach'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Physical Therapy & Rehabilitation Medicine',
+          edge: 'Physical therapists are among the most trusted clinicians in the healthcare system — they work with patients at their most vulnerable, over long enough periods to actually see the results of their work, and in a discipline where the science of movement and recovery is developing faster than most practitioners can keep pace with. A kinesiology student who develops strong anatomy and biomechanics foundations alongside genuine clinical empathy is building toward a physical therapy career that the American Physical Therapy Association consistently identifies as one of the most in-demand and most patient-satisfying healthcare professions. The DPT programs at USC, Northwestern, and Emory all maintain direct relationships with kinesiology undergraduate programs that have produced their most consistently prepared applicants.'
+        },
+        {
+          domain: 'Strength & Conditioning & Elite Athletic Performance',
+          edge: 'The difference between an athlete who performs at their genetic ceiling and one who performs below it is almost always in the training — the programming, the recovery, the load management, and the ability of the coaching staff to individualize preparation for bodies that respond differently to the same stimulus. Strength and conditioning coaches at the professional and elite collegiate level are not fitness instructors. They are applied scientists whose decisions directly affect the outcomes that determine whether careers last five years or fifteen. A kinesiology student who develops both scientific rigor and genuine coaching instinct is building toward a career in athletic performance that the NSCA certification validates and that professional sports organizations describe as one of their most consequential hires.'
+        },
+        {
+          domain: 'Occupational Health & Corporate Wellness',
+          edge: 'The musculoskeletal injuries that cost employers billions of dollars annually in workers\' compensation, lost productivity, and disability claims are almost entirely preventable — and the prevention requires professionals who understand how bodies move, how work environments create injury risk, and how to design interventions that change behavior at scale. A kinesiology student who develops occupational health expertise alongside movement science is building toward a career in workplace wellness and ergonomics that every large employer needs and that certified professionals in the field consistently describe as underserved. The American College of Occupational and Environmental Medicine runs certification programs that have placed kinesiology graduates into corporate health roles at Fortune 500 companies.'
+        },
+        {
+          domain: 'Sports Technology & Wearable Performance Analytics',
+          edge: 'Every elite sports organization in the world now collects data on the movement, load, recovery, and physiological state of their athletes — and the professionals who make sense of that data are not data scientists who happen to like sports. They are people who understand biomechanics, physiology, and athletic performance well enough to know which numbers matter and which are noise. A kinesiology student who develops genuine data analysis skills alongside movement science is building toward a career in sports technology that companies like Catapult, WHOOP, and Garmin are actively trying to staff with people who combine both capabilities.'
+        }
+      ]
     },
     {
       major_label: 'Psychology / Pre-Counseling',
@@ -646,7 +736,25 @@ const MAJOR_MAP = {
       program_keywords: ['psychology', 'counseling pipeline', 'mental health', 'clinical psychology', 'social work'],
       entry_careers: ['Case Manager', 'Behavioral Health Technician', 'Social Services Assistant'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Clinical Mental Health Counseling & Therapy',
+          edge: 'The mental health crisis affecting every demographic in the United States has produced a shortage of licensed mental health professionals that will not be resolved by the current pace of training programs. The clinicians who are entering practice right now — the ones who complete their licensure, build a genuine caseload, and develop clinical supervision relationships that deepen their practice over time — are entering a field where the demand for their work will exceed their capacity for their entire career. A psychology student who commits to the clinical path with genuine intention, who develops self-awareness alongside clinical skill, and who chooses a graduate program based on the quality of its training rather than its name recognition, is building toward a practice that matters in a way that most professions cannot claim.'
+        },
+        {
+          domain: 'School Psychology & Educational Support',
+          edge: 'The students who fall behind academically are almost never the ones who lack intelligence. They are the ones whose emotional circumstances, learning differences, or developmental trajectories have not been understood or supported by the systems around them. School psychologists are the professionals trained to understand that gap and to design interventions that change the trajectory — through assessment, counseling, crisis response, and the ongoing work of building school environments that support learning for students who do not fit the default assumptions of how children develop. The National Association of School Psychologists identifies school psychology as one of the most severe shortage professions in American education, with demand that current graduate programs cannot meet.'
+        },
+        {
+          domain: 'Addiction Recovery & Behavioral Health',
+          edge: 'Addiction is a healthcare problem that most of the healthcare system is poorly equipped to treat — because it requires a level of sustained relationship, behavioral understanding, and tolerance for setback that acute care models cannot sustain. The professionals who work in addiction recovery and behavioral health are doing some of the most demanding and most important clinical work in the country, in a field that is growing faster than it can train practitioners. A psychology student who approaches this work with genuine clinical rigor and without the judgment that has historically characterized how addiction is treated is building toward a practice where the need is profound and the shortage of qualified, compassionate clinicians is structural.'
+        },
+        {
+          domain: 'Neuropsychology & Cognitive Assessment',
+          edge: 'The evaluation of how brain function affects behavior, cognition, and daily functioning — neuropsychological assessment — is a specialty that sits at the intersection of clinical psychology, neuroscience, and medicine. Neuropsychologists assess the cognitive consequences of traumatic brain injury, stroke, dementia, learning disabilities, and a range of conditions where understanding what the brain is and is not doing is essential to treatment planning and legal proceedings. A psychology student who develops strong quantitative skills alongside clinical training is building toward a neuropsychology specialization that doctoral programs at Boston University, USC, and the Kessler Foundation have developed specific pipelines to support.'
+        }
+      ]
     },
     {
       major_label: 'Nutrition & Dietetics',
@@ -655,7 +763,25 @@ const MAJOR_MAP = {
       program_keywords: ['nutrition', 'dietetics', 'food science', 'RD pipeline', 'clinical nutrition'],
       entry_careers: ['Dietetic Intern', 'Nutrition Educator', 'Wellness Coordinator'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Clinical Nutrition & Medical Nutrition Therapy',
+          edge: 'What people eat directly affects how disease progresses, how surgery outcomes unfold, how cancer treatment is tolerated, and how chronic conditions like diabetes and heart disease are managed. The registered dietitian who works inside a hospital or clinical setting is not providing general wellness advice — they are making precise recommendations that interact with medications, laboratory values, and treatment protocols in ways that require clinical training that most nutrition programs do not develop to the depth the work requires. The Commission on Dietetic Registration credential is the license that makes this practice possible, and the programs at Penn State, Michigan State, and UNC Chapel Hill have built the most rigorous preparation pathways to it.'
+        },
+        {
+          domain: 'Sports Nutrition & Athletic Performance',
+          edge: 'What elite athletes eat — when, how much, in what combination, and in what relationship to their training load — is as carefully managed as their physical preparation, and the sports dietitians who design those protocols are working with teams that have discovered how significant the difference is between athletes who are optimally fueled and those who are not. A nutrition student who develops genuine interest in exercise physiology alongside dietary science is building toward a sports nutrition career that every professional sports organization and elite training program now considers essential. The CSSD certification validates this specialization, and the dietitians who hold it and work at the professional level are among the most sought-after practitioners in the field.'
+        },
+        {
+          domain: 'Food Policy & Nutrition Advocacy',
+          edge: 'The food that most Americans eat is shaped more by policy — farm subsidies, school lunch programs, food labeling regulations, zoning laws that determine what kinds of food are available in which neighborhoods — than by individual choice. The professionals who work on food policy are not simply nutritionists who became advocates. They are people who understand the science of nutrition deeply enough to know what the policy should accomplish, and the political and economic systems well enough to know how to make it happen. A nutrition student who develops policy instincts alongside clinical training is building toward a career in food systems and nutrition advocacy that the USDA, the CDC, and major food policy organizations describe as chronically understaffed with people who combine both.'
+        },
+        {
+          domain: 'Food Product Development & Industry Innovation',
+          edge: 'Every food product that reaches a supermarket shelf has been through a development process that required professionals who understand nutrition science, food chemistry, consumer behavior, and the regulatory constraints governing what can and cannot be claimed on a label. A nutrition student who develops food science knowledge alongside clinical training is building toward a product development career in the food industry that companies like General Mills, Nestlé, and the rapidly growing functional food and supplement companies are actively trying to fill with people who understand both the science and the market. The Institute of Food Technologists runs programs that connect nutrition and food science graduates with industry partners who sponsor research and hire directly.'
+        }
+      ]
     }
   ],
 
@@ -670,7 +796,25 @@ const MAJOR_MAP = {
       program_keywords: ['hospitality management', 'hotel management', 'resort operations', 'Cornell Hotel', 'lodging industry'],
       entry_careers: ['Front Office Manager Trainee', 'Hotel Operations Associate', 'Event Coordinator'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Hotel & Resort General Management',
+          edge: 'Running a hotel is one of the most operationally complex businesses that exists at any scale — it requires simultaneous management of real estate, food and beverage operations, human resources, revenue management, brand standards, and the moment-to-moment service of guests whose expectations vary and whose satisfaction is the only product that actually matters. The general managers who lead great hotels are not people who stumbled into the industry. They are professionals who learned operations from the inside, who understood every department before they led any of them, and who developed a standard for the guest experience that the entire organization could feel and replicate. Cornell\'s School of Hotel Administration has built the most direct pipeline into hotel general management in the country, and the companies that recruit there know exactly what they are getting.'
+        },
+        {
+          domain: 'Food & Beverage Operations & Restaurant Groups',
+          edge: 'The restaurant industry is one of the most demanding and most personally consequential businesses a person can lead — the margins are thin, the labor is intensive, and the gap between a dining experience that makes someone feel genuinely cared for and one that simply feeds them is almost entirely a function of the culture the operator has built. A hospitality student who is drawn to food and beverage as a craft and an operation, who wants to understand the economics of a well-run restaurant alongside the hospitality of a well-run dining room, is building toward a career in restaurant group management that the James Beard Foundation, Lettuce Entertain You, and the major restaurant hospitality groups recruit for from programs with serious operations curricula.'
+        },
+        {
+          domain: 'Real Estate & Hotel Asset Management',
+          edge: 'Hotels are not just service businesses — they are real estate assets whose value is determined by the quality of their operations, and the professionals who manage the relationship between ownership and operation are doing work that requires fluency in both hospitality and finance simultaneously. Hotel asset management is one of the most financially consequential and least understood careers in the industry — the people who do it determine how hundreds of millions of dollars in hospitality real estate performs over time. A hospitality student who develops genuine financial literacy alongside operations knowledge is building toward a career that Marriott, Hilton, and the major hotel REITs are consistently trying to develop people for and consistently finding that the pipeline is thin.'
+        },
+        {
+          domain: 'Luxury Travel & Private Client Services',
+          edge: 'The clients who spend the most money on travel and hospitality are not looking for service. They are looking for recognition — for someone who understands what they value before they have articulated it and who can deliver it without being asked. The professionals who serve this market — at private aviation companies, ultra-luxury hotel groups, expedition travel companies, and yacht charter operations — are building careers where the relationship is the product and where the ability to anticipate and exceed expectation is a skill that takes years to develop and cannot be taught from a manual. Aman Resorts, Four Seasons, and the major luxury travel companies all have management associate programs that recruit from hospitality programs with genuine luxury orientation.'
+        }
+      ]
     },
     {
       major_label: 'Culinary Arts',
@@ -679,7 +823,25 @@ const MAJOR_MAP = {
       program_keywords: ['culinary arts', 'food service', 'restaurant management', 'CIA culinary', 'chef pipeline'],
       entry_careers: ['Line Cook', 'Pastry Assistant', 'Kitchen Manager Trainee'],
       world_alignment: 'Make',
-      cc_transfer_friendly: false
+      cc_transfer_friendly: false,
+      deployment_contexts: [
+        {
+          domain: 'Restaurant Ownership & Culinary Entrepreneurship',
+          edge: 'The chefs who build lasting restaurant businesses are not just people who cook well. They are people who understand food as a business — who can cost a menu, manage a kitchen team, build a relationship with the dining room, and make the decisions that determine whether a restaurant is still open in its fifth year. The Culinary Institute of America in Hyde Park has graduated more successful restaurant operators than any other program in the country, not because it teaches the best cooking techniques, but because it insists that cooking and business are not separate disciplines and that the students who treat them as such will be better prepared than those who do not.'
+        },
+        {
+          domain: 'Food Media, Styling & Content Creation',
+          edge: 'The way people think about food, cook at home, and make decisions about what restaurants to visit is now shaped as much by digital media as by any other influence — and the professionals who create that content are not photographers who happen to like food. They are people who understand food deeply enough to make it compelling, and who have developed the visual and narrative skills to communicate that understanding across platforms. A culinary student who develops genuine media instincts alongside kitchen skills is building toward a career in food content that the major food media companies, cookbook publishers, and culinary brands are actively trying to staff with people who arrive with both.'
+        },
+        {
+          domain: 'Research & Development Chef',
+          edge: 'Every major food company, restaurant chain, and ingredient manufacturer has a research and development kitchen where the products and menu items of the next several years are being developed, tested, and refined. The professionals who run those kitchens are not chefs who became scientists or scientists who became chefs — they are people who developed genuine fluency in both culinary craft and food science simultaneously. A culinary student who develops food science knowledge alongside technical kitchen skills is building toward an R&D career that companies like PepsiCo, Nestlé, and the major restaurant chains describe as one of their most important and hardest-to-fill positions, because it requires a combination that very few training programs explicitly develop.'
+        },
+        {
+          domain: 'Catering & Large-Scale Event Production',
+          edge: 'Feeding five hundred people at a wedding is not the same problem as feeding five hundred people at a hospital. The catering professionals who operate at scale — for corporate clients, major events, institutional accounts, and private clients with high expectations — are managing food production systems that require the same level of operational discipline as any manufacturing environment, combined with the hospitality instincts that make large-scale food service feel personal rather than industrial. A culinary student who develops operational and logistics thinking alongside culinary skill is building toward a catering career that generates significant revenue, builds deep client relationships, and is less subject to the volatility of restaurant ownership than most culinary career paths.'
+        }
+      ]
     },
     {
       major_label: 'Event Management',
@@ -688,7 +850,25 @@ const MAJOR_MAP = {
       program_keywords: ['event management', 'meeting planning', 'conference', 'wedding planning', 'live events'],
       entry_careers: ['Event Coordinator', 'Catering Sales Assistant', 'Conference Services Associate'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Corporate Events & Incentive Travel',
+          edge: 'The meetings, conferences, product launches, and incentive programs that corporations run to motivate their people, educate their customers, and build their cultures are billion-dollar investments that most organizations manage with a level of strategic intention that is far below what the investment warrants. The event professionals who understand both the logistical execution and the strategic purpose of corporate gatherings — who can ask why this event needs to happen and what it should accomplish before they ask where it should be held — are building toward careers in corporate event management that the major hotel companies, destination management companies, and corporate meeting planning firms describe as among their most valuable and hardest-to-develop professionals.'
+        },
+        {
+          domain: 'Experiential Marketing & Brand Activation',
+          edge: 'The most effective marketing a brand can do is not advertising — it is creating an experience that puts the right people in direct contact with what the brand actually is, under conditions that make the encounter memorable. Experiential marketing and brand activation are the disciplines that design those encounters, and the professionals who do it well are building toward a career at the intersection of event production and marketing strategy that every major consumer brand now invests in and very few have the people to execute with real sophistication. George P. Johnson, Jack Morton, and the major experiential agencies all recruit event management graduates who develop both operational and strategic fluency.'
+        },
+        {
+          domain: 'Music Festivals & Live Entertainment Touring',
+          edge: 'The infrastructure that makes a music festival work — the site logistics, vendor management, ticketing systems, security protocols, artist hospitality, and the thousand other operational details that determine whether forty thousand people have a safe and memorable experience — is designed and executed by event professionals who have chosen one of the most demanding and most personally rewarding applications of their discipline. A hospitality and event management student who develops genuine interest in live entertainment is building toward a career in festival and touring production that companies like Live Nation, AEG, and the major independent festival operators describe as a career path that almost everyone in it arrived at without formal preparation — which means the people who arrive with it consistently advance faster.'
+        },
+        {
+          domain: 'Nonprofit Galas & Fundraising Events',
+          edge: 'The events that raise the most money for the causes that matter are not simply nice parties. They are carefully engineered experiences designed to move a room of people from appreciation to action — to make the ask feel like an honor rather than a request, and to send every person home feeling that they are part of something worth sustaining. The event professionals who specialize in nonprofit and fundraising events are doing work that combines the craft of event production with an understanding of donor psychology and organizational mission that most event programs do not develop explicitly. A student who develops this combination is building toward a career where the events they produce have consequences that extend far beyond the evening itself.'
+        }
+      ]
     },
     {
       major_label: 'Tourism & Travel Management',
@@ -697,7 +877,21 @@ const MAJOR_MAP = {
       program_keywords: ['tourism', 'travel management', 'destination marketing', 'cruise industry', 'travel operations'],
       entry_careers: ['Travel Coordinator', 'Tourism Marketing Associate', 'Cruise Line Operations Trainee'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Destination Marketing & Tourism Development',
+          edge: 'The decisions that determine where people choose to spend their travel dollars — which cities, which regions, which countries attract visitors and the economic activity they bring — are made by destination marketing professionals who understand both the product they are selling and the psychology of the traveler they are trying to reach. A tourism student who develops genuine marketing and economic development instincts alongside operational knowledge is building toward a career in destination management that convention and visitors bureaus, state tourism boards, and national tourism agencies describe as one of their most consequential and hardest-to-develop functions.'
+        },
+        {
+          domain: 'Cruise Industry & Maritime Hospitality',
+          edge: 'The cruise industry is one of the most operationally complex environments in hospitality — a floating city that must be provisioned, staffed, and operated to deliver a hospitality experience while managing the safety, environmental compliance, and logistical requirements of a vessel at sea. Royal Caribbean, Carnival Corporation, and Norwegian Cruise Line all have management associate programs that recruit hospitality and tourism graduates who want to build careers in an environment where the operational challenges are unlike anything on land, and where the professionals who thrive develop capabilities that are genuinely difficult to develop anywhere else.'
+        },
+        {
+          domain: 'Sustainable Tourism & Ecotourism Development',
+          edge: 'The places that attract travelers because of their natural and cultural integrity are also the places most vulnerable to being degraded by the travel that comes to experience them. Sustainable tourism development — designing experiences that generate economic value for local communities while preserving the environments and cultures that make those places worth visiting — is one of the most complex and consequential challenges in the industry. A tourism student who develops genuine environmental and community development knowledge alongside operational training is building toward a career in ecotourism and sustainable travel that the Global Sustainable Tourism Council and the major sustainable travel companies describe as a practice they cannot currently staff to the level the growth of the sector requires.'
+        }
+      ]
     }
   ],
 
@@ -712,7 +906,21 @@ const MAJOR_MAP = {
       program_keywords: ['marketing', 'consumer behavior', 'brand management', 'retail marketing', 'e-commerce'],
       entry_careers: ['Marketing Coordinator', 'Brand Associate', 'E-Commerce Analyst'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'E-Commerce & Digital Retail Strategy',
+          edge: 'The shift from physical retail to digital commerce has not simply changed where people buy things — it has changed what information is available to the people selling them, how quickly they can test ideas, and how specifically they can understand the relationship between a marketing decision and a revenue outcome. A marketing student who develops genuine fluency in digital commerce — how search, social, email, and paid media interact with each other and with the purchase funnel — is building toward a career in e-commerce strategy that every brand selling consumer products now needs and that very few candidates arrive prepared for at the depth the role requires. Shopify, Amazon Seller Central, and the major e-commerce platforms all have partner programs that recruit marketing graduates who understand digital commerce at a systems level.'
+        },
+        {
+          domain: 'Consumer Insights & Market Research',
+          edge: 'The companies that consistently make better products than their competitors are almost always the ones that understand their customers better — not through intuition, but through research that is rigorous enough to reveal what people actually want rather than what they say they want. Consumer insights is the discipline that connects the customer to every major product, marketing, and business decision a company makes, and the professionals who do it well combine the rigor of social science with the commercial instincts to translate findings into decisions. Nielsen, Ipsos, and the major market research firms all recruit marketing graduates who have developed both qualitative and quantitative research skills.'
+        },
+        {
+          domain: 'Category Management & Retail Buying',
+          edge: 'The decisions that determine which products appear on a store\'s shelves, in what quantity, at what price, and in what position relative to competitors are made by category managers and buyers who understand both the consumer and the economics of retail in a way that most people outside the industry have never considered. Category management sits at the intersection of marketing, supply chain, and retail operations — and the professionals who develop fluency across all three are building toward one of the most commercially consequential careers in consumer products. Procter & Gamble, Unilever, and the major CPG companies all have category management training programs that recruit marketing graduates and invest significantly in their development because the people who do this work well are genuinely difficult to find.'
+        }
+      ]
     },
     {
       major_label: 'Retail Management',
@@ -721,7 +929,21 @@ const MAJOR_MAP = {
       program_keywords: ['retail management', 'merchandising', 'store operations', 'loss prevention', 'supply chain retail'],
       entry_careers: ['Retail Manager Trainee', 'Merchandise Coordinator', 'Buying Assistant'],
       world_alignment: 'Systems',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Retail Operations & Store Leadership',
+          edge: 'The general manager of a high-volume retail location is running a business — with a P&L, a team, an inventory, a customer base, and a set of operational standards that must be maintained while all of those variables are in constant motion. The people who lead great retail operations are not simply good at following procedures. They are professionals who understand how a store functions as a system, how to develop a team in an environment with high turnover, and how to create a customer experience that consistently exceeds the expectation that the brand has set. Target, Nordstrom, and the major retail companies all have accelerated management programs that recruit retail management graduates and move them toward store leadership significantly faster than the general population of retail employees.'
+        },
+        {
+          domain: 'Merchandising & Assortment Planning',
+          edge: 'The decisions that determine which products a retailer carries, in what sizes and quantities, at what price points, and in what visual arrangement are among the most financially consequential decisions in retail — and the professionals who make them well are combining art and analysis in a way that most training programs teach separately. Merchandising and assortment planning require a genuine understanding of customer psychology, sell-through data, trend forecasting, and the economics of inventory that most retail employees develop only after years of experience. The Fashion Institute of Technology and the retail management programs at Michigan State and University of Arizona have built merchandising concentrations with direct industry relationships at Gap Inc., Target, and the major retail buyers.'
+        },
+        {
+          domain: 'Loss Prevention & Retail Security',
+          edge: 'The shrinkage that reduces retail profitability — through external theft, internal theft, administrative error, and supplier fraud — costs the retail industry billions of dollars annually, and the professionals who manage it are doing work that requires a combination of operational knowledge, human behavior understanding, and analytical capability that most organizations develop only through experience. A retail management student who develops genuine interest in loss prevention is building toward a career that every major retailer needs qualified professionals for and that very few training programs address directly. The Loss Prevention Foundation offers professional certifications that have become the credential of record in the field.'
+        }
+      ]
     },
     {
       major_label: 'Supply Chain Management',
@@ -730,7 +952,25 @@ const MAJOR_MAP = {
       program_keywords: ['supply chain', 'logistics', 'procurement', 'inventory management', 'APICS'],
       entry_careers: ['Supply Chain Analyst', 'Procurement Coordinator', 'Inventory Planner'],
       world_alignment: 'Systems',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Global Procurement & Strategic Sourcing',
+          edge: 'The decisions about where to source materials, from which suppliers, under what contractual terms, and with what contingency plans for disruption are among the most financially consequential and least publicly visible decisions that large organizations make. A supply chain student who develops genuine procurement expertise — who understands how to evaluate supplier capability, negotiate contracts, and manage relationships across cultural and regulatory contexts — is building toward a career in strategic sourcing that Boeing, Apple, and the major manufacturers describe as one of the most important functions in their organizations and one of the hardest to staff with people who have formal preparation. The Institute for Supply Management\'s CPSM certification is the credential that validates this expertise.'
+        },
+        {
+          domain: 'Logistics Technology & Distribution Optimization',
+          edge: 'The systems that move products from manufacturers to customers — the warehouses, the transportation networks, the routing algorithms, the inventory management platforms — are among the most sophisticated and most consequential technology systems in the global economy. A supply chain student who develops genuine technology fluency alongside operational knowledge is building toward a career in logistics technology that Amazon, UPS, and the major third-party logistics companies are actively developing people for, because the combination of supply chain understanding and technology capability is rarer than either alone. The MIT Center for Transportation and Logistics has built the most rigorous undergraduate supply chain program in the country, and it prepares students for exactly this intersection.'
+        },
+        {
+          domain: 'Humanitarian Logistics & Disaster Response',
+          edge: 'The supply chains that deliver food, medicine, and shelter to populations affected by disaster and conflict are not simpler than commercial supply chains — they are harder. The environments are more uncertain, the consequences of failure are more severe, and the resources are more constrained. The logistics professionals who work in humanitarian supply chains — at the World Food Programme, UNICEF, the International Committee of the Red Cross, and the major humanitarian implementing organizations — are doing some of the most consequential supply chain work in the world. A supply chain student who develops genuine interest in this application is building toward a career where the operational skills they develop in commercial environments are directly transferable to contexts where those skills matter most.'
+        },
+        {
+          domain: 'Sustainability & Circular Supply Chain',
+          edge: 'The pressure on companies to understand the environmental and social consequences of their supply chains — where their materials come from, what the working conditions are in their supplier factories, what happens to their products at end of life — is accelerating faster than most supply chain organizations are prepared to respond. The professionals who understand how to design supply chains that minimize environmental impact while remaining commercially viable are building toward a career in sustainable supply chain management that is growing faster than almost any other specialization in the field. Patagonia\'s supply chain team and the sustainability practices at the major consulting firms both actively recruit supply chain graduates who have developed environmental and social governance knowledge alongside operational training.'
+        }
+      ]
     },
     {
       major_label: 'Entrepreneurship',
@@ -739,7 +979,25 @@ const MAJOR_MAP = {
       program_keywords: ['entrepreneurship', 'startup', 'small business', 'venture', 'innovation', 'founder pipeline'],
       entry_careers: ['Startup Founder', 'Business Development Associate', 'Product Manager Trainee'],
       world_alignment: 'Systems',
-      cc_transfer_friendly: false
+      cc_transfer_friendly: false,
+      deployment_contexts: [
+        {
+          domain: 'Technology Startups & Venture-Backed Companies',
+          edge: 'The companies that define the next decade of the technology industry are being started right now by people in their twenties who are building things that do not yet have competitors, serving markets that have not yet been named, and raising money from investors who are betting on the founder as much as the idea. An entrepreneurship student who develops genuine product instincts, who understands how venture capital works and what investors are actually evaluating, and who builds the network that allows access to the ecosystem where these things happen, is positioning themselves for a career in technology startups that most students approach without any of those foundations. Babson, Stanford, and MIT all have entrepreneurship programs with direct connections to the venture community that the students who engage them seriously use to build things faster and with more support than those who discover the ecosystem after graduation.'
+        },
+        {
+          domain: 'Social Enterprise & Impact Entrepreneurship',
+          edge: 'The organizations that are trying to solve social problems with market discipline — that believe the most sustainable way to address poverty, health disparities, environmental degradation, and educational inequity is to build businesses that profit from solving them — are led by entrepreneurs who chose to apply their ambition to problems that matter. Social entrepreneurship is not charity with a business model. It is the application of genuine commercial rigor to problems that the market has historically been unable or unwilling to address. Ashoka, the Skoll Foundation, and the major impact investing funds all support social enterprises led by founders who developed their entrepreneurial skills alongside their understanding of the problems they are trying to solve.'
+        },
+        {
+          domain: 'Family Business Succession & Entrepreneurial Legacy',
+          edge: 'The most common form of entrepreneurship is not the Silicon Valley startup. It is the family business — the company that was built by a founder and is now facing the question of how it continues, who leads it, and how it evolves without losing what made it worth continuing. An entrepreneurship student who comes from or is interested in a family business context is building toward one of the most consequential and most personal leadership challenges in business — the succession that either preserves a legacy or extinguishes it. The Family Business Review and the academic programs at Kennesaw State, Loyola Chicago, and Baylor all have family business entrepreneurship concentrations that address this specific and underserved career path.'
+        },
+        {
+          domain: 'Intrapreneurship & Corporate Innovation',
+          edge: 'The largest companies in the world are trying to figure out how to innovate with the urgency of a startup while operating at the scale of an institution — and the people who can help them do that are not consultants who have never built anything. They are professionals who understand how entrepreneurial processes work, why large organizations resist them, and what it takes to protect an innovative initiative inside a system that is optimized for efficiency rather than experimentation. Corporate innovation and intrapreneurship have become career tracks at major companies including Google, Amazon, and 3M, and the professionals who pursue them with genuine entrepreneurial preparation bring a perspective that most corporate career paths cannot develop.'
+        }
+      ]
     }
   ],
 
@@ -754,7 +1012,21 @@ const MAJOR_MAP = {
       program_keywords: ['health coaching', 'wellness', 'fitness management', 'personal training', 'lifestyle'],
       entry_careers: ['Personal Trainer', 'Wellness Coach', 'Corporate Fitness Coordinator'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Corporate Wellness & Employee Health Programs',
+          edge: 'The largest employers in the country have discovered something that the research has been demonstrating for decades: the health of a workforce is directly correlated with its productivity, and the companies that invest in genuine employee wellness programs — not gym discounts and step challenges, but comprehensive programs that address stress, sleep, nutrition, chronic disease prevention, and behavioral health — see returns that justify the investment. A wellness student who develops genuine expertise in program design, health behavior change, and organizational implementation is building toward a career in corporate wellness that every large employer needs and that very few practitioners arrive prepared to lead with real rigor. The National Wellness Institute and the American College of Sports Medicine both offer certifications that have become the credentials of record for professionals in this field.'
+        },
+        {
+          domain: 'Health Coaching & Chronic Disease Management',
+          edge: 'The chronic diseases that consume the majority of healthcare spending in the United States — diabetes, heart disease, obesity, hypertension — are almost entirely lifestyle-related, and the medical system that treats them is not designed to change the behaviors that cause them. Health coaches are filling a gap that physicians cannot fill because they do not have time and that patients cannot fill because they have not been given the tools. A wellness student who develops genuine behavioral science knowledge alongside health expertise is building toward a health coaching practice where the demand is enormous, the reimbursement landscape is improving, and the practitioners who arrive with serious training are consistently more effective than those who arrived with only a certification. The National Board for Health and Wellness Coaching credential validates this practice at a level that the major health systems and health insurance companies are beginning to recognize and reimburse.'
+        },
+        {
+          domain: 'Fitness Business & Studio Ownership',
+          edge: 'The fitness industry has evolved from gym membership models to a landscape of boutique studios, digital platforms, and hybrid experiences that serve clients with a specificity and intimacy that traditional gyms never achieved. The professionals who build successful fitness businesses in this environment are not simply great trainers who decided to open a space. They are entrepreneurs who understand the economics of a service business, the psychology of client retention, and the marketing required to build an audience in a market that is crowded with alternatives. A wellness student who develops genuine business skills alongside fitness expertise is building toward a fitness business career that the boutique studio industry, the digital fitness platforms, and the major fitness franchise companies are all trying to develop better pipelines for.'
+        }
+      ]
     },
     {
       major_label: 'Social Work',
@@ -763,7 +1035,25 @@ const MAJOR_MAP = {
       program_keywords: ['social work', 'BSW pipeline', 'community services', 'case management', 'nonprofit services'],
       entry_careers: ['Case Manager', 'Community Outreach Worker', 'Youth Program Coordinator'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Clinical Social Work & Psychotherapy',
+          edge: 'The licensed clinical social worker is the most common provider of mental health services in the United States — more than psychiatrists, more than psychologists, more than any other clinical profession. The MSW followed by clinical licensure is the credential that enables this practice, and the social workers who complete it are entering a field where the demand for their services will exceed their capacity for their entire career and where the ability to genuinely help people in crisis is the measure of the work. Washington University in St. Louis and Columbia University both have MSW programs with direct clinical training relationships that prepare graduates for licensure and for the full scope of independent clinical practice.'
+        },
+        {
+          domain: 'Child Welfare & Family Services',
+          edge: 'The professionals who work in child protective services, foster care, adoption, and family preservation are doing the most consequential and most emotionally demanding work in public service — making decisions that affect children\'s lives at the moments when those lives are most fragile. A social work student who prepares for this work with genuine seriousness — who develops the clinical skills, the resilience, and the systems understanding to be effective in a field that burns out the unprepared — is building toward a career where the shortage of qualified professionals has direct consequences for the children the system is supposed to protect. The Annie E. Casey Foundation has documented the workforce crisis in child welfare for decades and funds training initiatives at social work programs that develop graduates specifically for this work.'
+        },
+        {
+          domain: 'Healthcare Social Work & Medical Settings',
+          edge: 'Every hospital, hospice, oncology unit, and rehabilitation center employs social workers who help patients and families navigate the practical and emotional consequences of serious illness — the insurance denials, the discharge planning, the family conflict, the grief, the decisions that have to be made under conditions of fear and uncertainty. Healthcare social work is one of the most stable and well-compensated applications of the degree, and it is a field where the emotional intelligence and clinical training of a social worker are as consequential to patient outcomes as the medical care itself. The Society for Social Work Leadership in Health Care recognizes and supports the professionals doing this work, and major health systems across the country actively develop pipelines from MSW programs.'
+        },
+        {
+          domain: 'Policy Advocacy & Systemic Change',
+          edge: 'The problems that social workers encounter in individual cases — poverty, housing instability, substance use, domestic violence, inadequate healthcare access — are not individual problems. They are systemic failures that will only change through policy. A social work student who develops genuine policy and advocacy skills alongside clinical training is building toward a career in social policy that NASW, the Center on Budget and Policy Priorities, and the major social justice organizations describe as one of their most important and hardest-to-fill functions — because it requires people who understand both the lived experience of the systems they are trying to change and the policy tools available to change them.'
+        }
+      ]
     },
     {
       major_label: 'Cosmetology / Esthetics (Applied)',
@@ -772,7 +1062,25 @@ const MAJOR_MAP = {
       program_keywords: ['cosmetology', 'esthetics', 'beauty industry', 'salon management', 'personal care'],
       entry_careers: ['Licensed Cosmetologist', 'Salon Manager', 'Beauty Brand Educator'],
       world_alignment: 'Make',
-      cc_transfer_friendly: false
+      cc_transfer_friendly: false,
+      deployment_contexts: [
+        {
+          domain: 'Salon Ownership & Beauty Business',
+          edge: 'The cosmetologist who builds a successful salon is not simply a skilled practitioner who opened a space. They are an entrepreneur who understands the economics of a service business, the art of client retention, the management of a creative team, and the marketing required to build a clientele that chooses them specifically — not the location, not the price, not the convenience, but the person and the experience they create. A cosmetology student who develops genuine business instincts alongside technical excellence is building toward a business ownership career that the beauty industry consistently rewards, where the practitioners who reach full books do so because they understood that their craft and their client relationships are both worth investing in deliberately.'
+        },
+        {
+          domain: 'Beauty Brand Education & Platform Training',
+          edge: 'The major beauty brands — L\'Oréal, Wella, Schwarzkopf, OPI — employ educators who travel to salons and schools teaching the techniques and brand story behind their products to the professionals who use and recommend them. Brand education is one of the most financially rewarding and most overlooked careers available to a licensed cosmetologist — it offers the opportunity to develop teaching skills, build a national network, and represent a brand that invests in the professional\'s development in return. A cosmetologist who develops genuine platform presence alongside technical mastery is building toward an education career that the major professional beauty companies recruit from the pool of practitioners who have distinguished themselves both technically and as communicators.'
+        },
+        {
+          domain: 'Film, Television & Editorial Beauty',
+          edge: 'The makeup and hair work that appears on film sets, in editorial photography, and on the runway is not the same work that happens in a salon — it requires an understanding of how light interacts with skin and product, how beauty reads on camera versus in person, and how to work quickly and precisely under production conditions where every minute has a cost. A cosmetology student who develops genuine interest in beauty for media and entertainment is building toward a career in film and editorial that the International Alliance of Theatrical Stage Employees union represents, and where the practitioners who develop both technical skill and the ability to collaborate with directors and photographers build careers that are significantly more durable than general salon work.'
+        },
+        {
+          domain: 'Medical Aesthetics & Spa Medicine',
+          edge: 'The intersection of cosmetology and medicine — the esthetic treatments that are performed in medical settings, under physician supervision, and that address skin conditions, scarring, and aging with tools and techniques that require both clinical training and esthetic skill — is one of the fastest-growing areas of healthcare. Medical estheticians who develop the additional training to work in dermatology offices, plastic surgery practices, and medical spas are building toward a career that commands significantly higher compensation than salon work, serves a clientele with specific clinical needs, and operates in a regulatory environment that rewards professionals who understand the medical context of their work.'
+        }
+      ]
     },
     {
       major_label: 'Family & Consumer Sciences',
@@ -781,7 +1089,25 @@ const MAJOR_MAP = {
       program_keywords: ['family sciences', 'consumer sciences', 'child development', 'human development', 'family studies'],
       entry_careers: ['Child Life Specialist', 'Family Services Coordinator', 'Early Childhood Educator'],
       world_alignment: 'People',
-      cc_transfer_friendly: true
+      cc_transfer_friendly: true,
+      deployment_contexts: [
+        {
+          domain: 'Early Childhood Education & Development',
+          edge: 'The experiences that shape cognitive, social, and emotional development happen earlier than most people realize, and the research on what quality early childhood education produces — in school readiness, lifetime earnings, health outcomes, and civic participation — is among the most compelling in all of social science. A family and consumer sciences student who develops genuine early childhood expertise is building toward a career in early education where the practitioners who understand child development at a research level are consistently more effective than those who learned from observation alone. The David and Lucile Packard Foundation and the Robert Wood Johnson Foundation both fund initiatives that recognize and develop early childhood professionals who bring genuine developmental science into their practice.'
+        },
+        {
+          domain: 'Consumer Financial Education & Counseling',
+          edge: 'The financial decisions that most families struggle with — debt management, retirement planning, housing affordability, insurance choices — are not complicated in the way that investment banking is complicated. They are complicated in the way that human behavior around money is complicated: people know what they should do and consistently do something else. A family and consumer sciences student who develops genuine financial counseling expertise alongside human development knowledge is building toward a career in consumer financial education that credit unions, nonprofit housing counseling agencies, and financial education nonprofits describe as one of their most critical and hardest-to-fill roles. The Association for Financial Counseling and Planning Education offers the AFCPE certification that validates this specialization.'
+        },
+        {
+          domain: 'Child Life Specialist & Pediatric Support',
+          edge: 'Children who are hospitalized — for surgery, illness, injury, or the treatment of chronic conditions — are not simply small patients. They are developing human beings whose experience of the healthcare system has consequences for their psychological wellbeing that extend far beyond the medical outcome. Child life specialists are the professionals trained to support children and families through medical experiences, using play, education, and therapeutic intervention to reduce fear, build coping skills, and help children understand and integrate what is happening to them. The Child Life Council certifies practitioners in this specialization, and the major pediatric hospitals — Boston Children\'s, Children\'s Hospital Los Angeles, and Cincinnati Children\'s — all have child life programs that recruit family and consumer sciences graduates with child development depth.'
+        },
+        {
+          domain: 'Family Policy & Advocacy',
+          edge: 'The policies that determine the quality of family life in the United States — parental leave, childcare access, early education funding, food assistance, housing stability — are made by people who either understand what families actually need or are guessing. A family and consumer sciences student who develops genuine policy and advocacy skills alongside human development knowledge is building toward a career in family policy where the First Five Years Fund, Zero to Three, and the major early childhood advocacy organizations consistently describe the shortage of professionals who combine clinical understanding with policy effectiveness as one of their most significant constraints.'
+        }
+      ]
     }
   ],
 
