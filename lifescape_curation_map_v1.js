@@ -33,12 +33,18 @@ const TILE_POOLS = {
   ],
   move: [
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
-    'esports_gaming','horseback_riding','rock_climbing'
+    'esports_gaming','horseback_riding','rock_climbing',
+    'soccer','basketball','football','baseball_softball','volleyball','lacrosse','ice_hockey',
+    'track_field','swimming','gymnastics','wrestling','tennis',
+    'golf','crew_rowing','cross_country','fencing','water_polo'
   ],
   think: [
     'science_experiments','psychology','biology','chemistry','coding_programming',
     'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
-    'true_crime','puzzles_brain_teasers','understanding_why_people'
+    'true_crime','puzzles_brain_teasers','word_puzzles','logic_number_puzzles',
+    'category_pattern_puzzles','understanding_why_people',
+    'chess','debate_mock_un','speech_forensics','scifi_worldbuilding',
+    'journalism','law_justice','economics'
   ],
   people: [
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
@@ -47,7 +53,7 @@ const TILE_POOLS = {
   systems: [
     'cosmetic_beauty_science','cooking_chemistry','medical_science','how_body_moves',
     'learning_differences','environment_sustainability','engineering_challenges',
-    'architecture','nutrition_food_science','business_startups'
+    'robotics_competitions','architecture','nutrition_food_science','business_startups'
   ]
 };
 
@@ -85,6 +91,8 @@ const FREE_TIME_MAP = {
     // Move cluster — full representation
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
     'esports_gaming','horseback_riding','rock_climbing',
+    'soccer','basketball','football','baseball_softball','volleyball','lacrosse','ice_hockey',
+    'track_field','swimming','gymnastics','wrestling','tennis',
     // Systems tiles that connect to movement
     'how_body_moves','medical_science','nutrition_food_science',
     // People tiles that connect to movement
@@ -97,7 +105,10 @@ const FREE_TIME_MAP = {
     // Think cluster — full representation
     'science_experiments','psychology','biology','chemistry','coding_programming',
     'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
-    'true_crime','puzzles_brain_teasers','understanding_why_people',
+    'true_crime','puzzles_brain_teasers','word_puzzles','logic_number_puzzles',
+    'category_pattern_puzzles','understanding_why_people',
+    'chess','debate_mock_un','speech_forensics','scifi_worldbuilding',
+    'journalism','law_justice','economics',
     // Systems tiles that connect to thinking
     'cosmetic_beauty_science','medical_science','engineering_challenges',
     'environment_sustainability','cooking_chemistry','architecture',
@@ -341,7 +352,49 @@ const TILE_ADJACENCY = {
   engineering_challenges:['architecture','woodworking','three_d_printing','coding_programming'],
   architecture:         ['woodworking','engineering_challenges','drawing','environment_sustainability'],
   nutrition_food_science:['cooking','biology','fitness_lifting','medical_science'],
-  business_startups:    ['entrepreneurship','data_statistics','coding_programming']
+  business_startups:    ['entrepreneurship','data_statistics','coding_programming'],
+
+  // ── New team sports — adjacent to each other and to body/movement tiles ──
+  soccer:               ['basketball','football','lacrosse','ice_hockey','how_body_moves'],
+  basketball:           ['soccer','volleyball','football','how_body_moves'],
+  football:             ['basketball','lacrosse','ice_hockey','fitness_lifting'],
+  baseball_softball:    ['data_statistics','track_field','fitness_lifting'],
+  volleyball:           ['basketball','soccer','how_body_moves'],
+  lacrosse:             ['soccer','ice_hockey','football','how_body_moves'],
+  ice_hockey:           ['lacrosse','soccer','football','martial_arts'],
+
+  // ── New individual competitive sports — adjacent to each other and to data/science tiles ──
+  track_field:          ['swimming','cross_country','how_body_moves','data_statistics'],
+  swimming:             ['track_field','how_body_moves','medical_science'],
+  gymnastics:           ['dance','how_body_moves','fitness_lifting'],
+  wrestling:            ['martial_arts','fitness_lifting','how_body_moves'],
+  tennis:               ['golf','fitness_lifting','data_statistics'],
+
+  // ── New access/endurance sports — adjacent to each other and to relevant outdoor/data tiles ──
+  golf:                 ['tennis','entrepreneurship','business_startups'],
+  crew_rowing:          ['swimming','fitness_lifting','how_body_moves'],
+  cross_country:        ['track_field','how_body_moves','environment_sustainability'],
+  fencing:              ['martial_arts','chess','puzzles_brain_teasers'],
+  water_polo:           ['swimming','how_body_moves','fitness_lifting'],
+
+  // ── New puzzle tiles — adjacent to each other, to chess, and to the original generic puzzle tile ──
+  word_puzzles:         ['puzzles_brain_teasers','writing_stories','category_pattern_puzzles'],
+  logic_number_puzzles: ['puzzles_brain_teasers','data_statistics','chess'],
+  category_pattern_puzzles:['puzzles_brain_teasers','word_puzzles','data_statistics'],
+
+  // ── New academic/competitive club tiles — adjacent to each other and to relevant Think/Make tiles ──
+  chess:                ['logic_number_puzzles','data_statistics','puzzles_brain_teasers'],
+  debate_mock_un:       ['speech_forensics','philosophy','advocacy_activism'],
+  speech_forensics:     ['debate_mock_un','writing_stories','philosophy'],
+  scifi_worldbuilding:  ['writing_stories','ai_machine_learning','roblox_game_design'],
+
+  // ── New Systems tile — adjacent to engineering and coding tiles ──
+  robotics_competitions:['engineering_challenges','coding_programming','three_d_printing'],
+
+  // ── Journalism, Law & Justice, Economics — adjacent to each other and to relevant existing tiles ──
+  journalism:           ['writing_stories','filmmaking','data_statistics','speech_forensics'],
+  law_justice:          ['debate_mock_un','economics','advocacy_activism','speech_forensics'],
+  economics:            ['data_statistics','law_justice','business_startups','entrepreneurship']
 };
 
 function surfaceRelatedTiles(selectedIds, alreadyShownIds) {

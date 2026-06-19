@@ -606,6 +606,24 @@ const VECTOR_CROSSWALK = [
     ]
   },
 
+  {
+    id: "ice_hockey",
+    label: "Ice hockey",
+    cluster: "move",
+    riasec: ["S", "E", "R"],
+    naics_sectors: [71, 61, 62],
+    industries: ["Athletics & Sports", "Sports Management", "Coaching & Education", "Sports Medicine"],
+    career_emergence: [
+      "Professional Athlete", "Coach", "Athletic Director", "Sports Medicine Physician",
+      "Sports Marketing Executive", "Athletic Trainer"
+    ],
+    geo_signal: true,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["im_one_who_holds_group_together"], unlocks: ["Team Captain", "Head Coach"] }
+    ]
+  },
+
   // ── Individual competitive sports — Realistic/Conventional signal: self-measured discipline, data, solo accountability ──
 
   {
@@ -989,9 +1007,67 @@ const VECTOR_CROSSWALK = [
     ]
   },
 
+  // ── Daily word/logic puzzle games — Wordle, Sudoku, NYT Connections — distinct from generic puzzles and from chess ──
+
+  {
+    id: "word_puzzles",
+    label: "Word puzzles (Wordle, crosswords)",
+    cluster: "think",
+    riasec: ["I", "A", "C"],
+    naics_sectors: [54, 51, 61],
+    industries: ["Publishing & Media", "Linguistics & Translation", "Journalism", "Education", "Game & Puzzle Design"],
+    career_emergence: [
+      "Linguist", "Editor", "Crossword Constructor", "Journalist",
+      "Translator", "Game Designer", "Speechwriter", "Lexicographer"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["writing_stories"], unlocks: ["Crossword Constructor", "Editor", "Lexicographer"] }
+    ]
+  },
+
+  {
+    id: "logic_number_puzzles",
+    label: "Logic & number puzzles (Sudoku, logic grids)",
+    cluster: "think",
+    riasec: ["I", "C", "R"],
+    naics_sectors: [54, 52, 51],
+    industries: ["Data Science", "Actuarial Science", "Software Engineering", "Operations Research", "Finance"],
+    career_emergence: [
+      "Actuary", "Data Scientist", "Operations Research Analyst", "Software Engineer",
+      "Quantitative Analyst", "Systems Engineer", "Logistics Analyst"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["data_statistics"], unlocks: ["Actuary", "Quantitative Analyst", "Operations Research Analyst"] }
+    ]
+  },
+
+  {
+    id: "category_pattern_puzzles",
+    label: "Category & connections puzzles (NYT Connections)",
+    cluster: "think",
+    riasec: ["I", "A", "C"],
+    naics_sectors: [54, 51, 52],
+    industries: ["Data Science", "Strategy Consulting", "UX Research", "Intelligence Analysis", "Product Strategy"],
+    career_emergence: [
+      "Strategy Consultant", "UX Researcher", "Intelligence Analyst", "Product Strategist",
+      "Data Scientist", "Taxonomy & Information Architect", "Trend Analyst"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["i_see_connections_others_miss"], unlocks: ["Strategy Consultant", "Trend Analyst", "Intelligence Analyst"] },
+      { with: ["data_statistics"], unlocks: ["Data Scientist", "Taxonomy & Information Architect"] }
+    ]
+  },
+
   {
     id: "understanding_why_people",
     label: "Understanding why people do what they do",
+
     cluster: "think",
     riasec: ["I", "S", "A"],
     naics_sectors: [62, 54, 51, 44],
@@ -1078,6 +1154,90 @@ const VECTOR_CROSSWALK = [
     combo_unlocks: [
       { with: ["writing_stories"], unlocks: ["Science Fiction Author", "Game World Designer", "Speculative Concept Artist"] },
       { with: ["ai_machine_learning"], unlocks: ["AI Ethicist", "Technology Futurist", "Speculative Technology Designer"] }
+    ]
+  },
+
+  // ── Journalism, Law, and Economics — broad fields with wide, often-hidden career destinations ──
+
+  {
+    id: "journalism",
+    label: "Journalism & reporting",
+    cluster: "think",
+    riasec: ["I", "A", "E"],
+    naics_sectors: [51, 54, 92],
+    industries: ["News & Media", "Broadcasting", "Publishing", "Data Journalism", "Documentary Film"],
+    career_emergence: [
+      "Investigative Journalist", "Broadcast Journalist", "Foreign Correspondent", "Data Journalist",
+      "Photojournalist", "Sports Journalist", "Documentary Producer", "News Anchor"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["data_statistics"], unlocks: ["Data Journalist", "Investigative Analyst"] },
+      { with: ["filmmaking"], unlocks: ["Documentary Producer", "Broadcast Journalist"] },
+      { with: ["i_cant_ignore_unfairness"], unlocks: ["Investigative Journalist", "Civil Rights Reporter"] }
+    ]
+  },
+
+  {
+    id: "law_justice",
+    label: "Law, justice & how rules work",
+    cluster: "think",
+    riasec: ["E", "I", "S"],
+    naics_sectors: [54, 92, 52, 71, 51],
+    industries: [
+      "Law & Legal Services", "Business & Corporate Law", "Finance & Investment",
+      "Sports & Entertainment", "Media & Broadcasting", "Government & Politics"
+    ],
+    career_emergence: [
+      "Trial Attorney", "Public Defender", "Civil Rights Attorney", "Judge",
+      "General Counsel", "Compliance Officer", "Contract Attorney", "M&A Counsel",
+      "Private Equity Partner", "Investment Banking Attorney", "Securities Attorney",
+      "Sports League Commissioner", "Sports General Manager", "Talent Agent", "Entertainment Attorney",
+      "Legal Analyst / Commentator", "Media Counsel",
+      "Legislative Counsel", "Policy Director", "Chief of Staff", "Campaign Manager"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["soccer"], unlocks: ["Sports General Manager", "Player Agent", "Sports League Commissioner"] },
+      { with: ["basketball"], unlocks: ["Sports General Manager", "Player Agent", "Sports League Commissioner"] },
+      { with: ["football"], unlocks: ["Sports General Manager", "Player Agent", "Sports League Commissioner"] },
+      { with: ["baseball_softball"], unlocks: ["Sports General Manager", "Player Agent", "Sports League Commissioner"] },
+      { with: ["volleyball"], unlocks: ["Sports General Manager", "Player Agent"] },
+      { with: ["lacrosse"], unlocks: ["Sports General Manager", "Player Agent"] },
+      { with: ["ice_hockey"], unlocks: ["Sports General Manager", "Player Agent", "Sports League Commissioner"] },
+      { with: ["filmmaking"], unlocks: ["Talent Agent", "Entertainment Attorney"] },
+      { with: ["music_production"], unlocks: ["Talent Agent", "Entertainment Attorney"] },
+      { with: ["entrepreneurship"], unlocks: ["General Counsel", "Startup Counsel"] },
+      { with: ["data_statistics"], unlocks: ["Securities Attorney", "Antitrust Analyst"] },
+      { with: ["debate_mock_un"], unlocks: ["Trial Attorney", "Policy Director", "Legislative Counsel"] }
+    ]
+  },
+
+  {
+    id: "economics",
+    label: "Economics & how markets work",
+    cluster: "think",
+    riasec: ["I", "C", "E"],
+    naics_sectors: [52, 54, 92, 51],
+    industries: [
+      "Finance & Investment Banking", "Economic Research & Academia", "Public Policy & Government",
+      "Antitrust & Regulatory Law", "International Development", "Consumer Insights & Behavioral Economics"
+    ],
+    career_emergence: [
+      "Investment Banker", "Quantitative Analyst", "Hedge Fund Analyst",
+      "Economist", "Economic Research Professor", "World Bank / IMF Economist",
+      "Policy Analyst", "Federal Reserve Economist", "Antitrust Economist",
+      "Behavioral Economist", "Consumer Insights Analyst", "Development Economist"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["data_statistics"], unlocks: ["Quantitative Analyst", "Hedge Fund Analyst", "Federal Reserve Economist"] },
+      { with: ["law_justice"], unlocks: ["Antitrust Economist", "Regulatory Economist"] },
+      { with: ["understanding_why_people"], unlocks: ["Behavioral Economist", "Consumer Insights Analyst"] },
+      { with: ["entrepreneurship"], unlocks: ["Venture Capital Analyst", "Startup Economist"] }
     ]
   },
 
