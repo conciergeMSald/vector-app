@@ -25,16 +25,29 @@
 :root{
   --ink:#0a0a0a;--ink2:#2e2e2e;--ink3:#6a6a6a;--ink4:#9a9a9a;
   --gold:#8B7355;--gl:#C4A882;--gold-pale:#F5EFE6;
-  --rule:rgba(0,0,0,0.1);--bg:#fafaf8;--white:#ffffff;
+  --rule:rgba(0,0,0,0.1);--bg:#F7F4F0;--white:#ffffff;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'DM Sans',system-ui,sans-serif;
-  /* Tile cluster colors */
-  --make-bg:#EEEDFE;--make-txt:#3C3489;--make-bdr:#AFA9EC;--make-sel:#534AB7;
-  --move-bg:#FAECE7;--move-txt:#712B13;--move-bdr:#F0997B;--move-sel:#993C1D;
-  --think-bg:#E6F1FB;--think-txt:#0C447C;--think-bdr:#85B7EB;--think-sel:#185FA5;
-  --people-bg:#FBEAF0;--people-txt:#72243E;--people-bdr:#ED93B1;--people-sel:#993556;
-  --systems-bg:#EAF3DE;--systems-txt:#27500A;--systems-bdr:#97C459;--systems-sel:#3B6D11;
-  --eq-bg:#FAEEDA;--eq-txt:#633806;--eq-bdr:#EF9F27;--eq-sel:#854F0B;
+
+  /* ── The Stamp — tile system ───────────────────────────────────────────
+     Resting: everything desaturated, warm near-white. No color until selected.
+     Selected: full saturation snaps in — the student brings the color in.
+  ──────────────────────────────────────────────────────────────────────── */
+
+  /* Resting state — all clusters identical */
+  --tile-bg:#F5F3EE;
+  --tile-bdr:#D4D0C8;
+  --tile-txt:#9A9588;
+  --tile-txt-hover:#6A6760;
+  --tile-bdr-hover:#B8B4AB;
+
+  /* Selected state — full saturation per cluster */
+  --make-sel:#534AB7;   --make-sel-txt:#EEEDFE;
+  --move-sel:#993C1D;   --move-sel-txt:#FAECE7;
+  --think-sel:#185FA5;  --think-sel-txt:#E6F1FB;
+  --people-sel:#993556; --people-sel-txt:#FBEAF0;
+  --systems-sel:#3B6D11;--systems-sel-txt:#EAF3DE;
+  --eq-sel:#854F0B;     --eq-sel-txt:#FAEEDA;
 }
 
 /* ── BASE ───────────────────────────────────────────── */
@@ -81,33 +94,45 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .tile-count-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding:.75rem 0;border-bottom:0.5px solid var(--rule);}
 .tile-count-label{font-size:12px;color:var(--ink3);}
 .tile-count-num{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--gold);}
-.tile-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;}
+.tile-grid{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:2rem;}
 
-/* Tiles — activity */
-.tile{padding:7px 15px;border-radius:0;font-size:13px;font-weight:400;border:0.5px solid;cursor:pointer;transition:all .15s;user-select:none;font-family:var(--sans);}
-.tile:hover{opacity:.8;}
-.tile-make{background:var(--make-bg);color:var(--make-txt);border-color:var(--make-bdr);}
-.tile-make.sel{background:var(--make-sel);color:#EEEDFE;border-color:var(--make-sel);}
-.tile-move{background:var(--move-bg);color:var(--move-txt);border-color:var(--move-bdr);}
-.tile-move.sel{background:var(--move-sel);color:#FAECE7;border-color:var(--move-sel);}
-.tile-think{background:var(--think-bg);color:var(--think-txt);border-color:var(--think-bdr);}
-.tile-think.sel{background:var(--think-sel);color:#E6F1FB;border-color:var(--think-sel);}
-.tile-people{background:var(--people-bg);color:var(--people-txt);border-color:var(--people-bdr);}
-.tile-people.sel{background:var(--people-sel);color:#FBEAF0;border-color:var(--people-sel);}
-.tile-systems{background:var(--systems-bg);color:var(--systems-txt);border-color:var(--systems-bdr);}
-.tile-systems.sel{background:var(--systems-sel);color:#EAF3DE;border-color:var(--systems-sel);}
+/* ── THE STAMP ── base tile resting state — all clusters identical and desaturated */
+.tile{
+  padding:8px 14px 7px;
+  border-radius:0;
+  font-size:12px;
+  font-weight:400;
+  letter-spacing:0.5px;
+  text-transform:lowercase;
+  border:1px solid var(--tile-bdr);
+  background:var(--tile-bg);
+  color:var(--tile-txt);
+  cursor:pointer;
+  transition:background .18s,color .18s,border-color .18s;
+  user-select:none;
+  font-family:var(--sans);
+}
+.tile:hover{border-color:var(--tile-bdr-hover);color:var(--tile-txt-hover);}
 
-/* EQ tiles — slightly different shape */
-.tile-eq{background:var(--eq-bg);color:var(--eq-txt);border-color:var(--eq-bdr);border-radius:2px;font-style:italic;}
-.tile-eq.sel{background:var(--eq-sel);color:#FAEEDA;border-color:var(--eq-sel);}
+/* Selected — full saturation snaps in per cluster. Student brings the color in. */
+.tile-make.sel  {background:var(--make-sel);  color:var(--make-sel-txt);  border-color:var(--make-sel);}
+.tile-move.sel  {background:var(--move-sel);  color:var(--move-sel-txt);  border-color:var(--move-sel);}
+.tile-think.sel {background:var(--think-sel); color:var(--think-sel-txt); border-color:var(--think-sel);}
+.tile-people.sel{background:var(--people-sel);color:var(--people-sel-txt);border-color:var(--people-sel);}
+.tile-systems.sel{background:var(--systems-sel);color:var(--systems-sel-txt);border-color:var(--systems-sel);}
 
-/* EQ section divider */
-.eq-divider{margin:2rem 0 1.5rem;border-top:0.5px solid var(--rule);padding-top:1.5rem;}
-.eq-intro{font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:var(--ink3);margin-bottom:1rem;}
+/* EQ tiles — serif italic, same desaturated rest, amber on selection */
+.tile-eq{font-style:italic;font-family:var(--serif);font-size:14px;letter-spacing:0.2px;text-transform:none;}
+.tile-eq.sel{background:var(--eq-sel);color:var(--eq-sel-txt);border-color:var(--eq-sel);}
 
-/* ── TILE CLUSTER SECTIONS ─────────────────────────── */
-.cluster-section{margin-bottom:1.75rem;}
-.cluster-section-header{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--ink4);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--rule);}
+/* EQ transition moment — weighted, not a label */
+.eq-divider{margin:3rem 0 2rem;padding-top:2.5rem;}
+.eq-transition{font-family:var(--serif);font-size:22px;font-weight:300;font-style:italic;color:var(--ink);margin-bottom:0.5rem;letter-spacing:0.3px;line-height:1.4;}
+.eq-intro{font-family:var(--serif);font-size:15px;font-weight:300;font-style:italic;color:var(--ink3);margin-bottom:1.5rem;}
+
+/* Cluster sections */
+.cluster-section{margin-bottom:2rem;}
+.cluster-section-header{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--ink4);margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--rule);}
 .cluster-section .tile-grid{margin-bottom:0;}
 
 /* ── ZIP INPUT ─────────────────────────────────────── */
@@ -125,7 +150,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .fc-desc{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;}
 
 /* ── CTA BUTTON ─────────────────────────────────────── */
-.ls-btn{width:100%;padding:14px;background:var(--ink);color:var(--white);border:none;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;letter-spacing:.5px;transition:opacity .2s;margin-top:1.5rem;}
+.ls-btn{width:100%;padding:14px;background:var(--ink);color:var(--white);border:none;border-radius:0;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;letter-spacing:.5px;transition:opacity .2s;margin-top:1.5rem;}
 .ls-btn:hover{opacity:.85;}
 .ls-btn:disabled{opacity:.4;cursor:not-allowed;}
 .ls-btn-outline{width:100%;padding:12px;background:transparent;color:var(--ink);border:0.5px solid var(--rule);font-family:var(--sans);font-size:13px;cursor:pointer;margin-top:.75rem;transition:all .2s;}
@@ -452,7 +477,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="container">
   <div class="ls-eyebrow">Step 2 of 7</div>
   <div class="q" id="s3-q">What sounds interesting?</div>
-  <div class="q-sub" id="s3-sub">Tap anything that catches your eye — things you love, things you've never tried, things you're just curious about. There are no wrong answers.</div>
+  <div class="q-sub" id="s3-sub">Tap what feels true — things you love, have never tried, or are simply curious about.</div>
 
   <div class="tile-count-bar">
     <div class="tile-count-label">Selected</div>
@@ -464,7 +489,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
   <!-- EQ section — who you are -->
   <div class="eq-divider" id="eq-section">
-    <div class="cluster-section-header" id="eq-header">Who you are</div>
+    <div class="eq-transition" id="eq-header">One more thing. This part is different.</div>
     <div class="eq-intro" id="eq-intro">Not what you do — how you see yourself.</div>
     <div class="tile-grid" id="eq-tile-grid"></div>
   </div>
@@ -1119,6 +1144,15 @@ function setVoice(v) {
   if(s1sub) s1sub.textContent = p
     ? "This shapes how we ask about your child. Nothing is permanent. Nothing commits them to anything."
     : "This shapes how we ask questions and how we write your results. Nothing is permanent. Nothing commits you to anything.";
+
+  // Update EQ tile section header immediately — reflects voice before tiles are shown
+  const name = LS_STATE.name || 'your child';
+  const eqHeader = document.getElementById('eq-header');
+  const eqIntro  = document.getElementById('eq-intro');
+  if(eqHeader) eqHeader.textContent = 'One more thing. This part is different.';
+  if(eqIntro)  eqIntro.textContent  = p
+    ? 'Not what they do — how they see themselves.'
+    : 'Not what you do — how you see yourself.';
 }
 function selectPath(v) { setVoice(v); }
 
@@ -1139,8 +1173,8 @@ function updateS2Voice() {
 
   const s3sub = document.getElementById('s3-sub');
   if(s3sub) s3sub.textContent = p
-    ? "Tap anything that catches your eye — things your child loves, has never tried, or is just curious about. There are no wrong answers."
-    : "Tap anything that catches your eye — things you love, things you've never tried, things you're just curious about. There are no wrong answers.";
+    ? "Tap what feels true — things they love, have never tried, or are simply curious about."
+    : "Tap what feels true — things you love, have never tried, or are simply curious about.";
 
   const s4q = document.getElementById('s4-q');
   if(s4q) s4q.textContent = p
