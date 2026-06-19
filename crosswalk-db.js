@@ -344,6 +344,30 @@ const VECTOR_CROSSWALK = [
   },
 
   {
+    id: "legos_building",
+    label: "Legos & building things",
+    cluster: "make",
+    riasec: ["R", "I", "A"],
+    naics_sectors: [33, 54, 23],
+    industries: [
+      "Product Design", "Architecture & Built Environment", "Engineering",
+      "Toy & Consumer Product Design", "Construction & Development", "Education Technology"
+    ],
+    career_emergence: [
+      "Product Designer", "Architect", "Structural Engineer",
+      "Industrial Designer", "Urban Planner", "Set Designer",
+      "Mechanical Engineer", "Physical Prototyping Engineer"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["engineering_challenges"], unlocks: ["Mechanical Engineer", "Structural Engineer", "Physical Product Designer"] },
+      { with: ["architecture"], unlocks: ["Architect", "Urban Designer", "Interior Architect"] },
+      { with: ["roblox_game_design"], unlocks: ["3D Environment Designer", "Product Prototyping Engineer", "Game Level Designer"] }
+    ]
+  },
+
+  {
     id: "woodworking",
     label: "Woodworking",
     cluster: "make",
@@ -435,6 +459,30 @@ const VECTOR_CROSSWALK = [
     combo_unlocks: [
       { with: ["how_body_moves", "biology"], unlocks: ["Exercise Physiologist", "Sports Scientist", "Physical Therapist"] },
       { with: ["want_to_fix_it_not_talk_about_it"], unlocks: ["Physical Therapist", "Orthopedic Surgeon", "Sports Medicine Physician"] }
+    ]
+  },
+
+  {
+    id: "fitness_classes",
+    label: "Taking fitness classes (Pilates, F45, SoulCycle)",
+    cluster: "move",
+    riasec: ["S", "E", "R"],
+    naics_sectors: [81, 62, 71],
+    industries: [
+      "Health & Wellness", "Boutique Fitness", "Corporate Wellness",
+      "Sports Medicine", "Lifestyle Brands", "Wellness Technology"
+    ],
+    career_emergence: [
+      "Fitness Studio Owner", "Boutique Fitness Instructor", "Corporate Wellness Director",
+      "Health & Wellness Coach", "Physical Therapist", "Wellness Brand Founder",
+      "Community Manager", "Group Fitness Director"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["entrepreneurship"], unlocks: ["Fitness Studio Founder", "Wellness Brand Entrepreneur", "Health Tech Founder"] },
+      { with: ["how_body_moves"], unlocks: ["Physical Therapist", "Exercise Physiologist", "Movement Coach"] },
+      { with: ["i_know_everyone"], unlocks: ["Community Director", "Brand Ambassador", "Wellness Influencer"] }
     ]
   },
 
@@ -739,7 +787,9 @@ const VECTOR_CROSSWALK = [
     geo_signal: true,
     eq_multiplier: false,
     combo_unlocks: [
-      { with: ["i_ask_why"], unlocks: ["Sports Psychologist", "Performance Strategist"] }
+      { with: ["i_ask_why"], unlocks: ["Sports Psychologist", "Performance Strategist"] },
+      { with: ["i_know_everyone"], unlocks: ["Corporate Account Executive", "Business Development Director", "Country Club Director"] },
+      { with: ["law_justice"], unlocks: ["Corporate Attorney", "Sports Agent", "Entertainment Lawyer"] }
     ]
   },
 
@@ -749,17 +799,25 @@ const VECTOR_CROSSWALK = [
     id: "golf",
     label: "Golf",
     cluster: "move",
-    riasec: ["R", "E", "C"],
-    naics_sectors: [71, 81, 52],
-    industries: ["Athletics & Sports", "Hospitality & Country Clubs", "Sports Management", "Business & Finance"],
+    riasec: ["E", "R", "C"],
+    naics_sectors: [52, 81, 71],
+    industries: [
+      "Business & Finance", "Real Estate", "Private Equity", "Energy & Oil & Gas",
+      "Hospitality & Country Clubs", "Sports Management"
+    ],
     career_emergence: [
-      "Professional Athlete", "Golf Instructor", "Country Club General Manager", "Sports Management Executive",
-      "Golf Course Architect", "Sports Marketing Executive"
+      "Investment Banker", "Private Equity Partner", "Real Estate Developer",
+      "Corporate Attorney", "Country Club General Manager",
+      "Golf Instructor", "Sports Management Executive"
     ],
     geo_signal: true,
     eq_multiplier: false,
     combo_unlocks: [
-      { with: ["i_know_everyone"], unlocks: ["Sports Marketing Executive", "Country Club General Manager", "Business Development Director"] }
+      { with: ["i_know_everyone"], unlocks: ["Private Equity Partner", "Real Estate Developer", "Business Development Director"] },
+      { with: ["i_can_talk_to_anyone"], unlocks: ["Investment Banker", "Corporate Attorney", "Business Development Executive"] },
+      { with: ["economics"], unlocks: ["Private Equity Analyst", "Hedge Fund Manager", "Financial Advisor"] },
+      { with: ["law_justice"], unlocks: ["Corporate Attorney", "M&A Counsel", "Real Estate Attorney"] },
+      { with: ["entrepreneurship"], unlocks: ["Real Estate Developer", "Business Owner", "Venture Capital Partner"] }
     ]
   },
 
