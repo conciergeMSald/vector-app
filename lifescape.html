@@ -822,6 +822,31 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="zip-reveal-content" id="zip-reveal-content"></div>
   </div>
 
+  <!-- Optional family geography — appears after ZIP reveal fires -->
+  <div id="family-location-section" style="display:none;margin-top:2rem;">
+    <div class="gold-rule"></div>
+    <div class="q" id="s4-family-q" style="font-size:20px;margin-bottom:.5rem;">Anywhere else that feels like home?</div>
+    <div class="q-sub" id="s4-family-sub" style="margin-bottom:1rem;">Family in other cities, a place you grew up, somewhere you always end up. Completely optional — but it helps us show more paths.</div>
+
+    <div id="family-locations-list" style="margin-bottom:.75rem;"></div>
+
+    <div style="display:flex;gap:8px;align-items:center;">
+      <input class="ls-input" id="family-location-input"
+        placeholder="City or region — e.g. Boston, New York, Philadelphia"
+        style="margin-bottom:0;font-size:16px;"
+        onkeydown="if(event.key==='Enter'){event.preventDefault();addFamilyLocation();}">
+      <button onclick="addFamilyLocation()" style="
+        flex-shrink:0;padding:10px 16px;background:transparent;
+        border:1px solid var(--tile-bdr);color:var(--ink3);
+        font-family:var(--sans);font-size:12px;letter-spacing:1px;
+        cursor:pointer;border-radius:0;white-space:nowrap;
+        transition:all .18s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--ink)'" onmouseout="this.style.borderColor='var(--tile-bdr)';this.style.color='var(--ink3)'">
+        Add
+      </button>
+    </div>
+    <div style="font-size:12px;color:var(--ink4);margin-top:.5rem;font-style:italic;">Press Enter or Add after each city. Skip if it doesn't apply.</div>
+  </div>
+
   <div class="hint-bar" id="s4-hint"></div>
   <button class="ls-btn" onclick="validateZIPAndGoTo(5)">Continue</button>
   <button class="ls-btn-outline" onclick="goTo(3)">Back</button>
@@ -1109,7 +1134,8 @@ const SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxmhDOrAjTtgpD9
 const LS_STATE = {
   name:'', grade:null, gpa:null, gpa_type:'weighted', voice:'student',
   selectedTileIds: new Set(),
-  zip:'', reportFormat:'both',
+  zip:'', family_locations:[],
+  reportFormat:'both',
   submitted:false,
   big_five:{O:null,C:null,E:null,A:null,N:null},
   worlds_chosen:[],
@@ -1522,28 +1548,69 @@ function _defaultGeo(zip) {
 function handleZIPInput(val) {
   LS_STATE.zip = val;
   const revealEl = document.getElementById('zip-reveal');
+  const familySection = document.getElementById('family-location-section');
   if(val.length === 5) {
     const geo = resolveZIP(val);
     const hasRichData = geo.clusters && geo.clusters.length > 0;
 
     let contentHTML = '';
     if(hasRichData) {
-      // Rich cluster format — show cluster names + top employer
       contentHTML = geo.clusters.slice(0, 5).map(c =>
         `<span style="display:block;margin-bottom:3px"><strong style="color:var(--ink)">${c.name}</strong> <span style="color:var(--ink4);font-size:11px">— ${c.distance}</span></span>`
       ).join('');
     } else {
-      // Legacy format
       contentHTML = geo.industries.map(i => `<span style="display:block;margin-bottom:2px">${i}</span>`).join('');
     }
     contentHTML += `<span style="display:block;font-size:11px;color:var(--gold);margin-top:8px;letter-spacing:1px">${geo.neighborhood}${geo.county ? ' · ' + geo.county + ' County' : ''}</span>`;
 
     document.getElementById('zip-reveal-content').innerHTML = contentHTML;
     revealEl.style.display = 'block';
+    // Show family location section after ZIP is confirmed
+    if(familySection) familySection.style.display = 'block';
     clearHint('s4-hint');
   } else {
     revealEl.style.display = 'none';
+    if(familySection) familySection.style.display = 'none';
   }
+}
+
+// ── FAMILY LOCATIONS ────────────────────────────────
+function addFamilyLocation() {
+  const input = document.getElementById('family-location-input');
+  const val = (input.value || '').trim();
+  if(!val) return;
+
+  // Normalize — accept city name or ZIP
+  const location = val;
+  if(LS_STATE.family_locations.includes(location)) {
+    input.value = '';
+    return;
+  }
+  LS_STATE.family_locations.push(location);
+  input.value = '';
+  renderFamilyLocations();
+}
+
+function removeFamilyLocation(idx) {
+  LS_STATE.family_locations.splice(idx, 1);
+  renderFamilyLocations();
+}
+
+function renderFamilyLocations() {
+  const list = document.getElementById('family-locations-list');
+  if(!list) return;
+  list.innerHTML = LS_STATE.family_locations.map((loc, i) => `
+    <div style="
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--gold-pale);border:1px solid var(--gl);
+      padding:5px 12px;margin:0 6px 6px 0;
+    ">
+      <span style="font-family:var(--sans);font-size:12px;color:var(--ink2)">${loc}</span>
+      <span onclick="removeFamilyLocation(${i})" style="
+        cursor:pointer;color:var(--ink4);font-size:14px;line-height:1;
+      " title="Remove">×</span>
+    </div>
+  `).join('');
 }
 
 // ── FORMAT SELECTION ───────────────────────────────
@@ -1595,6 +1662,7 @@ function assembleProfile() {
     riasec,
     naicsSectors,
     zip: LS_STATE.zip,
+    family_locations: LS_STATE.family_locations || [],
     geoIndustries: geo.industries,
     geoNeighborhood: geo.neighborhood,
     geoDistance: geo.distance,
@@ -1775,6 +1843,26 @@ function buildCallCPrompt(ctx) {
   const corridorContext = typeof getStudentCorridorContext === 'function'
     ? getStudentCorridorContext(ctx.naicsSectors || [], ctx.riasec || [], ctx.zip || '')
     : '';
+
+  // Family geography context — resolve each family location to a region if possible
+  const familyLocs = ctx.family_locations || [];
+  let familyGeoContext = '';
+  if(familyLocs.length > 0 && typeof resolveRegion === 'function') {
+    const familyRegions = familyLocs.map(loc => {
+      // Try ZIP first, then city-name partial match
+      const byZip = /^\d{5}$/.test(loc) ? resolveRegion(loc) : null;
+      return { location: loc, region: byZip ? byZip.name : null };
+    });
+    const named = familyRegions.filter(r => r.region);
+    const unnamed = familyRegions.filter(r => !r.region).map(r => r.location);
+    const allNames = [
+      ...named.map(r => `${r.location} (${r.region})`),
+      ...unnamed
+    ];
+    familyGeoContext = `\nFAMILY GEOGRAPHY: ${allNames.join(', ')}
+This student has people in other places. These locations represent real options — not just geographic data points but potential soft landings, family networks, and career-path anchors. When naming the three trajectory types, explicitly consider what "Leave and Return" or "Leave and Stay Gone" might mean given these specific family locations. A cousin in Boston is different from grandparents in Boca Raton — use judgment about the weight to give each, but name the geography.`;
+  }
+
   return `You are the intelligence behind Lifescape, writing geo and counselor sections.
 
 STUDENT PROFILE:
@@ -1787,13 +1875,14 @@ Combination unlocks: ${ctx.comboSummary||'none'}
 RIASEC: ${ctx.topRIASEC}
 ${regionalContext ? '\n'+regionalContext : ''}
 ${corridorContext ? '\n'+corridorContext : ''}
+${familyGeoContext}
 
 YOUR JOB — produce exactly two sections with these exact dividers:
 
 ---GEO---
 Write two distinct paragraphs.
 PARAGRAPH 1 — Local: Name what is genuinely nearby that connects to this student's profile. Specific neighborhood or employer. One surprising, real connection they likely don't know about. ${ctx.voice==='parent'?`Third person about ${ctx.name}.`:`Second person to ${ctx.name}.`}
-PARAGRAPH 2 — Regional trajectory: ${ctx.regionalIntel ? `This student lives in ${ctx.regionalIntel.name}. Name their trajectory type explicitly — Stay Close, Leave and Return, or Leave and Stay Gone — based on their profile. Name the specific corridor their interests point toward. Name the school decision that corresponds to that trajectory. Be direct and specific, not generic.` : `Name the broader geographic context for this student's career path — where their industry actually concentrates nationally, and what that means for their school decision.`}
+PARAGRAPH 2 — Regional trajectory: ${ctx.regionalIntel ? `This student lives in ${ctx.regionalIntel.name}. Name their trajectory type explicitly — Stay Close, Leave and Return, or Leave and Stay Gone — based on their profile and corridor match. Name the specific school decision that corresponds to each trajectory.${familyLocs.length > 0 ? ` This student also has people in: ${familyLocs.join(', ')}. Where relevant, name how those locations change or expand the Leave and Return or Leave and Stay Gone options — a family connection in another city is a real asset worth naming, even if the relationship is thin.` : ''} Be direct and specific, not generic.` : `Name the broader geographic context for this student's career path — where their industry actually concentrates nationally, and what that means for their school decision.`}
 
 ${(()=>{
   try {
@@ -2827,6 +2916,7 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
     ['Name', profile.name],
     ['Grade', `Grade ${profile.grade}`],
     ['ZIP code', profile.zip],
+    ['Family geography', profile.family_locations && profile.family_locations.length > 0 ? profile.family_locations.join(', ') : '—'],
     ['Voice path', profile.voice === 'parent' ? 'Parent completed' : 'Student completed'],
     ['Report format', profile.reportFormat],
     ['Tiles selected', profile._meta.tileCount],
