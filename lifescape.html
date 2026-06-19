@@ -689,7 +689,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
         <span class="pref-sub">Big Ten territory</span>
       </button>
       <button class="pref-btn" data-pref="regions" data-val="south_central" onclick="selectPref(this,'regions',true)">
-        South
+        South Central
         <span class="pref-sub">Tennessee, Carolinas, Louisiana</span>
       </button>
       <button class="pref-btn" data-pref="regions" data-val="no_preference" onclick="selectPref(this,'regions',false)">
@@ -1761,7 +1761,7 @@ function buildContext(profile) {
     : `Write directly to ${profile.name} in second person. Smart, curious teenager who deserves honesty. Never talk down. Never oversell.`;
 
   const comboSummary = profile.comboUnlocks.map(c =>
-    `${c.triggered_by.map(stripUnderscores).join(' + ')} unlocks: ${c.unlocks.map(stripUnderscores).join(', ')}`
+    `${c.triggered_by.map(s=>toSentenceCase(stripUnderscores(s))).join(' + ')} unlocks: ${c.unlocks.join(', ')}`
   ).join('\n');
 
   return { ...profile, gradeRegister, gradeContext, voiceInstruction, comboSummary,
@@ -1974,10 +1974,31 @@ FORBIDDEN: assessment, results, data, score, ranked, personality type`;
 // Strip markdown bold markers from Claude output
 function stripMD(s) { return s ? s.replace(/\*\*/g,'').replace(/\*/g,'') : s; }
 
-// Strip underscores from tile IDs and unlock labels for display
+// Format raw IDs and labels for display — remove underscores and capitalize properly
 function stripUnderscores(s) {
   if (!s) return s;
-  return s.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+  // Special case proper nouns and acronyms
+  const PROPER = {
+    'legos': 'Legos', 'legos building': 'Legos & Building Things',
+    'ai machine learning': 'AI & Machine Learning',
+    'ai': 'AI', 'sec': 'SEC', 'acc': 'ACC', 'big ten': 'Big Ten',
+    'big 12': 'Big 12', 'big east': 'Big East', 'pac 12': 'Pac-12',
+    'aac': 'AAC', 'nba': 'NBA', 'nfl': 'NFL', 'mlb': 'MLB',
+    'ucsd': 'UCSD', 'ucla': 'UCLA', 'usc': 'USC', 'nyu': 'NYU',
+    'mit': 'MIT', 'stem': 'STEM', 'uiuc': 'UIUC', 'uc': 'UC',
+    'esports gaming': 'eSports & Competitive Gaming',
+    'roblox game design': 'Roblox & Game Design',
+  };
+  const cleaned = s.replace(/_/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
+  if (PROPER[cleaned]) return PROPER[cleaned];
+  // Title-case: capitalize first letter of each word, but preserve known acronyms
+  return cleaned.replace(/\b\w/g, c => c.toUpperCase());
+}
+
+// Capitalize the first letter of a sentence (for tile labels shown in report)
+function toSentenceCase(s) {
+  if (!s) return s;
+  return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
 function parseCallA(text) {
@@ -2047,8 +2068,8 @@ function captureToSheets(profile, callAData) {
     name: profile.name, grade: profile.grade, zip: profile.zip,
     voice_path: profile.voice, report_format: profile.reportFormat,
     tile_count: profile._meta.tileCount,
-    activity_tiles: profile.activityTiles.join(' | '),
-    eq_tiles: profile.eqTiles.join(' | '),
+    activity_tiles: profile.activityTiles.map(toSentenceCase).join(' | '),
+    eq_tiles: profile.eqTiles.map(toSentenceCase).join(' | '),
     combos_fired: profile.comboUnlocks.map(c=>c.unlocks[0]).join(' | '),
     combo_count: profile._meta.combosFireCount,
     top_riasec: profile._meta.topRIASEC,
@@ -2331,16 +2352,16 @@ function validateOrientAndGoTo(n) {
 function buildCallDPrompt(ctx, matchedSchools, schoolContentBlock) {
   const prefSummary = [
     ctx.college_prefs.conference && ctx.college_prefs.conference !== 'no_sports'
-      ? ctx.college_prefs.conference.replace('_',' ').toUpperCase()
+      ? stripUnderscores(ctx.college_prefs.conference)
       : null,
     ctx.college_prefs.campus_scale && ctx.college_prefs.campus_scale !== 'no_preference'
-      ? ctx.college_prefs.campus_scale.replace('_',' ')
+      ? stripUnderscores(ctx.college_prefs.campus_scale)
       : null,
     ctx.college_prefs.regions && Array.isArray(ctx.college_prefs.regions) && ctx.college_prefs.regions.length
       ? ctx.college_prefs.regions.join(', ')
       : null,
     ctx.college_prefs.social_scene && ctx.college_prefs.social_scene !== 'no_preference'
-      ? ctx.college_prefs.social_scene.replace('_',' ')
+      ? stripUnderscores(ctx.college_prefs.social_scene)
       : null
   ].filter(Boolean).join(' · ');
 
@@ -2441,7 +2462,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
   if(!schoolsList) return;
 
   const prefLabel = [
-    profile.college_prefs.conference !== 'no_sports' ? profile.college_prefs.conference.replace(/_/g,' ').toUpperCase() : null,
+    profile.college_prefs.conference !== 'no_sports' ? stripUnderscores(profile.college_prefs.conference) : null,
     profile.college_prefs.campus_scale !== 'no_preference' ? profile.college_prefs.campus_scale.replace(/_/g,' ') : null
   ].filter(Boolean).join(', ');
 
@@ -3082,7 +3103,7 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
       // Dignified note for the social/lunch signal specifically
       if(aa.daypart === 'social') {
         aaEl.innerHTML += `<div class="action-prompt" style="margin-top:12px"><div class="action-text">
-          <strong>Reading the social signal:</strong> ${profile.name || 'This student'}'s strongest pull toward the school day is relational, not academic — that's a real and useful data point, not an absence of one. It points toward Social/Enterprising strength: connection, organizing people, being the one others gravitate to. Worth exploring directly — leadership in informal settings, group dynamics, what draws them to be the connector — rather than reading it as a lack of direction.
+          <strong style="font-weight:500;color:var(--ink)">Reading the social signal:</strong> ${profile.name || 'This student'}'s strongest pull toward the school day is relational, not academic — that's a real and useful data point, not an absence of one. It points toward Social/Enterprising strength: connection, organizing people, being the one others gravitate to. Worth exploring directly — leadership in informal settings, group dynamics, what draws them to be the connector — rather than reading it as a lack of direction.
         </div></div>`;
       }
     }
@@ -3125,7 +3146,7 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
   if(profile.comboUnlocks.length) {
     document.getElementById('counselor-combos').innerHTML = profile.comboUnlocks.map(c=>
       `<div class="action-prompt"><div class="action-text">
-        <strong>${c.triggered_by.map(stripUnderscores).join(' + ')}</strong> → ${c.unlocks.map(stripUnderscores).join(', ')}
+        <strong>${c.triggered_by.map(s=>toSentenceCase(stripUnderscores(s))).join(' + ')}</strong> → ${c.unlocks.join(', ')}
       </div></div>`
     ).join('');
   } else {
@@ -3135,7 +3156,8 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
 
   // Counselor note + prompts
   if(callCData?.counselor) {
-    document.getElementById('counselor-full-note').textContent = callCData.counselor;
+    document.getElementById('counselor-full-note').textContent = callCData.counselor
+      .replace(/^NOTE:\s*/i, '').trim();
 
     const promptsMatch = callCData.counselor.match(/THREE PROMPTS:([\s\S]*?)$/i);
     if(promptsMatch) {
