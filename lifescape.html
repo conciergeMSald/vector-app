@@ -911,6 +911,26 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
   <!-- Report header -->
   <div class="report-header">
+  <div style="text-align:center;margin-bottom:1.5rem;">
+    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg"
+         style="transform:rotate(12deg);opacity:0.7;" aria-hidden="true">
+      <circle cx="21" cy="21" r="20" stroke="#C4A882" stroke-width="0.75" fill="none"/>
+      <circle cx="21" cy="21" r="2" fill="#C4A882" opacity="0.6"/>
+      <!-- N arrow — gold -->
+      <path d="M21 21 L18 8 L21 11 L24 8 Z" fill="#8B7355"/>
+      <!-- S arrow — lighter -->
+      <path d="M21 21 L24 34 L21 31 L18 34 Z" fill="#C4A882" opacity="0.5"/>
+      <!-- E arrow -->
+      <path d="M21 21 L34 24 L31 21 L34 18 Z" fill="#C4A882" opacity="0.4"/>
+      <!-- W arrow -->
+      <path d="M21 21 L8 18 L11 21 L8 24 Z" fill="#C4A882" opacity="0.4"/>
+      <!-- Cardinal tick marks -->
+      <line x1="21" y1="2" x2="21" y2="5" stroke="#C4A882" stroke-width="0.75" opacity="0.5"/>
+      <line x1="21" y1="37" x2="21" y2="40" stroke="#C4A882" stroke-width="0.75" opacity="0.5"/>
+      <line x1="2" y1="21" x2="5" y2="21" stroke="#C4A882" stroke-width="0.75" opacity="0.5"/>
+      <line x1="37" y1="21" x2="40" y2="21" stroke="#C4A882" stroke-width="0.75" opacity="0.5"/>
+    </svg>
+  </div>
     <div class="report-eyebrow">Your Lifescape</div>
     <div class="report-name" id="report-name"></div>
     <div class="report-opening">This is what we found in this moment, based on what you shared. Your Lifescape is not fixed. It evolves when you do.</div>
@@ -2394,7 +2414,7 @@ For each school use this EXACT format with no deviations:
 
 SCHOOL: [exact school name as listed above]
 MATCH: [one sentence — the single most specific reason this school fits THIS student's Lifescape profile. Reference something real from their tiles, combo unlocks, or preferences. Not generic program quality — a specific connection.]
-WHY: [2-3 sentences. Use the school intelligence provided. Connect the pipeline or hidden pathway to something in the student's profile. End with one sentence that opens a door.]
+WHY: [3 complete sentences. Use the school intelligence provided. Connect the pipeline or hidden pathway to something specific in the student's tiles or interests. Third sentence opens a concrete next conversation. Never leave a sentence incomplete — if you are running short on space, write fewer words per sentence but always complete the thought with a period.]
 
 Write all ${Math.min(matchedSchools.length, 5)} schools in this format.
 
@@ -2425,7 +2445,7 @@ function parseCallD(rawText) {
     return blocks.map(block => {
       const nameMatch = block.match(/^SCHOOL:\s*(.+)/m);
       const matchMatch = block.match(/MATCH:\s*([\s\S]*?)(?=\nWHY:|$)/);
-      const whyMatch = block.match(/WHY:\s*([\s\S]*?)(?=\n\nSCHOOL:|\nSCHOOL:|$)/);
+      const whyMatch = block.match(/WHY:\s*([\s\S]+?)(?=\n\nSCHOOL:|\nSCHOOL:|\Z|$)/s);
       return {
         name: nameMatch ? nameMatch[1].trim() : '',
         match: matchMatch ? matchMatch[1].trim().replace(/\n/g,' ') : '',
@@ -2690,7 +2710,7 @@ async function submitLifescape() {
           const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0,5), schoolContentBlock);
           console.log('[callD] firing Claude, prompt length:', callDPrompt.length);
 
-          const callDText = await fireCall(callDPrompt, 2000, 0, 55000);
+          const callDText = await fireCall(callDPrompt, 2500, 0, 55000);
           console.log('[callD] raw response length:', callDText?.length);
           console.log('[callD] raw response preview:', callDText?.slice(0,200));
 
@@ -3146,7 +3166,8 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
   if(profile.comboUnlocks.length) {
     document.getElementById('counselor-combos').innerHTML = profile.comboUnlocks.map(c=>
       `<div class="action-prompt"><div class="action-text">
-        <strong>${c.triggered_by.map(s=>toSentenceCase(stripUnderscores(s))).join(' + ')}</strong> → ${c.unlocks.join(', ')}
+        <strong style="display:block;margin-bottom:4px">${c.triggered_by.map(s=>toSentenceCase(stripUnderscores(s))).join(' + ')}</strong>
+        <span style="color:var(--ink3);font-weight:300">${c.unlocks.join(' · ')}</span>
       </div></div>`
     ).join('');
   } else {
