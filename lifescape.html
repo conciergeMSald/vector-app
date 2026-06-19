@@ -556,8 +556,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="screen" id="screen-37">
 <div class="container">
   <div class="ls-eyebrow">Step 5 of 7</div>
-  <div class="q">Which of these worlds feels most like yours?</div>
-  <div class="q-sub">Choose one — or two if you genuinely live in both.</div>
+  <div class="q" id="s37-q">Which of these worlds feels most like yours?</div>
+  <div class="q-sub" id="s37-sub">Choose one — or two if you genuinely live in both.</div>
 
   <div class="world-grid">
     <button class="world-card" data-world="healing" onclick="selectWorld(this,'healing')"><div class="world-icon"><i class="ti ti-heart-handshake" aria-hidden="true"></i></div><div class="world-name">The World of Healing</div><div class="world-desc">Medicine, mental health, care, restoration</div></button>
@@ -931,7 +931,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <line x1="37" y1="21" x2="40" y2="21" stroke="#C4A882" stroke-width="0.75" opacity="0.5"/>
     </svg>
   </div>
-    <div class="report-eyebrow">Your Lifescape</div>
+    <div class="report-eyebrow" id="report-eyebrow">Lifescape</div>
     <div class="report-name" id="report-name"></div>
     <div class="report-opening">This is what we found in this moment, based on what you shared. Your Lifescape is not fixed. It evolves when you do.</div>
   </div>
@@ -1193,6 +1193,16 @@ function setVoice(v) {
     ? 'Not what they do — how they see themselves.'
     : 'Not what you do — how you see yourself.';
 
+  // World screen (step 5) — switch to child's name in parent voice
+  const s37q = document.getElementById('s37-q');
+  const s37sub = document.getElementById('s37-sub');
+  if(s37q) s37q.textContent = p
+    ? 'Which of these worlds feels most like ' + name + '\'s?'
+    : 'Which of these worlds feels most like yours?';
+  if(s37sub) s37sub.textContent = p
+    ? 'Choose one — or two if you believe they genuinely live in both.'
+    : 'Choose one — or two if you genuinely live in both.';
+
   // Re-label any EQ tiles already rendered on screen
   document.querySelectorAll('.tile-eq[data-student-label]').forEach(el => {
     el.textContent = p ? el.dataset.parentLabel : el.dataset.studentLabel;
@@ -1419,6 +1429,7 @@ function makeTileEl(tile) {
     const parentLabel = tile.label
       .replace(/^I can /i, 'They can ')
       .replace(/^I am /i, 'They are ')
+      .replace(/^I'm the one /i, 'They\'re the one ')
       .replace(/^I'm /i, 'They\'re ')
       .replace(/^I know /i, 'They know ')
       .replace(/^I see /i, 'They see ')
@@ -1427,12 +1438,30 @@ function makeTileEl(tile) {
       .replace(/^I ask /i, 'They ask ')
       .replace(/^I feel /i, 'They feel ')
       .replace(/^I hold /i, 'They hold ')
-      .replace(/^I'm the one /i, 'They\'re the one ')
       .replace(/^I notice /i, 'They notice ')
       .replace(/^I get /i, 'They get ')
       .replace(/^I do /i, 'They do ')
       .replace(/^I make /i, 'They make ')
-      .replace(/^I always /i, 'They always ');
+      .replace(/^I always /i, 'They always ')
+      .replace(/^I slow /i, 'They slow ')
+      .replace(/^I like /i, 'They like ')
+      .replace(/^I'd rather /i, 'They\'d rather ')
+      .replace(/^I want /i, 'They want ')
+      .replace(/^I process /i, 'They process ')
+      .replace(/^I can tell /i, 'They can tell ')
+      .replace(/^I think /i, 'They think ')
+      .replace(/^I talk /i, 'They talk ')
+      .replace(/^I show /i, 'They show ')
+      .replace(/^I remember /i, 'They remember ')
+      .replace(/^I fix /i, 'They fix ')
+      .replace(/^I usually /i, 'They usually ')
+      .replace(/^I walk /i, 'They walk ')
+      .replace(/^I\'m usually /i, 'They\'re usually ')
+      .replace(/^I\'m pretty /i, 'They\'re pretty ')
+      .replace(/^I\'m friends /i, 'They\'re friends ')
+      .replace(/^I\'m the one who /i, 'They\'re the one who ')
+      .replace(/^I don\'t /i, 'They don\'t ')
+      .replace(/^I\'m /i, 'They\'re ');
     el.dataset.studentLabel = tile.label;
     el.dataset.parentLabel = parentLabel;
     el.textContent = p ? parentLabel : tile.label;
@@ -1872,12 +1901,12 @@ ${(()=>{
     parts.push('Self-identified strength: '+aa.strength.trim());
   }
   if(aa.daypart === 'social') {
-    parts.push('What they look forward to most: the social, relational part of the day — a People/Enterprising signal worth weighting even without strong academic anchor');
+    parts.push('Looks forward to most: the social, relational part of the day — a People/Enterprising signal worth weighting even without strong academic anchor');
   } else if(aa.daypart && aa.daypart !== 'other') {
     const labels = {class:'a specific class',activity:'sports or a club',freeperiod:'free period / time to think'};
-    parts.push('What they look forward to most: '+(labels[aa.daypart]||aa.daypart));
+    parts.push('Looks forward to most: '+(labels[aa.daypart]||aa.daypart));
   } else if(aa.daypart === 'other' && aa.daypart_other) {
-    parts.push('What they look forward to most: '+aa.daypart_other);
+    parts.push('Looks forward to most: '+aa.daypart_other);
   }
   return parts.length ? '\n── ACADEMIC AFFINITY (direct evidence, weight above inference) ──\n'+parts.join('\n') : '';
 })()}
@@ -2641,7 +2670,7 @@ async function submitLifescape() {
     // ── CALL B + C — parallel, isolated ──────────────
     const [callBResult, callCResult] = await Promise.allSettled([
       fireCall(buildCallBPrompt(ctx), 1200, 0, 45000),
-      fireCall(buildCallCPrompt(ctx), 600, 0, 30000)
+      fireCall(buildCallCPrompt(ctx), 1000, 0, 30000)
     ]);
 
     // Graceful fallback — each call fails independently
@@ -2710,7 +2739,7 @@ async function submitLifescape() {
           const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0,5), schoolContentBlock);
           console.log('[callD] firing Claude, prompt length:', callDPrompt.length);
 
-          const callDText = await fireCall(callDPrompt, 2500, 0, 55000);
+          const callDText = await fireCall(callDPrompt, 3000, 0, 55000);
           console.log('[callD] raw response length:', callDText?.length);
           console.log('[callD] raw response preview:', callDText?.slice(0,200));
 
@@ -2801,9 +2830,9 @@ function updateReportVoice(profile) {
   // Personalize the "Where You May Fit" tab label
   const schoolsTab = document.getElementById('rtab-schools');
   if(schoolsTab) {
-    schoolsTab.textContent = profile.name
-      ? 'Where ' + profile.name + ' may fit'
-      : 'Where you may fit';
+    if(p && profile.name) schoolsTab.textContent = 'Where ' + profile.name + ' may fit';
+    else if(!p && profile.name) schoolsTab.textContent = 'Where ' + profile.name + ' may fit';
+    else schoolsTab.textContent = 'Where you may fit';
   }
 
   // Section eyebrows
@@ -3028,9 +3057,9 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
     ['Combos fired', profile._meta.combosFireCount],
     ['Geo neighborhood', profile.geoNeighborhood],
     ['Generated', new Date(profile._meta.timestamp).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}) + ' at ' + new Date(profile._meta.timestamp).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true})],
-    ['Conference pref', profile.college_prefs?.conference || 'not set'],
+    ['Conference pref', profile.college_prefs?.conference ? stripUnderscores(profile.college_prefs.conference) : 'not set'],
     ['Campus scale', profile.college_prefs?.campus_scale || 'not set'],
-    ['Regions', profile.college_prefs?.regions?.join(', ') || 'open'],
+    ['Regions', profile.college_prefs?.regions?.map(stripUnderscores).join(', ') || 'open'],
     ['Social scene', profile.college_prefs?.social_scene || 'not set']
   ].map(([k,v]) => {
     const metaLabels = {
