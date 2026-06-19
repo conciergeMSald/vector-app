@@ -303,6 +303,31 @@ const VECTOR_CROSSWALK = [
   },
 
   {
+    id: "content_creation",
+    label: "Making content — TikTok, YouTube, Reels",
+    cluster: "make",
+    riasec: ["A", "E", "I"],
+    naics_sectors: [51, 71, 81, 44],
+    industries: [
+      "Digital Media & Content", "Social Media Marketing", "Brand Partnerships",
+      "Streaming & Creator Economy", "Advertising & PR", "Beauty & Lifestyle Media"
+    ],
+    career_emergence: [
+      "Content Creator", "Social Media Strategist", "Brand Partnerships Director",
+      "UGC Creator", "Digital Marketing Manager", "Influencer Marketing Manager",
+      "Creative Director", "YouTube / TikTok Producer"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["hair_makeup"], unlocks: ["Beauty Content Creator", "Makeup Tutorial Creator", "Brand Ambassador"] },
+      { with: ["filmmaking"], unlocks: ["Video Producer", "Creative Director", "Short-Form Film Director"] },
+      { with: ["entrepreneurship"], unlocks: ["Creator Economy Entrepreneur", "Brand Founder", "Agency Owner"] },
+      { with: ["i_can_talk_to_anyone"], unlocks: ["On-Camera Host", "Social Media Personality", "Brand Spokesperson"] }
+    ]
+  },
+
+  {
     id: "hair_makeup",
     label: "Hair & makeup",
     cluster: "make",
@@ -447,7 +472,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "esports_gaming",
     label: "eSports & competitive gaming",
-    cluster: "move",
+    cluster: "think",
     riasec: ["I", "E", "C"],
     naics_sectors: [51, 71, 54],
     industries: ["Video Game Industry", "Esports", "Streaming & Content", "Game Design", "Sports Management"],
@@ -934,7 +959,7 @@ const VECTOR_CROSSWALK = [
 
   {
     id: "roblox_game_design",
-    label: "Roblox & game design",
+    label: "Building games & virtual worlds",
     cluster: "think",
     riasec: ["I", "A", "C"],
     naics_sectors: [51, 54],
@@ -1024,6 +1049,59 @@ const VECTOR_CROSSWALK = [
     eq_multiplier: false,
     combo_unlocks: [
       { with: ["writing_stories"], unlocks: ["Crossword Constructor", "Editor", "Lexicographer"] }
+    ]
+  },
+
+  // ── Sports analytics / Moneyball tiles — the student who loves sports through numbers ──
+
+  {
+    id: "fantasy_sports_roster",
+    label: "Fantasy sports & building rosters",
+    cluster: "think",
+    riasec: ["C", "I", "E"],
+    naics_sectors: [54, 52, 71],
+    industries: [
+      "Sports Analytics", "Sports Management", "Quantitative Finance",
+      "Data Science", "Media & Broadcasting", "Gaming & Daily Fantasy"
+    ],
+    career_emergence: [
+      "Sports Analytics Director", "Sabermetrician", "General Manager",
+      "Salary Cap Analyst", "Front Office Executive", "Quantitative Analyst",
+      "Sports Data Scientist", "Scouting Director"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["baseball_softball"], unlocks: ["Sabermetrician", "Baseball Analytics Director", "Front Office Executive"] },
+      { with: ["basketball"], unlocks: ["NBA Analytics Analyst", "Front Office Executive", "Player Development Director"] },
+      { with: ["football"], unlocks: ["NFL Front Office Executive", "Salary Cap Analyst", "Analytics Director"] },
+      { with: ["data_statistics"], unlocks: ["Sports Data Scientist", "Quantitative Sports Analyst", "Performance Analytics Lead"] },
+      { with: ["economics"], unlocks: ["Salary Cap Economist", "Player Market Analyst", "Sports Contract Specialist"] }
+    ]
+  },
+
+  {
+    id: "collecting_trading",
+    label: "Collecting & trading (cards, sneakers, memorabilia)",
+    cluster: "think",
+    riasec: ["C", "I", "E"],
+    naics_sectors: [52, 54, 44],
+    industries: [
+      "Alternative Assets", "E-Commerce & Resale", "Finance & Investment",
+      "Sports Business", "Auction & Appraisal", "Consumer Markets"
+    ],
+    career_emergence: [
+      "Alternative Assets Analyst", "Collectibles Market Analyst", "Resale Platform Founder",
+      "Sports Memorabilia Dealer", "E-Commerce Entrepreneur", "Asset Appraiser",
+      "Investment Analyst", "Brand Licensing Manager"
+    ],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["economics"], unlocks: ["Alternative Assets Analyst", "Market Maker", "Collectibles Fund Manager"] },
+      { with: ["data_statistics"], unlocks: ["Market Pricing Analyst", "Card Grading Analyst", "Resale Market Data Scientist"] },
+      { with: ["entrepreneurship"], unlocks: ["Resale Business Founder", "E-Commerce Entrepreneur", "Marketplace Builder"] },
+      { with: ["fantasy_sports_roster"], unlocks: ["Sports Asset Manager", "Memorabilia Fund Manager", "Sports Investment Analyst"] }
     ]
   },
 

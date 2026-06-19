@@ -29,11 +29,11 @@ const TILE_POOLS = {
     'cooking','baking','drawing','painting','photography','filmmaking',
     'fashion_design','graphic_design','animation','music_production',
     'playing_instrument','singing','writing_stories','nail_art','hair_makeup',
-    'woodworking','three_d_printing'
+    'woodworking','three_d_printing','content_creation'
   ],
   move: [
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
-    'esports_gaming','horseback_riding','rock_climbing',
+    'horseback_riding','rock_climbing',
     'soccer','basketball','football','baseball_softball','volleyball','lacrosse','ice_hockey',
     'track_field','swimming','gymnastics','wrestling','tennis',
     'golf','crew_rowing','cross_country','fencing','water_polo'
@@ -44,7 +44,8 @@ const TILE_POOLS = {
     'true_crime','puzzles_brain_teasers','word_puzzles','logic_number_puzzles',
     'category_pattern_puzzles','understanding_why_people',
     'chess','debate_mock_un','speech_forensics','scifi_worldbuilding',
-    'journalism','law_justice','economics'
+    'journalism','law_justice','economics',
+    'esports_gaming','fantasy_sports_roster','collecting_trading'
   ],
   people: [
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
@@ -102,6 +103,7 @@ const FREE_TIME_MAP = {
     'cooking','baking','drawing','painting','photography','filmmaking',
     'fashion_design','graphic_design','animation','music_production',
     'playing_instrument','nail_art','hair_makeup','woodworking','three_d_printing',
+    'content_creation','writing_stories','singing',
     // Systems tiles that connect to making
     'cosmetic_beauty_science','cooking_chemistry','architecture','engineering_challenges',
     // Think tiles that connect to making
@@ -111,7 +113,7 @@ const FREE_TIME_MAP = {
   moving: [
     // Move cluster — full representation
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
-    'esports_gaming','horseback_riding','rock_climbing',
+    'horseback_riding','rock_climbing',
     'soccer','basketball','football','baseball_softball','volleyball','lacrosse','ice_hockey',
     'track_field','swimming','gymnastics','wrestling','tennis',
     // Systems tiles that connect to movement
@@ -130,6 +132,7 @@ const FREE_TIME_MAP = {
     'category_pattern_puzzles','understanding_why_people',
     'chess','debate_mock_un','speech_forensics','scifi_worldbuilding',
     'journalism','law_justice','economics',
+    'esports_gaming','fantasy_sports_roster','collecting_trading',
     // Systems tiles that connect to thinking
     'cosmetic_beauty_science','medical_science','engineering_challenges',
     'environment_sustainability','cooking_chemistry','architecture',
@@ -427,7 +430,13 @@ const TILE_ADJACENCY = {
   // ── Journalism, Law & Justice, Economics — adjacent to each other and to relevant existing tiles ──
   journalism:           ['writing_stories','filmmaking','data_statistics','speech_forensics'],
   law_justice:          ['debate_mock_un','economics','advocacy_activism','speech_forensics'],
-  economics:            ['data_statistics','law_justice','business_startups','entrepreneurship']
+  economics:            ['data_statistics','law_justice','business_startups','entrepreneurship'],
+
+  // New tiles from this batch
+  content_creation:     ['filmmaking','hair_makeup','photography','entrepreneurship'],
+  fantasy_sports_roster:['data_statistics','baseball_softball','basketball','football','collecting_trading'],
+  collecting_trading:   ['economics','data_statistics','entrepreneurship','fantasy_sports_roster'],
+  esports_gaming:       ['roblox_game_design','coding_programming','data_statistics']
 };
 
 function surfaceRelatedTiles(selectedIds, alreadyShownIds) {
