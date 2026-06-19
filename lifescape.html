@@ -9,6 +9,7 @@
 <script src="lifescape_career_intelligence.js"></script>
 <script src="lifescape_onet_map.js"></script>
 <script src="lifescape_university_intelligence.js"></script>
+<script src="lifescape_regional_intelligence.js"></script>
 <script src="crosswalk-db.js"></script>
 <script src="geo_industry_db_LA_pass1.js"></script>
 <script src="geo_industry_db_BayArea_pass2.js"></script>
@@ -784,7 +785,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="container">
   <div class="ls-eyebrow">Step 3 of 4</div>
   <div class="q" id="s4-q">Where do you live?</div>
-  <div class="q-sub" id="s4-sub">Your ZIP code helps us find industries and opportunities close to home — ones most people never think to look for.</div>
+  <div class="q-sub" id="s4-sub">Your ZIP code helps us find industries and opportunities your region — ones most people never think to look for.</div>
 
   <label class="input-label">ZIP code</label>
   <input class="ls-input" id="ls-zip" placeholder="e.g. 91302" maxlength="5"
@@ -816,7 +817,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <div class="fc-title">A first look</div>
       <div class="fc-badge">1 page</div>
     </div>
-    <div class="fc-desc" id="fc-desc-quick">Three industry clusters, your trajectory, and what's close to home. Built for a 90-second read.</div>
+    <div class="fc-desc" id="fc-desc-quick">Three industry clusters, your trajectory, and what's your region. Built for a 90-second read.</div>
   </div>
 
   <div class="format-card" id="fc-full" onclick="selectFormat('full')">
@@ -913,7 +914,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
     <!-- Geo spotlight -->
     <div class="report-section" id="quick-geo-section">
-      <div class="section-eyebrow">Close to home</div>
+      <div class="section-eyebrow">Your Region</div>
       <div class="geo-block" id="quick-geo">
         <div class="geo-icon">◎</div>
         <div>
@@ -965,7 +966,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     </div>
 
     <div class="report-section">
-      <div class="section-eyebrow">Close to home</div>
+      <div class="section-eyebrow">Your Region</div>
       <div class="portrait-text" id="full-geo"></div>
     </div>
 
@@ -1148,14 +1149,14 @@ function updateS2Voice() {
 
   const s4sub = document.getElementById('s4-sub');
   if(s4sub) s4sub.textContent = p
-    ? "Their ZIP code helps us find industries and opportunities close to home — ones most families never think to look for."
-    : "Your ZIP code helps us find industries and opportunities close to home — ones most people never think to look for.";
+    ? "Their ZIP code helps us find industries and opportunities your region — ones most families never think to look for."
+    : "Your ZIP code helps us find industries and opportunities your region — ones most people never think to look for.";
 
   // Screen 5 — Report format cards
   const fcQuick = document.getElementById('fc-desc-quick');
   if(fcQuick) fcQuick.textContent = p
-    ? "Three industry clusters, their trajectory, and what's close to home. Built for a 90-second read."
-    : "Three industry clusters, your trajectory, and what's close to home. Built for a 90-second read.";
+    ? "Three industry clusters, their trajectory, and what's your region. Built for a 90-second read."
+    : "Three industry clusters, your trajectory, and what's your region. Built for a 90-second read.";
 
   const fcFull = document.getElementById('fc-desc-full');
   if(fcFull) fcFull.textContent = p
@@ -1568,6 +1569,7 @@ function assembleProfile() {
     academic_affinity: LS_STATE.academic_affinity
       ? {...LS_STATE.academic_affinity, subjects:[...(LS_STATE.academic_affinity.subjects||[])]}
       : {subjects:[], strength:'', daypart:'', daypart_other:''},
+    regionalIntel: typeof resolveRegion === 'function' ? resolveRegion(LS_STATE.zip) : null,
     _meta: {
       timestamp: new Date().toISOString(),
       tileCount: selectedIds.length,
@@ -1735,6 +1737,7 @@ FORBIDDEN: assessment, results, data, score, ranked, you should become, most stu
 
 function buildCallCPrompt(ctx) {
   const geoList = ctx.geoIndustries ? ctx.geoIndustries.join(', ') : 'No geo data available';
+  const regionalContext = ctx.regionalIntel ? ctx.regionalIntel.callc_context : '';
   return `You are the intelligence behind Lifescape, writing geo and counselor sections.
 
 STUDENT PROFILE:
@@ -1745,11 +1748,14 @@ ZIP: ${ctx.zip}
 Nearby industries near ${ctx.geoNeighborhood||ctx.zip} (${ctx.geoDistance||'nearby'}): ${geoList}
 Combination unlocks: ${ctx.comboSummary||'none'}
 RIASEC: ${ctx.topRIASEC}
+${regionalContext ? '\n'+regionalContext : ''}
 
 YOUR JOB — produce exactly two sections with these exact dividers:
 
 ---GEO---
-3-5 sentences about what is geographically close that connects to this profile. Name the neighborhood or city specifically. Draw a clear line between nearby industries and something specific from their tiles. Goal is surprise and delight — something real and close they never knew was relevant. ${ctx.voice==='parent'?`Third person about ${ctx.name}.`:`Second person to ${ctx.name}.`}
+Write two distinct paragraphs.
+PARAGRAPH 1 — Local: Name what is genuinely nearby that connects to this student's profile. Specific neighborhood or employer. One surprising, real connection they likely don't know about. ${ctx.voice==='parent'?`Third person about ${ctx.name}.`:`Second person to ${ctx.name}.`}
+PARAGRAPH 2 — Regional trajectory: ${ctx.regionalIntel ? `This student lives in ${ctx.regionalIntel.name}. Name their trajectory type explicitly — Stay Close, Leave and Return, or Leave and Stay Gone — based on their profile. Name the specific corridor their interests point toward. Name the school decision that corresponds to that trajectory. Be direct and specific, not generic.` : `Name the broader geographic context for this student's career path — where their industry actually concentrates nationally, and what that means for their school decision.`}
 
 ${(()=>{
   try {
@@ -1877,7 +1883,7 @@ function captureToSheets(profile, callAData) {
 const LOADING_MSGS = [
   'Reading who you are...',
   'Mapping your interests to industries...',
-  'Finding what lives close to home...',
+  'Finding what lives your region...',
   'Writing your trajectory...',
   'Almost there...'
 ];
@@ -2404,7 +2410,7 @@ async function submitLifescape() {
     // ── CALL B + C — parallel, isolated ──────────────
     const [callBResult, callCResult] = await Promise.allSettled([
       fireCall(buildCallBPrompt(ctx), 1200, 0, 45000),
-      fireCall(buildCallCPrompt(ctx), 400, 0, 30000)
+      fireCall(buildCallCPrompt(ctx), 600, 0, 30000)
     ]);
 
     // Graceful fallback — each call fails independently
