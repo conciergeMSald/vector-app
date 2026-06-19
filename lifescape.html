@@ -1738,6 +1738,9 @@ FORBIDDEN: assessment, results, data, score, ranked, you should become, most stu
 function buildCallCPrompt(ctx) {
   const geoList = ctx.geoIndustries ? ctx.geoIndustries.join(', ') : 'No geo data available';
   const regionalContext = ctx.regionalIntel ? ctx.regionalIntel.callc_context : '';
+  const corridorContext = typeof getStudentCorridorContext === 'function'
+    ? getStudentCorridorContext(ctx.naicsSectors || [], ctx.riasec || [], ctx.zip || '')
+    : '';
   return `You are the intelligence behind Lifescape, writing geo and counselor sections.
 
 STUDENT PROFILE:
@@ -1749,6 +1752,7 @@ Nearby industries near ${ctx.geoNeighborhood||ctx.zip} (${ctx.geoDistance||'near
 Combination unlocks: ${ctx.comboSummary||'none'}
 RIASEC: ${ctx.topRIASEC}
 ${regionalContext ? '\n'+regionalContext : ''}
+${corridorContext ? '\n'+corridorContext : ''}
 
 YOUR JOB — produce exactly two sections with these exact dividers:
 

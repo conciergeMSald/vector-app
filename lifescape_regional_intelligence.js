@@ -343,3 +343,118 @@ function getRegionalCallCContext(zip) {
   const region = resolveRegion(zip);
   return region ? region.callc_context : '';
 }
+
+// ── NAICS → Corridor mapping per region ──────────────────────────────────────
+// Maps student's top NAICS sectors to the most relevant regional corridor
+// Returns the corridor object or null if no strong match
+
+const CORRIDOR_NAICS_MAP = {
+  socal: [
+    { corridorName: 'Entertainment & Media',              naics: [51, 71],     riasec: ['A','E','S'] },
+    { corridorName: 'Aerospace & Defense',                naics: [33, 54],     riasec: ['R','I','C'] },
+    { corridorName: 'Tech & Digital Media',               naics: [51, 54],     riasec: ['I','R','C'] },
+    { corridorName: 'CPG, Action Sports & Lifestyle Brands', naics: [44, 71, 81], riasec: ['E','S','A'] },
+    { corridorName: 'Fashion, Beauty & Cosmetics',        naics: [31, 44],     riasec: ['A','E','R'] },
+    { corridorName: 'Pharmaceutical & Biotech',           naics: [62, 54],     riasec: ['I','R','S'] },
+    { corridorName: 'Startup & Venture Ecosystem',        naics: [54, 51, 81], riasec: ['E','I','C'] }
+  ],
+  bayarea: [
+    { corridorName: 'Deep Tech, AI & Semiconductor',      naics: [51, 54, 33], riasec: ['I','R','C'] },
+    { corridorName: 'Enterprise & Consumer Tech',         naics: [51, 54],     riasec: ['I','E','C'] },
+    { corridorName: 'Biotech & Life Sciences',            naics: [62, 54],     riasec: ['I','R','S'] },
+    { corridorName: 'Financial Services & Fintech',       naics: [52, 54],     riasec: ['C','E','I'] },
+    { corridorName: 'Venture Capital & Startup Ecosystem',naics: [52, 54, 81], riasec: ['E','I','C'] }
+  ],
+  chicago: [
+    { corridorName: 'Finance, Trading & Quant',           naics: [52],         riasec: ['C','I','E'] },
+    { corridorName: 'Consulting & Professional Services', naics: [54],         riasec: ['E','I','C'] },
+    { corridorName: 'Healthcare & Life Sciences',         naics: [62, 54],     riasec: ['I','S','R'] },
+    { corridorName: 'Manufacturing, Logistics & Supply Chain', naics: [33, 48, 42], riasec: ['R','C','I'] },
+    { corridorName: 'Technology & Digital',               naics: [51, 54],     riasec: ['I','R','C'] },
+    { corridorName: 'Consumer Goods & Retail',            naics: [44, 31, 72, 54], riasec: ['E','S','C'] }
+  ]
+};
+
+// ── resolveStudentCorridor ────────────────────────────────────────────────────
+// Given a student's NAICS sectors, RIASEC codes, and regional key,
+// returns the single best-matching corridor for this student in this region.
+// Uses a weighted score: NAICS overlap (primary) + RIASEC affinity (secondary)
+//
+// @param naicsSectors  array of {sector, count/score} from getNAICSProfile()
+// @param riasec        array of {code, score} from getRIASECProfile()
+// @param regionalKey   'socal' | 'bayarea' | 'chicago'
+// @returns { corridorName, naics, riasec, score } | null
+
+function resolveStudentCorridor(naicsSectors, riasec, regionalKey) {
+  if (!naicsSectors || !naicsSectors.length || !regionalKey) return null;
+
+  const corridorMap = CORRIDOR_NAICS_MAP[regionalKey];
+  if (!corridorMap) return null;
+
+  // Student's top RIASEC codes (top 3, ordered)
+  const studentRIASEC = (riasec || []).slice(0, 3).map(r => r.code);
+  const studentRIASECSet = new Set(studentRIASEC);
+
+  // High-signal NAICS codes that are corridor-specific (not generic crossovers)
+  // NAICS 71 (Arts/Entertainment) almost uniquely signals Entertainment — boost it
+  // NAICS 52 (Finance) almost uniquely signals Finance — boost it
+  // NAICS 62 (Healthcare) almost uniquely signals Healthcare — boost it
+  // NAICS 44 (Retail/Consumer) almost uniquely signals CPG/Consumer — boost it
+  // NAICS 33 (Manufacturing) almost uniquely signals Aerospace/Industrial — boost it
+  const HIGH_SIGNAL_NAICS = new Set([71, 52, 62, 44, 31, 33, 48]);
+
+  // Score each corridor
+  const scored = corridorMap.map(corridor => {
+    let score = 0;
+
+    // Primary signal — NAICS overlap, weighted by position and specificity
+    naicsSectors.slice(0, 5).forEach((n, idx) => {
+      if (corridor.naics.includes(n.sector)) {
+        const baseWeight = (5 - idx) * 3; // top sector worth 15, 5th worth 3
+        // High-signal NAICS get a stronger boost when they appear in top-2 positions
+        // This ensures Finance(52), Healthcare(62), Entertainment(71) aren't beaten
+        // by generic 51/54 combinations even when both sectors are tied by count
+        const isTopPosition = idx <= 1;
+        const specificityBoost = HIGH_SIGNAL_NAICS.has(n.sector) ? (isTopPosition ? 14 : 8) : 0;
+        score += baseWeight + specificityBoost;
+      }
+    });
+
+    // Secondary signal — RIASEC affinity, ordered match matters
+    corridor.riasec.forEach((code, corridorRIASECIdx) => {
+      const studentIdx = studentRIASEC.indexOf(code);
+      if (studentIdx !== -1) {
+        // Both corridor position and student position matter
+        const corridorWeight = (3 - corridorRIASECIdx); // primary corridor code worth 3
+        const studentWeight = (3 - studentIdx);          // student's primary code worth 3
+        score += corridorWeight * studentWeight;
+      }
+    });
+
+    return { ...corridor, score };
+  });
+
+  // Return highest-scoring corridor, or null if no real match (score < 3)
+  const best = scored.sort((a, b) => b.score - a.score)[0];
+  return best && best.score >= 3 ? best : null;
+}
+
+// ── getStudentCorridorContext ─────────────────────────────────────────────────
+// Returns a short, prompt-ready string naming the student's matched corridor
+// Used to sharpen callC prompt beyond "here are all corridors"
+
+function getStudentCorridorContext(naicsSectors, riasec, zip) {
+  const region = resolveRegion(zip);
+  if (!region) return '';
+
+  const corridor = resolveStudentCorridor(naicsSectors, riasec, region.key);
+  if (!corridor) return '';
+
+  // Find the full corridor object from the region for employer/detail data
+  const fullCorridor = region.corridors.find(c => c.name === corridor.corridorName);
+  if (!fullCorridor) return `Student corridor match: ${corridor.corridorName}`;
+
+  return `STUDENT CORRIDOR MATCH: ${corridor.corridorName} (${fullCorridor.anchor})
+Key employers in this corridor: ${fullCorridor.employers.slice(0,4).join(', ')}
+Industries: ${fullCorridor.industries.slice(0,3).join(', ')}`;
+}
