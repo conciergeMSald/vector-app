@@ -1229,6 +1229,9 @@ const COLLEGE_PREFS = {
 // ── CONFIG ─────────────────────────────────────────
 const API_ENDPOINT = 'https://api.abettercollegeconsultant.com/v1/messages';
 const SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxmhDOrAjTtgpD9WfP1pnMlcBd9cgl-U1bo6RS2i82tGb3t4eB3fO1sE3i3JgLIot38Cg/exec';
+// Zapier webhook → Airtable SESSIONS table (appZnHR2LdSSrUBC8 / tblcD7aujX8P5R96C)
+// Paste webhook URL here after creating the Zap. Leave empty to disable.
+const AIRTABLE_WEBHOOK_URL = '';
 
 // ── STATE ──────────────────────────────────────────
 const LS_STATE = {
@@ -2290,6 +2293,65 @@ function captureToSheets(profile, callAData) {
   fetch(SHEETS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(()=>{});
 }
 
+/* ── captureToAirtable ───────────────────────────────────────────────────────
+   Longitudinal record. Every assessment captured here.
+   Zapier webhook → Airtable SESSIONS table. Fire-and-forget, no-cors.
+   Called after ALL Claude calls complete — richest possible record.
+   ───────────────────────────────────────────────────────────────────────── */
+function captureToAirtable(profile, callAData, callDData, adjacentPicks, profileAdjacentPicks) {
+  if (!AIRTABLE_WEBHOOK_URL) {
+    console.log('[VECTOR Lifescape] AIRTABLE_WEBHOOK_URL not set — skipping Airtable capture.');
+    return;
+  }
+  try {
+    var bridgePath = (typeof findBridgePath === 'function') ? findBridgePath({zip: LS_STATE.zip}) : null;
+    var bridgeStr  = bridgePath ? (bridgePath.cc + ' → ' + (bridgePath.target || '')) : 'N';
+    var sessionId  = Date.now() + '-' + (LS_STATE.name || 'anon').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    var payload = {
+      'Session ID':       sessionId,
+      'Email':            (window.sbSession && window.sbSession.user && window.sbSession.user.email) || '',
+      'Student_Name':     LS_STATE.name                                                              || '',
+      'Grade':            LS_STATE.grade                                                             || null,
+      'ZIP_Code':         LS_STATE.zip                                                               || '',
+      'Voice_Path':       LS_STATE.voice                                                             || 'student',
+      'Path':             'Lifescape',
+      'Session_Source':   'Lifescape',
+      'Assessment_Date':  new Date().toISOString(),
+      'Report Generated': true,
+      'VECTOR_Score':     profile.rawScore                                                           || null,
+      'Score_Narrative':  (callAData && callAData.trajectory)                                        || '',
+      'Drive_Answers':    JSON.stringify(LS_STATE.big_five || {}),
+      'Variable_Scores':  JSON.stringify(profile.varScores || {}),
+      'GPA':              LS_STATE.gpa                                                               || '',
+      'Campus_Size_Pref': COLLEGE_PREFS.campus_scale                                                || '',
+      'State_Pref':       Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(', ') : (COLLEGE_PREFS.regions || ''),
+      'Faith_Pref':       COLLEGE_PREFS.religion                                                    || '',
+      '3out3in_Pref':     COLLEGE_PREFS.state_pref                                                  || '',
+      'Worlds_Chosen':    Array.isArray(LS_STATE.worlds_chosen) ? LS_STATE.worlds_chosen.join(', ') : '',
+      'Specific_Career':  (profile._meta && profile._meta.topNAICS)                                 || '',
+      'Top_University':   LS_STATE.topUniversity                                                    || '',
+      'Primary Match':    (callDData && callDData[0] && callDData[0].name)                          || '',
+      'Adjacent_Match':   (adjacentPicks && adjacentPicks[0] && adjacentPicks[0].name)              || '',
+      'Unexpected_Match': (profileAdjacentPicks && profileAdjacentPicks[0] && profileAdjacentPicks[0].name) || '',
+      'Bridge_Path':      bridgeStr,
+      'Report_Text':      (callAData && callAData.trajectory) ? callAData.trajectory.slice(0, 5000) : '',
+      'Consultant_Code':  LS_STATE.consultant_code                                                  || '',
+      'Outcome_School':   '',
+    };
+
+    fetch(AIRTABLE_WEBHOOK_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    }).catch(function(err){ console.error('[VECTOR Lifescape] Airtable capture error:', err); });
+
+    console.log('[VECTOR Lifescape] Airtable capture fired. Session:', sessionId, '| Consultant:', LS_STATE.consultant_code || 'none');
+  } catch(err) {
+    console.error('[VECTOR Lifescape] captureToAirtable build error:', err);
+  }
+}
+
 // ── LOADING MESSAGES ───────────────────────────────
 const LOADING_MSGS = [
   'Reading who you are...',
@@ -3106,6 +3168,10 @@ async function submitLifescape() {
         // School tab shows graceful fallback — already set to "generating"
       }
     }
+
+    // ── AIRTABLE LONGITUDINAL CAPTURE ────────────────────
+    // Fire-and-forget. Full record after all calls complete.
+    captureToAirtable(profile, callAData, callDData || [], adjacentPicks || [], profileAdjacentPicks || []);
 
     // ── AUTH GATE + SUPABASE WRITE ───────────────────────
     // All Claude calls complete. Gate fires and saves record.
