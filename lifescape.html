@@ -1242,7 +1242,8 @@ const LS_STATE = {
   worlds_chosen:[],
   academic_affinity:{subjects:[], strength:'', daypart:'', daypart_other:''},
   callAResult:null, callBResult:null, callCResult:null,
-  consultant_code: null
+  consultant_code: null,
+  topUniversity: null
 };
 
 // ── SCREEN NAV ─────────────────────────────────────
@@ -3089,6 +3090,7 @@ async function submitLifescape() {
           }
 
           if(callDData.length > 0) {
+            LS_STATE.topUniversity = callDData[0].name || null;
             renderSchoolRecommendations(
               profile, callAData, callDData,
               adjacentPicks, profileAdjacentPicks
@@ -3108,12 +3110,13 @@ async function submitLifescape() {
     // ── AUTH GATE + SUPABASE WRITE ───────────────────────
     // All Claude calls complete. Gate fires and saves record.
     // Build state snapshot — held in memory for magic link return.
+    var bridgePath = (typeof findBridgePath === 'function') ? findBridgePath({zip: LS_STATE.zip}) : null;
     var stateSnapshot = {
       profile:         profile,
       callAData:       LS_STATE.callAResult,
-      topUniversity:   (LS_STATE.callAResult && LS_STATE.callAResult.trajectory) || null,
+      topUniversity:   LS_STATE.topUniversity                                   || null,
       reportText:      (LS_STATE.callAResult && LS_STATE.callAResult.trajectory) || null,
-      ccPathwayShown:  'N',
+      ccPathwayShown:  bridgePath ? 'Y' : 'N',
     };
     gateAndDeliver(stateSnapshot);
 
