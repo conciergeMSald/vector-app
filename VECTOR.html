@@ -210,6 +210,46 @@ footer{padding:3rem 0;border-top:0.5px solid var(--rule);margin-top:4rem;}
   body{background:white;}
 }
 </style>
+
+<!-- ── Supabase Auth ──────────────────────────────────────────────────────── -->
+<!-- UMD bundle — works in raw HTML, no build tool, no framework required.   -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+  (function(){
+    var SUPABASE_URL     = 'https://pbtyanwkmbrcumwunxrv.supabase.co';
+    var SUPABASE_ANON    = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBidHlhbndrbWJyY3Vtd3VueHJ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMTU3MDIsImV4cCI6MjA2Mjg5MTcwMn0.kSzlOBElQlB5gV_OLAkUuOiIOmomZ4pvtx7tJNJbhGc';
+
+    // Supabase client — auth only (anon key). Service key never goes to browser.
+    window.sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
+      auth: {
+        autoRefreshToken:   true,
+        persistSession:     true,
+        detectSessionInUrl: true,    // catches magic link tokens in URL on return
+      }
+    });
+
+    // Check existing session on page load
+    window.sbClient.auth.getSession().then(function(result){
+      var session = result.data && result.data.session;
+      window.sbSession = session || null;
+      console.log('[VECTOR] Supabase auth ready. User:', session ? session.user.id : 'none');
+    });
+
+    // Listen for auth state changes (magic link return, sign-out)
+    window.sbClient.auth.onAuthStateChange(function(event, session){
+      window.sbSession = session || null;
+      console.log('[VECTOR] Auth state change:', event, session ? session.user.id : 'none');
+
+      // If user just signed in via magic link and we have a pending report — deliver it
+      if((event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') && window.__pendingReportText){
+        dismissAuthGate();
+        renderReport(window.__pendingReportText);
+        saveFamily(window.__pendingReportText, true, window.__pendingConsentTimestamp || null);
+        window.__pendingReportText = null;
+      }
+    });
+  })();
+</script>
 </head>
 <body>
 
@@ -1518,9 +1558,182 @@ function generateReport(){
   .then(r=>r.json())
   .then(d=>{
     const txt=(d.content&&d.content[0]&&d.content[0].text)?d.content[0].text:'Report generation encountered an error. Please try again.';
-    renderReport(txt);
+    gateAndRender(txt);
   })
-  .catch(()=>renderReport('Report generation encountered a network error. Please try again.'));
+  .catch(()=>gateAndRender('Report generation encountered a network error. Please try again.'));
+}
+
+/* ── gateAndRender ───────────────────────────────────────────────────────────
+   Holds the generated report text in memory.
+   If user already signed in: renders immediately + writes Supabase.
+   If not signed in: shows auth gate modal.
+   Supabase onAuthStateChange delivers the report when magic link returns.
+   Graceful degradation: if sbClient unavailable, renders immediately.
+   ───────────────────────────────────────────────────────────────────────── */
+function gateAndRender(txt){
+  document.getElementById('reportLoad').style.display='none';
+
+  // Graceful degradation — Supabase failed to load
+  if(!window.sbClient){
+    console.warn('[VECTOR] Supabase unavailable — rendering without auth');
+    renderReport(txt);
+    return;
+  }
+
+  // Already signed in — render immediately
+  if(window.sbSession && window.sbSession.user){
+    renderReport(txt);
+    saveFamily(txt, true);
+    return;
+  }
+
+  // Not signed in — show gate, hold text for magic link return
+  showAuthGate(txt);
+}
+
+/* ── showAuthGate ────────────────────────────────────────────────────────────
+   Renders the auth gate modal.
+   Student enters email → receives magic link → clicks it → page reloads
+   → onAuthStateChange fires SIGNED_IN → report renders automatically.
+   ───────────────────────────────────────────────────────────────────────── */
+function showAuthGate(txt){
+  var overlay=document.createElement('div');
+  overlay.id='vectorAuthGate';
+  overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(250,250,248,0.97);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box;';
+
+  overlay.innerHTML=`
+    <div style="max-width:480px;width:100%;font-family:Georgia,serif;text-align:center;">
+      <div style="font-family:var(--sans);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Vector Report</div>
+      <div style="font-size:28px;font-weight:400;letter-spacing:2px;color:#0a0a0a;margin-bottom:.75rem;">Your report is ready.</div>
+      <div style="font-family:var(--sans);font-size:13px;color:#6a6a6a;line-height:1.7;margin-bottom:2rem;">Enter your email to unlock your full VECTOR trajectory report — including your university matches, CC pathway analysis, and three-year action plan. We'll send you a secure link.</div>
+
+      <div style="display:flex;align-items:flex-start;gap:.75rem;text-align:left;background:#f5f3ef;padding:1rem 1.25rem;margin-bottom:1.25rem;border-left:2px solid #C8A97A;">
+        <input type="checkbox" id="vectorConsent" style="margin-top:3px;flex-shrink:0;accent-color:#8B7355;">
+        <label for="vectorConsent" style="font-family:var(--sans);font-size:11px;color:#4a4a4a;line-height:1.6;cursor:pointer;">I agree to VECTOR storing this assessment for my consultant's review and to improve my trajectory recommendations.</label>
+      </div>
+
+      <input type="email" id="vectorEmailInp" placeholder="your@email.com"
+        style="width:100%;padding:13px 16px;border:1px solid #d0d0d0;font-family:var(--sans);font-size:13px;color:#0a0a0a;margin-bottom:.75rem;box-sizing:border-box;outline:none;">
+
+      <button id="vectorSignInBtn" onclick="handleAuthClick()"
+        style="width:100%;padding:15px 36px;background:#0a0a0a;color:#fafaf8;border:none;font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-bottom:1rem;">
+        Send My Report Link
+      </button>
+      <div id="vectorAuthMsg" style="font-family:var(--sans);font-size:11px;color:#8B7355;min-height:1.5em;line-height:1.6;"></div>
+      <div style="margin-top:1.5rem;font-family:var(--sans);font-size:10px;color:#9a9a9a;">Free account. No password. No credit card.</div>
+    </div>`;
+
+  document.body.appendChild(overlay);
+
+  window.__pendingReportText      = txt;
+  window.__pendingConsentEl       = document.getElementById('vectorConsent');
+  window.__pendingAuthMsgEl       = document.getElementById('vectorAuthMsg');
+  window.__pendingEmailEl         = document.getElementById('vectorEmailInp');
+}
+
+/* ── handleAuthClick ─────────────────────────────────────────────────────────
+   Validates consent + email, sends Supabase magic link.
+   On success: shows confirmation copy. Report delivers on magic link return.
+   ───────────────────────────────────────────────────────────────────────── */
+function handleAuthClick(){
+  var consentEl = window.__pendingConsentEl;
+  var msgEl     = window.__pendingAuthMsgEl;
+  var emailEl   = window.__pendingEmailEl;
+
+  if(!consentEl || !consentEl.checked){
+    msgEl.style.color='#c0392b';
+    msgEl.textContent='Please check the box above to continue.';
+    return;
+  }
+
+  var email = emailEl ? emailEl.value.trim() : '';
+  if(!email || !email.includes('@')){
+    msgEl.style.color='#c0392b';
+    msgEl.textContent='Please enter a valid email address.';
+    return;
+  }
+
+  msgEl.style.color='#8B7355';
+  msgEl.textContent='Sending your secure link…';
+
+  var btn = document.getElementById('vectorSignInBtn');
+  if(btn) btn.disabled = true;
+
+  // Store consent timestamp before async call
+  window.__pendingConsentTimestamp = new Date().toISOString();
+
+  window.sbClient.auth.signInWithOtp({
+    email: email,
+    options: {
+      emailRedirectTo: window.location.href,
+      shouldCreateUser: true,
+    }
+  }).then(function(result){
+    if(result.error){
+      msgEl.style.color='#c0392b';
+      msgEl.textContent='Something went wrong. Please try again.';
+      console.error('[VECTOR] Magic link error:', result.error);
+      if(btn) btn.disabled = false;
+    } else {
+      msgEl.style.color='#2e7d32';
+      msgEl.textContent='Check your email — your secure report link is on its way.';
+      if(emailEl) emailEl.disabled = true;
+    }
+  }).catch(function(err){
+    msgEl.style.color='#c0392b';
+    msgEl.textContent='Something went wrong. Please try again.';
+    console.error('[VECTOR] signInWithOtp error:', err);
+    if(btn) btn.disabled = false;
+  });
+}
+
+/* ── dismissAuthGate ─────────────────────────────────────────────────────────
+   Removes the auth gate overlay from the DOM.
+   ───────────────────────────────────────────────────────────────────────── */
+function dismissAuthGate(){
+  var gate = document.getElementById('vectorAuthGate');
+  if(gate) gate.parentNode.removeChild(gate);
+}
+
+/* ── saveFamily ──────────────────────────────────────────────────────────────
+   Writes the family record to Supabase via the worker /save-family route.
+   Uses Supabase session JWT. Fires-and-forgets — never blocks report render.
+   ───────────────────────────────────────────────────────────────────────── */
+function saveFamily(txt, consentGiven, consentTimestamp){
+  if(!window.sbSession || !window.sbSession.access_token){
+    console.warn('[VECTOR] saveFamily: no active session — skipping write');
+    return;
+  }
+
+  var blocks = parseBlocks(txt);
+  var ccEl   = parseField(blocks.BRIDGE_PATH, 'ELIGIBLE') === 'true';
+  var topUni = parseField(blocks.PRIMARY_MATCH, 'NAME') || '';
+  var token  = window.sbSession.access_token;
+
+  var payload = {
+    student_name:      S.career ? S.career.n : null,
+    zip:               S.zip                 || null,
+    vector_score:      S.rawScore            || null,
+    top_career:        S.career ? S.career.n : null,
+    top_university:    topUni                || null,
+    report_text:       txt,
+    cc_pathway_shown:  ccEl ? 'Y' : 'N',
+    consent_obtained:  consentGiven          || false,
+    consent_timestamp: consentTimestamp      || null,
+    supabase_user_id:  window.sbSession.user.id,
+  };
+
+  fetch('https://api.abettercollegeconsultant.com/save-family', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+    body:    JSON.stringify(payload),
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    if(d.success){ console.log('[VECTOR] Family record saved.'); }
+    else          { console.error('[VECTOR] saveFamily error:', d); }
+  })
+  .catch(function(err){ console.error('[VECTOR] saveFamily fetch error:', err); });
 }
 
 /* ── parseBlocks ─────────────────────────────────────────────────────────────
