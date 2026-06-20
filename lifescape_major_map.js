@@ -50,6 +50,7 @@ const MAJOR_MAP = {
       entry_careers: ['Software Engineer', 'Product Analyst', 'Data Scientist'],
       world_alignment: 'Think',
       cc_transfer_friendly: true,
+      emerging_role: 'AI Product Engineer — the professional who builds software systems that integrate large language models and other AI capabilities into products that non-technical users actually use — managing the prompting architecture, output validation, latency constraints, and safety guardrails that determine whether an AI-powered product is reliable enough to ship. Every technology company building AI products needs engineers who can work at this boundary between model capability and product reality.',
       deployment_contexts: [
         {
           domain: 'Artificial Intelligence & Machine Learning',
@@ -85,6 +86,7 @@ const MAJOR_MAP = {
       entry_careers: ['Production Assistant', 'Content Creator', 'Assistant Director'],
       world_alignment: 'Make',
       cc_transfer_friendly: false,
+      emerging_role: 'AI Creative Director — the professional who leads creative teams using generative AI tools for visual development, pre-visualization, and asset generation — making the aesthetic and editorial judgments that determine which AI outputs are worth keeping and how they are integrated into productions that still require human creative authority over the final result. Every major studio and streaming platform is building this function into their production pipelines.',
       deployment_contexts: [
         {
           domain: 'Streaming & Digital Content Development',
@@ -116,6 +118,7 @@ const MAJOR_MAP = {
       entry_careers: ['Content Strategist', 'Social Media Manager', 'Brand Coordinator'],
       world_alignment: 'Make',
       cc_transfer_friendly: true,
+      emerging_role: 'Audience Intelligence Analyst — the professional who combines platform analytics, behavioral data, and AI-assisted content testing to identify what content formats, topics, and publishing cadences drive durable audience growth — moving beyond vanity metrics to the engagement signals that predict whether an audience will follow a creator or brand across platform changes, algorithm updates, and format shifts.',
       deployment_contexts: [
         {
           domain: 'Audience Strategy & Platform Intelligence',
@@ -147,6 +150,7 @@ const MAJOR_MAP = {
       entry_careers: ['Business Analyst', 'Systems Analyst', 'IT Consultant'],
       world_alignment: 'Systems',
       cc_transfer_friendly: true,
+      emerging_role: 'AI Legal Workflow Architect — the professional who redesigns how law firms, corporate legal departments, and compliance teams process information — identifying which document review, contract analysis, and regulatory research tasks can be handled by AI systems and building the workflows, quality checks, and human review protocols that allow legal professionals to supervise AI output rather than perform the underlying work manually.',
       deployment_contexts: [
         {
           domain: 'Enterprise Technology Consulting',
@@ -174,6 +178,7 @@ const MAJOR_MAP = {
       entry_careers: ['Junior Game Designer', 'UX Researcher', 'Narrative Designer'],
       world_alignment: 'Make',
       cc_transfer_friendly: false,
+      emerging_role: 'Procedural Content Generation Designer — the professional who designs the AI systems that generate game content — levels, characters, dialogue, quests — at a scale and variety that human designers alone cannot produce, while maintaining the quality standards and intentional design feel that players expect. Every major game studio building open-world or live-service games is investing in procedural generation capabilities that require designers who understand both game design principles and the AI systems producing the content.',
       deployment_contexts: [
         {
           domain: 'User Experience Design & Product Design',
@@ -201,6 +206,7 @@ const MAJOR_MAP = {
       entry_careers: ['Editorial Assistant', 'Staff Reporter', 'Digital Producer'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Computational Journalism Specialist — the professional who uses data analysis, public records automation, and AI-assisted document review to investigate stories that would be impossible to report manually — finding patterns in government spending databases, identifying anomalies in public records, and building the data infrastructure that allows investigative teams to pursue accountability journalism at a scale that individual reporters working alone cannot reach. ProPublica, The New York Times data team, and the Washington Post\'s engineering team have all built this function.',
       deployment_contexts: [
         {
           domain: 'Investigative & Data Journalism',
@@ -602,6 +608,7 @@ const MAJOR_MAP = {
       entry_careers: ['Medical Scribe', 'Clinical Research Assistant', 'Lab Technician'],
       world_alignment: 'Think',
       cc_transfer_friendly: true,
+      emerging_role: 'Longevity Physician — a specialty evolving from the intersection of internal medicine, endocrinology, genetics, and preventive medicine whose objective is not the treatment of illness but the deliberate slowing of biological aging. Where a traditional internist responds to disease, a longevity physician monitors epigenetic age, muscle quality, mitochondrial health, hormonal optimization, immune function, cognitive aging trajectories, and systemic inflammation in patients who arrive not because they are sick but because they want the physiology of someone fifteen years younger. The path runs through medical school and a residency in internal medicine or family medicine, followed by subspecialty training in a field whose fellowship structure is still being formalized — which means the physicians entering it now are building the specialty as they practice it. This is likely to become one of the largest concierge medicine specialties of the next two decades, and the undergraduate students who understand its biological foundations earliest will arrive at medical school with a research and clinical focus that most of their peers have not yet identified.',
       deployment_contexts: [
         {
           domain: 'Medical School & Clinical Practice',
@@ -683,6 +690,7 @@ const MAJOR_MAP = {
       entry_careers: ['Research Associate', 'Pharmaceutical Sales Associate', 'Biotech Lab Analyst'],
       world_alignment: 'Think',
       cc_transfer_friendly: true,
+      emerging_role: 'Regenerative Aesthetic Surgeon — a specialty evolving beyond conventional plastic surgery\'s reliance on implants, fillers, and tissue repositioning toward procedures that use the patient\'s own biology to rebuild what time or injury has changed. Where today\'s plastic surgeon inserts, the next generation will regrow — using stem-cell scaffolds, bioengineered fat, lab-grown cartilage, bioprinted tissue, and cellular rejuvenation protocols that produce results the body recognizes as its own rather than as foreign material. The undergraduate foundation for this path is tissue engineering, stem cell biology, and biomaterials — disciplines that live inside biochemistry and biomedical sciences programs, not general pre-med tracks. The path continues through medical school, a plastic and reconstructive surgery residency, and fellowship training in regenerative medicine whose structure is still being defined at the leading academic medical centers building these programs. The specialty shifts the entire frame of aesthetic medicine from reconstruction to biological regeneration — and the surgeons who will lead it are undergraduates right now.',
       deployment_contexts: [
         {
           domain: 'Drug Discovery & Pharmaceutical Research',
@@ -1322,3 +1330,1215 @@ if (typeof window !== 'undefined') {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { MAJOR_MAP };
 }
+
+// ─── TIER 2+3 REBUILD ────────────────────────────────────────────────────────
+// NAICS 61 — Education & Training Services
+// NAICS 23 — Construction & Built Environment
+// NAICS 33 — Advanced Manufacturing & Engineering
+// NAICS 48 — Transportation, Logistics & Distribution
+// NAICS 92 — Government, Policy & Public Administration
+// ─────────────────────────────────────────────────────────────────────────────
+
+MAJOR_MAP[61] = [
+  {
+    major_label: 'Education',
+    riasec_affinity: ['S', 'A', 'I'],
+    riasec_conflict: ['R', 'C'],
+    program_keywords: ['education', 'teaching', 'curriculum', 'instructional design', 'learning sciences'],
+    entry_careers: ['Teacher', 'Instructional Designer', 'Education Program Coordinator'],
+    world_alignment: 'People',
+    cc_transfer_friendly: true,
+    deployment_contexts: [
+      {
+        domain: 'Instructional Design & Corporate Learning',
+        edge: 'The fastest-growing segment of the education field has nothing to do with classrooms. Every major company in America is rebuilding how it trains its workforce — and the professionals who understand learning science, curriculum sequencing, and adult motivation are being recruited out of education programs into roles at Google, Deloitte, and Amazon that carry salaries no K-12 district can approach. Teachers College at Columbia and the University of Southern California\'s Rossier School have both built instructional design tracks specifically for students who want the credential of an education degree and the career optionality of a technology company.'
+      },
+      {
+        domain: 'Education Policy & Reform',
+        edge: 'The people who actually change how schools work are rarely in classrooms. They are writing policy in state legislatures, running foundation programs at Gates and Walton, directing research at Brookings and RAND, and leading the nonprofit organizations that translate research into practice at scale. Vanderbilt\'s Peabody College and Harvard\'s Graduate School of Education both produce the professionals who move between those worlds — and both actively recruit undergraduates who want to understand the system before trying to change it.'
+      },
+      {
+        domain: 'EdTech Product & Curriculum Development',
+        edge: 'Building software for learning is different from building software for commerce. The product decisions that determine whether a student actually learns something — sequencing, feedback loops, the management of frustration and reward — require genuine understanding of how human beings acquire knowledge under pressure. Khan Academy, Duolingo, and Coursera have all hired education majors into product roles because they discovered that their engineers alone could not answer the question of whether the product actually worked.'
+      },
+      {
+        domain: 'Museum & Cultural Education',
+        edge: 'Every major museum in America is also a school — with audiences that range from kindergartners on field trips to retired professionals, all of whom arrived voluntarily and can leave the moment they stop being engaged. The education departments that design those experiences draw from learning science, public history, and interpretive design in ways that most visitors never see. The Smithsonian, the Metropolitan Museum, and the Getty all run education associate programs that have launched careers sitting at the intersection of culture, pedagogy, and public engagement.'
+      },
+      {
+        domain: 'International Education & Exchange',
+        edge: 'The infrastructure that moves students and educators across borders — Fulbright, IIE, AFS, the State Department\'s exchange programs — is staffed by professionals who understand both education and international relations. Georgetown\'s School of Foreign Service and American University\'s School of International Service have both placed education majors into program officer and regional director roles that most people assume require a policy or diplomatic background.'
+      }
+    ]
+  },
+  {
+    major_label: 'Learning Sciences & Human Development',
+    riasec_affinity: ['I', 'S', 'A'],
+    riasec_conflict: ['R', 'E'],
+    program_keywords: ['learning sciences', 'cognitive development', 'educational psychology', 'child development', 'human development'],
+    entry_careers: ['Learning Experience Designer', 'Child Development Specialist', 'Research Associate'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    deployment_contexts: [
+      {
+        domain: 'Early Childhood & Developmental Program Design',
+        edge: 'The research on what happens in the first five years of a child\'s cognitive life has never been more actionable — and the gap between what the science shows and what most programs actually do has never been more visible. The professionals who can translate developmental research into program design are working at the most consequential intersection in American social policy. Northwestern\'s School of Education and Social Policy and the University of Michigan\'s School of Education both train researchers who end up designing the programs that Head Start, the Gates Foundation, and state early childhood agencies fund at scale.'
+      },
+      {
+        domain: 'UX Research & Human-Centered Design',
+        edge: 'The question that learning scientists spend careers on — how do people actually process, retain, and apply new information — is the same question that the best UX researchers ask about every product interaction. The path from learning sciences into technology is shorter and more direct than most education students realize. IDEO, Google\'s People Analytics team, and Microsoft\'s research division have all recruited learning scientists specifically because they bring a rigor about human cognition that most computer science graduates were never trained to apply.'
+      },
+      {
+        domain: 'Organizational Learning & Change Management',
+        edge: 'When a company tries to change — new strategy, new systems, new culture — most of those changes fail not because the strategy was wrong but because nobody understood how adults actually learn and adapt under conditions of uncertainty. The learning scientists who move into organizational consulting are solving a problem that McKinsey and Bain charge enormous fees to address and often address poorly. Vanderbilt\'s Peabody College and Teachers College at Columbia both have alumni in senior learning and development roles at firms that never thought of themselves as education employers.'
+      }
+    ]
+  },
+  {
+    major_label: 'Sports Management & Coaching Sciences',
+    riasec_affinity: ['E', 'S', 'R'],
+    riasec_conflict: ['I', 'A'],
+    program_keywords: ['sports management', 'athletic administration', 'coaching', 'kinesiology', 'sports education'],
+    entry_careers: ['Athletic Director Assistant', 'Coaching Associate', 'Sports Program Coordinator'],
+    world_alignment: 'Move',
+    cc_transfer_friendly: true,
+    deployment_contexts: [
+      {
+        domain: 'Collegiate Athletic Administration',
+        edge: 'Running a Division I athletic department is a business operation with a budget that rivals a mid-sized corporation — media rights negotiations, facility financing, Title IX compliance, NIL policy, and the management of coaching staffs whose compensation packages require board approval. The professionals who move into athletic director and senior administrator roles increasingly come from sports management programs that treat the field as a business discipline. Ohio State\'s Sport Industry program and Michigan\'s Sport Management program have both placed graduates into Power Five conference administration roles that used to require decades of coaching experience to reach.'
+      },
+      {
+        domain: 'Strength & Conditioning in Professional Sport',
+        edge: 'The science behind elite athletic performance has become sophisticated enough that every professional team in every major sport now employs specialists whose understanding of physiology, biomechanics, and recovery science directly affects roster outcomes. This is not a career for someone who loves sports. It is a career for someone who loves systems and is willing to apply them to human bodies under competitive pressure. The University of Connecticut\'s Kinesiology program and the University of Oregon\'s Human Physiology program have both produced strength and conditioning professionals now working in the NFL, NBA, and MLB.'
+      }
+    ]
+  },
+  {
+    major_label: 'Library & Information Science',
+    riasec_affinity: ['I', 'C', 'S'],
+    riasec_conflict: ['E', 'R'],
+    program_keywords: ['library science', 'information management', 'archival studies', 'knowledge management', 'data curation'],
+    entry_careers: ['Research Librarian', 'Information Architect', 'Knowledge Manager'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    deployment_contexts: [
+      {
+        domain: 'Knowledge Management & Enterprise Information Architecture',
+        edge: 'Every large organization is drowning in its own information — documents, decisions, research, institutional memory — and most of them cannot find what they know when they need it. The professionals who solve this problem at scale are not IT professionals. They are information architects who understand how knowledge is organized, retrieved, and made useful to people who are not looking for it directly. The University of Michigan\'s School of Information and the University of Illinois\'s iSchool have both produced knowledge management professionals now working at Amazon, Microsoft, and Google in roles that did not exist under that title fifteen years ago.'
+      },
+      {
+        domain: 'Digital Preservation & Cultural Heritage',
+        edge: 'The question of what survives from the digital era — which photographs, which records, which institutional documents are still readable in fifty years — is one of the most consequential and least visible problems in contemporary information management. The Library of Congress, the Internet Archive, and every major university library system are actively building teams of professionals who understand both the technical challenges of digital preservation and the curatorial judgment required to decide what matters. Pratt Institute\'s School of Information and Simmons University\'s School of Library and Information Science have both placed graduates into digital preservation roles at institutions that are quite literally deciding what the future will remember.'
+      }
+    ]
+  }
+];
+
+// ─── NAICS 23 — Construction & Built Environment ─────────────────────────────
+
+MAJOR_MAP[23] = [
+  {
+    major_label: 'Architecture',
+    riasec_affinity: ['A', 'I', 'R'],
+    riasec_conflict: ['S', 'C'],
+    program_keywords: ['architecture', 'design', 'building design', 'urban design', 'sustainable architecture'],
+    entry_careers: ['Architectural Designer', 'Draftsperson', 'Project Designer'],
+    world_alignment: 'Make',
+    cc_transfer_friendly: false,
+    deployment_contexts: [
+      {
+        domain: 'Healthcare Facility Design',
+        edge: 'The design of a hospital room affects patient recovery rates. The layout of a nursing station affects medication error rates. The placement of windows in a psychiatric facility affects patient outcomes in ways that have been measured and published and are largely ignored by architects who have not been trained to read the research. The firms that have built practices around evidence-based healthcare design — HKS, Perkins+Will, Stantec — are among the most consistent employers of architecture graduates who want their work to carry consequences beyond aesthetics. Harvard\'s Graduate School of Design and USC\'s School of Architecture both maintain active relationships with healthcare facility clients.'
+      },
+      {
+        domain: 'Sustainable Design & Net-Zero Buildings',
+        edge: 'The built environment accounts for nearly forty percent of global carbon emissions — and the architects who understand how to design buildings that produce as much energy as they consume are working at the most commercially viable intersection of design and climate. LEED certification was once a differentiator. Now it is a baseline. The professionals who can design to Passive House standards, integrate renewable energy systems into building envelopes, and model carbon across a building\'s full lifecycle are being recruited by every major developer who has made a net-zero commitment. Cal Poly San Luis Obispo\'s Architecture program and the University of Oregon\'s Architecture program have both built sustainability concentrations that employers in this space actively recruit from.'
+      },
+      {
+        domain: 'Real Estate Development & Project Management',
+        edge: 'The architects who move into development are not abandoning design. They are acquiring the financial and organizational fluency to make design decisions that actually get built — because they understand pro formas, entitlement processes, and the economics of construction in ways that most designers never learn. Related Companies, Hines, and Tishman Speyer have all hired architects into development associate roles specifically because they want people who can read a set of drawings and understand a cap rate in the same conversation. Columbia\'s GSAPP and USC\'s School of Architecture both have graduates running development projects at firms that most architecture students think of as client organizations, not employers.'
+      },
+      {
+        domain: 'Technology & BIM Innovation',
+        edge: 'Building Information Modeling has changed how buildings are designed, documented, and constructed — and the architects who are fluent in computational design, parametric modeling, and the integration of BIM across a project lifecycle are building practices that smaller firms cannot replicate. Zaha Hadid Architects, SHoP, and Bjarke Ingels Group have all built computational design teams that draw from architecture programs with strong digital fabrication and parametric design curricula. SCI-Arc in Los Angeles and Carnegie Mellon\'s School of Architecture have both produced graduates now leading computational design studios at firms where the relationship between code and construction is genuinely new territory.'
+      }
+    ]
+  },
+  {
+    major_label: 'Civil Engineering',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['civil engineering', 'structural engineering', 'transportation engineering', 'geotechnical', 'water resources'],
+    entry_careers: ['Civil Engineer I', 'Project Engineer', 'Transportation Planner'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    deployment_contexts: [
+      {
+        domain: 'Infrastructure & Transportation Systems',
+        edge: 'The infrastructure bill passed in 2021 committed more than one trillion dollars to roads, bridges, rail, broadband, and water systems — and the civil engineers who will design, manage, and certify that work are in shorter supply than at any point in recent memory. AECOM, Jacobs, and WSP are all running accelerated hiring programs for civil engineering graduates who can step into project engineer roles on federally funded infrastructure projects. Georgia Tech\'s civil engineering program and Purdue\'s Lyles School of Civil Engineering have both placed graduates directly into project lead roles on highway and transit projects that will reshape how American cities move.'
+      },
+      {
+        domain: 'Water Resources & Environmental Infrastructure',
+        edge: 'Water scarcity is the defining infrastructure challenge of the American West — and the civil engineers who specialize in water systems, aquifer management, and wastewater treatment are working on problems that have no elegant solution and unlimited urgency. The Metropolitan Water District of Southern California, the Bureau of Reclamation, and every major water utility in the country are competing for engineers who understand hydrology, hydraulic modeling, and the regulatory frameworks that govern water rights. Colorado State\'s Walter Scott Jr. College of Engineering and the University of Arizona\'s Department of Civil and Architectural Engineering have both built water resources concentrations that the western water sector recruits from directly.'
+      },
+      {
+        domain: 'Construction Management & Project Controls',
+        edge: 'The civil engineers who move into construction management are the professionals who prevent the failures that make news — projects over budget, behind schedule, or structurally compromised because nobody was tracking what mattered. Turner Construction, Bechtel, and Skanska all run associate programs for engineering graduates who want to be on the owner side of major projects. Purdue, Arizona State, and the University of Florida all have strong construction engineering management tracks that have placed graduates into project controls roles on hospital, airport, and stadium projects.'
+      }
+    ]
+  },
+  {
+    major_label: 'Urban Planning & Development',
+    riasec_affinity: ['I', 'S', 'E'],
+    riasec_conflict: ['R', 'A'],
+    program_keywords: ['urban planning', 'city planning', 'land use', 'community development', 'zoning'],
+    entry_careers: ['Planning Associate', 'Community Development Coordinator', 'Land Use Analyst'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    deployment_contexts: [
+      {
+        domain: 'Housing Policy & Affordable Development',
+        edge: 'The housing affordability crisis in American cities is fundamentally a planning and policy failure — a gap between what cities need and what zoning codes allow, what developers can finance and what communities will accept. The professionals who are actually solving pieces of this problem are working in planning departments, community development financial institutions, and nonprofit housing organizations that most people outside the field have never heard of. UCLA\'s Luskin School of Public Affairs and USC\'s Price School of Public Policy have both built housing policy concentrations that place graduates into roles where the decisions they make in year three determine where families can afford to live.'
+      },
+      {
+        domain: 'Transportation & Mobility Planning',
+        edge: 'How a city moves is how a city works — and the planners who design transit systems, bike networks, and pedestrian infrastructure are making decisions that affect millions of daily commutes, air quality levels, and economic mobility patterns that compound over decades. The Los Angeles Metro, BART, and New York\'s MTA all run planning associate programs, as do the major transit consulting firms like WSP and Nelson\\Nygaard. Cal Poly San Luis Obispo\'s City and Regional Planning program and the University of Michigan\'s Taubman College have both placed graduates into transit planning roles at agencies managing billion-dollar capital programs.'
+      },
+      {
+        domain: 'Real Estate & Private Development',
+        edge: 'Urban planners who move into the private sector bring something developers rarely have internally: fluency with the regulatory and community engagement processes that determine whether a project gets built at all. The entitlement process in Los Angeles, San Francisco, and New York is complex enough that major developers now employ planning professionals specifically to navigate it. Related Companies, Brookfield, and Boston Properties have all built government relations and entitlement teams that draw heavily from planning school alumni who understand how city hall works from the inside.'
+      }
+    ]
+  },
+  {
+    major_label: 'Construction Management',
+    riasec_affinity: ['R', 'E', 'C'],
+    riasec_conflict: ['A', 'I'],
+    program_keywords: ['construction management', 'project management', 'estimating', 'scheduling', 'building systems'],
+    entry_careers: ['Assistant Project Manager', 'Field Engineer', 'Estimator'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: true,
+    deployment_contexts: [
+      {
+        domain: 'Commercial Construction & Development',
+        edge: 'Every major commercial building in America — every hospital, every data center, every mixed-use tower — goes through a construction management process that determines whether it gets built on time, on budget, and to the standards that the owner actually specified. The professionals who run those processes at the project manager and superintendent level are among the most consistently employed people in the American economy, because what they do cannot be offshored and cannot be automated. Arizona State\'s Del E. Webb School of Construction and Purdue\'s construction management program have both built direct employer relationships with Turner, Hensel Phelps, and DPR that result in job offers before graduation for students who performed well on internship.'
+      },
+      {
+        domain: 'Specialty Contracting & Trade Management',
+        edge: 'The skilled trades — electrical, mechanical, plumbing, and the specialty systems that make buildings function — are managed by professionals who understand both the technical requirements of each trade and the coordination challenges of running multiple specialty contractors on a single project simultaneously. The construction manager who can read a mechanical drawing, communicate credibly with a master electrician, and track a thirty-trade schedule on a hospital project is rare and specifically recruited. Wentworth Institute of Technology and Cal Poly Pomona both have construction management programs with strong specialty contracting relationships that most four-year construction programs do not maintain.'
+      }
+    ]
+  }
+];
+
+// ─── NAICS 33 — Advanced Manufacturing & Engineering ─────────────────────────
+
+MAJOR_MAP[33] = [
+  {
+    major_label: 'Mechanical Engineering',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['S', 'A'],
+    program_keywords: ['mechanical engineering', 'thermodynamics', 'fluid mechanics', 'manufacturing', 'product design'],
+    entry_careers: ['Mechanical Engineer I', 'Product Development Engineer', 'Design Engineer'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'Human-Robot Collaboration Engineer — the professional who designs the shared workspaces, safety systems, and task allocation protocols that allow human workers and robotic systems to operate in close physical proximity without the rigid separation that traditional industrial automation required. BMW, Ford, and Amazon are all building collaborative robotics programs whose design requirements go beyond what either mechanical or software engineering training addresses alone.',
+    deployment_contexts: [
+      {
+        domain: 'Aerospace & Defense Systems',
+        edge: 'The mechanical engineers who work on aerospace systems are solving problems where margin for error is measured in thousandths of an inch and failure modes are studied for years after they occur. SpaceX, Boeing, Northrop Grumman, and Raytheon all run co-op and internship programs that effectively function as multi-year job interviews for mechanical engineering students — and the students who perform well in those programs receive offers before their senior year ends. Purdue\'s School of Aeronautics and Astronautics and Georgia Tech\'s George W. Woodruff School of Mechanical Engineering have both produced engineers who are now leading propulsion and structures teams on programs that will define aerospace for the next generation.'
+      },
+      {
+        domain: 'Medical Device Design & Development',
+        edge: 'A medical device that fails in the field does not generate a warranty claim. It generates an FDA investigation. The mechanical engineers who design implants, surgical instruments, and diagnostic equipment work under regulatory constraints that reshape every design decision from the first sketch to the final validation test. Medtronic, Stryker, and Boston Scientific all recruit mechanical engineers specifically from programs with strong biomedical design curricula — and the graduates who arrive understanding FDA 510(k) pathways and design controls command starting offers that their peers in other sectors spend years working toward. Drexel\'s College of Engineering and the University of Minnesota\'s mechanical engineering program have both built strong medical device design concentrations that these companies recruit from directly.'
+      },
+      {
+        domain: 'Robotics & Automation Systems',
+        edge: 'The automation of manufacturing is not a future event. It is a present condition that every factory manager in America is managing right now — and the mechanical engineers who can design, integrate, and optimize robotic systems are working at the intersection of the two disciplines that are reshaping what human labor in manufacturing actually means. Fanuc, KUKA, and ABB all recruit mechanical engineers into applications engineering and systems integration roles. Carnegie Mellon\'s Robotics Institute and the University of Michigan\'s mechanical engineering program have both built robotics concentrations that industrial automation employers recruit from with a regularity that reflects genuine pipeline dependence.'
+      }
+    ]
+  },
+  {
+    major_label: 'Electrical Engineering',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['S', 'A'],
+    program_keywords: ['electrical engineering', 'circuits', 'power systems', 'signal processing', 'embedded systems'],
+    entry_careers: ['Electrical Engineer I', 'Systems Engineer', 'Hardware Engineer'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'Embedded AI Systems Engineer — the professional who integrates machine learning inference directly into microcontrollers and edge computing hardware — enabling devices to make intelligent decisions locally without cloud connectivity. Every autonomous vehicle, smart sensor, and industrial IoT device requires this capability, and the engineers who can design both the hardware and the inference pipeline are among the most sought-after in the semiconductor and automotive sectors.',
+    deployment_contexts: [
+      {
+        domain: 'Semiconductor & Chip Design',
+        edge: 'The semiconductor supply chain crisis made visible something that engineers have known for decades: the chips that run every device, every vehicle, and every data center in the world are designed by a relatively small number of electrical engineers working at the intersection of physics and computer architecture. Qualcomm, Intel, NVIDIA, and TSMC are all competing for the same pipeline of chip design and verification engineers — and that competition has driven starting salaries at leading semiconductor firms to levels that rival investment banking without the hours. UC San Diego\'s Jacobs School of Engineering and Georgia Tech\'s School of Electrical and Computer Engineering have both produced semiconductor engineers who are now leading design teams on the chips that will define the next generation of AI hardware.'
+      },
+      {
+        domain: 'Power Systems & Grid Technology',
+        edge: 'The electrical grid is undergoing its most significant transformation since electrification — the integration of distributed renewable generation, utility-scale storage, and the electrification of transportation and heating are creating engineering challenges that the existing workforce is not large enough to solve. Pacific Gas & Electric, Southern California Edison, NextEra Energy, and every major utility in the country are running accelerated hiring programs for electrical engineers who understand power systems, grid stability, and the protection and control systems that keep large-scale electricity networks functional. Arizona State\'s Ira A. Fulton Schools of Engineering and the University of Washington\'s electrical engineering program have both built power systems concentrations that utility employers recruit from with a consistency that reflects genuine talent scarcity.'
+      }
+    ]
+  },
+  {
+    major_label: 'Industrial Engineering & Manufacturing Systems',
+    riasec_affinity: ['R', 'I', 'E'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['industrial engineering', 'manufacturing systems', 'operations research', 'lean manufacturing', 'quality engineering'],
+    entry_careers: ['Industrial Engineer', 'Manufacturing Engineer', 'Process Improvement Analyst'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'Chief Quality Intelligence Officer (CQIO) — the professional who replaces statistical sampling with continuous real-time quality monitoring across an entire production system, using computer vision, sensor fusion, and machine learning to detect defects, predict failure modes, and trigger corrective action before a nonconforming product reaches the next process step. This is not an incremental improvement to quality engineering — it is a structural transformation of how manufacturing quality works, and the industrial engineers who lead it are building functions that did not exist five years ago.',
+    deployment_contexts: [
+      {
+        domain: 'Lean Manufacturing & Production Optimization',
+        edge: 'Toyota did not build the most efficient manufacturing system in automotive history by accident. It built it by training engineers to see waste — in motion, in inventory, in waiting, in defects — and eliminate it systematically. The industrial engineers who carry that methodology into American manufacturing plants are producing measurable results that their employers can attach a dollar figure to within the first quarter. Boeing, General Motors, and Procter & Gamble all run industrial engineering rotational programs that treat the first two years as intensive training in applied operations research. Georgia Tech\'s H. Milton Stewart School of Industrial and Systems Engineering is the most cited pipeline for this work in the country, producing engineers who enter manufacturing and consulting roles with a rigor about human-system interaction that mechanical engineers without IE training typically lack.'
+      },
+      {
+        domain: 'Quality Engineering & Regulatory Compliance',
+        edge: 'In a pharmaceutical plant, a quality failure is not a customer service problem. It is a regulatory shutdown, a recall, and potentially a criminal investigation. The quality engineers who design and maintain the systems that prevent those failures are working at the intersection of statistical process control, regulatory compliance, and organizational culture in ways that require a sophistication most engineers are not trained for. Johnson & Johnson, Pfizer, and Merck all maintain quality engineering rotational programs at their manufacturing facilities, and the industrial engineers who go through those programs and into quality systems leadership roles are managing risks that have nine-figure consequences. Penn State\'s Harold and Inge Marcus Department of Industrial and Manufacturing Engineering and Purdue\'s School of Industrial Engineering both have quality engineering concentrations that pharmaceutical and medical device manufacturers recruit from specifically.'
+      },
+      {
+        domain: 'Supply Chain Operations & Network Design',
+        edge: 'The supply chain disruptions of the early 2020s made visible what industrial engineers have modeled for decades: the difference between a resilient supply network and a fragile one is not luck. It is the quality of the engineering decisions made about where to source, how much inventory to carry, and how to design the physical and informational flows that connect suppliers to customers across continents. Amazon, Apple, and Nike all employ industrial engineers in supply chain network design roles that most people outside the profession do not know exist — roles that carry responsibility for billions of dollars in inventory and infrastructure decisions. Michigan State\'s Broad College of Business and Penn State\'s IE program have both placed industrial engineers into supply chain network design roles at companies whose logistics operations are studied as industry benchmarks.'
+      }
+    ]
+  },
+  {
+    major_label: 'Chemical Engineering',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['S', 'A'],
+    program_keywords: ['chemical engineering', 'process engineering', 'thermodynamics', 'reaction engineering', 'separation processes'],
+    entry_careers: ['Process Engineer', 'Chemical Engineer I', 'R&D Associate'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'Continuous Manufacturing Process Engineer — the professional who redesigns batch pharmaceutical and chemical manufacturing into continuous flow processes — eliminating the idle time, scale-up uncertainty, and quality variability that batch manufacturing produces. The FDA has actively encouraged continuous manufacturing adoption, and the chemical engineers who can design and validate these processes are working on a transformation of how drugs and specialty chemicals are made that reduces cost, improves quality, and compresses development timelines simultaneously.',
+    deployment_contexts: [
+      {
+        domain: 'Pharmaceutical Manufacturing & Process Development',
+        edge: 'Moving a drug from laboratory synthesis to commercial manufacturing at scale is one of the most technically demanding challenges in industrial engineering — and the chemical engineers who can design, validate, and optimize that process are working at the center of an industry that measures its output in lives. Pfizer, Eli Lilly, and AstraZeneca all run process development and manufacturing engineering programs for chemical engineering graduates, and the graduates who enter pharmaceutical manufacturing with strong process chemistry and GMP (Good Manufacturing Practice) backgrounds receive starting compensation packages that place them among the highest-paid engineering graduates in any sector. MIT\'s chemical engineering program and Carnegie Mellon\'s Department of Chemical Engineering have both produced process engineers who are now leading manufacturing scale-up programs for drugs that have changed the standard of care for serious diseases.'
+      },
+      {
+        domain: 'Energy Transition & Green Chemistry',
+        edge: 'The transition from fossil fuel chemistry to renewable energy chemistry is the largest industrial transformation in a century — and the chemical engineers who understand both the existing processes and the emerging alternatives are working on problems that have no settled answers and enormous commercial stakes. ExxonMobil, Chevron, and Shell are all running green chemistry and carbon capture programs staffed by chemical engineers who know enough about existing petroleum chemistry to understand why the alternatives are hard and enough about electrochemistry to contribute to making them work. The University of California Berkeley\'s Department of Chemical and Biomolecular Engineering and the University of Texas at Austin\'s McKetta Department of Chemical Engineering have both built energy transition concentrations that the energy sector recruits from directly.'
+      }
+    ]
+  }
+];
+
+// ─── NAICS 48 — Transportation, Logistics & Distribution ─────────────────────
+
+MAJOR_MAP[48] = [
+  {
+    major_label: 'Supply Chain Management',
+    riasec_affinity: ['E', 'C', 'I'],
+    riasec_conflict: ['A', 'R'],
+    program_keywords: ['supply chain', 'logistics', 'operations management', 'procurement', 'demand planning'],
+    entry_careers: ['Supply Chain Analyst', 'Logistics Coordinator', 'Procurement Associate'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: true,
+    deployment_contexts: [
+      {
+        domain: 'Global Sourcing & Procurement',
+        edge: 'Apple sources components from over forty countries before a single iPhone is assembled. The professionals who manage those sourcing relationships — negotiating contracts, qualifying suppliers, managing risk across a supply base that spans continents and currencies — are doing work that determines product margins and delivery reliability for the most valuable company in the world. Apple, Nike, and Procter & Gamble all run procurement leadership development programs for supply chain graduates, and the professionals who enter those programs with strong negotiation, data analysis, and supplier relationship skills move into global category management roles faster than any other track in those organizations. Michigan State\'s Broad College of Business has built the most consistently cited supply chain undergraduate program in the country, and its alumni placement in global sourcing roles at Fortune 500 companies reflects a recruiting relationship that spans decades.'
+      },
+      {
+        domain: 'Fulfillment Operations & Last-Mile Logistics',
+        edge: 'Amazon operates more than one thousand fulfillment centers globally, and the operations managers who run those facilities are managing workforces, technology systems, and service level agreements that have redefined what on-time delivery means. The supply chain professionals who understand fulfillment center operations, carrier management, and last-mile delivery optimization are among the most actively recruited graduates in the logistics sector — because the gap between what e-commerce customers expect and what most logistics networks can consistently deliver is still large enough that operations talent is genuinely scarce. Arizona State\'s W. P. Carey School of Business and Penn State\'s Smeal College of Business have both placed supply chain graduates into Amazon Operations and UPS Supply Chain Solutions programs that function as accelerated pathways into senior operations management.'
+      },
+      {
+        domain: 'Healthcare Supply Chain & Medical Logistics',
+        edge: 'The COVID-19 pandemic made visible what healthcare supply chain professionals had known for years: the systems that deliver personal protective equipment, pharmaceuticals, and medical devices to hospitals and clinics are among the most consequential and most fragile in the American economy. McKesson, Cardinal Health, and Medline Industries all employ supply chain professionals whose decisions affect whether a hospital has what it needs to treat patients — and those companies have responded to the recognition of that criticality by building supply chain leadership programs that compete with technology companies for the same pipeline of analytically rigorous operations graduates. Michigan State and Penn State both place graduates into healthcare distribution management programs; Rutgers Business School has built a specific healthcare supply chain concentration that these employers recruit from directly.'
+      }
+    ]
+  },
+  {
+    major_label: 'Transportation & Logistics Management',
+    riasec_affinity: ['E', 'C', 'R'],
+    riasec_conflict: ['A', 'I'],
+    program_keywords: ['transportation', 'freight', 'intermodal', 'fleet management', 'route optimization'],
+    entry_careers: ['Logistics Analyst', 'Transportation Planner', 'Fleet Coordinator'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: true,
+    deployment_contexts: [
+      {
+        domain: 'Freight Brokerage & Third-Party Logistics',
+        edge: 'The freight brokerage industry moves trillions of dollars of goods annually by connecting shippers who need capacity with carriers who have it — and the professionals who do that work at a high level are combining market knowledge, relationship management, and real-time data analysis in ways that produce compensation outcomes that most business graduates in other sectors do not reach until their mid-thirties. C.H. Robinson, Echo Global Logistics, and XPO Logistics all run sales and operations rotational programs that have launched careers in freight brokerage for transportation graduates who understood what they were entering before they walked in the door. Western Michigan University\'s Haworth College of Business has built one of the strongest freight transportation programs in the country, and its placement in brokerage and 3PL roles reflects a regional employer relationship that reaches far beyond Michigan.'
+      },
+      {
+        domain: 'Port Operations & International Freight',
+        edge: 'Ninety percent of everything that moves in global trade moves by ocean — and the professionals who manage port operations, customs compliance, and international freight forwarding are working at the infrastructure layer of the global economy that most people interact with daily without knowing it. The Ports of Los Angeles and Long Beach together handle more container volume than any other port complex in the Western Hemisphere, and the operations professionals who manage that volume work for terminal operators, freight forwarders, and customs brokers whose names appear on no consumer product but whose decisions affect the arrival of almost everything that does. California State University Long Beach\'s Global Logistics program and the University of Houston\'s Global Supply Chain Management program have both built specific international freight concentrations that port and freight forwarding employers recruit from with a geographic intentionality that reflects the industries\' concentration near major port infrastructure.'
+      }
+    ]
+  },
+  {
+    major_label: 'Aviation & Airport Management',
+    riasec_affinity: ['R', 'E', 'C'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['aviation management', 'airport operations', 'airline management', 'air traffic', 'aviation safety'],
+    entry_careers: ['Airport Operations Associate', 'Airline Operations Coordinator', 'Aviation Safety Analyst'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    deployment_contexts: [
+      {
+        domain: 'Airline Operations & Network Planning',
+        edge: 'An airline is a logistics network of extraordinary complexity — hundreds of aircraft, thousands of crew members, millions of passengers, and a schedule that must recover from disruptions in real time without cascading failure. The operations professionals who manage network planning, crew scheduling, and irregular operations recovery are solving optimization problems that have commercial consequences measured in hundreds of millions of dollars annually. Delta, United, and American all run operations management associate programs for aviation graduates, and the professionals who enter those programs with strong operations research and data analysis skills move into network planning and revenue management roles that carry significant commercial responsibility relatively early in their careers. Embry-Riddle Aeronautical University\'s Business Administration program and Purdue\'s Aviation Management program have both built airline operations pipelines that the major carriers recruit from directly and consistently.'
+      }
+    ]
+  }
+];
+
+// ─── NAICS 92 — Government, Policy & Public Administration ───────────────────
+
+MAJOR_MAP[92] = [
+  {
+    major_label: 'Political Science & Government',
+    riasec_affinity: ['E', 'S', 'I'],
+    riasec_conflict: ['R', 'C'],
+    program_keywords: ['political science', 'government', 'politics', 'international relations', 'comparative politics'],
+    entry_careers: ['Legislative Assistant', 'Policy Research Associate', 'Government Relations Coordinator'],
+    world_alignment: 'People',
+    cc_transfer_friendly: true,
+    deployment_contexts: [
+      {
+        domain: 'Legislative Affairs & Congressional Staffing',
+        edge: 'The people who actually write legislation are not members of Congress. They are staff members — legislative assistants, policy advisors, and chief of staff who carry the substantive expertise that elected officials rely on when making decisions about complex policy. A congressional office is one of the few places in American professional life where a twenty-three-year-old can carry genuine policy responsibility on issues that affect millions of people. Georgetown\'s Government Department and American University\'s School of Public Affairs have both built direct placement relationships with Congressional offices and the agencies that interact with them — and both have alumni networks in Washington dense enough that a phone call from a recent graduate actually reaches someone who will take it.'
+      },
+      {
+        domain: 'Government Relations & Public Affairs',
+        edge: 'Every major corporation, every hospital system, every university, and every nonprofit of meaningful scale employs professionals whose job is to understand and navigate the regulatory and legislative environment that shapes what their organization can do. Those professionals are government relations specialists — and the ones who are effective bring a combination of policy knowledge, relationship credibility, and strategic communication skills that takes years to build and that most organizations compete actively to retain. Apple, Google, Amazon, and Boeing all run government affairs teams in Washington and in state capitals where the regulatory decisions that affect their businesses are made. Georgetown, George Washington, and the University of Virginia\'s Frank Batten School both place political science graduates into government relations roles at a rate that reflects active employer recruiting relationships.'
+      },
+      {
+        domain: 'International Affairs & Diplomatic Service',
+        edge: 'The Foreign Service is one of the most competitive career paths in American government — and one of the most consequential. Foreign Service Officers represent the United States in countries ranging from allied democracies to active conflict zones, managing relationships, reporting on political developments, and implementing foreign policy at the ground level where abstractions become operational decisions. The path through the Foreign Service Officer Test is open to graduates of any institution — but the substantive preparation that makes a candidate competitive comes from political science and international affairs programs that take seriously the study of foreign policy, comparative politics, and international economics. Georgetown\'s School of Foreign Service and Tufts University\'s Fletcher School have both built international affairs programs whose graduates enter the Foreign Service at rates that reflect genuine preparation for what the test and the career actually require.'
+      }
+    ]
+  },
+  {
+    major_label: 'Public Policy & Administration',
+    riasec_affinity: ['I', 'E', 'S'],
+    riasec_conflict: ['R', 'A'],
+    program_keywords: ['public policy', 'public administration', 'policy analysis', 'program evaluation', 'public management'],
+    entry_careers: ['Policy Analyst', 'Program Associate', 'Government Program Coordinator'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    deployment_contexts: [
+      {
+        domain: 'Urban & Municipal Policy',
+        edge: 'The decisions that most directly affect daily life — where affordable housing gets built, how transit routes are drawn, which neighborhoods receive infrastructure investment — are made not in Washington but in city halls, planning commissions, and county budget offices where the professionals who do the analytical work are often recent graduates of public policy programs. Los Angeles, Chicago, New York, and every major American city run management analyst and policy associate programs that function as entry points into municipal government for graduates who want to work on problems with immediate and visible consequences. UCLA\'s Luskin School and USC\'s Price School have both built direct relationships with Los Angeles city and county agencies that result in placement rates for policy graduates that reflect genuine employer commitment rather than incidental hiring.'
+      },
+      {
+        domain: 'Nonprofit Management & Social Policy',
+        edge: 'The nonprofit sector delivers a significant portion of social services in America — housing assistance, job training, healthcare access, food security — and the organizations that do it effectively are managed by professionals who understand both the policy environment that funds them and the operational challenges that determine whether programs actually work. The Bill & Melinda Gates Foundation, the Ford Foundation, and the major United Way affiliates all employ policy and program professionals whose backgrounds combine public policy training with genuine understanding of what works at the community level. Indiana University\'s O\'Neill School of Public and Environmental Affairs and Syracuse University\'s Maxwell School have both built nonprofit management concentrations that the major foundations and social service organizations recruit from with a consistency that reflects decades of relationship-building.'
+      },
+      {
+        domain: 'Health Policy & Healthcare Administration',
+        edge: 'American healthcare is a policy-shaped industry — the payment systems, regulatory requirements, and coverage rules that determine how care is delivered and who can access it are all products of political decisions made at the federal and state level. The professionals who help healthcare organizations navigate that environment — health policy analysts, government affairs directors, regulatory affairs managers — are working at the intersection of policy expertise and healthcare knowledge that most programs train for separately. The RAND Corporation, Mathematica Policy Research, and the major health system consulting firms all recruit policy graduates with strong quantitative and healthcare backgrounds. Vanderbilt\'s Department of Health Policy and Johns Hopkins Bloomberg School of Public Health have both built health policy tracks that these employers recruit from directly at the undergraduate and graduate level.'
+      }
+    ]
+  },
+  {
+    major_label: 'Criminal Justice & Law Enforcement',
+    riasec_affinity: ['S', 'E', 'R'],
+    riasec_conflict: ['A', 'I'],
+    program_keywords: ['criminal justice', 'criminology', 'law enforcement', 'corrections', 'forensic science'],
+    entry_careers: ['Law Enforcement Officer', 'Probation Officer', 'Criminal Justice Analyst'],
+    world_alignment: 'People',
+    cc_transfer_friendly: true,
+    deployment_contexts: [
+      {
+        domain: 'Federal Law Enforcement & Investigations',
+        edge: 'The FBI, DEA, Secret Service, and the other federal law enforcement agencies employ professionals whose work ranges from financial crimes investigation to counterterrorism operations — and the path into those agencies for undergraduate graduates is longer and more deliberate than most candidates realize. Federal agents are not hired directly from undergraduate programs in most cases; they are hired from the pool of applicants who have spent several years building specialized expertise in accounting, technology, foreign languages, or law that the agency needs and cannot train quickly. The criminal justice graduates who enter federal service successfully are the ones who understood this and spent those years acquiring something specific. John Jay College of Criminal Justice and Sam Houston State University\'s College of Criminal Justice have both built direct relationships with federal agency recruiters and have alumni in supervisory roles at the FBI and DEA who actively recruit from their former programs.'
+      },
+      {
+        domain: 'Forensic Science & Crime Analysis',
+        edge: 'Forensic science as practiced in actual crime laboratories is considerably more methodical and considerably less dramatic than its television representations suggest — and the professionals who do it at a high level combine scientific rigor, meticulous documentation, and the ability to communicate technical findings to juries and attorneys who do not share their training. The American Board of Criminalistics certification and the accreditation standards of the ASCLD (American Society of Crime Laboratory Directors) define what competent forensic practice looks like, and the programs whose graduates pass those standards consistently are not always the ones with the most visible media presence. Virginia Commonwealth University\'s Forensic Science program and Michigan State\'s School of Criminal Justice have both built forensic science concentrations with laboratory infrastructure and faculty practitioner relationships that produce graduates who can step into state and federal crime lab positions with the technical preparation those positions actually require.'
+      }
+    ]
+  },
+  {
+    major_label: 'International Relations & Diplomacy',
+    riasec_affinity: ['I', 'S', 'E'],
+    riasec_conflict: ['R', 'C'],
+    program_keywords: ['international relations', 'diplomacy', 'foreign policy', 'global affairs', 'international security'],
+    entry_careers: ['Foreign Service Associate', 'International Program Coordinator', 'Research Analyst'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    deployment_contexts: [
+      {
+        domain: 'International Development & Aid Organizations',
+        edge: 'The organizations that design and implement development programs in low-income countries — USAID, the World Bank, the major international NGOs — are staffed by professionals who combine substantive policy knowledge with genuine operational experience in the field. The path into international development at a meaningful level of responsibility is neither short nor straightforward, and the candidates who arrive with the combination of language skills, regional expertise, and policy training that organizations actually need are in short supply relative to the number of people who want to do the work. Georgetown\'s School of Foreign Service and American University\'s School of International Service have both built international development tracks whose alumni networks in Washington and in the field are dense enough to provide genuine career navigation support in what is otherwise an opaque and relationship-dependent sector.'
+      },
+      {
+        domain: 'National Security & Intelligence Analysis',
+        edge: 'The intelligence community employs analysts whose work ranges from geopolitical assessment to technical intelligence — and the path into that community for undergraduate graduates runs through internship programs at the CIA, DIA, NSA, and the State Department\'s Bureau of Intelligence and Research that are far more accessible than most students realize. The professionals who succeed in intelligence analysis long-term are the ones who combine genuine regional or technical expertise with the ability to communicate complex, uncertain findings to decision-makers who need clarity under pressure. Johns Hopkins School of Advanced International Studies and Georgetown\'s security studies program have both built relationships with the intelligence community that provide direct pathways for graduates whose academic records and language skills meet the threshold that security clearance processes require.'
+      }
+    ]
+  }
+];
+
+// ─── TIER 4A — NEW CLUSTERS ───────────────────────────────────────────────────
+// emerging_role field native from the start in all Tier 4A entries
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ─── NAICS 22 — Utilities & Energy ───────────────────────────────────────────
+
+MAJOR_MAP[22] = [
+  {
+    major_label: 'Energy Systems Engineering',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['energy systems', 'power engineering', 'renewable energy', 'grid integration', 'energy storage'],
+    entry_careers: ['Energy Systems Engineer', 'Grid Integration Analyst', 'Renewable Energy Engineer'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'Grid Resilience Intelligence Manager — the professional who combines power systems engineering with machine learning to monitor, predict, and autonomously recover grid infrastructure from failures, weather events, and cyberattacks. Every major utility in America is actively building this function. The credential it requires does not yet have a standard name, but the engineering foundation is power systems and the layer above it is data systems.',
+    deployment_contexts: [
+      {
+        domain: 'Utility Grid Modernization',
+        edge: 'The electrical grid is the largest machine human beings have ever built — and it is being rebuilt in real time to absorb solar and wind generation that arrives unpredictably, storage systems that shift when energy is available, and electric vehicles that create demand patterns no planner in 1990 anticipated. The engineers managing that transformation at Pacific Gas & Electric, Southern California Edison, and NextEra Energy are working on problems that have no textbook solutions because the textbooks were written before the problems existed. Arizona State\'s Ira A. Fulton Schools of Engineering and the University of Wisconsin-Madison\'s electrical and energy systems program have both built grid modernization concentrations that utility employers recruit from with an urgency that reflects genuine workforce scarcity at the intersection of power engineering and digital systems.'
+      },
+      {
+        domain: 'Renewable Energy Development & Integration',
+        edge: 'The economics of solar and wind energy have crossed the threshold where they are now the cheapest form of new electricity generation in most of the world — and the engineering challenge has shifted from whether to build renewables to how to integrate them into grids that were designed for dispatchable generation that runs when called upon. The engineers who understand both the generation side and the integration side are working at the most commercially active intersection in the energy sector. NextEra Energy, Orsted, and Avangrid are all running development engineering programs for graduates who can model interconnection requirements, manage permitting timelines, and understand why a wind farm in Texas and a wind farm in Massachusetts face entirely different grid integration challenges. Colorado School of Mines and UC San Diego\'s Jacobs School of Engineering have both built renewable energy engineering concentrations that the major independent power producers recruit from directly.'
+      },
+      {
+        domain: 'Energy Storage & Battery Systems',
+        edge: 'Grid-scale battery storage is the enabling technology for the energy transition — the system that captures excess solar generation at noon and releases it at six in the evening when demand peaks and the sun is no longer producing. The engineers who design, specify, and operate those systems are working at the intersection of electrochemistry, power electronics, and grid operations in ways that most engineering programs did not teach until very recently. Tesla Energy, Fluence, and Stem Inc. all employ energy storage engineers whose undergraduate training in electrical engineering or energy systems gave them the foundation that their employers then built on through application. Stanford\'s energy program and Carnegie Mellon\'s electrical and computer engineering department have both produced storage systems engineers now leading projects that represent billions of dollars of deployed infrastructure.'
+      },
+      {
+        domain: 'Nuclear Energy Operations & Engineering',
+        edge: 'Nuclear power produces approximately twenty percent of American electricity with zero carbon emissions — and the workforce that operates those plants is aging faster than it is being replaced. The Nuclear Regulatory Commission, Exelon Generation, and Duke Energy are all running accelerated hiring programs for nuclear engineering graduates who want to work in an industry that is simultaneously navigating the retirement of existing plants and the development of next-generation small modular reactors. The University of Michigan\'s Department of Nuclear Engineering and Radiological Sciences and Penn State\'s Department of Mechanical and Nuclear Engineering have both maintained nuclear engineering programs through decades when the field received little public attention, and their graduates are now entering an industry that is rediscovering its importance in ways their professors always knew it deserved.'
+      }
+    ]
+  },
+  {
+    major_label: 'Environmental Engineering',
+    riasec_affinity: ['R', 'I', 'S'],
+    riasec_conflict: ['E', 'A'],
+    program_keywords: ['environmental engineering', 'water treatment', 'air quality', 'remediation', 'environmental systems'],
+    entry_careers: ['Environmental Engineer I', 'Water Quality Engineer', 'Environmental Compliance Analyst'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'Climate Resilience Systems Engineer — the professional who combines environmental engineering with climate modeling and infrastructure design to assess, quantify, and retrofit physical systems — water treatment plants, coastal infrastructure, stormwater networks — against the specific climate risks projected for their location over the next fifty years. FEMA, major municipal utilities, and engineering firms building climate adaptation practices are all hiring for this function.',
+    deployment_contexts: [
+      {
+        domain: 'Water & Wastewater Infrastructure',
+        edge: 'Clean water is not a given. The infrastructure that treats drinking water and manages wastewater in American cities is aging faster than it is being replaced, and the environmental engineers who design, evaluate, and rehabilitate those systems are working on problems that have immediate public health consequences when they fail. The Safe Drinking Water Act and Clean Water Act create a regulatory framework that generates continuous engineering work — and the American Society of Civil Engineers has given American drinking water infrastructure a D grade, which means the pipeline of work for environmental engineers who specialize in water systems is not closing anytime soon. Stanford\'s environmental engineering program and the University of Illinois Urbana-Champaign\'s Department of Civil and Environmental Engineering have both built water systems concentrations that municipal utilities and environmental consulting firms like AECOM, Jacobs, and CDM Smith recruit from directly.'
+      },
+      {
+        domain: 'Environmental Consulting & Site Remediation',
+        edge: 'Every piece of contaminated land in America — every brownfield, every industrial site with legacy chemical contamination, every underground storage tank that leaked decades ago — eventually needs an environmental engineer to assess the contamination, design the cleanup, and certify that the remediation met regulatory standards. The consulting firms that do this work — Terracon, GHD, Antea Group — are among the most consistent employers of environmental engineering graduates in the country, because the demand for remediation work is generated by decades of industrial activity and does not fluctuate with economic cycles in the way that commercial construction does. Rutgers University\'s environmental engineering program and the University of Connecticut\'s Department of Civil and Environmental Engineering have both built remediation concentrations that reflect the geographic concentration of industrial legacy sites in the northeastern United States.'
+      }
+    ]
+  },
+  {
+    major_label: 'Sustainability Management',
+    riasec_affinity: ['I', 'E', 'S'],
+    riasec_conflict: ['R', 'C'],
+    program_keywords: ['sustainability', 'ESG', 'corporate sustainability', 'environmental management', 'climate strategy'],
+    entry_careers: ['Sustainability Analyst', 'ESG Associate', 'Corporate Sustainability Coordinator'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'Carbon Accounting Director — the professional who designs and operates the measurement systems that allow organizations to know, verify, and report their greenhouse gas emissions across Scope 1, 2, and 3 with the rigor that financial auditors bring to revenue. SEC climate disclosure rules and European CSRD requirements have made this function legally mandatory for public companies. The credential requires both accounting methodology and systems-level understanding of industrial processes.',
+    deployment_contexts: [
+      {
+        domain: 'Corporate ESG Strategy & Reporting',
+        edge: 'Every major public company in America now faces mandatory climate disclosure requirements — and the professionals who design the measurement systems, manage the data collection, and prepare the reports that regulators and investors require are working in a function that did not exist at meaningful scale five years ago. BlackRock, Vanguard, and State Street have all made ESG performance a factor in their shareholder engagement strategies, which means the sustainability teams at Apple, Microsoft, and every S&P 500 company are now operating under scrutiny that treats their disclosures with the same seriousness as financial statements. The University of Michigan\'s Ross School of Business and Yale\'s School of the Environment have both built sustainability management programs that large corporations recruit from for ESG analyst and reporting roles that carry significant organizational visibility.'
+      },
+      {
+        domain: 'Supply Chain Sustainability & Scope 3 Emissions',
+        edge: 'A company\'s Scope 3 emissions — the greenhouse gases produced by its suppliers and customers rather than its own operations — typically represent more than seventy percent of its total carbon footprint, and the sustainability professionals who can trace, measure, and reduce those emissions are working on problems that require both supply chain fluency and carbon accounting methodology. Apple\'s supplier responsibility program, Nike\'s supply chain sustainability team, and Walmart\'s Project Gigaton have all built Scope 3 emissions programs that require professionals who understand manufacturing processes, logistics networks, and the carbon accounting standards well enough to hold suppliers accountable to measurable targets. Arizona State\'s sustainability program and the University of Vermont\'s Rubenstein School have both built supply chain sustainability concentrations that the consumer goods and technology sectors recruit from directly.'
+      },
+      {
+        domain: 'Real Estate & Built Environment Sustainability',
+        edge: 'Buildings account for nearly forty percent of global carbon emissions — and the real estate industry has responded to that fact with LEED certification, net-zero building commitments, and green bond financing that requires sustainability professionals who understand both the technical standards and the financial instruments that fund sustainable development. CBRE, JLL, and the major institutional real estate investors are all building sustainability teams whose members need to speak fluently to engineers about building performance and to investors about the financial implications of climate risk in real estate portfolios. Columbia\'s Earth Institute and NYU\'s Schack Institute have both built real estate sustainability tracks that commercial real estate employers recruit from for roles that sit at the intersection of building performance, finance, and regulatory compliance.'
+      }
+    ]
+  },
+  {
+    major_label: 'Nuclear Engineering',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['S', 'A'],
+    program_keywords: ['nuclear engineering', 'reactor design', 'radiation safety', 'nuclear materials', 'small modular reactors'],
+    entry_careers: ['Nuclear Engineer', 'Reactor Engineer', 'Radiation Protection Specialist'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'Small Modular Reactor (SMR) Commissioning Engineer — the professional who leads the design verification, safety analysis, and regulatory approval process for next-generation nuclear reactors being deployed by companies like TerraPower, NuScale, and X-energy. The NRC licensing pathway for SMRs is being written in real time, and the engineers who understand both the legacy regulatory framework and the new reactor designs are among the most sought-after technical professionals in the energy sector.',
+    deployment_contexts: [
+      {
+        domain: 'Next-Generation Reactor Development',
+        edge: 'The small modular reactor is not a concept. It is an engineering program with NRC license applications in process, manufacturing contracts signed, and deployment timelines that have real investors behind them. TerraPower, NuScale Power, and X-energy are all building teams of nuclear engineers whose understanding of reactor physics, thermal hydraulics, and NRC licensing requirements gives them the ability to contribute to programs that are actively breaking ground. The University of Michigan\'s nuclear engineering program and MIT\'s Department of Nuclear Science and Engineering have both built SMR design concentrations whose faculty members are in some cases serving as technical advisors to the companies building these reactors — a proximity to the work that no other engineering discipline currently offers its undergraduates.'
+      },
+      {
+        domain: 'Nuclear Medicine & Isotope Production',
+        edge: 'Nuclear technology saves lives in ways that have nothing to do with reactors. The radioisotopes used in PET scans, cancer treatment, and diagnostic imaging are produced in research reactors and accelerators — and the nuclear engineers who manage isotope production, quality control, and regulatory compliance are working at the intersection of nuclear physics and healthcare in a sector that the general public rarely associates with nuclear engineering. SHINE Medical Technologies, NorthStar Medical Radioisotopes, and the National Isotope Development Center all employ nuclear engineers in isotope production roles that provide stable, meaningful careers for engineers who want to apply their training directly to patient outcomes.'
+      }
+    ]
+  }
+];
+
+// ─── NAICS 32 — Chemical & Materials Manufacturing ───────────────────────────
+
+MAJOR_MAP[32] = [
+  {
+    major_label: 'Materials Science & Engineering',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['S', 'A'],
+    program_keywords: ['materials science', 'materials engineering', 'metallurgy', 'polymers', 'nanomaterials', 'biomaterials'],
+    entry_careers: ['Materials Engineer', 'R&D Associate', 'Process Development Engineer'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'Sustainable Materials Architect — the professional who evaluates, selects, and validates novel materials for next-generation products with full lifecycle analysis — from raw material extraction through end-of-life — and who works at the intersection of materials performance, supply chain viability, and environmental compliance. Apple, Tesla, and Patagonia have all built materials innovation teams that require this exact combination of technical depth and systems thinking.',
+    deployment_contexts: [
+      {
+        domain: 'Semiconductor & Electronics Materials',
+        edge: 'Every semiconductor device is a materials problem. The silicon wafer, the copper interconnects, the low-k dielectrics, the high-k gate oxides — each layer represents a materials engineering decision that determines whether the chip performs at the speeds the industry requires. Intel, TSMC, and Applied Materials employ materials scientists and engineers whose work on thin-film deposition, chemical mechanical planarization, and novel material integration directly determines what the next generation of chips can do. MIT\'s Department of Materials Science and Engineering and Stanford\'s MSE program have both produced materials engineers who are now leading process integration teams at semiconductor manufacturers working on nodes below two nanometers — territory where physics itself is a constraint that materials engineers help navigate.'
+      },
+      {
+        domain: 'Battery & Energy Storage Materials',
+        edge: 'The performance of a lithium-ion battery — its energy density, its charge rate, its cycle life, its safety margin — is fundamentally a materials question. The materials scientists who develop new cathode chemistries, solid-state electrolytes, and anode architectures are doing the basic research that determines what electric vehicles can do ten years from now. Tesla, QuantumScape, and Solid Power all employ materials scientists in battery research roles that are as consequential to the energy transition as any power systems engineering. Carnegie Mellon\'s Department of Materials Science and Engineering and the University of Michigan\'s materials program have both built battery materials concentrations that the electric vehicle and energy storage sectors recruit from directly, with starting salaries that reflect genuine scarcity at the intersection of electrochemistry and materials engineering.'
+      },
+      {
+        domain: 'Aerospace & Defense Advanced Materials',
+        edge: 'An aircraft that is ten percent lighter burns ten percent less fuel over its entire service life — which is why the aerospace industry\'s investment in carbon fiber composites, titanium alloys, and ceramic matrix composites is not an engineering preference but an economic imperative. The materials engineers who develop, test, and certify these materials for flight-critical applications are working at a standard of rigor that most industrial materials work never approaches. Boeing, Lockheed Martin, and Northrop Grumman all run materials engineering development programs for graduates who want to work on problems where the consequences of a material failure are understood at the level of accident investigation and fleet grounding. Northwestern\'s Department of Materials Science and Engineering and Georgia Tech\'s School of Materials Science and Engineering have both built aerospace materials concentrations that defense contractors recruit from with a consistency that reflects the field\'s genuine dependence on academic research pipelines.'
+      },
+      {
+        domain: 'Biomedical Materials & Implant Design',
+        edge: 'A hip implant must survive thirty years of cyclic loading inside a human body without corroding, releasing toxic ions, or fatigue-fracturing at an inconvenient moment. The materials engineers who design those implants are balancing mechanical performance, biocompatibility, and manufacturing feasibility in ways that require FDA regulatory fluency alongside deep materials knowledge. Zimmer Biomet, Stryker, and DePuy Synthes all employ materials engineers in implant development roles, and the graduates who arrive with both materials engineering training and some exposure to biomechanics and regulatory affairs are recruited at a premium because that combination is genuinely uncommon. Drexel\'s materials science program and the University of California San Francisco\'s bioengineering collaboration with Berkeley have both produced biomaterials engineers whose work is now inside people\'s bodies around the world.'
+      }
+    ]
+  },
+  {
+    major_label: 'Green Chemistry & Sustainable Processes',
+    riasec_affinity: ['I', 'R', 'S'],
+    riasec_conflict: ['E', 'A'],
+    program_keywords: ['green chemistry', 'sustainable chemistry', 'bio-based materials', 'circular economy', 'process sustainability'],
+    entry_careers: ['Green Chemistry Analyst', 'Sustainable Process Engineer', 'R&D Chemist'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'Circular Economy Materials Strategist — the professional who redesigns industrial material flows to eliminate waste at the system level — mapping what materials enter and leave a manufacturing process, identifying where byproducts can become inputs, and building the supplier relationships and certification pathways that allow recycled or bio-based materials to meet the performance specifications that industrial customers require.',
+    deployment_contexts: [
+      {
+        domain: 'Consumer Products & Packaging Innovation',
+        edge: 'The pressure on consumer goods companies to eliminate single-use plastics, reduce packaging weight, and transition to recycled or bio-based materials has created a sustained demand for chemists and materials scientists who understand both the technical performance requirements of packaging and the supply chain constraints of sustainable alternatives. Procter & Gamble, Unilever, and Colgate-Palmolive all run packaging innovation programs that specifically recruit green chemistry and sustainable materials graduates — because the engineers who know what a material can do and what its supply chain looks like are the ones who can design a package that actually ships at scale. University of Michigan\'s Program in the Environment and Yale\'s Center for Green Chemistry and Green Engineering have both built sustainable packaging concentrations that consumer goods manufacturers recruit from directly.'
+      },
+      {
+        domain: 'Bio-Based Materials & Bioplastics',
+        edge: 'The transition from petroleum-based plastics to bio-based alternatives is not a materials preference — it is an industrial chemistry challenge that requires understanding both fermentation engineering and polymer science, and that has so far produced materials that are bio-derived but not always biodegradable, and biodegradable but not always bio-derived, and sometimes neither. The chemists who are actually solving these problems are working at startups like Novamont and NatureWorks, at large chemical companies like BASF and Evonik, and at university research labs that have attracted NIH and DOE funding for bio-based materials research. The University of Massachusetts Amherst\'s polymer science program and Iowa State\'s biorenewable chemicals and bioproducts program have both built bio-based materials concentrations that sit at a genuine research frontier.'
+      }
+    ]
+  },
+  {
+    major_label: 'Polymer Engineering & Science',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['S', 'A'],
+    program_keywords: ['polymer engineering', 'polymer science', 'plastics engineering', 'rubber science', 'composites'],
+    entry_careers: ['Polymer Engineer', 'Plastics Process Engineer', 'Composites Engineer'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'Advanced Composites Integration Engineer — the professional who translates laboratory composite material performance into manufacturable aerospace, automotive, and sporting goods components — managing the gap between what a material can do in a test specimen and what it reliably does in a production part built by human hands under time and cost constraints.',
+    deployment_contexts: [
+      {
+        domain: 'Automotive Lightweighting & EV Components',
+        edge: 'Every kilogram removed from an electric vehicle extends its range without adding a single battery cell — which is why the automotive industry\'s investment in polymer composites, structural adhesives, and engineered plastics has accelerated precisely as electrification has. The polymer engineers who work on automotive applications are designing door panels that survive crash tests, battery enclosures that manage thermal events, and structural components that meet NVH (noise, vibration, harshness) requirements that consumers notice even when they cannot name them. BASF, Covestro, and Sabic all run automotive applications engineering programs for polymer graduates who can translate material performance data into design recommendations that a tier-one automotive supplier will actually implement. University of Akron\'s polymer science program — one of the most consistently cited in the industry — and Michigan\'s materials science program have both placed polymer engineers into automotive applications roles that have become increasingly central to how electric vehicles are designed.'
+      },
+      {
+        domain: 'Medical Device Polymers & Regulatory Affairs',
+        edge: 'The tubing in an intravenous line, the housing of a pacemaker, the balloon in a cardiac catheter — these are polymer engineering problems where biocompatibility, sterilization compatibility, and long-term stability inside a human body are design requirements, not preferences. The polymer engineers who work in medical devices operate under ISO 10993 biocompatibility standards and FDA material qualification requirements that transform every design decision into a documentation exercise with regulatory consequences. Medtronic, Abbott, and Becton Dickinson all employ polymer engineers in materials development and regulatory affairs roles, and the graduates who arrive with both polymer science training and some exposure to medical device regulatory pathways are competing for roles against candidates who spent years acquiring one piece of that combination or the other. University of Akron and Drexel both have polymer programs with medical device industry relationships that reflect geographic proximity to the medical device manufacturing clusters in the Midwest and Mid-Atlantic.'
+      }
+    ]
+  },
+  {
+    major_label: 'Industrial & Process Chemistry',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['S', 'A'],
+    program_keywords: ['industrial chemistry', 'process chemistry', 'chemical manufacturing', 'reaction engineering', 'scale-up'],
+    entry_careers: ['Process Chemist', 'Manufacturing Chemist', 'Quality Control Chemist'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'AI-Augmented Process Chemist — the professional who uses machine learning models to accelerate reaction screening, predict synthesis outcomes, and optimize manufacturing process parameters — reducing the experimental iterations required to move a chemical process from laboratory to pilot plant from years to months. Eli Lilly, Merck, and BASF have all built AI-assisted process chemistry programs that are actively hiring chemists who can work at this intersection.',
+    deployment_contexts: [
+      {
+        domain: 'Specialty Chemicals & Formulation',
+        edge: 'Specialty chemicals are not commodities. They are precisely formulated materials — adhesives, coatings, surfactants, lubricants — whose performance in a specific application determines whether a product works, lasts, and can be manufactured reliably at scale. The chemists who develop and refine those formulations are working in one of the most stable and consistently profitable segments of the chemical industry, because switching costs in specialty chemicals are high enough that customers rarely change suppliers unless something fails. Dow, Ashland, and Evonik all run formulation chemistry programs for industrial chemistry graduates, and the graduates who arrive with strong physical chemistry and formulation experience are entering a field where the average tenure is long and the career trajectory is predictable in ways that academic chemistry rarely is. Case Western Reserve\'s chemistry program and the University of Akron\'s polymer and chemistry programs have both built industrial chemistry concentrations that the specialty chemicals sector recruits from directly in the Midwest corridor.'
+      },
+      {
+        domain: 'Pharmaceutical API Manufacturing',
+        edge: 'The active pharmaceutical ingredient — the molecule that does the work in a drug — must be synthesized, purified, and characterized to a standard that the FDA will certify before a single patient can receive it. The process chemists who develop and optimize the manufacturing routes for API production are working under current Good Manufacturing Practice regulations that transform every procedure into a controlled, documented, and validated process. Pfizer, Lonza, and Cambrex all run API manufacturing chemistry programs, and the process chemists who arrive with strong organic synthesis skills and some exposure to GMP documentation are entering a field that has produced some of the most consistent employment records of any chemistry specialization. University of Illinois Urbana-Champaign\'s chemistry program and Purdue\'s chemistry department have both placed API chemists into pharmaceutical manufacturing roles at rates that reflect sustained employer relationships with the major pharma contract manufacturing organizations.'
+      }
+    ]
+  }
+];
+
+// ─── NAICS 11 — Agriculture & Food Systems ───────────────────────────────────
+
+MAJOR_MAP[11] = [
+  {
+    major_label: 'Agricultural Science & Agronomy',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['agronomy', 'crop science', 'soil science', 'plant biology', 'agricultural production'],
+    entry_careers: ['Agronomist', 'Crop Consultant', 'Agricultural Research Associate'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: true,
+    emerging_role: 'Precision Agriculture Data Scientist — the professional who integrates satellite imagery, soil sensor networks, drone survey data, and weather modeling into field-level recommendations that allow farmers to apply water, fertilizer, and crop protection products at variable rates across individual acres rather than uniform rates across entire fields. John Deere, Climate Corporation, and Trimble Agriculture are all building precision ag data teams whose members require both agronomic knowledge and data science fluency.',
+    deployment_contexts: [
+      {
+        domain: 'Precision Agriculture & AgTech',
+        edge: 'The application of data science to agricultural production is producing yield improvements and input cost reductions that would have seemed implausible to farmers thirty years ago — and the agronomists who can translate sensor data, satellite imagery, and predictive models into field-level management recommendations are working at the most commercially active frontier in agriculture. John Deere\'s Intelligent Solutions Group, the Climate Corporation (a Bayer subsidiary), and Trimble Agriculture are all building precision ag teams whose members need to understand both why a soybean plant responds to nitrogen the way it does and how to build a model that predicts where that response will be weakest in a given field. Purdue\'s College of Agriculture and the University of Nebraska-Lincoln\'s Department of Agronomy and Horticulture have both built precision agriculture concentrations that the major AgTech companies recruit from directly, with a geographic intentionality that reflects the corn and soybean belt\'s role as the proving ground for precision agriculture at commercial scale.'
+      },
+      {
+        domain: 'Agricultural Consulting & Extension',
+        edge: 'The agronomist who walks fields with farmers — reading crop conditions, recommending inputs, diagnosing problems before they become yield losses — provides a service that satellite imagery and AI models can inform but cannot replace, because the judgment required to act on imperfect information in real time under weather and market pressure is a human function. The largest agricultural retail companies in America — Nutrien, WinField United, Helena Agri-Enterprises — all employ agronomists in field consulting roles that combine scientific knowledge with the relationship skills required to earn the trust of farmers who are making decisions with their livelihoods. Iowa State University\'s agronomy program and the University of Illinois\'s crop sciences program have both built direct relationships with agricultural retail employers that result in placement rates for agronomy graduates that reflect genuine employer commitment.'
+      },
+      {
+        domain: 'Soil Health & Regenerative Agriculture',
+        edge: 'Regenerative agriculture has moved from a niche concept to a commercial imperative — driven partly by genuine environmental commitment and partly by the recognition that healthy soil biology produces more consistent yields with fewer inputs over time. The agronomists who understand the microbiology of soil health, the mechanics of carbon sequestration, and the transition pathways that allow conventional farms to adopt regenerative practices without absorbing unacceptable yield risk are working at an intersection that the agricultural sector did not prioritize a decade ago and now cannot find enough people to fill. Patagonia Provisions, General Mills, and Danone have all built regenerative agriculture programs that require agronomists who understand both the science and the operational realities of farming at scale. UC Davis\'s Department of Plant Sciences and the Rodale Institute\'s research partnerships with Penn State have both produced soil health researchers whose work is shaping the regenerative agriculture certification frameworks that major food companies are now building their supplier requirements around.'
+      }
+    ]
+  },
+  {
+    major_label: 'Precision Agriculture & Agricultural Technology',
+    riasec_affinity: ['R', 'I', 'E'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['precision agriculture', 'AgTech', 'remote sensing', 'GPS technology', 'variable rate application'],
+    entry_careers: ['Precision Ag Specialist', 'AgTech Sales Engineer', 'Geospatial Analyst'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'Autonomous Farm Operations Manager — the professional who oversees fleets of autonomous tractors, planting equipment, and harvest machines — managing the sensor networks, software platforms, and maintenance systems that allow a single operator to supervise agricultural machinery across hundreds of acres simultaneously. John Deere\'s autonomous equipment programs and startups like Monarch Tractor and Sabanto are all hiring for this function as autonomous agricultural equipment moves from demonstration to commercial deployment.',
+    deployment_contexts: [
+      {
+        domain: 'Agricultural Equipment & Technology Sales',
+        edge: 'The most commercially successful precision agriculture professionals are often not the ones operating the technology — they are the ones selling it to farmers who need to understand both what it does and why it is worth the investment. An agricultural technology sales engineer who can walk into a farm operation, assess where the yield gaps are, and demonstrate precisely how a variable rate application system would close those gaps with a calculable ROI is a professional that John Deere, AGCO, and the major agricultural retail companies actively recruit and well compensate. The credential that makes that person credible in the field is an agricultural background — the technology layer can be learned, but the farming context cannot be faked in a conversation with a third-generation corn farmer in central Illinois. Kansas State University\'s agricultural technology management program and Purdue\'s agricultural systems management program have both built industry relationships with equipment manufacturers and precision ag companies that produce consistent placement for graduates who want to be in the field rather than behind a screen.'
+      },
+      {
+        domain: 'Remote Sensing & Drone Applications in Agriculture',
+        edge: 'The agricultural drone market is no longer about photography. It is about multispectral imagery that reveals crop stress before it is visible to the human eye, LiDAR surveys that produce centimeter-level terrain models for drainage planning, and autonomous spray applications that reduce pesticide use while maintaining coverage accuracy. The professionals who design and operate these systems for commercial agricultural clients are combining remote sensing science, agricultural knowledge, and FAA Part 137 agricultural aircraft operator certification in ways that most drone pilots outside agriculture have never encountered. North Dakota State University\'s precision agriculture program and Texas A&M\'s Department of Soil and Crop Sciences have both built drone and remote sensing applications concentrations that the agricultural aviation and precision ag service industries recruit from directly.'
+      }
+    ]
+  },
+  {
+    major_label: 'Food Systems Engineering & Science',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['food science', 'food engineering', 'food safety', 'food processing', 'product development'],
+    entry_careers: ['Food Scientist', 'Food Process Engineer', 'Quality Assurance Specialist'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'Alternative Protein Development Scientist — the professional who designs the fermentation, extrusion, and structuring processes that transform plant proteins, precision fermentation outputs, and cultivated meat into food products that match conventional meat in texture, flavor, and nutritional profile. Impossible Foods, Perfect Day, and Eat Just are all scaling production of alternative proteins and require food scientists who combine process engineering with sensory science and consumer behavior understanding.',
+    deployment_contexts: [
+      {
+        domain: 'Food Product Development & Innovation',
+        edge: 'Every new food product on a grocery store shelf — the reformulated protein bar, the plant-based alternative, the reduced-sodium soup that still tastes like the original — is the result of a food scientist\'s work translating consumer insights, nutritional requirements, and manufacturing constraints into a formulation that a production line can make consistently at scale. Kraft Heinz, General Mills, and Nestle all run food science innovation programs that recruit directly from food science undergraduate programs, and the graduates who arrive with strong sensory evaluation, formulation, and shelf-stability skills move into product development roles that have a direct line of sight to what millions of people eat. Cornell\'s Department of Food Science and UC Davis\'s Department of Food Science and Technology have both built product development concentrations with strong industry connections — Cornell in particular maintains industry partnerships with major food manufacturers that result in sponsored research projects and recruiting pipelines that operate as multi-year job interviews for high-performing students.'
+      },
+      {
+        domain: 'Food Safety & Regulatory Affairs',
+        edge: 'A food safety failure is not a recall. It is a public health event — the kind that hospitalizes people, generates congressional hearings, and ends careers. The food scientists and quality engineers who design the HACCP plans, validate the sanitation protocols, and manage the supplier verification programs that prevent those events are working in a function that every food company in America cannot afford to staff with anyone who does not understand both the science and the regulatory requirements. The FDA Food Safety Modernization Act has expanded the compliance requirements significantly enough that food safety specialists are in consistent demand across every segment of the food industry. Michigan State\'s Department of Food Science and Human Nutrition and Iowa State\'s Department of Food Science and Human Nutrition have both built food safety concentrations with the industry relationships and regulatory affairs coursework that food companies and consulting firms recruit from directly.'
+      },
+      {
+        domain: 'Alternative Proteins & Sustainable Food Innovation',
+        edge: 'The alternative protein sector has moved from proof-of-concept to scale-up — and the food scientists who understand both the science of protein structuring and the engineering challenges of manufacturing at volume are working on problems that have genuine commercial stakes attached to them. Impossible Foods, Beyond Meat, and the precision fermentation companies building animal-free dairy and egg proteins all employ food scientists in process development and product formulation roles where the challenge is not whether the technology works but whether the product is good enough and cheap enough to compete at grocery store shelf prices. UC Davis\'s Robert Mondavi Institute and Tufts University\'s Agriculture, Food and Environment program have both built alternative protein research concentrations that the cultivated meat and fermentation-derived protein sectors recruit from, and whose faculty members are in some cases co-founders of the companies doing the work.'
+      }
+    ]
+  },
+  {
+    major_label: 'Agribusiness Management',
+    riasec_affinity: ['E', 'C', 'I'],
+    riasec_conflict: ['A', 'R'],
+    program_keywords: ['agribusiness', 'agricultural economics', 'farm management', 'agricultural finance', 'commodity markets'],
+    entry_careers: ['Agribusiness Analyst', 'Agricultural Loan Officer', 'Commodity Trader'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: true,
+    emerging_role: 'Agricultural Carbon Market Analyst — the professional who evaluates farm operations for carbon sequestration potential, structures carbon credit contracts between farmers and buyers, and manages the monitoring, reporting, and verification requirements that allow agricultural carbon credits to meet the quality standards that corporate buyers and voluntary carbon markets require. Indigo Agriculture, Corteva, and Bayer Crop Science are all building agricultural carbon programs that require this combination of agronomy, finance, and carbon accounting.',
+    deployment_contexts: [
+      {
+        domain: 'Agricultural Finance & Farm Credit',
+        edge: 'American agriculture runs on credit — operating lines for seed and inputs, equipment loans for machinery that costs more than most houses, and long-term real estate financing for land that is both a productive asset and a generational inheritance. The agricultural loan officers and farm financial analysts who structure that credit are working in a specialized segment of banking that requires understanding crop budgets, commodity price risk, and farm balance sheets in ways that a commercial banking background alone does not provide. Farm Credit Services of America, CoBank, and Rabo AgriFinance all run agricultural lending associate programs for agribusiness graduates, and the graduates who arrive with both financial analysis skills and genuine knowledge of farm economics are entering a field where the average loan officer tenure is long and the relationship with farm clients spans decades. Purdue\'s Department of Agricultural Economics and the University of Missouri\'s Division of Applied Social Sciences have both built agricultural finance concentrations that the farm credit system recruits from with a consistency that reflects genuine pipeline dependence.'
+      },
+      {
+        domain: 'Commodity Trading & Risk Management',
+        edge: 'Agricultural commodities — corn, soybeans, wheat, cotton, live cattle — trade on exchanges where price risk is managed through futures contracts, options strategies, and basis trades that require simultaneous understanding of production economics, transportation costs, and financial instrument mechanics. The commodity traders and risk managers at Cargill, ADM, Bunge, and Louis Dreyfus are among the most analytically rigorous professionals in agriculture — and they are specifically recruited from agribusiness programs that take both the agricultural and the quantitative sides of the curriculum seriously. University of Illinois\'s agricultural and consumer economics program and Iowa State\'s agricultural business program have both placed graduates into commodity trading associate programs at the major grain companies, where the first two years function as an intensive education in how agricultural markets actually work at a scale that no textbook adequately prepares a student for.'
+      },
+      {
+        domain: 'Food & Agriculture Private Equity',
+        edge: 'The food and agriculture sector represents a significant share of the global private equity market — from farm consolidation and food manufacturing buyouts to AgTech venture capital and food brand rollups. The investment professionals who evaluate those opportunities need to understand not just the financial models but the operational realities of farming, food manufacturing, and agricultural supply chains in ways that a generalist finance background does not provide. The Paine Schwartz Partners, Proterra Investment Partners, and Equilibrium Capital are all food and agriculture focused investment firms that actively recruit agribusiness graduates with strong quantitative skills for analyst and associate roles. Purdue\'s agricultural economics program and Cornell\'s Dyson School of Applied Economics and Management have both placed agribusiness graduates into food and agriculture investment roles at firms that most business school undergraduates have never heard of but that manage billions of dollars of agricultural assets.'
+      }
+    ]
+  },
+  {
+    major_label: 'Soil Science & Environmental Land Management',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['E', 'A'],
+    program_keywords: ['soil science', 'pedology', 'land management', 'environmental soil', 'soil remediation'],
+    entry_careers: ['Soil Scientist', 'Land Use Specialist', 'Environmental Land Consultant'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'Soil Carbon Verification Specialist — the professional who designs and implements the field sampling protocols, laboratory analysis workflows, and statistical models that verify how much carbon a regenerative agriculture practice has actually sequestered in a specific soil over a specific time period — providing the measurement rigor that carbon credit buyers require before paying for agricultural carbon offsets. This function is being built at Verra, Gold Standard, and the major agricultural carbon registries.',
+    deployment_contexts: [
+      {
+        domain: 'Environmental Consulting & Land Assessment',
+        edge: 'Before a developer breaks ground, before a bank finances a farm acquisition, before a government agency approves a land use change — someone has to evaluate the soil. Soil scientists who understand classification, contamination assessment, and land capability rating are working at the front end of every real estate transaction, environmental remediation project, and agricultural development decision that involves land. The major environmental consulting firms — Terracon, SCS Engineers, and Kleinfelder — all employ soil scientists in field assessment and report preparation roles that generate consistent work across economic cycles because the regulatory requirements that drive that work do not disappear when the real estate market slows. University of Wisconsin-Madison\'s soil science program and North Carolina State University\'s Department of Crop and Soil Sciences have both produced soil scientists who have built careers in environmental consulting that most agricultural graduates do not think of as available to them.'
+      },
+      {
+        domain: 'Agricultural Carbon Markets & Soil Health Programs',
+        edge: 'The agricultural carbon market is asking farmers to change how they manage their land — reducing tillage, planting cover crops, integrating livestock — and then measuring whether those changes actually put carbon into the soil. The soil scientists who design those measurement protocols and verify that carbon sequestration claims are scientifically defensible are working at the intersection of pedology, environmental science, and agricultural economics in a field that was essentially nonexistent at commercial scale five years ago. Indigo Agriculture, Nori, and the Nature Conservancy\'s agricultural programs all employ soil scientists in measurement and verification roles. UC Davis\'s Department of Land, Air and Water Resources and Cornell\'s Soil and Crop Sciences program have both produced soil carbon researchers whose methodologies are now being used to set the verification standards that agricultural carbon markets are building their credibility on.'
+      }
+    ]
+  }
+];
+
+// ─── NAICS 42 — Wholesale Trade & Distribution ───────────────────────────────
+
+MAJOR_MAP[42] = [
+  {
+    major_label: 'Distribution Management & Wholesale Operations',
+    riasec_affinity: ['E', 'C', 'R'],
+    riasec_conflict: ['A', 'I'],
+    program_keywords: ['distribution', 'wholesale', 'inventory management', 'warehouse operations', 'trade finance'],
+    entry_careers: ['Distribution Center Manager', 'Wholesale Operations Analyst', 'Inventory Control Specialist'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: true,
+    emerging_role: 'Digital Twin Distribution Manager — the professional who builds and operates real-time virtual replicas of distribution center operations — simulating inventory flows, labor deployment, and equipment utilization to identify bottlenecks before they occur and test operational changes before implementing them in the physical facility. Amazon, Prologis, and DHL Supply Chain are all building digital twin capabilities into their distribution networks.',
+    deployment_contexts: [
+      {
+        domain: 'Industrial Distribution & MRO',
+        edge: 'The distributors who supply maintenance, repair, and operations products to manufacturing plants — the bearings, the cutting tools, the safety equipment, the electrical components that keep a factory running — operate businesses whose value is almost entirely invisible to the end consumer and almost entirely indispensable to the companies they serve. Grainger, Fastenal, and MSC Industrial Direct have built multi-billion-dollar businesses on the proposition that a manufacturing plant should never have to stop running because a part was unavailable, and the professionals who manage those distribution relationships combine inventory science, supplier management, and customer intimacy in ways that most supply chain programs treat as an afterthought. Illinois State University\'s distribution management program and Texas A&M\'s supply chain management program have both built industrial distribution concentrations that Grainger and Fastenal recruit from directly — with a geographic intentionality that reflects the manufacturing belt\'s concentration in the Midwest.'
+      },
+      {
+        domain: 'Food & Beverage Distribution',
+        edge: 'The cold chain that moves fresh produce, dairy, and refrigerated products from manufacturer to grocery store operates under temperature requirements, shelf-life constraints, and food safety regulations that transform routine distribution into a precision logistics problem. Sysco, US Foods, and KeHE Distributors are all running distribution management programs for operations graduates who understand both the logistics mechanics and the food safety regulatory environment that governs every truck, every warehouse, and every delivery. The professionals who manage distribution center operations for food and beverage distributors are making decisions about inventory rotation, temperature monitoring, and driver scheduling that have direct food safety consequences — and the employers who trust them with those decisions pay a premium for operations backgrounds with food industry context. Michigan State\'s food distribution management program and the University of Arkansas\'s supply chain management program have both placed distribution graduates into food and beverage distribution roles at a rate that reflects Walmart\'s and Tyson\'s proximity to the Fayetteville campus.'
+      },
+      {
+        domain: 'Healthcare & Medical Products Distribution',
+        edge: 'The wholesale distribution of pharmaceuticals, medical devices, and hospital supplies is among the most regulated distribution businesses in the United States — and one of the most consequential. McKesson, Cardinal Health, and AmerisourceBergen together distribute nearly ninety percent of the pharmaceuticals sold in America, and the operations professionals who manage their distribution centers are working under DEA controlled substance regulations, FDA drug supply chain security requirements, and hospital service level agreements that have no tolerance for stockouts on critical medications. The distribution managers who build careers in healthcare wholesale operate at an intersection of logistics operations and regulatory compliance that most distribution programs do not specifically prepare students for — which is precisely why the graduates who arrive with both the operations fluency and some exposure to healthcare regulatory requirements are recruited aggressively. Ohio State\'s Fisher College of Business and Purdue\'s Krannert School of Management have both placed supply chain and operations graduates into healthcare distribution roles at the major wholesalers.'
+      }
+    ]
+  },
+  {
+    major_label: 'Trade Finance & Global Commerce',
+    riasec_affinity: ['E', 'C', 'I'],
+    riasec_conflict: ['R', 'A'],
+    program_keywords: ['trade finance', 'international trade', 'letters of credit', 'export management', 'global sourcing'],
+    entry_careers: ['Trade Finance Analyst', 'Export Coordinator', 'Global Commerce Associate'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'Supply Chain Finance Technology Analyst — the professional who implements and manages the financial technology platforms that allow large buyers to offer early payment to their suppliers at preferential rates — using the buyer\'s credit rating to reduce borrowing costs across the entire supply chain. JPMorgan, Citibank, and the major fintech platforms like C2FO and Taulia are all building supply chain finance teams that require both trade finance knowledge and technology platform fluency.',
+    deployment_contexts: [
+      {
+        domain: 'Import/Export Operations & Customs Compliance',
+        edge: 'Every product that crosses an international border requires a customs entry — a declaration that specifies what the product is, where it came from, what it is worth, and what duty rate applies. The professionals who manage that process for importers and exporters are working in a field that most business graduates have never encountered and that has become dramatically more complex as tariff schedules, country-of-origin rules, and trade agreement requirements have multiplied. Expeditors International, Flexport, and the major customs brokerage firms all employ trade compliance specialists whose combination of regulatory knowledge and operational fluency allows their clients to move goods across borders without the delays and penalties that customs errors produce. Georgetown\'s international business program and the University of Miami\'s business school have both built international trade concentrations with customs compliance components that reflect Miami\'s position as the primary trade gateway between the United States and Latin America.'
+      },
+      {
+        domain: 'Wholesale Distribution & Retail Buying',
+        edge: 'The buyers at Target, Walmart, and every major retailer are making purchase decisions that determine what appears on store shelves — negotiating with wholesale distributors and manufacturers on price, volume, exclusivity, and promotional support in ways that require simultaneous understanding of consumer demand, inventory economics, and supplier relationship management. The wholesale distributor who sells to those buyers is solving a mirror-image problem: maintaining the right product mix, the right inventory depth, and the right service level to retain retailer accounts that could easily switch to a competitor. University of Arizona\'s Eller College of Management and Michigan State\'s Broad College of Business have both built retail buying and wholesale distribution tracks that the major retailers and distributors recruit from — with Target and Meijer both maintaining campus recruiting programs that treat these programs as primary pipelines rather than supplementary sources.'
+      }
+    ]
+  },
+  {
+    major_label: 'Warehouse & Fulfillment Technology Management',
+    riasec_affinity: ['R', 'C', 'I'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['warehouse management', 'WMS systems', 'fulfillment operations', 'automation systems', 'inventory technology'],
+    entry_careers: ['Warehouse Operations Manager', 'WMS Analyst', 'Fulfillment Center Supervisor'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: true,
+    emerging_role: 'Autonomous Fleet Controller — the professional who oversees the mixed fleets of autonomous mobile robots, conveyor systems, and human workers that operate modern fulfillment centers — managing the software systems that coordinate their interactions, monitoring performance against throughput targets, and making real-time decisions about task allocation when the system encounters exceptions that automation cannot resolve. Amazon Robotics, Symbotic, and Autostore are all scaling autonomous warehouse systems that require this human oversight function.',
+    deployment_contexts: [
+      {
+        domain: 'E-Commerce Fulfillment Operations',
+        edge: 'The fulfillment center that ships an online order within two hours of placement is not a warehouse. It is a precision manufacturing operation whose output is a correctly picked, packed, and labeled parcel — and the operations managers who run those facilities are managing workflows, labor productivity, and equipment uptime under service level agreements that have no flexibility. Amazon, Chewy, and Zappos have all built fulfillment operations management programs that treat the first two years as intensive training in how to manage a high-velocity, technology-dense distribution operation. The graduates who enter those programs with warehouse management system fluency, industrial engineering fundamentals, and genuine comfort with operational complexity move into area manager and operations manager roles faster than any other entry path. Arizona State\'s supply chain management program and the University of Tennessee\'s Global Supply Chain Institute have both placed operations graduates into e-commerce fulfillment management roles at a rate that reflects both programs\' investment in industry partnerships with the major e-commerce operators.'
+      },
+      {
+        domain: 'Cold Chain & Temperature-Controlled Distribution',
+        edge: 'A refrigerated distribution center that loses temperature for four hours during a heat wave does not lose inventory. It loses the trust of every grocery chain, pharmaceutical distributor, and restaurant operator whose products were inside it. The operations managers who run cold chain facilities are managing temperature monitoring systems, refrigeration equipment maintenance, and loading dock protocols under a regulatory and commercial standard that treats a temperature excursion as a product liability event. Americold, Lineage Logistics, and US Cold Storage are all the largest cold storage operators in the world, and they run operations management development programs for graduates who understand both the operational mechanics and the food safety regulatory framework that governs cold chain operations. Michigan State and Cal Poly San Luis Obispo have both built food distribution and cold chain operations concentrations that Americold and Lineage recruit from directly.'
+      }
+    ]
+  }
+];
+
+// ─── NAICS 51 Amendment — Mathematics & Statistics + AI Infrastructure ────────
+
+MAJOR_MAP[51].push(
+  {
+    major_label: 'Mathematics & Statistics',
+    riasec_affinity: ['I', 'C', 'R'],
+    riasec_conflict: ['S', 'A'],
+    program_keywords: ['mathematics', 'statistics', 'applied math', 'data analysis', 'quantitative methods', 'probability'],
+    entry_careers: ['Data Analyst', 'Quantitative Analyst', 'Statistical Analyst'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'Synthetic Data Engineer — the professional who designs and generates statistically valid artificial datasets that train machine learning models when real data is scarce, sensitive, or structurally biased. The validity of a synthetic dataset depends entirely on the mathematical rigor of the generation process — which is why this function requires a statistician, not just a software engineer. Waymo, DeepMind, and the major AI labs are all building synthetic data generation capabilities whose quality determines whether their models generalize to the real world.',
+    deployment_contexts: [
+      {
+        domain: 'Quantitative Finance & Risk Modeling',
+        edge: 'The models that price derivatives, measure portfolio risk, and stress-test bank balance sheets against adverse scenarios are built and maintained by quantitative analysts whose mathematical training is the entry credential and whose financial domain knowledge is the differentiator. Goldman Sachs, Citadel, and Two Sigma all run quantitative analyst programs for mathematics and statistics graduates, and the graduates who arrive with strong probability theory, stochastic processes, and programming skills are competing for roles that carry compensation packages that most other mathematics career paths cannot approach in the first five years. University of Chicago\'s mathematics program and Carnegie Mellon\'s statistics and machine learning department have both produced quantitative analysts who are now running trading desks and risk management functions at firms where the mathematical rigor of the work is genuinely non-negotiable.'
+      },
+      {
+        domain: 'Biostatistics & Clinical Research',
+        edge: 'Every clinical trial that tests a new drug produces data — and the statisticians who design the trial, specify the primary endpoints, and analyze the results are the professionals whose work determines whether the FDA sees evidence of efficacy or noise. A biostatistician who designs a trial incorrectly does not just produce a failed study. They delay a treatment that might have worked, expose patients to risk for an inconclusive result, and cost their company hundreds of millions of dollars. Pfizer, Eli Lilly, and the major contract research organizations all employ biostatisticians in clinical trial design and analysis roles, and the mathematics and statistics graduates who arrive with some exposure to survival analysis and clinical trial methodology are entering one of the most stable and consequential quantitative careers in the American economy. University of Michigan\'s Department of Biostatistics and Johns Hopkins Bloomberg School of Public Health have both built biostatistics concentrations that the pharmaceutical sector recruits from with a consistency that reflects genuine pipeline dependence.'
+      },
+      {
+        domain: 'Sports Analytics & Performance Intelligence',
+        edge: 'The Moneyball era did not end when Oakland started winning with statistics. It expanded into every professional sport, every college athletic department, and now into the sports betting and fantasy sports industries that have grown large enough to employ their own quantitative analysts. The mathematics and statistics graduates who work in sports analytics are solving genuine optimization problems — lineup construction, draft valuation, in-game decision modeling — that have competitive and financial consequences for the organizations that get them right. MIT Sloan Sports Analytics Conference has become the industry gathering point for quantitative sports professionals, and the graduates who arrive with strong statistical modeling skills and genuine sports domain knowledge are entering a field that is still early enough in its professionalization that individual analytical contributions can produce visible results quickly. Carnegie Mellon\'s statistics program and the University of Michigan\'s applied statistics program have both placed graduates into sports analytics roles at NFL, NBA, and MLB organizations.'
+      },
+      {
+        domain: 'Technology & Machine Learning Research',
+        edge: 'The foundation of every machine learning system is mathematics — linear algebra, calculus, probability theory, and optimization methods that determine what a model can learn and how efficiently it learns it. The mathematicians who understand these foundations well enough to design new architectures, identify failure modes, and improve training methods are working at the research frontier of the most consequential technology development of the current era. Google DeepMind, OpenAI, and Anthropic all recruit mathematics and statistics graduates into research engineer and research scientist roles — and the graduates who arrive with strong theoretical foundations and genuine curiosity about why models behave the way they do are entering a field where mathematical insight still produces competitive advantage. MIT\'s mathematics department and Stanford\'s statistics department have both produced researchers who are now leading teams working on problems that will determine what AI systems can do in the next decade.'
+      }
+    ]
+  },
+  {
+    major_label: 'AI Infrastructure & Systems Design',
+    riasec_affinity: ['I', 'R', 'C'],
+    riasec_conflict: ['S', 'A'],
+    program_keywords: ['artificial intelligence', 'machine learning infrastructure', 'MLOps', 'distributed systems', 'AI systems'],
+    entry_careers: ['ML Engineer', 'AI Infrastructure Engineer', 'MLOps Engineer'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'AI Model Governance Engineer — the professional who builds the monitoring, auditing, and intervention systems that track how deployed AI models behave in production — detecting drift, bias emergence, and unexpected failure modes before they cause harm at scale. Every organization deploying AI in consequential decisions is building this function, and the professionals who can design governance infrastructure that satisfies both technical and regulatory requirements are among the most sought-after in enterprise AI.',
+    deployment_contexts: [
+      {
+        domain: 'Machine Learning Platform Engineering',
+        edge: 'The AI systems that generate business value are not the models themselves — they are the platforms that train those models reliably, deploy them at scale, monitor their performance in production, and retrain them when their accuracy degrades. The engineers who build and maintain those platforms are working on infrastructure problems that are genuinely novel — distributed training across thousands of GPUs, feature stores that serve millions of predictions per second, model registries that track every version of every model in production. Uber, Airbnb, and Netflix have all published the architectures of their machine learning platforms because they recognize that the field benefits from shared learning, and the engineers who have studied those architectures and can contribute to them are recruited actively by every technology company with a serious AI program. Carnegie Mellon\'s School of Computer Science and Stanford\'s AI Lab have both produced ML platform engineers who are now building the infrastructure that other engineers use to train and deploy models at the most consequential AI organizations in the world.'
+      },
+      {
+        domain: 'Enterprise AI Deployment & Integration',
+        edge: 'The gap between a working AI prototype and a production system that reliably serves thousands of users across an enterprise is where most AI initiatives fail — and the engineers who know how to close that gap are among the most commercially valuable technical professionals in the current market. The challenge is not the model. It is the data pipelines that feed it, the APIs that expose it, the monitoring systems that detect when it degrades, and the organizational processes that ensure the humans who use it understand what it can and cannot do. Accenture, Deloitte, and the major technology consulting firms have all built AI deployment practices that draw from systems engineering, software engineering, and machine learning in proportions that no single academic program currently optimizes for. Georgia Tech\'s computational science and engineering program and MIT\'s electrical engineering and computer science department have both produced AI systems engineers who are now leading enterprise AI deployment programs at organizations where the business outcomes depend on getting the deployment right, not just the model.'
+      },
+      {
+        domain: 'AI Safety & Alignment Research',
+        edge: 'The organizations working on the safety properties of advanced AI systems — how to ensure that models behave as intended, how to detect and correct misaligned behavior, how to build the technical foundations for AI systems that remain beneficial as they become more capable — are building a research field whose importance is increasingly recognized by governments, philanthropies, and the AI companies themselves. Anthropic, DeepMind\'s safety team, and the Machine Intelligence Research Institute are all recruiting researchers and engineers whose background combines strong technical foundations with genuine engagement with the alignment problem. The path into AI safety research is not standardized, but the graduates who arrive with strong mathematics, computer science, and systems thinking backgrounds — and who have engaged seriously with the technical literature — are entering a field where the number of people working on the most important problems is still small relative to the stakes. MIT\'s mathematics and computer science programs and Berkeley\'s AI safety community have both produced researchers now contributing to the technical foundations of AI alignment.'
+      }
+    ]
+  }
+);
+
+// ─── TIER 4C — COMPLETE COVERAGE ─────────────────────────────────────────────
+// NAICS 21 — Mining & Extraction
+// NAICS 31 — Food Manufacturing
+// Packaging Engineering & Design — Special Entry (NAICS 31/33)
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ─── NAICS 21 — Mining & Extraction ──────────────────────────────────────────
+
+MAJOR_MAP[21] = [
+  {
+    major_label: 'Mining Engineering',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['mining engineering', 'mine design', 'rock mechanics', 'blasting', 'mineral extraction'],
+    entry_careers: ['Mining Engineer', 'Mine Design Engineer', 'Geotechnical Engineer'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'Autonomous Mine Operations Engineer — the professional who designs, deploys, and supervises the fleets of autonomous haul trucks, drilling equipment, and remote-operated machinery that are transforming large-scale surface mining — managing the sensor networks, dispatch systems, and safety protocols that allow a single control room to oversee equipment operating across a mine site the size of a small city. Rio Tinto, BHP, and Caterpillar are all scaling autonomous mining operations that require this human oversight and systems integration function.',
+    deployment_contexts: [
+      {
+        domain: 'Critical Minerals & Battery Supply Chain',
+        edge: 'The energy transition runs on mining. Every electric vehicle battery requires lithium, cobalt, nickel, and manganese. Every wind turbine requires rare earth elements for its permanent magnets. Every semiconductor requires silicon, germanium, and specialty metals whose supply chains run through mines operating in geologically specific locations around the world. The mining engineers who specialize in critical mineral extraction are working at the most strategically important intersection in the global economy right now — and the United States government has designated lithium, cobalt, and seventeen rare earth elements as critical minerals whose domestic supply the country is actively trying to secure. Colorado School of Mines and the University of Nevada Reno\'s Mackay School of Earth Sciences and Engineering have both built critical minerals concentrations that the Department of Energy and the major mining companies recruit from directly, with a geographic intentionality that reflects where those minerals actually exist in the ground.'
+      },
+      {
+        domain: 'Mine Safety & Environmental Compliance',
+        edge: 'Every operating mine in the United States is subject to MSHA inspection — and the mining engineers who design safety systems, manage hazardous materials, and ensure that operations meet the federal standards that govern everything from ventilation in underground mines to water management in surface operations are doing work whose consequences are immediate when they fail. The professionals who build careers in mine safety combine engineering fundamentals with regulatory fluency in a field that most engineers outside the industry have never encountered. Freeport-McMoRan, Newmont, and the major coal and potash producers all employ mine safety engineers whose work determines whether their operations stay open — and they recruit from a relatively small number of programs. South Dakota School of Mines and Technology and Missouri University of Science and Technology have both built mine safety concentrations that the industry recruits from with a regional intensity that reflects the mining operations concentrated in the Mountain West and Upper Midwest.'
+      },
+      {
+        domain: 'Geotechnical Engineering & Site Stability',
+        edge: 'The slope of a surface mine wall is not an aesthetic decision. It is a geotechnical calculation that determines whether the wall stands for thirty years of operations or fails catastrophically on a Tuesday morning. The geotechnical engineers who analyze rock mass properties, design slope angles, and monitor wall stability are working on safety-critical problems whose consequences — in lives and in regulatory shutdowns — are severe enough that the employers who trust them with those calculations pay accordingly. The same geotechnical skill set that serves mining also serves civil engineering, underground construction, and the assessment of natural slope stability in mountainous terrain — which means a mining engineer with strong geotechnical training has career optionality that extends well beyond the mining sector. Colorado School of Mines has built the most cited geotechnical engineering program in the United States specifically for mining applications, and its graduates move between mining, civil, and energy sector employers with a credential that translates across all three.'
+      }
+    ]
+  },
+  {
+    major_label: 'Geological Engineering & Earth Sciences',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['S', 'A'],
+    program_keywords: ['geology', 'geoscience', 'mineralogy', 'geophysics', 'earth sciences', 'hydrogeology'],
+    entry_careers: ['Geologist', 'Exploration Geologist', 'Hydrogeologist'],
+    world_alignment: 'Think',
+    cc_transfer_friendly: false,
+    emerging_role: 'Geospatial AI Analyst — the professional who applies machine learning to satellite imagery, geophysical survey data, and geological databases to identify mineral deposit signatures that traditional exploration methods miss — reducing the time and capital required to find economic mineral deposits by screening candidate areas computationally before committing field crews and drilling budgets. Major mining companies and exploration firms are all building AI-assisted exploration programs that require geologists who can direct and interpret machine learning outputs.',
+    deployment_contexts: [
+      {
+        domain: 'Mineral Exploration & Resource Assessment',
+        edge: 'Finding an economic mineral deposit is one of the lowest-probability, highest-consequence activities in the resource industry — the exploration programs that locate the next copper mine or lithium deposit are spending years and hundreds of millions of dollars to identify something that may not exist in the ground they are sampling. The geologists who lead those programs combine regional geological knowledge, geophysical interpretation, and the statistical reasoning required to distinguish signal from noise in datasets that are inherently incomplete. Barrick Gold, Anglo American, and the major exploration companies all run exploration associate programs for geological engineering and geoscience graduates, and the graduates who arrive with strong structural geology, remote sensing, and resource estimation skills are entering a field that is simultaneously shrinking in its traditional form and expanding in new directions driven by the critical minerals demand that the energy transition has created. Colorado School of Mines and the University of Arizona\'s Department of Geosciences have both built mineral exploration concentrations that the major mining and exploration companies recruit from with a geographic and institutional specificity that reflects decades of relationship-building.'
+      },
+      {
+        domain: 'Environmental Geology & Remediation',
+        edge: 'The contaminated sites that legacy mining, petroleum, and industrial operations left behind require geologists who understand how contaminants move through soil and groundwater — and who can design the monitoring networks and remediation systems that contain, treat, or remove them. The Superfund program, state environmental agencies, and the environmental consulting firms that implement remediation work all employ hydrogeologists and environmental geologists in roles that combine field investigation with regulatory compliance and project management in ways that most geology students do not anticipate when they choose the major. Arcadis, Stantec, and Ramboll all run environmental geology and hydrogeology practices that recruit from geology and geological engineering programs at the University of Minnesota, Penn State, and the University of Wisconsin-Madison — programs whose proximity to legacy industrial sites in the Midwest and Mid-Atlantic has shaped their curriculum toward the environmental applications that those employers need.'
+      }
+    ]
+  },
+  {
+    major_label: 'Petroleum Engineering',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['S', 'A'],
+    program_keywords: ['petroleum engineering', 'reservoir engineering', 'drilling engineering', 'production engineering', 'well completion'],
+    entry_careers: ['Petroleum Engineer', 'Reservoir Engineer', 'Drilling Engineer'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'Carbon Capture & Subsurface Storage Engineer — the professional who adapts petroleum engineering knowledge of subsurface geology, reservoir mechanics, and well design to the injection and long-term storage of captured carbon dioxide in geological formations — designing the monitoring networks that verify containment integrity and managing the regulatory frameworks that govern what is effectively a new industrial use of the subsurface. ExxonMobil, Chevron, and the major CCS project developers are all hiring petroleum engineers into carbon storage roles that leverage their reservoir engineering training in a direction the industry did not exist five years ago.',
+    deployment_contexts: [
+      {
+        domain: 'Oil & Gas Production Engineering',
+        edge: 'Petroleum engineering consistently produces some of the highest starting salaries of any undergraduate engineering degree — and the volatility of oil prices that makes the industry\'s hiring cycles unpredictable also means that the engineers who stay through the downturns accumulate experience and responsibility faster than they would in a more stable sector. The shale revolution that transformed American energy production over the past two decades created an entire generation of drilling and completion engineers whose work on horizontal wells and hydraulic fracturing redefined what domestic production could look like. The University of Texas at Austin\'s Department of Petroleum and Geosystems Engineering and Texas A&M\'s Harold Vance Department of Petroleum Engineering have both built the most direct pipelines into oil and gas operating companies in the country — ExxonMobil, Chevron, ConocoPhillips, and Pioneer Natural Resources all maintain campus recruiting programs at both institutions that reflect decades of hiring relationship.'
+      },
+      {
+        domain: 'Geothermal Energy Development',
+        edge: 'The subsurface engineering skills that petroleum engineers develop — reservoir characterization, directional drilling, well design, and thermal fluid production — translate directly to geothermal energy development, which uses the earth\'s internal heat rather than fossil hydrocarbons as the energy source. Enhanced geothermal systems, which fracture hot dry rock to create artificial reservoirs, are advancing from research demonstrations to commercial projects in a way that is creating demand for petroleum engineers who can adapt their drilling and reservoir engineering skills to a carbon-free application. Fervo Energy, Sage Geosystems, and the Department of Energy\'s geothermal programs are all hiring petroleum engineers with directional drilling and reservoir stimulation experience into geothermal development roles that did not exist at commercial scale when most of those engineers chose their major. The University of Texas and Colorado School of Mines have both built geothermal engineering concentrations within their petroleum engineering programs that reflect the energy transition\'s pull on a skill set that the industry has built over a century of oil and gas development.'
+      }
+    ]
+  }
+];
+
+// ─── NAICS 31 — Food Manufacturing ───────────────────────────────────────────
+
+MAJOR_MAP[31] = [
+  {
+    major_label: 'Food Manufacturing & Processing Engineering',
+    riasec_affinity: ['R', 'I', 'C'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['food manufacturing', 'food processing', 'food engineering', 'plant operations', 'food production'],
+    entry_careers: ['Food Manufacturing Engineer', 'Process Engineer', 'Plant Operations Manager'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'Automated Food Production Systems Engineer — the professional who designs and integrates robotic processing lines, computer vision quality inspection systems, and AI-driven production scheduling into food manufacturing facilities — managing the technical complexity of applying industrial automation to products whose variability, contamination risk, and regulatory requirements make food manufacturing one of the most demanding automation environments in any industry. JBS, Tyson Foods, and Conagra are all investing heavily in automated processing systems that require this engineering function.',
+    deployment_contexts: [
+      {
+        domain: 'Protein Processing & Meat Manufacturing',
+        edge: 'The largest food manufacturing operations in the United States — the beef, pork, and poultry processing facilities that supply protein to American grocery stores and food service operations — are engineering environments whose complexity most people who eat the products never consider. Temperature management, line speed optimization, yield maximization, and USDA inspection compliance all operate simultaneously in facilities that run twenty hours a day and must restart within hours of any disruption. The engineers who run those facilities are solving continuous optimization problems under regulatory oversight that has no tolerance for contamination events. JBS, Tyson Foods, and Smithfield all run manufacturing engineering rotational programs for food science and agricultural engineering graduates, and the graduates who understand both the engineering mechanics and the food safety regulatory framework that governs every step of processing move into plant management roles faster than any other entry path in the sector.'
+      },
+      {
+        domain: 'Beverage Production & Quality Systems',
+        edge: 'The production of beverages at commercial scale — carbonated drinks, juices, ready-to-drink coffee, plant-based milks — is a continuous manufacturing operation whose quality outcomes are measured in millions of units per day and whose failures are visible on grocery store shelves within weeks. The engineers who design and operate beverage production lines are managing filling speed, carbonation consistency, packaging integrity, and microbiological safety simultaneously in facilities where the product specification tolerances are tighter than most consumers realize. Coca-Cola, PepsiCo, and the major craft beverage manufacturers that have scaled to regional distribution all employ food manufacturing engineers in process and quality roles. Cornell\'s Department of Food Science and Washington State University\'s School of Food Science have both built beverage manufacturing concentrations with industry partnerships that produce consistent placement into production engineering roles at manufacturers whose names appear on the labels their graduates help produce.'
+      },
+      {
+        domain: 'Confectionery & Bakery Manufacturing',
+        edge: 'Chocolate tempering, candy crystallization, bread fermentation, and pastry lamination are food chemistry processes that have been practiced for centuries — and that are now being operated at industrial scale under conditions that require engineers who understand both the underlying science and the manufacturing constraints that determine whether a process that works in a test kitchen can work in a facility producing ten thousand units per hour. The engineers who design and optimize confectionery and bakery manufacturing processes are working in a segment of food manufacturing that combines genuine technical complexity with products that carry significant brand value for their manufacturers. Mars, Mondelez, and General Mills all run food manufacturing engineering programs for food science and food engineering graduates, and the graduates who arrive with strong process engineering skills and some exposure to the specific chemistry of sugar, chocolate, and cereal grain processing move into production leadership roles that most plant-based food engineers reach a decade earlier than their counterparts in other manufacturing sectors.'
+      }
+    ]
+  },
+  {
+    major_label: 'Food Quality Systems & Safety Engineering',
+    riasec_affinity: ['I', 'C', 'R'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['food quality', 'HACCP', 'food safety systems', 'quality assurance', 'food microbiology', 'regulatory compliance'],
+    entry_careers: ['Food Safety Manager', 'Quality Systems Engineer', 'Regulatory Affairs Specialist'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'AI-Assisted Food Safety Monitor — the professional who deploys and manages computer vision, spectroscopic sensing, and machine learning systems that detect contamination, adulteration, and quality defects in food production lines faster and more consistently than human inspectors — and who maintains the validation documentation that FDA and USDA require before those automated detection systems can replace or supplement human inspection under current regulatory frameworks.',
+    deployment_contexts: [
+      {
+        domain: 'FSMA Compliance & Preventive Controls',
+        edge: 'The Food Safety Modernization Act shifted the regulatory burden from responding to contamination events to preventing them — and every food manufacturer in the United States now maintains written food safety plans, preventive controls, and supply chain programs that must be designed by a Preventive Controls Qualified Individual with formal training and documented competency. The food safety engineers who design those systems are creating the infrastructure that keeps food supply chains safe and that regulators verify during inspections whose consequences — consent decrees, facility closures, criminal referrals — are severe enough that no food manufacturer can treat food safety as a secondary function. Michigan State\'s food safety program and the University of Georgia\'s Center for Food Safety have both built FSMA compliance concentrations that food manufacturers, co-manufacturers, and food safety consulting firms recruit from directly, with a consistency that reflects genuine regulatory-driven demand for this specific credential combination.'
+      },
+      {
+        domain: 'Supplier Quality & Ingredient Verification',
+        edge: 'The food that a manufacturer produces is only as safe as the ingredients that go into it — which is why the supplier quality programs that verify the safety, authenticity, and specification compliance of incoming ingredients are among the most consequential quality functions in food manufacturing. The food safety engineers who manage those programs are conducting audits, reviewing certificates of analysis, and making acceptance decisions on incoming shipments under the understanding that a failed ingredient that enters the process creates a contaminated product that may not be detected until it reaches a consumer. The complexity of global food ingredient supply chains — where a single product may contain ingredients sourced from a dozen countries — has made supplier quality management one of the most technically demanding and most consistently recruited food safety specializations. Rutgers University\'s food science program and Iowa State\'s food safety program have both built supplier quality and food fraud concentrations that the major food manufacturers and food safety consulting organizations recruit from.'
+      }
+    ]
+  },
+  {
+    major_label: 'Culinary Science & Product Innovation',
+    riasec_affinity: ['A', 'I', 'R'],
+    riasec_conflict: ['C', 'S'],
+    program_keywords: ['culinary science', 'food product development', 'sensory science', 'flavor chemistry', 'culinary arts'],
+    entry_careers: ['Culinary Scientist', 'Product Development Chef', 'Sensory Analyst'],
+    world_alignment: 'Make',
+    cc_transfer_friendly: false,
+    emerging_role: 'Personalized Nutrition Product Designer — the professional who uses consumer genomic data, microbiome research, and metabolic profiling to design food products calibrated to individual health outcomes — working at the intersection of nutritional science, food formulation, and consumer behavior in a segment of the food industry that has moved from fringe concept to venture-funded commercial reality. Habit, Viome, and the major CPG companies building personalized nutrition lines are all developing this function.',
+    deployment_contexts: [
+      {
+        domain: 'Restaurant & Foodservice Innovation',
+        edge: 'The test kitchen at a major restaurant chain is not a restaurant. It is a product development laboratory where culinary scientists translate consumer trend data, ingredient cost constraints, and operational feasibility requirements into menu items that can be executed consistently by kitchen staff across thousands of locations. McDonald\'s, Yum! Brands, and Darden Restaurants all employ culinary scientists in innovation roles that require the intersection of genuine culinary creativity with the food science fundamentals that determine whether a dish can be scaled, held, and reheated without losing the quality that made it worth developing. The Culinary Institute of America\'s food science and business programs and Johnson & Wales University\'s culinary arts and food service management programs have both built foodservice innovation tracks that the major chain restaurant operators recruit from directly — with a specificity that reflects how rare it is to find a professional who can cook well and think at scale simultaneously.'
+      },
+      {
+        domain: 'Flavor Development & Sensory Science',
+        edge: 'The flavor of a food product is not an accident and it is not simple. It is the result of hundreds of volatile compounds interacting with taste receptors, aroma pathways, and texture perceptions in ways that sensory scientists have been mapping for decades without yet fully understanding. The culinary scientists and flavor chemists who work at Givaudan, IFF, and Firmenich are designing the flavors that appear in every processed food category — and their work requires both the analytical chemistry to understand what compounds produce which sensory effects and the culinary intuition to know whether a prototype tastes like something a person would actually eat. Chapman University\'s food science program and the University of California Davis\'s sensory science program have both built flavor and sensory science concentrations that the flavor houses and consumer packaged goods companies recruit from directly, with a specificity that reflects how few programs take both the science and the culinary craft seriously enough to produce graduates who can do both.'
+      }
+    ]
+  }
+];
+
+// ─── PACKAGING ENGINEERING & DESIGN — Special Entry ──────────────────────────
+// Lives at the intersection of NAICS 31 and NAICS 33
+// Appended to NAICS 31 as the closest natural home
+// The MSU School of Packaging paradigm — surfaces the program a Michigan-legacy
+// family never considered. Treated with the same dignity as enterprise management.
+// ─────────────────────────────────────────────────────────────────────────────
+
+MAJOR_MAP[31].push({
+  major_label: 'Packaging Engineering & Design',
+  riasec_affinity: ['R', 'I', 'A'],
+  riasec_conflict: ['S', 'C'],
+  program_keywords: ['packaging engineering', 'packaging design', 'materials packaging', 'sustainable packaging', 'package development'],
+  entry_careers: ['Packaging Engineer', 'Package Development Specialist', 'Packaging Designer'],
+  world_alignment: 'Make',
+  cc_transfer_friendly: false,
+  emerging_role: 'Sustainable Packaging Systems Architect — the professional who redesigns packaging material flows from the ground up — replacing single-use structures with reusable, compostable, or closed-loop alternatives that meet the same performance requirements for protection, shelf life, and retail presentation while satisfying the corporate sustainability commitments and extended producer responsibility regulations that are now legally binding in an increasing number of states and countries. Unilever, Nestlé, and Amazon are all building packaging sustainability teams that require this combination of engineering depth and systems thinking.',
+  deployment_contexts: [
+    {
+      domain: 'Consumer Packaged Goods & Retail Packaging',
+      edge: 'The packaging on a grocery store shelf has three seconds to communicate everything — the brand, the product, the quantity, the price tier, and the reason to pick it up rather than the one next to it. The packaging engineers and designers who create that moment are solving a problem that sits at the intersection of materials science, structural engineering, graphic design, and consumer psychology in ways that no single discipline fully prepares a student for. Michigan State\'s School of Packaging is the most cited undergraduate packaging program in the country — and it is the paradigmatic example of a program that Michigan-legacy families consistently overlook because it does not carry the brand recognition of Ross or Engineering, while placing graduates into packaging development roles at Procter & Gamble, Kellogg, and General Mills at a rate that those more visible programs cannot match for this specific career path. A student who graduates from MSU Packaging with internship experience at a major CPG company is not competing for entry-level roles. They are arriving as a specialist in a field that generalists cannot easily enter.'
+    },
+    {
+      domain: 'E-Commerce & Fulfillment Packaging',
+      edge: 'The package that arrives at a front door has survived a journey that a retail package was never designed to take — conveyor belts, sorting machines, delivery trucks, and the final drop onto a concrete porch. The packaging engineers who design for e-commerce are solving an entirely different set of structural and materials problems than their retail counterparts, and the companies that get it wrong pay the consequences in damage rates, return costs, and the kind of unboxing experience that generates the social media content that determines whether a customer orders again. Amazon, Chewy, and every direct-to-consumer brand shipping at scale all employ packaging engineers who specialize in fulfillment-optimized packaging design. Clemson University\'s packaging science program and Cal Poly San Luis Obispo\'s packaging program have both built e-commerce packaging concentrations that reflect the geographic proximity of major fulfillment infrastructure and the direct employer relationships those programs have built with the retailers and brands designing for it.'
+    },
+    {
+      domain: 'Pharmaceutical & Medical Device Packaging',
+      edge: 'A packaging failure in pharmaceutical distribution is not a customer satisfaction problem. It is a drug stability event, a contamination risk, or a child safety violation — each with its own regulatory consequence and its own potential for patient harm. The packaging engineers who work in pharmaceutical and medical device packaging operate under FDA 21 CFR requirements, USP standards for container closure systems, and ISO 11607 sterile barrier system requirements that transform every material selection and seal integrity decision into a validated, documented, and auditable process. The packaging roles at Pfizer, Johnson & Johnson, and the major contract packaging organizations are among the most technically demanding and most consistently compensated in the packaging field — and the graduates who arrive with both packaging engineering training and some exposure to pharmaceutical regulatory affairs are entering a specialization that most packaging programs do not specifically prepare students for. Rutgers University\'s packaging engineering program and Michigan State\'s School of Packaging have both developed pharmaceutical packaging curriculum components in response to sustained employer demand for graduates who can contribute to this function without a graduate degree.'
+    },
+    {
+      domain: 'Sustainable Packaging & Circular Design',
+      edge: 'The European Union\'s Packaging and Packaging Waste Regulation, California\'s SB 54, and the voluntary commitments that every major consumer goods company has made to recycled content and recyclability have created a sustained demand for packaging engineers who understand both the performance requirements of packaging and the end-of-life systems that determine whether a package is actually recyclable in the communities where consumers use it. The gap between what a package is designed to be and what the recycling infrastructure can actually process is one of the most consequential and least visible failures in the consumer goods industry — and the packaging engineers who are closing that gap are working at the intersection of material science, supply chain management, and municipal waste systems in ways that most packaging programs are still learning to teach. Michigan State\'s School of Packaging and Rochester Institute of Technology\'s packaging science program have both built sustainable packaging design concentrations whose curriculum reflects genuine engagement with the recycling infrastructure constraints that determine whether a sustainable packaging claim holds up to scrutiny.'
+    }
+  ]
+});
+
+// ─── NAICS 62 Amendment — Integrative Skin Biology & Dermatology ──────────────
+
+MAJOR_MAP[62].push({
+  major_label: 'Integrative Skin Biology & Dermatology',
+  riasec_affinity: ['I', 'R', 'S'],
+  riasec_conflict: ['E', 'C'],
+  program_keywords: ['dermatology', 'skin biology', 'cellular biology', 'DNA repair', 'microbiome', 'photobiology'],
+  entry_careers: ['Clinical Research Assistant', 'Dermatology Medical Assistant', 'Skin Biology Research Associate'],
+  world_alignment: 'Think',
+  cc_transfer_friendly: false,
+  emerging_role: 'Skin Longevity Specialist — an evolution of dermatology that moves the specialty far beyond acne treatment and skin cancer screening into the deliberate management of how skin ages at the cellular level. Where today\'s dermatologist responds to visible pathology, the skin longevity specialist monitors DNA repair capacity, UV damage accumulation, cellular senescence, collagen regeneration rates, skin microbiome composition, pigmentation dynamics, and inflammation markers — using AI imaging systems that compare billions of pixels against prior annual scans to identify microscopic aging patterns and early malignancy years before they become clinically apparent. The dermatologist becomes, in this frame, a skin longevity architect: someone whose patient relationship is longitudinal, preventive, and data-driven rather than episodic and reactive. The undergraduate foundation is cellular and molecular biology, photobiology, and immunology — the biology of how skin cells respond to environmental stress at the molecular level. The path runs through medical school, a dermatology residency, and emerging fellowship training in skin longevity and photoaging that leading academic dermatology programs are beginning to formalize. The students who understand this trajectory now will arrive at medical school with a research focus and clinical curiosity that most of their peers have not yet developed.',
+  deployment_contexts: [
+    {
+      domain: 'Longevity Medicine & Preventive Dermatology',
+      edge: 'The convergence of longevity medicine and dermatology is producing a clinical specialty whose patients are not sick — they are optimizing. A 45-year-old executive who understands that skin aging is a measurable biological process with modifiable drivers does not wait for a suspicious lesion to visit a dermatologist. They come annually for a comprehensive skin age assessment that combines AI-powered dermoscopic imaging, biomarker panels for collagen synthesis and oxidative stress, and microbiome analysis that tells them whether their skin barrier is functioning at the biological age of their chronological peers or ahead of it. The practices building this model — Matthew Kelley\'s clinic in New York, the longevity-focused dermatology programs emerging at academic medical centers — are early signals of a specialty that will scale as the longevity medicine market expands. Northwestern\'s Feinberg School of Medicine and UCSF\'s Department of Dermatology have both begun building research programs at the intersection of aging biology and dermatology that are producing the faculty who will train the next generation of skin longevity specialists.'
+    },
+    {
+      domain: 'AI Imaging & Computational Dermatology',
+      edge: 'The diagnostic revolution in dermatology is not coming — it is already in early deployment. AI imaging systems trained on millions of dermoscopic images can now detect melanoma with sensitivity that matches or exceeds experienced dermatologists on standard lesion classification tasks. What those systems cannot do is exercise the clinical judgment that determines what to do with that detection — how to communicate risk, how to sequence biopsy decisions, how to integrate imaging findings with a patient\'s full skin history, sun exposure patterns, and genetic risk profile. The dermatologists who understand computational imaging well enough to direct these systems, validate their outputs, and catch their failure modes are building a clinical practice that is more accurate, more consistent, and more scalable than unaided human examination alone. Stanford\'s dermatology program has been a center of AI dermatology research, with faculty publishing work on deep learning diagnostic systems that are now influencing how academic medical centers are training the next generation of dermatology residents.'
+    },
+    {
+      domain: 'Cosmetic Dermatology & Regenerative Skin Medicine',
+      edge: 'The cosmetic dermatology market is large, growing, and being transformed by the same biological sciences that are reshaping medicine more broadly. The dermatologist who can offer not just neurotoxins and fillers but evidence-based cellular rejuvenation protocols — exosome treatments, growth factor therapies, microbiome restoration programs, and topical active ingredient regimens calibrated to a patient\'s specific skin biology — occupies a position in the aesthetic medicine market that neither a traditional dermatologist nor a non-physician injector can easily replicate. This is the commercial expression of the skin longevity specialty: a practice whose patients pay for longitudinal skin management the way they pay for personal training, because they understand that skin aging is not an event but a process that responds to deliberate intervention. USC\'s Keck School of Medicine and NYU Grossman School of Medicine both have cosmetic dermatology programs with strong research components that produce graduates who can build practices at this intersection.'
+    }
+  ]
+});
+
+// ─── NAICS 62 Amendment — Biomedical Informatics & Computational Medicine ─────
+
+MAJOR_MAP[62].push({
+  major_label: 'Biomedical Informatics & Computational Medicine',
+  riasec_affinity: ['I', 'C', 'R'],
+  riasec_conflict: ['A', 'S'],
+  program_keywords: ['biomedical informatics', 'computational biology', 'health data science', 'systems biology', 'clinical informatics', 'bioinformatics'],
+  entry_careers: ['Clinical Data Analyst', 'Health Informatics Specialist', 'Bioinformatics Research Associate'],
+  world_alignment: 'Think',
+  cc_transfer_friendly: false,
+  emerging_role: 'Digital Twin Physician — a new clinical paradigm in which every patient has a continuously updated computational model of their own physiology, built from blood panels, continuous glucose monitoring, wearable cardiovascular and sleep data, imaging studies, microbiome sequencing, and genetic profile — and in which the physician simulates an intervention on that model before prescribing it to the person. The question shifts from "what does the literature say works for patients like this" to "let\'s see how your digital twin responds before we write the prescription." Adverse drug interactions, dosing sensitivities, and treatment response variability that population-level evidence cannot predict become visible in the simulation before they occur in the body. The undergraduate foundation for this path is not conventional pre-medicine — it is the intersection of computational biology, biomedical data science, and systems modeling, combined with enough biological depth to understand what the data represents physiologically. The path continues through medical school with a focus on clinical informatics, residency in internal medicine or a data-intensive specialty, and fellowship training in computational medicine at academic medical centers that are building these programs now. Stanford\'s Biomedical Informatics program and MIT\'s Health Sciences and Technology program are both producing the researchers and clinicians who will define what this specialty looks like at scale — and the students who arrive at those programs with both computational fluency and genuine biological curiosity are entering a field whose clinical infrastructure is being built around them.',
+  deployment_contexts: [
+    {
+      domain: 'Precision Medicine & Individualized Treatment',
+      edge: 'Population medicine has always been an approximation — the drug that works for seventy percent of patients with a given condition fails the other thirty percent for reasons that aggregate clinical trials were never designed to explain. The Digital Twin Physician is practicing the medicine that precision oncology has been pointing toward for two decades: treatment decisions made not on what works for most people with this diagnosis but on what the patient\'s own physiological model predicts will work for this person at this moment in their biology. Memorial Sloan Kettering, MD Anderson, and the major academic cancer centers are all building computational oncology programs that use patient-specific tumor modeling to simulate treatment response before chemotherapy is administered — and the physicians leading those programs are the early practitioners of what will eventually become standard clinical workflow across every specialty. UCSF\'s Bakar Computational Health Sciences Institute and Stanford\'s Center for Digital Health are both running digital twin research programs whose clinical outputs are beginning to influence how those institutions train their medical residents.'
+    },
+    {
+      domain: 'Virtual Clinical Trials & Pharmaceutical Development',
+      edge: 'A Phase III clinical trial costs hundreds of millions of dollars, takes years to complete, and answers a question about average response in a carefully selected patient population that may not reflect the patients who will actually receive the drug. The pharmaceutical companies that can run virtual trials on computational patient populations before committing to human studies — identifying failure modes, optimizing dosing regimens, and stratifying by predicted responder profile — are compressing development timelines and reducing the attrition rate that makes drug development so expensive. Pfizer, Novartis, and the major biotechnology companies have all begun building in silico clinical modeling teams that employ computational medicine specialists who understand both the biology being modeled and the statistical validity requirements that make a virtual trial result credible to regulators. The FDA has published guidance on the use of computational modeling in drug development that signals regulatory openness to virtual evidence — and the computational medicine professionals who understand that guidance are working at the frontier of how new treatments will be developed in the next decade.'
+    },
+    {
+      domain: 'Hospital Systems & Real-Time Patient Monitoring',
+      edge: 'The intensive care unit is already the closest thing medicine currently has to digital twin monitoring — continuous vital sign tracking, frequent laboratory draws, and real-time physiological data that attending physicians and nurses interpret against a mental model of the patient\'s trajectory. The next step is making that model computational, explicit, and predictive: a continuously updated patient-specific simulation that surfaces deterioration risk hours before clinical signs appear, identifies the specific intervention most likely to reverse it, and documents the reasoning in a form that the entire care team can interrogate. Epic Systems, Philips Healthcare, and the major health technology companies are all building predictive patient monitoring systems that require clinical informaticists who understand both the hospital workflow and the modeling methodology. Vanderbilt\'s Department of Biomedical Informatics — one of the oldest and most cited programs in the field — and the University of Washington\'s Biomedical and Health Informatics program have both produced clinical informaticists now leading patient monitoring and early warning system programs at major academic medical centers.'
+    },
+    {
+      domain: 'Wearable Health Technology & Continuous Monitoring',
+      edge: 'The data that feeds a digital twin model does not come only from clinical encounters — it comes from the continuous stream of physiological signals that wearable devices collect between appointments. Heart rate variability, sleep architecture, blood oxygen saturation, skin temperature, and electrodermal activity measured passively across days and weeks reveal patterns that a twice-yearly physical examination cannot detect. The physicians and clinical researchers who know how to interpret that data — who understand its signal quality limitations, its population-level calibration requirements, and the clinical contexts in which a wearable signal is actionable versus noise — are building the evidence base that will determine which wearable biomarkers eventually make it into clinical practice. Apple, Fitbit, and the medical-grade wearable companies like Whoop and Oura are all building clinical research partnerships with academic medical centers to validate the health signals their devices collect. UCSF\'s Digital Health Center of Excellence and Johns Hopkins\' precision medicine programs have both built wearable health research programs whose clinical faculty are simultaneously practicing physicians and the researchers defining what continuous monitoring means for how medicine is practiced.'
+    }
+  ]
+});
+
+// ─── NAICS 62 Amendment — Human Performance Science & Enhancement Medicine ────
+
+MAJOR_MAP[62].push({
+  major_label: 'Human Performance Science & Enhancement Medicine',
+  riasec_affinity: ['I', 'R', 'E'],
+  riasec_conflict: ['A', 'C'],
+  program_keywords: ['exercise physiology', 'human performance', 'neuroscience', 'endocrinology', 'sport science', 'performance optimization'],
+  entry_careers: ['Performance Specialist', 'Human Performance Analyst', 'Clinical Exercise Physiologist'],
+  world_alignment: 'Think',
+  cc_transfer_friendly: false,
+  emerging_role: 'Human Enhancement Consultant — not a disease treatment specialty but a performance optimization discipline whose clients are not patients in any conventional sense. They are CEOs managing cognitive demands that would exhaust most people, surgeons who need the fine motor precision and sustained focus of an elite athlete, military operators whose physiological performance in austere environments determines mission outcomes, pilots managing fatigue and decision quality across transcontinental rotations, and entertainers sustaining peak output across touring schedules that would break an untrained body in months. The Human Enhancement Consultant is the medical equivalent of a Formula 1 engineering team — not fixing what is broken but optimizing every system that determines how well the machine performs under maximum load. The optimization domains span cognition, sleep architecture, hormonal balance, recovery kinetics, nutritional timing, metabolic efficiency, stress response, and psychological resilience — integrated into a protocol that is specific to the client\'s performance demands and continuously adjusted against measured outputs. The credential pathway has not yet standardized the way cardiology or dermatology has — the professionals building this field arrive from exercise physiology, sports medicine, endocrinology, and functional medicine by different routes, which means the student who builds deliberately toward this intersection — combining clinical training with deep performance science and the credibility to work with high-achieving clients who will not tolerate imprecision — is entering a field whose pipeline does not yet exist at the volume the demand requires. The undergraduate foundation is exercise physiology and neuroscience, with serious engagement in endocrinology, nutrition science, and the psychology of elite performance. The path continues through medical school or a doctoral program in exercise physiology or sports science, residency or fellowship in sports medicine or endocrinology, and the kind of clinical experience that builds credibility with clients who will compare your recommendations against the best performance teams in professional sport.',
+  deployment_contexts: [
+    {
+      domain: 'Executive & Corporate Performance Medicine',
+      edge: 'The CEOs and senior executives who run the largest organizations in the world are performing cognitive work of extraordinary intensity across schedules that most performance science has never systematically studied — because the research base for elite athletic performance is decades deep while the research base for elite executive performance is still being written. The Human Enhancement Consultants who serve this population are building practices that combine the rigor of sports medicine with the discretion and communication sophistication that high-profile clients require. Executives do not want to be patients. They want to be optimized — and the physician or performance scientist who can reframe the clinical relationship in those terms, back it with genuine physiological expertise, and deliver measurable improvements in cognitive clarity, energy management, and resilience is building a practice whose referral network compounds faster than almost any other medical specialty. Cleveland Clinic\'s Executive Health program and Mayo Clinic\'s Executive Health program are both early institutional expressions of this model, and the practitioners who trained at those programs are now building independent practices and corporate wellness programs that treat human performance as a design problem rather than a healthcare problem.'
+    },
+    {
+      domain: 'Elite Athletic Performance & Recovery Science',
+      edge: 'Every professional sports team in every major league now employs performance scientists, recovery specialists, sleep coaches, and nutritionists whose work extends the careers and maximizes the output of athletes whose physical capabilities represent hundreds of millions of dollars of investment. The Human Enhancement Consultant in elite sport is not the team physician managing injuries — they are the performance engineer managing the physiological systems that determine whether an athlete performs at ninety-five percent or one hundred percent on the day it matters most. The marginal gains philosophy that Team Sky brought to professional cycling and that has since spread to every elite sport has created a sustained demand for performance scientists who understand the interaction between sleep, hormonal status, nutrition timing, cognitive load, and physical training in ways that most sports medicine curricula do not integrate. IMG Academy, the United States Olympic and Paralympic Committee, and the major professional team performance departments have all built human performance programs that recruit from exercise physiology doctoral programs at the University of Florida, Penn State, and the Australian Institute of Sport — institutions whose research output defines the evidence base that elite performance practitioners actually use.'
+    },
+    {
+      domain: 'Military & Special Operations Human Performance',
+      edge: 'The United States Special Operations Command has invested more in human performance science than any other organization in the world — because the physiological and cognitive demands placed on special operations forces exceed what standard military training was designed to produce, and because the consequences of performance failure in their operating environments are measured in lives rather than games. The Human Performance Program that SOCOM runs across its commands employs performance scientists, nutritionists, sleep specialists, cognitive performance coaches, and recovery technology specialists whose work is classified at the application level but whose scientific foundations are published in peer-reviewed journals that civilian performance scientists read. The practitioners who move between military and civilian human performance work — carrying the methodological rigor of the SOCOM program into corporate and athletic contexts — are some of the most credible and most sought-after in the emerging enhancement medicine field. The University of Pittsburgh\'s Department of Sports Medicine and Nutrition and the Human Performance Laboratory at Ball State University have both produced exercise physiologists who have built careers bridging military and civilian elite performance work.'
+    },
+    {
+      domain: 'Longevity & Healthspan Optimization',
+      edge: 'The overlap between human enhancement and longevity medicine is where the field gets most interesting — and most commercially significant. The 55-year-old private equity partner who wants the hormonal profile, metabolic flexibility, and cognitive sharpness of a healthy 40-year-old is not asking for disease prevention. They are asking for performance enhancement across a longer time horizon than an athlete\'s seasonal cycle. The Human Enhancement Consultant who can work at this intersection — combining the performance science of elite sport with the longitudinal biological monitoring of longevity medicine — is practicing a specialty that Peter Attia\'s work has made visible to a high-net-worth audience that is now actively seeking practitioners trained to this standard. The market for this work is large, the supply of credentialed practitioners is small, and the practitioners who build early reputations in this space through publication, podcast presence, and measurable client outcomes are establishing positions in a field that will become far more crowded in a decade than it is today.'
+    }
+  ]
+});
+
+// ─── NAICS 32 Amendment — Cosmetic Science & Formulation Chemistry ────────────
+
+MAJOR_MAP[32].push({
+  major_label: 'Cosmetic Science & Formulation Chemistry',
+  riasec_affinity: ['I', 'R', 'A'],
+  riasec_conflict: ['E', 'S'],
+  program_keywords: ['cosmetic science', 'formulation chemistry', 'skin care', 'personal care', 'cosmetic chemistry', 'active ingredients'],
+  entry_careers: ['Formulation Chemist', 'Cosmetic Scientist', 'Product Development Chemist'],
+  world_alignment: 'Think',
+  cc_transfer_friendly: false,
+  emerging_role: 'Bioactive Skincare Formulation Scientist — the professional who designs evidence-based topical products that interact with skin biology at the cellular level rather than sitting on the surface. Where conventional cosmetic formulation optimizes for texture, stability, and fragrance, the bioactive formulation scientist engineers delivery systems that carry active ingredients — retinoids, peptides, growth factors, exosomes, microbiome-modulating prebiotics — through the skin barrier to the target cell layer where the biological effect actually occurs. This requires simultaneous fluency in dermatological biology, polymer chemistry, emulsion science, and the FDA regulatory framework that determines whether a product is classified as a cosmetic or a drug — a line whose placement determines everything about how the product can be marketed, tested, and sold. The undergraduate foundation is chemistry with strong organic and physical chemistry depth, combined with biology coursework in cell biology and dermatological science that most chemistry programs do not require but that distinguish formulation scientists who understand why an ingredient works from those who only know that it does. Fairleigh Dickinson University\'s cosmetic science program and the University of Cincinnati\'s cosmetic science and formulation chemistry program are among the few undergraduate programs that take both the chemistry and the biology seriously enough to produce graduates who can contribute to bioactive product development without a graduate degree — a credential that the major skincare companies and the growing field of clinical skincare brands are actively recruiting for.',
+  deployment_contexts: [
+    {
+      domain: 'Clinical Skincare & Dermocosmetics',
+      edge: 'The fastest-growing segment of the skincare market is the space between a cosmetic and a pharmaceutical — the clinical skincare brand whose products are formulated with active ingredient concentrations and delivery system sophistication that drugstore products cannot match, whose efficacy claims are backed by clinical studies rather than consumer perception surveys, and whose distribution runs through dermatology offices, medical spas, and specialty retailers rather than mass market channels. SkinCeuticals, Revision Skincare, and Alastin are all brands whose formulation scientists have built products that dermatologists recommend by name — and whose commercial success reflects the market\'s willingness to pay a significant premium for topical products whose mechanism of action can be explained at the cellular level. The formulation chemists who work in this segment are doing some of the most technically demanding work in the consumer products industry, and they are working in a category whose growth trajectory has significantly outpaced both the mass skincare and pharmaceutical markets for the past decade.'
+      },
+    {
+      domain: 'Personalized Skincare & Precision Formulation',
+      edge: 'The convergence of at-home skin diagnostic technology, microbiome sequencing, and on-demand manufacturing is making personalized skincare formulation commercially viable at a scale that was impossible five years ago. Companies like Proven Skincare, Curology, and Function of Beauty have built business models around formulations calibrated to individual skin profiles — and the formulation scientists who design the ingredient matrices and concentration ranges that those systems draw from are working at the intersection of chemistry, data science, and consumer behavior in ways that conventional cosmetic formulation training did not prepare anyone for. The next generation of personalized skincare will incorporate microbiome data, genetic skin typing, and continuous biomarker monitoring from wearable skin sensors into formulation recommendations that adjust over time as the skin\'s biology changes — and the formulation scientists who understand both the chemistry of what goes into the product and the biological logic of why it should vary by individual are building a specialization that the personalized beauty market will compete for aggressively.'
+    },
+    {
+      domain: 'Sustainable & Clean Beauty Formulation',
+      edge: 'The clean beauty movement has moved from consumer preference to regulatory mandate — the European Union has restricted over thirteen hundred cosmetic ingredients, California\'s Safer Consumer Products program is expanding its oversight of personal care formulations, and the major beauty retailers have all published restricted substances lists that their brand partners must comply with to maintain shelf space. The formulation chemists who can replace restricted or controversial ingredients with alternatives that deliver equivalent performance without the toxicological profile that triggers regulatory or retailer concern are among the most commercially valuable scientists in the personal care industry right now — because the alternative is reformulating under pressure after a retailer restriction or a regulatory action, which is significantly more expensive and reputationally damaging than building clean from the start. Mintel\'s cosmetic formulation program and the Society of Cosmetic Chemists\' continuing education infrastructure have both built sustainable formulation curricula that the major clean beauty brands recruit from directly, supplementing the academic programs whose graduates arrive with the chemistry foundation but need the industry-specific application training that only comes from working with real formulation constraints.'
+    },
+    {
+      domain: 'Active Ingredient Research & Delivery Systems',
+      edge: 'The active ingredient that cannot reach its target is not an active ingredient — it is a marketing claim. The delivery system that carries a retinoid, a vitamin C derivative, or a peptide through the stratum corneum to the viable epidermis where the biological effect occurs is as important as the active itself, and the formulation scientists who specialize in delivery system design are working on problems that sit at the boundary between cosmetic chemistry and pharmaceutical science. Encapsulation technologies, nanoemulsions, liposomal delivery systems, and microbiome-compatible carrier matrices are all formulation approaches whose development requires the kind of physical chemistry and materials science depth that most cosmetic science programs treat as advanced elective content. The companies working at this frontier — Givaudan Active Beauty, Lucas Meyer Cosmetics, and the active ingredient development divisions of the major fragrance and flavor houses — are recruiting formulation scientists with graduate training in delivery system chemistry from programs like Rutgers\' pharmaceutical sciences department and the University of Maryland\'s pharmaceutical sciences program, whose graduates bring drug delivery methodology into cosmetic applications that the industry is only beginning to explore systematically.'
+    }
+  ]
+});
+
+// ─── NAICS 44 Amendment — Beauty Industry Management & Commerce ───────────────
+
+MAJOR_MAP[44].push({
+  major_label: 'Beauty Industry Management & Commerce',
+  riasec_affinity: ['E', 'A', 'S'],
+  riasec_conflict: ['R', 'I'],
+  program_keywords: ['beauty industry', 'cosmetics business', 'beauty brand management', 'retail beauty', 'social commerce', 'beauty marketing'],
+  entry_careers: ['Beauty Brand Associate', 'Retail Buying Associate', 'Beauty Marketing Coordinator'],
+  world_alignment: 'Make',
+  cc_transfer_friendly: false,
+  emerging_role: 'Beauty Tech Brand Architect — the professional who understands the convergence of skincare science, social commerce, and personalization technology well enough to build brands that are simultaneously credible to dermatologists and compelling to consumers — navigating a market where the line between a beauty brand and a health brand is dissolving, where a TikTok biochemist with two million followers can launch a clinical skincare line that outsells legacy department store brands within eighteen months, and where the brands that win are the ones whose founders understood both the ingredient story and the algorithm. The Beauty Tech Brand Architect is not a marketing generalist who learned about beauty — they are a beauty professional who understands technology, data, community building, and the regulatory environment that determines what claims a brand can make and where it can be sold. The undergraduate foundation combines business, marketing, and consumer psychology with genuine engagement in cosmetic science and dermatological biology — because the brands that are built on a real understanding of what the products do are the ones that build the kind of consumer trust that survives algorithm changes, influencer scandals, and the inevitable moment when a competitor copies the formula. LIM College in New York and the Fashion Institute of Technology\'s cosmetics and fragrance marketing program are both building beauty industry management curricula that treat the business of beauty as a serious commercial discipline rather than a lifestyle elective.',
+  deployment_contexts: [
+    {
+      domain: 'Direct-to-Consumer Beauty Brand Building',
+      edge: 'Rare Beauty reached a billion-dollar valuation faster than most legacy beauty brands took to reach fifty million in revenue — and the infrastructure that made that possible was not a department store distribution deal but a founder with genuine community credibility, a social commerce strategy that treated content as the product and the product as the proof, and a supply chain flexible enough to respond to viral moments faster than traditional retail cycles allow. The professionals who build the next generation of DTC beauty brands are not coming from traditional consumer goods management programs — they are coming from the intersection of beauty science literacy, community management, e-commerce operations, and the financial modeling that determines when a brand is ready to take outside capital and what it gives up when it does. The business schools that are beginning to take this career path seriously — NYU Stern\'s luxury and retail programs, USC Marshall\'s entrepreneurship track — are doing so because their alumni in the beauty industry are telling them that the credential gap between what traditional business education produces and what building a modern beauty brand actually requires is significant and growing.'
+      },
+    {
+      domain: 'Prestige Retail & Department Store Beauty',
+      edge: 'The beauty floor at Neiman Marcus and the Sephora shelf are not passive distribution channels — they are brand-building environments whose buyers, counter managers, and education teams determine whether a prestige beauty brand succeeds with its target consumer or languishes in a position that looks like distribution but functions like storage. The professionals who manage prestige beauty retail relationships are doing category management, sell-through analysis, counter education programming, and the constant negotiation between brand positioning and retailer promotional requirements that determines whether a brand maintains its premium pricing integrity or erodes it chasing volume. The Estée Lauder Companies, LVMH Beauty, and Chanel\'s fragrance and beauty division all run retail management and brand development programs for beauty management graduates who understand both the commercial mechanics of prestige retail and the brand stewardship judgment that prevents a prestige positioning from being traded away for short-term sales. FIT\'s cosmetics and fragrance marketing program and LIM College have both placed graduates into prestige beauty retail management roles at the major department store chains and specialty beauty retailers.'
+      },
+    {
+      domain: 'Beauty Tech & Personalization Platforms',
+      edge: 'The technology layer on top of beauty commerce is producing an entirely new category of professional — the person who sits between the brand, the technology platform, and the consumer, managing the data systems that personalize recommendations, the AR try-on tools that reduce return rates, and the skin diagnostic algorithms that tell a consumer which product in a brand\'s lineup matches their specific biology. L\'Oréal\'s Technology Incubator, Ulta Beauty\'s digital team, and the beauty-focused AI companies like Perfect Corp and Revieve are all building product and operations roles that require professionals who understand beauty commerce deeply enough to know what the technology should optimize for. The graduates who arrive with both beauty industry fluency and genuine comfort with data systems, personalization logic, and digital product management are entering a category where the supply of people who have both is genuinely small relative to the demand that the industry\'s technology investment has created.'
+      },
+    {
+      domain: 'Social Commerce & Creator Economy Beauty',
+      edge: 'The creator economy has restructured beauty distribution more completely than any retail innovation in the past thirty years — because the trust that a skincare creator builds with an audience of two hundred thousand engaged followers converts to purchase at a rate that a full-page magazine advertisement in its prime never approached. The Beauty Tech Brand Architect who understands this environment is not managing influencer partnerships — they are building the brand strategy, content architecture, and community infrastructure that makes the brand itself the creator, or that selects and develops creator relationships whose audiences align with a specific brand positioning and whose content standards match the clinical credibility the brand requires. Charlotte Tilbury built a prestige color brand on founder-creator content before most beauty companies had a social media strategy. Hailey Bieber\'s Rhode built a skincare brand on community before it had a product line. The professionals who understand how those outcomes were engineered — and can build the operational systems that make them repeatable — are being recruited by every beauty company that understands the next decade of the industry well enough to be afraid of falling behind.'
+      }
+  ]
+});
