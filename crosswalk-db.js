@@ -1753,6 +1753,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "i_cant_ignore_unfairness",
     label: "I can't ignore something that's not fair",
+    label_parent: "They can't ignore something that isn't fair",
     cluster: "eq",
     riasec: ["S", "E", "A"],
     naics_sectors: [92, 54, 61, 62],
@@ -1825,6 +1826,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "little_kids_love_me",
     label: "Little kids love me",
+    label_parent: "Little kids are drawn to them",
     cluster: "eq",
     riasec: ["S", "A"],
     naics_sectors: [61, 62, 81],
@@ -1845,6 +1847,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "animals_trust_me",
     label: "Animals trust me",
+    label_parent: "Animals trust them",
     cluster: "eq",
     riasec: ["R", "S", "I"],
     naics_sectors: [62, 11, 81],
@@ -2004,6 +2007,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "i_process_through_art_music",
     label: "I process my feelings through art or music",
+    label_parent: "They process their feelings through art or music",
     cluster: "eq",
     riasec: ["A", "S"],
     naics_sectors: [71, 62],
@@ -2034,6 +2038,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "i_think_of_others_feelings",
     label: "I think about other people's feelings before I say something",
+    label_parent: "They think about others' feelings before saying something",
     cluster: "eq",
     riasec: ["S", "A"],
     naics_sectors: [62, 61, 54],
@@ -2108,6 +2113,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "people_tell_me_personal_stuff",
     label: "People I barely know end up telling me really personal stuff",
+    label_parent: "People they've just met end up telling them really personal things",
     cluster: "eq",
     riasec: ["S", "I"],
     naics_sectors: [62, 54, 52],
@@ -2160,6 +2166,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "i_talk_to_new_people_first",
     label: "When someone new shows up, I'm the first to go talk to them",
+    label_parent: "When someone new shows up, they're the first to go talk to them",
     cluster: "eq",
     riasec: ["S", "E"],
     naics_sectors: [54, 52, 44, 71],
@@ -2235,6 +2242,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "i_know_everyone",
     label: "I know everyone — and I mean everyone",
+    label_parent: "They know everyone — and they mean everyone",
     cluster: "eq",
     riasec: ["S", "E"],
     naics_sectors: [52, 53, 54, 71],
@@ -2374,6 +2382,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "my_friends_say_i_have_good_instincts",
     label: "My friends say I have good instincts — and they're usually right about that",
+    label_parent: "Their friends say they have good instincts — and they're usually right about that",
     cluster: "eq",
     riasec: ["I", "S", "E"],
     naics_sectors: [52, 54, 51],
@@ -2483,6 +2492,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "people_always_want_me_on_their_team",
     label: "People always want me on their team even when they can't explain why",
+    label_parent: "People always want them on their team even when they can't explain why",
     cluster: "eq",
     riasec: ["S", "E"],
     naics_sectors: [54, 52, 92],
@@ -2562,6 +2572,7 @@ const VECTOR_CROSSWALK = [
   {
     id: "im_the_one_they_count_on_to_perform",
     label: "I'm the one my team counts on to perform when it actually matters",
+    label_parent: "They're the one their team counts on to perform when it actually matters",
     cluster: "eq",
     riasec: ["R", "E", "C"],
     naics_sectors: [71, 54, 52],

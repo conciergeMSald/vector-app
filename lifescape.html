@@ -1549,9 +1549,9 @@ function makeTileEl(tile) {
   // EQ tiles switch between first and third person based on voice
   if(tile.cluster === 'eq') {
     const p = LS_STATE.voice === 'parent';
-    const name = LS_STATE.name || 'they';
-    // Convert "I ..." to "They ..." for parent voice
-    const parentLabel = tile.label
+    // Use explicit label_parent if defined in crosswalk-db.js (curated, precise)
+    // Fall back to regex replacement chain for all other tiles
+    var parentLabel = tile.label_parent || tile.label
       .replace(/^I can /i, 'They can ')
       .replace(/^I am /i, 'They are ')
       .replace(/^I'm the one /i, 'They\'re the one ')
