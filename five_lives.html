@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#F4F1EC">
+<title>VECTOR — Five Lives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased;}
+
+:root{
+  --cream:    #F4F1EC;
+  --cream-2:  #EDE9E2;
+  --ink:      #1C1C1A;
+  --mid:      #2C2C2A;
+  --soft:     #5A5248;
+  --muted:    #8A8278;
+  --ghost:    #B0A89E;
+  --gold:     #C8A97A;
+  --deep:     #8B7355;
+  --rule:     rgba(44,44,42,0.08);
+  --rule-gold:rgba(200,169,122,0.35);
+  --serif:    'Cormorant Garamond',Georgia,serif;
+  --sans:     'DM Sans',system-ui,sans-serif;
+  --lux:      cubic-bezier(0.25,0.1,0.25,1);
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+
+  /* Story accent colors — warm palette for cream background */
+  --s1: #7A9E6E;   /* Claire — sage */
+  --s2: #9E6E7A;   /* Appalachian — dusty rose */
+  --s3: #6E7A9E;   /* Margaret — slate */
+  --s4: #9E8E6E;   /* Daniel — warm sand */
+  --s5: #7A9E8E;   /* Marcus — teal */
+}
+
+html{ scroll-behavior:smooth; }
+
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:300;
+  min-height:100vh;
+  overflow-x:clip;
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* ── NAV — identical to index.html ── */
+nav{
+  position:fixed;top:0;left:0;right:0;
+  padding:1.2rem clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  z-index:90;background:var(--cream);
+  border-bottom:0.5px solid transparent;
+  transition:border-color 0.5s var(--lux);
+}
+nav.scrolled{ border-color:var(--rule); }
+.nav-wordmark{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(12px,2.5vw,14px);
+  letter-spacing:0.26em;color:var(--ink);
+  text-decoration:none;text-transform:uppercase;
+}
+.nav-back{
+  font-family:var(--sans);font-weight:300;
+  font-size:clamp(9px,1.8vw,11px);
+  letter-spacing:0.18em;color:var(--gold);
+  text-decoration:none;text-transform:uppercase;
+  transition:color 0.4s var(--lux);
+}
+.nav-back:hover{ color:var(--deep); }
+
+/* ── REVEAL ANIMATION ── */
+.v-rise{
+  opacity:0;transform:translateY(10px);
+  transition:opacity 1.1s var(--lux),transform 1.1s var(--lux);
+}
+.v-rise.visible{ opacity:1;transform:translateY(0); }
+
+/* ── CONTAINERS ── */
+.container{
+  max-width:1100px;margin:0 auto;
+  padding:0 clamp(1.5rem,5vw,4rem);
+}
+.container-narrow{
+  max-width:680px;margin:0 auto;
+  padding:0 clamp(1.5rem,5vw,4rem);
+}
+
+/* ── GOLD RULE ── */
+.g-rule{
+  width:28px;height:0.5px;
+  background:var(--gold);
+  margin-bottom:clamp(1.5rem,3.5vw,2.5rem);
+}
+
+/* ── EYEBROW ── */
+.eyebrow{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(8px,1.8vw,10px);
+  letter-spacing:0.26em;color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:clamp(1.2rem,3vw,2rem);
+}
+
+/* ══════════════════════════════════════
+   COVER — cream, editorial
+══════════════════════════════════════ */
+.cover{
+  padding:clamp(10rem,18vw,14rem) 0 clamp(5rem,10vw,8rem);
+  border-bottom:0.5px solid var(--rule);
+  text-align:center;
+}
+.cover-eyebrow{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(8px,1.8vw,10px);
+  letter-spacing:0.26em;color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:clamp(2rem,5vw,3.5rem);
+}
+.cover-title{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(52px,9vw,120px);
+  line-height:1.0;color:var(--mid);
+  margin-bottom:clamp(1rem,2.5vw,1.5rem);
+}
+.cover-title em{font-style:italic;color:var(--gold);}
+.cover-sub{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(17px,3vw,24px);
+  color:var(--muted);line-height:1.8;
+  max-width:560px;margin:0 auto clamp(3rem,6vw,5rem);
+}
+
+/* Five story nav — horizontal pill row */
+.cover-stories{
+  display:flex;justify-content:center;gap:0;
+  flex-wrap:wrap;
+  border:0.5px solid var(--rule);
+  max-width:900px;margin:0 auto clamp(2rem,5vw,3rem);
+  background:var(--rule);
+}
+.cs-pill{
+  flex:1;min-width:140px;
+  background:var(--cream);
+  padding:clamp(0.8rem,2vw,1.2rem) clamp(0.6rem,1.5vw,1rem);
+  cursor:pointer;text-decoration:none;
+  transition:background 0.3s var(--lux);
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;gap:6px;
+}
+.cs-pill:hover{ background:var(--cream-2); }
+.cs-pill-dot{
+  width:8px;height:8px;border-radius:50%;
+  margin-bottom:2px;
+}
+.cs-pill-num{
+  font-family:var(--sans);font-weight:200;
+  font-size:9px;letter-spacing:0.18em;
+  color:var(--gold);text-transform:uppercase;
+}
+.cs-pill-name{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(13px,2vw,15px);
+  color:var(--mid);
+}
+
+.cover-scroll{
+  font-family:var(--sans);font-weight:200;
+  font-size:9px;letter-spacing:0.22em;
+  color:var(--ghost);text-transform:uppercase;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  animation:breathe 2.5s ease-in-out infinite;
+}
+.scroll-line{
+  width:32px;height:0.5px;background:var(--ghost);
+  position:relative;overflow:hidden;
+}
+.scroll-line::after{
+  content:'';position:absolute;top:0;left:-100%;
+  width:100%;height:100%;background:var(--gold);
+  animation:slide-right 2.5s ease-in-out infinite;
+}
+@keyframes slide-right{ 0%{left:-100%} 100%{left:100%} }
+@keyframes breathe{ 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+/* ══════════════════════════════════════
+   STORY SECTIONS
+══════════════════════════════════════ */
+.story-section{
+  padding:clamp(6rem,12vw,10rem) 0 clamp(4rem,8vw,6rem);
+  border-bottom:0.5px solid var(--rule);
+  position:relative;
+  overflow:hidden;
+}
+
+/* Subtle color wash per story */
+.story-section::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  opacity:0.6;
+}
+.story-section.s1::before{ background:var(--s1); }
+.story-section.s2::before{ background:var(--s2); }
+.story-section.s3::before{ background:var(--s3); }
+.story-section.s4::before{ background:var(--s4); }
+.story-section.s5::before{ background:var(--s5); }
+
+/* Two-column layout */
+.story-grid{
+  display:grid;
+  grid-template-columns:1fr 480px;
+  gap:clamp(3rem,7vw,6rem);
+  align-items:start;
+  max-width:1100px;margin:0 auto;
+  padding:0 clamp(1.5rem,5vw,4rem);
+}
+@media(max-width:900px){
+  .story-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* Left: narrative */
+.story-narrative{}
+.story-num{
+  font-family:var(--sans);font-weight:200;
+  font-size:9px;letter-spacing:0.22em;
+  color:var(--ghost);text-transform:uppercase;
+  margin-bottom:clamp(0.8rem,2vw,1.2rem);
+}
+.story-accent{
+  width:28px;height:1px;
+  margin-bottom:clamp(1.2rem,3vw,2rem);
+  transition:width 0.8s var(--ease-out);
+}
+.story-section.visible .story-accent{ width:80px; }
+.s1 .story-accent{ background:var(--s1); }
+.s2 .story-accent{ background:var(--s2); }
+.s3 .story-accent{ background:var(--s3); }
+.s4 .story-accent{ background:var(--s4); }
+.s5 .story-accent{ background:var(--s5); }
+
+.story-name{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(28px,5vw,44px);
+  line-height:1.1;color:var(--mid);
+  margin-bottom:clamp(0.4rem,1vw,0.6rem);
+}
+.story-archetype{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(9px,1.8vw,11px);
+  letter-spacing:0.2em;text-transform:uppercase;
+  margin-bottom:clamp(2rem,5vw,3rem);
+}
+.s1 .story-archetype{ color:var(--s1); }
+.s2 .story-archetype{ color:var(--s2); }
+.s3 .story-archetype{ color:var(--s3); }
+.s4 .story-archetype{ color:var(--s4); }
+.s5 .story-archetype{ color:var(--s5); }
+
+.story-para{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(16px,2.5vw,19px);
+  color:var(--soft);line-height:1.95;
+  margin-bottom:clamp(1.2rem,3vw,2rem);
+}
+.story-para strong{ color:var(--ink);font-weight:400; }
+.story-para em{ font-style:italic; }
+
+.story-pivot{
+  font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(17px,2.8vw,22px);
+  color:var(--mid);line-height:1.6;
+  padding:clamp(1rem,2.5vw,1.5rem) 0
+    clamp(1rem,2.5vw,1.5rem) clamp(1.2rem,3vw,2rem);
+  border-left:1px solid var(--gold);
+  margin:clamp(1.5rem,4vw,2.5rem) 0;
+}
+
+/* VECTOR intelligence panel — dark inset, like index.html */
+.vector-intel{
+  background:var(--ink);
+  padding:clamp(1.5rem,4vw,2.5rem);
+  margin:clamp(2rem,5vw,3rem) 0;
+}
+.vi-label{
+  font-family:var(--sans);font-weight:200;
+  font-size:9px;letter-spacing:0.22em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.vi-text{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(15px,2.5vw,18px);
+  color:rgba(244,241,236,0.72);
+  line-height:1.9;
+}
+.vi-text strong{ color:rgba(244,241,236,0.92);font-weight:400; }
+
+/* Event timeline — below narrative */
+.story-events{
+  margin-top:clamp(2rem,5vw,3rem);
+  border-top:0.5px solid var(--rule);
+}
+.se-item{
+  display:flex;gap:clamp(0.8rem,2vw,1.2rem);
+  padding:clamp(0.8rem,2vw,1.2rem) 0;
+  border-bottom:0.5px solid var(--rule);
+  cursor:pointer;transition:padding-left 0.2s var(--lux);
+}
+.se-item:hover{ padding-left:8px; }
+.se-item:last-child{ border-bottom:none; }
+.se-year{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(9px,1.8vw,11px);
+  letter-spacing:0.1em;color:var(--ghost);
+  flex:0 0 38px;padding-top:2px;
+}
+.se-body{}
+.se-event{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(14px,2.2vw,16px);
+  color:var(--mid);margin-bottom:3px;
+}
+.se-note{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(11px,1.8vw,13px);
+  color:var(--muted);line-height:1.6;
+  font-style:italic;
+}
+
+/* Right: chart column */
+.story-chart-col{
+  position:sticky;top:calc(clamp(4rem,8vw,7rem));
+}
+.chart-label-row{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:12px;
+}
+.chart-label{
+  font-family:var(--sans);font-weight:200;
+  font-size:9px;letter-spacing:0.2em;
+  color:var(--muted);text-transform:uppercase;
+}
+.chart-legend{
+  display:flex;gap:16px;
+}
+.cl-item{
+  display:flex;align-items:center;gap:6px;
+  font-family:var(--sans);font-weight:200;
+  font-size:9px;color:var(--muted);
+}
+.cl-line{
+  width:18px;height:1px;
+}
+
+canvas.story-canvas{
+  width:100%;display:block;
+  border:0.5px solid var(--rule);
+  background:rgba(244,241,236,0.5);
+}
+
+/* Variable grid under chart — matches cf-vars pattern from index.html */
+.var-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--rule);
+  border:0.5px solid var(--rule);
+  margin-top:1px;
+}
+.var-cell{
+  background:var(--cream);
+  padding:clamp(0.7rem,1.5vw,1rem) clamp(0.5rem,1.2vw,0.8rem);
+  text-align:center;
+}
+.var-cell-name{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(7px,1.3vw,9px);
+  letter-spacing:0.12em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:0.3rem;
+}
+.var-cell-score{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(20px,3.5vw,28px);color:var(--gold);
+  line-height:1;
+}
+
+/* ══════════════════════════════════════
+   CLOSING
+══════════════════════════════════════ */
+.closing-section{
+  padding:clamp(7rem,14vw,12rem) 0;
+  text-align:center;
+  border-bottom:0.5px solid var(--rule);
+}
+.closing-statement{
+  font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(22px,4vw,42px);
+  color:var(--mid);line-height:1.4;
+  max-width:680px;margin:0 auto clamp(2rem,5vw,3.5rem);
+}
+.closing-sub{
+  font-family:var(--sans);font-weight:300;
+  font-size:clamp(14px,2.4vw,17px);
+  color:var(--muted);line-height:1.8;
+  max-width:480px;margin:0 auto clamp(2.5rem,6vw,4rem);
+}
+.closing-cta{
+  display:inline-block;
+  font-family:var(--sans);font-weight:300;
+  font-size:clamp(9px,1.8vw,11px);
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);text-decoration:none;
+  border:0.5px solid rgba(200,169,122,0.5);
+  padding:clamp(0.9rem,2vw,1.2rem) clamp(2rem,4vw,3rem);
+  transition:all 0.4s var(--lux);
+}
+.closing-cta:hover{
+  background:rgba(200,169,122,0.06);
+  border-color:var(--gold);
+}
+.closing-rule{
+  width:0.5px;height:60px;
+  background:linear-gradient(to bottom,transparent,var(--gold));
+  margin:clamp(3rem,6vw,5rem) auto 0;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-wordmark">VECTOR</a>
+  <a href="index.html" class="nav-back">← Return</a>
+</nav>
+
+<!-- ══════════════════════════════════════
+     COVER
+══════════════════════════════════════ -->
+<section class="cover">
+  <div class="container">
+    <div class="cover-eyebrow v-rise">VECTOR — Trajectory Intelligence</div>
+    <h1 class="cover-title v-rise">Five<br><em>Lives.</em></h1>
+    <p class="cover-sub v-rise">
+      Every life contains a decision that echoes for decades. Not always the one you made deliberately. Sometimes it's a school you almost didn't attend. A recession. A funeral that changed your geography.
+    </p>
+
+    <div class="cover-stories v-rise">
+      <a class="cs-pill" href="#story-0">
+        <div class="cs-pill-dot" style="background:var(--s1);"></div>
+        <div class="cs-pill-num">01</div>
+        <div class="cs-pill-name">The Summit<br>& The Fall</div>
+      </a>
+      <a class="cs-pill" href="#story-1">
+        <div class="cs-pill-dot" style="background:var(--s2);"></div>
+        <div class="cs-pill-num">02</div>
+        <div class="cs-pill-name">The<br>Crossing</div>
+      </a>
+      <a class="cs-pill" href="#story-2">
+        <div class="cs-pill-dot" style="background:var(--s3);"></div>
+        <div class="cs-pill-num">03</div>
+        <div class="cs-pill-name">The Long<br>Preparation</div>
+      </a>
+      <a class="cs-pill" href="#story-3">
+        <div class="cs-pill-dot" style="background:var(--s4);"></div>
+        <div class="cs-pill-num">04</div>
+        <div class="cs-pill-name">Geography<br>as Destiny</div>
+      </a>
+      <a class="cs-pill" href="#story-4">
+        <div class="cs-pill-dot" style="background:var(--s5);"></div>
+        <div class="cs-pill-num">05</div>
+        <div class="cs-pill-name">Never<br>Actually Late</div>
+      </a>
+    </div>
+
+    <div class="cover-scroll v-rise">
+      <div class="scroll-line"></div>
+      Scroll to read
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     STORY 1 — CLAIRE: THE HARVARD SETBACK
+══════════════════════════════════════ -->
+<section class="story-section s1" id="story-0">
+  <div class="story-grid">
+
+    <div class="story-narrative">
+      <div class="story-num v-rise">Story One of Five</div>
+      <div class="story-accent"></div>
+      <h2 class="story-name v-rise">Claire<br>Mendenhall</h2>
+      <div class="story-archetype v-rise">The Summit & The Fall</div>
+
+      <p class="story-para v-rise">
+        Claire grew up in Montclair, New Jersey. Her parents were both teachers. <strong>She was the first person in her extended family to attend an Ivy League university.</strong> Harvard, 1999. The neighborhood organized a party.
+      </p>
+      <p class="story-para v-rise">
+        The ascent was everything the algorithm would have predicted. Goldman Sachs at 24. Vice President at 29. Managing Director at 32. By every external measure, she was the proof that meritocracy worked.
+      </p>
+
+      <div class="story-pivot v-rise">
+        Then it was a Tuesday in October 2008. Six weeks of severance. A handshake from a man who wouldn't meet her eyes. She carried the box to her car herself.
+      </div>
+
+      <p class="story-para v-rise">
+        What nobody told her — what no counselor, no mentor had surfaced — was that her entire Luck Surface Area had been concentrated in a single corridor. Wall Street. When that corridor contracted, she had nowhere lateral to move. <em>Her Harvard credential, which had opened every door at 22, felt like a question mark at 32.</em>
+      </p>
+      <p class="story-para v-rise">
+        Fourteen months of applications. Three months freelancing. One month doing nothing.
+      </p>
+      <p class="story-para v-rise">
+        <strong>Then she took a call from a former colleague who had moved into healthcare private equity.</strong> He'd been trying to reach her for six months. She hadn't been returning calls. The opportunity she'd missed in her silence was the kind that doesn't repeat. The second call came anyway. She answered.
+      </p>
+
+      <div class="vector-intel v-rise">
+        <div class="vi-label">What VECTOR sees at 32</div>
+        <div class="vi-text">Institutional Proximity remains a <strong>9</strong> — Harvard never expires. Luck Surface Area has collapsed from 8 to <strong>3</strong> because it was never diversified beyond a single industry. The algorithm identifies three adjacent corridors: healthcare private equity, sovereign wealth advisory, strategic technology finance. Not consolation prizes. <strong>Equivalent prestige, different cycle correlation.</strong> The setback was not inevitable. The concentration was.</div>
+      </div>
+
+      <div class="story-events v-rise">
+        <div class="se-item" onclick="highlightEvt(0,0)">
+          <div class="se-year">1999</div>
+          <div class="se-body">
+            <div class="se-event">Harvard. First in family.</div>
+            <div class="se-note">VECTOR score: 34 at entry. Institutional Proximity: 2 → 9 on enrollment.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(0,1)">
+          <div class="se-year">2003</div>
+          <div class="se-body">
+            <div class="se-event">Goldman Sachs. Analyst.</div>
+            <div class="se-note">Luck Surface Area peaks. Network Inheritance compounds.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(0,2)">
+          <div class="se-year">2008</div>
+          <div class="se-body">
+            <div class="se-event">Financial crisis. Terminated. Tuesday.</div>
+            <div class="se-note">Trajectory fractures. Concentration risk materializes. LSA: 8 → 3.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(0,3)">
+          <div class="se-year">2009</div>
+          <div class="se-body">
+            <div class="se-event">Fourteen months. The recalibration.</div>
+            <div class="se-note">VECTOR identifies three adjacent corridors. The second call.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(0,4)">
+          <div class="se-year">2011</div>
+          <div class="se-body">
+            <div class="se-event">Managing Director, Healthcare PE.</div>
+            <div class="se-note">Trajectory resumes. Higher ceiling. Cycle-decorrelated.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-chart-col">
+      <div class="chart-label-row">
+        <div class="chart-label">Trajectory — Age 18 to 52</div>
+        <div class="chart-legend">
+          <div class="cl-item"><div class="cl-line" style="background:var(--s1)"></div>Actual</div>
+          <div class="cl-item"><div class="cl-line" style="background:var(--s1);opacity:0.25;border-top:1px dashed var(--s1);height:0;"></div>Uncalibrated</div>
+        </div>
+      </div>
+      <canvas class="story-canvas" id="c0" width="480" height="300"></canvas>
+      <div class="var-grid" id="v0"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     STORY 2 — THE APPALACHIAN
+══════════════════════════════════════ -->
+<section class="story-section s2" id="story-1">
+  <div class="story-grid">
+
+    <div class="story-narrative">
+      <div class="story-num v-rise">Story Two of Five</div>
+      <div class="story-accent"></div>
+      <h2 class="story-name v-rise">The<br>Appalachian</h2>
+      <div class="story-archetype v-rise">The Crossing Nobody Names</div>
+
+      <p class="story-para v-rise">
+        He grew up in Middletown, Ohio. Factory town. His grandmother raised him on hard rules and harder love. <strong>Everyone he knew worked at the mill, or used to.</strong>
+      </p>
+      <p class="story-para v-rise">
+        The Marine Corps came first. Four years. Iraq. He came back with discipline, a GI Bill, and 3.84 GPA at Ohio State in two years. Then Yale Law — a thing so foreign to his ZIP code it might as well have been a different country.
+      </p>
+
+      <div class="story-pivot v-rise">
+        Before he left for New Haven, a man from his neighborhood said: "Yale will change you. You won't come back." That man was right about the first part. He was wrong about the second.
+      </div>
+
+      <p class="story-para v-rise">
+        Yale Law gave him vocabulary, networks, and credibility in rooms that had never heard an Appalachian accent. But it also gave him something those rooms couldn't manufacture: he had already survived things his classmates had only read about.
+      </p>
+      <p class="story-para v-rise">
+        <strong>The credential and the wound existed simultaneously.</strong> Neither cancelled the other. The algorithm can measure the credential. <em>It cannot measure the cost of becoming fluent in two cultures and fully comfortable in neither.</em>
+      </p>
+
+      <div class="vector-intel v-rise">
+        <div class="vi-label">What VECTOR sees — and admits it cannot see</div>
+        <div class="vi-text">Network Inheritance at entry: <strong>2</strong>. Yale Law Institutional Proximity for government and law: <strong>10</strong>. The gap between origin and destination was, by any measurement, extraordinary. What the algorithm cannot show is the personal cost of that crossing. <strong>A trajectory score is not a life score.</strong></div>
+      </div>
+
+      <div class="story-events v-rise">
+        <div class="se-item" onclick="highlightEvt(1,0)">
+          <div class="se-year">2003</div>
+          <div class="se-body">
+            <div class="se-event">Marine Corps. Iraq deployment.</div>
+            <div class="se-note">Skill Depth and resilience build outside institutional pathways.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(1,1)">
+          <div class="se-year">2007</div>
+          <div class="se-body">
+            <div class="se-event">Ohio State. 3.84 GPA.</div>
+            <div class="se-note">Yale Law becomes a realistic institutional target. Algorithm recalibrates.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(1,2)">
+          <div class="se-year">2010</div>
+          <div class="se-body">
+            <div class="se-event">"Yale will change you."</div>
+            <div class="se-note">The crossing begins. Network Inheritance: 2 → 7. Personal cost unquantifiable.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(1,3)">
+          <div class="se-year">2016</div>
+          <div class="se-body">
+            <div class="se-event">Hillbilly Elegy published.</div>
+            <div class="se-note">Visibility activates globally. Two worlds become the credential.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(1,4)">
+          <div class="se-year">2022</div>
+          <div class="se-body">
+            <div class="se-event">US Senator, Ohio.</div>
+            <div class="se-note">The crossing completed. Institutional Proximity and NI at maximum.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-chart-col">
+      <div class="chart-label-row">
+        <div class="chart-label">Trajectory — Age 17 to 42</div>
+        <div class="chart-legend">
+          <div class="cl-item"><div class="cl-line" style="background:var(--s2)"></div>Actual</div>
+          <div class="cl-item"><div class="cl-line" style="background:var(--s2);opacity:0.25"></div>Without Yale</div>
+        </div>
+      </div>
+      <canvas class="story-canvas" id="c1" width="480" height="300"></canvas>
+      <div class="var-grid" id="v1"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     STORY 3 — MARGARET: MIDLIFE FOUNDER
+══════════════════════════════════════ -->
+<section class="story-section s3" id="story-2">
+  <div class="story-grid">
+
+    <div class="story-narrative">
+      <div class="story-num v-rise">Story Three of Five</div>
+      <div class="story-accent"></div>
+      <h2 class="story-name v-rise">Margaret<br>Osei</h2>
+      <div class="story-archetype v-rise">The Long Preparation</div>
+
+      <p class="story-para v-rise">
+        Margaret spent her 20s at a solid but unremarkable regional firm in Charlotte. Her 30s were middle management — good work, reliable income, invisible to anyone above her. She moved twice for her husband's career. She went to two conferences a year and raised two children.
+      </p>
+      <p class="story-para v-rise">
+        <strong>She watched colleagues pass her on the org chart.</strong> By conventional metrics, she was plateauing. What nobody was measuring: 25 years of pattern recognition across an entire industry. Three technology cycles. Two recessions. One category destroyed, one created.
+      </p>
+
+      <div class="story-pivot v-rise">
+        At 49, her employer was acquired. She was offered generous severance to leave gracefully. She was angry for six months. Then she built something.
+      </div>
+
+      <p class="story-para v-rise">
+        The venture capital meeting in year one went nowhere. A 23-year-old associate told her the market was too niche. <em>She almost believed him.</em> She went home and didn't call anyone for a week. Then she called her seventh customer instead. And her eighth.
+      </p>
+      <p class="story-para v-rise">
+        <strong>Series B. $28 million. 47 employees.</strong> The 23-year-old associate's fund tried to invest in year four. She declined.
+      </p>
+
+      <div class="vector-intel v-rise">
+        <div class="vi-label">What VECTOR sees in the plateau</div>
+        <div class="vi-text">The plateau was never stagnation. Skill Depth building to <strong>9</strong>. Network Inheritance within her industry: <strong>8</strong>. Capital Runway at its highest point — no debt, real savings. The algorithm would have identified: <strong>this is a coil, not a ceiling.</strong> The forced departure wasn't a setback. It was the release mechanism.</div>
+      </div>
+
+      <div class="story-events v-rise">
+        <div class="se-item" onclick="highlightEvt(2,0)">
+          <div class="se-year">1992</div>
+          <div class="se-body">
+            <div class="se-event">First job. Regional firm, Charlotte.</div>
+            <div class="se-note">Skill Depth begins compounding. Invisible to external metrics for 25 years.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(2,1)">
+          <div class="se-year">2001</div>
+          <div class="se-body">
+            <div class="se-event">Dot-com crash. First recession survived.</div>
+            <div class="se-note">Pattern recognition accelerates. Colleagues who left lose the data she keeps.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(2,2)">
+          <div class="se-year">2018</div>
+          <div class="se-body">
+            <div class="se-event">Acquisition. Severance. Six months of anger.</div>
+            <div class="se-note">Capital Runway at peak. Coil releases. The plateau ends.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(2,3)">
+          <div class="se-year">2019</div>
+          <div class="se-body">
+            <div class="se-event">VC meeting fails. Customers 7 and 8.</div>
+            <div class="se-note">External validation not required. Internal validation sufficient.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(2,4)">
+          <div class="se-year">2023</div>
+          <div class="se-body">
+            <div class="se-event">Series B. $28M raised. 47 employees.</div>
+            <div class="se-note">The 23-year-old associate's fund tries to invest. She declines.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-chart-col">
+      <div class="chart-label-row">
+        <div class="chart-label">Trajectory — Age 22 to 55</div>
+        <div class="chart-legend">
+          <div class="cl-item"><div class="cl-line" style="background:var(--s3)"></div>Actual</div>
+          <div class="cl-item"><div class="cl-line" style="background:var(--s3);opacity:0.25"></div>If she'd stayed</div>
+        </div>
+      </div>
+      <canvas class="story-canvas" id="c2" width="480" height="300"></canvas>
+      <div class="var-grid" id="v2"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     STORY 4 — DANIEL: MIAMI → LA
+══════════════════════════════════════ -->
+<section class="story-section s4" id="story-3">
+  <div class="story-grid">
+
+    <div class="story-narrative">
+      <div class="story-num v-rise">Story Four of Five</div>
+      <div class="story-accent"></div>
+      <h2 class="story-name v-rise">Daniel<br>Reyes</h2>
+      <div class="story-archetype v-rise">Geography as Destiny</div>
+
+      <p class="story-para v-rise">
+        Daniel grew up in Flatbush, Brooklyn. His high school friends were heading to NYU and Fordham. He was going to University of Miami — not his first choice. The aid package was real. His mother said go. <em>He was embarrassed about it for the first year.</em>
+      </p>
+      <p class="story-para v-rise">
+        Miami had something NYU didn't: a Latin American business corridor, a culture that treated connections as currency, and an alumni network that had quietly migrated to Los Angeles and built something in entertainment finance.
+      </p>
+
+      <div class="story-pivot v-rise">
+        Then his grandmother died. She left him $40,000 — enough to create a question, not enough to answer it. He sat with the money for three months and felt its weight differently than he expected.
+      </div>
+
+      <p class="story-para v-rise">
+        He cold-emailed a Miami alumnus who was now a film finance attorney in Los Angeles. The alumnus answered — because Miami alumni answer each other — and six months later Daniel was on a plane with the $40,000 intact and a consulting arrangement that meant everything.
+      </p>
+      <p class="story-para v-rise">
+        <strong>He has never moved back.</strong> His NYU friends call him lucky. He went to the right school for a city he wouldn't move to for seven years.
+      </p>
+
+      <div class="vector-intel v-rise">
+        <div class="vi-label">What VECTOR sees that rankings don't</div>
+        <div class="vi-text">Miami's Geographic Proximity score for film finance is not scored for Miami — it's scored for the alumni destination, <strong>Los Angeles</strong>. The algorithm would have identified this at 17: University of Miami has a disproportionate alumni presence in LA entertainment finance relative to its prestige ranking. His friends' NYU degrees had higher prestige scores and <strong>lower pipeline scores</strong> for his specific career target. He went to the right school. It just took seven years to arrive at the right city.</div>
+      </div>
+
+      <div class="story-events v-rise">
+        <div class="se-item" onclick="highlightEvt(3,0)">
+          <div class="se-year">2005</div>
+          <div class="se-body">
+            <div class="se-event">University of Miami. Aid package.</div>
+            <div class="se-note">Embarrassed. Four years building the wrong-feeling right network.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(3,1)">
+          <div class="se-year">2009</div>
+          <div class="se-body">
+            <div class="se-event">Boutique bank, New York. Film finance desk.</div>
+            <div class="se-note">Two years. Nobody else at the firm interested in film finance. He is.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(3,2)">
+          <div class="se-year">2011</div>
+          <div class="se-body">
+            <div class="se-event">Grandmother passes. $40,000.</div>
+            <div class="se-note">Not enough to change a life financially. Enough to remove the excuse.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(3,3)">
+          <div class="se-year">2011</div>
+          <div class="se-body">
+            <div class="se-event">Cold email. Miami alumnus answers in 6 hours.</div>
+            <div class="se-note">Network Inheritance activates 7 years after college.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(3,4)">
+          <div class="se-year">2018</div>
+          <div class="se-body">
+            <div class="se-event">Managing Partner. $140M under management.</div>
+            <div class="se-note">LA. Film finance. Never moved back to Brooklyn.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-chart-col">
+      <div class="chart-label-row">
+        <div class="chart-label">Trajectory — Age 17 to 45</div>
+        <div class="chart-legend">
+          <div class="cl-item"><div class="cl-line" style="background:var(--s4)"></div>Actual</div>
+          <div class="cl-item"><div class="cl-line" style="background:var(--s4);opacity:0.25"></div>Had he gone to NYU</div>
+        </div>
+      </div>
+      <canvas class="story-canvas" id="c3" width="480" height="300"></canvas>
+      <div class="var-grid" id="v3"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     STORY 5 — MARCUS: THE LATE BLOOMER
+══════════════════════════════════════ -->
+<section class="story-section s5" id="story-4">
+  <div class="story-grid">
+
+    <div class="story-narrative">
+      <div class="story-num v-rise">Story Five of Five</div>
+      <div class="story-accent"></div>
+      <h2 class="story-name v-rise">Marcus<br>Webb</h2>
+      <div class="story-archetype v-rise">The Trajectory That Wasn't Late</div>
+
+      <p class="story-para v-rise">
+        At 18, Marcus chose not to go to college. He had a partial scholarship. But his father had a stroke in August, and the family needed income, and the scholarship wasn't enough to cover what the hospital bills weren't covering.
+      </p>
+      <p class="story-para v-rise">
+        He went to work in construction logistics. He was good at it. By 25 he was running a crew. By 28, three crews. He bought a house at 30. <em>By his community's standards, he had made it.</em>
+      </p>
+
+      <div class="story-pivot v-rise">
+        But he felt, without being able to name it, that he was operating at the wrong altitude. Not that his work was beneath him. Something else. Like he was solving problems with tools that weren't sized for the problems he could see.
+      </div>
+
+      <p class="story-para v-rise">
+        At 32, he took a night course at the community college. Not because someone told him to. Because he was bored in a specific way that felt important.
+      </p>
+      <p class="story-para v-rise">
+        He graduated with his MBA at 36. He is now 41. <strong>His infrastructure technology company has digitized the exact workflow he spent twelve years doing manually.</strong> The 18-year-old who didn't go to college built the only product that could have emerged from those twelve years.
+      </p>
+
+      <div class="vector-intel v-rise">
+        <div class="vi-label">What VECTOR sees at 32 that it couldn't see at 18</div>
+        <div class="vi-text">At 18, VECTOR might have suggested a community college transfer path. At 32, it suggests something completely different — because the person is completely different. Skill Depth: <strong>8</strong>. Capital Runway: <strong>9</strong>. Network Inheritance: <strong>7</strong>. He didn't need a do-over. <strong>He needed vocabulary for what he already was.</strong> The trajectory was never late. The label was wrong.</div>
+      </div>
+
+      <div class="story-events v-rise">
+        <div class="se-item" onclick="highlightEvt(4,0)">
+          <div class="se-year">2001</div>
+          <div class="se-body">
+            <div class="se-event">Father's stroke. College deferred.</div>
+            <div class="se-note">The decision that looked like a loss becomes a specific expertise nobody else has.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(4,1)">
+          <div class="se-year">2007</div>
+          <div class="se-body">
+            <div class="se-event">Running three crews. House purchased.</div>
+            <div class="se-note">Operating at the wrong altitude. Boredom as signal.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(4,2)">
+          <div class="se-year">2013</div>
+          <div class="se-body">
+            <div class="se-event">Night course. Community college.</div>
+            <div class="se-note">Nobody told him to. VECTOR at 32 identifies: Skill Depth 8, Capital Runway 9.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(4,3)">
+          <div class="se-year">2017</div>
+          <div class="se-body">
+            <div class="se-event">MBA. 36 years old.</div>
+            <div class="se-note">Not a do-over. Vocabulary for what he already was.</div>
+          </div>
+        </div>
+        <div class="se-item" onclick="highlightEvt(4,4)">
+          <div class="se-year">2022</div>
+          <div class="se-body">
+            <div class="se-event">Infrastructure tech. Series A.</div>
+            <div class="se-note">Solving what he spent 12 years inside. Only he could see it from there.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-chart-col">
+      <div class="chart-label-row">
+        <div class="chart-label">Trajectory — Age 17 to 42</div>
+        <div class="chart-legend">
+          <div class="cl-item"><div class="cl-line" style="background:var(--s5)"></div>Actual</div>
+          <div class="cl-item"><div class="cl-line" style="background:var(--s5);opacity:0.25"></div>Had he gone at 18</div>
+        </div>
+      </div>
+      <canvas class="story-canvas" id="c4" width="480" height="300"></canvas>
+      <div class="var-grid" id="v4"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     CLOSING
+══════════════════════════════════════ -->
+<section class="closing-section">
+  <div class="container">
+    <p class="closing-statement v-rise">
+      Every life contains a trajectory the algorithm could have seen earlier.
+    </p>
+    <p class="closing-sub v-rise">
+      The algorithm doesn't predict your future. It shows you where your leverage is — right now, from where you actually stand.
+    </p>
+    <a href="lifescape.html" class="closing-cta v-rise">Begin your assessment</a>
+    <div class="closing-rule"></div>
+  </div>
+</section>
+
+
+<script>
+
+/* ── NAV SCROLL — same as index.html ── */
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll', function(){
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, {passive:true});
+
+/* ── SCROLL REVEAL ── */
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e, i){
+    if(e.isIntersecting){
+      setTimeout(function(){ e.target.classList.add('visible'); }, i * 60);
+      obs.unobserve(e.target);
+    }
+  });
+}, {threshold:0.06, rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.v-rise').forEach(function(el){ obs.observe(el); });
+
+/* ── STORY SECTION OBSERVER — triggers accent line + canvas ── */
+var storyObs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      var idx = parseInt(e.target.dataset.idx);
+      if(!isNaN(idx) && !drawn[idx]){
+        drawn[idx] = true;
+        animateCanvas(idx);
+      }
+    }
+  });
+}, {threshold:0.15});
+
+document.querySelectorAll('.story-section').forEach(function(s, i){
+  s.dataset.idx = i;
+  storyObs.observe(s);
+});
+
+/* ══════════════════════════════════════
+   TRAJECTORY DATA
+══════════════════════════════════════ */
+var STORIES = [
+  { // Claire
+    color:'#7A9E6E',
+    actual:[[18,12],[22,42],[29,76],[32,84],[32.6,84],[33,44],[35,38],[37,52],[41,72],[50,84]],
+    ghost: [[18,12],[22,42],[32,84],[38,68],[50,54]],
+    fracture:32.4,
+    vars:[
+      {label:'Inst. Proximity', val:9},
+      {label:'Network Inherit', val:7},
+      {label:'Capital Runway',  val:7},
+      {label:'Luck Surface',    val:8}
+    ]
+  },
+  { // Vance
+    color:'#9E6E7A',
+    actual:[[17,8],[19,12],[25,30],[27,44],[29,62],[36,80],[40,90]],
+    ghost: [[17,8],[21,16],[30,28],[40,38]],
+    fracture:null,
+    vars:[
+      {label:'Inst. Proximity', val:10},
+      {label:'Network Inherit', val:8},
+      {label:'Skill Depth',     val:8},
+      {label:'Visibility',      val:9}
+    ]
+  },
+  { // Margaret
+    color:'#6E7A9E',
+    actual:[[22,20],[30,34],[38,40],[49,45],[49.6,45],[50,48],[52,62],[55,88]],
+    ghost: [[22,20],[30,34],[49,45],[55,47]],
+    fracture:49.4,
+    vars:[
+      {label:'Skill Depth',     val:9},
+      {label:'Network Inherit', val:8},
+      {label:'Capital Runway',  val:9},
+      {label:'Inst. Proximity', val:8}
+    ]
+  },
+  { // Daniel
+    color:'#9E8E6E',
+    actual:[[17,14],[22,34],[26,44],[28,46],[28.4,46],[29,56],[36,76],[43,88]],
+    ghost: [[17,14],[22,34],[35,50],[43,54]],
+    fracture:28.2,
+    vars:[
+      {label:'Geo. Proximity',  val:9},
+      {label:'Network Inherit', val:8},
+      {label:'Luck Surface',    val:9},
+      {label:'Inst. Proximity', val:7}
+    ]
+  },
+  { // Marcus
+    color:'#7A9E8E',
+    actual:[[17,10],[25,34],[30,44],[32,46],[34,54],[36,62],[40,82]],
+    ghost: [[17,10],[22,32],[36,58],[40,62]],
+    fracture:null,
+    vars:[
+      {label:'Skill Depth',     val:9},
+      {label:'Capital Runway',  val:9},
+      {label:'Network Inherit', val:7},
+      {label:'Inst. Proximity', val:7}
+    ]
+  }
+];
+
+var drawn = [false,false,false,false,false];
+
+function easeOut(t){ return 1 - Math.pow(1-t, 3); }
+
+function animateCanvas(idx){
+  var start = null, dur = 1800;
+  function step(ts){
+    if(!start) start = ts;
+    var p = Math.min((ts-start)/dur, 1);
+    renderCanvas(idx, easeOut(p));
+    if(p < 1) requestAnimationFrame(step);
+    else { renderCanvas(idx, 1); renderVars(idx); }
+  }
+  requestAnimationFrame(step);
+}
+
+function renderCanvas(idx, progress){
+  var canvas = document.getElementById('c'+idx);
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var s = STORIES[idx];
+  var W = canvas.width, H = canvas.height;
+  var PAD = {t:24, r:20, b:32, l:36};
+
+  ctx.clearRect(0,0,W,H);
+
+  var allAges = s.actual.concat(s.ghost).map(function(p){return p[0];});
+  var ageMin = Math.min.apply(null,allAges);
+  var ageMax = Math.max.apply(null,allAges);
+  function toX(a){ return PAD.l + (a-ageMin)/(ageMax-ageMin)*(W-PAD.l-PAD.r); }
+  function toY(v){ return PAD.t + (1-v/100)*(H-PAD.t-PAD.b); }
+
+  // Grid — very light, cream aesthetic
+  ctx.strokeStyle = 'rgba(44,44,42,0.06)'; ctx.lineWidth = 0.5;
+  [0,25,50,75,100].forEach(function(v){
+    ctx.beginPath(); ctx.moveTo(PAD.l,toY(v)); ctx.lineTo(W-PAD.r,toY(v)); ctx.stroke();
+    ctx.fillStyle = 'rgba(44,44,42,0.25)'; ctx.font = "9px 'DM Sans'";
+    ctx.fillText(v, 4, toY(v)+3);
+  });
+
+  // Age labels
+  ctx.fillStyle = 'rgba(44,44,42,0.25)'; ctx.font = "9px 'DM Sans'";
+  var span = ageMax - ageMin;
+  var step = span > 30 ? 10 : 5;
+  for(var a = Math.ceil(ageMin/step)*step; a <= ageMax; a += step){
+    ctx.fillText(a, toX(a)-6, H-4);
+  }
+
+  // Ghost line — dashed, very faint
+  var gCount = Math.floor(s.ghost.length * progress);
+  ctx.save();
+  ctx.setLineDash([4,6]);
+  ctx.strokeStyle = s.color;
+  ctx.globalAlpha = 0.18;
+  ctx.lineWidth = 1.2;
+  ctx.beginPath();
+  s.ghost.slice(0,gCount).forEach(function(pt,i){
+    i===0 ? ctx.moveTo(toX(pt[0]),toY(pt[1])) : ctx.lineTo(toX(pt[0]),toY(pt[1]));
+  });
+  ctx.stroke();
+  ctx.restore();
+
+  // Actual line
+  var aCount = Math.floor(s.actual.length * progress);
+  ctx.save();
+  ctx.setLineDash([]);
+  ctx.strokeStyle = s.color;
+  ctx.globalAlpha = 0.85;
+  ctx.lineWidth = 2;
+  ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+  ctx.beginPath();
+  var fractured = false;
+  s.actual.slice(0,aCount).forEach(function(pt,i){
+    var x = toX(pt[0]), y = toY(pt[1]);
+    if(s.fracture && pt[0] >= s.fracture && !fractured){
+      ctx.stroke(); fractured = true;
+      // Fracture mark — amber
+      ctx.save();
+      ctx.strokeStyle = '#C8A97A';
+      ctx.setLineDash([2,3]); ctx.lineWidth = 1;
+      ctx.globalAlpha = 0.7;
+      ctx.beginPath();
+      ctx.moveTo(x-3,y-7); ctx.lineTo(x+4,y+5); ctx.lineTo(x,y);
+      ctx.stroke(); ctx.restore();
+      ctx.setLineDash([]);
+      ctx.strokeStyle = s.color; ctx.globalAlpha = 0.85; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(x,y);
+    } else {
+      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    }
+  });
+  ctx.stroke(); ctx.restore();
+
+  // Endpoint dot
+  if(progress > 0.85 && aCount > 0){
+    var last = s.actual[Math.min(aCount-1, s.actual.length-1)];
+    ctx.save();
+    ctx.fillStyle = s.color;
+    ctx.globalAlpha = Math.min(1,(progress-0.85)*6);
+    ctx.beginPath();
+    ctx.arc(toX(last[0]),toY(last[1]),4,0,Math.PI*2);
+    ctx.fill(); ctx.restore();
+  }
+}
+
+function renderVars(idx){
+  var container = document.getElementById('v'+idx);
+  var s = STORIES[idx];
+  if(!container || !s) return;
+  container.innerHTML = s.vars.map(function(v){
+    return '<div class="var-cell">'
+      + '<div class="var-cell-name">'+v.label+'</div>'
+      + '<div class="var-cell-score">'+v.val+'</div>'
+      + '</div>';
+  }).join('');
+}
+
+function highlightEvt(storyIdx, evtIdx){
+  var canvas = document.getElementById('c'+storyIdx);
+  if(!canvas) return;
+  renderCanvas(storyIdx, 1);
+  // Re-draw with highlight ring
+  var s = STORIES[storyIdx];
+  var evts = [
+    [[18,12],[22,42],[32,84],[33,44],[41,72]],
+    [[19,12],[27,44],[29,62],[36,80],[40,90]],
+    [[22,20],[38,40],[49,45],[51,58],[55,88]],
+    [[17,14],[26,44],[28,46],[29,56],[43,88]],
+    [[17,10],[28,40],[33,50],[36,62],[40,82]]
+  ];
+  var pt = evts[storyIdx] && evts[storyIdx][evtIdx];
+  if(!pt) return;
+
+  var W = canvas.width, H = canvas.height;
+  var PAD = {t:24,r:20,b:32,l:36};
+  var allAges = s.actual.concat(s.ghost).map(function(p){return p[0];});
+  var ageMin = Math.min.apply(null,allAges);
+  var ageMax = Math.max.apply(null,allAges);
+  function toX(a){ return PAD.l + (a-ageMin)/(ageMax-ageMin)*(W-PAD.l-PAD.r); }
+  function toY(v){ return PAD.t + (1-v/100)*(H-PAD.t-PAD.b); }
+
+  var ctx = canvas.getContext('2d');
+  var x = toX(pt[0]), y = toY(pt[1]);
+  ctx.save();
+  ctx.strokeStyle = s.color; ctx.lineWidth = 1.5; ctx.globalAlpha = 0.7;
+  ctx.beginPath(); ctx.arc(x,y,10,0,Math.PI*2); ctx.stroke();
+  ctx.fillStyle = s.color; ctx.globalAlpha = 1;
+  ctx.beginPath(); ctx.arc(x,y,4,0,Math.PI*2); ctx.fill();
+  ctx.restore();
+}
+
+</script>
+</body>
+</html>
