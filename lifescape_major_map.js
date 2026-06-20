@@ -240,6 +240,7 @@ const MAJOR_MAP = {
       entry_careers: ['Financial Analyst', 'Investment Banking Analyst', 'Wealth Management Associate'],
       world_alignment: 'Systems',
       cc_transfer_friendly: false,
+      emerging_role: 'Climate Finance Analyst — the professional who evaluates the financial risks that climate change poses to asset portfolios, infrastructure investments, and corporate balance sheets — and who structures the green bonds, transition finance instruments, and carbon credit mechanisms that direct capital toward decarbonization. BlackRock, Goldman Sachs, and every major sovereign wealth fund are building climate finance teams whose analysts need both traditional financial modeling skills and genuine understanding of climate science and carbon markets.',
       deployment_contexts: [
         {
           domain: 'Investment Banking & Capital Markets',
@@ -271,6 +272,7 @@ const MAJOR_MAP = {
       entry_careers: ['Staff Accountant', 'Audit Associate', 'Tax Analyst'],
       world_alignment: 'Systems',
       cc_transfer_friendly: true,
+      emerging_role: 'AI Audit & Assurance Specialist — the professional who designs and executes audit procedures for AI systems — verifying that machine learning models used in financial reporting, credit decisioning, and fraud detection are performing as described, are free from material bias, and are producing outputs that auditors can attest to with the same confidence they bring to a traditional financial statement audit. The PCAOB and IAASB are both developing AI audit standards, and the accounting professionals who build this specialization early are entering a field with no established pipeline and significant demand.',
       deployment_contexts: [
         {
           domain: 'Public Accounting & Audit',
@@ -298,6 +300,7 @@ const MAJOR_MAP = {
       entry_careers: ['Economic Analyst', 'Policy Research Associate', 'Strategy Analyst'],
       world_alignment: 'Think',
       cc_transfer_friendly: true,
+      emerging_role: 'Algorithmic Market Design Economist — the professional who designs the market mechanisms, auction formats, and pricing algorithms that govern how digital platforms allocate attention, advertising inventory, ride-share pricing, and cloud computing resources — applying mechanism design theory to systems that operate at a scale and speed that traditional market design never anticipated. Google, Amazon, and Uber all employ market design economists whose work determines how billions of dollars of value is allocated every day through systems most users never see.',
       deployment_contexts: [
         {
           domain: 'Technology & Platform Economics',
@@ -325,6 +328,7 @@ const MAJOR_MAP = {
       entry_careers: ['Management Trainee', 'Operations Associate', 'Business Development Coordinator'],
       world_alignment: 'Systems',
       cc_transfer_friendly: true,
+      emerging_role: 'AI Operations Integration Manager — the professional who leads the organizational transformation required when a company deploys AI across its operations — identifying which workflows change, retraining the workforce, managing the change resistance, and measuring whether the AI deployment is actually producing the business outcomes that justified the investment. McKinsey estimates that most AI deployments fail not because the technology does not work but because the organizational integration was managed poorly, and the business professionals who can close that gap are among the most valuable in any industry undergoing AI adoption.',
       deployment_contexts: [
         {
           domain: 'Entrepreneurship & Small Business Ownership',
@@ -352,6 +356,7 @@ const MAJOR_MAP = {
       entry_careers: ['Real Estate Analyst', 'Property Management Associate', 'Commercial Leasing Agent'],
       world_alignment: 'Systems',
       cc_transfer_friendly: false,
+      emerging_role: 'PropTech Investment & Innovation Analyst — the professional who evaluates and implements technology solutions across real estate portfolios — from AI-powered building management systems and predictive maintenance platforms to blockchain-based property title systems and virtual reality leasing tools — and who assesses the financial returns of PropTech investments with the rigor that institutional real estate investors require before deploying capital into technology that changes how buildings are operated and transacted.',
       deployment_contexts: [
         {
           domain: 'Commercial Real Estate & REIT Management',
@@ -381,6 +386,7 @@ const MAJOR_MAP = {
       entry_careers: ['Marketing Coordinator', 'Brand Associate', 'Digital Marketing Analyst'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Neuromarketing & Behavioral Design Strategist — the professional who applies behavioral economics, cognitive psychology, and neuroscience research to the design of marketing systems, product interfaces, and consumer communications — moving beyond demographic targeting to the underlying cognitive mechanisms that determine how people actually make decisions, process risk, and respond to social proof.',
       deployment_contexts: [
         {
           domain: 'Internal Communications & Organizational Alignment',
@@ -424,6 +430,7 @@ const MAJOR_MAP = {
       entry_careers: ['Paralegal', 'Legislative Aide', 'Policy Research Analyst'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'AI Policy & Technology Law Specialist — the attorney or policy professional who works at the intersection of artificial intelligence, data privacy, intellectual property, and regulatory compliance — advising governments writing AI legislation, corporations deploying AI systems in regulated industries, and courts adjudicating the first generation of AI liability cases. The EU AI Act, the FTC algorithmic accountability rules, and the emerging body of AI case law are all creating sustained demand for legal and policy professionals who understand both how AI systems work and what the law currently says about them.',
       deployment_contexts: [
         {
           domain: 'Law — Corporate, Finance & Intellectual Property',
@@ -451,6 +458,7 @@ const MAJOR_MAP = {
       entry_careers: ['HR Coordinator', 'Research Assistant', 'Case Manager'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Human-AI Interaction Psychologist — the professional who studies and designs how people form relationships with AI systems — managing the psychological dynamics of trust calibration, over-reliance, anthropomorphization, and the emotional responses that emerge when AI systems fail or behave unexpectedly. Google, Microsoft, and every company deploying AI in consumer-facing applications employs human factors and psychology researchers whose work determines whether users interact with AI systems in ways that are safe, productive, and psychologically healthy.',
       deployment_contexts: [
         {
           domain: 'Executive Leadership & Organizational Change',
@@ -494,6 +502,7 @@ const MAJOR_MAP = {
       entry_careers: ['PR Assistant', 'Communications Coordinator', 'Account Coordinator'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Disinformation & Narrative Intelligence Analyst — the professional who monitors information ecosystems for coordinated inauthentic behavior, synthetic media, and narrative manipulation campaigns — and who designs the communications strategies that allow organizations, governments, and public figures to respond to disinformation with speed and credibility. Every major government, every publicly traded company, and every institution that operates in a high-visibility public environment now faces disinformation risk that did not exist at meaningful scale a decade ago.',
       deployment_contexts: [
         {
           domain: 'Crisis Communications & Reputation Management',
@@ -521,6 +530,7 @@ const MAJOR_MAP = {
       entry_careers: ['Business Analyst', 'Strategy Associate', 'Operations Consultant'],
       world_alignment: 'Systems',
       cc_transfer_friendly: false,
+      emerging_role: 'AI Transformation Consultant — the professional who advises organizations on how to restructure their operations, workforce, and competitive strategy around AI capabilities — assessing which functions can be automated, which require human-AI collaboration, and which represent new market opportunities that AI creates. McKinsey, Bain, and BCG have all built AI practice areas whose consultants combine strategic problem-solving with enough technical literacy to distinguish genuine AI capability from vendor hype and to design transformation roadmaps that actually get implemented.',
       deployment_contexts: [
         {
           domain: 'Strategy Consulting & Corporate Advisory',
@@ -548,6 +558,7 @@ const MAJOR_MAP = {
       entry_careers: ['Architectural Intern', 'Design Assistant', 'Urban Planning Associate'],
       world_alignment: 'Make',
       cc_transfer_friendly: false,
+      emerging_role: 'Biophilic Design Architect — the professional who integrates living systems — plants, water, natural light, material textures, and views of nature — into built environments at a scale and sophistication that goes beyond decorative greenery into evidence-based design that measurably improves occupant wellbeing, cognitive performance, and stress recovery. The research base connecting built environment design to human health outcomes is producing design standards that major healthcare systems, workplace designers, and luxury residential developers are beginning to require.',
       deployment_contexts: [
         {
           domain: 'Real Estate Development & Project Management',
@@ -575,6 +586,7 @@ const MAJOR_MAP = {
       entry_careers: ['HR Coordinator', 'Recruiter', 'People Operations Associate'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'People Analytics & Workforce Intelligence Director — the professional who uses organizational data — performance metrics, collaboration patterns, attrition predictors, skills gap analysis — to inform workforce planning, talent development, and organizational design decisions with the same rigor that financial data informs capital allocation decisions. Google People Analytics pioneered this function and published enough of their methodology that every major employer now understands what it can produce, creating sustained demand for HR professionals who can design and operate these systems.',
       deployment_contexts: [
         {
           domain: 'Talent Acquisition & Executive Search',
@@ -636,6 +648,7 @@ const MAJOR_MAP = {
       entry_careers: ['Registered Nurse', 'Clinical Care Coordinator', 'ICU Nurse'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'AI-Assisted Clinical Decision Support Nurse — the registered nurse who works at the interface between clinical AI systems and patient care — interpreting early warning algorithm outputs, validating AI-generated medication recommendations, and exercising the clinical judgment to determine when algorithmic guidance should be followed, questioned, or overridden. Epic early warning systems, sepsis prediction algorithms, and deterioration detection models are all deployed in hospitals where nurses are the primary human oversight layer, and the nurses who understand these systems are advancing into clinical informatics and patient safety leadership roles.',
       deployment_contexts: [
         {
           domain: 'Advanced Practice & Nurse Practitioner',
@@ -663,6 +676,7 @@ const MAJOR_MAP = {
       entry_careers: ['Health Educator', 'Community Outreach Coordinator', 'Public Health Analyst'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Pandemic Preparedness & Biosurveillance Analyst — the public health professional who designs and operates the early warning systems that detect novel pathogen emergence, monitor wastewater epidemiology, analyze international disease surveillance data, and model outbreak trajectories before they become public health emergencies. The COVID-19 pandemic produced a permanent expansion of biosurveillance infrastructure at the CDC, WHO, and every major public health agency, and the professionals who staff those systems are working in a function whose importance the world now understands with a clarity it did not have before 2020.',
       deployment_contexts: [
         {
           domain: 'Epidemiology & Disease Surveillance',
@@ -718,6 +732,7 @@ const MAJOR_MAP = {
       entry_careers: ['Athletic Trainer', 'Physical Therapy Aide', 'Strength & Conditioning Coach'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Wearable Biomechanics & Injury Prevention Analyst — the professional who uses continuous motion capture data, force plate measurements, and wearable IMU sensors to identify biomechanical risk factors for injury before they produce one — building the movement screening protocols, corrective exercise prescriptions, and load management systems that allow athletes and active populations to train at high intensity without accumulating the structural stress that leads to overuse injury. Every professional sports team, elite military unit, and progressive corporate wellness program is building this function.',
       deployment_contexts: [
         {
           domain: 'Physical Therapy & Rehabilitation Medicine',
@@ -745,6 +760,7 @@ const MAJOR_MAP = {
       entry_careers: ['Case Manager', 'Behavioral Health Technician', 'Social Services Assistant'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Digital Mental Health Platform Clinician — the licensed therapist or counselor who designs, delivers, and clinically supervises mental health interventions through digital platforms — managing the therapeutic alliance in asynchronous text-based therapy, integrating AI-assisted mood monitoring and crisis detection, and developing the clinical protocols that ensure digital mental health delivery meets the same standard of care as in-person treatment. Talkspace, BetterHelp, and every major health system building telehealth mental health programs are developing clinical leadership roles that require both traditional clinical training and genuine digital platform fluency.',
       deployment_contexts: [
         {
           domain: 'Clinical Mental Health Counseling & Therapy',
@@ -772,6 +788,7 @@ const MAJOR_MAP = {
       entry_careers: ['Dietetic Intern', 'Nutrition Educator', 'Wellness Coordinator'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Metabolic Health & Precision Nutrition Specialist — the registered dietitian who integrates continuous glucose monitoring data, microbiome sequencing, metabolomics panels, and genetic nutrition testing into individualized dietary protocols that go beyond population-level guidelines to recommendations calibrated to how a specific person metabolism actually responds to specific foods. Virta Health, Levels, and the precision nutrition programs at leading academic medical centers are all building clinical teams that require dietitians with both traditional clinical nutrition credentials and genuine fluency with the data systems that make personalized nutrition actionable.',
       deployment_contexts: [
         {
           domain: 'Clinical Nutrition & Medical Nutrition Therapy',
@@ -805,6 +822,7 @@ const MAJOR_MAP = {
       entry_careers: ['Front Office Manager Trainee', 'Hotel Operations Associate', 'Event Coordinator'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Luxury Wellness & Longevity Resort Director — the hospitality professional who designs and operates destination wellness programs at the intersection of luxury hospitality and evidence-based health optimization — integrating longevity medicine protocols, biometric monitoring, sleep science, nutrition therapy, and movement programming into resort experiences that attract high-net-worth guests willing to pay significant premiums for hospitality that improves their biology rather than simply relaxing them. Six Senses, SHA Wellness Clinic, and the emerging generation of longevity-focused destination wellness resorts are building this leadership function.',
       deployment_contexts: [
         {
           domain: 'Hotel & Resort General Management',
@@ -832,6 +850,7 @@ const MAJOR_MAP = {
       entry_careers: ['Line Cook', 'Pastry Assistant', 'Kitchen Manager Trainee'],
       world_alignment: 'Make',
       cc_transfer_friendly: false,
+      emerging_role: 'Therapeutic & Functional Food Chef — the culinary professional who designs menus and recipes at the intersection of gastronomy and functional nutrition — creating food experiences for longevity clinics, cancer treatment centers, performance training facilities, and health-conscious restaurant concepts where the flavor and the biological effect of what is served are both non-negotiable. The culinary graduates who combine classical technique with genuine nutrition science fluency are building a specialization that neither a registered dietitian nor a conventionally trained chef can replicate alone.',
       deployment_contexts: [
         {
           domain: 'Restaurant Ownership & Culinary Entrepreneurship',
@@ -859,6 +878,7 @@ const MAJOR_MAP = {
       entry_careers: ['Event Coordinator', 'Catering Sales Assistant', 'Conference Services Associate'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Hybrid & Immersive Event Experience Director — the event professional who designs experiences that are simultaneously compelling for in-person attendees and virtual participants — using live streaming technology, interactive digital layers, and spatial design to create events whose virtual experience is not a degraded version of the physical one but a genuinely different and equally valuable form of participation. The post-pandemic expectation that major events offer meaningful virtual access has created sustained demand for event professionals who understand both physical production and digital experience design.',
       deployment_contexts: [
         {
           domain: 'Corporate Events & Incentive Travel',
@@ -886,6 +906,7 @@ const MAJOR_MAP = {
       entry_careers: ['Travel Coordinator', 'Tourism Marketing Associate', 'Cruise Line Operations Trainee'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Regenerative Tourism & Impact Travel Curator — the travel professional who designs experiences that benefit the destinations they visit — directing traveler spending toward local economies, designing conservation-integrated itineraries, and measuring the ecological and social impact of tourism programs with the rigor that ESG-conscious travelers and corporate travel buyers increasingly require. The regenerative tourism movement is transforming the premium travel market, and the travel professionals who can design and operate experiences that are genuinely restorative rather than merely sustainable are building practices that the luxury travel market is actively seeking.',
       deployment_contexts: [
         {
           domain: 'Destination Marketing & Tourism Development',
@@ -915,6 +936,7 @@ const MAJOR_MAP = {
       entry_careers: ['Marketing Coordinator', 'Brand Associate', 'E-Commerce Analyst'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'AI Marketing Strategist — the professional who designs and operates marketing systems that use machine learning for audience segmentation, predictive customer lifetime value modeling, dynamic content personalization, and automated campaign optimization — moving marketing from intuition-driven to evidence-driven at a speed and scale that human analysis alone cannot sustain. Every consumer brand running digital advertising at scale is building this capability, and the marketing professionals who combine strategic brand judgment with genuine data fluency are the ones whose recommendations actually get implemented.',
       deployment_contexts: [
         {
           domain: 'E-Commerce & Digital Retail Strategy',
@@ -938,6 +960,7 @@ const MAJOR_MAP = {
       entry_careers: ['Retail Manager Trainee', 'Merchandise Coordinator', 'Buying Assistant'],
       world_alignment: 'Systems',
       cc_transfer_friendly: true,
+      emerging_role: 'Unified Commerce Experience Director — the professional who designs and manages the seamless integration of physical and digital retail — ensuring that inventory visibility, pricing, loyalty programs, and customer experience are consistent whether a customer is in-store, on the app, or browsing social commerce — and that data flowing between channels informs every merchandising and operational decision in real time. Target, Nordstrom, and the major specialty retailers are all building unified commerce teams whose directors carry both retail operations depth and technology platform fluency.',
       deployment_contexts: [
         {
           domain: 'Retail Operations & Store Leadership',
@@ -961,6 +984,7 @@ const MAJOR_MAP = {
       entry_careers: ['Supply Chain Analyst', 'Procurement Coordinator', 'Inventory Planner'],
       world_alignment: 'Systems',
       cc_transfer_friendly: true,
+      emerging_role: 'Supply Chain Resilience Architect — the professional who stress-tests global supply networks against disruption scenarios — pandemic shutdowns, port congestion, geopolitical conflict, climate events — and redesigns sourcing strategies, inventory buffers, and supplier diversification to reduce the fragility that most supply chains accepted as normal before 2020. Apple, Ford, and every company that experienced a supply chain failure in the past five years is now hiring for this function with a seriousness they did not have before.',
       deployment_contexts: [
         {
           domain: 'Global Procurement & Strategic Sourcing',
@@ -988,6 +1012,7 @@ const MAJOR_MAP = {
       entry_careers: ['Startup Founder', 'Business Development Associate', 'Product Manager Trainee'],
       world_alignment: 'Systems',
       cc_transfer_friendly: false,
+      emerging_role: 'AI-Native Startup Founder — the entrepreneur who builds companies whose core product is impossible without AI — not companies that use AI as a feature but companies whose entire value proposition depends on machine learning, large language models, or computer vision doing something that was economically or technically infeasible five years ago. The AI-native founder understands both the technology layer and the business model layer well enough to identify where the capability gap is closing fast enough to build a company around it before the window closes.',
       deployment_contexts: [
         {
           domain: 'Technology Startups & Venture-Backed Companies',
@@ -1021,6 +1046,7 @@ const MAJOR_MAP = {
       entry_careers: ['Personal Trainer', 'Wellness Coach', 'Corporate Fitness Coordinator'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Biometric Health Coach & Wearable Data Interpreter — the wellness professional who guides clients through the increasingly complex landscape of continuous health monitoring — translating heart rate variability trends, sleep stage data, glucose responses, and recovery metrics from multiple wearable devices into coherent behavior change recommendations that clients can actually implement. The wearable health technology market has produced a significant gap between data availability and interpretive expertise, and the health coaches who can close that gap are building practices whose value proposition neither a personal trainer nor a physician currently offers.',
       deployment_contexts: [
         {
           domain: 'Corporate Wellness & Employee Health Programs',
@@ -1044,6 +1070,7 @@ const MAJOR_MAP = {
       entry_careers: ['Case Manager', 'Community Outreach Worker', 'Youth Program Coordinator'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Digital Equity & Technology Access Social Worker — the social work professional who addresses the structural barriers that prevent underserved populations from accessing digital tools, telehealth services, online education, and remote work opportunities — designing digital literacy programs, advocating for broadband infrastructure investment, and navigating the intersection of technology policy and human services in communities where the digital divide produces measurable health, educational, and economic disparities.',
       deployment_contexts: [
         {
           domain: 'Clinical Social Work & Psychotherapy',
@@ -1071,6 +1098,7 @@ const MAJOR_MAP = {
       entry_careers: ['Licensed Cosmetologist', 'Salon Manager', 'Beauty Brand Educator'],
       world_alignment: 'Make',
       cc_transfer_friendly: false,
+      emerging_role: 'Medical Esthetics & Skin Longevity Technician — the licensed esthetician who has expanded their practice into the clinical end of the skin care spectrum — performing advanced treatments like microneedling, chemical peels, laser and light therapy, and results-driven skin barrier restoration protocols under physician supervision in medical spa environments whose clients seek measurable skin improvement rather than relaxation. The medical spa industry is the fastest-growing segment of the aesthetic medicine market, and the estheticians who combine clinical treatment skills with genuine skin biology knowledge and strong client relationship management are building practices whose earning potential significantly exceeds traditional salon esthetics.',
       deployment_contexts: [
         {
           domain: 'Salon Ownership & Beauty Business',
@@ -1098,6 +1126,7 @@ const MAJOR_MAP = {
       entry_careers: ['Child Life Specialist', 'Family Services Coordinator', 'Early Childhood Educator'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Child Digital Wellbeing Specialist — the family and consumer sciences professional who helps families, schools, and pediatric health organizations navigate the developmental impact of screen time, social media, gaming, and AI interaction on children and adolescents — designing evidence-based digital wellness programs, advising parents on age-appropriate technology boundaries, and working with schools to implement technology policies that support rather than undermine child development. The pediatric and adolescent digital wellbeing field is expanding rapidly as the research on social media developmental effects accumulates.',
       deployment_contexts: [
         {
           domain: 'Early Childhood Education & Development',
@@ -1132,6 +1161,7 @@ const MAJOR_MAP = {
       entry_careers: ['Gallery Assistant', 'Artist Residency', 'Art Director Assistant'],
       world_alignment: 'Make',
       cc_transfer_friendly: false,
+      emerging_role: 'Generative Art Director & AI Creative Collaborator — the artist who works at the boundary between human creative intention and generative AI output — directing AI image systems, training custom models on specific visual languages, and making the curatorial and aesthetic judgments that determine which outputs carry genuine artistic value. Artists like Refik Anadol have demonstrated that this is a serious art practice with institutional recognition, and the fine arts graduates who develop fluency with generative AI tools without losing their critical aesthetic judgment are defining a new creative discipline.',
       deployment_contexts: [
         {
           domain: 'Art Direction & Visual Brand Identity',
@@ -1159,6 +1189,7 @@ const MAJOR_MAP = {
       entry_careers: ['Music Producer Assistant', 'A&R Coordinator', 'Tour Manager Assistant'],
       world_alignment: 'Make',
       cc_transfer_friendly: false,
+      emerging_role: 'Spatial Audio & Immersive Music Experience Designer — the music professional who creates sonic environments for virtual reality, augmented reality, dome theaters, and location-based entertainment — designing how sound moves through three-dimensional space to create experiences that stereo recording cannot produce. Dolby Atmos, Apple Spatial Audio, and the immersive entertainment venues being built by every major live entertainment company are creating sustained demand for music professionals who understand both acoustic design and the technical specifications of spatial audio formats.',
       deployment_contexts: [
         {
           domain: 'Music Business, Publishing & Rights Management',
@@ -1186,6 +1217,7 @@ const MAJOR_MAP = {
       entry_careers: ['Stage Manager', 'Casting Assistant', 'Production Coordinator'],
       world_alignment: 'Make',
       cc_transfer_friendly: false,
+      emerging_role: 'Immersive & Interactive Theatre Experience Director — the theatre professional who designs participatory and site-specific performances where the boundary between audience and performance dissolves — creating experiences like Sleep No More and Then She Fell and the immersive entertainment environments that Meow Wolf and Superfly have built into multi-million-dollar commercial franchises. The immersive entertainment market is growing faster than traditional theatre, and the directors who understand both the dramatic craft and the spatial, technological, and operational design of immersive experience are building the next major entertainment category.',
       deployment_contexts: [
         {
           domain: 'Executive Presence & Leadership Communication',
@@ -1213,6 +1245,7 @@ const MAJOR_MAP = {
       entry_careers: ['Sports Marketing Coordinator', 'Athletic Department Assistant', 'Agent Trainee'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
+      emerging_role: 'Sports Betting & Integrity Analytics Manager — the professional who manages the data systems, officiating review protocols, and regulatory compliance frameworks that detect match-fixing, spot-fixing, and unusual betting patterns — and who builds the partnerships between sports organizations and licensed sportsbooks that make legal sports wagering commercially viable without compromising competitive integrity. The legalization of sports betting across the United States has created an entirely new professional function that every major league and most major college conferences are actively building.',
       deployment_contexts: [
         {
           domain: 'Sports Agency & Athlete Representation',
@@ -1240,6 +1273,7 @@ const MAJOR_MAP = {
       entry_careers: ['Dancer', 'Choreography Assistant', 'Movement Coach'],
       world_alignment: 'Make',
       cc_transfer_friendly: false,
+      emerging_role: 'Motion Capture & Digital Choreography Director — the movement professional who translates human performance into digital animation — directing motion capture sessions for video games, film visual effects, virtual reality experiences, and digital human avatars, and serving as the bridge between the physical intelligence of trained dancers and the technical requirements of the animation systems that capture, process, and deploy that movement in digital environments. Epic Games, ILM, and the major game studios all employ motion capture directors whose background in performance and movement makes their digital output qualitatively superior to what technical animators working without performance training produce.',
       deployment_contexts: [
         {
           domain: 'Choreography & Movement Direction for Film and Media',
@@ -1263,6 +1297,7 @@ const MAJOR_MAP = {
       entry_careers: ['Junior Designer', 'Brand Designer', 'Motion Graphics Artist'],
       world_alignment: 'Make',
       cc_transfer_friendly: false,
+      emerging_role: 'Brand Experience & Motion Systems Designer — the visual designer who builds design systems that operate across static, motion, and interactive contexts simultaneously — creating brand identities whose visual logic translates from a billboard to a TikTok video to a UI animation to a physical retail environment without losing coherence. The shift from static brand identity to living brand systems has made motion design and interaction design foundational skills for the visual communicators who work at the highest level, and the graphic designers who build fluency in After Effects, Rive, and interaction design alongside traditional visual communication skills are working at a level that purely static designers cannot reach.',
       deployment_contexts: [
         {
           domain: 'Brand Identity & Visual Systems',
@@ -1290,6 +1325,7 @@ const MAJOR_MAP = {
       entry_careers: ['Design Assistant', 'Merchandising Coordinator', 'Styling Assistant'],
       world_alignment: 'Make',
       cc_transfer_friendly: false,
+      emerging_role: 'Digital Fashion & Virtual Wearables Designer — the fashion professional who designs clothing and accessories for digital environments — gaming avatars, virtual reality social platforms, digital fashion weeks, and the augmented reality try-on experiences that luxury brands use to reduce return rates and expand global reach without physical inventory. The Fabricant, Tribute Brand, and the digital fashion divisions at Gucci, Nike, and Balenciaga are all building design teams whose output never exists in physical form but sells at prices that reflect genuine scarcity and aesthetic value.',
       deployment_contexts: [
         {
           domain: 'Luxury Brand Management & Retail Strategy',
@@ -1348,6 +1384,7 @@ MAJOR_MAP[61] = [
     entry_careers: ['Teacher', 'Instructional Designer', 'Education Program Coordinator'],
     world_alignment: 'People',
     cc_transfer_friendly: true,
+    emerging_role: 'AI-Augmented Curriculum Designer — the professional who redesigns learning experiences around AI tutoring systems — identifying which aspects of instruction benefit from personalized AI delivery, which require human teacher presence, and how to integrate both into a coherent learning journey that outperforms either alone. Khan Academy\'s Khanmigo, Carnegie Learning\'s AI math tutor, and every major EdTech company building AI instructional systems are hiring curriculum designers who understand both learning science and the capabilities and limitations of AI tutoring.',
     deployment_contexts: [
       {
         domain: 'Instructional Design & Corporate Learning',
@@ -1379,6 +1416,7 @@ MAJOR_MAP[61] = [
     entry_careers: ['Learning Experience Designer', 'Child Development Specialist', 'Research Associate'],
     world_alignment: 'Think',
     cc_transfer_friendly: false,
+    emerging_role: 'Cognitive Load & Learning Experience Engineer — the professional who applies cognitive science research to the design of digital learning environments — optimizing information density, pacing, feedback timing, and multimedia integration to maximize retention and transfer while minimizing the cognitive fatigue that poorly designed digital learning consistently produces. Every major corporate learning platform, EdTech company, and university online program is building this function as the evidence base for what actually works in digital learning becomes too large to ignore.',
     deployment_contexts: [
       {
         domain: 'Early Childhood & Developmental Program Design',
@@ -1402,6 +1440,7 @@ MAJOR_MAP[61] = [
     entry_careers: ['Athletic Director Assistant', 'Coaching Associate', 'Sports Program Coordinator'],
     world_alignment: 'Move',
     cc_transfer_friendly: true,
+    emerging_role: 'NIL Strategy & Athlete Brand Director — the professional who manages the name, image, and likeness commercial opportunities for college and professional athletes — structuring endorsement deals, building personal brand platforms, managing social media presence, and coordinating with agents, financial advisors, and team marketing departments to maximize an athlete\'s commercial value while protecting their eligibility and long-term brand equity. The NIL era has created an entirely new professional function in college athletics that did not exist before 2021.',
     deployment_contexts: [
       {
         domain: 'Collegiate Athletic Administration',
@@ -1421,6 +1460,7 @@ MAJOR_MAP[61] = [
     entry_careers: ['Research Librarian', 'Information Architect', 'Knowledge Manager'],
     world_alignment: 'Think',
     cc_transfer_friendly: false,
+    emerging_role: 'AI Research Integrity Librarian — the professional who evaluates the provenance, accuracy, and bias characteristics of AI-generated content and AI training datasets — and who designs the information literacy frameworks that help researchers, journalists, students, and policymakers distinguish reliable AI-assisted knowledge from hallucinated or manipulated output. Every major research university and public library system is building this function as AI-generated misinformation becomes indistinguishable from authentic sources without trained evaluation.',
     deployment_contexts: [
       {
         domain: 'Knowledge Management & Enterprise Information Architecture',
@@ -1445,6 +1485,7 @@ MAJOR_MAP[23] = [
     entry_careers: ['Architectural Designer', 'Draftsperson', 'Project Designer'],
     world_alignment: 'Make',
     cc_transfer_friendly: false,
+    emerging_role: 'Computational Design Architect — the professional who uses parametric modeling, generative algorithms, and AI-assisted design tools to explore thousands of design variations simultaneously — optimizing a building for structural performance, energy efficiency, material use, and spatial quality in ways that manual design iteration cannot approach. SHoP Architects, Zaha Hadid Architects, and Bjarke Ingels Group have all built computational design studios whose output defines the frontier of what architecture can produce when design intelligence and computational power are applied together.',
     deployment_contexts: [
       {
         domain: 'Healthcare Facility Design',
@@ -1472,6 +1513,7 @@ MAJOR_MAP[23] = [
     entry_careers: ['Civil Engineer I', 'Project Engineer', 'Transportation Planner'],
     world_alignment: 'Systems',
     cc_transfer_friendly: false,
+    emerging_role: 'Climate Adaptation Infrastructure Engineer — the professional who retrofits and redesigns bridges, roads, stormwater systems, and coastal infrastructure against specific climate projections — sea level rise, increased flood frequency, extreme heat — for a fifty-year service life that the original designs never anticipated. FEMA, the Army Corps of Engineers, and every major infrastructure consulting firm are building climate adaptation practices whose engineering work cannot wait for consensus on what adaptation should look like.',
     deployment_contexts: [
       {
         domain: 'Infrastructure & Transportation Systems',
@@ -1495,6 +1537,7 @@ MAJOR_MAP[23] = [
     entry_careers: ['Planning Associate', 'Community Development Coordinator', 'Land Use Analyst'],
     world_alignment: 'Systems',
     cc_transfer_friendly: false,
+    emerging_role: '15-Minute City Planner — the professional who redesigns urban neighborhoods so that every resident can reach essential services — grocery, healthcare, employment, education, parks — within a fifteen-minute walk or bicycle ride, reducing car dependence while increasing quality of life and property value simultaneously. Paris, Melbourne, and Portland are all implementing 15-minute city frameworks, and every major American city with a progressive planning department is hiring urban planners who can operationalize this concept within existing zoning and infrastructure constraints.',
     deployment_contexts: [
       {
         domain: 'Housing Policy & Affordable Development',
@@ -1518,6 +1561,7 @@ MAJOR_MAP[23] = [
     entry_careers: ['Assistant Project Manager', 'Field Engineer', 'Estimator'],
     world_alignment: 'Systems',
     cc_transfer_friendly: true,
+    emerging_role: 'Modular & Offsite Construction Manager — the professional who manages the shift from traditional on-site construction to factory-built modular and prefabricated building systems — coordinating design for manufacture, factory production scheduling, logistics, and on-site assembly in a workflow that reduces construction time, labor cost, and material waste simultaneously. Volumetric modular construction is the fastest-growing segment of the building industry, and the construction managers who understand both the factory production and the field assembly sides are running projects that traditional construction managers cannot.',
     deployment_contexts: [
       {
         domain: 'Commercial Construction & Development',
@@ -1635,6 +1679,7 @@ MAJOR_MAP[48] = [
     entry_careers: ['Supply Chain Analyst', 'Logistics Coordinator', 'Procurement Associate'],
     world_alignment: 'Systems',
     cc_transfer_friendly: true,
+    emerging_role: 'Supply Chain Resilience Architect — the professional who stress-tests global supply networks against disruption scenarios — pandemic shutdowns, port congestion, geopolitical conflict, climate events — and redesigns sourcing strategies, inventory buffers, and supplier diversification to reduce the fragility that most supply chains accepted as normal before 2020. Apple, Ford, and every company that experienced a supply chain failure in the past five years is now hiring for this function with a seriousness they did not have before.',
     deployment_contexts: [
       {
         domain: 'Global Sourcing & Procurement',
@@ -1658,6 +1703,7 @@ MAJOR_MAP[48] = [
     entry_careers: ['Logistics Analyst', 'Transportation Planner', 'Fleet Coordinator'],
     world_alignment: 'Systems',
     cc_transfer_friendly: true,
+    emerging_role: 'Autonomous Fleet Logistics Manager — the professional who oversees mixed fleets of autonomous trucks, delivery robots, and drone logistics networks — managing the routing algorithms, safety compliance systems, and exception handling protocols that determine whether autonomous freight delivery scales from pilot program to commercial operation. Waymo Via, Aurora, and TuSimple are all building commercial autonomous freight programs that require human operations managers who understand both the technology and the transportation regulatory environment.',
     deployment_contexts: [
       {
         domain: 'Freight Brokerage & Third-Party Logistics',
@@ -1677,6 +1723,7 @@ MAJOR_MAP[48] = [
     entry_careers: ['Airport Operations Associate', 'Airline Operations Coordinator', 'Aviation Safety Analyst'],
     world_alignment: 'Systems',
     cc_transfer_friendly: false,
+    emerging_role: 'Urban Air Mobility Operations Manager — the professional who manages the vertiport networks, air traffic coordination systems, and passenger experience infrastructure for electric vertical takeoff and landing aircraft operating in urban airspace. Joby Aviation, Archer, and Lilium are all building commercial eVTOL networks whose operations require aviation professionals who understand both traditional air traffic management and the new regulatory frameworks the FAA is writing for urban air mobility.',
     deployment_contexts: [
       {
         domain: 'Airline Operations & Network Planning',
@@ -1697,6 +1744,7 @@ MAJOR_MAP[92] = [
     entry_careers: ['Legislative Assistant', 'Policy Research Associate', 'Government Relations Coordinator'],
     world_alignment: 'People',
     cc_transfer_friendly: true,
+    emerging_role: 'AI & Technology Policy Advisor — the political science professional who advises legislators, regulatory agencies, and government bodies on the design of technology policy frameworks — translating between the technical realities of AI systems, autonomous vehicles, social media algorithms, and cybersecurity infrastructure and the policy levers that governments can actually pull. The EU AI Act, the White House Executive Order on AI, and the legislative activity in Congress and every major state legislature are all creating sustained demand for policy advisors who understand both how these technologies work and how democratic governance institutions make consequential decisions about them.',
     deployment_contexts: [
       {
         domain: 'Legislative Affairs & Congressional Staffing',
@@ -1720,6 +1768,7 @@ MAJOR_MAP[92] = [
     entry_careers: ['Policy Analyst', 'Program Associate', 'Government Program Coordinator'],
     world_alignment: 'Systems',
     cc_transfer_friendly: false,
+    emerging_role: 'Government Digital Services & Civic Tech Director — the public administration professional who leads the transformation of government service delivery through technology — redesigning how citizens interact with licensing agencies, benefit programs, courts, and public health systems to be as accessible, efficient, and trustworthy as the best private sector digital experiences. The United States Digital Service, 18F, and the state-level digital service teams modeled on them have demonstrated that government technology transformation is possible when led by professionals who combine public sector mission with technology product management skills.',
     deployment_contexts: [
       {
         domain: 'Urban & Municipal Policy',
@@ -1743,6 +1792,7 @@ MAJOR_MAP[92] = [
     entry_careers: ['Law Enforcement Officer', 'Probation Officer', 'Criminal Justice Analyst'],
     world_alignment: 'People',
     cc_transfer_friendly: true,
+    emerging_role: 'Predictive Policing Ethics & Algorithmic Accountability Analyst — the criminal justice professional who evaluates, audits, and governs the AI and data systems that law enforcement agencies use for risk assessment, predictive patrol deployment, and recidivism prediction — ensuring that algorithmic tools meet constitutional requirements, do not encode historical bias into future decisions, and are used in ways that can be explained and defended in court. Every major city police department and court system using algorithmic tools faces litigation and legislative scrutiny that requires professionals who understand both criminal justice and algorithmic systems.',
     deployment_contexts: [
       {
         domain: 'Federal Law Enforcement & Investigations',
@@ -1762,6 +1812,7 @@ MAJOR_MAP[92] = [
     entry_careers: ['Foreign Service Associate', 'International Program Coordinator', 'Research Analyst'],
     world_alignment: 'Think',
     cc_transfer_friendly: false,
+    emerging_role: 'Tech Geopolitics & Digital Sovereignty Analyst — the international relations professional who analyzes the geopolitical dimensions of technology competition — semiconductor supply chains, undersea cable infrastructure, AI capability gaps between major powers, digital currency systems, and the international governance frameworks that determine whose technology standards govern global digital infrastructure. The US-China technology competition, the EU\'s digital sovereignty agenda, and the scramble for critical mineral supply chains have all made technology geopolitics one of the most consequential and fastest-growing specializations in international affairs.',
     deployment_contexts: [
       {
         domain: 'International Development & Aid Organizations',
