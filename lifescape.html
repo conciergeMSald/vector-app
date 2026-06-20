@@ -345,6 +345,46 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .aa-skip-link:hover{color:#666}
 
 </style>
+<!-- ── Supabase Auth ──────────────────────────────────────────────────────── -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+  (function(){
+    var SUPABASE_URL  = 'https://pbtyanwkmbrcumwunxrv.supabase.co';
+    var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBidHlhbndrbWJyY3Vtd3VueHJ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMTU3MDIsImV4cCI6MjA2Mjg5MTcwMn0.kSzlOBElQlB5gV_OLAkUuOiIOmomZ4pvtx7tJNJbhGc';
+
+    window.sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
+      auth: {
+        autoRefreshToken:   true,
+        persistSession:     true,
+        detectSessionInUrl: true,
+      }
+    });
+
+    // Check for existing session on load (handles magic link return)
+    window.sbClient.auth.getSession().then(function(result) {
+      var session = result.data && result.data.session;
+      window.sbSession = session || null;
+      console.log('[VECTOR Lifescape] Auth ready. User:', session ? session.user.id : 'none');
+    });
+
+    // Listen for auth state changes
+    window.sbClient.auth.onAuthStateChange(function(event, session) {
+      window.sbSession = session || null;
+      console.log('[VECTOR Lifescape] Auth state:', event, session ? session.user.id : 'none');
+
+      // Magic link return — deliver pending report and save record
+      if ((event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') && window.__pendingLifescapeState) {
+        dismissLifescapeGate();
+        saveToSupabase(
+          window.__pendingLifescapeState,
+          true,
+          window.__pendingConsentTimestamp || null
+        );
+        window.__pendingLifescapeState = null;
+      }
+    });
+  })();
+</script>
 </head>
 
 <body>
@@ -353,9 +393,40 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
 
 <!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 0 — CONSULTANT CODE (OPTIONAL)             -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen active" id="screen-0">
+<div class="container" style="padding-top:4rem">
+  <div class="ls-eyebrow">Powered by VECTOR</div>
+  <div class="ls-wordmark">Lifescape</div>
+  <div class="gold-rule"></div>
+  <div class="q">Do you have a consultant code?</div>
+  <div class="q-sub">Your college counselor may have given you a 5-character code. Enter it here to connect your Lifescape to their practice. You can also skip this and explore on your own.</div>
+
+  <div style="margin-top:2rem;">
+    <input
+      id="consultant-code-input"
+      class="ls-input"
+      placeholder="e.g. JONES"
+      maxlength="6"
+      autocomplete="off"
+      autocapitalize="characters"
+      style="text-transform:uppercase;letter-spacing:4px;font-size:22px;text-align:center;"
+      oninput="this.value=this.value.toUpperCase()"
+    >
+  </div>
+
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="submitConsultantCode()">Continue with code</button>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="skipConsultantCode()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip — I'm exploring on my own</button>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
 <!-- SCREEN 1 — WHO'S HERE                             -->
 <!-- ══════════════════════════════════════════════════ -->
-<div class="screen active" id="screen-1">
+<div class="screen" id="screen-1">
 <div class="container" style="padding-top:4rem">
   <div class="ls-eyebrow">Powered by VECTOR</div>
   <div class="ls-wordmark">Lifescape</div>
@@ -1170,11 +1241,12 @@ const LS_STATE = {
   big_five:{O:null,C:null,E:null,A:null,N:null},
   worlds_chosen:[],
   academic_affinity:{subjects:[], strength:'', daypart:'', daypart_other:''},
-  callAResult:null, callBResult:null, callCResult:null
+  callAResult:null, callBResult:null, callCResult:null,
+  consultant_code: null
 };
 
 // ── SCREEN NAV ─────────────────────────────────────
-const SCREEN_PROGRESS = {1:0,2:15,25:28,3:40,36:52,37:64,35:74,4:84,5:94};
+const SCREEN_PROGRESS = {0:0,1:5,2:15,25:28,3:40,36:52,37:64,35:74,4:84,5:94};
 
 function goTo(n) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -1186,6 +1258,21 @@ function goTo(n) {
   if(n===25) updateOrientVoice();
   if(n===35) { resetPrefState(); updatePrefVoice(); }
   if(n===4) updateS2Voice();
+}
+
+// ── CONSULTANT CODE (SCREEN 0) ────────────────────────
+function submitConsultantCode() {
+  var inp = document.getElementById('consultant-code-input');
+  var code = inp ? inp.value.trim().toUpperCase() : '';
+  if (code.length > 0) {
+    LS_STATE.consultant_code = code;
+  }
+  goTo(1);
+}
+
+function skipConsultantCode() {
+  LS_STATE.consultant_code = null;
+  goTo(1);
 }
 
 // ── VOICE FORK ─────────────────────────────────────
@@ -2691,6 +2778,162 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
 }
 
 // ── SUBMIT ─────────────────────────────────────────
+/* ── gateAndDeliver ──────────────────────────────────────────────────────────
+   Called after all Claude calls complete and the report is rendered.
+   If user is already signed in: save to Supabase immediately.
+   If not signed in: show auth gate, hold state for magic link return.
+   ───────────────────────────────────────────────────────────────────────── */
+function gateAndDeliver(stateSnapshot) {
+  // Already signed in — write record immediately
+  if (window.sbSession && window.sbSession.user) {
+    saveToSupabase(stateSnapshot, true);
+    return;
+  }
+
+  // No session — show gate, hold state in memory
+  window.__pendingLifescapeState = stateSnapshot;
+  showLifescapeGate();
+}
+
+/* ── showLifescapeGate ───────────────────────────────────────────────────────
+   Auth gate modal. Email + consent + magic link send.
+   Report is already rendered behind it — gate is purely for record capture.
+   ───────────────────────────────────────────────────────────────────────── */
+function showLifescapeGate() {
+  var overlay = document.createElement('div');
+  overlay.id  = 'lifescapeAuthGate';
+  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(253,250,245,0.97);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box;';
+
+  overlay.innerHTML = `
+    <div style="max-width:480px;width:100%;font-family:Georgia,serif;text-align:center;">
+      <div style="font-family:var(--sans);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Your Lifescape</div>
+      <div style="font-size:28px;font-weight:400;letter-spacing:2px;color:#0a0a0a;margin-bottom:.75rem;">Your Lifescape is ready.</div>
+      <div style="font-family:var(--sans);font-size:13px;color:#6a6a6a;line-height:1.7;margin-bottom:2rem;">Enter your email to save your results and access your full Lifescape report — including your trajectory, industry clusters, and school matches.</div>
+
+      <div style="display:flex;align-items:flex-start;gap:.75rem;text-align:left;background:#f5f3ef;padding:1rem 1.25rem;margin-bottom:1.25rem;border-left:2px solid #C8A97A;">
+        <input type="checkbox" id="lifescapeConsent" style="margin-top:3px;flex-shrink:0;accent-color:#8B7355;">
+        <label for="lifescapeConsent" style="font-family:var(--sans);font-size:11px;color:#4a4a4a;line-height:1.6;cursor:pointer;">I agree to VECTOR storing this assessment for my counselor&#39;s review and to improve my trajectory recommendations.</label>
+      </div>
+
+      <input type="email" id="lifescapeEmailInp" placeholder="your@email.com"
+        style="width:100%;padding:13px 16px;border:1px solid #d0d0d0;font-family:var(--sans);font-size:13px;color:#0a0a0a;margin-bottom:.75rem;box-sizing:border-box;outline:none;">
+
+      <button id="lifescapeSignInBtn" onclick="handleLifescapeAuth()"
+        style="width:100%;padding:15px 36px;background:#0a0a0a;color:#fafaf8;border:none;font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-bottom:1rem;">
+        Send My Report Link
+      </button>
+      <div id="lifescapeAuthMsg" style="font-family:var(--sans);font-size:11px;color:#8B7355;min-height:1.5em;line-height:1.6;"></div>
+      <div style="margin-top:1.5rem;font-family:var(--sans);font-size:10px;color:#9a9a9a;">Free. No password. No credit card.</div>
+    </div>`;
+
+  document.body.appendChild(overlay);
+  window.__pendingConsentEl  = document.getElementById('lifescapeConsent');
+  window.__pendingAuthMsgEl  = document.getElementById('lifescapeAuthMsg');
+  window.__pendingEmailEl    = document.getElementById('lifescapeEmailInp');
+}
+
+function handleLifescapeAuth() {
+  var consentEl = window.__pendingConsentEl;
+  var msgEl     = window.__pendingAuthMsgEl;
+  var emailEl   = window.__pendingEmailEl;
+
+  if (!consentEl || !consentEl.checked) {
+    msgEl.style.color = '#c0392b';
+    msgEl.textContent = 'Please check the box above to continue.';
+    return;
+  }
+  var email = emailEl ? emailEl.value.trim() : '';
+  if (!email || !email.includes('@')) {
+    msgEl.style.color = '#c0392b';
+    msgEl.textContent = 'Please enter a valid email address.';
+    return;
+  }
+
+  msgEl.style.color = '#8B7355';
+  msgEl.textContent = 'Sending your secure link…';
+  var btn = document.getElementById('lifescapeSignInBtn');
+  if (btn) btn.disabled = true;
+
+  window.__pendingConsentTimestamp = new Date().toISOString();
+
+  window.sbClient.auth.signInWithOtp({
+    email: email,
+    options: {
+      emailRedirectTo:  window.location.href,
+      shouldCreateUser: true,
+    }
+  }).then(function(result) {
+    if (result.error) {
+      msgEl.style.color = '#c0392b';
+      msgEl.textContent = 'Something went wrong. Please try again.';
+      if (btn) btn.disabled = false;
+    } else {
+      msgEl.style.color = '#2e7d32';
+      msgEl.textContent = 'Check your email — your secure Lifescape link is on its way.';
+      if (emailEl) emailEl.disabled = true;
+    }
+  }).catch(function(err) {
+    msgEl.style.color = '#c0392b';
+    msgEl.textContent = 'Something went wrong. Please try again.';
+    if (btn) btn.disabled = false;
+    console.error('[VECTOR Lifescape] signInWithOtp error:', err);
+  });
+}
+
+function dismissLifescapeGate() {
+  var gate = document.getElementById('lifescapeAuthGate');
+  if (gate) gate.parentNode.removeChild(gate);
+}
+
+/* ── saveToSupabase ──────────────────────────────────────────────────────────
+   Writes the family record to Supabase via /save-family.
+   Fire-and-forget — never blocks report render.
+   ───────────────────────────────────────────────────────────────────────── */
+function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
+  if (!window.sbSession || !window.sbSession.access_token) {
+    console.warn('[VECTOR Lifescape] saveToSupabase: no active session — skipping write');
+    return;
+  }
+
+  var token   = window.sbSession.access_token;
+  var profile = stateSnapshot.profile || {};
+  var callA   = stateSnapshot.callAData || {};
+
+  var payload = {
+    student_name:      LS_STATE.name                     || null,
+    zip:               LS_STATE.zip                      || null,
+    vector_score:      profile.rawScore                  || null,
+    top_career:        callA.trajectory                  || null,
+    top_university:    stateSnapshot.topUniversity       || null,
+    report_text:       stateSnapshot.reportText          || null,
+    cc_pathway_shown:  stateSnapshot.ccPathwayShown      || 'N',
+    consultant_code:   LS_STATE.consultant_code          || null,
+    consent_obtained:  consentGiven                      || false,
+    consent_timestamp: consentTimestamp                  || null,
+    supabase_user_id:  window.sbSession.user.id,
+  };
+
+  fetch('https://api.abettercollegeconsultant.com/save-family', {
+    method:  'POST',
+    headers: {
+      'Content-Type':  'application/json',
+      'Authorization': 'Bearer ' + token,
+    },
+    body: JSON.stringify(payload),
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    if (d.success) {
+      console.log('[VECTOR Lifescape] Family record saved. Consultant code:', LS_STATE.consultant_code || 'none');
+    } else {
+      console.error('[VECTOR Lifescape] saveToSupabase error:', d);
+    }
+  })
+  .catch(function(err) {
+    console.error('[VECTOR Lifescape] saveToSupabase fetch error:', err);
+  });
+}
+
 async function submitLifescape() {
   if(LS_STATE.submitted) return;
   LS_STATE.submitted = true;
@@ -2861,6 +3104,18 @@ async function submitLifescape() {
         // School tab shows graceful fallback — already set to "generating"
       }
     }
+
+    // ── AUTH GATE + SUPABASE WRITE ───────────────────────
+    // All Claude calls complete. Gate fires and saves record.
+    // Build state snapshot — held in memory for magic link return.
+    var stateSnapshot = {
+      profile:         profile,
+      callAData:       LS_STATE.callAResult,
+      topUniversity:   (LS_STATE.callAResult && LS_STATE.callAResult.trajectory) || null,
+      reportText:      (LS_STATE.callAResult && LS_STATE.callAResult.trajectory) || null,
+      ccPathwayShown:  'N',
+    };
+    gateAndDeliver(stateSnapshot);
 
   } catch(err) {
     console.error('Lifescape error:', err);
