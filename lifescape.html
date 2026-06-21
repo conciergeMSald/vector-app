@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lifescape — Powered by VECTOR</title>
+<title>VECTOR — A Better College Consultant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -66,11 +66,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .progress-fill{height:2px;background:var(--gold);transition:width .5s ease;}
 
 /* ── WORDMARK / HEADER ─────────────────────────────── */
-.ls-wordmark{font-family:var(--serif);font-size:48px;font-weight:300;letter-spacing:8px;color:var(--ink);margin-bottom:.5rem;}
+.ls-wordmark{font-family:var(--serif);font-size:48px;font-weight:300;letter-spacing:8px;color:var(--ink);margin-bottom:.5rem;display:none;}
 .ls-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;}
 .gold-rule{width:36px;height:1px;background:var(--gold);margin:1.5rem 0;}
 .q{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--ink);line-height:1.35;margin-bottom:.75rem;}
-.q-sub{font-size:15px;color:var(--ink3);line-height:1.8;margin-bottom:2rem;font-weight:300;}
+.q-sub{font-size:13px;color:var(--ink3);line-height:1.8;margin-bottom:2rem;font-weight:300;}
 
 /* ── VOICE TOGGLE ──────────────────────────────────── */
 .voice-row{display:flex;gap:8px;margin-bottom:1.5rem;}
@@ -81,20 +81,20 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .path-card{padding:1.25rem 1.5rem;border:0.5px solid var(--rule);background:var(--white);margin-bottom:.75rem;cursor:pointer;transition:all .2s;}
 .path-card:hover{border-color:var(--gl);}
 .path-card.sel{border-color:var(--gold);background:var(--gold-pale);}
-.pc-title{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:4px;color:var(--ink);}
+.pc-title{font-family:var(--serif);font-size:13px;font-weight:400;margin-bottom:4px;color:var(--ink);}
 .pc-desc{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;}
 
 /* ── INPUTS ────────────────────────────────────────── */
-.ls-input{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;font-size:22px;font-family:var(--serif);color:var(--ink);padding:10px 0;outline:none;transition:border-color .3s;margin-bottom:1.5rem;}
+.ls-input{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;font-size:13px;font-family:var(--serif);color:var(--ink);padding:10px 0;outline:none;transition:border-color .3s;margin-bottom:1.5rem;}
 .ls-input:focus{border-bottom-color:var(--gold);}
 .ls-input::placeholder{color:var(--ink4);}
-.ls-select{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;font-size:15px;font-family:var(--sans);color:var(--ink);padding:10px 0;outline:none;margin-bottom:1.5rem;cursor:pointer;-webkit-appearance:none;}
+.ls-select{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;font-size:13px;font-family:var(--sans);color:var(--ink);padding:10px 0;outline:none;margin-bottom:1.5rem;cursor:pointer;-webkit-appearance:none;}
 .input-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;display:block;}
 
 /* ── TILE GRID ─────────────────────────────────────── */
 .tile-count-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding:.75rem 0;border-bottom:0.5px solid var(--rule);}
 .tile-count-label{font-size:13px;color:var(--ink3);}
-.tile-count-num{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--gold);}
+.tile-count-num{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--gold);}
 .tile-grid{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:2rem;}
 
 /* ── THE STAMP ── base tile resting state — all clusters identical and desaturated */
@@ -127,7 +127,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .tile-eq{
   font-style:italic;
   font-family:var(--serif);
-  font-size:15px;
+  font-size:13px;
   letter-spacing:0.2px;
   text-transform:none;
   display:block;           /* single column — not wrapped in a flex grid */
@@ -211,12 +211,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .format-card:hover{border-color:var(--gl);}
 .format-card.sel{border-color:var(--gold);background:var(--gold-pale);}
 .fc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
-.fc-title{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);}
+.fc-title{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);}
 .fc-badge{font-size:10px;letter-spacing:1px;padding:3px 10px;border:0.5px solid var(--gl);color:var(--gold);}
 .fc-desc{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;}
 
 /* ── CTA BUTTON ─────────────────────────────────────── */
-.ls-btn{width:100%;padding:14px;background:var(--ink);color:var(--white);border:none;border-radius:0;font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer;letter-spacing:.5px;transition:opacity .2s;margin-top:1.5rem;}
+.ls-btn{width:100%;padding:14px;background:var(--ink);color:var(--white);border:none;border-radius:0;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.5px;transition:opacity .2s;margin-top:1.5rem;}
 .ls-btn:hover{opacity:.85;}
 .ls-btn:disabled{opacity:.4;cursor:not-allowed;}
 .ls-btn-outline{width:100%;padding:12px;background:transparent;color:var(--ink);border:0.5px solid var(--rule);font-family:var(--sans);font-size:13px;cursor:pointer;margin-top:.75rem;transition:all .2s;}
@@ -241,45 +241,45 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .report-header{padding:3rem 0 2rem;border-bottom:0.5px solid var(--rule);margin-bottom:2.5rem;}
 .report-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
 .report-name{font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);letter-spacing:2px;}
-.report-opening{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--ink3);line-height:1.9;margin:1.5rem 0 2rem;padding-left:1.5rem;border-left:2px solid var(--gold);}
+.report-opening{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink3);line-height:1.9;margin:1.5rem 0 2rem;padding-left:1.5rem;border-left:2px solid var(--gold);}
 .report-section{margin-bottom:3.5rem;padding-bottom:.25rem;}
 .section-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
 
 /* Quote block */
 .quote-block{padding:1.5rem;border:0.5px solid var(--gl);background:var(--gold-pale);margin-bottom:2rem;}
-.quote-text{font-family:var(--serif);font-size:22px;font-weight:300;font-style:italic;color:var(--ink);line-height:1.7;margin-bottom:.75rem;}
+.quote-text{font-family:var(--serif);font-size:13px;font-weight:300;font-style:italic;color:var(--ink);line-height:1.7;margin-bottom:.75rem;}
 .quote-attr{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);}
 
 /* Cluster cards */
 .cluster-card{padding:1.25rem 1.5rem;border:0.5px solid var(--rule);margin-bottom:.75rem;}
-.cluster-card-name{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:6px;}
-.cluster-card-why{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;}
+.cluster-card-name{font-family:var(--serif);font-size:13px;font-weight:400;margin-bottom:6px;}
+.cluster-card-why{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;}
 .cluster-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:middle;}
 
 /* Trajectory */
 .trajectory-box{padding:1.75rem;background:var(--ink);color:var(--white);margin:2rem 0;}
-.trajectory-text{font-family:var(--serif);font-size:22px;font-weight:300;font-style:italic;line-height:1.8;}
+.trajectory-text{font-family:var(--serif);font-size:13px;font-weight:300;font-style:italic;line-height:1.8;}
 
 /* Geo spotlight */
 .geo-block{display:flex;gap:1rem;padding:1.25rem;border:0.5px solid var(--rule);background:var(--white);}
-.geo-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
-.geo-name{font-family:var(--serif);font-size:15px;font-weight:400;color:var(--ink);margin-bottom:4px;}
+.geo-icon{font-size:13px;flex-shrink:0;margin-top:2px;}
+.geo-name{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);margin-bottom:4px;}
 .geo-text{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;}
 
 /* Invitation */
-.invitation{text-align:center;font-family:var(--serif);font-size:15px;font-style:italic;color:var(--ink3);margin:2rem 0;padding:1.5rem 0;border-top:0.5px solid var(--rule);border-bottom:0.5px solid var(--rule);}
+.invitation{text-align:center;font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink3);margin:2rem 0;padding:1.5rem 0;border-top:0.5px solid var(--rule);border-bottom:0.5px solid var(--rule);}
 
 /* Full report sections */
-.portrait-text{font-size:15px;color:var(--ink2);line-height:2;font-weight:300;}
+.portrait-text{font-size:13px;color:var(--ink2);line-height:2;font-weight:300;}
 .industry-block{border:0.5px solid var(--rule);padding:1.25rem 1.5rem;margin-bottom:.75rem;background:var(--white);}
-.industry-name{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);margin-bottom:6px;}
-.industry-why{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;margin-bottom:1rem;}
+.industry-name{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);margin-bottom:6px;}
+.industry-why{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;margin-bottom:1rem;}
 .career-pills{display:block;margin-bottom:.75rem;padding:.75rem 1rem;border-left:2px solid var(--gl);background:rgba(245,239,230,0.35);}
 .career-pill{font-size:13px;color:var(--ink3);display:inline;}
 .career-pill+.career-pill::before{content:' · ';color:var(--gl);font-size:10px;}
 .unexpected-pill{font-size:10px;padding:4px 10px;border:0.5px solid var(--gl);color:var(--gold);background:var(--gold-pale);}
 .combo-block{padding:1.25rem 1.5rem;border-left:2px solid var(--gold);margin-bottom:.75rem;background:var(--white);}
-.combo-text{font-size:15px;color:var(--ink2);line-height:1.9;font-weight:300;}
+.combo-text{font-size:13px;color:var(--ink2);line-height:1.9;font-weight:300;}
 
 /* Counselor note */
 .counselor-block{padding:2rem;border:0.5px solid var(--gl);background:var(--gold-pale);margin-top:2rem;}
@@ -288,7 +288,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .counselor-section{margin-bottom:1.75rem;}
 .counselor-section:last-child{margin-bottom:0;}
 .counselor-section-head{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;font-family:var(--sans);}
-.counselor-section-body{font-size:15px;color:var(--ink2);line-height:1.85;font-weight:300;}
+.counselor-section-body{font-size:13px;color:var(--ink2);line-height:1.85;font-weight:300;}
 .counselor-prompt{padding:.6rem 0;border-bottom:0.5px solid rgba(196,168,130,0.25);font-size:13px;color:var(--ink2);line-height:1.7;}
 .counselor-prompt:last-child{border-bottom:none;}
 
@@ -303,7 +303,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* Counselor view */
 .meta-table{width:100%;border-collapse:collapse;margin-bottom:1.5rem;}
 .meta-table tr{border-bottom:0.5px solid var(--rule);}
-.meta-table td{padding:10px 0;font-size:15px;}
+.meta-table td{padding:10px 0;font-size:13px;}
 .meta-table td:first-child{color:var(--ink3);font-weight:300;width:45%;}
 .meta-table td:last-child{color:var(--ink);font-weight:400;}
 .riasec-row{display:flex;gap:8px;margin:.75rem 0;}
@@ -313,7 +313,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .riasec-bar-fill{height:3px;background:var(--gold);}
 .riasec-code{font-size:13px;font-weight:500;color:var(--ink3);letter-spacing:1px;}
 .action-prompt{padding:.75rem 1rem;border-left:2px solid var(--gl);margin-bottom:.75rem;}
-.action-text{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;font-style:italic;}
+.action-text{font-size:13px;color:var(--ink3);line-height:1.7;font-weight:300;font-style:italic;}
 .flag-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:.5rem;}
 .flag-yes{font-size:13px;padding:3px 10px;background:rgba(46,110,58,.08);color:#2E6E3A;border:0.5px solid rgba(46,110,58,.2);}
 .flag-no{font-size:13px;padding:3px 10px;background:var(--bg);color:var(--ink4);border:0.5px solid var(--rule);}
@@ -324,7 +324,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* ── ORIENTING QUESTIONS (screen 2.5) ─────────────── */
 .orient-q{margin-bottom:2rem;}
-.orient-q-label{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
+.orient-q-label{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
 .orient-options{display:flex;flex-wrap:wrap;gap:8px;}
 .orient-btn{padding:10px 18px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:13px;color:var(--ink3);cursor:pointer;transition:all .2s;border-radius:0;}
 .orient-btn:hover{border-color:var(--gl);color:var(--ink);}
@@ -332,7 +332,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* ── SCREEN 3.5 COLLEGE PREFS ──────────────────────── */
 .pref-section{margin-bottom:2rem;}
-.pref-q-label{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
+.pref-q-label{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
 .pref-options{display:flex;flex-wrap:wrap;gap:8px;}
 .pref-btn{padding:9px 16px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:13px;color:var(--ink3);cursor:pointer;transition:all .2s;border-radius:0;text-align:left;}
 .pref-btn:hover{border-color:var(--gl);color:var(--ink);}
@@ -357,28 +357,28 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* ── SCHOOL CARDS ─────────────────────────────────── */
 .school-card{border:0.5px solid var(--rule);padding:1.5rem;margin-bottom:1rem;background:var(--white);}
 .school-card-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.75rem;}
-.school-name{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);}
+.school-name{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);}
 .school-location{font-size:10px;color:var(--ink4);letter-spacing:.5px;margin-top:2px;}
 .school-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.75rem;}
 .school-badge{font-size:10px;padding:3px 10px;border:0.5px solid var(--gl);color:var(--gold);}
-.school-why{font-size:15px;color:var(--ink2);line-height:1.9;font-weight:300;}
+.school-why{font-size:13px;color:var(--ink2);line-height:1.9;font-weight:300;}
 .school-generating{font-size:13px;color:var(--ink4);font-style:italic;text-align:center;padding:2rem 0;}
 
 /* Quick read school previews */
 .school-preview{display:flex;gap:1rem;align-items:flex-start;padding:.75rem 0;border-bottom:0.5px solid var(--rule);}
 .school-preview:last-child{border-bottom:none;}
-.school-preview-num{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--gl);flex-shrink:0;width:24px;}
+.school-preview-num{font-family:var(--serif);font-size:13px;font-weight:300;color:var(--gl);flex-shrink:0;width:24px;}
 .school-preview-content{}
-.school-preview-name{font-family:var(--serif);font-size:15px;font-weight:400;color:var(--ink);margin-bottom:2px;}
+.school-preview-name{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);margin-bottom:2px;}
 .school-preview-why{font-size:13px;color:var(--ink3);line-height:1.6;font-weight:300;}
 
 /* ── RESPONSIVE ───────────────────────────────────── */
 @media(max-width:600px){
   .ls-wordmark{font-size:36px;letter-spacing:5px;}
-  .q{font-size:22px;}
+  .q{font-size:13px;}
   .voice-row{flex-direction:column;}
   .report-name{font-size:28px;}
-  .trajectory-text{font-size:22px;}
+  .trajectory-text{font-size:13px;}
 }
 
 /* BFI-10 */
@@ -386,9 +386,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .bfi-items{display:flex;flex-direction:column;gap:20px}
 .bfi-item{padding:16px 0;border-bottom:1px solid #e8e4de}
 .bfi-item:last-child{border-bottom:none}
-.bfi-label{font-size:15px;color:#1a1a1a;margin-bottom:12px;line-height:1.5}
+.bfi-label{font-size:13px;color:#1a1a1a;margin-bottom:12px;line-height:1.5}
 .bfi-options{display:flex;gap:8px;justify-content:center}
-.bfi-btn{width:44px;height:44px;border:1.5px solid #e8e4de;border-radius:50%;background:transparent;font-size:15px;color:#666;cursor:pointer;transition:all .15s}
+.bfi-btn{width:44px;height:44px;border:1.5px solid #e8e4de;border-radius:50%;background:transparent;font-size:13px;color:#666;cursor:pointer;transition:all .15s}
 .bfi-btn:hover{border-color:#C8A97A;color:#C8A97A}
 .bfi-btn.bfi-selected{background:#C8A97A;border-color:#C8A97A;color:#fff;font-weight:600}
 /* World Selection */
@@ -396,15 +396,15 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .world-card{display:flex;flex-direction:column;align-items:flex-start;padding:18px 16px;border:1.5px solid #e8e4de;border-radius:8px;background:transparent;cursor:pointer;text-align:left;transition:all .15s}
 .world-card:hover{border-color:#C8A97A;background:rgba(200,169,122,.04)}
 .world-card.world-selected{border-color:#C8A97A;background:rgba(200,169,122,.04);border-left:2px solid #8B7355;}
-.world-icon{font-size:22px;margin-bottom:8px}
-.world-name{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:4px}
+.world-icon{font-size:13px;margin-bottom:8px}
+.world-name{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:4px}
 .world-desc{font-size:13px;color:#666;line-height:1.4}
 @media(max-width:480px){.world-grid{grid-template-columns:1fr}}
 
 /* Academic Affinity — Screen 38 */
 .aa-block{margin-top:32px}
 .aa-block:first-of-type{margin-top:24px}
-.aa-label{font-size:15px;color:#1a1a1a;margin-bottom:14px;line-height:1.5;font-weight:500}
+.aa-label{font-size:13px;color:#1a1a1a;margin-bottom:14px;line-height:1.5;font-weight:500}
 .aa-chip-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .aa-daypart-grid{display:flex;flex-direction:column;gap:8px}
 .aa-chip{padding:10px 16px;border:1.5px solid #e8e4de;border-radius:20px;background:transparent;font-size:13px;color:#444;cursor:pointer;transition:all .15s;text-align:left}
@@ -469,8 +469,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen active" id="screen-0">
 <div class="container" style="padding-top:4rem">
-  <div class="ls-eyebrow">Powered by VECTOR</div>
-  <div class="ls-wordmark">Lifescape</div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="180" height="60" role="img" aria-label="VECTOR" style="display:block;margin-bottom:.5rem;">
+  <defs><style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');</style></defs>
+  <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="#0A0A0A" x="600" y="268" text-anchor="middle">VECTOR</text>
+  <line x1="686.22" y1="225.40" x2="731.78" y2="316.60" stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <polygon points="686.22,225.40 678.50,248.20 694.00,245.80" fill="#C8A97A" opacity="1"/>
+</svg>
   <div class="gold-rule"></div>
   <div class="q">Do you have a consultant code?</div>
   <div class="q-sub">Your college counselor may have given you a 5-character code. Enter it here to connect your Lifescape to their practice. You can also skip this and explore on your own.</div>
@@ -500,8 +504,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-1">
 <div class="container" style="padding-top:4rem">
-  <div class="ls-eyebrow">Powered by VECTOR</div>
-  <div class="ls-wordmark">Lifescape</div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="180" height="60" role="img" aria-label="VECTOR" style="display:block;margin-bottom:.5rem;">
+  <defs><style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');</style></defs>
+  <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="#0A0A0A" x="600" y="268" text-anchor="middle">VECTOR</text>
+  <line x1="686.22" y1="225.40" x2="731.78" y2="316.60" stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <polygon points="686.22,225.40 678.50,248.20 694.00,245.80" fill="#C8A97A" opacity="1"/>
+</svg>
   <div class="gold-rule"></div>
   <div class="q">Who's filling this out?</div>
   <div class="q-sub" id="s1-sub">This shapes how we ask questions and how we write your results. Nothing is permanent. Nothing commits you to anything.</div>
@@ -1049,7 +1057,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="screen" id="screen-loading">
 <div class="container">
   <div style="text-align:center;padding:5rem 0;">
-    <div class="loading-wordmark">Lifescape</div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="360" height="120" role="img" aria-label="VECTOR" style="display:block;margin:0 auto;">
+  <defs><style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');</style></defs>
+  <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="#0A0A0A" x="600" y="268" text-anchor="middle">VECTOR</text>
+  <line x1="686.22" y1="225.40" x2="731.78" y2="316.60" stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <polygon points="686.22,225.40 678.50,248.20 694.00,245.80" fill="#C8A97A" opacity="1"/>
+</svg>
     <div class="loading-label" id="loading-label">Building your landscape</div>
     <div class="loading-dots">
       <div class="dot"></div><div class="dot"></div><div class="dot"></div>
@@ -1090,7 +1103,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <line x1="37" y1="21" x2="40" y2="21" stroke="#C4A882" stroke-width="0.75" opacity="0.5"/>
     </svg>
   </div>
-    <div class="report-eyebrow" id="report-eyebrow">Lifescape</div>
+    <div class="report-eyebrow" id="report-eyebrow">VECTOR</div>
     <div class="report-name" id="report-name"></div>
     <div class="report-opening">This is what we found in this moment, based on what you shared. Your Lifescape is not fixed. It evolves when you do.</div>
   </div>
@@ -2988,7 +3001,7 @@ function showLifescapeGate() {
   overlay.innerHTML = `
     <div style="max-width:480px;width:100%;font-family:Georgia,serif;text-align:center;">
       <div style="font-family:var(--sans);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Your Lifescape</div>
-      <div style="font-size:28px;font-weight:400;letter-spacing:2px;color:#0a0a0a;margin-bottom:.75rem;">Your Lifescape is ready.</div>
+      <div style="font-size:28px;font-weight:400;letter-spacing:2px;color:#0a0a0a;margin-bottom:.75rem;">Your VECTOR report is ready.</div>
       <div style="font-family:var(--sans);font-size:13px;color:#6a6a6a;line-height:1.7;margin-bottom:2rem;">Enter your email to save your results and access your full Lifescape report — including your trajectory, industry clusters, and school matches.</div>
 
       <div style="display:flex;align-items:flex-start;gap:.75rem;text-align:left;background:#f5f3ef;padding:1rem 1.25rem;margin-bottom:1.25rem;border-left:2px solid #C8A97A;">
