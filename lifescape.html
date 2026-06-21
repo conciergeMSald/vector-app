@@ -3169,6 +3169,22 @@ async function submitLifescape() {
     stopLoadingMessages();
     window.scrollTo(0,0);
 
+    // ── AUTH GATE — fires here, after callA renders ───
+    // The trajectory is live. This is the right moment.
+    // CallB/C/D continue loading in the background.
+    // Gate checks for active session — signed-in users pass through silently.
+    (function() {
+      var earlyBridgePath = (typeof findBridgePath === 'function') ? findBridgePath({zip: LS_STATE.zip}) : null;
+      var earlySnapshot = {
+        profile:        profile,
+        callAData:      callAData,
+        topUniversity:  null,           // not yet known — set by callD later
+        reportText:     callAData.trajectory || null,
+        ccPathwayShown: earlyBridgePath ? 'Y' : 'N',
+      };
+      gateAndDeliver(earlySnapshot);
+    })();
+
     // ── CALL B + C — parallel, isolated ──────────────
     const [callBResult, callCResult] = await Promise.allSettled([
       fireCall(buildCallBPrompt(ctx), 1200, 0, 45000),
@@ -3309,18 +3325,21 @@ async function submitLifescape() {
     // Fire-and-forget. Full record after all calls complete.
     captureToAirtable(profile, callAData, typeof callDData !== 'undefined' ? callDData : [], typeof adjacentPicks !== 'undefined' ? adjacentPicks : [], typeof profileAdjacentPicks !== 'undefined' ? profileAdjacentPicks : []);
 
-    // ── AUTH GATE + SUPABASE WRITE ───────────────────────
-    // All Claude calls complete. Gate fires and saves record.
-    // Build state snapshot — held in memory for magic link return.
-    var bridgePath = (typeof findBridgePath === 'function') ? findBridgePath({zip: LS_STATE.zip}) : null;
-    var stateSnapshot = {
-      profile:         profile,
-      callAData:       LS_STATE.callAResult,
-      topUniversity:   LS_STATE.topUniversity                                   || null,
-      reportText:      (LS_STATE.callAResult && LS_STATE.callAResult.trajectory) || null,
-      ccPathwayShown:  bridgePath ? 'Y' : 'N',
-    };
-    gateAndDeliver(stateSnapshot);
+    // ── GATE already fired after callA above ────────────
+    // topUniversity is now set — update Supabase if session exists
+    (function() {
+      if(window.sbSession && window.sbSession.user && LS_STATE.topUniversity) {
+        var finalBridgePath = (typeof findBridgePath === 'function') ? findBridgePath({zip: LS_STATE.zip}) : null;
+        var finalSnapshot = {
+          profile:        profile,
+          callAData:      LS_STATE.callAResult,
+          topUniversity:  LS_STATE.topUniversity || null,
+          reportText:     (LS_STATE.callAResult && LS_STATE.callAResult.trajectory) || null,
+          ccPathwayShown: finalBridgePath ? 'Y' : 'N',
+        };
+        saveToSupabase(finalSnapshot, true);
+      }
+    })();
 
   } catch(err) {
     console.error('Lifescape error:', err);
