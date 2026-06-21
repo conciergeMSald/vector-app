@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="description" content="The answers are blowing in the wind — if you are looking to make something beautiful. VECTOR was built for what's coming.">
+<title>The Shift — VECTOR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@200;300&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:    #0A0A0A;
+  --cream:  #F4F1EC;
+  --gold:   #C8A97A;
+  --muted:  rgba(10,10,10,0.38);
+  --serif:  'Cormorant Garamond', Georgia, serif;
+  --sans:   'DM Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--serif);
+  overflow-x: hidden;
+  line-height: 1;
+}
+
+/* ── WORDMARK ── */
+.wordmark-wrap {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  opacity: 0;
+  animation: fadeWordmark 2s ease 0.4s forwards;
+}
+@keyframes fadeWordmark {
+  to { opacity: 1; }
+}
+
+/* ── OPENING ── */
+.opening {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 6rem;
+  text-align: center;
+  position: relative;
+}
+
+.opening-quote {
+  font-size: clamp(1.6rem, 4.5vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--cream);
+  max-width: 680px;
+  opacity: 0;
+  animation: riseIn 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+}
+
+.opening-attr {
+  margin-top: 2.5rem;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0;
+  animation: riseIn 1.6s ease 2.4s forwards;
+}
+
+.opening-rule {
+  width: 0.5px;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  margin: 4rem auto 0;
+  opacity: 0;
+  animation: riseIn 1.2s ease 3s forwards;
+}
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── ACTS — each one is a full-viewport moment ── */
+.act {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.act-number {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.6;
+  margin-bottom: 3rem;
+  transform: translateY(24px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.act-stat {
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cream);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  transform: translateY(24px);
+  opacity: 0;
+  transition: opacity 1.2s ease 0.1s, transform 1.2s ease 0.1s;
+}
+
+.act-stat em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.act-line {
+  width: 32px;
+  height: 0.5px;
+  background: var(--gold);
+  margin: 2.5rem auto;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+}
+
+.act-truth {
+  font-size: clamp(1.1rem, 2.8vw, 1.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(244,241,236,0.72);
+  max-width: 560px;
+  line-height: 1.7;
+  transform: translateY(16px);
+  opacity: 0;
+  transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
+}
+
+/* Revealed state */
+.act.revealed .act-number {
+  opacity: 0.6;
+  transform: translateY(0);
+}
+.act.revealed .act-stat {
+  opacity: 1;
+  transform: translateY(0);
+}
+.act.revealed .act-line {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.act.revealed .act-truth {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── DIVIDERS between acts ── */
+.act-divider {
+  width: 0.5px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(200,169,122,0.25), transparent);
+  margin: 0 auto;
+}
+
+/* ── CLOSING ── */
+.closing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 8rem;
+  text-align: center;
+}
+
+.closing-statement {
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cream);
+  max-width: 640px;
+  line-height: 1.5;
+  transform: translateY(24px);
+  opacity: 0;
+  transition: opacity 1.4s ease, transform 1.4s ease;
+}
+
+.closing-statement.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.closing-vector {
+  margin: 4rem auto 1.5rem;
+  opacity: 0;
+  transition: opacity 1.4s ease 0.4s;
+}
+.closing-vector.revealed { opacity: 1; }
+
+.closing-sub {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(200,169,122,0.6);
+  margin-bottom: 4rem;
+  opacity: 0;
+  transition: opacity 1s ease 0.7s;
+}
+.closing-sub.revealed { opacity: 1; }
+
+.closing-cta {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  position: relative;
+  opacity: 0;
+  transition: opacity 1s ease 1s;
+}
+.closing-cta.revealed { opacity: 1; }
+.closing-cta::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0.5px;
+  background: var(--gold);
+  margin: 8px auto 0;
+  transition: width 0.4s ease;
+}
+.closing-cta:hover::after { width: 100%; }
+
+/* ── SUBTLE GRAIN OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ── SCROLL HINT ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(200,169,122,0.4);
+  animation: scrollBounce 2s ease-in-out 4s infinite;
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.4; }
+  50%       { transform: translateX(-50%) translateY(6px); opacity: 0.7; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Wordmark — fixed, fades in -->
+<div class="wordmark-wrap">
+  <a href="/" style="text-decoration:none;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"
+         width="120" height="40" role="img" aria-label="VECTOR">
+      <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif"
+        font-weight="300" font-size="120px" letter-spacing="18px"
+        fill="#F4F1EC" x="600" y="257.6" text-anchor="middle">VECTOR</text>
+      <line x1="700.15" y1="231.24" x2="721.49" y2="172.60"
+        stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round"/>
+      <polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="#C8A97A"/>
+    </svg>
+  </a>
+</div>
+
+<!-- ── OPENING ── -->
+<section class="opening">
+  <p class="opening-quote">
+    The answers are blowing in the wind —<br>
+    if you are looking to make something beautiful.
+  </p>
+  <div class="opening-attr">The shift is already here</div>
+  <div class="opening-rule"></div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- ── ACT I — Aging Population ── -->
+<div class="act-divider"></div>
+<section class="act" data-act>
+  <div class="act-number">I</div>
+  <div class="act-stat">1 in <em>5</em></div>
+  <div class="act-line"></div>
+  <p class="act-truth">By 2030, one in five Americans will be over 65. The careers built to serve them — in medicine, housing, technology, finance, and law — don't have names yet. The students who will build those careers are in high school right now.</p>
+</section>
+
+<!-- ── ACT II — Wealth Transfer ── -->
+<div class="act-divider"></div>
+<section class="act" data-act>
+  <div class="act-number">II</div>
+  <div class="act-stat"><em>$84</em> trillion</div>
+  <div class="act-line"></div>
+  <p class="act-truth">The largest transfer of wealth in human history is happening right now. Baby boomers are passing $84 trillion to their heirs. Most of the people who will manage that transfer — in wealth management, estate law, family office, and philanthropic advising — are sitting in a classroom, and no one has told them yet.</p>
+</section>
+
+<!-- ── ACT III — PE Roll-Ups ── -->
+<div class="act-divider"></div>
+<section class="act" data-act>
+  <div class="act-number">III</div>
+  <div class="act-stat">The <em>new</em> frontier</div>
+  <div class="act-line"></div>
+  <p class="act-truth">The fastest-growing companies in home services, dental, veterinary care, and HVAC are not startups. They are private equity firms buying family businesses and professionalizing industries that have never been professionalized. The people who will run those platforms are in college right now. Nobody has pointed at them yet.</p>
+</section>
+
+<!-- ── ACT IV — Population Shift ── -->
+<div class="act-divider"></div>
+<section class="act" data-act>
+  <div class="act-number">IV</div>
+  <div class="act-stat">The map<br><em>is moving</em></div>
+  <div class="act-line"></div>
+  <p class="act-truth">Austin. Nashville. Phoenix. Raleigh. Tampa. The American population is redistributing itself in real time. The careers that follow — in real estate, infrastructure, urban planning, and commercial development — are concentrated in corridors that didn't exist as career destinations a decade ago. Where you go to school determines whether you see this coming.</p>
+</section>
+
+<!-- ── ACT V — The Trades Hybrid ── -->
+<div class="act-divider"></div>
+<section class="act" data-act>
+  <div class="act-number">V</div>
+  <div class="act-stat">The <em>builder</em><br>returns</div>
+  <div class="act-line"></div>
+  <p class="act-truth">The student who grows up watching their father build houses does not need to become their father. They need to become what their father could not become because no one showed them the door. Construction management. Real estate development. PropTech. The college-educated builder is one of the most valuable and most overlooked profiles in the American economy.</p>
+</section>
+
+<!-- ── ACT VI — The Invisible Middle ── -->
+<div class="act-divider"></div>
+<section class="act" data-act>
+  <div class="act-number">VI</div>
+  <div class="act-stat">The <em>spine</em></div>
+  <div class="act-line"></div>
+  <p class="act-truth">Middle management is not a lesser thing. The operations manager who runs a 200-person regional team, the quality control director who saves a manufacturer $40 million, the customer experience leader who turns around a brand — these are the people who make everything else work. They are well-compensated, in demand, and completely invisible in college planning. Until now.</p>
+</section>
+
+<!-- ── ACT VII — The Workforce ── -->
+<div class="act-divider"></div>
+<section class="act" data-act>
+  <div class="act-number">VII</div>
+  <div class="act-stat">They are<br><em>16</em></div>
+  <div class="act-line"></div>
+  <p class="act-truth">The workforce that built the last 40 years is retiring. The workforce that will build the next 40 is in high school. They will inherit an economy that is older, wealthier, more geographically distributed, and more structurally complex than anything that has come before it. Someone should tell them what they're walking into.</p>
+</section>
+
+<!-- ── CLOSING ── -->
+<div class="act-divider"></div>
+<section class="closing" data-closing>
+  <p class="closing-statement">
+    VECTOR is built for what's coming.<br>
+    Not what already passed.
+  </p>
+
+  <!-- Master-exact VECTOR wordmark with needle -->
+  <div class="closing-vector">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"
+         width="240" height="80" role="img" aria-label="VECTOR">
+      <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif"
+        font-weight="300" font-size="120px" letter-spacing="18px"
+        fill="#F4F1EC" x="600" y="257.6" text-anchor="middle">VECTOR</text>
+      <line x1="700.15" y1="231.24" x2="721.49" y2="172.60"
+        stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round"/>
+      <polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="#C8A97A"/>
+    </svg>
+  </div>
+
+  <div class="closing-sub">A Better College Consultant</div>
+
+  <a href="lifescape.html" class="closing-cta">Reveal Mine</a>
+</section>
+
+<script>
+// ── Scroll-triggered reveal ───────────────────────────────────────────────────
+// Each act fades in when it enters the viewport at 20% threshold
+// Closing elements cascade on entry
+
+const acts = document.querySelectorAll('[data-act]');
+const closing = document.querySelector('[data-closing]');
+
+const revealAct = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.classList.add('revealed');
+      revealAct.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.18 });
+
+acts.forEach(a => revealAct.observe(a));
+
+// Closing — cascade each element
+if(closing) {
+  const closingObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) {
+        closing.querySelector('.closing-statement').classList.add('revealed');
+        setTimeout(() => closing.querySelector('.closing-vector').classList.add('revealed'), 400);
+        setTimeout(() => closing.querySelector('.closing-sub').classList.add('revealed'), 700);
+        setTimeout(() => closing.querySelector('.closing-cta').classList.add('revealed'), 1000);
+        closingObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  closingObs.observe(closing);
+}
+</script>
+
+</body>
+</html>
