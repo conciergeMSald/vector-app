@@ -122,14 +122,79 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .tile-people.sel{background:var(--people-sel);color:var(--people-sel-txt);border-color:var(--people-sel);}
 .tile-systems.sel{background:var(--systems-sel);color:var(--systems-sel-txt);border-color:var(--systems-sel);}
 
-/* EQ tiles — serif italic, same desaturated rest, amber on selection */
-.tile-eq{font-style:italic;font-family:var(--serif);font-size:14px;letter-spacing:0.2px;text-transform:none;}
-.tile-eq.sel{background:var(--eq-sel);color:var(--eq-sel-txt);border-color:var(--eq-sel);}
+/* ── EQ TILE — single item, serif, reads not scans ───────────────────────── */
+/* Each tile is a self-description. It deserves to be read. */
+.tile-eq{
+  font-style:italic;
+  font-family:var(--serif);
+  font-size:15px;
+  letter-spacing:0.2px;
+  text-transform:none;
+  display:block;           /* single column — not wrapped in a flex grid */
+  width:100%;
+  text-align:left;
+  padding:13px 18px;
+  border:0.5px solid rgba(196,168,130,0.22);
+  background:rgba(245,239,230,0.45);
+  margin-bottom:6px;
+  box-sizing:border-box;
+}
+.tile-eq:hover{
+  border-color:rgba(196,168,130,0.55);
+  background:rgba(245,239,230,0.72);
+  color:var(--ink2);
+}
+.tile-eq.sel{
+  background:var(--eq-sel);
+  color:var(--eq-sel-txt);
+  border-color:var(--eq-sel);
+}
 
-/* EQ transition moment — weighted, not a label */
-.eq-divider{margin:3rem 0 2rem;padding-top:2.5rem;}
-.eq-transition{font-family:var(--serif);font-size:24px;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:0.5rem;letter-spacing:0.3px;line-height:1.4;}
-.eq-intro{font-family:var(--serif);font-size:16px;font-weight:300;font-style:italic;color:var(--ink2);margin-bottom:1.5rem;}
+/* EQ tile grid — vertical stack, not a flex wrap */
+#eq-tile-grid{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  margin-bottom:0;
+}
+
+/* ── EQ SECTION — full-bleed page-break moment ───────────────────────────── */
+/* Brunello principle: space is how you show respect for what sits within it. */
+.eq-divider{
+  margin:4rem -1.5rem 0;   /* bleed past container padding */
+  padding:4rem 1.5rem 2.5rem;
+  background:linear-gradient(180deg, rgba(245,239,230,0) 0%, rgba(245,239,230,0.55) 100%);
+  border-top:0.5px solid rgba(196,168,130,0.35);
+  position:relative;
+}
+.eq-divider::before{
+  content:'';
+  display:block;
+  width:24px;
+  height:1px;
+  background:var(--gold);
+  margin-bottom:2.5rem;
+}
+.eq-transition{
+  font-family:var(--serif);
+  font-size:26px;
+  font-weight:300;
+  font-style:italic;
+  color:var(--ink);
+  margin-bottom:0.6rem;
+  letter-spacing:0.3px;
+  line-height:1.4;
+}
+.eq-intro{
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:400;
+  font-style:normal;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:2.5rem;
+}
 
 /* Cluster sections */
 .cluster-section{margin-bottom:2rem;}
@@ -177,7 +242,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .report-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
 .report-name{font-family:var(--serif);font-size:42px;font-weight:300;color:var(--ink);letter-spacing:2px;}
 .report-opening{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--ink3);line-height:1.9;margin:1.5rem 0 2rem;padding-left:1.5rem;border-left:2px solid var(--gold);}
-.report-section{margin-bottom:2.5rem;}
+.report-section{margin-bottom:3.5rem;padding-bottom:.25rem;}
 .section-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
 
 /* Quote block */
@@ -216,9 +281,15 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .combo-text{font-size:14px;color:var(--ink2);line-height:1.9;font-weight:300;}
 
 /* Counselor note */
-.counselor-block{padding:1.5rem;border:0.5px solid var(--gl);background:var(--gold-pale);margin-top:2rem;}
-.counselor-label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
+.counselor-block{padding:2rem;border:0.5px solid var(--gl);background:var(--gold-pale);margin-top:2rem;}
+.counselor-label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:0.5px solid rgba(196,168,130,0.4);}
 .counselor-text{font-size:13px;color:var(--ink2);line-height:1.9;font-weight:300;}
+.counselor-section{margin-bottom:1.75rem;}
+.counselor-section:last-child{margin-bottom:0;}
+.counselor-section-head{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;font-family:var(--sans);}
+.counselor-section-body{font-size:14px;color:var(--ink2);line-height:1.85;font-weight:300;}
+.counselor-prompt{padding:.6rem 0;border-bottom:0.5px solid rgba(196,168,130,0.25);font-size:13px;color:var(--ink2);line-height:1.7;}
+.counselor-prompt:last-child{border-bottom:none;}
 
 /* Report tab toggle */
 .report-tabs{display:flex;gap:0;margin-bottom:2rem;border-bottom:0.5px solid var(--rule);}
@@ -577,7 +648,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="eq-divider" id="eq-section">
     <div class="eq-transition" id="eq-header">One more thing. This part is different.</div>
     <div class="eq-intro" id="eq-intro">Not what you do — how you see yourself.</div>
-    <div class="tile-grid" id="eq-tile-grid"></div>
+    <div id="eq-tile-grid"></div>
   </div>
 
   <!-- Progressive reveal — appears inline, no scroll -->
@@ -618,16 +689,16 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </div>
 
   <div class="bfi-items">
-    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who is <strong>reserved</strong>." data-parent="I see [NAME] as someone who is <strong>reserved</strong>.">I see myself as someone who is <strong>reserved</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,1,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,1,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,1,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,1,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,1,5)">5</button></div></div>
-    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who is <strong>generally trusting</strong>." data-parent="I see [NAME] as someone who is <strong>generally trusting</strong>.">I see myself as someone who is <strong>generally trusting</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,2,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,2,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,2,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,2,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,2,5)">5</button></div></div>
-    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who <strong>tends to be lazy</strong>." data-parent="I see [NAME] as someone who <strong>tends to be lazy</strong>.">I see myself as someone who <strong>tends to be lazy</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,3,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,3,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,3,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,3,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,3,5)">5</button></div></div>
-    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who is <strong>relaxed, handles stress well</strong>." data-parent="I see [NAME] as someone who is <strong>relaxed, handles stress well</strong>.">I see myself as someone who is <strong>relaxed, handles stress well</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,4,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,4,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,4,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,4,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,4,5)">5</button></div></div>
-    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who has <strong>few artistic interests</strong>." data-parent="I see [NAME] as someone who has <strong>few artistic interests</strong>.">I see myself as someone who has <strong>few artistic interests</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,5,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,5,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,5,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,5,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,5,5)">5</button></div></div>
-    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who is <strong>outgoing, sociable</strong>." data-parent="I see [NAME] as someone who is <strong>outgoing, sociable</strong>.">I see myself as someone who is <strong>outgoing, sociable</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,6,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,6,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,6,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,6,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,6,5)">5</button></div></div>
-    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who <strong>tends to find fault with others</strong>." data-parent="I see [NAME] as someone who <strong>tends to find fault with others</strong>.">I see myself as someone who <strong>tends to find fault with others</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,7,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,7,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,7,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,7,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,7,5)">5</button></div></div>
-    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who <strong>does a thorough job</strong>." data-parent="I see [NAME] as someone who <strong>does a thorough job</strong>.">I see myself as someone who <strong>does a thorough job</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,8,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,8,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,8,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,8,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,8,5)">5</button></div></div>
-    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who <strong>gets nervous easily</strong>." data-parent="I see [NAME] as someone who <strong>gets nervous easily</strong>.">I see myself as someone who <strong>gets nervous easily</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,9,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,9,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,9,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,9,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,9,5)">5</button></div></div>
-    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who has <strong>an active imagination</strong>." data-parent="I see [NAME] as someone who has <strong>an active imagination</strong>.">I see myself as someone who has <strong>an active imagination</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,10,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,10,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,10,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,10,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,10,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who is <strong>reserved</strong>." data-parent="[NAME] tends to be <strong>reserved</strong> — quieter, more private.">I see myself as someone who is <strong>reserved</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,1,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,1,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,1,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,1,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,1,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who is <strong>generally trusting</strong>." data-parent="[NAME] is <strong>generally trusting</strong> of others.">I see myself as someone who is <strong>generally trusting</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,2,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,2,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,2,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,2,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,2,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who <strong>tends to be lazy</strong>." data-parent="[NAME] <strong>tends to avoid effort</strong> when possible.">I see myself as someone who <strong>tends to be lazy</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,3,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,3,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,3,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,3,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,3,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who is <strong>relaxed, handles stress well</strong>." data-parent="[NAME] is <strong>relaxed</strong> and handles stress well.">I see myself as someone who is <strong>relaxed, handles stress well</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,4,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,4,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,4,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,4,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,4,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who has <strong>few artistic interests</strong>." data-parent="[NAME] has <strong>few artistic interests</strong>.">I see myself as someone who has <strong>few artistic interests</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,5,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,5,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,5,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,5,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,5,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who is <strong>outgoing, sociable</strong>." data-parent="[NAME] is <strong>outgoing and sociable</strong> — energized by people.">I see myself as someone who is <strong>outgoing, sociable</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,6,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,6,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,6,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,6,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,6,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who <strong>tends to find fault with others</strong>." data-parent="[NAME] <strong>tends to find fault</strong> with others.">I see myself as someone who <strong>tends to find fault with others</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,7,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,7,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,7,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,7,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,7,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who <strong>does a thorough job</strong>." data-parent="[NAME] <strong>does a thorough job</strong> — detail-oriented and diligent.">I see myself as someone who <strong>does a thorough job</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,8,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,8,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,8,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,8,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,8,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who <strong>gets nervous easily</strong>." data-parent="[NAME] <strong>gets nervous easily</strong> — emotionally reactive under pressure.">I see myself as someone who <strong>gets nervous easily</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,9,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,9,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,9,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,9,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,9,5)">5</button></div></div>
+    <div class="bfi-item"><div class="bfi-label" data-student="I see myself as someone who has <strong>an active imagination</strong>." data-parent="[NAME] has <strong>an active imagination</strong> — curious and open to new ideas.">I see myself as someone who has <strong>an active imagination</strong>.</div><div class="bfi-options"><button class="bfi-btn" onclick="selectBFI(this,10,1)">1</button><button class="bfi-btn" onclick="selectBFI(this,10,2)">2</button><button class="bfi-btn" onclick="selectBFI(this,10,3)">3</button><button class="bfi-btn" onclick="selectBFI(this,10,4)">4</button><button class="bfi-btn" onclick="selectBFI(this,10,5)">5</button></div></div>
   </div>
 
   <div id="bfi-error" style="display:none;color:#c0392b;margin:12px 0;font-size:14px;">Please answer all 10 statements before continuing.</div>
@@ -1115,9 +1186,21 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <div id="full-combinations"></div>
     </div>
 
-    <div class="report-section">
-      <div class="section-eyebrow">Your Region</div>
-      <div class="portrait-text" id="full-geo"></div>
+    <div class="report-section" id="geo-region-section">
+      <div class="section-eyebrow" id="geo-region-eyebrow">Your Region</div>
+      <div class="portrait-text" id="full-geo-local"></div>
+    </div>
+    <div class="report-section" id="geo-stay-close-section" style="display:none">
+      <div class="section-eyebrow">Stay Close</div>
+      <div class="portrait-text" id="full-geo-stay-close"></div>
+    </div>
+    <div class="report-section" id="geo-leave-return-section" style="display:none">
+      <div class="section-eyebrow">Leave and Return</div>
+      <div class="portrait-text" id="full-geo-leave-return"></div>
+    </div>
+    <div class="report-section" id="geo-leave-gone-section" style="display:none">
+      <div class="section-eyebrow">Leave and Stay Gone</div>
+      <div class="portrait-text" id="full-geo-leave-gone"></div>
     </div>
 
     <div class="report-section">
@@ -1957,7 +2040,7 @@ function buildContext(profile) {
   const pronounInstruction = `PRONOUN INSTRUCTION: Use ${pronouns.subject}/${pronouns.object}/${pronouns.possessive} pronouns for this student. Never infer gender from the name "${profile.name}" — use only the pronouns specified here.`;
 
   const voiceInstruction = profile.voice === 'parent'
-    ? `Write about ${profile.name} in third person. Address the family, not the student directly. Warm, specific, never clinical. ${pronounInstruction}`
+    ? `VOICE: You are writing for ${profile.name}'s parent or family. Use third person throughout — always refer to ${profile.name} by name or as "they/he/she", never as "you". NEVER use second person ("you are", "your", "you have"). Every sentence must be written as if a trusted advisor is speaking to the family about their child. ${pronounInstruction} Example: write "${profile.name} is someone who..." not "You are someone who..."`
     : `Write directly to ${profile.name} in second person. Smart, curious teenager who deserves honesty. Never talk down. Never oversell. ${pronounInstruction}`;
 
   const comboSummary = profile.comboUnlocks.map(c =>
@@ -2145,7 +2228,7 @@ YOUR JOB — produce exactly two sections with these exact dividers:
 ---GEO---
 Write two distinct paragraphs.
 PARAGRAPH 1 — Local: Name what is genuinely nearby that connects to this student's profile. Specific neighborhood or employer. One surprising, real connection they likely don't know about. ${ctx.voice==='parent'?`Third person about ${ctx.name}.`:`Second person to ${ctx.name}.`}
-PARAGRAPH 2 — Regional trajectory: ${ctx.regionalIntel ? `This student lives in ${ctx.regionalIntel.name}. Name their trajectory type explicitly — Stay Close, Leave and Return, or Leave and Stay Gone — based on their profile and corridor match. Name the specific school decision that corresponds to each trajectory.${familyLocs.length > 0 ? ` This student also has people in: ${familyLocs.join(', ')}. Where relevant, name how those locations change or expand the Leave and Return or Leave and Stay Gone options — a family connection in another city is a real asset worth naming, even if the relationship is thin.` : ''} Be direct and specific, not generic.` : `Name the broader geographic context for this student's career path — where their industry actually concentrates nationally, and what that means for their school decision.`}
+PARAGRAPH 2 — Regional trajectory: ${ctx.regionalIntel ? `This student lives in ${ctx.regionalIntel.name}. Write three separate sections, each on its own line, starting with these EXACT labels on their own line: 'STAY CLOSE:' then 'LEAVE AND RETURN:' then 'LEAVE AND STAY GONE:' — each followed by one paragraph naming the specific school decision and what that path means for this student's career trajectory.${familyLocs.length > 0 ? ` This student also has people in: ${familyLocs.join(', ')}. Where relevant, name how those locations change or expand the Leave and Return or Leave and Stay Gone options.` : ''} Be direct and specific, not generic. Each section stands alone.` : `Name the broader geographic context for this student's career path — where their industry actually concentrates nationally. Write three sections starting with STAY CLOSE:, LEAVE AND RETURN:, LEAVE AND STAY GONE: and what each means for this student.`}
 
 ${(()=>{
   try {
@@ -2282,7 +2365,7 @@ function captureToSheets(profile, callAData) {
     gpa_normalized: normalizeGPA(LS_STATE.gpa, LS_STATE.gpa_type) || '',
     conference_pref: COLLEGE_PREFS.conference,
     campus_scale_pref: COLLEGE_PREFS.campus_scale,
-    regions_pref: Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(' | ') : (COLLEGE_PREFS.regions || 'open'),
+    regions_pref: Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(' | ') : (COLLEGE_PREFS.regions || 'Open'),
     social_scene_pref: COLLEGE_PREFS.social_scene,
     religion_pref: COLLEGE_PREFS.religion,
     cc_pathway_shown:'N'
@@ -2355,23 +2438,38 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
   }
 }
 
-// ── LOADING MESSAGES ───────────────────────────────
-const LOADING_MSGS = [
+// ── LOADING MESSAGES — voice-aware ─────────────────
+const LOADING_MSGS_STUDENT = [
   'Reading who you are...',
   'Mapping your interests to industries...',
-  'Finding what lives your region...',
+  'Finding what lives in your region...',
   'Writing your trajectory...',
   'Almost there...'
+];
+const LOADING_MSGS_PARENT = [
+  'Reading the signals {{name}} gave us...',
+  "Mapping {{name}}'s interests to real industries...",
+  'Looking at what lives in your region...',
+  "Building {{name}}'s trajectory...",
+  "This takes a moment. It's worth it."
 ];
 let _loadMsgIdx = 0;
 let _loadMsgTimer = null;
 
+function getLoadingMsgs() {
+  const isParent = LS_STATE.voice === 'parent';
+  const name = LS_STATE.name || 'them';
+  if (!isParent) return LOADING_MSGS_STUDENT;
+  return LOADING_MSGS_PARENT.map(m => m.replace(/{{name}}/g, name));
+}
+
 function startLoadingMessages() {
   _loadMsgIdx = 0;
-  document.getElementById('loading-message').textContent = LOADING_MSGS[0];
+  const msgs = getLoadingMsgs();
+  document.getElementById('loading-message').textContent = msgs[0];
   _loadMsgTimer = setInterval(() => {
-    _loadMsgIdx = Math.min(_loadMsgIdx+1, LOADING_MSGS.length-1);
-    document.getElementById('loading-message').textContent = LOADING_MSGS[_loadMsgIdx];
+    _loadMsgIdx = Math.min(_loadMsgIdx+1, msgs.length-1);
+    document.getElementById('loading-message').textContent = msgs[_loadMsgIdx];
   }, 4000);
 }
 function stopLoadingMessages() { clearInterval(_loadMsgTimer); }
@@ -2761,7 +2859,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         ${scaleLabel ? `<span class="school-badge">${scaleLabel}</span>` : ''}
         ${schoolData ? `<span class="school-badge">${schoolData.region}</span>` : ''}
       </div>
-      <div class="school-why"><strong style="font-weight:500;color:var(--ink);display:block;margin-bottom:6px">${s.match}</strong>${s.why}</div>
+      <div class="school-why"><strong style="font-weight:500;color:var(--ink);display:block;margin-bottom:6px">${s.match.replace(/\s*-{2,}\s*$/g,"").trim()}</strong>${s.why.replace(/\s*-{2,}\s*$/g,"").trim()}</div>
     </div>`;
   }).join('');
 
@@ -3252,12 +3350,14 @@ function updateReportVoice(profile) {
   // Report opening sentence
   const opening = document.querySelector('.report-opening');
   if(opening) opening.textContent = p
-    ? 'This is what we found in this moment, based on what you shared. ' + name + "'s Lifescape is not fixed. It evolves as they do."
+    ? 'This is what we found in this moment, based on what you shared. ' + name + "'s Lifescape is not fixed. It evolves as " + (LS_STATE.pronouns === 'he' ? 'he' : LS_STATE.pronouns === 'she' ? 'she' : 'they') + ' does.'
     : 'This is what we found in this moment, based on what you shared. Your Lifescape is not fixed. It evolves when you do.';
 
   // Loading message
   const loadMsg = document.getElementById('loading-message');
   if(loadMsg) loadMsg.textContent = p ? 'Reading who ' + name + ' is...' : 'Reading who you are...';
+  var geoEyebrow = document.getElementById('geo-region-eyebrow');
+  if(geoEyebrow) geoEyebrow.textContent = p ? name + "'s Region" : "Your Region";
 }
 
 // ── RENDER: QUICK READ ─────────────────────────────
@@ -3338,7 +3438,36 @@ function renderFullReport(profile, callAData, callBData, callCData) {
 
   // Geo
   if(callCData?.geo) {
-    document.getElementById('full-geo').textContent = callCData.geo;
+    // Parse geo into four sections
+    (function() {
+      var geo = callCData.geo || '';
+      // Split into local paragraph and path sections
+      var stayCloseM   = geo.match(/STAY CLOSE:\s*([\s\S]*?)(?=LEAVE AND RETURN:|LEAVE AND STAY GONE:|$)/i);
+      var leaveReturnM = geo.match(/LEAVE AND RETURN:\s*([\s\S]*?)(?=STAY CLOSE:|LEAVE AND STAY GONE:|$)/i);
+      var leaveGoneM   = geo.match(/LEAVE AND STAY GONE:\s*([\s\S]*?)$/i);
+      // Local paragraph is everything before the first section label
+      var firstLabel = geo.search(/STAY CLOSE:|LEAVE AND RETURN:|LEAVE AND STAY GONE:/i);
+      var localText  = firstLabel > 0 ? geo.slice(0, firstLabel).trim() : geo.trim();
+
+      var stayClose   = stayCloseM   ? stayCloseM[1].trim()   : '';
+      var leaveReturn = leaveReturnM ? leaveReturnM[1].trim() : '';
+      var leaveGone   = leaveGoneM   ? leaveGoneM[1].trim()   : '';
+
+      document.getElementById('full-geo-local').textContent = localText;
+
+      if(stayClose) {
+        document.getElementById('full-geo-stay-close').textContent = stayClose;
+        document.getElementById('geo-stay-close-section').style.display = '';
+      }
+      if(leaveReturn) {
+        document.getElementById('full-geo-leave-return').textContent = leaveReturn;
+        document.getElementById('geo-leave-return-section').style.display = '';
+      }
+      if(leaveGone) {
+        document.getElementById('full-geo-leave-gone').textContent = leaveGone;
+        document.getElementById('geo-leave-gone-section').style.display = '';
+      }
+    })();
   }
 
   // Trajectory (full version) — trajectory only, clean
@@ -3356,11 +3485,32 @@ function renderFullReport(profile, callAData, callBData, callCData) {
     }
   }
 
-  // Counselor note in full report
+  // Counselor note in full report — structured with section headings
   if(callCData?.counselor) {
-    const noteMatch = callCData.counselor.match(/NOTE:([\s\S]*?)(?:STRONGEST|$)/i);
-    if(noteMatch) {
-      document.getElementById('full-counselor-text').textContent = noteMatch[1].trim();
+    const raw = callCData.counselor;
+    const noteM     = raw.match(/NOTE:\s*([\s\S]*?)(?=STRONGEST UNLOCK:|THREE PROMPTS:|$)/i);
+    const unlockM   = raw.match(/STRONGEST UNLOCK:\s*([\s\S]*?)(?=THREE PROMPTS:|NOTE:|$)/i);
+    const promptsM  = raw.match(/THREE PROMPTS:\s*([\s\S]*?)$/i);
+
+    const note    = noteM    ? noteM[1].trim()    : '';
+    const unlock  = unlockM  ? unlockM[1].trim()  : '';
+    const prompts = promptsM ? promptsM[1].trim() : '';
+
+    const promptLines = prompts
+      ? prompts.split(/\n/).map(l=>l.trim()).filter(l=>l && l.match(/^\d|^-|^•/))
+      : [];
+
+    let html = '';
+    if(note) html += '<div class="counselor-section"><div class="counselor-section-head">Key Insight</div><div class="counselor-section-body">' + note + '</div></div>';
+    if(unlock) html += '<div class="counselor-section"><div class="counselor-section-head">Strongest Signal</div><div class="counselor-section-body">' + unlock + '</div></div>';
+    if(promptLines.length) {
+      html += '<div class="counselor-section"><div class="counselor-section-head">Conversation Starters</div>' +
+        promptLines.map(p => '<div class="counselor-prompt">' + p.replace(/^[\d\.\-•\s]+/,'') + '</div>').join('') +
+        '</div>';
+    }
+
+    if(html) {
+      document.getElementById('full-counselor-text').innerHTML = html;
       document.getElementById('full-counselor-note').style.display = 'block';
     }
   }
@@ -3401,7 +3551,7 @@ function renderIndustries(industriesText) {
     </div>`;
   }).join('') + (industriesText.includes('ALSO WORTH KNOWING')
     ? `<div class="industry-block" style="border-left:3px solid var(--rule)">
-        <div class="portrait-text">${(industriesText.match(/ALSO WORTH KNOWING([\s\S]*?)$/i)||[])[1]?.trim()||''}</div>
+        <div class="portrait-text">${((industriesText.match(/ALSO WORTH KNOWING([\s\S]*?)$/i)||[])[1]||'').replace(/^\s*:\s*/,'').trim()}</div>
       </div>`
     : '');
 }
@@ -3450,7 +3600,7 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
     ['Generated', new Date(profile._meta.timestamp).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}) + ' at ' + new Date(profile._meta.timestamp).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true})],
     ['Conference pref', profile.college_prefs?.conference ? stripUnderscores(profile.college_prefs.conference) : 'not set'],
     ['Campus scale', profile.college_prefs?.campus_scale || 'not set'],
-    ['Regions', profile.college_prefs?.regions?.map(stripUnderscores).join(', ') || 'open'],
+    ['Regions', profile.college_prefs?.regions?.map(stripUnderscores).join(', ') || 'Open'],
     ['Social scene', profile.college_prefs?.social_scene || 'not set']
   ].map(([k,v]) => {
     const metaLabels = {
