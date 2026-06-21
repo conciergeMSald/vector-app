@@ -1286,8 +1286,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     </div>
 
     <div>
-      <div class="section-eyebrow">Full counselor note</div>
-      <div class="portrait-text" id="counselor-full-note"></div>
+    <div style="margin-top:2.5rem;padding:2rem;border:0.5px solid var(--gl);background:var(--gold-pale);">
+      <div class="counselor-label">Full Counselor Note</div>
+      <div id="counselor-full-note"></div>
     </div>
 
   </div>
@@ -3745,17 +3746,71 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
       '<div style="font-size:13px;color:var(--ink3);font-weight:300">No combination unlocks fired — single-tile signals only.</div>';
   }
 
-  // Counselor note + prompts
+  // Counselor note — structured with section headings
   if(callCData?.counselor) {
-    document.getElementById('counselor-full-note').textContent = callCData.counselor
-      .replace(/^NOTE:\s*/i, '').trim();
+    var raw = callCData.counselor;
 
-    const promptsMatch = callCData.counselor.match(/THREE PROMPTS:([\s\S]*?)$/i);
+    // Parse the three fields
+    var noteM    = raw.match(/NOTE:\s*([\s\S]*?)(?=STRONGEST UNLOCK:|THREE PROMPTS:|$)/i);
+    var unlockM  = raw.match(/STRONGEST UNLOCK:\s*([\s\S]*?)(?=NOTE:|THREE PROMPTS:|$)/i);
+    var promptsM = raw.match(/THREE PROMPTS:\s*([\s\S]*?)$/i);
+
+    var note    = noteM   ? noteM[1].trim()   : raw.replace(/^NOTE:\s*/i,'').split(/STRONGEST UNLOCK:|THREE PROMPTS:/i)[0].trim();
+    var unlock  = unlockM ? unlockM[1].trim() : '';
+    var prompts = promptsM ? promptsM[1].trim() : '';
+
+    // Render structured sections into counselor-full-note
+    var noteEl = document.getElementById('counselor-full-note');
+    if(noteEl) {
+      var html = '';
+
+      if(note) {
+        html += '<div class="counselor-section">'
+              + '<div class="counselor-section-head">Key Insight</div>'
+              + '<div class="counselor-section-body">' + note + '</div>'
+              + '</div>';
+      }
+
+      if(unlock) {
+        html += '<div class="counselor-section">'
+              + '<div class="counselor-section-head">Strongest Signal</div>'
+              + '<div class="counselor-section-body">' + unlock + '</div>'
+              + '</div>';
+      }
+
+      if(prompts) {
+        var promptLines = prompts
+          .split(/\n/)
+          .map(function(l){ return l.trim(); })
+          .filter(function(l){ return l.match(/^\d|^-|^•/); });
+
+        if(promptLines.length) {
+          html += '<div class="counselor-section">'
+                + '<div class="counselor-section-head">Conversation Starters</div>'
+                + promptLines.map(function(p){
+                    return '<div class="counselor-prompt">'
+                         + p.replace(/^[\d\.\-•\s]+/,'')
+                         + '</div>';
+                  }).join('')
+                + '</div>';
+        }
+      }
+
+      noteEl.innerHTML = html || '<div class="counselor-section-body">' + note + '</div>';
+    }
+
+    // Three prompts also rendered separately in counselor-prompts (sidebar location)
+    var promptsMatch = raw.match(/THREE PROMPTS:([\s\S]*?)$/i);
     if(promptsMatch) {
-      const prompts = promptsMatch[1].trim().split(/\n/).filter(l=>l.match(/^\d\./));
-      document.getElementById('counselor-prompts').innerHTML = prompts.map(p=>
-        `<div class="action-prompt"><div class="action-text">${p.replace(/^\d\.\s*/,'')}</div></div>`
-      ).join('');
+      var promptLines = promptsMatch[1].trim().split(/\n/).filter(function(l){ return l.match(/^\d\./); });
+      var promptsEl = document.getElementById('counselor-prompts');
+      if(promptsEl) {
+        promptsEl.innerHTML = promptLines.map(function(p){
+          return '<div class="action-prompt"><div class="action-text">'
+               + p.replace(/^\d\.\s*/,'')
+               + '</div></div>';
+        }).join('');
+      }
     }
   }
 }
