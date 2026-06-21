@@ -3224,6 +3224,9 @@ async function submitLifescape() {
             college_prefs: profile.college_prefs
           };
 
+          var callDData = [];
+          var adjacentPicks = [];
+          var profileAdjacentPicks = [];
           const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0,5), schoolContentBlock);
           console.log('[callD] firing Claude, prompt length:', callDPrompt.length);
 
@@ -3231,12 +3234,12 @@ async function submitLifescape() {
           console.log('[callD] raw response length:', callDText?.length);
           console.log('[callD] raw response preview:', callDText?.slice(0,200));
 
-          const callDData = parseCallD(callDText);
+          callDData = parseCallD(callDText);
           console.log('[callD] parsed schools:', callDData.length, callDData.map(s=>s.name));
 
           // Compute adjacent picks (do not send to Claude — derived from data)
-          let adjacentPicks = [];
-          let profileAdjacentPicks = [];
+          adjacentPicks = [];
+          profileAdjacentPicks = [];
           if(typeof getAdjacentMatches !== 'undefined') {
             adjacentPicks = getAdjacentMatches(
               matchedSchools,
@@ -3290,7 +3293,7 @@ async function submitLifescape() {
 
     // ── AIRTABLE LONGITUDINAL CAPTURE ────────────────────
     // Fire-and-forget. Full record after all calls complete.
-    captureToAirtable(profile, callAData, callDData || [], adjacentPicks || [], profileAdjacentPicks || []);
+    captureToAirtable(profile, callAData, typeof callDData !== 'undefined' ? callDData : [], typeof adjacentPicks !== 'undefined' ? adjacentPicks : [], typeof profileAdjacentPicks !== 'undefined' ? profileAdjacentPicks : []);
 
     // ── AUTH GATE + SUPABASE WRITE ───────────────────────
     // All Claude calls complete. Gate fires and saves record.
