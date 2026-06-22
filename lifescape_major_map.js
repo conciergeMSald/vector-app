@@ -2593,3 +2593,476 @@ MAJOR_MAP[44].push({
       }
   ]
 });
+
+// ── NAICS 91 — The Intelligent Trades ────────────────────────────────────────
+Object.assign(MAJOR_MAP, {
+  91: [
+    {
+      major_label: 'Construction Management',
+      riasec_affinity: ['R', 'E', 'C'],
+      riasec_conflict: ['A'],
+      program_keywords: ['construction management', 'project management', 'building systems', 'construction science', 'civil technology'],
+      entry_careers: ['Project Engineer', 'Field Superintendent', 'Estimator', 'Construction Manager Trainee'],
+      world_alignment: 'Make',
+      cc_transfer_friendly: true,
+      emerging_role: 'Intelligent Building Systems Integrator — the professional who commissions smart buildings by programming and calibrating the HVAC, lighting, and security automation systems that make a modern commercial or residential structure operate efficiently. Every new commercial building being constructed today requires someone who can configure BACnet and Modbus protocols, commission energy management systems, and ensure that the physical installation meets both the engineering specifications and the operational needs of the building over time.',
+      deployment_contexts: [
+        { domain: 'Smart Building Systems & Commissioning', edge: 'The building you are standing in right now runs on software. Every HVAC system, lighting grid, and security network in a modern commercial structure is a programmable system that requires a human being who understands both the physical installation and the digital configuration to make it work. The construction manager who arrives with fluency in building automation is entering a role that the industry needs in significant volume and cannot find in sufficient supply. Cal Poly San Luis Obispo and Purdue both run construction management programs with building automation concentrations that most high school students never encounter.' },
+        { domain: 'Sustainable Construction & Green Building', edge: 'LEED certification, embodied carbon accounting, and net-zero construction are no longer optional features on commercial projects — they are contractual requirements and market expectations. The construction manager who understands these standards is doing the mainstream work of the industry as it has restructured around energy performance and environmental accountability. Arizona State and Georgia Tech both have programs with direct recruiting relationships with the firms building the largest green projects in their regions.' },
+        { domain: 'Infrastructure & Public Works', edge: 'The Infrastructure Investment and Jobs Act committed more than one trillion dollars to roads, bridges, water systems, broadband, and transit. The construction professionals who manage those projects will be among the most consequential and most in-demand people in the American economy for the next decade. Penn State and Texas A&M both have documented pipelines into state DOT and federal infrastructure contracting roles.' },
+        { domain: 'Advanced Manufacturing Facility Construction', edge: 'TSMC is building two chip fabrication plants in Phoenix. Intel is building four in Ohio. Eli Lilly is building its largest pharmaceutical manufacturing facility in Indiana. Every one of these projects requires construction managers who understand cleanroom standards, vibration isolation, ultra-pure water systems, and FDA documentation requirements. Purdue and Arizona State both have students placed into the construction programs serving these facilities.' }
+      ]
+    },
+    {
+      major_label: 'Electrical Engineering Technology',
+      riasec_affinity: ['R', 'I', 'C'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['electrical technology', 'power systems', 'building automation', 'electrical engineering technology', 'EET'],
+      entry_careers: ['Electrical Technician', 'Building Automation Specialist', 'EV Infrastructure Technician', 'Field Engineer'],
+      world_alignment: 'Make',
+      cc_transfer_friendly: true,
+      emerging_role: 'EV Infrastructure Deployment Specialist — the licensed electrician or electrical technician who installs, programs, and maintains commercial and fleet EV charging infrastructure as the transportation system electrifies. Federal mandates, fleet conversion timelines, and consumer adoption are creating demand for this role faster than the workforce can be trained.',
+      deployment_contexts: [
+        { domain: 'EV Charging Infrastructure', edge: 'Every commercial parking structure, every fleet depot, every highway corridor in America is in the process of installing electric vehicle charging infrastructure. An electrical engineering technology student who develops fluency in EV charging protocols — in OCPP standards, in utility interconnection, in load management — is building toward a career where the demand is immediate and the shortage of qualified people is unlikely to resolve in their working lifetime. Ferris State and Wentworth Institute of Technology both have electrical technology programs with EV infrastructure concentrations.' },
+        { domain: 'Solar & Renewable Energy Installation', edge: 'The Inflation Reduction Act created the largest set of financial incentives for domestic clean energy production in American history — and the workforce to install that energy infrastructure does not yet exist at the scale the incentives assume. A solar installation professional with electrical licensing and NABCEP certification is entering a field where the demand is policy-guaranteed and the path from skilled tradesperson to business owner is shorter than in almost any other field.' },
+        { domain: 'Industrial Automation & Smart Manufacturing', edge: 'Every manufacturing facility in America is installing automation systems that require electrical technicians who can program PLCs, commission robotics cells, and troubleshoot the integration between mechanical and digital systems. An electrical technology student who develops fluency in Allen-Bradley PLCs, SCADA systems, and motion control is building toward a career inside the most consequential manufacturing buildout in American history.' }
+      ]
+    },
+    {
+      major_label: 'Mechanical Engineering Technology',
+      riasec_affinity: ['R', 'I'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['mechanical technology', 'HVAC', 'CNC machining', 'manufacturing technology', 'mechatronics'],
+      entry_careers: ['CNC Machinist', 'HVAC Technician', 'Manufacturing Engineer Technician', 'Mechatronics Technician'],
+      world_alignment: 'Make',
+      cc_transfer_friendly: true,
+      emerging_role: 'Advanced Manufacturing Process Technician — the skilled operator who runs, programs, and optimizes CNC machining centers and automated manufacturing equipment for aerospace, medical device, and defense applications where tolerance requirements are measured in thousandths of an inch.',
+      deployment_contexts: [
+        { domain: 'Precision Manufacturing & CNC', edge: 'The United States is rebuilding its domestic manufacturing base for the first time in a generation. The machinists and manufacturing technicians operating this equipment are reading engineering drawings, programming five-axis machining centers, and holding tolerances that most people cannot perceive. Purdue and Penn State Behrend both have manufacturing technology programs with direct recruiting relationships at aerospace and defense manufacturers.' },
+        { domain: 'HVAC & Building Mechanical Systems', edge: 'Every commercial building, hospital, data center, and pharmaceutical manufacturing facility requires a mechanical system that controls temperature, humidity, and air quality within life-safety specifications. The HVAC technician who can commission and maintain these systems is doing work that cannot be offshored and cannot be automated. Ferris State University runs one of the strongest HVAC technology programs in the country.' },
+        { domain: 'Robotics & Automation Maintenance', edge: 'Amazon operates more than 750,000 robots across its fulfillment network. Every one of those systems requires a human being who can diagnose when something is wrong and fix it. The mechatronics technician who understands both mechanical systems and the software that controls them is building toward one of the most structurally secure careers in manufacturing.' }
+      ]
+    },
+    {
+      major_label: 'Sustainable Energy Technology',
+      riasec_affinity: ['R', 'I', 'E'],
+      riasec_conflict: ['A'],
+      program_keywords: ['renewable energy', 'solar installation', 'wind energy', 'energy systems', 'clean energy technology'],
+      entry_careers: ['Solar Installation Technician', 'Wind Turbine Technician', 'Energy Systems Analyst', 'Renewable Energy Project Coordinator'],
+      world_alignment: 'Make',
+      cc_transfer_friendly: true,
+      emerging_role: 'Microgrid Designer & Distributed Energy Resource Manager — the technical professional who designs, installs, and operates distributed energy systems allowing communities, campuses, and facilities to generate, store, and manage their own electricity independently from the central grid.',
+      deployment_contexts: [
+        { domain: 'Distributed Energy & Microgrid Development', edge: 'The electrical grid is being restructured into a distributed network where generation, storage, and consumption happen at every node simultaneously. Arizona State and Colorado School of Mines both have energy technology programs with microgrid concentrations that place students directly into the utilities and clean energy developers building this infrastructure now.' },
+        { domain: 'Energy Storage & Battery Systems', edge: 'Battery gigafactories in Tennessee, Kentucky, Indiana, and Ohio are producing the storage technology that makes renewable energy reliable. The energy storage technician who understands electrochemistry, power electronics, and battery management systems is working at the intersection of manufacturing, electrical, and energy systems in a way that very few technical programs currently prepare students for.' }
+      ]
+    },
+    {
+      major_label: 'Industrial Technology',
+      riasec_affinity: ['R', 'E', 'I'],
+      riasec_conflict: ['A'],
+      program_keywords: ['industrial technology', 'manufacturing management', 'operations technology', 'industrial supervision'],
+      entry_careers: ['Production Supervisor', 'Manufacturing Operations Manager', 'Quality Control Technician', 'Plant Manager Trainee'],
+      world_alignment: 'Make',
+      cc_transfer_friendly: true,
+      emerging_role: 'Advanced Manufacturing Operations Manager — the professional who runs a manufacturing facility combining human workers, automated systems, and AI-assisted quality control into a production operation meeting the precision and regulatory requirements of aerospace, pharmaceutical, or semiconductor manufacturing.',
+      deployment_contexts: [
+        { domain: 'Manufacturing Operations & Continuous Improvement', edge: 'The American manufacturing renaissance driven by reshoring, defense investment, and the CHIPS and IRA Acts is creating demand for manufacturing operations professionals faster than the workforce can supply them. Pittsburg State University and Southern Illinois University Carbondale both have industrial technology programs with strong regional placement in manufacturing operations roles.' },
+        { domain: 'Defense Manufacturing & Quality Assurance', edge: 'Every weapons system and piece of defense electronics the United States procures is manufactured to specifications governed by a quality system more rigorous than almost any civilian industry. The manufacturing professional who understands AS9100 aerospace standards, ITAR compliance, and defense procurement documentation is building toward a career inside one of the most stable and well-compensated industrial sectors in the economy.' }
+      ]
+    }
+  ]
+});
+
+// ── NAICS 93 — The Orchestration Layer ───────────────────────────────────────
+Object.assign(MAJOR_MAP, {
+  93: [
+    {
+      major_label: 'Organizational Communication',
+      riasec_affinity: ['E', 'S', 'A'],
+      riasec_conflict: ['R', 'C'],
+      program_keywords: ['organizational communication', 'communication studies', 'corporate communication', 'leadership communication', 'interpersonal communication'],
+      entry_careers: ['Communications Coordinator', 'Project Manager', 'Operations Analyst', 'People Operations Associate'],
+      world_alignment: 'People',
+      cc_transfer_friendly: true,
+      emerging_role: 'Change Management Specialist — the professional who leads organizations through technology adoption, restructuring, and strategic pivots with minimal human capital loss. As AI adoption creates unprecedented pace of organizational change, the professional who can hold a team together through a transformation that threatens how people understand their own work is doing some of the most consequential and least automated work in business.',
+      deployment_contexts: [
+        { domain: 'Corporate Change Management & Transformation', edge: 'Every major organization in America is in the middle of a technology transformation that is changing what its employees do and how they understand their own value. The professionals who lead those transitions — who communicate the change, manage the resistance, and hold the culture together — are doing work that no software can do and that most organizations are doing poorly for lack of people who know how. Elon University and Butler University both have communication programs with strong corporate placement in change management and internal communications roles.' },
+        { domain: 'People Operations & HR Business Partnership', edge: 'The HR business partner is not the person who processes paperwork. They are the person who understands a business well enough to tell its leaders when a people problem is about to become a business problem — and who has enough organizational credibility to be heard when they do. An organizational communication student who develops fluency in talent management, compensation philosophy, and employment law is building toward one of the highest-leverage roles in any organization.' },
+        { domain: 'Internal Communications & Culture', edge: 'The organizations that perform best over time are the ones whose employees understand what they are building and why it matters. The internal communications professional who can translate strategy into language that resonates at every level of an organization is doing some of the most leveraged communication work in business. Most organizations do this badly, and the ones that do it well have a sustained competitive advantage in talent attraction and retention that is difficult to replicate.' }
+      ]
+    },
+    {
+      major_label: 'Human Resources Management',
+      riasec_affinity: ['S', 'E', 'C'],
+      riasec_conflict: ['R', 'A'],
+      program_keywords: ['human resources', 'HR management', 'talent management', 'people operations', 'workforce development'],
+      entry_careers: ['HR Coordinator', 'Talent Acquisition Associate', 'People Operations Analyst', 'Training Coordinator'],
+      world_alignment: 'People',
+      cc_transfer_friendly: true,
+      emerging_role: 'AI Workforce Transition Specialist — the HR professional who helps organizations navigate the workforce implications of AI adoption — identifying which roles are being restructured, designing reskilling programs for affected employees, managing the human consequences of automation decisions, and ensuring the organization retains institutional knowledge that automated systems cannot preserve.',
+      deployment_contexts: [
+        { domain: 'Talent Acquisition & Workforce Planning', edge: 'The organizations that win over time find the right people before their competitors do. The talent acquisition professional who combines genuine human judgment about people with data fluency about workforce trends is building toward one of the highest-leverage roles in any growing organization. Ohio State and Indiana University Kelley both have HR management programs with strong corporate placement in Fortune 500 talent acquisition functions.' },
+        { domain: 'Learning & Development', edge: 'As AI restructures what every job requires, the L&D professional who can accelerate reskilling and upskilling across an organization is building toward a role whose importance is growing faster than the supply of people qualified to fill it. Butler University and the University of Dayton both have organizational development concentrations that prepare students for this specific function.' }
+      ]
+    },
+    {
+      major_label: 'Operations Management',
+      riasec_affinity: ['E', 'C', 'I'],
+      riasec_conflict: ['A'],
+      program_keywords: ['operations management', 'process improvement', 'project management', 'supply chain operations', 'business operations'],
+      entry_careers: ['Operations Analyst', 'Project Coordinator', 'Process Improvement Analyst', 'Business Operations Associate'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: true,
+      emerging_role: 'Human-AI Operations Coordinator — the professional who manages workflows combining human judgment with AI-generated outputs, designing processes that determine when humans review AI decisions, when they override them, and how automated system outputs integrate into operational reality.',
+      deployment_contexts: [
+        { domain: 'Business Process Optimization', edge: 'Every organization of any complexity has processes that work badly — that cost more than they should or produce results less consistent than the people running them realize. The operations professional who can identify where a process is failing, design a better one, and manage the transition is among the most reliably valuable people in any business. Ohio State Fisher and Indiana University Kelley both have strong operations management programs with documented placements at companies whose business runs on operational excellence.' },
+        { domain: 'Healthcare Operations', edge: 'Hospitals and health systems are among the most operationally complex organizations in existence — with patient safety, regulatory compliance, labor relations, supply chain management, and financial performance all running simultaneously under conditions where the consequences of failure are measured in human lives. The operations professional who chooses healthcare is entering a field where the demand for management talent is persistent and the stakes make the work feel consequential in a way most business environments cannot match.' }
+      ]
+    },
+    {
+      major_label: 'Industrial-Organizational Psychology',
+      riasec_affinity: ['I', 'S', 'E'],
+      riasec_conflict: ['R', 'A'],
+      program_keywords: ['industrial organizational psychology', 'IO psychology', 'organizational behavior', 'workforce psychology', 'people analytics'],
+      entry_careers: ['People Analyst', 'Talent Assessment Specialist', 'Organizational Development Consultant', 'HR Research Analyst'],
+      world_alignment: 'People',
+      cc_transfer_friendly: false,
+      emerging_role: 'People Analytics Lead — the professional who applies psychological research methods and data analysis to organizational questions — measuring what actually predicts performance, designing selection systems that reduce bias, and helping organizations understand their own culture with the same rigor they measure their financial performance.',
+      deployment_contexts: [
+        { domain: 'Talent Assessment & Selection Systems', edge: 'Most organizations hire badly — relying on unstructured interviews that predict job performance at barely better than chance. The I-O psychologist who designs selection systems that actually predict performance is delivering one of the highest-ROI interventions available to any organization. Rollins College and the University of Minnesota both have applied psychology programs with strong practitioner tracks.' },
+        { domain: 'Organizational Culture & Employee Experience', edge: 'The organizations that perform best over time are not the ones with the most sophisticated strategy. They are the ones whose people understand the strategy, believe in its purpose, and choose to give more than their contracts require. The I-O psychologist who can measure organizational culture with research-grade rigor and design interventions that move the right levers is doing work whose impact compounds across every business outcome the organization cares about.' }
+      ]
+    }
+  ]
+});
+
+// ── NAICS 94 — The Acquisition Economy ──────────────────────────────────────
+Object.assign(MAJOR_MAP, {
+  94: [
+    {
+      major_label: 'Finance',
+      riasec_affinity: ['E', 'I', 'C'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['finance', 'investment banking', 'private equity', 'financial modeling', 'corporate finance', 'deal structuring'],
+      entry_careers: ['Investment Banking Analyst', 'Private Equity Associate', 'Corporate Development Analyst', 'M&A Analyst'],
+      world_alignment: 'Think',
+      cc_transfer_friendly: false,
+      emerging_role: 'Search Fund Operator & Acquisition Entrepreneur — the professional who identifies, acquires, and operates a single small or mid-market business as a first-time owner-operator using the search fund model. As private equity has institutionalized the acquisition of fragmented industries and the MBA-to-search-fund pipeline has formalized, the acquisition entrepreneur who can find a business worth buying, convince the owner to sell, secure financing, and then run the business profitably is building one of the most democratizing wealth-creation structures in modern finance.',
+      deployment_contexts: [
+        {
+          domain: 'Private Equity & Middle Market Deal Execution',
+          edge: 'The middle market — companies with $10M to $500M in enterprise value — is the most active and most fragmented arena in American private equity, and it requires professionals who can do everything: source deals through relationships, build the financial model, manage due diligence, negotiate the purchase agreement, and then operate or oversee the business after closing. The finance student who develops deal execution competency alongside genuine business operations instinct is building toward the role that produces more wealth and more organizational responsibility at an earlier age than almost any other career path. Wharton, University of Michigan Ross, and Indiana University Kelley all have documented pipelines into middle market private equity that most undergraduates never encounter before their junior year.'
+        },
+        {
+          domain: 'Corporate Development & Strategic M&A',
+          edge: 'Every major corporation in America has a team whose job is to find, evaluate, and execute the acquisitions that drive inorganic growth — the team that bought the company that became the product line that became the division. The corporate development professional works at the intersection of strategy and finance, understanding both what the business needs strategically and what a target company is worth financially. A finance student who develops fluency in both financial modeling and strategic analysis is building toward a role that sits at the most consequential decision-making table in most large companies. Georgetown, Notre Dame, and Michigan all have strong corporate development placement through their finance programs.'
+        },
+        {
+          domain: 'Real Estate Private Equity',
+          edge: 'Real estate private equity applies the same acquisition logic as corporate PE to physical assets — finding undervalued properties, structuring financing, improving operations or repositioning the asset, and selling at a premium. The real estate private equity professional needs financial modeling fluency, market knowledge, debt structuring capability, and the relationship skills to source deals before they reach the open market. A finance student who develops real estate-specific competency alongside traditional PE skills is building toward one of the most durable wealth-creation tracks in American finance. University of Pennsylvania, NYU, and the University of Southern California all have real estate finance concentrations with direct placement into real estate PE.'
+        },
+        {
+          domain: 'Leveraged Finance & Debt Capital Markets',
+          edge: 'Every leveraged buyout is financed primarily with debt, and the professionals who structure, price, and syndicate that debt are doing work that is as consequential as the equity side of the transaction — and less crowded. The leveraged finance banker who understands credit analysis, covenant structure, and the syndication process is providing the fuel that runs the entire private equity industry. A finance student who develops credit expertise alongside corporate finance fundamentals is building toward a career that is in persistent demand regardless of where equity markets are in the cycle.'
+        }
+      ]
+    },
+    {
+      major_label: 'Economics',
+      riasec_affinity: ['I', 'E', 'C'],
+      riasec_conflict: ['A', 'R'],
+      program_keywords: ['economics', 'microeconomics', 'market analysis', 'valuation', 'quantitative analysis', 'economic modeling'],
+      entry_careers: ['Economic Analyst', 'Research Associate', 'Strategy Analyst', 'Valuation Analyst'],
+      world_alignment: 'Think',
+      cc_transfer_friendly: true,
+      emerging_role: 'Market Intelligence Analyst — the professional who synthesizes industry data, competitive intelligence, and macroeconomic signals into the investment thesis documents and market maps that PE firms and corporate development teams use to identify acquisition targets before those targets realize they are targets. As data availability has expanded and pattern recognition has become more systematizable, the economist who can build quantitative market maps and identify structural consolidation opportunities is doing some of the most leveraged analytical work in the acquisition economy.',
+      deployment_contexts: [
+        {
+          domain: 'Industry Research & Investment Thesis Development',
+          edge: 'The most successful private equity investments begin with an insight about an industry before the deal is identified — an understanding of why a particular sector is consolidating, why a specific business model is winning, or why a demographic shift is creating demand that current supply cannot meet. The economics graduate who can construct that thesis from first principles — who understands the market structure, the competitive dynamics, and the value chain well enough to identify where the opportunity lives — is providing the intellectual foundation on which acquisition strategies are built. Claremont McKenna, Williams, and the University of Chicago all have economics programs that develop this analytical capability more rigorously than most finance programs.'
+        },
+        {
+          domain: 'Valuation & Fairness Opinion',
+          edge: 'Every acquisition requires a valuation. The professionals who build DCF models, run comparable company analyses, and construct precedent transaction studies are providing the financial foundation on which every deal decision rests. The economics student who develops quantitative fluency alongside business judgment — who can build the model and also explain why the model is wrong — is building toward the most technically demanding analytical work in M&A. The fairness opinion process, where investment banks certify that a transaction price is fair to shareholders, requires exactly this combination of technical rigor and practical judgment.'
+        }
+      ]
+    },
+    {
+      major_label: 'Accounting',
+      riasec_affinity: ['C', 'E', 'I'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['accounting', 'financial reporting', 'audit', 'due diligence', 'forensic accounting', 'transaction advisory'],
+      entry_careers: ['Audit Associate', 'Transaction Advisory Analyst', 'Financial Due Diligence Associate', 'Fund Accountant'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: false,
+      emerging_role: 'Transaction Advisory & Financial Due Diligence Specialist — the accountant embedded in M&A transactions who examines the financial statements, quality of earnings, working capital mechanics, and accounting policies of acquisition targets to identify the risks and adjustments that change what a business is actually worth versus what it appears to be worth on paper. Every private equity transaction requires this work, and the accountant who can identify a hidden liability or a revenue recognition problem before the deal closes is protecting their client from a mistake that could cost tens of millions of dollars.',
+      deployment_contexts: [
+        {
+          domain: 'Financial Due Diligence & Quality of Earnings',
+          edge: 'The quality of earnings analysis — the examination of whether a company\'s reported profits reflect its true economic performance — is the most consequential financial analysis performed in any acquisition. The accountant who can identify normalized versus one-time items, revenue recognition problems, working capital manipulation, and off-balance-sheet liabilities is providing the analytical foundation that determines whether a deal gets done and at what price. The Big Four accounting firms and the specialist transaction advisory boutiques all recruit heavily from accounting programs at Indiana University Kelley, University of Illinois, and Notre Dame.'
+        },
+        {
+          domain: 'Fund Accounting & Private Equity Operations',
+          edge: 'Every private equity fund requires accountants who understand the specific financial reporting, carried interest calculations, capital call mechanics, and investor reporting requirements that govern fund operations. The fund accountant is the financial infrastructure of the acquisition economy — ensuring that the returns get measured correctly, the distributions get calculated properly, and the LP reporting meets institutional investor standards. This is a specialized and in-demand career that most accounting students never encounter until they are already on a different path.'
+        }
+      ]
+    },
+    {
+      major_label: 'Real Estate',
+      riasec_affinity: ['E', 'I', 'C'],
+      riasec_conflict: ['A'],
+      program_keywords: ['real estate', 'real estate finance', 'property investment', 'commercial real estate', 'real estate development'],
+      entry_careers: ['Real Estate Analyst', 'Acquisitions Analyst', 'Asset Manager', 'Development Associate'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: false,
+      emerging_role: 'PropTech Investment Analyst — the real estate professional who evaluates investments in technology companies disrupting property markets — from construction technology and smart building systems to short-term rental platforms and real estate data analytics. As technology investment has flowed into every aspect of the real estate industry, the analyst who understands both the real estate fundamentals and the technology business models is operating at an intersection that most real estate professionals and most technology investors cannot yet occupy simultaneously.',
+      deployment_contexts: [
+        {
+          domain: 'Commercial Real Estate Acquisitions',
+          edge: 'The acquisition of income-producing commercial real estate — office buildings, industrial facilities, multifamily housing, retail centers, data centers — requires financial modeling, market analysis, debt structuring, and the operational understanding of what drives net operating income in each asset class. The real estate acquisitions professional who develops genuine fluency in multiple asset classes and multiple markets is building toward a career where the deal flow is persistent, the compensation is strong, and the opportunity to build a track record that leads to fund management or entrepreneurial development is available at a younger age than in almost any other investment career. USC, NYU, and the University of Pennsylvania all have real estate programs with direct placement into major acquisitions platforms.'
+        },
+        {
+          domain: 'Industrial & Logistics Real Estate',
+          edge: 'The rise of e-commerce has made industrial and logistics real estate the most sought-after asset class in commercial property. Every distribution center, every last-mile delivery hub, every cold storage facility is a real estate asset that someone acquired, developed, and is now leasing to the companies that move goods across America. The real estate professional who specializes in industrial and logistics is working in the intersection of real estate finance and supply chain economics — and the demand for this expertise is growing faster than the current real estate investment management industry can supply professionals to meet it.'
+        }
+      ]
+    },
+    {
+      major_label: 'Business Administration',
+      riasec_affinity: ['E', 'C', 'I'],
+      riasec_conflict: ['A', 'R'],
+      program_keywords: ['business administration', 'entrepreneurship', 'deal making', 'negotiation', 'strategy', 'general management'],
+      entry_careers: ['Business Development Associate', 'Strategy Analyst', 'Operations Associate at PE-backed company', 'Management Trainee'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: true,
+      emerging_role: 'PE Portfolio Company Operator — the general management professional embedded inside a private equity-owned company to drive the operational improvements that justify the acquisition price. As PE firms have shifted from financial engineering to operational value creation, the operator who can run a sales team, fix a supply chain, build a management reporting system, and retain key talent through a transition is one of the most sought-after profiles in the PE ecosystem — and is not a finance person. They are a business operator who understands what PE ownership means and how to move fast inside that context.',
+      deployment_contexts: [
+        {
+          domain: 'Entrepreneurship Through Acquisition',
+          edge: 'The search fund model — where an individual or pair of individuals raises capital to search for, acquire, and then operate a single small business — has become one of the most institutionalized and most successful entrepreneurship paths available to MBA graduates and increasingly to exceptional undergraduates. The business administration student who understands the mechanics of a search fund — the blind pool structure, the acquisition criteria, the operational improvement thesis — and who has the interpersonal skills to build trust with a business owner who has spent thirty years building something they are now selling, is building toward one of the most complete entrepreneurial experiences available. Babson College and Stanford Graduate School of Business have the strongest search fund communities in the country.'
+        },
+        {
+          domain: 'Franchise Development & Roll-Up Operations',
+          edge: 'The franchise acquisition — buying a franchise unit or a small chain and building it into a regional or national operation through systematic replication — is one of the most accessible and most reliable applications of the acquisition economy thesis for the business generalist. The professional who understands unit economics, location selection, operations standardization, and the franchise legal framework is building toward a career that allows business ownership at a scale and speed that organic startup formation rarely provides. Babson and Butler University both have entrepreneurship programs that take the acquisition path seriously as a first career option, not just a mid-career pivot.'
+        }
+      ]
+    }
+  ]
+});
+
+// ── NAICS 95 — The Longevity Economy ─────────────────────────────────────────
+Object.assign(MAJOR_MAP, {
+  95: [
+    {
+      major_label: 'Biology / Pre-Medicine (Longevity Track)',
+      riasec_affinity: ['I', 'R', 'S'],
+      riasec_conflict: ['A', 'C'],
+      program_keywords: ['longevity medicine', 'preventive medicine', 'gerontology', 'biogerontology', 'aging biology', 'healthspan'],
+      entry_careers: ['Clinical Research Coordinator', 'Pre-Med Graduate', 'Research Associate in Aging Biology', 'Longevity Clinic Associate'],
+      world_alignment: 'Think',
+      cc_transfer_friendly: false,
+      emerging_role: 'Longevity Medicine Physician — the clinician who practices medicine oriented around healthspan extension rather than disease treatment — using advanced biomarker panels, biological age testing, precision nutrition, exercise prescription, sleep optimization, and emerging therapeutics including GLP-1 medications, senolytics, and peptide therapies to help patients remain functionally vital decades longer than traditional medicine assumes. Function Health, Fountain Life, and the Cleveland Clinic Executive Health program are building the institutional infrastructure for this practice model.',
+      deployment_contexts: [
+        {
+          domain: 'Preventive & Precision Medicine',
+          edge: 'The physician who practices longevity medicine is not treating disease — they are preventing it twenty years before it would otherwise appear. Coronary artery calcium scoring, ApoB and Lp(a) measurement, continuous glucose monitoring, biological age testing, and VO2 max assessment are the tools of a clinical practice that most medical training programs have not yet formalized. The medical student who arrives with a longevity framework — who understands why insulin resistance is a longevity risk factor decades before it becomes diabetes, why sleep architecture matters for Alzheimer\'s risk, and why muscle mass preservation is as important as cardiovascular fitness — is practicing a more complete version of medicine than their peers. USC Davis School of Gerontology and Harvard Medical School both have research programs that prepare clinicians for this emerging specialty.'
+        },
+        {
+          domain: 'Longevity Research & Biogerontology',
+          edge: 'The biology of aging — why cells senesce, how telomeres shorten, what mTOR inhibition does to lifespan, how NAD+ declines with age — is the fastest-moving research field in biology. The Buck Institute, Altos Labs, and Calico are among the private research organizations now funding aging biology research at a scale that rivals NIH. The undergraduate biology student who develops genuine fluency in the molecular mechanisms of aging — who reads David Sinclair, understands the Hallmarks of Aging framework, and has done research in a relevant laboratory — is building toward a graduate and research career in a field that is early enough to make a defining contribution. USC, Harvard, and the University of Washington all have aging biology research programs with undergraduate research opportunities.'
+        }
+      ]
+    },
+    {
+      major_label: 'Gerontology',
+      riasec_affinity: ['S', 'I', 'E'],
+      riasec_conflict: ['R', 'A'],
+      program_keywords: ['gerontology', 'aging studies', 'elder care', 'aging policy', 'senior services', 'USC Davis'],
+      entry_careers: ['Gerontological Specialist', 'Aging Services Coordinator', 'Senior Living Administrator', 'Aging Policy Analyst'],
+      world_alignment: 'People',
+      cc_transfer_friendly: true,
+      emerging_role: 'Senior Living Development Director — the professional who develops, designs, and operates the next generation of senior living communities — communities that look nothing like the nursing homes of the previous generation and everything like the vibrant, technology-enabled, health-optimized environments that 73 million aging Baby Boomers expect and are willing to pay for. The shortage of senior housing relative to projected demand is one of the most certain business opportunities in the American economy over the next twenty years.',
+      deployment_contexts: [
+        {
+          domain: 'Senior Living Operations & Development',
+          edge: 'The United States needs 880,000 new senior housing units by 2030 and the current construction pipeline falls far short of that requirement. The gerontologist who combines aging science with operational and development competency is building toward a career at the intersection of healthcare, real estate, and hospitality that does not yet have a sufficient supply of trained professionals to meet the demand that demographics guarantee. USC\'s Davis School of Gerontology is the only standalone gerontology school in the United States and its graduates are placed in senior living development, healthcare administration, and aging policy roles at a rate that most programs cannot approach.'
+        },
+        {
+          domain: 'Aging Policy & Public Health Administration',
+          edge: 'The policy questions generated by an aging population — how Social Security functions when average retirement lasts thirty years, how Medicare finances Alzheimer\'s drugs that cost $26,000 annually per patient, how communities redesign themselves to serve residents who can no longer drive — are among the most consequential domestic policy challenges of the next three decades. The gerontologist who develops policy fluency alongside aging science is building toward a career where the work is consequential, the expertise is rare, and the need is guaranteed by demographic inevitability. American University and Georgetown both have aging policy concentrations with direct placement into federal aging policy roles.'
+        }
+      ]
+    },
+    {
+      major_label: 'Nursing (Gerontological Specialty)',
+      riasec_affinity: ['S', 'I', 'R'],
+      riasec_conflict: ['A', 'C'],
+      program_keywords: ['nursing', 'gerontological nursing', 'adult-gerontology nurse practitioner', 'AGNP', 'geriatric care', 'long-term care nursing'],
+      entry_careers: ['Registered Nurse', 'Adult-Gerontology Nurse Practitioner', 'Home Health Nurse', 'Memory Care Nurse'],
+      world_alignment: 'People',
+      cc_transfer_friendly: false,
+      emerging_role: 'Adult-Gerontology Nurse Practitioner (AGNP) — the advanced practice nurse who provides primary and specialty care to aging adults with near-physician autonomy, managing complex chronic conditions, coordinating care across specialists, and serving as the primary clinical relationship for patients whose needs exceed what a primary care physician visit every six months can address. The structural shortage of geriatricians — there are fewer than 7,500 board-certified geriatricians in the United States for 54 million adults over 65 — means that AGNPs are filling a clinical gap that physician training pipelines cannot close.',
+      deployment_contexts: [
+        {
+          domain: 'Geriatric Primary Care & Complex Care Management',
+          edge: 'The aging adult with five chronic conditions, ten medications, and a care team of six specialists needs a coordinator more than they need another specialist. The adult-gerontology nurse practitioner who can hold that coordination role — who knows the patient\'s full clinical picture, manages the medication interactions, and communicates with the family — is providing the most valuable clinical service in geriatric care and the one most consistently absent. Indiana University, Ohio State, and the University of Florida all have AGNP programs with strong clinical placement in healthcare systems serving large aging populations.'
+        },
+        {
+          domain: 'Memory Care & Dementia Nursing',
+          edge: 'Alzheimer\'s disease affects 6.7 million Americans today and is projected to affect 13 million by 2050. The nursing professional who specializes in memory care — who understands the behavioral manifestations of dementia, the communication techniques that reduce agitation, the family dynamics that complicate care, and the legal and ethical dimensions of caring for someone who can no longer make decisions for themselves — is building toward one of the most demanding and most meaningful clinical careers in aging care. The supply of memory care specialists is structurally inadequate relative to the population that will need them.'
+        }
+      ]
+    },
+    {
+      major_label: 'Public Health',
+      riasec_affinity: ['I', 'S', 'E'],
+      riasec_conflict: ['R', 'A'],
+      program_keywords: ['public health', 'population health', 'aging policy', 'health equity', 'epidemiology', 'aging demographics'],
+      entry_careers: ['Public Health Analyst', 'Aging Services Program Manager', 'Health Policy Analyst', 'Population Health Coordinator'],
+      world_alignment: 'Think',
+      cc_transfer_friendly: true,
+      emerging_role: 'Population Longevity Program Designer — the public health professional who designs and implements population-level interventions that extend healthspan across communities — fall prevention programs, social isolation reduction initiatives, hearing health screening campaigns, metabolic health programs — translating the clinical evidence on longevity determinants into programs that reach the people who need them before the healthcare system does. The Lancet Commission on Dementia Prevention has identified twelve modifiable risk factors; the public health professional who builds programs around those twelve is doing some of the highest-leverage preventive work in medicine.',
+      deployment_contexts: [
+        {
+          domain: 'Age-Friendly Community Development',
+          edge: 'The WHO Global Network of Age-Friendly Cities and Communities has established a framework for communities that want to redesign their physical environments, social infrastructure, and service systems to serve aging residents. The public health professional who understands both the evidence base for age-friendly design and the political and organizational work required to implement it in a real community is doing work at the intersection of aging science, urban planning, and community organizing. The AARP Public Policy Institute and the Milken Institute Center for the Future of Aging both run fellowship programs that train public health professionals for this specific work.'
+        },
+        {
+          domain: 'Health Equity & Aging Disparities',
+          edge: 'The experience of aging in America is profoundly unequal — shaped by race, income, geography, and decades of differential access to the preventive care and the environmental conditions that determine biological age. The public health professional who applies an equity lens to aging — who asks why Black Americans have higher rates of Alzheimer\'s and hypertension and works on the upstream determinants of those disparities — is doing some of the most consequential and most under-resourced work in aging research and policy. Johns Hopkins Bloomberg School of Public Health and Harvard Chan School both have aging and health equity concentrations.'
+        }
+      ]
+    },
+    {
+      major_label: 'Kinesiology / Exercise Science (Longevity Track)',
+      riasec_affinity: ['R', 'I', 'S'],
+      riasec_conflict: ['A', 'C'],
+      program_keywords: ['exercise science', 'kinesiology', 'longevity fitness', 'strength conditioning', 'fall prevention', 'physical therapy pathway'],
+      entry_careers: ['Strength & Conditioning Specialist', 'Exercise Physiologist', 'Fall Prevention Specialist', 'Clinical Exercise Physiologist'],
+      world_alignment: 'People',
+      cc_transfer_friendly: true,
+      emerging_role: 'Longevity Strength & Conditioning Specialist — the exercise professional who designs and implements strength, balance, and cardiorespiratory training programs specifically for aging adults, with the explicit goal of extending the period of functional independence and compressing the period of decline. VO2 max, muscle mass preservation, and balance capacity are now understood as the three most important physical predictors of longevity and quality of life in aging — and the specialist who can improve all three in a 70-year-old is doing clinical-grade work that the healthcare system does not yet adequately compensate or credential.',
+      deployment_contexts: [
+        {
+          domain: 'Longevity Fitness & Functional Movement',
+          edge: 'The ability to get up off the floor without using your hands at 80 predicts survival better than most biomarkers. The grip strength of a 65-year-old predicts mortality over the next ten years better than blood pressure. The exercise professional who understands the specific movement competencies that predict longevity — who can assess and train a 70-year-old for the functional demands of independent living rather than athletic performance — is practicing exercise science at its most clinically meaningful. Ohio State, the University of Michigan, and Penn State all have exercise science programs with aging and clinical concentrations that most high school students never encounter.'
+        },
+        {
+          domain: 'Fall Prevention & Vestibular Rehabilitation',
+          edge: 'One in four adults over 65 falls each year. Falls are the leading cause of injury death in older adults and the single largest driver of premature loss of independent living. The exercise and rehabilitation professional who specializes in fall prevention — who understands vestibular function, balance assessment, strength training for fall risk reduction, and the environmental modifications that reduce fall hazard — is providing one of the highest-impact clinical interventions available in aging care at a cost that is a fraction of the hospitalization that a fall produces.'
+        }
+      ]
+    }
+  ]
+});
+
+// ── NAICS 96 — The Legacy Economy ────────────────────────────────────────────
+Object.assign(MAJOR_MAP, {
+  96: [
+    {
+      major_label: 'Finance (Wealth Management Track)',
+      riasec_affinity: ['C', 'E', 'I'],
+      riasec_conflict: ['A', 'R'],
+      program_keywords: ['wealth management', 'financial planning', 'estate planning', 'family office', 'fiduciary advisory', 'CFP'],
+      entry_careers: ['Financial Planning Associate', 'Wealth Management Analyst', 'Trust Associate', 'Family Office Analyst'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: false,
+      emerging_role: 'Family Office Chief of Staff — the professional who manages the operational complexity of a single-family or multi-family office — coordinating investment management, tax planning, estate administration, philanthropy, concierge services, and family governance across a structure that may manage hundreds of millions or billions in assets for a family that has no interest in managing any of it directly. As wealth concentration has created thousands of family offices that did not exist a generation ago, the operational professional who can run the back office of a family\'s financial life is in persistent demand and almost entirely absent from undergraduate career guidance.',
+      deployment_contexts: [
+        {
+          domain: 'Private Wealth Management & Financial Planning',
+          edge: 'The $84 trillion intergenerational wealth transfer underway in America requires advisors who can help families navigate the financial, legal, and relational complexity of passing wealth from one generation to the next without destroying the family in the process. The wealth management professional who combines financial planning rigor with genuine relationship depth — who understands that money is never really about money — is building toward a career where the work is meaningful, the compensation is strong, and the client relationships compound in value over decades rather than years. Texas Tech University runs the top-ranked financial planning program in the country and almost never appears on a high school student\'s radar. Claremont McKenna\'s Roberts Sequence produces disproportionate placement in wealth management relative to its size.'
+        },
+        {
+          domain: 'Family Office Investment Management',
+          edge: 'The single-family office — a private investment management structure serving one ultra-high-net-worth family — is the fastest-growing segment of institutional asset management. Families that previously used wirehouse advisors are building internal investment teams with investment philosophies, risk frameworks, and reporting infrastructure that rivals institutional endowments. The investment professional who enters a family office environment early is learning a version of investment management that combines the intellectual rigor of institutional investing with the relationship depth and mission alignment of serving a family\'s multigenerational goals. The University of Denver Daniels College and University of Richmond both have strong wealth management concentrations with direct placement into family office roles.'
+        },
+        {
+          domain: 'Philanthropic Strategy & Impact Investing',
+          edge: 'The next generation of wealth holders is demanding alignment between their values and their capital in both charitable giving and investment portfolios. The philanthropic advisor who can help a family articulate what it stands for, design a giving strategy that deploys capital toward those values, and measure the impact of that deployment is doing some of the most intellectually and emotionally meaningful work in wealth management. Impact investing — the allocation of investment capital to companies and funds that generate both financial returns and measurable social or environmental outcomes — is a $1.2 trillion global market that is growing faster than the supply of professionals trained to analyze and execute it.'
+        }
+      ]
+    },
+    {
+      major_label: 'Accounting (Trust & Estate Track)',
+      riasec_affinity: ['C', 'I', 'E'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['estate accounting', 'trust administration', 'fiduciary accounting', 'tax planning', 'CPA', 'estate tax'],
+      entry_careers: ['Trust Officer', 'Estate Tax Associate', 'Fiduciary Accountant', 'Tax Planning Associate'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: false,
+      emerging_role: 'Wealth Transfer Tax Specialist — the CPA who specializes in the strategies that minimize estate and gift tax liability across the $84 trillion intergenerational wealth transfer underway in America — GRATs, QPRTs, SLATs, IDGTs, charitable remainder trusts, and the constantly evolving landscape of tax legislation that creates planning opportunities for families who engage advisors early enough to use them. As the estate tax exemption fluctuates with each administration and Congress, the tax specialist who stays current on planning strategies is consistently the most valuable professional in the room during family wealth transfer discussions.',
+      deployment_contexts: [
+        {
+          domain: 'Estate & Gift Tax Planning',
+          edge: 'The estate tax is the most avoidable major tax in the American tax code — avoidable, specifically, by families who engage competent advisors and implement planning strategies before the taxable event occurs. The accountant who specializes in estate and gift tax planning is working with families on decisions that can save — or cost — tens of millions of dollars, and whose quality of advice is determined entirely by their technical depth and their ability to communicate complex strategies to clients who did not go to law school. Indiana University Kelley and Notre Dame Mendoza both have tax tracks with strong estate planning placement at Big Four and regional accounting firms that serve high-net-worth clients.'
+        },
+        {
+          domain: 'Trust Administration & Fiduciary Management',
+          edge: 'Trust administration — managing the assets held in trust, making discretionary distribution decisions, filing trust tax returns, communicating with beneficiaries, and ensuring that the trust document\'s instructions are followed accurately and in the trustee\'s fiduciary capacity — is one of the most detail-intensive and most consequential administrative functions in wealth management. The trust officer who combines accounting precision with client relationship skill and legal literacy is operating at the intersection of three professional disciplines in a way that very few professionals can do well. Texas Tech\'s financial planning program and Creighton University both have fiduciary management concentrations that prepare students specifically for this function.'
+        }
+      ]
+    },
+    {
+      major_label: 'Pre-Law (Estate & Trust Law)',
+      riasec_affinity: ['E', 'I', 'C'],
+      riasec_conflict: ['R', 'A'],
+      program_keywords: ['estate law', 'trust law', 'elder law', 'estate planning attorney', 'wealth transfer law', 'probate'],
+      entry_careers: ['Estate Planning Attorney Associate', 'Trust & Estate Law Clerk', 'Elder Law Associate', 'Wealth Transfer Counsel'],
+      world_alignment: 'Think',
+      cc_transfer_friendly: true,
+      emerging_role: 'Digital Asset Estate Attorney — the estate planning lawyer who has developed specific competency in the inheritance and transfer of digital assets — cryptocurrency, NFTs, digital business interests, online accounts, intellectual property in digital form, and the legal structures required to ensure that these assets pass to the intended beneficiaries rather than being lost at death because no one had the passwords or the legal authority to access them. As digital wealth has grown and the estate planning bar has been slow to develop this expertise, the attorney who builds it early has a genuine competitive advantage in a client population that is only growing.',
+      deployment_contexts: [
+        {
+          domain: 'Estate Planning & Wealth Transfer Law',
+          edge: 'The estate planning attorney who designs the legal structures through which a family\'s accumulated wealth transfers to the next generation — the wills, trusts, powers of attorney, healthcare directives, and the complex gifting strategies that minimize tax liability — is doing some of the most consequential legal work that exists. The quality of an estate plan is not measured in the courtroom. It is measured thirty years later, when the client\'s children receive what was intended, in the amounts intended, with minimal friction and minimal tax cost. Vanderbilt Law School is located in Nashville, the estate planning capital of the South, and its graduates have direct placement into the firms and family offices that serve the region\'s substantial private wealth. University of Miami Law and Northwestern Law both have estate planning concentrations with strong placement in major wealth markets.'
+        },
+        {
+          domain: 'Elder Law & Long-Term Care Planning',
+          edge: 'Elder law sits at the intersection of estate planning, healthcare law, and government benefits — helping aging adults and their families navigate Medicaid planning, nursing home contracts, guardianship and conservatorship proceedings, and the legal structures that protect assets while qualifying for long-term care benefits that can cost $100,000 or more per year. The elder law attorney is often the most important professional relationship a family has during the most stressful period of a parent\'s aging — when cognitive decline intersects with financial complexity and family dynamics in ways that require both legal expertise and genuine human skill. The National Academy of Elder Law Attorneys provides the professional community; the undergraduate preparation is any strong pre-law foundation.'
+        }
+      ]
+    },
+    {
+      major_label: 'Philosophy (Wealth Ethics & Fiduciary Track)',
+      riasec_affinity: ['I', 'E', 'A'],
+      riasec_conflict: ['R', 'C'],
+      program_keywords: ['philosophy', 'ethics', 'fiduciary duty', 'pre-law', 'bioethics', 'values-based investing'],
+      entry_careers: ['Research Associate', 'Policy Analyst', 'Ethics Consultant', 'Pre-Law Graduate — Estate Track'],
+      world_alignment: 'Think',
+      cc_transfer_friendly: true,
+      emerging_role: 'Values Alignment Advisor — the professional who helps ultra-high-net-worth families articulate the values that should govern their philanthropic and investment decisions — translating abstract family values into specific giving criteria, investment screening frameworks, and governance structures that ensure the family\'s capital reflects what the family actually believes. As next-generation wealth holders demand coherence between their values and their capital at an intensity that previous generations did not, the advisor who can facilitate that values articulation process is providing a service that financial advisors are not trained to deliver.',
+      deployment_contexts: [
+        {
+          domain: 'Fiduciary Ethics & Trust Law Preparation',
+          edge: 'The philosophy major who goes to law school with a specific interest in estate and trust law arrives with something most law students lack: a rigorous framework for thinking about duty, obligation, fairness, and the ethical dimensions of holding property on behalf of someone else. Fiduciary duty — the legal obligation to act in the best interest of another — is fundamentally a philosophical concept that has been given legal form, and the attorney or advisor who understands it philosophically as well as legally makes better decisions under ambiguity than one who only knows the rules. Notre Dame, Georgetown, and Vanderbilt all have philosophy programs with strong pre-law placement in estate and trust practice.'
+        },
+        {
+          domain: 'Family Governance & Philanthropic Strategy',
+          edge: 'The most consequential decisions a wealthy family makes are not investment decisions. They are governance decisions — how the family makes collective decisions, how it defines membership, how it educates the next generation about the responsibilities of wealth, and what values should govern the deployment of its philanthropic capital. The advisor who can facilitate these conversations — who has the philosophical training to hold genuinely contested questions without forcing premature resolution — is providing a service that is in significant demand and almost entirely absent from the financial advisory industry as currently trained. The Purposeful Planning Institute and the Family Wealth Alliance are the professional communities where this work is being developed.'
+        }
+      ]
+    },
+    {
+      major_label: 'Financial Planning',
+      riasec_affinity: ['C', 'E', 'S'],
+      riasec_conflict: ['A', 'R'],
+      program_keywords: ['financial planning', 'CFP certification', 'retirement planning', 'tax planning', 'insurance planning', 'investment planning'],
+      entry_careers: ['Financial Planning Associate', 'CFP Candidate', 'Retirement Planning Specialist', 'Insurance & Risk Analyst'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: true,
+      emerging_role: 'Holistic Financial Life Planner — the CFP who practices planning as a life-coaching adjacent discipline — integrating the financial plan with the client\'s life goals, values, and psychological relationship with money rather than treating financial planning as a purely technical exercise in tax optimization and investment allocation. As behavioral finance research has demonstrated that financial decisions are driven more by psychology than by mathematics, the planner who understands both the numbers and the human being making decisions about them is providing a qualitatively superior service that clients will pay a premium for and stay with for decades.',
+      deployment_contexts: [
+        {
+          domain: 'Comprehensive Financial Planning & CFP Practice',
+          edge: 'The Certified Financial Planner credential is the gold standard designation in financial planning — requiring coursework, examination, experience, and ongoing ethics standards that distinguish the professional planner from the sales-oriented product distributor. The financial planning student who earns the CFP and builds a practice around genuine fiduciary advice — charging for advice rather than earning commissions on products — is building toward one of the most relationship-driven and most personally satisfying financial careers available. Texas Tech University runs the number-one ranked financial planning program in the country by virtually every measure, and its graduates are placed in fee-only planning firms, family offices, and wirehouse advisor development programs at rates that most universities cannot approach.'
+        },
+        {
+          domain: 'Retirement Income Planning',
+          edge: 'The transition from asset accumulation to asset distribution — from building the pile to living off it without running out — is the most technically complex financial planning challenge most families face and the one for which most advisors are least prepared. Social Security optimization, required minimum distribution management, Roth conversion strategy, long-term care insurance analysis, and the sequence-of-returns risk that makes early retirement withdrawals catastrophic in down markets all require specific expertise that generic financial planning training does not adequately address. The planner who develops genuine depth in retirement income planning is building toward a specialty with growing demand, limited supply, and clients who remain loyal for the rest of their lives because the stakes of getting it wrong are too high to shop advisors.'
+        }
+      ]
+    }
+  ]
+});
