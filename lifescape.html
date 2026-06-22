@@ -955,23 +955,59 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="pref-options">
       <button class="pref-btn" data-pref="religion" data-val="catholic" onclick="selectPref(this,'religion',false)">
         Catholic
-        <span class="pref-sub">Notre Dame, Georgetown, Boston College, Gonzaga, Villanova</span>
+        <span class="pref-sub">Notre Dame, Georgetown, Boston College, Gonzaga, Villanova, Loyola, Marquette</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="methodist" onclick="selectPref(this,'religion',false)">
+        Methodist
+        <span class="pref-sub">Duke, Emory, Boston University, SMU, Ohio Wesleyan, Elon, High Point</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="baptist" onclick="selectPref(this,'religion',false)">
+        Baptist
+        <span class="pref-sub">Baylor, Wake Forest, Belmont, Furman, Wofford, TCU</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="evangelical" onclick="selectPref(this,'religion',false)">
+        Evangelical / Non-Denominational
+        <span class="pref-sub">Wheaton, Biola, Calvin, Gordon, Cedarville</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="lutheran" onclick="selectPref(this,'religion',false)">
+        Lutheran
+        <span class="pref-sub">St. Olaf, Valparaiso, Augustana, Gettysburg, Muhlenberg</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="presbyterian" onclick="selectPref(this,'religion',false)">
+        Presbyterian
+        <span class="pref-sub">Davidson, Macalester, Centre College</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="quaker" onclick="selectPref(this,'religion',false)">
+        Quaker / Friends
+        <span class="pref-sub">Swarthmore, Haverford, Earlham</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="episcopal" onclick="selectPref(this,'religion',false)">
+        Episcopal / Anglican
+        <span class="pref-sub">University of the South (Sewanee)</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="church_of_christ" onclick="selectPref(this,'religion',false)">
+        Church of Christ
+        <span class="pref-sub">Pepperdine, Lipscomb, Abilene Christian</span>
       </button>
       <button class="pref-btn" data-pref="religion" data-val="lds" onclick="selectPref(this,'religion',false)">
-        LDS / Mormon
+        LDS / Latter-day Saints
         <span class="pref-sub">Brigham Young University</span>
       </button>
-      <button class="pref-btn" data-pref="religion" data-val="protestant" onclick="selectPref(this,'religion',false)">
-        Protestant / Christian
-        <span class="pref-sub">Baylor, Wake Forest, Emory, Pepperdine, Elon, University of the South</span>
+      <button class="pref-btn" data-pref="religion" data-val="seventh_day_adventist" onclick="selectPref(this,'religion',false)">
+        Seventh-day Adventist
+        <span class="pref-sub">Andrews University, Walla Walla, Southern Adventist</span>
       </button>
       <button class="pref-btn" data-pref="religion" data-val="jewish" onclick="selectPref(this,'religion',false)">
         Jewish
-        <span class="pref-sub">Brandeis and schools with strong Hillel programs</span>
+        <span class="pref-sub">Brandeis, Yeshiva, and universities with strong Hillel communities</span>
+      </button>
+      <button class="pref-btn" data-pref="religion" data-val="protestant" onclick="selectPref(this,'religion',false)">
+        General Christian / Any Protestant
+        <span class="pref-sub">Any school with a Christian campus culture — all denominations</span>
       </button>
       <button class="pref-btn" data-pref="religion" data-val="secular" onclick="selectPref(this,'religion',false)">
         Secular preferred
-        <span class="pref-sub">Show me schools without strong religious culture</span>
+        <span class="pref-sub">Schools without strong religious culture</span>
       </button>
       <button class="pref-btn" data-pref="religion" data-val="no_preference" onclick="selectPref(this,'religion',false)">
         No preference

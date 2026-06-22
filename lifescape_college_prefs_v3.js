@@ -38,10 +38,7 @@ const CONFERENCE_POOLS = {
     // 2024 additions from Pac-12
     "University of Oregon","University of Washington",
     "University of Illinois Urbana-Champaign",
-    "University of Wisconsin-Madison","University of California Los Angeles",
-    "University of Illinois Urbana-Champaign",
-    "University of Wisconsin-Madison",
-    "UCLA"
+    "University of Wisconsin-Madison","University of California Los Angeles"
   ],
 
   // ── ACC (2024-25 current: 17 members + Notre Dame partial) ─────────────
@@ -55,8 +52,7 @@ const CONFERENCE_POOLS = {
     // 2024 additions from Pac-12
     "Stanford University",
     "Southern Methodist University",
-    "University of North Carolina Chapel Hill",
-    "SMU"
+    "University of North Carolina Chapel Hill"
   ],
 
   // ── BIG 12 (2024-25 current: 16 members) ────────────────────────────────
@@ -72,11 +68,7 @@ const CONFERENCE_POOLS = {
     // Kansas State, Oklahoma State, TCU, Texas Tech, West Virginia, Iowa State
     // Cincinnati, Houston not in our DB,
     "Texas Christian University",
-    "Texas Tech University",
-    "Texas A&M University",
-    "Texas Tech University",
-    "TCU",
-    "University of North Texas"
+    "Texas Tech University"
   ],
 
   // ── WEST COAST / PAC-12 LEGACY ─────────────────────────────────────────
@@ -110,25 +102,7 @@ const CONFERENCE_POOLS = {
     "San Diego State University",
     "UC Santa Barbara",
     "University of Southern California",
-    "UC Berkeley","University of California Los Angeles",
-    "UC Berkeley",
-    "UC Santa Barbara",
-    "USC",
-    "San Diego State University",
-    "San Jose State University",
-    "San Francisco State University",
-    "Eastern Washington University",
-    "University of Hawaii at Manoa",
-    "University of Alaska Fairbanks",
-    "University of Nevada Las Vegas",
-    "University of Nevada Reno",
-    "University of Idaho",
-    "Montana State University",
-    "University of Montana",
-    "University of Wyoming",
-    "University of New Mexico",
-    "New Mexico State University",
-    "Utah Valley University"
+    "UC Berkeley","University of California Los Angeles"
   ],
 
   ivy: [
@@ -180,168 +154,10 @@ const CONFERENCE_POOLS = {
     "Boston College","Villanova University","Temple University","Drexel University",
     "Northeastern University","Stetson University","Boston University",
     "Fordham University","UC Riverside","University of Delaware","California State University Fullerton",
-    "California State University Northridge","California State University Long Beach",
-    "University of Memphis",
-    "East Carolina University",
-    "Appalachian State University",
-    "Marshall University",
-    "Georgia State University",
-    "Texas State University",
-    "Sam Houston State University",
-    "South Dakota State University",
-    "North Dakota State University",
-    "University of North Texas",
-    "University of Tennessee at Chattanooga"
+    "California State University Northridge","California State University Long Beach"
   ],
 
-
-  // ── INDEPENDENT / NON-CONFERENCE / LIBERAL ARTS ─────────────────────────
-  independent: [
-    "UT Austin",
-    "Rice University",
-    "University of North Carolina Chapel Hill",
-    "University of Richmond",
-    "Lehigh University",
-    "Quinnipiac University",
-    "Marquette University",
-    "Rollins College",
-    "High Point University",
-    "James Madison University",
-    "Kennesaw State University",
-    "University of Vermont",
-    "University of Rhode Island",
-    "Binghamton University",
-    "Rochester Institute of Technology",
-    "Belmont University",
-    "Ithaca College",
-    "Bentley University",
-    "Furman University",
-    "Flagler College",
-    "Wofford College",
-    "University of Tulsa",
-    "University of Tennessee at Chattanooga",
-    "Regent University",
-    "College of the Ozarks",
-    "Morehead State University",
-    "California Lutheran University",
-    "California State University San Bernardino",
-    "Barnard College",
-    "Hamilton College",
-    "Vassar College",
-    "Wesleyan University",
-    "Carleton College",
-    "Grinnell College",
-    "Oberlin College",
-    "Reed College",
-    "Denison University",
-    "Kenyon College",
-    "Ohio Wesleyan University",
-    "Dickinson College",
-    "Gettysburg College",
-    "Franklin and Marshall College",
-    "Union College",
-    "Washington and Lee University",
-    "Bryn Mawr College",
-    "Illinois Wesleyan University",
-    "Occidental College",
-    "St. John's College",
-    "Providence College",
-    "Berklee College of Music",
-    "Fashion Institute of Technology",
-    "Rhode Island School of Design",
-    "Pratt Institute"
-  ],
-
-  // ── INDEPENDENT / NON-CONFERENCE / LIBERAL ARTS ─────────────────────────
-  independent: [
-    "UT Austin",
-    "Rice University",
-    "University of North Carolina Chapel Hill",
-    "University of Richmond",
-    "Lehigh University",
-    "Quinnipiac University",
-    "Marquette University",
-    "Rollins College",
-    "High Point University",
-    "James Madison University",
-    "Kennesaw State University",
-    "University of Vermont",
-    "University of Rhode Island",
-    "Binghamton University",
-    "Rochester Institute of Technology",
-    "Belmont University",
-    "Ithaca College",
-    "Bentley University",
-    "Furman University",
-    "Flagler College",
-    "Wofford College",
-    "University of Tulsa",
-    "University of Tennessee at Chattanooga",
-    "Regent University",
-    "College of the Ozarks",
-    "Morehead State University",
-    "California Lutheran University",
-    "California State University San Bernardino",
-    "Barnard College",
-    "Hamilton College",
-    "Vassar College",
-    "Wesleyan University",
-    "Carleton College",
-    "Grinnell College",
-    "Oberlin College",
-    "Reed College",
-    "Denison University",
-    "Kenyon College",
-    "Ohio Wesleyan University",
-    "Dickinson College",
-    "Gettysburg College",
-    "Franklin and Marshall College",
-    "Union College",
-    "Washington and Lee University",
-    "Bryn Mawr College",
-    "Illinois Wesleyan University",
-    "Occidental College",
-    "St. John's College",
-    "Providence College",
-    "Berklee College of Music",
-    "Fashion Institute of Technology",
-    "Rhode Island School of Design",
-    "Pratt Institute"
-  ],
-  no_sports: ["__ALL__"],
-  // ── MARITIME ACADEMIES ──────────────────────────────────────────────────
-  maritime: [
-    "United States Merchant Marine Academy",
-    "Maine Maritime Academy",
-    "Massachusetts Maritime Academy",
-    "Texas A&M University at Galveston",
-    "California State University Maritime Academy"
-  ],
-
-  // ── HISTORICALLY BLACK COLLEGES & UNIVERSITIES ──────────────────────────
-  hbcu: [
-    "Howard University",
-    "Spelman College",
-    "Morehouse College",
-    "Hampton University",
-    "Florida A&M University",
-    "North Carolina A&T State University",
-    "Xavier University of Louisiana",
-    "Tuskegee University",
-    "Lincoln University",
-    "Morgan State University"
-  ],
-
-  // ── MILITARY COLLEGES & SERVICE ACADEMIES ───────────────────────────────
-  military: [
-    "United States Military Academy",
-    "United States Naval Academy",
-    "United States Air Force Academy",
-    "United States Coast Guard Academy",
-    "The Citadel",
-    "Virginia Military Institute",
-    "Norwich University"
-  ]
+  no_sports: ["__ALL__"]
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -380,15 +196,7 @@ const REGION_POOLS = {
     "James Madison University",
     "University of Memphis",
     "Regent University",
-    "Davidson College",
-    "East Carolina University",
-    "Appalachian State University",
-    "Marshall University",
-    "Georgia State University",
-    "University of Tennessee at Chattanooga",
-    "Morehead State University",
-    "Belmont University",
-    "University of Memphis"
+    "Davidson College"
   ],
 
   southwest: [
@@ -404,11 +212,7 @@ const REGION_POOLS = {
     "University of Texas at Austin",
     "University of Tulsa",
     "University of New Mexico",
-    "New Mexico State University",
-    "Texas State University",
-    "Sam Houston State University",
-    "University of North Texas",
-    "Texas A&M University at Galveston"
+    "New Mexico State University"
   ],
 
   west_coast: [
@@ -441,15 +245,7 @@ const REGION_POOLS = {
     "University of Montana",
     "Montana State University",
     "California Lutheran University",
-    "California State University San Bernardino",
-    "University of Hawaii at Manoa",
-    "University of Alaska Fairbanks",
-    "San Jose State University",
-    "San Francisco State University",
-    "Eastern Washington University",
-    "California State University San Bernardino",
-    "California Lutheran University",
-    "California State University Maritime Academy"
+    "California State University San Bernardino"
   ],
 
   northeast: [
@@ -490,13 +286,7 @@ const REGION_POOLS = {
     "Colgate University",
     "Colby College",
     "Bates College",
-    "Bucknell University",
-    "Quinnipiac University",
-    "Providence College",
-    "Ithaca College",
-    "Binghamton University",
-    "University of Vermont",
-    "University of Rhode Island"
+    "Bucknell University"
   ],
 
   midwest: [
@@ -521,13 +311,7 @@ const REGION_POOLS = {
     "North Dakota State University",
     "South Dakota State University",
     "Grinnell College",
-    "Macalester College",
-    "South Dakota State University",
-    "North Dakota State University",
-    "University of Wyoming",
-    "Montana State University",
-    "University of Montana",
-    "University of Idaho"
+    "Macalester College"
   ],
 
   south_central: [
@@ -537,11 +321,7 @@ const REGION_POOLS = {
     "Duke University","Wake Forest University","North Carolina State University",
     "Elon University","College of William and Mary","Tulane University",
     "University of Mississippi","Mississippi State University","Baylor University",
-    "University of Alabama","Virginia Tech",
-    "University of New Mexico",
-    "New Mexico State University",
-    "University of Nevada Las Vegas",
-    "University of Nevada Reno"
+    "University of Alabama","Virginia Tech"
   ]
 
 };
@@ -835,253 +615,278 @@ const SOCIAL_SCENE_AFFINITY = {
 
 // ── RELIGIOUS AFFILIATION MAP ────────────────────────────────────────────
 const RELIGIOUS_AFFILIATION = {
+
+  // ── CATHOLIC (Jesuit-heavy + diocesan) ───────────────────────────────────
   catholic: [
     'University of Notre Dame','Georgetown University','Boston College',
     'Gonzaga University','Villanova University','Fordham University',
     'Santa Clara University','University of San Diego',
     "Saint Mary's College of California",'University of San Francisco',
-    'Creighton University',
-    'Marquette University'
+    'Creighton University','Marquette University',
+    'Loyola University Chicago','Loyola Marymount University',
+    'Seton Hall University','Duquesne University','DePaul University',
+    'Providence College','Xavier University','Stonehill College'
   ],
+
+  // ── EVANGELICAL / NON-DENOMINATIONAL CHRISTIAN ───────────────────────────
+  evangelical: [
+    'Wheaton College','Biola University','Calvin University',
+    'Gordon College','Cedarville University'
+  ],
+
+  // ── METHODIST ────────────────────────────────────────────────────────────
+  methodist: [
+    'Duke University','Emory University','Boston University',
+    'SMU','Ohio Wesleyan University','Elon University',
+    'High Point University','Butler University','Drake University',
+    'Stetson University','DePauw University','Millsaps College',
+    'Hendrix College','College of Wooster'
+  ],
+
+  // ── BAPTIST ──────────────────────────────────────────────────────────────
+  baptist: [
+    'Baylor University','Wake Forest University','Belmont University',
+    'Furman University','Wofford College','University of Tulsa',
+    'Texas Christian University'
+  ],
+
+  // ── PRESBYTERIAN ─────────────────────────────────────────────────────────
+  presbyterian: [
+    'Davidson College','Macalester College','Centre College',
+    'College of Wooster','Furman University'
+  ],
+
+  // ── QUAKER (Friends) ─────────────────────────────────────────────────────
+  quaker: [
+    'Swarthmore College','Haverford College','Earlham College'
+  ],
+
+  // ── EPISCOPAL / ANGLICAN ─────────────────────────────────────────────────
+  episcopal: [
+    'University of the South','Hobart and William Smith Colleges'
+  ],
+
+  // ── LUTHERAN ─────────────────────────────────────────────────────────────
+  lutheran: [
+    'St. Olaf College','Valparaiso University','Augustana College',
+    'California Lutheran University','Gettysburg College',
+    'Muhlenberg College'
+  ],
+
+  // ── CHURCH OF CHRIST ─────────────────────────────────────────────────────
+  church_of_christ: [
+    'Pepperdine University','Lipscomb University','Abilene Christian University'
+  ],
+
+  // ── LDS / LATTER-DAY SAINTS ──────────────────────────────────────────────
   lds: [
     'Brigham Young University'
   ],
+
+  // ── SEVENTH-DAY ADVENTIST ────────────────────────────────────────────────
+  seventh_day_adventist: [
+    'Andrews University','Walla Walla University','Southern Adventist University'
+  ],
+
+  // ── JEWISH (strong Hillel + historically significant) ────────────────────
+  jewish: [
+    'Brandeis University',
+    'Columbia University','University of Pennsylvania','Brown University',
+    'Cornell University','George Washington University',
+    'American University','New York University','Tulane University',
+    'Yeshiva University'
+  ],
+
+  // ── REFORMED CHRISTIAN ───────────────────────────────────────────────────
+  reformed: [
+    'Calvin University','Hope College','Dordt University'
+  ],
+
+  // ── BROAD PROTESTANT (catch-all for "Christian campus culture") ──────────
   protestant: [
     'Baylor University','Wake Forest University','Emory University',
     'Pepperdine University','Elon University','University of the South',
     'Duke University','Boston University','Tulane University',
     'Butler University','Drake University','Stetson University',
-    'Texas Christian University',
-    'Belmont University',
-    'Furman University',
-    'Wofford College',
-    'High Point University',
-    'Regent University',
-    'Davidson College',
-    'Ohio Wesleyan University',
-    'College of Wooster',
-    'Macalester College',
-    'University of Tulsa',
-    'California Lutheran University',
-    'Swarthmore College',
-    'Haverford College'
+    'Texas Christian University','Belmont University',
+    'Furman University','Wofford College','High Point University',
+    'Regent University','Davidson College','Ohio Wesleyan University',
+    'College of Wooster','Macalester College','University of Tulsa',
+    'California Lutheran University','Swarthmore College','Haverford College',
+    'DePauw University','St. Olaf College','Wheaton College',
+    'Biola University','Calvin University','Gordon College',
+    'Cedarville University','Gettysburg College','Muhlenberg College',
+    'Centre College','Earlham College','Valparaiso University',
+    'Augustana College'
   ],
-  jewish: [
-    'Columbia University','University of Pennsylvania','Brown University',
-    'Cornell University','George Washington University',
-    'American University','New York University','Tulane University'
-  ],
+
+  // ── SECULAR PREFERRED ────────────────────────────────────────────────────
   secular: ['__EXCLUDE_RELIGIOUS__'],
+
+  // ── NO PREFERENCE ────────────────────────────────────────────────────────
   no_preference: ['__ALL__']
 };
 
 const RELIGIOUS_CULTURE_SCHOOLS = [
+  // Schools where religious culture is pervasive and campus life is shaped by faith
   'Brigham Young University','Baylor University','Pepperdine University',
-  'University of the South','Stetson University'
+  'University of the South','Stetson University',
+  'Wheaton College','Biola University','Calvin University',
+  'Gordon College','Cedarville University','Regent University',
+  'Belmont University','High Point University','Andrews University',
+  'Abilene Christian University','Lipscomb University'
 ];
 
 // ── SCHOOL GPA RANGES (unweighted 4.0 scale) ─────────────────────────────
 const SCHOOL_GPA_RANGES = {
-  "Harvard University":{"min":3.9},
-  "Yale University":{"min":3.9},
-  "Princeton University":{"min":3.9},
-  "Columbia University":{"min":3.9},
-  "University of Pennsylvania":{"min":3.9},
-  "Brown University":{"min":3.9},
-  "Cornell University":{"min":3.8},
-  "Dartmouth College":{"min":3.9},
-  "Massachusetts Institute of Technology":{"min":3.9},
-  "Stanford University":{"min":3.9},
-  "California Institute of Technology":{"min":3.9},
-  "University of Chicago":{"min":3.9},
-  "Johns Hopkins University":{"min":3.8},
-  "Northwestern University":{"min":3.8},
-  "Duke University":{"min":3.8},
-  "Vanderbilt University":{"min":3.8},
-  "Georgetown University":{"min":3.8},
-  "Carnegie Mellon University":{"min":3.7},
-  "Emory University":{"min":3.7},
-  "University of Notre Dame":{"min":3.8},
-  "Williams College":{"min":3.9},
-  "Amherst College":{"min":3.9},
-  "Bowdoin College":{"min":3.8},
-  "Middlebury College":{"min":3.7},
-  "Pomona College":{"min":3.8},
-  "Claremont McKenna College":{"min":3.8},
-  "Harvey Mudd College":{"min":3.9},
-  "Webb Institute":{"min":3.7},
-  "Deep Springs College":{"min":3.9},
-  "Colorado College":{"min":3.7},
-  "University of the South":{"min":3.4},
-  "Boston College":{"min":3.7},
-  "University of Virginia":{"min":3.8},
-  "Wake Forest University":{"min":3.7},
-  "Villanova University":{"min":3.6},
-  "Georgia Institute of Technology":{"min":3.7},
-  "University of Michigan":{"min":3.7},
-  "UC San Diego":{"min":3.8},
-  "University of California Irvine":{"min":3.7},
-  "University of California Davis":{"min":3.6},
-  "University of California Santa Cruz":{"min":3.4},
-  "University of Washington":{"min":3.6},
-  "Ohio State University":{"min":3.5},
-  "Penn State University":{"min":3.4},
-  "Purdue University":{"min":3.5},
-  "Indiana University":{"min":3.2},
-  "University of Minnesota":{"min":3.5},
-  "Michigan State University":{"min":3.3},
-  "University of Maryland College Park":{"min":3.5},
-  "Rutgers University":{"min":3.3},
-  "Babson College":{"min":3.5},
-  "Boston University":{"min":3.6},
-  "Northeastern University":{"min":3.6},
-  "New York University":{"min":3.6},
-  "George Washington University":{"min":3.5},
-  "American University":{"min":3.3},
-  "Fordham University":{"min":3.4},
-  "Drexel University":{"min":3.3},
-  "Syracuse University":{"min":3.3},
-  "Temple University":{"min":3.0},
-  "University of Pittsburgh":{"min":3.5},
-  "Case Western Reserve University":{"min":3.7},
-  "Rose-Hulman Institute of Technology":{"min":3.5},
-  "Stevens Institute of Technology":{"min":3.5},
-  "Worcester Polytechnic Institute":{"min":3.5},
-  "Colorado School of Mines":{"min":3.5},
-  "Kettering University":{"min":3.0},
-  "United States Military Academy":{"min":3.8},
-  "University of Georgia":{"min":3.5},
-  "University of Florida":{"min":3.7},
-  "University of Alabama":{"min":3.0},
-  "Auburn University":{"min":3.3},
-  "Louisiana State University":{"min":3.0},
-  "University of Tennessee":{"min":3.2},
-  "University of Arkansas":{"min":3.0},
-  "University of South Carolina":{"min":3.0},
-  "Clemson University":{"min":3.5},
-  "University of Mississippi":{"min":2.8},
-  "Mississippi State University":{"min":2.8},
-  "Florida State University":{"min":3.4},
-  "University of South Florida":{"min":3.0},
-  "University of Central Florida":{"min":3.2},
-  "Florida Atlantic University":{"min":2.8},
-  "Stetson University":{"min":3.0},
-  "University of Iowa":{"min":3.0},
-  "Iowa State University":{"min":3.0},
-  "University of Nebraska-Lincoln":{"min":3.0},
-  "University of Kentucky":{"min":3.0},
-  "University of Missouri":{"min":3.0},
-  "Virginia Tech":{"min":3.4},
-  "North Carolina State University":{"min":3.5},
-  "University of Miami":{"min":3.6},
-  "Elon University":{"min":3.3},
-  "College of William and Mary":{"min":3.8},
-  "University of Oklahoma":{"min":3.2},
-  "University of Kansas":{"min":3.0},
-  "Baylor University":{"min":3.4},
-  "University of Arizona":{"min":3.0},
-  "Arizona State University":{"min":2.8},
-  "University of Colorado Boulder":{"min":3.0},
-  "Colorado State University":{"min":3.0},
-  "University of Denver":{"min":3.3},
-  "University of Oregon":{"min":3.2},
-  "Oregon State University":{"min":3.0},
-  "Boise State University":{"min":2.8},
-  "University of Utah":{"min":3.0},
-  "Brigham Young University":{"min":3.5},
-  "Gonzaga University":{"min":3.6},
-  "Pepperdine University":{"min":3.5},
-  "Santa Clara University":{"min":3.5},
-  "University of San Diego":{"min":3.4},
-  "University of San Francisco":{"min":3.2},
-  "Saint Mary's College of California":{"min":3.2},
-  "California Polytechnic State University San Luis Obispo":{"min":3.5},
-  "UC Riverside":{"min":3.2},
-  "California State University Long Beach":{"min":2.8},
-  "California State University Fullerton":{"min":2.8},
-  "California State University Northridge":{"min":2.5},
-  "California State University Los Angeles":{"min":2.5},
-  "California State University Chico":{"min":2.8},
-  "California State University Fresno":{"min":2.8},
-  "Tulane University":{"min":3.5},
-  "Creighton University":{"min":3.4},
-  "Butler University":{"min":3.2},
-  "Drake University":{"min":3.2},
-  "University of Louisville":{"min":3.0},
-  "University of Connecticut":{"min":3.4},
-  "University of Massachusetts Amherst":{"min":3.5},
-  "University of Delaware":{"min":3.3},
-  "San Diego State University":{"min":3.5},
+  "Harvard University":{min:3.9},"Yale University":{min:3.9},
+  "Princeton University":{min:3.9},"Columbia University":{min:3.9},
+  "University of Pennsylvania":{min:3.9},"Brown University":{min:3.9},
+  "Cornell University":{min:3.8},"Dartmouth College":{min:3.9},
+  "Massachusetts Institute of Technology":{min:3.9},
+  "Stanford University":{min:3.9},"California Institute of Technology":{min:3.9},
+  "University of Chicago":{min:3.9},"Johns Hopkins University":{min:3.8},
+  "Northwestern University":{min:3.8},"Duke University":{min:3.8},
+  "Vanderbilt University":{min:3.8},"Georgetown University":{min:3.8},
+  "Carnegie Mellon University":{min:3.7},"Emory University":{min:3.7},
+  "University of Notre Dame":{min:3.8},"Williams College":{min:3.9},
+  "Amherst College":{min:3.9},"Bowdoin College":{min:3.8},
+  "Middlebury College":{min:3.7},"Pomona College":{min:3.8},
+  "Claremont McKenna College":{min:3.8},"Harvey Mudd College":{min:3.9},
+  "Webb Institute":{min:3.7},"Deep Springs College":{min:3.9},
+  "Colorado College":{min:3.7},"University of the South":{min:3.4},
+  "Boston College":{min:3.7},"University of Virginia":{min:3.8},
+  "Wake Forest University":{min:3.7},"Villanova University":{min:3.6},
+  "Georgia Institute of Technology":{min:3.7},"University of Michigan":{min:3.7},
+  "UC San Diego":{min:3.8},"University of California Irvine":{min:3.7},
+  "University of California Davis":{min:3.6},
+  "University of California Santa Cruz":{min:3.4},
+  "University of Washington":{min:3.6},"Ohio State University":{min:3.5},
+  "Penn State University":{min:3.4},"Purdue University":{min:3.5},
+  "Indiana University":{min:3.2},"University of Minnesota":{min:3.5},
+  "Michigan State University":{min:3.3},
+  "University of Maryland College Park":{min:3.5},
+  "Rutgers University":{min:3.3},"Babson College":{min:3.5},
+  "Boston University":{min:3.6},"Northeastern University":{min:3.6},
+  "New York University":{min:3.6},"George Washington University":{min:3.5},
+  "American University":{min:3.3},"Fordham University":{min:3.4},
+  "Drexel University":{min:3.3},"Syracuse University":{min:3.3},
+  "Temple University":{min:3.0},"University of Pittsburgh":{min:3.5},
+  "Case Western Reserve University":{min:3.7},
+  "Rose-Hulman Institute of Technology":{min:3.5},
+  "Stevens Institute of Technology":{min:3.5},
+  "Worcester Polytechnic Institute":{min:3.5},
+  "Colorado School of Mines":{min:3.5},"Kettering University":{min:3.0},
+  "United States Military Academy":{min:3.7},
+  "University of Georgia":{min:3.5},"University of Florida":{min:3.7},
+  "University of Alabama":{min:3.0},"Auburn University":{min:3.3},
+  "Louisiana State University":{min:3.0},"University of Tennessee":{min:3.2},
+  "University of Arkansas":{min:3.0},"University of South Carolina":{min:3.0},
+  "Clemson University":{min:3.5},"University of Mississippi":{min:2.8},
+  "Mississippi State University":{min:2.8},"Florida State University":{min:3.4},
+  "University of South Florida":{min:3.0},
+  "University of Central Florida":{min:3.2},
+  "Florida Atlantic University":{min:2.8},"Stetson University":{min:3.0},
+  "Northwestern University":{min:3.8},"University of Iowa":{min:3.0},
+  "Iowa State University":{min:3.0},"University of Nebraska-Lincoln":{min:3.0},
+  "University of Kentucky":{min:3.0},"University of Missouri":{min:3.0},
+  "Virginia Tech":{min:3.4},
+  "North Carolina State University":{min:3.5},
+  "University of Miami":{min:3.6},"Elon University":{min:3.3},
+  "College of William and Mary":{min:3.8},
+  "University of Oklahoma":{min:3.2},"University of Kansas":{min:3.0},
+  "Baylor University":{min:3.4},"University of Arizona":{min:3.0},
+  "Arizona State University":{min:2.8},
+  "University of Colorado Boulder":{min:3.0},
+  "Colorado State University":{min:3.0},"University of Denver":{min:3.3},
+  "University of Oregon":{min:3.2},"Oregon State University":{min:3.0},
+  "Boise State University":{min:2.8},"University of Utah":{min:3.0},
+  "Brigham Young University":{min:3.5},"Gonzaga University":{min:3.6},
+  "Pepperdine University":{min:3.5},"Santa Clara University":{min:3.5},
+  "University of San Diego":{min:3.4},"University of San Francisco":{min:3.2},
+  "Saint Mary's College of California":{min:3.2},
+  "California Polytechnic State University San Luis Obispo":{min:3.5},
+  "UC Riverside":{min:3.2},
+  "California State University Long Beach":{min:2.8},
+  "California State University Fullerton":{min:2.8},
+  "California State University Northridge":{min:2.5},
+  "California State University Los Angeles":{min:2.5},
+  "California State University Chico":{min:2.8},
+  "California State University Fresno":{min:2.8},
+  "Tulane University":{min:3.5},"Creighton University":{min:3.4},
+  "Butler University":{min:3.2},"Drake University":{min:3.2},
+  "University of Louisville":{min:3.0},"University of Connecticut":{min:3.4},"University of Massachusetts Amherst":{min:3.5},"University of Delaware":{min:3.3},
+  "University of the South":{min:3.4},
+  "San Diego State University":{"min":3.3},
   "UC Santa Barbara":{"min":3.8},
   "University of Southern California":{"min":3.7},
-  "UC Berkeley":{"min":3.9},
-  "University of California Los Angeles":{"min":3.9},
+  "UC Berkeley":{"min":3.9},"University of California Los Angeles":{"min":3.9},
   "Rice University":{"min":3.9},
   "Southern Methodist University":{"min":3.5},
   "Texas Christian University":{"min":3.5},
-  "Texas A&M University":{"min":3.7},
-  "Texas Tech University":{"min":3.5},
+  "Texas A&M University":{"min":3.5},
+  "Texas Tech University":{"min":3.2},
   "University of Texas at Austin":{"min":3.7},
   "University of North Carolina Chapel Hill":{"min":3.8},
-  "Belmont University":{"min":3.5},
-  "Furman University":{"min":3.6},
+  "Belmont University":{"min":3.4},
+  "Furman University":{"min":3.7},
   "Wofford College":{"min":3.5},
-  "Rollins College":{"min":3.5},
+  "Rollins College":{"min":3.4},
   "High Point University":{"min":3.3},
   "Appalachian State University":{"min":3.3},
-  "University of Tennessee at Chattanooga":{"min":3.1},
+  "University of Tennessee at Chattanooga":{"min":3.2},
   "University of Richmond":{"min":3.7},
   "Washington and Lee University":{"min":3.8},
-  "Howard University":{"min":3.4},
-  "Spelman College":{"min":3.5},
+  "Howard University":{"min":3.5},
+  "Spelman College":{"min":3.6},
   "Georgia State University":{"min":3.2},
-  "Flagler College":{"min":3.1},
+  "Flagler College":{"min":3.2},
   "James Madison University":{"min":3.5},
   "University of Memphis":{"min":3.1},
-  "Regent University":{"min":3.0},
+  "Regent University":{"min":3.2},
   "Davidson College":{"min":3.7},
-  "University of Illinois Urbana-Champaign":{"min":3.8},
-  "University of Wisconsin-Madison":{"min":3.8},
-  "Marquette University":{"min":3.6},
-  "Carleton College":{"min":3.8},
-  "Kenyon College":{"min":3.6},
+  "University of Illinois Urbana-Champaign":{"min":3.7},
+  "University of Wisconsin-Madison":{"min":3.7},
+  "Marquette University":{"min":3.5},
+  "Carleton College":{"min":3.9},
+  "Kenyon College":{"min":3.7},
   "Oberlin College":{"min":3.7},
   "Ohio Wesleyan University":{"min":3.3},
-  "Denison University":{"min":3.5},
+  "Denison University":{"min":3.6},
   "College of Wooster":{"min":3.4},
   "Marshall University":{"min":3.0},
   "Morehead State University":{"min":3.0},
-  "North Dakota State University":{"min":3.2},
+  "North Dakota State University":{"min":3.1},
   "South Dakota State University":{"min":3.0},
   "Grinnell College":{"min":3.8},
   "Macalester College":{"min":3.7},
   "Binghamton University":{"min":3.7},
   "Lehigh University":{"min":3.7},
-  "Quinnipiac University":{"min":3.4},
-  "University of Rhode Island":{"min":3.3},
+  "Quinnipiac University":{"min":3.3},
+  "University of Rhode Island":{"min":3.2},
   "Ithaca College":{"min":3.4},
-  "Reed College":{"min":3.7},
-  "Union College":{"min":3.5},
-  "Franklin and Marshall College":{"min":3.7},
-  "Bryn Mawr College":{"min":3.7},
-  "Occidental College":{"min":3.6},
+  "Reed College":{"min":3.8},
+  "Union College":{"min":3.6},
+  "Franklin and Marshall College":{"min":3.6},
+  "Bryn Mawr College":{"min":3.8},
+  "Occidental College":{"min":3.7},
   "Bentley University":{"min":3.5},
-  "Rhode Island School of Design":{"min":3.4},
-  "Berklee College of Music":{"min":3.0},
-  "Pratt Institute":{"min":3.2},
-  "Rochester Institute of Technology":{"min":3.4},
-  "Fashion Institute of Technology":{"min":3.0},
+  "Rhode Island School of Design":{"min":3.5},
+  "Berklee College of Music":{"min":3.2},
+  "Pratt Institute":{"min":3.4},
+  "Rochester Institute of Technology":{"min":3.5},
+  "Fashion Institute of Technology":{"min":3.2},
   "San Jose State University":{"min":3.2},
   "University of Tulsa":{"min":3.5},
-  "University of Idaho":{"min":3.0},
+  "University of Idaho":{"min":3.1},
   "University of Nevada Las Vegas":{"min":3.0},
-  "University of Nevada Reno":{"min":3.2},
+  "University of Nevada Reno":{"min":3.1},
   "University of Montana":{"min":3.0},
-  "Montana State University":{"min":3.0},
+  "Montana State University":{"min":3.1},
   "University of New Mexico":{"min":3.0},
-  "New Mexico State University":{"min":2.8},
-  "California Lutheran University":{"min":3.2},
-  "California State University San Bernardino":{"min":2.8},
+  "New Mexico State University":{"min":3.0},
+  "California Lutheran University":{"min":3.3},
+  "California State University San Bernardino":{"min":3.0},
   "Hamilton College":{"min":3.8},
   "Swarthmore College":{"min":3.9},
   "Haverford College":{"min":3.8},
@@ -1089,42 +894,7 @@ const SCHOOL_GPA_RANGES = {
   "Colgate University":{"min":3.7},
   "Colby College":{"min":3.7},
   "Bates College":{"min":3.6},
-  "Bucknell University":{"min":3.6},
-  "UCLA":{"min":3.9},
-  "USC":{"min":3.8},
-  "UT Austin":{"min":3.8},
-  "SMU":{"min":3.7},
-  "TCU":{"min":3.7},
-  "Barnard College":{"min":3.9},
-  "Wesleyan University":{"min":3.8},
-  "Dickinson College":{"min":3.6},
-  "Gettysburg College":{"min":3.6},
-  "Providence College":{"min":3.5},
-  "Illinois Wesleyan University":{"min":3.5},
-  "University of Vermont":{"min":3.5},
-  "St. John's College":{"min":3.5},
-  "United States Naval Academy":{"min":3.8},
-  "United States Air Force Academy":{"min":3.8},
-  "United States Coast Guard Academy":{"min":3.6},
-  "The Citadel":{"min":3.2},
-  "Virginia Military Institute":{"min":3.3},
-  "Norwich University":{"min":3.0},
-  "United States Merchant Marine Academy":{"min":3.5},
-  "Maine Maritime Academy":{"min":3.0},
-  "Massachusetts Maritime Academy":{"min":3.0},
-  "Texas A&M University at Galveston":{"min":3.2},
-  "California State University Maritime Academy":{"min":3.0},
-  "San Francisco State University":{"min":3.0},
-  "Eastern Washington University":{"min":3.0},
-  "University of Hawaii at Manoa":{"min":3.2},
-  "University of Wyoming":{"min":3.0},
-  "East Carolina University":{"min":3.1},
-  "Texas State University":{"min":3.1},
-  "Sam Houston State University":{"min":3.0},
-  "University of Alaska Fairbanks":{"min":2.8},
-  "College of the Ozarks":{"min":3.0},
-  "University of North Texas":{"min":3.1},
-  "Kennesaw State University":{"min":3.1}
+  "Bucknell University":{"min":3.6}
 };
 
 function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {
