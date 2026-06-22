@@ -3017,7 +3017,14 @@ function showLifescapeGate() {
   overlay.innerHTML = `
     <div style="max-width:480px;width:100%;font-family:Georgia,serif;text-align:center;">
       <div style="font-family:var(--sans);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Your Lifescape</div>
-      <div style="font-size:28px;font-weight:400;letter-spacing:2px;color:#0a0a0a;margin-bottom:.75rem;">Your <span class="brand-name">VECTOR</span> report is ready.</div>
+      <div style="margin-bottom:.75rem;display:flex;justify-content:center;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="160" height="53" role="img" aria-label="VECTOR" style="display:block;">
+          <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="#0A0A0A" x="600" y="257.6" text-anchor="middle">VECTOR</text>
+          <line x1="700.15" y1="231.24" x2="721.49" y2="172.60" stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round"/>
+          <polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="#C8A97A"/>
+        </svg>
+      </div>
+      <div style="font-size:18px;font-weight:400;letter-spacing:1px;color:#0a0a0a;margin-bottom:.75rem;">Your report is ready.</div>
       <div style="font-family:var(--sans);font-size:13px;color:#6a6a6a;line-height:1.7;margin-bottom:2rem;">Enter your email to save your results and access your full Lifescape report — including your trajectory, industry clusters, and school matches.</div>
 
       <div style="display:flex;align-items:flex-start;gap:.75rem;text-align:left;background:#f5f3ef;padding:1rem 1.25rem;margin-bottom:1.25rem;border-left:2px solid #C8A97A;">
