@@ -3419,15 +3419,13 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
    If not signed in: show auth gate, hold state for magic link return.
    ───────────────────────────────────────────────────────────────────────── */
 function gateAndDeliver(stateSnapshot) {
-  // Already signed in — write record immediately
+  // GATE DISABLED — save directly without requiring email/auth
   if (window.sbSession && window.sbSession.user) {
     saveToSupabase(stateSnapshot, true);
-    return;
   }
-
-  // No session — show gate, hold state in memory
+  // No gate shown — report is immediately accessible
+  // State held in memory for any post-auth capture if session arrives later
   window.__pendingLifescapeState = stateSnapshot;
-  showLifescapeGate();
 }
 
 /* ── showLifescapeGate ───────────────────────────────────────────────────────
