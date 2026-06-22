@@ -227,14 +227,22 @@ const VECTOR_CROSSWALK = [
     label: "Music production",
     cluster: "make",
     riasec: ["A", "I", "E"],
-    naics_sectors: [51, 71, 81],
+    naics_sectors: [51, 71, 81, 101],
     industries: ["Music Recording & Production", "Entertainment", "Streaming & Digital Media", "Advertising"],
     career_emergence: ["Music Producer", "Sound Engineer", "Audio Designer", "A&R Executive", "Podcast Producer"],
     geo_signal: true,
     eq_multiplier: false,
     combo_unlocks: [
       { with: ["i_feel_things_deeply"], unlocks: ["Music Therapist", "Composer for Film", "Soundtrack Producer"] },
-      { with: ["entrepreneurship"], unlocks: ["Independent Label Owner", "Artist Manager"] }
+      { with: ["entrepreneurship"], unlocks: ["Independent Label Owner", "Artist Manager", "Music Entrepreneur"] },
+      { with: ["entrepreneurship", "understanding_why_people"], unlocks: ["Artist Manager", "A&R Executive", "Label Strategy Director"] },
+      { with: ["data_statistics", "entrepreneurship"], unlocks: ["Streaming Analytics Manager", "Music Business Analyst", "Rights & Royalty Strategist"] },
+      { with: ["philosophy", "writing_stories"], unlocks: ["Music Attorney", "Entertainment Lawyer", "Music IP Specialist", "Publishing Administrator"] },
+      { with: ["coding_programming"], unlocks: ["Music Software Developer", "Audio Plugin Engineer", "Music Technology Product Manager", "Game Audio Director"] },
+      { with: ["filmmaking"], unlocks: ["Film Composer", "Music Supervisor", "Sync Licensing Executive", "Score Coordinator"] },
+      { with: ["planning_trips_adventures", "leading_the_group"], unlocks: ["Tour Manager", "Festival Producer", "Concert Production Director", "Venue Operations Manager"] },
+      { with: ["teaching_tutoring"], unlocks: ["Music Business Educator", "Audio Engineering Instructor", "Berklee-Track Music Professional"] },
+      { with: ["flow_state"], unlocks: ["Music Producer", "Sound Engineer", "Composer", "Audio Software Developer"] }
     ]
   },
 
@@ -250,8 +258,13 @@ const VECTOR_CROSSWALK = [
     eq_multiplier: true,
     combo_unlocks: [
       { with: ["i_feel_things_deeply", "mental_health_wellness"], unlocks: ["Music Therapist", "Neurologic Music Therapist"] },
-      { with: ["teaching_tutoring"], unlocks: ["Music Educator", "Suzuki Instructor", "School Band Director"] },
-      { with: ["medical_science", "i_feel_things_deeply"], unlocks: ["Music Therapist", "Rehabilitation Specialist"] }
+      { with: ["teaching_tutoring"], unlocks: ["Music Educator", "Suzuki Instructor", "School Band Director", "Private Studio Teacher"] },
+      { with: ["medical_science", "i_feel_things_deeply"], unlocks: ["Music Therapist", "Rehabilitation Specialist"] },
+      { with: ["flow_state"], unlocks: ["Session Musician", "Orchestral Musician", "Composer", "Friday Night Musician — Serious Practitioner"] },
+      { with: ["flow_state", "teaching_tutoring"], unlocks: ["Band Director", "Orchestral Conductor", "Music Educator who performs — the most complete musical life"] },
+      { with: ["entrepreneurship", "understanding_why_people"], unlocks: ["Artist Manager", "Talent Scout", "Music Academy Founder"] },
+      { with: ["philosophy", "writing_stories"], unlocks: ["Music Attorney", "Entertainment Lawyer", "Rights Advocate"] },
+      { with: ["advocacy_activism", "volunteering"], unlocks: ["Community Music Director", "Music Therapy Program Director", "Arts Access Advocate"] }
     ]
   },
 
@@ -266,7 +279,12 @@ const VECTOR_CROSSWALK = [
     geo_signal: false,
     eq_multiplier: true,
     combo_unlocks: [
-      { with: ["acting_theater"], unlocks: ["Musical Theater Performer", "Opera Singer", "Broadway Cast Member"] }
+      { with: ["acting_theater"], unlocks: ["Musical Theater Performer", "Opera Singer", "Broadway Cast Member"] },
+      { with: ["flow_state"], unlocks: ["Professional Vocalist", "Choral Director", "Worship Music Director", "Voice Coach"] },
+      { with: ["teaching_tutoring"], unlocks: ["Choral Director", "Voice Teacher", "Worship Music Leader", "Music Education — Vocal Track"] },
+      { with: ["volunteering", "advocacy_activism"], unlocks: ["Worship Music Director", "Community Choir Director", "Music Access Program Leader"] },
+      { with: ["entrepreneurship"], unlocks: ["Independent Artist", "Vocal Coaching Business Owner", "Music Content Creator"] },
+      { with: ["filmmaking", "music_production"], unlocks: ["Session Vocalist", "Jingle Singer", "Film Score Vocalist", "Commercial Voice Artist"] }
     ]
   },
 
@@ -2592,6 +2610,32 @@ const VECTOR_CROSSWALK = [
     combo_unlocks: [
       { with: ["soccer", "basketball", "football", "volleyball", "lacrosse", "water_polo"], unlocks: ["Professional Athlete", "Elite Performer", "Star Player Development Track"] },
       { with: ["i_stay_calm_when_things_go_wrong"], unlocks: ["Surgeon", "Trial Attorney", "Closer / Top Sales Executive"] }
+    ]
+  },
+
+  {
+    id: "flow_state",
+    label: "I lose track of time when I'm doing the thing I love most",
+    label_parent: "They lose track of time when they're doing the thing they love most",
+    cluster: "eq",
+    riasec: ["A", "I", "R"],
+    naics_sectors: [71, 51, 33, 61, 95],
+    industries: ["Creative Arts", "Music & Entertainment", "Skilled Trades", "Education", "Longevity & Performance Science"],
+    career_emergence: [
+      "Musician", "Software Engineer", "Craftsperson", "Surgeon", "Athlete",
+      "Research Scientist", "Master Tradesperson", "Composer", "Architect"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["music_production"], unlocks: ["Music Producer", "Sound Engineer", "Composer", "Audio Software Developer"] },
+      { with: ["playing_instrument"], unlocks: ["Session Musician", "Orchestral Musician", "Composer", "Music Educator — Serious Practitioner"] },
+      { with: ["singing"], unlocks: ["Professional Vocalist", "Choral Director", "Worship Music Director", "Voice Coach"] },
+      { with: ["coding_programming"], unlocks: ["Software Engineer", "AI Research Scientist", "Systems Architect", "Game Developer"] },
+      { with: ["woodworking", "three_d_printing"], unlocks: ["Master Craftsperson", "Industrial Designer", "Custom Manufacturing Specialist"] },
+      { with: ["data_statistics"], unlocks: ["Research Scientist", "Quantitative Analyst", "Data Engineer", "Biostatistician"] },
+      { with: ["writing_stories"], unlocks: ["Author", "Screenwriter", "Narrative Designer", "Journalist — Long Form"] },
+      { with: ["fitness_lifting", "how_body_moves"], unlocks: ["Strength & Conditioning Coach", "Athletic Performance Specialist", "Physical Therapist"] }
     ]
   }
 
