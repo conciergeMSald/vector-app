@@ -1183,6 +1183,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <div style="font-size:12px;color:var(--ink4);font-style:italic;margin-top:.75rem">Full matches in the "Where you fit" tab.</div>
     </div>
 
+    <!-- Act IX — The Two-Year Move (fires conditionally) -->
+    <div class="report-section" id="quick-act-ix" style="display:none">
+      <div class="section-eyebrow" style="color:#B8860B">ACT IX — THE TWO-YEAR MOVE</div>
+      <div class="trajectory-box" id="quick-act-ix-text"></div>
+    </div>
+
     <!-- Invitation -->
     <div class="invitation" id="quick-invitation">
       There is more to your Lifescape. Your counselor has the full picture.
@@ -1249,6 +1255,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="counselor-block" id="full-counselor-note" style="display:none">
       <div class="counselor-label">A note for your counselor</div>
       <div class="counselor-text" id="full-counselor-text"></div>
+    </div>
+
+    <!-- Act IX — The Two-Year Move (fires conditionally) -->
+    <div class="report-section" id="full-act-ix" style="display:none">
+      <div class="section-eyebrow" style="color:#B8860B">ACT IX — THE TWO-YEAR MOVE</div>
+      <div class="trajectory-box" id="full-act-ix-text"></div>
     </div>
 
   </div>
@@ -2053,6 +2065,24 @@ function assembleProfile() {
       ? {...LS_STATE.academic_affinity, subjects:[...(LS_STATE.academic_affinity.subjects||[])]}
       : {subjects:[], strength:'', daypart:'', daypart_other:''},
     regionalIntel: typeof resolveRegion === 'function' ? resolveRegion(LS_STATE.zip) : null,
+    rawScore: (function() {
+      // Sum RIASEC weights across all selected tiles, normalized to 0-100
+      // Tiles with higher RIASEC spread and eq_multiplier score higher
+      var EXPECTED_MAX_SCORE = 18; // top ~12 tiles at weight 1-2 each
+      var raw = selectedIds.reduce(function(sum, id) {
+        var tile = typeof VECTOR_CROSSWALK !== 'undefined'
+          ? VECTOR_CROSSWALK.find(function(t){ return t.id === id; }) : null;
+        if (!tile) return sum;
+        var w = tile.eq_multiplier ? 2 : 1;
+        return sum + w;
+      }, 0);
+      return Math.min(100, Math.round((raw / EXPECTED_MAX_SCORE) * 100));
+    })(),
+    wealth_tier: (function() {
+      // Derive from ZIP geo resolver if available
+      var g = typeof resolveZIP === 'function' ? resolveZIP(LS_STATE.zip) : null;
+      return (g && g.wealth_tier) ? g.wealth_tier : 3; // default mid-tier
+    })(),
     _meta: {
       timestamp: new Date().toISOString(),
       tileCount: selectedIds.length,
@@ -2108,6 +2138,113 @@ function buildContext(profile) {
    The retirement thread runs underneath every track as a quiet invitation:
    "What about the game fascinates you beyond playing it?"
    ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── CC Pathway Intelligence ─────────────────────────────────────────────────
+   extractCCContext()    — reads bridge resolver first, pipeline text second
+   shouldShowCCPathway() — Track A trigger logic per spec Section 2
+   buildCallEPrompt()    — Act IX: The Two-Year Move prompt builder
+   ─────────────────────────────────────────────────────────────────────────── */
+
+function extractCCContext(university, zip) {
+  // Source 1: Bridge pathway resolver (ZIP-specific, highest signal)
+  if (typeof resolveRegionalBridgeKey === 'function' && typeof findBridgePath === 'function') {
+    var bridgeKey = resolveRegionalBridgeKey(zip || '');
+    var bp = bridgeKey ? findBridgePath({ zip: zip, bridgeKey: bridgeKey }, bridgeKey) : null;
+    if (bp && (bp.name || bp.institution)) {
+      return {
+        ccName: bp.name || bp.institution || bridgeKey,
+        ccNote: bp.note || bp.narrative || '',
+        transferRate: bp.transferRate || null,
+        freshmanRate: (university && university.acceptance_rate) || null,
+        hasCCPathway: true,
+        source: 'bridge'
+      };
+    }
+  }
+  // Source 2: Parse pipeline + hidden_pathway fields from university-content.js
+  var text = (((university && university.pipeline) || '') + ' ' +
+              ((university && university.hidden_pathway) || '')).toLowerCase();
+  var hasCC = text.includes('community college') || text.includes('transfer pathway') ||
+              text.includes('transfer rate') || text.includes('cc feeder');
+  if (hasCC) {
+    var ccMatch = text.match(/([a-z][a-z &]+(?:college|community college|cc))/i);
+    return {
+      ccName: ccMatch ? ccMatch[0].trim() : 'local community college',
+      ccNote: '',
+      transferRate: null,
+      freshmanRate: null,
+      hasCCPathway: true,
+      source: 'content'
+    };
+  }
+  return { hasCCPathway: false };
+}
+
+function shouldShowCCPathway(profile, matches) {
+  var score      = profile.rawScore || 0;
+  var wealthTier = profile.wealth_tier || 3;
+  var grade      = parseInt(profile.grade) || 10;
+  var statePref  = ((profile.college_prefs && profile.college_prefs.state_pref) || '').toLowerCase();
+  var campusSize = (profile.college_prefs && profile.college_prefs.campus_scale) || '';
+  var zip        = profile.zip || '';
+
+  // Bridge pathway present — strongest signal, fires regardless of score
+  if (typeof resolveRegionalBridgeKey === 'function' && typeof findBridgePath === 'function') {
+    var bKey = resolveRegionalBridgeKey(zip);
+    if (bKey && findBridgePath({ zip: zip, bridgeKey: bKey }, bKey)) return true;
+  }
+
+  // Track A: score threshold
+  if (score > 0 && score < 60) return true;
+
+  // Track A: in-state + small/medium campus
+  if (statePref.includes('in') && ['small','medium'].includes(campusSize)) return true;
+
+  // Track A: grade 11+ and wealth tier 3+
+  if (grade >= 11 && wealthTier >= 3) return true;
+
+  // Track A: any matched school has CC pathway data
+  if (matches && matches.length > 0) {
+    var hasDelta = matches.some(function(u) {
+      var schoolData = typeof UNIVERSITY_CONTENT !== 'undefined' ? UNIVERSITY_CONTENT[u.name] : null;
+      var ctx = extractCCContext(schoolData, zip);
+      return ctx.hasCCPathway;
+    });
+    if (hasDelta) return true;
+  }
+
+  return false;
+}
+
+function buildCallEPrompt(profile, ccContext, targetSchool) {
+  var ccName      = ccContext.ccName || 'local community college';
+  var target      = (targetSchool && targetSchool.name) || 'your target university';
+  var transferRate = ccContext.transferRate ? ccContext.transferRate + '%' : 'a materially higher rate than direct freshman admission';
+  var freshmanRate = ccContext.freshmanRate ? ccContext.freshmanRate + '%' : null;
+  var rateClause  = freshmanRate
+    ? (transferRate + ' transfer acceptance vs. ' + freshmanRate + ' freshman')
+    : transferRate;
+  var name        = profile.name || 'the student';
+
+  return `You are VECTOR. Write ACT IX — THE TWO-YEAR MOVE for ${name}.
+
+This section exists because the algorithm identified a community college transfer pathway as a legitimate strategic option based on this student's profile. It is not a fallback. It is not a compromise. It is the algorithm doing its job.
+
+Target university: ${target}. Transfer rate: ${rateClause}. CC feeder: ${ccName}.
+
+Rules:
+— Never mention financial limitation, budget, grades, or selectivity as a weakness
+— Frame entirely as strategic positioning and trajectory intelligence
+— One paragraph opening (name the CC and the target university in the first sentence)
+— Savings math in explicit dollar range (estimate $30,000–$60,000 if exact data not available)
+— Transfer rate differential explained in one clear sentence
+— Specific timeline: Year 1–2 at ${ccName}. Transfer in Year 3. Graduate on time.
+— One closing sentence that makes this feel like a choice, not a compromise
+— Total length: 180–220 words
+— Voice: private advisor, not guidance counselor
+— Never use the words: afford, budget, cost-conscious, financial limitation, grades, not ready, alternative, fallback, backup, less selective`;
+}
+
 function buildCompeteLensContext(ctx) {
   const tiles = (ctx.activityTiles || []).concat(ctx.eqTiles || []).map(t => t.toLowerCase());
   const worlds = (ctx.worlds_chosen || []).map(w => w.toLowerCase());
@@ -2222,6 +2359,51 @@ LONGEVITY COUNSELOR NOTE: If surfacing longevity as a pathway, the counselor sho
     callD_injection: `
 LONGEVITY LENS: If any matched schools have programs in gerontology, aging biology, allied health, or longevity commerce, surface those specific programs in the MATCH and WHY fields rather than generic program quality. USC Davis School of Gerontology, Thomas Jefferson University allied health, and Ithaca College SLP/PT programs are high-value callouts for longevity-signal students that most counselors miss.`
   };
+}
+
+
+/* ── Presence Economy Detector ───────────────────────────────────────────────
+   The Presence Economy: everything that requires a human being in the room.
+   Live events, sales, hospitality, trade shows, CPG, human connection as
+   the core asset. Surfaces for social/Enterprising students the system
+   undervalues. Inserts a named paragraph into the trajectory in the report.
+   ─────────────────────────────────────────────────────────────────────────── */
+function detectPresenceEconomy(profile) {
+  const tiles = (profile.activityTiles || []).concat(profile.eqTiles || []).map(t => t.toLowerCase());
+  const worlds = (profile.worlds_chosen || []).map(w => w.toLowerCase());
+  const riasec = (profile.topRIASEC || '').toUpperCase();
+  const naics = (profile.naicsSectors || []).map(n => Number(n.sector || n));
+
+  // Primary signals — social presence tiles
+  const socialTiles = ['understanding_why_people','volunteering','leading_the_group',
+    'working_with_little_kids','advocacy_activism','teaching_tutoring'];
+  const enterprisingTiles = ['entrepreneurship','business_startups','golf',
+    'fantasy_sports_roster','collecting_trading'];
+  const eventTiles = ['planning_trips_adventures','organizing_people','live_events'];
+  const presenceNAICS = naics.some(n => [71, 72, 44, 54, 81, 101].includes(n));
+
+  const socialScore = socialTiles.filter(t => tiles.includes(t)).length;
+  const enterprisingScore = enterprisingTiles.filter(t => tiles.includes(t)).length;
+  const hasRIASEC_E = riasec.includes('E');
+  const hasRIASEC_S = riasec.includes('S');
+  const worldSignal = worlds.includes('persuasion') || worlds.includes('civic') || worlds.includes('power');
+
+  // Fire when: strong social signal + enterprising signal OR NAICS presence
+  const fires = (socialScore >= 2 && (enterprisingScore >= 1 || hasRIASEC_E)) ||
+                (presenceNAICS && (hasRIASEC_E || hasRIASEC_S)) ||
+                (worldSignal && socialScore >= 1);
+
+  if (!fires) return null;
+
+  // Build the paragraph — voice-aware
+  const name = profile.name || 'you';
+  const isParent = profile.voice === 'parent';
+
+  const presenceText = isParent
+    ? `${name} operates in what is sometimes called the Presence Economy — the world where human connection is the core asset, not a nice-to-have. Live events, sales, hospitality, trade shows, and the industries built around people being in the same room are not disappearing. They are growing — because the more digital the world becomes, the more valuable the human in the room becomes. The careers here reward exactly what ${name} already is: someone who reads a room, builds trust quickly, and makes things happen through people rather than despite them.`
+    : `You operate in what is sometimes called the Presence Economy — the world where human connection is the core asset, not a nice-to-have. Live events, sales, hospitality, trade shows, and the industries built around people being in the same room are not disappearing. They are growing — because the more digital the world becomes, the more valuable the human in the room becomes. The careers here reward exactly what you already are: someone who reads a room, builds trust quickly, and makes things happen through people rather than despite them.`;
+
+  return { fires: true, text: presenceText };
 }
 
 function buildCallAPrompt(ctx) {
@@ -2368,11 +2550,14 @@ For each combination unlock that fired, write one paragraph: what combined, what
 ---COLLEGE---
 2-3 sentences. First time college appears in the report. Do not name specific schools. Describe the type of college environment that would serve this student. End with exactly: "Your counselor knows which ones."
 
-${_longevityB}${_competeB}\n\n── PHILOSOPHY LAYER (always active) ──
+${_longevityB}${_competeB}${(() => { try { const _pe = detectPresenceEconomy(ctx); return _pe && _pe.fires ? '\n\nPRESENCE ECONOMY LENS: This student has meaningful Presence Economy signal — social connection as a career asset, not just a personality trait. Consider naming The Presence Economy explicitly as an industry cluster: live events, trade shows, sales, hospitality, CPG, and any industry where the human in the room is the product. The student who lights up every room they enter has a career asset the system consistently undervalues. Surface it. Name it. The careers: Tour Manager, Corporate Event Director, Regional Sales Director, Hospitality GM, Brand Activations Manager, Trade Show Producer.' : ''; } catch(e) { return ''; } })()}\n\n── PHILOSOPHY LAYER (always active) ──
 PRINCIPLE: Never use language that implies a career path is more valuable than a life path. Household management, family leadership, and community service are deployments of real skill — name them with the same specificity and dignity as technical or academic paths.
 PLANNING ECONOMY: If planning/organizing tiles are present (trip planning, event organizing, logistics-oriented behavior), name supply chain, operations, event management, and household/family management explicitly as legitimate and high-value career deployments of the same cognitive profile.
 RELATIONAL COMBOS: When combination unlocks surface relational profiles — the person who leads through relationships, who serves through connection, who organizes around people — name those with the same specificity as technical or analytical combos. They are equally rare and equally valuable.
 CAREER VS LIFE: Never imply that a student who is oriented toward family, community, or flexible work is making a lesser choice. Name it directly if it surfaces.
+COMMUNITY COLLEGE PATHWAY HACK INSTRUCTION: For EVERY Primary and Adjacent school match where cc_pathway_data is present in the context: add one line beneath that school formatted exactly as:
+Pathway Hack: [CC Name] → [University Name]: [transfer rate vs freshman rate if known]. Estimated savings $[X]–$[Y]. One sentence on why this matters for ${ctx.name || 'this student'}.
+Frame as strategic intelligence — never as a financial limitation or fallback.
 FORBIDDEN: assessment, results, data, score, ranked, you should become, most students like you, personality type`;
 }
 
@@ -2570,7 +2755,7 @@ function captureToSheets(profile, callAData) {
     regions_pref: Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(' | ') : (COLLEGE_PREFS.regions || 'Open'),
     social_scene_pref: COLLEGE_PREFS.social_scene,
     religion_pref: COLLEGE_PREFS.religion,
-    cc_pathway_shown:'N'
+    cc_pathway_shown: (LS_STATE.callEResult && LS_STATE.callEResult.actIX) ? 'Y' : 'N'
   };
   fetch(SHEETS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(()=>{});
 }
@@ -3012,6 +3197,33 @@ function parseCallD(rawText) {
   }
 }
 
+
+/* ── Act IX Renderer ─────────────────────────────────────────────────────────
+   Renders the Two-Year Move section in Quick and Full tabs when callE returns.
+   ─────────────────────────────────────────────────────────────────────────── */
+function renderActIX(callEData) {
+  if (!callEData || !callEData.actIX) return;
+  var text = callEData.actIX;
+
+  // Quick tab
+  var quickSection = document.getElementById('quick-act-ix');
+  var quickText    = document.getElementById('quick-act-ix-text');
+  if (quickSection && quickText) {
+    quickText.innerHTML = '<div class="trajectory-text">' + text + '</div>';
+    quickSection.style.display = '';
+  }
+
+  // Full tab
+  var fullSection = document.getElementById('full-act-ix');
+  var fullText    = document.getElementById('full-act-ix-text');
+  if (fullSection && fullText) {
+    fullText.innerHTML = '<div class="trajectory-text">' + text + '</div>';
+    fullSection.style.display = '';
+  }
+
+  console.log('[callE] Act IX rendered — CC:', callEData.ccName || 'unknown');
+}
+
 function renderSchoolRecommendations(profile, callAData, callDData, adjacentPicks, profileAdjacentPicks) {
   if(!callDData || callDData.length === 0) return;
 
@@ -3374,14 +3586,37 @@ async function submitLifescape() {
     })();
 
     // ── CALL B + C — parallel, isolated ──────────────
-    const [callBResult, callCResult] = await Promise.allSettled([
+    // ── callE (CC Pathway) — fires conditionally before parallel calls ──
+    var _matchedForCC = (typeof matchUniversities !== 'undefined' && typeof UNIVERSITY_CONTENT !== 'undefined')
+      ? matchUniversities(profile.college_prefs, profile.riasec, profile.naicsSectors, profile.comboUnlocks,
+          profile.gpa ? { raw: profile.gpa, type: profile.gpa_type, normalized: profile.gpa_normalized } : null
+        ).slice(0, 12)
+      : [];
+    var _ccShouldShow = shouldShowCCPathway(profile, _matchedForCC);
+    var _ccTargetSchool = _matchedForCC.length > 0 ? _matchedForCC[0] : null;
+    var _ccTargetData = _ccTargetSchool && typeof UNIVERSITY_CONTENT !== 'undefined'
+      ? UNIVERSITY_CONTENT[_ccTargetSchool.name] : null;
+    var _ccContext = _ccShouldShow ? extractCCContext(_ccTargetData, profile.zip) : null;
+
+    // Build parallel call array — callB + callC always, callE conditionally
+    var _parallelCalls = [
       fireCall(buildCallBPrompt(ctx), 1200, 0, 45000),
       fireCall(buildCallCPrompt(ctx), 1000, 0, 30000)
-    ]);
+    ];
+    if (_ccShouldShow && _ccContext && _ccContext.hasCCPathway) {
+      console.log('[callE] CC pathway triggered — source:', _ccContext.source, 'CC:', _ccContext.ccName);
+      _parallelCalls.push(fireCall(buildCallEPrompt(profile, _ccContext, _ccTargetSchool), 800, 0, 30000));
+    }
+
+    const _parallelResults = await Promise.allSettled(_parallelCalls);
+    const callBResult = _parallelResults[0];
+    const callCResult = _parallelResults[1];
+    const callEResult = _parallelResults[2] || null;
 
     // Graceful fallback — each call fails independently
     const callBText = callBResult.status === 'fulfilled' ? callBResult.value : null;
     const callCText = callCResult.status === 'fulfilled' ? callCResult.value : null;
+    const callEText = callEResult && callEResult.status === 'fulfilled' ? callEResult.value : null;
 
     if(callBResult.status === 'rejected') {
       console.warn('[callB] failed:', callBResult.reason);
@@ -3391,11 +3626,16 @@ async function submitLifescape() {
     if(callCResult.status === 'rejected') {
       console.warn('[callC] failed:', callCResult.reason);
     }
+    if(callEResult && callEResult.status === 'rejected') {
+      console.warn('[callE] CC pathway call failed:', callEResult.reason);
+    }
 
     const callBData = callBText ? parseCallB(callBText) : null;
     const callCData = callCText ? parseCallC(callCText) : null;
+    const callEData = callEText ? { actIX: callEText.trim(), ccName: (_ccContext && _ccContext.ccName) || '' } : null;
     LS_STATE.callBResult = callBData;
     LS_STATE.callCResult = callCData;
+    LS_STATE.callEResult = callEData;
 
     // Render Full Report + Counselor View progressively
     renderFullReport(profile, callAData, callBData, callCData);
@@ -3497,6 +3737,8 @@ async function submitLifescape() {
               profile, callAData, callDData,
               adjacentPicks, profileAdjacentPicks
             );
+            // Render Act IX if callE returned data
+            if (LS_STATE.callEResult) renderActIX(LS_STATE.callEResult);
           } else {
             console.warn('[callD] parseCallD returned 0 schools — check raw response format');
           }
@@ -3523,7 +3765,7 @@ async function submitLifescape() {
           callAData:      LS_STATE.callAResult,
           topUniversity:  LS_STATE.topUniversity || null,
           reportText:     (LS_STATE.callAResult && LS_STATE.callAResult.trajectory) || null,
-          ccPathwayShown: finalBridgePath ? 'Y' : 'N',
+          ccPathwayShown: (LS_STATE.callEResult && LS_STATE.callEResult.actIX) ? 'Y' : (finalBridgePath ? 'Y' : 'N'),
         };
         saveToSupabase(finalSnapshot, true);
       }
@@ -3630,10 +3872,14 @@ function renderQuickRead(profile, callAData) {
     document.getElementById('quote-attr').textContent = attrText ? '— ' + attrText : '';
   }
 
-  // Trajectory
+  // Trajectory — with Presence Economy insertion
   if(callAData?.trajectory) {
+    var _presenceQuick = detectPresenceEconomy(profile);
+    var _presenceInsertQuick = _presenceQuick && _presenceQuick.fires
+      ? `<div class="trajectory-text" style="margin-top:1.25rem;padding-top:1.25rem;border-top:0.5px solid rgba(255,255,255,0.15);font-style:normal;opacity:0.9;">${_presenceQuick.text}</div>`
+      : '';
     document.getElementById('quick-trajectory').innerHTML =
-      `<div class="trajectory-text">${callAData.trajectory}</div>`;
+      `<div class="trajectory-text">${callAData.trajectory}</div>` + _presenceInsertQuick;
   }
 
   // Geo spotlight (from ZIP data — available immediately, no Claude needed)
@@ -3714,8 +3960,12 @@ function renderFullReport(profile, callAData, callBData, callCData) {
 
   // Trajectory (full version) — trajectory only, clean
   if(callAData?.trajectory) {
+    var _presenceFull = detectPresenceEconomy(profile);
+    var _presenceInsertFull = _presenceFull && _presenceFull.fires
+      ? `<div class="trajectory-text" style="margin-top:1.25rem;padding-top:1.25rem;border-top:0.5px solid rgba(255,255,255,0.15);font-style:normal;opacity:0.9;">${_presenceFull.text}</div>`
+      : '';
     document.getElementById('full-trajectory').innerHTML =
-      `<div class="trajectory-text">${callAData.trajectory}</div>`;
+      `<div class="trajectory-text">${callAData.trajectory}</div>` + _presenceInsertFull;
   }
 
   // Emerging signals — college/secondary industry paragraph as its own section
