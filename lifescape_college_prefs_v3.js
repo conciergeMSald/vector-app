@@ -894,7 +894,9 @@ const SCHOOL_GPA_RANGES = {
   "Colgate University":{"min":3.7},
   "Colby College":{"min":3.7},
   "Bates College":{"min":3.6},
-  "Bucknell University":{"min":3.6}
+  "Bucknell University":{"min":3.6},
+  "Providence College":{"min":3.5},
+  "Xavier University":{"min":3.4},
 };
 
 function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {
