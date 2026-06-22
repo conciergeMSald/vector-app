@@ -29,23 +29,16 @@ const TILE_POOLS = {
     'cooking','baking','drawing','painting','photography','filmmaking',
     'fashion_design','graphic_design','animation','music_production',
     'playing_instrument','singing','writing_stories','nail_art','hair_makeup',
-    'woodworking','three_d_printing','content_creation','legos_building','roblox_game_design'
+    'woodworking','three_d_printing'
   ],
   move: [
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
-    'fitness_classes','rock_climbing',
-    'soccer','basketball','football','baseball_softball','volleyball','lacrosse','ice_hockey',
-    'track_field','swimming','gymnastics','wrestling','tennis',
-    'golf','crew_rowing','cross_country','fencing','water_polo'
+    'esports_gaming','horseback_riding','rock_climbing'
   ],
   think: [
     'science_experiments','psychology','biology','chemistry','coding_programming',
-    'ai_machine_learning','data_statistics','philosophy',
-    'true_crime','puzzles_brain_teasers','word_puzzles','logic_number_puzzles',
-    'category_pattern_puzzles','understanding_why_people',
-    'chess','debate_mock_un','speech_forensics','scifi_worldbuilding',
-    'journalism','law_justice','economics',
-    'esports_gaming','fantasy_sports_roster','collecting_trading'
+    'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
+    'true_crime','puzzles_brain_teasers','understanding_why_people'
   ],
   people: [
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
@@ -54,48 +47,20 @@ const TILE_POOLS = {
   systems: [
     'cosmetic_beauty_science','cooking_chemistry','medical_science','how_body_moves',
     'learning_differences','environment_sustainability','engineering_challenges',
-    'robotics_competitions','architecture','nutrition_food_science','business_startups'
+    'architecture','nutrition_food_science','business_startups'
   ]
 };
 
 // Always-included tiles — high signal, high recognizability for any student
 const ALWAYS_SHOW = [
-  // Make cluster anchor tiles — broad gender representation
   'cooking',          // universal, triggers baking/cosmetic combos
   'playing_instrument', // high EQ combo potential
-  'writing_stories',  // strong signal across many paths
-  'photography',      // broad creative signal
-  'content_creation', // TikTok/YouTube/Reels — replaces filmmaking as default
-  'legos_building',   // tactile spatial building — evergreen, broad
-  'roblox_game_design', // game design/coding — moved to Make, always show
-  // Move cluster — guaranteed minimum, broad gender representation
-  'fitness_lifting',  // universal move tile
-  'soccer',           // highest-participation team sport
-  'dance',            // expressive movement
-  'basketball',       // second-highest participation
-  'baseball_softball',// second-most popular US sport
-  'football',         // highest-viewership US sport
-  'golf',             // social capital sport — business networking signal
-  'tennis',           // access-coded, broad career signal
-  'fitness_classes',  // Pilates/F45/SoulCycle — girls and wellness students
-  // Systems cluster — guaranteed minimum 5 visible
-  'engineering_challenges', // strong systems signal
-  'how_body_moves',         // body-systems crossover
-  'medical_science',        // broad health signal
-  'business_startups',      // entrepreneurial systems
-  'environment_sustainability', // climate/outdoor signal
-  // Think cluster — guaranteed minimum 5 visible
-  'psychology',       // most universal Think tile
-  'science_experiments', // second-most universal
   'coding_programming', // high IBIS coverage
-  'ai_machine_learning', // contemporary relevance
-  'data_statistics',  // completes Think minimum
-  // People cluster — guaranteed minimum 5 visible
-  'volunteering',     // broad civic signal
-  'teaching_tutoring', // most universal People tile
   'entrepreneurship', // cross-cluster signal
   'animal_care',      // strong EQ indicator
-  'mental_health_wellness' // completes People minimum
+  'fitness_lifting',  // universal move tile
+  'writing_stories',  // strong signal across many paths
+  'photography'       // broad creative signal
 ];
 
 // ─────────────────────────────────────────────────────────────
@@ -107,10 +72,9 @@ const FREE_TIME_MAP = {
 
   making: [
     // Make cluster — full representation
-    'cooking','baking','drawing','painting','photography','content_creation',
-    'fashion_design','graphic_design','animation','playing_instrument',
-    'nail_art','hair_makeup','woodworking','three_d_printing',
-    'legos_building','roblox_game_design','writing_stories','singing',
+    'cooking','baking','drawing','painting','photography','filmmaking',
+    'fashion_design','graphic_design','animation','music_production',
+    'playing_instrument','nail_art','hair_makeup','woodworking','three_d_printing',
     // Systems tiles that connect to making
     'cosmetic_beauty_science','cooking_chemistry','architecture','engineering_challenges',
     // Think tiles that connect to making
@@ -120,9 +84,7 @@ const FREE_TIME_MAP = {
   moving: [
     // Move cluster — full representation
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
-    'horseback_riding','rock_climbing',
-    'soccer','basketball','football','baseball_softball','volleyball','lacrosse','ice_hockey',
-    'track_field','swimming','gymnastics','wrestling','tennis',
+    'esports_gaming','horseback_riding','rock_climbing',
     // Systems tiles that connect to movement
     'how_body_moves','medical_science','nutrition_food_science',
     // People tiles that connect to movement
@@ -134,12 +96,8 @@ const FREE_TIME_MAP = {
   thinking: [
     // Think cluster — full representation
     'science_experiments','psychology','biology','chemistry','coding_programming',
-    'ai_machine_learning','data_statistics','philosophy',
-    'true_crime','puzzles_brain_teasers','word_puzzles','logic_number_puzzles',
-    'category_pattern_puzzles','understanding_why_people',
-    'chess','debate_mock_un','speech_forensics','scifi_worldbuilding',
-    'journalism','law_justice','economics',
-    'esports_gaming','fantasy_sports_roster','collecting_trading',
+    'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
+    'true_crime','puzzles_brain_teasers','understanding_why_people',
     // Systems tiles that connect to thinking
     'cosmetic_beauty_science','medical_science','engineering_challenges',
     'environment_sustainability','cooking_chemistry','architecture',
@@ -256,7 +214,7 @@ function curateInitialTiles(answers) {
   workStyleBonus.forEach(id => { scores[id] = (scores[id] || 0) + 3; });
 
   // Always-show tiles get a baseline score so they always appear
-  ALWAYS_SHOW.forEach(id => { scores[id] = Math.max(scores[id] || 0, 50); });
+  ALWAYS_SHOW.forEach(id => { scores[id] = Math.max(scores[id] || 0, 8); });
 
   // If no free_time answers given — show balanced default set
   if (free_time.length === 0) {
@@ -285,39 +243,27 @@ function curateInitialTiles(answers) {
 // ─────────────────────────────────────────────────────────────
 
 function ensureClusterBalance(sortedIds, free_time) {
-  const MIN_PER_CLUSTER = 5;   // every cluster guaranteed at least 5 visible tiles
-  const MAX_PER_CLUSTER = 9;   // no single cluster dominates — caps Make at 9 instead of 15
-  let result = [...sortedIds];
-
-  // Pass 1 — enforce maximum per cluster: demote excess tiles beyond MAX to the back
-  const seen = {};
-  const kept = [];
-  const demoted = [];
-  result.forEach(id => {
-    const cluster = getCluster(id);
-    if (!cluster) { kept.push(id); return; }
-    seen[cluster] = (seen[cluster] || 0) + 1;
-    if (seen[cluster] <= MAX_PER_CLUSTER) kept.push(id);
-    else demoted.push(id);
-  });
-  result = [...kept, ...demoted];
-
-  // Pass 2 — enforce minimum per cluster: inject tiles if any cluster is under MIN
+  const MIN_PER_CLUSTER = 2;
+  const result = [...sortedIds];
   const clusterCounts = {};
+
+  // Count how many tiles from each cluster are in top 32
   result.slice(0, 32).forEach(id => {
     const cluster = getCluster(id);
     if (cluster) clusterCounts[cluster] = (clusterCounts[cluster] || 0) + 1;
   });
 
+  // For any cluster with fewer than MIN tiles, inject the top-scored tile from that cluster
   Object.keys(TILE_POOLS).forEach(cluster => {
-    let toFill = MIN_PER_CLUSTER - (clusterCounts[cluster] || 0);
-    if (toFill <= 0) return;
-    const clusterTiles = TILE_POOLS[cluster];
-    // Find highest-scored tiles from this cluster not already in top 32
-    const candidates = clusterTiles.filter(id => !result.slice(0, 32).includes(id));
-    candidates.slice(0, toFill).forEach((id, i) => {
-      result.splice(30 + i, 0, id);
-    });
+    if ((clusterCounts[cluster] || 0) < MIN_PER_CLUSTER) {
+      const clusterTiles = TILE_POOLS[cluster];
+      // Find the highest-scored tile from this cluster not already in result
+      const toAdd = clusterTiles.find(id => !result.slice(0, 32).includes(id));
+      if (toAdd) {
+        // Insert at position 30 (before the last two slots)
+        result.splice(30, 0, toAdd);
+      }
+    }
   });
 
   return result;
@@ -350,7 +296,8 @@ const TILE_ADJACENCY = {
   fashion_design:       ['nail_art','hair_makeup','graphic_design','cosmetic_beauty_science'],
   graphic_design:       ['drawing','animation','coding_programming','photography'],
   animation:            ['drawing','roblox_game_design','filmmaking','graphic_design'],
-  music_production:     ['playing_instrument','singing','filmmaking','coding_programming'],
+  music_production:     ['playing_instrument','singing','filmmaking','coding_programming','flow_state'],
+  flow_state:           ['music_production','playing_instrument','coding_programming','woodworking','three_d_printing','data_statistics'],
   playing_instrument:   ['singing','music_production','dance'],
   singing:              ['playing_instrument','dance','music_production'],
   writing_stories:      ['psychology','journalism','philosophy','filmmaking'],
@@ -370,7 +317,7 @@ const TILE_ADJACENCY = {
   psychology:           ['mental_health_wellness','understanding_why_people','philosophy','biology'],
   biology:              ['medical_science','science_experiments','chemistry','environment_sustainability'],
   chemistry:            ['science_experiments','cosmetic_beauty_science','cooking_chemistry','biology'],
-  coding_programming:   ['ai_machine_learning','data_statistics','engineering_challenges'],
+  coding_programming:   ['ai_machine_learning','roblox_game_design','data_statistics','engineering_challenges'],
   ai_machine_learning:  ['coding_programming','data_statistics','roblox_game_design'],
   roblox_game_design:   ['coding_programming','animation','esports_gaming','ai_machine_learning'],
   data_statistics:      ['coding_programming','business_startups','ai_machine_learning','economics'],
@@ -395,57 +342,7 @@ const TILE_ADJACENCY = {
   engineering_challenges:['architecture','woodworking','three_d_printing','coding_programming'],
   architecture:         ['woodworking','engineering_challenges','drawing','environment_sustainability'],
   nutrition_food_science:['cooking','biology','fitness_lifting','medical_science'],
-  business_startups:    ['entrepreneurship','data_statistics','coding_programming'],
-
-  // ── New team sports — adjacent to each other and to body/movement tiles ──
-  soccer:               ['basketball','football','lacrosse','ice_hockey','how_body_moves'],
-  basketball:           ['soccer','volleyball','football','how_body_moves'],
-  football:             ['basketball','lacrosse','ice_hockey','fitness_lifting'],
-  baseball_softball:    ['data_statistics','track_field','fitness_lifting'],
-  volleyball:           ['basketball','soccer','how_body_moves'],
-  lacrosse:             ['soccer','ice_hockey','football','how_body_moves'],
-  ice_hockey:           ['lacrosse','soccer','football','martial_arts'],
-
-  // ── New individual competitive sports — adjacent to each other and to data/science tiles ──
-  track_field:          ['swimming','cross_country','how_body_moves','data_statistics'],
-  swimming:             ['track_field','how_body_moves','medical_science'],
-  gymnastics:           ['dance','how_body_moves','fitness_lifting'],
-  wrestling:            ['martial_arts','fitness_lifting','how_body_moves'],
-  tennis:               ['golf','fitness_lifting','data_statistics'],
-
-  // ── New access/endurance sports — adjacent to each other and to relevant outdoor/data tiles ──
-  golf:                 ['tennis','entrepreneurship','business_startups'],
-  crew_rowing:          ['swimming','fitness_lifting','how_body_moves'],
-  cross_country:        ['track_field','how_body_moves','environment_sustainability'],
-  fencing:              ['martial_arts','chess','puzzles_brain_teasers'],
-  water_polo:           ['swimming','how_body_moves','fitness_lifting'],
-
-  // ── New puzzle tiles — adjacent to each other, to chess, and to the original generic puzzle tile ──
-  word_puzzles:         ['puzzles_brain_teasers','writing_stories','category_pattern_puzzles'],
-  logic_number_puzzles: ['puzzles_brain_teasers','data_statistics','chess'],
-  category_pattern_puzzles:['puzzles_brain_teasers','word_puzzles','data_statistics'],
-
-  // ── New academic/competitive club tiles — adjacent to each other and to relevant Think/Make tiles ──
-  chess:                ['logic_number_puzzles','data_statistics','puzzles_brain_teasers'],
-  debate_mock_un:       ['speech_forensics','philosophy','advocacy_activism'],
-  speech_forensics:     ['debate_mock_un','writing_stories','philosophy'],
-  scifi_worldbuilding:  ['writing_stories','ai_machine_learning','roblox_game_design'],
-
-  // ── New Systems tile — adjacent to engineering and coding tiles ──
-  robotics_competitions:['engineering_challenges','coding_programming','three_d_printing'],
-
-  // ── Journalism, Law & Justice, Economics — adjacent to each other and to relevant existing tiles ──
-  journalism:           ['writing_stories','filmmaking','data_statistics','speech_forensics'],
-  law_justice:          ['debate_mock_un','economics','advocacy_activism','speech_forensics'],
-  economics:            ['data_statistics','law_justice','business_startups','entrepreneurship'],
-
-  // New tiles from this batch
-  content_creation:     ['filmmaking','hair_makeup','photography','entrepreneurship'],
-  fantasy_sports_roster:['data_statistics','baseball_softball','basketball','football','collecting_trading'],
-  collecting_trading:   ['economics','data_statistics','entrepreneurship','fantasy_sports_roster'],
-  esports_gaming:       ['roblox_game_design','coding_programming','data_statistics'],
-  legos_building:       ['engineering_challenges','architecture','three_d_printing','roblox_game_design'],
-  fitness_classes:      ['yoga','fitness_lifting','how_body_moves','entrepreneurship']
+  business_startups:    ['entrepreneurship','data_statistics','coding_programming']
 };
 
 function surfaceRelatedTiles(selectedIds, alreadyShownIds) {
@@ -504,7 +401,7 @@ function getEQPriority(answers) {
     'i_cant_ignore_unfairness','i_am_person_people_call','i_slow_down_for_people',
     'i_like_figuring_out_different_way','little_kids_love_me','animals_trust_me',
     'i_like_explaining_things','id_rather_listen_than_talk','i_notice_things_others_miss',
-    'want_to_fix_it_not_talk_about_it','i_lose_track_of_time_making',
+    'want_to_fix_it_not_talk_about_it','flow_state','i_lose_track_of_time_making',
     'im_one_who_holds_group_together','i_ask_why','i_remember_details_about_people',
     'i_process_through_art_music','i_can_tell_when_upset','i_think_of_others_feelings'
   ];
