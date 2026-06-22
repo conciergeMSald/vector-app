@@ -754,6 +754,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <button class="world-card" data-world="civic" onclick="selectWorld(this,'civic')"><div class="world-icon"><i class="ti ti-users" aria-hidden="true"></i></div><div class="world-name">The World of Civic Life</div><div class="world-desc">Government, service, community, leadership</div></button>
     <button class="world-card" data-world="beauty" onclick="selectWorld(this,'beauty')"><div class="world-icon"><i class="ti ti-palette" aria-hidden="true"></i></div><div class="world-name">The World of Beauty</div><div class="world-desc">Arts, fashion, aesthetics, creative expression</div></button>
     <button class="world-card" data-world="power" onclick="selectWorld(this,'power')"><div class="world-icon"><i class="ti ti-chess" aria-hidden="true"></i></div><div class="world-name">The World of Power</div><div class="world-desc">Entrepreneurship, leadership, strategy, scale</div></button>
+    <button class="world-card" data-world="compete" onclick="selectWorld(this,'compete')"><div class="world-icon"><i class="ti ti-trophy" aria-hidden="true"></i></div><div class="world-name">The World of Competition</div><div class="world-desc">Sport, performance, winning, the score</div></button>
   </div>
 
   <div id="world-error" style="display:none;color:#c0392b;margin:12px 0;font-size:14px;">Please select at least one world before continuing.</div>
@@ -2100,6 +2101,68 @@ function buildContext(profile) {
    Returns structured context blocks injected into callA-callD prompts.
    Five layers: Science, Clinical, Care, Commerce, Policy.
    ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── Compete Lens Detector ───────────────────────────────────────────────────
+   Fires when student selected the compete world OR has strong athletic/
+   competitive tile signal. Returns injection text for callA-callD prompts.
+   The retirement thread runs underneath every track as a quiet invitation:
+   "What about the game fascinates you beyond playing it?"
+   ─────────────────────────────────────────────────────────────────────────── */
+function buildCompeteLensContext(ctx) {
+  const tiles = (ctx.activityTiles || []).concat(ctx.eqTiles || []).map(t => t.toLowerCase());
+  const worlds = (ctx.worlds_chosen || []).map(w => w.toLowerCase());
+  const riasec = (ctx.topRIASEC || '').toUpperCase();
+
+  const worldSignal = worlds.includes('compete');
+  const athleticTiles = ['fitness_lifting','how_body_moves','rock_climbing','martial_arts','dance',
+    'cheerleading','soccer','basketball','football','volleyball','lacrosse','water_polo',
+    'swimming','tennis','golf','baseball','softball','horseback_riding','yoga'];
+  const athleticSignal = athleticTiles.some(t => tiles.includes(t));
+  const businessSignal = ['entrepreneurship','business_startups','fantasy_sports_roster','data_statistics'].some(t => tiles.includes(t));
+  const bodySignal = ['medical_science','biology','first_aid_emergencies'].some(t => tiles.includes(t));
+  const coachSignal = ['teaching_tutoring','leading_the_group','working_with_little_kids'].some(t => tiles.includes(t));
+  const mediaSignal = ['writing_stories','filmmaking','photography'].some(t => tiles.includes(t));
+  const techSignal = ['data_statistics','ai_machine_learning','coding_programming'].some(t => tiles.includes(t));
+  const flowSignal = tiles.includes('flow_state');
+
+  // Fire if world selected OR strong athletic signal
+  if (!worldSignal && !athleticSignal) return null;
+
+  // Determine primary track
+  let primaryTrack = 'craft';
+  if (businessSignal && !bodySignal) primaryTrack = 'business';
+  if (bodySignal) primaryTrack = 'body';
+  if (coachSignal && !businessSignal && !bodySignal) primaryTrack = 'coaching';
+  if (techSignal && businessSignal) primaryTrack = 'technology';
+  if (mediaSignal && !businessSignal) primaryTrack = 'media';
+
+  const trackDescriptions = {
+    craft: 'the competitive identity itself — the discipline, performance under pressure, and intrinsic motivation to meet a standard that only serious competition develops',
+    business: 'the business of sport — front office, sports marketing, NIL and personal brand, stadium development, and the commercial infrastructure that makes sport an entertainment industry',
+    body: 'the body as a career — sports medicine, athletic training, physical therapy, strength and conditioning, and the clinical professionals who keep athletes performing',
+    coaching: 'coaching and player development — transmitting athletic identity into the development of others, from youth sport through collegiate and professional coaching',
+    technology: 'sports analytics and technology — the data science, wearables, autonomous vehicle sports applications, and the Moneyball revolution that never stopped',
+    media: 'sports media and broadcasting — the athlete who becomes the voice, carrying credibility that journalism school cannot teach'
+  };
+
+  const nilNote = businessSignal || worldSignal ?
+    ' NIL is not a scholarship supplement — it is a four-year curriculum in entrepreneurship, brand building, and negotiation. The athlete who approaches it strategically arrives at 25 with a brand, an audience, and business skills their peers are still developing.' : '';
+
+  return {
+    fires: true,
+    primaryTrack,
+    worldSignal,
+    callA_injection: `
+COMPETE LENS ACTIVE — this student has strong competitive/athletic signal. Every athlete retires. The most important question is not what sport they play — it is what the sport is building in them, and where those qualities deploy when they decide what comes next. The competitive instinct, the performance under pressure, the intrinsic drive to meet a standard — these are permanent professional assets that transfer across every environment. Primary track detected: ${trackDescriptions[primaryTrack]}. When writing the trajectory sentence, honor the athletic identity without limiting it to sport. The trajectory should name both the competitor and the person the competitor is becoming.`,
+    callB_injection: `
+COMPETE LENS: This student has competitive/athletic signal${worldSignal ? ' (selected The World of Competition)' : ''}. Consider surfacing the sport and competition world as an industry cluster if tiles support it. The sport world is larger than most students see: it includes the athlete, the sports medicine professional, the front office executive, the sports attorney, the broadcaster, the data scientist, and the NIL entrepreneur.${nilNote} Primary track for this student: ${trackDescriptions[primaryTrack]}. Unexpected career to consider: Mental Performance Consultant (CMPC) — the sports psychologist who works with athletes on competitive anxiety, flow states, and the transition out of sport — one of the most needed and most undersurfaced careers in athletics.`,
+    callC_injection: `
+COMPETE COUNSELOR NOTE: Athletic/competitive profile detected. (1) The retirement thread: this student will eventually transition out of active competition — planting the seed of a parallel professional identity now is one of the highest-value things a counselor can do. Ask: "What about the game fascinates you beyond playing it?" (2) Primary track: ${trackDescriptions[primaryTrack]}. (3) NIL awareness: if this student has college athletic prospects, they should understand NIL as a business curriculum before they arrive on campus. (4) School callouts: UMass Amherst McCormack Dept of Sport Management (oldest, most respected), Syracuse Falk College (sport management + Newhouse media), Marquette National Sports Law Institute, Ohio University Sport Management.`,
+    callD_injection: `
+COMPETE LENS: If any matched schools have strong athletic programs, sport management programs, or sport medicine/kinesiology programs, surface those in the MATCH and WHY fields. The student with compete signal who also has business tiles benefits from schools with NIL infrastructure and sport business programs. The student with body tiles benefits from schools with athletic training, kinesiology, or sports medicine concentrations.`
+  };
+}
+
 function buildLongevityLensContext(ctx) {
   const tiles = (ctx.activityTiles || []).concat(ctx.eqTiles || []).map(t => t.toLowerCase());
   const worlds = (ctx.worlds_chosen || []).map(w => w.toLowerCase());
@@ -2164,6 +2227,8 @@ LONGEVITY LENS: If any matched schools have programs in gerontology, aging biolo
 function buildCallAPrompt(ctx) {
   var _longevityCtx = buildLongevityLensContext(ctx);
   var _longevityA = _longevityCtx && _longevityCtx.fires ? _longevityCtx.callA_injection : '';
+  var _competeCtx = buildCompeteLensContext(ctx);
+  var _competeA = _competeCtx && _competeCtx.fires ? _competeCtx.callA_injection : '';
   return `You are the intelligence behind Lifescape — a tool that helps young people understand who they are and where they might go. You are a trusted advisor who tells the truth because you respect the person in front of you.
 
 VOICE INSTRUCTION:
@@ -2203,7 +2268,7 @@ Write one sentence — the single most important sentence in the entire Lifescap
 - Feel like something worth memorizing
 - Be genuinely original for this profile
 
-${_longevityA}
+${_longevityA}${_competeA}
 FORBIDDEN: assessment, results, data, score, ranked, you should become, most students like you, based on your answers, personality type
 
 Write only the three sections with their exact dividers. Nothing else.`;
@@ -2212,6 +2277,8 @@ Write only the three sections with their exact dividers. Nothing else.`;
 function buildCallBPrompt(ctx) {
   var _longevityCtx = buildLongevityLensContext(ctx);
   var _longevityB = _longevityCtx && _longevityCtx.fires ? _longevityCtx.callB_injection : '';
+  var _competeCtx = buildCompeteLensContext(ctx);
+  var _competeB = _competeCtx && _competeCtx.fires ? _competeCtx.callB_injection : '';
   const naicsNames = {11:'Agriculture',21:'Mining & Energy',22:'Utilities',23:'Construction',31:'Manufacturing',32:'Manufacturing',33:'Manufacturing',42:'Wholesale',44:'Retail',45:'Retail',48:'Transportation',49:'Transportation',51:'Information & Media',52:'Finance & Insurance',53:'Real Estate',54:'Professional & Scientific Services',55:'Management',56:'Administrative Services',61:'Education',62:'Health Care & Social Assistance',71:'Arts, Entertainment & Recreation',72:'Food Service & Hospitality',81:'Personal & Consumer Services',92:'Government & Public Service'};
   const topIndustries = ctx.naicsSectors.slice(0,5).map(n=>naicsNames[n.sector]||`Sector ${n.sector}`).join(', ');
   const onetBlock = typeof buildONETPromptBlock === 'function'
@@ -2297,13 +2364,15 @@ For each combination unlock that fired, write one paragraph: what combined, what
 ---COLLEGE---
 2-3 sentences. First time college appears in the report. Do not name specific schools. Describe the type of college environment that would serve this student. End with exactly: "Your counselor knows which ones."
 
-${_longevityB}
+${_longevityB}${_competeB}
 FORBIDDEN: assessment, results, data, score, ranked, you should become, most students like you, personality type`;
 }
 
 function buildCallCPrompt(ctx) {
   var _longevityCtx = buildLongevityLensContext(ctx);
   var _longevityC = _longevityCtx && _longevityCtx.fires ? _longevityCtx.callC_injection : '';
+  var _competeCtx = buildCompeteLensContext(ctx);
+  var _competeC = _competeCtx && _competeCtx.fires ? _competeCtx.callC_injection : '';
   const geoList = ctx.geoIndustries ? ctx.geoIndustries.join(', ') : 'No geo data available';
   const regionalContext = ctx.regionalIntel ? ctx.regionalIntel.callc_context : '';
   const corridorContext = typeof getStudentCorridorContext === 'function'
@@ -2370,7 +2439,7 @@ STRONGEST UNLOCK: The single most valuable combination or tile signal. One sente
 
 THREE PROMPTS: Three conversation-starter questions specific to this student's actual profile — not generic. Things that make the student think. Number them 1, 2, 3.
 
-${_longevityC}
+${_longevityC}${_competeC}
 FORBIDDEN: assessment, results, data, score, ranked, personality type`;
 }
 
@@ -2836,6 +2905,8 @@ function validateOrientAndGoTo(n) {
 function buildCallDPrompt(ctx, matchedSchools, schoolContentBlock) {
   var _longevityCtx = buildLongevityLensContext(ctx);
   var _longevityD = _longevityCtx && _longevityCtx.fires ? _longevityCtx.callD_injection : '';
+  var _competeCtx = buildCompeteLensContext(ctx);
+  var _competeD = _competeCtx && _competeCtx.fires ? _competeCtx.callD_injection : '';
   const prefSummary = [
     ctx.college_prefs.conference && ctx.college_prefs.conference !== 'no_sports'
       ? stripUnderscores(ctx.college_prefs.conference)
@@ -2884,7 +2955,7 @@ WHY: [3 complete sentences. Use the school intelligence provided. Connect the pi
 
 Write all ${Math.min(matchedSchools.length, 5)} schools in this format.
 
-${_longevityD}
+${_longevityD}${_competeD}
 RULES:
 - Start your response with "SCHOOL:" — nothing before it
 - Never say "you should attend" or reference admissions difficulty

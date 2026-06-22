@@ -2637,6 +2637,36 @@ const VECTOR_CROSSWALK = [
       { with: ["writing_stories"], unlocks: ["Author", "Screenwriter", "Narrative Designer", "Journalist — Long Form"] },
       { with: ["fitness_lifting", "how_body_moves"], unlocks: ["Strength & Conditioning Coach", "Athletic Performance Specialist", "Physical Therapist"] }
     ]
+  },
+
+  {
+    id: "compete",
+    label: "Compete",
+    label_parent: "Compete",
+    cluster: "eq",
+    riasec: ["E", "R", "S"],
+    naics_sectors: [71, 61, 62, 54, 51],
+    industries: ["Sports & Athletics", "Sports Medicine", "Sports Business & Management",
+                 "Sports Media", "Sports Analytics", "Fitness & Wellness"],
+    career_emergence: [
+      "Professional Athlete", "Sports Agent", "Athletic Trainer", "Sports Medicine Physician",
+      "Front Office Executive", "Sports Analyst", "Sports Broadcaster", "Strength & Conditioning Coach",
+      "Sports Psychologist", "Sports Marketing Manager"
+    ],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["fitness_lifting", "how_body_moves"], unlocks: ["Strength & Conditioning Coach", "Athletic Performance Specialist", "Physical Therapist — Sports Track"] },
+      { with: ["medical_science", "biology"], unlocks: ["Sports Medicine Physician", "Athletic Trainer", "Orthopedic Surgeon", "Sports Physical Therapist"] },
+      { with: ["entrepreneurship", "fantasy_sports_roster"], unlocks: ["Sports Agent", "Front Office Executive", "Sports Business Founder", "NIL Entrepreneur"] },
+      { with: ["data_statistics", "ai_machine_learning"], unlocks: ["Sports Analytics Director", "Performance Data Scientist", "Sports Betting Analyst", "Wearable Technology Engineer"] },
+      { with: ["teaching_tutoring", "leading_the_group"], unlocks: ["Head Coach", "Player Development Director", "Youth Sports Academy Director"] },
+      { with: ["writing_stories", "filmmaking"], unlocks: ["Sports Broadcaster", "Sports Journalist", "Sports Documentary Director", "Podcast Host — Sports"] },
+      { with: ["understanding_why_people", "mental_health_wellness"], unlocks: ["Sports Psychologist", "Mental Performance Consultant (CMPC)", "Athlete Transition Counselor"] },
+      { with: ["philosophy", "writing_stories"], unlocks: ["Sports Attorney", "NFLPA / NBPA Agent", "NIL Compliance Counsel", "Sports Labor Lawyer"] },
+      { with: ["flow_state"], unlocks: ["Elite Athlete", "Master Competitor", "Serious Amateur — Complete Athletic Life"] },
+      { with: ["entrepreneurship", "understanding_why_people", "fantasy_sports_roster"], unlocks: ["General Manager", "Director of Player Personnel", "Head of Athlete Management", "Sports Brand Founder"] }
+    ]
   }
 
 ];
