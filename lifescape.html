@@ -2803,6 +2803,8 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       report_text:      (callAData && callAData.trajectory) ? callAData.trajectory.slice(0, 5000) : '',
       consultant_code:  LS_STATE.consultant_code                                                  || '',
       outcome_school:   '',
+      pronoun_label:    (LS_STATE.pronouns && LS_STATE.pronouns.label) || '',
+      cc_pathway_shown: (LS_STATE.callEResult && LS_STATE.callEResult.actIX) ? 'Y' : 'N',
     };
 
     fetch('https://api.abettercollegeconsultant.com/save-session', {
@@ -2815,10 +2817,19 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       if (d.success) {
         console.log('[VECTOR Lifescape] Session saved to Airtable:', d.airtable_id, '| Consultant:', LS_STATE.consultant_code || 'none');
       } else {
+        var errMsg = d.message || d.error || 'Session capture failed';
         console.error('[VECTOR Lifescape] Airtable session error:', d);
+        if (typeof showLsToast === 'function') {
+          showLsToast('Session data could not be saved. Please screenshot your report. (' + errMsg + ')');
+        }
       }
     })
-    .catch(function(err){ console.error('[VECTOR Lifescape] captureToAirtable fetch error:', err); });
+    .catch(function(err){
+      console.error('[VECTOR Lifescape] captureToAirtable fetch error:', err);
+      if (typeof showLsToast === 'function') {
+        showLsToast('Connection error — your report is complete but session data was not saved.');
+      }
+    });
 
   } catch(err) {
     console.error('[VECTOR Lifescape] captureToAirtable build error:', err);
