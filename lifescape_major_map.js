@@ -3066,3 +3066,558 @@ Object.assign(MAJOR_MAP, {
     }
   ]
 });
+
+// ── NAICS 101 — The Planning Economy ─────────────────────────────────────────
+// The cognitive profile the system has never named as a career asset:
+// the person who turns chaos into a sequence without being asked.
+Object.assign(MAJOR_MAP, {
+  101: [
+    {
+      major_label: 'Supply Chain Management',
+      riasec_affinity: ['C', 'E', 'I'],
+      riasec_conflict: ['A'],
+      program_keywords: ['supply chain management', 'logistics', 'operations management', 'procurement', 'inventory management', 'demand planning'],
+      entry_careers: ['Supply Chain Analyst', 'Demand Planner', 'Procurement Associate', 'Operations Coordinator', 'Logistics Coordinator'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: true,
+      emerging_role: 'Supply Chain Resilience Architect — the professional who redesigns supply chain networks after the COVID-era disruptions revealed that the just-in-time, single-source, offshore-optimized supply chain model was fragile in ways that most companies had not modeled. Every major manufacturer, retailer, and healthcare system is rebuilding its supply chain with redundancy, nearshoring, and visibility tools that did not exist or were not prioritized five years ago. The supply chain professional who understands both the optimization logic of the old model and the resilience requirements of the new one is one of the most sought-after profiles in operations.',
+      deployment_contexts: [
+        {
+          domain: 'Demand Planning & Inventory Optimization',
+          edge: 'Getting demand right — knowing how much product to have, where, and when — is the difference between a supply chain that serves customers and one that either runs out of stock or drowns in inventory carrying costs. The demand planner who combines statistical modeling with genuine business judgment — who can build the forecast and also explain to a merchant why the model says to buy 40% more inventory than last year — is doing some of the highest-leverage analytical work in retail and consumer products. Michigan State, Penn State, and the University of Tennessee\'s Global Supply Chain Institute all have demand planning concentrations that most students never encounter until they are already on a different career path.'
+        },
+        {
+          domain: 'Procurement & Supplier Relationship Management',
+          edge: 'Every dollar saved in procurement falls directly to the bottom line. The procurement professional who can negotiate supplier contracts, manage supplier performance, develop alternative sources, and build the relationship infrastructure that makes a supply chain reliable under stress is providing one of the most direct and measurable financial contributions available in any business function. As supply chains have become more complex and more strategic, procurement has evolved from a transactional function into a strategic one — and the professionals who have made that transition with it are among the most valued in operations. Michigan State and Penn State both have procurement concentrations with Fortune 500 recruiting relationships.'
+        },
+        {
+          domain: 'Consumer Packaged Goods Operations',
+          edge: 'The independent CPG brand — the food, beverage, supplement, or personal care company building from zero to $50M in revenue — needs supply chain professionals who can do everything simultaneously: find co-manufacturers, negotiate ingredient contracts, manage inventory across a limited warehouse footprint, coordinate distribution relationships, and plan production schedules with the imperfect demand signal that an early-stage brand provides. Michigan State\'s School of Packaging and supply chain programs together provide the most complete undergraduate preparation for this specific career path that exists anywhere.'
+        }
+      ]
+    },
+    {
+      major_label: 'Event Management',
+      riasec_affinity: ['E', 'C', 'S'],
+      riasec_conflict: ['I', 'R'],
+      program_keywords: ['event management', 'event planning', 'hospitality management', 'conference management', 'meeting planning', 'CMP certification'],
+      entry_careers: ['Event Coordinator', 'Conference Manager', 'Wedding Planner', 'Corporate Event Planner', 'Festival Operations Coordinator'],
+      world_alignment: 'People',
+      cc_transfer_friendly: true,
+      emerging_role: 'Experience Economy Designer — the professional who designs and produces live experiences — corporate events, brand activations, trade show presences, festivals, conferences — as strategic business tools rather than logistical necessities. As the experience economy has grown and live events have demonstrated higher engagement and conversion than digital marketing across almost every industry, the event professional who understands both the operational execution and the strategic objective behind an event is providing far more value than a coordinator who simply books the venue and the catering.',
+      deployment_contexts: [
+        {
+          domain: 'Corporate Events & Conference Management',
+          edge: 'Every major corporation runs an annual meeting, a sales kickoff, a product launch, a user conference, or a combination of all four — and the professionals who produce these events are managing budgets from $100,000 to $50,000,000, coordinating hundreds of vendors, and delivering experiences on which a significant portion of the company\'s culture and business development depends. The Certified Meeting Professional designation is the field standard; the undergraduate programs at Belmont University, Johnson & Wales, and the University of Nevada Las Vegas all have event management concentrations with direct placement into corporate event planning roles.'
+        },
+        {
+          domain: 'Trade Show & Exhibition Management',
+          edge: 'The trade show industry generates more than $100 billion in economic activity annually in the United States alone. Informa, Reed Exhibitions, and the independent show organizers who run the thousands of annual trade shows across every industry all need operations professionals who can build a temporary city — with power, connectivity, logistics, catering, security, and 200 exhibitors — and take it down again in 72 hours. The event management professional who specializes in trade show operations is working in a segment of the industry that is growing, that pays well, and that almost no high school student considers as a career path.'
+        },
+        {
+          domain: 'Live Music & Entertainment Production',
+          edge: 'The tour manager who moves a band and forty tons of equipment across twenty cities. The festival producer who creates Coachella or Bonnaroo. The venue operations director who runs the Hollywood Bowl or Madison Square Garden. All of these roles require the planning mind at its most demanding — managing hundreds of vendors, thousands of moving parts, and the absolute deadline of showtime that cannot be moved. Johnson & Wales, Belmont, and Full Sail University all have event management programs with live entertainment concentrations that place students directly into the touring and festival production industry.'
+        }
+      ]
+    },
+    {
+      major_label: 'Operations Management',
+      riasec_affinity: ['C', 'E', 'I'],
+      riasec_conflict: ['A'],
+      program_keywords: ['operations management', 'project management', 'process improvement', 'lean management', 'operations planning', 'PMP'],
+      entry_careers: ['Operations Analyst', 'Project Manager', 'Process Improvement Specialist', 'Operations Planner', 'Business Operations Manager'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: true,
+      emerging_role: 'AI-Augmented Operations Manager — the operations professional who manages workflows that combine human judgment with AI-generated planning, scheduling, and optimization outputs — deciding when to follow the algorithm, when to override it, and how to design the human review layer that makes automated operations reliable in the situations the algorithm has not encountered before. Every logistics company, healthcare system, and manufacturer deploying AI planning tools needs this function and most are building it from scratch.',
+      deployment_contexts: [
+        {
+          domain: 'Healthcare Operations & Care Coordination',
+          edge: 'The hospital that runs well — where patients move efficiently from admission to discharge, where supplies are available when clinicians need them, where the schedule runs close to plan — is a direct function of operational management quality. The operations professional in healthcare is managing complexity that rivals military logistics, under regulatory constraints that rival pharmaceutical manufacturing, with human stakes that most business environments do not impose. Ohio State, Indiana University, and the University of Florida all have healthcare administration programs that combine operations management with healthcare-specific training and place graduates into hospital operations roles with starting salaries that most undergraduate programs do not approach.'
+        },
+        {
+          domain: 'Retail & E-Commerce Operations',
+          edge: 'The customer who clicks buy and receives the package the next day is experiencing the output of an operations system that involves demand forecasting, inventory positioning, warehouse management, carrier selection, last-mile routing, and return processing — all coordinated in real time, at scale, with a cost structure that determines whether the business is profitable. The operations professional who understands e-commerce fulfillment at the system level — who can see where a process is failing and redesign it — is among the most in-demand profiles in retail. Ohio State Fisher and Indiana University Kelley both have operations management programs with strong e-commerce and retail placement.'
+        }
+      ]
+    },
+    {
+      major_label: 'Hospitality Management',
+      riasec_affinity: ['E', 'S', 'C'],
+      riasec_conflict: ['I', 'R'],
+      program_keywords: ['hospitality management', 'hotel management', 'food and beverage management', 'tourism', 'resort management'],
+      entry_careers: ['Hotel Management Trainee', 'Food & Beverage Manager', 'Event Services Manager', 'Resort Operations Associate'],
+      world_alignment: 'People',
+      cc_transfer_friendly: true,
+      emerging_role: 'Hospitality Technology Experience Director — the professional who integrates technology into guest experiences in ways that feel like service rather than self-service — from mobile check-in and keyless entry to AI-powered personalization and predictive maintenance that prevents the problems guests would otherwise encounter. As hospitality companies have invested heavily in technology to reduce labor cost and improve consistency, the professional who ensures that technology serves the human experience of hospitality rather than replacing it is providing the most important quality control function in the industry.',
+      deployment_contexts: [
+        {
+          domain: 'Hotel & Resort Operations',
+          edge: 'The hotel general manager oversees a physical plant, a food and beverage operation, a housekeeping department, a sales and marketing function, a human resources operation, and a technology infrastructure — simultaneously, every day, in a business where the product expires every night and cannot be stored. The hospitality management graduate who earns their stripes in the management trainee programs at Marriott, Hilton, and Hyatt is building general management competency at a speed that most industries cannot match. Cornell\'s School of Hotel Administration and the University of Nevada Las Vegas both have placement rates and alumni networks in hotel operations that are unmatched in undergraduate business education.'
+        },
+        {
+          domain: 'Food & Beverage Operations',
+          edge: 'Restaurant and food service management requires every operational skill that exists — purchasing, inventory, staffing, scheduling, quality control, customer service, financial management — compressed into an environment where the product is perishable, the customer is present, and the margin for error is measured in minutes. The food and beverage manager who can run a profitable operation at scale is building competency that transfers to every other operations environment. Johnson & Wales, the Culinary Institute of America, and Cornell Hotel School all have food and beverage management tracks with strong corporate placement in contract food service, restaurant groups, and hotel F&B operations.'
+        }
+      ]
+    },
+    {
+      major_label: 'Family & Consumer Sciences',
+      riasec_affinity: ['S', 'C', 'E'],
+      riasec_conflict: ['I', 'R'],
+      program_keywords: ['family and consumer sciences', 'human ecology', 'consumer economics', 'family resource management', 'community services'],
+      entry_careers: ['Family Resource Specialist', 'Community Program Coordinator', 'Consumer Affairs Manager', 'Financial Counselor'],
+      world_alignment: 'People',
+      cc_transfer_friendly: true,
+      emerging_role: 'Household Systems Manager — the professional who applies organizational, financial, and operational management skills to household and family management at a high level — and who transitions those skills into the workforce through roles in financial counseling, community resource coordination, nonprofit program management, and consumer advocacy. The platform names household management explicitly as a full and legitimate deployment of the planning mind — not a lesser path, not a backup plan, but the most complex and most consequential organizational environment many planning-oriented people will ever manage.',
+      deployment_contexts: [
+        {
+          domain: 'Community Resource Management & Nonprofit Operations',
+          edge: 'Nonprofit organizations that serve families — food banks, childcare resource networks, family support programs, community health organizations — are run on operational management and resource allocation skills that are identical to the planning skills that manage a household well. The Family and Consumer Sciences graduate who brings genuine organizational and financial management competency to a mission-driven context is often the most operationally capable person in the organization, because the skills they developed managing complex family systems transfer directly to managing complex service delivery systems. Iowa State and Ohio State both have strong FCS programs with direct placement into nonprofit management, extension services, and community program coordination.'
+        },
+        {
+          domain: 'Consumer Financial Counseling',
+          edge: 'The financial counselor who helps families navigate debt, build budgets, understand credit, plan for education costs, and make the financial decisions that compound over a lifetime is providing one of the most meaningful and most needed services in American personal finance. The AFCPE (Association for Financial Counseling and Planning Education) credential and the AFC designation are the professional standards for this function. The Family and Consumer Sciences graduate who develops genuine financial planning competency is building toward a career that serves families across the income spectrum — not just the wealthy families served by the traditional financial advisory industry — and that addresses a genuine gap in financial services access.'
+        }
+      ]
+    }
+  ]
+});
+
+// ── NAICS 97 — The Physical Logistics Economy ────────────────────────────────
+// Ports, maritime, rail, trucking, warehousing, cold chain
+Object.assign(MAJOR_MAP, {
+  97: [
+    {
+      major_label: 'Transportation & Logistics Management',
+      riasec_affinity: ['E', 'C', 'R'],
+      riasec_conflict: ['A'],
+      program_keywords: ['transportation management', 'logistics', 'freight', 'carrier management', 'TMS', 'transportation operations'],
+      entry_careers: ['Transportation Analyst', 'Freight Broker', 'Carrier Relations Manager', 'Load Planner', 'Logistics Coordinator'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: true,
+      emerging_role: 'Autonomous Fleet Operations Supervisor — the professional who monitors, manages exceptions for, and ensures the regulatory compliance of autonomous and semi-autonomous commercial vehicle fleets as the technology scales from pilot programs to full commercial deployment. Tesla Semi, Aurora, and Kodiak are deploying autonomous long-haul trucks on specific corridors; the human role is shifting from operator to supervisor — and the operations professional who understands both the transportation fundamentals and the technology layer is building the playbook for a transition that the industry does not yet have trained people to manage.',
+      deployment_contexts: [
+        {
+          domain: 'Freight Brokerage & Digital Freight Matching',
+          edge: 'The freight broker matches shippers who need to move cargo with carriers who have available capacity — and the digitization of that process, through platforms like Uber Freight, Convoy, and Echo Global Logistics, has transformed what was a phone-and-fax business into a data-driven commercial operation. The freight broker who combines relationship skills with technology fluency — who can use digital freight platforms to manage more loads with better data than a traditional broker — is building toward one of the most accessible and highest-earning entry points in the logistics industry. Michigan State, Penn State, and the University of Tennessee all have transportation and logistics programs with direct freight brokerage recruiting relationships.'
+        },
+        {
+          domain: 'Fleet Management & Transportation Operations',
+          edge: 'Every company that operates a fleet — of trucks, of vans, of rail cars, of ships — needs professionals who can manage the safety, maintenance, routing, regulatory compliance, and cost performance of that fleet simultaneously. The fleet management professional who develops fluency in telematics data, hours of service regulations, preventive maintenance systems, and driver management is building toward a career that exists in every industry and geography in the country. Samsara, Geotab, and Motive are the telematics platforms that most fleet managers use daily; familiarity with these systems is increasingly a baseline expectation in fleet operations hiring.'
+        },
+        {
+          domain: 'Cold Chain & Pharmaceutical Logistics',
+          edge: 'The cold chain — temperature-controlled logistics for food, pharmaceuticals, and biologics — is among the most technically demanding and fastest-growing logistics segments. The COVID-19 vaccine distribution demonstrated that cold chain logistics is a national security asset, and the pharmaceutical cold chain for mRNA vaccines, biologics, and cell and gene therapies is growing at more than 15% annually. The logistics professional who develops cold chain expertise — who understands refrigeration technology, temperature monitoring requirements, regulatory documentation, and the carrier qualification standards that pharmaceutical companies impose — is building toward a specialty that commands significant premiums over general logistics roles.'
+        }
+      ]
+    },
+    {
+      major_label: 'Maritime Transportation',
+      riasec_affinity: ['R', 'E', 'C'],
+      riasec_conflict: ['A'],
+      program_keywords: ['maritime transportation', 'marine operations', 'port management', 'maritime law', 'vessel operations', 'USCG license'],
+      entry_careers: ['Deck Officer', 'Port Operations Coordinator', 'Maritime Logistics Analyst', 'Marine Transportation Specialist'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: false,
+      emerging_role: 'Port Electrification & Sustainability Manager — the professional who manages the transition of port operations from diesel to electric power — shore power infrastructure for vessels at berth, electric cargo handling equipment, zero-emission yard vehicles, and the utility interconnection and grid management complexity that comes with electrifying one of the most power-intensive industrial environments that exists. The Port of Los Angeles runs the most aggressive clean air program of any port in the world and is the leading edge of a transition that every major US port will undergo.',
+      deployment_contexts: [
+        {
+          domain: 'US Merchant Marine & Vessel Operations',
+          edge: 'The US Merchant Marine operates the vessels that carry cargo between US ports under the Jones Act and to international destinations — and its officers are among the most credentialed and highest-compensated maritime professionals in the world. A deck officer or engineer officer license requires a four-year program at a US maritime academy — the US Merchant Marine Academy at Kings Point, Maine Maritime, Massachusetts Maritime, Texas A&M Galveston, or Cal Maritime — and provides a full federal scholarship in exchange for a service obligation. The maritime officer who transitions to a commercial career has credentials and sea experience that make them immediately valuable in port operations, maritime law, vessel management, and logistics management roles that shore-side candidates cannot access.'
+        },
+        {
+          domain: 'Port Operations & Terminal Management',
+          edge: 'The Port of Los Angeles and Long Beach together handle 40% of all US containerized imports. The Port of Savannah has grown faster than any other major US port in the last decade. The Port of Houston handles more cargo by tonnage than any other port in America. Every one of these operations requires professionals who manage vessel scheduling, berth allocation, crane operations, container tracking, gate management, and labor coordination simultaneously. Port operations management is among the highest-compensated non-executive roles in the logistics industry and among the most undersurfaced career paths in undergraduate education. Old Dominion University in Norfolk — adjacent to the largest naval station in the world and the Port of Virginia — has the strongest port and maritime logistics program on the East Coast.'
+        }
+      ]
+    },
+    {
+      major_label: 'Supply Chain Management (Physical Infrastructure Track)',
+      riasec_affinity: ['R', 'C', 'E'],
+      riasec_conflict: ['A'],
+      program_keywords: ['warehouse management', 'distribution operations', 'fulfillment', 'WMS', 'inventory management', 'cold storage'],
+      entry_careers: ['Warehouse Operations Manager', 'Distribution Center Supervisor', 'Fulfillment Operations Analyst', 'Inventory Control Specialist'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: true,
+      emerging_role: 'Warehouse Automation Operations Manager — the professional who commissions, operates, and continuously improves automated warehouse systems — integrating robotic picking systems from Symbotic, 6 River Systems, or Geek+, autonomous mobile robots, and AI-driven fulfillment orchestration software into a physical operation that still requires human judgment for exception management, system maintenance, and the continuous improvement of human-robot collaboration. Amazon operates 1,000+ fulfillment centers and is deploying automation faster than the industry has trained people to manage it.',
+      deployment_contexts: [
+        {
+          domain: 'Distribution Center & Fulfillment Operations',
+          edge: 'The distribution center that runs well — where orders ship on time, where inventory is where it is supposed to be, where safety incidents are rare and labor turnover is manageable — is a function of operational management quality as much as technology investment. The operations professional who can run a mid-size distribution center is managing a business with millions of dollars in inventory, hundreds of employees, sophisticated technology systems, and an external commitment to service levels that has zero tolerance for failure. Michigan State, Ohio State, and Penn State all have supply chain programs with direct recruiting relationships at the major retailers, e-commerce companies, and third-party logistics providers who run these operations.'
+        },
+        {
+          domain: 'Agricultural & Food Distribution',
+          edge: 'The food supply chain — from farm to processing plant to distribution center to store — is the most essential logistics system in the economy and one of the most technically demanding. Temperature control, food safety documentation, FSMA compliance, short product shelf lives, and the seasonal variability of agricultural supply all create operational challenges that do not exist in the same combination in any other logistics environment. The supply chain professional who specializes in food and agricultural distribution is building toward a career where the work is consequential, the demand is non-cyclical, and the specialized expertise is difficult to replicate. Michigan State and the University of Tennessee both have food supply chain concentrations with strong industry placement.'
+        }
+      ]
+    },
+    {
+      major_label: 'Civil Engineering (Infrastructure Track)',
+      riasec_affinity: ['R', 'I', 'C'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['civil engineering', 'infrastructure', 'transportation engineering', 'port engineering', 'structural engineering'],
+      entry_careers: ['Transportation Engineer', 'Port Infrastructure Engineer', 'Structural Engineer', 'Civil Engineering Associate'],
+      world_alignment: 'Make',
+      cc_transfer_friendly: false,
+      emerging_role: 'Port Infrastructure Electrification Engineer — the civil and electrical engineer who designs the power infrastructure, shore power connections, and electrical distribution systems that enable ports to eliminate diesel emissions from vessels at berth and cargo handling equipment. The Port of Baltimore reconstruction following the Francis Scott Key Bridge collapse is the largest active port infrastructure project in the United States and requires engineers who understand both the civil engineering of port structures and the electrical engineering of modern electrified port operations.',
+      deployment_contexts: [
+        {
+          domain: 'Port & Marine Infrastructure Development',
+          edge: 'Ports are among the most capital-intensive infrastructure environments in existence — cranes that cost $15M each, berths that require dredging to accommodate the largest vessels afloat, rail connections that integrate with national freight networks, and road infrastructure that handles thousands of truck movements per day. The civil engineer who specializes in port and marine infrastructure is working on projects whose scale, technical complexity, and economic consequence rival any civil engineering environment. The Port of Baltimore reconstruction, the ongoing expansion of the Port of Savannah, and the infrastructure programs at every major US port all represent multi-billion dollar civil engineering programs. Penn State and Texas A&M both have civil engineering programs with strong infrastructure and transportation concentrations.'
+        },
+        {
+          domain: 'Transportation Infrastructure & Highway Engineering',
+          edge: 'The Infrastructure Investment and Jobs Act committed $110 billion to roads and bridges — the largest federal investment in surface transportation in a generation. The transportation engineer who designs, analyzes, and manages the construction of this infrastructure is doing work that will outlast their career by decades. Traffic modeling, pavement design, bridge engineering, and the increasingly important integration of transportation infrastructure with autonomous vehicle requirements are all active specializations within transportation engineering. Purdue, Penn State, and Georgia Tech all have transportation engineering concentrations with strong state DOT and federal agency placement.'
+        }
+      ]
+    },
+    {
+      major_label: 'Industrial Engineering (Logistics Systems Track)',
+      riasec_affinity: ['I', 'R', 'C'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['industrial engineering', 'operations research', 'logistics optimization', 'network design', 'systems engineering'],
+      entry_careers: ['Industrial Engineer', 'Logistics Systems Analyst', 'Network Optimization Engineer', 'Operations Research Analyst'],
+      world_alignment: 'Think',
+      cc_transfer_friendly: false,
+      emerging_role: 'Logistics Network Optimization Engineer — the industrial engineer who applies operations research techniques — linear programming, simulation, stochastic modeling — to the design of distribution networks, the routing of freight, the layout of warehouses, and the allocation of inventory across supply chain nodes. Every major retailer, e-commerce company, and logistics service provider is continuously redesigning its network to balance cost, service, and resilience — and the engineer who can model those tradeoffs quantitatively is doing some of the highest-leverage analytical work in operations.',
+      deployment_contexts: [
+        {
+          domain: 'Supply Chain Network Design & Optimization',
+          edge: 'The location of distribution centers, the allocation of inventory across nodes, the selection of transportation modes, and the tradeoff between service speed and cost are all network design decisions that determine whether a supply chain is a competitive advantage or a competitive liability. The industrial engineer who can model these decisions quantitatively — who can run a facility location optimization, simulate the impact of a network redesign, and communicate the results to business leaders who did not study operations research — is among the most valued analytical professionals in logistics and supply chain management. Georgia Tech\'s Stewart School of Industrial and Systems Engineering has the strongest operations research and supply chain optimization program in the country for undergraduates who want to specialize in logistics network design.'
+        },
+        {
+          domain: 'Warehouse Layout & Material Flow Engineering',
+          edge: 'The layout of a warehouse — where products are stored, how they flow through the building, how picking routes are designed, how receiving and shipping docks are positioned — determines a significant portion of the labor cost and throughput capacity of the operation. The industrial engineer who specializes in warehouse design and material flow is doing work that has immediate and measurable financial impact. As automated warehouse systems have become more complex, the integration of robotics systems with physical warehouse layout has become a specialized engineering discipline in its own right. Purdue and Georgia Tech both have industrial engineering programs with warehouse and material handling concentrations.'
+        }
+      ]
+    }
+  ]
+});
+
+// ── NAICS 98 — The Systems & Automation Economy ──────────────────────────────
+// Fleet management software, autonomous operations, warehouse automation,
+// supply chain technology, digital freight, demand planning
+Object.assign(MAJOR_MAP, {
+  98: [
+    {
+      major_label: 'Information Systems',
+      riasec_affinity: ['I', 'C', 'E'],
+      riasec_conflict: ['A', 'R'],
+      program_keywords: ['information systems', 'ERP', 'TMS', 'WMS', 'supply chain technology', 'enterprise systems', 'SAP', 'Oracle'],
+      entry_careers: ['Supply Chain Systems Analyst', 'ERP Implementation Consultant', 'TMS Analyst', 'WMS Specialist', 'IT Business Analyst'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: true,
+      emerging_role: 'Supply Chain Technology Implementation Consultant — the professional who implements and optimizes Transportation Management Systems, Warehouse Management Systems, and supply chain visibility platforms for the shippers, carriers, and logistics service providers who are replacing legacy systems with cloud-native logistics technology. The consultant who can configure a TMS to a specific operational reality — who understands both the software and the business process it is replacing — is in persistent demand across every industry that moves physical goods.',
+      deployment_contexts: [
+        {
+          domain: 'TMS & WMS Implementation',
+          edge: 'The Transportation Management System and Warehouse Management System are the operational nervous system of any company that moves significant physical inventory. Implementing these systems — configuring them to a specific business, training the users, managing the data migration, and troubleshooting the integrations with carriers, ERP systems, and customer platforms — is a project that takes months and costs millions of dollars, and getting it wrong has operational consequences that are immediately visible. The information systems professional who develops logistics domain knowledge alongside technical implementation competency is building toward consulting roles that bill at rates most undergraduate career guidance never names. University of Arkansas graduates enter Walmart\'s technology and supply chain organizations at rates that are unmatched by any other program in the country.'
+        },
+        {
+          domain: 'Supply Chain Visibility & Control Tower',
+          edge: 'Real-time supply chain visibility — knowing where every shipment, every container, every component is at every moment — is the most sought-after capability in supply chain management. Project44, FourKites, Descartes, and Flexport provide this visibility through platforms that aggregate data from carriers, tracking devices, and port systems. The information systems professional who can implement and optimize these platforms — who can connect the data feeds, configure the exception alerts, and build the reporting that gives a supply chain team genuine situational awareness — is building toward roles that did not exist five years ago and are now in significant demand. Indiana University Kelley and Michigan State both have information systems concentrations with strong supply chain technology placement.'
+        }
+      ]
+    },
+    {
+      major_label: 'Computer Science (Supply Chain & Logistics Track)',
+      riasec_affinity: ['I', 'R', 'C'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['supply chain data science', 'logistics AI', 'route optimization', 'demand forecasting ML', 'autonomous vehicle technology'],
+      entry_careers: ['Supply Chain Data Scientist', 'Logistics Software Engineer', 'Route Optimization Engineer', 'Demand Forecasting Analyst'],
+      world_alignment: 'Think',
+      cc_transfer_friendly: false,
+      emerging_role: 'Autonomous Vehicle Systems Engineer — the software engineer who builds, tests, and validates the perception, planning, and control systems that enable autonomous commercial vehicles to navigate real-world freight corridors safely. Aurora, Kodiak, Waymo Via, and Plus.ai are all deploying autonomous long-haul trucks on specific routes and are hiring software engineers who understand both the machine learning foundations of autonomous driving and the specific operational requirements of commercial freight. Carnegie Mellon\'s robotics program and Georgia Tech\'s computing program both have direct research relationships with autonomous vehicle companies.',
+      deployment_contexts: [
+        {
+          domain: 'Supply Chain AI & Machine Learning',
+          edge: 'Supply chain is one of the highest-value applications of machine learning in the enterprise. Demand forecasting with neural networks, route optimization with reinforcement learning, predictive maintenance with sensor data models, anomaly detection for supply chain disruptions, and supplier risk scoring with NLP on news feeds are all active production ML systems at major retailers and logistics companies. The computer science student who develops supply chain domain knowledge alongside machine learning competency is building toward a profile that is rare and extremely valuable — the data scientist who understands both the algorithm and the operational context that makes the algorithm\'s output either trustworthy or dangerous. University of Arkansas graduates working inside Walmart\'s data organization are solving supply chain ML problems at a scale no other retailer can offer.'
+        },
+        {
+          domain: 'Logistics Platform Engineering',
+          edge: 'Flexport, Uber Freight, Project44, Samsara, and a generation of logistics technology companies are building the software infrastructure of the modern supply chain — and they need software engineers who understand freight well enough to build products that freight professionals actually use. The computer science student who has spent time learning how logistics operations work — who has done an internship inside a carrier, a 3PL, or a shipper\'s transportation team — arrives at a logistics technology company with a perspective that engineers without that background cannot replicate. Northeastern University\'s co-op program is the most systematic way to develop both technical and domain competency before graduation.'
+        }
+      ]
+    },
+    {
+      major_label: 'Data Science (Supply Chain Track)',
+      riasec_affinity: ['I', 'C', 'R'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['supply chain analytics', 'demand forecasting', 'inventory optimization', 'logistics data', 'operations research'],
+      entry_careers: ['Demand Planner', 'Supply Chain Analyst', 'Operations Data Analyst', 'Inventory Optimization Analyst'],
+      world_alignment: 'Think',
+      cc_transfer_friendly: true,
+      emerging_role: 'Supply Chain Control Tower Analyst — the data professional who operates a supply chain visibility center — monitoring shipment status in real time, identifying exceptions before they become failures, and coordinating the cross-functional response when a disruption occurs. As supply chain visibility platforms have matured and the data they generate has become richer, the analyst who can interpret that data in real time and translate it into operational decisions is doing some of the highest-leverage work in logistics management.',
+      deployment_contexts: [
+        {
+          domain: 'Demand Forecasting & Inventory Optimization',
+          edge: 'A 1% improvement in demand forecast accuracy at Walmart is worth hundreds of millions of dollars in reduced inventory cost and improved in-stock performance. The data scientist who can build better forecasts — who can integrate weather data, promotional calendars, social media signals, and historical patterns into a model that outperforms naive statistical methods — is doing some of the most financially consequential analytical work in retail and consumer products. University of Arkansas graduates in supply chain analytics roles at Walmart headquarters in Bentonville are solving problems at a scale and complexity that no other retailer can offer as a development environment.'
+        },
+        {
+          domain: 'Logistics Network Analytics',
+          edge: 'The decisions about where to locate distribution centers, which carriers to use for which lanes, how to allocate inventory across a network, and how to route the last mile efficiently are all fundamentally data problems — problems where the right analysis can identify millions of dollars in cost reduction or service improvement that is invisible to the intuition of even experienced operators. The supply chain data analyst who develops genuine operations research competency alongside data science tools is building toward one of the most valued analytical roles in the logistics industry. Georgia Tech\'s industrial engineering program has the strongest undergraduate preparation for this specific work of any program in the country.'
+        }
+      ]
+    },
+    {
+      major_label: 'Business Analytics',
+      riasec_affinity: ['I', 'C', 'E'],
+      riasec_conflict: ['A', 'R'],
+      program_keywords: ['business analytics', 'supply chain analytics', 'operations analytics', 'digital transformation', 'process automation'],
+      entry_careers: ['Business Analyst', 'Operations Analyst', 'Process Automation Analyst', 'Digital Transformation Associate'],
+      world_alignment: 'Think',
+      cc_transfer_friendly: true,
+      emerging_role: 'Process Intelligence Analyst — the professional who uses process mining tools — Celonis, UiPath Process Mining, SAP Signavio — to map, analyze, and improve business processes by extracting event data from ERP and operational systems and identifying where processes deviate from their intended design, where bottlenecks create delays, and where automation can remove friction. Process mining is one of the fastest-growing enterprise software categories, and the analyst who can both run the analysis and translate the findings into operational recommendations that business leaders will act on is building toward a career in digital transformation that is in persistent demand.',
+      deployment_contexts: [
+        {
+          domain: 'Digital Transformation & Process Automation',
+          edge: 'Every large organization has processes that could be partially or fully automated — and the business analyst who can identify those processes, assess their automation potential, manage the vendor selection, and oversee the implementation is providing one of the highest-return investments available in enterprise operations. RPA (Robotic Process Automation) tools from UiPath, Automation Anywhere, and Blue Prism have created an entire category of automation that operates at the business process layer rather than the infrastructure layer — automating the repetitive manual tasks that knowledge workers do every day. Indiana University Kelley, Ohio State Fisher, and the University of Michigan Ross all have business analytics programs with digital transformation concentrations.'
+        },
+        {
+          domain: 'E-Commerce & Omnichannel Operations Analytics',
+          edge: 'The e-commerce operation that runs profitably — where fulfillment cost per order, return rate, carrier cost per zone, and inventory carrying cost are all measured, managed, and continuously improved — is a data operation as much as a logistics operation. The business analyst who develops e-commerce operations fluency alongside data analytics competency is building toward one of the most in-demand roles in retail and direct-to-consumer businesses. Every brand that sells online needs someone who can read the operational data and identify why orders are being delivered late, why return rates are rising, and what the last-mile cost structure looks like by geography.'
+        }
+      ]
+    },
+    {
+      major_label: 'Mechanical Engineering (Automation Track)',
+      riasec_affinity: ['R', 'I', 'C'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['robotics', 'automation engineering', 'warehouse robotics', 'autonomous systems', 'mechatronics', 'systems integration'],
+      entry_careers: ['Robotics Systems Engineer', 'Automation Engineer', 'Systems Integration Engineer', 'Field Service Engineer'],
+      world_alignment: 'Make',
+      cc_transfer_friendly: false,
+      emerging_role: 'Warehouse Robotics Systems Integrator — the mechanical and systems engineer who designs, installs, commissions, and optimizes the robotic picking, autonomous mobile robot, and automated conveyor systems that are being deployed across the warehouse and fulfillment center industry. Symbotic, 6 River Systems, Fetch Robotics, and Geek+ are the leading systems providers; the engineer who can integrate these systems with a specific warehouse\'s physical layout, WMS software, and labor model is doing work that is in significant demand and that requires a rare combination of mechanical, electrical, and software competency.',
+      deployment_contexts: [
+        {
+          domain: 'Warehouse Automation & Robotics Deployment',
+          edge: 'Amazon, Walmart, Target, and every major retailer are deploying warehouse automation systems faster than the industry has trained engineers to implement and maintain them. The mechanical engineer who develops automation systems competency — who understands both the mechanical design of robotic systems and the software integration that makes them work with WMS platforms and human workers — is building toward a career that is in structural shortage relative to demand. Carnegie Mellon\'s robotics program and Worcester Polytechnic Institute\'s robotics engineering program are the two strongest undergraduate preparations for warehouse robotics systems integration.'
+        },
+        {
+          domain: 'Autonomous Vehicle Systems & Validation',
+          edge: 'Every autonomous truck on a freight corridor is a complex mechanical and software system that must be tested, validated, and maintained to a reliability standard that commercial freight operations require. The mechanical engineer who develops competency in autonomous vehicle systems — in sensor integration, in vehicle dynamics modeling, in the safety validation processes that regulators require before commercial deployment — is working at the most technically demanding frontier of transportation automation. Carnegie Mellon\'s National Robotics Engineering Center and Georgia Tech\'s Institute for Robotics and Intelligent Machines both have undergraduate research programs with direct relationships to autonomous vehicle companies.'
+        }
+      ]
+    }
+  ]
+});
+
+// ── NAICS 99 — The Reshoring & Domestic Supply Chain Economy ─────────────────
+// Chip fabs, battery gigafactories, pharmaceutical manufacturing,
+// defense supply chain, agricultural supply chain
+Object.assign(MAJOR_MAP, {
+  99: [
+    {
+      major_label: 'Chemical Engineering',
+      riasec_affinity: ['I', 'R', 'C'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['chemical engineering', 'process engineering', 'pharmaceutical manufacturing', 'semiconductor process', 'battery chemistry', 'GMP'],
+      entry_careers: ['Process Engineer', 'Manufacturing Engineer', 'Quality Engineer', 'Pharmaceutical Process Scientist', 'Battery Cell Engineer'],
+      world_alignment: 'Make',
+      cc_transfer_friendly: false,
+      emerging_role: 'Battery Cell Manufacturing Process Engineer — the chemical engineer who develops and optimizes the manufacturing processes for lithium-ion and next-generation battery cells in the gigafactories being built across the American battery belt in Tennessee, Kentucky, Indiana, Ohio, and Michigan. Panasonic, Samsung SDI, LG Energy Solution, and the Ford-SK and GM-Ultium joint ventures all need process engineers who understand electrochemistry, materials science, and the manufacturing engineering required to produce battery cells at scale with consistent quality. This is one of the most consequential manufacturing engineering roles being created in the American economy right now.',
+      deployment_contexts: [
+        {
+          domain: 'Semiconductor & Advanced Manufacturing Process Chemistry',
+          edge: 'The chip fabrication plants being built by TSMC in Phoenix, Intel in Ohio, and Samsung in Texas require chemical engineers who understand the ultra-pure chemical processes that deposit, etch, and clean the nanometer-scale features on semiconductor wafers. The chemical engineers who specialize in semiconductor process chemistry — who understand CVD, ALD, wet etch chemistries, and the contamination control requirements of cleanroom manufacturing — are entering one of the most technically demanding and most consequential manufacturing environments in the American economy. Arizona State University and MIT both have chemical engineering programs with semiconductor process concentrations that have direct recruiting relationships with the major chip manufacturers.'
+        },
+        {
+          domain: 'Pharmaceutical Manufacturing & Process Development',
+          edge: 'The active pharmaceutical ingredient shortage that COVID revealed — more than 90% of APIs used in American drugs were manufactured in China or India — has driven the largest domestic pharmaceutical manufacturing investment in a generation. Eli Lilly\'s Lebanon, Indiana facility for GLP-1 medications, Pfizer\'s domestic mRNA manufacturing expansion, and Civica Rx\'s generic drug manufacturing program all need chemical engineers who understand pharmaceutical process development, FDA cGMP compliance, and the validation requirements that govern pharmaceutical manufacturing. Purdue and Rutgers University both have chemical engineering programs with pharmaceutical manufacturing concentrations that have direct placement into the companies building this capacity.'
+        },
+        {
+          domain: 'Clean Energy Chemistry & Materials',
+          edge: 'The solar panels, wind turbines, and energy storage systems that comprise the clean energy transition all require materials and chemicals that someone has to engineer, manufacture, and quality-control. The chemical engineer who develops fluency in energy materials — in photovoltaic chemistry, in battery electrolyte formulation, in hydrogen production catalysis — is working at the intersection of chemistry and the most consequential infrastructure transition of the current generation. Colorado School of Mines has the strongest undergraduate program in energy materials chemistry for students who want to specialize in the clean energy supply chain.'
+        }
+      ]
+    },
+    {
+      major_label: 'Electrical Engineering (Semiconductor Track)',
+      riasec_affinity: ['I', 'R', 'C'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['semiconductor engineering', 'VLSI', 'chip design', 'fab operations', 'electrical engineering', 'microelectronics'],
+      entry_careers: ['Semiconductor Process Engineer', 'Yield Engineer', 'Equipment Engineer', 'IC Design Engineer', 'Test Engineer'],
+      world_alignment: 'Make',
+      cc_transfer_friendly: false,
+      emerging_role: 'AI Chip Architecture Engineer — the electrical engineer who designs the specialized semiconductor architectures optimized for artificial intelligence workloads — the GPUs, TPUs, and custom AI accelerators that train and run the large language models and computer vision systems that are restructuring the economy. NVIDIA, AMD, Intel, and the hyperscalers including Google, Amazon, and Microsoft are all designing custom silicon for AI inference and training, and the demand for engineers who understand both semiconductor design and AI systems architecture is structurally in excess of the supply of trained engineers.',
+      deployment_contexts: [
+        {
+          domain: 'Semiconductor Fabrication & Process Engineering',
+          edge: 'The Semiconductor Industry Association projects a shortage of 67,000 engineers and technicians in the US semiconductor workforce by 2030. The electrical engineer who specializes in semiconductor fabrication — who understands the photolithography, deposition, etching, and metrology processes that create transistors at nanometer scale — is entering a field where the demand is guaranteed by geopolitical necessity, the investment is funded by federal legislation, and the shortage of qualified professionals is structural enough that it will not resolve in their working lifetime. Arizona State University sits adjacent to TSMC\'s Phoenix fab complex and has developed direct partnership programs that give undergraduates access to semiconductor manufacturing environments that most programs cannot offer.'
+        },
+        {
+          domain: 'Power Electronics & Energy Systems',
+          edge: 'Every electric vehicle, every renewable energy system, every battery storage installation, and every data center requires power electronics — the circuits and systems that convert, control, and distribute electrical power efficiently. The electrical engineer who specializes in power electronics is working across the most active hardware investment categories in the American economy simultaneously. Wide-bandgap semiconductors including silicon carbide and gallium nitride are enabling power electronics performance improvements that are restructuring everything from EV powertrains to grid-scale inverters. Purdue, Georgia Tech, and MIT all have power electronics research groups with strong industry placement.'
+        }
+      ]
+    },
+    {
+      major_label: 'Agricultural Business',
+      riasec_affinity: ['E', 'C', 'R'],
+      riasec_conflict: ['A'],
+      program_keywords: ['agricultural business', 'agribusiness', 'commodity trading', 'farm management', 'agricultural supply chain', 'food systems'],
+      entry_careers: ['Grain Merchandiser', 'Agricultural Lender', 'Farm Manager', 'Agricultural Sales Representative', 'Commodity Trader'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: true,
+      emerging_role: 'Agricultural Data Intelligence Analyst — the agribusiness professional who uses satellite imagery, soil sensor networks, weather modeling, and machine learning to optimize crop production decisions — advising farmers on planting timing, input application rates, harvest scheduling, and storage decisions based on data integration that was not available at scale a decade ago. Precision agriculture is restructuring the information asymmetry between farmers and the input suppliers, buyers, and lenders who serve them, and the analyst who can translate agricultural data into actionable operational recommendations is providing genuine value to both sides.',
+      deployment_contexts: [
+        {
+          domain: 'Commodity Trading & Grain Merchandising',
+          edge: 'The grain trader at Cargill, ADM, Bunge, or Louis Dreyfus manages commodity positions worth hundreds of millions of dollars — buying grain from farmers, hedging price risk on commodity exchanges, and selling to end users including ethanol plants, feed mills, and export elevators. The path from agricultural business undergraduate to commodity trader is one of the highest-compensation career trajectories in agriculture and one of the least visible in high school career guidance. Kansas State University, Iowa State, and the University of Illinois all have agricultural economics programs with strong commodity trading placement at the major grain companies whose operations span the agricultural supply chain from farm to export terminal.'
+        },
+        {
+          domain: 'Precision Agriculture & Farm Technology',
+          edge: 'The average American farm now uses GPS-guided equipment, variable rate input application, drone monitoring, and yield mapping technology that did not exist twenty years ago — and the adoption of these technologies is accelerating as the generational transition in farm ownership brings younger operators with higher technology comfort. The agricultural business professional who understands both the agronomic science behind precision agriculture and the business systems that make farms profitable is building toward a career where the work combines technology, science, and business at a scale that few other industries provide. Purdue\'s College of Agriculture has the strongest precision agriculture concentration in the Midwest and direct placement into the agricultural technology companies and major input suppliers who are building this capability.'
+        }
+      ]
+    },
+    {
+      major_label: 'Regulatory Affairs',
+      riasec_affinity: ['C', 'I', 'E'],
+      riasec_conflict: ['A', 'R'],
+      program_keywords: ['regulatory affairs', 'FDA compliance', 'GMP', 'ITAR', 'drug approval', 'medical device regulation', 'RAC certification'],
+      entry_careers: ['Regulatory Affairs Associate', 'Quality Systems Specialist', 'Compliance Analyst', 'Regulatory Submissions Associate'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: false,
+      emerging_role: 'AI Medical Device Regulatory Specialist — the regulatory professional who navigates FDA\'s evolving framework for artificial intelligence and machine learning-based medical devices — software as a medical device, clinical decision support tools, and autonomous diagnostic systems that learn and change their behavior after deployment. FDA has published guidance and is developing a regulatory framework for AI/ML-based software as a medical device that does not yet have established precedent, and the regulatory professional who develops expertise in this area is building toward a specialty that is in significant demand and almost entirely absent from current regulatory affairs training programs.',
+      deployment_contexts: [
+        {
+          domain: 'Pharmaceutical & Biologics Regulatory Affairs',
+          edge: 'Every drug and biologic approved by the FDA has a regulatory submission behind it — hundreds of pages of chemistry, manufacturing, and controls documentation, clinical trial data, and safety information assembled by regulatory affairs professionals who understand both the science and the regulatory framework well enough to present them in a way that FDA reviewers can efficiently evaluate. The regulatory affairs professional who develops genuine pharmaceutical and biologics expertise is building toward one of the most specialized and best-compensated non-clinical careers in the life sciences industry. Rutgers University and the University of the Sciences in Philadelphia both have regulatory affairs programs with direct placement into pharmaceutical companies and the contract regulatory organizations that serve them.'
+        },
+        {
+          domain: 'Defense Procurement & ITAR Compliance',
+          edge: 'International Traffic in Arms Regulations governs the export of defense-related materials, technology, and information — and every defense contractor, dual-use technology company, and university research program that touches defense-related work needs regulatory professionals who understand ITAR compliance. The compliance professional who understands both the regulatory framework and the operational reality of a manufacturing or research environment is providing a specialized and in-demand service that most organizations struggle to fill from within their existing workforce. Defense contractors including Lockheed Martin, Raytheon, and Northrop Grumman all maintain significant ITAR compliance functions and recruit from business, law, and technical programs with regulatory concentrations.'
+        }
+      ]
+    },
+    {
+      major_label: 'Materials Science & Engineering',
+      riasec_affinity: ['I', 'R', 'C'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['materials science', 'materials engineering', 'battery materials', 'semiconductor materials', 'advanced manufacturing materials'],
+      entry_careers: ['Materials Engineer', 'Process Development Engineer', 'Battery Materials Researcher', 'Quality Engineer', 'R&D Engineer'],
+      world_alignment: 'Make',
+      cc_transfer_friendly: false,
+      emerging_role: 'Critical Minerals Supply Chain Engineer — the materials professional who manages the supply chain for the critical minerals — lithium, cobalt, nickel, manganese, rare earth elements — that are essential to battery manufacturing, semiconductor production, and clean energy systems. The United States currently imports more than 80% of its critical mineral supply from China and other potentially adversarial sources, and the domestic mining, processing, and recycling infrastructure required to change that dependency is being built now. Colorado School of Mines is the definitive educational institution for this work.',
+      deployment_contexts: [
+        {
+          domain: 'Battery Materials & Electrochemistry',
+          edge: 'The performance, cost, and longevity of a lithium-ion battery is determined almost entirely by the materials — the cathode active material, the anode, the electrolyte, the separator, and the current collectors. The materials scientist who understands battery electrochemistry at a fundamental level — who can characterize degradation mechanisms, develop new cathode formulations, and translate laboratory discoveries into manufacturable processes — is doing the foundational work that determines whether the energy transition achieves its cost and performance targets. Colorado School of Mines, MIT, and Stanford all have materials science programs with battery materials research groups that have produced graduates who are now leading the battery development programs at the major gigafactory operators.'
+        },
+        {
+          domain: 'Advanced Manufacturing Materials & Process Development',
+          edge: 'The semiconductor, pharmaceutical, aerospace, and defense manufacturing facilities being built or expanded in America all require materials engineers who understand the specific material properties and process requirements of their industry. The semiconductor fab engineer who understands thin film deposition, the pharmaceutical materials scientist who understands polymorphism and drug formulation stability, and the aerospace materials engineer who understands composite structures and fatigue life are all applying materials science in environments where getting the material wrong has consequences ranging from product failure to human harm. Purdue, MIT, and the University of Michigan all have materials science programs with advanced manufacturing concentrations.'
+        }
+      ]
+    }
+  ]
+});
+
+// ── NAICS 100 — The Service Economy: Military & Post-Service ─────────────────
+// Active duty, reserve, veterans, ROTC, service academies,
+// federal service, defense contractors, military children
+Object.assign(MAJOR_MAP, {
+  100: [
+    {
+      major_label: 'Criminal Justice & Homeland Security',
+      riasec_affinity: ['E', 'S', 'R'],
+      riasec_conflict: ['A', 'I'],
+      program_keywords: ['criminal justice', 'homeland security', 'law enforcement', 'intelligence', 'emergency management', 'public safety'],
+      entry_careers: ['Law Enforcement Officer', 'Homeland Security Analyst', 'Intelligence Analyst', 'Emergency Management Coordinator', 'Federal Agent'],
+      world_alignment: 'People',
+      cc_transfer_friendly: true,
+      emerging_role: 'Cybersecurity & Critical Infrastructure Protection Specialist — the federal or defense professional who protects the digital and physical infrastructure that American society depends on — power grids, water systems, financial networks, transportation systems, and communications infrastructure — from nation-state cyber actors, ransomware groups, and other adversarial threats. The Colonial Pipeline attack, the SolarWinds intrusion, and the ongoing targeting of critical infrastructure by China, Russia, Iran, and North Korea have made this the most consequential homeland security function in the current threat environment, and the shortage of professionals with both technical competency and security clearances is structural.',
+      deployment_contexts: [
+        {
+          domain: 'Federal Law Enforcement & Intelligence',
+          edge: 'The FBI, DEA, ATF, Secret Service, US Marshals, and the intelligence community agencies including the CIA, NSA, DIA, and NGA together employ tens of thousands of special agents, analysts, and operations officers whose work spans law enforcement, counterterrorism, counterintelligence, and foreign intelligence collection. The criminal justice student who develops genuine analytical competency alongside the physical and character requirements for federal service is building toward a career where the work is consequential, the training is extraordinary, and the mission is unlike anything available in the private sector. Veterans with security clearances and operational experience have a significant advantage in federal law enforcement and intelligence community hiring. American University and George Washington University both have strong intelligence and homeland security programs with direct placement into federal agencies.'
+        },
+        {
+          domain: 'Emergency Management & Disaster Response',
+          edge: 'FEMA, state emergency management agencies, and the local emergency management offices that coordinate disaster response across every county in America need professionals who can manage complex multi-agency operations under conditions of extreme time pressure and incomplete information — which is precisely what military service develops. The emergency management professional who combines military operational experience with civilian emergency management training is one of the most qualified profiles for the roles that matter most when disasters occur. North Carolina State and the University of Central Florida both have emergency management programs with strong veteran enrollment and direct placement into FEMA and state emergency management careers.'
+        }
+      ]
+    },
+    {
+      major_label: 'Political Science & International Relations',
+      riasec_affinity: ['E', 'I', 'S'],
+      riasec_conflict: ['R', 'A'],
+      program_keywords: ['political science', 'international relations', 'national security', 'foreign policy', 'defense policy', 'military affairs'],
+      entry_careers: ['Policy Analyst', 'Defense Analyst', 'Foreign Service Officer', 'Intelligence Analyst', 'Congressional Staffer'],
+      world_alignment: 'Think',
+      cc_transfer_friendly: true,
+      emerging_role: 'Indo-Pacific Strategy Analyst — the national security professional who specializes in the geopolitics, military balance, economic interdependencies, and alliance relationships that define the most consequential theater of great power competition in the current international environment. As the United States reorients its national security strategy toward China, the demand for professionals who understand the region\'s history, languages, military capabilities, and political dynamics with genuine depth — rather than as a secondary specialization — is growing faster than the national security community\'s ability to develop them.',
+      deployment_contexts: [
+        {
+          domain: 'Defense Policy & National Security',
+          edge: 'The professionals who shape American defense policy — who write the National Defense Strategy, who staff the Office of the Secretary of Defense, who manage the relationships between the military services and the civilian leadership — come disproportionately from the military academies, ROTC programs at strong political science institutions, and the handful of graduate programs in national security policy at Georgetown, Johns Hopkins SAIS, and the war colleges. The political science student who combines military service or strong ROTC participation with genuine national security academic preparation is building toward the most consequential policy roles in American government. Georgetown\'s School of Foreign Service and American University\'s School of International Service both have direct placement into defense policy and national security roles.'
+        },
+        {
+          domain: 'Diplomacy & Foreign Service',
+          edge: 'The United States Foreign Service — the diplomatic corps that staffs American embassies and consulates around the world — is one of the most selective and most distinguished career paths in public service. The Foreign Service Officer exam tests candidates on economics, history, political science, and cultural awareness at a level that rewards genuine breadth of preparation rather than narrow specialization. The political science student who has developed language skills, international experience, and a genuine understanding of a specific region or functional area — whether trade policy, consular affairs, public diplomacy, or political reporting — is building the profile that the Foreign Service selects for. Georgetown, American University, and the service academies all have strong Foreign Service placement.'
+        }
+      ]
+    },
+    {
+      major_label: 'Business Administration (Military Leadership Track)',
+      riasec_affinity: ['E', 'C', 'S'],
+      riasec_conflict: ['A', 'R'],
+      program_keywords: ['military leadership', 'defense acquisition', 'veteran business', 'program management', 'military transition', 'SBA Boots to Business'],
+      entry_careers: ['Defense Acquisition Officer', 'Military Program Manager', 'Veterans Affairs Coordinator', 'Defense Contractor Manager', 'Veteran Entrepreneur'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: true,
+      emerging_role: 'Defense Acquisition Professional — the civilian or military officer who manages the procurement of major weapons systems, vehicles, aircraft, and technology for the United States military — overseeing contracts worth billions of dollars, managing programs that span decades, and navigating the intersection of military requirements, industry capability, and congressional oversight that makes defense acquisition one of the most complex program management environments in existence. Defense Acquisition University provides the professional training; the undergraduate preparation is business administration, engineering, or any technical field combined with military service or ROTC.',
+      deployment_contexts: [
+        {
+          domain: 'Veteran Entrepreneurship & Business Ownership',
+          edge: 'Veterans start businesses at a rate 45% higher than non-veterans, and the outcomes of those businesses are disproportionately strong — driven by the discipline, mission orientation, team-building capability, and comfort with uncertainty that military service develops. The SBA\'s Boots to Business program, the Bunker Labs network, and the Venture for America veteran fellowship all support veteran entrepreneurs who want to translate their military leadership experience into business ownership. The business administration student who completes military service before or after their degree is building toward one of the most entrepreneurially successful demographic profiles in the American economy. Babson College\'s entrepreneurship program has the strongest veteran entrepreneurship community among undergraduate business schools.'
+        },
+        {
+          domain: 'Defense Contracting & Program Management',
+          edge: 'The defense industrial base — the network of prime contractors and suppliers that produces weapons systems, vehicles, aircraft, and electronics for the military — employs hundreds of thousands of professionals across program management, engineering, supply chain, finance, and regulatory compliance roles. Veterans with security clearances and operational experience have a significant advantage in defense contractor hiring — a clearance that takes 12-18 months and significant cost to obtain for a civilian candidate is immediately available from a veteran who maintained one during service. Lockheed Martin, Raytheon, Boeing Defense, Northrop Grumman, General Dynamics, and L3Harris all actively recruit veterans and have structured transition programs that provide career pathways from military service into defense industry roles.'
+        }
+      ]
+    },
+    {
+      major_label: 'Organizational Leadership',
+      riasec_affinity: ['E', 'S', 'C'],
+      riasec_conflict: ['A', 'R'],
+      program_keywords: ['organizational leadership', 'military leadership', 'leadership development', 'team leadership', 'applied leadership'],
+      entry_careers: ['Operations Manager', 'Team Leader', 'Program Coordinator', 'Leadership Development Specialist', 'Management Associate'],
+      world_alignment: 'People',
+      cc_transfer_friendly: true,
+      emerging_role: 'Veteran Transition Specialist — the career counselor and organizational development professional who helps military veterans translate their service experience into civilian professional language, navigate the cultural differences between military and civilian work environments, and build the professional networks that accelerate career placement in sectors where veteran competency is valued but not always recognized. As the veteran transition challenge has become better understood, organizations including American Corporate Partners, Hire Heroes USA, and the veteran business resource centers at major universities have developed professional roles for people who can bridge the military-civilian cultural divide.',
+      deployment_contexts: [
+        {
+          domain: 'Military-to-Civilian Leadership Transition',
+          edge: 'The sergeant first class who managed thirty people, a $15 million equipment accountability, and a training program that deployed 200 soldiers typically writes on their resume that they managed personnel and equipment. The organizational leadership professional who has studied both military leadership frameworks and civilian management practice — who can help a veteran translate what they actually did into language that civilian hiring managers can evaluate — is providing one of the most consequential career development services available to the veteran community. The University of Central Florida, Arizona State, and Old Dominion University all have veteran-specific organizational development programs with strong transition support infrastructure.'
+        },
+        {
+          domain: 'Leadership Development & Executive Coaching',
+          edge: 'The leadership skills that military service develops — decision-making under uncertainty, team cohesion under stress, mission focus, and the ability to communicate clearly across hierarchical levels — are among the most sought-after qualities in corporate leadership, and among the most difficult to develop without the experiences that produce them. The veteran who formalizes their leadership development through an organizational leadership degree is building a credential that complements their service record and provides the conceptual framework to teach what they know from experience. The veteran who becomes a leadership development professional or executive coach is translating military leadership capital into a civilian career that serves organizations seeking to develop these same qualities in their own people.'
+        }
+      ]
+    },
+    {
+      major_label: 'Engineering (Military Applications Track)',
+      riasec_affinity: ['R', 'I', 'C'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['military engineering', 'aerospace engineering', 'systems engineering', 'nuclear engineering', 'defense technology'],
+      entry_careers: ['Systems Engineer', 'Aerospace Engineer', 'Defense Technology Analyst', 'Nuclear Technician', 'Military Research Engineer'],
+      world_alignment: 'Make',
+      cc_transfer_friendly: false,
+      emerging_role: 'Space Domain Awareness Engineer — the aerospace and systems engineer who develops the sensor systems, data processing architectures, and operational concepts for tracking objects in orbit and detecting adversarial actions in the space domain. The United States Space Force is building the professional and technical community for space domain awareness from scratch, and the engineer who develops expertise in orbital mechanics, radar and optical sensor systems, and the data fusion required to maintain the catalog of objects in orbit is working at the frontier of a new military domain that has no established career path or training program.',
+      deployment_contexts: [
+        {
+          domain: 'Defense Aerospace & Systems Engineering',
+          edge: 'Lockheed Martin\'s F-35, Boeing\'s B-21 Raider, Northrop Grumman\'s next-generation ICBM, and the hypersonic weapons programs being developed across multiple defense contractors all require systems engineers who understand the technical complexity of integrating avionics, propulsion, stealth, and weapons systems into platforms that must operate at the edge of physical possibility. The engineering student who combines strong technical preparation with security clearance eligibility and either military service or ROTC participation is building toward one of the most technically demanding and most consequential engineering careers available. The service academies, Virginia Tech, Penn State, and Texas A&M all have strong aerospace and systems engineering programs with direct defense contractor placement.'
+        },
+        {
+          domain: 'Nuclear Engineering & Naval Nuclear Power',
+          edge: 'The United States Navy operates the world\'s largest fleet of nuclear-powered vessels — eleven aircraft carriers and more than seventy submarines. The nuclear propulsion program that trains Navy nuclear officers and enlisted nuclear operators runs the most rigorous technical training program in the American military, producing professionals whose quality and process discipline is unmatched in any civilian industry. The naval nuclear veteran who transitions to civilian nuclear power, pharmaceutical manufacturing, or semiconductor manufacturing brings a quality standard and operational discipline that civilian training programs cannot replicate. The University of Michigan, Penn State, and the University of Tennessee all have nuclear engineering programs with strong Navy nuclear veteran enrollment and placement in civilian nuclear and advanced manufacturing careers.'
+        }
+      ]
+    }
+  ]
+});
