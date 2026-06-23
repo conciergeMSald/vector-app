@@ -2263,8 +2263,8 @@ const VECTOR_CROSSWALK = [
 
   {
     id: "i_know_everyone",
-    label: "I know everyone — and I mean everyone",
-    label_parent: "They know everyone — and they mean everyone",
+    label: "I know everyone and I mean everyone",
+    label_parent: "They know everyone and I mean everyone",
     cluster: "eq",
     riasec: ["S", "E"],
     naics_sectors: [52, 53, 54, 71],
