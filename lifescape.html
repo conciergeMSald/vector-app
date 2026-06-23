@@ -3217,7 +3217,9 @@ Combination unlocks fired: ${ctx.comboSummary || 'none'}
 MATCHED SCHOOLS (ranked by fit):
 ${matchedSchools.join(', ')}
 
-SCHOOL INTELLIGENCE:
+SCHOOL INTELLIGENCE (two formats depending on data availability):
+FORMAT A — New schema schools have: ARCHETYPE, IDENTITY, BEST FIT, OUTCOMES, REACH, COMPARABLE, HIDDEN PATHWAY. Lead your WHY with the archetype — it is the precise institutional identity. Use IDENTITY as the opening frame. Do not invent program details not in the provided intelligence.
+FORMAT B — Legacy schema schools have: PIPELINE, HIDDEN PATHWAY, THE ROOM, LIFESTYLE, GRADS GO TO. Use these directly.
 ${schoolContentBlock}
 
 YOUR JOB:
@@ -3227,7 +3229,7 @@ For each school use this EXACT format with no deviations:
 
 SCHOOL: [exact school name as listed above]
 MATCH: [one sentence — the single most specific reason this school fits THIS student's Lifescape profile. Reference something real from their tiles, combo unlocks, or preferences. Not generic program quality — a specific connection.]
-WHY: [3 complete sentences. Use the school intelligence provided. Connect the pipeline or hidden pathway to something specific in the student's tiles or interests. Third sentence opens a concrete next conversation. Never leave a sentence incomplete — if you are running short on space, write fewer words per sentence but always complete the thought with a period.]
+WHY: [3 complete sentences. When ARCHETYPE and IDENTITY fields are provided: the first sentence names the archetype and what it means for this specific student. The second connects the OUTCOMES or HIDDEN PATHWAY to something concrete in their tiles. The third opens a next conversation. When only PIPELINE and HIDDEN PATHWAY are provided: use those directly — connect the pipeline or hidden pathway to something specific in the student's tiles or interests. Third sentence opens a concrete next conversation. Never leave a sentence incomplete — if running short on space, write fewer words per sentence but always complete the thought with a period.]
 
 Write all ${Math.min(matchedSchools.length, 5)} schools in this format.
 

@@ -4373,21 +4373,8 @@ const UNIVERSITY_CONTENT = {
     geographic_influence_radius: "Colorado, Mountain West, National aerospace and defense sector, Space Force ecosystem",
     economic_outcome: "Strong outcomes in cybersecurity, aerospace engineering, defense technology, intelligence, human performance, sports medicine, and nursing",
     comparable_institutions: "Embry-Riddle Aeronautical University, Utah State University, University of Alabama in Huntsville, University of Wisconsin-La Crosse"
-  }
+  },
 
-};
-
-function getSchoolContent(schoolNames) {
-  return schoolNames.map(n => UNIVERSITY_CONTENT[n]||null).filter(Boolean);
-}
-
-function formatSchoolsForPrompt(schools) {
-  return schools.map(s =>
-    `SCHOOL: ${s.name} (${s.location})\nPIPELINE: ${s.pipeline}\nHIDDEN PATHWAY: ${s.hidden_pathway}\nTHE ROOM: ${s.the_room}\nLIFESTYLE: ${s.lifestyle}\nGRADS GO TO: ${s.grad_cities}`
-  ).join("\n\n---\n\n");
-}
-
-if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolContent,formatSchoolsForPrompt};
   "United States Merchant Marine Academy": {
     name: "United States Merchant Marine Academy",
     location: "Kings Point, New York",
@@ -4909,3 +4896,62 @@ if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolCont
     economic_outcome: "",
     comparable_institutions: ""
   },
+
+  "Stonehill College": {
+    name: "Stonehill College",
+    location: "Easton, Massachusetts",
+    region: "Northeast",
+    pipeline: "Founded 1948 by the Congregation of Holy Cross — the same order that founded Notre Dame. 2,500 students on a 384-acre campus 22 miles south of Boston in Easton, Massachusetts. Holy Cross order connection creates an institutional partnership with Notre Dame's alumni and academic networks that no other small Catholic college in New England can access. 97% of graduates employed or in graduate school within six months. Business Administration, Biology, Pre-Medicine, Psychology, and Criminology are the highest-enrollment programs. NCAA Division II athletics with 23 varsity sports.",
+    hidden_pathway: "The Notre Dame connection is Stonehill's most undersurfaced asset. As a Holy Cross institution, Stonehill shares an order with Notre Dame — and the institutional relationships between the two campuses create mentorship, graduate school, and networking pipelines that the college's size alone would never produce. The Meehan School of Business sends graduates into financial services, consulting, and corporate roles in the Boston and Providence markets that the college's size would not predict. The Shields Science Center supports pre-medicine and research opportunities with faculty one-on-one access that students at large research universities rarely experience until graduate school. Boston is a 35-minute drive for internships.",
+    the_room: "A wooded 384-acre campus that feels like it was designed to be a refuge — Stonehill has the physical quality of a much older institution despite being founded only in 1948. The Holy Cross tradition of cura personalis (care for the whole person) is present in small class sizes and faculty who learn student names. The suburban Easton location gives students access to both Providence and Boston without being absorbed by either city. The campus community is tight-knit by design — the residential experience is central, and the student-to-faculty ratio of 13:1 produces genuine academic mentorship.",
+    lifestyle: "",
+    grad_cities: "Boston MA, Providence RI, New York NY, Hartford CT — Northeast concentration through Boston and Providence market access",
+    archetype: "The Holy Cross Catholic Liberal Arts College",
+    one_sentence_summary: "Stonehill College is the Holy Cross Catholic liberal arts institution 22 miles south of Boston — sharing an order with Notre Dame, carrying a 97% graduate placement rate, and offering pre-medicine and business students one-on-one faculty research access that large universities reserve for graduate students.",
+    best_fit_personality: "High Conscientiousness, Faith-oriented, Pre-professionally inclined, Community-minded, Northeast-rooted",
+    faith_tradition: "Catholic (Holy Cross)",
+    geographic_influence_radius: "Massachusetts, New England, Notre Dame alumni network nationally",
+    economic_outcome: "Strong outcomes in business, pre-medicine, psychology, and criminology through Boston and Providence market access",
+    comparable_institutions: "Assumption University, Merrimack College, Fairfield University, Providence College"
+  }
+};
+
+function getSchoolContent(schoolNames) {
+  return schoolNames.map(n => UNIVERSITY_CONTENT[n]||null).filter(Boolean);
+}
+
+function formatSchoolsForPrompt(schools) {
+  return schools.map(s => {
+    // New schema fields — use structured identity when populated
+    var hasNewSchema = s.archetype && s.archetype.length > 0;
+    var lines = [];
+
+    lines.push('SCHOOL: ' + s.name + ' (' + (s.location || '') + ')');
+
+    if (hasNewSchema) {
+      // New schema: lead with structured identity, then prose
+      lines.push('ARCHETYPE: ' + s.archetype);
+      if (s.one_sentence_summary) lines.push('IDENTITY: ' + s.one_sentence_summary);
+      if (s.best_fit_personality) lines.push('BEST FIT: ' + s.best_fit_personality);
+      if (s.faith_tradition) lines.push('FAITH: ' + s.faith_tradition);
+      if (s.economic_outcome) lines.push('OUTCOMES: ' + s.economic_outcome);
+      if (s.geographic_influence_radius) lines.push('REACH: ' + s.geographic_influence_radius);
+      if (s.comparable_institutions) lines.push('COMPARABLE: ' + s.comparable_institutions);
+      // Include hidden_pathway if meaningfully populated (not empty)
+      if (s.hidden_pathway && s.hidden_pathway.length > 20) {
+        lines.push('HIDDEN PATHWAY: ' + s.hidden_pathway);
+      }
+    } else {
+      // Legacy schema: full prose block
+      lines.push('PIPELINE: ' + s.pipeline);
+      lines.push('HIDDEN PATHWAY: ' + s.hidden_pathway);
+      lines.push('THE ROOM: ' + s.the_room);
+      if (s.lifestyle) lines.push('LIFESTYLE: ' + s.lifestyle);
+      lines.push('GRADS GO TO: ' + s.grad_cities);
+    }
+
+    return lines.join('\n');
+  }).join('\n\n---\n\n');
+}
+
+if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolContent,formatSchoolsForPrompt};
