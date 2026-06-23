@@ -32,22 +32,42 @@ const TILE_POOLS = {
     'woodworking','three_d_printing'
   ],
   move: [
-    'dance','cheerleading','fitness_lifting','yoga','martial_arts',
-    'esports_gaming','horseback_riding','rock_climbing'
+    // Physical activity & sport
+    'dance','cheerleading','fitness_lifting','fitness_classes','yoga',
+    'martial_arts','horseback_riding','rock_climbing','cycling_ebike',
+    // Team sports
+    'soccer','basketball','football','baseball_softball','volleyball',
+    'lacrosse','ice_hockey','swimming','gymnastics','crew_rowing',
+    // Individual sports
+    'track_field','wrestling','tennis','golf','cross_country',
+    'fencing','water_polo'
   ],
   think: [
+    // Strategy & systems
+    'esports_gaming','chess','fantasy_sports_roster','collecting_trading',
+    'logic_number_puzzles','category_pattern_puzzles','word_puzzles',
+    // Science & inquiry
     'science_experiments','psychology','biology','chemistry','coding_programming',
     'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
-    'true_crime','puzzles_brain_teasers','understanding_why_people'
+    'true_crime','puzzles_brain_teasers','understanding_why_people',
+    // Ideas & argument
+    'debate_mock_un','speech_forensics','scifi_worldbuilding','journalism',
+    'law_justice','economics','social_media_analytics'
   ],
   people: [
+    // Giving & care
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
-    'teaching_tutoring','advocacy_activism','entrepreneurship','first_aid_emergencies'
+    'teaching_tutoring','advocacy_activism','caregiving_nurturing',
+    'first_aid_emergencies','community_organizing',
+    // Leading & connecting
+    'entrepreneurship','leading_the_group','networking_meeting_people',
+    'personal_brand','conflict_resolution','public_speaking_performing',
+    'planning_trips_adventures'
   ],
   systems: [
     'cosmetic_beauty_science','cooking_chemistry','medical_science','how_body_moves',
     'learning_differences','environment_sustainability','engineering_challenges',
-    'architecture','nutrition_food_science','business_startups'
+    'robotics_competitions','architecture','nutrition_food_science','business_startups'
   ]
 };
 
@@ -83,12 +103,20 @@ const FREE_TIME_MAP = {
 
   moving: [
     // Move cluster — full representation
-    'dance','cheerleading','fitness_lifting','yoga','martial_arts',
-    'esports_gaming','horseback_riding','rock_climbing',
+    'dance','cheerleading','fitness_lifting','fitness_classes','yoga',
+    'martial_arts','horseback_riding','rock_climbing','cycling_ebike',
+    'soccer','basketball','football','baseball_softball','volleyball',
+    'lacrosse','ice_hockey','swimming','gymnastics','crew_rowing',
+    'track_field','wrestling','tennis','golf','cross_country',
+    'fencing','water_polo',
     // Systems tiles that connect to movement
     'how_body_moves','medical_science','nutrition_food_science',
+    'robotics_competitions',
     // People tiles that connect to movement
-    'working_with_little_kids','teaching_tutoring','first_aid_emergencies',
+    'leading_the_group','teaching_tutoring','first_aid_emergencies',
+    'working_with_little_kids','public_speaking_performing',
+    // Think tiles that connect to sport
+    'fantasy_sports_roster','data_statistics','esports_gaming',
     // Make tiles that connect to performance
     'playing_instrument','singing','music_production','photography'
   ],
@@ -98,6 +126,10 @@ const FREE_TIME_MAP = {
     'science_experiments','psychology','biology','chemistry','coding_programming',
     'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
     'true_crime','puzzles_brain_teasers','understanding_why_people',
+    'esports_gaming','chess','fantasy_sports_roster','collecting_trading',
+    'logic_number_puzzles','category_pattern_puzzles','word_puzzles',
+    'debate_mock_un','speech_forensics','scifi_worldbuilding','journalism',
+    'law_justice','economics','social_media_analytics',
     // Systems tiles that connect to thinking
     'cosmetic_beauty_science','medical_science','engineering_challenges',
     'environment_sustainability','cooking_chemistry','architecture',
@@ -109,6 +141,9 @@ const FREE_TIME_MAP = {
     // People cluster — full representation
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
     'teaching_tutoring','advocacy_activism','entrepreneurship','first_aid_emergencies',
+    'caregiving_nurturing','community_organizing','leading_the_group',
+    'networking_meeting_people','personal_brand','conflict_resolution',
+    'public_speaking_performing','planning_trips_adventures',
     // Make tiles that connect to people
     'filmmaking','writing_stories','photography','music_production','singing',
     // Think tiles that connect to people
@@ -296,8 +331,7 @@ const TILE_ADJACENCY = {
   fashion_design:       ['nail_art','hair_makeup','graphic_design','cosmetic_beauty_science'],
   graphic_design:       ['drawing','animation','coding_programming','photography'],
   animation:            ['drawing','roblox_game_design','filmmaking','graphic_design'],
-  music_production:     ['playing_instrument','singing','filmmaking','coding_programming','flow_state'],
-  flow_state:           ['music_production','playing_instrument','coding_programming','woodworking','three_d_printing','data_statistics'],
+  music_production:     ['playing_instrument','singing','filmmaking','coding_programming'],
   playing_instrument:   ['singing','music_production','dance'],
   singing:              ['playing_instrument','dance','music_production'],
   writing_stories:      ['psychology','journalism','philosophy','filmmaking'],
@@ -401,7 +435,7 @@ function getEQPriority(answers) {
     'i_cant_ignore_unfairness','i_am_person_people_call','i_slow_down_for_people',
     'i_like_figuring_out_different_way','little_kids_love_me','animals_trust_me',
     'i_like_explaining_things','id_rather_listen_than_talk','i_notice_things_others_miss',
-    'want_to_fix_it_not_talk_about_it','flow_state','i_lose_track_of_time_making',
+    'want_to_fix_it_not_talk_about_it','i_lose_track_of_time_making',
     'im_one_who_holds_group_together','i_ask_why','i_remember_details_about_people',
     'i_process_through_art_music','i_can_tell_when_upset','i_think_of_others_feelings'
   ];
