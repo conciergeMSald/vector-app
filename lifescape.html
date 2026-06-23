@@ -375,13 +375,30 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* ── SCHOOL CARDS ─────────────────────────────────── */
 .school-card{border:0.5px solid var(--rule);padding:1.5rem;margin-bottom:1rem;background:var(--white);}
-.school-card-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.75rem;}
+.school-card-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.5rem;}
 .school-name{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);}
 .school-location{font-size:10px;color:var(--ink4);letter-spacing:.5px;margin-top:2px;}
-.school-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.75rem;}
+.school-archetype{font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-top:5px;font-family:var(--sans);}
+.school-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.75rem;margin-top:.5rem;}
 .school-badge{font-size:10px;padding:3px 10px;border:0.5px solid var(--gl);color:var(--gold);}
+.school-badge-faith{font-size:10px;padding:3px 10px;border:0.5px solid #a07850;color:#a07850;background:rgba(200,169,122,.07);}
 .school-why{font-size:13px;color:var(--ink2);line-height:1.9;font-weight:300;}
+.school-summary{font-size:12px;color:var(--ink3);line-height:1.7;font-weight:300;margin-top:.75rem;padding-top:.75rem;border-top:0.5px solid var(--rule);font-style:italic;}
 .school-generating{font-size:13px;color:var(--ink4);font-style:italic;text-align:center;padding:2rem 0;}
+
+/* ── UNDER THE RADAR ───────────────────────────────── */
+.radar-section{margin-top:2.5rem;padding-top:2rem;border-top:0.5px solid var(--rule);}
+.radar-eyebrow{font-family:var(--sans);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;}
+.radar-intro{font-size:12px;color:var(--ink4);font-weight:300;margin-bottom:1.25rem;line-height:1.6;}
+.radar-card{border:0.5px solid var(--gl);padding:1.25rem 1.5rem;margin-bottom:.85rem;background:rgba(200,169,122,.03);position:relative;}
+.radar-card-archetype{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-family:var(--sans);margin-bottom:.4rem;}
+.radar-card-name{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);margin-bottom:2px;}
+.radar-card-location{font-size:10px;color:var(--ink4);letter-spacing:.5px;margin-bottom:.65rem;}
+.radar-card-why{font-size:13px;color:var(--ink2);line-height:1.85;font-weight:300;}
+.radar-card-summary{font-size:12px;color:var(--ink3);line-height:1.7;font-weight:300;margin-top:.6rem;font-style:italic;}
+.radar-card-faith{font-size:10px;color:#a07850;margin-top:.4rem;}
+.counselor-school-pill{display:inline-block;font-size:10px;padding:2px 8px;border:0.5px solid var(--rule);color:var(--ink3);margin-right:4px;margin-top:4px;}
+.counselor-school-pill-gold{border-color:var(--gl);color:var(--gold);}
 
 /* Quick read school previews */
 .school-preview{display:flex;gap:1rem;align-items:flex-start;padding:.75rem 0;border-bottom:0.5px solid var(--rule);}
@@ -1313,6 +1330,15 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
         </div>
       </div>
     </div>
+    <!-- ── UNDER THE RADAR — student-facing (2 schools) ── -->
+    <div id="radar-section-student" style="display:none">
+      <div class="radar-section">
+        <div class="radar-eyebrow">Under the radar</div>
+        <div class="radar-intro">Schools most families haven't considered — matched precisely to what you shared.</div>
+        <div id="radar-list-student"></div>
+      </div>
+    </div>
+
   </div>
 
   <!-- ── COUNSELOR VIEW ─────────────────────────────── -->
@@ -1362,6 +1388,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div style="margin-bottom:2rem">
       <div class="section-eyebrow">School recommendations</div>
       <div id="counselor-schools"><div style="font-size:13px;color:var(--ink4);font-style:italic">Generating...</div></div>
+    </div>
+
+    <div style="margin-bottom:2rem" id="radar-section-counselor" style="display:none">
+      <div class="section-eyebrow">Under the radar — 5 specialist picks</div>
+      <div style="font-size:12px;color:var(--ink4);font-weight:300;margin-bottom:.75rem">Schools with precise specialty alignment. Family sees the top 2 — all 5 are here for your use.</div>
+      <div id="radar-list-counselor"></div>
     </div>
 
     <div>
@@ -3271,6 +3303,201 @@ function renderActIX(callEData) {
   console.log('[callE] Act IX rendered — CC:', callEData.ccName || 'unknown');
 }
 
+
+/* ── getUnderTheRadarPicks ───────────────────────────────────────────────────
+   Surfaces specialist schools the student would never find on their own.
+   Scores UNIVERSITY_CONTENT against profile tiles, RIASEC, NAICS, worlds.
+   Only fires on schools with archetype populated (new schema schools).
+   Returns up to 5 picks, sorted by specificity score.
+   Family sees top 2. Counselor sees all 5.
+   ─────────────────────────────────────────────────────────────────────────── */
+function getUnderTheRadarPicks(profile, matchedSchools) {
+  if (typeof UNIVERSITY_CONTENT === 'undefined') return [];
+
+  const matchedNames = new Set((matchedSchools || []).map(s => s.name));
+  const tiles     = (profile.activityTiles || []).concat(profile.eqTiles || []).map(t => t.toLowerCase());
+  const worlds    = (profile.worlds_chosen || []).map(w => w.toLowerCase());
+  const riasec    = (profile.topRIASEC || '').toUpperCase();
+  const naics     = (profile.naicsSectors || []).map(n => Number(n.sector || n));
+  const faith     = (profile.college_prefs && profile.college_prefs.religion) || '';
+
+  // Scoring signals
+  const hasBodySignal     = ['fitness_lifting','how_body_moves','medical_science','biology',
+                              'first_aid_emergencies','mental_health_wellness'].some(t => tiles.includes(t));
+  const hasNatureSignal   = ['outdoor_activities','rock_climbing','animal_care','biology',
+                              'science_experiments'].some(t => tiles.includes(t));
+  const hasHistorySignal  = ['philosophy','writing_stories','understanding_why_people',
+                              'advocacy_activism'].some(t => tiles.includes(t));
+  const hasMusicSignal    = ['music_production','playing_instrument','singing'].some(t => tiles.includes(t));
+  const hasTechSignal     = ['coding_programming','ai_machine_learning','data_statistics',
+                              'robotics'].some(t => tiles.includes(t));
+  const hasServiceSignal  = ['volunteering','working_with_little_kids','advocacy_activism',
+                              'mental_health_wellness'].some(t => tiles.includes(t));
+  const hasAthleticSignal = worlds.includes('compete') || tiles.includes('compete');
+  const hasGlobalSignal   = naics.some(n => [92, 54, 61].includes(n));
+  const hasCreativeSignal = ['filmmaking','photography','art_drawing','writing_stories',
+                              'music_production'].some(t => tiles.includes(t));
+  const hasBusinessSignal = ['entrepreneurship','business_startups','fantasy_sports_roster'].some(t => tiles.includes(t));
+  const hasFaithSignal    = faith && faith !== 'no_preference' && faith !== 'secular';
+  const hasEnviroSignal   = naics.some(n => [71, 11, 21].includes(n)) ||
+                             ['outdoor_activities','animal_care','science_experiments'].filter(t => tiles.includes(t)).length >= 2;
+
+  // Archetype → signal mapping
+  const archetypeSignals = {
+    'The Human Performance University':         hasBodySignal || hasAthleticSignal,
+    'The Space and Human Performance University': hasTechSignal || hasAthleticSignal || hasBodySignal,
+    'The Ecological University':                hasNatureSignal || hasEnviroSignal,
+    'The Unconventional Public College':        hasCreativeSignal || hasServiceSignal,
+    'The Cultural Capital Liberal Arts College': hasCreativeSignal || hasMusicSignal,
+    'The Global Citizenship College':           hasGlobalSignal || hasServiceSignal,
+    'The Great Books Catholic College':         hasHistorySignal && hasFaithSignal,
+    'The Reformed Intellectual University':     hasHistorySignal && hasFaithSignal,
+    'The Adventist Flagship University':        hasServiceSignal && hasFaithSignal,
+    'The Adventist Health Sciences University': hasBodySignal && hasFaithSignal,
+    'The Evangelical Ivy':                      hasFaithSignal && (hasHistorySignal || hasBusinessSignal),
+    'The West Coast Evangelical Gateway':       hasFaithSignal && hasCreativeSignal,
+    'The New England Evangelical Liberal Arts College': hasFaithSignal,
+    'The Conservative Christian Career Preparation University': hasFaithSignal,
+    'The Premier Lutheran Liberal Arts College': hasMusicSignal || hasFaithSignal,
+    'The Professional Lutheran University':     hasFaithSignal && hasBusinessSignal,
+    'The Regional Lutheran Standout':           hasFaithSignal,
+    'The Leadership-Accelerated Liberal Arts College': hasBusinessSignal || riasec.includes('E'),
+    'The Elite Mississippi Network College':    riasec.includes('E') || riasec.includes('S'),
+    'The Academic LAC of Arkansas':             hasHistorySignal || riasec.includes('I'),
+    'The Southern Pre-Professional Liberal Arts College': hasBusinessSignal || riasec.includes('E'),
+    'The HBCU Leadership Incubator of the Research Triangle': hasTechSignal || hasServiceSignal,
+    'The HBCU Flagship of Louisiana':           hasServiceSignal || hasBusinessSignal,
+    'The Iconic SWAC HBCU':                     hasCreativeSignal || hasAthleticSignal,
+    'The Professional HBCU of Mississippi':     hasServiceSignal || hasBusinessSignal,
+    'The Top Technical HBCU of Texas':          hasTechSignal || hasBodySignal,
+    'The Tech Workforce Engine of Utah':        hasTechSignal || hasBusinessSignal,
+    'The Underrated Mountain West Flagship':    hasTechSignal || hasNatureSignal,
+    'The Urban Innovation Hub':                 hasCreativeSignal || hasServiceSignal || hasBusinessSignal,
+    'The Jesuit Gateway to the Pacific Northwest Tech Economy': hasTechSignal || hasServiceSignal,
+    'The South LA Mobility Institution':        hasServiceSignal || hasBusinessSignal,
+    'The Fast-Rising UC Campus':               hasTechSignal || hasNatureSignal,
+  };
+
+  const candidates = [];
+
+  Object.entries(UNIVERSITY_CONTENT).forEach(function([name, school]) {
+    // Skip schools already in primary match list
+    if (matchedNames.has(name)) return;
+    // Only schools with archetype populated
+    if (!school.archetype) return;
+
+    var score = 0;
+    var reason = '';
+
+    // Primary: archetype signal match
+    if (archetypeSignals[school.archetype]) {
+      score += 10;
+    }
+
+    // Faith bonus
+    if (hasFaithSignal && school.faith_tradition) {
+      var faithMap = {
+        catholic: 'catholic', evangelical: 'evangelical', methodist: 'methodist',
+        baptist: 'baptist', lutheran: 'lutheran', presbyterian: 'presbyterian',
+        quaker: 'quaker', 'seventh_day_adventist': 'seventh_day_adventist',
+        lds: 'lds', reformed: 'reformed', episcopal: 'episcopal',
+        church_of_christ: 'church_of_christ'
+      };
+      if (school.faith_tradition.toLowerCase().includes(faith.toLowerCase()) ||
+          faith.toLowerCase().includes(school.faith_tradition.toLowerCase().split(' ')[0])) {
+        score += 5;
+      }
+    }
+
+    // RIASEC alignment via best_fit_personality
+    if (school.best_fit_personality) {
+      var bfp = school.best_fit_personality.toLowerCase();
+      if (riasec.includes('I') && bfp.includes('intellectu')) score += 3;
+      if (riasec.includes('A') && bfp.includes('creative')) score += 3;
+      if (riasec.includes('S') && bfp.includes('service')) score += 3;
+      if (riasec.includes('E') && bfp.includes('ambitious')) score += 3;
+      if (riasec.includes('C') && bfp.includes('conscientiousness')) score += 3;
+      if (riasec.includes('R') && bfp.includes('technical')) score += 3;
+    }
+
+    // Geo radius alignment
+    if (school.geographic_influence_radius) {
+      var geo = school.geographic_influence_radius.toLowerCase();
+      var zip = profile.zip || '';
+      // Simple regional check
+      if (zip.match(/^[0-9]/)) {
+        var zipNum = parseInt(zip);
+        if (zipNum >= 10000 && zipNum <= 29999 && geo.includes('northeast')) score += 2;
+        if (zipNum >= 30000 && zipNum <= 49999 && geo.includes('southeast')) score += 2;
+        if (zipNum >= 50000 && zipNum <= 69999 && geo.includes('midwest')) score += 2;
+        if (zipNum >= 70000 && zipNum <= 79999 && geo.includes('south')) score += 2;
+        if (zipNum >= 80000 && zipNum <= 99999 && geo.includes('west')) score += 2;
+      }
+      if (geo.includes('national')) score += 1;
+    }
+
+    if (score >= 10) {
+      // Build reason from archetype + one_sentence_summary
+      reason = school.one_sentence_summary || school.hidden_pathway || '';
+      candidates.push({ name, school, score, reason });
+    }
+  });
+
+  // Sort by score descending, take top 5
+  candidates.sort(function(a, b) { return b.score - a.score; });
+  return candidates.slice(0, 5);
+}
+
+
+/* ── renderUnderTheRadar ─────────────────────────────────────────────────────
+   Renders the Under the Radar section.
+   picks[0-1] → student-facing (Where You Fit tab)
+   picks[0-4] → counselor tab (all 5)
+   ─────────────────────────────────────────────────────────────────────────── */
+function renderUnderTheRadar(picks) {
+  if (!picks || picks.length === 0) return;
+
+  function makeRadarCard(pick) {
+    var school = pick.school;
+    return `<div class="radar-card">
+      <div class="radar-card-archetype">${school.archetype || ''}</div>
+      <div class="radar-card-name">${pick.name}</div>
+      <div class="radar-card-location">${school.location || ''}${school.faith_tradition ? ' · ' + school.faith_tradition : ''}</div>
+      <div class="radar-card-why">${pick.reason.slice(0, 300)}${pick.reason.length > 300 ? '…' : ''}</div>
+      ${school.economic_outcome ? `<div class="radar-card-summary">${school.economic_outcome}</div>` : ''}
+    </div>`;
+  }
+
+  // Student: top 2
+  var studentSection = document.getElementById('radar-section-student');
+  var studentList    = document.getElementById('radar-list-student');
+  if (studentSection && studentList && picks.length > 0) {
+    studentList.innerHTML = picks.slice(0, 2).map(makeRadarCard).join('');
+    studentSection.style.display = 'block';
+  }
+
+  // Counselor: all 5
+  var counselorSection = document.getElementById('radar-section-counselor');
+  var counselorList    = document.getElementById('radar-list-counselor');
+  if (counselorSection && counselorList) {
+    counselorList.innerHTML = picks.map(function(pick, i) {
+      var school = pick.school;
+      return `<div class="action-prompt" style="border-left:2px solid var(--gl)">
+        <div class="action-text">
+          <div style="font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px">${school.archetype || ''}</div>
+          <strong>${i+1}. ${pick.name}</strong>
+          ${school.location ? `<span style="font-size:11px;color:var(--ink4);font-weight:300"> — ${school.location}</span>` : ''}
+          ${school.faith_tradition ? `<div style="font-size:10px;color:#a07850;margin-top:2px">${school.faith_tradition}</div>` : ''}
+          ${school.best_fit_personality ? `<div style="font-size:11px;color:var(--ink3);margin-top:3px;font-weight:300">Best fit: ${school.best_fit_personality}</div>` : ''}
+          ${school.comparable_institutions ? `<div style="font-size:11px;color:var(--ink4);margin-top:2px;font-style:italic;font-weight:300">Compare to: ${school.comparable_institutions}</div>` : ''}
+          <div style="font-size:12px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5">${pick.reason.slice(0, 250)}${pick.reason.length > 250 ? '…' : ''}</div>
+        </div>
+      </div>`;
+    }).join('');
+    counselorSection.style.display = 'block';
+  }
+}
+
 function renderSchoolRecommendations(profile, callAData, callDData, adjacentPicks, profileAdjacentPicks) {
   if(!callDData || callDData.length === 0) return;
 
@@ -3278,14 +3505,20 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
   const quickList = document.getElementById('quick-schools-list');
   const quickSection = document.getElementById('quick-schools-section');
   if(quickList && callDData.length > 0) {
-    quickList.innerHTML = callDData.slice(0,3).map((s,i) => `
-      <div class="school-preview">
+    quickList.innerHTML = callDData.slice(0,3).map((s,i) => {
+      const qData = typeof UNIVERSITY_CONTENT !== 'undefined' ? UNIVERSITY_CONTENT[s.name] : null;
+      const qArchetype = qData && qData.archetype ? qData.archetype : '';
+      const qFaith = qData && qData.faith_tradition ? qData.faith_tradition : '';
+      return `<div class="school-preview">
         <div class="school-preview-num">${i+1}</div>
         <div class="school-preview-content">
           <div class="school-preview-name">${s.name}</div>
+          ${qArchetype ? `<div style="font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px;font-family:var(--sans)">${qArchetype}</div>` : ''}
           <div class="school-preview-why">${s.match}</div>
+          ${qFaith ? `<div style="font-size:10px;color:#a07850;margin-top:3px">${qFaith}</div>` : ''}
         </div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
     quickSection.style.display = 'block';
   }
 
@@ -3316,11 +3549,21 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     const scaleLabel = profile.college_prefs.campus_scale !== 'no_preference'
       ? profile.college_prefs.campus_scale.replace(/_/g,' ') : '';
 
+    // New schema fields — graceful fallback to empty
+    const archetype      = schoolData && schoolData.archetype ? schoolData.archetype : '';
+    const faithTradition = schoolData && schoolData.faith_tradition ? schoolData.faith_tradition : '';
+    const summary        = schoolData && schoolData.one_sentence_summary ? schoolData.one_sentence_summary : '';
+    const hiddenPath     = schoolData && schoolData.hidden_pathway ? schoolData.hidden_pathway : '';
+
+    // Use one_sentence_summary if populated, otherwise fall back to hidden_pathway
+    const footerContent  = summary || hiddenPath;
+
     return `<div class="school-card">
       <div class="school-card-head">
         <div>
           <div class="school-name">${s.name}</div>
           <div class="school-location">${schoolData ? schoolData.location : ''}</div>
+          ${archetype ? `<div class="school-archetype">${archetype}</div>` : ''}
         </div>
         <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--gl)">${i+1}</div>
       </div>
@@ -3328,9 +3571,10 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         ${confLabel ? `<span class="school-badge">${confLabel}</span>` : ''}
         ${scaleLabel ? `<span class="school-badge">${scaleLabel}</span>` : ''}
         ${schoolData ? `<span class="school-badge">${schoolData.region}</span>` : ''}
+        ${faithTradition ? `<span class="school-badge-faith">${faithTradition}</span>` : ''}
       </div>
       <div class="school-why"><strong style="font-weight:500;color:var(--ink);display:block;margin-bottom:6px">${s.match.replace(/\s*-{2,}\s*$/g,"").trim()}</strong>${s.why.replace(/\s*-{2,}\s*$/g,"").trim()}</div>
-      ${schoolData && schoolData.hidden_pathway ? `<div class="school-why" style="margin-top:.75rem;padding-top:.75rem;border-top:0.5px solid var(--rule);font-size:13px;color:var(--ink3)">${schoolData.hidden_pathway}</div>` : ''}
+      ${footerContent ? `<div class="school-summary">${footerContent}</div>` : ''}
     </div>`;
   }).join('');
 
@@ -3347,11 +3591,13 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
               <div>
                 <div class="school-name">${adj.name}</div>
                 <div class="school-location">${adjData ? adjData.location : ''}</div>
+                ${adjData && adjData.archetype ? `<div class="school-archetype">${adjData.archetype}</div>` : ''}
               </div>
               <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink4);padding-top:6px">Adjacent</div>
             </div>
+            ${adjData && adjData.faith_tradition ? `<div class="school-badges"><span class="school-badge-faith">${adjData.faith_tradition}</span></div>` : ''}
             <div class="school-why" style="color:var(--ink3)">
-              ${adjData ? adjData.hidden_pathway : 'A program-adjacent match worth exploring with your counselor.'}
+              ${adjData && adjData.one_sentence_summary ? adjData.one_sentence_summary : adjData && adjData.hidden_pathway ? adjData.hidden_pathway : 'A program-adjacent match worth exploring with your counselor.'}
             </div>
           </div>
         </div>`;
@@ -3376,14 +3622,34 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     let counselorHtml = `<div class="section-eyebrow" style="margin-bottom:.5rem">Direct matches</div>`;
     counselorHtml += callDData.map((s,i) => {
       const intel = typeof getUniversityIntel === 'function' ? getUniversityIntel(s.name) : null;
+      const schoolD = typeof UNIVERSITY_CONTENT !== 'undefined' ? UNIVERSITY_CONTENT[s.name] : null;
       const majors = typeof getMajorStrengths === 'function' ? getMajorStrengths(s.name) : [];
       const cities = typeof getTopGradCities === 'function' ? getTopGradCities(s.name) : [];
-      const majorLine = majors.length ? `<div style="font-size:12px;color:var(--gold);letter-spacing:1px;margin-top:4px;font-weight:500">${majors.join(' · ')}</div>` : '';
-      const cityLine = cities.length ? `<div style="font-size:12px;color:var(--ink4);margin-top:2px;font-weight:300">Grads → ${cities.map(c=>c.city+' '+c.pct+'%').join(' | ')}</div>` : '';
-      const hiddenLine = intel?.hidden_pathway ? `<div style="font-size:12px;color:var(--ink3);margin-top:4px;font-weight:300;line-height:1.5;font-style:italic">${intel.hidden_pathway.slice(0,180)}${intel.hidden_pathway.length>180?'…':''}</div>` : '';
+
+      // New schema fields
+      const cArchetype    = schoolD && schoolD.archetype ? schoolD.archetype : '';
+      const cFaith        = schoolD && schoolD.faith_tradition ? schoolD.faith_tradition : '';
+      const cPersonality  = schoolD && schoolD.best_fit_personality ? schoolD.best_fit_personality : '';
+      const cComparable   = schoolD && schoolD.comparable_institutions ? schoolD.comparable_institutions : '';
+      const cGeoRadius    = schoolD && schoolD.geographic_influence_radius ? schoolD.geographic_influence_radius : '';
+      const cEconomic     = schoolD && schoolD.economic_outcome ? schoolD.economic_outcome : '';
+      const cSummary      = schoolD && schoolD.one_sentence_summary ? schoolD.one_sentence_summary : '';
+      const cHidden       = intel?.hidden_pathway || (schoolD && schoolD.hidden_pathway) || '';
+
+      const archetypeLine   = cArchetype ? `<div style="font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;font-weight:500">${cArchetype}</div>` : '';
+      const majorLine       = majors.length ? `<div style="font-size:12px;color:var(--gold);letter-spacing:1px;margin-top:4px;font-weight:500">${majors.join(' · ')}</div>` : '';
+      const cityLine        = cities.length ? `<div style="font-size:12px;color:var(--ink4);margin-top:2px;font-weight:300">Grads → ${cities.map(c=>c.city+' '+c.pct+'%').join(' | ')}</div>` : '';
+      const pillRow         = [cFaith, cGeoRadius].filter(Boolean).map(v => `<span class="counselor-school-pill counselor-school-pill-gold">${v}</span>`).join('');
+      const pillLine        = pillRow ? `<div style="margin-top:5px">${pillRow}</div>` : '';
+      const personalityLine = cPersonality ? `<div style="font-size:11px;color:var(--ink3);margin-top:4px;font-weight:300">Best fit: ${cPersonality}</div>` : '';
+      const economicLine    = cEconomic ? `<div style="font-size:11px;color:var(--ink3);margin-top:3px;font-weight:300">${cEconomic}</div>` : '';
+      const comparableLine  = cComparable ? `<div style="font-size:11px;color:var(--ink4);margin-top:3px;font-weight:300;font-style:italic">Compare to: ${cComparable}</div>` : '';
+      const summaryLine     = cSummary ? `<div style="font-size:12px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5;font-style:italic">${cSummary}</div>` :
+                              cHidden ? `<div style="font-size:12px;color:var(--ink3);margin-top:4px;font-weight:300;line-height:1.5;font-style:italic">${cHidden.slice(0,220)}${cHidden.length>220?'…':''}</div>` : '';
+
       return `<div class="action-prompt"><div class="action-text">
         <strong>${i+1}. ${s.name}</strong> — ${toCounselorVoice(s.match)}
-        ${majorLine}${cityLine}${hiddenLine}
+        ${archetypeLine}${majorLine}${cityLine}${pillLine}${personalityLine}${economicLine}${comparableLine}${summaryLine}
       </div></div>`;
     }).join('');
 
@@ -3784,6 +4050,10 @@ async function submitLifescape() {
             );
             // Render Act IX if callE returned data
             if (LS_STATE.callEResult) renderActIX(LS_STATE.callEResult);
+
+            // Render Under the Radar picks
+            var radarPicks = getUnderTheRadarPicks(profile, matchedSchools);
+            if (radarPicks.length > 0) renderUnderTheRadar(radarPicks);
           } else {
             console.warn('[callD] parseCallD returned 0 schools — check raw response format');
           }
