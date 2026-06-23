@@ -3468,7 +3468,7 @@ function renderUnderTheRadar(picks) {
       <div class="radar-card-archetype">${school.archetype || ''}</div>
       <div class="radar-card-name">${pick.name}</div>
       <div class="radar-card-location">${school.location || ''}${school.faith_tradition ? ' · ' + school.faith_tradition : ''}</div>
-      <div class="radar-card-why">${pick.reason.slice(0, 300)}${pick.reason.length > 300 ? '…' : ''}</div>
+      <div class="radar-card-why">${pick.reason.slice(0, 500)}${pick.reason.length > 500 ? '…' : ''}</div>
       ${school.economic_outcome ? `<div class="radar-card-summary">${school.economic_outcome}</div>` : ''}
     </div>`;
   }
@@ -3495,7 +3495,7 @@ function renderUnderTheRadar(picks) {
           ${school.faith_tradition ? `<div style="font-size:10px;color:#a07850;margin-top:2px">${school.faith_tradition}</div>` : ''}
           ${school.best_fit_personality ? `<div style="font-size:10px;color:var(--ink3);margin-top:3px;font-weight:300">Best fit: ${school.best_fit_personality}</div>` : ''}
           ${school.comparable_institutions ? `<div style="font-size:10px;color:var(--ink4);margin-top:2px;font-style:italic;font-weight:300">Compare to: ${school.comparable_institutions}</div>` : ''}
-          <div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5">${pick.reason.slice(0, 250)}${pick.reason.length > 250 ? '…' : ''}</div>
+          <div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5">${pick.reason.slice(0, 500)}${pick.reason.length > 500 ? '…' : ''}</div>
         </div>
       </div>`;
     }).join('');
@@ -3650,7 +3650,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       const economicLine    = cEconomic ? `<div style="font-size:10px;color:var(--ink3);margin-top:3px;font-weight:300">${cEconomic}</div>` : '';
       const comparableLine  = cComparable ? `<div style="font-size:10px;color:var(--ink4);margin-top:3px;font-weight:300;font-style:italic">Compare to: ${cComparable}</div>` : '';
       const summaryLine     = cSummary ? `<div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5;font-style:italic">${cSummary}</div>` :
-                              cHidden ? `<div style="font-size:12px;color:var(--ink3);margin-top:4px;font-weight:300;line-height:1.5;font-style:italic">${cHidden.slice(0,220)}${cHidden.length>220?'…':''}</div>` : '';
+                              cHidden ? `<div style="font-size:12px;color:var(--ink3);margin-top:4px;font-weight:300;line-height:1.5;font-style:italic">${cHidden.slice(0,400)}${cHidden.length>400?'…':''}</div>` : '';
 
       return `<div class="action-prompt"><div class="action-text">
         <strong>${i+1}. ${s.name}</strong> — ${toCounselorVoice(s.match)}
@@ -3867,7 +3867,7 @@ async function submitLifescape() {
 
   try {
     // ── CALL A — fires first ──────────────────────
-    const callAText = await fireCall(buildCallAPrompt(ctx), 600);
+    const callAText = await fireCall(buildCallAPrompt(ctx), 900);
     const callAData = parseCallA(callAText);
     LS_STATE.callAResult = callAData;
     setGenProgress(40);
@@ -3916,7 +3916,7 @@ async function submitLifescape() {
 
     // Build parallel call array — callB + callC always, callE conditionally
     var _parallelCalls = [
-      fireCall(buildCallBPrompt(ctx), 1200, 0, 45000),
+      fireCall(buildCallBPrompt(ctx), 1600, 0, 45000),
       fireCall(buildCallCPrompt(ctx), 1000, 0, 30000)
     ];
     if (_ccShouldShow && _ccContext && _ccContext.hasCCPathway) {
