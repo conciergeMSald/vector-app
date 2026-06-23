@@ -341,7 +341,11 @@ const VECTOR_CROSSWALK = [
       { with: ["hair_makeup"], unlocks: ["Beauty Content Creator", "Makeup Tutorial Creator", "Brand Ambassador"] },
       { with: ["filmmaking"], unlocks: ["Video Producer", "Creative Director", "Short-Form Film Director"] },
       { with: ["entrepreneurship"], unlocks: ["Creator Economy Entrepreneur", "Brand Founder", "Agency Owner"] },
-      { with: ["i_can_talk_to_anyone"], unlocks: ["On-Camera Host", "Social Media Personality", "Brand Spokesperson"] }
+      { with: ["social_media_analytics"], unlocks: ["Full-Stack Creator-Strategist", "Audience Growth Director", "Platform Algorithm Specialist"] },
+      { with: ["personal_brand"], unlocks: ["Full-Stack Creator", "Multi-Platform Media Brand", "Creator Economy Founder"] },
+      { with: ["data_statistics"], unlocks: ["Content Performance Analyst", "Audience Intelligence Director", "Creator Data Lead"] },
+      { with: ["entrepreneurship", "social_media_analytics"], unlocks: ["Growth Marketing Founder", "DTC Content Director", "Performance Creative Lead"] },
+      { with: ["teaching_tutoring"], unlocks: ["EdTech Content Creator", "Online Course Developer", "Learning Experience Designer"] }
     ]
   },
 
@@ -2668,7 +2672,189 @@ const VECTOR_CROSSWALK = [
       { with: ["entrepreneurship", "understanding_why_people", "fantasy_sports_roster"], unlocks: ["General Manager", "Director of Player Personnel", "Head of Athlete Management", "Sports Brand Founder"] }
     ]
   }
+,
 
+  {
+    id: "planning_trips_adventures",
+    label: "Planning trips, vacations, or group adventures",
+    label_parent: "Planning trips, vacations, or group adventures",
+    cluster: "people",
+    riasec: ["E", "S", "C"],
+    naics_sectors: [72, 101, 54],
+    industries: ["Travel & Hospitality", "Event Planning", "Logistics & Operations"],
+    career_emergence: ["Event Planner", "Travel Consultant", "Operations Manager", "Tour Director", "Hospitality Manager"],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["entrepreneurship"], unlocks: ["Travel Entrepreneur", "Boutique Hotel Owner", "Experience Design Founder"] },
+      { with: ["leading_the_group"], unlocks: ["Operations Director", "Event Production Manager", "Logistics Coordinator"] },
+      { with: ["content_creation"], unlocks: ["Travel Content Creator", "Destination Marketing Manager", "Tourism Brand Manager"] }
+    ]
+  },
+
+  {
+    id: "leading_the_group",
+    label: "Taking charge when the group needs direction",
+    label_parent: "Taking charge when the group needs direction",
+    cluster: "people",
+    riasec: ["E", "S"],
+    naics_sectors: [54, 92, 61],
+    industries: ["Management & Leadership", "Public Service", "Education"],
+    career_emergence: ["Team Leader", "Project Manager", "Principal", "Coach", "Political Organizer", "Military Officer"],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["entrepreneurship"], unlocks: ["Founder & CEO", "General Manager", "Business Unit Director"] },
+      { with: ["advocacy_activism"], unlocks: ["Political Campaign Manager", "Nonprofit Executive Director", "Community Organizer"] },
+      { with: ["teaching_tutoring"], unlocks: ["School Principal", "Athletic Director", "Program Director"] }
+    ]
+  },
+
+  {
+    id: "networking_meeting_people",
+    label: "Naturally meeting and connecting with new people",
+    label_parent: "Naturally meeting and connecting with new people",
+    cluster: "people",
+    riasec: ["E", "S"],
+    naics_sectors: [54, 44, 72],
+    industries: ["Sales & Business Development", "PR & Communications", "Hospitality"],
+    career_emergence: ["Sales Director", "Business Development Manager", "PR Executive", "Account Manager", "Recruiter"],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["entrepreneurship"], unlocks: ["Business Development Director", "Founder", "Sales Leader"] },
+      { with: ["personal_brand"], unlocks: ["Brand Ambassador", "Influencer Marketing Manager", "PR Director"] },
+      { with: ["advocacy_activism"], unlocks: ["Political Fundraiser", "Community Relations Director", "Coalition Builder"] }
+    ]
+  },
+
+  {
+    id: "personal_brand",
+    label: "Building my own brand or online presence",
+    label_parent: "Building their own brand or online presence",
+    cluster: "people",
+    riasec: ["E", "A", "S"],
+    naics_sectors: [51, 54, 44],
+    industries: ["Media & Content", "Marketing & PR", "Consumer Brands", "Influencer Economy"],
+    career_emergence: ["Content Creator", "Brand Strategist", "Influencer", "Marketing Director", "Media Personality", "DTC Brand Founder"],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["content_creation"], unlocks: ["Full-Stack Creator", "Media Brand Founder", "Multi-Platform Content Director"] },
+      { with: ["entrepreneurship"], unlocks: ["DTC Brand Founder", "Creator Economy Entrepreneur", "Personal Brand Agency Owner"] },
+      { with: ["social_media_analytics"], unlocks: ["Growth Strategist", "Audience Development Director", "Creator Analytics Lead"] },
+      { with: ["networking_meeting_people"], unlocks: ["Brand Ambassador", "Talent Manager", "PR Director"] }
+    ]
+  },
+
+  {
+    id: "conflict_resolution",
+    label: "Helping people work through disagreements or problems",
+    label_parent: "Helping people work through disagreements or problems",
+    cluster: "people",
+    riasec: ["S", "I"],
+    naics_sectors: [92, 62, 61],
+    industries: ["Mediation & Conflict Resolution", "Social Work", "HR & Organizational Development"],
+    career_emergence: ["Mediator", "HR Business Partner", "School Counselor", "Social Worker", "Labor Relations Specialist", "Family Therapist"],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["law_justice"], unlocks: ["Family Law Attorney", "Labor Arbitrator", "Human Rights Lawyer"] },
+      { with: ["mental_health_wellness"], unlocks: ["Family Therapist", "School Counselor", "Clinical Social Worker"] },
+      { with: ["leading_the_group"], unlocks: ["HR Director", "Organizational Development Consultant", "Labor Relations Director"] }
+    ]
+  },
+
+  {
+    id: "public_speaking_performing",
+    label: "Speaking in front of groups or performing for an audience",
+    label_parent: "Speaking in front of groups or performing for an audience",
+    cluster: "people",
+    riasec: ["E", "A", "S"],
+    naics_sectors: [71, 92, 61, 51],
+    industries: ["Entertainment & Performance", "Public Affairs", "Education", "Media"],
+    career_emergence: ["Public Speaker", "Politician", "Actor", "News Anchor", "Professor", "Trial Attorney"],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["advocacy_activism"], unlocks: ["Politician", "Public Affairs Director", "Nonprofit Spokesperson"] },
+      { with: ["content_creation"], unlocks: ["On-Camera Host", "Podcast Host", "News Anchor", "YouTube Creator"] },
+      { with: ["law_justice"], unlocks: ["Trial Attorney", "Public Defender", "Prosecutor"] }
+    ]
+  },
+
+  {
+    id: "caregiving_nurturing",
+    label: "Taking care of people who need extra help or support",
+    label_parent: "Taking care of people who need extra help or support",
+    cluster: "people",
+    riasec: ["S", "I"],
+    naics_sectors: [62, 95, 61],
+    industries: ["Healthcare & Allied Health", "Social Services", "Longevity & Elder Care"],
+    career_emergence: ["Nurse", "Social Worker", "Occupational Therapist", "Child Life Specialist", "Special Education Teacher"],
+    geo_signal: false,
+    eq_multiplier: true,
+    combo_unlocks: [
+      { with: ["medical_science"], unlocks: ["Registered Nurse", "Physician Assistant", "Occupational Therapist"] },
+      { with: ["mental_health_wellness"], unlocks: ["Child Life Specialist", "School Psychologist", "Clinical Social Worker"] },
+      { with: ["teaching_tutoring"], unlocks: ["Special Education Teacher", "School Counselor", "Developmental Specialist"] }
+    ]
+  },
+
+  {
+    id: "community_organizing",
+    label: "Organizing events, clubs, or community activities",
+    label_parent: "Organizing events, clubs, or community activities",
+    cluster: "people",
+    riasec: ["E", "S", "C"],
+    naics_sectors: [81, 101, 92],
+    industries: ["Nonprofit & Community", "Event Management", "Local Government", "Civic Organizations"],
+    career_emergence: ["Nonprofit Program Manager", "Community Development Director", "Events Coordinator", "City Council Member"],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["advocacy_activism"], unlocks: ["Community Organizer", "Political Campaign Director", "Nonprofit Executive"] },
+      { with: ["planning_trips_adventures"], unlocks: ["Event Production Director", "Festival Manager", "Conference Director"] },
+      { with: ["entrepreneurship"], unlocks: ["Social Enterprise Founder", "Community Business Owner", "Local Franchise Owner"] }
+    ]
+  },
+
+  {
+    id: "social_media_analytics",
+    label: "Studying what content performs and why it works",
+    label_parent: "Studying what content performs and why it works",
+    cluster: "think",
+    riasec: ["I", "C", "E"],
+    naics_sectors: [51, 54, 44],
+    industries: ["Digital Marketing & Analytics", "Media Intelligence", "Brand Strategy", "Consumer Insights"],
+    career_emergence: ["Social Media Analyst", "Growth Marketer", "Audience Development Manager", "Brand Strategist", "Creator Economy Analyst"],
+    geo_signal: false,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["data_statistics"], unlocks: ["Marketing Data Scientist", "Consumer Insights Analyst", "Growth Analytics Director"] },
+      { with: ["content_creation"], unlocks: ["Full-Stack Creator-Strategist", "Audience Growth Director", "Platform Algorithm Specialist"] },
+      { with: ["personal_brand"], unlocks: ["Brand Growth Strategist", "Creator Economy Consultant", "Influencer Analytics Lead"] },
+      { with: ["entrepreneurship"], unlocks: ["Growth Hacker", "Performance Marketing Founder", "DTC Analytics Director"] }
+    ]
+  },
+
+  {
+    id: "cycling_ebike",
+    label: "Cycling or riding an e-bike",
+    label_parent: "Cycling or riding an e-bike",
+    cluster: "move",
+    riasec: ["R", "I"],
+    naics_sectors: [48, 44, 71],
+    industries: ["Urban Mobility & Transportation", "Outdoor Recreation", "Sustainable Transport Tech"],
+    career_emergence: ["Urban Mobility Planner", "Sustainable Transportation Analyst", "Cycling Infrastructure Designer", "Electric Vehicle Product Manager"],
+    geo_signal: true,
+    eq_multiplier: false,
+    combo_unlocks: [
+      { with: ["environment_sustainability"], unlocks: ["Urban Mobility Planner", "Sustainable Transport Policy Analyst", "Green Infrastructure Designer"] },
+      { with: ["engineering_challenges"], unlocks: ["Electric Vehicle Engineer", "Micro-Mobility Product Manager", "Transportation Systems Designer"] },
+      { with: ["entrepreneurship"], unlocks: ["Mobility Startup Founder", "Bike Share Operator", "EV Accessories Brand Founder"] }
+    ]
+  }
 ];
 
 /**
