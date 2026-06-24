@@ -28,6 +28,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "Vanderbilt is the Ivy of the South — a 4.7% acceptance rate, meet-full-need no-loan financial aid, the #1 education school in America, and four years in Nashville's healthcare, music, and technology ecosystem, all on a 333-acre campus where 97% of students return for sophomore year.",
     best_fit_personality: "High Conscientiousness, High Extraversion, Socially confident, Pre-professionally oriented, Nashville or Southeast-attracted, Financially sophisticated (understands the aid policy)",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~10% Jewish undergraduate enrollment",
     geographic_influence_radius: "National — Southeast dominant, New York finance and consulting, Boston medicine and research, Nashville healthcare ecosystem",
     economic_outcome: "Exceptional outcomes in consulting, finance, healthcare, medicine, and law through McKinsey/Deloitte/Goldman/HCA recruiting and VUMC adjacency; Peabody produces the country's top education researchers and policy leaders",
     comparable_institutions: "Duke University, Rice University, Washington University in St. Louis, Emory University, Brown University"
@@ -45,6 +47,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~25% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -62,6 +66,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~22% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -79,6 +85,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "The University of Georgia — the nation's first public university, founded 1785 — has quietly built one of the most effective business-to-Atlanta pipelines in American higher education, with a top-25 business school, top-5 journalism program, 95% graduate employment rate, and the Student Managed Investment Fund producing bulge-bracket bankers from Athens.",
     best_fit_personality: "High Conscientiousness, SEC football culture-comfortable, Business or journalism-oriented, Georgia-rooted or Atlanta-bound, Community-minded, Professionally ambitious within a large state university context",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "Georgia dominant — Atlanta Fortune 500 corridor primary, Southeast regional, national journalism and media",
     economic_outcome: "Strong outcomes in business, finance, journalism, law, and healthcare through Atlanta Fortune 500 employer base; Terry SMIF produces investment banking and consulting placements at rates exceeding larger peer programs",
     comparable_institutions: "University of North Carolina Chapel Hill, University of Virginia, University of Florida, Auburn University, University of Tennessee"
@@ -96,6 +103,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~18% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -147,6 +156,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Present",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -197,7 +207,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Baptist (historically Baptist, now nonsectarian)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -215,6 +225,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~25% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -232,6 +244,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~10% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -266,6 +280,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~8% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -299,7 +315,9 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (historically United Methodist)",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~20% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -317,6 +335,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~10% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -350,7 +370,9 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Jesuit)",
+    hillel_strength: "Moderate",
+    jewish_enrollment: "~8% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -367,7 +389,9 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (historically United Methodist)",
+    hillel_strength: "Moderate",
+    jewish_enrollment: "~8% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -504,6 +528,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -521,6 +547,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~12% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -555,6 +583,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
+    jewish_enrollment: "~10% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -640,6 +670,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -725,6 +756,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~20% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -742,6 +775,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~10% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -759,6 +794,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -776,6 +813,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -793,6 +832,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~12% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -810,6 +851,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~18% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -827,6 +870,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -843,7 +888,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Jesuit)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -860,7 +905,9 @@ const UNIVERSITY_CONTENT = {
     archetype: "The Pre-Professional Powerhouse with the Collaborative Soul",
     one_sentence_summary: "Northwestern is the elite private university that managed to build top-ranked professional schools in journalism, engineering, music, and communication alongside a research university — with a quarter system, a lakefront campus in Evanston, and a collaborative culture that its 7% acceptance rate does not imply.",
     best_fit_personality: "High Conscientiousness, Pre-professionally oriented, Intellectually curious across disciplines, Collaborative rather than competitive, Journalism or media-interested OR engineering-oriented OR communication-focused",
-    faith_tradition: "",
+    faith_tradition: "Methodist (historically United Methodist)",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "National — Chicago professional corridor dominant, New York media and finance, national journalism, technology, and consulting sectors",
     economic_outcome: "Strong outcomes in journalism and media, engineering and technology, consulting, finance, law, and medicine through Medill, McCormick, Kellogg pipeline and Chicago proximity",
     comparable_institutions: "Duke University, Vanderbilt University, University of Chicago, Johns Hopkins University, Washington University in St. Louis"
@@ -894,7 +941,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (historically United Methodist)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -911,7 +958,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Jesuit)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -929,6 +976,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -946,6 +994,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -980,6 +1029,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -997,6 +1047,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "CU Boulder is the flagship research university of the Mountain West — home to the only student-operated NASA mission lab in the country, a top-10 aerospace program, and a Boulder campus where the Flatirons and the startup ecosystem are equally central to the four-year experience.",
     best_fit_personality: "Outdoors-essential, Intellectually curious, STEM-motivated or business-oriented, Collaborative rather than competitive, Mountain West-rooted or Colorado-bound",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~8% Jewish undergraduate enrollment",
     geographic_influence_radius: "Colorado dominant, Mountain West, National aerospace and defense sectors, Silicon Valley tech pipeline",
     economic_outcome: "Strong outcomes in aerospace engineering, computer science, environmental design, business, and natural sciences through Denver-Boulder employer corridor and LASP/NCAR/NOAA research pipelines",
     comparable_institutions: "University of Washington, University of Oregon, University of Utah, Colorado State University, Arizona State University"
@@ -1031,6 +1083,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1047,7 +1100,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Jesuit)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1064,7 +1117,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Christian Brothers)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1099,6 +1152,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Present",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1115,7 +1169,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Jesuit)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1184,6 +1238,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~12% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1200,7 +1256,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Congregation of Holy Cross)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1217,7 +1273,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Augustinian)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1235,6 +1291,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1455,7 +1513,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Church of Christ",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1472,7 +1530,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Roman Catholic)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1523,7 +1581,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "LDS (Church of Jesus Christ of Latter-day Saints)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1541,6 +1599,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Present",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1608,7 +1667,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Episcopal (Anglican)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1660,6 +1719,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Present",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1677,6 +1737,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~10% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1694,6 +1756,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~8% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1711,6 +1775,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~8% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1744,7 +1810,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Baptist (historically Baptist, now nonsectarian)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1778,7 +1844,8 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Jesuit)",
+    hillel_strength: "Strong",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1796,6 +1863,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~12% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1830,6 +1899,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~25% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1847,6 +1918,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1863,7 +1936,9 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (historically United Methodist)",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~20% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1881,6 +1956,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~30% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1898,6 +1975,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Present",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1915,6 +1993,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~20% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1932,6 +2012,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~20% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1948,7 +2030,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (U.S. Army service academy)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1966,6 +2048,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -1983,6 +2067,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~20% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2067,7 +2153,9 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (United Methodist)",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~20% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2085,6 +2173,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~12% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2102,6 +2192,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2135,7 +2227,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Jesuit)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2152,7 +2244,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Baptist (Baptist General Convention of Texas)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2207,6 +2299,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2224,6 +2317,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2258,6 +2353,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~8% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2274,7 +2371,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (United Methodist)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2291,7 +2388,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Disciples of Christ (historically)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2343,6 +2440,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2360,6 +2458,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2377,6 +2476,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~12% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2394,6 +2495,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~12% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2411,6 +2514,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Very Strong",
+    jewish_enrollment: "~12% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2427,7 +2532,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Baptist (historically Baptist, now Christian)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2445,6 +2550,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
+    jewish_enrollment: "~22% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2495,7 +2602,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Baptist (historically Southern Baptist, now nonsectarian)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2546,7 +2653,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (United Methodist)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2564,6 +2671,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2597,7 +2706,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Episcopal (historically Anglican, now nonsectarian)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2615,6 +2724,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
+    jewish_enrollment: "~15% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2649,6 +2760,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2665,7 +2777,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (United Methodist)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2853,6 +2965,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Strong",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2903,7 +3016,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (United Methodist)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -2920,7 +3033,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Presbyterian (PCUSA)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3107,7 +3220,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Jesuit)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3158,7 +3271,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (HBCU)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3175,7 +3288,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (HBCU)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3277,7 +3390,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Evangelical / Charismatic",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3345,7 +3458,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Lutheran (ELCA)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3397,6 +3510,8 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
+    jewish_enrollment: "~10% Jewish undergraduate enrollment",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3413,7 +3528,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Interdenominational Christian",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3431,6 +3546,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "",
     best_fit_personality: "",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3481,7 +3597,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Dominican)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3515,7 +3631,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (United Methodist)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3566,7 +3682,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (historically United Methodist)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3617,7 +3733,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Lutheran (ELCA)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3668,7 +3784,8 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Methodist (historically United Methodist)",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3703,7 +3820,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Jesuit)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3721,7 +3838,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Jesuit)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3739,7 +3856,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Roman Catholic)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3757,7 +3874,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Spiritan)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3775,7 +3892,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Vincentian)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -3793,7 +3910,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Catholic (Jesuit)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4261,7 +4378,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "The HBCU Flagship of Louisiana",
     one_sentence_summary: "Southern University and A&M College is the HBCU flagship of Louisiana — the only HBCU system in the United States, home to The Human Jukebox marching band, the only HBCU law school in Louisiana, and direct recruiting pipelines to ExxonMobil, Shell, and Dow Chemical's Gulf Coast operations.",
     best_fit_personality: "High Conscientiousness, High Extraversion, Community-oriented, Louisiana/Gulf Coast-rooted, Professional track",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (HBCU)",
     geographic_influence_radius: "Louisiana, Gulf Coast, Southeast, National HBCU professional network",
     economic_outcome: "Strong outcomes in law, engineering, business, and public administration through Louisiana state government and petrochemical industry",
     comparable_institutions: "Grambling State University, Xavier University of Louisiana, Prairie View A&M, Alcorn State"
@@ -4279,7 +4396,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "The Iconic SWAC HBCU",
     one_sentence_summary: "Grambling State University is the iconic SWAC HBCU — home to one of America's most celebrated marching band traditions, the Eddie Robinson football legacy, and a criminal justice program that produces the law enforcement professionals of North Louisiana and the South.",
     best_fit_personality: "High Extraversion, Community-oriented, Culturally proud, Louisiana/South-rooted, Practically focused",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (HBCU)",
     geographic_influence_radius: "North Louisiana, Southwest Athletic Conference region, Southeast, National HBCU community",
     economic_outcome: "Strong outcomes in communications, criminal justice, education, and business through SWAC network and Louisiana regional employers",
     comparable_institutions: "Southern University, Prairie View A&M University, Alcorn State University, Jackson State University"
@@ -4297,7 +4414,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "The Professional HBCU of Mississippi",
     one_sentence_summary: "Jackson State University is the professional HBCU of Mississippi — a state capital campus one mile from the State Capitol building, producing the public administrators, attorneys, environmental scientists, and government professionals who run Mississippi's civic infrastructure.",
     best_fit_personality: "High Conscientiousness, Moderate Extraversion, Mississippi-rooted, Public service-oriented, Professionally ambitious",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (HBCU)",
     geographic_influence_radius: "Mississippi, Southeast, National HBCU public service network",
     economic_outcome: "Strong outcomes in public administration, law, education, environmental science, and state government through Capitol adjacency",
     comparable_institutions: "Alcorn State University, Tougaloo College, Mississippi Valley State, Southern University"
@@ -4315,7 +4432,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "The Top Technical HBCU of Texas",
     one_sentence_summary: "Prairie View A&M University is the top technical HBCU of Texas — a Texas A&M System member with a documented NASA-Johnson Space Center engineering pipeline, one of only two NAAB-accredited HBCU architecture programs, and a nursing school that feeds directly into the Texas Medical Center, the world's largest medical complex.",
     best_fit_personality: "High Conscientiousness, High Intellectualism, STEM-motivated, Texas-rooted, Historically aware, Professionally ambitious",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (HBCU)",
     geographic_influence_radius: "Texas, Gulf Coast, National aerospace and engineering sector, National HBCU network",
     economic_outcome: "Exceptional STEM outcomes in engineering, aerospace, architecture, nursing, and business through Texas A&M System and NASA adjacency",
     comparable_institutions: "Texas Southern University, Southern University, Morgan State University, Howard University"
@@ -4334,6 +4451,7 @@ const UNIVERSITY_CONTENT = {
     one_sentence_summary: "Oberlin College is the Cultural Capital Liberal Arts College — home to America's oldest conservatory, one of the nation's finest college art museums, and a founding identity of racial and gender inclusion that has produced an alumni network disproportionately concentrated in the arts, academia, public intellectualism, and environmental leadership.",
     best_fit_personality: "High Openness, Creative, Independent, Mission-Driven, Artistically or intellectually serious, Non-competitive",
     faith_tradition: "",
+    hillel_strength: "Moderate",
     geographic_influence_radius: "National arts community, Academia, Creative industries, Public interest sector",
     economic_outcome: "Strong outcomes in music, arts administration, academia, public policy, environmental leadership, nonprofits, and creative industries",
     comparable_institutions: "Reed College, Wesleyan University, Bard College, Sarah Lawrence College, Haverford College"
@@ -4477,7 +4595,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (U.S. Army service academy)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4495,7 +4613,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (U.S. Navy service academy)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4513,7 +4631,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (U.S. Air Force service academy)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4531,7 +4649,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (U.S. Coast Guard service academy)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4549,7 +4667,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (state military college)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4567,7 +4685,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (state military college)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4729,7 +4847,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Nonsectarian (private military college)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4819,7 +4937,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Presbyterian (PCUSA)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4837,7 +4955,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Quaker (Friends)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4855,7 +4973,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Presbyterian (PCUSA)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4873,7 +4991,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Quaker (Friends)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
@@ -4891,7 +5009,7 @@ const UNIVERSITY_CONTENT = {
     archetype: "",
     one_sentence_summary: "",
     best_fit_personality: "",
-    faith_tradition: "",
+    faith_tradition: "Disciples of Christ (historically)",
     geographic_influence_radius: "",
     economic_outcome: "",
     comparable_institutions: ""
