@@ -68,6 +68,25 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* ── WORDMARK / HEADER ─────────────────────────────── */
 .brand-name{font-family:var(--serif);font-weight:300;letter-spacing:4px;color:var(--gold);font-style:normal;}
 .ls-wordmark{font-family:var(--serif);font-size:48px;font-weight:300;letter-spacing:8px;color:var(--ink);margin-bottom:.5rem;display:none;}
+/* ── FIXED HEADER WITH MASTER LOGO ── */
+.ls-fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 2rem 1rem;
+  background: linear-gradient(to bottom, rgba(244,241,236,0.98) 65%, rgba(244,241,236,0));
+  pointer-events: none;
+}
+.ls-fixed-header svg {
+  width: clamp(160px, 22vw, 220px);
+  height: auto;
+  display: block;
+}
 /* VECTOR wordmark with compass needle */
 .vector-wordmark{
   display:inline-block;
@@ -86,7 +105,20 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   pointer-events:none;
   overflow:visible;
 }
-.ls-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;}
+/* ── US REGION MAP ── */
+#us-region-map-wrap { user-select: none; }
+.region-zone { cursor: pointer; }
+.region-zone.map-sel { fill: rgba(200,169,122,0.45) !important; stroke: #8B7355 !important; stroke-width: 1.2; }
+.region-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--sans); font-size: 11px; letter-spacing: 1px;
+  color: var(--ink); background: rgba(200,169,122,0.12);
+  border: 0.5px solid var(--gold); padding: 4px 10px;
+  cursor: pointer;
+}
+.region-tag:hover { background: rgba(200,169,122,0.22); }
+.region-tag-x { font-size: 13px; color: var(--gold); line-height: 1; }
+
 .gold-rule{width:36px;height:1px;background:var(--gold);margin:1.5rem 0;}
 .q{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--ink);line-height:1.35;margin-bottom:.75rem;}
 .q-sub{font-size:15px;color:var(--ink3);line-height:1.8;margin-bottom:2rem;font-weight:300;}
@@ -502,14 +534,23 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 <!-- ══════════════════════════════════════════════════ -->
 <!-- SCREEN 0 — CONSULTANT CODE (OPTIONAL)             -->
+<!-- ── FIXED HEADER — MASTER VECTOR LOGO ── -->
+<div class="ls-fixed-header" role="banner">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"
+       role="img" aria-label="VECTOR — A Better College Consultant">
+    <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif"
+      font-weight="300" font-size="120px" letter-spacing="18px"
+      fill="#0A0A0A" x="600" y="257.6" text-anchor="middle">VECTOR</text>
+    <line x1="700.15" y1="231.24" x2="721.49" y2="172.60"
+      stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+    <polygon points="721.49,172.60 717.16,176.39 722.37,178.29"
+      fill="#C8A97A" opacity="1"/>
+  </svg>
+</div>
+
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen active" id="screen-0">
-<div class="container" style="padding-top:4rem">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="180" height="60" role="img" aria-label="VECTOR" style="display:block;margin-bottom:.75rem;">
-  <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="#0A0A0A" x="600" y="257.6" text-anchor="middle">VECTOR</text>
-  <line x1="700.15" y1="231.24" x2="721.49" y2="172.60" stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round"/>
-  <polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="#C8A97A"/>
-</svg>
+<div class="container" style="padding-top:7rem">
   <div class="gold-rule"></div>
   <div class="q">Do you have a consultant code?</div>
   <div class="q-sub">Your college counselor may have given you a 5-character code. Enter it here to connect your Lifescape to their practice. You can also skip this and explore on your own.</div>
@@ -538,12 +579,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- SCREEN 1 — WHO'S HERE                             -->
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-1">
-<div class="container" style="padding-top:4rem">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="180" height="60" role="img" aria-label="VECTOR" style="display:block;margin-bottom:.75rem;">
-  <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="#0A0A0A" x="600" y="257.6" text-anchor="middle">VECTOR</text>
-  <line x1="700.15" y1="231.24" x2="721.49" y2="172.60" stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round"/>
-  <polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="#C8A97A"/>
-</svg>
+<div class="container" style="padding-top:7rem">
   <div class="gold-rule"></div>
   <div class="q">Who's filling this out?</div>
   <div class="q-sub" id="s1-sub">This shapes how we ask questions and how we write your results. Nothing is permanent. Nothing commits you to anything.</div>
@@ -866,80 +902,101 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </div>
 
   <!-- Q2 — Region -->
-  <div class="pref-section">
-    <div class="pref-q-label">Where in the country?</div>
-    <div class="q-sub" style="margin-top:-.5rem;margin-bottom:1rem">Pick all that apply.</div>
-    <div class="pref-options">
-      <button class="pref-btn" data-pref="regions" data-val="southeast" onclick="selectPref(this,'regions',true)">
-        Southeast
-        <span class="pref-sub">Warm weather, SEC country</span>
-      </button>
-      <button class="pref-btn" data-pref="regions" data-val="southwest" onclick="selectPref(this,'regions',true)">
-        Southwest
-        <span class="pref-sub">Texas, Arizona, warm and dry</span>
-      </button>
-      <button class="pref-btn" data-pref="regions" data-val="west_coast" onclick="selectPref(this,'regions',true)">
-        West Coast
-        <span class="pref-sub">California, Oregon, Washington</span>
-      </button>
-      <button class="pref-btn" data-pref="regions" data-val="northeast" onclick="selectPref(this,'regions',true)">
-        Northeast
-        <span class="pref-sub">New England, Mid-Atlantic</span>
-      </button>
-      <button class="pref-btn" data-pref="regions" data-val="midwest" onclick="selectPref(this,'regions',true)">
-        Midwest
-        <span class="pref-sub">Big Ten territory</span>
-      </button>
-      <button class="pref-btn" data-pref="regions" data-val="south_central" onclick="selectPref(this,'regions',true)">
-        South Central
-        <span class="pref-sub">Tennessee, Carolinas, Louisiana</span>
-      </button>
-      <button class="pref-btn" data-pref="regions" data-val="no_preference" onclick="selectPref(this,'regions',false)">
-        Open to anywhere
-      </button>
+  <div class="pref-section" id="region-map-section">
+    <div class="pref-q-label">Where in the country do you want to go?</div>
+    <div class="q-sub" style="margin-top:-.5rem;margin-bottom:1rem">Click the map to select regions. You can choose more than one.</div>
+
+    <!-- Interactive US Region Map -->
+    <div id="us-region-map-wrap" style="width:100%;max-width:600px;margin:0 auto 1rem;">
+      <svg id="us-region-map" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg"
+           style="width:100%;height:auto;cursor:pointer;" aria-label="US Region Map">
+        <style>
+          .region-zone { transition: fill 0.2s ease, opacity 0.2s ease; }
+          .region-zone:hover { opacity: 0.85; }
+          .region-zone.map-sel { stroke: #0A0A0A; stroke-width: 1.5; }
+          .region-label { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 300;
+                          letter-spacing: 0.08em; text-transform: uppercase; pointer-events: none;
+                          fill: rgba(10,10,10,0.55); }
+          .region-label.map-sel { fill: #0A0A0A; font-weight: 400; }
+        </style>
+
+        <!-- ── PACIFIC NORTHWEST: WA, OR, ID ── -->
+        <path id="rz-pacific_nw" class="region-zone" data-region="pacific_nw"
+          d="M 52,42 L 52,170 L 98,170 L 106,158 L 114,146 L 118,130 L 118,110 L 122,98 L 128,86 L 130,70 L 126,56 L 118,48 L 108,44 L 88,42 Z"
+          fill="rgba(200,169,122,0.12)" stroke="rgba(10,10,10,0.15)" stroke-width="0.8"
+          onclick="toggleRegion(this,'pacific_nw')"/>
+        <text class="region-label" id="rl-pacific_nw" x="76" y="108" text-anchor="middle">Pacific<tspan x="76" dy="11">Northwest</tspan></text>
+
+        <!-- ── CALIFORNIA ── -->
+        <path id="rz-california" class="region-zone" data-region="california"
+          d="M 52,170 L 52,270 L 64,278 L 72,272 L 84,268 L 90,256 L 96,242 L 98,228 L 100,210 L 100,190 L 98,170 Z"
+          fill="rgba(200,169,122,0.12)" stroke="rgba(10,10,10,0.15)" stroke-width="0.8"
+          onclick="toggleRegion(this,'california')"/>
+        <text class="region-label" id="rl-california" x="72" y="218" text-anchor="middle">California</text>
+
+        <!-- ── SOUTHWEST: NV, AZ, NM, TX ── -->
+        <path id="rz-southwest" class="region-zone" data-region="southwest"
+          d="M 100,190 L 100,260 L 108,276 L 120,284 L 136,286 L 154,284 L 172,280 L 188,278 L 200,276 L 210,268 L 218,256 L 222,240 L 224,222 L 222,206 L 218,192 L 210,180 L 198,172 L 182,166 L 164,162 L 146,160 L 128,160 L 114,162 L 106,168 L 100,178 Z"
+          fill="rgba(200,169,122,0.12)" stroke="rgba(10,10,10,0.15)" stroke-width="0.8"
+          onclick="toggleRegion(this,'southwest')"/>
+        <text class="region-label" id="rl-southwest" x="162" y="225" text-anchor="middle">Southwest</text>
+
+        <!-- ── ROCKY MOUNTAINS: UT, CO, WY, MT ── -->
+        <path id="rz-rocky_mountains" class="region-zone" data-region="rocky_mountains"
+          d="M 118,110 L 118,160 L 146,160 L 164,162 L 182,166 L 198,172 L 210,180 L 218,168 L 220,152 L 218,134 L 212,118 L 204,106 L 194,96 L 180,88 L 164,84 L 148,82 L 134,84 L 122,90 L 118,100 Z"
+          fill="rgba(200,169,122,0.12)" stroke="rgba(10,10,10,0.15)" stroke-width="0.8"
+          onclick="toggleRegion(this,'rocky_mountains')"/>
+        <text class="region-label" id="rl-rocky_mountains" x="170" y="132" text-anchor="middle">Rocky<tspan x="170" dy="11">Mountains</tspan></text>
+
+        <!-- ── MIDWEST: IL, MN, WI, ND, SD, IA, MO, KS, NE, OH, IN, OK, MI ── -->
+        <path id="rz-midwest" class="region-zone" data-region="midwest"
+          d="M 212,118 L 218,134 L 220,152 L 218,168 L 218,192 L 222,206 L 224,222 L 226,208 L 232,196 L 244,186 L 258,178 L 272,172 L 286,170 L 300,170 L 314,172 L 326,178 L 332,188 L 334,200 L 332,214 L 326,228 L 318,238 L 308,246 L 296,252 L 282,254 L 268,254 L 254,250 L 242,244 L 232,234 L 224,222 L 222,240 L 220,256 L 218,256 L 210,268 L 222,274 L 240,278 L 260,280 L 280,278 L 300,276 L 316,272 L 330,266 L 342,256 L 350,244 L 354,232 L 354,218 L 350,206 L 344,196 L 336,188 L 326,178 L 314,172 L 300,170 L 286,170 L 272,172 L 258,178 L 244,186 L 232,196 L 226,208 L 224,222 L 218,192 L 210,180 L 218,168 L 218,152 L 212,134 L 206,120 L 198,110 L 188,100 L 176,94 L 164,90 L 148,88 L 134,86 L 120,90 L 122,98 L 128,86 L 130,70 L 148,66 L 166,64 L 184,66 L 200,70 L 214,78 L 224,90 L 228,104 L 226,118 L 220,126 L 212,118 Z"
+          fill="rgba(200,169,122,0.12)" stroke="rgba(10,10,10,0.15)" stroke-width="0.8"
+          onclick="toggleRegion(this,'midwest')"/>
+        <text class="region-label" id="rl-midwest" x="282" y="212" text-anchor="middle">Midwest</text>
+
+        <!-- ── SOUTHEAST: NC, SC, FL, GA, AL, MS, LA, AR, TN, KY ── -->
+        <path id="rz-southeast" class="region-zone" data-region="southeast"
+          d="M 308,246 L 318,238 L 326,228 L 332,214 L 334,200 L 332,188 L 326,178 L 336,188 L 344,196 L 350,206 L 354,218 L 354,232 L 350,244 L 342,256 L 330,266 L 316,272 L 300,276 L 316,286 L 330,296 L 338,308 L 338,320 L 330,328 L 316,330 L 302,326 L 290,316 L 284,302 L 280,288 L 280,278 L 260,280 L 240,278 L 222,274 L 210,268 L 218,256 L 220,256 L 222,240 L 232,234 L 242,244 L 254,250 L 268,254 L 282,254 L 296,252 L 308,246 Z"
+          fill="rgba(200,169,122,0.12)" stroke="rgba(10,10,10,0.15)" stroke-width="0.8"
+          onclick="toggleRegion(this,'southeast')"/>
+        <text class="region-label" id="rl-southeast" x="288" y="288" text-anchor="middle">Southeast</text>
+
+        <!-- ── MID-ATLANTIC: DE, DC, VA, MD, WV ── -->
+        <path id="rz-mid_atlantic" class="region-zone" data-region="mid_atlantic"
+          d="M 422,160 L 430,168 L 436,178 L 438,190 L 434,202 L 426,212 L 414,218 L 400,220 L 386,218 L 374,212 L 366,202 L 362,190 L 364,178 L 370,168 L 380,160 L 394,156 L 408,156 Z"
+          fill="rgba(200,169,122,0.12)" stroke="rgba(10,10,10,0.15)" stroke-width="0.8"
+          onclick="toggleRegion(this,'mid_atlantic')"/>
+        <text class="region-label" id="rl-mid_atlantic" x="400" y="191" text-anchor="middle">Mid-Atlantic</text>
+
+        <!-- ── NORTHEAST: NY, NJ, CT, PA ── -->
+        <path id="rz-northeast" class="region-zone" data-region="northeast"
+          d="M 394,100 L 410,96 L 426,98 L 440,106 L 450,118 L 454,132 L 452,146 L 444,158 L 430,166 L 414,170 L 398,168 L 384,160 L 374,150 L 370,136 L 372,122 L 380,110 Z"
+          fill="rgba(200,169,122,0.12)" stroke="rgba(10,10,10,0.15)" stroke-width="0.8"
+          onclick="toggleRegion(this,'northeast')"/>
+        <text class="region-label" id="rl-northeast" x="413" y="134" text-anchor="middle">Northeast</text>
+
+        <!-- ── NEW ENGLAND: VT, MA, ME, NH, RI ── -->
+        <path id="rz-new_england" class="region-zone" data-region="new_england"
+          d="M 394,100 L 398,86 L 406,72 L 418,62 L 432,56 L 448,56 L 460,62 L 468,72 L 468,86 L 462,98 L 452,106 L 440,108 L 426,106 L 412,102 Z"
+          fill="rgba(200,169,122,0.12)" stroke="rgba(10,10,10,0.15)" stroke-width="0.8"
+          onclick="toggleRegion(this,'new_england')"/>
+        <text class="region-label" id="rl-new_england" x="434" y="82" text-anchor="middle">New England</text>
+
+        <!-- Open to anywhere button at bottom -->
+        <rect id="rz-anywhere" class="region-zone" data-region="anywhere"
+          x="180" y="340" width="240" height="28" rx="0"
+          fill="rgba(200,169,122,0.08)" stroke="rgba(10,10,10,0.15)" stroke-width="0.8"
+          onclick="toggleRegion(this,'anywhere')"/>
+        <text class="region-label" id="rl-anywhere" x="300" y="358" text-anchor="middle">Open to anywhere</text>
+      </svg>
     </div>
+
+    <!-- Selected region tags shown below map -->
+    <div id="region-selected-tags" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:.5rem;min-height:28px;"></div>
   </div>
 
-  <!-- Q3 — Conference -->
-  <div class="pref-section">
-    <div class="pref-q-label" id="conf-q-label">Does the college sports scene matter to you?</div>
-    <div class="conf-grid">
-      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="sec" onclick="selectPref(this,'conference',false)">
-        SEC
-        <span class="pref-sub">Alabama, Georgia, LSU, Tennessee, Florida</span>
-      </button>
-      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="big_ten" onclick="selectPref(this,'conference',false)">
-        Big Ten
-        <span class="pref-sub">Michigan, Ohio State, Penn State, Purdue</span>
-      </button>
-      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="acc" onclick="selectPref(this,'conference',false)">
-        ACC
-        <span class="pref-sub">Duke, UNC, Virginia, Clemson, Miami</span>
-      </button>
-      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="big_12" onclick="selectPref(this,'conference',false)">
-        Big 12
-        <span class="pref-sub">Texas, Oklahoma, Kansas, Arizona State</span>
-      </button>
-      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="pac" onclick="selectPref(this,'conference',false)">
-        West Coast
-        <span class="pref-sub">Oregon, Washington, Stanford, Cal schools, Gonzaga</span>
-      </button>
-      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="ivy" onclick="selectPref(this,'conference',false)">
-        Ivy or equivalent
-        <span class="pref-sub">Academic prestige first</span>
-      </button>
-      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="div1" onclick="selectPref(this,'conference',false)">
-        Any Division I
-        <span class="pref-sub">Big sports, any conference</span>
-      </button>
-      <button class="pref-btn pref-btn-wide" data-pref="conference" data-val="no_sports" onclick="selectPref(this,'conference',false)">
-        Not important to me
-        <span class="pref-sub">Show me schools based on fit only</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- Q4 — Social Scene -->
+  <!-- Q3 — Social Scene -->
   <div class="pref-section">
     <div class="pref-q-label" id="social-q-label">What's your social vibe?</div>
     <div class="pref-options">
@@ -966,69 +1023,85 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     </div>
   </div>
 
-  <!-- Q5 — Religious preference -->
-  <div class="pref-section">
-    <div class="pref-q-label" id="s35-religion-q">Does religious affiliation matter?</div>
-    <div class="pref-options">
-      <button class="pref-btn" data-pref="religion" data-val="catholic" onclick="selectPref(this,'religion',false)">
-        Catholic
-        <span class="pref-sub">Notre Dame, Georgetown, Boston College, Gonzaga, Villanova, Loyola, Marquette</span>
+  <!-- Q5 — Religious preference (two-step) -->
+  <div class="pref-section" id="religion-section">
+    <div class="pref-q-label" id="s35-religion-q">Does religious affiliation matter to your college search?</div>
+    <div class="pref-options" id="religion-gate-options">
+      <button class="pref-btn pref-btn-wide" id="religion-yes-btn" onclick="showReligionDetail()">
+        Yes — it matters
+        <span class="pref-sub">Show me schools that match my tradition or community</span>
       </button>
-      <button class="pref-btn" data-pref="religion" data-val="methodist" onclick="selectPref(this,'religion',false)">
-        Methodist
-        <span class="pref-sub">Duke, Emory, Boston University, SMU, Ohio Wesleyan, Elon, High Point</span>
+      <button class="pref-btn pref-btn-wide sel" id="religion-no-btn" data-pref="religion" data-val="no_preference" onclick="selectReligionNo(this)">
+        No — not a factor
+        <span class="pref-sub">Religious affiliation won't affect my college list</span>
       </button>
-      <button class="pref-btn" data-pref="religion" data-val="baptist" onclick="selectPref(this,'religion',false)">
-        Baptist
-        <span class="pref-sub">Baylor, Wake Forest, Belmont, Furman, Wofford, TCU</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="evangelical" onclick="selectPref(this,'religion',false)">
-        Evangelical / Non-Denominational
-        <span class="pref-sub">Wheaton, Biola, Calvin, Gordon, Cedarville</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="lutheran" onclick="selectPref(this,'religion',false)">
-        Lutheran
-        <span class="pref-sub">St. Olaf, Valparaiso, Augustana, Gettysburg, Muhlenberg</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="presbyterian" onclick="selectPref(this,'religion',false)">
-        Presbyterian
-        <span class="pref-sub">Davidson, Macalester, Centre College</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="quaker" onclick="selectPref(this,'religion',false)">
-        Quaker / Friends
-        <span class="pref-sub">Swarthmore, Haverford, Earlham</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="episcopal" onclick="selectPref(this,'religion',false)">
-        Episcopal / Anglican
-        <span class="pref-sub">University of the South (Sewanee)</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="church_of_christ" onclick="selectPref(this,'religion',false)">
-        Church of Christ
-        <span class="pref-sub">Pepperdine, Lipscomb, Abilene Christian</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="lds" onclick="selectPref(this,'religion',false)">
-        LDS / Latter-day Saints
-        <span class="pref-sub">Brigham Young University</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="seventh_day_adventist" onclick="selectPref(this,'religion',false)">
-        Seventh-day Adventist
-        <span class="pref-sub">Andrews University, Walla Walla, Southern Adventist</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="jewish" onclick="selectPref(this,'religion',false)">
-        Jewish
-        <span class="pref-sub">Brandeis, Yeshiva, and universities with strong Hillel communities</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="protestant" onclick="selectPref(this,'religion',false)">
-        General Christian / Any Protestant
-        <span class="pref-sub">Any school with a Christian campus culture — all denominations</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="secular" onclick="selectPref(this,'religion',false)">
-        Secular preferred
-        <span class="pref-sub">Schools without strong religious culture</span>
-      </button>
-      <button class="pref-btn" data-pref="religion" data-val="no_preference" onclick="selectPref(this,'religion',false)">
-        No preference
-      </button>
+    </div>
+
+    <!-- Denomination detail — hidden until Yes is selected -->
+    <div id="religion-detail" style="display:none;margin-top:1.25rem;">
+      <div style="font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;">Select your tradition or community</div>
+      <div class="pref-options">
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="catholic" onclick="selectPref(this,'religion',false)">
+          Catholic
+          <span class="pref-sub">Notre Dame, Georgetown, Boston College, Gonzaga, Villanova, Loyola, Marquette, Fordham, Creighton, Duquesne</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="jewish" onclick="selectPref(this,'religion',false)">
+          Jewish
+          <span class="pref-sub">Brandeis, Yeshiva — or any university with a Very Strong or Strong Hillel community and significant Jewish enrollment</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="jewish_community" onclick="selectPref(this,'religion',false)">
+          Strong Jewish community (secular)
+          <span class="pref-sub">Not seeking a religious institution — but want a campus with active Jewish student life, Hillel, and Jewish peers</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="methodist" onclick="selectPref(this,'religion',false)">
+          Methodist
+          <span class="pref-sub">Duke, Emory, Boston University, SMU, Northwestern, American, Ohio Wesleyan, Elon, High Point, Wesleyan</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="baptist" onclick="selectPref(this,'religion',false)">
+          Baptist
+          <span class="pref-sub">Baylor, Wake Forest, Belmont, Furman, Wofford, Stetson</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="evangelical" onclick="selectPref(this,'religion',false)">
+          Evangelical / Non-Denominational
+          <span class="pref-sub">Wheaton, Biola, Calvin, Gordon, Cedarville, Regent</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="lutheran" onclick="selectPref(this,'religion',false)">
+          Lutheran
+          <span class="pref-sub">St. Olaf, Valparaiso, Augustana, Gettysburg, California Lutheran</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="presbyterian" onclick="selectPref(this,'religion',false)">
+          Presbyterian
+          <span class="pref-sub">Davidson, Macalester, Centre College, College of Wooster</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="lds" onclick="selectPref(this,'religion',false)">
+          LDS / Latter-day Saints
+          <span class="pref-sub">Brigham Young University</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="quaker" onclick="selectPref(this,'religion',false)">
+          Quaker / Friends
+          <span class="pref-sub">Swarthmore, Haverford, Earlham</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="episcopal" onclick="selectPref(this,'religion',false)">
+          Episcopal / Anglican
+          <span class="pref-sub">University of the South (Sewanee), Kenyon</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="church_of_christ" onclick="selectPref(this,'religion',false)">
+          Church of Christ
+          <span class="pref-sub">Pepperdine, Lipscomb, Abilene Christian</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="seventh_day_adventist" onclick="selectPref(this,'religion',false)">
+          Seventh-day Adventist
+          <span class="pref-sub">Andrews University, Walla Walla, Southern Adventist</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="protestant" onclick="selectPref(this,'religion',false)">
+          General Christian / Any Protestant
+          <span class="pref-sub">Any school with a Christian campus culture — all denominations welcome</span>
+        </button>
+        <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="secular" onclick="selectPref(this,'religion',false)">
+          Secular preferred
+          <span class="pref-sub">Schools without a strong religious institutional identity</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -1419,7 +1492,6 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 const COLLEGE_PREFS = {
   campus_scale: 'no_preference',
   regions: [],
-  conference: 'no_sports',
   social_scene: 'no_preference',
   religion: 'no_preference'
 };
@@ -2114,7 +2186,6 @@ function assembleProfile() {
     college_prefs: {
       campus_scale: COLLEGE_PREFS.campus_scale,
       regions: Array.isArray(COLLEGE_PREFS.regions) ? [...COLLEGE_PREFS.regions] : [],
-      conference: COLLEGE_PREFS.conference,
       social_scene: COLLEGE_PREFS.social_scene,
       religion: COLLEGE_PREFS.religion
     },
@@ -2821,7 +2892,6 @@ function captureToSheets(profile, callAData) {
     gpa: LS_STATE.gpa || '',
     gpa_type: LS_STATE.gpa_type,
     gpa_normalized: normalizeGPA(LS_STATE.gpa, LS_STATE.gpa_type) || '',
-    conference_pref: COLLEGE_PREFS.conference,
     campus_scale_pref: COLLEGE_PREFS.campus_scale,
     regions_pref: Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(' | ') : (COLLEGE_PREFS.regions || 'Open'),
     social_scene_pref: COLLEGE_PREFS.social_scene,
@@ -2950,6 +3020,121 @@ function setGenProgress(pct) {
 // ── COLLEGE PREFERENCE STATE ──────────────────────
 // COLLEGE_PREFS moved to top of script
 
+// ── US REGION MAP ────────────────────────────────────────────────────────────
+var REGION_LABELS = {
+  pacific_nw:       'Pacific Northwest',
+  california:       'California',
+  southwest:        'Southwest',
+  rocky_mountains:  'Rocky Mountains',
+  midwest:          'Midwest',
+  southeast:        'Southeast',
+  mid_atlantic:     'Mid-Atlantic',
+  northeast:        'Northeast',
+  new_england:      'New England',
+  anywhere:         'Open to anywhere'
+};
+
+function toggleRegion(el, regionKey) {
+  var isAnywhere = regionKey === 'anywhere';
+  var alreadySel = el.classList.contains('map-sel');
+
+  if (isAnywhere) {
+    // Clear all others, toggle anywhere
+    document.querySelectorAll('.region-zone.map-sel').forEach(function(z){
+      z.classList.remove('map-sel');
+      var lbl = document.getElementById('rl-' + z.dataset.region);
+      if (lbl) lbl.classList.remove('map-sel');
+    });
+    if (!alreadySel) {
+      el.classList.add('map-sel');
+      var lbl = document.getElementById('rl-anywhere');
+      if (lbl) lbl.classList.add('map-sel');
+      COLLEGE_PREFS.regions = ['anywhere'];
+    } else {
+      COLLEGE_PREFS.regions = [];
+    }
+  } else {
+    // Deselect "anywhere" if a specific region is chosen
+    var anywhereEl = document.getElementById('rz-anywhere');
+    if (anywhereEl) { anywhereEl.classList.remove('map-sel'); }
+    var anyLbl = document.getElementById('rl-anywhere');
+    if (anyLbl) anyLbl.classList.remove('map-sel');
+
+    // Toggle this region
+    el.classList.toggle('map-sel');
+    var lbl = document.getElementById('rl-' + regionKey);
+    if (lbl) lbl.classList.toggle('map-sel');
+
+    // Sync COLLEGE_PREFS.regions array
+    if (!Array.isArray(COLLEGE_PREFS.regions)) COLLEGE_PREFS.regions = [];
+    var idx = COLLEGE_PREFS.regions.indexOf(regionKey);
+    if (idx === -1) {
+      COLLEGE_PREFS.regions.push(regionKey);
+    } else {
+      COLLEGE_PREFS.regions.splice(idx, 1);
+    }
+
+    // Remove anywhere from array
+    var ai = COLLEGE_PREFS.regions.indexOf('anywhere');
+    if (ai !== -1) COLLEGE_PREFS.regions.splice(ai, 1);
+  }
+
+  renderRegionTags();
+}
+
+function renderRegionTags() {
+  var container = document.getElementById('region-selected-tags');
+  if (!container) return;
+  container.innerHTML = '';
+  var regions = Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions : [];
+  regions.forEach(function(r) {
+    var tag = document.createElement('span');
+    tag.className = 'region-tag';
+    tag.innerHTML = REGION_LABELS[r] || r;
+    tag.innerHTML += ' <span class="region-tag-x" onclick="removeRegion(\'' + r + '\')">×</span>';
+    container.appendChild(tag);
+  });
+}
+
+function removeRegion(regionKey) {
+  var el = document.getElementById('rz-' + regionKey);
+  if (el) { el.classList.remove('map-sel'); }
+  var lbl = document.getElementById('rl-' + regionKey);
+  if (lbl) lbl.classList.remove('map-sel');
+  if (!Array.isArray(COLLEGE_PREFS.regions)) COLLEGE_PREFS.regions = [];
+  var idx = COLLEGE_PREFS.regions.indexOf(regionKey);
+  if (idx !== -1) COLLEGE_PREFS.regions.splice(idx, 1);
+  renderRegionTags();
+}
+
+// ── RELIGION TWO-STEP GATE ────────────────────────────────────────────────
+function showReligionDetail() {
+  // Mark Yes selected
+  document.getElementById('religion-yes-btn').classList.add('sel');
+  document.getElementById('religion-no-btn').classList.remove('sel');
+  // Clear any no_preference value
+  if (COLLEGE_PREFS.religion === 'no_preference') {
+    COLLEGE_PREFS.religion = '';
+  }
+  // Reveal denomination list
+  var detail = document.getElementById('religion-detail');
+  detail.style.display = 'block';
+  // Smooth scroll to denomination list
+  setTimeout(function(){ detail.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 80);
+}
+
+function selectReligionNo(btn) {
+  // Mark No selected, hide denomination list, clear any denomination selection
+  document.getElementById('religion-yes-btn').classList.remove('sel');
+  btn.classList.add('sel');
+  document.getElementById('religion-detail').style.display = 'none';
+  // Clear denomination buttons
+  var denBtns = document.querySelectorAll('#religion-detail [data-pref="religion"]');
+  denBtns.forEach(function(b){ b.classList.remove('sel'); });
+  // Set no_preference
+  COLLEGE_PREFS.religion = 'no_preference';
+}
+
 function selectPref(btn, pref, isMulti) {
   const container = btn.closest('.pref-section').querySelector('.pref-options, .conf-grid');
 
@@ -2993,11 +3178,10 @@ function updatePrefPreview() {
   const previewEl = document.getElementById('pref-preview');
   const contentEl = document.getElementById('pref-preview-content');
 
-  // Only show preview if at least conference or region is set
-  const hasConf = COLLEGE_PREFS.conference && COLLEGE_PREFS.conference !== 'no_sports';
+  // Only show preview if at least a region is set
   const hasRegion = COLLEGE_PREFS.regions && COLLEGE_PREFS.regions.length > 0;
 
-  if (!hasConf && !hasRegion) {
+  if (!hasRegion) {
     previewEl.style.display = 'none';
     return;
   }
@@ -3113,10 +3297,8 @@ function toggleOrient(btn, question, value, isMulti) {
 }
 
 function resetPrefState() {
-  // Ensure all COLLEGE_PREFS fields are correct types
   if (!Array.isArray(COLLEGE_PREFS.regions)) COLLEGE_PREFS.regions = [];
   if (typeof COLLEGE_PREFS.campus_scale !== 'string') COLLEGE_PREFS.campus_scale = 'no_preference';
-  if (typeof COLLEGE_PREFS.conference !== 'string') COLLEGE_PREFS.conference = 'no_sports';
   if (typeof COLLEGE_PREFS.social_scene !== 'string') COLLEGE_PREFS.social_scene = 'no_preference';
   if (typeof COLLEGE_PREFS.religion !== 'string') COLLEGE_PREFS.religion = 'no_preference';
 }
@@ -3151,12 +3333,6 @@ function updatePrefVoice() {
   if(smallSub) smallSub.textContent = p
     ? "They want to know their professors"
     : "I want to know my professors";
-
-  // Conference question
-  const confQ = document.getElementById('conf-q-label');
-  if(confQ) confQ.textContent = p
-    ? "Does the college sports scene matter to them?"
-    : "Does the college sports scene matter to you?";
 
   // Social vibe question
   const socialQ = document.getElementById('social-q-label');
@@ -3541,16 +3717,9 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     schoolsIntro.textContent = `${callDData.length} schools matched based on what ${profile.voice === 'parent' ? profile.name + ' shared' : 'you shared'}${prefLabel ? ' — filtered for ' + prefLabel : ''}. Update your answers to see a different picture.`;
   }
 
-  // Get conference badge label
-  const confLabels = {
-    sec:'SEC', big_ten:'Big Ten', acc:'ACC', big_12:'Big 12',
-    pac:'West Coast', ivy:'Ivy / Ivy-equivalent', div1:'Division I', no_sports:''
-  };
-
   schoolsList.innerHTML = callDData.map((s, i) => {
     const schoolData = typeof UNIVERSITY_CONTENT !== 'undefined'
       ? UNIVERSITY_CONTENT[s.name] : null;
-    const confLabel = confLabels[profile.college_prefs.conference] || '';
     const scaleLabel = profile.college_prefs.campus_scale !== 'no_preference'
       ? profile.college_prefs.campus_scale.replace(/_/g,' ') : '';
 
@@ -3573,7 +3742,6 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--gl)">${i+1}</div>
       </div>
       <div class="school-badges">
-        ${confLabel ? `<span class="school-badge">${confLabel}</span>` : ''}
         ${scaleLabel ? `<span class="school-badge">${scaleLabel}</span>` : ''}
         ${schoolData ? `<span class="school-badge">${schoolData.region}</span>` : ''}
         ${faithTradition ? `<span class="school-badge-faith">${faithTradition}</span>` : ''}

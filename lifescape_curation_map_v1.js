@@ -29,45 +29,36 @@ const TILE_POOLS = {
     'cooking','baking','drawing','painting','photography','filmmaking',
     'fashion_design','graphic_design','animation','music_production',
     'playing_instrument','singing','writing_stories','nail_art','hair_makeup',
-    'woodworking','three_d_printing'
+    'woodworking','three_d_printing','content_creation','legos_building'
   ],
   move: [
-    // Physical activity & sport
-    'dance','cheerleading','fitness_lifting','fitness_classes','yoga',
-    'martial_arts','horseback_riding','rock_climbing','cycling_ebike',
-    // Team sports
-    'soccer','basketball','football','baseball_softball','volleyball',
-    'lacrosse','ice_hockey','swimming','gymnastics','crew_rowing',
-    // Individual sports
-    'track_field','wrestling','tennis','golf','cross_country',
-    'fencing','water_polo'
+    'dance','cheerleading','fitness_lifting','fitness_classes','yoga','martial_arts',
+    'esports_gaming','horseback_riding','rock_climbing','soccer','basketball',
+    'football','baseball_softball','volleyball','lacrosse','ice_hockey',
+    'track_field','swimming','gymnastics','wrestling','tennis','golf',
+    'crew_rowing','cross_country','cycling_ebike','water_polo'
   ],
   think: [
-    // Strategy & systems
-    'esports_gaming','chess','fantasy_sports_roster','collecting_trading',
-    'logic_number_puzzles','category_pattern_puzzles','word_puzzles',
-    // Science & inquiry
     'science_experiments','psychology','biology','chemistry','coding_programming',
     'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
     'true_crime','puzzles_brain_teasers','understanding_why_people',
-    // Ideas & argument
-    'debate_mock_un','speech_forensics','scifi_worldbuilding','journalism',
-    'law_justice','economics','social_media_analytics'
+    'chess','debate_mock_un','speech_forensics','scifi_worldbuilding',
+    'journalism','law_justice','economics','social_media_analytics',
+    'word_puzzles','logic_number_puzzles','fantasy_sports_roster',
+    'collecting_trading','category_pattern_puzzles'
   ],
   people: [
-    // Giving & care
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
-    'teaching_tutoring','advocacy_activism','caregiving_nurturing',
-    'first_aid_emergencies','community_organizing',
-    // Leading & connecting
-    'entrepreneurship','leading_the_group','networking_meeting_people',
+    'teaching_tutoring','advocacy_activism','entrepreneurship','first_aid_emergencies',
+    'planning_trips_adventures','leading_the_group','networking_meeting_people',
     'personal_brand','conflict_resolution','public_speaking_performing',
-    'planning_trips_adventures'
+    'caregiving_nurturing','community_organizing'
   ],
   systems: [
     'cosmetic_beauty_science','cooking_chemistry','medical_science','how_body_moves',
     'learning_differences','environment_sustainability','engineering_challenges',
-    'robotics_competitions','architecture','nutrition_food_science','business_startups'
+    'architecture','nutrition_food_science','business_startups',
+    'robotics_competitions'
   ]
 };
 
@@ -103,20 +94,12 @@ const FREE_TIME_MAP = {
 
   moving: [
     // Move cluster — full representation
-    'dance','cheerleading','fitness_lifting','fitness_classes','yoga',
-    'martial_arts','horseback_riding','rock_climbing','cycling_ebike',
-    'soccer','basketball','football','baseball_softball','volleyball',
-    'lacrosse','ice_hockey','swimming','gymnastics','crew_rowing',
-    'track_field','wrestling','tennis','golf','cross_country',
-    'fencing','water_polo',
+    'dance','cheerleading','fitness_lifting','yoga','martial_arts',
+    'esports_gaming','horseback_riding','rock_climbing',
     // Systems tiles that connect to movement
     'how_body_moves','medical_science','nutrition_food_science',
-    'robotics_competitions',
     // People tiles that connect to movement
-    'leading_the_group','teaching_tutoring','first_aid_emergencies',
-    'working_with_little_kids','public_speaking_performing',
-    // Think tiles that connect to sport
-    'fantasy_sports_roster','data_statistics','esports_gaming',
+    'working_with_little_kids','teaching_tutoring','first_aid_emergencies',
     // Make tiles that connect to performance
     'playing_instrument','singing','music_production','photography'
   ],
@@ -126,10 +109,6 @@ const FREE_TIME_MAP = {
     'science_experiments','psychology','biology','chemistry','coding_programming',
     'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
     'true_crime','puzzles_brain_teasers','understanding_why_people',
-    'esports_gaming','chess','fantasy_sports_roster','collecting_trading',
-    'logic_number_puzzles','category_pattern_puzzles','word_puzzles',
-    'debate_mock_un','speech_forensics','scifi_worldbuilding','journalism',
-    'law_justice','economics','social_media_analytics',
     // Systems tiles that connect to thinking
     'cosmetic_beauty_science','medical_science','engineering_challenges',
     'environment_sustainability','cooking_chemistry','architecture',
@@ -141,9 +120,6 @@ const FREE_TIME_MAP = {
     // People cluster — full representation
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
     'teaching_tutoring','advocacy_activism','entrepreneurship','first_aid_emergencies',
-    'caregiving_nurturing','community_organizing','leading_the_group',
-    'networking_meeting_people','personal_brand','conflict_resolution',
-    'public_speaking_performing','planning_trips_adventures',
     // Make tiles that connect to people
     'filmmaking','writing_stories','photography','music_production','singing',
     // Think tiles that connect to people
@@ -258,15 +234,15 @@ function curateInitialTiles(answers) {
     });
   }
 
-  // Sort by score descending, take top 32
+  // Sort by score descending, take top 50
   const sorted = Object.entries(scores)
     .sort((a, b) => b[1] - a[1])
     .map(([id]) => id);
 
-  // Ensure cluster balance — at least 2 tiles from each non-dominant cluster
+  // Ensure cluster balance — at least 8 tiles from each non-dominant cluster
   const result = ensureClusterBalance(sorted, free_time);
 
-  return result.slice(0, 32);
+  return result.slice(0, 50);
 }
 
 
@@ -278,28 +254,31 @@ function curateInitialTiles(answers) {
 // ─────────────────────────────────────────────────────────────
 
 function ensureClusterBalance(sortedIds, free_time) {
-  const MIN_PER_CLUSTER = 2;
-  const result = [...sortedIds];
-  const clusterCounts = {};
+  const MIN_PER_CLUSTER = 8;
+  const TOTAL_CAP = 50;
+  const result = [];
+  const used = new Set();
 
-  // Count how many tiles from each cluster are in top 32
-  result.slice(0, 32).forEach(id => {
-    const cluster = getCluster(id);
-    if (cluster) clusterCounts[cluster] = (clusterCounts[cluster] || 0) + 1;
-  });
-
-  // For any cluster with fewer than MIN tiles, inject the top-scored tile from that cluster
+  // Phase 1 — Guarantee MIN tiles per cluster from the top-scored sorted list
+  // This runs first so underrepresented clusters always get their minimum
   Object.keys(TILE_POOLS).forEach(cluster => {
-    if ((clusterCounts[cluster] || 0) < MIN_PER_CLUSTER) {
-      const clusterTiles = TILE_POOLS[cluster];
-      // Find the highest-scored tile from this cluster not already in result
-      const toAdd = clusterTiles.find(id => !result.slice(0, 32).includes(id));
-      if (toAdd) {
-        // Insert at position 30 (before the last two slots)
-        result.splice(30, 0, toAdd);
-      }
-    }
+    const clusterTiles = sortedIds.filter(id =>
+      TILE_POOLS[cluster].includes(id) && !used.has(id)
+    );
+    clusterTiles.slice(0, MIN_PER_CLUSTER).forEach(id => {
+      result.push(id);
+      used.add(id);
+    });
   });
+
+  // Phase 2 — Fill remaining slots up to TOTAL_CAP with top-scored remaining tiles
+  for (const id of sortedIds) {
+    if (result.length >= TOTAL_CAP) break;
+    if (!used.has(id)) {
+      result.push(id);
+      used.add(id);
+    }
+  }
 
   return result;
 }
