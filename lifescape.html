@@ -25,10 +25,20 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --ink:#0a0a0a;--ink2:#2e2e2e;--ink3:#6a6a6a;--ink4:#9a9a9a;
-  --gold:#8B7355;--gl:#C4A882;--gold-pale:#F5EFE6;
+  --gold:#C9A84C;--gl:#C4A882;--gold-pale:#FDF8EE;
   --rule:rgba(0,0,0,0.1);--bg:#F7F4F0;--white:#ffffff;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'DM Sans',system-ui,sans-serif;
+  /* ── v2.0 Design Tokens ── */
+  --type-wordmark:48px;
+  --type-display:36px;
+  --type-headline:28px;
+  --type-body:15px;
+  --type-meta:12px;
+  --color-surface:#FDFAF4;
+  --space-card-pad:24px;
+  --space-card-gap:40px;
+  --space-header-h:72px;
 
   /* ── The Stamp — tile system ───────────────────────────────────────────
      Resting: everything desaturated, warm near-white. No color until selected.
@@ -53,7 +63,7 @@
 
 /* ── BASE ───────────────────────────────────────────── */
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:100vh;}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:100vh;padding-top:var(--space-header-h);box-sizing:border-box;}
 .container{max-width:780px;margin:0 auto;padding:0 1.5rem;}
 
 /* ── SCREENS ─────────────────────────────────────────── */
@@ -78,15 +88,191 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.2rem 2rem 1rem;
-  background: linear-gradient(to bottom, rgba(244,241,236,0.98) 65%, rgba(244,241,236,0));
+  padding: 1rem 2rem;
+  background: rgba(247,244,240,0.97);
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   pointer-events: none;
+  height: var(--space-header-h);
+  box-sizing: border-box;
 }
 .ls-fixed-header svg {
   width: clamp(160px, 22vw, 220px);
   height: auto;
   display: block;
 }
+/* ── v2.0 Compiled School Sheet ── */
+.print-trigger-bar{
+  display:none;
+  text-align:center;
+  padding:2.5rem 2rem;
+  border-top:1px solid var(--rule);
+  margin-top:3rem;
+}
+.print-trigger-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:14px 32px;
+  border:1px solid var(--gold);
+  background:transparent;
+  color:var(--gold);
+  font-family:var(--sans);
+  font-size:var(--type-meta);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .2s, color .2s;
+}
+.print-trigger-btn:hover{
+  background:var(--gold);
+  color:var(--white);
+}
+
+/* Print-only compiled sheet */
+@media print {
+  body * { visibility:hidden !important; }
+  #compiled-sheet, #compiled-sheet * { visibility:visible !important; }
+  #compiled-sheet {
+    position:absolute;
+    left:0; top:0;
+    width:100%;
+    background:#fff;
+    font-family:'Georgia',serif;
+  }
+}
+#compiled-sheet{display:none;}
+#compiled-sheet.print-ready{display:block;}
+
+.cs-header{
+  text-align:center;
+  padding:2rem 2rem 1.5rem;
+  border-bottom:1px solid #C9A84C;
+  margin-bottom:2rem;
+}
+.cs-wordmark{
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:4px;
+  color:#1B2E4B;
+  font-family:sans-serif;
+}
+.cs-student-name{
+  font-size:20px;
+  color:#2C2C2C;
+  margin-top:6px;
+}
+.cs-date{
+  font-size:12px;
+  color:#6B7280;
+  margin-top:4px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.cs-total{
+  font-size:12px;
+  color:#C9A84C;
+  margin-top:8px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+.cs-school-entry{
+  padding:1rem 2rem 1rem;
+  border-bottom:0.5px solid #E5E0D8;
+}
+.cs-school-name{
+  font-size:15px;
+  font-weight:700;
+  color:#C9A84C;
+  margin-bottom:4px;
+}
+.cs-school-bullets{
+  margin:0;
+  padding-left:1.2rem;
+  list-style:disc;
+}
+.cs-school-bullets li{
+  font-size:12px;
+  color:#2C2C2C;
+  line-height:1.6;
+  margin-bottom:2px;
+}
+.cs-section-label{
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#6B7280;
+  padding:1rem 2rem .5rem;
+}
+
+/* ── v2.0 University Name Treatment ── */
+.uni-name{color:var(--gold);font-weight:700;}
+.uni-name--headline{font-size:var(--type-headline);color:var(--gold);font-weight:700;}
+.uni-name--body{font-size:var(--type-body);color:var(--gold);font-weight:700;}
+
+/* ── v2.0 University Card — Full Luxury Treatment ── */
+.uni-card{
+  border:1px solid var(--gold);
+  background:var(--color-surface);
+  padding:var(--space-card-pad);
+  margin-bottom:var(--space-card-gap);
+}
+.uni-card .card-eyebrow{
+  font-size:var(--type-meta);
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--gold);
+  margin-bottom:6px;
+  font-family:var(--sans);
+}
+.uni-card .card-name{
+  font-size:var(--type-headline);
+  font-weight:700;
+  color:var(--gold);
+  font-family:var(--serif);
+  margin-bottom:8px;
+  line-height:1.2;
+}
+.uni-card .card-narrative{
+  font-size:var(--type-body);
+  color:var(--ink2);
+  line-height:1.65;
+  margin-bottom:10px;
+}
+.uni-card .card-traj-note{
+  font-size:var(--type-meta);
+  font-style:italic;
+  color:var(--gold);
+  margin-top:8px;
+}
+.uni-card .card-cc-note{
+  font-size:var(--type-meta);
+  color:var(--ink4);
+  margin-top:10px;
+  padding-top:10px;
+  border-top:0.5px solid rgba(201,168,76,0.3);
+}
+
+/* ── Career/Pathway Single Frame ── */
+.career-frame{
+  border:1px solid var(--gold);
+  background:var(--color-surface);
+  padding:16px 20px;
+  margin-top:12px;
+}
+.career-frame ul{
+  margin:0;
+  padding-left:1.2rem;
+  list-style:disc;
+}
+.career-frame ul li{
+  font-size:var(--type-body);
+  color:var(--ink2);
+  line-height:1.65;
+  margin-bottom:4px;
+}
+
 /* VECTOR wordmark with compass needle */
 .vector-wordmark{
   display:inline-block;
@@ -111,7 +297,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .region-zone.map-sel { fill: rgba(200,169,122,0.45) !important; stroke: #8B7355 !important; stroke-width: 1.2; }
 .region-tag {
   display: inline-flex; align-items: center; gap: 5px;
-  font-family: var(--sans); font-size: 11px; letter-spacing: 1px;
+  font-family: var(--sans); font-size:var(--type-meta); letter-spacing: 1px;
   color: var(--ink); background: rgba(200,169,122,0.12);
   border: 0.5px solid var(--gold); padding: 4px 10px;
   cursor: pointer;
@@ -140,12 +326,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .ls-input:focus{border-bottom-color:var(--gold);}
 .ls-input::placeholder{color:var(--ink4);}
 .ls-select{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;font-size:13px;font-family:var(--sans);color:var(--ink);padding:10px 0;outline:none;margin-bottom:1.5rem;cursor:pointer;-webkit-appearance:none;}
-.input-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;display:block;}
+.input-label{font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;display:block;}
 
 /* ── TILE GRID ─────────────────────────────────────── */
 .tile-count-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding:.75rem 0;border-bottom:0.5px solid var(--rule);}
-.tile-count-label{font-size:10px;color:var(--ink3);}
-.tile-count-num{font-family:var(--serif);font-size:10px;font-weight:400;color:var(--gold);}
+.tile-count-label{font-size:var(--type-meta);color:var(--ink3);}
+.tile-count-num{font-family:var(--serif);font-size:var(--type-meta);font-weight:400;color:var(--gold);}
 .tile-grid{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:2rem;}
 
 /* ── THE STAMP ── base tile resting state — all clusters identical and desaturated */
@@ -249,12 +435,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* Cluster sections */
 .cluster-section{margin-bottom:2rem;}
-.cluster-section-header{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--ink4);margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--rule);}
+.cluster-section-header{font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;color:var(--ink4);margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--rule);}
 .cluster-section .tile-grid{margin-bottom:0;}
 
 /* ── ZIP INPUT ─────────────────────────────────────── */
 .zip-reveal{background:var(--gold-pale);border:0.5px solid var(--gl);padding:1rem 1.25rem;margin-top:1rem;min-height:48px;}
-.zip-reveal-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+.zip-reveal-label{font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
 .zip-reveal-content{font-size:15px;color:var(--ink2);line-height:1.9;font-weight:300;}
 
 /* ── REPORT FORMAT CARDS ──────────────────────────── */
@@ -263,7 +449,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .format-card.sel{border-color:var(--gold);background:var(--gold-pale);}
 .fc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
 .fc-title{font-family:var(--serif);font-size:15px;font-weight:400;color:var(--ink);}
-.fc-badge{font-size:10px;letter-spacing:1px;padding:3px 10px;border:0.5px solid var(--gl);color:var(--gold);}
+.fc-badge{font-size:var(--type-meta);letter-spacing:1px;padding:3px 10px;border:0.5px solid var(--gl);color:var(--gold);}
 .fc-desc{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;}
 
 /* ── CTA BUTTON ─────────────────────────────────────── */
@@ -279,7 +465,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* ── LOADING STATE ──────────────────────────────────── */
 #screen-loading{text-align:center;padding:5rem 0;}
 .loading-wordmark{font-family:var(--serif);font-size:36px;font-weight:300;letter-spacing:6px;color:var(--ink);margin-bottom:1.5rem;}
-.loading-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;}
+.loading-label{font-size:var(--type-meta);letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;}
 .loading-dots{display:flex;justify-content:center;gap:8px;}
 .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 1.4s ease infinite;}
 .dot:nth-child(2){animation-delay:.2s;}
@@ -290,16 +476,16 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* ── REPORT SCREENS ─────────────────────────────────── */
 /* Quick Read */
 .report-header{padding:3rem 0 2rem;border-bottom:0.5px solid var(--rule);margin-bottom:2.5rem;}
-.report-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.report-eyebrow{font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
 .report-name{font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);letter-spacing:2px;}
 .report-opening{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--ink3);line-height:1.9;margin:1.5rem 0 2rem;padding-left:1.5rem;border-left:2px solid var(--gold);}
 .report-section{margin-bottom:3.5rem;padding-bottom:.25rem;}
-.section-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.section-eyebrow{font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
 
 /* Quote block */
 .quote-block{padding:1.5rem;border:0.5px solid var(--gl);background:var(--gold-pale);margin-bottom:2rem;}
 .quote-text{font-family:var(--serif);font-size:15px;font-weight:300;font-style:italic;color:var(--ink);line-height:1.7;margin-bottom:.75rem;}
-.quote-attr{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);}
+.quote-attr{font-size:var(--type-meta);letter-spacing:1px;text-transform:uppercase;color:var(--gold);}
 
 /* Cluster cards */
 .cluster-card{padding:1.25rem 1.5rem;border:0.5px solid var(--rule);margin-bottom:.75rem;}
@@ -325,10 +511,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .industry-block{border:0.5px solid var(--rule);padding:1.25rem 1.5rem;margin-bottom:.75rem;background:var(--white);}
 .industry-name{font-family:var(--serif);font-size:15px;font-weight:400;color:var(--ink);margin-bottom:6px;}
 .industry-why{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;margin-bottom:1rem;}
-.career-pills{display:block;margin-bottom:.75rem;padding:.75rem 1rem;border-left:2px solid var(--gl);background:rgba(245,239,230,0.35);}
+.career-pills{display:block;margin-bottom:.75rem;padding:16px 20px;border:1px solid var(--gold);background:var(--color-surface);}
 .career-pill{font-size:15px;color:var(--ink3);display:inline;}
-.career-pill+.career-pill::before{content:' · ';color:var(--gl);font-size:10px;}
-.unexpected-pill{font-size:10px;padding:4px 10px;border:0.5px solid var(--gl);color:var(--gold);background:var(--gold-pale);}
+.career-pill+.career-pill::before{content:' · ';color:var(--gl);font-size:var(--type-meta);}
+.unexpected-pill{font-size:var(--type-meta);padding:4px 10px;border:0.5px solid var(--gl);color:var(--gold);background:var(--gold-pale);}
 .combo-block{padding:1.25rem 1.5rem;border-left:2px solid var(--gold);margin-bottom:.75rem;background:var(--white);}
 .combo-text{font-size:15px;color:var(--ink2);line-height:1.9;font-weight:300;}
 
@@ -338,14 +524,14 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .counselor-text{font-size:13px;color:var(--ink2);line-height:1.9;font-weight:300;}
 .counselor-section{margin-bottom:1.75rem;}
 .counselor-section:last-child{margin-bottom:0;}
-.counselor-section-head{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;font-family:var(--sans);}
+.counselor-section-head{font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;font-family:var(--sans);}
 .counselor-section-body{font-size:13px;color:var(--ink2);line-height:1.85;font-weight:300;}
 .counselor-prompt{padding:.6rem 0;border-bottom:0.5px solid rgba(196,168,130,0.25);font-size:13px;color:var(--ink2);line-height:1.7;}
 .counselor-prompt:last-child{border-bottom:none;}
 
 /* Report tab toggle */
 .report-tabs{display:flex;gap:0;margin-bottom:2rem;border-bottom:0.5px solid var(--rule);}
-.rtab{flex:1;padding:10px 12px;font-size:10px;letter-spacing:0.8px;text-transform:uppercase;border:none;background:transparent;cursor:pointer;color:var(--ink3);border-bottom:2px solid transparent;transition:all .2s;font-family:var(--sans);text-align:center;line-height:1.4;white-space:normal;}
+.rtab{flex:1;padding:10px 12px;font-size:var(--type-meta);letter-spacing:0.8px;text-transform:uppercase;border:none;background:transparent;cursor:pointer;color:var(--ink3);border-bottom:2px solid transparent;transition:all .2s;font-family:var(--sans);text-align:center;line-height:1.4;white-space:normal;}
 .rtab.active{color:var(--gold);border-bottom-color:var(--gold);}
 
 .rpanel{display:none;}
@@ -395,7 +581,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* ── PROGRESSIVE REVEAL ─────────────────────────────── */
 .reveal-divider{margin:1.5rem 0 1rem;border-top:0.5px solid var(--rule);padding-top:1rem;}
-.reveal-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.reveal-label{font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
 .tile-reveal{animation:tileReveal .3s ease forwards;opacity:0;}
 @keyframes tileReveal{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 .show-all-link{display:block;text-align:center;font-size:13px;color:var(--ink4);cursor:pointer;margin-top:1.5rem;padding:.75rem 0;border-top:0.5px solid var(--rule);transition:color .2s;}
@@ -407,29 +593,68 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* ── SCHOOL CARDS ─────────────────────────────────── */
 .school-card{border:0.5px solid var(--rule);padding:1.5rem;margin-bottom:1rem;background:var(--white);}
+
+/* ── v2.0 Trajectory Scenario Cards ── */
+.traj-scenario-section{margin-top:2rem;}
+.traj-scenario-card{
+  border:1px solid var(--gold);
+  background:var(--color-surface);
+  padding:var(--space-card-pad);
+  margin-bottom:var(--space-card-gap);
+}
+.traj-scenario-label{
+  font-size:var(--type-meta);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--gold);
+  font-family:var(--sans);
+  margin-bottom:6px;
+}
+.traj-scenario-name{
+  font-size:var(--type-headline);
+  font-weight:700;
+  color:var(--gold);
+  font-family:var(--serif);
+  margin-bottom:12px;
+  line-height:1.2;
+}
+.traj-scenario-body{
+  font-size:var(--type-body);
+  color:var(--ink2);
+  line-height:1.65;
+}
+.traj-scenario-body p{margin:0 0 10px 0;}
+.traj-counselor-note{
+  font-size:var(--type-meta);
+  font-style:italic;
+  color:var(--ink4);
+  margin-top:10px;
+  padding-top:10px;
+  border-top:0.5px solid rgba(201,168,76,0.25);
+}
 .school-card-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.5rem;}
 .school-name{font-family:var(--serif);font-size:15px;font-weight:400;color:var(--ink);}
-.school-location{font-size:10px;color:var(--ink4);letter-spacing:.5px;margin-top:2px;}
-.school-archetype{font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-top:5px;font-family:var(--sans);}
+.school-location{font-size:var(--type-meta);color:var(--ink4);letter-spacing:.5px;margin-top:2px;}
+.school-archetype{font-size:var(--type-meta);color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-top:5px;font-family:var(--sans);}
 .school-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.75rem;margin-top:.5rem;}
-.school-badge{font-size:10px;padding:3px 10px;border:0.5px solid var(--gl);color:var(--gold);}
-.school-badge-faith{font-size:10px;padding:3px 10px;border:0.5px solid #a07850;color:#a07850;background:rgba(200,169,122,.07);}
+.school-badge{font-size:var(--type-meta);padding:3px 10px;border:0.5px solid var(--gl);color:var(--gold);}
+.school-badge-faith{font-size:var(--type-meta);padding:3px 10px;border:0.5px solid #a07850;color:#a07850;background:rgba(200,169,122,.07);}
 .school-why{font-size:15px;color:var(--ink2);line-height:1.9;font-weight:300;}
 .school-summary{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;margin-top:.75rem;padding-top:.75rem;font-style:italic;}
 .school-generating{font-size:13px;color:var(--ink4);font-style:italic;text-align:center;padding:2rem 0;}
 
 /* ── UNDER THE RADAR ───────────────────────────────── */
 .radar-section{margin-top:2.5rem;padding-top:2rem;border-top:0.5px solid var(--rule);}
-.radar-eyebrow{font-family:var(--sans);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;}
+.radar-eyebrow{font-family:var(--sans);font-size:var(--type-meta);letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;}
 .radar-intro{font-size:12px;color:var(--ink4);font-weight:300;margin-bottom:1.25rem;line-height:1.6;}
 .radar-card{border:0.5px solid var(--gl);padding:1.25rem 1.5rem;margin-bottom:.85rem;background:rgba(200,169,122,.03);position:relative;}
-.radar-card-archetype{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-family:var(--sans);margin-bottom:.4rem;}
+.radar-card-archetype{font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-family:var(--sans);margin-bottom:.4rem;}
 .radar-card-name{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);margin-bottom:2px;}
-.radar-card-location{font-size:10px;color:var(--ink4);letter-spacing:.5px;margin-bottom:.65rem;}
+.radar-card-location{font-size:var(--type-meta);color:var(--ink4);letter-spacing:.5px;margin-bottom:.65rem;}
 .radar-card-why{font-size:13px;color:var(--ink2);line-height:1.85;font-weight:300;}
 .radar-card-summary{font-size:12px;color:var(--ink3);line-height:1.7;font-weight:300;margin-top:.6rem;font-style:italic;}
-.radar-card-faith{font-size:10px;color:#a07850;margin-top:.4rem;}
-.counselor-school-pill{display:inline-block;font-size:10px;padding:2px 8px;border:0.5px solid var(--rule);color:var(--ink3);margin-right:4px;margin-top:4px;}
+.radar-card-faith{font-size:var(--type-meta);color:#a07850;margin-top:.4rem;}
+.counselor-school-pill{display:inline-block;font-size:var(--type-meta);padding:2px 8px;border:0.5px solid var(--rule);color:var(--ink3);margin-right:4px;margin-top:4px;}
 .counselor-school-pill-gold{border-color:var(--gl);color:var(--gold);}
 
 /* Quick read school previews */
@@ -450,7 +675,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 }
 
 /* BFI-10 */
-.bfi-scale-header{display:flex;justify-content:space-between;font-size:10px;color:#999;margin:24px 0 8px;padding:0 40px;letter-spacing:.02em}
+.bfi-scale-header{display:flex;justify-content:space-between;font-size:var(--type-meta);color:#999;margin:24px 0 8px;padding:0 40px;letter-spacing:.02em}
 .bfi-items{display:flex;flex-direction:column;gap:20px}
 .bfi-item{padding:16px 0;border-bottom:1px solid #e8e4de}
 .bfi-item:last-child{border-bottom:none}
@@ -637,7 +862,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
         <button class="gpa-toggle sel" id="gpa-weighted" onclick="setGPAType('weighted')">Weighted</button>
       </div>
     </div>
-    <div style="font-size:11px;color:var(--ink4)">Unweighted = 4.0 scale · Weighted = 5.0 scale with AP/IB</div>
+    <div style="font-size:var(--type-meta);color:var(--ink4)">Unweighted = 4.0 scale · Weighted = 5.0 scale with AP/IB</div>
   </div>
 
   <!-- Pronoun preference — optional, for report writing only -->
@@ -914,7 +1139,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
           .region-zone { transition: fill 0.2s ease, opacity 0.2s ease; }
           .region-zone:hover { opacity: 0.85; }
           .region-zone.map-sel { stroke: #0A0A0A; stroke-width: 1.5; }
-          .region-label { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 300;
+          .region-label { font-family: 'DM Sans', sans-serif; font-size:var(--type-meta); font-weight: 300;
                           letter-spacing: 0.08em; text-transform: uppercase; pointer-events: none;
                           fill: rgba(10,10,10,0.55); }
           .region-label.map-sel { fill: #0A0A0A; font-weight: 400; }
@@ -1039,7 +1264,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
     <!-- Denomination detail — hidden until Yes is selected -->
     <div id="religion-detail" style="display:none;margin-top:1.25rem;">
-      <div style="font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;">Select your tradition or community</div>
+      <div style="font-family:var(--sans);font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;">Select your tradition or community</div>
       <div class="pref-options">
         <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="catholic" onclick="selectPref(this,'religion',false)">
           Catholic
@@ -1154,7 +1379,50 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </div>
 
   <div class="hint-bar" id="s4-hint"></div>
-  <div style="display:flex;gap:10px;margin-top:1.5rem;"><button class="ls-btn-outline" style="width:auto;padding:12px 24px;margin-top:0" onclick="goTo(3)">Back</button><button class="ls-btn" style="flex:1;margin-top:0" onclick="validateZIPAndGoTo(5)">Continue</button></div>
+  <div style="display:flex;gap:10px;margin-top:1.5rem;"><button class="ls-btn-outline" style="width:auto;padding:12px 24px;margin-top:0" onclick="goTo(3)">Back</button><button class="ls-btn" style="flex:1;margin-top:0" onclick="validateZIPAndGoTo(45)">Continue</button></div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 45 — TRAJECTORY QUESTIONS                  -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-45">
+<div class="container">
+  <div class="ls-eyebrow">One more thing</div>
+
+  <!-- PULL QUESTION -->
+  <div style="margin-bottom:2.5rem;">
+    <div class="q" id="s45-pull-q">When you imagine yourself five years from now, what does the setting feel like?</div>
+    <div class="q-sub" style="margin-bottom:1.25rem;">Pick the one that feels most true — not most impressive.</div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;" id="pull-options">
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryPull('PULL_NEW_PLACE',this)">Somewhere I've never been before, building something completely new</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryPull('PULL_DESTINATION',this)">A city I've always been drawn to, finally living there on my own terms</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryPull('PULL_RETURN',this)">Back somewhere familiar, but I'll have changed enough that it feels different</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryPull('PULL_HOME',this)">Close to home — the people and places I love are part of who I want to become</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryPull('PULL_UNKNOWN',this)">I honestly don't know yet — and that feels right for now</button>
+    </div>
+  </div>
+
+  <!-- ANCHOR QUESTION -->
+  <div style="margin-bottom:2rem;" id="anchor-section" style="display:none;">
+    <div class="q" id="s45-anchor-q">When you think about where you grew up, what's the honest feeling?</div>
+    <div class="q-sub" style="margin-bottom:1.25rem;">Pick the one that feels most true.</div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;" id="anchor-options">
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryAnchor('ANCHOR_LAUNCH',this)">It made me who I am and I want to go further than it can take me</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryAnchor('ANCHOR_HOME',this)">It's home — I'll always come back to it, even if I leave for a while</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryAnchor('ANCHOR_OPPORTUNITY',this)">It's where my best opportunities actually are, and I know it</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryAnchor('ANCHOR_COMPLICATED',this)">It's complicated — there's love there but also reasons to go</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryAnchor('ANCHOR_ESCAPE',this)">I'm ready to be somewhere that doesn't know my history</button>
+    </div>
+  </div>
+
+  <div class="hint-bar" id="s45-hint"></div>
+  <div style="display:flex;gap:10px;margin-top:1.5rem;">
+    <button class="ls-btn-outline" style="width:auto;padding:12px 24px;margin-top:0" onclick="goTo(4)">Back</button>
+    <button class="ls-btn" style="flex:1;margin-top:0" id="traj-continue-btn" onclick="validateTrajectoryAndGoTo(5)" disabled>Continue</button>
+  </div>
 </div>
 </div>
 
@@ -1284,6 +1552,14 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
     <!-- Trajectory -->
     <div class="report-section">
+      <!-- Life Path Declaration — Tab 1 -->
+      <div class="report-section" id="quick-lifepath-section" style="display:none">
+        <div class="section-eyebrow">Your life geography</div>
+        <div class="traj-scenario-card" style="margin-bottom:1.5rem;">
+          <div class="traj-scenario-body" id="quick-lifepath" style="font-size:var(--type-body);line-height:1.65;"></div>
+        </div>
+      </div>
+
       <div class="section-eyebrow" id="eyebrow-traj-quick">Your trajectory</div>
       <div class="trajectory-box" id="quick-trajectory">
         <div class="trajectory-text">Building your trajectory...</div>
@@ -1306,7 +1582,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="report-section" id="quick-schools-section" style="display:none">
       <div class="section-eyebrow" id="eyebrow-schools">Schools that fit your Lifescape</div>
       <div id="quick-schools-list"></div>
-      <div style="font-size:10px;color:var(--ink4);font-style:italic;margin-top:.75rem">Full matches in the "Where you fit" tab.</div>
+      <div style="font-size:var(--type-meta);color:var(--ink4);font-style:italic;margin-top:.75rem">Full matches in the "Where you fit" tab.</div>
     </div>
 
     <!-- Act IX — The Two-Year Move (fires conditionally) -->
@@ -1354,19 +1630,33 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <div class="portrait-text" id="full-geo-local"></div>
     </div>
     <div class="report-section" id="geo-stay-close-section" style="display:none">
-      <div class="section-eyebrow">Stay Close</div>
-      <div class="counselor-path-note" style="font-size:10px;color:var(--ink4);letter-spacing:.5px;margin-bottom:.5rem;font-family:var(--sans);">Path One — Ask the family if this feels true before naming any school.</div>
-      <div class="portrait-text" id="full-geo-stay-close"></div>
+      <div class="traj-scenario-card">
+        <div class="traj-scenario-label">Path One</div>
+        <div class="traj-scenario-name">Stay Close</div>
+        <div class="traj-scenario-body" id="full-geo-stay-close"></div>
+      </div>
     </div>
     <div class="report-section" id="geo-leave-return-section" style="display:none">
-      <div class="section-eyebrow">Leave and Return</div>
-      <div class="counselor-path-note" style="font-size:10px;color:var(--ink4);letter-spacing:.5px;margin-bottom:.5rem;font-family:var(--sans);">Path Two — Ask where &ldquo;return&rdquo; means to them. It may not be the ZIP they came from.</div>
-      <div class="portrait-text" id="full-geo-leave-return"></div>
+      <div class="traj-scenario-card">
+        <div class="traj-scenario-label">Path Two</div>
+        <div class="traj-scenario-name">Leave and Return</div>
+        <div class="traj-scenario-body" id="full-geo-leave-return"></div>
+      </div>
     </div>
     <div class="report-section" id="geo-leave-gone-section" style="display:none">
-      <div class="section-eyebrow">Leave and Stay Gone</div>
-      <div class="counselor-path-note" style="font-size:10px;color:var(--ink4);letter-spacing:.5px;margin-bottom:.5rem;font-family:var(--sans);">Path Three — Name this without apology. For some students it is the highest expression of ambition.</div>
-      <div class="portrait-text" id="full-geo-leave-gone"></div>
+      <div class="traj-scenario-card">
+        <div class="traj-scenario-label">Path Three</div>
+        <div class="traj-scenario-name">Leave and Stay Gone</div>
+        <div class="traj-scenario-body" id="full-geo-leave-gone"></div>
+      </div>
+    </div>
+
+    <!-- Life Path Declaration — Tab 2 -->
+    <div class="report-section" id="full-lifepath-section" style="display:none">
+      <div class="section-eyebrow">Your life geography</div>
+      <div class="traj-scenario-card" style="margin-bottom:1.5rem;">
+        <div class="traj-scenario-body" id="full-lifepath" style="font-size:var(--type-body);line-height:1.65;"></div>
+      </div>
     </div>
 
     <div class="report-section">
@@ -1415,6 +1705,29 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       </div>
     </div>
 
+    <!-- ── TRAJECTORY SCENARIO CARDS — Tab 3 ── -->
+    <div id="traj-scenarios-tab3" class="traj-scenario-section" style="display:none">
+      <div class="section-eyebrow" style="margin-bottom:1.5rem">Three paths. One decision.</div>
+
+      <div class="traj-scenario-card" id="traj-card-stay-close-tab3">
+        <div class="traj-scenario-label">Path One</div>
+        <div class="traj-scenario-name">Stay Close</div>
+        <div class="traj-scenario-body" id="traj-body-stay-close-tab3"></div>
+      </div>
+
+      <div class="traj-scenario-card" id="traj-card-leave-return-tab3">
+        <div class="traj-scenario-label">Path Two</div>
+        <div class="traj-scenario-name">Leave and Return</div>
+        <div class="traj-scenario-body" id="traj-body-leave-return-tab3"></div>
+      </div>
+
+      <div class="traj-scenario-card" id="traj-card-leave-gone-tab3">
+        <div class="traj-scenario-label">Path Three</div>
+        <div class="traj-scenario-name">Leave and Stay Gone</div>
+        <div class="traj-scenario-body" id="traj-body-leave-gone-tab3"></div>
+      </div>
+    </div>
+
   </div>
 
   <!-- ── COUNSELOR VIEW ─────────────────────────────── -->
@@ -1428,7 +1741,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div style="margin-bottom:2rem">
       <div class="section-eyebrow">RIASEC profile</div>
       <div class="riasec-row" id="counselor-riasec"></div>
-      <div style="font-size:10px;color:var(--ink3);font-weight:300;margin-top:.75rem" id="riasec-interp"></div>
+      <div style="font-size:var(--type-meta);color:var(--ink3);font-weight:300;margin-top:.75rem" id="riasec-interp"></div>
     </div>
 
     <div style="margin-bottom:2rem">
@@ -1468,8 +1781,34 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
     <div style="margin-bottom:2rem" id="radar-section-counselor" style="display:none">
       <div class="section-eyebrow">Under the radar — 5 specialist picks</div>
-      <div style="font-size:10px;color:var(--ink4);font-weight:300;margin-bottom:.75rem">Schools with precise specialty alignment. Family sees the top 2 — all 5 are here for your use.</div>
+      <div style="font-size:var(--type-meta);color:var(--ink4);font-weight:300;margin-bottom:.75rem">Schools with precise specialty alignment. Family sees the top 2 — all 5 are here for your use.</div>
       <div id="radar-list-counselor"></div>
+    </div>
+
+    <!-- ── TRAJECTORY SCENARIO CARDS — Counselor View ── -->
+    <div id="traj-scenarios-counselor" class="traj-scenario-section" style="display:none;margin-bottom:2rem;">
+      <div class="section-eyebrow" style="margin-bottom:1.5rem">Three trajectory paths — for the family conversation</div>
+
+      <div class="traj-scenario-card">
+        <div class="traj-scenario-label">Path One</div>
+        <div class="traj-scenario-name">Stay Close</div>
+        <div class="traj-scenario-body" id="traj-body-stay-close-counselor"></div>
+        <div class="traj-counselor-note">Ask the family: does this feel true before naming any school?</div>
+      </div>
+
+      <div class="traj-scenario-card">
+        <div class="traj-scenario-label">Path Two</div>
+        <div class="traj-scenario-name">Leave and Return</div>
+        <div class="traj-scenario-body" id="traj-body-leave-return-counselor"></div>
+        <div class="traj-counselor-note">Ask where &ldquo;return&rdquo; means to them — it may not be the ZIP they came from.</div>
+      </div>
+
+      <div class="traj-scenario-card">
+        <div class="traj-scenario-label">Path Three</div>
+        <div class="traj-scenario-name">Leave and Stay Gone</div>
+        <div class="traj-scenario-body" id="traj-body-leave-gone-counselor"></div>
+        <div class="traj-counselor-note">Name this without apology. For some students it is the highest expression of ambition.</div>
+      </div>
     </div>
 
     <div>
@@ -1480,7 +1819,26 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
   </div>
 
+  <!-- ── PRINT TRIGGER BAR ── -->
+  <div class="print-trigger-bar" id="print-trigger-bar">
+    <button class="print-trigger-btn" onclick="openCompiledSheet()">
+      &#8599; Print School List
+    </button>
+  </div>
+
 </div><!-- /container -->
+
+<!-- ── COMPILED SCHOOL SHEET (print-only overlay) ── -->
+<div id="compiled-sheet">
+  <div class="cs-header">
+    <div class="cs-wordmark">VECTOR</div>
+    <div class="cs-student-name" id="cs-student-name"></div>
+    <div class="cs-date" id="cs-date"></div>
+    <div class="cs-total" id="cs-total"></div>
+  </div>
+  <div id="cs-school-list"></div>
+</div>
+
 </div><!-- /screen-report -->
 
 <!-- ══════════════════════════════════════════════════ -->
@@ -1513,11 +1871,16 @@ const LS_STATE = {
   academic_affinity:{subjects:[], strength:'', daypart:'', daypart_other:''},
   callAResult:null, callBResult:null, callCResult:null,
   consultant_code: null,
-  topUniversity: null
+  topUniversity: null,
+  // ── Trajectory (Step 13 — Life Geography Engine) ──
+  trajectoryPull: null,
+  trajectoryAnchor: null,
+  trajectoryResolved: null,
+  familiarityRegions: []
 };
 
 // ── SCREEN NAV ─────────────────────────────────────
-const SCREEN_PROGRESS = {0:0,1:5,2:15,25:28,3:40,36:52,37:64,35:74,4:84,5:94};
+const SCREEN_PROGRESS = {0:0,1:5,2:15,25:28,3:40,36:52,37:64,35:74,4:84,45:90,5:94};
 
 function goTo(n) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -1737,6 +2100,104 @@ function validateZIPAndGoTo(n) {
   clearHint('s4-hint');
   goTo(n);
 }
+
+
+// ── TRAJECTORY — Life Geography Engine (Step 13) ─────────────────────────────
+
+// Resolution matrix: Pull × Anchor → resolved trajectory
+function resolveTrajectory(pull, anchor) {
+  var matrix = {
+    'PULL_NEW_PLACE': {
+      'ANCHOR_LAUNCH': 'LEAVE_STAY_GONE',
+      'ANCHOR_HOME': 'AMBIGUOUS',
+      'ANCHOR_OPPORTUNITY': 'AMBIGUOUS',
+      'ANCHOR_COMPLICATED': 'LEAVE_STAY_GONE',
+      'ANCHOR_ESCAPE': 'LEAVE_STAY_GONE'
+    },
+    'PULL_DESTINATION': {
+      'ANCHOR_LAUNCH': 'NAVIGATOR',
+      'ANCHOR_HOME': 'AMBIGUOUS',
+      'ANCHOR_OPPORTUNITY': 'AMBIGUOUS',
+      'ANCHOR_COMPLICATED': 'NAVIGATOR',
+      'ANCHOR_ESCAPE': 'LEAVE_STAY_GONE'
+    },
+    'PULL_RETURN': {
+      'ANCHOR_LAUNCH': 'LEAVE_COME_BACK',
+      'ANCHOR_HOME': 'LEAVE_COME_BACK',
+      'ANCHOR_OPPORTUNITY': 'STEWARD',
+      'ANCHOR_COMPLICATED': 'LEAVE_COME_BACK',
+      'ANCHOR_ESCAPE': 'AMBIGUOUS'
+    },
+    'PULL_HOME': {
+      'ANCHOR_LAUNCH': 'AMBIGUOUS',
+      'ANCHOR_HOME': 'STEWARD',
+      'ANCHOR_OPPORTUNITY': 'STEWARD',
+      'ANCHOR_COMPLICATED': 'LEAVE_COME_BACK',
+      'ANCHOR_ESCAPE': 'AMBIGUOUS'
+    },
+    'PULL_UNKNOWN': {
+      'ANCHOR_LAUNCH': 'AMBIGUOUS',
+      'ANCHOR_HOME': 'AMBIGUOUS',
+      'ANCHOR_OPPORTUNITY': 'AMBIGUOUS',
+      'ANCHOR_COMPLICATED': 'AMBIGUOUS',
+      'ANCHOR_ESCAPE': 'AMBIGUOUS'
+    }
+  };
+  if (!pull || !anchor) return 'AMBIGUOUS';
+  return (matrix[pull] && matrix[pull][anchor]) ? matrix[pull][anchor] : 'AMBIGUOUS';
+}
+
+function selectTrajectoryPull(val, btn) {
+  // Deselect all pull options
+  document.querySelectorAll('#pull-options .tile').forEach(function(b) {
+    b.classList.remove('sel');
+  });
+  btn.classList.add('sel');
+  LS_STATE.trajectoryPull = val;
+
+  // Reveal anchor question
+  var anchorSection = document.getElementById('anchor-section');
+  if (anchorSection) {
+    anchorSection.style.display = 'block';
+    anchorSection.style.opacity = '0';
+    anchorSection.style.transition = 'opacity 0.3s ease';
+    setTimeout(function() { anchorSection.style.opacity = '1'; }, 20);
+  }
+
+  // Disable continue until anchor is also selected
+  var btn = document.getElementById('traj-continue-btn');
+  if (btn && !LS_STATE.trajectoryAnchor) btn.disabled = true;
+}
+
+function selectTrajectoryAnchor(val, btn) {
+  // Deselect all anchor options
+  document.querySelectorAll('#anchor-options .tile').forEach(function(b) {
+    b.classList.remove('sel');
+  });
+  btn.classList.add('sel');
+  LS_STATE.trajectoryAnchor = val;
+
+  // Enable continue button
+  var contBtn = document.getElementById('traj-continue-btn');
+  if (contBtn) contBtn.disabled = false;
+}
+
+function validateTrajectoryAndGoTo(n) {
+  if (!LS_STATE.trajectoryPull) {
+    document.getElementById('s45-hint').textContent = 'Pick the setting that feels most true before continuing.';
+    return;
+  }
+  if (!LS_STATE.trajectoryAnchor) {
+    document.getElementById('s45-hint').textContent = 'Pick your honest feeling about home before continuing.';
+    return;
+  }
+  // Resolve trajectory
+  LS_STATE.trajectoryResolved = resolveTrajectory(LS_STATE.trajectoryPull, LS_STATE.trajectoryAnchor);
+  document.getElementById('s45-hint').textContent = '';
+  goTo(n);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 function showHint(id, msg) { document.getElementById(id).textContent = msg; }
 function clearHint(id) { document.getElementById(id).textContent = ''; }
@@ -2065,7 +2526,8 @@ function _defaultGeo(zip) {
 }
 
 function handleZIPInput(val) {
-  LS_STATE.zip = val;
+  // BUG-002 FIX: Do NOT capture to LS_STATE.zip here — only set state on validated submit
+  // LS_STATE.zip is set in validateZIPAndGoTo() which captures the FINAL entered value
   const revealEl = document.getElementById('zip-reveal');
   const familySection = document.getElementById('family-location-section');
   if(val.length === 5) {
@@ -2075,12 +2537,12 @@ function handleZIPInput(val) {
     let contentHTML = '';
     if(hasRichData) {
       contentHTML = geo.clusters.slice(0, 5).map(c =>
-        `<span style="display:block;margin-bottom:3px"><strong style="color:var(--ink)">${c.name}</strong> <span style="color:var(--ink4);font-size:10px">— ${c.distance}</span></span>`
+        `<span style="display:block;margin-bottom:3px"><strong style="color:var(--ink)">${c.name}</strong> <span style="color:var(--ink4);font-size:var(--type-meta)">— ${c.distance}</span></span>`
       ).join('');
     } else {
       contentHTML = geo.industries.map(i => `<span style="display:block;margin-bottom:2px">${i}</span>`).join('');
     }
-    contentHTML += `<span style="display:block;font-size:11px;color:var(--gold);margin-top:8px;letter-spacing:1px">${geo.neighborhood}${geo.county ? ' · ' + geo.county + ' County' : ''}</span>`;
+    contentHTML += `<span style="display:block;font-size:var(--type-meta);color:var(--gold);margin-top:8px;letter-spacing:1px">${geo.neighborhood}${geo.county ? ' · ' + geo.county + ' County' : ''}</span>`;
 
     document.getElementById('zip-reveal-content').innerHTML = contentHTML;
     revealEl.style.display = 'block';
@@ -2196,6 +2658,10 @@ function assembleProfile() {
     riasec,
     naicsSectors,
     zip: LS_STATE.zip,
+    trajectoryPull: LS_STATE.trajectoryPull,
+    trajectoryAnchor: LS_STATE.trajectoryAnchor,
+    trajectoryResolved: LS_STATE.trajectoryResolved,
+    familiarityRegions: LS_STATE.familiarityRegions || [],
     pronouns: LS_STATE.pronouns,
     family_locations: LS_STATE.family_locations || [],
     geoIndustries: geo.industries,
@@ -2575,7 +3041,18 @@ ${(()=>{
 })()}
 ${ctx.worlds_chosen&&ctx.worlds_chosen.length>0?'Worlds chosen: '+ctx.worlds_chosen.join(', '):''}
 
-YOUR JOB — produce exactly three outputs separated by these exact dividers:
+${ctx.trajectoryResolved ? `LIFE GEOGRAPHY SIGNAL:
+Trajectory Pull: ${ctx.trajectoryPull || 'not provided'}
+Trajectory Anchor: ${ctx.trajectoryAnchor || 'not provided'}
+Resolved Trajectory: ${ctx.trajectoryResolved}
+${ctx.familiarityRegions && ctx.familiarityRegions.length ? 'Familiarity regions: ' + ctx.familiarityRegions.join(', ') : ''}
+
+Use this signal to inform the PORTRAIT and TRAJECTORY sections. The LIFEPATH section below names it explicitly.` : ''}
+
+YOUR JOB — produce exactly four outputs separated by these exact dividers:
+
+---LIFEPATH---
+${ctx.trajectoryResolved && ctx.trajectoryResolved !== 'AMBIGUOUS' ? `Write exactly 2-3 sentences naming this student's geographic orientation type and what it means for their life. The orientation type is "${ctx.trajectoryResolved}". Translate the enum into human language — never use the enum key directly. LEAVE_STAY_GONE = building a life somewhere new, permanently. LEAVE_COME_BACK = leaving but returning — home is the destination, not the starting point. STEWARD = staying close to what made them who they are — not a lesser path, a deliberate one. NAVIGATOR = already knows where they are going geographically — the city is forming before the career is. Follow the pronoun instruction. Brunello register: specific, warm, earned. End with one line that names the geographic connection if familiarityRegions is non-empty: "${ctx.familiarityRegions && ctx.familiarityRegions.length ? `You already have roots in ${ctx.familiarityRegions.join(' and ')}. That matters in how we found your schools.` : ''}"` : `Write one sentence: "You are still deciding where to place yourself. That is not a gap — it is information." Nothing more.`}
 
 ---QUOTE---
 Find ONE short quote — 1 or 2 sentences maximum — from a historical figure, scientist, artist, athlete, musician, or cultural icon that genuinely connects to what this student's profile reveals. The quote should feel written for this specific person. Surprising — not the obvious famous quote everyone has seen. Should make a teenager want to screenshot it and send it to a friend. Include the person's name and a 3-5 word description in parentheses. Real people only. Verified real quotes only.
@@ -2598,8 +3075,9 @@ PORTRAIT: If relational EQ tiles are present (care-oriented, people-first, commu
 TRAJECTORY: Hold space for nonlinear paths without implying they are lesser. The student who finds their way slowly, who changes direction, who builds something outside conventional structures is not behind — they are moving at the speed of their own clarity.
 QUOTE: Choose a quote that honors who this student already is — not who the system expects them to become. A quote that makes a teenager want to screenshot it and send it to a friend because it sees them.
 FORBIDDEN: assessment, results, data, score, ranked, you should become, most students like you, based on your answers, personality type
+MINIMUM LISTS: Any bulleted or numbered list must contain a minimum of 3 items. Never output a list with fewer than 3 entries.
 
-Write only the three sections with their exact dividers. Nothing else.`;
+Write only the four sections with their exact dividers. Nothing else.`;
 }
 
 function buildCallBPrompt(ctx) {
@@ -2700,7 +3178,8 @@ CAREER VS LIFE: Never imply that a student who is oriented toward family, commun
 COMMUNITY COLLEGE PATHWAY HACK INSTRUCTION: For EVERY Primary and Adjacent school match where cc_pathway_data is present in the context: add one line beneath that school formatted exactly as:
 Pathway Hack: [CC Name] → [University Name]: [transfer rate vs freshman rate if known]. Estimated savings $[X]–$[Y]. One sentence on why this matters for ${ctx.name || 'this student'}.
 Frame as strategic intelligence — never as a financial limitation or fallback.
-FORBIDDEN: assessment, results, data, score, ranked, you should become, most students like you, personality type`;
+FORBIDDEN: assessment, results, data, score, ranked, you should become, most students like you, personality type
+MINIMUM LISTS: Any list of careers, roles, or pathways must contain a minimum of 3 items. Never output fewer than 3 career examples.`;
 }
 
 function buildCallCPrompt(ctx) {
@@ -2735,6 +3214,8 @@ This student has people in other places. These locations represent real options 
 
   return `You are the intelligence behind Lifescape, writing geo and counselor sections.
 
+${ctx.voiceInstruction}
+
 STUDENT PROFILE:
 Name: ${ctx.name} | Grade: ${ctx.grade}
 Activity interests: ${ctx.activityTiles.join(', ')}
@@ -2766,11 +3247,13 @@ ${(()=>{
   } catch(e) {}
   return '';
 })()}---COUNSELOR---
-Three items, one expert to another:
+Four items, one expert to another:
 
 NOTE: 2-3 sentences. The single most important insight from this profile. What the counselor must know before their next session.
 
 STRONGEST UNLOCK: The single most valuable combination or tile signal. One sentence on why it matters for college planning.
+
+CC STRATEGY: One sentence on whether a community college pathway is worth raising with this family — and why or why not. Be direct. Name the specific CC option if relevant. If CC is not the right conversation for this student, say so plainly.
 
 THREE PROMPTS: Three conversation-starter questions specific to this student's actual profile — not generic. Things that make the student think. Number them 1, 2, 3.
 
@@ -2816,11 +3299,12 @@ function toSentenceCase(s) {
 function parseCallA(text) {
   try {
     return {
+      lifePathDeclaration: stripMD((text.match(/---LIFEPATH---([\s\S]*?)---QUOTE---/)||[])[1]?.trim()||null),
       quote:      stripMD((text.match(/---QUOTE---([\s\S]*?)---PORTRAIT---/)||[])[1]?.trim()||null),
       portrait:   stripMD((text.match(/---PORTRAIT---([\s\S]*?)---TRAJECTORY---/)||[])[1]?.trim()||null),
       trajectory: stripMD((text.match(/---TRAJECTORY---([\s\S]*?)$/)||[])[1]?.trim()||null)
     };
-  } catch(e) { return {quote:null,portrait:null,trajectory:null}; }
+  } catch(e) { return {lifePathDeclaration:null,quote:null,portrait:null,trajectory:null}; }
 }
 function parseCallB(text) {
   try {
@@ -3392,6 +3876,8 @@ EQ identity: ${ctx.eqTiles.join(', ')}
 RIASEC: ${ctx.topRIASEC}
 College preferences: ${prefSummary || 'Open'}
 Combination unlocks fired: ${ctx.comboSummary || 'none'}
+${ctx.trajectoryResolved ? `LIFE GEOGRAPHY: ${ctx.trajectoryResolved} | Pull: ${ctx.trajectoryPull||'—'} | Anchor: ${ctx.trajectoryAnchor||'—'}${ctx.familiarityRegions&&ctx.familiarityRegions.length?' | Familiarity: '+ctx.familiarityRegions.join(', '):''}
+SCHOOL WEIGHTING: Prefer schools whose alumni dispersal pattern matches the resolved trajectory. LEAVE_STAY_GONE→national/global dispersal. STEWARD→high geographicLockIn near student ZIP. LEAVE_COME_BACK→high returnerScore. NAVIGATOR→strong pipeline to target region. Apply 1.4x weight to schools in familiarityRegions.` : ''}
 
 MATCHED SCHOOLS (ranked by fit):
 ${matchedSchools.join(', ')}
@@ -3415,6 +3901,8 @@ Write all ${Math.min(matchedSchools.length, 5)} schools in this format.
 ${_longevityD}${_competeD}\n\n── PHILOSOPHY LAYER (always active) ──
 NO HIERARCHY: School recommendations must NEVER imply that the schools not recommended are failures. Every school on the list is there because it fits this student — not because it ranks above some threshold.
 COMMUNITY COLLEGE: If the CC pathway has been surfaced, name it with the same specificity and care as four-year recommendations — with real program names, real transfer pathways, and real career outcomes. It is not a fallback. Name it that way.
+CC PATHWAY IN SCHOOL BLOCKS: If any matched school has a CC transfer pathway available, add a CC_PATH line to that school block:
+CC_PATH: [Local CC Name] → [University Name] — [transfer rate vs freshman rate]. Estimated savings [range]. [One sentence why this matters for this student.]
 FLEXIBLE PATHS: When relevant, note programs that support flexible life paths — strong part-time options, online programs that serve working students, institutions known for supporting students with family obligations. These are not lesser options.
 COUNSELOR NOTE: Name explicitly when a student's profile suggests they may thrive in environments the traditional ranking system does not surface — trade programs, maritime academies, military academies, specialized institutions, strong regional schools. The counselor's job is to see what the rankings miss.
 RULES:
@@ -3665,12 +4153,12 @@ function renderUnderTheRadar(picks) {
       var school = pick.school;
       return `<div class="action-prompt" style="border-left:2px solid var(--gl)">
         <div class="action-text">
-          <div style="font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px">${school.archetype || ''}</div>
+          <div style="font-size:var(--type-meta);color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px">${school.archetype || ''}</div>
           <div class="school-name" style="display:inline;font-size:15px">${i+1}. ${pick.name}</div>
-          ${school.location ? `<span style="font-size:10px;color:var(--ink4);font-weight:300"> — ${school.location}</span>` : ''}
-          ${school.faith_tradition ? `<div style="font-size:10px;color:#a07850;margin-top:2px">${school.faith_tradition}</div>` : ''}
-          ${school.best_fit_personality ? `<div style="font-size:10px;color:var(--ink3);margin-top:3px;font-weight:300">Best fit: ${school.best_fit_personality}</div>` : ''}
-          ${school.comparable_institutions ? `<div style="font-size:10px;color:var(--ink4);margin-top:2px;font-style:italic;font-weight:300">Compare to: ${school.comparable_institutions}</div>` : ''}
+          ${school.location ? `<span style="font-size:var(--type-meta);color:var(--ink4);font-weight:300"> — ${school.location}</span>` : ''}
+          ${school.faith_tradition ? `<div style="font-size:var(--type-meta);color:#a07850;margin-top:2px">${school.faith_tradition}</div>` : ''}
+          ${school.best_fit_personality ? `<div style="font-size:var(--type-meta);color:var(--ink3);margin-top:3px;font-weight:300">Best fit: ${school.best_fit_personality}</div>` : ''}
+          ${school.comparable_institutions ? `<div style="font-size:var(--type-meta);color:var(--ink4);margin-top:2px;font-style:italic;font-weight:300">Compare to: ${school.comparable_institutions}</div>` : ''}
           <div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5">${pick.reason.slice(0, 500)}${pick.reason.length > 500 ? '…' : ''}</div>
         </div>
       </div>`;
@@ -3694,9 +4182,9 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         <div class="school-preview-num">${i+1}</div>
         <div class="school-preview-content">
           <div class="school-preview-name">${s.name}</div>
-          ${qArchetype ? `<div style="font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px;font-family:var(--sans)">${qArchetype}</div>` : ''}
+          ${qArchetype ? `<div style="font-size:var(--type-meta);color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px;font-family:var(--sans)">${qArchetype}</div>` : ''}
           <div class="school-preview-why">${s.match}</div>
-          ${qFaith ? `<div style="font-size:10px;color:#a07850;margin-top:3px">${qFaith}</div>` : ''}
+          ${qFaith ? `<div style="font-size:var(--type-meta);color:#a07850;margin-top:3px">${qFaith}</div>` : ''}
         </div>
       </div>`;
     }).join('');
@@ -3732,22 +4220,22 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     // Use one_sentence_summary if populated, otherwise fall back to hidden_pathway
     const footerContent  = summary || hiddenPath;
 
-    return `<div class="school-card">
-      <div class="school-card-head">
+    return `<div class="uni-card">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
         <div>
-          <div class="school-name">${s.name}</div>
-          <div class="school-location">${schoolData ? schoolData.location : ''}</div>
-          ${archetype ? `<div class="school-archetype">${archetype}</div>` : ''}
+          ${archetype ? `<div class="card-eyebrow">${archetype}</div>` : ''}
+          <div class="card-name uni-name uni-name--headline">${s.name}</div>
+          <div style="font-size:var(--type-meta);color:var(--ink4);letter-spacing:.5px;margin-top:2px;">${schoolData ? schoolData.location : ''}</div>
         </div>
-        <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--gl)">${i+1}</div>
+        <div style="font-family:var(--serif);font-size:var(--type-headline);font-weight:300;color:rgba(201,168,76,0.4);margin-left:12px;flex-shrink:0;">${i+1}</div>
       </div>
-      <div class="school-badges">
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin:8px 0 10px;">
         ${scaleLabel ? `<span class="school-badge">${scaleLabel}</span>` : ''}
         ${schoolData ? `<span class="school-badge">${schoolData.region}</span>` : ''}
         ${faithTradition ? `<span class="school-badge-faith">${faithTradition}</span>` : ''}
       </div>
-      <div class="school-why"><strong style="font-weight:500;color:var(--ink);display:block;margin-bottom:6px">${s.match.replace(/\s*-{2,}\s*$/g,"").trim()}</strong>${s.why.replace(/\s*-{2,}\s*$/g,"").trim()}</div>
-      ${footerContent ? `<div class="school-summary">${footerContent}</div>` : ''}
+      <div class="card-narrative"><strong style="font-weight:600;color:var(--ink);display:block;margin-bottom:6px;">${s.match.replace(/\s*-{2,}\s*$/g,"").trim()}</strong>${s.why.replace(/\s*-{2,}\s*$/g,"").trim()}</div>
+      ${footerContent ? `<div class="card-traj-note">${footerContent}</div>` : ''}
     </div>`;
   }).join('');
 
@@ -3756,22 +4244,31 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     const adjHtml = adjacentPicks.map(adj => {
       const adjData = typeof UNIVERSITY_CONTENT !== 'undefined'
         ? UNIVERSITY_CONTENT[adj.name] : null;
+      const adjDbV5 = (typeof UNIVERSITY_DB_V5 !== 'undefined') ? UNIVERSITY_DB_V5 : null;
+      const adjDb = adjDbV5 ? (adjDbV5[adj.name] || null) : null;
+      const adjCC = adjDb && adjDb.institutionNarrative && adjDb.institutionNarrative.ccTransferPathway
+        ? adjDb.institutionNarrative.ccTransferPathway : null;
+      const adjHasCC = adjCC && adjCC.hasCCPathway && adjCC.ccFeederNames && adjCC.ccFeederNames.length > 0;
+      const adjCCNote = adjHasCC
+        ? `<div class="card-cc-note"><strong style="color:var(--gold);">Pathway Hack</strong> — ${adjCC.ccFeederNames.slice(0,2).join(', ')} → ${adj.name}${adjCC.estimatedSavingsRange ? '. Savings: ' + adjCC.estimatedSavingsRange + '.' : ''}</div>`
+        : '';
       return `
         <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:0.5px solid var(--rule)">
           <div class="section-eyebrow" style="margin-bottom:.75rem">One more worth knowing</div>
-          <div class="school-card" style="border-left:2px solid var(--gl)">
-            <div class="school-card-head">
+          <div class="uni-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
               <div>
-                <div class="school-name">${adj.name}</div>
-                <div class="school-location">${adjData ? adjData.location : ''}</div>
-                ${adjData && adjData.archetype ? `<div class="school-archetype">${adjData.archetype}</div>` : ''}
+                ${adjData && adjData.archetype ? `<div class="card-eyebrow">${adjData.archetype}</div>` : ''}
+                <div class="card-name uni-name uni-name--headline">${adj.name}</div>
+                <div style="font-size:var(--type-meta);color:var(--ink4);">${adjData ? adjData.location : ''}</div>
               </div>
-              <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink4);padding-top:6px">Adjacent</div>
+              <div style="font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding-top:6px">Adjacent</div>
             </div>
             ${adjData && adjData.faith_tradition ? `<div class="school-badges"><span class="school-badge-faith">${adjData.faith_tradition}</span></div>` : ''}
-            <div class="school-why" style="color:var(--ink3)">
+            <div class="card-narrative" style="color:var(--ink2);">
               ${adjData && adjData.one_sentence_summary ? adjData.one_sentence_summary : adjData && adjData.hidden_pathway ? adjData.hidden_pathway : 'A program-adjacent match worth exploring with your counselor.'}
             </div>
+            ${adjCCNote}
           </div>
         </div>`;
     }).join('');
@@ -3809,14 +4306,14 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       const cSummary      = schoolD && schoolD.one_sentence_summary ? schoolD.one_sentence_summary : '';
       const cHidden       = intel?.hidden_pathway || (schoolD && schoolD.hidden_pathway) || '';
 
-      const archetypeLine   = cArchetype ? `<div style="font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;font-weight:500">${cArchetype}</div>` : '';
-      const majorLine       = majors.length ? `<div style="font-size:10px;color:var(--gold);letter-spacing:1px;margin-top:4px;font-weight:500">${majors.join(' · ')}</div>` : '';
-      const cityLine        = cities.length ? `<div style="font-size:10px;color:var(--ink4);margin-top:2px;font-weight:300">Grads → ${cities.map(c=>c.city+' '+c.pct+'%').join(' | ')}</div>` : '';
+      const archetypeLine   = cArchetype ? `<div style="font-size:var(--type-meta);color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;font-weight:500">${cArchetype}</div>` : '';
+      const majorLine       = majors.length ? `<div style="font-size:var(--type-meta);color:var(--gold);letter-spacing:1px;margin-top:4px;font-weight:500">${majors.join(' · ')}</div>` : '';
+      const cityLine        = cities.length ? `<div style="font-size:var(--type-meta);color:var(--ink4);margin-top:2px;font-weight:300">Grads → ${cities.map(c=>c.city+' '+c.pct+'%').join(' | ')}</div>` : '';
       const pillRow         = [cFaith, cGeoRadius].filter(Boolean).map(v => `<span class="counselor-school-pill counselor-school-pill-gold">${v}</span>`).join('');
       const pillLine        = pillRow ? `<div style="margin-top:5px">${pillRow}</div>` : '';
-      const personalityLine = cPersonality ? `<div style="font-size:10px;color:var(--ink3);margin-top:4px;font-weight:300">Best fit: ${cPersonality}</div>` : '';
-      const economicLine    = cEconomic ? `<div style="font-size:10px;color:var(--ink3);margin-top:3px;font-weight:300">${cEconomic}</div>` : '';
-      const comparableLine  = cComparable ? `<div style="font-size:10px;color:var(--ink4);margin-top:3px;font-weight:300;font-style:italic">Compare to: ${cComparable}</div>` : '';
+      const personalityLine = cPersonality ? `<div style="font-size:var(--type-meta);color:var(--ink3);margin-top:4px;font-weight:300">Best fit: ${cPersonality}</div>` : '';
+      const economicLine    = cEconomic ? `<div style="font-size:var(--type-meta);color:var(--ink3);margin-top:3px;font-weight:300">${cEconomic}</div>` : '';
+      const comparableLine  = cComparable ? `<div style="font-size:var(--type-meta);color:var(--ink4);margin-top:3px;font-weight:300;font-style:italic">Compare to: ${cComparable}</div>` : '';
       const summaryLine     = cSummary ? `<div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5;font-style:italic">${cSummary}</div>` :
                               cHidden ? `<div style="font-size:12px;color:var(--ink3);margin-top:4px;font-weight:300;line-height:1.5;font-style:italic">${cHidden.slice(0,400)}${cHidden.length>400?'…':''}</div>` : '';
 
@@ -3878,7 +4375,7 @@ function showLifescapeGate() {
 
   overlay.innerHTML = `
     <div style="max-width:480px;width:100%;font-family:Georgia,serif;text-align:center;">
-      <div style="font-family:var(--sans);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Your Lifescape</div>
+      <div style="font-family:var(--sans);font-size:var(--type-meta);letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Your Lifescape</div>
       <div style="margin-bottom:.75rem;display:flex;justify-content:center;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="160" height="53" role="img" aria-label="VECTOR" style="display:block;">
           <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="#0A0A0A" x="600" y="257.6" text-anchor="middle">VECTOR</text>
@@ -3891,18 +4388,18 @@ function showLifescapeGate() {
 
       <div style="display:flex;align-items:flex-start;gap:.75rem;text-align:left;background:#f5f3ef;padding:1rem 1.25rem;margin-bottom:1.25rem;border-left:2px solid #C8A97A;">
         <input type="checkbox" id="lifescapeConsent" style="margin-top:3px;flex-shrink:0;accent-color:#8B7355;">
-        <label for="lifescapeConsent" style="font-family:var(--sans);font-size:11px;color:#4a4a4a;line-height:1.6;cursor:pointer;">I agree to VECTOR storing this assessment for my counselor&#39;s review and to improve my trajectory recommendations.</label>
+        <label for="lifescapeConsent" style="font-family:var(--sans);font-size:var(--type-meta);color:#4a4a4a;line-height:1.6;cursor:pointer;">I agree to VECTOR storing this assessment for my counselor&#39;s review and to improve my trajectory recommendations.</label>
       </div>
 
       <input type="email" id="lifescapeEmailInp" placeholder="your@email.com"
         style="width:100%;padding:13px 16px;border:1px solid #d0d0d0;font-family:var(--sans);font-size:13px;color:#0a0a0a;margin-bottom:.75rem;box-sizing:border-box;outline:none;">
 
       <button id="lifescapeSignInBtn" onclick="handleLifescapeAuth()"
-        style="width:100%;padding:15px 36px;background:#0a0a0a;color:#fafaf8;border:none;font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-bottom:1rem;">
+        style="width:100%;padding:15px 36px;background:#0a0a0a;color:#fafaf8;border:none;font-family:var(--sans);font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-bottom:1rem;">
         Send My Report Link
       </button>
-      <div id="lifescapeAuthMsg" style="font-family:var(--sans);font-size:11px;color:#8B7355;min-height:1.5em;line-height:1.6;"></div>
-      <div style="margin-top:1.5rem;font-family:var(--sans);font-size:10px;color:#9a9a9a;">Free. No password. No credit card.</div>
+      <div id="lifescapeAuthMsg" style="font-family:var(--sans);font-size:var(--type-meta);color:#8B7355;min-height:1.5em;line-height:1.6;"></div>
+      <div style="margin-top:1.5rem;font-family:var(--sans);font-size:var(--type-meta);color:#9a9a9a;">Free. No password. No credit card.</div>
     </div>`;
 
   document.body.appendChild(overlay);
@@ -4227,6 +4724,10 @@ async function submitLifescape() {
             // Render Under the Radar picks
             var radarPicks = getUnderTheRadarPicks(profile, matchedSchools);
             if (radarPicks.length > 0) renderUnderTheRadar(radarPicks);
+
+            // Build compiled school sheet and show print trigger
+            buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPicks, radarPicks);
+            showPrintTrigger();
           } else {
             console.warn('[callD] parseCallD returned 0 schools — check raw response format');
           }
@@ -4366,6 +4867,24 @@ function renderQuickRead(profile, callAData) {
     var _presenceInsertQuick = _presenceQuick && _presenceQuick.fires
       ? `<div class="trajectory-text" style="margin-top:1.25rem;padding-top:1.25rem;border-top:0.5px solid rgba(255,255,255,0.15);font-style:normal;opacity:0.9;">${_presenceQuick.text}</div>`
       : '';
+  // ── Life Path Declaration — Tab 1 (Quick) ──
+  if(callAData && callAData.lifePathDeclaration) {
+    var lpEl = document.getElementById('quick-lifepath');
+    if(lpEl) {
+      lpEl.textContent = callAData.lifePathDeclaration;
+      var lpSection = document.getElementById('quick-lifepath-section');
+      if(lpSection) lpSection.style.display = 'block';
+    }
+  }
+  // ── Life Path Declaration — Tab 2 (Full) ──
+  if(callAData && callAData.lifePathDeclaration) {
+    var lpFullEl = document.getElementById('full-lifepath');
+    if(lpFullEl) {
+      lpFullEl.textContent = callAData.lifePathDeclaration;
+      var lpFullSection = document.getElementById('full-lifepath-section');
+      if(lpFullSection) lpFullSection.style.display = 'block';
+    }
+  }
     document.getElementById('quick-trajectory').innerHTML =
       `<div class="trajectory-text">${callAData.trajectory}</div>` + _presenceInsertQuick;
   }
@@ -4431,17 +4950,47 @@ function renderFullReport(profile, callAData, callBData, callCData) {
 
       document.getElementById('full-geo-local').textContent = localText;
 
+      // Helper: safely set text on an element
+      function safeSetText(id, val) {
+        var el = document.getElementById(id);
+        if(el && val) el.textContent = val;
+      }
+      function safeShow(id) {
+        var el = document.getElementById(id);
+        if(el) el.style.display = '';
+      }
+
       if(stayClose) {
-        document.getElementById('full-geo-stay-close').textContent = stayClose;
-        document.getElementById('geo-stay-close-section').style.display = '';
+        // Tab 2 (In Full)
+        safeSetText('full-geo-stay-close', stayClose);
+        safeShow('geo-stay-close-section');
+        // Tab 3 (Where You May Fit)
+        safeSetText('traj-body-stay-close-tab3', stayClose);
+        // Tab 4 (Counselor View)
+        safeSetText('traj-body-stay-close-counselor', stayClose);
       }
       if(leaveReturn) {
-        document.getElementById('full-geo-leave-return').textContent = leaveReturn;
-        document.getElementById('geo-leave-return-section').style.display = '';
+        // Tab 2
+        safeSetText('full-geo-leave-return', leaveReturn);
+        safeShow('geo-leave-return-section');
+        // Tab 3
+        safeSetText('traj-body-leave-return-tab3', leaveReturn);
+        // Tab 4
+        safeSetText('traj-body-leave-return-counselor', leaveReturn);
       }
       if(leaveGone) {
-        document.getElementById('full-geo-leave-gone').textContent = leaveGone;
-        document.getElementById('geo-leave-gone-section').style.display = '';
+        // Tab 2
+        safeSetText('full-geo-leave-gone', leaveGone);
+        safeShow('geo-leave-gone-section');
+        // Tab 3
+        safeSetText('traj-body-leave-gone-tab3', leaveGone);
+        // Tab 4
+        safeSetText('traj-body-leave-gone-counselor', leaveGone);
+      }
+      // Show Tab 3 and Tab 4 trajectory sections if any scenario populated
+      if(stayClose || leaveReturn || leaveGone) {
+        safeShow('traj-scenarios-tab3');
+        safeShow('traj-scenarios-counselor');
       }
     })();
   }
@@ -4468,12 +5017,14 @@ function renderFullReport(profile, callAData, callBData, callCData) {
   // Counselor note in full report — structured with section headings
   if(callCData?.counselor) {
     const raw = callCData.counselor;
-    const noteM     = raw.match(/NOTE:\s*([\s\S]*?)(?=STRONGEST UNLOCK:|THREE PROMPTS:|$)/i);
-    const unlockM   = raw.match(/STRONGEST UNLOCK:\s*([\s\S]*?)(?=THREE PROMPTS:|NOTE:|$)/i);
+    const noteM     = raw.match(/NOTE:\s*([\s\S]*?)(?=STRONGEST UNLOCK:|CC STRATEGY:|THREE PROMPTS:|$)/i);
+    const unlockM   = raw.match(/STRONGEST UNLOCK:\s*([\s\S]*?)(?=CC STRATEGY:|THREE PROMPTS:|NOTE:|$)/i);
+    const ccStratM  = raw.match(/CC STRATEGY:\s*([\s\S]*?)(?=THREE PROMPTS:|NOTE:|STRONGEST UNLOCK:|$)/i);
     const promptsM  = raw.match(/THREE PROMPTS:\s*([\s\S]*?)$/i);
 
     const note    = noteM    ? noteM[1].trim()    : '';
     const unlock  = unlockM  ? unlockM[1].trim()  : '';
+    const ccStrat = ccStratM ? ccStratM[1].trim() : '';
     const prompts = promptsM ? promptsM[1].trim() : '';
 
     const promptLines = prompts
@@ -4483,6 +5034,7 @@ function renderFullReport(profile, callAData, callBData, callCData) {
     let html = '';
     if(note) html += '<div class="counselor-section"><div class="counselor-section-head">Key Insight</div><div class="counselor-section-body">' + note + '</div></div>';
     if(unlock) html += '<div class="counselor-section"><div class="counselor-section-head">Strongest Signal</div><div class="counselor-section-body">' + unlock + '</div></div>';
+    if(ccStrat) html += '<div class="counselor-section" style="border-left:2px solid var(--gold);"><div class="counselor-section-head" style="color:var(--gold);">CC Strategy</div><div class="counselor-section-body">' + ccStrat + '</div></div>';
     if(promptLines.length) {
       html += '<div class="counselor-section"><div class="counselor-section-head">Conversation Starters</div>' +
         promptLines.map(p => '<div class="counselor-prompt">' + p.replace(/^[\d\.\-•\s]+/,'') + '</div>').join('') +
@@ -4526,7 +5078,7 @@ function renderIndustries(industriesText) {
     return `<div class="industry-block" style="border-left:3px solid ${color}">
       <div class="industry-name">${name}</div>
       <div class="industry-why">${why}</div>
-      <div class="career-pills">${careers.map(c=>`<span class="career-pill">${c}</span>`).join('')}</div>
+      <div class="career-pills"><ul style="margin:0;padding-left:1.2rem;list-style:disc;">${careers.map(c=>`<li style="font-size:var(--type-body);color:var(--ink2);line-height:1.65;margin-bottom:4px;">${c}</li>`).join('')}</ul></div>
       ${unexpected?`<div style="margin-top:.5rem"><span class="unexpected-pill">✦ ${unexpected}</span></div>`:''}
     </div>`;
   }).join('') + (industriesText.includes('ALSO WORTH KNOWING') || industriesText.includes('ALSO:')
@@ -4668,7 +5220,7 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
     const hasAnyData = (aa.subjects && aa.subjects.length > 0) || (aa.strength && aa.strength.trim()) || aa.daypart;
 
     if(!hasAnyData) {
-      aaEl.innerHTML = '<div style="font-size:10px;color:var(--ink4);font-style:italic">Student skipped this step — no academic affinity data collected.</div>';
+      aaEl.innerHTML = '<div style="font-size:var(--type-meta);color:var(--ink4);font-style:italic">Student skipped this step — no academic affinity data collected.</div>';
     } else {
       const rows = [];
       if(aa.subjects && aa.subjects.length && !aa.subjects.includes('none_stand_out')) {
@@ -4942,6 +5494,115 @@ document.addEventListener('keydown', function(e) {
   var gate = document.getElementById('lifescapeAuthGate');
   if (gate) { handleLifescapeAuth(); return; }
 });
+
+// ── COMPILED SCHOOL SHEET ────────────────────────────────────────────────────
+function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPicks, radarPicks) {
+  // Aggregate all schools from all sources
+  var allSchools = [];
+
+  // Primary matches (Tab 3)
+  if(callDData && callDData.length) {
+    callDData.forEach(function(s, i) {
+      allSchools.push({
+        name: s.name,
+        label: 'Primary Match',
+        bullet1: s.match ? s.match.replace(/\s*-{2,}\s*$/g,'').trim() : '',
+        bullet2: s.why ? s.why.split('.')[0].trim() + '.' : ''
+      });
+    });
+  }
+
+  // Adjacent pick
+  if(adjacentPicks && adjacentPicks.length) {
+    adjacentPicks.forEach(function(s) {
+      var sd = (typeof UNIVERSITY_CONTENT !== 'undefined') ? UNIVERSITY_CONTENT[s.name] : null;
+      allSchools.push({
+        name: s.name,
+        label: 'Adjacent Match',
+        bullet1: sd && sd.hidden_pathway ? sd.hidden_pathway.split('.')[0].trim() + '.' : 'Adjacent program match',
+        bullet2: sd && sd.grad_cities ? 'Graduates go to: ' + (Array.isArray(sd.grad_cities) ? sd.grad_cities.slice(0,3).join(', ') : sd.grad_cities) : ''
+      });
+    });
+  }
+
+  // Profile adjacent (counselor picks)
+  if(profileAdjacentPicks && profileAdjacentPicks.length) {
+    profileAdjacentPicks.forEach(function(s) {
+      allSchools.push({
+        name: s.name || s,
+        label: 'Counselor Pick',
+        bullet1: 'Profile-adjacent match — discuss with your counselor',
+        bullet2: ''
+      });
+    });
+  }
+
+  // Under the radar picks
+  if(radarPicks && radarPicks.length) {
+    radarPicks.forEach(function(s) {
+      var sd = (typeof UNIVERSITY_CONTENT !== 'undefined') ? UNIVERSITY_CONTENT[s.name || s] : null;
+      allSchools.push({
+        name: s.name || s,
+        label: 'Under the Radar',
+        bullet1: sd && sd.one_sentence_summary ? sd.one_sentence_summary.split('.')[0].trim() + '.' : (sd && sd.hidden_pathway ? sd.hidden_pathway.split('.')[0].trim() + '.' : 'Specialist match'),
+        bullet2: sd && sd.location ? sd.location : ''
+      });
+    });
+  }
+
+  // Populate header
+  var nameEl = document.getElementById('cs-student-name');
+  var dateEl = document.getElementById('cs-date');
+  var totalEl = document.getElementById('cs-total');
+  var listEl = document.getElementById('cs-school-list');
+  if(nameEl) nameEl.textContent = (profile && profile.name) ? profile.name : '';
+  if(dateEl) dateEl.textContent = new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'});
+  if(totalEl) totalEl.textContent = allSchools.length + ' school' + (allSchools.length !== 1 ? 's' : '') + ' in your list';
+
+  // Group by label
+  var groups = {};
+  allSchools.forEach(function(s) {
+    if(!groups[s.label]) groups[s.label] = [];
+    groups[s.label].push(s);
+  });
+
+  var html = '';
+  var labelOrder = ['Primary Match','Adjacent Match','Counselor Pick','Under the Radar'];
+  labelOrder.forEach(function(label) {
+    if(!groups[label] || !groups[label].length) return;
+    html += '<div class="cs-section-label">' + label + '</div>';
+    groups[label].forEach(function(s) {
+      var bullets = [s.bullet1, s.bullet2].filter(Boolean);
+      html += '<div class="cs-school-entry">';
+      html += '<div class="cs-school-name">' + s.name + '</div>';
+      if(bullets.length) {
+        html += '<ul class="cs-school-bullets">';
+        bullets.forEach(function(b) { if(b) html += '<li>' + b + '</li>'; });
+        html += '</ul>';
+      }
+      html += '</div>';
+    });
+  });
+
+  if(listEl) listEl.innerHTML = html;
+
+  // Show sheet
+  var sheet = document.getElementById('compiled-sheet');
+  if(sheet) sheet.classList.add('print-ready');
+}
+
+function openCompiledSheet() {
+  var sheet = document.getElementById('compiled-sheet');
+  if(!sheet || !sheet.classList.contains('print-ready')) return;
+  window.print();
+}
+
+function showPrintTrigger() {
+  var bar = document.getElementById('print-trigger-bar');
+  if(bar) bar.style.display = 'block';
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 </script>
 
 </body>
