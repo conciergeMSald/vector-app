@@ -1,6 +1,6 @@
 /**
  * VECTOR Lifescape — Crosswalk Database
- * Version: 2.0 — June 2026
+ * Version: 2.1 — June 2026
  *
  * SCHEMA PER TILE:
  * {
@@ -11,6 +11,11 @@
  *   riasec_weights: {R,I,A,S,E,C}  — 0-3 per code (sum ≤ 9)
  *   naics_sectors: number[] — primary NAICS codes this tile signals
  *   eq_multiplier: bool?    — true = extra weight in rawScore (EQ-inflected tiles)
+ *   gender:        string?  — 'male' | 'female' | 'both' (omit = 'both')
+ *                             Filtered at display time in lifescape.html
+ *                             based on student-reported gender preference.
+ *   sport_type:    string?  — 'team' | 'individual' (move cluster only)
+ *                             Target ratio: 60% team / 40% individual
  * }
  *
  * RIASEC CODES:
@@ -28,6 +33,14 @@
  *   56 = Admin/Support  61 = Education  62 = Healthcare
  *   71 = Arts/Entertainment  72 = Hospitality  81 = Other Services
  *   92 = Government/Military
+ *
+ * GENDER FILTERING NOTE:
+ *   Gender is collected as a writing-instruction preference.
+ *   Tiles tagged gender:'male' are hidden for female students.
+ *   Tiles tagged gender:'female' are hidden for male students.
+ *   Tiles with no gender field (or gender:'both') always show.
+ *   The algorithm never infers gender from name.
+ *   Minimum 8 visible tiles must remain per cluster after filtering.
  */
 
 const VECTOR_CROSSWALK = [
@@ -140,109 +153,155 @@ const VECTOR_CROSSWALK = [
 
   // ════════════════════════════════════════════════════════
   // MOVE & COMPETE
+  // Team sports (60%) | Individual sports & fitness (40%)
+  //
+  // TEAM  (12 tiles): football, baseball, softball, basketball,
+  //   soccer, volleyball, lacrosse, field_hockey, swim_team,
+  //   track_relay, cheerleading, club_travel_sports
+  //
+  // INDIVIDUAL (8 tiles): dance, yoga, pilates, fitness_f45,
+  //   fitness_lifting, running_fitness_classes, martial_arts,
+  //   rock_climbing, ebike_outdoor_adventure, esports_gaming
+  //
+  // Gender tags applied where sport diverges by sex.
+  // Both-gender sports carry no gender field.
   // ════════════════════════════════════════════════════════
+
+  // ── TEAM SPORTS ──────────────────────────────────────
 
   { id:'football', label:'I play football',
     label_parent:'Plays football',
-    cluster:'move',
+    cluster:'move', sport_type:'team', gender:'male',
     riasec_weights:{R:3,I:0,A:0,S:1,E:2,C:1},
     naics_sectors:[71,61,92] },
 
-  { id:'baseball', label:'I play baseball or softball',
-    label_parent:'Plays baseball or softball',
-    cluster:'move',
+  { id:'baseball', label:'I play baseball',
+    label_parent:'Plays baseball',
+    cluster:'move', sport_type:'team', gender:'male',
     riasec_weights:{R:3,I:1,A:0,S:1,E:1,C:1},
     naics_sectors:[71,61] },
 
   { id:'softball', label:'I play softball',
     label_parent:'Plays softball',
-    cluster:'move',
+    cluster:'move', sport_type:'team', gender:'female',
     riasec_weights:{R:3,I:1,A:0,S:1,E:1,C:1},
     naics_sectors:[71,61] },
 
   { id:'basketball', label:'I play basketball',
     label_parent:'Plays basketball',
-    cluster:'move',
+    cluster:'move', sport_type:'team',
     riasec_weights:{R:3,I:0,A:0,S:1,E:2,C:1},
     naics_sectors:[71,61] },
 
   { id:'soccer', label:'I play soccer',
     label_parent:'Plays soccer',
-    cluster:'move',
+    cluster:'move', sport_type:'team',
     riasec_weights:{R:3,I:0,A:0,S:1,E:1,C:1},
     naics_sectors:[71,61] },
 
   { id:'volleyball', label:'I play volleyball',
     label_parent:'Plays volleyball',
-    cluster:'move',
+    cluster:'move', sport_type:'team',
     riasec_weights:{R:3,I:0,A:0,S:2,E:1,C:1},
+    naics_sectors:[71,61] },
+
+  { id:'lacrosse', label:'I play lacrosse',
+    label_parent:'Plays lacrosse',
+    cluster:'move', sport_type:'team',
+    riasec_weights:{R:3,I:0,A:0,S:1,E:2,C:1},
+    naics_sectors:[71,61] },
+
+  { id:'field_hockey', label:'I play field hockey',
+    label_parent:'Plays field hockey',
+    cluster:'move', sport_type:'team', gender:'female',
+    riasec_weights:{R:3,I:0,A:0,S:1,E:1,C:1},
+    naics_sectors:[71,61] },
+
+  { id:'swim_team', label:'I swim competitively',
+    label_parent:'Swims competitively',
+    cluster:'move', sport_type:'team',
+    riasec_weights:{R:3,I:1,A:0,S:1,E:1,C:2},
+    naics_sectors:[71,61,62] },
+
+  { id:'track_relay', label:'I run track or do relay events',
+    label_parent:'Runs track or does relay events',
+    cluster:'move', sport_type:'team',
+    riasec_weights:{R:3,I:0,A:0,S:1,E:2,C:1},
     naics_sectors:[71,61] },
 
   { id:'cheerleading', label:'I cheer or do competitive cheer',
     label_parent:'Does cheerleading or competitive cheer',
-    cluster:'move',
+    cluster:'move', sport_type:'team', gender:'female',
     riasec_weights:{R:2,I:0,A:2,S:2,E:1,C:1},
     naics_sectors:[71,61] },
 
+  { id:'club_travel_sports', label:'I play club or travel sports',
+    label_parent:'Plays club or travel sports',
+    cluster:'move', sport_type:'team',
+    riasec_weights:{R:3,I:0,A:0,S:2,E:2,C:1},
+    naics_sectors:[71,61,92] },
+
+  // ── INDIVIDUAL SPORTS & FITNESS ───────────────────────
+
   { id:'dance', label:'I dance — hip hop, ballet, ballroom, anything',
     label_parent:'Dances — hip hop, ballet, ballroom, anything',
-    cluster:'move',
+    cluster:'move', sport_type:'individual',
     riasec_weights:{R:2,I:0,A:3,S:1,E:1,C:1},
     naics_sectors:[71,61] },
 
   { id:'yoga', label:'I do yoga',
     label_parent:'Does yoga',
-    cluster:'move',
+    cluster:'move', sport_type:'individual',
     riasec_weights:{R:1,I:1,A:1,S:1,E:0,C:1},
     naics_sectors:[62,81,61] },
 
   { id:'pilates', label:'I do Pilates or core training',
     label_parent:'Does Pilates or core training',
-    cluster:'move',
+    cluster:'move', sport_type:'individual',
     riasec_weights:{R:2,I:1,A:0,S:1,E:0,C:2},
     naics_sectors:[62,81,61] },
 
+  { id:'fitness_f45', label:'I take group fitness classes like F45, Barry\'s, or OrangeTheory',
+    label_parent:'Takes group fitness classes like F45, Barry\'s, or OrangeTheory',
+    cluster:'move', sport_type:'individual',
+    riasec_weights:{R:2,I:0,A:0,S:2,E:1,C:1},
+    naics_sectors:[62,81,71] },
+
   { id:'fitness_lifting', label:'I lift weights or work out at the gym',
     label_parent:'Lifts weights or works out at the gym',
-    cluster:'move',
+    cluster:'move', sport_type:'individual',
     riasec_weights:{R:3,I:1,A:0,S:0,E:1,C:2},
     naics_sectors:[62,81,71] },
 
-  { id:'running_fitness_classes', label:'I run or take fitness classes',
-    label_parent:'Runs or takes fitness classes',
-    cluster:'move',
+  { id:'running_fitness_classes', label:'I run — long distances, 5Ks, or just to clear my head',
+    label_parent:'Runs long distances, 5Ks, or just to clear their head',
+    cluster:'move', sport_type:'individual',
     riasec_weights:{R:2,I:0,A:0,S:1,E:0,C:1},
     naics_sectors:[62,81,71] },
 
   { id:'martial_arts', label:'I do martial arts or combat sports',
     label_parent:'Does martial arts or combat sports',
-    cluster:'move',
+    cluster:'move', sport_type:'individual',
     riasec_weights:{R:3,I:1,A:1,S:0,E:2,C:2},
     naics_sectors:[71,61,81] },
 
   { id:'rock_climbing', label:'I rock climb or boulder',
     label_parent:'Rock climbs or boulders',
-    cluster:'move',
+    cluster:'move', sport_type:'individual',
     riasec_weights:{R:3,I:1,A:0,S:0,E:1,C:1},
     naics_sectors:[71,81] },
 
-  { id:'club_travel_sports', label:'I play club or travel sports',
-    label_parent:'Plays club or travel sports',
-    cluster:'move',
-    riasec_weights:{R:3,I:0,A:0,S:2,E:2,C:1},
-    naics_sectors:[71,61,92] },
+  { id:'ebike_outdoor_adventure', label:'I ride eBikes or do outdoor adventures',
+    label_parent:'Rides eBikes or does outdoor adventures',
+    cluster:'move', sport_type:'individual',
+    riasec_weights:{R:3,I:0,A:1,S:0,E:1,C:0},
+    naics_sectors:[71,81,48] },
 
   { id:'esports_gaming', label:'I play competitive video games or esports',
     label_parent:'Plays competitive video games or esports',
-    cluster:'move',
+    cluster:'move', sport_type:'individual',
     riasec_weights:{R:0,I:2,A:1,S:1,E:2,C:2},
     naics_sectors:[51,71,54] },
-
-  { id:'ebike_outdoor_adventure', label:'I ride eBikes or do outdoor adventures',
-    label_parent:'Rides eBikes or does outdoor adventures',
-    cluster:'move',
-    riasec_weights:{R:3,I:0,A:1,S:0,E:1,C:0},
-    naics_sectors:[71,81,48] },
 
   // ════════════════════════════════════════════════════════
   // THINK & EXPLORE
@@ -384,6 +443,18 @@ const VECTOR_CROSSWALK = [
     riasec_weights:{R:0,I:0,A:2,S:2,E:3,C:0},
     naics_sectors:[71,72,81,44] },
 
+  { id:'public_speaking_debate', label:'I do public speaking, debate, or Model UN',
+    label_parent:'Does public speaking, debate, or Model UN',
+    cluster:'people',
+    riasec_weights:{R:0,I:2,A:1,S:2,E:3,C:1},
+    naics_sectors:[92,54,61] },
+
+  { id:'community_organizing', label:'I help organize my community or neighborhood',
+    label_parent:'Helps organize their community or neighborhood',
+    cluster:'people',
+    riasec_weights:{R:1,I:1,A:0,S:3,E:2,C:1},
+    naics_sectors:[92,81,61] },
+
   // ════════════════════════════════════════════════════════
   // SYSTEMS & HOW THINGS WORK
   // ════════════════════════════════════════════════════════
@@ -447,6 +518,18 @@ const VECTOR_CROSSWALK = [
     cluster:'systems',
     riasec_weights:{R:0,I:2,A:0,S:0,E:3,C:2},
     naics_sectors:[52,54,81,44] },
+
+  { id:'supply_chain_logistics', label:'I find it fascinating how things get made and shipped',
+    label_parent:'Finds it fascinating how things get made and shipped',
+    cluster:'systems',
+    riasec_weights:{R:1,I:2,A:0,S:0,E:2,C:3},
+    naics_sectors:[48,33,56,52] },
+
+  { id:'finance_investing', label:'I am interested in investing, markets, or personal finance',
+    label_parent:'Is interested in investing, markets, or personal finance',
+    cluster:'systems',
+    riasec_weights:{R:0,I:3,A:0,S:0,E:2,C:3},
+    naics_sectors:[52,54,56] },
 
   // ════════════════════════════════════════════════════════
   // EQ TILES — Identity & emotional intelligence signals
@@ -614,6 +697,19 @@ const VECTOR_CROSSWALK = [
 
 // ── Helper functions expected by lifescape.html ────────────────────────────
 
+/**
+ * Filter tiles by student gender before display.
+ * Call this before rendering any cluster section.
+ * gender param: 'male' | 'female' | 'other' | null (null = show all)
+ */
+function getTilesForGender(gender) {
+  if (!gender) return VECTOR_CROSSWALK;
+  return VECTOR_CROSSWALK.filter(tile => {
+    if (!tile.gender || tile.gender === 'both') return true;
+    return tile.gender === gender;
+  });
+}
+
 function getRIASECProfile(selectedIds) {
   const totals = {R:0, I:0, A:0, S:0, E:0, C:0};
   selectedIds.forEach(id => {
@@ -680,6 +776,11 @@ function getComboUnlocks(selectedIds) {
     { triggered_by:['teaching_tutoring','psychology'], unlocks:['Educational Psychology','Curriculum Design'] },
     { triggered_by:['pilates','how_body_moves'], unlocks:['Movement Science','Pilates Instruction / PT'] },
     { triggered_by:['running_fitness_classes','entrepreneurship'], unlocks:['Fitness Business','Wellness Brand'] },
+    { triggered_by:['fitness_f45','nutrition_food_science'], unlocks:['Wellness Coaching','Group Fitness Business'] },
+    { triggered_by:['finance_investing','data_statistics'], unlocks:['Quantitative Finance','Investment Analytics'] },
+    { triggered_by:['supply_chain_logistics','engineering_challenges'], unlocks:['Operations Engineering','Supply Chain Management'] },
+    { triggered_by:['public_speaking_debate','advocacy_activism'], unlocks:['Policy Leadership','Civil Rights Law'] },
+    { triggered_by:['community_organizing','entrepreneurship'], unlocks:['Social Enterprise','Community Development'] },
   ];
 
   const selectedSet = new Set(selectedIds);
@@ -704,6 +805,7 @@ function getGeoSignalTiles(selectedIds) {
 
 if (typeof module !== 'undefined') module.exports = {
   VECTOR_CROSSWALK,
+  getTilesForGender,
   getRIASECProfile,
   getNAICSProfile,
   getComboUnlocks,

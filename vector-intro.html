@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#F4F1EC">
+<title>VECTOR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@200;300&display=swap" rel="stylesheet">
+<style>
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%;
+  background: #F4F1EC;
+  overflow: hidden;
+}
+
+/* ── STATEMENT ── */
+.statement {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-style: italic;
+  font-weight: 300;
+  color: #2a2a2a;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+  z-index: 10;
+  width: 90%;
+  max-width: 560px;
+}
+.statement.show { opacity: 1; }
+.statement.hide { opacity: 0; }
+
+/* ── BEGIN LINK ── */
+.begin-link {
+  display: block;
+  margin: 3.2rem auto 0;
+  text-align: center;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8B7355;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  white-space: nowrap;
+  background: none;
+  border: none;
+}
+.begin-link.show { opacity: 1; }
+.begin-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0.5px;
+  background: #8B7355;
+  margin: 6px auto 0;
+  transition: width 0.4s ease;
+}
+.begin-link:hover::after { width: 100%; }
+
+/* ── COMPASS ── */
+.compass-wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  opacity: 0;
+  transition: opacity 2.4s ease;
+  z-index: 5;
+}
+.compass-wrap.show { opacity: 0.75; }
+.compass-wrap.hide { opacity: 0; transition: opacity 1.6s ease; }
+
+.compass-svg {
+  width: 100%;
+  height: 100%;
+  animation: compassSpin 12s cubic-bezier(0.15, 0.35, 0.35, 1.0) forwards;
+}
+.compass-svg.settle { animation: none; }
+
+@keyframes compassSpin {
+  0%   { transform: rotate(-180deg); }
+  60%  { transform: rotate(8deg); }
+  80%  { transform: rotate(-3deg); }
+  90%  { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ── SIGNAL RING ── */
+.signal-ring {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(139,115,85,0.4);
+  opacity: 0; z-index: 4;
+}
+.signal-ring.fire { animation: signalPulse 2s ease-out forwards; }
+.signal-ring-2 {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(139,115,85,0.2);
+  opacity: 0; z-index: 4;
+}
+.signal-ring-2.fire { animation: signalPulse 2s ease-out 0.3s forwards; }
+.signal-ring-3 {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(139,115,85,0.1);
+  opacity: 0; z-index: 4;
+}
+.signal-ring-3.fire { animation: signalPulse 2s ease-out 0.6s forwards; }
+
+@keyframes signalPulse {
+  0%   { transform: translate(-50%, -50%) scale(0); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+/* ── BRAND REVEAL ── */
+.brand-reveal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  text-align: center;
+  opacity: 0;
+  z-index: 10;
+  width: 90%;
+}
+
+/* The wordmark SVG scales via width — needle geometry is exact master */
+.brand-wordmark-svg {
+  display: block;
+  margin: 0 auto 1rem;
+  width: clamp(200px, 55vw, 480px);
+  height: auto;
+}
+
+.brand-rule {
+  width: 40px;
+  height: 0.5px;
+  background: #C8A97A;
+  margin: 0 auto 1rem;
+  opacity: 0.7;
+}
+.brand-tagline {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #8B7355;
+}
+
+/* ── VEIL ── */
+#veil {
+  position: fixed; inset: 0;
+  background: #F4F1EC;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+  z-index: 50;
+}
+#veil.active { opacity: 1; pointer-events: all; }
+
+</style>
+</head>
+<body>
+
+<div class="compass-wrap" id="compassWrap">
+  <svg class="compass-svg" id="compassSvg"
+       viewBox="0 0 64 64" fill="none"
+       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="32" cy="32" r="28" stroke="#C8A97A" stroke-width="0.4" opacity="0.18"/>
+    <circle cx="32" cy="32" r="19" stroke="#C8A97A" stroke-width="0.5" opacity="0.14"/>
+    <line x1="32" y1="4"  x2="32" y2="9"  stroke="#C8A97A" stroke-width="0.7" opacity="0.4" stroke-linecap="round"/>
+    <line x1="4"  y1="32" x2="9"  y2="32" stroke="#C8A97A" stroke-width="0.5" opacity="0.12" stroke-linecap="round"/>
+    <line x1="55" y1="32" x2="60" y2="32" stroke="#C8A97A" stroke-width="0.5" opacity="0.12" stroke-linecap="round"/>
+    <path d="M 29.8 44 L 32 12 L 34.2 44 Z" fill="#C8A97A" opacity="1.0"/>
+    <path d="M 30.4 44 L 32 54 L 33.6 44 Z" fill="#C8A97A" opacity="0.3"/>
+    <circle cx="32" cy="44" r="4.5" stroke="#C8A97A" stroke-width="0.4" opacity="0.18" fill="none"/>
+    <circle cx="32" cy="44" r="2.4" fill="#C8A97A" opacity="0.85"/>
+  </svg>
+</div>
+
+<!-- Signal rings -->
+<div class="signal-ring"   id="ring1"></div>
+<div class="signal-ring-2" id="ring2"></div>
+<div class="signal-ring-3" id="ring3"></div>
+
+<div class="statement" id="statement"></div>
+
+<div class="brand-reveal" id="brandReveal">
+  <!-- VECTOR wordmark — master-exact needle geometry, inline SVG uses page font -->
+  <svg class="brand-wordmark-svg" xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 1200 400" role="img" aria-label="VECTOR">
+    <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif"
+      font-weight="300" font-size="120px" letter-spacing="18px"
+      fill="#2a2a2a" x="600" y="257.6" text-anchor="middle">VECTOR</text>
+    <!-- Compass needle — master geometry — tip breaks outside the O -->
+    <line x1="700.15" y1="231.24" x2="721.49" y2="172.60"
+      stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round"/>
+    <polygon points="721.49,172.60 717.16,176.39 722.37,178.29"
+      fill="#C8A97A"/>
+  </svg>
+  <div class="brand-rule"></div>
+  <div class="brand-tagline">The algorithm of success</div>
+  <button class="begin-link" id="beginBtn">Reveal Mine</button>
+</div>
+
+<div id="veil"></div>
+
+<script>
+
+// ── COPY UPDATE: Action Item 1 — June 2026 ──
+// Sequencing, timing, and fade behavior unchanged.
+const STATEMENTS = [
+  "You don't have to decide\nyour future today.",
+  "You only need\na place to begin.",
+  "We'll discover\nthe rest together."
+];
+
+const INDEX_URL = 'https://abettercollegeconsultant.com/the_shift.html';
+function pause(ms) { return new Promise(r => setTimeout(r, ms)); }
+function show(el) { el.classList.add('show'); }
+
+function fadeIn(el, text) {
+  if (text !== undefined) el.innerHTML = text.replace(/\n/g, '<br>');
+  el.style.opacity = '0';
+  el.style.transition = 'opacity 2.4s ease';
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { el.style.opacity = '1'; });
+  });
+}
+
+function fadeOut(el) {
+  el.style.transition = 'opacity 1.2s ease';
+  el.style.opacity = '0';
+}
+
+function playTone() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.frequency.value = 432;
+    osc.type = 'sine';
+    gain.gain.setValueAtTime(0, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0.06, ctx.currentTime + 0.3);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 2.5);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 2.5);
+  } catch(e) {}
+}
+
+async function runSequence() {
+  const compassWrap = document.getElementById('compassWrap');
+  const compassSvg  = document.getElementById('compassSvg');
+  const statement   = document.getElementById('statement');
+  const beginBtn    = document.getElementById('beginBtn');
+  const brandReveal = document.getElementById('brandReveal');
+  const ring1 = document.getElementById('ring1');
+  const ring2 = document.getElementById('ring2');
+  const ring3 = document.getElementById('ring3');
+
+  await pause(600);
+  await pause(3200);
+  show(compassWrap);
+  await pause(4500);
+  compassSvg.classList.add('settle');
+
+  playTone();
+  ring1.classList.add('fire');
+  await pause(300);
+  ring2.classList.add('fire');
+  await pause(300);
+  ring3.classList.add('fire');
+
+  await pause(400);
+  compassWrap.classList.remove('show');
+  compassWrap.classList.add('hide');
+
+  await pause(1800);
+  fadeIn(statement, STATEMENTS[0]);
+
+  await pause(3800);
+  fadeOut(statement);
+  await pause(1400);
+  fadeIn(statement, STATEMENTS[1]);
+
+  await pause(3800);
+  fadeOut(statement);
+  await pause(1400);
+  fadeIn(statement, STATEMENTS[2]);
+
+  await pause(6000);
+  fadeOut(statement);
+
+  await pause(1400);
+  fadeIn(brandReveal);
+
+  await pause(3200);
+  show(beginBtn);
+}
+
+document.getElementById('beginBtn').addEventListener('click', function() {
+  const veil = document.getElementById('veil');
+  veil.classList.add('active');
+  setTimeout(function() {
+    if (window.self !== window.top) {
+      window.top.location.href = INDEX_URL;
+    } else {
+      window.location.href = INDEX_URL;
+    }
+  }, 600);
+});
+
+runSequence();
+
+</script>
+</body>
+</html>

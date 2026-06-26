@@ -180,6 +180,21 @@ body {
   transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
 }
 
+/* Idea breathing — each idea block within act-truth */
+.act-truth .idea {
+  display: block;
+  margin-bottom: 1.1em;
+}
+.act-truth .idea:last-child {
+  margin-bottom: 0;
+}
+
+/* Gold word in truth — earned scarcity, lowercase, no bold */
+.act-truth .g {
+  color: #C8A97A;
+  font-style: italic;
+}
+
 /* Revealed state */
 .act.revealed .act-number {
   opacity: 0.6;
@@ -458,7 +473,11 @@ body::before {
       <line class="edge" x1="200" y1="90" x2="260" y2="148" stroke="#C8A97A" stroke-width="0.5" opacity="0.3"/>
     </svg>
   </div>
-  <p class="act-truth">Private equity is buying dental practices, veterinary clinics, HVAC companies, and home services businesses and professionalizing them at scale. Nutraceuticals and longevity medicine are becoming the consumer health economy of the next decade. Defense technology, cybersecurity, climate adaptation infrastructure, and AI operations are generating demand for talent that no university has named yet. The people who will lead these industries are in college right now. The industries don't have names in the course catalog. They are being built in real time.</p>
+  <p class="act-truth">
+  <span class="idea">Private equity is buying dental practices, veterinary clinics, HVAC companies, and home services businesses — and professionalizing them at <span class="g">scale</span>.</span>
+  <span class="idea">Nutraceuticals, longevity medicine, defense technology, climate adaptation infrastructure, AI operations — generating demand for talent that no university has named yet.</span>
+  <span class="idea">The people who will lead these industries are in college right now. The industries don't have names in the course catalog. They are being built in real time.</span>
+</p>
 </section>
 
 <!-- ── ACT IV — Population Shift ── -->
@@ -598,7 +617,11 @@ body::before {
       <text x="264" y="136" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="7.5" fill="rgba(200,169,122,0.6)" font-weight="200" letter-spacing="1.5">RISING</text>
     </svg>
   </div>
-  <p class="act-truth">The rising generation does not need to leave what was built. They need to take it further than the generation that built it could. Construction management. Real estate development. The family enterprise elevated by someone who was shown the door that their parents couldn't find. The college-educated operator who steps into a family business and transforms it is one of the most valuable and most overlooked profiles in the American economy. They inherit something real. They make it more.</p>
+  <p class="act-truth">
+  <span class="idea">The rising generation does not need to leave what was built. They need to take it <span class="g">further</span> than the generation that built it could.</span>
+  <span class="idea">Construction management. Real estate development. The family enterprise elevated by someone who was shown the door their parents couldn't find.</span>
+  <span class="idea">The college-educated operator who steps into a family business and transforms it is one of the most valuable and most overlooked profiles in the American economy. They inherit something real. They make it more.</span>
+</p>
 </section>
 
 <!-- ── ACT VI — The Spine ── -->
@@ -638,7 +661,12 @@ body::before {
       <line x1="200" y1="90" x2="200" y2="155" stroke="rgba(244,241,236,0.08)" stroke-width="0.5"/>
     </svg>
   </div>
-  <p class="act-truth">Remove the spine and nothing stands. The surgeon gets credit. The hospital administrator who ensured the operating room was staffed, the supply chain was intact, and the insurance was processed does not. The operations manager who runs a 200-person regional team, the quality control director who saves a manufacturer $40 million, the customer experience leader who turns around a brand — these are the people who make everything else work. They are well-compensated, in demand, and completely invisible in college planning. The spine is not a lesser thing. It is the reason the body can stand at all.</p>
+  <p class="act-truth">
+  <span class="idea">Remove the spine and nothing stands.</span>
+  <span class="idea">The surgeon gets credit. The hospital administrator who ensured the operating room was staffed, the supply chain was intact, and the insurance was processed does not.</span>
+  <span class="idea">The operations manager who runs a 200-person regional team, the quality control director who saves a manufacturer $40 million, the customer experience leader who turns around a brand — these are the people who make everything else <span class="g">work</span>.</span>
+  <span class="idea">They are well-compensated, in demand, and completely invisible in college planning. The spine is not a lesser thing. It is the reason the body can stand at all.</span>
+</p>
 </section>
 
 <!-- ── ACT VII — Today, They Are 16 ── -->
@@ -713,7 +741,12 @@ body::before {
         font-weight="200" letter-spacing="1.5">OPEN</text>
     </svg>
   </div>
-  <p class="act-truth">The workforce that built the last 40 years is retiring. The seats are emptying in every industry simultaneously. The workforce that will fill them is in high school right now — and they are walking into the largest transfer of professional opportunity in modern history. There is a path that almost no college counselor mentions: the military's non-combat civilian infrastructure roles — logistics, cybersecurity, healthcare administration, intelligence analysis, communications, engineering — place highly capable young people into some of the most rigorous operational environments in the world. A 22-year-old who completes that path enters civilian life at 26 with a security clearance, operational experience, and a professional network that no MBA program produces at that age. The demographics are clear. The seats are there. The question is who knows where to walk. VECTOR was built to answer that.</p>
+  <p class="act-truth">
+  <span class="idea">The workforce that built the last 40 years is retiring. The seats are emptying in every industry simultaneously.</span>
+  <span class="idea">The workforce that will fill them is in high school right now — walking into the largest transfer of professional <span class="g">opportunity</span> in modern history.</span>
+  <span class="idea">There is a path that almost no college counselor mentions: the military's non-combat civilian infrastructure roles — logistics, cybersecurity, healthcare administration, intelligence analysis — place highly capable young people into some of the most rigorous operational environments in the world. A 22-year-old who completes that path enters civilian life at 26 with a security clearance, operational experience, and a professional network that no MBA program produces at that age.</span>
+  <span class="idea">The demographics are clear. The seats are there. The question is who knows where to walk. VECTOR was built to answer that.</span>
+</p>
 </section>
 
 <!-- ── CLOSING ── -->
