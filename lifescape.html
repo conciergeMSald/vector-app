@@ -4220,6 +4220,37 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     // Use one_sentence_summary if populated, otherwise fall back to hidden_pathway
     const footerContent  = summary || hiddenPath;
 
+    // ── CC pathway from UNIVERSITY_DB_V5 ──
+    const _dbEntry = getDbV5Entry(s.name);
+    const _ccPathway = _dbEntry && _dbEntry.institutionNarrative && _dbEntry.institutionNarrative.ccTransferPathway
+      ? _dbEntry.institutionNarrative.ccTransferPathway : null;
+    const _hasCCPath = _ccPathway && _ccPathway.hasCCPathway && _ccPathway.ccFeederNames && _ccPathway.ccFeederNames.length > 0;
+    const _ccFeeders = _hasCCPath ? _ccPathway.ccFeederNames.slice(0,2).join(', ') : '';
+    const _ccSavings = _hasCCPath && _ccPathway.estimatedSavingsRange ? _ccPathway.estimatedSavingsRange : '';
+    const _ccTxRate  = _hasCCPath && _ccPathway.transferAcceptanceRate ? _ccPathway.transferAcceptanceRate : '';
+    const _ccFrRate  = _hasCCPath && _ccPathway.freshmanAcceptanceRate ? _ccPathway.freshmanAcceptanceRate : '';
+    const _ccNote = _hasCCPath
+      ? `<div class="card-cc-note"><strong style="color:var(--gold);font-weight:600;">Pathway Hack</strong> — ${_ccFeeders} → ${s.name}${_ccTxRate ? ` (Transfer: ${_ccTxRate} vs Freshman: ${_ccFrRate})` : ''}${_ccSavings ? `. Estimated savings: ${_ccSavings}.` : ''}</div>`
+      : '';
+
+    // ── Trajectory fit note from resolved trajectory ──
+    const _trajProfile = _dbEntry && _dbEntry.trajectoryProfile ? _dbEntry.trajectoryProfile : null;
+    const _trajNote = (LS_STATE.trajectoryResolved && _trajProfile)
+      ? (() => {
+          const scoreMap = {
+            LEAVE_STAY_GONE: _trajProfile.leaverScore,
+            LEAVE_COME_BACK: _trajProfile.returnerScore,
+            STEWARD: _trajProfile.stewardScore,
+            NAVIGATOR: _trajProfile.navigatorScore
+          };
+          const score = scoreMap[LS_STATE.trajectoryResolved] || 0;
+          const dispersal = _trajProfile.alumniDispersalPattern || '';
+          if (score >= 80) return `Strong match for your trajectory (${dispersal} alumni dispersal).`;
+          if (score >= 65) return `Good fit for your trajectory (${dispersal} alumni dispersal).`;
+          return '';
+        })()
+      : '';
+
     return `<div class="uni-card">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
         <div>
@@ -4236,6 +4267,8 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       </div>
       <div class="card-narrative"><strong style="font-weight:600;color:var(--ink);display:block;margin-bottom:6px;">${s.match.replace(/\s*-{2,}\s*$/g,"").trim()}</strong>${s.why.replace(/\s*-{2,}\s*$/g,"").trim()}</div>
       ${footerContent ? `<div class="card-traj-note">${footerContent}</div>` : ''}
+      ${_trajNote ? `<div class="card-traj-note" style="margin-top:4px;">${_trajNote}</div>` : ''}
+      ${_ccNote}
     </div>`;
   }).join('');
 
@@ -4244,8 +4277,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     const adjHtml = adjacentPicks.map(adj => {
       const adjData = typeof UNIVERSITY_CONTENT !== 'undefined'
         ? UNIVERSITY_CONTENT[adj.name] : null;
-      const adjDbV5 = (typeof UNIVERSITY_DB_V5 !== 'undefined') ? UNIVERSITY_DB_V5 : null;
-      const adjDb = adjDbV5 ? (adjDbV5[adj.name] || null) : null;
+      const adjDb = getDbV5Entry(adj.name);
       const adjCC = adjDb && adjDb.institutionNarrative && adjDb.institutionNarrative.ccTransferPathway
         ? adjDb.institutionNarrative.ccTransferPathway : null;
       const adjHasCC = adjCC && adjCC.hasCCPathway && adjCC.ccFeederNames && adjCC.ccFeederNames.length > 0;
@@ -5573,6 +5605,19 @@ function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPi
     html += '<div class="cs-section-label">' + label + '</div>';
     groups[label].forEach(function(s) {
       var bullets = [s.bullet1, s.bullet2].filter(Boolean);
+      // Add trajectory fit note if available
+      var _dbEcs = getDbV5Entry(s.name);
+      var _trajPcs = _dbEcs && _dbEcs.trajectoryProfile ? _dbEcs.trajectoryProfile : null;
+      if(LS_STATE.trajectoryResolved && _trajPcs) {
+        var _scoreMap = {LEAVE_STAY_GONE:_trajPcs.leaverScore,LEAVE_COME_BACK:_trajPcs.returnerScore,STEWARD:_trajPcs.stewardScore,NAVIGATOR:_trajPcs.navigatorScore};
+        var _sc = _scoreMap[LS_STATE.trajectoryResolved] || 0;
+        if(_sc >= 65 && _trajPcs.alumniDispersalPattern) bullets.push(_trajPcs.alumniDispersalPattern + ' alumni dispersal');
+      }
+      // Add CC pathway if available
+      var _ccCs = _dbEcs && _dbEcs.institutionNarrative && _dbEcs.institutionNarrative.ccTransferPathway ? _dbEcs.institutionNarrative.ccTransferPathway : null;
+      if(_ccCs && _ccCs.hasCCPathway && _ccCs.ccFeederNames && _ccCs.ccFeederNames.length) {
+        bullets.push('Pathway Hack: ' + _ccCs.ccFeederNames[0] + ' → ' + s.name + (_ccCs.estimatedSavingsRange ? ' (' + _ccCs.estimatedSavingsRange + ' savings)' : ''));
+      }
       html += '<div class="cs-school-entry">';
       html += '<div class="cs-school-name">' + s.name + '</div>';
       if(bullets.length) {
@@ -5602,6 +5647,46 @@ function showPrintTrigger() {
   if(bar) bar.style.display = 'block';
 }
 // ─────────────────────────────────────────────────────────────────────────────
+
+
+// ── UNIVERSITY_DB_V5 Name Resolver ───────────────────────────────────────────
+// Maps UNIVERSITY_CONTENT names and callD school names → UNIVERSITY_DB_V5 keys
+var _DB_V5_ALIAS = {
+  'UC Berkeley': 'University of California, Berkeley',
+  'UCLA': 'University of California, Los Angeles',
+  'USC': 'University of Southern California',
+  'UT Austin': 'The University of Texas at Austin',
+  'SMU': 'Southern Methodist University',
+  'TCU': 'Texas Christian University',
+  'UC Riverside': 'University of California, Riverside',
+  'UC San Diego': 'University of California, San Diego',
+  'UC Santa Barbara': 'University of California, Santa Barbara',
+  'University of California Santa Cruz': 'University of California, Santa Cruz',
+  'University of California Irvine': 'University of California, Irvine',
+  'Saint Mary's College of California': 'St. Mary's College of California',
+  'University of North Carolina Chapel Hill': 'University of North Carolina at Chapel Hill',
+  'California Polytechnic State University San Luis Obispo': 'Cal Poly San Luis Obispo',
+  'California State University Long Beach': 'California State University, Long Beach',
+  'California State University Fullerton': 'California State University, Fullerton',
+  'University of Nevada Las Vegas': 'University of Nevada, Las Vegas',
+  'University of Nevada Reno': 'University of Nevada, Reno',
+  'University of Maryland College Park': 'University of Maryland',
+  'University of Tennessee at Chattanooga': 'University of Tennessee',
+  'United States Military Academy': 'United States Military Academy West Point',
+};
+
+function getDbV5Entry(schoolName) {
+  if (typeof UNIVERSITY_DB_V5 === 'undefined') return null;
+  // Direct lookup
+  if (UNIVERSITY_DB_V5[schoolName]) return UNIVERSITY_DB_V5[schoolName];
+  // Alias lookup
+  var canonical = _DB_V5_ALIAS[schoolName];
+  if (canonical && UNIVERSITY_DB_V5[canonical]) return UNIVERSITY_DB_V5[canonical];
+  return null;
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
+
 
 </script>
 
