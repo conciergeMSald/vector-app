@@ -1876,7 +1876,8 @@ const LS_STATE = {
   trajectoryPull: null,
   trajectoryAnchor: null,
   trajectoryResolved: null,
-  familiarityRegions: []
+  familiarityRegions: [],
+  _scenarioSchools: []
 };
 
 // ── SCREEN NAV ─────────────────────────────────────
@@ -2237,7 +2238,12 @@ function renderTileGrid() {
   eqGrid.innerHTML = '';
 
   // ── Curated initial tile set from orienting answers ──
-  const curatedIds = curateInitialTiles(ORIENT_ANSWERS);
+  // Pass pronoun and grade into curation so gender-weighted tiles surface correctly
+  const curatedIds = curateInitialTiles({
+    ...ORIENT_ANSWERS,
+    pronoun: LS_STATE.pronouns || null,
+    grade: LS_STATE.grade || null
+  });
   _shownTileIds = [...curatedIds];
 
   // ── Render curated activity tiles grouped by cluster ──
@@ -3233,7 +3239,9 @@ YOUR JOB — produce exactly two sections with these exact dividers:
 ---GEO---
 Write two distinct paragraphs.
 PARAGRAPH 1 — Local: Name what is genuinely nearby that connects to this student's profile. Specific neighborhood or employer. One surprising, real connection they likely don't know about. ${ctx.voice==='parent'?`Third person about ${ctx.name}.`:`Second person to ${ctx.name}.`}
-PARAGRAPH 2 — Regional trajectory: ${ctx.regionalIntel ? `This student lives in ${ctx.regionalIntel.name}. Write three separate sections, each on its own line, starting with these EXACT labels on their own line: 'STAY CLOSE:' then 'LEAVE AND RETURN:' then 'LEAVE AND STAY GONE:' — each followed by one paragraph naming the specific school decision and what that path means for this student's career trajectory.${familyLocs.length > 0 ? ` This student also has people in: ${familyLocs.join(', ')}. Where relevant, name how those locations change or expand the Leave and Return or Leave and Stay Gone options.` : ''} Be direct and specific, not generic. Each section stands alone.` : `Name the broader geographic context for this student's career path — where their industry actually concentrates nationally. Write three sections starting with STAY CLOSE:, LEAVE AND RETURN:, LEAVE AND STAY GONE: and what each means for this student.`}
+PARAGRAPH 2 — Regional trajectory: ${ctx.regionalIntel ? `This student lives in ${ctx.regionalIntel.name}. Write three separate sections, each on its own line, starting with these EXACT labels on their own line: 'STAY CLOSE:' then 'LEAVE AND RETURN:' then 'LEAVE AND STAY GONE:' — each followed by: (1) one paragraph of narrative naming the specific geographic path and what it means for this student's career trajectory, then (2) exactly 1-2 specific school recommendations for that scenario in this EXACT format on separate lines:
+SCHOOL: [Full University Name] | WHY: [One sentence — why this school fits this specific scenario for this specific student. Name the geography and the career pipeline explicitly.]
+${familyLocs.length > 0 ? `This student also has people in: ${familyLocs.join(', ')}. Where relevant, name how those locations change or expand the Leave and Return or Leave and Stay Gone options and surface schools near those geographies.` : ''} Be direct and specific, not generic. Each section stands alone. The SCHOOL lines are mandatory — every scenario must include at least one school recommendation.` : `Name the broader geographic context for this student's career path — where their industry actually concentrates nationally. Write three sections starting with STAY CLOSE:, LEAVE AND RETURN:, LEAVE AND STAY GONE: — each with narrative and at least one SCHOOL: [Name] | WHY: [sentence] line.`}
 
 ${(()=>{
   try {
@@ -3417,6 +3425,7 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       campus_size_pref: COLLEGE_PREFS.campus_scale                                                || '',
       state_pref:       Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(', ') : (COLLEGE_PREFS.regions || ''),
       faith_pref:       COLLEGE_PREFS.religion                                                    || '',
+    faith_is_jewish:  ['jewish','jewish_community'].includes(COLLEGE_PREFS.religion),
       pref_3out3in:     COLLEGE_PREFS.state_pref                                                  || '',
       worlds_chosen:    Array.isArray(LS_STATE.worlds_chosen) ? LS_STATE.worlds_chosen.join(', ') : '',
       specific_career:  (profile._meta && profile._meta.topNAICS)                                 || '',
@@ -3878,6 +3887,10 @@ College preferences: ${prefSummary || 'Open'}
 Combination unlocks fired: ${ctx.comboSummary || 'none'}
 ${ctx.trajectoryResolved ? `LIFE GEOGRAPHY: ${ctx.trajectoryResolved} | Pull: ${ctx.trajectoryPull||'—'} | Anchor: ${ctx.trajectoryAnchor||'—'}${ctx.familiarityRegions&&ctx.familiarityRegions.length?' | Familiarity: '+ctx.familiarityRegions.join(', '):''}
 SCHOOL WEIGHTING: Prefer schools whose alumni dispersal pattern matches the resolved trajectory. LEAVE_STAY_GONE→national/global dispersal. STEWARD→high geographicLockIn near student ZIP. LEAVE_COME_BACK→high returnerScore. NAVIGATOR→strong pipeline to target region. Apply 1.4x weight to schools in familiarityRegions.` : ''}
+${ctx.faith_is_jewish ? `JEWISH COMMUNITY CONTEXT: This student selected Jewish faith/community as important.
+RULE: Do NOT recommend any school with a primarily Christian institutional identity (Catholic, Lutheran, Baptist, Evangelical, Methodist, Presbyterian). This is non-negotiable.
+POSITIVE: Surface schools known for strong Hillel presence, significant Jewish enrollment, or strong Jewish social community. Name the Hillel or Jewish student life infrastructure specifically when it exists. For jewish_community track specifically: acknowledge that Jewish identity can be a source of belonging and connection that the student may carry with them even without formal religious practice — the community aspect is about finding their people.
+INVISIBLE IDENTITY NOTE: Some Jewish students may not have framed their identity explicitly but feel it. Name the community asset warmly, not clinically.` : ''}
 
 MATCHED SCHOOLS (ranked by fit):
 ${matchedSchools.join(', ')}
@@ -3896,7 +3909,7 @@ SCHOOL: [exact school name as listed above]
 MATCH: [one sentence — the single most specific reason this school fits THIS student's Lifescape profile. Reference something real from their tiles, combo unlocks, or preferences. Not generic program quality — a specific connection.]
 WHY: [3 complete sentences. When ARCHETYPE and IDENTITY fields are provided: the first sentence names the archetype and what it means for this specific student. The second connects the OUTCOMES or HIDDEN PATHWAY to something concrete in their tiles. The third opens a next conversation. When only PIPELINE and HIDDEN PATHWAY are provided: use those directly — connect the pipeline or hidden pathway to something specific in the student's tiles or interests. Third sentence opens a concrete next conversation. Never leave a sentence incomplete — if running short on space, write fewer words per sentence but always complete the thought with a period.]
 
-Write all ${Math.min(matchedSchools.length, 5)} schools in this format.
+Write all ${matchedSchools.length} schools in this format. This student selected ${ctx.college_prefs && ctx.college_prefs.regions ? ctx.college_prefs.regions.filter(r=>r!=="anywhere").length : 0} region(s) — the list count reflects depth appropriate to their geographic intent.
 
 ${_longevityD}${_competeD}\n\n── PHILOSOPHY LAYER (always active) ──
 NO HIERARCHY: School recommendations must NEVER imply that the schools not recommended are failures. Every school on the list is there because it fits this student — not because it ranks above some threshold.
@@ -4007,7 +4020,9 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
   const hasCreativeSignal = ['filmmaking','photography','art_drawing','writing_stories',
                               'music_production'].some(t => tiles.includes(t));
   const hasBusinessSignal = ['entrepreneurship','business_startups','fantasy_sports_roster'].some(t => tiles.includes(t));
-  const hasFaithSignal    = faith && faith !== 'no_preference' && faith !== 'secular';
+  const hasFaithSignal         = faith && faith !== 'no_preference' && faith !== 'secular';
+  const hasChristianFaithSignal = hasFaithSignal && !['jewish','jewish_community'].includes(faith);
+  const hasJewishFaithSignal    = faith === 'jewish' || faith === 'jewish_community';
   const hasEnviroSignal   = naics.some(n => [71, 11, 21].includes(n)) ||
                              ['outdoor_activities','animal_care','science_experiments'].filter(t => tiles.includes(t)).length >= 2;
 
@@ -4019,17 +4034,17 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
     'The Unconventional Public College':        hasCreativeSignal || hasServiceSignal,
     'The Cultural Capital Liberal Arts College': hasCreativeSignal || hasMusicSignal,
     'The Global Citizenship College':           hasGlobalSignal || hasServiceSignal,
-    'The Great Books Catholic College':         hasHistorySignal && hasFaithSignal,
-    'The Reformed Intellectual University':     hasHistorySignal && hasFaithSignal,
-    'The Adventist Flagship University':        hasServiceSignal && hasFaithSignal,
-    'The Adventist Health Sciences University': hasBodySignal && hasFaithSignal,
-    'The Evangelical Ivy':                      hasFaithSignal && (hasHistorySignal || hasBusinessSignal),
-    'The West Coast Evangelical Gateway':       hasFaithSignal && hasCreativeSignal,
-    'The New England Evangelical Liberal Arts College': hasFaithSignal,
-    'The Conservative Christian Career Preparation University': hasFaithSignal,
-    'The Premier Lutheran Liberal Arts College': hasMusicSignal || hasFaithSignal,
-    'The Professional Lutheran University':     hasFaithSignal && hasBusinessSignal,
-    'The Regional Lutheran Standout':           hasFaithSignal,
+    'The Great Books Catholic College':         hasHistorySignal && hasChristianFaithSignal,
+    'The Reformed Intellectual University':     hasHistorySignal && hasChristianFaithSignal,
+    'The Adventist Flagship University':        hasServiceSignal && hasChristianFaithSignal,
+    'The Adventist Health Sciences University': hasBodySignal && hasChristianFaithSignal,
+    'The Evangelical Ivy':                      hasChristianFaithSignal && (hasHistorySignal || hasBusinessSignal),
+    'The West Coast Evangelical Gateway':       hasChristianFaithSignal && hasCreativeSignal,
+    'The New England Evangelical Liberal Arts College': hasChristianFaithSignal,
+    'The Conservative Christian Career Preparation University': hasChristianFaithSignal,
+    'The Premier Lutheran Liberal Arts College': hasMusicSignal || hasChristianFaithSignal,
+    'The Professional Lutheran University':     hasChristianFaithSignal && hasBusinessSignal,
+    'The Regional Lutheran Standout':           hasChristianFaithSignal,
     'The Leadership-Accelerated Liberal Arts College': hasBusinessSignal || riasec.includes('E'),
     'The Elite Mississippi Network College':    riasec.includes('E') || riasec.includes('S'),
     'The Academic LAC of Arkansas':             hasHistorySignal || riasec.includes('I'),
@@ -4064,18 +4079,33 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
     }
 
     // Faith bonus
-    if (hasFaithSignal && school.faith_tradition) {
-      var faithMap = {
-        catholic: 'catholic', evangelical: 'evangelical', methodist: 'methodist',
-        baptist: 'baptist', lutheran: 'lutheran', presbyterian: 'presbyterian',
-        quaker: 'quaker', 'seventh_day_adventist': 'seventh_day_adventist',
-        lds: 'lds', reformed: 'reformed', episcopal: 'episcopal',
-        church_of_christ: 'church_of_christ'
+    // Faith tradition boost — denomination-specific, never cross-tradition
+    if (hasChristianFaithSignal && school.faith_tradition) {
+      // Only boost if school's tradition matches student's denomination
+      var faithKeywords = {
+        catholic: ['catholic','jesuit','augustinian','dominican'],
+        evangelical: ['evangelical','christian'],
+        methodist: ['methodist','wesleyan'],
+        baptist: ['baptist'],
+        lutheran: ['lutheran'],
+        presbyterian: ['presbyterian','reformed'],
+        quaker: ['quaker','friends'],
+        seventh_day_adventist: ['adventist'],
+        lds: ['latter','lds'],
+        reformed: ['reformed','calvinist'],
+        episcopal: ['episcopal','anglican'],
+        church_of_christ: ['church of christ']
       };
-      if (school.faith_tradition.toLowerCase().includes(faith.toLowerCase()) ||
-          faith.toLowerCase().includes(school.faith_tradition.toLowerCase().split(' ')[0])) {
+      var keywords = faithKeywords[faith] || [faith.toLowerCase()];
+      var tradLower = school.faith_tradition.toLowerCase();
+      if (keywords.some(function(k) { return tradLower.includes(k); })) {
         score += 5;
       }
+    }
+    if (hasJewishFaithSignal && school.hillel_strength) {
+      // Boost schools with strong Hillel for Jewish students
+      var hillelBoost = {strong:8, 'very strong':10, moderate:4, active:4};
+      score += hillelBoost[school.hillel_strength.toLowerCase()] || 2;
     }
 
     // RIASEC alignment via best_fit_personality
@@ -4233,6 +4263,12 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       ? `<div class="card-cc-note"><strong style="color:var(--gold);font-weight:600;">Pathway Hack</strong> — ${_ccFeeders} → ${s.name}${_ccTxRate ? ` (Transfer: ${_ccTxRate} vs Freshman: ${_ccFrRate})` : ''}${_ccSavings ? `. Estimated savings: ${_ccSavings}.` : ''}</div>`
       : '';
 
+    // Hillel note for Jewish track students
+    const _isJewishStudent = typeof COLLEGE_PREFS !== 'undefined' && ['jewish','jewish_community'].includes(COLLEGE_PREFS.religion || '');
+    const _hillelNote = (_isJewishStudent && typeof HILLEL_QUALITY !== 'undefined' && HILLEL_QUALITY[s.name])
+      ? `<div class="card-cc-note" style="border-top-color:rgba(139,107,60,0.3);"><strong style="color:#8B7355;">Jewish Community</strong> — ${HILLEL_QUALITY[s.name]}</div>`
+      : '';
+
     // ── Trajectory fit note from resolved trajectory ──
     const _trajProfile = _dbEntry && _dbEntry.trajectoryProfile ? _dbEntry.trajectoryProfile : null;
     const _trajNote = (LS_STATE.trajectoryResolved && _trajProfile)
@@ -4269,6 +4305,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       ${footerContent ? `<div class="card-traj-note">${footerContent}</div>` : ''}
       ${_trajNote ? `<div class="card-traj-note" style="margin-top:4px;">${_trajNote}</div>` : ''}
       ${_ccNote}
+      ${_hillelNote}
     </div>`;
   }).join('');
 
@@ -4664,13 +4701,45 @@ async function submitLifescape() {
           type: profile.gpa_type,
           normalized: profile.gpa_normalized
         } : null;
-        const matchedSchools = matchUniversities(
-          profile.college_prefs,
+        // ── Region-driven school count rule ──
+        const _regions = Array.isArray(profile.college_prefs && profile.college_prefs.regions)
+          ? profile.college_prefs.regions.filter(r => r !== 'anywhere') : [];
+        const _anywhereSelected = (profile.college_prefs && profile.college_prefs.regions || []).includes('anywhere');
+        const _regionCount = _anywhereSelected ? 99 : _regions.length;
+        const _schoolCount = _regionCount <= 0 ? 3
+          : _regionCount === 1 ? 3
+          : _regionCount === 2 ? 4
+          : _regionCount === 3 ? 5
+          : 6; // 4+ regions or anywhere → 6
+
+        // For Jewish tracks: use extended pool to override v3.js's thin 8-school pool
+        var _faithPref = profile.college_prefs && profile.college_prefs.religion;
+        var _isJewishTrack = _faithPref === 'jewish' || _faithPref === 'jewish_community';
+        var _collegePrefsForMatch = profile.college_prefs;
+        if (_isJewishTrack && typeof JEWISH_POOL_EXTENDED !== 'undefined') {
+          // Temporarily set religion to no_preference so v3.js doesn't hard-filter
+          // We apply the Jewish pool ourselves via scoring
+          _collegePrefsForMatch = Object.assign({}, profile.college_prefs, { religion: 'no_preference' });
+        }
+
+        var _rawMatches = matchUniversities(
+          _collegePrefsForMatch,
           profile.riasec,
           profile.naicsSectors,
           profile.comboUnlocks,
           gpaData
-        ).slice(0, 12);
+        );
+
+        // For Jewish tracks: re-sort to prefer schools in the extended Jewish pool
+        if (_isJewishTrack && typeof JEWISH_POOL_EXTENDED !== 'undefined') {
+          var _jewishPool = JEWISH_POOL_EXTENDED[_faithPref] || JEWISH_POOL_EXTENDED.jewish_community;
+          // Boost Jewish-pool schools to top, keep others for breadth
+          var _inPool = _rawMatches.filter(function(s) { return _jewishPool.includes(s); });
+          var _notInPool = _rawMatches.filter(function(s) { return !_jewishPool.includes(s); });
+          _rawMatches = _inPool.concat(_notInPool);
+        }
+
+        const matchedSchools = _rawMatches.slice(0, Math.max(12, _schoolCount * 2));
 
         console.log('[callD] matchedSchools:', matchedSchools.slice(0,5));
         console.log('[callD] UNIVERSITY_CONTENT keys sample:', Object.keys(UNIVERSITY_CONTENT).slice(0,3));
@@ -4684,8 +4753,9 @@ async function submitLifescape() {
         console.log('[callD] schoolContent sample:', schoolContent[0]?.name);
 
         if(schoolContent.length >= 3) {
+          const _promptCount = Math.min(schoolContent.length, _schoolCount + 2);
           const schoolContentBlock = typeof formatSchoolsForPrompt !== 'undefined'
-            ? formatSchoolsForPrompt(schoolContent.slice(0, 7))
+            ? formatSchoolsForPrompt(schoolContent.slice(0, _promptCount))
             : schoolContent.map(s => `${s.name}: ${s.hidden_pathway}`).join('\n\n');
 
           console.log('[callD] prompt block length:', schoolContentBlock.length);
@@ -4698,7 +4768,7 @@ async function submitLifescape() {
           var callDData = [];
           var adjacentPicks = [];
           var profileAdjacentPicks = [];
-          const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0,5), schoolContentBlock);
+          const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0, _schoolCount), schoolContentBlock);
           console.log('[callD] firing Claude, prompt length:', callDPrompt.length);
 
           const callDText = await fireCall(callDPrompt, 3000, 0, 55000);
@@ -4755,10 +4825,11 @@ async function submitLifescape() {
 
             // Render Under the Radar picks
             var radarPicks = getUnderTheRadarPicks(profile, matchedSchools);
+            console.log('[callD] regionCount:', _regionCount, 'schoolCount:', _schoolCount, 'returned:', callDData.length);
             if (radarPicks.length > 0) renderUnderTheRadar(radarPicks);
 
             // Build compiled school sheet and show print trigger
-            buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPicks, radarPicks);
+            buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPicks, radarPicks, LS_STATE._scenarioSchools || []);
             showPrintTrigger();
           } else {
             console.warn('[callD] parseCallD returned 0 schools — check raw response format');
@@ -4992,33 +5063,114 @@ function renderFullReport(profile, callAData, callBData, callCData) {
         if(el) el.style.display = '';
       }
 
+      // ── Parse SCHOOL: | WHY: lines from each scenario block ──
+      function parseScenarioSchools(scenarioText) {
+        var schools = [];
+        var lines = (scenarioText || '').split('\n');
+        lines.forEach(function(line) {
+          var m = line.match(/SCHOOL:\s*([^|]+)\|\s*WHY:\s*(.+)/i);
+          if (m) {
+            schools.push({ name: m[1].trim(), why: m[2].trim() });
+          }
+        });
+        return schools;
+      }
+
+      // Strip SCHOOL: lines from prose (so prose stays clean)
+      function stripSchoolLines(text) {
+        return (text || '').split('\n')
+          .filter(function(l) { return !/^SCHOOL:/i.test(l.trim()); })
+          .join('\n').trim();
+      }
+
+      // Build a scenario school card (uni-card style)
+      function buildScenarioSchoolCard(school, scenarioLabel) {
+        var dbEntry = getDbV5Entry(school.name);
+        var ucEntry = (typeof UNIVERSITY_CONTENT !== 'undefined') ? UNIVERSITY_CONTENT[school.name] : null;
+        var location = (dbEntry && dbEntry.institutionNarrative && dbEntry.institutionNarrative.location)
+          || (ucEntry && ucEntry.location) || '';
+        var archetype = (dbEntry && dbEntry.institutionNarrative && dbEntry.institutionNarrative.archetype)
+          || (ucEntry && ucEntry.archetype) || '';
+        var ccPath = dbEntry && dbEntry.institutionNarrative && dbEntry.institutionNarrative.ccTransferPathway;
+        var hasCCPath = ccPath && ccPath.hasCCPathway && ccPath.ccFeederNames && ccPath.ccFeederNames.length > 0;
+        var ccNote = hasCCPath
+          ? '<div class="card-cc-note"><strong style="color:var(--gold);font-weight:600;">Pathway Hack</strong> — '
+            + ccPath.ccFeederNames.slice(0,2).join(', ') + ' → ' + school.name
+            + (ccPath.estimatedSavingsRange ? '. Savings: ' + ccPath.estimatedSavingsRange + '.' : '') + '</div>'
+          : '';
+        return '<div class="uni-card" style="margin-top:16px;">'
+          + '<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">'
+          + '<div>'
+          + (archetype ? '<div class="card-eyebrow">' + archetype + '</div>' : '')
+          + '<div class="card-name uni-name uni-name--headline">' + school.name + '</div>'
+          + (location ? '<div style="font-size:var(--type-meta);color:var(--ink4);margin-top:2px;">' + location + '</div>' : '')
+          + '</div>'
+          + '<div style="font-size:var(--type-meta);letter-spacing:1.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);padding-top:4px;">' + scenarioLabel + '</div>'
+          + '</div>'
+          + '<div class="card-narrative">' + school.why + '</div>'
+          + ccNote
+          + '</div>';
+      }
+
+      // Parse schools out of each scenario
+      var stayCloseSchools   = parseScenarioSchools(stayClose);
+      var leaveReturnSchools = parseScenarioSchools(leaveReturn);
+      var leaveGoneSchools   = parseScenarioSchools(leaveGone);
+
+      // Clean prose (no SCHOOL: lines)
+      var stayCloseProse   = stripSchoolLines(stayClose);
+      var leaveReturnProse = stripSchoolLines(leaveReturn);
+      var leaveGoneProse   = stripSchoolLines(leaveGone);
+
+      // Build school card HTML per scenario
+      function buildScenarioCardsHtml(schools, label) {
+        return schools.map(function(s) { return buildScenarioSchoolCard(s, label); }).join('');
+      }
+
+      // Render prose + school cards into each container
+      function renderScenarioContainer(elId, prose, schools, label) {
+        var el = document.getElementById(elId);
+        if (!el) return;
+        el.innerHTML = '';
+        if (prose) {
+          var p = document.createElement('p');
+          p.style.cssText = 'margin:0 0 12px 0;font-size:var(--type-body);color:var(--ink2);line-height:1.65;';
+          p.textContent = prose;
+          el.appendChild(p);
+        }
+        if (schools.length) {
+          var cardsDiv = document.createElement('div');
+          cardsDiv.innerHTML = buildScenarioCardsHtml(schools, label);
+          el.appendChild(cardsDiv);
+        }
+      }
+
       if(stayClose) {
-        // Tab 2 (In Full)
-        safeSetText('full-geo-stay-close', stayClose);
         safeShow('geo-stay-close-section');
-        // Tab 3 (Where You May Fit)
-        safeSetText('traj-body-stay-close-tab3', stayClose);
-        // Tab 4 (Counselor View)
-        safeSetText('traj-body-stay-close-counselor', stayClose);
+        renderScenarioContainer('full-geo-stay-close',   stayCloseProse, stayCloseSchools,   'Stay Close');
+        renderScenarioContainer('traj-body-stay-close-tab3',      stayCloseProse, stayCloseSchools,   'Stay Close');
+        renderScenarioContainer('traj-body-stay-close-counselor', stayCloseProse, stayCloseSchools,   'Stay Close');
       }
       if(leaveReturn) {
-        // Tab 2
-        safeSetText('full-geo-leave-return', leaveReturn);
         safeShow('geo-leave-return-section');
-        // Tab 3
-        safeSetText('traj-body-leave-return-tab3', leaveReturn);
-        // Tab 4
-        safeSetText('traj-body-leave-return-counselor', leaveReturn);
+        renderScenarioContainer('full-geo-leave-return',   leaveReturnProse, leaveReturnSchools,   'Leave & Return');
+        renderScenarioContainer('traj-body-leave-return-tab3',      leaveReturnProse, leaveReturnSchools,   'Leave & Return');
+        renderScenarioContainer('traj-body-leave-return-counselor', leaveReturnProse, leaveReturnSchools,   'Leave & Return');
       }
       if(leaveGone) {
-        // Tab 2
-        safeSetText('full-geo-leave-gone', leaveGone);
         safeShow('geo-leave-gone-section');
-        // Tab 3
-        safeSetText('traj-body-leave-gone-tab3', leaveGone);
-        // Tab 4
-        safeSetText('traj-body-leave-gone-counselor', leaveGone);
+        renderScenarioContainer('full-geo-leave-gone',   leaveGoneProse, leaveGoneSchools,   'Leave & Stay Gone');
+        renderScenarioContainer('traj-body-leave-gone-tab3',      leaveGoneProse, leaveGoneSchools,   'Leave & Stay Gone');
+        renderScenarioContainer('traj-body-leave-gone-counselor', leaveGoneProse, leaveGoneSchools,   'Leave & Stay Gone');
       }
+
+      // Collect all scenario schools for compiled sheet
+      LS_STATE._scenarioSchools = [
+        ...stayCloseSchools.map(function(s) { return {name:s.name, label:'Stay Close', bullet1:s.why, bullet2:''}; }),
+        ...leaveReturnSchools.map(function(s) { return {name:s.name, label:'Leave & Return', bullet1:s.why, bullet2:''}; }),
+        ...leaveGoneSchools.map(function(s) { return {name:s.name, label:'Leave & Stay Gone', bullet1:s.why, bullet2:''}; })
+      ];
+
       // Show Tab 3 and Tab 4 trajectory sections if any scenario populated
       if(stayClose || leaveReturn || leaveGone) {
         safeShow('traj-scenarios-tab3');
@@ -5528,7 +5680,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 // ── COMPILED SCHOOL SHEET ────────────────────────────────────────────────────
-function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPicks, radarPicks) {
+function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPicks, radarPicks, scenarioSchools) {
   // Aggregate all schools from all sources
   var allSchools = [];
 
@@ -5582,6 +5734,24 @@ function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPi
     });
   }
 
+  // Scenario schools (Stay Close / Leave & Return / Leave & Stay Gone)
+  if(scenarioSchools && scenarioSchools.length) {
+    scenarioSchools.forEach(function(s) {
+      // Only add if not already in list
+      var alreadyIn = allSchools.some(function(a) {
+        return a.name.toLowerCase() === (s.name || '').toLowerCase();
+      });
+      if (!alreadyIn) {
+        allSchools.push({
+          name: s.name,
+          label: s.label || 'Scenario Match',
+          bullet1: s.bullet1 || 'Geographic scenario match',
+          bullet2: ''
+        });
+      }
+    });
+  }
+
   // Populate header
   var nameEl = document.getElementById('cs-student-name');
   var dateEl = document.getElementById('cs-date');
@@ -5599,7 +5769,7 @@ function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPi
   });
 
   var html = '';
-  var labelOrder = ['Primary Match','Adjacent Match','Counselor Pick','Under the Radar'];
+  var labelOrder = ['Primary Match','Adjacent Match','Counselor Pick','Under the Radar','Stay Close','Leave & Return','Leave & Stay Gone'];
   labelOrder.forEach(function(label) {
     if(!groups[label] || !groups[label].length) return;
     html += '<div class="cs-section-label">' + label + '</div>';
@@ -5649,6 +5819,83 @@ function showPrintTrigger() {
 // ─────────────────────────────────────────────────────────────────────────────
 
 
+
+// ── Jewish / Hillel Community School Pool ────────────────────────────────────
+// Two tracks:
+// jewish           = student wants substantive Jewish campus life / Hillel / observance infrastructure
+// jewish_community = student wants strong Jewish social presence without religious structure
+// These pools are used to OVERRIDE and EXTEND the lifescape_college_prefs_v3.js jewish pool
+// which only contains 8 elite schools
+
+var JEWISH_POOL_EXTENDED = {
+  // Track A: jewish — Hillel presence + Jewish campus life infrastructure
+  jewish: [
+    // Ivies + elite (strong Hillel, large Jewish enrollment)
+    'Columbia University','University of Pennsylvania','Brown University',
+    'Cornell University','Harvard University','Yale University','Dartmouth College',
+    // Near-Ivies + top universities
+    'George Washington University','Brandeis University','American University',
+    'New York University','Tulane University','University of Maryland College Park',
+    'University of Michigan','Boston University','Tufts University',
+    'University of Wisconsin-Madison','University of Florida',
+    'Indiana University','Ohio State University','University of Michigan',
+    'Emory University','University of Illinois Urbana-Champaign',
+    // Strong regional flagships with active Hillel
+    'Rutgers University','University of Massachusetts Amherst',
+    'University of Connecticut','University of Pittsburgh',
+    'University of Colorado Boulder','University of Arizona',
+    'University of Southern California','UC Berkeley',
+    'UC Los Angeles','UC San Diego','UC Santa Barbara',
+    'University of Texas at Austin','University of Minnesota',
+    // Liberal arts with strong Jewish communities
+    'Vassar College','Oberlin College','Bard College',
+    'Brandeis University','University of Vermont',
+    'Skidmore College','Hampshire College',
+    // Business-strong with Jewish community
+    'Syracuse University','Binghamton University',
+    'University of Delaware','Hofstra University'
+  ],
+
+  // Track B: jewish_community — strong Jewish social presence, secular environment
+  // Student wants to find their people without needing formal religious structure
+  jewish_community: [
+    // Cities with dense Jewish student populations — community exists off-campus
+    'New York University','Columbia University','Boston University',
+    'University of Pennsylvania','George Washington University',
+    'American University','Tulane University','University of Miami',
+    'University of Michigan','Ohio State University','University of Maryland College Park',
+    'University of Wisconsin-Madison','University of Minnesota',
+    'UC Berkeley','UCLA','UC San Diego','UC Santa Barbara',
+    'University of Illinois Urbana-Champaign','Indiana University',
+    'Rutgers University','University of Massachusetts Amherst',
+    'University of Pittsburgh','University of Florida',
+    'University of Colorado Boulder','Arizona State University',
+    'University of Arizona','University of Texas at Austin',
+    'Northeastern University','Syracuse University','Binghamton University',
+    'Brandeis University','Emory University','University of Vermont'
+  ]
+};
+
+// Hillel quality ratings for display in school cards (counselor context)
+var HILLEL_QUALITY = {
+  'Brandeis University': 'Very Strong — Jewish-founded institution, 40%+ Jewish enrollment',
+  'Columbia University': 'Very Strong — Kraft Center for Jewish Student Life, 25% Jewish enrollment',
+  'University of Pennsylvania': 'Very Strong — Hillel of Greater Philadelphia, 25%+ Jewish enrollment',
+  'George Washington University': 'Very Strong — active Hillel with kosher dining and Shabbat programming',
+  'University of Michigan': 'Very Strong — Hillel of Greater Ann Arbor, one of the largest in the country',
+  'University of Maryland College Park': 'Very Strong — Clarice Smith Hillel, consistently ranked top-5 nationally',
+  'Indiana University': 'Very Strong — IU Hillel, frequently ranked #1 Hillel in America by Hillel International',
+  'Ohio State University': 'Strong — Hillel at OSU, large Jewish community in Columbus',
+  'University of Florida': 'Strong — Hillel at UF, significant Jewish community in Gainesville',
+  'University of Wisconsin-Madison': 'Strong — Hillel of Madison, active programming',
+  'University of Illinois Urbana-Champaign': 'Strong — Illini Hillel, substantial Jewish community',
+  'Tulane University': 'Strong — Tulane Hillel, active Jewish community in New Orleans',
+  'Emory University': 'Strong — Emory Hillel, Atlanta Jewish community connection',
+  'American University': 'Strong — AU Hillel, DC Jewish community access',
+  'New York University': 'Strong — NYU Hillel, NYC Jewish community access'
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
 // ── UNIVERSITY_DB_V5 Name Resolver ───────────────────────────────────────────
 // Maps UNIVERSITY_CONTENT names and callD school names → UNIVERSITY_DB_V5 keys
 var _DB_V5_ALIAS = {
@@ -5663,7 +5910,7 @@ var _DB_V5_ALIAS = {
   'UC Santa Barbara': 'University of California, Santa Barbara',
   'University of California Santa Cruz': 'University of California, Santa Cruz',
   'University of California Irvine': 'University of California, Irvine',
-  'Saint Mary's College of California': 'St. Mary's College of California',
+  "Saint Mary's College of California": "St. Mary's College of California",
   'University of North Carolina Chapel Hill': 'University of North Carolina at Chapel Hill',
   'California Polytechnic State University San Luis Obispo': 'Cal Poly San Luis Obispo',
   'California State University Long Beach': 'California State University, Long Beach',
