@@ -688,13 +688,92 @@ const RELIGIOUS_AFFILIATION = {
     'Andrews University','Walla Walla University','Southern Adventist University'
   ],
 
-  // ── JEWISH (strong Hillel + historically significant) ────────────────────
+  // ── JEWISH — Track A: institutional Hillel + campus Jewish life ─────────
+  // Student wants active Hillel, Shabbat programming, kosher options,
+  // Jewish Studies courses, significant Jewish enrollment on campus.
+  // Sorted by Hillel strength — strongest first.
   jewish: [
-    'Brandeis University',
-    'Columbia University','University of Pennsylvania','Brown University',
-    'Cornell University','George Washington University',
-    'American University','New York University','Tulane University',
+    // Tier 1: Dominant Hillel presence, 20%+ Jewish enrollment
+    'Brandeis University',             // Jewish-founded, 40%+ Jewish enrollment
+    'Indiana University',              // IU Hillel — frequently ranked #1 nationally
+    'University of Maryland College Park', // Clarice Smith Hillel — top-5 nationally
+    'University of Michigan',          // Hillel of Greater Ann Arbor — flagship scale
+    'Columbia University',
+    'University of Pennsylvania',
+    'Brown University',
+    'Cornell University',
+    // Tier 2: Strong Hillel, 10-20% Jewish enrollment
+    'George Washington University',
+    'American University',
+    'New York University',
+    'Tulane University',
+    'Emory University',
+    'University of Florida',
+    'Ohio State University',
+    'University of Wisconsin-Madison',
+    'University of Illinois Urbana-Champaign',
+    'Boston University',
+    'Tufts University',
+    'University of Massachusetts Amherst',
+    'Rutgers University',
+    'Binghamton University',
+    'Syracuse University',
+    // Tier 3: Active Hillel, Jewish community present
+    'University of Pittsburgh',
+    'University of Colorado Boulder',
+    'University of Arizona',
+    'University of Connecticut',
+    'University of Minnesota',
+    'University of Vermont',
+    'Skidmore College',
+    'Vassar College',
+    'Oberlin College',
     'Yeshiva University'
+  ],
+
+  // ── JEWISH — Track B: strong Jewish social presence, secular environment ──
+  // Student identifies culturally/socially as Jewish but wants a secular campus.
+  // Wants to find their people without needing a formal religious structure.
+  // Prioritizes cities with dense Jewish communities and large Jewish student bodies.
+  jewish_community: [
+    // Major city campuses — Jewish community lives on and off campus
+    'New York University',             // NYC — largest Jewish student population in US
+    'Columbia University',             // NYC — Upper West Side proximity
+    'Boston University',              // Boston — large Jewish metro community
+    'Northeastern University',         // Boston — Jewish student presence
+    'Tufts University',               // Greater Boston
+    'George Washington University',    // DC — active Jewish social scene
+    'American University',            // DC corridor
+    'University of Michigan',          // Ann Arbor — large Jewish community
+    'University of Maryland College Park', // DC suburbs — dense Jewish population
+    'Indiana University',             // Midwest flagship, strong Jewish social culture
+    'Ohio State University',
+    'University of Wisconsin-Madison',
+    'University of Illinois Urbana-Champaign',
+    'University of Minnesota',
+    // Large flagships where Jewish community self-organizes
+    'University of Florida',
+    'University of Arizona',
+    'University of Colorado Boulder',
+    'Rutgers University',
+    'University of Pittsburgh',
+    'University of Connecticut',
+    'Syracuse University',
+    'Binghamton University',
+    // California — large Jewish communities in both metros
+    'UC Berkeley',
+    'UCLA',
+    'UC San Diego',
+    'UC Santa Barbara',
+    'University of Southern California',
+    // Jewish roots in smaller liberal contexts
+    'Vassar College',
+    'Oberlin College',
+    'Brandeis University',
+    'Tulane University',
+    'Emory University',
+    'University of Vermont',
+    'Skidmore College'
   ],
 
   // ── REFORMED CHRISTIAN ───────────────────────────────────────────────────
