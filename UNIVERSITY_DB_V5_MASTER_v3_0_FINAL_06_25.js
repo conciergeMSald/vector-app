@@ -2,77 +2,148 @@
  * VECTOR University Intelligence Database
  * Schema: v5.1 — Full Architecture + MegaRegion Integration + CC Transfer Pathway
  *
- * Schools complete: 67
- * Last assembled:  June 25, 2026
+ * Schools complete: 138
+ * Last assembled:  June 27, 2026
  *
  * School index:
- *     1. Vanderbilt University
- *     2. University of Michigan
- *     3. Indiana University
- *     4. University of Georgia
- *     5. University of Florida
- *     6. University of Oklahoma
- *     7. Louisiana State University
- *     8. Auburn University
- *     9. University of South Carolina
- *    10. Clemson University
- *    11. Biola University
- *    12. Calvin University
- *    13. Gordon College
- *    14. Pepperdine University
- *    15. Wheaton College
- *    16. Baylor University
- *    17. Southern Methodist University
- *    18. Texas Christian University
- *    19. University of Notre Dame
- *    20. Wake Forest University
- *    21. Case Western Reserve University
- *    22. Lehigh University
- *    23. Tulane University
- *    24. University of Richmond
- *    25. Villanova University
- *    26. Georgetown University
- *    27. Northwestern University
- *    28. Rice University
- *    29. University of Southern California
- *    30. Harvard University
- *    31. Massachusetts Institute of Technology
- *    32. Stanford University
- *    33. Washington University in St. Louis
- *    34. Yale University
- *    35. Carnegie Mellon University
- *    36. Princeton University
- *    37. University of California, Berkeley
- *    38. University of Chicago
- *    39. Cornell University
- *    40. Georgia Institute of Technology
- *    41. The University of Texas at Austin
- *    42. University of California, Los Angeles
- *    43. University of Virginia
- *    44. Azusa Pacific University
- *    45. Point Loma Nazarene University
- *    46. Seattle Pacific University
- *    47. Westmont College
- *    48. Emory University
- *    49. Arizona State University
- *    50. University of Colorado Boulder
- *    51. Colorado Christian University
- *    52. Colorado School of Mines
- *    53. Colorado College
- *    54. Colorado State University
- *    55. University of Denver
- *    56. Fort Lewis College
- *    57. Regis University
- *    58. University of Colorado Colorado Springs
- *    59. University of Northern Colorado
- *    60. University of Utah
- *    61. United States Air Force Academy
- *    62. Western Colorado University
- *    63. Lewis & Clark College
- *    64. University of Montana Western
- *    65. Southern Oregon University
- *    66. Prescott College
- *    67. Northern Arizona University
+ *      1. UNC Chapel Hill
+ *      2. University of Montana
+ *      3. Montana State University
+ *      4. University of Wyoming
+ *      5. North Dakota State University
+ *      6. South Dakota State University
+ *      7. United States Naval Academy
+ *      8. United States Military Academy West Point
+ *      9. The Citadel
+ *     10. United States Coast Guard Academy
+ *     11. United States Merchant Marine Academy
+ *     12. Old Dominion University
+ *     13. Virginia Military Institute
+ *     14. United States Marine Corps University
+ *     15. University of North Georgia
+ *     16. Norwich University
+ *     17. Marion Military Institute
+ *     18. University of New Hampshire
+ *     19. Keene State College
+ *     20. University of Vermont
+ *     21. University of Maine
+ *     22. University at Buffalo
+ *     23. Union College
+ *     24. University of Nevada, Reno
+ *     25. Montana Technological University
+ *     26. Carroll College
+ *     27. Rocky Mountain College
+ *     28. Utah State University
+ *     29. Weber State University
+ *     30. Utah Valley University
+ *     31. Brigham Young University
+ *     32. University of North Dakota
+ *     33. University of Texas Permian Basin
+ *     34. Abilene Christian University
+ *     35. Cedarville University
+ *     36. DePauw University
+ *     37. Millsaps College
+ *     38. Hendrix College
+ *     39. Rhodes College
+ *     40. St. Olaf College
+ *     41. Valparaiso University
+ *     42. Augustana College
+ *     43. California Lutheran University
+ *     44. Centre College
+ *     45. Haverford College
+ *     46. Earlham College
+ *     47. Andrews University
+ *     48. Saint Augustine's University
+ *     49. Thomas Aquinas College
+ *     50. Loma Linda University
+ *     51. University of California, Merced
+ *     52. University of California, Riverside
+ *     53. Chapman University
+ *     54. San Diego State University
+ *     55. University of California, Irvine
+ *     56. University of Nevada, Las Vegas
+ *     57. Syracuse University
+ *     58. University of Rochester
+ *     59. Binghamton University
+ *     60. University of Arizona
+ *     61. Arizona State University
+ *     62. University of Texas at San Antonio
+ *     63. Trinity University
+ *     64. University of Oregon
+ *     65. Reed College
+ *     66. Portland State University
+ *     67. University of Washington
+ *     68. Eastern Washington University
+ *     69. Washington State University
+ *     70. Gonzaga University
+ *     71. Seattle University
+ *     72. University of Puget Sound
+ *     73. University of Kansas
+ *     74. Wichita State University
+ *     75. Boston University
+ *     76. Georgia State University
+ *     77. University of Louisville
+ *     78. Butler University
+ *     79. Indiana State University
+ *     80. Kansas State University
+ *     81. Iowa State University
+ *     82. West Virginia University
+ *     83. Marshall University
+ *     84. Oklahoma State University
+ *     85. University of Central Florida
+ *     86. University of Miami
+ *     87. Florida Atlantic University
+ *     88. University of South Florida
+ *     89. Stetson University
+ *     90. Florida State University
+ *     91. Florida A&M University
+ *     92. Savannah College of Art and Design
+ *     93. University of Alabama
+ *     94. University of Maryland
+ *     95. Ohio State University
+ *     96. Penn State University
+ *     97. Michigan State University
+ *     98. University of Illinois Urbana-Champaign
+ *     99. University of Wisconsin-Madison
+ *    100. Duke University
+ *    101. University of Pennsylvania
+ *    102. Brown University
+ *    103. Columbia University
+ *    104. Dartmouth College
+ *    105. University of Connecticut
+ *    106. University of Massachusetts Amherst
+ *    107. Drexel University
+ *    108. Temple University
+ *    109. Rutgers University
+ *    110. University of Pittsburgh
+ *    111. Virginia Tech
+ *    112. University of Tennessee
+ *    113. Texas A&M University
+ *    114. University of Arkansas
+ *    115. University of Missouri
+ *    116. University of Nebraska-Lincoln
+ *    117. University of Iowa
+ *    118. University of North Carolina at Chapel Hill
+ *    119. Cal Poly San Luis Obispo
+ *    120. California State University, Long Beach
+ *    121. California State University, Fullerton
+ *    122. San Jose State University
+ *    123. University of California, Santa Barbara
+ *    124. University of California, Santa Cruz
+ *    125. University of California, San Diego
+ *    126. University of Minnesota
+ *    127. Texas Tech University
+ *    128. University of North Texas
+ *    129. University of Tulsa
+ *    130. University of New Mexico
+ *    131. Berklee College of Music
+ *    132. Fashion Institute of Technology
+ *    133. Pratt Institute
+ *    134. Franklin and Marshall College
+ *    135. Occidental College
+ *    136. California State University San Bernardino
+ *    137. University of Alaska Fairbanks
+ *    138. Barnard College
  */
 
 const UNIVERSITY_DB_V5 = {
@@ -62343,7 +62414,11 @@ module.exports = University_of_Arkansas;
   // INSTITUTIONAL MOAT
   // =====================================================
 
-  institutionalMoat: {
+  hillel_strength: "tier_2",
+  jewish_enrollment: "~5-7% Jewish undergraduate enrollment",
+  hillel_note: "Mizzou has one of the oldest Hillel chapters in the country and an active Jewish community with prominent Jewish Greek life. Kansas City's Jewish community (~20,000) provides regional infrastructure. Important context: Mizzou has documented antisemitism incidents in its recent history — Jewish families should ask specific questions about current campus climate. The Hillel community is genuine; the campus context deserves honest inquiry.",
+
+    institutionalMoat: {
 
     prestigeMoat: 74,
     networkMoat: 88,
@@ -69633,6 +69708,6003 @@ trajectoryProfile: {
     alumniDispersalPattern: "regional"
   },
 };
+
+
+
+
+// === University_of_New_Mexico ===
+"University of New Mexico": {
+
+  institutionNarrative: {
+
+    name: "University of New Mexico",
+
+    location: "Albuquerque, New Mexico",
+
+    region: "Southwest / Rio Grande Corridor",
+
+    archetype: "America's National Laboratory University — Defense Science, Space, and the High Desert Innovation Corridor",
+
+    oneSentenceSummary: "The University of New Mexico is the flagship university of the American Southwest, uniquely positioned at the intersection of national security, advanced engineering, aerospace, medicine, renewable energy, and Hispanic cultural heritage through unparalleled proximity to Sandia National Laboratories, Los Alamos National Laboratory, Kirtland Air Force Base, and one of the nation's fastest-growing semiconductor and space technology ecosystems.",
+
+    pipeline: "Approximately 21,000 students with roughly 15,000 undergraduates. UNM is the primary university talent supplier for Sandia National Laboratories, Los Alamos National Laboratory, Kirtland Air Force Base, Air Force Research Laboratory, Intel New Mexico, Presbyterian Healthcare, Lovelace Health System, and numerous federal agencies. Engineering, computer science, physics, nuclear engineering, cybersecurity, medicine, pharmacy, nursing, architecture, film production, anthropology, and environmental sciences represent the university's strongest academic pipelines. UNM School of Medicine remains the state's only MD-granting medical school and serves as New Mexico's primary physician training institution.",
+
+    hiddenPathway: "UNM's greatest hidden advantage is its proximity to America's national security research infrastructure. Students can obtain security clearances while still undergraduates through internships at Sandia National Laboratories, Los Alamos National Laboratory, and the Air Force Research Laboratory. These experiences create unusually early access to careers in nuclear engineering, quantum information science, cybersecurity, directed energy, space systems, advanced manufacturing, and intelligence that few universities outside the Washington DC region can replicate. The rapidly expanding semiconductor ecosystem surrounding Intel's Rio Rancho campus further strengthens engineering and computer science placement.",
+
+    institutionalSecret: "Most people view UNM as a regional flagship, but its real competitive advantage is that Albuquerque functions as one of America's largest concentrations of federal scientific investment. Billions of dollars in annual Department of Energy, Department of Defense, and NASA research funding create opportunities that are largely invisible to students outside the region. Students who successfully enter the laboratory ecosystem often build careers with exceptional long-term stability, compensation, and technical impact.",
+
+    theRoom: "UNM occupies more than 600 acres in the heart of Albuquerque beneath the Sandia Mountains. Pueblo Revival architecture designed by John Gaw Meem gives the campus one of the most distinctive visual identities in American higher education. Albuquerque combines Southwestern culture, Native American heritage, Hispanic traditions, outdoor recreation, and scientific research into an environment unlike any other flagship university. Students are within driving distance of Santa Fe, Los Alamos, White Sands, and countless public lands that define the American Southwest.",
+
+    lifestyle: "Relaxed, outdoor-oriented, culturally diverse, and deeply connected to New Mexico's Hispanic and Native American heritage. Students enjoy year-round hiking, mountain biking, skiing near Santa Fe, hot air ballooning, desert landscapes, and a lower cost of living than most western metropolitan areas. Athletics create community identity while the city's emerging technology and film industries provide expanding internship opportunities.",
+
+    bestFitPersonality: "Independent, intellectually curious, mission-oriented, comfortable pursuing opportunities proactively, interested in science, engineering, medicine, public service, or the Southwest, high Openness, moderate to high Conscientiousness.",
+
+    faithTradition: "Nonsectarian Public University",
+
+    geographicInfluenceRadius: "New Mexico dominant with growing influence across Arizona, Colorado, Texas, California, and the federal laboratory system nationwide.",
+
+    economicOutcome: "Exceptional outcomes in defense science, engineering, national laboratories, medicine, healthcare, cybersecurity, aerospace, environmental science, and government research. Strong regional healthcare leadership and growing semiconductor workforce demand create durable career pathways.",
+
+    gradCities: [
+      "Albuquerque NM",
+      "Santa Fe NM",
+      "Phoenix AZ",
+      "Denver CO",
+      "Washington DC",
+      "Los Angeles CA",
+      "Dallas TX",
+      "Houston TX",
+      "Colorado Springs CO"
+    ],
+
+    comparableInstitutions: [
+      "University of Arizona",
+      "Colorado School of Mines",
+      "New Mexico State University",
+      "University of Utah",
+      "University of Colorado Boulder"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Central New Mexico Community College",
+        "Santa Fe Community College",
+        "San Juan College",
+        "Doña Ana Community College"
+      ],
+
+      transferAcceptanceRate: "High",
+
+      freshmanAcceptanceRate: "~78%",
+
+      estimatedSavingsRange: "$20,000-$45,000",
+
+      transferNotes: "UNM maintains one of the strongest transfer ecosystems in New Mexico through statewide articulation agreements. Community college students can substantially reduce educational costs while maintaining access to research opportunities and federal laboratory recruiting."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Public Research Flagship",
+
+    institutionalPersonality: "mission-driven, resilient, collaborative, scientifically oriented, culturally grounded",
+
+    cultureKeywords: [
+      "National Laboratories",
+      "Sandia",
+      "Los Alamos",
+      "Lobos",
+      "Southwest",
+      "Research",
+      "Public Service",
+      "Hispanic Heritage",
+      "Innovation"
+    ],
+
+    missionOrientation: "Research, public service, healthcare leadership, and economic development for New Mexico while contributing to national scientific and security priorities.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Accessible public research education emphasizing experiential learning, interdisciplinary collaboration, undergraduate research, and regional impact.",
+
+    competitiveness: "Moderately Selective",
+
+    politicalCulture: "Moderately progressive with a diverse student body reflecting New Mexico's multicultural population.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Moderate",
+
+    socialClimate: "Inclusive, collaborative, community-oriented, and less status-driven than many flagship universities.",
+
+    leadershipStyle: "Research leadership, public service, entrepreneurship, and scientific collaboration."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "Southwest Innovation Corridor",
+
+    regionalRole: "Primary public research and workforce engine for the Southwest's national security, healthcare, and advanced technology economy."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 62,
+    BosWash: 58,
+    TorBuffChester: 42,
+    TexasTriangle: 84,
+    CharLanta: 34,
+    NorCalInnovationCorridor: 72,
+    SoCalCreativeEconomy: 70
+
+  },
+
+  comparativePositioning: {
+
+    versusArizona:
+      "Arizona emphasizes large-scale research and entrepreneurship; UNM offers deeper integration with national laboratories and defense science.",
+
+    versusColorado:
+      "Colorado Boulder has broader national prestige; UNM provides stronger access to nuclear security and federal laboratory careers.",
+
+    versusNewMexicoState:
+      "NMSU emphasizes agriculture and engineering; UNM combines flagship breadth with medicine, research, and national laboratory proximity.",
+
+    versusUtah:
+      "Utah has greater private-sector technology density; UNM's advantage lies in national security research and federal science."
+
+  institutionScale: {
+
+    enrollmentCategory: "Large",
+
+    undergraduateEnrollment: 15000,
+
+    graduateEnrollment: 6000,
+
+    totalEnrollment: 21000,
+
+    campusType: "Residential Research University",
+
+    residentialIntensity: 56,
+
+    communityFeel: 82,
+
+    studentFacultyRatio: "17:1",
+
+    classSizeExperience: "Moderate introductory lecture courses with increasingly personalized upper-division instruction. Undergraduate research and laboratory participation provide close faculty interaction, particularly in engineering, sciences, medicine, and health professions.",
+
+    scaleAdvantages: [
+      "Direct proximity to Sandia National Laboratories and Kirtland Air Force Base",
+      "Only public research university with New Mexico's flagship medical school",
+      "Strong undergraduate research access due to moderate enrollment",
+      "One of America's most distinctive architectural campuses",
+      "Affordable tuition relative to peer research universities"
+    ],
+
+    scaleDisadvantages: [
+      "National brand recognition lower than many flagship peers",
+      "Limited Fortune 500 headquarters within Albuquerque",
+      "Recruiting requires students to proactively leverage laboratory and federal opportunities",
+      "Some academic facilities continue modernization efforts"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 84,
+      conscientiousness: 74,
+      extraversion: 62,
+      agreeableness: 76,
+      neuroticism: 38
+    },
+
+    hollandCodes: ["I", "R", "S"],
+
+    learningStyle: [
+      "Research-Based Learning",
+      "Laboratory Experience",
+      "Field Research",
+      "Experiential Public Service",
+      "Applied Engineering"
+    ],
+
+    socialEnvironment: [
+      "Collaborative",
+      "Research-Oriented",
+      "Outdoor Lifestyle",
+      "Mission-Driven",
+      "Culturally Diverse"
+    ],
+
+    idealStudentTraits: [
+      "Interested in solving complex scientific or societal problems",
+      "Comfortable pursuing opportunities independently",
+      "Values affordability without sacrificing research access",
+      "Interested in public service or national impact",
+      "Appreciates multicultural environments"
+    ],
+
+    thrivesIf: [
+      "Interested in engineering, medicine, cybersecurity, aerospace, or public research",
+      "Wants early undergraduate research opportunities",
+      "Enjoys outdoor recreation and Southwestern culture",
+      "Can proactively network into national laboratories",
+      "Values mission over prestige"
+    ],
+
+    strugglesIf: [
+      "Expects Wall Street recruiting to dominate campus",
+      "Needs highly structured academic advising",
+      "Prefers highly competitive private university environments",
+      "Seeks an elite national social prestige culture",
+      "Dislikes desert climates or regional institutions"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking stronger East Coast recruiting ecosystems",
+      "Students who underestimate the initiative required for laboratory recruiting",
+      "Students expecting large-campus social prestige comparable to flagship Big Ten universities"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Nuclear Engineering",
+      "Optical Science",
+      "Earth and Planetary Sciences",
+      "Native American Studies",
+      "Emergency Medical Services",
+      "Geography and Environmental Planning",
+      "Portuguese",
+      "Film and Digital Arts"
+    ],
+
+    hiddenCareerPipelines: [
+      "Sandia National Laboratories",
+      "Los Alamos National Laboratory",
+      "Air Force Research Laboratory",
+      "National Nuclear Security Administration",
+      "Intel Semiconductor Manufacturing",
+      "Space Systems Engineering",
+      "Cybersecurity Clearance Careers"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Security clearance internships while enrolled",
+      "Federal laboratory undergraduate research",
+      "Department of Energy recruiting",
+      "Air Force and Space Force partnerships",
+      "Southwest environmental and water research"
+    ],
+
+    overlookedStrengths: [
+      "School of Medicine's statewide healthcare leadership",
+      "Exceptional federal research funding relative to institutional size",
+      "One of America's strongest national laboratory ecosystems",
+      "Affordable pathway into high-paying technical careers",
+      "Deep Hispanic and Native American cultural scholarship"
+    ],
+
+    sleeperIndustries: [
+      "Quantum Computing",
+      "Directed Energy",
+      "Semiconductor Manufacturing",
+      "Space Systems",
+      "Renewable Energy",
+      "Nuclear Security"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 74,
+
+    mentorshipDensity: 78,
+
+    executiveAccess: 68,
+
+    internshipNetwork: 84,
+
+    familyBusinessExposure: 42,
+
+    relationshipCapitalScore: 74,
+
+    alumniLoyaltyScore: 82,
+
+    referralCultureStrength: 80,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "National Security",
+      "Defense",
+      "Healthcare",
+      "Engineering",
+      "Semiconductors",
+      "Aerospace",
+      "Energy",
+      "Government Research"
+    ],
+
+    regionalEconomicDrivers: [
+      "Sandia National Laboratories",
+      "Los Alamos National Laboratory",
+      "Kirtland Air Force Base",
+      "Intel New Mexico",
+      "UNM Health System",
+      "Film Production",
+      "Renewable Energy"
+    ],
+
+    topEmployers: [
+      "Sandia National Laboratories",
+      "Los Alamos National Laboratory",
+      "University of New Mexico Hospital",
+      "Intel",
+      "Air Force Research Laboratory",
+      "Presbyterian Healthcare Services",
+      "Lovelace Health System",
+      "New Mexico State Government"
+    ],
+
+    emergingIndustries: [
+      "Quantum Technology",
+      "Cybersecurity",
+      "Artificial Intelligence",
+      "Semiconductor Manufacturing",
+      "Space Technology",
+      "Clean Energy"
+    ],
+
+    startupDensity: "Moderate",
+
+    ventureCapitalAccess: 46,
+
+    corporateHeadquartersDensity: 38,
+
+    healthcareHubStrength: 90,
+
+    innovationIndex: 80
+
+  geographicInfluence: {
+
+    dominantMarket: "New Mexico and the Southwest",
+
+    secondaryMarkets: [
+      "Phoenix AZ",
+      "Denver CO",
+      "Dallas TX",
+      "Houston TX",
+      "Colorado Springs CO",
+      "Washington DC",
+      "Los Angeles CA"
+    ],
+
+    alumniStrongholds: [
+      "Albuquerque NM",
+      "Santa Fe NM",
+      "Phoenix AZ",
+      "Denver CO",
+      "Washington DC"
+    ],
+
+    relocationPatterns: [
+      "Federal laboratory careers throughout the Department of Energy complex",
+      "Southwest engineering and semiconductor employment",
+      "Healthcare leadership across New Mexico",
+      "Defense and aerospace opportunities in Colorado and Texas",
+      "Federal agencies in Washington DC"
+    ],
+
+    regionalInfluenceScore: 88,
+
+    nationalReachScore: 68,
+
+    internationalReachScore: 46
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 24,
+
+    studentOrganizationStrength: 80,
+
+    leadershipDevelopment: 78,
+
+    crossDisciplinaryInteraction: 84,
+
+    civicEngagement: 88
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 22,
+      notes: "Limited. Small opportunities through film production, photography, and regional arts."
+    },
+
+    healthWellness: {
+      strength: 86,
+      notes: "Strong through UNM Hospital, School of Medicine, Nursing, Pharmacy, and statewide healthcare leadership."
+    },
+
+    nutraceuticals: {
+      strength: 18,
+      notes: "Minimal institutional emphasis."
+    },
+
+    consumerProducts: {
+      strength: 32,
+      notes: "Limited recruiting into major consumer product companies."
+    },
+
+    outdoorIndustry: {
+      strength: 68,
+      notes: "Growing opportunities related to conservation, public lands, environmental science, and recreation throughout the Southwest."
+    },
+
+    sportsBusiness: {
+      strength: 28,
+      notes: "Primarily regional collegiate athletics opportunities."
+    },
+
+    entertainmentMedia: {
+      strength: 62,
+      notes: "Growing film and television industry in Albuquerque creates increasing production opportunities."
+    },
+
+    ventureCapital: {
+      strength: 42,
+      notes: "Developing startup ecosystem supported by university commercialization and federal technology transfer."
+    },
+
+    privateEquity: {
+      strength: 18,
+      notes: "Limited direct recruiting."
+    },
+
+    investmentBanking: {
+      strength: 24,
+      notes: "Small pipeline; students generally recruit nationally through individual initiative."
+    },
+
+    consulting: {
+      strength: 42,
+      notes: "Regional consulting opportunities with modest national recruiting."
+    },
+
+    medicine: {
+      strength: 92,
+      notes: "Exceptional regional medical pathway through New Mexico's only academic medical center."
+    },
+
+    healthcareAdministration: {
+      strength: 84,
+      notes: "Strong due to UNM Health System and statewide healthcare leadership."
+    },
+
+    defense: {
+      strength: 96,
+      notes: "One of the strongest public university defense ecosystems in America due to Sandia, Los Alamos, AFRL, and Kirtland Air Force Base."
+    },
+
+    realEstate: {
+      strength: 30,
+      notes: "Limited institutional specialization."
+    },
+
+    luxuryBrands: {
+      strength: 12,
+      notes: "Not a meaningful recruiting pathway."
+    },
+
+    entrepreneurship: {
+      strength: 58,
+      notes: "Growing technology commercialization through laboratory spinouts and engineering innovation."
+    },
+
+    technology: {
+      strength: 82,
+      notes: "Strong engineering, cybersecurity, semiconductor manufacturing, and national laboratory computing pipelines."
+    },
+
+    publicPolicy: {
+      strength: 68,
+      notes: "Good placement into state government, federal agencies, and public administration."
+    },
+
+    nonprofitLeadership: {
+      strength: 74,
+      notes: "Strong regional engagement through healthcare, Native American communities, education, and public service."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "Middle Income",
+
+    socialMobilityIndex: 84,
+
+    firstGenerationSupport: 90,
+
+    wealthCreationPotential: 74,
+
+    familyBusinessPipelineStrength: 34
+
+
+  futureResilience: {
+
+    aiResistance: 88,
+
+    automationResistance: 90,
+
+    adaptabilityScore: 86,
+
+    interdisciplinaryStrength: 84,
+
+    futureReadiness: 88,
+
+    entrepreneurialFlexibility: 68,
+
+    lifelongLearningCulture: 82,
+
+    innovationCapacity: 84
+  lifeDesignOutcomes: {
+
+    wealthCreationPotential: 76,
+
+    communityLeadershipPotential: 90,
+
+    geographicMobility: 72,
+
+    workLifeBalancePotential: 86,
+
+    purposeAlignment: 90,
+
+    familyFormationSupport: 84,
+
+    personalDevelopmentPotential: 82,
+
+    careerOptionality: 80,
+
+    longTermLifeSatisfaction: 86
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 54,
+
+    networkMoat: 74,
+
+    geographicMoat: 92,
+
+    industryMoat: 94,
+
+    alumniMoat: 72,
+
+    brandDurability: 80,
+
+    overallMoatScore: 82
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "STAY_LEAVE",
+
+    leaverScore: 68,
+
+    returnerScore: 88,
+
+    stewardScore: 94,
+
+    navigatorScore: 66,
+
+    geographicLockIn: "medium",
+
+    alumniDispersalPattern: "regional"
+  };
+  "New Mexico State University": {
+
+  institutionNarrative: {
+
+    name: "New Mexico State University",
+
+    location: "Las Cruces, New Mexico",
+
+    region: "Southwest / Borderlands Corridor",
+
+    archetype: "America's Borderland Engineering and Space University",
+
+    oneSentenceSummary: "New Mexico State University is the Southwest's land-grant innovation university, uniquely positioned at the intersection of aerospace, defense, agriculture, water science, and border economics through deep partnerships with White Sands Missile Range, NASA, Spaceport America, and one of the world's leading agricultural research systems.",
+
+    pipeline: "Approximately 14,000 students with roughly 11,000 undergraduates. NMSU serves as the state's premier land-grant university with nationally recognized strengths in engineering, aerospace, agriculture, water resources, business, education, and environmental science. Major employers include White Sands Missile Range, NASA, Spaceport America, Holloman Air Force Base, Virgin Galactic, Boeing, Lockheed Martin, Raytheon, Intel, El Paso Electric, and numerous agricultural technology companies throughout the Southwest.",
+
+    hiddenPathway: "NMSU's greatest hidden advantage is its direct integration with White Sands Missile Range, Spaceport America, and southern New Mexico's rapidly expanding aerospace ecosystem. Students regularly gain experience with missile testing, aerospace engineering, defense technologies, autonomous systems, and commercial space development. The Fabian Garcia Science Center and internationally respected chile pepper breeding program also connect students to global agriculture, food science, and biotechnology industries that few universities can match.",
+
+    institutionalSecret: "While often viewed as a regional agricultural university, NMSU quietly sits inside one of America's most strategically important aerospace and defense corridors. The combination of White Sands Missile Range, NASA testing facilities, Spaceport America, Holloman Air Force Base, and cross-border manufacturing gives engineering graduates access to career opportunities disproportionate to the university's national profile.",
+
+    theRoom: "NMSU occupies more than 900 acres in Las Cruces, surrounded by the Organ Mountains and the Chihuahuan Desert. The campus blends Spanish Pueblo architecture with expansive desert landscapes and enjoys over 300 days of sunshine annually. Las Cruces offers a relaxed lifestyle, close proximity to El Paso, and immediate access to hiking, mountain biking, and public lands while remaining deeply connected to Hispanic culture and the U.S.–Mexico border economy.",
+
+    lifestyle: "Relaxed, affordable, outdoors-oriented, and strongly influenced by Hispanic heritage and border culture. Students enjoy year-round sunshine, mountain recreation, regional festivals, Division I athletics, and a close-knit campus community. Compared to larger flagship universities, NMSU provides a more personal environment with strong faculty accessibility.",
+
+    bestFitPersonality: "Independent, practical, collaborative, interested in engineering, agriculture, aerospace, public service, entrepreneurship, or the Southwest. Moderate to high Conscientiousness with strong problem-solving orientation.",
+
+    faithTradition: "Nonsectarian Public University",
+
+    geographicInfluenceRadius: "Southern New Mexico, West Texas, Arizona, Colorado, and the broader Southwest with specialized national reach through aerospace, defense, and agriculture.",
+
+    economicOutcome: "Strong outcomes in engineering, defense, agriculture, aerospace, water resources, education, and regional business leadership. Exceptional placement within the Southwest's growing space economy and federal research infrastructure.",
+
+    gradCities: [
+      "Las Cruces NM",
+      "El Paso TX",
+      "Albuquerque NM",
+      "Phoenix AZ",
+      "Denver CO",
+      "Houston TX",
+      "Dallas TX",
+      "Colorado Springs CO"
+    ],
+
+    comparableInstitutions: [
+      "Texas Tech University",
+      "University of Arizona",
+      "Colorado State University",
+      "Utah State University",
+      "New Mexico Institute of Mining and Technology"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Doña Ana Community College",
+        "Central New Mexico Community College",
+        "El Paso Community College",
+        "New Mexico Military Institute"
+      ],
+
+      transferAcceptanceRate: "High",
+
+      freshmanAcceptanceRate: "~78%",
+
+      estimatedSavingsRange: "$20,000-$45,000",
+
+      transferNotes: "NMSU maintains strong statewide transfer agreements and provides one of the most accessible pathways into engineering and agricultural research within the Southwest."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Public Land-Grant Research University",
+
+    institutionalPersonality: "practical, resilient, collaborative, innovative, mission-driven",
+
+    cultureKeywords: [
+      "Aggies",
+      "Land Grant",
+      "White Sands",
+      "Spaceport America",
+      "Agriculture",
+      "Engineering",
+      "Borderlands",
+      "Research",
+      "Southwest"
+    ],
+
+    missionOrientation: "Research, economic development, agricultural innovation, engineering excellence, and public service across New Mexico and the American Southwest.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Hands-on education emphasizing applied research, workforce development, engineering practice, agricultural innovation, entrepreneurship, and community engagement.",
+
+    competitiveness: "Moderately Selective",
+
+    politicalCulture: "Moderate with a broad mix of rural, military, agricultural, Hispanic, and first-generation student populations.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Moderate",
+
+    socialClimate: "Welcoming, practical, community-oriented, and less status-conscious than larger flagship universities.",
+
+    leadershipStyle: "Applied leadership through engineering, agriculture, entrepreneurship, military partnerships, and regional economic development."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "Southwest Border Innovation Corridor",
+
+    regionalRole: "Primary land-grant innovation engine serving aerospace, defense, agriculture, water resources, and cross-border economic development."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 64,
+    BosWash: 42,
+    TorBuffChester: 26,
+    TexasTriangle: 88,
+    CharLanta: 28,
+    NorCalInnovationCorridor: 56,
+    SoCalCreativeEconomy: 62
+
+  },
+
+  comparativePositioning: {
+
+    versusUNM:
+      "UNM dominates medicine and national laboratory science; NMSU leads in land-grant agriculture, applied engineering, and border-region economic development.",
+
+    versusTexasTech:
+      "Texas Tech offers broader scale; NMSU provides deeper integration with White Sands Missile Range and Spaceport America.",
+
+    versusColoradoState:
+      "Colorado State emphasizes environmental science and veterinary medicine; NMSU combines agriculture with aerospace and defense.",
+
+    versusArizona:
+      "Arizona possesses larger research scale; NMSU delivers stronger hands-on engineering access through southern New Mexico's defense infrastructure."
+
+  },
+  institutionScale: {
+
+    enrollmentCategory: "Medium",
+
+    undergraduateEnrollment: 11000,
+
+    graduateEnrollment: 3000,
+
+    totalEnrollment: 14000,
+
+    campusType: "Residential Research University",
+
+    residentialIntensity: 58,
+
+    communityFeel: 84,
+
+    studentFacultyRatio: "16:1",
+
+    classSizeExperience: "Smaller introductory classes than most flagship universities with accessible faculty, extensive undergraduate research opportunities, and strong experiential learning through engineering, agriculture, and applied sciences.",
+
+    scaleAdvantages: [
+      "Direct partnerships with White Sands Missile Range and Spaceport America",
+      "Exceptional undergraduate faculty access",
+      "Strong applied research culture",
+      "Land-grant mission creates hands-on educational experiences",
+      "Affordable tuition with excellent engineering return on investment"
+    ],
+
+    scaleDisadvantages: [
+      "Lower national brand recognition than neighboring flagship universities",
+      "Limited Fortune 500 recruiting outside engineering and defense",
+      "Regional employer concentration requires proactive networking for national careers",
+      "Smaller graduate ecosystem than larger research universities"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 78,
+      conscientiousness: 80,
+      extraversion: 64,
+      agreeableness: 78,
+      neuroticism: 36
+    },
+
+    hollandCodes: ["R", "I", "E"],
+
+    learningStyle: [
+      "Applied Engineering",
+      "Hands-On Research",
+      "Field Experience",
+      "Laboratory Learning",
+      "Industry Partnerships"
+    ],
+
+    socialEnvironment: [
+      "Collaborative",
+      "Practical",
+      "Community-Oriented",
+      "Outdoor Lifestyle",
+      "Research Focused"
+    ],
+
+    idealStudentTraits: [
+      "Interested in solving practical problems",
+      "Comfortable in collaborative environments",
+      "Values affordability and opportunity over prestige",
+      "Interested in engineering, agriculture, aerospace, or business",
+      "Self-motivated and career focused"
+    ],
+
+    thrivesIf: [
+      "Interested in aerospace, engineering, agriculture, or defense industries",
+      "Enjoys outdoor recreation and Southwestern culture",
+      "Wants direct faculty mentorship",
+      "Prefers applied learning over theory",
+      "Values smaller class sizes within a public university"
+    ],
+
+    strugglesIf: [
+      "Seeks elite national prestige recruiting",
+      "Needs a highly urban environment",
+      "Expects large-scale campus social life",
+      "Prefers finance or consulting recruiting ecosystems",
+      "Dislikes rural or desert settings"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking larger metropolitan recruiting markets",
+      "Students expecting Big Ten or SEC campus culture",
+      "Students uninterested in the Southwest economy"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Agricultural Economics",
+      "Water Resources Engineering",
+      "Food Science",
+      "Surveying Engineering",
+      "Wildlife Science",
+      "Chile Pepper Institute Research",
+      "Industrial Engineering",
+      "Geospatial Information Science"
+    ],
+
+    hiddenCareerPipelines: [
+      "White Sands Missile Range",
+      "Spaceport America",
+      "NASA Test Operations",
+      "Virgin Galactic",
+      "Defense Contractors",
+      "Agricultural Biotechnology",
+      "Water Resource Management"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Applied engineering internships with federal agencies",
+      "Commercial space industry partnerships",
+      "Agricultural research commercialization",
+      "Border infrastructure engineering",
+      "Renewable energy research"
+    ],
+
+    overlookedStrengths: [
+      "Nationally recognized Chile Pepper Institute",
+      "Exceptional aerospace proximity",
+      "Strong irrigation and water research",
+      "High undergraduate research participation",
+      "Affordable engineering education"
+    ],
+
+    sleeperIndustries: [
+      "Commercial Space",
+      "Precision Agriculture",
+      "Water Technology",
+      "Renewable Energy",
+      "Autonomous Systems",
+      "Border Infrastructure"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 70,
+
+    mentorshipDensity: 82,
+
+    executiveAccess: 60,
+
+    internshipNetwork: 80,
+
+    familyBusinessExposure: 46,
+
+    relationshipCapitalScore: 72,
+
+    alumniLoyaltyScore: 84,
+
+    referralCultureStrength: 78,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Aerospace",
+      "Defense",
+      "Agriculture",
+      "Engineering",
+      "Renewable Energy",
+      "Healthcare",
+      "Education",
+      "Cross-Border Trade"
+    ],
+
+    regionalEconomicDrivers: [
+      "White Sands Missile Range",
+      "Spaceport America",
+      "NASA Flight Testing",
+      "Agriculture",
+      "Cross-Border Commerce",
+      "Renewable Energy",
+      "Water Resource Management"
+    ],
+
+    topEmployers: [
+      "White Sands Missile Range",
+      "NASA",
+      "Virgin Galactic",
+      "Lockheed Martin",
+      "Boeing",
+      "Raytheon",
+      "Intel",
+      "New Mexico State Government"
+    ],
+
+    emergingIndustries: [
+      "Commercial Space",
+      "Autonomous Systems",
+      "Semiconductors",
+      "Clean Energy",
+      "Agricultural Technology",
+      "Water Innovation"
+    ],
+
+    startupDensity: "Moderate",
+
+    ventureCapitalAccess: 38,
+
+    corporateHeadquartersDensity: 30,
+
+    healthcareHubStrength: 58,
+
+    innovationIndex: 80
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Southern New Mexico and West Texas",
+
+    secondaryMarkets: [
+      "Albuquerque NM",
+      "El Paso TX",
+      "Phoenix AZ",
+      "Denver CO",
+      "Houston TX",
+      "Dallas TX",
+      "Colorado Springs CO"
+    ],
+
+    alumniStrongholds: [
+      "Las Cruces NM",
+      "El Paso TX",
+      "Albuquerque NM",
+      "Phoenix AZ",
+      "Denver CO"
+    ],
+
+    relocationPatterns: [
+      "Defense and aerospace careers throughout the Southwest",
+      "Engineering opportunities in Texas and Arizona",
+      "Agricultural leadership across the western United States",
+      "Federal agencies supporting national security and public infrastructure",
+      "Commercial space and missile defense industries"
+    ],
+
+    regionalInfluenceScore: 84,
+
+    nationalReachScore: 60,
+
+    internationalReachScore: 42
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 22,
+
+    studentOrganizationStrength: 78,
+
+    leadershipDevelopment: 80,
+
+    crossDisciplinaryInteraction: 82,
+
+    civicEngagement: 86
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 16,
+      notes: "Limited. Small opportunities through agricultural product branding and regional creative industries."
+    },
+
+    healthWellness: {
+      strength: 58,
+      notes: "Regional healthcare opportunities with moderate research activity."
+    },
+
+    nutraceuticals: {
+      strength: 56,
+      notes: "Food science, chile pepper research, and agricultural biotechnology create meaningful niche opportunities."
+    },
+
+    consumerProducts: {
+      strength: 54,
+      notes: "Agricultural technology and food product commercialization provide stronger consumer product exposure than many regional universities."
+    },
+
+    outdoorIndustry: {
+      strength: 72,
+      notes: "Strong environmental science, wildlife, public lands, and outdoor recreation economy throughout the Southwest."
+    },
+
+    sportsBusiness: {
+      strength: 22,
+      notes: "Primarily regional collegiate athletics."
+    },
+
+    entertainmentMedia: {
+      strength: 24,
+      notes: "Limited opportunities outside regional media markets."
+    },
+
+    ventureCapital: {
+      strength: 36,
+      notes: "Technology commercialization exists but venture capital activity remains relatively modest."
+    },
+
+    privateEquity: {
+      strength: 14,
+      notes: "Minimal institutional recruiting."
+    },
+
+    investmentBanking: {
+      strength: 20,
+      notes: "Students typically recruit nationally through individual initiative."
+    },
+
+    consulting: {
+      strength: 34,
+      notes: "Regional consulting opportunities with limited national on-campus recruiting."
+    },
+
+    medicine: {
+      strength: 48,
+      notes: "Solid pre-health preparation though students frequently continue at UNM or other medical schools."
+    },
+
+    healthcareAdministration: {
+      strength: 52,
+      notes: "Regional healthcare management opportunities throughout southern New Mexico."
+    },
+
+    defense: {
+      strength: 94,
+      notes: "One of the strongest applied defense engineering ecosystems among land-grant universities through White Sands Missile Range, NASA partnerships, and aerospace contractors."
+    },
+
+    realEstate: {
+      strength: 22,
+      notes: "Limited institutional specialization."
+    },
+
+    luxuryBrands: {
+      strength: 8,
+      notes: "Not a meaningful recruiting pathway."
+    },
+
+    entrepreneurship: {
+      strength: 66,
+      notes: "Engineering innovation, agricultural commercialization, and commercial space development create growing entrepreneurial opportunities."
+    },
+
+    technology: {
+      strength: 78,
+      notes: "Strong engineering pathways into aerospace, semiconductors, defense systems, autonomous technologies, and advanced manufacturing."
+    },
+
+    publicPolicy: {
+      strength: 54,
+      notes: "Regional public administration, infrastructure, agriculture, and border policy opportunities."
+    },
+
+    nonprofitLeadership: {
+      strength: 66,
+      notes: "Strong extension programs and community engagement through the land-grant mission."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "Middle Income",
+
+    socialMobilityIndex: 86,
+
+    firstGenerationSupport: 88,
+
+    wealthCreationPotential: 72,
+
+    familyBusinessPipelineStrength: 46
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 86,
+
+    automationResistance: 88,
+
+    adaptabilityScore: 84,
+
+    interdisciplinaryStrength: 80,
+
+    futureReadiness: 84,
+
+    entrepreneurialFlexibility: 72,
+
+    lifelongLearningCulture: 80,
+
+    innovationCapacity: 82
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 74,
+
+    communityLeadershipPotential: 90,
+
+    geographicMobility: 70,
+
+    workLifeBalancePotential: 88,
+
+    purposeAlignment: 88,
+
+    familyFormationSupport: 86,
+
+    personalDevelopmentPotential: 82,
+
+    careerOptionality: 78,
+
+    longTermLifeSatisfaction: 88
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 48,
+
+    networkMoat: 68,
+
+    geographicMoat: 90,
+
+    industryMoat: 90,
+
+    alumniMoat: 68,
+
+    brandDurability: 76,
+
+    overallMoatScore: 78
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "STAY_LEAVE",
+
+    leaverScore: 64,
+
+    returnerScore: 90,
+
+    stewardScore: 96,
+
+    navigatorScore: 60,
+
+    geographicLockIn: "medium",
+
+    alumniDispersalPattern: "regional"
+
+  }
+
+};
+
+
+// === Berklee_College_of_Music ===
+"Berklee College of Music": {
+
+  institutionNarrative: {
+
+    name: "Berklee College of Music",
+
+    location: "Boston, Massachusetts",
+
+    region: "Bos-Wash Creative Corridor",
+
+    archetype: "The World's Music Industry University",
+
+    oneSentenceSummary: "Berklee College of Music is the global epicenter of contemporary music education, producing an unmatched concentration of performers, producers, composers, engineers, songwriters, entrepreneurs, and music executives whose alumni shape nearly every major segment of the modern music industry.",
+
+    pipeline: "Approximately 6,500 students representing more than 100 countries. Berklee maintains the world's strongest talent pipeline into commercial music, songwriting, music production, recording engineering, film scoring, video game composition, live performance, music business, artist management, contemporary jazz, and contemporary classical music. Alumni include Grammy Award winners, Academy Award winners, producers, engineers, touring musicians, and executives throughout Universal Music Group, Sony Music Entertainment, Warner Music Group, Spotify, Netflix, Disney, and virtually every major recording studio and entertainment company.",
+
+    hiddenPathway: "Berklee's greatest hidden advantage is not the classroom—it's the density of alumni occupying the creative decision-making rooms where music is actually made. Producers, engineers, A&R executives, music supervisors, touring musicians, composers, orchestrators, and label executives continuously hire fellow Berklee graduates. Few educational institutions in any industry possess an alumni network with this level of professional interconnectedness.",
+
+    institutionalSecret: "Most people think Berklee teaches musicians. In reality, Berklee builds careers across the entire commercial music ecosystem. Thousands of graduates never become recording artists yet become producers, film composers, game audio designers, entertainment attorneys, label executives, software developers, touring professionals, and entrepreneurs. The school's greatest product is not performers—it is industry infrastructure.",
+
+    theRoom: "Located throughout Boston's Back Bay along Massachusetts Avenue, Berklee integrates directly into one of America's most educated and internationally connected cities. Students collaborate daily with peers from over 100 countries while surrounded by Boston's universities, hospitals, technology companies, orchestras, startups, and cultural institutions. The campus functions less like a traditional college and more like a professional creative district.",
+
+    lifestyle: "Highly collaborative, intensely creative, project-based, and professionally focused. Practice rooms stay occupied late into the night, recording sessions continue around the clock, and collaboration between performers, producers, composers, and engineers becomes the center of student life. Boston provides a walkable urban environment with immediate access to live music, internships, and a global creative community.",
+
+    bestFitPersonality: "Highly creative, disciplined, collaborative, entrepreneurial, resilient, comfortable with constant feedback, intrinsically motivated, high Openness and moderate Conscientiousness.",
+
+    faithTradition: "Nonsectarian Private College",
+
+    geographicInfluenceRadius: "Global with dominant influence across Los Angeles, New York, Nashville, London, and international music capitals.",
+
+    economicOutcome: "Elite outcomes across music production, songwriting, touring, film scoring, gaming, recording engineering, entertainment business, music technology, and entrepreneurship. Career outcomes depend heavily on networking, portfolio development, and entrepreneurial initiative rather than traditional recruiting.",
+
+    gradCities: [
+      "Los Angeles CA",
+      "New York NY",
+      "Boston MA",
+      "Nashville TN",
+      "London UK",
+      "Atlanta GA",
+      "Miami FL",
+      "Toronto ON"
+    ],
+
+    comparableInstitutions: [
+      "Juilliard School",
+      "USC Thornton School of Music",
+      "New York University",
+      "Belmont University",
+      "University of Southern California"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: false,
+
+      ccFeederNames: [],
+
+      transferAcceptanceRate: "Moderate",
+
+      freshmanAcceptanceRate: "~55%",
+
+      estimatedSavingsRange: "",
+
+      transferNotes: "Transfer admission is portfolio and audition driven. Artistic achievement and musical preparation matter significantly more than traditional transfer pathways."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Specialized Creative Arts Institution",
+
+    institutionalPersonality: "creative, entrepreneurial, collaborative, globally connected, professionally ambitious",
+
+    cultureKeywords: [
+      "Music Production",
+      "Songwriting",
+      "Recording",
+      "Performance",
+      "Collaboration",
+      "Grammy",
+      "Studio",
+      "Film Scoring",
+      "Music Business"
+    ],
+
+    missionOrientation: "Preparing creative professionals for leadership across the global music, entertainment, and creative industries.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Experiential, collaborative, portfolio-driven education emphasizing industry readiness through constant creative practice.",
+
+    competitiveness: "Selective through audition and artistic review.",
+
+    politicalCulture: "Progressive, globally diverse, artistically expressive.",
+
+    studentAutonomy: "Very High",
+
+    prestigeOrientation: "High within music and entertainment; moderate outside creative industries.",
+
+    socialClimate: "Creative, collaborative, international, project-based.",
+
+    leadershipStyle: "Creative leadership through artistic excellence, entrepreneurship, and collaboration."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "America's premier contemporary music talent platform serving the global entertainment economy."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 18,
+    BosWash: 94,
+    TorBuffChester: 48,
+    TexasTriangle: 68,
+    CharLanta: 72,
+    NorCalInnovationCorridor: 76,
+    SoCalCreativeEconomy: 100
+
+  },
+
+  comparativePositioning: {
+
+    versusJuilliard:
+      "Juilliard develops elite classical performers; Berklee develops the commercial music industry.",
+
+    versusUSC:
+      "USC integrates music into a comprehensive research university; Berklee is completely immersed in contemporary music.",
+
+    versusBelmont:
+      "Belmont emphasizes Nashville and country music; Berklee operates across every contemporary music genre worldwide.",
+
+    versusNYU:
+      "NYU combines entertainment with broader academics; Berklee provides greater specialization and industry density."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Small",
+
+    undergraduateEnrollment: 5300,
+
+    graduateEnrollment: 1200,
+
+    totalEnrollment: 6500,
+
+    campusType: "Urban Professional Conservatory",
+
+    residentialIntensity: 54,
+
+    communityFeel: 90,
+
+    studentFacultyRatio: "8:1",
+
+    classSizeExperience: "Small studio instruction, ensemble rehearsals, master classes, collaborative recording sessions, and individualized artistic mentorship dominate the educational experience. Nearly every course emphasizes portfolio creation and real-world collaboration.",
+
+    scaleAdvantages: [
+      "One of the strongest professional music networks in the world",
+      "Direct collaboration across every music discipline",
+      "Faculty actively working throughout the entertainment industry",
+      "Portfolio-based education from the first semester",
+      "International student body creates global creative network"
+    ],
+
+    scaleDisadvantages: [
+      "Extremely specialized institution with limited traditional academic breadth",
+      "Career success depends heavily on self-promotion and entrepreneurship",
+      "Creative industries produce highly variable income trajectories",
+      "Boston cost of living increases financial pressure"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 98,
+      conscientiousness: 72,
+      extraversion: 76,
+      agreeableness: 72,
+      neuroticism: 46
+    },
+
+    hollandCodes: ["A", "E", "S"],
+
+    learningStyle: [
+      "Studio Collaboration",
+      "Performance-Based Learning",
+      "Project-Based Production",
+      "Portfolio Development",
+      "Professional Apprenticeship"
+    ],
+
+    socialEnvironment: [
+      "Creative",
+      "Collaborative",
+      "International",
+      "Performance Driven",
+      "Entrepreneurial"
+    ],
+
+    idealStudentTraits: [
+      "Lives to create music",
+      "Thrives on collaboration",
+      "Accepts continuous critique",
+      "Comfortable building an independent career",
+      "Motivated by artistic mastery rather than external structure"
+    ],
+
+    thrivesIf: [
+      "Wants to work professionally in music or entertainment",
+      "Builds relationships naturally through creative collaboration",
+      "Is comfortable performing and sharing unfinished work",
+      "Values artistic growth over traditional collegiate experiences",
+      "Can tolerate uncertainty while building a creative career"
+    ],
+
+    strugglesIf: [
+      "Prefers structured corporate recruiting",
+      "Needs extensive general education curriculum",
+      "Dislikes constant collaboration",
+      "Requires predictable career outcomes",
+      "Views music primarily as a hobby rather than a profession"
+    ],
+
+    transferRiskFactors: [
+      "Students who underestimate the competitiveness of the music industry",
+      "Students pursuing music without entrepreneurial motivation",
+      "Students expecting traditional campus life rather than conservatory intensity"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Music Therapy",
+      "Music Business",
+      "Electronic Production and Design",
+      "Scoring for Film, Television and Games",
+      "Contemporary Writing and Production",
+      "Music Technology",
+      "Global Jazz Institute",
+      "Creative Entrepreneurship"
+    ],
+
+    hiddenCareerPipelines: [
+      "Netflix and streaming media composition",
+      "Video game audio production",
+      "Music supervision",
+      "Live touring production",
+      "Recording engineering",
+      "Sync licensing",
+      "Artist management",
+      "Music software development"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Grammy-winning alumni mentorship",
+      "Recording studio internships",
+      "Major label alumni referrals",
+      "Film scoring collaborations",
+      "Global songwriting camps"
+    ],
+
+    overlookedStrengths: [
+      "World-class music business curriculum",
+      "Exceptional game audio pipeline",
+      "Music technology leadership",
+      "Global entertainment alumni network",
+      "Entrepreneurship education built into artistic training"
+    ],
+
+    sleeperIndustries: [
+      "Interactive Media",
+      "Game Audio",
+      "Music Technology",
+      "Podcast Production",
+      "Audio Branding",
+      "Spatial Audio"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 94,
+
+    mentorshipDensity: 92,
+
+    executiveAccess: 90,
+
+    internshipNetwork: 88,
+
+    familyBusinessExposure: 54,
+
+    relationshipCapitalScore: 94,
+
+    alumniLoyaltyScore: 96,
+
+    referralCultureStrength: 96,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Music",
+      "Entertainment",
+      "Film",
+      "Gaming",
+      "Streaming Media",
+      "Music Technology",
+      "Live Events",
+      "Creative Entrepreneurship"
+    ],
+
+    regionalEconomicDrivers: [
+      "Boston Creative Economy",
+      "Global Recording Industry",
+      "Streaming Platforms",
+      "Film Scoring",
+      "Gaming Industry",
+      "Music Technology",
+      "Independent Artist Economy"
+    ],
+
+    topEmployers: [
+      "Universal Music Group",
+      "Sony Music Entertainment",
+      "Warner Music Group",
+      "Spotify",
+      "Apple Music",
+      "Netflix",
+      "Disney",
+      "Electronic Arts",
+      "Epic Games"
+    ],
+
+    emergingIndustries: [
+      "AI Music Tools",
+      "Spatial Audio",
+      "Interactive Media",
+      "Creator Economy",
+      "Music Software",
+      "Virtual Performance"
+    ],
+
+    startupDensity: "High",
+
+    ventureCapitalAccess: 72,
+
+    corporateHeadquartersDensity: 70,
+
+    healthcareHubStrength: 12,
+
+    innovationIndex: 90
+
+  },
+  geographicInfluence: {
+
+    dominantMarket: "Los Angeles and the Global Music Industry",
+
+    secondaryMarkets: [
+      "New York NY",
+      "Boston MA",
+      "Nashville TN",
+      "London UK",
+      "Atlanta GA",
+      "Miami FL",
+      "Toronto ON"
+    ],
+
+    alumniStrongholds: [
+      "Los Angeles CA",
+      "New York NY",
+      "Boston MA",
+      "Nashville TN",
+      "London UK"
+    ],
+
+    relocationPatterns: [
+      "Los Angeles for film, television, recording, and production",
+      "New York for Broadway, publishing, jazz, and music business",
+      "Nashville for songwriting, country music, and touring",
+      "London and Europe for international recording and performance",
+      "Remote and freelance careers increasingly common across the creator economy"
+    ],
+
+    regionalInfluenceScore: 64,
+
+    nationalReachScore: 96,
+
+    internationalReachScore: 98
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 0,
+
+    studentOrganizationStrength: 88,
+
+    leadershipDevelopment: 82,
+
+    crossDisciplinaryInteraction: 96,
+
+    civicEngagement: 60
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 76,
+      notes: "Creative branding, artist image development, fashion collaborations, and visual storytelling create meaningful exposure."
+    },
+
+    healthWellness: {
+      strength: 24,
+      notes: "Limited outside music therapy and wellness-related creative programming."
+    },
+
+    nutraceuticals: {
+      strength: 4,
+      notes: "Not a meaningful institutional pathway."
+    },
+
+    consumerProducts: {
+      strength: 58,
+      notes: "Brand partnerships, licensing, creator marketing, and consumer entertainment products provide moderate opportunities."
+    },
+
+    outdoorIndustry: {
+      strength: 6,
+      notes: "Minimal institutional connection."
+    },
+
+    sportsBusiness: {
+      strength: 34,
+      notes: "Music production for sporting events, live entertainment, and broadcast production create niche opportunities."
+    },
+
+    entertainmentMedia: {
+      strength: 100,
+      notes: "Arguably the strongest contemporary music and entertainment ecosystem in higher education, spanning recording, film, television, gaming, streaming, publishing, and live performance."
+    },
+
+    ventureCapital: {
+      strength: 62,
+      notes: "Growing exposure through music technology, creator economy startups, and entertainment software."
+    },
+
+    privateEquity: {
+      strength: 12,
+      notes: "Minimal direct recruiting."
+    },
+
+    investmentBanking: {
+      strength: 8,
+      notes: "Very limited traditional finance recruiting."
+    },
+
+    consulting: {
+      strength: 16,
+      notes: "Limited outside entertainment consulting and creative strategy."
+    },
+
+    medicine: {
+      strength: 10,
+      notes: "Minimal institutional emphasis."
+    },
+
+    healthcareAdministration: {
+      strength: 8,
+      notes: "Not a significant pathway."
+    },
+
+    defense: {
+      strength: 2,
+      notes: "No meaningful recruiting ecosystem."
+    },
+
+    realEstate: {
+      strength: 12,
+      notes: "Limited opportunities through entertainment development and venue management."
+    },
+
+    luxuryBrands: {
+      strength: 66,
+      notes: "Luxury fashion, lifestyle brands, and artist partnerships create meaningful creative opportunities."
+    },
+
+    entrepreneurship: {
+      strength: 94,
+      notes: "Independent artist careers, music startups, production companies, publishing, and creator businesses make entrepreneurship central to the Berklee experience."
+    },
+
+    technology: {
+      strength: 82,
+      notes: "Strong through music technology, AI music tools, audio engineering, streaming platforms, software development, and interactive media."
+    },
+
+    publicPolicy: {
+      strength: 18,
+      notes: "Limited outside arts advocacy and copyright policy."
+    },
+
+    nonprofitLeadership: {
+      strength: 42,
+      notes: "Arts organizations, education, and community music initiatives provide moderate opportunities."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 66,
+
+    firstGenerationSupport: 68,
+
+    wealthCreationPotential: 84,
+
+    familyBusinessPipelineStrength: 44
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 72,
+
+    automationResistance: 70,
+
+    adaptabilityScore: 94,
+
+    interdisciplinaryStrength: 92,
+
+    futureReadiness: 94,
+
+    entrepreneurialFlexibility: 98,
+
+    lifelongLearningCulture: 90,
+
+    innovationCapacity: 94
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 86,
+
+    communityLeadershipPotential: 74,
+
+    geographicMobility: 98,
+
+    workLifeBalancePotential: 64,
+
+    purposeAlignment: 96,
+
+    familyFormationSupport: 62,
+
+    personalDevelopmentPotential: 94,
+
+    careerOptionality: 78,
+
+    longTermLifeSatisfaction: 88
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 92,
+
+    networkMoat: 98,
+
+    geographicMoat: 82,
+
+    industryMoat: 100,
+
+    alumniMoat: 99,
+
+    brandDurability: 96,
+
+    overallMoatScore: 96
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE_GONE",
+
+    leaverScore: 98,
+
+    returnerScore: 20,
+
+    stewardScore: 18,
+
+    navigatorScore: 94,
+
+    geographicLockIn: "low",
+
+    alumniDispersalPattern: "global"
+
+  }
+
+},
+
+
+// === Fashion_Institute_of_Technology ===
+"Fashion Institute of Technology": {
+
+  institutionNarrative: {
+
+    name: "Fashion Institute of Technology",
+
+    location: "New York, New York",
+
+    region: "Bos-Wash / New York Creative Economy",
+
+    archetype: "America's Fashion Industry University",
+
+    oneSentenceSummary: "The Fashion Institute of Technology is the most industry-connected fashion college in the United States, embedded directly within Manhattan's global fashion ecosystem and serving as one of the world's premier talent pipelines into fashion design, beauty, luxury goods, merchandising, cosmetics, branding, retail innovation, and product development.",
+
+    pipeline: "Approximately 8,500 students. FIT maintains one of the strongest industry pipelines into fashion design, technical design, merchandising, buying, cosmetics and fragrance marketing, textile development, product development, visual merchandising, advertising, branding, licensing, luxury retail, footwear, jewelry, illustration, photography, interior design, and fashion business management. Major recruiters include LVMH, Kering, Estée Lauder, L'Oréal, Chanel, Ralph Lauren, PVH, Tapestry, Capri Holdings, Macy's, Saks Fifth Avenue, Bloomingdale's, Nike, Coach, Tiffany & Co., and hundreds of emerging fashion brands headquartered throughout New York City.",
+
+    hiddenPathway: "FIT's greatest hidden advantage is the Cosmetics and Fragrance Marketing program, which quietly serves as one of the beauty industry's primary executive talent pipelines. Combined with New York's concentration of luxury brands, beauty conglomerates, advertising agencies, retailers, licensing firms, and product development companies, students gain unusually early exposure to decision-makers across the global beauty and luxury ecosystem.",
+
+    institutionalSecret: "Most people think FIT trains fashion designers. In reality, the institution educates the infrastructure of the global fashion economy. Buyers, planners, sourcing executives, product developers, creative directors, textile specialists, licensing managers, beauty executives, digital marketers, visual merchandisers, and luxury brand strategists all emerge from FIT in enormous numbers.",
+
+    theRoom: "FIT occupies an entire campus in Chelsea, one of Manhattan's most creative neighborhoods, only minutes from the Garment District, Hudson Yards, SoHo, Madison Avenue, Fifth Avenue, and the headquarters of countless fashion houses, beauty companies, media organizations, and luxury retailers. Students operate inside the world's largest fashion business ecosystem rather than learning about it from a distance.",
+
+    lifestyle: "Urban, creative, highly professional, and portfolio-driven. Students spend as much time interning, visiting showrooms, attending fashion events, collaborating with brands, and building portfolios as they do in classrooms. New York itself functions as an extension of the campus.",
+
+    bestFitPersonality: "Highly creative, entrepreneurial, visually oriented, trend-aware, resilient, collaborative, comfortable in fast-moving industries, high Openness with moderate Conscientiousness.",
+
+    faithTradition: "Public College (SUNY)",
+
+    geographicInfluenceRadius: "Global influence centered on New York City with extensive reach throughout luxury fashion capitals including Paris, Milan, London, Los Angeles, Seoul, and Tokyo.",
+
+    economicOutcome: "Outstanding outcomes in fashion design, luxury goods, beauty, merchandising, cosmetics, licensing, retail management, product development, branding, visual communication, entrepreneurship, and creative business leadership.",
+
+    gradCities: [
+      "New York NY",
+      "Los Angeles CA",
+      "Miami FL",
+      "London UK",
+      "Paris FR",
+      "Milan IT",
+      "Seoul KR",
+      "Tokyo JP"
+    ],
+
+    comparableInstitutions: [
+      "Parsons School of Design",
+      "Savannah College of Art and Design",
+      "Pratt Institute",
+      "Rhode Island School of Design",
+      "Academy of Art University"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "SUNY Community Colleges",
+        "Fashion-related Associate Degree Programs",
+        "Nassau Community College",
+        "Suffolk County Community College"
+      ],
+
+      transferAcceptanceRate: "Moderate",
+
+      freshmanAcceptanceRate: "~59%",
+
+      estimatedSavingsRange: "$15,000-$40,000",
+
+      transferNotes: "FIT was originally designed around associate-to-bachelor pathways. Portfolio quality and academic preparation remain important for design programs."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Specialized Public Creative College",
+
+    institutionalPersonality: "creative, entrepreneurial, commercially minded, collaborative, industry immersed",
+
+    cultureKeywords: [
+      "Fashion",
+      "Luxury",
+      "Beauty",
+      "Merchandising",
+      "Design",
+      "Retail",
+      "Branding",
+      "New York",
+      "Product Development"
+    ],
+
+    missionOrientation: "Preparing creative professionals for leadership across fashion, beauty, luxury, design, and global consumer industries.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Industry-first education emphasizing portfolios, internships, professional practice, and commercial creativity.",
+
+    competitiveness: "Moderately Selective (Portfolio-dependent for design programs)",
+
+    politicalCulture: "Progressive, globally diverse, creatively expressive.",
+
+    studentAutonomy: "Very High",
+
+    prestigeOrientation: "Very High within fashion, beauty, and luxury industries.",
+
+    socialClimate: "Creative, ambitious, collaborative, professionally focused.",
+
+    leadershipStyle: "Creative leadership through design, innovation, entrepreneurship, and commercial execution."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "America's premier public talent platform serving fashion, luxury, beauty, retail, and consumer branding industries."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 14,
+    BosWash: 100,
+    TorBuffChester: 44,
+    TexasTriangle: 56,
+    CharLanta: 62,
+    NorCalInnovationCorridor: 72,
+    SoCalCreativeEconomy: 94
+
+  },
+
+  comparativePositioning: {
+
+    versusParsons:
+      "Parsons emphasizes conceptual design and multidisciplinary creativity; FIT places greater emphasis on commercial execution, merchandising, production, and direct industry employment.",
+
+    versusSCAD:
+      "SCAD offers broader creative disciplines; FIT possesses unmatched proximity to New York's fashion infrastructure.",
+
+    versusPratt:
+      "Pratt is architecture and industrial design focused; FIT is entirely embedded in fashion, beauty, retail, and luxury industries.",
+
+    versusRISD:
+      "RISD emphasizes fine art and design excellence; FIT emphasizes commercial design, product development, and global fashion business."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Small",
+
+    undergraduateEnrollment: 7900,
+
+    graduateEnrollment: 600,
+
+    totalEnrollment: 8500,
+
+    campusType: "Urban Professional Creative College",
+
+    residentialIntensity: 32,
+
+    communityFeel: 86,
+
+    studentFacultyRatio: "15:1",
+
+    classSizeExperience: "Studio courses, design critiques, merchandising projects, and industry-led instruction dominate the curriculum. Small classes and constant portfolio reviews create a highly personalized professional education.",
+
+    scaleAdvantages: [
+      "Daily access to the global fashion industry",
+      "One of the strongest internship ecosystems in fashion and beauty",
+      "Faculty are active industry professionals",
+      "Portfolio-driven education beginning in the first year",
+      "Extensive employer engagement throughout every semester"
+    ],
+
+    scaleDisadvantages: [
+      "Limited traditional campus experience",
+      "New York cost of living is extremely high",
+      "Career success depends heavily on networking and portfolio quality",
+      "Highly specialized academic offerings"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 96,
+      conscientiousness: 74,
+      extraversion: 74,
+      agreeableness: 70,
+      neuroticism: 44
+    },
+
+    hollandCodes: ["A", "E", "C"],
+
+    learningStyle: [
+      "Studio Learning",
+      "Portfolio Development",
+      "Industry Collaboration",
+      "Experiential Projects",
+      "Professional Internships"
+    ],
+
+    socialEnvironment: [
+      "Creative",
+      "Career-Oriented",
+      "Urban",
+      "Collaborative",
+      "Trend-Driven"
+    ],
+
+    idealStudentTraits: [
+      "Highly visual thinker",
+      "Entrepreneurial mindset",
+      "Interested in brands and consumer culture",
+      "Comfortable receiving constant critique",
+      "Self-directed and professionally ambitious"
+    ],
+
+    thrivesIf: [
+      "Wants to work in fashion, luxury, beauty, retail, or branding",
+      "Enjoys New York City energy",
+      "Builds professional relationships naturally",
+      "Prefers project-based education",
+      "Learns through creating rather than lectures"
+    ],
+
+    strugglesIf: [
+      "Wants a traditional residential college experience",
+      "Prefers broad liberal arts education",
+      "Needs structured recruiting pipelines",
+      "Dislikes large cities",
+      "Has little interest in creative industries"
+    ],
+
+    transferRiskFactors: [
+      "Students expecting traditional campus life",
+      "Students pursuing fashion without professional commitment",
+      "Students uncomfortable with portfolio evaluation"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Cosmetics and Fragrance Marketing",
+      "Packaging Design",
+      "Technical Design",
+      "Textile Surface Design",
+      "Fabric Styling",
+      "Toy Design",
+      "Accessories Design",
+      "International Trade and Marketing"
+    ],
+
+    hiddenCareerPipelines: [
+      "Luxury brand management",
+      "Beauty industry leadership",
+      "Global sourcing",
+      "Product development",
+      "Licensing",
+      "Retail buying",
+      "Fashion technology",
+      "Creative direction"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Luxury conglomerate internships",
+      "Beauty executive recruiting",
+      "Fashion Week networking",
+      "Showroom experience",
+      "Brand collaboration projects"
+    ],
+
+    overlookedStrengths: [
+      "World-class cosmetics marketing program",
+      "Exceptional merchandising education",
+      "Strong technical apparel development",
+      "Fashion business leadership",
+      "Retail analytics and consumer insights"
+    ],
+
+    sleeperIndustries: [
+      "Beauty Technology",
+      "Luxury E-Commerce",
+      "Consumer Trend Forecasting",
+      "Retail Analytics",
+      "Fashion Software",
+      "Digital Product Development"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 90,
+
+    mentorshipDensity: 88,
+
+    executiveAccess: 92,
+
+    internshipNetwork: 98,
+
+    familyBusinessExposure: 60,
+
+    relationshipCapitalScore: 94,
+
+    alumniLoyaltyScore: 90,
+
+    referralCultureStrength: 94,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Fashion",
+      "Luxury Goods",
+      "Beauty",
+      "Retail",
+      "Consumer Products",
+      "Brand Strategy",
+      "Advertising",
+      "Product Development"
+    ],
+
+    regionalEconomicDrivers: [
+      "New York Fashion Industry",
+      "Luxury Conglomerates",
+      "Beauty Headquarters",
+      "Retail Innovation",
+      "Advertising Agencies",
+      "Media",
+      "Consumer Branding"
+    ],
+
+    topEmployers: [
+      "LVMH",
+      "Kering",
+      "Estée Lauder",
+      "L'Oréal",
+      "Chanel",
+      "PVH",
+      "Tapestry",
+      "Nike",
+      "Ralph Lauren",
+      "Capri Holdings"
+    ],
+
+    emergingIndustries: [
+      "Fashion Technology",
+      "AI Design",
+      "Sustainable Fashion",
+      "Luxury E-Commerce",
+      "Creator Commerce",
+      "Digital Retail"
+    ],
+
+    startupDensity: "High",
+
+    ventureCapitalAccess: 76,
+
+    corporateHeadquartersDensity: 98,
+
+    healthcareHubStrength: 8,
+
+    innovationIndex: 90
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "New York City Luxury and Fashion Economy",
+
+    secondaryMarkets: [
+      "Los Angeles CA",
+      "Miami FL",
+      "Paris FR",
+      "Milan IT",
+      "London UK",
+      "Seoul KR",
+      "Tokyo JP"
+    ],
+
+    alumniStrongholds: [
+      "New York NY",
+      "Los Angeles CA",
+      "Paris FR",
+      "Milan IT",
+      "London UK"
+    ],
+
+    relocationPatterns: [
+      "New York for fashion, beauty, merchandising, and luxury headquarters",
+      "Los Angeles for apparel, entertainment, influencer brands, and lifestyle companies",
+      "Paris and Milan for luxury fashion houses",
+      "London for international fashion marketing and retail",
+      "Global mobility throughout luxury and consumer brand industries"
+    ],
+
+    regionalInfluenceScore: 96,
+
+    nationalReachScore: 88,
+
+    internationalReachScore: 94
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 0,
+
+    studentOrganizationStrength: 86,
+
+    leadershipDevelopment: 84,
+
+    crossDisciplinaryInteraction: 88,
+
+    civicEngagement: 52
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 100,
+      notes: "One of the strongest beauty, cosmetics, fragrance, packaging, branding, and luxury aesthetics ecosystems in higher education."
+    },
+
+    healthWellness: {
+      strength: 18,
+      notes: "Limited outside beauty, skincare, and wellness consumer products."
+    },
+
+    nutraceuticals: {
+      strength: 12,
+      notes: "Minimal institutional emphasis."
+    },
+
+    consumerProducts: {
+      strength: 94,
+      notes: "Exceptional preparation for apparel, footwear, accessories, consumer branding, merchandising, licensing, and product development."
+    },
+
+    outdoorIndustry: {
+      strength: 16,
+      notes: "Limited except through apparel and performance clothing brands."
+    },
+
+    sportsBusiness: {
+      strength: 42,
+      notes: "Athletic apparel, footwear, licensing, and brand marketing create meaningful opportunities."
+    },
+
+    entertainmentMedia: {
+      strength: 76,
+      notes: "Fashion media, editorial, photography, influencer marketing, creative direction, and luxury branding are major strengths."
+    },
+
+    ventureCapital: {
+      strength: 54,
+      notes: "Growing exposure through fashion technology, beauty startups, and direct-to-consumer brands."
+    },
+
+    privateEquity: {
+      strength: 22,
+      notes: "Limited direct recruiting outside consumer and luxury investment sectors."
+    },
+
+    investmentBanking: {
+      strength: 14,
+      notes: "Minimal traditional finance recruiting."
+    },
+
+    consulting: {
+      strength: 38,
+      notes: "Brand strategy, retail consulting, merchandising analytics, and consumer insights create niche opportunities."
+    },
+
+    medicine: {
+      strength: 6,
+      notes: "Not an institutional focus."
+    },
+
+    healthcareAdministration: {
+      strength: 6,
+      notes: "Minimal pathway."
+    },
+
+    defense: {
+      strength: 0,
+      notes: "No meaningful recruiting ecosystem."
+    },
+
+    realEstate: {
+      strength: 24,
+      notes: "Retail development, luxury retail, and commercial merchandising create niche opportunities."
+    },
+
+    luxuryBrands: {
+      strength: 100,
+      notes: "Among the strongest luxury brand pipelines in the world, spanning fashion, jewelry, watches, beauty, accessories, and premium consumer goods."
+    },
+
+    entrepreneurship: {
+      strength: 90,
+      notes: "Independent labels, beauty brands, agencies, creative studios, consulting firms, and direct-to-consumer businesses make entrepreneurship a core career pathway."
+    },
+
+    technology: {
+      strength: 62,
+      notes: "Growing opportunities in fashion technology, retail analytics, AI-assisted design, supply chain technology, and e-commerce."
+    },
+
+    publicPolicy: {
+      strength: 8,
+      notes: "Minimal institutional emphasis."
+    },
+
+    nonprofitLeadership: {
+      strength: 36,
+      notes: "Moderate opportunities through museums, arts organizations, and fashion sustainability initiatives."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 68,
+
+    firstGenerationSupport: 72,
+
+    wealthCreationPotential: 88,
+
+    familyBusinessPipelineStrength: 68
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 74,
+
+    automationResistance: 70,
+
+    adaptabilityScore: 92,
+
+    interdisciplinaryStrength: 88,
+
+    futureReadiness: 92,
+
+    entrepreneurialFlexibility: 96,
+
+    lifelongLearningCulture: 88,
+
+    innovationCapacity: 92
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 90,
+
+    communityLeadershipPotential: 68,
+
+    geographicMobility: 96,
+
+    workLifeBalancePotential: 62,
+
+    purposeAlignment: 92,
+
+    familyFormationSupport: 60,
+
+    personalDevelopmentPotential: 92,
+
+    careerOptionality: 84,
+
+    longTermLifeSatisfaction: 84
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 90,
+
+    networkMoat: 96,
+
+    geographicMoat: 98,
+
+    industryMoat: 100,
+
+    alumniMoat: 94,
+
+    brandDurability: 94,
+
+    overallMoatScore: 95
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE_GONE",
+
+    leaverScore: 99,
+
+    returnerScore: 12,
+
+    stewardScore: 10,
+
+    navigatorScore: 96,
+
+    geographicLockIn: "low",
+
+    alumniDispersalPattern: "global"
+
+  }
+
+},
+
+
+// === Pratt_Institute ===
+"Pratt Institute": {
+
+  institutionNarrative: {
+
+    name: "Pratt Institute",
+
+    location: "Brooklyn, New York",
+
+    region: "Bos-Wash / New York Creative Economy",
+
+    archetype: "The Design and Architecture Institute of New York",
+
+    oneSentenceSummary: "Pratt Institute is one of the world's premier design schools, combining internationally respected architecture, industrial design, interior design, fine arts, and creative technology programs within New York City's unparalleled ecosystem of architecture firms, design studios, museums, luxury brands, technology startups, and creative agencies.",
+
+    pipeline: "Approximately 5,000 students. Pratt maintains globally recognized programs in architecture, interior design, industrial design, graphic design, communications design, fine arts, illustration, animation, fashion, construction management, creative writing, information experience design, and creative technologies. Major employers include Gensler, SOM, Perkins&Will, BIG, Rockwell Group, IDEO, Frog Design, Pentagram, Google, Apple, Nike, Autodesk, Disney, Marvel, IBM, and hundreds of architecture firms, design consultancies, museums, and creative agencies headquartered throughout New York City.",
+
+    hiddenPathway: "Pratt's greatest hidden advantage is its integration into Brooklyn's creative economy. Students develop professional relationships not only through Manhattan's architecture and design firms, but also through Brooklyn's studios, fabrication shops, galleries, artist collectives, startups, museums, and independent creative businesses. The Sculpture Park and Clinton Hill campus create one of the most collaborative creative communities in American higher education.",
+
+    institutionalSecret: "While Pratt is often viewed as an art school, it is actually one of the world's strongest professional design institutions. Architecture, industrial design, UX, interior design, product development, creative technology, urban planning, and strategic design collectively generate a career ecosystem that extends far beyond traditional fine arts.",
+
+    theRoom: "Pratt occupies a rare 25-acre wooded campus in Clinton Hill, Brooklyn—one of New York City's most architecturally rich neighborhoods. Students move seamlessly between campus studios, Manhattan architecture firms, Brooklyn fabrication spaces, museums, galleries, startup companies, and global design headquarters, making New York itself an extension of the classroom.",
+
+    lifestyle: "Creative, studio-intensive, highly collaborative, and urban. Long studio hours, critiques, exhibitions, fabrication labs, internships, and portfolio development define student life. Brooklyn's creative culture becomes an integral part of the educational experience.",
+
+    bestFitPersonality: "Highly creative, visually oriented, intellectually curious, collaborative, resilient, entrepreneurial, comfortable with critique, high Openness and strong intrinsic motivation.",
+
+    faithTradition: "Nonsectarian Private Institute",
+
+    geographicInfluenceRadius: "Global influence anchored by New York City with strong alumni presence throughout major architecture, design, and creative capitals.",
+
+    economicOutcome: "Outstanding outcomes across architecture, industrial design, UX/UI, interior design, graphic design, creative technology, museum leadership, animation, branding, and entrepreneurship. Career outcomes are driven heavily by portfolio quality and professional relationships.",
+
+    gradCities: [
+      "New York NY",
+      "Los Angeles CA",
+      "San Francisco CA",
+      "Chicago IL",
+      "Boston MA",
+      "London UK",
+      "Seattle WA",
+      "Berlin DE"
+    ],
+
+    comparableInstitutions: [
+      "Rhode Island School of Design",
+      "Parsons School of Design",
+      "ArtCenter College of Design",
+      "Savannah College of Art and Design",
+      "California College of the Arts"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "SUNY Community Colleges",
+        "Fashion Institute of Technology",
+        "LaGuardia Community College",
+        "Kingsborough Community College"
+      ],
+
+      transferAcceptanceRate: "Moderate",
+
+      freshmanAcceptanceRate: "~53%",
+
+      estimatedSavingsRange: "$20,000-$45,000",
+
+      transferNotes: "Portfolio quality remains the most important admission factor for creative disciplines. Transfer pathways are well established for qualified design students."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Private Design and Creative Arts Institute",
+
+    institutionalPersonality: "creative, experimental, collaborative, entrepreneurial, design-driven",
+
+    cultureKeywords: [
+      "Architecture",
+      "Industrial Design",
+      "Brooklyn",
+      "Studios",
+      "Design Thinking",
+      "Creative Technology",
+      "Fabrication",
+      "Fine Arts",
+      "Innovation"
+    ],
+
+    missionOrientation: "Preparing creative leaders who shape the built environment, products, visual communication, and culture through design excellence.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Studio-based, critique-centered education emphasizing craftsmanship, design thinking, interdisciplinary collaboration, and professional practice.",
+
+    competitiveness: "Selective (Portfolio-dependent)",
+
+    politicalCulture: "Progressive, globally diverse, artistically expressive.",
+
+    studentAutonomy: "Very High",
+
+    prestigeOrientation: "Very High within architecture and design professions.",
+
+    socialClimate: "Collaborative, studio-centered, intellectually curious, professionally ambitious.",
+
+    leadershipStyle: "Creative leadership through design innovation, making, and interdisciplinary collaboration."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Global talent platform serving architecture, design, creative technology, museums, media, and innovation industries."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 16,
+    BosWash: 100,
+    TorBuffChester: 42,
+    TexasTriangle: 54,
+    CharLanta: 58,
+    NorCalInnovationCorridor: 82,
+    SoCalCreativeEconomy: 92
+
+  },
+
+  comparativePositioning: {
+
+    versusRISD:
+      "RISD emphasizes broader fine arts and traditional design disciplines; Pratt offers deeper integration with New York's architecture and professional design ecosystem.",
+
+    versusParsons:
+      "Parsons emphasizes fashion and multidisciplinary creative practice; Pratt is particularly dominant in architecture, industrial design, and the built environment.",
+
+    versusArtCenter:
+      "ArtCenter specializes in transportation and product design; Pratt provides greater strength in architecture, urban design, and interdisciplinary creative education.",
+
+    versusSCAD:
+      "SCAD offers broader creative disciplines across multiple campuses; Pratt delivers unmatched proximity to New York's architecture, museum, and design industries."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Small",
+
+    undergraduateEnrollment: 3800,
+
+    graduateEnrollment: 1200,
+
+    totalEnrollment: 5000,
+
+    campusType: "Urban Professional Design Institute",
+
+    residentialIntensity: 48,
+
+    communityFeel: 90,
+
+    studentFacultyRatio: "9:1",
+
+    classSizeExperience: "Studio-based education with intensive critiques, fabrication labs, collaborative design projects, and close faculty mentorship. Most upper-level instruction occurs in small studio environments where portfolio development is central to every semester.",
+
+    scaleAdvantages: [
+      "One of the strongest architecture and industrial design faculties in America",
+      "Exceptional access to New York architecture firms and design studios",
+      "Highly personalized studio instruction",
+      "Faculty are practicing architects, designers, artists, and creative directors",
+      "Professional portfolio development begins immediately"
+    ],
+
+    scaleDisadvantages: [
+      "Limited traditional university experience",
+      "Studio culture demands significant time commitments",
+      "New York City cost of living is extremely high",
+      "Career success depends heavily on portfolio quality and networking"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 98,
+      conscientiousness: 76,
+      extraversion: 66,
+      agreeableness: 72,
+      neuroticism: 42
+    },
+
+    hollandCodes: ["A", "I", "E"],
+
+    learningStyle: [
+      "Studio Learning",
+      "Design Critique",
+      "Project-Based Learning",
+      "Fabrication",
+      "Portfolio Development"
+    ],
+
+    socialEnvironment: [
+      "Creative",
+      "Collaborative",
+      "Studio-Centered",
+      "Urban",
+      "Professionally Ambitious"
+    ],
+
+    idealStudentTraits: [
+      "Visual problem solver",
+      "Comfortable with constant critique",
+      "Interested in making and building",
+      "Self-directed creative learner",
+      "Strong attention to detail"
+    ],
+
+    thrivesIf: [
+      "Wants to become an architect or designer",
+      "Enjoys iterative creative work",
+      "Can manage demanding studio schedules",
+      "Values New York's creative ecosystem",
+      "Learns by building real projects"
+    ],
+
+    strugglesIf: [
+      "Prefers lecture-based instruction",
+      "Needs highly structured academic pathways",
+      "Dislikes portfolio evaluation",
+      "Prefers traditional campus life",
+      "Has little interest in design disciplines"
+    ],
+
+    transferRiskFactors: [
+      "Students underestimating studio workload",
+      "Students seeking broader liberal arts education",
+      "Students uncomfortable with continuous creative critique"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Construction Management",
+      "Information Experience Design",
+      "Furniture Design",
+      "Historic Preservation",
+      "Urban Placemaking",
+      "Creative Arts Therapy",
+      "Writing",
+      "Design Management"
+    ],
+
+    hiddenCareerPipelines: [
+      "Museum exhibition design",
+      "Experience design (UX)",
+      "Creative consulting",
+      "Architectural visualization",
+      "Real estate development",
+      "Design strategy",
+      "Public space planning",
+      "Creative technology"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Architecture firm internships throughout Manhattan",
+      "Museum partnerships",
+      "Design consultancy recruiting",
+      "Brooklyn startup ecosystem",
+      "Fabrication and prototyping labs"
+    ],
+
+    overlookedStrengths: [
+      "Top-tier industrial design program",
+      "Highly respected interior design curriculum",
+      "Excellent UX and interaction design",
+      "Construction management with design integration",
+      "Strong interdisciplinary collaboration"
+    ],
+
+    sleeperIndustries: [
+      "Urban Technology",
+      "Experience Design",
+      "Design Strategy",
+      "Smart Cities",
+      "Digital Fabrication",
+      "Creative AI"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 90,
+
+    mentorshipDensity: 90,
+
+    executiveAccess: 86,
+
+    internshipNetwork: 94,
+
+    familyBusinessExposure: 54,
+
+    relationshipCapitalScore: 92,
+
+    alumniLoyaltyScore: 90,
+
+    referralCultureStrength: 92,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Architecture",
+      "Industrial Design",
+      "Creative Technology",
+      "Interior Design",
+      "Advertising",
+      "Real Estate Development",
+      "Media",
+      "Consumer Products"
+    ],
+
+    regionalEconomicDrivers: [
+      "New York Architecture Industry",
+      "Commercial Real Estate",
+      "Creative Agencies",
+      "Technology Design",
+      "Museums",
+      "Luxury Brands",
+      "Urban Development"
+    ],
+
+    topEmployers: [
+      "Gensler",
+      "Skidmore, Owings & Merrill",
+      "Perkins&Will",
+      "BIG",
+      "IDEO",
+      "Pentagram",
+      "Google",
+      "Apple",
+      "Nike",
+      "Autodesk"
+    ],
+
+    emergingIndustries: [
+      "AI Design",
+      "UX Research",
+      "Smart Buildings",
+      "Digital Fabrication",
+      "Sustainable Architecture",
+      "Creative Technology"
+    ],
+
+    startupDensity: "High",
+
+    ventureCapitalAccess: 74,
+
+    corporateHeadquartersDensity: 96,
+
+    healthcareHubStrength: 10,
+
+    innovationIndex: 92
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "New York City Design and Architecture Economy",
+
+    secondaryMarkets: [
+      "Los Angeles CA",
+      "San Francisco CA",
+      "Chicago IL",
+      "Boston MA",
+      "Seattle WA",
+      "London UK",
+      "Berlin DE"
+    ],
+
+    alumniStrongholds: [
+      "New York NY",
+      "Los Angeles CA",
+      "San Francisco CA",
+      "Chicago IL",
+      "London UK"
+    ],
+
+    relocationPatterns: [
+      "New York for architecture, design, museums, and creative agencies",
+      "San Francisco for UX, product design, and technology companies",
+      "Los Angeles for entertainment, experiential design, and creative direction",
+      "Chicago for architecture and urban planning",
+      "Global mobility across architecture, industrial design, museums, and creative consulting"
+    ],
+
+    regionalInfluenceScore: 96,
+
+    nationalReachScore: 90,
+
+    internationalReachScore: 88
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 0,
+
+    studentOrganizationStrength: 86,
+
+    leadershipDevelopment: 86,
+
+    crossDisciplinaryInteraction: 94,
+
+    civicEngagement: 72
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 82,
+      notes: "Excellent preparation for luxury branding, packaging, visual identity, retail experience, and creative direction."
+    },
+
+    healthWellness: {
+      strength: 18,
+      notes: "Limited outside healthcare design, therapeutic environments, and accessibility design."
+    },
+
+    nutraceuticals: {
+      strength: 8,
+      notes: "Minimal institutional emphasis."
+    },
+
+    consumerProducts: {
+      strength: 90,
+      notes: "Industrial design, furniture, packaging, product development, and consumer experience design represent major institutional strengths."
+    },
+
+    outdoorIndustry: {
+      strength: 26,
+      notes: "Moderate opportunities through industrial design, sustainable materials, and environmental design."
+    },
+
+    sportsBusiness: {
+      strength: 18,
+      notes: "Limited outside venue, retail, and experiential design."
+    },
+
+    entertainmentMedia: {
+      strength: 74,
+      notes: "Strong opportunities in animation, illustration, production design, exhibit design, motion graphics, and creative storytelling."
+    },
+
+    ventureCapital: {
+      strength: 68,
+      notes: "Strong exposure through product design, UX startups, creative technology, and New York's venture ecosystem."
+    },
+
+    privateEquity: {
+      strength: 16,
+      notes: "Minimal direct recruiting outside design-focused portfolio companies."
+    },
+
+    investmentBanking: {
+      strength: 8,
+      notes: "Not a traditional institutional pathway."
+    },
+
+    consulting: {
+      strength: 54,
+      notes: "Meaningful opportunities in innovation consulting, design strategy, customer experience, and service design."
+    },
+
+    medicine: {
+      strength: 14,
+      notes: "Limited outside medical product design and healthcare environments."
+    },
+
+    healthcareAdministration: {
+      strength: 8,
+      notes: "Not a significant pathway."
+    },
+
+    defense: {
+      strength: 6,
+      notes: "Minimal recruiting outside industrial and systems design."
+    },
+
+    realEstate: {
+      strength: 88,
+      notes: "Architecture, urban planning, construction management, and interior design create exceptional opportunities throughout commercial real estate development."
+    },
+
+    luxuryBrands: {
+      strength: 82,
+      notes: "Excellent placement into luxury retail, furniture, interiors, product design, branding, and experiential environments."
+    },
+
+    entrepreneurship: {
+      strength: 90,
+      notes: "Independent design studios, architecture firms, creative consultancies, fabrication companies, and product startups are common alumni pathways."
+    },
+
+    technology: {
+      strength: 86,
+      notes: "Strong pipelines into UX/UI, interaction design, product design, creative AI, visualization, and technology-driven design firms."
+    },
+
+    publicPolicy: {
+      strength: 34,
+      notes: "Urban planning, preservation, housing, and civic design create specialized public-sector opportunities."
+    },
+
+    nonprofitLeadership: {
+      strength: 54,
+      notes: "Museums, arts organizations, urban design nonprofits, and cultural institutions provide meaningful career pathways."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 64,
+
+    firstGenerationSupport: 66,
+
+    wealthCreationPotential: 88,
+
+    familyBusinessPipelineStrength: 52
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 76,
+
+    automationResistance: 78,
+
+    adaptabilityScore: 94,
+
+    interdisciplinaryStrength: 94,
+
+    futureReadiness: 94,
+
+    entrepreneurialFlexibility: 94,
+
+    lifelongLearningCulture: 90,
+
+    innovationCapacity: 94
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 88,
+
+    communityLeadershipPotential: 80,
+
+    geographicMobility: 94,
+
+    workLifeBalancePotential: 66,
+
+    purposeAlignment: 94,
+
+    familyFormationSupport: 64,
+
+    personalDevelopmentPotential: 94,
+
+    careerOptionality: 88,
+
+    longTermLifeSatisfaction: 90
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 92,
+
+    networkMoat: 94,
+
+    geographicMoat: 96,
+
+    industryMoat: 96,
+
+    alumniMoat: 92,
+
+    brandDurability: 94,
+
+    overallMoatScore: 94
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE_GONE",
+
+    leaverScore: 98,
+
+    returnerScore: 18,
+
+    stewardScore: 16,
+
+    navigatorScore: 94,
+
+    geographicLockIn: "low",
+
+    alumniDispersalPattern: "global"
+
+  }
+
+},
+
+
+// === Franklin_and_Marshall_College ===
+"Franklin and Marshall College": {
+
+  institutionNarrative: {
+
+    name: "Franklin and Marshall College",
+
+    location: "Lancaster, Pennsylvania",
+
+    region: "Bos-Wash / Pennsylvania Corridor",
+
+    archetype: "The Relationship-Driven Liberal Arts College",
+
+    oneSentenceSummary: "Franklin & Marshall College is one of America's premier liberal arts colleges for students seeking exceptional faculty mentorship, nationally respected pre-health preparation, and unusually personalized access to careers in medicine, law, finance, consulting, public service, and graduate education through a residential campus built around close intellectual community.",
+
+    pipeline: "Approximately 2,400 undergraduate students. Franklin & Marshall has one of the strongest documented pre-medical advising systems among liberal arts colleges, consistently producing medical school acceptance rates well above national averages for qualified applicants. Graduates enter medicine, dentistry, physician assistant programs, law, consulting, investment banking, public policy, education, research, and graduate study. Major employers include Penn Medicine, Johns Hopkins, Deloitte, EY, PwC, Goldman Sachs, Bank of America, Vanguard, Capital One, Teach For America, and numerous graduate and professional schools throughout the Northeast.",
+
+    hiddenPathway: "The college's greatest hidden advantage is the Ware Institute for Civic Engagement and its deep integration with Lancaster's nonprofit, healthcare, education, and civic institutions. Students build meaningful leadership experience through sustained community partnerships rather than isolated volunteer opportunities, creating unusually strong professional references and graduate school preparation.",
+
+    institutionalSecret: "Franklin & Marshall's greatest strength is not prestige alone—it's accessibility. Faculty mentorship, undergraduate research, leadership opportunities, and recommendation letters become available to students far earlier than at larger universities, allowing motivated students to build exceptionally competitive graduate school portfolios.",
+
+    theRoom: "Located in Lancaster, one of America's fastest-growing small cities, Franklin & Marshall combines a traditional residential liberal arts campus with access to an increasingly vibrant regional economy. Philadelphia, Baltimore, Washington, D.C., and New York are all accessible for internships while Lancaster provides a remarkably livable, community-oriented environment during the academic year.",
+
+    lifestyle: "Residential, intellectually curious, collaborative, and community-oriented. Students participate heavily in research, student government, athletics, civic engagement, cultural organizations, and close faculty interaction. Campus life emphasizes relationships over scale.",
+
+    bestFitPersonality: "Academically curious, collaborative, intellectually engaged, community-minded, interested in graduate or professional education, high Conscientiousness with moderate Openness and Agreeableness.",
+
+    faithTradition: "Historically founded by the German Reformed Church and Lutheran Church; today fully nonsectarian.",
+
+    geographicInfluenceRadius: "Strongest throughout Pennsylvania, the Mid-Atlantic, and the Northeast with national graduate school placement.",
+
+    economicOutcome: "Exceptional preparation for medicine, healthcare, law, graduate education, finance, consulting, public service, research, and nonprofit leadership. Graduate outcomes are amplified by individualized advising and extensive undergraduate research.",
+
+    gradCities: [
+      "Philadelphia PA",
+      "New York NY",
+      "Washington DC",
+      "Lancaster PA",
+      "Baltimore MD",
+      "Boston MA",
+      "Pittsburgh PA"
+    ],
+
+    comparableInstitutions: [
+      "Dickinson College",
+      "Gettysburg College",
+      "Lafayette College",
+      "Union College",
+      "Denison University"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Harrisburg Area Community College",
+        "Community College of Philadelphia",
+        "Montgomery County Community College",
+        "Delaware County Community College"
+      ],
+
+      transferAcceptanceRate: "Moderate",
+
+      freshmanAcceptanceRate: "~38%",
+
+      estimatedSavingsRange: "$20,000-$50,000",
+
+      transferNotes: "Transfer applicants are evaluated holistically. Strong academic performance, rigorous coursework, and demonstrated engagement are important. Financial aid is available for qualified transfer students."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Residential Liberal Arts College",
+
+    institutionalPersonality: "intellectual, collaborative, relationship-driven, service-oriented, academically ambitious",
+
+    cultureKeywords: [
+      "Liberal Arts",
+      "Research",
+      "Pre-Med",
+      "Mentorship",
+      "Residential",
+      "Community",
+      "Leadership",
+      "Graduate School",
+      "Lancaster"
+    ],
+
+    missionOrientation: "Preparing intellectually curious graduates for leadership, lifelong learning, and meaningful civic engagement.",
+
+    faithTradition: "Historically Protestant; presently nonsectarian.",
+
+    educationalPhilosophy: "Close faculty mentorship, broad liberal arts education, undergraduate research, and personalized advising.",
+
+    competitiveness: "Selective",
+
+    politicalCulture: "Moderate to progressive with strong emphasis on civil discourse.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "High among liberal arts colleges and graduate schools.",
+
+    socialClimate: "Residential, collaborative, academically engaged.",
+
+    leadershipStyle: "Leadership through scholarship, service, research, and community engagement."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "High-touch liberal arts institution serving medicine, graduate education, public service, finance, and healthcare throughout the Mid-Atlantic."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 18,
+    BosWash: 94,
+    TorBuffChester: 70,
+    TexasTriangle: 34,
+    CharLanta: 36,
+    NorCalInnovationCorridor: 26,
+    SoCalCreativeEconomy: 20
+
+  },
+
+  comparativePositioning: {
+
+    versusDickinson:
+      "Both emphasize global liberal arts education; Franklin & Marshall offers stronger pre-health advising and undergraduate research intensity.",
+
+    versusGettysburg:
+      "Gettysburg places greater emphasis on public affairs and leadership; Franklin & Marshall distinguishes itself through research opportunities and graduate school preparation.",
+
+    versusLafayette:
+      "Lafayette combines engineering with liberal arts; Franklin & Marshall is more purely liberal arts and pre-professional.",
+
+    versusDenison:
+      "Denison has stronger national business recruiting; Franklin & Marshall provides particularly strong pathways into medicine, healthcare, and graduate education."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Very Small",
+
+    undergraduateEnrollment: 2400,
+
+    graduateEnrollment: 0,
+
+    totalEnrollment: 2400,
+
+    campusType: "Residential Liberal Arts College",
+
+    residentialIntensity: 94,
+
+    communityFeel: 96,
+
+    studentFacultyRatio: "8:1",
+
+    classSizeExperience: "Nearly all classes are discussion-based seminars taught by full-time faculty. Undergraduate research, close advising, and direct faculty mentorship define the academic experience from the first year onward.",
+
+    scaleAdvantages: [
+      "Extraordinary faculty accessibility",
+      "Nationally respected pre-med advising",
+      "Research opportunities beginning freshman year",
+      "Strong residential community with high student engagement",
+      "Extensive alumni mentoring despite small enrollment"
+    ],
+
+    scaleDisadvantages: [
+      "Limited number of majors compared to research universities",
+      "Smaller social scene",
+      "Few graduate-level research facilities",
+      "Students seeking major Division I athletics or large-school culture may feel constrained"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 84,
+      conscientiousness: 92,
+      extraversion: 62,
+      agreeableness: 82,
+      neuroticism: 36
+    },
+
+    hollandCodes: ["I", "S", "E"],
+
+    learningStyle: [
+      "Seminar Discussion",
+      "Faculty Mentorship",
+      "Research-Based Learning",
+      "Writing Intensive",
+      "Experiential Learning"
+    ],
+
+    socialEnvironment: [
+      "Residential",
+      "Collaborative",
+      "Academic",
+      "Service-Oriented",
+      "Close-Knit"
+    ],
+
+    idealStudentTraits: [
+      "Enjoys intellectual discussion",
+      "Values faculty relationships",
+      "Interested in graduate or professional school",
+      "Comfortable in a small residential community",
+      "Self-motivated learner"
+    ],
+
+    thrivesIf: [
+      "Wants individualized advising",
+      "Plans for medicine, law, graduate school, or research",
+      "Enjoys discussion-based classrooms",
+      "Values community involvement",
+      "Prefers relationships over anonymity"
+    ],
+
+    strugglesIf: [
+      "Wants a major sports atmosphere",
+      "Prefers large lecture courses",
+      "Needs extensive major selection",
+      "Seeks an urban campus environment",
+      "Wants highly specialized undergraduate programs"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking larger universities",
+      "Students wanting broader academic specialization",
+      "Students uncomfortable with an intensive residential community"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Scientific and Philosophical Studies of Mind",
+      "Business, Organizations and Society",
+      "Public Health",
+      "Government",
+      "Anthropology",
+      "Geosciences",
+      "Mathematics",
+      "Psychology"
+    ],
+
+    hiddenCareerPipelines: [
+      "Medical school",
+      "Healthcare administration",
+      "Public policy",
+      "Clinical research",
+      "Consulting",
+      "Investment banking",
+      "Nonprofit leadership",
+      "Graduate fellowships"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Exceptional medical school advising",
+      "Faculty research partnerships",
+      "Lancaster healthcare network",
+      "Mid-Atlantic alumni mentoring",
+      "Strong fellowship advising"
+    ],
+
+    overlookedStrengths: [
+      "Excellent undergraduate research funding",
+      "Highly personalized advising",
+      "Strong civic engagement programs",
+      "Outstanding graduate school preparation",
+      "Very high faculty accessibility"
+    ],
+
+    sleeperIndustries: [
+      "Biotechnology",
+      "Healthcare Innovation",
+      "Public Health",
+      "Educational Leadership",
+      "Scientific Research",
+      "Behavioral Science"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 92,
+
+    mentorshipDensity: 96,
+
+    executiveAccess: 74,
+
+    internshipNetwork: 82,
+
+    familyBusinessExposure: 44,
+
+    relationshipCapitalScore: 90,
+
+    alumniLoyaltyScore: 92,
+
+    referralCultureStrength: 90,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Healthcare",
+      "Higher Education",
+      "Professional Services",
+      "Finance",
+      "Government",
+      "Research",
+      "Consulting",
+      "Nonprofit"
+    ],
+
+    regionalEconomicDrivers: [
+      "Penn Medicine",
+      "Lancaster General Health",
+      "Philadelphia Healthcare",
+      "Financial Services",
+      "Education",
+      "Government",
+      "Professional Services"
+    ],
+
+    topEmployers: [
+      "Penn Medicine",
+      "Lancaster General Health",
+      "Deloitte",
+      "EY",
+      "PwC",
+      "Goldman Sachs",
+      "Vanguard",
+      "Capital One",
+      "Teach For America"
+    ],
+
+    emergingIndustries: [
+      "Healthcare Analytics",
+      "Biotechnology",
+      "Health Policy",
+      "Life Sciences",
+      "Data Analytics",
+      "Public Health"
+    ],
+
+    startupDensity: "Moderate",
+
+    ventureCapitalAccess: 34,
+
+    corporateHeadquartersDensity: 46,
+
+    healthcareHubStrength: 90,
+
+    innovationIndex: 72
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Pennsylvania and the Mid-Atlantic Professional Economy",
+
+    secondaryMarkets: [
+      "Philadelphia PA",
+      "New York NY",
+      "Washington DC",
+      "Baltimore MD",
+      "Boston MA",
+      "Pittsburgh PA",
+      "Chicago IL"
+    ],
+
+    alumniStrongholds: [
+      "Philadelphia PA",
+      "New York NY",
+      "Washington DC",
+      "Lancaster PA",
+      "Baltimore MD"
+    ],
+
+    relocationPatterns: [
+      "Philadelphia for medicine, healthcare, finance, and consulting",
+      "New York for finance, law, and graduate education",
+      "Washington DC for public policy, nonprofits, and government",
+      "Boston for medicine, biotechnology, and research",
+      "Many graduates remain throughout Pennsylvania's healthcare and professional services economy"
+    ],
+
+    regionalInfluenceScore: 90,
+
+    nationalReachScore: 76,
+
+    internationalReachScore: 42
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 28,
+
+    studentOrganizationStrength: 88,
+
+    leadershipDevelopment: 92,
+
+    crossDisciplinaryInteraction: 94,
+
+    civicEngagement: 96
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 8,
+      notes: "Minimal institutional emphasis."
+    },
+
+    healthWellness: {
+      strength: 94,
+      notes: "Outstanding preparation for medicine, public health, allied health professions, and healthcare research."
+    },
+
+    nutraceuticals: {
+      strength: 16,
+      notes: "Limited opportunities through biology and chemistry."
+    },
+
+    consumerProducts: {
+      strength: 22,
+      notes: "Some pathways through marketing and business."
+    },
+
+    outdoorIndustry: {
+      strength: 14,
+      notes: "Limited institutional emphasis."
+    },
+
+    sportsBusiness: {
+      strength: 18,
+      notes: "Minimal dedicated recruiting."
+    },
+
+    entertainmentMedia: {
+      strength: 16,
+      notes: "Limited outside communications and digital media."
+    },
+
+    ventureCapital: {
+      strength: 26,
+      notes: "Occasional exposure through alumni and entrepreneurship initiatives."
+    },
+
+    privateEquity: {
+      strength: 20,
+      notes: "Limited direct recruiting."
+    },
+
+    investmentBanking: {
+      strength: 56,
+      notes: "Strong liberal arts preparation supports selective finance recruiting, particularly in Philadelphia and New York."
+    },
+
+    consulting: {
+      strength: 72,
+      notes: "Excellent analytical preparation and writing skills produce solid consulting outcomes."
+    },
+
+    medicine: {
+      strength: 100,
+      notes: "One of the strongest pre-medical liberal arts colleges in the Northeast with exceptional advising and medical school placement."
+    },
+
+    healthcareAdministration: {
+      strength: 76,
+      notes: "Strong regional opportunities through Pennsylvania's major healthcare systems."
+    },
+
+    defense: {
+      strength: 18,
+      notes: "Limited institutional emphasis."
+    },
+
+    realEstate: {
+      strength: 20,
+      notes: "Minimal dedicated recruiting."
+    },
+
+    luxuryBrands: {
+      strength: 8,
+      notes: "Limited pathways."
+    },
+
+    entrepreneurship: {
+      strength: 52,
+      notes: "Students receive strong liberal arts preparation for entrepreneurship, though the startup ecosystem is modest."
+    },
+
+    technology: {
+      strength: 34,
+      notes: "Graduates enter technology primarily through analytics, mathematics, computer science, and consulting."
+    },
+
+    publicPolicy: {
+      strength: 82,
+      notes: "Government, international affairs, nonprofits, and civic leadership represent longstanding institutional strengths."
+    },
+
+    nonprofitLeadership: {
+      strength: 92,
+      notes: "The Ware Institute and extensive civic engagement create exceptional nonprofit leadership preparation."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 72,
+
+    firstGenerationSupport: 84,
+
+    wealthCreationPotential: 78,
+
+    familyBusinessPipelineStrength: 40
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 82,
+
+    automationResistance: 86,
+
+    adaptabilityScore: 92,
+
+    interdisciplinaryStrength: 96,
+
+    futureReadiness: 90,
+
+    entrepreneurialFlexibility: 80,
+
+    lifelongLearningCulture: 96,
+
+    innovationCapacity: 82
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 80,
+
+    communityLeadershipPotential: 94,
+
+    geographicMobility: 76,
+
+    workLifeBalancePotential: 90,
+
+    purposeAlignment: 92,
+
+    familyFormationSupport: 90,
+
+    personalDevelopmentPotential: 94,
+
+    careerOptionality: 82,
+
+    longTermLifeSatisfaction: 94
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 84,
+
+    networkMoat: 84,
+
+    geographicMoat: 78,
+
+    industryMoat: 82,
+
+    alumniMoat: 84,
+
+    brandDurability: 90,
+
+    overallMoatScore: 84
+
+  },
+
+  hillel_strength: "tier_1",
+  jewish_enrollment: "~18-22% Jewish undergraduate enrollment",
+  hillel_note: "F&M is one of the most underrecognized Jewish liberal arts colleges in America. ~18-22% Jewish enrollment on a 2,500-person campus creates a highly concentrated Jewish community where Jewish students are a dominant social presence. F&M draws from NJ, NY, and suburban Philadelphia Jewish families and is well-known in those circles as a Jewish LAC. Active Hillel and Jewish Greek life. Philadelphia's Jewish community (~300,000) is 90 minutes away.",
+
+    trajectoryProfile: {
+
+    dominantTrajectory: "STAY_LEAVE",
+
+    leaverScore: 72,
+
+    returnerScore: 82,
+
+    stewardScore: 90,
+
+    navigatorScore: 74,
+
+    geographicLockIn: "medium",
+
+    alumniDispersalPattern: "regional"
+
+  }
+
+},
+
+
+// === Occidental_College ===
+"Occidental College": {
+
+  institutionNarrative: {
+
+    name: "Occidental College",
+
+    location: "Los Angeles, California",
+
+    region: "Southern California Creative & Civic Corridor",
+
+    archetype: "The Liberal Arts College of Los Angeles",
+
+    oneSentenceSummary: "Occidental College combines one of America's strongest liberal arts educations with direct access to the political, nonprofit, entertainment, technology, environmental, and entrepreneurial ecosystems of Los Angeles, producing graduates who move comfortably between intellectual rigor and real-world influence.",
+
+    pipeline: "Approximately 2,100 undergraduate students. Occidental is nationally recognized for Diplomacy and World Affairs, Urban & Environmental Policy, Politics, Economics, Biology, Public Health, Computer Science, Media Arts & Culture, and the sciences. Students routinely secure internships throughout Los Angeles with entertainment companies, government agencies, environmental organizations, healthcare systems, research institutions, technology startups, and major nonprofit organizations. Graduate placement is particularly strong into law, medicine, public policy, PhD programs, consulting, journalism, and public service.",
+
+    hiddenPathway: "Occidental's greatest hidden advantage is Los Angeles itself. Unlike rural liberal arts colleges, students can complete semester-long internships while remaining full-time students. The Urban & Environmental Policy program leverages Los Angeles as a living laboratory for housing, transportation, immigration, climate resilience, sustainability, and civic innovation, providing undergraduate experiences rarely available elsewhere.",
+
+    institutionalSecret: "Occidental quietly produces graduates with unusually sophisticated professional networks because students spend four years embedded inside America's second-largest metropolitan economy. Faculty mentorship combines with continuous exposure to industries that most liberal arts students only encounter after graduation.",
+
+    theRoom: "Located on a 120-acre residential campus in Eagle Rock between Downtown Los Angeles, Pasadena, Hollywood, and Glendale, Occidental offers a traditional residential college experience within one of the world's largest creative and economic regions. Students can access museums, research institutions, entertainment studios, technology companies, government offices, hospitals, and nonprofit organizations within minutes of campus.",
+
+    lifestyle: "Collaborative, intellectually curious, politically engaged, and highly experiential. Students balance rigorous academics with internships, undergraduate research, civic engagement, outdoor recreation, arts, athletics, and Los Angeles cultural life. Campus culture is intimate while the surrounding city provides virtually unlimited professional opportunities.",
+
+    bestFitPersonality: "Intellectually curious, socially engaged, independent, collaborative, globally minded, interested in public affairs or interdisciplinary careers, high Openness with strong Conscientiousness.",
+
+    faithTradition: "Nonsectarian Private Liberal Arts College",
+
+    geographicInfluenceRadius: "Southern California dominant with strong placement into Washington DC, New York, graduate schools, and international public service.",
+
+    economicOutcome: "Excellent outcomes in diplomacy, public policy, law, medicine, environmental leadership, nonprofit management, consulting, education, media, technology, and graduate education with particularly strong access to Los Angeles employers.",
+
+    gradCities: [
+      "Los Angeles CA",
+      "San Francisco CA",
+      "New York NY",
+      "Washington DC",
+      "Seattle WA",
+      "Boston MA",
+      "San Diego CA"
+    ],
+
+    comparableInstitutions: [
+      "Pomona College",
+      "Claremont McKenna College",
+      "Macalester College",
+      "Kenyon College",
+      "Colorado College"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Pasadena City College",
+        "Santa Monica College",
+        "Glendale Community College",
+        "East Los Angeles College"
+      ],
+
+      transferAcceptanceRate: "Moderate",
+
+      freshmanAcceptanceRate: "~39%",
+
+      estimatedSavingsRange: "$20,000-$50,000",
+
+      transferNotes: "Occidental welcomes a limited number of transfer students each year. Strong academics, intellectual engagement, and demonstrated fit with the liberal arts mission are important."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Urban Liberal Arts College",
+
+    institutionalPersonality: "intellectual, collaborative, globally minded, socially engaged, interdisciplinary",
+
+    cultureKeywords: [
+      "Diplomacy",
+      "Los Angeles",
+      "Research",
+      "Politics",
+      "Public Service",
+      "Environment",
+      "Liberal Arts",
+      "Leadership",
+      "Community"
+    ],
+
+    missionOrientation: "Preparing thoughtful leaders through rigorous liberal arts education, civic engagement, and global citizenship.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Close faculty mentorship combined with interdisciplinary learning, experiential education, undergraduate research, and civic engagement.",
+
+    competitiveness: "Selective",
+
+    politicalCulture: "Generally progressive, civically engaged, globally focused.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Highly respected among liberal arts colleges with especially strong graduate school reputation.",
+
+    socialClimate: "Collaborative, intellectually active, residential, inclusive.",
+
+    leadershipStyle: "Leadership through scholarship, civic engagement, interdisciplinary thinking, and public service."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "SoCalCreativeEconomy",
+
+    regionalRole: "Elite liberal arts institution serving Southern California's civic, entertainment, technology, nonprofit, healthcare, and innovation ecosystems."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 14,
+    BosWash: 74,
+    TorBuffChester: 28,
+    TexasTriangle: 42,
+    CharLanta: 34,
+    NorCalInnovationCorridor: 76,
+    SoCalCreativeEconomy: 100
+
+  },
+
+  comparativePositioning: {
+
+    versusPomona:
+      "Pomona offers broader national prestige and the Claremont Consortium; Occidental provides deeper integration with Los Angeles' professional ecosystem.",
+
+    versusClaremontMcKenna:
+      "CMC emphasizes economics, finance, and leadership; Occidental emphasizes diplomacy, public affairs, environmental policy, and interdisciplinary liberal arts.",
+
+    versusMacalester:
+      "Both are internationally focused liberal arts colleges, but Occidental benefits from direct access to Los Angeles' global industries and institutions.",
+
+    versusColoradoCollege:
+      "Colorado College is defined by the Block Plan; Occidental differentiates through semester-long internships and continuous engagement with one of America's largest metropolitan economies."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Very Small",
+
+    undergraduateEnrollment: 2100,
+
+    graduateEnrollment: 0,
+
+    totalEnrollment: 2100,
+
+    campusType: "Residential Liberal Arts College",
+
+    residentialIntensity: 96,
+
+    communityFeel: 96,
+
+    studentFacultyRatio: "9:1",
+
+    classSizeExperience: "Small discussion-based seminars dominate the curriculum, with extensive faculty mentoring, undergraduate research, internship integration, and interdisciplinary coursework. Most students know professors personally by their first year.",
+
+    scaleAdvantages: [
+      "Exceptional faculty accessibility",
+      "Direct internship access across Los Angeles during the academic year",
+      "Strong undergraduate research participation",
+      "Highly individualized advising and graduate school preparation",
+      "Close residential community with significant student leadership opportunities"
+    ],
+
+    scaleDisadvantages: [
+      "Limited number of majors compared to large research universities",
+      "Smaller alumni base than peer universities",
+      "No graduate schools generating large research infrastructure",
+      "Students seeking major Division I athletics may find campus culture understated"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 92,
+      conscientiousness: 86,
+      extraversion: 66,
+      agreeableness: 82,
+      neuroticism: 36
+    },
+
+    hollandCodes: ["I", "S", "E"],
+
+    learningStyle: [
+      "Seminar Discussion",
+      "Research-Based Learning",
+      "Experiential Education",
+      "Policy Analysis",
+      "Faculty Mentorship"
+    ],
+
+    socialEnvironment: [
+      "Intellectual",
+      "Collaborative",
+      "Civically Engaged",
+      "Inclusive",
+      "Residential"
+    ],
+
+    idealStudentTraits: [
+      "Enjoys interdisciplinary thinking",
+      "Values faculty mentorship",
+      "Interested in public affairs or global issues",
+      "Comfortable balancing academics with internships",
+      "Self-motivated and intellectually curious"
+    ],
+
+    thrivesIf: [
+      "Plans for graduate or professional school",
+      "Wants access to Los Angeles while attending a small college",
+      "Enjoys discussion-based classes",
+      "Values civic engagement and leadership",
+      "Seeks close relationships with professors"
+    ],
+
+    strugglesIf: [
+      "Prefers anonymous large universities",
+      "Wants major athletic culture",
+      "Needs highly specialized undergraduate majors",
+      "Dislikes writing-intensive coursework",
+      "Prefers highly structured career pipelines"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking larger social environments",
+      "Students expecting research university scale",
+      "Students uncomfortable with intensive liberal arts writing"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Urban & Environmental Policy",
+      "Media Arts & Culture",
+      "Critical Theory & Social Justice",
+      "Computer Science",
+      "Cognitive Science",
+      "Public Health",
+      "Economics",
+      "Geology"
+    ],
+
+    hiddenCareerPipelines: [
+      "Foreign Service",
+      "Urban Planning",
+      "Environmental Consulting",
+      "Entertainment Strategy",
+      "Public Affairs",
+      "International NGOs",
+      "Public Health",
+      "Policy Research"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Washington Semester opportunities",
+      "Los Angeles nonprofit internships",
+      "Entertainment industry policy work",
+      "Environmental organizations",
+      "Faculty-sponsored research fellowships"
+    ],
+
+    overlookedStrengths: [
+      "Outstanding Fulbright production",
+      "Strong law school preparation",
+      "Exceptional undergraduate research",
+      "Excellent civic leadership programming",
+      "Unique integration of liberal arts with Los Angeles industries"
+    ],
+
+    sleeperIndustries: [
+      "Climate Technology",
+      "Urban Innovation",
+      "Public Interest Technology",
+      "Global Development",
+      "Education Policy",
+      "Social Entrepreneurship"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 90,
+
+    mentorshipDensity: 96,
+
+    executiveAccess: 78,
+
+    internshipNetwork: 90,
+
+    familyBusinessExposure: 42,
+
+    relationshipCapitalScore: 90,
+
+    alumniLoyaltyScore: 92,
+
+    referralCultureStrength: 88,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Government",
+      "Healthcare",
+      "Higher Education",
+      "Entertainment",
+      "Technology",
+      "Consulting",
+      "Nonprofit",
+      "Environmental Services"
+    ],
+
+    regionalEconomicDrivers: [
+      "Los Angeles Entertainment",
+      "Technology Startups",
+      "Healthcare Systems",
+      "Higher Education",
+      "Public Sector",
+      "Environmental Innovation",
+      "International Trade"
+    ],
+
+    topEmployers: [
+      "Cedars-Sinai",
+      "Los Angeles County",
+      "The Walt Disney Company",
+      "NBCUniversal",
+      "Google",
+      "Deloitte",
+      "UCLA",
+      "USC",
+      "California State Government"
+    ],
+
+    emergingIndustries: [
+      "Climate Technology",
+      "AI Policy",
+      "Digital Media",
+      "Clean Energy",
+      "Urban Analytics",
+      "Public Health Innovation"
+    ],
+
+    startupDensity: "High",
+
+    ventureCapitalAccess: 72,
+
+    corporateHeadquartersDensity: 88,
+
+    healthcareHubStrength: 82,
+
+    innovationIndex: 88
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Los Angeles Civic, Entertainment, and Knowledge Economy",
+
+    secondaryMarkets: [
+      "San Francisco CA",
+      "Washington DC",
+      "New York NY",
+      "Seattle WA",
+      "Boston MA",
+      "San Diego CA",
+      "Sacramento CA"
+    ],
+
+    alumniStrongholds: [
+      "Los Angeles CA",
+      "San Francisco CA",
+      "Washington DC",
+      "New York NY",
+      "Seattle WA"
+    ],
+
+    relocationPatterns: [
+      "Los Angeles for entertainment, nonprofits, healthcare, and civic leadership",
+      "Washington DC for diplomacy, public policy, and government",
+      "San Francisco for technology, sustainability, and startups",
+      "New York for consulting, finance, media, and graduate education",
+      "Many graduates remain throughout California's innovation economy"
+    ],
+
+    regionalInfluenceScore: 94,
+
+    nationalReachScore: 82,
+
+    internationalReachScore: 58
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 24,
+
+    studentOrganizationStrength: 90,
+
+    leadershipDevelopment: 94,
+
+    crossDisciplinaryInteraction: 96,
+
+    civicEngagement: 98
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 24,
+      notes: "Some opportunities through media, design, and Southern California's creative economy."
+    },
+
+    healthWellness: {
+      strength: 82,
+      notes: "Strong preparation through biology, public health, neuroscience, and access to major Los Angeles healthcare systems."
+    },
+
+    nutraceuticals: {
+      strength: 12,
+      notes: "Limited institutional emphasis."
+    },
+
+    consumerProducts: {
+      strength: 30,
+      notes: "Moderate opportunities through economics, media, and entrepreneurship."
+    },
+
+    outdoorIndustry: {
+      strength: 42,
+      notes: "Environmental policy and sustainability create meaningful regional opportunities."
+    },
+
+    sportsBusiness: {
+      strength: 24,
+      notes: "Limited direct recruiting with some opportunities through Los Angeles professional sports organizations."
+    },
+
+    entertainmentMedia: {
+      strength: 72,
+      notes: "Los Angeles provides substantial opportunities in media, communications, journalism, documentary production, and entertainment strategy."
+    },
+
+    ventureCapital: {
+      strength: 52,
+      notes: "Growing exposure through Southern California's startup and innovation ecosystem."
+    },
+
+    privateEquity: {
+      strength: 18,
+      notes: "Limited direct recruiting."
+    },
+
+    investmentBanking: {
+      strength: 42,
+      notes: "Selective placement through economics and strong liberal arts preparation."
+    },
+
+    consulting: {
+      strength: 72,
+      notes: "Excellent analytical preparation supports consulting recruiting, particularly in California."
+    },
+
+    medicine: {
+      strength: 86,
+      notes: "Excellent pre-health advising and strong medical school placement supported by Los Angeles healthcare institutions."
+    },
+
+    healthcareAdministration: {
+      strength: 72,
+      notes: "Meaningful regional opportunities through Southern California's healthcare ecosystem."
+    },
+
+    defense: {
+      strength: 28,
+      notes: "Some opportunities through Southern California aerospace and policy organizations."
+    },
+
+    realEstate: {
+      strength: 36,
+      notes: "Urban policy, planning, and development provide niche career pathways."
+    },
+
+    luxuryBrands: {
+      strength: 20,
+      notes: "Limited institutional emphasis outside Los Angeles consumer branding ecosystem."
+    },
+
+    entrepreneurship: {
+      strength: 70,
+      notes: "Strong interdisciplinary liberal arts foundation combined with Los Angeles startup access encourages entrepreneurial careers."
+    },
+
+    technology: {
+      strength: 62,
+      notes: "Growing placement into software, civic technology, sustainability, and public-interest technology firms."
+    },
+
+    publicPolicy: {
+      strength: 98,
+      notes: "One of the strongest liberal arts colleges in the nation for diplomacy, public policy, international affairs, and civic leadership."
+    },
+
+    nonprofitLeadership: {
+      strength: 96,
+      notes: "Exceptional preparation through civic engagement, community partnerships, and Los Angeles nonprofit organizations."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 74,
+
+    firstGenerationSupport: 86,
+
+    wealthCreationPotential: 82,
+
+    familyBusinessPipelineStrength: 38
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 86,
+
+    automationResistance: 90,
+
+    adaptabilityScore: 94,
+
+    interdisciplinaryStrength: 98,
+
+    futureReadiness: 92,
+
+    entrepreneurialFlexibility: 84,
+
+    lifelongLearningCulture: 96,
+
+    innovationCapacity: 88
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 84,
+
+    communityLeadershipPotential: 96,
+
+    geographicMobility: 84,
+
+    workLifeBalancePotential: 90,
+
+    purposeAlignment: 96,
+
+    familyFormationSupport: 86,
+
+    personalDevelopmentPotential: 96,
+
+    careerOptionality: 88,
+
+    longTermLifeSatisfaction: 94
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 86,
+
+    networkMoat: 86,
+
+    geographicMoat: 94,
+
+    industryMoat: 88,
+
+    alumniMoat: 84,
+
+    brandDurability: 92,
+
+    overallMoatScore: 88
+
+  },
+
+  hillel_strength: "tier_2",
+  jewish_enrollment: "~12-15% Jewish undergraduate enrollment",
+  hillel_note: "Occidental's Jewish community is backed by the extraordinary infrastructure of LA's Jewish community (~600,000 residents). Active Hillel for its size and Chabad presence. Jewish students at Oxy have access to Pico-Robertson, Valley Jewish institutions, and the full LA Jewish ecosystem within a short drive. The LA location is the differentiating factor for Jewish families considering small liberal arts colleges.",
+
+    trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE_RETURN",
+
+    leaverScore: 86,
+
+    returnerScore: 74,
+
+    stewardScore: 62,
+
+    navigatorScore: 90,
+
+    geographicLockIn: "low",
+
+    alumniDispersalPattern: "national"
+
+  }
+
+},
+
+
+// === California_State_University_San_Bernardino ===
+"California State University San Bernardino": {
+
+  institutionNarrative: {
+
+    name: "California State University San Bernardino",
+
+    location: "San Bernardino, California",
+
+    region: "Southern California / Inland Empire Logistics Corridor",
+
+    archetype: "The Inland Empire Opportunity University",
+
+    oneSentenceSummary: "California State University San Bernardino is the primary public university serving Southern California's Inland Empire, combining one of the nation's largest logistics economies with strong business, public administration, criminal justice, education, healthcare, cybersecurity, and social mobility pathways at one of the most affordable universities in California.",
+
+    pipeline: "Approximately 20,000 students across San Bernardino and Palm Desert campuses. CSUSB's Jack H. Brown College of Business and Public Administration has developed one of California's strongest regional pipelines into logistics, supply chain management, operations, accounting, finance, healthcare administration, and public administration. Major employers include Amazon, UPS, FedEx, Target Distribution, Walmart Distribution, Burlington Northern Santa Fe Railway, Kaiser Permanente, Stater Bros., ESRI, San Bernardino County, Riverside County, and numerous logistics, warehousing, manufacturing, and public sector employers throughout Southern California.",
+
+    hiddenPathway: "CSUSB's greatest hidden advantage is its location inside the Inland Empire—the fastest-growing logistics and distribution economy in North America. Students routinely secure internships and full-time employment with global supply chain companies before graduation because nearly every major retailer and logistics company operates massive regional facilities within commuting distance of campus.",
+
+    institutionalSecret: "Most people see CSUSB as a regional commuter campus. In reality, it occupies one of the country's most strategically important economic regions. The Inland Empire has become America's warehouse, distribution, and logistics capital, giving CSUSB graduates unusual access to careers in operations, transportation, procurement, analytics, manufacturing, and public administration without needing to relocate to coastal California.",
+
+    theRoom: "Situated at the base of the San Bernardino Mountains, the 441-acre campus overlooks one of America's largest logistics corridors. Students benefit from proximity to Ontario International Airport, the Ports of Los Angeles and Long Beach, Interstate 10, Interstate 15, major rail hubs, and one of the nation's fastest-growing regional economies while remaining within driving distance of Los Angeles, Orange County, and Palm Springs.",
+
+    lifestyle: "Diverse, affordable, career-focused, and largely commuter-oriented. Many students balance work and school while building professional networks through internships across logistics, healthcare, education, government, and business throughout the Inland Empire.",
+
+    bestFitPersonality: "Career-oriented, resilient, practical, community-minded, upwardly mobile, interested in regional leadership, high Conscientiousness with moderate Openness.",
+
+    faithTradition: "Public University",
+
+    geographicInfluenceRadius: "Inland Empire dominant with growing influence across Southern California's logistics, healthcare, education, and public sectors.",
+
+    economicOutcome: "Excellent regional outcomes in logistics, supply chain, accounting, business, public administration, criminal justice, education, healthcare administration, cybersecurity, and government with exceptional return-on-investment.",
+
+    gradCities: [
+      "San Bernardino CA",
+      "Riverside CA",
+      "Ontario CA",
+      "Los Angeles CA",
+      "San Diego CA",
+      "Phoenix AZ",
+      "Las Vegas NV"
+    ],
+
+    comparableInstitutions: [
+      "California State University Fullerton",
+      "California State University Long Beach",
+      "California State University Los Angeles",
+      "California State Polytechnic University Pomona",
+      "University of Texas at Arlington"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "San Bernardino Valley College",
+        "Crafton Hills College",
+        "Chaffey College",
+        "Riverside City College",
+        "Mt. San Antonio College"
+      ],
+
+      transferAcceptanceRate: "High",
+
+      freshmanAcceptanceRate: "~91%",
+
+      estimatedSavingsRange: "$25,000-$60,000",
+
+      transferNotes: "CSUSB is one of California's strongest transfer institutions through the California Community College system. Associate Degree for Transfer (ADT) pathways provide streamlined admission into many majors."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Regional Public Mobility University",
+
+    institutionalPersonality: "accessible, practical, career-focused, diverse, community-oriented",
+
+    cultureKeywords: [
+      "Logistics",
+      "Supply Chain",
+      "Business",
+      "Public Service",
+      "Social Mobility",
+      "Healthcare",
+      "Education",
+      "Inland Empire",
+      "Opportunity"
+    ],
+
+    missionOrientation: "Expanding educational opportunity while developing the workforce and civic leadership of Inland Southern California.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Career-focused public education emphasizing accessibility, applied learning, workforce development, and community impact.",
+
+    competitiveness: "Accessible",
+
+    politicalCulture: "Politically diverse with strong emphasis on public service and economic mobility.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Strong regional reputation.",
+
+    socialClimate: "Inclusive, commuter-friendly, professionally focused.",
+
+    leadershipStyle: "Leadership through opportunity, regional engagement, and workforce development."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "SoCalCreativeEconomy",
+
+    regionalRole: "Primary workforce university supporting Southern California's logistics, public sector, healthcare, and Inland Empire economy."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 42,
+    BosWash: 18,
+    TorBuffChester: 12,
+    TexasTriangle: 46,
+    CharLanta: 28,
+    NorCalInnovationCorridor: 42,
+    SoCalCreativeEconomy: 96
+
+  },
+
+  comparativePositioning: {
+
+    versusCalPolyPomona:
+      "Cal Poly Pomona emphasizes engineering and learn-by-doing education; CSUSB offers stronger public administration, logistics, criminal justice, and regional workforce integration.",
+
+    versusCSULongBeach:
+      "Long Beach has broader national visibility and coastal industries; CSUSB dominates the Inland Empire's logistics and public sector economy.",
+
+    versusCSUFullerton:
+      "Fullerton serves Orange County's corporate economy; CSUSB is deeply integrated into warehousing, logistics, healthcare, and regional government.",
+
+    versusCSULA:
+      "CSULA is more urban and Los Angeles-focused; CSUSB serves one of America's fastest-growing inland economies with exceptional social mobility outcomes."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Large",
+
+    undergraduateEnrollment: 17000,
+
+    graduateEnrollment: 3000,
+
+    totalEnrollment: 20000,
+
+    campusType: "Regional Public University",
+
+    residentialIntensity: 28,
+
+    communityFeel: 72,
+
+    studentFacultyRatio: "24:1",
+
+    classSizeExperience: "Primarily commuter-oriented with larger introductory courses and smaller upper-division classes. Applied learning, internships, and workforce preparation are emphasized throughout the curriculum.",
+
+    scaleAdvantages: [
+      "One of the largest talent pipelines into the Inland Empire workforce",
+      "Exceptional affordability and return on investment",
+      "Extensive employer partnerships throughout Southern California",
+      "Strong California Community College transfer ecosystem",
+      "Wide range of professional and career-focused degree programs"
+    ],
+
+    scaleDisadvantages: [
+      "Commuter culture limits traditional residential campus life",
+      "Less national prestige than UC campuses",
+      "Large introductory courses in high-demand majors",
+      "Student engagement often depends on individual initiative"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 64,
+      conscientiousness: 88,
+      extraversion: 58,
+      agreeableness: 74,
+      neuroticism: 40
+    },
+
+    hollandCodes: ["E", "C", "S"],
+
+    learningStyle: [
+      "Applied Learning",
+      "Career Preparation",
+      "Internships",
+      "Professional Development",
+      "Project-Based Learning"
+    ],
+
+    socialEnvironment: [
+      "Diverse",
+      "Career-Oriented",
+      "Commuter",
+      "Inclusive",
+      "Community Focused"
+    ],
+
+    idealStudentTraits: [
+      "Career focused",
+      "Values affordability",
+      "Interested in upward mobility",
+      "Comfortable balancing work and school",
+      "Seeks practical education with immediate workforce relevance"
+    ],
+
+    thrivesIf: [
+      "Plans to build a career in Southern California",
+      "Wants strong ROI from college",
+      "Values internships during school",
+      "Enjoys practical, workforce-oriented education",
+      "Appreciates diverse student populations"
+    ],
+
+    strugglesIf: [
+      "Seeks a highly residential college experience",
+      "Wants nationally elite academic prestige",
+      "Expects major Division I campus culture",
+      "Prefers highly theoretical education",
+      "Needs extensive undergraduate research opportunities"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking traditional residential college life",
+      "Students transferring to UC campuses after strong academic performance",
+      "Students wanting greater national brand recognition"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Supply Chain Management",
+      "Cybersecurity",
+      "Geographic Information Systems",
+      "Healthcare Administration",
+      "Public Administration",
+      "Entrepreneurship",
+      "Information Systems",
+      "Criminal Justice"
+    ],
+
+    hiddenCareerPipelines: [
+      "Distribution center leadership",
+      "Operations management",
+      "Municipal government",
+      "County administration",
+      "Healthcare management",
+      "Public safety leadership",
+      "Transportation planning",
+      "Infrastructure management"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Amazon logistics leadership pipeline",
+      "Regional government recruiting",
+      "Healthcare administration partnerships",
+      "Distribution and transportation employers",
+      "California public sector hiring"
+    ],
+
+    overlookedStrengths: [
+      "Excellent business analytics programs",
+      "Strong accounting placement",
+      "Regional cybersecurity growth",
+      "Outstanding transfer student success",
+      "High social mobility outcomes"
+    ],
+
+    sleeperIndustries: [
+      "Logistics Technology",
+      "Supply Chain Analytics",
+      "Warehouse Automation",
+      "Infrastructure Planning",
+      "Smart Transportation",
+      "Public Sector Innovation"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 76,
+
+    mentorshipDensity: 72,
+
+    executiveAccess: 62,
+
+    internshipNetwork: 88,
+
+    familyBusinessExposure: 34,
+
+    relationshipCapitalScore: 76,
+
+    alumniLoyaltyScore: 82,
+
+    referralCultureStrength: 80,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Logistics",
+      "Supply Chain",
+      "Healthcare",
+      "Government",
+      "Education",
+      "Manufacturing",
+      "Retail Distribution",
+      "Public Safety"
+    ],
+
+    regionalEconomicDrivers: [
+      "Inland Empire Logistics",
+      "Ontario International Airport",
+      "Port of Los Angeles",
+      "Port of Long Beach",
+      "Healthcare Systems",
+      "County Government",
+      "Distribution Networks"
+    ],
+
+    topEmployers: [
+      "Amazon",
+      "UPS",
+      "FedEx",
+      "Kaiser Permanente",
+      "San Bernardino County",
+      "Riverside County",
+      "Target",
+      "Walmart",
+      "Stater Bros.",
+      "BNSF Railway"
+    ],
+
+    emergingIndustries: [
+      "Warehouse Robotics",
+      "Supply Chain AI",
+      "Cybersecurity",
+      "Healthcare Analytics",
+      "Transportation Technology",
+      "Clean Logistics"
+    ],
+
+    startupDensity: "Moderate",
+
+    ventureCapitalAccess: 28,
+
+    corporateHeadquartersDensity: 44,
+
+    healthcareHubStrength: 78,
+
+    innovationIndex: 68
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Inland Empire Logistics and Southern California Economy",
+
+    secondaryMarkets: [
+      "Los Angeles CA",
+      "Orange County CA",
+      "San Diego CA",
+      "Phoenix AZ",
+      "Las Vegas NV",
+      "Sacramento CA",
+      "Dallas TX"
+    ],
+
+    alumniStrongholds: [
+      "San Bernardino CA",
+      "Riverside CA",
+      "Ontario CA",
+      "Los Angeles CA",
+      "Orange County CA"
+    ],
+
+    relocationPatterns: [
+      "Most graduates remain in the Inland Empire due to abundant logistics, healthcare, education, and public sector employment.",
+      "Los Angeles and Orange County attract graduates into finance, technology, healthcare, and corporate operations.",
+      "Phoenix, Las Vegas, and Texas attract logistics, operations, and supply chain professionals.",
+      "California public agencies remain major long-term employers."
+    ],
+
+    regionalInfluenceScore: 94,
+
+    nationalReachScore: 56,
+
+    internationalReachScore: 18
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 10,
+
+    studentOrganizationStrength: 74,
+
+    leadershipDevelopment: 82,
+
+    crossDisciplinaryInteraction: 72,
+
+    civicEngagement: 84
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 12,
+      notes: "Limited institutional emphasis beyond regional retail and consumer business."
+    },
+
+    healthWellness: {
+      strength: 78,
+      notes: "Strong pathways through nursing, public health, healthcare administration, and Southern California healthcare systems."
+    },
+
+    nutraceuticals: {
+      strength: 16,
+      notes: "Some opportunities through biology and regional food manufacturing."
+    },
+
+    consumerProducts: {
+      strength: 58,
+      notes: "Excellent regional opportunities in retail operations, distribution, merchandising, and supply chain."
+    },
+
+    outdoorIndustry: {
+      strength: 24,
+      notes: "Some opportunities through environmental science and public lands management."
+    },
+
+    sportsBusiness: {
+      strength: 18,
+      notes: "Limited direct recruiting."
+    },
+
+    entertainmentMedia: {
+      strength: 16,
+      notes: "Minor opportunities through communications and Southern California proximity."
+    },
+
+    ventureCapital: {
+      strength: 18,
+      notes: "Limited startup ecosystem compared to coastal California."
+    },
+
+    privateEquity: {
+      strength: 10,
+      notes: "Minimal institutional pipeline."
+    },
+
+    investmentBanking: {
+      strength: 20,
+      notes: "Occasional placement through accounting and finance."
+    },
+
+    consulting: {
+      strength: 48,
+      notes: "Strong regional consulting opportunities in operations, logistics, accounting, and public administration."
+    },
+
+    medicine: {
+      strength: 60,
+      notes: "Solid preparation for healthcare professions with regional medical partnerships."
+    },
+
+    healthcareAdministration: {
+      strength: 88,
+      notes: "Excellent regional placement into hospital systems and healthcare management."
+    },
+
+    defense: {
+      strength: 34,
+      notes: "Some opportunities through nearby Southern California aerospace and defense employers."
+    },
+
+    realEstate: {
+      strength: 62,
+      notes: "Commercial development, industrial real estate, and warehouse expansion create meaningful opportunities."
+    },
+
+    luxuryBrands: {
+      strength: 10,
+      notes: "Minimal institutional focus."
+    },
+
+    entrepreneurship: {
+      strength: 58,
+      notes: "Business school and Inland Empire economic growth support small business creation and regional entrepreneurship."
+    },
+
+    technology: {
+      strength: 42,
+      notes: "Growing opportunities in cybersecurity, information systems, logistics automation, and enterprise technology."
+    },
+
+    publicPolicy: {
+      strength: 76,
+      notes: "Strong pathways into municipal government, county administration, and California public service."
+    },
+
+    nonprofitLeadership: {
+      strength: 68,
+      notes: "Community engagement and regional nonprofits provide meaningful leadership opportunities."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 94,
+
+    firstGenerationSupport: 94,
+
+    wealthCreationPotential: 82,
+
+    familyBusinessPipelineStrength: 36
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 74,
+
+    automationResistance: 72,
+
+    adaptabilityScore: 82,
+
+    interdisciplinaryStrength: 78,
+
+    futureReadiness: 82,
+
+    entrepreneurialFlexibility: 72,
+
+    lifelongLearningCulture: 80,
+
+    innovationCapacity: 72
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 82,
+
+    communityLeadershipPotential: 90,
+
+    geographicMobility: 62,
+
+    workLifeBalancePotential: 86,
+
+    purposeAlignment: 84,
+
+    familyFormationSupport: 90,
+
+    personalDevelopmentPotential: 82,
+
+    careerOptionality: 80,
+
+    longTermLifeSatisfaction: 88
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 44,
+
+    networkMoat: 66,
+
+    geographicMoat: 92,
+
+    industryMoat: 90,
+
+    alumniMoat: 64,
+
+    brandDurability: 74,
+
+    overallMoatScore: 72
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "STAY",
+
+    leaverScore: 42,
+
+    returnerScore: 88,
+
+    stewardScore: 94,
+
+    navigatorScore: 58,
+
+    geographicLockIn: "high",
+
+    alumniDispersalPattern: "regional"
+
+  }
+
+},
+
+
+// === University_of_Alaska_Fairbanks ===
+"University of Alaska Fairbanks": {
+
+  institutionNarrative: {
+
+    name: "University of Alaska Fairbanks",
+
+    location: "Fairbanks, Alaska",
+
+    region: "Alaska / Arctic Frontier",
+
+    archetype: "America's Arctic Research University",
+
+    oneSentenceSummary: "The University of Alaska Fairbanks is America's premier Arctic research university, combining globally recognized expertise in Arctic science, petroleum engineering, mining, geophysics, climate research, space physics, and Indigenous studies with direct access to one of the world's most resource-rich and scientifically important environments.",
+
+    pipeline: "Approximately 7,500 students. UAF's College of Engineering and Mines maintains nationally significant programs in petroleum engineering, mining engineering, civil engineering, mechanical engineering, and Arctic engineering. The university is internationally recognized for geophysics, atmospheric sciences, fisheries, wildlife biology, natural resources, climate science, and Arctic research. Major employers include ConocoPhillips Alaska, Hilcorp, BP, Alyeska Pipeline Service Company, Kinross Gold, Teck Resources, Alaska Native Corporations, the State of Alaska, the National Park Service, the U.S. Geological Survey, NASA, NOAA, Sandia National Laboratories, and the Department of Energy.",
+
+    hiddenPathway: "UAF's greatest hidden advantage is Poker Flat Research Range—the world's only university-owned rocket launch facility—combined with the Geophysical Institute, one of the world's premier centers for aurora, space physics, permafrost, seismology, and Arctic climate research. Students gain research opportunities unavailable anywhere else in North America.",
+
+    institutionalSecret: "Most universities study the Arctic. UAF operates inside it. Students routinely conduct fieldwork on glaciers, tundra, permafrost, boreal forests, mines, oil fields, fisheries, and Arctic ecosystems while collaborating directly with federal agencies and energy companies.",
+
+    theRoom: "Located on a ridge overlooking Fairbanks in Alaska's Interior, the 2,200-acre campus serves as the research hub for one of the least populated yet most resource-rich regions on Earth. The surrounding landscape becomes an extension of the classroom, with direct access to Denali, the Yukon River Basin, Arctic oil fields, military installations, and globally significant scientific research sites.",
+
+    lifestyle: "Independent, outdoors-oriented, research-intensive, and adventure-driven. Students embrace Alaska's unique lifestyle through field research, skiing, hiking, northern lights, wildlife, subsistence traditions, and close relationships within a small academic community.",
+
+    bestFitPersonality: "Highly independent, scientifically curious, resilient, adventurous, environmentally minded, comfortable in remote environments, high Openness with strong Conscientiousness.",
+
+    faithTradition: "Public University",
+
+    geographicInfluenceRadius: "Alaska statewide with global influence in Arctic science, energy, climate research, mining, fisheries, and geophysics.",
+
+    economicOutcome: "Outstanding career outcomes in petroleum, mining, Arctic engineering, fisheries, environmental science, geoscience, renewable energy, defense research, and federal scientific agencies with exceptional niche specialization.",
+
+    gradCities: [
+      "Fairbanks AK",
+      "Anchorage AK",
+      "Juneau AK",
+      "Seattle WA",
+      "Denver CO",
+      "Houston TX",
+      "Washington DC"
+    ],
+
+    comparableInstitutions: [
+      "Colorado School of Mines",
+      "Montana Tech",
+      "South Dakota School of Mines & Technology",
+      "University of Wyoming",
+      "Memorial University of Newfoundland"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "University of Alaska Anchorage",
+        "University of Alaska Southeast",
+        "Kenai Peninsula College",
+        "Matanuska-Susitna College"
+      ],
+
+      transferAcceptanceRate: "High",
+
+      freshmanAcceptanceRate: "~65%",
+
+      estimatedSavingsRange: "$20,000-$50,000",
+
+      transferNotes: "UAF maintains seamless transfer pathways throughout the University of Alaska system with strong articulation agreements and generous credit transfer."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Public Arctic Research University",
+
+    institutionalPersonality: "independent, scientific, resilient, adventurous, research-driven",
+
+    cultureKeywords: [
+      "Arctic",
+      "Research",
+      "Petroleum",
+      "Mining",
+      "Climate Science",
+      "Space Physics",
+      "Engineering",
+      "Alaska",
+      "Field Research"
+    ],
+
+    missionOrientation: "Advancing knowledge, stewardship, and innovation across Alaska and the Arctic through research, education, and public service.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Experiential learning through research, field science, engineering practice, and direct engagement with Alaska's natural and economic systems.",
+
+    competitiveness: "Moderately Selective",
+
+    politicalCulture: "Pragmatic, scientifically oriented, politically diverse.",
+
+    studentAutonomy: "Very High",
+
+    prestigeOrientation: "Globally respected within Arctic science, geophysics, and resource engineering.",
+
+    socialClimate: "Collaborative, outdoors-oriented, research-focused, close-knit.",
+
+    leadershipStyle: "Leadership through scientific discovery, environmental stewardship, and practical problem-solving."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "Pacific Northwest & Arctic",
+
+    regionalRole: "America's flagship Arctic research institution supporting energy, defense, climate science, and northern resource development."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 54,
+    BosWash: 24,
+    TorBuffChester: 12,
+    TexasTriangle: 62,
+    CharLanta: 10,
+    NorCalInnovationCorridor: 44,
+    SoCalCreativeEconomy: 18
+
+  },
+
+  comparativePositioning: {
+
+    versusColoradoSchoolOfMines:
+      "Colorado School of Mines offers broader global mining prestige; UAF provides unmatched Arctic engineering, permafrost research, and petroleum field access.",
+
+    versusMontanaTech:
+      "Both emphasize engineering and natural resources, but UAF dominates Arctic science, geophysics, and federal research partnerships.",
+
+    versusUniversityOfWyoming:
+      "Wyoming serves Rocky Mountain energy industries; UAF occupies an unparalleled position in Arctic energy, climate science, and northern ecosystems.",
+
+    versusMemorialUniversity:
+      "Both specialize in northern environments and resource industries, but UAF is uniquely positioned within the American Arctic research enterprise."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Medium",
+
+    undergraduateEnrollment: 5900,
+
+    graduateEnrollment: 1600,
+
+    totalEnrollment: 7500,
+
+    campusType: "Public Research University",
+
+    residentialIntensity: 54,
+
+    communityFeel: 88,
+
+    studentFacultyRatio: "11:1",
+
+    classSizeExperience: "Small classes, extensive undergraduate research, field-based instruction, and unusually high faculty interaction. Engineering, natural sciences, and Arctic research students often participate in research projects beginning early in their undergraduate careers.",
+
+    scaleAdvantages: [
+      "One of the world's premier Arctic research universities",
+      "Exceptional undergraduate access to federally funded research",
+      "Direct partnerships with Alaska's energy, mining, and environmental sectors",
+      "Small class sizes with substantial faculty mentorship",
+      "Hands-on field experiences impossible to replicate elsewhere"
+    ],
+
+    scaleDisadvantages: [
+      "Remote geographic location",
+      "Limited campus social scene compared to large universities",
+      "Long, dark winters require personal resilience",
+      "Fewer academic majors than flagship universities"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 94,
+      conscientiousness: 88,
+      extraversion: 52,
+      agreeableness: 72,
+      neuroticism: 34
+    },
+
+    hollandCodes: ["I", "R", "C"],
+
+    learningStyle: [
+      "Field Research",
+      "Laboratory Research",
+      "Experiential Learning",
+      "Engineering Design",
+      "Scientific Investigation"
+    ],
+
+    socialEnvironment: [
+      "Independent",
+      "Research-Oriented",
+      "Outdoors",
+      "Collaborative",
+      "Resilient"
+    ],
+
+    idealStudentTraits: [
+      "Enjoys science and engineering",
+      "Comfortable in remote environments",
+      "Interested in fieldwork",
+      "Highly self-directed",
+      "Values research over prestige"
+    ],
+
+    thrivesIf: [
+      "Wants direct research opportunities",
+      "Enjoys outdoor adventure",
+      "Interested in energy, geology, or climate science",
+      "Appreciates close faculty relationships",
+      "Can adapt to Alaska's climate"
+    ],
+
+    strugglesIf: [
+      "Needs large-city amenities",
+      "Prefers highly social campuses",
+      "Dislikes cold climates",
+      "Wants major Division I athletics",
+      "Seeks extensive nightlife"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking larger metropolitan environments",
+      "Students uncomfortable with Alaska's climate",
+      "Students wanting broader academic specialization"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Geophysics",
+      "Fisheries",
+      "Wildlife Biology",
+      "Emergency Management",
+      "Space Physics",
+      "Indigenous Studies",
+      "Natural Resource Management",
+      "Atmospheric Sciences"
+    ],
+
+    hiddenCareerPipelines: [
+      "NASA research",
+      "NOAA",
+      "USGS",
+      "Department of Energy",
+      "Arctic defense research",
+      "Renewable energy",
+      "Environmental consulting",
+      "Resource exploration"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Poker Flat Research Range",
+      "Geophysical Institute",
+      "Alaska Native Corporation partnerships",
+      "Oil and gas internships",
+      "Federal scientific laboratories"
+    ],
+
+    overlookedStrengths: [
+      "International leadership in permafrost research",
+      "Exceptional aurora and space science",
+      "World-class fisheries science",
+      "Strong Indigenous knowledge integration",
+      "Outstanding undergraduate research funding"
+    ],
+
+    sleeperIndustries: [
+      "Climate Technology",
+      "Carbon Management",
+      "Critical Minerals",
+      "Space Weather",
+      "Polar Logistics",
+      "Arctic Infrastructure"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 84,
+
+    mentorshipDensity: 92,
+
+    executiveAccess: 76,
+
+    internshipNetwork: 88,
+
+    familyBusinessExposure: 30,
+
+    relationshipCapitalScore: 86,
+
+    alumniLoyaltyScore: 90,
+
+    referralCultureStrength: 88,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Energy",
+      "Mining",
+      "Federal Research",
+      "Environmental Science",
+      "Fisheries",
+      "Defense",
+      "Higher Education",
+      "Natural Resources"
+    ],
+
+    regionalEconomicDrivers: [
+      "North Slope Energy",
+      "Critical Minerals",
+      "Federal Science",
+      "Arctic Research",
+      "Commercial Fisheries",
+      "Military Installations",
+      "Tourism"
+    ],
+
+    topEmployers: [
+      "ConocoPhillips Alaska",
+      "Hilcorp",
+      "Alyeska Pipeline",
+      "NASA",
+      "NOAA",
+      "USGS",
+      "State of Alaska",
+      "Kinross Gold",
+      "Department of Energy",
+      "Sandia National Laboratories"
+    ],
+
+    emergingIndustries: [
+      "Critical Minerals",
+      "Arctic Infrastructure",
+      "Carbon Capture",
+      "Renewable Energy",
+      "Climate Analytics",
+      "Space Research"
+    ],
+
+    startupDensity: "Low",
+
+    ventureCapitalAccess: 18,
+
+    corporateHeadquartersDensity: 16,
+
+    healthcareHubStrength: 36,
+
+    innovationIndex: 90
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Alaska Resource, Energy, and Arctic Research Economy",
+
+    secondaryMarkets: [
+      "Anchorage AK",
+      "Seattle WA",
+      "Houston TX",
+      "Denver CO",
+      "Washington DC",
+      "Juneau AK",
+      "Calgary AB"
+    ],
+
+    alumniStrongholds: [
+      "Anchorage AK",
+      "Fairbanks AK",
+      "Seattle WA",
+      "Houston TX",
+      "Juneau AK"
+    ],
+
+    relocationPatterns: [
+      "Many graduates remain in Alaska's energy, mining, engineering, education, and government sectors.",
+      "Seattle serves as the primary destination for research, fisheries, aerospace, and environmental science careers.",
+      "Houston attracts petroleum engineers and energy professionals.",
+      "Washington DC draws graduates into federal agencies, defense, climate science, and Arctic policy.",
+      "A significant number pursue international careers in northern resource development and polar research."
+    ],
+
+    regionalInfluenceScore: 98,
+
+    nationalReachScore: 72,
+
+    internationalReachScore: 82
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 2,
+
+    studentOrganizationStrength: 82,
+
+    leadershipDevelopment: 86,
+
+    crossDisciplinaryInteraction: 88,
+
+    civicEngagement: 84
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 4,
+      notes: "Minimal institutional emphasis."
+    },
+
+    healthWellness: {
+      strength: 46,
+      notes: "Strong rural healthcare, public health, and biomedical research opportunities throughout Alaska."
+    },
+
+    nutraceuticals: {
+      strength: 18,
+      notes: "Some research opportunities through fisheries, marine biology, and natural products."
+    },
+
+    consumerProducts: {
+      strength: 8,
+      notes: "Limited institutional emphasis."
+    },
+
+    outdoorIndustry: {
+      strength: 84,
+      notes: "Exceptional opportunities in wildlife management, conservation, parks, recreation, ecotourism, and outdoor science."
+    },
+
+    sportsBusiness: {
+      strength: 4,
+      notes: "Minimal institutional focus."
+    },
+
+    entertainmentMedia: {
+      strength: 8,
+      notes: "Limited opportunities outside science communication."
+    },
+
+    ventureCapital: {
+      strength: 18,
+      notes: "Limited startup ecosystem, with opportunities in energy and climate technologies."
+    },
+
+    privateEquity: {
+      strength: 6,
+      notes: "Minimal institutional pipeline."
+    },
+
+    investmentBanking: {
+      strength: 6,
+      notes: "Not a traditional recruiting pathway."
+    },
+
+    consulting: {
+      strength: 54,
+      notes: "Engineering, environmental consulting, mining, and energy consulting represent strong regional pathways."
+    },
+
+    medicine: {
+      strength: 42,
+      notes: "Good preparation through biological sciences and rural healthcare initiatives."
+    },
+
+    healthcareAdministration: {
+      strength: 34,
+      notes: "Moderate opportunities within Alaska's regional healthcare systems."
+    },
+
+    defense: {
+      strength: 82,
+      notes: "Strong connections through Arctic strategy, missile defense, geophysics, aerospace research, and federal laboratories."
+    },
+
+    realEstate: {
+      strength: 10,
+      notes: "Limited institutional emphasis."
+    },
+
+    luxuryBrands: {
+      strength: 2,
+      notes: "No meaningful institutional pathway."
+    },
+
+    entrepreneurship: {
+      strength: 66,
+      notes: "Strong opportunities in natural resources, environmental technology, tourism, remote services, and Arctic innovation."
+    },
+
+    technology: {
+      strength: 72,
+      notes: "Growing opportunities in geospatial technology, remote sensing, climate analytics, AI for environmental science, and engineering."
+    },
+
+    publicPolicy: {
+      strength: 82,
+      notes: "Excellent preparation for Arctic policy, Indigenous governance, environmental regulation, and natural resource management."
+    },
+
+    nonprofitLeadership: {
+      strength: 74,
+      notes: "Strong pathways through conservation organizations, Native corporations, research institutes, and environmental nonprofits."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 82,
+
+    firstGenerationSupport: 84,
+
+    wealthCreationPotential: 84,
+
+    familyBusinessPipelineStrength: 28
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 90,
+
+    automationResistance: 92,
+
+    adaptabilityScore: 96,
+
+    interdisciplinaryStrength: 94,
+
+    futureReadiness: 94,
+
+    entrepreneurialFlexibility: 82,
+
+    lifelongLearningCulture: 92,
+
+    innovationCapacity: 94
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 86,
+
+    communityLeadershipPotential: 90,
+
+    geographicMobility: 72,
+
+    workLifeBalancePotential: 84,
+
+    purposeAlignment: 96,
+
+    familyFormationSupport: 82,
+
+    personalDevelopmentPotential: 94,
+
+    careerOptionality: 88,
+
+    longTermLifeSatisfaction: 94
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 82,
+
+    networkMoat: 84,
+
+    geographicMoat: 100,
+
+    industryMoat: 98,
+
+    alumniMoat: 82,
+
+    brandDurability: 94,
+
+    overallMoatScore: 90
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "STAY_LEAVE",
+
+    leaverScore: 62,
+
+    returnerScore: 84,
+
+    stewardScore: 96,
+
+    navigatorScore: 72,
+
+    geographicLockIn: "medium",
+
+    alumniDispersalPattern: "regional_with_global_niches"
+
+  }
+
+},
+
+
+// === Barnard_College ===
+"Barnard College": {
+
+  institutionNarrative: {
+
+    name: "Barnard College",
+
+    location: "New York, New York",
+
+    region: "Bos-Wash / Manhattan Knowledge Corridor",
+
+    archetype: "The Women's Liberal Arts College at Columbia University",
+
+    oneSentenceSummary: "Barnard College combines the intimacy of one of America's premier liberal arts colleges with full academic integration into Columbia University, allowing students to build an elite humanities, sciences, public policy, business, media, and research education while living inside the intellectual, financial, cultural, and media capital of New York City.",
+
+    pipeline: "Approximately 3,400 undergraduate women. Barnard students earn Barnard degrees while enjoying full access to Columbia University's schools, research institutes, faculty, libraries, laboratories, clubs, athletics, and recruiting ecosystem. Strong programs include Political Science, Economics, Computer Science, Neuroscience, English, Environmental Science, Women's Gender and Sexuality Studies, Public Health, Data Science, Urban Studies, and Psychology. Major recruiters include Goldman Sachs, Morgan Stanley, McKinsey, Bain, BCG, Google, Meta, BlackRock, JPMorgan Chase, NBCUniversal, The New York Times, Penguin Random House, Memorial Sloan Kettering, Columbia University Irving Medical Center, the United Nations, and hundreds of nonprofit, media, publishing, consulting, and technology organizations.",
+
+    hiddenPathway: "Barnard's greatest hidden advantage is the Columbia integration model. Students experience the close mentorship and leadership opportunities of a 3,400-student liberal arts college while simultaneously accessing the academic, recruiting, research, and alumni ecosystem of one of the world's leading research universities. Few institutions offer this dual identity.",
+
+    institutionalSecret: "Many people assume Barnard is simply affiliated with Columbia. In practice, Barnard students take Columbia classes, conduct Columbia research, participate in Columbia student organizations, attend Columbia recruiting events, and receive nearly identical access to one of the world's most powerful academic ecosystems while benefiting from far smaller class sizes and significantly greater undergraduate leadership opportunities.",
+
+    theRoom: "Located on Manhattan's Upper West Side directly across Broadway from Columbia University, Barnard places students within minutes of Wall Street, Midtown Manhattan, the United Nations, Central Park, Broadway, major hospitals, publishing houses, museums, media companies, law firms, venture capital firms, and nearly every major employer in New York City. The city functions as an extension of the curriculum.",
+
+    lifestyle: "Highly intellectual, ambitious, collaborative, urban, and professionally oriented. Students combine demanding academics with internships throughout Manhattan, undergraduate research, arts, activism, entrepreneurship, and one of the richest cultural environments in the world.",
+
+    bestFitPersonality: "Highly curious, intellectually ambitious, independent, collaborative, socially engaged, comfortable in an urban environment, high Openness with strong Conscientiousness.",
+
+    faithTradition: "Nonsectarian Women's Liberal Arts College",
+
+    geographicInfluenceRadius: "National and international influence with particularly strong placement throughout New York City, Washington DC, Boston, San Francisco, and global graduate schools.",
+
+    economicOutcome: "Exceptional outcomes in consulting, finance, media, publishing, technology, medicine, law, graduate education, nonprofit leadership, public policy, and entrepreneurship through combined Barnard-Columbia networks.",
+
+    gradCities: [
+      "New York NY",
+      "Los Angeles CA",
+      "Washington DC",
+      "Boston MA",
+      "San Francisco CA",
+      "Chicago IL",
+      "London UK"
+    ],
+
+    comparableInstitutions: [
+      "Wellesley College",
+      "Smith College",
+      "Bryn Mawr College",
+      "Brown University",
+      "Columbia University"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "LaGuardia Community College",
+        "Borough of Manhattan Community College",
+        "Kingsborough Community College",
+        "Westchester Community College"
+      ],
+
+      transferAcceptanceRate: "Highly Selective",
+
+      freshmanAcceptanceRate: "~8%",
+
+      estimatedSavingsRange: "$25,000-$60,000",
+
+      transferNotes: "Barnard enrolls a limited number of transfer students each year. Successful applicants demonstrate exceptional academic achievement, strong writing ability, and clear alignment with Barnard's liberal arts mission."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Elite Women's Liberal Arts College",
+
+    institutionalPersonality: "intellectual, ambitious, collaborative, globally engaged, leadership-oriented",
+
+    cultureKeywords: [
+      "Columbia",
+      "New York",
+      "Women's Leadership",
+      "Research",
+      "Liberal Arts",
+      "Media",
+      "Public Policy",
+      "Finance",
+      "Global"
+    ],
+
+    missionOrientation: "Educating women to become intellectually courageous leaders through rigorous liberal arts education integrated with one of the world's leading research universities.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Small-college mentorship combined with research university resources, interdisciplinary inquiry, experiential learning, and leadership development.",
+
+    competitiveness: "Highly Selective",
+
+    politicalCulture: "Generally progressive, globally engaged, academically rigorous.",
+
+    studentAutonomy: "Very High",
+
+    prestigeOrientation: "Very High nationally and internationally.",
+
+    socialClimate: "Collaborative, intellectually ambitious, inclusive, urban.",
+
+    leadershipStyle: "Leadership through scholarship, public engagement, research, and service."
+
+  },
+
+  hillel_strength: "tier_1",
+  jewish_enrollment: "~30-35% Jewish undergraduate enrollment",
+  hillel_note: "Barnard is among the most Jewish undergraduate institutions in America. Barnard shares Columbia's Hillel (Kraft Center for Jewish Student Life) and sits on the Upper West Side — one of the densest Jewish neighborhoods in America. The self-selection of Barnard applicants from Northeast Jewish families creates a particularly cohesive Jewish women's community. NYC's 1.5M Jewish metro provides extraordinary infrastructure.",
+
+    megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Elite liberal arts institution embedded within New York's finance, media, healthcare, nonprofit, and research ecosystem."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 10,
+    BosWash: 100,
+    TorBuffChester: 54,
+    TexasTriangle: 36,
+    CharLanta: 34,
+    NorCalInnovationCorridor: 76,
+    SoCalCreativeEconomy: 72
+
+  },
+
+  comparativePositioning: {
+
+    versusWellesley:
+      "Both produce exceptional women leaders; Barnard differentiates itself through full Columbia integration and daily access to New York City's economy.",
+
+    versusSmith:
+      "Smith offers a more traditional residential liberal arts experience; Barnard integrates intensive urban professional opportunities throughout the undergraduate years.",
+
+    versusBrynMawr:
+      "Both emphasize rigorous academics and women's leadership, but Barnard benefits from Columbia's research ecosystem and Manhattan's unmatched internship density.",
+
+    versusBrown:
+      "Brown provides a larger research university environment; Barnard delivers comparable academic rigor with significantly smaller classes and deeper undergraduate leadership opportunities while retaining Columbia access."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Very Small",
+
+    undergraduateEnrollment: 3400,
+
+    graduateEnrollment: 0,
+
+    totalEnrollment: 3400,
+
+    campusType: "Residential Liberal Arts College",
+
+    residentialIntensity: 98,
+
+    communityFeel: 96,
+
+    studentFacultyRatio: "9:1",
+
+    classSizeExperience: "Small seminar-based classes with intensive faculty mentorship, extensive undergraduate research, and complete access to Columbia University's research courses, laboratories, libraries, and graduate offerings. Students receive both the intimacy of a liberal arts college and the academic scale of a major research university.",
+
+    scaleAdvantages: [
+      "Elite liberal arts education combined with Columbia University resources",
+      "Exceptional faculty accessibility and advising",
+      "Unmatched internship opportunities throughout Manhattan",
+      "Outstanding undergraduate leadership opportunities",
+      "Immediate access to world-class research, hospitals, media companies, and financial institutions"
+    ],
+
+    scaleDisadvantages: [
+      "Highly competitive academic environment",
+      "Very high cost of living in New York City",
+      "Limited campus footprint compared to traditional universities",
+      "Admission is among the most selective in the country"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 96,
+      conscientiousness: 90,
+      extraversion: 64,
+      agreeableness: 82,
+      neuroticism: 40
+    },
+
+    hollandCodes: ["I", "S", "E"],
+
+    learningStyle: [
+      "Seminar Discussion",
+      "Research-Based Learning",
+      "Interdisciplinary Inquiry",
+      "Experiential Learning",
+      "Faculty Mentorship"
+    ],
+
+    socialEnvironment: [
+      "Intellectual",
+      "Collaborative",
+      "Urban",
+      "Leadership-Oriented",
+      "Globally Engaged"
+    ],
+
+    idealStudentTraits: [
+      "Highly intellectually curious",
+      "Independent and self-directed",
+      "Strong writer and communicator",
+      "Comfortable in fast-paced urban environments",
+      "Interested in leadership and public impact"
+    ],
+
+    thrivesIf: [
+      "Wants close faculty relationships with major university resources",
+      "Plans for graduate or professional school",
+      "Seeks internships throughout college",
+      "Enjoys interdisciplinary academics",
+      "Values ambitious peer communities"
+    ],
+
+    strugglesIf: [
+      "Prefers rural or traditional college towns",
+      "Dislikes dense urban environments",
+      "Needs extensive Division I athletics culture",
+      "Prefers highly structured curricula",
+      "Feels overwhelmed by constant opportunity and competition"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking larger traditional campuses",
+      "Students uncomfortable with New York's pace and cost",
+      "Students wanting less academically intensive environments"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Urban Studies",
+      "Data Science",
+      "Environmental Science",
+      "Neuroscience",
+      "Public Health",
+      "Architecture",
+      "Women's, Gender & Sexuality Studies",
+      "Computer Science"
+    ],
+
+    hiddenCareerPipelines: [
+      "United Nations",
+      "Global NGOs",
+      "Healthcare administration",
+      "Publishing leadership",
+      "Media strategy",
+      "Public interest law",
+      "Biotechnology research",
+      "Arts administration"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Columbia research laboratories",
+      "Wall Street recruiting",
+      "Major publishing houses",
+      "Broadway and media organizations",
+      "NewYork-Presbyterian and Columbia Medical Center"
+    ],
+
+    overlookedStrengths: [
+      "Outstanding STEM preparation",
+      "Exceptional Fulbright and Rhodes scholarship outcomes",
+      "Strong entrepreneurship ecosystem through Columbia",
+      "Excellent undergraduate research funding",
+      "Extensive global study opportunities"
+    ],
+
+    sleeperIndustries: [
+      "Digital Health",
+      "AI Policy",
+      "Climate Finance",
+      "Educational Technology",
+      "Global Development",
+      "Impact Investing"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 92,
+
+    mentorshipDensity: 96,
+
+    executiveAccess: 94,
+
+    internshipNetwork: 100,
+
+    familyBusinessExposure: 54,
+
+    relationshipCapitalScore: 96,
+
+    alumniLoyaltyScore: 92,
+
+    referralCultureStrength: 94,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Finance",
+      "Media",
+      "Healthcare",
+      "Technology",
+      "Consulting",
+      "Higher Education",
+      "Publishing",
+      "Government"
+    ],
+
+    regionalEconomicDrivers: [
+      "Wall Street",
+      "Columbia University",
+      "Healthcare Systems",
+      "Media",
+      "Publishing",
+      "Technology",
+      "Nonprofit Sector"
+    ],
+
+    topEmployers: [
+      "Goldman Sachs",
+      "McKinsey & Company",
+      "Google",
+      "Meta",
+      "JPMorgan Chase",
+      "BlackRock",
+      "NBCUniversal",
+      "The New York Times",
+      "Columbia University",
+      "NewYork-Presbyterian"
+    ],
+
+    emergingIndustries: [
+      "AI",
+      "Digital Media",
+      "Climate Technology",
+      "Biotechnology",
+      "Health Technology",
+      "FinTech"
+    ],
+
+    startupDensity: "Very High",
+
+    ventureCapitalAccess: 90,
+
+    corporateHeadquartersDensity: 100,
+
+    healthcareHubStrength: 96,
+
+    innovationIndex: 96
+
+  },
 
 module.exports = University_of_Tulsa;
 
