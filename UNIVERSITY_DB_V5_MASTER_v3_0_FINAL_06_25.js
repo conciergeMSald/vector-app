@@ -2,7 +2,7 @@
  * VECTOR University Intelligence Database
  * Schema: v5.1 — Full Architecture + MegaRegion Integration + CC Transfer Pathway
  *
- * Schools complete: 138
+ * Schools complete: 149
  * Last assembled:  June 27, 2026
  *
  * School index:
@@ -144,6 +144,17 @@
  *    136. California State University San Bernardino
  *    137. University of Alaska Fairbanks
  *    138. Barnard College
+ *    139. University of Kentucky
+ *    140. Johns Hopkins University
+ *    141. James Madison University
+ *    142. Carnegie Mellon University
+ *    143. Boston College
+ *    144. American University
+ *    145. Amherst College
+ *    146. Claremont McKenna College
+ *    147. Auburn University
+ *    148. Clemson University
+ *    149. Babson College
  */
 
 const UNIVERSITY_DB_V5 = {
@@ -5734,7 +5745,11 @@ name: "Biola University",
 
     scaleDisadvantages: []
   }
-  trajectoryProfile: {
+  hillel_strength: "tier_2",
+  jewish_enrollment: "~3-5% Jewish undergraduate enrollment",
+  hillel_note: "Clemson draws from Jewish families in Charlotte, Atlanta, and the Research Triangle. Hillel at Clemson is active and growing — Chabad of Clemson opened in recent years. Charlotte (2 hrs) and Atlanta (2.5 hrs) provide weekend metro access. Jewish Greek life mirrors South Carolina's model. A growing community in the SEC Southeast corridor.",
+
+    trajectoryProfile: {
     dominantTrajectory: "STEWARD",
     leaverScore: 60,
     returnerScore: 70,
@@ -75705,6 +75720,6995 @@ trajectoryProfile: {
     innovationIndex: 96
 
   },
+
+
+
+
+// === University_of_Kentucky ===
+"University of Kentucky": {
+
+  institutionNarrative: {
+
+    name: "University of Kentucky",
+
+    location: "Lexington, Kentucky",
+
+    region: "Southeast / Bluegrass Corridor",
+
+    archetype: "The Bluegrass Flagship — Healthcare, Agriculture, Engineering, and SEC Tradition",
+
+    oneSentenceSummary: "The University of Kentucky is the flagship public university of the Commonwealth of Kentucky, combining nationally recognized healthcare, engineering, agriculture, business, and research programs with one of America's largest academic medical centers and deep integration into the equine, bourbon, advanced manufacturing, and life sciences economy of the Bluegrass region.",
+
+    pipeline: "Approximately 35,000 students. UK operates the state's largest academic medical center through UK HealthCare and the University of Kentucky College of Medicine. National strengths include Nursing, Pharmacy, Engineering, Agriculture, Business, Public Health, Supply Chain, Finance, Education, and the Martin-Gatton College of Agriculture, Food and Environment. Major recruiters include Toyota Motor Manufacturing Kentucky, Lexmark, Valvoline, Humana, Baptist Health, UK HealthCare, Amazon, UPS, Deloitte, EY, PwC, Lockheed Martin, Raytheon, and numerous equine, bourbon, healthcare, manufacturing, and logistics employers throughout Kentucky and the Southeast.",
+
+    hiddenPathway: "The University's greatest hidden advantage is its unique position at the intersection of Kentucky's defining industries. Students gain unusually direct access to the global thoroughbred horse industry, bourbon production, agricultural biotechnology, advanced manufacturing, and one of the largest rural healthcare systems in America. The combination of UK HealthCare, Keeneland, Horse Country, and the Bluegrass agricultural economy creates career opportunities few universities can replicate.",
+
+    institutionalSecret: "Most people know Kentucky for basketball. In reality, UK is one of the nation's fastest-growing research universities and serves as the primary innovation engine for the Commonwealth. Through UK HealthCare, the Markey Cancer Center, engineering research, agricultural extension, and statewide partnerships, the university touches nearly every major sector of Kentucky's economy.",
+
+    theRoom: "Located in Lexington—America's Horse Capital—the 900-acre campus sits in the heart of the Bluegrass region surrounded by horse farms, bourbon distilleries, advanced manufacturers, and one of the nation's strongest regional healthcare systems. Cincinnati, Louisville, Nashville, and the broader Southeast are all within practical professional reach.",
+
+    lifestyle: "Traditional SEC campus life with strong athletics, Greek life, school spirit, and residential community. Students balance major sporting events, outdoor recreation, internships, healthcare research, and Lexington's growing food, bourbon, and equine culture.",
+
+    bestFitPersonality: "Community-oriented, ambitious, practical, enjoys school spirit, interested in healthcare, engineering, business, agriculture, or public service, high Conscientiousness with moderate Extraversion.",
+
+    faithTradition: "Public University",
+
+    geographicInfluenceRadius: "Kentucky statewide with strong influence throughout the Southeast, Ohio Valley, and growing national recognition in healthcare and research.",
+
+    economicOutcome: "Excellent outcomes in medicine, nursing, pharmacy, engineering, agriculture, supply chain, manufacturing, finance, public administration, and healthcare leadership with particularly strong placement throughout Kentucky and the Southeast.",
+
+    gradCities: [
+      "Lexington KY",
+      "Louisville KY",
+      "Cincinnati OH",
+      "Nashville TN",
+      "Atlanta GA",
+      "Chicago IL",
+      "Charlotte NC"
+    ],
+
+    comparableInstitutions: [
+      "University of Tennessee",
+      "University of Arkansas",
+      "University of Missouri",
+      "Auburn University",
+      "Virginia Tech"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Bluegrass Community & Technical College",
+        "Jefferson Community & Technical College",
+        "Owensboro Community & Technical College",
+        "Gateway Community & Technical College",
+        "Somerset Community College"
+      ],
+
+      transferAcceptanceRate: "High",
+
+      freshmanAcceptanceRate: "~95%",
+
+      estimatedSavingsRange: "$20,000-$55,000",
+
+      transferNotes: "The University of Kentucky maintains strong transfer pathways through the Kentucky Community and Technical College System (KCTCS), with many students completing associate degrees before transferring into bachelor's programs."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Flagship Public Research University",
+
+    institutionalPersonality: "traditional, ambitious, community-centered, research-driven, resilient",
+
+    cultureKeywords: [
+      "SEC",
+      "Healthcare",
+      "Basketball",
+      "Research",
+      "Agriculture",
+      "Engineering",
+      "Bluegrass",
+      "Public Service",
+      "Kentucky"
+    ],
+
+    missionOrientation: "Advancing Kentucky through education, research, healthcare, innovation, and statewide service.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Accessible flagship education combining research excellence, workforce development, public service, and experiential learning.",
+
+    competitiveness: "Moderately Selective",
+
+    politicalCulture: "Politically diverse with a pragmatic public-service orientation.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Strong flagship reputation with nationally recognized healthcare and research programs.",
+
+    socialClimate: "Traditional, spirited, collaborative, and community-oriented.",
+
+    leadershipStyle: "Leadership through service, innovation, research, and statewide impact."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "Kentucky's flagship university powering healthcare, agriculture, manufacturing, and the Bluegrass economy."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 74,
+    BosWash: 30,
+    TorBuffChester: 44,
+    TexasTriangle: 38,
+    CharLanta: 90,
+    NorCalInnovationCorridor: 24,
+    SoCalCreativeEconomy: 18
+
+  },
+
+  comparativePositioning: {
+
+    versusTennessee:
+      "Both are SEC flagships with strong research profiles; Kentucky distinguishes itself through UK HealthCare, pharmacy, equine science, and agricultural leadership.",
+
+    versusVirginiaTech:
+      "Virginia Tech has broader national engineering recognition; Kentucky offers stronger healthcare integration, medicine, pharmacy, and equine industries.",
+
+    versusMissouri:
+      "Missouri has stronger journalism and Midwest reach, while Kentucky dominates healthcare, pharmacy, and Kentucky's agricultural economy.",
+
+    versusAuburn:
+      "Both combine engineering and agriculture, but Kentucky offers significantly larger academic medical infrastructure and statewide healthcare leadership."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Very Large",
+
+    undergraduateEnrollment: 24400,
+
+    graduateEnrollment: 10600,
+
+    totalEnrollment: 35000,
+
+    campusType: "Flagship Public Research University",
+
+    residentialIntensity: 54,
+
+    communityFeel: 80,
+
+    studentFacultyRatio: "16:1",
+
+    classSizeExperience: "Large introductory courses are balanced by small upper-division seminars, honors courses, research laboratories, and clinical education. Students have significant opportunities for undergraduate research, healthcare shadowing, internships, and faculty mentorship across the university's professional colleges.",
+
+    scaleAdvantages: [
+      "Kentucky's largest research university with comprehensive academic offerings",
+      "UK HealthCare provides exceptional undergraduate clinical and research opportunities",
+      "Strong SEC alumni network throughout the Southeast",
+      "Extensive employer recruiting across healthcare, manufacturing, engineering, agriculture, and business",
+      "One of the nation's largest public university research enterprises"
+    ],
+
+    scaleDisadvantages: [
+      "Large campus requires students to actively seek mentorship",
+      "Introductory STEM and business courses can be large",
+      "Popular majors may have competitive internal progression",
+      "Research university scale can initially feel impersonal"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 72,
+      conscientiousness: 86,
+      extraversion: 76,
+      agreeableness: 72,
+      neuroticism: 38
+    },
+
+    hollandCodes: ["E", "S", "I"],
+
+    learningStyle: [
+      "Experiential Learning",
+      "Clinical Education",
+      "Research",
+      "Applied Problem Solving",
+      "Professional Preparation"
+    ],
+
+    socialEnvironment: [
+      "Traditional",
+      "School Spirit",
+      "Collaborative",
+      "SEC Culture",
+      "Career Focused"
+    ],
+
+    idealStudentTraits: [
+      "Enjoys a large flagship university",
+      "Interested in healthcare, engineering, business, or agriculture",
+      "Values athletics and campus traditions",
+      "Comfortable taking initiative academically",
+      "Interested in leadership opportunities"
+    ],
+
+    thrivesIf: [
+      "Wants Division I athletics and traditional campus life",
+      "Plans for healthcare or graduate education",
+      "Enjoys balancing academics with student organizations",
+      "Values internship opportunities throughout college",
+      "Wants a large alumni network"
+    ],
+
+    strugglesIf: [
+      "Prefers very small colleges",
+      "Needs intensive faculty attention immediately",
+      "Dislikes large introductory classes",
+      "Prefers highly specialized institutions",
+      "Wants an urban campus environment"
+    ],
+
+    transferRiskFactors: [
+      "Students overwhelmed by flagship scale",
+      "Students seeking more intimate liberal arts environments",
+      "Students changing career interests into highly specialized fields unavailable at UK"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Equine Science",
+      "Supply Chain Management",
+      "Mining Engineering",
+      "Agricultural Biotechnology",
+      "Public Health",
+      "Forestry",
+      "Geography",
+      "Health Sciences"
+    ],
+
+    hiddenCareerPipelines: [
+      "Equine industry leadership",
+      "Bourbon production and operations",
+      "Healthcare administration",
+      "Rural medicine",
+      "Agricultural technology",
+      "Advanced manufacturing",
+      "Food science",
+      "State government leadership"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "UK HealthCare clinical placements",
+      "Toyota Kentucky engineering pipeline",
+      "Bourbon industry internships",
+      "Horse industry partnerships",
+      "Kentucky state government recruiting"
+    ],
+
+    overlookedStrengths: [
+      "Nationally elite College of Pharmacy",
+      "Markey Cancer Center research",
+      "Strong NSF research funding",
+      "Outstanding Cooperative Extension network",
+      "Rapidly expanding engineering research"
+    ],
+
+    sleeperIndustries: [
+      "Biotechnology",
+      "Precision Agriculture",
+      "Advanced Manufacturing",
+      "Health Analytics",
+      "Food Innovation",
+      "Energy Infrastructure"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 84,
+
+    mentorshipDensity: 82,
+
+    executiveAccess: 76,
+
+    internshipNetwork: 88,
+
+    familyBusinessExposure: 46,
+
+    relationshipCapitalScore: 84,
+
+    alumniLoyaltyScore: 92,
+
+    referralCultureStrength: 88,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Healthcare",
+      "Agriculture",
+      "Advanced Manufacturing",
+      "Engineering",
+      "Education",
+      "Logistics",
+      "Government",
+      "Life Sciences"
+    ],
+
+    regionalEconomicDrivers: [
+      "UK HealthCare",
+      "Toyota Manufacturing",
+      "Bourbon Industry",
+      "Equine Industry",
+      "Agricultural Biotechnology",
+      "Advanced Manufacturing",
+      "Distribution and Logistics"
+    ],
+
+    topEmployers: [
+      "UK HealthCare",
+      "Toyota Motor Manufacturing Kentucky",
+      "Baptist Health",
+      "Lexmark",
+      "Valvoline",
+      "Humana",
+      "Amazon",
+      "UPS",
+      "Lockheed Martin",
+      "Kentucky State Government"
+    ],
+
+    emergingIndustries: [
+      "Health Technology",
+      "Precision Agriculture",
+      "Biotechnology",
+      "AI Healthcare",
+      "Advanced Materials",
+      "Supply Chain Analytics"
+    ],
+
+    startupDensity: "Moderate",
+
+    ventureCapitalAccess: 34,
+
+    corporateHeadquartersDensity: 46,
+
+    healthcareHubStrength: 98,
+
+    innovationIndex: 82
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Kentucky Healthcare, Manufacturing, and Bluegrass Economy",
+
+    secondaryMarkets: [
+      "Louisville KY",
+      "Cincinnati OH",
+      "Nashville TN",
+      "Atlanta GA",
+      "Charlotte NC",
+      "Chicago IL",
+      "Dallas TX"
+    ],
+
+    alumniStrongholds: [
+      "Lexington KY",
+      "Louisville KY",
+      "Cincinnati OH",
+      "Nashville TN",
+      "Atlanta GA"
+    ],
+
+    relocationPatterns: [
+      "Many graduates remain in Kentucky through UK HealthCare, state government, manufacturing, and business leadership.",
+      "Cincinnati attracts graduates into consumer products, healthcare, finance, and engineering.",
+      "Nashville and Atlanta serve as major destinations for consulting, healthcare administration, technology, and corporate careers.",
+      "Chicago and Dallas attract engineering, finance, and operations graduates.",
+      "Medical graduates disperse nationally through residency placements."
+    ],
+
+    regionalInfluenceScore: 96,
+
+    nationalReachScore: 76,
+
+    internationalReachScore: 28
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 48,
+
+    studentOrganizationStrength: 90,
+
+    leadershipDevelopment: 90,
+
+    crossDisciplinaryInteraction: 84,
+
+    civicEngagement: 82
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 12,
+      notes: "Minimal institutional emphasis outside consumer products and retail."
+    },
+
+    healthWellness: {
+      strength: 98,
+      notes: "One of the university's defining strengths through UK HealthCare, medicine, nursing, pharmacy, public health, and allied health professions."
+    },
+
+    nutraceuticals: {
+      strength: 48,
+      notes: "Food science, agriculture, and human nutrition create meaningful opportunities."
+    },
+
+    consumerProducts: {
+      strength: 66,
+      notes: "Strong pathways through P&G regional operations, consumer manufacturing, and supply chain."
+    },
+
+    outdoorIndustry: {
+      strength: 42,
+      notes: "Forestry, natural resources, wildlife, and parks management provide regional opportunities."
+    },
+
+    sportsBusiness: {
+      strength: 68,
+      notes: "SEC athletics create meaningful opportunities in collegiate athletics, marketing, fundraising, and administration."
+    },
+
+    entertainmentMedia: {
+      strength: 24,
+      notes: "Communications and journalism provide regional opportunities but are not institutional specialties."
+    },
+
+    ventureCapital: {
+      strength: 26,
+      notes: "Growing entrepreneurial ecosystem centered on health innovation and university commercialization."
+    },
+
+    privateEquity: {
+      strength: 18,
+      notes: "Limited direct recruiting compared to elite finance institutions."
+    },
+
+    investmentBanking: {
+      strength: 42,
+      notes: "Selective placement into regional and national financial institutions through Gatton College of Business."
+    },
+
+    consulting: {
+      strength: 68,
+      notes: "Strong placement into healthcare consulting, operations consulting, accounting, and management consulting."
+    },
+
+    medicine: {
+      strength: 100,
+      notes: "One of the university's signature pathways with nationally respected medicine, nursing, pharmacy, dentistry, and biomedical research."
+    },
+
+    healthcareAdministration: {
+      strength: 98,
+      notes: "UK HealthCare creates one of the strongest healthcare management ecosystems in the Southeast."
+    },
+
+    defense: {
+      strength: 42,
+      notes: "Engineering and federal research provide moderate defense opportunities."
+    },
+
+    realEstate: {
+      strength: 34,
+      notes: "Regional commercial development and urban planning provide moderate career opportunities."
+    },
+
+    luxuryBrands: {
+      strength: 22,
+      notes: "Bourbon and equine industries create niche luxury brand management opportunities."
+    },
+
+    entrepreneurship: {
+      strength: 62,
+      notes: "Growing support through innovation centers, agricultural entrepreneurship, healthcare startups, and business incubation."
+    },
+
+    technology: {
+      strength: 56,
+      notes: "Growing software, engineering, cybersecurity, and health technology opportunities."
+    },
+
+    publicPolicy: {
+      strength: 74,
+      notes: "Strong pathways into Kentucky government, public health, education policy, and regional leadership."
+    },
+
+    nonprofitLeadership: {
+      strength: 76,
+      notes: "Healthcare, education, and statewide community organizations create strong nonprofit leadership opportunities."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 86,
+
+    firstGenerationSupport: 90,
+
+    wealthCreationPotential: 84,
+
+    familyBusinessPipelineStrength: 52
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 86,
+
+    automationResistance: 88,
+
+    adaptabilityScore: 88,
+
+    interdisciplinaryStrength: 86,
+
+    futureReadiness: 88,
+
+    entrepreneurialFlexibility: 78,
+
+    lifelongLearningCulture: 90,
+
+    innovationCapacity: 84
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 84,
+
+    communityLeadershipPotential: 94,
+
+    geographicMobility: 74,
+
+    workLifeBalancePotential: 88,
+
+    purposeAlignment: 90,
+
+    familyFormationSupport: 90,
+
+    personalDevelopmentPotential: 88,
+
+    careerOptionality: 90,
+
+    longTermLifeSatisfaction: 90
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 72,
+
+    networkMoat: 82,
+
+    geographicMoat: 92,
+
+    industryMoat: 92,
+
+    alumniMoat: 84,
+
+    brandDurability: 90,
+
+    overallMoatScore: 84
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "STAY_LEAVE_RETURN",
+
+    leaverScore: 62,
+
+    returnerScore: 88,
+
+    stewardScore: 94,
+
+    navigatorScore: 70,
+
+    geographicLockIn: "medium",
+
+    alumniDispersalPattern: "regional_with_national_healthcare"
+
+  }
+
+},
+
+
+// === Johns_Hopkins_University ===
+"Johns Hopkins University": {
+
+  institutionNarrative: {
+
+    name: "Johns Hopkins University",
+
+    location: "Baltimore, Maryland",
+
+    region: "Bos-Wash Corridor",
+
+    archetype: "America's Research University — Medicine, Science, Global Policy, and Discovery",
+
+    oneSentenceSummary: "Johns Hopkins University is the institution that invented the modern American research university, combining the world's premier biomedical research enterprise with elite engineering, international affairs, public health, neuroscience, and data science while operating inside the Bos-Wash knowledge corridor connecting Washington, Baltimore, Philadelphia, and New York.",
+
+    pipeline: "Approximately 32,000 students across undergraduate and graduate divisions. Hopkins is globally recognized for Medicine, Biomedical Engineering, Public Health, Neuroscience, Computer Science, Applied Mathematics, International Relations, Economics, Molecular Biology, Nursing, and Space Science. The Johns Hopkins Hospital and Johns Hopkins Health System are among the world's most respected academic medical centers. The Bloomberg School of Public Health is consistently ranked #1 globally. Major recruiters include Johns Hopkins Medicine, NIH, FDA, NASA, Northrop Grumman, Lockheed Martin, Booz Allen Hamilton, McKinsey, Bain, BCG, Google, Microsoft, Amazon, Apple, Moderna, Pfizer, AstraZeneca, BlackRock, Goldman Sachs, and virtually every leading biotechnology, pharmaceutical, consulting, and federal research organization.",
+
+    hiddenPathway: "Hopkins' greatest hidden advantage is the extraordinary density of federal scientific infrastructure surrounding Baltimore and Washington. Students routinely work with the NIH, FDA, NIST, NASA Goddard, the Applied Physics Laboratory, the Department of Defense, the World Bank, the Brookings Institution, and dozens of federally funded laboratories before graduation. Few universities possess comparable access to the American research ecosystem.",
+
+    institutionalSecret: "Most people think Johns Hopkins is simply an elite medical school. In reality, Hopkins created the American model of the research university itself. Undergraduate students enter an environment where discovery—not classroom instruction—is the defining institutional culture. Faculty are expected to produce new knowledge, and students are invited into that process unusually early.",
+
+    theRoom: "Located in Baltimore with major campuses extending into Washington, DC, Johns Hopkins sits at the center of the Bos-Wash corridor—the most knowledge-intensive economic region in North America. Students are surrounded by elite hospitals, biotechnology companies, federal agencies, think tanks, venture-backed startups, defense laboratories, international organizations, and one of the world's highest concentrations of PhDs per square mile.",
+
+    lifestyle: "Highly intellectual, research-intensive, ambitious, collaborative, and professionally focused. Undergraduate life blends laboratory research, startup culture, clinical volunteering, entrepreneurship, public service, Division III athletics, and access to both Baltimore and Washington.",
+
+    bestFitPersonality: "Scientifically curious, intellectually ambitious, independent, disciplined, collaborative, comfortable with academic intensity, very high Openness and Conscientiousness.",
+
+    faithTradition: "None",
+
+    geographicInfluenceRadius: "Global influence with exceptionally strong placement throughout Baltimore, Washington DC, New York, Boston, San Francisco, and international research institutions.",
+
+    economicOutcome: "Among the strongest universities in the world for medicine, biomedical engineering, biotechnology, public health, scientific research, quantitative finance, artificial intelligence, consulting, federal research, entrepreneurship, and graduate education.",
+
+    gradCities: [
+      "Baltimore MD",
+      "Washington DC",
+      "New York NY",
+      "Boston MA",
+      "San Francisco CA",
+      "Seattle WA",
+      "London UK"
+    ],
+
+    comparableInstitutions: [
+      "Massachusetts Institute of Technology",
+      "Stanford University",
+      "Duke University",
+      "University of Pennsylvania",
+      "Washington University in St. Louis"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Montgomery College",
+        "Howard Community College",
+        "Community College of Baltimore County",
+        "Anne Arundel Community College"
+      ],
+
+      transferAcceptanceRate: "~5%",
+
+      freshmanAcceptanceRate: "~7%",
+
+      estimatedSavingsRange: "$30,000-$80,000",
+
+      transferNotes: "Hopkins enrolls a very small number of transfer students. Successful applicants typically present exceptional academic records, significant research experience, and rigorous STEM preparation."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Elite Global Research University",
+
+    institutionalPersonality: "scientific, analytical, discovery-driven, collaborative, globally engaged",
+
+    cultureKeywords: [
+      "Medicine",
+      "Research",
+      "Biomedical Engineering",
+      "Public Health",
+      "Innovation",
+      "Discovery",
+      "Global Health",
+      "Science",
+      "Policy"
+    ],
+
+    missionOrientation: "Advancing human knowledge through discovery, innovation, research, education, and global service.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Research-driven education where students participate directly in discovery, scientific inquiry, interdisciplinary collaboration, and real-world problem solving.",
+
+    competitiveness: "Extremely Selective",
+
+    politicalCulture: "Generally moderate to progressive with strong emphasis on scientific evidence and global engagement.",
+
+    studentAutonomy: "Very High",
+
+    prestigeOrientation: "Among the highest in the world.",
+
+    socialClimate: "Collaborative, intellectually intense, research-focused, globally diverse.",
+
+    leadershipStyle: "Leadership through discovery, scientific excellence, innovation, and evidence-based problem solving."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Global research powerhouse embedded within America's federal science, healthcare, biotechnology, and policy corridor."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 18,
+    BosWash: 100,
+    TorBuffChester: 54,
+    TexasTriangle: 46,
+    CharLanta: 34,
+    NorCalInnovationCorridor: 86,
+    SoCalCreativeEconomy: 52
+
+  },
+
+  comparativePositioning: {
+
+    versusMIT:
+      "MIT leads engineering and technology entrepreneurship; Hopkins dominates medicine, biomedical research, public health, neuroscience, and federal scientific partnerships.",
+
+    versusStanford:
+      "Stanford sits at the center of venture capital and Silicon Valley; Hopkins occupies the world's premier biomedical research ecosystem and federal science infrastructure.",
+
+    versusPenn:
+      "Penn integrates business, medicine, and healthcare management; Hopkins is more research-intensive with substantially greater biomedical and public health leadership.",
+
+    versusDuke:
+      "Both combine elite medicine with undergraduate education, but Hopkins maintains broader global leadership in research, scientific funding, and biomedical discovery."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Medium",
+
+    undergraduateEnrollment: 6300,
+
+    graduateEnrollment: 25800,
+
+    totalEnrollment: 32100,
+
+    campusType: "Elite Private Research University",
+
+    residentialIntensity: 82,
+
+    communityFeel: 84,
+
+    studentFacultyRatio: "6:1",
+
+    classSizeExperience: "Small seminars, extensive laboratory instruction, individualized faculty mentorship, and one of the nation's highest rates of undergraduate research participation. Even first-year students frequently join active research laboratories and clinical research teams.",
+
+    scaleAdvantages: [
+      "One of the world's most research-intensive universities",
+      "Exceptional undergraduate access to funded faculty research",
+      "Direct integration with Johns Hopkins Hospital and Applied Physics Laboratory",
+      "Extremely low student-faculty ratio",
+      "Global prestige across medicine, engineering, science, and public policy"
+    ],
+
+    scaleDisadvantages: [
+      "Academically demanding culture with high expectations",
+      "Research intensity can create competitive academic environments",
+      "Baltimore is less polished than many peer university cities",
+      "Limited traditional Division I athletic culture"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 98,
+      conscientiousness: 96,
+      extraversion: 52,
+      agreeableness: 74,
+      neuroticism: 42
+    },
+
+    hollandCodes: ["I", "R", "C"],
+
+    learningStyle: [
+      "Research-Based Learning",
+      "Laboratory Investigation",
+      "Quantitative Analysis",
+      "Independent Inquiry",
+      "Interdisciplinary Collaboration"
+    ],
+
+    socialEnvironment: [
+      "Highly Intellectual",
+      "Research-Oriented",
+      "Collaborative",
+      "Globally Diverse",
+      "Professionally Ambitious"
+    ],
+
+    idealStudentTraits: [
+      "Scientifically curious",
+      "Highly self-motivated",
+      "Comfortable with rigorous academics",
+      "Interested in research and discovery",
+      "Thrives around intellectually ambitious peers"
+    ],
+
+    thrivesIf: [
+      "Wants undergraduate research from the first year",
+      "Plans for medicine, science, engineering, or graduate school",
+      "Enjoys solving complex problems",
+      "Values mentorship from world-class faculty",
+      "Prefers intellectually driven campus culture"
+    ],
+
+    strugglesIf: [
+      "Needs extensive school-spirit driven social life",
+      "Prefers less academically intense environments",
+      "Dislikes research-focused learning",
+      "Needs large lecture-based instruction",
+      "Feels uncomfortable with exceptionally ambitious peers"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking more traditional college experiences",
+      "Students overwhelmed by academic rigor",
+      "Students changing away from research-intensive disciplines"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Applied Mathematics & Statistics",
+      "Public Health Studies",
+      "Earth & Planetary Sciences",
+      "International Studies",
+      "History of Science",
+      "Molecular & Cellular Biology",
+      "Environmental Engineering",
+      "Science, Technology & Society"
+    ],
+
+    hiddenCareerPipelines: [
+      "NIH",
+      "FDA",
+      "NASA",
+      "DARPA",
+      "Applied Physics Laboratory",
+      "Biotechnology startups",
+      "Global health organizations",
+      "Scientific venture capital"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Federal laboratory partnerships",
+      "Johns Hopkins Hospital clinical research",
+      "Bloomberg School collaborations",
+      "APL engineering internships",
+      "NIH undergraduate fellowships"
+    ],
+
+    overlookedStrengths: [
+      "Exceptional undergraduate publishing opportunities",
+      "World-leading neuroscience research",
+      "Top-tier international relations through SAIS connections",
+      "Outstanding data science ecosystem",
+      "One of the nation's strongest undergraduate research funding models"
+    ],
+
+    sleeperIndustries: [
+      "Precision Medicine",
+      "AI in Healthcare",
+      "Quantum Biology",
+      "Bioinformatics",
+      "Space Systems",
+      "Defense Technology"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 90,
+
+    mentorshipDensity: 98,
+
+    executiveAccess: 94,
+
+    internshipNetwork: 98,
+
+    familyBusinessExposure: 42,
+
+    relationshipCapitalScore: 96,
+
+    alumniLoyaltyScore: 90,
+
+    referralCultureStrength: 94,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Healthcare",
+      "Biotechnology",
+      "Pharmaceuticals",
+      "Engineering",
+      "Federal Research",
+      "Artificial Intelligence",
+      "Defense",
+      "Consulting"
+    ],
+
+    regionalEconomicDrivers: [
+      "Johns Hopkins Medicine",
+      "NIH",
+      "FDA",
+      "Federal Research",
+      "Biotechnology",
+      "Cybersecurity",
+      "Defense Technology"
+    ],
+
+    topEmployers: [
+      "Johns Hopkins Medicine",
+      "NIH",
+      "FDA",
+      "Northrop Grumman",
+      "Lockheed Martin",
+      "Google",
+      "Microsoft",
+      "McKinsey & Company",
+      "Pfizer",
+      "Moderna"
+    ],
+
+    emergingIndustries: [
+      "AI Healthcare",
+      "Synthetic Biology",
+      "Gene Editing",
+      "Digital Therapeutics",
+      "Space Medicine",
+      "National Security Technology"
+    ],
+
+    startupDensity: "Very High",
+
+    ventureCapitalAccess: 82,
+
+    corporateHeadquartersDensity: 84,
+
+    healthcareHubStrength: 100,
+
+    innovationIndex: 100
+
+  }
+    geographicInfluence: {
+
+    dominantMarket: "Bos-Wash Research, Healthcare, Biotechnology, and Federal Innovation Corridor",
+
+    secondaryMarkets: [
+      "Washington DC",
+      "New York NY",
+      "Boston MA",
+      "San Francisco CA",
+      "Seattle WA",
+      "Research Triangle NC",
+      "London UK"
+    ],
+
+    alumniStrongholds: [
+      "Baltimore MD",
+      "Washington DC",
+      "New York NY",
+      "Boston MA",
+      "San Francisco CA"
+    ],
+
+    relocationPatterns: [
+      "Large numbers remain in Baltimore and Washington through medicine, biotechnology, defense, and federal research.",
+      "New York attracts graduates into finance, consulting, healthcare investment, and technology.",
+      "Boston serves biotechnology, medicine, pharmaceuticals, and academic research.",
+      "San Francisco and Seattle recruit heavily for biotechnology, AI, engineering, and venture-backed startups.",
+      "Many graduates pursue international careers through global health organizations, academia, multinational pharmaceutical companies, and research institutions."
+    ],
+
+    regionalInfluenceScore: 98,
+
+    nationalReachScore: 98,
+
+    internationalReachScore: 96
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 14,
+
+    studentOrganizationStrength: 92,
+
+    leadershipDevelopment: 94,
+
+    crossDisciplinaryInteraction: 98,
+
+    civicEngagement: 90
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 12,
+      notes: "Limited direct emphasis, though biomedical chemistry and dermatological research support pharmaceutical and cosmetic science."
+    },
+
+    healthWellness: {
+      strength: 100,
+      notes: "Arguably the world's strongest undergraduate ecosystem for medicine, biomedical research, nursing, public health, biotechnology, and healthcare innovation."
+    },
+
+    nutraceuticals: {
+      strength: 38,
+      notes: "Research opportunities exist through nutrition science, metabolism, and biomedical innovation."
+    },
+
+    consumerProducts: {
+      strength: 26,
+      notes: "Limited institutional emphasis outside health technology and consumer health products."
+    },
+
+    outdoorIndustry: {
+      strength: 16,
+      notes: "Environmental science and earth systems research provide niche opportunities."
+    },
+
+    sportsBusiness: {
+      strength: 8,
+      notes: "Not a significant institutional pathway."
+    },
+
+    entertainmentMedia: {
+      strength: 18,
+      notes: "Science communication, journalism, and digital media exist but are secondary strengths."
+    },
+
+    ventureCapital: {
+      strength: 86,
+      notes: "Strong exposure through biotechnology commercialization, healthcare innovation, life science venture funds, and university spinouts."
+    },
+
+    privateEquity: {
+      strength: 54,
+      notes: "Selective placement into healthcare-focused private equity and investment firms."
+    },
+
+    investmentBanking: {
+      strength: 68,
+      notes: "Excellent placement into healthcare investment banking, quantitative finance, and Wall Street firms."
+    },
+
+    consulting: {
+      strength: 92,
+      notes: "Outstanding recruiting by McKinsey, Bain, BCG, Deloitte, LEK, ClearView, Putnam, and healthcare strategy firms."
+    },
+
+    medicine: {
+      strength: 100,
+      notes: "One of the strongest medical and biomedical pipelines anywhere in the world."
+    },
+
+    healthcareAdministration: {
+      strength: 98,
+      notes: "Exceptional pathways through Johns Hopkins Medicine, Bloomberg School of Public Health, and national healthcare systems."
+    },
+
+    defense: {
+      strength: 94,
+      notes: "Applied Physics Laboratory, DARPA partnerships, cybersecurity, aerospace engineering, and national security research create elite opportunities."
+    },
+
+    realEstate: {
+      strength: 18,
+      notes: "Minimal institutional emphasis."
+    },
+
+    luxuryBrands: {
+      strength: 8,
+      notes: "Little institutional focus."
+    },
+
+    entrepreneurship: {
+      strength: 88,
+      notes: "Strong commercialization ecosystem in biotechnology, medical devices, AI, diagnostics, and scientific startups."
+    },
+
+    technology: {
+      strength: 90,
+      notes: "Excellent preparation in AI, software engineering, cybersecurity, robotics, machine learning, and computational science."
+    },
+
+    publicPolicy: {
+      strength: 94,
+      notes: "Global leadership through public health, international affairs, evidence-based policymaking, and proximity to Washington DC."
+    },
+
+    nonprofitLeadership: {
+      strength: 92,
+      notes: "Outstanding preparation through global health, humanitarian organizations, international development, and scientific nonprofits."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 74,
+
+    firstGenerationSupport: 84,
+
+    wealthCreationPotential: 96,
+
+    familyBusinessPipelineStrength: 42
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 98,
+
+    automationResistance: 98,
+
+    adaptabilityScore: 98,
+
+    interdisciplinaryStrength: 100,
+
+    futureReadiness: 100,
+
+    entrepreneurialFlexibility: 94,
+
+    lifelongLearningCulture: 100,
+
+    innovationCapacity: 100
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 98,
+
+    communityLeadershipPotential: 94,
+
+    geographicMobility: 98,
+
+    workLifeBalancePotential: 76,
+
+    purposeAlignment: 96,
+
+    familyFormationSupport: 82,
+
+    personalDevelopmentPotential: 98,
+
+    careerOptionality: 100,
+
+    longTermLifeSatisfaction: 94
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 98,
+
+    networkMoat: 98,
+
+    geographicMoat: 98,
+
+    industryMoat: 100,
+
+    alumniMoat: 96,
+
+    brandDurability: 100,
+
+    overallMoatScore: 99
+
+  },
+
+  hillel_strength: "tier_1",
+  jewish_enrollment: "~25-30% Jewish undergraduate enrollment",
+  hillel_note: "Johns Hopkins draws from the DC/MD/VA/NJ/NY corridor — one of the strongest Jewish feeder pipelines in America. Baltimore's Jewish community (~100,000 — historically one of the most significant in America) provides extraordinary off-campus infrastructure. Hopkins' pre-med and STEM culture draws disproportionately from Jewish families, mirroring the CMU dynamic. Active Hillel and prominent Jewish Greek life.",
+
+    trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE_RETURN",
+
+    leaverScore: 98,
+
+    returnerScore: 82,
+
+    stewardScore: 42,
+
+    navigatorScore: 100,
+
+    geographicLockIn: "low",
+
+    alumniDispersalPattern: "global"
+
+  }
+
+},
+
+
+// === James_Madison_University ===
+"James Madison University": {
+
+  institutionNarrative: {
+
+    name: "James Madison University",
+
+    location: "Harrisonburg, Virginia",
+
+    region: "Shenandoah Valley / Bos-Wash Corridor",
+
+    archetype: "The Public Leadership University — Virginia's Premier Undergraduate Experience",
+
+    oneSentenceSummary: "James Madison University combines one of the nation's strongest undergraduate-focused public university experiences with exceptional programs in business, health professions, education, technology, intelligence analysis, and public administration, while leveraging proximity to Washington DC and Virginia's rapidly growing technology and government economy.",
+
+    pipeline: "Approximately 23,000 students. JMU is nationally recognized for Business, Accounting, Finance, Nursing, Health Sciences, Computer Information Systems, Engineering, Education, Intelligence Analysis, Public Administration, Communications, and Hospitality Management. The College of Business consistently produces graduates recruited throughout the Mid-Atlantic. Major employers include Deloitte, EY, KPMG, PwC, Northrop Grumman, Capital One, Amazon Web Services, Microsoft, Booz Allen Hamilton, Accenture, Sentara Health, Inova Health, Virginia state government, the FBI, CIA contractors, and numerous consulting, healthcare, cybersecurity, and defense organizations across Northern Virginia and Washington DC.",
+
+    hiddenPathway: "JMU's greatest hidden advantage is its extraordinary connection to Northern Virginia's government contracting, cybersecurity, intelligence, and consulting economy. The university's Intelligence Analysis program is one of the first and most respected undergraduate programs of its kind in the United States, creating unusually strong pathways into federal agencies, national security, and defense contractors. Combined with Virginia's technology corridor, students gain access to one of the country's deepest white-collar employment ecosystems.",
+
+    institutionalSecret: "Many people view JMU as simply a strong regional public university. In reality, it has deliberately prioritized undergraduate education over becoming a research-intensive flagship. Faculty focus heavily on teaching, mentorship, internships, and career placement, producing unusually high student satisfaction and employment outcomes relative to peer public universities.",
+
+    theRoom: "Located in Virginia's Shenandoah Valley, JMU occupies a modern campus against the Blue Ridge Mountains while remaining within two hours of Washington DC, Northern Virginia's technology corridor, Richmond, and Charlottesville. Outdoor recreation, a vibrant college town, and access to one of America's strongest government and technology economies create a unique combination of lifestyle and career opportunity.",
+
+    lifestyle: "Highly social, spirited, and student-centered. Division I athletics, strong school traditions, active Greek life, extensive student organizations, outdoor recreation, and a vibrant residential campus create one of the strongest campus communities among public universities.",
+
+    bestFitPersonality: "Collaborative, ambitious, socially engaged, career-oriented, enjoys community and leadership, values strong undergraduate teaching, moderate-to-high Extraversion with strong Conscientiousness.",
+
+    faithTradition: "Public University",
+
+    geographicInfluenceRadius: "Virginia and the Mid-Atlantic with particularly strong influence throughout Northern Virginia, Washington DC, Richmond, and Charlotte.",
+
+    economicOutcome: "Excellent outcomes in consulting, accounting, healthcare, education, intelligence, cybersecurity, business, public administration, technology, and government with particularly strong placement throughout the Mid-Atlantic.",
+
+    gradCities: [
+      "Northern Virginia VA",
+      "Washington DC",
+      "Richmond VA",
+      "Charlotte NC",
+      "Virginia Beach VA",
+      "Baltimore MD",
+      "Raleigh NC"
+    ],
+
+    comparableInstitutions: [
+      "University of Delaware",
+      "Miami University (Ohio)",
+      "College of Charleston",
+      "Elon University",
+      "Virginia Commonwealth University"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Blue Ridge Community College",
+        "Northern Virginia Community College",
+        "Lord Fairfax Community College",
+        "Virginia Western Community College",
+        "Piedmont Virginia Community College"
+      ],
+
+      transferAcceptanceRate: "High",
+
+      freshmanAcceptanceRate: "~78%",
+
+      estimatedSavingsRange: "$20,000-$55,000",
+
+      transferNotes: "JMU maintains excellent transfer pathways through the Virginia Community College System with numerous guaranteed admission agreements for qualifying students."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Undergraduate-Centered Public University",
+
+    institutionalPersonality: "collaborative, energetic, student-centered, practical, leadership-focused",
+
+    cultureKeywords: [
+      "Leadership",
+      "Business",
+      "Teaching",
+      "Community",
+      "Virginia",
+      "School Spirit",
+      "Government",
+      "Technology",
+      "Health Professions"
+    ],
+
+    missionOrientation: "Preparing educated and engaged citizens through exceptional undergraduate education, leadership development, innovation, and public service.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "High-quality undergraduate teaching combined with experiential learning, leadership development, internships, and professional preparation.",
+
+    competitiveness: "Moderately Selective",
+
+    politicalCulture: "Politically diverse with a pragmatic and service-oriented campus culture.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Strong regional reputation with growing national recognition.",
+
+    socialClimate: "Friendly, spirited, collaborative, residential, and highly engaged.",
+
+    leadershipStyle: "Leadership through service, collaboration, professionalism, and community engagement."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Virginia's premier undergraduate public university supporting the Mid-Atlantic's government, consulting, healthcare, and technology economy."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 28,
+    BosWash: 94,
+    TorBuffChester: 42,
+    TexasTriangle: 34,
+    CharLanta: 62,
+    NorCalInnovationCorridor: 36,
+    SoCalCreativeEconomy: 18
+
+  },
+
+  comparativePositioning: {
+
+    versusVirginiaTech:
+      "Virginia Tech emphasizes engineering and research at a much larger scale; JMU prioritizes undergraduate teaching, business, health professions, and leadership development.",
+
+    versusUniversityOfDelaware:
+      "Both combine strong undergraduate education with business and STEM programs, but JMU has deeper integration into the Washington DC consulting, intelligence, and federal workforce.",
+
+    versusElon:
+      "Both emphasize undergraduate engagement and career preparation; JMU offers flagship public scale, broader academic offerings, and lower cost for Virginia residents.",
+
+    versusVCU:
+      "VCU offers an urban research university experience centered in Richmond; JMU provides a more residential campus with stronger undergraduate community and student life."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Large",
+
+    undergraduateEnrollment: 20000,
+
+    graduateEnrollment: 3000,
+
+    totalEnrollment: 23000,
+
+    campusType: "Residential Public University",
+
+    residentialIntensity: 88,
+
+    communityFeel: 92,
+
+    studentFacultyRatio: "17:1",
+
+    classSizeExperience: "Large introductory courses are complemented by small upper-division seminars, project-based learning, internships, undergraduate research, and extensive faculty mentoring. JMU is nationally recognized for delivering a highly personal undergraduate experience despite its size.",
+
+    scaleAdvantages: [
+      "One of the strongest undergraduate-focused public universities in America",
+      "Highly engaged residential campus with exceptional student life",
+      "Outstanding internship access throughout Northern Virginia and Washington DC",
+      "Broad academic offerings without the impersonal feel of many flagship universities",
+      "Strong alumni engagement throughout the Mid-Atlantic"
+    ],
+
+    scaleDisadvantages: [
+      "Graduate research infrastructure is smaller than flagship research universities",
+      "Students pursuing highly specialized research fields may have fewer opportunities",
+      "Distance from major metropolitan employers requires intentional internship planning",
+      "Rapid enrollment growth has increased competition for some campus resources"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 72,
+      conscientiousness: 84,
+      extraversion: 88,
+      agreeableness: 82,
+      neuroticism: 34
+    },
+
+    hollandCodes: ["E", "S", "C"],
+
+    learningStyle: [
+      "Experiential Learning",
+      "Team-Based Projects",
+      "Applied Learning",
+      "Internships",
+      "Leadership Development"
+    ],
+
+    socialEnvironment: [
+      "Collaborative",
+      "School Spirit",
+      "Residential",
+      "Highly Involved",
+      "Career Focused"
+    ],
+
+    idealStudentTraits: [
+      "Values community and belonging",
+      "Enjoys balancing academics with campus involvement",
+      "Interested in leadership roles",
+      "Career-oriented but socially engaged",
+      "Prefers faculty who prioritize teaching"
+    ],
+
+    thrivesIf: [
+      "Wants a classic residential college experience",
+      "Enjoys Division I athletics and campus traditions",
+      "Plans to intern throughout college",
+      "Prefers collaborative rather than hypercompetitive academics",
+      "Wants strong career preparation"
+    ],
+
+    strugglesIf: [
+      "Wants an elite research-intensive environment",
+      "Prefers large urban campuses",
+      "Needs highly specialized doctoral-level research opportunities",
+      "Dislikes traditional campus culture",
+      "Prefers highly independent academic environments"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking stronger research universities",
+      "Students wanting urban campuses",
+      "Students changing into highly specialized STEM research careers"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Intelligence Analysis",
+      "Computer Information Systems",
+      "Hospitality Management",
+      "Geographic Science",
+      "Health Sciences",
+      "Integrated Science and Technology",
+      "Supply Chain Management",
+      "Sport and Recreation Management"
+    ],
+
+    hiddenCareerPipelines: [
+      "Federal Intelligence Community",
+      "Government Consulting",
+      "Cybersecurity",
+      "Healthcare Administration",
+      "Defense Contracting",
+      "Technology Consulting",
+      "State Government Leadership",
+      "Federal Law Enforcement"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Booz Allen Hamilton",
+      "Capital One",
+      "Deloitte",
+      "Northrop Grumman",
+      "Accenture Federal Services",
+      "Sentara Health",
+      "Amazon Web Services",
+      "Virginia State Government"
+    ],
+
+    overlookedStrengths: [
+      "Nationally respected College of Business",
+      "Outstanding teacher preparation",
+      "Exceptional undergraduate student satisfaction",
+      "Strong CIS and cybersecurity programs",
+      "Excellent leadership development culture"
+    ],
+
+    sleeperIndustries: [
+      "Government Technology",
+      "Cloud Computing",
+      "Health Informatics",
+      "Defense Analytics",
+      "Sports Analytics",
+      "AI Consulting"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 90,
+
+    mentorshipDensity: 88,
+
+    executiveAccess: 72,
+
+    internshipNetwork: 90,
+
+    familyBusinessExposure: 38,
+
+    relationshipCapitalScore: 88,
+
+    alumniLoyaltyScore: 94,
+
+    referralCultureStrength: 92,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Government",
+      "Consulting",
+      "Healthcare",
+      "Technology",
+      "Cybersecurity",
+      "Education",
+      "Defense",
+      "Business Services"
+    ],
+
+    regionalEconomicDrivers: [
+      "Federal Government",
+      "Northern Virginia Technology Corridor",
+      "Defense Contracting",
+      "Healthcare",
+      "Professional Services",
+      "Higher Education"
+    ],
+
+    topEmployers: [
+      "Booz Allen Hamilton",
+      "Capital One",
+      "Deloitte",
+      "Northrop Grumman",
+      "Amazon Web Services",
+      "Accenture",
+      "Sentara Health",
+      "Inova Health",
+      "EY",
+      "KPMG"
+    ],
+
+    emergingIndustries: [
+      "Artificial Intelligence",
+      "Cybersecurity",
+      "Cloud Infrastructure",
+      "Health Technology",
+      "Government Digital Services",
+      "Data Analytics"
+    ],
+
+    startupDensity: "Moderate",
+
+    ventureCapitalAccess: 42,
+
+    corporateHeadquartersDensity: 68,
+
+    healthcareHubStrength: 74,
+
+    innovationIndex: 82
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Virginia, Washington DC, and the Northern Virginia Government & Technology Corridor",
+
+    secondaryMarkets: [
+      "Richmond VA",
+      "Charlotte NC",
+      "Raleigh NC",
+      "Baltimore MD",
+      "Atlanta GA",
+      "New York NY",
+      "Nashville TN"
+    ],
+
+    alumniStrongholds: [
+      "Northern Virginia",
+      "Richmond VA",
+      "Washington DC",
+      "Virginia Beach VA",
+      "Charlotte NC"
+    ],
+
+    relocationPatterns: [
+      "A large percentage of graduates relocate to Northern Virginia for consulting, cybersecurity, intelligence, technology, and federal careers.",
+      "Richmond attracts graduates into finance, healthcare, education, and state government.",
+      "Charlotte and Raleigh have become increasingly important destinations for banking, consulting, healthcare, and technology.",
+      "Many education graduates remain throughout Virginia's public school systems.",
+      "Healthcare graduates disperse throughout the Mid-Atlantic hospital systems."
+    ],
+
+    regionalInfluenceScore: 94,
+
+    nationalReachScore: 68,
+
+    internationalReachScore: 18
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 44,
+
+    studentOrganizationStrength: 96,
+
+    leadershipDevelopment: 96,
+
+    crossDisciplinaryInteraction: 84,
+
+    civicEngagement: 90
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 8,
+      notes: "Minimal institutional emphasis."
+    },
+
+    healthWellness: {
+      strength: 82,
+      notes: "Strong Nursing, Health Sciences, Kinesiology, Occupational Therapy, and healthcare administration pathways throughout Virginia."
+    },
+
+    nutraceuticals: {
+      strength: 18,
+      notes: "Limited opportunities through health sciences and nutrition."
+    },
+
+    consumerProducts: {
+      strength: 42,
+      notes: "Business graduates enter regional consumer goods, retail, and operations roles."
+    },
+
+    outdoorIndustry: {
+      strength: 52,
+      notes: "The Shenandoah Valley provides opportunities in recreation management, environmental studies, and tourism."
+    },
+
+    sportsBusiness: {
+      strength: 74,
+      notes: "Excellent Sport and Recreation Management program with strong collegiate athletics placement."
+    },
+
+    entertainmentMedia: {
+      strength: 46,
+      notes: "Communications graduates enter broadcasting, digital media, public relations, and marketing throughout the Mid-Atlantic."
+    },
+
+    ventureCapital: {
+      strength: 24,
+      notes: "Limited direct exposure, although Northern Virginia's startup ecosystem is expanding."
+    },
+
+    privateEquity: {
+      strength: 12,
+      notes: "Minimal direct recruiting."
+    },
+
+    investmentBanking: {
+      strength: 34,
+      notes: "Some placement into regional banking and finance, though consulting is considerably stronger."
+    },
+
+    consulting: {
+      strength: 92,
+      notes: "One of JMU's signature strengths through Deloitte, Accenture, Booz Allen Hamilton, EY, KPMG, PwC, and numerous federal consulting firms."
+    },
+
+    medicine: {
+      strength: 68,
+      notes: "Strong preparation for medical and allied health professions, though without its own academic medical center."
+    },
+
+    healthcareAdministration: {
+      strength: 84,
+      notes: "Excellent placement through Virginia's expanding healthcare systems."
+    },
+
+    defense: {
+      strength: 90,
+      notes: "Exceptional opportunities through intelligence analysis, cybersecurity, defense contractors, and federal agencies."
+    },
+
+    realEstate: {
+      strength: 34,
+      notes: "Regional opportunities through business and finance programs."
+    },
+
+    luxuryBrands: {
+      strength: 10,
+      notes: "Little institutional emphasis."
+    },
+
+    entrepreneurship: {
+      strength: 62,
+      notes: "Growing innovation ecosystem supported through the College of Business and regional startup networks."
+    },
+
+    technology: {
+      strength: 82,
+      notes: "Excellent preparation for information systems, cybersecurity, cloud computing, and technology consulting."
+    },
+
+    publicPolicy: {
+      strength: 86,
+      notes: "Strong pathways into public administration, government, intelligence, and federal agencies."
+    },
+
+    nonprofitLeadership: {
+      strength: 82,
+      notes: "Leadership development and civic engagement produce strong nonprofit and community leadership outcomes."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 84,
+
+    firstGenerationSupport: 88,
+
+    wealthCreationPotential: 82,
+
+    familyBusinessPipelineStrength: 36
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 84,
+
+    automationResistance: 86,
+
+    adaptabilityScore: 90,
+
+    interdisciplinaryStrength: 86,
+
+    futureReadiness: 88,
+
+    entrepreneurialFlexibility: 76,
+
+    lifelongLearningCulture: 90,
+
+    innovationCapacity: 80
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 82,
+
+    communityLeadershipPotential: 94,
+
+    geographicMobility: 76,
+
+    workLifeBalancePotential: 92,
+
+    purposeAlignment: 90,
+
+    familyFormationSupport: 94,
+
+    personalDevelopmentPotential: 90,
+
+    careerOptionality: 88,
+
+    longTermLifeSatisfaction: 92
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 58,
+
+    networkMoat: 84,
+
+    geographicMoat: 88,
+
+    industryMoat: 86,
+
+    alumniMoat: 90,
+
+    brandDurability: 86,
+
+    overallMoatScore: 82
+
+  },
+
+  hillel_strength: "tier_2",
+  jewish_enrollment: "~5-7% Jewish undergraduate enrollment",
+  hillel_note: "JMU draws from the DC, Maryland, and Virginia Jewish corridor and has a reputation among Mid-Atlantic Jewish families as an accessible, social, Greek-life-forward campus option. Hillel at JMU is active and well-attended. DC metro is 2 hours away providing weekend infrastructure.",
+
+    trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE_RETURN",
+
+    leaverScore: 82,
+
+    returnerScore: 90,
+
+    stewardScore: 72,
+
+    navigatorScore: 84,
+
+    geographicLockIn: "medium",
+
+    alumniDispersalPattern: "mid_atlantic"
+
+  }
+
+},
+  lifeDesignOutcomes: {
+
+    wealthCreationPotential: 82,
+
+    communityLeadershipPotential: 94,
+
+    geographicMobility: 76,
+
+    workLifeBalancePotential: 92,
+
+    purposeAlignment: 90,
+
+    familyFormationSupport: 94,
+
+    personalDevelopmentPotential: 90,
+
+    careerOptionality: 88,
+
+    longTermLifeSatisfaction: 92
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 58,
+
+    networkMoat: 84,
+
+    geographicMoat: 88,
+
+    industryMoat: 86,
+
+    alumniMoat: 90,
+
+    brandDurability: 86,
+
+    overallMoatScore: 82
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE_RETURN",
+
+    leaverScore: 82,
+
+    returnerScore: 90,
+
+    stewardScore: 72,
+
+    navigatorScore: 84,
+
+    geographicLockIn: "medium",
+
+    alumniDispersalPattern: "mid_atlantic"
+
+  }
+
+},
+
+
+// === Carnegie_Mellon_University ===
+"Carnegie Mellon University": {
+
+  institutionNarrative: {
+
+    name: "Carnegie Mellon University",
+
+    location: "Pittsburgh, Pennsylvania",
+
+    region: "TorBuffChester Innovation Corridor",
+
+    archetype: "The Computational University — AI, Robotics, Computer Science, Design, and Applied Innovation",
+
+    oneSentenceSummary: "Carnegie Mellon University is the world's premier university for computer science, artificial intelligence, robotics, software engineering, human-computer interaction, and interdisciplinary technology, combining elite engineering, business, fine arts, and design inside Pittsburgh's rapidly transforming innovation economy where research is commercialized at extraordinary speed.",
+
+    pipeline: "Approximately 16,000 students. CMU is consistently ranked among the world's top institutions for Computer Science, Artificial Intelligence, Robotics, Software Engineering, Human-Computer Interaction, Machine Learning, Cybersecurity, Electrical & Computer Engineering, Drama, Design, Architecture, Business Analytics, Statistics, and Computational Biology. The School of Computer Science is widely regarded as the strongest in the world. Major recruiters include OpenAI, Google DeepMind, Anthropic, NVIDIA, Microsoft, Apple, Meta, Amazon, Tesla, SpaceX, Palantir, Jane Street, Citadel, Two Sigma, Goldman Sachs, McKinsey, Apple, Uber, Stripe, Duolingo, Aurora Innovation, Argo AI alumni network, and hundreds of venture-backed AI startups.",
+
+    hiddenPathway: "CMU's greatest hidden advantage is the extraordinary density of AI commercialization occurring around the university. The Software Engineering Institute, Robotics Institute, CyLab Security Institute, National Robotics Engineering Center, and numerous federally funded research centers create direct pathways into cutting-edge technology companies, defense research, venture-backed startups, and elite quantitative finance. Students routinely work alongside technologies that shape entire industries years before they become commercially mainstream.",
+
+    institutionalSecret: "Many people know Carnegie Mellon as an elite computer science school. In reality, its defining characteristic is interdisciplinary computational thinking. Robotics combines mechanical engineering, machine learning, psychology, design, and computer vision. Human-Computer Interaction combines behavioral science with engineering. The College of Fine Arts collaborates directly with engineers and AI researchers, producing graduates who understand both technology and human experience better than almost any peer institution.",
+
+    theRoom: "Located in Pittsburgh's Oakland neighborhood adjacent to the University of Pittsburgh, UPMC, and numerous research institutes, CMU sits at the center of one of America's fastest-growing AI and robotics ecosystems. Pittsburgh has transformed from an industrial steel city into a global center for autonomous vehicles, artificial intelligence, advanced manufacturing, healthcare innovation, cybersecurity, and robotics, offering students exceptional research and internship opportunities.",
+
+    lifestyle: "Highly intellectual, intensely project-oriented, collaborative, entrepreneurial, and innovation-driven. Students spend significant time building products, conducting research, participating in hackathons, launching startups, and collaborating across engineering, design, business, and the arts.",
+
+    bestFitPersonality: "Highly analytical, intellectually curious, resilient, creative problem solver, comfortable with rigorous workloads, high Openness and extremely high Conscientiousness.",
+
+    faithTradition: "None",
+
+    geographicInfluenceRadius: "Global influence with exceptionally strong placement throughout Silicon Valley, Seattle, New York, Boston, Pittsburgh, Austin, and major international technology hubs.",
+
+    economicOutcome: "Among the strongest universities in the world for artificial intelligence, software engineering, quantitative finance, robotics, entrepreneurship, product management, computer science, design, entertainment technology, and technology leadership.",
+
+    gradCities: [
+      "San Francisco CA",
+      "Seattle WA",
+      "New York NY",
+      "Pittsburgh PA",
+      "Boston MA",
+      "Austin TX",
+      "Los Angeles CA"
+    ],
+
+    comparableInstitutions: [
+      "Massachusetts Institute of Technology",
+      "Stanford University",
+      "University of California Berkeley",
+      "Georgia Institute of Technology",
+      "California Institute of Technology"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Community College of Allegheny County",
+        "Montgomery County Community College",
+        "Northern Virginia Community College",
+        "Santa Monica College"
+      ],
+
+      transferAcceptanceRate: "~7%",
+
+      freshmanAcceptanceRate: "~11%",
+
+      estimatedSavingsRange: "$30,000-$80,000",
+
+      transferNotes: "CMU accepts a limited number of transfer students each year. Successful applicants generally demonstrate exceptional preparation in mathematics, computer science, engineering, or design with outstanding academic performance."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Elite Technology Research University",
+
+    institutionalPersonality: "inventive, analytical, entrepreneurial, collaborative, intensely ambitious",
+
+    cultureKeywords: [
+      "Artificial Intelligence",
+      "Robotics",
+      "Computer Science",
+      "Innovation",
+      "Engineering",
+      "Design",
+      "Entrepreneurship",
+      "Research",
+      "Technology"
+    ],
+
+    missionOrientation: "Advancing society through innovation, computational thinking, interdisciplinary research, entrepreneurship, and technological discovery.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Learning through building, experimentation, research, interdisciplinary collaboration, and solving consequential real-world problems.",
+
+    competitiveness: "Extremely Selective",
+
+    politicalCulture: "Generally moderate with a strong engineering and scientific problem-solving culture.",
+
+    studentAutonomy: "Very High",
+
+    prestigeOrientation: "Elite globally, particularly in technology, engineering, computer science, and design.",
+
+    socialClimate: "Highly collaborative, intellectually demanding, project-oriented, and innovation-driven.",
+
+    leadershipStyle: "Leadership through technical excellence, invention, entrepreneurship, and interdisciplinary collaboration."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "TorBuffChester",
+
+    regionalRole: "Global center for artificial intelligence, robotics, software engineering, and advanced technology commercialization."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 36,
+    BosWash: 66,
+    TorBuffChester: 100,
+    TexasTriangle: 54,
+    CharLanta: 24,
+    NorCalInnovationCorridor: 98,
+    SoCalCreativeEconomy: 72
+
+  },
+
+  comparativePositioning: {
+
+    versusMIT:
+      "MIT offers broader scientific leadership across engineering and physics, while Carnegie Mellon is arguably the world's strongest institution for computer science, AI, software engineering, robotics, and human-computer interaction.",
+
+    versusStanford:
+      "Stanford benefits from immediate Silicon Valley proximity and venture capital density; Carnegie Mellon differentiates itself through deeper technical specialization in AI, robotics, cybersecurity, and software engineering.",
+
+    versusBerkeley:
+      "Both dominate computer science and AI, but CMU places greater emphasis on software engineering, robotics, HCI, and interdisciplinary product development.",
+
+    versusGeorgiaTech:
+      "Georgia Tech provides larger scale engineering education; Carnegie Mellon delivers substantially greater selectivity, research intensity, AI leadership, and global prestige."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Medium",
+
+    undergraduateEnrollment: 7300,
+
+    graduateEnrollment: 8600,
+
+    totalEnrollment: 15900,
+
+    campusType: "Elite Private Research University",
+
+    residentialIntensity: 86,
+
+    communityFeel: 82,
+
+    studentFacultyRatio: "6:1",
+
+    classSizeExperience: "Small classes, intensive project-based learning, faculty research collaboration, studio instruction, and laboratory experiences dominate the undergraduate experience. Students regularly work in interdisciplinary teams spanning engineering, computer science, design, business, drama, and robotics.",
+
+    scaleAdvantages: [
+      "One of the world's most research-intensive technology universities",
+      "Exceptional undergraduate access to faculty and cutting-edge research",
+      "Interdisciplinary collaboration across engineering, design, arts, and business",
+      "Unmatched opportunities in artificial intelligence, robotics, and software engineering",
+      "Outstanding employer recruiting from elite technology companies and quantitative finance firms"
+    ],
+
+    scaleDisadvantages: [
+      "Academically intense with demanding workloads",
+      "Project-heavy curriculum leaves less free time than peer institutions",
+      "Competitive culture can create high levels of stress",
+      "Limited traditional large-school athletic atmosphere"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 98,
+      conscientiousness: 98,
+      extraversion: 54,
+      agreeableness: 72,
+      neuroticism: 46
+    },
+
+    hollandCodes: ["I", "R", "A"],
+
+    learningStyle: [
+      "Project-Based Learning",
+      "Research",
+      "Studio Design",
+      "Computational Problem Solving",
+      "Interdisciplinary Collaboration"
+    ],
+
+    socialEnvironment: [
+      "Highly Intellectual",
+      "Builder Culture",
+      "Collaborative",
+      "Entrepreneurial",
+      "Innovation Focused"
+    ],
+
+    idealStudentTraits: [
+      "Enjoys solving difficult technical problems",
+      "Naturally curious and analytical",
+      "Comfortable with rigorous academic workloads",
+      "Interested in creating new technology",
+      "Thrives in collaborative project environments"
+    ],
+
+    thrivesIf: [
+      "Wants to build products rather than simply study them",
+      "Enjoys mathematics, engineering, computing, or design",
+      "Plans for graduate school or elite technology careers",
+      "Values interdisciplinary collaboration",
+      "Enjoys innovation and entrepreneurship"
+    ],
+
+    strugglesIf: [
+      "Prefers relaxed academic environments",
+      "Needs highly structured instruction",
+      "Dislikes intensive quantitative coursework",
+      "Prioritizes athletics or traditional college social life",
+      "Finds constant project deadlines overwhelming"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking less academically demanding environments",
+      "Students changing away from technical disciplines",
+      "Students wanting larger traditional university experiences"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Human-Computer Interaction",
+      "Computational Biology",
+      "Decision Science",
+      "Entertainment Technology",
+      "Statistics & Machine Learning",
+      "Information Systems",
+      "Architecture",
+      "Computational Finance"
+    ],
+
+    hiddenCareerPipelines: [
+      "AI Research Labs",
+      "Autonomous Vehicles",
+      "Quantitative Trading",
+      "Defense Technology",
+      "Human-Centered Design",
+      "Technology Product Management",
+      "Research Commercialization",
+      "Deep Tech Venture Capital"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind",
+      "NVIDIA",
+      "Jane Street",
+      "Citadel",
+      "Palantir",
+      "Duolingo"
+    ],
+
+    overlookedStrengths: [
+      "Top-ranked Drama and Performing Arts programs",
+      "World-leading School of Design",
+      "Elite Computational Finance program",
+      "Exceptional entrepreneurship ecosystem",
+      "Strong interdisciplinary humanities and technology integration"
+    ],
+
+    sleeperIndustries: [
+      "Quantum Computing",
+      "AI Safety",
+      "Synthetic Biology",
+      "Spatial Computing",
+      "Robotics Infrastructure",
+      "Industrial Automation"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 92,
+
+    mentorshipDensity: 96,
+
+    executiveAccess: 96,
+
+    internshipNetwork: 100,
+
+    familyBusinessExposure: 40,
+
+    relationshipCapitalScore: 98,
+
+    alumniLoyaltyScore: 90,
+
+    referralCultureStrength: 98,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Artificial Intelligence",
+      "Software",
+      "Robotics",
+      "Semiconductors",
+      "Cybersecurity",
+      "Quantitative Finance",
+      "Biotechnology",
+      "Advanced Manufacturing"
+    ],
+
+    regionalEconomicDrivers: [
+      "AI Research",
+      "Robotics",
+      "UPMC",
+      "Defense Technology",
+      "Advanced Manufacturing",
+      "Software Engineering",
+      "University Commercialization"
+    ],
+
+    topEmployers: [
+      "Google",
+      "OpenAI",
+      "Anthropic",
+      "Microsoft",
+      "Apple",
+      "NVIDIA",
+      "Meta",
+      "Amazon",
+      "Jane Street",
+      "Palantir"
+    ],
+
+    emergingIndustries: [
+      "Generative AI",
+      "Humanoid Robotics",
+      "AI Infrastructure",
+      "Quantum Computing",
+      "Autonomous Systems",
+      "Spatial Computing"
+    ],
+
+    startupDensity: "Extremely High",
+
+    ventureCapitalAccess: 94,
+
+    corporateHeadquartersDensity: 78,
+
+    healthcareHubStrength: 78,
+
+    innovationIndex: 100
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Global Artificial Intelligence, Software, Robotics, and Advanced Technology Economy",
+
+    secondaryMarkets: [
+      "San Francisco CA",
+      "Seattle WA",
+      "New York NY",
+      "Boston MA",
+      "Austin TX",
+      "Pittsburgh PA",
+      "London UK"
+    ],
+
+    alumniStrongholds: [
+      "Silicon Valley",
+      "Seattle",
+      "New York City",
+      "Pittsburgh",
+      "Boston"
+    ],
+
+    relocationPatterns: [
+      "The largest concentration of graduates relocate to Silicon Valley to join elite technology companies, startups, and venture-backed AI firms.",
+      "Seattle attracts software engineering, cloud computing, artificial intelligence, and systems engineering graduates.",
+      "New York draws graduates into quantitative finance, fintech, consulting, AI product management, and entrepreneurship.",
+      "Pittsburgh retains a growing percentage through robotics, autonomous systems, healthcare technology, and advanced manufacturing.",
+      "Many graduates build international careers in London, Toronto, Singapore, Zurich, and major global technology centers."
+    ],
+
+    regionalInfluenceScore: 82,
+
+    nationalReachScore: 100,
+
+    internationalReachScore: 96
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 10,
+
+    studentOrganizationStrength: 96,
+
+    leadershipDevelopment: 92,
+
+    crossDisciplinaryInteraction: 100,
+
+    civicEngagement: 74
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 18,
+      notes: "Design, HCI, and consumer technology create limited opportunities in beauty technology and digital consumer experiences."
+    },
+
+    healthWellness: {
+      strength: 76,
+      notes: "Strong biomedical engineering, health AI, robotics, and digital health innovation pathways."
+    },
+
+    nutraceuticals: {
+      strength: 16,
+      notes: "Limited institutional emphasis outside computational biology and biotechnology."
+    },
+
+    consumerProducts: {
+      strength: 82,
+      notes: "Excellent pathways into product management, UX, consumer software, and hardware design."
+    },
+
+    outdoorIndustry: {
+      strength: 10,
+      notes: "Minimal institutional focus."
+    },
+
+    sportsBusiness: {
+      strength: 26,
+      notes: "Growing applications through sports analytics, computer vision, and machine learning."
+    },
+
+    entertainmentMedia: {
+      strength: 88,
+      notes: "World-class strengths through the School of Drama, Entertainment Technology Center, animation, gaming, visual effects, and interactive media."
+    },
+
+    ventureCapital: {
+      strength: 96,
+      notes: "Among the world's strongest university ecosystems for venture-backed technology entrepreneurship and deep-tech commercialization."
+    },
+
+    privateEquity: {
+      strength: 82,
+      notes: "Excellent placement into technology-focused growth equity and private investment firms."
+    },
+
+    investmentBanking: {
+      strength: 74,
+      notes: "Strong recruiting into technology investment banking and quantitative finance."
+    },
+
+    consulting: {
+      strength: 90,
+      notes: "Outstanding placement into McKinsey, Bain, BCG, Deloitte, Accenture, and specialized technology consulting firms."
+    },
+
+    medicine: {
+      strength: 64,
+      notes: "Excellent biomedical engineering and computational biology preparation, though medicine is not the university's primary institutional identity."
+    },
+
+    healthcareAdministration: {
+      strength: 48,
+      notes: "Healthcare innovation and health technology create specialized opportunities."
+    },
+
+    defense: {
+      strength: 90,
+      notes: "Software Engineering Institute, CyLab, robotics research, AI, cybersecurity, and federally funded research centers create elite defense technology pathways."
+    },
+
+    realEstate: {
+      strength: 12,
+      notes: "Minimal institutional emphasis."
+    },
+
+    luxuryBrands: {
+      strength: 32,
+      notes: "Design and human-computer interaction support premium consumer technology and luxury digital experiences."
+    },
+
+    entrepreneurship: {
+      strength: 100,
+      notes: "One of the strongest entrepreneurship ecosystems in the world for AI, robotics, software, deep technology, and venture creation."
+    },
+
+    technology: {
+      strength: 100,
+      notes: "Arguably the strongest technology pipeline in the world across AI, robotics, software engineering, cybersecurity, HCI, machine learning, and computer science."
+    },
+
+    publicPolicy: {
+      strength: 54,
+      notes: "Technology policy, AI governance, and cybersecurity policy are growing strengths."
+    },
+
+    nonprofitLeadership: {
+      strength: 44,
+      notes: "Most graduates pursue innovation, research, or technology leadership, though nonprofit opportunities exist."
+
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 78,
+
+    firstGenerationSupport: 82,
+
+    wealthCreationPotential: 100,
+
+    familyBusinessPipelineStrength: 42
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 100,
+
+    automationResistance: 100,
+
+    adaptabilityScore: 100,
+
+    interdisciplinaryStrength: 100,
+
+    futureReadiness: 100,
+
+    entrepreneurialFlexibility: 100,
+
+    lifelongLearningCulture: 100,
+
+    innovationCapacity: 100
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 100,
+
+    communityLeadershipPotential: 88,
+
+    geographicMobility: 100,
+
+    workLifeBalancePotential: 68,
+
+    purposeAlignment: 94,
+
+    familyFormationSupport: 74,
+
+    personalDevelopmentPotential: 100,
+
+    careerOptionality: 100,
+
+    longTermLifeSatisfaction: 94
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 100,
+
+    networkMoat: 98,
+
+    geographicMoat: 96,
+
+    industryMoat: 100,
+
+    alumniMoat: 98,
+
+    brandDurability: 100,
+
+    overallMoatScore: 99
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE",
+
+    leaverScore: 100,
+
+    returnerScore: 54,
+
+    stewardScore: 22,
+
+    navigatorScore: 100,
+
+    geographicLockIn: "very_low",
+
+    alumniDispersalPattern: "global"
+
+  }
+
+},
+
+
+// === Boston_College ===
+"Boston College": {
+
+  institutionNarrative: {
+
+    name: "Boston College",
+
+    location: "Chestnut Hill, Massachusetts",
+
+    region: "Bos-Wash Corridor",
+
+    archetype: "The Jesuit Leadership University — Finance, Liberal Arts, and the Formation of Ethical Leaders",
+
+    oneSentenceSummary: "Boston College combines one of America's premier Jesuit educations with exceptional strengths in finance, economics, business, law, education, theology, political science, and the liberal arts, while sitting inside Greater Boston's globally unmatched ecosystem of finance, biotechnology, healthcare, higher education, and venture-backed innovation.",
+
+    pipeline: "Approximately 15,000 students. Boston College is nationally recognized for Finance, Accounting, Economics, Political Science, International Studies, Psychology, Nursing, Education, Philosophy, Theology, and Communication. The Carroll School of Management consistently ranks among the nation's leading undergraduate business schools. Major recruiters include Fidelity Investments, Wellington Management, Bain Capital, State Street, Bain & Company, Boston Consulting Group, McKinsey, Deloitte, PwC, EY, KPMG, Goldman Sachs, Morgan Stanley, BlackRock, Liberty Mutual, Vertex Pharmaceuticals, Biogen, Boston Children's Hospital, Mass General Brigham, Google, Amazon, and numerous consulting, healthcare, nonprofit, and technology organizations throughout Boston and New York.",
+
+    hiddenPathway: "Boston College's greatest hidden advantage is the combination of Jesuit alumni loyalty with Boston's extraordinary concentration of elite employers. The BC alumni network is exceptionally relationship-driven, particularly throughout finance, consulting, law, healthcare, education, and public service. Students benefit from one of the nation's strongest undergraduate alumni mentoring cultures while living inside arguably America's richest knowledge economy.",
+
+    institutionalSecret: "While many institutions emphasize technical skills, Boston College intentionally develops ethical leadership. The Jesuit educational philosophy—educating the whole person—produces graduates who frequently rise into executive leadership, public service, nonprofit leadership, finance, and law because they combine intellectual rigor with exceptional communication, judgment, and interpersonal skills.",
+
+    theRoom: "Located in Chestnut Hill on Boston's western edge, BC places students minutes from downtown Boston, Cambridge, Harvard, MIT, the Longwood Medical Area, Kendall Square, the Financial District, and one of the highest concentrations of venture capital, hospitals, universities, biotechnology firms, and asset managers anywhere in the world.",
+
+    lifestyle: "Traditional residential campus with strong school spirit, Division I athletics, active student organizations, vibrant alumni traditions, and a socially engaged student body. The Boston metropolitan area becomes an extension of the classroom through internships, service learning, healthcare experiences, and finance recruiting.",
+
+    bestFitPersonality: "Highly motivated, community-oriented, intellectually curious, ethically grounded, enjoys collaboration, values leadership and service, high Conscientiousness with moderate-to-high Extraversion.",
+
+    faithTradition: "Jesuit Catholic",
+
+    geographicInfluenceRadius: "National influence with particularly deep strength throughout Boston, New York, Washington DC, Chicago, San Francisco, and international financial centers.",
+
+    economicOutcome: "Outstanding outcomes in finance, consulting, accounting, law, education, healthcare, nonprofit leadership, government, and executive leadership, supported by one of the nation's most loyal alumni networks.",
+
+    gradCities: [
+      "Boston MA",
+      "New York NY",
+      "Washington DC",
+      "Chicago IL",
+      "San Francisco CA",
+      "Los Angeles CA",
+      "London UK"
+    ],
+
+    comparableInstitutions: [
+      "Georgetown University",
+      "University of Notre Dame",
+      "Villanova University",
+      "Wake Forest University",
+      "College of the Holy Cross"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Bunker Hill Community College",
+        "MassBay Community College",
+        "Middlesex Community College",
+        "Northern Essex Community College"
+      ],
+
+      transferAcceptanceRate: "~12%",
+
+      freshmanAcceptanceRate: "~16%",
+
+      estimatedSavingsRange: "$25,000-$70,000",
+
+      transferNotes: "Boston College enrolls a selective transfer class each year. Strong academic performance, rigorous coursework, leadership, and alignment with BC's Jesuit mission significantly strengthen transfer applications."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Elite Jesuit Research University",
+
+    institutionalPersonality: "ethical, ambitious, collaborative, intellectually rigorous, service-oriented",
+
+    cultureKeywords: [
+      "Jesuit",
+      "Leadership",
+      "Finance",
+      "Liberal Arts",
+      "Service",
+      "Boston",
+      "Business",
+      "Faith",
+      "Community"
+    ],
+
+    missionOrientation: "Developing leaders who use intellectual excellence, ethical judgment, and service to improve society.",
+
+    faithTradition: "Jesuit Catholic",
+
+    educationalPhilosophy: "Formation of the whole person through liberal arts, ethical leadership, rigorous scholarship, and lifelong service.",
+
+    competitiveness: "Highly Selective",
+
+    politicalCulture: "Moderate with broad ideological diversity and strong emphasis on civic engagement.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Elite nationally, especially throughout finance, law, education, and the Northeast.",
+
+    socialClimate: "Collaborative, ambitious, community-oriented, and tradition-rich.",
+
+    leadershipStyle: "Leadership through integrity, service, intellectual excellence, and ethical decision-making."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "One of the Northeast's premier leadership universities connecting graduates into Boston's finance, healthcare, consulting, nonprofit, and higher education economy."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 18,
+    BosWash: 100,
+    TorBuffChester: 62,
+    TexasTriangle: 42,
+    CharLanta: 46,
+    NorCalInnovationCorridor: 72,
+    SoCalCreativeEconomy: 44
+
+  },
+
+  comparativePositioning: {
+
+    versusNotreDame:
+      "Both are premier Catholic universities with exceptional alumni loyalty; Notre Dame offers stronger national athletic identity while Boston College benefits from direct access to Boston's finance, healthcare, and innovation economy.",
+
+    versusGeorgetown:
+      "Georgetown is anchored by Washington's diplomacy and public policy ecosystem; Boston College is more deeply integrated into finance, consulting, healthcare, and corporate leadership.",
+
+    versusVillanova:
+      "Both produce outstanding business graduates, but Boston College operates on a larger research platform with substantially deeper access to Boston's global financial ecosystem.",
+
+    versusWakeForest:
+      "Wake Forest emphasizes personalized undergraduate education in a smaller market; Boston College combines similar values with the career density of one of America's premier knowledge economies."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Medium",
+
+    undergraduateEnrollment: 9600,
+
+    graduateEnrollment: 5600,
+
+    totalEnrollment: 15200,
+
+    campusType: "Residential Private Research University",
+
+    residentialIntensity: 92,
+
+    communityFeel: 90,
+
+    studentFacultyRatio: "11:1",
+
+    classSizeExperience: "Boston College emphasizes small discussion-based courses rooted in the liberal arts alongside business, nursing, and social sciences. Upper-level seminars are faculty-intensive, and experiential learning through internships, service, and research is integrated throughout the undergraduate experience.",
+
+    scaleAdvantages: [
+      "Strong balance between research university resources and undergraduate attention",
+      "One of the nation's most loyal and accessible alumni networks",
+      "Immediate access to Boston's finance, consulting, healthcare, biotech, and nonprofit sectors",
+      "Highly residential campus with exceptional student engagement",
+      "Jesuit emphasis on mentorship and personal formation"
+    ],
+
+    scaleDisadvantages: [
+      "Engineering offerings are limited compared to peer research universities",
+      "Research volume is smaller than institutions like MIT or Harvard",
+      "Boston's high cost of living affects internships and post-graduate housing",
+      "Selective majors such as nursing have limited capacity"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 82,
+      conscientiousness: 90,
+      extraversion: 74,
+      agreeableness: 88,
+      neuroticism: 34
+    },
+
+    hollandCodes: ["E", "S", "I"],
+
+    learningStyle: [
+      "Discussion-Based Learning",
+      "Case Studies",
+      "Leadership Development",
+      "Service Learning",
+      "Experiential Education"
+    ],
+
+    socialEnvironment: [
+      "Collaborative",
+      "Tradition-Oriented",
+      "Community Focused",
+      "Faith-Informed",
+      "Career Driven"
+    ],
+
+    idealStudentTraits: [
+      "Values intellectual rigor and ethics",
+      "Enjoys close-knit campus communities",
+      "Interested in leadership and service",
+      "Strong communicator",
+      "Career-oriented while valuing liberal arts education"
+    ],
+
+    thrivesIf: [
+      "Wants access to Boston internships during the academic year",
+      "Values a strong alumni network",
+      "Enjoys school traditions and Division I athletics",
+      "Prefers collaborative over hypercompetitive environments",
+      "Appreciates Jesuit educational values regardless of religious background"
+    ],
+
+    strugglesIf: [
+      "Wants highly specialized engineering programs",
+      "Prefers very large research universities",
+      "Dislikes core liberal arts requirements",
+      "Seeks an intensely entrepreneurial startup culture",
+      "Prefers highly urban campuses over residential settings"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking broader STEM offerings",
+      "Students wanting larger metropolitan campuses",
+      "Students preferring less structured core curricula"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Philosophy",
+      "International Studies",
+      "Political Science",
+      "Environmental Studies",
+      "Theology",
+      "Applied Psychology",
+      "Communication",
+      "Human Development"
+    ],
+
+    hiddenCareerPipelines: [
+      "Asset Management",
+      "Healthcare Administration",
+      "Nonprofit Leadership",
+      "Corporate Strategy",
+      "Public Service",
+      "Catholic Education",
+      "Private Wealth Management",
+      "Mission-Driven Organizations"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Fidelity Investments",
+      "Wellington Management",
+      "State Street",
+      "Liberty Mutual",
+      "Boston Consulting Group",
+      "Bain Capital",
+      "Vertex Pharmaceuticals",
+      "Mass General Brigham"
+    ],
+
+    overlookedStrengths: [
+      "One of America's strongest philosophy departments",
+      "Outstanding undergraduate business education",
+      "Elite nursing program",
+      "Exceptional alumni mentoring culture",
+      "Strong placement into leadership development programs"
+    ],
+
+    sleeperIndustries: [
+      "Healthcare Investment",
+      "Sports Leadership",
+      "Education Technology",
+      "Impact Investing",
+      "Biotechnology Management",
+      "Mission-Driven Entrepreneurship"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 98,
+
+    mentorshipDensity: 94,
+
+    executiveAccess: 90,
+
+    internshipNetwork: 94,
+
+    familyBusinessExposure: 56,
+
+    relationshipCapitalScore: 98,
+
+    alumniLoyaltyScore: 100,
+
+    referralCultureStrength: 100,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Finance",
+      "Consulting",
+      "Healthcare",
+      "Biotechnology",
+      "Education",
+      "Asset Management",
+      "Nonprofit Leadership",
+      "Professional Services"
+    ],
+
+    regionalEconomicDrivers: [
+      "Financial Services",
+      "Biotechnology",
+      "Healthcare",
+      "Higher Education",
+      "Consulting",
+      "Venture Capital",
+      "Life Sciences"
+    ],
+
+    topEmployers: [
+      "Fidelity Investments",
+      "Wellington Management",
+      "State Street",
+      "McKinsey & Company",
+      "Boston Consulting Group",
+      "Bain & Company",
+      "Liberty Mutual",
+      "Vertex Pharmaceuticals",
+      "Biogen",
+      "Mass General Brigham"
+    ],
+
+    emergingIndustries: [
+      "Digital Health",
+      "Life Sciences",
+      "Climate Technology",
+      "Financial Technology",
+      "Artificial Intelligence",
+      "Healthcare Analytics"
+    ],
+
+    startupDensity: "High",
+
+    ventureCapitalAccess: 90,
+
+    corporateHeadquartersDensity: 92,
+
+    healthcareHubStrength: 100,
+
+    innovationIndex: 94
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Boston–New York Finance, Healthcare, Consulting, and Leadership Corridor",
+
+    secondaryMarkets: [
+      "New York NY",
+      "Washington DC",
+      "Chicago IL",
+      "San Francisco CA",
+      "Los Angeles CA",
+      "London UK",
+      "Dublin Ireland"
+    ],
+
+    alumniStrongholds: [
+      "Boston MA",
+      "New York NY",
+      "Washington DC",
+      "Chicago IL",
+      "San Francisco CA"
+    ],
+
+    relocationPatterns: [
+      "A significant share of graduates remain in Greater Boston working in finance, consulting, healthcare, biotechnology, education, and nonprofit leadership.",
+      "New York is the largest destination outside Massachusetts, particularly for investment banking, asset management, consulting, law, and media.",
+      "Washington DC attracts graduates into government, public policy, law, nonprofits, and international organizations.",
+      "Chicago and San Francisco have become increasingly important destinations for consulting, technology, finance, and executive leadership.",
+      "International graduates frequently establish careers in London, Dublin, and global financial centers through Boston College's extensive alumni network."
+    ],
+
+    regionalInfluenceScore: 100,
+
+    nationalReachScore: 90,
+
+    internationalReachScore: 74
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 6,
+
+    studentOrganizationStrength: 96,
+
+    leadershipDevelopment: 100,
+
+    crossDisciplinaryInteraction: 88,
+
+    civicEngagement: 100
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 12,
+      notes: "Limited institutional emphasis beyond consumer marketing and brand management."
+    },
+
+    healthWellness: {
+      strength: 90,
+      notes: "Excellent pathways through nursing, psychology, healthcare management, Boston hospitals, and the region's life sciences ecosystem."
+    },
+
+    nutraceuticals: {
+      strength: 18,
+      notes: "Limited direct emphasis, with opportunities through health sciences and biotechnology partnerships."
+    },
+
+    consumerProducts: {
+      strength: 58,
+      notes: "Business graduates enter consumer products, brand strategy, retail, and marketing leadership roles."
+    },
+
+    outdoorIndustry: {
+      strength: 14,
+      notes: "Minimal institutional focus."
+    },
+
+    sportsBusiness: {
+      strength: 62,
+      notes: "Strong athletics brand and alumni network provide opportunities in collegiate and professional sports administration."
+    },
+
+    entertainmentMedia: {
+      strength: 48,
+      notes: "Communications graduates enter journalism, public relations, digital media, and broadcasting."
+    },
+
+    ventureCapital: {
+      strength: 74,
+      notes: "Excellent access through Boston's venture ecosystem, particularly healthcare, biotechnology, and enterprise software."
+    },
+
+    privateEquity: {
+      strength: 82,
+      notes: "Strong placement into Boston and New York private equity, asset management, and investment firms."
+    },
+
+    investmentBanking: {
+      strength: 92,
+      notes: "Boston College is a consistent target school for Wall Street, particularly through the Carroll School of Management and its exceptionally loyal alumni network."
+    },
+
+    consulting: {
+      strength: 96,
+      notes: "Outstanding placement into McKinsey, Bain, BCG, Deloitte, EY-Parthenon, Accenture, and other elite consulting firms."
+    },
+
+    medicine: {
+      strength: 82,
+      notes: "Excellent preparation through biology, chemistry, psychology, and Boston's world-leading hospital network."
+    },
+
+    healthcareAdministration: {
+      strength: 90,
+      notes: "Strong placement through Boston's healthcare ecosystem and nationally recognized nursing programs."
+    },
+
+    defense: {
+      strength: 28,
+      notes: "Limited institutional emphasis outside cybersecurity, public policy, and government service."
+    },
+
+    realEstate: {
+      strength: 52,
+      notes: "Business graduates enter commercial real estate, development, and investment firms throughout the Northeast."
+    },
+
+    luxuryBrands: {
+      strength: 42,
+      notes: "Marketing, communications, and business graduates find opportunities with premium consumer and luxury brands."
+    },
+
+    entrepreneurship: {
+      strength: 72,
+      notes: "Growing entrepreneurship ecosystem supported by Boston's innovation economy and alumni network."
+    },
+
+    technology: {
+      strength: 72,
+      notes: "Boston's expanding technology sector creates strong opportunities despite technology not being BC's primary institutional identity."
+    },
+
+    publicPolicy: {
+      strength: 90,
+      notes: "Strong pathways into government, public service, diplomacy, education, and nonprofit leadership."
+    },
+
+    nonprofitLeadership: {
+      strength: 100,
+      notes: "One of the strongest universities in America for nonprofit leadership, mission-driven organizations, education, faith-based leadership, and public service."
+
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 72,
+
+    firstGenerationSupport: 82,
+
+    wealthCreationPotential: 90,
+
+    familyBusinessPipelineStrength: 58
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 88,
+
+    automationResistance: 90,
+
+    adaptabilityScore: 94,
+
+    interdisciplinaryStrength: 92,
+
+    futureReadiness: 92,
+
+    entrepreneurialFlexibility: 82,
+
+    lifelongLearningCulture: 98,
+
+    innovationCapacity: 88
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 90,
+
+    communityLeadershipPotential: 100,
+
+    geographicMobility: 90,
+
+    workLifeBalancePotential: 90,
+
+    purposeAlignment: 100,
+
+    familyFormationSupport: 92,
+
+    personalDevelopmentPotential: 98,
+
+    careerOptionality: 94,
+
+    longTermLifeSatisfaction: 96
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 88,
+
+    networkMoat: 98,
+
+    geographicMoat: 100,
+
+    industryMoat: 92,
+
+    alumniMoat: 100,
+
+    brandDurability: 96,
+
+    overallMoatScore: 95
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE",
+
+    leaverScore: 92,
+
+    returnerScore: 62,
+
+    stewardScore: 30,
+
+    navigatorScore: 96,
+
+    geographicLockIn: "low",
+
+    alumniDispersalPattern: "national"
+
+  }
+
+},
+
+
+// === American_University ===
+"American University": {
+
+  institutionNarrative: {
+
+    name: "American University",
+
+    location: "Washington, District of Columbia",
+
+    region: "Bos-Wash Corridor",
+
+    archetype: "The Diplomacy University — Public Affairs, International Relations, and the Capital's Professional Network",
+
+    oneSentenceSummary: "American University is one of the nation's premier universities for international affairs, public policy, political communication, journalism, law, public service, and nonprofit leadership, leveraging unparalleled access to Washington DC's ecosystem of government agencies, embassies, think tanks, lobbying firms, NGOs, international organizations, media, and global consulting.",
+
+    pipeline: "Approximately 14,000 students. American is nationally recognized for International Relations, Political Science, Public Affairs, Public Policy, Journalism, Strategic Communication, Economics, Business, Data Science, Environmental Policy, and Law. The School of International Service is consistently ranked among the top international affairs schools in the world, while the School of Public Affairs is among the nation's strongest for public administration and policy. Major recruiters include the U.S. Department of State, USAID, World Bank, IMF, Deloitte, Booz Allen Hamilton, Accenture Federal Services, FBI, CIA, Department of Defense, Department of Homeland Security, NBC News, CNN, The Washington Post, Politico, United Nations agencies, and hundreds of embassies, nonprofits, and government contractors.",
+
+    hiddenPathway: "American University's greatest competitive advantage is that Washington DC itself functions as the classroom. Thousands of internships occur during the academic year rather than only during summers. Students routinely intern on Capitol Hill, inside executive agencies, embassies, lobbying firms, consulting companies, NGOs, think tanks, intelligence contractors, media organizations, and international institutions while completing their degrees.",
+
+    institutionalSecret: "Many students choose American because they are interested in politics, but the university's deeper strength is professional immersion. Faculty frequently come directly from government, diplomacy, intelligence, journalism, consulting, and international organizations, creating unusually practical instruction and one of the strongest undergraduate professional networks in the country.",
+
+    theRoom: "Located in northwest Washington DC, American's suburban-style campus provides immediate access to Capitol Hill, the White House, K Street, Embassy Row, the Pentagon, World Bank, IMF, Smithsonian museums, major news organizations, and virtually every federal agency. Few universities possess a professional ecosystem of comparable density.",
+
+    lifestyle: "Politically engaged, globally diverse, professionally ambitious, internship-oriented, and intellectually curious. Students frequently balance coursework with internships, government work, policy research, advocacy organizations, journalism, or nonprofit leadership throughout the academic year.",
+
+    bestFitPersonality: "Curious about public affairs, globally minded, strong communicator, enjoys debate and current events, values internships and networking, high Openness with moderate-to-high Extraversion and Conscientiousness.",
+
+    faithTradition: "Methodist heritage; fully nonsectarian today.",
+
+    geographicInfluenceRadius: "National influence with exceptional strength throughout Washington DC, New York, Boston, international organizations, and global diplomatic centers.",
+
+    economicOutcome: "Excellent placement into diplomacy, intelligence, consulting, journalism, nonprofit leadership, government, law, international business, public policy, communications, and federal contracting.",
+
+    gradCities: [
+      "Washington DC",
+      "New York NY",
+      "Boston MA",
+      "Los Angeles CA",
+      "Chicago IL",
+      "Brussels Belgium",
+      "London UK"
+    ],
+
+    comparableInstitutions: [
+      "Georgetown University",
+      "George Washington University",
+      "Boston University",
+      "Tufts University",
+      "Syracuse University"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Northern Virginia Community College",
+        "Montgomery College",
+        "Prince George's Community College",
+        "Howard Community College"
+      ],
+
+      transferAcceptanceRate: "~45%",
+
+      freshmanAcceptanceRate: "~47%",
+
+      estimatedSavingsRange: "$25,000-$65,000",
+
+      transferNotes: "American maintains strong transfer pathways from regional community colleges. Students with demonstrated academic success and substantial professional or leadership experience are particularly competitive."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Global Public Affairs University",
+
+    institutionalPersonality: "globally minded, policy-driven, collaborative, politically engaged, professionally ambitious",
+
+    cultureKeywords: [
+      "International Affairs",
+      "Public Policy",
+      "Diplomacy",
+      "Journalism",
+      "Government",
+      "Washington DC",
+      "Leadership",
+      "Global Affairs",
+      "Public Service"
+    ],
+
+    missionOrientation: "Preparing future leaders to address global challenges through public service, diplomacy, policy, communication, and ethical leadership.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Experiential education built around internships, public engagement, international perspectives, and professional practice.",
+
+    competitiveness: "Moderately Selective",
+
+    politicalCulture: "Politically active and ideologically diverse with strong civic engagement and international awareness.",
+
+    studentAutonomy: "Very High",
+
+    prestigeOrientation: "Strong national reputation in international affairs, diplomacy, journalism, and public policy.",
+
+    socialClimate: "Professionally driven, globally diverse, intellectually engaged, and collaborative.",
+
+    leadershipStyle: "Leadership through public service, diplomacy, policy innovation, and civic engagement."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "One of Washington DC's premier universities producing leaders for government, diplomacy, consulting, media, and international organizations."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 16,
+    BosWash: 100,
+    TorBuffChester: 52,
+    TexasTriangle: 34,
+    CharLanta: 44,
+    NorCalInnovationCorridor: 40,
+    SoCalCreativeEconomy: 34
+
+  },
+
+  comparativePositioning: {
+
+    versusGeorgetown:
+      "Georgetown possesses greater global prestige and stronger elite alumni networks, while American offers broader undergraduate access and deeper integration into internships throughout Washington's public affairs ecosystem.",
+
+    versusGeorgeWashington:
+      "GW places students in the center of downtown Washington with stronger health sciences and business programs, while American offers a more traditional residential campus and particularly strong international affairs education.",
+
+    versusSyracuse:
+      "Both excel in communications and public affairs, but American benefits from continuous access to Washington's government and diplomacy ecosystem.",
+
+    versusBostonUniversity:
+      "Boston University offers broader research strength, while American provides unmatched specialization in diplomacy, international affairs, public policy, journalism, and federal careers."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Medium",
+
+    undergraduateEnrollment: 8000,
+
+    graduateEnrollment: 5500,
+
+    totalEnrollment: 13500,
+
+    campusType: "Private Research University",
+
+    residentialIntensity: 78,
+
+    communityFeel: 86,
+
+    studentFacultyRatio: "10:1",
+
+    classSizeExperience: "Small discussion-based classes dominate the undergraduate experience. Faculty frequently bring current policy work, journalism, diplomacy, consulting, and government service directly into the classroom, while internships serve as an extension of academic learning.",
+
+    scaleAdvantages: [
+      "Exceptional access to Washington DC internships during the academic year",
+      "One of the nation's strongest undergraduate international affairs programs",
+      "Close faculty mentorship and strong experiential learning",
+      "Professional networking begins immediately through government and nonprofit organizations",
+      "Students graduate with unusually deep internship and work experience"
+    ],
+
+    scaleDisadvantages: [
+      "Traditional campus life often competes with off-campus internships",
+      "Engineering and natural sciences are comparatively limited",
+      "Washington DC's cost of living can be expensive",
+      "Political atmosphere may not appeal to students seeking a traditional college environment"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 94,
+      conscientiousness: 86,
+      extraversion: 74,
+      agreeableness: 74,
+      neuroticism: 40
+    },
+
+    hollandCodes: ["E", "S", "I"],
+
+    learningStyle: [
+      "Experiential Learning",
+      "Policy Analysis",
+      "Discussion-Based Learning",
+      "Internships",
+      "Research"
+    ],
+
+    socialEnvironment: [
+      "Politically Active",
+      "Globally Diverse",
+      "Career Focused",
+      "Collaborative",
+      "Professionally Ambitious"
+    ],
+
+    idealStudentTraits: [
+      "Interested in current events and world affairs",
+      "Strong communicator",
+      "Enjoys networking and professional experiences",
+      "Comfortable engaging with diverse viewpoints",
+      "Career-focused from an early stage"
+    ],
+
+    thrivesIf: [
+      "Wants internships every semester",
+      "Plans for government, diplomacy, consulting, journalism, or law",
+      "Enjoys public speaking and writing",
+      "Values international perspectives",
+      "Likes connecting classroom learning with real organizations"
+    ],
+
+    strugglesIf: [
+      "Wants a traditional football-centered campus culture",
+      "Prefers highly technical STEM environments",
+      "Dislikes politics or current affairs",
+      "Needs a highly isolated residential campus",
+      "Wants extensive engineering or laboratory research"
+    ],
+
+    transferRiskFactors: [
+      "Students changing toward engineering-heavy majors",
+      "Students seeking stronger traditional campus culture",
+      "Students looking for large Division I athletic experiences"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Data Science",
+      "Environmental Science",
+      "Justice & Law",
+      "Public Health",
+      "International Business",
+      "Economics",
+      "Foreign Language",
+      "Cyber Policy"
+    ],
+
+    hiddenCareerPipelines: [
+      "Federal Intelligence",
+      "Think Tanks",
+      "Foreign Service",
+      "Federal Consulting",
+      "Public Affairs",
+      "International Development",
+      "Political Risk Consulting",
+      "Global NGOs"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "World Bank",
+      "International Monetary Fund",
+      "USAID",
+      "Brookings Institution",
+      "CSIS",
+      "Booz Allen Hamilton",
+      "Politico",
+      "The Washington Post"
+    ],
+
+    overlookedStrengths: [
+      "Outstanding undergraduate journalism program",
+      "Excellent public communication education",
+      "Strong environmental policy programs",
+      "Exceptional semester-long internship integration",
+      "One of the nation's strongest public affairs alumni networks"
+    ],
+
+    sleeperIndustries: [
+      "Cyber Policy",
+      "AI Governance",
+      "Climate Policy",
+      "ESG Consulting",
+      "Geopolitical Risk",
+      "International Development Finance"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 90,
+
+    mentorshipDensity: 94,
+
+    executiveAccess: 88,
+
+    internshipNetwork: 100,
+
+    familyBusinessExposure: 26,
+
+    relationshipCapitalScore: 94,
+
+    alumniLoyaltyScore: 88,
+
+    referralCultureStrength: 92,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Federal Government",
+      "International Affairs",
+      "Consulting",
+      "Journalism",
+      "Public Policy",
+      "Nonprofit Leadership",
+      "Government Contracting",
+      "International Business"
+    ],
+
+    regionalEconomicDrivers: [
+      "Federal Government",
+      "Defense Contracting",
+      "Diplomacy",
+      "Public Affairs",
+      "International Organizations",
+      "Media",
+      "Consulting"
+    ],
+
+    topEmployers: [
+      "U.S. Department of State",
+      "World Bank",
+      "International Monetary Fund",
+      "Booz Allen Hamilton",
+      "Deloitte",
+      "Accenture Federal Services",
+      "CNN",
+      "The Washington Post",
+      "Department of Defense",
+      "FBI"
+    ],
+
+    emergingIndustries: [
+      "Artificial Intelligence Policy",
+      "Cybersecurity",
+      "Climate Policy",
+      "Digital Diplomacy",
+      "National Security Technology",
+      "Government Innovation"
+    ],
+
+    startupDensity: "Moderate",
+
+    ventureCapitalAccess: 42,
+
+    corporateHeadquartersDensity: 64,
+
+    healthcareHubStrength: 38,
+
+    innovationIndex: 82
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Washington DC Government, Diplomacy, Consulting, and International Affairs Economy",
+
+    secondaryMarkets: [
+      "New York NY",
+      "Boston MA",
+      "Chicago IL",
+      "Brussels Belgium",
+      "London UK",
+      "Geneva Switzerland",
+      "Los Angeles CA"
+    ],
+
+    alumniStrongholds: [
+      "Washington DC",
+      "Northern Virginia",
+      "New York NY",
+      "Boston MA",
+      "Brussels Belgium"
+    ],
+
+    relocationPatterns: [
+      "The majority of graduates remain in Washington DC or Northern Virginia working in government, consulting, public affairs, intelligence, journalism, nonprofits, and international organizations.",
+      "New York attracts graduates into media, communications, finance, consulting, publishing, and international business.",
+      "Boston draws alumni into higher education, nonprofits, healthcare policy, and research organizations.",
+      "International affairs graduates frequently establish careers in Brussels, Geneva, London, and other diplomatic centers.",
+      "A growing number enter technology policy, cybersecurity, AI governance, and climate policy roles across major U.S. innovation hubs."
+    ],
+
+    regionalInfluenceScore: 100,
+
+    nationalReachScore: 82,
+
+    internationalReachScore: 92
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 12,
+
+    studentOrganizationStrength: 98,
+
+    leadershipDevelopment: 96,
+
+    crossDisciplinaryInteraction: 92,
+
+    civicEngagement: 100
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 8,
+      notes: "Minimal institutional emphasis."
+    },
+
+    healthWellness: {
+      strength: 44,
+      notes: "Public health policy, health administration, and nonprofit healthcare organizations provide niche opportunities."
+    },
+
+    nutraceuticals: {
+      strength: 4,
+      notes: "Very limited institutional emphasis."
+    },
+
+    consumerProducts: {
+      strength: 24,
+      notes: "Some opportunities through international business, communications, and marketing."
+    },
+
+    outdoorIndustry: {
+      strength: 8,
+      notes: "Limited institutional emphasis."
+    },
+
+    sportsBusiness: {
+      strength: 14,
+      notes: "Some communications and public relations opportunities."
+    },
+
+    entertainmentMedia: {
+      strength: 84,
+      notes: "Excellent pathways into journalism, political media, digital communications, documentary production, and public affairs media."
+    },
+
+    ventureCapital: {
+      strength: 32,
+      notes: "Growing opportunities through government technology, defense technology, and public-sector innovation."
+    },
+
+    privateEquity: {
+      strength: 12,
+      notes: "Limited institutional recruiting compared to finance-focused universities."
+    },
+
+    investmentBanking: {
+      strength: 24,
+      notes: "Some placement occurs, although consulting, diplomacy, and public affairs dominate career outcomes."
+    },
+
+    consulting: {
+      strength: 94,
+      notes: "One of the strongest undergraduate ecosystems for federal consulting, government strategy, international advisory work, and policy consulting."
+    },
+
+    medicine: {
+      strength: 26,
+      notes: "Limited institutional emphasis outside public health and health policy."
+    },
+
+    healthcareAdministration: {
+      strength: 48,
+      notes: "Strong preparation for healthcare policy, healthcare nonprofits, and public administration."
+    },
+
+    defense: {
+      strength: 88,
+      notes: "Outstanding opportunities through intelligence, homeland security, cybersecurity policy, defense consulting, and federal agencies."
+    },
+
+    realEstate: {
+      strength: 10,
+      notes: "Minimal institutional emphasis."
+    },
+
+    luxuryBrands: {
+      strength: 10,
+      notes: "Limited institutional emphasis."
+    },
+
+    entrepreneurship: {
+      strength: 56,
+      notes: "Growing entrepreneurship centered on public-sector innovation, civic technology, and mission-driven organizations."
+    },
+
+    technology: {
+      strength: 62,
+      notes: "Technology policy, cybersecurity, AI governance, and digital transformation create growing career pathways."
+    },
+
+    publicPolicy: {
+      strength: 100,
+      notes: "Among the strongest universities in America for public policy, diplomacy, international affairs, government leadership, and political institutions."
+    },
+
+    nonprofitLeadership: {
+      strength: 100,
+      notes: "Exceptional preparation for nonprofit management, international development, humanitarian organizations, advocacy groups, and public service."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 76,
+
+    firstGenerationSupport: 84,
+
+    wealthCreationPotential: 78,
+
+    familyBusinessPipelineStrength: 20
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 88,
+
+    automationResistance: 90,
+
+    adaptabilityScore: 94,
+
+    interdisciplinaryStrength: 94,
+
+    futureReadiness: 94,
+
+    entrepreneurialFlexibility: 82,
+
+    lifelongLearningCulture: 96,
+
+    innovationCapacity: 84
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 78,
+
+    communityLeadershipPotential: 100,
+
+    geographicMobility: 88,
+
+    workLifeBalancePotential: 82,
+
+    purposeAlignment: 100,
+
+    familyFormationSupport: 84,
+
+    personalDevelopmentPotential: 96,
+
+    careerOptionality: 90,
+
+    longTermLifeSatisfaction: 92
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 74,
+
+    networkMoat: 94,
+
+    geographicMoat: 100,
+
+    industryMoat: 94,
+
+    alumniMoat: 90,
+
+    brandDurability: 90,
+
+    overallMoatScore: 91
+
+  },
+
+  hillel_strength: "tier_1",
+  jewish_enrollment: "~20-25% Jewish undergraduate enrollment",
+  hillel_note: "American University self-selects for politically engaged Jewish students in policy, law, and international affairs. ~20-25% Jewish enrollment — comparable to BU and UM. DC's Jewish community (~300,000 — one of the largest in America) surrounds the campus. AU Hillel is consistently active with strong programming.",
+
+    trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE",
+
+    leaverScore: 96,
+
+    returnerScore: 34,
+
+    stewardScore: 16,
+
+    navigatorScore: 96,
+
+    geographicLockIn: "very_low",
+
+    alumniDispersalPattern: "national_international"
+
+  }
+
+},
+
+
+// === Amherst_College ===
+"Amherst College": {
+
+  institutionNarrative: {
+
+    name: "Amherst College",
+
+    location: "Amherst, Massachusetts",
+
+    region: "Bos-Wash Corridor",
+
+    archetype: "The Open Curriculum Liberal Arts College — Intellectual Freedom and Elite Graduate Formation",
+
+    oneSentenceSummary: "Amherst College is one of the world's premier liberal arts colleges, combining an open curriculum, extraordinary faculty access, exceptional graduate school placement, and one of the strongest alumni networks in American higher education while participating in the Five College Consortium that effectively expands its academic resources to the scale of a major research university.",
+
+    pipeline: "Approximately 1,900 students. Amherst consistently ranks among America's top liberal arts colleges with exceptional placement into law, medicine, PhD programs, finance, consulting, public policy, academia, journalism, and nonprofit leadership. The college sends graduates to Harvard, Yale, Stanford, MIT, Oxford, Cambridge, and other elite graduate programs at one of the highest rates in the nation. Major recruiters include McKinsey & Company, Bain & Company, Boston Consulting Group, Goldman Sachs, Morgan Stanley, BlackRock, Bridgewater Associates, Google, Meta, OpenAI, Bain Capital, Wellington Management, the Federal Reserve, and leading nonprofit and research organizations.",
+
+    hiddenPathway: "Amherst's greatest hidden advantage is the Five College Consortium with Smith College, Mount Holyoke College, Hampshire College, and the University of Massachusetts Amherst. Students gain access to thousands of additional courses, research facilities, language instruction, faculty, libraries, performing arts opportunities, and cross-campus communities while retaining Amherst's exceptionally intimate educational experience. This creates the breadth of a research university with the mentorship of a small liberal arts college.",
+
+    institutionalSecret: "The defining feature of Amherst is not prestige but intellectual freedom. Amherst's open curriculum eliminates virtually all general education requirements, allowing students to construct highly individualized academic pathways from their first semester. Combined with an exceptionally low student-faculty ratio and tutorial-style teaching, this produces graduates who are unusually independent thinkers and highly attractive to graduate schools and elite employers.",
+
+    theRoom: "Situated in the Pioneer Valley of western Massachusetts, Amherst occupies a quintessential New England campus surrounded by mountains, forests, historic towns, and one of America's highest concentrations of higher education institutions. Through the Five College Consortium, students regularly interact across Amherst, Smith, Mount Holyoke, Hampshire, and UMass Amherst while remaining within two hours of Boston and three hours of New York.",
+
+    lifestyle: "Highly intellectual, collaborative, discussion-oriented, and residential. Students prioritize close faculty relationships, campus traditions, outdoor recreation, arts, writing, research, and interdisciplinary exploration over large athletic or Greek-life cultures.",
+
+    bestFitPersonality: "Exceptionally intellectually curious, independent, self-directed, enjoys discussion and writing, values academic freedom, high Openness with strong Conscientiousness.",
+
+    faithTradition: "Originally Congregational; today entirely nonsectarian.",
+
+    geographicInfluenceRadius: "National and international influence with particularly strong placement throughout Boston, New York, Washington DC, San Francisco, academia, and global graduate education.",
+
+    economicOutcome: "Outstanding outcomes across finance, consulting, academia, medicine, law, public policy, entrepreneurship, technology, journalism, and graduate education driven by one of the nation's highest per-capita alumni achievement rates.",
+
+    gradCities: [
+      "New York NY",
+      "Boston MA",
+      "Washington DC",
+      "San Francisco CA",
+      "Chicago IL",
+      "London UK",
+      "Cambridge MA"
+    ],
+
+    comparableInstitutions: [
+      "Williams College",
+      "Swarthmore College",
+      "Pomona College",
+      "Princeton University",
+      "Harvard College"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Greenfield Community College",
+        "Holyoke Community College",
+        "Bunker Hill Community College",
+        "MassBay Community College"
+      ],
+
+      transferAcceptanceRate: "~8%",
+
+      freshmanAcceptanceRate: "~9%",
+
+      estimatedSavingsRange: "$30,000-$90,000",
+
+      transferNotes: "Amherst enrolls a small transfer class each year and meets 100% of demonstrated financial need for admitted transfer students. Exceptional academic preparation and intellectual engagement are essential."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Elite Liberal Arts College",
+
+    institutionalPersonality: "intellectual, independent, reflective, collaborative, deeply curious",
+
+    cultureKeywords: [
+      "Open Curriculum",
+      "Liberal Arts",
+      "Discussion",
+      "Writing",
+      "Graduate School",
+      "Research",
+      "Leadership",
+      "Five College Consortium",
+      "Academic Freedom"
+    ],
+
+    missionOrientation: "Educating intellectually independent leaders through rigorous liberal arts education, close faculty mentorship, and unrestricted academic exploration.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Learning through inquiry, discussion, writing, mentorship, and intellectual independence rather than prescribed curricular pathways.",
+
+    competitiveness: "Extremely Selective",
+
+    politicalCulture: "Generally progressive with strong emphasis on civil discourse, intellectual diversity, and evidence-based reasoning.",
+
+    studentAutonomy: "Extremely High",
+
+    prestigeOrientation: "Elite globally within liberal arts education and graduate school preparation.",
+
+    socialClimate: "Collaborative, intellectually ambitious, residential, and community-oriented.",
+
+    leadershipStyle: "Leadership through intellectual excellence, thoughtful communication, ethical reasoning, and lifelong learning."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Elite liberal arts institution supplying leaders to finance, consulting, graduate education, public policy, academia, and the Northeast knowledge economy."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 12,
+    BosWash: 100,
+    TorBuffChester: 58,
+    TexasTriangle: 30,
+    CharLanta: 26,
+    NorCalInnovationCorridor: 74,
+    SoCalCreativeEconomy: 38
+
+  },
+
+  comparativePositioning: {
+
+    versusWilliams:
+      "Williams emphasizes tutorials, economics, and mountain-town traditions; Amherst differentiates itself through the open curriculum and the Five College Consortium.",
+
+    versusSwarthmore:
+      "Both are exceptionally rigorous, but Amherst provides greater curricular freedom while Swarthmore retains a structured core and engineering program.",
+
+    versusPomona:
+      "Both offer elite liberal arts education with consortium benefits, but Amherst feeds more heavily into East Coast finance, consulting, graduate education, and public policy.",
+
+    versusPrinceton:
+      "Princeton offers broader research infrastructure, while Amherst delivers substantially greater undergraduate autonomy, closer faculty relationships, and one of the nation's purest liberal arts experiences."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Small",
+
+    undergraduateEnrollment: 1900,
+
+    graduateEnrollment: 0,
+
+    totalEnrollment: 1900,
+
+    campusType: "Residential Liberal Arts College",
+
+    residentialIntensity: 98,
+
+    communityFeel: 100,
+
+    studentFacultyRatio: "7:1",
+
+    classSizeExperience: "Nearly all classes are seminar-based with extensive discussion, writing, close faculty mentorship, and individualized academic advising. Students routinely collaborate directly with professors on research and independent scholarship beginning early in their undergraduate careers.",
+
+    scaleAdvantages: [
+      "One of the lowest student-faculty ratios among elite colleges",
+      "Open curriculum maximizes intellectual flexibility",
+      "Five College Consortium dramatically expands academic offerings",
+      "Faculty mentoring is among the strongest in American higher education",
+      "Highly personalized advising and graduate school preparation"
+    ],
+
+    scaleDisadvantages: [
+      "Limited number of majors compared to large research universities",
+      "No graduate schools or medical center on campus",
+      "Small social ecosystem may not appeal to every student",
+      "Fewer large-scale research facilities than major universities"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 100,
+      conscientiousness: 90,
+      extraversion: 50,
+      agreeableness: 84,
+      neuroticism: 36
+    },
+
+    hollandCodes: ["I", "A", "S"],
+
+    learningStyle: [
+      "Seminar Discussion",
+      "Independent Research",
+      "Writing Intensive",
+      "Faculty Mentorship",
+      "Interdisciplinary Inquiry"
+    ],
+
+    socialEnvironment: [
+      "Highly Intellectual",
+      "Collaborative",
+      "Residential",
+      "Discussion-Oriented",
+      "Community Focused"
+    ],
+
+    idealStudentTraits: [
+      "Intellectually self-directed",
+      "Enjoys reading and writing",
+      "Thrives in small discussion settings",
+      "Comfortable exploring multiple disciplines",
+      "Values mentorship over scale"
+    ],
+
+    thrivesIf: [
+      "Wants maximum academic freedom",
+      "Plans for graduate or professional school",
+      "Enjoys close relationships with faculty",
+      "Prefers discussion over lecture",
+      "Values learning for its own sake"
+    ],
+
+    strugglesIf: [
+      "Prefers large university energy",
+      "Wants Division I athletics to define campus culture",
+      "Needs highly structured academic pathways",
+      "Wants extensive engineering or applied professional majors",
+      "Prefers anonymous large-campus environments"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking larger universities",
+      "Students changing into engineering-heavy disciplines",
+      "Students wanting stronger pre-professional specialization"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Neuroscience",
+      "Mathematics",
+      "Black Studies",
+      "Environmental Studies",
+      "Russian",
+      "Classics",
+      "Anthropology",
+      "Statistics"
+    ],
+
+    hiddenCareerPipelines: [
+      "Elite PhD Programs",
+      "Public Policy Fellowships",
+      "Academic Research",
+      "Think Tanks",
+      "Federal Reserve",
+      "Quantitative Finance",
+      "Nonprofit Leadership",
+      "Prestigious Scholarships"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Bridgewater Associates",
+      "McKinsey & Company",
+      "Goldman Sachs",
+      "BlackRock",
+      "Bain & Company",
+      "Rhodes Scholarship",
+      "Fulbright Program",
+      "NSF Graduate Research Fellowship"
+    ],
+
+    overlookedStrengths: [
+      "Exceptional mathematics department",
+      "Among America's highest PhD production rates per capita",
+      "Outstanding undergraduate research opportunities",
+      "Five College language resources",
+      "Elite fellowship advising"
+    ],
+
+    sleeperIndustries: [
+      "Economic Research",
+      "Behavioral Science",
+      "Public Interest Law",
+      "AI Ethics",
+      "Education Technology",
+      "Policy Analytics"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 94,
+
+    mentorshipDensity: 100,
+
+    executiveAccess: 88,
+
+    internshipNetwork: 84,
+
+    familyBusinessExposure: 52,
+
+    relationshipCapitalScore: 96,
+
+    alumniLoyaltyScore: 98,
+
+    referralCultureStrength: 94,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Finance",
+      "Consulting",
+      "Higher Education",
+      "Law",
+      "Medicine",
+      "Public Policy",
+      "Technology",
+      "Research"
+    ],
+
+    regionalEconomicDrivers: [
+      "Higher Education",
+      "Healthcare",
+      "Research",
+      "Finance",
+      "Professional Services",
+      "Life Sciences"
+    ],
+
+    topEmployers: [
+      "McKinsey & Company",
+      "Goldman Sachs",
+      "Google",
+      "Bridgewater Associates",
+      "BlackRock",
+      "Federal Reserve",
+      "Harvard University",
+      "Mass General Brigham",
+      "Boston Consulting Group",
+      "Meta"
+    ],
+
+    emergingIndustries: [
+      "Artificial Intelligence",
+      "Data Science",
+      "Climate Policy",
+      "Biotechnology",
+      "Computational Social Science",
+      "Digital Humanities"
+    ],
+
+    startupDensity: "Moderate",
+
+    ventureCapitalAccess: 72,
+
+    corporateHeadquartersDensity: 64,
+
+    healthcareHubStrength: 82,
+
+    innovationIndex: 90
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Northeast Knowledge Economy — Finance, Graduate Education, Public Policy, and Research",
+
+    secondaryMarkets: [
+      "Boston MA",
+      "New York NY",
+      "Washington DC",
+      "San Francisco CA",
+      "Chicago IL",
+      "London UK",
+      "Cambridge UK"
+    ],
+
+    alumniStrongholds: [
+      "New York NY",
+      "Boston MA",
+      "Washington DC",
+      "San Francisco CA",
+      "Cambridge MA"
+    ],
+
+    relocationPatterns: [
+      "A large share of graduates relocate to New York for finance, consulting, publishing, and law.",
+      "Boston attracts alumni pursuing biotechnology, healthcare, academia, research, and graduate education.",
+      "Washington DC remains a major destination for public policy, government, think tanks, and nonprofit leadership.",
+      "San Francisco increasingly attracts graduates entering technology, venture capital, entrepreneurship, and artificial intelligence.",
+      "Many graduates continue directly into elite graduate and professional schools before dispersing nationally and internationally."
+    ],
+
+    regionalInfluenceScore: 96,
+
+    nationalReachScore: 96,
+
+    internationalReachScore: 86
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 2,
+
+    studentOrganizationStrength: 90,
+
+    leadershipDevelopment: 92,
+
+    crossDisciplinaryInteraction: 98,
+
+    civicEngagement: 86
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 8,
+      notes: "Very limited institutional emphasis."
+    },
+
+    healthWellness: {
+      strength: 74,
+      notes: "Strong preparation for medicine, neuroscience, psychology, and public health through graduate study pathways."
+    },
+
+    nutraceuticals: {
+      strength: 8,
+      notes: "Minimal institutional emphasis."
+    },
+
+    consumerProducts: {
+      strength: 36,
+      notes: "Graduates occasionally enter consumer strategy, marketing analytics, and product leadership after consulting or business school."
+    },
+
+    outdoorIndustry: {
+      strength: 18,
+      notes: "Environmental science and sustainability support niche opportunities."
+    },
+
+    sportsBusiness: {
+      strength: 8,
+      notes: "Minimal institutional focus."
+    },
+
+    entertainmentMedia: {
+      strength: 42,
+      notes: "English, history, political science, and creative writing graduates occasionally enter publishing, journalism, and media."
+    },
+
+    ventureCapital: {
+      strength: 68,
+      notes: "Strong alumni presence in venture capital, particularly through technology, finance, and entrepreneurship after graduate experience."
+    },
+
+    privateEquity: {
+      strength: 76,
+      notes: "Excellent placement into investment firms, hedge funds, and growth equity through finance and consulting pipelines."
+    },
+
+    investmentBanking: {
+      strength: 88,
+      notes: "One of the strongest liberal arts colleges for Wall Street recruiting despite lacking an undergraduate business school."
+    },
+
+    consulting: {
+      strength: 94,
+      notes: "McKinsey, Bain, BCG, and other elite consulting firms recruit Amherst graduates heavily for analytical and leadership potential."
+    },
+
+    medicine: {
+      strength: 90,
+      notes: "Exceptional medical school placement through rigorous science preparation and close faculty mentorship."
+    },
+
+    healthcareAdministration: {
+      strength: 42,
+      notes: "More graduates pursue clinical medicine, research, or public health than administration."
+    },
+
+    defense: {
+      strength: 24,
+      notes: "Limited institutional emphasis outside intelligence, foreign policy, and federal fellowships."
+    },
+
+    realEstate: {
+      strength: 26,
+      notes: "Some alumni enter institutional real estate through finance careers."
+    },
+
+    luxuryBrands: {
+      strength: 16,
+      notes: "Limited direct recruiting."
+    },
+
+    entrepreneurship: {
+      strength: 72,
+      notes: "Graduates increasingly found startups after careers in technology, consulting, or finance."
+    },
+
+    technology: {
+      strength: 74,
+      notes: "Computer science, mathematics, and quantitative graduates perform exceptionally well in technology despite Amherst's liberal arts focus."
+    },
+
+    publicPolicy: {
+      strength: 88,
+      notes: "Excellent preparation for public policy, diplomacy, academia, and government leadership."
+    },
+
+    nonprofitLeadership: {
+      strength: 92,
+      notes: "Strong tradition of leadership in education, philanthropy, research, and mission-driven organizations."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 86,
+
+    firstGenerationSupport: 94,
+
+    wealthCreationPotential: 92,
+
+    familyBusinessPipelineStrength: 44
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 96,
+
+    automationResistance: 96,
+
+    adaptabilityScore: 100,
+
+    interdisciplinaryStrength: 100,
+
+    futureReadiness: 98,
+
+    entrepreneurialFlexibility: 92,
+
+    lifelongLearningCulture: 100,
+
+    innovationCapacity: 94
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 92,
+
+    communityLeadershipPotential: 96,
+
+    geographicMobility: 96,
+
+    workLifeBalancePotential: 90,
+
+    purposeAlignment: 98,
+
+    familyFormationSupport: 90,
+
+    personalDevelopmentPotential: 100,
+
+    careerOptionality: 100,
+
+    longTermLifeSatisfaction: 98
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 98,
+
+    networkMoat: 96,
+
+    geographicMoat: 88,
+
+    industryMoat: 90,
+
+    alumniMoat: 96,
+
+    brandDurability: 100,
+
+    overallMoatScore: 96
+
+  },
+
+  hillel_strength: "tier_1",
+  jewish_enrollment: "~20-25% Jewish undergraduate enrollment",
+  hillel_note: "Amherst has one of the highest Jewish enrollments of any elite liberal arts college. The Five College Consortium (Amherst, Smith, Mount Holyoke, Hampshire, UMass Amherst) creates a shared Jewish community larger than any single school. At 1,900 students, ~20-25% Jewish enrollment creates an extremely high-concentration, visible community. Active Hillel, Boston metro accessible by train.",
+
+    trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE",
+
+    leaverScore: 98,
+
+    returnerScore: 42,
+
+    stewardScore: 18,
+
+    navigatorScore: 100,
+
+    geographicLockIn: "very_low",
+
+    alumniDispersalPattern: "national_international"
+
+  }
+
+},
+
+
+// === Claremont_McKenna_College ===
+"Claremont McKenna College": {
+
+  institutionNarrative: {
+
+    name: "Claremont McKenna College",
+
+    location: "Claremont, California",
+
+    region: "West",
+
+    archetype: "The Leadership College — Economics, Government, and Elite Institutional Power",
+
+    oneSentenceSummary: "Claremont McKenna College is one of America's premier leadership-focused liberal arts colleges, combining exceptional strengths in economics, government, finance, public policy, entrepreneurship, and leadership development with the unparalleled academic resources of the Claremont Colleges Consortium and direct access to Southern California's business, venture capital, entertainment, and political ecosystems.",
+
+    pipeline: "Approximately 1,400 students. Claremont McKenna is nationally recognized for Economics, Government, Public Policy, Philosophy, International Relations, Data Science, Psychology, and Finance. The Robert Day School of Economics and Finance is among the strongest undergraduate business-oriented programs at any liberal arts college. Major recruiters include McKinsey & Company, Bain & Company, Boston Consulting Group, Goldman Sachs, Morgan Stanley, BlackRock, Blackstone, KKR, Bain Capital, J.P. Morgan, Google, Amazon, Palantir, Deloitte, EY-Parthenon, Houlihan Lokey, Ares Management, and numerous venture capital and private equity firms throughout Los Angeles, Orange County, San Francisco, and New York.",
+
+    hiddenPathway: "CMC's greatest hidden advantage is the Claremont Colleges Consortium. Students seamlessly cross-register at Pomona, Harvey Mudd, Pitzer, and Scripps, creating the academic breadth of a research university while preserving the mentorship and leadership culture of a small liberal arts college. This combination is especially powerful for students blending economics, engineering, computer science, public policy, entrepreneurship, and the humanities.",
+
+    institutionalSecret: "CMC intentionally develops institutional leaders rather than subject specialists. Nearly every major incorporates leadership, policy analysis, communication, economics, and decision-making. Combined with the Athenaeum speaker series—where world leaders, CEOs, diplomats, judges, military leaders, entrepreneurs, and Nobel laureates regularly dine with students—the college creates unusually early exposure to elite decision-making environments.",
+
+    theRoom: "Located in Claremont at the eastern edge of Los Angeles County, students benefit from the combined resources of the five undergraduate Claremont Colleges while remaining within one hour of downtown Los Angeles, Hollywood, Pasadena, Orange County, Silicon Beach, and Southern California's venture capital, entertainment, aerospace, finance, and technology ecosystems.",
+
+    lifestyle: "Highly ambitious, intellectually collaborative, leadership-oriented, residential, and professionally focused. Students balance rigorous academics with internships, research, student government, consulting clubs, investment funds, entrepreneurship, and one of the nation's strongest undergraduate leadership cultures.",
+
+    bestFitPersonality: "Highly ambitious, intellectually curious, enjoys leadership roles, comfortable with responsibility, strong communicator, collaborative, high Conscientiousness with high Openness and moderate-to-high Extraversion.",
+
+    faithTradition: "None",
+
+    geographicInfluenceRadius: "National influence with particularly strong placement throughout Los Angeles, San Francisco, New York, Washington DC, and global finance and consulting centers.",
+
+    economicOutcome: "Exceptional outcomes in consulting, finance, venture capital, private equity, entrepreneurship, technology, law, public policy, graduate education, and executive leadership with one of the nation's highest salary outcomes among liberal arts colleges.",
+
+    gradCities: [
+      "Los Angeles CA",
+      "San Francisco CA",
+      "New York NY",
+      "Washington DC",
+      "Seattle WA",
+      "Chicago IL",
+      "London UK"
+    ],
+
+    comparableInstitutions: [
+      "Williams College",
+      "Amherst College",
+      "Pomona College",
+      "Georgetown University",
+      "University of Notre Dame"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Mt. San Antonio College",
+        "Pasadena City College",
+        "Orange Coast College",
+        "Santa Monica College"
+      ],
+
+      transferAcceptanceRate: "~8%",
+
+      freshmanAcceptanceRate: "~11%",
+
+      estimatedSavingsRange: "$30,000-$90,000",
+
+      transferNotes: "CMC enrolls a small but highly accomplished transfer class each year. Leadership experience, outstanding academics, intellectual curiosity, and demonstrated fit with the college's leadership mission are especially important."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Elite Leadership Liberal Arts College",
+
+    institutionalPersonality: "ambitious, analytical, collaborative, leadership-driven, entrepreneurial",
+
+    cultureKeywords: [
+      "Leadership",
+      "Economics",
+      "Finance",
+      "Public Policy",
+      "Consulting",
+      "Entrepreneurship",
+      "Athenaeum",
+      "Claremont Colleges",
+      "Decision Making"
+    ],
+
+    missionOrientation: "Preparing ethical and effective leaders through rigorous liberal arts education, economics, public affairs, and practical leadership development.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Leadership is learned through close faculty mentorship, interdisciplinary study, public engagement, analytical rigor, and continuous interaction with real-world decision makers.",
+
+    competitiveness: "Extremely Selective",
+
+    politicalCulture: "Broad ideological diversity with unusually strong emphasis on civil discourse, leadership, and evidence-based policy analysis.",
+
+    studentAutonomy: "Extremely High",
+
+    prestigeOrientation: "Elite nationally, particularly in consulting, finance, public policy, and leadership development.",
+
+    socialClimate: "Collaborative, highly ambitious, intellectually engaged, and professionally oriented.",
+
+    leadershipStyle: "Leadership through analytical thinking, ethical decision-making, institutional responsibility, and public engagement."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "SoCal",
+
+    regionalRole: "Elite undergraduate leadership institution feeding Southern California's finance, consulting, entrepreneurship, technology, and public policy ecosystems."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 12,
+    BosWash: 58,
+    TorBuffChester: 20,
+    TexasTriangle: 40,
+    CharLanta: 22,
+    NorCalInnovationCorridor: 82,
+    SoCalCreativeEconomy: 100
+
+  },
+
+  comparativePositioning: {
+
+    versusPomona:
+      "Pomona emphasizes broad liberal arts scholarship and graduate education, while Claremont McKenna is substantially more leadership, economics, consulting, finance, and public policy oriented.",
+
+    versusAmherst:
+      "Both produce exceptional leaders and graduate school outcomes, but Amherst emphasizes intellectual freedom while CMC intentionally develops organizational leadership and decision-making.",
+
+    versusGeorgetown:
+      "Georgetown is anchored by diplomacy and international affairs, whereas CMC focuses more heavily on economics, finance, consulting, entrepreneurship, and institutional leadership.",
+
+    versusNotreDame:
+      "Notre Dame combines Catholic formation with national leadership development, while CMC delivers a secular, economics-driven leadership model deeply integrated into Southern California's professional economy."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Very Small",
+
+    undergraduateEnrollment: 1350,
+
+    graduateEnrollment: 0,
+
+    totalEnrollment: 1350,
+
+    campusType: "Residential Liberal Arts College",
+
+    residentialIntensity: 98,
+
+    communityFeel: 100,
+
+    studentFacultyRatio: "8:1",
+
+    classSizeExperience: "Almost every class is discussion-based and capped at a small size, emphasizing analytical writing, leadership, economics, public policy, and decision-making. Faculty mentorship is exceptionally accessible, while the Claremont Colleges Consortium expands course availability to thousands of additional classes across five elite institutions.",
+
+    scaleAdvantages: [
+      "One of the strongest faculty mentorship environments in American higher education",
+      "Leadership opportunities begin immediately through small class sizes and campus organizations",
+      "Access to the full Claremont Colleges academic ecosystem",
+      "Outstanding undergraduate attention with research university-level course selection",
+      "Exceptionally strong placement into consulting, finance, and graduate education"
+    ],
+
+    scaleDisadvantages: [
+      "Limited number of majors compared to comprehensive research universities",
+      "No engineering, medical school, or large graduate divisions on campus",
+      "Small social ecosystem may not appeal to every student",
+      "Highly selective culture can feel academically and professionally intense"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 94,
+      conscientiousness: 96,
+      extraversion: 76,
+      agreeableness: 74,
+      neuroticism: 32
+    },
+
+    hollandCodes: ["E", "I", "S"],
+
+    learningStyle: [
+      "Discussion-Based Learning",
+      "Case Analysis",
+      "Leadership Development",
+      "Research",
+      "Interdisciplinary Learning"
+    ],
+
+    socialEnvironment: [
+      "Leadership Focused",
+      "Highly Ambitious",
+      "Collaborative",
+      "Career Driven",
+      "Residential Community"
+    ],
+
+    idealStudentTraits: [
+      "Enjoys leadership responsibility",
+      "Strong analytical thinker",
+      "Interested in economics, government, or business",
+      "Comfortable speaking and debating ideas",
+      "Highly self-motivated"
+    ],
+
+    thrivesIf: [
+      "Wants direct access to professors",
+      "Plans for consulting, finance, entrepreneurship, or public leadership",
+      "Enjoys small seminar-style classrooms",
+      "Values interdisciplinary learning across the Claremont Colleges",
+      "Likes taking initiative and building organizations"
+    ],
+
+    strugglesIf: [
+      "Prefers anonymous large universities",
+      "Needs highly specialized STEM infrastructure",
+      "Wants major athletic culture to define campus life",
+      "Dislikes discussion-heavy coursework",
+      "Prefers structured curricula over flexibility"
+    ],
+
+    transferRiskFactors: [
+      "Students pursuing engineering-intensive careers",
+      "Students seeking large university experiences",
+      "Students wanting broader laboratory research opportunities"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Philosophy, Politics & Economics (PPE)",
+      "Science, Technology & Society",
+      "Sequence in Financial Economics",
+      "Data Science",
+      "International Relations",
+      "Psychology",
+      "Literature",
+      "Environmental Analysis"
+    ],
+
+    hiddenCareerPipelines: [
+      "Private Equity",
+      "Growth Equity",
+      "Corporate Leadership Programs",
+      "Public Leadership Fellowships",
+      "Technology Strategy",
+      "Political Consulting",
+      "Economic Policy",
+      "Search Funds"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Blackstone",
+      "Ares Management",
+      "KKR",
+      "Houlihan Lokey",
+      "Evercore",
+      "TPG",
+      "McKinsey & Company",
+      "Bain & Company"
+    ],
+
+    overlookedStrengths: [
+      "The Athenaeum leadership speaker series",
+      "One of the nation's strongest undergraduate economics departments",
+      "Highly personalized career advising",
+      "Exceptional alumni responsiveness",
+      "Cross-registration with Harvey Mudd for quantitative coursework"
+    ],
+
+    sleeperIndustries: [
+      "Defense Technology Investing",
+      "Geopolitical Risk",
+      "AI Policy",
+      "Sports Ownership",
+      "Infrastructure Investing",
+      "Climate Finance"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 98,
+
+    mentorshipDensity: 100,
+
+    executiveAccess: 96,
+
+    internshipNetwork: 94,
+
+    familyBusinessExposure: 64,
+
+    relationshipCapitalScore: 99,
+
+    alumniLoyaltyScore: 98,
+
+    referralCultureStrength: 98,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Consulting",
+      "Investment Banking",
+      "Private Equity",
+      "Venture Capital",
+      "Technology",
+      "Public Policy",
+      "Entrepreneurship",
+      "Asset Management"
+    ],
+
+    regionalEconomicDrivers: [
+      "Southern California Finance",
+      "Technology",
+      "Entertainment Business",
+      "Private Capital",
+      "Healthcare",
+      "Aerospace",
+      "Professional Services"
+    ],
+
+    topEmployers: [
+      "McKinsey & Company",
+      "Bain & Company",
+      "Boston Consulting Group",
+      "Goldman Sachs",
+      "Morgan Stanley",
+      "Blackstone",
+      "Google",
+      "Palantir",
+      "Ares Management",
+      "Houlihan Lokey"
+    ],
+
+    emergingIndustries: [
+      "Artificial Intelligence",
+      "Climate Investing",
+      "Defense Technology",
+      "FinTech",
+      "Space Economy",
+      "Digital Infrastructure"
+    ],
+
+    startupDensity: "High",
+
+    ventureCapitalAccess: 90,
+
+    corporateHeadquartersDensity: 88,
+
+    healthcareHubStrength: 72,
+
+    innovationIndex: 94
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Southern California Leadership, Finance, Consulting, and Technology Economy",
+
+    secondaryMarkets: [
+      "San Francisco CA",
+      "New York NY",
+      "Washington DC",
+      "Seattle WA",
+      "Chicago IL",
+      "Austin TX",
+      "London UK"
+    ],
+
+    alumniStrongholds: [
+      "Los Angeles CA",
+      "Orange County CA",
+      "San Francisco CA",
+      "New York NY",
+      "Washington DC"
+    ],
+
+    relocationPatterns: [
+      "Most graduates begin their careers in Southern California through consulting, investment banking, venture capital, private equity, technology, and corporate leadership programs.",
+      "The Bay Area attracts graduates pursuing venture capital, entrepreneurship, software, artificial intelligence, and product leadership.",
+      "New York remains a major destination for investment banking, hedge funds, consulting, asset management, and private equity.",
+      "Washington DC draws graduates into public policy, government leadership, national security, and think tanks.",
+      "An increasing number of alumni build international careers through global consulting firms, investment funds, and multinational corporations."
+    ],
+
+    regionalInfluenceScore: 100,
+
+    nationalReachScore: 94,
+
+    internationalReachScore: 76
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 22,
+
+    studentOrganizationStrength: 96,
+
+    leadershipDevelopment: 100,
+
+    crossDisciplinaryInteraction: 100,
+
+    civicEngagement: 82
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 20,
+      notes: "Marketing, consumer strategy, and Southern California brand ecosystems create selective opportunities."
+    },
+
+    healthWellness: {
+      strength: 42,
+      notes: "Limited direct healthcare emphasis outside economics, policy, and management."
+    },
+
+    nutraceuticals: {
+      strength: 10,
+      notes: "Minimal institutional emphasis."
+    },
+
+    consumerProducts: {
+      strength: 82,
+      notes: "Excellent preparation for product strategy, brand management, and consumer-facing leadership roles."
+    },
+
+    outdoorIndustry: {
+      strength: 18,
+      notes: "Some opportunities through Southern California consumer brands and entrepreneurship."
+    },
+
+    sportsBusiness: {
+      strength: 62,
+      notes: "Los Angeles' professional sports ecosystem creates opportunities in strategy, finance, ownership, and analytics."
+    },
+
+    entertainmentMedia: {
+      strength: 56,
+      notes: "Graduates increasingly enter entertainment strategy, media finance, streaming, and executive leadership."
+    },
+
+    ventureCapital: {
+      strength: 96,
+      notes: "One of the strongest undergraduate liberal arts pipelines into venture capital, startup investing, entrepreneurship, and innovation."
+    },
+
+    privateEquity: {
+      strength: 100,
+      notes: "Among the strongest undergraduate institutions in America for private equity, growth equity, and institutional investing."
+    },
+
+    investmentBanking: {
+      strength: 100,
+      notes: "Elite Wall Street and West Coast investment banking placement rivals many Ivy League universities."
+    },
+
+    consulting: {
+      strength: 100,
+      notes: "McKinsey, Bain, and BCG recruit heavily, making CMC one of the premier liberal arts colleges for consulting careers."
+    },
+
+    medicine: {
+      strength: 24,
+      notes: "Medicine exists but is not a defining institutional pathway."
+    },
+
+    healthcareAdministration: {
+      strength: 30,
+      notes: "Business and leadership training supports occasional healthcare management careers."
+    },
+
+    defense: {
+      strength: 42,
+      notes: "Government and policy programs connect students to defense policy and national security careers."
+    },
+
+    realEstate: {
+      strength: 74,
+      notes: "Southern California's commercial real estate and investment markets provide strong recruiting opportunities."
+    },
+
+    luxuryBrands: {
+      strength: 48,
+      notes: "Marketing, finance, and consumer strategy support luxury retail and premium consumer industries."
+    },
+
+    entrepreneurship: {
+      strength: 98,
+      notes: "Southern California's venture ecosystem, combined with CMC's leadership culture and alumni network, produces exceptional entrepreneurial outcomes."
+    },
+
+    technology: {
+      strength: 84,
+      notes: "Graduates frequently enter technology strategy, product management, operations, and executive leadership despite CMC's liberal arts focus."
+    },
+
+    publicPolicy: {
+      strength: 88,
+      notes: "Government majors place strongly into public policy, think tanks, diplomacy, and public leadership."
+    },
+
+    nonprofitLeadership: {
+      strength: 70,
+      notes: "Leadership education translates effectively into mission-driven organizations and philanthropic leadership."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 64,
+
+    firstGenerationSupport: 82,
+
+    wealthCreationPotential: 100,
+
+    familyBusinessPipelineStrength: 72
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 94,
+
+    automationResistance: 96,
+
+    adaptabilityScore: 98,
+
+    interdisciplinaryStrength: 98,
+
+    futureReadiness: 98,
+
+    entrepreneurialFlexibility: 100,
+
+    lifelongLearningCulture: 96,
+
+    innovationCapacity: 96
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 100,
+
+    communityLeadershipPotential: 94,
+
+    geographicMobility: 96,
+
+    workLifeBalancePotential: 84,
+
+    purposeAlignment: 90,
+
+    familyFormationSupport: 86,
+
+    personalDevelopmentPotential: 98,
+
+    careerOptionality: 98,
+
+    longTermLifeSatisfaction: 94
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 94,
+
+    networkMoat: 98,
+
+    geographicMoat: 96,
+
+    industryMoat: 100,
+
+    alumniMoat: 98,
+
+    brandDurability: 96,
+
+    overallMoatScore: 97
+
+  },
+
+  hillel_strength: "tier_1",
+  jewish_enrollment: "~15-18% Jewish undergraduate enrollment",
+  hillel_note: "CMC is part of the Claremont Colleges consortium — five campuses sharing a Hillel and Jewish community far larger than any single school. ~15-18% Jewish enrollment at CMC specifically. LA Jewish community (600,000 — second largest in America) provides extraordinary metro infrastructure. The Claremont Colleges Hillel is one of the strongest consortium Jewish communities in the country.",
+
+    trajectoryProfile: {
+
+    dominantTrajectory: "LEAVE",
+
+    leaverScore: 98,
+
+    returnerScore: 30,
+
+    stewardScore: 12,
+
+    navigatorScore: 100,
+
+    geographicLockIn: "very_low",
+
+    alumniDispersalPattern: "national"
+
+  }
+
+},
+
+
+// === Auburn_University ===
+"Auburn University": {
+
+  institutionNarrative: {
+
+    name: "Auburn University",
+
+    location: "Auburn, Alabama",
+
+    region: "South",
+
+    archetype: "The Engineering and Manufacturing University — SEC Tradition, Aerospace, and Industrial Leadership",
+
+    oneSentenceSummary: "Auburn University is one of the South's premier engineering and applied sciences universities, combining nationally respected engineering, aviation, architecture, agriculture, business, and supply chain programs with deep relationships across aerospace, automotive manufacturing, defense, construction, and the rapidly growing industrial economy of the Southeast.",
+
+    pipeline: "Approximately 34,000 students. Auburn is nationally recognized for Mechanical Engineering, Aerospace Engineering, Industrial and Systems Engineering, Civil Engineering, Building Science, Architecture, Aviation Management, Supply Chain Management, Agriculture, Forestry, Veterinary Medicine, Business, and Cybersecurity. Major recruiters include Boeing, Lockheed Martin, Airbus, Delta Air Lines, Southern Company, Mercedes-Benz, Hyundai, Honda, Alabama Power, KBR, Brasfield & Gorrie, Coca-Cola, Norfolk Southern, Norfolk Southern, Deloitte, PwC, EY, Chick-fil-A, John Deere, Georgia-Pacific, NASA, the U.S. Army Corps of Engineers, and numerous advanced manufacturing and defense contractors throughout the Southeast.",
+
+    hiddenPathway: "Auburn's greatest hidden advantage is its position inside the Southeast's manufacturing corridor. Students gain direct access to one of North America's fastest-growing clusters of automotive production, aerospace manufacturing, logistics, defense engineering, and industrial construction. Auburn's cooperative education programs and employer partnerships consistently translate into high job placement before graduation.",
+
+    institutionalSecret: "While Auburn is widely known for SEC athletics, its deeper institutional strength is producing engineers and operational leaders who manage complex physical systems. The university has built decades-long relationships with aerospace companies, automotive manufacturers, utilities, logistics firms, and industrial contractors that quietly make it one of the strongest engineering employment pipelines in the South.",
+
+    theRoom: "Located in eastern Alabama near the Georgia border, Auburn sits within driving distance of Atlanta, Birmingham, Huntsville, Montgomery, Columbus, and numerous aerospace, defense, automotive, logistics, and advanced manufacturing hubs. The campus combines a classic college-town atmosphere with exceptional employer access throughout the Southeast.",
+
+    lifestyle: "Traditional SEC college experience with strong school spirit, extensive student organizations, Division I athletics, Greek life, undergraduate research, cooperative education, and one of the nation's strongest alumni communities.",
+
+    bestFitPersonality: "Collaborative, practical, community-oriented, enjoys building and solving problems, appreciates tradition, leadership, teamwork, and hands-on learning.",
+
+    faithTradition: "Public",
+
+    geographicInfluenceRadius: "Strong throughout the Southeast with growing national recognition in engineering, aviation, construction, manufacturing, and supply chain leadership.",
+
+    economicOutcome: "Outstanding outcomes in engineering, manufacturing, construction, aviation, defense, agriculture, logistics, business, and industrial leadership, particularly across the Southeast's expanding economy.",
+
+    gradCities: [
+      "Atlanta GA",
+      "Birmingham AL",
+      "Huntsville AL",
+      "Nashville TN",
+      "Charlotte NC",
+      "Dallas TX",
+      "Houston TX"
+    ],
+
+    comparableInstitutions: [
+      "Virginia Tech",
+      "Texas A&M University",
+      "Clemson University",
+      "North Carolina State University",
+      "University of Tennessee"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Southern Union State Community College",
+        "Wallace Community College",
+        "Central Alabama Community College",
+        "Chattahoochee Valley Community College"
+      ],
+
+      transferAcceptanceRate: "~55%",
+
+      freshmanAcceptanceRate: "~50%",
+
+      estimatedSavingsRange: "$20,000-$60,000",
+
+      transferNotes: "Auburn maintains well-developed transfer pathways from Alabama community colleges. Engineering and business applicants benefit from completing strong prerequisite coursework before transfer."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Flagship Engineering and Land-Grant University",
+
+    institutionalPersonality: "collaborative, practical, innovative, tradition-driven, service-oriented",
+
+    cultureKeywords: [
+      "Engineering",
+      "Manufacturing",
+      "SEC",
+      "Leadership",
+      "Aerospace",
+      "Agriculture",
+      "Construction",
+      "Community",
+      "Tradition"
+    ],
+
+    missionOrientation: "Developing leaders who improve society through engineering, innovation, education, research, and service.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Learning through applied research, cooperative education, leadership, community engagement, and hands-on professional experience.",
+
+    competitiveness: "Moderately Selective",
+
+    politicalCulture: "Broadly moderate with strong emphasis on service, leadership, and community engagement.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Highly respected throughout engineering, manufacturing, agriculture, and the Southeast.",
+
+    socialClimate: "Friendly, collaborative, tradition-rich, highly engaged, and community-oriented.",
+
+    leadershipStyle: "Leadership through technical competence, teamwork, integrity, and practical problem-solving."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "One of the Southeast's leading engineering universities supplying talent to aerospace, automotive manufacturing, logistics, construction, and industrial innovation."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 70,
+    BosWash: 24,
+    TorBuffChester: 12,
+    TexasTriangle: 72,
+    CharLanta: 100,
+    NorCalInnovationCorridor: 28,
+    SoCalCreativeEconomy: 18
+
+  },
+
+  comparativePositioning: {
+
+    versusClemson:
+      "Both are elite engineering institutions with passionate athletic cultures, but Auburn has broader strengths in aviation, construction, agriculture, and manufacturing while Clemson has stronger automotive research ties.",
+
+    versusTexasA&M:
+      "Texas A&M operates on a much larger scale with stronger petroleum and military traditions, while Auburn provides a more intimate engineering environment with exceptional Southeast employer relationships.",
+
+    versusVirginiaTech:
+      "Virginia Tech offers broader national engineering recognition, while Auburn benefits from stronger integration into the Southeast's manufacturing and construction economy.",
+
+    versusNorthCarolinaState:
+      "NC State has stronger research intensity, while Auburn emphasizes undergraduate engagement, employer partnerships, and leadership development within the SEC culture."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Large",
+
+    undergraduateEnrollment: 26300,
+
+    graduateEnrollment: 8200,
+
+    totalEnrollment: 34500,
+
+    campusType: "Residential Public Research University",
+
+    residentialIntensity: 84,
+
+    communityFeel: 88,
+
+    studentFacultyRatio: "20:1",
+
+    classSizeExperience: "Lower-division courses can be large, particularly in engineering and business, while upper-level coursework becomes significantly smaller with extensive laboratory work, design projects, cooperative education, undergraduate research, and industry-sponsored capstone experiences.",
+
+    scaleAdvantages: [
+      "Major research university resources with broad academic offerings",
+      "Exceptional employer recruiting across engineering, aviation, manufacturing, and business",
+      "Large alumni network throughout the Southeast",
+      "Strong undergraduate research and cooperative education opportunities",
+      "Traditional SEC campus life with extensive student organizations and athletics"
+    ],
+
+    scaleDisadvantages: [
+      "Introductory STEM courses can be large and competitive",
+      "Some high-demand majors require maintaining strong GPAs",
+      "Popular engineering programs have rigorous workloads",
+      "Large campus requires students to actively seek faculty mentorship"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 74,
+      conscientiousness: 88,
+      extraversion: 78,
+      agreeableness: 84,
+      neuroticism: 32
+    },
+
+    hollandCodes: ["R", "E", "I"],
+
+    learningStyle: [
+      "Hands-On Learning",
+      "Engineering Design",
+      "Laboratory Research",
+      "Cooperative Education",
+      "Project-Based Learning"
+    ],
+
+    socialEnvironment: [
+      "Collaborative",
+      "Traditional",
+      "School Spirit",
+      "Career Focused",
+      "Community Oriented"
+    ],
+
+    idealStudentTraits: [
+      "Enjoys solving practical problems",
+      "Works well in teams",
+      "Interested in engineering, business, aviation, or construction",
+      "Values leadership and community",
+      "Likes balancing academics with campus involvement"
+    ],
+
+    thrivesIf: [
+      "Wants strong employer recruiting throughout college",
+      "Enjoys SEC traditions and campus community",
+      "Prefers applied learning over purely theoretical coursework",
+      "Plans for engineering, manufacturing, logistics, or business leadership",
+      "Likes combining internships with academics"
+    ],
+
+    strugglesIf: [
+      "Prefers very small class sizes",
+      "Dislikes large public universities",
+      "Wants highly specialized liberal arts education",
+      "Prefers urban campuses over college towns",
+      "Seeks highly individualized curricula"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking smaller private universities",
+      "Students moving toward highly specialized arts programs",
+      "Students uncomfortable with large introductory STEM courses"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Building Science",
+      "Industrial Design",
+      "Supply Chain Management",
+      "Wireless Engineering",
+      "Forestry",
+      "Poultry Science",
+      "Geospatial Engineering",
+      "Hospitality Management"
+    ],
+
+    hiddenCareerPipelines: [
+      "Commercial Construction",
+      "Airport Management",
+      "Industrial Automation",
+      "Utility Leadership",
+      "Defense Manufacturing",
+      "Corporate Operations",
+      "Infrastructure Development",
+      "Food Production"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Brasfield & Gorrie",
+      "Southern Company",
+      "Alabama Power",
+      "Airbus",
+      "Mercedes-Benz",
+      "John Deere",
+      "KBR",
+      "Norfolk Southern"
+    ],
+
+    overlookedStrengths: [
+      "Nationally elite Building Science program",
+      "Outstanding Aviation Management program",
+      "Strong undergraduate engineering research",
+      "Exceptional cooperative education opportunities",
+      "Deep employer relationships across the Southeast"
+    ],
+
+    sleeperIndustries: [
+      "Infrastructure Technology",
+      "Smart Manufacturing",
+      "Energy Systems",
+      "Autonomous Aviation",
+      "Industrial Robotics",
+      "Construction Technology"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 92,
+
+    mentorshipDensity: 88,
+
+    executiveAccess: 82,
+
+    internshipNetwork: 94,
+
+    familyBusinessExposure: 54,
+
+    relationshipCapitalScore: 90,
+
+    alumniLoyaltyScore: 100,
+
+    referralCultureStrength: 96,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Engineering",
+      "Advanced Manufacturing",
+      "Aerospace",
+      "Construction",
+      "Supply Chain",
+      "Agriculture",
+      "Business",
+      "Energy"
+    ],
+
+    regionalEconomicDrivers: [
+      "Automotive Manufacturing",
+      "Defense",
+      "Aerospace",
+      "Utilities",
+      "Construction",
+      "Agriculture",
+      "Industrial Logistics"
+    ],
+
+    topEmployers: [
+      "Lockheed Martin",
+      "Boeing",
+      "Airbus",
+      "Mercedes-Benz",
+      "Honda",
+      "Hyundai",
+      "Southern Company",
+      "Brasfield & Gorrie",
+      "NASA",
+      "Delta Air Lines"
+    ],
+
+    emergingIndustries: [
+      "Autonomous Manufacturing",
+      "Advanced Aerospace",
+      "Electric Vehicles",
+      "Battery Manufacturing",
+      "Industrial AI",
+      "Smart Infrastructure"
+    ],
+
+    startupDensity: "Moderate",
+
+    ventureCapitalAccess: 34,
+
+    corporateHeadquartersDensity: 62,
+
+    healthcareHubStrength: 48,
+
+    innovationIndex: 84
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Southeast Manufacturing, Aerospace, Construction, and Engineering Economy",
+
+    secondaryMarkets: [
+      "Atlanta GA",
+      "Birmingham AL",
+      "Huntsville AL",
+      "Charlotte NC",
+      "Dallas TX",
+      "Houston TX",
+      "Nashville TN"
+    ],
+
+    alumniStrongholds: [
+      "Atlanta GA",
+      "Birmingham AL",
+      "Huntsville AL",
+      "Nashville TN",
+      "Dallas TX"
+    ],
+
+    relocationPatterns: [
+      "A large percentage of graduates remain throughout Alabama and Georgia working in aerospace, automotive manufacturing, engineering, construction, logistics, and utilities.",
+      "Atlanta serves as the primary destination for consulting, corporate leadership, logistics, commercial real estate, and Fortune 500 careers.",
+      "Huntsville attracts a significant share of engineering graduates into defense, missile systems, aerospace, cybersecurity, and NASA-related organizations.",
+      "Texas increasingly attracts graduates into energy, engineering, aviation, manufacturing, and technology leadership.",
+      "A growing number of alumni relocate nationally into engineering management, corporate operations, industrial consulting, and executive leadership roles."
+    ],
+
+    regionalInfluenceScore: 100,
+
+    nationalReachScore: 78,
+
+    internationalReachScore: 38
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 72,
+
+    studentOrganizationStrength: 92,
+
+    leadershipDevelopment: 90,
+
+    crossDisciplinaryInteraction: 84,
+
+    civicEngagement: 82
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 8,
+      notes: "Minimal institutional emphasis."
+    },
+
+    healthWellness: {
+      strength: 34,
+      notes: "Health administration and exercise science provide regional opportunities, though healthcare is not Auburn's defining strength."
+    },
+
+    nutraceuticals: {
+      strength: 16,
+      notes: "Agriculture and food science support niche opportunities."
+    },
+
+    consumerProducts: {
+      strength: 62,
+      notes: "Strong pathways through supply chain, manufacturing, industrial design, and consumer product operations."
+    },
+
+    outdoorIndustry: {
+      strength: 58,
+      notes: "Forestry, wildlife sciences, natural resources, and outdoor recreation industries create meaningful regional career opportunities."
+    },
+
+    sportsBusiness: {
+      strength: 46,
+      notes: "SEC athletics provide opportunities in collegiate athletics, sponsorship, facilities management, and sports administration."
+    },
+
+    entertainmentMedia: {
+      strength: 18,
+      notes: "Communications graduates occasionally enter broadcasting and media, but this is not a primary institutional pipeline."
+    },
+
+    ventureCapital: {
+      strength: 28,
+      notes: "Limited venture ecosystem, though engineering entrepreneurship is steadily expanding."
+    },
+
+    privateEquity: {
+      strength: 24,
+      notes: "Some graduates enter industrial investment and infrastructure finance through engineering and business careers."
+    },
+
+    investmentBanking: {
+      strength: 32,
+      notes: "Selective placement into investment banking occurs primarily through high-performing business students."
+    },
+
+    consulting: {
+      strength: 72,
+      notes: "Engineering consulting, operations consulting, construction consulting, and Big Four advisory firms recruit consistently."
+    },
+
+    medicine: {
+      strength: 30,
+      notes: "Pre-health pathways exist, but Auburn is primarily recognized for engineering and applied sciences."
+    },
+
+    healthcareAdministration: {
+      strength: 36,
+      notes: "Business and public administration support regional healthcare management careers."
+    },
+
+    defense: {
+      strength: 92,
+      notes: "One of the strongest universities in the Southeast for defense engineering, aerospace, missile systems, and federal contracting through Huntsville and regional defense employers."
+    },
+
+    realEstate: {
+      strength: 54,
+      notes: "Building Science and construction management create exceptional pathways into commercial development and construction leadership."
+    },
+
+    luxuryBrands: {
+      strength: 8,
+      notes: "Very limited institutional emphasis."
+    },
+
+    entrepreneurship: {
+      strength: 68,
+      notes: "Engineering innovation, agricultural technology, and industrial startups create growing entrepreneurial opportunities."
+    },
+
+    technology: {
+      strength: 74,
+      notes: "Engineering, cybersecurity, software, industrial automation, and AI-enabled manufacturing continue expanding."
+    },
+
+    publicPolicy: {
+      strength: 24,
+      notes: "Limited institutional emphasis outside public administration and state government."
+    },
+
+    nonprofitLeadership: {
+      strength: 40,
+      notes: "Leadership development supports nonprofit careers, though industry remains the dominant destination."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 78,
+
+    firstGenerationSupport: 84,
+
+    wealthCreationPotential: 84,
+
+    familyBusinessPipelineStrength: 60
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 92,
+
+    automationResistance: 94,
+
+    adaptabilityScore: 90,
+
+    interdisciplinaryStrength: 84,
+
+    futureReadiness: 90,
+
+    entrepreneurialFlexibility: 80,
+
+    lifelongLearningCulture: 88,
+
+    innovationCapacity: 88
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 84,
+
+    communityLeadershipPotential: 92,
+
+    geographicMobility: 80,
+
+    workLifeBalancePotential: 88,
+
+    purposeAlignment: 90,
+
+    familyFormationSupport: 94,
+
+    personalDevelopmentPotential: 90,
+
+    careerOptionality: 88,
+
+    longTermLifeSatisfaction: 92
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 82,
+
+    networkMoat: 92,
+
+    geographicMoat: 94,
+
+    industryMoat: 92,
+
+    alumniMoat: 96,
+
+    brandDurability: 94,
+
+    overallMoatScore: 92
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "STEWARD",
+
+    leaverScore: 64,
+
+    returnerScore: 90,
+
+    stewardScore: 100,
+
+    navigatorScore: 76,
+
+    geographicLockIn: "moderate",
+
+    alumniDispersalPattern: "regional"
+
+  }
+
+},
+
+
+// === Clemson_University ===
+"Clemson University": {
+
+  institutionNarrative: {
+
+    name: "Clemson University",
+
+    location: "Clemson, South Carolina",
+
+    region: "South",
+
+    archetype: "The Innovation Engineering University — Automotive, Advanced Manufacturing, and Applied Research",
+
+    oneSentenceSummary: "Clemson University is one of America's premier public engineering universities, combining nationally recognized engineering, automotive research, business, architecture, agriculture, and computing programs with one of the deepest industry partnerships in the Southeast through advanced manufacturing, motorsports, aerospace, and the rapidly expanding South Carolina innovation economy.",
+
+    pipeline: "Approximately 29,000 students. Clemson is nationally recognized for Mechanical Engineering, Automotive Engineering, Industrial Engineering, Civil Engineering, Computer Science, Architecture, Construction Science, Supply Chain Management, Packaging Science, Agricultural Sciences, and Business Analytics. The Clemson University International Center for Automotive Research (CU-ICAR) has become one of the world's premier university-industry partnerships in mobility innovation. Major recruiters include BMW, Michelin, Boeing, Lockheed Martin, GE Vernova, Bosch, Fluor, Michelin North America, Deloitte, EY, PwC, Accenture, Amazon, Google, Microsoft, Volvo, Honda, Siemens, General Motors, and numerous advanced manufacturing, robotics, aerospace, and logistics companies throughout the Southeast.",
+
+    hiddenPathway: "Clemson's greatest hidden advantage is CU-ICAR in Greenville. Students work alongside engineers from BMW, Michelin, Bosch, and dozens of global mobility companies on autonomous vehicles, electrification, advanced manufacturing, robotics, and supply chain innovation. Few universities offer undergraduate students comparable exposure to real industrial research ecosystems.",
+
+    institutionalSecret: "Although Clemson is widely recognized for football, the university's long-term competitive advantage is its integration with South Carolina's advanced manufacturing economy. Clemson graduates are educated not simply as engineers but as systems thinkers capable of leading global manufacturing, mobility, energy, logistics, and technology organizations.",
+
+    theRoom: "Located on Lake Hartwell in South Carolina's Upstate, Clemson sits between Atlanta and Charlotte while maintaining direct access to Greenville, one of America's fastest-growing advanced manufacturing and technology hubs. BMW's largest manufacturing facility, Michelin North America's headquarters, aerospace suppliers, defense contractors, and hundreds of industrial companies surround the region.",
+
+    lifestyle: "Traditional college-town experience with exceptional school spirit, Division I athletics, extensive undergraduate research, strong Greek life, lake recreation, entrepreneurship, and close integration with engineering and innovation communities.",
+
+    bestFitPersonality: "Highly collaborative, practical, curious, enjoys solving complex problems, appreciates teamwork, leadership, and applied innovation.",
+
+    faithTradition: "Public",
+
+    geographicInfluenceRadius: "Strong throughout the Southeast with expanding national influence in engineering, manufacturing, automotive technology, supply chain, and computing.",
+
+    economicOutcome: "Outstanding outcomes in engineering, manufacturing, technology, consulting, construction, logistics, architecture, and industrial leadership with exceptional employer placement throughout the Southeast.",
+
+    gradCities: [
+      "Greenville SC",
+      "Charlotte NC",
+      "Atlanta GA",
+      "Charleston SC",
+      "Nashville TN",
+      "Dallas TX",
+      "Raleigh NC"
+    ],
+
+    comparableInstitutions: [
+      "Auburn University",
+      "Virginia Tech",
+      "North Carolina State University",
+      "Texas A&M University",
+      "Georgia Tech"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Tri-County Technical College",
+        "Greenville Technical College",
+        "Spartanburg Community College",
+        "York Technical College"
+      ],
+
+      transferAcceptanceRate: "~45%",
+
+      freshmanAcceptanceRate: "~43%",
+
+      estimatedSavingsRange: "$20,000-$60,000",
+
+      transferNotes: "Clemson maintains strong articulation pathways with South Carolina technical colleges, particularly for engineering, business, agriculture, and computing. Completing prerequisite STEM coursework significantly improves transfer readiness."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Flagship Innovation Research University",
+
+    institutionalPersonality: "innovative, collaborative, practical, ambitious, tradition-driven",
+
+    cultureKeywords: [
+      "Engineering",
+      "Innovation",
+      "Automotive",
+      "Manufacturing",
+      "Research",
+      "Leadership",
+      "Entrepreneurship",
+      "SEC",
+      "Applied Learning"
+    ],
+
+    missionOrientation: "Developing leaders who advance society through engineering, research, innovation, education, and public service.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Students learn through applied research, industry collaboration, engineering design, entrepreneurship, cooperative education, and interdisciplinary problem solving.",
+
+    competitiveness: "Moderately Selective",
+
+    politicalCulture: "Broadly moderate with strong emphasis on innovation, entrepreneurship, leadership, and service.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Nationally respected in engineering, manufacturing, automotive research, and applied sciences.",
+
+    socialClimate: "Collaborative, energetic, tradition-rich, highly engaged, and career focused.",
+
+    leadershipStyle: "Leadership through innovation, technical excellence, teamwork, integrity, and practical execution."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "Premier engineering university powering the Southeast's automotive, manufacturing, aerospace, logistics, and advanced technology economy."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 66,
+    BosWash: 28,
+    TorBuffChester: 12,
+    TexasTriangle: 62,
+    CharLanta: 100,
+    NorCalInnovationCorridor: 34,
+    SoCalCreativeEconomy: 18
+
+  },
+
+  comparativePositioning: {
+
+    versusAuburn:
+      "Both produce exceptional engineers, but Clemson has substantially deeper integration with automotive engineering, advanced mobility research, and industrial innovation through CU-ICAR.",
+
+    versusGeorgiaTech:
+      "Georgia Tech offers broader global research scale and higher selectivity, while Clemson delivers a more residential undergraduate experience with exceptional employer engagement.",
+
+    versusVirginiaTech:
+      "Virginia Tech emphasizes broad engineering research and defense partnerships, while Clemson differentiates itself through automotive systems, manufacturing innovation, and industry collaboration.",
+
+    versusNorthCarolinaState:
+      "NC State offers broader research infrastructure across STEM disciplines, while Clemson provides a more intimate campus culture with unusually strong employer integration in manufacturing and mobility."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Large",
+
+    undergraduateEnrollment: 23500,
+
+    graduateEnrollment: 5600,
+
+    totalEnrollment: 29100,
+
+    campusType: "Residential Public Research University",
+
+    residentialIntensity: 88,
+
+    communityFeel: 90,
+
+    studentFacultyRatio: "16:1",
+
+    classSizeExperience: "Introductory engineering, business, and science courses can be large, while upper-division coursework becomes significantly more project-based with extensive laboratory work, undergraduate research, industry-sponsored design projects, and direct collaboration with corporate partners through CU-ICAR and Clemson's research centers.",
+
+    scaleAdvantages: [
+      "National-caliber engineering and research infrastructure",
+      "Outstanding employer recruiting throughout the Southeast",
+      "Exceptional undergraduate research opportunities",
+      "Strong campus community with traditional college-town atmosphere",
+      "Broad academic offerings supported by extensive alumni engagement"
+    ],
+
+    scaleDisadvantages: [
+      "Large introductory STEM courses require student initiative",
+      "Engineering curricula are academically demanding",
+      "Popular majors can have competitive progression requirements",
+      "Students must actively pursue faculty mentorship within a large university environment"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 80,
+      conscientiousness: 90,
+      extraversion: 78,
+      agreeableness: 82,
+      neuroticism: 30
+    },
+
+    hollandCodes: ["R", "I", "E"],
+
+    learningStyle: [
+      "Applied Engineering",
+      "Laboratory Research",
+      "Industry Collaboration",
+      "Project-Based Learning",
+      "Cooperative Education"
+    ],
+
+    socialEnvironment: [
+      "Collaborative",
+      "School Spirit",
+      "Career Focused",
+      "Leadership Oriented",
+      "Community Driven"
+    ],
+
+    idealStudentTraits: [
+      "Enjoys solving engineering and technical problems",
+      "Works well on multidisciplinary teams",
+      "Interested in innovation and product development",
+      "Balances academics with campus involvement",
+      "Values hands-on learning"
+    ],
+
+    thrivesIf: [
+      "Wants strong engineering recruiting before graduation",
+      "Enjoys large campus traditions and athletics",
+      "Prefers practical applications over purely theoretical learning",
+      "Plans for engineering, technology, manufacturing, or consulting careers",
+      "Likes internships integrated into academic programs"
+    ],
+
+    strugglesIf: [
+      "Prefers intimate liberal arts environments",
+      "Dislikes large public university systems",
+      "Needs highly individualized academic advising",
+      "Prefers urban campuses over college towns",
+      "Avoids rigorous quantitative coursework"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking smaller private universities",
+      "Students changing into highly specialized arts disciplines",
+      "Students uncomfortable with demanding STEM curricula"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Packaging Science",
+      "Automotive Engineering",
+      "Construction Science and Management",
+      "Materials Science",
+      "Agricultural Mechanization",
+      "Biosystems Engineering",
+      "Supply Chain Management",
+      "Parks, Recreation and Tourism Management"
+    ],
+
+    hiddenCareerPipelines: [
+      "Automotive Research",
+      "Mobility Technology",
+      "Industrial Robotics",
+      "Advanced Manufacturing",
+      "Commercial Construction",
+      "Energy Infrastructure",
+      "Operations Consulting",
+      "Corporate Innovation"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "BMW Manufacturing",
+      "Michelin North America",
+      "Bosch",
+      "GE Vernova",
+      "Fluor",
+      "Volvo Cars",
+      "Siemens",
+      "Milliken & Company"
+    ],
+
+    overlookedStrengths: [
+      "International Center for Automotive Research (CU-ICAR)",
+      "Nationally elite Packaging Science program",
+      "Exceptional undergraduate engineering design experiences",
+      "Strong entrepreneurship ecosystem",
+      "Close partnerships with global manufacturing firms"
+    ],
+
+    sleeperIndustries: [
+      "Electric Vehicle Manufacturing",
+      "Autonomous Mobility",
+      "Industrial AI",
+      "Smart Factories",
+      "Infrastructure Technology",
+      "Advanced Materials"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 92,
+
+    mentorshipDensity: 88,
+
+    executiveAccess: 84,
+
+    internshipNetwork: 96,
+
+    familyBusinessExposure: 52,
+
+    relationshipCapitalScore: 92,
+
+    alumniLoyaltyScore: 98,
+
+    referralCultureStrength: 96,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Engineering",
+      "Automotive",
+      "Advanced Manufacturing",
+      "Technology",
+      "Construction",
+      "Supply Chain",
+      "Business",
+      "Energy"
+    ],
+
+    regionalEconomicDrivers: [
+      "Automotive Manufacturing",
+      "Advanced Materials",
+      "Aerospace",
+      "Logistics",
+      "Construction",
+      "Energy",
+      "Industrial Technology"
+    ],
+
+    topEmployers: [
+      "BMW",
+      "Michelin",
+      "Boeing",
+      "Bosch",
+      "Lockheed Martin",
+      "GE Vernova",
+      "Fluor",
+      "Amazon",
+      "Google",
+      "Microsoft"
+    ],
+
+    emergingIndustries: [
+      "Electric Vehicles",
+      "Autonomous Systems",
+      "Industrial Artificial Intelligence",
+      "Battery Manufacturing",
+      "Smart Logistics",
+      "Advanced Robotics"
+    ],
+
+    startupDensity: "Moderate",
+
+    ventureCapitalAccess: 40,
+
+    corporateHeadquartersDensity: 66,
+
+    healthcareHubStrength: 46,
+
+    innovationIndex: 90
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Southeast Advanced Manufacturing, Automotive, Engineering, and Technology Economy",
+
+    secondaryMarkets: [
+      "Charlotte NC",
+      "Atlanta GA",
+      "Greenville SC",
+      "Raleigh NC",
+      "Nashville TN",
+      "Dallas TX",
+      "Houston TX"
+    ],
+
+    alumniStrongholds: [
+      "Greenville SC",
+      "Charlotte NC",
+      "Atlanta GA",
+      "Charleston SC",
+      "Raleigh NC"
+    ],
+
+    relocationPatterns: [
+      "Many graduates remain throughout South Carolina, joining advanced manufacturing, aerospace, automotive, logistics, and engineering firms centered around Greenville, Spartanburg, and Charleston.",
+      "Charlotte attracts graduates into consulting, commercial banking, engineering leadership, energy, and Fortune 500 corporate roles.",
+      "Atlanta remains a major destination for technology, engineering consulting, corporate leadership, logistics, and entrepreneurship.",
+      "Texas increasingly attracts graduates into energy, manufacturing, aerospace, software, and industrial operations.",
+      "A growing percentage relocate nationally into technology, consulting, AI-enabled manufacturing, and executive leadership positions."
+    ],
+
+    regionalInfluenceScore: 100,
+
+    nationalReachScore: 82,
+
+    internationalReachScore: 44
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 68,
+
+    studentOrganizationStrength: 94,
+
+    leadershipDevelopment: 92,
+
+    crossDisciplinaryInteraction: 86,
+
+    civicEngagement: 84
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 6,
+      notes: "Minimal institutional emphasis."
+    },
+
+    healthWellness: {
+      strength: 34,
+      notes: "Health sciences exist, but engineering and manufacturing remain Clemson's defining strengths."
+    },
+
+    nutraceuticals: {
+      strength: 14,
+      notes: "Agricultural sciences create niche opportunities in food innovation."
+    },
+
+    consumerProducts: {
+      strength: 64,
+      notes: "Strong preparation through packaging science, industrial engineering, manufacturing, and supply chain."
+    },
+
+    outdoorIndustry: {
+      strength: 54,
+      notes: "Excellent pathways through forestry, environmental sciences, parks management, and outdoor recreation industries."
+    },
+
+    sportsBusiness: {
+      strength: 42,
+      notes: "Athletic administration and sports operations benefit from Clemson's nationally recognized athletic brand."
+    },
+
+    entertainmentMedia: {
+      strength: 18,
+      notes: "Communications supports regional media careers but is not a major institutional focus."
+    },
+
+    ventureCapital: {
+      strength: 34,
+      notes: "Engineering entrepreneurship and mobility innovation create growing venture opportunities."
+    },
+
+    privateEquity: {
+      strength: 26,
+      notes: "Industrial investment and manufacturing-focused private equity recruit selectively."
+    },
+
+    investmentBanking: {
+      strength: 36,
+      notes: "Business students place into banking, though engineering, consulting, and manufacturing dominate outcomes."
+    },
+
+    consulting: {
+      strength: 82,
+      notes: "Engineering consulting, operations consulting, Big Four firms, and manufacturing strategy recruit heavily."
+    },
+
+    medicine: {
+      strength: 24,
+      notes: "Pre-med pathways exist but medicine is not Clemson's defining institutional identity."
+    },
+
+    healthcareAdministration: {
+      strength: 30,
+      notes: "Business graduates occasionally enter healthcare operations and administration."
+    },
+
+    defense: {
+      strength: 82,
+      notes: "Strong aerospace, defense manufacturing, cybersecurity, and engineering pathways throughout the Southeast."
+    },
+
+    realEstate: {
+      strength: 52,
+      notes: "Construction science and engineering support commercial development and infrastructure careers."
+    },
+
+    luxuryBrands: {
+      strength: 8,
+      notes: "Limited institutional emphasis."
+    },
+
+    entrepreneurship: {
+      strength: 74,
+      notes: "Engineering innovation, mobility technology, and manufacturing startups create expanding entrepreneurial opportunities."
+    },
+
+    technology: {
+      strength: 82,
+      notes: "Computer science, AI, software engineering, cybersecurity, robotics, and industrial technology continue growing rapidly."
+    },
+
+    publicPolicy: {
+      strength: 20,
+      notes: "Limited institutional emphasis outside public administration and state government."
+    },
+
+    nonprofitLeadership: {
+      strength: 38,
+      notes: "Leadership education supports nonprofit work, though industry remains the dominant destination."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 76,
+
+    firstGenerationSupport: 82,
+
+    wealthCreationPotential: 86,
+
+    familyBusinessPipelineStrength: 56
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 94,
+
+    automationResistance: 96,
+
+    adaptabilityScore: 92,
+
+    interdisciplinaryStrength: 88,
+
+    futureReadiness: 94,
+
+    entrepreneurialFlexibility: 84,
+
+    lifelongLearningCulture: 90,
+
+    innovationCapacity: 94
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 86,
+
+    communityLeadershipPotential: 92,
+
+    geographicMobility: 82,
+
+    workLifeBalancePotential: 90,
+
+    purposeAlignment: 90,
+
+    familyFormationSupport: 94,
+
+    personalDevelopmentPotential: 90,
+
+    careerOptionality: 90,
+
+    longTermLifeSatisfaction: 93
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 84,
+
+    networkMoat: 92,
+
+    geographicMoat: 96,
+
+    industryMoat: 94,
+
+    alumniMoat: 96,
+
+    brandDurability: 96,
+
+    overallMoatScore: 93
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "STEWARD",
+
+    leaverScore: 66,
+
+    returnerScore: 92,
+
+    stewardScore: 100,
+
+    navigatorScore: 78,
+
+    geographicLockIn: "moderate",
+
+    alumniDispersalPattern: "regional"
+
+  }
+
+},
+
+
+// === Babson_College ===
+"Babson College": {
+
+  institutionNarrative: {
+
+    name: "Babson College",
+
+    location: "Wellesley, Massachusetts",
+
+    region: "Northeast",
+
+    archetype: "The Entrepreneurship College — Venture Creation, Family Business, and Entrepreneurial Leadership",
+
+    oneSentenceSummary: "Babson College is the world's premier undergraduate institution for entrepreneurship, combining elite business education, venture creation, family enterprise leadership, finance, and innovation with unparalleled access to Boston's startup ecosystem, venture capital community, and global entrepreneurial network.",
+
+    pipeline: "Approximately 3,800 students. Babson is internationally recognized as the world's leading entrepreneurship college, with nationally elite programs in Entrepreneurship, Finance, Business Analytics, Marketing, Family Business Management, Economics, Technology Ventures, and Global Business. Rather than emphasizing traditional corporate recruiting alone, Babson intentionally develops company builders, investors, operators, and entrepreneurial leaders. Major recruiters include Bain & Company, McKinsey & Company, Boston Consulting Group, Deloitte, Goldman Sachs, Morgan Stanley, Fidelity Investments, HubSpot, Amazon, Google, Microsoft, Dell Technologies, PwC, EY, KPMG, General Catalyst, Bain Capital Ventures, and hundreds of venture-backed startups throughout Boston, New York, Miami, Austin, Silicon Valley, and internationally.",
+
+    hiddenPathway: "Babson's greatest hidden advantage is its density of founders. Few universities in the world place students into classrooms where classmates are already operating businesses, raising venture capital, managing family enterprises, or launching startups before graduation. The entrepreneurial peer network often becomes more valuable than the curriculum itself, producing lifelong co-founders, investors, executives, and business partners.",
+
+    institutionalSecret: "Babson teaches entrepreneurship as a method of thinking rather than simply starting companies. Every student—regardless of major—learns opportunity recognition, resource allocation, uncertainty management, customer discovery, financial modeling, leadership, and execution. This mindset produces graduates who consistently outperform peers across startups, Fortune 500 companies, private equity, consulting, family businesses, and nonprofit leadership.",
+
+    theRoom: "Located in Wellesley just outside Boston, Babson sits inside one of the world's most powerful innovation ecosystems alongside MIT, Harvard, Boston College, Boston University, and hundreds of venture-backed startups, private equity firms, family offices, biotech companies, and global asset managers. Students regularly engage with investors, founders, executives, and entrepreneurs throughout Greater Boston.",
+
+    lifestyle: "Highly ambitious, collaborative, entrepreneurial, professionally oriented, and globally minded. Students spend significant time building companies, participating in venture competitions, consulting projects, internships, investment funds, startup accelerators, and leadership organizations while maintaining a close-knit residential community.",
+
+    bestFitPersonality: "Highly entrepreneurial, action-oriented, comfortable with ambiguity, enjoys creating opportunities, strong leadership instincts, high Openness with very high Conscientiousness and moderate-to-high Extraversion.",
+
+    faithTradition: "None",
+
+    geographicInfluenceRadius: "Global influence with especially strong placement throughout Boston, New York, Miami, Austin, San Francisco, London, Dubai, Singapore, and major entrepreneurial ecosystems worldwide.",
+
+    economicOutcome: "Exceptional outcomes in entrepreneurship, venture capital, private equity, consulting, finance, technology, family business leadership, corporate innovation, and executive management with one of the highest entrepreneurial participation rates of any college in the world.",
+
+    gradCities: [
+      "Boston MA",
+      "New York NY",
+      "Miami FL",
+      "San Francisco CA",
+      "Austin TX",
+      "London UK",
+      "Dubai UAE"
+    ],
+
+    comparableInstitutions: [
+      "University of Pennsylvania (Wharton)",
+      "Claremont McKenna College",
+      "Bentley University",
+      "Northeastern University",
+      "Indiana University (Kelley)"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "MassBay Community College",
+        "Middlesex Community College",
+        "Bunker Hill Community College",
+        "Quinsigamond Community College"
+      ],
+
+      transferAcceptanceRate: "~55%",
+
+      freshmanAcceptanceRate: "~22%",
+
+      estimatedSavingsRange: "$25,000-$80,000",
+
+      transferNotes: "Babson welcomes transfer students who demonstrate strong academic performance, leadership, entrepreneurial initiative, and quantitative preparation. Business experience, venture creation, or meaningful work experience strengthen transfer applications."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+    archetype: "Elite Entrepreneurship College",
+
+    institutionalPersonality: "entrepreneurial, ambitious, collaborative, innovative, globally connected",
+
+    cultureKeywords: [
+      "Entrepreneurship",
+      "Innovation",
+      "Leadership",
+      "Startups",
+      "Finance",
+      "Family Business",
+      "Venture Capital",
+      "Global Business",
+      "Execution"
+    ],
+
+    missionOrientation: "Educating entrepreneurial leaders who create economic and social value everywhere.",
+
+    faithTradition: "None",
+
+    educationalPhilosophy: "Students learn by building companies, solving real business problems, leading teams, engaging investors, and applying entrepreneurial thinking across every discipline.",
+
+    competitiveness: "Selective",
+
+    politicalCulture: "Broadly moderate and globally oriented, emphasizing innovation, markets, ethical leadership, and practical problem-solving.",
+
+    studentAutonomy: "Very High",
+
+    prestigeOrientation: "Globally elite within entrepreneurship and entrepreneurial education.",
+
+    socialClimate: "Collaborative, ambitious, opportunity-oriented, highly international, and professionally focused.",
+
+    leadershipStyle: "Leadership through initiative, execution, innovation, resilience, and opportunity creation."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Premier entrepreneurship institution fueling Boston's venture capital, startup, technology, finance, and innovation economy."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 20,
+    BosWash: 100,
+    TorBuffChester: 42,
+    TexasTriangle: 58,
+    CharLanta: 34,
+    NorCalInnovationCorridor: 92,
+    SoCalCreativeEconomy: 44
+
+  },
+
+  comparativePositioning: {
+
+    versusWharton:
+      "Wharton is broader and more finance-oriented, while Babson is substantially more entrepreneurial and venture creation focused at the undergraduate level.",
+
+    versusClaremontMcKenna:
+      "CMC emphasizes leadership through economics, finance, and public affairs, while Babson develops founders, operators, investors, and entrepreneurial executives.",
+
+    versusBentley:
+      "Bentley prepares outstanding corporate business professionals, whereas Babson intentionally develops company builders and entrepreneurial leaders.",
+
+    versusNortheastern:
+      "Northeastern emphasizes experiential education across many industries, while Babson remains singularly focused on entrepreneurship, innovation, and venture creation."
+
+  },
+    institutionScale: {
+
+    enrollmentCategory: "Small",
+
+    undergraduateEnrollment: 2400,
+
+    graduateEnrollment: 1400,
+
+    totalEnrollment: 3800,
+
+    campusType: "Residential Business College",
+
+    residentialIntensity: 90,
+
+    communityFeel: 96,
+
+    studentFacultyRatio: "13:1",
+
+    classSizeExperience: "Most classes are discussion-based, team-oriented, and project-driven. Students regularly build companies, pitch investors, consult for real businesses, and collaborate with faculty and entrepreneurs. Small class sizes allow for individualized mentorship while maintaining extensive access to Boston's broader innovation ecosystem.",
+
+    scaleAdvantages: [
+      "One of the world's most concentrated entrepreneurship ecosystems",
+      "Highly personalized faculty mentorship",
+      "Exceptional founder and investor peer network",
+      "Strong alumni engagement throughout venture capital and family business",
+      "Extensive experiential learning beginning in the first year"
+    ],
+
+    scaleDisadvantages: [
+      "Limited academic breadth outside business disciplines",
+      "No engineering, medical, or comprehensive liberal arts infrastructure",
+      "Students seeking traditional college athletics may find fewer options",
+      "Entrepreneurial culture can feel highly ambitious and competitive"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 94,
+      conscientiousness: 98,
+      extraversion: 82,
+      agreeableness: 74,
+      neuroticism: 28
+    },
+
+    hollandCodes: ["E", "I", "C"],
+
+    learningStyle: [
+      "Experiential Learning",
+      "Company Building",
+      "Case Studies",
+      "Consulting Projects",
+      "Leadership Development"
+    ],
+
+    socialEnvironment: [
+      "Entrepreneurial",
+      "Collaborative",
+      "Career Focused",
+      "Globally Diverse",
+      "Innovation Driven"
+    ],
+
+    idealStudentTraits: [
+      "Naturally entrepreneurial",
+      "Comfortable taking calculated risks",
+      "Interested in business creation",
+      "Strong communicator",
+      "Action-oriented problem solver"
+    ],
+
+    thrivesIf: [
+      "Wants to build or acquire businesses",
+      "Enjoys uncertainty and innovation",
+      "Values networking with founders and investors",
+      "Prefers applied business education over theory",
+      "Wants access to Boston's startup ecosystem"
+    ],
+
+    strugglesIf: [
+      "Prefers traditional liberal arts education",
+      "Needs broad STEM offerings",
+      "Dislikes networking and relationship-building",
+      "Prefers structured corporate career paths only",
+      "Wants major Division I athletics to define campus life"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking engineering or natural sciences",
+      "Students wanting a comprehensive research university",
+      "Students uncomfortable with entrepreneurial ambiguity"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Business Analytics",
+      "Entrepreneurial Finance",
+      "Technology Entrepreneurship",
+      "Global Business Management",
+      "Environmental Sustainability",
+      "Legal Studies",
+      "Business Economics",
+      "Strategic Marketing"
+    ],
+
+    hiddenCareerPipelines: [
+      "Search Funds",
+      "Family Office Leadership",
+      "Independent Sponsorship",
+      "Venture Studio Operations",
+      "Corporate Innovation",
+      "Private Company Acquisitions",
+      "Growth Equity Operations",
+      "Founder CEO"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "General Catalyst",
+      "Bain Capital Ventures",
+      "Fidelity Investments",
+      "HubSpot",
+      "MassChallenge",
+      "Techstars",
+      "Golden Seeds",
+      "Battery Ventures"
+    ],
+
+    overlookedStrengths: [
+      "Arthur M. Blank Center for Entrepreneurship",
+      "Family Entrepreneurship programs",
+      "Global entrepreneurship immersion experiences",
+      "Strong investor and founder alumni density",
+      "One of the highest undergraduate startup formation rates in the world"
+    ],
+
+    sleeperIndustries: [
+      "Creator Economy",
+      "Climate Technology",
+      "Health Technology",
+      "AI Startups",
+      "Small Business Acquisition",
+      "Digital Commerce"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 98,
+
+    mentorshipDensity: 98,
+
+    executiveAccess: 96,
+
+    internshipNetwork: 92,
+
+    familyBusinessExposure: 92,
+
+    relationshipCapitalScore: 98,
+
+    alumniLoyaltyScore: 96,
+
+    referralCultureStrength: 98,
+
+    donorNetworkStrength: "",
+
+    boardMemberDensity: ""
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Entrepreneurship",
+      "Venture Capital",
+      "Private Equity",
+      "Finance",
+      "Technology",
+      "Consulting",
+      "Consumer Products",
+      "Family Business"
+    ],
+
+    regionalEconomicDrivers: [
+      "Technology",
+      "Biotechnology",
+      "Asset Management",
+      "Higher Education",
+      "Healthcare",
+      "Artificial Intelligence",
+      "Startup Ecosystem"
+    ],
+
+    topEmployers: [
+      "Bain & Company",
+      "McKinsey & Company",
+      "Goldman Sachs",
+      "Fidelity Investments",
+      "HubSpot",
+      "Google",
+      "Amazon",
+      "Deloitte",
+      "EY",
+      "General Catalyst"
+    ],
+
+    emergingIndustries: [
+      "Artificial Intelligence",
+      "Climate Technology",
+      "FinTech",
+      "Digital Health",
+      "Creator Economy",
+      "Business Acquisition Entrepreneurship"
+    ],
+
+    startupDensity: "Very High",
+
+    ventureCapitalAccess: 98,
+
+    corporateHeadquartersDensity: 90,
+
+    healthcareHubStrength: 84,
+
+    innovationIndex: 100
+
+  },
+    geographicInfluence: {
+
+    dominantMarket: "Boston Venture Capital, Entrepreneurship, Technology, and Innovation Economy",
+
+    secondaryMarkets: [
+      "New York NY",
+      "San Francisco CA",
+      "Miami FL",
+      "Austin TX",
+      "London UK",
+      "Singapore",
+      "Dubai UAE"
+    ],
+
+    alumniStrongholds: [
+      "Boston MA",
+      "New York NY",
+      "San Francisco CA",
+      "Miami FL",
+      "London UK"
+    ],
+
+    relocationPatterns: [
+      "Many graduates remain in Greater Boston to launch startups, join venture-backed companies, work in venture capital, consulting, or asset management.",
+      "New York attracts graduates into private equity, investment banking, consulting, family offices, and entrepreneurial finance.",
+      "San Francisco remains a major destination for venture capital, technology startups, product leadership, artificial intelligence, and founder ecosystems.",
+      "Miami and Austin increasingly attract graduates building technology companies, investment firms, and digitally native businesses.",
+      "International students frequently return to leadership positions within family businesses or launch ventures throughout Europe, Asia, Latin America, and the Middle East."
+    ],
+
+    regionalInfluenceScore: 94,
+
+    nationalReachScore: 96,
+
+    internationalReachScore: 98
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 6,
+
+    studentOrganizationStrength: 98,
+
+    leadershipDevelopment: 100,
+
+    crossDisciplinaryInteraction: 88,
+
+    civicEngagement: 72
+
+  },
+
+  industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 74,
+      notes: "Excellent preparation for beauty, cosmetics, fragrance, and luxury entrepreneurs through consumer brand building and direct-to-consumer business education."
+    },
+
+    healthWellness: {
+      strength: 68,
+      notes: "Strong entrepreneurial pathways into health technology, fitness, wellness brands, and healthcare innovation."
+    },
+
+    nutraceuticals: {
+      strength: 72,
+      notes: "Consumer packaged goods, wellness startups, and functional nutrition companies are common entrepreneurial destinations."
+    },
+
+    consumerProducts: {
+      strength: 98,
+      notes: "One of the strongest undergraduate institutions in America for consumer brand creation, e-commerce, product innovation, and scaling founder-led businesses."
+    },
+
+    outdoorIndustry: {
+      strength: 48,
+      notes: "Entrepreneurship education translates effectively into outdoor brands and equipment startups."
+    },
+
+    sportsBusiness: {
+      strength: 60,
+      notes: "Strong preparation for sports entrepreneurship, ownership groups, athlete businesses, and sports technology ventures."
+    },
+
+    entertainmentMedia: {
+      strength: 62,
+      notes: "Graduates increasingly build creator economy companies, media startups, agencies, and digital entertainment businesses."
+    },
+
+    ventureCapital: {
+      strength: 100,
+      notes: "Arguably the world's strongest undergraduate ecosystem for entrepreneurship, venture capital, startup investing, and founder development."
+    },
+
+    privateEquity: {
+      strength: 84,
+      notes: "Strong placement into growth equity, lower middle-market private equity, independent sponsorship, and entrepreneurship through acquisition."
+    },
+
+    investmentBanking: {
+      strength: 72,
+      notes: "Investment banking recruiting exists but entrepreneurship and venture creation remain the defining institutional identity."
+    },
+
+    consulting: {
+      strength: 82,
+      notes: "Top consulting firms recruit Babson graduates for strategy, innovation, and entrepreneurial problem-solving."
+    },
+
+    medicine: {
+      strength: 12,
+      notes: "Very limited direct preparation outside healthcare entrepreneurship."
+    },
+
+    healthcareAdministration: {
+      strength: 44,
+      notes: "Business education supports healthcare innovation and health system leadership."
+    },
+
+    defense: {
+      strength: 10,
+      notes: "Minimal institutional emphasis."
+    },
+
+    realEstate: {
+      strength: 62,
+      notes: "Graduates frequently build or acquire commercial real estate, development, and investment businesses."
+    },
+
+    luxuryBrands: {
+      strength: 82,
+      notes: "Outstanding preparation for entrepreneurial luxury brands, premium consumer products, fashion startups, and lifestyle businesses."
+    },
+
+    entrepreneurship: {
+      strength: 100,
+      notes: "The defining institutional strength. Babson is globally recognized as the premier undergraduate institution for entrepreneurship and founder development."
+    },
+
+    technology: {
+      strength: 90,
+      notes: "Graduates frequently launch software companies, AI startups, SaaS firms, fintech businesses, and technology-enabled services."
+    },
+
+    publicPolicy: {
+      strength: 18,
+      notes: "Limited emphasis outside innovation policy and economic development."
+    },
+
+    nonprofitLeadership: {
+      strength: 56,
+      notes: "Entrepreneurial leadership translates well into social enterprises and mission-driven organizations."
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 70,
+
+    firstGenerationSupport: 82,
+
+    wealthCreationPotential: 100,
+
+    familyBusinessPipelineStrength: 100
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 98,
+
+    automationResistance: 98,
+
+    adaptabilityScore: 100,
+
+    interdisciplinaryStrength: 90,
+
+    futureReadiness: 100,
+
+    entrepreneurialFlexibility: 100,
+
+    lifelongLearningCulture: 100,
+
+    innovationCapacity: 100
+
+  },
+    lifeDesignOutcomes: {
+
+    wealthCreationPotential: 100,
+
+    communityLeadershipPotential: 96,
+
+    geographicMobility: 98,
+
+    workLifeBalancePotential: 82,
+
+    purposeAlignment: 98,
+
+    familyFormationSupport: 82,
+
+    personalDevelopmentPotential: 100,
+
+    careerOptionality: 100,
+
+    longTermLifeSatisfaction: 96
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 92,
+
+    networkMoat: 98,
+
+    geographicMoat: 94,
+
+    industryMoat: 100,
+
+    alumniMoat: 98,
+
+    brandDurability: 98,
+
+    overallMoatScore: 98
+
+  },
+
+  hillel_strength: "tier_1",
+  jewish_enrollment: "~15-18% Jewish undergraduate enrollment",
+  hillel_note: "Babson has notably high Jewish enrollment for its size — ~15-18% at 2,200 undergrads. The intersection of business-oriented Jewish families and Babson's entrepreneurship focus creates a self-reinforcing draw. Jewish students are a culturally significant presence in the Babson business community. Boston Jewish community (250,000+) provides strong metro infrastructure.",
+
+    trajectoryProfile: {
+
+    dominantTrajectory: "NAVIGATOR",
+
+    leaverScore: 96,
+
+    returnerScore: 48,
+
+    stewardScore: 34,
+
+    navigatorScore: 100,
+
+    geographicLockIn: "very_low",
+
+    alumniDispersalPattern: "global"
+
+  }
+
+},
 
 module.exports = University_of_Tulsa;
 
