@@ -18,8 +18,6 @@
 <script src="geo_industry_db_NY_Boston_DC_pass4.js"></script>
 <script src="lifescape_curation_map_v1.js"></script>
 <script src="university-content.js"></script>
-<script src="scorecard_v500.js"></script>
-<script src="scorecard_merge.js"></script>
 
 <script>
 // ── HBCU Regional Integrity Map ───────────────────────────────────────────────
@@ -126,12 +124,6 @@ function isHBCUOutOfRegion(schoolName, studentRegions) {
 }
 </script>
 <script src="lifescape_college_prefs_v3.js"></script>
-<script>
-  // Initialize Scorecard merge layer once all JS files are loaded
-  if (typeof initScorecardIndex === 'function') {
-    initScorecardIndex();
-  }
-</script>
 
 <style>
 /* ── TOKENS ─────────────────────────────────────────── */
@@ -4976,25 +4968,9 @@ async function submitLifescape() {
 
         if(schoolContent.length >= 3) {
           const _promptCount = Math.min(schoolContent.length, _schoolCount + 2);
-          // Build base school content block (V5 prose)
-          const _baseSchoolBlock = typeof formatSchoolsForPrompt !== 'undefined'
+          const schoolContentBlock = typeof formatSchoolsForPrompt !== 'undefined'
             ? formatSchoolsForPrompt(schoolContent.slice(0, _promptCount))
             : schoolContent.map(s => `${s.name}: ${s.hidden_pathway}`).join('\n\n');
-
-          // Append Scorecard federal data blocks where available
-          const _schoolNamesForEnrich = schoolContent.slice(0, _promptCount).map(s => s.name);
-          var _scorecardBlocks = '';
-          if (typeof enrichMatchCandidates === 'function' && typeof buildScorecardPromptBlock === 'function') {
-            const _enriched = enrichMatchCandidates(_schoolNamesForEnrich, profile);
-            const _scLines = Object.values(_enriched)
-              .map(r => buildScorecardPromptBlock(r))
-              .filter(Boolean);
-            if (_scLines.length > 0) {
-              _scorecardBlocks = '\n\n── FEDERAL OUTCOME DATA (source: U.S. Dept of Education) ──\n'
-                + _scLines.join('\n\n');
-            }
-          }
-          const schoolContentBlock = _baseSchoolBlock + _scorecardBlocks;
 
           console.log('[callD] prompt block length:', schoolContentBlock.length);
 
@@ -6349,6 +6325,19 @@ var HILLEL_QUALITY = {
   'James Madison University': 'Strong — JMU draws from the DC, Maryland, and Virginia Jewish corridor. Active and well-attended Hillel for a regional university. Greek life concentration mirrors the Alabama/USC model. DC metro is 2 hours away providing weekend Jewish infrastructure.',
   // ── Additional Southeast ─────────────────────────────────────────────
   'Clemson University': 'Strong — Clemson draws from Charlotte, Atlanta, and Research Triangle Jewish families. Hillel at Clemson is active and growing — Chabad of Clemson opened in recent years. Charlotte (2 hrs) and Atlanta (2.5 hrs) provide weekend metro access. Growing Jewish community in the SEC Southeast corridor.',
+
+  // ── BATCH 9 ADDITIONS ────────────────────────────────────────────────────
+  'University of Chicago': 'Very Strong — UChicago Hillel serves one of the strongest Jewish communities in American higher education. Multiple weekly Shabbat dinners, extensive holiday observances, Torah study, Israel programming, Birthright, and deep integration with Chicago\'s Jewish community (~300,000). One of the most intellectually engaged Jewish campus communities in the country.',
+  'Michigan State University': 'Strong — MSU Hillel is one of the oldest and strongest in the Big Ten. Large and active Jewish student population with multiple weekly Shabbat dinners, holiday observances, Birthright, leadership fellowships, and dedicated rabbinic presence. East Lansing Jewish community provides strong regional infrastructure.',
+  'University of Minnesota': 'Strong — Minnesota Hillel is one of the strongest Jewish campus organizations in the Upper Midwest. Large, highly engaged Jewish community with weekly Shabbat dinners, extensive holiday programming, Birthright, Israel education, and leadership development. Minneapolis Jewish community (~30,000) provides meaningful metro infrastructure.',
+  'University of Connecticut': 'Strong — UConn has one of the strongest Jewish campus communities among Northeast public universities. Dedicated Hillel facility, multiple weekly Shabbat dinners, holiday celebrations, Israel programming, and Birthright. Connecticut\'s Jewish community (~110,000 — one of the highest state concentrations in America) provides extraordinary regional infrastructure.',
+  'Purdue University': 'Strong — Purdue Hillel is one of the strongest Jewish organizations among Midwestern engineering universities. Dedicated Hillel center, multiple weekly Shabbat dinners, holiday observances, Birthright, Israel programming, and full rabbinic presence. Draws from NJ, NY, PA, and IL Jewish families.',
+  'Pomona College': 'Strong — Pomona is served by the Claremont Colleges Hillel, one of the strongest Jewish communities among liberal arts colleges in the United States. The five-college consortium creates a substantially larger Jewish population supporting weekly Shabbat dinners, Birthright, leadership fellowships, and vibrant social programming. LA Jewish community (600,000) provides extraordinary metro access.',
+  'Drexel University': 'Strong — Drexel benefits from its University City location in Philadelphia, sharing Hillel community with Penn and Temple. Active Shabbat programming, holiday celebrations, Israel engagement, and direct access to Philadelphia\'s Jewish community (~300,000) — one of the strongest in America.',
+  'Hamilton College': 'Moderate — Hamilton supports an active Jewish community through Hillel programming, Shabbat dinners, holiday observances, Israel engagement, and alumni connections. Kosher dining and rabbinic presence. Draws from NJ/NY/CT Jewish families.',
+  'Dickinson College': 'Moderate — Dickinson maintains an active Hillel with regular Shabbat dinners, holiday celebrations, Israel programming, and engagement with Central Pennsylvania\'s Jewish communities. Kosher dining and rabbinic presence. Philadelphia (2 hrs) and DC (2.5 hrs) provide weekend metro access.',
+  'Carleton College': 'Moderate — Carleton supports an active Jewish community through the Carleton Jewish Organization (CJO), Hillel partnerships, regular Shabbat dinners, holiday celebrations, and Israel programming. Minneapolis/St. Paul Jewish community (~30,000) provides regional infrastructure.',
+  'Quinnipiac University': 'Moderate — Quinnipiac maintains an active Hillel with Shabbat dinners, holiday celebrations, leadership programming, and Israel engagement. Southern Connecticut location provides access to New Haven\'s Jewish community and weekend proximity to NY and Boston infrastructure. Kosher dining and rabbinic presence.',
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
