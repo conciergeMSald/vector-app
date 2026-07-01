@@ -571,9 +571,12 @@ body {
     <input type="email" id="portalEmailInp" placeholder="your@email.com"
       style="width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:0.5px solid rgba(200,169,122,0.4);color:#f4f1ec;font-family:var(--mono);font-size:12px;margin-bottom:.75rem;box-sizing:border-box;outline:none;"
       onkeydown="if(event.key==='Enter')doSignIn()">
+    <input type="password" id="portalPasswordInp" placeholder="password"
+      style="width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:0.5px solid rgba(200,169,122,0.4);color:#f4f1ec;font-family:var(--mono);font-size:12px;margin-bottom:.75rem;box-sizing:border-box;outline:none;"
+      onkeydown="if(event.key==='Enter')doSignIn()">
     <button id="portalSignInBtn" onclick="doSignIn()"
       style="width:100%;padding:13px 24px;background:transparent;border:0.5px solid rgba(200,169,122,0.6);color:var(--gold);font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-bottom:.75rem;">
-      Send Secure Link →
+      Sign In →
     </button>
     <div id="portalAuthMsg" style="font-family:var(--mono);font-size:10px;color:var(--gold);min-height:1.4em;text-align:center;"></div>
   </div>
@@ -588,6 +591,7 @@ body {
     </div>
     <div class="nav-right">
       <div class="nav-consultant">Signed in as <strong id="navName">—</strong></div>
+      <button class="btn-signout" style="margin-right:.5rem;" onclick="showChangePassword()">Change Password</button>
       <button class="btn-signout" onclick="doSignOut()">Sign out</button>
     </div>
   </nav>
@@ -643,6 +647,30 @@ body {
       </div>
     </div>
 
+  </div>
+</div>
+
+<!-- ── CHANGE PASSWORD MODAL ─────────────────────────────────────────── -->
+<div id="changePwOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:200;display:none;align-items:center;justify-content:center;">
+  <div style="background:#1a1710;border:0.5px solid rgba(200,169,122,0.3);padding:2.5rem;width:100%;max-width:380px;box-sizing:border-box;">
+    <div style="font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:1.5rem;">Change Password</div>
+    <input type="password" id="pwCurrent" placeholder="Current password"
+      style="width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:0.5px solid rgba(200,169,122,0.4);color:#f4f1ec;font-family:var(--mono);font-size:12px;margin-bottom:.75rem;box-sizing:border-box;outline:none;">
+    <input type="password" id="pwNew" placeholder="New password"
+      style="width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:0.5px solid rgba(200,169,122,0.4);color:#f4f1ec;font-family:var(--mono);font-size:12px;margin-bottom:.75rem;box-sizing:border-box;outline:none;">
+    <input type="password" id="pwConfirm" placeholder="Confirm new password"
+      style="width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:0.5px solid rgba(200,169,122,0.4);color:#f4f1ec;font-family:var(--mono);font-size:12px;margin-bottom:.75rem;box-sizing:border-box;outline:none;">
+    <div id="pwMsg" style="font-family:var(--mono);font-size:10px;min-height:1.4em;margin-bottom:.75rem;text-align:center;"></div>
+    <div style="display:flex;gap:.75rem;">
+      <button onclick="doChangePassword()"
+        style="flex:1;padding:13px;background:transparent;border:0.5px solid rgba(200,169,122,0.6);color:var(--gold);font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;">
+        Update
+      </button>
+      <button onclick="hideChangePassword()"
+        style="flex:1;padding:13px;background:transparent;border:0.5px solid rgba(255,255,255,0.15);color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;">
+        Cancel
+      </button>
+    </div>
   </div>
 </div>
 
@@ -711,29 +739,35 @@ function showSignIn() {
   document.getElementById('screen-signin').classList.add('active');
 }
 
-// ── MAGIC LINK SIGN IN ─────────────────────────────────────────────────────
+// ── PASSWORD SIGN IN ───────────────────────────────────────────────────────
 function doSignIn() {
-  var email = (document.getElementById('portalEmailInp') || {}).value || '';
+  var email    = (document.getElementById('portalEmailInp')    || {}).value || '';
+  var password = (document.getElementById('portalPasswordInp') || {}).value || '';
   email = email.trim();
+  var msg = document.getElementById('portalAuthMsg');
+  var btn = document.getElementById('portalSignInBtn');
+
   if (!email || !email.includes('@')) {
-    var msg = document.getElementById('portalAuthMsg');
-    if (msg) { msg.textContent = 'Please enter a valid email address.'; }
+    if (msg) { msg.textContent = 'Please enter a valid email address.'; msg.style.color = '#c0392b'; }
     return;
   }
-  var msg = document.getElementById('portalAuthMsg');
-  if (msg) { msg.textContent = 'Sending your secure link…'; msg.style.color = '#C8A97A'; }
-  var btn = document.getElementById('portalSignInBtn');
+  if (!password) {
+    if (msg) { msg.textContent = 'Please enter your password.'; msg.style.color = '#c0392b'; }
+    return;
+  }
+
+  if (msg) { msg.textContent = 'Signing in…'; msg.style.color = '#C8A97A'; }
   if (btn) btn.disabled = true;
 
-  SB_CLIENT.auth.signInWithOtp({
-    email: email,
-    options: { emailRedirectTo: window.location.href, shouldCreateUser: true }
+  SB_CLIENT.auth.signInWithPassword({
+    email:    email,
+    password: password,
   }).then(function(result) {
     if (result.error) {
-      if (msg) { msg.textContent = 'Something went wrong. Please try again.'; msg.style.color = '#c0392b'; }
+      if (msg) { msg.textContent = 'Incorrect email or password.'; msg.style.color = '#c0392b'; }
       if (btn) btn.disabled = false;
     } else {
-      if (msg) { msg.textContent = 'Check your email — your secure link is on its way.'; msg.style.color = '#2e7d32'; }
+      if (msg) { msg.textContent = ''; }
     }
   });
 }
@@ -854,6 +888,64 @@ async function doSignOut() {
   if (SB_CLIENT) await SB_CLIENT.auth.signOut();
   SB_SESSION = null;
   showSignIn();
+}
+
+// ── CHANGE PASSWORD ────────────────────────────────────────────────────────
+function showChangePassword() {
+  var el = document.getElementById('changePwOverlay');
+  if (el) { el.style.display = 'flex'; }
+  var inputs = ['pwCurrent','pwNew','pwConfirm'];
+  inputs.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  var msg = document.getElementById('pwMsg');
+  if (msg) { msg.textContent = ''; }
+}
+
+function hideChangePassword() {
+  var el = document.getElementById('changePwOverlay');
+  if (el) { el.style.display = 'none'; }
+}
+
+async function doChangePassword() {
+  var current = (document.getElementById('pwCurrent') || {}).value || '';
+  var newPw   = (document.getElementById('pwNew')     || {}).value || '';
+  var confirm = (document.getElementById('pwConfirm') || {}).value || '';
+  var msg     = document.getElementById('pwMsg');
+
+  if (!current) {
+    if (msg) { msg.textContent = 'Enter your current password.'; msg.style.color = '#c0392b'; }
+    return;
+  }
+  if (newPw.length < 8) {
+    if (msg) { msg.textContent = 'New password must be at least 8 characters.'; msg.style.color = '#c0392b'; }
+    return;
+  }
+  if (newPw !== confirm) {
+    if (msg) { msg.textContent = 'New passwords do not match.'; msg.style.color = '#c0392b'; }
+    return;
+  }
+
+  if (msg) { msg.textContent = 'Verifying…'; msg.style.color = '#C8A97A'; }
+
+  // Re-authenticate with current password first to confirm identity
+  var email = SB_SESSION && SB_SESSION.user ? SB_SESSION.user.email : '';
+  var reauth = await SB_CLIENT.auth.signInWithPassword({ email: email, password: current });
+  if (reauth.error) {
+    if (msg) { msg.textContent = 'Current password is incorrect.'; msg.style.color = '#c0392b'; }
+    return;
+  }
+
+  // Update to new password
+  var result = await SB_CLIENT.auth.updateUser({ password: newPw });
+  if (result.error) {
+    if (msg) { msg.textContent = 'Update failed: ' + result.error.message; msg.style.color = '#c0392b'; }
+    return;
+  }
+
+  if (msg) { msg.textContent = 'Password updated.'; msg.style.color = '#2e7d32'; }
+  setTimeout(hideChangePassword, 1500);
 }
 
 // ── RENDER STATS ───────────────────────────────────────────────────────────
