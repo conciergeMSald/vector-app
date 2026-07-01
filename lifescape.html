@@ -926,8 +926,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       oninput="this.value=this.value.toUpperCase()"
     >
   </div>
+  <div id="code-feedback" style="min-height:1.5rem;margin-top:0.75rem;font-family:var(--sans);font-size:13px;letter-spacing:1px;text-align:center;color:var(--muted);"></div>
 
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="submitConsultantCode()">Continue with code</button>
+  <button id="code-submit-btn" class="ls-btn" style="margin-top:1rem" onclick="submitConsultantCode()">Continue with code</button>
   <div style="text-align:center;margin-top:1rem;">
     <button onclick="skipConsultantCode()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip — I'm exploring on my own</button>
   </div>
@@ -1942,13 +1943,64 @@ function goTo(n) {
 }
 
 // ── CONSULTANT CODE (SCREEN 0) ────────────────────────
-function submitConsultantCode() {
+async function submitConsultantCode() {
   var inp = document.getElementById('consultant-code-input');
   var code = inp ? inp.value.trim().toUpperCase() : '';
-  if (code.length > 0) {
-    LS_STATE.consultant_code = code;
+  var feedback = document.getElementById('code-feedback');
+  var btn = document.getElementById('code-submit-btn');
+
+  // No code entered — treat same as skip
+  if (!code) {
+    LS_STATE.consultant_code = null;
+    goTo(1);
+    return;
   }
-  goTo(1);
+
+  // Validate against Worker
+  btn.disabled = true;
+  btn.textContent = 'Checking…';
+  if (feedback) feedback.textContent = '';
+
+  try {
+    var res = await fetch(WORKER_URL + '/validate-invite-code', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code: code })
+    });
+    var data = await res.json();
+
+    if (data.valid) {
+      LS_STATE.consultant_code = code;
+      // Store personalization context for agent use if present
+      if (data.personalization_context && Object.keys(data.personalization_context).length) {
+        LS_STATE.personalization_context = data.personalization_context;
+      }
+      if (data.consultant_name && feedback) {
+        feedback.style.color = 'var(--gold)';
+        feedback.textContent = 'Connected to ' + data.consultant_name + '’s practice.';
+      }
+      // Brief moment to show confirmation before advancing
+      setTimeout(function() { goTo(1); }, data.consultant_name ? 900 : 0);
+    } else {
+      LS_STATE.consultant_code = null;
+      btn.disabled = false;
+      btn.textContent = 'Continue with code';
+      if (feedback) {
+        feedback.style.color = '#c0392b';
+        var messages = {
+          invalid_code: 'That code wasn’t recognized. Check with your counselor and try again.',
+          expired:      'That code has expired. Ask your counselor for a new one.',
+          exhausted:    'That code has already been used. Ask your counselor for a new one.',
+        };
+        feedback.textContent = messages[data.reason] || 'That code wasn’t recognized. Check with your counselor and try again.';
+      }
+    }
+  } catch (err) {
+    // Network error — fail open so a connectivity issue never blocks a family
+    console.warn('[VECTOR] Code validation failed, continuing without code:', err);
+    LS_STATE.consultant_code = code;
+    goTo(1);
+  }
 }
 
 function skipConsultantCode() {
