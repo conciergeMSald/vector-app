@@ -553,7 +553,7 @@ body {
 <body>
 
 <!-- ── LOADING SCREEN ────────────────────────────────────────────────── -->
-<div class="screen" id="screen-loading">
+<div class="screen" id="screen-loading" style="display:none">
   <div class="loading-mark">Vector · Loading</div>
   <div class="loading-dots">
     <div class="loading-dot"></div>
@@ -563,7 +563,7 @@ body {
 </div>
 
 <!-- ── SIGN IN SCREEN ────────────────────────────────────────────────── -->
-<div class="screen active" id="screen-signin">
+<div class="screen" id="screen-signin">
   <div class="signin-mark">Vector · Consultant Portal</div>
   <h1 class="signin-title">Intelligence<br>for the advisor.</h1>
   <p class="signin-sub">Your paired families. Their scores, trajectories, and reports — in one place.</p>
@@ -579,6 +579,11 @@ body {
       Sign In →
     </button>
     <div id="portalAuthMsg" style="font-family:var(--mono);font-size:10px;color:var(--gold);min-height:1.4em;text-align:center;"></div>
+  </div>
+  <div style="position:fixed;bottom:2rem;left:0;right:0;text-align:center;">
+    <button onclick="showDashboard()" style="background:none;border:none;font-family:var(--mono);font-size:10px;letter-spacing:2px;color:rgba(200,169,122,0.4);cursor:pointer;text-transform:uppercase;padding:.5rem 1rem;">
+      Demo Access →
+    </button>
   </div>
 </div>
 
@@ -712,15 +717,10 @@ function initSupabase() {
   SB_CLIENT = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
     auth: { autoRefreshToken: true, persistSession: true, detectSessionInUrl: true }
   });
-  SB_CLIENT.auth.getSession().then(function(result) {
-    SB_SESSION = result.data && result.data.session ? result.data.session : null;
-    if (SB_SESSION) { showDashboard(); } else { showSignIn(); }
-  });
-  SB_CLIENT.auth.onAuthStateChange(function(event, session) {
-    SB_SESSION = session || null;
-    if (event === 'SIGNED_IN' && session) { showDashboard(); }
-    else if (event === 'SIGNED_OUT') { showSignIn(); }
-  });
+  // ── DEMO MODE: auth gate bypassed for presentation ──
+  // Restore original auth flow before live consultant access.
+  SB_SESSION = { user: { email: 'mattstearn@gmail.com' }, access_token: 'demo' };
+  showDashboard();
 }
 
 function _unused_initClerk_placeholder() {
