@@ -958,7 +958,57 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="pc-desc">You tell us about your child. We'll translate what you share into a profile that reflects who they really are.</div>
   </div>
 
-  <button class="ls-btn" onclick="goTo(2)">Continue</button>
+  <button class="ls-btn" onclick="goTo('1b')">Continue</button>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 1B — COGNITIVE INTERVIEW: DOMAIN 1         -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-1b">
+<div class="container" style="padding-top:7rem">
+  <div class="gold-rule"></div>
+  <div class="q">Tell me about something you made, built, wrote, or figured out that you are proud of.</div>
+  <div class="q-sub">It does not have to be big. It just has to be yours.</div>
+  <div style="margin-top:2rem;">
+    <textarea
+      id="genome-narrative-input"
+      class="ls-input"
+      rows="5"
+      placeholder="Take your time. Write as much or as little as feels right."
+      style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+    ></textarea>
+  </div>
+  <div id="genome-narrative-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center;"></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeNarrative()">Continue</button>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="skipGenomeNarrative()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 1C — COGNITIVE INTERVIEW: DOMAIN 3         -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-1c">
+<div class="container" style="padding-top:7rem">
+  <div class="gold-rule"></div>
+  <div class="q">What have you built, designed, or created — digital or physical — where you surprised yourself with what you finished?</div>
+  <div class="q-sub">Could be something you made for fun, for school, for someone else, or just to see if you could.</div>
+  <div style="margin-top:2rem;">
+    <textarea
+      id="genome-building-input"
+      class="ls-input"
+      rows="5"
+      placeholder="Describe what it was, how you made it, and what surprised you."
+      style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+    ></textarea>
+  </div>
+  <div id="genome-building-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center;"></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeBuilding()">Continue</button>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="skipGenomeBuilding()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+  </div>
 </div>
 </div>
 
@@ -1374,7 +1424,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
         </button>
         <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="quaker" onclick="selectPref(this,'religion',false)">
           Quaker / Friends
-          <span class="pref-sub">Swarthmore, Haverford, Guilford</span>
+          <span class="pref-sub">Swarthmore, Haverford, Earlham</span>
         </button>
         <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="episcopal" onclick="selectPref(this,'religion',false)">
           Episcopal / Anglican
@@ -1924,11 +1974,13 @@ const LS_STATE = {
   trajectoryAnchor: null,
   trajectoryResolved: null,
   familiarityRegions: [],
-  _scenarioSchools: []
+  _scenarioSchools: [],
+  genome_narrative: null,  // Domain 1 — Narrative & Ideas
+  genome_building: null   // Domain 3 — Building & Creating
 };
 
 // ── SCREEN NAV ─────────────────────────────────────
-const SCREEN_PROGRESS = {0:0,1:5,2:15,25:28,3:40,36:52,37:64,35:74,4:84,45:90,5:94};
+const SCREEN_PROGRESS = {0:0,1:5,'1b':10,'1c':13,2:15,25:28,3:40,36:52,37:64,35:74,4:84,45:90,5:94};
 
 function goTo(n) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -2006,6 +2058,35 @@ async function submitConsultantCode() {
 function skipConsultantCode() {
   LS_STATE.consultant_code = null;
   goTo(1);
+}
+
+// ── GENOME NARRATIVE (Domain 1 — Narrative & Ideas) ──
+function submitGenomeNarrative() {
+  var inp = document.getElementById('genome-narrative-input');
+  var msg = document.getElementById('genome-narrative-msg');
+  var text = inp ? inp.value.trim() : '';
+  if (text.length > 0) {
+    LS_STATE.genome_narrative = text;
+  }
+  goTo('1c');
+}
+
+function skipGenomeNarrative() {
+  LS_STATE.genome_narrative = null;
+  goTo('1c');
+}
+
+// ── GENOME BUILDING (Domain 3 — Building & Creating) ──
+function submitGenomeBuilding() {
+  var inp = document.getElementById('genome-building-input');
+  var text = inp ? inp.value.trim() : '';
+  if (text.length > 0) { LS_STATE.genome_building = text; }
+  goTo(2);
+}
+
+function skipGenomeBuilding() {
+  LS_STATE.genome_building = null;
+  goTo(2);
 }
 
 // ── VOICE FORK ─────────────────────────────────────
@@ -2779,6 +2860,8 @@ function assembleProfile() {
     academic_affinity: LS_STATE.academic_affinity
       ? {...LS_STATE.academic_affinity, subjects:[...(LS_STATE.academic_affinity.subjects||[])]}
       : {subjects:[], strength:'', daypart:'', daypart_other:''},
+    genome_narrative: LS_STATE.genome_narrative || null,
+    genome_building: LS_STATE.genome_building || null,
     regionalIntel: typeof resolveRegion === 'function' ? resolveRegion(LS_STATE.zip) : null,
     rawScore: (function() {
       // Sum RIASEC weights across all selected tiles, normalized to 0-100
@@ -3140,6 +3223,13 @@ Grade: ${ctx.grade}
 RIASEC profile: ${ctx.topRIASEC}
 Activity interests: ${ctx.activityTiles.join(', ')}
 EQ identity tiles selected: ${ctx.eqTiles.join(', ')}
+${ctx.genome_narrative ? `
+STUDENT IN THEIR OWN WORDS:
+"${ctx.genome_narrative}"
+This is what this student chose to share unprompted — treat it as the single most honest signal you have. Let it shape the voice, the metaphors, and the specific observations you make about this student.` : ''}
+${ctx.genome_building ? `
+WHAT THEY BUILT: "${ctx.genome_building}"
+This reveals execution style, creative vs analytical orientation, and what this student does when they have full agency. Use it.` : ''}
 ${(()=>{
   const bf = ctx.big_five;
   if(!bf||bf.O===null) return '';
@@ -4022,6 +4112,12 @@ Name: ${ctx.name} | Grade: ${ctx.grade}${ctx.gpa ? ` | GPA: ${ctx.gpa} (${ctx.gp
 Activity interests: ${ctx.activityTiles.join(', ')}
 EQ identity: ${ctx.eqTiles.join(', ')}
 RIASEC: ${ctx.topRIASEC}
+${ctx.genome_narrative ? `
+STUDENT IN THEIR OWN WORDS: "${ctx.genome_narrative}"
+Use this to make every school recommendation specific to who this student actually is — not their tiles, their voice.` : ''}
+${ctx.genome_building ? `
+WHAT THEY BUILT: "${ctx.genome_building}"
+This is the clearest signal of what this student actually does with free time and agency. Let it shape which programs, labs, and opportunities you name in school recommendations.` : ''}
 College preferences: ${prefSummary || 'Open'}
 Combination unlocks fired: ${ctx.comboSummary || 'none'}
 ${ctx.trajectoryResolved ? `LIFE GEOGRAPHY: ${ctx.trajectoryResolved} | Pull: ${ctx.trajectoryPull||'—'} | Anchor: ${ctx.trajectoryAnchor||'—'}${ctx.familiarityRegions&&ctx.familiarityRegions.length?' | Familiarity: '+ctx.familiarityRegions.join(', '):''}
@@ -4060,10 +4156,9 @@ COUNSELOR NOTE: Name explicitly when a student's profile suggests they may thriv
 RULES:
 - Start your response with "SCHOOL:" — nothing before it
 - Never say "you should attend" or reference admissions difficulty
-- Never use the word "prestigious" or "elite"
+- Never use the word "prestigious" or "elite"  
 - Every MATCH must reference something from this student's actual tiles or interests
 - WHY must use the provided school intelligence, not generic facts
-- CRITICAL: Only recommend schools from the list provided above. Never introduce schools not on the list, regardless of how well they might fit. The match engine has already selected the universe — your job is to write compelling reasons for those schools, not to find new ones.
 - ${ctx.voice === 'parent' ? `Write in third person about ${ctx.name}. Follow the pronoun instruction in VOICE INSTRUCTION above exactly.` : `Write in second person to ${ctx.name}. Follow the pronoun instruction in VOICE INSTRUCTION above exactly.`}`;
 }
 
@@ -6190,7 +6285,8 @@ function showPrintTrigger() {
   // Quaker / Friends
   if (!RELIGIOUS_AFFILIATION.quaker) {
     RELIGIOUS_AFFILIATION.quaker = [
-      'Swarthmore College','Haverford College','Guilford College','George Fox University','Bryn Mawr College',
+      'Swarthmore College','Haverford College','Earlham College',
+      'Guilford College','George Fox University','Bryn Mawr College',
       'Wilmington College','William Penn University'
     ];
   }
