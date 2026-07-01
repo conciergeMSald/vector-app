@@ -658,7 +658,7 @@ const RELIGIOUS_AFFILIATION = {
 
   // ── QUAKER (Friends) ─────────────────────────────────────────────────────
   quaker: [
-    'Swarthmore College','Haverford College','Earlham College'
+    'Swarthmore College','Haverford College'
   ],
 
   // ── EPISCOPAL / ANGLICAN ─────────────────────────────────────────────────
@@ -795,7 +795,7 @@ const RELIGIOUS_AFFILIATION = {
     'DePauw University','St. Olaf College','Wheaton College',
     'Biola University','Calvin University','Gordon College',
     'Cedarville University','Gettysburg College','Muhlenberg College',
-    'Centre College','Earlham College','Valparaiso University',
+    'Centre College','Valparaiso University',
     'Augustana College'
   ],
 
