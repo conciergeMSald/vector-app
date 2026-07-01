@@ -599,7 +599,7 @@ body {
       <div class="upgrade-text">
         You are on the <span>Beta Trial</span>. Upgrade to unlock unlimited families and white-label reports.
       </div>
-      <button class="btn-upgrade" onclick="doUpgrade()">Upgrade → $1,500/mo</button>
+      <button class="btn-upgrade" onclick="doUpgrade()">Upgrade → $750/mo Beta</button>
     </div>
 
     <!-- STATS -->
@@ -665,11 +665,9 @@ const WORKER_URL    = 'https://api.abettercollegeconsultant.com';
 const SUPABASE_URL  = 'https://pbtyanwkmbrcumwunxrv.supabase.co';
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBidHlhbndrbWJyY3Vtd3VueHJ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMTU3MDIsImV4cCI6MjA2Mjg5MTcwMn0.kSzlOBElQlB5gV_OLAkUuOiIOmomZ4pvtx7tJNJbhGc';
 
-const SQUARE_TIERS = {
-  beta:       'beta',
-  standard:   'standard',
-  premium:    'premium',
-  enterprise: 'enterprise',
+const PLAN_KEYS = {
+  consultant_beta: 'consultant_beta',
+  family_monthly:  'family_monthly',
 };
 
 // ── STATE ──────────────────────────────────────────────────────────────────
@@ -834,7 +832,7 @@ async function doUpgrade() {
         'Content-Type':  'application/json',
       },
       body: JSON.stringify({
-        tier: SQUARE_TIERS.standard,
+        plan_key: PLAN_KEYS.consultant_beta,
       }),
     });
 
