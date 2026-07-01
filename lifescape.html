@@ -1374,7 +1374,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
         </button>
         <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="quaker" onclick="selectPref(this,'religion',false)">
           Quaker / Friends
-          <span class="pref-sub">Swarthmore, Haverford, Earlham</span>
+          <span class="pref-sub">Swarthmore, Haverford, Guilford</span>
         </button>
         <button class="pref-btn pref-btn-wide" data-pref="religion" data-val="episcopal" onclick="selectPref(this,'religion',false)">
           Episcopal / Anglican
@@ -4060,9 +4060,10 @@ COUNSELOR NOTE: Name explicitly when a student's profile suggests they may thriv
 RULES:
 - Start your response with "SCHOOL:" — nothing before it
 - Never say "you should attend" or reference admissions difficulty
-- Never use the word "prestigious" or "elite"  
+- Never use the word "prestigious" or "elite"
 - Every MATCH must reference something from this student's actual tiles or interests
 - WHY must use the provided school intelligence, not generic facts
+- CRITICAL: Only recommend schools from the list provided above. Never introduce schools not on the list, regardless of how well they might fit. The match engine has already selected the universe — your job is to write compelling reasons for those schools, not to find new ones.
 - ${ctx.voice === 'parent' ? `Write in third person about ${ctx.name}. Follow the pronoun instruction in VOICE INSTRUCTION above exactly.` : `Write in second person to ${ctx.name}. Follow the pronoun instruction in VOICE INSTRUCTION above exactly.`}`;
 }
 
@@ -6189,8 +6190,7 @@ function showPrintTrigger() {
   // Quaker / Friends
   if (!RELIGIOUS_AFFILIATION.quaker) {
     RELIGIOUS_AFFILIATION.quaker = [
-      'Swarthmore College','Haverford College','Earlham College',
-      'Guilford College','George Fox University','Bryn Mawr College',
+      'Swarthmore College','Haverford College','Guilford College','George Fox University','Bryn Mawr College',
       'Wilmington College','William Penn University'
     ];
   }
