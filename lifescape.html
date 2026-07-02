@@ -1013,6 +1013,31 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 1D — COGNITIVE INTERVIEW: DOMAIN 4         -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-1d">
+<div class="container" style="padding-top:7rem">
+  <div class="gold-rule"></div>
+  <div class="q">If you could design the city or town you'd live in after college, what would it feel like?</div>
+  <div class="q-sub">Think about energy, pace, weather, size — what makes a place feel like yours.</div>
+  <div style="margin-top:2rem;">
+    <textarea
+      id="genome-geo-input"
+      class="ls-input"
+      rows="5"
+      placeholder="Describe the place. Don't worry about naming it."
+      style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+    ></textarea>
+  </div>
+  <div id="genome-geo-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center;"></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeGeo()">Continue</button>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="skipGenomeGeo()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
 <!-- SCREEN 2 — NAME + GRADE                           -->
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-2">
@@ -1976,11 +2001,12 @@ const LS_STATE = {
   familiarityRegions: [],
   _scenarioSchools: [],
   genome_narrative: null,  // Domain 1 — Narrative & Ideas
-  genome_building: null   // Domain 3 — Building & Creating
+  genome_building: null,  // Domain 3 — Building & Creating
+  genome_geo: null        // Domain 4 — Geographic Identity
 };
 
 // ── SCREEN NAV ─────────────────────────────────────
-const SCREEN_PROGRESS = {0:0,1:5,'1b':10,'1c':13,2:15,25:28,3:40,36:52,37:64,35:74,4:84,45:90,5:94};
+const SCREEN_PROGRESS = {0:0,1:5,'1b':10,'1c':13,'1d':16,2:15,25:28,3:40,36:52,37:64,35:74,4:84,45:90,5:94};
 
 function goTo(n) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -2081,11 +2107,24 @@ function submitGenomeBuilding() {
   var inp = document.getElementById('genome-building-input');
   var text = inp ? inp.value.trim() : '';
   if (text.length > 0) { LS_STATE.genome_building = text; }
-  goTo(2);
+  goTo('1d');
 }
 
 function skipGenomeBuilding() {
   LS_STATE.genome_building = null;
+  goTo('1d');
+}
+
+// ── GENOME GEO (Domain 4 — Geographic Identity) ──────
+function submitGenomeGeo() {
+  var inp = document.getElementById('genome-geo-input');
+  var text = inp ? inp.value.trim() : '';
+  if (text.length > 0) { LS_STATE.genome_geo = text; }
+  goTo(2);
+}
+
+function skipGenomeGeo() {
+  LS_STATE.genome_geo = null;
   goTo(2);
 }
 
@@ -2862,6 +2901,7 @@ function assembleProfile() {
       : {subjects:[], strength:'', daypart:'', daypart_other:''},
     genome_narrative: LS_STATE.genome_narrative || null,
     genome_building: LS_STATE.genome_building || null,
+    genome_geo: LS_STATE.genome_geo || null,
     regionalIntel: typeof resolveRegion === 'function' ? resolveRegion(LS_STATE.zip) : null,
     rawScore: (function() {
       // Sum RIASEC weights across all selected tiles, normalized to 0-100
@@ -3230,6 +3270,9 @@ This is what this student chose to share unprompted — treat it as the single m
 ${ctx.genome_building ? `
 WHAT THEY BUILT: "${ctx.genome_building}"
 This reveals execution style, creative vs analytical orientation, and what this student does when they have full agency. Use it.` : ''}
+${ctx.genome_geo ? `
+GEOGRAPHIC IDENTITY (in their words): "${ctx.genome_geo}"
+Translate this into environmental fit — urban density, pace, climate, size of place. Let it inform which campus environments you describe and how you name the geography around each school.` : ''}
 ${(()=>{
   const bf = ctx.big_five;
   if(!bf||bf.O===null) return '';
@@ -4118,6 +4161,9 @@ Use this to make every school recommendation specific to who this student actual
 ${ctx.genome_building ? `
 WHAT THEY BUILT: "${ctx.genome_building}"
 This is the clearest signal of what this student actually does with free time and agency. Let it shape which programs, labs, and opportunities you name in school recommendations.` : ''}
+${ctx.genome_geo ? `
+GEOGRAPHIC IDENTITY: "${ctx.genome_geo}"
+Use this to weight school recommendations toward environments that match what they described. Name the geography explicitly in WHY — connect the campus location, city, or region to what this student said they want their life to feel like.` : ''}
 College preferences: ${prefSummary || 'Open'}
 Combination unlocks fired: ${ctx.comboSummary || 'none'}
 ${ctx.trajectoryResolved ? `LIFE GEOGRAPHY: ${ctx.trajectoryResolved} | Pull: ${ctx.trajectoryPull||'—'} | Anchor: ${ctx.trajectoryAnchor||'—'}${ctx.familiarityRegions&&ctx.familiarityRegions.length?' | Familiarity: '+ctx.familiarityRegions.join(', '):''}
