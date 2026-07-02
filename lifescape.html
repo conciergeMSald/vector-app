@@ -9,8 +9,17 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script src="lifescape_career_intelligence.js"></script>
 <script src="lifescape_onet_map.js"></script>
-<script src="lifescape_university_intelligence.js"></script>
+<script src="UNIVERSITY_DB_V5_MASTER_v4_0.js"></script>
+<script src="lifescape_major_map.js"></script>
 <script src="lifescape_regional_intelligence.js"></script>
+<script>
+// ── Compatibility shim ─────────────────────────────
+// v4.0 database exports UNIVERSITY_DB_V5.
+// lifescape.html expects UNIVERSITY_CONTENT.
+if (typeof UNIVERSITY_DB_V5 !== 'undefined' && typeof UNIVERSITY_CONTENT === 'undefined') {
+  var UNIVERSITY_CONTENT = UNIVERSITY_DB_V5;
+}
+</script>
 <script src="crosswalk-db.js"></script>
 <script src="geo_industry_db_LA_pass1.js"></script>
 <script src="geo_industry_db_BayArea_pass2.js"></script>
@@ -4193,6 +4202,33 @@ function validateOrientAndGoTo(n) {
 
 // ── CALL D — SCHOOL RECOMMENDATIONS ─────────────────
 function buildCallDPrompt(ctx, matchedSchools, schoolContentBlock) {
+  // Build major pathway context from MAJOR_MAP if available
+  // ONET career cluster context for callD
+  var _onetCallD = '';
+  if (typeof buildONETPromptBlock === 'function' && ctx.naicsSectors && ctx.naicsSectors.length > 0) {
+    try {
+      var _rawOnet = buildONETPromptBlock(ctx.naicsSectors, ctx.riasec || []);
+      if (_rawOnet && _rawOnet.length > 20) {
+        _onetCallD = '\nCAREER CLUSTER INTELLIGENCE:\n' + _rawOnet + '\nFor each school, name the specific program, lab, or track that serves this career direction — not generic praise.';
+      }
+    } catch(e) {}
+  }
+
+  var _majorContext = '';
+  if (typeof MAJOR_MAP !== 'undefined' && ctx.activityTiles && ctx.activityTiles.length > 0) {
+    var _majorMatches = [];
+    ctx.activityTiles.slice(0, 5).forEach(function(tile) {
+      if (MAJOR_MAP[tile] && MAJOR_MAP[tile].majors) {
+        MAJOR_MAP[tile].majors.slice(0, 2).forEach(function(m) {
+          if (!_majorMatches.includes(m)) _majorMatches.push(m);
+        });
+      }
+    });
+    if (_majorMatches.length > 0) {
+      _majorContext = '\nLIKELY MAJOR PATHWAYS: ' + _majorMatches.slice(0, 4).join(', ') + '. Where a school has particular strength in these areas, name it specifically.';
+    }
+  }
+
   var _longevityCtx = buildLongevityLensContext(ctx);
   var _longevityD = _longevityCtx && _longevityCtx.fires ? _longevityCtx.callD_injection : '';
   var _competeCtx = buildCompeteLensContext(ctx);
@@ -4237,6 +4273,7 @@ Use this to weight school recommendations toward environments that match what th
 ${ctx.genome_worry ? `
 STUDENT ANXIETY SIGNAL: "${ctx.genome_worry}"
 For each school, if there is something specific about that environment that speaks to this concern — a strong first-year program, tight residential community, academic support, size — name it concretely. Never quote the anxiety back. Just address it through the recommendation.` : ''}
+${_onetCallD}${_majorContext}
 College preferences: ${prefSummary || 'Open'}
 Combination unlocks fired: ${ctx.comboSummary || 'none'}
 ${ctx.trajectoryResolved ? `LIFE GEOGRAPHY: ${ctx.trajectoryResolved} | Pull: ${ctx.trajectoryPull||'—'} | Anchor: ${ctx.trajectoryAnchor||'—'}${ctx.familiarityRegions&&ctx.familiarityRegions.length?' | Familiarity: '+ctx.familiarityRegions.join(', '):''}
@@ -5318,6 +5355,23 @@ async function submitLifescape() {
           }
           console.log('[callD] adjacent picks:', adjacentPicks.map(s=>s.name));
           console.log('[callD] profile adjacent:', profileAdjacentPicks.map(s=>s.name));
+
+          // Consultant expansion — honors-eligible reaches within region
+          var _consultantExpansion = [];
+          if (typeof getConsultantExpansion === 'function' && profile.gpa_tier) {
+            try {
+              _consultantExpansion = getConsultantExpansion(
+                profile.gpa_tier,
+                profile.gpa_normalized,
+                _adjRegionPool,
+                COLLEGE_PREFS.campus_scale || null,
+                matchedSchools
+              );
+              console.log('[callD] consultant expansion:', _consultantExpansion.map(s=>s.name));
+            } catch(expErr) {
+              console.warn('[consultantExpansion] failed gracefully:', expErr.message);
+            }
+          }
 
           // ── Career-metro match (counselor-only, local data, zero AI cost) ────
           if(typeof getCareerMetroMatch === 'function') {
