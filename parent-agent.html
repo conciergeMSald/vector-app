@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VECTOR — Parent Conversation</title>
+<style>
+  :root {
+    --cream: #F4F1EC;
+    --ink: #0D0D0B;
+    --ink-soft: #2A2A26;
+    --gold: #C9A96E;
+    --gold-dim: rgba(201,169,110,0.15);
+    --gold-glow: rgba(201,169,110,0.06);
+    --gray: #5A5A54;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px 120px;
+  }
+  .pa-masthead {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background: #111111;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 56px;
+  }
+  .pa-masthead svg {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    padding: 28px 24px 22px;
+  }
+  .pa-container {
+    max-width: 640px;
+    width: 100%;
+    padding-top: 48px;
+  }
+  .pa-progress {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 56px;
+  }
+  .pa-progress-dot {
+    flex: 1;
+    height: 3px;
+    background: var(--gold-dim);
+    border-radius: 2px;
+    transition: background 0.4s ease;
+  }
+  .pa-progress-dot.done { background: var(--gold); }
+  .pa-progress-dot.active { background: var(--gold); opacity: 0.5; }
+
+  .pa-screen { display: none; animation: fadein 0.5s ease; }
+  .pa-screen.active { display: block; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  .pa-eyebrow {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .pa-prompt {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .pa-prompt.opening {
+    font-size: 19px;
+    font-style: normal;
+  }
+
+  .pa-prompt.opening em { font-style: italic; }
+  .pa-prompt strong { font-weight: 600; font-style: normal; }
+
+  .pa-input {
+    width: 100%;
+    min-height: 160px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--gold-dim);
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+    padding: 8px 2px 16px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  .pa-input:focus { border-color: var(--gold); }
+  .pa-input::placeholder { color: var(--gray); opacity: 0.5; font-style: italic; }
+
+  .pa-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+  }
+  .pa-skip {
+    background: none;
+    border: none;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--gray);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .pa-continue {
+    background: var(--ink);
+    color: var(--cream);
+    border: none;
+    font-family: var(--sans);
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    padding: 14px 32px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+  }
+  .pa-continue:hover { background: var(--ink-soft); }
+  .pa-continue:disabled { opacity: 0.35; cursor: not-allowed; }
+
+  .pa-depth-probe {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: var(--gold-glow);
+    border-left: 2px solid var(--gold);
+    font-family: var(--serif);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--ink-soft);
+    display: none;
+  }
+  .pa-depth-probe.visible { display: block; }
+
+  .pa-closing {
+    text-align: center;
+    padding-top: 64px;
+  }
+  .pa-closing .pa-prompt { font-size: 22px; text-align: left; }
+  .pa-closing-mark {
+    font-family: var(--serif);
+    font-size: 40px;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+</style>
+</head>
+<body>
+
+<div class="pa-masthead">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-label="VECTOR — A Better College Consultant">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');</style>
+  </defs>
+  <rect width="1200" height="460" fill="#111111"/>
+  <text font-family="'Cormorant Garamond', 'Cormorant', Georgia, serif"
+    font-weight="300" font-size="120px" letter-spacing="18px"
+    fill="#FDF8F0"
+    x="600" y="294.8"
+    text-anchor="middle">VECTOR</text>
+  <text font-family="'DM Sans', sans-serif" font-weight="300"
+    font-size="13px" letter-spacing="26px"
+    fill="#FDF8F0" opacity="0.5"
+    x="600" y="328"
+    text-anchor="middle">A BETTER COLLEGE CONSULTANT</text>
+  <!-- Compass needle — 20° clockwise, tip breaks outside the O -->
+  <!-- No clip path — the tip crossing the boundary is intentional -->
+  <line x1="700.15" y1="268.44" x2="721.49" y2="209.80"
+    stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+  <!-- Arrowhead triangle at tip -->
+  <polygon points="721.49,209.80 717.16,213.59 722.37,215.49"
+    fill="#C8A97A" opacity="1"/>
+</svg>
+  </div>
+
+  <div class="pa-container">
+  <div class="pa-progress" id="paProgress"></div>
+
+  <!-- SCREEN 0 — Opening (Brunello Moment) -->
+  <div class="pa-screen active" data-screen="0">
+    <div class="pa-eyebrow">Before We Begin</div>
+    <div class="pa-prompt opening" id="paOpeningText"></div>
+    <div class="pa-actions" style="justify-content:flex-end;">
+      <button class="pa-continue" onclick="PA.advance()">Let's begin with you</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 1 — Domain 1: Alumni -->
+  <div class="pa-screen" data-screen="1" data-domain="alumni">
+    <div class="pa-eyebrow">Domain 1 of 7</div>
+    <div class="pa-prompt">Tell me about your own college experience. Where did you go, and what did those years give you?</div>
+    <textarea class="pa-input" placeholder="Take your time — there's no correct answer here." data-field="alumni"></textarea>
+    <div class="pa-depth-probe" data-probe="alumni"></div>
+    <div class="pa-actions">
+      <button class="pa-skip" onclick="PA.skip()">Skip this one</button>
+      <button class="pa-continue" onclick="PA.advance()">Continue</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 2 — Domain 2: Professional -->
+  <div class="pa-screen" data-screen="2" data-domain="professional">
+    <div class="pa-eyebrow">Domain 2 of 7</div>
+    <div class="pa-prompt">Tell me about the work you do. How did you end up in that field, and how central is it to who you are?</div>
+    <textarea class="pa-input" placeholder="Whatever comes to mind first." data-field="professional"></textarea>
+    <div class="pa-actions">
+      <button class="pa-skip" onclick="PA.skip()">Skip this one</button>
+      <button class="pa-continue" onclick="PA.advance()">Continue</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3 — Domain 3: Network Geography -->
+  <div class="pa-screen" data-screen="3" data-domain="network_geography">
+    <div class="pa-eyebrow">Domain 3 of 7</div>
+    <div class="pa-prompt">Life has a way of scattering people. Where have you lived, and where did the people who matter most to you end up?</div>
+    <textarea class="pa-input" placeholder="Friends, family, anyone who comes to mind." data-field="network_geography"></textarea>
+    <div class="pa-actions">
+      <button class="pa-skip" onclick="PA.skip()">Skip this one</button>
+      <button class="pa-continue" onclick="PA.advance()">Continue</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 4 — Domain 5: Aspiration (required) -->
+  <div class="pa-screen" data-screen="4" data-domain="aspiration">
+    <div class="pa-eyebrow">Domain 4 of 7</div>
+    <div class="pa-prompt">What is your hope for what these four years give your child?</div>
+    <textarea class="pa-input" placeholder="Not a school name — a hope." data-field="aspiration"></textarea>
+    <div class="pa-depth-probe visible" data-probe="aspiration">College is a significant investment. Are there parameters around budget that should be part of our thinking from the start?</div>
+    <textarea class="pa-input" placeholder="Only if it's useful to say now." data-field="aspiration_budget" style="min-height:80px; margin-top:8px;"></textarea>
+    <div class="pa-actions">
+      <button class="pa-skip" onclick="PA.skip()" style="visibility:hidden;">Required</button>
+      <button class="pa-continue" onclick="PA.advance()">Continue</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 5 — Domain 6: Child Through Parent's Eyes -->
+  <div class="pa-screen" data-screen="5" data-domain="child_perception">
+    <div class="pa-eyebrow">Domain 5 of 7</div>
+    <div class="pa-prompt" id="childPromptText">Tell me about them — not their resume, not their grades. Who are they?</div>
+    <textarea class="pa-input" placeholder="Whatever feels true right now." data-field="child_perception"></textarea>
+    <div class="pa-actions">
+      <button class="pa-skip" onclick="PA.skip()">Skip this one</button>
+      <button class="pa-continue" onclick="PA.advance()">Continue</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 6 — Domain 7: Closing Question -->
+  <div class="pa-screen" data-screen="6" data-domain="hidden_constraints">
+    <div class="pa-eyebrow">Domain 6 of 7</div>
+    <div class="pa-prompt">We've covered a great deal of ground together. Before we finish — is there something about your family that you think is important for us to understand before we make any recommendations? Something that might not fit neatly into what we've discussed?</div>
+    <textarea class="pa-input" placeholder="Anything at all, or nothing — both are fine." data-field="hidden_constraints"></textarea>
+    <div class="pa-actions">
+      <button class="pa-skip" onclick="PA.skip()">Nothing else</button>
+      <button class="pa-continue" onclick="PA.advance()">Continue</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 7 — Closing -->
+  <div class="pa-screen" data-screen="7">
+    <div class="pa-closing">
+      <div class="pa-closing-mark">—</div>
+      <div class="pa-prompt" id="paClosingText"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/**
+ * VECTOR — Parent Agent Conversation UI
+ * PARENT-AGENT-001 v3 (Approved) — Section 3
+ * BUILD-SPEC-PA-001 — Phase 1
+ *
+ * CONTRACT (per CTO checklist):
+ *   Frontend state machine ONLY. No business logic. No direct Supabase calls.
+ *   All writes route through a single call: PA.submitToWorker().
+ *   That single function is this screen's entire write surface.
+ *
+ * Domain keys match parent-signal-engine.js ALL_DOMAINS exactly —
+ * required so transcriptByDomain lines up with the pure function's
+ * expected shape with zero translation layer needed.
+ */
+const PA = (function () {
+  const DOMAIN_ORDER = ["alumni", "professional", "network_geography", "aspiration", "child_perception", "hidden_constraints"];
+  const TOTAL_SCREENS = 8; // 0=opening, 1-6=domains, 7=closing
+
+  let state = {
+    currentScreen: 0,
+    parentFirstName: null,
+    studentFirstName: null,
+    familyMemberId: null,     // set by consultant setup flow before this page loads
+    transcriptByDomain: {}
+  };
+
+  function init() {
+    const params = new URLSearchParams(window.location.search);
+    state.parentFirstName = params.get("parent") || null;
+    state.studentFirstName = params.get("student") || "your student";
+    state.familyMemberId = params.get("fmid") || null;
+
+    document.getElementById("paOpeningText").innerHTML = buildOpeningScript();
+    document.getElementById("childPromptText").textContent =
+      `Tell me about ${state.studentFirstName} — not their resume, not their grades. Who are they?`;
+
+    renderProgress();
+  }
+
+  function buildOpeningScript() {
+    const name = state.parentFirstName ? `${state.parentFirstName}, thank you for being here.` : "Thank you for being here.";
+    const student = state.studentFirstName;
+    return `${name}<br><br>` +
+      `Before we talk about ${student}'s future, we'd like to understand you. Not as background information — but because the life you've built, the path you've taken, and the connections you've made are more relevant to this decision than most people realize.<br><br>` +
+      `This is not an interview. There are no correct answers. We'll move at whatever pace feels right.<br><br>` +
+      `<strong>Let's begin with you.</strong>`;
+  }
+
+  function buildClosingScript() {
+    const name = state.parentFirstName || "";
+    const student = state.studentFirstName;
+    return (name ? `Thank you, ${name}.<br><br>` : `Thank you.<br><br>`) +
+      `What you've shared matters more than you might realize. The life you've built, the path you've taken, and the connections you've made are not just background — they are context. And context is everything in a decision like this.<br><br>` +
+      `We'll take what you've told us seriously. Not as data points — as a portrait of a family with a real story.<br><br>` +
+      `<strong>When ${student} is ready, their conversation will be waiting for them.</strong>`;
+  }
+
+  function renderProgress() {
+    const el = document.getElementById("paProgress");
+    el.innerHTML = "";
+    for (let i = 1; i <= 6; i++) {
+      const dot = document.createElement("div");
+      dot.className = "pa-progress-dot";
+      if (i < state.currentScreen) dot.classList.add("done");
+      else if (i === state.currentScreen) dot.classList.add("active");
+      el.appendChild(dot);
+    }
+  }
+
+  function captureCurrentScreen() {
+    const screenEl = document.querySelector(`.pa-screen[data-screen="${state.currentScreen}"]`);
+    if (!screenEl) return;
+    const domain = screenEl.getAttribute("data-domain");
+    if (!domain) return; // opening/closing screens have no domain field
+
+    const fields = screenEl.querySelectorAll("textarea[data-field]");
+    let combined = "";
+    fields.forEach(f => {
+      const val = (f.value || "").trim();
+      if (val) combined += (combined ? "\n\n" : "") + val;
+    });
+
+    // Bypass rule lives here too: empty string is a valid, non-blocking state.
+    // We simply don't write a key for this domain — the signal engine's
+    // hasContent() check treats a missing key the same as an empty one.
+    if (combined) {
+      state.transcriptByDomain[domain] = combined;
+    }
+  }
+
+  function advance() {
+    captureCurrentScreen();
+
+    if (state.currentScreen === TOTAL_SCREENS - 1) return; // already at closing
+
+    state.currentScreen++;
+    showScreen(state.currentScreen);
+
+    if (state.currentScreen === TOTAL_SCREENS - 1) {
+      document.getElementById("paClosingText").innerHTML = buildClosingScript();
+      submitToWorker();
+    }
+  }
+
+  function skip() {
+    // Explicitly clears any partial text in this domain's field(s) before
+    // advancing — skip means skip, not "save whatever was half-typed."
+    const screenEl = document.querySelector(`.pa-screen[data-screen="${state.currentScreen}"]`);
+    if (screenEl) screenEl.querySelectorAll("textarea[data-field]").forEach(f => f.value = "");
+    advance();
+  }
+
+  function showScreen(n) {
+    document.querySelectorAll(".pa-screen").forEach(s => s.classList.remove("active"));
+    const target = document.querySelector(`.pa-screen[data-screen="${n}"]`);
+    if (target) target.classList.add("active");
+    renderProgress();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // ─────────────────────────────────────────────────────────────
+  // SINGLE WRITE ENTRY POINT
+  // Per CTO checklist: "Single write entry point enforced — all
+  // writes through InterviewService only." This function IS that
+  // entry point for this screen. It does not touch Supabase directly —
+  // it posts to the worker, which owns persistence.
+  // ─────────────────────────────────────────────────────────────
+  async function submitToWorker() {
+    if (!state.familyMemberId) {
+      console.warn("[VECTOR Parent Agent] No familyMemberId in URL — session will not be linked. This should not happen in production; consultant setup must supply ?fmid=.");
+    }
+
+    try {
+      const res = await fetch("https://api.abettercollegeconsultant.com/parent-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          family_member_id: state.familyMemberId,
+          parent_first_name: state.parentFirstName,
+          transcriptByDomain: state.transcriptByDomain
+        })
+      });
+      if (!res.ok) {
+        console.error("[VECTOR Parent Agent] Submission failed:", res.status);
+        // Per bypass rule: a failed submit does not trap the parent on this
+        // screen or show a broken state — the closing message has already
+        // rendered. Silent retry/logging only; this is not the parent's problem.
+      }
+    } catch (err) {
+      console.error("[VECTOR Parent Agent] Submission network error:", err);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+
+  return { advance, skip };
+})();
+</script>
+
+</body>
+</html>
