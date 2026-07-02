@@ -2933,6 +2933,9 @@ function assembleProfile() {
     gpa: LS_STATE.gpa,
     gpa_type: LS_STATE.gpa_type,
     gpa_normalized: normalizeGPA(LS_STATE.gpa, LS_STATE.gpa_type),
+    gpa_tier: (typeof getGPATier === 'function')
+      ? getGPATier(normalizeGPA(LS_STATE.gpa, LS_STATE.gpa_type))
+      : null,
     voice: LS_STATE.voice,
     reportFormat: LS_STATE.reportFormat,
     college_prefs: {
@@ -4582,7 +4585,7 @@ function renderUnderTheRadar(picks) {
   }
 }
 
-function renderSchoolRecommendations(profile, callAData, callDData, adjacentPicks, profileAdjacentPicks) {
+function renderSchoolRecommendations(profile, callAData, callDData, adjacentPicks, profileAdjacentPicks, consultantExpansion) {
   if(!callDData || callDData.length === 0) return;
 
   // Render Quick Read preview (top 3)
@@ -4798,6 +4801,17 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       ).join('');
     }
 
+    // Honors expansion — consultant only, never shown to family
+    if (consultantExpansion && consultantExpansion.length > 0) {
+      counselorHtml += `<div class="section-eyebrow" style="margin-top:1.5rem;margin-bottom:.5rem;color:#C9A84C;">Honors-eligible reaches (within region)</div>`;
+      counselorHtml += consultantExpansion.map(s =>
+        `<div style="padding:.6rem 0;border-bottom:0.5px solid rgba(255,255,255,0.07);">
+          <strong style="color:#f4f1ec;">${s.name}</strong>
+          <span style="color:#C9A84C;font-size:11px;margin-left:.5rem;">${s.honors_name}</span>
+          <div style="font-size:11px;color:#a09880;margin-top:.25rem;">${s.honors_note}</div>
+        </div>`
+      ).join('');
+    }
     counselorSchools.innerHTML = counselorHtml;
   }
 }
@@ -5271,12 +5285,25 @@ async function submitLifescape() {
           // Compute adjacent picks (do not send to Claude — derived from data)
           adjacentPicks = [];
           profileAdjacentPicks = [];
+          // Build region gate for adjacent matches — same hard filter as matchUniversities()
+          var _adjRegionPool = null;
+          if (COLLEGE_PREFS.regions && COLLEGE_PREFS.regions.length > 0 && !COLLEGE_PREFS.regions.includes('no_preference')) {
+            _adjRegionPool = [];
+            COLLEGE_PREFS.regions.forEach(function(r) {
+              (typeof REGION_POOLS !== 'undefined' && REGION_POOLS[r] ? REGION_POOLS[r] : []).forEach(function(s) {
+                if (!_adjRegionPool.includes(s)) _adjRegionPool.push(s);
+              });
+            });
+          }
+
           if(typeof getAdjacentMatches !== 'undefined') {
             adjacentPicks = getAdjacentMatches(
               matchedSchools,
               profile.naicsSectors,
               profile.comboUnlocks,
-              1  // 1 program-adjacent pick for "Where You Fit" tab
+              1,
+              _adjRegionPool,
+              COLLEGE_PREFS.campus_scale || null
             );
           }
           if(typeof getProfileAdjacentMatches !== 'undefined') {
@@ -5284,7 +5311,9 @@ async function submitLifescape() {
               matchedSchools,
               profile.riasec,
               profile.naicsSectors,
-              3  // 3 secondary-profile picks for counselor only
+              3,
+              _adjRegionPool,
+              COLLEGE_PREFS.campus_scale || null
             );
           }
           console.log('[callD] adjacent picks:', adjacentPicks.map(s=>s.name));
@@ -5308,7 +5337,8 @@ async function submitLifescape() {
             LS_STATE.topUniversity = callDData[0].name || null;
             renderSchoolRecommendations(
               profile, callAData, callDData,
-              adjacentPicks, profileAdjacentPicks
+              adjacentPicks, profileAdjacentPicks,
+              _consultantExpansion
             );
             // Render Act IX if callE returned data
             if (LS_STATE.callEResult) renderActIX(LS_STATE.callEResult);
