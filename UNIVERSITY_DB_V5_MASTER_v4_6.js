@@ -9801,7 +9801,13 @@ institutionNarrative: {
 
     leadershipStyle: "Innovation leadership through technical expertise, research achievement, and entrepreneurial problem solving",
 
-    oneSentenceSummary: "One of the world's premier public universities for engineering, computer science, quantitative research, and technology-driven innovation."
+    oneSentenceSummary: "One of the world's premier public universities for engineering, computer science, quantitative research, and technology-driven innovation.",
+
+    gradCities: ["Chicago IL", "San Francisco CA", "New York NY", "Seattle WA", "St. Louis MO"],
+
+    hiddenPathway: "Illinois' computer science program has one of the strongest direct pipelines into Silicon Valley of any public university, with alumni networks at Google, Meta, and Amazon rivaling private tech-focused schools.",
+
+    comparableInstitutions: ["University of Wisconsin\u2013Madison", "Purdue University", "University of Michigan", "Georgia Institute of Technology"]
 
   },
 
@@ -10308,7 +10314,13 @@ institutionNarrative: {
 
     leadershipStyle: "Knowledge-to-impact leadership emphasizing science, policy, research, and institution building",
 
-    oneSentenceSummary: "A world-class public flagship that combines scientific research, public service, entrepreneurship, and Midwest leadership development at scale."
+    oneSentenceSummary: "A world-class public flagship that combines scientific research, public service, entrepreneurship, and Midwest leadership development at scale.",
+
+    gradCities: ["Chicago IL", "Minneapolis MN", "Milwaukee WI", "New York NY", "San Francisco CA"],
+
+    hiddenPathway: "Wisconsin's life sciences and biotech research funding is among the highest of any public university, creating strong undergraduate research pipelines into pharma and biotech careers.",
+
+    comparableInstitutions: ["University of Illinois Urbana-Champaign", "University of Michigan", "Ohio State University", "Penn State University"]
 
   },
 
@@ -10797,7 +10809,13 @@ institutionNarrative: {
 
     leadershipStyle: "Network-driven leadership through achievement, influence, and institution building",
 
-    oneSentenceSummary: "A modern elite university that produces leaders across business, medicine, technology, policy, sports, and global institutions."
+    oneSentenceSummary: "A modern elite university that produces leaders across business, medicine, technology, policy, sports, and global institutions.",
+
+    gradCities: ["New York NY", "Washington DC", "Charlotte NC", "Atlanta GA", "San Francisco CA"],
+
+    hiddenPathway: "Duke's direct connection to Duke University Health System gives pre-med students unusually early clinical research access most peer institutions can't match.",
+
+    comparableInstitutions: ["Vanderbilt University", "Northwestern University", "University of Pennsylvania", "Washington University in St. Louis"]
 
   },
 
@@ -11263,7 +11281,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through trust, relationships, loyalty, and network stewardship",
 
-    oneSentenceSummary: "A small Ivy that converts deep relationships and alumni loyalty into disproportionate long-term professional opportunity."
+    oneSentenceSummary: "A small Ivy that converts deep relationships and alumni loyalty into disproportionate long-term professional opportunity.",
+
+    gradCities: ["New York NY", "Boston MA", "San Francisco CA", "Washington DC", "Chicago IL"],
+
+    hiddenPathway: "Dartmouth's Tuck School of Business connection and D-Plan academic calendar create unusually flexible internship access unmatched among Ivy League peers.",
+
+    comparableInstitutions: ["Brown University", "Williams College", "Amherst College", "Cornell University"]
 
   },
 
@@ -11723,7 +11747,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through communication, execution, and institutional stewardship",
 
-    oneSentenceSummary: "The flagship university connecting the agricultural, media, healthcare, and business systems that power America's interior economy."
+    oneSentenceSummary: "The flagship university connecting the agricultural, media, healthcare, and business systems that power America's interior economy.",
+
+    gradCities: ["St. Louis MO", "Kansas City MO", "Chicago IL", "Dallas TX"],
+
+    hiddenPathway: "Missouri's journalism school is the oldest in the world and maintains direct pipelines into major national newsrooms.",
+
+    comparableInstitutions: ["University of Kansas", "Indiana University", "University of Iowa", "Michigan State University"]
 
   },
 
@@ -12221,7 +12251,13 @@ institutionNarrative: {
 
     leadershipStyle: "Influence through institution building, wealth creation, and professional accomplishment",
 
-    oneSentenceSummary: "The Ivy League's premier applied-power institution, producing leaders in finance, business, healthcare, entrepreneurship, and institutional management."
+    oneSentenceSummary: "The Ivy League's premier applied-power institution, producing leaders in finance, business, healthcare, entrepreneurship, and institutional management.",
+
+    gradCities: ["New York NY", "Philadelphia PA", "San Francisco CA", "Washington DC", "Boston MA"],
+
+    hiddenPathway: "Wharton's direct pipeline into Wall Street investment banking and private equity is among the strongest of any undergraduate business program in the country.",
+
+    comparableInstitutions: ["Cornell University", "Columbia University", "Duke University", "Northwestern University"]
 
   },
 
@@ -12690,7 +12726,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through influence, institutional access, information, and global connectivity",
 
-    oneSentenceSummary: "The Ivy League university most deeply embedded inside the global capital of finance, media, diplomacy, publishing, and institutional power."
+    oneSentenceSummary: "The Ivy League university most deeply embedded inside the global capital of finance, media, diplomacy, publishing, and institutional power.",
+
+    gradCities: ["New York NY", "Washington DC", "San Francisco CA", "Boston MA", "London UK"],
+
+    hiddenPathway: "Columbia's Manhattan location gives students direct, walkable access to finance, media, and publishing internships unmatched by any other Ivy League campus.",
+
+    comparableInstitutions: ["New York University", "University of Pennsylvania", "Cornell University", "Georgetown University"]
 
   },
 
@@ -13160,7 +13202,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through competence, expertise, and institutional contribution",
 
-    oneSentenceSummary: "A rising public flagship connecting students to New England's healthcare, insurance, finance, research, and corporate ecosystems."
+    oneSentenceSummary: "A rising public flagship connecting students to New England's healthcare, insurance, finance, research, and corporate ecosystems.",
+
+    gradCities: ["Hartford CT", "New York NY", "Boston MA"],
+
+    hiddenPathway: "UConn's direct ties to Hartford's insurance industry give business and actuarial science students an unusually strong regional recruiting pipeline.",
+
+    comparableInstitutions: ["Rutgers University", "University of Massachusetts Amherst", "Penn State University", "University of Delaware"]
 
   },
 
@@ -13621,7 +13669,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through expertise, research, innovation, and public contribution",
 
-    oneSentenceSummary: "The flagship university of one of the world's strongest knowledge economies, connecting students to technology, healthcare, research, entrepreneurship, and public-sector leadership."
+    oneSentenceSummary: "The flagship university of one of the world's strongest knowledge economies, connecting students to technology, healthcare, research, entrepreneurship, and public-sector leadership.",
+
+    gradCities: ["Boston MA", "New York NY", "Hartford CT"],
+
+    hiddenPathway: "UMass Amherst's membership in the Five College Consortium gives students cross-registration access to Amherst, Smith, Mount Holyoke, and Hampshire College.",
+
+    comparableInstitutions: ["University of Connecticut", "Rutgers University", "Penn State University", "University of Vermont"]
 
   },
 
@@ -14084,7 +14138,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through execution, competence, and professional credibility",
 
-    oneSentenceSummary: "One of America's strongest career-launch universities, converting classroom learning into substantial work experience before graduation."
+    oneSentenceSummary: "One of America's strongest career-launch universities, converting classroom learning into substantial work experience before graduation.",
+
+    gradCities: ["Philadelphia PA", "New York NY", "Washington DC"],
+
+    hiddenPathway: "Drexel's co-op program is one of the largest and most structured in the country, with students routinely graduating with a full year of paid, resume-ready work experience.",
+
+    comparableInstitutions: ["Northeastern University", "University of Cincinnati", "Rochester Institute of Technology", "Temple University"]
 
   },
 
@@ -14545,7 +14605,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through competence, expertise, and upward mobility",
 
-    oneSentenceSummary: "The flagship university positioned between New York and Philadelphia that converts scale, diversity, and proximity into professional and economic mobility."
+    oneSentenceSummary: "The flagship university positioned between New York and Philadelphia that converts scale, diversity, and proximity into professional and economic mobility.",
+
+    gradCities: ["New York NY", "Philadelphia PA", "Trenton NJ", "Washington DC"],
+
+    hiddenPathway: "Rutgers' pharmacy and supply chain management programs feed directly into New Jersey's dense pharmaceutical corridor, a pipeline most out-of-state families overlook.",
+
+    comparableInstitutions: ["Penn State University", "University of Connecticut", "University of Maryland", "University of Massachusetts Amherst"]
 
   },
 
@@ -15008,7 +15074,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through expertise, discovery, and institutional contribution",
 
-    oneSentenceSummary: "A research powerhouse deeply integrated into one of America's most successful post-industrial innovation economies."
+    oneSentenceSummary: "A research powerhouse deeply integrated into one of America's most successful post-industrial innovation economies.",
+
+    gradCities: ["Pittsburgh PA", "New York NY", "Washington DC", "Philadelphia PA"],
+
+    hiddenPathway: "Pitt's direct affiliation with UPMC, one of the largest healthcare systems in the country, gives pre-med and health sciences students unusually early clinical research access.",
+
+    comparableInstitutions: ["Penn State University", "Ohio State University", "University of Maryland", "Virginia Tech"]
 
   },
 
@@ -15470,7 +15542,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through competence, execution, and technical mastery",
 
-    oneSentenceSummary: "One of America's premier engineering universities, producing builders, operators, innovators, and technical leaders across industry, government, and defense."
+    oneSentenceSummary: "One of America's premier engineering universities, producing builders, operators, innovators, and technical leaders across industry, government, and defense.",
+
+    gradCities: ["Washington DC", "Richmond VA", "Charlotte NC", "Atlanta GA"],
+
+    hiddenPathway: "Virginia Tech's engineering co-op program and direct pipeline into the Pentagon/defense contractor corridor near DC is one of the strongest in the country.",
+
+    comparableInstitutions: ["North Carolina State University", "Georgia Institute of Technology", "Clemson University", "Purdue University"]
 
   },
 
@@ -15937,7 +16015,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through service, execution, and community building",
 
-    oneSentenceSummary: "The flagship university of Tennessee connecting students to energy, manufacturing, logistics, healthcare, and one of America's fastest-growing economic regions."
+    oneSentenceSummary: "The flagship university of Tennessee connecting students to energy, manufacturing, logistics, healthcare, and one of America's fastest-growing economic regions.",
+
+    gradCities: ["Nashville TN", "Atlanta GA", "Charlotte NC", "Chicago IL"],
+
+    hiddenPathway: "UT Knoxville's Haslam College of Business has unusually strong direct ties to FedEx and Nashville's healthcare and music industry economy.",
+
+    comparableInstitutions: ["University of Georgia", "University of South Carolina", "Clemson University", "Auburn University"]
 
   },
 
@@ -16400,7 +16484,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through service, trust, execution, and organizational responsibility",
 
-    oneSentenceSummary: "One of America's most powerful relationship-capital universities, producing leaders across energy, engineering, agriculture, defense, construction, and Texas industry."
+    oneSentenceSummary: "One of America's most powerful relationship-capital universities, producing leaders across energy, engineering, agriculture, defense, construction, and Texas industry.",
+
+    gradCities: ["Houston TX", "Dallas TX", "Austin TX", "San Antonio TX"],
+
+    hiddenPathway: "Texas A&M's Corps of Cadets and direct pipeline into the energy and engineering sector give graduates unusually strong access to Houston's oil and gas leadership roles.",
+
+    comparableInstitutions: ["University of Texas at Austin", "Texas Tech University", "Louisiana State University", "University of Oklahoma"]
 
   },
 
@@ -16869,7 +16959,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through execution, relationships, and operational excellence",
 
-    oneSentenceSummary: "The flagship university embedded inside the world's most influential consumer-products and retail ecosystem."
+    oneSentenceSummary: "The flagship university embedded inside the world's most influential consumer-products and retail ecosystem.",
+
+    gradCities: ["Dallas TX", "Little Rock AR", "Bentonville AR", "Kansas City MO"],
+
+    hiddenPathway: "Arkansas's direct proximity to Walmart's global headquarters in Bentonville gives supply chain and business students an unmatched pipeline into retail leadership.",
+
+    comparableInstitutions: ["University of Oklahoma", "University of Missouri", "Oklahoma State University", "Mississippi State University"]
 
   },
 
@@ -17332,7 +17428,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through reliability, competence, stewardship, and execution",
 
-    oneSentenceSummary: "The flagship university at the center of America's food production, agricultural innovation, and risk-management economy."
+    oneSentenceSummary: "The flagship university at the center of America's food production, agricultural innovation, and risk-management economy.",
+
+    gradCities: ["Omaha NE", "Kansas City MO", "Chicago IL", "Denver CO"],
+
+    hiddenPathway: "Nebraska's actuarial science program is one of the oldest and most respected in the country, feeding directly into Omaha's concentrated insurance industry.",
+
+    comparableInstitutions: ["Iowa State University", "University of Kansas", "Kansas State University", "University of Missouri"]
 
   },
 
@@ -17797,7 +17899,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through expertise, influence, institution building, and relationship management",
 
-    oneSentenceSummary: "The flagship university of the modern South, producing leaders for healthcare, business, government, media, and the professional class."
+    oneSentenceSummary: "The flagship university of the modern South, producing leaders for healthcare, business, government, media, and the professional class.",
+
+    gradCities: ["Charlotte NC", "Washington DC", "New York NY", "Atlanta GA"],
+
+    hiddenPathway: "UNC's direct integration with the Research Triangle's biotech and pharma corridor gives students exceptional access to clinical research most large public universities can't match.",
+
+    comparableInstitutions: ["University of Virginia", "University of Georgia", "Virginia Tech", "Wake Forest University"]
 
   },
 
@@ -18263,7 +18371,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through execution, creation, and technical competence",
 
-    oneSentenceSummary: "California's premier applied-learning university, producing engineers, builders, founders, product managers, and operational leaders."
+    oneSentenceSummary: "California's premier applied-learning university, producing engineers, builders, founders, product managers, and operational leaders.",
+
+    gradCities: ["Los Angeles CA", "San Francisco CA", "San Diego CA", "Seattle WA"],
+
+    hiddenPathway: "Cal Poly's \"learn by doing\" model means engineering students graduate with hands-on project portfolios that often outperform peers from more theory-heavy programs in interviews.",
+
+    comparableInstitutions: ["University of California, San Diego", "San Jose State University", "University of California, Santa Barbara", "Colorado School of Mines"]
 
   },
 
@@ -18729,7 +18843,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through growth, innovation, adaptability, and upward mobility",
 
-    oneSentenceSummary: "The youngest UC campus and the primary higher-education engine for California's rapidly growing Central Valley economy."
+    oneSentenceSummary: "The youngest UC campus and the primary higher-education engine for California's rapidly growing Central Valley economy.",
+
+    gradCities: ["San Francisco CA", "Los Angeles CA", "Sacramento CA", "Fresno CA"],
+
+    hiddenPathway: "UC Merced's smaller size within the UC system gives undergraduates unusually direct access to faculty research typically reserved for graduate students at larger UC campuses.",
+
+    comparableInstitutions: ["University of California, Riverside", "California State University Fresno", "University of California, Santa Cruz"]
 
   },
 
@@ -19190,7 +19310,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through execution, persistence, and practical achievement",
 
-    oneSentenceSummary: "A major urban university that converts ambition and hustle into professional advancement through Philadelphia's healthcare, media, business, government, and sports ecosystems."
+    oneSentenceSummary: "A major urban university that converts ambition and hustle into professional advancement through Philadelphia's healthcare, media, business, government, and sports ecosystems.",
+
+    gradCities: ["Philadelphia PA", "New York NY", "Washington DC"],
+
+    hiddenPathway: "Temple's Fox School of Business has direct ties to Philadelphia's financial and healthcare sectors, offering internship access most students overlook in favor of higher-profile city schools.",
+
+    comparableInstitutions: ["Drexel University", "Rutgers University", "University of Pittsburgh", "Northeastern University"]
 
   },
 
@@ -19652,7 +19778,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through expertise, communication, and institutional stewardship",
 
-    oneSentenceSummary: "A flagship university that combines elite healthcare systems, nationally influential writing programs, and broad professional career mobility."
+    oneSentenceSummary: "A flagship university that combines elite healthcare systems, nationally influential writing programs, and broad professional career mobility.",
+
+    gradCities: ["Chicago IL", "Minneapolis MN", "Des Moines IA", "Kansas City MO"],
+
+    hiddenPathway: "Iowa's Writers' Workshop is the most prestigious creative writing MFA program in the country, and undergraduates get direct mentorship access most students don't realize is available.",
+
+    comparableInstitutions: ["University of Wisconsin\u2013Madison", "University of Missouri", "Michigan State University", "Indiana University"]
 
   },
 
@@ -20113,7 +20245,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through execution, career advancement, and community impact",
 
-    oneSentenceSummary: "One of America's strongest economic-mobility universities, connecting students directly into the industries that power Southern California."
+    oneSentenceSummary: "One of America's strongest economic-mobility universities, connecting students directly into the industries that power Southern California.",
+
+    gradCities: ["Los Angeles CA", "Orange County CA", "San Diego CA"],
+
+    hiddenPathway: "Long Beach's direct proximity to the Port of Long Beach and aerospace corridor gives engineering and business students strong regional employer access most families underrate.",
+
+    comparableInstitutions: ["California State University, Fullerton", "San Diego State University", "San José State University"]
 
   },
 
@@ -20577,7 +20715,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through execution, business development, and professional advancement",
 
-    oneSentenceSummary: "The university most closely connected to Orange County's middle-market business economy, producing managers, accountants, entrepreneurs, and corporate operators."
+    oneSentenceSummary: "The university most closely connected to Orange County's middle-market business economy, producing managers, accountants, entrepreneurs, and corporate operators.",
+
+    gradCities: ["Los Angeles CA", "Orange County CA", "San Diego CA"],
+
+    hiddenPathway: "Fullerton's business school is one of the largest and most respected in the CSU system, with strong direct ties to Orange County's corporate and finance sector.",
+
+    comparableInstitutions: ["California State University, Long Beach", "San Diego State University", "University of California, Irvine"]
 
   },
 
@@ -21040,7 +21184,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through execution, innovation, and technical competence",
 
-    oneSentenceSummary: "The most direct public-university pipeline into Silicon Valley's workforce, startup ecosystem, and technology economy."
+    oneSentenceSummary: "The most direct public-university pipeline into Silicon Valley's workforce, startup ecosystem, and technology economy.",
+
+    gradCities: ["San Jose CA", "San Francisco CA", "Los Angeles CA"],
+
+    hiddenPathway: "San José State's direct location inside Silicon Valley gives students uniquely affordable access to the same internship pipeline as far more expensive nearby private universities.",
+
+    comparableInstitutions: ["Santa Clara University", "California State University, Long Beach", "San Francisco State University"]
 
   },
 
@@ -21504,7 +21654,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through innovation, scientific discovery, and entrepreneurial creation",
 
-    oneSentenceSummary: "A top-tier research university that combines elite science and engineering with one of the strongest quality-of-life environments in American higher education."
+    oneSentenceSummary: "A top-tier research university that combines elite science and engineering with one of the strongest quality-of-life environments in American higher education.",
+
+    gradCities: ["Los Angeles CA", "San Francisco CA", "San Diego CA"],
+
+    hiddenPathway: "UCSB's physics and materials science research funding is among the highest in the UC system, producing a disproportionate number of Nobel laureates relative to its size.",
+
+    comparableInstitutions: ["University of California, San Diego", "University of California, Irvine", "University of California, Davis"]
 
   },
 
@@ -21968,7 +22124,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through innovation, exploration, and independent thinking",
 
-    oneSentenceSummary: "A research-intensive university that combines Silicon Valley access with one of the most independent and creative intellectual cultures in American higher education."
+    oneSentenceSummary: "A research-intensive university that combines Silicon Valley access with one of the most independent and creative intellectual cultures in American higher education.",
+
+    gradCities: ["San Francisco CA", "San Jose CA", "Los Angeles CA"],
+
+    hiddenPathway: "UC Santa Cruz's narrative evaluation grading system and strong marine biology program attract a distinct academic culture most families don't associate with the UC system.",
+
+    comparableInstitutions: ["University of California, Santa Barbara", "University of California, San Diego", "University of California, Davis"]
 
   },
 
@@ -22431,7 +22593,13 @@ institutionNarrative: {
 
     leadershipStyle: "Leadership through discovery, scientific advancement, and technological innovation",
 
-    oneSentenceSummary: "One of the world's premier universities for biotechnology, life sciences, engineering, AI, and future-industry innovation."
+    oneSentenceSummary: "One of the world's premier universities for biotechnology, life sciences, engineering, AI, and future-industry innovation.",
+
+    gradCities: ["San Diego CA", "Los Angeles CA", "San Francisco CA"],
+
+    hiddenPathway: "UCSD's direct ties to the biotech corridor in La Jolla give undergraduates research and internship access to one of the densest biotech clusters in the country.",
+
+    comparableInstitutions: ["University of California, Santa Barbara", "University of California, Irvine", "University of California, Davis"]
 
   },
 
@@ -23571,6 +23739,14 @@ institutionNarrative: {
     ]
   },
 
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "SEC flagship university supplying business, communications, and regional leadership talent across the Southeast."
+
+  },
+
   studentFit: {
 
     bigFiveProfile: {
@@ -24125,6 +24301,14 @@ institutionNarrative: {
       "Terry internal transfer competitive — not all business-interested students gain access",
       "National brand recognition still lagging actual academic quality"
     ]
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "SEC flagship university supplying business, communications, and regional leadership talent across the Southeast."
+
   },
 
   studentFit: {
@@ -35388,98 +35572,201 @@ name: "Baylor University",
 
     name: "Southern Methodist University",
 
-    location: "",
-
-    region: "",
-
-    archetype: "",
-
-    oneSentenceSummary: "",
-
-    pipeline: "",
-
-    hiddenPathway: "",
-
-    institutionalSecret: "",
-
-    theRoom: "",
-
-    lifestyle: "",
-
-    bestFitPersonality: "",
-
-    faithTradition: "",
-
-    geographicInfluenceRadius: "",
-
-    economicOutcome: "",
-
-    gradCities: [],
-
-    comparableInstitutions: [],
-
-    ccTransferPathway: {
-      hasCCPathway: false,
-      ccFeederNames: [],
-      transferAcceptanceRate: "",
-      freshmanAcceptanceRate: "",
-      estimatedSavingsRange: "",
-      transferNotes: ""
-    }
-  },
-
-name: "Southern Methodist University",
-
     location: "Dallas, Texas",
 
     region: "Texas + Southwest",
 
-    universitySize: "Large",
+    archetype: "The Dallas Executive Gateway — Finance, Leadership, and Private Capital Formation",
 
-    institutionType: "Private Research University",
+    oneSentenceSummary: "SMU is a nationally connected private university at the center of the Dallas wealth ecosystem, producing leaders across finance, real estate, private capital, consulting, entrepreneurship, and corporate America through deep integration with the city's business elite.",
 
-    archetype: "Private Capital & Finance Gateway University",
+    pipeline: "Approximately 7,500 undergraduates. SMU's Cox School of Business is a nationally recognized launchpad into finance, private equity, and real estate, with unusually direct access to Dallas's concentrated wealth-management and energy-finance corridor. Major recruiters include Goldman Sachs, JPMorgan, EY, Deloitte, AT&T, ExxonMobil, and a dense network of Dallas-based private equity and family office firms.",
 
-    institutionalPersonality: "Dallas Executive Elite",
+    hiddenPathway: "SMU's proximity to Dallas's private capital and family office ecosystem gives finance-track students direct access to internships and mentorships most universities can't replicate — many students land roles at boutique investment and wealth management firms through direct alumni introductions well before graduation.",
 
-    cultureKeywords: [
-      "Finance",
-      "Leadership",
-      "Business",
-      "Entrepreneurship",
-      "Prestige",
-      "Networking",
-      "Influence",
-      "Professional Success"
+    institutionalSecret: "SMU's social and alumni network functions less like a typical university community and more like an extension of the Dallas business establishment itself — board seats, family offices, and executive leadership roles across North Texas are disproportionately held by SMU graduates relative to the school's size.",
+
+    theRoom: "Set in the affluent Highland Park area of Dallas, SMU's campus is polished, tree-lined, and walking distance from some of the wealthiest neighborhoods in Texas, placing students inside the social and professional fabric of Dallas from day one.",
+
+    lifestyle: "Polished, ambitious, and socially structured. Students engage with a strong Greek life presence, Division I athletics (AAC), and a campus culture oriented toward professional networking and executive-track ambition from the start.",
+
+    bestFitPersonality: "Professionally ambitious, socially confident, comfortable in a status-conscious environment, drawn to finance or leadership pathways, high Extraversion with high Conscientiousness.",
+
+    faithTradition: "Methodist heritage; today welcoming to students of all faiths and no faith.",
+
+    geographicInfluenceRadius: "Regional dominance in Dallas-Fort Worth and Texas, with strong national reach into finance and private capital hubs.",
+
+    economicOutcome: "Excellent outcomes in finance, real estate, private equity, consulting, and corporate leadership, driven by direct integration with the Dallas wealth economy.",
+
+    gradCities: [
+      "Dallas TX",
+      "Houston TX",
+      "New York NY",
+      "Austin TX",
+      "Chicago IL"
     ],
 
-    missionOrientation: "Achievement + Leadership + Influence",
+    comparableInstitutions: [
+      "Texas Christian University",
+      "Vanderbilt University",
+      "Wake Forest University",
+      "University of Richmond",
+      "Emory University"
+    ],
 
+    ccTransferPathway: {
+      hasCCPathway: true,
+      ccFeederNames: ["Dallas College", "Collin College"],
+      transferAcceptanceRate: "~45%",
+      freshmanAcceptanceRate: "~53%",
+      estimatedSavingsRange: "$30,000-$65,000",
+      transferNotes: "SMU accepts community college transfers from North Texas feeder schools, with strongest pathways into Cox School of Business programs."
+    }
+  },
+
+  institutionIdentity: {
+    archetype: "Private Research University",
+    institutionalPersonality: "polished, ambitious, status-conscious, highly networked",
+    cultureKeywords: ["Finance", "Leadership", "Business", "Entrepreneurship", "Prestige", "Networking", "Dallas", "Greek Life"],
+    missionOrientation: "Developing high-achieving leaders through rigorous academics, executive exposure, and direct integration into Dallas's economic center.",
     faithTradition: "Methodist Heritage",
-
-    educationalPhilosophy:
-      "Develops high-achieving leaders through rigorous academics, extensive professional networking, executive exposure, and direct integration into major economic centers.",
-
+    educationalPhilosophy: "Learning through rigorous coursework, extensive professional networking, and direct exposure to Dallas's business establishment.",
     competitiveness: "Highly Selective",
-
     politicalCulture: "Moderate",
-
     studentAutonomy: "Very High",
-
     prestigeOrientation: "Professional Success and Influence",
-
     socialClimate: "Ambitious, Status-Conscious, Highly Networked",
+    leadershipStyle: "Executive Leadership Development"
+  },
 
-    leadershipStyle: "Executive Leadership Development",
+  megaRegionIntegration: {
+    primaryMegaRegion: "TexasTriangle",
+    regionalRole: "Private university supplying finance, real estate, and executive leadership talent directly into the Dallas wealth economy."
+  },
 
-    oneSentenceSummary:
-      "A nationally connected private university positioned at the center of the Dallas wealth ecosystem, producing leaders across finance, real estate, private capital, consulting, entrepreneurship, law, and corporate America."
-  ,
+  megaRegionExposure: {
+    MidContinentIndustrialEnergyCorridor: 20, BosWash: 28, TorBuffChester: 10,
+    TexasTriangle: 100, CharLanta: 24, NorCalInnovationCorridor: 16, SoCalCreativeEconomy: 14
+  },
+
+  comparativePositioning: {
+    versusTCU: "TCU offers a more traditional, community-oriented Fort Worth campus; SMU is more explicitly finance- and executive-track focused, embedded directly in Dallas's wealth corridor.",
+    versusVanderbilt: "Vanderbilt offers stronger national prestige and graduate school placement; SMU offers unmatched direct access to Dallas private capital and family office networks."
+  },
 
   institutionScale: {
+    enrollmentCategory: "Medium",
+    undergraduateEnrollment: 8043,
+    graduateEnrollment: 3400,
+    totalEnrollment: 11443,
+    campusType: "Residential Urban-Adjacent University",
+    residentialIntensity: 68,
+    communityFeel: 74,
+    studentFacultyRatio: "11:1",
+    classSizeExperience: "Small-to-moderate classes with accessible faculty, particularly within Cox School of Business, where direct industry connections are emphasized from freshman year.",
+    scaleAdvantages: ["Direct Dallas private capital and family office access", "Nationally ranked Cox School of Business", "Strong alumni network embedded in Dallas business establishment", "Polished, safe, well-resourced campus"],
+    scaleDisadvantages: ["High cost of attendance", "Status-conscious social culture may not suit every student", "Less academic breadth outside business and finance", "Limited national brand outside Texas and finance circles"]
+  },
 
-    undergraduateEnrollment: 8043
+  studentFit: {
+    bigFiveProfile: { openness: 62, conscientiousness: 82, extraversion: 74, agreeableness: 70, neuroticism: 38 },
+    hollandCodes: ["E", "C", "S"],
+    learningStyle: ["Applied Business Coursework", "Networking-Integrated Learning", "Executive Mentorship", "Case-Based Discussion"],
+    socialEnvironment: ["Polished", "Socially Active", "Greek Life Present", "Highly Networked", "Ambitious"],
+    idealStudentTraits: ["Professionally ambitious", "Comfortable in status-conscious settings", "Interested in finance or leadership", "Values direct industry access"],
+    thrivesIf: ["Wants direct access to Dallas's private capital ecosystem", "Is finance or business-track focused", "Enjoys a polished, networking-driven social scene", "Wants strong Greek life and D1 athletics culture"],
+    strugglesIf: ["Wants a large research university with broad program breadth", "Is uncomfortable with a status-conscious social environment", "Prefers a lower-cost public university", "Wants a campus outside Texas's cultural orbit"],
+    transferRiskFactors: ["Students outside business/finance tracks", "Students uncomfortable with Greek-heavy social culture", "Students prioritizing lower cost over network access"]
+  },
 
+  hiddenOpportunities: {
+    underratedMajors: ["Real Estate Finance", "Advertising", "Economics with Finance Applications", "Human Rights"],
+    hiddenCareerPipelines: ["Dallas Family Office and Wealth Management", "Energy Finance", "Private Equity", "Real Estate Development"],
+    nicheRecruitingAdvantages: ["Goldman Sachs", "JPMorgan", "Dallas-based private equity firms", "Energy sector finance"],
+    overlookedStrengths: ["Direct family office and private capital access rare among peer universities", "Highland Park location inside Dallas's wealthiest corridor", "Cox School of Business national ranking"],
+    sleeperIndustries: ["Real Estate Private Equity", "Energy Finance", "Family Office Management"]
+  },
+
+  networkCapital: {
+    alumniAccessibility: 84, mentorshipDensity: 78, executiveAccess: 82, internshipNetwork: 84,
+    familyBusinessExposure: 62, relationshipCapitalScore: 86, alumniLoyaltyScore: 82,
+    referralCultureStrength: 84, donorNetworkStrength: "", boardMemberDensity: ""
+  },
+
+  economicEcosystem: {
+    primaryIndustries: ["Finance", "Real Estate", "Private Equity", "Energy", "Consulting"],
+    regionalEconomicDrivers: ["Finance", "Energy", "Real Estate", "Technology", "Corporate Headquarters"],
+    topEmployers: ["Goldman Sachs", "JPMorgan", "EY", "Deloitte", "AT&T", "ExxonMobil"],
+    emergingIndustries: ["Fintech", "Real Estate Technology", "Energy Transition Finance"],
+    startupDensity: "Moderate", ventureCapitalAccess: 56, corporateHeadquartersDensity: 78,
+    healthcareHubStrength: 50, innovationIndex: 58
+  },
+
+  geographicInfluence: {
+    dominantMarket: "Dallas-Fort Worth — Finance, Real Estate, and Private Capital",
+    secondaryMarkets: ["Houston TX", "New York NY", "Austin TX"],
+    alumniStrongholds: ["Dallas TX", "Houston TX", "New York NY"],
+    relocationPatterns: ["The large majority of graduates remain in Dallas-Fort Worth, entering finance and real estate.", "A meaningful share relocate to New York for investment banking and private equity.", "Energy-track graduates disperse across Texas's broader energy corridor."],
+    regionalInfluenceScore: 88, nationalReachScore: 52, internationalReachScore: 26
+  },
+
+  socialCapital: {
+    greekLifeInfluence: 58, studentOrganizationStrength: 72, leadershipDevelopment: 80,
+    crossDisciplinaryInteraction: 54, civicEngagement: 56
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 16, notes: "Limited institutional emphasis." },
+    healthWellness: { strength: 28, notes: "Not a primary institutional strength." },
+    nutraceuticals: { strength: 8, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 40, notes: "Some business graduates enter consumer brand roles." },
+    outdoorIndustry: { strength: 10, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 24, notes: "D1 athletics supports modest sports business pathways." },
+    entertainmentMedia: { strength: 28, notes: "Advertising program supports modest media placement." },
+    ventureCapital: { strength: 48, notes: "Growing presence through Dallas's private capital ecosystem." },
+    privateEquity: { strength: 72, notes: "One of SMU's strongest pathways, tied directly to Dallas private equity and family office firms." },
+    investmentBanking: { strength: 74, notes: "Strong Wall Street and regional banking placement through Cox School of Business." },
+    consulting: { strength: 58, notes: "Solid placement into national and regional consulting firms." },
+    medicine: { strength: 24, notes: "Not a primary institutional strength." },
+    healthcareAdministration: { strength: 22, notes: "Limited emphasis." },
+    defense: { strength: 12, notes: "Minimal emphasis." },
+    realEstate: { strength: 78, notes: "A genuine institutional strength — direct pipeline into Dallas real estate development and finance." },
+    luxuryBrands: { strength: 30, notes: "Some alumni presence given Dallas's affluent consumer market." },
+    entrepreneurship: { strength: 56, notes: "Growing program supported by Dallas's private capital ecosystem." },
+    technology: { strength: 36, notes: "Modest presence relative to finance and real estate strength." },
+    publicPolicy: { strength: 26, notes: "Limited institutional emphasis." },
+    nonprofitLeadership: { strength: 44, notes: "Moderate presence tied to Dallas philanthropic community." }
+  },
+
+  wealthMobility: {
+    averageFamilyIncome: "", socialMobilityIndex: 52, firstGenerationSupport: 48,
+    wealthCreationPotential: 82, familyBusinessPipelineStrength: 58
+  },
+
+  futureResilience: {
+    aiResistance: 62, automationResistance: 64, adaptabilityScore: 66, interdisciplinaryStrength: 52,
+    futureReadiness: 64, entrepreneurialFlexibility: 62, lifelongLearningCulture: 60, innovationCapacity: 54
+  },
+
+  lifeDesignOutcomes: {
+    wealthCreationPotential: 82, communityLeadershipPotential: 70, geographicMobility: 58,
+    workLifeBalancePotential: 64, purposeAlignment: 62, familyFormationSupport: 72,
+    personalDevelopmentPotential: 68, careerOptionality: 66, longTermLifeSatisfaction: 74
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 58, networkMoat: 78, geographicMoat: 82, industryMoat: 72,
+    alumniMoat: 76, brandDurability: 68, overallMoatScore: 72
+  },
+
+  hillel_strength: "tier_3",
+  jewish_enrollment: "Small Jewish population, active Hillel presence",
+  hillel_note: "SMU maintains a small but active Jewish student community with Hillel programming, supplemented by Dallas's well-established broader Jewish community nearby.",
+
+  trajectoryProfile: {
+    dominantTrajectory: "STEWARD",
+    leaverScore: 38, returnerScore: 70, stewardScore: 82, navigatorScore: 48,
+    geographicLockIn: "high", alumniDispersalPattern: "regional_texas"
   }
 },
 
@@ -36420,104 +36707,175 @@ name: "Rice University",
 "University of Southern California": {
 
   institutionNarrative: {
-
     name: "University of Southern California",
-
-    location: "",
-
-    region: "",
-
-    archetype: "",
-
-    oneSentenceSummary: "",
-
-    pipeline: "",
-
-    hiddenPathway: "",
-
-    institutionalSecret: "",
-
-    theRoom: "",
-
-    lifestyle: "",
-
-    bestFitPersonality: "",
-
-    faithTradition: "",
-
-    geographicInfluenceRadius: "",
-
-    economicOutcome: "",
-
-    gradCities: [],
-
-    comparableInstitutions: [],
-
+    location: "Los Angeles, California",
+    region: "Southern California",
+    archetype: "The Entertainment & Innovation Capital University — Film, Business, and LA Industry Formation",
+    oneSentenceSummary: "USC is a major private research university at the heart of Los Angeles, combining a world-leading film school, a nationally elite business program, and unmatched direct access to the entertainment, technology, and sports industries that define LA's economy.",
+    pipeline: "Approximately 21,000 undergraduates. USC's School of Cinematic Arts is the most influential film program in the world; the Marshall School of Business feeds finance, consulting, and entertainment business roles; and engineering (Viterbi) supplies major tech employers. Recruiters include every major studio, Disney, Google, Goldman Sachs, and the full spectrum of LA's entertainment and technology economy.",
+    hiddenPathway: "USC's alumni network inside the entertainment industry is unmatched — from studio executives to agents to directors, the density of USC graduates in decision-making entertainment roles gives students direct access to internships and mentorships that no other university can replicate.",
+    institutionalSecret: "USC's 'Trojan Family' network functions as one of the most powerful alumni loyalty systems in American higher education — alumni actively prioritize hiring and mentoring fellow Trojans, especially within entertainment, business, and engineering, making the network itself one of the school's most valuable assets.",
+    theRoom: "Located just south of downtown Los Angeles, USC places students directly inside the entertainment, technology, and sports capital of the world, with studios, agencies, and major tech offices all within a short drive.",
+    lifestyle: "Ambitious, industry-connected, and socially vibrant. Students balance rigorous coursework with internships at major studios and companies, a strong Greek life and Division I athletics culture (Pac-12/Big Ten), and direct engagement with LA's entertainment and business economy.",
+    bestFitPersonality: "Ambitious, industry-focused, comfortable in a large, high-energy environment, drawn to entertainment, business, or technology, high Extraversion with high Openness.",
+    faithTradition: "Historically Methodist-affiliated; today entirely nonsectarian.",
+    geographicInfluenceRadius: "Dominant influence across Los Angeles and Southern California, with major national reach into entertainment, technology, and business nationally.",
+    economicOutcome: "Outstanding outcomes in entertainment, business, technology, and engineering, driven by unmatched LA industry proximity and one of the most powerful alumni networks in the country.",
+    gradCities: ["Los Angeles CA", "New York NY", "San Francisco CA", "Seattle WA", "Chicago IL"],
+    comparableInstitutions: ["New York University", "University of California, Los Angeles", "Northwestern University", "Boston University"],
     ccTransferPathway: {
-      hasCCPathway: false,
-      ccFeederNames: [],
-      transferAcceptanceRate: "",
-      freshmanAcceptanceRate: "",
-      estimatedSavingsRange: "",
-      transferNotes: ""
+      hasCCPathway: true,
+      ccFeederNames: ["Santa Monica College", "Pasadena City College", "El Camino College"],
+      transferAcceptanceRate: "~28%",
+      freshmanAcceptanceRate: "~12%",
+      estimatedSavingsRange: "$35,000-$80,000",
+      transferNotes: "USC has one of the strongest community college transfer pipelines among elite private universities, particularly through Santa Monica College."
     }
   },
 
-name: "University of Southern California",
-
-    location: "Los Angeles, California",
-
-    region: "Southern California",
-
-    universitySize: "Large",
-
-    enrollmentBand: "45,000-55,000",
-
-    operationalScale: "Global",
-
-    institutionType: "Private Research University",
-
-    archetype: "Influence Power University",
-
-    institutionalPersonality: "Elite Network Amplifier",
-
-    cultureKeywords: [
-      "Influence",
-      "Leadership",
-      "Entrepreneurship",
-      "Entertainment",
-      "Innovation",
-      "Business",
-      "Media",
-      "Relationships"
-    ],
-
-    missionOrientation:
-      "Leadership + Opportunity + Innovation + Global Influence",
-
-    educationalPhilosophy:
-      "Develops highly connected leaders through interdisciplinary excellence, entrepreneurial thinking, relationship capital, and access to one of the most powerful alumni ecosystems in the world.",
-
-    competitiveness: "Elite",
-
-    politicalCulture: "Moderate",
-
+  institutionIdentity: {
+    archetype: "Major Private Research University",
+    institutionalPersonality: "ambitious, industry-connected, high-energy, entrepreneurial",
+    cultureKeywords: ["Entertainment", "Film", "Business", "Technology", "Trojan Family", "Greek Life", "Division I Athletics", "Los Angeles"],
+    missionOrientation: "Producing industry-ready leaders through direct integration with Los Angeles's entertainment, technology, and business economy.",
+    faithTradition: "None",
+    educationalPhilosophy: "Learning through applied, industry-connected coursework and direct professional network access.",
+    competitiveness: "Extremely Selective",
+    politicalCulture: "Mixed, reflecting Los Angeles's broad diversity of perspectives.",
     studentAutonomy: "Very High",
+    prestigeOrientation: "Elite nationally, especially in entertainment, business, and engineering.",
+    socialClimate: "High-energy, ambitious, industry-connected, socially vibrant.",
+    leadershipStyle: "Leadership through industry connection, entrepreneurial initiative, and network activation."
+  },
 
-    prestigeOrientation: "Influence and Achievement",
+  megaRegionIntegration: {
+    primaryMegaRegion: "SoCalCreativeEconomy",
+    regionalRole: "Major research university supplying entertainment, business, and technology leadership directly to the Los Angeles economy."
+  },
 
-    socialClimate: "Ambitious, Social, Connected, Opportunity Driven",
+  megaRegionExposure: {
+    MidContinentIndustrialEnergyCorridor: 10, BosWash: 40, TorBuffChester: 14,
+    TexasTriangle: 18, CharLanta: 12, NorCalInnovationCorridor: 50, SoCalCreativeEconomy: 100
+  },
 
-    leadershipStyle: "Network-Centered Leadership",
-
-    oneSentenceSummary:
-      "America's premier influence-building university, combining elite professional outcomes with extraordinary access to entertainment, technology, entrepreneurship, real estate, sports, media, and wealth networks."
-  ,
+  comparativePositioning: {
+    versusUCLA: "UCLA offers a lower cost as a public flagship with similarly strong LA access; USC offers a smaller private-school network density and a stronger entertainment industry pipeline.",
+    versusNYU: "NYU offers New York's finance and media capital; USC offers unmatched entertainment industry access and a more concentrated alumni loyalty culture."
+  },
 
   institutionScale: {
+    enrollmentCategory: "Large",
+    undergraduateEnrollment: 21229,
+    graduateEnrollment: 27000,
+    totalEnrollment: 48229,
+    campusType: "Urban Research University",
+    residentialIntensity: 58,
+    communityFeel: 68,
+    studentFacultyRatio: "13:1",
+    classSizeExperience: "Mix of large lectures and smaller industry-connected seminars, especially within Cinematic Arts and Marshall, where direct faculty-industry ties are common.",
+    scaleAdvantages: ["Unmatched entertainment industry proximity and alumni network", "World-leading film school", "Elite business and engineering programs", "Extremely strong Trojan Family alumni loyalty culture"],
+    scaleDisadvantages: ["Very high cost of attendance", "Large student body can feel less intimate", "Intensely competitive internship access", "High-energy social culture may not suit every student"]
+  },
 
-    undergraduateEnrollment: 21229
+  studentFit: {
+    bigFiveProfile: { openness: 78, conscientiousness: 74, extraversion: 76, agreeableness: 66, neuroticism: 40 },
+    hollandCodes: ["A", "E", "I"],
+    learningStyle: ["Industry-Connected Coursework", "Applied Studio Learning", "Internship-Integrated Learning", "Entrepreneurial Projects"],
+    socialEnvironment: ["High-Energy", "Industry-Connected", "Ambitious", "Greek Life Present", "Socially Active"],
+    idealStudentTraits: ["Industry-focused ambition", "Comfortable in a large, high-energy environment", "Drawn to entertainment, business, or technology", "Values direct professional network access"],
+    thrivesIf: ["Wants unmatched entertainment industry access", "Is ambitious and network-driven", "Enjoys a large, vibrant campus culture", "Wants direct LA industry internships while in school"],
+    strugglesIf: ["Wants a small, intimate liberal arts environment", "Is uncomfortable with a large, competitive student body", "Needs a lower-cost option", "Prefers a quieter, less industry-driven culture"],
+    transferRiskFactors: ["Students seeking smaller, more intimate campuses", "Students prioritizing cost over network access", "Students outside entertainment/business/tech tracks"]
+  },
 
+  hiddenOpportunities: {
+    underratedMajors: ["Interactive Media and Games", "Public Relations", "Real Estate Development", "Music Industry"],
+    hiddenCareerPipelines: ["Studio Executive Track", "Talent Agency Leadership", "Tech Product Management", "Sports Business and Management"],
+    nicheRecruitingAdvantages: ["Every major Hollywood studio", "Disney", "Google", "Goldman Sachs", "Major sports franchises"],
+    overlookedStrengths: ["Trojan Family alumni loyalty culture unmatched at scale", "World's top-ranked film program", "Direct proximity to every major entertainment company"],
+    sleeperIndustries: ["Sports Business", "Music Industry Management", "Interactive Media and Gaming"]
+  },
+
+  networkCapital: {
+    alumniAccessibility: 92, mentorshipDensity: 86, executiveAccess: 84, internshipNetwork: 94,
+    familyBusinessExposure: 46, relationshipCapitalScore: 92, alumniLoyaltyScore: 96,
+    referralCultureStrength: 94, donorNetworkStrength: "", boardMemberDensity: ""
+  },
+
+  economicEcosystem: {
+    primaryIndustries: ["Entertainment", "Technology", "Business", "Sports", "Media"],
+    regionalEconomicDrivers: ["Entertainment", "Technology", "Tourism", "Trade", "Aerospace"],
+    topEmployers: ["Disney", "Google", "Warner Bros. Discovery", "Netflix", "Goldman Sachs"],
+    emergingIndustries: ["Streaming Media", "AI and Entertainment Tech", "Sports Analytics"],
+    startupDensity: "High", ventureCapitalAccess: 78, corporateHeadquartersDensity: 66,
+    healthcareHubStrength: 60, innovationIndex: 82
+  },
+
+  geographicInfluence: {
+    dominantMarket: "Los Angeles — Entertainment, Technology, and Business",
+    secondaryMarkets: ["New York NY", "San Francisco CA", "Seattle WA"],
+    alumniStrongholds: ["Los Angeles CA", "New York NY", "San Francisco CA"],
+    relocationPatterns: ["The vast majority of graduates remain in Los Angeles, entering entertainment, business, and technology.", "A significant share relocate to New York for finance and media.", "Technology graduates disperse to San Francisco and Seattle."],
+    regionalInfluenceScore: 96, nationalReachScore: 72, internationalReachScore: 54
+  },
+
+  socialCapital: {
+    greekLifeInfluence: 42, studentOrganizationStrength: 84, leadershipDevelopment: 78,
+    crossDisciplinaryInteraction: 72, civicEngagement: 60
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 34, notes: "Some alumni presence given LA's beauty and consumer industry." },
+    healthWellness: { strength: 44, notes: "Moderate presence, not a primary institutional strength." },
+    nutraceuticals: { strength: 12, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 52, notes: "Marshall graduates enter consumer brand and product roles." },
+    outdoorIndustry: { strength: 16, notes: "Minimal direct pipeline." },
+    sportsBusiness: { strength: 62, notes: "Strong pathway given USC's major athletics program and LA's sports industry presence." },
+    entertainmentMedia: { strength: 98, notes: "USC's defining institutional strength — the most powerful entertainment industry pipeline of any American university." },
+    ventureCapital: { strength: 58, notes: "Growing presence tied to LA's expanding technology and startup ecosystem." },
+    privateEquity: { strength: 54, notes: "Solid placement, particularly in entertainment finance." },
+    investmentBanking: { strength: 62, notes: "Strong Marshall School placement into investment banking." },
+    consulting: { strength: 66, notes: "Strong placement into major consulting firms." },
+    medicine: { strength: 48, notes: "Solid pre-health preparation, not a primary institutional strength." },
+    healthcareAdministration: { strength: 40, notes: "Moderate presence." },
+    defense: { strength: 18, notes: "Minimal emphasis." },
+    realEstate: { strength: 56, notes: "Meaningful presence given LA's real estate market." },
+    luxuryBrands: { strength: 48, notes: "Notable presence tied to LA's entertainment and consumer culture." },
+    entrepreneurship: { strength: 72, notes: "Strong culture supported by LA's growing startup ecosystem." },
+    technology: { strength: 74, notes: "Strong Viterbi engineering pipeline into major tech companies." },
+    publicPolicy: { strength: 36, notes: "Moderate presence, not a primary institutional strength." },
+    nonprofitLeadership: { strength: 46, notes: "Moderate presence tied to LA's philanthropic community." }
+  },
+
+  wealthMobility: {
+    averageFamilyIncome: "", socialMobilityIndex: 66, firstGenerationSupport: 64,
+    wealthCreationPotential: 82, familyBusinessPipelineStrength: 40
+  },
+
+  futureResilience: {
+    aiResistance: 68, automationResistance: 66, adaptabilityScore: 82, interdisciplinaryStrength: 76,
+    futureReadiness: 82, entrepreneurialFlexibility: 80, lifelongLearningCulture: 72, innovationCapacity: 84
+  },
+
+  lifeDesignOutcomes: {
+    wealthCreationPotential: 82, communityLeadershipPotential: 74, geographicMobility: 74,
+    workLifeBalancePotential: 62, purposeAlignment: 76, familyFormationSupport: 62,
+    personalDevelopmentPotential: 80, careerOptionality: 84, longTermLifeSatisfaction: 78
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 84, networkMoat: 94, geographicMoat: 96, industryMoat: 96,
+    alumniMoat: 92, brandDurability: 88, overallMoatScore: 92
+  },
+
+  hillel_strength: "tier_1",
+  jewish_enrollment: "~15-18% Jewish undergraduate enrollment",
+  hillel_note: "USC has one of the largest and most active Jewish communities among major private universities, with a well-established Hillel and extensive Jewish life infrastructure integrated into a highly diverse campus.",
+
+  trajectoryProfile: {
+    dominantTrajectory: "STEWARD",
+    leaverScore: 44, returnerScore: 68, stewardScore: 78, navigatorScore: 62,
+    geographicLockIn: "high", alumniDispersalPattern: "regional_los_angeles"
   }
 },
 
@@ -36652,104 +37010,175 @@ name: "Stanford University",
 "Washington University in St. Louis": {
 
   institutionNarrative: {
-
     name: "Washington University in St. Louis",
-
-    location: "",
-
-    region: "",
-
-    archetype: "",
-
-    oneSentenceSummary: "",
-
-    pipeline: "",
-
-    hiddenPathway: "",
-
-    institutionalSecret: "",
-
-    theRoom: "",
-
-    lifestyle: "",
-
-    bestFitPersonality: "",
-
-    faithTradition: "",
-
-    geographicInfluenceRadius: "",
-
-    economicOutcome: "",
-
-    gradCities: [],
-
-    comparableInstitutions: [],
-
+    location: "St. Louis, Missouri",
+    region: "Midwest",
+    archetype: "The Elite Research Powerhouse — Medicine, Business, and Academic Rigor Formation",
+    oneSentenceSummary: "WashU is one of the most academically rigorous private research universities in the country, combining a top-ranked medical school pipeline, an elite business program, and exceptional undergraduate research access on a beautiful, well-resourced Midwest campus.",
+    pipeline: "Approximately 7,900 undergraduates. WashU is nationally elite in pre-medicine (feeding directly into one of the top medical schools in the country), Olin Business School, and biomedical engineering. Major recruiters include top consulting firms, investment banks, and the university's own renowned medical and research institutions.",
+    hiddenPathway: "WashU's direct connection to its own top-five medical school creates an unusually strong pre-med pipeline — undergraduates get research and shadowing access to one of the best hospital systems in the country well before applying to medical school themselves.",
+    institutionalSecret: "WashU offers exceptionally generous need-based financial aid and merit scholarships relative to its endowment size, making it one of the more genuinely accessible elite research universities despite its high sticker price and rigorous academic reputation.",
+    theRoom: "Set on a spacious, architecturally striking campus in suburban St. Louis, WashU offers a quieter, more traditional college experience than its urban-elite peers, with strong access to St. Louis's growing biotech and healthcare economy.",
+    lifestyle: "Academically intense, research-driven, and residential. Students balance rigorous coursework with undergraduate research opportunities, Division III athletics, and a close-knit, less socially competitive culture than many peer institutions.",
+    bestFitPersonality: "Intellectually rigorous, research-driven, comfortable with a demanding academic culture, values substance over social status, high Conscientiousness with high Openness.",
+    faithTradition: "Nonsectarian.",
+    geographicInfluenceRadius: "National influence in medicine, research, and business, with strong regional ties to St. Louis's healthcare and biotech economy.",
+    economicOutcome: "Outstanding outcomes in medicine, research, business, and biomedical engineering, driven by exceptional research access and one of the strongest medical school pipelines in the country.",
+    gradCities: ["St. Louis MO", "New York NY", "Chicago IL", "Boston MA", "San Francisco CA"],
+    comparableInstitutions: ["Duke University", "Emory University", "Vanderbilt University", "Northwestern University"],
     ccTransferPathway: {
-      hasCCPathway: false,
-      ccFeederNames: [],
-      transferAcceptanceRate: "",
-      freshmanAcceptanceRate: "",
-      estimatedSavingsRange: "",
-      transferNotes: ""
+      hasCCPathway: true,
+      ccFeederNames: ["St. Louis Community College"],
+      transferAcceptanceRate: "~8%",
+      freshmanAcceptanceRate: "~12%",
+      estimatedSavingsRange: "$30,000-$70,000",
+      transferNotes: "WashU enrolls a very small transfer class with rigorous academic standards; strongest pathways exist for students with strong STEM preparation."
     }
   },
 
-name: "Washington University in St. Louis",
-
-    location: "St. Louis, Missouri",
-
-    region: "Midwest",
-
-    universitySize: "Medium",
-
-    enrollmentBand: "15,000-18,000",
-
-    operationalScale: "National-Global",
-
-    institutionType: "Private Research University",
-
-    archetype: "Human Capital Power University",
-
-    institutionalPersonality: "Elite Talent Developer",
-
-    cultureKeywords: [
-      "Medicine",
-      "Achievement",
-      "Research",
-      "Leadership",
-      "Professional Excellence",
-      "Service",
-      "Collaboration",
-      "Opportunity"
-    ],
-
-    missionOrientation:
-      "Human Development + Excellence + Research + Impact",
-
-    educationalPhilosophy:
-      "Develops exceptionally capable individuals through rigorous academics, mentorship, professional preparation, and one of the strongest human-development ecosystems in higher education.",
-
-    competitiveness: "Ultra Elite",
-
-    politicalCulture: "Moderate",
-
+  institutionIdentity: {
+    archetype: "Elite Private Research University",
+    institutionalPersonality: "academically intense, research-driven, quietly rigorous, substance-focused",
+    cultureKeywords: ["Medicine", "Research", "Business", "Academic Rigor", "Biomedical Engineering", "Generous Financial Aid"],
+    missionOrientation: "Advancing knowledge through rigorous research, exceptional undergraduate access to faculty, and a top-tier medical pipeline.",
+    faithTradition: "None",
+    educationalPhilosophy: "Learning through rigorous coursework, deep undergraduate research access, and close faculty mentorship.",
+    competitiveness: "Extremely Selective",
+    politicalCulture: "Moderate to progressive, typical of an elite Midwest research university.",
     studentAutonomy: "High",
+    prestigeOrientation: "Elite nationally, especially in medicine and research.",
+    socialClimate: "Intellectually intense, less socially competitive, research-driven.",
+    leadershipStyle: "Leadership through academic rigor and research excellence."
+  },
 
-    prestigeOrientation: "Achievement and Capability",
+  megaRegionIntegration: {
+    primaryMegaRegion: "MidContinentIndustrialEnergyCorridor",
+    regionalRole: "Elite research university supplying medicine, research, and business leadership to St. Louis and nationally."
+  },
 
-    socialClimate: "Collaborative, High Achieving, Supportive",
+  megaRegionExposure: {
+    MidContinentIndustrialEnergyCorridor: 100, BosWash: 46, TorBuffChester: 22,
+    TexasTriangle: 16, CharLanta: 14, NorCalInnovationCorridor: 22, SoCalCreativeEconomy: 14
+  },
 
-    leadershipStyle: "Development-Oriented Leadership",
-
-    oneSentenceSummary:
-      "An elite university optimized for maximizing student development, producing extraordinary outcomes in medicine, healthcare, research, finance, consulting, and professional leadership."
-  ,
+  comparativePositioning: {
+    versusDuke: "Duke offers a stronger athletics culture and slightly larger national brand; WashU offers a more research-intensive, less socially competitive academic environment.",
+    versusEmory: "Both are strong in pre-med, but WashU's connection to its own top-five medical school gives it a sharper edge in research access."
+  },
 
   institutionScale: {
+    enrollmentCategory: "Medium",
+    undergraduateEnrollment: 8113,
+    graduateEnrollment: 8300,
+    totalEnrollment: 16413,
+    campusType: "Suburban Research University",
+    residentialIntensity: 78,
+    communityFeel: 78,
+    studentFacultyRatio: "7:1",
+    classSizeExperience: "Small, discussion-based classes with exceptional faculty access, especially within pre-med and research-track programs.",
+    scaleAdvantages: ["Direct access to a top-five medical school", "Generous financial aid relative to peer institutions", "Exceptional undergraduate research opportunities", "Low student-faculty ratio for a research university"],
+    scaleDisadvantages: ["Intensely rigorous academic culture", "Less nationally visible athletics or social scene", "St. Louis has a smaller job market than coastal peers", "High academic pressure may not suit every student"]
+  },
 
-    undergraduateEnrollment: 8113
+  studentFit: {
+    bigFiveProfile: { openness: 84, conscientiousness: 90, extraversion: 52, agreeableness: 68, neuroticism: 40 },
+    hollandCodes: ["I", "C", "S"],
+    learningStyle: ["Research-Intensive Learning", "Discussion-Based Seminars", "Faculty Mentorship", "Pre-Medical Clinical Exposure"],
+    socialEnvironment: ["Intellectually Intense", "Research-Driven", "Quietly Competitive", "Residential"],
+    idealStudentTraits: ["Intellectually rigorous", "Research-driven", "Comfortable with demanding coursework", "Values substance over social status"],
+    thrivesIf: ["Wants elite medical school preparation", "Values deep research access", "Prefers substance over social prestige-chasing", "Wants generous financial aid at an elite institution"],
+    strugglesIf: ["Wants a big-school athletics and social culture", "Prefers a large city over suburban St. Louis", "Wants a less academically intense environment", "Needs strong Division I athletics culture"],
+    transferRiskFactors: ["Students seeking a larger social/athletics scene", "Students wanting a major coastal city", "Students uncomfortable with intense academic rigor"]
+  },
 
+  hiddenOpportunities: {
+    underratedMajors: ["Biomedical Engineering", "Philosophy-Neuroscience-Psychology", "Environmental Studies", "Architecture"],
+    hiddenCareerPipelines: ["Direct Medical School Pathways", "Biomedical Research", "Healthcare Consulting", "Academic Research Careers"],
+    nicheRecruitingAdvantages: ["Top consulting firms", "Major investment banks", "WashU's own top-ranked medical and research institutions"],
+    overlookedStrengths: ["Direct pipeline into a top-five medical school", "Exceptionally generous financial aid", "Low student-faculty ratio rare among research universities"],
+    sleeperIndustries: ["Biomedical Research", "Healthcare Consulting", "Academic Medicine"]
+  },
+
+  networkCapital: {
+    alumniAccessibility: 78, mentorshipDensity: 86, executiveAccess: 68, internshipNetwork: 74,
+    familyBusinessExposure: 36, relationshipCapitalScore: 80, alumniLoyaltyScore: 82,
+    referralCultureStrength: 74, donorNetworkStrength: "", boardMemberDensity: ""
+  },
+
+  economicEcosystem: {
+    primaryIndustries: ["Medicine", "Research", "Business", "Biomedical Engineering"],
+    regionalEconomicDrivers: ["Healthcare", "Biotechnology", "Financial Services", "Manufacturing"],
+    topEmployers: ["BJC HealthCare", "Major consulting firms", "Regional investment banks", "Boeing"],
+    emergingIndustries: ["Biotechnology", "AgTech", "Health Technology"],
+    startupDensity: "Moderate", ventureCapitalAccess: 42, corporateHeadquartersDensity: 46,
+    healthcareHubStrength: 82, innovationIndex: 68
+  },
+
+  geographicInfluence: {
+    dominantMarket: "St. Louis — Medicine, Research, and Biotechnology",
+    secondaryMarkets: ["New York NY", "Chicago IL", "Boston MA"],
+    alumniStrongholds: ["St. Louis MO", "New York NY", "Chicago IL"],
+    relocationPatterns: ["Medical and research graduates disperse nationally into top hospital systems and research institutions.", "Business graduates relocate to New York and Chicago for finance and consulting.", "A meaningful share remain in St. Louis, particularly in healthcare."],
+    regionalInfluenceScore: 76, nationalReachScore: 68, internationalReachScore: 46
+  },
+
+  socialCapital: {
+    greekLifeInfluence: 30, studentOrganizationStrength: 74, leadershipDevelopment: 70,
+    crossDisciplinaryInteraction: 78, civicEngagement: 58
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Minimal institutional emphasis." },
+    healthWellness: { strength: 90, notes: "One of WashU's defining strengths — exceptional pre-medical and health sciences preparation." },
+    nutraceuticals: { strength: 16, notes: "Modest connection through biomedical programs." },
+    consumerProducts: { strength: 30, notes: "Limited emphasis relative to medicine and research." },
+    outdoorIndustry: { strength: 10, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 14, notes: "Division III athletics limits sports business pipeline." },
+    entertainmentMedia: { strength: 16, notes: "Minimal institutional focus." },
+    ventureCapital: { strength: 38, notes: "Modest and growing presence tied to biotech entrepreneurship." },
+    privateEquity: { strength: 46, notes: "Solid placement through Olin Business School." },
+    investmentBanking: { strength: 56, notes: "Strong placement into investment banking through Olin." },
+    consulting: { strength: 68, notes: "Strong placement into elite consulting firms." },
+    medicine: { strength: 98, notes: "WashU's core institutional strength — direct pipeline into one of the top medical schools in the country." },
+    healthcareAdministration: { strength: 62, notes: "Strong placement given deep healthcare industry ties." },
+    defense: { strength: 10, notes: "Minimal emphasis." },
+    realEstate: { strength: 24, notes: "Limited institutional emphasis." },
+    luxuryBrands: { strength: 10, notes: "Minimal direct recruiting." },
+    entrepreneurship: { strength: 54, notes: "Growing program, particularly in biotech and health technology." },
+    technology: { strength: 48, notes: "Solid but secondary to medicine and research strength." },
+    publicPolicy: { strength: 34, notes: "Moderate presence, not a primary strength." },
+    nonprofitLeadership: { strength: 48, notes: "Moderate presence tied to healthcare and research mission." }
+  },
+
+  wealthMobility: {
+    averageFamilyIncome: "", socialMobilityIndex: 68, firstGenerationSupport: 66,
+    wealthCreationPotential: 76, familyBusinessPipelineStrength: 30
+  },
+
+  futureResilience: {
+    aiResistance: 84, automationResistance: 86, adaptabilityScore: 80, interdisciplinaryStrength: 78,
+    futureReadiness: 84, entrepreneurialFlexibility: 64, lifelongLearningCulture: 82, innovationCapacity: 76
+  },
+
+  lifeDesignOutcomes: {
+    wealthCreationPotential: 76, communityLeadershipPotential: 68, geographicMobility: 66,
+    workLifeBalancePotential: 60, purposeAlignment: 80, familyFormationSupport: 68,
+    personalDevelopmentPotential: 82, careerOptionality: 78, longTermLifeSatisfaction: 78
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 82, networkMoat: 72, geographicMoat: 62, industryMoat: 84,
+    alumniMoat: 74, brandDurability: 82, overallMoatScore: 76
+  },
+
+  hillel_strength: "tier_2",
+  jewish_enrollment: "~20-24% Jewish undergraduate enrollment",
+  hillel_note: "WashU has one of the highest proportions of Jewish undergraduates among elite research universities, with an active Hillel and robust Jewish campus life.",
+
+  trajectoryProfile: {
+    dominantTrajectory: "LEAVE",
+    leaverScore: 74, returnerScore: 46, stewardScore: 34, navigatorScore: 84,
+    geographicLockIn: "low", alumniDispersalPattern: "national"
   }
 },
 
@@ -50460,145 +50889,176 @@ name: "Prescott College",
 
 "Weber State University": {
 
-  // =====================================================
-  // CORE IDENTITY (UPDATED REGION)
-  // =====================================================
+  institutionNarrative: {
+    name: "Weber State University",
+    location: "Ogden, Utah",
+    region: "Mountain West",
+    archetype: "The Applied Regional University — Business, Health Sciences, and Utah Workforce Formation",
+    oneSentenceSummary: "Weber State is a public regional university in Ogden, Utah, known for strong applied business, health sciences, and technical programs that feed directly into the Salt Lake City-Ogden corridor's growing economy.",
+    pipeline: "Approximately 22,600 students. Weber State is regionally known for nursing, respiratory therapy, business, and construction management. Regional employers across Utah's Wasatch Front technology, healthcare, and aerospace corridor recruit heavily from Weber State's applied programs.",
+    hiddenPathway: "Weber State's respiratory therapy and health sciences programs are among the most respected in the Mountain West, producing graduates with immediate, high-demand clinical employability that many students overlook in favor of more famous nursing programs elsewhere.",
+    institutionalSecret: "Ogden's rapid growth as a satellite tech and outdoor recreation hub for the Salt Lake corridor gives Weber State graduates unusually strong regional job access without the cost of living pressures of Salt Lake City itself.",
+    theRoom: "Set at the base of the Wasatch Mountains in Ogden, Weber State offers immediate access to world-class outdoor recreation alongside a fast-growing regional economy just thirty minutes from Salt Lake City.",
+    lifestyle: "Practical, outdoors-oriented, and career-focused. Students balance applied coursework with part-time work, regional internships, and easy access to skiing, hiking, and mountain recreation.",
+    bestFitPersonality: "Practical, career-focused, values applied learning over theory, enjoys outdoor recreation, moderate Conscientiousness with moderate Extraversion.",
+    faithTradition: "Public, secular institution in a historically LDS-majority region.",
+    geographicInfluenceRadius: "Regional influence concentrated in the Wasatch Front and Utah, with limited reach beyond the Mountain West.",
+    economicOutcome: "Solid regional outcomes in healthcare, business, and technical fields, with strong debt-adjusted return given affordable in-state tuition.",
+    gradCities: ["Ogden UT", "Salt Lake City UT", "Provo UT"],
+    comparableInstitutions: ["Utah Valley University", "Southern Utah University", "Idaho State University"],
+    ccTransferPathway: {
+      hasCCPathway: true,
+      ccFeederNames: ["Salt Lake Community College"],
+      transferAcceptanceRate: "~90%",
+      freshmanAcceptanceRate: "~95%",
+      estimatedSavingsRange: "$10,000-$25,000",
+      transferNotes: "Weber State has an open, accessible transfer process with strong articulation agreements across Utah's community college system."
+    }
+  },
 
   institutionIdentity: {
-
-    name: "Weber State University",
-
-    location: "Ogden, Utah, USA",
-
-    region: "Mountain West",
-
-    universitySize: "Large",
-
-    institutionType: "Public Regional Comprehensive University",
-
-    archetype: "Access-Oriented Public University + Workforce Pipeline + Health Sciences + Aviation + Mountain West Regional Engine",
-
-    institutionalPersonality: "Practical, commuter-friendly, workforce-focused, supportive, access-driven, quietly efficient",
-
-    cultureKeywords: [
-      "Mountain West access university",
-      "commuter-heavy student body",
-      "health sciences pipeline",
-      "aviation programs",
-      "regional workforce integration",
-      "Silicon Slopes spillover"
-    ],
-
-    missionOrientation: "Provide accessible higher education and workforce training for the Mountain West region with emphasis on healthcare, aviation, business, and applied STEM",
-
-    faithTradition: "Secular public institution",
-
-    educationalPhilosophy: "Applied teaching-focused university emphasizing career readiness and flexible pathways for working and non-traditional students",
-
-    competitiveness: "Moderate (open-access with selective programs in health and aviation)",
-
-    politicalCulture: "Moderate, pragmatic Mountain West public university environment",
-
-    studentAutonomy: "High",
-
-    prestigeOrientation: "Regional recognition with strong workforce outcomes rather than elite academic signaling",
-
-    socialClimate: "Highly diverse commuter + non-traditional student environment",
-
-    leadershipStyle: "Workforce-aligned leadership development through applied learning and internships",
-
-    oneSentenceSummary: "A Mountain West public university focused on accessible education and strong workforce pipelines in healthcare, aviation, and applied STEM."
-
+    archetype: "Public Regional Comprehensive University",
+    institutionalPersonality: "practical, applied, outdoors-oriented, career-focused",
+    cultureKeywords: ["Applied Learning", "Health Sciences", "Business", "Outdoor Recreation", "Ogden", "Affordable"],
+    missionOrientation: "Providing accessible, applied public higher education with direct regional workforce connections.",
+    faithTradition: "None",
+    educationalPhilosophy: "Learning through applied, career-focused coursework with direct regional industry connections.",
+    competitiveness: "Open Admission / Moderately Selective",
+    politicalCulture: "Conservative-leaning, reflecting the broader Utah region.",
+    studentAutonomy: "Moderate",
+    prestigeOrientation: "Regional reputation focused on applied and health sciences programs.",
+    socialClimate: "Practical, commuter-influenced, outdoors-oriented.",
+    leadershipStyle: "Leadership through practical competence and regional workforce readiness."
   },
-
-  // =====================================================
-  // GEOGRAPHIC INFLUENCE (UPDATED TO MOUNTAIN WEST)
-  // =====================================================
-
-  geographicInfluence: {
-
-    dominantMarket: "Mountain West workforce and healthcare corridor",
-
-    secondaryMarkets: [
-      "Wasatch Front metro region",
-      "Rocky Mountain aviation corridor",
-      "Intermountain West healthcare network",
-      "Western US logistics and energy corridor"
-    ],
-
-    regionalInfluenceScore: 88,
-    nationalReachScore: 80,
-    internationalReachScore: 65
-
-  },
-
-  // =====================================================
-  // MEGA REGION INTEGRATION (UPDATED)
-  // =====================================================
 
   megaRegionIntegration: {
-
-    megaRegion: "Mountain West Growth & Workforce System",
-
-    megaRegionArchetype: "Access-oriented public university → healthcare + aviation + applied workforce pipeline",
-
-    megaRegionIntegrationScore: 91,
-    regionalInheritanceMultiplier: 1.52,
-
-    talentDensityInheritance: 83,
-    innovationInheritance: 84,
-    capitalAccessInheritance: 79,
-
-    networkInheritance: {
-      executiveAccess: 79,
-      founderDensity: 72,
-      alumniMobility: 86,
-      industryConnectivity: 91
-    },
-
-    industryDensityAdvantages: {
-      healthcare: 100,
-      aviation: 96,
-      logistics: 89,
-      publicService: 92,
-      techOperations: 86
-    },
-
-    careerPathwayBoosts: {
-      healthcare: 2.05,
-      aviation: 1.90,
-      logistics: 1.75,
-      publicService: 1.85,
-      businessOperations: 1.60
-    }
-
+    primaryMegaRegion: "NorCalInnovationCorridor",
+    regionalRole: "Regional public university supplying healthcare, business, and technical talent to the Wasatch Front corridor."
   },
 
-  // =====================================================
-  // SUPER REGION / MEGA REGION MAPPING (UPDATED)
-  // =====================================================
-
   megaRegionExposure: {
+    MidContinentIndustrialEnergyCorridor: 14, BosWash: 8, TorBuffChester: 4,
+    TexasTriangle: 8, CharLanta: 4, NorCalInnovationCorridor: 34, SoCalCreativeEconomy: 12
+  },
 
-    primaryMegaRegion: "Mountain West Workforce & Healthcare System",
-
-    secondaryMegaRegions: [
-      "Silicon Slopes spillover tech corridor",
-      "Intermountain healthcare network",
-      "Rocky Mountain aviation and logistics belt"
-    ],
-
-    crossRegionalMobility: 86,
-    nationalOpportunityAccess: 81,
-    globalOpportunityAccess: 70
-  }
-
-,
+  comparativePositioning: {
+    versusUVU: "UVU is larger with a broader program catalog; Weber State offers stronger specialization in respiratory therapy and applied health sciences.",
+    versusSUU: "SUU offers a smaller, more traditional campus feel; Weber State offers stronger direct access to the Salt Lake-Ogden job market."
+  },
 
   institutionScale: {
+    enrollmentCategory: "Medium",
+    undergraduateEnrollment: 22600,
+    graduateEnrollment: 1400,
+    totalEnrollment: 24000,
+    campusType: "Commuter-Influenced Regional University",
+    residentialIntensity: 32,
+    communityFeel: 54,
+    studentFacultyRatio: "20:1",
+    classSizeExperience: "Mix of moderate lecture courses and smaller, hands-on clinical or applied coursework, particularly within health sciences and business programs.",
+    scaleAdvantages: ["Highly regarded respiratory therapy and health sciences programs", "Affordable in-state tuition", "Direct access to Wasatch Front job market", "Immediate outdoor recreation access"],
+    scaleDisadvantages: ["Commuter-heavy campus culture with less residential life", "Limited national brand recognition", "Fewer research opportunities than larger universities", "Smaller alumni network outside Utah"]
+  },
 
-    undergraduateEnrollment: 22600
+  studentFit: {
+    bigFiveProfile: { openness: 54, conscientiousness: 68, extraversion: 56, agreeableness: 70, neuroticism: 44 },
+    hollandCodes: ["R", "S", "C"],
+    learningStyle: ["Applied Clinical Learning", "Hands-On Business Coursework", "Practical Skill-Building"],
+    socialEnvironment: ["Practical", "Commuter-Influenced", "Outdoors-Oriented", "Career-Focused"],
+    idealStudentTraits: ["Career-focused and practical", "Values applied learning over theory", "Enjoys outdoor recreation", "Wants an affordable regional option"],
+    thrivesIf: ["Wants a strong respiratory therapy or health sciences program", "Values direct access to the Wasatch Front job market", "Wants an affordable public university", "Enjoys mountain outdoor recreation"],
+    strugglesIf: ["Wants a traditional residential campus experience", "Needs a nationally recognized brand", "Wants a large research university environment", "Prefers a more diverse, less regionally concentrated student body"],
+    transferRiskFactors: ["Students seeking a traditional residential experience", "Students wanting broader national name recognition", "Students prioritizing research opportunities"]
+  },
 
+  hiddenOpportunities: {
+    underratedMajors: ["Respiratory Therapy", "Construction Management", "Radiologic Sciences", "Sports Medicine"],
+    hiddenCareerPipelines: ["Regional Healthcare Systems", "Wasatch Front Construction and Development", "Utah Technology Sector Support Roles"],
+    nicheRecruitingAdvantages: ["Regional hospital systems", "Ogden and Salt Lake construction firms", "Growing Wasatch Front technology employers"],
+    overlookedStrengths: ["Highly respected respiratory therapy program", "Direct access to a fast-growing regional economy", "Affordable tuition with strong debt-adjusted outcomes"],
+    sleeperIndustries: ["Respiratory and Clinical Therapy", "Construction Management", "Outdoor Recreation Administration"]
+  },
+
+  networkCapital: {
+    alumniAccessibility: 48, mentorshipDensity: 52, executiveAccess: 30, internshipNetwork: 48,
+    familyBusinessExposure: 26, relationshipCapitalScore: 46, alumniLoyaltyScore: 56,
+    referralCultureStrength: 44, donorNetworkStrength: "", boardMemberDensity: ""
+  },
+
+  economicEcosystem: {
+    primaryIndustries: ["Healthcare", "Business", "Construction", "Technology Support"],
+    regionalEconomicDrivers: ["Aerospace", "Technology", "Healthcare", "Outdoor Recreation", "Manufacturing"],
+    topEmployers: ["Regional healthcare systems", "Hill Air Force Base", "Northrop Grumman", "Regional construction firms"],
+    emergingIndustries: ["Outdoor Recreation Technology", "Aerospace Manufacturing", "Health Technology"],
+    startupDensity: "Low-Moderate", ventureCapitalAccess: 18, corporateHeadquartersDensity: 20,
+    healthcareHubStrength: 54, innovationIndex: 34
+  },
+
+  geographicInfluence: {
+    dominantMarket: "Wasatch Front, Utah — Healthcare, Business, and Applied Trades",
+    secondaryMarkets: ["Salt Lake City UT", "Provo UT"],
+    alumniStrongholds: ["Ogden UT", "Salt Lake City UT"],
+    relocationPatterns: ["The large majority of graduates remain along the Wasatch Front.", "Health sciences graduates disperse across Utah's regional hospital systems.", "A small share relocate to neighboring Mountain West states."],
+    regionalInfluenceScore: 54, nationalReachScore: 16, internationalReachScore: 8
+  },
+
+  socialCapital: {
+    greekLifeInfluence: 4, studentOrganizationStrength: 44, leadershipDevelopment: 46,
+    crossDisciplinaryInteraction: 40, civicEngagement: 48
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Minimal institutional emphasis." },
+    healthWellness: { strength: 74, notes: "A genuine institutional strength, anchored by respiratory therapy and nursing programs." },
+    nutraceuticals: { strength: 12, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 22, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 38, notes: "Strong regional connection given Ogden's outdoor recreation economy." },
+    sportsBusiness: { strength: 18, notes: "Limited direct pipeline." },
+    entertainmentMedia: { strength: 10, notes: "Minimal institutional focus." },
+    ventureCapital: { strength: 10, notes: "Minimal presence." },
+    privateEquity: { strength: 12, notes: "Minimal presence." },
+    investmentBanking: { strength: 14, notes: "Limited placement; most finance graduates enter regional roles." },
+    consulting: { strength: 20, notes: "Modest regional consulting placement." },
+    medicine: { strength: 56, notes: "Solid pre-health and clinical preparation, particularly respiratory therapy." },
+    healthcareAdministration: { strength: 48, notes: "Solid placement into regional healthcare administration." },
+    defense: { strength: 26, notes: "Meaningful connection given proximity to Hill Air Force Base." },
+    realEstate: { strength: 26, notes: "Modest regional real estate placement." },
+    luxuryBrands: { strength: 6, notes: "Minimal presence." },
+    entrepreneurship: { strength: 30, notes: "Modest regional small business pathway." },
+    technology: { strength: 30, notes: "Growing presence given Wasatch Front tech sector proximity." },
+    publicPolicy: { strength: 18, notes: "Minimal institutional emphasis." },
+    nonprofitLeadership: { strength: 34, notes: "Modest regional nonprofit presence." }
+  },
+
+  wealthMobility: {
+    averageFamilyIncome: "", socialMobilityIndex: 62, firstGenerationSupport: 68,
+    wealthCreationPotential: 42, familyBusinessPipelineStrength: 28
+  },
+
+  futureResilience: {
+    aiResistance: 52, automationResistance: 54, adaptabilityScore: 50, interdisciplinaryStrength: 42,
+    futureReadiness: 48, entrepreneurialFlexibility: 40, lifelongLearningCulture: 50, innovationCapacity: 34
+  },
+
+  lifeDesignOutcomes: {
+    wealthCreationPotential: 42, communityLeadershipPotential: 56, geographicMobility: 34,
+    workLifeBalancePotential: 78, purposeAlignment: 62, familyFormationSupport: 74,
+    personalDevelopmentPotential: 58, careerOptionality: 40, longTermLifeSatisfaction: 72
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 20, networkMoat: 28, geographicMoat: 52, industryMoat: 30,
+    alumniMoat: 34, brandDurability: 36, overallMoatScore: 33
+  },
+
+  hillel_strength: "tier_3",
+  jewish_enrollment: "Very small Jewish population, no dedicated Hillel chapter",
+  hillel_note: "Weber State has a very small Jewish student population without a dedicated Hillel chapter, reflecting the broader region's demographic makeup. Students seeking Jewish community life would need to connect with Salt Lake City's more established Jewish organizations.",
+
+  trajectoryProfile: {
+    dominantTrajectory: "STEWARD",
+    leaverScore: 22, returnerScore: 70, stewardScore: 86, navigatorScore: 28,
+    geographicLockIn: "very_high", alumniDispersalPattern: "regional_wasatch_front"
   }
 },
 
