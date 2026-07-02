@@ -224,7 +224,7 @@ const REGION_POOLS = {
     "California State University Northridge","California State University Los Angeles",
     "California State University Chico","California State University Fresno",
     "Claremont McKenna College","Pomona College","Harvey Mudd College",
-    "Pepperdine University","Santa Clara University","University of San Diego",
+    "Pepperdine University","Santa Clara University","University of San Diego","UCLA","University of California Santa Barbara","Loyola Marymount University",
     "Saint Mary's College of California","UC Riverside","University of San Francisco",
     "California Institute of Technology","Colorado School of Mines",
     "University of Oregon","Oregon State University",
@@ -332,7 +332,7 @@ const REGION_POOLS = {
 
 const SCALE_MAP = {
   big_university:    { min: 20000, max: 999999, label: "20,000+ students" },
-  medium_university: { min: 5000,  max: 25000,  label: "5,000-25,000 students" },
+  medium_university: { min: 6000,  max: 19999,  label: "6,000-19,999 students" },
   small_campus:      { min: 0,     max: 6000,   label: "Under 6,000 students" },
   no_preference:     { min: 0,     max: 999999, label: "Any size" }
 };
@@ -455,6 +455,9 @@ const SCHOOL_ENROLLMENT = {
   "Rochester Institute of Technology":19000,
   "Fashion Institute of Technology":8000,
   "San Jose State University":36000,
+  "UCLA":32000,
+  "University of California Santa Barbara":26000,
+  "Loyola Marymount University":10000,
   "University of Tulsa":4000,
   "University of Idaho":12000,
   "University of Nevada Las Vegas":31000,
@@ -978,6 +981,111 @@ const SCHOOL_GPA_RANGES = {
   "Xavier University":{"min":3.4},
 };
 
+
+// ── GPA TIER ENGINE ────────────────────────────────────────────────────────
+// Converts a normalized GPA (0-4.0 unweighted) into a tier that drives
+// the consultant expansion layer. Tiers are non-judgmental labels — they
+// open doors for the consultant, never shown to the family.
+//
+// Tier definitions (unweighted 4.0 scale):
+//   reach      3.7+  — qualifies for highly selective + honors tracks
+//   competitive 3.3-3.69 — qualifies for selective universities
+//   solid      2.7-3.29 — qualifies for strong regional and state schools
+//   open       <2.7  — broad access tier, strong community college pathways
+
+
+// ── HONORS COLLEGE INTELLIGENCE ────────────────────────────────────────────
+// Schools where the honors track fundamentally changes the academic experience.
+// Used by the consultant expansion layer — never shown to families directly.
+// GPA threshold = minimum to be competitive for the honors program.
+// Source: publicly available honors college admission data.
+
+const HONORS_COLLEGES = {
+  "Arizona State University":              { name: "Barrett Honors College",          gpa_min: 3.6, note: "One of the largest honors colleges in the US — small seminar culture inside a major research university. Strong pipeline to graduate school and competitive fellowships." },
+  "University of Georgia":                 { name: "Foundation Fellowship / Honors",  gpa_min: 3.7, note: "Foundation Fellowship is one of the most competitive merit scholarships in the South. Honors Program offers research-intensive tracks across all colleges." },
+  "University of Florida":                 { name: "UF Honors Program",               gpa_min: 3.7, note: "Small cohort experience at a flagship research university. Strong pre-med, engineering, and business honors tracks." },
+  "University of South Carolina":          { name: "South Carolina Honors College",   gpa_min: 3.5, note: "Nationally ranked honors college with its own residence hall, faculty, and curriculum. Consistently produces Goldwater and Fulbright scholars." },
+  "University of Alabama":                 { name: "UA Honors College",               gpa_min: 3.5, note: "Significant merit aid available for out-of-state students with strong profiles. Small-school feel with research university resources." },
+  "University of Arkansas":                { name: "Honors College",                  gpa_min: 3.5, note: "Chancellor's Scholarship covers full tuition for top applicants. Strong STEM and business honors tracks." },
+  "University of Tennessee, Knoxville":    { name: "Honors and Scholars Programs",    gpa_min: 3.5, note: "Haslam Scholars Program is the flagship merit scholarship. Strong engineering and pre-health honors tracks." },
+  "University of Texas at Austin":         { name: "Plan II Liberal Arts / BHP",      gpa_min: 3.8, note: "Plan II is one of the most prestigious honors degrees in the country. Business Honors Program (BHP) rivals Wharton for undergrad business." },
+  "Pennsylvania State University":         { name: "Schreyer Honors College",         gpa_min: 3.6, note: "Full merit scholarship for top students. One of the most funded honors colleges at a public university." },
+  "University of Michigan":                { name: "LSA Honors / Ross BBA",           gpa_min: 3.8, note: "Ross School of Business BBA is among the top undergraduate business programs nationally. LSA Honors adds interdisciplinary research depth." },
+  "University of Virginia":                { name: "Echols Scholars / Rodman Scholars", gpa_min: 3.8, note: "Echols Scholars (College of Arts & Sciences) and Rodman Scholars (Engineering) offer curriculum freedom and research access unavailable to general admits." },
+  "University of North Carolina Chapel Hill": { name: "Morehead-Cain / Robertson Scholars", gpa_min: 3.7, note: "Morehead-Cain is one of the most prestigious merit scholarships in the US — full funding plus summer enrichment programs." },
+  "University of Maryland College Park":   { name: "College Park Scholars / Gemstone", gpa_min: 3.5, note: "Gemstone Honors Program is a four-year team research program — unusual at the undergraduate level. College Park Scholars offers thematic living-learning communities." },
+  "Ohio State University":                 { name: "University Honors",               gpa_min: 3.5, note: "Knowlton School of Architecture and Fisher College of Business have strong honors tracks. Research-intensive with significant merit aid available." },
+  "University of Colorado Boulder":        { name: "Farrand Honors Program / Norlin Scholars", gpa_min: 3.5, note: "Norlin Scholars is a merit fellowship with community leadership focus. Farrand offers interdisciplinary curriculum in a research university setting." },
+};
+
+function getGPATier(normalizedGPA) {
+  if (normalizedGPA === null || normalizedGPA === undefined) return null;
+  const gpa = parseFloat(normalizedGPA);
+  if (isNaN(gpa)) return null;
+  if (gpa >= 3.7) return 'reach';
+  if (gpa >= 3.3) return 'competitive';
+  if (gpa >= 2.7) return 'solid';
+  return 'open';
+}
+
+// GPA tier thresholds for school-level filtering
+const GPA_TIER_THRESHOLDS = {
+  reach:       3.7,
+  competitive: 3.3,
+  solid:       2.7,
+  open:        0
+};
+
+
+// ── CONSULTANT EXPANSION LAYER ─────────────────────────────────────────────
+// Surfaces reaches and honors tracks the student didn't ask for but qualifies for.
+// Shown to consultant only — never to the family.
+// Rules:
+//   1. Must be within the student's selected region(s)
+//   2. GPA must meet the honors threshold
+//   3. Returns up to 5 schools with honors context attached
+
+function getConsultantExpansion(gpaTier, normalizedGPA, regionPool, campusScale, primaryMatches) {
+  if (!gpaTier || gpaTier === 'open') return [];
+  if (!normalizedGPA) return [];
+
+  const primarySet = new Set(primaryMatches || []);
+  const results = [];
+
+  Object.entries(HONORS_COLLEGES).forEach(([school, honors]) => {
+    // Hard gates
+    if (primarySet.has(school)) return;
+    if (regionPool && !regionPool.includes(school)) return;
+    if (normalizedGPA < honors.gpa_min) return;
+
+    // Scale gate — strictly enforce the student's chosen size for expansion
+    if (campusScale && campusScale !== 'no_preference') {
+      const enroll = SCHOOL_ENROLLMENT[school] || 0;
+      const scale = SCALE_MAP[campusScale];
+      // Only skip schools significantly smaller than the requested range
+      // but always filter out schools that exceed the upper bound
+      if (scale) {
+        if (enroll > scale.max) return;
+        if (enroll > 0 && enroll < scale.min * 0.5) return;
+      }
+    }
+
+    results.push({
+      name: school,
+      honors_name: honors.name,
+      honors_gpa_min: honors.gpa_min,
+      honors_note: honors.note,
+      type: 'consultant_expansion',
+      reason: 'honors_eligible'
+    });
+  });
+
+  // Sort by GPA threshold descending — most selective first
+  return results
+    .sort((a, b) => b.honors_gpa_min - a.honors_gpa_min)
+    .slice(0, 5);
+}
+
 function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {
   const { campus_scale, regions, conference, social_scene, religion } = collegePrefs;
   const gpa = gpaData ? gpaData.normalized : null;
@@ -1165,7 +1273,7 @@ function summarizePreferences(collegePrefs) {
 if (typeof module !== 'undefined') module.exports = {
   CONFERENCE_POOLS, REGION_POOLS, SCALE_MAP, SCHOOL_ENROLLMENT,
   SOCIAL_SCENE_AFFINITY, RELIGIOUS_AFFILIATION, RELIGIOUS_CULTURE_SCHOOLS,
-  SCHOOL_GPA_RANGES, matchUniversities, summarizePreferences
+  SCHOOL_GPA_RANGES, getGPATier, GPA_TIER_THRESHOLDS, HONORS_COLLEGES, getConsultantExpansion, matchUniversities, summarizePreferences, getAdjacentMatches, getProfileAdjacentMatches
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -1184,10 +1292,20 @@ if (typeof module !== 'undefined') module.exports = {
  * @param {Array}    comboUnlocks    - student's combo unlock objects
  * @param {number}   max             - how many to return (default 1)
  */
-function getAdjacentMatches(primaryMatches, naicsSectors, comboUnlocks, max=1) {
+function getAdjacentMatches(primaryMatches, naicsSectors, comboUnlocks, max=1, regionPool=null, scaleKey=null) {
   const allSchools = Object.keys(SCHOOL_ENROLLMENT);
   const primarySet = new Set(primaryMatches);
-  const candidates = allSchools.filter(s => !primarySet.has(s));
+  // Hard-gate: respect region and scale — same rules as matchUniversities()
+  const candidates = allSchools.filter(s => {
+    if (primarySet.has(s)) return false;
+    if (regionPool && !regionPool.includes(s)) return false;
+    if (scaleKey && scaleKey !== 'no_preference' && SCALE_MAP[scaleKey]) {
+      const enroll = SCHOOL_ENROLLMENT[s] || 10000;
+      const scale = SCALE_MAP[scaleKey];
+      if (enroll < scale.min || enroll > scale.max) return false;
+    }
+    return true;
+  });
 
   // NAICS → major cluster map — same mapping used in matchUniversities
   const NAICS_MAJOR_MAP = {
@@ -1260,12 +1378,21 @@ function getAdjacentMatches(primaryMatches, naicsSectors, comboUnlocks, max=1) {
  * @param {Array}    naicsSectors    - student's NAICS profile
  * @param {number}   max             - how many to return (default 3)
  */
-function getProfileAdjacentMatches(primaryMatches, riasec, naicsSectors, max=3) {
+function getProfileAdjacentMatches(primaryMatches, riasec, naicsSectors, max=3, regionPool=null, scaleKey=null) {
   if (!riasec || riasec.length < 2) return [];
 
   const allSchools = Object.keys(SCHOOL_ENROLLMENT);
   const primarySet = new Set(primaryMatches);
-  const candidates = allSchools.filter(s => !primarySet.has(s));
+  const candidates = allSchools.filter(s => {
+    if (primarySet.has(s)) return false;
+    if (regionPool && !regionPool.includes(s)) return false;
+    if (scaleKey && scaleKey !== 'no_preference' && SCALE_MAP[scaleKey]) {
+      const enroll = SCHOOL_ENROLLMENT[s] || 10000;
+      const scale = SCALE_MAP[scaleKey];
+      if (enroll < scale.min || enroll > scale.max) return false;
+    }
+    return true;
+  });
 
   // Primary and secondary RIASEC codes
   const primaryCode  = riasec[0]?.code || '';
@@ -1337,9 +1464,4 @@ function getProfileAdjacentMatches(primaryMatches, riasec, naicsSectors, max=3) 
   }));
 }
 
-if (typeof module !== 'undefined') {
-  module.exports = Object.assign(module.exports || {}, {
-    getAdjacentMatches,
-    getProfileAdjacentMatches
-  });
-}
+
