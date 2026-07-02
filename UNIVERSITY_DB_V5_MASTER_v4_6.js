@@ -24900,6 +24900,14 @@ institutionNarrative: {
     ]
   },
 
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "Public flagship supplying business, engineering, and health sciences talent across the Southeast."
+
+  },
+
   studentFit: {
 
     bigFiveProfile: {
@@ -25439,6 +25447,14 @@ institutionNarrative: {
     ]
   },
 
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "TexasTriangle",
+
+    regionalRole: "Public flagship supplying energy, business, and meteorology talent across the South Central region."
+
+  },
+
   studentFit: {
 
     bigFiveProfile: {
@@ -25976,6 +25992,14 @@ institutionNarrative: {
     ]
   },
 
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "TexasTriangle",
+
+    regionalRole: "Public flagship supplying energy, agriculture, and business talent across the Gulf South."
+
+  },
+
   studentFit: {
 
     bigFiveProfile: {
@@ -26508,6 +26532,14 @@ institutionNarrative: {
       "Conservative cultural environment may be limiting for some students",
       "Limited diversity in student body demographics"
     ]
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "Public flagship supplying engineering, business, and agriculture talent across the Southeast."
+
   },
 
   studentFit: {
@@ -27045,6 +27077,14 @@ institutionNarrative: {
     ]
   },
 
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "Public flagship supplying engineering, business, and textile-industry talent across the Southeast."
+
+  },
+
   studentFit: {
 
     bigFiveProfile: {
@@ -27444,172 +27484,177 @@ institutionNarrative: {
 
 "Vanderbilt University": {
 
-"Vanderbilt University": {
-
   institutionNarrative: {
-
     name: "Vanderbilt University",
-
     location: "Nashville, Tennessee",
-
     region: "Southeast",
-
-    archetype: "The Nashville Advantage University  —  Medicine, Music, and the Most Dynamic Mid-Size City in America",
-
-    oneSentenceSummary: "Vanderbilt is the elite private research university embedded in Nashville  —  the fastest-growing major city in America and the convergence point of healthcare, country music, technology, and the new Southern economy  —  combining a top-15 medical school, a top-20 law school, and a Peabody College of Education that is the most respected in the country, all within walking distance of Broadway and the Cumberland River.",
-
-    pipeline: "9% acceptance rate for the Class of 2028. #18 nationally (US News 2025). 7,000 undergraduates. Vanderbilt University Medical Center is a top-10 academic medical center and one of the largest employers in Tennessee. The Owen Graduate School of Management is top-25 MBA. Vanderbilt Law is top-18. The Peabody College of Education and Human Development is #1 nationally in education  —  it is the most consistently top-ranked education school in America. Goldman Sachs, McKinsey, Bain, Deloitte, and every major financial and consulting firm recruit Vanderbilt at volume. HCA Healthcare (Nashville), Bridgestone Americas, Dollar General, and the full constellation of major Nashville-headquartered corporations maintain active Vandy recruiting pipelines. 145,000+ living alumni.",
-
-    hiddenPathway: "Nashville is Vanderbilt's most important and most dynamic competitive advantage. The city has grown faster than any major American metro in the past decade  —  healthcare, technology, music industry, and hospitality investment have transformed Nashville into a genuine economic powerhouse with a quality of life that rivals cities twice its size. Vanderbilt students are embedded in this economy from day one: the healthcare corridor centered on VUMC and the surrounding hospital system, the music industry on Music Row (2 miles from campus), the Broadway entertainment district, and the growing technology sector all provide internship and networking access that Vanderbilt's peer private universities in smaller or slower-growing cities cannot offer. The Wond'ry Innovation Center  —  Vanderbilt's entrepreneurship hub  —  is one of the most active university startup ecosystems in the South.",
-
-    institutionalSecret: "The Vanderbilt residential college system  —  ten residential colleges, each with a Faculty Head of College, academic programming, and a distinct character  —  delivers a genuine small-college experience inside a research university. Vanderbilt's residential college system is modeled on Yale's and produces the same result: strong cohort bonds, faculty accessibility, and a sense of belonging inside a university of 7,000 undergraduates. The Blair School of Music is one of the most distinctive features of the Vanderbilt undergraduate environment  —  a conservatory-level music school with Blair students who perform at professional levels while pursuing liberal arts or professional degrees. Nashville's live music scene extends the Blair culture into the city.",
-
-    theRoom: "Nashville, Tennessee  —  a city of 700,000 on the Cumberland River, the fastest-growing major city in America by population and economic output. The Vanderbilt campus occupies 333 acres in the Midtown neighborhood, adjacent to Music Row and 2 miles from downtown Broadway. The campus is one of the most beautifully landscaped in America  —  a designated arboretum, the Memorial Gym (where the first basketball game with ten players in regulation was played), and the Alumni Lawn create a physical environment of genuine quality. The Nashville food scene, the Gulch, the 12 South neighborhood, and the Germantown arts district create an off-campus culture that rivals any university city in America.",
-
-    lifestyle: "Southern-inflected, socially active, and more Greek-organized than most peer private universities. Approximately 45% of Vanderbilt students participate in Greek life  —  higher than any Ivy League peer  —  and the social culture reflects this: the fraternity and sorority system is the primary social architecture for the first two years. Nashville extends the campus social world into one of the most vibrant city entertainment ecosystems in America. Commodore athletics  —  particularly basketball and football in the SEC  —  provide campus culture anchors in a city that also has the Predators, Titans, and a growing professional sports culture.",
-
-    bestFitPersonality: "Pre-med or education or business career oriented, Nashville lifestyle and Southern culture appreciative, SEC athletic culture comfortable, Greek life at a private university comfortable, high-achieving and professionally ambitious, high Conscientiousness and Extraversion",
-
-    faithTradition: "Methodist-affiliated historically  —  now entirely secular; founded by Cornelius Vanderbilt in 1873 as a non-sectarian institution despite Methodist founding support",
-
-    geographicInfluenceRadius: "Nashville and Southeast dominant; national reach in medicine, education, law, and consulting; Nashville's economic growth creates increasingly powerful regional career ecosystem",
-
-    economicOutcome: "Elite in medicine (VUMC top-10 pipeline), education (Peabody #1 nationally), law, finance, and consulting; Nashville's Fortune 500 and healthcare corridor creates regional career density; Vanderbilt alumni network active nationally with strong Southeast concentration",
-
-    gradCities: ["Nashville", "New York", "Washington DC", "Atlanta", "Chicago", "Houston", "Los Angeles"],
-
+    archetype: "The Nashville Advantage University — Medicine, Music, and the Fastest-Growing City in America",
+    oneSentenceSummary: "Vanderbilt is an elite private research university embedded in Nashville, combining a top-15 medical school, a top-20 law school, and the nation's top-ranked education school, all within walking distance of Broadway and the Cumberland River.",
+    pipeline: "Approximately 7,000 undergraduates. Vanderbilt University Medical Center is a top-10 academic medical center; Peabody College of Education is the most consistently top-ranked education school in America; Owen Graduate School of Management is a top-25 MBA program. Goldman Sachs, McKinsey, Bain, Deloitte, HCA Healthcare, Bridgestone Americas, and Dollar General maintain active recruiting pipelines given Nashville's Fortune 500 presence.",
+    hiddenPathway: "Nashville is Vanderbilt's most important competitive advantage — the fastest-growing major American metro over the past decade, with a healthcare corridor centered on VUMC, a thriving music industry on Music Row two miles from campus, and a growing technology sector, all providing internship access that peer universities in slower-growing cities can't match.",
+    institutionalSecret: "Vanderbilt's residential college system — ten colleges, each with a Faculty Head of College — delivers a genuine small-college experience inside a research university, modeled directly on Yale's system. The Blair School of Music, a conservatory-level program, adds a distinctive artistic culture most families don't associate with Vanderbilt.",
+    theRoom: "Nashville, Tennessee — a city of 700,000 and the fastest-growing major city in America by population and economic output. Vanderbilt's 333-acre campus sits in the Midtown neighborhood, a designated arboretum adjacent to Music Row and two miles from downtown Broadway.",
+    lifestyle: "Southern-inflected and socially active, with Greek life participation higher than any Ivy League peer — roughly 45% of students. SEC athletics, particularly basketball and football, anchor campus culture in a city that also hosts the Predators and Titans.",
+    bestFitPersonality: "Pre-med, education, or business career-oriented; appreciates Nashville lifestyle and Southern culture; comfortable with SEC athletic culture and Greek life at a private university; high Conscientiousness and Extraversion.",
+    faithTradition: "Methodist-affiliated historically; today entirely secular and nonsectarian.",
+    geographicInfluenceRadius: "Nashville and Southeast dominant, with national reach in medicine, education, law, and consulting.",
+    economicOutcome: "Elite outcomes in medicine, education, law, finance, and consulting, driven by VUMC's top-10 pipeline, Peabody's #1 national ranking, and Nashville's growing Fortune 500 corridor.",
+    gradCities: ["Nashville TN", "New York NY", "Washington DC", "Atlanta GA", "Chicago IL", "Houston TX"],
     comparableInstitutions: ["Duke University", "Emory University", "Washington University in St. Louis", "Rice University"],
-
     ccTransferPathway: {
       hasCCPathway: false,
       ccFeederNames: [],
       transferAcceptanceRate: "~9%",
       freshmanAcceptanceRate: "~9%",
-      estimatedSavingsRange: "N/A  —  Vanderbilt is private; meets 100% of demonstrated need",
-      transferNotes: "Vanderbilt accepts a very small number of transfers. The university meets 100% of demonstrated financial need for all admitted students including transfers. Direct freshman admission with financial aid is the strongest pathway."
+      estimatedSavingsRange: "N/A — Vanderbilt meets 100% of demonstrated financial need",
+      transferNotes: "Vanderbilt accepts a very small number of transfers and meets 100% of demonstrated need for all admitted students, including transfers."
     }
   },
 
-
-  institutionScale: {
-    enrollmentCategory: "Large",
-    undergraduateEnrollment: 22000,
-    graduateEnrollment: 6000,
-    totalEnrollment: 28000,
-    campusType: "Residential Research University",
-    residentialIntensity: 38,
-    communityFeel: 72,
-    studentFacultyRatio: "19:1",
-    classSizeExperience: "Mid-size to large introductory lectures; smaller upper-division seminars; Honors College provides intimate small-class experience within the large university",
-    scaleAdvantages: [
-      "Flagstaff  —  one of the most livable mid-size cities in the Southwest at 7,000 feet",
-      "Grand Canyon 80 miles north  —  unmatched field access for geology, ecology, and tourism management",
-      "Hotel and Restaurant Management program with direct pipeline into Southwest hospitality industry",
-      "Ponderosa pine forest campus  —  the largest contiguous ponderosa pine forest in the world surrounds Flagstaff"
-    ],
-    scaleDisadvantages: [
-      "19:1 faculty ratio  —  less intimate than smaller regional competitors",
-      "Flagstaff job market is limited  —  graduates typically relocate to Phoenix or other metro markets",
-      "Large enrollment means introductory courses can feel impersonal without Honors College engagement",
-      "National brand recognition is moderate  —  NAU competes in a crowded Arizona higher education market with ASU and UA"
-    ]
-  },
-  trajectoryProfile: {
-    dominantTrajectory: "LEAVE_STAY_GONE",
-    leaverScore: 84,
-    returnerScore: 74,
-    stewardScore: 54,
-    navigatorScore: 80,
-    geographicLockIn: "medium",
-    alumniDispersalPattern: "national"
-  },
-
-
-},
-
   institutionIdentity: {
-    archetype: "Urban Prestige Professional",
-    institutionalPersonality: "Ambitious, polished, collaborative — more emotionally balanced than peer institutions. Students arrive motivated to build careers while maintaining close relationships and social visibility.",
-    cultureKeywords: ["pre-professional", "collaborative", "Nashville-embedded", "Greek-prominent", "health-sciences-driven", "merit-conscious"],
-    missionOrientation: "Research university with strong professional school identity — medicine, law, education, and business define the alumni profile",
-    competitiveness: "high",
-    politicalCulture: "center — more politically mixed than comparable elite institutions",
-    prestigeOrientation: "high",
-    socialClimate: "active Greek system, strong school spirit, Nashville nightlife and culture deeply integrated",
-    oneSentenceSummary: "Vanderbilt places students inside the fastest-growing major city in America with an elite academic credential and a social scene that actually makes four years enjoyable."
+    archetype: "Elite Private Research University",
+    institutionalPersonality: "ambitious, polished, collaborative, more emotionally balanced than many peer institutions",
+    cultureKeywords: ["Pre-Professional", "Nashville-Embedded", "Greek-Prominent", "Health Sciences", "Music City", "SEC Athletics"],
+    missionOrientation: "Research university with a strong professional school identity — medicine, law, education, and business define the alumni profile.",
+    faithTradition: "None",
+    educationalPhilosophy: "Learning through rigorous pre-professional coursework balanced with genuine campus community and Nashville city integration.",
+    competitiveness: "Extremely Selective",
+    politicalCulture: "Center, more politically mixed than comparable elite institutions.",
+    studentAutonomy: "High",
+    prestigeOrientation: "High, elite nationally in medicine, education, and law.",
+    socialClimate: "Active Greek system, strong school spirit, Nashville nightlife and culture deeply integrated.",
+    leadershipStyle: "Leadership through professional credentialing, campus involvement, and social visibility."
   },
 
   megaRegionIntegration: {
-    primaryMegaRegion: "Southeast",
-    secondaryMegaRegion: "National",
-    megaRegionStrength: "Nashville is the anchor — healthcare corridor, music industry, financial services, and a startup scene growing faster than any comparable Southern city",
-    alumniConcentration: ["Nashville", "New York", "Atlanta", "Washington DC", "Chicago", "Houston"]
+    primaryMegaRegion: "CharLanta",
+    regionalRole: "Elite research university supplying medicine, education, law, and business leadership anchored by Nashville's fast-growing healthcare and entertainment economy."
   },
 
   megaRegionExposure: {
-    exposureStrength: "very high",
-    industryCorridors: ["healthcare and hospital systems", "music and entertainment", "consulting", "finance", "education policy"],
-    geographicMobility: 98
+    MidContinentIndustrialEnergyCorridor: 24, BosWash: 34, TorBuffChester: 12,
+    TexasTriangle: 20, CharLanta: 100, NorCalInnovationCorridor: 14, SoCalCreativeEconomy: 14
   },
 
   comparativePositioning: {
-    versusEmory: "Vanderbilt has stronger pre-med outcomes and a more vibrant social scene; Emory has stronger public health and a deeper Atlanta city integration",
-    versusDuke: "Duke is stronger in research and has the Research Triangle ecosystem; Vanderbilt wins on campus culture, Nashville access, and athletic energy",
-    versusTulane: "Vanderbilt is more selective and more career-credential-focused; Tulane offers New Orleans culture and a looser, more creative social fabric",
-    summaryEdge: "Elite private university with the social energy of a flagship and the career outcomes of a top-10 institution — uniquely positioned because Nashville itself has become a destination"
+    versusEmory: "Vanderbilt has stronger pre-med outcomes and a more vibrant Greek/athletics social scene; Emory has stronger public health and deeper Atlanta integration.",
+    versusDuke: "Duke offers a stronger research ecosystem via the Research Triangle; Vanderbilt wins on campus culture, Nashville access, and athletic energy.",
+    versusTulane: "Vanderbilt is more selective and more career-credential-focused; Tulane offers New Orleans culture and a looser, more creative social fabric."
   },
 
-  // ENRICHMENT DATA
+  institutionScale: {
+    enrollmentCategory: "Medium",
+    undergraduateEnrollment: 7180,
+    graduateEnrollment: 6000,
+    totalEnrollment: 13180,
+    campusType: "Residential Research University",
+    residentialIntensity: 68,
+    communityFeel: 78,
+    studentFacultyRatio: "7:1",
+    classSizeExperience: "Small-to-moderate classes with strong faculty access, supported by a ten-college residential system modeled on Yale's that delivers a genuine small-college feel inside a research university.",
+    scaleAdvantages: ["Nashville's fastest-growing-city economic momentum", "Top-10 academic medical center directly on campus", "Nation's #1 ranked education school (Peabody)", "Residential college system delivering small-school intimacy"],
+    scaleDisadvantages: ["High Greek life participation may not suit every student", "Very high cost of attendance", "SEC social culture is intense and status-conscious", "Less academic breadth outside pre-professional tracks"]
+  },
 
-  lifestyleIdentity: {
-    dimensions: {
-      overallLifestyleStrength: 94, outdoorAdventure: 60, coastalLiving: 30, urbanEnergy: 95,
-      wellnessHealth: 80, creativityArts: 90, entrepreneurship: 80, intellectualism: 96,
-      luxuryLifestyle: 88, sustainability: 70, familyCentered: 75, faithCommunity: 60,
-      civicEngagement: 90, athleticsSportsCulture: 88, globalCosmopolitan: 90,
-      collegeTownImmersion: 85, nightlifeEntertainment: 95, foodCulture: 95,
-      makerCulture: 72, digitalNomadCompatibility: 80, workLifeBalance: 88
-    },
-    archetype: {
-      primary: "Urban Prestige Professional",
-      secondary: ["Academic Elite", "Southern Network Builder", "Creative City Explorer", "Balance-Seeker"]
-    },
-    narrative: {
-      campusMood: "Ambitious, polished, collaborative, more emotionally balanced than many peer institutions.",
-      whatSuccessLooksLike: "Winning admission to top jobs or graduate programs while maintaining close relationships, social visibility, and a healthy daily life.",
-      unwrittenRules: "Build your professional story early, be engaged in campus life, use the city well, do not frame balance as laziness -- competence and livability are expected to coexist."
-    }
+  studentFit: {
+    bigFiveProfile: { openness: 68, conscientiousness: 84, extraversion: 76, agreeableness: 72, neuroticism: 38 },
+    hollandCodes: ["E", "S", "I"],
+    learningStyle: ["Pre-Professional Coursework", "Residential College Mentorship", "Clinical and Research Exposure", "Applied Business Learning"],
+    socialEnvironment: ["Polished", "Socially Active", "Greek Life Present", "SEC Athletics", "Ambitious"],
+    idealStudentTraits: ["Professionally ambitious", "Enjoys Nashville's music and entertainment culture", "Comfortable with Greek life and SEC athletics", "Interested in medicine, education, law, or business"],
+    thrivesIf: ["Wants elite academics with a strong Southern social scene", "Enjoys Greek life and SEC athletics culture", "Values pre-professional and pre-med preparation", "Wants direct Nashville industry access"],
+    strugglesIf: ["Prefers a low-key, non-Greek social environment", "Wants a large anonymous research university feel", "Needs a major coastal city", "Is uncomfortable with a status-conscious social culture"],
+    transferRiskFactors: ["Students seeking a less Greek-centric social scene", "Students wanting a larger, more anonymous campus", "Students prioritizing academic breadth over pre-professional focus"]
   },
-  humanOutcomes: {
-    core: {
-      overallLifeDesignScore: 95, careerLifestyleAlignment: 96, financialUpsidePotential: 97,
-      geographicMobility: 98, relationshipCapital: 90, entrepreneurshipLikelihood: 80,
-      physicalWellbeingTrajectory: 85, longTermLifeSatisfaction: 95
-    },
-    careerTrajectory: {
-      dominantPaths: ["Finance", "Consulting", "Medicine/Healthcare", "Law", "Technology", "Research/Academia", "Business/Entrepreneurship"],
-      style: "Credential-driven, structured, highly polished, strong early momentum into high-status professional environments."
-    },
-    geographicTrajectory: {
-      likelyCities: ["Nashville", "New York City", "Chicago", "San Francisco Bay Area", "Boston", "Washington DC", "Los Angeles", "Austin"]
-    },
-    lifestyleTrajectory: {
-      physicalActivityLevel: 100, outdoorParticipation: 80, wellnessIntegration: 99,
-      workLifeIntegration: 99, socialStability: 85, communityEngagement: 88
-    },
-    relationshipTrajectory: {
-      friendshipDurability: 88, alumniActivation: 88, networkDensity: 90,
-      peerSimilarity: 94, communityIdentityStrength: 92
-    },
-    identityTrajectory: {
-      identityStability: 88, environmentalInfluenceStrength: 92,
-      definingTraits: ["ambitious", "collaborative", "health-conscious", "network-driven", "intellectually curious"]
-    }
+
+  hiddenOpportunities: {
+    underratedMajors: ["Human and Organizational Development", "Medicine, Health, and Society", "Musical Arts (Blair)", "Elementary Education (Peabody)"],
+    hiddenCareerPipelines: ["VUMC Clinical Research", "Nashville Healthcare Administration", "Music Industry Business", "Education Policy and Leadership"],
+    nicheRecruitingAdvantages: ["HCA Healthcare", "Bridgestone Americas", "Goldman Sachs", "McKinsey & Company", "Peabody's national education network"],
+    overlookedStrengths: ["Peabody College is the #1 ranked education school nationally", "Direct campus access to a top-10 academic medical center", "Blair School of Music offers conservatory-level training within a liberal arts degree", "Nashville's economic growth outpaces nearly every comparable university city"],
+    sleeperIndustries: ["Music Industry Business and Law", "Healthcare Administration", "Education Policy", "Hospitality and Entertainment Management"]
   },
-  environmentalDNA: {
-    weatherQuality: 80, naturalBeauty: 70, outdoorAccessibility: 60, walkability: 78,
-    entrepreneurialDensity: 88, innovationDensity: 90, artsCulture: 96, foodCulture: 95,
-    transitMobility: 70, safetyPerception: 80
+
+  networkCapital: {
+    alumniAccessibility: 84, mentorshipDensity: 82, executiveAccess: 74, internshipNetwork: 82,
+    familyBusinessExposure: 48, relationshipCapitalScore: 86, alumniLoyaltyScore: 86,
+    referralCultureStrength: 82, donorNetworkStrength: "", boardMemberDensity: ""
+  },
+
+  economicEcosystem: {
+    primaryIndustries: ["Healthcare", "Education", "Music and Entertainment", "Finance", "Law"],
+    regionalEconomicDrivers: ["Healthcare", "Music Industry", "Technology", "Finance", "Hospitality"],
+    topEmployers: ["HCA Healthcare", "Vanderbilt University Medical Center", "Bridgestone Americas", "Dollar General", "Goldman Sachs"],
+    emergingIndustries: ["Health Technology", "Music Tech", "Fintech", "Hospitality Technology"],
+    startupDensity: "Moderate-High", ventureCapitalAccess: 54, corporateHeadquartersDensity: 58,
+    healthcareHubStrength: 88, innovationIndex: 64
+  },
+
+  geographicInfluence: {
+    dominantMarket: "Nashville — Healthcare, Education, Music Industry, and Finance",
+    secondaryMarkets: ["New York NY", "Atlanta GA", "Washington DC", "Chicago IL"],
+    alumniStrongholds: ["Nashville TN", "New York NY", "Atlanta GA"],
+    relocationPatterns: ["A significant share of graduates remain in Nashville, entering healthcare and business.", "Graduates relocate to New York and Atlanta for finance and consulting.", "Education graduates disperse nationally given Peabody's reputation."],
+    regionalInfluenceScore: 88, nationalReachScore: 66, internationalReachScore: 36
+  },
+
+  socialCapital: {
+    greekLifeInfluence: 62, studentOrganizationStrength: 78, leadershipDevelopment: 80,
+    crossDisciplinaryInteraction: 66, civicEngagement: 62
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 14, notes: "Limited institutional emphasis." },
+    healthWellness: { strength: 88, notes: "A defining strength, driven by direct campus access to a top-10 academic medical center." },
+    nutraceuticals: { strength: 14, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 38, notes: "Some business graduates enter consumer roles given Nashville's growing corporate presence." },
+    outdoorIndustry: { strength: 14, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 34, notes: "SEC athletics culture supports modest sports business and management pathways." },
+    entertainmentMedia: { strength: 56, notes: "Strong connection to Nashville's music industry, particularly through Blair School of Music and Music Row proximity." },
+    ventureCapital: { strength: 40, notes: "Growing presence tied to Nashville's expanding startup ecosystem." },
+    privateEquity: { strength: 48, notes: "Solid placement, particularly in healthcare finance." },
+    investmentBanking: { strength: 58, notes: "Strong placement into investment banking and finance roles." },
+    consulting: { strength: 72, notes: "Strong placement into major consulting firms." },
+    medicine: { strength: 90, notes: "Exceptional pre-medical outcomes driven by direct VUMC access." },
+    healthcareAdministration: { strength: 70, notes: "Strong pathway given Nashville's concentrated healthcare industry." },
+    defense: { strength: 12, notes: "Minimal emphasis." },
+    realEstate: { strength: 32, notes: "Modest presence tied to Nashville's growing real estate market." },
+    luxuryBrands: { strength: 22, notes: "Limited direct recruiting." },
+    entrepreneurship: { strength: 54, notes: "Growing culture supported by Nashville's expanding entrepreneurial ecosystem." },
+    technology: { strength: 44, notes: "Moderate and growing given Nashville's emerging technology sector." },
+    publicPolicy: { strength: 44, notes: "Solid pathway, particularly through Peabody's education policy programs." },
+    nonprofitLeadership: { strength: 50, notes: "Moderate presence tied to Nashville's philanthropic and education community." }
+  },
+
+  wealthMobility: {
+    averageFamilyIncome: "", socialMobilityIndex: 60, firstGenerationSupport: 56,
+    wealthCreationPotential: 80, familyBusinessPipelineStrength: 42
+  },
+
+  futureResilience: {
+    aiResistance: 76, automationResistance: 78, adaptabilityScore: 76, interdisciplinaryStrength: 70,
+    futureReadiness: 78, entrepreneurialFlexibility: 66, lifelongLearningCulture: 74, innovationCapacity: 64
+  },
+
+  lifeDesignOutcomes: {
+    wealthCreationPotential: 80, communityLeadershipPotential: 76, geographicMobility: 66,
+    workLifeBalancePotential: 72, purposeAlignment: 76, familyFormationSupport: 74,
+    personalDevelopmentPotential: 80, careerOptionality: 76, longTermLifeSatisfaction: 82
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 80, networkMoat: 78, geographicMoat: 78, industryMoat: 82,
+    alumniMoat: 78, brandDurability: 82, overallMoatScore: 80
+  },
+
+  hillel_strength: "tier_2",
+  jewish_enrollment: "~10-12% Jewish undergraduate enrollment",
+  hillel_note: "Vanderbilt maintains an active Jewish community with a well-established Hillel and consistent programming, supplemented by Nashville's broader Jewish community.",
+
+  trajectoryProfile: {
+    dominantTrajectory: "STEWARD",
+    leaverScore: 44, returnerScore: 66, stewardScore: 72, navigatorScore: 62,
+    geographicLockIn: "medium", alumniDispersalPattern: "regional_southeast_national"
   }
 },
 
@@ -27680,6 +27725,16 @@ institutionNarrative: {
     thrivesIf: "You are politically curious, globally ambitious, comfortable in competitive environments, and want your internship to matter as much as your coursework",
     strugglesIf: "You want a traditional campus bubble, prioritize sports culture, or need a warm socially integrated community before you find your people",
     idealProfile: "High Conscientiousness, high Openness, politically aware, internationally curious, comfortable with ambiguity and competition"
+  ,
+
+    socialEnvironment: ["Polished", "Politically Engaged", "Ambitious", "Internationally Minded"],
+
+    thrivesIf: ["Wants direct DC political and policy access", "Values a Jesuit values-informed education", "Is interested in international affairs or government"],
+
+    strugglesIf: ["Wants a large state-school social scene", "Prefers a STEM-first curriculum", "Is uncomfortable with a Catholic institutional identity"],
+
+    faithTradition: "Roman Catholic (Jesuit)"
+
   },
 
   hiddenOpportunities: {
@@ -27832,6 +27887,14 @@ institutionNarrative: {
     thrivesIf: "You value tradition, take the Honor Code seriously, want a genuinely beautiful campus, and are pre-law, pre-med, or pre-business with high ambition",
     strugglesIf: "You want a diverse urban environment, dislike Greek culture, or find tradition performative rather than meaningful",
     idealProfile: "High Conscientiousness, civic-minded, tradition-comfortable, ambitious, socially skilled"
+  ,
+
+    socialEnvironment: ["Polished", "Tradition-Oriented", "Greek Life Present", "Honor Code Culture"],
+
+    thrivesIf: ["Values a strong honor code and tradition-rich culture", "Wants elite public university academics", "Enjoys Greek life and ACC athletics"],
+
+    strugglesIf: ["Wants a lower-cost out-of-state option", "Prefers a less tradition-bound social culture"]
+
   },
 
   hiddenOpportunities: {
@@ -27988,6 +28051,14 @@ institutionNarrative: {
     thrivesIf: "You are culturally curious, comfortable in a diverse urban environment, interested in public service or public health, and want college to be an adventure not just a credential",
     strugglesIf: "You need a quiet campus environment, are uncomfortable with urban density, or came for the party and ignored the academics",
     idealProfile: "High Openness, socially adventurous, civic-minded, comfortable with ambiguity and cultural complexity"
+  ,
+
+    socialEnvironment: ["Socially Active", "Service-Oriented", "New Orleans Culture", "Greek Life Present"],
+
+    thrivesIf: ["Wants direct New Orleans culture and internship access", "Values mandatory public service integration", "Enjoys a lively, socially active campus"],
+
+    strugglesIf: ["Wants a quiet, low-key college town", "Prefers a colder climate", "Needs a large public-school social scene"]
+
   },
 
   hiddenOpportunities: {
@@ -28098,6 +28169,14 @@ institutionNarrative: {
   studentFit: {
     thrivesIf: "Self-directed, intellectually driven, comfortable in large environments, and oriented toward technology, research, or policy",
     strugglesIf: "You need structured guidance, a small campus feel, or a traditional college social experience"
+  ,
+
+    socialEnvironment: ["Intellectually Intense", "Politically Engaged", "Independent", "Large Research Culture"],
+
+    thrivesIf: ["Wants elite public research access", "Is intellectually independent and self-directed", "Values a politically engaged campus culture"],
+
+    strugglesIf: ["Wants a small, tight-knit community", "Needs high faculty accessibility as a freshman", "Prefers a quieter, less politically active campus"]
+
   },
 
   industryPathways: {
@@ -28200,6 +28279,16 @@ institutionNarrative: {
   studentFit: {
     thrivesIf: "Outdoorsy, environmentally motivated, self-directed, interested in tech, aerospace, or sustainability",
     strugglesIf: "You need urban density, a high-prestige brand, or a traditional East Coast career pipeline"
+  ,
+
+    socialEnvironment: ["Outdoors-Oriented", "Socially Active", "Independent", "Big Ten Athletics"],
+
+    thrivesIf: ["Wants outdoor recreation access with a big-school social scene", "Values a large research university with strong environmental programs", "Enjoys Big Ten/Pac-12-caliber athletics culture"],
+
+    strugglesIf: ["Wants a small, intimate campus", "Prefers a non-outdoorsy lifestyle", "Needs a warm climate"],
+
+    faithTradition: "None"
+
   },
 
   industryPathways: {
@@ -28277,6 +28366,14 @@ institutionNarrative: {
 
     undergraduateEnrollment: 32557
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Contributing institution within its region's talent and industry pipeline."
+
   }
 },
 
@@ -28322,6 +28419,16 @@ institutionNarrative: {
   studentFit: {
     thrivesIf: "You want media, communications, journalism, advertising, or sports — and want a direct pipeline to New York",
     strugglesIf: "You're outside Newhouse and want a research or STEM-focused experience"
+  ,
+
+    socialEnvironment: ["Socially Active", "School Spirit", "Greek Life Present", "Media-Focused"],
+
+    thrivesIf: ["Wants a strong journalism/communications pipeline", "Enjoys a spirited D1 athletics culture", "Values a traditional Northeast campus community"],
+
+    strugglesIf: ["Wants a warm climate", "Prefers a small, quiet campus", "Needs a major city location"],
+
+    faithTradition: "None"
+
   },
 
   industryPathways: {
@@ -28362,6 +28469,14 @@ institutionNarrative: {
   institutionScale: {
 
     undergraduateEnrollment: 15750
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "TorBuffChester",
+
+    regionalRole: "Contributing institution within its region's talent and industry pipeline."
 
   }
 },
@@ -28408,6 +28523,16 @@ institutionNarrative: {
   studentFit: {
     thrivesIf: "International-minded, business or pre-med oriented, comfortable in a cosmopolitan environment, drawn to Miami's energy",
     strugglesIf: "You want a traditional campus bubble or a cold-weather academic culture"
+  ,
+
+    socialEnvironment: ["Socially Active", "Diverse", "Warm-Weather Culture", "Greek Life Present"],
+
+    thrivesIf: ["Wants Miami's warm climate and international culture", "Values strong marine science or business programs", "Enjoys a socially active, diverse campus"],
+
+    strugglesIf: ["Wants a traditional college-town feel", "Prefers a cold-weather campus", "Needs a very low-key social environment"],
+
+    faithTradition: "None"
+
   },
 
   industryPathways: {
@@ -28466,6 +28591,14 @@ institutionNarrative: {
   institutionScale: {
 
     undergraduateEnrollment: 12199
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "Contributing institution within its region's talent and industry pipeline."
 
   }
 },
@@ -28564,6 +28697,48 @@ name: "Colorado School of Mines",
 
     undergraduateEnrollment: 5075
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Contributing institution within its region's talent and industry pipeline."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 68, conscientiousness: 90, extraversion: 46, agreeableness: 66, neuroticism: 42 },
+    hollandCodes: ["I", "R", "C"],
+    learningStyle: ["Analytical Learning", "Laboratory Learning", "Project-Based Learning", "Research Learning"],
+    socialEnvironment: ["Academically Intense", "Technical Focus", "Small Community", "Outdoors-Oriented"],
+    idealStudentTraits: ["Strong technical and mathematical aptitude", "Enjoys rigorous, applied problem-solving", "Comfortable in a small, intense STEM community", "Values Colorado outdoor recreation access"],
+    thrivesIf: ["Wants a highly technical engineering-first education", "Values small class sizes with rigorous coursework", "Enjoys Colorado outdoor recreation access", "Wants strong industry placement in engineering and energy"],
+    strugglesIf: ["Wants broad non-STEM program offerings", "Prefers a large, socially vibrant campus", "Needs a less academically intense environment"],
+    transferRiskFactors: ["Students outside engineering or applied science tracks", "Students wanting broader liberal arts offerings", "Students seeking a larger social scene"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 4, notes: "Minimal institutional emphasis." },
+    healthWellness: { strength: 30, notes: "Limited emphasis outside applied biomedical engineering." },
+    nutraceuticals: { strength: 6, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 20, notes: "Limited direct pipeline." },
+    outdoorIndustry: { strength: 36, notes: "Strong student culture around Colorado outdoor recreation, modest direct industry pipeline." },
+    sportsBusiness: { strength: 10, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 8, notes: "Minimal institutional focus." },
+    ventureCapital: { strength: 34, notes: "Growing presence tied to energy and mining technology startups." },
+    privateEquity: { strength: 28, notes: "Modest placement, particularly in energy sector finance." },
+    investmentBanking: { strength: 24, notes: "Limited direct placement; most graduates pursue technical roles." },
+    consulting: { strength: 46, notes: "Solid placement into technical and engineering consulting firms." },
+    medicine: { strength: 22, notes: "Not a primary institutional strength." },
+    healthcareAdministration: { strength: 16, notes: "Minimal emphasis." },
+    defense: { strength: 42, notes: "Meaningful pipeline into defense engineering and government contracting." },
+    realEstate: { strength: 18, notes: "Minimal emphasis." },
+    luxuryBrands: { strength: 6, notes: "Minimal direct recruiting." },
+    entrepreneurship: { strength: 56, notes: "Growing culture, particularly in energy and mining technology innovation." },
+    technology: { strength: 78, notes: "Strong placement into engineering and technology roles nationally." },
+    publicPolicy: { strength: 26, notes: "Modest presence, particularly in energy policy." },
+    nonprofitLeadership: { strength: 22, notes: "Limited emphasis." }
   }
 },
 
@@ -28661,6 +28836,48 @@ name: "Colorado College",
 
     undergraduateEnrollment: 2200
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Contributing institution within its region's talent and industry pipeline."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 92, conscientiousness: 76, extraversion: 60, agreeableness: 78, neuroticism: 40 },
+    hollandCodes: ["A", "I", "S"],
+    learningStyle: ["Block Plan Immersive Learning", "Outdoor Field Study", "Seminar Discussion", "Independent Research"],
+    socialEnvironment: ["Intellectually Adventurous", "Outdoors-Oriented", "Small Community", "Block Plan Culture"],
+    idealStudentTraits: ["Enjoys deep immersion in one subject at a time", "Values outdoor recreation integrated into academics", "Comfortable in a small, tight-knit community", "Intellectually curious and adventurous"],
+    thrivesIf: ["Wants the unique one-class-at-a-time Block Plan", "Values outdoor recreation integrated into academics", "Enjoys a small, tight-knit liberal arts community", "Wants direct Colorado Rockies access"],
+    strugglesIf: ["Wants a traditional semester structure", "Prefers a large university", "Needs a major city location", "Wants extensive pre-professional program breadth"],
+    transferRiskFactors: ["Students who find the Block Plan too intense", "Students wanting a traditional semester system", "Students seeking a larger campus community"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Minimal institutional emphasis." },
+    healthWellness: { strength: 46, notes: "Solid pre-health preparation, not a primary institutional strength." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 24, notes: "Limited direct pipeline." },
+    outdoorIndustry: { strength: 58, notes: "A genuine institutional strength, given the Block Plan's outdoor field-study integration and Rockies proximity." },
+    sportsBusiness: { strength: 18, notes: "Modest presence tied to outdoor recreation industry." },
+    entertainmentMedia: { strength: 24, notes: "Limited institutional focus." },
+    ventureCapital: { strength: 26, notes: "Modest presence." },
+    privateEquity: { strength: 24, notes: "Limited direct placement." },
+    investmentBanking: { strength: 26, notes: "Limited placement; most graduates pursue varied paths." },
+    consulting: { strength: 40, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 44, notes: "Solid pre-health preparation." },
+    healthcareAdministration: { strength: 24, notes: "Limited emphasis." },
+    defense: { strength: 10, notes: "Minimal emphasis." },
+    realEstate: { strength: 20, notes: "Limited emphasis." },
+    luxuryBrands: { strength: 10, notes: "Minimal direct recruiting." },
+    entrepreneurship: { strength: 48, notes: "Growing culture, particularly in outdoor and sustainability-focused ventures." },
+    technology: { strength: 32, notes: "Modest presence, not a primary institutional strength." },
+    publicPolicy: { strength: 40, notes: "Solid presence, particularly in environmental policy." },
+    nonprofitLeadership: { strength: 52, notes: "Strong presence tied to environmental and community-focused mission." }
   }
 },
 
@@ -28757,6 +28974,48 @@ name: "University of Northern Colorado",
 
     undergraduateEnrollment: 9200
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Regional public university supplying education, business, and health sciences talent to Colorado."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 56, conscientiousness: 68, extraversion: 60, agreeableness: 74, neuroticism: 44 },
+    hollandCodes: ["S", "C", "A"],
+    learningStyle: ["Applied Education Coursework", "Hands-On Music and Performance Training", "Practical Skill-Building"],
+    socialEnvironment: ["Community-Focused", "Practical", "Outdoors-Oriented", "Regional"],
+    idealStudentTraits: ["Interested in education, music, or health sciences", "Values a supportive, practical campus culture", "Wants an affordable Colorado public option"],
+    thrivesIf: ["Wants a strong teacher preparation program", "Values a supportive, community-focused campus", "Wants Colorado outdoor recreation access at an affordable price"],
+    strugglesIf: ["Wants a large research university", "Needs strong national brand recognition", "Wants extensive major breadth outside education and applied fields"],
+    transferRiskFactors: ["Students outside education or applied health tracks", "Students wanting a larger, more prestigious university"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 6, notes: "Minimal emphasis." },
+    healthWellness: { strength: 54, notes: "Solid nursing and health sciences preparation." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 18, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 28, notes: "Modest regional connection given Colorado setting." },
+    sportsBusiness: { strength: 16, notes: "Limited direct pipeline." },
+    entertainmentMedia: { strength: 24, notes: "Modest presence through the School of Music." },
+    ventureCapital: { strength: 8, notes: "Minimal presence." },
+    privateEquity: { strength: 10, notes: "Minimal presence." },
+    investmentBanking: { strength: 12, notes: "Limited placement." },
+    consulting: { strength: 18, notes: "Modest regional consulting placement." },
+    medicine: { strength: 38, notes: "Solid pre-health preparation." },
+    healthcareAdministration: { strength: 36, notes: "Modest regional healthcare administration placement." },
+    defense: { strength: 8, notes: "Minimal emphasis." },
+    realEstate: { strength: 14, notes: "Minimal emphasis." },
+    luxuryBrands: { strength: 4, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 24, notes: "Modest regional presence." },
+    technology: { strength: 20, notes: "Limited presence." },
+    publicPolicy: { strength: 22, notes: "Modest presence." },
+    nonprofitLeadership: { strength: 44, notes: "Solid presence tied to education mission." }
   }
 },
 
@@ -28854,6 +29113,48 @@ name: "United States Air Force Academy",
 
     undergraduateEnrollment: 4300
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Federal service academy supplying military and aerospace leadership nationally, anchored in Colorado Springs."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 52, conscientiousness: 96, extraversion: 62, agreeableness: 70, neuroticism: 32 },
+    hollandCodes: ["R", "C", "E"],
+    learningStyle: ["Structured Military Training", "Applied Engineering Coursework", "Leadership Development"],
+    socialEnvironment: ["Highly Structured", "Disciplined", "Service-Oriented", "Tight-Knit"],
+    idealStudentTraits: ["Wants a structured, service-oriented path", "Committed to military service post-graduation", "Values discipline and leadership development", "Comfortable with a highly regimented environment"],
+    thrivesIf: ["Wants a tuition-free education tied to military service", "Values structured leadership development", "Is committed to an Air Force or Space Force career", "Enjoys a disciplined, tight-knit community"],
+    strugglesIf: ["Wants a traditional, unstructured college experience", "Is not committed to military service", "Prefers broad academic and social freedom"],
+    transferRiskFactors: ["Students not committed to military service", "Students wanting a traditional civilian college experience"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 2, notes: "Not applicable." },
+    healthWellness: { strength: 30, notes: "Limited outside military medical pathways." },
+    nutraceuticals: { strength: 4, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 6, notes: "Minimal emphasis." },
+    outdoorIndustry: { strength: 20, notes: "Modest connection given Colorado setting and physical training culture." },
+    sportsBusiness: { strength: 14, notes: "Limited direct pipeline." },
+    entertainmentMedia: { strength: 6, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 10, notes: "Minimal presence." },
+    privateEquity: { strength: 8, notes: "Minimal presence." },
+    investmentBanking: { strength: 8, notes: "Minimal presence." },
+    consulting: { strength: 20, notes: "Some graduates enter consulting after military service." },
+    medicine: { strength: 24, notes: "Limited outside military medical pathways." },
+    healthcareAdministration: { strength: 14, notes: "Minimal emphasis." },
+    defense: { strength: 98, notes: "The Academy's core institutional purpose — direct commissioning into Air Force and Space Force leadership." },
+    realEstate: { strength: 6, notes: "Minimal emphasis." },
+    luxuryBrands: { strength: 2, notes: "Not applicable." },
+    entrepreneurship: { strength: 22, notes: "Some graduates pursue entrepreneurship after military service." },
+    technology: { strength: 58, notes: "Strong pipeline into aerospace and defense technology." },
+    publicPolicy: { strength: 46, notes: "Solid pathway into defense and national security policy." },
+    nonprofitLeadership: { strength: 20, notes: "Limited emphasis." }
   }
 },
 
@@ -28951,6 +29252,48 @@ name: "Northern Arizona University",
 
     undergraduateEnrollment: 22600
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Regional public university supplying education, forestry, hospitality, and health sciences talent to the Southwest."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 60, conscientiousness: 66, extraversion: 62, agreeableness: 74, neuroticism: 44 },
+    hollandCodes: ["S", "R", "C"],
+    learningStyle: ["Applied Field Study", "Hands-On Hospitality Training", "Practical Skill-Building"],
+    socialEnvironment: ["Outdoors-Oriented", "Community-Focused", "Practical", "Mountain Town Culture"],
+    idealStudentTraits: ["Enjoys outdoor recreation and mountain settings", "Interested in education, forestry, or hospitality", "Values an affordable regional public option"],
+    thrivesIf: ["Wants direct access to Grand Canyon and Flagstaff outdoor recreation", "Values a strong forestry or hospitality management program", "Wants an affordable Southwest public university"],
+    strugglesIf: ["Wants a large research university", "Needs strong national brand recognition", "Prefers a warm, low-elevation climate"],
+    transferRiskFactors: ["Students wanting a larger, more prestigious university", "Students needing a warmer climate"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 6, notes: "Minimal emphasis." },
+    healthWellness: { strength: 48, notes: "Solid nursing and health sciences preparation." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 20, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 52, notes: "A genuine institutional strength given Flagstaff's outdoor recreation economy and forestry program." },
+    sportsBusiness: { strength: 18, notes: "Modest presence." },
+    entertainmentMedia: { strength: 14, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 10, notes: "Minimal presence." },
+    privateEquity: { strength: 10, notes: "Minimal presence." },
+    investmentBanking: { strength: 12, notes: "Limited placement." },
+    consulting: { strength: 20, notes: "Modest regional consulting placement." },
+    medicine: { strength: 36, notes: "Solid pre-health preparation." },
+    healthcareAdministration: { strength: 32, notes: "Modest regional placement." },
+    defense: { strength: 10, notes: "Minimal emphasis." },
+    realEstate: { strength: 16, notes: "Minimal emphasis." },
+    luxuryBrands: { strength: 6, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 30, notes: "Modest regional presence, particularly in outdoor recreation ventures." },
+    technology: { strength: 22, notes: "Limited presence." },
+    publicPolicy: { strength: 24, notes: "Modest presence, particularly environmental policy." },
+    nonprofitLeadership: { strength: 40, notes: "Solid presence tied to education and forestry mission." }
   }
 },
 
@@ -34563,6 +34906,14 @@ name: "Northern Arizona University",
     ]
   },
 
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "MidContinentIndustrialEnergyCorridor",
+
+    regionalRole: "Big Ten flagship supplying business, music, and public affairs talent to the Midwest."
+
+  },
+
   studentFit: {
 
     bigFiveProfile: {
@@ -35058,6 +35409,48 @@ name: "Biola University",
 
     undergraduateEnrollment: 4100
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "SoCalCreativeEconomy",
+
+    regionalRole: "Evangelical Christian university supplying ministry, education, and business talent to Southern California."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 54, conscientiousness: 76, extraversion: 62, agreeableness: 80, neuroticism: 38 },
+    hollandCodes: ["S", "A", "C"],
+    learningStyle: ["Faith-Integrated Coursework", "Small Class Discussion", "Applied Ministry Training"],
+    socialEnvironment: ["Faith-Centered", "Tight-Knit", "Service-Oriented", "Supportive"],
+    idealStudentTraits: ["Wants a faith-integrated education", "Values a close, supportive Christian community", "Interested in ministry, education, or business"],
+    thrivesIf: ["Wants an explicitly evangelical Christian environment", "Values a small, tight-knit faith community", "Wants Southern California proximity with a values-based campus culture"],
+    strugglesIf: ["Wants a secular or religiously diverse campus", "Prefers a large university setting", "Needs extensive non-faith-based program breadth"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students wanting a larger, more diverse campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Minimal emphasis." },
+    healthWellness: { strength: 40, notes: "Solid pre-health preparation." },
+    nutraceuticals: { strength: 8, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 22, notes: "Modest presence." },
+    outdoorIndustry: { strength: 14, notes: "Limited emphasis." },
+    sportsBusiness: { strength: 14, notes: "Limited emphasis." },
+    entertainmentMedia: { strength: 28, notes: "Modest presence given LA proximity, particularly faith-based media." },
+    ventureCapital: { strength: 14, notes: "Minimal presence." },
+    privateEquity: { strength: 16, notes: "Minimal presence." },
+    investmentBanking: { strength: 18, notes: "Limited placement." },
+    consulting: { strength: 26, notes: "Modest placement." },
+    medicine: { strength: 38, notes: "Solid pre-health preparation." },
+    healthcareAdministration: { strength: 28, notes: "Modest presence." },
+    defense: { strength: 6, notes: "Minimal emphasis." },
+    realEstate: { strength: 18, notes: "Modest presence given LA proximity." },
+    luxuryBrands: { strength: 8, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 32, notes: "Modest presence, often mission-driven." },
+    technology: { strength: 24, notes: "Limited presence." },
+    publicPolicy: { strength: 22, notes: "Modest presence." },
+    nonprofitLeadership: { strength: 62, notes: "A genuine institutional strength — strong ministry and mission-driven nonprofit pipeline." }
   }
 },
 
@@ -35159,6 +35552,48 @@ name: "Calvin University",
 
     undergraduateEnrollment: 3206
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "MidContinentIndustrialEnergyCorridor",
+
+    regionalRole: "Reformed Christian university supplying education, business, and health sciences talent to West Michigan."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 62, conscientiousness: 78, extraversion: 58, agreeableness: 82, neuroticism: 38 },
+    hollandCodes: ["S", "I", "A"],
+    learningStyle: ["Faith-Integrated Coursework", "Discussion-Based Seminars", "Applied Learning"],
+    socialEnvironment: ["Faith-Centered", "Intellectually Engaged", "Tight-Knit", "Supportive"],
+    idealStudentTraits: ["Wants a Reformed Christian intellectual environment", "Values rigorous academics paired with faith", "Interested in education, business, or health sciences"],
+    thrivesIf: ["Wants a faith-integrated liberal arts education", "Values intellectual rigor within a Christian worldview", "Wants a tight-knit Midwest community"],
+    strugglesIf: ["Wants a secular campus environment", "Prefers a large university setting", "Needs a warmer climate"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students wanting a larger, more diverse campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 6, notes: "Minimal emphasis." },
+    healthWellness: { strength: 46, notes: "Solid nursing and pre-health preparation." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 20, notes: "Modest presence given West Michigan's manufacturing base." },
+    outdoorIndustry: { strength: 14, notes: "Limited emphasis." },
+    sportsBusiness: { strength: 12, notes: "Limited emphasis." },
+    entertainmentMedia: { strength: 16, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 10, notes: "Minimal presence." },
+    privateEquity: { strength: 14, notes: "Minimal presence." },
+    investmentBanking: { strength: 16, notes: "Limited placement." },
+    consulting: { strength: 24, notes: "Modest placement." },
+    medicine: { strength: 40, notes: "Solid pre-health preparation." },
+    healthcareAdministration: { strength: 30, notes: "Modest presence." },
+    defense: { strength: 6, notes: "Minimal emphasis." },
+    realEstate: { strength: 14, notes: "Minimal emphasis." },
+    luxuryBrands: { strength: 6, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 34, notes: "Solid presence tied to West Michigan's business culture." },
+    technology: { strength: 22, notes: "Limited presence." },
+    publicPolicy: { strength: 24, notes: "Modest presence." },
+    nonprofitLeadership: { strength: 56, notes: "Strong presence tied to faith and mission-driven community." }
   }
 },
 
@@ -35260,6 +35695,48 @@ name: "Gordon College",
 
     undergraduateEnrollment: 1187
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Evangelical Christian liberal arts college supplying education, business, and ministry talent to New England."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 64, conscientiousness: 76, extraversion: 56, agreeableness: 82, neuroticism: 38 },
+    hollandCodes: ["S", "A", "I"],
+    learningStyle: ["Faith-Integrated Coursework", "Seminar Discussion", "Applied Learning"],
+    socialEnvironment: ["Faith-Centered", "Tight-Knit", "Intellectually Engaged", "Supportive"],
+    idealStudentTraits: ["Wants a faith-integrated liberal arts education", "Values a close, supportive Christian community", "Wants Boston-area proximity with a small-college feel"],
+    thrivesIf: ["Wants an evangelical Christian liberal arts environment", "Values a small, tight-knit community", "Wants Boston access without a large university"],
+    strugglesIf: ["Wants a secular campus environment", "Prefers a large university setting", "Needs extensive major breadth"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students wanting a larger campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 6, notes: "Minimal emphasis." },
+    healthWellness: { strength: 38, notes: "Solid pre-health preparation." },
+    nutraceuticals: { strength: 8, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 18, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 16, notes: "Modest presence given coastal New England setting." },
+    sportsBusiness: { strength: 12, notes: "Limited emphasis." },
+    entertainmentMedia: { strength: 20, notes: "Modest presence given Boston proximity." },
+    ventureCapital: { strength: 12, notes: "Minimal presence." },
+    privateEquity: { strength: 14, notes: "Minimal presence." },
+    investmentBanking: { strength: 18, notes: "Modest placement given Boston financial sector proximity." },
+    consulting: { strength: 26, notes: "Modest placement." },
+    medicine: { strength: 36, notes: "Solid pre-health preparation." },
+    healthcareAdministration: { strength: 26, notes: "Modest presence." },
+    defense: { strength: 6, notes: "Minimal emphasis." },
+    realEstate: { strength: 16, notes: "Minimal emphasis." },
+    luxuryBrands: { strength: 8, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 28, notes: "Modest presence, often mission-driven." },
+    technology: { strength: 22, notes: "Limited presence, modest Boston-area access." },
+    publicPolicy: { strength: 22, notes: "Modest presence." },
+    nonprofitLeadership: { strength: 58, notes: "Strong presence tied to faith and mission-driven community." }
   }
 },
 
@@ -35361,6 +35838,48 @@ name: "Pepperdine University",
 
     undergraduateEnrollment: 5088
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "SoCalCreativeEconomy",
+
+    regionalRole: "Christian university supplying business, law, and entertainment-adjacent talent to Los Angeles."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 62, conscientiousness: 76, extraversion: 66, agreeableness: 78, neuroticism: 38 },
+    hollandCodes: ["E", "S", "A"],
+    learningStyle: ["Faith-Integrated Coursework", "Applied Business Learning", "Small Class Discussion"],
+    socialEnvironment: ["Faith-Centered", "Polished", "Ocean-Adjacent Lifestyle", "Socially Active"],
+    idealStudentTraits: ["Wants a faith-integrated education with LA proximity", "Values a polished, ocean-adjacent campus culture", "Interested in business, law, or communications"],
+    thrivesIf: ["Wants a stunning oceanfront campus with LA access", "Values a Christian institutional identity", "Wants strong business and law school preparation"],
+    strugglesIf: ["Wants a secular campus environment", "Prefers a large research university", "Needs a lower cost of attendance"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students prioritizing cost over setting"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 20, notes: "Modest presence given LA and Malibu proximity." },
+    healthWellness: { strength: 34, notes: "Modest presence, not a primary strength." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 36, notes: "Modest presence given LA consumer market proximity." },
+    outdoorIndustry: { strength: 24, notes: "Modest presence given coastal Malibu setting." },
+    sportsBusiness: { strength: 20, notes: "Modest presence." },
+    entertainmentMedia: { strength: 44, notes: "Meaningful presence given direct LA entertainment industry proximity." },
+    ventureCapital: { strength: 30, notes: "Modest and growing presence." },
+    privateEquity: { strength: 36, notes: "Solid placement, particularly through Graziadio Business School." },
+    investmentBanking: { strength: 42, notes: "Solid placement into West Coast investment banking." },
+    consulting: { strength: 46, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 30, notes: "Modest pre-health preparation." },
+    healthcareAdministration: { strength: 28, notes: "Modest presence." },
+    defense: { strength: 8, notes: "Minimal emphasis." },
+    realEstate: { strength: 42, notes: "Solid presence given LA real estate market proximity." },
+    luxuryBrands: { strength: 28, notes: "Modest presence given LA consumer culture." },
+    entrepreneurship: { strength: 44, notes: "Solid presence, growing given Southern California's startup ecosystem." },
+    technology: { strength: 30, notes: "Modest presence relative to business and law strength." },
+    publicPolicy: { strength: 30, notes: "Modest presence through Pepperdine's law school connection." },
+    nonprofitLeadership: { strength: 46, notes: "Solid presence tied to faith and mission-driven culture." }
   }
 },
 
@@ -35462,6 +35981,48 @@ name: "Wheaton College",
 
     undergraduateEnrollment: 2394
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "MidContinentIndustrialEnergyCorridor",
+
+    regionalRole: "Evangelical Christian liberal arts college supplying ministry, education, and graduate-bound talent nationally from the Chicago suburbs."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 66, conscientiousness: 82, extraversion: 56, agreeableness: 82, neuroticism: 36 },
+    hollandCodes: ["I", "S", "A"],
+    learningStyle: ["Faith-Integrated Rigorous Coursework", "Seminar Discussion", "Independent Research"],
+    socialEnvironment: ["Faith-Centered", "Intellectually Rigorous", "Tight-Knit", "Service-Oriented"],
+    idealStudentTraits: ["Wants rigorous academics within an evangelical Christian framework", "Values a tight-knit, mission-driven community", "Plans for graduate school or ministry"],
+    thrivesIf: ["Wants one of the most academically rigorous evangelical colleges in the country", "Values strong graduate school placement", "Wants a close, faith-centered community"],
+    strugglesIf: ["Wants a secular campus environment", "Prefers a large university setting", "Needs extensive major breadth outside liberal arts"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students wanting a larger, more diverse campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 4, notes: "Minimal emphasis." },
+    healthWellness: { strength: 40, notes: "Solid pre-health preparation." },
+    nutraceuticals: { strength: 8, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 16, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 12, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 10, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 18, notes: "Modest presence, some Chicago-area media placement." },
+    ventureCapital: { strength: 10, notes: "Minimal presence." },
+    privateEquity: { strength: 14, notes: "Minimal presence." },
+    investmentBanking: { strength: 20, notes: "Modest placement given Chicago financial sector proximity." },
+    consulting: { strength: 30, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 44, notes: "Solid pre-health and graduate school placement." },
+    healthcareAdministration: { strength: 26, notes: "Modest presence." },
+    defense: { strength: 6, notes: "Minimal emphasis." },
+    realEstate: { strength: 14, notes: "Minimal emphasis." },
+    luxuryBrands: { strength: 6, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 26, notes: "Modest presence, often mission-driven." },
+    technology: { strength: 24, notes: "Modest presence given Chicago-area access." },
+    publicPolicy: { strength: 32, notes: "Solid presence, particularly through graduate school pipelines." },
+    nonprofitLeadership: { strength: 68, notes: "One of Wheaton's defining strengths — exceptionally strong ministry and mission-driven nonprofit pipeline." }
   }
 },
 
@@ -35563,6 +36124,48 @@ name: "Baylor University",
 
     undergraduateEnrollment: 20318
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "TexasTriangle",
+
+    regionalRole: "Baptist research university supplying business, law, and health sciences talent to Texas."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 58, conscientiousness: 78, extraversion: 68, agreeableness: 80, neuroticism: 38 },
+    hollandCodes: ["S", "E", "C"],
+    learningStyle: ["Faith-Integrated Coursework", "Applied Business Learning", "Discussion-Based Seminars"],
+    socialEnvironment: ["Faith-Centered", "Socially Active", "Greek Life Present", "Big 12 Athletics"],
+    idealStudentTraits: ["Wants a faith-integrated education with Big 12 athletics culture", "Values a socially active Christian community", "Interested in business, law, or health sciences"],
+    thrivesIf: ["Wants a large Baptist university with strong athletics culture", "Values a socially active, faith-centered environment", "Wants strong business and pre-law preparation"],
+    strugglesIf: ["Wants a secular campus environment", "Prefers a small, quiet college", "Needs a non-Greek social scene"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students wanting a smaller, quieter campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 10, notes: "Minimal emphasis." },
+    healthWellness: { strength: 54, notes: "Solid nursing and pre-health preparation." },
+    nutraceuticals: { strength: 12, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 32, notes: "Modest presence through business school." },
+    outdoorIndustry: { strength: 14, notes: "Limited emphasis." },
+    sportsBusiness: { strength: 28, notes: "Solid presence given Big 12 athletics culture." },
+    entertainmentMedia: { strength: 22, notes: "Modest presence." },
+    ventureCapital: { strength: 20, notes: "Modest presence." },
+    privateEquity: { strength: 30, notes: "Solid placement through Hankamer School of Business." },
+    investmentBanking: { strength: 38, notes: "Solid placement into regional and national banking roles." },
+    consulting: { strength: 42, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 52, notes: "Strong pre-health and pre-law preparation." },
+    healthcareAdministration: { strength: 38, notes: "Solid presence." },
+    defense: { strength: 10, notes: "Minimal emphasis." },
+    realEstate: { strength: 34, notes: "Solid presence given Texas real estate market." },
+    luxuryBrands: { strength: 12, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 40, notes: "Solid presence tied to Texas business culture." },
+    technology: { strength: 28, notes: "Modest presence." },
+    publicPolicy: { strength: 30, notes: "Modest presence, particularly pre-law." },
+    nonprofitLeadership: { strength: 50, notes: "Solid presence tied to faith and mission-driven culture." }
   }
 },
 
@@ -35863,6 +36466,48 @@ name: "Texas Christian University",
 
     undergraduateEnrollment: 10701
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "TexasTriangle",
+
+    regionalRole: "Christian university supplying business, communications, and energy talent to the Dallas-Fort Worth corridor."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 58, conscientiousness: 76, extraversion: 70, agreeableness: 80, neuroticism: 38 },
+    hollandCodes: ["S", "E", "A"],
+    learningStyle: ["Faith-Informed Coursework", "Applied Business Learning", "Small Class Discussion"],
+    socialEnvironment: ["Polished", "Socially Active", "Greek Life Present", "Big 12 Athletics"],
+    idealStudentTraits: ["Wants a warm, community-oriented Texas campus", "Values a socially active Greek and athletics culture", "Interested in business, communications, or ranch management"],
+    thrivesIf: ["Wants a polished, friendly Fort Worth campus", "Values Big 12 athletics and Greek life", "Wants direct DFW business and energy industry access"],
+    strugglesIf: ["Wants a secular or more academically intense environment", "Prefers a large research university", "Needs a non-Greek social scene"],
+    transferRiskFactors: ["Students seeking a more academically intense environment", "Students wanting a larger research university"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 10, notes: "Minimal emphasis." },
+    healthWellness: { strength: 36, notes: "Modest pre-health presence." },
+    nutraceuticals: { strength: 8, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 32, notes: "Modest presence through Neeley School of Business." },
+    outdoorIndustry: { strength: 14, notes: "Limited emphasis." },
+    sportsBusiness: { strength: 26, notes: "Solid presence given Big 12 athletics culture." },
+    entertainmentMedia: { strength: 30, notes: "Solid presence through TCU's respected journalism program." },
+    ventureCapital: { strength: 22, notes: "Modest and growing presence." },
+    privateEquity: { strength: 32, notes: "Solid placement given DFW private capital proximity." },
+    investmentBanking: { strength: 36, notes: "Solid placement into regional banking roles." },
+    consulting: { strength: 38, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 32, notes: "Modest pre-health preparation." },
+    healthcareAdministration: { strength: 28, notes: "Modest presence." },
+    defense: { strength: 8, notes: "Minimal emphasis." },
+    realEstate: { strength: 40, notes: "Solid presence given DFW real estate market." },
+    luxuryBrands: { strength: 16, notes: "Modest presence." },
+    entrepreneurship: { strength: 36, notes: "Solid presence tied to Texas business culture." },
+    technology: { strength: 24, notes: "Modest presence." },
+    publicPolicy: { strength: 22, notes: "Limited emphasis." },
+    nonprofitLeadership: { strength: 38, notes: "Modest presence tied to faith-informed culture." }
   }
 },
 
@@ -35969,6 +36614,48 @@ name: "University of Notre Dame",
 
     undergraduateEnrollment: 8900
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "MidContinentIndustrialEnergyCorridor",
+
+    regionalRole: "Elite Catholic research university supplying business, law, and leadership talent nationally from the Midwest."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 62, conscientiousness: 84, extraversion: 66, agreeableness: 82, neuroticism: 36 },
+    hollandCodes: ["S", "E", "I"],
+    learningStyle: ["Faith-Integrated Coursework", "Discussion-Based Seminars", "Applied Business Learning"],
+    socialEnvironment: ["Tight-Knit", "Spirited", "Faith-Centered", "Strong Alumni Loyalty"],
+    idealStudentTraits: ["Wants elite academics within a Catholic values framework", "Values intense school spirit and alumni loyalty", "Interested in business, law, or engineering"],
+    thrivesIf: ["Wants one of the most spirited, tight-knit elite university communities", "Values a Catholic intellectual tradition", "Wants exceptional alumni network strength"],
+    strugglesIf: ["Wants a secular campus environment", "Prefers an urban setting", "Needs a large, anonymous social scene"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students wanting a major city location"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Minimal emphasis." },
+    healthWellness: { strength: 42, notes: "Solid pre-health preparation." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 34, notes: "Solid presence through Mendoza College of Business." },
+    outdoorIndustry: { strength: 12, notes: "Limited emphasis." },
+    sportsBusiness: { strength: 34, notes: "Strong presence given Notre Dame's elite athletics brand." },
+    entertainmentMedia: { strength: 26, notes: "Modest presence." },
+    ventureCapital: { strength: 32, notes: "Growing presence tied to alumni network strength." },
+    privateEquity: { strength: 56, notes: "Strong placement given Mendoza's finance reputation and alumni network." },
+    investmentBanking: { strength: 62, notes: "Strong Wall Street placement, among the best of any Catholic university." },
+    consulting: { strength: 60, notes: "Strong placement into major consulting firms." },
+    medicine: { strength: 44, notes: "Solid pre-health preparation." },
+    healthcareAdministration: { strength: 32, notes: "Modest presence." },
+    defense: { strength: 12, notes: "Limited emphasis." },
+    realEstate: { strength: 30, notes: "Modest presence." },
+    luxuryBrands: { strength: 16, notes: "Modest presence." },
+    entrepreneurship: { strength: 46, notes: "Solid presence, aided by strong alumni network." },
+    technology: { strength: 40, notes: "Solid engineering placement into technology roles." },
+    publicPolicy: { strength: 40, notes: "Solid presence, particularly pre-law." },
+    nonprofitLeadership: { strength: 52, notes: "Strong presence tied to Catholic mission and service culture." }
   }
 },
 
@@ -36075,6 +36762,48 @@ name: "Wake Forest University",
 
     undergraduateEnrollment: 5442
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "Elite liberal arts-caliber university supplying business, medicine, and law talent to the Southeast."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 66, conscientiousness: 82, extraversion: 66, agreeableness: 78, neuroticism: 38 },
+    hollandCodes: ["S", "I", "E"],
+    learningStyle: ["Small Class Discussion", "Faculty Mentorship", "Applied Business Learning"],
+    socialEnvironment: ["Polished", "Tight-Knit", "Greek Life Present", "Academically Rigorous"],
+    idealStudentTraits: ["Wants small liberal-arts-caliber classes at a research university", "Values a polished Southern social culture", "Interested in business, medicine, or law"],
+    thrivesIf: ["Wants the intimacy of a small college with research-university resources", "Values close faculty mentorship", "Wants strong pre-med and pre-business preparation"],
+    strugglesIf: ["Wants a large state-school social scene", "Prefers a big city location", "Needs a lower cost of attendance"],
+    transferRiskFactors: ["Students seeking a larger university", "Students wanting a major city"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 10, notes: "Minimal emphasis." },
+    healthWellness: { strength: 62, notes: "Strong pre-medical preparation and direct Wake Forest Baptist Medical Center connection." },
+    nutraceuticals: { strength: 12, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 34, notes: "Modest presence through business school." },
+    outdoorIndustry: { strength: 14, notes: "Limited emphasis." },
+    sportsBusiness: { strength: 22, notes: "Modest presence given ACC athletics culture." },
+    entertainmentMedia: { strength: 22, notes: "Modest presence." },
+    ventureCapital: { strength: 30, notes: "Modest and growing presence." },
+    privateEquity: { strength: 48, notes: "Solid placement into finance and private capital roles." },
+    investmentBanking: { strength: 54, notes: "Strong placement into investment banking." },
+    consulting: { strength: 56, notes: "Strong placement into major consulting firms." },
+    medicine: { strength: 68, notes: "A genuine institutional strength, aided by direct medical center affiliation." },
+    healthcareAdministration: { strength: 40, notes: "Solid presence." },
+    defense: { strength: 8, notes: "Minimal emphasis." },
+    realEstate: { strength: 28, notes: "Modest presence." },
+    luxuryBrands: { strength: 16, notes: "Modest presence." },
+    entrepreneurship: { strength: 38, notes: "Solid presence." },
+    technology: { strength: 30, notes: "Modest presence." },
+    publicPolicy: { strength: 32, notes: "Modest presence, particularly pre-law." },
+    nonprofitLeadership: { strength: 40, notes: "Solid presence." }
   }
 },
 
@@ -36179,7 +36908,51 @@ name: "Case Western Reserve University",
 
     undergraduateEnrollment: 6145
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "MidContinentIndustrialEnergyCorridor",
+
+    regionalRole: "Research university supplying medicine, engineering, and biomedical talent to the Great Lakes corridor."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 78, conscientiousness: 86, extraversion: 50, agreeableness: 68, neuroticism: 42 },
+    hollandCodes: ["I", "R", "C"],
+    learningStyle: ["Research-Intensive Learning", "Applied Engineering Coursework", "Clinical Exposure"],
+    socialEnvironment: ["Academically Intense", "Research-Driven", "Practical", "Less Socially Competitive"],
+    idealStudentTraits: ["Wants rigorous research and medical preparation", "Values substance over social prestige", "Interested in medicine, engineering, or biomedical research"],
+    thrivesIf: ["Wants direct access to Cleveland's medical and research institutions", "Values academic rigor over social scene", "Wants strong engineering and pre-med preparation"],
+    strugglesIf: ["Wants a vibrant, large social scene", "Prefers a warmer climate", "Needs a big-school athletics culture"],
+    transferRiskFactors: ["Students seeking a larger social scene", "Students wanting a warmer climate"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 6, notes: "Minimal emphasis." },
+    healthWellness: { strength: 84, notes: "A defining strength, driven by direct Cleveland Clinic and University Hospitals affiliations." },
+    nutraceuticals: { strength: 16, notes: "Modest presence through biomedical programs." },
+    consumerProducts: { strength: 20, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 8, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 10, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 12, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 26, notes: "Modest presence tied to biomedical entrepreneurship." },
+    privateEquity: { strength: 28, notes: "Modest placement." },
+    investmentBanking: { strength: 30, notes: "Modest placement." },
+    consulting: { strength: 42, notes: "Solid placement, particularly healthcare consulting." },
+    medicine: { strength: 92, notes: "One of Case Western's core strengths — exceptional medical and research pipeline." },
+    healthcareAdministration: { strength: 56, notes: "Strong presence given deep healthcare industry ties." },
+    defense: { strength: 8, notes: "Minimal emphasis." },
+    realEstate: { strength: 16, notes: "Minimal emphasis." },
+    luxuryBrands: { strength: 6, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 40, notes: "Solid presence, particularly in biomedical and health technology." },
+    technology: { strength: 52, notes: "Solid engineering and technology placement." },
+    publicPolicy: { strength: 24, notes: "Limited emphasis." },
+    nonprofitLeadership: { strength: 34, notes: "Modest presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "Lehigh University": {
@@ -36283,7 +37056,51 @@ name: "Lehigh University",
 
     undergraduateEnrollment: 5257
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Research university supplying engineering, business, and finance talent to the Northeast corridor."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 66, conscientiousness: 84, extraversion: 62, agreeableness: 72, neuroticism: 40 },
+    hollandCodes: ["I", "R", "E"],
+    learningStyle: ["Applied Engineering Coursework", "Business-Engineering Integration", "Project-Based Learning"],
+    socialEnvironment: ["Academically Rigorous", "Greek Life Present", "Practical", "Tight-Knit"],
+    idealStudentTraits: ["Wants strong engineering and business integration", "Values a tight-knit Northeast campus community", "Interested in a technical or finance career"],
+    thrivesIf: ["Wants a strong engineering program with business cross-registration", "Values Greek life balanced with academic rigor", "Wants direct NYC/Philadelphia proximity"],
+    strugglesIf: ["Wants a large state-school social scene", "Prefers a warm climate", "Needs a major city campus"],
+    transferRiskFactors: ["Students seeking a warmer climate", "Students wanting an urban campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 6, notes: "Minimal emphasis." },
+    healthWellness: { strength: 28, notes: "Modest presence, not a primary strength." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 30, notes: "Modest presence." },
+    outdoorIndustry: { strength: 12, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 16, notes: "Modest presence." },
+    entertainmentMedia: { strength: 14, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 28, notes: "Modest presence." },
+    privateEquity: { strength: 42, notes: "Solid placement given strong finance and engineering combination." },
+    investmentBanking: { strength: 52, notes: "Strong placement into investment banking, notably strong for an engineering-heavy school." },
+    consulting: { strength: 48, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 22, notes: "Not a primary institutional strength." },
+    healthcareAdministration: { strength: 20, notes: "Limited emphasis." },
+    defense: { strength: 14, notes: "Modest presence." },
+    realEstate: { strength: 26, notes: "Modest presence." },
+    luxuryBrands: { strength: 10, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 38, notes: "Solid presence, particularly in engineering-based ventures." },
+    technology: { strength: 64, notes: "Strong engineering placement into technology roles." },
+    publicPolicy: { strength: 18, notes: "Minimal emphasis." },
+    nonprofitLeadership: { strength: 26, notes: "Modest presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "University of Richmond": {
@@ -36387,7 +37204,51 @@ name: "University of Richmond",
 
     undergraduateEnrollment: 3245
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "Elite liberal arts college supplying business, law, and leadership talent to the Mid-Atlantic and Southeast."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 68, conscientiousness: 82, extraversion: 62, agreeableness: 76, neuroticism: 38 },
+    hollandCodes: ["S", "E", "I"],
+    learningStyle: ["Small Class Discussion", "Faculty Mentorship", "Applied Leadership Learning"],
+    socialEnvironment: ["Polished", "Tight-Knit", "Greek Life Present", "Beautiful Campus Culture"],
+    idealStudentTraits: ["Wants a small, resource-rich liberal arts college", "Values a polished, well-manicured campus culture", "Interested in business, law, or leadership studies"],
+    thrivesIf: ["Wants exceptional per-student resources at a small college", "Values a beautiful, close-knit campus community", "Wants strong business and pre-law preparation"],
+    strugglesIf: ["Wants a large university setting", "Prefers an urban campus", "Needs a big-school athletics culture"],
+    transferRiskFactors: ["Students seeking a larger university", "Students wanting an urban campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 10, notes: "Minimal emphasis." },
+    healthWellness: { strength: 34, notes: "Modest pre-health presence." },
+    nutraceuticals: { strength: 8, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 30, notes: "Modest presence through business school." },
+    outdoorIndustry: { strength: 12, notes: "Limited emphasis." },
+    sportsBusiness: { strength: 16, notes: "Modest presence." },
+    entertainmentMedia: { strength: 18, notes: "Modest presence." },
+    ventureCapital: { strength: 26, notes: "Modest presence." },
+    privateEquity: { strength: 42, notes: "Solid placement given DC/Richmond finance proximity." },
+    investmentBanking: { strength: 46, notes: "Solid placement into investment banking." },
+    consulting: { strength: 48, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 30, notes: "Modest pre-health preparation." },
+    healthcareAdministration: { strength: 26, notes: "Modest presence." },
+    defense: { strength: 14, notes: "Modest presence given DC proximity." },
+    realEstate: { strength: 32, notes: "Modest presence." },
+    luxuryBrands: { strength: 14, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 34, notes: "Solid presence." },
+    technology: { strength: 26, notes: "Modest presence." },
+    publicPolicy: { strength: 40, notes: "Solid presence, particularly pre-law and DC-adjacent government pathways." },
+    nonprofitLeadership: { strength: 38, notes: "Modest presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "Villanova University": {
@@ -36493,6 +37354,48 @@ name: "Villanova University",
 
     undergraduateEnrollment: 7146
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Catholic university supplying finance, business, and engineering talent to the Philadelphia-New York corridor."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 60, conscientiousness: 82, extraversion: 68, agreeableness: 78, neuroticism: 38 },
+    hollandCodes: ["E", "S", "C"],
+    learningStyle: ["Faith-Informed Coursework", "Applied Business Learning", "Small Class Discussion"],
+    socialEnvironment: ["Polished", "Socially Active", "Faith-Centered", "Strong School Spirit"],
+    idealStudentTraits: ["Wants a polished Catholic university near Philadelphia", "Values strong school spirit and community", "Interested in business, finance, or engineering"],
+    thrivesIf: ["Wants a Catholic values-based education with Northeast finance access", "Values a spirited, tight-knit campus culture", "Wants strong business school preparation"],
+    strugglesIf: ["Wants a secular campus environment", "Prefers a large research university", "Needs a major city campus"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students wanting a larger university"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Minimal emphasis." },
+    healthWellness: { strength: 36, notes: "Modest presence, notable nursing program." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 32, notes: "Modest presence through business school." },
+    outdoorIndustry: { strength: 10, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 22, notes: "Modest presence given strong basketball program." },
+    entertainmentMedia: { strength: 16, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 26, notes: "Modest presence." },
+    privateEquity: { strength: 44, notes: "Solid placement given Philadelphia/NYC finance proximity." },
+    investmentBanking: { strength: 56, notes: "Strong placement into investment banking, one of Villanova's core strengths." },
+    consulting: { strength: 48, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 32, notes: "Modest presence, notable nursing pipeline." },
+    healthcareAdministration: { strength: 30, notes: "Modest presence." },
+    defense: { strength: 8, notes: "Minimal emphasis." },
+    realEstate: { strength: 30, notes: "Modest presence." },
+    luxuryBrands: { strength: 12, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 34, notes: "Solid presence." },
+    technology: { strength: 34, notes: "Modest engineering-driven presence." },
+    publicPolicy: { strength: 22, notes: "Limited emphasis." },
+    nonprofitLeadership: { strength: 42, notes: "Solid presence tied to Catholic mission." }
   }
 },
 
@@ -36597,7 +37500,51 @@ name: "Northwestern University",
 
     undergraduateEnrollment: 8678
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "MidContinentIndustrialEnergyCorridor",
+
+    regionalRole: "Elite research university supplying journalism, business, and medicine talent from the Chicago corridor nationally."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 82, conscientiousness: 84, extraversion: 62, agreeableness: 74, neuroticism: 38 },
+    hollandCodes: ["A", "I", "E"],
+    learningStyle: ["Discussion-Based Seminars", "Applied Journalism Training", "Research-Intensive Learning"],
+    socialEnvironment: ["Intellectually Ambitious", "Polished", "Chicago-Adjacent", "Balanced Academics and Social Life"],
+    idealStudentTraits: ["Wants elite academics with Chicago proximity", "Values interdisciplinary breadth", "Interested in journalism, business, or medicine"],
+    thrivesIf: ["Wants a top-tier journalism or theater program alongside strong academics", "Values direct Chicago internship access", "Wants a balance of rigor and campus life"],
+    strugglesIf: ["Wants a small, intimate liberal arts college", "Prefers a warm climate", "Needs a rural or small-town setting"],
+    transferRiskFactors: ["Students seeking a smaller, more intimate campus", "Students wanting a warmer climate"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 12, notes: "Modest presence given media program strength." },
+    healthWellness: { strength: 58, notes: "Strong pre-medical preparation and direct Chicago hospital access." },
+    nutraceuticals: { strength: 14, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 42, notes: "Solid presence through Kellogg-adjacent business coursework." },
+    outdoorIndustry: { strength: 10, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 24, notes: "Modest presence given Big Ten athletics culture." },
+    entertainmentMedia: { strength: 72, notes: "One of Northwestern's defining strengths — the Medill School of Journalism is among the best in the country." },
+    ventureCapital: { strength: 40, notes: "Growing presence tied to Chicago's expanding startup ecosystem." },
+    privateEquity: { strength: 54, notes: "Strong placement given Chicago finance proximity." },
+    investmentBanking: { strength: 62, notes: "Strong Wall Street and Chicago banking placement." },
+    consulting: { strength: 68, notes: "Strong placement into elite consulting firms." },
+    medicine: { strength: 68, notes: "Strong medical school placement given direct Chicago hospital access." },
+    healthcareAdministration: { strength: 42, notes: "Solid presence." },
+    defense: { strength: 10, notes: "Minimal emphasis." },
+    realEstate: { strength: 30, notes: "Modest presence." },
+    luxuryBrands: { strength: 22, notes: "Modest presence." },
+    entrepreneurship: { strength: 52, notes: "Solid and growing presence tied to Chicago's startup ecosystem." },
+    technology: { strength: 50, notes: "Solid presence, growing given Chicago tech sector expansion." },
+    publicPolicy: { strength: 44, notes: "Solid presence." },
+    nonprofitLeadership: { strength: 44, notes: "Solid presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "Rice University": {
@@ -36701,7 +37648,51 @@ name: "Rice University",
 
     undergraduateEnrollment: 4574
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "TexasTriangle",
+
+    regionalRole: "Elite research university supplying engineering, medicine, and energy talent to Houston and the Texas corridor."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 80, conscientiousness: 84, extraversion: 56, agreeableness: 76, neuroticism: 38 },
+    hollandCodes: ["I", "R", "A"],
+    learningStyle: ["Research-Intensive Learning", "Residential College Mentorship", "Applied Engineering Coursework"],
+    socialEnvironment: ["Intellectually Intense", "Tight-Knit", "Residential College Culture", "Quirky"],
+    idealStudentTraits: ["Wants elite academics with a genuinely tight-knit community", "Values a distinctive residential college system", "Interested in engineering, medicine, or research"],
+    thrivesIf: ["Wants Ivy-caliber academics with a much smaller, closer community", "Values direct Houston energy and medical center access", "Enjoys a quirky, close-knit residential culture"],
+    strugglesIf: ["Wants a large university social scene", "Prefers a Northeast or coastal location", "Needs extensive Greek life"],
+    transferRiskFactors: ["Students seeking a larger university", "Students wanting a Northeast or coastal location"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 6, notes: "Minimal emphasis." },
+    healthWellness: { strength: 62, notes: "Strong pre-medical preparation given direct Texas Medical Center proximity." },
+    nutraceuticals: { strength: 12, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 24, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 10, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 14, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 14, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 36, notes: "Growing presence tied to Houston's expanding innovation ecosystem." },
+    privateEquity: { strength: 40, notes: "Solid placement, particularly in energy finance." },
+    investmentBanking: { strength: 46, notes: "Solid placement into investment banking, notably in energy sector coverage." },
+    consulting: { strength: 56, notes: "Strong placement into major consulting firms." },
+    medicine: { strength: 78, notes: "A genuine institutional strength, aided by the Texas Medical Center's direct proximity." },
+    healthcareAdministration: { strength: 46, notes: "Solid presence." },
+    defense: { strength: 14, notes: "Modest presence, given NASA/Johnson Space Center proximity." },
+    realEstate: { strength: 28, notes: "Modest presence." },
+    luxuryBrands: { strength: 10, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 48, notes: "Solid and growing presence tied to Houston's innovation ecosystem." },
+    technology: { strength: 62, notes: "Strong engineering placement into technology and energy-tech roles." },
+    publicPolicy: { strength: 30, notes: "Modest presence." },
+    nonprofitLeadership: { strength: 34, notes: "Modest presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "University of Southern California": {
@@ -36940,7 +37931,51 @@ name: "Massachusetts Institute of Technology",
 
     undergraduateEnrollment: 4657
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "World-leading technical research university supplying engineering, computer science, and entrepreneurship talent globally from Boston."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 90, conscientiousness: 92, extraversion: 48, agreeableness: 66, neuroticism: 40 },
+    hollandCodes: ["I", "R", "A"],
+    learningStyle: ["Research-Intensive Learning", "Hands-On Project-Based Learning", "Collaborative Problem Solving"],
+    socialEnvironment: ["Intensely Intellectual", "Collaborative", "Quirky", "Meritocratic"],
+    idealStudentTraits: ["Exceptional technical and mathematical aptitude", "Thrives on intense, collaborative problem-solving", "Comfortable with a demanding, meritocratic culture"],
+    thrivesIf: ["Wants the single strongest technical education in the world", "Values hands-on, project-based learning over lecture", "Wants direct access to Boston's innovation ecosystem"],
+    strugglesIf: ["Wants a traditional liberal arts experience", "Prefers a large social/Greek scene", "Needs a lower-pressure academic environment"],
+    transferRiskFactors: ["Students outside STEM fields", "Students wanting a less intense academic culture"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 4, notes: "Minimal institutional emphasis." },
+    healthWellness: { strength: 56, notes: "Strong biomedical engineering and health technology pipeline." },
+    nutraceuticals: { strength: 14, notes: "Modest presence through biotech research." },
+    consumerProducts: { strength: 30, notes: "Modest presence, mostly through Sloan School graduates." },
+    outdoorIndustry: { strength: 8, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 10, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 18, notes: "Modest presence through the Media Lab." },
+    ventureCapital: { strength: 80, notes: "One of MIT's defining strengths — an exceptional pipeline into venture capital and startup funding." },
+    privateEquity: { strength: 54, notes: "Solid placement, particularly technology-focused private equity." },
+    investmentBanking: { strength: 58, notes: "Strong placement, notably in technology-sector coverage." },
+    consulting: { strength: 68, notes: "Strong placement into elite consulting firms." },
+    medicine: { strength: 50, notes: "Solid pre-health and biomedical research pathways." },
+    healthcareAdministration: { strength: 30, notes: "Modest presence." },
+    defense: { strength: 44, notes: "Meaningful presence given deep government and defense research contracts." },
+    realEstate: { strength: 20, notes: "Modest presence." },
+    luxuryBrands: { strength: 8, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 92, notes: "MIT's defining institutional strength — one of the strongest startup founder pipelines of any university in the world." },
+    technology: { strength: 98, notes: "The single strongest technology-sector pipeline of any university in the country." },
+    publicPolicy: { strength: 38, notes: "Modest presence, particularly technology policy." },
+    nonprofitLeadership: { strength: 34, notes: "Modest presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "Stanford University": {
@@ -37004,7 +38039,51 @@ name: "Stanford University",
 
     undergraduateEnrollment: 8049
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "World-leading research university supplying technology, entrepreneurship, and venture capital talent directly into Silicon Valley."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 92, conscientiousness: 86, extraversion: 60, agreeableness: 72, neuroticism: 36 },
+    hollandCodes: ["I", "A", "E"],
+    learningStyle: ["Research-Intensive Learning", "Entrepreneurial Project-Based Learning", "Interdisciplinary Study"],
+    socialEnvironment: ["Intellectually Ambitious", "Entrepreneurial", "Laid-Back Californian", "Collaborative"],
+    idealStudentTraits: ["Exceptional academic and entrepreneurial drive", "Comfortable in Silicon Valley's innovation culture", "Values interdisciplinary exploration"],
+    thrivesIf: ["Wants unmatched Silicon Valley proximity and startup culture", "Values interdisciplinary academic freedom", "Wants elite academics with a laid-back California social scene"],
+    strugglesIf: ["Wants a traditional East Coast campus culture", "Prefers a highly structured curriculum", "Needs a lower cost of living"],
+    transferRiskFactors: ["Students wanting an East Coast cultural environment", "Students needing more structured academic requirements"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Minimal institutional emphasis." },
+    healthWellness: { strength: 58, notes: "Strong biomedical and pre-health preparation." },
+    nutraceuticals: { strength: 16, notes: "Modest presence through biotech research." },
+    consumerProducts: { strength: 36, notes: "Solid presence through Silicon Valley consumer tech ties." },
+    outdoorIndustry: { strength: 20, notes: "Modest presence given Northern California setting." },
+    sportsBusiness: { strength: 20, notes: "Modest presence." },
+    entertainmentMedia: { strength: 30, notes: "Growing presence tied to streaming and digital media technology." },
+    ventureCapital: { strength: 96, notes: "Stanford's defining institutional strength — the single strongest venture capital and startup pipeline of any university in the world." },
+    privateEquity: { strength: 58, notes: "Strong placement, particularly technology-focused private equity." },
+    investmentBanking: { strength: 58, notes: "Strong placement, notably technology-sector coverage." },
+    consulting: { strength: 64, notes: "Strong placement into elite consulting firms." },
+    medicine: { strength: 70, notes: "Strong medical school placement and research pipeline." },
+    healthcareAdministration: { strength: 34, notes: "Modest presence." },
+    defense: { strength: 20, notes: "Modest presence." },
+    realEstate: { strength: 26, notes: "Modest presence." },
+    luxuryBrands: { strength: 14, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 98, notes: "The single strongest entrepreneurship pipeline of any university, directly embedded in Silicon Valley." },
+    technology: { strength: 98, notes: "Among the strongest technology-sector pipelines in the world." },
+    publicPolicy: { strength: 42, notes: "Solid presence, particularly technology policy." },
+    nonprofitLeadership: { strength: 36, notes: "Modest presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "Washington University in St. Louis": {
@@ -37243,7 +38322,51 @@ name: "Yale University",
 
     undergraduateEnrollment: 6645
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Elite Ivy League university supplying law, government, finance, and arts leadership nationally from New Haven."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 90, conscientiousness: 86, extraversion: 62, agreeableness: 76, neuroticism: 36 },
+    hollandCodes: ["A", "I", "S"],
+    learningStyle: ["Discussion-Based Seminars", "Residential College Mentorship", "Independent Research"],
+    socialEnvironment: ["Intellectually Ambitious", "Residential College Culture", "Artistically Rich", "Tight-Knit"],
+    idealStudentTraits: ["Wants elite academics with strong residential community", "Values interdisciplinary breadth across arts and sciences", "Interested in law, government, or the arts"],
+    thrivesIf: ["Wants Yale's distinctive residential college system", "Values a rich arts and drama culture alongside academics", "Wants exceptional law and public policy preparation"],
+    strugglesIf: ["Wants a large state-school social scene", "Prefers a STEM-only academic focus", "Needs a warm climate"],
+    transferRiskFactors: ["Students wanting a STEM-focused university", "Students needing a warmer climate"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 10, notes: "Minimal institutional emphasis." },
+    healthWellness: { strength: 56, notes: "Strong pre-medical preparation and top-ranked medical school pipeline." },
+    nutraceuticals: { strength: 12, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 30, notes: "Modest presence." },
+    outdoorIndustry: { strength: 10, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 16, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 38, notes: "Meaningful presence given Yale's strong drama and arts programs." },
+    ventureCapital: { strength: 52, notes: "Strong and growing presence." },
+    privateEquity: { strength: 62, notes: "Strong placement into investment firms and private equity." },
+    investmentBanking: { strength: 64, notes: "Strong Wall Street placement." },
+    consulting: { strength: 66, notes: "Strong placement into elite consulting firms." },
+    medicine: { strength: 74, notes: "Strong medical school placement." },
+    healthcareAdministration: { strength: 34, notes: "Modest presence." },
+    defense: { strength: 22, notes: "Modest presence, notable government and intelligence pathways." },
+    realEstate: { strength: 28, notes: "Modest presence." },
+    luxuryBrands: { strength: 16, notes: "Modest presence." },
+    entrepreneurship: { strength: 56, notes: "Strong and growing presence." },
+    technology: { strength: 50, notes: "Solid and growing technology-sector placement." },
+    publicPolicy: { strength: 70, notes: "One of Yale's defining strengths — exceptional government, law, and public policy pipeline." },
+    nonprofitLeadership: { strength: 48, notes: "Solid presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "Carnegie Mellon University": {
@@ -37307,7 +38430,51 @@ name: "Carnegie Mellon University",
 
     undergraduateEnrollment: 7626
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "TorBuffChester",
+
+    regionalRole: "World-leading computer science and technical university supplying software, robotics, and design talent globally from Pittsburgh."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 84, conscientiousness: 90, extraversion: 48, agreeableness: 66, neuroticism: 44 },
+    hollandCodes: ["I", "R", "A"],
+    learningStyle: ["Applied Technical Learning", "Project-Based Learning", "Interdisciplinary Design"],
+    socialEnvironment: ["Intensely Academic", "Technical Focus", "Collaborative", "Meritocratic"],
+    idealStudentTraits: ["Exceptional technical and creative-technical aptitude", "Thrives on rigorous, applied problem-solving", "Comfortable with an intense academic culture"],
+    thrivesIf: ["Wants one of the strongest computer science programs in the world", "Values interdisciplinary technical and design work", "Wants direct tech industry recruiting access"],
+    strugglesIf: ["Wants a traditional liberal arts experience", "Prefers a large social/Greek scene", "Needs a lower-pressure academic environment"],
+    transferRiskFactors: ["Students outside STEM or design fields", "Students wanting a less intense academic culture"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Modest presence through design programs." },
+    healthWellness: { strength: 36, notes: "Modest presence through biomedical engineering." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 28, notes: "Modest presence." },
+    outdoorIndustry: { strength: 8, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 10, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 34, notes: "Meaningful presence through Entertainment Technology Center and design programs." },
+    ventureCapital: { strength: 58, notes: "Strong and growing presence tied to CMU's robotics and AI startup ecosystem." },
+    privateEquity: { strength: 36, notes: "Modest placement." },
+    investmentBanking: { strength: 40, notes: "Modest placement." },
+    consulting: { strength: 54, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 30, notes: "Modest presence, not a primary institutional strength." },
+    healthcareAdministration: { strength: 20, notes: "Limited emphasis." },
+    defense: { strength: 38, notes: "Meaningful presence given strong robotics and AI government research ties." },
+    realEstate: { strength: 16, notes: "Minimal emphasis." },
+    luxuryBrands: { strength: 10, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 74, notes: "One of CMU's core strengths — strong startup founder pipeline, particularly in robotics and AI." },
+    technology: { strength: 96, notes: "Among the strongest computer science and technology pipelines in the world." },
+    publicPolicy: { strength: 30, notes: "Modest presence, particularly technology policy." },
+    nonprofitLeadership: { strength: 24, notes: "Limited emphasis." }
+  },
+
+  faithTradition: "None"
 },
 
 "Princeton University": {
@@ -37371,7 +38538,51 @@ name: "Princeton University",
 
     undergraduateEnrollment: 5604
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Elite Ivy League university supplying finance, public policy, and research leadership nationally from the New York-DC corridor."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 88, conscientiousness: 90, extraversion: 54, agreeableness: 74, neuroticism: 36 },
+    hollandCodes: ["I", "A", "S"],
+    learningStyle: ["Independent Senior Thesis Research", "Discussion-Based Seminars", "Faculty Mentorship"],
+    socialEnvironment: ["Intellectually Rigorous", "Tight-Knit", "Tradition-Rich", "Eating Club Culture"],
+    idealStudentTraits: ["Wants the most rigorous undergraduate research requirement of any Ivy", "Values a tight-knit, tradition-rich community", "Interested in public policy, finance, or research"],
+    thrivesIf: ["Wants a mandatory senior thesis and deep faculty mentorship", "Values Princeton's distinctive eating club social system", "Wants elite public policy and finance preparation"],
+    strugglesIf: ["Wants a large, urban campus", "Prefers a less tradition-bound social culture", "Needs extensive Greek life"],
+    transferRiskFactors: ["Students wanting an urban campus", "Students seeking a less tradition-bound social culture"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Minimal institutional emphasis." },
+    healthWellness: { strength: 46, notes: "Solid pre-medical preparation, though Princeton has no medical school of its own." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 30, notes: "Modest presence." },
+    outdoorIndustry: { strength: 10, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 14, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 24, notes: "Modest presence." },
+    ventureCapital: { strength: 50, notes: "Strong and growing presence." },
+    privateEquity: { strength: 68, notes: "One of Princeton's strongest pipelines — exceptional placement into elite investment firms." },
+    investmentBanking: { strength: 70, notes: "Among the strongest Wall Street pipelines of any university." },
+    consulting: { strength: 68, notes: "Strong placement into elite consulting firms." },
+    medicine: { strength: 60, notes: "Strong pre-medical outcomes despite no medical school of its own." },
+    healthcareAdministration: { strength: 28, notes: "Modest presence." },
+    defense: { strength: 30, notes: "Modest presence, notable government and intelligence pathways." },
+    realEstate: { strength: 30, notes: "Modest presence." },
+    luxuryBrands: { strength: 16, notes: "Modest presence." },
+    entrepreneurship: { strength: 54, notes: "Solid and growing presence." },
+    technology: { strength: 56, notes: "Solid and growing technology-sector placement." },
+    publicPolicy: { strength: 76, notes: "One of Princeton's defining strengths — the Woodrow Wilson School produces exceptional public policy and government leaders." },
+    nonprofitLeadership: { strength: 44, notes: "Solid presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "University of California, Berkeley": {
@@ -37435,7 +38646,51 @@ name: "University of California, Berkeley",
 
     undergraduateEnrollment: 33254
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Elite public research university supplying technology, policy, and research leadership directly into the Bay Area."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 88, conscientiousness: 82, extraversion: 58, agreeableness: 68, neuroticism: 42 },
+    hollandCodes: ["I", "A", "S"],
+    learningStyle: ["Large Lecture with Discussion Sections", "Independent Research", "Politically Engaged Discourse"],
+    socialEnvironment: ["Intellectually Intense", "Politically Engaged", "Independent", "Large Research Culture"],
+    idealStudentTraits: ["Wants elite public research access", "Is intellectually independent and self-directed", "Values a politically engaged campus culture"],
+    thrivesIf: ["Wants elite academics at public-school cost", "Is intellectually independent and self-directed", "Wants direct Bay Area technology and policy access"],
+    strugglesIf: ["Wants a small, tight-knit community", "Needs high faculty accessibility as a freshman", "Prefers a quieter, less politically active campus"],
+    transferRiskFactors: ["Students wanting a small, intimate campus", "Students needing significant early faculty access"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 10, notes: "Minimal institutional emphasis." },
+    healthWellness: { strength: 56, notes: "Strong pre-medical and public health preparation." },
+    nutraceuticals: { strength: 16, notes: "Modest presence through biotech research." },
+    consumerProducts: { strength: 34, notes: "Solid presence through Haas School of Business." },
+    outdoorIndustry: { strength: 18, notes: "Modest presence given Northern California setting." },
+    sportsBusiness: { strength: 18, notes: "Modest presence." },
+    entertainmentMedia: { strength: 28, notes: "Modest and growing presence." },
+    ventureCapital: { strength: 74, notes: "One of Berkeley's defining strengths — exceptional venture capital pipeline tied directly to Silicon Valley." },
+    privateEquity: { strength: 48, notes: "Solid placement." },
+    investmentBanking: { strength: 52, notes: "Solid placement into investment banking." },
+    consulting: { strength: 58, notes: "Strong placement into major consulting firms." },
+    medicine: { strength: 62, notes: "Strong pre-medical outcomes." },
+    healthcareAdministration: { strength: 36, notes: "Modest presence." },
+    defense: { strength: 20, notes: "Modest presence." },
+    realEstate: { strength: 28, notes: "Modest presence." },
+    luxuryBrands: { strength: 14, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 82, notes: "A defining institutional strength — exceptional startup founder pipeline tied to Silicon Valley proximity." },
+    technology: { strength: 92, notes: "Among the strongest technology-sector pipelines of any public university in the world." },
+    publicPolicy: { strength: 58, notes: "Strong presence, particularly given the Goldman School of Public Policy." },
+    nonprofitLeadership: { strength: 44, notes: "Solid presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "University of Chicago": {
@@ -37499,7 +38754,51 @@ name: "University of Chicago",
 
     undergraduateEnrollment: 7559
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "MidContinentIndustrialEnergyCorridor",
+
+    regionalRole: "Elite research university supplying economics, law, and academic leadership nationally from Chicago."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 92, conscientiousness: 88, extraversion: 44, agreeableness: 64, neuroticism: 44 },
+    hollandCodes: ["I", "A", "S"],
+    learningStyle: ["Rigorous Core Curriculum", "Discussion-Based Seminars", "Independent Research"],
+    socialEnvironment: ["Intensely Intellectual", "Uncommon", "Independent", "Academically Uncompromising"],
+    idealStudentTraits: ["Craves the most academically intense environment available", "Enjoys ideas for their own sake", "Comfortable being intellectually unconventional"],
+    thrivesIf: ["Wants the most rigorous core curriculum of any American university", "Values ideas and debate above social conformity", "Wants direct access to Chicago's economics and policy establishment"],
+    strugglesIf: ["Wants a traditional, socially conventional college experience", "Prefers a lighter academic workload", "Needs a strong Greek life or big-school athletics scene"],
+    transferRiskFactors: ["Students wanting a lighter academic workload", "Students seeking a conventional big-school social scene"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 6, notes: "Minimal institutional emphasis." },
+    healthWellness: { strength: 52, notes: "Solid pre-medical preparation." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 26, notes: "Modest presence." },
+    outdoorIndustry: { strength: 8, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 10, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 22, notes: "Modest presence." },
+    ventureCapital: { strength: 42, notes: "Growing presence." },
+    privateEquity: { strength: 62, notes: "Strong placement given Chicago's deep finance and economics tradition." },
+    investmentBanking: { strength: 60, notes: "Strong Wall Street and Chicago finance placement." },
+    consulting: { strength: 66, notes: "Strong placement into elite consulting firms." },
+    medicine: { strength: 58, notes: "Solid medical school placement." },
+    healthcareAdministration: { strength: 30, notes: "Modest presence." },
+    defense: { strength: 16, notes: "Modest presence." },
+    realEstate: { strength: 28, notes: "Modest presence." },
+    luxuryBrands: { strength: 12, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 48, notes: "Solid and growing presence." },
+    technology: { strength: 46, notes: "Solid and growing technology-sector placement." },
+    publicPolicy: { strength: 72, notes: "One of Chicago's defining strengths — the birthplace of the Chicago School of Economics and a top public policy pipeline." },
+    nonprofitLeadership: { strength: 38, notes: "Modest presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "Cornell University": {
@@ -37603,7 +38902,51 @@ name: "Cornell University",
 
     undergraduateEnrollment: 15735
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "Elite Ivy League university supplying agriculture, engineering, hospitality, and finance talent nationally from upstate New York."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 82, conscientiousness: 86, extraversion: 60, agreeableness: 74, neuroticism: 40 },
+    hollandCodes: ["I", "R", "E"],
+    learningStyle: ["Applied Research Learning", "Discipline-Specific College Structure", "Hands-On Fieldwork"],
+    socialEnvironment: ["Academically Broad", "Practical", "Greek Life Present", "Big Red Athletics"],
+    idealStudentTraits: ["Wants exceptional breadth across colleges (engineering, hotel, agriculture, arts)", "Values applied, hands-on learning", "Comfortable in a large, academically diverse community"],
+    thrivesIf: ["Wants unmatched academic breadth within one Ivy League degree", "Values applied and practical learning approaches", "Wants strong Greek life and athletics culture"],
+    strugglesIf: ["Wants a small, intimate liberal arts college", "Prefers a warm climate", "Needs a highly urban campus"],
+    transferRiskFactors: ["Students wanting a smaller, more intimate campus", "Students needing a warmer climate"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 12, notes: "Modest presence through hospitality program." },
+    healthWellness: { strength: 58, notes: "Strong pre-medical and veterinary preparation." },
+    nutraceuticals: { strength: 24, notes: "Meaningful presence given strong agriculture and food science programs." },
+    consumerProducts: { strength: 38, notes: "Solid presence through Dyson School of Business." },
+    outdoorIndustry: { strength: 20, notes: "Modest presence given agriculture and natural resources programs." },
+    sportsBusiness: { strength: 20, notes: "Modest presence." },
+    entertainmentMedia: { strength: 20, notes: "Modest presence." },
+    ventureCapital: { strength: 46, notes: "Growing presence, notably tied to Cornell Tech in NYC." },
+    privateEquity: { strength: 56, notes: "Strong placement into investment firms." },
+    investmentBanking: { strength: 60, notes: "Strong Wall Street placement." },
+    consulting: { strength: 62, notes: "Strong placement into elite consulting firms." },
+    medicine: { strength: 62, notes: "Strong medical and veterinary school placement." },
+    healthcareAdministration: { strength: 34, notes: "Modest presence." },
+    defense: { strength: 14, notes: "Modest presence." },
+    realEstate: { strength: 44, notes: "Strong presence, notable real estate program strength." },
+    luxuryBrands: { strength: 22, notes: "Modest presence, notably through hospitality program." },
+    entrepreneurship: { strength: 56, notes: "Strong and growing presence, aided by Cornell Tech." },
+    technology: { strength: 58, notes: "Strong and growing technology-sector placement, notably via Cornell Tech." },
+    publicPolicy: { strength: 38, notes: "Modest presence." },
+    nonprofitLeadership: { strength: 38, notes: "Modest presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "Georgia Institute of Technology": {
@@ -37707,7 +39050,51 @@ name: "Georgia Institute of Technology",
 
     undergraduateEnrollment: 18872
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "Elite public technical university supplying engineering and technology talent directly into Atlanta and the Southeast."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 74, conscientiousness: 88, extraversion: 56, agreeableness: 68, neuroticism: 42 },
+    hollandCodes: ["I", "R", "C"],
+    learningStyle: ["Applied Engineering Coursework", "Project-Based Learning", "Co-op Integrated Learning"],
+    socialEnvironment: ["Technically Rigorous", "Practical", "Greek Life Present", "ACC Athletics"],
+    idealStudentTraits: ["Exceptional technical and analytical aptitude", "Wants elite engineering at public-school cost", "Comfortable with a rigorous, applied curriculum"],
+    thrivesIf: ["Wants one of the strongest engineering programs at public-school cost", "Values co-op and applied industry experience", "Wants direct Atlanta business and tech access"],
+    strugglesIf: ["Wants a non-STEM liberal arts focus", "Prefers a small, intimate campus", "Needs a lighter academic workload"],
+    transferRiskFactors: ["Students outside STEM fields", "Students wanting a smaller campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 4, notes: "Minimal institutional emphasis." },
+    healthWellness: { strength: 40, notes: "Modest presence through biomedical engineering." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 26, notes: "Modest presence." },
+    outdoorIndustry: { strength: 10, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 18, notes: "Modest presence given ACC athletics culture." },
+    entertainmentMedia: { strength: 16, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 44, notes: "Growing presence tied to Atlanta's expanding tech ecosystem." },
+    privateEquity: { strength: 30, notes: "Modest placement." },
+    investmentBanking: { strength: 34, notes: "Modest placement." },
+    consulting: { strength: 52, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 34, notes: "Modest pre-health preparation." },
+    healthcareAdministration: { strength: 24, notes: "Limited emphasis." },
+    defense: { strength: 44, notes: "Meaningful presence given strong government and defense engineering contracts." },
+    realEstate: { strength: 20, notes: "Modest presence." },
+    luxuryBrands: { strength: 8, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 56, notes: "Strong and growing presence tied to Atlanta's tech ecosystem." },
+    technology: { strength: 90, notes: "One of the strongest engineering and technology pipelines of any public university." },
+    publicPolicy: { strength: 24, notes: "Limited emphasis." },
+    nonprofitLeadership: { strength: 22, notes: "Limited emphasis." }
+  },
+
+  faithTradition: "None"
 },
 
 "University of California, Los Angeles": {
@@ -37811,7 +39198,51 @@ name: "University of California, Los Angeles",
 
     undergraduateEnrollment: 32423
 
-  }
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "SoCalCreativeEconomy",
+
+    regionalRole: "Elite public research university supplying entertainment, medicine, and technology talent directly into Los Angeles."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 82, conscientiousness: 82, extraversion: 62, agreeableness: 70, neuroticism: 42 },
+    hollandCodes: ["A", "I", "E"],
+    learningStyle: ["Large Lecture with Discussion Sections", "Applied Film and Media Learning", "Research-Intensive Learning"],
+    socialEnvironment: ["Diverse", "Socially Active", "Entertainment-Adjacent", "Big Ten Athletics"],
+    idealStudentTraits: ["Wants elite public research access with LA entertainment proximity", "Values a diverse, large university community", "Interested in film, medicine, or business"],
+    thrivesIf: ["Wants elite academics at public-school cost with LA industry access", "Values a large, diverse, socially active campus", "Wants direct entertainment and medical industry access"],
+    strugglesIf: ["Wants a small, tight-knit community", "Needs high faculty accessibility as a freshman", "Prefers a quiet, low-key campus culture"],
+    transferRiskFactors: ["Students wanting a small, intimate campus", "Students needing significant early faculty access"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 24, notes: "Modest presence given LA beauty and consumer industry proximity." },
+    healthWellness: { strength: 68, notes: "Strong pre-medical preparation and top-ranked medical school pipeline." },
+    nutraceuticals: { strength: 14, notes: "Modest presence." },
+    consumerProducts: { strength: 40, notes: "Solid presence through Anderson School of Management." },
+    outdoorIndustry: { strength: 14, notes: "Limited emphasis." },
+    sportsBusiness: { strength: 30, notes: "Solid presence given UCLA's elite athletics program." },
+    entertainmentMedia: { strength: 72, notes: "One of UCLA's defining strengths — direct proximity and deep ties to the Hollywood entertainment industry." },
+    ventureCapital: { strength: 52, notes: "Strong and growing presence tied to LA's expanding tech and startup ecosystem." },
+    privateEquity: { strength: 46, notes: "Solid placement." },
+    investmentBanking: { strength: 50, notes: "Solid placement into investment banking." },
+    consulting: { strength: 58, notes: "Strong placement into consulting firms." },
+    medicine: { strength: 74, notes: "Strong medical school placement, among the best public universities in the country." },
+    healthcareAdministration: { strength: 42, notes: "Solid presence." },
+    defense: { strength: 16, notes: "Modest presence." },
+    realEstate: { strength: 40, notes: "Solid presence given LA real estate market." },
+    luxuryBrands: { strength: 32, notes: "Modest presence given LA consumer culture." },
+    entrepreneurship: { strength: 58, notes: "Strong and growing presence." },
+    technology: { strength: 62, notes: "Strong and growing technology-sector placement." },
+    publicPolicy: { strength: 40, notes: "Solid presence." },
+    nonprofitLeadership: { strength: 40, notes: "Solid presence." }
+  },
+
+  faithTradition: "None"
 },
 
 "Azusa Pacific University": {
@@ -37924,6 +39355,48 @@ name: "Azusa Pacific University",
 
     undergraduateEnrollment: 4200
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "SoCalCreativeEconomy",
+
+    regionalRole: "Evangelical Christian university supplying education, nursing, and ministry talent to Southern California."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 54, conscientiousness: 74, extraversion: 62, agreeableness: 82, neuroticism: 38 },
+    hollandCodes: ["S", "A", "C"],
+    learningStyle: ["Faith-Integrated Coursework", "Applied Nursing Training", "Small Class Discussion"],
+    socialEnvironment: ["Faith-Centered", "Supportive", "Tight-Knit", "Service-Oriented"],
+    idealStudentTraits: ["Wants a faith-integrated education in Southern California", "Values a close, supportive Christian community", "Interested in nursing, education, or ministry"],
+    thrivesIf: ["Wants an evangelical Christian environment with LA proximity", "Values a small, supportive campus community", "Wants strong nursing or education preparation"],
+    strugglesIf: ["Wants a secular campus environment", "Prefers a large university setting", "Needs extensive non-faith-based program breadth"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students wanting a larger campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Minimal emphasis." },
+    healthWellness: { strength: 56, notes: "Strong nursing program, a genuine institutional strength." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 18, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 12, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 12, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 20, notes: "Modest presence given LA proximity." },
+    ventureCapital: { strength: 12, notes: "Minimal presence." },
+    privateEquity: { strength: 14, notes: "Minimal presence." },
+    investmentBanking: { strength: 16, notes: "Limited placement." },
+    consulting: { strength: 22, notes: "Modest placement." },
+    medicine: { strength: 44, notes: "Solid pre-health and nursing preparation." },
+    healthcareAdministration: { strength: 38, notes: "Solid presence tied to nursing program strength." },
+    defense: { strength: 6, notes: "Minimal emphasis." },
+    realEstate: { strength: 16, notes: "Minimal emphasis." },
+    luxuryBrands: { strength: 8, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 26, notes: "Modest presence, often mission-driven." },
+    technology: { strength: 18, notes: "Limited presence." },
+    publicPolicy: { strength: 18, notes: "Limited emphasis." },
+    nonprofitLeadership: { strength: 58, notes: "Strong presence tied to ministry and mission-driven culture." }
   }
 },
 
@@ -38037,6 +39510,48 @@ name: "Point Loma Nazarene University",
 
     undergraduateEnrollment: 2900
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "SoCalCreativeEconomy",
+
+    regionalRole: "Evangelical Christian university supplying nursing, business, and ministry talent to San Diego."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 56, conscientiousness: 74, extraversion: 64, agreeableness: 82, neuroticism: 36 },
+    hollandCodes: ["S", "A", "C"],
+    learningStyle: ["Faith-Integrated Coursework", "Applied Nursing Training", "Small Class Discussion"],
+    socialEnvironment: ["Faith-Centered", "Ocean-Adjacent", "Tight-Knit", "Supportive"],
+    idealStudentTraits: ["Wants a faith-integrated education on a stunning oceanfront campus", "Values a close, supportive Christian community", "Interested in nursing, business, or ministry"],
+    thrivesIf: ["Wants an evangelical Christian environment with a beach campus", "Values a small, supportive community", "Wants strong nursing preparation"],
+    strugglesIf: ["Wants a secular campus environment", "Prefers a large university setting", "Needs extensive non-faith-based program breadth"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students wanting a larger campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 10, notes: "Minimal emphasis." },
+    healthWellness: { strength: 58, notes: "Strong nursing program, a genuine institutional strength." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 18, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 24, notes: "Modest presence given oceanfront San Diego setting." },
+    sportsBusiness: { strength: 12, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 14, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 12, notes: "Minimal presence." },
+    privateEquity: { strength: 14, notes: "Minimal presence." },
+    investmentBanking: { strength: 16, notes: "Limited placement." },
+    consulting: { strength: 22, notes: "Modest placement." },
+    medicine: { strength: 44, notes: "Solid pre-health and nursing preparation." },
+    healthcareAdministration: { strength: 38, notes: "Solid presence tied to nursing program strength." },
+    defense: { strength: 8, notes: "Minimal emphasis." },
+    realEstate: { strength: 18, notes: "Modest presence given San Diego real estate market." },
+    luxuryBrands: { strength: 8, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 26, notes: "Modest presence, often mission-driven." },
+    technology: { strength: 18, notes: "Limited presence." },
+    publicPolicy: { strength: 16, notes: "Limited emphasis." },
+    nonprofitLeadership: { strength: 56, notes: "Strong presence tied to ministry and mission-driven culture." }
   }
 },
 
@@ -38150,6 +39665,48 @@ name: "Seattle Pacific University",
 
     undergraduateEnrollment: 2300
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Evangelical Christian university supplying nursing, business, and ministry talent to the Pacific Northwest."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 58, conscientiousness: 74, extraversion: 58, agreeableness: 82, neuroticism: 38 },
+    hollandCodes: ["S", "A", "C"],
+    learningStyle: ["Faith-Integrated Coursework", "Applied Nursing Training", "Small Class Discussion"],
+    socialEnvironment: ["Faith-Centered", "Tight-Knit", "Urban-Adjacent", "Supportive"],
+    idealStudentTraits: ["Wants a faith-integrated education with Seattle proximity", "Values a close, supportive Christian community", "Interested in nursing, business, or ministry"],
+    thrivesIf: ["Wants an evangelical Christian environment with direct Seattle access", "Values a small, supportive community", "Wants strong nursing preparation"],
+    strugglesIf: ["Wants a secular campus environment", "Prefers a large university setting", "Needs extensive non-faith-based program breadth"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students wanting a larger campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Minimal emphasis." },
+    healthWellness: { strength: 56, notes: "Strong nursing program, a genuine institutional strength." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 20, notes: "Modest presence given Seattle proximity." },
+    outdoorIndustry: { strength: 22, notes: "Modest presence given Pacific Northwest setting." },
+    sportsBusiness: { strength: 12, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 16, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 20, notes: "Modest presence given Seattle tech proximity." },
+    privateEquity: { strength: 16, notes: "Minimal presence." },
+    investmentBanking: { strength: 18, notes: "Limited placement." },
+    consulting: { strength: 24, notes: "Modest placement." },
+    medicine: { strength: 42, notes: "Solid pre-health and nursing preparation." },
+    healthcareAdministration: { strength: 36, notes: "Solid presence tied to nursing program strength." },
+    defense: { strength: 8, notes: "Minimal emphasis." },
+    realEstate: { strength: 18, notes: "Modest presence given Seattle real estate market." },
+    luxuryBrands: { strength: 8, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 28, notes: "Modest presence, some Seattle tech-adjacent." },
+    technology: { strength: 26, notes: "Modest presence given Seattle proximity." },
+    publicPolicy: { strength: 18, notes: "Limited emphasis." },
+    nonprofitLeadership: { strength: 56, notes: "Strong presence tied to ministry and mission-driven culture." }
   }
 },
 
@@ -38263,6 +39820,48 @@ name: "Westmont College",
 
     undergraduateEnrollment: 1300
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "SoCalCreativeEconomy",
+
+    regionalRole: "Evangelical Christian liberal arts college supplying education, business, and ministry talent to the Santa Barbara region."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 62, conscientiousness: 78, extraversion: 58, agreeableness: 82, neuroticism: 36 },
+    hollandCodes: ["S", "A", "I"],
+    learningStyle: ["Faith-Integrated Coursework", "Seminar Discussion", "Small Class Learning"],
+    socialEnvironment: ["Faith-Centered", "Tight-Knit", "Beautiful Campus", "Academically Rigorous"],
+    idealStudentTraits: ["Wants a rigorous liberal arts education within a Christian framework", "Values a stunning, close-knit campus community", "Wants Santa Barbara coastal proximity"],
+    thrivesIf: ["Wants an academically strong evangelical liberal arts college", "Values a beautiful, small campus community", "Wants Santa Barbara coastal access"],
+    strugglesIf: ["Wants a secular campus environment", "Prefers a large university setting", "Needs extensive major breadth"],
+    transferRiskFactors: ["Students seeking a secular environment", "Students wanting a larger campus"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 10, notes: "Minimal emphasis." },
+    healthWellness: { strength: 38, notes: "Solid pre-health preparation." },
+    nutraceuticals: { strength: 8, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 20, notes: "Modest presence." },
+    outdoorIndustry: { strength: 26, notes: "Modest presence given Santa Barbara coastal setting." },
+    sportsBusiness: { strength: 12, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 20, notes: "Modest presence given Southern California proximity." },
+    ventureCapital: { strength: 14, notes: "Minimal presence." },
+    privateEquity: { strength: 18, notes: "Minimal presence." },
+    investmentBanking: { strength: 20, notes: "Modest placement." },
+    consulting: { strength: 28, notes: "Modest placement." },
+    medicine: { strength: 40, notes: "Solid pre-health preparation." },
+    healthcareAdministration: { strength: 26, notes: "Modest presence." },
+    defense: { strength: 6, notes: "Minimal emphasis." },
+    realEstate: { strength: 22, notes: "Modest presence given Santa Barbara real estate market." },
+    luxuryBrands: { strength: 14, notes: "Modest presence." },
+    entrepreneurship: { strength: 30, notes: "Modest presence, often mission-driven." },
+    technology: { strength: 20, notes: "Limited presence." },
+    publicPolicy: { strength: 22, notes: "Modest presence." },
+    nonprofitLeadership: { strength: 56, notes: "Strong presence tied to faith and mission-driven culture." }
   }
 },
 
@@ -38404,6 +40003,48 @@ name: "Emory University",
 
     undergraduateEnrollment: 7168
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "CharLanta",
+
+    regionalRole: "Elite research university supplying medicine, public health, and business talent directly into Atlanta."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 76, conscientiousness: 84, extraversion: 62, agreeableness: 76, neuroticism: 40 },
+    hollandCodes: ["S", "I", "E"],
+    learningStyle: ["Research-Intensive Learning", "Discussion-Based Seminars", "Clinical and Public Health Exposure"],
+    socialEnvironment: ["Polished", "Academically Ambitious", "Greek Life Present", "Health-Sciences-Focused"],
+    idealStudentTraits: ["Wants elite academics with direct Atlanta healthcare access", "Values pre-medical and public health preparation", "Comfortable in a polished, ambitious social environment"],
+    thrivesIf: ["Wants direct proximity to the CDC and Atlanta's healthcare corridor", "Values strong public health and pre-med preparation", "Wants a polished Southern social culture"],
+    strugglesIf: ["Wants a large state-school social scene", "Prefers a rural or small-town setting", "Needs extensive engineering programs"],
+    transferRiskFactors: ["Students wanting a larger university", "Students needing extensive engineering offerings"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 12, notes: "Modest presence." },
+    healthWellness: { strength: 82, notes: "One of Emory's defining strengths, aided by direct CDC and Emory Healthcare proximity." },
+    nutraceuticals: { strength: 18, notes: "Modest presence." },
+    consumerProducts: { strength: 34, notes: "Solid presence through Goizueta Business School, notable Coca-Cola ties." },
+    outdoorIndustry: { strength: 10, notes: "Minimal emphasis." },
+    sportsBusiness: { strength: 16, notes: "Modest presence." },
+    entertainmentMedia: { strength: 24, notes: "Modest presence given Atlanta's growing media industry." },
+    ventureCapital: { strength: 32, notes: "Modest and growing presence." },
+    privateEquity: { strength: 46, notes: "Solid placement." },
+    investmentBanking: { strength: 50, notes: "Solid placement into investment banking." },
+    consulting: { strength: 58, notes: "Strong placement into consulting firms." },
+    medicine: { strength: 86, notes: "A defining institutional strength, driven by direct CDC and Emory Healthcare access." },
+    healthcareAdministration: { strength: 60, notes: "Strong presence, aided by top-ranked public health school." },
+    defense: { strength: 10, notes: "Minimal emphasis." },
+    realEstate: { strength: 26, notes: "Modest presence." },
+    luxuryBrands: { strength: 18, notes: "Modest presence." },
+    entrepreneurship: { strength: 40, notes: "Solid presence." },
+    technology: { strength: 34, notes: "Modest presence, not a primary institutional strength." },
+    publicPolicy: { strength: 46, notes: "Solid presence, particularly public health policy." },
+    nonprofitLeadership: { strength: 48, notes: "Solid presence, aided by Atlanta's nonprofit and philanthropic sector." }
   }
 },
 
@@ -38501,6 +40142,48 @@ name: "University of Denver",
 
     undergraduateEnrollment: 6177
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Private research university supplying business, law, and international studies talent to the Mountain West."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 66, conscientiousness: 76, extraversion: 62, agreeableness: 76, neuroticism: 40 },
+    hollandCodes: ["E", "S", "I"],
+    learningStyle: ["Applied Business Learning", "Small Class Discussion", "Experiential Learning"],
+    socialEnvironment: ["Outdoors-Oriented", "Polished", "Socially Active", "Mountain Access"],
+    idealStudentTraits: ["Wants outdoor recreation access with a private university experience", "Values international studies and business preparation", "Comfortable in a polished, moderately-sized campus"],
+    thrivesIf: ["Wants Rocky Mountain outdoor access with private university resources", "Values international business and global studies preparation", "Wants a moderately-sized, socially active campus"],
+    strugglesIf: ["Wants a large public university", "Prefers a warm climate", "Needs a lower cost of attendance"],
+    transferRiskFactors: ["Students wanting a larger public university", "Students needing a warmer climate"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 10, notes: "Minimal emphasis." },
+    healthWellness: { strength: 36, notes: "Modest pre-health presence." },
+    nutraceuticals: { strength: 10, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 28, notes: "Modest presence through Daniels College of Business." },
+    outdoorIndustry: { strength: 40, notes: "A genuine institutional strength given direct Rocky Mountain access." },
+    sportsBusiness: { strength: 22, notes: "Modest presence given strong hockey program." },
+    entertainmentMedia: { strength: 18, notes: "Limited emphasis." },
+    ventureCapital: { strength: 26, notes: "Modest presence." },
+    privateEquity: { strength: 32, notes: "Modest placement." },
+    investmentBanking: { strength: 34, notes: "Modest placement." },
+    consulting: { strength: 38, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 32, notes: "Modest pre-health preparation." },
+    healthcareAdministration: { strength: 28, notes: "Modest presence." },
+    defense: { strength: 10, notes: "Minimal emphasis." },
+    realEstate: { strength: 30, notes: "Modest presence given Denver real estate market." },
+    luxuryBrands: { strength: 12, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 38, notes: "Solid presence tied to Denver's growing business ecosystem." },
+    technology: { strength: 28, notes: "Modest presence given Denver tech sector growth." },
+    publicPolicy: { strength: 40, notes: "Solid presence, particularly through the Korbel School of International Studies." },
+    nonprofitLeadership: { strength: 40, notes: "Solid presence." }
   }
 },
 
@@ -38598,6 +40281,48 @@ name: "University of Colorado Colorado Springs",
 
     undergraduateEnrollment: 12449
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Regional public university supplying business, engineering, and defense-adjacent talent to Colorado Springs."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 58, conscientiousness: 68, extraversion: 58, agreeableness: 74, neuroticism: 42 },
+    hollandCodes: ["R", "S", "C"],
+    learningStyle: ["Applied Business Coursework", "Practical Engineering Learning", "Hands-On Skill-Building"],
+    socialEnvironment: ["Practical", "Outdoors-Oriented", "Commuter-Influenced", "Military-Adjacent"],
+    idealStudentTraits: ["Wants an affordable Colorado public option", "Interested in business, engineering, or cybersecurity", "Values outdoor recreation access"],
+    thrivesIf: ["Wants an affordable public university with mountain access", "Values proximity to Colorado Springs' defense and tech sector", "Wants practical, career-focused coursework"],
+    strugglesIf: ["Wants a traditional residential campus experience", "Needs strong national brand recognition", "Wants a large research university environment"],
+    transferRiskFactors: ["Students seeking a traditional residential experience", "Students wanting broader national name recognition"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 6, notes: "Minimal emphasis." },
+    healthWellness: { strength: 42, notes: "Solid nursing and health sciences preparation." },
+    nutraceuticals: { strength: 8, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 20, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 32, notes: "Modest presence given Colorado Springs mountain setting." },
+    sportsBusiness: { strength: 14, notes: "Limited emphasis." },
+    entertainmentMedia: { strength: 12, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 16, notes: "Modest presence given growing regional tech sector." },
+    privateEquity: { strength: 16, notes: "Minimal presence." },
+    investmentBanking: { strength: 18, notes: "Limited placement." },
+    consulting: { strength: 24, notes: "Modest placement." },
+    medicine: { strength: 36, notes: "Solid pre-health preparation." },
+    healthcareAdministration: { strength: 32, notes: "Modest presence." },
+    defense: { strength: 52, notes: "A genuine institutional strength given direct proximity to multiple military installations." },
+    realEstate: { strength: 20, notes: "Modest presence." },
+    luxuryBrands: { strength: 6, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 30, notes: "Modest regional presence." },
+    technology: { strength: 38, notes: "Solid presence given regional defense-tech and cybersecurity sector." },
+    publicPolicy: { strength: 24, notes: "Modest presence." },
+    nonprofitLeadership: { strength: 30, notes: "Modest presence." }
   }
 },
 
@@ -38696,6 +40421,48 @@ name: "University of Utah",
 
     undergraduateEnrollment: 27047
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Public research university supplying medicine, technology, and outdoor industry talent to the Wasatch Front."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 66, conscientiousness: 74, extraversion: 60, agreeableness: 74, neuroticism: 40 },
+    hollandCodes: ["I", "R", "S"],
+    learningStyle: ["Research-Intensive Learning", "Applied Medical Training", "Outdoor Field Study"],
+    socialEnvironment: ["Outdoors-Oriented", "Practical", "Growing Tech Culture", "Pac-12 Athletics"],
+    idealStudentTraits: ["Wants strong medical and research access with mountain proximity", "Values outdoor recreation integrated into campus life", "Interested in medicine, technology, or entrepreneurship"],
+    thrivesIf: ["Wants direct Wasatch Mountains access with a public research university", "Values a growing tech and entrepreneurship ecosystem", "Wants strong medical school preparation"],
+    strugglesIf: ["Wants a private university experience", "Prefers a warm, low-elevation climate", "Needs a large, diverse urban environment"],
+    transferRiskFactors: ["Students wanting a private university", "Students needing a warmer climate"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 10, notes: "Minimal emphasis." },
+    healthWellness: { strength: 66, notes: "Strong presence given the University of Utah Health system's regional dominance." },
+    nutraceuticals: { strength: 16, notes: "Modest presence." },
+    consumerProducts: { strength: 28, notes: "Modest presence given Utah's growing outdoor and consumer brand presence." },
+    outdoorIndustry: { strength: 48, notes: "A genuine institutional strength given direct Wasatch Mountains access and Utah's outdoor industry cluster." },
+    sportsBusiness: { strength: 24, notes: "Modest presence given Pac-12 athletics culture." },
+    entertainmentMedia: { strength: 20, notes: "Modest presence, notable film program via Sundance proximity." },
+    ventureCapital: { strength: 38, notes: "Growing presence tied to Utah's expanding \"Silicon Slopes\" tech corridor." },
+    privateEquity: { strength: 32, notes: "Modest placement." },
+    investmentBanking: { strength: 34, notes: "Modest placement." },
+    consulting: { strength: 40, notes: "Solid placement into consulting firms." },
+    medicine: { strength: 70, notes: "Strong medical school placement, among the strongest public university medical pipelines in the region." },
+    healthcareAdministration: { strength: 48, notes: "Solid presence." },
+    defense: { strength: 14, notes: "Modest presence." },
+    realEstate: { strength: 28, notes: "Modest presence." },
+    luxuryBrands: { strength: 12, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 50, notes: "Strong and growing presence tied to Utah's Silicon Slopes tech ecosystem." },
+    technology: { strength: 56, notes: "Strong and growing technology-sector placement." },
+    publicPolicy: { strength: 30, notes: "Modest presence." },
+    nonprofitLeadership: { strength: 34, notes: "Modest presence." }
   }
 },
 
@@ -38793,6 +40560,48 @@ name: "Western Colorado University",
 
     undergraduateEnrollment: 3300
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Small public university supplying outdoor industry, education, and business talent to the Colorado mountain region."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 62, conscientiousness: 62, extraversion: 58, agreeableness: 76, neuroticism: 42 },
+    hollandCodes: ["R", "S", "A"],
+    learningStyle: ["Outdoor Field-Based Learning", "Hands-On Skill-Building", "Small Class Discussion"],
+    socialEnvironment: ["Outdoors-Oriented", "Small Community", "Rural Mountain Setting", "Practical"],
+    idealStudentTraits: ["Wants an outdoor-industry-focused education", "Enjoys a small, remote mountain-town setting", "Interested in recreation management or business"],
+    thrivesIf: ["Wants direct access to skiing and mountain recreation", "Values a small, tight-knit rural campus", "Wants an affordable Colorado public option"],
+    strugglesIf: ["Wants a large university or urban setting", "Needs strong national brand recognition", "Wants extensive major breadth"],
+    transferRiskFactors: ["Students wanting a larger university", "Students needing an urban location"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 4, notes: "Minimal emphasis." },
+    healthWellness: { strength: 28, notes: "Limited emphasis." },
+    nutraceuticals: { strength: 6, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 14, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 62, notes: "A defining institutional strength given direct mountain and ski resort access." },
+    sportsBusiness: { strength: 26, notes: "Modest presence tied to outdoor recreation industry." },
+    entertainmentMedia: { strength: 10, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 8, notes: "Minimal presence." },
+    privateEquity: { strength: 8, notes: "Minimal presence." },
+    investmentBanking: { strength: 10, notes: "Minimal placement." },
+    consulting: { strength: 16, notes: "Limited placement." },
+    medicine: { strength: 22, notes: "Limited emphasis." },
+    healthcareAdministration: { strength: 18, notes: "Limited emphasis." },
+    defense: { strength: 4, notes: "Minimal emphasis." },
+    realEstate: { strength: 18, notes: "Modest presence given mountain resort real estate market." },
+    luxuryBrands: { strength: 8, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 32, notes: "Modest presence, often outdoor-recreation-focused." },
+    technology: { strength: 14, notes: "Limited presence." },
+    publicPolicy: { strength: 18, notes: "Modest presence, particularly environmental and land-use policy." },
+    nonprofitLeadership: { strength: 30, notes: "Modest presence, often environmental and outdoor-recreation nonprofits." }
   }
 },
 
@@ -38889,6 +40698,48 @@ name: "University of Montana Western",
 
     undergraduateEnrollment: 1300
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Small public university supplying outdoor industry, education, and business talent to rural Montana."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 58, conscientiousness: 62, extraversion: 56, agreeableness: 78, neuroticism: 42 },
+    hollandCodes: ["R", "S", "A"],
+    learningStyle: ["Block Schedule Immersive Learning", "Outdoor Field-Based Learning", "Small Class Discussion"],
+    socialEnvironment: ["Outdoors-Oriented", "Small Community", "Rural Mountain Setting", "Practical"],
+    idealStudentTraits: ["Wants a small, remote mountain-town education", "Enjoys the block schedule's one-class-at-a-time format", "Interested in outdoor recreation or education"],
+    thrivesIf: ["Wants direct access to Montana wilderness and outdoor recreation", "Values the immersive block schedule model", "Wants a small, tight-knit rural campus"],
+    strugglesIf: ["Wants a large university or urban setting", "Needs strong national brand recognition", "Prefers a traditional semester schedule"],
+    transferRiskFactors: ["Students wanting a larger university", "Students needing an urban location"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 4, notes: "Minimal emphasis." },
+    healthWellness: { strength: 26, notes: "Limited emphasis." },
+    nutraceuticals: { strength: 6, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 12, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 58, notes: "A defining institutional strength given direct Montana wilderness access." },
+    sportsBusiness: { strength: 20, notes: "Modest presence tied to outdoor recreation industry." },
+    entertainmentMedia: { strength: 8, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 6, notes: "Minimal presence." },
+    privateEquity: { strength: 6, notes: "Minimal presence." },
+    investmentBanking: { strength: 8, notes: "Minimal placement." },
+    consulting: { strength: 14, notes: "Limited placement." },
+    medicine: { strength: 20, notes: "Limited emphasis." },
+    healthcareAdministration: { strength: 16, notes: "Limited emphasis." },
+    defense: { strength: 4, notes: "Minimal emphasis." },
+    realEstate: { strength: 14, notes: "Limited emphasis." },
+    luxuryBrands: { strength: 4, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 28, notes: "Modest presence, often outdoor-recreation-focused." },
+    technology: { strength: 12, notes: "Limited presence." },
+    publicPolicy: { strength: 20, notes: "Modest presence, particularly environmental and land-use policy." },
+    nonprofitLeadership: { strength: 32, notes: "Modest presence, often environmental and education nonprofits." }
   }
 },
 
@@ -38986,6 +40837,48 @@ name: "Southern Oregon University",
 
     undergraduateEnrollment: 4700
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Small public university supplying theater, education, and outdoor industry talent to southern Oregon."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 66, conscientiousness: 60, extraversion: 58, agreeableness: 76, neuroticism: 42 },
+    hollandCodes: ["A", "S", "R"],
+    learningStyle: ["Small Class Discussion", "Applied Theater Training", "Outdoor Field-Based Learning"],
+    socialEnvironment: ["Artistic", "Outdoors-Oriented", "Small Community", "Laid-Back"],
+    idealStudentTraits: ["Wants a small-town artistic and outdoor lifestyle", "Interested in theater, education, or environmental studies", "Enjoys a laid-back, creative campus culture"],
+    thrivesIf: ["Wants direct access to the Oregon Shakespeare Festival and outdoor recreation", "Values a small, artistic community", "Wants an affordable Pacific Northwest option"],
+    strugglesIf: ["Wants a large university or urban setting", "Needs strong national brand recognition", "Wants extensive STEM program breadth"],
+    transferRiskFactors: ["Students wanting a larger university", "Students needing an urban location"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 8, notes: "Minimal emphasis." },
+    healthWellness: { strength: 28, notes: "Limited emphasis." },
+    nutraceuticals: { strength: 8, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 14, notes: "Limited emphasis." },
+    outdoorIndustry: { strength: 40, notes: "Solid presence given southern Oregon's outdoor recreation economy." },
+    sportsBusiness: { strength: 12, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 42, notes: "A genuine institutional strength given direct Oregon Shakespeare Festival ties." },
+    ventureCapital: { strength: 8, notes: "Minimal presence." },
+    privateEquity: { strength: 8, notes: "Minimal presence." },
+    investmentBanking: { strength: 10, notes: "Minimal placement." },
+    consulting: { strength: 16, notes: "Limited placement." },
+    medicine: { strength: 22, notes: "Limited emphasis." },
+    healthcareAdministration: { strength: 18, notes: "Limited emphasis." },
+    defense: { strength: 4, notes: "Minimal emphasis." },
+    realEstate: { strength: 14, notes: "Limited emphasis." },
+    luxuryBrands: { strength: 6, notes: "Minimal emphasis." },
+    entrepreneurship: { strength: 26, notes: "Modest presence, often arts and outdoor-recreation-focused." },
+    technology: { strength: 14, notes: "Limited presence." },
+    publicPolicy: { strength: 22, notes: "Modest presence, particularly environmental policy." },
+    nonprofitLeadership: { strength: 36, notes: "Solid presence, often arts and environmental nonprofits." }
   }
 },
 
@@ -39083,6 +40976,48 @@ name: "Prescott College",
 
     undergraduateEnrollment: 500
 
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "NorCalInnovationCorridor",
+
+    regionalRole: "Small experiential college supplying environmental studies and outdoor education talent to the Southwest."
+
+  },
+
+  studentFit: {
+    bigFiveProfile: { openness: 88, conscientiousness: 62, extraversion: 54, agreeableness: 78, neuroticism: 40 },
+    hollandCodes: ["A", "I", "R"],
+    learningStyle: ["Self-Directed Learning", "Field-Based Outdoor Education", "Independent Study"],
+    socialEnvironment: ["Alternative", "Outdoors-Oriented", "Small Community", "Environmentally Focused"],
+    idealStudentTraits: ["Wants a highly self-directed, non-traditional education", "Deeply committed to environmental and outdoor education", "Comfortable with an alternative academic structure"],
+    thrivesIf: ["Wants an alternative, self-designed curriculum", "Values direct wilderness immersion as core coursework", "Wants a tiny, mission-driven community"],
+    strugglesIf: ["Wants a traditional structured curriculum", "Needs strong national brand recognition", "Wants a large campus with extensive amenities"],
+    transferRiskFactors: ["Students wanting a traditional academic structure", "Students needing a larger campus community"]
+  },
+
+  industryPathways: {
+    aestheticsAndBeauty: { strength: 2, notes: "Not applicable." },
+    healthWellness: { strength: 20, notes: "Limited emphasis." },
+    nutraceuticals: { strength: 6, notes: "Minimal emphasis." },
+    consumerProducts: { strength: 6, notes: "Minimal emphasis." },
+    outdoorIndustry: { strength: 72, notes: "Prescott's defining institutional strength — outdoor and environmental education is the core mission." },
+    sportsBusiness: { strength: 10, notes: "Minimal emphasis." },
+    entertainmentMedia: { strength: 10, notes: "Minimal emphasis." },
+    ventureCapital: { strength: 4, notes: "Minimal presence." },
+    privateEquity: { strength: 4, notes: "Minimal presence." },
+    investmentBanking: { strength: 4, notes: "Minimal placement." },
+    consulting: { strength: 10, notes: "Minimal placement." },
+    medicine: { strength: 14, notes: "Limited emphasis." },
+    healthcareAdministration: { strength: 10, notes: "Minimal emphasis." },
+    defense: { strength: 2, notes: "Not applicable." },
+    realEstate: { strength: 8, notes: "Minimal emphasis." },
+    luxuryBrands: { strength: 2, notes: "Not applicable." },
+    entrepreneurship: { strength: 30, notes: "Modest presence, typically environmental or education-focused ventures." },
+    technology: { strength: 8, notes: "Minimal emphasis." },
+    publicPolicy: { strength: 30, notes: "Modest presence, particularly environmental policy." },
+    nonprofitLeadership: { strength: 58, notes: "A genuine institutional strength given the environmental and education mission focus." }
   }
 },
 
