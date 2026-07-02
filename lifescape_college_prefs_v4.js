@@ -1151,10 +1151,11 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
 
   // Step 2 — Region pool
   let regionPool = null;
-  if (regions && regions.length > 0 && !regions.includes('no_preference')) {
+  if (regions && regions.length > 0 && !regions.includes('no_preference') && !regions.includes('anywhere')) {
     regionPool = [];
     regions.forEach(r => {
-      (REGION_POOLS[r] || []).forEach(school => {
+      const key = DB_DISPLAY_TO_POOL_KEY[r] || r;
+      (REGION_POOLS[key] || []).forEach(school => {
         if (!regionPool.includes(school)) regionPool.push(school);
       });
     });
@@ -1282,39 +1283,58 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
   return scored.sort((a, b) => b.score - a.score).map(s => s.school);
 }
 
-// ── NEW matchUniversities() — structured pool output (IMPL-003 §5) ───────
+// ── NEW matchUniversities() — pool-aware, callD-compatible flat output ───
+// Production sends DB DISPLAY-NAME region strings ("Southeast", "West Coast")
+// and uses 'anywhere' as the no-constraint sentinel — NOT the snake_case
+// IMPL-003 keys used internally by REGION_POOLS/REGION_ADJACENCY.
+// This function bridges that gap and ALWAYS returns a flat ranked-name
+// array so the existing callD block (lifescape.html) needs zero changes.
+
+const DB_DISPLAY_TO_POOL_KEY = {
+  'Southeast': 'southeast', 'South': 'southeast', 'South Central': 'southeast',
+  'Northeast': 'northeast', 'Mid-Atlantic': 'northeast', 'New England': 'northeast',
+  'Midwest': 'midwest', 'Big Ten': 'midwest',
+  'West Coast': 'west_coast', 'Southern California': 'west_coast', 'Pacific Northwest': 'west_coast',
+  'Southwest': 'southwest', 'Texas + Southwest': 'southwest', 'SEC New Members': 'southeast',
+  'Mountain West': 'southwest', 'West': 'southwest',
+};
+
 function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {
   const { campus_scale, regions } = collegePrefs;
 
-  // OQ-003: "anywhere" — no region constraint — bypasses pool architecture,
-  // returns the original flat ranked-name array exactly as before.
-  const hasRegionConstraint = regions && regions.length > 0 && !regions.includes('no_preference');
+  // Always compute the base fit-ranked list first — this is unchanged behavior.
   const rankedNames = scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData);
 
-  if (!hasRegionConstraint) {
-    return rankedNames; // legacy flat-list shape — unchanged behavior
+  const isAnywhere = !regions || regions.length === 0 || regions.includes('anywhere');
+  if (isAnywhere) {
+    return rankedNames; // identical to today's behavior — zero change
   }
 
-  // ── family_9: top 9 from the existing ranked list ───────────────────────
+  // Bridge production's DB display-name strings to internal pool keys
+  const poolKeys = [...new Set(
+    regions.map(r => DB_DISPLAY_TO_POOL_KEY[r]).filter(Boolean)
+  )];
+
+  if (poolKeys.length === 0) {
+    // Unrecognized region strings — fail safe to the unchanged flat list
+    return rankedNames;
+  }
+
+  // ── Build the 9+12+3 pool internally (IMPL-003 §5) ──────────────────────
   const family_9 = rankedNames.slice(0, 9);
   const excludeSet = new Set(family_9);
 
-  // ── counselor_12: 6 size-up + 6 size-down alternates, same regions ─────
   const stepUpKey   = campus_scale ? SIZE_STEP_UP[campus_scale]   : null;
   const stepDownKey = campus_scale ? SIZE_STEP_DOWN[campus_scale] : null;
-  const regionSchoolPool = getRegionSchoolPool(regions);
+  const regionSchoolPool = getRegionSchoolPool(poolKeys);
 
   function buildSizeAlternates(sizeKey, needed) {
     if (!sizeKey) return [];
-    let candidates = schoolsInSizeBand(regionSchoolPool, sizeKey)
-      .filter(s => !excludeSet.has(s));
-
-    // OQ-002: pad from geographic-adjacent region if short
+    let candidates = schoolsInSizeBand(regionSchoolPool, sizeKey).filter(s => !excludeSet.has(s));
     if (candidates.length < needed) {
-      const adjacentPool = getAdjacentRegionPool(regions);
-      const padCandidates = schoolsInSizeBand(adjacentPool, sizeKey)
-        .filter(s => !excludeSet.has(s) && !candidates.includes(s));
-      candidates = candidates.concat(padCandidates);
+      const adjacentPool = getAdjacentRegionPool(poolKeys);
+      const pad = schoolsInSizeBand(adjacentPool, sizeKey).filter(s => !excludeSet.has(s) && !candidates.includes(s));
+      candidates = candidates.concat(pad);
     }
     return candidates.slice(0, needed);
   }
@@ -1324,38 +1344,24 @@ function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpa
   sizeUpNames.forEach(s => excludeSet.add(s));
   sizeDownNames.forEach(s => excludeSet.add(s));
 
-  const counselor_12 = [
-    ...sizeUpNames.map(name => ({ name, type: 'size_alternate', size_direction: stepUpKey, reason: 'counselor_size_up' })),
-    ...sizeDownNames.map(name => ({ name, type: 'size_alternate', size_direction: stepDownKey, reason: 'counselor_size_down' })),
-  ];
+  const adjacentCandidates = getAdjacentRegionPool(poolKeys).filter(s => !excludeSet.has(s));
+  const counselor_3 = adjacentCandidates.slice(0, 3);
 
-  // ── counselor_3: geographic-adjacent region picks ───────────────────────
-  const adjacentCandidates = getAdjacentRegionPool(regions).filter(s => !excludeSet.has(s));
-  const counselor_3 = adjacentCandidates.slice(0, 3).map(name => ({
-    name, type: 'geographic_adjacent', reason: 'next_closest_region',
-  }));
+  // ── Return FLAT array: family_9 first (best fit), then counselor pool ──
+  // This preserves exact compatibility with callD's .slice()/.push() logic —
+  // matchedSchools = _rawMatches.slice(0, N) still gets the best family
+  // schools first, and the full pool remains available in _rawMatches for
+  // the regional-equity fill-in and Jewish-pool boost logic that already
+  // exists in lifescape.html.
+  const remainder = rankedNames.filter(s => !excludeSet.has(s) && !family_9.includes(s));
 
-  const counselor_24 = [
+  return [
     ...family_9,
-    ...counselor_12.map(s => s.name),
-    ...counselor_3.map(s => s.name),
+    ...sizeUpNames,
+    ...sizeDownNames,
+    ...counselor_3,
+    ...remainder,
   ];
-
-  return {
-    family_3: family_9.slice(0, 3),
-    family_6: family_9.slice(0, 6),
-    family_9,
-    counselor_12,
-    counselor_3,
-    counselor_24,
-    meta: {
-      total_family: family_9.length,
-      total_counselor: counselor_24.length,
-      region_count: regions.length,
-      size_selected: campus_scale,
-      pool_mode: 'structured',
-    },
-  };
 }
 
 // ─────────────────────────────────────────────────────────────
