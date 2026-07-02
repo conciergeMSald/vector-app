@@ -27060,8 +27060,1016 @@ institutionNarrative: {
     overallMoatScore: 80
   }
 
+},
+
+"Vanderbilt University": {
+
+"Vanderbilt University": {
+
+  institutionNarrative: {
+
+    name: "Vanderbilt University",
+
+    location: "Nashville, Tennessee",
+
+    region: "Southeast / Nashville Corridor",
+
+    archetype: "The Nashville Advantage University  —  Medicine, Music, and the Most Dynamic Mid-Size City in America",
+
+    oneSentenceSummary: "Vanderbilt is the elite private research university embedded in Nashville  —  the fastest-growing major city in America and the convergence point of healthcare, country music, technology, and the new Southern economy  —  combining a top-15 medical school, a top-20 law school, and a Peabody College of Education that is the most respected in the country, all within walking distance of Broadway and the Cumberland River.",
+
+    pipeline: "9% acceptance rate for the Class of 2028. #18 nationally (US News 2025). 7,000 undergraduates. Vanderbilt University Medical Center is a top-10 academic medical center and one of the largest employers in Tennessee. The Owen Graduate School of Management is top-25 MBA. Vanderbilt Law is top-18. The Peabody College of Education and Human Development is #1 nationally in education  —  it is the most consistently top-ranked education school in America. Goldman Sachs, McKinsey, Bain, Deloitte, and every major financial and consulting firm recruit Vanderbilt at volume. HCA Healthcare (Nashville), Bridgestone Americas, Dollar General, and the full constellation of major Nashville-headquartered corporations maintain active Vandy recruiting pipelines. 145,000+ living alumni.",
+
+    hiddenPathway: "Nashville is Vanderbilt's most important and most dynamic competitive advantage. The city has grown faster than any major American metro in the past decade  —  healthcare, technology, music industry, and hospitality investment have transformed Nashville into a genuine economic powerhouse with a quality of life that rivals cities twice its size. Vanderbilt students are embedded in this economy from day one: the healthcare corridor centered on VUMC and the surrounding hospital system, the music industry on Music Row (2 miles from campus), the Broadway entertainment district, and the growing technology sector all provide internship and networking access that Vanderbilt's peer private universities in smaller or slower-growing cities cannot offer. The Wond'ry Innovation Center  —  Vanderbilt's entrepreneurship hub  —  is one of the most active university startup ecosystems in the South.",
+
+    institutionalSecret: "The Vanderbilt residential college system  —  ten residential colleges, each with a Faculty Head of College, academic programming, and a distinct character  —  delivers a genuine small-college experience inside a research university. Vanderbilt's residential college system is modeled on Yale's and produces the same result: strong cohort bonds, faculty accessibility, and a sense of belonging inside a university of 7,000 undergraduates. The Blair School of Music is one of the most distinctive features of the Vanderbilt undergraduate environment  —  a conservatory-level music school with Blair students who perform at professional levels while pursuing liberal arts or professional degrees. Nashville's live music scene extends the Blair culture into the city.",
+
+    theRoom: "Nashville, Tennessee  —  a city of 700,000 on the Cumberland River, the fastest-growing major city in America by population and economic output. The Vanderbilt campus occupies 333 acres in the Midtown neighborhood, adjacent to Music Row and 2 miles from downtown Broadway. The campus is one of the most beautifully landscaped in America  —  a designated arboretum, the Memorial Gym (where the first basketball game with ten players in regulation was played), and the Alumni Lawn create a physical environment of genuine quality. The Nashville food scene, the Gulch, the 12 South neighborhood, and the Germantown arts district create an off-campus culture that rivals any university city in America.",
+
+    lifestyle: "Southern-inflected, socially active, and more Greek-organized than most peer private universities. Approximately 45% of Vanderbilt students participate in Greek life  —  higher than any Ivy League peer  —  and the social culture reflects this: the fraternity and sorority system is the primary social architecture for the first two years. Nashville extends the campus social world into one of the most vibrant city entertainment ecosystems in America. Commodore athletics  —  particularly basketball and football in the SEC  —  provide campus culture anchors in a city that also has the Predators, Titans, and a growing professional sports culture.",
+
+    bestFitPersonality: "Pre-med or education or business career oriented, Nashville lifestyle and Southern culture appreciative, SEC athletic culture comfortable, Greek life at a private university comfortable, high-achieving and professionally ambitious, high Conscientiousness and Extraversion",
+
+    faithTradition: "Methodist-affiliated historically  —  now entirely secular; founded by Cornelius Vanderbilt in 1873 as a non-sectarian institution despite Methodist founding support",
+
+    geographicInfluenceRadius: "Nashville and Southeast dominant; national reach in medicine, education, law, and consulting; Nashville's economic growth creates increasingly powerful regional career ecosystem",
+
+    economicOutcome: "Elite in medicine (VUMC top-10 pipeline), education (Peabody #1 nationally), law, finance, and consulting; Nashville's Fortune 500 and healthcare corridor creates regional career density; Vanderbilt alumni network active nationally with strong Southeast concentration",
+
+    gradCities: ["Nashville", "New York", "Washington DC", "Atlanta", "Chicago", "Houston", "Los Angeles"],
+
+    comparableInstitutions: ["Duke University", "Emory University", "Washington University in St. Louis", "Rice University"],
+
+    ccTransferPathway: {
+      hasCCPathway: false,
+      ccFeederNames: [],
+      transferAcceptanceRate: "~9%",
+      freshmanAcceptanceRate: "~9%",
+      estimatedSavingsRange: "N/A  —  Vanderbilt is private; meets 100% of demonstrated need",
+      transferNotes: "Vanderbilt accepts a very small number of transfers. The university meets 100% of demonstrated financial need for all admitted students including transfers. Direct freshman admission with financial aid is the strongest pathway."
+    }
+  },
+
+
+  institutionScale: {
+    enrollmentCategory: "Large",
+    undergraduateEnrollment: 22000,
+    graduateEnrollment: 6000,
+    totalEnrollment: 28000,
+    campusType: "Residential Research University",
+    residentialIntensity: 38,
+    communityFeel: 72,
+    studentFacultyRatio: "19:1",
+    classSizeExperience: "Mid-size to large introductory lectures; smaller upper-division seminars; Honors College provides intimate small-class experience within the large university",
+    scaleAdvantages: [
+      "Flagstaff  —  one of the most livable mid-size cities in the Southwest at 7,000 feet",
+      "Grand Canyon 80 miles north  —  unmatched field access for geology, ecology, and tourism management",
+      "Hotel and Restaurant Management program with direct pipeline into Southwest hospitality industry",
+      "Ponderosa pine forest campus  —  the largest contiguous ponderosa pine forest in the world surrounds Flagstaff"
+    ],
+    scaleDisadvantages: [
+      "19:1 faculty ratio  —  less intimate than smaller regional competitors",
+      "Flagstaff job market is limited  —  graduates typically relocate to Phoenix or other metro markets",
+      "Large enrollment means introductory courses can feel impersonal without Honors College engagement",
+      "National brand recognition is moderate  —  NAU competes in a crowded Arizona higher education market with ASU and UA"
+    ]
+  },
+  trajectoryProfile: {
+    dominantTrajectory: "LEAVE_STAY_GONE",
+    leaverScore: 84,
+    returnerScore: 74,
+    stewardScore: 54,
+    navigatorScore: 80,
+    geographicLockIn: "medium",
+    alumniDispersalPattern: "national"
+  },
+
+
+},
+
+  institutionIdentity: {
+    archetype: "Urban Prestige Professional",
+    institutionalPersonality: "Ambitious, polished, collaborative — more emotionally balanced than peer institutions. Students arrive motivated to build careers while maintaining close relationships and social visibility.",
+    cultureKeywords: ["pre-professional", "collaborative", "Nashville-embedded", "Greek-prominent", "health-sciences-driven", "merit-conscious"],
+    missionOrientation: "Research university with strong professional school identity — medicine, law, education, and business define the alumni profile",
+    competitiveness: "high",
+    politicalCulture: "center — more politically mixed than comparable elite institutions",
+    prestigeOrientation: "high",
+    socialClimate: "active Greek system, strong school spirit, Nashville nightlife and culture deeply integrated",
+    oneSentenceSummary: "Vanderbilt places students inside the fastest-growing major city in America with an elite academic credential and a social scene that actually makes four years enjoyable."
+  },
+
+  megaRegionIntegration: {
+    primaryMegaRegion: "Southeast",
+    secondaryMegaRegion: "National",
+    megaRegionStrength: "Nashville is the anchor — healthcare corridor, music industry, financial services, and a startup scene growing faster than any comparable Southern city",
+    alumniConcentration: ["Nashville", "New York", "Atlanta", "Washington DC", "Chicago", "Houston"]
+  },
+
+  megaRegionExposure: {
+    exposureStrength: "very high",
+    industryCorridors: ["healthcare and hospital systems", "music and entertainment", "consulting", "finance", "education policy"],
+    geographicMobility: 98
+  },
+
+  comparativePositioning: {
+    versusEmory: "Vanderbilt has stronger pre-med outcomes and a more vibrant social scene; Emory has stronger public health and a deeper Atlanta city integration",
+    versusDuke: "Duke is stronger in research and has the Research Triangle ecosystem; Vanderbilt wins on campus culture, Nashville access, and athletic energy",
+    versusTulane: "Vanderbilt is more selective and more career-credential-focused; Tulane offers New Orleans culture and a looser, more creative social fabric",
+    summaryEdge: "Elite private university with the social energy of a flagship and the career outcomes of a top-10 institution — uniquely positioned because Nashville itself has become a destination"
+  },
+
+  // ENRICHMENT DATA
+
+  lifestyleIdentity: {
+    dimensions: {
+      overallLifestyleStrength: 94, outdoorAdventure: 60, coastalLiving: 30, urbanEnergy: 95,
+      wellnessHealth: 80, creativityArts: 90, entrepreneurship: 80, intellectualism: 96,
+      luxuryLifestyle: 88, sustainability: 70, familyCentered: 75, faithCommunity: 60,
+      civicEngagement: 90, athleticsSportsCulture: 88, globalCosmopolitan: 90,
+      collegeTownImmersion: 85, nightlifeEntertainment: 95, foodCulture: 95,
+      makerCulture: 72, digitalNomadCompatibility: 80, workLifeBalance: 88
+    },
+    archetype: {
+      primary: "Urban Prestige Professional",
+      secondary: ["Academic Elite", "Southern Network Builder", "Creative City Explorer", "Balance-Seeker"]
+    },
+    narrative: {
+      campusMood: "Ambitious, polished, collaborative, more emotionally balanced than many peer institutions.",
+      whatSuccessLooksLike: "Winning admission to top jobs or graduate programs while maintaining close relationships, social visibility, and a healthy daily life.",
+      unwrittenRules: "Build your professional story early, be engaged in campus life, use the city well, do not frame balance as laziness -- competence and livability are expected to coexist."
+    }
+  },
+  humanOutcomes: {
+    core: {
+      overallLifeDesignScore: 95, careerLifestyleAlignment: 96, financialUpsidePotential: 97,
+      geographicMobility: 98, relationshipCapital: 90, entrepreneurshipLikelihood: 80,
+      physicalWellbeingTrajectory: 85, longTermLifeSatisfaction: 95
+    },
+    careerTrajectory: {
+      dominantPaths: ["Finance", "Consulting", "Medicine/Healthcare", "Law", "Technology", "Research/Academia", "Business/Entrepreneurship"],
+      style: "Credential-driven, structured, highly polished, strong early momentum into high-status professional environments."
+    },
+    geographicTrajectory: {
+      likelyCities: ["Nashville", "New York City", "Chicago", "San Francisco Bay Area", "Boston", "Washington DC", "Los Angeles", "Austin"]
+    },
+    lifestyleTrajectory: {
+      physicalActivityLevel: 100, outdoorParticipation: 80, wellnessIntegration: 99,
+      workLifeIntegration: 99, socialStability: 85, communityEngagement: 88
+    },
+    relationshipTrajectory: {
+      friendshipDurability: 88, alumniActivation: 88, networkDensity: 90,
+      peerSimilarity: 94, communityIdentityStrength: 92
+    },
+    identityTrajectory: {
+      identityStability: 88, environmentalInfluenceStrength: 92,
+      definingTraits: ["ambitious", "collaborative", "health-conscious", "network-driven", "intellectually curious"]
+    }
+  },
+  environmentalDNA: {
+    weatherQuality: 80, naturalBeauty: 70, outdoorAccessibility: 60, walkability: 78,
+    entrepreneurialDensity: 88, innovationDensity: 90, artsCulture: 96, foodCulture: 95,
+    transitMobility: 70, safetyPerception: 80
+  }
+},
+
+"Georgetown University": {
+
+  institutionNarrative: {
+    name: "Georgetown University",
+    location: "Washington, DC",
+    region: "Mid-Atlantic / DC Corridor",
+    archetype: "The Power Corridor University — Where Policy, Law, and Global Affairs Careers Begin",
+    oneSentenceSummary: "Georgetown places students at the intersection of government, law, and international affairs in the only city where those fields are the entire economy.",
+    pipeline: "Pre-law, foreign service, consulting, finance, and policy dominate the alumni map — McDonough School of Business and the Walsh School of Foreign Service are the two defining professional tracks",
+    hiddenPathway: "The Georgetown name carries unusual weight in international organizations, think tanks, and embassies — graduates surface in places most universities never reach",
+    gradCities: ["Washington DC", "New York", "Boston", "Chicago", "Brussels", "London"],
+    comparableInstitutions: ["Duke University", "Vanderbilt University", "Tufts University", "Boston College", "University of Virginia"]
+  },
+
+  institutionIdentity: {
+    archetype: "Jesuit Intellectual Power Broker",
+    institutionalPersonality: "Serious, globally oriented, politically fluent, and Jesuit-values-inflected — students arrive ambitious and leave with a network that opens doors most credentials can't",
+    cultureKeywords: ["pre-professional", "politically aware", "globally minded", "Jesuit", "debate-driven", "network-dense"],
+    missionOrientation: "Jesuit research university with the strongest foreign service and policy identity of any American institution",
+    competitiveness: "very high",
+    politicalCulture: "politically engaged across the spectrum — DC proximity makes this the most politically literate campus in America",
+    prestigeOrientation: "very high",
+    socialClimate: "active but secondary to professional networking — the real social life is internships, clubs, and Capitol Hill",
+    oneSentenceSummary: "Georgetown is where people who want to run the world go to learn how it actually works."
+  },
+
+  institutionScale: {
+    enrollment: 20000,
+    undergraduateEnrollment: 7500,
+    setting: "Urban — Georgetown neighborhood, Washington DC",
+    campusCharacter: "Historic Hilltop campus with immediate city access — DC is not the backdrop, it is the classroom"
+  },
+
+  trajectoryProfile: {
+    dominantTrajectory: "LEAVE_STAY_GONE",
+    leaverScore: 92,
+    returnerScore: 30,
+    stewardScore: 20,
+    navigatorScore: 95,
+    geographicLockIn: "low",
+    alumniDispersalPattern: "national and international"
+  },
+
+  megaRegionIntegration: {
+    primaryMegaRegion: "Northeast / DC Corridor",
+    secondaryMegaRegion: "International",
+    megaRegionStrength: "DC is the product — every federal agency, think tank, lobbying firm, and international organization is within metro reach",
+    alumniConcentration: ["Washington DC", "New York", "Boston", "London", "Brussels", "Geneva"]
+  },
+
+  megaRegionExposure: {
+    exposureStrength: "exceptional",
+    industryCorridors: ["federal government and policy", "international organizations", "law", "consulting", "finance", "NGOs"],
+    geographicMobility: 95
+  },
+
+  comparativePositioning: {
+    versusBoston_College: "Georgetown wins on prestige, DC access, and international network; BC wins on campus community warmth and undergraduate experience",
+    versusTufts: "Georgetown has stronger professional outcomes and a more powerful brand; Tufts has stronger sciences and a more relaxed culture",
+    versusVanderbilt: "Vanderbilt wins on campus life and Nashville energy; Georgetown wins on DC access and career trajectory in law, policy, and government",
+    summaryEdge: "No American university has a stronger pipeline into law, foreign service, and government — the Hilltop address is a career asset that compounds over a lifetime"
+  },
+
+  studentFit: {
+    thrivesIf: "You are politically curious, globally ambitious, comfortable in competitive environments, and want your internship to matter as much as your coursework",
+    strugglesIf: "You want a traditional campus bubble, prioritize sports culture, or need a warm socially integrated community before you find your people",
+    idealProfile: "High Conscientiousness, high Openness, politically aware, internationally curious, comfortable with ambiguity and competition"
+  },
+
+  hiddenOpportunities: {
+    hiddenPathway: "Georgetown's location means every semester is effectively a paid externship opportunity — students routinely work on the Hill, at State, or at embassies while carrying a full course load",
+    undergradResearch: "The Beeck Center for Social Impact and the Georgetown Institute of Politics offer access unavailable at peer institutions",
+    networkLeverage: "The Hoya network is unusually active in government and law — alumni open doors with unusual specificity to those industries"
+  },
+
+  networkCapital: {
+    alumniNetworkStrength: "exceptional in law, government, and international affairs",
+    industryPlacement: ["federal agencies", "Big Law", "McKinsey/Bain/BCG", "State Department", "World Bank", "IMF"],
+    geographicReach: "global — particularly strong in DC, New York, and international capitals"
+  },
+
+  economicEcosystem: {
+    dominantIndustries: ["government and policy", "law", "consulting", "international affairs", "finance"],
+    startupEcosystem: "modest — DC is not a startup city; entrepreneurship students often feel the pull toward other coastal hubs post-graduation",
+    wealthCreationPathway: "Law partner, consulting partner, government senior executive, or international organization leadership"
+  },
+
+  geographicInfluence: {
+    localMarket: "Washington DC — the most powerful single-city job market for Georgetown's core disciplines",
+    regionalReach: "Northeast corridor",
+    nationalReach: "strong across all major metros, particularly in law and consulting",
+    internationalReach: "exceptional — stronger than almost any US peer institution"
+  },
+
+  socialCapital: {
+    greekLife: "present but not dominant",
+    clubsAndOrgs: "unusually dense — Model UN, mock trial, political organizations, and policy clubs are the real social infrastructure",
+    athleticCulture: "Basketball is the one unifying sport; otherwise athletics are secondary to professional life"
+  },
+
+  industryPathways: {
+    law: { strength: "exceptional", note: "Pre-law at Georgetown is the gold standard — direct pipeline to T14 law schools" },
+    government: { strength: "exceptional", note: "No university places more graduates into federal service" },
+    consulting: { strength: "very strong", note: "MBB recruiting is active; DC office presence amplifies Georgetown's advantage" },
+    finance: { strength: "strong", note: "McDonough opens Wall Street doors; stronger in DC-based finance than New York" },
+    internationalAffairs: { strength: "exceptional", note: "Walsh School of Foreign Service is the top-ranked program in the country" }
+  },
+
+  wealthMobility: {
+    firstGenSupport: "moderate — Georgetown is expensive and the culture skews affluent, but financial aid is need-blind for domestic students",
+    mobilityScore: 72,
+    medianEarnings10yr: 82000
+  },
+
+  futureResilience: {
+    industryDurability: "very high — law, government, and policy are recession-resistant",
+    adaptabilityScore: 85,
+    futureProofFields: ["AI policy", "cybersecurity law", "international trade", "healthcare policy"]
+  },
+
+  lifeDesignOutcomes: {
+    lifeDesignScore: 88,
+    personalDevelopmentPotential: 90,
+    careerOptionality: 85,
+    longTermLifeSatisfaction: 84
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 94,
+    networkMoat: 96,
+    geographicMoat: 99,
+    industryMoat: 97,
+    alumniMoat: 92,
+    brandDurability: 95,
+    overallMoatScore: 96
+  },
+
+  // ENRICHMENT
+
+  lifestyleIdentity: {
+    dimensions: {
+      intellectualism: 90,
+      prestigeOrientation: 85,
+      politicalClimate: 80,
+      socialLife: 65,
+      careerFocus: 88,
+      religiousJesuitInfluence: 92,
+      urbanIntegration: 95
+    },
+    notes: "Highly selective admissions + rigorous curriculum support very high intellectualism. Prestige-orientation high but slightly less than Ivy peers (competitive/high-status but less rank-obsessed). Political climate leans liberal (active DC policy discourse). Social life strong but not party-focused. Very high Jesuit religious influence. Urban integration off the charts -- DC is literally the campus backdrop."
+  }
+},
+
+"University of Virginia": {
+
+  institutionNarrative: {
+    name: "University of Virginia",
+    location: "Charlottesville, Virginia",
+    region: "Mid-Atlantic / Southeast",
+    archetype: "The Public Ivy — Jefferson's University and America's Most Distinctive Public Research Institution",
+    oneSentenceSummary: "UVA is the only public university in America with a genuine founding myth — Jefferson built it to produce enlightened citizens — and that identity still shapes everything from the Honor Code to the Rotunda to the way students talk about 'the University.'",
+    pipeline: "Pre-law, consulting, finance, medicine, public policy, and engineering define the career map. McIntire School of Commerce is top-5 undergraduate business. Darden School of Business is top-15 MBA. UVA Law is consistently top-10 nationally.",
+    hiddenPathway: "The Echols Scholars and Rodman Scholars programs deliver a curriculum freedom unavailable at most elite universities — no distribution requirements, carte blanche to design your own education. Students who use this correctly build genuinely unusual academic profiles.",
+    gradCities: ["Washington DC", "New York", "Richmond", "Charlotte", "Atlanta", "Boston", "San Francisco"],
+    comparableInstitutions: ["Georgetown University", "Vanderbilt University", "University of North Carolina Chapel Hill", "William and Mary", "Wake Forest University"]
+  },
+
+  institutionIdentity: {
+    archetype: "Public Ivy Civic Builder",
+    institutionalPersonality: "Historically conscious, socially active, academically serious — the Honor Code is not a formality, it is a lived culture. Students refer to it as 'the University' because they mean it.",
+    cultureKeywords: ["honor", "tradition", "Grounds", "Lawn", "Rotunda", "secret societies", "ACC athletics", "pre-professional"],
+    faithTradition: "Nonsectarian — Jefferson explicitly founded it without religious affiliation",
+    competitiveness: "very high",
+    prestigeOrientation: "high — UVA carries genuine Ivy-adjacent credibility in law, medicine, and consulting",
+    socialClimate: "Greek-prominent, tradition-rich, deeply social — the Corner and Rugby Road define the weekend",
+    oneSentenceSummary: "The most complete undergraduate experience at any public university in America."
+  },
+
+  institutionScale: {
+    enrollment: 25000,
+    undergraduateEnrollment: 17000,
+    setting: "College town — Charlottesville is walkable, beautiful, and entirely built around the University",
+    campusCharacter: "The Lawn, the Rotunda, the Range — UNESCO World Heritage Site architecture that makes every day feel consequential"
+  },
+
+  trajectoryProfile: {
+    dominantTrajectory: "LEAVE_COME_BACK",
+    leaverScore: 78,
+    returnerScore: 68,
+    stewardScore: 60,
+    navigatorScore: 82,
+    geographicLockIn: "medium-low",
+    alumniDispersalPattern: "DC and Mid-Atlantic dominant with strong national reach in law, consulting, and finance"
+  },
+
+  megaRegionIntegration: {
+    primaryMegaRegion: "BosWash Corridor",
+    secondaryMegaRegion: "Southeast",
+    megaRegionStrength: "DC proximity creates a natural government and policy pipeline; Mid-Atlantic corridor feeds law and consulting",
+    alumniConcentration: ["Washington DC", "New York", "Richmond", "Charlotte", "Atlanta"]
+  },
+
+  megaRegionExposure: {
+    exposureStrength: "strong",
+    industryCorridors: ["federal government and policy", "law", "finance", "consulting", "medicine", "technology"],
+    geographicMobility: 86
+  },
+
+  comparativePositioning: {
+    versusGeorgetown: "Georgetown wins on DC access and international network; UVA wins on campus beauty, undergraduate experience, and overall academic breadth",
+    versusWakeForest: "Wake Forest is smaller and more intimate; UVA has a stronger credential, better law and business programs, and a richer campus culture",
+    versusUNC: "UNC is stronger in public health and journalism; UVA wins on prestige, law, and the distinctiveness of the Honor Code culture",
+    summaryEdge: "The single best combination of academic prestige, campus beauty, social richness, and career outcomes available at a public university price"
+  },
+
+  studentFit: {
+    thrivesIf: "You value tradition, take the Honor Code seriously, want a genuinely beautiful campus, and are pre-law, pre-med, or pre-business with high ambition",
+    strugglesIf: "You want a diverse urban environment, dislike Greek culture, or find tradition performative rather than meaningful",
+    idealProfile: "High Conscientiousness, civic-minded, tradition-comfortable, ambitious, socially skilled"
+  },
+
+  hiddenOpportunities: {
+    hiddenPathway: "Echols Scholars program eliminates all distribution requirements — students who use this to build genuinely interdisciplinary profiles stand out dramatically in law school and consulting applications",
+    undergradResearch: "The Frank Batten School of Leadership and Public Policy and the Miller Center for presidential scholarship are among the most consequential policy-adjacent programs at any university",
+    networkLeverage: "The UVA alumni network is unusually active in Mid-Atlantic law firms, DC agencies, and Virginia-based Fortune 500s"
+  },
+
+  networkCapital: {
+    alumniNetworkStrength: "very strong in law, consulting, finance, and government — particularly dense in DC and Mid-Atlantic",
+    industryPlacement: ["McKinsey/Bain/BCG", "Big Law", "Goldman Sachs", "Federal agencies", "UVA Health System"],
+    geographicReach: "national with Mid-Atlantic concentration"
+  },
+
+  economicEcosystem: {
+    dominantIndustries: ["law", "consulting", "finance", "medicine", "government", "technology"],
+    startupEcosystem: "growing — Charlottesville has an emerging tech corridor and DC proximity adds venture access",
+    wealthCreationPathway: "Law partner, management consulting, investment banking, or medicine — the four highways of UVA outcomes"
+  },
+
+  geographicInfluence: {
+    localMarket: "Charlottesville — small and beautiful, not a job market",
+    regionalReach: "DC and Richmond are the primary post-graduation markets",
+    nationalReach: "strong in law, consulting, and finance",
+    internationalReach: "moderate"
+  },
+
+  socialCapital: {
+    greekLife: "prominent — roughly 30% participation, one of the most organized Greek systems at a public university",
+    clubsAndOrgs: "rich — the student-run honor system and secret society culture create unusual civic engagement",
+    athleticCulture: "ACC athletics with strong basketball and football followings"
+  },
+
+  industryPathways: {
+    law: { strength: "exceptional", note: "Top-10 law school pipeline; pre-law culture is embedded across the undergrad experience" },
+    consulting: { strength: "very strong", note: "McIntire feeds MBB and Big 4 consistently" },
+    medicine: { strength: "very strong", note: "UVA Health System creates clinical and research access" },
+    finance: { strength: "strong", note: "Wall Street recruiting is active through McIntire and Commerce School" },
+    government: { strength: "strong", note: "DC proximity and Batten School create strong public service pipelines" }
+  },
+
+  wealthMobility: {
+    firstGenSupport: "strong — AccessUVA meets 100% of demonstrated need",
+    mobilityScore: 80,
+    medianEarnings10yr: 76000
+  },
+
+  futureResilience: {
+    industryDurability: "very high — law, medicine, and consulting are durable across economic cycles",
+    adaptabilityScore: 84,
+    futureProofFields: ["health law", "technology policy", "cybersecurity", "data science"]
+  },
+
+  lifeDesignOutcomes: {
+    lifeDesignScore: 88,
+    personalDevelopmentPotential: 88,
+    careerOptionality: 86,
+    longTermLifeSatisfaction: 86
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 90,
+    networkMoat: 88,
+    geographicMoat: 82,
+    industryMoat: 92,
+    alumniMoat: 88,
+    brandDurability: 94,
+    overallMoatScore: 90
+  },
+
+  // ENRICHMENT
+
+  lifestyleIdentity: {
+    overallLifestyleStrength: 90, academicPrestige: 96, socialScene: 79, sportsCulture: 80,
+    partyCulture: 70, greekLife: 76, outdoorsAccess: 84, artsCulture: 86,
+    activismCulture: 76, campusBeauty: 98, intellectualism: 94, diversityAndInclusion: 73,
+    cityIntegration: 83, workHardPlayHard: 85, collaborativeVsCompetitive: 74,
+    careerOrientation: 91, wellnessOrientation: 82, politicalEngagement: 80,
+    statusConsciousness: 83, communityWarmth: 78, quirkiness: 64
+  },
+  environmentalDriversAndOutcomes: {
+    climate: 76, walkability: 90, foodScene: 78, nightlife: 70, liveMusic: 74,
+    collegeTownFeel: 94, urbanIntensity: 40, natureProximity: 86, happiness: 85,
+    stress: 77, belonging: 84, freedomToExplore: 82, socialFulfillment: 80,
+    identityFormation: 92
+  },
+  humanOutcomesAndInstitutionalCultureDNA: {
+    overallHumanOutcomeStrength: 93, ambition: 93, creativity: 82, resilience: 89,
+    empathy: 83, humility: 69, independence: 92, leadership: 94, adaptability: 85,
+    collaboration: 80, ethicalOrientation: 92, globalOrientation: 84
+  },
+  alumniBehavior: {
+    careerClarity: 92, networkStrength: 94, exploration: 82, loyalty: 93,
+    civicEngagement: 88, interdisciplinarity: 86, riskTolerance: 75, groundedness: 78
+  }
+},
+
+"Tulane University": {
+
+  institutionNarrative: {
+    name: "Tulane University",
+    location: "New Orleans, Louisiana",
+    region: "Southeast / Gulf Coast",
+    archetype: "The Culture Capital University — Where Intellectual Ambition Meets the Most Distinctive City in America",
+    oneSentenceSummary: "Tulane is the only elite private university embedded in New Orleans — a city unlike any other in America — combining serious research credentials with a social and cultural environment that permanently changes how students understand food, music, race, history, and civic life.",
+    pipeline: "Pre-law, business, public health, and architecture define the strongest pipelines. Freeman School of Business is the primary professional track. Tulane Law is regionally respected. The School of Public Health and Tropical Medicine is top-15 nationally and genuinely distinctive.",
+    hiddenPathway: "The Center for Public Service makes community engagement a graduation requirement — Tulane produces graduates with unusual civic fluency and a real understanding of how cities work.",
+    gradCities: ["New York", "New Orleans", "Houston", "Atlanta", "Washington DC", "Miami"],
+    comparableInstitutions: ["University of Miami", "Southern Methodist University", "Emory University", "Fordham University"]
+  },
+
+  institutionIdentity: {
+    archetype: "Progressive Urban Research University",
+    institutionalPersonality: "Intellectually curious, socially conscious, culturally adventurous — students who choose Tulane are self-selecting for New Orleans as much as for the university",
+    cultureKeywords: ["Mardi Gras", "second lines", "public service", "Greek life", "food culture", "jazz", "social justice"],
+    faithTradition: "Nonsectarian",
+    competitiveness: "selective",
+    socialClimate: "vibrant — New Orleans IS the social life; the city doesn't sleep and neither do Tulane students",
+    oneSentenceSummary: "Four years in New Orleans is not a college experience — it's a worldview."
+  },
+
+  institutionScale: {
+    enrollment: 14000,
+    undergraduateEnrollment: 7000,
+    setting: "Urban — Uptown New Orleans, one of America's most walkable and culturally dense neighborhoods",
+    campusCharacter: "Classic Southern campus with immediate access to one of the most culturally rich cities in the world"
+  },
+
+  trajectoryProfile: {
+    dominantTrajectory: "LEAVE_STAY_GONE",
+    leaverScore: 82,
+    returnerScore: 55,
+    stewardScore: 48,
+    navigatorScore: 76,
+    geographicLockIn: "low-medium",
+    alumniDispersalPattern: "national with Gulf Coast and Northeast concentration — a notable share stay in New Orleans"
+  },
+
+  megaRegionIntegration: {
+    primaryMegaRegion: "Gulf South",
+    secondaryMegaRegion: "National",
+    megaRegionStrength: "New Orleans is the anchor — energy, tourism, healthcare, and a creative economy unlike anywhere else",
+    alumniConcentration: ["New York", "New Orleans", "Houston", "Atlanta", "DC"]
+  },
+
+  comparativePositioning: {
+    versusSMU: "SMU is stronger for Dallas corporate access and finance; Tulane wins on cultural depth, public health, and the New Orleans differentiation",
+    versusEmory: "Emory is stronger for medicine and Atlanta's corporate corridor; Tulane wins on social experience and cultural formation",
+    versusMiami: "University of Miami wins on weather and international access; Tulane wins on academic prestige, city culture, and alumni loyalty",
+    summaryEdge: "No university in America offers what Tulane offers — serious academics inside the country's most culturally irreplaceable city"
+  },
+
+  studentFit: {
+    thrivesIf: "You are culturally curious, comfortable in a diverse urban environment, interested in public service or public health, and want college to be an adventure not just a credential",
+    strugglesIf: "You need a quiet campus environment, are uncomfortable with urban density, or came for the party and ignored the academics",
+    idealProfile: "High Openness, socially adventurous, civic-minded, comfortable with ambiguity and cultural complexity"
+  },
+
+  hiddenOpportunities: {
+    hiddenPathway: "Tulane's public health program is one of the few undergraduate programs in the country that produces graduates ready for CDC, WHO, and FEMA roles immediately post-degree",
+    networkLeverage: "Tulane alumni are fiercely loyal — the Tulane network in New York finance and Houston energy is surprisingly dense for a university of its size"
+  },
+
+  networkCapital: {
+    alumniNetworkStrength: "strong in New York finance, Houston energy, and New Orleans civic leadership",
+    industryPlacement: ["Goldman Sachs", "Deloitte", "energy sector", "public health agencies", "legal sector"],
+    geographicReach: "national with Gulf Coast depth"
+  },
+
+  economicEcosystem: {
+    dominantIndustries: ["finance", "energy", "public health", "tourism and hospitality", "law"],
+    startupEcosystem: "emerging — New Orleans has a growing tech scene but it's still nascent",
+    wealthCreationPathway: "Finance, law, energy sector, or public health leadership"
+  },
+
+  industryPathways: {
+    publicHealth: { strength: "exceptional", note: "Top-15 nationally — distinctive tropical medicine and disaster preparedness focus" },
+    business: { strength: "strong", note: "Freeman School feeds Wall Street and Gulf Coast energy firms" },
+    law: { strength: "solid", note: "Tulane Law has strong civil law tradition unique in the US due to Louisiana's Napoleonic Code" },
+    architecture: { strength: "strong", note: "Newcomb-Tulane architecture program with New Orleans as the ultimate studio" }
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 80,
+    networkMoat: 78,
+    geographicMoat: 96,
+    industryMoat: 82,
+    alumniMoat: 88,
+    brandDurability: 84,
+    overallMoatScore: 85
+  },
+
+  // ENRICHMENT
+
+  lifestyleIdentity: {
+    dimensions: {
+      intellectualism: 88,
+      entrepreneurshipLikelihood: 80,
+      wellnessHealth: 90,
+      relationshipCapital: 75
+    },
+    notes: {
+      intellectualism: "AAU member, 92% of classes <50 students -- academically intensive though not Ivy/flagship-public extreme",
+      entrepreneurshipLikelihood: "11 startups spun off from campus technology; Business Model Competition, innovation institutes",
+      wellnessHealth: "156,000 sq ft recreation center + Audubon Park across the street; robust mental/health services",
+      relationshipCapital: "160,000 living alumni, 42 global clubs; grads tend to stay regional (NOLA, Houston, NYC)"
+    }
+  }
+},
+
+"UC Berkeley": {
+
+  institutionNarrative: {
+    name: "UC Berkeley",
+    location: "Berkeley, California",
+    region: "West Coast / Bay Area",
+    archetype: "The Innovation Flagship — Public University with Private University Outcomes",
+    oneSentenceSummary: "Berkeley is the most intellectually intense public university in the world, sitting at the edge of the Bay Area innovation economy with a research enterprise that rivals MIT and a social culture that produced the Free Speech Movement, the counterculture, and half of Silicon Valley.",
+    pipeline: "Technology, engineering, finance, consulting, law, and public policy. Haas School of Business is top-5 undergraduate business nationally. College of Engineering feeds Google, Apple, Meta, and every major Bay Area firm at scale.",
+    hiddenPathway: "The Berkeley network in venture capital and early-stage startups is second only to Stanford — and Berkeley founders have less competition for attention from SF investors who went to Cal.",
+    gradCities: ["San Francisco", "New York", "Seattle", "Los Angeles", "Washington DC"],
+    comparableInstitutions: ["UCLA", "University of Michigan", "University of Virginia", "Georgetown University"]
+  },
+
+  institutionIdentity: {
+    archetype: "Public Research Powerhouse",
+    institutionalPersonality: "Intellectually fierce, politically aware, independent — Berkeley does not hold your hand and does not apologize for it",
+    cultureKeywords: ["innovation", "activism", "Haas", "Bay Area", "research", "counterculture", "merit"],
+    faithTradition: "Nonsectarian public university",
+    competitiveness: "very high",
+    socialClimate: "self-directed — the Bay Area is the social life",
+    oneSentenceSummary: "The credential that opens every door in tech, finance, and policy — at a fraction of private university cost."
+  },
+
+  institutionScale: {
+    enrollment: 45000,
+    undergraduateEnrollment: 32000,
+    setting: "Urban — Berkeley hills above the Bay, 20 minutes from San Francisco",
+    campusCharacter: "Iconic Campanile, Telegraph Avenue, Sproul Plaza — a campus that has shaped American culture as much as it has shaped careers"
+  },
+
+  trajectoryProfile: {
+    dominantTrajectory: "LEAVE_STAY_GONE",
+    leaverScore: 88,
+    returnerScore: 40,
+    stewardScore: 35,
+    navigatorScore: 92,
+    geographicLockIn: "low",
+    alumniDispersalPattern: "global — Bay Area dominant but genuinely national and international reach"
+  },
+
+  megaRegionIntegration: {
+    primaryMegaRegion: "NorCal Innovation Corridor",
+    alumniConcentration: ["San Francisco", "New York", "Seattle", "Los Angeles", "Washington DC"]
+  },
+
+  comparativePositioning: {
+    versusStanford: "Stanford concentrates innovation elites in a private bubble; Berkeley distributes talent broadly with a more diverse, more politically aware student body",
+    versusUCLA: "UCLA wins on weather, film, and social scene; Berkeley wins on academic prestige, tech pipeline, and research depth",
+    versusMichigan: "Michigan scales leadership across industries; Berkeley scales innovation in technology and policy",
+    summaryEdge: "The most powerful public university brand in technology and research — Ivy-adjacent outcomes at public university cost for California residents"
+  },
+
+  studentFit: {
+    thrivesIf: "Self-directed, intellectually driven, comfortable in large environments, and oriented toward technology, research, or policy",
+    strugglesIf: "You need structured guidance, a small campus feel, or a traditional college social experience"
+  },
+
+  industryPathways: {
+    technology: { strength: "exceptional", note: "Top pipeline to Google, Apple, Meta, Salesforce, and every major Bay Area firm" },
+    finance: { strength: "very strong", note: "Haas BBA competes with Wharton for Bay Area finance roles" },
+    consulting: { strength: "strong", note: "MBB recruiting is active on campus" },
+    publicPolicy: { strength: "exceptional", note: "Goldman School of Public Policy is top-10 nationally" },
+    law: { strength: "strong", note: "Boalt Hall Law School is top-15 consistently" }
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 94,
+    networkMoat: 92,
+    geographicMoat: 88,
+    industryMoat: 96,
+    alumniMoat: 90,
+    brandDurability: 96,
+    overallMoatScore: 94
+  },
+
+  // ENRICHMENT
+
+  lifestyleIdentity: {
+    careerAmbition: 97, socialExploration: 82, communityOrientation: 84, stabilitySeeking: 30,
+    wellnessSeeking: 68, entrepreneurial: 98, mobile: 94, culturallyRich: 93,
+    familyCentered: 50, highPressure: 92, statusDriven: 84, healthConscious: 72,
+    creativelyExpressive: 86, sociallyImpactful: 93, financiallyFocused: 81
+  },
+  lifeTrajectory: {
+    shortTermPrestige: 98, longTermMaturation: 88, wealthOrientation: 84, stabilityTradeoff: 42,
+    legacyBuilding: 91, playVsDiscipline: 28, localityPreference: 22, globalMobility: 95,
+    relationshipPacing: 40, riskTolerance: 93
+  },
+  environmentalDNA: {
+    weatherMildness: 96, seasonalVariation: 52, outdoorAccess: 90, urbanDensity: 78,
+    publicTransit: 90, carNecessity: 22, politicalEngagement: 97, culturalDiversity: 94,
+    foodQuality: 91, artsAccess: 91, musicScene: 79, techScene: 99
+  },
+  dailyLifestyle: {
+    lateNightCulture: 67, diningOutFrequency: 86, fitnessCulture: 80, routineStructure: 58,
+    spontaneity: 66, digitalDependency: 91, inPersonSociability: 72, aloneTime: 66,
+    couplesVisibility: 55, groupIdentity: 84, fashionConsciousness: 63, substanceNormalization: 55
+  },
+  institutionalCultureDNA: {
+    collaborationVsCompetition: 50, creativityVsStructure: 74, prestigeAwareness: 94,
+    socialLifeCentrality: 54, activismLevel: 95, workLifeBalance: 28, innovationBias: 98,
+    traditionAttachment: 76, administrativeTrust: 38, interdisciplinaryFreedom: 90,
+    rebelliousness: 90, emotionalWarmth: 50, institutionalOpacity: 70, selfDirection: 97,
+    intellectualIntensity: 99
+  },
+  alumniBehavior: {
+    reunionLoyalty: 78, schoolSpiritPersistence: 86, networkingReflex: 87, missionDrivenGiving: 76,
+    identityFusion: 82, careerFlexibility: 93, geographicDispersion: 95, mentorInstinct: 84,
+    statusSignaling: 75, institutionalCriticism: 74
+  },
+  schemaWide: {
+    overallStrength: 95
+  }
+},
+
+"University of Colorado Boulder": {
+
+  institutionNarrative: {
+    name: "University of Colorado Boulder",
+    location: "Boulder, Colorado",
+    region: "Rocky Mountains / Mountain West",
+    archetype: "The Outdoor Innovation University — Where Lifestyle and Career Actually Align",
+    oneSentenceSummary: "Boulder is the only major research university where the Flatirons are on the campus map — combining strong engineering, business, and environmental programs with a lifestyle that draws students who want their career and their life to point in the same direction.",
+    pipeline: "Engineering, business, environmental science, aerospace, and media. Leeds School of Business is regionally strong. CU's aerospace engineering feeds NASA, Lockheed Martin, and SpaceX. NOAA and NIST are literally next door.",
+    hiddenPathway: "Boulder has more PhD scientists per capita than any city in America — NOAA, NIST, NCAR, and UCAR are all headquartered here. CU undergrads walk into research access most universities can't manufacture.",
+    gradCities: ["Denver", "Boulder", "San Francisco", "Seattle", "Austin"],
+    comparableInstitutions: ["University of Oregon", "University of Utah", "Arizona State University", "University of Vermont"]
+  },
+
+  institutionIdentity: {
+    archetype: "Active Lifestyle Research University",
+    institutionalPersonality: "Outdoorsy, entrepreneurial, environmentally conscious — students chose Boulder as much as CU",
+    cultureKeywords: ["mountains", "skiing", "sustainability", "startup culture", "Boulder bubble", "Buffs"],
+    competitiveness: "moderate-high",
+    socialClimate: "active and outdoor-centric",
+    oneSentenceSummary: "The best university in America for students who want a serious career without sacrificing the life they actually want to live."
+  },
+
+  trajectoryProfile: {
+    dominantTrajectory: "LEAVE_COME_BACK",
+    leaverScore: 72,
+    returnerScore: 78,
+    stewardScore: 62,
+    navigatorScore: 70,
+    geographicLockIn: "medium",
+    alumniDispersalPattern: "Denver and Front Range dominant — Boulder keeps a significant share"
+  },
+
+  comparativePositioning: {
+    versusOregon: "Oregon wins on design and urban access; CU wins on research infrastructure and Denver career market",
+    versusUtah: "Utah wins on business and tech corridor; CU wins on brand recognition and campus experience",
+    summaryEdge: "The mountain lifestyle is real — and so are the NOAA research partnerships and aerospace pipelines"
+  },
+
+  studentFit: {
+    thrivesIf: "Outdoorsy, environmentally motivated, self-directed, interested in tech, aerospace, or sustainability",
+    strugglesIf: "You need urban density, a high-prestige brand, or a traditional East Coast career pipeline"
+  },
+
+  industryPathways: {
+    aerospace: { strength: "exceptional", note: "NASA, Lockheed, SpaceX — Boulder is an aerospace city" },
+    environmental: { strength: "exceptional", note: "NOAA and NCAR next door — unmatched access" },
+    technology: { strength: "strong", note: "Denver tech corridor growing fast" },
+    business: { strength: "solid", note: "Leeds School feeds Denver and regional firms" }
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 72,
+    networkMoat: 70,
+    geographicMoat: 88,
+    industryMoat: 82,
+    overallMoatScore: 76
+  },
+
+  // ENRICHMENT
+
+  lifestyleIdentity: {
+    dimensions: {
+      overallLifestyleStrength: 98, outdoorAdventure: 100, coastalLiving: 5, urbanEnergy: 72,
+      wellnessHealth: 100, creativityArts: 86, entrepreneurship: 95, intellectualism: 90,
+      luxuryLifestyle: 62, sustainability: 92, familyCentered: 78, faithCommunity: 22,
+      civicEngagement: 80, athleticsSportsCulture: 90, globalCosmopolitan: 80,
+      collegeTownImmersion: 98, nightlifeEntertainment: 74, foodCulture: 82,
+      makerCulture: 90, digitalNomadCompatibility: 94, workLifeBalance: 99
+    },
+    archetype: {
+      primary: "Outdoor Innovation Lifestyle",
+      secondary: ["Wellness Optimizer", "Adventure Seeker", "Entrepreneurial Explorer", "Mountain Community Builder"]
+    },
+    narrative: {
+      campusMood: "Energetic, outdoors-driven, health-conscious, independent, and ambitious.",
+      howStudentsDescribeThemselves: "Athletes, climbers, skiers, entrepreneurs, researchers -- people who value both performance and balance.",
+      whatSuccessLooksLike: "A life that integrates meaningful work with access to nature, physical health, and quality of life rather than prestige alone.",
+      alumniIdentity: "Graduates often remain strongly attached to the Boulder model of life and gravitate toward other outdoor-oriented innovation hubs."
+    }
+  },
+  humanOutcomes: {
+    core: {
+      overallLifeDesignScore: 97, careerLifestyleAlignment: 98, financialUpsidePotential: 88,
+      geographicMobility: 96, relationshipCapital: 86, entrepreneurshipLikelihood: 95,
+      physicalWellbeingTrajectory: 100, longTermLifeSatisfaction: 98
+    },
+    careerTrajectory: {
+      dominantPaths: ["Technology", "Software/AI/Data Science", "Engineering", "Environmental Science",
+                       "Outdoor Industry", "Startups/Entrepreneurship", "Consulting", "Research/Academia"],
+      style: "Often project-based, flexible, hybrid, or remote-friendly; moves influenced by lifestyle fit as much as prestige or compensation."
+    },
+    geographicTrajectory: {
+      likelyCities: ["Denver-Boulder metro", "Seattle", "San Francisco Bay Area", "Austin", "Portland", "Salt Lake City", "Bozeman", "Bend"]
+    },
+    lifestyleTrajectory: {
+      physicalActivityLevel: 100, outdoorParticipation: 100, wellnessIntegration: 100,
+      workLifeIntegration: 99, socialStability: 88, communityEngagement: 86
+    },
+    relationshipTrajectory: {
+      friendshipDurability: 88, alumniActivation: 82, networkDensity: 86,
+      peerSimilarity: 92, communityIdentityStrength: 90
+    },
+    identityTrajectory: {
+      identityStability: 92, environmentalInfluenceStrength: 98,
+      definingTraits: ["adventurous", "health-focused", "independent", "entrepreneurial", "outcome-oriented"]
+    }
+  },
+  environmentalDNA: {
+    weatherQuality: 94, naturalBeauty: 100, outdoorAccessibility: 100, walkability: 92,
+    entrepreneurialDensity: 95, innovationDensity: 94, artsCulture: 84, foodCulture: 82,
+    transitMobility: 70, safetyPerception: 88
+  }
+},
+
+"Syracuse University": {
+
+  institutionNarrative: {
+    name: "Syracuse University",
+    location: "Syracuse, New York",
+    region: "Northeast",
+    archetype: "The Media and Communications Powerhouse",
+    oneSentenceSummary: "Syracuse's Newhouse School is the most connected media school in America — CNN, ESPN, NPR, and every major outlet have Newhouse graduates running significant parts of their organizations.",
+    pipeline: "Communications, media, journalism, advertising, public relations, and sport management. Newhouse is the signature. Whitman School of Management is solid for finance and consulting.",
+    hiddenPathway: "Sport management at Syracuse is one of the strongest programs in the country — alumni run teams, leagues, and agencies at every level of professional sports.",
+    gradCities: ["New York", "Los Angeles", "Washington DC", "Boston", "Syracuse"],
+    comparableInstitutions: ["Boston University", "Fordham University", "University of Miami", "Emerson College"]
+  },
+
+  institutionIdentity: {
+    archetype: "Urban Media and Communications Leader",
+    institutionalPersonality: "Creative, ambitious, network-driven — Newhouse students know they're walking into the best media job placement machine in the country",
+    cultureKeywords: ["Newhouse", "media", "basketball", "Big East", "creative industries", "NYC pipeline"],
+    competitiveness: "moderate-high",
+    socialClimate: "active — Big East basketball is a unifying force",
+    oneSentenceSummary: "If you want to work in media, sports, or communications, Newhouse is the clearest path."
+  },
+
+  trajectoryProfile: {
+    dominantTrajectory: "LEAVE_STAY_GONE",
+    leaverScore: 86,
+    returnerScore: 35,
+    stewardScore: 30,
+    navigatorScore: 80,
+    geographicLockIn: "low",
+    alumniDispersalPattern: "New York dominant"
+  },
+
+  comparativePositioning: {
+    versusBoston_University: "BU wins on city access; Syracuse wins on media brand and Newhouse pipeline",
+    versusMiami: "Miami wins on weather; Syracuse wins on media and communications outcomes",
+    summaryEdge: "Newhouse is the reason — no media school has a stronger real-world placement record"
+  },
+
+  studentFit: {
+    thrivesIf: "You want media, communications, journalism, advertising, or sports — and want a direct pipeline to New York",
+    strugglesIf: "You're outside Newhouse and want a research or STEM-focused experience"
+  },
+
+  industryPathways: {
+    media: { strength: "exceptional", note: "Newhouse alumni run major divisions at every major outlet" },
+    sports: { strength: "very strong", note: "Sport management pipeline to leagues, teams, and agencies" },
+    advertising: { strength: "exceptional", note: "Direct NYC agency pipeline" },
+    business: { strength: "solid", note: "Whitman feeds regional finance and consulting" }
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 74,
+    networkMoat: 82,
+    geographicMoat: 70,
+    industryMoat: 94,
+    overallMoatScore: 80
+  },
+
+  // ENRICHMENT
+
+  lifestyleIdentity: {
+    dimensions: {
+      intellectualism: 82,
+      entrepreneurshipLikelihood: 72,
+      careerOrientation: 88,
+      schoolSpiritCommunity: 90,
+      relationshipCapital: 76,
+      diversityGlobalScope: 66
+    },
+    notes: {
+      careerOrientation: "Near-universal placement, ~90% career outcome rate, Whitman 98% employment -- highly vocational majors (architecture, business, communications)",
+      schoolSpiritCommunity: "Carrier Dome 'dome stomp', Otto the Orange, 54% live on campus, Winter Carnival, Orange Central Homecoming",
+      relationshipCapital: "Sizable but regional network -- ~70% of grads stay in the Northeast, deep in media/tech/advertising/publishing",
+      diversityGlobalScope: "Only ~35% NY residents, 37 states + DC represented, ~11-12% international; ~54% White, 12% Hispanic, 8% Black, 7% Asian -- broader than a state flagship but not globally focused (only 4% of grads go overseas)"
+    }
+  }
+},
+
+"University of Miami": {
+
+  institutionNarrative: {
+    name: "University of Miami",
+    location: "Coral Gables, Florida",
+    region: "Southeast / Florida",
+    archetype: "The Global Gateway University — Latin America, Finance, and the New Miami Economy",
+    oneSentenceSummary: "Miami is the only major research university in a city that is simultaneously a global financial hub, a Latin American gateway, and the fastest-growing luxury real estate and tech market in America.",
+    pipeline: "Business, pre-med, marine science, music, film, and law. Miami Herbert Business School feeds Wall Street and Latin American finance. Rosenstiel School of Marine and Atmospheric Science is top-5 globally.",
+    hiddenPathway: "Miami's Latin American network is unmatched — graduates enter banking, private equity, and family office roles across Brazil, Mexico, Colombia, and the Caribbean through connections impossible to replicate at any other university.",
+    gradCities: ["Miami", "New York", "Los Angeles", "Bogota", "São Paulo", "London"],
+    comparableInstitutions: ["Tulane University", "University of Southern California", "George Washington University", "Boston University"]
+  },
+
+  institutionIdentity: {
+    archetype: "Global Urban Research University",
+    institutionalPersonality: "International, ambitious, cosmopolitan — the student body is genuinely global in a way few US universities match",
+    cultureKeywords: ["international", "Latin America", "finance", "beach", "pre-med", "music business", "luxury"],
+    competitiveness: "selective",
+    socialClimate: "vibrant and international",
+    oneSentenceSummary: "The gateway to Latin America and the world, inside the most dynamic city in the American Southeast."
+  },
+
+  trajectoryProfile: {
+    dominantTrajectory: "NAVIGATOR",
+    leaverScore: 75,
+    returnerScore: 65,
+    stewardScore: 55,
+    navigatorScore: 88,
+    geographicLockIn: "low-medium",
+    alumniDispersalPattern: "Miami dominant with strong international reach"
+  },
+
+  comparativePositioning: {
+    versusTulane: "Tulane wins on culture and public health; Miami wins on international network and business pipeline",
+    versusUSC: "USC wins on entertainment and LA; Miami wins on Latin American access and finance",
+    summaryEdge: "No American university has a stronger Latin American network — that's a durable, expanding asset"
+  },
+
+  studentFit: {
+    thrivesIf: "International-minded, business or pre-med oriented, comfortable in a cosmopolitan environment, drawn to Miami's energy",
+    strugglesIf: "You want a traditional campus bubble or a cold-weather academic culture"
+  },
+
+  industryPathways: {
+    finance: { strength: "very strong", note: "Miami Herbert feeds Wall Street and Latin American banking" },
+    medicine: { strength: "very strong", note: "UHealth system creates strong pre-med pipeline" },
+    marineScience: { strength: "exceptional", note: "Rosenstiel is top-5 globally — ocean, climate, marine biology" },
+    music: { strength: "strong", note: "Frost School of Music is top-10 nationally" }
+  },
+
+  institutionalMoat: {
+    prestigeMoat: 78,
+    networkMoat: 82,
+    geographicMoat: 92,
+    industryMoat: 84,
+    overallMoatScore: 84
+  },
+
+  // ENRICHMENT
+
+  lifestyleIdentity: {
+    primaryArchetype: "Global Connector",
+    secondaryArchetypes: ["City Integrator", "Beach Lifestyle Maximizer", "Prestige-Seeking Professional", "Creator-Influencer"],
+    dimensions: {
+      globalCosmopolitan: { score: 93, confidence: 0.93 },
+      urbanIntegration: { score: 91, confidence: 0.90 },
+      socialEnergy: { score: 92, confidence: 0.83 },
+      wealthVisibility: { score: 94, confidence: 0.69 },
+      creatorInfluencerSalience: { score: 89, confidence: 0.77 },
+      academicIntensity: { score: 78, confidence: 0.81 },
+      researchBuilderEnergy: { score: 80, confidence: 0.86 },
+      sportsEnergy: { score: 84, confidence: 0.87 },
+      schoolSpirit: { score: 83, confidence: 0.85 },
+      greekLifeCentrality: { score: 58, confidence: 0.56 },
+      campusBubble: { score: 28, confidence: 0.89 },
+      outdoorClimateLifestyle: { score: 95, confidence: 0.92 },
+      traditionDepth: { score: 70, confidence: 0.72 },
+      politicalIntensity: { score: 45, confidence: 0.43 }
+    },
+    validationNote: "Not merely luxurious/professional -- a 'socially visible global connector' where opportunity is real but mediated by comfort with image, networking, and city-facing adulthood."
+  },
+  humanOutcomes: {
+    networkAdvantage: { score: 92, confidence: 0.88 },
+    geographicMobility: { score: 90, confidence: 0.90 },
+    statusFluency: { score: 93, confidence: 0.74 },
+    careerAcceleration: { score: 87, confidence: 0.67 },
+    entrepreneurshipLikelihood: { score: 72, confidence: 0.49 },
+    belongingConsistency: { score: 69, confidence: 0.58 },
+    workLifeBalance: { score: 61, confidence: 0.54 },
+    identityDurability: { score: 86, confidence: 0.79 },
+    socialConfidence: { score: 92, confidence: 0.79 },
+    institutionalLoyalty: { score: 81, confidence: 0.77 },
+    validationNote: "Strongest on network effects, social confidence, metro mobility. Weaker fit for students needing low-pressure/low-visibility/purely-academic environment."
+  }
 }
-};
+
+};;;;
 
 if (typeof module !== "undefined") module.exports = { UNIVERSITY_DB_V5,
 
