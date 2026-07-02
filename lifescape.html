@@ -13,12 +13,16 @@
 <script src="lifescape_major_map.js"></script>
 <script src="lifescape_regional_intelligence.js"></script>
 <script>
-// ── Compatibility shim ─────────────────────────────
-// v4.0 database exports UNIVERSITY_DB_V5.
-// lifescape.html expects UNIVERSITY_CONTENT.
-if (typeof UNIVERSITY_DB_V5 !== 'undefined' && typeof UNIVERSITY_CONTENT === 'undefined') {
-  var UNIVERSITY_CONTENT = UNIVERSITY_DB_V5;
-}
+// ── v4.0 intelligence merge ─────────────────────────
+// Merges validated 56-school database into existing UNIVERSITY_CONTENT
+// so both sources are available without redeclaring the variable.
+window.addEventListener('load', function() {
+  if (typeof UNIVERSITY_DB_V5 !== 'undefined' && typeof UNIVERSITY_CONTENT !== 'undefined') {
+    Object.assign(UNIVERSITY_CONTENT, UNIVERSITY_DB_V5);
+  } else if (typeof UNIVERSITY_DB_V5 !== 'undefined') {
+    window.UNIVERSITY_CONTENT = UNIVERSITY_DB_V5;
+  }
+});
 </script>
 <script src="crosswalk-db.js"></script>
 <script src="geo_industry_db_LA_pass1.js"></script>
