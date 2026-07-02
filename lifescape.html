@@ -456,6 +456,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .pc-desc{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;}
 
 /* ── INPUTS ────────────────────────────────────────── */
+.worry-btn{font-family:var(--sans);font-size:13px;padding:9px 16px;background:transparent;border:0.5px solid rgba(200,169,122,0.35);color:var(--muted);cursor:pointer;border-radius:2px;transition:all .15s;}
+.worry-btn.selected{background:rgba(200,169,122,0.12);border-color:var(--gold);color:var(--gold);}
 .ls-input{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;font-size:16px;font-family:var(--serif);color:var(--ink);padding:10px 0;outline:none;transition:border-color .3s;margin-bottom:1.5rem;}
 .ls-input:focus{border-bottom-color:var(--gold);}
 .ls-input::placeholder{color:var(--ink4);}
@@ -1033,6 +1035,45 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeGeo()">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
     <button onclick="skipGenomeGeo()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- SCREEN 1E — COGNITIVE INTERVIEW: DOMAIN 5         -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-1e">
+<div class="container" style="padding-top:5rem">
+  <div class="gold-rule"></div>
+  <div class="q">What are you most nervous about?</div>
+  <div class="q-sub">Pick everything that feels true. You can add your own below.</div>
+  <div style="margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:10px;">
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Making friends">Making friends</button>
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Keeping up academically">Keeping up academically</button>
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Being far from home">Being far from home</button>
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Finding the right major">Finding the right major</button>
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Fitting in socially">Fitting in socially</button>
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Managing on my own">Managing on my own</button>
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Feeling like I belong">Feeling like I belong</button>
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="My mental health">My mental health</button>
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Picking the wrong school">Picking the wrong school</button>
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Living with a roommate">Living with a roommate</button>
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Getting lost in a big school">Getting lost in a big school</button>
+    <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Starting over socially">Starting over socially</button>
+  </div>
+  <div style="margin-top:1.5rem;">
+    <textarea
+      id="genome-worry-input"
+      class="ls-input"
+      rows="3"
+      placeholder="Anything else on your mind? (optional)"
+      style="width:100%;resize:vertical;font-size:15px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+    ></textarea>
+  </div>
+  <div id="genome-worry-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center;"></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeWorry()">Continue</button>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="skipGenomeWorry()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
   </div>
 </div>
 </div>
@@ -2002,11 +2043,12 @@ const LS_STATE = {
   _scenarioSchools: [],
   genome_narrative: null,  // Domain 1 — Narrative & Ideas
   genome_building: null,  // Domain 3 — Building & Creating
-  genome_geo: null        // Domain 4 — Geographic Identity
+  genome_geo: null,       // Domain 4 — Geographic Identity
+  genome_worry: null      // Domain 5 — Student Anxiety
 };
 
 // ── SCREEN NAV ─────────────────────────────────────
-const SCREEN_PROGRESS = {0:0,1:5,'1b':10,'1c':13,'1d':16,2:15,25:28,3:40,36:52,37:64,35:74,4:84,45:90,5:94};
+const SCREEN_PROGRESS = {0:0,1:5,'1b':10,'1c':13,'1d':16,'1e':18,2:15,25:28,3:40,36:52,37:64,35:74,4:84,45:90,5:94};
 
 function goTo(n) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -2120,11 +2162,32 @@ function submitGenomeGeo() {
   var inp = document.getElementById('genome-geo-input');
   var text = inp ? inp.value.trim() : '';
   if (text.length > 0) { LS_STATE.genome_geo = text; }
-  goTo(2);
+  goTo('1e');
 }
 
 function skipGenomeGeo() {
   LS_STATE.genome_geo = null;
+  goTo('1e');
+}
+
+// ── GENOME WORRY (Domain 5 — Student Anxiety) ────────
+function toggleWorry(btn) {
+  btn.classList.toggle('selected');
+}
+
+function submitGenomeWorry() {
+  var selected = Array.from(document.querySelectorAll('.worry-btn.selected')).map(function(b){ return b.dataset.worry; });
+  var inp = document.getElementById('genome-worry-input');
+  var extra = inp ? inp.value.trim() : '';
+  var parts = [];
+  if (selected.length > 0) parts.push(selected.join(', '));
+  if (extra) parts.push(extra);
+  LS_STATE.genome_worry = parts.length > 0 ? parts.join('. ') : null;
+  goTo(2);
+}
+
+function skipGenomeWorry() {
+  LS_STATE.genome_worry = null;
   goTo(2);
 }
 
@@ -2902,6 +2965,7 @@ function assembleProfile() {
     genome_narrative: LS_STATE.genome_narrative || null,
     genome_building: LS_STATE.genome_building || null,
     genome_geo: LS_STATE.genome_geo || null,
+    genome_worry: LS_STATE.genome_worry || null,
     regionalIntel: typeof resolveRegion === 'function' ? resolveRegion(LS_STATE.zip) : null,
     rawScore: (function() {
       // Sum RIASEC weights across all selected tiles, normalized to 0-100
@@ -3273,6 +3337,9 @@ This reveals execution style, creative vs analytical orientation, and what this 
 ${ctx.genome_geo ? `
 GEOGRAPHIC IDENTITY (in their words): "${ctx.genome_geo}"
 Translate this into environmental fit — urban density, pace, climate, size of place. Let it inform which campus environments you describe and how you name the geography around each school.` : ''}
+${ctx.genome_worry ? `
+STUDENT'S PRIMARY ANXIETY: "${ctx.genome_worry}"
+Let this calibrate tone — not by softening difficult truths, but by naming the specific environments, support systems, and community structures that address what this student is actually afraid of. Never reference the anxiety back to them directly. Just let it shape what you emphasize.` : ''}
 ${(()=>{
   const bf = ctx.big_five;
   if(!bf||bf.O===null) return '';
@@ -4164,6 +4231,9 @@ This is the clearest signal of what this student actually does with free time an
 ${ctx.genome_geo ? `
 GEOGRAPHIC IDENTITY: "${ctx.genome_geo}"
 Use this to weight school recommendations toward environments that match what they described. Name the geography explicitly in WHY — connect the campus location, city, or region to what this student said they want their life to feel like.` : ''}
+${ctx.genome_worry ? `
+STUDENT ANXIETY SIGNAL: "${ctx.genome_worry}"
+For each school, if there is something specific about that environment that speaks to this concern — a strong first-year program, tight residential community, academic support, size — name it concretely. Never quote the anxiety back. Just address it through the recommendation.` : ''}
 College preferences: ${prefSummary || 'Open'}
 Combination unlocks fired: ${ctx.comboSummary || 'none'}
 ${ctx.trajectoryResolved ? `LIFE GEOGRAPHY: ${ctx.trajectoryResolved} | Pull: ${ctx.trajectoryPull||'—'} | Anchor: ${ctx.trajectoryAnchor||'—'}${ctx.familiarityRegions&&ctx.familiarityRegions.length?' | Familiarity: '+ctx.familiarityRegions.join(', '):''}
