@@ -14,6 +14,7 @@
 <script src="school-context-engine.js"></script>
 <script src="school-context-engine-phase2.js"></script>
 <script src="school-context-connector.js"></script>
+<script src="school-context-signal-call.js"></script>
 <script src="lifescape_major_map.js"></script>
 <script src="lifescape_regional_intelligence.js"></script>
 <script src="crosswalk-db.js"></script>
@@ -5183,11 +5184,24 @@ async function submitLifescape() {
         var _schoolContextAnnotations = {};
         try {
           if (typeof annotateWithSchoolContext !== 'undefined' && typeof UNIVERSITY_CONTENT !== 'undefined') {
-            _schoolContextAnnotations = annotateWithSchoolContext(
-              _rawMatches,
-              { signals: [], capitalDirection: null, homeState: null }, // TODO: wire real student signals
-              UNIVERSITY_CONTENT
-            );
+            var _narrativeText = [
+              (profile.drive_answers || []).join(' '),
+              (profile.worlds_chosen || []).join(' ')
+            ].filter(Boolean).join(' ');
+
+            var _studentContext = { signals: [], capitalDirection: null, homeState: null };
+
+            if (_narrativeText && typeof classifySchoolContextSignals !== 'undefined') {
+              classifySchoolContextSignals(_narrativeText).then(function(classified) {
+                _studentContext.signals = classified.signals || [];
+                _studentContext.capitalDirection = classified.capitalDirection || null;
+                _schoolContextAnnotations = annotateWithSchoolContext(_rawMatches, _studentContext, UNIVERSITY_CONTENT);
+              }).catch(function(err) {
+                console.warn('[VECTOR] Signal classification failed (non-blocking):', err);
+              });
+            } else {
+              _schoolContextAnnotations = annotateWithSchoolContext(_rawMatches, _studentContext, UNIVERSITY_CONTENT);
+            }
           }
         } catch (err) {
           console.warn('[VECTOR] School Context annotation failed (non-blocking):', err);
