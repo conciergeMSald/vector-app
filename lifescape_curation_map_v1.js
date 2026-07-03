@@ -1,6 +1,6 @@
 /**
  * VECTOR Lifescape — Tile Curation Mapping Table
- * Version: 2.0 — June 2026
+ * Version: 1.0 — June 16, 2026
  *
  * PURPOSE:
  * Maps the three orienting question answers to a curated starting set
@@ -11,23 +11,6 @@
  * Q1 — free_time: ['making','moving','thinking','people'] (multi-select)
  * Q2 — self_view: ['know_what_i_like','still_figuring_out','both']
  * Q3 — work_style: ['on_my_own','with_people','depends']
- *
- * ADDITIONAL SIGNALS (passed to curateInitialTiles):
- * pronoun  — 'he_him' | 'she_her' | 'they_them' | null
- *            Used for gender-weighted initial tile curation only.
- *            All tiles remain accessible via Show All.
- * grade    — integer 7-12
- *            Used to gate club_travel_sports tile (surfaces grades 7-9 only).
- *
- * NEW TILES IN v2.0:
- * make:    tiktok_content, fashion_inspiration, wardrobe_styling
- * move:    football, baseball, basketball, soccer, volleyball, softball,
- *          pilates, running_fitness_classes, club_travel_sports, ebike_outdoor_adventure
- *          (horseback_riding REMOVED)
- * think:   logic_puzzle_games, fantasy_sports
- *          (puzzles_brain_teasers merged into logic_puzzle_games,
- *           roblox_game_design merged into esports_gaming)
- * people:  reading_biographies, attending_events_concerts
  *
  * OUTPUT:
  * curateInitialTiles(answers) → string[] of tile IDs (30-35)
@@ -43,55 +26,24 @@
 
 const TILE_POOLS = {
   make: [
-    // Visual & digital creation
-    'tiktok_content','drawing','painting','photography','animation',
-    'graphic_design','fashion_inspiration','wardrobe_styling',
-    // Music & performance
-    'music_production','playing_instrument','singing',
-    // Writing & story
-    'writing_stories',
-    // Physical making
-    'cooking','baking','nail_art','hair_makeup','three_d_printing',
-    // Removed: filmmaking (→ tiktok_content), fashion_design (→ fashion_inspiration), woodworking (too niche)
+    'cooking','baking','drawing','painting','photography','filmmaking',
+    'fashion_design','graphic_design','animation','music_production',
+    'playing_instrument','singing','writing_stories','nail_art','hair_makeup',
+    'woodworking','three_d_printing'
   ],
   move: [
-    // Team sports — male-weighted initial curation
-    'football','baseball','basketball','soccer',
-    // Team sports — female-weighted initial curation
-    'volleyball','softball',
-    // Universal team/individual
-    'cheerleading','dance',
-    // Fitness & body
-    'fitness_lifting','yoga','pilates','running_fitness_classes',
-    // Individual sport / challenge
-    'martial_arts','rock_climbing',
-    // Travel/club sports — surfaces for grades 7-9
-    'club_travel_sports',
-    // Digital/competitive
-    'esports_gaming',
-    // Active outdoor
-    'ebike_outdoor_adventure',
-    // Removed: horseback_riding (per spec)
+    'dance','cheerleading','fitness_lifting','yoga','martial_arts',
+    'esports_gaming','horseback_riding','rock_climbing'
   ],
   think: [
-    // Science & data
-    'science_experiments','psychology','biology','chemistry',
-    'data_statistics','ai_machine_learning','coding_programming',
-    // Logic & games — NYT-style, mobile logic
-    'logic_puzzle_games','fantasy_sports',
-    // Ideas & inquiry
-    'philosophy','true_crime','understanding_why_people',
-    // Removed: roblox_game_design (→ esports_gaming covers), puzzles_brain_teasers (→ logic_puzzle_games)
+    'science_experiments','psychology','biology','chemistry','coding_programming',
+    'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
+    'true_crime','puzzles_brain_teasers','understanding_why_people'
   ],
   people: [
-    // Service & care
-    'volunteering','animal_care','mental_health_wellness',
-    'working_with_little_kids','teaching_tutoring','advocacy_activism',
-    'first_aid_emergencies',
-    // Stories & inspiration
-    'reading_biographies','attending_events_concerts',
-    // Entrepreneurship
-    'entrepreneurship'],
+    'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
+    'teaching_tutoring','advocacy_activism','entrepreneurship','first_aid_emergencies'
+  ],
   systems: [
     'cosmetic_beauty_science','cooking_chemistry','medical_science','how_body_moves',
     'learning_differences','environment_sustainability','engineering_challenges',
@@ -101,18 +53,14 @@ const TILE_POOLS = {
 
 // Always-included tiles — high signal, high recognizability for any student
 const ALWAYS_SHOW = [
-  'cooking',             // universal, triggers baking/cosmetic combos
-  'playing_instrument',  // high EQ combo potential
-  'coding_programming',  // high NAICS coverage
-  'entrepreneurship',    // cross-cluster signal
-  'animal_care',         // strong EQ indicator
-  'fitness_lifting',     // universal move tile
-  'writing_stories',     // strong signal across many paths
-  'photography',         // broad creative signal
-  'tiktok_content',      // universal digital creation signal
-  'fantasy_sports',      // analytical + competitive cross-cluster
-  'logic_puzzle_games',  // universal think signal across genders
-  'attending_events_concerts' // Presence Economy + social signal
+  'cooking',          // universal, triggers baking/cosmetic combos
+  'playing_instrument', // high EQ combo potential
+  'coding_programming', // high IBIS coverage
+  'entrepreneurship', // cross-cluster signal
+  'animal_care',      // strong EQ indicator
+  'fitness_lifting',  // universal move tile
+  'writing_stories',  // strong signal across many paths
+  'photography'       // broad creative signal
 ];
 
 // ─────────────────────────────────────────────────────────────
@@ -123,66 +71,49 @@ const ALWAYS_SHOW = [
 const FREE_TIME_MAP = {
 
   making: [
-    // Digital & visual creation
-    'tiktok_content','photography','drawing','painting','graphic_design',
-    'animation','fashion_inspiration','wardrobe_styling',
-    // Music
-    'music_production','playing_instrument','singing',
-    // Writing
-    'writing_stories',
-    // Hands-on
-    'cooking','baking','nail_art','hair_makeup','three_d_printing',
-    // Systems that connect to making
-    'cosmetic_beauty_science','cooking_chemistry','architecture','engineering_challenges',
-    // Think that connects to making
-    'ai_machine_learning'
+    // Make cluster — full representation
+    'cooking','baking','drawing','painting','photography','filmmaking',
+    'fashion_design','graphic_design','animation','music_production',
+    'playing_instrument','nail_art','hair_makeup','woodworking','three_d_printing',
+    // Systems tiles that connect to making
+    'engineering_challenges','architecture','cosmetic_beauty_science','cooking_chemistry',
+    // Think tiles that connect to making
+    'roblox_game_design','ai_machine_learning'
   ],
 
   moving: [
-    // Team sports (all — gender weighting applied in curateInitialTiles)
-    'football','baseball','basketball','soccer','volleyball','softball',
-    // Performance & fitness
-    'cheerleading','dance','yoga','pilates','running_fitness_classes','fitness_lifting',
-    // Individual challenge
-    'martial_arts','rock_climbing','club_travel_sports','ebike_outdoor_adventure',
-    // Digital competitive
-    'esports_gaming',
-    // Systems that connect to movement
+    // Move cluster — full representation
+    'dance','cheerleading','fitness_lifting','yoga','martial_arts',
+    'esports_gaming','horseback_riding','rock_climbing',
+    // Systems tiles that connect to movement
     'how_body_moves','medical_science','nutrition_food_science',
-    // People that connect to movement
+    // People tiles that connect to movement
     'working_with_little_kids','teaching_tutoring','first_aid_emergencies',
-    // Make that connects to performance
+    // Make tiles that connect to performance
     'playing_instrument','singing','music_production','photography'
   ],
 
   thinking: [
-    // Science & data
+    // Think cluster — full representation
     'science_experiments','psychology','biology','chemistry','coding_programming',
-    'ai_machine_learning','data_statistics',
-    // Logic & analytical games (Wordle, Connections, Sudoku, NYT)
-    'logic_puzzle_games','fantasy_sports',
-    // Ideas & inquiry
-    'philosophy','true_crime','understanding_why_people',
-    // Systems that connect to thinking
-    'cosmetic_beauty_science','medical_science','engineering_challenges',
-    'environment_sustainability','cooking_chemistry','architecture',
-    // People that connect to thinking
+    'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
+    'true_crime','puzzles_brain_teasers','understanding_why_people',
+    // Systems tiles that connect to thinking
+    'medical_science','engineering_challenges','environment_sustainability',
+    'architecture','cosmetic_beauty_science','cooking_chemistry',
+    // People tiles that connect to thinking
     'advocacy_activism','teaching_tutoring','mental_health_wellness'
   ],
 
   people: [
-    // Service & care
+    // People cluster — full representation
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
-    'teaching_tutoring','advocacy_activism','first_aid_emergencies',
-    // Stories & inspiration — NEW
-    'reading_biographies','attending_events_concerts',
-    // Entrepreneurship
-    'entrepreneurship',
-    // Make that connects to people
-    'tiktok_content','writing_stories','photography','music_production','singing',
-    // Think that connects to people
+    'teaching_tutoring','advocacy_activism','entrepreneurship','first_aid_emergencies',
+    // Make tiles that connect to people
+    'filmmaking','writing_stories','photography','music_production','singing',
+    // Think tiles that connect to people
     'psychology','understanding_why_people','true_crime','philosophy',
-    // Systems that connects to people
+    // Systems tiles that connect to people
     'medical_science','how_body_moves','learning_differences','nutrition_food_science'
   ]
 };
@@ -196,27 +127,26 @@ const SELF_VIEW_ADDITIONS = {
 
   know_what_i_like: [
     // Student has crystallized interests — show depth tiles
-    'cosmetic_beauty_science','cooking_chemistry','ai_machine_learning',
-    'data_statistics','architecture','engineering_challenges','philosophy',
-    'animation','three_d_printing','logic_puzzle_games','fantasy_sports',
-    'fashion_inspiration','tiktok_content'
+    // These require some prior interest to resonate
+    'ai_machine_learning','data_statistics','architecture','engineering_challenges',
+    'philosophy','animation','three_d_printing','roblox_game_design',
+    'cosmetic_beauty_science','cooking_chemistry'
   ],
 
   still_figuring_out: [
     // Student is exploring — show breadth tiles + connector tiles
+    // Deliberately broad to catch latent interests
     'cooking','drawing','dance','science_experiments','psychology',
     'volunteering','entrepreneurship','writing_stories','photography',
-    'tiktok_content','music_production','animal_care','fitness_lifting',
-    'coding_programming','advocacy_activism','attending_events_concerts',
-    'logic_puzzle_games','reading_biographies'
+    'filmmaking','music_production','animal_care','fitness_lifting',
+    'coding_programming','advocacy_activism'
   ],
 
   both: [
     // Balanced — mix of depth and breadth
     'cooking','drawing','science_experiments','psychology','entrepreneurship',
     'writing_stories','photography','animation','coding_programming',
-    'animal_care','architecture','music_production','tiktok_content',
-    'logic_puzzle_games','attending_events_concerts'
+    'animal_care','architecture','music_production','filmmaking'
   ]
 };
 
@@ -230,26 +160,24 @@ const WORK_STYLE_BOOST = {
   on_my_own: [
     // Solo-oriented tiles — deep focus, individual craft
     'drawing','painting','writing_stories','coding_programming','photography',
-    'animation','three_d_printing','science_experiments',
+    'animation','woodworking','three_d_printing','science_experiments',
     'data_statistics','ai_machine_learning','philosophy','music_production',
-    'architecture','logic_puzzle_games','fashion_inspiration','tiktok_content'
+    'roblox_game_design','architecture'
   ],
 
   with_people: [
     // Social-oriented tiles — collaboration, performance, service
-    'tiktok_content','singing','teaching_tutoring','volunteering','entrepreneurship',
+    'filmmaking','singing','teaching_tutoring','volunteering','entrepreneurship',
     'advocacy_activism','working_with_little_kids','animal_care','cheerleading',
     'dance','first_aid_emergencies','mental_health_wellness','playing_instrument',
-    'photography','writing_stories','attending_events_concerts','reading_biographies',
-    'football','volleyball','basketball','soccer','softball','baseball'
+    'photography','writing_stories'
   ],
 
   depends: [
     // Balanced — tiles that work both ways
     'photography','writing_stories','music_production','cooking','drawing',
     'science_experiments','psychology','entrepreneurship','coding_programming',
-    'animation','architecture','teaching_tutoring','tiktok_content',
-    'logic_puzzle_games','fantasy_sports','attending_events_concerts'
+    'animation','architecture','teaching_tutoring','filmmaking'
   ]
 };
 
@@ -260,8 +188,7 @@ const WORK_STYLE_BOOST = {
 // ─────────────────────────────────────────────────────────────
 
 function curateInitialTiles(answers) {
-  const { free_time = [], self_view = 'both', work_style = 'depends',
-          pronoun = null, grade = null } = answers;
+  const { free_time = [], self_view = 'both', work_style = 'depends' } = answers;
 
   // Score every activity tile
   const scores = {};
@@ -285,38 +212,6 @@ function curateInitialTiles(answers) {
   // Q3 — work style modifier (smaller additive bonus)
   const workStyleBonus = WORK_STYLE_BOOST[work_style] || WORK_STYLE_BOOST['depends'];
   workStyleBonus.forEach(id => { scores[id] = (scores[id] || 0) + 3; });
-
-  // ── Gender-weighted initial curation ──────────────────────────────────────
-  // Pronoun = 'he_him' → boost male-typical sport tiles into initial set
-  // Pronoun = 'she_her' → boost female-typical sport/activity tiles
-  // Pronoun = 'they_them' or null → balanced / no boost
-  // These are INITIAL CURATION weights only — all tiles remain accessible via Show All
-  if (pronoun === 'he_him') {
-    ['football','baseball','basketball','soccer','esports_gaming',
-     'fantasy_sports','fitness_lifting','club_travel_sports','martial_arts']
-      .forEach(id => { scores[id] = (scores[id] || 0) + 12; });
-    // Reduce (not hide) tiles less likely to resonate first
-    ['pilates','cheerleading','nail_art','hair_makeup','wardrobe_styling','fashion_inspiration']
-      .forEach(id => { scores[id] = Math.max(0, (scores[id] || 0) - 4); });
-  } else if (pronoun === 'she_her') {
-    ['volleyball','softball','dance','cheerleading','yoga','pilates',
-     'running_fitness_classes','fashion_inspiration','wardrobe_styling',
-     'nail_art','hair_makeup','logic_puzzle_games','reading_biographies',
-     'attending_events_concerts']
-      .forEach(id => { scores[id] = (scores[id] || 0) + 12; });
-    // Reduce (not hide) tiles less likely to resonate first
-    ['football','baseball','martial_arts','esports_gaming']
-      .forEach(id => { scores[id] = Math.max(0, (scores[id] || 0) - 4); });
-  }
-
-  // ── Grade gate: club_travel_sports surfaces only for grades 7-9 ────────────
-  // For grade 10+ it stays in the pool but doesn't get the ALWAYS_SHOW boost
-  if (grade && grade <= 9) {
-    scores['club_travel_sports'] = Math.max(scores['club_travel_sports'] || 0, 10);
-  } else if (grade && grade >= 10) {
-    // Replace with individual sport tiles — the club journey is established
-    scores['club_travel_sports'] = 0;
-  }
 
   // Always-show tiles get a baseline score so they always appear
   ALWAYS_SHOW.forEach(id => { scores[id] = Math.max(scores[id] || 0, 8); });
@@ -348,7 +243,7 @@ function curateInitialTiles(answers) {
 // ─────────────────────────────────────────────────────────────
 
 function ensureClusterBalance(sortedIds, free_time) {
-  const MIN_PER_CLUSTER = 2;
+  const MIN_PER_CLUSTER = 8;
   const result = [...sortedIds];
   const clusterCounts = {};
 
@@ -358,16 +253,15 @@ function ensureClusterBalance(sortedIds, free_time) {
     if (cluster) clusterCounts[cluster] = (clusterCounts[cluster] || 0) + 1;
   });
 
-  // For any cluster with fewer than MIN tiles, inject the top-scored tile from that cluster
+  // For any cluster with fewer than MIN tiles, inject top-scored tiles from that cluster
+  // until the minimum is met (or the cluster's pool is exhausted)
   Object.keys(TILE_POOLS).forEach(cluster => {
-    if ((clusterCounts[cluster] || 0) < MIN_PER_CLUSTER) {
-      const clusterTiles = TILE_POOLS[cluster];
-      // Find the highest-scored tile from this cluster not already in result
-      const toAdd = clusterTiles.find(id => !result.slice(0, 32).includes(id));
-      if (toAdd) {
-        // Insert at position 30 (before the last two slots)
-        result.splice(30, 0, toAdd);
-      }
+    const clusterTiles = TILE_POOLS[cluster];
+    while ((clusterCounts[cluster] || 0) < MIN_PER_CLUSTER) {
+      const toAdd = clusterTiles.find(id => !result.includes(id));
+      if (!toAdd) break; // pool exhausted — cluster is smaller than the minimum
+      result.push(toAdd);
+      clusterCounts[cluster] = (clusterCounts[cluster] || 0) + 1;
     }
   });
 
@@ -396,14 +290,15 @@ const TILE_ADJACENCY = {
   baking:               ['cooking','cosmetic_beauty_science','cooking_chemistry','chemistry'],
   drawing:              ['animation','graphic_design','architecture','painting','photography'],
   painting:             ['drawing','photography','animation','nail_art'],
-  photography:          ['tiktok_content','drawing','graphic_design','fashion_design'],
+  photography:          ['filmmaking','drawing','graphic_design','fashion_design'],
+  filmmaking:           ['photography','writing_stories','animation','graphic_design'],
   fashion_design:       ['nail_art','hair_makeup','graphic_design','cosmetic_beauty_science'],
   graphic_design:       ['drawing','animation','coding_programming','photography'],
-  animation:            ['drawing','esports_gaming','tiktok_content','graphic_design'],
-  music_production:     ['playing_instrument','singing','tiktok_content','coding_programming'],
+  animation:            ['drawing','roblox_game_design','filmmaking','graphic_design'],
+  music_production:     ['playing_instrument','singing','filmmaking','coding_programming'],
   playing_instrument:   ['singing','music_production','dance'],
   singing:              ['playing_instrument','dance','music_production'],
-  writing_stories:      ['psychology','journalism','philosophy','tiktok_content'],
+  writing_stories:      ['psychology','journalism','philosophy','filmmaking'],
   nail_art:             ['hair_makeup','cosmetic_beauty_science','fashion_design'],
   hair_makeup:          ['nail_art','cosmetic_beauty_science','fashion_design'],
   woodworking:          ['architecture','engineering_challenges','three_d_printing'],
@@ -413,25 +308,28 @@ const TILE_ADJACENCY = {
   fitness_lifting:      ['how_body_moves','nutrition_food_science','medical_science','yoga'],
   yoga:                 ['fitness_lifting','mental_health_wellness','how_body_moves'],
   martial_arts:         ['fitness_lifting','first_aid_emergencies','how_body_moves'],
-  esports_gaming:       ['coding_programming','esports_gaming','ai_machine_learning','data_statistics'],
+  esports_gaming:       ['coding_programming','roblox_game_design','ai_machine_learning','data_statistics'],
+  horseback_riding:     ['animal_care','how_body_moves','environment_sustainability'],
   rock_climbing:        ['fitness_lifting','environment_sustainability','how_body_moves'],
   science_experiments:  ['chemistry','biology','cosmetic_beauty_science','medical_science'],
   psychology:           ['mental_health_wellness','understanding_why_people','philosophy','biology'],
   biology:              ['medical_science','science_experiments','chemistry','environment_sustainability'],
   chemistry:            ['science_experiments','cosmetic_beauty_science','cooking_chemistry','biology'],
-  coding_programming:   ['ai_machine_learning','esports_gaming','data_statistics','engineering_challenges'],
-  ai_machine_learning:  ['coding_programming','data_statistics','esports_gaming'],
+  coding_programming:   ['ai_machine_learning','roblox_game_design','data_statistics','engineering_challenges'],
+  ai_machine_learning:  ['coding_programming','data_statistics','roblox_game_design'],
+  roblox_game_design:   ['coding_programming','animation','esports_gaming','ai_machine_learning'],
   data_statistics:      ['coding_programming','business_startups','ai_machine_learning','economics'],
   philosophy:           ['psychology','writing_stories','advocacy_activism','understanding_why_people'],
   true_crime:           ['psychology','law_justice','understanding_why_people'],
+  puzzles_brain_teasers:['science_experiments','coding_programming','medical_science','data_statistics'],
   understanding_why_people:['psychology','philosophy','mental_health_wellness','writing_stories'],
   volunteering:         ['mental_health_wellness','working_with_little_kids','advocacy_activism','animal_care'],
-  animal_care:          ['biology','working_with_little_kids','environment_sustainability'],
+  animal_care:          ['biology','horseback_riding','working_with_little_kids','environment_sustainability'],
   mental_health_wellness:['psychology','working_with_little_kids','volunteering','teaching_tutoring'],
   working_with_little_kids:['teaching_tutoring','mental_health_wellness','how_body_moves','animal_care'],
   teaching_tutoring:    ['working_with_little_kids','psychology','writing_stories','learning_differences'],
   advocacy_activism:    ['volunteering','writing_stories','philosophy','mental_health_wellness'],
-  entrepreneurship:     ['business_startups','coding_programming','tiktok_content','data_statistics'],
+  entrepreneurship:     ['business_startups','coding_programming','filmmaking','data_statistics'],
   first_aid_emergencies:['medical_science','fitness_lifting','biology','how_body_moves'],
   cosmetic_beauty_science:['chemistry','nail_art','hair_makeup','cooking_chemistry'],
   cooking_chemistry:    ['cooking','baking','cosmetic_beauty_science','chemistry'],
@@ -442,26 +340,7 @@ const TILE_ADJACENCY = {
   engineering_challenges:['architecture','woodworking','three_d_printing','coding_programming'],
   architecture:         ['woodworking','engineering_challenges','drawing','environment_sustainability'],
   nutrition_food_science:['cooking','biology','fitness_lifting','medical_science'],
-  business_startups:    ['entrepreneurship','data_statistics','coding_programming'],
-
-  // ── NEW TILE ADJACENCIES ──────────────────────────────────────────────────
-  tiktok_content:       ['photography','writing_stories','music_production','graphic_design','entrepreneurship','attending_events_concerts'],
-  fashion_inspiration:  ['wardrobe_styling','nail_art','hair_makeup','graphic_design','cosmetic_beauty_science','fashion_design'],
-  wardrobe_styling:     ['fashion_inspiration','nail_art','hair_makeup','graphic_design','entrepreneurship'],
-  logic_puzzle_games:   ['data_statistics','psychology','coding_programming','philosophy','fantasy_sports','understanding_why_people'],
-  fantasy_sports:       ['data_statistics','football','baseball','basketball','soccer','esports_gaming','business_startups'],
-  reading_biographies:  ['writing_stories','psychology','philosophy','advocacy_activism','understanding_why_people','true_crime'],
-  attending_events_concerts: ['music_production','playing_instrument','singing','entrepreneurship','tiktok_content','advocacy_activism'],
-  football:             ['club_travel_sports','fitness_lifting','how_body_moves','first_aid_emergencies','fantasy_sports'],
-  baseball:             ['club_travel_sports','fitness_lifting','how_body_moves','fantasy_sports','data_statistics'],
-  basketball:           ['club_travel_sports','fitness_lifting','how_body_moves','fantasy_sports','esports_gaming'],
-  soccer:               ['club_travel_sports','fitness_lifting','how_body_moves','running_fitness_classes','nutrition_food_science'],
-  volleyball:           ['club_travel_sports','fitness_lifting','how_body_moves','cheerleading','dance'],
-  softball:             ['club_travel_sports','fitness_lifting','how_body_moves','baseball','first_aid_emergencies'],
-  pilates:              ['yoga','fitness_lifting','how_body_moves','dance','running_fitness_classes'],
-  running_fitness_classes: ['fitness_lifting','pilates','yoga','how_body_moves','nutrition_food_science'],
-  club_travel_sports:   ['fitness_lifting','how_body_moves','first_aid_emergencies','football','basketball','soccer','volleyball','softball','baseball'],
-  ebike_outdoor_adventure: ['rock_climbing','environment_sustainability','fitness_lifting','how_body_moves'],
+  business_startups:    ['entrepreneurship','data_statistics','coding_programming']
 };
 
 function surfaceRelatedTiles(selectedIds, alreadyShownIds) {
@@ -605,4 +484,4 @@ if (typeof module !== 'undefined') module.exports = {
   TILE_POOLS,
   TILE_ADJACENCY,
   ALWAYS_SHOW
-}; // v2.0
+};

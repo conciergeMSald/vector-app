@@ -522,6 +522,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   font-family:var(--sans);
 }
 .tile:hover{border-color:var(--tile-bdr-hover);color:var(--tile-txt-hover);}
+.tile.sel{background:var(--gold-pale);color:var(--ink);border-color:var(--gold);}
 
 /* Selected — full saturation snaps in per cluster. Student brings the color in. */
 .tile-make.sel  {background:var(--make-sel);  color:var(--make-sel-txt);  border-color:var(--make-sel);}
@@ -1612,11 +1613,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="q-sub" style="margin-bottom:1.25rem;">Pick the one that feels most true — not most impressive.</div>
 
     <div style="display:flex;flex-direction:column;gap:10px;" id="pull-options">
-      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryPull('PULL_NEW_PLACE',this)">Somewhere I've never been before, building something completely new</button>
-      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryPull('PULL_DESTINATION',this)">A city I've always been drawn to, finally living there on my own terms</button>
-      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryPull('PULL_RETURN',this)">Back somewhere familiar, but I'll have changed enough that it feels different</button>
-      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryPull('PULL_HOME',this)">Close to home — the people and places I love are part of who I want to become</button>
-      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryPull('PULL_UNKNOWN',this)">I honestly don't know yet — and that feels right for now</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;text-transform:none;" onclick="selectTrajectoryPull('PULL_NEW_PLACE',this)">Somewhere I've never been before, building something completely new</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;text-transform:none;" onclick="selectTrajectoryPull('PULL_DESTINATION',this)">A city I've always been drawn to, finally living there on my own terms</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;text-transform:none;" onclick="selectTrajectoryPull('PULL_RETURN',this)">Back somewhere familiar, but I'll have changed enough that it feels different</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;text-transform:none;" onclick="selectTrajectoryPull('PULL_HOME',this)">Close to home — the people and places I love are part of who I want to become</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;text-transform:none;" onclick="selectTrajectoryPull('PULL_UNKNOWN',this)">I honestly don't know yet — and that feels right for now</button>
     </div>
   </div>
 
@@ -1626,11 +1627,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="q-sub" style="margin-bottom:1.25rem;">Pick the one that feels most true.</div>
 
     <div style="display:flex;flex-direction:column;gap:10px;" id="anchor-options">
-      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryAnchor('ANCHOR_LAUNCH',this)">It made me who I am and I want to go further than it can take me</button>
-      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryAnchor('ANCHOR_HOME',this)">It's home — I'll always come back to it, even if I leave for a while</button>
-      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryAnchor('ANCHOR_OPPORTUNITY',this)">It's where my best opportunities actually are, and I know it</button>
-      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryAnchor('ANCHOR_COMPLICATED',this)">It's complicated — there's love there but also reasons to go</button>
-      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;" onclick="selectTrajectoryAnchor('ANCHOR_ESCAPE',this)">I'm ready to be somewhere that doesn't know my history</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;text-transform:none;" onclick="selectTrajectoryAnchor('ANCHOR_LAUNCH',this)">It made me who I am and I want to go further than it can take me</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;text-transform:none;" onclick="selectTrajectoryAnchor('ANCHOR_HOME',this)">It's home — I'll always come back to it, even if I leave for a while</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;text-transform:none;" onclick="selectTrajectoryAnchor('ANCHOR_OPPORTUNITY',this)">It's where my best opportunities actually are, and I know it</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;text-transform:none;" onclick="selectTrajectoryAnchor('ANCHOR_COMPLICATED',this)">It's complicated — there's love there but also reasons to go</button>
+      <button class="tile" style="text-align:left;padding:14px 18px;font-size:var(--type-body);line-height:1.5;width:100%;text-transform:none;" onclick="selectTrajectoryAnchor('ANCHOR_ESCAPE',this)">I'm ready to be somewhere that doesn't know my history</button>
     </div>
   </div>
 
