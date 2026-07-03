@@ -55111,6 +55111,2131 @@ name: "Prescott College",
 
   }
 }
+,
+
+"Towson University": {
+
+  institutionNarrative: {
+
+    name: "Towson University",
+
+    location: "Towson, Maryland",
+
+    region: "Mid-Atlantic",
+
+    archetype: "The Applied Public University — Healthcare, Business, Education, Technology, and the Baltimore-Washington Economy",
+
+    oneSentenceSummary: "Towson University combines affordable public education with strong professional preparation and exceptional access to the Baltimore–Washington corridor, producing graduates who enter healthcare, education, business, technology, government, cybersecurity, and nonprofit leadership.",
+
+    pipeline: "Approximately 22,000 students. Towson is nationally recognized for Nursing, Health Professions, Business Administration, Computer Information Systems, Psychology, Education, Occupational Therapy, Speech-Language Pathology, Mass Communication, Criminal Justice, and Exercise Science. Major employers include Johns Hopkins Health System, University of Maryland Medical System, Northrop Grumman, T. Rowe Price, Under Armour, Stanley Black & Decker, Morgan Stanley, Deloitte, EY, Amazon, Lockheed Martin, and numerous Maryland state agencies.",
+
+    hiddenPathway: "Towson's greatest strength is its location inside the Baltimore–Washington economic corridor, giving students access to internships and employers in healthcare, cybersecurity, government contracting, finance, education, and technology throughout the academic year.",
+
+    institutionalSecret: "While often viewed as a regional public university, Towson has quietly become one of Maryland's strongest workforce-development institutions, particularly in healthcare, education, occupational therapy, business, and applied technology.",
+
+    theRoom: "Students benefit from a traditional residential campus while remaining less than an hour from Baltimore, Washington, D.C., NIH, NSA, Johns Hopkins, major healthcare systems, Fortune 500 companies, and federal agencies.",
+
+    lifestyle: "Career-focused, collaborative, active, diverse, suburban, and professionally oriented with strong internship participation.",
+
+    bestFitPersonality: "Practical, ambitious, collaborative, community-oriented, and interested in building a professional career through experiential learning.",
+
+    faithTradition: "Public",
+
+    geographicInfluenceRadius: "Strong throughout Maryland, Washington D.C., Northern Virginia, and the Mid-Atlantic professional economy.",
+
+    economicOutcome: "Excellent value with particularly strong outcomes in healthcare, education, business, technology, government, and public service.",
+
+    gradCities: [
+      "Baltimore MD",
+      "Washington DC",
+      "Columbia MD",
+      "Arlington VA",
+      "Rockville MD",
+      "Philadelphia PA",
+      "New York NY"
+    ],
+
+    comparableInstitutions: [
+      "James Madison University",
+      "University of Delaware",
+      "George Mason University",
+      "University of Maryland Baltimore County",
+      "Montclair State University"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Community College of Baltimore County",
+        "Anne Arundel Community College",
+        "Howard Community College",
+        "Harford Community College"
+      ],
+
+      transferAcceptanceRate: "~75%",
+
+      freshmanAcceptanceRate: "~79%",
+
+      estimatedSavingsRange: "$20,000-$60,000",
+
+      transferNotes: "Towson maintains strong articulation agreements with Maryland community colleges and is one of the state's largest transfer destinations."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+
+    institutionalPersonality: "practical, collaborative, career-focused, accessible, community-oriented",
+
+    cultureKeywords: [
+      "Healthcare",
+      "Professional Preparation",
+      "Applied Learning",
+      "Leadership",
+      "Business",
+      "Education",
+      "Technology",
+      "Community Engagement",
+      "Internships"
+    ],
+
+    missionOrientation: "Preparing graduates for professional success, civic leadership, and meaningful careers through applied education and experiential learning.",
+
+
+    educationalPhilosophy: "Students develop professional skills through internships, clinical placements, research, field experiences, and faculty mentorship integrated with classroom instruction.",
+
+    competitiveness: "Moderately Selective",
+
+    politicalCulture: "Moderate to moderately progressive with strong emphasis on diversity, public service, workforce development, and civic engagement.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Highly respected throughout Maryland and the Mid-Atlantic, particularly among employers in healthcare, education, business, and government.",
+
+    socialClimate: "Friendly, inclusive, professionally ambitious, and commuter-residential hybrid.",
+
+    leadershipStyle: "Leadership through service, professionalism, applied learning, and community engagement."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "BosWash",
+
+    regionalRole: "A major workforce university supporting the Baltimore-Washington healthcare, government, cybersecurity, education, and business economy."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 28,
+    BosWash: 100,
+    TorBuffChester: 46,
+    TexasTriangle: 26,
+    CharLanta: 24,
+    NorCalInnovationCorridor: 36,
+    SoCalCreativeEconomy: 20
+
+  },
+
+  comparativePositioning: {
+
+    versusJamesMadison:
+      "James Madison offers a more residential college-town experience and stronger national alumni network, while Towson provides greater proximity to Baltimore-Washington employers throughout the academic year.",
+
+    versusGeorgeMason:
+      "George Mason has deeper federal government integration, while Towson has stronger healthcare, education, and Baltimore-area employer connections.",
+
+    versusUMBC:
+      "UMBC emphasizes research, engineering, and computer science, while Towson offers broader strengths across healthcare, business, education, communications, and applied professional programs.",
+
+    versusDelaware:
+      "The University of Delaware has broader national recognition, while Towson provides outstanding value and direct access to Maryland's healthcare and government economy."
+
+  },
+
+  institutionScale: {
+
+    enrollmentCategory: "Large",
+
+    undergraduateEnrollment: 18000,
+
+    graduateEnrollment: 4000,
+
+    totalEnrollment: 22000,
+
+    campusType: "Suburban Public University",
+
+    residentialIntensity: 62,
+
+    communityFeel: 78,
+
+    studentFacultyRatio: "16:1",
+
+    classSizeExperience: "Students experience a combination of medium-sized introductory courses, smaller upper-level professional classes, extensive internships, clinical education, and applied learning.",
+
+    scaleAdvantages: [
+      "Excellent employer access",
+      "Strong healthcare partnerships",
+      "Affordable tuition",
+      "Broad academic offerings",
+      "Large alumni network throughout Maryland"
+    ],
+
+    scaleDisadvantages: [
+      "Moderate commuter population",
+      "Less national prestige",
+      "Large introductory classes",
+      "Students benefit from proactively seeking internships"
+    ]
+
+  },
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 82,
+      conscientiousness: 84,
+      extraversion: 72,
+      agreeableness: 84,
+      neuroticism: 40
+    },
+
+    hollandCodes: ["S", "E", "C"],
+
+    learningStyle: [
+      "Experiential Learning",
+      "Clinical Education",
+      "Internship-Based Learning",
+      "Collaborative Projects",
+      "Applied Problem Solving"
+    ],
+
+    socialEnvironment: [
+      "Career-Focused",
+      "Collaborative",
+      "Inclusive",
+      "Professionally Oriented",
+      "Suburban Residential"
+    ],
+
+    idealStudentTraits: [
+      "Career-minded",
+      "Collaborative",
+      "Practical",
+      "Community-oriented",
+      "Self-motivated"
+    ],
+
+    thrivesIf: [
+      "Wants strong internship opportunities throughout college",
+      "Plans for healthcare, education, business, technology, or government",
+      "Values affordability and career outcomes",
+      "Enjoys a balanced academic and social environment",
+      "Wants access to Baltimore and Washington employers"
+    ],
+
+    strugglesIf: [
+      "Seeks a highly selective academic environment",
+      "Wants a traditional isolated college town",
+      "Needs extensive undergraduate research",
+      "Prefers a very small liberal arts college",
+      "Expects a nationally recognized sports culture"
+    ],
+
+    transferRiskFactors: [
+      "Students seeking greater national prestige",
+      "Students wanting a more residential campus culture",
+      "Students looking for stronger STEM research opportunities"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Occupational Therapy",
+      "Speech-Language Pathology",
+      "Health Care Management",
+      "Computer Information Systems",
+      "Mass Communication",
+      "Exercise Science",
+      "Geography & Environmental Planning",
+      "Supply Chain Management"
+    ],
+
+    hiddenCareerPipelines: [
+      "Healthcare Administration",
+      "Cybersecurity",
+      "Government Contracting",
+      "Sports Management",
+      "Physical Rehabilitation",
+      "Digital Marketing",
+      "Education Leadership",
+      "Financial Services"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Johns Hopkins Health System",
+      "T. Rowe Price",
+      "Under Armour",
+      "Stanley Black & Decker",
+      "Maryland State Government",
+      "Sinclair Broadcast Group",
+      "MedStar Health",
+      "LifeBridge Health"
+    ],
+
+    overlookedStrengths: [
+      "One of Maryland's strongest allied health programs",
+      "Outstanding teacher preparation",
+      "Strong occupational therapy reputation",
+      "Excellent value proposition",
+      "Large regional alumni network"
+    ],
+
+    sleeperIndustries: [
+      "Health Technology",
+      "Sports Analytics",
+      "Digital Health",
+      "Cybersecurity",
+      "Logistics",
+      "Behavioral Health"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 86,
+
+    mentorshipDensity: 84,
+
+    executiveAccess: 76,
+
+    internshipNetwork: 92,
+
+    familyBusinessExposure: 56,
+
+    relationshipCapitalScore: 86,
+
+    alumniLoyaltyScore: 88,
+
+    referralCultureStrength: 84,
+
+    donorNetworkStrength: 74,
+
+    boardMemberDensity: 70
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Healthcare",
+      "Government",
+      "Business",
+      "Technology",
+      "Education",
+      "Financial Services",
+      "Cybersecurity",
+      "Defense"
+    ],
+
+    regionalEconomicDrivers: [
+      "Healthcare",
+      "Federal Government",
+      "Cybersecurity",
+      "Biotechnology",
+      "Financial Services",
+      "Education",
+      "Defense Contracting"
+    ],
+
+    topEmployers: [
+      "Johns Hopkins Health System",
+      "University of Maryland Medical System",
+      "Northrop Grumman",
+      "T. Rowe Price",
+      "Morgan Stanley",
+      "Lockheed Martin",
+      "Amazon",
+      "Deloitte",
+      "EY",
+      "Under Armour"
+    ],
+
+    emergingIndustries: [
+      "Artificial Intelligence",
+      "Digital Health",
+      "Cybersecurity",
+      "Biotechnology",
+      "Health Analytics",
+      "Cloud Computing"
+    ],
+
+    startupDensity: "Moderate",
+
+    ventureCapitalAccess: 58,
+
+    corporateHeadquartersDensity: 84,
+
+    healthcareHubStrength: 98,
+
+    innovationIndex: 82
+
+  },
+
+  geographicInfluence: {
+
+    dominantMarket: "Baltimore–Washington Healthcare, Government, and Business Corridor",
+
+    secondaryMarkets: [
+      "Northern Virginia",
+      "Philadelphia PA",
+      "Richmond VA",
+      "New York NY",
+      "Charlotte NC"
+    ],
+
+    alumniStrongholds: [
+      "Baltimore MD",
+      "Columbia MD",
+      "Washington DC",
+      "Towson MD",
+      "Annapolis MD"
+    ],
+
+    relocationPatterns: [
+      "Many graduates remain in Maryland working in healthcare, education, government, and business.",
+      "Technology graduates often move into cybersecurity and defense contractors throughout the Washington metropolitan area.",
+      "Business graduates frequently enter finance, accounting, consulting, and corporate leadership across the Mid-Atlantic.",
+      "Education graduates are heavily represented throughout Maryland public school systems.",
+      "Healthcare graduates commonly remain within Johns Hopkins, MedStar, University of Maryland Medical System, and regional hospital networks."
+    ],
+
+    regionalInfluenceScore: 94,
+
+    nationalReachScore: 68,
+
+    internationalReachScore: 40
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 34,
+
+    studentOrganizationStrength: 90,
+
+    leadershipDevelopment: 90,
+
+    crossDisciplinaryInteraction: 86,
+
+    civicEngagement: 92
+
+  },
+
+  jewishLife: {
+
+    hillelPresence: true,
+
+    hillelStrength: 86,
+
+    hillelName: "Towson University Hillel",
+
+    participationLevel: "High",
+
+    jewishPopulationEstimate: "Approximately 700–1,000 Jewish undergraduate and graduate students.",
+
+    kosherDining: true,
+
+    kosherNotes: "Kosher dining options are available on campus through Hillel partnerships, with extensive kosher restaurants, markets, and synagogues throughout the Baltimore metropolitan area.",
+
+    shabbatExperience: "Weekly Shabbat dinners, holiday celebrations, social events, leadership opportunities, and community service programs create an active Jewish student community.",
+
+    israelProgramming: "Active Birthright Israel participation, Israel education, cultural programming, leadership fellowships, and engagement opportunities throughout the academic year.",
+
+    campusClimate: "Towson has one of the larger Jewish student communities among Maryland public universities. Hillel is highly visible and provides a welcoming environment with broad institutional support.",
+
+    nearbyJewishCommunity: "Students have access to one of the country's largest Jewish communities in Baltimore, including synagogues of every denomination, the Jewish Community Center of Greater Baltimore, numerous Jewish organizations, and extensive professional networking opportunities.",
+
+    denominationSupport: [
+      "Reform",
+      "Conservative",
+      "Orthodox",
+      "Chabad",
+      "Unaffiliated",
+      "Israeli"
+    ],
+
+    greekLifeConnections: "Strong participation from historically Jewish fraternities and sororities, with regular collaboration between Hillel and Greek organizations.",
+
+    careerNetworking: "Excellent regional networking in healthcare, finance, government, education, law, technology, real estate, and entrepreneurship through Baltimore and Washington Jewish professional communities.",
+
+    overallAssessment: "One of the stronger Jewish experiences among Mid-Atlantic public universities, combining an active Hillel, a sizable Jewish student population, and outstanding access to Baltimore's historic Jewish community."
+
+  },
+    industryPathways: {
+
+    aestheticsAndBeauty: {
+      strength: 42,
+      notes: "Moderate opportunities through consumer marketing, retail management, wellness brands, and regional consumer products companies."
+    },
+
+    healthWellness: {
+      strength: 98,
+    },
+
+    nutraceuticals: {
+      strength: 44,
+    },
+
+    consumerProducts: {
+      strength: 76,
+    },
+
+    outdoorIndustry: {
+      strength: 34,
+    },
+
+    sportsBusiness: {
+      strength: 82,
+    },
+
+    entertainmentMedia: {
+      strength: 80,
+    },
+
+    ventureCapital: {
+      strength: 48,
+    },
+
+    privateEquity: {
+      strength: 42,
+    },
+
+    investmentBanking: {
+      strength: 58,
+    },
+
+    consulting: {
+      strength: 82,
+    },
+
+    medicine: {
+      strength: 88,
+    },
+
+    healthcareAdministration: {
+      strength: 96,
+    },
+
+    defense: {
+      strength: 84,
+    },
+
+    realEstate: {
+      strength: 64,
+    },
+
+    luxuryBrands: {
+      strength: 42,
+    },
+
+    entrepreneurship: {
+      strength: 72,
+    },
+
+    technology: {
+      strength: 82,
+    },
+
+    publicPolicy: {
+      strength: 84,
+    },
+
+    nonprofitLeadership: {
+      strength: 88,
+    }
+
+  },
+
+  wealthMobility: {
+
+    averageFamilyIncome: "",
+
+    socialMobilityIndex: 88,
+
+    firstGenerationSupport: 90,
+
+    wealthCreationPotential: 82,
+
+    familyBusinessPipelineStrength: 60
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 92,
+
+    automationResistance: 90,
+
+    adaptabilityScore: 92,
+
+    interdisciplinaryStrength: 90,
+
+    futureReadiness: 92,
+
+    entrepreneurialFlexibility: 84,
+
+    lifelongLearningCulture: 90,
+
+    innovationCapacity: 86
+
+  },
+
+  lifeDesignOutcomes: {
+
+    wealthCreationPotential: 82,
+
+    communityLeadershipPotential: 90,
+
+    geographicMobility: 72,
+
+    workLifeBalancePotential: 92,
+
+    purposeAlignment: 90,
+
+    familyFormationSupport: 94,
+
+    personalDevelopmentPotential: 90,
+
+    careerOptionality: 88,
+
+    longTermLifeSatisfaction: 90
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 68,
+
+    networkMoat: 82,
+
+    geographicMoat: 94,
+
+    industryMoat: 88,
+
+    alumniMoat: 84,
+
+    brandDurability: 86,
+
+    overallMoatScore: 84
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "RETURNER",
+
+    leaverScore: 58,
+
+    returnerScore: 94,
+
+    stewardScore: 84,
+
+    navigatorScore: 72,
+
+    geographicLockIn: "high",
+
+    alumniDispersalPattern: "regional"
+
+  }
+
+},
+
+"University of Maryland": {
+
+  institutionNarrative: {
+
+    name: "University of Maryland",
+
+    location: "College Park, Maryland",
+
+    region: "Mid-Atlantic",
+
+    archetype: "The Public Powerhouse at the Intersection of Government, Technology, and Business",
+
+    oneSentenceSummary: "The University of Maryland is the flagship public research university of the DC-Baltimore corridor — a top-20 public with deep federal government, defense, cybersecurity, and business pipelines that turns geographic proximity into career advantage few universities anywhere can replicate.",
+
+    pipeline: "Acceptance rate approximately 44% overall, significantly more selective for out-of-state. #17 among public universities nationally (US News 2025). Robert H. Smith School of Business is consistently top-25 nationally in finance and supply chain. A. James Clark School of Engineering ranks top-20 nationally in aerospace, mechanical, and electrical engineering. Department of Computer Science is top-15 nationally. Home to 41,000+ students across 12 schools. Over 400,000 living alumni. Maryland students have direct access to more federal agencies, defense contractors, national labs, and government consulting firms than virtually any other university in America — the NSA, NASA Goddard, NIH, USDA, and FDA are all within 30 miles of campus.",
+
+    hiddenPathway: "Maryland's most undersurfaced advantage is its cybersecurity pipeline. The Maryland Cybersecurity Center (MC2) is one of the largest university-affiliated cybersecurity research programs in the country, directly connected to NSA, CISA, and Department of Defense contractors. Students in computer science, engineering, and even business with a cybersecurity focus enter a recruiting ecosystem that does not exist at peer public universities not located in the DC corridor. The College of Information Studies (iSchool) — one of the oldest and most respected information science programs in America — produces data professionals, UX researchers, and information architects recruited heavily by federal agencies and major technology firms. The Hinman CEOs entrepreneurship program is a living-learning community for founders embedded directly in the residence halls — one of the most hands-on entrepreneurship programs at any large public university.",
+
+    institutionalSecret: "Maryland's honors programs are the school within the school. Gemstone, Scholars, and the University Honors program collectively enroll thousands of students in cohort-based learning communities that deliver a small-college experience inside a 40,000-student institution. Students in these programs get priority registration, dedicated faculty, and peer cohorts that rival the culture of elite private universities — at in-state tuition.",
+
+    theRoom: "Located in College Park, an 8-mile drive from Washington DC and 30 miles from Baltimore. The campus sits between two of the most economically significant metros in America, with direct Metro access via the Green Line to downtown DC. The federal government presence is not abstract — internships at federal agencies are a standard part of the Maryland undergraduate experience across engineering, public policy, business, and computer science. The student body is diverse, ambitious, and geographically concentrated in the Mid-Atlantic corridor with significant DC-area family connection.",
+
+    lifestyle: "A large residential campus with 90+ years of Big Ten athletic culture — Maryland joined the Big Ten in 2014, upgrading its athletic profile and conference recruiting. Greek life is present but not dominant. The campus is active and social but the DC proximity means a significant portion of the student body is oriented toward professional development, networking, and internship activity from the first year forward.",
+
+    bestFitPersonality: "Motivated self-starters comfortable in large institutions, government or defense-adjacent career interest, technology and engineering orientation, business and finance with DC or federal positioning, entrepreneurship-minded, public policy and international affairs",
+
+    faithTradition: "Secular public institution",
+
+    geographicInfluenceRadius: "DC-Baltimore Corridor dominant, national reach in technology and cybersecurity, federal government sector nationally",
+
+    economicOutcome: "Strong outcomes in federal government contracting, defense and cybersecurity, technology and data science, consulting (Deloitte, Booz Allen, McKinsey DC offices), finance (DC and Baltimore corridor), and Big Tech (Amazon, Google, Microsoft all recruit heavily from Maryland engineering and CS)",
+
+    gradCities: ["Washington DC", "Baltimore", "New York", "San Francisco", "Bethesda", "Tysons", "Annapolis"],
+
+    comparableInstitutions: ["University of Virginia", "Penn State University", "University of Michigan", "Purdue University"],
+
+    ccTransferPathway: {
+      hasCCPathway: true,
+      ccFeederNames: ["Montgomery College", "Prince George's Community College", "Howard Community College", "Anne Arundel Community College"],
+      transferAcceptanceRate: "~52% transfer acceptance rate",
+      freshmanAcceptanceRate: "~44%",
+      estimatedSavingsRange: "$40,000-$60,000 for two-year CC pathway (in-state)",
+      transferNotes: "Maryland has formal transfer agreements with all Maryland community colleges. Business, engineering, and CS transfer pathways are well-structured. Prince George's CC and Montgomery College send the largest transfer cohorts annually."
+    }
+  },
+
+  institutionIdentity: {
+
+
+
+
+    universitySize: "Large",
+
+    institutionType: "Public Flagship Research University",
+
+
+    institutionalPersonality: "Ambitious, pragmatic, government-adjacent, professionally driven with strong institutional pride",
+
+    cultureKeywords: [
+      "Terp pride",
+      "Big Ten",
+      "federal government pipeline",
+      "cybersecurity",
+      "engineering excellence",
+      "DC corridor",
+      "entrepreneurship",
+      "public research"
+    ],
+
+    missionOrientation: "Public research, government workforce development, technology leadership, regional economic engine",
+
+
+    educationalPhilosophy: "Research-intensive flagship with honors pathways delivering small-college experience inside a large institution, strong co-op and internship integration",
+
+    competitiveness: "High",
+
+    politicalCulture: "Moderate to center-left; DC-area civic orientation",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Strong regional prestige, rising national profile especially in CS and cybersecurity",
+
+    socialClimate: "Active, diverse, Big Ten athletic culture, professionally oriented",
+
+    leadershipStyle: "Self-directed, institutional, government and corporate",
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 74,
+      conscientiousness: 80,
+      extraversion: 68,
+      agreeableness: 65,
+      neuroticism: 38
+    },
+
+    hollandCodes: ["ICE", "ESC"],
+
+    learningStyle: [
+      "applied and research-integrated",
+      "large lecture plus lab and seminar",
+      "internship and co-op embedded",
+      "self-directed within large systems"
+    ],
+
+    socialEnvironment: [
+      "Big Ten athletic culture",
+      "diverse and regionally connected",
+      "professionally oriented from year one",
+      "Greek life present but not dominant"
+    ],
+
+    idealStudentTraits: [
+      "comfortable in large institutions",
+      "government or tech career orientation",
+      "entrepreneurially curious",
+      "self-motivated",
+      "DC-adjacent ambition"
+    ],
+
+    thrivesIf: [
+      "wants proximity to federal government and defense sector",
+      "values engineering and CS pipeline strength",
+      "comfortable finding their own path in a large system",
+      "wants Big Ten culture with a serious academic mission",
+      "interested in cybersecurity, public policy, or business consulting"
+    ],
+
+    strugglesIf: [
+      "needs intimate small-college culture",
+      "wants constant faculty accessibility without seeking it out",
+      "not self-directed in a large campus environment",
+      "expects social life to center on greek life exclusively"
+    ]
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Information Science (iSchool)",
+      "Fire Protection Engineering (one of only ~5 programs in the US)",
+      "Geographical Sciences",
+      "Logistics, Business, and Public Policy",
+      "Hearing and Speech Sciences",
+      "Survey Methodology"
+    ],
+
+    hiddenCareerPipelines: [
+      "NSA and intelligence community (top feeder)",
+      "NASA Goddard direct research pipeline",
+      "NIH research pathway",
+      "Federal consulting (Booz Allen, Deloitte Federal, Leidos)",
+      "Cybersecurity venture ecosystem (DC corridor)",
+      "FDA and USDA regulatory careers"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Security clearance-eligible graduating cohort",
+      "iSchool to Big Tech pipeline",
+      "Smith School finance recruiting to DC and NY",
+      "Hinman CEOs startup ecosystem",
+      "Big Ten athletic recruiting networks",
+      "Federal government internship density unmatched nationally"
+    ],
+
+    overlookedStrengths: [
+      "Gemstone honors program — four-year team research project, unlike anything at peer publics",
+      "Maryland Institute for Technology in the Humanities (MITH)",
+      "Quantum computing research at Joint Quantum Institute (UMD-NIST partnership)",
+      "One of the largest journalism programs on the East Coast"
+    ]
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 80,
+    mentorshipDensity: 78,
+    executiveAccess: 82,
+    internshipNetwork: 92,
+    familyBusinessExposure: 68,
+    relationshipCapitalScore: 81,
+    alumniLoyaltyScore: 84,
+    referralCultureStrength: 78,
+    donorNetworkStrength: 80,
+    boardMemberDensity: 74,
+
+    sectorDominance: [
+      "Federal Government and Defense",
+      "Cybersecurity",
+      "Technology and Data Science",
+      "Federal Consulting",
+      "Engineering and Aerospace",
+      "Finance (DC and Baltimore)"
+    ],
+
+    eliteNetworkAccess: "Strong in DC federal corridor, Big Tech, and defense contracting; moderate in Wall Street finance and elite private sector compared to flagship peers"
+  },
+
+  economicEcosystem: {
+
+    medianStartingSalary: 68000,
+    medianMidCareerSalary: 118000,
+    roi10Year: "Strong — particularly for CS, engineering, and business graduates in the DC corridor",
+    debtToIncomeRatio: "Favorable for in-state students; moderate for out-of-state",
+    percentReceivingAid: 72,
+    averageAidPackage: 14000,
+
+    topEmployers: [
+      "Booz Allen Hamilton",
+      "Deloitte",
+      "Amazon",
+      "Google",
+      "Leidos",
+      "MITRE",
+      "Lockheed Martin",
+      "Northrop Grumman",
+      "Capital One",
+      "Under Armour",
+      "T. Rowe Price",
+      "Marriott International"
+    ],
+
+    industryConcentration: {
+      technology: 88,
+      government: 92,
+      defense: 85,
+      consulting: 82,
+      finance: 70,
+      healthcare: 62,
+      media: 48
+    }
+  },
+
+  geographicInfluence: {
+
+    primaryMetro: "Washington DC / Baltimore Corridor",
+    secondaryMetros: ["New York", "San Francisco Bay Area", "Philadelphia"],
+    regionalDominance: "Dominant in DC-Baltimore federal and tech sector",
+    nationalReach: "Strong in cybersecurity, CS, and engineering nationally",
+    internationalPresence: "Moderate — government and research partnerships globally",
+
+    megaRegionIntegration: {
+      dcBaltimore: 96,
+      newYork: 62,
+      bayArea: 58,
+      boston: 42,
+      chicago: 38
+    }
+  },
+
+  socialCapital: {
+
+    campusEnergyScore: 80,
+    diversityIndex: 88,
+    greekLifePresence: "Present — approximately 18% participation",
+    athleticsCulture: "Strong — Big Ten football and basketball central to campus identity",
+    communityEngagement: 76,
+    politicalActivism: 68,
+    artsCulturePresence: 62,
+
+    studentOrgs: "900+ registered student organizations",
+    notablePrograms: [
+      "Gemstone Honors Program",
+      "Scholars living-learning communities",
+      "Hinman CEOs entrepreneurship program",
+      "Maryland Student Government Association"
+    ]
+  },
+
+  industryPathways: {
+
+    primaryPipelines: [
+      {
+        industry: "Federal Government and Defense",
+        strength: 96,
+        notes: "NSA, CIA, DIA, CISA, NASA, NIH, FDA — among the top 3 university feeders to intelligence and defense nationally"
+      },
+      {
+        strength: 93,
+      },
+      {
+        strength: 88,
+      },
+      {
+        strength: 86,
+      },
+      {
+        strength: 85,
+      },
+      {
+        strength: 72,
+      }
+    ],
+
+    signaturePrograms: [
+      "Robert H. Smith School of Business — Finance, Supply Chain, Marketing",
+      "A. James Clark School of Engineering — Aerospace, Mechanical, Electrical, Fire Protection",
+      "Department of Computer Science — top-15 nationally",
+      "College of Information Studies (iSchool)",
+      "School of Public Policy",
+      "Philip Merrill College of Journalism"
+    ]
+  },
+
+  wealthMobility: {
+
+    firstGenFriendliness: 76,
+    pellGrantRecipients: 22,
+    incomeMobilityScore: 78,
+    meritScholarshipAvailability: "Strong — Banneker/Key Scholarship is full-ride competitive award",
+    needBasedGenerosity: "Moderate — strongest for Maryland residents",
+
+    accessPathways: [
+      "Banneker/Key full-tuition merit scholarship",
+      "Maryland CC transfer pathway (strong formal agreements)",
+      "College Park Scholars living-learning communities open to all admits",
+      "First-Year Innovation and Research Experience (FIRE) open enrollment"
+    ]
+  },
+
+  lifeDesignOutcomes: {
+
+    typicalCareerTrajectory: "Engineering or CS undergraduate → federal agency internship or defense contractor → career in government tech, cybersecurity, or federal consulting; OR Smith School → Big Four or federal consulting → DC corridor finance or strategy",
+
+    lifestyleArchetype: "The DC Professional — career-driven, government-adjacent, owns a home in suburban Maryland or Northern Virginia within 10 years, strong alumni loyalty, Terp identity persists into professional life",
+
+    twentyYearOutlook: "Strong — DC corridor economy is recession-resistant; cybersecurity and federal technology spending are structural growth sectors; Maryland alumni networks in government contracting are among the most durable in the country",
+
+    workLifeBalance: "Moderate to high — DC corridor lifestyle is professional but more balanced than NYC or SF; federal employment culture emphasizes stability",
+
+    personalFulfillmentIndex: 74
+  },
+
+  futureResilience: {
+
+    aiDisruptionRisk: "Low to moderate — cybersecurity, government, and engineering roles are AI-augmented not AI-replaced in near term",
+    industryDiversification: 78,
+    adaptabilityScore: 80,
+    emergingStrengths: [
+      "Quantum computing (Joint Quantum Institute)",
+      "AI policy and governance",
+      "Climate and environmental engineering",
+      "Biotechnology (proximity to NIH and FDA)"
+    ]
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 72,
+    networkMoat: 82,
+    geographicMoat: 96,
+    industryMoat: 90,
+    alumniMoat: 80,
+    brandDurability: 78,
+    overallMoatScore: 83
+  }
+
+},
+
+"Ohio State University": {
+
+  institutionNarrative: {
+
+    name: "The Ohio State University",
+
+    location: "Columbus, Ohio",
+
+    region: "Midwest",
+
+    archetype: "The National Flagship — Scale, Research, Big-Time Athletics, and Limitless Opportunity",
+
+    oneSentenceSummary: "The Ohio State University is one of America's largest and most influential public research universities, combining elite research, Big Ten athletics, nationally respected engineering, business, medicine, agriculture, logistics, and public service with one of the country's largest alumni networks and a rapidly growing innovation economy centered in Columbus.",
+
+    pipeline: "Approximately 67,000 students attend Ohio State's Columbus campus. The university is nationally recognized for Business (Fisher), Engineering, Computer Science, Supply Chain & Logistics, Finance, Accounting, Agriculture, Political Science, Journalism, Data Analytics, Nursing, Medicine, Veterinary Medicine, and Education. Major recruiters include Nationwide, JPMorgan Chase, Cardinal Health, Abbott, Deloitte, EY, KPMG, Intel, Honda, Amazon, Google, Microsoft, Accenture, Procter & Gamble, Battelle Memorial Institute, CoverMyMeds, and hundreds of Fortune 500 companies operating throughout the Midwest.",
+
+    hiddenPathway: "Ohio State's greatest hidden advantage is its enormous alumni density. Nearly every major American corporation employs Buckeyes, creating one of the strongest referral and mentorship ecosystems outside the Ivy League. The university's scale means virtually every career path already has an established alumni network.",
+
+    institutionalSecret: "While outsiders often associate Ohio State primarily with football, the university has quietly become one of America's most complete research institutions. Columbus' rapid emergence as a technology, logistics, fintech, semiconductor, and healthcare hub has dramatically increased Ohio State's economic influence over the past decade.",
+
+    theRoom: "Located in Columbus, one of America's fastest-growing metropolitan economies, Ohio State sits at the center of a rapidly expanding ecosystem that includes Intel's semiconductor investment, Nationwide Insurance, JPMorgan Chase's largest corporate campus outside New York, Battelle, Honda, Amazon, healthcare systems, advanced manufacturing, logistics, and a growing venture capital community.",
+
+    lifestyle: "School spirit defines campus life. Students balance rigorous academics with Big Ten athletics, research, internships, student organizations, Greek life, entrepreneurship, service, and one of the nation's largest campus communities.",
+
+    bestFitPersonality: "Ambitious, socially engaged, adaptable, collaborative, and excited by a large university offering virtually unlimited academic, athletic, and extracurricular opportunities.",
+
+    faithTradition: "Public",
+
+    geographicInfluenceRadius: "National, with particularly strong influence throughout Ohio, the Midwest, Washington DC, Texas, Florida, North Carolina, and rapidly growing Sun Belt markets.",
+
+    economicOutcome: "Excellent outcomes across business, engineering, healthcare, consulting, logistics, government, technology, manufacturing, and entrepreneurship.",
+
+    gradCities: [
+      "Columbus OH",
+      "Chicago IL",
+      "Cincinnati OH",
+      "Cleveland OH",
+      "New York NY",
+      "Charlotte NC",
+      "Dallas TX"
+    ],
+
+    comparableInstitutions: [
+      "University of Michigan",
+      "Penn State University",
+      "University of Wisconsin",
+      "Purdue University",
+      "Michigan State University"
+    ],
+
+    ccTransferPathway: {
+
+      hasCCPathway: true,
+
+      ccFeederNames: [
+        "Columbus State Community College",
+        "Cuyahoga Community College",
+        "Sinclair Community College",
+        "Lorain County Community College"
+      ],
+
+      transferAcceptanceRate: "~84%",
+
+      freshmanAcceptanceRate: "~53%",
+
+      estimatedSavingsRange: "$20,000-$60,000",
+
+      transferNotes: "Ohio State maintains one of the nation's strongest transfer pathways through Ohio's community college system. Students transferring with strong academic performance have excellent opportunities across nearly every major."
+
+    }
+
+  },
+
+  institutionIdentity: {
+
+
+    institutionalPersonality: "ambitious, spirited, collaborative, practical, innovative",
+
+    cultureKeywords: [
+      "Research",
+      "Leadership",
+      "Athletics",
+      "Innovation",
+      "Healthcare",
+      "Business",
+      "Engineering",
+      "Public Service",
+      "Community"
+    ],
+
+    missionOrientation: "Advancing education, research, innovation, and public service while serving Ohio and the nation.",
+
+
+    educationalPhilosophy: "Students develop through research, experiential learning, leadership, internships, interdisciplinary collaboration, and one of America's largest educational ecosystems.",
+
+    competitiveness: "Selective",
+
+    politicalCulture: "Politically diverse, reflecting both Ohio and a large national student body.",
+
+    studentAutonomy: "High",
+
+    prestigeOrientation: "Highly respected flagship public university with exceptional national brand recognition.",
+
+    socialClimate: "Energetic, spirited, collaborative, diverse, and opportunity-rich.",
+
+    leadershipStyle: "Leadership through scale, service, innovation, teamwork, and institutional excellence."
+
+  },
+
+  megaRegionIntegration: {
+
+    primaryMegaRegion: "MidContinentIndustrialEnergyCorridor",
+
+    regionalRole: "The largest talent engine driving Ohio's corporate, healthcare, logistics, manufacturing, and technology economy."
+
+  },
+
+  megaRegionExposure: {
+
+    MidContinentIndustrialEnergyCorridor: 100,
+    BosWash: 54,
+    TorBuffChester: 70,
+    TexasTriangle: 56,
+    CharLanta: 44,
+    NorCalInnovationCorridor: 42,
+    SoCalCreativeEconomy: 30
+
+  },
+
+  comparativePositioning: {
+
+    versusMichigan:
+      "Michigan offers greater overall academic prestige and stronger global research reputation, while Ohio State provides larger scale, broader alumni reach, stronger school spirit, and comparable opportunities across many professional disciplines.",
+
+    versusPennState:
+      "Both are massive Big Ten flagships, but Ohio State benefits from Columbus' rapidly growing economy and stronger healthcare, business, and technology integration.",
+
+    versusPurdue:
+      "Purdue specializes more heavily in engineering and STEM, while Ohio State provides substantially broader academic offerings and stronger healthcare, business, and public policy pathways.",
+
+    versusWisconsin:
+      "Wisconsin emphasizes research and traditional academics, while Ohio State offers greater enrollment scale, alumni reach, athletics, and corporate connectivity."
+
+  },
+
+  institutionScale: {
+
+    enrollmentCategory: "Very Large",
+
+    undergraduateEnrollment: 53000,
+
+    graduateEnrollment: 14000,
+
+    totalEnrollment: 67000,
+
+    campusType: "Urban Public Research University",
+
+    residentialIntensity: 72,
+
+    communityFeel: 82,
+
+    studentFacultyRatio: "17:1",
+
+    classSizeExperience: "Large introductory lectures transition into significantly smaller upper-level courses with extensive access to research labs, faculty mentorship, honors programs, and internships.",
+
+    scaleAdvantages: [
+      "Massive alumni network",
+      "Virtually every academic major available",
+      "Exceptional research funding",
+      "Outstanding employer relationships",
+      "Extensive leadership opportunities"
+    ],
+
+    scaleDisadvantages: [
+      "Large introductory classes",
+      "Students must proactively seek mentorship",
+      "Highly competitive programs in business and engineering",
+      "Can initially feel overwhelming"
+    ]
+
+  },
+
+  studentFit: {
+
+    bigFiveProfile: {
+      openness: 84,
+      conscientiousness: 86,
+      extraversion: 82,
+      agreeableness: 76,
+      neuroticism: 42
+    },
+
+    hollandCodes: ["E","S","C"],
+
+    learningStyle: [
+      "Experiential Learning",
+      "Research",
+      "Professional Development",
+      "Collaborative Learning",
+      "Leadership"
+    ],
+
+    socialEnvironment: [
+      "School Spirit",
+      "Collaborative",
+      "Highly Social",
+      "Research Focused",
+      "Professionally Oriented"
+    ],
+
+    idealStudentTraits: [
+      "Adaptable",
+      "Leadership-oriented",
+      "Community-minded",
+      "Career-focused",
+      "Comfortable in large environments"
+    ],
+
+    thrivesIf: [
+      "Enjoys large campus life",
+      "Values Big Ten traditions",
+      "Wants strong alumni connections",
+      "Plans for business, engineering, healthcare, or government",
+      "Likes having abundant academic options"
+    ],
+
+    strugglesIf: [
+      "Needs intimate campus environments",
+      "Requires extensive individual advising",
+      "Prefers very small discussion-based classes",
+      "Dislikes large institutions"
+    ],
+
+    transferRiskFactors: [
+      "Feeling anonymous on a large campus",
+      "Not engaging in student organizations",
+      "Difficulty navigating numerous opportunities"
+    ]
+
+  },
+
+  hiddenOpportunities: {
+
+    underratedMajors: [
+      "Supply Chain Management",
+      "Actuarial Science",
+      "Aviation",
+      "Food Science",
+      "Industrial Systems Engineering",
+      "Data Analytics",
+      "Public Affairs"
+    ],
+
+    hiddenCareerPipelines: [
+      "Semiconductor Manufacturing",
+      "Insurance Leadership",
+      "Logistics",
+      "Healthcare Administration",
+      "Defense Research",
+      "Sports Business",
+      "Advanced Manufacturing"
+    ],
+
+    nicheRecruitingAdvantages: [
+      "Nationwide",
+      "Battelle",
+      "Intel",
+      "Cardinal Health",
+      "Honda",
+      "JPMorgan Chase Columbus",
+      "CoverMyMeds",
+      "Abercrombie & Fitch"
+    ],
+
+    overlookedStrengths: [
+      "One of America's largest alumni networks",
+      "Strong honors college",
+      "Extensive undergraduate research",
+      "Exceptional athletics network",
+      "Growing Columbus startup ecosystem"
+    ],
+
+    sleeperIndustries: [
+      "Semiconductors",
+      "Health Technology",
+      "Logistics Technology",
+      "Insurance Technology",
+      "Sports Analytics",
+      "Defense Manufacturing"
+    ]
+
+  },
+
+  networkCapital: {
+
+    alumniAccessibility: 100,
+
+    mentorshipDensity: 94,
+
+    executiveAccess: 88,
+
+    internshipNetwork: 94,
+
+    familyBusinessExposure: 68,
+
+    relationshipCapitalScore: 96,
+
+    alumniLoyaltyScore: 100,
+
+    referralCultureStrength: 98,
+
+    donorNetworkStrength: 94,
+
+    boardMemberDensity: 88
+
+  },
+
+  economicEcosystem: {
+
+    primaryIndustries: [
+      "Healthcare",
+      "Finance",
+      "Insurance",
+      "Technology",
+      "Manufacturing",
+      "Logistics",
+      "Government",
+      "Education"
+    ],
+
+    regionalEconomicDrivers: [
+      "Semiconductors",
+      "Healthcare",
+      "Insurance",
+      "Advanced Manufacturing",
+      "Logistics",
+      "Financial Services",
+      "Research"
+    ],
+
+    topEmployers: [
+      "Nationwide",
+      "JPMorgan Chase",
+      "Intel",
+      "Honda",
+      "Battelle",
+      "Cardinal Health",
+      "Amazon",
+      "Google",
+      "Abbott",
+      "Deloitte"
+    ],
+
+    emergingIndustries: [
+      "Semiconductors",
+      "Artificial Intelligence",
+      "Healthcare Technology",
+      "Advanced Logistics",
+      "Clean Manufacturing",
+      "Defense Technology"
+    ],
+
+    startupDensity: "High",
+
+    ventureCapitalAccess: 72,
+
+    corporateHeadquartersDensity: 90,
+
+    healthcareHubStrength: 96,
+
+    innovationIndex: 90
+
+  },
+
+  geographicInfluence: {
+
+    dominantMarket: "Ohio, Midwest corporate leadership, healthcare, and advanced manufacturing",
+
+    secondaryMarkets: [
+      "Chicago IL",
+      "New York NY",
+      "Charlotte NC",
+      "Dallas TX",
+      "Washington DC"
+    ],
+
+    alumniStrongholds: [
+      "Columbus OH",
+      "Cleveland OH",
+      "Cincinnati OH",
+      "Chicago IL",
+      "Charlotte NC"
+    ],
+
+    relocationPatterns: [
+      "A significant share of graduates remain in Columbus, supporting one of the fastest-growing metropolitan economies in the United States.",
+      "Chicago attracts graduates into consulting, finance, and corporate leadership.",
+      "The Southeast, especially Charlotte, Atlanta, and Nashville, has become an increasingly important destination.",
+      "Texas continues to attract graduates into technology, manufacturing, and energy.",
+      "Washington DC draws graduates into government, defense, and public affairs."
+    ],
+
+    regionalInfluenceScore: 98,
+
+    nationalReachScore: 90,
+
+    internationalReachScore: 70
+
+  },
+
+  socialCapital: {
+
+    greekLifeInfluence: 26,
+
+    studentOrganizationStrength: 100,
+
+    leadershipDevelopment: 96,
+
+    crossDisciplinaryInteraction: 94,
+
+    civicEngagement: 90
+
+  },
+
+  industryPathways: {
+
+    healthcare: {
+      strength: 96,
+      notes: "Ohio State Wexner Medical Center and nationwide healthcare partnerships create exceptional opportunities."
+    },
+
+    supplyChain: {
+      strength: 98,
+    },
+
+    engineering: {
+      strength: 92,
+    },
+
+    business: {
+      strength: 92,
+    },
+
+    technology: {
+      strength: 88,
+    },
+
+    sportsBusiness: {
+      strength: 98,
+    },
+
+    agriculture: {
+      strength: 96,
+    },
+
+    publicPolicy: {
+      strength: 86,
+    }
+
+  },
+
+  wealthMobility: {
+
+    socialMobilityIndex: 88,
+
+    firstGenerationSupport: 94,
+
+    wealthCreationPotential: 90,
+
+    familyBusinessPipelineStrength: 74
+
+  },
+
+  futureResilience: {
+
+    aiResistance: 90,
+
+    automationResistance: 90,
+
+    adaptabilityScore: 94,
+
+    interdisciplinaryStrength: 94,
+
+    futureReadiness: 92,
+
+    entrepreneurialFlexibility: 88,
+
+    lifelongLearningCulture: 94,
+
+    innovationCapacity: 90
+
+  },
+
+  lifeDesignOutcomes: {
+
+    wealthCreationPotential: 90,
+
+    communityLeadershipPotential: 96,
+
+    geographicMobility: 90,
+
+    workLifeBalancePotential: 86,
+
+    purposeAlignment: 92,
+
+    familyFormationSupport: 90,
+
+    personalDevelopmentPotential: 96,
+
+    careerOptionality: 98,
+
+    longTermLifeSatisfaction: 94
+
+  },
+
+  institutionalMoat: {
+
+    prestigeMoat: 88,
+
+    networkMoat: 100,
+
+    geographicMoat: 94,
+
+    industryMoat: 90,
+
+    alumniMoat: 100,
+
+    brandDurability: 98,
+
+    overallMoatScore: 94
+
+  },
+
+  trajectoryProfile: {
+
+    dominantTrajectory: "NATIONAL CONNECTOR",
+
+    leaverScore: 82,
+
+    returnerScore: 92,
+
+    stewardScore: 96,
+
+    navigatorScore: 90,
+
+    geographicLockIn: "medium",
+
+    alumniDispersalPattern: "national with exceptionally high Midwest concentration"
+
+  }
+
+}
+,
+
+"George Mason University": {
+
+  institutionNarrative: {
+
+    name: "George Mason University",
+
+    location: "Fairfax, Virginia",
+
+    region: "Mid-Atlantic",
+
+    archetype: "The DC-Proximity Public Career Launchpad",
+
+    oneSentenceSummary: "George Mason University is Virginia's largest public research university, positioned 20 minutes from downtown Washington DC, built for students who want a direct, low-cost pipeline into federal government, government contracting, cybersecurity, and the broader DC policy and business ecosystem.",
+
+    pipeline: "Approximately 27,750 undergraduates. Nationally recognized for Government and International Affairs (Schar School), Cybersecurity, Computer Science, Business, Economics, Nursing, Conflict Analysis and Resolution (one of the founding programs in the field nationally), and Criminology. George Mason's location in Fairfax County places it inside the densest concentration of federal contractors, defense technology firms, and intelligence-adjacent employers in America - Booz Allen Hamilton, Northrop Grumman, Leidos, the CIA, and dozens of federal agencies recruit directly from campus.",
+
+    hiddenPathway: "Mason's single greatest hidden asset is geographic: Fairfax County and the broader Northern Virginia corridor is the physical center of the U.S. federal contracting and cybersecurity industry. Students do not need to relocate after graduation to access this pipeline - the internships, security-clearance-track jobs, and federal agency recruiting happen on or near campus throughout the undergraduate years, giving Mason students a multi-year head start on clearance processing and employer relationships that students at out-of-state schools cannot replicate.",
+
+    institutionalSecret: "Mason is frequently underestimated because it lacks a traditional flagship-university reputation, but the Schar School of Policy and Government is genuinely one of the strongest full-spectrum policy schools in the country, and Mason's economics department (home to two Nobel laureates historically on faculty) carries real intellectual weight that most families never associate with the school's name.",
+
+    theRoom: "27,750 undergraduates on a sprawling suburban campus in Fairfax, Virginia, with satellite campuses in Arlington (Schar School, steps from the Rosslyn metro) and Loudoun County. The student body is commuter-heavy relative to traditional residential universities, with a substantial population balancing internships and jobs in DC alongside coursework. Political culture is pragmatic and policy-minded rather than activist - students here are oriented toward government and industry careers, not campus politics for its own sake.",
+
+    lifestyle: "Fairfax is suburban Northern Virginia - safe, affluent, and defined by proximity rather than nightlife. Washington DC is a 20-30 minute Metro or drive away, giving students full access to the internships, museums, and professional networking events of a major world capital without DC's cost of living. Students who want an urban college-town social scene will need to seek it in DC itself; the Fairfax campus is functional and career-oriented rather than a self-contained social destination.",
+
+    bestFitPersonality: "Career-pragmatic, Policy or government-minded, Comfortable in a large public university environment, Motivated by proximity to professional opportunity over campus social life, Interested in cybersecurity, international affairs, or public administration",
+
+    faithTradition: "Public - no religious affiliation",
+
+    geographicInfluenceRadius: "Washington DC metro area dominant; Northern Virginia federal contracting corridor; national through federal government and cybersecurity placement",
+
+    economicOutcome: "Federal government agencies, government contracting and defense technology (Booz Allen Hamilton, Northrop Grumman, Leidos, General Dynamics), cybersecurity firms, international NGOs and policy organizations headquartered in DC, George Mason's own regional business and healthcare employers",
+
+    transferAcceptanceRate: "~63%",
+
+    freshmanAcceptanceRate: "~87%",
+
+    estimatedSavingsRange: "In-state total cost of attendance approximately $28,600/year versus $150,000+ four-year sticker price at comparable-outcome private DC-area institutions",
+
+    transferNotes: "Mason maintains strong Virginia Community College System articulation agreements (ADVANCE program), making it one of the most transfer-accessible research universities in the Mid-Atlantic for in-state students. Transfer out: a Mason degree combined with a DC-area internship record travels well throughout the federal and government contracting ecosystem nationally.",
+
+    institutionalPersonality: "career-pragmatic, policy-adjacent, cybersecurity-forward, commuter-flexible, federally-connected, quietly ambitious",
+
+    missionOrientation: "Access-oriented public research university producing career-ready graduates for government, policy, and technology sectors",
+
+    educationalPhilosophy: "Applied, career-connected education leveraging direct proximity to the federal government and Northern Virginia's technology and defense corridor",
+
+    competitiveness: "Accessible (~87% acceptance rate)",
+
+    politicalCulture: "Pragmatic and professionally oriented; policy-minded rather than activist",
+
+    studentAutonomy: "High - substantial commuter and working-student population",
+
+    prestigeOrientation: "Moderate nationally; high within federal government, cybersecurity, and Northern Virginia policy circles",
+
+    socialClimate: "Career-focused, commuter-flexible, DC-connected, pragmatic",
+
+    leadershipStyle: "Applied Professional Leadership",
+
+    institutionScale: {
+
+      enrollmentCategory: "Very Large",
+
+      undergraduateEnrollment: 27752,
+
+      graduateEnrollment: 9000,
+
+      totalEnrollment: 39000,
+
+      campusType: "Large Public Suburban Research University with DC-area satellite campuses",
+
+      residentialIntensity: "Moderate - substantial commuter population",
+
+      communityFeel: "Professional and pragmatic rather than tight-knit residential",
+
+      studentFacultyRatio: "16:1",
+
+      classSizeExperience: "Large lecture-based lower division, smaller upper-division and Schar School seminars",
+
+      scaleAdvantages: ["Extensive federal and government-contractor recruiting infrastructure", "Broad program breadth", "Northern Virginia industry proximity"],
+
+      scaleDisadvantages: ["Less residential cohesion than traditional flagships", "Commuter culture can dilute campus social life"]
+
+    },
+
+    economicEcosystem: {
+
+      primaryIndustries: ["Federal Government", "Government Contracting and Defense Technology", "Cybersecurity", "Policy and International Affairs Organizations"],
+
+      topEmployers: ["Booz Allen Hamilton", "Northrop Grumman", "Leidos", "General Dynamics", "U.S. federal agencies"],
+
+      dominantMarket: "Washington DC Metro Area / Northern Virginia",
+
+      innovationIndex: 78
+
+    },
+
+    wealthMobility: {
+
+      averageFamilyIncome: "Middle Income",
+
+      socialMobilityIndex: 82,
+
+      firstGenerationSupport: "Strong - large first-generation and Pell-eligible student population (~30% Pell)"
+    },
+
+    trajectoryProfile: {
+      dominantTrajectory: "STAY_REGIONAL_ANCHOR",
+      leaverScore: 32,
+      returnerScore: 48,
+      stewardScore: 74,
+      navigatorScore: 68,
+      geographicLockIn: "medium-high",
+      alumniDispersalPattern: "regional, DC-metro concentrated"
+    }
+  }
+},
+
+"William & Mary": {
+
+  institutionNarrative: {
+
+    name: "William & Mary",
+
+    location: "Williamsburg, Virginia",
+
+    region: "Mid-Atlantic",
+
+    archetype: "The Public Ivy - Selective Small Public with National Prestige",
+
+    oneSentenceSummary: "William & Mary is the second-oldest college in America and the original 'Public Ivy' - a small, highly selective public university of about 7,000 undergraduates that delivers Ivy-caliber academics, a historic campus, and a strong law and government pipeline at a fraction of private-school cost.",
+
+    pipeline: "Approximately 7,050 undergraduates. Nationally recognized for Government, History, Law (William & Mary Law is the oldest law school in America), Business (Mason School of Business), Economics, and pre-law generally. The college's founding-era identity and unusually close ties to Colonial Williamsburg and Virginia government create an unmatched pre-law and public-service pipeline.",
+
+    hiddenPathway: "William & Mary's Law School - the oldest in the country - gives undergraduates a legacy relationship most applicants to elite law schools don't have. Combined with a public-service culture running back to the college's founding (it produced Thomas Jefferson, John Marshall, and multiple U.S. presidents), William & Mary undergraduates who want law or government careers get an institutional head start most private universities can't offer at this price.",
+
+    institutionalSecret: "Because it's public, William & Mary is chronically underpriced relative to its actual selectivity and outcomes - a 34% acceptance rate and 1473 average SAT rival many private schools charging triple the tuition, but the 'public university' label causes many high-prestige-seeking families to overlook it entirely.",
+
+    theRoom: "7,050 undergraduates on one of the most historically significant campuses in America - the Wren Building is the oldest college building still in use in the U.S. The student body is academically intense, tradition-conscious, and smaller than most flagship publics, creating a residential-college feel closer to a private liberal arts school than a large state university.",
+
+    lifestyle: "Williamsburg is a small historic town built around Colonial Williamsburg; social life is campus-centered rather than city-driven. Richmond is an hour away, Washington DC about 2.5 hours. Students who want an urban backdrop will need to look elsewhere; students who want intense academics inside a beautiful, historic, tight-knit campus will thrive.",
+
+    bestFitPersonality: "High academic intensity tolerance, Pre-law or government-oriented, Comfortable in a small selective community, Values tradition and history, Not dependent on a major-city social scene",
+
+    faithTradition: "Public - no religious affiliation",
+
+    geographicInfluenceRadius: "Virginia and Mid-Atlantic dominant; national through law and government placement",
+
+    economicOutcome: "Law school (extremely strong placement given the on-campus Law School legacy), federal and Virginia state government, consulting, finance via Mason School of Business, graduate school across humanities and sciences",
+
+    transferAcceptanceRate: "~25%",
+
+    freshmanAcceptanceRate: "~34%",
+
+    estimatedSavingsRange: "In-state total cost of attendance approximately $43,000/year versus $80,000+ at private peers of comparable selectivity and outcome",
+
+    transferNotes: "Transfer admission is competitive and limited given William & Mary's small undergraduate size; most students enter as freshmen. A William & Mary degree carries outsized weight in Virginia government, law, and Mid-Atlantic professional circles relative to its public-university sticker price.",
+
+    institutionalPersonality: "academically intense, tradition-bound, public-service-oriented, historically rooted, quietly prestigious",
+
+    missionOrientation: "Selective public liberal arts and research education in the founding tradition of American higher education",
+
+    educationalPhilosophy: "Rigorous liberal arts foundation with strong pre-professional pipelines in law and government",
+
+    competitiveness: "Highly Selective (~34% acceptance rate)",
+
+    politicalCulture: "Civically engaged, government and public-service minded",
+
+    studentAutonomy: "Moderate-High",
+
+    prestigeOrientation: "High nationally, especially within law, government, and Virginia professional networks",
+
+    socialClimate: "Academically intense, historically-minded, tight-knit",
+
+    leadershipStyle: "Public Service Leadership Tradition",
+
+    institutionScale: {
+
+      enrollmentCategory: "Small",
+
+      undergraduateEnrollment: 7055,
+
+      graduateEnrollment: 2400,
+
+      totalEnrollment: 9500,
+
+      campusType: "Small Historic Public Residential University",
+
+      residentialIntensity: "High",
+
+      communityFeel: "Tight-knit, tradition-conscious, academically intense",
+
+      studentFacultyRatio: "11:1",
+
+      classSizeExperience: "Small, seminar-heavy relative to most public universities",
+
+      scaleAdvantages: ["Ivy-caliber academics at public price", "Oldest law school in America on campus", "Historic, tight-knit community"],
+
+      scaleDisadvantages: ["Small town setting limits urban social access", "Fewer program options than large flagships"]
+
+    },
+
+    economicEcosystem: {
+
+      primaryIndustries: ["Law", "Government and Public Policy", "Consulting", "Finance"],
+
+      topEmployers: ["Virginia and federal government agencies", "top law firms via W&M Law", "major consulting firms"],
+
+      dominantMarket: "Virginia / Mid-Atlantic",
+
+      innovationIndex: 62
+    },
+
+    wealthMobility: {
+      averageFamilyIncome: "Upper-Middle Income",
+      socialMobilityIndex: 68,
+      firstGenerationSupport: "Moderate - Pell-eligible population around 12%"
+    },
+
+    trajectoryProfile: {
+      dominantTrajectory: "STAY_REGIONAL_ELITE",
+      leaverScore: 42,
+      returnerScore: 44,
+      stewardScore: 78,
+      navigatorScore: 60,
+      geographicLockIn: "medium",
+      alumniDispersalPattern: "Virginia and Mid-Atlantic concentrated, national through law and government"
+    }
+  }
+},
+
+"Loyola University Maryland": {
+  institutionNarrative: {
+    name: "Loyola University Maryland",
+    location: "Baltimore, Maryland",
+    region: "Mid-Atlantic",
+    archetype: "The Jesuit Values-Driven Business and Psychology College",
+    oneSentenceSummary: "Loyola University Maryland is a small Jesuit university in Baltimore known for strong business, psychology, and education programs delivered inside a values-driven, mission-oriented community.",
+    pipeline: "Approximately 3,870 undergraduates. Sellinger School of Business is well regarded regionally, particularly in finance and accounting. Psychology and Education are standout programs with strong graduate school and career placement.",
+    hiddenPathway: "Loyola's Jesuit alumni network in Baltimore and Mid-Atlantic finance and accounting firms is tightly knit and loyal - smaller than a flagship's network but far more personally accessible, producing disproportionate mentorship density for a school this size.",
+    institutionalSecret: "Sellinger's accounting placement into Baltimore and DC-area Big 4 and regional firms is stronger than the school's national name recognition would suggest.",
+    theRoom: "Roughly 3,870 undergraduates on a tight-knit, tradition-rich campus in North Baltimore. Jesuit mission orientation - service, reflection, and community - shapes daily campus culture more than at most secular private colleges.",
+    lifestyle: "Baltimore offers a real city backdrop without New York or DC-level cost or intensity; Washington DC is roughly 45 minutes south for internships.",
+    bestFitPersonality: "Values-driven, Comfortable in a small tight-knit community, Interested in business, psychology, or education, Drawn to service and mission-oriented culture",
+    faithTradition: "Roman Catholic - Jesuit",
+    geographicInfluenceRadius: "Baltimore-DC corridor dominant; Mid-Atlantic regional",
+    economicOutcome: "Accounting and finance in Baltimore/DC, psychology graduate programs, education and school leadership",
+    freshmanAcceptanceRate: "~75%",
+    estimatedSavingsRange: "Total cost of attendance approximately $65,000/year before aid; strong merit aid common",
+    institutionalPersonality: "mission-driven, tight-knit, service-oriented, business-and-psychology-strong",
+    competitiveness: "Moderately Selective (~75% acceptance rate)",
+    institutionScale: {
+      enrollmentCategory: "Small",
+      undergraduateEnrollment: 3869,
+      campusType: "Small Private Jesuit Residential University",
+      scaleAdvantages: ["personal alumni mentorship density", "strong Jesuit service network", "tight faculty relationships"],
+      scaleDisadvantages: ["smaller national name recognition", "limited program breadth vs. large universities"]
+    },
+    economicEcosystem: {
+      primaryIndustries: ["Accounting and Finance", "Psychology and Counseling", "Education"],
+      dominantMarket: "Baltimore / Washington DC corridor"
+    },
+    trajectoryProfile: {
+      dominantTrajectory: "REGIONAL_STEWARD",
+      stewardScore: 76,
+      geographicLockIn: "medium-high",
+      alumniDispersalPattern: "Baltimore-DC concentrated"
+    }
+  }
+},
+
+"University of Delaware": {
+  institutionNarrative: {
+    name: "University of Delaware",
+    location: "Newark, Delaware",
+    region: "Mid-Atlantic",
+    archetype: "The DuPont-Legacy Chemistry and Business Flagship",
+    oneSentenceSummary: "The University of Delaware is a mid-size public flagship whose chemistry, chemical engineering, and business programs carry the institutional legacy of DuPont and the broader Delaware corporate/chemical industry, offering strong regional outcomes at accessible public cost.",
+    pipeline: "Approximately 19,070 undergraduates. Chemistry and Chemical Engineering programs carry direct DuPont legacy and remain nationally strong. Alfred Lerner College of Business is well regarded regionally, particularly finance and accounting given Delaware's corporate-registration industry.",
+    hiddenPathway: "Delaware's status as the corporate registration capital of America (most Fortune 500 companies are legally incorporated in Delaware) creates a genuine, underrecognized pipeline into corporate law support, compliance, and corporate governance careers that UD students can access through in-state relationships most out-of-state students never discover.",
+    institutionalSecret: "The chemistry and chemical engineering programs still carry real DuPont-era research infrastructure and industry relationships, even as DuPont itself has restructured - UD remains a legitimate feeder into chemical and materials science industry roles.",
+    theRoom: "Roughly 19,070 undergraduates on a classic mid-Atlantic public flagship campus in Newark, Delaware, positioned between Philadelphia and Baltimore.",
+    lifestyle: "Newark is a modest college town; Philadelphia is about 45 minutes north, giving students real access to a major city for internships and social life without living in it full time.",
+    bestFitPersonality: "Interested in chemistry, chemical engineering, or business, Comfortable in a mid-size public flagship, Motivated by regional corporate and industry proximity",
+    faithTradition: "Public - no religious affiliation",
+    geographicInfluenceRadius: "Delaware and Mid-Atlantic dominant; national through chemical industry placement",
+    economicOutcome: "Chemical and materials science industry, corporate finance and compliance via Delaware's corporate registration economy, Philadelphia-Baltimore corridor business roles",
+    freshmanAcceptanceRate: "~71%",
+    estimatedSavingsRange: "In-state total cost of attendance approximately $30,000/year",
+    institutionalPersonality: "chemistry-and-business-strong, corporate-adjacent, accessible, regionally connected",
+    competitiveness: "Moderately Selective (~71% acceptance rate)",
+    institutionScale: {
+      enrollmentCategory: "Large",
+      undergraduateEnrollment: 19071,
+      campusType: "Mid-Size Public Flagship",
+      scaleAdvantages: ["DuPont-legacy chemistry infrastructure", "Delaware corporate registration industry proximity", "Philadelphia-Baltimore corridor access"],
+      scaleDisadvantages: ["smaller national brand than nearby flagships"]
+    },
+    economicEcosystem: {
+      primaryIndustries: ["Chemical and Materials Science", "Corporate Finance and Compliance"],
+      dominantMarket: "Delaware / Philadelphia-Baltimore corridor"
+    },
+    trajectoryProfile: {
+      dominantTrajectory: "REGIONAL_ANCHOR",
+      geographicLockIn: "medium",
+      alumniDispersalPattern: "Mid-Atlantic concentrated"
+    }
+  }
+},
+
+"Michigan State University": {
+  institutionNarrative: {
+    name: "Michigan State University",
+    location: "East Lansing, Michigan",
+    region: "Midwest",
+    archetype: "The Big Ten Land-Grant Powerhouse",
+    oneSentenceSummary: "Michigan State is a massive Big Ten public research university with elite programs in agriculture, veterinary medicine, business (supply chain #1 nationally), and communications, offering large-scale opportunity and a legendary athletic culture at accessible public pricing.",
+    pipeline: "Approximately 41,000 undergraduates. Broad Business College's Supply Chain Management program is ranked #1 in the nation. College of Veterinary Medicine and College of Agriculture and Natural Resources are among the strongest in the country. James Madison College for public policy, and top-tier Communications and Journalism programs. School of Packaging is the oldest and most respected packaging design program in the U.S. - a genuinely unique pipeline into consumer goods, food and beverage, and pharmaceutical packaging engineering.",
+    hiddenPathway: "MSU's Supply Chain Management program is the most consequential hidden asset - ranked #1 nationally for years, it feeds directly into Amazon, Procter & Gamble, and major logistics and manufacturing firms at a placement rate most students never realize exists at a Big Ten school known primarily for football.",
+    institutionalSecret: "MSU's agricultural and veterinary research infrastructure is genuinely world-class - it was one of the original land-grant universities and that DNA still drives elite outcomes in food science, veterinary medicine, and agribusiness that most families overlook entirely.",
+    theRoom: "41,000 undergraduates on one of the largest, most self-contained campuses in America - East Lansing is functionally built around the university. Big Ten athletic culture (Spartan Stadium, storied basketball program) is the dominant social organizing force.",
+    lifestyle: "East Lansing is a classic large Big Ten college town; Detroit and Chicago are both drivable for internships. Campus life is self-sufficient with extensive Greek life, athletics culture, and a huge student population creating constant social density.",
+    bestFitPersonality: "Comfortable in very large institutions, Big Ten athletic culture enthusiast, Interested in agriculture, supply chain, or veterinary medicine, Motivated by scale and breadth of opportunity",
+    faithTradition: "Public - no religious affiliation",
+    geographicInfluenceRadius: "Michigan and Midwest dominant; national through supply chain, agriculture, and veterinary medicine placement",
+    economicOutcome: "Supply chain and logistics (Amazon, P&G, major manufacturers), agribusiness, veterinary medicine, communications and journalism, Michigan and Midwest corporate sector",
+    freshmanAcceptanceRate: "~85%",
+    estimatedSavingsRange: "In-state total cost of attendance approximately $32,000/year",
+    institutionalPersonality: "large-scale, athletics-driven, agriculture-and-supply-chain-strong, accessible, spirited",
+    competitiveness: "Moderately Accessible (~85% acceptance rate)",
+    institutionScale: {
+      enrollmentCategory: "Very Large",
+      undergraduateEnrollment: 40922,
+      campusType: "Large Public Big Ten Research University",
+      scaleAdvantages: ["#1 ranked Supply Chain Management program", "elite veterinary and agriculture research", "massive alumni network"],
+      scaleDisadvantages: ["large class sizes especially lower-division", "requires self-direction to stand out"]
+    },
+    economicEcosystem: {
+      primaryIndustries: ["Supply Chain and Logistics", "Agriculture and Food Science", "Veterinary Medicine"],
+      topEmployers: ["Amazon", "Procter & Gamble", "major agribusiness and logistics firms"],
+      dominantMarket: "Michigan / Midwest"
+    },
+    trajectoryProfile: {
+      dominantTrajectory: "REGIONAL_TO_NATIONAL_SPREAD",
+      leaverScore: 48,
+      returnerScore: 52,
+      stewardScore: 58,
+      navigatorScore: 62,
+      geographicLockIn: "medium",
+      alumniDispersalPattern: "Midwest concentrated, national through supply chain and ag industries"
+    }
+  }
+},
+
+"Pennsylvania State University-Main Campus": {
+  institutionNarrative: {
+    name: "Pennsylvania State University-Main Campus",
+    location: "University Park, Pennsylvania",
+    region: "Northeast",
+    archetype: "The Alumni Network Colossus",
+    oneSentenceSummary: "Penn State combines massive scale, one of the largest and most loyal alumni networks in the world, and genuinely elite actuarial science and supply chain programs into a public university whose real power is relationship density in Mid-Atlantic corporate America.",
+    pipeline: "Approximately 42,000 undergraduates at University Park. Smeal College of Business actuarial science program is consistently top-5 nationally and feeds directly into major insurers. Supply chain management, engineering, and meteorology (one of the oldest and most respected programs in the country) are standout pipelines.",
+    hiddenPathway: "Penn State's true hidden asset is alumni density, not any single major. With over 700,000 living alumni - one of the largest networks in the world - Penn State graduates dominate mid-level and executive hiring loops across Philadelphia, Pittsburgh, and New York insurance, actuarial, and corporate finance firms in a way that functions like an old-boys network most families never account for when comparing it to smaller, more 'prestigious' schools.",
+    institutionalSecret: "The actuarial science program is genuinely elite - top-5 nationally - and virtually invisible to families outside the insurance industry; Penn State actuarial graduates are recruited directly by major insurers before graduation at rates comparable to Ivy League placement into finance.",
+    theRoom: "42,000 undergraduates at a self-contained campus in central Pennsylvania - University Park is built entirely around the university. Football culture (Beaver Stadium, 100,000+ capacity) and alumni tailgating traditions are central to the social identity.",
+    lifestyle: "University Park is a classic large college town isolated from major cities - Philadelphia and Pittsburgh are both roughly 3 hours away. Campus life is self-sufficient and intensely spirited, built around football weekends and a huge, engaged student population.",
+    bestFitPersonality: "Comfortable in very large institutions, Motivated by alumni network and long-term career relationships, Interested in actuarial science, supply chain, or engineering, Values school spirit and tradition",
+    faithTradition: "Public - no religious affiliation",
+    geographicInfluenceRadius: "Pennsylvania and Mid-Atlantic dominant; national through actuarial science, insurance, and engineering placement",
+    economicOutcome: "Insurance and actuarial science (major national insurers), supply chain and logistics, engineering, corporate finance concentrated in Philadelphia, Pittsburgh, and New York via alumni networks",
+    freshmanAcceptanceRate: "~61%",
+    estimatedSavingsRange: "In-state total cost of attendance approximately $34,000/year",
+    institutionalPersonality: "alumni-network-driven, tradition-bound, actuarial-and-insurance-strong, spirited, self-contained",
+    competitiveness: "Moderately Selective (~61% acceptance rate)",
+    institutionScale: {
+      enrollmentCategory: "Very Large",
+      undergraduateEnrollment: 42284,
+      campusType: "Large Public Self-Contained University Town",
+      scaleAdvantages: ["one of the largest alumni networks in the world", "top-5 actuarial science program", "strong engineering and meteorology"],
+      scaleDisadvantages: ["isolated campus location relative to major cities", "large class sizes lower-division"]
+    },
+    economicEcosystem: {
+      primaryIndustries: ["Insurance and Actuarial Science", "Supply Chain and Logistics", "Engineering"],
+      topEmployers: ["major national insurers", "Fortune 500 supply chain and manufacturing firms"],
+      dominantMarket: "Pennsylvania / Mid-Atlantic, national through alumni density"
+    },
+    networkCapital: {
+      alumniAccessibility: 92,
+      mentorshipDensity: 88,
+      donorNetworkStrength: 90
+    },
+    trajectoryProfile: {
+      dominantTrajectory: "ALUMNI_NETWORK_ANCHORED",
+      leaverScore: 42,
+      returnerScore: 46,
+      stewardScore: 62,
+      navigatorScore: 58,
+      geographicLockIn: "medium",
+      alumniDispersalPattern: "Mid-Atlantic concentrated with unusually high network density nationally via alumni clubs"
+    }
+  }
+},
+
+"University of Wisconsin-Madison": {
+  institutionNarrative: {
+    name: "University of Wisconsin-Madison",
+    location: "Madison, Wisconsin",
+    region: "Midwest",
+    archetype: "The Elite Public Research Flagship with National Alumni Diaspora",
+    oneSentenceSummary: "Wisconsin-Madison is a top-tier public research flagship whose massive research funding and highly loyal alumni network spread far beyond the Midwest into Chicago finance, national biotech, and West Coast technology hubs.",
+    pipeline: "Approximately 36,900 undergraduates. Wisconsin School of Business, Engineering, and Life Sciences are all nationally strong; UW-Madison is consistently among the top research universities in the country by federal research funding.",
+    hiddenPathway: "Wisconsin's alumni network has unusual density in Chicago finance and consulting - 2.5 hours away - functioning almost like a regional feeder despite being out of state, alongside a genuinely surprising biotech and life sciences diaspora into Twin Cities, Chicago, and increasingly West Coast biotech hubs, driven by the university's massive research infrastructure.",
+    institutionalSecret: "UW-Madison's research funding volume is genuinely elite-tier, rivaling private research powerhouses, but its public-Midwest identity causes many families to underrate the caliber of research opportunity available to undergraduates.",
+    theRoom: "Roughly 36,900 undergraduates on a campus built directly on Lake Mendota in downtown Madison - one of the most naturally beautiful large public campuses in America, with a politically engaged, intellectually serious student culture.",
+    lifestyle: "Madison is a vibrant state capital and college town combined - genuine urban amenities, an active downtown, and lake culture. Chicago is under 3 hours for internships and recruiting.",
+    bestFitPersonality: "Research-oriented, Comfortable in a large, intellectually serious public flagship, Motivated by strong national alumni network beyond just the Midwest",
+    faithTradition: "Public - no religious affiliation",
+    geographicInfluenceRadius: "Wisconsin and Midwest dominant; strong secondary pull to Chicago; national through biotech and research diaspora",
+    economicOutcome: "Chicago finance and consulting, biotech and life sciences nationally, engineering, Twin Cities corporate sector",
+    freshmanAcceptanceRate: "~45%",
+    estimatedSavingsRange: "In-state total cost of attendance approximately $28,000/year",
+    institutionalPersonality: "research-intensive, intellectually serious, lake-campus-distinctive, nationally-networked",
+    competitiveness: "Selective (~45% acceptance rate)",
+    institutionScale: {
+      enrollmentCategory: "Very Large",
+      undergraduateEnrollment: 36902,
+      campusType: "Large Public Research Flagship on Lake Mendota",
+      scaleAdvantages: ["elite research funding and infrastructure", "Chicago-adjacent alumni density", "national biotech diaspora"],
+      scaleDisadvantages: ["large class sizes lower-division"]
+    },
+    economicEcosystem: {
+      primaryIndustries: ["Biotech and Life Sciences", "Finance and Consulting (Chicago)", "Engineering"],
+      dominantMarket: "Wisconsin / Chicago / national biotech hubs"
+    },
+    networkCapital: {
+      alumniAccessibility: 84,
+      donorNetworkStrength: 82
+    },
+    trajectoryProfile: {
+      dominantTrajectory: "NATIONAL_DIASPORA",
+      leaverScore: 58,
+      geographicLockIn: "low-medium",
+      alumniDispersalPattern: "Midwest anchored with strong Chicago and national biotech/tech spread"
+    }
+  }
+},
+
+"The University of Tennessee-Knoxville": {
+  institutionNarrative: {
+    name: "The University of Tennessee-Knoxville",
+    location: "Knoxville, Tennessee",
+    region: "Southeast",
+    archetype: "The SEC Flagship with Growing Out-of-State Draw",
+    oneSentenceSummary: "The University of Tennessee is the SEC flagship in Knoxville, increasingly drawing out-of-state students from Georgia, North Carolina, and Florida chasing SEC culture and Nashville/Atlanta corporate proximity at lower cost than their home-state flagships.",
+    pipeline: "Approximately 30,000 undergraduates. Haslam College of Business and Engineering are the strongest professional pipelines, with growing supply chain and logistics programs tied to the broader Southeast corporate corridor.",
+    hiddenPathway: "Tennessee's real regional draw is proximity to both Nashville (healthcare, music industry, corporate HQ growth) and Atlanta - UT students access both metro job markets without paying Nashville or Atlanta cost of living during college, an underrecognized geographic advantage growing as both cities boom.",
+    institutionalSecret: "UT's out-of-state enrollment has grown significantly as Georgia, North Carolina, and Florida students discover SEC culture and Southeast job market access at meaningfully lower cost than competitive in-state flagship alternatives.",
+    theRoom: "Roughly 30,000 undergraduates on a large SEC campus in Knoxville, with Neyland Stadium and SEC football culture as the dominant social and community identity.",
+    lifestyle: "Knoxville is a mid-size Southern city with genuine outdoor access to the Great Smoky Mountains; Nashville is about 3 hours west, Atlanta about 3.5 hours south.",
+    bestFitPersonality: "SEC culture enthusiast, Interested in business or engineering with Southeast corporate placement, Comfortable in a large public flagship, Drawn to outdoor recreation access",
+    faithTradition: "Public - no religious affiliation",
+    geographicInfluenceRadius: "Tennessee dominant with growing Georgia, North Carolina, and Florida out-of-state draw; Nashville and Atlanta corporate corridor access",
+    economicOutcome: "Nashville corporate and healthcare sector, Atlanta corporate sector, Southeast supply chain and logistics, engineering",
+    freshmanAcceptanceRate: "~82%",
+    estimatedSavingsRange: "In-state total cost of attendance approximately $27,000/year; competitive out-of-state relative to peer SEC flagships",
+    institutionalPersonality: "SEC-spirited, growing-out-of-state-draw, outdoor-recreation-adjacent, corporate-corridor-connected",
+    competitiveness: "Moderately Accessible (~82% acceptance rate)",
+    institutionScale: {
+      enrollmentCategory: "Very Large",
+      undergraduateEnrollment: 30000,
+      campusType: "Large Public SEC Flagship",
+      scaleAdvantages: ["Nashville and Atlanta dual-metro proximity", "growing out-of-state pipeline from GA/NC/FL", "SEC athletic culture"],
+      scaleDisadvantages: ["large lower-division class sizes"]
+    },
+    economicEcosystem: {
+      primaryIndustries: ["Healthcare (Nashville)", "Corporate Sector (Nashville/Atlanta)", "Supply Chain and Logistics"],
+      dominantMarket: "Tennessee / Nashville-Atlanta corridor"
+    },
+    trajectoryProfile: {
+      dominantTrajectory: "REGIONAL_DUAL_METRO_DRAW",
+      geographicLockIn: "medium",
+      alumniDispersalPattern: "Tennessee anchored with strong Nashville and Atlanta concentration"
+    }
+  }
+},
+
+"University of Minnesota-Twin Cities": {
+  institutionNarrative: {
+    name: "University of Minnesota-Twin Cities",
+    location: "Minneapolis, Minnesota",
+    region: "Midwest",
+    archetype: "The Fortune 500 Corporate Pipeline Flagship",
+    oneSentenceSummary: "The University of Minnesota sits inside one of the densest Fortune 500 corporate concentrations in America - Target, 3M, UnitedHealth, and Best Buy are all headquartered nearby - creating a direct corporate pipeline reinforced by generous Wisconsin tuition reciprocity.",
+    pipeline: "Approximately 31,850 undergraduates. Carlson School of Management has strong direct placement into Twin Cities Fortune 500 headquarters. Engineering and health sciences are also nationally competitive given the region's medical device and healthcare industry density.",
+    hiddenPathway: "Minnesota's Wisconsin tuition reciprocity agreement lets Wisconsin residents attend at rates close to in-state Minnesota tuition, creating a steady, underrecognized cross-border pipeline of Wisconsin students who effectively get flagship access to a different state's Fortune 500 corridor at a fraction of typical out-of-state cost.",
+    institutionalSecret: "The Twin Cities' Fortune 500 density - Target, 3M, UnitedHealth Group, Best Buy, General Mills, and U.S. Bancorp are all headquartered in the metro - gives Minnesota undergraduates direct internship and hiring access that most flagship publics cannot replicate.",
+    theRoom: "Roughly 31,850 undergraduates split across the Minneapolis and St. Paul campuses, with a pragmatic, corporate-career-minded student culture reflecting the surrounding Fortune 500 ecosystem.",
+    lifestyle: "Minneapolis-St. Paul is a genuine major metro area - real urban amenities, extensive corporate internship access, and a strong quality of life despite cold winters.",
+    bestFitPersonality: "Corporate-career-minded, Comfortable in a large public flagship inside a major metro, Interested in business, engineering, or health sciences, Wisconsin residents benefiting from reciprocity",
+    faithTradition: "Public - no religious affiliation",
+    geographicInfluenceRadius: "Minnesota dominant with significant Wisconsin reciprocity-driven enrollment; Twin Cities Fortune 500 corridor",
+    economicOutcome: "Direct placement into Target, 3M, UnitedHealth Group, Best Buy, General Mills, and other Twin Cities Fortune 500 headquarters; medical device industry; engineering",
+    freshmanAcceptanceRate: "~80%",
+    estimatedSavingsRange: "In-state total cost of attendance approximately $27,000/year; Wisconsin residents receive substantial reciprocity discount",
+    institutionalPersonality: "corporate-pipeline-strong, pragmatic, metro-embedded, reciprocity-accessible",
+    competitiveness: "Moderately Accessible (~80% acceptance rate)",
+    institutionScale: {
+      enrollmentCategory: "Very Large",
+      undergraduateEnrollment: 31855,
+      campusType: "Large Public Flagship in Major Metro Area",
+      scaleAdvantages: ["Fortune 500 headquarters density", "Wisconsin tuition reciprocity pipeline", "genuine major-metro internship access"],
+      scaleDisadvantages: ["cold climate", "large lower-division class sizes"]
+    },
+    economicEcosystem: {
+      primaryIndustries: ["Corporate Retail and Consumer Goods", "Healthcare and Medical Devices", "Engineering"],
+      topEmployers: ["Target", "3M", "UnitedHealth Group", "Best Buy", "General Mills", "U.S. Bancorp"],
+      dominantMarket: "Minneapolis-St. Paul"
+    },
+    trajectoryProfile: {
+      dominantTrajectory: "METRO_CORPORATE_ANCHOR",
+      geographicLockIn: "medium-high",
+      alumniDispersalPattern: "Twin Cities concentrated with Wisconsin cross-border pipeline"
+    }
+  }
+},
+
+"Texas Tech University": {
+  institutionNarrative: {
+    name: "Texas Tech University",
+    location: "Lubbock, Texas",
+    region: "Southwest",
+    archetype: "The West Texas Hospitality, Agriculture, and Rising Athletics Flagship",
+    oneSentenceSummary: "Texas Tech is a growing Big 12 flagship in Lubbock whose Rawls College hospitality program, deep agriculture ties to the Permian Basin farming economy, and rapidly rising athletics culture create a distinctly West Texas identity most out-of-state families never encounter.",
+    pipeline: "Approximately 32,400 undergraduates. Rawls College of Business hospitality and restaurant management program is a genuine hidden pipeline into Texas's booming hospitality industry. Agriculture and agribusiness programs are directly tied to the surrounding West Texas farming and Permian Basin economy.",
+    hiddenPathway: "Rawls College's hospitality and restaurant management program is one of the most underrecognized hidden pathways in Texas higher education - it feeds directly into Texas's rapidly growing hospitality and restaurant industry (Dallas, Austin, San Antonio) at a placement rate most families never associate with a West Texas agricultural school.",
+    institutionalSecret: "Texas Tech's agriculture programs sit directly inside the Permian Basin economic corridor, giving agribusiness and ag-finance students real, functioning relationships with West Texas farming and energy-adjacent agricultural operations that coastal or East Texas schools cannot replicate.",
+    theRoom: "Roughly 32,400 undergraduates on a large West Texas campus in Lubbock, with rapidly rising Big 12 athletics culture (football and basketball both ascending) creating growing out-of-state and national interest.",
+    lifestyle: "Lubbock is a distinctly West Texas college town - flat, wide-open, and centered entirely on the university; Dallas is about 5-6 hours east.",
+    bestFitPersonality: "Interested in hospitality, agriculture, or agribusiness, Comfortable in a distinctly West Texas setting, Drawn to rising Big 12 athletics culture, Motivated by unique regional industry access",
+    faithTradition: "Public - no religious affiliation",
+    geographicInfluenceRadius: "West Texas and Permian Basin dominant; growing statewide Texas draw via hospitality and rising athletics",
+    economicOutcome: "Texas hospitality and restaurant industry (Dallas, Austin, San Antonio), agribusiness and Permian Basin-adjacent agriculture, growing corporate placement statewide",
+    freshmanAcceptanceRate: "~69%",
+    estimatedSavingsRange: "In-state total cost of attendance approximately $24,000/year",
+    institutionalPersonality: "West-Texas-rooted, hospitality-and-agriculture-strong, rising-athletics-driven, distinctly regional",
+    competitiveness: "Moderately Accessible (~69% acceptance rate)",
+    institutionScale: {
+      enrollmentCategory: "Very Large",
+      undergraduateEnrollment: 32394,
+      campusType: "Large Public Flagship in West Texas",
+      scaleAdvantages: ["unique hospitality industry pipeline", "direct Permian Basin agriculture ties", "rapidly rising Big 12 athletics profile"],
+      scaleDisadvantages: ["remote West Texas location relative to major metros"]
+    },
+    economicEcosystem: {
+      primaryIndustries: ["Hospitality and Restaurant Management", "Agriculture and Agribusiness", "Energy-adjacent Agriculture"],
+      dominantMarket: "West Texas / statewide Texas hospitality"
+    },
+    trajectoryProfile: {
+      dominantTrajectory: "REGIONAL_TO_STATEWIDE_RISING",
+      geographicLockIn: "medium",
+      alumniDispersalPattern: "West Texas anchored with growing statewide Texas spread via hospitality industry"
+    }
+  }
+}
 };
 
 if (typeof module !== "undefined") { module.exports = UNIVERSITY_DB_V5; }
