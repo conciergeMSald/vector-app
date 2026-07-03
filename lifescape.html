@@ -4463,41 +4463,31 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
   const hasEnviroSignal   = naics.some(n => [11, 21].includes(n)) ||
                              ['outdoor_activities','animal_care','science_experiments'].filter(t => tiles.includes(t)).length >= 2;
 
-  // Archetype → signal mapping
-  const archetypeSignals = {
-    'The Human Performance University':         hasBodySignal || hasAthleticSignal,
-    'The Space and Human Performance University': hasTechSignal || hasAthleticSignal || hasBodySignal,
-    'The Ecological University':                hasNatureSignal || hasEnviroSignal,
-    'The Unconventional Public College':        hasCreativeSignal || hasServiceSignal,
-    'The Cultural Capital Liberal Arts College': hasCreativeSignal || hasMusicSignal,
-    'The Global Citizenship College':           hasGlobalSignal || hasServiceSignal,
-    'The Great Books Catholic College':         hasHistorySignal && hasChristianFaithSignal,
-    'The Reformed Intellectual University':     hasHistorySignal && hasChristianFaithSignal,
-    'The Adventist Flagship University':        hasServiceSignal && hasChristianFaithSignal,
-    'The Adventist Health Sciences University': hasBodySignal && hasChristianFaithSignal,
-    'The Evangelical Ivy':                      hasChristianFaithSignal && (hasHistorySignal || hasBusinessSignal),
-    'The West Coast Evangelical Gateway':       hasChristianFaithSignal && hasCreativeSignal,
-    'The New England Evangelical Liberal Arts College': hasChristianFaithSignal,
-    'The Conservative Christian Career Preparation University': hasChristianFaithSignal,
-    'The Premier Lutheran Liberal Arts College': hasMusicSignal || hasChristianFaithSignal,
-    'The Professional Lutheran University':     hasChristianFaithSignal && hasBusinessSignal,
-    'The Regional Lutheran Standout':           hasChristianFaithSignal,
-    'The Leadership-Accelerated Liberal Arts College': hasBusinessSignal || riasec.includes('E'),
-    'The Elite Mississippi Network College':    riasec.includes('E') || riasec.includes('S'),
-    'The Academic LAC of Arkansas':             hasHistorySignal || riasec.includes('I'),
-    'The Southern Pre-Professional Liberal Arts College': hasBusinessSignal || riasec.includes('E'),
-    'The HBCU Leadership Incubator of the Research Triangle': hasTechSignal || hasServiceSignal,
-    'The HBCU Flagship of Louisiana':           hasServiceSignal || hasBusinessSignal,
-    'The Iconic SWAC HBCU':                     hasCreativeSignal || hasAthleticSignal,
-    'The Professional HBCU of Mississippi':     hasServiceSignal || hasBusinessSignal,
-    'The Top Technical HBCU of Texas':          hasTechSignal || hasBodySignal,
-    'The Tech Workforce Engine of Utah':        hasTechSignal || hasBusinessSignal,
-    'The Underrated Mountain West Flagship':    hasTechSignal || hasNatureSignal,
-    'The Urban Innovation Hub':                 hasCreativeSignal || hasServiceSignal || hasBusinessSignal,
-    'The Jesuit Gateway to the Pacific Northwest Tech Economy': hasTechSignal || hasServiceSignal,
-    'The South LA Mobility Institution':        hasServiceSignal || hasBusinessSignal,
-    'The Fast-Rising UC Campus':               hasTechSignal || hasNatureSignal,
-  };
+  // Archetype → signal mapping (keyword-based — real DB archetypes are unique
+  // descriptive strings per school, not a fixed category list, so we match
+  // on keywords appearing anywhere in the archetype text instead of exact phrases)
+  const archetypeKeywordSignals = [
+    { keywords: ['human performance','athletic','recreation','outdoor'], signal: hasBodySignal || hasAthleticSignal || hasNatureSignal },
+    { keywords: ['engineering','technical','tech ','innovation','industrial','manufacturing'], signal: hasTechSignal || hasBusinessSignal },
+    { keywords: ['ecological','agriculture','forestry','environment'], signal: hasNatureSignal || hasEnviroSignal },
+    { keywords: ['creative','arts','media','design'], signal: hasCreativeSignal },
+    { keywords: ['music','conservatory'], signal: hasMusicSignal },
+    { keywords: ['global','international'], signal: hasGlobalSignal },
+    { keywords: ['leadership','elite power','wealth creation','professional prestige'], signal: hasBusinessSignal || riasec.includes('E') },
+    { keywords: ['christian','catholic','jesuit','lutheran','evangelical','adventist'], signal: hasChristianFaithSignal },
+    { keywords: ['hbcu'], signal: hasServiceSignal || hasBusinessSignal || hasTechSignal },
+    { keywords: ['healthcare','health sciences'], signal: hasBodySignal },
+    { keywords: ['urban','mobility','workforce'], signal: hasServiceSignal || hasBusinessSignal },
+    { keywords: ['liberal arts','intellectual','great books'], signal: hasHistorySignal || riasec.includes('I') }
+  ];
+
+  function archetypeMatches(archetypeText) {
+    if (!archetypeText) return false;
+    var lower = archetypeText.toLowerCase();
+    return archetypeKeywordSignals.some(function(entry) {
+      return entry.signal && entry.keywords.some(function(kw) { return lower.includes(kw); });
+    });
+  }
 
   const candidates = [];
 
@@ -4511,7 +4501,7 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
     var reason = '';
 
     // Primary: archetype signal match
-    if (archetypeSignals[school.archetype]) {
+    if (archetypeMatches(school.archetype)) {
       score += 10;
     }
 
@@ -6015,6 +6005,7 @@ function renderCounselorView(profile, callAData, callBData, callCData, essayPars
     ['Family geography', profile.family_locations && profile.family_locations.length > 0 ? profile.family_locations.join(', ') : '—'],
     ['Report pronouns', profile.pronouns ? profile.pronouns.replace('_','/')  : 'they/them (default)'],
     ['Voice path', profile.voice === 'parent' ? 'Parent completed' : 'Student completed'],
+    ['GPA', profile.gpa ? profile.gpa + ' (' + (profile.gpa_type || 'weighted') + ')' : 'not provided'],
     ['Report format', profile.reportFormat],
     ['Tiles selected', profile._meta.tileCount],
     ['EQ tiles selected', profile.eqTiles.length],

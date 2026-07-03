@@ -321,10 +321,10 @@ function buildONETCounselorBlock(naicsSectors, riasec, studentName) {
 
   return clusters.map(c => `
     <div style="margin-bottom:1.25rem;padding:1rem 1.25rem;border:0.5px solid var(--rule);background:var(--white);">
-      <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;">${c.clusterName}</div>
-      <div style="font-size:14px;color:var(--ink);margin-bottom:.5rem;font-weight:400;">${c.titles.join(' · ')}</div>
-      <div style="font-size:12px;color:var(--ink3);margin-bottom:.4rem;font-weight:300;"><strong style="color:var(--ink4);">Pay range:</strong> ${c.counselorPay}</div>
-      <div style="font-size:12px;color:var(--ink3);font-weight:300;line-height:1.6;"><strong style="color:var(--ink4);">Counselor note:</strong> ${c.counselorNote}</div>
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;">${c.clusterName}</div>
+      <div style="font-size:16px;color:var(--ink);margin-bottom:.5rem;font-weight:400;">${c.titles.join(' · ')}</div>
+      <div style="font-size:14px;color:var(--ink3);margin-bottom:.4rem;font-weight:300;"><strong style="color:var(--ink4);">Pay range:</strong> ${c.counselorPay}</div>
+      <div style="font-size:14px;color:var(--ink3);font-weight:300;line-height:1.6;"><strong style="color:var(--ink4);">Counselor note:</strong> ${c.counselorNote}</div>
     </div>
   `).join('');
 }
