@@ -350,6 +350,14 @@ const CONFERENCE_POOLS = {
 
 const REGION_POOLS = {
 
+  military_academies: [
+    // Federal service academies + senior military colleges — geography-independent category
+    "United States Air Force Academy","United States Naval Academy",
+    "United States Military Academy (West Point)","The Citadel, The Military College of South Carolina",
+    "United States Coast Guard Academy","United States Merchant Marine Academy",
+    "Virginia Military Institute","Norwich University"
+  ],
+
   southeast: [
     // Database region: Southeast + SEC New Members
     "Vanderbilt University","University of Georgia","University of Florida",

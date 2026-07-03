@@ -3908,24 +3908,25 @@ var REGION_LABELS = {
   mid_atlantic:     'Mid-Atlantic',
   northeast:        'Northeast',
   new_england:      'New England',
+  military_academies: 'Military Service',
   anywhere:         'Open to anywhere'
 };
 
 // ── Button-based region selector — reuses same state as SVG map ──
 var MAX_REGIONS = 4;
 function toggleRegionBtn(btn, regionId) {
-  LS_STATE.regions = LS_STATE.regions || [];
-  var idx = LS_STATE.regions.indexOf(regionId);
+  if (!Array.isArray(COLLEGE_PREFS.regions)) COLLEGE_PREFS.regions = [];
+  var idx = COLLEGE_PREFS.regions.indexOf(regionId);
   if (idx >= 0) {
-    LS_STATE.regions.splice(idx, 1);
+    COLLEGE_PREFS.regions.splice(idx, 1);
     btn.classList.remove('map-sel');
   } else {
-    if (LS_STATE.regions.length >= MAX_REGIONS) {
+    if (COLLEGE_PREFS.regions.length >= MAX_REGIONS) {
       btn.classList.add('region-btn-shake');
       setTimeout(function(){ btn.classList.remove('region-btn-shake'); }, 300);
       return;
     }
-    LS_STATE.regions.push(regionId);
+    COLLEGE_PREFS.regions.push(regionId);
     btn.classList.add('map-sel');
   }
   renderRegionTags();
@@ -4582,8 +4583,12 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
     // ── Social scene filter ──────────────────────────────────────────────
     // If student selected Greek/social, suppress schools without Greek life
     // Earlham (Quaker) explicitly has no Greek system
+    // Skipped entirely for military academy selections — Greek life / social
+    // scene isn't a meaningful axis for service academy campus culture
+    var _isMilitaryPath = Array.isArray(profile.college_prefs && profile.college_prefs.regions)
+      && profile.college_prefs.regions.includes('military_academies');
     var _socialPref = typeof COLLEGE_PREFS !== 'undefined' ? COLLEGE_PREFS.social_scene : null;
-    if (_socialPref === 'greek_social' && school.greek_life === false) {
+    if (!_isMilitaryPath && _socialPref === 'greek_social' && school.greek_life === false) {
       return; // Skip no-Greek schools when student wants Greek life
     }
 
