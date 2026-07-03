@@ -231,7 +231,7 @@ function curateInitialTiles(answers) {
   // Ensure cluster balance — at least 2 tiles from each non-dominant cluster
   const result = ensureClusterBalance(sorted, free_time);
 
-  return result.slice(0, 32);
+  return result.slice(0, Math.max(32, result.length));
 }
 
 
