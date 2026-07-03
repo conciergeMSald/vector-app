@@ -15,6 +15,7 @@
 <script src="school-context-engine-phase2.js"></script>
 <script src="school-context-connector.js"></script>
 <script src="school-context-signal-call.js"></script>
+<script src="essay-topic-engine.js"></script>
 <script src="lifescape_major_map.js"></script>
 <script src="lifescape_regional_intelligence.js"></script>
 <script src="crosswalk-db.js"></script>
@@ -731,7 +732,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* ── ORIENTING QUESTIONS (screen 2.5) ─────────────── */
 .orient-q{margin-bottom:2rem;}
-.orient-q-label{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
+.orient-q-label{font-family:var(--serif);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
 .orient-options{display:flex;flex-wrap:wrap;gap:8px;}
 .orient-btn{padding:10px 18px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:13px;color:var(--ink3);cursor:pointer;transition:all .2s;border-radius:0;}
 .orient-btn:hover{border-color:var(--gl);color:var(--ink);}
@@ -739,7 +740,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* ── SCREEN 3.5 COLLEGE PREFS ──────────────────────── */
 .pref-section{margin-bottom:2rem;}
-.pref-q-label{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
+.pref-q-label{font-family:var(--serif);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
 .pref-options{display:flex;flex-wrap:wrap;gap:8px;}
 .pref-btn{padding:9px 16px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:13px;color:var(--ink3);cursor:pointer;transition:all .2s;border-radius:0;text-align:left;}
 .pref-btn:hover{border-color:var(--gl);color:var(--ink);}
@@ -1079,7 +1080,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="screen" id="screen-1e">
 <div class="container" style="padding-top:5rem">
   <div class="gold-rule"></div>
-  <div class="q">What are you most nervous about?</div>
+  <div class="q">When you think about going to college, what are you most nervous about?</div>
   <div class="q-sub">Pick everything that feels true. You can add your own below.</div>
   <div style="margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:10px;">
     <button class="worry-btn" onclick="toggleWorry(this)" data-worry="Making friends">Making friends</button>
@@ -1221,7 +1222,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-3">
 <div class="container">
-  <div class="ls-eyebrow">Step 2 of 7</div>
+  <div class="ls-eyebrow">Step 3 of 7</div>
   <div class="q" id="s3-q">What sounds interesting?</div>
   <div class="q-sub" id="s3-sub">Tap what feels true — things you love, have never tried, or are simply curious about.</div>
 
@@ -1404,9 +1405,6 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <button class="pref-btn" data-pref="campus_scale" data-val="small_campus" onclick="selectPref(this,'campus_scale',false)">
         Small campus
         <span class="pref-sub" id="small-campus-sub">I want to know my professors</span>
-      </button>
-      <button class="pref-btn" data-pref="campus_scale" data-val="no_preference" onclick="selectPref(this,'campus_scale',false)">
-        No preference
       </button>
     </div>
   </div>
@@ -1823,6 +1821,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <div id="full-combinations"></div>
     </div>
 
+    <div class="report-section" id="full-essay-section" style="display:none">
+      <div class="section-eyebrow">Directions worth writing about</div>
+      <div id="full-essay-topics"></div>
+    </div>
+
     <div class="report-section" id="geo-region-section">
       <div class="section-eyebrow" id="geo-region-eyebrow">Your Region</div>
       <div class="portrait-text" id="full-geo-local"></div>
@@ -1967,6 +1970,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div style="margin-bottom:2rem">
       <div class="section-eyebrow">Counselor action prompts</div>
       <div id="counselor-prompts"></div>
+    </div>
+
+    <div style="margin-bottom:2rem;display:none" id="counselor-essay-section">
+      <div class="section-eyebrow">Essay topic intelligence</div>
+      <div id="counselor-essay-topics"></div>
     </div>
 
     <div style="margin-bottom:2rem">
@@ -5127,6 +5135,13 @@ async function submitLifescape() {
       _parallelCalls.push(fireCall(buildCallEPrompt(profile, _ccContext, _ccTargetSchool), 800, 0, 30000));
     }
 
+    // ── Essay Topic Engine — ESSAY-ENGINE-002 (topics only) ──
+    var _essayPrompt = (typeof buildEssayTopicPrompt === 'function') ? buildEssayTopicPrompt(ctx) : null;
+    var _essayCallIndex = _parallelCalls.length;
+    if (_essayPrompt) {
+      _parallelCalls.push(fireCall(_essayPrompt, 1400, 0, 30000));
+    }
+
     const _parallelResults = await Promise.allSettled(_parallelCalls);
     const callBResult = _parallelResults[0];
     const callCResult = _parallelResults[1];
@@ -5152,13 +5167,22 @@ async function submitLifescape() {
     const callBData = callBText ? parseCallB(callBText) : null;
     const callCData = callCText ? parseCallC(callCText) : null;
     const callEData = callEText ? { actIX: callEText.trim(), ccName: (_ccContext && _ccContext.ccName) || '' } : null;
+
+    // Essay topics — isolated failure, never blocks report render
+    var essayResult = _essayPrompt ? _parallelResults[_essayCallIndex] : null;
+    var essayText = essayResult && essayResult.status === 'fulfilled' ? essayResult.value : null;
+    if (essayResult && essayResult.status === 'rejected') {
+      console.warn('[essay-topic-engine] call failed:', essayResult.reason);
+    }
+    var essayParsed = (essayText && typeof parseEssayTopics === 'function') ? parseEssayTopics(essayText) : null;
     LS_STATE.callBResult = callBData;
     LS_STATE.callCResult = callCData;
     LS_STATE.callEResult = callEData;
+    LS_STATE.essayResult = essayParsed;
 
     // Render Full Report + Counselor View progressively
-    renderFullReport(profile, callAData, callBData, callCData);
-    renderCounselorView(profile, callAData, callBData, callCData);
+    renderFullReport(profile, callAData, callBData, callCData, essayParsed);
+    renderCounselorView(profile, callAData, callBData, callCData, essayParsed);
 
     // ── CALL D — School recommendations ──────────────
     // Only fire if we have matched schools and university content
@@ -5646,7 +5670,7 @@ function renderQuickRead(profile, callAData) {
 }
 
 // ── RENDER: FULL REPORT ────────────────────────────
-function renderFullReport(profile, callAData, callBData, callCData) {
+function renderFullReport(profile, callAData, callBData, callCData, essayParsed) {
   // Portrait
   if(callAData?.portrait) {
     document.getElementById('full-portrait').textContent = callAData.portrait;
@@ -5886,6 +5910,21 @@ function renderFullReport(profile, callAData, callBData, callCData) {
     }
   }
 
+  // ── Essay Topic Engine — In Full tab (clean: topic + why only, no scores) ──
+  var _essayFamilyEl = document.getElementById('full-essay-topics');
+  if (essayParsed && typeof getFamilyEssayTopics === 'function') {
+    var _familyTopics = getFamilyEssayTopics(essayParsed);
+    if (_familyTopics.length > 0 && _essayFamilyEl) {
+      _essayFamilyEl.innerHTML = _familyTopics.map(function(t) {
+        return '<div class="combo-block">' +
+          '<div class="combo-text"><strong style="display:block;margin-bottom:6px;color:var(--ink)">' + t.topic + '</strong>' +
+          '<span style="color:var(--ink3);">' + t.why + '</span></div></div>';
+      }).join('');
+      var _essaySection = document.getElementById('full-essay-section');
+      if (_essaySection) _essaySection.style.display = '';
+    }
+  }
+
   // Update Quick Read clusters now that callB has resolved
   if(callBData?.industries) {
     updateQuickReadClusters(callBData.industries);
@@ -5957,7 +5996,7 @@ function updateQuickReadClusters(industriesText) {
 }
 
 // ── RENDER: COUNSELOR VIEW ─────────────────────────
-function renderCounselorView(profile, callAData, callBData, callCData) {
+function renderCounselorView(profile, callAData, callBData, callCData, essayParsed) {
   // Meta table
   // ── Occupation intelligence block (counselor-only) ──────────────────────
   const occupationEl = document.getElementById('counselor-occupations');
@@ -6195,6 +6234,41 @@ function renderCounselorView(profile, callAData, callBData, callCData) {
                + '</div></div>';
         }).join('');
       }
+    }
+  }
+
+  // ── Essay Topic Engine — Counselor tab (full: scoring, rejected, risk, missing-info) ──
+  var _essayCounselorEl = document.getElementById('counselor-essay-topics');
+  if (essayParsed && typeof getCounselorEssayView === 'function' && _essayCounselorEl) {
+    var _cView = getCounselorEssayView(essayParsed);
+    if (_cView.topics.length > 0) {
+      var _topicsHtml = _cView.topics.map(function(t) {
+        return '<div class="combo-block">' +
+          '<div class="combo-text"><strong style="display:block;margin-bottom:6px;color:var(--ink)">' + t.topic + '</strong>' +
+          '<span style="color:var(--ink3);">' + t.why + '</span>' +
+          '<div style="margin-top:8px;font-size:12px;color:var(--ink4);letter-spacing:0.5px;">' +
+            'Authenticity ' + (t.authenticity ?? '—') + '/10 · Specificity ' + (t.specificity ?? '—') + '/10 · Differentiation ' + (t.differentiation ?? '—') + '/10' +
+            (t.risk && t.risk !== 'none' ? ' · <span style="color:#a05a3a;">Risk: ' + t.risk + '</span>' : '') +
+          '</div></div></div>';
+      }).join('');
+
+      var _rejectedHtml = _cView.rejected.length > 0
+        ? '<div style="margin-top:1.25rem;"><div class="section-eyebrow" style="margin-bottom:.5rem">Considered and set aside</div>' +
+          _cView.rejected.map(function(r) {
+            return '<div style="font-size:13px;color:var(--ink3);margin-bottom:6px;"><strong style="color:var(--ink2);">' + r.direction + '</strong> — ' + r.reason + '</div>';
+          }).join('') + '</div>'
+        : '';
+
+      var _missingHtml = _cView.missing.length > 0
+        ? '<div style="margin-top:1.25rem;"><div class="section-eyebrow" style="margin-bottom:.5rem">Questions to surface stronger material</div>' +
+          _cView.missing.map(function(q) {
+            return '<div class="action-prompt"><div class="action-text">' + q + '</div></div>';
+          }).join('') + '</div>'
+        : '';
+
+      _essayCounselorEl.innerHTML = _topicsHtml + _rejectedHtml + _missingHtml;
+      var _essayCounselorSection = document.getElementById('counselor-essay-section');
+      if (_essayCounselorSection) _essayCounselorSection.style.display = '';
     }
   }
 }
