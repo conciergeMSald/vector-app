@@ -10,6 +10,10 @@
 <script src="lifescape_career_intelligence.js"></script>
 <script src="lifescape_onet_map.js"></script>
 <script src="UNIVERSITY_DB_V5_MASTER_v4_6.js"></script>
+<script src="validate-university-record.js"></script>
+<script src="school-context-engine.js"></script>
+<script src="school-context-engine-phase2.js"></script>
+<script src="school-context-connector.js"></script>
 <script src="lifescape_major_map.js"></script>
 <script src="lifescape_regional_intelligence.js"></script>
 <script src="crosswalk-db.js"></script>
@@ -5172,6 +5176,22 @@ async function submitLifescape() {
           profile.comboUnlocks,
           gpaData
         );
+
+        // ── School Context Layer (SCHOOL-CONTEXT-001) — counselor-only annotation ──
+        // Runs AFTER matching, never alters _rawMatches or family-facing order.
+        // Wrapped defensively: any failure here must never break report generation.
+        var _schoolContextAnnotations = {};
+        try {
+          if (typeof annotateWithSchoolContext !== 'undefined' && typeof UNIVERSITY_CONTENT !== 'undefined') {
+            _schoolContextAnnotations = annotateWithSchoolContext(
+              _rawMatches,
+              { signals: [], capitalDirection: null, homeState: null }, // TODO: wire real student signals
+              UNIVERSITY_CONTENT
+            );
+          }
+        } catch (err) {
+          console.warn('[VECTOR] School Context annotation failed (non-blocking):', err);
+        }
 
         // ── Regional equity: guarantee at least 1 school per selected region ──
         // If student selected specific regions, ensure each region has representation
