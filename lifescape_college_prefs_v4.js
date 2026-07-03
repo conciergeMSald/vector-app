@@ -1258,12 +1258,16 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
 // array so the existing callD block (lifescape.html) needs zero changes.
 
 const DB_DISPLAY_TO_POOL_KEY = {
-  'Southeast': 'southeast', 'South': 'southeast', 'South Central': 'southeast',
-  'Northeast': 'northeast', 'Mid-Atlantic': 'northeast', 'New England': 'northeast',
-  'Midwest': 'midwest', 'Big Ten': 'midwest',
-  'West Coast': 'west_coast', 'Southern California': 'west_coast', 'Pacific Northwest': 'west_coast',
-  'Southwest': 'southwest', 'Texas + Southwest': 'southwest', 'SEC New Members': 'southeast',
-  'Mountain West': 'southwest', 'West': 'southwest',
+  new_england: 'northeast',
+  northeast: 'northeast',
+  mid_atlantic: 'southeast',
+  southeast: 'southeast',
+  midwest: 'midwest',
+  rocky_mountains: 'southwest',
+  pacific_nw: 'west_coast',
+  california: 'west_coast',
+  southwest: 'southwest',
+  military_academies: 'military_academies',
 };
 
 function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {

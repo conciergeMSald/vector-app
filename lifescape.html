@@ -3343,11 +3343,41 @@ function detectPresenceEconomy(profile) {
   return { fires: true, text: presenceText };
 }
 
+
+// ── REPORT-UPGRADE-004: genome + synthesis context injection ──
+// ── REPORT-UPGRADE-004: Anxiety Calibration Layer ──
+// Decides which intelligence leads the report based on the family's primary anxiety type.
+// Reads synthesis.aspiration_profile.anxiety_taxonomy.primary if present. Silent no-op if absent.
+function getAnxietyCalibration(ctx) {
+  var primary = ctx.synthesis && ctx.synthesis.aspiration_profile && ctx.synthesis.aspiration_profile.anxiety_taxonomy
+    ? ctx.synthesis.aspiration_profile.anxiety_taxonomy.primary : null;
+  if (!primary) return '';
+
+  var leadMap = {
+    cost:      'ANXIETY CALIBRATION: This family carries financial anxiety. Lead with financial intelligence and long-term resilience — cost, aid, and what the investment builds over time — before prestige or geography.',
+    career:    'ANXIETY CALIBRATION: This family carries career-uncertainty anxiety. Lead with identity clarity and trajectory depth — who this student is becoming and how the path holds together — before cost or prestige.',
+    prestige:  'ANXIETY CALIBRATION: This family carries prestige anxiety. Lead with outcome intelligence and institutional strength — what this place actually produces — stated plainly, without chasing rank.',
+    proximity: 'ANXIETY CALIBRATION: This family carries proximity anxiety. Lead with geographic reasoning — distance, return trips, community — before industry or prestige framing.'
+  };
+  return leadMap[primary] ? '\n\n' + leadMap[primary] : '';
+}
+
+function buildReportUpgradeContext(ctx, callName) {
+  var genome = (ctx.genome && ctx.genome.claude_genome_context) ? ctx.genome.claude_genome_context : '';
+  var synthesis = (ctx.synthesis && ctx.synthesis.claude_context_block) ? ctx.synthesis.claude_context_block : '';
+  var calibration = getAnxietyCalibration(ctx);
+  var out = '';
+  if (genome) out += '---GENOME CONTEXT---\n' + genome + '\n\n';
+  if (synthesis) out += '---FAMILY SYNTHESIS CONTEXT---\n' + synthesis + calibration + '\n\n';
+  return out;
+}
+
 function buildCallAPrompt(ctx) {
   var _longevityCtx = buildLongevityLensContext(ctx);
   var _longevityA = _longevityCtx && _longevityCtx.fires ? _longevityCtx.callA_injection : '';
   var _competeCtx = buildCompeteLensContext(ctx);
   var _competeA = _competeCtx && _competeCtx.fires ? _competeCtx.callA_injection : '';
+  var _reportUpgradeA = buildReportUpgradeContext(ctx, 'A');
   return `You are the intelligence behind Lifescape — a tool that helps young people understand who they are and where they might go. You are a trusted advisor who tells the truth because you respect the person in front of you.
 
 VOICE INSTRUCTION:
@@ -3411,7 +3441,7 @@ Write one sentence — the single most important sentence in the entire Lifescap
 - Feel like something worth memorizing
 - Be genuinely original for this profile
 
-${_longevityA}${_competeA}\n\n── PHILOSOPHY LAYER (always active) ──
+${_reportUpgradeA}${_longevityA}${_competeA}\n\n── PHILOSOPHY LAYER (always active) ──
 PRINCIPLE: Never frame this student's trajectory as contingent on professional achievement alone. A life well-chosen is the goal — college and career are instruments in that construction.
 PORTRAIT: If relational EQ tiles are present (care-oriented, people-first, community-minded), name the student's relational capacity as a PRIMARY asset — not a secondary trait that softens a more important profile. It IS the profile.
 TRAJECTORY: Hold space for nonlinear paths without implying they are lesser. The student who finds their way slowly, who changes direction, who builds something outside conventional structures is not behind — they are moving at the speed of their own clarity.
@@ -3427,6 +3457,7 @@ function buildCallBPrompt(ctx) {
   var _longevityB = _longevityCtx && _longevityCtx.fires ? _longevityCtx.callB_injection : '';
   var _competeCtx = buildCompeteLensContext(ctx);
   var _competeB = _competeCtx && _competeCtx.fires ? _competeCtx.callB_injection : '';
+  var _reportUpgradeB = buildReportUpgradeContext(ctx, 'B');
   const naicsNames = {11:'Agriculture',21:'Mining & Energy',22:'Utilities',23:'Construction',31:'Manufacturing',32:'Manufacturing',33:'Manufacturing',42:'Wholesale',44:'Retail',45:'Retail',48:'Transportation',49:'Transportation',51:'Information & Media',52:'Finance & Insurance',53:'Real Estate',54:'Professional & Scientific Services',55:'Management',56:'Administrative Services',61:'Education',62:'Health Care & Social Assistance',71:'Arts, Entertainment & Recreation',72:'Food Service & Hospitality',81:'Personal & Consumer Services',92:'Government & Public Service'};
   const topIndustries = ctx.naicsSectors.slice(0,5).map(n=>naicsNames[n.sector]||`Sector ${n.sector}`).join(', ');
   const onetBlock = typeof buildONETPromptBlock === 'function'
@@ -3519,7 +3550,7 @@ For each combination unlock that fired, write one paragraph: what combined, what
 ---COLLEGE---
 2-3 sentences. First time college appears in the report. Do not name specific schools. Describe the type of college environment that would serve this student. End with exactly: "Your counselor knows which ones."
 
-${_longevityB}${_competeB}${(() => { try { const _pe = detectPresenceEconomy(ctx); return _pe && _pe.fires ? '\n\nPRESENCE ECONOMY LENS: This student has meaningful Presence Economy signal — social connection as a career asset, not just a personality trait. Consider naming The Presence Economy explicitly as an industry cluster: live events, trade shows, sales, hospitality, CPG, and any industry where the human in the room is the product. The student who lights up every room they enter has a career asset the system consistently undervalues. Surface it. Name it. The careers: Tour Manager, Corporate Event Director, Regional Sales Director, Hospitality GM, Brand Activations Manager, Trade Show Producer.' : ''; } catch(e) { return ''; } })()}\n\n── PHILOSOPHY LAYER (always active) ──
+${_reportUpgradeB}${_longevityB}${_competeB}${(() => { try { const _pe = detectPresenceEconomy(ctx); return _pe && _pe.fires ? '\n\nPRESENCE ECONOMY LENS: This student has meaningful Presence Economy signal — social connection as a career asset, not just a personality trait. Consider naming The Presence Economy explicitly as an industry cluster: live events, trade shows, sales, hospitality, CPG, and any industry where the human in the room is the product. The student who lights up every room they enter has a career asset the system consistently undervalues. Surface it. Name it. The careers: Tour Manager, Corporate Event Director, Regional Sales Director, Hospitality GM, Brand Activations Manager, Trade Show Producer.' : ''; } catch(e) { return ''; } })()}\n\n── PHILOSOPHY LAYER (always active) ──
 PRINCIPLE: Never use language that implies a career path is more valuable than a life path. Household management, family leadership, and community service are deployments of real skill — name them with the same specificity and dignity as technical or academic paths.
 PLANNING ECONOMY: If planning/organizing tiles are present (trip planning, event organizing, logistics-oriented behavior), name supply chain, operations, event management, and household/family management explicitly as legitimate and high-value career deployments of the same cognitive profile.
 RELATIONAL COMBOS: When combination unlocks surface relational profiles — the person who leads through relationships, who serves through connection, who organizes around people — name those with the same specificity as technical or analytical combos. They are equally rare and equally valuable.
@@ -3536,6 +3567,7 @@ function buildCallCPrompt(ctx) {
   var _longevityC = _longevityCtx && _longevityCtx.fires ? _longevityCtx.callC_injection : '';
   var _competeCtx = buildCompeteLensContext(ctx);
   var _competeC = _competeCtx && _competeCtx.fires ? _competeCtx.callC_injection : '';
+  var _reportUpgradeC = buildReportUpgradeContext(ctx, 'C');
   const geoList = ctx.geoIndustries ? ctx.geoIndustries.join(', ') : 'No geo data available';
   const regionalContext = ctx.regionalIntel ? ctx.regionalIntel.callc_context : '';
   const corridorContext = typeof getStudentCorridorContext === 'function'
@@ -3608,7 +3640,7 @@ CC STRATEGY: One sentence on whether a community college pathway is worth raisin
 
 THREE PROMPTS: Three conversation-starter questions specific to this student's actual profile — not generic. Things that make the student think. Number them 1, 2, 3.
 
-${_longevityC}${_competeC}\n\n── PHILOSOPHY LAYER (always active) ──
+${_reportUpgradeC}${_longevityC}${_competeC}\n\n── PHILOSOPHY LAYER (always active) ──
 COUNSELOR ROLE: Equip the counselor to hold conversations about LIFE PATH, not just school list. The most important question is not which college — it is what kind of life this student is building and whether the college choice serves that life.
 PARENT AS STAKEHOLDER: When parent voice is active, address the parent as a full partner in a consequential family decision — not a customer purchasing a service. They are making decisions that will shape their child's life and they deserve the truth.
 STAY CLOSE: The Leave / Return / Stay framework must acknowledge that staying close is NOT a failure of ambition. For some students it is the highest expression of it — the deliberate choice to root in the place that formed them and contribute to it. Name it that way.
@@ -4221,6 +4253,7 @@ function buildCallDPrompt(ctx, matchedSchools, schoolContentBlock) {
   var _longevityD = _longevityCtx && _longevityCtx.fires ? _longevityCtx.callD_injection : '';
   var _competeCtx = buildCompeteLensContext(ctx);
   var _competeD = _competeCtx && _competeCtx.fires ? _competeCtx.callD_injection : '';
+  var _reportUpgradeD = buildReportUpgradeContext(ctx, 'D');
   const prefSummary = [
     ctx.college_prefs.conference && ctx.college_prefs.conference !== 'no_sports'
       ? stripUnderscores(ctx.college_prefs.conference)
@@ -4287,10 +4320,13 @@ For each school use this EXACT format with no deviations:
 SCHOOL: [exact school name as listed above]
 MATCH: [one sentence — the single most specific reason this school fits THIS student's Lifescape profile. Reference something real from their tiles, combo unlocks, or preferences. Not generic program quality — a specific connection.]
 WHY: [3 complete sentences. When ARCHETYPE and IDENTITY fields are provided: the first sentence names the archetype and what it means for this specific student. The second connects the OUTCOMES or HIDDEN PATHWAY to something concrete in their tiles. The third opens a next conversation. When only PIPELINE and HIDDEN PATHWAY are provided: use those directly — connect the pipeline or hidden pathway to something specific in the student's tiles or interests. Third sentence opens a concrete next conversation. Never leave a sentence incomplete — if running short on space, write fewer words per sentence but always complete the thought with a period.]
+THRIVES: [One honest sentence starting naturally with what makes this student thrive here — a real condition, not a compliment. Specific to their actual wiring, not generic praise.]
+WATCH: [One honest sentence naming a single genuine thing to know — a real trade-off or condition this student should walk in aware of. Never a disguised compliment. Never alarming. Stated with respect, the way a trusted advisor levels with someone they respect.]
+RESILIENCE: [One sentence — what this school equips this specific student to do or become that holds up over time, beyond the first job. Specific to their profile, not a generic outcomes claim.]
 
 Write all ${matchedSchools.length} schools in this format. This student selected ${ctx.college_prefs && ctx.college_prefs.regions ? ctx.college_prefs.regions.filter(r=>r!=="anyone").length : 0} region(s). CRITICAL: If specific regions were selected, every region the student chose must have at least one school represented. Do not cluster all recommendations in one region.
 
-${_longevityD}${_competeD}\n\n── PHILOSOPHY LAYER (always active) ──
+${_reportUpgradeD}${_longevityD}${_competeD}\n\n── PHILOSOPHY LAYER (always active) ──
 NO HIERARCHY: School recommendations must NEVER imply that the schools not recommended are failures. Every school on the list is there because it fits this student — not because it ranks above some threshold.
 COMMUNITY COLLEGE: If the CC pathway has been surfaced, name it with the same specificity and care as four-year recommendations — with real program names, real transfer pathways, and real career outcomes. It is not a fallback. Name it that way.
 CC PATHWAY IN SCHOOL BLOCKS: If any matched school has a CC transfer pathway available, add a CC_PATH line to that school block:
@@ -4324,11 +4360,17 @@ function parseCallD(rawText) {
     return blocks.map(block => {
       const nameMatch = block.match(/^SCHOOL:\s*(.+)/m);
       const matchMatch = block.match(/MATCH:\s*([\s\S]*?)(?=\nWHY:|$)/);
-      const whyMatch = block.match(/WHY:\s*([\s\S]*?)(?=\n\nSCHOOL:|\nSCHOOL:|$)/) || block.match(/WHY:\s*([\s\S]+)$/m);
+      const whyMatch = block.match(/WHY:\s*([\s\S]*?)(?=\nTHRIVES:|\n\nSCHOOL:|\nSCHOOL:|$)/) || block.match(/WHY:\s*([\s\S]+)$/m);
+      const thrivesMatch = block.match(/THRIVES:\s*([\s\S]*?)(?=\nWATCH:|$)/);
+      const watchMatch = block.match(/WATCH:\s*([\s\S]*?)(?=\nRESILIENCE:|$)/);
+      const resilienceMatch = block.match(/RESILIENCE:\s*([\s\S]*?)(?=\n\nSCHOOL:|\nSCHOOL:|$)/) || block.match(/RESILIENCE:\s*([\s\S]+)$/m);
       return {
         name: nameMatch ? nameMatch[1].trim() : '',
         match: matchMatch ? stripMD(matchMatch[1].trim().replace(/\n/g,' ')) : '',
-        why: whyMatch ? stripMD(whyMatch[1].trim()) : ''
+        why: whyMatch ? stripMD(whyMatch[1].trim()) : '',
+        thrivesIf: thrivesMatch ? stripMD(thrivesMatch[1].trim().replace(/\n/g,' ')) : '',
+        watchFor: watchMatch ? stripMD(watchMatch[1].trim().replace(/\n/g,' ')) : '',
+        resilience: resilienceMatch ? stripMD(resilienceMatch[1].trim().replace(/\n/g,' ')) : ''
       };
     }).filter(s => s.name && s.name.length > 2 && s.match && s.match.length > 5);
   } catch(e) {
@@ -4719,6 +4761,9 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       ${_trajNote ? `<div class="card-traj-note" style="margin-top:4px;">${_trajNote}</div>` : ''}
       ${_ccNote}
       ${_hillelNote}
+      ${s.thrivesIf ? `<div class="card-honest-note" style="margin-top:10px;padding-top:10px;border-top:0.5px solid var(--rule);font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--ink2);font-weight:600;">You will thrive here if:</strong> ${s.thrivesIf.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
+      ${s.watchFor ? `<div class="card-honest-note" style="margin-top:6px;font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--ink2);font-weight:600;">One thing to know:</strong> ${s.watchFor.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
+      ${s.resilience ? `<div class="card-honest-note" style="margin-top:6px;font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--gold);font-weight:600;">Where this leads:</strong> ${s.resilience.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
     </div>`;
   }).join('');
 
