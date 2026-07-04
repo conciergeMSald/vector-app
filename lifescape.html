@@ -5794,6 +5794,32 @@ async function submitLifescape() {
           }
           console.log('[callD] parsed schools:', callDData.length, callDData.map(s=>s.name));
 
+          // ── GPA hard gate — prevents academic mismatches (e.g. Harvard for a 3.2 GPA) ──
+          // Uses the student's normalized GPA tier against each school's real
+          // competitiveness field in V5 (not name-matching). Scales to all 179
+          // V5 schools automatically. Hard filter — bad recs are worse than fewer results.
+          var _gpaNorm = (typeof normalizeGPA === 'function') ? normalizeGPA(LS_STATE.gpa, LS_STATE.gpa_type) : LS_STATE.gpa;
+          if (_gpaNorm != null && typeof UNIVERSITY_DB_V5 !== 'undefined') {
+            var _beforeGPAFilter = callDData.length;
+            // GPA tier → max allowed competitiveness (per platform's documented tiers:
+            // reach 3.7+, competitive 3.3-3.69, solid 2.7-3.29, open <2.7)
+            var _maxAllowed = _gpaNorm >= 3.7 ? ['Highly Selective','Selective','Moderately Selective','Moderately Accessible','Accessible']
+                             : _gpaNorm >= 3.3 ? ['Selective','Moderately Selective','Moderately Accessible','Accessible']
+                             : _gpaNorm >= 2.7 ? ['Moderately Selective','Moderately Accessible','Accessible']
+                             : ['Moderately Accessible','Accessible'];
+            callDData = callDData.filter(function(s) {
+              var v5Entry = UNIVERSITY_DB_V5[s.name];
+              var competitiveness = v5Entry && v5Entry.institutionNarrative && v5Entry.institutionNarrative.competitiveness;
+              // If we don't have V5 data for this school, don't filter it out —
+              // only gate on schools where we have a real, confirmed threshold.
+              if (!competitiveness) return true;
+              return _maxAllowed.some(function(tier) { return competitiveness.indexOf(tier) === 0; });
+            });
+            if (callDData.length < _beforeGPAFilter) {
+              console.log('[callD] GPA gate removed', _beforeGPAFilter - callDData.length, 'academically mismatched school(s) for GPA', _gpaNorm);
+            }
+          }
+
           // Compute adjacent picks (do not send to Claude — derived from data)
           adjacentPicks = [];
           profileAdjacentPicks = [];
