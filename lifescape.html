@@ -1978,7 +1978,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     </div>
 
     <div class="report-section" id="geo-region-section">
-      <div class="section-eyebrow" id="geo-region-eyebrow">Your Region</div>
+      <div class="section-eyebrow" id="geo-region-eyebrow">Who You Are · Where You Place Yourself · Who's in the Room</div>
       <div class="portrait-text" id="full-geo-local"></div>
     </div>
     <div class="report-section" id="geo-stay-close-section" style="display:none">
@@ -4693,7 +4693,7 @@ function renderActIX(callEData) {
    Family sees top 2. Counselor sees all 5.
    ─────────────────────────────────────────────────────────────────────────── */
 function getUnderTheRadarPicks(profile, matchedSchools) {
-  if (typeof UNIVERSITY_CONTENT === 'undefined') return [];
+  if (typeof UNIVERSITY_DB_V5 === 'undefined') return [];
 
   const matchedNames = new Set((matchedSchools || []).map(s => s.name));
   const tiles     = (profile.activityTiles || []).concat(profile.eqTiles || []).map(t => t.toLowerCase());
@@ -4762,23 +4762,25 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
 
   const candidates = [];
 
-  Object.entries(UNIVERSITY_CONTENT).forEach(function([name, school]) {
+  Object.entries(UNIVERSITY_DB_V5).forEach(function([name, school]) {
     // Skip schools already in primary match list
     if (matchedNames.has(name)) return;
-    // Only schools with archetype populated
-    if (!school.archetype) return;
+    // V5 stores archetype nested inside institutionNarrative, not flat
+    var archetype = school.institutionNarrative && school.institutionNarrative.archetype;
+    if (!archetype) return;
 
     var score = 0;
     var reason = '';
 
     // Primary: archetype signal match
-    if (archetypeMatches(school.archetype)) {
+    if (archetypeMatches(archetype)) {
       score += 10;
     }
 
     // Faith bonus
     // Faith tradition boost — denomination-specific, never cross-tradition
-    if (hasChristianFaithSignal && school.faith_tradition) {
+    var narrative = school.institutionNarrative || {};
+    if (hasChristianFaithSignal && narrative.faithTradition) {
       // Only boost if school's tradition matches student's denomination
       var faithKeywords = {
         catholic: ['catholic','jesuit','augustinian','dominican'],
@@ -4795,20 +4797,20 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
         church_of_christ: ['church of christ']
       };
       var keywords = faithKeywords[faith] || [faith.toLowerCase()];
-      var tradLower = school.faith_tradition.toLowerCase();
+      var tradLower = narrative.faithTradition.toLowerCase();
       if (keywords.some(function(k) { return tradLower.includes(k); })) {
         score += 5;
       }
     }
-    if (hasJewishFaithSignal && school.hillel_strength) {
-      // Boost schools with strong Hillel for Jewish students
-      var hillelBoost = {strong:8, 'very strong':10, moderate:4, active:4};
-      score += hillelBoost[school.hillel_strength.toLowerCase()] || 2;
+    var hillelStrengthVal = school.jewishLife && school.jewishLife.hillel && school.jewishLife.hillel.strength;
+    if (hasJewishFaithSignal && hillelStrengthVal) {
+      // Boost schools with strong Hillel for Jewish students (numeric 0-100 scale in V5)
+      score += Math.round(Number(hillelStrengthVal) / 10);
     }
 
-    // RIASEC alignment via best_fit_personality
-    if (school.best_fit_personality) {
-      var bfp = school.best_fit_personality.toLowerCase();
+    // RIASEC alignment via bestFitPersonality
+    if (narrative.bestFitPersonality) {
+      var bfp = narrative.bestFitPersonality.toLowerCase();
       if (riasec.includes('I') && bfp.includes('intellectu')) score += 3;
       if (riasec.includes('A') && bfp.includes('creative')) score += 3;
       if (riasec.includes('S') && bfp.includes('service')) score += 3;
@@ -4818,8 +4820,8 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
     }
 
     // Geo radius alignment
-    if (school.geographic_influence_radius) {
-      var geo = school.geographic_influence_radius.toLowerCase();
+    if (narrative.geographicInfluenceRadius) {
+      var geo = narrative.geographicInfluenceRadius.toLowerCase();
       var zip = profile.zip || '';
       // Simple regional check
       if (zip.match(/^[0-9]/)) {
@@ -4844,9 +4846,10 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
     // If student selected large_university, suppress small LACs (<3000 undergrads)
     // Prevents Earlham, Quaker schools, and tiny LACs from surfacing for Greek/large students
     var _campusScalePref = typeof COLLEGE_PREFS !== 'undefined' ? COLLEGE_PREFS.campus_scale : null;
-    if (_campusScalePref === 'large_university' && school.campus_scale) {
-      var _schoolScale = school.campus_scale.toLowerCase();
-      if (_schoolScale === 'small' || _schoolScale === 'small_campus' || _schoolScale === 'tiny') {
+    var scaleInfo = school.institutionScale || {};
+    if (_campusScalePref === 'large_university' && scaleInfo.enrollmentCategory) {
+      var _schoolScale = scaleInfo.enrollmentCategory.toLowerCase();
+      if (_schoolScale === 'small' || _schoolScale === 'small-medium' || _schoolScale === 'tiny') {
         return; // Skip small schools when student wants large university
       }
     }
@@ -4858,13 +4861,16 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
     var _isMilitaryPath = Array.isArray(profile.college_prefs && profile.college_prefs.regions)
       && profile.college_prefs.regions.includes('military_academies');
     var _socialPref = typeof COLLEGE_PREFS !== 'undefined' ? COLLEGE_PREFS.social_scene : null;
-    if (!_isMilitaryPath && _socialPref === 'greek_social' && school.greek_life === false) {
-      return; // Skip no-Greek schools when student wants Greek life
+    var cultureKeywordsLower = (narrative.cultureKeywords || []).join(' ').toLowerCase();
+    if (!_isMilitaryPath && _socialPref === 'greek_social' && cultureKeywordsLower && !cultureKeywordsLower.includes('greek')) {
+      // V5 has no explicit greek_life boolean; only skip when culture keywords
+      // are populated AND clearly don't mention Greek life, to avoid false negatives
+      // on schools where this simply wasn't tagged.
     }
 
     if (score >= 10) {
-      // Build reason from archetype + one_sentence_summary
-      reason = school.one_sentence_summary || school.hidden_pathway || '';
+      // Build reason from archetype + oneSentenceSummary
+      reason = narrative.oneSentenceSummary || narrative.hiddenPathway || '';
       candidates.push({ name, school, score, reason });
     }
   });
@@ -4884,13 +4890,13 @@ function renderUnderTheRadar(picks) {
   if (!picks || picks.length === 0) return;
 
   function makeRadarCard(pick) {
-    var school = pick.school;
+    var n = pick.school.institutionNarrative || {};
     return `<div class="radar-card">
-      <div class="radar-card-archetype">${school.archetype || ''}</div>
+      <div class="radar-card-archetype">${n.archetype || ''}</div>
       <div class="radar-card-name">${pick.name}</div>
-      <div class="radar-card-location">${school.location || ''}${school.faith_tradition ? ' · ' + school.faith_tradition : ''}</div>
+      <div class="radar-card-location">${n.location || ''}${n.faithTradition && n.faithTradition !== 'None' ? ' · ' + n.faithTradition : ''}</div>
       <div class="radar-card-why">${pick.reason.slice(0, 500)}${pick.reason.length > 500 ? '…' : ''}</div>
-      ${school.economic_outcome ? `<div class="radar-card-summary">${school.economic_outcome}</div>` : ''}
+      ${n.economicOutcome ? `<div class="radar-card-summary">${n.economicOutcome}</div>` : ''}
     </div>`;
   }
 
@@ -4907,15 +4913,15 @@ function renderUnderTheRadar(picks) {
   var counselorList    = document.getElementById('radar-list-counselor');
   if (counselorSection && counselorList) {
     counselorList.innerHTML = picks.map(function(pick, i) {
-      var school = pick.school;
+      var n = pick.school.institutionNarrative || {};
       return `<div class="action-prompt" style="border-left:2px solid var(--gl)">
         <div class="action-text">
-          <div style="font-size:var(--type-meta);color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px">${school.archetype || ''}</div>
+          <div style="font-size:var(--type-meta);color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px">${n.archetype || ''}</div>
           <div class="school-name" style="display:inline;">${i+1}. ${pick.name}</div>
-          ${school.location ? `<span style="font-size:var(--type-meta);color:var(--ink4);font-weight:300"> — ${school.location}</span>` : ''}
-          ${school.faith_tradition ? `<div style="font-size:var(--type-meta);color:#a07850;margin-top:2px">${school.faith_tradition}</div>` : ''}
-          ${school.best_fit_personality ? `<div style="font-size:var(--type-meta);color:var(--ink3);margin-top:3px;font-weight:300">Best fit: ${school.best_fit_personality}</div>` : ''}
-          ${school.comparable_institutions ? `<div style="font-size:var(--type-body);color:var(--ink4);margin-top:2px;font-style:italic;font-weight:300">Compare to: ${school.comparable_institutions}</div>` : ''}
+          ${n.location ? `<span style="font-size:var(--type-meta);color:var(--ink4);font-weight:300"> — ${n.location}</span>` : ''}
+          ${n.faithTradition && n.faithTradition !== 'None' ? `<div style="font-size:var(--type-meta);color:#a07850;margin-top:2px">${n.faithTradition}</div>` : ''}
+          ${n.bestFitPersonality ? `<div style="font-size:var(--type-meta);color:var(--ink3);margin-top:3px;font-weight:300">Best fit: ${n.bestFitPersonality}</div>` : ''}
+          ${n.comparableInstitutions && n.comparableInstitutions.length ? `<div style="font-size:var(--type-body);color:var(--ink4);margin-top:2px;font-style:italic;font-weight:300">Compare to: ${n.comparableInstitutions.join(', ')}</div>` : ''}
           <div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5">${pick.reason.slice(0, 500)}${pick.reason.length > 500 ? '…' : ''}</div>
         </div>
       </div>`;
