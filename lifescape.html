@@ -4146,6 +4146,24 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       console.warn('[VECTOR Lifescape] Cohort longitudinal fetch error (non-blocking):', err);
     });
 
+    // ── family_sessions save-on-completion (matches real table schema) ────
+    if (window.sbClient) {
+      window.sbClient
+        .from('family_sessions')
+        .insert({
+          consultant_id:  LS_STATE.consultant_code || null,
+          family_surname: (LS_STATE.name || '').split(' ').pop() || null,
+          status:         'complete',
+        })
+        .then(function(result) {
+          if (result.error) {
+            console.warn('[VECTOR Lifescape] family_sessions save failed (non-blocking):', result.error);
+          } else {
+            console.log('[VECTOR Lifescape] family_sessions record created.');
+          }
+        });
+    }
+
     fetch('https://api.abettercollegeconsultant.com/save-session', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
