@@ -172,7 +172,7 @@ function isHBCUOutOfRegion(schoolName, studentRegions) {
   --color-surface:#FDFAF4;
   --space-card-pad:24px;
   --space-card-gap:40px;
-  --space-header-h:72px;
+  --space-header-h:10vh;
 
   /* ── The Stamp — tile system ───────────────────────────────────────────
      Resting: everything desaturated, warm near-white. No color until selected.
@@ -222,18 +222,17 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(247,244,240,0.97);
+  padding: 0;
+  background: #0A0806;
   border-bottom: 1px solid rgba(201,168,76,0.3);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   pointer-events: none;
-  height: var(--space-header-h);
+  height: 10vh;
+  min-height: 80px;
   box-sizing: border-box;
 }
 .ls-fixed-header svg {
-  width: clamp(160px, 22vw, 220px);
-  height: auto;
+  width: 100%;
+  height: 140%;
   display: block;
 }
 /* ── v2.0 Compiled School Sheet ── */
@@ -925,17 +924,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 <!-- ══════════════════════════════════════════════════ -->
 <!-- SCREEN 0 — CONSULTANT CODE (OPTIONAL)             -->
-<!-- ── FIXED HEADER — MASTER VECTOR LOGO ── -->
+<!-- ── FIXED HEADER — MASTER VECTOR LOGO (dark, approved version, appears on every screen) ── -->
 <div class="ls-fixed-header" role="banner">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"
-       role="img" aria-label="VECTOR — A Better College Consultant">
-    <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif"
-      font-weight="300" font-size="120px" letter-spacing="18px"
-      fill="#0A0A0A" x="600" y="257.6" text-anchor="middle">VECTOR</text>
-    <line x1="700.15" y1="231.24" x2="721.49" y2="172.60"
-      stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
-    <polygon points="721.49,172.60 717.16,176.39 722.37,178.29"
-      fill="#C8A97A" opacity="1"/>
+  <svg viewBox="0 0 1200 400" role="img" aria-label="VECTOR — A Better College Consultant">
+    <rect width="1200" height="400" fill="#0A0806"/>
+    <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="150px" letter-spacing="18px" fill="#FDF8F0" x="600" y="257.6" text-anchor="middle">VECTOR</text>
+    <line x1="700.15" y1="231.24" x2="721.49" y2="172.60" stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+    <polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="#C8A97A" opacity="1"/>
   </svg>
 </div>
 
@@ -978,7 +973,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
   <div class="voice-row">
     <button class="vbtn active" id="vbtn-student" onclick="setVoice('student')">I'm the student</button>
-    <button class="vbtn" id="vbtn-parent" onclick="setVoice('parent')">I'm a parent</button>
+    <button class="vbtn" id="vbtn-parent" onclick="goToParentAgent()">I'm a parent</button>
   </div>
 
   <div class="path-card sel" id="pc-student" onclick="selectPath('student')">
@@ -1834,7 +1829,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="container">
   <div style="text-align:center;padding:5rem 0;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="270" height="90" role="img" aria-label="VECTOR" style="display:block;margin:0 auto 1.25rem;">
-  <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="#0A0A0A" x="600" y="257.6" text-anchor="middle">VECTOR</text>
+  <svg viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="VECTOR — A Better College Consultant"><rect width="1200" height="400" fill="#0A0806"/><text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="150px" letter-spacing="18px" fill="#FDF8F0" x="600" y="257.6" text-anchor="middle">VECTOR</text><line x1="700.15" y1="231.24" x2="721.49" y2="172.60" stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round" opacity="1"/><polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="#C8A97A" opacity="1"/></svg>
   <line x1="700.15" y1="231.24" x2="721.49" y2="172.60" stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round"/>
   <polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="#C8A97A"/>
 </svg>
@@ -2501,6 +2496,14 @@ function returnToReportFromEssayEvidence() {
 }
 
 // ── VOICE FORK ─────────────────────────────────────
+function goToParentAgent() {
+  // Parents get their own real interview, not a relabeled student flow.
+  // Passes consultant_code along so the parent's session ties to the same
+  // family/consultant pairing already established on this screen.
+  var code = LS_STATE.consultant_code ? ('?code=' + encodeURIComponent(LS_STATE.consultant_code)) : '';
+  window.location.href = 'parent-agent.html' + code;
+}
+
 function setVoice(v) {
   LS_STATE.voice = v;
   document.getElementById('vbtn-student').classList.toggle('active', v==='student');
@@ -5289,7 +5292,7 @@ function showLifescapeGate() {
       <div style="font-family:var(--sans);font-size:var(--type-meta);letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Your Lifescape</div>
       <div style="margin-bottom:.75rem;display:flex;justify-content:center;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="160" height="53" role="img" aria-label="VECTOR" style="display:block;">
-          <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="#0A0A0A" x="600" y="257.6" text-anchor="middle">VECTOR</text>
+          <svg viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="VECTOR — A Better College Consultant"><rect width="1200" height="400" fill="#0A0806"/><text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="150px" letter-spacing="18px" fill="#FDF8F0" x="600" y="257.6" text-anchor="middle">VECTOR</text><line x1="700.15" y1="231.24" x2="721.49" y2="172.60" stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round" opacity="1"/><polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="#C8A97A" opacity="1"/></svg>
           <line x1="700.15" y1="231.24" x2="721.49" y2="172.60" stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round"/>
           <polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="#C8A97A"/>
         </svg>
