@@ -1109,6 +1109,161 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- ══════════════════════════════════════════════════ -->
+<!-- ESSAY-ENGINE-003 — ESSAY EVIDENCE LAYER            -->
+<!-- Separate, optional "deepen your essay" module.     -->
+<!-- Entirely skippable; does not touch existing intake  -->
+<!-- flow or ESSAY-ENGINE-002. Six screens, one question -->
+<!-- per screen, matching existing narrative-input style. -->
+<!-- ══════════════════════════════════════════════════ -->
+
+<!-- EE-1 — ACCOMPLISHMENT EVIDENCE -->
+<div class="screen" id="screen-ee1">
+<div class="container" style="padding-top:7rem">
+  <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
+  <div class="gold-rule"></div>
+  <div class="q">What's something you built, fixed, led, created, or finally figured out?</div>
+  <div class="q-sub">What part was harder than people realize? What did you learn about yourself?</div>
+  <div style="margin-top:2rem;">
+    <textarea
+      id="essay-evidence-accomplishment"
+      class="ls-input"
+      rows="5"
+      placeholder="Take your time. Write as much or as little as feels right."
+      style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+    ></textarea>
+  </div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee2')">Continue</button>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
+  </div>
+</div>
+</div>
+
+<!-- EE-2 — PRIDE WITHOUT BRAGGING -->
+<div class="screen" id="screen-ee2">
+<div class="container" style="padding-top:7rem">
+  <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
+  <div class="gold-rule"></div>
+  <div class="q">What are you proud of that wouldn't show up on a transcript?</div>
+  <div class="q-sub">What did you do when no one was watching?</div>
+  <div style="margin-top:2rem;">
+    <textarea
+      id="essay-evidence-pride"
+      class="ls-input"
+      rows="5"
+      placeholder="A small moment can explain a bigger part of who you are."
+      style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+    ></textarea>
+  </div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee3')">Continue</button>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="goTo('ee1')" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    &nbsp;&nbsp;
+    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
+  </div>
+</div>
+</div>
+
+<!-- EE-3 — INTELLECTUAL CURIOSITY -->
+<div class="screen" id="screen-ee3">
+<div class="container" style="padding-top:7rem">
+  <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
+  <div class="gold-rule"></div>
+  <div class="q">What topic makes you lose track of time?</div>
+  <div class="q-sub">What do you read, watch, build, debate, or research just because you want to?</div>
+  <div style="margin-top:2rem;">
+    <textarea
+      id="essay-evidence-curiosity"
+      class="ls-input"
+      rows="5"
+      placeholder="Doesn't need to be school-related."
+      style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+    ></textarea>
+  </div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee4')">Continue</button>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="goTo('ee2')" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    &nbsp;&nbsp;
+    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
+  </div>
+</div>
+</div>
+
+<!-- EE-4 — FAMILY AND CONTEXT (explicitly optional/sensitive) -->
+<div class="screen" id="screen-ee4">
+<div class="container" style="padding-top:7rem">
+  <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
+  <div class="gold-rule"></div>
+  <div class="q">What responsibilities do you have at home, if any?</div>
+  <div class="q-sub">Only share this if it feels relevant to you. Totally fine to skip.</div>
+  <div style="margin-top:2rem;">
+    <textarea
+      id="essay-evidence-family"
+      class="ls-input"
+      rows="5"
+      placeholder="Optional — leave blank if this doesn't feel like your story to tell right now."
+      style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+    ></textarea>
+  </div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee5')">Continue</button>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="goTo('ee3')" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    &nbsp;&nbsp;
+    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
+  </div>
+</div>
+</div>
+
+<!-- EE-5 — ENVIRONMENT AND BELONGING -->
+<div class="screen" id="screen-ee5">
+<div class="container" style="padding-top:7rem">
+  <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
+  <div class="gold-rule"></div>
+  <div class="q">Where do you feel most like yourself?</div>
+  <div class="q-sub">What kind of people bring out your best? What drains you?</div>
+  <div style="margin-top:2rem;">
+    <textarea
+      id="essay-evidence-belonging"
+      class="ls-input"
+      rows="5"
+      placeholder="Could be a place, a group, an activity — whatever comes to mind."
+      style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+    ></textarea>
+  </div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee6')">Continue</button>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="goTo('ee4')" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    &nbsp;&nbsp;
+    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
+  </div>
+</div>
+</div>
+
+<!-- EE-6 — VOICE CAPTURE -->
+<div class="screen" id="screen-ee6">
+<div class="container" style="padding-top:7rem">
+  <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
+  <div class="gold-rule"></div>
+  <div class="q">Tell one of these stories like you're texting a friend.</div>
+  <div class="q-sub">This helps your essay sound like you, not like an adult wrote it. No need to be polished.</div>
+  <div style="margin-top:2rem;">
+    <textarea
+      id="essay-evidence-voice"
+      class="ls-input"
+      rows="5"
+      placeholder="Just talk normal. We'll use this to keep your real voice in your essay."
+      style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+    ></textarea>
+  </div>
+  <div id="essay-evidence-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center;"></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="submitEssayEvidence()">Finish</button>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="goTo('ee5')" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
 <!-- SCREEN 2 — NAME + GRADE                           -->
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-2">
@@ -1314,12 +1469,6 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <button class="world-card" data-world="beauty" onclick="selectWorld(this,'beauty')"><div class="world-icon"><i class="ti ti-palette" aria-hidden="true"></i></div><div class="world-name">The World of Beauty</div><div class="world-desc">Arts, fashion, aesthetics, creative expression</div></button>
     <button class="world-card" data-world="power" onclick="selectWorld(this,'power')"><div class="world-icon"><i class="ti ti-chess" aria-hidden="true"></i></div><div class="world-name">The World of Power</div><div class="world-desc">Entrepreneurship, leadership, strategy, scale</div></button>
     <button class="world-card" data-world="compete" onclick="selectWorld(this,'compete')"><div class="world-icon"><i class="ti ti-trophy" aria-hidden="true"></i></div><div class="world-name">The World of Competition</div><div class="world-desc">Sport, performance, winning, the score</div></button>
-    <button class="world-card" data-world="military" onclick="selectWorld(this,'military')"><div class="world-icon"><i class="ti ti-shield-star" aria-hidden="true"></i></div><div class="world-name">The World of Military</div><div class="world-desc">Honor, duty, country — service and leadership</div></button>
-    <button class="world-card" data-world="making" onclick="selectWorld(this,'making')"><div class="world-icon"><i class="ti ti-hammer" aria-hidden="true"></i></div><div class="world-name">The World of Making</div><div class="world-desc">Trades, engineering, and building the infrastructure of society</div></button>
-    <button class="world-card" data-world="food" onclick="selectWorld(this,'food')"><div class="world-icon"><i class="ti ti-soup" aria-hidden="true"></i></div><div class="world-name">The World of Food</div><div class="world-desc">Feeding others — food science, agribusiness, culinary business</div></button>
-    <button class="world-card" data-world="hospitality" onclick="selectWorld(this,'hospitality')"><div class="world-icon"><i class="ti ti-building-skyscraper" aria-hidden="true"></i></div><div class="world-name">The World of Hospitality</div><div class="world-desc">Living experiences — tourism, culinary business</div></button>
-    <button class="world-card" data-world="energy" onclick="selectWorld(this,'energy')"><div class="world-icon"><i class="ti ti-bolt" aria-hidden="true"></i></div><div class="world-name">The World of Energy</div><div class="world-desc">Bringing life to tools — traditional, transition, policy, battery/AI power</div></button>
-    <button class="world-card" data-world="logistics" onclick="selectWorld(this,'logistics')"><div class="world-icon"><i class="ti ti-truck" aria-hidden="true"></i></div><div class="world-name">The World of Logistics</div><div class="world-desc">Arrival of goods — freight, 3PL, supply chain, regional hubs</div></button>
   </div>
 
   <div id="world-error" style="display:none;color:#c0392b;margin:12px 0;font-size:14px;">Please select at least one world before continuing.</div>
@@ -1823,6 +1972,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="report-section" id="full-essay-section" style="display:none">
       <div class="section-eyebrow">Directions worth writing about</div>
       <div id="full-essay-topics"></div>
+      <div style="text-align:center;margin-top:1.5rem;">
+        <button onclick="goTo('ee1')" class="ls-btn-outline" style="width:auto;padding:12px 24px;">Want to deepen one of these? Answer a few more questions →</button>
+      </div>
     </div>
 
     <div class="report-section" id="geo-region-section">
@@ -2228,6 +2380,124 @@ function submitGenomeWorry() {
 function skipGenomeWorry() {
   LS_STATE.genome_worry = null;
   goTo(2);
+}
+
+// ── ESSAY-ENGINE-003 — Essay Evidence Layer ─────────
+// Separate, optional data structure. Does not touch genome_* fields
+// or ESSAY-ENGINE-002's existing pipeline. Feeds Stage 1 normalization
+// (built in a later step) only when populated.
+function submitEssayEvidence() {
+  LS_STATE.essayEvidence = {
+    accomplishment: (document.getElementById('essay-evidence-accomplishment') || {}).value || null,
+    pride: (document.getElementById('essay-evidence-pride') || {}).value || null,
+    curiosity: (document.getElementById('essay-evidence-curiosity') || {}).value || null,
+    family: (document.getElementById('essay-evidence-family') || {}).value || null,
+    belonging: (document.getElementById('essay-evidence-belonging') || {}).value || null,
+    voice: (document.getElementById('essay-evidence-voice') || {}).value || null,
+    completed: true
+  };
+  Object.keys(LS_STATE.essayEvidence).forEach(function(k) {
+    if (typeof LS_STATE.essayEvidence[k] === 'string' && LS_STATE.essayEvidence[k].trim() === '') {
+      LS_STATE.essayEvidence[k] = null;
+    }
+  });
+  returnToReportFromEssayEvidence();
+}
+
+function skipEssayEvidence() {
+  LS_STATE.essayEvidence = { completed: false };
+  returnToReportFromEssayEvidence();
+}
+
+// ── ESSAY-ENGINE-003 Stage 1: Normalize survey → structured essay evidence ──
+// Converts raw text answers into a clean object the essay prompt-builder can
+// use directly. Never invents content — only reorganizes what the student wrote.
+// Returns null if the module wasn't completed, so downstream code can fall
+// back to ESSAY-ENGINE-002 behavior with zero disruption.
+function normalizeEssayEvidence(rawEvidence) {
+  if (!rawEvidence || rawEvidence.completed !== true) return null;
+
+  var fields = ['accomplishment', 'pride', 'curiosity', 'family', 'belonging', 'voice'];
+  var hasAnyContent = fields.some(function(f) { return !!rawEvidence[f]; });
+  if (!hasAnyContent) return null;
+
+  return {
+    accomplishmentEvidence: rawEvidence.accomplishment || null,
+    prideEvidence: rawEvidence.pride || null,
+    curiosityEvidence: rawEvidence.curiosity || null,
+    familyContext: rawEvidence.family || null,
+    belongingEvidence: rawEvidence.belonging || null,
+    voiceSample: rawEvidence.voice || null,
+    // Simple presence flags — useful downstream without re-parsing text
+    hasFamilyContext: !!rawEvidence.family,
+    hasVoiceSample: !!rawEvidence.voice,
+    fieldsProvided: fields.filter(function(f) { return !!rawEvidence[f]; }).length
+  };
+}
+
+// ── ESSAY-ENGINE-003 Stage 2: Generate narrative theme instructions ──
+// Builds a short instruction block telling the AI to first identify 2-4
+// narrative hypotheses from the evidence BEFORE generating essay topics.
+// This keeps topics grounded in a real pattern instead of a single anecdote.
+// Returns null if no evidence exists — ESSAY-ENGINE-002 behavior unaffected.
+function buildNarrativeThemeInstructions(structuredEvidence) {
+  if (!structuredEvidence) return null;
+
+  var evidenceLines = [];
+  if (structuredEvidence.accomplishmentEvidence) evidenceLines.push('Accomplishment: ' + structuredEvidence.accomplishmentEvidence);
+  if (structuredEvidence.prideEvidence) evidenceLines.push('Quiet pride: ' + structuredEvidence.prideEvidence);
+  if (structuredEvidence.curiosityEvidence) evidenceLines.push('Curiosity: ' + structuredEvidence.curiosityEvidence);
+  if (structuredEvidence.familyContext) evidenceLines.push('Family context: ' + structuredEvidence.familyContext);
+  if (structuredEvidence.belongingEvidence) evidenceLines.push('Belonging: ' + structuredEvidence.belongingEvidence);
+  if (structuredEvidence.voiceSample) evidenceLines.push('Voice sample (match this tone, do not quote directly): ' + structuredEvidence.voiceSample);
+
+  if (evidenceLines.length === 0) return null;
+
+  return 'BEFORE generating essay topics, first identify 2-4 narrative hypotheses from this evidence — underlying patterns like "learns by building things that fail first" or "uses curiosity to connect with people." These are patterns, not finished topics. Ground every topic recommendation in one of these hypotheses, not just a single anecdote. Preserve the student\'s own voice and specific details — do not invent scenes or embellish beyond what is written below.\n\nSTUDENT EVIDENCE:\n' + evidenceLines.join('\n');
+}
+
+// ── ESSAY-ENGINE-003 Stage 3: Match narrative themes to the actual prompt ──
+// Tells the AI which prompt each topic must answer: Common App's stable
+// open-ended prompts, or a school-specific supplement pulled from the
+// university database when one is known. Null-safe, no disruption if
+// no supplement context exists.
+function buildPromptMatchInstructions(applicationContext) {
+  var ctx = applicationContext || {};
+  var isCommonApp = !ctx.schoolSpecificSupplement;
+
+  if (isCommonApp) {
+    return 'MATCH EACH TOPIC TO THE COMMON APP PROMPT SET (identity/background, challenge, belief, gratitude, growth, curiosity, or open topic). State which prompt each recommended topic answers. The Common App essay should answer: who is this student, and how do they make meaning from experience?';
+  }
+
+  return 'This is a SCHOOL-SPECIFIC SUPPLEMENT for ' + (ctx.schoolName || 'the target school') + '. Do not use generic praise. Tie the student\'s actual demonstrated traits to specific things this school offers — real programs, culture, or community from the university database, never empty name-dropping. The supplement should answer: why does this student fit this school, and why does this school fit this student?';
+}
+
+// ── ESSAY-ENGINE-003 Stage 4: Scoring rubric instructions ──
+// Counselor-facing only, per direction — families see clean topics with
+// no visible scores. Ranks each candidate topic on 8 dimensions.
+function buildScoringRubricInstructions() {
+  return 'For each candidate topic, score 1-10 on these 8 dimensions and include the scores ONLY in the counselor-facing output, never in the family-facing output: authenticity (sounds like the student, not an adult), specificity (concrete scene/moment/object/decision), reflection (shows what changed or what they now understand), evidence (enough raw material from what the student actually wrote), differentiation (would stand out from similar peers), promptFit (clearly answers the required prompt), applicationComplement (adds something not obvious from the resume), ethicalSafety (avoids fabricating, exaggerating, or replacing student authorship). Reject any topic scoring below threshold on ethicalSafety or evidence, and explain why in rejectedTopicsWithReasons.';
+}
+
+// ── ESSAY-ENGINE-003 Stage 5: Writing packet instructions ──
+// Full packet for EVERY recommended topic, not just the top few, per
+// direction. Never writes the finished essay — only helps the student
+// draft it themselves.
+function buildWritingPacketInstructions() {
+  return 'For EVERY recommended topic (not just the top ones), generate a complete writing packet: topic concept, one-sentence summary, matched prompt, why it fits (citing the student\'s own evidence), a possible opening scene, a possible narrative arc, 3-5 reflection questions to answer before drafting, risk flags (cliché, overclaiming, trauma dumping, resume repetition, adult-sounding voice), and voice preservation notes based on the student\'s own voice sample. Do NOT write the finished essay. Do NOT invent scenes or details beyond what the student provided. The packet helps the student write it themselves.';
+}
+
+function returnToReportFromEssayEvidence() {
+  // Returns the student to wherever the report screen lives, not the intake flow.
+  // Report screen id may vary by build; falls back gracefully if not found.
+  var reportScreen = document.getElementById('screen-report') || document.getElementById('screen-full-report');
+  if (reportScreen) {
+    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+    reportScreen.classList.add('active');
+    window.scrollTo(0,0);
+  } else {
+    goTo(2); // fallback during isolated Step 1/2 testing
+  }
 }
 
 // ── VOICE FORK ─────────────────────────────────────
@@ -3241,245 +3511,6 @@ COMPETE LENS: This student has competitive/athletic signal${worldSignal ? ' (sel
 COMPETE COUNSELOR NOTE: Athletic/competitive profile detected. (1) The retirement thread: this student will eventually transition out of active competition — planting the seed of a parallel professional identity now is one of the highest-value things a counselor can do. Ask: "What about the game fascinates you beyond playing it?" (2) Primary track: ${trackDescriptions[primaryTrack]}. (3) NIL awareness: if this student has college athletic prospects, they should understand NIL as a business curriculum before they arrive on campus. (4) School callouts: UMass Amherst McCormack Dept of Sport Management (oldest, most respected), Syracuse Falk College (sport management + Newhouse media), Marquette National Sports Law Institute, Ohio University Sport Management.`,
     callD_injection: `
 COMPETE LENS: If any matched schools have strong athletic programs, sport management programs, or sport medicine/kinesiology programs, surface those in the MATCH and WHY fields. The student with compete signal who also has business tiles benefits from schools with NIL infrastructure and sport business programs. The student with body tiles benefits from schools with athletic training, kinesiology, or sports medicine concentrations.`
-  };
-}
-
-/* ── Military Lens Detector ──────────────────────────────────────────────────
-   Fires when student selected the military world. Surfaces Pre-Commission
-   or Veteran/Transfer tile based on grade/profile signal. Framing: Honor,
-   Duty, Country — never a fallback path.
-   ─────────────────────────────────────────────────────────────────────────── */
-function buildMilitaryLensContext(ctx) {
-  const worlds = (ctx.worlds_chosen || []).map(w => w.toLowerCase());
-  const worldSignal = worlds.includes('military');
-  if (!worldSignal) return null;
-
-  const priorService = !!(ctx.priorService || ctx.isVeteran);
-  const track = priorService ? 'veteran_transfer' : 'pre_commission';
-
-  const trackDescriptions = {
-    pre_commission: 'the service academy or ROTC scholarship pathway — commissioning as an officer through West Point, Naval Academy, Air Force Academy, Coast Guard Academy, Merchant Marine Academy, VMI, Norwich, or The Citadel, or through a strong ROTC program at schools like Texas A&M, Virginia Tech, or the University of North Georgia',
-    veteran_transfer: 'the veteran/transfer pathway — translating prior military service and transferable credit into a four-year degree, often carrying 30+ credits and real operational experience most peers do not have'
-  };
-
-  return {
-    fires: true,
-    track,
-    worldSignal,
-    callA_injection: `
-MILITARY LENS ACTIVE — this student's path runs through military service. Framing: Honor, Duty, Country. This is a genuine, dignified calling, never a fallback or consolation for a student who "couldn't get in elsewhere." Primary track: ${trackDescriptions[track]}. Service commissions leaders in every field it touches — the trajectory sentence should honor that identity directly.`,
-    callB_injection: `
-MILITARY LENS: Surface the military/service world as its own cluster. Primary track: ${trackDescriptions[track]}. If pre-commission, name specific schools (service academies, ROTC-strong universities). If veteran/transfer, note expected paths (Criminal Justice, Political Science, Business, Engineering, Healthcare) alongside Blue Ocean pathways: Strategic Intelligence (Georgetown, American University, National Intelligence University), Defense & Strategic Studies, Organizational Leadership, Emergency Management, Data Analytics + Operations.`,
-    callC_injection: `
-MILITARY COUNSELOR NOTE: ${track === 'pre_commission' ? 'Service academy/ROTC track detected — confirm nomination timelines and physical/medical requirements early.' : 'Veteran/transfer track detected — confirm credit transfer evaluation and GI Bill eligibility conversations happen with the school, not informally.'} Never frame this path as a lesser option to a traditional four-year track.`,
-    callD_injection: `
-MILITARY LENS: If matched schools include service academies or ROTC-strong programs, surface commissioning pathway and officer-track framing in MATCH and WHY fields. For veteran/transfer students, prioritize schools with strong credit-transfer policies and veteran support offices.`
-  };
-}
-
-/* ── World of Making Lens Detector ───────────────────────────────────────────
-   Fires when student selected the World of Making. Surfaces Trades/Eng or
-   Chips/Robotics tile. Framing: infrastructure of society, built by
-   craftsmen, not machines — never a fallback for students who "don't fit."
-   ─────────────────────────────────────────────────────────────────────────── */
-function buildWorldOfMakingLensContext(ctx) {
-  const worlds = (ctx.worlds_chosen || []).map(w => w.toLowerCase());
-  const worldSignal = worlds.includes('making');
-  if (!worldSignal) return null;
-
-  const tiles = (ctx.activityTiles || []).map(t => t.toLowerCase());
-  const chipSignal = ['three_d_printing','engineering_challenges'].some(t => tiles.includes(t));
-  const track = chipSignal ? 'chips_robotics' : 'trades_engineering';
-
-  const trackDescriptions = {
-    trades_engineering: 'skilled trades pursued through four-year technical and engineering-adjacent degree programs, plus engineering and manufacturing — industrial, mechanical, advanced manufacturing, operations',
-    chips_robotics: 'the reshoring wave — semiconductor and chip manufacturing (Arizona State/TSMC, Purdue, Georgia Tech) and advanced/robotic manufacturing (Michigan, Ohio State), the physical rebuild of American manufacturing capacity'
-  };
-
-  return {
-    fires: true,
-    track,
-    worldSignal,
-    callA_injection: `
-WORLD OF MAKING LENS ACTIVE — "The infrastructure of society, built by craftsmen, not machines." This is a genuine, dignified destination, never a fallback for students who "don't fit" traditional four-year tracks. Primary track: ${trackDescriptions[track]}. Craft, precision, and systems mastery are the identity, not a consolation.`,
-    callB_injection: `
-WORLD OF MAKING LENS: Surface trades/engineering/manufacturing as its own cluster. Primary track: ${trackDescriptions[track]}. If chip/robotics signal present, note the CHIPS Act/reshoring timing angle as a hidden-pathway opportunity most families don't see coming.`,
-    callC_injection: `
-WORLD OF MAKING COUNSELOR NOTE: Hands-on, systems-minded profile detected. Never let this read as a lesser path in conversation with the family — reframe explicitly if the family raises concern about "not going to a real college."`,
-    callD_injection: `
-WORLD OF MAKING LENS: If matched schools have strong engineering/manufacturing/technical programs, surface those in MATCH and WHY fields. Note the Trades/Engineering + Business cross-world connector if entrepreneurship/Enterprising signal is also present — technical founder/owner-operator pathway.`
-  };
-}
-
-/* ── Food Lens Detector ───────────────────────────────────────────────────────
-   Fires when student selected the World of Food. Framing: feeding others —
-   dignified, service-rooted infrastructure work, never a foodie lifestyle
-   choice.
-   ─────────────────────────────────────────────────────────────────────────── */
-function buildFoodLensContext(ctx) {
-  const worlds = (ctx.worlds_chosen || []).map(w => w.toLowerCase());
-  const worldSignal = worlds.includes('food');
-  if (!worldSignal) return null;
-
-  const tiles = (ctx.activityTiles || []).map(t => t.toLowerCase());
-  const businessSignal = ['entrepreneurship','business_startups'].some(t => tiles.includes(t));
-  const track = businessSignal ? 'culinary_business' : 'food_science_agribusiness';
-
-  const trackDescriptions = {
-    food_science_agribusiness: 'food science and agribusiness — supply chain, land-grant institution depth (Penn State, Wisconsin, Texas Tech)',
-    culinary_business: 'culinary business and innovation — spanning corporate restaurant operation, independent ownership, roll-up/PE-backed platforms, and the industry trade circuit (Fancy Food Show, Natural Products Expo West, supplier day) most families never see'
-  };
-
-  return {
-    fires: true,
-    track,
-    worldSignal,
-    callA_injection: `
-FOOD LENS ACTIVE — "Feeding others." This World is dignified, service-rooted infrastructure work, never a foodie lifestyle choice. Primary track: ${trackDescriptions[track]}. Feeding people, at scale or in a single dining room, is one of the oldest and most essential forms of human service.`,
-    callB_injection: `
-FOOD LENS: Surface food science/agribusiness or culinary business as its own cluster. Primary track: ${trackDescriptions[track]}. If business signal present, note the full ownership spectrum — corporate operator, independent owner, roll-up/PE platform — as a reframe most families haven't considered.`,
-    callC_injection: `
-FOOD COUNSELOR NOTE: Hands-on + business-building profile detected. Frame as essential infrastructure work, not a lifestyle/hobby choice, in any conversation with the family.`,
-    callD_injection: `
-FOOD LENS: If matched schools have strong food science, agribusiness, or culinary business programs, surface those in MATCH and WHY fields.`
-  };
-}
-
-/* ── Hospitality Lens Detector ───────────────────────────────────────────────
-   Fires when student selected the World of Hospitality. Framing: living
-   experiences — the craft of shaping how people live inside a moment.
-   Connects to Food when both signals are strong.
-   ─────────────────────────────────────────────────────────────────────────── */
-function buildHospitalityLensContext(ctx) {
-  const worlds = (ctx.worlds_chosen || []).map(w => w.toLowerCase());
-  const worldSignal = worlds.includes('hospitality');
-  if (!worldSignal) return null;
-
-  const foodSignal = worlds.includes('food');
-  const track = 'tourism_experience';
-
-  return {
-    fires: true,
-    track,
-    worldSignal,
-    foodConnector: foodSignal,
-    callA_injection: `
-HOSPITALITY LENS ACTIVE — "Living experiences." This World is the craft of shaping how people live inside a moment — a stay, a trip, a celebration — not service-industry filler work. Dignified design of experience, at any altitude from mainstream to luxury.${foodSignal ? ' FOOD+HOSPITALITY CROSSOVER: this student shows strong signal in both Worlds — surface the guest-experience/culinary crossover pathway (restaurant/resort concept development, culinary-driven hospitality brands) as a reframe, not a specific program recommendation.' : ''}`,
-    callB_injection: `
-HOSPITALITY LENS: Surface hospitality/tourism management as its own cluster. Brand-anchored schools: Cornell (signature, broadest reach), BYU (Marriott School pipeline), Pepperdine (luxury/resort niche), UNLV (casino-resort/convention), University of Denver (mountain/ski resort), Colorado State (national parks/outdoor recreation), Florida schools (theme park/resort corridor). Traveler-type/terrain framing (cruise, business travel, family, solo/adventure; mountain, national park, luxury, mainstream) as narrative texture.`,
-    callC_injection: `
-HOSPITALITY COUNSELOR NOTE: Social + Enterprising profile detected.${foodSignal ? ' Food+Hospitality crossover present — worth exploring with the family directly.' : ''} Frame as dignified experience-design work, not service-industry-only.`,
-    callD_injection: `
-HOSPITALITY LENS: If matched schools have strong hospitality/tourism management programs, surface those in MATCH and WHY fields, including brand-anchor context where relevant (Cornell, BYU/Marriott, Pepperdine, UNLV, Denver, Colorado State, Florida schools).`
-  };
-}
-
-/* ── Energy Lens Detector ────────────────────────────────────────────────────
-   Fires when student selected the World of Energy. Framing: bringing life
-   to tools. Traditional and Transition tiles carry equal dignity — no
-   political framing or favoritism. Feeds the universal crisis-relevance
-   layer (grid/power trigger category).
-   ─────────────────────────────────────────────────────────────────────────── */
-function buildEnergyLensContext(ctx) {
-  const worlds = (ctx.worlds_chosen || []).map(w => w.toLowerCase());
-  const worldSignal = worlds.includes('energy');
-  if (!worldSignal) return null;
-
-  const tiles = (ctx.activityTiles || []).map(t => t.toLowerCase());
-  const policySignal = ['advocacy_activism','public_speaking_debate'].some(t => tiles.includes(t));
-  const batterySignal = ['ai_machine_learning','coding_programming'].some(t => tiles.includes(t));
-  let track = 'traditional_energy';
-  if (batterySignal) track = 'battery_ai_power';
-  else if (policySignal) track = 'policy_regulatory';
-
-  const trackDescriptions = {
-    traditional_energy: 'traditional energy — oil & gas, utilities, grid infrastructure',
-    transition_energy: 'transition energy — renewables, sustainability, climate tech',
-    policy_regulatory: 'policy & regulatory — energy law, policy, regulatory affairs',
-    battery_ai_power: 'battery tech & AI power — energy storage science and the physical power infrastructure behind AI data centers (Stanford, Berkeley, Caltech, UCLA, UC San Diego, San Jose State)'
-  };
-
-  return {
-    fires: true,
-    track,
-    worldSignal,
-    crisisRelevant: true,
-    callA_injection: `
-ENERGY LENS ACTIVE — "Bringing life to tools." This World is the essential act of powering everything else society builds. No side is favored between traditional and transition energy — both are legitimate, serious paths. Primary track: ${trackDescriptions[track]}.`,
-    callB_injection: `
-ENERGY LENS: Surface energy as its own cluster. Primary track: ${trackDescriptions[track]}. DB anchors to consider: Colorado School of Mines, LSU, Texas A&M (traditional); Stanford, UC Berkeley, Caltech, UCLA, UC San Diego, University of Washington, San Jose State (battery/AI power); University of Virginia (policy).`,
-    callC_injection: `
-ENERGY COUNSELOR NOTE: Present Traditional and Transition Energy with equal dignity — avoid any framing that reads as political favoritism toward either path.`,
-    callD_injection: `
-ENERGY LENS: If matched schools have strong energy engineering, policy, or battery/materials science programs, surface those in MATCH and WHY fields.`
-  };
-}
-
-/* ── Logistics Lens Detector ─────────────────────────────────────────────────
-   Fires when student selected the World of Logistics. Framing: arrival of
-   goods — the invisible infrastructure nothing else works without. Feeds
-   the universal crisis-relevance layer (supply chain trigger category).
-   ─────────────────────────────────────────────────────────────────────────── */
-function buildLogisticsLensContext(ctx) {
-  const worlds = (ctx.worlds_chosen || []).map(w => w.toLowerCase());
-  const worldSignal = worlds.includes('logistics');
-  if (!worldSignal) return null;
-
-  const track = 'supply_chain';
-
-  return {
-    fires: true,
-    track,
-    worldSignal,
-    crisisRelevant: true,
-    callA_injection: `
-LOGISTICS LENS ACTIVE — "Arrival of goods." This World is the invisible infrastructure that makes everything else possible — nothing reaches anyone without it. Dignified systems work, not a back-office afterthought.`,
-    callB_injection: `
-LOGISTICS LENS: Surface supply chain/logistics as its own cluster — Freight & Transportation, 3PL & Warehouse Ops, Supply Chain Management (Michigan State, Arizona State, Penn State anchor this), Regional Hub Strategy (Memphis/FedEx, Louisville/UPS, Atlanta, Inland Empire) as reasoning-language texture applying the alumni-diaspora framing to logistics geography.`,
-    callC_injection: `
-LOGISTICS COUNSELOR NOTE: Conventional + Enterprising profile detected. Frame as essential infrastructure, never back-office or lesser work.`,
-    callD_injection: `
-LOGISTICS LENS: If matched schools have strong supply chain management programs, surface those in MATCH and WHY fields.`
-  };
-}
-
-/* ── Universal Crisis-Relevance Layer ────────────────────────────────────────
-   MILITARY-001 Addendum A. Not a tile, not a score — a single reasoning-
-   language line that can attach to ANY student's report when their signal
-   shows genuine crisis-relevant strength, independent of whether Military
-   was selected. Trigger categories: grid/power (Energy), supply chain
-   (Logistics), medical (Healing), engineering/systems (World of Making).
-   Tone: calm and affirming, never alarmist. Fires only on strong signal —
-   never forced onto a borderline profile.
-   ─────────────────────────────────────────────────────────────────────────── */
-function buildCrisisRelevanceContext(ctx, lensResults) {
-  const notes = [];
-
-  if (lensResults.energy && lensResults.energy.fires && lensResults.energy.crisisRelevant) {
-    notes.push('In a crisis, this is the skill that keeps the lights on.');
-  }
-  if (lensResults.logistics && lensResults.logistics.fires && lensResults.logistics.crisisRelevant) {
-    notes.push('In a crisis, this is the skill that keeps supply lines moving.');
-  }
-
-  const tiles = (ctx.activityTiles || []).map(t => t.toLowerCase());
-  const medicalSignal = ['medical_science','first_aid_emergencies','biology'].some(t => tiles.includes(t));
-  if (medicalSignal && notes.length < 2) {
-    notes.push('In a crisis, this is the skill that treats the injured.');
-  }
-
-  if (lensResults.making && lensResults.making.fires && notes.length < 2) {
-    notes.push('In a crisis, this is the skill that rebuilds what breaks.');
-  }
-
-  if (notes.length === 0) return null;
-
-  // Only surface one note — pick the strongest/first match, never stack multiple
-  return {
-    fires: true,
-    note: notes[0],
-    callA_injection: `
-CRISIS-RELEVANCE LAYER: This student's signal shows genuine crisis-relevant strength. If natural in context, the trajectory sentence or closing line may include one calm, affirming note: "${notes[0]}" This is a dignity note, not a warning — never alarmist, never forced if it doesn't fit naturally.`
   };
 }
 
@@ -5368,8 +5399,31 @@ async function submitLifescape() {
       _parallelCalls.push(fireCall(buildCallEPrompt(profile, _ccContext, _ccTargetSchool), 800, 0, 30000));
     }
 
+    // ── ESSAY-ENGINE-003 Stage 1: normalize Essay Evidence Layer ──
+    // Turns raw text answers into structured evidence. Only runs if the
+    // student completed the optional "deepen your essay" module.
+    // Never blocks report render if missing or malformed.
+    var _essayEvidenceStructured = normalizeEssayEvidence(LS_STATE.essayEvidence);
+
+    // ── ESSAY-ENGINE-003 Stage 2: narrative theme instructions ──
+    // Converts structured evidence into narrative hypotheses BEFORE the
+    // AI jumps to essay topics — e.g. "I learn by building things that
+    // fail first." These are patterns, not topics yet. Null-safe.
+    var _narrativeThemeInstructions = buildNarrativeThemeInstructions(_essayEvidenceStructured);
+
+    // ── ESSAY-ENGINE-003 Stage 3: prompt-match instructions ──
+    // Tells the AI whether this is Common App or a school-specific
+    // supplement, and what that prompt actually requires.
+    var _promptMatchInstructions = buildPromptMatchInstructions(ctx.applicationContext);
+
+    // ── ESSAY-ENGINE-003 Stage 4: scoring rubric (counselor-only) ──
+    var _scoringRubricInstructions = buildScoringRubricInstructions();
+
+    // ── ESSAY-ENGINE-003 Stage 5: writing packet (full, every topic) ──
+    var _writingPacketInstructions = buildWritingPacketInstructions();
+
     // ── Essay Topic Engine — ESSAY-ENGINE-002 (topics only) ──
-    var _essayPrompt = (typeof buildEssayTopicPrompt === 'function') ? buildEssayTopicPrompt(ctx) : null;
+    var _essayPrompt = (typeof buildEssayTopicPrompt === 'function') ? buildEssayTopicPrompt(ctx, _essayEvidenceStructured, _narrativeThemeInstructions, _promptMatchInstructions, _scoringRubricInstructions, _writingPacketInstructions) : null;
     var _essayCallIndex = _parallelCalls.length;
     if (_essayPrompt) {
       _parallelCalls.push(fireCall(_essayPrompt, 1400, 0, 30000));
