@@ -5303,6 +5303,7 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
     consultant_code:   LS_STATE.consultant_code          || null,
     consent_obtained:  consentGiven                      || false,
     consent_timestamp: consentTimestamp                  || null,
+    session_id:        sessionId                          || null,
     supabase_user_id:  window.sbSession.user.id,
   };
 
