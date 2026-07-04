@@ -2103,6 +2103,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <div id="counselor-academic"></div>
     </div>
 
+    <div style="margin-bottom:2rem" id="counselor-synthesis-brief-section">
+      <div class="section-eyebrow">Synthesis brief</div>
+      <div id="counselor-synthesis-brief"><div style="font-size:15px;color:var(--ink4);font-style:italic">Generating...</div></div>
+    </div>
+
     <div style="margin-bottom:2rem">
       <div class="section-eyebrow">Occupation intelligence</div>
       <div id="counselor-occupations"><div style="font-size:15px;color:var(--ink4);font-style:italic">Generating...</div></div>
@@ -4149,23 +4154,27 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       console.warn('[VECTOR Lifescape] Cohort longitudinal fetch error (non-blocking):', err);
     });
 
-    // ── family_sessions save-on-completion (matches real table schema) ────
-    if (window.sbClient) {
-      window.sbClient
-        .from('family_sessions')
-        .insert({
-          consultant_id:  LS_STATE.consultant_code || null,
-          family_surname: (LS_STATE.name || '').split(' ').pop() || null,
-          status:         'complete',
-        })
-        .then(function(result) {
-          if (result.error) {
-            console.warn('[VECTOR Lifescape] family_sessions save failed (non-blocking):', result.error);
-          } else {
-            console.log('[VECTOR Lifescape] family_sessions record created.');
-          }
-        });
-    }
+    // ── family_sessions save-on-completion (via Worker — no login required) ──
+    fetch('https://api.abettercollegeconsultant.com/save-family-session', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        consultant_id:  LS_STATE.consultant_code || null,
+        family_surname: (LS_STATE.name || '').split(' ').pop() || null,
+        status:         'complete',
+      }),
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d.success) {
+        console.log('[VECTOR Lifescape] family_sessions record created.');
+      } else {
+        console.warn('[VECTOR Lifescape] family_sessions save failed (non-blocking):', d.error);
+      }
+    })
+    .catch(function(err){
+      console.warn('[VECTOR Lifescape] family_sessions fetch error (non-blocking):', err);
+    });
 
     fetch('https://api.abettercollegeconsultant.com/save-session', {
       method:  'POST',
@@ -5574,7 +5583,7 @@ async function submitLifescape() {
 
     // Render Full Report + Counselor View progressively
     renderFullReport(profile, callAData, callBData, callCData, essayParsed);
-    renderCounselorView(profile, callAData, callBData, callCData, essayParsed);
+    renderCounselorView(profile, callAData, callBData, callCData, essayParsed, callDData);
 
     // ── CALL D — School recommendations ──────────────
     // Only fire if we have matched schools and university content
@@ -6417,7 +6426,98 @@ function updateQuickReadClusters(industriesText) {
 }
 
 // ── RENDER: COUNSELOR VIEW ─────────────────────────
-function renderCounselorView(profile, callAData, callBData, callCData, essayParsed) {
+// ── Counselor Synthesis Brief ────────────────────────────────────────────
+// Pure function: reads already-generated callD school matches, produces
+// a short, focused counselor-only summary. No new AI call, no new cost.
+function buildCounselorSynthesisBrief(profile, callDData) {
+  var schools = callDData || [];
+
+  // Top shared fit schools — highest-confidence matches, simple heuristic
+  var topSharedFitSchools = schools.slice(0, 3).map(function(s) { return s.name; });
+
+  // Mismatch warnings — flags anything worth a second look
+  var mismatchWarnings = [];
+  if (schools.length === 0) {
+    mismatchWarnings.push('No school matches were returned — review intake data for gaps.');
+  }
+  if (profile.gpa && Number(profile.gpa) < 2.7 && schools.length > 0) {
+    mismatchWarnings.push('GPA is in the "open" tier — confirm every listed school is genuinely accessible.');
+  }
+
+  // Recommended counselor actions — short, concrete next steps
+  var recommendedCounselorActions = [];
+  if (schools.length > 0) {
+    recommendedCounselorActions.push('Review top 3 matches with the family before next session.');
+  }
+  if (mismatchWarnings.length > 0) {
+    recommendedCounselorActions.push('Address flagged mismatch(es) directly with the family.');
+  }
+  recommendedCounselorActions.push('Confirm essay topics align with strongest school matches.');
+
+  // Comparison insights — one quick, plain-language read across the matches
+  var comparisonInsights = schools.length > 1
+    ? 'These ' + schools.length + ' schools span a mix of fit signals — worth a side-by-side conversation with the family on what matters most to them.'
+    : 'Limited comparison data — fewer than 2 schools matched.';
+
+  return {
+    topSharedFitSchools: topSharedFitSchools,
+    mismatchWarnings: mismatchWarnings,
+    recommendedCounselorActions: recommendedCounselorActions,
+    comparisonInsights: comparisonInsights,
+  };
+}
+
+// Renders the brief into a new counselor-view section — does not touch
+// or replace any existing counselor content.
+function renderCounselorSynthesisBrief(brief) {
+  var el = document.getElementById('counselor-synthesis-brief');
+  if (!el) return;
+
+  el.innerHTML =
+    '<div class="counselor-section-head">Synthesis Brief</div>' +
+    '<div class="counselor-section-body"><strong>Top Shared Fit Schools:</strong> ' + (brief.topSharedFitSchools.join(', ') || 'None yet') + '</div>' +
+    '<div class="counselor-section-body"><strong>Mismatch Warnings:</strong> ' + (brief.mismatchWarnings.join(' ') || 'None flagged') + '</div>' +
+    '<div class="counselor-section-body"><strong>Recommended Actions:</strong> ' + brief.recommendedCounselorActions.join(' · ') + '</div>' +
+    '<div class="counselor-section-body"><strong>Comparison Insight:</strong> ' + brief.comparisonInsights + '</div>';
+}
+
+// Saves the brief to Supabase via the Worker (no login required, matches
+// the same pattern as family_sessions). Non-blocking — a save failure
+// never affects what the counselor sees on screen.
+function saveCounselorSynthesisBrief(brief, profile) {
+  fetch('https://api.abettercollegeconsultant.com/save-synthesis-brief', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      consultant_code: LS_STATE.consultant_code || null,
+      student_name: profile.name || null,
+      top_shared_fit_schools: brief.topSharedFitSchools,
+      mismatch_warnings: brief.mismatchWarnings,
+      recommended_counselor_actions: brief.recommendedCounselorActions,
+      comparison_insights: brief.comparisonInsights,
+    }),
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    if (d.success) {
+      console.log('[VECTOR Lifescape] Counselor synthesis brief saved.');
+    } else {
+      console.warn('[VECTOR Lifescape] Synthesis brief save failed (non-blocking):', d.error);
+    }
+  })
+  .catch(function(err) {
+    console.warn('[VECTOR Lifescape] Synthesis brief fetch error (non-blocking):', err);
+  });
+}
+
+function renderCounselorView(profile, callAData, callBData, callCData, essayParsed, callDData) {
+  // ── Counselor Synthesis Brief — new section, not a replacement ──────────
+  // Runs after callD completes. Reads from the same school-match data
+  // already displayed elsewhere; adds no new AI call, no new API cost.
+  var synthesisBrief = buildCounselorSynthesisBrief(profile, callDData);
+  renderCounselorSynthesisBrief(synthesisBrief);
+  saveCounselorSynthesisBrief(synthesisBrief, profile);
+
   // Meta table
   // ── Occupation intelligence block (counselor-only) ──────────────────────
   const occupationEl = document.getElementById('counselor-occupations');
