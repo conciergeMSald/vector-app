@@ -4119,6 +4119,26 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       }
     });
 
+    // ── Cohort Longitudinal Write — supplementary, never blocks the family ──
+    // Reuses the same payload fields already built above. Failure here is
+    // logged only — the family's report experience is never affected.
+    fetch('https://api.abettercollegeconsultant.com/save-cohort-record', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload),
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d.success) {
+        console.log('[VECTOR Lifescape] Cohort record saved:', d.airtable_id);
+      } else {
+        console.warn('[VECTOR Lifescape] Cohort record not saved (non-blocking):', d.error || d.reason || 'unknown');
+      }
+    })
+    .catch(function(err){
+      console.warn('[VECTOR Lifescape] Cohort write fetch error (non-blocking):', err);
+    });
+
   } catch(err) {
     console.error('[VECTOR Lifescape] captureToAirtable build error:', err);
   }
