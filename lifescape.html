@@ -686,13 +686,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* Counselor note */
 .counselor-block{padding:2rem;border:0.5px solid var(--gl);background:var(--gold-pale);margin-top:2rem;}
-.counselor-label{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:0.5px solid rgba(196,168,130,0.4);}
-.counselor-text{font-size:13px;color:var(--ink2);line-height:1.9;font-weight:300;}
+.counselor-label{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:0.5px solid rgba(196,168,130,0.4);}
+.counselor-text{font-size:15px;color:var(--ink2);line-height:1.9;font-weight:300;}
 .counselor-section{margin-bottom:1.75rem;}
 .counselor-section:last-child{margin-bottom:0;}
 .counselor-section-head{font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;font-family:var(--sans);}
-.counselor-section-body{font-size:13px;color:var(--ink2);line-height:1.85;font-weight:300;}
-.counselor-prompt{padding:.6rem 0;border-bottom:0.5px solid rgba(196,168,130,0.25);font-size:13px;color:var(--ink2);line-height:1.7;}
+.counselor-section-body{font-size:15px;color:var(--ink2);line-height:1.85;font-weight:300;}
+.counselor-prompt{padding:.6rem 0;border-bottom:0.5px solid rgba(196,168,130,0.25);font-size:15px;color:var(--ink2);line-height:1.7;}
 .counselor-prompt:last-child{border-bottom:none;}
 
 /* Report tab toggle */
@@ -4869,8 +4869,14 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
     }
 
     if (score >= 10) {
-      // Build reason from archetype + oneSentenceSummary
-      reason = narrative.oneSentenceSummary || narrative.hiddenPathway || '';
+      // Build reason from archetype + oneSentenceSummary, plus a short
+      // explanation of what in the student's intake actually triggered this pick.
+      var triggers = [];
+      if (archetypeMatches(archetype)) triggers.push('your activity interests');
+      if (hasChristianFaithSignal || hasJewishFaithSignal) triggers.push('your faith preference');
+      if (narrative.bestFitPersonality) triggers.push('your personality profile');
+      var triggerNote = triggers.length ? ' — surfaced because of ' + triggers.join(' and ') + '.' : '';
+      reason = (narrative.oneSentenceSummary || narrative.hiddenPathway || '') + triggerNote;
       candidates.push({ name, school, score, reason });
     }
   });
@@ -6007,7 +6013,10 @@ function renderFullReport(profile, callAData, callBData, callCData, essayParsed)
     if(_comboSection) _comboSection.style.display = 'none';
   }
 
-  // Geo
+  // Geo — fallback ensures this never renders silently blank (REPORT-FIXES-001 Item 5)
+  var _geoLocalEl = document.getElementById('full-geo-local');
+  if (_geoLocalEl) _geoLocalEl.textContent = 'We\'re still gathering the full regional picture — check back, or ask your counselor for the latest read.';
+
   if(callCData?.geo) {
     // Parse geo into four sections
     (function() {
@@ -6518,11 +6527,14 @@ function renderCounselorView(profile, callAData, callBData, callCData, essayPars
     }
 
     // Three prompts also rendered separately in counselor-prompts (sidebar location)
+    // Fallback ensures this never renders silently blank (REPORT-FIXES-001 Item 7)
+    var promptsEl = document.getElementById('counselor-prompts');
+    if (promptsEl) promptsEl.innerHTML = '<div class="action-prompt"><div class="action-text">Follow-up prompts are still generating for this session — check back shortly, or note directly with the family in the meantime.</div></div>';
+
     var promptsMatch = raw.match(/THREE PROMPTS:([\s\S]*?)$/i);
     if(promptsMatch) {
       var promptLines = promptsMatch[1].trim().split(/\n/).filter(function(l){ return l.match(/^\d\./); });
-      var promptsEl = document.getElementById('counselor-prompts');
-      if(promptsEl) {
+      if(promptsEl && promptLines.length > 0) {
         promptsEl.innerHTML = promptLines.map(function(p){
           return '<div class="action-prompt"><div class="action-text">'
                + p.replace(/^\d\.\s*/,'')

@@ -33,7 +33,8 @@ const TILE_POOLS = {
   ],
   move: [
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
-    'esports_gaming','horseback_riding','rock_climbing'
+    'esports_gaming','horseback_riding','rock_climbing',
+    'baseball','soccer','football','basketball'
   ],
   think: [
     'science_experiments','psychology','biology','chemistry','coding_programming',
@@ -59,6 +60,8 @@ const ALWAYS_SHOW = [
   'entrepreneurship', // cross-cluster signal
   'animal_care',      // strong EQ indicator
   'fitness_lifting',  // universal move tile
+  'soccer',           // team sport minimum — REPORT-FIXES-001 Item 3
+  'basketball',       // team sport minimum — REPORT-FIXES-001 Item 3
   'writing_stories',  // strong signal across many paths
   'photography'       // broad creative signal
 ];
