@@ -4062,6 +4062,7 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
 
     var payload = {
       session_id:       sessionId,
+      session_hash:     sessionId,
       email:            (window.sbSession && window.sbSession.user && window.sbSession.user.email) || '',
       student_name:     LS_STATE.name                                                              || '',
       grade:            LS_STATE.grade                                                             || null,
@@ -4094,6 +4095,56 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       pronoun_label:    (LS_STATE.pronouns && LS_STATE.pronouns.label) || '',
       cc_pathway_shown: (LS_STATE.callEResult && LS_STATE.callEResult.actIX) ? 'Y' : 'N',
     };
+
+    // ── Cohort Longitudinal payload — real data pulled from existing profile ──
+    var cohortLongPayload = {
+      cohort_id:                sessionId,
+      grad_year:                LS_STATE.grade ? (new Date().getFullYear() + (12 - Number(LS_STATE.grade))) : null,
+      grade_at_assess:          LS_STATE.grade || '',
+      assessment_year:          new Date().getFullYear(),
+      session_hash:             sessionId,
+      state:                    (COLLEGE_PREFS && COLLEGE_PREFS.state_pref) || '',
+      regions_selected:         Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(', ') : (COLLEGE_PREFS.regions || ''),
+      region_count:             Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.length : 0,
+      trajectory_resolved:      (callAData && callAData.trajectory) ? callAData.trajectory.slice(0, 500) : '',
+      riasec_top3:              (profile._meta && profile._meta.topRIASEC) || '',
+      naics_top3:               (profile._meta && profile._meta.topNAICS) || '',
+      combo_unlocks:            (profile.comboUnlocks || []).map(function(c){ return c.unlocks[0]; }).join(' | '),
+      combo_count:              (profile.comboUnlocks || []).length,
+      tile_count:               (LS_STATE.selectedTileIds ? Array.from(LS_STATE.selectedTileIds).length : 0),
+      pronoun_pref:             (LS_STATE.pronouns && LS_STATE.pronouns.label) || '',
+      religion_pref:            (COLLEGE_PREFS && COLLEGE_PREFS.religion) || '',
+      faith_is_jewish:          ['jewish','jewish_community'].includes((COLLEGE_PREFS && COLLEGE_PREFS.religion) || ''),
+      orientation_type:         LS_STATE.voice || 'student',
+      primary_match:            (callDData && callDData[0] && callDData[0].name) || '',
+      adjacent_match:           (adjacentPicks && adjacentPicks[0] && adjacentPicks[0].name) || '',
+      unexpected_match:         (profileAdjacentPicks && profileAdjacentPicks[0] && profileAdjacentPicks[0].name) || '',
+      school_count_total:       (callDData || []).length,
+      cc_pathway_shown:         (LS_STATE.callEResult && LS_STATE.callEResult.actIX) ? 'Y' : 'N',
+      report_format:            'Lifescape',
+      voice_used:               LS_STATE.voice || 'student',
+      consultant_code:          LS_STATE.consultant_code || '',
+      call_a_success:           !!(callAData && callAData.trajectory),
+      call_d_success:           !!(callDData && callDData.length > 0),
+      pii_stored:               false, // this table is analytics-only, PII intentionally excluded
+    };
+
+    fetch('https://api.abettercollegeconsultant.com/save-cohort-longitudinal', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(cohortLongPayload),
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d.success) {
+        console.log('[VECTOR Lifescape] Cohort longitudinal record saved:', d.airtable_id);
+      } else {
+        console.warn('[VECTOR Lifescape] Cohort longitudinal not saved (non-blocking):', d.error || d.reason || 'unknown');
+      }
+    })
+    .catch(function(err){
+      console.warn('[VECTOR Lifescape] Cohort longitudinal fetch error (non-blocking):', err);
+    });
 
     fetch('https://api.abettercollegeconsultant.com/save-session', {
       method:  'POST',
