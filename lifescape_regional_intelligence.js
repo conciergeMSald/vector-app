@@ -433,6 +433,283 @@ LEAVE AND RETURN: Michigan or Georgetown finance/law → return to Brickell or P
 LEAVE AND STAY GONE: Wharton → Wall Street, not Brickell. Stanford → Silicon Valley, not Miami. Northwestern → Chicago, not Tampa. NYU → New York finance and media, no Florida equivalent.
 
 Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it. If this student has family in Florida but lives elsewhere, name Florida as a legitimate Leave and Return destination with the specific corridor their interests map to.`
+  },
+
+  // ── ATLANTA ───────────────────────────────────────────────────────────────
+  atlanta: {
+    name: 'Atlanta Metro',
+    zipPrefixes: [
+      '300','301','302','303','305','306'
+    ],
+    corridors: [
+      {
+        name: 'Logistics & Supply Chain',
+        anchor: 'Hartsfield-Jackson Airport / South Atlanta',
+        industries: ['Air Cargo & Freight','Supply Chain Management','Distribution','Aviation Operations'],
+        employers: ['Delta Air Lines','UPS','Norfolk Southern','Home Depot'],
+        naics: [48, 44]
+      },
+      {
+        name: 'Fintech & Payments',
+        anchor: 'Midtown / Buckhead',
+        industries: ['Payment Processing','Fintech','Transaction Banking','Insurance Tech'],
+        employers: ['NCR Voyix','Global Payments','Truist','Intercontinental Exchange'],
+        naics: [52, 54]
+      },
+      {
+        name: 'Film, Media & Entertainment',
+        anchor: 'Trilith Studios / Pinewood Atlanta',
+        industries: ['Film & TV Production','Post-Production','Music','Streaming Content'],
+        employers: ['Tyler Perry Studios','Trilith Studios','Marvel Studios Atlanta productions'],
+        naics: [51, 71]
+      },
+      {
+        name: 'Healthcare & Public Health',
+        anchor: 'Emory / CDC Corridor (Druid Hills)',
+        industries: ['Public Health','Biomedical Research','Hospital Systems','Health Policy'],
+        employers: ['CDC','Emory Healthcare','Grady Health System','Piedmont Healthcare'],
+        naics: [62, 54]
+      },
+      {
+        name: 'Corporate HQ & Consulting',
+        anchor: 'Downtown / Midtown Atlanta',
+        industries: ['Management Consulting','Corporate Strategy','Beverage & Consumer Brands','Enterprise Software'],
+        employers: ['Coca-Cola','UPS','Home Depot','Cox Enterprises','NCR Voyix'],
+        naics: [54, 51]
+      }
+    ],
+    trajectories: {
+      stay_close: {
+        label: 'Stay Close',
+        summary: 'Atlanta-area schools that put you directly inside a corridor\'s recruiting zone.',
+        connections: [
+          { school: 'Georgia Institute of Technology', corridor: 'Logistics & Corporate HQ', note: 'Deep, direct pipeline into Atlanta corporate and logistics recruiting — one of the strongest in-state-to-industry connections in the Southeast.' },
+          { school: 'Emory University', corridor: 'Healthcare & Public Health', note: 'Sits inside the CDC/Emory Healthcare corridor directly — public health and pre-med students recruit from campus.' },
+          { school: 'Morehouse College', corridor: 'Corporate HQ & Consulting', note: 'Strong Atlanta corporate and consulting placement, particularly into Fortune 500 companies headquartered locally.' },
+          { school: 'Spelman College', corridor: 'Corporate HQ & Consulting', note: 'Same corporate recruiting strength as Morehouse, with particular depth into consulting and consumer brands.' },
+          { school: 'University of Georgia', corridor: 'Corporate HQ & Consulting', note: 'An hour from the city but one of the strongest Atlanta-feeder schools in the Southeast — Terry College graduates recruit heavily into Atlanta banking, consulting, and Fortune 500 headquarters.' },
+          { school: 'Georgia State University', corridor: 'Fintech & Payments', note: 'Physically inside the Midtown corridor — direct pipeline into Atlanta\'s payments and fintech employers, particularly out of the Robinson College of Business.' }
+        ]
+      },
+      leave_and_return: {
+        label: 'Leave and Return',
+        summary: 'Schools outside the region with documented Atlanta return pipelines.',
+        connections: [
+          { school: 'University of Michigan', corridor: 'Corporate HQ & Consulting', note: 'Well-documented consulting and consumer-brand pipeline back into Atlanta corporate headquarters.' },
+          { school: 'Vanderbilt University', corridor: 'Healthcare & Public Health', note: 'Southeast healthcare network with a real pipeline back into Emory and Atlanta hospital systems.' },
+          { school: 'Northwestern University', corridor: 'Film, Media & Entertainment', note: 'Medill and film program graduates increasingly return to Atlanta\'s growing production industry rather than only LA or New York.' }
+        ]
+      },
+      leave_and_stay: {
+        label: 'Leave and Stay Gone',
+        summary: 'Schools that represent a geographic bet away from Atlanta.',
+        connections: [
+          { school: 'Wharton (University of Pennsylvania)', corridor: 'National Finance', note: 'Wall Street and national finance draw Atlanta students away permanently far more often than a return to local fintech.' },
+          { school: 'Stanford University', corridor: 'Silicon Valley Tech', note: 'An Atlanta student at Stanford is making a Silicon Valley bet, not a Midtown tech-corridor one.' },
+          { school: 'NYU', corridor: 'National Media & Finance', note: 'New York media and finance pull graduates away from Atlanta\'s growing but smaller equivalent industries.' }
+        ]
+      }
+    },
+    callc_context: `ATLANTA REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
+
+This student lives in the fastest-growing corporate and logistics hub in the Southeast. Atlanta is not one industry — it splits into distinct corridors built around a handful of anchor employers and institutions.
+
+KEY CORRIDORS BY PROFILE MATCH:
+- Logistics & Supply Chain (Hartsfield-Jackson/South Atlanta): Delta, UPS, Norfolk Southern — air cargo, distribution, supply chain
+- Fintech & Payments (Midtown/Buckhead): NCR Voyix, Global Payments, Truist — one of the densest payments-processing corridors in the country
+- Film, Media & Entertainment (Trilith/Pinewood): major studio productions — Atlanta is now one of the largest film production hubs in North America
+- Healthcare & Public Health (Emory/CDC corridor): CDC, Emory Healthcare, Grady — public health and biomedical research anchored by federal presence
+- Corporate HQ & Consulting (Downtown/Midtown): Coca-Cola, UPS, Home Depot, Cox — dense concentration of Fortune 500 headquarters
+
+THREE TRAJECTORIES TO NAME EXPLICITLY:
+STAY CLOSE: Georgia Tech → Atlanta logistics/corporate recruiting. Emory → CDC/healthcare corridor. Morehouse/Spelman → Atlanta corporate and consulting pipeline.
+LEAVE AND RETURN: Michigan → consulting/consumer-brand return to Atlanta HQs. Vanderbilt → Southeast healthcare return to Emory network. Northwestern → media/film return to Atlanta's growing production industry.
+LEAVE AND STAY GONE: Wharton → Wall Street, not Atlanta fintech. Stanford → Silicon Valley, not Midtown tech. NYU → New York media/finance, not Atlanta's smaller equivalent.
+
+Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it.`
+  },
+
+  // ── DALLAS-FORT WORTH ───────────────────────────────────────────────────────
+  dallas: {
+    name: 'Dallas-Fort Worth Metro',
+    zipPrefixes: [
+      '750','751','752','753','760','761','762'
+    ],
+    corridors: [
+      {
+        name: 'Corporate HQ & Consulting',
+        anchor: 'Downtown Dallas / Las Colinas / Plano',
+        industries: ['Corporate Strategy','Management Consulting','Telecom','Retail HQ Operations'],
+        employers: ['AT&T','Toyota North America','American Airlines','7-Eleven','Southwest Airlines'],
+        naics: [54, 51]
+      },
+      {
+        name: 'Energy',
+        anchor: 'Downtown Dallas / Irving',
+        industries: ['Oil & Gas','Energy Trading','Pipeline Operations','Energy Finance'],
+        employers: ['ExxonMobil','Energy Transfer','Atmos Energy'],
+        naics: [21, 22]
+      },
+      {
+        name: 'Finance & Banking',
+        anchor: 'Downtown Dallas / Uptown',
+        industries: ['Commercial Banking','Investment Management','Insurance','Real Estate Finance'],
+        employers: ['Comerica','Capital One (Plano)','Fidelity Investments','Highland Capital'],
+        naics: [52, 54]
+      },
+      {
+        name: 'Tech & Telecom ("Silicon Prairie")',
+        anchor: 'Plano / Frisco / Richardson',
+        industries: ['Telecommunications','Enterprise Tech','Semiconductor','Defense Electronics'],
+        employers: ['Texas Instruments','Cisco','Ericsson','Raytheon'],
+        naics: [51, 54, 33]
+      },
+      {
+        name: 'Logistics & Distribution',
+        anchor: 'DFW Airport / Alliance Corridor',
+        industries: ['Air Cargo','Freight & Distribution','E-commerce Fulfillment'],
+        employers: ['American Airlines','FedEx','Amazon','BNSF Railway'],
+        naics: [48, 44]
+      }
+    ],
+    trajectories: {
+      stay_close: {
+        label: 'Stay Close',
+        summary: 'DFW-area schools that put you directly inside a corridor\'s recruiting zone.',
+        connections: [
+          { school: 'Southern Methodist University', corridor: 'Corporate HQ & Consulting / Finance', note: 'Cox School of Business sits directly inside the Uptown/Downtown corridor — one of the strongest local corporate and finance recruiting pipelines in the region.' },
+          { school: 'Texas Christian University', corridor: 'Energy & Finance', note: 'Fort Worth-based, with a real pipeline into Fort Worth energy and finance firms, plus Dallas corporate recruiting.' },
+          { school: 'University of Texas at Dallas', corridor: 'Tech & Telecom', note: 'Sits inside the Plano/Richardson tech corridor directly — strong computer science and engineering placement into Texas Instruments, Cisco, and defense electronics.' }
+        ]
+      },
+      leave_and_return: {
+        label: 'Leave and Return',
+        summary: 'Schools outside the region with documented DFW return pipelines.',
+        connections: [
+          { school: 'University of Texas at Austin', corridor: 'Corporate HQ & Energy', note: 'Deep, well-documented pipeline from Austin back into Dallas corporate headquarters and energy firms — one of the strongest in-state return patterns in the country.' },
+          { school: 'Texas A&M University', corridor: 'Energy & Logistics', note: 'Strong engineering and energy pipeline back into DFW, particularly into oil & gas and logistics operations.' },
+          { school: 'Vanderbilt University', corridor: 'Finance & Consulting', note: 'Southern private-school network with a real pipeline back into Dallas finance and consulting.' }
+        ]
+      },
+      leave_and_stay: {
+        label: 'Leave and Stay Gone',
+        summary: 'Schools that represent a geographic bet away from DFW.',
+        connections: [
+          { school: 'Wharton (University of Pennsylvania)', corridor: 'National Finance', note: 'Wall Street draws graduates away from Dallas finance permanently far more often than a return to Uptown banking.' },
+          { school: 'Stanford University', corridor: 'Silicon Valley Tech', note: 'A DFW student at Stanford is making a Silicon Valley bet, not a Plano/Richardson tech-corridor one.' },
+          { school: 'Columbia University', corridor: 'National Media & Finance', note: 'New York finance and media pull graduates away from Dallas\'s corporate-HQ equivalent.' }
+        ]
+      }
+    },
+    callc_context: `DALLAS-FORT WORTH REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
+
+This student lives inside one of the densest concentrations of Fortune 500 corporate headquarters in the country. DFW is not one industry — it splits into distinct corridors built around corporate HQs, energy, finance, tech, and logistics.
+
+KEY CORRIDORS BY PROFILE MATCH:
+- Corporate HQ & Consulting (Downtown/Las Colinas/Plano): AT&T, Toyota North America, American Airlines — one of the highest concentrations of major corporate headquarters in the U.S.
+- Energy (Downtown/Irving): ExxonMobil, Energy Transfer — a major U.S. energy-sector hub outside Houston
+- Finance & Banking (Uptown): Comerica, Capital One, Fidelity — growing regional banking and investment center
+- Tech & Telecom "Silicon Prairie" (Plano/Frisco/Richardson): Texas Instruments, Cisco, Ericsson — a real, underrated tech corridor
+- Logistics & Distribution (DFW Airport/Alliance): American Airlines, FedEx, Amazon, BNSF — one of the busiest air-cargo and freight hubs in North America
+
+THREE TRAJECTORIES TO NAME EXPLICITLY:
+STAY CLOSE: SMU → Uptown/Downtown corporate and finance recruiting. TCU → Fort Worth energy and finance. UT Dallas → Plano/Richardson tech corridor.
+LEAVE AND RETURN: UT Austin → strong return pipeline into Dallas corporate HQs and energy. Texas A&M → energy and logistics return. Vanderbilt → Southern network back into Dallas finance.
+LEAVE AND STAY GONE: Wharton → Wall Street, not Uptown banking. Stanford → Silicon Valley, not Plano tech. Columbia → New York finance/media, not Dallas corporate.
+
+Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it.`
+  },
+
+  // ── WASHINGTON DC / VIRGINIA SUBURBS ─────────────────────────────────────────
+  dc_metro: {
+    name: 'Washington DC Metro',
+    zipPrefixes: [
+      '200','201','202','220','221','222','223','224'
+    ],
+    corridors: [
+      {
+        name: 'Federal Government & Policy',
+        anchor: 'Capitol Hill / Federal Triangle',
+        industries: ['Federal Agencies','Legislative Affairs','Regulatory Policy','Federal Law'],
+        employers: ['State Department','Department of Defense','EPA','Congressional offices'],
+        naics: [92]
+      },
+      {
+        name: 'Defense & Intelligence Contracting',
+        anchor: 'Tysons Corner / Reston / Arlington',
+        industries: ['Defense Contracting','Cybersecurity','Intelligence Analysis','Systems Engineering'],
+        employers: ['Booz Allen Hamilton','Northrop Grumman','Leidos','CIA','NSA'],
+        naics: [92, 54]
+      },
+      {
+        name: 'International Affairs & Diplomacy',
+        anchor: 'Foggy Bottom / Dupont Circle',
+        industries: ['Diplomacy','International Development','Global Policy','NGO Leadership'],
+        employers: ['World Bank','State Department','USAID','major international NGOs'],
+        naics: [92, 54]
+      },
+      {
+        name: 'Law & Regulatory Affairs',
+        anchor: 'Downtown DC / K Street',
+        industries: ['Regulatory Law','Lobbying','Government Affairs','Public Interest Law'],
+        employers: ['Major DC law firms','K Street lobbying firms','federal regulatory agencies'],
+        naics: [54]
+      },
+      {
+        name: 'Consulting & Think Tanks',
+        anchor: 'Downtown DC / Massachusetts Ave "Think Tank Row"',
+        industries: ['Management Consulting','Public Policy Research','Economic Analysis'],
+        employers: ['Deloitte','McKinsey (DC)','Brookings','RAND'],
+        naics: [54]
+      }
+    ],
+    trajectories: {
+      stay_close: {
+        label: 'Stay Close',
+        summary: 'DC-area schools that put you directly inside a corridor\'s recruiting zone.',
+        connections: [
+          { school: 'Georgetown University', corridor: 'International Affairs & Diplomacy / Federal Policy', note: 'The School of Foreign Service sits directly inside the diplomatic corridor — unmatched pipeline into State Department, World Bank, and international NGOs.' },
+          { school: 'George Washington University', corridor: 'Federal Government & Policy', note: 'Blocks from Foggy Bottom and Federal Triangle — direct recruiting pipeline into federal agencies and government affairs.' },
+          { school: 'George Mason University', corridor: 'Defense & Intelligence Contracting', note: 'Sits inside the Tysons/Reston corridor directly — strong cybersecurity and intelligence-adjacent degree pipeline into Booz Allen, Northrop Grumman, and federal contractors.' },
+          { school: 'American University', corridor: 'Law & Regulatory Affairs / Policy', note: 'Washington College of Law and School of Public Affairs feed directly into K Street and regulatory agencies.' }
+        ]
+      },
+      leave_and_return: {
+        label: 'Leave and Return',
+        summary: 'Schools outside the region with documented DC return pipelines.',
+        connections: [
+          { school: 'University of Virginia', corridor: 'Federal Policy & Law', note: 'Well-documented pipeline from Charlottesville back into DC federal agencies, law firms, and consulting.' },
+          { school: 'University of Michigan', corridor: 'Consulting & Think Tanks', note: 'Strong public policy and consulting pipeline back into DC-based firms and research institutions.' },
+          { school: 'Duke University', corridor: 'Federal Policy & International Affairs', note: 'Sanford School graduates return to DC policy and international development roles at a well-documented rate.' }
+        ]
+      },
+      leave_and_stay: {
+        label: 'Leave and Stay Gone',
+        summary: 'Schools that represent a geographic bet away from DC.',
+        connections: [
+          { school: 'Wharton (University of Pennsylvania)', corridor: 'National Finance', note: 'Wall Street draws graduates away from DC policy and consulting permanently.' },
+          { school: 'Stanford University', corridor: 'Silicon Valley Tech', note: 'A DC-area student at Stanford is making a Silicon Valley bet, not a Tysons/Reston defense-tech one.' },
+          { school: 'NYU', corridor: 'National Media & Finance', note: 'New York finance and media pull graduates away from DC\'s policy-centric equivalent.' }
+        ]
+      }
+    },
+    callc_context: `WASHINGTON DC METRO REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
+
+This student lives inside the center of federal power and policy in the United States. DC is not one industry — it splits into distinct corridors built around government, defense, diplomacy, law, and policy research.
+
+KEY CORRIDORS BY PROFILE MATCH:
+- Federal Government & Policy (Capitol Hill/Federal Triangle): State Department, DoD, EPA — direct federal agency pipeline
+- Defense & Intelligence Contracting (Tysons/Reston/Arlington): Booz Allen, Northrop Grumman, CIA, NSA — one of the densest defense-contracting corridors in the country
+- International Affairs & Diplomacy (Foggy Bottom/Dupont Circle): World Bank, State Department, USAID — a genuinely global corridor unmatched elsewhere in the U.S.
+- Law & Regulatory Affairs (K Street): major law firms, lobbying, regulatory agencies
+- Consulting & Think Tanks (Think Tank Row): Deloitte, McKinsey DC, Brookings, RAND — policy-adjacent consulting and research
+
+THREE TRAJECTORIES TO NAME EXPLICITLY:
+STAY CLOSE: Georgetown → diplomatic/international affairs corridor. GW → federal government pipeline. George Mason → Tysons/Reston defense-tech corridor. American → K Street law and policy.
+LEAVE AND RETURN: UVA → federal policy and law return. Michigan → consulting/think-tank return. Duke → federal policy and international affairs return.
+LEAVE AND STAY GONE: Wharton → Wall Street, not DC policy. Stanford → Silicon Valley, not Tysons defense-tech. NYU → New York finance/media, not DC's policy-centric equivalent.
+
+Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it.`
   }
 };
 
