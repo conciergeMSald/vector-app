@@ -17,6 +17,8 @@
 <script src="geo_industry_db_BayArea_pass2.js"></script>
 <script src="geo_industry_db_Chicago_pass3.js"></script>
 <script src="geo_industry_db_NY_Boston_DC_pass4.js"></script>
+<script src="geo_industry_db_Atlanta_pass5.js"></script>
+<script src="geo_industry_db_Dallas_pass6.js"></script>
 <script src="lifescape_curation_map_v1.js"></script>
 <script src="university-content.js"></script>
 <script>
@@ -1453,7 +1455,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="q-sub" id="s37-sub">Choose one — or two if you genuinely live in both.</div>
 
   <div class="world-grid">
-    <button class="world-card" data-world="healing" onclick="selectWorld(this,'healing')"><div class="world-icon"><i class="ti ti-heart-handshake" aria-hidden="true"></i></div><div class="world-name">The World of Healing</div><div class="world-desc">Medicine, mental health, care, restoration</div></button>
+    <button class="world-card" data-world="medicine" onclick="selectWorld(this,'medicine')"><div class="world-icon"><i class="ti ti-stethoscope" aria-hidden="true"></i></div><div class="world-name">The World of Medicine</div><div class="world-desc">MDs, DOs, dentists, orthodontists, surgeons — the long residency and licensure path</div></button>
+    <button class="world-card" data-world="healing" onclick="selectWorld(this,'healing')"><div class="world-icon"><i class="ti ti-heart-handshake" aria-hidden="true"></i></div><div class="world-name">The World of Healing</div><div class="world-desc">RN, PA, acupuncture, naturopathic care — hands-on patient care, faster than medicine</div></button>
+    <button class="world-card" data-world="therapy" onclick="selectWorld(this,'therapy')"><div class="world-icon"><i class="ti ti-activity" aria-hidden="true"></i></div><div class="world-name">The World of Therapy</div><div class="world-desc">Speech, occupational, physical, rehab — rebuilding function, not diagnosing</div></button>
     <button class="world-card" data-world="technology" onclick="selectWorld(this,'technology')"><div class="world-icon"><i class="ti ti-cpu" aria-hidden="true"></i></div><div class="world-name">The World of Technology</div><div class="world-desc">Building systems, software, engineering futures</div></button>
     <button class="world-card" data-world="money" onclick="selectWorld(this,'money')"><div class="world-icon"><i class="ti ti-currency-dollar" aria-hidden="true"></i></div><div class="world-name">The World of Money</div><div class="world-desc">Finance, banking, accounting, investments — from private equity and commodities trading to managing family generational wealth</div></button>
     <button class="world-card" data-world="ideas" onclick="selectWorld(this,'ideas')"><div class="world-icon"><i class="ti ti-atom" aria-hidden="true"></i></div><div class="world-name">The World of Ideas</div><div class="world-desc">Research, academia, knowledge, discovery</div></button>
@@ -3087,7 +3091,9 @@ function resolveZIP(zip) {
     typeof GEO_INDUSTRY_DB !== 'undefined' ? GEO_INDUSTRY_DB : null,
     typeof GEO_INDUSTRY_DB_BAYAREA !== 'undefined' ? GEO_INDUSTRY_DB_BAYAREA : null,
     typeof GEO_INDUSTRY_DB_CHICAGO !== 'undefined' ? GEO_INDUSTRY_DB_CHICAGO : null,
-    typeof GEO_INDUSTRY_DB_EAST !== 'undefined' ? GEO_INDUSTRY_DB_EAST : null
+    typeof GEO_INDUSTRY_DB_EAST !== 'undefined' ? GEO_INDUSTRY_DB_EAST : null,
+    typeof GEO_INDUSTRY_DB_ATLANTA !== 'undefined' ? GEO_INDUSTRY_DB_ATLANTA : null,
+    typeof GEO_INDUSTRY_DB_DALLAS !== 'undefined' ? GEO_INDUSTRY_DB_DALLAS : null
   ].filter(Boolean);
 
   // Exact match
