@@ -49578,4 +49578,4 @@ const UNIVERSITY_DB_V5 = {
   }
 };
 
-module.exports = { UNIVERSITY_DB_V5 };
+if (typeof module !== 'undefined') module.exports = { UNIVERSITY_DB_V5 };
