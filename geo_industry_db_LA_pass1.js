@@ -314,6 +314,93 @@ const GEO_INDUSTRY_DB = {
     ]
   },
 
+  "91361": {
+    zip: "91361",
+    neighborhood: "Westlake Village",
+    county: "Ventura",
+    clusters: [
+      {
+        name: "Corporate Headquarters & Consumer Brands",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["Guitar Center (HQ)", "Dole Food Company (HQ)", "Procore Technologies"],
+        student_connection: "Westlake Village hosts a genuine cluster of national corporate headquarters — Guitar Center and Dole Food Company are both anchored here, giving families direct proximity to corporate strategy, brand management, and operations careers."
+      },
+      {
+        name: "Biotech & Pharmaceuticals",
+        naics: 62,
+        distance: "8 miles — Thousand Oaks",
+        anchor_employers: ["Amgen (Thousand Oaks HQ)", "Gilead Sciences"],
+        student_connection: "Amgen's global headquarters — one of the largest biotech employers in the world — sits 8 miles away in Thousand Oaks, making biotech and biomedical careers unusually accessible for a residential suburb."
+      },
+      {
+        name: "Financial Services & Wealth Management",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["Wedbush Securities offices", "regional wealth management firms"],
+        student_connection: "Westlake Village's affluent, low-density corporate corridor supports a real concentration of private wealth management and financial advisory firms."
+      }
+    ]
+  },
+
+  "91320": {
+    zip: "91320",
+    neighborhood: "Thousand Oaks",
+    county: "Ventura",
+    clusters: [
+      {
+        name: "Biotech & Pharmaceuticals",
+        naics: 62,
+        distance: "Local",
+        anchor_employers: ["Amgen (global HQ)", "Baxalta", "Teradata"],
+        student_connection: "Amgen's global headquarters is Thousand Oaks' single largest employer — one of the biggest biotechnology companies in the world, headquartered in a city of 125,000 people. Biomedical, biochemistry, and biotech-adjacent careers are unusually visible here."
+      },
+      {
+        name: "Entertainment & Media Production",
+        naics: 51,
+        distance: "12 miles — Wildwood Regional Park corridor / Warner Bros. Ranch",
+        anchor_employers: ["Warner Bros. Ranch facilities", "local production support companies"],
+        student_connection: "Thousand Oaks sits close enough to the westernmost studio production facilities that entertainment-adjacent careers remain accessible without a Los Angeles commute."
+      },
+      {
+        name: "Corporate Headquarters & Technology",
+        naics: 54,
+        distance: "Local / Regional",
+        anchor_employers: ["Teradata (HQ)", "Procter & Gamble regional offices"],
+        student_connection: "A quieter but real corporate corridor exists alongside the biotech industry — enterprise technology and consumer goods management roles are both represented locally."
+      }
+    ]
+  },
+
+  "91325": {
+    zip: "91325",
+    neighborhood: "Northridge",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Aerospace & Advanced Manufacturing",
+        naics: 33,
+        distance: "Local — legacy Rocketdyne / Aerojet corridor",
+        anchor_employers: ["Aerojet Rocketdyne (legacy site)", "The Boeing Company", "Northrop Grumman (Woodland Hills)"],
+        student_connection: "Northridge and the surrounding West San Fernando Valley have one of the deepest aerospace manufacturing histories in the country — Rocketdyne engines that powered the Apollo program were built here, and the aerospace engineering pipeline remains active regionally."
+      },
+      {
+        name: "Higher Education & Research",
+        naics: 61,
+        distance: "Local — CSUN",
+        anchor_employers: ["California State University, Northridge"],
+        student_connection: "CSUN is one of the largest public universities in the country and a major local employer in its own right — education, research administration, and academic-adjacent careers are genuinely local options, not just a commute destination."
+      },
+      {
+        name: "Healthcare Systems",
+        naics: 62,
+        distance: "Local",
+        anchor_employers: ["Northridge Hospital Medical Center (Dignity Health)", "Kaiser Permanente"],
+        student_connection: "Northridge Hospital Medical Center anchors a real regional healthcare employment base for the West Valley."
+      }
+    ]
+  },
+
   // ─────────────────────────────────────────────────────────────
   // WESTSIDE LA
   // ─────────────────────────────────────────────────────────────

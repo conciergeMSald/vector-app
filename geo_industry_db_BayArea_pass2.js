@@ -458,6 +458,145 @@ const GEO_INDUSTRY_DB_BAYAREA = {
         student_connection: "Tesla's Fremont factory — which produces more electric vehicles than any plant in North America — is 20 miles north. The clean energy and EV revolution is headquartered in this corridor, and the engineering, manufacturing, and software careers it creates are among the most in-demand in the industry."
       }
     ]
+  },
+
+  "94103": {
+    zip: "94103",
+    neighborhood: "SoMa / Mission",
+    county: "San Francisco",
+    clusters: [
+      {
+        name: "Technology & Software",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Salesforce Tower (HQ)", "Airbnb (HQ)", "Stripe", "Pinterest"],
+        student_connection: "SoMa is the literal center of San Francisco's technology industry — Salesforce Tower anchors the skyline, and Airbnb, Stripe, and Pinterest all headquarter within walking distance."
+      },
+      {
+        name: "Startup & Venture Ecosystem",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["Y Combinator alumni companies", "countless early-stage startups"],
+        student_connection: "SoMa and the Mission hold the highest density of early-stage startups in the world — a student here grows up genuinely surrounded by founders, not just employees."
+      },
+      {
+        name: "Arts, Design & Creative Industries",
+        naics: 71,
+        distance: "Local",
+        anchor_employers: ["independent design studios", "SFMOMA", "creative agencies"],
+        student_connection: "The Mission's design and creative-agency culture runs alongside the tech industry — a genuinely dual identity, tech money and independent art culture in the same few blocks."
+      }
+    ]
+  },
+
+  "94108": {
+    zip: "94108",
+    neighborhood: "Nob Hill / Financial District",
+    county: "San Francisco",
+    clusters: [
+      {
+        name: "Financial Services & Banking",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["Wells Fargo (HQ)", "Charles Schwab (SF office)", "First Republic Bank (legacy HQ)"],
+        student_connection: "The Financial District blocks below Nob Hill house Wells Fargo's headquarters and a genuine concentration of West Coast banking — a different San Francisco than the tech-startup narrative most people know."
+      },
+      {
+        name: "Law & Professional Services",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["major California law firms", "management consulting offices"],
+        student_connection: "Nob Hill and the Financial District support one of the highest concentrations of corporate law and professional services firms on the West Coast."
+      }
+    ]
+  },
+
+  "94122": {
+    zip: "94122",
+    neighborhood: "Sunset District",
+    county: "San Francisco",
+    clusters: [
+      {
+        name: "Healthcare & Academic Medicine",
+        naics: 62,
+        distance: "3 miles — UCSF Parnassus",
+        anchor_employers: ["UCSF Medical Center", "Kaiser Permanente SF"],
+        student_connection: "UCSF's Parnassus campus — one of the top academic medical centers in the country — is minutes away, making healthcare and biomedical research careers a genuine local pathway, not just a commute destination."
+      },
+      {
+        name: "Education & Public Sector",
+        naics: 61,
+        distance: "Local",
+        anchor_employers: ["San Francisco State University", "SFUSD"],
+        student_connection: "The Sunset is a quieter, more residential San Francisco than downtown — with education and public-sector careers genuinely represented locally alongside the citywide tech industry."
+      }
+    ]
+  },
+
+  "94941": {
+    zip: "94941",
+    neighborhood: "Mill Valley",
+    county: "Marin",
+    clusters: [
+      {
+        name: "Media, Film & Entertainment",
+        naics: 51,
+        distance: "Local — Skywalker Sound / Lucasfilm legacy",
+        anchor_employers: ["Skywalker Sound (Nicasio)", "independent production companies"],
+        student_connection: "Mill Valley and greater Marin have a genuine, understated media production history — Skywalker Sound is minutes away, and the Mill Valley Film Festival draws the industry north every year."
+      },
+      {
+        name: "Technology & Venture Capital",
+        naics: 54,
+        distance: "20 miles — San Francisco",
+        anchor_employers: ["remote-based tech executives", "SF-headquartered venture firms"],
+        student_connection: "Marin has become a genuine home base for senior technology and venture capital professionals who work in San Francisco but choose the quieter, wealthier North Bay to live."
+      }
+    ]
+  },
+
+  "94901": {
+    zip: "94901",
+    neighborhood: "San Rafael",
+    county: "Marin",
+    clusters: [
+      {
+        name: "Biotech & Life Sciences",
+        naics: 62,
+        distance: "Local",
+        anchor_employers: ["BioMarin Pharmaceutical (HQ)"],
+        student_connection: "BioMarin Pharmaceutical — a genuine leader in rare-disease drug development — is headquartered in San Rafael, giving Marin County a real biotech identity beyond its wealth-and-scenery reputation."
+      },
+      {
+        name: "Professional Services & Nonprofit Leadership",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["regional nonprofit headquarters", "professional services firms"],
+        student_connection: "San Rafael anchors Marin's civic and nonprofit-leadership community — a real, if less visible, career corridor for students drawn to mission-driven work."
+      }
+    ]
+  },
+
+  "94965": {
+    zip: "94965",
+    neighborhood: "Sausalito",
+    county: "Marin",
+    clusters: [
+      {
+        name: "Design, Architecture & Creative Industries",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["independent architecture and design studios"],
+        student_connection: "Sausalito's houseboat community and waterfront studios have long attracted architects and designers — a genuinely distinct creative-industry identity within the Bay Area."
+      },
+      {
+        name: "Technology & Venture Capital",
+        naics: 51,
+        distance: "8 miles — San Francisco",
+        anchor_employers: ["SF-headquartered tech and venture firms"],
+        student_connection: "Sausalito sits at the base of the Golden Gate Bridge — an 8-mile, scenic commute for tech and finance professionals working in the city."
+      }
+    ]
   }
 
 };

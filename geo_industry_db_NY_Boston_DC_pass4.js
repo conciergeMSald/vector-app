@@ -585,6 +585,242 @@ const GEO_INDUSTRY_DB_EAST = {
     ]
   },
 
+  "22201": {
+    zip: "22201",
+    neighborhood: "Arlington (Courthouse / Clarendon)",
+    county: "Arlington",
+    clusters: [
+      {
+        name: "Defense & Intelligence Contracting",
+        naics: 92,
+        distance: "Local",
+        anchor_employers: ["The Pentagon", "Boeing", "Lockheed Martin regional offices"],
+        student_connection: "Arlington sits directly across the river from the Pentagon — one of the highest concentrations of defense and intelligence careers in the country runs through this single county."
+      },
+      {
+        name: "Technology & Corporate HQ",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Amazon HQ2", "Nestlé USA (HQ)"],
+        student_connection: "Amazon's second headquarters anchors Arlington's fastest-growing corridor — a genuine new tech-corporate identity layered on top of the county's federal-contracting history."
+      },
+      {
+        name: "Management Consulting",
+        naics: 54,
+        distance: "Local — Rosslyn",
+        anchor_employers: ["Deloitte", "Accenture Federal Services"],
+        student_connection: "Deloitte's Rosslyn offices sit minutes from the Pentagon and downtown DC — one of the largest concentrations of federal-focused management consulting in the country runs through Arlington."
+      }
+    ]
+  },
+
+  "22314": {
+    zip: "22314",
+    neighborhood: "Alexandria (Old Town)",
+    county: "Alexandria",
+    clusters: [
+      {
+        name: "Federal Government & Policy",
+        naics: 92,
+        distance: "Local",
+        anchor_employers: ["US Patent and Trademark Office", "federal agency regional offices"],
+        student_connection: "Old Town Alexandria sits minutes from DC with a genuine federal-employment identity of its own, distinct from the commuter-suburb reputation of its historic waterfront."
+      },
+      {
+        name: "Law & Regulatory Affairs",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["regional law firms", "government-affairs consultancies"],
+        student_connection: "Alexandria's proximity to both DC and the Pentagon supports a genuine concentration of regulatory law and government-affairs firms."
+      }
+    ]
+  },
+
+  "20190": {
+    zip: "20190",
+    neighborhood: "Reston",
+    county: "Fairfax",
+    clusters: [
+      {
+        name: "Technology & Telecommunications",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Comscore (HQ)", "Leidos (HQ)", "NCI Information Systems"],
+        student_connection: "Reston is a genuine tech-corporate hub in its own right, anchored by Leidos and other major government-technology contractors headquartered locally."
+      },
+      {
+        name: "Defense & Intelligence Contracting",
+        naics: 92,
+        distance: "10 miles — Tysons / Dulles corridor",
+        anchor_employers: ["Northrop Grumman", "Booz Allen Hamilton"],
+        student_connection: "Reston sits inside the broader Dulles Technology Corridor, one of the densest concentrations of defense and intelligence contractors in the country."
+      }
+    ]
+  },
+
+  "22180": {
+    zip: "22180",
+    neighborhood: "Vienna",
+    county: "Fairfax",
+    clusters: [
+      {
+        name: "Defense & Intelligence Contracting",
+        naics: 92,
+        distance: "Local",
+        anchor_employers: ["CIA (Langley, adjacent)", "MITRE Corporation", "Freddie Mac (HQ)"],
+        student_connection: "Vienna borders Langley and hosts Freddie Mac's headquarters — a genuine dual identity of federal-intelligence and mortgage-finance careers in one town."
+      },
+      {
+        name: "Financial Services",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["Freddie Mac (HQ)", "regional banking offices"],
+        student_connection: "Freddie Mac's headquarters gives Vienna a real housing-finance industry identity alongside its federal-contracting reputation."
+      }
+    ]
+  },
+
+  "20170": {
+    zip: "20170",
+    neighborhood: "Herndon",
+    county: "Fairfax",
+    clusters: [
+      {
+        name: "Technology & Telecommunications",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Neustar", "MicroStrategy (HQ, Tysons-adjacent)"],
+        student_connection: "Herndon sits inside the Dulles Technology Corridor, one of the original hubs of the 1990s internet and telecom boom on the East Coast."
+      },
+      {
+        name: "Aviation & Logistics",
+        naics: 48,
+        distance: "5 miles — Dulles International Airport",
+        anchor_employers: ["United Airlines (Dulles hub)", "aviation logistics firms"],
+        student_connection: "Dulles International Airport is minutes away, supporting real aviation operations and logistics career pathways alongside the tech corridor."
+      }
+    ]
+  },
+
+  "22150": {
+    zip: "22150",
+    neighborhood: "Springfield",
+    county: "Fairfax",
+    clusters: [
+      {
+        name: "Defense & Intelligence Contracting",
+        naics: 92,
+        distance: "Local",
+        anchor_employers: ["National Geospatial-Intelligence Agency (NGA)", "Fort Belvoir-adjacent contractors"],
+        student_connection: "Springfield hosts the National Geospatial-Intelligence Agency's headquarters directly — one of the most specialized intelligence-agency employment bases in the country."
+      },
+      {
+        name: "Federal Government & Policy",
+        naics: 92,
+        distance: "Local",
+        anchor_employers: ["federal agency support offices"],
+        student_connection: "Springfield's proximity to Fort Belvoir and NGA makes federal and defense-adjacent careers a genuine local pathway."
+      }
+    ]
+  },
+
+  "22003": {
+    zip: "22003",
+    neighborhood: "Annandale",
+    county: "Fairfax",
+    clusters: [
+      {
+        name: "Federal Government & Policy",
+        naics: 92,
+        distance: "Local / 12 miles to DC",
+        anchor_employers: ["federal agency regional offices", "government contractors"],
+        student_connection: "Annandale's central Fairfax location makes it an accessible base for federal and government-adjacent careers across the DC metro without a premium Arlington or Alexandria price tag."
+      },
+      {
+        name: "Healthcare Systems",
+        naics: 62,
+        distance: "Local",
+        anchor_employers: ["Inova Health System"],
+        student_connection: "Inova Health System, Northern Virginia's dominant hospital network, has a major presence anchoring healthcare careers locally."
+      }
+    ]
+  },
+
+  "22015": {
+    zip: "22015",
+    neighborhood: "Burke",
+    county: "Fairfax",
+    clusters: [
+      {
+        name: "Federal Government & Policy",
+        naics: 92,
+        distance: "Local / 18 miles to DC",
+        anchor_employers: ["federal agency regional offices", "government contractors"],
+        student_connection: "Burke is a classic Fairfax County federal-commuter suburb — residents work across the full range of DC-area federal agencies and contractors."
+      }
+    ]
+  },
+
+  "20120": {
+    zip: "20120",
+    neighborhood: "Centreville",
+    county: "Fairfax",
+    clusters: [
+      {
+        name: "Defense & Intelligence Contracting",
+        naics: 92,
+        distance: "10 miles — Dulles corridor",
+        anchor_employers: ["defense contractors along the Dulles corridor"],
+        student_connection: "Centreville sits close enough to the Dulles Technology Corridor that defense and intelligence contracting careers remain genuinely accessible."
+      }
+    ]
+  },
+
+  "20151": {
+    zip: "20151",
+    neighborhood: "Chantilly",
+    county: "Fairfax",
+    clusters: [
+      {
+        name: "Defense & Intelligence Contracting",
+        naics: 92,
+        distance: "Local",
+        anchor_employers: ["National Reconnaissance Office (adjacent)", "defense contractors"],
+        student_connection: "Chantilly sits near the National Reconnaissance Office and a dense cluster of defense contractors — one of the more specialized intelligence-adjacent suburbs in the region."
+      }
+    ]
+  },
+
+  "22046": {
+    zip: "22046",
+    neighborhood: "Falls Church",
+    county: "Falls Church City",
+    clusters: [
+      {
+        name: "Federal Government & Policy",
+        naics: 92,
+        distance: "Local / 7 miles to DC",
+        anchor_employers: ["federal agency regional offices", "government contractors"],
+        student_connection: "Falls Church is one of the closest-in Virginia suburbs to DC — a small, independent city with an outsized concentration of federal careers relative to its size."
+      }
+    ]
+  },
+
+  "22192": {
+    zip: "22192",
+    neighborhood: "Woodbridge",
+    county: "Prince William",
+    clusters: [
+      {
+        name: "Federal Government & Policy",
+        naics: 92,
+        distance: "20 miles — DC / Pentagon",
+        anchor_employers: ["Quantico Marine Corps Base (adjacent)", "federal contractors"],
+        student_connection: "Woodbridge's proximity to Marine Corps Base Quantico gives it a genuine military and federal-law-enforcement career identity distinct from the closer-in Fairfax suburbs."
+      }
+    ]
+  },
+
   "20816": {
     zip: "20816",
     neighborhood: "Chevy Chase / Friendship Heights",
