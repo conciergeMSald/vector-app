@@ -8,15 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- Clerk SDK -->
-<script
-  async
-  crossorigin="anonymous"
-  data-clerk-publishable-key="pk_test_Zml0dGluZy1lc2NhcmdvdC0yMy5jbGVyay5hY2NvdW50cy5kZXYk"
-  src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
-  type="text/javascript"
-></script>
-
 <style>
 /* ── DESIGN TOKENS — ENTERPRISE ──────────────────────────────────────── */
 :root {
@@ -31,12 +22,15 @@
   --gold-dim: rgba(201,169,110,0.15);
   --gold-glow:rgba(201,169,110,0.06);
   --cream:    #F4F1EC;
+  --green:    #4A7C59;
+  --red:      #8B3A3A;
   --serif:    'Playfair Display', Georgia, serif;
   --mono:     'DM Mono', monospace;
   --sans:     'DM Sans', sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 html { font-size: 16px; -webkit-font-smoothing: antialiased; }
 
 body {
@@ -47,82 +41,110 @@ body {
   overflow-x: hidden;
 }
 
+/* ── NOISE OVERLAY ────────────────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
 /* ── SCREENS ─────────────────────────────────────────────────────────── */
 .screen { display: none; min-height: 100vh; position: relative; z-index: 1; }
 .screen.active { display: flex; }
 
-/* ── LOADING SCREEN ───────────────────────────────────────────────────── */
-#screen-loading {
+/* ── LOGIN SCREEN ─────────────────────────────────────────────────────── */
+#screen-login {
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.loading-mark {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.loading-dots {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.loading-dot {
-  width: 5px;
-  height: 5px;
-  background: var(--gold);
-  border-radius: 50%;
-  animation: pulse 1.4s ease-in-out infinite;
-}
-
-.loading-dot:nth-child(2) { animation-delay: 0.2s; }
-.loading-dot:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes pulse {
-  0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
-  40% { opacity: 1; transform: scale(1); }
-}
-
-/* ── SIGN IN SCREEN ───────────────────────────────────────────────────── */
-#screen-signin {
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   padding: 2rem;
-  gap: 2rem;
 }
 
-.signin-mark {
+.login-wrap {
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-mark {
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 5px;
   text-transform: uppercase;
   color: var(--gold);
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.signin-title {
+.login-mark::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+.login-title {
   font-family: var(--serif);
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(28px, 4vw, 36px);
   font-weight: 300;
-  text-align: center;
   line-height: 1.25;
+  margin-bottom: 0.5rem;
+  color: var(--cream);
 }
 
-.signin-sub {
+.login-sub {
   font-family: var(--sans);
   font-size: 13px;
   color: var(--muted);
-  text-align: center;
-  max-width: 360px;
-  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 3rem;
+  line-height: 1.6;
 }
 
-.signin-btn {
+.field {
+  margin-bottom: 1.25rem;
+}
+
+.field label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.field input {
+  width: 100%;
+  background: var(--ink2);
+  border: 0.5px solid rgba(255,255,255,0.12);
+  color: var(--cream);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 300;
+  padding: 0.875rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.field input:focus {
+  border-color: var(--gold);
+}
+
+.field input::placeholder {
+  color: var(--mid);
+}
+
+.btn-primary {
+  width: 100%;
   background: var(--gold);
   color: var(--ink);
   border: none;
@@ -130,24 +152,32 @@ body {
   font-size: 10px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  padding: 1rem 2.5rem;
+  padding: 1rem;
   cursor: pointer;
   transition: opacity 0.2s;
+  margin-top: 0.5rem;
+}
+
+.btn-primary:hover { opacity: 0.85; }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.login-error {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: #C97A6E;
   margin-top: 1rem;
-}
-.signin-btn:hover { opacity: 0.85; }
-
-/* Clerk component container — styled to match dark theme */
-#clerk-sign-in {
-  width: 100%;
-  max-width: 420px;
+  display: none;
+  line-height: 1.5;
 }
 
-/* Override Clerk component colors to match our dark theme */
-#clerk-sign-in .cl-card {
-  background: var(--ink2) !important;
-  border: 0.5px solid rgba(255,255,255,0.1) !important;
-  box-shadow: none !important;
+.login-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--mid);
+  line-height: 1.6;
 }
 
 /* ── DASHBOARD SCREEN ─────────────────────────────────────────────────── */
@@ -156,6 +186,7 @@ body {
   align-items: stretch;
 }
 
+/* ── TOP NAV ──────────────────────────────────────────────────────────── */
 .nav {
   display: flex;
   align-items: center;
@@ -217,8 +248,12 @@ body {
   transition: all 0.2s;
 }
 
-.btn-signout:hover { border-color: var(--gold); color: var(--gold); }
+.btn-signout:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
 
+/* ── DASHBOARD BODY ───────────────────────────────────────────────────── */
 .dash-body {
   max-width: 1100px;
   margin: 0 auto;
@@ -234,6 +269,10 @@ body {
   background: var(--rule);
   border: 0.5px solid var(--rule);
   margin-bottom: 3rem;
+}
+
+@media (max-width: 700px) {
+  .stats-row { grid-template-columns: 1fr 1fr; }
 }
 
 .stat-cell {
@@ -259,51 +298,6 @@ body {
 }
 
 .stat-value.gold { color: var(--gold); }
-
-/* ── UPGRADE BANNER ───────────────────────────────────────────────────── */
-.upgrade-banner {
-  background: linear-gradient(135deg, var(--ink2) 0%, rgba(201,169,110,0.08) 100%);
-  border: 0.5px solid rgba(201,169,110,0.3);
-  padding: 1.5rem 2rem;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.upgrade-banner.hidden { display: none; }
-
-.upgrade-text {
-  font-family: var(--serif);
-  font-size: 16px;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--cream);
-  line-height: 1.5;
-}
-
-.upgrade-text span {
-  color: var(--gold);
-  font-style: normal;
-}
-
-.btn-upgrade {
-  background: var(--gold);
-  color: var(--ink);
-  border: none;
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  transition: opacity 0.2s;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.btn-upgrade:hover { opacity: 0.85; }
 
 /* ── SECTION HEADER ───────────────────────────────────────────────────── */
 .section-hdr {
@@ -375,9 +369,14 @@ body {
 }
 
 /* ── FAMILY TABLE ─────────────────────────────────────────────────────── */
-.family-table { width: 100%; border-collapse: collapse; }
+.family-table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-.family-table thead tr { border-bottom: 0.5px solid var(--rule); }
+.family-table thead tr {
+  border-bottom: 0.5px solid var(--rule);
+}
 
 .family-table th {
   font-family: var(--mono);
@@ -398,7 +397,9 @@ body {
   transition: background 0.15s;
 }
 
-.family-table tbody tr:hover { background: var(--gold-glow); }
+.family-table tbody tr:hover {
+  background: var(--gold-glow);
+}
 
 .family-table td {
   padding: 1.125rem 1rem;
@@ -411,8 +412,17 @@ body {
 
 .family-table td:first-child { padding-left: 0; }
 
-.td-name { font-family: var(--serif) !important; font-size: 15px !important; font-weight: 400 !important; }
-.td-mono { font-family: var(--mono) !important; font-size: 11px !important; color: var(--muted) !important; }
+.td-name {
+  font-family: var(--serif);
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+
+.td-mono {
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  color: var(--muted) !important;
+}
 
 .score-pill {
   display: inline-flex;
@@ -420,6 +430,7 @@ body {
   justify-content: center;
   font-family: var(--mono);
   font-size: 11px;
+  font-weight: 400;
   width: 40px;
   height: 28px;
   border: 0.5px solid;
@@ -440,7 +451,11 @@ body {
   background: var(--gold-dim);
 }
 
-.cc-badge.none { border-color: var(--rule); color: var(--mid); background: none; }
+.cc-badge.none {
+  border-color: var(--rule);
+  color: var(--mid);
+  background: none;
+}
 
 /* ── FAMILY DETAIL PANEL ──────────────────────────────────────────────── */
 .detail-overlay {
@@ -454,7 +469,9 @@ body {
   justify-content: flex-end;
 }
 
-.detail-overlay.open { display: flex; }
+.detail-overlay.open {
+  display: flex;
+}
 
 .detail-panel {
   width: 100%;
@@ -489,14 +506,38 @@ body {
   color: var(--muted);
   font-size: 20px;
   cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
   transition: color 0.2s;
 }
 
 .panel-close:hover { color: var(--cream); }
-.panel-eyebrow { font-family: var(--mono); font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+
+.panel-eyebrow {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
 .panel-body { padding: 2rem; }
-.panel-name { font-family: var(--serif); font-size: clamp(22px, 3vw, 28px); font-weight: 300; margin-bottom: 0.25rem; }
-.panel-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--muted); margin-bottom: 2rem; }
+
+.panel-name {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 0.25rem;
+}
+
+.panel-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
 
 .panel-score-block {
   background: var(--ink3);
@@ -508,9 +549,29 @@ body {
   gap: 2rem;
 }
 
-.panel-score-num { font-family: var(--serif); font-size: 52px; font-weight: 300; color: var(--gold); line-height: 1; }
-.panel-score-label { font-family: var(--mono); font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
-.panel-score-career { font-family: var(--serif); font-size: 16px; font-style: italic; }
+.panel-score-num {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.panel-score-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.panel-score-career {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--cream);
+}
 
 .panel-fields {
   display: grid;
@@ -521,23 +582,110 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.panel-field { background: var(--ink3); padding: 1rem; }
-.panel-field-label { font-family: var(--mono); font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 0.375rem; }
-.panel-field-value { font-family: var(--sans); font-size: 13px; font-weight: 300; }
+.panel-field {
+  background: var(--ink3);
+  padding: 1rem;
+}
 
-.panel-report-section { margin-top: 1.5rem; }
-.panel-report-label { font-family: var(--mono); font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 0.5px solid var(--rule); }
-.panel-report-text { font-family: var(--sans); font-size: 13px; font-weight: 300; color: rgba(244,241,236,0.7); line-height: 1.8; max-height: 300px; overflow-y: auto; white-space: pre-wrap; }
+.panel-field-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.375rem;
+}
+
+.panel-field-value {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--cream);
+}
+
+.panel-report-section {
+  margin-top: 1.5rem;
+}
+
+.panel-report-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.panel-report-text {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(244,241,236,0.7);
+  line-height: 1.8;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
 
 /* ── EMPTY STATE ──────────────────────────────────────────────────────── */
-.empty-state { text-align: center; padding: 5rem 2rem; }
-.empty-icon { font-family: var(--mono); font-size: 32px; color: var(--mid); margin-bottom: 1.5rem; letter-spacing: 4px; }
-.empty-title { font-family: var(--serif); font-size: 22px; font-weight: 300; color: var(--muted); margin-bottom: 0.5rem; }
-.empty-sub { font-family: var(--sans); font-size: 12px; color: var(--mid); line-height: 1.6; max-width: 360px; margin: 0 auto; }
+.empty-state {
+  text-align: center;
+  padding: 5rem 2rem;
+}
 
-/* ── LOADING WRAP ─────────────────────────────────────────────────────── */
-.loading-wrap { display: flex; align-items: center; justify-content: center; padding: 4rem; gap: 0.75rem; }
+.empty-icon {
+  font-family: var(--mono);
+  font-size: 32px;
+  color: var(--mid);
+  margin-bottom: 1.5rem;
+  letter-spacing: 4px;
+}
 
+.empty-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.empty-sub {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.6;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* ── LOADING ──────────────────────────────────────────────────────────── */
+.loading-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  gap: 0.75rem;
+}
+
+.loading-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pulse {
+  0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1); }
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .nav { padding: 1rem 1.25rem; }
   .dash-body { padding: 2rem 1.25rem 4rem; }
@@ -545,50 +693,41 @@ body {
   .family-table td:nth-child(n+4) { display: none; }
   .detail-panel { max-width: 100%; }
   .stats-row { grid-template-columns: 1fr 1fr; }
-  .upgrade-banner { flex-direction: column; }
 }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 </head>
 <body>
 
-<!-- ── LOADING SCREEN ────────────────────────────────────────────────── -->
-<div class="screen" id="screen-loading" style="display:none">
-  <div class="loading-mark">Vector · Loading</div>
-  <div class="loading-dots">
-    <div class="loading-dot"></div>
-    <div class="loading-dot"></div>
-    <div class="loading-dot"></div>
-  </div>
-</div>
+<!-- ── LOGIN SCREEN ──────────────────────────────────────────────────── -->
+<div class="screen active" id="screen-login">
+  <div class="login-wrap">
+    <div class="login-mark">Vector · Consultant Portal</div>
+    <h1 class="login-title">Intelligence<br>for the advisor.</h1>
+    <p class="login-sub">Your paired families. Their scores, trajectories, and reports — in one place.</p>
 
-<!-- ── SIGN IN SCREEN ────────────────────────────────────────────────── -->
-<div class="screen" id="screen-signin">
-  <div class="signin-mark">Vector · Consultant Portal</div>
-  <h1 class="signin-title">Intelligence<br>for the advisor.</h1>
-  <p class="signin-sub">Your paired families. Their scores, trajectories, and reports — in one place.</p>
-  <div style="max-width:360px;margin:0 auto;text-align:left;">
-    <input type="email" id="portalEmailInp" placeholder="your@email.com"
-      style="width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:0.5px solid rgba(200,169,122,0.4);color:#f4f1ec;font-family:var(--mono);font-size:12px;margin-bottom:.75rem;box-sizing:border-box;outline:none;"
-      onkeydown="if(event.key==='Enter')doSignIn()">
-    <input type="password" id="portalPasswordInp" placeholder="password"
-      style="width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:0.5px solid rgba(200,169,122,0.4);color:#f4f1ec;font-family:var(--mono);font-size:12px;margin-bottom:.75rem;box-sizing:border-box;outline:none;"
-      onkeydown="if(event.key==='Enter')doSignIn()">
-    <button id="portalSignInBtn" onclick="doSignIn()"
-      style="width:100%;padding:13px 24px;background:transparent;border:0.5px solid rgba(200,169,122,0.6);color:var(--gold);font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-bottom:.75rem;">
-      Sign In →
-    </button>
-    <div id="portalAuthMsg" style="font-family:var(--mono);font-size:10px;color:var(--gold);min-height:1.4em;text-align:center;"></div>
-  </div>
-  <div style="position:fixed;bottom:2rem;left:0;right:0;text-align:center;">
-    <button onclick="showDashboard()" style="background:none;border:none;font-family:var(--mono);font-size:10px;letter-spacing:2px;color:rgba(200,169,122,0.4);cursor:pointer;text-transform:uppercase;padding:.5rem 1rem;">
-      Demo Access →
-    </button>
+    <div class="field">
+      <label for="loginEmail">Email address</label>
+      <input type="email" id="loginEmail" placeholder="you@yourpractice.com" autocomplete="email">
+    </div>
+
+    <div class="field">
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" placeholder="••••••••••" autocomplete="current-password">
+    </div>
+
+    <button class="btn-primary" id="loginBtn" onclick="doLogin()">Sign in</button>
+    <div class="login-error" id="loginError"></div>
+
+    <div class="login-footer">
+      Access is provisioned by A Better College Consultant. If you have not received credentials, contact <strong style="color:var(--muted)">matt@abettercollegeconsultant.com</strong>
+    </div>
   </div>
 </div>
 
 <!-- ── DASHBOARD SCREEN ───────────────────────────────────────────────── -->
 <div class="screen" id="screen-dashboard">
+
+  <!-- NAV -->
   <nav class="nav">
     <div class="nav-brand">
       <span>V</span> Vector
@@ -596,23 +735,15 @@ body {
     </div>
     <div class="nav-right">
       <div class="nav-consultant">Signed in as <strong id="navName">—</strong></div>
-      <button class="btn-signout" style="margin-right:.5rem;" onclick="showChangePassword()">Change Password</button>
       <button class="btn-signout" onclick="doSignOut()">Sign out</button>
     </div>
   </nav>
 
+  <!-- BODY -->
   <div class="dash-body">
 
-    <!-- UPGRADE BANNER — shown when subscription_status is not active -->
-    <div class="upgrade-banner hidden" id="upgradeBanner">
-      <div class="upgrade-text">
-        You are on the <span>Beta Trial</span>. Upgrade to unlock unlimited families and white-label reports.
-      </div>
-      <button class="btn-upgrade" onclick="doUpgrade()">Upgrade → $750/mo Beta</button>
-    </div>
-
     <!-- STATS -->
-    <div class="stats-row">
+    <div class="stats-row" id="statsRow">
       <div class="stat-cell">
         <div class="stat-label">Paired Families</div>
         <div class="stat-value gold" id="statFamilies">—</div>
@@ -639,9 +770,9 @@ body {
 
     <div class="filter-row">
       <input class="search-input" type="text" id="searchInput" placeholder="Search by name, career, ZIP…" oninput="filterFamilies()">
-      <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
-      <button class="filter-btn" onclick="setFilter('cc', this)">CC Pathway</button>
-      <button class="filter-btn" onclick="setFilter('high', this)">Score 70+</button>
+      <button class="filter-btn active" id="filterAll" onclick="setFilter('all', this)">All</button>
+      <button class="filter-btn" id="filterCC" onclick="setFilter('cc', this)">CC Pathway</button>
+      <button class="filter-btn" id="filterHigh" onclick="setFilter('high', this)">Score 70+</button>
     </div>
 
     <div id="familyTableWrap">
@@ -655,185 +786,197 @@ body {
   </div>
 </div>
 
-<!-- ── CHANGE PASSWORD MODAL ─────────────────────────────────────────── -->
-<div id="changePwOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:200;display:none;align-items:center;justify-content:center;">
-  <div style="background:#1a1710;border:0.5px solid rgba(200,169,122,0.3);padding:2.5rem;width:100%;max-width:380px;box-sizing:border-box;">
-    <div style="font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:1.5rem;">Change Password</div>
-    <input type="password" id="pwCurrent" placeholder="Current password"
-      style="width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:0.5px solid rgba(200,169,122,0.4);color:#f4f1ec;font-family:var(--mono);font-size:12px;margin-bottom:.75rem;box-sizing:border-box;outline:none;">
-    <input type="password" id="pwNew" placeholder="New password"
-      style="width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:0.5px solid rgba(200,169,122,0.4);color:#f4f1ec;font-family:var(--mono);font-size:12px;margin-bottom:.75rem;box-sizing:border-box;outline:none;">
-    <input type="password" id="pwConfirm" placeholder="Confirm new password"
-      style="width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:0.5px solid rgba(200,169,122,0.4);color:#f4f1ec;font-family:var(--mono);font-size:12px;margin-bottom:.75rem;box-sizing:border-box;outline:none;">
-    <div id="pwMsg" style="font-family:var(--mono);font-size:10px;min-height:1.4em;margin-bottom:.75rem;text-align:center;"></div>
-    <div style="display:flex;gap:.75rem;">
-      <button onclick="doChangePassword()"
-        style="flex:1;padding:13px;background:transparent;border:0.5px solid rgba(200,169,122,0.6);color:var(--gold);font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;">
-        Update
-      </button>
-      <button onclick="hideChangePassword()"
-        style="flex:1;padding:13px;background:transparent;border:0.5px solid rgba(255,255,255,0.15);color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;">
-        Cancel
-      </button>
+<!-- SCHOOL CULTURE & ADMISSIONS DATA (counselor-only — never shown to families) -->
+<div class="dash-body">
+  <div class="section-hdr">
+    <div class="section-title">School Culture &amp; Admissions Data</div>
+    <div class="section-count" id="schoolCount">0 schools</div>
+  </div>
+
+  <div class="filter-row">
+    <input class="search-input" type="text" id="schoolSearchInput" placeholder="Search by school name…" oninput="filterSchools()">
+    <button class="filter-btn active" id="schoolFilterAll" onclick="setSchoolFilter('all', this)">All</button>
+    <button class="filter-btn" id="schoolFilterExclusive" onclick="setSchoolFilter('Exclusive & Protective', this)">Exclusive &amp; Protective</button>
+    <button class="filter-btn" id="schoolFilterOpenDoor" onclick="setSchoolFilter('Open Door, Outsiders Subsidize', this)">Open Door</button>
+    <button class="filter-btn" id="schoolFilterSelective" onclick="setSchoolFilter('Selective, Modest Local Premium', this)">Selective, Low Premium</button>
+    <button class="filter-btn" id="schoolFilterAccessible" onclick="setSchoolFilter('Broadly Accessible, Modest Local Premium', this)">Broadly Accessible</button>
+    <button class="filter-btn" id="schoolFilterPrivate" onclick="setSchoolFilter('Private / Flat Tuition', this)">Private / Flat</button>
+  </div>
+
+  <div id="schoolTableWrap">
+    <div class="loading-wrap">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
     </div>
   </div>
 </div>
 
 <!-- ── DETAIL PANEL ───────────────────────────────────────────────────── -->
 <div class="detail-overlay" id="detailOverlay" onclick="closePanel(event)">
-  <div class="detail-panel">
+  <div class="detail-panel" id="detailPanel">
     <div class="panel-header">
       <div class="panel-eyebrow">Family Record</div>
       <button class="panel-close" onclick="closePanel(null)">✕</button>
     </div>
-    <div class="panel-body" id="panelBody"></div>
+    <div class="panel-body" id="panelBody">
+      <!-- populated by JS -->
+    </div>
   </div>
 </div>
 
+<script src="lifescape_college_prefs_v3.js"></script>
 <script>
 'use strict';
 
 // ── CONFIGURATION ──────────────────────────────────────────────────────────
-const WORKER_URL    = 'https://api.abettercollegeconsultant.com';
-const SUPABASE_URL  = 'https://pbtyanwkmbrcumwunxrv.supabase.co';
-const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBidHlhbndrbWJyY3Vtd3VueHJ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMTU3MDIsImV4cCI6MjA2Mjg5MTcwMn0.kSzlOBElQlB5gV_OLAkUuOiIOmomZ4pvtx7tJNJbhGc';
-
-const PLAN_KEYS = {
-  consultant_beta: 'consultant_beta',
-  family_monthly:  'family_monthly',
-};
+// Replace with your actual Supabase project URL and anon key
+const SUPABASE_URL      = 'https://YOUR_PROJECT.supabase.co';
+const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY_HERE';
 
 // ── STATE ──────────────────────────────────────────────────────────────────
-var SB_CLIENT       = null;
-var SB_SESSION      = null;
-var CONSULTANT_DATA = null;
-var ALL_FAMILIES    = [];
-var FILTERED        = [];
-var ACTIVE_FILTER   = 'all';
+var SESSION_TOKEN    = null;
+var CONSULTANT_DATA  = null;
+var ALL_FAMILIES     = [];
+var FILTERED         = [];
+var ACTIVE_FILTER    = 'all';
 
-// ── INIT — Supabase Auth ───────────────────────────────────────────────────
-function initSupabase() {
-  if (!window.supabase) { setTimeout(initSupabase, 100); return; }
-  SB_CLIENT = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
-    auth: { autoRefreshToken: true, persistSession: true, detectSessionInUrl: true }
+// ── INIT ───────────────────────────────────────────────────────────────────
+(function() {
+  // Check for existing session in localStorage
+  var stored = localStorage.getItem('vx_consultant_token');
+  if (stored) {
+    SESSION_TOKEN = stored;
+    showDashboard();
+  }
+  // Enter key on password field
+  document.getElementById('loginPassword').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') doLogin();
   });
-  // ── DEMO MODE: auth gate bypassed for presentation ──
-  // Restore original auth flow before live consultant access.
-  SB_SESSION = { user: { email: 'mattstearn@gmail.com' }, access_token: 'demo' };
-  showDashboard();
-}
+  document.getElementById('loginEmail').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') document.getElementById('loginPassword').focus();
+  });
+})();
 
-function _unused_initClerk_placeholder() {
-  if (false) {
-    var dummy = function() {
-      // placeholder
-    };
-  }
-}
-initSupabase();
+// ── LOGIN ──────────────────────────────────────────────────────────────────
+async function doLogin() {
+  var email = document.getElementById('loginEmail').value.trim();
+  var pass  = document.getElementById('loginPassword').value;
+  var errEl = document.getElementById('loginError');
+  var btn   = document.getElementById('loginBtn');
 
-// ── SHOW SIGN IN ───────────────────────────────────────────────────────────
-function showSignIn() {
-  document.getElementById('screen-loading').classList.remove('active');
-  document.getElementById('screen-dashboard').classList.remove('active');
-  document.getElementById('screen-signin').classList.add('active');
-}
+  errEl.style.display = 'none';
 
-// ── PASSWORD SIGN IN ───────────────────────────────────────────────────────
-function doSignIn() {
-  var email    = (document.getElementById('portalEmailInp')    || {}).value || '';
-  var password = (document.getElementById('portalPasswordInp') || {}).value || '';
-  email = email.trim();
-  var msg = document.getElementById('portalAuthMsg');
-  var btn = document.getElementById('portalSignInBtn');
-
-  if (!email || !email.includes('@')) {
-    if (msg) { msg.textContent = 'Please enter a valid email address.'; msg.style.color = '#c0392b'; }
-    return;
-  }
-  if (!password) {
-    if (msg) { msg.textContent = 'Please enter your password.'; msg.style.color = '#c0392b'; }
+  if (!email || !pass) {
+    errEl.textContent = 'Please enter your email and password.';
+    errEl.style.display = 'block';
     return;
   }
 
-  if (msg) { msg.textContent = 'Signing in…'; msg.style.color = '#C8A97A'; }
-  if (btn) btn.disabled = true;
+  btn.disabled = true;
+  btn.textContent = 'Signing in…';
 
-  SB_CLIENT.auth.signInWithPassword({
-    email:    email,
-    password: password,
-  }).then(function(result) {
-    if (result.error) {
-      if (msg) { msg.textContent = 'Incorrect email or password.'; msg.style.color = '#c0392b'; }
-      if (btn) btn.disabled = false;
-    } else {
-      if (msg) { msg.textContent = ''; }
+  try {
+    var res = await fetch(SUPABASE_URL + '/auth/v1/token?grant_type=password', {
+      method: 'POST',
+      headers: {
+        'apikey':        SUPABASE_ANON_KEY,
+        'Content-Type':  'application/json',
+      },
+      body: JSON.stringify({ email: email, password: pass }),
+    });
+
+    var data = await res.json();
+
+    if (!res.ok || !data.access_token) {
+      var msg = data.error_description || data.msg || 'Invalid email or password.';
+      errEl.textContent = msg;
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Sign in';
+      return;
     }
-  });
+
+    SESSION_TOKEN = data.access_token;
+    localStorage.setItem('vx_consultant_token', SESSION_TOKEN);
+    showDashboard();
+
+  } catch (err) {
+    errEl.textContent = 'Connection error. Please try again.';
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Sign in';
+  }
+}
+
+// ── SIGN OUT ───────────────────────────────────────────────────────────────
+function doSignOut() {
+  localStorage.removeItem('vx_consultant_token');
+  SESSION_TOKEN   = null;
+  CONSULTANT_DATA = null;
+  ALL_FAMILIES    = [];
+  document.getElementById('screen-dashboard').classList.remove('active');
+  document.getElementById('screen-login').classList.add('active');
+  document.getElementById('loginBtn').disabled = false;
+  document.getElementById('loginBtn').textContent = 'Sign in';
+  document.getElementById('loginEmail').value = '';
+  document.getElementById('loginPassword').value = '';
 }
 
 // ── SHOW DASHBOARD ─────────────────────────────────────────────────────────
 async function showDashboard() {
-  document.getElementById('screen-loading').classList.remove('active');
-  document.getElementById('screen-signin').classList.remove('active');
+  document.getElementById('screen-login').classList.remove('active');
   document.getElementById('screen-dashboard').classList.add('active');
   await loadConsultantProfile();
   await loadFamilies();
 }
 
-// ── GET SESSION TOKEN ──────────────────────────────────────────────────────
-async function getToken() {
-  try {
-    if (!SB_SESSION) return null;
-    // Refresh if needed
-    var result = await SB_CLIENT.auth.getSession();
-    SB_SESSION = result.data && result.data.session ? result.data.session : null;
-    return SB_SESSION ? SB_SESSION.access_token : null;
-  } catch(e) {
-    console.error('[VECTOR] Failed to get token:', e);
-    return null;
-  }
-}
-
 // ── LOAD CONSULTANT PROFILE ────────────────────────────────────────────────
 async function loadConsultantProfile() {
   try {
-    var token = await getToken();
-    if (!token) { doSignOut(); return; }
-
-    var res = await fetch(WORKER_URL + '/consultant-me', {
-      headers: { 'Authorization': 'Bearer ' + token }
-    });
+    // Get the consultant record from Supabase using their auth user id
+    var res = await fetch(
+      SUPABASE_URL + '/rest/v1/consultants?select=*',
+      {
+        headers: {
+          'apikey':        SUPABASE_ANON_KEY,
+          'Authorization': 'Bearer ' + SESSION_TOKEN,
+        },
+      }
+    );
 
     if (res.status === 401) { doSignOut(); return; }
 
     var data = await res.json();
-    CONSULTANT_DATA = data.consultant;
-
-    if (CONSULTANT_DATA) {
+    if (data && data.length > 0) {
+      CONSULTANT_DATA = data[0];
       document.getElementById('navName').textContent =
         (CONSULTANT_DATA.first_name || '') + ' ' + (CONSULTANT_DATA.last_name || '');
       document.getElementById('statCode').textContent =
         CONSULTANT_DATA.access_code || '—';
-
-      // Show upgrade banner if not active
-      if (CONSULTANT_DATA.subscription_status !== 'active') {
-        document.getElementById('upgradeBanner').classList.remove('hidden');
-      }
     }
-  } catch(err) {
+  } catch (err) {
     console.warn('[VECTOR Portal] Profile load error:', err);
   }
 }
 
 // ── LOAD FAMILIES ──────────────────────────────────────────────────────────
 async function loadFamilies() {
-  try {
-    var token = await getToken();
-    if (!token) return;
+  var wrap = document.getElementById('familyTableWrap');
 
-    var res = await fetch(WORKER_URL + '/consultant-families', {
-      headers: { 'Authorization': 'Bearer ' + token }
+  try {
+    // Query families where consultant_code matches this consultant's access_code
+    var code = CONSULTANT_DATA ? CONSULTANT_DATA.access_code : null;
+    var url  = SUPABASE_URL + '/rest/v1/families?select=*&order=created_at.desc';
+    if (code) {
+      url += '&consultant_code=eq.' + encodeURIComponent(code);
+    }
+
+    var res = await fetch(url, {
+      headers: {
+        'apikey':        SUPABASE_ANON_KEY,
+        'Authorization': 'Bearer ' + SESSION_TOKEN,
+      },
     });
 
     if (res.status === 401) { doSignOut(); return; }
@@ -846,113 +989,17 @@ async function loadFamilies() {
     FILTERED = ALL_FAMILIES.slice();
     renderTable(FILTERED);
 
-  } catch(err) {
+  } catch (err) {
     console.warn('[VECTOR Portal] Families load error:', err);
-    document.getElementById('familyTableWrap').innerHTML =
-      '<div class="empty-state"><div class="empty-title">Could not load families.</div></div>';
+    wrap.innerHTML = '<div class="empty-state"><div class="empty-title">Could not load families.</div><div class="empty-sub">Check your connection and refresh.</div></div>';
   }
-}
-
-// ── UPGRADE — Stripe Checkout ──────────────────────────────────────────────
-async function doUpgrade() {
-  try {
-    var token = await getToken();
-    if (!token) return;
-
-    var res = await fetch(WORKER_URL + '/create-checkout', {
-      method: 'POST',
-      headers: {
-        'Authorization': 'Bearer ' + token,
-        'Content-Type':  'application/json',
-      },
-      body: JSON.stringify({
-        plan_key: PLAN_KEYS.consultant_beta,
-      }),
-    });
-
-    var data = await res.json();
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      alert('Could not create checkout session. Please try again.');
-    }
-  } catch(err) {
-    console.error('[VECTOR] Upgrade error:', err);
-  }
-}
-
-// ── SIGN OUT ───────────────────────────────────────────────────────────────
-async function doSignOut() {
-  CONSULTANT_DATA = null;
-  ALL_FAMILIES    = [];
-  if (SB_CLIENT) await SB_CLIENT.auth.signOut();
-  SB_SESSION = null;
-  showSignIn();
-}
-
-// ── CHANGE PASSWORD ────────────────────────────────────────────────────────
-function showChangePassword() {
-  var el = document.getElementById('changePwOverlay');
-  if (el) { el.style.display = 'flex'; }
-  var inputs = ['pwCurrent','pwNew','pwConfirm'];
-  inputs.forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) el.value = '';
-  });
-  var msg = document.getElementById('pwMsg');
-  if (msg) { msg.textContent = ''; }
-}
-
-function hideChangePassword() {
-  var el = document.getElementById('changePwOverlay');
-  if (el) { el.style.display = 'none'; }
-}
-
-async function doChangePassword() {
-  var current = (document.getElementById('pwCurrent') || {}).value || '';
-  var newPw   = (document.getElementById('pwNew')     || {}).value || '';
-  var confirm = (document.getElementById('pwConfirm') || {}).value || '';
-  var msg     = document.getElementById('pwMsg');
-
-  if (!current) {
-    if (msg) { msg.textContent = 'Enter your current password.'; msg.style.color = '#c0392b'; }
-    return;
-  }
-  if (newPw.length < 8) {
-    if (msg) { msg.textContent = 'New password must be at least 8 characters.'; msg.style.color = '#c0392b'; }
-    return;
-  }
-  if (newPw !== confirm) {
-    if (msg) { msg.textContent = 'New passwords do not match.'; msg.style.color = '#c0392b'; }
-    return;
-  }
-
-  if (msg) { msg.textContent = 'Verifying…'; msg.style.color = '#C8A97A'; }
-
-  // Re-authenticate with current password first to confirm identity
-  var email = SB_SESSION && SB_SESSION.user ? SB_SESSION.user.email : '';
-  var reauth = await SB_CLIENT.auth.signInWithPassword({ email: email, password: current });
-  if (reauth.error) {
-    if (msg) { msg.textContent = 'Current password is incorrect.'; msg.style.color = '#c0392b'; }
-    return;
-  }
-
-  // Update to new password
-  var result = await SB_CLIENT.auth.updateUser({ password: newPw });
-  if (result.error) {
-    if (msg) { msg.textContent = 'Update failed: ' + result.error.message; msg.style.color = '#c0392b'; }
-    return;
-  }
-
-  if (msg) { msg.textContent = 'Password updated.'; msg.style.color = '#2e7d32'; }
-  setTimeout(hideChangePassword, 1500);
 }
 
 // ── RENDER STATS ───────────────────────────────────────────────────────────
 function renderStats() {
-  var total  = ALL_FAMILIES.length;
-  var scores = ALL_FAMILIES.filter(function(f) { return f.vector_score; }).map(function(f) { return parseInt(f.vector_score); });
-  var avg    = scores.length ? Math.round(scores.reduce(function(a,b){return a+b;},0) / scores.length) : '—';
+  var total   = ALL_FAMILIES.length;
+  var scores  = ALL_FAMILIES.filter(function(f) { return f.vector_score; }).map(function(f) { return parseInt(f.vector_score); });
+  var avg     = scores.length ? Math.round(scores.reduce(function(a,b){return a+b;},0) / scores.length) : '—';
   var ccCount = ALL_FAMILIES.filter(function(f) { return f.cc_pathway_shown === 'Y'; }).length;
 
   document.getElementById('statFamilies').textContent = total;
@@ -970,15 +1017,22 @@ function setFilter(type, btn) {
 
 function filterFamilies() {
   var q = (document.getElementById('searchInput').value || '').toLowerCase();
+
   FILTERED = ALL_FAMILIES.filter(function(f) {
+    // Filter type
     if (ACTIVE_FILTER === 'cc'   && f.cc_pathway_shown !== 'Y') return false;
     if (ACTIVE_FILTER === 'high' && parseInt(f.vector_score) < 70) return false;
+    // Search
     if (q) {
-      var hay = [f.family_last_name, f.email, f.career, f.zip, f.vector_score].join(' ').toLowerCase();
+      var hay = [
+        f.family_last_name, f.email, f.career,
+        f.zip, f.worlds, f.vector_score
+      ].join(' ').toLowerCase();
       if (hay.indexOf(q) === -1) return false;
     }
     return true;
   });
+
   document.getElementById('familyCount').textContent = FILTERED.length + ' record' + (FILTERED.length !== 1 ? 's' : '');
   renderTable(FILTERED);
 }
@@ -997,22 +1051,23 @@ function renderTable(families) {
   }
 
   var rows = families.map(function(f, i) {
-    var score      = parseInt(f.vector_score) || 0;
+    var score    = parseInt(f.vector_score) || 0;
     var scoreClass = score >= 70 ? 'score-high' : score >= 50 ? 'score-mid' : 'score-low';
+    var scoreVal   = score || '—';
     var ccBadge    = f.cc_pathway_shown === 'Y'
       ? '<span class="cc-badge">CC Path</span>'
       : '<span class="cc-badge none">—</span>';
     var dateStr = f.created_at
       ? new Date(f.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
       : '—';
-    var name   = f.family_last_name ? 'The ' + f.family_last_name + ' Family' : (f.email || 'Family Record');
+    var name = f.family_last_name ? 'The ' + f.family_last_name + ' Family' : (f.email || 'Family Record');
     var career = f.career || '—';
     var grade  = f.children ? getFirstGrade(f.children) : '—';
 
-    return '<tr onclick="openPanel(' + i + ')">' +
+    return '<tr onclick="openPanel(\'' + i + '\')">' +
       '<td class="td-name">' + escHtml(name) + '</td>' +
       '<td>' + escHtml(career) + '</td>' +
-      '<td><span class="score-pill ' + scoreClass + '">' + (score || '—') + '</span></td>' +
+      '<td><span class="score-pill ' + scoreClass + '">' + scoreVal + '</span></td>' +
       '<td>' + ccBadge + '</td>' +
       '<td class="td-mono">' + escHtml(String(grade)) + '</td>' +
       '<td class="td-mono">' + dateStr + '</td>' +
@@ -1020,8 +1075,11 @@ function renderTable(families) {
   }).join('');
 
   wrap.innerHTML = '<table class="family-table">' +
-    '<thead><tr><th>Family</th><th>Career Goal</th><th>Score</th><th>CC</th><th>Grade</th><th>Date</th></tr></thead>' +
-    '<tbody>' + rows + '</tbody></table>';
+    '<thead><tr>' +
+    '<th>Family</th><th>Career Goal</th><th>Score</th><th>CC</th><th>Grade</th><th>Date</th>' +
+    '</tr></thead>' +
+    '<tbody>' + rows + '</tbody>' +
+    '</table>';
 }
 
 function getFirstGrade(children) {
@@ -1034,26 +1092,25 @@ function getFirstGrade(children) {
 
 // ── DETAIL PANEL ───────────────────────────────────────────────────────────
 function openPanel(idx) {
-  var f = FILTERED[idx];
+  var f = FILTERED[parseInt(idx)];
   if (!f) return;
 
-  var score      = parseInt(f.vector_score) || 0;
+  var score     = parseInt(f.vector_score) || 0;
   var scoreClass = score >= 70 ? 'score-high' : score >= 50 ? 'score-mid' : 'score-low';
-  var name       = f.family_last_name ? 'The ' + f.family_last_name + ' Family' : (f.email || 'Family Record');
-  var dateStr    = f.created_at
+  var name      = f.family_last_name ? 'The ' + f.family_last_name + ' Family' : (f.email || 'Family Record');
+  var dateStr   = f.created_at
     ? new Date(f.created_at).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })
     : 'Date unknown';
 
   var fields = [
-    { label: 'Email',      value: f.email || '—' },
-    { label: 'ZIP Code',   value: f.zip   || '—' },
-    { label: 'GPA',        value: f.gpa   || '—' },
-    { label: 'Grade',      value: getFirstGrade(f.children) },
-    { label: 'Worlds',     value: f.worlds || '—' },
-    { label: 'CC Pathway', value: f.cc_pathway_shown === 'Y' ? 'Shown ✓' : 'Not shown' },
-    { label: 'State Pref', value: f.state_pref || '—' },
-    { label: 'Campus Size',value: f.campus_size_pref || '—' },
-    { label: 'Session ID', value: f.session_id ? f.session_id.substring(0,16) + '…' : '—' },
+    { label: 'Email',         value: f.email || '—' },
+    { label: 'ZIP Code',      value: f.zip || '—' },
+    { label: 'Grade',         value: getFirstGrade(f.children) },
+    { label: 'Worlds',        value: f.worlds || '—' },
+    { label: 'State Pref',    value: f.state_pref || '—' },
+    { label: 'Campus Size',   value: f.campus_size_pref || '—' },
+    { label: 'CC Pathway',    value: f.cc_pathway_shown === 'Y' ? 'Shown ✓' : 'Not shown' },
+    { label: 'Session ID',    value: f.session_id ? f.session_id.substring(0,16) + '…' : '—' },
   ];
 
   var fieldsHtml = fields.map(function(fd) {
@@ -1066,95 +1123,9 @@ function openPanel(idx) {
   var reportHtml = f.report_text
     ? '<div class="panel-report-section">' +
       '<div class="panel-report-label">Report Preview</div>' +
-      '<div class="panel-report-text">' + escHtml(f.report_text.substring(0, 2000)) +
-      (f.report_text.length > 2000 ? '\n\n[Report continues…]' : '') + '</div>' +
+      '<div class="panel-report-text">' + escHtml(f.report_text.substring(0, 2000)) + (f.report_text.length > 2000 ? '\n\n[Report continues…]' : '') + '</div>' +
       '</div>'
     : '';
-
-  // ── CC Override control ────────────────────────────────────────────────
-  var ccOverride = '<div style="margin-top:2rem;padding-top:1.5rem;border-top:0.5px solid rgba(200,169,122,0.15);">' +
-    '<div class="panel-report-label" style="color:var(--gold);">CC Pathway Override</div>' +
-    '<div style="font-size:11px;color:var(--muted);margin-bottom:1rem;line-height:1.6;">' +
-      'Assign a specific community college pathway for this student — regardless of algorithm output. ' +
-      'Use this when family culture, maturity, finances, or geographic preference warrants a local CC recommendation.' +
-    '</div>' +
-    '<select id="ccOverrideSelect" style="width:100%;padding:10px 12px;background:var(--surface);border:0.5px solid rgba(200,169,122,0.3);color:var(--fg);font-family:var(--sans);font-size:11px;margin-bottom:.75rem;box-sizing:border-box;">' +
-    `<option value="">— Select a CC pathway —</option>
-<option value="Diablo Valley College||UC Berkeley — Haas School of Business||Pleasant Hill, California">San Francisco: Diablo Valley College → UC Berkeley — Haas School of Business</option>
-<option value="De Anza College||UC Santa Cruz / Cal Poly San Luis Obispo||Cupertino, California">Silicon Valley: De Anza College → UC Santa Cruz / Cal Poly San Luis Obispo</option>
-<option value="Santa Monica College||UCLA||Santa Monica, California">Los Angeles: Santa Monica College → UCLA</option>
-<option value="Pasadena City College||USC Marshall School of Business / Cal Poly Pomona||Pasadena, California">Pasadena: Pasadena City College → USC Marshall School of Business / Cal Poly Pomona</option>
-<option value="San Diego City College||UC San Diego||San Diego, California">San Diego: San Diego City College → UC San Diego</option>
-<option value="Orange Coast College||UC Irvine||Costa Mesa, California">Orange County: Orange Coast College → UC Irvine</option>
-<option value="Moorpark College||Cal Lutheran / Cal State Channel Islands||Moorpark, California">Ventura: Moorpark College → Cal Lutheran / Cal State Channel Islands</option>
-<option value="Foothill College||UC Santa Cruz / San Jose State||Los Altos Hills, California">Foothill: Foothill College → UC Santa Cruz / San Jose State</option>
-<option value="City College of San Francisco||San Francisco State / UC Berkeley select programs||San Francisco, California">Sacramento: City College of San Francisco → San Francisco State / UC Berkeley select programs</option>
-<option value="Los Angeles Valley College||Cal State Northridge / Loyola Marymount||Valley Glen, California">San Fernando Valley: Los Angeles Valley College → Cal State Northridge / Loyola Marymount</option>
-<option value="Austin Community College||UT Austin — McCombs School of Business||Austin, Texas">Austin: Austin Community College → UT Austin — McCombs School of Business</option>
-<option value="Dallas College — El Centro Campus||SMU Cox School of Business / UT Dallas||Dallas, Texas">Dallas: Dallas College — El Centro Campus → SMU Cox School of Business / UT Dallas</option>
-<option value="Houston Community College||University of Houston — C.T. Bauer College of Business||Houston, Texas">Houston: Houston Community College → University of Houston — C.T. Bauer College of Business</option>
-<option value="San Antonio College||UTSA / Trinity University||San Antonio, Texas">San Antonio: San Antonio College → UTSA / Trinity University</option>
-<option value="Miami Dade College||University of Miami / Florida International University||Miami, Florida">Miami: Miami Dade College → University of Miami / Florida International University</option>
-<option value="Valencia College||University of Central Florida||Orlando, Florida">Orlando: Valencia College → University of Central Florida</option>
-<option value="Hillsborough Community College||University of South Florida||Tampa, Florida">Tampa: Hillsborough Community College → University of South Florida</option>
-<option value="Broward College||Florida Atlantic University / Nova Southeastern University||Fort Lauderdale, Florida">Fort Lauderdale: Broward College → Florida Atlantic University / Nova Southeastern University</option>
-<option value="Tallahassee Community College||Florida State University||Tallahassee, Florida">Tallahassee: Tallahassee Community College → Florida State University</option>
-<option value="Florida State College at Jacksonville||University of North Florida||Jacksonville, Florida">Jacksonville: Florida State College at Jacksonville → University of North Florida</option>
-<option value="State College of Florida||University of South Florida Sarasota-Manatee / FGCU||Bradenton, Florida">Florida Gulf Coast: State College of Florida → University of South Florida Sarasota-Manatee / FGCU</option>
-<option value="Borough of Manhattan Community College||CUNY Baruch College — Zicklin School of Business||New York, New York">New York City: Borough of Manhattan Community College → CUNY Baruch College — Zicklin School of Business</option>
-<option value="LaGuardia Community College||CUNY Queens College / CUNY Hunter College||Long Island City, New York">Queens: LaGuardia Community College → CUNY Queens College / CUNY Hunter College</option>
-<option value="Nassau Community College||Hofstra University / SUNY Stony Brook||Garden City, New York">Long Island: Nassau Community College → Hofstra University / SUNY Stony Brook</option>
-<option value="Westchester Community College||Pace University / Fordham University||Valhalla, New York">Westchester: Westchester Community College → Pace University / Fordham University</option>
-<option value="Harold Washington College||DePaul University — Driehaus College of Business||Chicago, Illinois">Chicago: Harold Washington College → DePaul University — Driehaus College of Business</option>
-<option value="Oakton College||Loyola University Chicago||Des Plaines, Illinois">Chicago North: Oakton College → Loyola University Chicago</option>
-<option value="College of DuPage||Northern Illinois University / Illinois State University||Glen Ellyn, Illinois">Chicago West: College of DuPage → Northern Illinois University / Illinois State University</option>
-<option value="Bellevue College||University of Washington — Foster School of Business||Bellevue, Washington">Seattle: Bellevue College → University of Washington — Foster School of Business</option>
-<option value="Seattle Central College||Seattle University / Western Washington University||Seattle, Washington">Seattle South: Seattle Central College → Seattle University / Western Washington University</option>
-<option value="Georgia State Perimeter College||Georgia State University — Robinson College of Business||Clarkston, Georgia">Atlanta: Georgia State Perimeter College → Georgia State University — Robinson College of Business</option>
-<option value="Atlanta Technical College||Georgia Tech — select engineering programs via articulation||Atlanta, Georgia">Atlanta Tech: Atlanta Technical College → Georgia Tech — select engineering programs via articulation</option>
-<option value="Wake Technical Community College||NC State University — Poole College of Management||Raleigh, North Carolina">Raleigh: Wake Technical Community College → NC State University — Poole College of Management</option>
-<option value="Central Piedmont Community College||UNC Charlotte — Belk College of Business||Charlotte, North Carolina">Charlotte: Central Piedmont Community College → UNC Charlotte — Belk College of Business</option>
-<option value="Durham Technical Community College||North Carolina Central University / Duke University select programs||Durham, North Carolina">Durham: Durham Technical Community College → North Carolina Central University / Duke University select programs</option>
-<option value="Community College of Philadelphia||Temple University — Fox School of Business / Drexel University||Philadelphia, Pennsylvania">Philadelphia: Community College of Philadelphia → Temple University — Fox School of Business / Drexel University</option>
-<option value="Community College of Allegheny County||University of Pittsburgh / Carnegie Mellon — select programs||Pittsburgh, Pennsylvania">Pittsburgh: Community College of Allegheny County → University of Pittsburgh / Carnegie Mellon — select programs</option>
-<option value="Bunker Hill Community College||UMass Boston / Northeastern University select programs||Boston, Massachusetts">Boston: Bunker Hill Community College → UMass Boston / Northeastern University select programs</option>
-<option value="Middlesex Community College||UMass Lowell / UMass Amherst||Bedford / Lowell, Massachusetts">Lowell: Middlesex Community College → UMass Lowell / UMass Amherst</option>
-<option value="Nashville State Community College||Belmont University / Lipscomb University||Nashville, Tennessee">Nashville: Nashville State Community College → Belmont University / Lipscomb University</option>
-<option value="Pellissippi State Community College||University of Tennessee Knoxville||Knoxville, Tennessee">Knoxville: Pellissippi State Community College → University of Tennessee Knoxville</option>
-<option value="Community College of Denver||University of Denver — Daniels College of Business / CU Denver||Denver, Colorado">Denver: Community College of Denver → University of Denver — Daniels College of Business / CU Denver</option>
-<option value="Front Range Community College||University of Colorado Boulder — Leeds School of Business||Westminster, Colorado">Boulder: Front Range Community College → University of Colorado Boulder — Leeds School of Business</option>
-<option value="Mesa Community College||Arizona State University — W.P. Carey School of Business||Mesa, Arizona">Phoenix: Mesa Community College → Arizona State University — W.P. Carey School of Business</option>
-<option value="Pima Community College||University of Arizona — Eller College of Management||Tucson, Arizona">Tucson: Pima Community College → University of Arizona — Eller College of Management</option>
-<option value="Montgomery College||University of Maryland — Robert H. Smith School of Business / American University||Rockville / Takoma Park / Germantown, Maryland">Washington DC: Montgomery College → University of Maryland — Robert H. Smith School of Business / American University</option>
-<option value="Northern Virginia Community College||George Mason University / University of Virginia||Annandale / Multiple Campuses, Virginia">Northern Virginia: Northern Virginia Community College → George Mason University / University of Virginia</option>
-<option value="Minneapolis Community and Technical College||University of Minnesota — Carlson School of Management||Minneapolis, Minnesota">Minneapolis: Minneapolis Community and Technical College → University of Minnesota — Carlson School of Management</option>
-<option value="College of Southern Nevada||University of Nevada Las Vegas — Harrah College of Hospitality||Las Vegas, Nevada">Las Vegas: College of Southern Nevada → University of Nevada Las Vegas — Harrah College of Hospitality</option>
-<option value="Honolulu Community College||University of Hawaii at Manoa — Shidler College of Business||Honolulu, Hawaii">Honolulu: Honolulu Community College → University of Hawaii at Manoa — Shidler College of Business</option>
-<option value="Community College of Baltimore County||University of Maryland / Towson University / UMBC||Catonsville / Essex / Dundalk, Maryland">Baltimore: Community College of Baltimore County → University of Maryland / Towson University / UMBC</option>
-<option value="Wilbur Wright College||University of Illinois Chicago — Liautaud Graduate School feeder / Loyola||Chicago, Illinois">Wilbur Wright: Wilbur Wright College → University of Illinois Chicago — Liautaud Graduate School feeder / Loyola</option>
-<option value="Columbus State Community College||Ohio State University — Fisher College of Business||Columbus, Ohio">Columbus: Columbus State Community College → Ohio State University — Fisher College of Business</option>
-<option value="Cuyahoga Community College||Case Western Reserve University / Cleveland State University||Cleveland, Ohio">Cleveland: Cuyahoga Community College → Case Western Reserve University / Cleveland State University</option>
-<option value="Ivy Tech Community College||Indiana University Indianapolis / Purdue Polytechnic||Indianapolis, Indiana">Indianapolis: Ivy Tech Community College → Indiana University Indianapolis / Purdue Polytechnic</option>
-<option value="Macomb Community College||University of Michigan-Dearborn / Michigan State University||Warren, Michigan">Detroit: Macomb Community College → University of Michigan-Dearborn / Michigan State University</option>
-<option value="Reynolds Community College||Virginia Commonwealth University / University of Richmond||Richmond, Virginia">Richmond: Reynolds Community College → Virginia Commonwealth University / University of Richmond</option>
-<option value="Piedmont Virginia Community College||University of Virginia||Charlottesville, Virginia">Charlottesville: Piedmont Virginia Community College → University of Virginia</option>
-<option value="St. Louis Community College||University of Missouri-St. Louis / Washington University||St. Louis, Missouri">St. Louis: St. Louis Community College → University of Missouri-St. Louis / Washington University</option>
-<option value="Metropolitan Community College||University of Missouri-Kansas City / University of Kansas||Kansas City, Missouri">Kansas City: Metropolitan Community College → University of Missouri-Kansas City / University of Kansas</option>
-<option value="Tulsa Community College||University of Tulsa / Oklahoma State University||Tulsa, Oklahoma">Tulsa: Tulsa Community College → University of Tulsa / Oklahoma State University</option>
-<option value="Jefferson State Community College||University of Alabama at Birmingham / Samford University||Birmingham, Alabama">Birmingham: Jefferson State Community College → University of Alabama at Birmingham / Samford University</option>
-<option value="Tarrant County College||Texas Christian University / UT Arlington||Fort Worth, Texas">Fort Worth: Tarrant County College → Texas Christian University / UT Arlington</option>
-<option value="El Paso Community College||University of Texas at El Paso / New Mexico State University||El Paso, Texas">El Paso: El Paso Community College → University of Texas at El Paso / New Mexico State University</option>
-<option value="Delgado Community College||Tulane University / University of New Orleans||New Orleans, Louisiana">New Orleans: Delgado Community College → Tulane University / University of New Orleans</option>
-<option value="Capital Community College||University of Connecticut / Trinity College||Hartford, Connecticut">Hartford: Capital Community College → University of Connecticut / Trinity College</option>
-<option value="Central New Mexico Community College||University of New Mexico — Anderson School of Management||Albuquerque, New Mexico">Albuquerque: Central New Mexico Community College → University of New Mexico — Anderson School of Management</option>
-` +
-    '</select>' +
-    '<button onclick="saveCCOverride(' + idx + ')" ' +
-      'style="padding:10px 24px;background:transparent;border:0.5px solid var(--gold);color:var(--gold);font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;">' +
-      'Save Override' +
-    '</button>' +
-    '<span id="ccOverrideMsg" style="font-family:var(--mono);font-size:9px;color:var(--gold);margin-left:1rem;"></span>' +
-    '</div>';
 
   document.getElementById('panelBody').innerHTML =
     '<div class="panel-name">' + escHtml(name) + '</div>' +
@@ -1167,67 +1138,10 @@ function openPanel(idx) {
       '</div>' +
     '</div>' +
     '<div class="panel-fields">' + fieldsHtml + '</div>' +
-    reportHtml +
-    ccOverride;
+    reportHtml;
 
   document.getElementById('detailOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
-}
-
-// ── SAVE CC OVERRIDE ────────────────────────────────────────────────────────
-async function saveCCOverride(idx) {
-  var f   = FILTERED[idx];
-  if (!f || !f.id) {
-    document.getElementById('ccOverrideMsg').textContent = 'Record ID missing.';
-    return;
-  }
-
-  var sel = document.getElementById('ccOverrideSelect');
-  if (!sel || !sel.value) {
-    document.getElementById('ccOverrideMsg').textContent = 'Please select a pathway.';
-    return;
-  }
-
-  var parts     = sel.value.split('||');
-  var ccName    = parts[0] || '';
-  var ccTarget  = parts[1] || '';
-  var ccCity    = parts[2] || '';
-
-  var token = await getToken();
-  if (!token) { document.getElementById('ccOverrideMsg').textContent = 'Not authenticated.'; return; }
-
-  var msg = document.getElementById('ccOverrideMsg');
-  msg.textContent = 'Saving…';
-
-  try {
-    var res = await fetch(WORKER_URL + '/cc-override', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
-      body: JSON.stringify({
-        family_id:        f.id,
-        cc_override_name: ccName,
-        cc_override_target: ccTarget,
-        cc_override_city: ccCity,
-        cc_pathway_shown: 'Y',
-      }),
-    });
-
-    var data = await res.json();
-    if (data.success) {
-      msg.textContent = 'Saved ✓';
-      msg.style.color = '#2e7d32';
-      // Update local record
-      f.cc_pathway_shown = 'Y';
-      f.cc_override_name = ccName;
-      f.cc_override_target = ccTarget;
-    } else {
-      msg.textContent = 'Error — try again.';
-      console.error('[VECTOR] CC override error:', data);
-    }
-  } catch(err) {
-    msg.textContent = 'Network error.';
-    console.error('[VECTOR] CC override fetch error:', err);
-  }
 }
 
 function closePanel(e) {
@@ -1244,6 +1158,87 @@ function escHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 }
+
+// ── SCHOOL CULTURE & ADMISSIONS DATA (counselor-only) ───────────────────────
+var SCHOOL_FILTER = 'all';
+var ALL_SCHOOLS = [];
+
+function initSchoolData() {
+  if (typeof SCHOOL_CULTURE_CATEGORY === 'undefined') {
+    document.getElementById('schoolTableWrap').innerHTML =
+      '<div class="empty-state"><div class="empty-title">School data not loaded.</div>' +
+      '<div class="empty-sub">lifescape_college_prefs_v3.js failed to load.</div></div>';
+    return;
+  }
+  ALL_SCHOOLS = Object.keys(SCHOOL_CULTURE_CATEGORY).map(function(name) {
+    var entry = SCHOOL_CULTURE_CATEGORY[name];
+    var gpaEntry = (typeof SCHOOL_GPA_RANGES !== 'undefined') ? SCHOOL_GPA_RANGES[name] : null;
+    return {
+      name: name,
+      category: entry.category,
+      admit_rate: entry.admit_rate,
+      tuition_gap_ratio: entry.tuition_gap_ratio,
+      gpa_min: gpaEntry ? gpaEntry.min : null
+    };
+  }).sort(function(a, b) { return a.name.localeCompare(b.name); });
+
+  document.getElementById('schoolCount').textContent = ALL_SCHOOLS.length + ' schools';
+  renderSchoolTable(ALL_SCHOOLS);
+}
+
+function setSchoolFilter(cat, btn) {
+  SCHOOL_FILTER = cat;
+  document.querySelectorAll('#schoolFilterAll, #schoolFilterExclusive, #schoolFilterOpenDoor, #schoolFilterSelective, #schoolFilterAccessible, #schoolFilterPrivate')
+    .forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  filterSchools();
+}
+
+function filterSchools() {
+  var q = document.getElementById('schoolSearchInput').value.trim().toLowerCase();
+  var filtered = ALL_SCHOOLS.filter(function(s) {
+    if (SCHOOL_FILTER !== 'all' && s.category !== SCHOOL_FILTER) return false;
+    if (q && s.name.toLowerCase().indexOf(q) === -1) return false;
+    return true;
+  });
+  document.getElementById('schoolCount').textContent = filtered.length + ' school' + (filtered.length !== 1 ? 's' : '');
+  renderSchoolTable(filtered);
+}
+
+function renderSchoolTable(schools) {
+  var wrap = document.getElementById('schoolTableWrap');
+  if (schools.length === 0) {
+    wrap.innerHTML = '<div class="empty-state"><div class="empty-icon">— —</div>' +
+      '<div class="empty-title">No schools match this filter.</div></div>';
+    return;
+  }
+
+  var rows = schools.map(function(s) {
+    var gapClass = s.tuition_gap_ratio >= 3.5 ? 'score-high' : s.tuition_gap_ratio >= 2 ? 'score-mid' : 'score-low';
+    var gapVal = s.tuition_gap_ratio ? s.tuition_gap_ratio.toFixed(2) + 'x' : '—';
+    var admitVal = (s.admit_rate !== null && s.admit_rate !== undefined) ? s.admit_rate.toFixed(1) + '%' : '—';
+    var gpaVal = s.gpa_min !== null ? s.gpa_min.toFixed(1) : '—';
+
+    return '<tr>' +
+      '<td class="td-name">' + escHtml(s.name) + '</td>' +
+      '<td>' + escHtml(s.category) + '</td>' +
+      '<td class="td-mono">' + admitVal + '</td>' +
+      '<td class="td-mono">' + gpaVal + '</td>' +
+      '<td><span class="score-pill ' + gapClass + '">' + gapVal + '</span></td>' +
+      '</tr>';
+  }).join('');
+
+  wrap.innerHTML = '<table class="family-table">' +
+    '<thead><tr>' +
+    '<th>School</th><th>Culture Category</th><th>Admit Rate</th><th>GPA Min</th><th>Tuition Gap</th>' +
+    '</tr></thead>' +
+    '<tbody>' + rows + '</tbody>' +
+    '</table>';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof initSchoolData === 'function') initSchoolData();
+});
 </script>
 </body>
 </html>

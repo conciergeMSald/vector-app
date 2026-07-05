@@ -4599,6 +4599,31 @@ function validateOrientAndGoTo(n) {
   goTo(n);
 }
 
+// ── CULTURAL FIT LENS — maps SCHOOL_CULTURE_CATEGORY to prompt guidance ──
+// Never exposes admit rate, SAT avg, or tuition ratio — only a directional
+// cue Claude uses to write a one-line CULTURE narrative per school.
+var CULTURE_CATEGORY_CUES = {
+  'Exclusive & Protective': 'This school is hard to enter and its room stays closely tied to its home state\'s identity — out-of-state students are joining a culture that stays rooted in where it is.',
+  'Open Door, Outsiders Subsidize': 'This school is easy to enter, but it carries a strong regional lifestyle identity that out-of-state students are choosing to buy into — think mountain-town, coastal, or college-town culture as much as academics.',
+  'Selective, Modest Local Premium': 'This school is hard to enter, but its room is defined by merit and cohort quality rather than geography — no strong local-vs-outsider culture to navigate.',
+  'Broadly Accessible, Modest Local Premium': 'This school is open and evenly priced regardless of home state — an accessible room without a strong insider/outsider dynamic.',
+  'Private / Flat Tuition': null, // no signal — let existing wealth-tier/lifestyle fields carry the culture read
+};
+
+function buildCultureContext(matchedSchools) {
+  if (typeof SCHOOL_CULTURE_CATEGORY === 'undefined') return '';
+  var lines = [];
+  (matchedSchools || []).forEach(function(name) {
+    var entry = SCHOOL_CULTURE_CATEGORY[name];
+    if (!entry) return;
+    var cue = CULTURE_CATEGORY_CUES[entry.category];
+    if (!cue) return; // private/flat-tuition — no forced narrative
+    lines.push(name + ': ' + cue);
+  });
+  if (lines.length === 0) return '';
+  return '\nCULTURAL FIT CONTEXT (for CULTURE line — narrative only, never mention admission rate, SAT average, tuition, or any number):\n' + lines.join('\n');
+}
+
 // ── CALL D — SCHOOL RECOMMENDATIONS ─────────────────
 function buildCallDPrompt(ctx, matchedSchools, schoolContentBlock) {
   // Build major pathway context from MAJOR_MAP if available
@@ -4633,6 +4658,7 @@ function buildCallDPrompt(ctx, matchedSchools, schoolContentBlock) {
   var _competeCtx = buildCompeteLensContext(ctx);
   var _competeD = _competeCtx && _competeCtx.fires ? _competeCtx.callD_injection : '';
   var _reportUpgradeD = buildReportUpgradeContext(ctx, 'D');
+  var _cultureD = buildCultureContext(matchedSchools);
   const prefSummary = [
     ctx.college_prefs.conference && ctx.college_prefs.conference !== 'no_sports'
       ? stripUnderscores(ctx.college_prefs.conference)
@@ -4710,6 +4736,9 @@ NO HIERARCHY: School recommendations must NEVER imply that the schools not recom
 COMMUNITY COLLEGE: If the CC pathway has been surfaced, name it with the same specificity and care as four-year recommendations — with real program names, real transfer pathways, and real career outcomes. It is not a fallback. Name it that way.
 CC PATHWAY IN SCHOOL BLOCKS: If any matched school has a CC transfer pathway available, add a CC_PATH line to that school block:
 CC_PATH: [Local CC Name] → [University Name] — [transfer rate vs freshman rate]. Estimated savings [range]. [One sentence why this matters for this student.]
+${_cultureD ? `CULTURE LINE: If cultural fit context is provided below for a school, add a CULTURE line to that school's block, written as warm descriptive prose only — never mention admission rate, SAT average, tuition, or any number:
+CULTURE: [One sentence describing the room's culture using the cue provided — in your own words, specific to this student where possible.]
+${_cultureD}` : ''}
 FLEXIBLE PATHS: When relevant, note programs that support flexible life paths — strong part-time options, online programs that serve working students, institutions known for supporting students with family obligations. These are not lesser options.
 COUNSELOR NOTE: Name explicitly when a student's profile suggests they may thrive in environments the traditional ranking system does not surface — trade programs, maritime academies, military academies, specialized institutions, strong regional schools. The counselor's job is to see what the rankings miss.
 RULES:
@@ -5103,6 +5132,13 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       ? `<div class="card-cc-note"><strong style="color:var(--gold);font-weight:600;">Pathway Hack</strong> — ${_ccFeeders} → ${s.name}${_ccTxRate ? ` (Transfer: ${_ccTxRate} vs Freshman: ${_ccFrRate})` : ''}${_ccSavings ? `. Estimated savings: ${_ccSavings}.` : ''}</div>`
       : '';
 
+    // ── Cultural Fit Lens — parent-facing, narrative only, never numeric ──
+    const _cultureEntry = typeof SCHOOL_CULTURE_CATEGORY !== 'undefined' ? SCHOOL_CULTURE_CATEGORY[s.name] : null;
+    const _cultureCue = _cultureEntry ? CULTURE_CATEGORY_CUES[_cultureEntry.category] : null;
+    const _cultureNote = _cultureCue
+      ? `<div class="card-cc-note" style="border-top-color:rgba(47,59,76,0.3);"><strong style="color:var(--ink2);font-weight:600;">The Room</strong> — ${_cultureCue}</div>`
+      : '';
+
     // Hillel note for Jewish track students
     const _isJewishStudent = typeof COLLEGE_PREFS !== 'undefined' && ['jewish','jewish_community'].includes(COLLEGE_PREFS.religion || '');
     const _hillelNote = (_isJewishStudent && typeof HILLEL_QUALITY !== 'undefined' && HILLEL_QUALITY[s.name])
@@ -5145,6 +5181,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       ${footerContent ? `<div class="card-traj-note">${footerContent}</div>` : ''}
       ${_trajNote ? `<div class="card-traj-note" style="margin-top:4px;">${_trajNote}</div>` : ''}
       ${_ccNote}
+      ${_cultureNote}
       ${_hillelNote}
       ${s.thrivesIf ? `<div class="card-honest-note" style="margin-top:10px;padding-top:10px;border-top:0.5px solid var(--rule);font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--ink2);font-weight:600;">You will thrive here if:</strong> ${s.thrivesIf.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
       ${s.watchFor ? `<div class="card-honest-note" style="margin-top:6px;font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--ink2);font-weight:600;">One thing to know:</strong> ${s.watchFor.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
