@@ -20,6 +20,7 @@
 <script src="geo_industry_db_Atlanta_pass5.js"></script>
 <script src="geo_industry_db_Dallas_pass6.js"></script>
 <script src="lifescape_curation_map_v1.js"></script>
+<script src="school_scorecard_simplified.js"></script>
 <script src="university-content.js"></script>
 <script>
 // ── V5 intelligence merge ────────────────────────────────────────────────
@@ -4642,6 +4643,29 @@ function buildCultureContext(matchedSchools) {
 }
 
 // ── CALL D — SCHOOL RECOMMENDATIONS ─────────────────
+// ── Federal Scorecard data block for callD ──────────────────────────────────
+// Reads SCHOOL_SCORECARD (real admission rate, tuition, debt, earnings-adjacent
+// outcomes) and formats it as terse factual context alongside V5 prose.
+function buildScorecardBlock(schoolName) {
+  if (typeof SCHOOL_SCORECARD === 'undefined') return '';
+  const sc = SCHOOL_SCORECARD[schoolName];
+  if (!sc) return '';
+
+  const lines = [];
+  if (sc.admission_rate != null) lines.push(`Admission rate: ${Math.round(sc.admission_rate * 100)}%`);
+  if (sc.sat_avg != null) lines.push(`SAT average: ${sc.sat_avg}`);
+  if (sc.tuition_in_state != null && sc.tuition_out_state != null) {
+    lines.push(`Tuition: $${sc.tuition_in_state.toLocaleString()} in-state / $${sc.tuition_out_state.toLocaleString()} out-of-state`);
+  }
+  if (sc.grad_rate_6yr != null) lines.push(`6-year graduation rate: ${Math.round(sc.grad_rate_6yr * 100)}%`);
+  if (sc.median_debt != null) lines.push(`Median debt at graduation: $${sc.median_debt.toLocaleString()}`);
+  if (sc.hbcu) lines.push('Designation: HBCU');
+  if (sc.hsi) lines.push('Designation: Hispanic-Serving Institution');
+
+  if (!lines.length) return '';
+  return `[Federal Data — ${schoolName}]\n${lines.join('\n')}`;
+}
+
 function buildCallDPrompt(ctx, matchedSchools, schoolContentBlock) {
   // Build major pathway context from MAJOR_MAP if available
   // ONET career cluster context for callD
@@ -5845,7 +5869,15 @@ async function submitLifescape() {
             ? formatSchoolsForPrompt(schoolContent.slice(0, _promptCount))
             : schoolContent.map(s => `${s.name}: ${s.hidden_pathway}`).join('\n\n');
 
-          console.log('[callD] prompt block length:', schoolContentBlock.length);
+          // ── Append real federal Scorecard data per school (admission rate, tuition, debt, grad rate) ──
+          var _scorecardBlocks = schoolContent.slice(0, _promptCount)
+            .map(function(s) { return buildScorecardBlock(s.name); })
+            .filter(Boolean);
+          var schoolContentBlockFull = schoolContentBlock
+            + (_scorecardBlocks.length ? '\n\n' + _scorecardBlocks.join('\n\n') : '');
+          console.log('[callD] Scorecard blocks attached:', _scorecardBlocks.length, '/', _promptCount);
+
+          console.log('[callD] prompt block length:', schoolContentBlockFull.length);
 
           const ctxD = {
             ...ctx,
@@ -5855,7 +5887,7 @@ async function submitLifescape() {
           var callDData = [];
           var adjacentPicks = [];
           var profileAdjacentPicks = [];
-          const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0, _schoolCount), schoolContentBlock);
+          const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0, _schoolCount), schoolContentBlockFull);
           console.log('[callD] firing Claude, prompt length:', callDPrompt.length);
 
           const callDText = await fireCall(callDPrompt, 3000, 0, 55000);
