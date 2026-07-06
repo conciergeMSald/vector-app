@@ -20,7 +20,7 @@ const UNIVERSITY_CONTENT = {
   "University of Michigan": {
     name: "University of Michigan",
     location: "Ann Arbor, Michigan",
-    region: "Big Ten",
+    region: "Midwest",
     pipeline: "Consulting, Technology, Financial Services, Engineering, Healthcare, Law, Public Policy, Architecture and Urban Planning, Music and Performing Arts. Michigan Ross Business School (BCG, McKinsey, Amazon, Deloitte, Bain, Goldman Sachs, Bank of America -",
     hidden_pathway: "Michigan's Erb Institute for Global Sustainable Enterprise is the leading MBA-MS dual degree in sustainability business in America. As ESG mandates and sustainability leadership positions multiply at Fortune 500 companies, Erb graduates have a creden",
     the_room: "Approximately 50% of undergraduates are Michigan residents and 50% are from out of state - a dramatic shift from a decade ago when 64% were in-state.",
@@ -30,7 +30,7 @@ const UNIVERSITY_CONTENT = {
   "Indiana University": {
     name: "Indiana University",
     location: "Bloomington, Indiana",
-    region: "Big Ten",
+    region: "Midwest",
     pipeline: "Finance and Investment Banking, Consulting, Technology, Media and Journalism, Music Performance and Music Business, Law, Education, Healthcare, Data Science. Kelley School of Business (Goldman Sachs, J.P. Morgan, Deloitte, PwC, Big 4 accounting - Kelley graduates are recruited directly into Chicago's financial services corridor).",
     hidden_pathway: "The Kelley School of Business at IU Bloomington is consistently ranked top 10 undergraduate business nationally. Kelley sends more graduates to the Chicago financial services sector per capita than any non-Ivy school except Michigan Ross.",
     the_room: "49% of students are Indiana residents and 51% are from out of state or international - a ratio consistent for three years.",
@@ -61,7 +61,7 @@ const UNIVERSITY_CONTENT = {
   "University of Oklahoma": {
     name: "University of Oklahoma",
     location: "Norman, Oklahoma",
-    region: "SEC New Members",
+    region: "Southwest",
     pipeline: "Energy and Petroleum Engineering (Devon Energy, ConocoPhillips, Chevron, BP, ExxonMobil, Halliburton - Mewbourne College of Earth and Energy is the top-ranked petroleum engineering program in America - average starting salary $73,880 -",
     hidden_pathway: "The Stacy L. Schusterman College of Business has a private equity and energy finance pipeline that is invisible nationally but dominant regionally. Oklahoma City and Tulsa host dozens of family offices and energy-focused private equity funds that rec",
     the_room: "Approximately 62% of OU students are Oklahoma residents and 38% are from out of state or international. The dominant out-of-state feeder is Texas -",
@@ -191,7 +191,7 @@ const UNIVERSITY_CONTENT = {
   "University of Utah": {
     name: "University of Utah",
     location: "Salt Lake City, Utah",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Technology and Software (Adobe, Qualtrics, Microsoft, Domo, Pluralsight, Entrata - Silicon Slopes employs over 155,000 tech workers - Computer Science average starting salary $78,226 -",
     hidden_pathway: "The University of Utah sits at the base of the Wasatch Mountains - 7 world-class ski resorts within 45 minutes of campus, including Park City, Alta, Snowbird, Solitude, Brighton, Deer Valley, and The Canyons.",
     the_room: "Approximately 74% of University of Utah students are Utah residents and 26% are from out of state or international - with growing out-of-state recruitment driven by the Silicon Slopes boom and the Wal",
@@ -381,7 +381,7 @@ const UNIVERSITY_CONTENT = {
   "Colorado School of Mines": {
     name: "Colorado School of Mines",
     location: "Golden, Colorado",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Energy Engineering and Petroleum Engineering (top-3 nationally for petroleum engineering - ExxonMobil, Chevron, ConocoPhillips, BP, Halliburton, Schlumberger, Pioneer Natural Resources recruit Mines at volume and at preferential rates that reflect decades of institutional relatio",
     hidden_pathway: "Mineral economics is a discipline that exists at only a handful of universities in the world and Mines is its American home. As the energy transition has accelerated global demand for lithium, cobalt, nickel, copper, and rare earth elements -",
     the_room: "Mines enrolls approximately 5,500 undergraduates - mid-sized relative to the technical school group. The student body is approximately 72% male reflecting the engineering and energy industry identity.",
@@ -511,7 +511,7 @@ const UNIVERSITY_CONTENT = {
   "University of Denver": {
     name: "University of Denver",
     location: "Denver, Colorado",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Business and Finance (Daniels College of Business - top-40 nationally - accounting, finance, real estate, hospitality management, marketing - Ernst and Young, KPMG, Deloitte, PwC, major Denver financial services and real estate companies recruit Daniels at volume -",
     hidden_pathway: "The Josef Korbel School of International Studies is the hidden pathway that no Southern California family encounters on a standard college search - and it is one of the most consequential international affairs programs in America.",
     the_room: "DU enrolls approximately 6,000 undergraduates - intimate relative to flagship state universities and appropriately sized for the private university formation model.",
@@ -581,7 +581,7 @@ const UNIVERSITY_CONTENT = {
   "University of Colorado Boulder": {
     name: "University of Colorado Boulder",
     location: "Boulder, Colorado",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Aerospace and Aerospace Engineering (top-5 nationally - CU Boulder has produced more astronauts than any public university in America and is the only flagship university in the database with a dedicated aerospace engineering program embedded in one of the most consequential aerospace research corridors in the country - Colorado's Front Range, home to Lockheed Martin, Ball Aerospace, and NOAA, sits minutes from campus.",
     hidden_pathway: "The Laboratory for Atmospheric and Space Physics - LASP - is the hidden pathway that makes CU Boulder's space science program categorically different from every peer public university in the database.",
     the_room: "CU Boulder enrolls approximately 30,000 undergraduates - a large flagship with the full research university infrastructure, and the campus now sits alongside a growing corporate presence, with Google, Apple, and Amazon all having established offices in Boulder over the past decade.",
@@ -596,7 +596,7 @@ const UNIVERSITY_CONTENT = {
   "Colorado State University": {
     name: "Colorado State University",
     location: "Fort Collins, Colorado",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Veterinary Medicine and Biomedical Sciences (College of Veterinary Medicine and Biomedical Sciences - top-5 nationally and one of the most comprehensive veterinary programs in the world -",
     hidden_pathway: "CSU's Engines and Energy Conversion Laboratory and the Colorado State University Engines Laboratory are the hidden pathways in the engineering program that most families never find -",
     the_room: "CSU enrolls approximately 26,000 undergraduates - a large flagship with the full research university infrastructure and a Ram athletic identity in the Mountain West Conference.",
@@ -886,7 +886,7 @@ const UNIVERSITY_CONTENT = {
   "Boise State University": {
     name: "Boise State University",
     location: "Boise, Idaho",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Engineering (College of Engineering - top-65 nationally among regional universities - electrical, mechanical, civil, computer science, materials science, construction management -",
     hidden_pathway: "The Micron Technology partnership is the hidden pathway that makes Boise State's engineering and computer science programs consequential in a way that no regional university ranking captures. Micron Technology -",
     the_room: "Boise State enrolls approximately 21,000 undergraduates - a large regional university that has grown dramatically alongside Boise's population explosion.",
@@ -896,7 +896,7 @@ const UNIVERSITY_CONTENT = {
   "Brigham Young University": {
     name: "Brigham Young University",
     location: "Provo, Utah",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Business and Finance (Marriott School of Business - top-20 nationally - finance, accounting, marketing, supply chain, entrepreneurship, information systems - Wall Street, Big 4 accounting firms, major technology companies, consulting firms -",
     hidden_pathway: "The LDS mission language training is the hidden pathway that makes BYU the most multilingual undergraduate institution in America and the most consequential language credential pipeline outside the federal Defense Language Institute.",
     the_room: "BYU enrolls approximately 33,000 undergraduates - a large private university and by far the largest private university in the Mountain West.",
@@ -1186,7 +1186,7 @@ const UNIVERSITY_CONTENT = {
   "Colorado College": {
     name: "Colorado College",
     location: "Colorado Springs, Colorado",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Liberal Arts (the Block Plan curriculum - one course at a time for 3.5 weeks, then a 4-day break, then the next course - every discipline taught through total immersion rather than simultaneous multi-course distribution -",
     hidden_pathway: "The Block Plan is the most radical and most consequential pedagogical innovation of any liberal arts college in the database - and it is radical in a specific and practically powerful way.",
     the_room: "CC enrolls approximately 2,100 undergraduates - comparable in size to Williams and Bowdoin. The student body is assembled from 48 states and 40+ countries with heavy representation from the Mountain W",
@@ -1266,7 +1266,7 @@ const UNIVERSITY_CONTENT = {
   "Baylor University": {
     name: "Baylor University",
     location: "Waco, Texas",
-    region: "Texas + Southwest",
+    region: "Southwest",
     pipeline: "Business and Finance (Hankamer School of Business - top-40 nationally - finance, accounting, marketing, real estate, entrepreneurship, supply chain, insurance - major Texas employers including H-E-B, McLane Company, Hillcrest Baptist, and the rapidly growing Waco and Austin busin",
     hidden_pathway: "The Baylor College of Medicine affiliation is the hidden pathway that makes Baylor University's pre-medicine program among the most practically consequential in Texas. Baylor College of Medicine in Houston -",
     the_room: "Baylor enrolls approximately 16,000 undergraduates - a large faith-based research university with the Bears athletic identity in the Big 12 competing across all major conference sports.",
@@ -1329,7 +1329,7 @@ const UNIVERSITY_CONTENT = {
   "Rice University": {
     name: "Rice University",
     location: "Houston, Texas",
-    region: "Texas + Southwest",
+    region: "Southwest",
     pipeline: "Energy and petroleum, Biomedical engineering and life sciences, Technology and computing, Finance and investment banking, Architecture and urban design, Music performance, Consulting, Healthcare and m",
     hidden_pathway: "Three hidden pathways that define Rice's distinctiveness. First: Rice sits directly across the street from the Texas Medical Center - the largest medi",
     the_room: "Approximately 4,400 undergraduates - one of the smallest research universities in the country. The residential college s",
@@ -1339,7 +1339,7 @@ const UNIVERSITY_CONTENT = {
   "SMU": {
     name: "SMU",
     location: "Dallas, Texas",
-    region: "Texas + Southwest",
+    region: "Southwest",
     pipeline: "Finance, Consulting, Luxury Retail and Beauty, Real Estate, Energy, Law, Technology, Performing Arts and Media. Top employers by college: COX - Goldman Sachs, JPMorgan, McKinsey, Deloitte, Neiman Marc",
     hidden_pathway: "Two hidden pathways most California families miss entirely. First: SMU's Meadows School of the Arts houses the Temerlin Advertising Institute - one of",
     the_room: "One of the highest concentrations of ultra-high-net-worth student families in America. Hunt family (Kansas City Chiefs),",
@@ -1349,7 +1349,7 @@ const UNIVERSITY_CONTENT = {
   "TCU": {
     name: "TCU",
     location: "Fort Worth, Texas",
-    region: "Texas + Southwest",
+    region: "Southwest",
     pipeline: "Finance and investment banking, Consulting, Technology sales, Healthcare and nursing, Media and communications, Fine arts and performance, Real estate, Supply chain. Top employers by college: FINANCE ",
     hidden_pathway: "Two hidden pathways that no California family knows. First: TCU's nurse anesthesia program is ranked #9 in the country - one of only a handful of prog",
     the_room: "Smaller than SMU and Texas Tech at ~10,000 undergraduates - genuine intimacy results. 40% of students in Greek life acro",
@@ -1359,7 +1359,7 @@ const UNIVERSITY_CONTENT = {
   "Texas A&M University": {
     name: "Texas A&M University",
     location: "College Station, Texas",
-    region: "Texas + Southwest",
+    region: "Southwest",
     pipeline: "Engineering and petroleum, Agriculture and food systems, Veterinary medicine, Business and consulting, Aerospace and defense, Technology, Government and military, Energy. Top employers by college: MAY",
     hidden_pathway: "Three hidden pathways. First: Texas A&M's veterinary medicine program (#4 nationally, highest ranking in school history) is one of only 33 accredited ",
     the_room: "74,000+ undergraduates - one of the largest universities in America. The room is economically middle-class and Texas-cen",
@@ -1369,7 +1369,7 @@ const UNIVERSITY_CONTENT = {
   "Texas Tech University": {
     name: "Texas Tech University",
     location: "Lubbock, Texas",
-    region: "Texas + Southwest",
+    region: "Southwest",
     pipeline: "Energy and natural resources, Finance and accounting, Agriculture and food systems, Meat and livestock industry, Hospitality management, Aerospace and defense, Technology, Media and communications, Wi",
     hidden_pathway: "Three hidden pathways no California family knows. First: Texas Tech has the largest retail meat cooler on any university campus in America - the Raide",
     the_room: "Genuinely economically diverse - 26% of students receive Pell Grant aid. The room is Texas ambition across every industr",
@@ -1379,7 +1379,7 @@ const UNIVERSITY_CONTENT = {
   "UT Austin": {
     name: "UT Austin",
     location: "Austin, Texas",
-    region: "Texas + Southwest",
+    region: "Southwest",
     pipeline: "Technology and software, Consulting, Finance, Petroleum engineering, Journalism and media, Public policy and government, Social work and nonprofits, Engineering across all disciplines, Natural science",
     hidden_pathway: "Three hidden pathways that even Texas families miss. First: The Moody College of Communication is the #1 public university communication and media pro",
     the_room: "53,864 students - one of the largest universities in America - makes the room vast and economically and ethnically diver",
@@ -1430,7 +1430,7 @@ const UNIVERSITY_CONTENT = {
   "Belmont University": {
     name: "Belmont University",
     location: "Nashville, Tennessee",
-    region: "South",
+    region: "Southeast",
     pipeline: "Music Business and Entertainment Industry (Belmont's Mike Curb College of Entertainment and Music Business is the most specifically connected music industry program in the world to a single city's act",
     hidden_pathway: "The hidden pathway at Belmont is the songwriting program's alumni royalty infrastructure. The music publishing industry's royalty system means that a ",
     the_room: "Belmont enrolls approximately 8,500 students on a campus that occupies the former Belmont Mansion estate in the Belmont-",
@@ -1550,7 +1550,7 @@ const UNIVERSITY_CONTENT = {
   "University of Memphis": {
     name: "University of Memphis",
     location: "Memphis, Tennessee",
-    region: "South",
+    region: "Southeast",
     pipeline: "Business and Supply Chain Management (Fogelman College of Business and Economics - top-50 nationally for supply chain management - Memphis is the logistics capital of America and the Fogelman supply c",
     hidden_pathway: "The hidden pathway at the University of Memphis is the FedEx corporate relationship combined with the supply chain management program's proximity to t",
     the_room: "The University of Memphis enrolls approximately 21,000 students on a campus in the Midtown neighborhood of Memphis - a h",
@@ -1630,7 +1630,7 @@ const UNIVERSITY_CONTENT = {
   "University of Tulsa": {
     name: "University of Tulsa",
     location: "Tulsa, Oklahoma",
-    region: "South Central",
+    region: "Southwest",
     pipeline: "Petroleum Engineering (College of Engineering and Natural Sciences - top-5 nationally for petroleum engineering - the single most financially consequential undergraduate engineering degree available a",
     hidden_pathway: "The hidden pathway at TU is the intersection of its cybersecurity program with the energy industry's accelerating digitization. Every major pipeline o",
     the_room: "TU enrolls approximately 3,800 undergraduates on a campus that punches far above its enrollment weight in physical quali",
@@ -1670,7 +1670,7 @@ const UNIVERSITY_CONTENT = {
   "University of Nevada Reno": {
     name: "University of Nevada Reno",
     location: "Reno, Nevada",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Mining and Metallurgical Engineering (Mackay School of Earth Sciences and Engineering - top-10 nationally for mining engineering - one of only a handful of programs in America that specifically trains",
     hidden_pathway: "The hidden pathway at UNR is the intersection of the Reno-Tahoe technology corridor and the university's engineering programs. The region that locals ",
     the_room: "UNR enrolls approximately 21,000 students on a campus that is genuinely beautiful by Mountain West public university sta",
@@ -1690,7 +1690,7 @@ const UNIVERSITY_CONTENT = {
   "University of Tennessee at Chattanooga": {
     name: "University of Tennessee at Chattanooga",
     location: "Chattanooga, Tennessee",
-    region: "South",
+    region: "Southeast",
     pipeline: "Engineering and Advanced Manufacturing (College of Engineering and Computer Science - the Chattanooga manufacturing corridor is among the most technologically advanced in America - Volkswagen's 3.7-mi",
     hidden_pathway: "The hidden pathway at UTC is the Volkswagen co-op program combined with the Gig City technology infrastructure. Volkswagen's Chattanooga facility is t",
     the_room: "UTC enrolls approximately 11,500 students on a campus that occupies the Stringer's Ridge area of Chattanooga — positione",
@@ -1730,7 +1730,7 @@ const UNIVERSITY_CONTENT = {
   "University of Montana": {
     name: "University of Montana",
     location: "Missoula, Montana",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Environmental Science and Natural Resources (the University of Montana's W.A. Franke College of Forestry and Conservation is one of the most respected forestry and natural resource programs in the Ame",
     hidden_pathway: "The hidden pathway at the University of Montana is the journalism program's investigative reporting tradition combined with the environmental beat. UM",
     the_room: "UM enrolls approximately 9,000 students on a campus at the base of Mount Sentinel in Missoula — a city of 75,000 at the ",
@@ -1740,7 +1740,7 @@ const UNIVERSITY_CONTENT = {
   "Montana State University": {
     name: "Montana State University",
     location: "Bozeman, Montana",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Engineering and Technology (the Norm Asbjornson College of Engineering is the primary engineering pipeline for Montana's energy, agriculture, and technology sectors — civil engineering, mechanical eng",
     hidden_pathway: "The hidden pathway at Montana State is the Bozeman technology ecosystem combined with the university's remote work infrastructure positioning. Bozeman",
     the_room: "MSU enrolls approximately 17,000 students on a campus in Bozeman — a city whose transformation from a quiet college town",
@@ -1980,7 +1980,7 @@ const UNIVERSITY_CONTENT = {
   "University of Wyoming": {
     name: "University of Wyoming",
     location: "Laramie, Wyoming",
-    region: "Mountain West",
+    region: "Rocky Mountains",
     pipeline: "Petroleum and Energy Engineering (the University of Wyoming's College of Engineering and Applied Science has a specific and structurally irreplaceable position in Wyoming's petroleum and natural gas e",
     hidden_pathway: "The hidden pathway at the University of Wyoming is the Wyoming Permanent Mineral Trust Fund's specific effect on the institution and its graduates. Wy",
     the_room: "UW enrolls approximately 12,000 students on a campus in Laramie — a high plains city of 33,000 at 7,165 feet elevation o",
@@ -1990,7 +1990,7 @@ const UNIVERSITY_CONTENT = {
   "University of Alaska Fairbanks": {
     name: "University of Alaska Fairbanks",
     location: "Fairbanks, Alaska",
-    region: "West",
+    region: "Pacific Northwest",
     pipeline: "Arctic and Petroleum Engineering (the University of Alaska Fairbanks College of Engineering and Mines occupies a position in the Alaska energy economy that is structurally irreplaceable — the Trans-Al",
     hidden_pathway: "The hidden pathway at UAF is the Poker Flat Research Range and its specific function for space science and geophysics students. Poker Flat, operated b",
     the_room: "UAF enrolls approximately 7,500 students on a campus on a ridge above Fairbanks — a city of 32,000 in the Interior of Al",
@@ -2090,7 +2090,7 @@ const UNIVERSITY_CONTENT = {
   "Sam Houston State University": {
     name: "Sam Houston State University",
     location: "Huntsville, Texas",
-    region: "Texas + Southwest",
+    region: "Southwest",
     pipeline: "Criminal Justice and Forensic Science (the College of Criminal Justice at Sam Houston State University is one of the most respected and most cited criminal justice academic programs in the United Stat",
     hidden_pathway: "The hidden pathway at Sam Houston State is the College of Criminal Justice's specific positioning as a national research and policy institution disgui",
     the_room: "SHSU enrolls approximately 22,000 students on a campus in Huntsville — a city of 45,000 in the piney woods of East Texas",
@@ -2140,7 +2140,7 @@ const UNIVERSITY_CONTENT = {
   "University of North Texas": {
     name: "University of North Texas",
     location: "Denton, Texas",
-    region: "Texas + Southwest",
+    region: "Southwest",
     pipeline: "Music and Jazz Studies (the College of Music at the University of North Texas is one of the most respected and most influential music programs in America — the One O'Clock Lab Band, the UNT jazz ensem",
     hidden_pathway: "The hidden pathway at UNT is the One O'Clock Lab Band's specific function as a professional career launch vehicle for jazz musicians. The One O'Clock ",
     the_room: "UNT enrolls approximately 44,000 students on a campus in Denton — a city of 150,000 in the northern reaches of the Dalla",
@@ -2150,7 +2150,7 @@ const UNIVERSITY_CONTENT = {
   "Texas State University": {
     name: "Texas State University",
     location: "San Marcos, Texas",
-    region: "Texas + Southwest",
+    region: "Southwest",
     pipeline: "Health Sciences and Physical Therapy (the College of Health Professions at Texas State houses the Department of Physical Therapy, one of the most respected DPT programs in Texas, along with a comprehe",
     hidden_pathway: "The hidden pathway at Texas State is the San Marcos River and its specific function in the university's aquatic biology and environmental science prog",
     the_room: "Texas State enrolls approximately 38,000 students on a campus that straddles the San Marcos River in downtown San Marcos",
@@ -2170,7 +2170,7 @@ const UNIVERSITY_CONTENT = {
   "University of Hawaii at Manoa": {
     name: "University of Hawaii at Manoa",
     location: "Honolulu, Hawaii",
-    region: "West",
+    region: "California",
     pipeline: "Ocean and Marine Sciences (the School of Ocean and Earth Science and Technology at UH Manoa is one of the most respected and most productive oceanographic research institutions in the world — the univ",
     hidden_pathway: "The hidden pathway at UH Manoa is the East-West Center's specific function as a diplomatic and international policy career launch vehicle. The East-We",
     the_room: "UH Manoa enrolls approximately 18,000 students on a campus in the Manoa Valley above Honolulu — a lush valley two miles ",
@@ -2214,7 +2214,7 @@ const UNIVERSITY_CONTENT = {
   "Texas A&M University at Galveston": {
     name: "Texas A&M University at Galveston",
     location: "Galveston, Texas",
-    region: "South Central",
+    region: "Southwest",
     pipeline: "The largest maritime enrollment of any state maritime academy in the country — more than 5,000 students. Every graduate receives a Texas A&M University degree and the Aggie Ring, not a branch campus credential. As of fall 2025, Texas A&M is offering in-state tuition to all incoming students who select a USCG license program — making it the most affordable maritime education in the Gulf Coast and one of the most affordable in the country. Adjacent to the Port of Houston, the largest port by tonnage in the United States, and the Port of Galveston, with direct access to Gulf shipping lanes, offshore energy infrastructure, and the petrochemical industry that defines the Texas Gulf Coast economy.",
     hidden_pathway: "Maritime Business Administration — the degree for students who want to run the maritime industry rather than sail in it. Port management, supply chain, international trade, shipping logistics, chartering, and maritime finance. The program has a 3+2 track that combines a BS in Maritime Business Administration with a Master of Maritime Business Administration and Logistics in five years — two Texas A&M degrees, one of the most specific maritime business credentials in the country. Ocean Engineering is a second undersurfaced path: designing the systems that operate in the Gulf — oil rigs, subsea pipelines, offshore platforms, seawalls — one of the most Gulf Coast-specific engineering specializations available anywhere.",
     the_room: "Pelican Island campus on a barrier island off Galveston — steps from the Gulf, surrounded by working maritime and offshore energy infrastructure. The proximity to Houston means recruiting relationships with the energy majors, LNG exporters, and port operators who drive the Gulf Coast economy. Marine Biology, Marine Science, and Oceanography programs give the campus breadth beyond maritime transportation — students doing research on Gulf ecosystems alongside cadets training for USCG licenses, in the same place. Small campus feel with large university resources — the combination that the other state maritime academies cannot match.",
