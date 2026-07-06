@@ -20,7 +20,8 @@ const UNIVERSITY_CONTENT = {
     campusSocialCulture: "Greek life dominates, SEC football energy, all set against Nashville's fast-growing music-city backdrop.",
     socialCapital: "Owen Business School ties and Nashville's healthcare-industry density mean classmates become professional contacts fast.",
     culturalCapital: "Polished Southern prestige with a healthcare-capital edge - Vanderbilt signals both social ease and career seriousness.",
-    networkCapital: "Unmatched healthcare industry pipeline via HCA, Optum, and Vanderbilt Medical Center, concentrated in booming Nashville."
+    networkCapital: "Unmatched healthcare industry pipeline via HCA, Optum, and Vanderbilt Medical Center, concentrated in booming Nashville.",
+    school_fast_facts: "#11 overall on Forbes' America's Top Colleges List 2026. Financial Grade: A+ (4.5) - one of the financially strongest private universities in the country. Also #13 on Forbes' America's Best Midsize Employers 2026. (Source: Forbes America's Top Colleges & College Financial Grades, 2026)",
   },
   "University of Michigan": {
     name: "University of Michigan",
@@ -35,7 +36,8 @@ const UNIVERSITY_CONTENT = {
     campusSocialCulture: "Big Ten spirit at its most intense, Greek-heavy, deeply school-spirited alongside serious academic ambition.",
     socialCapital: "Ross Business School and engineering cohorts build elite networks that rival top private schools in reach.",
     culturalCapital: "Public-Ivy prestige - Michigan signals top-tier rigor at public-school scale and cost.",
-    networkCapital: "Exceptional consulting/finance placement via Ross, plus a rising sustainability-business credential through Erb Institute."
+    networkCapital: "Exceptional consulting/finance placement via Ross, plus a rising sustainability-business credential through Erb Institute.",
+    school_fast_facts: "#21 overall on Forbes' America's Top Colleges List 2026, #4 among public universities on Forbes' 'New Ivies' ranking. (Source: Forbes America's Top Colleges, 2026)",
   },
   "Indiana University": {
     name: "Indiana University",
@@ -198,6 +200,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Phoenix-Scottsdale AZ (38%) | Tucson AZ (18%) | Los Angeles CA (9%) | San Francisco CA (7%) | Denver CO (5%).",
     mayNotThriveIf: "You want a big-city or East Coast setting - Tucson's desert college-town identity is distinct and self-contained.",
     campusSocialCulture: "Sonoran Desert culture, arts-and-food-forward, genuinely distinctive small-city energy rather than typical Big Ten sprawl.",
+    residencyComposition: "Fall 2025 entering class: 54% Arizona residents, 42% non-resident domestic, 4% international - a genuinely balanced public university rather than a state-dominant one. (Source: University of Arizona Admissions Pipeline, Fall 2025)",
     socialCapital: "Optical Sciences and semiconductor cohorts build elite technical networks unmatched by any peer program.",
     culturalCapital: "World-leading optical sciences prestige - Arizona signals niche technical excellence few families know to look for.",
     networkCapital: "The world's #1 optical sciences pipeline, plus deep ties into Arizona's booming semiconductor manufacturing corridor."
@@ -275,7 +278,8 @@ const UNIVERSITY_CONTENT = {
     campusSocialCulture: "Outdoorsy and tight-knit - skiing, hiking, and the D-Plan's flexible terms create a genuinely unique rhythm most peer schools don't share.",
     socialCapital: "Small size plus the shared D-Plan experience create unusually close bonds that carry directly into Tuck's elite finance/consulting network.",
     culturalCapital: "Rugged Ivy prestige - Dartmouth signals both elite academics and outdoor self-reliance.",
-    networkCapital: "Exceptional consulting/finance placement via Tuck, among the highest MBA compensation outcomes of any Ivy feeder."
+    networkCapital: "Exceptional consulting/finance placement via Tuck, among the highest MBA compensation outcomes of any Ivy feeder.",
+    school_fast_facts: "#17 overall on Forbes' America's Top Colleges List 2026. Financial Grade: A+ (4.5) - endowment per student over $1 million, among the very highest in the country. (Source: Forbes America's Top Colleges & College Financial Grades, 2026)",
   },
   "University of Utah": {
     name: "University of Utah",
@@ -380,7 +384,8 @@ const UNIVERSITY_CONTENT = {
     campusSocialCulture: "Intense and intimate - intellectually engaged, politically active, small enough that everyone's path is visible to everyone else.",
     socialCapital: "Tight peer bonds formed through shared self-direction - classmates become collaborators for life, not just contacts.",
     culturalCapital: "Liberal-arts prestige at its most rigorous - Amherst signals intellectual independence and confidence.",
-    networkCapital: "Disproportionate Wall Street and consulting placement relative to size, concentrated heavily in the Northeast."
+    networkCapital: "Disproportionate Wall Street and consulting placement relative to size, concentrated heavily in the Northeast.",
+    school_fast_facts: "#17 overall on Forbes' America's Top Colleges List 2026, median alumni salary $143,900. Financial Grade: A+ (4.5) - endowment per student over $1 million. (Source: Forbes America's Top Colleges & College Financial Grades, 2026)",
   },
   "Bowdoin College": {
     name: "Bowdoin College",
@@ -499,6 +504,7 @@ const UNIVERSITY_CONTENT = {
     mayNotThriveIf: "You want a lighter workload or broad non-technical exploration - MIT's intensity is constant, and IAP's freedom still assumes serious self-direction.",
     campusSocialCulture: "Intensely nerdy, hands-on, project-obsessed - hacks, IAP, and hackathons define a culture where building things is the primary social currency.",
     socialCapital: "Small size plus shared intensity creates extremely tight technical bonds that convert directly into founding companies together.",
+    school_fast_facts: "#1 overall on Forbes' America's Top Colleges List 2026 (500 schools, 14 metrics) - the top spot after ranking #6 as recently as 2021. Financial Grade: A+ (4.5/5). Average grant aid: $58,331 against a total annual cost of $82,730. (Source: Forbes America's Top Colleges, 2026)",
     culturalCapital: "The single highest technical prestige available - MIT signals elite engineering/CS credibility instantly, everywhere.",
     networkCapital: "Unmatched Silicon Valley and Boston tech/research pipeline, with the strongest founder-network density of any university."
   },
@@ -588,6 +594,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "San Francisco-Bay Area CA (40%) | Los Angeles CA (20%) | New York NY (15%) | Seattle WA (8%) | International (5%).",
     mayNotThriveIf: "You want a non-technical major without Consortium cross-registration - Mudd is intensely STEM-focused at an extremely small scale.",
     campusSocialCulture: "Tiny, quirky, collaborative - Consortium access to Pomona/CMC/Scripps/Pitzer means the social world extends well beyond Mudd's 900 students.",
+    school_fast_facts: "Class of 2025 outcomes: 60.9% went straight to the workforce, 28.8% to grad or professional school, at a median starting salary of $124,999 - among the highest of any undergraduate institution in the country. Rankings back it up: #2 nationally for undergraduate engineering (US News 2026), #1 for early-career salaries (PayScale), #4 for best salaries overall (WSJ/College Pulse). (Source: Harvey Mudd College Fast Facts, 2025-2026)",
     socialCapital: "Extremely small size plus Consortium access creates deep technical bonds alongside broader liberal-arts social connections.",
     culturalCapital: "Elite, under-the-radar CS prestige - Mudd signals top-tier technical rigor without Ivy-level name recognition.",
     networkCapital: "Among the highest-paying CS placement outcomes of any undergraduate institution, concentrated in Silicon Valley."
@@ -650,6 +657,7 @@ const UNIVERSITY_CONTENT = {
     campusSocialCulture: "Quaint, tradition-bound, intensely academic - the small-town setting and lack of professional schools create a purely undergraduate-focused culture.",
     socialCapital: "No professional schools means undergrads are the sole focus, creating unusually direct faculty access and tight peer bonds.",
     culturalCapital: "The purest liberal-arts Ivy prestige - Princeton signals depth and seriousness without professional-school distraction.",
+    school_fast_facts: "#3 overall on Forbes' America's Top Colleges List 2026, after holding #1 the two prior years. Financial Grade: A+ (4.34) - highest endowment-per-student in the country at $3.7 million, which funds a no-loan policy covering full tuition for families earning $150,000 or less. (Source: Forbes America's Top Colleges & College Financial Grades, 2026)",
     networkCapital: "Elite quantitative finance placement, with math/economics graduates among the most recruited profiles on Wall Street."
   },
   "Brown University": {
@@ -710,7 +718,8 @@ const UNIVERSITY_CONTENT = {
     campusSocialCulture: "Greek life is real but not dominant - roughly 30% go Greek, leaving room for pre-professional clubs, research groups, and outdoor culture to anchor social life instead.",
     socialCapital: "Seven distinct colleges mean your closest network forms around your specific school, not \"Cornell\" broadly.",
     culturalCapital: "Rigor-first, workhorse reputation - alumni carry a \"did the hardest version of it\" credibility.",
-    networkCapital: "Heavy East Coast pull (NYC 30%) but real reach into tech and the West Coast too."
+    networkCapital: "Heavy East Coast pull (NYC 30%) but real reach into tech and the West Coast too.",
+    school_fast_facts: "#14 overall on Forbes' America's Top Colleges List 2026, #9 among Research Universities specifically. Financial Grade: A+ - endowment per student of $345,000. (Source: Forbes America's Top Colleges & College Financial Grades, 2026)",
   },
   "Columbia University": {
     name: "Columbia University",
@@ -1958,6 +1967,7 @@ const UNIVERSITY_CONTENT = {
     campusSocialCulture: "Diverse, entertainment-adjacent, ambitious - the pull of LA's industries (film, tech, entertainment) shapes campus energy constantly.",
     socialCapital: "TFT and engineering cohorts build networks that plug directly into LA's entertainment and tech industries before graduation.",
     culturalCapital: "Hollywood-adjacent prestige with real academic rigor - UCLA signals both creative access and technical seriousness.",
+    school_fast_facts: "#15 overall on Forbes' America's Top Colleges List 2026 - part of a UC sweep of the top public-school rankings, though UCLA's own rank has moved around year to year (was #7 in 2023). (Source: Forbes America's Top Colleges, 2026)",
     networkCapital: "Unmatched entertainment industry pipeline, plus a growing battery/materials-science tie into LA's clean-tech corridor."
   },
   "USC": {
@@ -2093,7 +2103,8 @@ const UNIVERSITY_CONTENT = {
     campusSocialCulture: "Intellectually intense, politically engaged, ambition-driven - Berkeley's identity blends serious academics with a long activist tradition.",
     socialCapital: "Goldman School and engineering cohorts build elite policy and tech networks that rival any private university in the country.",
     culturalCapital: "The single highest public-university prestige in the country - Berkeley signals both intellectual rigor and Bay Area fluency.",
-    networkCapital: "Unmatched Silicon Valley and public policy placement, anchored by the #1-ranked Goldman School of Public Policy."
+    networkCapital: "Unmatched Silicon Valley and public policy placement, anchored by the #1-ranked Goldman School of Public Policy.",
+    school_fast_facts: "#5 overall and #1 among all public universities on Forbes' America's Top Colleges List 2026 - the first time a public school has ever ranked this high, per Forbes' own coverage. (Source: Forbes America's Top Colleges, 2026)",
   },
   "University of Illinois Urbana-Champaign": {
     name: "University of Illinois Urbana-Champaign",
@@ -3322,9 +3333,13 @@ function getSchoolContent(schoolNames) {
 }
 
 function formatSchoolsForPrompt(schools) {
-  return schools.map(s =>
-    `SCHOOL: ${s.name} (${s.location})\nPIPELINE: ${s.pipeline}\nHIDDEN PATHWAY: ${s.hidden_pathway}\nTHE ROOM: ${s.the_room}\nLIFESTYLE: ${s.lifestyle}\nGRADS GO TO: ${s.grad_cities}`
-  ).join("\n\n---\n\n");
+  return schools.map(s => {
+    let block = `SCHOOL: ${s.name} (${s.location})\nPIPELINE: ${s.pipeline}\nHIDDEN PATHWAY: ${s.hidden_pathway}\nTHE ROOM: ${s.the_room}\nLIFESTYLE: ${s.lifestyle}\nGRADS GO TO: ${s.grad_cities}`;
+    if (s.student_experience) block += `\nSTUDENT EXPERIENCE: ${s.student_experience}`;
+    if (s.residencyComposition) block += `\nRESIDENCY MIX: ${s.residencyComposition}`;
+    if (s.school_fast_facts) block += `\nFAST FACTS: ${s.school_fast_facts}`;
+    return block;
+  }).join("\n\n---\n\n");
 }
 
 if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolContent,formatSchoolsForPrompt};
