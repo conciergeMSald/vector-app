@@ -5696,10 +5696,25 @@ async function submitLifescape() {
           _collegePrefsForMatch = Object.assign({}, _collegePrefsForMatch, { religion: 'no_preference' });
         }
 
+        // ── Worlds → NAICS sectors → school matching ──────────────────────
+        // Previously worlds_chosen only touched career narrative and majors,
+        // never which schools got ranked. This merges in the NAICS sectors
+        // behind each chosen World so school matching reflects the actual
+        // Worlds the student picked, not just the separate naicsSectors signal.
+        var _naicsForMatch = (profile.naicsSectors || []).slice();
+        if (typeof getNAICSSectorsForWorlds === 'function' && profile.worlds_chosen && profile.worlds_chosen.length > 0) {
+          var _worldSectors = getNAICSSectorsForWorlds(profile.worlds_chosen);
+          _worldSectors.forEach(function(ws) {
+            if (!_naicsForMatch.some(function(n) { return Number(n.sector || n) === ws.sector; })) {
+              _naicsForMatch.push(ws);
+            }
+          });
+        }
+
         var _rawMatches = matchUniversities(
           _collegePrefsForMatch,
           profile.riasec,
-          profile.naicsSectors,
+          _naicsForMatch,
           profile.comboUnlocks,
           gpaData
         );
@@ -5867,21 +5882,21 @@ async function submitLifescape() {
           // competitiveness field in V5 (not name-matching). Scales to all 179
           // V5 schools automatically. Hard filter — bad recs are worse than fewer results.
           var _gpaNorm = (typeof normalizeGPA === 'function') ? normalizeGPA(LS_STATE.gpa, LS_STATE.gpa_type) : LS_STATE.gpa;
-          if (_gpaNorm != null && typeof UNIVERSITY_DB_V5 !== 'undefined') {
+          if (_gpaNorm != null && typeof SCHOOL_COMPETITIVENESS !== 'undefined') {
             var _beforeGPAFilter = callDData.length;
-            // GPA tier → max allowed competitiveness (per platform's documented tiers:
-            // reach 3.7+, competitive 3.3-3.69, solid 2.7-3.29, open <2.7)
-            var _maxAllowed = _gpaNorm >= 3.7 ? ['Highly Selective','Selective','Moderately Selective','Moderately Accessible','Accessible']
-                             : _gpaNorm >= 3.3 ? ['Selective','Moderately Selective','Moderately Accessible','Accessible']
-                             : _gpaNorm >= 2.7 ? ['Moderately Selective','Moderately Accessible','Accessible']
-                             : ['Moderately Accessible','Accessible'];
+            // GPA tier → max allowed competitiveness, using real ADM_RATE-derived tiers
+            // (SCHOOL-DATA-INTEGRITY-001 / SCORECARD-PATCH-001): Extremely Selective (<10%),
+            // Highly Selective (10-25%), Selective (25-50%), Moderately Selective (50-75%), Accessible (75%+)
+            var _maxAllowed = _gpaNorm >= 3.7 ? ['Extremely Selective','Highly Selective','Selective','Moderately Selective','Accessible']
+                             : _gpaNorm >= 3.3 ? ['Highly Selective','Selective','Moderately Selective','Accessible']
+                             : _gpaNorm >= 2.7 ? ['Selective','Moderately Selective','Accessible']
+                             : ['Moderately Selective','Accessible'];
             callDData = callDData.filter(function(s) {
-              var v5Entry = UNIVERSITY_DB_V5[s.name];
-              var competitiveness = v5Entry && v5Entry.institutionNarrative && v5Entry.institutionNarrative.competitiveness;
-              // If we don't have V5 data for this school, don't filter it out —
-              // only gate on schools where we have a real, confirmed threshold.
+              var competitiveness = SCHOOL_COMPETITIVENESS[s.name];
+              // If we don't have a tier for this school, don't filter it out —
+              // only gate on schools where we have a real, confirmed rating.
               if (!competitiveness) return true;
-              return _maxAllowed.some(function(tier) { return competitiveness.indexOf(tier) === 0; });
+              return _maxAllowed.indexOf(competitiveness) !== -1;
             });
             if (callDData.length < _beforeGPAFilter) {
               console.log('[callD] GPA gate removed', _beforeGPAFilter - callDData.length, 'academically mismatched school(s) for GPA', _gpaNorm);

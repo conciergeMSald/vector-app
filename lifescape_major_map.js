@@ -3689,9 +3689,41 @@ function getMajorsForWorld(worldId) {
   return results;
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// getNAICSSectorsForWorlds(worldIds) — connects Worlds selection to school matching
+// ─────────────────────────────────────────────────────────────────────────────
+// Previously, worlds_chosen only influenced career narrative (callB) and major
+// suggestions (callD via getMajorsForWorld). It never touched which schools got
+// ranked — matchUniversities() only saw naicsSectors, a separate signal.
+// This closes that gap: for each World the student picked, find the NAICS
+// sectors that contain majors tagged to that World, so a student who picks
+// "Logistics" gets a real scoring boost toward schools strong in logistics
+// majors — not just narrative text about logistics careers.
+
+function getNAICSSectorsForWorlds(worldIds) {
+  if (!worldIds || worldIds.length === 0) return [];
+  const sectors = new Set();
+  worldIds.forEach(function(worldId) {
+    for (const naics in MAJOR_MAP) {
+      const majors = MAJOR_MAP[naics];
+      if (!Array.isArray(majors)) continue;
+      if (majors.some(function(m) { return m.career_world === worldId; })) {
+        sectors.add(Number(naics));
+      }
+    }
+  });
+  return Array.from(sectors).map(function(s) { return { sector: s, source: 'world' }; });
+}
+
+if (typeof window !== 'undefined') {
+  window.getNAICSSectorsForWorlds = getNAICSSectorsForWorlds;
+}
+
+
 if (typeof window !== 'undefined') {
   window.getMajorsForWorld = getMajorsForWorld;
 }
 if (typeof module !== 'undefined' && module.exports) {
   module.exports.getMajorsForWorld = getMajorsForWorld;
+  module.exports.getNAICSSectorsForWorlds = getNAICSSectorsForWorlds;
 }
