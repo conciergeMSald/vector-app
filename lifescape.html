@@ -4651,14 +4651,13 @@ function buildCallDPrompt(ctx, matchedSchools, schoolContentBlock) {
   }
 
   var _majorContext = '';
-  if (typeof MAJOR_MAP !== 'undefined' && ctx.activityTiles && ctx.activityTiles.length > 0) {
+  if (typeof getMajorsForWorld === 'function' && ctx.worlds_chosen && ctx.worlds_chosen.length > 0) {
     var _majorMatches = [];
-    ctx.activityTiles.slice(0, 5).forEach(function(tile) {
-      if (MAJOR_MAP[tile] && MAJOR_MAP[tile].majors) {
-        MAJOR_MAP[tile].majors.slice(0, 2).forEach(function(m) {
-          if (!_majorMatches.includes(m)) _majorMatches.push(m);
-        });
-      }
+    ctx.worlds_chosen.slice(0, 5).forEach(function(worldId) {
+      var majors = getMajorsForWorld(String(worldId).toLowerCase());
+      majors.slice(0, 2).forEach(function(m) {
+        if (m && m.major_label && !_majorMatches.includes(m.major_label)) _majorMatches.push(m.major_label);
+      });
     });
     if (_majorMatches.length > 0) {
       _majorContext = '\nLIKELY MAJOR PATHWAYS: ' + _majorMatches.slice(0, 4).join(', ') + '. Where a school has particular strength in these areas, name it specifically.';
