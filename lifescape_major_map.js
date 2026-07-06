@@ -80,6 +80,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Film & Television Production',
+      career_world: 'making',
       riasec_affinity: ['A', 'E', 'I'],
       riasec_conflict: ['C', 'R'],
       program_keywords: ['film production', 'television', 'screenwriting', 'directing', 'entertainment industry pipeline'],
@@ -112,6 +113,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Digital Media & Communication',
+      career_world: 'making',
       riasec_affinity: ['A', 'E', 'S'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['digital media', 'content strategy', 'social media', 'multimedia', 'communication'],
@@ -172,6 +174,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Game Design & Interactive Media',
+      career_world: 'making',
       riasec_affinity: ['A', 'I', 'R'],
       riasec_conflict: ['S', 'C'],
       program_keywords: ['game design', 'interactive media', 'UX design', 'game development', 'Unity'],
@@ -614,6 +617,7 @@ const MAJOR_MAP = {
   62: [
     {
       major_label: 'Biology / Pre-Medicine',
+      career_world: 'medicine',
       riasec_affinity: ['I', 'R', 'S'],
       riasec_conflict: ['E', 'A'],
       program_keywords: ['pre-medicine', 'biology', 'medical school pipeline', 'MCAT prep', 'research lab'],
@@ -642,6 +646,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Nursing',
+      career_world: 'healing',
       riasec_affinity: ['S', 'I', 'R'],
       riasec_conflict: ['A', 'C'],
       program_keywords: ['nursing', 'BSN', 'clinical', 'NCLEX', 'patient care', 'RN pipeline'],
@@ -670,6 +675,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Public Health',
+      career_world: 'healing',
       riasec_affinity: ['S', 'I', 'E'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['public health', 'epidemiology', 'community health', 'MPH pipeline', 'health policy'],
@@ -698,6 +704,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Biochemistry / Biomedical Sciences',
+      career_world: 'medicine',
       riasec_affinity: ['I', 'R', 'C'],
       riasec_conflict: ['E', 'S'],
       program_keywords: ['biochemistry', 'biomedical', 'pharmaceutical', 'lab research', 'biotech pipeline'],
@@ -726,6 +733,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Kinesiology / Exercise Science',
+      career_world: 'therapy',
       riasec_affinity: ['R', 'S', 'I'],
       riasec_conflict: ['C', 'E'],
       program_keywords: ['kinesiology', 'exercise science', 'physical therapy pipeline', 'sports medicine', 'athletic training'],
@@ -754,6 +762,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Psychology / Pre-Counseling',
+      career_world: 'therapy',
       riasec_affinity: ['S', 'I', 'A'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['psychology', 'counseling pipeline', 'mental health', 'clinical psychology', 'social work'],
@@ -782,6 +791,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Nutrition & Dietetics',
+      career_world: 'healing',
       riasec_affinity: ['I', 'S', 'R'],
       riasec_conflict: ['E', 'A'],
       program_keywords: ['nutrition', 'dietetics', 'food science', 'RD pipeline', 'clinical nutrition'],
@@ -816,6 +826,7 @@ const MAJOR_MAP = {
   72: [
     {
       major_label: 'Hospitality Management',
+      career_world: 'hospitality',
       riasec_affinity: ['E', 'S', 'C'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['hospitality management', 'hotel management', 'resort operations', 'Cornell Hotel', 'lodging industry'],
@@ -844,6 +855,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Culinary Arts',
+      career_world: 'hospitality',
       riasec_affinity: ['R', 'A', 'E'],
       riasec_conflict: ['I', 'C'],
       program_keywords: ['culinary arts', 'food service', 'restaurant management', 'CIA culinary', 'chef pipeline'],
@@ -872,6 +884,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Event Management',
+      career_world: 'hospitality',
       riasec_affinity: ['E', 'S', 'A'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['event management', 'meeting planning', 'conference', 'wedding planning', 'live events'],
@@ -900,6 +913,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Tourism & Travel Management',
+      career_world: 'hospitality',
       riasec_affinity: ['E', 'S', 'C'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['tourism', 'travel management', 'destination marketing', 'cruise industry', 'travel operations'],
@@ -1155,6 +1169,7 @@ const MAJOR_MAP = {
   71: [
     {
       major_label: 'Fine Arts / Studio Art',
+      career_world: 'making',
       riasec_affinity: ['A', 'I', 'S'],
       riasec_conflict: ['C', 'E'],
       program_keywords: ['fine arts', 'studio art', 'MFA pipeline', 'gallery', 'visual art', 'portfolio'],
@@ -1291,6 +1306,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Graphic Design / Visual Communication',
+      career_world: 'making',
       riasec_affinity: ['A', 'I', 'R'],
       riasec_conflict: ['S', 'E'],
       program_keywords: ['graphic design', 'visual communication', 'typography', 'branding', 'portfolio', 'design studio'],
@@ -1319,6 +1335,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Fashion Design / Merchandising',
+      career_world: 'making',
       riasec_affinity: ['A', 'E', 'R'],
       riasec_conflict: ['I', 'C'],
       program_keywords: ['fashion design', 'fashion merchandising', 'apparel', 'FIDM', 'Parsons', 'fashion industry'],
@@ -1673,6 +1690,7 @@ MAJOR_MAP[33] = [
 MAJOR_MAP[48] = [
   {
     major_label: 'Supply Chain Management',
+      career_world: 'logistics',
     riasec_affinity: ['E', 'C', 'I'],
     riasec_conflict: ['A', 'R'],
     program_keywords: ['supply chain', 'logistics', 'operations management', 'procurement', 'demand planning'],
@@ -1697,6 +1715,7 @@ MAJOR_MAP[48] = [
   },
   {
     major_label: 'Transportation & Logistics Management',
+      career_world: 'logistics',
     riasec_affinity: ['E', 'C', 'R'],
     riasec_conflict: ['A', 'I'],
     program_keywords: ['transportation', 'freight', 'intermodal', 'fleet management', 'route optimization'],
@@ -1717,6 +1736,7 @@ MAJOR_MAP[48] = [
   },
   {
     major_label: 'Aviation & Airport Management',
+      career_world: 'logistics',
     riasec_affinity: ['R', 'E', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['aviation management', 'airport operations', 'airline management', 'air traffic', 'aviation safety'],
@@ -2025,6 +2045,7 @@ MAJOR_MAP[32] = [
 MAJOR_MAP[11] = [
   {
     major_label: 'Agricultural Science & Agronomy',
+      career_world: 'food',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['agronomy', 'crop science', 'soil science', 'plant biology', 'agricultural production'],
@@ -2049,6 +2070,7 @@ MAJOR_MAP[11] = [
   },
   {
     major_label: 'Precision Agriculture & Agricultural Technology',
+      career_world: 'food',
     riasec_affinity: ['R', 'I', 'E'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['precision agriculture', 'AgTech', 'remote sensing', 'GPS technology', 'variable rate application'],
@@ -2069,6 +2091,7 @@ MAJOR_MAP[11] = [
   },
   {
     major_label: 'Food Systems Engineering & Science',
+      career_world: 'food',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['food science', 'food engineering', 'food safety', 'food processing', 'product development'],
@@ -2093,6 +2116,7 @@ MAJOR_MAP[11] = [
   },
   {
     major_label: 'Agribusiness Management',
+      career_world: 'food',
     riasec_affinity: ['E', 'C', 'I'],
     riasec_conflict: ['A', 'R'],
     program_keywords: ['agribusiness', 'agricultural economics', 'farm management', 'agricultural finance', 'commodity markets'],
@@ -2117,6 +2141,7 @@ MAJOR_MAP[11] = [
   },
   {
     major_label: 'Soil Science & Environmental Land Management',
+      career_world: 'food',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['E', 'A'],
     program_keywords: ['soil science', 'pedology', 'land management', 'environmental soil', 'soil remediation'],
@@ -2343,6 +2368,7 @@ MAJOR_MAP[21] = [
 MAJOR_MAP[31] = [
   {
     major_label: 'Food Manufacturing & Processing Engineering',
+      career_world: 'food',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['food manufacturing', 'food processing', 'food engineering', 'plant operations', 'food production'],
@@ -2367,6 +2393,7 @@ MAJOR_MAP[31] = [
   },
   {
     major_label: 'Food Quality Systems & Safety Engineering',
+      career_world: 'food',
     riasec_affinity: ['I', 'C', 'R'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['food quality', 'HACCP', 'food safety systems', 'quality assurance', 'food microbiology', 'regulatory compliance'],
@@ -2387,6 +2414,7 @@ MAJOR_MAP[31] = [
   },
   {
     major_label: 'Culinary Science & Product Innovation',
+      career_world: 'food',
     riasec_affinity: ['A', 'I', 'R'],
     riasec_conflict: ['C', 'S'],
     program_keywords: ['culinary science', 'food product development', 'sensory science', 'flavor chemistry', 'culinary arts'],
@@ -3189,6 +3217,7 @@ Object.assign(MAJOR_MAP, {
   97: [
     {
       major_label: 'Transportation & Logistics Management',
+      career_world: 'logistics',
       riasec_affinity: ['E', 'C', 'R'],
       riasec_conflict: ['A'],
       program_keywords: ['transportation management', 'logistics', 'freight', 'carrier management', 'TMS', 'transportation operations'],
@@ -3213,6 +3242,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Maritime Transportation',
+      career_world: 'logistics',
       riasec_affinity: ['R', 'E', 'C'],
       riasec_conflict: ['A'],
       program_keywords: ['maritime transportation', 'marine operations', 'port management', 'maritime law', 'vessel operations', 'USCG license'],
@@ -3233,6 +3263,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Supply Chain Management (Physical Infrastructure Track)',
+      career_world: 'logistics',
       riasec_affinity: ['R', 'C', 'E'],
       riasec_conflict: ['A'],
       program_keywords: ['warehouse management', 'distribution operations', 'fulfillment', 'WMS', 'inventory management', 'cold storage'],
@@ -3253,6 +3284,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Civil Engineering (Infrastructure Track)',
+      career_world: 'logistics',
       riasec_affinity: ['R', 'I', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['civil engineering', 'infrastructure', 'transportation engineering', 'port engineering', 'structural engineering'],
@@ -3273,6 +3305,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Industrial Engineering (Logistics Systems Track)',
+      career_world: 'logistics',
       riasec_affinity: ['I', 'R', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['industrial engineering', 'operations research', 'logistics optimization', 'network design', 'systems engineering'],
@@ -3521,6 +3554,7 @@ Object.assign(MAJOR_MAP, {
   100: [
     {
       major_label: 'Criminal Justice & Homeland Security',
+      career_world: 'military',
       riasec_affinity: ['E', 'S', 'R'],
       riasec_conflict: ['A', 'I'],
       program_keywords: ['criminal justice', 'homeland security', 'law enforcement', 'intelligence', 'emergency management', 'public safety'],
@@ -3541,6 +3575,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Political Science & International Relations',
+      career_world: 'military',
       riasec_affinity: ['E', 'I', 'S'],
       riasec_conflict: ['R', 'A'],
       program_keywords: ['political science', 'international relations', 'national security', 'foreign policy', 'defense policy', 'military affairs'],
@@ -3561,6 +3596,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Business Administration (Military Leadership Track)',
+      career_world: 'military',
       riasec_affinity: ['E', 'C', 'S'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['military leadership', 'defense acquisition', 'veteran business', 'program management', 'military transition', 'SBA Boots to Business'],
@@ -3581,6 +3617,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Organizational Leadership',
+      career_world: 'military',
       riasec_affinity: ['E', 'S', 'C'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['organizational leadership', 'military leadership', 'leadership development', 'team leadership', 'applied leadership'],
@@ -3601,6 +3638,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Engineering (Military Applications Track)',
+      career_world: 'military',
       riasec_affinity: ['R', 'I', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['military engineering', 'aerospace engineering', 'systems engineering', 'nuclear engineering', 'defense technology'],
@@ -3621,3 +3659,39 @@ Object.assign(MAJOR_MAP, {
     }
   ]
 });
+
+// ─────────────────────────────────────────────────────────────────────────────
+// getMajorsForWorld(worldId)
+// ─────────────────────────────────────────────────────────────────────────────
+// Returns only the majors tagged with career_world === worldId, searching
+// across every NAICS bucket in MAJOR_MAP. Untagged majors are never returned
+// by this function (per OQ-2: they stay visible via the old raw-NAICS path
+// until explicitly tagged — this function is additive, not a replacement).
+//
+// Per OQ-1: this should be called LATE in the pipeline, after the student's
+// full profile has been collected — not as an early filter.
+//
+// Per OQ-4: military-tagged majors carry no extra scoring weight here.
+// This function only returns majors; it does not touch school/academy
+// match scoring. Any weighting guardrail belongs in the scoring engine,
+// not in this lookup.
+
+function getMajorsForWorld(worldId) {
+  if (!worldId) return [];
+  const results = [];
+  for (const naics in MAJOR_MAP) {
+    const majors = MAJOR_MAP[naics];
+    if (!Array.isArray(majors)) continue;
+    for (const major of majors) {
+      if (major.career_world === worldId) results.push(major);
+    }
+  }
+  return results;
+}
+
+if (typeof window !== 'undefined') {
+  window.getMajorsForWorld = getMajorsForWorld;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports.getMajorsForWorld = getMajorsForWorld;
+}
