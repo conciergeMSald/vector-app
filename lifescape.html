@@ -2123,6 +2123,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <div id="counselor-occupations"><div style="font-size:15px;color:var(--ink4);font-style:italic">Generating...</div></div>
     </div>
 
+    <div style="margin-bottom:2rem" id="counselor-size-adjacent-block">
+      <div class="section-eyebrow">Same fit, different size</div>
+      <div id="counselor-size-adjacent"><div style="font-size:15px;color:var(--ink4);font-style:italic">Generating...</div></div>
+    </div>
+
     <div style="margin-bottom:2rem" id="counselor-geo-fit-block">
       <div class="section-eyebrow">Where this path actually lives</div>
       <div id="counselor-geo-fit"></div>
@@ -5665,14 +5670,14 @@ async function submitLifescape() {
         // UI selection to the real pool key(s) it should hit.
         // 'military_academies' is handled separately as a flag, not a region pool.
         const REGION_KEY_TO_DB = {
-          'new_england':     ['northeast'],
+          'new_england':     ['new_england'],
           'northeast':       ['northeast'],
-          'mid_atlantic':    ['northeast'],
+          'mid_atlantic':    ['mid_atlantic'],
           'southeast':       ['southeast'],
           'midwest':         ['midwest'],
-          'rocky_mountains': ['west_coast'],
-          'pacific_nw':      ['west_coast'],
-          'california':      ['west_coast'],
+          'rocky_mountains': ['rocky_mountains'],
+          'pacific_nw':      ['pacific_nw'],
+          'california':      ['california'],
           'southwest':       ['southwest']
         };
         var _normalizedRegions = [];
@@ -5917,6 +5922,20 @@ async function submitLifescape() {
               COLLEGE_PREFS.campus_scale || null
             );
           }
+
+          // ── Size-adjacent picks: same region, same social scene, different size ──
+          var sizeAdjacentPicks = [];
+          if (typeof getSizeAdjacentMatches !== 'undefined') {
+            sizeAdjacentPicks = getSizeAdjacentMatches(
+              matchedSchools,
+              COLLEGE_PREFS.regions || [],
+              COLLEGE_PREFS.social_scene || null,
+              COLLEGE_PREFS.campus_scale || null,
+              2
+            );
+          }
+          console.log('[callD] size-adjacent picks:', sizeAdjacentPicks.map(s=>s.name));
+          LS_STATE.sizeAdjacentPicks = sizeAdjacentPicks;
           console.log('[callD] adjacent picks:', adjacentPicks.map(s=>s.name));
           console.log('[callD] profile adjacent:', profileAdjacentPicks.map(s=>s.name));
 
@@ -6581,6 +6600,15 @@ function renderCounselorView(profile, callAData, callBData, callCData, essayPars
   // Injected into school recommendation cards post-callD via renderSchoolIntel()
   window._uniIntelReady = typeof getUniversityIntel === 'function';
 
+  // ── Size-adjacent picks (counselor-only) — same region/social scene, different size ──
+  const sizeAdjEl = document.getElementById('counselor-size-adjacent');
+  if (sizeAdjEl) {
+    const picks = LS_STATE.sizeAdjacentPicks || [];
+    sizeAdjEl.innerHTML = picks.length > 0
+      ? picks.map(p => `<div style="margin-bottom:8px"><strong>${p.name}</strong> — ${p.reason}</div>`).join('')
+      : '<div style="font-size:13px;color:var(--ink4)">No same-region, same-social-scene alternative at a different size was found for this student\'s selections.</div>';
+  }
+
   document.getElementById('counselor-meta').innerHTML = [
     ['Name', profile.name],
     ['Grade', `Grade ${profile.grade}`],
@@ -6598,7 +6626,8 @@ function renderCounselorView(profile, callAData, callBData, callCData, essayPars
     ['Mega-region', profile.college_prefs?.regions?.length ? profile.college_prefs.regions.map(stripUnderscores).join(', ') : 'not set'],
     ['Campus size', profile.college_prefs?.campus_scale || 'not set'],
     ['Regions', profile.college_prefs?.regions?.map(stripUnderscores).join(', ') || 'Open'],
-    ['Social scene', profile.college_prefs?.social_scene || 'not set']
+    ['Social scene', profile.college_prefs?.social_scene || 'not set'],
+    ['Worlds selected', profile.worlds_chosen && profile.worlds_chosen.length > 0 ? profile.worlds_chosen.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(', ') : 'none']
   ].map(([k,v]) => {
     const metaLabels = {
       big_university: 'Large university',

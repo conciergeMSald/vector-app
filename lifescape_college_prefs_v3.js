@@ -38,7 +38,10 @@ const CONFERENCE_POOLS = {
     // 2024 additions from Pac-12
     "University of Oregon","University of Washington",
     "University of Illinois Urbana-Champaign",
-    "University of Wisconsin-Madison","University of California Los Angeles"
+    "University of Wisconsin-Madison","University of California Los Angeles",
+    "University of Illinois Urbana-Champaign",
+    "University of Wisconsin-Madison",
+    "UCLA"
   ],
 
   // ── ACC (2024-25 current: 17 members + Notre Dame partial) ─────────────
@@ -52,7 +55,8 @@ const CONFERENCE_POOLS = {
     // 2024 additions from Pac-12
     "Stanford University",
     "Southern Methodist University",
-    "University of North Carolina Chapel Hill"
+    "University of North Carolina Chapel Hill",
+    "SMU"
   ],
 
   // ── BIG 12 (2024-25 current: 16 members) ────────────────────────────────
@@ -68,7 +72,11 @@ const CONFERENCE_POOLS = {
     // Kansas State, Oklahoma State, TCU, Texas Tech, West Virginia, Iowa State
     // Cincinnati, Houston not in our DB,
     "Texas Christian University",
-    "Texas Tech University"
+    "Texas Tech University",
+    "Texas A&M University",
+    "Texas Tech University",
+    "TCU",
+    "University of North Texas"
   ],
 
   // ── WEST COAST / PAC-12 LEGACY ─────────────────────────────────────────
@@ -102,7 +110,25 @@ const CONFERENCE_POOLS = {
     "San Diego State University",
     "UC Santa Barbara",
     "University of Southern California",
-    "UC Berkeley","University of California Los Angeles"
+    "UC Berkeley","University of California Los Angeles",
+    "UC Berkeley",
+    "UC Santa Barbara",
+    "USC",
+    "San Diego State University",
+    "San Jose State University",
+    "San Francisco State University",
+    "Eastern Washington University",
+    "University of Hawaii at Manoa",
+    "University of Alaska Fairbanks",
+    "University of Nevada Las Vegas",
+    "University of Nevada Reno",
+    "University of Idaho",
+    "Montana State University",
+    "University of Montana",
+    "University of Wyoming",
+    "University of New Mexico",
+    "New Mexico State University",
+    "Utah Valley University"
   ],
 
   ivy: [
@@ -154,10 +180,168 @@ const CONFERENCE_POOLS = {
     "Boston College","Villanova University","Temple University","Drexel University",
     "Northeastern University","Stetson University","Boston University",
     "Fordham University","UC Riverside","University of Delaware","California State University Fullerton",
-    "California State University Northridge","California State University Long Beach"
+    "California State University Northridge","California State University Long Beach",
+    "University of Memphis",
+    "East Carolina University",
+    "Appalachian State University",
+    "Marshall University",
+    "Georgia State University",
+    "Texas State University",
+    "Sam Houston State University",
+    "South Dakota State University",
+    "North Dakota State University",
+    "University of North Texas",
+    "University of Tennessee at Chattanooga"
   ],
 
-  no_sports: ["__ALL__"]
+
+  // ── INDEPENDENT / NON-CONFERENCE / LIBERAL ARTS ─────────────────────────
+  independent: [
+    "UT Austin",
+    "Rice University",
+    "University of North Carolina Chapel Hill",
+    "University of Richmond",
+    "Lehigh University",
+    "Quinnipiac University",
+    "Marquette University",
+    "Rollins College",
+    "High Point University",
+    "James Madison University",
+    "Kennesaw State University",
+    "University of Vermont",
+    "University of Rhode Island",
+    "Binghamton University",
+    "Rochester Institute of Technology",
+    "Belmont University",
+    "Ithaca College",
+    "Bentley University",
+    "Furman University",
+    "Flagler College",
+    "Wofford College",
+    "University of Tulsa",
+    "University of Tennessee at Chattanooga",
+    "Regent University",
+    "College of the Ozarks",
+    "Morehead State University",
+    "California Lutheran University",
+    "California State University San Bernardino",
+    "Barnard College",
+    "Hamilton College",
+    "Vassar College",
+    "Wesleyan University",
+    "Carleton College",
+    "Grinnell College",
+    "Oberlin College",
+    "Reed College",
+    "Denison University",
+    "Kenyon College",
+    "Ohio Wesleyan University",
+    "Dickinson College",
+    "Gettysburg College",
+    "Franklin and Marshall College",
+    "Union College",
+    "Washington and Lee University",
+    "Bryn Mawr College",
+    "Illinois Wesleyan University",
+    "Occidental College",
+    "St. John's College",
+    "Providence College",
+    "Berklee College of Music",
+    "Fashion Institute of Technology",
+    "Rhode Island School of Design",
+    "Pratt Institute"
+  ],
+
+  // ── INDEPENDENT / NON-CONFERENCE / LIBERAL ARTS ─────────────────────────
+  independent: [
+    "UT Austin",
+    "Rice University",
+    "University of North Carolina Chapel Hill",
+    "University of Richmond",
+    "Lehigh University",
+    "Quinnipiac University",
+    "Marquette University",
+    "Rollins College",
+    "High Point University",
+    "James Madison University",
+    "Kennesaw State University",
+    "University of Vermont",
+    "University of Rhode Island",
+    "Binghamton University",
+    "Rochester Institute of Technology",
+    "Belmont University",
+    "Ithaca College",
+    "Bentley University",
+    "Furman University",
+    "Flagler College",
+    "Wofford College",
+    "University of Tulsa",
+    "University of Tennessee at Chattanooga",
+    "Regent University",
+    "College of the Ozarks",
+    "Morehead State University",
+    "California Lutheran University",
+    "California State University San Bernardino",
+    "Barnard College",
+    "Hamilton College",
+    "Vassar College",
+    "Wesleyan University",
+    "Carleton College",
+    "Grinnell College",
+    "Oberlin College",
+    "Reed College",
+    "Denison University",
+    "Kenyon College",
+    "Ohio Wesleyan University",
+    "Dickinson College",
+    "Gettysburg College",
+    "Franklin and Marshall College",
+    "Union College",
+    "Washington and Lee University",
+    "Bryn Mawr College",
+    "Illinois Wesleyan University",
+    "Occidental College",
+    "St. John's College",
+    "Providence College",
+    "Berklee College of Music",
+    "Fashion Institute of Technology",
+    "Rhode Island School of Design",
+    "Pratt Institute"
+  ],
+  no_sports: ["__ALL__"],
+  // ── MARITIME ACADEMIES ──────────────────────────────────────────────────
+  maritime: [
+    "United States Merchant Marine Academy",
+    "Maine Maritime Academy",
+    "Massachusetts Maritime Academy",
+    "Texas A&M University at Galveston",
+    "California State University Maritime Academy"
+  ],
+
+  // ── HISTORICALLY BLACK COLLEGES & UNIVERSITIES ──────────────────────────
+  hbcu: [
+    "Howard University",
+    "Spelman College",
+    "Morehouse College",
+    "Hampton University",
+    "Florida A&M University",
+    "North Carolina A&T State University",
+    "Xavier University of Louisiana",
+    "Tuskegee University",
+    "Lincoln University",
+    "Morgan State University"
+  ],
+
+  // ── MILITARY COLLEGES & SERVICE ACADEMIES ───────────────────────────────
+  military: [
+    "United States Military Academy",
+    "United States Naval Academy",
+    "United States Air Force Academy",
+    "United States Coast Guard Academy",
+    "The Citadel",
+    "Virginia Military Institute",
+    "Norwich University"
+  ]
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -165,136 +349,253 @@ const CONFERENCE_POOLS = {
 // ─────────────────────────────────────────────────────────────
 
 const REGION_POOLS = {
-  new_england: [
-    "Brown University","Dartmouth College","Gordon College","Harvard University",
-    "Keene State College","Massachusetts Institute of Technology",
-    "University of Connecticut","University of Maine","University of Massachusetts Amherst","University of New Hampshire",
-    "University of Vermont","Williams College","Yale University",
-  ],
-
-  northeast: [
-    "American University","Amherst College","Babson College","Bates College",
-    "Bentley University","Berklee College of Music","Binghamton University","Boston College",
-    "Boston University","Bowdoin College","Brown University","Bryn Mawr College",
-    "Bucknell University","Carnegie Mellon University","Case Western Reserve University","Colby College",
-    "Colgate University","Columbia University","Cornell University","Dartmouth College",
-    "Drexel University","Fashion Institute of Technology","Fordham University","Franklin and Marshall College",
-    "George Washington University","Georgetown University","Hamilton College","Harvard University",
-    "Haverford College","Ithaca College","Johns Hopkins University","Kettering University",
-    "Lehigh University","Massachusetts Institute of Technology","Middlebury College","New York University",
-    "Northeastern University","Penn State University","Pratt Institute","Princeton University",
-    "Quinnipiac University","Reed College","Rhode Island School of Design","Rochester Institute of Technology",
-    "Rutgers University","Stevens Institute of Technology","Swarthmore College","Syracuse University",
-    "Temple University","Union College","United States Military Academy",
-    "University at Buffalo","University of Connecticut","University of Delaware",
-    "University of Maryland College Park","University of Massachusetts Amherst","University of Pennsylvania","University of Pittsburgh",
-    "University of Rhode Island","University of Virginia","Vassar College","Villanova University",
-    "Webb Institute","Williams College","Worcester Polytechnic Institute","Yale University",
-  ],
-
-  mid_atlantic: [
-    "Old Dominion University","University of Richmond","University of Virginia",
-    "Virginia Tech",
-  ],
 
   southeast: [
-    "Appalachian State University","Auburn University","Baylor University","Belmont University",
-    "Clemson University","College of William and Mary","Davidson College","Duke University",
-    "Elon University","Emory University","Flagler College","Florida Atlantic University",
-    "Florida State University","Furman University","Georgia Institute of Technology","Georgia State University",
-    "High Point University","Howard University","James Madison University","Louisiana State University",
-    "Marion Military Institute","Mississippi State University","North Carolina State University","Regent University",
-    "Rollins College","Spelman College","Stetson University",
-    "The University of Alabama","Tulane University","University of Alabama",
-    "University of Arkansas","University of Central Florida","University of Florida","University of Georgia",
-    "University of Kentucky","University of Louisville","University of Memphis","University of Miami",
-    "University of Mississippi","University of North Carolina Chapel Hill","University of North Carolina at Chapel Hill",
-    "University of Oklahoma","University of Richmond","University of South Carolina","University of South Florida",
-    "University of Tennessee","University of Tennessee at Chattanooga","University of Tennessee, Knoxville","University of Virginia",
-    "University of the South","Vanderbilt University","Virginia Tech","Wake Forest University",
-    "Washington and Lee University","Wofford College",
-  ],
-
-  midwest: [
-    "Butler University","Calvin University","Carleton College","Case Western Reserve University",
-    "College of Wooster","Creighton University","Denison University","Drake University",
-    "Grinnell College","Indiana University","Indiana University Bloomington","Iowa State University",
-    "Kenyon College","Macalester College","Marquette University","Marshall University",
-    "Michigan State University","Morehead State University","North Dakota State University","Northwestern University",
-    "Oberlin College","Ohio State University","Ohio Wesleyan University","Purdue University",
-    "Rose-Hulman Institute of Technology","South Dakota State University","University of Chicago","University of Illinois Urbana-Champaign",
-    "University of Iowa","University of Kansas","University of Michigan","University of Minnesota",
-    "University of Missouri","University of Nebraska-Lincoln","University of Nebraska–Lincoln","University of North Dakota",
-    "University of Notre Dame","University of Wisconsin-Madison","University of Wisconsin–Madison","Washington University in St. Louis",
-    "Wheaton College",
-  ],
-
-  rocky_mountains: [
-    "Brigham Young University","Carroll College","Colorado College","Colorado School of Mines",
-    "Montana State University","Montana Technological University","Rocky Mountain College",
-    "University of Colorado Boulder","University of Colorado Colorado Springs","University of Denver","University of Montana",
-    "University of Montana Western","University of Nevada, Reno","University of Northern Colorado","University of Utah",
-    "University of Wyoming","Utah State University","Utah Valley University","Weber State University",
-    "Western Colorado University",
-  ],
-
-  pacific_nw: [
-    "Georgetown University","Gonzaga University","Reed College","Seattle Pacific University",
-    "Southern Oregon University","University of Oregon","University of Washington",
-  ],
-
-  california: [
-    "Azusa Pacific University","Biola University","Boise State University","Brigham Young University",
-    "California Institute of Technology","California Lutheran University","California Polytechnic State University San Luis Obispo","California Polytechnic State University, San Luis Obispo",
-    "California State University Chico","California State University Fresno","California State University Fullerton","California State University Long Beach",
-    "California State University Los Angeles","California State University Northridge","California State University San Bernardino","California State University, Fullerton",
-    "California State University, Long Beach","Claremont McKenna College","Colorado College","Colorado School of Mines",
-    "Colorado State University","Deep Springs College","Gonzaga University","Harvey Mudd College",
-    "Loyola Marymount University","Montana State University","Occidental College","Oregon State University",
-    "Pepperdine University","Point Loma Nazarene University","Pomona College","Saint Mary's College of California",
-    "San Diego State University","San Jose State University","San José State University","Santa Clara University",
-    "Stanford University","UC Berkeley","UC Riverside","UC San Diego",
-    "UC Santa Barbara","UCLA","University of California Davis","University of California Irvine",
-    "University of California Los Angeles","University of California Santa Barbara","University of California Santa Cruz","University of California, Berkeley",
-    "University of California, Los Angeles","University of California, Merced","University of California, San Diego","University of California, Santa Barbara",
-    "University of California, Santa Cruz","University of Colorado Boulder","University of Denver","University of Idaho",
-    "University of Montana","University of Nevada Las Vegas","University of Nevada Reno","University of Oregon",
-    "University of San Diego","University of San Francisco","University of Southern California","University of Utah",
-    "University of Washington","Westmont College",
+    // Database region: Southeast + SEC New Members
+    "Vanderbilt University","University of Georgia","University of Florida",
+    "Auburn University","Louisiana State University","University of South Carolina",
+    "Clemson University","Wake Forest University","University of Miami",
+    "Duke University","University of Tennessee","University of Arkansas",
+    "University of Kentucky","University of Louisville","University of Virginia",
+    "Elon University","Georgia Institute of Technology","University of the South",
+    "University of Mississippi","Mississippi State University","University of Alabama",
+    "Florida State University","University of South Florida","University of Central Florida",
+    "Florida Atlantic University","Stetson University","Virginia Tech",
+    "North Carolina State University","Emory University","Tulane University",
+    "Baylor University","College of William and Mary","University of Oklahoma",
+    "University of North Carolina Chapel Hill",
+    "Belmont University",
+    "Furman University",
+    "Wofford College",
+    "Rollins College",
+    "High Point University",
+    "Appalachian State University",
+    "University of Tennessee at Chattanooga",
+    "University of Richmond",
+    "Washington and Lee University",
+    "Howard University",
+    "Spelman College",
+    "Georgia State University",
+    "Flagler College",
+    "James Madison University",
+    "University of Memphis",
+    "Regent University",
+    "Davidson College",
+    "East Carolina University",
+    "Appalachian State University",
+    "Marshall University",
+    "Georgia State University",
+    "University of Tennessee at Chattanooga",
+    "Morehead State University",
+    "Belmont University",
+    "University of Memphis"
   ],
 
   southwest: [
-    "Abilene Christian University","Arizona State University","Baylor University","Brigham Young University",
-    "College of William and Mary","Colorado State University","Duke University","Elon University",
-    "Mississippi State University","New Mexico State University","North Carolina State University","Northern Arizona University",
-    "Oklahoma State University","Prescott College","Rice University","Southern Methodist University",
-    "Texas A&M University","Texas Christian University","Texas Tech University","The University of Texas at Dallas",
-    "Tulane University","University of Alabama","University of Arizona","University of Arkansas",
-    "University of Denver","University of Houston","University of Kansas","University of Kentucky",
-    "University of Louisville","University of Mississippi","University of Missouri","University of New Mexico",
-    "University of Oklahoma","University of Tennessee","University of Texas Permian Basin","University of Texas at Austin",
-    "University of Tulsa","University of Utah","University of the South","Vanderbilt University",
-    "Virginia Tech","Wake Forest University",
+    "University of Arizona","Arizona State University","University of Oklahoma",
+    "University of Kansas","University of Arkansas",
+    "Colorado State University","University of Denver","Baylor University",
+    "University of Utah","Brigham Young University",
+    "Rice University",
+    "Southern Methodist University",
+    "Texas Christian University",
+    "Texas A&M University",
+    "Texas Tech University",
+    "University of Texas at Austin",
+    "University of Tulsa",
+    "University of New Mexico",
+    "New Mexico State University",
+    "Texas State University",
+    "Sam Houston State University",
+    "University of North Texas",
+    "Texas A&M University at Galveston"
+  ],
+
+  rocky_mountains: [
+    "Colorado School of Mines",
+    "University of Utah",
+    "Brigham Young University",
+    "University of Colorado Boulder",
+    "Colorado State University",
+    "University of Denver",
+    "Boise State University",
+    "Colorado College",
+    "University of Idaho",
+    "University of Nevada Las Vegas",
+    "University of Nevada Reno",
+    "University of Montana",
+    "Montana State University"
+  ],
+
+  pacific_nw: [
+    "University of Oregon",
+    "Oregon State University",
+    "University of Washington",
+    "Gonzaga University",
+    "Reed College",
+    "Eastern Washington University",
+    "University of Alaska Fairbanks"
+  ],
+
+  california: [
+    "Stanford University",
+    "UC San Diego",
+    "University of California Irvine",
+    "University of California Davis",
+    "University of California Santa Cruz",
+    "California Polytechnic State University San Luis Obispo",
+    "California State University Long Beach",
+    "California State University Fullerton",
+    "California State University Northridge",
+    "California State University Los Angeles",
+    "California State University Chico",
+    "California State University Fresno",
+    "Claremont McKenna College",
+    "Pomona College",
+    "Harvey Mudd College",
+    "Pepperdine University",
+    "Santa Clara University",
+    "University of San Diego",
+    "Saint Mary's College of California",
+    "UC Riverside",
+    "University of San Francisco",
+    "California Institute of Technology",
+    "Deep Springs College",
+    "San Diego State University",
+    "UC Santa Barbara",
+    "University of Southern California",
+    "UC Berkeley",
+    "University of California Los Angeles",
+    "Occidental College",
+    "San Jose State University",
+    "California Lutheran University",
+    "California State University San Bernardino",
+    "University of Hawaii at Manoa",
+    "San Francisco State University",
+    "California State University Maritime Academy"
   ],
 
 
-  military_academies: [
-    "United States Air Force Academy",
-    "United States Naval Academy",
+  new_england: [
+    "Harvard University",
+    "Yale University",
+    "Brown University",
+    "Dartmouth College",
+    "Massachusetts Institute of Technology",
+    "Boston University",
+    "Babson College",
+    "Williams College",
+    "Amherst College",
+    "Bowdoin College",
+    "Middlebury College",
+    "Worcester Polytechnic Institute",
+    "Boston College",
+    "University of Connecticut",
+    "University of Massachusetts Amherst",
+    "Northeastern University",
+    "Quinnipiac University",
+    "University of Rhode Island",
+    "Bentley University",
+    "Rhode Island School of Design",
+    "Berklee College of Music",
+    "Colby College",
+    "Bates College",
+    "Providence College",
+    "University of Vermont"
+  ],
+
+  northeast: [
+    "Princeton University",
+    "Columbia University",
+    "University of Pennsylvania",
+    "Cornell University",
+    "Carnegie Mellon University",
+    "Stevens Institute of Technology",
+    "Villanova University",
+    "Fordham University",
+    "Drexel University",
+    "Temple University",
+    "Penn State University",
+    "University of Pittsburgh",
+    "Syracuse University",
+    "New York University",
     "United States Military Academy",
-    "United States Coast Guard Academy",
-    // NOTE: "United States Marine Corps University" and "University of North
-    // Georgia" are not yet in SCHOOL_ENROLLMENT or SCHOOL_GPA_RANGES, so they
-    // are inert in this pool until real enrollment/GPA data is added for them.
-    "United States Marine Corps University",
-    "United States Merchant Marine Academy",
-    "The Citadel",
-    "Virginia Military Institute",
-    "University of North Georgia",
-    "Norwich University",
+    "Rutgers University",
+    "Webb Institute",
+    "Binghamton University",
+    "Lehigh University",
+    "Ithaca College",
+    "Union College",
+    "Franklin and Marshall College",
+    "Bryn Mawr College",
+    "Pratt Institute",
+    "Rochester Institute of Technology",
+    "Fashion Institute of Technology",
+    "Hamilton College",
+    "Swarthmore College",
+    "Haverford College",
+    "Vassar College",
+    "Colgate University",
+    "Bucknell University"
   ],
 
-};;
+  mid_atlantic: [
+    "Georgetown University",
+    "University of Virginia",
+    "George Washington University",
+    "American University",
+    "University of Delaware",
+    "University of Maryland College Park",
+    "Johns Hopkins University"
+  ],
+
+
+  midwest: [
+    "University of Michigan","Michigan State University","Indiana University",
+    "Ohio State University","University of Notre Dame","Northwestern University",
+    "University of Chicago","University of Iowa","Iowa State University","Drake University",
+    "University of Nebraska-Lincoln","Creighton University","University of Minnesota",
+    "University of Kansas","University of Missouri","Butler University",
+    "Rose-Hulman Institute of Technology","Purdue University",
+    "Case Western Reserve University",
+    "University of Illinois Urbana-Champaign",
+    "University of Wisconsin-Madison",
+    "Marquette University",
+    "Carleton College",
+    "Kenyon College",
+    "Oberlin College",
+    "Ohio Wesleyan University",
+    "Denison University",
+    "College of Wooster",
+    "Marshall University",
+    "Morehead State University",
+    "North Dakota State University",
+    "South Dakota State University",
+    "Grinnell College",
+    "Macalester College",
+    "South Dakota State University",
+    "North Dakota State University",
+    "University of Wyoming",
+    "Montana State University",
+    "University of Montana",
+    "University of Idaho"
+  ],
+
+  south_central: [
+    "Vanderbilt University","University of Tennessee","University of Kentucky",
+    "University of Louisville","University of the South","University of Arkansas",
+    "University of Oklahoma","University of Kansas","University of Missouri",
+    "Duke University","Wake Forest University","North Carolina State University",
+    "Elon University","College of William and Mary","Tulane University",
+    "University of Mississippi","Mississippi State University","Baylor University",
+    "University of Alabama","Virginia Tech",
+    "University of New Mexico",
+    "New Mexico State University",
+    "University of Nevada Las Vegas",
+    "University of Nevada Reno"
+  ]
+
+};
 
 // ─────────────────────────────────────────────────────────────
 // CAMPUS SCALE FILTER
@@ -302,7 +603,7 @@ const REGION_POOLS = {
 
 const SCALE_MAP = {
   big_university:    { min: 20000, max: 999999, label: "20,000+ students" },
-  medium_university: { min: 6000,  max: 19999,  label: "6,000-19,999 students" },
+  medium_university: { min: 5000,  max: 25000,  label: "5,000-25,000 students" },
   small_campus:      { min: 0,     max: 6000,   label: "Under 6,000 students" },
   no_preference:     { min: 0,     max: 999999, label: "Any size" }
 };
@@ -312,32 +613,32 @@ const SCHOOL_ENROLLMENT = {
   "University of Georgia":40000,"University of Florida":55000,"University of Oklahoma":28000,
   "Louisiana State University":37000,"Auburn University":32000,
   "University of South Carolina":35000,"Clemson University":27000,
-  "Wake Forest University":5500,"University of Miami":19000,
+  "Wake Forest University":5500,"University of Miami":12000,
   "University of Arizona":48000,"Arizona State University":83000,
-  "University of Virginia":25000,"Babson College":2400,"Boston University":34000,
-  "Dartmouth College":4500,"University of Utah":34000,"Georgetown University":20000,
-  "Duke University":17000,"University of Oregon":22000,"Stanford University":17000,
+  "University of Virginia":25000,"Babson College":2400,"Boston University":18000,
+  "Dartmouth College":4500,"University of Utah":34000,"Georgetown University":7500,
+  "Duke University":6800,"University of Oregon":22000,"Stanford University":8000,
   "Williams College":2200,"Amherst College":1900,"Bowdoin College":1900,
   "Middlebury College":2700,"Pomona College":1700,"University of Chicago":7000,
   "Penn State University":85000,"Stevens Institute of Technology":4000,
   "UC San Diego":43000,"Massachusetts Institute of Technology":11500,
-  "Georgia Institute of Technology":44000,"Rose-Hulman Institute of Technology":2200,
-  "California Institute of Technology":2200,"Carnegie Mellon University":15000,
+  "Georgia Institute of Technology":18000,"Rose-Hulman Institute of Technology":2200,
+  "California Institute of Technology":2200,"Carnegie Mellon University":7000,
   "Colorado School of Mines":7000,"Harvey Mudd College":900,
   "Worcester Polytechnic Institute":6500,"University of Washington":47000,
   "University of Pennsylvania":10000,"Princeton University":5500,
-  "Brown University":10000,"Harvard University":23000,"Yale University":14000,
-  "Cornell University":25000,"Columbia University":35000,"Gonzaga University":9000,
-  "Northwestern University":22000,"University of Denver":12000,"Elon University":7000,
-  "Fordham University":16000,"University of Kansas":27000,"University of Missouri":30000,
+  "Brown University":7200,"Harvard University":7200,"Yale University":6600,
+  "Cornell University":16000,"Columbia University":9000,"Gonzaga University":9000,
+  "Northwestern University":8600,"University of Denver":12000,"Elon University":7000,
+  "Fordham University":9500,"University of Kansas":27000,"University of Missouri":30000,
   "University of Arkansas":29000,"University of Tennessee":35000,
   "University of Colorado Boulder":37000,"Colorado State University":34000,
-  "University of California Davis":40000,"Santa Clara University":9000,
+  "University of California Davis":40000,"Santa Clara University":5500,
   "Saint Mary's College of California":4000,"University of Nebraska-Lincoln":25000,
   "Michigan State University":50000,"Creighton University":9000,
   "University of Iowa":31000,"Drake University":5000,"Iowa State University":30000,
   "Ohio State University":61000,"University of Notre Dame":12500,
-  "Villanova University":11000,"Temple University":37000,"Drexel University":24000,
+  "Villanova University":7000,"Temple University":37000,"Drexel University":14000,
   "UC Riverside":26000,"California State University Long Beach":38000,
   "California State University Fullerton":41000,"University of California Irvine":36000,
   "California Polytechnic State University San Luis Obispo":22000,
@@ -345,7 +646,7 @@ const SCHOOL_ENROLLMENT = {
   "University of California Santa Cruz":19000,
   "California State University Northridge":38000,
   "California State University Los Angeles":27000,"Claremont McKenna College":1400,
-  "Pepperdine University":9000,"University of San Diego":9000,
+  "Pepperdine University":3600,"University of San Diego":9000,
   "Oregon State University":33000,"Boise State University":26000,
   "Brigham Young University":34000,"University of Kentucky":30000,
   "University of Louisville":23000,"University of Minnesota":54000,
@@ -356,21 +657,21 @@ const SCHOOL_ENROLLMENT = {
   "Florida Atlantic University":30000,"Stetson University":4000,
   "Virginia Tech":35000,"Boston College":14000,"University of Pittsburgh":29000,
   "North Carolina State University":37000,"University of Maryland College Park":41000,
-  "Johns Hopkins University":6000,"Emory University":7000,"Tulane University":14000,
-  "Purdue University":44000,"Syracuse University":22000,"New York University":51000,
+  "Johns Hopkins University":6000,"Emory University":7000,"Tulane University":8600,
+  "Purdue University":44000,"Syracuse University":15000,"New York University":29000,
   "United States Military Academy":4500,"Rutgers University":50000,"University of Delaware":24000,
-  "George Washington University":17000,"Webb Institute":100,
+  "George Washington University":11000,"Webb Institute":100,
   "Colorado College":2200,"Deep Springs College":30,"Kettering University":2000,
   "American University":8500,"University of Connecticut":32000,"University of Massachusetts Amherst":32000,
-  "Northeastern University":20000,"Case Western Reserve University":5500,
-  "University of San Francisco":10000,"Baylor University":20000,
+  "Northeastern University":15000,"Case Western Reserve University":5500,
+  "University of San Francisco":10000,"Baylor University":15000,
   "College of William and Mary":6500,
   "San Diego State University":36000,
   "UC Santa Barbara":26000,
   "University of Southern California":22000,
   "UC Berkeley":33000,"University of California Los Angeles":47000,
   "Rice University":4400,
-  "Southern Methodist University":12000,
+  "Southern Methodist University":7000,
   "Texas Christian University":10000,
   "Texas A&M University":74000,
   "Texas Tech University":40000,
@@ -425,9 +726,6 @@ const SCHOOL_ENROLLMENT = {
   "Rochester Institute of Technology":19000,
   "Fashion Institute of Technology":8000,
   "San Jose State University":36000,
-  "UCLA":32000,
-  "University of California Santa Barbara":26000,
-  "Loyola Marymount University":10000,
   "University of Tulsa":4000,
   "University of Idaho":12000,
   "University of Nevada Las Vegas":31000,
@@ -455,6 +753,7 @@ const SCHOOL_ENROLLMENT = {
 const SOCIAL_SCENE_AFFINITY = {
 
   greek_heavy: [
+    "Dartmouth College","California State University Chico",
     "University of Michigan","University of Massachusetts Amherst","University of Delaware","Indiana University","University of Georgia",
     "University of Florida","Auburn University","Louisiana State University",
     "University of Tennessee","University of Arkansas","University of South Carolina",
@@ -499,6 +798,7 @@ const SOCIAL_SCENE_AFFINITY = {
   ],
 
   balanced: [
+    "University of Pennsylvania","Princeton University","Harvard University","Yale University","Columbia University","University of California Davis","Temple University","UC Riverside","California State University Long Beach","California State University Fresno","California State University Northridge","California State University Los Angeles","Oregon State University","Boise State University","University of Louisville","University of South Florida","University of Central Florida","Florida Atlantic University","California State University Fullerton",
     "Duke University","University of California Los Angeles","University of Miami","Northwestern University",
     "Georgetown University","University of Notre Dame","Boston University",
     "Elon University","University of Denver","Villanova University",
@@ -541,6 +841,7 @@ const SOCIAL_SCENE_AFFINITY = {
   ],
 
   focused: [
+    "Saint Mary's College of California","University of California Irvine","University of California Santa Cruz","Stetson University",
     "Massachusetts Institute of Technology","California Institute of Technology",
     "Harvey Mudd College","Carnegie Mellon University","University of Chicago",
     "Rose-Hulman Institute of Technology","Stevens Institute of Technology",
@@ -588,571 +889,253 @@ const SOCIAL_SCENE_AFFINITY = {
 
 // ── RELIGIOUS AFFILIATION MAP ────────────────────────────────────────────
 const RELIGIOUS_AFFILIATION = {
-
-  // ── CATHOLIC (Jesuit-heavy + diocesan) ───────────────────────────────────
   catholic: [
     'University of Notre Dame','Georgetown University','Boston College',
     'Gonzaga University','Villanova University','Fordham University',
     'Santa Clara University','University of San Diego',
     "Saint Mary's College of California",'University of San Francisco',
-    'Creighton University','Marquette University',
-    'Loyola University Chicago','Loyola Marymount University',
-    'Seton Hall University','Duquesne University','DePaul University',
-    'Providence College','Xavier University','Stonehill College'
+    'Creighton University',
+    'Marquette University'
   ],
-
-  // ── EVANGELICAL / NON-DENOMINATIONAL CHRISTIAN ───────────────────────────
-  evangelical: [
-    'Wheaton College','Biola University','Calvin University',
-    'Gordon College','Cedarville University'
-  ],
-
-  // ── METHODIST ────────────────────────────────────────────────────────────
-  methodist: [
-    'Duke University','Emory University','Boston University',
-    'SMU','Ohio Wesleyan University','Elon University',
-    'High Point University','Butler University','Drake University',
-    'Stetson University','DePauw University','Millsaps College',
-    'Hendrix College','College of Wooster'
-  ],
-
-  // ── BAPTIST ──────────────────────────────────────────────────────────────
-  baptist: [
-    'Baylor University','Wake Forest University','Belmont University',
-    'Furman University','Wofford College','University of Tulsa',
-    'Texas Christian University'
-  ],
-
-  // ── PRESBYTERIAN ─────────────────────────────────────────────────────────
-  presbyterian: [
-    'Davidson College','Macalester College','Centre College',
-    'College of Wooster','Furman University'
-  ],
-
-  // ── QUAKER (Friends) ─────────────────────────────────────────────────────
-  quaker: [
-    'Swarthmore College','Haverford College'
-  ],
-
-  // ── EPISCOPAL / ANGLICAN ─────────────────────────────────────────────────
-  episcopal: [
-    'University of the South','Hobart and William Smith Colleges'
-  ],
-
-  // ── LUTHERAN ─────────────────────────────────────────────────────────────
-  lutheran: [
-    'St. Olaf College','Valparaiso University','Augustana College',
-    'California Lutheran University','Gettysburg College',
-    'Muhlenberg College'
-  ],
-
-  // ── CHURCH OF CHRIST ─────────────────────────────────────────────────────
-  church_of_christ: [
-    'Pepperdine University','Lipscomb University','Abilene Christian University'
-  ],
-
-  // ── LDS / LATTER-DAY SAINTS ──────────────────────────────────────────────
   lds: [
     'Brigham Young University'
   ],
-
-  // ── SEVENTH-DAY ADVENTIST ────────────────────────────────────────────────
-  seventh_day_adventist: [
-    'Andrews University','Walla Walla University','Southern Adventist University'
-  ],
-
-  // ── JEWISH — Track A: institutional Hillel + campus Jewish life ─────────
-  // Student wants active Hillel, Shabbat programming, kosher options,
-  // Jewish Studies courses, significant Jewish enrollment on campus.
-  // Sorted by Hillel strength — strongest first.
-  jewish: [
-    // Tier 1: Dominant Hillel presence, 20%+ Jewish enrollment
-    'Brandeis University',             // Jewish-founded, 40%+ Jewish enrollment
-    'Indiana University',              // IU Hillel — frequently ranked #1 nationally
-    'University of Maryland College Park', // Clarice Smith Hillel — top-5 nationally
-    'University of Michigan',          // Hillel of Greater Ann Arbor — flagship scale
-    'Columbia University',
-    'University of Pennsylvania',
-    'Brown University',
-    'Cornell University',
-    // Tier 2: Strong Hillel, 10-20% Jewish enrollment
-    'George Washington University',
-    'American University',
-    'New York University',
-    'Tulane University',
-    'Emory University',
-    'University of Florida',
-    'Ohio State University',
-    'University of Wisconsin-Madison',
-    'University of Illinois Urbana-Champaign',
-    'Boston University',
-    'Tufts University',
-    'University of Massachusetts Amherst',
-    'Rutgers University',
-    'Binghamton University',
-    'Syracuse University',
-    // Tier 3: Active Hillel, Jewish community present
-    'University of Pittsburgh',
-    'University of Colorado Boulder',
-    'University of Arizona',
-    'University of Connecticut',
-    'University of Minnesota',
-    'University of Vermont',
-    'Skidmore College',
-    'Vassar College',
-    'Oberlin College',
-    'Yeshiva University'
-  ],
-
-  // ── JEWISH — Track B: strong Jewish social presence, secular environment ──
-  // Student identifies culturally/socially as Jewish but wants a secular campus.
-  // Wants to find their people without needing a formal religious structure.
-  // Prioritizes cities with dense Jewish communities and large Jewish student bodies.
-  jewish_community: [
-    // Major city campuses — Jewish community lives on and off campus
-    'New York University',             // NYC — largest Jewish student population in US
-    'Columbia University',             // NYC — Upper West Side proximity
-    'Boston University',              // Boston — large Jewish metro community
-    'Northeastern University',         // Boston — Jewish student presence
-    'Tufts University',               // Greater Boston
-    'George Washington University',    // DC — active Jewish social scene
-    'American University',            // DC corridor
-    'University of Michigan',          // Ann Arbor — large Jewish community
-    'University of Maryland College Park', // DC suburbs — dense Jewish population
-    'Indiana University',             // Midwest flagship, strong Jewish social culture
-    'Ohio State University',
-    'University of Wisconsin-Madison',
-    'University of Illinois Urbana-Champaign',
-    'University of Minnesota',
-    // Large flagships where Jewish community self-organizes
-    'University of Florida',
-    'University of Arizona',
-    'University of Colorado Boulder',
-    'Rutgers University',
-    'University of Pittsburgh',
-    'University of Connecticut',
-    'Syracuse University',
-    'Binghamton University',
-    // California — large Jewish communities in both metros
-    'UC Berkeley',
-    'UCLA',
-    'UC San Diego',
-    'UC Santa Barbara',
-    'University of Southern California',
-    // Jewish roots in smaller liberal contexts
-    'Vassar College',
-    'Oberlin College',
-    'Brandeis University',
-    'Tulane University',
-    'Emory University',
-    'University of Vermont',
-    'Skidmore College'
-  ],
-
-  // ── REFORMED CHRISTIAN ───────────────────────────────────────────────────
-  reformed: [
-    'Calvin University','Hope College','Dordt University'
-  ],
-
-  // ── BROAD PROTESTANT (catch-all for "Christian campus culture") ──────────
   protestant: [
     'Baylor University','Wake Forest University','Emory University',
     'Pepperdine University','Elon University','University of the South',
     'Duke University','Boston University','Tulane University',
     'Butler University','Drake University','Stetson University',
-    'Texas Christian University','Belmont University',
-    'Furman University','Wofford College','High Point University',
-    'Regent University','Davidson College','Ohio Wesleyan University',
-    'College of Wooster','Macalester College','University of Tulsa',
-    'California Lutheran University','Swarthmore College','Haverford College',
-    'DePauw University','St. Olaf College','Wheaton College',
-    'Biola University','Calvin University','Gordon College',
-    'Cedarville University','Gettysburg College','Muhlenberg College',
-    'Centre College','Valparaiso University',
-    'Augustana College'
+    'Texas Christian University',
+    'Belmont University',
+    'Furman University',
+    'Wofford College',
+    'High Point University',
+    'Regent University',
+    'Davidson College',
+    'Ohio Wesleyan University',
+    'College of Wooster',
+    'Macalester College',
+    'University of Tulsa',
+    'California Lutheran University',
+    'Swarthmore College',
+    'Haverford College'
   ],
-
-  // ── SECULAR PREFERRED ────────────────────────────────────────────────────
+  jewish: [
+    'Columbia University','University of Pennsylvania','Brown University',
+    'Cornell University','George Washington University',
+    'American University','New York University','Tulane University'
+  ],
   secular: ['__EXCLUDE_RELIGIOUS__'],
-
-  // ── NO PREFERENCE ────────────────────────────────────────────────────────
   no_preference: ['__ALL__']
 };
 
 const RELIGIOUS_CULTURE_SCHOOLS = [
-  // Schools where religious culture is pervasive and campus life is shaped by faith
   'Brigham Young University','Baylor University','Pepperdine University',
-  'University of the South','Stetson University',
-  'Wheaton College','Biola University','Calvin University',
-  'Gordon College','Cedarville University','Regent University',
-  'Belmont University','High Point University','Andrews University',
-  'Abilene Christian University','Lipscomb University'
+  'University of the South','Stetson University'
 ];
 
 // ── SCHOOL GPA RANGES (unweighted 4.0 scale) ─────────────────────────────
-const SCHOOL_CULTURE_CATEGORY = {
-  "University of Virginia":{"category":"Selective, Modest Local Premium","admit_rate":16.8,"tuition_gap_ratio":2.73},
-  "Georgia Institute of Technology":{"category":"Exclusive & Protective","admit_rate":14.1,"tuition_gap_ratio":2.86},
-  "University of Michigan":{"category":"Exclusive & Protective","admit_rate":15.6,"tuition_gap_ratio":3.44},
-  "UC San Diego":{"category":"Exclusive & Protective","admit_rate":26.7,"tuition_gap_ratio":3.04},
-  "University of California Irvine":{"category":"Exclusive & Protective","admit_rate":28.6,"tuition_gap_ratio":3.18},
-  "University of California Davis":{"category":"Exclusive & Protective","admit_rate":41.8,"tuition_gap_ratio":3.04},
-  "University of California Santa Cruz":{"category":"Exclusive & Protective","admit_rate":65.8,"tuition_gap_ratio":3.14},
-  "University of Washington":{"category":"Exclusive & Protective","admit_rate":39.1,"tuition_gap_ratio":3.33},
-  "Ohio State University":{"category":"Exclusive & Protective","admit_rate":60.6,"tuition_gap_ratio":3.02},
-  "Penn State University":{"category":"Selective, Modest Local Premium","admit_rate":60.6,"tuition_gap_ratio":2.02},
-  "Purdue University":{"category":"Exclusive & Protective","admit_rate":49.9,"tuition_gap_ratio":2.88},
-  "Indiana University":{"category":"Open Door, Outsiders Subsidize","admit_rate":78.2,"tuition_gap_ratio":3.45},
-  "University of Minnesota":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":79.8,"tuition_gap_ratio":2.23},
-  "Michigan State University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":84.8,"tuition_gap_ratio":2.66},
-  "University of Maryland College Park":{"category":"Exclusive & Protective","admit_rate":44.8,"tuition_gap_ratio":3.49},
-  "Rutgers University":{"category":"Selective, Modest Local Premium","admit_rate":58.1,"tuition_gap_ratio":2.09},
-  "Temple University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":80.4,"tuition_gap_ratio":1.69},
-  "University of Pittsburgh":{"category":"Selective, Modest Local Premium","admit_rate":58.1,"tuition_gap_ratio":1.89},
-  "Colorado School of Mines":{"category":"Selective, Modest Local Premium","admit_rate":60.7,"tuition_gap_ratio":2.09},
-  "University of Georgia":{"category":"Exclusive & Protective","admit_rate":37.7,"tuition_gap_ratio":2.77},
-  "University of Florida":{"category":"Exclusive & Protective","admit_rate":24.2,"tuition_gap_ratio":4.49},
-  "University of Alabama":{"category":"Open Door, Outsiders Subsidize","admit_rate":76.6,"tuition_gap_ratio":2.81},
-  "Auburn University":{"category":"Selective, Modest Local Premium","admit_rate":45.9,"tuition_gap_ratio":2.71},
-  "Louisiana State University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":73.3,"tuition_gap_ratio":2.4},
-  "University of Tennessee":{"category":"Selective, Modest Local Premium","admit_rate":41.6,"tuition_gap_ratio":2.41},
-  "University of Arkansas":{"category":"Open Door, Outsiders Subsidize","admit_rate":74.3,"tuition_gap_ratio":2.97},
-  "University of South Carolina":{"category":"Exclusive & Protective","admit_rate":60.2,"tuition_gap_ratio":2.84},
-  "Clemson University":{"category":"Selective, Modest Local Premium","admit_rate":38.3,"tuition_gap_ratio":2.63},
-  "University of Mississippi":{"category":"Open Door, Outsiders Subsidize","admit_rate":96.6,"tuition_gap_ratio":2.93},
-  "Mississippi State University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":77.6,"tuition_gap_ratio":2.71},
-  "Florida State University":{"category":"Exclusive & Protective","admit_rate":24.2,"tuition_gap_ratio":3.32},
-  "University of South Florida":{"category":"Selective, Modest Local Premium","admit_rate":43.2,"tuition_gap_ratio":2.7},
-  "University of Central Florida":{"category":"Exclusive & Protective","admit_rate":40.1,"tuition_gap_ratio":3.53},
-  "Florida Atlantic University":{"category":"Exclusive & Protective","admit_rate":66.1,"tuition_gap_ratio":3.55},
-  "University of Iowa":{"category":"Open Door, Outsiders Subsidize","admit_rate":83.6,"tuition_gap_ratio":2.96},
-  "Iowa State University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":88.7,"tuition_gap_ratio":2.68},
-  "University of Nebraska-Lincoln":{"category":"Open Door, Outsiders Subsidize","admit_rate":87.5,"tuition_gap_ratio":2.74},
-  "University of Kentucky":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":92.9,"tuition_gap_ratio":2.53},
-  "University of Missouri":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":78.5,"tuition_gap_ratio":2.43},
-  "Virginia Tech":{"category":"Selective, Modest Local Premium","admit_rate":54.8,"tuition_gap_ratio":2.37},
-  "North Carolina State University":{"category":"Exclusive & Protective","admit_rate":41.7,"tuition_gap_ratio":3.73},
-  "College of William and Mary":{"category":"Selective, Modest Local Premium","admit_rate":34.1,"tuition_gap_ratio":1.97},
-  "University of Oklahoma":{"category":"Open Door, Outsiders Subsidize","admit_rate":76.6,"tuition_gap_ratio":2.79},
-  "University of Kansas":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":93.5,"tuition_gap_ratio":2.51},
-  "University of Arizona":{"category":"Open Door, Outsiders Subsidize","admit_rate":86.1,"tuition_gap_ratio":3.04},
-  "Arizona State University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":89.9,"tuition_gap_ratio":2.71},
-  "University of Colorado Boulder":{"category":"Open Door, Outsiders Subsidize","admit_rate":78.1,"tuition_gap_ratio":2.87},
-  "Colorado State University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":88.5,"tuition_gap_ratio":2.6},
-  "University of Oregon":{"category":"Open Door, Outsiders Subsidize","admit_rate":88.3,"tuition_gap_ratio":2.76},
-  "Oregon State University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":77.3,"tuition_gap_ratio":2.65},
-  "Boise State University":{"category":"Open Door, Outsiders Subsidize","admit_rate":87.2,"tuition_gap_ratio":3.07},
-  "University of Utah":{"category":"Open Door, Outsiders Subsidize","admit_rate":86.0,"tuition_gap_ratio":3.21},
-  "California Polytechnic State University San Luis Obispo":{"category":"Selective, Modest Local Premium","admit_rate":31.3,"tuition_gap_ratio":2.55},
-  "UC Riverside":{"category":"Open Door, Outsiders Subsidize","admit_rate":76.4,"tuition_gap_ratio":3.19},
-  "California State University Long Beach":{"category":"Selective, Modest Local Premium","admit_rate":46.3,"tuition_gap_ratio":2.71},
-  "California State University Fullerton":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":90.5,"tuition_gap_ratio":2.69},
-  "California State University Northridge":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":93.5,"tuition_gap_ratio":2.69},
-  "California State University Los Angeles":{"category":"Open Door, Outsiders Subsidize","admit_rate":91.2,"tuition_gap_ratio":2.76},
-  "California State University Chico":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":92.7,"tuition_gap_ratio":2.49},
-  "California State University Fresno":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":95.3,"tuition_gap_ratio":2.71},
-  "University of Louisville":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":79.4,"tuition_gap_ratio":2.24},
-  "University of Connecticut":{"category":"Selective, Modest Local Premium","admit_rate":52.4,"tuition_gap_ratio":2.08},
-  "University of Massachusetts Amherst":{"category":"Selective, Modest Local Premium","admit_rate":59.7,"tuition_gap_ratio":2.28},
-  "University of Delaware":{"category":"Selective, Modest Local Premium","admit_rate":70.6,"tuition_gap_ratio":2.46},
-  "San Diego State University":{"category":"Selective, Modest Local Premium","admit_rate":36.2,"tuition_gap_ratio":2.44},
-  "UC Santa Barbara":{"category":"Exclusive & Protective","admit_rate":33.0,"tuition_gap_ratio":3.08},
-  "UC Berkeley":{"category":"Exclusive & Protective","admit_rate":11.0,"tuition_gap_ratio":3.09},
-  "University of California Los Angeles":{"category":"Exclusive & Protective","admit_rate":9.0,"tuition_gap_ratio":3.25},
-  "Texas A&M University":{"category":"Exclusive & Protective","admit_rate":57.4,"tuition_gap_ratio":3.05},
-  "Texas Tech University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":72.7,"tuition_gap_ratio":2.06},
-  "University of Texas at Austin":{"category":"Exclusive & Protective","admit_rate":26.6,"tuition_gap_ratio":3.84},
-  "University of North Carolina Chapel Hill":{"category":"Exclusive & Protective","admit_rate":15.3,"tuition_gap_ratio":4.58},
-  "Appalachian State University":{"category":"Open Door, Outsiders Subsidize","admit_rate":90.1,"tuition_gap_ratio":3.33},
-  "University of Tennessee at Chattanooga":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":81.1,"tuition_gap_ratio":1.77},
-  "Georgia State University":{"category":"Exclusive & Protective","admit_rate":55.4,"tuition_gap_ratio":2.87},
-  "James Madison University":{"category":"Selective, Modest Local Premium","admit_rate":71.5,"tuition_gap_ratio":2.22},
-  "University of Memphis":{"category":"Selective, Modest Local Premium","admit_rate":72.0,"tuition_gap_ratio":1.43},
-  "University of Illinois Urbana-Champaign":{"category":"Selective, Modest Local Premium","admit_rate":42.4,"tuition_gap_ratio":2.19},
-  "University of Wisconsin-Madison":{"category":"Exclusive & Protective","admit_rate":45.2,"tuition_gap_ratio":3.63},
-  "Marshall University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":95.7,"tuition_gap_ratio":2.22},
-  "Morehead State University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":77.2,"tuition_gap_ratio":1.49},
-  "North Dakota State University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":95.0,"tuition_gap_ratio":1.42},
-  "South Dakota State University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":98.3,"tuition_gap_ratio":1.38},
-  "Binghamton University":{"category":"Exclusive & Protective","admit_rate":38.6,"tuition_gap_ratio":2.88},
-  "University of Rhode Island":{"category":"Selective, Modest Local Premium","admit_rate":72.2,"tuition_gap_ratio":2.19},
-  "Fashion Institute of Technology":{"category":"Selective, Modest Local Premium","admit_rate":60.2,"tuition_gap_ratio":2.68},
-  "San Jose State University":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":84.6,"tuition_gap_ratio":2.5},
-  "University of Idaho":{"category":"Open Door, Outsiders Subsidize","admit_rate":75.5,"tuition_gap_ratio":3.12},
-  "University of Nevada Las Vegas":{"category":"Open Door, Outsiders Subsidize","admit_rate":96.2,"tuition_gap_ratio":2.81},
-  "University of Nevada Reno":{"category":"Open Door, Outsiders Subsidize","admit_rate":73.7,"tuition_gap_ratio":2.89},
-  "University of Montana":{"category":"Open Door, Outsiders Subsidize","admit_rate":95.9,"tuition_gap_ratio":3.94},
-  "Montana State University":{"category":"Open Door, Outsiders Subsidize","admit_rate":82.1,"tuition_gap_ratio":3.93},
-  "University of New Mexico":{"category":"Open Door, Outsiders Subsidize","admit_rate":95.2,"tuition_gap_ratio":3.26},
-  "New Mexico State University":{"category":"Open Door, Outsiders Subsidize","admit_rate":89.0,"tuition_gap_ratio":3.09},
-  "California State University San Bernardino":{"category":"Broadly Accessible, Modest Local Premium","admit_rate":93.7,"tuition_gap_ratio":2.56},
-  "Harvard University":{"category":"Private / Flat Tuition","admit_rate":3.6,"tuition_gap_ratio":1.0},
-  "Yale University":{"category":"Private / Flat Tuition","admit_rate":3.9,"tuition_gap_ratio":1.0},
-  "Princeton University":{"category":"Private / Flat Tuition","admit_rate":4.6,"tuition_gap_ratio":1.0},
-  "Columbia University":{"category":"Private / Flat Tuition","admit_rate":4.0,"tuition_gap_ratio":1.0},
-  "University of Pennsylvania":{"category":"Private / Flat Tuition","admit_rate":5.4,"tuition_gap_ratio":1.0},
-  "Brown University":{"category":"Private / Flat Tuition","admit_rate":5.4,"tuition_gap_ratio":1.0},
-  "Cornell University":{"category":"Private / Flat Tuition","admit_rate":8.8,"tuition_gap_ratio":1.0},
-  "Dartmouth College":{"category":"Private / Flat Tuition","admit_rate":5.4,"tuition_gap_ratio":1.0},
-  "Massachusetts Institute of Technology":{"category":"Private / Flat Tuition","admit_rate":4.5,"tuition_gap_ratio":1.0},
-  "Stanford University":{"category":"Private / Flat Tuition","admit_rate":3.6,"tuition_gap_ratio":1.0},
-  "California Institute of Technology":{"category":"Private / Flat Tuition","admit_rate":2.6,"tuition_gap_ratio":1.0},
-  "University of Chicago":{"category":"Private / Flat Tuition","admit_rate":4.5,"tuition_gap_ratio":1.0},
-  "Johns Hopkins University":{"category":"Private / Flat Tuition","admit_rate":6.4,"tuition_gap_ratio":1.0},
-  "Northwestern University":{"category":"Private / Flat Tuition","admit_rate":7.7,"tuition_gap_ratio":1.0},
-  "Duke University":{"category":"Private / Flat Tuition","admit_rate":5.7,"tuition_gap_ratio":1.0},
-  "Vanderbilt University":{"category":"Private / Flat Tuition","admit_rate":5.9,"tuition_gap_ratio":1.0},
-  "Georgetown University":{"category":"Private / Flat Tuition","admit_rate":12.9,"tuition_gap_ratio":1.0},
-  "Carnegie Mellon University":{"category":"Private / Flat Tuition","admit_rate":11.7,"tuition_gap_ratio":1.0},
-  "Emory University":{"category":"Private / Flat Tuition","admit_rate":10.7,"tuition_gap_ratio":1.0},
-  "University of Notre Dame":{"category":"Private / Flat Tuition","admit_rate":11.3,"tuition_gap_ratio":1.0},
-  "Williams College":{"category":"Private / Flat Tuition","admit_rate":8.2,"tuition_gap_ratio":1.0},
-  "Amherst College":{"category":"Private / Flat Tuition","admit_rate":9.0,"tuition_gap_ratio":1.0},
-  "Bowdoin College":{"category":"Private / Flat Tuition","admit_rate":7.1,"tuition_gap_ratio":1.0},
-  "Middlebury College":{"category":"Private / Flat Tuition","admit_rate":10.8,"tuition_gap_ratio":1.0},
-  "Pomona College":{"category":"Private / Flat Tuition","admit_rate":7.1,"tuition_gap_ratio":1.0},
-  "Claremont McKenna College":{"category":"Private / Flat Tuition","admit_rate":9.6,"tuition_gap_ratio":1.0},
-  "Harvey Mudd College":{"category":"Private / Flat Tuition","admit_rate":12.7,"tuition_gap_ratio":1.0},
-  "Webb Institute":{"category":"Private / Flat Tuition","admit_rate":14.0,"tuition_gap_ratio":1.0},
-  "Colorado College":{"category":"Private / Flat Tuition","admit_rate":18.5,"tuition_gap_ratio":1.0},
-  "University of the South":{"category":"Private / Flat Tuition","admit_rate":56.9,"tuition_gap_ratio":1.0},
-  "Boston College":{"category":"Private / Flat Tuition","admit_rate":16.4,"tuition_gap_ratio":1.0},
-  "Wake Forest University":{"category":"Private / Flat Tuition","admit_rate":21.7,"tuition_gap_ratio":1.0},
-  "Villanova University":{"category":"Private / Flat Tuition","admit_rate":27.0,"tuition_gap_ratio":1.0},
-  "Babson College":{"category":"Private / Flat Tuition","admit_rate":17.1,"tuition_gap_ratio":1.0},
-  "Boston University":{"category":"Private / Flat Tuition","admit_rate":11.1,"tuition_gap_ratio":1.0},
-  "Northeastern University":{"category":"Private / Flat Tuition","admit_rate":5.2,"tuition_gap_ratio":1.0},
-  "New York University":{"category":"Private / Flat Tuition","admit_rate":9.2,"tuition_gap_ratio":1.0},
-  "George Washington University":{"category":"Private / Flat Tuition","admit_rate":47.1,"tuition_gap_ratio":1.0},
-  "American University":{"category":"Private / Flat Tuition","admit_rate":62.0,"tuition_gap_ratio":1.0},
-  "Fordham University":{"category":"Private / Flat Tuition","admit_rate":59.3,"tuition_gap_ratio":1.0},
-  "Drexel University":{"category":"Private / Flat Tuition","admit_rate":79.4,"tuition_gap_ratio":1.0},
-  "Syracuse University":{"category":"Private / Flat Tuition","admit_rate":45.9,"tuition_gap_ratio":1.0},
-  "Case Western Reserve University":{"category":"Private / Flat Tuition","admit_rate":36.5,"tuition_gap_ratio":1.0},
-  "Rose-Hulman Institute of Technology":{"category":"Private / Flat Tuition","admit_rate":76.9,"tuition_gap_ratio":1.0},
-  "Stevens Institute of Technology":{"category":"Private / Flat Tuition","admit_rate":47.6,"tuition_gap_ratio":1.0},
-  "Worcester Polytechnic Institute":{"category":"Private / Flat Tuition","admit_rate":60.2,"tuition_gap_ratio":1.0},
-  "Kettering University":{"category":"Private / Flat Tuition","admit_rate":78.7,"tuition_gap_ratio":1.0},
-  "United States Military Academy":{"category":"Private / Flat Tuition","admit_rate":12.4,"tuition_gap_ratio":null},
-  "Stetson University":{"category":"Private / Flat Tuition","admit_rate":71.6,"tuition_gap_ratio":1.0},
-  "Northwestern University":{"category":"Private / Flat Tuition","admit_rate":7.7,"tuition_gap_ratio":1.0},
-  "University of Miami":{"category":"Private / Flat Tuition","admit_rate":18.9,"tuition_gap_ratio":1.0},
-  "Elon University":{"category":"Private / Flat Tuition","admit_rate":66.3,"tuition_gap_ratio":1.0},
-  "Baylor University":{"category":"Private / Flat Tuition","admit_rate":51.3,"tuition_gap_ratio":1.0},
-  "University of Denver":{"category":"Private / Flat Tuition","admit_rate":77.8,"tuition_gap_ratio":1.0},
-  "Brigham Young University":{"category":"Private / Flat Tuition","admit_rate":67.8,"tuition_gap_ratio":1.0},
-  "Gonzaga University":{"category":"Private / Flat Tuition","admit_rate":81.7,"tuition_gap_ratio":1.0},
-  "Pepperdine University":{"category":"Private / Flat Tuition","admit_rate":62.9,"tuition_gap_ratio":1.0},
-  "Santa Clara University":{"category":"Private / Flat Tuition","admit_rate":48.0,"tuition_gap_ratio":1.0},
-  "University of San Diego":{"category":"Private / Flat Tuition","admit_rate":52.4,"tuition_gap_ratio":1.0},
-  "University of San Francisco":{"category":"Private / Flat Tuition","admit_rate":61.7,"tuition_gap_ratio":1.0},
-  "Saint Mary's College of California":{"category":"Private / Flat Tuition","admit_rate":86.5,"tuition_gap_ratio":1.0},
-  "Tulane University":{"category":"Private / Flat Tuition","admit_rate":14.0,"tuition_gap_ratio":1.0},
-  "Creighton University":{"category":"Private / Flat Tuition","admit_rate":79.8,"tuition_gap_ratio":1.0},
-  "Butler University":{"category":"Private / Flat Tuition","admit_rate":85.1,"tuition_gap_ratio":1.0},
-  "Drake University":{"category":"Private / Flat Tuition","admit_rate":63.8,"tuition_gap_ratio":1.0},
-  "University of the South":{"category":"Private / Flat Tuition","admit_rate":56.9,"tuition_gap_ratio":1.0},
-  "University of Southern California":{"category":"Private / Flat Tuition","admit_rate":9.8,"tuition_gap_ratio":1.0},
-  "Rice University":{"category":"Private / Flat Tuition","admit_rate":8.0,"tuition_gap_ratio":1.0},
-  "Southern Methodist University":{"category":"Private / Flat Tuition","admit_rate":63.3,"tuition_gap_ratio":1.0},
-  "Texas Christian University":{"category":"Private / Flat Tuition","admit_rate":44.5,"tuition_gap_ratio":1.0},
-  "Belmont University":{"category":"Private / Flat Tuition","admit_rate":95.3,"tuition_gap_ratio":1.0},
-  "Furman University":{"category":"Private / Flat Tuition","admit_rate":43.0,"tuition_gap_ratio":1.0},
-  "Wofford College":{"category":"Private / Flat Tuition","admit_rate":51.9,"tuition_gap_ratio":1.0},
-  "Rollins College":{"category":"Private / Flat Tuition","admit_rate":47.5,"tuition_gap_ratio":1.0},
-  "High Point University":{"category":"Private / Flat Tuition","admit_rate":75.3,"tuition_gap_ratio":1.0},
-  "University of Richmond":{"category":"Private / Flat Tuition","admit_rate":22.2,"tuition_gap_ratio":1.0},
-  "Washington and Lee University":{"category":"Private / Flat Tuition","admit_rate":14.0,"tuition_gap_ratio":1.0},
-  "Howard University":{"category":"Private / Flat Tuition","admit_rate":41.3,"tuition_gap_ratio":1.0},
-  "Spelman College":{"category":"Private / Flat Tuition","admit_rate":24.9,"tuition_gap_ratio":1.0},
-  "Flagler College":{"category":"Private / Flat Tuition","admit_rate":80.8,"tuition_gap_ratio":1.0},
-  "Regent University":{"category":"Private / Flat Tuition","admit_rate":38.1,"tuition_gap_ratio":1.0},
-  "Davidson College":{"category":"Private / Flat Tuition","admit_rate":13.4,"tuition_gap_ratio":1.0},
-  "Marquette University":{"category":"Private / Flat Tuition","admit_rate":81.3,"tuition_gap_ratio":1.0},
-  "Carleton College":{"category":"Private / Flat Tuition","admit_rate":20.4,"tuition_gap_ratio":1.0},
-  "Kenyon College":{"category":"Private / Flat Tuition","admit_rate":31.0,"tuition_gap_ratio":1.0},
-  "Oberlin College":{"category":"Private / Flat Tuition","admit_rate":34.2,"tuition_gap_ratio":1.0},
-  "Ohio Wesleyan University":{"category":"Private / Flat Tuition","admit_rate":55.6,"tuition_gap_ratio":1.0},
-  "Denison University":{"category":"Private / Flat Tuition","admit_rate":17.4,"tuition_gap_ratio":1.0},
-  "College of Wooster":{"category":"Private / Flat Tuition","admit_rate":59.5,"tuition_gap_ratio":1.0},
-  "Grinnell College":{"category":"Private / Flat Tuition","admit_rate":14.5,"tuition_gap_ratio":1.0},
-  "Macalester College":{"category":"Private / Flat Tuition","admit_rate":28.5,"tuition_gap_ratio":1.0},
-  "Lehigh University":{"category":"Private / Flat Tuition","admit_rate":25.9,"tuition_gap_ratio":1.0},
-  "Quinnipiac University":{"category":"Private / Flat Tuition","admit_rate":72.2,"tuition_gap_ratio":1.0},
-  "Ithaca College":{"category":"Private / Flat Tuition","admit_rate":69.0,"tuition_gap_ratio":1.0},
-  "Reed College":{"category":"Private / Flat Tuition","admit_rate":24.6,"tuition_gap_ratio":1.0},
-  "Union College":{"category":"Private / Flat Tuition","admit_rate":43.9,"tuition_gap_ratio":1.0},
-  "Franklin and Marshall College":{"category":"Private / Flat Tuition","admit_rate":28.2,"tuition_gap_ratio":1.0},
-  "Bryn Mawr College":{"category":"Private / Flat Tuition","admit_rate":29.4,"tuition_gap_ratio":1.0},
-  "Occidental College":{"category":"Private / Flat Tuition","admit_rate":44.2,"tuition_gap_ratio":1.0},
-  "Bentley University":{"category":"Private / Flat Tuition","admit_rate":45.1,"tuition_gap_ratio":1.0},
-  "Rhode Island School of Design":{"category":"Private / Flat Tuition","admit_rate":18.7,"tuition_gap_ratio":1.0},
-  "Berklee College of Music":{"category":"Private / Flat Tuition","admit_rate":43.5,"tuition_gap_ratio":1.0},
-  "Pratt Institute":{"category":"Private / Flat Tuition","admit_rate":73.2,"tuition_gap_ratio":1.0},
-  "Rochester Institute of Technology":{"category":"Private / Flat Tuition","admit_rate":66.9,"tuition_gap_ratio":1.0},
-  "University of Tulsa":{"category":"Private / Flat Tuition","admit_rate":61.5,"tuition_gap_ratio":1.0},
-  "California Lutheran University":{"category":"Private / Flat Tuition","admit_rate":75.7,"tuition_gap_ratio":1.0},
-  "Hamilton College":{"category":"Private / Flat Tuition","admit_rate":13.6,"tuition_gap_ratio":1.0},
-  "Swarthmore College":{"category":"Private / Flat Tuition","admit_rate":7.5,"tuition_gap_ratio":1.0},
-  "Haverford College":{"category":"Private / Flat Tuition","admit_rate":12.4,"tuition_gap_ratio":1.0},
-  "Vassar College":{"category":"Private / Flat Tuition","admit_rate":18.6,"tuition_gap_ratio":1.0},
-  "Colgate University":{"category":"Private / Flat Tuition","admit_rate":13.9,"tuition_gap_ratio":1.0},
-  "Colby College":{"category":"Private / Flat Tuition","admit_rate":7.1,"tuition_gap_ratio":1.0},
-  "Bates College":{"category":"Private / Flat Tuition","admit_rate":13.3,"tuition_gap_ratio":1.0},
-  "Bucknell University":{"category":"Private / Flat Tuition","admit_rate":28.9,"tuition_gap_ratio":1.0},
-  "Providence College":{"category":"Private / Flat Tuition","admit_rate":50.9,"tuition_gap_ratio":1.0},
-  "Xavier University":{"category":"Private / Flat Tuition","admit_rate":86.4,"tuition_gap_ratio":1.0}
-};
-
 const SCHOOL_GPA_RANGES = {
-  "Harvard University":{min:3.9},"Yale University":{min:3.9},
-  "Princeton University":{min:3.9},"Columbia University":{min:3.9},
-  "University of Pennsylvania":{min:3.9},"Brown University":{min:3.9},
-  "Cornell University":{min:3.8},"Dartmouth College":{min:3.9},
-  "Massachusetts Institute of Technology":{min:3.9},
-  "Stanford University":{min:3.9},"California Institute of Technology":{min:3.9},
-  "University of Chicago":{min:3.9},"Johns Hopkins University":{min:3.8},
-  "Northwestern University":{min:3.8},"Duke University":{min:3.8},
-  "Vanderbilt University":{min:3.8},"Georgetown University":{min:3.8},
-  "Carnegie Mellon University":{min:3.7},"Emory University":{min:3.7},
-  "University of Notre Dame":{min:3.8},"Williams College":{min:3.9},
-  "Amherst College":{min:3.9},"Bowdoin College":{min:3.8},
-  "Middlebury College":{min:3.7},"Pomona College":{min:3.8},
-  "Claremont McKenna College":{min:3.8},"Harvey Mudd College":{min:3.9},
-  "Webb Institute":{min:3.7},"Deep Springs College":{min:3.9},
-  "Colorado College":{min:3.7},"University of the South":{min:3.4},
-  "Boston College":{min:3.7},"University of Virginia":{min:3.8},
-  "Wake Forest University":{min:3.7},"Villanova University":{min:3.6},
-  "Georgia Institute of Technology":{min:3.7},"University of Michigan":{min:3.7},
-  "UC San Diego":{min:3.8},"University of California Irvine":{min:3.7},
-  "University of California Davis":{min:3.6},
-  "University of California Santa Cruz":{min:3.4},
-  "University of Washington":{min:3.6},"Ohio State University":{min:3.5},
-  "Penn State University":{min:3.4},"Purdue University":{min:3.5},
-  "Indiana University":{min:3.2},"University of Minnesota":{min:3.5},
-  "Michigan State University":{min:3.3},
-  "University of Maryland College Park":{min:3.5},
-  "Rutgers University":{min:3.3},"Babson College":{min:3.5},
-  "Boston University":{min:3.6},"Northeastern University":{min:3.6},
-  "New York University":{min:3.6},"George Washington University":{min:3.5},
-  "American University":{min:3.3},"Fordham University":{min:3.4},
-  "Drexel University":{min:3.3},"Syracuse University":{min:3.3},
-  "Temple University":{min:3.0},"University of Pittsburgh":{min:3.5},
-  "Case Western Reserve University":{min:3.7},
-  "Rose-Hulman Institute of Technology":{min:3.5},
-  "Stevens Institute of Technology":{min:3.5},
-  "Worcester Polytechnic Institute":{min:3.5},
-  "Colorado School of Mines":{min:3.5},"Kettering University":{min:3.0},
-  "United States Military Academy":{min:3.7},
-  "University of Georgia":{min:3.5},"University of Florida":{min:3.7},
-  "University of Alabama":{min:3.0},"Auburn University":{min:3.3},
-  "Louisiana State University":{min:3.0},"University of Tennessee":{min:3.2},
-  "University of Arkansas":{min:3.0},"University of South Carolina":{min:3.0},
-  "Clemson University":{min:3.5},"University of Mississippi":{min:2.8},
-  "Mississippi State University":{min:2.8},"Florida State University":{min:3.4},
-  "University of South Florida":{min:3.0},
-  "University of Central Florida":{min:3.2},
-  "Florida Atlantic University":{min:2.8},"Stetson University":{min:3.0},
-  "Northwestern University":{min:3.8},"University of Iowa":{min:3.0},
-  "Iowa State University":{min:3.0},"University of Nebraska-Lincoln":{min:3.0},
-  "University of Kentucky":{min:3.0},"University of Missouri":{min:3.0},
-  "Virginia Tech":{min:3.4},
-  "North Carolina State University":{min:3.5},
-  "University of Miami":{min:3.6},"Elon University":{min:3.3},
-  "College of William and Mary":{min:3.8},
-  "University of Oklahoma":{min:3.2},"University of Kansas":{min:3.0},
-  "Baylor University":{min:3.4},"University of Arizona":{min:3.0},
-  "Arizona State University":{min:2.8},
-  "University of Colorado Boulder":{min:3.0},
-  "Colorado State University":{min:3.0},"University of Denver":{min:3.3},
-  "University of Oregon":{min:3.2},"Oregon State University":{min:3.0},
-  "Boise State University":{min:2.8},"University of Utah":{min:3.0},
-  "Brigham Young University":{min:3.5},"Gonzaga University":{min:3.6},
-  "Pepperdine University":{min:3.5},"Santa Clara University":{min:3.5},
-  "University of San Diego":{min:3.4},"University of San Francisco":{min:3.2},
-  "Saint Mary's College of California":{min:3.2},
-  "California Polytechnic State University San Luis Obispo":{min:3.5},
-  "UC Riverside":{min:3.2},
-  "California State University Long Beach":{min:2.8},
-  "California State University Fullerton":{min:2.8},
-  "California State University Northridge":{min:2.5},
-  "California State University Los Angeles":{min:2.5},
-  "California State University Chico":{min:2.8},
-  "California State University Fresno":{min:2.8},
-  "Tulane University":{min:3.5},"Creighton University":{min:3.4},
-  "Butler University":{min:3.2},"Drake University":{min:3.2},
-  "University of Louisville":{min:3.0},"University of Connecticut":{min:3.4},"University of Massachusetts Amherst":{min:3.5},"University of Delaware":{min:3.3},
-  "University of the South":{min:3.4},
-  "San Diego State University":{"min":3.3},
+  "Harvard University":{"min":3.9},
+  "Yale University":{"min":3.9},
+  "Princeton University":{"min":3.9},
+  "Columbia University":{"min":3.9},
+  "University of Pennsylvania":{"min":3.9},
+  "Brown University":{"min":3.9},
+  "Cornell University":{"min":3.8},
+  "Dartmouth College":{"min":3.9},
+  "Massachusetts Institute of Technology":{"min":3.9},
+  "Stanford University":{"min":3.9},
+  "California Institute of Technology":{"min":3.9},
+  "University of Chicago":{"min":3.9},
+  "Johns Hopkins University":{"min":3.8},
+  "Northwestern University":{"min":3.8},
+  "Duke University":{"min":3.8},
+  "Vanderbilt University":{"min":3.8},
+  "Georgetown University":{"min":3.8},
+  "Carnegie Mellon University":{"min":3.7},
+  "Emory University":{"min":3.7},
+  "University of Notre Dame":{"min":3.8},
+  "Williams College":{"min":3.9},
+  "Amherst College":{"min":3.9},
+  "Bowdoin College":{"min":3.8},
+  "Middlebury College":{"min":3.7},
+  "Pomona College":{"min":3.8},
+  "Claremont McKenna College":{"min":3.8},
+  "Harvey Mudd College":{"min":3.9},
+  "Webb Institute":{"min":3.7},
+  "Deep Springs College":{"min":3.9},
+  "Colorado College":{"min":3.7},
+  "University of the South":{"min":3.4},
+  "Boston College":{"min":3.7},
+  "University of Virginia":{"min":3.8},
+  "Wake Forest University":{"min":3.7},
+  "Villanova University":{"min":3.6},
+  "Georgia Institute of Technology":{"min":3.7},
+  "University of Michigan":{"min":3.7},
+  "UC San Diego":{"min":3.8},
+  "University of California Irvine":{"min":3.7},
+  "University of California Davis":{"min":3.6},
+  "University of California Santa Cruz":{"min":3.4},
+  "University of Washington":{"min":3.6},
+  "Ohio State University":{"min":3.5},
+  "Penn State University":{"min":3.4},
+  "Purdue University":{"min":3.5},
+  "Indiana University":{"min":3.2},
+  "University of Minnesota":{"min":3.5},
+  "Michigan State University":{"min":3.3},
+  "University of Maryland College Park":{"min":3.5},
+  "Rutgers University":{"min":3.3},
+  "Babson College":{"min":3.5},
+  "Boston University":{"min":3.6},
+  "Northeastern University":{"min":3.6},
+  "New York University":{"min":3.6},
+  "George Washington University":{"min":3.5},
+  "American University":{"min":3.3},
+  "Fordham University":{"min":3.4},
+  "Drexel University":{"min":3.3},
+  "Syracuse University":{"min":3.3},
+  "Temple University":{"min":3.0},
+  "University of Pittsburgh":{"min":3.5},
+  "Case Western Reserve University":{"min":3.7},
+  "Rose-Hulman Institute of Technology":{"min":3.5},
+  "Stevens Institute of Technology":{"min":3.5},
+  "Worcester Polytechnic Institute":{"min":3.5},
+  "Colorado School of Mines":{"min":3.5},
+  "Kettering University":{"min":3.0},
+  "United States Military Academy":{"min":3.8},
+  "University of Georgia":{"min":3.5},
+  "University of Florida":{"min":3.7},
+  "University of Alabama":{"min":3.0},
+  "Auburn University":{"min":3.3},
+  "Louisiana State University":{"min":3.0},
+  "University of Tennessee":{"min":3.2},
+  "University of Arkansas":{"min":3.0},
+  "University of South Carolina":{"min":3.0},
+  "Clemson University":{"min":3.5},
+  "University of Mississippi":{"min":2.8},
+  "Mississippi State University":{"min":2.8},
+  "Florida State University":{"min":3.4},
+  "University of South Florida":{"min":3.0},
+  "University of Central Florida":{"min":3.2},
+  "Florida Atlantic University":{"min":2.8},
+  "Stetson University":{"min":3.0},
+  "University of Iowa":{"min":3.0},
+  "Iowa State University":{"min":3.0},
+  "University of Nebraska-Lincoln":{"min":3.0},
+  "University of Kentucky":{"min":3.0},
+  "University of Missouri":{"min":3.0},
+  "Virginia Tech":{"min":3.4},
+  "North Carolina State University":{"min":3.5},
+  "University of Miami":{"min":3.6},
+  "Elon University":{"min":3.3},
+  "College of William and Mary":{"min":3.8},
+  "University of Oklahoma":{"min":3.2},
+  "University of Kansas":{"min":3.0},
+  "Baylor University":{"min":3.4},
+  "University of Arizona":{"min":3.0},
+  "Arizona State University":{"min":2.8},
+  "University of Colorado Boulder":{"min":3.0},
+  "Colorado State University":{"min":3.0},
+  "University of Denver":{"min":3.3},
+  "University of Oregon":{"min":3.2},
+  "Oregon State University":{"min":3.0},
+  "Boise State University":{"min":2.8},
+  "University of Utah":{"min":3.0},
+  "Brigham Young University":{"min":3.5},
+  "Gonzaga University":{"min":3.6},
+  "Pepperdine University":{"min":3.5},
+  "Santa Clara University":{"min":3.5},
+  "University of San Diego":{"min":3.4},
+  "University of San Francisco":{"min":3.2},
+  "Saint Mary's College of California":{"min":3.2},
+  "California Polytechnic State University San Luis Obispo":{"min":3.5},
+  "UC Riverside":{"min":3.2},
+  "California State University Long Beach":{"min":2.8},
+  "California State University Fullerton":{"min":2.8},
+  "California State University Northridge":{"min":2.5},
+  "California State University Los Angeles":{"min":2.5},
+  "California State University Chico":{"min":2.8},
+  "California State University Fresno":{"min":2.8},
+  "Tulane University":{"min":3.5},
+  "Creighton University":{"min":3.4},
+  "Butler University":{"min":3.2},
+  "Drake University":{"min":3.2},
+  "University of Louisville":{"min":3.0},
+  "University of Connecticut":{"min":3.4},
+  "University of Massachusetts Amherst":{"min":3.5},
+  "University of Delaware":{"min":3.3},
+  "San Diego State University":{"min":3.5},
   "UC Santa Barbara":{"min":3.8},
   "University of Southern California":{"min":3.7},
-  "UC Berkeley":{"min":3.9},"University of California Los Angeles":{"min":3.9},
+  "UC Berkeley":{"min":3.9},
+  "University of California Los Angeles":{"min":3.9},
   "Rice University":{"min":3.9},
   "Southern Methodist University":{"min":3.5},
   "Texas Christian University":{"min":3.5},
-  "Texas A&M University":{"min":3.5},
-  "Texas Tech University":{"min":3.2},
+  "Texas A&M University":{"min":3.7},
+  "Texas Tech University":{"min":3.5},
   "University of Texas at Austin":{"min":3.7},
   "University of North Carolina Chapel Hill":{"min":3.8},
-  "Belmont University":{"min":3.4},
-  "Furman University":{"min":3.7},
+  "Belmont University":{"min":3.5},
+  "Furman University":{"min":3.6},
   "Wofford College":{"min":3.5},
-  "Rollins College":{"min":3.4},
+  "Rollins College":{"min":3.5},
   "High Point University":{"min":3.3},
   "Appalachian State University":{"min":3.3},
-  "University of Tennessee at Chattanooga":{"min":3.2},
+  "University of Tennessee at Chattanooga":{"min":3.1},
   "University of Richmond":{"min":3.7},
   "Washington and Lee University":{"min":3.8},
-  "Howard University":{"min":3.5},
-  "Spelman College":{"min":3.6},
+  "Howard University":{"min":3.4},
+  "Spelman College":{"min":3.5},
   "Georgia State University":{"min":3.2},
-  "Flagler College":{"min":3.2},
+  "Flagler College":{"min":3.1},
   "James Madison University":{"min":3.5},
   "University of Memphis":{"min":3.1},
-  "Regent University":{"min":3.2},
+  "Regent University":{"min":3.0},
   "Davidson College":{"min":3.7},
-  "University of Illinois Urbana-Champaign":{"min":3.7},
-  "University of Wisconsin-Madison":{"min":3.7},
-  "Marquette University":{"min":3.5},
-  "Carleton College":{"min":3.9},
-  "Kenyon College":{"min":3.7},
+  "University of Illinois Urbana-Champaign":{"min":3.8},
+  "University of Wisconsin-Madison":{"min":3.8},
+  "Marquette University":{"min":3.6},
+  "Carleton College":{"min":3.8},
+  "Kenyon College":{"min":3.6},
   "Oberlin College":{"min":3.7},
   "Ohio Wesleyan University":{"min":3.3},
-  "Denison University":{"min":3.6},
+  "Denison University":{"min":3.5},
   "College of Wooster":{"min":3.4},
   "Marshall University":{"min":3.0},
   "Morehead State University":{"min":3.0},
-  "North Dakota State University":{"min":3.1},
+  "North Dakota State University":{"min":3.2},
   "South Dakota State University":{"min":3.0},
   "Grinnell College":{"min":3.8},
   "Macalester College":{"min":3.7},
   "Binghamton University":{"min":3.7},
   "Lehigh University":{"min":3.7},
-  "Quinnipiac University":{"min":3.3},
-  "University of Rhode Island":{"min":3.2},
+  "Quinnipiac University":{"min":3.4},
+  "University of Rhode Island":{"min":3.3},
   "Ithaca College":{"min":3.4},
-  "Reed College":{"min":3.8},
-  "Union College":{"min":3.6},
-  "Franklin and Marshall College":{"min":3.6},
-  "Bryn Mawr College":{"min":3.8},
-  "Occidental College":{"min":3.7},
+  "Reed College":{"min":3.7},
+  "Union College":{"min":3.5},
+  "Franklin and Marshall College":{"min":3.7},
+  "Bryn Mawr College":{"min":3.7},
+  "Occidental College":{"min":3.6},
   "Bentley University":{"min":3.5},
-  "Rhode Island School of Design":{"min":3.5},
-  "Berklee College of Music":{"min":3.2},
-  "Pratt Institute":{"min":3.4},
-  "Rochester Institute of Technology":{"min":3.5},
-  "Fashion Institute of Technology":{"min":3.2},
+  "Rhode Island School of Design":{"min":3.4},
+  "Berklee College of Music":{"min":3.0},
+  "Pratt Institute":{"min":3.2},
+  "Rochester Institute of Technology":{"min":3.4},
+  "Fashion Institute of Technology":{"min":3.0},
   "San Jose State University":{"min":3.2},
   "University of Tulsa":{"min":3.5},
-  "University of Idaho":{"min":3.1},
+  "University of Idaho":{"min":3.0},
   "University of Nevada Las Vegas":{"min":3.0},
-  "University of Nevada Reno":{"min":3.1},
+  "University of Nevada Reno":{"min":3.2},
   "University of Montana":{"min":3.0},
-  "Montana State University":{"min":3.1},
+  "Montana State University":{"min":3.0},
   "University of New Mexico":{"min":3.0},
-  "New Mexico State University":{"min":3.0},
-  "California Lutheran University":{"min":3.3},
-  "California State University San Bernardino":{"min":3.0},
+  "New Mexico State University":{"min":2.8},
+  "California Lutheran University":{"min":3.2},
+  "California State University San Bernardino":{"min":2.8},
   "Hamilton College":{"min":3.8},
   "Swarthmore College":{"min":3.9},
   "Haverford College":{"min":3.8},
@@ -1161,169 +1144,44 @@ const SCHOOL_GPA_RANGES = {
   "Colby College":{"min":3.7},
   "Bates College":{"min":3.6},
   "Bucknell University":{"min":3.6},
+  "UCLA":{"min":3.9},
+  "USC":{"min":3.8},
+  "UT Austin":{"min":3.8},
+  "SMU":{"min":3.7},
+  "TCU":{"min":3.7},
+  "Barnard College":{"min":3.9},
+  "Wesleyan University":{"min":3.8},
+  "Dickinson College":{"min":3.6},
+  "Gettysburg College":{"min":3.6},
   "Providence College":{"min":3.5},
-  "Xavier University":{"min":3.4},
+  "Illinois Wesleyan University":{"min":3.5},
+  "University of Vermont":{"min":3.5},
+  "St. John's College":{"min":3.5},
+  "United States Naval Academy":{"min":3.8},
+  "United States Air Force Academy":{"min":3.8},
+  "United States Coast Guard Academy":{"min":3.6},
+  "The Citadel":{"min":3.2},
+  "Virginia Military Institute":{"min":3.3},
+  "Norwich University":{"min":3.0},
+  "United States Merchant Marine Academy":{"min":3.5},
+  "Maine Maritime Academy":{"min":3.0},
+  "Massachusetts Maritime Academy":{"min":3.0},
+  "Texas A&M University at Galveston":{"min":3.2},
+  "California State University Maritime Academy":{"min":3.0},
+  "San Francisco State University":{"min":3.0},
+  "Eastern Washington University":{"min":3.0},
+  "University of Hawaii at Manoa":{"min":3.2},
+  "University of Wyoming":{"min":3.0},
+  "East Carolina University":{"min":3.1},
+  "Texas State University":{"min":3.1},
+  "Sam Houston State University":{"min":3.0},
+  "University of Alaska Fairbanks":{"min":2.8},
+  "College of the Ozarks":{"min":3.0},
+  "University of North Texas":{"min":3.1},
+  "Kennesaw State University":{"min":3.1}
 };
 
-
-// ── GPA TIER ENGINE ────────────────────────────────────────────────────────
-// Converts a normalized GPA (0-4.0 unweighted) into a tier that drives
-// the consultant expansion layer. Tiers are non-judgmental labels — they
-// open doors for the consultant, never shown to the family.
-//
-// Tier definitions (unweighted 4.0 scale):
-//   reach      3.7+  — qualifies for highly selective + honors tracks
-//   competitive 3.3-3.69 — qualifies for selective universities
-//   solid      2.7-3.29 — qualifies for strong regional and state schools
-//   open       <2.7  — broad access tier, strong community college pathways
-
-
-// ── HONORS COLLEGE INTELLIGENCE ────────────────────────────────────────────
-// Schools where the honors track fundamentally changes the academic experience.
-// Used by the consultant expansion layer — never shown to families directly.
-// GPA threshold = minimum to be competitive for the honors program.
-// Source: publicly available honors college admission data.
-
-const HONORS_COLLEGES = {
-  "Arizona State University":              { name: "Barrett Honors College",          gpa_min: 3.6, note: "One of the largest honors colleges in the US — small seminar culture inside a major research university. Strong pipeline to graduate school and competitive fellowships." },
-  "University of Georgia":                 { name: "Foundation Fellowship / Honors",  gpa_min: 3.7, note: "Foundation Fellowship is one of the most competitive merit scholarships in the South. Honors Program offers research-intensive tracks across all colleges." },
-  "University of Florida":                 { name: "UF Honors Program",               gpa_min: 3.7, note: "Small cohort experience at a flagship research university. Strong pre-med, engineering, and business honors tracks." },
-  "University of South Carolina":          { name: "South Carolina Honors College",   gpa_min: 3.5, note: "Nationally ranked honors college with its own residence hall, faculty, and curriculum. Consistently produces Goldwater and Fulbright scholars." },
-  "University of Alabama":                 { name: "UA Honors College",               gpa_min: 3.5, note: "Significant merit aid available for out-of-state students with strong profiles. Small-school feel with research university resources." },
-  "University of Arkansas":                { name: "Honors College",                  gpa_min: 3.5, note: "Chancellor's Scholarship covers full tuition for top applicants. Strong STEM and business honors tracks." },
-  "University of Tennessee, Knoxville":    { name: "Honors and Scholars Programs",    gpa_min: 3.5, note: "Haslam Scholars Program is the flagship merit scholarship. Strong engineering and pre-health honors tracks." },
-  "University of Texas at Austin":         { name: "Plan II Liberal Arts / BHP",      gpa_min: 3.8, note: "Plan II is one of the most prestigious honors degrees in the country. Business Honors Program (BHP) rivals Wharton for undergrad business." },
-  "Pennsylvania State University":         { name: "Schreyer Honors College",         gpa_min: 3.6, note: "Full merit scholarship for top students. One of the most funded honors colleges at a public university." },
-  "University of Michigan":                { name: "LSA Honors / Ross BBA",           gpa_min: 3.8, note: "Ross School of Business BBA is among the top undergraduate business programs nationally. LSA Honors adds interdisciplinary research depth." },
-  "University of Virginia":                { name: "Echols Scholars / Rodman Scholars", gpa_min: 3.8, note: "Echols Scholars (College of Arts & Sciences) and Rodman Scholars (Engineering) offer curriculum freedom and research access unavailable to general admits." },
-  "University of North Carolina Chapel Hill": { name: "Morehead-Cain / Robertson Scholars", gpa_min: 3.7, note: "Morehead-Cain is one of the most prestigious merit scholarships in the US — full funding plus summer enrichment programs." },
-  "University of Maryland College Park":   { name: "College Park Scholars / Gemstone", gpa_min: 3.5, note: "Gemstone Honors Program is a four-year team research program — unusual at the undergraduate level. College Park Scholars offers thematic living-learning communities." },
-  "Ohio State University":                 { name: "University Honors",               gpa_min: 3.5, note: "Knowlton School of Architecture and Fisher College of Business have strong honors tracks. Research-intensive with significant merit aid available." },
-  "University of Colorado Boulder":        { name: "Farrand Honors Program / Norlin Scholars", gpa_min: 3.5, note: "Norlin Scholars is a merit fellowship with community leadership focus. Farrand offers interdisciplinary curriculum in a research university setting." },
-};
-
-function getGPATier(normalizedGPA) {
-  if (normalizedGPA === null || normalizedGPA === undefined) return null;
-  const gpa = parseFloat(normalizedGPA);
-  if (isNaN(gpa)) return null;
-  if (gpa >= 3.7) return 'reach';
-  if (gpa >= 3.3) return 'competitive';
-  if (gpa >= 2.7) return 'solid';
-  return 'open';
-}
-
-// GPA tier thresholds for school-level filtering
-const GPA_TIER_THRESHOLDS = {
-  reach:       3.7,
-  competitive: 3.3,
-  solid:       2.7,
-  open:        0
-};
-
-
-// ── CONSULTANT EXPANSION LAYER ─────────────────────────────────────────────
-// Surfaces reaches and honors tracks the student didn't ask for but qualifies for.
-// Shown to consultant only — never to the family.
-// Rules:
-//   1. Must be within the student's selected region(s)
-//   2. GPA must meet the honors threshold
-//   3. Returns up to 5 schools with honors context attached
-
-function getConsultantExpansion(gpaTier, normalizedGPA, regionPool, campusScale, primaryMatches) {
-  if (!gpaTier || gpaTier === 'open') return [];
-  if (!normalizedGPA) return [];
-
-  const primarySet = new Set(primaryMatches || []);
-  const results = [];
-
-  Object.entries(HONORS_COLLEGES).forEach(([school, honors]) => {
-    // Hard gates
-    if (primarySet.has(school)) return;
-    if (regionPool && !regionPool.includes(school)) return;
-    if (normalizedGPA < honors.gpa_min) return;
-
-    // Scale gate — strictly enforce the student's chosen size for expansion
-    if (campusScale && campusScale !== 'no_preference') {
-      const enroll = SCHOOL_ENROLLMENT[school] || 0;
-      const scale = SCALE_MAP[campusScale];
-      // Only skip schools significantly smaller than the requested range
-      // but always filter out schools that exceed the upper bound
-      if (scale) {
-        if (enroll > scale.max) return;
-        if (enroll > 0 && enroll < scale.min * 0.5) return;
-      }
-    }
-
-    results.push({
-      name: school,
-      honors_name: honors.name,
-      honors_gpa_min: honors.gpa_min,
-      honors_note: honors.note,
-      type: 'consultant_expansion',
-      reason: 'honors_eligible'
-    });
-  });
-
-  // Sort by GPA threshold descending — most selective first
-  return results
-    .sort((a, b) => b.honors_gpa_min - a.honors_gpa_min)
-    .slice(0, 5);
-}
-
-// ═══════════════════════════════════════════════════════════════════════
-// S4 — matchUniversities() — IMPL-003 Structured Pool Architecture
-// OQ-001/002/003 resolutions applied (signed off July 2026)
-// ═══════════════════════════════════════════════════════════════════════
-
-// OQ-001: pool-logic-only size bands (SCALE_MAP source object untouched —
-// this only affects size-alternate lookups inside the new pool builder)
-const POOL_SIZE_BANDS = {
-  small_campus:      { min: 0,     max: 5999 },
-  medium_university: { min: 6000,  max: 19999 },
-  big_university:    { min: 20000, max: 999999 },
-};
-const SIZE_STEP_UP   = { small_campus: 'medium_university', medium_university: 'big_university', big_university: null };
-const SIZE_STEP_DOWN = { big_university: 'medium_university', medium_university: 'small_campus', small_campus: null };
-
-// OQ-002: geographic adjacency map — used to pad short alternate pools
-// and to build the counselor_3 "Consider Also" set
-const REGION_ADJACENCY = {
-  southeast: 'south_central', south_central: 'southeast',
-  northeast: 'midwest',       midwest: 'northeast',
-  west_coast: 'southwest',    southwest: 'west_coast',
-};
-
-function schoolsInSizeBand(schoolNames, sizeKey) {
-  const band = POOL_SIZE_BANDS[sizeKey];
-  if (!band) return [];
-  return schoolNames.filter(s => {
-    const enroll = SCHOOL_ENROLLMENT[s] || 10000;
-    return enroll >= band.min && enroll <= band.max;
-  });
-}
-
-function getRegionSchoolPool(regions) {
-  const pool = new Set();
-  (regions || []).forEach(r => (REGION_POOLS[r] || []).forEach(s => pool.add(s)));
-  return [...pool];
-}
-
-function getAdjacentRegionPool(regions) {
-  const pool = new Set();
-  (regions || []).forEach(r => {
-    const adj = REGION_ADJACENCY[r];
-    if (adj && !regions.includes(adj)) {
-      (REGION_POOLS[adj] || []).forEach(s => pool.add(s));
-    }
-  });
-  return [...pool];
-}
-
-// ── The ORIGINAL fit-scoring engine — UNCHANGED, renamed for reuse ───────
-// This is the exact function body from v3.0. Every filter, every score
-// weight, every line of scoring logic is identical to before. It now
-// returns the flat ranked-name array exactly as it always did.
-function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {
+function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {
   const { campus_scale, regions, conference, social_scene, religion } = collegePrefs;
   const gpa = gpaData ? gpaData.normalized : null;
 
@@ -1335,11 +1193,10 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
 
   // Step 2 — Region pool
   let regionPool = null;
-  if (regions && regions.length > 0 && !regions.includes('no_preference') && !regions.includes('anywhere')) {
+  if (regions && regions.length > 0 && !regions.includes('no_preference')) {
     regionPool = [];
     regions.forEach(r => {
-      const key = DB_DISPLAY_TO_POOL_KEY[r] || r;
-      (REGION_POOLS[key] || []).forEach(school => {
+      (REGION_POOLS[r] || []).forEach(school => {
         if (!regionPool.includes(school)) regionPool.push(school);
       });
     });
@@ -1370,21 +1227,6 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
     if (religionPool.length > 0 && religionPool[0] !== '__ALL__') {
       eligible = eligible.filter(school => religionPool.includes(school));
     }
-  }
-
-  // Step 5c — GPA HARD GATE (new)
-  // Replaces the old soft -8 penalty as the deciding factor. A school below
-  // the student's GPA range is removed from consideration entirely, rather
-  // than just losing a few points that other bonuses (major fit, region,
-  // social scene, etc.) could easily outweigh.
-  if (gpa) {
-    eligible = eligible.filter(school => {
-      const range = SCHOOL_GPA_RANGES[school];
-      if (!range) return true; // no GPA data on file — don't silently exclude; flag for data audit instead
-      const isReachTier = range.min >= 3.7;
-      const tolerance = isReachTier ? 0.15 : 0.30;
-      return gpa >= (range.min - tolerance);
-    });
   }
 
   // Step 6 — Build NAICS → major cluster map for program strength scoring
@@ -1427,16 +1269,19 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
       const healthSignalClusters   = new Set(['Health Sciences']);
       const businessSignalClusters = new Set(['Business','Entrepreneurship']);
 
+      // Determine student profile type from their major clusters
       const studentCreativeCount  = [...studentMajorClusters].filter(c => creativeSignalClusters.has(c)).length;
       const studentStemCount      = [...studentMajorClusters].filter(c => stemSignalClusters.has(c)).length;
       const studentHealthCount    = [...studentMajorClusters].filter(c => healthSignalClusters.has(c)).length;
       const studentBizCount       = [...studentMajorClusters].filter(c => businessSignalClusters.has(c)).length;
 
+      // School overlap by signal type
       const creativeOverlap  = schoolMajors.filter(m => studentMajorClusters.has(m) && creativeSignalClusters.has(m));
       const stemOverlap      = schoolMajors.filter(m => studentMajorClusters.has(m) && stemSignalClusters.has(m));
       const healthOverlap    = schoolMajors.filter(m => studentMajorClusters.has(m) && healthSignalClusters.has(m));
       const bizOverlap       = schoolMajors.filter(m => studentMajorClusters.has(m) && businessSignalClusters.has(m));
 
+      // Score based on profile type — reward domain-specific match
       if (studentCreativeCount >= 2 && creativeOverlap.length >= 2) score += 25;
       else if (studentCreativeCount >= 1 && creativeOverlap.length >= 1) score += 15;
       else if (studentStemCount >= 2 && stemOverlap.length >= 2) score += 25;
@@ -1444,6 +1289,7 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
       else if (studentHealthCount >= 1 && healthOverlap.length >= 1) score += 20;
       else if (studentBizCount >= 1 && bizOverlap.length >= 1) score += 15;
       else {
+        // Fallback: general overlap
         const generalOverlap = schoolMajors.filter(m => studentMajorClusters.has(m));
         if (generalOverlap.length >= 2) score += 8;
         else if (generalOverlap.length === 1) score += 4;
@@ -1466,13 +1312,13 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
       if (RELIGIOUS_CULTURE_SCHOOLS.includes(school)) score -= 10;
     }
 
-    // GPA bonus — hard gate (Step 5c) already removed anything below range,
-    // so this only rewards being solidly within/above the school's GPA band
+    // GPA soft filter
     if (gpa) {
       const range = SCHOOL_GPA_RANGES[school];
       if (range) {
         if (gpa >= range.min) score += 5;
         if (gpa >= range.min + 0.2) score += 3;
+        if (gpa < range.min - 0.3) score -= 8;
       }
     }
 
@@ -1480,91 +1326,6 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
   });
 
   return scored.sort((a, b) => b.score - a.score).map(s => s.school);
-}
-
-// ── NEW matchUniversities() — pool-aware, callD-compatible flat output ───
-// Production sends DB DISPLAY-NAME region strings ("Southeast", "West Coast")
-// and uses 'anywhere' as the no-constraint sentinel — NOT the snake_case
-// IMPL-003 keys used internally by REGION_POOLS/REGION_ADJACENCY.
-// This function bridges that gap and ALWAYS returns a flat ranked-name
-// array so the existing callD block (lifescape.html) needs zero changes.
-
-const DB_DISPLAY_TO_POOL_KEY = {
-  new_england: 'northeast',
-  northeast: 'northeast',
-  mid_atlantic: 'southeast',
-  southeast: 'southeast',
-  midwest: 'midwest',
-  rocky_mountains: 'southwest',
-  pacific_nw: 'west_coast',
-  california: 'west_coast',
-  southwest: 'southwest',
-  military_academies: 'military_academies',
-};
-
-function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {
-  const { campus_scale, regions } = collegePrefs;
-
-  // Always compute the base fit-ranked list first — this is unchanged behavior.
-  const rankedNames = scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData);
-
-  const isAnywhere = !regions || regions.length === 0 || regions.includes('anywhere');
-  if (isAnywhere) {
-    return rankedNames; // identical to today's behavior — zero change
-  }
-
-  // Bridge production's DB display-name strings to internal pool keys
-  const poolKeys = [...new Set(
-    regions.map(r => DB_DISPLAY_TO_POOL_KEY[r]).filter(Boolean)
-  )];
-
-  if (poolKeys.length === 0) {
-    // Unrecognized region strings — fail safe to the unchanged flat list
-    return rankedNames;
-  }
-
-  // ── Build the 9+12+3 pool internally (IMPL-003 §5) ──────────────────────
-  const family_9 = rankedNames.slice(0, 9);
-  const excludeSet = new Set(family_9);
-
-  const stepUpKey   = campus_scale ? SIZE_STEP_UP[campus_scale]   : null;
-  const stepDownKey = campus_scale ? SIZE_STEP_DOWN[campus_scale] : null;
-  const regionSchoolPool = getRegionSchoolPool(poolKeys);
-
-  function buildSizeAlternates(sizeKey, needed) {
-    if (!sizeKey) return [];
-    let candidates = schoolsInSizeBand(regionSchoolPool, sizeKey).filter(s => !excludeSet.has(s));
-    if (candidates.length < needed) {
-      const adjacentPool = getAdjacentRegionPool(poolKeys);
-      const pad = schoolsInSizeBand(adjacentPool, sizeKey).filter(s => !excludeSet.has(s) && !candidates.includes(s));
-      candidates = candidates.concat(pad);
-    }
-    return candidates.slice(0, needed);
-  }
-
-  const sizeUpNames   = buildSizeAlternates(stepUpKey, 6);
-  const sizeDownNames = buildSizeAlternates(stepDownKey, 6);
-  sizeUpNames.forEach(s => excludeSet.add(s));
-  sizeDownNames.forEach(s => excludeSet.add(s));
-
-  const adjacentCandidates = getAdjacentRegionPool(poolKeys).filter(s => !excludeSet.has(s));
-  const counselor_3 = adjacentCandidates.slice(0, 3);
-
-  // ── Return FLAT array: family_9 first (best fit), then counselor pool ──
-  // This preserves exact compatibility with callD's .slice()/.push() logic —
-  // matchedSchools = _rawMatches.slice(0, N) still gets the best family
-  // schools first, and the full pool remains available in _rawMatches for
-  // the regional-equity fill-in and Jewish-pool boost logic that already
-  // exists in lifescape.html.
-  const remainder = rankedNames.filter(s => !excludeSet.has(s) && !family_9.includes(s));
-
-  return [
-    ...family_9,
-    ...sizeUpNames,
-    ...sizeDownNames,
-    ...counselor_3,
-    ...remainder,
-  ];
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -1607,7 +1368,7 @@ function summarizePreferences(collegePrefs) {
 if (typeof module !== 'undefined') module.exports = {
   CONFERENCE_POOLS, REGION_POOLS, SCALE_MAP, SCHOOL_ENROLLMENT,
   SOCIAL_SCENE_AFFINITY, RELIGIOUS_AFFILIATION, RELIGIOUS_CULTURE_SCHOOLS,
-  SCHOOL_GPA_RANGES, SCHOOL_CULTURE_CATEGORY, getGPATier, GPA_TIER_THRESHOLDS, HONORS_COLLEGES, getConsultantExpansion, matchUniversities, scoreAndRankSchools, summarizePreferences, getAdjacentMatches, getProfileAdjacentMatches
+  SCHOOL_GPA_RANGES, matchUniversities, summarizePreferences
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -1626,20 +1387,10 @@ if (typeof module !== 'undefined') module.exports = {
  * @param {Array}    comboUnlocks    - student's combo unlock objects
  * @param {number}   max             - how many to return (default 1)
  */
-function getAdjacentMatches(primaryMatches, naicsSectors, comboUnlocks, max=1, regionPool=null, scaleKey=null) {
+function getAdjacentMatches(primaryMatches, naicsSectors, comboUnlocks, max=1) {
   const allSchools = Object.keys(SCHOOL_ENROLLMENT);
   const primarySet = new Set(primaryMatches);
-  // Hard-gate: respect region and scale — same rules as matchUniversities()
-  const candidates = allSchools.filter(s => {
-    if (primarySet.has(s)) return false;
-    if (regionPool && !regionPool.includes(s)) return false;
-    if (scaleKey && scaleKey !== 'no_preference' && SCALE_MAP[scaleKey]) {
-      const enroll = SCHOOL_ENROLLMENT[s] || 10000;
-      const scale = SCALE_MAP[scaleKey];
-      if (enroll < scale.min || enroll > scale.max) return false;
-    }
-    return true;
-  });
+  const candidates = allSchools.filter(s => !primarySet.has(s));
 
   // NAICS → major cluster map — same mapping used in matchUniversities
   const NAICS_MAJOR_MAP = {
@@ -1712,21 +1463,12 @@ function getAdjacentMatches(primaryMatches, naicsSectors, comboUnlocks, max=1, r
  * @param {Array}    naicsSectors    - student's NAICS profile
  * @param {number}   max             - how many to return (default 3)
  */
-function getProfileAdjacentMatches(primaryMatches, riasec, naicsSectors, max=3, regionPool=null, scaleKey=null) {
+function getProfileAdjacentMatches(primaryMatches, riasec, naicsSectors, max=3) {
   if (!riasec || riasec.length < 2) return [];
 
   const allSchools = Object.keys(SCHOOL_ENROLLMENT);
   const primarySet = new Set(primaryMatches);
-  const candidates = allSchools.filter(s => {
-    if (primarySet.has(s)) return false;
-    if (regionPool && !regionPool.includes(s)) return false;
-    if (scaleKey && scaleKey !== 'no_preference' && SCALE_MAP[scaleKey]) {
-      const enroll = SCHOOL_ENROLLMENT[s] || 10000;
-      const scale = SCALE_MAP[scaleKey];
-      if (enroll < scale.min || enroll > scale.max) return false;
-    }
-    return true;
-  });
+  const candidates = allSchools.filter(s => !primarySet.has(s));
 
   // Primary and secondary RIASEC codes
   const primaryCode  = riasec[0]?.code || '';
@@ -1798,4 +1540,103 @@ function getProfileAdjacentMatches(primaryMatches, riasec, naicsSectors, max=3, 
   }));
 }
 
+// ─────────────────────────────────────────────────────────────
+// HONORS COLLEGES — big schools (20k+) with a real, selective honors
+// college that delivers a small-school academic experience inside
+// a large campus. Used for the small→big size-adjacent pathway.
+// ─────────────────────────────────────────────────────────────
 
+const HONORS_COLLEGES = new Set([
+  "Arizona State University","Penn State University","University of South Carolina",
+  "University of Alabama","University of Georgia","University of Florida",
+  "University of Michigan","Ohio State University","Purdue University",
+  "University of Arizona","Texas A&M University","University of Texas at Austin",
+  "Indiana University","University of Maryland College Park","Rutgers University",
+  "University of Kentucky","University of Tennessee","Clemson University",
+  "University of Central Florida","University of Mississippi","Louisiana State University",
+  "University of Oklahoma","University of Utah"
+]);
+
+// ─────────────────────────────────────────────────────────────
+// getSizeAdjacentMatches — same region, same social scene, different size
+// ─────────────────────────────────────────────────────────────
+// Rules:
+//   big (20k+)    -> one medium alternative, same culture
+//   medium        -> one small AND one big alternative
+//   small (<6k)   -> one medium alternative, OR a big school with a
+//                    real honors college (same small-class feel)
+//
+// Region and social scene gates use the SAME pools as matchUniversities()
+// so this stays consistent with the rest of the matching engine.
+
+function getSizeAdjacentMatches(primaryMatches, regions, socialScene, campusScale, max = 2) {
+  const primarySet = new Set(primaryMatches || []);
+  let regionPool = null;
+  if (regions && regions.length > 0 && !regions.includes('anywhere') && !regions.includes('no_preference')) {
+    regionPool = [];
+    regions.forEach(r => (REGION_POOLS[r] || []).forEach(s => { if (!regionPool.includes(s)) regionPool.push(s); }));
+  }
+  let socialPool = null;
+  if (socialScene && socialScene !== 'no_preference') {
+    socialPool = SOCIAL_SCENE_AFFINITY[socialScene] || [];
+  }
+
+  const bucketOf = school => {
+    const n = SCHOOL_ENROLLMENT[school];
+    if (n == null) return null;
+    if (n >= SCALE_MAP.big_university.min) return 'big';
+    if (n >= SCALE_MAP.medium_university.min) return 'medium';
+    return 'small';
+  };
+
+  const eligible = Object.keys(SCHOOL_ENROLLMENT).filter(s => {
+    if (primarySet.has(s)) return false;
+    if (regionPool && !regionPool.includes(s)) return false;
+    if (socialPool && !socialPool.includes(s)) return false;
+    return true;
+  });
+
+  const currentBucket = campusScale === 'big_university' ? 'big'
+                       : campusScale === 'medium_university' ? 'medium'
+                       : campusScale === 'small_campus' ? 'small' : null;
+
+  const pickClosestToTarget = (pool, targetSize) => pool
+    .filter(s => SCHOOL_ENROLLMENT[s] != null)
+    .sort((a, b) => Math.abs(SCHOOL_ENROLLMENT[a] - targetSize) - Math.abs(SCHOOL_ENROLLMENT[b] - targetSize));
+
+  const results = [];
+
+  if (currentBucket === 'big') {
+    const mediumOptions = eligible.filter(s => bucketOf(s) === 'medium');
+    const best = pickClosestToTarget(mediumOptions, 10000)[0];
+    if (best) results.push({ name: best, type: 'size_adjacent', reason: `Same region and social scene, but ${SCHOOL_ENROLLMENT[best].toLocaleString()} students instead of 20,000+` });
+
+  } else if (currentBucket === 'medium') {
+    const smallOptions = eligible.filter(s => bucketOf(s) === 'small');
+    const bigOptions = eligible.filter(s => bucketOf(s) === 'big');
+    const smallBest = pickClosestToTarget(smallOptions, 4000)[0];
+    const bigBest = pickClosestToTarget(bigOptions, 25000)[0];
+    if (smallBest) results.push({ name: smallBest, type: 'size_adjacent', reason: `Same region and social scene, smaller — ${SCHOOL_ENROLLMENT[smallBest].toLocaleString()} students` });
+    if (bigBest) results.push({ name: bigBest, type: 'size_adjacent', reason: `Same region and social scene, bigger — ${SCHOOL_ENROLLMENT[bigBest].toLocaleString()} students` });
+
+  } else if (currentBucket === 'small') {
+    const mediumOptions = eligible.filter(s => bucketOf(s) === 'medium');
+    const mediumBest = pickClosestToTarget(mediumOptions, 10000)[0];
+    if (mediumBest) results.push({ name: mediumBest, type: 'size_adjacent', reason: `Same region and social scene, a step up in size — ${SCHOOL_ENROLLMENT[mediumBest].toLocaleString()} students` });
+
+    const honorsOptions = eligible.filter(s => bucketOf(s) === 'big' && HONORS_COLLEGES.has(s));
+    const honorsBest = pickClosestToTarget(honorsOptions, 30000)[0];
+    if (honorsBest) results.push({ name: honorsBest, type: 'size_adjacent_honors', reason: `Same region and social scene, with an honors college that delivers the same small-class feel inside a larger campus` });
+  }
+
+  return results.slice(0, max);
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = Object.assign(module.exports || {}, {
+    getAdjacentMatches,
+    getProfileAdjacentMatches,
+    getSizeAdjacentMatches,
+    HONORS_COLLEGES
+  });
+}
