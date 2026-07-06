@@ -4867,6 +4867,24 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
   if (typeof UNIVERSITY_DB_V5 === 'undefined') return [];
 
   const matchedNames = new Set((matchedSchools || []).map(s => s.name));
+
+  // ── Region gate — same hard filter used by matchUniversities() / adjacent matches ──
+  // Under the Radar previously scored the ENTIRE national database with no region
+  // restriction, causing out-of-region schools (e.g. Harvard, Iowa State) to surface
+  // for a student who selected a specific region like Rocky Mountains. Military
+  // Academies and HBCUs already enforce this; this generalizes the same protection
+  // to every school.
+  var _underRadarRegionPool = null;
+  var _selectedRegions = (typeof COLLEGE_PREFS !== 'undefined' && Array.isArray(COLLEGE_PREFS.regions))
+    ? COLLEGE_PREFS.regions : [];
+  if (_selectedRegions.length > 0 && !_selectedRegions.includes('no_preference') && !_selectedRegions.includes('anywhere')) {
+    _underRadarRegionPool = [];
+    _selectedRegions.forEach(function(r) {
+      (typeof REGION_POOLS !== 'undefined' && REGION_POOLS[r] ? REGION_POOLS[r] : []).forEach(function(s) {
+        if (_underRadarRegionPool.indexOf(s) === -1) _underRadarRegionPool.push(s);
+      });
+    });
+  }
   const tiles     = (profile.activityTiles || []).concat(profile.eqTiles || []).map(t => t.toLowerCase());
   const worlds    = (profile.worlds_chosen || []).map(w => w.toLowerCase());
   const riasec    = (profile.topRIASEC || '').toUpperCase();
@@ -4936,6 +4954,8 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
   Object.entries(UNIVERSITY_DB_V5).forEach(function([name, school]) {
     // Skip schools already in primary match list
     if (matchedNames.has(name)) return;
+    // Skip schools outside the student's selected region(s)
+    if (_underRadarRegionPool && _underRadarRegionPool.indexOf(name) === -1) return;
     // V5 stores archetype nested inside institutionNarrative, not flat
     var archetype = school.institutionNarrative && school.institutionNarrative.archetype;
     if (!archetype) return;
