@@ -5658,19 +5658,22 @@ async function submitLifescape() {
         // For Jewish tracks: use extended pool to override v3.js's thin 8-school pool
         var _faithPref = profile.college_prefs && profile.college_prefs.religion;
         var _isJewishTrack = _faithPref === 'jewish' || _faithPref === 'jewish_community';
-        // ── Normalize region keys to match university-content.js display names ──
-        // Student selects: 'southeast', 'pacific_nw', 'california' etc.
-        // DB uses:         'Southeast',  'Pacific Northwest', 'West Coast', 'Southern California'
+        // ── Normalize region keys to match REGION_POOLS' actual keys (v3.js) ──
+        // REGION_POOLS uses plain lowercase keys: southeast, southwest, west_coast,
+        // northeast, midwest, south_central. Several UI region buttons fold into
+        // the same pool (documented in v3.js's own comments), so this maps each
+        // UI selection to the real pool key(s) it should hit.
+        // 'military_academies' is handled separately as a flag, not a region pool.
         const REGION_KEY_TO_DB = {
-          'new_england':     ['New England', 'Northeast'],
-          'northeast':       ['Northeast', 'Mid-Atlantic'],
-          'mid_atlantic':    ['Mid-Atlantic', 'Northeast'],
-          'southeast':       ['Southeast', 'South', 'South Central'],
-          'midwest':         ['Midwest', 'Big Ten'],
-          'rocky_mountains': ['Mountain West', 'West', 'Southwest'],
-          'pacific_nw':      ['Pacific Northwest', 'West Coast'],
-          'california':      ['West Coast', 'Southern California', 'Pacific Northwest'],
-          'southwest':       ['Texas + Southwest', 'Southwest', 'West', 'SEC New Members']
+          'new_england':     ['northeast'],
+          'northeast':       ['northeast'],
+          'mid_atlantic':    ['northeast'],
+          'southeast':       ['southeast'],
+          'midwest':         ['midwest'],
+          'rocky_mountains': ['west_coast'],
+          'pacific_nw':      ['west_coast'],
+          'california':      ['west_coast'],
+          'southwest':       ['southwest']
         };
         var _normalizedRegions = [];
         (_regions || []).forEach(function(key) {
