@@ -21,6 +21,7 @@
 <script src="geo_industry_db_Dallas_pass6.js"></script>
 <script src="lifescape_curation_map_v1.js"></script>
 <script src="school_scorecard_simplified.js"></script>
+<script src="cultural_fit_lens.js"></script>
 <script src="university-content.js"></script>
 <script>
 // ── V5 intelligence merge ────────────────────────────────────────────────
@@ -5873,9 +5874,19 @@ async function submitLifescape() {
           var _scorecardBlocks = schoolContent.slice(0, _promptCount)
             .map(function(s) { return buildScorecardBlock(s.name); })
             .filter(Boolean);
+
+          // ── Append Cultural Fit Lens narrative (parent-facing, never numeric) ──
+          var _cultureBlocks = schoolContent.slice(0, _promptCount)
+            .map(function(s) {
+              var n = (typeof getCultureNarrative === 'function') ? getCultureNarrative(s.name) : null;
+              return n ? ('[Room Culture — ' + s.name + ']\n' + n) : null;
+            })
+            .filter(Boolean);
+
           var schoolContentBlockFull = schoolContentBlock
-            + (_scorecardBlocks.length ? '\n\n' + _scorecardBlocks.join('\n\n') : '');
-          console.log('[callD] Scorecard blocks attached:', _scorecardBlocks.length, '/', _promptCount);
+            + (_scorecardBlocks.length ? '\n\n' + _scorecardBlocks.join('\n\n') : '')
+            + (_cultureBlocks.length ? '\n\n' + _cultureBlocks.join('\n\n') : '');
+          console.log('[callD] Scorecard blocks attached:', _scorecardBlocks.length, '/', _promptCount, '| Culture blocks:', _cultureBlocks.length);
 
           console.log('[callD] prompt block length:', schoolContentBlockFull.length);
 
