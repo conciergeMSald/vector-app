@@ -11,17 +11,11 @@ const UNIVERSITY_CONTENT = {
     name: "Vanderbilt University",
     location: "Nashville, Tennessee",
     region: "Southeast",
-    pipeline: "Consulting and Finance (McKinsey, Deloitte, Goldman Sachs, HCA Healthcare, Optum, PwC, Bain - Owen Graduate School of Business is the engine for Wall Street and Nashville corporate placement), Healthcare and Medicine (Vanderbilt University Medical Center is one of the top 10 hosp",
+    pipeline: "Consulting and Finance (McKinsey, Deloitte, Goldman Sachs, HCA Healthcare, Optum, PwC, Bain - Owen Graduate School of Business is the engine for Wall Street and Nashville corporate placement), Healthcare and Medicine (Vanderbilt University Medical Center is one of the top 10 hospitals in the country and the anchor of Nashville's healthcare industry).",
     hidden_pathway: "Vanderbilt is the only elite research university located in Nashville - the capital of the American healthcare industry. The Healthcare MBA concentration at Owen places graduates directly into HCA Healthcare, Optum, and Change Healthcare at $95,000+.",
-    the_room: "87% of students come from out of state - only 13% are Tennessee residents. Vanderbilt draws from all 50 states with the heaviest concentration from California, New York, Texas, Florida, and Georgia -",
+    the_room: "87% of students come from out of state - only 13% are Tennessee residents. Vanderbilt draws from all 50 states with the heaviest concentration from California, New York, Texas, Florida, and Georgia.",
     lifestyle: "Four years in Nashville - the fastest-growing major American city of the 2020s. The Greek system dominates social life. SEC football.",
-    grad_cities: "Nashville TN (45%) | New York NY (20%) | Atlanta GA (10%) | Chicago IL (8%) | Boston MA (7%).",
-    mayNotThriveIf: "You want to avoid Greek-dominant social life or SEC football culture - both are central to the Vanderbilt experience, not optional.",
-    campusSocialCulture: "Greek life dominates, SEC football energy, all set against Nashville's fast-growing music-city backdrop.",
-    socialCapital: "Owen Business School ties and Nashville's healthcare-industry density mean classmates become professional contacts fast.",
-    culturalCapital: "Polished Southern prestige with a healthcare-capital edge - Vanderbilt signals both social ease and career seriousness.",
-    networkCapital: "Unmatched healthcare industry pipeline via HCA, Optum, and Vanderbilt Medical Center, concentrated in booming Nashville.",
-    school_fast_facts: "#11 overall on Forbes' America's Top Colleges List 2026. Financial Grade: A+ (4.5) - one of the financially strongest private universities in the country. Also #13 on Forbes' America's Best Midsize Employers 2026. (Source: Forbes America's Top Colleges & College Financial Grades, 2026)",
+    grad_cities: "Nashville TN (45%) | New York NY (20%) | Atlanta GA (10%) | Chicago IL (8%) | Boston MA (7%)."
   },
   "University of Michigan": {
     name: "University of Michigan",
@@ -31,28 +25,18 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Michigan's Erb Institute for Global Sustainable Enterprise is the leading MBA-MS dual degree in sustainability business in America. As ESG mandates and sustainability leadership positions multiply at Fortune 500 companies, Erb graduates have a creden",
     the_room: "Approximately 50% of undergraduates are Michigan residents and 50% are from out of state - a dramatic shift from a decade ago when 64% were in-state.",
     lifestyle: "Ann Arbor is a genuine college town with 47,000 students and social infrastructure rivaling small cities. Michigan Stadium holds 107,000 people -",
-    grad_cities: "Chicago IL (25%) | New York NY (20%) | Detroit-Ann Arbor MI (15%) | San Francisco CA (12%) | Washington DC (8%).",
-    mayNotThriveIf: "You want small classes or a quiet campus - Ann Arbor's 47,000-student scale means you build community deliberately, especially around Michigan Stadium's 107,000-seat energy.",
-    campusSocialCulture: "Big Ten spirit at its most intense, Greek-heavy, deeply school-spirited alongside serious academic ambition.",
-    socialCapital: "Ross Business School and engineering cohorts build elite networks that rival top private schools in reach.",
-    culturalCapital: "Public-Ivy prestige - Michigan signals top-tier rigor at public-school scale and cost.",
-    networkCapital: "Exceptional consulting/finance placement via Ross, plus a rising sustainability-business credential through Erb Institute.",
-    school_fast_facts: "#21 overall on Forbes' America's Top Colleges List 2026, #4 among public universities on Forbes' 'New Ivies' ranking. (Source: Forbes America's Top Colleges, 2026)",
+    grad_cities: "Chicago IL (25%) | New York NY (20%) | Detroit-Ann Arbor MI (15%) | San Francisco CA (12%) | Washington DC (8%)."
   },
   "Indiana University": {
     name: "Indiana University",
     location: "Bloomington, Indiana",
     region: "Big Ten",
-    pipeline: "Finance and Investment Banking, Consulting, Technology, Media and Journalism, Music Performance and Music Business, Law, Education, Healthcare, Data Science. Kelley School of Business (Goldman Sachs, J.P. Morgan, Deloitte, PwC, Big 4 accounting -",
+    pipeline: "Finance and Investment Banking, Consulting, Technology, Media and Journalism, Music Performance and Music Business, Law, Education, Healthcare, Data Science. Kelley School of Business (Goldman Sachs, J.P. Morgan, Deloitte, PwC, Big 4 accounting - Kelley graduates are recruited directly into Chicago's financial services corridor).",
     hidden_pathway: "The Kelley School of Business at IU Bloomington is consistently ranked top 10 undergraduate business nationally. Kelley sends more graduates to the Chicago financial services sector per capita than any non-Ivy school except Michigan Ross.",
     the_room: "49% of students are Indiana residents and 51% are from out of state or international - a ratio consistent for three years.",
-    lifestyle: "Bloomington is the quintessential college town: IU is the entire economy, culture, and social infrastructure. Kirkwood Avenue, the Sample Gates, the Lilly Library, and Assembly Hal",
+    lifestyle: "Bloomington is the quintessential college town: IU is the entire economy, culture, and social infrastructure. Kirkwood Avenue, the Sample Gates, the Lilly Library, and Assembly Hall (home to Indiana basketball) anchor a campus identity that is inseparable from the town itself. Sixteen miles south, Monroe Lake - Indiana's largest landbound body of water - gives students an outdoor escape valve for boating, fishing, and hiking that few Big Ten campus towns can match.",
     grad_cities: "Chicago IL (35%) | Indianapolis IN (20%) | New York NY (15%) | Washington DC (8%) | Columbus OH (5%).",
-    mayNotThriveIf: "You want a big city or anonymity - Bloomington is a self-contained college town where IU is the entire social world.",
-    campusSocialCulture: "Classic Big Ten spirit - Greek life, Kirkwood Ave nightlife, Assembly Hall basketball culture as the social center of gravity.",
-    socialCapital: "Kelley School cohorts form tight bonds that funnel directly into Chicago's financial services sector.",
-    culturalCapital: "Midwest business-school polish - IU signals Kelley pedigree and Big Ten work ethic.",
-    networkCapital: "Outsized Chicago financial services pipeline, second only to Michigan Ross among non-Ivy business schools."
+    networkCapital: "IU's statewide industry footprint is unusually well-documented: over 10,000 active IU-industry partnerships, businesses founded by IU graduates supporting more than 92,000 jobs, and roughly $7 billion in added income to Indiana's economy each year - a network density that reaches well beyond the Kelley-to-Chicago finance pipeline."
   },
   "University of Georgia": {
     name: "University of Georgia",
@@ -62,12 +46,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Terry College of Business at UGA is the primary feeder for Atlanta's extraordinary concentration of Fortune 500 headquarters: Coca-Cola, Delta, UPS, Home Depot, CNN, NCR Voyix, Intercontinental Hotels.",
     the_room: "80% of enrolled students are Georgia residents and 20% are from out of state - a firm institutional target set by UGA admissions.",
     lifestyle: "Athens, Georgia is a college town with a cultural identity that transcends the university. The music scene (R.E.M., B-52s, Drive-By Truckers all from Athens), the restaurant cultur",
-    grad_cities: "Atlanta GA (70%) | New York NY (8%) | Austin TX (5%) | Charlotte NC (4%) | Washington DC (3%).",
-    mayNotThriveIf: "You want to leave the Southeast or a school with heavy out-of-state mix - UGA is deeply Georgia-rooted, 80% in-state by design.",
-    campusSocialCulture: "Football-first SEC culture with a genuine music/arts undercurrent from Athens' scene - big Greek presence, deeply communal.",
-    socialCapital: "Terry College cohorts form the backbone of Atlanta's Fortune 500 corporate network long before graduation.",
-    culturalCapital: "Southern business polish with a creative-town edge - UGA signals both corporate readiness and cultural depth.",
-    networkCapital: "The single strongest pipeline into Atlanta's Fortune 500 concentration - Coca-Cola, Delta, UPS, Home Depot, CNN."
+    grad_cities: "Atlanta GA (70%) | New York NY (8%) | Austin TX (5%) | Charlotte NC (4%) | Washington DC (3%)."
   },
   "University of Florida": {
     name: "University of Florida",
@@ -77,12 +56,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "UF's Warrington College of Business is ranked top 10 undergraduate business nationally by US News but operates in the shadow of Florida's football and beach identity.",
     the_room: "Approximately 88% of UF students are Florida residents and only 12% are from out of state - one of the highest in-state ratios of any top-20 public university in America.",
     lifestyle: "Ben Hill Griffin Stadium - The Swamp - seats 88,000 and is one of the loudest venues in college football. Saturday games define the social calendar.",
-    grad_cities: "Miami FL (25%) | Tampa FL (20%) | Orlando FL (15%) | New York NY (10%) | Atlanta GA (8%).",
-    mayNotThriveIf: "You want to leave Florida or a school with a smaller in-state concentration - 88% in-state means the culture is deeply Florida-rooted.",
-    campusSocialCulture: "Football-dominant Saturday culture (The Swamp seats 88,000) alongside a genuinely strong, underrated business/medical identity.",
-    socialCapital: "Warrington Business and UF Health cohorts build networks that stay concentrated within Florida's major metro corridor.",
-    culturalCapital: "Football-and-sunshine identity masking real academic depth - UF signals more rigor than its party-school reputation suggests.",
-    networkCapital: "Dominant Florida in-state network across healthcare, business, and law, concentrated in Miami-Tampa-Orlando."
+    grad_cities: "Miami FL (25%) | Tampa FL (20%) | Orlando FL (15%) | New York NY (10%) | Atlanta GA (8%)."
   },
   "University of Oklahoma": {
     name: "University of Oklahoma",
@@ -92,12 +66,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Stacy L. Schusterman College of Business has a private equity and energy finance pipeline that is invisible nationally but dominant regionally. Oklahoma City and Tulsa host dozens of family offices and energy-focused private equity funds that rec",
     the_room: "Approximately 62% of OU students are Oklahoma residents and 38% are from out of state or international. The dominant out-of-state feeder is Texas -",
     lifestyle: "Gaylord Family-Oklahoma Memorial Stadium holds 86,000 and football Saturdays define the Norman social calendar.",
-    grad_cities: "Oklahoma City OK (30%) | Tulsa OK (20%) | Dallas TX (25%) | Houston TX (15%) | Denver CO (5%).",
-    mayNotThriveIf: "You want to avoid football-first Saturday culture - Gaylord Family Stadium's 86,000 seats define Norman's social calendar completely.",
-    campusSocialCulture: "Football-dominant, Greek-heavy, deeply communal - OU's spirit culture rivals any SEC school despite being a newer conference member.",
-    socialCapital: "Energy-focused cohorts build direct ties into Oklahoma City and Tulsa's family office and PE energy finance scene.",
-    culturalCapital: "Energy-industry insider identity - OU signals regional oil-and-gas credibility that's invisible nationally but dominant locally.",
-    networkCapital: "Top-ranked petroleum engineering pipeline, plus a hidden energy-finance/PE network concentrated in OKC and Tulsa."
+    grad_cities: "Oklahoma City OK (30%) | Tulsa OK (20%) | Dallas TX (25%) | Houston TX (15%) | Denver CO (5%)."
   },
   "Louisiana State University": {
     name: "Louisiana State University",
@@ -107,12 +76,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "LSU's Manship School of Mass Communication is the South's most influential journalism and media institution. The alumni network extends through every major Louisiana media market and into national broadcast networks.",
     the_room: "60% of LSU undergraduates are Louisiana residents and 40% are from out of state - a dramatic transformation from 2017 when only 17% of freshmen came from other states.",
     lifestyle: "Tiger Stadium - Death Valley - seats 102,000 and is the loudest venue in college football. Saturday nights in Baton Rouge during football season are one of the most distinctive soc",
-    grad_cities: "Baton Rouge LA (35%) | New Orleans LA (25%) | Houston TX (20%) | Dallas TX (10%) | Atlanta GA (5%).",
-    mayNotThriveIf: "You want a quieter football-optional social scene - Tiger Stadium Saturdays are a defining, inescapable part of LSU's identity.",
-    campusSocialCulture: "Deeply communal Death Valley game-day culture, Greek-heavy, unmistakably Louisiana in flavor and energy.",
-    socialCapital: "Petroleum engineering cohorts build direct Gulf Coast energy-industry relationships well before graduation.",
-    culturalCapital: "Gulf Coast energy-industry credibility - LSU signals real regional oil-and-gas expertise.",
-    networkCapital: "Strong Gulf Coast petrochemical/energy pipeline (Exxon, Shell, Chevron), the second-largest energy-producing state's flagship."
+    grad_cities: "Baton Rouge LA (35%) | New Orleans LA (25%) | Houston TX (20%) | Dallas TX (10%) | Atlanta GA (5%)."
   },
   "Auburn University": {
     name: "Auburn University",
@@ -122,12 +86,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Auburn's College of Veterinary Medicine is consistently ranked top 5 nationally - and it is the only top-5 veterinary program at a school with the SEC football culture and social experience of Auburn.",
     the_room: "57% of Auburn undergraduates are Alabama residents and 43% are from out of state or international - with all 67 Alabama counties represented.",
     lifestyle: "Jordan-Hare Stadium seats 87,000 and the Iron Bowl is the defining social event of the Alabama calendar. Toomer's Corner -",
-    grad_cities: "Atlanta GA (30%) | Birmingham AL (20%) | Charlotte NC (10%) | Houston TX (10%) | Washington DC (8%).",
-    mayNotThriveIf: "You're not drawn to football-centric SEC culture - Auburn's identity is deeply tied to Jordan-Hare Saturdays and the Iron Bowl rivalry.",
-    campusSocialCulture: "Intensely communal SEC spirit, Greek-heavy, Toomer's Corner traditions - one of the most unified school identities in the conference.",
-    socialCapital: "Engineering and vet-med cohorts build strong bonds that carry into aerospace/defense and veterinary networks nationally.",
-    culturalCapital: "Warm, tradition-bound Southern identity - Auburn signals loyalty and school pride as core values.",
-    networkCapital: "Strong aerospace/defense pipeline (Boeing, Lockheed, NASA Marshall) plus a top-5 veterinary medicine network."
+    grad_cities: "Atlanta GA (30%) | Birmingham AL (20%) | Charlotte NC (10%) | Houston TX (10%) | Washington DC (8%)."
   },
   "University of South Carolina": {
     name: "University of South Carolina",
@@ -137,12 +96,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Darla Moore School of Business has been the number 1 undergraduate international business program in America for 24 consecutive years - a streak no other business school in any category at any university has matched in the history of US News rank",
     the_room: "52% of UofSC students come from out of state - a 333% surge in out-of-state enrollment over the past 25 years that is reshaping the character of the campus.",
     lifestyle: "Columbia, South Carolina is a state capital college town - USC is the dominant social and economic institution in the city.",
-    grad_cities: "Columbia SC (35%) | Charlotte NC (20%) | Atlanta GA (15%) | New York NY (10%) | Charleston SC (8%).",
-    mayNotThriveIf: "You want a smaller in-state-heavy campus - the recent out-of-state surge has genuinely shifted campus culture toward a broader national feel.",
-    campusSocialCulture: "State-capital energy, Greek-heavy, business-ambitious - Moore School's international business reputation shapes a globally-minded undercurrent.",
-    socialCapital: "Moore School cohorts build genuinely global networks, reinforced by the nation's top international business ranking streak.",
-    culturalCapital: "International-business prestige at Southern-flagship scale - USC signals both global ambition and Southern warmth.",
-    networkCapital: "The strongest undergraduate international business alumni network in the country, plus deep Southeast supply chain ties."
+    grad_cities: "Columbia SC (35%) | Charlotte NC (20%) | Atlanta GA (15%) | New York NY (10%) | Charleston SC (8%)."
   },
   "Clemson University": {
     name: "Clemson University",
@@ -152,12 +106,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Clemson's International Center for Automotive Research (CU-ICAR) in Greenville is the only university-industry automotive research campus of its kind in the United States -",
     the_room: "56% of Clemson undergraduates are South Carolina residents - but the character of the campus is shaped by the 44% who come from out of state.",
     lifestyle: "Memorial Stadium - Death Valley - seats 81,500 and consistently ranks among the loudest venues in college football.",
-    grad_cities: "Greenville-Spartanburg SC (35%) | Charlotte NC (20%) | Atlanta GA (12%) | Columbia SC (10%) | Raleigh-Durham NC (8%).",
-    mayNotThriveIf: "You're not into big-time football culture - Death Valley Saturdays are central to campus identity, not optional background noise.",
-    campusSocialCulture: "Loud, proud SEC-adjacent (ACC) football culture paired with a genuine automotive/manufacturing engineering seriousness via CU-ICAR.",
-    socialCapital: "Engineering cohorts tied to CU-ICAR build direct relationships with BMW, Michelin, and Bosch before graduation.",
-    culturalCapital: "Tradition-rich, manufacturing-savvy Southern identity - Clemson signals both school spirit and applied engineering skill.",
-    networkCapital: "Unmatched automotive-industry pipeline via CU-ICAR, concentrated in the Greenville-Spartanburg manufacturing corridor."
+    grad_cities: "Greenville-Spartanburg SC (35%) | Charlotte NC (20%) | Atlanta GA (12%) | Columbia SC (10%) | Raleigh-Durham NC (8%)."
   },
   "Wake Forest University": {
     name: "Wake Forest University",
@@ -167,12 +116,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Wake Forest's Office of Personal and Career Development (OPCD) is the most comprehensively engaged career office of any national university its size - over 75% of students from every class year actively engage with career resources, compared to under",
     the_room: "78% of Wake Forest students come from out of state - only 22% are North Carolina residents - making it one of the most geographically diverse private universities in the South.",
     lifestyle: "Wake Forest's 340-acre campus is consistently cited among the most beautiful in the ACC - Georgian architecture, the quad, the Wait Chapel.",
-    grad_cities: "Charlotte NC (30%) | New York NY (18%) | Washington DC (10%) | Atlanta GA (9%) | Raleigh-Durham NC (8%).",
-    mayNotThriveIf: "You want big-city energy or large research-school anonymity - Wake Forest is small, intimate, and everyone knows everyone by sophomore year.",
-    campusSocialCulture: "Preppy, tight Greek presence, work-hard-play-hard - a school where the social scene and the career-prep culture overlap constantly.",
-    socialCapital: "Small class sizes mean deep, lasting relationships with classmates who become your professional network immediately after graduation.",
-    culturalCapital: "Polished, professional, Southern-finance credibility - Wake Forest signals \"already knows how to network.\"",
-    networkCapital: "Concentrated Southeast finance/consulting pipeline, with the OPCD career office actively working every student toward a landing spot."
+    grad_cities: "Charlotte NC (30%) | New York NY (18%) | Washington DC (10%) | Atlanta GA (9%) | Raleigh-Durham NC (8%)."
   },
   "University of Miami": {
     name: "University of Miami",
@@ -182,12 +126,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The University of Miami is the gateway institution for Latin American business, finance, and professional networks - a position that no other university in America occupies.",
     the_room: "Over 50% of University of Miami students come from out of state, with strong representation from the Northeast - New York, New Jersey, and Connecticut are significant feeder states alongside a substan",
     lifestyle: "The University of Miami is the only major research university in America where the campus lifestyle and the city lifestyle are genuinely inseparable.",
-    grad_cities: "Miami-South Florida (55%) | New York NY (12%) | Washington DC (7%) | Los Angeles CA (6%) | Latin America and internation",
-    mayNotThriveIf: "You want a traditional, quiet college-town feel - Miami's campus and city life are genuinely inseparable, and that intensity is constant.",
-    campusSocialCulture: "Glamorous, international, beach-adjacent - the campus culture mirrors Miami's own energy, with a strong Latin American student presence.",
-    socialCapital: "Deep ties into Latin American business networks make this a uniquely international social and professional environment.",
-    culturalCapital: "Global, cosmopolitan identity - Miami signals international fluency and business sophistication.",
-    networkCapital: "The strongest Latin American business/finance gateway of any US university, layered onto a growing Miami financial hub."
+    grad_cities: "Miami-South Florida (55%) | New York NY (12%) | Washington DC (7%) | Los Angeles CA (6%) | Latin America and internation"
   },
   "University of Arizona": {
     name: "University of Arizona",
@@ -197,13 +136,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Wyant College of Optical Sciences at the University of Arizona is the number 1 optical sciences and engineering program in the world - a designation it has held for decades with no serious competitor.",
     the_room: "52.7% of first-year students are Arizona residents and 44% are non-residents - with 3.3% international. The top out-of-state feeder states are California (by far the largest), Washington, Colorado, Il",
     lifestyle: "Tucson is a genuinely distinctive college town - a small city of 550,000 with a strong cultural identity shaped by the Sonoran Desert, the University District, and a food and arts",
-    grad_cities: "Phoenix-Scottsdale AZ (38%) | Tucson AZ (18%) | Los Angeles CA (9%) | San Francisco CA (7%) | Denver CO (5%).",
-    mayNotThriveIf: "You want a big-city or East Coast setting - Tucson's desert college-town identity is distinct and self-contained.",
-    campusSocialCulture: "Sonoran Desert culture, arts-and-food-forward, genuinely distinctive small-city energy rather than typical Big Ten sprawl.",
-    residencyComposition: "Fall 2025 entering class: 54% Arizona residents, 42% non-resident domestic, 4% international - a genuinely balanced public university rather than a state-dominant one. (Source: University of Arizona Admissions Pipeline, Fall 2025)",
-    socialCapital: "Optical Sciences and semiconductor cohorts build elite technical networks unmatched by any peer program.",
-    culturalCapital: "World-leading optical sciences prestige - Arizona signals niche technical excellence few families know to look for.",
-    networkCapital: "The world's #1 optical sciences pipeline, plus deep ties into Arizona's booming semiconductor manufacturing corridor."
+    grad_cities: "Phoenix-Scottsdale AZ (38%) | Tucson AZ (18%) | Los Angeles CA (9%) | San Francisco CA (7%) | Denver CO (5%)."
   },
   "Arizona State University": {
     name: "Arizona State University",
@@ -213,12 +146,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "ASU has been ranked number 1 for innovation by US News and World Report for ten consecutive years - ahead of MIT, Stanford, and Caltech every single year. This is not a vanity ranking.",
     the_room: "61% of ASU students are Arizona residents and 39% are from out of state or international. Total enrollment exceeds 194,000 including online students -",
     lifestyle: "The Tempe campus sits at the center of the Phoenix metro - a city of 5 million people with year-round sun, a booming economy, and a social infrastructure that extends well beyond a",
-    grad_cities: "Phoenix-Scottsdale AZ (52%) | Los Angeles CA (10%) | San Francisco CA (7%) | Denver CO (5%) | Dallas TX (4%).",
-    mayNotThriveIf: "You want small classes or an intimate campus feel - at 194,000 total enrollment, ASU requires real self-direction to avoid feeling anonymous.",
-    campusSocialCulture: "Innovation-obsessed, sun-soaked, massive in scale - Phoenix's booming economy and year-round energy shape a constantly-expanding campus culture.",
-    socialCapital: "Direct proximity to the $108 billion Arizona semiconductor build-out means students build industry ties before graduating.",
-    culturalCapital: "Innovation-first identity - ASU signals forward-thinking ambition, having out-ranked MIT and Stanford for innovation for a decade running.",
-    networkCapital: "The anchor institution for Arizona's massive semiconductor manufacturing corridor (Intel, TSMC), one of the strongest chip-industry pipelines in the country."
+    grad_cities: "Phoenix-Scottsdale AZ (52%) | Los Angeles CA (10%) | San Francisco CA (7%) | Denver CO (5%) | Dallas TX (4%)."
   },
   "University of Virginia": {
     name: "University of Virginia",
@@ -228,12 +156,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The McIntire School of Commerce is the hardest undergraduate business program to gain admission to in America - a 5.5% acceptance rate for the Class of 2025, compared to Wharton's roughly 7% for the entire university.",
     the_room: "Approximately 67% of UVA undergraduates are Virginia residents and 33% are from out of state - with UVA pledged by statute to maintain this two-thirds Virginia majority.",
     lifestyle: "The Lawn is a UNESCO World Heritage Site - designed by Thomas Jefferson, it is arguably the most architecturally significant university campus in America.",
-    grad_cities: "Washington DC-Northern Virginia (35%) | New York NY (22%) | Richmond VA (10%) | Boston MA (7%) | Charlotte NC (5%).",
-    mayNotThriveIf: "You want a less competitive business-school admissions path - McIntire's 5.5% acceptance rate is harder to get into than most of the university itself.",
-    campusSocialCulture: "Jeffersonian tradition meets serious ambition - The Lawn's historic weight shapes a campus culture that's polished, proud, and achievement-oriented.",
-    socialCapital: "McIntire's small, elite cohort creates some of the tightest pre-professional bonds of any public university program.",
-    culturalCapital: "Founding-era prestige with modern competitive edge - UVA signals both historic gravitas and business rigor.",
-    networkCapital: "Exceptional DC-Northern Virginia consulting/finance placement, reinforced by McIntire's ultra-selective reputation."
+    grad_cities: "Washington DC-Northern Virginia (35%) | New York NY (22%) | Richmond VA (10%) | Boston MA (7%) | Charlotte NC (5%)."
   },
   "Babson College": {
     name: "Babson College",
@@ -243,12 +166,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Every single Babson first-year student - regardless of concentration or interest - creates, launches, and manages a real operating business with seed money from Babson through the Foundations of Management and Entrepreneurship course.",
     the_room: "74% of Babson students come from out of state and 27% are international students - one of the highest international percentages of any business school in America.",
     lifestyle: "Babson's 370-acre suburban campus in Wellesley sits 14 miles west of Boston - close enough to access the city's startup ecosystem, restaurant scene, and cultural institutions, insu",
-    grad_cities: "Boston MA (40%) | New York NY (20%) | San Francisco Bay Area CA (12%) | International (15%) | Other US cities (13%).",
-    mayNotThriveIf: "You want broad liberal arts exposure or haven't decided business is your path - Babson's focus is total, not exploratory.",
-    campusSocialCulture: "Greek-light, entrepreneurship-club-heavy - social life centers on startup teams and venture competitions more than traditional campus organizations.",
-    socialCapital: "Your closest network is the team you launch a business with as a freshman - relationships built through building, not just classes.",
-    culturalCapital: "Founder-identity over brand-name prestige - Babson signals \"builder,\" not \"credential.\"",
-    networkCapital: "Direct pipeline into venture capital and startup ecosystems, concentrated in Boston and expanding into the Bay Area."
+    grad_cities: "Boston MA (40%) | New York NY (20%) | San Francisco Bay Area CA (12%) | International (15%) | Other US cities (13%)."
   },
   "Boston University": {
     name: "Boston University",
@@ -258,12 +176,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "BU has the number 1 ranked CTE Center - the Boston University Chronic Traumatic Encephalopathy Center - which is the world's preeminent research institution on brain trauma in athletes. It is not famous as a student attraction.",
     the_room: "87% of BU students come from out of state or from other countries - only 13% are Massachusetts residents. 21% of undergraduates are international, representing students from China, India, South Korea,",
     lifestyle: "BU's campus runs along the Charles River for two miles through the Back Bay and Fenway neighborhoods of Boston -",
-    grad_cities: "Boston MA (45%) | New York NY (22%) | Washington DC (8%) | San Francisco CA (7%) | Los Angeles CA (5%).",
-    mayNotThriveIf: "You want a tight-knit small-school feel - BU's urban, spread-out campus means community is self-assembled, not automatic.",
-    campusSocialCulture: "Urban and independent - students build their own social circles across a dispersed campus rather than relying on a central quad culture.",
-    socialCapital: "Your network forms through clubs, internships, and Boston's dense professional scene rather than dorm proximity.",
-    culturalCapital: "\"Made it in a real city\" identity - BU signals urban resourcefulness and independence.",
-    networkCapital: "Broad reach across finance, media, and healthcare, concentrated in Boston but extending nationally."
+    grad_cities: "Boston MA (45%) | New York NY (22%) | Washington DC (8%) | San Francisco CA (7%) | Los Angeles CA (5%)."
   },
   "Dartmouth College": {
     name: "Dartmouth College",
@@ -273,13 +186,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The D-Plan - Dartmouth's quarter system - is the most structurally distinctive academic calendar of any Ivy League institution and is almost entirely misunderstood by families outside the Northeast.",
     the_room: "97% of Dartmouth students come from out of state - only 3% are New Hampshire residents, reflecting that Dartmouth's location in rural Hanover is entirely incidental to its national and international d",
     lifestyle: "Hanover, New Hampshire sits in the Connecticut River Valley surrounded by the White Mountains - skiing at the Dartmouth Skiway, hiking the Appalachian Trail, canoeing on the Connec",
-    grad_cities: "New York NY (30%) | Boston MA (15%) | San Francisco CA (13%) | Washington DC (10%) | Chicago IL (8%).",
-    mayNotThriveIf: "You want an urban campus or easy off-term access to a city - Hanover's rural isolation and the D-Plan's flexible-but-unusual calendar demand real self-sufficiency.",
-    campusSocialCulture: "Outdoorsy and tight-knit - skiing, hiking, and the D-Plan's flexible terms create a genuinely unique rhythm most peer schools don't share.",
-    socialCapital: "Small size plus the shared D-Plan experience create unusually close bonds that carry directly into Tuck's elite finance/consulting network.",
-    culturalCapital: "Rugged Ivy prestige - Dartmouth signals both elite academics and outdoor self-reliance.",
-    networkCapital: "Exceptional consulting/finance placement via Tuck, among the highest MBA compensation outcomes of any Ivy feeder.",
-    school_fast_facts: "#17 overall on Forbes' America's Top Colleges List 2026. Financial Grade: A+ (4.5) - endowment per student over $1 million, among the very highest in the country. (Source: Forbes America's Top Colleges & College Financial Grades, 2026)",
+    grad_cities: "New York NY (30%) | Boston MA (15%) | San Francisco CA (13%) | Washington DC (10%) | Chicago IL (8%)."
   },
   "University of Utah": {
     name: "University of Utah",
@@ -289,12 +196,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The University of Utah sits at the base of the Wasatch Mountains - 7 world-class ski resorts within 45 minutes of campus, including Park City, Alta, Snowbird, Solitude, Brighton, Deer Valley, and The Canyons.",
     the_room: "Approximately 74% of University of Utah students are Utah residents and 26% are from out of state or international - with growing out-of-state recruitment driven by the Silicon Slopes boom and the Wal",
     lifestyle: "The University of Utah campus sits at 4,674 feet elevation at the base of the Wasatch Mountains, directly above Salt Lake City.",
-    grad_cities: "Salt Lake City-Provo UT (58%) | San Francisco CA (9%) | Los Angeles CA (7%) | Denver CO (6%) | Seattle WA (5%).",
-    mayNotThriveIf: "You want to leave the Mountain West or a flat, urban campus - Utah's identity is inseparable from its ski-resort-adjacent mountain setting.",
-    campusSocialCulture: "Outdoorsy and tech-forward - Silicon Slopes' booming tech scene blends with genuine ski-town culture unmatched by most flagships.",
-    socialCapital: "CS cohorts build direct relationships with Silicon Slopes' 155,000-worker tech ecosystem before graduation.",
-    culturalCapital: "Mountain-tech hybrid identity - Utah signals both outdoor lifestyle and rising tech-industry credibility.",
-    networkCapital: "Strong Silicon Slopes tech pipeline (Adobe, Qualtrics, Microsoft), one of the fastest-growing tech hubs in the country."
+    grad_cities: "Salt Lake City-Provo UT (58%) | San Francisco CA (9%) | Los Angeles CA (7%) | Denver CO (6%) | Seattle WA (5%)."
   },
   "Georgetown University": {
     name: "Georgetown University",
@@ -304,12 +206,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The School of Foreign Service (SFS) is the most politically powerful undergraduate program in American higher education that most families outside the Northeast have never seriously considered.",
     the_room: "98.6% of Georgetown students come from out of state - DC itself supplies only 1.4% of the student body. Students from all 49 states and 123 countries.",
     lifestyle: "The Georgetown neighborhood is one of the most architecturally beautiful urban neighborhoods in America - 18th and 19th century Federal townhouses, the C&O Canal towpath, the Potom",
-    grad_cities: "Washington DC (45%) | New York NY (25%) | Boston MA (7%) | San Francisco CA (5%) | International (8%).",
-    mayNotThriveIf: "You want a relaxed, non-political campus culture - Georgetown's identity is deeply tied to policy, power, and international affairs.",
-    campusSocialCulture: "Politically engaged, internationally minded, polished - the SFS gives campus life a distinctly global, policy-obsessed energy.",
-    socialCapital: "SFS and McDonough cohorts build networks that plug directly into DC power structures before graduation.",
-    culturalCapital: "Political and diplomatic prestige - Georgetown signals access to power and international affairs credibility.",
-    networkCapital: "The single strongest pipeline into DC finance, consulting, and foreign policy of any university in the country."
+    grad_cities: "Washington DC (45%) | New York NY (25%) | Boston MA (7%) | San Francisco CA (5%) | International (8%)."
   },
   "Duke University": {
     name: "Duke University",
@@ -319,12 +216,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Duke's Fuqua School of Business places 20% of its MBA class at McKinsey, Bain, and BCG combined - a figure that exceeds several programs conventionally ranked above Fuqua.",
     the_room: "97% of Duke undergraduates come from out of state - only 3% are North Carolina residents by state statute mandate. Top domestic feeder states: New York, Florida, California, Texas, New Jersey.",
     lifestyle: "Duke's 720-acre Gothic campus in Durham is among the most visually stunning in American higher education - the Duke Chapel, the Sarah P.",
-    grad_cities: "New York NY (28%) | Washington DC (14%) | San Francisco CA (16%) | Boston MA (10%) | Durham-Raleigh NC (8%).",
-    mayNotThriveIf: "You want a laid-back or low-pressure environment - Duke's culture is intensely competitive academically and socially.",
-    campusSocialCulture: "Basketball-obsessed (Cameron Crazies), Greek-heavy, and high-achieving - a school where ambition is worn openly.",
-    socialCapital: "Small class sizes within a national-brand school create unusually tight, high-achieving peer networks.",
-    culturalCapital: "Elite, ambitious, polished - Duke signals both academic rigor and social confidence.",
-    networkCapital: "Exceptional consulting/finance placement via Fuqua, with a network that punches above its size in Wall Street and DC."
+    grad_cities: "New York NY (28%) | Washington DC (14%) | San Francisco CA (16%) | Boston MA (10%) | Durham-Raleigh NC (8%)."
   },
   "University of Oregon": {
     name: "University of Oregon",
@@ -334,27 +226,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Phil Knight Campus for Accelerating Scientific Impact is the hidden pathway that most families have not processed. Phil Knight - Nike co-founder and UO alumnus -",
     the_room: "Approximately 85% of UO students are Oregon residents and 15% are from out of state or international - a heavily in-state profile reflecting UO's role as Oregon's flagship public university.",
     lifestyle: "Eugene sits 60 miles south of the Willamette Valley wine country, 60 miles from the Oregon Coast, and 2 hours from Crater Lake.",
-    grad_cities: "Portland OR (30%) | Seattle WA (20%) | San Francisco CA (12%) | Eugene OR (10%) | Los Angeles CA (8%).",
-    mayNotThriveIf: "You want to leave the Pacific Northwest or a heavily out-of-state student body - 85% in-state means the culture is deeply Oregon-rooted.",
-    campusSocialCulture: "Nike-influenced, outdoorsy, laid-back but ambitious - the Phil Knight Campus brings a scientific-innovation energy few families anticipate.",
-    socialCapital: "Lundquist Business cohorts build direct ties to Nike and the broader Portland-Seattle tech/business corridor.",
-    culturalCapital: "Nike-adjacent innovation identity - UO signals both Pacific Northwest ease and real business-world ambition.",
-    networkCapital: "Direct Nike alumni network plus growing Portland-Seattle tech corridor placement."
+    grad_cities: "Portland OR (30%) | Seattle WA (20%) | San Francisco CA (12%) | Eugene OR (10%) | Los Angeles CA (8%)."
   },
   "Stanford University": {
     name: "Stanford University",
     location: "Stanford (Palo Alto), California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Technology and Artificial Intelligence (Google, Apple, Meta, Microsoft, NVIDIA, Amazon, Salesforce, Oracle - Stanford graduates founded or co-founded Google, Yahoo, Instagram, Snapchat, Netflix, PayPal, WhatsApp, LinkedIn, Hewlett-Packard, and hundreds of other companies -",
     hidden_pathway: "Stanford's startup and venture capital ecosystem is the most consequential hidden pathway in American higher education - and it is only hidden to families who have not been inside it.",
     the_room: "Approximately 56% of Stanford students are from California and 44% from out of state or international. 10% are international undergraduates.",
     lifestyle: "The Stanford campus occupies 8,180 acres in the Santa Clara Valley between the Santa Cruz Mountains and the San Francisco Bay -",
-    grad_cities: "San Francisco Bay Area CA (55%) | New York NY (15%) | Seattle WA (7%) | Los Angeles CA (6%) | International (8%).",
-    mayNotThriveIf: "You need clear structure or a defined path - Stanford's open-endedness rewards self-direction and can overwhelm students who want more guardrails.",
-    campusSocialCulture: "Low-key and outdoorsy on the surface, with a constant startup undercurrent - even dorm conversations often turn into pitch sessions.",
-    socialCapital: "Casual, first-name-basis access to founders and VCs - proximity to Silicon Valley makes networking feel accidental rather than formal.",
-    culturalCapital: "Elite but understated - Stanford signals ambition without needing to perform it.",
-    networkCapital: "Unmatched Silicon Valley pipeline - the single strongest tech/VC network of any university in the country."
+    grad_cities: "San Francisco Bay Area CA (55%) | New York NY (15%) | Seattle WA (7%) | Los Angeles CA (6%) | International (8%)."
   },
   "Williams College": {
     name: "Williams College",
@@ -364,12 +246,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Williams is the only liberal arts college where Williamstown itself - a small town in the Berkshires with no industry, no city, no distraction - is the mechanism of social capital formation. There is no city to escape to.",
     the_room: "Williams enrolls approximately 2,000 undergraduates from all 50 states and 50+ countries. 57% receive financial aid. The student body is genuinely economically diverse -",
     lifestyle: "Williamstown, Massachusetts is one of the most remote and beautiful college settings in America. The Berkshires in fall are extraordinary. The Clark Art Institute is on campus -",
-    grad_cities: "New York NY (35%) | Boston MA (20%) | Washington DC (12%) | San Francisco CA (8%) | International (6%).",
-    mayNotThriveIf: "You want urban energy or easy escape from campus - Williamstown's total remoteness is the point, with no city as a release valve.",
-    campusSocialCulture: "Deeply intimate and intellectually serious - the Berkshires' isolation intensifies bonds since there's genuinely nowhere else to go.",
-    socialCapital: "Extreme remoteness plus small size creates the closest peer bonds of any liberal arts college, converting directly into Wall Street ties.",
-    culturalCapital: "Understated, elite prestige - Williams signals depth without needing a city or brand name to prove it.",
-    networkCapital: "Disproportionate Wall Street/finance placement for its size, among the strongest of any liberal arts college."
+    grad_cities: "New York NY (35%) | Boston MA (20%) | Washington DC (12%) | San Francisco CA (8%) | International (6%)."
   },
   "Amherst College": {
     name: "Amherst College",
@@ -379,13 +256,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Amherst has no core curriculum - it is the only highly selective liberal arts college in America with zero distribution requirements. Every course is an elective. Every student designs their own education from the first day of freshman year.",
     the_room: "Amherst enrolls approximately 1,900 undergraduates - smaller than Williams. 60% of students receive financial aid. The open curriculum self-selects for intellectually confident, self-directed students",
     lifestyle: "Western Massachusetts in a college town surrounded by four other colleges. The Pioneer Valley has a specific culture: intellectual, politically engaged, outdoorsy, and socially sop",
-    grad_cities: "New York NY (38%) | Boston MA (18%) | Washington DC (11%) | San Francisco CA (9%) | International (5%).",
-    mayNotThriveIf: "You need defined structure or required courses - Amherst's zero-requirement curriculum rewards students who already know how to build their own path.",
-    campusSocialCulture: "Intense and intimate - intellectually engaged, politically active, small enough that everyone's path is visible to everyone else.",
-    socialCapital: "Tight peer bonds formed through shared self-direction - classmates become collaborators for life, not just contacts.",
-    culturalCapital: "Liberal-arts prestige at its most rigorous - Amherst signals intellectual independence and confidence.",
-    networkCapital: "Disproportionate Wall Street and consulting placement relative to size, concentrated heavily in the Northeast.",
-    school_fast_facts: "#17 overall on Forbes' America's Top Colleges List 2026, median alumni salary $143,900. Financial Grade: A+ (4.5) - endowment per student over $1 million. (Source: Forbes America's Top Colleges & College Financial Grades, 2026)",
+    grad_cities: "New York NY (38%) | Boston MA (18%) | Washington DC (11%) | San Francisco CA (9%) | International (5%)."
   },
   "Bowdoin College": {
     name: "Bowdoin College",
@@ -395,12 +266,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Bowdoin's location in Brunswick, Maine - 25 miles north of Portland, on the coast of the Atlantic Ocean - is the hidden architecture of the social capital formation. There is no city. There is no distraction.",
     the_room: "Bowdoin enrolls approximately 1,800 undergraduates - among the smallest of any highly selective college in America. 49% of students receive financial aid.",
     lifestyle: "Brunswick, Maine is remote, beautiful, and cold. The Atlantic coast, the working harbor at Portland, Acadia National Park, and the White Mountains of New Hampshire are the physical",
-    grad_cities: "New York NY (30%) | Boston MA (22%) | Washington DC (12%) | San Francisco CA (7%) | International (4%).",
-    mayNotThriveIf: "You want urban energy or easy access to a city - Bowdoin's remoteness is the point, and it can feel isolating without that buy-in.",
-    campusSocialCulture: "Outdoorsy and close-knit - the remote coastal setting intensifies bonds since there's no city to escape to.",
-    socialCapital: "Small enrollment means deep, durable friendships that carry directly into finance and consulting networks after graduation.",
-    culturalCapital: "Quiet elite prestige - Bowdoin signals depth and seriousness without needing a big name to prove it.",
-    networkCapital: "Dramatically disproportionate Wall Street/consulting placement for its size, concentrated in the Northeast corridor."
+    grad_cities: "New York NY (30%) | Boston MA (22%) | Washington DC (12%) | San Francisco CA (7%) | International (4%)."
   },
   "Middlebury College": {
     name: "Middlebury College",
@@ -410,27 +276,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Middlebury's Language Schools are the most intensive and prestigious immersive language programs in America - and almost no family outside New England knows they exist as an undergraduate advantage.",
     the_room: "Middlebury enrolls approximately 2,700 undergraduates - slightly larger than Williams or Bowdoin but still intimate by any measure. 44% of students receive financial aid.",
     lifestyle: "Middlebury, Vermont is one of the most beautiful college settings in America - the Green Mountains to the east, the Adirondacks visible across Lake Champlain to the west, and a cla",
-    grad_cities: "New York NY (28%) | Boston MA (16%) | Washington DC (14%) | San Francisco CA (8%) | International (10%).",
-    mayNotThriveIf: "You're uncomfortable with rural isolation - Vermont's remoteness demands genuine self-sufficiency and comfort with a slower pace.",
-    campusSocialCulture: "Outdoorsy and globally-minded - the Language Schools bring an international energy that's rare for a rural New England campus.",
-    socialCapital: "Language School immersion creates unusually tight bonds across academic and international lines.",
-    culturalCapital: "Global fluency plus outdoor-rugged identity - Middlebury signals both worldliness and grit.",
-    networkCapital: "Disproportionate Wall Street/consulting placement, with a distinct international-affairs and language-driven career thread."
+    grad_cities: "New York NY (28%) | Boston MA (16%) | Washington DC (14%) | San Francisco CA (8%) | International (10%)."
   },
   "Pomona College": {
     name: "Pomona College",
     location: "Claremont, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Finance and Investment Management (Wall Street - Goldman Sachs, Morgan Stanley, Blackstone, leading hedge funds recruit Pomona at rates disproportionate to its 1,700-student enrollment), Consulting (McKinsey, Bain, BCG -",
     hidden_pathway: "The Claremont Consortium - five colleges sharing one campus footprint - gives Pomona students access to Harvey Mudd (top engineering and CS program in America), Claremont McKenna (top government and economics program among liberal arts colleges), Scr",
     the_room: "Pomona enrolls approximately 1,700 undergraduates - the smallest of the five Claremont Colleges and the anchor of the consortium. 57% of students receive financial aid.",
     lifestyle: "Claremont is a small city at the base of the San Gabriel Mountains with a genuine college town identity - the Claremont Village, the Metrolink station connecting to downtown LA, an",
-    grad_cities: "Los Angeles CA (25%) | San Francisco CA (20%) | New York NY (18%) | Washington DC (8%) | International (6%).",
-    mayNotThriveIf: "You want a single-campus, self-contained identity - Pomona's Claremont Consortium means your social/academic world spans five colleges, not one.",
-    campusSocialCulture: "Small, intimate, and cross-pollinated - the Consortium gives access to Harvey Mudd engineers and Claremont McKenna econ students beyond Pomona's own 1,700.",
-    socialCapital: "Consortium access means your network spans five elite colleges, not just Pomona's own small cohort.",
-    culturalCapital: "Quiet West Coast liberal-arts prestige - Pomona signals rigor without needing East Coast brand recognition.",
-    networkCapital: "Disproportionate Wall Street/consulting placement, amplified by Claremont Consortium's cross-college network reach."
+    grad_cities: "Los Angeles CA (25%) | San Francisco CA (20%) | New York NY (18%) | Washington DC (8%) | International (6%)."
   },
   "University of Chicago": {
     name: "University of Chicago",
@@ -440,12 +296,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Chicago approach to education - the Core Curriculum - is the most intellectually demanding required curriculum in American higher education and almost no family outside academia understands what it actually produces.",
     the_room: "UChicago enrolls approximately 7,000 undergraduates - larger than the liberal arts colleges but intimate relative to research university peers. 52% of students receive financial aid.",
     lifestyle: "Hyde Park, Chicago - a neighborhood on the South Side of Lake Michigan that is simultaneously a world-class university campus and a complex urban environment.",
-    grad_cities: "Chicago IL (35%) | New York NY (28%) | San Francisco CA (10%) | Washington DC (8%) | International (8%).",
-    mayNotThriveIf: "You want a lighter academic load or a traditional campus social scene - UChicago's Core Curriculum is famously intense, and \"fun\" takes a back seat to ideas.",
-    campusSocialCulture: "Intellectually intense, quirky, and proudly nerdy - \"where fun goes to die\" is a self-aware badge of honor, not an insult.",
-    socialCapital: "Shared survival of the Core Curriculum creates unusually deep intellectual bonds among classmates.",
-    culturalCapital: "Rigorous, theory-first prestige - UChicago signals serious intellectual firepower above all else.",
-    networkCapital: "Unmatched quantitative finance and hedge fund network, rooted in Chicago's economics tradition."
+    grad_cities: "Chicago IL (35%) | New York NY (28%) | San Francisco CA (10%) | Washington DC (8%) | International (8%)."
   },
   "Penn State University": {
     name: "Penn State University",
@@ -455,12 +306,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Penn State alumni network is the most tribally loyal of any university in America - and this tribal loyalty is the hidden pathway that no ranking captures.",
     the_room: "Penn State enrolls approximately 47,000 undergraduates at University Park - one of the largest residential campuses in America.",
     lifestyle: "State College, Pennsylvania is one of the most self-contained college towns in America - a small city of 42,000 people that exists entirely because of Penn State.",
-    grad_cities: "Philadelphia PA (22%) | New York NY (18%) | Washington DC (12%) | Pittsburgh PA (10%) | Chicago IL (7%).",
-    mayNotThriveIf: "You want small classes or personal faculty attention - at 47,000 undergrads, you have to actively seek out intimacy, it won't find you.",
-    campusSocialCulture: "Massive school spirit, heavy Greek presence, football-centric - one of the most unified big-school identities in the country.",
-    socialCapital: "The sheer size means your network is what you build intentionally - clubs, Greek life, and major-specific communities matter more than the class of 47,000.",
-    culturalCapital: "Tribal loyalty and blue-collar work ethic - Penn State signals grit and unwavering alumni pride.",
-    networkCapital: "Extremely high-volume Big 4 and corporate recruiting, with one of the most loyal alumni networks in the country."
+    grad_cities: "Philadelphia PA (22%) | New York NY (18%) | Washington DC (12%) | Pittsburgh PA (10%) | Chicago IL (7%)."
   },
   "Stevens Institute of Technology": {
     name: "Stevens Institute of Technology",
@@ -470,27 +316,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Stevens sits on a bluff in Hoboken, New Jersey with an unobstructed view of the Manhattan skyline - and the PATH train station is a 5-minute walk from the center of campus.",
     the_room: "Stevens enrolls approximately 3,800 undergraduates - small enough for genuine faculty access, large enough for meaningful peer diversity.",
     lifestyle: "Hoboken is one of the most livable small cities in America - a square mile of brownstones, restaurants, bars, and waterfront parks directly across the Hudson from Manhattan.",
-    grad_cities: "New York NY (55%) | Newark-Jersey City NJ (15%) | Philadelphia PA (8%) | Boston MA (5%) | International (7%).",
-    mayNotThriveIf: "You want broad liberal arts exposure or a non-technical peer group - Stevens is all-in on quant/technical identity.",
-    campusSocialCulture: "Small and intense - tech-focused, with Manhattan's skyline as a constant backdrop and a five-minute PATH ride to the city.",
-    socialCapital: "Tight cohort of quant-minded peers who become direct competitors and collaborators in Wall Street's most technical roles.",
-    culturalCapital: "Quiet quant prestige - Stevens signals mathematical rigor over broad name recognition.",
-    networkCapital: "Direct pipeline into the most quantitatively demanding Wall Street roles, concentrated in NYC."
+    grad_cities: "New York NY (55%) | Newark-Jersey City NJ (15%) | Philadelphia PA (8%) | Boston MA (5%) | International (7%)."
   },
   "UC San Diego": {
     name: "UC San Diego",
     location: "La Jolla, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Biotechnology and Life Sciences (top-5 nationally for biological sciences - Genentech, Illumina, Pfizer, Johnson and Johnson, Eli Lilly, Thermo Fisher Scientific - San Diego is the third largest biotech cluster in America behind Boston and San Francisco and UCSD is its institutio",
     hidden_pathway: "Scripps Institution of Oceanography gives UCSD undergraduates access to the most prestigious oceanographic and climate research institution in the world -",
     the_room: "UCSD enrolls approximately 33,000 undergraduates - a large research university with the research infrastructure to match. The student body is approximately 45% Asian American -",
     lifestyle: "La Jolla is one of the most physically beautiful university settings in America - cliffs above the Pacific Ocean, the Black's Beach trail, the Torrey Pines State Reserve adjacent t",
-    grad_cities: "San Diego CA (35%) | San Francisco-Bay Area CA (20%) | Los Angeles CA (12%) | Seattle WA (6%) | International (8%).",
-    mayNotThriveIf: "You want small-school intimacy - 33,000 undergrads means a research-first culture where you build community deliberately.",
-    campusSocialCulture: "Research-heavy and quieter socially than other UCs - beach/surf culture runs underneath a serious academic identity.",
-    socialCapital: "Lab and research-group relationships matter more than dorm life - your network forms around shared academic work.",
-    culturalCapital: "Scientific rigor with a laid-back California edge - UCSD signals serious research chops without pretension.",
-    networkCapital: "Deep biotech/life-sciences pipeline in San Diego's cluster, the third-largest in the country behind Boston and SF."
+    grad_cities: "San Diego CA (35%) | San Francisco-Bay Area CA (20%) | Los Angeles CA (12%) | Seattle WA (6%) | International (8%)."
   },
   "Massachusetts Institute of Technology": {
     name: "Massachusetts Institute of Technology",
@@ -500,13 +336,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "MIT's Independent Activities Period - IAP - is a four-week January term where the entire normal academic structure dissolves and students can take any course, launch any project, travel anywhere, or pursue any research interest with full institutiona",
     the_room: "MIT enrolls approximately 4,600 undergraduates - smaller than the liberal arts colleges in terms of feel but structured as a research university. 58% of students receive need-based financial aid.",
     lifestyle: "Cambridge, Massachusetts is one of the great intellectual cities of the world - Harvard is across the street, the Charles River is the southern border of campus, Boston is 15 minut",
-    grad_cities: "Boston-Cambridge MA (30%) | San Francisco-Bay Area CA (25%) | New York NY (18%) | Seattle WA (7%) | International (10%).",
-    mayNotThriveIf: "You want a lighter workload or broad non-technical exploration - MIT's intensity is constant, and IAP's freedom still assumes serious self-direction.",
-    campusSocialCulture: "Intensely nerdy, hands-on, project-obsessed - hacks, IAP, and hackathons define a culture where building things is the primary social currency.",
-    socialCapital: "Small size plus shared intensity creates extremely tight technical bonds that convert directly into founding companies together.",
-    school_fast_facts: "#1 overall on Forbes' America's Top Colleges List 2026 (500 schools, 14 metrics) - the top spot after ranking #6 as recently as 2021. Financial Grade: A+ (4.5/5). Average grant aid: $58,331 against a total annual cost of $82,730. (Source: Forbes America's Top Colleges, 2026)",
-    culturalCapital: "The single highest technical prestige available - MIT signals elite engineering/CS credibility instantly, everywhere.",
-    networkCapital: "Unmatched Silicon Valley and Boston tech/research pipeline, with the strongest founder-network density of any university."
+    grad_cities: "Boston-Cambridge MA (30%) | San Francisco-Bay Area CA (25%) | New York NY (18%) | Seattle WA (7%) | International (10%)."
   },
   "Georgia Institute of Technology": {
     name: "Georgia Institute of Technology",
@@ -516,12 +346,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Georgia Tech's Co-op program is one of the oldest and largest cooperative education programs in America - and it is the hidden pathway that explains why Georgia Tech graduates earn more on average at graduation than graduates of schools ranked above",
     the_room: "Georgia Tech enrolls approximately 17,000 undergraduates - large enough for research university infrastructure, small enough to maintain engineering cohort culture.",
     lifestyle: "Atlanta's Midtown neighborhood is one of the great American university locations - Piedmont Park is six blocks from campus, the Fox Theatre is four blocks away, the High Museum of",
-    grad_cities: "Atlanta GA (40%) | Washington DC (12%) | New York NY (10%) | San Francisco-Bay Area CA (8%) | Charlotte NC (5%).",
-    mayNotThriveIf: "You want a lighter workload or broad liberal arts balance - Tech's engineering-first culture is intense and demanding.",
-    campusSocialCulture: "Urban and driven - Midtown Atlanta's energy blends with a work-hard engineering identity; the Co-op program means many students cycle in and out of campus.",
-    socialCapital: "Co-op cohorts build professional networks alongside classroom ones - many students have real industry contacts before graduation.",
-    culturalCapital: "Elite technical rigor with real-world Co-op credibility - Tech signals \"already has work experience.\"",
-    networkCapital: "The strongest tech recruiting pipeline in the Southeast, with deep Atlanta corporate and startup ties."
+    grad_cities: "Atlanta GA (40%) | Washington DC (12%) | New York NY (10%) | San Francisco-Bay Area CA (8%) | Charlotte NC (5%)."
   },
   "Rose-Hulman Institute of Technology": {
     name: "Rose-Hulman Institute of Technology",
@@ -531,27 +356,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Rose-Hulman has no graduate students. This is the hidden pathway that no ranking captures and no family outside the Midwest understands until they visit.",
     the_room: "Rose-Hulman enrolls approximately 2,000 undergraduates - the smallest institution in the technical school group and one of the smallest in the entire database.",
     lifestyle: "Terre Haute, Indiana is not a destination city - and that is precisely the point. The Rose-Hulman campus is self-contained, self-sufficient, and socially concentrated in the same w",
-    grad_cities: "Indianapolis IN (25%) | Chicago IL (18%) | Cincinnati OH (12%) | St. Louis MO (8%) | Houston TX (6%).",
-    mayNotThriveIf: "You want non-engineering options or a lively urban setting - Rose-Hulman is all engineering, all the time, in a self-contained small town.",
-    campusSocialCulture: "Extremely small and tight-knit - undergraduate-only means no grad students competing for attention, everyone's fully invested in the same identity.",
-    socialCapital: "Small size creates unusually deep peer bonds that turn into a lifelong professional network across Midwest engineering firms.",
-    culturalCapital: "Pure engineering-craft prestige - Rose-Hulman signals technical seriousness without needing brand recognition.",
-    networkCapital: "Disproportionate engineering placement for its size, concentrated in the Midwest industrial corridor."
+    grad_cities: "Indianapolis IN (25%) | Chicago IL (18%) | Cincinnati OH (12%) | St. Louis MO (8%) | Houston TX (6%)."
   },
   "California Institute of Technology": {
     name: "California Institute of Technology",
     location: "Pasadena, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Physics and Astrophysics (top-1 nationally - Caltech faculty and alumni have produced more Nobel Prize winners per capita than any institution in the world - NASA Jet Propulsion Laboratory is managed by Caltech and sits adjacent to campus -",
     hidden_pathway: "JPL - the NASA Jet Propulsion Laboratory - is managed by Caltech and located 4 miles from campus in the Arroyo Seco canyon above Pasadena. Caltech undergraduates can apply for paid research positions at JPL from sophomore year.",
     the_room: "Caltech enrolls approximately 948 undergraduates - the smallest research university in the database and one of the smallest in the world at this level of research intensity.",
     lifestyle: "Pasadena, California is one of the most civilized small cities in America - the Rose Bowl is walking distance, the Huntington Library and Gardens are 2 miles away, Old Town Pasaden",
-    grad_cities: "Los Angeles CA (30%) | San Francisco-Bay Area CA (25%) | Boston-Cambridge MA (15%) | International (12%) | Washington DC",
-    mayNotThriveIf: "You want breadth, social balance, or a large extracurricular scene - Caltech is tiny and academics-first, with almost nothing else competing for attention.",
-    campusSocialCulture: "Extremely small and intense - roughly 950 undergrads means everyone knows everyone, and the culture is unapologetically academics-first.",
-    socialCapital: "Near-familial bonds form fast in a class this small - classmates become lifelong collaborators in research and industry.",
-    culturalCapital: "The highest scientific prestige available - Caltech signals elite technical and research credibility instantly.",
-    networkCapital: "Unmatched access to JPL/NASA and Nobel-caliber research networks, concentrated in West Coast tech and science."
+    grad_cities: "Los Angeles CA (30%) | San Francisco-Bay Area CA (25%) | Boston-Cambridge MA (15%) | International (12%) | Washington DC"
   },
   "Carnegie Mellon University": {
     name: "Carnegie Mellon University",
@@ -561,43 +376,27 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "CMU's School of Drama is the only top-5 drama program in America located inside a top-5 CS and engineering university - and the collision between these two worlds is the hidden pathway that produces something no peer institution can replicate.",
     the_room: "CMU enrolls approximately 7,000 undergraduates across all colleges - larger than Caltech and Rose-Hulman but intimate relative to Georgia Tech or Penn State.",
     lifestyle: "Pittsburgh's Oakland neighborhood - the university district anchored by CMU and the University of Pittsburgh - is one of the great American academic neighborhoods.",
-    grad_cities: "San Francisco-Bay Area CA (35%) | New York NY (20%) | Pittsburgh PA (12%) | Seattle WA (8%) | International (10%).",
-    mayNotThriveIf: "You want a purely technical or purely artistic focus - CMU's identity is built on the collision of CS/engineering with drama/arts, which some students find distracting rather than enriching.",
-    campusSocialCulture: "Intensely driven, quirky mix of hardcore engineers and serious drama students - the collision creates a genuinely unique campus energy.",
-    socialCapital: "The CS/drama collision creates unusual, high-value cross-disciplinary bonds unavailable at peer technical schools.",
-    culturalCapital: "Top-tier AI/robotics prestige with an unexpected creative edge - CMU signals serious technical chops plus range.",
-    networkCapital: "The strongest AI/robotics/ML industry pipeline in the country, concentrated in Silicon Valley and Seattle."
+    grad_cities: "San Francisco-Bay Area CA (35%) | New York NY (20%) | Pittsburgh PA (12%) | Seattle WA (8%) | International (10%)."
   },
   "Colorado School of Mines": {
     name: "Colorado School of Mines",
     location: "Golden, Colorado",
-    region: "West Coast",
+    region: "Mountain West",
     pipeline: "Energy Engineering and Petroleum Engineering (top-3 nationally for petroleum engineering - ExxonMobil, Chevron, ConocoPhillips, BP, Halliburton, Schlumberger, Pioneer Natural Resources recruit Mines at volume and at preferential rates that reflect decades of institutional relatio",
     hidden_pathway: "Mineral economics is a discipline that exists at only a handful of universities in the world and Mines is its American home. As the energy transition has accelerated global demand for lithium, cobalt, nickel, copper, and rare earth elements -",
     the_room: "Mines enrolls approximately 5,500 undergraduates - mid-sized relative to the technical school group. The student body is approximately 72% male reflecting the engineering and energy industry identity.",
     lifestyle: "Golden, Colorado is one of the great American college town settings - a small city of 20,000 at the base of the Rocky Mountain foothills where Clear Creek runs through downtown and",
-    grad_cities: "Denver-Boulder CO (38%) | Houston TX (22%) | Calgary Canada (8%) | Dallas TX (7%) | International Energy Corridors (6%).",
-    mayNotThriveIf: "You want a broad liberal arts environment or a more gender-balanced campus - Mines is intensely energy/engineering-focused with a 72% male student body.",
-    campusSocialCulture: "Rugged, outdoorsy, engineering-first - Golden's mountain-town setting and the school's energy-industry identity shape a driven, practical culture.",
-    socialCapital: "Small, tight-knit cohorts build direct relationships with major energy companies through decades-deep recruiting ties.",
-    culturalCapital: "Elite energy-engineering prestige - Mines signals serious technical credibility in a field few universities specialize in this deeply.",
-    networkCapital: "The strongest traditional-energy industry pipeline in the country, plus a rare mineral economics specialization tied to the energy transition."
+    grad_cities: "Denver-Boulder CO (38%) | Houston TX (22%) | Calgary Canada (8%) | Dallas TX (7%) | International Energy Corridors (6%)."
   },
   "Harvey Mudd College": {
     name: "Harvey Mudd College",
     location: "Claremont, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Computer Science and Software Engineering (top-5 nationally for undergraduate CS - Google, Apple, Microsoft, Meta, Amazon, Jane Street, Two Sigma, Citadel recruit Harvey Mudd CS graduates at starting salaries that are among the highest of any undergraduate institution in America",
     hidden_pathway: "Harvey Mudd is a member of the Claremont Consortium - which means every Harvey Mudd student has full cross-registration access to Pomona College, Claremont McKenna, Scripps, and Pitzer simultaneously.",
     the_room: "Harvey Mudd enrolls approximately 902 undergraduates - the second smallest institution in the database after Caltech, and the smallest engineering-focused college in America at this level of selectivi",
     lifestyle: "Claremont, California - the same setting as Pomona College - with all the physical advantages of Southern California: 280+ days of sunshine, Angeles National Forest 20 minutes nort",
-    grad_cities: "San Francisco-Bay Area CA (40%) | Los Angeles CA (20%) | New York NY (15%) | Seattle WA (8%) | International (5%).",
-    mayNotThriveIf: "You want a non-technical major without Consortium cross-registration - Mudd is intensely STEM-focused at an extremely small scale.",
-    campusSocialCulture: "Tiny, quirky, collaborative - Consortium access to Pomona/CMC/Scripps/Pitzer means the social world extends well beyond Mudd's 900 students.",
-    school_fast_facts: "Class of 2025 outcomes: 60.9% went straight to the workforce, 28.8% to grad or professional school, at a median starting salary of $124,999 - among the highest of any undergraduate institution in the country. Rankings back it up: #2 nationally for undergraduate engineering (US News 2026), #1 for early-career salaries (PayScale), #4 for best salaries overall (WSJ/College Pulse). (Source: Harvey Mudd College Fast Facts, 2025-2026)",
-    socialCapital: "Extremely small size plus Consortium access creates deep technical bonds alongside broader liberal-arts social connections.",
-    culturalCapital: "Elite, under-the-radar CS prestige - Mudd signals top-tier technical rigor without Ivy-level name recognition.",
-    networkCapital: "Among the highest-paying CS placement outcomes of any undergraduate institution, concentrated in Silicon Valley."
+    grad_cities: "San Francisco-Bay Area CA (40%) | Los Angeles CA (20%) | New York NY (15%) | Seattle WA (8%) | International (5%)."
   },
   "Worcester Polytechnic Institute": {
     name: "Worcester Polytechnic Institute",
@@ -607,27 +406,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "WPI's project-based education model is the most radical departure from traditional engineering education in the technical school group - and almost no family outside New England knows it exists.",
     the_room: "WPI enrolls approximately 4,700 undergraduates - mid-sized relative to the technical group. The student body is approximately 65% male reflecting the engineering concentration.",
     lifestyle: "Worcester is a mid-sized New England city of 200,000 - the second largest city in Massachusetts after Boston -",
-    grad_cities: "Boston MA (35%) | New York NY (15%) | Hartford CT (10%) | Worcester MA (8%) | San Francisco CA (6%).",
-    mayNotThriveIf: "You want traditional lecture-based learning - WPI's project-based model is a radical departure that demands real self-direction from day one.",
-    campusSocialCulture: "Practical, project-driven, collaborative - the hands-on curriculum shapes a campus culture built around team-based problem-solving.",
-    socialCapital: "Project teams create genuinely functional working relationships that mirror real workplace collaboration before graduation.",
-    culturalCapital: "Applied, project-first engineering identity - WPI signals real-world readiness over theoretical prestige.",
-    networkCapital: "Strong Boston-area defense and fintech placement, reinforced by a distinctive project-based credential most peers lack."
+    grad_cities: "Boston MA (35%) | New York NY (15%) | Hartford CT (10%) | Worcester MA (8%) | San Francisco CA (6%)."
   },
   "University of Washington": {
     name: "University of Washington",
     location: "Seattle, Washington",
     region: "Pacific Northwest",
-    pipeline: "Computer Science and Software Engineering (top-5 nationally - the Paul G. Allen School of Computer Science and Engineering is the most influential CS program on the West Coast outside Stanford -",
-    hidden_pathway: "The WWAMI program is the most consequential medical education innovation in American higher education that no family outside the Pacific Northwest has heard of. WWAMI stands for Washington, Wyoming, Alaska, Montana, and Idaho -",
-    the_room: "UW enrolls approximately 35,000 undergraduates - a large research university with the research infrastructure to match. The student body is approximately 25% Asian American reflecting the Seattle metr",
-    lifestyle: "Seattle is one of the great American cities for young professionals - consistently ranked among the top cities for quality of life, outdoor access, and technology career opportunit",
-    grad_cities: "Seattle WA (45%) | San Francisco-Bay Area CA (18%) | Portland OR (8%) | New York NY (6%) | International (10%).",
-    mayNotThriveIf: "You want small classes or a slower pace - UW's 35,000 undergrads and CS program intensity demand real self-direction.",
-    campusSocialCulture: "Tech-forward and outdoorsy - Seattle's professional energy blends with Pacific Northwest hiking/kayaking culture on campus.",
-    socialCapital: "Allen School CS cohorts build elite technical networks that plug directly into Seattle's massive tech ecosystem.",
-    culturalCapital: "West Coast tech-and-outdoors identity - UW signals serious CS credibility with genuine lifestyle balance.",
-    networkCapital: "Direct Seattle tech pipeline (Amazon, Microsoft) plus the unique WWAMI regional medical education network."
+    pipeline: "Computer Science and Software Engineering (top-5 nationally - the Paul G. Allen School of Computer Science and Engineering is the most influential CS program on the West Coast outside Stanford - Microsoft, Amazon, and Google all recruit directly from the program with headquarters or major campuses in the Seattle metro area).",
+    hidden_pathway: "The WWAMI program is the most consequential medical education innovation in American higher education that no family outside the Pacific Northwest has heard of. WWAMI stands for Washington, Wyoming, Alaska, Montana, and Idaho - a five-state partnership that lets UW function as the flagship medical school for a region where none of the other four states has a medical school of its own.",
+    the_room: "UW enrolls approximately 35,000 undergraduates - a large research university with the research infrastructure to match. The student body is approximately 25% Asian American, reflecting the Seattle metro area's demographic makeup and its deep ties to the regional tech industry.",
+    lifestyle: "Seattle is one of the great American cities for young professionals - consistently ranked among the top cities for quality of life, outdoor access, and technology career opportunities. The campus itself sits between Lake Union and Lake Washington, and Husky Stadium's game-day tradition of 'sailgating' - tailgating from boats moored on Union Bay - is unique among Power Conference programs. Students can rent kayaks and canoes from the Waterfront Activities Center to paddle the Union Bay Natural Area or the Washington Arboretum.",
+    grad_cities: "Seattle WA (45%) | San Francisco-Bay Area CA (18%) | Portland OR (8%) | New York NY (6%) | International (10%)."
   },
   "University of Pennsylvania": {
     name: "University of Pennsylvania",
@@ -637,12 +426,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Wharton is the only top-5 undergraduate business program located inside an Ivy League university - and the dual degree programs this creates are the hidden pathways that no peer school can replicate.",
     the_room: "Penn enrolls approximately 10,000 undergraduates across four undergraduate schools - Wharton, College of Arts and Sciences, Penn Engineering, and Penn Nursing.",
     lifestyle: "University City in West Philadelphia is a genuine urban neighborhood that has transformed alongside Penn's growth into one of the most research-active campuses in America.",
-    grad_cities: "New York NY (35%) | Philadelphia PA (18%) | San Francisco CA (12%) | Washington DC (8%) | Boston MA (6%).",
-    mayNotThriveIf: "You want a less finance-obsessed culture - Wharton's dominant presence shapes campus energy even outside the business school.",
-    campusSocialCulture: "Ambitious, pre-professional, Greek-heavy - Wharton's finance-first energy radiates across all four undergraduate schools.",
-    socialCapital: "Wharton's dual-degree structure creates uniquely broad networks spanning finance, engineering, and nursing simultaneously.",
-    culturalCapital: "Top-tier business prestige inside Ivy League walls - Penn signals both academic rigor and Wall Street readiness.",
-    networkCapital: "The single strongest Wall Street undergraduate pipeline in the country, setting the compensation ceiling industry-wide."
+    grad_cities: "New York NY (35%) | Philadelphia PA (18%) | San Francisco CA (12%) | Washington DC (8%) | Boston MA (6%)."
   },
   "Princeton University": {
     name: "Princeton University",
@@ -652,13 +436,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Princeton has no professional schools - no law school, no business school, no medical school, no journalism school. Every Princeton undergraduate is a liberal arts student regardless of concentration.",
     the_room: "Princeton enrolls approximately 5,500 undergraduates - mid-sized among the Ivies. The student body is assembled from all 50 states and 100+ countries with heavy representation from New York, New Jerse",
     lifestyle: "Princeton, New Jersey is one of the great American college towns - small, walkable, architecturally magnificent, and organized entirely around the university.",
-    grad_cities: "New York NY (32%) | Washington DC (18%) | Boston MA (10%) | San Francisco CA (8%) | International (8%).",
-    mayNotThriveIf: "You want professional-school options (business, law, medicine) as an undergraduate - Princeton is liberal-arts-only, no exceptions.",
-    campusSocialCulture: "Quaint, tradition-bound, intensely academic - the small-town setting and lack of professional schools create a purely undergraduate-focused culture.",
-    socialCapital: "No professional schools means undergrads are the sole focus, creating unusually direct faculty access and tight peer bonds.",
-    culturalCapital: "The purest liberal-arts Ivy prestige - Princeton signals depth and seriousness without professional-school distraction.",
-    school_fast_facts: "#3 overall on Forbes' America's Top Colleges List 2026, after holding #1 the two prior years. Financial Grade: A+ (4.34) - highest endowment-per-student in the country at $3.7 million, which funds a no-loan policy covering full tuition for families earning $150,000 or less. (Source: Forbes America's Top Colleges & College Financial Grades, 2026)",
-    networkCapital: "Elite quantitative finance placement, with math/economics graduates among the most recruited profiles on Wall Street."
+    grad_cities: "New York NY (32%) | Washington DC (18%) | Boston MA (10%) | San Francisco CA (8%) | International (8%)."
   },
   "Brown University": {
     name: "Brown University",
@@ -668,12 +446,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Open Curriculum is Brown's defining structural feature and the hidden pathway that makes Brown categorically different from every other Ivy League university.",
     the_room: "Brown enrolls approximately 7,000 undergraduates - mid-sized among the Ivies. The student body is assembled from all 50 states and 100+ countries with heavy representation from New York, California, M",
     lifestyle: "Providence, Rhode Island is one of the most underrated college cities in America - a small city of 180,000 with a genuine arts and food culture, a waterfront district, and the Wate",
-    grad_cities: "New York NY (30%) | Boston MA (16%) | San Francisco CA (14%) | Washington DC (8%) | Providence RI (5%).",
-    mayNotThriveIf: "You want defined requirements or structured guidance - the Open Curriculum rewards students who already know how to design their own path.",
-    campusSocialCulture: "Artsy, progressive, self-directed - Providence's underrated arts scene matches Brown's famously flexible, exploratory academic culture.",
-    socialCapital: "Shared self-direction through the Open Curriculum creates genuine intellectual bonds among classmates pursuing unconventional paths.",
-    culturalCapital: "Progressive, creatively-minded Ivy prestige - Brown signals intellectual independence and comfort with ambiguity.",
-    networkCapital: "Among the highest per-capita MBB consulting placement of any Ivy, plus strong Wall Street ties despite its artsy reputation."
+    grad_cities: "New York NY (30%) | Boston MA (16%) | San Francisco CA (14%) | Washington DC (8%) | Providence RI (5%)."
   },
   "Harvard University": {
     name: "Harvard University",
@@ -683,12 +456,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Harvard's tutorial system - one-on-one or small group instruction with faculty or advanced PhD students in every concentration - is the hidden educational architecture that no peer institution replicates at scale.",
     the_room: "Harvard enrolls approximately 7,000 undergraduates - mid-sized among the Ivies and small relative to its global footprint. 55% of students receive financial aid.",
     lifestyle: "Cambridge, Massachusetts is one of the great intellectual cities of the world - MIT is across the river, Boston is 15 minutes by Red Line, and the concentration of universities, ho",
-    grad_cities: "New York NY (25%) | Boston-Cambridge MA (20%) | Washington DC (15%) | San Francisco CA (10%) | International (12%).",
-    mayNotThriveIf: "You want easy anonymity or a lighter academic/social reputation weight - Harvard's name carries expectations you'll be navigating constantly.",
-    campusSocialCulture: "Polished, globally-minded, quietly intense - the tutorial system creates deep faculty relationships within an otherwise large university footprint.",
-    socialCapital: "One-on-one tutorial relationships create rare direct faculty mentorship most peer universities can't replicate at scale.",
-    culturalCapital: "The single highest-recognition academic prestige in the world - Harvard signals credibility everywhere, instantly.",
-    networkCapital: "Unmatched Wall Street and global leadership network, placing at the most senior levels across nearly every industry."
+    grad_cities: "New York NY (25%) | Boston-Cambridge MA (20%) | Washington DC (15%) | San Francisco CA (10%) | International (12%)."
   },
   "Yale University": {
     name: "Yale University",
@@ -698,12 +466,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Yale's residential college system is the hidden social architecture that makes Yale structurally different from every other Ivy League university - and most families on campus tours understand it as a housing arrangement rather than as the social cap",
     the_room: "Yale enrolls approximately 6,500 undergraduates - slightly smaller than Harvard. 53% of students receive financial aid. The residential college system creates 14 distinct sub-communities within the un",
     lifestyle: "New Haven, Connecticut has been unfairly maligned as a college city for decades - and Yale's investment in the city has transformed it into a genuinely vibrant urban environment wi",
-    grad_cities: "New York NY (32%) | Washington DC (16%) | Boston MA (10%) | Los Angeles CA (7%) | International (10%).",
-    mayNotThriveIf: "You want one unified campus identity rather than sub-community structure - the residential college system fragments social life into 14 distinct micro-communities.",
-    campusSocialCulture: "Residential colleges create close-knit micro-communities, each with its own identity, inside the larger Yale experience.",
-    socialCapital: "Residential college bonds run deep and durable, creating some of the strongest alumni loyalty of any Ivy League school.",
-    culturalCapital: "Legal and intellectual prestige at the highest level - Yale signals both power and depth, especially in law and public service.",
-    networkCapital: "The single strongest legal network in the world via Yale Law, plus deep ties into federal judiciary and public service."
+    grad_cities: "New York NY (32%) | Washington DC (16%) | Boston MA (10%) | Los Angeles CA (7%) | International (10%)."
   },
   "Cornell University": {
     name: "Cornell University",
@@ -713,13 +476,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Cornell is the only Ivy League university with seven undergraduate colleges admitting students to specific programs - not to a general arts and sciences program with a major declared later.",
     the_room: "Cornell enrolls approximately 15,000 undergraduates - the largest of the Ivy League universities and significantly larger than Harvard, Yale, or Princeton.",
     lifestyle: "Ithaca, New York is remote - 4 hours from New York City, 5 hours from Boston - and that remoteness is the social intensifier.",
-    grad_cities: "New York NY (30%) | San Francisco CA (15%) | Boston MA (10%) | Washington DC (8%) | Ithaca-upstate NY (5%).",
-    mayNotThriveIf: "You need a small, tight-knit cohort where professors know your name by week two - Cornell's scale means you build your own community, it won't happen automatically.",
-    campusSocialCulture: "Greek life is real but not dominant - roughly 30% go Greek, leaving room for pre-professional clubs, research groups, and outdoor culture to anchor social life instead.",
-    socialCapital: "Seven distinct colleges mean your closest network forms around your specific school, not \"Cornell\" broadly.",
-    culturalCapital: "Rigor-first, workhorse reputation - alumni carry a \"did the hardest version of it\" credibility.",
-    networkCapital: "Heavy East Coast pull (NYC 30%) but real reach into tech and the West Coast too.",
-    school_fast_facts: "#14 overall on Forbes' America's Top Colleges List 2026, #9 among Research Universities specifically. Financial Grade: A+ - endowment per student of $345,000. (Source: Forbes America's Top Colleges & College Financial Grades, 2026)",
+    grad_cities: "New York NY (30%) | San Francisco CA (15%) | Boston MA (10%) | Washington DC (8%) | Ithaca-upstate NY (5%)."
   },
   "Columbia University": {
     name: "Columbia University",
@@ -729,27 +486,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Columbia's Core Curriculum is the most famous required curriculum in American higher education - and it is the opposite of Brown's open curriculum and Amherst's no-requirements approach.",
     the_room: "Columbia enrolls approximately 9,000 undergraduates across Columbia College and the Fu Foundation School of Engineering - mid-sized among the Ivies.",
     lifestyle: "Morningside Heights in Upper Manhattan - 116th Street and Broadway - is Columbia's neighborhood, and it sits between Harlem to the east, the Upper West Side to the south, and Washi",
-    grad_cities: "New York NY (55%) | Washington DC (10%) | San Francisco CA (8%) | Boston MA (5%) | International (10%).",
-    mayNotThriveIf: "You want a traditional campus feel or flexible course requirements - the Core Curriculum is mandatory and Morningside Heights is dense urban Manhattan, not a quad.",
-    campusSocialCulture: "Intense, urban, intellectually rigorous - the Core Curriculum creates shared struggle bonds while Manhattan provides constant professional access.",
-    socialCapital: "Shared Core Curriculum experience creates deep intellectual bonds, reinforced by Wall Street recruiters being blocks away.",
-    culturalCapital: "Urban-intellectual Ivy prestige - Columbia signals both rigor and real-world New York sophistication.",
-    networkCapital: "Unmatched Wall Street proximity advantage - recruiters walk to campus rather than fly in, creating direct pipeline access."
+    grad_cities: "New York NY (55%) | Washington DC (10%) | San Francisco CA (8%) | Boston MA (5%) | International (10%)."
   },
   "Gonzaga University": {
     name: "Gonzaga University",
     location: "Spokane, Washington",
-    region: "West Coast",
+    region: "Pacific Northwest",
     pipeline: "Business and Finance (Gonzaga School of Business Administration - top-50 nationally - accounting, finance, marketing, management - major Pacific Northwest employers including Amazon, Microsoft, Boeing, REI, Starbucks, Costco, Nordstrom recruit Gonzaga at preferential rates reflec",
     hidden_pathway: "Gonzaga's basketball program is the most consequential hidden pathway in the database for a specific reason that has nothing to do with sports: the national visibility of Gonzaga men's basketball -",
     the_room: "Gonzaga enrolls approximately 5,000 undergraduates - intimate relative to flagship state universities and appropriately sized for the Jesuit model of individual student formation.",
     lifestyle: "Spokane, Washington is a mid-sized city of 230,000 in the Inland Northwest - surrounded by the Palouse wheat fields to the south, the Cascades to the west, and the Rocky Mountain f",
-    grad_cities: "Seattle WA (25%) | Spokane WA (15%) | Portland OR (10%) | San Francisco CA (8%) | Los Angeles CA (7%).",
-    mayNotThriveIf: "You want a major city or a large research university - Spokane is mid-sized and remote, and Gonzaga's Jesuit model is intimate by design.",
-    campusSocialCulture: "Warm, faith-centered, basketball-proud - March Madness visibility gives Gonzaga a national profile disproportionate to its small size.",
-    socialCapital: "Small size plus Jesuit formation model creates close, values-aligned bonds that carry into Pacific Northwest business networks.",
-    culturalCapital: "Faith-driven identity amplified by basketball fame - Gonzaga signals both values and unexpected national visibility.",
-    networkCapital: "Preferential Pacific Northwest employer recruiting (Amazon, Microsoft, Boeing), reinforced by basketball-driven brand recognition."
+    grad_cities: "Seattle WA (25%) | Spokane WA (15%) | Portland OR (10%) | San Francisco CA (8%) | Los Angeles CA (7%)."
   },
   "Northwestern University": {
     name: "Northwestern University",
@@ -759,27 +506,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Northwestern's quarter system - the university runs on four 10-week quarters rather than two semesters - is the hidden educational architecture that produces a specific and valuable graduate profile.",
     the_room: "Northwestern enrolls approximately 8,000 undergraduates across six undergraduate schools - Weinberg College of Arts and Sciences, McCormick School of Engineering, Medill, School of Communication, Bien",
     lifestyle: "Evanston, Illinois is a small city of 75,000 immediately north of Chicago on the Lake Michigan shoreline - close enough to Chicago to access the city's full professional and cultur",
-    grad_cities: "Chicago IL (35%) | New York NY (25%) | San Francisco CA (10%) | Washington DC (7%) | Los Angeles CA (6%).",
-    mayNotThriveIf: "You want a traditional semester rhythm - the quarter system moves fast, with less downtime between finals and the next term starting.",
-    campusSocialCulture: "Ambitious and media-savvy, with six distinct undergraduate schools creating varied sub-communities under one Wildcat identity.",
-    socialCapital: "Medill's tight cohort structure creates direct pipelines into top newsrooms and media companies before graduation.",
-    culturalCapital: "Elite media/journalism prestige - Northwestern signals both intellectual rigor and creative-industry credibility.",
-    networkCapital: "The strongest journalism/media placement network in the country, reinforced by Chicago's professional proximity."
+    grad_cities: "Chicago IL (35%) | New York NY (25%) | San Francisco CA (10%) | Washington DC (7%) | Los Angeles CA (6%)."
   },
   "University of Denver": {
     name: "University of Denver",
     location: "Denver, Colorado",
-    region: "West Coast",
+    region: "Mountain West",
     pipeline: "Business and Finance (Daniels College of Business - top-40 nationally - accounting, finance, real estate, hospitality management, marketing - Ernst and Young, KPMG, Deloitte, PwC, major Denver financial services and real estate companies recruit Daniels at volume -",
     hidden_pathway: "The Josef Korbel School of International Studies is the hidden pathway that no Southern California family encounters on a standard college search - and it is one of the most consequential international affairs programs in America.",
     the_room: "DU enrolls approximately 6,000 undergraduates - intimate relative to flagship state universities and appropriately sized for the private university formation model.",
     lifestyle: "Denver, Colorado is one of the great American cities for young people in the 2020s - consistently ranked among the top cities for quality of life, outdoor recreation access, and ca",
-    grad_cities: "Denver CO (45%) | Washington DC (12%) | New York NY (8%) | San Francisco CA (6%) | International (8%).",
-    mayNotThriveIf: "You want a big-school flagship feel or a warmer, non-mountain climate - DU is intimate and built around Denver's outdoor-recreation lifestyle.",
-    campusSocialCulture: "Outdoorsy and internationally minded - the Korbel School gives an unexpected global-affairs energy to an otherwise ski-town-adjacent campus.",
-    socialCapital: "Small size plus Daniels Business School ties create close relationships that convert directly into Denver's finance/real estate scene.",
-    culturalCapital: "Outdoorsy sophistication with a global-affairs edge - DU signals both lifestyle balance and international seriousness.",
-    networkCapital: "Strong Denver business/real estate placement, plus a uniquely powerful international affairs network via Korbel."
+    grad_cities: "Denver CO (45%) | Washington DC (12%) | New York NY (8%) | San Francisco CA (6%) | International (8%)."
   },
   "Elon University": {
     name: "Elon University",
@@ -789,12 +526,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Elon's Experiential Learning requirement is the hidden pathway that explains why Elon communications graduates get hired above peers from larger and more recognized programs.",
     the_room: "Elon enrolls approximately 7,000 undergraduates - mid-sized and appropriate for the experiential learning model that requires individual placement infrastructure for every student.",
     lifestyle: "Elon, North Carolina is a small town of 12,000 that exists in genuine symbiosis with the university - the historic Elon village, the coffee shops, and the restaurants of downtown E",
-    grad_cities: "Charlotte NC (18%) | Raleigh-Durham NC (15%) | Washington DC (10%) | New York NY (10%) | Atlanta GA (8%).",
-    mayNotThriveIf: "You want a large research university or big-city energy - Elon is a small, symbiotic college-town experience by design.",
-    campusSocialCulture: "Warm, polished, experientially-driven - the Experiential Learning requirement creates a culture where internships and placements are baked into the curriculum itself.",
-    socialCapital: "Individual placement infrastructure means every student builds real industry relationships as part of their degree, not extracurricular to it.",
-    culturalCapital: "Practical, media-savvy polish - Elon signals \"already has real internship experience\" more than any peer-sized school.",
-    networkCapital: "Outsized communications/media industry placement (NBC, ABC, CBS, CNN) relative to school size and national recognition."
+    grad_cities: "Charlotte NC (18%) | Raleigh-Durham NC (15%) | Washington DC (10%) | New York NY (10%) | Atlanta GA (8%)."
   },
   "Fordham University": {
     name: "Fordham University",
@@ -804,12 +536,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Fordham has two campuses in New York City - the Rose Hill campus in the Bronx (the historic Jesuit campus with Gothic architecture and a genuine residential college feel) and the Lincoln Center campus in Midtown Manhattan (12 blocks from Wall Street",
     the_room: "Fordham enrolls approximately 10,000 undergraduates across both campuses. The student body is heavily New York-weighted - New York, New Jersey, Connecticut, and Massachusetts are the dominant feeder s",
     lifestyle: "Two campuses, two completely different New York experiences. Rose Hill in the Bronx is one of the most beautiful traditional college campuses in New York City -",
-    grad_cities: "New York NY (65%) | Boston MA (6%) | Washington DC (5%) | Los Angeles CA (4%) | International (5%).",
-    mayNotThriveIf: "You want to leave the Northeast or experience a traditional single-campus college feel - Fordham's identity is split across two very different NYC campuses.",
-    campusSocialCulture: "Jesuit values meet Manhattan hustle - Rose Hill offers a traditional campus feel while Lincoln Center puts you steps from Wall Street.",
-    socialCapital: "Physical proximity to Wall Street means internships and networking happen constantly, blurring the line between classroom and career.",
-    culturalCapital: "NYC-insider identity with Jesuit values grounding - Fordham signals both ambition and groundedness.",
-    networkCapital: "Direct Wall Street placement pipeline reflecting sheer physical proximity, concentrated almost entirely in NYC."
+    grad_cities: "New York NY (65%) | Boston MA (6%) | Washington DC (5%) | Los Angeles CA (4%) | International (5%)."
   },
   "University of Kansas": {
     name: "University of Kansas",
@@ -819,12 +546,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The William Allen White School of Journalism is named for one of the most consequential journalists in American history - the Pulitzer Prize-winning editor of the Emporia Gazette whose 1896 editorial What's the Matter with Kansas made him a national",
     the_room: "KU enrolls approximately 19,000 undergraduates - a mid-sized flagship with enough scale for research university infrastructure and enough intimacy for meaningful undergraduate community.",
     lifestyle: "Lawrence, Kansas is one of the great American college towns - a city of 100,000 built on a hill above the Kaw River, with Massachusetts Street (Mass Street) as one of the most vibr",
-    grad_cities: "Kansas City MO-KS (40%) | Wichita KS (12%) | Chicago IL (8%) | Dallas TX (6%) | Denver CO (5%).",
-    mayNotThriveIf: "You want to leave the Midwest or a coastal city environment - KU's identity and career pipeline are deeply tied to Kansas City and the regional Midwest.",
-    campusSocialCulture: "Classic Midwest college-town warmth - Mass Street's vibrant downtown blends with strong basketball culture and genuine community feel.",
-    socialCapital: "Business School cohorts build direct relationships with major Kansas City employers before graduation.",
-    culturalCapital: "Midwest journalism and business heritage - KU signals practical, grounded ambition with real regional roots.",
-    networkCapital: "Strong Kansas City corporate pipeline (Sprint, Garmin, Cerner), concentrated in the regional Midwest market."
+    grad_cities: "Kansas City MO-KS (40%) | Wichita KS (12%) | Chicago IL (8%) | Dallas TX (6%) | Denver CO (5%)."
   },
   "University of Missouri": {
     name: "University of Missouri",
@@ -834,12 +556,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Missouri Method is the hidden pathway that makes Mizzou journalism categorically different from every peer journalism program in America - and it is the reason the Missouri School of Journalism has been ranked #1 in the world for most of its 117-",
     the_room: "Mizzou enrolls approximately 22,000 undergraduates - a mid-sized SEC flagship with enough scale for research university infrastructure and genuine Big 12 and now SEC athletic culture.",
     lifestyle: "Columbia, Missouri sits at the geographic center of the state - equidistant between Kansas City and St. Louis, in the rolling hills of central Missouri where the Ozark Plateau meet",
-    grad_cities: "Kansas City MO (25%) | St. Louis MO (22%) | Chicago IL (8%) | Columbia MO (7%) | Dallas TX (5%).",
-    mayNotThriveIf: "You want theoretical classroom-only journalism education - the Missouri Method puts you in real newsrooms from day one, which some students find intense before they're ready.",
-    campusSocialCulture: "Practical, hands-on, SEC-spirited - the Missouri Method's real-world newsroom culture blends with genuine Big 12/SEC athletic passion.",
-    socialCapital: "Real-newsroom placements from day one create professional journalism relationships most peer programs can't match.",
-    culturalCapital: "The oldest and most storied journalism prestige in the world - Mizzou signals \"already worked in real journalism.\"",
-    networkCapital: "The strongest journalism industry placement of any program in the world, reinforced by 117+ years of the Missouri Method."
+    grad_cities: "Kansas City MO (25%) | St. Louis MO (22%) | Chicago IL (8%) | Columbia MO (7%) | Dallas TX (5%)."
   },
   "University of Arkansas": {
     name: "University of Arkansas",
@@ -849,12 +566,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Walmart supplier ecosystem is the hidden pathway that makes Walton College categorically different from every peer business school in America - and it is the pathway that no ranking captures. Every major consumer goods company in the world -",
     the_room: "UA enrolls approximately 22,000 undergraduates - a mid-sized SEC flagship with the full research university infrastructure and a Big 12-to-SEC transition athletic profile that has elevated national vi",
     lifestyle: "Fayetteville, Arkansas sits in the Ozark Mountains of northwest Arkansas - a city of 90,000 with a genuine college town identity built around Dickson Street, the Fayetteville Farme",
-    grad_cities: "Bentonville-Rogers AR (35%) | Little Rock AR (12%) | Dallas TX (10%) | Kansas City MO (6%) | Chicago IL (5%).",
-    mayNotThriveIf: "You want to be far from a specific-industry gravitational pull - Walton College's Walmart-adjacent identity shapes career conversations constantly.",
-    campusSocialCulture: "Ozark Mountain college-town charm meets serious retail/supply-chain ambition - Dickson Street's energy blends with Walton College's corporate seriousness.",
-    socialCapital: "Direct access to the Walmart supplier ecosystem means students build major consumer-goods industry relationships before graduating.",
-    culturalCapital: "Retail and supply-chain prestige - Arkansas signals deep practical knowledge of how global consumer goods actually move.",
-    networkCapital: "Unmatched Walmart/consumer-goods supplier network, a pathway no other business school in the country can replicate."
+    grad_cities: "Bentonville-Rogers AR (35%) | Little Rock AR (12%) | Dallas TX (10%) | Kansas City MO (6%) | Chicago IL (5%)."
   },
   "University of Tennessee": {
     name: "University of Tennessee",
@@ -864,87 +576,62 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Oak Ridge National Laboratory - 25 miles east of campus on the Clinch River - is the hidden pathway that makes UT engineering categorically different from every peer SEC flagship in the database.",
     the_room: "UT enrolls approximately 23,000 undergraduates - a large SEC flagship with the full research university infrastructure and one of the most passionate athletic cultures in college sports.",
     lifestyle: "Knoxville, Tennessee sits in the Great Appalachian Valley between the Cumberland Plateau to the west and the Great Smoky Mountains to the east -",
-    grad_cities: "Nashville TN (25%) | Knoxville TN (18%) | Atlanta GA (10%) | Charlotte NC (7%) | Washington DC (5%).",
-    mayNotThriveIf: "You're not drawn to intense SEC football culture - Knoxville's game-day energy is one of the most passionate in college sports and hard to avoid.",
-    campusSocialCulture: "Passionate SEC spirit against a Smoky Mountains backdrop, with a genuinely strong engineering/research undercurrent via Oak Ridge.",
-    socialCapital: "Engineering cohorts build direct research relationships with Oak Ridge National Laboratory, a rare undergraduate advantage.",
-    culturalCapital: "SEC pride paired with unexpected national-lab research credibility - UT signals both spirit and serious science.",
-    networkCapital: "Direct Oak Ridge National Laboratory research pipeline, unmatched by any peer SEC flagship, plus strong supply chain placement."
+    grad_cities: "Nashville TN (25%) | Knoxville TN (18%) | Atlanta GA (10%) | Charlotte NC (7%) | Washington DC (5%)."
   },
   "University of Colorado Boulder": {
     name: "University of Colorado Boulder",
     location: "Boulder, Colorado",
-    region: "West Coast",
-    pipeline: "Aerospace and Aerospace Engineering (top-5 nationally - CU Boulder has produced more astronauts than any public university in America and is the only flagship university in the database with a dedicated aerospace engineering program embedded in one of the most consequential aeros",
+    region: "Mountain West",
+    pipeline: "Aerospace and Aerospace Engineering (top-5 nationally - CU Boulder has produced more astronauts than any public university in America and is the only flagship university in the database with a dedicated aerospace engineering program embedded in one of the most consequential aerospace research corridors in the country - Colorado's Front Range, home to Lockheed Martin, Ball Aerospace, and NOAA, sits minutes from campus.",
     hidden_pathway: "The Laboratory for Atmospheric and Space Physics - LASP - is the hidden pathway that makes CU Boulder's space science program categorically different from every peer public university in the database.",
-    the_room: "CU Boulder enrolls approximately 30,000 undergraduates - a large flagship with the full research university infrastructure and one of the most distinctive campus cultures in the database.",
-    lifestyle: "Boulder, Colorado is consistently ranked among the happiest, healthiest, and most livable cities in America - and the physical setting explains why.",
+    the_room: "CU Boulder enrolls approximately 30,000 undergraduates - a large flagship with the full research university infrastructure, and the campus now sits alongside a growing corporate presence, with Google, Apple, and Amazon all having established offices in Boulder over the past decade.",
+    lifestyle: "Boulder, Colorado is consistently ranked among the happiest, healthiest, and most livable cities in America - a reputation built on 45,000 acres of protected open space (the most per capita of any US city) and decades of deliberate slow-growth policy that has kept sprawl at bay.",
     grad_cities: "Denver-Boulder CO (45%) | San Francisco CA (10%) | Seattle WA (6%) | Los Angeles CA (5%) | Washington DC (5%).",
     mayNotThriveIf: "You want a traditional, rule-bound campus culture - Boulder's free-spirited, outdoorsy identity can feel unstructured if that's not your style.",
-    campusSocialCulture: "Outdoorsy and health-conscious - hiking, climbing, and skiing are as central to campus life as any club or Greek organization.",
+    campusSocialCulture: "Outdoorsy and health-conscious - hiking, climbing, and skiing are as central to campus life as any club or Greek organization, earning the city its long-standing 'granola' reputation.",
     socialCapital: "Aerospace and LASP research groups create tight technical bonds that carry directly into the aerospace industry.",
-    culturalCapital: "Healthy, outdoorsy, science-forward identity - CU Boulder signals both rigor and lifestyle balance.",
-    networkCapital: "Unmatched astronaut/aerospace alumni density among public universities, concentrated in Colorado's aerospace corridor."
+    culturalCapital: "Healthy, outdoorsy, science-forward identity - CU Boulder signals both rigor and lifestyle balance, and its alumni network reaches well beyond STEM: Apple co-founder Steve Wozniak, South Park creators Matt Stone and Trey Parker, and Nobel Peace Prize laureate Muhammad Yunus all passed through Boulder.",
+    networkCapital: "Unmatched astronaut/aerospace alumni density among public universities, concentrated in Colorado's aerospace corridor - now extending into big tech as Google, Apple, and Amazon build out their Boulder offices."
   },
   "Colorado State University": {
     name: "Colorado State University",
     location: "Fort Collins, Colorado",
-    region: "West Coast",
+    region: "Mountain West",
     pipeline: "Veterinary Medicine and Biomedical Sciences (College of Veterinary Medicine and Biomedical Sciences - top-5 nationally and one of the most comprehensive veterinary programs in the world -",
     hidden_pathway: "CSU's Engines and Energy Conversion Laboratory and the Colorado State University Engines Laboratory are the hidden pathways in the engineering program that most families never find -",
     the_room: "CSU enrolls approximately 26,000 undergraduates - a large flagship with the full research university infrastructure and a Ram athletic identity in the Mountain West Conference.",
     lifestyle: "Fort Collins, Colorado is consistently ranked among the most livable small cities in America - a city of 170,000 at the base of the Cache la Poudre River canyon with Horsetooth Res",
-    grad_cities: "Denver-Fort Collins CO (45%) | Denver Metro CO (20%) | Cheyenne WY (5%) | San Francisco CA (4%) | International (4%).",
-    mayNotThriveIf: "You want an urban campus or a warm climate - Fort Collins' outdoor-recreation identity and Rocky Mountain setting shape daily life directly.",
-    campusSocialCulture: "Outdoorsy, health-conscious, genuinely livable - hiking, biking, and access to national parks anchor social life as much as any campus organization.",
-    socialCapital: "Veterinary Medicine and engineering cohorts build tight, specialized bonds within a broader outdoor-recreation-minded student body.",
-    culturalCapital: "Outdoor-lifestyle-first identity with real scientific depth - CSU signals both livability and serious research credibility.",
-    networkCapital: "Top-5 veterinary medicine placement nationally, plus strong ties into Colorado's outdoor recreation and national parks tourism industry."
+    grad_cities: "Denver-Fort Collins CO (45%) | Denver Metro CO (20%) | Cheyenne WY (5%) | San Francisco CA (4%) | International (4%)."
   },
   "University of California Davis": {
     name: "University of California Davis",
     location: "Davis, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Agriculture and Food Science (College of Agricultural and Environmental Sciences - top-1 nationally and top-3 globally - the most comprehensive and consequential agricultural research university in America -",
     hidden_pathway: "Viticulture and enology at UC Davis is the only program in the world that teaches the complete science of wine production - from soil science, plant genetics, and vineyard management through fermentation chemistry, sensory analysis, and wine business",
     the_room: "UC Davis enrolls approximately 31,000 undergraduates - a large UC campus with the full research university infrastructure and an Aggie athletic identity in the Big West Conference.",
     lifestyle: "Davis, California is a small city of 70,000 in the Central Valley - 15 miles west of Sacramento, 75 miles northeast of San Francisco, and embedded in the most productive agricultur",
-    grad_cities: "Sacramento CA (30%) | San Francisco-Bay Area CA (25%) | Los Angeles CA (10%) | Davis CA (7%) | International (5%).",
-    mayNotThriveIf: "You want an urban campus or a non-agricultural academic focus - Davis' identity is deeply rooted in agriculture and life sciences.",
-    campusSocialCulture: "Bike-centric, laid-back, community-oriented - Aggie pride runs through a genuinely collaborative, less cutthroat UC culture.",
-    socialCapital: "Agriculture and viticulture cohorts form tight bonds that lead directly into California's wine and food-science industries.",
-    culturalCapital: "World-leading agricultural science identity - UC Davis signals deep expertise in food, wine, and environmental science.",
-    networkCapital: "Unmatched wine/viticulture industry network, plus strong Sacramento-Bay Area agricultural and biotech placement."
+    grad_cities: "Sacramento CA (30%) | San Francisco-Bay Area CA (25%) | Los Angeles CA (10%) | Davis CA (7%) | International (5%)."
   },
   "Santa Clara University": {
     name: "Santa Clara University",
     location: "Santa Clara, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Engineering (School of Engineering - top-40 nationally for undergraduate engineering - computer science, electrical, civil, mechanical, bioengineering, web design and engineering -",
     hidden_pathway: "SCU's Jesuit identity combined with Silicon Valley location creates an ethical technology leadership credential that is increasingly the most strategically valuable profile in American technology.",
     the_room: "SCU enrolls approximately 6,000 undergraduates - intimate relative to the UC system and appropriately sized for the Jesuit formation model of individual student development.",
     lifestyle: "Santa Clara, California sits in the geographic center of Silicon Valley - surrounded by San Jose to the south, Sunnyvale to the west, and the Santa Clara technology corridor that i",
-    grad_cities: "San Francisco-Bay Area CA (70%) | Los Angeles CA (7%) | Seattle WA (4%) | New York NY (4%) | International (5%).",
-    mayNotThriveIf: "You want a large research university scale or non-Jesuit identity - SCU is intimate, values-driven, and deeply embedded in Silicon Valley's ethical-tech conversation.",
-    campusSocialCulture: "Values-driven and tech-forward - the Jesuit ethical framework blends directly with Silicon Valley's innovation culture just outside the gates.",
-    socialCapital: "Small size plus direct Silicon Valley proximity means real tech-industry relationships form well before graduation.",
-    culturalCapital: "Ethical-tech leadership identity - SCU signals both values and Silicon Valley fluency, an increasingly rare combination.",
-    networkCapital: "Direct Silicon Valley placement pipeline, reinforced by a distinctive ethics-in-technology credential few peers offer."
+    grad_cities: "San Francisco-Bay Area CA (70%) | Los Angeles CA (7%) | Seattle WA (4%) | New York NY (4%) | International (5%)."
   },
   "Saint Mary's College of California": {
     name: "Saint Mary's College of California",
     location: "Moraga, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Business and Economics (School of Economics and Business Administration - top-75 nationally for undergraduate business among Catholic universities - finance, accounting, marketing, management, entrepreneurship -",
     hidden_pathway: "Saint Mary's January Term - Jan Term - is the hidden pathway that distinguishes the Saint Mary's undergraduate experience from every peer Bay Area institution and most national peers.",
     the_room: "Saint Mary's enrolls approximately 2,500 undergraduates - the most intimate of any accredited four-year university in the East Bay and one of the smallest Catholic universities in California.",
     lifestyle: "Moraga, California is a small suburban community of 17,000 in the Lamorinda hills of Contra Costa County - one of the most affluent and educationally focused suburban corridors in",
-    grad_cities: "San Francisco-Bay Area CA (72%) | Sacramento CA (6%) | Los Angeles CA (5%) | Portland OR (3%) | International (3%).",
-    mayNotThriveIf: "You want a large campus or urban energy - Saint Mary's is small, suburban, and intimate by design in a quiet East Bay setting.",
-    campusSocialCulture: "Close-knit, faith-centered, academically supportive - Jan Term's unique structure creates a distinct rhythm most Bay Area peers lack.",
-    socialCapital: "Extremely small size creates deep, personal bonds that carry directly into the Bay Area's professional network.",
-    culturalCapital: "Quiet Catholic-Bay Area hybrid identity - Saint Mary's signals both values and regional business fluency.",
-    networkCapital: "Strong Bay Area business placement for its size, reinforced by tight alumni loyalty in a competitive regional market."
+    grad_cities: "San Francisco-Bay Area CA (72%) | Sacramento CA (6%) | Los Angeles CA (5%) | Portland OR (3%) | International (3%)."
   },
   "University of Nebraska-Lincoln": {
     name: "University of Nebraska-Lincoln",
@@ -954,12 +641,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Omaha is the hidden pathway that no Southern California family encounters on a standard college search - and it is one of the most consequential corporate headquarters cities in America relative to its population.",
     the_room: "UNL enrolls approximately 20,000 undergraduates - a mid-sized Big Ten flagship with the full research university infrastructure and one of the most passionate football cultures in college sports.",
     lifestyle: "Lincoln, Nebraska is the state capital and a city of 290,000 with a genuine college town identity built around the Haymarket District, the Pinnacle Bank Arena, and the UNL campus t",
-    grad_cities: "Omaha NE (30%) | Lincoln NE (20%) | Kansas City MO (10%) | Denver CO (6%) | Chicago IL (5%).",
-    mayNotThriveIf: "You want to leave the Midwest or a large coastal city - UNL's identity and career pipeline are deeply tied to Nebraska and the regional Midwest.",
-    campusSocialCulture: "Passionate Big Ten football culture, genuine state-capital community feel, built around the lively Haymarket District.",
-    socialCapital: "Engineering cohorts build direct relationships with Omaha's outsized concentration of corporate headquarters.",
-    culturalCapital: "Midwest grit with unexpected corporate depth - UNL signals practical ambition tied to Omaha's Fortune 500 presence.",
-    networkCapital: "Disproportionate access to Omaha's corporate headquarters density relative to the city's population size."
+    grad_cities: "Omaha NE (30%) | Lincoln NE (20%) | Kansas City MO (10%) | Denver CO (6%) | Chicago IL (5%)."
   },
   "Michigan State University": {
     name: "Michigan State University",
@@ -969,12 +651,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "MSU's School of Packaging is the most consequential academic monopoly in the database - more complete and more durable than any other single-school dominance in any field across both CSV files.",
     the_room: "MSU enrolls approximately 39,000 undergraduates - a large Big Ten flagship with the full research university infrastructure and one of the most passionate athletic cultures in college sports.",
     lifestyle: "East Lansing, Michigan is a classic Big Ten college town of 48,000 built entirely around Michigan State - the downtown Grand River Avenue corridor, the MSU Horticulture Gardens, th",
-    grad_cities: "Detroit-Ann Arbor MI (30%) | Chicago IL (12%) | Grand Rapids MI (8%) | East Lansing MI (6%) | New York NY (5%).",
-    mayNotThriveIf: "You want small classes or an intimate campus - at 39,000 undergrads, MSU rewards students who actively seek out their community rather than waiting for it.",
-    campusSocialCulture: "Classic Big Ten spirit, agriculture/food-science-forward, genuinely passionate athletics culture built around East Lansing's college-town identity.",
-    socialCapital: "The School of Packaging's near-monopoly status creates uniquely tight, in-demand professional networks in a field almost no other university teaches.",
-    culturalCapital: "Practical, agriculture-and-packaging-science prestige - MSU signals deep expertise in fields that quietly run the entire consumer economy.",
-    networkCapital: "The single strongest packaging/supply-chain-science network in the country, an academic monopoly with no real competitor."
+    grad_cities: "Detroit-Ann Arbor MI (30%) | Chicago IL (12%) | Grand Rapids MI (8%) | East Lansing MI (6%) | New York NY (5%)."
   },
   "Creighton University": {
     name: "Creighton University",
@@ -984,12 +661,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The CHI Health system connection is the hidden pathway that makes Creighton's health sciences programs categorically different from peer Jesuit institutions without this specific affiliation. CHI Health - Catholic Health Initiatives -",
     the_room: "Creighton enrolls approximately 4,500 undergraduates and 4,000 graduate and professional students - the graduate and professional enrollment reflecting the concentration of medical, pharmacy, dental,",
     lifestyle: "Omaha, Nebraska has been transformed by Buffett-era wealth and corporate investment into one of the most underrated mid-sized cities in America -",
-    grad_cities: "Omaha NE (45%) | Kansas City MO (10%) | Denver CO (7%) | Chicago IL (6%) | Phoenix AZ (5%).",
-    mayNotThriveIf: "You want a purely undergraduate-focused campus culture - the large graduate/professional population shapes a more mature, pre-professional atmosphere.",
-    campusSocialCulture: "Faith-centered, health-sciences-heavy, quietly ambitious - Omaha's unexpected corporate wealth adds real economic energy to the Jesuit foundation.",
-    socialCapital: "Direct CHI Health system ties mean pre-med and health-sciences students build clinical relationships well before graduate school.",
-    culturalCapital: "Jesuit medical prestige with Omaha's corporate-city backing - Creighton signals values plus real clinical seriousness.",
-    networkCapital: "Direct CHI Health system pipeline, a distinctive medical network unmatched by peer Jesuit institutions."
+    grad_cities: "Omaha NE (45%) | Kansas City MO (10%) | Denver CO (7%) | Chicago IL (6%) | Phoenix AZ (5%)."
   },
   "University of Iowa": {
     name: "University of Iowa",
@@ -999,12 +671,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Iowa Writers Workshop is the hidden pathway that makes the University of Iowa the most consequential creative writing institution in the history of American literature -",
     the_room: "UI enrolls approximately 22,000 undergraduates - a large Big Ten flagship with full research university infrastructure and the Hawkeyes athletic identity that is among the most passionately supported",
     lifestyle: "Iowa City, Iowa is one of the great American college towns and one of the most underrated intellectual cities in the country -",
-    grad_cities: "Des Moines IA (25%) | Iowa City IA (12%) | Chicago IL (10%) | Minneapolis MN (7%) | Kansas City MO (6%).",
-    mayNotThriveIf: "You want to leave the Midwest or a smaller college-town setting - Iowa City's identity as a deeply intellectual, underrated small city is central to the experience.",
-    campusSocialCulture: "Passionate Hawkeye pride paired with a genuinely rich literary/intellectual culture from the Writers Workshop legacy.",
-    socialCapital: "Writers Workshop and Carver College of Medicine cohorts build deep, discipline-specific networks within a broader Big Ten community.",
-    culturalCapital: "Literary and medical prestige combined - Iowa signals both creative depth and clinical seriousness.",
-    networkCapital: "The most consequential creative writing network in American literary history, plus strong regional medical placement."
+    grad_cities: "Des Moines IA (25%) | Iowa City IA (12%) | Chicago IL (10%) | Minneapolis MN (7%) | Kansas City MO (6%)."
   },
   "Drake University": {
     name: "Drake University",
@@ -1014,12 +681,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Des Moines is the insurance capital of the world - a fact that almost no family outside the Midwest financial services industry knows - and Drake University is the private university embedded at the center of it.",
     the_room: "Drake enrolls approximately 3,200 undergraduates - the most intimate private university with a law school and pharmacy school in the Midwest and one of the smallest in the database with this range of",
     lifestyle: "Des Moines, Iowa is one of the most underrated mid-sized cities in America - a city of 700,000 in the metro area with a vibrant downtown corridor, the Principal Park minor league b",
-    grad_cities: "Des Moines IA (55%) | Chicago IL (8%) | Minneapolis MN (6%) | Kansas City MO (5%) | Omaha NE (4%).",
-    mayNotThriveIf: "You want a large university or a well-known big-city setting - Drake is small, and Des Moines' insurance-industry identity is a hidden strength few families recognize upfront.",
-    campusSocialCulture: "Intimate, professionally-focused - law and pharmacy school presence creates a more mature, career-minded undergraduate culture.",
-    socialCapital: "Small size plus direct proximity to global insurance headquarters creates unusually strong financial-services networking.",
-    culturalCapital: "Quiet insurance-industry insider identity - Drake signals access to a massive, under-recognized financial sector.",
-    networkCapital: "Direct pipeline into Des Moines' position as the insurance capital of the world, a hidden financial-services power center."
+    grad_cities: "Des Moines IA (55%) | Chicago IL (8%) | Minneapolis MN (6%) | Kansas City MO (5%) | Omaha NE (4%)."
   },
   "Iowa State University": {
     name: "Iowa State University",
@@ -1029,12 +691,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "John Deere's relationship with Iowa State is the hidden pathway that most Southern California families have never encountered - and it is one of the most consequential corporate-university partnerships in the database for the specific industries it s",
     the_room: "Iowa State enrolls approximately 24,000 undergraduates - a large Big 12 flagship with the full land-grant research university infrastructure and the Cyclones athletic identity that competes against Io",
     lifestyle: "Ames, Iowa is a classic Midwest college town of 66,000 built around Iowa State - the Iowa State Center for the Performing Arts, the Reiman Gardens (one of the finest university bot",
-    grad_cities: "Des Moines IA (28%) | Ames IA (10%) | Chicago IL (9%) | Minneapolis MN (6%) | Kansas City MO (5%).",
-    mayNotThriveIf: "You want an urban setting or a school outside the land-grant agricultural tradition - Ames is a classic Midwest college town built entirely around this identity.",
-    campusSocialCulture: "Genuine land-grant spirit, engineering-and-agriculture-forward, Cyclone pride against a backdrop of real corporate partnership depth.",
-    socialCapital: "Engineering cohorts build direct relationships with John Deere, one of the most consequential corporate-university partnerships in the database.",
-    culturalCapital: "Land-grant engineering prestige - Iowa State signals practical, agriculture-adjacent technical excellence.",
-    networkCapital: "Deep John Deere and agricultural-engineering industry ties, a distinctive corporate partnership few peer schools can match."
+    grad_cities: "Des Moines IA (28%) | Ames IA (10%) | Chicago IL (9%) | Minneapolis MN (6%) | Kansas City MO (5%)."
   },
   "Ohio State University": {
     name: "Ohio State University",
@@ -1044,12 +701,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Intel New Albany semiconductor fabrication investment is the hidden pathway that has fundamentally changed the value proposition of an Ohio State engineering degree in the last three years -",
     the_room: "Ohio State enrolls approximately 46,000 undergraduates - the largest Big Ten university in the database and one of the five largest universities in America.",
     lifestyle: "Columbus, Ohio has undergone a transformation in the 2020s that makes it one of the most compelling university city stories in the database.",
-    grad_cities: "Columbus OH (40%) | Cleveland OH (10%) | Cincinnati OH (8%) | Chicago IL (8%) | New York NY (5%).",
-    mayNotThriveIf: "You want small classes or personal attention - at 46,000 undergrads, you must actively build your own community and support system.",
-    campusSocialCulture: "Massive Big Ten spirit, football-centric, Greek-heavy - one of the largest and most unified school-spirit cultures in the country.",
-    socialCapital: "Size means your real network is whatever college/major cohort or organization you actively join, not the university as a whole.",
-    culturalCapital: "Big Ten pride plus a rapidly rising tech-corridor identity, thanks to the Intel semiconductor investment nearby.",
-    networkCapital: "Massive alumni base across Ohio and the Midwest, now amplified by the new Intel/semiconductor corridor pipeline."
+    grad_cities: "Columbus OH (40%) | Cleveland OH (10%) | Cincinnati OH (8%) | Chicago IL (8%) | New York NY (5%)."
   },
   "University of Notre Dame": {
     name: "University of Notre Dame",
@@ -1059,12 +711,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Notre Dame alumni network is the hidden pathway that reframes the Notre Dame value proposition beyond rankings and beyond Catholicism - and it operates with a tribal intensity that secular alumni networks structurally cannot replicate.",
     the_room: "Notre Dame enrolls approximately 9,000 undergraduates - mid-sized and appropriate for the residential college model that defines the social architecture.",
     lifestyle: "Notre Dame, Indiana - technically a census-designated place rather than a city, existing entirely because of the university -",
-    grad_cities: "Chicago IL (30%) | New York NY (20%) | Washington DC (10%) | South Bend IN (5%) | Los Angeles CA (5%).",
-    mayNotThriveIf: "You want a secular campus or urban setting - Notre Dame's Catholic identity and self-contained rural campus shape daily life directly.",
-    campusSocialCulture: "Deeply tribal Catholic identity, football-legendary, tight residential college bonds that rival any university in the country.",
-    socialCapital: "The alumni network operates with a tribal intensity secular networks structurally cannot replicate - Domers help Domers, always.",
-    culturalCapital: "Ethically-credentialed elite prestige - Notre Dame signals both values and serious Wall Street readiness.",
-    networkCapital: "One of the most loyal and active alumni networks in the country, spanning finance, law, and business at senior levels."
+    grad_cities: "Chicago IL (30%) | New York NY (20%) | Washington DC (10%) | South Bend IN (5%) | Los Angeles CA (5%)."
   },
   "Villanova University": {
     name: "Villanova University",
@@ -1074,12 +721,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Main Line location is the hidden pathway that makes Villanova's career infrastructure categorically different from Catholic peers located in urban centers or isolated suburban settings. The Philadelphia Main Line -",
     the_room: "Villanova enrolls approximately 7,000 undergraduates - mid-sized and appropriate for the Augustinian formation model that emphasizes individual student development within a faith community.",
     lifestyle: "Villanova, Pennsylvania is not a city - it is a township in Delaware County on the Philadelphia Main Line, and the Villanova campus - St.",
-    grad_cities: "Philadelphia PA (40%) | New York NY (20%) | Washington DC (8%) | Boston MA (5%) | Chicago IL (4%).",
-    mayNotThriveIf: "You want a large research-university scale or an urban core campus - Villanova's suburban Main Line setting is intimate and faith-centered.",
-    campusSocialCulture: "Warm, Catholic/Augustinian community feel, basketball-proud (March Madness runs), Main Line polish.",
-    socialCapital: "Small size plus strong alumni loyalty creates tight, faith-and-community-rooted professional bonds.",
-    culturalCapital: "Polished, values-driven identity - Villanova signals both business readiness and personal formation.",
-    networkCapital: "Strong Philadelphia and NYC financial services placement, powered by Main Line corporate proximity."
+    grad_cities: "Philadelphia PA (40%) | New York NY (20%) | Washington DC (8%) | Boston MA (5%) | Chicago IL (4%)."
   },
   "Temple University": {
     name: "Temple University",
@@ -1089,12 +731,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Temple's risk management and insurance program is the hidden pathway that delivers one of the highest starting salaries of any undergraduate business program in the database at a public university price point -",
     the_room: "Temple enrolls approximately 28,000 undergraduates - a large urban research university with the full professional school infrastructure of a major metropolitan institution.",
     lifestyle: "North Philadelphia, Pennsylvania - the Temple campus sits in the Cecil B. Moore neighborhood of North Philadelphia, surrounded by the city's working-class and historically signific",
-    grad_cities: "Philadelphia PA (55%) | New York NY (12%) | Washington DC (6%) | Wilmington DE (4%) | Baltimore MD (3%).",
-    mayNotThriveIf: "You want a traditional suburban campus feel - Temple is genuinely urban, embedded in North Philadelphia's working-class neighborhood fabric.",
-    campusSocialCulture: "Practical, urban, business-forward - the working-class North Philadelphia setting keeps Temple grounded and career-focused.",
-    socialCapital: "Fox School's risk management program creates a uniquely tight, high-earning professional network few peer schools can match.",
-    culturalCapital: "Public-university value with a genuine urban-Philadelphia toughness - Temple signals practical ambition over pedigree.",
-    networkCapital: "The strongest risk management/insurance industry placement of any public university business program in the database."
+    grad_cities: "Philadelphia PA (55%) | New York NY (12%) | Washington DC (6%) | Wilmington DE (4%) | Baltimore MD (3%)."
   },
   "Drexel University": {
     name: "Drexel University",
@@ -1104,252 +741,167 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Drexel co-op program is the structural feature that makes Drexel categorically different from every peer Philadelphia private university - and the co-op income offset is the hidden financial pathway that most families have never calculated.",
     the_room: "Drexel enrolls approximately 14,000 undergraduates - a mid-sized urban research university with the full professional school infrastructure of a major metropolitan institution.",
     lifestyle: "University City, Philadelphia - the neighborhood anchored by Drexel and Penn on the west side of the Schuylkill River -",
-    grad_cities: "Philadelphia PA (50%) | New York NY (12%) | Washington DC (6%) | Boston MA (4%) | San Francisco CA (4%).",
-    mayNotThriveIf: "You want a traditional four-year rhythm without work breaks - the co-op program means many students cycle off-campus for full terms of paid industry work.",
-    campusSocialCulture: "Urban, career-focused, in constant motion - co-op rotations mean the student population shifts every term as students cycle in and out for work.",
-    socialCapital: "Co-op placements build direct professional relationships that often convert into job offers before graduation.",
-    culturalCapital: "Practical, experience-first identity - Drexel signals real-world readiness backed by paid co-op income offsetting tuition.",
-    networkCapital: "Deep Philadelphia corridor tech/defense pipeline (Comcast, Boeing, Lockheed), reinforced by structural co-op employer relationships."
+    grad_cities: "Philadelphia PA (50%) | New York NY (12%) | Washington DC (6%) | Boston MA (4%) | San Francisco CA (4%)."
   },
   "UC Riverside": {
     name: "UC Riverside",
     location: "Riverside, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Engineering (Marlan and Rosemary Bourns College of Engineering - top-60 nationally - electrical, mechanical, chemical, computer science, environmental, bioengineering - major Southern California technology and defense employers including Northrop Grumman, Raytheon, Boeing, Broadc",
     hidden_pathway: "The Thomas Haider Program in Biomedical Sciences is the hidden pathway that makes UCR the most consequential pre-medicine investment for Inland Empire families and one of the most powerful guaranteed physician pathways in California.",
     the_room: "UCR enrolls approximately 22,000 undergraduates - a large UC campus with full research university infrastructure and a student body that is the most socioeconomically diverse of any UC campus.",
     lifestyle: "Riverside, California sits at the base of the San Bernardino Mountains in the eastern Inland Empire - a city of 320,000 with a historic downtown Mission Inn corridor, the Riverside",
-    grad_cities: "Los Angeles CA (30%) | Inland Empire CA (35%) | San Diego CA (6%) | San Francisco CA (5%) | International (5%).",
-    mayNotThriveIf: "You want a small, homogeneous student body - UCR's socioeconomic diversity is genuinely the widest of any UC, which shapes a distinctly varied campus culture.",
-    campusSocialCulture: "Down-to-earth, access-focused, genuinely diverse - the Inland Empire setting keeps the culture grounded and community-oriented.",
-    socialCapital: "The Haider biomedical program creates a rare guaranteed-physician-pathway cohort with uniquely strong pre-med bonds.",
-    culturalCapital: "Access-and-opportunity identity - UCR signals genuine upward mobility credentials within the UC system.",
-    networkCapital: "Strong Inland Empire/Southern California defense-tech placement, plus one of California's most powerful guaranteed medical school pathways."
+    grad_cities: "Los Angeles CA (30%) | Inland Empire CA (35%) | San Diego CA (6%) | San Francisco CA (5%) | International (5%)."
   },
   "California State University Long Beach": {
     name: "California State University Long Beach",
     location: "Long Beach, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Engineering (College of Engineering - top-50 nationally among regional universities - aerospace, civil, electrical, mechanical, chemical, computer science, biomedical - major Southern California aerospace and defense employers including Boeing, Northrop Grumman, Raytheon, SpaceX,",
     hidden_pathway: "The Long Beach College Promise is the hidden pathway that makes CSULB the most consequential access institution in Southern California and one of the most important equity mechanisms in American higher education. The Long Beach College Promise -",
     the_room: "CSULB enrolls approximately 32,000 undergraduates - the second largest CSU campus and one of the largest universities in California.",
     lifestyle: "Long Beach, California is the second largest city in the Los Angeles metropolitan area - a city of 460,000 with a working harbor, the Queen Mary, the Long Beach Convention Center,",
-    grad_cities: "Los Angeles-Long Beach CA (70%) | Orange County CA (10%) | San Diego CA (4%) | San Francisco CA (3%) | International (3%",
-    mayNotThriveIf: "You want small classes or an intimate campus - at 32,000 undergrads, CSULB requires you to actively seek out community.",
-    campusSocialCulture: "Practical, access-oriented, working-harbor energy - the Long Beach College Promise shapes a genuinely mission-driven, equity-focused campus identity.",
-    socialCapital: "Engineering cohorts build direct ties to the working port and aerospace/defense corridor surrounding campus.",
-    culturalCapital: "Access-and-opportunity identity paired with real aerospace credibility - CSULB signals practical ambition and genuine mobility.",
-    networkCapital: "Strong Southern California aerospace/defense placement, plus direct proximity to one of the busiest working ports in the country."
+    grad_cities: "Los Angeles-Long Beach CA (70%) | Orange County CA (10%) | San Diego CA (4%) | San Francisco CA (3%) | International (3%"
   },
   "California State University Fullerton": {
     name: "California State University Fullerton",
     location: "Fullerton, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Business and Finance (Mihaylo College of Business and Economics - top-40 nationally among regional universities and the largest business school in California - finance, accounting, marketing, supply chain, entrepreneurship, real estate, international business -",
     hidden_pathway: "Mihaylo College of Business is the hidden pathway that delivers Big 4 accounting placement volume at the lowest tuition in the database - and the mechanism is specific and consequential.",
     the_room: "CSUF enrolls approximately 35,000 undergraduates - the largest CSU campus by undergraduate enrollment and one of the largest universities in California.",
     lifestyle: "Fullerton, California sits in the northern edge of Orange County - a city of 140,000 2 miles from Disneyland, 30 miles from downtown Los Angeles, 15 miles from the Pacific Ocean be",
-    grad_cities: "Orange County CA (55%) | Los Angeles CA (25%) | San Diego CA (5%) | Inland Empire CA (4%) | International (3%).",
-    mayNotThriveIf: "You want a small, intimate campus - at 35,000 undergrads, CSUF is the largest CSU by enrollment and requires active community-building.",
-    campusSocialCulture: "Business-forward, practical, Orange County-adjacent - Mihaylo's scale creates a genuinely career-focused, high-volume business culture.",
-    socialCapital: "Mihaylo's massive scale means broad networking opportunities across nearly every business discipline and industry.",
-    culturalCapital: "High-value, low-cost business prestige - CSUF signals practical ambition and real Big 4 accounting readiness.",
-    networkCapital: "The highest-volume Big 4 accounting placement pipeline at the lowest tuition point in the database."
+    grad_cities: "Orange County CA (55%) | Los Angeles CA (25%) | San Diego CA (5%) | Inland Empire CA (4%) | International (3%)."
   },
   "University of California Irvine": {
     name: "University of California Irvine",
     location: "Irvine, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Computer Science and Informatics (Donald Bren School of Information and Computer Sciences - top-15 nationally and the only UC campus with a standalone school dedicated to computing - computer science, software engineering, data science, cybersecurity, informatics, game design -",
     hidden_pathway: "The Donald Bren School of Information and Computer Sciences is the hidden pathway that makes UCI's technology credential structurally different from peer UC campuses.",
     the_room: "UCI enrolls approximately 30,000 undergraduates - a large UC campus with full research university infrastructure and a student body that is approximately 42% Asian American -",
     lifestyle: "Irvine, California is one of the most planned and most livable cities in America - consistently ranked as the safest large city in America and the most livable city in California b",
-    grad_cities: "Orange County CA (50%) | Los Angeles CA (20%) | San Francisco CA (8%) | San Diego CA (5%) | International (8%).",
-    mayNotThriveIf: "You want an edgy, unplanned urban environment - Irvine is famously safe, orderly, and suburban, which can feel sterile to some students.",
-    campusSocialCulture: "Studious and tech-focused, with a safe, planned-community backdrop - social life centers on academics and organized campus activities more than nightlife.",
-    socialCapital: "Bren School computing cohorts build strong technical networks that feed directly into Orange County and LA tech companies.",
-    culturalCapital: "Clean, safe, tech-forward identity - UCI signals practical ambition in a low-drama environment.",
-    networkCapital: "Strong Orange County and Southern California tech placement, anchored by the standalone computing school's reputation."
+    grad_cities: "Orange County CA (50%) | Los Angeles CA (20%) | San Francisco CA (8%) | San Diego CA (5%) | International (8%)."
   },
   "California Polytechnic State University San Luis Obispo": {
     name: "California Polytechnic State University San Luis Obispo",
     location: "San Luis Obispo, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Engineering (College of Engineering - top-10 nationally among regional universities and top-3 among all public universities for undergraduate engineering - civil, electrical, mechanical, aerospace, industrial, biomedical, materials, environmental, manufacturing, general engineeri",
     hidden_pathway: "Learn by Doing is the institutional philosophy of Cal Poly SLO and it is the hidden pathway that explains why Apple, SpaceX, and Google recruit Cal Poly engineers with the same priority they give to UC Berkeley and Stanford graduates for specific rol",
     the_room: "Cal Poly SLO enrolls approximately 22,000 undergraduates - a mid-sized polytechnic with the engineering and applied sciences focus of a specialized institution and the breadth of a comprehensive unive",
     lifestyle: "San Luis Obispo, California is consistently ranked among the happiest cities in America and the most livable small city in California -",
-    grad_cities: "San Francisco-Bay Area CA (35%) | Los Angeles CA (20%) | San Diego CA (8%) | San Luis Obispo CA (6%) | Seattle WA (4%).",
-    mayNotThriveIf: "You want theoretical-first learning over hands-on application - Learn by Doing means constant project work from day one.",
-    campusSocialCulture: "Happy, outdoorsy, genuinely hands-on - SLO's ranking as one of America's happiest cities matches the campus's practical, project-driven energy.",
-    socialCapital: "Learn by Doing project teams create real working relationships that mirror actual engineering jobs before graduation.",
-    culturalCapital: "Elite applied-engineering prestige - Cal Poly signals \"already builds real things,\" recruited at Stanford/Berkeley priority for specific roles.",
-    networkCapital: "Recruited by Apple, SpaceX, and Google at the same priority level as Berkeley/Stanford for hands-on engineering roles."
+    grad_cities: "San Francisco-Bay Area CA (35%) | Los Angeles CA (20%) | San Diego CA (8%) | San Luis Obispo CA (6%) | Seattle WA (4%)."
   },
   "California State University Chico": {
     name: "California State University Chico",
     location: "Chico, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Business and Finance (College of Business - top-60 nationally among regional universities - finance, accounting, marketing, entrepreneurship, management information systems, supply chain -",
     hidden_pathway: "Chico State's construction management program is the hidden pathway that delivers one of the strongest career-to-cost ratios of any program at any CSU campus - and it is genuinely unknown outside the Northern California construction industry.",
     the_room: "Chico State enrolls approximately 14,000 undergraduates - a mid-sized CSU campus serving the most geographically expansive service region of any CSU in Northern California.",
     lifestyle: "Chico, California is a city of 100,000 in Butte County at the base of the Sierra Nevada foothills - one of the most underrated small cities in California with a vibrant downtown, t",
-    grad_cities: "Sacramento CA (30%) | Chico-Butte County CA (20%) | Bay Area CA (12%) | Redding CA (6%) | Fresno CA (4%).",
-    mayNotThriveIf: "You want a large city or urban energy - Chico is a small, underrated Northern California town with a genuinely relaxed pace.",
-    campusSocialCulture: "Laid-back, Sierra-foothills setting with a surprisingly strong practical-business undercurrent via the construction management program.",
-    socialCapital: "Small, tight-knit business cohorts build direct ties into Northern California's construction and regional business scene.",
-    culturalCapital: "Underrated practical-business identity - Chico State signals real career-to-cost value few families recognize upfront.",
-    networkCapital: "One of the strongest career-to-cost ratios in the CSU system, anchored by a uniquely valuable construction management pipeline."
+    grad_cities: "Sacramento CA (30%) | Chico-Butte County CA (20%) | Bay Area CA (12%) | Redding CA (6%) | Fresno CA (4%)."
   },
   "California State University Fresno": {
     name: "California State University Fresno",
     location: "Fresno, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Agriculture and Food Science (Jordan College of Agricultural Sciences and Technology - top-15 nationally among regional universities and the most consequential agricultural college in the San Joaquin Valley -",
     hidden_pathway: "The Wonderful Company connection is the hidden pathway that makes Fresno State's agricultural business and viticulture programs uniquely consequential in the San Joaquin Valley economy. The Wonderful Company -",
     the_room: "Fresno State enrolls approximately 22,000 undergraduates - a large CSU campus serving the most geographically central and demographically significant city in the San Joaquin Valley.",
     lifestyle: "Fresno, California is the agricultural and commercial capital of the San Joaquin Valley - a city of 540,000 and the fifth largest in California, surrounded by some of the most prod",
-    grad_cities: "Fresno CA (45%) | Sacramento CA (12%) | Los Angeles CA (8%) | Bakersfield CA (5%) | San Francisco CA (4%).",
-    mayNotThriveIf: "You want a coastal or major metro setting - Fresno's identity is deeply agricultural, Central Valley, and inland.",
-    campusSocialCulture: "Agriculture-forward, practical, deeply connected to the Valley's farming economy - a genuinely mission-driven campus culture.",
-    socialCapital: "Jordan College cohorts build direct relationships with major agribusiness players like The Wonderful Company before graduation.",
-    culturalCapital: "Agricultural-economy insider identity - Fresno State signals deep, practical expertise in California's most productive farmland.",
-    networkCapital: "The strongest San Joaquin Valley agribusiness pipeline in the state, anchored by The Wonderful Company's direct institutional ties."
+    grad_cities: "Fresno CA (45%) | Sacramento CA (12%) | Los Angeles CA (8%) | Bakersfield CA (5%) | San Francisco CA (4%)."
   },
   "University of California Santa Cruz": {
     name: "University of California Santa Cruz",
     location: "Santa Cruz, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Computer Science and Engineering (Baskin School of Engineering - top-30 nationally for graduate programs with strong undergraduate pipeline - computer science, computer engineering, electrical engineering, robotics, bioinformatics -",
     hidden_pathway: "The residential college system at UC Santa Cruz is the hidden pathway that makes the undergraduate research experience at Santa Cruz structurally different from every peer UC campus. UC Santa Cruz operates 10 residential colleges -",
     the_room: "UC Santa Cruz enrolls approximately 17,000 undergraduates - mid-sized for a UC campus and the most intimate of any UC campus larger than UC Merced. The student body is approximately 38% Hispanic -",
     lifestyle: "Santa Cruz, California is one of the most distinctive university cities in America - a city of 65,000 on a coastal bluff above the Monterey Bay, with redwood forests rising immedia",
-    grad_cities: "San Francisco-Bay Area CA (40%) | Los Angeles CA (12%) | Santa Cruz CA (10%) | San Diego CA (5%) | Seattle WA (4%).",
-    mayNotThriveIf: "You want a traditional single-campus identity - the 10 residential colleges create a fragmented, sub-community-based social structure.",
-    campusSocialCulture: "Redwood-forest, coastal, progressive - the residential college system creates distinct micro-communities within a genuinely beautiful natural setting.",
-    socialCapital: "Residential college bonds run deep, and the CS/engineering research pipeline builds real technical relationships with faculty.",
-    culturalCapital: "Progressive, coastal-intellectual identity - UCSC signals both academic seriousness and a genuinely alternative campus culture.",
-    networkCapital: "Strong Silicon Valley tech pipeline via Baskin Engineering, reinforced by proximity to the Bay Area's tech corridor."
+    grad_cities: "San Francisco-Bay Area CA (40%) | Los Angeles CA (12%) | Santa Cruz CA (10%) | San Diego CA (5%) | Seattle WA (4%)."
   },
   "California State University Northridge": {
     name: "California State University Northridge",
     location: "Northridge, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Business and Finance (David Nazarian College of Business and Economics - top-55 nationally among regional universities - accounting, finance, marketing, real estate, entrepreneurship, management information systems -",
     hidden_pathway: "The National Center on Deafness at CSUN is the hidden pathway that makes CSUN the most specific and irreplaceable institution in the database for one particular professional mission -",
     the_room: "CSUN enrolls approximately 33,000 undergraduates - one of the largest CSU campuses and the largest university in the San Fernando Valley. The student body is approximately 45% Hispanic -",
     lifestyle: "Northridge, California sits in the central San Fernando Valley - a suburban community of 60,000 within the city of Los Angeles, surrounded by the Santa Susana Mountains to the nort",
-    grad_cities: "Los Angeles CA (65%) | San Fernando Valley CA (15%) | Ventura County CA (5%) | Orange County CA (4%) | International (3%",
-    mayNotThriveIf: "You want a small campus or a program outside deaf education/business - CSUN's National Center on Deafness gives it a uniquely specific institutional mission.",
-    campusSocialCulture: "Practical, diverse, San Fernando Valley-rooted - a large suburban LA campus with a genuinely mission-driven deaf-education specialty.",
-    socialCapital: "Nazarian Business cohorts build direct LA-area professional networks, reinforced by the university's uniquely diverse student body.",
-    culturalCapital: "Access-and-mission-driven identity - CSUN signals both practical business readiness and a rare specialized deaf-education credential.",
-    networkCapital: "The single most irreplaceable deaf-education professional network in the country, plus solid LA-area business placement."
+    grad_cities: "Los Angeles CA (65%) | San Fernando Valley CA (15%) | Ventura County CA (5%) | Orange County CA (4%) | International (3%"
   },
   "California State University Los Angeles": {
     name: "California State University Los Angeles",
     location: "Los Angeles, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Business and Finance (College of Business and Economics - top-65 nationally among regional universities - accounting, finance, marketing, entrepreneurship, international business, real estate -",
     hidden_pathway: "The 2028 Los Angeles Olympics infrastructure buildout is the hidden pathway that makes CSULA's engineering and construction management programs uniquely consequential at this specific moment in Los Angeles history.",
     the_room: "CSULA enrolls approximately 24,000 undergraduates - a large CSU campus serving the most economically challenged and racially diverse urban community of any institution in the database.",
     lifestyle: "Los Angeles, California - the CSULA campus sits on a hillside in the unincorporated East Los Angeles corridor of the San Gabriel Valley, at the intersection of the 10 and 710 freew",
-    grad_cities: "Los Angeles CA (75%) | East Los Angeles CA (12%) | Pasadena-San Gabriel Valley CA (6%) | Long Beach CA (3%) | Internatio",
-    mayNotThriveIf: "You want a quieter suburban setting - CSULA sits in a genuinely urban East LA corridor with real economic and racial diversity shaping campus life.",
-    campusSocialCulture: "Community-rooted, access-focused, urban East LA energy - a genuinely mission-driven campus serving one of the city's most diverse populations.",
-    socialCapital: "Engineering and construction management cohorts build direct ties into the 2028 Olympics infrastructure buildout happening right now.",
-    culturalCapital: "Access-and-opportunity identity with real-time civic relevance - CSULA signals genuine mobility plus timely infrastructure expertise.",
-    networkCapital: "A uniquely timed pipeline into 2028 LA Olympics construction and infrastructure work, unmatched by any other institution right now."
+    grad_cities: "Los Angeles CA (75%) | East Los Angeles CA (12%) | Pasadena-San Gabriel Valley CA (6%) | Long Beach CA (3%) | Internatio"
   },
   "Claremont McKenna College": {
     name: "Claremont McKenna College",
     location: "Claremont, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Finance and Investment Management (Wall Street - Goldman Sachs, Morgan Stanley, JPMorgan, Blackstone, KKR, Apollo, major hedge funds and private equity firms recruit CMC at per-capita rates that rival Wharton for a school of 1,400 students -",
     hidden_pathway: "The Robert Day Scholars program is the hidden pathway that makes CMC's finance credential structurally different from every peer liberal arts college in the database. The Robert Day School of Economics and Finance -",
     the_room: "CMC enrolls approximately 1,400 undergraduates - the second smallest institution in the Claremont Consortium after Harvey Mudd and one of the smallest in the entire database at this selectivity and sa",
     lifestyle: "Claremont, California - the same setting as Pomona and Harvey Mudd - with all the physical advantages of Southern California: 280+ days of sunshine, Angeles National Forest 20 minu",
-    grad_cities: "New York NY (35%) | Los Angeles CA (20%) | San Francisco CA (15%) | Washington DC (10%) | International (5%).",
-    mayNotThriveIf: "You want a large campus or a non-Wall-Street-focused culture - CMC's tiny scale and Robert Day finance credential shape a genuinely intense pre-professional identity.",
-    campusSocialCulture: "Small, ambitious, Wall-Street-oriented - Claremont Consortium access broadens the social world beyond CMC's own 1,400 students.",
-    socialCapital: "Robert Day Scholars build unusually tight, elite finance networks that rival Wharton despite the school's tiny size.",
-    culturalCapital: "Elite, government-and-finance-focused prestige - CMC signals both economic rigor and real Wall Street readiness.",
-    networkCapital: "Per-capita Wall Street/PE placement that rivals Wharton, an extraordinary outcome for a school of only 1,400."
+    grad_cities: "New York NY (35%) | Los Angeles CA (20%) | San Francisco CA (15%) | Washington DC (10%) | International (5%)."
   },
   "Pepperdine University": {
     name: "Pepperdine University",
     location: "Malibu, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Business and Finance (Graziadio Business School - top-40 nationally among private universities for MBA and top-50 for undergraduate business - finance, accounting, marketing, entrepreneurship, real estate, international business -",
     hidden_pathway: "The Straus Institute for Dispute Resolution is the hidden pathway that makes Pepperdine's law credential categorically more powerful for one specific professional domain than any peer institution in California can match.",
     the_room: "Pepperdine enrolls approximately 3,500 undergraduates in Seaver College - the undergraduate college - making it among the more intimate of the private universities in the Los Angeles area.",
     lifestyle: "Malibu, California - the Pepperdine campus sits on a bluff 400 feet above the Pacific Ocean in the Santa Monica Mountains, with panoramic views of the ocean, Catalina Island on cle",
-    grad_cities: "Los Angeles CA (45%) | Orange County CA (10%) | San Francisco CA (8%) | New York NY (7%) | International (6%).",
-    mayNotThriveIf: "You want a secular campus or an inland/urban setting - Pepperdine's Christian identity and dramatic Malibu bluff location shape the entire experience.",
-    campusSocialCulture: "Polished, faith-informed, luxury-adjacent - the Malibu setting itself becomes part of the social and cultural identity.",
-    socialCapital: "Small size plus Malibu prestige creates tight bonds within LA's entertainment, business, and luxury real estate networks.",
-    culturalCapital: "Faith-driven luxury-coastal identity - Pepperdine signals both values and access to LA's most exclusive social circles.",
-    networkCapital: "Distinctive Straus Institute dispute-resolution credential, plus strong LA-area business and luxury-sector placement."
+    grad_cities: "Los Angeles CA (45%) | Orange County CA (10%) | San Francisco CA (8%) | New York NY (7%) | International (6%)."
   },
   "University of San Diego": {
     name: "University of San Diego",
     location: "San Diego, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Law (School of Law - top-55 nationally with specific strength in business law, tax law, real estate law, and international law - California state courts, San Diego legal market, major California law firms, federal agencies, military law -",
     hidden_pathway: "The Kroc Institute for Peace and Justice is the hidden pathway that makes USD uniquely positioned at the intersection of military power and peace-making in a city that is simultaneously America's largest military base complex and one of the most inte",
     the_room: "USD enrolls approximately 6,000 undergraduates - mid-sized and appropriate for the Catholic formation model that emphasizes individual student development in a faith community.",
     lifestyle: "San Diego, California - the USD campus sits on Alcala Park, a mesa above Mission Bay with panoramic views of the bay, the Pacific Ocean, and the downtown San Diego skyline.",
-    grad_cities: "San Diego CA (55%) | Los Angeles CA (15%) | San Francisco CA (6%) | Washington DC (5%) | International (4%).",
-    mayNotThriveIf: "You want a secular campus or large research-university scale - USD's Catholic formation model is intimate and values-centered.",
-    campusSocialCulture: "Faith-centered, scenic, community-oriented - Alcala Park's bay views shape a genuinely beautiful, reflective campus culture.",
-    socialCapital: "Small size plus the Kroc Institute's unique military-peace intersection creates distinctive professional networks in San Diego.",
-    culturalCapital: "Faith-driven legal/peace-studies identity - USD signals both values and a rare military-law/peace-building credential.",
-    networkCapital: "A uniquely positioned pipeline into San Diego's massive military base complex alongside international peace and law careers."
+    grad_cities: "San Diego CA (55%) | Los Angeles CA (15%) | San Francisco CA (6%) | Washington DC (5%) | International (4%)."
   },
   "Oregon State University": {
     name: "Oregon State University",
     location: "Corvallis, Oregon",
-    region: "West Coast",
+    region: "Pacific Northwest",
     pipeline: "Engineering (College of Engineering - top-40 nationally - nuclear, electrical, mechanical, civil, chemical, computer science, industrial, biological and ecological, manufacturing -",
     hidden_pathway: "The TRIGA Mark II research reactor at OSU is the hidden pathway that makes the nuclear engineering program categorically different from every peer university in the Pacific Northwest -",
     the_room: "OSU enrolls approximately 24,000 undergraduates - a large Pac-12 now ACC flagship with the full research university infrastructure and the Beavers athletic identity that competes in one of the most at",
     lifestyle: "Corvallis, Oregon is a small city of 59,000 in the Willamette Valley - one of the most livable small cities in the Pacific Northwest with a vibrant downtown corridor, the Benton Co",
-    grad_cities: "Portland OR (30%) | Corvallis OR (12%) | Seattle WA (10%) | San Francisco CA (7%) | Bend OR (4%).",
-    mayNotThriveIf: "You want a small campus or non-engineering focus - OSU's identity leans heavily technical, anchored by a genuinely rare on-campus nuclear reactor.",
-    campusSocialCulture: "Practical, outdoorsy, engineering-forward - Corvallis' livable small-city setting matches a research-serious but down-to-earth campus culture.",
-    socialCapital: "Nuclear engineering cohorts build uniquely specialized bonds through direct access to the on-campus TRIGA reactor.",
-    culturalCapital: "Rare nuclear-engineering prestige - OSU signals access to research infrastructure almost no peer Pacific Northwest school has.",
-    networkCapital: "One of the only undergraduate nuclear engineering pipelines with genuine reactor access, plus solid Pacific Northwest engineering placement."
+    grad_cities: "Portland OR (30%) | Corvallis OR (12%) | Seattle WA (10%) | San Francisco CA (7%) | Bend OR (4%)."
   },
   "Boise State University": {
     name: "Boise State University",
     location: "Boise, Idaho",
-    region: "West Coast",
+    region: "Mountain West",
     pipeline: "Engineering (College of Engineering - top-65 nationally among regional universities - electrical, mechanical, civil, computer science, materials science, construction management -",
     hidden_pathway: "The Micron Technology partnership is the hidden pathway that makes Boise State's engineering and computer science programs consequential in a way that no regional university ranking captures. Micron Technology -",
     the_room: "Boise State enrolls approximately 21,000 undergraduates - a large regional university that has grown dramatically alongside Boise's population explosion.",
     lifestyle: "Boise, Idaho has undergone the most dramatic transformation of any American city in the 2020s - a city of 240,000 in the Treasure Valley that grew 16% in a decade, attracted Califo",
-    grad_cities: "Boise ID (45%) | Portland OR (8%) | Seattle WA (6%) | Salt Lake City UT (5%) | San Francisco CA (4%).",
-    mayNotThriveIf: "You want an established, slower-growth college town - Boise's rapid transformation means the culture is still actively evolving.",
-    campusSocialCulture: "Energetic, fast-growing, tech-adjacent - the Boise population boom brings genuine new energy and opportunity to campus life.",
-    socialCapital: "Direct Micron Technology partnership means engineering/CS students build real semiconductor industry ties before graduating.",
-    culturalCapital: "Rising tech-hub identity - Boise State signals timely access to one of the fastest-growing tech corridors in the country.",
-    networkCapital: "Direct semiconductor industry pipeline via Micron Technology, uniquely consequential and undercounted in national rankings."
+    grad_cities: "Boise ID (45%) | Portland OR (8%) | Seattle WA (6%) | Salt Lake City UT (5%) | San Francisco CA (4%)."
   },
   "Brigham Young University": {
     name: "Brigham Young University",
     location: "Provo, Utah",
-    region: "West Coast",
+    region: "Mountain West",
     pipeline: "Business and Finance (Marriott School of Business - top-20 nationally - finance, accounting, marketing, supply chain, entrepreneurship, information systems - Wall Street, Big 4 accounting firms, major technology companies, consulting firms -",
     hidden_pathway: "The LDS mission language training is the hidden pathway that makes BYU the most multilingual undergraduate institution in America and the most consequential language credential pipeline outside the federal Defense Language Institute.",
     the_room: "BYU enrolls approximately 33,000 undergraduates - a large private university and by far the largest private university in the Mountain West.",
     lifestyle: "Provo, Utah sits at the base of the Wasatch Front - Mount Timpanogos rising to 11,752 feet immediately east of campus, Utah Lake to the west, and the Silicon Slopes technology corr",
-    grad_cities: "Salt Lake City UT (25%) | Provo-Orem UT (20%) | San Francisco CA (8%) | New York NY (8%) | International (5%).",
-    mayNotThriveIf: "You want a secular campus or a more socially permissive environment - BYU's LDS honor code shapes daily life directly and comprehensively.",
-    campusSocialCulture: "Faith-centered, family-oriented, remarkably multilingual - mission-return students bring genuine global fluency and maturity to campus.",
-    socialCapital: "Marriott School's direct hospitality-industry pipeline connects students to Marriott hotel leadership before graduation.",
-    culturalCapital: "Faith-driven, globally-fluent business identity - BYU signals values, language skill, and real hospitality-industry credibility.",
-    networkCapital: "The strongest Marriott hotel-industry pipeline of any university, plus a uniquely powerful multilingual missionary-trained network."
+    grad_cities: "Salt Lake City UT (25%) | Provo-Orem UT (20%) | San Francisco CA (8%) | New York NY (8%) | International (5%)."
   },
   "University of Kentucky": {
     name: "University of Kentucky",
@@ -1359,12 +911,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Thoroughbred horse industry is the hidden pathway that makes UK the most specific and irreplaceable academic institution for one of the most economically consequential specialized industries in the world. The Kentucky Bluegrass region -",
     the_room: "UK enrolls approximately 22,000 undergraduates - a large SEC flagship with the full research university infrastructure and the Wildcats athletic identity that is among the most basketball-passionate i",
     lifestyle: "Lexington, Kentucky is a city of 320,000 in the heart of the Bluegrass region - horse farms visible from the highway, limestone-filtered springs feeding the bluegrass pastures that",
-    grad_cities: "Lexington KY (25%) | Louisville KY (20%) | Cincinnati OH (10%) | Nashville TN (6%) | Frankfort KY (5%).",
-    mayNotThriveIf: "You're not drawn to basketball-obsessed SEC culture - Wildcats basketball is genuinely one of the most intense fan cultures in the country.",
-    campusSocialCulture: "Basketball-passionate, Bluegrass-rooted, genuinely community-oriented - horse country's economic identity blends with intense SEC athletic pride.",
-    socialCapital: "Pre-med cohorts build direct clinical relationships at the state's only Level I trauma center and comprehensive cancer center.",
-    culturalCapital: "Bluegrass-region prestige with real medical depth - UK signals both regional identity and serious clinical credibility.",
-    networkCapital: "A uniquely irreplaceable network in the Thoroughbred horse industry, plus strong Kentucky healthcare placement."
+    grad_cities: "Lexington KY (25%) | Louisville KY (20%) | Cincinnati OH (10%) | Nashville TN (6%) | Frankfort KY (5%)."
   },
   "University of Louisville": {
     name: "University of Louisville",
@@ -1374,12 +921,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "UofL Health performs more heart transplants than any hospital in the world - and this single clinical fact is the hidden pathway that reframes UofL's medical school from a regional institution into a global cardiovascular medicine leader.",
     the_room: "UofL enrolls approximately 17,000 undergraduates - a mid-sized metropolitan research university with the full professional school infrastructure of a comprehensive university.",
     lifestyle: "Louisville, Kentucky is a city of 630,000 on the Ohio River - the largest city in Kentucky, the bourbon capital of the world, and a city that has been nationally recognized in the",
-    grad_cities: "Louisville KY (50%) | Lexington KY (10%) | Cincinnati OH (8%) | Nashville TN (6%) | Indianapolis IN (5%).",
-    mayNotThriveIf: "You want a smaller campus or a non-clinical academic focus - UofL's identity is deeply tied to its globally significant medical center.",
-    campusSocialCulture: "Urban, medically-serious, bourbon-city flavored - Louisville's distinct culture and world-class cardiovascular program shape a genuinely unique campus identity.",
-    socialCapital: "Pre-med cohorts build direct relationships at the hospital performing more heart transplants than anywhere else in the world.",
-    culturalCapital: "Global cardiovascular medicine prestige - UofL signals clinical seriousness far beyond its regional profile.",
-    networkCapital: "A globally significant heart transplant/cardiovascular medicine network, reframing this from regional school to world leader."
+    grad_cities: "Louisville KY (50%) | Lexington KY (10%) | Cincinnati OH (8%) | Nashville TN (6%) | Indianapolis IN (5%)."
   },
   "University of Minnesota": {
     name: "University of Minnesota",
@@ -1389,12 +931,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The medical device corridor is the hidden pathway that makes Minnesota's engineering, biomedical, and pre-medicine credentials categorically more consequential than peer Big Ten flagship programs for one specific professional domain.",
     the_room: "Minnesota enrolls approximately 36,000 undergraduates - a large Big Ten flagship with the full research university infrastructure and the Gophers athletic identity that competes across every Big Ten s",
     lifestyle: "Minneapolis, Minnesota is one of the great American university cities - a metropolitan area of 3.7 million people with a world-class arts scene, the most theatre seats per capita o",
-    grad_cities: "Minneapolis-Saint Paul MN (50%) | Chicago IL (8%) | Milwaukee WI (5%) | Denver CO (4%) | New York NY (4%).",
-    mayNotThriveIf: "You want small classes or a warm climate - at 36,000 undergrads, Minnesota winters and campus scale both demand real self-sufficiency.",
-    campusSocialCulture: "Genuine arts-and-culture depth meets Big Ten spirit - Minneapolis' theatre scene rivals any city its size, layered onto serious Gopher pride.",
-    socialCapital: "Biomedical engineering cohorts build direct ties into the world-leading Minneapolis medical device corridor.",
-    culturalCapital: "Cultured Midwest identity with real medical-device prestige - Minnesota signals both arts sophistication and technical seriousness.",
-    networkCapital: "The strongest medical device industry pipeline in the country, concentrated in the Minneapolis-St. Paul corridor."
+    grad_cities: "Minneapolis-Saint Paul MN (50%) | Chicago IL (8%) | Milwaukee WI (5%) | Denver CO (4%) | New York NY (4%)."
   },
   "Butler University": {
     name: "Butler University",
@@ -1404,12 +941,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Eli Lilly relationship is the hidden pathway that makes Butler's pharmacy and pre-medicine programs categorically different from every peer private university in Indiana. Eli Lilly and Company -",
     the_room: "Butler enrolls approximately 4,500 undergraduates - the most intimate of any private university in the database with a top-30 pharmacy school.",
     lifestyle: "Indianapolis, Indiana is a city of 900,000 and the most sports-event-dense mid-sized city in America - the Super Bowl, the Big Ten Championship, the NCAA Men's Basketball Tournamen",
-    grad_cities: "Indianapolis IN (55%) | Chicago IL (10%) | Columbus OH (6%) | Cincinnati OH (5%) | New York NY (4%).",
-    mayNotThriveIf: "You want a large university or a non-pharmacy-adjacent focus - Butler is small and its pharmacy/pre-med identity runs deep.",
-    campusSocialCulture: "Intimate, basketball-storied (Butler Bulldogs' March Madness runs), genuinely tight-knit for a school in a major sports-event city.",
-    socialCapital: "Small size plus direct Eli Lilly ties create close, high-value pharmacy and pre-med professional relationships.",
-    culturalCapital: "Storied basketball identity paired with real pharmaceutical prestige - Butler signals both spirit and serious clinical credibility.",
-    networkCapital: "Direct Eli Lilly pharmaceutical industry pipeline, a categorically different advantage from any peer private Indiana university."
+    grad_cities: "Indianapolis IN (55%) | Chicago IL (10%) | Columbus OH (6%) | Cincinnati OH (5%) | New York NY (4%)."
   },
   "University of the South": {
     name: "University of the South",
@@ -1419,12 +951,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Sewanee Domain is the hidden pathway that makes Sewanee's environmental science and outdoor experience categorically different from every peer liberal arts college in the database.",
     the_room: "Sewanee enrolls approximately 1,800 undergraduates - among the most intimate of any liberal arts college in the South and similar in size to Bowdoin and Amherst.",
     lifestyle: "Sewanee, Tennessee sits on the Cumberland Plateau at 2,000 feet elevation - a mountaintop community of 2,500 people whose entire existence is organized around the University of the",
-    grad_cities: "Nashville TN (20%) | Atlanta GA (15%) | New York NY (12%) | Washington DC (8%) | Charlotte NC (6%).",
-    mayNotThriveIf: "You want a large university or urban setting - Sewanee's mountaintop isolation is total, with the entire community organized around the school.",
-    campusSocialCulture: "Deeply traditional, outdoorsy, intellectually serious - the Domain's 13,000 acres of forest create a genuinely unique environmental-immersion campus culture.",
-    socialCapital: "Extreme remoteness plus small size creates unusually close bonds, reinforced by shared access to the Domain's outdoor experience.",
-    culturalCapital: "Quiet Southern liberal-arts prestige - Sewanee signals depth, tradition, and environmental seriousness.",
-    networkCapital: "Tight Southeast alumni network, disproportionately strong for liberal arts placement given the school's small size."
+    grad_cities: "Nashville TN (20%) | Atlanta GA (15%) | New York NY (12%) | Washington DC (8%) | Charlotte NC (6%)."
   },
   "University of Mississippi": {
     name: "University of Mississippi",
@@ -1434,12 +961,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Grove is the hidden pathway that most academic rankings miss entirely - and it is the single most consequential social capital formation mechanism of any SEC campus in the database. The Grove at Ole Miss -",
     the_room: "Ole Miss enrolls approximately 22,000 undergraduates - a large SEC flagship with the full research university infrastructure and the Rebels athletic identity that is among the most socially defined by",
     lifestyle: "Oxford, Mississippi is one of the great American college towns and one of the most literarily significant small cities in America -",
-    grad_cities: "Memphis TN (25%) | Jackson MS (18%) | Nashville TN (10%) | New Orleans LA (7%) | Atlanta GA (6%).",
-    mayNotThriveIf: "You're not drawn to intense Southern social/Greek culture - The Grove's tailgate tradition is the single most defining social institution on campus.",
-    campusSocialCulture: "The Grove's tailgate culture is genuinely the most socially consequential tradition of any SEC campus - Greek life and Southern social identity run deep.",
-    socialCapital: "The Grove functions as an active networking institution, not just a tailgate - relationships formed there carry real professional weight.",
-    culturalCapital: "Literary Southern prestige (Oxford's writer heritage) paired with SEC social intensity - Ole Miss signals both depth and Southern sophistication.",
-    networkCapital: "Strong Mid-South regional business network, reinforced by The Grove's uniquely powerful alumni social capital formation."
+    grad_cities: "Memphis TN (25%) | Jackson MS (18%) | Nashville TN (10%) | New Orleans LA (7%) | Atlanta GA (6%)."
   },
   "Mississippi State University": {
     name: "Mississippi State University",
@@ -1449,12 +971,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The catfish aquaculture connection is the hidden pathway that makes MSU's veterinary and agricultural programs uniquely consequential for one of the most economically significant regional food industries in America.",
     the_room: "MSU enrolls approximately 21,000 undergraduates - a large SEC flagship with the Bulldogs athletic identity that competes in one of the most athletically competitive conferences in college sports.",
     lifestyle: "Starkville, Mississippi is a small city of 25,000 in the eastern Mississippi hills - a college town built entirely around Mississippi State with a growing restaurant and arts scene",
-    grad_cities: "Jackson MS (20%) | Starkville MS (10%) | Memphis TN (15%) | Nashville TN (8%) | Atlanta GA (7%).",
-    mayNotThriveIf: "You want a large city or coastal setting - Starkville is a small, self-contained college town in the Mississippi hills.",
-    campusSocialCulture: "SEC-proud, engineering-serious, genuinely community-oriented - a growing arts/restaurant scene adds unexpected texture to a traditionally rural setting.",
-    socialCapital: "Engineering cohorts build direct relationships with major aerospace/defense employers through NASA Stennis proximity.",
-    culturalCapital: "Practical Southern engineering identity with a unique agricultural-science edge - MSU signals both technical seriousness and regional expertise.",
-    networkCapital: "Strong aerospace/defense pipeline (Raytheon, Northrop Grumman, NASA Stennis), plus a uniquely valuable catfish aquaculture industry network."
+    grad_cities: "Jackson MS (20%) | Starkville MS (10%) | Memphis TN (15%) | Nashville TN (8%) | Atlanta GA (7%)."
   },
   "University of Alabama": {
     name: "University of Alabama",
@@ -1464,12 +981,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Huntsville aerospace corridor is the hidden pathway that makes Alabama's engineering program more consequential than its ranking suggests - and almost no family outside the South understands what Huntsville represents as a career destination.",
     the_room: "Alabama enrolls approximately 38,000 undergraduates - a large SEC flagship with the most dominant football program in modern college sports history and the Crimson Tide identity that is among the most",
     lifestyle: "Tuscaloosa, Alabama is a city of 100,000 built around the University of Alabama - a genuine college city with a vibrant Strip commercial corridor, Government Plaza, and the Black W",
-    grad_cities: "Birmingham AL (30%) | Atlanta GA (15%) | Huntsville AL (10%) | Nashville TN (8%) | New York NY (5%).",
-    mayNotThriveIf: "You're not drawn to dominant football-first culture - the Crimson Tide identity is inescapable and central to the entire campus experience.",
-    campusSocialCulture: "Massive Greek presence, football-dynasty pride, genuinely Southern social intensity - one of the most football-defined cultures in the country.",
-    socialCapital: "Business and engineering cohorts build direct ties into the Huntsville aerospace corridor, a hidden career pathway few families outside the South know.",
-    culturalCapital: "Dominant football-program prestige paired with real business/risk-management depth - Alabama signals both spirit and serious credentials.",
-    networkCapital: "Top-5 risk management/insurance placement nationally, plus a direct pipeline into Huntsville's major aerospace industry corridor."
+    grad_cities: "Birmingham AL (30%) | Atlanta GA (15%) | Huntsville AL (10%) | Nashville TN (8%) | New York NY (5%)."
   },
   "Florida State University": {
     name: "Florida State University",
@@ -1479,12 +991,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The FAMU-FSU College of Engineering is the hidden pathway that makes FSU's engineering credential uniquely consequential in ways no ranking captures. The FAMU-FSU College of Engineering is the only jointly accredited engineering college in the United",
     the_room: "FSU enrolls approximately 33,000 undergraduates - a large ACC flagship with the Seminoles athletic identity that competes at the Power 4 level with one of the most visually distinctive and historicall",
     lifestyle: "Tallahassee, Florida is Florida's capital city - a city of 200,000 embedded in the Tallahassee Hills at the edge of the Florida Panhandle, surrounded by live oak canopy roads that",
-    grad_cities: "Tampa-Orlando FL (25%) | Tallahassee FL (18%) | Miami FL (12%) | Atlanta GA (8%) | New York NY (5%).",
-    mayNotThriveIf: "You want a smaller school or non-football-centric culture - FSU's Seminoles identity and ACC athletics are central to the experience.",
-    campusSocialCulture: "Historic, Greek-heavy, football-proud - live oak canopy roads and Florida's capital-city setting create a genuinely distinctive Southern college culture.",
-    socialCapital: "The jointly-accredited FAMU-FSU engineering program creates uniquely cross-institutional professional bonds unmatched elsewhere.",
-    culturalCapital: "Underrecognized elite business-school prestige - FSU signals more rigor than its athletic reputation suggests.",
-    networkCapital: "Top-10 risk management/insurance placement nationally, plus a uniquely structured joint engineering credential."
+    grad_cities: "Tampa-Orlando FL (25%) | Tallahassee FL (18%) | Miami FL (12%) | Atlanta GA (8%) | New York NY (5%)."
   },
   "University of South Florida": {
     name: "University of South Florida",
@@ -1494,12 +1001,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Tampa General Hospital's organ transplant volume is the hidden pathway that makes USF's medical and health sciences programs clinically consequential in ways that peer Florida institutions cannot match. Tampa General Hospital -",
     the_room: "USF enrolls approximately 37,000 undergraduates - a large preeminent research university with the Bulls athletic identity in the American Athletic Conference competing in football, basketball, and a f",
     lifestyle: "Tampa, Florida is one of the great American success stories of the 2020s - a city of 400,000 in a metropolitan area of 3.2 million that has attracted financial services headquarter",
-    grad_cities: "Tampa-St. Petersburg FL (55%) | Orlando FL (10%) | Miami FL (8%) | Atlanta GA (5%) | Washington DC (4%).",
-    mayNotThriveIf: "You want small classes or an established, slower-growth city - both USF and Tampa are rapidly expanding, which brings constant change.",
-    campusSocialCulture: "Fast-growing, energetic, increasingly corporate - Tampa's financial services boom brings genuine new opportunity and momentum to campus life.",
-    socialCapital: "Engineering cohorts build direct ties to Tampa Bay's defense/tech employers, plus clinical relationships via Tampa General's transplant program.",
-    culturalCapital: "Rising Sun Belt prestige - USF signals access to one of the fastest-growing metro economies in the country.",
-    networkCapital: "Deep Tampa Bay tech/defense pipeline (Lockheed Martin, L3Harris), plus an unmatched organ transplant clinical network."
+    grad_cities: "Tampa-St. Petersburg FL (55%) | Orlando FL (10%) | Miami FL (8%) | Atlanta GA (5%) | Washington DC (4%)."
   },
   "University of Central Florida": {
     name: "University of Central Florida",
@@ -1509,12 +1011,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Modeling Simulation and Training cluster is the hidden pathway that makes UCF's engineering and computer science programs uniquely consequential for one of the most consequential and least publicly understood defense technology industries in Amer",
     the_room: "UCF enrolls approximately 58,000 undergraduates - the second largest university enrollment in America and the largest in Florida - with a campus infrastructure scaled to this extraordinary size.",
     lifestyle: "Orlando, Florida is the most visited tourist destination on earth - Walt Disney World, Universal Orlando, SeaWorld, LEGOLAND, and dozens of major entertainment destinations create",
-    grad_cities: "Orlando FL (55%) | Tampa FL (8%) | Miami FL (6%) | Jacksonville FL (5%) | Atlanta GA (4%).",
-    mayNotThriveIf: "You want small classes or an intimate campus - at 58,000 undergrads, UCF is the second-largest university in America and demands real self-direction.",
-    campusSocialCulture: "Massive scale, entertainment-adjacent, defense-tech-serious - Orlando's tourism-capital identity coexists with a genuinely significant simulation/defense industry cluster.",
-    socialCapital: "The Modeling Simulation and Training cluster creates uniquely specialized bonds in one of the least publicly understood defense-tech industries.",
-    culturalCapital: "Entertainment-capital adjacency with real defense-tech depth - UCF signals both scale and access to a hidden major industry.",
-    networkCapital: "The single strongest modeling/simulation/training defense-industry pipeline in the country, plus direct access to Orlando's tourism and hospitality economy."
+    grad_cities: "Orlando FL (55%) | Tampa FL (8%) | Miami FL (6%) | Jacksonville FL (5%) | Atlanta GA (4%)."
   },
   "Florida Atlantic University": {
     name: "Florida Atlantic University",
@@ -1524,12 +1021,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The IBM Boca Raton campus - where the personal computer was invented in 1981 - is the hidden pathway that contextualizes FAU's technology identity within Silicon Valley-level computing history at a South Florida campus.",
     the_room: "FAU enrolls approximately 25,000 undergraduates - a large regional research university serving the most economically productive coastal corridor in Florida outside Miami.",
     lifestyle: "Boca Raton, Florida is one of the most affluent and architecturally distinctive mid-sized cities in America - a planned city of 100,000 in Palm Beach County with Mediterranean Revi",
-    grad_cities: "Boca Raton-West Palm Beach FL (45%) | Fort Lauderdale FL (15%) | Miami FL (12%) | Orlando FL (5%) | New York NY (4%).",
-    mayNotThriveIf: "You want a traditional college-town feel - Boca Raton's affluent, planned-community setting is distinctly suburban and upscale.",
-    campusSocialCulture: "Polished, affluent, business-forward - Boca's Mediterranean Revival architecture and financial services corridor shape a genuinely upscale campus environment.",
-    socialCapital: "Business cohorts build direct ties to Boca Raton's dense financial services and real estate corridor before graduating.",
-    culturalCapital: "Affluent South Florida business prestige - FAU signals access to one of the state's most productive economic corridors.",
-    networkCapital: "Strong South Florida financial services and real estate placement, reinforced by historic tech-industry roots (IBM PC invention site)."
+    grad_cities: "Boca Raton-West Palm Beach FL (45%) | Fort Lauderdale FL (15%) | Miami FL (12%) | Orlando FL (5%) | New York NY (4%)."
   },
   "Stetson University": {
     name: "Stetson University",
@@ -1539,12 +1031,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Stetson trial advocacy program is the hidden pathway that makes Stetson Law the most specifically powerful litigation credential in Florida - and possibly in America - for the student who wants to be a trial lawyer.",
     the_room: "Stetson enrolls approximately 3,000 undergraduates - the most intimate private university in Central Florida and one of the smallest in the database with a law school.",
     lifestyle: "DeLand, Florida is one of the most architecturally distinguished small cities in Florida - a city of 35,000 in Volusia County that was named the most beautiful small city in Americ",
-    grad_cities: "Orlando FL (25%) | Tampa FL (15%) | Jacksonville FL (10%) | DeLand FL (8%) | Miami FL (6%).",
-    mayNotThriveIf: "You want a large university or big-city setting - Stetson is small and DeLand is a quiet, architecturally distinctive small city.",
-    campusSocialCulture: "Intimate, historically preserved, quietly ambitious - the small scale creates close bonds within a beautifully maintained small-city setting.",
-    socialCapital: "Small size plus the trial advocacy program's reputation creates tight, high-value legal networking unmatched by peer-sized schools.",
-    culturalCapital: "Elite litigation prestige at small-school scale - Stetson signals serious legal credibility disproportionate to its size.",
-    networkCapital: "The most decorated trial advocacy program in America, a uniquely powerful litigation credential for aspiring trial lawyers."
+    grad_cities: "Orlando FL (25%) | Tampa FL (15%) | Jacksonville FL (10%) | DeLand FL (8%) | Miami FL (6%)."
   },
   "Virginia Tech": {
     name: "Virginia Tech",
@@ -1554,12 +1041,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Northern Virginia defense technology corridor is the hidden pathway that makes Virginia Tech engineering structurally more powerful than its ranking suggests for one specific and enormously consequential career domain. Northern Virginia -",
     the_room: "Virginia Tech enrolls approximately 28,000 undergraduates - a large ACC flagship with the Hokies athletic identity that is among the most passionate in the conference.",
     lifestyle: "Blacksburg, Virginia is a college town of 45,000 in the New River Valley of the Appalachian Mountains - one of the most physically beautiful university settings in the ACC, surroun",
-    grad_cities: "Northern Virginia-DC (35%) | Roanoke VA (12%) | Richmond VA (8%) | Charlotte NC (6%) | New York NY (5%).",
-    mayNotThriveIf: "You want an urban campus or easy off-campus access - Blacksburg's remote mountain setting means the Hokie community is your entire social world.",
-    campusSocialCulture: "Deeply communal Hokie spirit, strong Corps of Cadets presence alongside mainstream student life - one of the most passionate fan cultures in the ACC.",
-    socialCapital: "Engineering cohorts and Corps of Cadets bonds run especially deep, translating directly into defense and engineering networks.",
-    culturalCapital: "Hokie loyalty plus serious engineering credibility - Virginia Tech signals grit and technical seriousness.",
-    networkCapital: "Unmatched pipeline into the Northern Virginia defense-tech corridor, one of the most lucrative engineering job markets in the country."
+    grad_cities: "Northern Virginia-DC (35%) | Roanoke VA (12%) | Richmond VA (8%) | Charlotte NC (6%) | New York NY (5%)."
   },
   "Boston College": {
     name: "Boston College",
@@ -1569,12 +1051,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Jesuit intellectual tradition at BC creates a specific professional formation that the Boston financial services and consulting industries recruit with intentionality -",
     the_room: "BC enrolls approximately 9,500 undergraduates - mid-sized and appropriate for the Jesuit formation model. The student body is approximately 30% from New England with heavy representation from New York",
     lifestyle: "Chestnut Hill, Massachusetts is an affluent suburb on the western edge of Boston - the BC campus sits on a hill above Cleveland Circle with the Gothic towers of Gasson Hall and Sto",
-    grad_cities: "Boston MA (45%) | New York NY (20%) | Washington DC (8%) | San Francisco CA (5%) | Hartford-Providence (4%).",
-    mayNotThriveIf: "You want a secular campus or urban core location - BC's Jesuit identity and suburban Chestnut Hill setting shape daily life directly.",
-    campusSocialCulture: "Polished, faith-informed, pre-professional - Carroll School students carry a distinctly buttoned-up, Boston-finance-ready energy.",
-    socialCapital: "Carroll School cohorts build tight bonds that convert directly into Boston's concentrated financial services ecosystem.",
-    culturalCapital: "Jesuit-formed professional polish - BC signals values-driven ambition with real Wall Street readiness.",
-    networkCapital: "Deep Boston financial services pipeline (Fidelity, Wellington, State Street), among the most concentrated in the country."
+    grad_cities: "Boston MA (45%) | New York NY (20%) | Washington DC (8%) | San Francisco CA (5%) | Hartford-Providence (4%)."
   },
   "University of Pittsburgh": {
     name: "University of Pittsburgh",
@@ -1584,12 +1061,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Jonas Salk developed the polio vaccine at the University of Pittsburgh in 1955 - and the research culture that produced that breakthrough is still operating at the same institution seven decades later.",
     the_room: "Pitt enrolls approximately 20,000 undergraduates - a large research university with the full professional school infrastructure of one of the most research-active institutions in America.",
     lifestyle: "Pittsburgh, Pennsylvania is one of the great American comeback cities - a former steel capital that has reinvented itself as a technology, healthcare, and education hub with a cost",
-    grad_cities: "Pittsburgh PA (40%) | Philadelphia PA (10%) | New York NY (10%) | Washington DC (7%) | Boston MA (5%).",
-    mayNotThriveIf: "You want a small-school feel or a campus disconnected from a city - Pitt is fully embedded in Pittsburgh's urban fabric.",
-    campusSocialCulture: "Urban, research-driven, resilient - the \"comeback city\" energy of Pittsburgh shapes a practical, hardworking campus culture.",
-    socialCapital: "Direct UPMC research ties mean students build professional medical networks well before graduation.",
-    culturalCapital: "Blue-collar-meets-biotech identity - Pitt signals resilience and serious research credibility.",
-    networkCapital: "Unmatched UPMC healthcare network access - one of the largest academic medical systems in the world."
+    grad_cities: "Pittsburgh PA (40%) | Philadelphia PA (10%) | New York NY (10%) | Washington DC (7%) | Boston MA (5%)."
   },
   "North Carolina State University": {
     name: "North Carolina State University",
@@ -1599,12 +1071,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Research Triangle Park is the hidden pathway that makes NC State engineering and computer science structurally more powerful than their rankings suggest for one of the most consequential technology and pharmaceutical ecosystems in America.",
     the_room: "NC State enrolls approximately 26,000 undergraduates - a large ACC flagship with the Wolfpack athletic identity that competes in one of the most athletically competitive conferences in college sports.",
     lifestyle: "Raleigh, North Carolina is one of the most dynamic and livable mid-sized cities in America - a city of 470,000 that has grown faster than almost any other state capital in the Sout",
-    grad_cities: "Research Triangle NC (45%) | Charlotte NC (15%) | Raleigh NC (12%) | Atlanta GA (6%) | New York NY (4%).",
-    mayNotThriveIf: "You want small classes or a slower-growing city - NC State's scale and Raleigh's rapid growth demand real self-direction.",
-    campusSocialCulture: "Ambitious, engineering-forward, deeply tied to Research Triangle Park's booming tech/pharma ecosystem - practical energy runs throughout.",
-    socialCapital: "Engineering cohorts build direct relationships with Research Triangle Park employers years before graduation.",
-    culturalCapital: "Applied engineering prestige inside one of the fastest-growing tech corridors in the country - NC State signals real-world readiness.",
-    networkCapital: "Unmatched Research Triangle Park pipeline, one of the most consequential tech/pharma ecosystems in America."
+    grad_cities: "Research Triangle NC (45%) | Charlotte NC (15%) | Raleigh NC (12%) | Atlanta GA (6%) | New York NY (4%)."
   },
   "University of Maryland College Park": {
     name: "University of Maryland College Park",
@@ -1614,12 +1081,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The NSA relationship is the hidden pathway that makes UMD computer science and mathematics programs uniquely consequential for one of the most significant and least publicly discussed federal employers in America. The National Security Agency -",
     the_room: "UMD enrolls approximately 31,000 undergraduates - a large Big Ten flagship with the Terrapins athletic identity competing in one of the most athletically competitive conferences in college sports.",
     lifestyle: "College Park, Maryland is a dense suburban community of 32,000 embedded between Washington DC and Baltimore in the most consequential federal employment corridor in America.",
-    grad_cities: "Washington DC-Maryland (55%) | Northern Virginia (15%) | Baltimore MD (10%) | New York NY (5%) | Philadelphia PA (3%).",
-    mayNotThriveIf: "You want to leave the DC-Maryland corridor or a smaller campus - UMD's identity and career pipeline are deeply tied to federal Washington.",
-    campusSocialCulture: "Big Ten athletic energy meets federal-town seriousness - Terrapins pride runs alongside a genuinely career-focused, security-conscious student culture.",
-    socialCapital: "CS and engineering cohorts build direct relationships with federal agencies, especially through NSA-adjacent research and recruiting.",
-    culturalCapital: "Federal-insider technical prestige - UMD signals both academic rigor and access to the nation's security apparatus.",
-    networkCapital: "Unmatched NSA/federal security agency pipeline, concentrated in the DC-Maryland-Virginia corridor."
+    grad_cities: "Washington DC-Maryland (55%) | Northern Virginia (15%) | Baltimore MD (10%) | New York NY (5%) | Philadelphia PA (3%)."
   },
   "Johns Hopkins University": {
     name: "Johns Hopkins University",
@@ -1629,12 +1091,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Applied Physics Laboratory is the hidden pathway that makes Hopkins uniquely consequential for national security and space science in ways that its undergraduate reputation alone does not capture. APL -",
     the_room: "Hopkins enrolls approximately 5,500 undergraduates - among the smallest research universities in the database relative to its research output and global reputation.",
     lifestyle: "Baltimore, Maryland is a city of 600,000 with a genuine urban identity - the Inner Harbor, Fells Point, Federal Hill, the American Visionary Art Museum, Lexington Market, the Balti",
-    grad_cities: "Baltimore MD (25%) | Washington DC (20%) | New York NY (15%) | Boston MA (8%) | San Francisco CA (5%).",
-    mayNotThriveIf: "You want a big-school social scene or a traditional Greek-heavy campus - Hopkins is research-intense, and pre-med pressure shapes the culture.",
-    campusSocialCulture: "Research-first and pre-med-heavy - intense but small enough that everyone recognizes the shared pressure and pace.",
-    socialCapital: "Small size plus world-class research access means undergrads build genuine mentor relationships with leading researchers early.",
-    culturalCapital: "Elite medical/research prestige - Hopkins signals the highest tier of scientific credibility.",
-    networkCapital: "Unmatched medical research network, plus a hidden APL/national-security pathway most families never see."
+    grad_cities: "Baltimore MD (25%) | Washington DC (20%) | New York NY (15%) | Boston MA (8%) | San Francisco CA (5%)."
   },
   "Emory University": {
     name: "Emory University",
@@ -1644,12 +1101,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The CDC adjacency is the hidden pathway that makes Emory's public health and pre-medicine programs uniquely consequential for global health careers in ways that no other university in the world can replicate outside of Johns Hopkins.",
     the_room: "Emory enrolls approximately 7,000 undergraduates across both the Atlanta campus and Oxford College - mid-sized and appropriate for the research university model that Emory has built.",
     lifestyle: "Atlanta, Georgia is one of the great American cities - a metropolitan area of 6.2 million people with more Fortune 500 headquarters than any city except New York and Houston, a thr",
-    grad_cities: "Atlanta GA (45%) | New York NY (15%) | Washington DC (10%) | Boston MA (5%) | Los Angeles CA (4%).",
-    mayNotThriveIf: "You want a large flagship-scale campus - Emory's mid-sized, research-intensive environment rewards students comfortable with academic focus.",
-    campusSocialCulture: "Polished, health-and-research-oriented, Atlanta-connected - a genuinely global-health-minded campus given CDC proximity.",
-    socialCapital: "Pre-med and public health cohorts build direct research relationships through CDC adjacency unmatched outside Johns Hopkins.",
-    culturalCapital: "Global health and medical research prestige - Emory signals serious pre-professional credibility.",
-    networkCapital: "Unmatched CDC-adjacent public health network, plus deep Atlanta Fortune 500 corporate ties."
+    grad_cities: "Atlanta GA (45%) | New York NY (15%) | Washington DC (10%) | Boston MA (5%) | Los Angeles CA (4%)."
   },
   "Tulane University": {
     name: "Tulane University",
@@ -1659,12 +1111,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Louisiana's civil law system is the hidden pathway that makes Tulane Law categorically different from every other law school in America - and it is a pathway that creates a specific professional capability available nowhere else.",
     the_room: "Tulane enrolls approximately 7,000 undergraduates - mid-sized and appropriate for a research university in a city that is simultaneously the social infrastructure.",
     lifestyle: "New Orleans, Louisiana is the most culturally distinctive major city in America - a city of 390,000 that has been continuously inhabited since 1718, that holds more historic archit",
-    grad_cities: "New Orleans LA (30%) | Houston TX (15%) | New York NY (12%) | Atlanta GA (8%) | Miami FL (5%).",
-    mayNotThriveIf: "You want a quiet, low-key college town - New Orleans' culture is loud, present, and inescapable, which some students find overwhelming.",
-    campusSocialCulture: "New Orleans itself is the social culture - Mardi Gras, music, food, and community service (Tulane requires public service) all shape campus identity.",
-    socialCapital: "Shared immersion in a genuinely unique city creates strong bonds, plus energy sector recruiting ties from Gulf Coast presence.",
-    culturalCapital: "Distinctive, culturally rich identity - Tulane signals both academic seriousness and real-world civic engagement.",
-    networkCapital: "Strong Gulf Coast energy sector pipeline plus a uniquely positioned Louisiana civil law credential unavailable elsewhere."
+    grad_cities: "New Orleans LA (30%) | Houston TX (15%) | New York NY (12%) | Atlanta GA (8%) | Miami FL (5%)."
   },
   "Purdue University": {
     name: "Purdue University",
@@ -1674,12 +1121,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Purdue has produced more astronauts than any other university in the world - and Neil Armstrong was one of them. The list of Purdue astronauts includes Neil Armstrong (first human to walk on the moon), Gus Grissom (second American in space), Eugene C",
     the_room: "Purdue enrolls approximately 36,000 undergraduates - a large Big Ten flagship with the Boilermakers athletic identity competing across all major conference sports.",
     lifestyle: "West Lafayette, Indiana is a small city of 45,000 built around Purdue on the western bank of the Wabash River -",
-    grad_cities: "Indianapolis IN (25%) | Chicago IL (15%) | Cincinnati OH (8%) | Detroit MI (7%) | New York NY (5%).",
-    mayNotThriveIf: "You want a non-STEM-dominant culture or a warmer climate - Purdue's identity is engineering-first in a small Midwest town.",
-    campusSocialCulture: "Boilermaker pride runs deep - engineering-heavy culture with strong Big Ten athletics as the main social anchor.",
-    socialCapital: "Engineering cohorts form tight, technically-minded networks that carry into aerospace and semiconductor careers nationally.",
-    culturalCapital: "Astronaut-producing engineering prestige - Purdue signals serious technical credibility with Midwest humility.",
-    networkCapital: "Deep aerospace and engineering alumni density, now amplified by Purdue's growing role in the semiconductor/chip manufacturing push."
+    grad_cities: "Indianapolis IN (25%) | Chicago IL (15%) | Cincinnati OH (8%) | Detroit MI (7%) | New York NY (5%)."
   },
   "Syracuse University": {
     name: "Syracuse University",
@@ -1689,12 +1131,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Newhouse alumni network is the hidden pathway that makes Syracuse the most specifically powerful media credential in America for one reason that no ranking captures: Newhouse graduates hire Newhouse graduates with a tribal loyalty that is documen",
     the_room: "Syracuse enrolls approximately 15,000 undergraduates - a mid-sized private research university with the Orange athletic identity in the ACC competing in basketball, football, lacrosse, and a full Powe",
     lifestyle: "Syracuse, New York is a mid-sized city of 148,000 in central New York state - a city with harsh winters that are genuinely transformative in the way that all long-winter college to",
-    grad_cities: "New York NY (35%) | Boston MA (8%) | Washington DC (7%) | Los Angeles CA (6%) | Philadelphia PA (5%).",
-    mayNotThriveIf: "You want a mild climate or a non-media-focused identity - Syracuse's harsh winters and Newhouse's dominant media reputation shape the entire experience.",
-    campusSocialCulture: "Media-obsessed, resilient (the winters build genuine grit), Orange athletics-proud - a distinctly tight community forged partly by shared weather endurance.",
-    socialCapital: "Newhouse alumni hire Newhouse alumni with documented tribal loyalty - one of the most functional alumni networks in media.",
-    culturalCapital: "The single most recognized media/communications brand in American higher education - Syracuse signals instant industry credibility.",
-    networkCapital: "The most powerful media industry hiring network in the country, operating with genuine tribal loyalty among Newhouse graduates."
+    grad_cities: "New York NY (35%) | Boston MA (8%) | Washington DC (7%) | Los Angeles CA (6%) | Philadelphia PA (5%)."
   },
   "New York University": {
     name: "New York University",
@@ -1704,12 +1141,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "NYU Grossman School of Medicine is tuition-free - and this is the most consequential single financial decision made by any university in the database. In 2018, NYU became the first major research university in America to make medical school completel",
     the_room: "NYU enrolls approximately 27,000 undergraduates - a large private research university with no traditional campus, no football team, no Greek life, and no residential campus culture.",
     lifestyle: "New York City - Greenwich Village, specifically, and Washington Square Park as the social and physical heart of the NYU world.",
-    grad_cities: "New York NY (65%) | Los Angeles CA (8%) | London UK (4%) | Washington DC (3%) | Boston MA (3%).",
-    mayNotThriveIf: "You want a traditional campus with football and Greek life - NYU has none of that; the city itself is the campus.",
-    campusSocialCulture: "Urban, independent, self-assembled - Washington Square Park is the social heart, but community forms through clubs and neighborhoods, not dorms.",
-    socialCapital: "Stern cohorts build direct Wall Street relationships, reinforced by simply being blocks from the financial district.",
-    culturalCapital: "Global city-embedded prestige - NYU signals independence, ambition, and real New York fluency.",
-    networkCapital: "Deep Wall Street and entertainment-industry placement via Stern, plus a groundbreaking tuition-free medical school model."
+    grad_cities: "New York NY (65%) | Los Angeles CA (8%) | London UK (4%) | Washington DC (3%) | Boston MA (3%)."
   },
   "United States Military Academy": {
     name: "United States Military Academy",
@@ -1719,12 +1151,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "West Point's leadership formation is the hidden pathway that makes the post-military career trajectory of West Point graduates more financially and professionally powerful than most families understand.",
     the_room: "West Point enrolls approximately 4,400 cadets - an all-male institution until 1976 when women were first admitted, now approximately 20% female.",
     lifestyle: "West Point, New York sits on a granite bluff above the Hudson River 50 miles north of New York City - one of the most physically dramatic and historically significant university se",
-    grad_cities: "Washington DC-Pentagon (30%) | New York NY (10%) | Worldwide military installations (40%) | Post-military civilian caree",
-    mayNotThriveIf: "You want a conventional college experience with personal freedom and flexibility - West Point is a full military commitment with a five-year service obligation after graduation.",
-    campusSocialCulture: "Rigorous, honor-bound, deeply communal - the Corps of Cadets structure creates bonds unlike any civilian university, forged through shared hardship.",
-    socialCapital: "The cadet class bond is famously lifelong - West Point classmates support each other across entire military and civilian careers.",
-    culturalCapital: "The single highest leadership-formation prestige in American higher education - West Point signals discipline, honor, and command readiness.",
-    networkCapital: "An unmatched leadership network spanning the Pentagon, Fortune 500 boardrooms, and government at every level."
+    grad_cities: "Washington DC-Pentagon (30%) | New York NY (10%) | Worldwide military installations (40%) | Post-military civilian caree"
   },
   "Rutgers University": {
     name: "Rutgers University",
@@ -1734,12 +1161,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The New Jersey pharmaceutical corridor is the hidden pathway that makes Rutgers pharmacy and engineering programs the most geographically advantaged professional school credentials in America for one specific and enormously consequential industry.",
     the_room: "Rutgers enrolls approximately 36,000 undergraduates across multiple New Brunswick campuses - a large Big Ten flagship with the Scarlet Knights athletic identity competing in the Big Ten.",
     lifestyle: "New Brunswick, New Jersey is a mid-sized city of 56,000 on the Raritan River in central New Jersey - a genuine college city built around the Rutgers campus with a vibrant George St",
-    grad_cities: "New York NY (30%) | Newark-Trenton NJ (25%) | Philadelphia PA (8%) | New Brunswick NJ (6%) | Boston MA (3%).",
-    mayNotThriveIf: "You want small classes or an intimate campus - 36,000 undergrads across multiple campuses means you actively build your own community.",
-    campusSocialCulture: "Big Ten spirit meets New Jersey practicality - George Street's vibrancy anchors a genuinely diverse, career-focused campus culture.",
-    socialCapital: "Pharmacy cohorts build direct relationships with the dense New Jersey pharmaceutical corridor before graduating.",
-    culturalCapital: "Practical Big Ten identity with real pharmaceutical-industry depth - Rutgers signals both scale and genuine specialized credibility.",
-    networkCapital: "The most geographically advantaged pharmacy/pharmaceutical industry pipeline in the country, anchored in New Jersey's corridor."
+    grad_cities: "New York NY (30%) | Newark-Trenton NJ (25%) | Philadelphia PA (8%) | New Brunswick NJ (6%) | Boston MA (3%)."
   },
   "George Washington University": {
     name: "George Washington University",
@@ -1749,12 +1171,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Foggy Bottom campus location is the hidden pathway that makes GWU's government, law, and international affairs programs structurally different from every peer institution - and it is a pathway defined entirely by geography.",
     the_room: "GWU enrolls approximately 11,000 undergraduates - a mid-sized private research university in the heart of Washington DC. The student body is assembled from all 50 states and 130+ countries with heavy",
     lifestyle: "Washington DC - Foggy Bottom specifically - is the most politically consequential neighborhood in America. The GWU campus is organized around the Kogan Plaza, the Marvin Center stu",
-    grad_cities: "Washington DC (60%) | New York NY (10%) | Boston MA (5%) | Los Angeles CA (4%) | International (6%).",
-    mayNotThriveIf: "You want a traditional campus feel or a break from constant political conversation - Foggy Bottom's DC-embeddedness means politics is inescapable.",
-    campusSocialCulture: "Politically engaged, internationally minded, ambitious - being blocks from the State Department and White House shapes daily conversation.",
-    socialCapital: "Elliott School cohorts build direct government and international affairs relationships simply by being in Foggy Bottom.",
-    culturalCapital: "DC-insider political prestige - GWU signals access to power and international affairs credibility from day one.",
-    networkCapital: "The most DC-embedded international affairs pipeline in the country, feeding directly into government, NGOs, and policy careers."
+    grad_cities: "Washington DC (60%) | New York NY (10%) | Boston MA (5%) | Los Angeles CA (4%) | International (6%)."
   },
   "Webb Institute": {
     name: "Webb Institute",
@@ -1764,42 +1181,27 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Webb's full-tuition scholarship for every student is the hidden pathway that makes Webb the most financially transformative engineering education in America -",
     the_room: "Webb enrolls exactly 100 students at any given time - the smallest accredited engineering institution in the database and one of the smallest four-year institutions in America.",
     lifestyle: "Glen Cove, New York is a small city of 27,000 on the north shore of Long Island - the Gold Coast of Long Island, the setting for The Great Gatsby, a community of Victorian-era esta",
-    grad_cities: "New York NY (35%) | Washington DC (15%) | Bath ME (10%) | Newport News VA (10%) | International (10%).",
-    mayNotThriveIf: "You want breadth of major choices or a large peer group - Webb grants exactly one degree, and the entire student body is 100 people.",
-    campusSocialCulture: "Extremely small and singularly focused - every student studies the same discipline, creating an unusually tight, mission-driven community.",
-    socialCapital: "With only 100 students total, bonds are near-familial and carry directly into the small, elite world of naval architecture.",
-    culturalCapital: "The single most specialized engineering credential in America - Webb signals total mastery of one irreplaceable discipline.",
-    networkCapital: "Direct pipeline into shipbuilding and naval architecture (Bath Iron Works, Newport News Shipbuilding), an industry with almost no other undergraduate feeder."
+    grad_cities: "New York NY (35%) | Washington DC (15%) | Bath ME (10%) | Newport News VA (10%) | International (10%)."
   },
   "Colorado College": {
     name: "Colorado College",
     location: "Colorado Springs, Colorado",
-    region: "West Coast",
+    region: "Mountain West",
     pipeline: "Liberal Arts (the Block Plan curriculum - one course at a time for 3.5 weeks, then a 4-day break, then the next course - every discipline taught through total immersion rather than simultaneous multi-course distribution -",
     hidden_pathway: "The Block Plan is the most radical and most consequential pedagogical innovation of any liberal arts college in the database - and it is radical in a specific and practically powerful way.",
     the_room: "CC enrolls approximately 2,100 undergraduates - comparable in size to Williams and Bowdoin. The student body is assembled from 48 states and 40+ countries with heavy representation from the Mountain W",
     lifestyle: "Colorado Springs, Colorado sits at the base of Pikes Peak at 6,035 feet elevation - a city of 480,000 that is simultaneously a military city (Fort Carson, Peterson Space Force Base",
-    grad_cities: "Denver CO (20%) | Colorado Springs CO (10%) | San Francisco CA (10%) | New York NY (8%) | Los Angeles CA (6%).",
-    mayNotThriveIf: "You want to take multiple courses simultaneously - the Block Plan's one-class-at-a-time immersion model is a major adjustment for students used to juggling subjects.",
-    campusSocialCulture: "Outdoorsy, immersive, intensely focused - the Block Plan creates deep, short-burst academic bonds followed by genuine breaks to recharge.",
-    socialCapital: "Total immersion in one subject at a time creates unusually close bonds with both classmates and faculty during each block.",
-    culturalCapital: "Radically innovative pedagogy prestige - Colorado College signals intellectual flexibility and genuine risk tolerance.",
-    networkCapital: "Diverse national network reinforced by Colorado Springs' unique military-city adjacency (Fort Carson, Space Force)."
+    grad_cities: "Denver CO (20%) | Colorado Springs CO (10%) | San Francisco CA (10%) | New York NY (8%) | Los Angeles CA (6%)."
   },
   "Deep Springs College": {
     name: "Deep Springs College",
     location: "Deep Springs, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Liberal Arts and Great Books (the most radical liberal arts curriculum in America - every Deep Springs student reads primary texts across philosophy, literature, political theory, science, and history in seminars led by visiting faculty who are among the most distinguished schola",
     hidden_pathway: "Deep Springs Valley is the hidden pathway that is not a pathway at all - it is a total environment. The Deep Springs College campus is located in Deep Springs Valley, a high desert valley in the White Mountains of eastern California at 5,200 feet ele",
     the_room: "Deep Springs enrolls 26 students total at any given time - 13 in each of two year-groups. The student body has been all-male since the college's founding in 1917 and became co-educational in 2018 foll",
     lifestyle: "Deep Springs Valley, California is one of the most remote and geologically spectacular locations of any educational institution in the world.",
-    grad_cities: "Deep Springs Valley CA (during enrollment) | New York NY (25%) | Boston MA (20%) | Chicago IL (10%) | San Francisco CA (",
-    mayNotThriveIf: "You want a conventional college experience or any social scene beyond 26 people - Deep Springs is a total, isolated environment unlike anything else in American higher education.",
-    campusSocialCulture: "Total immersion, labor-and-academics combined - students run the ranch themselves while studying primary texts in remote high desert isolation.",
-    socialCapital: "With only 26 students total, bonds are extraordinarily close, forged through shared physical labor and intense intellectual work.",
-    culturalCapital: "The most radical liberal arts prestige in America - Deep Springs signals total intellectual and personal transformation.",
-    networkCapital: "An extremely small but extraordinarily influential alumni network, concentrated in elite graduate programs and intellectual life."
+    grad_cities: "Deep Springs Valley CA (during enrollment) | New York NY (25%) | Boston MA (20%) | Chicago IL (10%) | San Francisco CA ("
   },
   "Kettering University": {
     name: "Kettering University",
@@ -1809,12 +1211,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The General Motors relationship is the hidden pathway that makes Kettering engineering the most institutionally connected automotive engineering credential in America. Kettering University -",
     the_room: "Kettering enrolls approximately 2,000 undergraduates - among the smallest engineering-focused institutions in the database and one of the most specifically purposeful.",
     lifestyle: "Flint, Michigan is a city of 81,000 with a complex and consequential history - the birthplace of General Motors, the site of the 1936-37 Flint Sit-Down Strike that established the",
-    grad_cities: "Detroit-Metro MI (35%) | Flint MI (10%) | Chicago IL (8%) | Cincinnati OH (6%) | Dayton OH (5%).",
-    mayNotThriveIf: "You want a traditional four-year rhythm without alternating work terms - Kettering's co-op model means constant cycling between classroom and industry.",
-    campusSocialCulture: "Small, intensely automotive-focused, practical - the GM relationship shapes a genuinely industry-embedded engineering culture.",
-    socialCapital: "Co-op rotations at GM and automotive suppliers build real professional relationships alongside classroom bonds.",
-    culturalCapital: "The most institutionally connected automotive engineering credential in America - Kettering signals deep industry readiness.",
-    networkCapital: "Direct General Motors pipeline, the strongest automotive engineering industry connection of any university in the country."
+    grad_cities: "Detroit-Metro MI (35%) | Flint MI (10%) | Chicago IL (8%) | Cincinnati OH (6%) | Dayton OH (5%)."
   },
   "American University": {
     name: "American University",
@@ -1824,12 +1221,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The AU Washington Semester Program is the hidden pathway that makes AU the most accessible DC immersion experience in American higher education - and it is a pathway available not just to AU students but to students from 150 partner universities acro",
     the_room: "AU enrolls approximately 8,500 undergraduates - a mid-sized private university in a residential DC neighborhood. The student body is assembled from all 50 states and 140+ countries with heavy draw fro",
     lifestyle: "The American University campus in Spring Valley in Northwest DC is one of the most residentially beautiful private university campuses in the city -",
-    grad_cities: "Washington DC (55%) | New York NY (10%) | Boston MA (5%) | Los Angeles CA (4%) | International (8%).",
-    mayNotThriveIf: "You want a campus disconnected from politics - AU's identity and career pipeline are deeply tied to Washington DC and government/policy work.",
-    campusSocialCulture: "Politically engaged, globally minded, residentially pleasant - Spring Valley's beauty softens an otherwise intensely policy-focused campus culture.",
-    socialCapital: "The Washington Semester Program creates a uniquely broad network across 150 partner universities, not just AU's own students.",
-    culturalCapital: "DC-insider global affairs prestige - AU signals genuine access to international policy and government careers.",
-    networkCapital: "One of the most accessible DC immersion pipelines in the country, extending well beyond AU's own student body."
+    grad_cities: "Washington DC (55%) | New York NY (10%) | Boston MA (5%) | Los Angeles CA (4%) | International (8%)."
   },
   "University of Connecticut": {
     name: "University of Connecticut",
@@ -1839,12 +1231,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Hartford insurance corridor is the hidden pathway that makes UConn actuarial science and business programs structurally more powerful than their rankings suggest for one of the most consequential financial services industries in America.",
     the_room: "UConn enrolls approximately 19,000 undergraduates - a large flagship with the Huskies athletic identity competing in the Big East Conference for basketball and the American Athletic Conference for foo",
     lifestyle: "Storrs, Connecticut is a census-designated place of 16,000 that exists entirely around the University of Connecticut -",
-    grad_cities: "Hartford CT (30%) | New York NY (20%) | Boston MA (10%) | Stamford CT (8%) | Providence RI (4%).",
-    mayNotThriveIf: "You want an urban campus or a large city nearby - Storrs is a small, self-contained community built entirely around the university.",
-    campusSocialCulture: "Basketball-dynasty pride (Huskies), practical and career-focused, genuinely tight New England flagship community.",
-    socialCapital: "Engineering cohorts build direct ties to Pratt & Whitney and the aerospace corridor, while business students plug into Hartford's insurance industry.",
-    culturalCapital: "Practical New England flagship identity with real aerospace and insurance-industry depth - UConn signals both athletic pride and career seriousness.",
-    networkCapital: "Deep aerospace/defense pipeline (Pratt & Whitney, Sikorsky, Raytheon), plus the strongest insurance-industry network via Hartford."
+    grad_cities: "Hartford CT (30%) | New York NY (20%) | Boston MA (10%) | Stamford CT (8%) | Providence RI (4%)."
   },
   "Northeastern University": {
     name: "Northeastern University",
@@ -1854,12 +1241,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Northeastern's co-op program is the most rapidly growing and most Boston-embedded experiential learning infrastructure of any private university in the Northeast -",
     the_room: "Northeastern enrolls approximately 20,000 undergraduates - a large private research university with the Huskies athletic identity in the Colonial Athletic Association providing Division I hockey and b",
     lifestyle: "Boston's Fenway-Kenmore neighborhood is one of the great American urban university districts - Northeastern, Wentworth Institute, MassArt, the Museum of Fine Arts, Symphony Hall, a",
-    grad_cities: "Boston MA (45%) | New York NY (12%) | San Francisco CA (8%) | Washington DC (6%) | International (7%).",
-    mayNotThriveIf: "You want a traditional four-year-on-campus experience - Northeastern's co-op program means many students cycle off-campus for full semesters of work.",
-    campusSocialCulture: "Urban, career-focused, in constant motion - the co-op program means the student body composition shifts every semester as students rotate through jobs.",
-    socialCapital: "Co-op placements build real workplace relationships that often convert directly into full-time offers after graduation.",
-    culturalCapital: "Practical, experience-first identity - Northeastern signals \"already has real work experience\" by graduation.",
-    networkCapital: "Deep Boston biotech/engineering co-op pipeline (Moderna, Biogen, Raytheon), building professional networks years before graduation."
+    grad_cities: "Boston MA (45%) | New York NY (12%) | San Francisco CA (8%) | Washington DC (6%) | International (7%)."
   },
   "Case Western Reserve University": {
     name: "Case Western Reserve University",
@@ -1869,42 +1251,27 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Cleveland Clinic relationship is the hidden pathway that makes CWRU medical and health sciences programs uniquely consequential in ways that the national ranking alone understates. The Cleveland Clinic -",
     the_room: "CWRU enrolls approximately 5,500 undergraduates - a mid-sized private research university with the Spartans athletic identity in the UAA (University Athletic Association) at Division III -",
     lifestyle: "University Circle, Cleveland, Ohio is one of the great American academic and cultural neighborhoods - a square mile that contains CWRU, the Cleveland Museum of Art (one of the fine",
-    grad_cities: "Cleveland OH (35%) | Pittsburgh PA (8%) | Columbus OH (8%) | New York NY (7%) | Chicago IL (6%).",
-    mayNotThriveIf: "You want a big-name social scene or Division I athletics energy - CWRU is academically intense with a quieter, DIII-level campus vibe.",
-    campusSocialCulture: "Studious and research-driven - University Circle's museums and Cleveland Clinic proximity shape a culture centered on academics and medicine.",
-    socialCapital: "Small, STEM-heavy cohorts build deep technical bonds, often reinforced by direct Cleveland Clinic research access.",
-    culturalCapital: "Serious, under-the-radar engineering/medical prestige - CWRU signals substance over flash.",
-    networkCapital: "Direct Cleveland Clinic research and hiring pipeline, plus solid Midwest engineering placement."
+    grad_cities: "Cleveland OH (35%) | Pittsburgh PA (8%) | Columbus OH (8%) | New York NY (7%) | Chicago IL (6%)."
   },
   "University of San Francisco": {
     name: "University of San Francisco",
     location: "San Francisco, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Business and Management (School of Management - top-50 nationally among Jesuit universities - finance, accounting, marketing, entrepreneurship, international business, nonprofit management -",
     hidden_pathway: "San Francisco nursing wages are the hidden pathway that makes USF's nursing program the most financially consequential nursing credential in the database - and it is a pathway defined entirely by geography.",
     the_room: "USF enrolls approximately 6,500 undergraduates - a mid-sized Jesuit university in the heart of San Francisco. The student body is approximately 40% California residents with significant national and i",
     lifestyle: "San Francisco, California - USF's campus on Lone Mountain in the Inner Richmond neighborhood sits on one of the highest points in San Francisco with panoramic views of the city, th",
-    grad_cities: "San Francisco CA (60%) | Silicon Valley CA (15%) | Los Angeles CA (5%) | Seattle WA (3%) | International (6%).",
-    mayNotThriveIf: "You want a large secular research university - USF is mid-sized, Jesuit, and values-driven in the heart of an expensive city.",
-    campusSocialCulture: "Urban, values-driven, quietly ambitious - Lone Mountain's panoramic views anchor a genuinely engaged Jesuit community inside San Francisco.",
-    socialCapital: "Nursing and business cohorts build direct ties to San Francisco's high-wage healthcare and Silicon Valley job markets.",
-    culturalCapital: "Jesuit values inside tech-capital geography - USF signals both mission-driven identity and real Bay Area career access.",
-    networkCapital: "The most financially consequential nursing wage market in the country, plus direct Silicon Valley proximity for business/tech placement."
+    grad_cities: "San Francisco CA (60%) | Silicon Valley CA (15%) | Los Angeles CA (5%) | Seattle WA (3%) | International (6%)."
   },
   "Baylor University": {
     name: "Baylor University",
     location: "Waco, Texas",
-    region: "Southeast",
+    region: "Texas + Southwest",
     pipeline: "Business and Finance (Hankamer School of Business - top-40 nationally - finance, accounting, marketing, real estate, entrepreneurship, supply chain, insurance - major Texas employers including H-E-B, McLane Company, Hillcrest Baptist, and the rapidly growing Waco and Austin busin",
     hidden_pathway: "The Baylor College of Medicine affiliation is the hidden pathway that makes Baylor University's pre-medicine program among the most practically consequential in Texas. Baylor College of Medicine in Houston -",
     the_room: "Baylor enrolls approximately 16,000 undergraduates - a large faith-based research university with the Bears athletic identity in the Big 12 competing across all major conference sports.",
     lifestyle: "Waco, Texas is a city of 140,000 in the heart of Texas at the intersection of I-35 and US-84 - the geographic center of the Texas triangle formed by Dallas, Austin, and San Antonio",
-    grad_cities: "Dallas-Fort Worth TX (25%) | Houston TX (15%) | Austin TX (12%) | Waco TX (8%) | San Antonio TX (6%).",
-    mayNotThriveIf: "You want a secular campus culture or a coastal/urban setting - Baylor's faith-based identity and Waco location shape daily life directly.",
-    campusSocialCulture: "Faith-centered, Big 12 football-proud, warm and community-oriented - a genuinely tight-knit Christian university culture.",
-    socialCapital: "Faith community and Greek life create deep, values-aligned bonds that carry into Texas business and medical networks.",
-    culturalCapital: "Values-driven Texas business identity - Baylor signals faith, community, and practical ambition together.",
-    networkCapital: "Strong Texas Triangle business network (Dallas-Austin-Houston) plus a direct Baylor College of Medicine pre-med pipeline."
+    grad_cities: "Dallas-Fort Worth TX (25%) | Houston TX (15%) | Austin TX (12%) | Waco TX (8%) | San Antonio TX (6%)."
   },
   "College of William and Mary": {
     name: "College of William and Mary",
@@ -1914,12 +1281,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Oldest Law School in America credential is the hidden pathway that gives William and Mary Law a specific and durable institutional weight in Virginia and DC legal circles that no peer Southern public law school can claim.",
     the_room: "William and Mary enrolls approximately 6,500 undergraduates - a small public university that operates more like a liberal arts college than a flagship research university in its academic culture.",
     lifestyle: "Williamsburg, Virginia is one of the most historically significant small cities in America - the colonial capital of Virginia, the site of the most complete 18th-century historic d",
-    grad_cities: "Washington DC-Northern Virginia (35%) | Richmond VA (15%) | Norfolk VA (8%) | New York NY (7%) | Boston MA (5%).",
-    mayNotThriveIf: "You want a large research-university scale or a big-school anonymity option - W&M feels more like a liberal arts college than a public flagship.",
-    campusSocialCulture: "Historic, tradition-rich, and academically serious - Colonial Williamsburg's presence shapes a genteel, intellectually engaged culture.",
-    socialCapital: "Small size creates strong bonds, especially reinforced by the prestige and tight-knit nature of the Law School pipeline.",
-    culturalCapital: "Old-money, historic, quietly prestigious - W&M signals depth and institutional legacy.",
-    networkCapital: "Deep DC/Northern Virginia government and legal network, anchored by the oldest law school in America."
+    grad_cities: "Washington DC-Northern Virginia (35%) | Richmond VA (15%) | Norfolk VA (8%) | New York NY (7%) | Boston MA (5%)."
   },
 
   // ── NEW SCHOOLS — Added June 21 2026 (89 schools from university-db.js) ──────
@@ -1927,63 +1289,42 @@ const UNIVERSITY_CONTENT = {
   "San Diego State University": {
     name: "San Diego State University",
     location: "San Diego, California",
-    region: "Southern California",
+    region: "California",
     pipeline: "Technology and Engineering (Google, Amazon, Qualcomm, HP, Microsoft, IBM, Adobe - Qualcomm was co-founded by SDSU alumnus Irwin Jacobs and remains a primary campus recruiter - College of Engineering p",
     hidden_pathway: "San Diego's biotech cluster is the second-largest in America and SDSU sits inside it. The Salk Institute, Scripps Research, UC San Diego, and over 1,0",
     the_room: "Approximately 79% of SDSU students are California residents and 15% are from out of state with 6.6% international - a he",
     lifestyle: "",
-    grad_cities: "San Diego CA (65%) | Los Angeles CA (15%) | San Francisco Bay Area CA (8%) | Other California (5%) | Out of California (",
-    mayNotThriveIf: "You want a small campus or an out-of-state-heavy student body - SDSU is large and predominantly California-resident.",
-    campusSocialCulture: "Sunny, tech-forward, biotech-adjacent - San Diego's climate and second-largest biotech cluster in America shape a genuinely opportunity-rich campus culture.",
-    socialCapital: "Engineering cohorts build direct ties to Qualcomm (co-founded by an SDSU alum) and San Diego's dense biotech research network.",
-    culturalCapital: "Tech-and-biotech insider identity - SDSU signals real access to one of the country's most significant research clusters.",
-    networkCapital: "Direct Qualcomm alumni pipeline, plus proximity to Salk Institute, Scripps Research, and San Diego's massive biotech ecosystem."
+    grad_cities: "San Diego CA (65%) | Los Angeles CA (15%) | San Francisco Bay Area CA (8%) | Other California (5%) | Out of California ("
   },
   "UC Santa Barbara": {
     name: "UC Santa Barbara",
     location: "Santa Barbara, California",
-    region: "Southern California",
+    region: "California",
     pipeline: "Technology and Engineering (College of Engineering - electrical and computer engineering, mechanical, chemical, materials science - Silicon Valley and Santa Barbara tech corridor employers - Google, A",
     hidden_pathway: "UCSB has produced 8 Nobel Prize-winning faculty members in physics, chemistry, and economics - a concentration of Nobel laureates that rivals institut",
     the_room: "Approximately 80% of UCSB students are California residents - approximately 15% are from out of state and 11% are intern",
     lifestyle: "",
-    grad_cities: "San Francisco Bay Area CA (25%) | Los Angeles CA (25%) | Santa Barbara CA (12%) | San Diego CA (8%) | Other California (",
-    mayNotThriveIf: "You want a purely academic-intensity-first environment - UCSB's beach-town setting and social scene run alongside serious research, and balancing both matters.",
-    campusSocialCulture: "Beach culture meets serious materials-science research - a genuinely social, outdoorsy campus that still produces Nobel-caliber work.",
-    socialCapital: "Tight-knit research groups in physics/materials science create real mentor access despite the laid-back surface culture.",
-    culturalCapital: "\"Best of both worlds\" identity - UCSB signals serious research credibility without sacrificing lifestyle.",
-    networkCapital: "Strong Silicon Valley and Santa Barbara tech corridor placement, reinforced by genuine Nobel-level faculty research access."
+    grad_cities: "San Francisco Bay Area CA (25%) | Los Angeles CA (25%) | Santa Barbara CA (12%) | San Diego CA (8%) | Other California ("
   },
   "UCLA": {
     name: "UCLA",
     location: "Los Angeles, California",
-    region: "Southern California",
+    region: "California",
     pipeline: "Technology and computing, Entertainment and film, Healthcare and medicine, Business and consulting, Engineering and aerospace, Public health and policy, Nursing, Law, Music and performing arts, Archit",
     hidden_pathway: "Three hidden pathways. First: UCLA TFT is the only film school in America that combines theater, film, television, and digital media in a single profe",
     the_room: "33,500 undergraduates - large flagship campus. The room at UCLA is the most ethnically and economically diverse of any t",
     lifestyle: "",
-    grad_cities: "Los Angeles CA (58%) | San Francisco CA (12%) | New York NY (7%). The LA concentration reflects both the pull of the cit",
-    mayNotThriveIf: "You want small classes or a quiet, low-key social scene - UCLA's size and LA's constant energy demand active community-building.",
-    campusSocialCulture: "Diverse, entertainment-adjacent, ambitious - the pull of LA's industries (film, tech, entertainment) shapes campus energy constantly.",
-    socialCapital: "TFT and engineering cohorts build networks that plug directly into LA's entertainment and tech industries before graduation.",
-    culturalCapital: "Hollywood-adjacent prestige with real academic rigor - UCLA signals both creative access and technical seriousness.",
-    school_fast_facts: "#15 overall on Forbes' America's Top Colleges List 2026 - part of a UC sweep of the top public-school rankings, though UCLA's own rank has moved around year to year (was #7 in 2023). (Source: Forbes America's Top Colleges, 2026)",
-    networkCapital: "Unmatched entertainment industry pipeline, plus a growing battery/materials-science tie into LA's clean-tech corridor."
+    grad_cities: "Los Angeles CA (58%) | San Francisco CA (12%) | New York NY (7%). The LA concentration reflects both the pull of the cit"
   },
   "USC": {
     name: "USC",
     location: "Los Angeles, California",
-    region: "Southern California",
+    region: "California",
     pipeline: "Entertainment and film, Technology and computing, Business and consulting, Engineering and aerospace, Communications and media, Music industry, Architecture and design, Healthcare and pharmacy. Top em",
     hidden_pathway: "Three hidden pathways. First: The Trojan Network operates as an active hiring system, not a passive alumni database. Every Hollywood office, every maj",
     the_room: "Approximately 22,000 undergraduates - large but not massive for a major research university. 25% Greek life participatio",
     lifestyle: "",
-    grad_cities: "Los Angeles CA (52%) | New York NY (14%) | San Francisco CA (9%). The LA concentration is the defining feature and also ",
-    mayNotThriveIf: "You want understated prestige over visible brand power - USC's Trojan Network identity is loud, proud, and central to the experience.",
-    campusSocialCulture: "Greek-heavy, entertainment-industry-adjacent, spirited - the Trojan Network functions as an active hiring system, not background noise.",
-    socialCapital: "The Trojan Network is genuinely operational - alumni actively place fellow Trojans in Hollywood, tech, and business roles.",
-    culturalCapital: "Confident, entertainment-savvy prestige - USC signals both industry access and unapologetic school pride.",
-    networkCapital: "One of the most active alumni hiring networks in the country, concentrated in entertainment, tech, and LA business."
+    grad_cities: "Los Angeles CA (52%) | New York NY (14%) | San Francisco CA (9%). The LA concentration is the defining feature and also "
   },
   "Rice University": {
     name: "Rice University",
@@ -1993,12 +1334,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Three hidden pathways that define Rice's distinctiveness. First: Rice sits directly across the street from the Texas Medical Center - the largest medi",
     the_room: "Approximately 4,400 undergraduates - one of the smallest research universities in the country. The residential college s",
     lifestyle: "",
-    grad_cities: "Houston TX (48%) | New York NY (10%) | San Francisco CA (8%). The Houston concentration reflects Rice's physical positio",
-    mayNotThriveIf: "You want a large campus or big-city anonymity outside a residential-college system - Rice is small and intensely community-based by design.",
-    campusSocialCulture: "Residential college system creates deep, quirky, tight-knit micro-communities - intellectually serious with genuine warmth.",
-    socialCapital: "Residential colleges create some of the closest peer bonds of any research university, reinforced by direct access to the Texas Medical Center.",
-    culturalCapital: "Elite but understated Texas prestige - Rice signals serious academics without Ivy-style formality.",
-    networkCapital: "Direct pipeline into Houston's energy and medical center ecosystems, the largest medical complex in the world."
+    grad_cities: "Houston TX (48%) | New York NY (10%) | San Francisco CA (8%). The Houston concentration reflects Rice's physical positio"
   },
   "SMU": {
     name: "SMU",
@@ -2008,12 +1344,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Two hidden pathways most California families miss entirely. First: SMU's Meadows School of the Arts houses the Temerlin Advertising Institute - one of",
     the_room: "One of the highest concentrations of ultra-high-net-worth student families in America. Hunt family (Kansas City Chiefs),",
     lifestyle: "",
-    grad_cities: "Dallas TX (62%) | New York NY (11%) | Houston TX (9%). Dallas concentration is the defining feature - an SMU Cox graduat",
-    mayNotThriveIf: "You want a modest, low-key social scene - SMU's ultra-high-net-worth student concentration shapes a genuinely upscale campus culture.",
-    campusSocialCulture: "Polished, wealthy, Dallas-society-adjacent - Greek life and luxury-retail connections shape a distinctly affluent social environment.",
-    socialCapital: "Cox Business School cohorts build direct ties into Dallas' concentrated wealth and corporate leadership networks.",
-    culturalCapital: "Affluent Dallas-society prestige - SMU signals both business polish and access to genuine wealth networks.",
-    networkCapital: "Exceptional Dallas corporate and luxury-retail placement, reinforced by one of the wealthiest student bodies in the database."
+    grad_cities: "Dallas TX (62%) | New York NY (11%) | Houston TX (9%). Dallas concentration is the defining feature - an SMU Cox graduat"
   },
   "TCU": {
     name: "TCU",
@@ -2023,12 +1354,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Two hidden pathways that no California family knows. First: TCU's nurse anesthesia program is ranked #9 in the country - one of only a handful of prog",
     the_room: "Smaller than SMU and Texas Tech at ~10,000 undergraduates - genuine intimacy results. 40% of students in Greek life acro",
     lifestyle: "",
-    grad_cities: "Dallas-Fort Worth (58%) | Houston (12%) | New York NY (8%). Fort Worth gives direct DFW access. The 5th largest media ma",
-    mayNotThriveIf: "You want a large research university or big-city anonymity - TCU is genuinely intimate at roughly 10,000 undergraduates.",
-    campusSocialCulture: "Greek-heavy (40% participation), warm, Fort Worth-proud - a tight-knit Texas campus culture with real DFW corporate access.",
-    socialCapital: "Small size plus Greek life density creates unusually close bonds that convert directly into DFW's business and healthcare networks.",
-    culturalCapital: "Polished Texas business identity with a rare nursing/medical specialty - TCU signals both social ease and specific clinical credibility.",
-    networkCapital: "A top-9 nationally ranked nurse anesthesia program, plus strong DFW finance and media market placement."
+    grad_cities: "Dallas-Fort Worth (58%) | Houston (12%) | New York NY (8%). Fort Worth gives direct DFW access. The 5th largest media ma"
   },
   "Texas A&M University": {
     name: "Texas A&M University",
@@ -2038,12 +1364,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Three hidden pathways. First: Texas A&M's veterinary medicine program (#4 nationally, highest ranking in school history) is one of only 33 accredited ",
     the_room: "74,000+ undergraduates - one of the largest universities in America. The room is economically middle-class and Texas-cen",
     lifestyle: "",
-    grad_cities: "Houston TX (32%) | Dallas-Fort Worth TX (24%) | Austin TX (14%). The Houston concentration reflects Texas A&M's deep roo",
-    mayNotThriveIf: "You're uncomfortable with strong school spirit or tradition-heavy culture - A&M's identity is communal and intense, not a place to stay anonymous.",
-    campusSocialCulture: "Corps of Cadets plus massive Greek and spirit culture - Aggie traditions (Yell Practice, Muster) create one of the most unified campus identities in the country.",
-    socialCapital: "The Aggie Network is legendary for a reason - alumni actively seek out and hire fellow Aggies across nearly every industry.",
-    culturalCapital: "Loyalty and tradition-first identity - being an Aggie is a lifelong signal of trust and shared values.",
-    networkCapital: "Unmatched alumni density in energy, engineering, and military/government sectors, concentrated heavily in Texas."
+    grad_cities: "Houston TX (32%) | Dallas-Fort Worth TX (24%) | Austin TX (14%). The Houston concentration reflects Texas A&M's deep roo"
   },
   "Texas Tech University": {
     name: "Texas Tech University",
@@ -2053,12 +1374,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Three hidden pathways no California family knows. First: Texas Tech has the largest retail meat cooler on any university campus in America - the Raide",
     the_room: "Genuinely economically diverse - 26% of students receive Pell Grant aid. The room is Texas ambition across every industr",
     lifestyle: "",
-    grad_cities: "Dallas-Fort Worth (38%) | Houston (28%) | Lubbock-Midland-Odessa corridor (14%). 91% of students are Texas residents - g",
-    mayNotThriveIf: "You want to leave Texas or a coastal/urban setting - Lubbock is deeply West Texas, and 91% of students stay in-state after graduating.",
-    campusSocialCulture: "Practical, agriculture-and-energy-forward, genuinely economically diverse - West Texas ambition runs across every industry represented on campus.",
-    socialCapital: "Energy and agriculture cohorts build direct relationships with the Permian Basin oil corridor and Texas ranching industry.",
-    culturalCapital: "West Texas energy-and-agriculture identity - Texas Tech signals practical, resourceful ambition tied to the state's core industries.",
-    networkCapital: "Direct Permian Basin energy pipeline plus the largest retail meat/livestock industry program of any university campus."
+    grad_cities: "Dallas-Fort Worth (38%) | Houston (28%) | Lubbock-Midland-Odessa corridor (14%). 91% of students are Texas residents - g"
   },
   "UT Austin": {
     name: "UT Austin",
@@ -2068,12 +1384,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Three hidden pathways that even Texas families miss. First: The Moody College of Communication is the #1 public university communication and media pro",
     the_room: "53,864 students - one of the largest universities in America - makes the room vast and economically and ethnically diver",
     lifestyle: "",
-    grad_cities: "Austin TX (44%) | Dallas-Fort Worth TX (18%) | New York NY (8%). Austin retention is the defining feature - the city's e",
-    mayNotThriveIf: "You want small classes or an intimate campus - at nearly 54,000 students, UT Austin is one of the largest universities in America and demands real self-direction.",
-    campusSocialCulture: "Massive scale meets Austin's famously creative, tech-and-music energy - genuinely diverse and ambitious across nearly every field imaginable.",
-    socialCapital: "Petroleum engineering and tech cohorts build direct ties to Texas energy companies and Austin's booming tech scene.",
-    culturalCapital: "Austin-cool meets serious academic depth - UT signals both cultural sophistication and genuine technical/energy credibility.",
-    networkCapital: "The #1 public university communications/media program in the country, plus deep Texas energy and Austin tech placement."
+    grad_cities: "Austin TX (44%) | Dallas-Fort Worth TX (18%) | New York NY (8%). Austin retention is the defining feature - the city's e"
   },
   "University of North Carolina Chapel Hill": {
     name: "University of North Carolina Chapel Hill",
@@ -2083,43 +1394,28 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "UNC Eshelman School of Pharmacy is the number 1 pharmacy school in America - for the third consecutive US News ranking cycle. This is not a close comp",
     the_room: "Approximately 82% of UNC Chapel Hill undergraduates are North Carolina residents - the state legislature maintains a har",
     lifestyle: "",
-    grad_cities: "Raleigh-Durham-Chapel Hill Research Triangle NC (35%) | Charlotte NC (20%) | Washington DC (10%) | New York NY (8%) | At",
-    mayNotThriveIf: "You want to leave North Carolina or a heavily out-of-state student body - 82% in-state means the culture is deeply rooted in the state.",
-    campusSocialCulture: "Basketball-proud (Tar Heel pride runs deep), Research Triangle energy, a mix of Southern warmth and academic seriousness.",
-    socialCapital: "Kenan-Flagler cohorts build tight bonds that feed directly into the Research Triangle's business and pharma ecosystem.",
-    culturalCapital: "Public-Ivy prestige with genuine Southern warmth - UNC signals both rigor and approachability.",
-    networkCapital: "The #1 pharmacy school pipeline in the country, plus deep Research Triangle business and biotech placement."
+    grad_cities: "Raleigh-Durham-Chapel Hill Research Triangle NC (35%) | Charlotte NC (20%) | Washington DC (10%) | New York NY (8%) | At"
   },
   "UC Berkeley": {
     name: "UC Berkeley",
     location: "Berkeley, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Technology and software, Finance and investment banking, Consulting, Startups and venture capital, Public policy and government, Journalism and media, Engineering across all disciplines, Chemistry and",
     hidden_pathway: "Three hidden pathways. First: The Goldman School of Public Policy is ranked #1 in public policy analysis nationally and #3 overall in public affairs -",
     the_room: "Approximately 33,000 undergraduates. The room at Berkeley is defined by intellectual ambition and geographic destiny mor",
     lifestyle: "",
-    grad_cities: "San Francisco-Bay Area CA (54%) | New York NY (11%) | Los Angeles CA (8%). The Bay Area concentration is the defining fe",
-    mayNotThriveIf: "You want small classes or an intimate campus - at 33,000 undergrads, Berkeley requires real self-direction to avoid feeling anonymous.",
-    campusSocialCulture: "Intellectually intense, politically engaged, ambition-driven - Berkeley's identity blends serious academics with a long activist tradition.",
-    socialCapital: "Goldman School and engineering cohorts build elite policy and tech networks that rival any private university in the country.",
-    culturalCapital: "The single highest public-university prestige in the country - Berkeley signals both intellectual rigor and Bay Area fluency.",
-    networkCapital: "Unmatched Silicon Valley and public policy placement, anchored by the #1-ranked Goldman School of Public Policy.",
-    school_fast_facts: "#5 overall and #1 among all public universities on Forbes' America's Top Colleges List 2026 - the first time a public school has ever ranked this high, per Forbes' own coverage. (Source: Forbes America's Top Colleges, 2026)",
+    grad_cities: "San Francisco-Bay Area CA (54%) | New York NY (11%) | Los Angeles CA (8%). The Bay Area concentration is the defining fe"
   },
   "University of Illinois Urbana-Champaign": {
     name: "University of Illinois Urbana-Champaign",
     location: "Champaign, Illinois",
     region: "Midwest",
-    pipeline: "Engineering and Computer Science (Grainger College of Engineering ranked 5th overall and 4th among public universities nationally - Computer Science average salary $139,000 with median $30,000 signing",
-    hidden_pathway: "The Grainger College of Engineering CS program acceptance rate of 7.2% is more selective than the overall admissions rates of Harvard, Yale, and Princ",
-    the_room: "Illinois residents make up approximately 71% of UIUC freshmen - the remaining 29% from out of state and international, w",
+    pipeline: "Engineering and Computer Science (Grainger College of Engineering ranked 5th overall and 4th among public universities nationally - Computer Science average salary $139,000 with median $30,000 signing bonus, among the highest starting packages of any public university CS program in the country).",
+    hidden_pathway: "The Grainger College of Engineering CS program acceptance rate of 7.2% is more selective than the overall admissions rates of Harvard, Yale, and Princeton.",
+    the_room: "Illinois residents make up approximately 71% of UIUC freshmen - the remaining 29% from out of state and international, with the university drawing especially heavily from the Chicago metro area.",
     lifestyle: "",
-    grad_cities: "Chicago IL (30%) | Champaign-Urbana IL (15%) | San Francisco Bay Area CA (15%) | New York NY (10%) | Other Midwest (10%)",
-    mayNotThriveIf: "You want a less competitive CS admissions path or a smaller engineering cohort - Grainger's CS program is more selective than most Ivies.",
-    campusSocialCulture: "Serious, tech-forward culture within a classic Big Ten social scene - engineering rigor coexists with strong Greek and athletics traditions.",
-    socialCapital: "Grainger CS cohorts form elite technical networks that rival top private schools in caliber and reach.",
-    culturalCapital: "Quietly elite tech-school prestige inside a public-school price point - UIUC signals serious CS/engineering chops.",
-    networkCapital: "Direct Silicon Valley and Chicago tech pipeline, with CS placement rivaling top private universities."
+    grad_cities: "Chicago IL (30%) | Champaign-Urbana IL (15%) | San Francisco Bay Area CA (15%) | New York NY (10%) | Other Midwest (10%).",
+    networkCapital: "UIUC's recruiter reach extends well beyond engineering: Google, Meta, Microsoft, Goldman Sachs, JPMorgan Chase, Amazon, EY, and Deloitte all actively recruit across the university, and top graduates place directly into MIT, Stanford, Princeton, Cornell, and Berkeley graduate programs."
   },
   "University of Wisconsin-Madison": {
     name: "University of Wisconsin-Madison",
@@ -2129,12 +1425,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Epic Systems - the company that built and runs the electronic health records system used by over 54% of American patients - is headquartered in Verona",
     the_room: "UW-Madison is the only University of Wisconsin campus where fewer than half of students are Wisconsin residents - approx",
     lifestyle: "",
-    grad_cities: "Chicago IL (22%) | Madison WI (18%) | Milwaukee WI (10%) | Minneapolis MN (8%) | New York NY (8%) | San Francisco CA (7%",
-    mayNotThriveIf: "You want an in-state-majority social scene - Madison draws heavily from out of state, giving it a different character than most Big Ten flagships.",
-    campusSocialCulture: "Progressive, lake-adjacent, activism-friendly culture layered onto strong Big Ten athletics - Madison itself is as much a draw as the university.",
-    socialCapital: "Engineering and health-tech cohorts build networks that feed directly into Epic Systems and the Madison tech corridor.",
-    culturalCapital: "Progressive-but-rigorous identity - UW-Madison signals both academic seriousness and civic engagement.",
-    networkCapital: "Direct pipeline into Epic Systems and the broader Midwest health-tech ecosystem, plus strong Chicago ties."
+    grad_cities: "Chicago IL (22%) | Madison WI (18%) | Milwaukee WI (10%) | Minneapolis MN (8%) | New York NY (8%) | San Francisco CA (7%"
   },
   "Belmont University": {
     name: "Belmont University",
@@ -2144,12 +1435,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Belmont is the songwriting program's alumni royalty infrastructure. The music publishing industry's royalty system means that a ",
     the_room: "Belmont enrolls approximately 8,500 students on a campus that occupies the former Belmont Mansion estate in the Belmont-",
     lifestyle: "",
-    grad_cities: "Nashville TN (55%) | Los Angeles CA (12%) | New York NY (10%) | Atlanta GA (6%) | Austin TX (4%) | Chicago IL (3%) | Int",
-    mayNotThriveIf: "You want a career outside music/entertainment - Belmont's identity is deeply tied to the Nashville music industry.",
-    campusSocialCulture: "Creative, music-industry-immersed, Nashville-embedded - the campus itself sits on the historic Belmont Mansion estate near Music Row.",
-    socialCapital: "Songwriting and music business cohorts build direct royalty-system and industry relationships before graduating.",
-    culturalCapital: "The single most connected music-industry credential in the world - Belmont signals genuine Nashville insider status.",
-    networkCapital: "Unmatched direct pipeline into Nashville's music publishing and entertainment industry infrastructure."
+    grad_cities: "Nashville TN (55%) | Los Angeles CA (12%) | New York NY (10%) | Atlanta GA (6%) | Austin TX (4%) | Chicago IL (3%) | Int"
   },
   "Binghamton University": {
     name: "Binghamton University",
@@ -2159,12 +1445,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Binghamton is the School of Management's specific Wall Street and Big 4 accounting recruiting depth relative to its public unive",
     the_room: "Binghamton enrolls approximately 17,000 undergraduates on a campus set in the hills south of the Susquehanna River, 3 mi",
     lifestyle: "",
-    grad_cities: "New York NY (42%) | Albany NY (10%) | Philadelphia PA (7%) | Boston MA (7%) | Washington DC (6%) | San Francisco-Bay Are",
-    mayNotThriveIf: "You want a private-school price point or a warmer climate - Binghamton is public-tuition and upstate New York winters are real.",
-    campusSocialCulture: "Practical, cost-conscious, Wall-Street-ambitious - a genuinely strong public-school value proposition drives campus culture.",
-    socialCapital: "School of Management cohorts build direct Wall Street and Big 4 accounting relationships at a fraction of private-school cost.",
-    culturalCapital: "High-value public prestige - Binghamton signals smart, resourceful ambition rather than legacy pedigree.",
-    networkCapital: "Exceptional Wall Street/Big 4 placement relative to tuition cost, one of the best value propositions in the database."
+    grad_cities: "New York NY (42%) | Albany NY (10%) | Philadelphia PA (7%) | Boston MA (7%) | Washington DC (6%) | San Francisco-Bay Are"
   },
   "Denison University": {
     name: "Denison University",
@@ -2174,12 +1455,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Denison is the alumni mentorship culture that the college's development office and alumni relations program have deliberately cu",
     the_room: "Denison enrolls approximately 2,400 undergraduates on a hillside campus above Granville, Ohio — a New England-style vill",
     lifestyle: "",
-    grad_cities: "New York NY (22%) | Columbus OH (20%) | Chicago IL (10%) | Washington DC (8%) | Cleveland OH (7%) | Los Angeles CA (6%) ",
-    mayNotThriveIf: "You want a large university or urban setting - Denison is small and set in a quiet New England-style Ohio village.",
-    campusSocialCulture: "Intimate, hillside, quietly ambitious - the deliberately cultivated alumni mentorship culture creates unusually strong post-grad support.",
-    socialCapital: "Small size plus intentional alumni mentorship programming creates uniquely durable professional relationships after graduation.",
-    culturalCapital: "Understated liberal-arts prestige with real Wall Street output - Denison signals depth without needing brand recognition.",
-    networkCapital: "A disproportionate concentration of Wall Street/financial services alumni for a school of its size, reinforced by deliberate mentorship infrastructure."
+    grad_cities: "New York NY (22%) | Columbus OH (20%) | Chicago IL (10%) | Washington DC (8%) | Cleveland OH (7%) | Los Angeles CA (6%) "
   },
   "Flagler College": {
     name: "Flagler College",
@@ -2189,12 +1465,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Flagler is the Ponce de León Hotel campus itself as a professional credential for art history, interior design, and hospitality ",
     the_room: "Flagler enrolls approximately 2,800 undergraduates on a campus that is, without serious competition, the most architectu",
     lifestyle: "",
-    grad_cities: "St. Augustine-Jacksonville FL (42%) | Orlando FL (10%) | Daytona Beach FL (8%) | Tampa FL (7%) | Atlanta GA (5%) | New Y",
-    mayNotThriveIf: "You want a large university or a modern campus - Flagler is small and its historic Ponce de León Hotel setting is unlike any typical campus.",
-    campusSocialCulture: "Intimate, historic, arts-and-hospitality-forward - the architecturally stunning campus itself shapes a genuinely unique student identity.",
-    socialCapital: "Small size plus the historic hotel-campus setting creates close bonds within a distinctly hospitality/design-minded community.",
-    culturalCapital: "Architectural-heritage prestige - Flagler signals genuine design/hospitality credibility tied to a landmark building.",
-    networkCapital: "Strong Northeast Florida teacher-certification placement, plus a unique hospitality/design credential tied to the historic campus."
+    grad_cities: "St. Augustine-Jacksonville FL (42%) | Orlando FL (10%) | Daytona Beach FL (8%) | Tampa FL (7%) | Atlanta GA (5%) | New Y"
   },
   "Furman University": {
     name: "Furman University",
@@ -2204,12 +1475,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Furman is the Furman Advantage program combined with the BMW and Michelin employer relationships in the Greenville-Spartanburg c",
     the_room: "Furman enrolls approximately 2,800 undergraduates on what is consistently described as one of the most beautiful college",
     lifestyle: "",
-    grad_cities: "Greenville-Spartanburg SC (30%) | Charlotte NC (18%) | Atlanta GA (12%) | Washington DC (7%) | New York NY (6%) | Raleig",
-    mayNotThriveIf: "You want a large university or urban energy - Furman is small and set in a genuinely picturesque Southern campus environment.",
-    campusSocialCulture: "Polished, achievement-oriented, manufacturing-industry-adjacent - the Furman Advantage program creates a genuinely career-focused culture.",
-    socialCapital: "Direct BMW and Michelin employer relationships mean students build advanced-manufacturing industry ties before graduating.",
-    culturalCapital: "Southern liberal-arts prestige with real advanced-manufacturing credibility - Furman signals both polish and practical industry access.",
-    networkCapital: "Direct pipeline into the Greenville-Spartanburg advanced manufacturing corridor (BMW, Michelin), one of the most concentrated in the Southeast."
+    grad_cities: "Greenville-Spartanburg SC (30%) | Charlotte NC (18%) | Atlanta GA (12%) | Washington DC (7%) | New York NY (6%) | Raleig"
   },
   "Grinnell College": {
     name: "Grinnell College",
@@ -2219,12 +1485,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Grinnell is the endowment itself as a professional credential and curriculum. Grinnell's endowment — over $2 billion for an inst",
     the_room: "Grinnell enrolls approximately 1,700 undergraduates in Grinnell, Iowa — a town of 9,000 in the flat agricultural terrain",
     lifestyle: "",
-    grad_cities: "Chicago IL (18%) | New York NY (20%) | San Francisco-Bay Area CA (12%) | Washington DC (10%) | Boston MA (8%) | Minneapo",
-    mayNotThriveIf: "You want a large city or a pre-professional focus - Grinnell is tiny, rural, and deeply academic/PhD-track oriented.",
-    campusSocialCulture: "Intensely intellectual, egalitarian, self-governing - the massive endowment funds genuine academic freedom rather than luxury amenities.",
-    socialCapital: "Small size plus shared academic intensity creates close bonds that carry directly into top PhD programs nationwide.",
-    culturalCapital: "The highest PhD-production prestige among liberal arts colleges - Grinnell signals serious scholarly ambition.",
-    networkCapital: "One of the strongest PhD placement pipelines of any liberal arts college, reinforced by an extraordinary endowment-funded academic infrastructure."
+    grad_cities: "Chicago IL (18%) | New York NY (20%) | San Francisco-Bay Area CA (12%) | Washington DC (10%) | Boston MA (8%) | Minneapo"
   },
   "Georgia State University": {
     name: "Georgia State University",
@@ -2234,12 +1495,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Georgia State is the university's nationally recognized student success and graduation rate improvement program combined with th",
     the_room: "Georgia State enrolls approximately 54,000 students across its Atlanta and Perimeter campuses - one of the largest unive",
     lifestyle: "",
-    grad_cities: "Atlanta GA (72%) | Washington DC (7%) | New York NY (5%) | Charlotte NC (4%) | Dallas TX (3%) | Los Angeles CA (3%) | In",
-    mayNotThriveIf: "You want a small campus or a traditional residential college feel - Georgia State is huge, urban, and commuter-heavy by design.",
-    campusSocialCulture: "Urban, career-focused, genuinely diverse - downtown Atlanta itself functions as an extension of campus life.",
-    socialCapital: "Robinson Business cohorts build direct ties to Atlanta's corporate core, reinforced by the university's strong student-success infrastructure.",
-    culturalCapital: "Access-and-opportunity identity - Georgia State signals genuine upward mobility and real Atlanta business connections.",
-    networkCapital: "One of the largest and most Atlanta-embedded business school networks in the country, with nationally recognized student success outcomes."
+    grad_cities: "Atlanta GA (72%) | Washington DC (7%) | New York NY (5%) | Charlotte NC (4%) | Dallas TX (3%) | Los Angeles CA (3%) | In"
   },
   "High Point University": {
     name: "High Point University",
@@ -2249,12 +1505,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at High Point University is the High Point Market combined with the university's entrepreneurship ecosystem. The High Point Market ",
     the_room: "High Point University enrolls approximately 5,000 undergraduates on a campus that President Qubein has deliberately desi",
     lifestyle: "",
-    grad_cities: "Charlotte NC (22%) | Greensboro-Winston Salem-High Point NC (28%) | Raleigh-Durham NC (14%) | Washington DC (6%) | New Y",
-    mayNotThriveIf: "You want an understated, low-frills campus experience - High Point is famous for its deliberately luxurious, service-heavy campus culture.",
-    campusSocialCulture: "Polished, hospitality-forward, entrepreneurially minded - the campus itself is designed as a hands-on business laboratory.",
-    socialCapital: "Direct High Point Market (furniture industry trade show) access creates unique entrepreneurship and business networking most peers lack.",
-    culturalCapital: "Deliberately curated luxury-service identity - High Point signals genuine business/hospitality sophistication.",
-    networkCapital: "Unique access to the High Point Market's entrepreneurship ecosystem, a trade-show-driven business network unmatched by peer schools."
+    grad_cities: "Charlotte NC (22%) | Greensboro-Winston Salem-High Point NC (28%) | Raleigh-Durham NC (14%) | Washington DC (6%) | New Y"
   },
   "Ithaca College": {
     name: "Ithaca College",
@@ -2264,12 +1515,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Ithaca College is the Park School's sports broadcasting alumni network combined with the college's partnership with Cornell Univ",
     the_room: "Ithaca College enrolls approximately 5,500 undergraduates on a campus on the south hill above Ithaca, New York — a city ",
     lifestyle: "",
-    grad_cities: "New York NY (38%) | Los Angeles CA (14%) | Boston MA (7%) | Washington DC (6%) | Chicago IL (5%) | Ithaca-Binghamton NY ",
-    mayNotThriveIf: "You want a large research university or a warm climate - Ithaca is small, media-focused, and upstate New York winters are real.",
-    campusSocialCulture: "Media-and-broadcasting-obsessed, close-knit, hillside setting above Ithaca's remote beauty shared with Cornell nearby.",
-    socialCapital: "Park School's sports broadcasting network creates uniquely tight professional bonds in a specific, in-demand media niche.",
-    culturalCapital: "Top-five communications-school prestige - Ithaca College signals genuine broadcasting/media industry readiness.",
-    networkCapital: "One of the strongest sports broadcasting alumni networks in the country, reinforced by proximity to Cornell's broader resources."
+    grad_cities: "New York NY (38%) | Los Angeles CA (14%) | Boston MA (7%) | Washington DC (6%) | Chicago IL (5%) | Ithaca-Binghamton NY "
   },
   "James Madison University": {
     name: "James Madison University",
@@ -2279,12 +1525,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at JMU is the SMAD program's specific positioning in the DC public affairs and strategic communications ecosystem. Washington DC's ",
     the_room: "JMU enrolls approximately 22,000 undergraduates on a campus that occupies both sides of South Main Street in Harrisonbur",
     lifestyle: "",
-    grad_cities: "Washington DC-Northern Virginia (38%) | Richmond VA (12%) | Harrisonburg-Charlottesville VA (10%) | New York NY (8%) | C",
-    mayNotThriveIf: "You want to leave the DC corridor - JMU's communications program's identity is deeply tied to Washington's strategic communications ecosystem.",
-    campusSocialCulture: "Practical, career-focused, genuinely spirited - a large, well-run public university culture with real communications-industry seriousness.",
-    socialCapital: "SMAD cohorts build direct DC public affairs and strategic communications relationships well before graduation.",
-    culturalCapital: "Top-10 communications-program prestige - JMU signals real career readiness in a competitive, well-regarded field.",
-    networkCapital: "The single most productive feeder into DC's strategic communications and public affairs ecosystem among peer programs."
+    grad_cities: "Washington DC-Northern Virginia (38%) | Richmond VA (12%) | Harrisonburg-Charlottesville VA (10%) | New York NY (8%) | C"
   },
   "Kenyon College": {
     name: "Kenyon College",
@@ -2294,12 +1535,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Kenyon is the Kenyon Review and the alumni culture it has created around literary and intellectual seriousness. The Kenyon Revie",
     the_room: "Kenyon enrolls approximately 1,800 undergraduates in Gambier, Ohio — a hilltop village of stone buildings, mature trees,",
     lifestyle: "",
-    grad_cities: "New York NY (30%) | Columbus OH (12%) | Washington DC (10%) | Boston MA (8%) | Chicago IL (7%) | Los Angeles CA (8%) | A",
-    mayNotThriveIf: "You want a large university or urban energy - Kenyon is tiny, rural, and deeply literary in identity.",
-    campusSocialCulture: "Intensely literary, intimate, hilltop-village charm - the Kenyon Review's legacy shapes a genuinely writing-obsessed campus culture.",
-    socialCapital: "Small size plus the Kenyon Review's prestige creates uniquely concentrated publishing and media alumni bonds.",
-    culturalCapital: "The most concentrated literary/publishing prestige of any small college in America - Kenyon signals serious writerly credibility.",
-    networkCapital: "The strongest media/publishing alumni network of any small liberal arts college, anchored by the historic Kenyon Review."
+    grad_cities: "New York NY (30%) | Columbus OH (12%) | Washington DC (10%) | Boston MA (8%) | Chicago IL (7%) | Los Angeles CA (8%) | A"
   },
   "Lehigh University": {
     name: "Lehigh University",
@@ -2309,12 +1545,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Lehigh is the IBE program's specific positioning in the quantitative finance and technology product management hiring market. Wa",
     the_room: "Lehigh enrolls approximately 7,200 undergraduates on a hillside campus above Bethlehem, Pennsylvania that is one of the ",
     lifestyle: "",
-    grad_cities: "New York NY (28%) | Philadelphia PA (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco-Bay Area CA (7%) | Chic",
-    mayNotThriveIf: "You want pure liberal arts or a large-scale research university - Lehigh's identity is built around integrated engineering-business programs.",
-    campusSocialCulture: "Greek-heavy, hillside-campus community feel - the engineering/business integration (IBE program) creates a driven, pre-professional culture.",
-    socialCapital: "IBE cohorts build unusually strong bonds that translate directly into quant finance and tech product management roles.",
-    culturalCapital: "Practical, integrated engineering-business identity - Lehigh signals readiness for cross-functional roles.",
-    networkCapital: "Strong NYC/Philadelphia pipeline into quantitative finance and technology product management via the IBE program."
+    grad_cities: "New York NY (28%) | Philadelphia PA (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco-Bay Area CA (7%) | Chic"
   },
   "University of Memphis": {
     name: "University of Memphis",
@@ -2324,12 +1555,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at the University of Memphis is the FedEx corporate relationship combined with the supply chain management program's proximity to t",
     the_room: "The University of Memphis enrolls approximately 21,000 students on a campus in the Midtown neighborhood of Memphis - a h",
     lifestyle: "",
-    grad_cities: "Memphis TN (58%) | Nashville TN (10%) | Atlanta GA (8%) | Dallas TX (6%) | Chicago IL (5%) | Washington DC (4%) | Housto",
-    mayNotThriveIf: "You want to leave the Mid-South region - Memphis' identity and career pipeline are deeply tied to the city's logistics-capital status.",
-    campusSocialCulture: "Practical, logistics-industry-serious, genuinely community-oriented - FedEx's global headquarters shapes both curriculum and career expectations.",
-    socialCapital: "Supply chain cohorts build direct FedEx relationships, an industry connection almost no other university can replicate at this depth.",
-    culturalCapital: "Logistics-capital-of-America identity - Memphis signals genuine, irreplaceable supply chain expertise.",
-    networkCapital: "The single strongest FedEx/logistics industry pipeline in the country, anchored by direct proximity to global headquarters."
+    grad_cities: "Memphis TN (58%) | Nashville TN (10%) | Atlanta GA (8%) | Dallas TX (6%) | Chicago IL (5%) | Washington DC (4%) | Housto"
   },
   "Oberlin College": {
     name: "Oberlin College",
@@ -2339,12 +1565,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Oberlin is the double-degree program that allows Conservatory students to earn both the Bachelor of Music and the Bachelor of Ar",
     the_room: "Oberlin enrolls approximately 2,900 undergraduates — 2,100 in the College and 650 in the Conservatory — on a campus in O",
     lifestyle: "",
-    grad_cities: "New York NY (28%) | Cleveland OH (15%) | Chicago IL (10%) | San Francisco-Bay Area CA (8%) | Washington DC (7%) | Los An",
-    mayNotThriveIf: "You want a purely academic or purely conservatory experience without crossover - Oberlin's identity is built on the College/Conservatory blend.",
-    campusSocialCulture: "Progressive, artistically serious, intellectually engaged - the Conservatory's presence creates a genuinely music-immersed campus culture even for non-musicians.",
-    socialCapital: "The double-degree program creates unusually rich cross-disciplinary bonds between musicians and liberal arts students.",
-    culturalCapital: "The oldest continuously operating conservatory prestige in America - Oberlin signals both artistic and academic seriousness.",
-    networkCapital: "A top-three conservatory alumni network, reinforced by a unique dual-degree credential unmatched by peer institutions."
+    grad_cities: "New York NY (28%) | Cleveland OH (15%) | Chicago IL (10%) | San Francisco-Bay Area CA (8%) | Washington DC (7%) | Los An"
   },
   "Ohio Wesleyan University": {
     name: "Ohio Wesleyan University",
@@ -2354,12 +1575,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Ohio Wesleyan is the Sagan National Colloquium combined with the university's extraordinary study abroad participation rate. The",
     the_room: "Ohio Wesleyan enrolls approximately 1,400 undergraduates on a campus in Delaware, Ohio — a county seat of 40,000 that is",
     lifestyle: "",
-    grad_cities: "Columbus OH (35%) | Cleveland OH (10%) | New York NY (10%) | Chicago IL (8%) | Washington DC (7%) | International (8%) |",
-    mayNotThriveIf: "You want a large university or urban setting - Ohio Wesleyan is small and set in a quiet Midwest county seat.",
-    campusSocialCulture: "Pre-med-serious, intellectually curious, globally minded - the Sagan Colloquium and high study abroad rate add real breadth.",
-    socialCapital: "Small size plus strong pre-med culture creates close bonds that carry into medical school admissions and beyond.",
-    culturalCapital: "Above-average pre-med prestige at small-school scale - Ohio Wesleyan signals real academic seriousness.",
-    networkCapital: "Strong medical school acceptance outcomes relative to peer liberal arts colleges, reinforced by high study abroad engagement."
+    grad_cities: "Columbus OH (35%) | Cleveland OH (10%) | New York NY (10%) | Chicago IL (8%) | Washington DC (7%) | International (8%) |"
   },
   "Quinnipiac University": {
     name: "Quinnipiac University",
@@ -2369,12 +1585,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Quinnipiac is the Polling Institute's specific contribution to journalism and political science students. The Quinnipiac Univers",
     the_room: "Quinnipiac enrolls approximately 7,000 undergraduates on two connected campuses in Hamden — the Mount Carmel campus on a",
     lifestyle: "",
-    grad_cities: "New Haven-Hartford CT (38%) | New York NY (22%) | Boston MA (8%) | Providence RI (6%) | Philadelphia PA (5%) | Washingto",
-    mayNotThriveIf: "You want a purely liberal-arts focus - Quinnipiac's identity leans heavily health-sciences and pre-professional.",
-    campusSocialCulture: "Health-sciences-serious, polished, New England-practical - the Netter Medical School's presence shapes campus ambition.",
-    socialCapital: "Health science cohorts build direct clinical relationships, reinforced by nationally cited Polling Institute visibility.",
-    culturalCapital: "Health-sciences prestige with real polling/political-science credibility - Quinnipiac signals both clinical and civic seriousness.",
-    networkCapital: "Strong health sciences placement via the Netter Medical School, plus a nationally recognized polling institute credential."
+    grad_cities: "New Haven-Hartford CT (38%) | New York NY (22%) | Boston MA (8%) | Providence RI (6%) | Philadelphia PA (5%) | Washingto"
   },
   "Reed College": {
     name: "Reed College",
@@ -2384,12 +1595,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Reed senior thesis is the hidden pathway that explains outcomes the acceptance rate alone does not predict. Every Reed student completes a year-lo",
     the_room: "Reed enrolls approximately 1,500 students on a 116-acre campus in the Eastmoreland neighborhood of southeast Portland - ",
     lifestyle: "",
-    grad_cities: "Portland OR (25%) | New York NY (15%) | San Francisco-Bay Area CA (20%) | Boston-Cambridge MA (12%) | Seattle WA (10%) |",
-    mayNotThriveIf: "You want a pre-professional focus or lighter academic intensity - Reed's senior thesis requirement and rigor are demanding by design.",
-    campusSocialCulture: "Intensely intellectual, independent, countercultural - the year-long senior thesis anchors a genuinely scholarly campus identity.",
-    socialCapital: "The shared senior thesis experience creates deep intellectual bonds that carry directly into top PhD programs.",
-    culturalCapital: "The highest per-capita PhD-production prestige in the country - Reed signals serious scholarly ambition and independence.",
-    networkCapital: "One of the strongest PhD placement pipelines in America, reinforced by a rigorous, nationally recognized thesis requirement."
+    grad_cities: "Portland OR (25%) | New York NY (15%) | San Francisco-Bay Area CA (20%) | Boston-Cambridge MA (12%) | Seattle WA (10%) |"
   },
   "Rhode Island School of Design": {
     name: "Rhode Island School of Design",
@@ -2399,12 +1605,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at RISD is the foundation year's development of material intelligence that every subsequent year of the program builds upon. RISD r",
     the_room: "RISD enrolls approximately 2,000 undergraduates in Providence's College Hill neighborhood, sharing a campus boundary wit",
     lifestyle: "",
-    grad_cities: "New York NY (38%) | Providence RI (15%) | San Francisco-Bay Area CA (14%) | Los Angeles CA (12%) | Boston MA (8%) | Inte",
-    mayNotThriveIf: "You want an academic-only or non-studio-based education - RISD is intensely hands-on and craft-focused from the foundation year onward.",
-    campusSocialCulture: "Creatively intense, studio-culture-driven, College Hill's shared boundary with Brown adds unexpected academic crossover.",
-    socialCapital: "The shared foundation year creates tight studio bonds that carry directly into top design firms and product companies.",
-    culturalCapital: "The highest industrial/product design prestige in the world - RISD signals elite creative and technical craft mastery.",
-    networkCapital: "Direct pipeline into Apple, Nike, IDEO, and every major product design firm - the strongest design-industry network in the country."
+    grad_cities: "New York NY (38%) | Providence RI (15%) | San Francisco-Bay Area CA (14%) | Los Angeles CA (12%) | Boston MA (8%) | Inte"
   },
   "Rollins College": {
     name: "Rollins College",
@@ -2414,27 +1615,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Rollins is the Crummer Graduate School of Business's physical presence on the undergraduate campus. Most liberal arts colleges a",
     the_room: "Rollins enrolls approximately 1,900 undergraduates on a campus on the shores of Lake Virginia in Winter Park — one of th",
     lifestyle: "",
-    grad_cities: "Orlando FL (40%) | Miami FL (12%) | Tampa FL (8%) | Atlanta GA (7%) | New York NY (7%) | Washington DC (5%) | Academic a",
-    mayNotThriveIf: "You want a large university or urban setting - Rollins is small, lakeside, and set in the affluent Winter Park suburb of Orlando.",
-    campusSocialCulture: "Polished, lakeside, business-minded - the on-campus MBA program creates unusually direct access to graduate-level business mentorship.",
-    socialCapital: "Undergrad access to the Crummer MBA program creates rare direct mentorship from graduate business students.",
-    culturalCapital: "Florida's top business-school prestige outside Miami, layered onto genuine liberal-arts polish - Rollins signals both.",
-    networkCapital: "Direct undergraduate-to-MBA business mentorship pipeline, unusual among liberal arts colleges and concentrated in Central Florida."
+    grad_cities: "Orlando FL (40%) | Miami FL (12%) | Tampa FL (8%) | Atlanta GA (7%) | New York NY (7%) | Washington DC (5%) | Academic a"
   },
   "San Jose State University": {
     name: "San Jose State University",
     location: "San Jose, California",
-    region: "West",
+    region: "California",
     pipeline: "Engineering and Computer Science (the Charles W. Davidson College of Engineering is the most Silicon Valley-integrated engineering program in the California State University system — San Jose State's ",
     hidden_pathway: "The hidden pathway at San Jose State is the NASA Ames Research Center relationship combined with the university's aerospace engineering and aviation p",
     the_room: "SJSU enrolls approximately 33,000 students on a campus in downtown San Jose — the urban campus occupies multiple city bl",
     lifestyle: "",
-    grad_cities: "San Jose-Silicon Valley CA (52%) | San Francisco CA (18%) | Oakland-East Bay CA (8%) | Los Angeles CA (5%) | Seattle WA ",
-    mayNotThriveIf: "You want a small campus or a traditional college-town feel - SJSU is large, urban, and embedded directly in downtown San Jose.",
-    campusSocialCulture: "Practical, tech-embedded, Silicon Valley-adjacent - the urban campus blends directly into the surrounding tech ecosystem.",
-    socialCapital: "Engineering cohorts build direct Silicon Valley relationships, reinforced by NASA Ames Research Center proximity.",
-    culturalCapital: "The most Silicon Valley-integrated CSU engineering identity - SJSU signals genuine tech-industry readiness.",
-    networkCapital: "Direct Silicon Valley tech placement plus a unique NASA Ames aerospace/aviation research pipeline."
+    grad_cities: "San Jose-Silicon Valley CA (52%) | San Francisco CA (18%) | Oakland-East Bay CA (8%) | Los Angeles CA (5%) | Seattle WA "
   },
   "University of Tulsa": {
     name: "University of Tulsa",
@@ -2444,12 +1635,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at TU is the intersection of its cybersecurity program with the energy industry's accelerating digitization. Every major pipeline o",
     the_room: "TU enrolls approximately 3,800 undergraduates on a campus that punches far above its enrollment weight in physical quali",
     lifestyle: "",
-    grad_cities: "Tulsa OK (42%) | Oklahoma City OK (12%) | Houston TX (15%) | Dallas TX (8%) | Denver CO (6%) | Washington DC (5%) | Inte",
-    mayNotThriveIf: "You want a large university or coastal setting - Tulsa is small, energy-industry-focused, and deeply rooted in Oklahoma.",
-    campusSocialCulture: "Small, energy-serious, quietly ambitious - the campus punches above its size in both facilities and career outcomes.",
-    socialCapital: "Petroleum engineering cohorts build direct ties to energy companies, reinforced by a rising cybersecurity-energy crossover specialty.",
-    culturalCapital: "Top-5 petroleum engineering prestige at small-school scale - Tulsa signals serious, specialized energy credibility.",
-    networkCapital: "One of the most financially consequential petroleum engineering pipelines in the country, plus an emerging energy-cybersecurity niche."
+    grad_cities: "Tulsa OK (42%) | Oklahoma City OK (12%) | Houston TX (15%) | Dallas TX (8%) | Denver CO (6%) | Washington DC (5%) | Inte"
   },
   "University of Idaho": {
     name: "University of Idaho",
@@ -2459,12 +1645,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UIdaho is the Western Undergraduate Exchange program combined with the law school's natural resources and water law specializati",
     the_room: "UIdaho enrolls approximately 11,000 students in Moscow, a college town of 26,000 in the Palouse region of northern Idaho",
     lifestyle: "",
-    grad_cities: "Boise ID (38%) | Seattle WA (12%) | Portland OR (10%) | Spokane WA (8%) | Twin Falls-Magic Valley ID (7%) | Salt Lake Ci",
-    mayNotThriveIf: "You want a large city or a school outside the Pacific Northwest - Moscow is a small, remote college town in northern Idaho.",
-    campusSocialCulture: "Rural, close-knit, outdoors-oriented - the Palouse region's farmland setting shapes a genuinely community-centered campus.",
-    socialCapital: "Small size plus the law school's water/natural resources specialty creates a tight, regionally influential legal network.",
-    culturalCapital: "Regional legal and natural-resources prestige - Idaho signals genuine Pacific Northwest legal and land-use expertise.",
-    networkCapital: "Near-total dominance of Idaho's legal profession training, plus a rare natural resources/water law specialization."
+    grad_cities: "Boise ID (38%) | Seattle WA (12%) | Portland OR (10%) | Spokane WA (8%) | Twin Falls-Magic Valley ID (7%) | Salt Lake Ci"
   },
   "Union College": {
     name: "Union College",
@@ -2474,12 +1655,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Union is the early assurance medical program with the Icahn School of Medicine at Mount Sinai, which is one of the most prestigi",
     the_room: "Union enrolls approximately 2,300 undergraduates on a campus that is one of the oldest and most physically coherent in t",
     lifestyle: "",
-    grad_cities: "New York NY (30%) | Albany-Schenectady NY (18%) | Boston MA (10%) | Washington DC (8%) | Hartford-Springfield CT (6%) | ",
-    mayNotThriveIf: "You want a purely liberal arts or purely engineering focus - Union's identity is built on integrating both simultaneously.",
-    campusSocialCulture: "Historic, intimate, engineering-and-arts-blended - one of the oldest coherent campuses in the country shapes a genuinely traditional feel.",
-    socialCapital: "The early-assurance Mount Sinai medical program creates rare, guaranteed pre-med pathway bonds unmatched by peer schools.",
-    culturalCapital: "Engineering-liberal-arts integration prestige - Union signals genuine intellectual breadth alongside technical rigor.",
-    networkCapital: "A rare guaranteed early-assurance medical school pipeline via Mount Sinai, plus strong regional engineering placement."
+    grad_cities: "New York NY (30%) | Albany-Schenectady NY (18%) | Boston MA (10%) | Washington DC (8%) | Hartford-Springfield CT (6%) | "
   },
   "University of Nevada Las Vegas": {
     name: "University of Nevada Las Vegas",
@@ -2489,12 +1665,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UNLV is the intersection of hospitality technology and data analytics that Harrah College is building as a formal concentration.",
     the_room: "UNLV enrolls approximately 30,000 students - a large public university by enrollment but with a distinctive demographic ",
     lifestyle: "",
-    grad_cities: "Las Vegas NV (65%) | Los Angeles CA (8%) | Phoenix AZ (5%) | San Francisco-Bay Area CA (4%) | Seattle WA (3%) | Internat",
-    mayNotThriveIf: "You want to leave the hospitality/casino-resort industry orbit - UNLV's identity and location are inseparable from the Las Vegas resort economy.",
-    campusSocialCulture: "Industry-embedded, practical, genuinely diverse - the Strip's resort economy shapes career expectations from day one.",
-    socialCapital: "Harrah College cohorts build direct MGM Resorts relationships, an unmatched hospitality-industry proximity advantage.",
-    culturalCapital: "The top-2 hospitality program in the world - UNLV signals the highest possible hospitality-industry credibility.",
-    networkCapital: "The most industry-proximate hospitality placement network in the world, anchored directly in the Las Vegas resort corridor."
+    grad_cities: "Las Vegas NV (65%) | Los Angeles CA (8%) | Phoenix AZ (5%) | San Francisco-Bay Area CA (4%) | Seattle WA (3%) | Internat"
   },
   "University of Nevada Reno": {
     name: "University of Nevada Reno",
@@ -2504,12 +1675,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UNR is the intersection of the Reno-Tahoe technology corridor and the university's engineering programs. The region that locals ",
     the_room: "UNR enrolls approximately 21,000 students on a campus that is genuinely beautiful by Mountain West public university sta",
     lifestyle: "",
-    grad_cities: "Reno-Sparks NV (45%) | Las Vegas NV (12%) | San Francisco-Bay Area CA (14%) | Sacramento CA (8%) | Los Angeles CA (6%) |",
-    mayNotThriveIf: "You want a large city or coastal setting - Reno's Mountain West identity and mining-engineering focus are distinctly regional.",
-    campusSocialCulture: "Outdoorsy, practical, Tahoe-adjacent - genuinely beautiful mountain setting shapes a laid-back but technically serious culture.",
-    socialCapital: "Mining engineering cohorts build direct ties to one of the only specialized programs of its kind in the country.",
-    culturalCapital: "Rare mining/metallurgical engineering prestige - UNR signals specialized technical expertise few schools offer.",
-    networkCapital: "One of the only top-10 mining engineering pipelines in America, plus a rising Reno-Tahoe tech corridor connection."
+    grad_cities: "Reno-Sparks NV (45%) | Las Vegas NV (12%) | San Francisco-Bay Area CA (14%) | Sacramento CA (8%) | Los Angeles CA (6%) |"
   },
   "University of Rhode Island": {
     name: "University of Rhode Island",
@@ -2519,12 +1685,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at URI is the intersection of the CVS Health headquarters proximity and the pharmacy program's direct recruiting pipeline. CVS Heal",
     the_room: "URI enrolls approximately 17,000 undergraduates on a campus in Kingston, a college village in the rural South County reg",
     lifestyle: "",
-    grad_cities: "Providence RI (28%) | Boston MA (25%) | New York NY (15%) | Hartford CT (8%) | Washington DC (6%) | San Diego CA (4%) | ",
-    mayNotThriveIf: "You want an urban campus or a large city nearby - Kingston is a rural South County village, distinctly quiet.",
-    campusSocialCulture: "Marine-science-serious, practical, rural New England charm - the oceanography program's prestige shapes real academic ambition.",
-    socialCapital: "Pharmacy cohorts build direct CVS Health relationships, an industry connection unique to URI's location.",
-    culturalCapital: "Elite ocean/marine science prestige - URI signals genuine oceanographic research credibility.",
-    networkCapital: "A top oceanography research pipeline, plus a direct CVS Health pharmacy recruiting relationship unmatched by peers."
+    grad_cities: "Providence RI (28%) | Boston MA (25%) | New York NY (15%) | Hartford CT (8%) | Washington DC (6%) | San Diego CA (4%) | "
   },
   "University of Tennessee at Chattanooga": {
     name: "University of Tennessee at Chattanooga",
@@ -2534,12 +1695,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UTC is the Volkswagen co-op program combined with the Gig City technology infrastructure. Volkswagen's Chattanooga facility is t",
     the_room: "UTC enrolls approximately 11,500 students on a campus that occupies the Stringer's Ridge area of Chattanooga — positione",
     lifestyle: "",
-    grad_cities: "Chattanooga TN (48%) | Nashville TN (14%) | Atlanta GA (12%) | Knoxville TN (8%) | Birmingham AL (5%) | Charlotte NC (5%",
-    mayNotThriveIf: "You want a large university or big-city anonymity - UTC is mid-sized and deeply embedded in Chattanooga's manufacturing identity.",
-    campusSocialCulture: "Practical, manufacturing-serious, tech-forward - Gig City's infrastructure and Volkswagen's presence shape a genuinely industry-embedded culture.",
-    socialCapital: "Engineering cohorts build direct Volkswagen co-op relationships, a rare advanced-manufacturing industry tie.",
-    culturalCapital: "Advanced-manufacturing insider identity - UTC signals real access to one of the most technologically advanced corridors in America.",
-    networkCapital: "Direct Volkswagen manufacturing pipeline, reinforced by Chattanooga's Gig City tech infrastructure."
+    grad_cities: "Chattanooga TN (48%) | Nashville TN (14%) | Atlanta GA (12%) | Knoxville TN (8%) | Birmingham AL (5%) | Charlotte NC (5%"
   },
   "Washington and Lee University": {
     name: "Washington and Lee University",
@@ -2549,12 +1705,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Washington and Lee is the Honor System's specific effect on employer trust and graduate school admission outcomes. The W&L Honor",
     the_room: "Washington and Lee enrolls approximately 1,850 undergraduates on the Colonnade — one of the most architecturally disting",
     lifestyle: "",
-    grad_cities: "Washington DC (28%) | New York NY (16%) | Richmond VA (12%) | Charlotte NC (8%) | Atlanta GA (7%) | Boston MA (5%) | Roa",
-    mayNotThriveIf: "You want a large university or urban setting - W&L is small, rural, and deeply traditional in identity.",
-    campusSocialCulture: "Honor-bound, historic, quietly prestigious - the Honor System shapes genuine trust and accountability across campus life.",
-    socialCapital: "Small size plus the Honor System's reputation creates uniquely trusted bonds that employers and grad schools recognize immediately.",
-    culturalCapital: "Honor-code prestige with real legal depth - W&L signals both integrity and serious law-school-caliber credibility.",
-    networkCapital: "Strong DC/Virginia/Southeast legal market placement, reinforced by the Honor System's documented employer-trust effect."
+    grad_cities: "Washington DC (28%) | New York NY (16%) | Richmond VA (12%) | Charlotte NC (8%) | Atlanta GA (7%) | Boston MA (5%) | Roa"
   },
   "Wofford College": {
     name: "Wofford College",
@@ -2564,12 +1715,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Wofford is the college's specific positioning at the intersection of the Greenville-Spartanburg BMW and Michelin industrial corr",
     the_room: "Wofford enrolls approximately 1,800 undergraduates on a campus of remarkable physical coherence in the heart of Spartanb",
     lifestyle: "",
-    grad_cities: "Charlotte NC (22%) | Greenville-Spartanburg SC (18%) | Atlanta GA (12%) | Washington DC (8%) | New York NY (8%) | Columb",
-    mayNotThriveIf: "You want a large university or urban setting - Wofford is tiny and set in a coherent, walkable small-city campus.",
-    campusSocialCulture: "Tight-knit, polished, Southern-finance-ambitious - small size creates deep bonds within a genuinely beautiful campus.",
-    socialCapital: "Small size plus BMW/Michelin corridor proximity creates disproportionate Wall Street and manufacturing-industry ties.",
-    culturalCapital: "Small-school Wall Street prestige - Wofford signals serious finance ambition disproportionate to its size.",
-    networkCapital: "A Wall Street alumni network disproportionate for its size, plus direct Greenville-Spartanburg manufacturing corridor access."
+    grad_cities: "Charlotte NC (22%) | Greenville-Spartanburg SC (18%) | Atlanta GA (12%) | Washington DC (8%) | New York NY (8%) | Columb"
   },
   "College of Wooster": {
     name: "College of Wooster",
@@ -2579,42 +1725,27 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Wooster is the IS program's cumulative effect on graduate and professional school admission outcomes. The Independent Study requ",
     the_room: "Wooster enrolls approximately 1,900 undergraduates on a campus in Wooster, Ohio — the county seat of Wayne County in the",
     lifestyle: "",
-    grad_cities: "Cleveland OH (22%) | Columbus OH (14%) | Pittsburgh PA (8%) | New York NY (10%) | Chicago IL (7%) | Washington DC (8%) |",
-    mayNotThriveIf: "You want a lighter academic load or a large university - Wooster's year-long Independent Study is demanding and central to every student's experience.",
-    campusSocialCulture: "Intensely research-driven, small-town Midwest, intellectually serious - the shared IS experience unifies the entire senior class.",
-    socialCapital: "The universal Independent Study requirement creates deep mentor relationships with faculty and strong grad-school-bound peer bonds.",
-    culturalCapital: "Independent-research prestige - Wooster signals genuine intellectual independence and readiness for graduate work.",
-    networkCapital: "A strong graduate and professional school placement pipeline, driven directly by the rigorous Independent Study credential."
+    grad_cities: "Cleveland OH (22%) | Columbus OH (14%) | Pittsburgh PA (8%) | New York NY (10%) | Chicago IL (7%) | Washington DC (8%) |"
   },
   "University of Montana": {
     name: "University of Montana",
     location: "Missoula, Montana",
-    region: "West",
+    region: "Mountain West",
     pipeline: "Environmental Science and Natural Resources (the University of Montana's W.A. Franke College of Forestry and Conservation is one of the most respected forestry and natural resource programs in the Ame",
     hidden_pathway: "The hidden pathway at the University of Montana is the journalism program's investigative reporting tradition combined with the environmental beat. UM",
     the_room: "UM enrolls approximately 9,000 students on a campus at the base of Mount Sentinel in Missoula — a city of 75,000 at the ",
     lifestyle: "",
-    grad_cities: "Missoula MT (30%) | Billings MT (14%) | Helena MT (8%) | Bozeman MT (8%) | Seattle WA (8%) | Denver CO (6%) | Portland O",
-    mayNotThriveIf: "You want a large city or a school outside the Mountain West - Missoula is small and deeply tied to Montana's natural landscape.",
-    campusSocialCulture: "Outdoorsy, environmentally minded, genuinely close-knit - Mount Sentinel's presence shapes a campus culture built around conservation and place.",
-    socialCapital: "Forestry and conservation cohorts build direct ties to natural resource agencies and environmental journalism outlets.",
-    culturalCapital: "Elite forestry/conservation prestige with real investigative-journalism depth - UM signals both environmental and civic seriousness.",
-    networkCapital: "One of the most respected forestry/natural resources networks in the country, reinforced by a distinctive environmental journalism tradition."
+    grad_cities: "Missoula MT (30%) | Billings MT (14%) | Helena MT (8%) | Bozeman MT (8%) | Seattle WA (8%) | Denver CO (6%) | Portland O"
   },
   "Montana State University": {
     name: "Montana State University",
     location: "Bozeman, Montana",
-    region: "West",
+    region: "Mountain West",
     pipeline: "Engineering and Technology (the Norm Asbjornson College of Engineering is the primary engineering pipeline for Montana's energy, agriculture, and technology sectors — civil engineering, mechanical eng",
     hidden_pathway: "The hidden pathway at Montana State is the Bozeman technology ecosystem combined with the university's remote work infrastructure positioning. Bozeman",
     the_room: "MSU enrolls approximately 17,000 students on a campus in Bozeman — a city whose transformation from a quiet college town",
     lifestyle: "",
-    grad_cities: "Bozeman MT (28%) | Billings MT (12%) | Missoula MT (10%) | Helena MT (7%) | Denver CO (8%) | Seattle WA (7%) | Portland ",
-    mayNotThriveIf: "You want a large city or an established, slower-growth college town - Bozeman's rapid transformation brings constant change.",
-    campusSocialCulture: "Outdoorsy, tech-curious, rapidly evolving - Bozeman's boomtown energy blends with genuine engineering seriousness.",
-    socialCapital: "Engineering cohorts build direct ties to Montana's energy and agriculture sectors, plus Bozeman's growing remote-work tech scene.",
-    culturalCapital: "Rising mountain-tech identity - MSU signals both outdoor lifestyle and increasing technical relevance.",
-    networkCapital: "Primary engineering pipeline for Montana's energy/agriculture sectors, plus a growing remote-work tech ecosystem tie."
+    grad_cities: "Bozeman MT (28%) | Billings MT (12%) | Missoula MT (10%) | Helena MT (7%) | Denver CO (8%) | Seattle WA (7%) | Portland "
   },
   "North Dakota State University": {
     name: "North Dakota State University",
@@ -2624,12 +1755,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at NDSU is the coatings and polymers research program's specific industry positioning. The coatings industry — paints, protective c",
     the_room: "NDSU enrolls approximately 12,000 students on a campus in Fargo, North Dakota — the largest city in the state and the ec",
     lifestyle: "",
-    grad_cities: "Fargo-Moorhead ND/MN (40%) | Minneapolis-St. Paul MN (18%) | Bismarck ND (8%) | Grand Forks ND (6%) | Denver CO (5%) | C",
-    mayNotThriveIf: "You want a large city or a school outside the Upper Midwest - Fargo is the state's largest city but still distinctly regional.",
-    campusSocialCulture: "Practical, research-serious, genuinely community-oriented - the unusual polymers/coatings specialization shapes a niche technical identity.",
-    socialCapital: "Polymers/coatings research cohorts build direct ties to a specific, high-value materials science industry few schools access.",
-    culturalCapital: "Rare polymers/coatings research prestige - NDSU signals specialized technical expertise unavailable at most universities.",
-    networkCapital: "A uniquely positioned pipeline into the coatings and protective materials industry, a niche few competitor schools serve."
+    grad_cities: "Fargo-Moorhead ND/MN (40%) | Minneapolis-St. Paul MN (18%) | Bismarck ND (8%) | Grand Forks ND (6%) | Denver CO (5%) | C"
   },
   "South Dakota State University": {
     name: "South Dakota State University",
@@ -2639,42 +1765,27 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at SDSU is the precision agriculture technology sector's specific concentration in the Sioux Falls-Brookings corridor. Raven Indust",
     the_room: "SDSU enrolls approximately 12,000 students on a land-grant campus in Brookings — a college city of 25,000 on the prairie",
     lifestyle: "",
-    grad_cities: "Sioux Falls SD (32%) | Brookings SD (10%) | Rapid City SD (8%) | Minneapolis-St. Paul MN (12%) | Fargo ND (6%) | Denver ",
-    mayNotThriveIf: "You want a large city or a school outside the Upper Midwest - Brookings is a small prairie college town.",
-    campusSocialCulture: "Land-grant practical, agriculture-forward, genuinely community-oriented - precision agriculture tech shapes a forward-looking farming identity.",
-    socialCapital: "Agricultural/biosystems engineering cohorts build direct ties to the Sioux Falls-Brookings precision agriculture tech corridor.",
-    culturalCapital: "Precision-agriculture-technology prestige - SDSU signals genuine expertise at the intersection of farming and engineering.",
-    networkCapital: "A uniquely concentrated precision agriculture technology industry pipeline, anchored by Raven Industries and the Sioux Falls corridor."
+    grad_cities: "Sioux Falls SD (32%) | Brookings SD (10%) | Rapid City SD (8%) | Minneapolis-St. Paul MN (12%) | Fargo ND (6%) | Denver "
   },
   "University of New Mexico": {
     name: "University of New Mexico",
     location: "Albuquerque, New Mexico",
-    region: "West",
+    region: "Southwest",
     pipeline: "Engineering and National Laboratory Science (UNM's School of Engineering has a specific and structurally irreplaceable relationship with Sandia National Laboratories and Kirtland Air Force Base — both",
     hidden_pathway: "The hidden pathway at UNM is the Sandia National Laboratories security clearance pipeline combined with the Intel semiconductor workforce access. Sand",
     the_room: "UNM enrolls approximately 22,000 students on a campus in central Albuquerque designed by John Gaw Meem in the Pueblo Rev",
     lifestyle: "",
-    grad_cities: "Albuquerque NM (48%) | Santa Fe NM (10%) | Phoenix AZ (7%) | Denver CO (6%) | Los Angeles CA (5%) | Washington DC (5%) |",
-    mayNotThriveIf: "You want a school outside the Southwest or without a defense/national-lab focus - UNM's identity is deeply tied to Sandia and Kirtland.",
-    campusSocialCulture: "Southwestern, security-clearance-serious, Pueblo Revival architecture shapes a genuinely distinctive regional identity.",
-    socialCapital: "Engineering cohorts build direct Sandia National Labs relationships, including security clearance pathways rare at other schools.",
-    culturalCapital: "National lab/defense-tech prestige - UNM signals real access to one of the most secure research ecosystems in the country.",
-    networkCapital: "A structurally irreplaceable Sandia National Labs pipeline, plus growing Intel semiconductor workforce ties."
+    grad_cities: "Albuquerque NM (48%) | Santa Fe NM (10%) | Phoenix AZ (7%) | Denver CO (6%) | Los Angeles CA (5%) | Washington DC (5%) |"
   },
   "New Mexico State University": {
     name: "New Mexico State University",
     location: "Las Cruces, New Mexico",
-    region: "West",
+    region: "Southwest",
     pipeline: "Engineering and Space Technology (NMSU's College of Engineering is anchored by a specific and unusual asset — White Sands Missile Range, the largest military installation in the United States at 3,200",
     hidden_pathway: "The hidden pathway at NMSU is the chile pepper research program's intersection with the global specialty food industry. The Fabian Garcia Science Cent",
     the_room: "NMSU enrolls approximately 14,000 students on a campus in Las Cruces — a city of 115,000 in the Mesilla Valley at the ed",
     lifestyle: "",
-    grad_cities: "Las Cruces NM (32%) | Albuquerque NM (12%) | El Paso TX (14%) | Santa Fe NM (7%) | Phoenix AZ (6%) | Denver CO (5%) | Ac",
-    mayNotThriveIf: "You want a large city or a school outside the Southwest borderlands - Las Cruces is small and deeply tied to White Sands' defense-testing identity.",
-    campusSocialCulture: "Practical, defense-and-space-serious, genuinely binational (El Paso proximity) - the largest military installation in the US shapes real career pathways.",
-    socialCapital: "Engineering cohorts build direct White Sands Missile Range relationships, a rare space/defense testing industry tie.",
-    culturalCapital: "Space-and-defense-testing prestige - NMSU signals access to one of the largest and most unique military research installations in the world.",
-    networkCapital: "A uniquely positioned pipeline into White Sands Missile Range space/defense testing, plus a distinctive chile pepper/specialty food research niche."
+    grad_cities: "Las Cruces NM (32%) | Albuquerque NM (12%) | El Paso TX (14%) | Santa Fe NM (7%) | Phoenix AZ (6%) | Denver CO (5%) | Ac"
   },
   "Berklee College of Music": {
     name: "Berklee College of Music",
@@ -2684,12 +1795,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Berklee is the global alumni network's specific density in the rooms where music is actually made. Every major recording studio ",
     the_room: "Berklee enrolls approximately 6,000 students on a campus that occupies multiple buildings along Massachusetts Avenue in ",
     lifestyle: "",
-    grad_cities: "Boston MA (22%) | Los Angeles CA (32%) | New York NY (20%) | Nashville TN (7%) | London UK (4%) | International music ma",
-    mayNotThriveIf: "You want a traditional academic or non-music-industry career path - Berklee's identity is total immersion in professional music production.",
-    campusSocialCulture: "Creatively intense, industry-obsessed, genuinely global - students arrive already building professional music careers, not just studying them.",
-    socialCapital: "The alumni network's density in actual working studios creates direct professional access unmatched by any peer institution.",
-    culturalCapital: "The single highest music-production prestige in the world - Berklee signals genuine industry-insider credibility.",
-    networkCapital: "The most influential music production alumni network in the world, embedded directly in major studios across LA, Nashville, and NYC."
+    grad_cities: "Boston MA (22%) | Los Angeles CA (32%) | New York NY (20%) | Nashville TN (7%) | London UK (4%) | International music ma"
   },
   "Fashion Institute of Technology": {
     name: "Fashion Institute of Technology",
@@ -2699,12 +1805,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at FIT is the Cosmetics and Fragrance Marketing program's monopoly position in the beauty industry management pipeline. The $600 bi",
     the_room: "FIT enrolls approximately 8,500 students on a campus that occupies a full city block in the Chelsea neighborhood of Manh",
     lifestyle: "",
-    grad_cities: "New York NY (58%) | Los Angeles CA (10%) | Miami FL (6%) | London UK (4%) | Paris France (3%) | International fashion ca",
-    mayNotThriveIf: "You want a career outside fashion/beauty industries - FIT's entire infrastructure is built around direct industry placement in these specific fields.",
-    campusSocialCulture: "Fashion-industry-embedded, Chelsea-chic, genuinely international - the campus functions as an extension of the fashion world itself.",
-    socialCapital: "Direct ties to the actual infrastructure of the global fashion and beauty industries create real professional access from day one.",
-    culturalCapital: "The most institutionally connected fashion education prestige in America - FIT signals genuine industry-insider status.",
-    networkCapital: "A near-monopoly position in the $600 billion beauty industry's management pipeline, plus deep global fashion industry ties."
+    grad_cities: "New York NY (58%) | Los Angeles CA (10%) | Miami FL (6%) | London UK (4%) | Paris France (3%) | International fashion ca"
   },
   "Pratt Institute": {
     name: "Pratt Institute",
@@ -2714,12 +1815,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Pratt is the Pratt sculpture garden combined with the Clinton Hill and Bushwick community access for fine arts students. The Pra",
     the_room: "Pratt enrolls approximately 4,700 students on a 25-acre wooded campus in the Clinton Hill neighborhood of Brooklyn — one",
     lifestyle: "",
-    grad_cities: "New York NY (52%) | Los Angeles CA (14%) | San Francisco CA (6%) | Chicago IL (5%) | Boston MA (4%) | London UK (4%) | I",
-    mayNotThriveIf: "You want a career outside design/architecture/fine arts - Pratt's entire identity centers on creative practice and critical design theory.",
-    campusSocialCulture: "Creatively intense, Brooklyn-embedded, critically engaged - the wooded Clinton Hill campus anchors a genuinely artistic community.",
-    socialCapital: "Faculty drawn directly from New York City's working architecture/design firms create real industry mentorship relationships.",
-    culturalCapital: "Elite architecture/fine arts prestige - Pratt signals serious critical design credibility respected across the creative industries.",
-    networkCapital: "A deep New York City architecture and design industry network, reinforced by faculty who are actively practicing in the field."
+    grad_cities: "New York NY (52%) | Los Angeles CA (14%) | San Francisco CA (6%) | Chicago IL (5%) | Boston MA (4%) | London UK (4%) | I"
+  },
+  "Rochester Institute of Technology": {
+    name: "Rochester Institute of Technology",
+    location: "Rochester, New York",
+    region: "Northeast",
+    pipeline: "Computer Science and Software Engineering (RIT's B. Thomas Golisano College of Computing and Information Sciences is consistently ranked among the top undergraduate computing programs in the United St",
+    hidden_pathway: "The hidden pathway at RIT is the photonics and optical sciences industry concentration in Rochester and the specific career pathway it creates for RIT",
+    the_room: "RIT enrolls approximately 18,000 students on a campus in Henrietta, a suburb of Rochester — a Brutalist brick campus des",
+    lifestyle: "",
+    grad_cities: "New York NY (18%) | Boston MA (8%) | Rochester NY (16%) | San Francisco CA (12%) | Seattle WA (10%) | Austin TX (6%) | C"
   },
   "Marquette University": {
     name: "Marquette University",
@@ -2729,12 +1835,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Marquette is the Jesuit network's specific professional reciprocity combined with the Milwaukee manufacturing corridor's relativ",
     the_room: "Marquette enrolls approximately 11,000 students on a campus that occupies the western edge of downtown Milwaukee — an ur",
     lifestyle: "",
-    grad_cities: "Milwaukee WI (38%) | Chicago IL (22%) | Madison WI (8%) | Minneapolis MN (5%) | Washington DC (5%) | New York NY (5%) | ",
-    mayNotThriveIf: "You want a secular campus or a school outside Wisconsin's legal/business orbit - Marquette's Jesuit identity and Milwaukee ties run deep.",
-    campusSocialCulture: "Urban, Jesuit-values-driven, genuinely embedded in downtown Milwaukee - the manufacturing corridor's proximity shapes practical ambition.",
-    socialCapital: "The Jesuit alumni network's professional reciprocity creates real hiring relationships across Wisconsin's legal and business sectors.",
-    culturalCapital: "Wisconsin's top legal prestige - Marquette signals genuine connection to state courts, legislature, and judiciary.",
-    networkCapital: "The most connected law school network in Wisconsin, reinforced by Jesuit alumni reciprocity and Milwaukee manufacturing ties."
+    grad_cities: "Milwaukee WI (38%) | Chicago IL (22%) | Madison WI (8%) | Minneapolis MN (5%) | Washington DC (5%) | New York NY (5%) | "
   },
   "Marshall University": {
     name: "Marshall University",
@@ -2744,12 +1845,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Marshall is the forensic accounting program's specific pipeline into federal financial crime investigation. The FBI's Financial ",
     the_room: "Marshall enrolls approximately 13,000 students on a campus in downtown Huntington — a city of 48,000 at the confluence o",
     lifestyle: "",
-    grad_cities: "Huntington-Charleston WV (35%) | Columbus OH (12%) | Pittsburgh PA (8%) | Lexington KY (7%) | Cincinnati OH (7%) | Washi",
-    mayNotThriveIf: "You want a large city or a school outside Appalachia - Huntington is small and deeply tied to the tri-state region's identity.",
-    campusSocialCulture: "Practical, medically-serious, genuinely community-oriented - the confluence-city setting shapes a tight regional identity.",
-    socialCapital: "Pre-med cohorts build direct clinical relationships as one of only two medical schools serving the entire tri-state region.",
-    culturalCapital: "Regional medical prestige with a rare forensic accounting specialty - Marshall signals both clinical seriousness and niche financial-crime expertise.",
-    networkCapital: "Primary physician training pipeline for the tri-state region, plus a direct FBI Financial Crimes forensic accounting connection."
+    grad_cities: "Huntington-Charleston WV (35%) | Columbus OH (12%) | Pittsburgh PA (8%) | Lexington KY (7%) | Cincinnati OH (7%) | Washi"
   },
   "Carleton College": {
     name: "Carleton College",
@@ -2759,12 +1855,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Carleton is the Cowling Arboretum's research infrastructure combined with the geology department's specific strength in earth sc",
     the_room: "Carleton enrolls approximately 2,100 students on a campus in Northfield, Minnesota — a small city of 22,000 sixty miles ",
     lifestyle: "",
-    grad_cities: "Minneapolis-St. Paul MN (22%) | Chicago IL (12%) | New York NY (14%) | Washington DC (12%) | San Francisco CA (10%) | Bo",
-    mayNotThriveIf: "You want a large university or urban setting - Carleton is small, rural Minnesota, and intensely academic in identity.",
-    campusSocialCulture: "Intellectually intense, quirky, genuinely collaborative - the Arboretum's research infrastructure shapes hands-on scientific engagement.",
-    socialCapital: "Small size plus shared academic intensity creates close bonds that carry directly into top PhD programs nationwide.",
-    culturalCapital: "One of the highest per-capita PhD-production prestige levels in the country - Carleton signals serious scholarly ambition.",
-    networkCapital: "A PhD placement pipeline that rivals any institution in America, reinforced by a distinctive Arboretum-based earth sciences research infrastructure."
+    grad_cities: "Minneapolis-St. Paul MN (22%) | Chicago IL (12%) | New York NY (14%) | Washington DC (12%) | San Francisco CA (10%) | Bo"
   },
   "Howard University": {
     name: "Howard University",
@@ -2774,12 +1865,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Howard is the Capstone Network — the informal name for the Howard University alumni community that functions as one of the most ",
     the_room: "Howard enrolls approximately 10,000 students on a campus in the Shaw neighborhood of Washington DC — five blocks north o",
     lifestyle: "",
-    grad_cities: "Washington DC (42%) | New York NY (16%) | Atlanta GA (8%) | Los Angeles CA (7%) | Chicago IL (5%) | Baltimore MD (4%) | ",
-    mayNotThriveIf: "You want a predominantly white institution experience or a campus outside DC's political center - Howard's identity and location are inseparable from both.",
-    campusSocialCulture: "Historically significant, politically engaged, deeply communal - the Capstone Network functions as an active, lifelong professional community.",
-    socialCapital: "The Capstone Network operates as one of the most functional and reciprocal alumni communities in American higher education.",
-    culturalCapital: "The single most historically significant Black law school prestige in America - Howard signals genuine civil rights legacy and leadership credibility.",
-    networkCapital: "An extraordinarily active alumni network (the Capstone Network) spanning law, government, and business at the highest levels."
+    grad_cities: "Washington DC (42%) | New York NY (16%) | Atlanta GA (8%) | Los Angeles CA (7%) | Chicago IL (5%) | Baltimore MD (4%) | "
   },
   "Spelman College": {
     name: "Spelman College",
@@ -2789,12 +1875,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Spelman is the Atlanta University Center Consortium's collective resources combined with the specific professional network that ",
     the_room: "Spelman enrolls approximately 2,200 women on a campus in the West End neighborhood of Atlanta adjacent to Morehouse Coll",
     lifestyle: "",
-    grad_cities: "Atlanta GA (42%) | New York NY (12%) | Washington DC (10%) | Los Angeles CA (7%) | Charlotte NC (5%) | Chicago IL (4%) |",
-    mayNotThriveIf: "You want a co-ed campus or a school outside the AUC Consortium - Spelman is women-only and deeply embedded in Atlanta's historically Black college community.",
-    campusSocialCulture: "Intensely academic, mission-driven, sisterhood-centered - the AUC Consortium's shared resources create a genuinely powerful collective identity.",
-    socialCapital: "Consortium access plus tight cohort bonds create an unusually powerful and lasting professional network for Black women in STEM.",
-    culturalCapital: "The single highest prestige for Black women in STEM PhD production - Spelman signals rare, documented academic excellence.",
-    networkCapital: "The most productive STEM PhD pipeline for Black women in the country, reinforced by the AUC Consortium's collective resources."
+    grad_cities: "Atlanta GA (42%) | New York NY (12%) | Washington DC (10%) | Los Angeles CA (7%) | Charlotte NC (5%) | Chicago IL (4%) |"
   },
   "Morehead State University": {
     name: "Morehead State University",
@@ -2804,12 +1885,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Morehead State is the Space Science Center's CubeSat program and its specific positioning in the small satellite industry. The c",
     the_room: "MSU enrolls approximately 10,000 students on a campus in Morehead — a city of 7,500 at the gateway to the Daniel Boone N",
     lifestyle: "",
-    grad_cities: "Morehead-Eastern Kentucky (30%) | Lexington KY (20%) | Ashland-Huntington KY/WV (10%) | Louisville KY (8%) | Cincinnati ",
-    mayNotThriveIf: "You want a large city or a school outside Appalachia - Morehead is small, rural, and gateway-to-national-forest in identity.",
-    campusSocialCulture: "Practical, space-science-serious, genuinely rural Appalachian - the Space Science Center's satellite dish is an unexpected point of pride.",
-    socialCapital: "CubeSat program cohorts build direct ties into the small satellite industry, a rare specialty for a regional public university.",
-    culturalCapital: "Space-science prestige at Appalachian-regional scale - Morehead State signals unexpected access to satellite technology careers.",
-    networkCapital: "A distinctive small-satellite/CubeSat industry pipeline, uniquely positioned for a school of its size and region."
+    grad_cities: "Morehead-Eastern Kentucky (30%) | Lexington KY (20%) | Ashland-Huntington KY/WV (10%) | Louisville KY (8%) | Cincinnati "
   },
   "Franklin and Marshall College": {
     name: "Franklin and Marshall College",
@@ -2819,27 +1895,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at F&M is the Ware Institute for Civic Life and its specific connection to the Lancaster civic community as a professional and rese",
     the_room: "F&M enrolls approximately 2,400 students on a campus in Lancaster, Pennsylvania — a campus of Georgian and Federal-style",
     lifestyle: "",
-    grad_cities: "Philadelphia PA (28%) | New York NY (18%) | Washington DC (10%) | Lancaster PA (8%) | Baltimore MD (6%) | Boston MA (6%)",
-    mayNotThriveIf: "You want a large university or urban setting - F&M is small and set in a historic Georgian-style Pennsylvania campus.",
-    campusSocialCulture: "Pre-med-serious, civically engaged, historically preserved - the Ware Institute connects students directly to Lancaster's civic life.",
-    socialCapital: "Strong pre-med cohort bonds carry directly into consistently high medical school acceptance outcomes.",
-    culturalCapital: "Documented pre-medical excellence prestige - F&M signals genuine, proven medical school readiness.",
-    networkCapital: "One of the strongest pre-medical placement records of any Northeast liberal arts college, reinforced by real civic-engagement infrastructure."
+    grad_cities: "Philadelphia PA (28%) | New York NY (18%) | Washington DC (10%) | Lancaster PA (8%) | Baltimore MD (6%) | Boston MA (6%)"
   },
   "Occidental College": {
     name: "Occidental College",
     location: "Los Angeles, California",
-    region: "West",
+    region: "California",
     pipeline: "Diplomacy and International Relations (the Diplomacy and World Affairs program at Occidental is consistently ranked among the top five at any liberal arts college in the country — the program's combin",
     hidden_pathway: "The hidden pathway at Occidental is the Urban and Environmental Policy program's specific use of Los Angeles as a living laboratory for the most conse",
     the_room: "Occidental enrolls approximately 2,100 students on a campus in the Eagle Rock neighborhood of Los Angeles — a hillside c",
     lifestyle: "",
-    grad_cities: "Los Angeles CA (42%) | San Francisco CA (12%) | New York NY (10%) | Washington DC (8%) | Seattle WA (4%) | Academic and ",
-    mayNotThriveIf: "You want a large university or a school outside a major city's policy conversations - Occidental's small size is paired with real LA-embedded urban policy work.",
-    campusSocialCulture: "Intellectually engaged, policy-minded, genuinely LA-embedded - Eagle Rock's hillside setting anchors a close-knit but globally-focused community.",
-    socialCapital: "The Urban and Environmental Policy program's use of LA as a living laboratory creates real civic and policy relationships.",
-    culturalCapital: "Top-five diplomacy program prestige at liberal-arts scale - Occidental signals genuine international relations seriousness.",
-    networkCapital: "A top-tier diplomacy/international relations network, reinforced by direct urban policy work using Los Angeles as a real-world laboratory."
+    grad_cities: "Los Angeles CA (42%) | San Francisco CA (12%) | New York NY (10%) | Washington DC (8%) | Seattle WA (4%) | Academic and "
   },
   "Bryn Mawr College": {
     name: "Bryn Mawr College",
@@ -2849,27 +1915,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Bryn Mawr is the Graduate School of Arts and Sciences and its specific effect on undergraduate intellectual life. Bryn Mawr is t",
     the_room: "Bryn Mawr enrolls approximately 1,800 undergraduates on a campus in the Main Line suburb of Bryn Mawr — one of the most ",
     lifestyle: "",
-    grad_cities: "Philadelphia PA (25%) | New York NY (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco CA (7%) | Academic and ",
-    mayNotThriveIf: "You want a co-ed campus or a school without a strong grad-school-bound culture - Bryn Mawr's women's college identity and academic intensity run deep.",
-    campusSocialCulture: "Intensely intellectual, historic Main Line setting, genuinely supportive women's-college community with real graduate-school ambition.",
-    socialCapital: "Undergraduate access to the Graduate School of Arts and Sciences creates rare direct mentorship from PhD-track scholars.",
-    culturalCapital: "Extraordinary graduate/professional school placement prestige - Bryn Mawr signals serious academic trajectory from day one.",
-    networkCapital: "One of the strongest graduate/professional school placement pipelines of any undergraduate institution in the country."
+    grad_cities: "Philadelphia PA (25%) | New York NY (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco CA (7%) | Academic and "
   },
   "California State University San Bernardino": {
     name: "California State University San Bernardino",
     location: "San Bernardino, California",
-    region: "West",
+    region: "California",
     pipeline: "Business and Logistics (CSUSB's Jack H. Brown College of Business and Public Administration serves the Inland Empire's specific economic infrastructure — the San Bernardino and Riverside counties cons",
     hidden_pathway: "The hidden pathway at CSUSB is the Inland Empire logistics ecosystem's specific career economics for supply chain and operations management graduates.",
     the_room: "CSUSB enrolls approximately 20,000 students on a campus at the base of the San Bernardino Mountains in San Bernardino — ",
     lifestyle: "",
-    grad_cities: "Inland Empire CA (55%) | Los Angeles CA (18%) | San Diego CA (8%) | Phoenix AZ (5%) | Las Vegas NV (4%) | Academic progr",
-    mayNotThriveIf: "You want a coastal or urban-core setting - CSUSB is deeply embedded in the Inland Empire's logistics-and-warehouse economy.",
-    campusSocialCulture: "Practical, logistics-industry-serious, genuinely community-oriented - the Inland Empire's massive distribution economy shapes real career pathways.",
-    socialCapital: "Business/logistics cohorts build direct ties to the Inland Empire's supply chain and operations management economy.",
-    culturalCapital: "Inland Empire logistics-industry identity - CSUSB signals genuine access to one of the largest distribution economies in the country.",
-    networkCapital: "A uniquely positioned pipeline into the Inland Empire's massive logistics/supply chain economic infrastructure."
+    grad_cities: "Inland Empire CA (55%) | Los Angeles CA (18%) | San Diego CA (8%) | Phoenix AZ (5%) | Las Vegas NV (4%) | Academic progr"
   },
   "Regent University": {
     name: "Regent University",
@@ -2879,12 +1935,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Regent is the Federalist Society pipeline's specific function within the conservative legal movement. The Federalist Society — t",
     the_room: "Regent enrolls approximately 11,000 students — predominantly online and graduate — on a campus in Virginia Beach adjacen",
     lifestyle: "",
-    grad_cities: "Virginia Beach-Norfolk VA (45%) | Washington DC (14%) | Richmond VA (8%) | Charlotte NC (5%) | Raleigh NC (5%) | Academi",
-    mayNotThriveIf: "You want a secular law/policy program or a traditional residential campus - Regent's identity is explicitly faith-based and largely online/graduate.",
-    campusSocialCulture: "Faith-driven, politically engaged, predominantly online - the conservative Christian legal and policy community shapes a distinct institutional mission.",
-    socialCapital: "Direct Federalist Society pipeline ties create real relationships within the conservative legal movement's professional network.",
-    culturalCapital: "Faith-and-policy prestige within a specific legal/political tradition - Regent signals genuine access to that movement's institutions.",
-    networkCapital: "A uniquely positioned pipeline into the conservative Christian legal and policy community via the Federalist Society connection."
+    grad_cities: "Virginia Beach-Norfolk VA (45%) | Washington DC (14%) | Richmond VA (8%) | Charlotte NC (5%) | Raleigh NC (5%) | Academi"
   },
   "University of Richmond": {
     name: "University of Richmond",
@@ -2894,12 +1945,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Richmond is the Jepson School of Leadership Studies' specific positioning as the only undergraduate leadership school in America",
     the_room: "Richmond enrolls approximately 4,100 undergraduates on a campus on the western edge of Richmond — a campus of Georgian R",
     lifestyle: "",
-    grad_cities: "Richmond VA (32%) | Washington DC (18%) | New York NY (12%) | Charlotte NC (7%) | Atlanta GA (5%) | Boston MA (5%) | Aca",
-    mayNotThriveIf: "You want a large university or a school without a formal leadership-studies focus - Richmond's Jepson School is a genuinely unique institutional core.",
-    campusSocialCulture: "Polished, leadership-focused, historically Georgian - the only undergraduate leadership school in America shapes a distinctly purposeful campus culture.",
-    socialCapital: "Jepson School cohorts build direct leadership-development relationships unmatched by any peer institution's undergraduate program.",
-    culturalCapital: "Unique undergraduate leadership-studies prestige - Richmond signals genuine, formally-credentialed leadership training.",
-    networkCapital: "Strong Virginia Bar/legal placement via T.C. Williams Law, plus the only formal undergraduate leadership studies credential in the country."
+    grad_cities: "Richmond VA (32%) | Washington DC (18%) | New York NY (12%) | Charlotte NC (7%) | Atlanta GA (5%) | Boston MA (5%) | Aca"
   },
   "Appalachian State University": {
     name: "Appalachian State University",
@@ -2909,12 +1955,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Appalachian State is the renewable energy and sustainability sector's specific concentration in North Carolina combined with App",
     the_room: "App State enrolls approximately 21,000 students on a campus in Boone — a mountain city of 20,000 at 3,300 feet elevation",
     lifestyle: "",
-    grad_cities: "Asheville NC (16%) | Charlotte NC (24%) | Raleigh-Durham NC (14%) | Boone NC (8%) | Greensboro NC (6%) | Atlanta GA (5%)",
-    mayNotThriveIf: "You want a large city or a flat, urban campus - Boone is a small mountain town at 3,300 feet, distinctly rural in character.",
-    campusSocialCulture: "Outdoorsy, sustainability-minded, genuinely mountain-town in feel - the renewable energy sector's regional concentration shapes forward-looking ambition.",
-    socialCapital: "Business cohorts build direct ties to Charlotte's financial corridor and North Carolina's growing renewable energy sector.",
-    culturalCapital: "Mountain-sustainability identity - App State signals genuine outdoor lifestyle plus rising renewable energy credibility.",
-    networkCapital: "Strong Charlotte financial services and Research Triangle tech placement, plus a distinctive renewable energy sector tie."
+    grad_cities: "Asheville NC (16%) | Charlotte NC (24%) | Raleigh-Durham NC (14%) | Boone NC (8%) | Greensboro NC (6%) | Atlanta GA (5%)"
   },
   "Bentley University": {
     name: "Bentley University",
@@ -2924,42 +1965,27 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Bentley is the Marketing Analytics program's specific positioning in a skill shortage that has persisted for a decade without re",
     the_room: "Bentley enrolls approximately 4,200 undergraduates on a campus in Waltham — a suburb 9 miles west of Boston on the Route",
     lifestyle: "",
-    grad_cities: "Boston MA (35%) | New York NY (14%) | Hartford CT (8%) | Providence RI (6%) | Washington DC (5%) | San Francisco CA (5%)",
-    mayNotThriveIf: "You want a broad liberal arts focus - Bentley is intensely business/accounting-focused with little room for exploration outside that track.",
-    campusSocialCulture: "Career-focused, accounting-serious, suburban Boston practicality - the Route 128 tech corridor's proximity adds real business energy.",
-    socialCapital: "Accounting cohorts build direct Big Four relationships, reinforced by a marketing analytics specialty facing a persistent decade-long skill shortage.",
-    culturalCapital: "New England's top accounting-program prestige - Bentley signals genuine Big Four readiness and analytical rigor.",
-    networkCapital: "One of the strongest Big Four accounting placement pipelines in New England, plus a marketing analytics niche in high demand."
+    grad_cities: "Boston MA (35%) | New York NY (14%) | Hartford CT (8%) | Providence RI (6%) | Washington DC (5%) | San Francisco CA (5%)"
   },
   "California Lutheran University": {
     name: "California Lutheran University",
     location: "Thousand Oaks, California",
-    region: "West",
+    region: "California",
     pipeline: "Business and Entrepreneurship (the School of Management at Cal Lutheran is the most distinctive business program in the Conejo Valley corridor — the university's specific positioning in Thousand Oaks,",
     hidden_pathway: "The hidden pathway at Cal Lutheran is the Center for Economic Research and Forecasting and its specific function in the regional California economic c",
     the_room: "Cal Lutheran enrolls approximately 4,000 students on a campus in Thousand Oaks — a planned city of 130,000 in the Conejo",
     lifestyle: "",
-    grad_cities: "Los Angeles CA (38%) | Ventura County CA (20%) | San Fernando Valley CA (10%) | San Diego CA (6%) | San Francisco CA (5%",
-    mayNotThriveIf: "You want a large university or urban core setting - Cal Lutheran is small and set in the planned, suburban Conejo Valley.",
-    campusSocialCulture: "Faith-informed, business-practical, genuinely suburban-comfortable - the Conejo Valley's planned-community setting shapes a low-key, career-focused culture.",
-    socialCapital: "Business cohorts build direct ties to the Conejo Valley corridor, reinforced by the university's regional economic forecasting research.",
-    culturalCapital: "Regional economic-forecasting credibility - Cal Lutheran signals genuine practical business insight tied to Southern California's economy.",
-    networkCapital: "Strong Conejo Valley/Ventura County business placement, anchored by the university's own regional economic research center."
+    grad_cities: "Los Angeles CA (38%) | Ventura County CA (20%) | San Fernando Valley CA (10%) | San Diego CA (6%) | San Francisco CA (5%"
   },
   "University of Wyoming": {
     name: "University of Wyoming",
     location: "Laramie, Wyoming",
-    region: "West",
+    region: "Mountain West",
     pipeline: "Petroleum and Energy Engineering (the University of Wyoming's College of Engineering and Applied Science has a specific and structurally irreplaceable position in Wyoming's petroleum and natural gas e",
     hidden_pathway: "The hidden pathway at the University of Wyoming is the Wyoming Permanent Mineral Trust Fund's specific effect on the institution and its graduates. Wy",
     the_room: "UW enrolls approximately 12,000 students on a campus in Laramie — a high plains city of 33,000 at 7,165 feet elevation o",
     lifestyle: "",
-    grad_cities: "Cheyenne WY (18%) | Casper WY (16%) | Laramie WY (10%) | Denver CO (14%) | Salt Lake City UT (8%) | Billings MT (5%) | A",
-    mayNotThriveIf: "You want a large city or a school outside the energy-industry orbit - Wyoming is small, high-plains, and deeply tied to petroleum/natural gas.",
-    campusSocialCulture: "Practical, energy-industry-serious, genuinely rural high-plains identity shaped by the state's mineral trust fund.",
-    socialCapital: "Petroleum engineering cohorts build direct ties into Wyoming's structurally irreplaceable energy economy.",
-    culturalCapital: "Energy-economy insider prestige - Wyoming signals genuine access to a state literally built on mineral wealth.",
-    networkCapital: "A structurally irreplaceable petroleum/natural gas industry pipeline, reinforced by the Permanent Mineral Trust Fund's institutional support."
+    grad_cities: "Cheyenne WY (18%) | Casper WY (16%) | Laramie WY (10%) | Denver CO (14%) | Salt Lake City UT (8%) | Billings MT (5%) | A"
   },
   "University of Alaska Fairbanks": {
     name: "University of Alaska Fairbanks",
@@ -2969,12 +1995,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UAF is the Poker Flat Research Range and its specific function for space science and geophysics students. Poker Flat, operated b",
     the_room: "UAF enrolls approximately 7,500 students on a campus on a ridge above Fairbanks — a city of 32,000 in the Interior of Al",
     lifestyle: "",
-    grad_cities: "Fairbanks AK (20%) | Anchorage AK (24%) | Juneau AK (6%) | Seattle WA (12%) | Denver CO (6%) | Academic and research pro",
-    mayNotThriveIf: "You want a mild climate or a large city - Fairbanks is remote, extremely cold, and deeply tied to Arctic/petroleum engineering.",
-    campusSocialCulture: "Rugged, research-serious, genuinely Arctic in character - the Trans-Alaska Pipeline's presence shapes a uniquely specialized engineering culture.",
-    socialCapital: "Arctic engineering cohorts build direct ties into Alaska's energy economy, plus rare space science access via Poker Flat.",
-    culturalCapital: "Arctic engineering prestige - UAF signals genuine expertise in one of the most extreme and specialized engineering environments in the world.",
-    networkCapital: "A structurally irreplaceable Alaska energy/pipeline industry pipeline, plus a unique space science research range unmatched elsewhere."
+    grad_cities: "Fairbanks AK (20%) | Anchorage AK (24%) | Juneau AK (6%) | Seattle WA (12%) | Denver CO (6%) | Academic and research pro"
   },
   "University of Vermont": {
     name: "University of Vermont",
@@ -2984,12 +2005,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UVM is the Burlington food systems economy and its specific intersection with the university's sustainable agriculture and food ",
     the_room: "UVM enrolls approximately 13,000 students on a campus on a hillside above Burlington — a city of 45,000 on the eastern s",
     lifestyle: "",
-    grad_cities: "Burlington VT (28%) | Boston MA (16%) | New York NY (10%) | Portland ME (6%) | Montpelier VT (5%) | Washington DC (5%) |",
-    mayNotThriveIf: "You want an urban campus or a school outside the environmental/sustainability focus - UVM's identity is deeply tied to Vermont's food and land ethos.",
-    campusSocialCulture: "Progressive, environmentally minded, genuinely community-food-system-oriented - Burlington's lake-adjacent setting reinforces the sustainability ethos.",
-    socialCapital: "Rubenstein School cohorts build direct ties into Burlington's food systems economy and sustainable agriculture networks.",
-    culturalCapital: "Environmental/sustainability prestige - UVM signals genuine credibility in one of the most respected environmental programs in the Northeast.",
-    networkCapital: "A strong environmental studies and sustainable food systems network, anchored directly in Burlington's real-world food economy."
+    grad_cities: "Burlington VT (28%) | Boston MA (16%) | New York NY (10%) | Portland ME (6%) | Montpelier VT (5%) | Washington DC (5%) |"
   },
   "College of the Ozarks": {
     name: "College of the Ozarks",
@@ -2999,12 +2015,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at College of the Ozarks is the Keeter Center Lodge and its specific function as a professional hospitality training environment. T",
     the_room: "College of the Ozarks enrolls approximately 1,500 students on a campus in Point Lookout — a community on the edge of Lak",
     lifestyle: "",
-    grad_cities: "Branson-Springfield MO (38%) | Kansas City MO (12%) | St. Louis MO (8%) | Tulsa OK (6%) | Little Rock AR (5%) | Academic",
-    mayNotThriveIf: "You want a conventional tuition-based college experience - this is a work college where students work instead of paying tuition, a genuinely different model.",
-    campusSocialCulture: "Work-ethic-centered, hospitality-trained, genuinely tight-knit - the Keeter Center Lodge doubles as a real hands-on professional training ground.",
-    socialCapital: "The work-college model creates uniquely practical professional bonds through shared labor and real hospitality operations experience.",
-    culturalCapital: "\"Hard work U\" identity - the College of the Ozarks signals genuine grit, self-sufficiency, and real hospitality-industry readiness.",
-    networkCapital: "Direct Branson tourism corridor placement, reinforced by real hands-on hospitality training unmatched by typical business programs."
+    grad_cities: "Branson-Springfield MO (38%) | Kansas City MO (12%) | St. Louis MO (8%) | Tulsa OK (6%) | Little Rock AR (5%) | Academic"
   },
   "Vassar College": {
     name: "Vassar College",
@@ -3014,12 +2025,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Vassar is the Hudson Valley arts community's specific transformation and Vassar's position at its center. The stretch of the Hud",
     the_room: "Vassar enrolls approximately 2,400 students on a campus in Poughkeepsie — a city of 30,000 on the eastern bank of the Hu",
     lifestyle: "",
-    grad_cities: "New York NY (38%) | Boston MA (10%) | Washington DC (8%) | Los Angeles CA (7%) | Hudson Valley NY (6%) | Academic and do",
-    mayNotThriveIf: "You want a pre-professional or non-arts-heavy focus - Vassar's identity is deeply rooted in studio art, film, and creative industries.",
-    campusSocialCulture: "Artistically serious, Hudson Valley-embedded, genuinely creative - the Loeb Art Center anchors a campus culture built around making and viewing art.",
-    socialCapital: "Studio art and film cohorts build direct ties into the Hudson Valley's transformed arts community and creative industries.",
-    culturalCapital: "Top-tier liberal-arts creative prestige - Vassar signals genuine artistic seriousness and access to a thriving regional arts scene.",
-    networkCapital: "A strong creative industries network, reinforced by direct position at the center of the Hudson Valley's arts community transformation."
+    grad_cities: "New York NY (38%) | Boston MA (10%) | Washington DC (8%) | Los Angeles CA (7%) | Hudson Valley NY (6%) | Academic and do"
   },
   "East Carolina University": {
     name: "East Carolina University",
@@ -3029,12 +2035,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at ECU is the Brody School of Medicine's specific rural medicine mission and its effect on medical school acceptance rates for ECU ",
     the_room: "ECU enrolls approximately 28,000 students on a campus in Greenville — a city of 92,000 in the coastal plain of Eastern N",
     lifestyle: "",
-    grad_cities: "Greenville NC (24%) | Raleigh-Durham NC (22%) | Charlotte NC (10%) | Wilmington NC (7%) | Washington DC (5%) | Virginia ",
-    mayNotThriveIf: "You want a large city or a school without a rural-medicine mission focus - ECU's identity is deeply tied to addressing physician shortages in Eastern NC.",
-    campusSocialCulture: "Mission-driven, medically serious, genuinely community-oriented - Brody's rural medicine focus shapes a real sense of civic purpose.",
-    socialCapital: "Pre-med cohorts build direct relationships shaped by Brody's explicit mission to serve rural and underserved communities.",
-    culturalCapital: "Mission-driven rural medicine prestige - ECU signals genuine commitment to healthcare access, not just clinical credentials.",
-    networkCapital: "A uniquely mission-focused rural medicine placement pipeline, addressing North Carolina's physician shortage directly."
+    grad_cities: "Greenville NC (24%) | Raleigh-Durham NC (22%) | Charlotte NC (10%) | Wilmington NC (7%) | Washington DC (5%) | Virginia "
   },
   "St. John's College": {
     name: "St. John's College",
@@ -3044,12 +2045,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at St. John's is the Great Books curriculum's specific function in the classical Christian school movement and the growing market f",
     the_room: "St. John's enrolls approximately 400 students on the Annapolis campus — a historic property in the center of Annapolis, ",
     lifestyle: "",
-    grad_cities: "Washington DC (22%) | New York NY (16%) | Annapolis-Baltimore MD (12%) | Santa Fe NM (8%) | Boston MA (7%) | Academic an",
-    mayNotThriveIf: "You want electives, majors, or a conventional curriculum - St. John's Great Books program is the entire curriculum, with no exceptions.",
-    campusSocialCulture: "Intensely intellectual, tiny, seminar-based - every student reads the same primary texts, creating a genuinely shared intellectual foundation.",
-    socialCapital: "The shared Great Books curriculum creates uniquely deep intellectual bonds across the entire tiny student body.",
-    culturalCapital: "The purest classical liberal-arts prestige in America - St. John's signals rare, rigorous analytical and argumentative training.",
-    networkCapital: "A distinctive law-school-preparation pipeline built on documented analytical reading and writing strength, unmatched by conventional curricula."
+    grad_cities: "Washington DC (22%) | New York NY (16%) | Annapolis-Baltimore MD (12%) | Santa Fe NM (8%) | Boston MA (7%) | Academic an"
   },
   "Providence College": {
     name: "Providence College",
@@ -3059,27 +2055,17 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Providence College is the Development of Western Civilization program's specific function as graduate school preparation. The DW",
     the_room: "Providence College enrolls approximately 4,400 undergraduates on a campus of Gothic stone buildings in the Smith Hill ne",
     lifestyle: "",
-    grad_cities: "Providence RI (28%) | Boston MA (24%) | New York NY (12%) | Hartford CT (7%) | Washington DC (6%) | Academic and profess",
-    mayNotThriveIf: "You want to skip a shared core curriculum - the Development of Western Civilization program is a defining, non-optional part of every student's experience.",
-    campusSocialCulture: "Gothic, tradition-rich, Dominican-Catholic values-driven - the shared DWC seminar experience unites the entire student body.",
-    socialCapital: "The shared DWC seminar creates deep intellectual bonds that carry directly into Providence/Boston's business networks.",
-    culturalCapital: "Values-driven business prestige - Providence College signals both intellectual seriousness and real financial-services readiness.",
-    networkCapital: "Strong Providence/Boston financial services and consulting placement, reinforced by a distinctive shared core curriculum credential."
+    grad_cities: "Providence RI (28%) | Boston MA (24%) | New York NY (12%) | Hartford CT (7%) | Washington DC (6%) | Academic and profess"
   },
   "San Francisco State University": {
     name: "San Francisco State University",
     location: "San Francisco, California",
-    region: "West",
+    region: "California",
     pipeline: "Creative Arts and Cinema (San Francisco State University's College of Liberal and Creative Arts houses one of the most historically significant film programs in America — the Cinema department at SFSU",
     hidden_pathway: "The hidden pathway at SFSU is the Cinema department's specific alumni network in the Bay Area and national film industry. SFSU's film program has been",
     the_room: "SFSU enrolls approximately 27,000 students on a campus in the Stonestown neighborhood of San Francisco — the southwester",
     lifestyle: "",
-    grad_cities: "San Francisco CA (42%) | Silicon Valley CA (18%) | Los Angeles CA (8%) | Seattle WA (5%) | New York NY (4%) | Academic p",
-    mayNotThriveIf: "You want a small campus or a career outside creative arts/film - SFSU is large and its cinema program's identity runs deep.",
-    campusSocialCulture: "Creatively serious, urban, genuinely diverse - the historically significant Cinema department shapes a real film-industry-facing culture.",
-    socialCapital: "Cinema department cohorts build direct Bay Area and national film industry relationships through a historically significant alumni network.",
-    culturalCapital: "Historically significant film-program prestige - SFSU signals genuine cinema credibility despite public-school scale.",
-    networkCapital: "One of the most historically significant film industry alumni networks in the country, reinforced by direct Bay Area proximity."
+    grad_cities: "San Francisco CA (42%) | Silicon Valley CA (18%) | Los Angeles CA (8%) | Seattle WA (5%) | New York NY (4%) | Academic p"
   },
   "Illinois Wesleyan University": {
     name: "Illinois Wesleyan University",
@@ -3089,42 +2075,27 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Illinois Wesleyan is the State Farm corporate campus's specific function as a career laboratory for IWU business, psychology, an",
     the_room: "Illinois Wesleyan enrolls approximately 1,600 students on a compact residential campus in the northern section of Bloomi",
     lifestyle: "",
-    grad_cities: "Bloomington-Normal IL (22%) | Chicago IL (32%) | Springfield IL (6%) | Indianapolis IN (6%) | St. Louis MO (5%) | Academ",
-    mayNotThriveIf: "You want a large university or urban setting - Illinois Wesleyan is small and set in a compact Midwest college town.",
-    campusSocialCulture: "Theatre-serious, professionally trained, genuinely intimate - the State Farm corporate campus adds real business-career-laboratory texture.",
-    socialCapital: "Theatre Arts cohorts build professional-caliber bonds through the program's respected training model, plus direct State Farm career ties.",
-    culturalCapital: "Midwest theatre-training prestige - Illinois Wesleyan signals genuine professional performing-arts credibility.",
-    networkCapital: "One of the most respected undergraduate theatre placement pipelines in the Midwest, plus a direct State Farm corporate career pathway."
+    grad_cities: "Bloomington-Normal IL (22%) | Chicago IL (32%) | Springfield IL (6%) | Indianapolis IN (6%) | St. Louis MO (5%) | Academ"
   },
   "Eastern Washington University": {
     name: "Eastern Washington University",
     location: "Cheney, Washington",
-    region: "West",
+    region: "Pacific Northwest",
     pipeline: "Physical Therapy and Health Sciences (the EWU Doctor of Physical Therapy program is one of the most respected in the Pacific Northwest — the program's clinical placement network spans the Spokane metr",
     hidden_pathway: "The hidden pathway at EWU is the physical therapy program's specific positioning in Washington State's rural healthcare shortage. Rural Eastern Washin",
     the_room: "EWU enrolls approximately 12,000 students on a campus in Cheney — a college town of 12,000 in the Channeled Scablands of",
     lifestyle: "",
-    grad_cities: "Spokane WA (38%) | Seattle WA (14%) | Yakima WA (6%) | Tri-Cities WA (6%) | Coeur d'Alene ID (7%) | Portland OR (5%) | A",
-    mayNotThriveIf: "You want a large city or a school outside the rural-healthcare mission - EWU's PT program is deeply tied to serving underserved Eastern Washington.",
-    campusSocialCulture: "Practical, healthcare-mission-driven, genuinely rural-community-oriented - the Channeled Scablands setting shapes a grounded campus identity.",
-    socialCapital: "DPT cohorts build direct clinical relationships across Spokane's healthcare network and rural placement sites.",
-    culturalCapital: "Rural-healthcare-mission prestige - EWU signals genuine commitment to addressing healthcare access gaps.",
-    networkCapital: "A respected physical therapy clinical placement network spanning the Spokane metro and rural Eastern Washington."
+    grad_cities: "Spokane WA (38%) | Seattle WA (14%) | Yakima WA (6%) | Tri-Cities WA (6%) | Coeur d'Alene ID (7%) | Portland OR (5%) | A"
   },
   "Sam Houston State University": {
     name: "Sam Houston State University",
     location: "Huntsville, Texas",
-    region: "Southeast",
+    region: "Texas + Southwest",
     pipeline: "Criminal Justice and Forensic Science (the College of Criminal Justice at Sam Houston State University is one of the most respected and most cited criminal justice academic programs in the United Stat",
     hidden_pathway: "The hidden pathway at Sam Houston State is the College of Criminal Justice's specific positioning as a national research and policy institution disgui",
     the_room: "SHSU enrolls approximately 22,000 students on a campus in Huntsville — a city of 45,000 in the piney woods of East Texas",
     lifestyle: "",
-    grad_cities: "Houston TX (32%) | Huntsville TX (16%) | Dallas TX (10%) | Austin TX (8%) | San Antonio TX (6%) | Federal agencies natio",
-    mayNotThriveIf: "You want a career outside criminal justice/forensics - SHSU's national reputation and identity are deeply tied to this single field.",
-    campusSocialCulture: "Practical, criminal-justice-serious, genuinely East Texas in character - the College of Criminal Justice's national reputation shapes real career focus.",
-    socialCapital: "Criminal justice cohorts build direct federal agency relationships through one of the most cited programs in the country.",
-    culturalCapital: "The most respected criminal justice academic prestige in the country - SHSU signals genuine national research credibility.",
-    networkCapital: "A uniquely powerful federal agency placement pipeline, reinforced by the most cited criminal justice research program in America."
+    grad_cities: "Houston TX (32%) | Huntsville TX (16%) | Dallas TX (10%) | Austin TX (8%) | San Antonio TX (6%) | Federal agencies natio"
   },
   "Dickinson College": {
     name: "Dickinson College",
@@ -3134,12 +2105,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Dickinson is the Dickinson College Farm and the Center for Sustainability Education's specific function as professional credenti",
     the_room: "Dickinson enrolls approximately 2,200 students on a campus in Carlisle — a historic Pennsylvania market town of 20,000 a",
     lifestyle: "",
-    grad_cities: "Philadelphia PA (20%) | Washington DC (16%) | New York NY (12%) | Harrisburg PA (8%) | Baltimore MD (7%) | Academic and ",
-    mayNotThriveIf: "You want a large university or urban setting - Dickinson is small and set in a historic Pennsylvania market town.",
-    campusSocialCulture: "Globally minded, sustainability-serious, historically preserved - the College Farm adds hands-on sustainability credentialing few peers offer.",
-    socialCapital: "International studies cohorts build direct global affairs relationships, reinforced by the Clarke Forum's contemporary issues programming.",
-    culturalCapital: "Global-affairs prestige with real sustainability credibility - Dickinson signals both international seriousness and practical environmental expertise.",
-    networkCapital: "A globally oriented international studies network, plus a distinctive sustainable agriculture credential via the College Farm."
+    grad_cities: "Philadelphia PA (20%) | Washington DC (16%) | New York NY (12%) | Harrisburg PA (8%) | Baltimore MD (7%) | Academic and "
   },
   "Hamilton College": {
     name: "Hamilton College",
@@ -3149,12 +2115,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Hamilton is the open curriculum's specific effect on intellectual confidence and the professional outcomes this confidence produ",
     the_room: "Hamilton enrolls approximately 2,000 students on a campus atop College Hill in Clinton — a village of 1,800 in the Mohaw",
     lifestyle: "",
-    grad_cities: "New York NY (28%) | Boston MA (12%) | Washington DC (10%) | Albany NY (8%) | Philadelphia PA (6%) | Academic and doctora",
-    mayNotThriveIf: "You want defined requirements or structured guidance - Hamilton's open curriculum rewards students who already know how to design their own path.",
-    campusSocialCulture: "Intimate, intellectually confident, rural Mohawk Valley setting - the open curriculum shapes genuinely self-directed students.",
-    socialCapital: "Small size plus shared open-curriculum self-direction creates close bonds among intellectually independent classmates.",
-    culturalCapital: "Elite writing-program prestige - Hamilton signals genuine intellectual confidence and communications excellence.",
-    networkCapital: "One of the most respected writing/communications alumni networks of any liberal arts college in the country."
+    grad_cities: "New York NY (28%) | Boston MA (12%) | Washington DC (10%) | Albany NY (8%) | Philadelphia PA (6%) | Academic and doctora"
   },
   "Barnard College": {
     name: "Barnard College",
@@ -3164,12 +2125,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Barnard is the Barnard-Columbia cross-registration system and its specific function in creating a dual institutional identity. B",
     the_room: "Barnard enrolls approximately 2,600 students on a campus of nine acres on the Upper West Side of Manhattan — directly ac",
     lifestyle: "",
-    grad_cities: "New York NY (52%) | Los Angeles CA (10%) | Washington DC (8%) | Boston MA (6%) | San Francisco CA (5%) | Academic and pr",
-    mayNotThriveIf: "You want a co-ed campus or a large suburban setting - Barnard is women-only and tiny, embedded directly in Manhattan.",
-    campusSocialCulture: "Urban, media-embedded, women-centered - the Columbia cross-registration creates a genuinely dual institutional identity and broader resource access.",
-    socialCapital: "Direct NYC media/publishing industry proximity plus Columbia cross-registration creates uniquely broad professional networking.",
-    culturalCapital: "Elite women's-college prestige with real media-industry access - Barnard signals both intellectual seriousness and NYC insider status.",
-    networkCapital: "One of the most direct media/publishing industry pipelines of any liberal arts college, reinforced by Columbia's broader resources."
+    grad_cities: "New York NY (52%) | Los Angeles CA (10%) | Washington DC (8%) | Boston MA (6%) | San Francisco CA (5%) | Academic and pr"
   },
   "Gettysburg College": {
     name: "Gettysburg College",
@@ -3179,42 +2135,27 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Gettysburg College is the Civil War Institute's specific function as a professional network for the historic preservation, publi",
     the_room: "Gettysburg enrolls approximately 2,400 students on a campus adjacent to the Gettysburg National Military Park — the most",
     lifestyle: "",
-    grad_cities: "Baltimore MD (18%) | Washington DC (16%) | Philadelphia PA (14%) | Harrisburg PA (10%) | New York NY (8%) | Academic and",
-    mayNotThriveIf: "You want a large university or urban setting - Gettysburg is small and its identity is deeply tied to its historic Civil War location.",
-    campusSocialCulture: "Historically immersive, intellectually serious, genuinely place-defined - the National Military Park's proximity shapes daily campus life.",
-    socialCapital: "Civil War Institute cohorts build direct relationships in historic preservation, public history, and museum professional networks.",
-    culturalCapital: "The most respected undergraduate Civil War studies prestige in America - Gettysburg signals genuine historical scholarship credibility.",
-    networkCapital: "A uniquely positioned public history/preservation network, anchored directly at one of America's most significant historic sites."
+    grad_cities: "Baltimore MD (18%) | Washington DC (16%) | Philadelphia PA (14%) | Harrisburg PA (10%) | New York NY (8%) | Academic and"
   },
   "University of North Texas": {
     name: "University of North Texas",
     location: "Denton, Texas",
-    region: "Southeast",
+    region: "Texas + Southwest",
     pipeline: "Music and Jazz Studies (the College of Music at the University of North Texas is one of the most respected and most influential music programs in America — the One O'Clock Lab Band, the UNT jazz ensem",
     hidden_pathway: "The hidden pathway at UNT is the One O'Clock Lab Band's specific function as a professional career launch vehicle for jazz musicians. The One O'Clock ",
     the_room: "UNT enrolls approximately 44,000 students on a campus in Denton — a city of 150,000 in the northern reaches of the Dalla",
     lifestyle: "",
-    grad_cities: "Dallas-Fort Worth TX (52%) | Austin TX (8%) | Houston TX (7%) | Denton TX (6%) | Nashville TN (4%) | Los Angeles CA (4%)",
-    mayNotThriveIf: "You want a small campus or a non-music-industry focus - UNT is large and its jazz program's reputation shapes a genuinely music-serious identity.",
-    campusSocialCulture: "Music-obsessed, large-scale, genuinely professional in ambition - the One O'Clock Lab Band's fame creates a real career-launch culture.",
-    socialCapital: "Jazz Studies cohorts build direct professional music industry relationships through one of the most influential lab bands in the country.",
-    culturalCapital: "The most influential collegiate jazz program prestige in America - UNT signals genuine professional music credibility.",
-    networkCapital: "A legendary jazz musician career-launch pipeline via the One O'Clock Lab Band, unmatched by any peer music program."
+    grad_cities: "Dallas-Fort Worth TX (52%) | Austin TX (8%) | Houston TX (7%) | Denton TX (6%) | Nashville TN (4%) | Los Angeles CA (4%)"
   },
   "Texas State University": {
     name: "Texas State University",
     location: "San Marcos, Texas",
-    region: "Southeast",
+    region: "Texas + Southwest",
     pipeline: "Health Sciences and Physical Therapy (the College of Health Professions at Texas State houses the Department of Physical Therapy, one of the most respected DPT programs in Texas, along with a comprehe",
     hidden_pathway: "The hidden pathway at Texas State is the San Marcos River and its specific function in the university's aquatic biology and environmental science prog",
     the_room: "Texas State enrolls approximately 38,000 students on a campus that straddles the San Marcos River in downtown San Marcos",
     lifestyle: "",
-    grad_cities: "Austin TX (32%) | San Antonio TX (20%) | San Marcos TX (10%) | Houston TX (8%) | Dallas TX (6%) | Academic programs (5%)",
-    mayNotThriveIf: "You want a small campus or a school outside the Austin-San Antonio corridor - Texas State is large and centrally positioned between the two.",
-    campusSocialCulture: "River-adjacent, practical, genuinely central-Texas in energy - the San Marcos River shapes both recreation and real environmental science research.",
-    socialCapital: "Physical therapy and environmental science cohorts build direct clinical and river-ecosystem research relationships.",
-    culturalCapital: "Central-Texas practical prestige - Texas State signals genuine access to both the Austin tech corridor and San Antonio's healthcare economy.",
-    networkCapital: "Strong physical therapy clinical placement, plus a distinctive San Marcos River-based aquatic biology research pipeline."
+    grad_cities: "Austin TX (32%) | San Antonio TX (20%) | San Marcos TX (10%) | Houston TX (8%) | Dallas TX (6%) | Academic programs (5%)"
   },
   "Wesleyan University": {
     name: "Wesleyan University",
@@ -3224,12 +2165,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Wesleyan is the film alumni network's specific density in the Los Angeles production community and what this means for Wesleyan ",
     the_room: "Wesleyan enrolls approximately 3,000 students on a campus in Middletown — a Connecticut city of 47,000 on the Connecticu",
     lifestyle: "",
-    grad_cities: "New York NY (30%) | Los Angeles CA (18%) | Boston MA (10%) | Washington DC (8%) | Hartford CT (6%) | Academic and doctor",
-    mayNotThriveIf: "You want a career outside film/creative arts - Wesleyan's identity is deeply tied to its extraordinary Hollywood director/producer output.",
-    campusSocialCulture: "Creatively intense, politically engaged, genuinely quirky - the film program's Hollywood pipeline shapes a real industry-facing ambition.",
-    socialCapital: "Film Studies cohorts build direct LA production community relationships through one of the most productive director/producer alumni networks per capita.",
-    culturalCapital: "The most productive per-capita Hollywood director/producer prestige of any university - Wesleyan signals genuine filmmaking credibility.",
-    networkCapital: "An extraordinarily dense Los Angeles film production alumni network, among the most productive per capita in the country."
+    grad_cities: "New York NY (30%) | Los Angeles CA (18%) | Boston MA (10%) | Washington DC (8%) | Hartford CT (6%) | Academic and doctor"
   },
   "University of Hawaii at Manoa": {
     name: "University of Hawaii at Manoa",
@@ -3239,13 +2175,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UH Manoa is the East-West Center's specific function as a diplomatic and international policy career launch vehicle. The East-We",
     the_room: "UH Manoa enrolls approximately 18,000 students on a campus in the Manoa Valley above Honolulu — a lush valley two miles ",
     lifestyle: "",
-    grad_cities: "Honolulu HI (48%) | Los Angeles CA (10%) | San Francisco CA (8%) | Seattle WA (5%) | Washington DC (5%) | Asia-Pacific m",
-    mayNotThriveIf: "You want to leave Hawaii or the Pacific region - UH Manoa's identity and career pipeline are deeply tied to Pacific/Asia geography.",
-    campusSocialCulture: "Ocean-science-serious, genuinely multicultural, Pacific-Asia-oriented - the Manoa Valley's lush setting anchors a distinctive regional identity.",
-    socialCapital: "Oceanography cohorts build direct research relationships through one of the most productive marine science institutions in the world.",
-    culturalCapital: "World-leading oceanographic research prestige plus real Asia-Pacific diplomatic credibility via the East-West Center.",
-    networkCapital: "One of the most productive oceanographic research networks globally, plus a unique Asia-Pacific diplomatic career-launch pipeline."
+    grad_cities: "Honolulu HI (48%) | Los Angeles CA (10%) | San Francisco CA (8%) | Seattle WA (5%) | Washington DC (5%) | Asia-Pacific m"
   },
+
   "United States Merchant Marine Academy": {
     name: "United States Merchant Marine Academy",
     location: "Kings Point, New York",
@@ -3254,12 +2186,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The shoreside career path is almost never named. Most students and parents picture ships — but Kings Point graduates run port operations, manage maritime law practices, lead defense logistics companies, direct maritime insurance underwriting, and sit in the executive suites of the companies that move 90% of global trade. The Marine Transportation major specifically prepares students for shoreside maritime careers. The degree, the license, and the commission together create a credential stack no other institution produces.",
     the_room: "962 total undergraduates — roughly one-quarter the size of West Point or Annapolis. Every midshipman is known by name. Sea Year, where students spend close to a year aboard working merchant ships worldwide as sophomores and juniors, creates a shared experience of genuine operational responsibility at sea that no classroom can replicate. The alumni network is small, intensely loyal, and positioned throughout the maritime, defense, and logistics industries in roles that most people outside those industries never see.",
     lifestyle: "",
-    grad_cities: "New York, Houston, Washington DC, Los Angeles, Seattle — wherever major ports and maritime commercial operations concentrate",
-    mayNotThriveIf: "You want a large campus or a conventional college experience - Kings Point's tiny size, Sea Year abroad, and service obligation are a total commitment.",
-    campusSocialCulture: "Intensely operational, honor-bound, genuinely tight-knit - every midshipman known by name, forged through Sea Year's shared responsibility at sea.",
-    socialCapital: "Sea Year creates uniquely close bonds through genuine shared operational responsibility that no classroom experience can replicate.",
-    culturalCapital: "The single most valuable credential stack in maritime education - Kings Point signals degree, license, and commission together.",
-    networkCapital: "A small, intensely loyal alumni network positioned throughout maritime, defense, and logistics industries at senior levels."
+    grad_cities: "New York, Houston, Washington DC, Los Angeles, Seattle — wherever major ports and maritime commercial operations concentrate"
   },
 
   "Maine Maritime Academy": {
@@ -3270,12 +2197,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Power Engineering Technology — the non-seagoing major almost nobody outside Maine knows exists. PET graduates go into shoreside power plant operations, utility companies, and industrial facilities rather than ships. Graduates sit for the Maine Third Class Stationary Engineer license and the Fundamentals of Engineering exam. Siemens Energy and Talen Energy recruit from this program specifically. The student who wants the rigor of a maritime education without ever going to sea has a direct path here that most guidance counselors have never named.",
     the_room: "Approximately 950 students in Castine — a town of 1,300 people on a peninsula in Penobscot Bay. The remoteness is the point. The Training Ship State of Maine and the historic Schooner Bowdoin provide sea time experiences that larger, more conventionally located institutions cannot replicate. The International Business and Logistics program, less well known than the license tracks, produces graduates who move directly into supply chain and freight management roles across the Northeast and beyond. MMA alumni have an industry reputation for being operationally ready on day one — a reputation the placement numbers confirm.",
     lifestyle: "",
-    grad_cities: "Portland ME, Boston, New York, Houston, Seattle — distributed across port cities and industrial facilities throughout the Northeast and Gulf Coast",
-    mayNotThriveIf: "You want a large city or a school far from a remote coastal peninsula - Castine's total remoteness is the point, and it's not for everyone.",
-    campusSocialCulture: "Operationally serious, remote-coastal, genuinely tight-knit - the Training Ship State of Maine and historic Schooner Bowdoin anchor a real sea-time culture.",
-    socialCapital: "Small size plus shared sea time creates close bonds that translate directly into a reputation for being operationally ready on day one.",
-    culturalCapital: "No-service-obligation maritime credential prestige - MMA signals genuine flexibility alongside real license-track rigor.",
-    networkCapital: "A 95% job placement pipeline with 88 companies recruiting on campus, spanning shipping, energy, and industrial power sectors."
+    grad_cities: "Portland ME, Boston, New York, Houston, Seattle — distributed across port cities and industrial facilities throughout the Northeast and Gulf Coast"
   },
 
   "Massachusetts Maritime Academy": {
@@ -3286,12 +2208,7 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Energy Systems Engineering — MMA's program for students drawn to the clean energy transition rather than maritime careers. Prepares graduates for careers in power generation planning, design, and installation of technical systems for renewable energy infrastructure. Facilities Engineering is equally undersurfaced — MMA graduates in this major run the mechanical, electrical, and HVAC operations of hospitals, manufacturing plants, and commercial buildings across the country. Neither program requires sea time or a USCG license. Emergency Management is a third non-maritime path producing graduates who join FEMA, state emergency agencies, hospital preparedness programs, and military services.",
     the_room: "Regiment of Cadets structure with NCAA Division III athletics — the only state maritime academy offering both. Seven undergraduate majors span marine transportation, international maritime business, marine science, safety and environmental protection, emergency management, and three engineering tracks. The breadth makes MMA meaningfully different from the other state academies whose programs concentrate more narrowly on license tracks. International Maritime Business specifically prepares students for supply chain, shipping, chartering, and logistics careers in the global marketplace — a business degree with an operational edge that most business schools cannot match.",
     lifestyle: "",
-    grad_cities: "Boston, New York, Providence, Washington DC — Northeast concentration, with energy and facilities engineering graduates distributed nationally across power infrastructure",
-    mayNotThriveIf: "You want a purely academic or non-regimented experience - the Regiment of Cadets structure combined with DIII athletics is a specific, disciplined commitment.",
-    campusSocialCulture: "Disciplined yet athletically balanced, water-surrounded, genuinely broad in academic scope for a maritime academy - Cape Cod Canal's presence is constant.",
-    socialCapital: "Seven distinct majors under one Regiment of Cadets structure create both specialized and broadly connected professional networks.",
-    culturalCapital: "Top-10 ROI prestige - MMA signals genuine value and breadth beyond narrow license-track maritime training.",
-    networkCapital: "Career-track employment within 90 days for most graduates, spanning maritime business, energy systems, and emergency management sectors."
+    grad_cities: "Boston, New York, Providence, Washington DC — Northeast concentration, with energy and facilities engineering graduates distributed nationally across power infrastructure"
   },
 
   "Texas A&M University at Galveston": {
@@ -3302,44 +2219,30 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Maritime Business Administration — the degree for students who want to run the maritime industry rather than sail in it. Port management, supply chain, international trade, shipping logistics, chartering, and maritime finance. The program has a 3+2 track that combines a BS in Maritime Business Administration with a Master of Maritime Business Administration and Logistics in five years — two Texas A&M degrees, one of the most specific maritime business credentials in the country. Ocean Engineering is a second undersurfaced path: designing the systems that operate in the Gulf — oil rigs, subsea pipelines, offshore platforms, seawalls — one of the most Gulf Coast-specific engineering specializations available anywhere.",
     the_room: "Pelican Island campus on a barrier island off Galveston — steps from the Gulf, surrounded by working maritime and offshore energy infrastructure. The proximity to Houston means recruiting relationships with the energy majors, LNG exporters, and port operators who drive the Gulf Coast economy. Marine Biology, Marine Science, and Oceanography programs give the campus breadth beyond maritime transportation — students doing research on Gulf ecosystems alongside cadets training for USCG licenses, in the same place. Small campus feel with large university resources — the combination that the other state maritime academies cannot match.",
     lifestyle: "",
-    grad_cities: "Houston, Galveston, Corpus Christi, New Orleans — Gulf Coast concentration, with maritime business graduates distributed across global shipping and trade companies",
-    mayNotThriveIf: "You want a small maritime academy or a school outside the Gulf Coast energy corridor - Galveston is the largest maritime program and deeply Gulf-focused.",
-    campusSocialCulture: "Aggie pride meets barrier-island maritime seriousness - small campus feel backed by full Texas A&M university resources and the Aggie Ring tradition.",
-    socialCapital: "Maritime Business Administration's 3+2 dual-degree track creates uniquely credentialed cohorts within the larger Aggie network.",
-    culturalCapital: "The largest, most affordable maritime program in the country - Galveston signals both Aggie pedigree and genuine Gulf Coast industry access.",
-    networkCapital: "Direct Port of Houston and Gulf Coast energy/petrochemical industry pipeline, backed by the full strength of the Texas A&M alumni network."
+    grad_cities: "Houston, Galveston, Corpus Christi, New Orleans — Gulf Coast concentration, with maritime business graduates distributed across global shipping and trade companies"
   },
 
   "California State University Maritime Academy": {
     name: "California State University Maritime Academy",
     location: "Vallejo, California",
-    region: "West Coast",
+    region: "California",
     pipeline: "Highest employment rate in the entire CSU system. Government data consistently shows Cal Maritime alumni having the highest average salaries of any college or university — public or private — in the western United States. Ranked #1 in California and #1 in the West for best value colleges. As of July 1, 2025, Cal Maritime merged with Cal Poly San Luis Obispo to become Cal Poly Maritime Academy on the Cal Poly Solano Campus — students now graduate with a Cal Poly degree, gaining access to one of the strongest engineering and technical alumni networks in California alongside the maritime credential. The only degree-granting maritime academy on the West Coast.",
     hidden_pathway: "International Strategy and Security — the non-maritime program for students drawn to Pacific Rim geopolitics, maritime law, port security, and trade policy. Graduates enter government agencies, military service, international organizations, and maritime-focused policy firms. Facilities Engineering Technology is the shoreside industrial path — managing mechanical, electrical, and HVAC operations of large commercial and industrial facilities with no sea time required. Both programs sit inside the same Corps of Cadets structure that produces the licensed mariners, giving graduates the leadership and operational discipline that civilian business schools cannot replicate.",
     the_room: "A 67-acre waterfront campus on the San Pablo Bay north of San Francisco, with the 500-foot Training Ship Golden Bear as the centerpiece of a Summer Sea Term that takes cadets on a 60-day Pacific Rim voyage. Approximately 800 students — the most intimate of the state maritime academies, with faculty-to-student relationships that larger institutions cannot provide. San Francisco Bay proximity means recruiting relationships with the Port of Oakland, the Pacific shipping lines, and the West Coast energy infrastructure that connects California ports to global trade. The Cal Poly merger opens new academic pathways and Co-op/internship pipelines that the standalone academy could not access.",
     lifestyle: "",
-    grad_cities: "San Francisco, Los Angeles, Seattle, Portland, Oakland — West Coast port city concentration, with International Strategy graduates distributed through federal agencies and defense contractors",
-    mayNotThriveIf: "You want a large campus or a school outside the Bay Area maritime/energy corridor - Cal Maritime is intimate and deeply tied to Pacific Rim shipping.",
-    campusSocialCulture: "Intimate, waterfront, genuinely Pacific-Rim-oriented - the Training Ship Golden Bear's Summer Sea Term anchors real operational experience.",
-    socialCapital: "The Cal Poly merger creates a uniquely powerful dual network spanning maritime credentials and top-tier engineering alumni.",
-    culturalCapital: "The highest average alumni salaries in the western United States - Cal Maritime signals extraordinary practical career value.",
-    networkCapital: "Direct Port of Oakland and Pacific shipping industry pipeline, now amplified by Cal Poly's strong engineering alumni network."
-  },
-
+    grad_cities: "San Francisco, Los Angeles, Seattle, Portland, Oakland — West Coast port city concentration, with International Strategy graduates distributed through federal agencies and defense contractors"
+  }
 };
+
 
 function getSchoolContent(schoolNames) {
   return schoolNames.map(n => UNIVERSITY_CONTENT[n]||null).filter(Boolean);
 }
 
 function formatSchoolsForPrompt(schools) {
-  return schools.map(s => {
-    let block = `SCHOOL: ${s.name} (${s.location})\nPIPELINE: ${s.pipeline}\nHIDDEN PATHWAY: ${s.hidden_pathway}\nTHE ROOM: ${s.the_room}\nLIFESTYLE: ${s.lifestyle}\nGRADS GO TO: ${s.grad_cities}`;
-    if (s.student_experience) block += `\nSTUDENT EXPERIENCE: ${s.student_experience}`;
-    if (s.residencyComposition) block += `\nRESIDENCY MIX: ${s.residencyComposition}`;
-    if (s.school_fast_facts) block += `\nFAST FACTS: ${s.school_fast_facts}`;
-    return block;
-  }).join("\n\n---\n\n");
+  return schools.map(s =>
+    `SCHOOL: ${s.name} (${s.location})\nPIPELINE: ${s.pipeline}\nHIDDEN PATHWAY: ${s.hidden_pathway}\nTHE ROOM: ${s.the_room}\nLIFESTYLE: ${s.lifestyle}\nGRADS GO TO: ${s.grad_cities}`
+  ).join("\n\n---\n\n");
 }
 
 if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolContent,formatSchoolsForPrompt};
