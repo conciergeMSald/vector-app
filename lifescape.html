@@ -4166,7 +4166,7 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       if (d.success) {
         console.log('[VECTOR Lifescape] Cohort longitudinal record saved:', d.airtable_id);
       } else {
-        console.warn('[VECTOR Lifescape] Cohort longitudinal not saved (non-blocking):', d.error || d.reason || 'unknown');
+        console.warn('[VECTOR Lifescape] Cohort longitudinal not saved (non-blocking):', d.detail || d.message || d.error || d.reason || 'unknown');
       }
     })
     .catch(function(err){
@@ -4188,7 +4188,7 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       if (d.success) {
         console.log('[VECTOR Lifescape] family_sessions record created.');
       } else {
-        console.warn('[VECTOR Lifescape] family_sessions save failed (non-blocking):', d.error);
+        console.warn('[VECTOR Lifescape] family_sessions save failed (non-blocking):', d.detail || d.message || d.error);
       }
     })
     .catch(function(err){
@@ -4232,7 +4232,7 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       if (d.success) {
         console.log('[VECTOR Lifescape] Cohort record saved:', d.airtable_id);
       } else {
-        console.warn('[VECTOR Lifescape] Cohort record not saved (non-blocking):', d.error || d.reason || 'unknown');
+        console.warn('[VECTOR Lifescape] Cohort record not saved (non-blocking):', d.detail || d.message || d.error || d.reason || 'unknown');
       }
     })
     .catch(function(err){
@@ -6630,7 +6630,7 @@ function saveCounselorSynthesisBrief(brief, profile) {
     if (d.success) {
       console.log('[VECTOR Lifescape] Counselor synthesis brief saved.');
     } else {
-      console.warn('[VECTOR Lifescape] Synthesis brief save failed (non-blocking):', d.error);
+      console.warn('[VECTOR Lifescape] Synthesis brief save failed (non-blocking):', d.detail || d.message || d.error);
     }
   })
   .catch(function(err) {
