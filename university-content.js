@@ -721,7 +721,8 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Main Line location is the hidden pathway that makes Villanova's career infrastructure categorically different from Catholic peers located in urban centers or isolated suburban settings. The Philadelphia Main Line -",
     the_room: "Villanova enrolls approximately 7,000 undergraduates - mid-sized and appropriate for the Augustinian formation model that emphasizes individual student development within a faith community.",
     lifestyle: "Villanova, Pennsylvania is not a city - it is a township in Delaware County on the Philadelphia Main Line, and the Villanova campus - St.",
-    grad_cities: "Philadelphia PA (40%) | New York NY (20%) | Washington DC (8%) | Boston MA (5%) | Chicago IL (4%)."
+    grad_cities: "Philadelphia PA (40%) | New York NY (20%) | Washington DC (8%) | Boston MA (5%) | Chicago IL (4%).",
+    outcomesData: "95.3% of the Class of 2024 secured a job, grad school placement, or fellowship within outcomes window; average starting salary $79,330. Top producer of Fulbright Scholars (Chronicle of Higher Education) with 150+ Fulbright/Rhodes/other competitive scholarships since 2017. Source: villanova.edu/university/fast-facts.html, July 2026."
   },
   "Temple University": {
     name: "Temple University",
@@ -1293,7 +1294,7 @@ const UNIVERSITY_CONTENT = {
     pipeline: "Technology and Engineering (Google, Amazon, Qualcomm, HP, Microsoft, IBM, Adobe - Qualcomm was co-founded by SDSU alumnus Irwin Jacobs and remains a primary campus recruiter - College of Engineering p",
     hidden_pathway: "San Diego's biotech cluster is the second-largest in America and SDSU sits inside it. The Salk Institute, Scripps Research, UC San Diego, and over 1,0",
     the_room: "Approximately 79% of SDSU students are California residents and 15% are from out of state with 6.6% international - a he",
-    lifestyle: "",
+    lifestyle: "Car-free campus life via trolley, bus, and Zipcar — 15 minutes from downtown San Diego, the beach, and the mountains. Year-round mild climate (rarely below 60°F or above 80°F). D1 athletics (Aztec Pride) plus 20+ on-campus dining spots. Balboa Park (17 museums, two Tony-winning theaters) anchors a genuine arts scene minutes away.",
     grad_cities: "San Diego CA (65%) | Los Angeles CA (15%) | San Francisco Bay Area CA (8%) | Other California (5%) | Out of California ("
   },
   "UC Santa Barbara": {
@@ -1424,8 +1425,9 @@ const UNIVERSITY_CONTENT = {
     pipeline: "Engineering and Technology (College of Engineering - ranked 17th overall and 9th among public universities nationally - Computer Engineering average salary $78,839, Industrial Engineering $74,061, Che",
     hidden_pathway: "Epic Systems - the company that built and runs the electronic health records system used by over 54% of American patients - is headquartered in Verona",
     the_room: "UW-Madison is the only University of Wisconsin campus where fewer than half of students are Wisconsin residents - approx",
-    lifestyle: "",
-    grad_cities: "Chicago IL (22%) | Madison WI (18%) | Milwaukee WI (10%) | Minneapolis MN (8%) | New York NY (8%) | San Francisco CA (7%"
+    lifestyle: "Madison is a genuine college-and-capital-city hybrid: lakeside campus (Lakeshore vs. Southeast dorm neighborhoods), 1,062 student organizations, 275 study abroad programs, and Big Ten athletics (football and hockey games are the biggest social draws). Niche gives it an A+ for student life and party scene, with 84% of students calling the social scene strong; winters are notably harsh, a recurring theme in student reviews.",
+    grad_cities: "Chicago IL (22%) | Madison WI (18%) | Milwaukee WI (10%) | Minneapolis MN (8%) | New York NY (8%) | San Francisco CA (7%",
+    studentExperience: "NSSE 2023 survey (541 participating colleges): UW-Madison seniors work with faculty on research at higher rates than peers (36% vs. 28%), complete internships/field placements at 59% (vs. 54% peers), and report their education contributed 'quite a bit or very much' to solving complex real-world problems at 70% (vs. 64% peer average). 53% hold formal student-org leadership roles (vs. 48% peers)."
   },
   "Belmont University": {
     name: "Belmont University",
