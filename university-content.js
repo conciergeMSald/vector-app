@@ -261,7 +261,7 @@ const UNIVERSITY_CONTENT = {
   "Bowdoin College": {
     name: "Bowdoin College",
     location: "Brunswick, Maine",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Finance and Investment Management (Wall Street - Goldman Sachs, Morgan Stanley, Blackstone, Two Sigma, D.E. Shaw recruit Bowdoin at rates dramatically disproportionate to its 1,800-student enrollment), Consulting (McKinsey, Bain, BCG, Deloitte -",
     hidden_pathway: "Bowdoin's location in Brunswick, Maine - 25 miles north of Portland, on the coast of the Atlantic Ocean - is the hidden architecture of the social capital formation. There is no city. There is no distraction.",
     the_room: "Bowdoin enrolls approximately 1,800 undergraduates - among the smallest of any highly selective college in America. 49% of students receive financial aid.",
@@ -271,7 +271,7 @@ const UNIVERSITY_CONTENT = {
   "Middlebury College": {
     name: "Middlebury College",
     location: "Middlebury, Vermont",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Finance and Investment Management (Wall Street - Goldman Sachs, Morgan Stanley, JPMorgan, hedge funds and private equity recruit Middlebury at rates disproportionate to its 2,700-student enrollment), Consulting (McKinsey, Bain, BCG, Deloitte -",
     hidden_pathway: "Middlebury's Language Schools are the most intensive and prestigious immersive language programs in America - and almost no family outside New England knows they exist as an undergraduate advantage.",
     the_room: "Middlebury enrolls approximately 2,700 undergraduates - slightly larger than Williams or Bowdoin but still intimate by any measure. 44% of students receive financial aid.",
@@ -401,7 +401,7 @@ const UNIVERSITY_CONTENT = {
   "Worcester Polytechnic Institute": {
     name: "Worcester Polytechnic Institute",
     location: "Worcester, Massachusetts",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Computer Science and Software Engineering (top-25 nationally - Google, Microsoft, Amazon, Raytheon, Fidelity Investments, Liberty Mutual, major defense and financial technology companies recruit WPI at volume -",
     hidden_pathway: "WPI's project-based education model is the most radical departure from traditional engineering education in the technical school group - and almost no family outside New England knows it exists.",
     the_room: "WPI enrolls approximately 4,700 undergraduates - mid-sized relative to the technical group. The student body is approximately 65% male reflecting the engineering concentration.",
@@ -451,7 +451,7 @@ const UNIVERSITY_CONTENT = {
   "Harvard University": {
     name: "Harvard University",
     location: "Cambridge, Massachusetts",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Finance and Investment Banking (Wall Street - Goldman Sachs, Morgan Stanley, JPMorgan, Blackstone, KKR, Apollo - Harvard places into every major financial institution at volume and at the most senior levels - Harvard Business School MBA median base salary $175,000 -",
     hidden_pathway: "Harvard's tutorial system - one-on-one or small group instruction with faculty or advanced PhD students in every concentration - is the hidden educational architecture that no peer institution replicates at scale.",
     the_room: "Harvard enrolls approximately 7,000 undergraduates - mid-sized among the Ivies and small relative to its global footprint. 55% of students receive financial aid.",
@@ -1047,7 +1047,7 @@ const UNIVERSITY_CONTENT = {
   "Boston College": {
     name: "Boston College",
     location: "Chestnut Hill, Massachusetts",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Finance and Investment Banking (Carroll School of Management - top-25 nationally - Wall Street - Goldman Sachs, Morgan Stanley, JPMorgan, Blackstone, Fidelity Investments, State Street, Wellington Management, and the extraordinarily concentrated Boston financial services ecosyste",
     hidden_pathway: "The Jesuit intellectual tradition at BC creates a specific professional formation that the Boston financial services and consulting industries recruit with intentionality -",
     the_room: "BC enrolls approximately 9,500 undergraduates - mid-sized and appropriate for the Jesuit formation model. The student body is approximately 30% from New England with heavy representation from New York",
@@ -1077,7 +1077,7 @@ const UNIVERSITY_CONTENT = {
   "University of Maryland College Park": {
     name: "University of Maryland College Park",
     location: "College Park, Maryland",
-    region: "Northeast",
+    region: "Mid-Atlantic",
     pipeline: "Engineering (A. James Clark School of Engineering - top-20 nationally - aerospace, bioengineering, chemical, civil, computer science, electrical, fire protection, materials science, mechanical, systems -",
     hidden_pathway: "The NSA relationship is the hidden pathway that makes UMD computer science and mathematics programs uniquely consequential for one of the most significant and least publicly discussed federal employers in America. The National Security Agency -",
     the_room: "UMD enrolls approximately 31,000 undergraduates - a large Big Ten flagship with the Terrapins athletic identity competing in one of the most athletically competitive conferences in college sports.",
@@ -1087,7 +1087,7 @@ const UNIVERSITY_CONTENT = {
   "Johns Hopkins University": {
     name: "Johns Hopkins University",
     location: "Baltimore, Maryland",
-    region: "Northeast",
+    region: "Mid-Atlantic",
     pipeline: "Medicine and Public Health (School of Medicine - top-3 nationally and the most research-intensive medical school in America - Johns Hopkins Medicine is the single most cited medical research institution in the world -",
     hidden_pathway: "The Applied Physics Laboratory is the hidden pathway that makes Hopkins uniquely consequential for national security and space science in ways that its undergraduate reputation alone does not capture. APL -",
     the_room: "Hopkins enrolls approximately 5,500 undergraduates - among the smallest research universities in the database relative to its research output and global reputation.",
@@ -1167,7 +1167,7 @@ const UNIVERSITY_CONTENT = {
   "George Washington University": {
     name: "George Washington University",
     location: "Washington, DC",
-    region: "Northeast",
+    region: "Mid-Atlantic",
     pipeline: "Political Science and Government (Elliott School of International Affairs - top-10 nationally for international affairs - the most DC-embedded international affairs school in America -",
     hidden_pathway: "The Foggy Bottom campus location is the hidden pathway that makes GWU's government, law, and international affairs programs structurally different from every peer institution - and it is a pathway defined entirely by geography.",
     the_room: "GWU enrolls approximately 11,000 undergraduates - a mid-sized private research university in the heart of Washington DC. The student body is assembled from all 50 states and 130+ countries with heavy",
@@ -1217,7 +1217,7 @@ const UNIVERSITY_CONTENT = {
   "American University": {
     name: "American University",
     location: "Washington, DC",
-    region: "Northeast",
+    region: "Mid-Atlantic",
     pipeline: "International Service and Global Affairs (School of International Service - top-10 nationally for international affairs and one of the most DC-embedded international affairs programs in America -",
     hidden_pathway: "The AU Washington Semester Program is the hidden pathway that makes AU the most accessible DC immersion experience in American higher education - and it is a pathway available not just to AU students but to students from 150 partner universities acro",
     the_room: "AU enrolls approximately 8,500 undergraduates - a mid-sized private university in a residential DC neighborhood. The student body is assembled from all 50 states and 140+ countries with heavy draw fro",
@@ -1237,7 +1237,7 @@ const UNIVERSITY_CONTENT = {
   "Northeastern University": {
     name: "Northeastern University",
     location: "Boston, Massachusetts",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Engineering (College of Engineering - top-25 nationally - bioengineering, chemical, civil, computer science, electrical, industrial, mechanical, materials science - major Boston and national employers including Raytheon, General Electric, Biogen, Boston Scientific, Moderna, and t",
     hidden_pathway: "Northeastern's co-op program is the most rapidly growing and most Boston-embedded experiential learning infrastructure of any private university in the Northeast -",
     the_room: "Northeastern enrolls approximately 20,000 undergraduates - a large private research university with the Huskies athletic identity in the Colonial Athletic Association providing Division I hockey and b",
@@ -1277,7 +1277,7 @@ const UNIVERSITY_CONTENT = {
   "College of William and Mary": {
     name: "College of William and Mary",
     location: "Williamsburg, Virginia",
-    region: "Southeast",
+    region: "Mid-Atlantic",
     pipeline: "Law (William and Mary Law School - top-30 nationally - federal clerkships, Virginia state courts, BigLaw in DC and Virginia, government contracts law, constitutional law -",
     hidden_pathway: "The Oldest Law School in America credential is the hidden pathway that gives William and Mary Law a specific and durable institutional weight in Virginia and DC legal circles that no peer Southern public law school can claim.",
     the_room: "William and Mary enrolls approximately 6,500 undergraduates - a small public university that operates more like a liberal arts college than a flagship research university in its academic culture.",
@@ -1522,7 +1522,7 @@ const UNIVERSITY_CONTENT = {
   "James Madison University": {
     name: "James Madison University",
     location: "Harrisonburg, Virginia",
-    region: "Southeast",
+    region: "Mid-Atlantic",
     pipeline: "Communications and Media (the School of Media Arts and Design at JMU is consistently ranked among the top ten undergraduate communications programs in America and is the single most productive feeder ",
     hidden_pathway: "The hidden pathway at JMU is the SMAD program's specific positioning in the DC public affairs and strategic communications ecosystem. Washington DC's ",
     the_room: "JMU enrolls approximately 22,000 undergraduates on a campus that occupies both sides of South Main Street in Harrisonbur",
@@ -1602,7 +1602,7 @@ const UNIVERSITY_CONTENT = {
   "Rhode Island School of Design": {
     name: "Rhode Island School of Design",
     location: "Providence, Rhode Island",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Industrial and Product Design (RISD's industrial design program is consistently ranked first or second nationally and among the top five globally — Apple, Nike, IDEO, Frog Design, and every major prod",
     hidden_pathway: "The hidden pathway at RISD is the foundation year's development of material intelligence that every subsequent year of the program builds upon. RISD r",
     the_room: "RISD enrolls approximately 2,000 undergraduates in Providence's College Hill neighborhood, sharing a campus boundary wit",
@@ -1682,7 +1682,7 @@ const UNIVERSITY_CONTENT = {
   "University of Rhode Island": {
     name: "University of Rhode Island",
     location: "Kingston, Rhode Island",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Ocean Engineering and Marine Sciences (URI is one of the preeminent ocean and marine science research institutions in America — the Graduate School of Oceanography is consistently ranked among the top",
     hidden_pathway: "The hidden pathway at URI is the intersection of the CVS Health headquarters proximity and the pharmacy program's direct recruiting pipeline. CVS Heal",
     the_room: "URI enrolls approximately 17,000 undergraduates on a campus in Kingston, a college village in the rural South County reg",
@@ -1702,7 +1702,7 @@ const UNIVERSITY_CONTENT = {
   "Washington and Lee University": {
     name: "Washington and Lee University",
     location: "Lexington, Virginia",
-    region: "Southeast",
+    region: "Mid-Atlantic",
     pipeline: "Law (Washington and Lee School of Law - top-25 nationally - one of the most consistently placed law schools for Virginia, DC, and the broader Southeast legal market - the law school and the undergradu",
     hidden_pathway: "The hidden pathway at Washington and Lee is the Honor System's specific effect on employer trust and graduate school admission outcomes. The W&L Honor",
     the_room: "Washington and Lee enrolls approximately 1,850 undergraduates on the Colonnade — one of the most architecturally disting",
@@ -1792,7 +1792,7 @@ const UNIVERSITY_CONTENT = {
   "Berklee College of Music": {
     name: "Berklee College of Music",
     location: "Boston, Massachusetts",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Music Production and Recording Arts (Berklee is the most influential music production institution in the world — the alumni who have engineered, produced, and mixed the most commercially significant r",
     hidden_pathway: "The hidden pathway at Berklee is the global alumni network's specific density in the rooms where music is actually made. Every major recording studio ",
     the_room: "Berklee enrolls approximately 6,000 students on a campus that occupies multiple buildings along Massachusetts Avenue in ",
@@ -1842,7 +1842,7 @@ const UNIVERSITY_CONTENT = {
   "Marshall University": {
     name: "Marshall University",
     location: "Huntington, West Virginia",
-    region: "Southeast",
+    region: "Mid-Atlantic",
     pipeline: "Health Sciences and Medicine (the Joan C. Edwards School of Medicine is one of only two allopathic medical schools in West Virginia and the primary physician training institution for the tri-state reg",
     hidden_pathway: "The hidden pathway at Marshall is the forensic accounting program's specific pipeline into federal financial crime investigation. The FBI's Financial ",
     the_room: "Marshall enrolls approximately 13,000 students on a campus in downtown Huntington — a city of 48,000 at the confluence o",
@@ -1862,7 +1862,7 @@ const UNIVERSITY_CONTENT = {
   "Howard University": {
     name: "Howard University",
     location: "Washington, DC",
-    region: "Northeast",
+    region: "Mid-Atlantic",
     pipeline: "Law and Government (Howard University School of Law is the most historically significant Black law school in America — the institution that trained Thurgood Marshall, the attorney who argued Brown v. ",
     hidden_pathway: "The hidden pathway at Howard is the Capstone Network — the informal name for the Howard University alumni community that functions as one of the most ",
     the_room: "Howard enrolls approximately 10,000 students on a campus in the Shaw neighborhood of Washington DC — five blocks north o",
@@ -1932,7 +1932,7 @@ const UNIVERSITY_CONTENT = {
   "Regent University": {
     name: "Regent University",
     location: "Virginia Beach, Virginia",
-    region: "Southeast",
+    region: "Mid-Atlantic",
     pipeline: "Law and Government (Regent University School of Law is one of the most politically connected law schools in America within the conservative Christian legal and policy community — the American Center f",
     hidden_pathway: "The hidden pathway at Regent is the Federalist Society pipeline's specific function within the conservative legal movement. The Federalist Society — t",
     the_room: "Regent enrolls approximately 11,000 students — predominantly online and graduate — on a campus in Virginia Beach adjacen",
@@ -1942,7 +1942,7 @@ const UNIVERSITY_CONTENT = {
   "University of Richmond": {
     name: "University of Richmond",
     location: "Richmond, Virginia",
-    region: "Southeast",
+    region: "Mid-Atlantic",
     pipeline: "Law and Government (the T.C. Williams School of Law — one of the most respected regional law schools in the Mid-Atlantic — feeds directly into the Virginia Bar, the Richmond federal courthouse, and th",
     hidden_pathway: "The hidden pathway at Richmond is the Jepson School of Leadership Studies' specific positioning as the only undergraduate leadership school in America",
     the_room: "Richmond enrolls approximately 4,100 undergraduates on a campus on the western edge of Richmond — a campus of Georgian R",
@@ -1962,7 +1962,7 @@ const UNIVERSITY_CONTENT = {
   "Bentley University": {
     name: "Bentley University",
     location: "Waltham, Massachusetts",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Accounting and Public Accounting (Bentley's accounting program is one of the most respected in New England and consistently produces graduates who enter the Big Four — Deloitte, PwC, Ernst and Young, ",
     hidden_pathway: "The hidden pathway at Bentley is the Marketing Analytics program's specific positioning in a skill shortage that has persisted for a decade without re",
     the_room: "Bentley enrolls approximately 4,200 undergraduates on a campus in Waltham — a suburb 9 miles west of Boston on the Route",
@@ -2002,7 +2002,7 @@ const UNIVERSITY_CONTENT = {
   "University of Vermont": {
     name: "University of Vermont",
     location: "Burlington, Vermont",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Environmental Studies and Sustainable Agriculture (the Rubenstein School of Environment and Natural Resources at UVM is one of the most respected environmental programs in the Northeast — the Lake Cha",
     hidden_pathway: "The hidden pathway at UVM is the Burlington food systems economy and its specific intersection with the university's sustainable agriculture and food ",
     the_room: "UVM enrolls approximately 13,000 students on a campus on a hillside above Burlington — a city of 45,000 on the eastern s",
@@ -2042,7 +2042,7 @@ const UNIVERSITY_CONTENT = {
   "St. John's College": {
     name: "St. John's College",
     location: "Annapolis, Maryland",
-    region: "Northeast",
+    region: "Mid-Atlantic",
     pipeline: "Law and Legal Practice (St. John's College produces law school applicants whose analytical reading, argumentation, and writing skills distinguish them from conventionally educated peers — four years o",
     hidden_pathway: "The hidden pathway at St. John's is the Great Books curriculum's specific function in the classical Christian school movement and the growing market f",
     the_room: "St. John's enrolls approximately 400 students on the Annapolis campus — a historic property in the center of Annapolis, ",
@@ -2052,7 +2052,7 @@ const UNIVERSITY_CONTENT = {
   "Providence College": {
     name: "Providence College",
     location: "Providence, Rhode Island",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Business and Finance (the Providence College School of Business is AACSB-accredited and produces graduates who enter the Providence and Boston financial services, accounting, and consulting markets wi",
     hidden_pathway: "The hidden pathway at Providence College is the Development of Western Civilization program's specific function as graduate school preparation. The DW",
     the_room: "Providence College enrolls approximately 4,400 undergraduates on a campus of Gothic stone buildings in the Smith Hill ne",
@@ -2194,7 +2194,7 @@ const UNIVERSITY_CONTENT = {
   "Maine Maritime Academy": {
     name: "Maine Maritime Academy",
     location: "Castine, Maine",
-    region: "Northeast",
+    region: "New England",
     pipeline: "95% job placement within six months of graduation — among the highest of any institution in the country. No congressional nomination required, unlike Kings Point — this is a state school with public pricing comparable to the University of Maine. Graduates walk away with a USCG license in the marine transportation or engineering track and no service obligation, giving MMA graduates flexibility Kings Point graduates trade away. 88 companies recruited on campus in spring 2025 including American Bureau of Shipping, Siemens Energy, and Grand River Navigation. Engineering median salary exceeds $70,000 at entry.",
     hidden_pathway: "Power Engineering Technology — the non-seagoing major almost nobody outside Maine knows exists. PET graduates go into shoreside power plant operations, utility companies, and industrial facilities rather than ships. Graduates sit for the Maine Third Class Stationary Engineer license and the Fundamentals of Engineering exam. Siemens Energy and Talen Energy recruit from this program specifically. The student who wants the rigor of a maritime education without ever going to sea has a direct path here that most guidance counselors have never named.",
     the_room: "Approximately 950 students in Castine — a town of 1,300 people on a peninsula in Penobscot Bay. The remoteness is the point. The Training Ship State of Maine and the historic Schooner Bowdoin provide sea time experiences that larger, more conventionally located institutions cannot replicate. The International Business and Logistics program, less well known than the license tracks, produces graduates who move directly into supply chain and freight management roles across the Northeast and beyond. MMA alumni have an industry reputation for being operationally ready on day one — a reputation the placement numbers confirm.",
@@ -2205,7 +2205,7 @@ const UNIVERSITY_CONTENT = {
   "Massachusetts Maritime Academy": {
     name: "Massachusetts Maritime Academy",
     location: "Buzzards Bay, Massachusetts",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Ranked #10 nationally for return on investment by US News and #33 for engineering programs without a doctorate. 1,580 students across seven undergraduate majors and three graduate programs. An hour from Boston and Providence — the most commercially connected of the state maritime academies. No congressional nomination required, no service obligation. Most graduates are employed in career-track positions within 90 days. The campus sits at the mouth of the Cape Cod Canal — surrounded by water on three sides, with working vessels as part of the learning environment.",
     hidden_pathway: "Energy Systems Engineering — MMA's program for students drawn to the clean energy transition rather than maritime careers. Prepares graduates for careers in power generation planning, design, and installation of technical systems for renewable energy infrastructure. Facilities Engineering is equally undersurfaced — MMA graduates in this major run the mechanical, electrical, and HVAC operations of hospitals, manufacturing plants, and commercial buildings across the country. Neither program requires sea time or a USCG license. Emergency Management is a third non-maritime path producing graduates who join FEMA, state emergency agencies, hospital preparedness programs, and military services.",
     the_room: "Regiment of Cadets structure with NCAA Division III athletics — the only state maritime academy offering both. Seven undergraduate majors span marine transportation, international maritime business, marine science, safety and environmental protection, emergency management, and three engineering tracks. The breadth makes MMA meaningfully different from the other state academies whose programs concentrate more narrowly on license tracks. International Maritime Business specifically prepares students for supply chain, shipping, chartering, and logistics careers in the global marketplace — a business degree with an operational edge that most business schools cannot match.",
