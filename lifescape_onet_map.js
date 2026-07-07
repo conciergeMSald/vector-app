@@ -10,7 +10,7 @@ const NAICS_TO_ONET = {
   // NAICS 52 — Finance & Insurance
   52: {
     clusterName: 'Finance & Capital',
-    metros: ['New York NY','Charlotte NC','Chicago IL'],
+    metros: ['New York NY','Charlotte NC','Chicago IL','San Francisco Bay Area CA','Los Angeles CA','Philadelphia PA','Dallas TX','Boston MA','Orange County CA','Denver-Boulder CO'],
     riasecAffinity: ['C','E','I'],
     titles: [
       'Investment Banker',
@@ -20,7 +20,11 @@ const NAICS_TO_ONET = {
       'Venture Capital Analyst',
       'Private Equity Associate',
       'Family Office Advisor',
-      'Wealth Manager'
+      'Wealth Manager',
+      'Economist',
+      'Actuary',
+      'Tax Advisor / CPA',
+      'Compliance Officer'
     ],
     counselorPay: '$200K–$3M+ (varies by role and seniority)',
     counselorNote: 'Institutional proximity at the undergraduate level is the single highest-leverage variable in finance. Target school placement — Penn, Columbia, Chicago, NYU Stern — matters more here than almost any other field.'
@@ -29,7 +33,7 @@ const NAICS_TO_ONET = {
   // NAICS 51 — Information & Media / Technology
   51: {
     clusterName: 'Technology & Media',
-    metros: ['San Francisco CA','Seattle WA','Austin TX'],
+    metros: ['San Francisco CA','Seattle WA','Austin TX','Los Angeles CA','Nashville TN','New York NY','Chicago IL','Washington DC','Atlanta GA','Tampa FL','Orlando FL','South Florida FL'],
     riasecAffinity: ['I','R','A'],
     titles: [
       'Software Engineer',
@@ -39,7 +43,10 @@ const NAICS_TO_ONET = {
       'Cybersecurity Analyst',
       'Data Scientist',
       'UX Designer',
-      'Content Strategist'
+      'Content Strategist',
+      'Tech Policy / Regulatory Affairs Analyst',
+      'Standards & Practices Manager',
+      'Design Systems Manager'
     ],
     counselorPay: '$120K–$600K+ (FAANG staff engineer to CPO)',
     counselorNote: 'CS and engineering programs at research universities with strong recruiting pipelines to tech companies — CMU, Georgia Tech, UT Austin, UIUC, Cal Poly — outperform prestige alone. Portfolio matters as much as GPA.'
@@ -58,7 +65,9 @@ const NAICS_TO_ONET = {
       'Environmental Scientist',
       'Aerospace Engineer',
       'Biomedical Engineer',
-      'UX Researcher'
+      'UX Researcher',
+      'Cybersecurity Consultant',
+      'Lobbyist / Government Relations Specialist'
     ],
     counselorPay: '$90K–$2M (research scientist to McKinsey partner)',
     counselorNote: 'This sector spans the widest pay range of any NAICS cluster. Specialization is the differentiator — a generalist consultant earns 30-40% less than one with deep sector expertise. Graduate degree ROI is highest in this cluster.'
@@ -67,7 +76,7 @@ const NAICS_TO_ONET = {
   // NAICS 62 — Health Care & Social Assistance
   62: {
     clusterName: 'Health Care',
-    metros: ['Boston MA','Houston TX','Rochester MN'],
+    metros: ['Boston MA','Houston TX','Rochester MN','Cleveland OH','Phoenix AZ','San Diego CA','Los Angeles CA','San Francisco Bay Area CA','Jacksonville FL','Nashville TN'],
     riasecAffinity: ['S','I','R'],
     titles: [
       'Physician',
@@ -86,7 +95,7 @@ const NAICS_TO_ONET = {
   // NAICS 61 — Education
   61: {
     clusterName: 'Education & Public Service',
-    metros: ['Washington DC','Boston MA','New York NY'],
+    metros: ['New York NY','Los Angeles CA','Chicago IL','Dallas-Fort Worth TX','Houston TX','Washington DC','Philadelphia PA','Atlanta GA','Miami FL','Phoenix AZ','Boston MA','San Francisco Bay Area CA','Riverside CA','Detroit MI','Seattle WA','Minneapolis-St. Paul MN','San Diego CA','Tampa FL','Denver CO','Baltimore MD'],
     riasecAffinity: ['S','A','E'],
     titles: [
       'School Administrator',
@@ -96,7 +105,11 @@ const NAICS_TO_ONET = {
       'Foreign Service Officer',
       'Chief Learning Officer',
       'Foundation Program Officer',
-      'University Dean'
+      'University Dean',
+      'Teacher',
+      'Curriculum Designer',
+      'Learning Specialist',
+      'Independent Educational Consultant'
     ],
     counselorPay: '$55K–$500K (Foreign Service officer to school superintendent)',
     counselorNote: 'Education and public service careers are among the most mission-driven in the database. Network and institutional affiliation are the primary leverage points. DC policy track and urban education leadership have meaningfully different preparation paths.'
@@ -105,7 +118,7 @@ const NAICS_TO_ONET = {
   // NAICS 71 — Arts, Entertainment & Recreation
   71: {
     clusterName: 'Arts, Entertainment & Recreation',
-    metros: ['Los Angeles CA','New York NY','Nashville TN'],
+    metros: ['Los Angeles CA','New York NY','Nashville TN','Chicago IL','Philadelphia PA','Atlanta GA','Miami FL','Phoenix AZ','Boston MA','San Francisco Bay Area CA','Seattle WA','Denver CO','Pittsburgh PA','Portland OR','Austin TX','Raleigh-Durham NC','Minneapolis-St. Paul MN','Dallas-Fort Worth TX','San Diego CA','Detroit MI'],
     riasecAffinity: ['A','E','S'],
     titles: [
       'Film Director',
@@ -115,10 +128,79 @@ const NAICS_TO_ONET = {
       'Architect',
       'Interior Designer',
       'Sports Manager',
-      'Entertainment Attorney'
+      'Entertainment Attorney',
+      'Content Creator',
+      'Community Manager',
+      'Brand Storyteller',
+      'Copywriter / Editor',
+      'Content Producer',
+      'Content Distribution Manager'
     ],
     counselorPay: '$80K–$20M+ (staff designer to studio film director)',
     counselorNote: 'Creative careers have the widest outcome variance of any field. Portfolio and output matter more than credentials after the first job. The school matters most for network access and early opportunity — USC film, RISD, Parsons, and Berklee have specific industry pipelines that generalist universities cannot replicate.'
+  },
+
+  // NAICS 11 — Agriculture, Forestry, Fishing & Hunting
+  11: {
+    clusterName: 'Agriculture & Natural Resources',
+    metros: ['Fresno CA','Bakersfield CA','Salinas CA','Modesto CA','Stockton CA','Des Moines IA','Cedar Rapids IA','Omaha NE','Lincoln NE','Wichita KS','Kansas City MO','Amarillo TX','Lubbock TX','Yakima WA','Boise ID','Green Bay WI','Grand Rapids MI','Gainesville FL','Raleigh-Durham NC','Memphis TN'],
+    riasecAffinity: ['R','I','S'],
+    titles: [
+      'Agricultural Scientist',
+      'Farm Manager',
+      'Agronomist',
+      'Veterinarian',
+      'Food Safety Specialist',
+      'Sustainable Agriculture Consultant',
+      'Forestry Technician',
+      'Agribusiness Manager',
+      'Food Scientist',
+      'Food Production Manager',
+      'Ingredient Processing Technician',
+      'Food Safety & Quality Manager'
+    ],
+    counselorPay: '$45K–$150K+ (farm technician to agribusiness executive)',
+    counselorNote: 'Agriculture is undergoing a technology-driven transformation — precision agriculture, biotech crop science, and food safety are growing faster than traditional farm labor. Land-grant universities (Purdue, Iowa State, UC Davis, Texas A&M) have the strongest pipelines.'
+  },
+
+  // NAICS 21 — Mining, Quarrying, and Oil & Gas Extraction
+  21: {
+    clusterName: 'Energy & Natural Resource Extraction',
+    metros: ['Midland TX','Williston ND','Gillette WY','Elko NV','Houston TX','Oklahoma City OK'],
+    riasecAffinity: ['R','I','C'],
+    titles: [
+      'Petroleum Engineer',
+      'Geologist',
+      'Mining Engineer',
+      'Environmental Compliance Specialist',
+      'Energy Trader',
+      'Reservoir Engineer',
+      'Safety & Operations Manager',
+      'Renewable Energy Analyst',
+      'Landman',
+      'Heavy Equipment Operator'
+    ],
+    counselorPay: '$65K–$250K+ (field technician to senior petroleum engineer)',
+    counselorNote: 'Traditional oil & gas remains a strong-pay, high-demand field, especially in Texas Triangle and Rocky Mountain regions, while renewable energy analyst roles are the fastest-growing sub-track within this same cluster. Engineering programs at Texas A&M, Colorado School of Mines, and University of Houston have the deepest industry pipelines.'
+  },
+
+  // NAICS 31-33 — Manufacturing (incl. Biomanufacturing). 32 and 33 normalize to 31 below.
+  31: {
+    clusterName: 'Biomanufacturing & Production',
+    metros: ['Los Angeles CA','Raleigh-Durham NC','Boston MA','Philadelphia PA'],
+    riasecAffinity: ['R','C','E','A'],
+    titles: [
+      'Biomanufacturing Technician',
+      'Quality Control Technician',
+      'Quality Assurance Specialist',
+      'Manufacturing Supervisor',
+      'Validation Specialist',
+      'Process Development Associate',
+      'Plant Manager',
+      'Manufacturing Assistant'
+    ],
+    counselorPay: '$40K–$80K entry (technician) up to $150K+ (plant manager/director)',
+    counselorNote: 'A hidden pathway most families never hear about: entry-level biomanufacturing technician roles require no 4-year degree — a 6-week community college program (available in 26+ states) leads directly to hire at major pharmaceutical and biotech manufacturers. Real career ladder exists from technician to plant leadership, and many employers pay for further education once a student has shown workplace commitment. This affinity set is broader than a typical STEM cluster — it rewards precision and procedure (Conventional), hands-on floor work (Realistic), leadership track potential (Enterprising), and increasingly design/packaging/quality-visual work (Artistic), not just lab-science aptitude.'
   },
 
   // NAICS 23 — Construction / Architecture
@@ -229,7 +311,9 @@ const NAICS_TO_ONET = {
       'Consumer Insights Analyst',
       'Merchandise Planner',
       'DTC Brand Founder',
-      'Luxury Retail Executive'
+      'Luxury Retail Executive',
+      'Omnichannel Strategy Manager',
+      'International Retail Expansion Manager'
     ],
     counselorPay: '$70K–$500K+ (category analyst to CMO)',
     counselorNote: 'Retail and consumer products is undergoing a structural shift toward DTC and e-commerce. Students with this profile who combine business fundamentals with digital marketing and data skills are positioned for the growth segment of this industry.'
@@ -272,7 +356,7 @@ function getONETClusters(naicsSectors, riasec) {
     .slice(0, 3)
     .map(n => {
       // Normalize sector — handle 44/45 both mapping to 44
-      const sectorKey = n.sector === 45 ? 44 : n.sector === 49 ? 48 : n.sector;
+      const sectorKey = n.sector === 45 ? 44 : n.sector === 49 ? 48 : n.sector === 32 ? 31 : n.sector === 33 ? 31 : n.sector;
       const entry = NAICS_TO_ONET[sectorKey];
       if (!entry) return null;
 
