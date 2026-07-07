@@ -2234,6 +2234,7 @@ const LS_STATE = {
   name:'', grade:null, gpa:null, gpa_type:'weighted', voice:'student',
   pronouns: null,
   selectedTileIds: new Set(),
+  nextLevelSports: new Set(),
   zip:'', family_locations:[],
   reportFormat:'both',
   submitted:false,
@@ -3031,6 +3032,7 @@ function toggleTile(id, el, cluster) {
     if(LS_STATE.selectedTileIds.has(id)) {
       LS_STATE.selectedTileIds.delete(id);
       el.classList.remove('sel');
+      LS_STATE.nextLevelSports.delete(id); // deselecting a sport clears its toggle too
     } else {
       LS_STATE.selectedTileIds.add(id);
       el.classList.add('sel');
@@ -3044,7 +3046,65 @@ function toggleTile(id, el, cluster) {
     if(count === 3 && !_revealShown && !_allTilesShown && cluster !== 'eq') {
       fireProgressiveReveal();
     }
+
+    // ── Next Level Athlete toggle — surfaces whenever any sport tile is selected ──
+    if(cluster === 'move') renderNextLevelSection();
   }, 50);
+}
+
+// ── "Playing at the next level" toggle ──────────────────────────────────
+// Not a tile — a commitment-level signal attached to whichever sport tiles
+// are currently selected. Surfaces as a small checklist beneath the Move
+// cluster once at least one sport is picked; disappears if none remain.
+function isSportTile(tile) {
+  return !!(tile && tile.cluster === 'move' && tile.sport_type);
+}
+
+function toggleNextLevelSport(id) {
+  if(LS_STATE.nextLevelSports.has(id)) LS_STATE.nextLevelSports.delete(id);
+  else LS_STATE.nextLevelSports.add(id);
+  renderNextLevelSection();
+}
+
+function renderNextLevelSection() {
+  const actGrid = document.getElementById('activity-tile-grid');
+  if(!actGrid) return;
+
+  const selectedSports = Array.from(LS_STATE.selectedTileIds)
+    .map(id => (typeof VECTOR_CROSSWALK !== 'undefined' ? VECTOR_CROSSWALK.find(t => t.id === id) : null))
+    .filter(isSportTile);
+
+  let section = document.getElementById('next-level-section');
+
+  if(selectedSports.length === 0) {
+    if(section) section.style.display = 'none';
+    return;
+  }
+
+  if(!section) {
+    section = document.createElement('div');
+    section.id = 'next-level-section';
+    section.className = 'cluster-section';
+    section.style.marginTop = '1.5rem';
+    actGrid.insertAdjacentElement('afterend', section);
+  }
+  section.style.display = 'block';
+
+  const rows = selectedSports.map(tile => {
+    const checked = LS_STATE.nextLevelSports.has(tile.id) ? 'sel' : '';
+    const sportLabel = tile.label.replace(/^I (play|swim competitively|run)/i, '').trim() || tile.label;
+    return `<button type="button" class="tile ${checked}" style="text-align:left;padding:10px 14px;margin-bottom:6px;width:100%;text-transform:none;"
+      onclick="toggleNextLevelSport('${tile.id}')">
+      Interested in playing ${sportLabel} at the college level?
+    </button>`;
+  }).join('');
+
+  section.innerHTML = `
+    <div class="cluster-section-header">Playing at the Next Level</div>
+    <div style="font-size:var(--type-meta);color:var(--ink4);margin-bottom:8px">
+      For any sport you're aiming to play competitively in college — varsity, club, or NIL track.
+    </div>
+    ${rows}`;
 }
 
 function fireProgressiveReveal() {
@@ -3286,6 +3346,11 @@ function assembleProfile() {
     comboUnlocks,
     riasec,
     naicsSectors,
+    nextLevelAthlete: Array.from(LS_STATE.nextLevelSports).map(id => {
+      const t = typeof VECTOR_CROSSWALK !== 'undefined' ? VECTOR_CROSSWALK.find(x => x.id === id) : null;
+      return t ? t.label.replace(/^I /i, '').trim() : id;
+    }),
+    isRecruitedAthleteTrack: LS_STATE.nextLevelSports.size > 0,
     zip: LS_STATE.zip,
     trajectoryPull: LS_STATE.trajectoryPull,
     trajectoryAnchor: LS_STATE.trajectoryAnchor,

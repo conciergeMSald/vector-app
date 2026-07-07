@@ -34,7 +34,7 @@ const TILE_POOLS = {
   move: [
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
     'esports_gaming','horseback_riding','rock_climbing','soccer','basketball',
-    'football','baseball','softball','volleyball','lacrosse','field_hockey',
+    'football','flag_football','baseball','softball','volleyball','lacrosse','field_hockey',
     'swim_team','track_relay','club_travel_sports'
   ],
   think: [
@@ -44,7 +44,7 @@ const TILE_POOLS = {
   ],
   people: [
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
-    'teaching_tutoring','advocacy_activism','entrepreneurship','first_aid_emergencies'
+    'teaching_tutoring','advocacy_activism','entrepreneurship','young_entrepreneur','first_aid_emergencies'
   ],
   systems: [
     'cosmetic_beauty_science','cooking_chemistry','medical_science','how_body_moves',
@@ -194,85 +194,13 @@ const WORK_STYLE_BOOST = {
 // ─────────────────────────────────────────────────────────────
 
 function curateInitialTiles(answers) {
-  const { free_time = [], self_view = 'both', work_style = 'depends' } = answers;
-
-  // Score every activity tile
-  const scores = {};
-
-  // Initialize all activity tiles at 0
-  Object.values(TILE_POOLS).flat().forEach(id => { scores[id] = 0; });
-
-  // Q1 — free time answers (multi-select, each adds weight)
-  free_time.forEach(ft => {
-    const pool = FREE_TIME_MAP[ft] || [];
-    pool.forEach((id, idx) => {
-      // Earlier items in the pool get higher weight (they're more central to that path)
-      scores[id] = (scores[id] || 0) + (pool.length - idx);
-    });
-  });
-
-  // Q2 — self view modifier (additive bonus)
-  const selfViewBonus = SELF_VIEW_ADDITIONS[self_view] || SELF_VIEW_ADDITIONS['both'];
-  selfViewBonus.forEach(id => { scores[id] = (scores[id] || 0) + 5; });
-
-  // Q3 — work style modifier (smaller additive bonus)
-  const workStyleBonus = WORK_STYLE_BOOST[work_style] || WORK_STYLE_BOOST['depends'];
-  workStyleBonus.forEach(id => { scores[id] = (scores[id] || 0) + 3; });
-
-  // Always-show tiles get a baseline score so they always appear
-  ALWAYS_SHOW.forEach(id => { scores[id] = Math.max(scores[id] || 0, 8); });
-
-  // If no free_time answers given — show balanced default set
-  if (free_time.length === 0) {
-    Object.values(TILE_POOLS).flat().forEach(id => {
-      scores[id] = (scores[id] || 0) + 5;
-    });
-  }
-
-  // Sort by score descending, take top 32
-  const sorted = Object.entries(scores)
-    .sort((a, b) => b[1] - a[1])
-    .map(([id]) => id);
-
-  // Ensure cluster balance — at least 2 tiles from each non-dominant cluster
-  const result = ensureClusterBalance(sorted, free_time);
-
-  return result.slice(0, 32);
-}
-
-
-// ─────────────────────────────────────────────────────────────
-// CLUSTER BALANCE ENFORCER
-// Ensures no cluster is completely absent from the initial set
-// A student who picked "making" still sees science and people tiles
-// because cross-cluster discovery is how unexpected combos fire
-// ─────────────────────────────────────────────────────────────
-
-function ensureClusterBalance(sortedIds, free_time) {
-  const MIN_PER_CLUSTER = 2;
-  const result = [...sortedIds];
-  const clusterCounts = {};
-
-  // Count how many tiles from each cluster are in top 32
-  result.slice(0, 32).forEach(id => {
-    const cluster = getCluster(id);
-    if (cluster) clusterCounts[cluster] = (clusterCounts[cluster] || 0) + 1;
-  });
-
-  // For any cluster with fewer than MIN tiles, inject the top-scored tile from that cluster
-  Object.keys(TILE_POOLS).forEach(cluster => {
-    if ((clusterCounts[cluster] || 0) < MIN_PER_CLUSTER) {
-      const clusterTiles = TILE_POOLS[cluster];
-      // Find the highest-scored tile from this cluster not already in result
-      const toAdd = clusterTiles.find(id => !result.slice(0, 32).includes(id));
-      if (toAdd) {
-        // Insert at position 30 (before the last two slots)
-        result.splice(30, 0, toAdd);
-      }
-    }
-  });
-
-  return result;
+  // CURATION REMOVED (per approved spec, July 2026):
+  // Previously scored tiles against free_time/self_view/work_style answers
+  // and capped the result at 32. Now returns every non-EQ tile, unfiltered —
+  // too many students span multiple activities (in-school sports, personal
+  // hobbies, club/travel teams) for a curated subset to cover everyone.
+  // Signature kept identical so existing callers don't need changes.
+  return Object.values(TILE_POOLS).flat();
 }
 
 function getCluster(tileId) {

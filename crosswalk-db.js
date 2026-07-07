@@ -155,7 +155,7 @@ const VECTOR_CROSSWALK = [
   // MOVE & COMPETE
   // Team sports (60%) | Individual sports & fitness (40%)
   //
-  // TEAM  (12 tiles): football, baseball, softball, basketball,
+  // TEAM  (13 tiles): football, flag_football, baseball, softball, basketball,
   //   soccer, volleyball, lacrosse, field_hockey, swim_team,
   //   track_relay, cheerleading, club_travel_sports
   //
@@ -172,6 +172,12 @@ const VECTOR_CROSSWALK = [
   { id:'football', label:'I play football',
     label_parent:'Plays football',
     cluster:'move', sport_type:'team', gender:'male',
+    riasec_weights:{R:3,I:0,A:0,S:1,E:2,C:1},
+    naics_sectors:[71,61,92] },
+
+  { id:'flag_football', label:'I play flag football',
+    label_parent:'Plays flag football',
+    cluster:'move', sport_type:'team', gender:'female',
     riasec_weights:{R:3,I:0,A:0,S:1,E:2,C:1},
     naics_sectors:[71,61,92] },
 
@@ -424,6 +430,12 @@ const VECTOR_CROSSWALK = [
     cluster:'people',
     riasec_weights:{R:1,I:2,A:1,S:1,E:3,C:1},
     naics_sectors:[52,54,81,44] },
+
+  { id:'young_entrepreneur', label:'I\'m always finding ways to make money — lemonade stands, shoveling snow, selling things',
+    label_parent:'Always finding ways to make money — lemonade stands, shoveling snow, selling things',
+    cluster:'people',
+    riasec_weights:{R:2,I:1,A:1,S:1,E:3,C:0},
+    naics_sectors:[44,81,56] },
 
   { id:'first_aid_emergencies', label:'I am calm in emergencies and want to help',
     label_parent:'Is calm in emergencies and wants to help',
