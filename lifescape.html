@@ -6290,7 +6290,18 @@ function renderFullReport(profile, callAData, callBData, callCData, essayParsed)
 
   // Geo — fallback ensures this never renders silently blank (REPORT-FIXES-001 Item 5)
   var _geoLocalEl = document.getElementById('full-geo-local');
-  if (_geoLocalEl) _geoLocalEl.textContent = 'We\'re still gathering the full regional picture — check back, or ask your counselor for the latest read.';
+  if (_geoLocalEl) {
+    var _geoFallback = resolveZIP(profile.zip);
+    if (_geoFallback && _geoFallback.clusters && _geoFallback.clusters.length > 0) {
+      _geoLocalEl.innerHTML = _geoFallback.clusters.slice(0, 5).map(function(c) {
+        return '<span style="display:block;margin-bottom:4px"><strong style="color:var(--ink)">' + c.name + '</strong> '
+          + '<span style="color:var(--ink4);font-size:var(--type-meta)">— ' + c.distance + '</span></span>';
+      }).join('') + '<span style="display:block;font-size:var(--type-meta);color:var(--gold);margin-top:8px;letter-spacing:1px">'
+        + _geoFallback.neighborhood + (_geoFallback.county ? ' · ' + _geoFallback.county + ' County' : '') + '</span>';
+    } else {
+      _geoLocalEl.textContent = 'We\'re still gathering the full regional picture — check back, or ask your counselor for the latest read.';
+    }
+  }
 
   if(callCData?.geo) {
     // Parse geo into four sections
