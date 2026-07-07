@@ -241,7 +241,7 @@ const UNIVERSITY_CONTENT = {
   "Williams College": {
     name: "Williams College",
     location: "Williamstown, Massachusetts",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Finance and Investment Management (Wall Street - Goldman Sachs, Morgan Stanley, JPMorgan, Blackstone, KKR, Bridgewater Associates recruit Williams at disproportionate rates relative to enrollment -",
     hidden_pathway: "Williams is the only liberal arts college where Williamstown itself - a small town in the Berkshires with no industry, no city, no distraction - is the mechanism of social capital formation. There is no city to escape to.",
     the_room: "Williams enrolls approximately 2,000 undergraduates from all 50 states and 50+ countries. 57% receive financial aid. The student body is genuinely economically diverse -",
@@ -251,7 +251,7 @@ const UNIVERSITY_CONTENT = {
   "Amherst College": {
     name: "Amherst College",
     location: "Amherst, Massachusetts",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Finance and Investment Management (Wall Street - Goldman Sachs, Morgan Stanley, Blackstone, Citadel recruit Amherst at rates disproportionate to its 1,900-student enrollment), Consulting (McKinsey, Bain, BCG -",
     hidden_pathway: "Amherst has no core curriculum - it is the only highly selective liberal arts college in America with zero distribution requirements. Every course is an elective. Every student designs their own education from the first day of freshman year.",
     the_room: "Amherst enrolls approximately 1,900 undergraduates - smaller than Williams. 60% of students receive financial aid. The open curriculum self-selects for intellectually confident, self-directed students",
@@ -331,7 +331,7 @@ const UNIVERSITY_CONTENT = {
   "Massachusetts Institute of Technology": {
     name: "Massachusetts Institute of Technology",
     location: "Cambridge, Massachusetts",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Computer Science and Artificial Intelligence (CSAIL - MIT Computer Science and Artificial Intelligence Laboratory is the largest research laboratory at MIT and one of the most influential research institutions in the world -",
     hidden_pathway: "MIT's Independent Activities Period - IAP - is a four-week January term where the entire normal academic structure dissolves and students can take any course, launch any project, travel anywhere, or pursue any research interest with full institutiona",
     the_room: "MIT enrolls approximately 4,600 undergraduates - smaller than the liberal arts colleges in terms of feel but structured as a research university. 58% of students receive need-based financial aid.",
@@ -441,7 +441,7 @@ const UNIVERSITY_CONTENT = {
   "Brown University": {
     name: "Brown University",
     location: "Providence, Rhode Island",
-    region: "Northeast",
+    region: "New England",
     pipeline: "Consulting (McKinsey, Bain, BCG - Brown places into MBB at per-capita rates among the highest of any Ivy League university), Finance and Investment Banking (Wall Street - Goldman Sachs, Morgan Stanley, JPMorgan, major private equity and hedge funds -",
     hidden_pathway: "The Open Curriculum is Brown's defining structural feature and the hidden pathway that makes Brown categorically different from every other Ivy League university.",
     the_room: "Brown enrolls approximately 7,000 undergraduates - mid-sized among the Ivies. The student body is assembled from all 50 states and 100+ countries with heavy representation from New York, California, M",
@@ -1037,7 +1037,7 @@ const UNIVERSITY_CONTENT = {
   "Virginia Tech": {
     name: "Virginia Tech",
     location: "Blacksburg, Virginia",
-    region: "Southeast",
+    region: "Mid-Atlantic",
     pipeline: "Engineering (College of Engineering - top-15 nationally and the most consequential engineering program in Virginia - aerospace, biological systems, chemical, civil, computer science, electrical, industrial, materials science, mechanical, mining, ocean -",
     hidden_pathway: "The Northern Virginia defense technology corridor is the hidden pathway that makes Virginia Tech engineering structurally more powerful than its ranking suggests for one specific and enormously consequential career domain. Northern Virginia -",
     the_room: "Virginia Tech enrolls approximately 28,000 undergraduates - a large ACC flagship with the Hokies athletic identity that is among the most passionate in the conference.",
