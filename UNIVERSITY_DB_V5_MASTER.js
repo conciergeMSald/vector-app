@@ -91,7 +91,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Arizona State University",
       "location": "Tempe, Arizona",
-      "region": "West",
+      "region": "Southwest",
       "archetype": "The Innovation Metropolis — Entrepreneurship, Engineering, Business, Technology, and the Future Economy",
       "oneSentenceSummary": "Arizona State University has transformed into one of America's most innovative public universities, combining massive research investment, elite engineering, business, computer science, sustainability, aerospace, healthcare, and entrepreneurship with direct access to the rapidly expanding Phoenix metropolitan economy.",
       "pipeline": "Approximately 80,000 on-campus students (180,000+ including ASU Online). ASU is nationally recognized for Engineering, Computer Science, Artificial Intelligence, Business (W. P. Carey), Supply Chain Management, Finance, Sustainability, Aerospace Engineering, Construction Management, Architecture, Nursing, Journalism, Public Policy, Education, Design, Data Science, Biological Sciences, and Entrepreneurship. Major recruiters include Intel, TSMC, Honeywell Aerospace, Amazon, Microsoft, Google, Apple, Nvidia, Deloitte, EY, PwC, KPMG, JPMorgan Chase, American Express, Raytheon, Boeing, Northrop Grumman, Banner Health, Mayo Clinic Arizona, Deloitte Digital, and hundreds of Phoenix-area startups.",
@@ -571,7 +571,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "University of Washington",
       "location": "Seattle, Washington",
-      "region": "West",
+      "region": "Pacific Northwest",
       "archetype": "The Pacific Innovation Gateway — Artificial Intelligence, Medicine, Engineering, Global Health, and Cloud Computing",
       "oneSentenceSummary": "The University of Washington is one of the world's premier public research universities, combining elite engineering, computer science, medicine, business, public health, life sciences, and global research with unmatched access to Seattle's technology, biotechnology, aerospace, and global commerce ecosystem.",
       "pipeline": "Approximately 60,000 students. UW is internationally recognized for Computer Science, Artificial Intelligence, Machine Learning, Electrical Engineering, Bioengineering, Medicine, Public Health, Nursing, Information Science, Business (Foster), Oceanography, Environmental Science, Economics, Architecture, Global Health, and Data Science. Major recruiters include Microsoft, Amazon, Google, Meta, Apple, Nvidia, Boeing, Costco, Starbucks, Alaska Airlines, Expedia, T-Mobile, Providence Health, Fred Hutch Cancer Center, Seattle Children's Hospital, Bill & Melinda Gates Foundation, Deloitte, McKinsey & Company, and numerous venture-backed startups throughout Seattle.",
@@ -1032,7 +1032,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "University of Arizona",
       "location": "Tucson, Arizona",
-      "region": "West",
+      "region": "Southwest",
       "archetype": "Elite Scientific Research University — Space Science, Optics, Engineering, Health Sciences, and the American Southwest",
       "oneSentenceSummary": "The University of Arizona is a leading public research university renowned for astronomy, optics, space sciences, engineering, business, medicine, environmental science, and health research, combining world-class scientific discovery with strong connections to aerospace, defense, biosciences, and the rapidly growing Southwest economy.",
       "pipeline": "Approximately 56,000 students. Arizona is internationally recognized for Astronomy, Optical Sciences, Aerospace Engineering, Systems Engineering, Computer Science, Eller College of Management, Environmental Science, Hydrology, Mining Engineering, Medicine, Pharmacy, Public Health, Agriculture, Veterinary Science, and Biosystems Engineering. Major recruiters include Raytheon, RTX, Honeywell Aerospace, Texas Instruments, IBM, Intel, TSMC, Boeing, Northrop Grumman, Freeport-McMoRan, Banner Health, Mayo Clinic Arizona, Deloitte, Amazon, Microsoft, and numerous aerospace, optics, defense, and bioscience companies.",
@@ -1735,7 +1735,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Reed College",
       "location": "Portland, Oregon",
-      "region": "West",
+      "region": "Pacific Northwest",
       "archetype": "The Intellectual Sanctuary — Pure Scholarship, Independent Inquiry, and Academic Rigor",
       "oneSentenceSummary": "Reed College is one of America's most intellectually rigorous liberal arts colleges, emphasizing original thinking, deep scholarship, close faculty mentorship, and learning for its own sake rather than prestige, pre-professionalism, or conventional career pathways.",
       "pipeline": "Approximately 1,330 students. Reed is nationally respected for Physics, Mathematics, Chemistry, Biology, Computer Science, Philosophy, Literature, History, Political Science, Psychology, Linguistics, Economics, and the Humanities. Graduates disproportionately pursue PhDs, medicine, scientific research, academia, software engineering, public policy, publishing, data science, and graduate education. Employers include Google, Microsoft, Intel, OHSU, Nike, Amazon, research laboratories, universities, and mission-driven organizations, though graduate school is a defining post-graduation pathway.",
@@ -2188,7 +2188,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Gonzaga University",
       "location": "Spokane, Washington",
-      "region": "West",
+      "region": "Pacific Northwest",
       "archetype": "The Jesuit Leadership Community — Character, Service, Business, Health Sciences, and Pacific Northwest Leadership",
       "oneSentenceSummary": "Gonzaga University combines Jesuit values, a highly residential undergraduate experience, nationally respected business and engineering programs, strong health sciences, and one of the country's premier basketball cultures to develop principled leaders across the Pacific Northwest and beyond.",
       "pipeline": "Approximately 7,400 students. Gonzaga is recognized for Business, Accounting, Finance, Engineering, Nursing, Education, Psychology, Biology, Political Science, Communication, Computer Science, and Pre-Health. Major employers include Providence, Boeing, Amazon, Microsoft, Deloitte, KPMG, PwC, Avista, Kaiser Permanente, Providence Health, Washington state healthcare systems, and numerous Pacific Northwest businesses.",
@@ -3559,7 +3559,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Oklahoma State University",
       "location": "Stillwater, Oklahoma",
-      "region": "South Central",
+      "region": "Southwest",
       "archetype": "The Industry Builder — Energy, Engineering, Agriculture, Aviation, Business, and America's Heartland Economy",
       "oneSentenceSummary": "Oklahoma State University is a leading land-grant research university that combines nationally respected engineering, energy, agriculture, aviation, business, veterinary medicine, and applied sciences with one of the country's strongest cultures of employer engagement, alumni loyalty, and practical leadership development.",
       "pipeline": "Approximately 25,000 students. Oklahoma State is nationally recognized for Petroleum Engineering, Mechanical Engineering, Civil Engineering, Aerospace Engineering, Biosystems Engineering, Agriculture, Animal Science, Veterinary Medicine, Aviation, Supply Chain Management, Finance, Accounting, Energy Business, Hospitality Management, Architecture, and Fire Protection & Safety Engineering Technology. Major recruiters include ConocoPhillips, Devon Energy, ONEOK, Williams, Phillips 66, Koch Industries, American Airlines, Boeing, Lockheed Martin, Northrop Grumman, Deloitte, EY, Paycom, Love's Travel Stops, Walmart, John Deere, Halliburton, and numerous engineering, construction, aviation, and energy firms.",
@@ -4473,7 +4473,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "University of Houston",
       "location": "Houston, Texas",
-      "region": "South",
+      "region": "Southwest",
       "archetype": "The Urban Opportunity Engine — Energy, Business, Healthcare, Engineering, and the Global City",
       "oneSentenceSummary": "The University of Houston is one of America's premier urban public research universities, combining nationally respected engineering, business, law, hospitality, architecture, computer science, healthcare, and energy programs with direct access to one of the world's largest concentrations of Fortune 500 companies, the Texas Medical Center, and the global energy industry.",
       "pipeline": "Approximately 47,000 students. The University of Houston is nationally recognized for Petroleum Engineering, Chemical Engineering, Mechanical Engineering, Computer Science, Bauer College of Business, Supply Chain Management, Finance, Accounting, Hospitality Management, Architecture, Law, Construction Management, Public Policy, and Digital Media. Major recruiters include ExxonMobil, Chevron, Shell, ConocoPhillips, Phillips 66, SLB, Halliburton, KBR, Hewlett Packard Enterprise, Hewlett Packard, Microsoft, Amazon, Deloitte, EY, PwC, KPMG, JPMorgan Chase, Goldman Sachs, MD Anderson Cancer Center, Memorial Hermann, Houston Methodist, and hundreds of multinational corporations headquartered throughout Houston.",
@@ -4930,7 +4930,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "The University of Texas at Dallas",
       "location": "Richardson, Texas",
-      "region": "South",
+      "region": "Southwest",
       "archetype": "The Innovation Engine — Technology, Business, AI, Engineering, and Merit-Based Opportunity",
       "oneSentenceSummary": "The University of Texas at Dallas is one of America's fastest-rising public research universities, combining nationally recognized strengths in computer science, artificial intelligence, engineering, business, data science, cybersecurity, neuroscience, and mathematics with direct access to the Dallas–Fort Worth technology and corporate economy.",
       "pipeline": "Approximately 31,000 students. UTD is nationally recognized for Computer Science, Software Engineering, Artificial Intelligence, Cybersecurity, Data Science, Electrical Engineering, Mechanical Engineering, Biomedical Engineering, Finance, Accounting, Information Technology, Analytics, Mathematics, Neuroscience, and the Naveen Jindal School of Management. Major recruiters include Texas Instruments, Raytheon, Lockheed Martin, Goldman Sachs, JPMorgan Chase, Capital One, AT&T, Toyota North America, Amazon, Microsoft, NVIDIA, Cisco, Deloitte, EY, PwC, KPMG, PepsiCo, Samsung, and numerous high-growth technology companies throughout the Dallas–Fort Worth Metroplex.",
@@ -5387,7 +5387,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "The University of Alabama",
       "location": "Tuscaloosa, Alabama",
-      "region": "South",
+      "region": "Southeast",
       "archetype": "The Flagship of Leadership — SEC Tradition, Merit Scholarships, Business, Engineering, and National Student Recruitment",
       "oneSentenceSummary": "The University of Alabama is one of the nation's fastest-growing flagship universities, combining nationally recognized strengths in business, engineering, nursing, communications, law, accounting, and honors education with one of the country's strongest merit scholarship programs, legendary SEC traditions, and an increasingly national student body.",
       "pipeline": "Approximately 40,000 students. Alabama is nationally recognized for Accounting, Finance, Management, Engineering, Computer Science, Nursing, Public Relations, Communications, Supply Chain Management, Marketing, Law, Aerospace Engineering, Psychology, and Political Science. Major recruiters include Mercedes-Benz U.S. International, Lockheed Martin, Regions Financial, PwC, EY, KPMG, Deloitte, Amazon, Southern Company, Alabama Power, Boeing, Honda, Blue Origin, Bank of America, JPMorgan Chase, and numerous employers throughout the Southeast.",
@@ -5844,7 +5844,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Harvard University",
       "location": "Cambridge, Massachusetts",
-      "region": "Northeast",
+      "region": "New England",
       "archetype": "The Global Establishment Engine — Leadership, Law, Finance, Medicine, Policy, and Intellectual Authority",
       "oneSentenceSummary": "Harvard University is the world's most influential academic institution, combining elite education in law, business, medicine, government, and the arts with unmatched global prestige, leadership networks, and access to the highest levels of finance, policy, academia, and corporate power.",
       "pipeline": "Approximately 25,000 students across all schools. Harvard is globally dominant in Government, Economics, Applied Mathematics, Computer Science, Law (Harvard Law School), Business (Harvard Business School), Medicine (Harvard Medical School), Public Policy (Kennedy School), and elite graduate research across sciences and humanities. Major recruiting pipelines include McKinsey & Company, Bain & Company, Boston Consulting Group, Goldman Sachs, Morgan Stanley, JPMorgan Chase, Blackstone, KKR, Bridgewater Associates, Google, Meta, Microsoft, Apple, Amazon, OpenAI, top global hedge funds, U.S. federal institutions, NGOs, and leading academic institutions worldwide.",
@@ -6208,13 +6208,13 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Brown University",
       "location": "Providence, Rhode Island",
-      "region": "Northeast",
+      "region": "New England",
       "archetype": "The Open Curriculum Engine — Intellectual Freedom, Interdisciplinary Exploration, Creative Scholarship, and Elite Academic Self-Design",
       "oneSentenceSummary": "Brown University is an Ivy League institution known for its open curriculum, intellectual independence, and interdisciplinary excellence across humanities, social sciences, computer science, public health, and entrepreneurship, producing highly self-directed graduates who thrive in creative, academic, and leadership-driven careers.",
       "pipeline": "Approximately 10,000 students total. Brown is especially strong in Computer Science, Applied Mathematics, Economics, International Relations, Public Health, Biology, English, Political Science, Cognitive Science, and Entrepreneurship. Graduates frequently enter elite graduate programs and careers in tech, finance, consulting, medicine, law, media, academia, and startups. Major recruiters include Google, Meta, Amazon, Microsoft, McKinsey & Company, Bain & Company, Boston Consulting Group, Goldman Sachs, Morgan Stanley, JP Morgan, along with strong placement into PhD programs, medical schools, law schools, and creative industries.",
-      "hiddenPathway": "Brown’s hidden advantage is its radical academic flexibility. The open curriculum attracts highly self-directed students who intentionally design their own intellectual paths, often blending technical and humanistic disciplines. This produces unusually creative problem-solvers who thrive in startups, research, and cross-disciplinary innovation environments.",
-      "institutionalSecret": "Brown’s true strength is not traditional prestige competition, but intellectual autonomy. Students graduate with unusually diverse academic combinations—computer science + philosophy, economics + public health, or engineering + political science—making them disproportionately adaptable in rapidly changing industries.",
-      "theRoom": "Located in Providence, Brown sits within the BosWash corridor, with close proximity to Boston’s biotech ecosystem, New York’s finance and media industries, and Rhode Island’s growing healthcare and design sectors.",
+      "hiddenPathway": "Brown's hidden advantage is its radical academic flexibility. The open curriculum attracts highly self-directed students who intentionally design their own intellectual paths, often blending technical and humanistic disciplines. This produces unusually creative problem-solvers who thrive in startups, research, and cross-disciplinary innovation environments.",
+      "institutionalSecret": "Brown's true strength is not traditional prestige competition, but intellectual autonomy. Students graduate with unusually diverse academic combinations—computer science + philosophy, economics + public health, or engineering + political science—making them disproportionately adaptable in rapidly changing industries.",
+      "theRoom": "Located in Providence, Brown sits within the BosWash corridor, with close proximity to Boston's biotech ecosystem, New York's finance and media industries, and Rhode Island's growing healthcare and design sectors.",
       "lifestyle": "Intellectually free, socially progressive, highly creative, and self-directed. Students design their own academic journeys while participating in an active residential campus culture emphasizing discussion, collaboration, and exploration.",
       "bestFitPersonality": "Independent thinker, intellectually curious, self-motivated, interdisciplinary, and creatively driven.",
       "faithTradition": "Nonsectarian",
@@ -9890,7 +9890,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "University of Virginia",
       "location": "Charlottesville, Virginia",
-      "region": "Southeast",
+      "region": "Mid-Atlantic",
       "archetype": "The Jeffersonian Public Ivy — History, Rigor, and DC-Corridor Ambition",
       "oneSentenceSummary": "UVA blends founding-era prestige, Jefferson's original Academical Village, and elite selectivity into a public university experience that rivals top private schools for DC-corridor and Wall Street placement.",
       "pipeline": "Approximately 17,000 undergraduates. McIntire Business School is one of the most selective undergraduate business programs in the country. Strong Pre-Law, Government, and Commerce pipelines. Major recruiters include Deloitte, McKinsey, Capital One, and DC-area consulting and government contractors.",
@@ -11612,7 +11612,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Pomona College",
       "location": "Claremont, California",
-      "region": "West",
+      "region": "California",
       "archetype": "The Founding Consortium College — Academic Breadth, Selectivity, and West Coast Elite Formation",
       "oneSentenceSummary": "Pomona College is consistently ranked among the top liberal arts colleges in the nation, combining extraordinary selectivity, exceptional resources per student, and the founding role of the Claremont Colleges Consortium to deliver the academic breadth of a research university within an intensely intimate liberal arts community, all set at the base of the San Gabriel Mountains near Los Angeles.",
       "pipeline": "Approximately 1,700 students. Pomona sends graduates to Harvard, Yale, Stanford, MIT, Oxford, Cambridge, and other elite graduate programs at one of the highest rates of any liberal arts college in the nation. Major recruiters include McKinsey & Company, Bain & Company, Boston Consulting Group, Goldman Sachs, Morgan Stanley, BlackRock, Google, Meta, Amazon, Blackstone, and leading technology, entertainment, and finance firms throughout Los Angeles and San Francisco. Pomona has one of the largest per-student endowments of any liberal arts college in America, funding exceptional research, travel, and internship opportunities.",
@@ -12050,7 +12050,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Saint Mary's College of California",
       "location": "Moraga, California",
-      "region": "West",
+      "region": "California",
       "archetype": "The Bay Area Catholic Liberal Arts College — Small Community, Business, and Education Formation",
       "oneSentenceSummary": "Saint Mary's College of California is a small Lasallian Catholic liberal arts college offering an intimate, mission-driven undergraduate experience with particular strength in business, education, and health sciences, set in the hills of Moraga just twenty miles from San Francisco and Oakland.",
       "pipeline": "Approximately 2,500 undergraduates. Saint Mary's is known regionally for its School of Economics and Business Administration, teacher credentialing programs, kinesiology, and nursing preparation. Regional employers and graduate programs across the Bay Area recruit Saint Mary's graduates, with particular strength in Northern California K-12 education, healthcare systems, and small-to-midsize Bay Area businesses.",
@@ -12459,7 +12459,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "University of San Diego",
       "location": "San Diego, California",
-      "region": "West",
+      "region": "California",
       "archetype": "The Coastal Catholic Peer — WCC Athletics and Peace Studies at the Edge of the Pacific",
       "oneSentenceSummary": "USD offers the same polished Catholic-university formula as Pepperdine, Villanova, and Santa Clara, with a distinctive Kroc Institute for Peace Studies and genuine West Coast Conference athletics balance.",
       "pipeline": "Strong Business and Pre-Law programs. USD School of Law is top-55 nationally with strength in business, tax, and real estate law. Major recruiters span San Diego's business, legal, and military-adjacent economy.",
@@ -12715,7 +12715,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Santa Clara University",
       "location": "Santa Clara, California",
-      "region": "West",
+      "region": "California",
       "archetype": "The Silicon Valley Jesuit University — Business, Engineering, and Tech-Industry Formation",
       "oneSentenceSummary": "Santa Clara University is a mid-sized Jesuit Catholic university located in the heart of Silicon Valley, combining a nationally ranked Leavey School of Business, strong engineering programs, and unmatched physical proximity to the world's leading technology companies, producing graduates with direct, early access to the Bay Area innovation economy.",
       "pipeline": "Approximately 6,000 undergraduates. Santa Clara is nationally recognized for the Leavey School of Business, computer science and engineering, and pre-law preparation. Major recruiters include Google, Apple, Meta, Salesforce, Adobe, Cisco, Deloitte, EY, KPMG, Goldman Sachs, and a dense concentration of Silicon Valley startups and venture-backed technology companies that recruit directly from campus given its physical location at the center of Silicon Valley.",
@@ -13135,7 +13135,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "California State University Chico",
       "location": "Chico, California",
-      "region": "West",
+      "region": "California",
       "archetype": "The Classic College Town Public University — Business, Agriculture, and Northern California Community",
       "oneSentenceSummary": "Chico State is a mid-sized public university in a genuine college town in the Sacramento Valley foothills, known for a strong College of Business, an award-winning agriculture program, and one of the most traditional, community-centered residential campus cultures in the CSU system.",
       "pipeline": "Approximately 15,500 undergraduates. Chico State is regionally recognized for its College of Business, agriculture and sustainable food systems programs, construction management, nursing, and teacher education. Regional Northern California employers in agriculture, construction, healthcare, and business recruit Chico State graduates heavily, alongside a growing Sacramento-adjacent professional services presence.",
@@ -15103,7 +15103,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Southern Methodist University",
       "location": "Dallas, Texas",
-      "region": "Texas + Southwest",
+      "region": "Southwest",
       "archetype": "The Dallas Executive Gateway — Finance, Leadership, and Private Capital Formation",
       "oneSentenceSummary": "SMU is a nationally connected private university at the center of the Dallas wealth ecosystem, producing leaders across finance, real estate, private capital, consulting, entrepreneurship, and corporate America through deep integration with the city's business elite.",
       "pipeline": "Approximately 7,500 undergraduates. SMU's Cox School of Business is a nationally recognized launchpad into finance, private equity, and real estate, with unusually direct access to Dallas's concentrated wealth-management and energy-finance corridor. Major recruiters include Goldman Sachs, JPMorgan, EY, Deloitte, AT&T, ExxonMobil, and a dense network of Dallas-based private equity and family office firms.",
@@ -15748,7 +15748,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "University of Southern California",
       "location": "Los Angeles, California",
-      "region": "Southern California",
+      "region": "California",
       "archetype": "The Entertainment & Innovation Capital University — Film, Business, and LA Industry Formation",
       "oneSentenceSummary": "USC is a major private research university at the heart of Los Angeles, combining a world-leading film school, a nationally elite business program, and unmatched direct access to the entertainment, technology, and sports industries that define LA's economy.",
       "pipeline": "Approximately 21,000 undergraduates. USC's School of Cinematic Arts is the most influential film program in the world; the Marshall School of Business feeds finance, consulting, and entertainment business roles; and engineering (Viterbi) supplies major tech employers. Recruiters include every major studio, Disney, Google, Goldman Sachs, and the full spectrum of LA's entertainment and technology economy.",
@@ -18903,7 +18903,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "American University",
       "location": "Washington, DC",
-      "region": "Northeast",
+      "region": "Mid-Atlantic",
       "archetype": "The Policy Wonk's Campus — DC Embedded, With a Hidden Media Program",
       "oneSentenceSummary": "AU's School of International Service is genuinely elite, its Kogod Business School benefits directly from DC proximity, and its underrated audio/media production program hides behind the university's policy-wonk reputation.",
       "pipeline": "School of International Service (SIS) is one of the best international affairs programs in the country. Kogod Business School has solid finance/consulting placement. Audio Technology and Public Communication are genuinely strong, underrated programs.",
@@ -19397,7 +19397,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Boston University",
       "location": "Boston, Massachusetts",
-      "region": "Northeast",
+      "region": "New England",
       "archetype": "The Urban Independent — Finance, Media, and Boston's Dense Professional Economy",
       "oneSentenceSummary": "BU combines a large, urban, self-assembled community with strong Questrom Business and Communication programs, giving students direct access to Boston's finance, biotech, and media economy.",
       "pipeline": "Approximately 18,000 undergraduates spread across Commonwealth Avenue. Strong Questrom Business, Communication, and Public Health programs. Major recruiters include Fidelity, State Street, Deloitte, and Boston's dense biotech/finance corridor.",
@@ -19657,7 +19657,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Colorado State University",
       "location": "Fort Collins, Colorado",
-      "region": "West",
+      "region": "Rocky Mountains",
       "archetype": "The Land-Grant Trifecta — Veterinary Medicine, Hospitality, and Environmental Science",
       "oneSentenceSummary": "CSU pairs a top-5 veterinary medicine program with a genuinely strong Hospitality Management degree tied to national parks tourism, plus deep environmental science research, inside an outdoorsy Rocky Mountain setting.",
       "pipeline": "Approximately 25,000 undergraduates. Veterinary Medicine is top-5 nationally. Hospitality Management feeds directly into Rocky Mountain resort, ski, and national parks tourism economies. Warner College of Natural Resources is strong in environmental science, forestry, and conservation. Major employers include veterinary practices nationally, Rocky Mountain resort operators, the National Park Service, and agricultural/environmental agencies across Colorado.",
@@ -20170,7 +20170,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "George Washington University",
       "location": "Washington, DC",
-      "region": "Northeast",
+      "region": "Mid-Atlantic",
       "archetype": "The Foggy Bottom Insider — Politics as the Whole Environment",
       "oneSentenceSummary": "GW's Foggy Bottom location, blocks from the State Department and White House, makes political and international affairs immersion the default campus experience, not an elective.",
       "pipeline": "Elliott School of International Affairs is top-10 nationally. Strong Political Science, Pre-Law, and Business programs feeding directly into DC government, consulting, and law.",
@@ -20913,7 +20913,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "University of Maryland College Park",
       "location": "College Park, Maryland",
-      "region": "Northeast",
+      "region": "Mid-Atlantic",
       "archetype": "The Federal Feeder — NSA Pipeline Meets Smith Business and Quiet Astronomy Excellence",
       "oneSentenceSummary": "Maryland's proximity to Washington DC creates an unmatched federal security pipeline via computer science, a strong Smith Business School, genuine Arts & Sciences depth, and a criminally underrated Astronomy/Physics program.",
       "pipeline": "Smith School of Business is strong in finance and management. Computer Science feeds directly into NSA and federal agencies. Arts & Sciences has real strength in Government/Politics and English. Astronomy and Physics are genuinely elite but overshadowed nationally.",
@@ -21167,7 +21167,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Northeastern University",
       "location": "Boston, Massachusetts",
-      "region": "Northeast",
+      "region": "New England",
       "archetype": "The Co-op Machine — Real Work Experience Built Into the Degree",
       "oneSentenceSummary": "Northeastern's defining feature is its co-op program, which places students in full-time, paid industry jobs for multiple semesters, effectively graduating them with 12-18 months of real work experience already on their resume.",
       "pipeline": "Approximately 22,000 undergraduates. Strong Engineering, Business, and Health Sciences programs built around the co-op model. Major co-op employers include Moderna, Biogen, Raytheon, Fidelity, and hundreds of Boston-area and national companies.",
@@ -23002,7 +23002,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "University of Texas at Austin",
       "location": "Austin, Texas",
-      "region": "Texas + Southwest",
+      "region": "Southwest",
       "archetype": "The Austin Tech Boom Anchor — Communications, Engineering, and a City That Won't Let Go",
       "oneSentenceSummary": "UT Austin combines massive scale, the #1 public communications program in the country, and direct access to Austin's booming tech scene — the city itself is a career pipeline.",
       "pipeline": "Elite Moody College of Communication (#1 public university program). Strong Engineering and McCombs Business. Major recruiters include Tesla, Apple, Google, Meta, and Austin's booming startup ecosystem.",
@@ -23246,7 +23246,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "UCLA",
       "location": "Los Angeles, California",
-      "region": "West",
+      "region": "California",
       "archetype": "The Complete LA Powerhouse — Film, Medicine, Business, and Elite Academics in One Place",
       "oneSentenceSummary": "UCLA is genuinely exceptional — a top-10 public university with the only film school combining theater, film, TV, and digital media under one roof, elite medicine, strong business, and unmatched direct access to LA's entertainment and tech economy.",
       "pipeline": "UCLA TFT is the only film school in America combining theater, film, television, and digital media in a single program. Elite pre-med and Anderson Business School. Major recruiters span every major studio, tech company, hospital system, and consulting firm in LA and nationally.",
@@ -23506,7 +23506,7 @@ const UNIVERSITY_DB_V5 = {
     "institutionNarrative": {
       "name": "Boston College",
       "location": "Chestnut Hill, Massachusetts",
-      "region": "Northeast",
+      "region": "New England",
       "archetype": "The Jesuit Wall Street Feeder — Boston Finance Meets Genuine Values",
       "oneSentenceSummary": "BC's Carroll School of Business feeds directly into Boston's concentrated financial services sector, wrapped in genuine Jesuit values and a polished, spirited campus culture.",
       "pipeline": "Carroll School of Business is elite, with deep Boston financial services placement. Major recruiters include Fidelity, Wellington, State Street, and major consulting firms.",
