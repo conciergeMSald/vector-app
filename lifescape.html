@@ -3447,7 +3447,7 @@ function shouldShowCCPathway(profile, matches) {
   // Track A: any matched school has CC pathway data
   if (matches && matches.length > 0) {
     var hasDelta = matches.some(function(u) {
-      var schoolData = typeof UNIVERSITY_CONTENT !== 'undefined' ? UNIVERSITY_CONTENT[u.name] : null;
+      var schoolData = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(u.name) : null;
       var ctx = extractCCContext(schoolData, zip);
       return ctx.hasCCPathway;
     });
@@ -4863,6 +4863,31 @@ function renderActIX(callEData) {
    Returns up to 5 picks, sorted by specificity score.
    Family sees top 2. Counselor sees all 5.
    ─────────────────────────────────────────────────────────────────────────── */
+// ── Big Five Match Score ────────────────────────────────────────────────
+// Student's BFI-10 scores are 1-5 (scoreBFI()); V5's bigFiveProfile is 0-100.
+// Normalize student scores to 0-100, then score similarity across the 5
+// traits. Returns 0-10 (10 = closest possible match), or null if either
+// side is missing data — never fabricates a score from partial info.
+function bigFiveMatchScore(studentBF, schoolBF) {
+  if (!studentBF || !schoolBF) return null;
+  var traits = [
+    ['O', 'openness'], ['C', 'conscientiousness'], ['E', 'extraversion'],
+    ['A', 'agreeableness'], ['N', 'neuroticism']
+  ];
+  var diffs = [];
+  traits.forEach(function(pair) {
+    var studentVal = studentBF[pair[0]];
+    var schoolVal = schoolBF[pair[1]];
+    if (studentVal == null || schoolVal == null) return;
+    var studentNormalized = (studentVal - 1) / 4 * 100; // 1-5 -> 0-100
+    diffs.push(Math.abs(studentNormalized - schoolVal));
+  });
+  if (diffs.length === 0) return null;
+  var avgDiff = diffs.reduce(function(a, b) { return a + b; }, 0) / diffs.length;
+  // avgDiff of 0 -> score 10; avgDiff of 50+ -> score 0
+  return Math.max(0, Math.round(10 - (avgDiff / 5)));
+}
+
 function getUnderTheRadarPicks(profile, matchedSchools) {
   if (typeof UNIVERSITY_DB_V5 === 'undefined') return [];
 
@@ -5010,6 +5035,15 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
       if (riasec.includes('R') && bfp.includes('technical')) score += 3;
     }
 
+    // ── Big Five numeric match (V5 studentFit.bigFiveProfile) ──────────
+    // Real personality-score matching, not keyword guessing. Only fires
+    // when both the student's BFI-10 and the school's V5 profile exist.
+    var bigFiveScore = null;
+    if (school.studentFit && school.studentFit.bigFiveProfile) {
+      bigFiveScore = bigFiveMatchScore(profile.big_five, school.studentFit.bigFiveProfile);
+      if (bigFiveScore != null) score += bigFiveScore;
+    }
+
     // Geo radius alignment
     if (narrative.geographicInfluenceRadius) {
       var geo = narrative.geographicInfluenceRadius.toLowerCase();
@@ -5066,6 +5100,7 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
       if (archetypeMatches(archetype)) triggers.push('your activity interests');
       if (hasChristianFaithSignal || hasJewishFaithSignal) triggers.push('your faith preference');
       if (narrative.bestFitPersonality) triggers.push('your personality profile');
+      if (bigFiveScore != null && bigFiveScore >= 7) triggers.push('a strong personality match');
       var triggerNote = triggers.length ? ' — surfaced because of ' + triggers.join(' and ') + '.' : '';
       reason = (narrative.oneSentenceSummary || narrative.hiddenPathway || '') + triggerNote;
       candidates.push({ name, school, score, reason });
@@ -5135,7 +5170,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
   const quickSection = document.getElementById('quick-schools-section');
   if(quickList && callDData.length > 0) {
     quickList.innerHTML = callDData.slice(0,3).map((s,i) => {
-      const qData = typeof UNIVERSITY_CONTENT !== 'undefined' ? UNIVERSITY_CONTENT[s.name] : null;
+      const qData = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(s.name) : null;
       const qArchetype = qData && qData.archetype ? qData.archetype : '';
       const qFaith = qData && qData.faith_tradition ? qData.faith_tradition : '';
       return `<div class="school-preview">
@@ -5166,8 +5201,8 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
   }
 
   schoolsList.innerHTML = callDData.map((s, i) => {
-    const schoolData = typeof UNIVERSITY_CONTENT !== 'undefined'
-      ? UNIVERSITY_CONTENT[s.name] : null;
+    const schoolData = typeof getFlatSchoolData === 'function'
+      ? getFlatSchoolData(s.name) : null;
     const scaleLabel = profile.college_prefs.campus_scale !== 'no_preference'
       ? profile.college_prefs.campus_scale.replace(/_/g,' ') : '';
 
@@ -5253,8 +5288,8 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
   // ── Adjacent pick — "One more worth knowing" (Where You Fit tab) ─────────
   if(adjacentPicks && adjacentPicks.length > 0 && schoolsList) {
     const adjHtml = adjacentPicks.map(adj => {
-      const adjData = typeof UNIVERSITY_CONTENT !== 'undefined'
-        ? UNIVERSITY_CONTENT[adj.name] : null;
+      const adjData = typeof getFlatSchoolData === 'function'
+        ? getFlatSchoolData(adj.name) : null;
       const adjDb = getDbV5Entry(adj.name);
       const adjCC = adjDb && adjDb.institutionNarrative && adjDb.institutionNarrative.ccTransferPathway
         ? adjDb.institutionNarrative.ccTransferPathway : null;
@@ -5302,7 +5337,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     let counselorHtml = `<div class="section-eyebrow" style="margin-bottom:.5rem">Direct matches</div>`;
     counselorHtml += callDData.map((s,i) => {
       const intel = typeof getUniversityIntel === 'function' ? getUniversityIntel(s.name) : null;
-      const schoolD = typeof UNIVERSITY_CONTENT !== 'undefined' ? UNIVERSITY_CONTENT[s.name] : null;
+      const schoolD = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(s.name) : null;
       const majors = typeof getMajorStrengths === 'function' ? getMajorStrengths(s.name) : [];
       const cities = typeof getTopGradCities === 'function' ? getTopGradCities(s.name) : [];
 
@@ -5597,8 +5632,8 @@ async function submitLifescape() {
       : [];
     var _ccShouldShow = shouldShowCCPathway(profile, _matchedForCC);
     var _ccTargetSchool = _matchedForCC.length > 0 ? _matchedForCC[0] : null;
-    var _ccTargetData = _ccTargetSchool && typeof UNIVERSITY_CONTENT !== 'undefined'
-      ? UNIVERSITY_CONTENT[_ccTargetSchool.name] : null;
+    var _ccTargetData = _ccTargetSchool && typeof getFlatSchoolData === 'function'
+      ? getFlatSchoolData(_ccTargetSchool.name) : null;
     var _ccContext = _ccShouldShow ? extractCCContext(_ccTargetData, profile.zip) : null;
 
     // Build parallel call array — callB + callC always, callE conditionally
@@ -5802,7 +5837,7 @@ async function submitLifescape() {
 
           // First pass: note which regions are already covered in top _rawMatches
           _rawMatches.slice(0, _schoolCount * 3).forEach(function(name) {
-            var sc = UNIVERSITY_CONTENT[name];
+            var sc = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(name) : null;
             if (!sc) return;
             var r = (sc.vector_region || sc.region || '').toLowerCase().replace(/\s+/g,'_');
             // Map school regions to student-selected region keys
@@ -7122,7 +7157,7 @@ function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPi
   // Adjacent pick
   if(adjacentPicks && adjacentPicks.length) {
     adjacentPicks.forEach(function(s) {
-      var sd = (typeof UNIVERSITY_CONTENT !== 'undefined') ? UNIVERSITY_CONTENT[s.name] : null;
+      var sd = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(s.name) : null;
       allSchools.push({
         name: s.name,
         label: 'Adjacent Match',
@@ -7147,7 +7182,7 @@ function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPi
   // Under the radar picks
   if(radarPicks && radarPicks.length) {
     radarPicks.forEach(function(s) {
-      var sd = (typeof UNIVERSITY_CONTENT !== 'undefined') ? UNIVERSITY_CONTENT[s.name || s] : null;
+      var sd = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(s.name || s) : null;
       allSchools.push({
         name: s.name || s,
         label: 'Under the Radar',
@@ -7553,6 +7588,53 @@ function getDbV5Entry(schoolName) {
   var canonical = _DB_V5_ALIAS[schoolName];
   if (canonical && UNIVERSITY_DB_V5[canonical]) return UNIVERSITY_DB_V5[canonical];
   return null;
+}
+
+// ── getFlatSchoolData ────────────────────────────────────────────────────
+// Single accessor for anywhere that reads school data by name. Fixes the
+// V5-merge shape mismatch (BUG-AUDIT-001): UNIVERSITY_CONTENT gets mutated
+// at load time so V5 schools sit nested under institutionNarrative, while
+// old-DB-only schools stay flat. This always returns the OLD flat key
+// names, sourced from whichever schema actually has the data — so every
+// call site below can swap UNIVERSITY_CONTENT[name] for this with no
+// other changes required.
+function getFlatSchoolData(schoolName) {
+  var v5 = getDbV5Entry(schoolName);
+  if (v5 && v5.institutionNarrative) {
+    var n = v5.institutionNarrative;
+    return {
+      archetype: n.archetype || '',
+      faith_tradition: n.faithTradition || '',
+      best_fit_personality: n.bestFitPersonality || '',
+      comparable_institutions: n.comparableInstitutions || '',
+      geographic_influence_radius: n.geographicInfluenceRadius || '',
+      economic_outcome: n.economicOutcome || '',
+      one_sentence_summary: n.oneSentenceSummary || '',
+      hidden_pathway: n.hiddenPathway || '',
+      pipeline: n.pipeline || '',
+      location: n.location || '',
+      region: n.region || '',
+      vector_region: n.region || '',
+      grad_cities: n.gradCities || ''
+    };
+  }
+  var legacy = (typeof UNIVERSITY_CONTENT !== 'undefined') ? UNIVERSITY_CONTENT[schoolName] : null;
+  if (!legacy) return null;
+  return {
+    archetype: legacy.archetype || '',
+    faith_tradition: legacy.faith_tradition || '',
+    best_fit_personality: legacy.best_fit_personality || '',
+    comparable_institutions: legacy.comparable_institutions || '',
+    geographic_influence_radius: legacy.geographic_influence_radius || '',
+    economic_outcome: legacy.economic_outcome || '',
+    one_sentence_summary: legacy.one_sentence_summary || '',
+    hidden_pathway: legacy.hidden_pathway || '',
+    pipeline: legacy.pipeline || '',
+    location: legacy.location || '',
+    region: legacy.region || '',
+    vector_region: legacy.vector_region || legacy.region || '',
+    grad_cities: legacy.grad_cities || ''
+  };
 }
 // ─────────────────────────────────────────────────────────────────────────────
 
