@@ -5390,6 +5390,18 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         })()
       : '';
 
+    // ── Community Feel — narrative label only, never a raw number ──
+    // Same "never numeric" rule as the Cultural Fit Lens above. institutionScale.communityFeel
+    // is a real, corrected 0-100 internal score (see community_feel_formula.js for how it's
+    // derived) — converted here to a qualitative badge, never shown as a number.
+    const _communityFeelScore = _dbEntry && _dbEntry.institutionScale && typeof _dbEntry.institutionScale.communityFeel === 'number'
+      ? _dbEntry.institutionScale.communityFeel : null;
+    const _communityFeelLabel = _communityFeelScore == null ? ''
+      : _communityFeelScore >= 85 ? 'Tight-Knit Community'
+      : _communityFeelScore >= 70 ? 'Strong Sense of Community'
+      : _communityFeelScore >= 50 ? 'Balanced Community Feel'
+      : 'Large-Campus Energy';
+
     return `<div class="uni-card">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
         <div>
@@ -5403,6 +5415,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         ${scaleLabel ? `<span class="school-badge">${scaleLabel}</span>` : ''}
         ${schoolData ? `<span class="school-badge">${schoolData.region}</span>` : ''}
         ${faithTradition ? `<span class="school-badge-faith">${faithTradition}</span>` : ''}
+        ${_communityFeelLabel ? `<span class="school-badge">${_communityFeelLabel}</span>` : ''}
       </div>
       <div class="card-narrative"><strong style="font-weight:600;color:var(--ink);display:block;margin-bottom:6px;">${s.match.replace(/\s*-{2,}\s*$/g,"").trim()}</strong>${s.why.replace(/\s*-{2,}\s*$/g,"").trim()}</div>
       ${footerContent ? `<div class="card-traj-note">${footerContent}</div>` : ''}

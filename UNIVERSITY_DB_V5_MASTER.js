@@ -206,7 +206,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 80000,
       "campusType": "Multi-Campus Urban Public Research University",
       "residentialIntensity": 58,
-      "communityFeel": 76,
+      "communityFeel": 61,
       "studentFacultyRatio": "18:1",
       "classSizeExperience": "Introductory courses can be large, particularly in engineering, business, biology, psychology, and computer science. Upper-division coursework becomes considerably more personalized through Barrett Honors College, undergraduate research, innovation labs, capstone projects, internships, startup accelerators, and faculty mentorship.",
       "scaleAdvantages": [
@@ -1124,7 +1124,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 56000,
       "campusType": "Residential Public Research University",
       "residentialIntensity": 74,
-      "communityFeel": 84,
+      "communityFeel": 69,
       "studentFacultyRatio": "17:1",
       "classSizeExperience": "Introductory courses in engineering, biology, chemistry, psychology, business, and the sciences can be large. Upper-division coursework becomes considerably smaller through research laboratories, fieldwork, capstone projects, clinical experiences, honors seminars, and faculty mentorship.",
       "scaleAdvantages": [
@@ -1588,7 +1588,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 22000,
       "campusType": "Large Public Flagship, College Town",
       "residentialIntensity": 56,
-      "communityFeel": 70,
+      "communityFeel": 62,
       "studentFacultyRatio": "18:1",
       "classSizeExperience": "Moderate class sizes; sports business program offers increasingly personalized upper-division mentorship.",
       "scaleAdvantages": [
@@ -1822,7 +1822,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 1330,
       "campusType": "Residential Liberal Arts College",
       "residentialIntensity": 98,
-      "communityFeel": 98,
+      "communityFeel": 100,
       "studentFacultyRatio": "9:1",
       "classSizeExperience": "Nearly all classes are seminar-based or conference-style discussions with extensive reading, writing, faculty interaction, and individualized feedback. Every student completes an original senior thesis, making independent research a defining feature of the undergraduate experience.",
       "scaleAdvantages": [
@@ -2181,7 +2181,8 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Reed does not maintain a separate honors college because the entire institution functions as an honors-level academic experience. Every student participates in an interdisciplinary humanities sequence, completes an original senior thesis, and studies within small discussion-based classes emphasizing scholarship, writing, and independent inquiry."
-    }
+    ,
+      "wholeInstitutionRigor": true}
   },
 
 "Gonzaga University": {
@@ -2280,7 +2281,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 7400,
       "campusType": "Residential Private Comprehensive University",
       "residentialIntensity": 96,
-      "communityFeel": 98,
+      "communityFeel": 99,
       "studentFacultyRatio": "11:1",
       "classSizeExperience": "Classes are predominantly small and discussion-oriented, with close faculty mentorship, personalized advising, experiential learning, undergraduate research opportunities, and extensive community engagement. Students benefit from a liberal arts atmosphere combined with professional school resources.",
       "scaleAdvantages": [
@@ -2737,7 +2738,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 47000,
       "campusType": "Residential Public Research University",
       "residentialIntensity": 90,
-      "communityFeel": 90,
+      "communityFeel": 78,
       "studentFacultyRatio": "17:1",
       "classSizeExperience": "Introductory courses may include large lectures, but upper-division students—particularly in Kelley, O'Neill, Jacobs, Media, and honors programs—benefit from significantly smaller classes, extensive team-based learning, faculty mentorship, internships, consulting projects, and experiential education.",
       "scaleAdvantages": [
@@ -3194,7 +3195,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 30000,
       "campusType": "Residential Public Research University",
       "residentialIntensity": 92,
-      "communityFeel": 90,
+      "communityFeel": 81,
       "studentFacultyRatio": "17:1",
       "classSizeExperience": "Introductory STEM courses can be large, but upper-division engineering, agriculture, design, business, and science courses become significantly smaller. Students benefit from extensive laboratory work, undergraduate research, senior design projects, industry-sponsored competitions, and close collaboration with faculty and employers.",
       "scaleAdvantages": [
@@ -3651,7 +3652,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 25000,
       "campusType": "Residential Public Research University",
       "residentialIntensity": 90,
-      "communityFeel": 92,
+      "communityFeel": 80,
       "studentFacultyRatio": "18:1",
       "classSizeExperience": "Large introductory STEM and business courses give way to smaller upper-division classes emphasizing applied projects, industry collaboration, undergraduate research, design experiences, internships, and close faculty mentoring. Students benefit from unusually high levels of employer engagement throughout their education.",
       "scaleAdvantages": [
@@ -4108,7 +4109,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 28000,
       "campusType": "Residential Public Research University",
       "residentialIntensity": 90,
-      "communityFeel": 94,
+      "communityFeel": 81,
       "studentFacultyRatio": "17:1",
       "classSizeExperience": "Introductory courses can be large, but upper-level programs in pharmacy, engineering, journalism, architecture, business, healthcare, and the liberal arts become significantly smaller. Undergraduate research, clinical experiences, internships, and faculty mentoring are widely available across disciplines.",
       "scaleAdvantages": [
@@ -4565,7 +4566,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 47000,
       "campusType": "Urban Public Research University",
       "residentialIntensity": 54,
-      "communityFeel": 72,
+      "communityFeel": 57,
       "studentFacultyRatio": "22:1",
       "classSizeExperience": "Large introductory courses transition into significantly smaller upper-division classes emphasizing internships, applied research, design projects, clinical experiences, and close engagement with Houston-area employers. Many students begin professional work well before graduation because of the university's location.",
       "scaleAdvantages": [
@@ -5022,7 +5023,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 31000,
       "campusType": "Suburban Public Research University",
       "residentialIntensity": 58,
-      "communityFeel": 74,
+      "communityFeel": 61,
       "studentFacultyRatio": "24:1",
       "classSizeExperience": "Introductory STEM courses can be large, but advanced coursework emphasizes research labs, project-based learning, faculty collaboration, industry-sponsored capstones, and internship integration. Many students combine coursework with part-time professional employment throughout the academic year.",
       "scaleAdvantages": [
@@ -5931,7 +5932,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 24500,
       "campusType": "Urban Ivy League Research University",
       "residentialIntensity": 85,
-      "communityFeel": 80,
+      "communityFeel": 72,
       "studentFacultyRatio": "7:1",
       "classSizeExperience": "Small, discussion-based undergraduate instruction with intense faculty access; graduate schools operate as elite professional training environments",
       "scaleAdvantages": [
@@ -6298,7 +6299,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 9900,
       "campusType": "Urban-Adjacent Ivy League Campus",
       "residentialIntensity": 88,
-      "communityFeel": 85,
+      "communityFeel": 74,
       "studentFacultyRatio": "6:1",
       "classSizeExperience": "Small, discussion-based classes with strong faculty mentorship and high student autonomy in course selection",
       "scaleAdvantages": [
@@ -6658,7 +6659,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 49000,
       "campusType": "Large Public Research Flagship",
       "residentialIntensity": 56,
-      "communityFeel": 66,
+      "communityFeel": 56,
       "studentFacultyRatio": "20:1",
       "classSizeExperience": "Large introductory courses; Grainger CS cohorts become tighter and more selective upper-division.",
       "scaleAdvantages": [
@@ -6901,7 +6902,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 49000,
       "campusType": "Large Public Big Ten Flagship, Multi-Campus",
       "residentialIntensity": 52,
-      "communityFeel": 58,
+      "communityFeel": 57,
       "studentFacultyRatio": "16:1",
       "classSizeExperience": "Large introductory courses; pharmacy program becomes highly specialized upper-division.",
       "scaleAdvantages": [
@@ -7150,7 +7151,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 51000,
       "campusType": "Large Public Research University, College Town",
       "residentialIntensity": 62,
-      "communityFeel": 70,
+      "communityFeel": 65,
       "studentFacultyRatio": "15:1",
       "classSizeExperience": "Introductory courses can be large; upper-division and Ross Business courses are highly selective and personalized.",
       "scaleAdvantages": [
@@ -7393,7 +7394,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 36000,
       "campusType": "Residential University",
       "residentialIntensity": 72,
-      "communityFeel": 74,
+      "communityFeel": 70,
       "studentFacultyRatio": "18:1",
       "classSizeExperience": "Large introductory lectures in first two years; Moore School and engineering programs offer more cohort-based professional experiences; upper-division courses more intimate",
       "scaleAdvantages": [
@@ -7409,6 +7410,12 @@ const UNIVERSITY_DB_V5 = {
         "Columbia is not a major national economic hub for non-Southeast careers",
         "SEC reputation can overshadow the academic distinction of Moore School nationally"
       ]
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "South Carolina Honors College",
+      "strength": 92,
+      "notes": "Consistently ranked among the top public honors colleges nationally. Offers dedicated honors housing, priority registration, smaller seminar-style general education, and its own study abroad and research funding — a genuinely distinct smaller-school experience within USC's large undergraduate population."
     },
     "megaRegionIntegration": {
       "primaryMegaRegion": "CharLanta",
@@ -8293,7 +8300,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 33000,
       "campusType": "Residential University",
       "residentialIntensity": 72,
-      "communityFeel": 78,
+      "communityFeel": 71,
       "studentFacultyRatio": "18:1",
       "classSizeExperience": "Large introductory lectures in general education; Mewbourne and Price programs offer more cohort-based professional experiences; upper-division engineering and business courses are smaller and more intensive",
       "scaleAdvantages": [
@@ -8309,6 +8316,12 @@ const UNIVERSITY_DB_V5 = {
         "Energy industry concentration creates some career path narrowing for non-energy students",
         "Oklahoma City is a mid-size market with limited breadth of industry diversity"
       ]
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "University of Oklahoma Honors College",
+      "strength": 88,
+      "notes": "One of the oldest and most established honors colleges among public flagships, founded 1961. Offers small-seminar general education, priority registration, and dedicated honors housing — a genuinely smaller-school experience within OU's large undergraduate population."
     },
     "megaRegionIntegration": {
       "primaryMegaRegion": "TexasTriangle",
@@ -9355,7 +9368,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 25000,
       "campusType": "Large Public ACC Flagship, College Town",
       "residentialIntensity": 64,
-      "communityFeel": 80,
+      "communityFeel": 66,
       "studentFacultyRatio": "17:1",
       "classSizeExperience": "Moderate class sizes; CU-ICAR provides highly personalized automotive engineering experience.",
       "scaleAdvantages": [
@@ -9579,7 +9592,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 13180,
       "campusType": "Residential Research University",
       "residentialIntensity": 68,
-      "communityFeel": 78,
+      "communityFeel": 65,
       "studentFacultyRatio": "7:1",
       "classSizeExperience": "Small-to-moderate classes with strong faculty access, supported by a ten-college residential system modeled on Yale's that delivers a genuine small-college feel inside a research university.",
       "scaleAdvantages": [
@@ -9993,7 +10006,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 25000,
       "campusType": "Public Flagship, Historic College Town",
       "residentialIntensity": 68,
-      "communityFeel": 78,
+      "communityFeel": 72,
       "studentFacultyRatio": "15:1",
       "classSizeExperience": "Moderate class sizes with genuine access to faculty; McIntire's small selective cohort creates especially close mentorship.",
       "scaleAdvantages": [
@@ -10250,7 +10263,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 13500,
       "campusType": "Private University, New Orleans Urban Campus",
       "residentialIntensity": 62,
-      "communityFeel": 76,
+      "communityFeel": 77,
       "studentFacultyRatio": "9:1",
       "classSizeExperience": "Small, intimate classes with genuine faculty access.",
       "scaleAdvantages": [
@@ -10501,7 +10514,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 36000,
       "campusType": "Large Public Research Flagship, Mountain College Town",
       "residentialIntensity": 56,
-      "communityFeel": 68,
+      "communityFeel": 59,
       "studentFacultyRatio": "17:1",
       "classSizeExperience": "Moderate to large introductory courses; LASP research and Leeds Business offer especially personalized upper-division experiences.",
       "scaleAdvantages": [
@@ -10783,7 +10796,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 21000,
       "campusType": "Private University, Self-Contained College Town",
       "residentialIntensity": 66,
-      "communityFeel": 76,
+      "communityFeel": 70,
       "studentFacultyRatio": "15:1",
       "classSizeExperience": "Moderate class sizes with genuine faculty access, especially within Newhouse's tight-knit cohort structure.",
       "scaleAdvantages": [
@@ -11032,7 +11045,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 17000,
       "campusType": "Private Suburban University, Coral Gables",
       "residentialIntensity": 56,
-      "communityFeel": 66,
+      "communityFeel": 71,
       "studentFacultyRatio": "12:1",
       "classSizeExperience": "Moderate class sizes with genuine faculty access, especially in international business programs.",
       "scaleAdvantages": [
@@ -11266,7 +11279,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 2100,
       "campusType": "Residential Liberal Arts College",
       "residentialIntensity": 99,
-      "communityFeel": 100,
+      "communityFeel": 89,
       "studentFacultyRatio": "6:1",
       "classSizeExperience": "Nearly all classes are seminar or tutorial-based with extensive discussion, close faculty mentorship, and individualized academic advising. The tutorial system pairs two students with a professor for weekly defense of original written work, an experience nearly unique among American liberal arts colleges.",
       "scaleAdvantages": [
@@ -11703,7 +11716,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 1700,
       "campusType": "Residential Liberal Arts College",
       "residentialIntensity": 98,
-      "communityFeel": 98,
+      "communityFeel": 88,
       "studentFacultyRatio": "8:1",
       "classSizeExperience": "Nearly all classes are seminar-based with extensive discussion, close faculty mentorship, and individualized academic advising. Students routinely collaborate directly with professors on research beginning early in their undergraduate careers, supported by exceptional per-student institutional resources.",
       "scaleAdvantages": [
@@ -12559,7 +12572,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 8500,
       "campusType": "Private Catholic University, Coastal Mesa Campus",
       "residentialIntensity": 64,
-      "communityFeel": 76,
+      "communityFeel": 77,
       "studentFacultyRatio": "13:1",
       "classSizeExperience": "Small, intimate classes with genuine faculty access throughout.",
       "scaleAdvantages": [
@@ -12804,7 +12817,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 9200,
       "campusType": "Residential Suburban University",
       "residentialIntensity": 68,
-      "communityFeel": 76,
+      "communityFeel": 61,
       "studentFacultyRatio": "13:1",
       "classSizeExperience": "A mix of small upper-division seminars and moderately sized lecture courses in business and engineering core sequences, with faculty who are generally accessible and often maintain active industry connections given the Silicon Valley setting.",
       "scaleAdvantages": [
@@ -13640,7 +13653,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 8000,
       "campusType": "Private University, Picturesque Southern Campus",
       "residentialIntensity": 66,
-      "communityFeel": 78,
+      "communityFeel": 79,
       "studentFacultyRatio": "11:1",
       "classSizeExperience": "Small, intimate classes with genuine faculty access throughout.",
       "scaleAdvantages": [
@@ -13874,7 +13887,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 4900,
       "campusType": "Residential Urban University",
       "residentialIntensity": 74,
-      "communityFeel": 80,
+      "communityFeel": 70,
       "studentFacultyRatio": "11:1",
       "classSizeExperience": "Small-to-moderate class sizes with accessible faculty, particularly within pharmacy, law, and journalism, where hands-on and clinical learning experiences are common starting in the early undergraduate years.",
       "scaleAdvantages": [
@@ -14283,7 +14296,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 8500,
       "campusType": "Residential Urban University",
       "residentialIntensity": 76,
-      "communityFeel": 82,
+      "communityFeel": 68,
       "studentFacultyRatio": "11:1",
       "classSizeExperience": "Small-to-moderate class sizes with accessible faculty, anchored by early and direct clinical exposure opportunities through Creighton's integrated medical, dental, pharmacy, and nursing schools.",
       "scaleAdvantages": [
@@ -14701,7 +14714,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 42000,
       "campusType": "Large Public Flagship, Classic College Town",
       "residentialIntensity": 62,
-      "communityFeel": 72,
+      "communityFeel": 64,
       "studentFacultyRatio": "15:1",
       "classSizeExperience": "Large introductory courses; Kelley's structured cohort model provides more personalized business education upper-division.",
       "scaleAdvantages": [
@@ -14944,7 +14957,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 20000,
       "campusType": "Private Baptist University, Central Texas Campus",
       "residentialIntensity": 64,
-      "communityFeel": 78,
+      "communityFeel": 71,
       "studentFacultyRatio": "14:1",
       "classSizeExperience": "Moderate class sizes with genuine faith-community faculty relationships.",
       "scaleAdvantages": [
@@ -15188,7 +15201,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 11443,
       "campusType": "Residential Urban-Adjacent University",
       "residentialIntensity": 68,
-      "communityFeel": 74,
+      "communityFeel": 60,
       "studentFacultyRatio": "11:1",
       "classSizeExperience": "Small-to-moderate classes with accessible faculty, particularly within Cox School of Business, where direct industry connections are emphasized from freshman year.",
       "scaleAdvantages": [
@@ -15592,7 +15605,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 10500,
       "campusType": "Private Catholic University, Suburban Main Line Campus",
       "residentialIntensity": 68,
-      "communityFeel": 80,
+      "communityFeel": 81,
       "studentFacultyRatio": "11:1",
       "classSizeExperience": "Small, intimate classes with genuine faculty access throughout.",
       "scaleAdvantages": [
@@ -16221,7 +16234,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 16413,
       "campusType": "Suburban Research University",
       "residentialIntensity": 78,
-      "communityFeel": 78,
+      "communityFeel": 68,
       "studentFacultyRatio": "7:1",
       "classSizeExperience": "Small, discussion-based classes with exceptional faculty access, especially within pre-med and research-track programs.",
       "scaleAdvantages": [
@@ -16620,7 +16633,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 38000,
       "campusType": "Urban Public Engineering-First University",
       "residentialIntensity": 54,
-      "communityFeel": 62,
+      "communityFeel": 57,
       "studentFacultyRatio": "18:1",
       "classSizeExperience": "Rigorous, large introductory courses in engineering; Co-op program provides real-world personalization.",
       "scaleAdvantages": [
@@ -16760,7 +16773,8 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Georgia Tech does not have a formal honors college; research opportunities and the Grand Challenges program serve a similar function."
-    }
+    ,
+      "selectiveRigorAlternative": true}
   },
 
 "University of Denver": {
@@ -16863,7 +16877,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 12000,
       "campusType": "Private Mid-Sized University",
       "residentialIntensity": 62,
-      "communityFeel": 74,
+      "communityFeel": 77,
       "studentFacultyRatio": "11:1",
       "classSizeExperience": "Small, intimate classes with genuine faculty access throughout.",
       "scaleAdvantages": [
@@ -17110,7 +17124,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 32000,
       "campusType": "Large Public Research Flagship, Mountain City",
       "residentialIntensity": 52,
-      "communityFeel": 64,
+      "communityFeel": 59,
       "studentFacultyRatio": "16:1",
       "classSizeExperience": "Moderate class sizes; entrepreneurship and CS programs offer increasingly personalized upper-division training.",
       "scaleAdvantages": [
@@ -18199,7 +18213,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 60000,
       "campusType": "Large Public Urban/Suburban Research University",
       "residentialIntensity": 55,
-      "communityFeel": 62,
+      "communityFeel": 56,
       "studentFacultyRatio": "19:1",
       "classSizeExperience": "Introductory courses in engineering, business, and biology can be very large. Upper-division work, honors programs, and research opportunities become significantly more personalized.",
       "scaleAdvantages": [
@@ -18492,7 +18506,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 49000,
       "campusType": "Large Public Big Ten Flagship, College Town",
       "residentialIntensity": 56,
-      "communityFeel": 70,
+      "communityFeel": 57,
       "studentFacultyRatio": "17:1",
       "classSizeExperience": "Large introductory courses; Packaging and Broad Business cohorts become tighter and highly specialized upper-division.",
       "scaleAdvantages": [
@@ -18755,7 +18769,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 49000,
       "campusType": "Large Public Research Flagship",
       "residentialIntensity": 58,
-      "communityFeel": 70,
+      "communityFeel": 59,
       "studentFacultyRatio": "17:1",
       "classSizeExperience": "Large introductory courses; strong undergraduate research opportunities upper-division.",
       "scaleAdvantages": [
@@ -18997,7 +19011,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 13000,
       "campusType": "Private University, Embedded in DC",
       "residentialIntensity": 58,
-      "communityFeel": 68,
+      "communityFeel": 74,
       "studentFacultyRatio": "11:1",
       "classSizeExperience": "Small, intimate classes with genuine faculty access throughout.",
       "scaleAdvantages": [
@@ -19250,7 +19264,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 8000,
       "campusType": "Private University, Music Row Adjacent",
       "residentialIntensity": 60,
-      "communityFeel": 74,
+      "communityFeel": 75,
       "studentFacultyRatio": "12:1",
       "classSizeExperience": "Small, intimate classes with genuine industry-professional faculty access.",
       "scaleAdvantages": [
@@ -19500,7 +19514,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 33000,
       "campusType": "Urban, Linear Campus Along Commonwealth Avenue",
       "residentialIntensity": 52,
-      "communityFeel": 58,
+      "communityFeel": 67,
       "studentFacultyRatio": "10:1",
       "classSizeExperience": "Generally smaller class sizes with genuine faculty access; community must be built through clubs and neighborhoods rather than a central quad.",
       "scaleAdvantages": [
@@ -19754,7 +19768,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 29000,
       "campusType": "Large Public Land-Grant Flagship",
       "residentialIntensity": 58,
-      "communityFeel": 74,
+      "communityFeel": 61,
       "studentFacultyRatio": "16:1",
       "classSizeExperience": "Moderate class sizes; veterinary and hospitality programs offer especially personalized upper-division training.",
       "scaleAdvantages": [
@@ -20015,7 +20029,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 16000,
       "campusType": "Private Jesuit University, Two NYC Campuses",
       "residentialIntensity": 58,
-      "communityFeel": 68,
+      "communityFeel": 71,
       "studentFacultyRatio": "13:1",
       "classSizeExperience": "Moderate class sizes with genuine faculty access; Gabelli Business and Fordham Law offer especially close mentorship.",
       "scaleAdvantages": [
@@ -20266,7 +20280,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 25000,
       "campusType": "Private University, Embedded in DC",
       "residentialIntensity": 54,
-      "communityFeel": 62,
+      "communityFeel": 71,
       "studentFacultyRatio": "11:1",
       "classSizeExperience": "Moderate class sizes with genuine faculty access.",
       "scaleAdvantages": [
@@ -20514,7 +20528,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 10000,
       "campusType": "Private Catholic University, Bluff-Top LA Campus",
       "residentialIntensity": 62,
-      "communityFeel": 74,
+      "communityFeel": 75,
       "studentFacultyRatio": "12:1",
       "classSizeExperience": "Small, intimate classes with genuine faculty access throughout.",
       "scaleAdvantages": [
@@ -20758,7 +20772,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 11000,
       "campusType": "Private Urban Jesuit University",
       "residentialIntensity": 56,
-      "communityFeel": 68,
+      "communityFeel": 71,
       "studentFacultyRatio": "13:1",
       "classSizeExperience": "Moderate class sizes with genuine faculty access.",
       "scaleAdvantages": [
@@ -21008,7 +21022,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 40000,
       "campusType": "Large Public Flagship, DC-Adjacent",
       "residentialIntensity": 56,
-      "communityFeel": 66,
+      "communityFeel": 60,
       "studentFacultyRatio": "17:1",
       "classSizeExperience": "Large introductory courses; CS and physics become highly specialized upper-division.",
       "scaleAdvantages": [
@@ -21264,7 +21278,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 30000,
       "campusType": "Urban Research University with Global Co-op Network",
       "residentialIntensity": 48,
-      "communityFeel": 54,
+      "communityFeel": 61,
       "studentFacultyRatio": "13:1",
       "classSizeExperience": "Moderate class sizes; the co-op rhythm means the on-campus student population shifts significantly each semester.",
       "scaleAdvantages": [
@@ -21523,7 +21537,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 51000,
       "campusType": "Urban, No Traditional Campus",
       "residentialIntensity": 38,
-      "communityFeel": 48,
+      "communityFeel": 53,
       "studentFacultyRatio": "10:1",
       "classSizeExperience": "Generally smaller class sizes than public flagships; community must be actively built through clubs and neighborhoods rather than dorm life.",
       "scaleAdvantages": [
@@ -21687,7 +21701,8 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "NYU does not have a formal honors college; selective programs like Stern and Tisch function as de facto honors experiences."
-    }
+    ,
+      "selectiveRigorAlternative": true}
   },
 
 "Penn State University": {
@@ -21801,7 +21816,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 56000,
       "campusType": "Large Public Flagship, Self-Contained College Town",
       "residentialIntensity": 68,
-      "communityFeel": 74,
+      "communityFeel": 65,
       "studentFacultyRatio": "16:1",
       "classSizeExperience": "Introductory courses can be large, particularly in engineering and business. The self-contained nature of University Park creates strong informal community-building even at scale.",
       "scaleAdvantages": [
@@ -22087,7 +22102,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 48000,
       "campusType": "Large Public Engineering-First Flagship",
       "residentialIntensity": 58,
-      "communityFeel": 66,
+      "communityFeel": 63,
       "studentFacultyRatio": "13:1",
       "classSizeExperience": "Large introductory engineering courses; upper-division work becomes more specialized and research-focused.",
       "scaleAdvantages": [
@@ -22342,7 +22357,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 11000,
       "campusType": "Private University, Affluent Dallas Campus",
       "residentialIntensity": 62,
-      "communityFeel": 72,
+      "communityFeel": 77,
       "studentFacultyRatio": "11:1",
       "classSizeExperience": "Small, intimate classes reinforced by significant social/family network access.",
       "scaleAdvantages": [
@@ -22587,7 +22602,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 12000,
       "campusType": "Private University, Intimate Fort Worth Campus",
       "residentialIntensity": 66,
-      "communityFeel": 82,
+      "communityFeel": 75,
       "studentFacultyRatio": "13:1",
       "classSizeExperience": "Small classes with genuine, lasting faculty mentorship.",
       "scaleAdvantages": [
@@ -22841,7 +22856,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 32000,
       "campusType": "Public Flagship, Research Triangle College Town",
       "residentialIntensity": 66,
-      "communityFeel": 80,
+      "communityFeel": 70,
       "studentFacultyRatio": "14:1",
       "classSizeExperience": "Moderate class sizes with genuine faculty access; Kenan-Flagler and pharmacy programs offer especially close mentorship.",
       "scaleAdvantages": [
@@ -23099,7 +23114,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 54000,
       "campusType": "Large Public Flagship, Austin Urban Campus",
       "residentialIntensity": 52,
-      "communityFeel": 62,
+      "communityFeel": 58,
       "studentFacultyRatio": "17:1",
       "classSizeExperience": "Large introductory courses; Moody Communications and McCombs Business offer more personalized upper-division training.",
       "scaleAdvantages": [
@@ -23344,7 +23359,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 46500,
       "campusType": "Large Public Research Flagship, Urban LA Campus",
       "residentialIntensity": 58,
-      "communityFeel": 66,
+      "communityFeel": 62,
       "studentFacultyRatio": "16:1",
       "classSizeExperience": "Moderate to large introductory courses; TFT, medicine, and Anderson Business offer highly personalized upper-division training.",
       "scaleAdvantages": [
@@ -23603,7 +23618,7 @@ const UNIVERSITY_DB_V5 = {
       "totalEnrollment": 14500,
       "campusType": "Private Catholic University, Suburban Boston Campus",
       "residentialIntensity": 66,
-      "communityFeel": 76,
+      "communityFeel": 78,
       "studentFacultyRatio": "11:1",
       "classSizeExperience": "Small, intimate classes with genuine faculty access throughout.",
       "scaleAdvantages": [
