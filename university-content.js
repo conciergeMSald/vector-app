@@ -15,7 +15,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Vanderbilt is the only elite research university located in Nashville - the capital of the American healthcare industry. The Healthcare MBA concentration at Owen places graduates directly into HCA Healthcare, Optum, and Change Healthcare at $95,000+.",
     the_room: "87% of students come from out of state - only 13% are Tennessee residents. Vanderbilt draws from all 50 states with the heaviest concentration from California, New York, Texas, Florida, and Georgia.",
     lifestyle: "Four years in Nashville - the fastest-growing major American city of the 2020s. The Greek system dominates social life. SEC football.",
-    grad_cities: "Nashville TN (45%) | New York NY (20%) | Atlanta GA (10%) | Chicago IL (8%) | Boston MA (7%)."
+    grad_cities: "Nashville TN (45%) | New York NY (20%) | Atlanta GA (10%) | Chicago IL (8%) | Boston MA (7%).",
+  
+    netPriceByIncome: { under30k: 3414, from30to48k: 1876, from48to75k: 4498, from75to110k: 12153, over110k: 45145 },
   },
   "University of Michigan": {
     name: "University of Michigan",
@@ -25,7 +27,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Michigan's Erb Institute for Global Sustainable Enterprise is the leading MBA-MS dual degree in sustainability business in America. As ESG mandates and sustainability leadership positions multiply at Fortune 500 companies, Erb graduates have a creden",
     the_room: "Approximately 50% of undergraduates are Michigan residents and 50% are from out of state - a dramatic shift from a decade ago when 64% were in-state.",
     lifestyle: "Ann Arbor is a genuine college town with 47,000 students and social infrastructure rivaling small cities. Michigan Stadium holds 107,000 people -",
-    grad_cities: "Chicago IL (25%) | New York NY (20%) | Detroit-Ann Arbor MI (15%) | San Francisco CA (12%) | Washington DC (8%)."
+    grad_cities: "Chicago IL (25%) | New York NY (20%) | Detroit-Ann Arbor MI (15%) | San Francisco CA (12%) | Washington DC (8%).",
+  
+    netPriceByIncome: { under30k: 1043, from30to48k: 1878, from48to75k: 4895, from75to110k: 10869, over110k: 26517 },
   },
   "Indiana University": {
     name: "Indiana University",
@@ -36,7 +40,9 @@ const UNIVERSITY_CONTENT = {
     the_room: "49% of students are Indiana residents and 51% are from out of state or international - a ratio consistent for three years.",
     lifestyle: "Bloomington is the quintessential college town: IU is the entire economy, culture, and social infrastructure. Kirkwood Avenue, the Sample Gates, the Lilly Library, and Assembly Hall (home to Indiana basketball) anchor a campus identity that is inseparable from the town itself. Sixteen miles south, Monroe Lake - Indiana's largest landbound body of water - gives students an outdoor escape valve for boating, fishing, and hiking that few Big Ten campus towns can match.",
     grad_cities: "Chicago IL (35%) | Indianapolis IN (20%) | New York NY (15%) | Washington DC (8%) | Columbus OH (5%).",
-    networkCapital: "IU's statewide industry footprint is unusually well-documented: over 10,000 active IU-industry partnerships, businesses founded by IU graduates supporting more than 92,000 jobs, and roughly $7 billion in added income to Indiana's economy each year - a network density that reaches well beyond the Kelley-to-Chicago finance pipeline."
+    networkCapital: "IU's statewide industry footprint is unusually well-documented: over 10,000 active IU-industry partnerships, businesses founded by IU graduates supporting more than 92,000 jobs, and roughly $7 billion in added income to Indiana's economy each year - a network density that reaches well beyond the Kelley-to-Chicago finance pipeline.",
+  
+    netPriceByIncome: { under30k: 6324, from30to48k: 7610, from48to75k: 12154, from75to110k: 20204, over110k: 25128 },
   },
   "University of Georgia": {
     name: "University of Georgia",
@@ -46,7 +52,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Terry College of Business at UGA is the primary feeder for Atlanta's extraordinary concentration of Fortune 500 headquarters: Coca-Cola, Delta, UPS, Home Depot, CNN, NCR Voyix, Intercontinental Hotels.",
     the_room: "80% of enrolled students are Georgia residents and 20% are from out of state - a firm institutional target set by UGA admissions.",
     lifestyle: "Athens, Georgia is a college town with a cultural identity that transcends the university. The music scene (R.E.M., B-52s, Drive-By Truckers all from Athens), the restaurant cultur",
-    grad_cities: "Atlanta GA (70%) | New York NY (8%) | Austin TX (5%) | Charlotte NC (4%) | Washington DC (3%)."
+    grad_cities: "Atlanta GA (70%) | New York NY (8%) | Austin TX (5%) | Charlotte NC (4%) | Washington DC (3%).",
+  
+    netPriceByIncome: { under30k: 8085, from30to48k: 8686, from48to75k: 13096, from75to110k: 16942, over110k: 18079 },
   },
   "University of Florida": {
     name: "University of Florida",
@@ -56,7 +64,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "UF's Warrington College of Business is ranked top 10 undergraduate business nationally by US News but operates in the shadow of Florida's football and beach identity.",
     the_room: "Approximately 88% of UF students are Florida residents and only 12% are from out of state - one of the highest in-state ratios of any top-20 public university in America.",
     lifestyle: "Ben Hill Griffin Stadium - The Swamp - seats 88,000 and is one of the loudest venues in college football. Saturday games define the social calendar.",
-    grad_cities: "Miami FL (25%) | Tampa FL (20%) | Orlando FL (15%) | New York NY (10%) | Atlanta GA (8%)."
+    grad_cities: "Miami FL (25%) | Tampa FL (20%) | Orlando FL (15%) | New York NY (10%) | Atlanta GA (8%).",
+  
+    netPriceByIncome: { under30k: 1982, from30to48k: 2768, from48to75k: 7151, from75to110k: 12905, over110k: 16723 },
   },
   "University of Oklahoma": {
     name: "University of Oklahoma",
@@ -66,7 +76,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Stacy L. Schusterman College of Business has a private equity and energy finance pipeline that is invisible nationally but dominant regionally. Oklahoma City and Tulsa host dozens of family offices and energy-focused private equity funds that rec",
     the_room: "Approximately 62% of OU students are Oklahoma residents and 38% are from out of state or international. The dominant out-of-state feeder is Texas -",
     lifestyle: "Gaylord Family-Oklahoma Memorial Stadium holds 86,000 and football Saturdays define the Norman social calendar.",
-    grad_cities: "Oklahoma City OK (30%) | Tulsa OK (20%) | Dallas TX (25%) | Houston TX (15%) | Denver CO (5%)."
+    grad_cities: "Oklahoma City OK (30%) | Tulsa OK (20%) | Dallas TX (25%) | Houston TX (15%) | Denver CO (5%).",
+  
+    netPriceByIncome: { under30k: 10509, from30to48k: 10602, from48to75k: 14536, from75to110k: 19342, over110k: 20986 },
   },
   "Louisiana State University": {
     name: "Louisiana State University",
@@ -76,7 +88,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "LSU's Manship School of Mass Communication is the South's most influential journalism and media institution. The alumni network extends through every major Louisiana media market and into national broadcast networks.",
     the_room: "60% of LSU undergraduates are Louisiana residents and 40% are from out of state - a dramatic transformation from 2017 when only 17% of freshmen came from other states.",
     lifestyle: "Tiger Stadium - Death Valley - seats 102,000 and is the loudest venue in college football. Saturday nights in Baton Rouge during football season are one of the most distinctive soc",
-    grad_cities: "Baton Rouge LA (35%) | New Orleans LA (25%) | Houston TX (20%) | Dallas TX (10%) | Atlanta GA (5%)."
+    grad_cities: "Baton Rouge LA (35%) | New Orleans LA (25%) | Houston TX (20%) | Dallas TX (10%) | Atlanta GA (5%).",
+  
+    netPriceByIncome: { under30k: 13056, from30to48k: 15696, from48to75k: 20223, from75to110k: 23878, over110k: 26489 },
   },
   "Auburn University": {
     name: "Auburn University",
@@ -86,7 +100,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Auburn's College of Veterinary Medicine is consistently ranked top 5 nationally - and it is the only top-5 veterinary program at a school with the SEC football culture and social experience of Auburn.",
     the_room: "57% of Auburn undergraduates are Alabama residents and 43% are from out of state or international - with all 67 Alabama counties represented.",
     lifestyle: "Jordan-Hare Stadium seats 87,000 and the Iron Bowl is the defining social event of the Alabama calendar. Toomer's Corner -",
-    grad_cities: "Atlanta GA (30%) | Birmingham AL (20%) | Charlotte NC (10%) | Houston TX (10%) | Washington DC (8%)."
+    grad_cities: "Atlanta GA (30%) | Birmingham AL (20%) | Charlotte NC (10%) | Houston TX (10%) | Washington DC (8%).",
+  
+    netPriceByIncome: { under30k: 16681, from30to48k: 17627, from48to75k: 20558, from75to110k: 25808, over110k: 29547 },
   },
   "University of South Carolina": {
     name: "University of South Carolina",
@@ -96,7 +112,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Darla Moore School of Business has been the number 1 undergraduate international business program in America for 24 consecutive years - a streak no other business school in any category at any university has matched in the history of US News rank",
     the_room: "52% of UofSC students come from out of state - a 333% surge in out-of-state enrollment over the past 25 years that is reshaping the character of the campus.",
     lifestyle: "Columbia, South Carolina is a state capital college town - USC is the dominant social and economic institution in the city.",
-    grad_cities: "Columbia SC (35%) | Charlotte NC (20%) | Atlanta GA (15%) | New York NY (10%) | Charleston SC (8%)."
+    grad_cities: "Columbia SC (35%) | Charlotte NC (20%) | Atlanta GA (15%) | New York NY (10%) | Charleston SC (8%).",
+  
+    netPriceByIncome: { under30k: 12634, from30to48k: 14953, from48to75k: 19859, from75to110k: 24478, over110k: 28125 },
   },
   "Clemson University": {
     name: "Clemson University",
@@ -106,7 +124,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Clemson's International Center for Automotive Research (CU-ICAR) in Greenville is the only university-industry automotive research campus of its kind in the United States -",
     the_room: "56% of Clemson undergraduates are South Carolina residents - but the character of the campus is shaped by the 44% who come from out of state.",
     lifestyle: "Memorial Stadium - Death Valley - seats 81,500 and consistently ranks among the loudest venues in college football.",
-    grad_cities: "Greenville-Spartanburg SC (35%) | Charlotte NC (20%) | Atlanta GA (12%) | Columbia SC (10%) | Raleigh-Durham NC (8%)."
+    grad_cities: "Greenville-Spartanburg SC (35%) | Charlotte NC (20%) | Atlanta GA (12%) | Columbia SC (10%) | Raleigh-Durham NC (8%).",
+  
+    netPriceByIncome: { under30k: 13607, from30to48k: 14109, from48to75k: 18851, from75to110k: 24833, over110k: 27922 },
   },
   "Wake Forest University": {
     name: "Wake Forest University",
@@ -116,7 +136,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Wake Forest's Office of Personal and Career Development (OPCD) is the most comprehensively engaged career office of any national university its size - over 75% of students from every class year actively engage with career resources, compared to under",
     the_room: "78% of Wake Forest students come from out of state - only 22% are North Carolina residents - making it one of the most geographically diverse private universities in the South.",
     lifestyle: "Wake Forest's 340-acre campus is consistently cited among the most beautiful in the ACC - Georgian architecture, the quad, the Wait Chapel.",
-    grad_cities: "Charlotte NC (30%) | New York NY (18%) | Washington DC (10%) | Atlanta GA (9%) | Raleigh-Durham NC (8%)."
+    grad_cities: "Charlotte NC (30%) | New York NY (18%) | Washington DC (10%) | Atlanta GA (9%) | Raleigh-Durham NC (8%).",
+  
+    netPriceByIncome: { under30k: 6525, from30to48k: 6331, from48to75k: 7647, from75to110k: 12771, over110k: 58081 },
   },
   "University of Miami": {
     name: "University of Miami",
@@ -126,7 +148,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The University of Miami is the gateway institution for Latin American business, finance, and professional networks - a position that no other university in America occupies.",
     the_room: "Over 50% of University of Miami students come from out of state, with strong representation from the Northeast - New York, New Jersey, and Connecticut are significant feeder states alongside a substan",
     lifestyle: "The University of Miami is the only major research university in America where the campus lifestyle and the city lifestyle are genuinely inseparable.",
-    grad_cities: "Miami-South Florida (55%) | New York NY (12%) | Washington DC (7%) | Los Angeles CA (6%) | Latin America and internation"
+    grad_cities: "Miami-South Florida (55%) | New York NY (12%) | Washington DC (7%) | Los Angeles CA (6%) | Latin America and internation",
+  
+    netPriceByIncome: { under30k: 15978, from30to48k: 17941, from48to75k: 21768, from75to110k: 27982, over110k: 50352 },
   },
   "University of Arizona": {
     name: "University of Arizona",
@@ -136,7 +160,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Wyant College of Optical Sciences at the University of Arizona is the number 1 optical sciences and engineering program in the world - a designation it has held for decades with no serious competitor.",
     the_room: "52.7% of first-year students are Arizona residents and 44% are non-residents - with 3.3% international. The top out-of-state feeder states are California (by far the largest), Washington, Colorado, Il",
     lifestyle: "Tucson is a genuinely distinctive college town - a small city of 550,000 with a strong cultural identity shaped by the Sonoran Desert, the University District, and a food and arts",
-    grad_cities: "Phoenix-Scottsdale AZ (38%) | Tucson AZ (18%) | Los Angeles CA (9%) | San Francisco CA (7%) | Denver CO (5%)."
+    grad_cities: "Phoenix-Scottsdale AZ (38%) | Tucson AZ (18%) | Los Angeles CA (9%) | San Francisco CA (7%) | Denver CO (5%).",
+  
+    netPriceByIncome: { under30k: 13353, from30to48k: 14984, from48to75k: 16051, from75to110k: 19777, over110k: 22307 },
   },
   "Arizona State University": {
     name: "Arizona State University",
@@ -146,7 +172,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "ASU has been ranked number 1 for innovation by US News and World Report for ten consecutive years - ahead of MIT, Stanford, and Caltech every single year. This is not a vanity ranking.",
     the_room: "61% of ASU students are Arizona residents and 39% are from out of state or international. Total enrollment exceeds 194,000 including online students -",
     lifestyle: "The Tempe campus sits at the center of the Phoenix metro - a city of 5 million people with year-round sun, a booming economy, and a social infrastructure that extends well beyond a",
-    grad_cities: "Phoenix-Scottsdale AZ (52%) | Los Angeles CA (10%) | San Francisco CA (7%) | Denver CO (5%) | Dallas TX (4%)."
+    grad_cities: "Phoenix-Scottsdale AZ (52%) | Los Angeles CA (10%) | San Francisco CA (7%) | Denver CO (5%) | Dallas TX (4%).",
+  
+    netPriceByIncome: { under30k: 9070, from30to48k: 10711, from48to75k: 16801, from75to110k: 20130, over110k: 24296 },
   },
   "University of Virginia": {
     name: "University of Virginia",
@@ -156,7 +184,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The McIntire School of Commerce is the hardest undergraduate business program to gain admission to in America - a 5.5% acceptance rate for the Class of 2025, compared to Wharton's roughly 7% for the entire university.",
     the_room: "Approximately 67% of UVA undergraduates are Virginia residents and 33% are from out of state - with UVA pledged by statute to maintain this two-thirds Virginia majority.",
     lifestyle: "The Lawn is a UNESCO World Heritage Site - designed by Thomas Jefferson, it is arguably the most architecturally significant university campus in America.",
-    grad_cities: "Washington DC-Northern Virginia (35%) | New York NY (22%) | Richmond VA (10%) | Boston MA (7%) | Charlotte NC (5%)."
+    grad_cities: "Washington DC-Northern Virginia (35%) | New York NY (22%) | Richmond VA (10%) | Boston MA (7%) | Charlotte NC (5%).",
+  
+    netPriceByIncome: { under30k: 8174, from30to48k: 9696, from48to75k: 13283, from75to110k: 20822, over110k: 35402 },
   },
   "Babson College": {
     name: "Babson College",
@@ -166,7 +196,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Every single Babson first-year student - regardless of concentration or interest - creates, launches, and manages a real operating business with seed money from Babson through the Foundations of Management and Entrepreneurship course.",
     the_room: "74% of Babson students come from out of state and 27% are international students - one of the highest international percentages of any business school in America.",
     lifestyle: "Babson's 370-acre suburban campus in Wellesley sits 14 miles west of Boston - close enough to access the city's startup ecosystem, restaurant scene, and cultural institutions, insu",
-    grad_cities: "Boston MA (40%) | New York NY (20%) | San Francisco Bay Area CA (12%) | International (15%) | Other US cities (13%)."
+    grad_cities: "Boston MA (40%) | New York NY (20%) | San Francisco Bay Area CA (12%) | International (15%) | Other US cities (13%).",
+  
+    netPriceByIncome: { under30k: 23641, from30to48k: 17077, from48to75k: 16861, from75to110k: 55470, over110k: 80192 },
   },
   "Boston University": {
     name: "Boston University",
@@ -176,7 +208,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "BU has the number 1 ranked CTE Center - the Boston University Chronic Traumatic Encephalopathy Center - which is the world's preeminent research institution on brain trauma in athletes. It is not famous as a student attraction.",
     the_room: "87% of BU students come from out of state or from other countries - only 13% are Massachusetts residents. 21% of undergraduates are international, representing students from China, India, South Korea,",
     lifestyle: "BU's campus runs along the Charles River for two miles through the Back Bay and Fenway neighborhoods of Boston -",
-    grad_cities: "Boston MA (45%) | New York NY (22%) | Washington DC (8%) | San Francisco CA (7%) | Los Angeles CA (5%)."
+    grad_cities: "Boston MA (45%) | New York NY (22%) | Washington DC (8%) | San Francisco CA (7%) | Los Angeles CA (5%).",
+  
+    netPriceByIncome: { under30k: 9500, from30to48k: 9342, from48to75k: 11778, from75to110k: 22517, over110k: 47504 },
   },
   "Dartmouth College": {
     name: "Dartmouth College",
@@ -186,7 +220,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The D-Plan - Dartmouth's quarter system - is the most structurally distinctive academic calendar of any Ivy League institution and is almost entirely misunderstood by families outside the Northeast.",
     the_room: "97% of Dartmouth students come from out of state - only 3% are New Hampshire residents, reflecting that Dartmouth's location in rural Hanover is entirely incidental to its national and international d",
     lifestyle: "Hanover, New Hampshire sits in the Connecticut River Valley surrounded by the White Mountains - skiing at the Dartmouth Skiway, hiking the Appalachian Trail, canoeing on the Connec",
-    grad_cities: "New York NY (30%) | Boston MA (15%) | San Francisco CA (13%) | Washington DC (10%) | Chicago IL (8%)."
+    grad_cities: "New York NY (30%) | Boston MA (15%) | San Francisco CA (13%) | Washington DC (10%) | Chicago IL (8%).",
+  
+    netPriceByIncome: { under30k: 41, from30to48k: 489, from48to75k: 2695, from75to110k: 8534, over110k: 52036 },
   },
   "University of Utah": {
     name: "University of Utah",
@@ -196,7 +232,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The University of Utah sits at the base of the Wasatch Mountains - 7 world-class ski resorts within 45 minutes of campus, including Park City, Alta, Snowbird, Solitude, Brighton, Deer Valley, and The Canyons.",
     the_room: "Approximately 74% of University of Utah students are Utah residents and 26% are from out of state or international - with growing out-of-state recruitment driven by the Silicon Slopes boom and the Wal",
     lifestyle: "The University of Utah campus sits at 4,674 feet elevation at the base of the Wasatch Mountains, directly above Salt Lake City.",
-    grad_cities: "Salt Lake City-Provo UT (58%) | San Francisco CA (9%) | Los Angeles CA (7%) | Denver CO (6%) | Seattle WA (5%)."
+    grad_cities: "Salt Lake City-Provo UT (58%) | San Francisco CA (9%) | Los Angeles CA (7%) | Denver CO (6%) | Seattle WA (5%).",
+  
+    netPriceByIncome: { under30k: 13123, from30to48k: 13424, from48to75k: 14246, from75to110k: 17663, over110k: 21533 },
   },
   "Georgetown University": {
     name: "Georgetown University",
@@ -206,7 +244,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The School of Foreign Service (SFS) is the most politically powerful undergraduate program in American higher education that most families outside the Northeast have never seriously considered.",
     the_room: "98.6% of Georgetown students come from out of state - DC itself supplies only 1.4% of the student body. Students from all 49 states and 123 countries.",
     lifestyle: "The Georgetown neighborhood is one of the most architecturally beautiful urban neighborhoods in America - 18th and 19th century Federal townhouses, the C&O Canal towpath, the Potom",
-    grad_cities: "Washington DC (45%) | New York NY (25%) | Boston MA (7%) | San Francisco CA (5%) | International (8%)."
+    grad_cities: "Washington DC (45%) | New York NY (25%) | Boston MA (7%) | San Francisco CA (5%) | International (8%).",
+  
+    netPriceByIncome: { under30k: 5064, from30to48k: 12155, from48to75k: 18329, from75to110k: 26459, over110k: 57403 },
   },
   "Duke University": {
     name: "Duke University",
@@ -216,7 +256,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Duke's Fuqua School of Business places 20% of its MBA class at McKinsey, Bain, and BCG combined - a figure that exceeds several programs conventionally ranked above Fuqua.",
     the_room: "97% of Duke undergraduates come from out of state - only 3% are North Carolina residents by state statute mandate. Top domestic feeder states: New York, Florida, California, Texas, New Jersey.",
     lifestyle: "Duke's 720-acre Gothic campus in Durham is among the most visually stunning in American higher education - the Duke Chapel, the Sarah P.",
-    grad_cities: "New York NY (28%) | Washington DC (14%) | San Francisco CA (16%) | Boston MA (10%) | Durham-Raleigh NC (8%)."
+    grad_cities: "New York NY (28%) | Washington DC (14%) | San Francisco CA (16%) | Boston MA (10%) | Durham-Raleigh NC (8%).",
+  
+    netPriceByIncome: { under30k: 735, from30to48k: -361, from48to75k: 5706, from75to110k: 17100, over110k: 54230 },
   },
   "University of Oregon": {
     name: "University of Oregon",
@@ -226,7 +268,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Phil Knight Campus for Accelerating Scientific Impact is the hidden pathway that most families have not processed. Phil Knight - Nike co-founder and UO alumnus -",
     the_room: "Approximately 85% of UO students are Oregon residents and 15% are from out of state or international - a heavily in-state profile reflecting UO's role as Oregon's flagship public university.",
     lifestyle: "Eugene sits 60 miles south of the Willamette Valley wine country, 60 miles from the Oregon Coast, and 2 hours from Crater Lake.",
-    grad_cities: "Portland OR (30%) | Seattle WA (20%) | San Francisco CA (12%) | Eugene OR (10%) | Los Angeles CA (8%)."
+    grad_cities: "Portland OR (30%) | Seattle WA (20%) | San Francisco CA (12%) | Eugene OR (10%) | Los Angeles CA (8%).",
+  
+    netPriceByIncome: { under30k: 15909, from30to48k: 15760, from48to75k: 18364, from75to110k: 24704, over110k: 31021 },
   },
   "Stanford University": {
     name: "Stanford University",
@@ -236,27 +280,33 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Stanford's startup and venture capital ecosystem is the most consequential hidden pathway in American higher education - and it is only hidden to families who have not been inside it.",
     the_room: "Approximately 56% of Stanford students are from California and 44% from out of state or international. 10% are international undergraduates.",
     lifestyle: "The Stanford campus occupies 8,180 acres in the Santa Clara Valley between the Santa Cruz Mountains and the San Francisco Bay -",
-    grad_cities: "San Francisco Bay Area CA (55%) | New York NY (15%) | Seattle WA (7%) | Los Angeles CA (6%) | International (8%)."
+    grad_cities: "San Francisco Bay Area CA (55%) | New York NY (15%) | Seattle WA (7%) | Los Angeles CA (6%) | International (8%).",
+  
+    netPriceByIncome: { under30k: -2536, from30to48k: -193, from48to75k: 3212, from75to110k: 11092, over110k: 53882 },
   },
   "Williams College": {
     name: "Williams College",
     location: "Williamstown, Massachusetts",
-    region: "New England",
+    region: "Northeast",
     pipeline: "Finance and Investment Management (Wall Street - Goldman Sachs, Morgan Stanley, JPMorgan, Blackstone, KKR, Bridgewater Associates recruit Williams at disproportionate rates relative to enrollment -",
     hidden_pathway: "Williams is the only liberal arts college where Williamstown itself - a small town in the Berkshires with no industry, no city, no distraction - is the mechanism of social capital formation. There is no city to escape to.",
     the_room: "Williams enrolls approximately 2,000 undergraduates from all 50 states and 50+ countries. 57% receive financial aid. The student body is genuinely economically diverse -",
     lifestyle: "Williamstown, Massachusetts is one of the most remote and beautiful college settings in America. The Berkshires in fall are extraordinary. The Clark Art Institute is on campus -",
-    grad_cities: "New York NY (35%) | Boston MA (20%) | Washington DC (12%) | San Francisco CA (8%) | International (6%)."
+    grad_cities: "New York NY (35%) | Boston MA (20%) | Washington DC (12%) | San Francisco CA (8%) | International (6%).",
+  
+    netPriceByIncome: { under30k: -2610, from30to48k: -1727, from48to75k: -1978, from75to110k: 3030, over110k: 49594 },
   },
   "Amherst College": {
     name: "Amherst College",
     location: "Amherst, Massachusetts",
-    region: "New England",
+    region: "Northeast",
     pipeline: "Finance and Investment Management (Wall Street - Goldman Sachs, Morgan Stanley, Blackstone, Citadel recruit Amherst at rates disproportionate to its 1,900-student enrollment), Consulting (McKinsey, Bain, BCG -",
     hidden_pathway: "Amherst has no core curriculum - it is the only highly selective liberal arts college in America with zero distribution requirements. Every course is an elective. Every student designs their own education from the first day of freshman year.",
     the_room: "Amherst enrolls approximately 1,900 undergraduates - smaller than Williams. 60% of students receive financial aid. The open curriculum self-selects for intellectually confident, self-directed students",
     lifestyle: "Western Massachusetts in a college town surrounded by four other colleges. The Pioneer Valley has a specific culture: intellectual, politically engaged, outdoorsy, and socially sop",
-    grad_cities: "New York NY (38%) | Boston MA (18%) | Washington DC (11%) | San Francisco CA (9%) | International (5%)."
+    grad_cities: "New York NY (38%) | Boston MA (18%) | Washington DC (11%) | San Francisco CA (9%) | International (5%).",
+  
+    netPriceByIncome: { under30k: 1086, from30to48k: 1570, from48to75k: 17478, from75to110k: 23639, over110k: 47521 },
   },
   "Bowdoin College": {
     name: "Bowdoin College",
@@ -266,7 +316,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Bowdoin's location in Brunswick, Maine - 25 miles north of Portland, on the coast of the Atlantic Ocean - is the hidden architecture of the social capital formation. There is no city. There is no distraction.",
     the_room: "Bowdoin enrolls approximately 1,800 undergraduates - among the smallest of any highly selective college in America. 49% of students receive financial aid.",
     lifestyle: "Brunswick, Maine is remote, beautiful, and cold. The Atlantic coast, the working harbor at Portland, Acadia National Park, and the White Mountains of New Hampshire are the physical",
-    grad_cities: "New York NY (30%) | Boston MA (22%) | Washington DC (12%) | San Francisco CA (7%) | International (4%)."
+    grad_cities: "New York NY (30%) | Boston MA (22%) | Washington DC (12%) | San Francisco CA (7%) | International (4%).",
+  
+    netPriceByIncome: { under30k: 3145, from30to48k: 2800, from48to75k: 9007, from75to110k: 13801, over110k: 35196 },
   },
   "Middlebury College": {
     name: "Middlebury College",
@@ -276,7 +328,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Middlebury's Language Schools are the most intensive and prestigious immersive language programs in America - and almost no family outside New England knows they exist as an undergraduate advantage.",
     the_room: "Middlebury enrolls approximately 2,700 undergraduates - slightly larger than Williams or Bowdoin but still intimate by any measure. 44% of students receive financial aid.",
     lifestyle: "Middlebury, Vermont is one of the most beautiful college settings in America - the Green Mountains to the east, the Adirondacks visible across Lake Champlain to the west, and a cla",
-    grad_cities: "New York NY (28%) | Boston MA (16%) | Washington DC (14%) | San Francisco CA (8%) | International (10%)."
+    grad_cities: "New York NY (28%) | Boston MA (16%) | Washington DC (14%) | San Francisco CA (8%) | International (10%).",
+  
+    netPriceByIncome: { under30k: 12723, from30to48k: 8229, from48to75k: 17510, from75to110k: 18526, over110k: 49824 },
   },
   "Pomona College": {
     name: "Pomona College",
@@ -286,7 +340,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Claremont Consortium - five colleges sharing one campus footprint - gives Pomona students access to Harvey Mudd (top engineering and CS program in America), Claremont McKenna (top government and economics program among liberal arts colleges), Scr",
     the_room: "Pomona enrolls approximately 1,700 undergraduates - the smallest of the five Claremont Colleges and the anchor of the consortium. 57% of students receive financial aid.",
     lifestyle: "Claremont is a small city at the base of the San Gabriel Mountains with a genuine college town identity - the Claremont Village, the Metrolink station connecting to downtown LA, an",
-    grad_cities: "Los Angeles CA (25%) | San Francisco CA (20%) | New York NY (18%) | Washington DC (8%) | International (6%)."
+    grad_cities: "Los Angeles CA (25%) | San Francisco CA (20%) | New York NY (18%) | Washington DC (8%) | International (6%).",
+  
+    netPriceByIncome: { under30k: 4841, from30to48k: 7026, from48to75k: 17054, from75to110k: 15719, over110k: 37842 },
   },
   "University of Chicago": {
     name: "University of Chicago",
@@ -296,7 +352,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Chicago approach to education - the Core Curriculum - is the most intellectually demanding required curriculum in American higher education and almost no family outside academia understands what it actually produces.",
     the_room: "UChicago enrolls approximately 7,000 undergraduates - larger than the liberal arts colleges but intimate relative to research university peers. 52% of students receive financial aid.",
     lifestyle: "Hyde Park, Chicago - a neighborhood on the South Side of Lake Michigan that is simultaneously a world-class university campus and a complex urban environment.",
-    grad_cities: "Chicago IL (35%) | New York NY (28%) | San Francisco CA (10%) | Washington DC (8%) | International (8%)."
+    grad_cities: "Chicago IL (35%) | New York NY (28%) | San Francisco CA (10%) | Washington DC (8%) | International (8%).",
+  
+    netPriceByIncome: { under30k: -1264, from30to48k: 914, from48to75k: 226, from75to110k: 12602, over110k: 48524 },
   },
   "Penn State University": {
     name: "Penn State University",
@@ -306,7 +364,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Penn State alumni network is the most tribally loyal of any university in America - and this tribal loyalty is the hidden pathway that no ranking captures.",
     the_room: "Penn State enrolls approximately 47,000 undergraduates at University Park - one of the largest residential campuses in America.",
     lifestyle: "State College, Pennsylvania is one of the most self-contained college towns in America - a small city of 42,000 people that exists entirely because of Penn State.",
-    grad_cities: "Philadelphia PA (22%) | New York NY (18%) | Washington DC (12%) | Pittsburgh PA (10%) | Chicago IL (7%)."
+    grad_cities: "Philadelphia PA (22%) | New York NY (18%) | Washington DC (12%) | Pittsburgh PA (10%) | Chicago IL (7%).",
+  
+    netPriceByIncome: { under30k: 19845, from30to48k: 20049, from48to75k: 25667, from75to110k: 31834, over110k: 37831 },
   },
   "Stevens Institute of Technology": {
     name: "Stevens Institute of Technology",
@@ -316,7 +376,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Stevens sits on a bluff in Hoboken, New Jersey with an unobstructed view of the Manhattan skyline - and the PATH train station is a 5-minute walk from the center of campus.",
     the_room: "Stevens enrolls approximately 3,800 undergraduates - small enough for genuine faculty access, large enough for meaningful peer diversity.",
     lifestyle: "Hoboken is one of the most livable small cities in America - a square mile of brownstones, restaurants, bars, and waterfront parks directly across the Hudson from Manhattan.",
-    grad_cities: "New York NY (55%) | Newark-Jersey City NJ (15%) | Philadelphia PA (8%) | Boston MA (5%) | International (7%)."
+    grad_cities: "New York NY (55%) | Newark-Jersey City NJ (15%) | Philadelphia PA (8%) | Boston MA (5%) | International (7%).",
+  
+    netPriceByIncome: { under30k: 27221, from30to48k: 27603, from48to75k: 33102, from75to110k: 38095, over110k: 49538 },
   },
   "UC San Diego": {
     name: "UC San Diego",
@@ -326,17 +388,21 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Scripps Institution of Oceanography gives UCSD undergraduates access to the most prestigious oceanographic and climate research institution in the world -",
     the_room: "UCSD enrolls approximately 33,000 undergraduates - a large research university with the research infrastructure to match. The student body is approximately 45% Asian American -",
     lifestyle: "La Jolla is one of the most physically beautiful university settings in America - cliffs above the Pacific Ocean, the Black's Beach trail, the Torrey Pines State Reserve adjacent t",
-    grad_cities: "San Diego CA (35%) | San Francisco-Bay Area CA (20%) | Los Angeles CA (12%) | Seattle WA (6%) | International (8%)."
+    grad_cities: "San Diego CA (35%) | San Francisco-Bay Area CA (20%) | Los Angeles CA (12%) | Seattle WA (6%) | International (8%).",
+  
+    netPriceByIncome: { under30k: 7525, from30to48k: 8155, from48to75k: 9942, from75to110k: 15199, over110k: 28785 },
   },
   "Massachusetts Institute of Technology": {
     name: "Massachusetts Institute of Technology",
     location: "Cambridge, Massachusetts",
-    region: "New England",
+    region: "Northeast",
     pipeline: "Computer Science and Artificial Intelligence (CSAIL - MIT Computer Science and Artificial Intelligence Laboratory is the largest research laboratory at MIT and one of the most influential research institutions in the world -",
     hidden_pathway: "MIT's Independent Activities Period - IAP - is a four-week January term where the entire normal academic structure dissolves and students can take any course, launch any project, travel anywhere, or pursue any research interest with full institutiona",
     the_room: "MIT enrolls approximately 4,600 undergraduates - smaller than the liberal arts colleges in terms of feel but structured as a research university. 58% of students receive need-based financial aid.",
     lifestyle: "Cambridge, Massachusetts is one of the great intellectual cities of the world - Harvard is across the street, the Charles River is the southern border of campus, Boston is 15 minut",
-    grad_cities: "Boston-Cambridge MA (30%) | San Francisco-Bay Area CA (25%) | New York NY (18%) | Seattle WA (7%) | International (10%)."
+    grad_cities: "Boston-Cambridge MA (30%) | San Francisco-Bay Area CA (25%) | New York NY (18%) | Seattle WA (7%) | International (10%).",
+  
+    netPriceByIncome: { under30k: -2533, from30to48k: 93, from48to75k: 1480, from75to110k: 11555, over110k: 48479 },
   },
   "Georgia Institute of Technology": {
     name: "Georgia Institute of Technology",
@@ -346,7 +412,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Georgia Tech's Co-op program is one of the oldest and largest cooperative education programs in America - and it is the hidden pathway that explains why Georgia Tech graduates earn more on average at graduation than graduates of schools ranked above",
     the_room: "Georgia Tech enrolls approximately 17,000 undergraduates - large enough for research university infrastructure, small enough to maintain engineering cohort culture.",
     lifestyle: "Atlanta's Midtown neighborhood is one of the great American university locations - Piedmont Park is six blocks from campus, the Fox Theatre is four blocks away, the High Museum of",
-    grad_cities: "Atlanta GA (40%) | Washington DC (12%) | New York NY (10%) | San Francisco-Bay Area CA (8%) | Charlotte NC (5%)."
+    grad_cities: "Atlanta GA (40%) | Washington DC (12%) | New York NY (10%) | San Francisco-Bay Area CA (8%) | Charlotte NC (5%).",
+  
+    netPriceByIncome: { under30k: 7666, from30to48k: 7209, from48to75k: 10818, from75to110k: 15088, over110k: 17396 },
   },
   "Rose-Hulman Institute of Technology": {
     name: "Rose-Hulman Institute of Technology",
@@ -356,7 +424,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Rose-Hulman has no graduate students. This is the hidden pathway that no ranking captures and no family outside the Midwest understands until they visit.",
     the_room: "Rose-Hulman enrolls approximately 2,000 undergraduates - the smallest institution in the technical school group and one of the smallest in the entire database.",
     lifestyle: "Terre Haute, Indiana is not a destination city - and that is precisely the point. The Rose-Hulman campus is self-contained, self-sufficient, and socially concentrated in the same w",
-    grad_cities: "Indianapolis IN (25%) | Chicago IL (18%) | Cincinnati OH (12%) | St. Louis MO (8%) | Houston TX (6%)."
+    grad_cities: "Indianapolis IN (25%) | Chicago IL (18%) | Cincinnati OH (12%) | St. Louis MO (8%) | Houston TX (6%).",
+  
+    netPriceByIncome: { under30k: 36843, from30to48k: 33742, from48to75k: 37396, from75to110k: 38843, over110k: 45994 },
   },
   "California Institute of Technology": {
     name: "California Institute of Technology",
@@ -366,7 +436,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "JPL - the NASA Jet Propulsion Laboratory - is managed by Caltech and located 4 miles from campus in the Arroyo Seco canyon above Pasadena. Caltech undergraduates can apply for paid research positions at JPL from sophomore year.",
     the_room: "Caltech enrolls approximately 948 undergraduates - the smallest research university in the database and one of the smallest in the world at this level of research intensity.",
     lifestyle: "Pasadena, California is one of the most civilized small cities in America - the Rose Bowl is walking distance, the Huntington Library and Gardens are 2 miles away, Old Town Pasaden",
-    grad_cities: "Los Angeles CA (30%) | San Francisco-Bay Area CA (25%) | Boston-Cambridge MA (15%) | International (12%) | Washington DC"
+    grad_cities: "Los Angeles CA (30%) | San Francisco-Bay Area CA (25%) | Boston-Cambridge MA (15%) | International (12%) | Washington DC",
+  
+    netPriceByIncome: { under30k: -2133, from30to48k: -2886, from48to75k: 431, from75to110k: 18753, over110k: 54157 },
   },
   "Carnegie Mellon University": {
     name: "Carnegie Mellon University",
@@ -376,7 +448,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "CMU's School of Drama is the only top-5 drama program in America located inside a top-5 CS and engineering university - and the collision between these two worlds is the hidden pathway that produces something no peer institution can replicate.",
     the_room: "CMU enrolls approximately 7,000 undergraduates across all colleges - larger than Caltech and Rose-Hulman but intimate relative to Georgia Tech or Penn State.",
     lifestyle: "Pittsburgh's Oakland neighborhood - the university district anchored by CMU and the University of Pittsburgh - is one of the great American academic neighborhoods.",
-    grad_cities: "San Francisco-Bay Area CA (35%) | New York NY (20%) | Pittsburgh PA (12%) | Seattle WA (8%) | International (10%)."
+    grad_cities: "San Francisco-Bay Area CA (35%) | New York NY (20%) | Pittsburgh PA (12%) | Seattle WA (8%) | International (10%).",
+  
+    netPriceByIncome: { under30k: 9097, from30to48k: 6994, from48to75k: 14468, from75to110k: 24865, over110k: 51480 },
   },
   "Colorado School of Mines": {
     name: "Colorado School of Mines",
@@ -386,7 +460,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Mineral economics is a discipline that exists at only a handful of universities in the world and Mines is its American home. As the energy transition has accelerated global demand for lithium, cobalt, nickel, copper, and rare earth elements -",
     the_room: "Mines enrolls approximately 5,500 undergraduates - mid-sized relative to the technical school group. The student body is approximately 72% male reflecting the engineering and energy industry identity.",
     lifestyle: "Golden, Colorado is one of the great American college town settings - a small city of 20,000 at the base of the Rocky Mountain foothills where Clear Creek runs through downtown and",
-    grad_cities: "Denver-Boulder CO (38%) | Houston TX (22%) | Calgary Canada (8%) | Dallas TX (7%) | International Energy Corridors (6%)."
+    grad_cities: "Denver-Boulder CO (38%) | Houston TX (22%) | Calgary Canada (8%) | Dallas TX (7%) | International Energy Corridors (6%).",
+  
+    netPriceByIncome: { under30k: 16849, from30to48k: 18162, from48to75k: 22192, from75to110k: 28183, over110k: 35112 },
   },
   "Harvey Mudd College": {
     name: "Harvey Mudd College",
@@ -396,7 +472,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Harvey Mudd is a member of the Claremont Consortium - which means every Harvey Mudd student has full cross-registration access to Pomona College, Claremont McKenna, Scripps, and Pitzer simultaneously.",
     the_room: "Harvey Mudd enrolls approximately 902 undergraduates - the second smallest institution in the database after Caltech, and the smallest engineering-focused college in America at this level of selectivi",
     lifestyle: "Claremont, California - the same setting as Pomona College - with all the physical advantages of Southern California: 280+ days of sunshine, Angeles National Forest 20 minutes nort",
-    grad_cities: "San Francisco-Bay Area CA (40%) | Los Angeles CA (20%) | New York NY (15%) | Seattle WA (8%) | International (5%)."
+    grad_cities: "San Francisco-Bay Area CA (40%) | Los Angeles CA (20%) | New York NY (15%) | Seattle WA (8%) | International (5%).",
+  
+    netPriceByIncome: { under30k: 27979, from30to48k: 23883, from48to75k: 17968, from75to110k: 25468, over110k: 50665 },
   },
   "Worcester Polytechnic Institute": {
     name: "Worcester Polytechnic Institute",
@@ -406,7 +484,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "WPI's project-based education model is the most radical departure from traditional engineering education in the technical school group - and almost no family outside New England knows it exists.",
     the_room: "WPI enrolls approximately 4,700 undergraduates - mid-sized relative to the technical group. The student body is approximately 65% male reflecting the engineering concentration.",
     lifestyle: "Worcester is a mid-sized New England city of 200,000 - the second largest city in Massachusetts after Boston -",
-    grad_cities: "Boston MA (35%) | New York NY (15%) | Hartford CT (10%) | Worcester MA (8%) | San Francisco CA (6%)."
+    grad_cities: "Boston MA (35%) | New York NY (15%) | Hartford CT (10%) | Worcester MA (8%) | San Francisco CA (6%).",
+  
+    netPriceByIncome: { under30k: 24018, from30to48k: 24452, from48to75k: 32350, from75to110k: 37753, over110k: 49716 },
   },
   "University of Washington": {
     name: "University of Washington",
@@ -416,7 +496,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The WWAMI program is the most consequential medical education innovation in American higher education that no family outside the Pacific Northwest has heard of. WWAMI stands for Washington, Wyoming, Alaska, Montana, and Idaho - a five-state partnership that lets UW function as the flagship medical school for a region where none of the other four states has a medical school of its own.",
     the_room: "UW enrolls approximately 35,000 undergraduates - a large research university with the research infrastructure to match. The student body is approximately 25% Asian American, reflecting the Seattle metro area's demographic makeup and its deep ties to the regional tech industry.",
     lifestyle: "Seattle is one of the great American cities for young professionals - consistently ranked among the top cities for quality of life, outdoor access, and technology career opportunities. The campus itself sits between Lake Union and Lake Washington, and Husky Stadium's game-day tradition of 'sailgating' - tailgating from boats moored on Union Bay - is unique among Power Conference programs. Students can rent kayaks and canoes from the Waterfront Activities Center to paddle the Union Bay Natural Area or the Washington Arboretum.",
-    grad_cities: "Seattle WA (45%) | San Francisco-Bay Area CA (18%) | Portland OR (8%) | New York NY (6%) | International (10%)."
+    grad_cities: "Seattle WA (45%) | San Francisco-Bay Area CA (18%) | Portland OR (8%) | New York NY (6%) | International (10%).",
+  
+    netPriceByIncome: { under30k: 6384, from30to48k: 7039, from48to75k: 8110, from75to110k: 14328, over110k: 30019 },
   },
   "University of Pennsylvania": {
     name: "University of Pennsylvania",
@@ -426,7 +508,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Wharton is the only top-5 undergraduate business program located inside an Ivy League university - and the dual degree programs this creates are the hidden pathways that no peer school can replicate.",
     the_room: "Penn enrolls approximately 10,000 undergraduates across four undergraduate schools - Wharton, College of Arts and Sciences, Penn Engineering, and Penn Nursing.",
     lifestyle: "University City in West Philadelphia is a genuine urban neighborhood that has transformed alongside Penn's growth into one of the most research-active campuses in America.",
-    grad_cities: "New York NY (35%) | Philadelphia PA (18%) | San Francisco CA (12%) | Washington DC (8%) | Boston MA (6%)."
+    grad_cities: "New York NY (35%) | Philadelphia PA (18%) | San Francisco CA (12%) | Washington DC (8%) | Boston MA (6%).",
+  
+    netPriceByIncome: { under30k: -3012, from30to48k: 316, from48to75k: 10439, from75to110k: 25476, over110k: 55972 },
   },
   "Princeton University": {
     name: "Princeton University",
@@ -436,17 +520,21 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Princeton has no professional schools - no law school, no business school, no medical school, no journalism school. Every Princeton undergraduate is a liberal arts student regardless of concentration.",
     the_room: "Princeton enrolls approximately 5,500 undergraduates - mid-sized among the Ivies. The student body is assembled from all 50 states and 100+ countries with heavy representation from New York, New Jerse",
     lifestyle: "Princeton, New Jersey is one of the great American college towns - small, walkable, architecturally magnificent, and organized entirely around the university.",
-    grad_cities: "New York NY (32%) | Washington DC (18%) | Boston MA (10%) | San Francisco CA (8%) | International (8%)."
+    grad_cities: "New York NY (32%) | Washington DC (18%) | Boston MA (10%) | San Francisco CA (8%) | International (8%).",
+  
+    netPriceByIncome: { under30k: 41, from30to48k: 352, from48to75k: 1217, from75to110k: 4478, over110k: 36094 },
   },
   "Brown University": {
     name: "Brown University",
     location: "Providence, Rhode Island",
-    region: "New England",
+    region: "Northeast",
     pipeline: "Consulting (McKinsey, Bain, BCG - Brown places into MBB at per-capita rates among the highest of any Ivy League university), Finance and Investment Banking (Wall Street - Goldman Sachs, Morgan Stanley, JPMorgan, major private equity and hedge funds -",
     hidden_pathway: "The Open Curriculum is Brown's defining structural feature and the hidden pathway that makes Brown categorically different from every other Ivy League university.",
     the_room: "Brown enrolls approximately 7,000 undergraduates - mid-sized among the Ivies. The student body is assembled from all 50 states and 100+ countries with heavy representation from New York, California, M",
     lifestyle: "Providence, Rhode Island is one of the most underrated college cities in America - a small city of 180,000 with a genuine arts and food culture, a waterfront district, and the Wate",
-    grad_cities: "New York NY (30%) | Boston MA (16%) | San Francisco CA (14%) | Washington DC (8%) | Providence RI (5%)."
+    grad_cities: "New York NY (30%) | Boston MA (16%) | San Francisco CA (14%) | Washington DC (8%) | Providence RI (5%).",
+  
+    netPriceByIncome: { under30k: -420, from30to48k: 2031, from48to75k: 5858, from75to110k: 16219, over110k: 44937 },
   },
   "Harvard University": {
     name: "Harvard University",
@@ -456,7 +544,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Harvard's tutorial system - one-on-one or small group instruction with faculty or advanced PhD students in every concentration - is the hidden educational architecture that no peer institution replicates at scale.",
     the_room: "Harvard enrolls approximately 7,000 undergraduates - mid-sized among the Ivies and small relative to its global footprint. 55% of students receive financial aid.",
     lifestyle: "Cambridge, Massachusetts is one of the great intellectual cities of the world - MIT is across the river, Boston is 15 minutes by Red Line, and the concentration of universities, ho",
-    grad_cities: "New York NY (25%) | Boston-Cambridge MA (20%) | Washington DC (15%) | San Francisco CA (10%) | International (12%)."
+    grad_cities: "New York NY (25%) | Boston-Cambridge MA (20%) | Washington DC (15%) | San Francisco CA (10%) | International (12%).",
+  
+    netPriceByIncome: { under30k: 8697, from30to48k: 2991, from48to75k: 2091, from75to110k: 9941, over110k: 53337 },
   },
   "Yale University": {
     name: "Yale University",
@@ -466,7 +556,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Yale's residential college system is the hidden social architecture that makes Yale structurally different from every other Ivy League university - and most families on campus tours understand it as a housing arrangement rather than as the social cap",
     the_room: "Yale enrolls approximately 6,500 undergraduates - slightly smaller than Harvard. 53% of students receive financial aid. The residential college system creates 14 distinct sub-communities within the un",
     lifestyle: "New Haven, Connecticut has been unfairly maligned as a college city for decades - and Yale's investment in the city has transformed it into a genuinely vibrant urban environment wi",
-    grad_cities: "New York NY (32%) | Washington DC (16%) | Boston MA (10%) | Los Angeles CA (7%) | International (10%)."
+    grad_cities: "New York NY (32%) | Washington DC (16%) | Boston MA (10%) | Los Angeles CA (7%) | International (10%).",
+  
+    netPriceByIncome: { under30k: 17633, from30to48k: 15626, from48to75k: 17943, from75to110k: 12558, over110k: 45951 },
   },
   "Cornell University": {
     name: "Cornell University",
@@ -476,7 +568,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Cornell is the only Ivy League university with seven undergraduate colleges admitting students to specific programs - not to a general arts and sciences program with a major declared later.",
     the_room: "Cornell enrolls approximately 15,000 undergraduates - the largest of the Ivy League universities and significantly larger than Harvard, Yale, or Princeton.",
     lifestyle: "Ithaca, New York is remote - 4 hours from New York City, 5 hours from Boston - and that remoteness is the social intensifier.",
-    grad_cities: "New York NY (30%) | San Francisco CA (15%) | Boston MA (10%) | Washington DC (8%) | Ithaca-upstate NY (5%)."
+    grad_cities: "New York NY (30%) | San Francisco CA (15%) | Boston MA (10%) | Washington DC (8%) | Ithaca-upstate NY (5%).",
+  
+    netPriceByIncome: { under30k: 1776, from30to48k: 4070, from48to75k: 6796, from75to110k: 14311, over110k: 49992 },
   },
   "Columbia University": {
     name: "Columbia University",
@@ -486,7 +580,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Columbia's Core Curriculum is the most famous required curriculum in American higher education - and it is the opposite of Brown's open curriculum and Amherst's no-requirements approach.",
     the_room: "Columbia enrolls approximately 9,000 undergraduates across Columbia College and the Fu Foundation School of Engineering - mid-sized among the Ivies.",
     lifestyle: "Morningside Heights in Upper Manhattan - 116th Street and Broadway - is Columbia's neighborhood, and it sits between Harlem to the east, the Upper West Side to the south, and Washi",
-    grad_cities: "New York NY (55%) | Washington DC (10%) | San Francisco CA (8%) | Boston MA (5%) | International (10%)."
+    grad_cities: "New York NY (55%) | Washington DC (10%) | San Francisco CA (8%) | Boston MA (5%) | International (10%).",
+  
+    netPriceByIncome: { under30k: 4570, from30to48k: 2275, from48to75k: 5866, from75to110k: 11782, over110k: 50621 },
   },
   "Gonzaga University": {
     name: "Gonzaga University",
@@ -496,7 +592,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Gonzaga's basketball program is the most consequential hidden pathway in the database for a specific reason that has nothing to do with sports: the national visibility of Gonzaga men's basketball -",
     the_room: "Gonzaga enrolls approximately 5,000 undergraduates - intimate relative to flagship state universities and appropriately sized for the Jesuit model of individual student formation.",
     lifestyle: "Spokane, Washington is a mid-sized city of 230,000 in the Inland Northwest - surrounded by the Palouse wheat fields to the south, the Cascades to the west, and the Rocky Mountain f",
-    grad_cities: "Seattle WA (25%) | Spokane WA (15%) | Portland OR (10%) | San Francisco CA (8%) | Los Angeles CA (7%)."
+    grad_cities: "Seattle WA (25%) | Spokane WA (15%) | Portland OR (10%) | San Francisco CA (8%) | Los Angeles CA (7%).",
+  
+    netPriceByIncome: { under30k: 20833, from30to48k: 23112, from48to75k: 25106, from75to110k: 33949, over110k: 42668 },
   },
   "Northwestern University": {
     name: "Northwestern University",
@@ -506,7 +604,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Northwestern's quarter system - the university runs on four 10-week quarters rather than two semesters - is the hidden educational architecture that produces a specific and valuable graduate profile.",
     the_room: "Northwestern enrolls approximately 8,000 undergraduates across six undergraduate schools - Weinberg College of Arts and Sciences, McCormick School of Engineering, Medill, School of Communication, Bien",
     lifestyle: "Evanston, Illinois is a small city of 75,000 immediately north of Chicago on the Lake Michigan shoreline - close enough to Chicago to access the city's full professional and cultur",
-    grad_cities: "Chicago IL (35%) | New York NY (25%) | San Francisco CA (10%) | Washington DC (7%) | Los Angeles CA (6%)."
+    grad_cities: "Chicago IL (35%) | New York NY (25%) | San Francisco CA (10%) | Washington DC (7%) | Los Angeles CA (6%).",
+  
+    netPriceByIncome: { under30k: 1764, from30to48k: 6099, from48to75k: 7898, from75to110k: 18282, over110k: 48777 },
   },
   "University of Denver": {
     name: "University of Denver",
@@ -516,7 +616,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Josef Korbel School of International Studies is the hidden pathway that no Southern California family encounters on a standard college search - and it is one of the most consequential international affairs programs in America.",
     the_room: "DU enrolls approximately 6,000 undergraduates - intimate relative to flagship state universities and appropriately sized for the private university formation model.",
     lifestyle: "Denver, Colorado is one of the great American cities for young people in the 2020s - consistently ranked among the top cities for quality of life, outdoor recreation access, and ca",
-    grad_cities: "Denver CO (45%) | Washington DC (12%) | New York NY (8%) | San Francisco CA (6%) | International (8%)."
+    grad_cities: "Denver CO (45%) | Washington DC (12%) | New York NY (8%) | San Francisco CA (6%) | International (8%).",
+  
+    netPriceByIncome: { under30k: 20097, from30to48k: 16211, from48to75k: 22940, from75to110k: 31759, over110k: 47222 },
   },
   "Elon University": {
     name: "Elon University",
@@ -526,7 +628,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Elon's Experiential Learning requirement is the hidden pathway that explains why Elon communications graduates get hired above peers from larger and more recognized programs.",
     the_room: "Elon enrolls approximately 7,000 undergraduates - mid-sized and appropriate for the experiential learning model that requires individual placement infrastructure for every student.",
     lifestyle: "Elon, North Carolina is a small town of 12,000 that exists in genuine symbiosis with the university - the historic Elon village, the coffee shops, and the restaurants of downtown E",
-    grad_cities: "Charlotte NC (18%) | Raleigh-Durham NC (15%) | Washington DC (10%) | New York NY (10%) | Atlanta GA (8%)."
+    grad_cities: "Charlotte NC (18%) | Raleigh-Durham NC (15%) | Washington DC (10%) | New York NY (10%) | Atlanta GA (8%).",
+  
+    netPriceByIncome: { under30k: 26523, from30to48k: 23514, from48to75k: 24064, from75to110k: 34472, over110k: 49743 },
   },
   "Fordham University": {
     name: "Fordham University",
@@ -536,7 +640,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Fordham has two campuses in New York City - the Rose Hill campus in the Bronx (the historic Jesuit campus with Gothic architecture and a genuine residential college feel) and the Lincoln Center campus in Midtown Manhattan (12 blocks from Wall Street",
     the_room: "Fordham enrolls approximately 10,000 undergraduates across both campuses. The student body is heavily New York-weighted - New York, New Jersey, Connecticut, and Massachusetts are the dominant feeder s",
     lifestyle: "Two campuses, two completely different New York experiences. Rose Hill in the Bronx is one of the most beautiful traditional college campuses in New York City -",
-    grad_cities: "New York NY (65%) | Boston MA (6%) | Washington DC (5%) | Los Angeles CA (4%) | International (5%)."
+    grad_cities: "New York NY (65%) | Boston MA (6%) | Washington DC (5%) | Los Angeles CA (4%) | International (5%).",
+  
+    netPriceByIncome: { under30k: 32474, from30to48k: 31657, from48to75k: 37313, from75to110k: 42030, over110k: 52228 },
   },
   "University of Kansas": {
     name: "University of Kansas",
@@ -546,7 +652,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The William Allen White School of Journalism is named for one of the most consequential journalists in American history - the Pulitzer Prize-winning editor of the Emporia Gazette whose 1896 editorial What's the Matter with Kansas made him a national",
     the_room: "KU enrolls approximately 19,000 undergraduates - a mid-sized flagship with enough scale for research university infrastructure and enough intimacy for meaningful undergraduate community.",
     lifestyle: "Lawrence, Kansas is one of the great American college towns - a city of 100,000 built on a hill above the Kaw River, with Massachusetts Street (Mass Street) as one of the most vibr",
-    grad_cities: "Kansas City MO-KS (40%) | Wichita KS (12%) | Chicago IL (8%) | Dallas TX (6%) | Denver CO (5%)."
+    grad_cities: "Kansas City MO-KS (40%) | Wichita KS (12%) | Chicago IL (8%) | Dallas TX (6%) | Denver CO (5%).",
+  
+    netPriceByIncome: { under30k: 12544, from30to48k: 12942, from48to75k: 15154, from75to110k: 19169, over110k: 22544 },
   },
   "University of Missouri": {
     name: "University of Missouri",
@@ -556,7 +664,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Missouri Method is the hidden pathway that makes Mizzou journalism categorically different from every peer journalism program in America - and it is the reason the Missouri School of Journalism has been ranked #1 in the world for most of its 117-",
     the_room: "Mizzou enrolls approximately 22,000 undergraduates - a mid-sized SEC flagship with enough scale for research university infrastructure and genuine Big 12 and now SEC athletic culture.",
     lifestyle: "Columbia, Missouri sits at the geographic center of the state - equidistant between Kansas City and St. Louis, in the rolling hills of central Missouri where the Ozark Plateau meet",
-    grad_cities: "Kansas City MO (25%) | St. Louis MO (22%) | Chicago IL (8%) | Columbia MO (7%) | Dallas TX (5%)."
+    grad_cities: "Kansas City MO (25%) | St. Louis MO (22%) | Chicago IL (8%) | Columbia MO (7%) | Dallas TX (5%).",
+  
+    netPriceByIncome: { under30k: 13841, from30to48k: 13378, from48to75k: 13722, from75to110k: 19762, over110k: 26304 },
   },
   "University of Arkansas": {
     name: "University of Arkansas",
@@ -566,7 +676,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Walmart supplier ecosystem is the hidden pathway that makes Walton College categorically different from every peer business school in America - and it is the pathway that no ranking captures. Every major consumer goods company in the world -",
     the_room: "UA enrolls approximately 22,000 undergraduates - a mid-sized SEC flagship with the full research university infrastructure and a Big 12-to-SEC transition athletic profile that has elevated national vi",
     lifestyle: "Fayetteville, Arkansas sits in the Ozark Mountains of northwest Arkansas - a city of 90,000 with a genuine college town identity built around Dickson Street, the Fayetteville Farme",
-    grad_cities: "Bentonville-Rogers AR (35%) | Little Rock AR (12%) | Dallas TX (10%) | Kansas City MO (6%) | Chicago IL (5%)."
+    grad_cities: "Bentonville-Rogers AR (35%) | Little Rock AR (12%) | Dallas TX (10%) | Kansas City MO (6%) | Chicago IL (5%).",
+  
+    netPriceByIncome: { under30k: 14319, from30to48k: 14322, from48to75k: 15934, from75to110k: 20772, over110k: 22470 },
   },
   "University of Tennessee": {
     name: "University of Tennessee",
@@ -576,7 +688,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Oak Ridge National Laboratory - 25 miles east of campus on the Clinch River - is the hidden pathway that makes UT engineering categorically different from every peer SEC flagship in the database.",
     the_room: "UT enrolls approximately 23,000 undergraduates - a large SEC flagship with the full research university infrastructure and one of the most passionate athletic cultures in college sports.",
     lifestyle: "Knoxville, Tennessee sits in the Great Appalachian Valley between the Cumberland Plateau to the west and the Great Smoky Mountains to the east -",
-    grad_cities: "Nashville TN (25%) | Knoxville TN (18%) | Atlanta GA (10%) | Charlotte NC (7%) | Washington DC (5%)."
+    grad_cities: "Nashville TN (25%) | Knoxville TN (18%) | Atlanta GA (10%) | Charlotte NC (7%) | Washington DC (5%).",
+  
+    netPriceByIncome: { under30k: 10029, from30to48k: 12162, from48to75k: 18206, from75to110k: 23627, over110k: 25688 },
   },
   "University of Colorado Boulder": {
     name: "University of Colorado Boulder",
@@ -591,7 +705,9 @@ const UNIVERSITY_CONTENT = {
     campusSocialCulture: "Outdoorsy and health-conscious - hiking, climbing, and skiing are as central to campus life as any club or Greek organization, earning the city its long-standing 'granola' reputation.",
     socialCapital: "Aerospace and LASP research groups create tight technical bonds that carry directly into the aerospace industry.",
     culturalCapital: "Healthy, outdoorsy, science-forward identity - CU Boulder signals both rigor and lifestyle balance, and its alumni network reaches well beyond STEM: Apple co-founder Steve Wozniak, South Park creators Matt Stone and Trey Parker, and Nobel Peace Prize laureate Muhammad Yunus all passed through Boulder.",
-    networkCapital: "Unmatched astronaut/aerospace alumni density among public universities, concentrated in Colorado's aerospace corridor - now extending into big tech as Google, Apple, and Amazon build out their Boulder offices."
+    networkCapital: "Unmatched astronaut/aerospace alumni density among public universities, concentrated in Colorado's aerospace corridor - now extending into big tech as Google, Apple, and Amazon build out their Boulder offices.",
+  
+    netPriceByIncome: { under30k: 14231, from30to48k: 14381, from48to75k: 18828, from75to110k: 26915, over110k: 34818 },
   },
   "Colorado State University": {
     name: "Colorado State University",
@@ -601,7 +717,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "CSU's Engines and Energy Conversion Laboratory and the Colorado State University Engines Laboratory are the hidden pathways in the engineering program that most families never find -",
     the_room: "CSU enrolls approximately 26,000 undergraduates - a large flagship with the full research university infrastructure and a Ram athletic identity in the Mountain West Conference.",
     lifestyle: "Fort Collins, Colorado is consistently ranked among the most livable small cities in America - a city of 170,000 at the base of the Cache la Poudre River canyon with Horsetooth Res",
-    grad_cities: "Denver-Fort Collins CO (45%) | Denver Metro CO (20%) | Cheyenne WY (5%) | San Francisco CA (4%) | International (4%)."
+    grad_cities: "Denver-Fort Collins CO (45%) | Denver Metro CO (20%) | Cheyenne WY (5%) | San Francisco CA (4%) | International (4%).",
+  
+    netPriceByIncome: { under30k: 13259, from30to48k: 14460, from48to75k: 15905, from75to110k: 21927, over110k: 29763 },
   },
   "University of California Davis": {
     name: "University of California Davis",
@@ -611,7 +729,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Viticulture and enology at UC Davis is the only program in the world that teaches the complete science of wine production - from soil science, plant genetics, and vineyard management through fermentation chemistry, sensory analysis, and wine business",
     the_room: "UC Davis enrolls approximately 31,000 undergraduates - a large UC campus with the full research university infrastructure and an Aggie athletic identity in the Big West Conference.",
     lifestyle: "Davis, California is a small city of 70,000 in the Central Valley - 15 miles west of Sacramento, 75 miles northeast of San Francisco, and embedded in the most productive agricultur",
-    grad_cities: "Sacramento CA (30%) | San Francisco-Bay Area CA (25%) | Los Angeles CA (10%) | Davis CA (7%) | International (5%)."
+    grad_cities: "Sacramento CA (30%) | San Francisco-Bay Area CA (25%) | Los Angeles CA (10%) | Davis CA (7%) | International (5%).",
+  
+    netPriceByIncome: { under30k: 9211, from30to48k: 9966, from48to75k: 11951, from75to110k: 16294, over110k: 31272 },
   },
   "Santa Clara University": {
     name: "Santa Clara University",
@@ -621,7 +741,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "SCU's Jesuit identity combined with Silicon Valley location creates an ethical technology leadership credential that is increasingly the most strategically valuable profile in American technology.",
     the_room: "SCU enrolls approximately 6,000 undergraduates - intimate relative to the UC system and appropriately sized for the Jesuit formation model of individual student development.",
     lifestyle: "Santa Clara, California sits in the geographic center of Silicon Valley - surrounded by San Jose to the south, Sunnyvale to the west, and the Santa Clara technology corridor that i",
-    grad_cities: "San Francisco-Bay Area CA (70%) | Los Angeles CA (7%) | Seattle WA (4%) | New York NY (4%) | International (5%)."
+    grad_cities: "San Francisco-Bay Area CA (70%) | Los Angeles CA (7%) | Seattle WA (4%) | New York NY (4%) | International (5%).",
+  
+    netPriceByIncome: { under30k: 22985, from30to48k: 19154, from48to75k: 26531, from75to110k: 37219, over110k: 60678 },
   },
   "Saint Mary's College of California": {
     name: "Saint Mary's College of California",
@@ -631,7 +753,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Saint Mary's January Term - Jan Term - is the hidden pathway that distinguishes the Saint Mary's undergraduate experience from every peer Bay Area institution and most national peers.",
     the_room: "Saint Mary's enrolls approximately 2,500 undergraduates - the most intimate of any accredited four-year university in the East Bay and one of the smallest Catholic universities in California.",
     lifestyle: "Moraga, California is a small suburban community of 17,000 in the Lamorinda hills of Contra Costa County - one of the most affluent and educationally focused suburban corridors in",
-    grad_cities: "San Francisco-Bay Area CA (72%) | Sacramento CA (6%) | Los Angeles CA (5%) | Portland OR (3%) | International (3%)."
+    grad_cities: "San Francisco-Bay Area CA (72%) | Sacramento CA (6%) | Los Angeles CA (5%) | Portland OR (3%) | International (3%).",
+  
+    netPriceByIncome: { under30k: 19462, from30to48k: 20127, from48to75k: 23303, from75to110k: 29049, over110k: 40581 },
   },
   "University of Nebraska-Lincoln": {
     name: "University of Nebraska-Lincoln",
@@ -641,7 +765,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Omaha is the hidden pathway that no Southern California family encounters on a standard college search - and it is one of the most consequential corporate headquarters cities in America relative to its population.",
     the_room: "UNL enrolls approximately 20,000 undergraduates - a mid-sized Big Ten flagship with the full research university infrastructure and one of the most passionate football cultures in college sports.",
     lifestyle: "Lincoln, Nebraska is the state capital and a city of 290,000 with a genuine college town identity built around the Haymarket District, the Pinnacle Bank Arena, and the UNL campus t",
-    grad_cities: "Omaha NE (30%) | Lincoln NE (20%) | Kansas City MO (10%) | Denver CO (6%) | Chicago IL (5%)."
+    grad_cities: "Omaha NE (30%) | Lincoln NE (20%) | Kansas City MO (10%) | Denver CO (6%) | Chicago IL (5%).",
+  
+    netPriceByIncome: { under30k: 12751, from30to48k: 13054, from48to75k: 14699, from75to110k: 18975, over110k: 22346 },
   },
   "Michigan State University": {
     name: "Michigan State University",
@@ -651,7 +777,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "MSU's School of Packaging is the most consequential academic monopoly in the database - more complete and more durable than any other single-school dominance in any field across both CSV files.",
     the_room: "MSU enrolls approximately 39,000 undergraduates - a large Big Ten flagship with the full research university infrastructure and one of the most passionate athletic cultures in college sports.",
     lifestyle: "East Lansing, Michigan is a classic Big Ten college town of 48,000 built entirely around Michigan State - the downtown Grand River Avenue corridor, the MSU Horticulture Gardens, th",
-    grad_cities: "Detroit-Ann Arbor MI (30%) | Chicago IL (12%) | Grand Rapids MI (8%) | East Lansing MI (6%) | New York NY (5%)."
+    grad_cities: "Detroit-Ann Arbor MI (30%) | Chicago IL (12%) | Grand Rapids MI (8%) | East Lansing MI (6%) | New York NY (5%).",
+  
+    netPriceByIncome: { under30k: 7068, from30to48k: 10830, from48to75k: 16521, from75to110k: 22703, over110k: 28546 },
   },
   "Creighton University": {
     name: "Creighton University",
@@ -661,7 +789,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The CHI Health system connection is the hidden pathway that makes Creighton's health sciences programs categorically different from peer Jesuit institutions without this specific affiliation. CHI Health - Catholic Health Initiatives -",
     the_room: "Creighton enrolls approximately 4,500 undergraduates and 4,000 graduate and professional students - the graduate and professional enrollment reflecting the concentration of medical, pharmacy, dental,",
     lifestyle: "Omaha, Nebraska has been transformed by Buffett-era wealth and corporate investment into one of the most underrated mid-sized cities in America -",
-    grad_cities: "Omaha NE (45%) | Kansas City MO (10%) | Denver CO (7%) | Chicago IL (6%) | Phoenix AZ (5%)."
+    grad_cities: "Omaha NE (45%) | Kansas City MO (10%) | Denver CO (7%) | Chicago IL (6%) | Phoenix AZ (5%).",
+  
+    netPriceByIncome: { under30k: 20472, from30to48k: 22095, from48to75k: 23405, from75to110k: 28113, over110k: 35090 },
   },
   "University of Iowa": {
     name: "University of Iowa",
@@ -671,7 +801,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Iowa Writers Workshop is the hidden pathway that makes the University of Iowa the most consequential creative writing institution in the history of American literature -",
     the_room: "UI enrolls approximately 22,000 undergraduates - a large Big Ten flagship with full research university infrastructure and the Hawkeyes athletic identity that is among the most passionately supported",
     lifestyle: "Iowa City, Iowa is one of the great American college towns and one of the most underrated intellectual cities in the country -",
-    grad_cities: "Des Moines IA (25%) | Iowa City IA (12%) | Chicago IL (10%) | Minneapolis MN (7%) | Kansas City MO (6%)."
+    grad_cities: "Des Moines IA (25%) | Iowa City IA (12%) | Chicago IL (10%) | Minneapolis MN (7%) | Kansas City MO (6%).",
+  
+    netPriceByIncome: { under30k: 15316, from30to48k: 15489, from48to75k: 19930, from75to110k: 23811, over110k: 26266 },
   },
   "Drake University": {
     name: "Drake University",
@@ -681,7 +813,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Des Moines is the insurance capital of the world - a fact that almost no family outside the Midwest financial services industry knows - and Drake University is the private university embedded at the center of it.",
     the_room: "Drake enrolls approximately 3,200 undergraduates - the most intimate private university with a law school and pharmacy school in the Midwest and one of the smallest in the database with this range of",
     lifestyle: "Des Moines, Iowa is one of the most underrated mid-sized cities in America - a city of 700,000 in the metro area with a vibrant downtown corridor, the Principal Park minor league b",
-    grad_cities: "Des Moines IA (55%) | Chicago IL (8%) | Minneapolis MN (6%) | Kansas City MO (5%) | Omaha NE (4%)."
+    grad_cities: "Des Moines IA (55%) | Chicago IL (8%) | Minneapolis MN (6%) | Kansas City MO (5%) | Omaha NE (4%).",
+  
+    netPriceByIncome: { under30k: 25824, from30to48k: 23275, from48to75k: 25171, from75to110k: 27408, over110k: 33126 },
   },
   "Iowa State University": {
     name: "Iowa State University",
@@ -691,7 +825,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "John Deere's relationship with Iowa State is the hidden pathway that most Southern California families have never encountered - and it is one of the most consequential corporate-university partnerships in the database for the specific industries it s",
     the_room: "Iowa State enrolls approximately 24,000 undergraduates - a large Big 12 flagship with the full land-grant research university infrastructure and the Cyclones athletic identity that competes against Io",
     lifestyle: "Ames, Iowa is a classic Midwest college town of 66,000 built around Iowa State - the Iowa State Center for the Performing Arts, the Reiman Gardens (one of the finest university bot",
-    grad_cities: "Des Moines IA (28%) | Ames IA (10%) | Chicago IL (9%) | Minneapolis MN (6%) | Kansas City MO (5%)."
+    grad_cities: "Des Moines IA (28%) | Ames IA (10%) | Chicago IL (9%) | Minneapolis MN (6%) | Kansas City MO (5%).",
+  
+    netPriceByIncome: { under30k: 10582, from30to48k: 11506, from48to75k: 15463, from75to110k: 19605, over110k: 22496 },
   },
   "Ohio State University": {
     name: "Ohio State University",
@@ -701,7 +837,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Intel New Albany semiconductor fabrication investment is the hidden pathway that has fundamentally changed the value proposition of an Ohio State engineering degree in the last three years -",
     the_room: "Ohio State enrolls approximately 46,000 undergraduates - the largest Big Ten university in the database and one of the five largest universities in America.",
     lifestyle: "Columbus, Ohio has undergone a transformation in the 2020s that makes it one of the most compelling university city stories in the database.",
-    grad_cities: "Columbus OH (40%) | Cleveland OH (10%) | Cincinnati OH (8%) | Chicago IL (8%) | New York NY (5%)."
+    grad_cities: "Columbus OH (40%) | Cleveland OH (10%) | Cincinnati OH (8%) | Chicago IL (8%) | New York NY (5%).",
+  
+    netPriceByIncome: { under30k: 4885, from30to48k: 5751, from48to75k: 9807, from75to110k: 20461, over110k: 27359 },
   },
   "University of Notre Dame": {
     name: "University of Notre Dame",
@@ -711,7 +849,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Notre Dame alumni network is the hidden pathway that reframes the Notre Dame value proposition beyond rankings and beyond Catholicism - and it operates with a tribal intensity that secular alumni networks structurally cannot replicate.",
     the_room: "Notre Dame enrolls approximately 9,000 undergraduates - mid-sized and appropriate for the residential college model that defines the social architecture.",
     lifestyle: "Notre Dame, Indiana - technically a census-designated place rather than a city, existing entirely because of the university -",
-    grad_cities: "Chicago IL (30%) | New York NY (20%) | Washington DC (10%) | South Bend IN (5%) | Los Angeles CA (5%)."
+    grad_cities: "Chicago IL (30%) | New York NY (20%) | Washington DC (10%) | South Bend IN (5%) | Los Angeles CA (5%).",
+  
+    netPriceByIncome: { under30k: 7244, from30to48k: 7254, from48to75k: 11432, from75to110k: 18670, over110k: 45321 },
   },
   "Villanova University": {
     name: "Villanova University",
@@ -722,7 +862,9 @@ const UNIVERSITY_CONTENT = {
     the_room: "Villanova enrolls approximately 7,000 undergraduates - mid-sized and appropriate for the Augustinian formation model that emphasizes individual student development within a faith community.",
     lifestyle: "Villanova, Pennsylvania is not a city - it is a township in Delaware County on the Philadelphia Main Line, and the Villanova campus - St.",
     grad_cities: "Philadelphia PA (40%) | New York NY (20%) | Washington DC (8%) | Boston MA (5%) | Chicago IL (4%).",
-    outcomesData: "95.3% of the Class of 2024 secured a job, grad school placement, or fellowship within outcomes window; average starting salary $79,330. Top producer of Fulbright Scholars (Chronicle of Higher Education) with 150+ Fulbright/Rhodes/other competitive scholarships since 2017. Source: villanova.edu/university/fast-facts.html, July 2026."
+    outcomesData: "95.3% of the Class of 2024 secured a job, grad school placement, or fellowship within outcomes window; average starting salary $79,330. Top producer of Fulbright Scholars (Chronicle of Higher Education) with 150+ Fulbright/Rhodes/other competitive scholarships since 2017. Source: villanova.edu/university/fast-facts.html, July 2026.",
+  
+    netPriceByIncome: { under30k: 17823, from30to48k: 16496, from48to75k: 20923, from75to110k: 33389, over110k: 58741 },
   },
   "Temple University": {
     name: "Temple University",
@@ -732,7 +874,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Temple's risk management and insurance program is the hidden pathway that delivers one of the highest starting salaries of any undergraduate business program in the database at a public university price point -",
     the_room: "Temple enrolls approximately 28,000 undergraduates - a large urban research university with the full professional school infrastructure of a major metropolitan institution.",
     lifestyle: "North Philadelphia, Pennsylvania - the Temple campus sits in the Cecil B. Moore neighborhood of North Philadelphia, surrounded by the city's working-class and historically signific",
-    grad_cities: "Philadelphia PA (55%) | New York NY (12%) | Washington DC (6%) | Wilmington DE (4%) | Baltimore MD (3%)."
+    grad_cities: "Philadelphia PA (55%) | New York NY (12%) | Washington DC (6%) | Wilmington DE (4%) | Baltimore MD (3%).",
+  
+    netPriceByIncome: { under30k: 22694, from30to48k: 23431, from48to75k: 26534, from75to110k: 29397, over110k: 34947 },
   },
   "Drexel University": {
     name: "Drexel University",
@@ -742,7 +886,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Drexel co-op program is the structural feature that makes Drexel categorically different from every peer Philadelphia private university - and the co-op income offset is the hidden financial pathway that most families have never calculated.",
     the_room: "Drexel enrolls approximately 14,000 undergraduates - a mid-sized urban research university with the full professional school infrastructure of a major metropolitan institution.",
     lifestyle: "University City, Philadelphia - the neighborhood anchored by Drexel and Penn on the west side of the Schuylkill River -",
-    grad_cities: "Philadelphia PA (50%) | New York NY (12%) | Washington DC (6%) | Boston MA (4%) | San Francisco CA (4%)."
+    grad_cities: "Philadelphia PA (50%) | New York NY (12%) | Washington DC (6%) | Boston MA (4%) | San Francisco CA (4%).",
+  
+    netPriceByIncome: { under30k: 28055, from30to48k: 29435, from48to75k: 34970, from75to110k: 37842, over110k: 48089 },
   },
   "UC Riverside": {
     name: "UC Riverside",
@@ -752,7 +898,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Thomas Haider Program in Biomedical Sciences is the hidden pathway that makes UCR the most consequential pre-medicine investment for Inland Empire families and one of the most powerful guaranteed physician pathways in California.",
     the_room: "UCR enrolls approximately 22,000 undergraduates - a large UC campus with full research university infrastructure and a student body that is the most socioeconomically diverse of any UC campus.",
     lifestyle: "Riverside, California sits at the base of the San Bernardino Mountains in the eastern Inland Empire - a city of 320,000 with a historic downtown Mission Inn corridor, the Riverside",
-    grad_cities: "Los Angeles CA (30%) | Inland Empire CA (35%) | San Diego CA (6%) | San Francisco CA (5%) | International (5%)."
+    grad_cities: "Los Angeles CA (30%) | Inland Empire CA (35%) | San Diego CA (6%) | San Francisco CA (5%) | International (5%).",
+  
+    netPriceByIncome: { under30k: 8852, from30to48k: 9840, from48to75k: 13111, from75to110k: 16571, over110k: 30393 },
   },
   "California State University Long Beach": {
     name: "California State University Long Beach",
@@ -762,7 +910,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Long Beach College Promise is the hidden pathway that makes CSULB the most consequential access institution in Southern California and one of the most important equity mechanisms in American higher education. The Long Beach College Promise -",
     the_room: "CSULB enrolls approximately 32,000 undergraduates - the second largest CSU campus and one of the largest universities in California.",
     lifestyle: "Long Beach, California is the second largest city in the Los Angeles metropolitan area - a city of 460,000 with a working harbor, the Queen Mary, the Long Beach Convention Center,",
-    grad_cities: "Los Angeles-Long Beach CA (70%) | Orange County CA (10%) | San Diego CA (4%) | San Francisco CA (3%) | International (3%"
+    grad_cities: "Los Angeles-Long Beach CA (70%) | Orange County CA (10%) | San Diego CA (4%) | San Francisco CA (3%) | International (3%",
+  
+    netPriceByIncome: { under30k: 7183, from30to48k: 7831, from48to75k: 9705, from75to110k: 12630, over110k: 19750 },
   },
   "California State University Fullerton": {
     name: "California State University Fullerton",
@@ -772,7 +922,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Mihaylo College of Business is the hidden pathway that delivers Big 4 accounting placement volume at the lowest tuition in the database - and the mechanism is specific and consequential.",
     the_room: "CSUF enrolls approximately 35,000 undergraduates - the largest CSU campus by undergraduate enrollment and one of the largest universities in California.",
     lifestyle: "Fullerton, California sits in the northern edge of Orange County - a city of 140,000 2 miles from Disneyland, 30 miles from downtown Los Angeles, 15 miles from the Pacific Ocean be",
-    grad_cities: "Orange County CA (55%) | Los Angeles CA (25%) | San Diego CA (5%) | Inland Empire CA (4%) | International (3%)."
+    grad_cities: "Orange County CA (55%) | Los Angeles CA (25%) | San Diego CA (5%) | Inland Empire CA (4%) | International (3%).",
+  
+    netPriceByIncome: { under30k: 3315, from30to48k: 4123, from48to75k: 6090, from75to110k: 8930, over110k: 15631 },
   },
   "University of California Irvine": {
     name: "University of California Irvine",
@@ -782,7 +934,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Donald Bren School of Information and Computer Sciences is the hidden pathway that makes UCI's technology credential structurally different from peer UC campuses.",
     the_room: "UCI enrolls approximately 30,000 undergraduates - a large UC campus with full research university infrastructure and a student body that is approximately 42% Asian American -",
     lifestyle: "Irvine, California is one of the most planned and most livable cities in America - consistently ranked as the safest large city in America and the most livable city in California b",
-    grad_cities: "Orange County CA (50%) | Los Angeles CA (20%) | San Francisco CA (8%) | San Diego CA (5%) | International (8%)."
+    grad_cities: "Orange County CA (50%) | Los Angeles CA (20%) | San Francisco CA (8%) | San Diego CA (5%) | International (8%).",
+  
+    netPriceByIncome: { under30k: 8123, from30to48k: 9313, from48to75k: 11642, from75to110k: 15164, over110k: 30546 },
   },
   "California Polytechnic State University San Luis Obispo": {
     name: "California Polytechnic State University San Luis Obispo",
@@ -792,7 +946,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Learn by Doing is the institutional philosophy of Cal Poly SLO and it is the hidden pathway that explains why Apple, SpaceX, and Google recruit Cal Poly engineers with the same priority they give to UC Berkeley and Stanford graduates for specific rol",
     the_room: "Cal Poly SLO enrolls approximately 22,000 undergraduates - a mid-sized polytechnic with the engineering and applied sciences focus of a specialized institution and the breadth of a comprehensive unive",
     lifestyle: "San Luis Obispo, California is consistently ranked among the happiest cities in America and the most livable small city in California -",
-    grad_cities: "San Francisco-Bay Area CA (35%) | Los Angeles CA (20%) | San Diego CA (8%) | San Luis Obispo CA (6%) | Seattle WA (4%)."
+    grad_cities: "San Francisco-Bay Area CA (35%) | Los Angeles CA (20%) | San Diego CA (8%) | San Luis Obispo CA (6%) | Seattle WA (4%).",
+  
+    netPriceByIncome: { under30k: 7529, from30to48k: 7253, from48to75k: 9896, from75to110k: 15786, over110k: 27772 },
   },
   "California State University Chico": {
     name: "California State University Chico",
@@ -802,7 +958,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Chico State's construction management program is the hidden pathway that delivers one of the strongest career-to-cost ratios of any program at any CSU campus - and it is genuinely unknown outside the Northern California construction industry.",
     the_room: "Chico State enrolls approximately 14,000 undergraduates - a mid-sized CSU campus serving the most geographically expansive service region of any CSU in Northern California.",
     lifestyle: "Chico, California is a city of 100,000 in Butte County at the base of the Sierra Nevada foothills - one of the most underrated small cities in California with a vibrant downtown, t",
-    grad_cities: "Sacramento CA (30%) | Chico-Butte County CA (20%) | Bay Area CA (12%) | Redding CA (6%) | Fresno CA (4%)."
+    grad_cities: "Sacramento CA (30%) | Chico-Butte County CA (20%) | Bay Area CA (12%) | Redding CA (6%) | Fresno CA (4%).",
+  
+    netPriceByIncome: { under30k: 9902, from30to48k: 10099, from48to75k: 12961, from75to110k: 16506, over110k: 23566 },
   },
   "California State University Fresno": {
     name: "California State University Fresno",
@@ -812,7 +970,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Wonderful Company connection is the hidden pathway that makes Fresno State's agricultural business and viticulture programs uniquely consequential in the San Joaquin Valley economy. The Wonderful Company -",
     the_room: "Fresno State enrolls approximately 22,000 undergraduates - a large CSU campus serving the most geographically central and demographically significant city in the San Joaquin Valley.",
     lifestyle: "Fresno, California is the agricultural and commercial capital of the San Joaquin Valley - a city of 540,000 and the fifth largest in California, surrounded by some of the most prod",
-    grad_cities: "Fresno CA (45%) | Sacramento CA (12%) | Los Angeles CA (8%) | Bakersfield CA (5%) | San Francisco CA (4%)."
+    grad_cities: "Fresno CA (45%) | Sacramento CA (12%) | Los Angeles CA (8%) | Bakersfield CA (5%) | San Francisco CA (4%).",
+  
+    netPriceByIncome: { under30k: 5105, from30to48k: 5429, from48to75k: 7196, from75to110k: 10291, over110k: 16899 },
   },
   "University of California Santa Cruz": {
     name: "University of California Santa Cruz",
@@ -822,7 +982,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The residential college system at UC Santa Cruz is the hidden pathway that makes the undergraduate research experience at Santa Cruz structurally different from every peer UC campus. UC Santa Cruz operates 10 residential colleges -",
     the_room: "UC Santa Cruz enrolls approximately 17,000 undergraduates - mid-sized for a UC campus and the most intimate of any UC campus larger than UC Merced. The student body is approximately 38% Hispanic -",
     lifestyle: "Santa Cruz, California is one of the most distinctive university cities in America - a city of 65,000 on a coastal bluff above the Monterey Bay, with redwood forests rising immedia",
-    grad_cities: "San Francisco-Bay Area CA (40%) | Los Angeles CA (12%) | Santa Cruz CA (10%) | San Diego CA (5%) | Seattle WA (4%)."
+    grad_cities: "San Francisco-Bay Area CA (40%) | Los Angeles CA (12%) | Santa Cruz CA (10%) | San Diego CA (5%) | Seattle WA (4%).",
+  
+    netPriceByIncome: { under30k: 8717, from30to48k: 10613, from48to75k: 14418, from75to110k: 18986, over110k: 33323 },
   },
   "California State University Northridge": {
     name: "California State University Northridge",
@@ -832,7 +994,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The National Center on Deafness at CSUN is the hidden pathway that makes CSUN the most specific and irreplaceable institution in the database for one particular professional mission -",
     the_room: "CSUN enrolls approximately 33,000 undergraduates - one of the largest CSU campuses and the largest university in the San Fernando Valley. The student body is approximately 45% Hispanic -",
     lifestyle: "Northridge, California sits in the central San Fernando Valley - a suburban community of 60,000 within the city of Los Angeles, surrounded by the Santa Susana Mountains to the nort",
-    grad_cities: "Los Angeles CA (65%) | San Fernando Valley CA (15%) | Ventura County CA (5%) | Orange County CA (4%) | International (3%"
+    grad_cities: "Los Angeles CA (65%) | San Fernando Valley CA (15%) | Ventura County CA (5%) | Orange County CA (4%) | International (3%",
+  
+    netPriceByIncome: { under30k: 4905, from30to48k: 5450, from48to75k: 7744, from75to110k: 11262, over110k: 18040 },
   },
   "California State University Los Angeles": {
     name: "California State University Los Angeles",
@@ -842,7 +1006,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The 2028 Los Angeles Olympics infrastructure buildout is the hidden pathway that makes CSULA's engineering and construction management programs uniquely consequential at this specific moment in Los Angeles history.",
     the_room: "CSULA enrolls approximately 24,000 undergraduates - a large CSU campus serving the most economically challenged and racially diverse urban community of any institution in the database.",
     lifestyle: "Los Angeles, California - the CSULA campus sits on a hillside in the unincorporated East Los Angeles corridor of the San Gabriel Valley, at the intersection of the 10 and 710 freew",
-    grad_cities: "Los Angeles CA (75%) | East Los Angeles CA (12%) | Pasadena-San Gabriel Valley CA (6%) | Long Beach CA (3%) | Internatio"
+    grad_cities: "Los Angeles CA (75%) | East Los Angeles CA (12%) | Pasadena-San Gabriel Valley CA (6%) | Long Beach CA (3%) | Internatio",
+  
+    netPriceByIncome: { under30k: 2877, from30to48k: 2974, from48to75k: 5002, from75to110k: 7355, over110k: 13578 },
   },
   "Claremont McKenna College": {
     name: "Claremont McKenna College",
@@ -852,7 +1018,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Robert Day Scholars program is the hidden pathway that makes CMC's finance credential structurally different from every peer liberal arts college in the database. The Robert Day School of Economics and Finance -",
     the_room: "CMC enrolls approximately 1,400 undergraduates - the second smallest institution in the Claremont Consortium after Harvey Mudd and one of the smallest in the entire database at this selectivity and sa",
     lifestyle: "Claremont, California - the same setting as Pomona and Harvey Mudd - with all the physical advantages of Southern California: 280+ days of sunshine, Angeles National Forest 20 minu",
-    grad_cities: "New York NY (35%) | Los Angeles CA (20%) | San Francisco CA (15%) | Washington DC (10%) | International (5%)."
+    grad_cities: "New York NY (35%) | Los Angeles CA (20%) | San Francisco CA (15%) | Washington DC (10%) | International (5%).",
+  
+    netPriceByIncome: { under30k: 15308, from30to48k: 7360, from48to75k: 16389, from75to110k: 19325, over110k: 52295 },
   },
   "Pepperdine University": {
     name: "Pepperdine University",
@@ -862,7 +1030,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Straus Institute for Dispute Resolution is the hidden pathway that makes Pepperdine's law credential categorically more powerful for one specific professional domain than any peer institution in California can match.",
     the_room: "Pepperdine enrolls approximately 3,500 undergraduates in Seaver College - the undergraduate college - making it among the more intimate of the private universities in the Los Angeles area.",
     lifestyle: "Malibu, California - the Pepperdine campus sits on a bluff 400 feet above the Pacific Ocean in the Santa Monica Mountains, with panoramic views of the ocean, Catalina Island on cle",
-    grad_cities: "Los Angeles CA (45%) | Orange County CA (10%) | San Francisco CA (8%) | New York NY (7%) | International (6%)."
+    grad_cities: "Los Angeles CA (45%) | Orange County CA (10%) | San Francisco CA (8%) | New York NY (7%) | International (6%).",
+  
+    netPriceByIncome: { under30k: 50560, from30to48k: 42674, from48to75k: 51063, from75to110k: 61851, over110k: 65081 },
   },
   "University of San Diego": {
     name: "University of San Diego",
@@ -872,7 +1042,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Kroc Institute for Peace and Justice is the hidden pathway that makes USD uniquely positioned at the intersection of military power and peace-making in a city that is simultaneously America's largest military base complex and one of the most inte",
     the_room: "USD enrolls approximately 6,000 undergraduates - mid-sized and appropriate for the Catholic formation model that emphasizes individual student development in a faith community.",
     lifestyle: "San Diego, California - the USD campus sits on Alcala Park, a mesa above Mission Bay with panoramic views of the bay, the Pacific Ocean, and the downtown San Diego skyline.",
-    grad_cities: "San Diego CA (55%) | Los Angeles CA (15%) | San Francisco CA (6%) | Washington DC (5%) | International (4%)."
+    grad_cities: "San Diego CA (55%) | Los Angeles CA (15%) | San Francisco CA (6%) | Washington DC (5%) | International (4%).",
+  
+    netPriceByIncome: { under30k: 15586, from30to48k: 17441, from48to75k: 19557, from75to110k: 27012, over110k: 46989 },
   },
   "Oregon State University": {
     name: "Oregon State University",
@@ -882,7 +1054,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The TRIGA Mark II research reactor at OSU is the hidden pathway that makes the nuclear engineering program categorically different from every peer university in the Pacific Northwest -",
     the_room: "OSU enrolls approximately 24,000 undergraduates - a large Pac-12 now ACC flagship with the full research university infrastructure and the Beavers athletic identity that competes in one of the most at",
     lifestyle: "Corvallis, Oregon is a small city of 59,000 in the Willamette Valley - one of the most livable small cities in the Pacific Northwest with a vibrant downtown corridor, the Benton Co",
-    grad_cities: "Portland OR (30%) | Corvallis OR (12%) | Seattle WA (10%) | San Francisco CA (7%) | Bend OR (4%)."
+    grad_cities: "Portland OR (30%) | Corvallis OR (12%) | Seattle WA (10%) | San Francisco CA (7%) | Bend OR (4%).",
+  
+    netPriceByIncome: { under30k: 12107, from30to48k: 13036, from48to75k: 15729, from75to110k: 20262, over110k: 27459 },
   },
   "Boise State University": {
     name: "Boise State University",
@@ -892,7 +1066,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Micron Technology partnership is the hidden pathway that makes Boise State's engineering and computer science programs consequential in a way that no regional university ranking captures. Micron Technology -",
     the_room: "Boise State enrolls approximately 21,000 undergraduates - a large regional university that has grown dramatically alongside Boise's population explosion.",
     lifestyle: "Boise, Idaho has undergone the most dramatic transformation of any American city in the 2020s - a city of 240,000 in the Treasure Valley that grew 16% in a decade, attracted Califo",
-    grad_cities: "Boise ID (45%) | Portland OR (8%) | Seattle WA (6%) | Salt Lake City UT (5%) | San Francisco CA (4%)."
+    grad_cities: "Boise ID (45%) | Portland OR (8%) | Seattle WA (6%) | Salt Lake City UT (5%) | San Francisco CA (4%).",
+  
+    netPriceByIncome: { under30k: 18165, from30to48k: 17974, from48to75k: 20731, from75to110k: 23573, over110k: 25893 },
   },
   "Brigham Young University": {
     name: "Brigham Young University",
@@ -902,7 +1078,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The LDS mission language training is the hidden pathway that makes BYU the most multilingual undergraduate institution in America and the most consequential language credential pipeline outside the federal Defense Language Institute.",
     the_room: "BYU enrolls approximately 33,000 undergraduates - a large private university and by far the largest private university in the Mountain West.",
     lifestyle: "Provo, Utah sits at the base of the Wasatch Front - Mount Timpanogos rising to 11,752 feet immediately east of campus, Utah Lake to the west, and the Silicon Slopes technology corr",
-    grad_cities: "Salt Lake City UT (25%) | Provo-Orem UT (20%) | San Francisco CA (8%) | New York NY (8%) | International (5%)."
+    grad_cities: "Salt Lake City UT (25%) | Provo-Orem UT (20%) | San Francisco CA (8%) | New York NY (8%) | International (5%).",
+  
+    netPriceByIncome: { under30k: 10444, from30to48k: 10112, from48to75k: 13062, from75to110k: 16378, over110k: 20542 },
   },
   "University of Kentucky": {
     name: "University of Kentucky",
@@ -912,7 +1090,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Thoroughbred horse industry is the hidden pathway that makes UK the most specific and irreplaceable academic institution for one of the most economically consequential specialized industries in the world. The Kentucky Bluegrass region -",
     the_room: "UK enrolls approximately 22,000 undergraduates - a large SEC flagship with the full research university infrastructure and the Wildcats athletic identity that is among the most basketball-passionate i",
     lifestyle: "Lexington, Kentucky is a city of 320,000 in the heart of the Bluegrass region - horse farms visible from the highway, limestone-filtered springs feeding the bluegrass pastures that",
-    grad_cities: "Lexington KY (25%) | Louisville KY (20%) | Cincinnati OH (10%) | Nashville TN (6%) | Frankfort KY (5%)."
+    grad_cities: "Lexington KY (25%) | Louisville KY (20%) | Cincinnati OH (10%) | Nashville TN (6%) | Frankfort KY (5%).",
+  
+    netPriceByIncome: { under30k: 12182, from30to48k: 12119, from48to75k: 16313, from75to110k: 21192, over110k: 26781 },
   },
   "University of Louisville": {
     name: "University of Louisville",
@@ -922,7 +1102,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "UofL Health performs more heart transplants than any hospital in the world - and this single clinical fact is the hidden pathway that reframes UofL's medical school from a regional institution into a global cardiovascular medicine leader.",
     the_room: "UofL enrolls approximately 17,000 undergraduates - a mid-sized metropolitan research university with the full professional school infrastructure of a comprehensive university.",
     lifestyle: "Louisville, Kentucky is a city of 630,000 on the Ohio River - the largest city in Kentucky, the bourbon capital of the world, and a city that has been nationally recognized in the",
-    grad_cities: "Louisville KY (50%) | Lexington KY (10%) | Cincinnati OH (8%) | Nashville TN (6%) | Indianapolis IN (5%)."
+    grad_cities: "Louisville KY (50%) | Lexington KY (10%) | Cincinnati OH (8%) | Nashville TN (6%) | Indianapolis IN (5%).",
+  
+    netPriceByIncome: { under30k: 15138, from30to48k: 14601, from48to75k: 16419, from75to110k: 20995, over110k: 25186 },
   },
   "University of Minnesota": {
     name: "University of Minnesota",
@@ -932,7 +1114,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The medical device corridor is the hidden pathway that makes Minnesota's engineering, biomedical, and pre-medicine credentials categorically more consequential than peer Big Ten flagship programs for one specific professional domain.",
     the_room: "Minnesota enrolls approximately 36,000 undergraduates - a large Big Ten flagship with the full research university infrastructure and the Gophers athletic identity that competes across every Big Ten s",
     lifestyle: "Minneapolis, Minnesota is one of the great American university cities - a metropolitan area of 3.7 million people with a world-class arts scene, the most theatre seats per capita o",
-    grad_cities: "Minneapolis-Saint Paul MN (50%) | Chicago IL (8%) | Milwaukee WI (5%) | Denver CO (4%) | New York NY (4%)."
+    grad_cities: "Minneapolis-Saint Paul MN (50%) | Chicago IL (8%) | Milwaukee WI (5%) | Denver CO (4%) | New York NY (4%).",
+  
+    netPriceByIncome: { under30k: 6642, from30to48k: 7283, from48to75k: 9931, from75to110k: 16415, over110k: 27008 },
   },
   "Butler University": {
     name: "Butler University",
@@ -942,7 +1126,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Eli Lilly relationship is the hidden pathway that makes Butler's pharmacy and pre-medicine programs categorically different from every peer private university in Indiana. Eli Lilly and Company -",
     the_room: "Butler enrolls approximately 4,500 undergraduates - the most intimate of any private university in the database with a top-30 pharmacy school.",
     lifestyle: "Indianapolis, Indiana is a city of 900,000 and the most sports-event-dense mid-sized city in America - the Super Bowl, the Big Ten Championship, the NCAA Men's Basketball Tournamen",
-    grad_cities: "Indianapolis IN (55%) | Chicago IL (10%) | Columbus OH (6%) | Cincinnati OH (5%) | New York NY (4%)."
+    grad_cities: "Indianapolis IN (55%) | Chicago IL (10%) | Columbus OH (6%) | Cincinnati OH (5%) | New York NY (4%).",
+  
+    netPriceByIncome: { under30k: 25278, from30to48k: 25696, from48to75k: 32679, from75to110k: 36778, over110k: 41134 },
   },
   "University of the South": {
     name: "University of the South",
@@ -952,7 +1138,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Sewanee Domain is the hidden pathway that makes Sewanee's environmental science and outdoor experience categorically different from every peer liberal arts college in the database.",
     the_room: "Sewanee enrolls approximately 1,800 undergraduates - among the most intimate of any liberal arts college in the South and similar in size to Bowdoin and Amherst.",
     lifestyle: "Sewanee, Tennessee sits on the Cumberland Plateau at 2,000 feet elevation - a mountaintop community of 2,500 people whose entire existence is organized around the University of the",
-    grad_cities: "Nashville TN (20%) | Atlanta GA (15%) | New York NY (12%) | Washington DC (8%) | Charlotte NC (6%)."
+    grad_cities: "Nashville TN (20%) | Atlanta GA (15%) | New York NY (12%) | Washington DC (8%) | Charlotte NC (6%).",
+  
+    netPriceByIncome: { under30k: 10485, from30to48k: 10704, from48to75k: 17746, from75to110k: 22563, over110k: 38762 },
   },
   "University of Mississippi": {
     name: "University of Mississippi",
@@ -962,7 +1150,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Grove is the hidden pathway that most academic rankings miss entirely - and it is the single most consequential social capital formation mechanism of any SEC campus in the database. The Grove at Ole Miss -",
     the_room: "Ole Miss enrolls approximately 22,000 undergraduates - a large SEC flagship with the full research university infrastructure and the Rebels athletic identity that is among the most socially defined by",
     lifestyle: "Oxford, Mississippi is one of the great American college towns and one of the most literarily significant small cities in America -",
-    grad_cities: "Memphis TN (25%) | Jackson MS (18%) | Nashville TN (10%) | New Orleans LA (7%) | Atlanta GA (6%)."
+    grad_cities: "Memphis TN (25%) | Jackson MS (18%) | Nashville TN (10%) | New Orleans LA (7%) | Atlanta GA (6%).",
+  
+    netPriceByIncome: { under30k: 8945, from30to48k: 9217, from48to75k: 14794, from75to110k: 18573, over110k: 21313 },
   },
   "Mississippi State University": {
     name: "Mississippi State University",
@@ -972,7 +1162,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The catfish aquaculture connection is the hidden pathway that makes MSU's veterinary and agricultural programs uniquely consequential for one of the most economically significant regional food industries in America.",
     the_room: "MSU enrolls approximately 21,000 undergraduates - a large SEC flagship with the Bulldogs athletic identity that competes in one of the most athletically competitive conferences in college sports.",
     lifestyle: "Starkville, Mississippi is a small city of 25,000 in the eastern Mississippi hills - a college town built entirely around Mississippi State with a growing restaurant and arts scene",
-    grad_cities: "Jackson MS (20%) | Starkville MS (10%) | Memphis TN (15%) | Nashville TN (8%) | Atlanta GA (7%)."
+    grad_cities: "Jackson MS (20%) | Starkville MS (10%) | Memphis TN (15%) | Nashville TN (8%) | Atlanta GA (7%).",
+  
+    netPriceByIncome: { under30k: 14332, from30to48k: 14372, from48to75k: 18671, from75to110k: 20704, over110k: 22987 },
   },
   "University of Alabama": {
     name: "University of Alabama",
@@ -982,7 +1174,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Huntsville aerospace corridor is the hidden pathway that makes Alabama's engineering program more consequential than its ranking suggests - and almost no family outside the South understands what Huntsville represents as a career destination.",
     the_room: "Alabama enrolls approximately 38,000 undergraduates - a large SEC flagship with the most dominant football program in modern college sports history and the Crimson Tide identity that is among the most",
     lifestyle: "Tuscaloosa, Alabama is a city of 100,000 built around the University of Alabama - a genuine college city with a vibrant Strip commercial corridor, Government Plaza, and the Black W",
-    grad_cities: "Birmingham AL (30%) | Atlanta GA (15%) | Huntsville AL (10%) | Nashville TN (8%) | New York NY (5%)."
+    grad_cities: "Birmingham AL (30%) | Atlanta GA (15%) | Huntsville AL (10%) | Nashville TN (8%) | New York NY (5%).",
+  
+    netPriceByIncome: { under30k: 19169, from30to48k: 19884, from48to75k: 22258, from75to110k: 25658, over110k: 26729 },
   },
   "Florida State University": {
     name: "Florida State University",
@@ -992,7 +1186,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The FAMU-FSU College of Engineering is the hidden pathway that makes FSU's engineering credential uniquely consequential in ways no ranking captures. The FAMU-FSU College of Engineering is the only jointly accredited engineering college in the United",
     the_room: "FSU enrolls approximately 33,000 undergraduates - a large ACC flagship with the Seminoles athletic identity that competes at the Power 4 level with one of the most visually distinctive and historicall",
     lifestyle: "Tallahassee, Florida is Florida's capital city - a city of 200,000 embedded in the Tallahassee Hills at the edge of the Florida Panhandle, surrounded by live oak canopy roads that",
-    grad_cities: "Tampa-Orlando FL (25%) | Tallahassee FL (18%) | Miami FL (12%) | Atlanta GA (8%) | New York NY (5%)."
+    grad_cities: "Tampa-Orlando FL (25%) | Tallahassee FL (18%) | Miami FL (12%) | Atlanta GA (8%) | New York NY (5%).",
+  
+    netPriceByIncome: { under30k: 5938, from30to48k: 6963, from48to75k: 10496, from75to110k: 14991, over110k: 19239 },
   },
   "University of South Florida": {
     name: "University of South Florida",
@@ -1002,7 +1198,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Tampa General Hospital's organ transplant volume is the hidden pathway that makes USF's medical and health sciences programs clinically consequential in ways that peer Florida institutions cannot match. Tampa General Hospital -",
     the_room: "USF enrolls approximately 37,000 undergraduates - a large preeminent research university with the Bulls athletic identity in the American Athletic Conference competing in football, basketball, and a f",
     lifestyle: "Tampa, Florida is one of the great American success stories of the 2020s - a city of 400,000 in a metropolitan area of 3.2 million that has attracted financial services headquarter",
-    grad_cities: "Tampa-St. Petersburg FL (55%) | Orlando FL (10%) | Miami FL (8%) | Atlanta GA (5%) | Washington DC (4%)."
+    grad_cities: "Tampa-St. Petersburg FL (55%) | Orlando FL (10%) | Miami FL (8%) | Atlanta GA (5%) | Washington DC (4%).",
+  
+    netPriceByIncome: { under30k: 4122, from30to48k: 5444, from48to75k: 9326, from75to110k: 15224, over110k: 18497 },
   },
   "University of Central Florida": {
     name: "University of Central Florida",
@@ -1012,7 +1210,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Modeling Simulation and Training cluster is the hidden pathway that makes UCF's engineering and computer science programs uniquely consequential for one of the most consequential and least publicly understood defense technology industries in Amer",
     the_room: "UCF enrolls approximately 58,000 undergraduates - the second largest university enrollment in America and the largest in Florida - with a campus infrastructure scaled to this extraordinary size.",
     lifestyle: "Orlando, Florida is the most visited tourist destination on earth - Walt Disney World, Universal Orlando, SeaWorld, LEGOLAND, and dozens of major entertainment destinations create",
-    grad_cities: "Orlando FL (55%) | Tampa FL (8%) | Miami FL (6%) | Jacksonville FL (5%) | Atlanta GA (4%)."
+    grad_cities: "Orlando FL (55%) | Tampa FL (8%) | Miami FL (6%) | Jacksonville FL (5%) | Atlanta GA (4%).",
+  
+    netPriceByIncome: { under30k: 5816, from30to48k: 7174, from48to75k: 10128, from75to110k: 14902, over110k: 17681 },
   },
   "Florida Atlantic University": {
     name: "Florida Atlantic University",
@@ -1022,7 +1222,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The IBM Boca Raton campus - where the personal computer was invented in 1981 - is the hidden pathway that contextualizes FAU's technology identity within Silicon Valley-level computing history at a South Florida campus.",
     the_room: "FAU enrolls approximately 25,000 undergraduates - a large regional research university serving the most economically productive coastal corridor in Florida outside Miami.",
     lifestyle: "Boca Raton, Florida is one of the most affluent and architecturally distinctive mid-sized cities in America - a planned city of 100,000 in Palm Beach County with Mediterranean Revi",
-    grad_cities: "Boca Raton-West Palm Beach FL (45%) | Fort Lauderdale FL (15%) | Miami FL (12%) | Orlando FL (5%) | New York NY (4%)."
+    grad_cities: "Boca Raton-West Palm Beach FL (45%) | Fort Lauderdale FL (15%) | Miami FL (12%) | Orlando FL (5%) | New York NY (4%).",
+  
+    netPriceByIncome: { under30k: 3022, from30to48k: 4135, from48to75k: 8106, from75to110k: 14440, over110k: 16854 },
   },
   "Stetson University": {
     name: "Stetson University",
@@ -1032,17 +1234,21 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Stetson trial advocacy program is the hidden pathway that makes Stetson Law the most specifically powerful litigation credential in Florida - and possibly in America - for the student who wants to be a trial lawyer.",
     the_room: "Stetson enrolls approximately 3,000 undergraduates - the most intimate private university in Central Florida and one of the smallest in the database with a law school.",
     lifestyle: "DeLand, Florida is one of the most architecturally distinguished small cities in Florida - a city of 35,000 in Volusia County that was named the most beautiful small city in Americ",
-    grad_cities: "Orlando FL (25%) | Tampa FL (15%) | Jacksonville FL (10%) | DeLand FL (8%) | Miami FL (6%)."
+    grad_cities: "Orlando FL (25%) | Tampa FL (15%) | Jacksonville FL (10%) | DeLand FL (8%) | Miami FL (6%).",
+  
+    netPriceByIncome: { under30k: 15931, from30to48k: 14657, from48to75k: 17327, from75to110k: 22600, over110k: 26904 },
   },
   "Virginia Tech": {
     name: "Virginia Tech",
     location: "Blacksburg, Virginia",
-    region: "Mid-Atlantic",
+    region: "Southeast",
     pipeline: "Engineering (College of Engineering - top-15 nationally and the most consequential engineering program in Virginia - aerospace, biological systems, chemical, civil, computer science, electrical, industrial, materials science, mechanical, mining, ocean -",
     hidden_pathway: "The Northern Virginia defense technology corridor is the hidden pathway that makes Virginia Tech engineering structurally more powerful than its ranking suggests for one specific and enormously consequential career domain. Northern Virginia -",
     the_room: "Virginia Tech enrolls approximately 28,000 undergraduates - a large ACC flagship with the Hokies athletic identity that is among the most passionate in the conference.",
     lifestyle: "Blacksburg, Virginia is a college town of 45,000 in the New River Valley of the Appalachian Mountains - one of the most physically beautiful university settings in the ACC, surroun",
-    grad_cities: "Northern Virginia-DC (35%) | Roanoke VA (12%) | Richmond VA (8%) | Charlotte NC (6%) | New York NY (5%)."
+    grad_cities: "Northern Virginia-DC (35%) | Roanoke VA (12%) | Richmond VA (8%) | Charlotte NC (6%) | New York NY (5%).",
+  
+    netPriceByIncome: { under30k: 11689, from30to48k: 11670, from48to75k: 17894, from75to110k: 25835, over110k: 34201 },
   },
   "Boston College": {
     name: "Boston College",
@@ -1052,7 +1258,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Jesuit intellectual tradition at BC creates a specific professional formation that the Boston financial services and consulting industries recruit with intentionality -",
     the_room: "BC enrolls approximately 9,500 undergraduates - mid-sized and appropriate for the Jesuit formation model. The student body is approximately 30% from New England with heavy representation from New York",
     lifestyle: "Chestnut Hill, Massachusetts is an affluent suburb on the western edge of Boston - the BC campus sits on a hill above Cleveland Circle with the Gothic towers of Gasson Hall and Sto",
-    grad_cities: "Boston MA (45%) | New York NY (20%) | Washington DC (8%) | San Francisco CA (5%) | Hartford-Providence (4%)."
+    grad_cities: "Boston MA (45%) | New York NY (20%) | Washington DC (8%) | San Francisco CA (5%) | Hartford-Providence (4%).",
+  
+    netPriceByIncome: { under30k: 4284, from30to48k: 7304, from48to75k: 13112, from75to110k: 19999, over110k: 60308 },
   },
   "University of Pittsburgh": {
     name: "University of Pittsburgh",
@@ -1062,7 +1270,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Jonas Salk developed the polio vaccine at the University of Pittsburgh in 1955 - and the research culture that produced that breakthrough is still operating at the same institution seven decades later.",
     the_room: "Pitt enrolls approximately 20,000 undergraduates - a large research university with the full professional school infrastructure of one of the most research-active institutions in America.",
     lifestyle: "Pittsburgh, Pennsylvania is one of the great American comeback cities - a former steel capital that has reinvented itself as a technology, healthcare, and education hub with a cost",
-    grad_cities: "Pittsburgh PA (40%) | Philadelphia PA (10%) | New York NY (10%) | Washington DC (7%) | Boston MA (5%)."
+    grad_cities: "Pittsburgh PA (40%) | Philadelphia PA (10%) | New York NY (10%) | Washington DC (7%) | Boston MA (5%).",
+  
+    netPriceByIncome: { under30k: 14709, from30to48k: 18371, from48to75k: 23192, from75to110k: 31567, over110k: 36008 },
   },
   "North Carolina State University": {
     name: "North Carolina State University",
@@ -1072,7 +1282,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Research Triangle Park is the hidden pathway that makes NC State engineering and computer science structurally more powerful than their rankings suggest for one of the most consequential technology and pharmaceutical ecosystems in America.",
     the_room: "NC State enrolls approximately 26,000 undergraduates - a large ACC flagship with the Wolfpack athletic identity that competes in one of the most athletically competitive conferences in college sports.",
     lifestyle: "Raleigh, North Carolina is one of the most dynamic and livable mid-sized cities in America - a city of 470,000 that has grown faster than almost any other state capital in the Sout",
-    grad_cities: "Research Triangle NC (45%) | Charlotte NC (15%) | Raleigh NC (12%) | Atlanta GA (6%) | New York NY (4%)."
+    grad_cities: "Research Triangle NC (45%) | Charlotte NC (15%) | Raleigh NC (12%) | Atlanta GA (6%) | New York NY (4%).",
+  
+    netPriceByIncome: { under30k: 6382, from30to48k: 8758, from48to75k: 13334, from75to110k: 20087, over110k: 24652 },
   },
   "University of Maryland College Park": {
     name: "University of Maryland College Park",
@@ -1082,7 +1294,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The NSA relationship is the hidden pathway that makes UMD computer science and mathematics programs uniquely consequential for one of the most significant and least publicly discussed federal employers in America. The National Security Agency -",
     the_room: "UMD enrolls approximately 31,000 undergraduates - a large Big Ten flagship with the Terrapins athletic identity competing in one of the most athletically competitive conferences in college sports.",
     lifestyle: "College Park, Maryland is a dense suburban community of 32,000 embedded between Washington DC and Baltimore in the most consequential federal employment corridor in America.",
-    grad_cities: "Washington DC-Maryland (55%) | Northern Virginia (15%) | Baltimore MD (10%) | New York NY (5%) | Philadelphia PA (3%)."
+    grad_cities: "Washington DC-Maryland (55%) | Northern Virginia (15%) | Baltimore MD (10%) | New York NY (5%) | Philadelphia PA (3%).",
+  
+    netPriceByIncome: { under30k: 2962, from30to48k: 6051, from48to75k: 10273, from75to110k: 18250, over110k: 26691 },
   },
   "Johns Hopkins University": {
     name: "Johns Hopkins University",
@@ -1092,7 +1306,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Applied Physics Laboratory is the hidden pathway that makes Hopkins uniquely consequential for national security and space science in ways that its undergraduate reputation alone does not capture. APL -",
     the_room: "Hopkins enrolls approximately 5,500 undergraduates - among the smallest research universities in the database relative to its research output and global reputation.",
     lifestyle: "Baltimore, Maryland is a city of 600,000 with a genuine urban identity - the Inner Harbor, Fells Point, Federal Hill, the American Visionary Art Museum, Lexington Market, the Balti",
-    grad_cities: "Baltimore MD (25%) | Washington DC (20%) | New York NY (15%) | Boston MA (8%) | San Francisco CA (5%)."
+    grad_cities: "Baltimore MD (25%) | Washington DC (20%) | New York NY (15%) | Boston MA (8%) | San Francisco CA (5%).",
+  
+    netPriceByIncome: { under30k: 428, from30to48k: -213, from48to75k: 4179, from75to110k: 14591, over110k: 37774 },
   },
   "Emory University": {
     name: "Emory University",
@@ -1102,7 +1318,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The CDC adjacency is the hidden pathway that makes Emory's public health and pre-medicine programs uniquely consequential for global health careers in ways that no other university in the world can replicate outside of Johns Hopkins.",
     the_room: "Emory enrolls approximately 7,000 undergraduates across both the Atlanta campus and Oxford College - mid-sized and appropriate for the research university model that Emory has built.",
     lifestyle: "Atlanta, Georgia is one of the great American cities - a metropolitan area of 6.2 million people with more Fortune 500 headquarters than any city except New York and Houston, a thr",
-    grad_cities: "Atlanta GA (45%) | New York NY (15%) | Washington DC (10%) | Boston MA (5%) | Los Angeles CA (4%)."
+    grad_cities: "Atlanta GA (45%) | New York NY (15%) | Washington DC (10%) | Boston MA (5%) | Los Angeles CA (4%).",
+  
+    netPriceByIncome: { under30k: 7363, from30to48k: 9220, from48to75k: 11237, from75to110k: 13821, over110k: 53018 },
   },
   "Tulane University": {
     name: "Tulane University",
@@ -1112,7 +1330,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Louisiana's civil law system is the hidden pathway that makes Tulane Law categorically different from every other law school in America - and it is a pathway that creates a specific professional capability available nowhere else.",
     the_room: "Tulane enrolls approximately 7,000 undergraduates - mid-sized and appropriate for a research university in a city that is simultaneously the social infrastructure.",
     lifestyle: "New Orleans, Louisiana is the most culturally distinctive major city in America - a city of 390,000 that has been continuously inhabited since 1718, that holds more historic archit",
-    grad_cities: "New Orleans LA (30%) | Houston TX (15%) | New York NY (12%) | Atlanta GA (8%) | Miami FL (5%)."
+    grad_cities: "New Orleans LA (30%) | Houston TX (15%) | New York NY (12%) | Atlanta GA (8%) | Miami FL (5%).",
+  
+    netPriceByIncome: { under30k: 16126, from30to48k: 18041, from48to75k: 20149, from75to110k: 28207, over110k: 56667 },
   },
   "Purdue University": {
     name: "Purdue University",
@@ -1122,7 +1342,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Purdue has produced more astronauts than any other university in the world - and Neil Armstrong was one of them. The list of Purdue astronauts includes Neil Armstrong (first human to walk on the moon), Gus Grissom (second American in space), Eugene C",
     the_room: "Purdue enrolls approximately 36,000 undergraduates - a large Big Ten flagship with the Boilermakers athletic identity competing across all major conference sports.",
     lifestyle: "West Lafayette, Indiana is a small city of 45,000 built around Purdue on the western bank of the Wabash River -",
-    grad_cities: "Indianapolis IN (25%) | Chicago IL (15%) | Cincinnati OH (8%) | Detroit MI (7%) | New York NY (5%)."
+    grad_cities: "Indianapolis IN (25%) | Chicago IL (15%) | Cincinnati OH (8%) | Detroit MI (7%) | New York NY (5%).",
+  
+    netPriceByIncome: { under30k: 5098, from30to48k: 6241, from48to75k: 9438, from75to110k: 18177, over110k: 22742 },
   },
   "Syracuse University": {
     name: "Syracuse University",
@@ -1132,7 +1354,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Newhouse alumni network is the hidden pathway that makes Syracuse the most specifically powerful media credential in America for one reason that no ranking captures: Newhouse graduates hire Newhouse graduates with a tribal loyalty that is documen",
     the_room: "Syracuse enrolls approximately 15,000 undergraduates - a mid-sized private research university with the Orange athletic identity in the ACC competing in basketball, football, lacrosse, and a full Powe",
     lifestyle: "Syracuse, New York is a mid-sized city of 148,000 in central New York state - a city with harsh winters that are genuinely transformative in the way that all long-winter college to",
-    grad_cities: "New York NY (35%) | Boston MA (8%) | Washington DC (7%) | Los Angeles CA (6%) | Philadelphia PA (5%)."
+    grad_cities: "New York NY (35%) | Boston MA (8%) | Washington DC (7%) | Los Angeles CA (6%) | Philadelphia PA (5%).",
+  
+    netPriceByIncome: { under30k: 15817, from30to48k: 15845, from48to75k: 21132, from75to110k: 28780, over110k: 55401 },
   },
   "New York University": {
     name: "New York University",
@@ -1142,7 +1366,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "NYU Grossman School of Medicine is tuition-free - and this is the most consequential single financial decision made by any university in the database. In 2018, NYU became the first major research university in America to make medical school completel",
     the_room: "NYU enrolls approximately 27,000 undergraduates - a large private research university with no traditional campus, no football team, no Greek life, and no residential campus culture.",
     lifestyle: "New York City - Greenwich Village, specifically, and Washington Square Park as the social and physical heart of the NYU world.",
-    grad_cities: "New York NY (65%) | Los Angeles CA (8%) | London UK (4%) | Washington DC (3%) | Boston MA (3%)."
+    grad_cities: "New York NY (65%) | Los Angeles CA (8%) | London UK (4%) | Washington DC (3%) | Boston MA (3%).",
+  
+    netPriceByIncome: { under30k: 16977, from30to48k: 14017, from48to75k: 16862, from75to110k: 32766, over110k: 66876 },
   },
   "United States Military Academy": {
     name: "United States Military Academy",
@@ -1162,7 +1388,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The New Jersey pharmaceutical corridor is the hidden pathway that makes Rutgers pharmacy and engineering programs the most geographically advantaged professional school credentials in America for one specific and enormously consequential industry.",
     the_room: "Rutgers enrolls approximately 36,000 undergraduates across multiple New Brunswick campuses - a large Big Ten flagship with the Scarlet Knights athletic identity competing in the Big Ten.",
     lifestyle: "New Brunswick, New Jersey is a mid-sized city of 56,000 on the Raritan River in central New Jersey - a genuine college city built around the Rutgers campus with a vibrant George St",
-    grad_cities: "New York NY (30%) | Newark-Trenton NJ (25%) | Philadelphia PA (8%) | New Brunswick NJ (6%) | Boston MA (3%)."
+    grad_cities: "New York NY (30%) | Newark-Trenton NJ (25%) | Philadelphia PA (8%) | New Brunswick NJ (6%) | Boston MA (3%).",
+  
+    netPriceByIncome: { under30k: 16343, from30to48k: 16210, from48to75k: 18282, from75to110k: 25106, over110k: 35016 },
   },
   "George Washington University": {
     name: "George Washington University",
@@ -1172,7 +1400,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Foggy Bottom campus location is the hidden pathway that makes GWU's government, law, and international affairs programs structurally different from every peer institution - and it is a pathway defined entirely by geography.",
     the_room: "GWU enrolls approximately 11,000 undergraduates - a mid-sized private research university in the heart of Washington DC. The student body is assembled from all 50 states and 130+ countries with heavy",
     lifestyle: "Washington DC - Foggy Bottom specifically - is the most politically consequential neighborhood in America. The GWU campus is organized around the Kogan Plaza, the Marvin Center stu",
-    grad_cities: "Washington DC (60%) | New York NY (10%) | Boston MA (5%) | Los Angeles CA (4%) | International (6%)."
+    grad_cities: "Washington DC (60%) | New York NY (10%) | Boston MA (5%) | Los Angeles CA (4%) | International (6%).",
+  
+    netPriceByIncome: { under30k: 17440, from30to48k: 17292, from48to75k: 22080, from75to110k: 28100, over110k: 55337 },
   },
   "Webb Institute": {
     name: "Webb Institute",
@@ -1182,7 +1412,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Webb's full-tuition scholarship for every student is the hidden pathway that makes Webb the most financially transformative engineering education in America -",
     the_room: "Webb enrolls exactly 100 students at any given time - the smallest accredited engineering institution in the database and one of the smallest four-year institutions in America.",
     lifestyle: "Glen Cove, New York is a small city of 27,000 on the north shore of Long Island - the Gold Coast of Long Island, the setting for The Great Gatsby, a community of Victorian-era esta",
-    grad_cities: "New York NY (35%) | Washington DC (15%) | Bath ME (10%) | Newport News VA (10%) | International (10%)."
+    grad_cities: "New York NY (35%) | Washington DC (15%) | Bath ME (10%) | Newport News VA (10%) | International (10%).",
+  
+    netPriceByIncome: { under30k: null, from30to48k: 61170, from48to75k: null, from75to110k: 70713, over110k: 76350 },
   },
   "Colorado College": {
     name: "Colorado College",
@@ -1192,7 +1424,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Block Plan is the most radical and most consequential pedagogical innovation of any liberal arts college in the database - and it is radical in a specific and practically powerful way.",
     the_room: "CC enrolls approximately 2,100 undergraduates - comparable in size to Williams and Bowdoin. The student body is assembled from 48 states and 40+ countries with heavy representation from the Mountain W",
     lifestyle: "Colorado Springs, Colorado sits at the base of Pikes Peak at 6,035 feet elevation - a city of 480,000 that is simultaneously a military city (Fort Carson, Peterson Space Force Base",
-    grad_cities: "Denver CO (20%) | Colorado Springs CO (10%) | San Francisco CA (10%) | New York NY (8%) | Los Angeles CA (6%)."
+    grad_cities: "Denver CO (20%) | Colorado Springs CO (10%) | San Francisco CA (10%) | New York NY (8%) | Los Angeles CA (6%).",
+  
+    netPriceByIncome: { under30k: 9217, from30to48k: 15477, from48to75k: 12568, from75to110k: 24129, over110k: 44141 },
   },
   "Deep Springs College": {
     name: "Deep Springs College",
@@ -1212,7 +1446,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The General Motors relationship is the hidden pathway that makes Kettering engineering the most institutionally connected automotive engineering credential in America. Kettering University -",
     the_room: "Kettering enrolls approximately 2,000 undergraduates - among the smallest engineering-focused institutions in the database and one of the most specifically purposeful.",
     lifestyle: "Flint, Michigan is a city of 81,000 with a complex and consequential history - the birthplace of General Motors, the site of the 1936-37 Flint Sit-Down Strike that established the",
-    grad_cities: "Detroit-Metro MI (35%) | Flint MI (10%) | Chicago IL (8%) | Cincinnati OH (6%) | Dayton OH (5%)."
+    grad_cities: "Detroit-Metro MI (35%) | Flint MI (10%) | Chicago IL (8%) | Cincinnati OH (6%) | Dayton OH (5%).",
+  
+    netPriceByIncome: { under30k: 24910, from30to48k: 23273, from48to75k: 31544, from75to110k: 33401, over110k: 39399 },
   },
   "American University": {
     name: "American University",
@@ -1222,7 +1458,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The AU Washington Semester Program is the hidden pathway that makes AU the most accessible DC immersion experience in American higher education - and it is a pathway available not just to AU students but to students from 150 partner universities acro",
     the_room: "AU enrolls approximately 8,500 undergraduates - a mid-sized private university in a residential DC neighborhood. The student body is assembled from all 50 states and 140+ countries with heavy draw fro",
     lifestyle: "The American University campus in Spring Valley in Northwest DC is one of the most residentially beautiful private university campuses in the city -",
-    grad_cities: "Washington DC (55%) | New York NY (10%) | Boston MA (5%) | Los Angeles CA (4%) | International (8%)."
+    grad_cities: "Washington DC (55%) | New York NY (10%) | Boston MA (5%) | Los Angeles CA (4%) | International (8%).",
+  
+    netPriceByIncome: { under30k: 23233, from30to48k: 20444, from48to75k: 26035, from75to110k: 30063, over110k: 53673 },
   },
   "University of Connecticut": {
     name: "University of Connecticut",
@@ -1232,7 +1470,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Hartford insurance corridor is the hidden pathway that makes UConn actuarial science and business programs structurally more powerful than their rankings suggest for one of the most consequential financial services industries in America.",
     the_room: "UConn enrolls approximately 19,000 undergraduates - a large flagship with the Huskies athletic identity competing in the Big East Conference for basketball and the American Athletic Conference for foo",
     lifestyle: "Storrs, Connecticut is a census-designated place of 16,000 that exists entirely around the University of Connecticut -",
-    grad_cities: "Hartford CT (30%) | New York NY (20%) | Boston MA (10%) | Stamford CT (8%) | Providence RI (4%)."
+    grad_cities: "Hartford CT (30%) | New York NY (20%) | Boston MA (10%) | Stamford CT (8%) | Providence RI (4%).",
+  
+    netPriceByIncome: { under30k: 15193, from30to48k: 16339, from48to75k: 20608, from75to110k: 28285, over110k: 33797 },
   },
   "Northeastern University": {
     name: "Northeastern University",
@@ -1242,7 +1482,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Northeastern's co-op program is the most rapidly growing and most Boston-embedded experiential learning infrastructure of any private university in the Northeast -",
     the_room: "Northeastern enrolls approximately 20,000 undergraduates - a large private research university with the Huskies athletic identity in the Colonial Athletic Association providing Division I hockey and b",
     lifestyle: "Boston's Fenway-Kenmore neighborhood is one of the great American urban university districts - Northeastern, Wentworth Institute, MassArt, the Museum of Fine Arts, Symphony Hall, a",
-    grad_cities: "Boston MA (45%) | New York NY (12%) | San Francisco CA (8%) | Washington DC (6%) | International (7%)."
+    grad_cities: "Boston MA (45%) | New York NY (12%) | San Francisco CA (8%) | Washington DC (6%) | International (7%).",
+  
+    netPriceByIncome: { under30k: 2264, from30to48k: 2436, from48to75k: 5301, from75to110k: 16241, over110k: 47696 },
   },
   "Case Western Reserve University": {
     name: "Case Western Reserve University",
@@ -1252,7 +1494,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Cleveland Clinic relationship is the hidden pathway that makes CWRU medical and health sciences programs uniquely consequential in ways that the national ranking alone understates. The Cleveland Clinic -",
     the_room: "CWRU enrolls approximately 5,500 undergraduates - a mid-sized private research university with the Spartans athletic identity in the UAA (University Athletic Association) at Division III -",
     lifestyle: "University Circle, Cleveland, Ohio is one of the great American academic and cultural neighborhoods - a square mile that contains CWRU, the Cleveland Museum of Art (one of the fine",
-    grad_cities: "Cleveland OH (35%) | Pittsburgh PA (8%) | Columbus OH (8%) | New York NY (7%) | Chicago IL (6%)."
+    grad_cities: "Cleveland OH (35%) | Pittsburgh PA (8%) | Columbus OH (8%) | New York NY (7%) | Chicago IL (6%).",
+  
+    netPriceByIncome: { under30k: 19025, from30to48k: 18506, from48to75k: 20849, from75to110k: 26159, over110k: 53061 },
   },
   "University of San Francisco": {
     name: "University of San Francisco",
@@ -1262,7 +1506,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "San Francisco nursing wages are the hidden pathway that makes USF's nursing program the most financially consequential nursing credential in the database - and it is a pathway defined entirely by geography.",
     the_room: "USF enrolls approximately 6,500 undergraduates - a mid-sized Jesuit university in the heart of San Francisco. The student body is approximately 40% California residents with significant national and i",
     lifestyle: "San Francisco, California - USF's campus on Lone Mountain in the Inner Richmond neighborhood sits on one of the highest points in San Francisco with panoramic views of the city, th",
-    grad_cities: "San Francisco CA (60%) | Silicon Valley CA (15%) | Los Angeles CA (5%) | Seattle WA (3%) | International (6%)."
+    grad_cities: "San Francisco CA (60%) | Silicon Valley CA (15%) | Los Angeles CA (5%) | Seattle WA (3%) | International (6%).",
+  
+    netPriceByIncome: { under30k: 31537, from30to48k: 33207, from48to75k: 34315, from75to110k: 38933, over110k: 52497 },
   },
   "Baylor University": {
     name: "Baylor University",
@@ -1272,7 +1518,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Baylor College of Medicine affiliation is the hidden pathway that makes Baylor University's pre-medicine program among the most practically consequential in Texas. Baylor College of Medicine in Houston -",
     the_room: "Baylor enrolls approximately 16,000 undergraduates - a large faith-based research university with the Bears athletic identity in the Big 12 competing across all major conference sports.",
     lifestyle: "Waco, Texas is a city of 140,000 in the heart of Texas at the intersection of I-35 and US-84 - the geographic center of the Texas triangle formed by Dallas, Austin, and San Antonio",
-    grad_cities: "Dallas-Fort Worth TX (25%) | Houston TX (15%) | Austin TX (12%) | Waco TX (8%) | San Antonio TX (6%)."
+    grad_cities: "Dallas-Fort Worth TX (25%) | Houston TX (15%) | Austin TX (12%) | Waco TX (8%) | San Antonio TX (6%).",
+  
+    netPriceByIncome: { under30k: 22024, from30to48k: 21530, from48to75k: 33902, from75to110k: 38852, over110k: 47895 },
   },
   "College of William and Mary": {
     name: "College of William and Mary",
@@ -1282,7 +1530,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Oldest Law School in America credential is the hidden pathway that gives William and Mary Law a specific and durable institutional weight in Virginia and DC legal circles that no peer Southern public law school can claim.",
     the_room: "William and Mary enrolls approximately 6,500 undergraduates - a small public university that operates more like a liberal arts college than a flagship research university in its academic culture.",
     lifestyle: "Williamsburg, Virginia is one of the most historically significant small cities in America - the colonial capital of Virginia, the site of the most complete 18th-century historic d",
-    grad_cities: "Washington DC-Northern Virginia (35%) | Richmond VA (15%) | Norfolk VA (8%) | New York NY (7%) | Boston MA (5%)."
+    grad_cities: "Washington DC-Northern Virginia (35%) | Richmond VA (15%) | Norfolk VA (8%) | New York NY (7%) | Boston MA (5%).",
+  
+    netPriceByIncome: { under30k: 3106, from30to48k: 881, from48to75k: 5916, from75to110k: 16803, over110k: 34370 },
   },
 
   // ── NEW SCHOOLS — Added June 21 2026 (89 schools from university-db.js) ──────
@@ -1295,7 +1545,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "San Diego's biotech cluster is the second-largest in America and SDSU sits inside it. The Salk Institute, Scripps Research, UC San Diego, and over 1,0",
     the_room: "Approximately 79% of SDSU students are California residents and 15% are from out of state with 6.6% international - a he",
     lifestyle: "Car-free campus life via trolley, bus, and Zipcar — 15 minutes from downtown San Diego, the beach, and the mountains. Year-round mild climate (rarely below 60°F or above 80°F). D1 athletics (Aztec Pride) plus 20+ on-campus dining spots. Balboa Park (17 museums, two Tony-winning theaters) anchors a genuine arts scene minutes away.",
-    grad_cities: "San Diego CA (65%) | Los Angeles CA (15%) | San Francisco Bay Area CA (8%) | Other California (5%) | Out of California ("
+    grad_cities: "San Diego CA (65%) | Los Angeles CA (15%) | San Francisco Bay Area CA (8%) | Other California (5%) | Out of California (",
+  
+    netPriceByIncome: { under30k: 9910, from30to48k: 10017, from48to75k: 12697, from75to110k: 15891, over110k: 23821 },
   },
   "UC Santa Barbara": {
     name: "UC Santa Barbara",
@@ -1305,7 +1557,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "UCSB has produced 8 Nobel Prize-winning faculty members in physics, chemistry, and economics - a concentration of Nobel laureates that rivals institut",
     the_room: "Approximately 80% of UCSB students are California residents - approximately 15% are from out of state and 11% are intern",
     lifestyle: "",
-    grad_cities: "San Francisco Bay Area CA (25%) | Los Angeles CA (25%) | Santa Barbara CA (12%) | San Diego CA (8%) | Other California ("
+    grad_cities: "San Francisco Bay Area CA (25%) | Los Angeles CA (25%) | Santa Barbara CA (12%) | San Diego CA (8%) | Other California (",
+  
+    netPriceByIncome: { under30k: 9231, from30to48k: 9992, from48to75k: 12588, from75to110k: 17136, over110k: 31863 },
   },
   "UCLA": {
     name: "UCLA",
@@ -1315,7 +1569,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Three hidden pathways. First: UCLA TFT is the only film school in America that combines theater, film, television, and digital media in a single profe",
     the_room: "33,500 undergraduates - large flagship campus. The room at UCLA is the most ethnically and economically diverse of any t",
     lifestyle: "",
-    grad_cities: "Los Angeles CA (58%) | San Francisco CA (12%) | New York NY (7%). The LA concentration reflects both the pull of the cit"
+    grad_cities: "Los Angeles CA (58%) | San Francisco CA (12%) | New York NY (7%). The LA concentration reflects both the pull of the cit",
+  
+    netPriceByIncome: { under30k: 5579, from30to48k: 6682, from48to75k: 9811, from75to110k: 14142, over110k: 29682 },
   },
   "USC": {
     name: "USC",
@@ -1325,7 +1581,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Three hidden pathways. First: The Trojan Network operates as an active hiring system, not a passive alumni database. Every Hollywood office, every maj",
     the_room: "Approximately 22,000 undergraduates - large but not massive for a major research university. 25% Greek life participatio",
     lifestyle: "",
-    grad_cities: "Los Angeles CA (52%) | New York NY (14%) | San Francisco CA (9%). The LA concentration is the defining feature and also "
+    grad_cities: "Los Angeles CA (52%) | New York NY (14%) | San Francisco CA (9%). The LA concentration is the defining feature and also ",
+  
+    netPriceByIncome: { under30k: 13516, from30to48k: 14394, from48to75k: 19539, from75to110k: 24976, over110k: 56116 },
   },
   "Rice University": {
     name: "Rice University",
@@ -1335,7 +1593,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Three hidden pathways that define Rice's distinctiveness. First: Rice sits directly across the street from the Texas Medical Center - the largest medi",
     the_room: "Approximately 4,400 undergraduates - one of the smallest research universities in the country. The residential college s",
     lifestyle: "",
-    grad_cities: "Houston TX (48%) | New York NY (10%) | San Francisco CA (8%). The Houston concentration reflects Rice's physical positio"
+    grad_cities: "Houston TX (48%) | New York NY (10%) | San Francisco CA (8%). The Houston concentration reflects Rice's physical positio",
+  
+    netPriceByIncome: { under30k: 5827, from30to48k: 563, from48to75k: 3217, from75to110k: 17755, over110k: 48466 },
   },
   "SMU": {
     name: "SMU",
@@ -1345,7 +1605,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Two hidden pathways most California families miss entirely. First: SMU's Meadows School of the Arts houses the Temerlin Advertising Institute - one of",
     the_room: "One of the highest concentrations of ultra-high-net-worth student families in America. Hunt family (Kansas City Chiefs),",
     lifestyle: "",
-    grad_cities: "Dallas TX (62%) | New York NY (11%) | Houston TX (9%). Dallas concentration is the defining feature - an SMU Cox graduat"
+    grad_cities: "Dallas TX (62%) | New York NY (11%) | Houston TX (9%). Dallas concentration is the defining feature - an SMU Cox graduat",
+  
+    netPriceByIncome: { under30k: 23544, from30to48k: 20038, from48to75k: 24152, from75to110k: 33477, over110k: 58213 },
   },
   "TCU": {
     name: "TCU",
@@ -1355,7 +1617,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Two hidden pathways that no California family knows. First: TCU's nurse anesthesia program is ranked #9 in the country - one of only a handful of prog",
     the_room: "Smaller than SMU and Texas Tech at ~10,000 undergraduates - genuine intimacy results. 40% of students in Greek life acro",
     lifestyle: "",
-    grad_cities: "Dallas-Fort Worth (58%) | Houston (12%) | New York NY (8%). Fort Worth gives direct DFW access. The 5th largest media ma"
+    grad_cities: "Dallas-Fort Worth (58%) | Houston (12%) | New York NY (8%). Fort Worth gives direct DFW access. The 5th largest media ma",
+  
+    netPriceByIncome: { under30k: 17956, from30to48k: 16980, from48to75k: 17940, from75to110k: 34990, over110k: 53450 },
   },
   "Texas A&M University": {
     name: "Texas A&M University",
@@ -1365,7 +1629,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Three hidden pathways. First: Texas A&M's veterinary medicine program (#4 nationally, highest ranking in school history) is one of only 33 accredited ",
     the_room: "74,000+ undergraduates - one of the largest universities in America. The room is economically middle-class and Texas-cen",
     lifestyle: "",
-    grad_cities: "Houston TX (32%) | Dallas-Fort Worth TX (24%) | Austin TX (14%). The Houston concentration reflects Texas A&M's deep roo"
+    grad_cities: "Houston TX (32%) | Dallas-Fort Worth TX (24%) | Austin TX (14%). The Houston concentration reflects Texas A&M's deep roo",
+  
+    netPriceByIncome: { under30k: 12784, from30to48k: 13317, from48to75k: 17435, from75to110k: 26520, over110k: 30660 },
   },
   "Texas Tech University": {
     name: "Texas Tech University",
@@ -1375,7 +1641,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Three hidden pathways no California family knows. First: Texas Tech has the largest retail meat cooler on any university campus in America - the Raide",
     the_room: "Genuinely economically diverse - 26% of students receive Pell Grant aid. The room is Texas ambition across every industr",
     lifestyle: "",
-    grad_cities: "Dallas-Fort Worth (38%) | Houston (28%) | Lubbock-Midland-Odessa corridor (14%). 91% of students are Texas residents - g"
+    grad_cities: "Dallas-Fort Worth (38%) | Houston (28%) | Lubbock-Midland-Odessa corridor (14%). 91% of students are Texas residents - g",
+  
+    netPriceByIncome: { under30k: 12457, from30to48k: 13851, from48to75k: 17058, from75to110k: 22073, over110k: 24622 },
   },
   "UT Austin": {
     name: "UT Austin",
@@ -1385,7 +1653,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Three hidden pathways that even Texas families miss. First: The Moody College of Communication is the #1 public university communication and media pro",
     the_room: "53,864 students - one of the largest universities in America - makes the room vast and economically and ethnically diver",
     lifestyle: "",
-    grad_cities: "Austin TX (44%) | Dallas-Fort Worth TX (18%) | New York NY (8%). Austin retention is the defining feature - the city's e"
+    grad_cities: "Austin TX (44%) | Dallas-Fort Worth TX (18%) | New York NY (8%). Austin retention is the defining feature - the city's e",
+  
+    netPriceByIncome: { under30k: 12553, from30to48k: 14297, from48to75k: 17207, from75to110k: 24406, over110k: 30082 },
   },
   "University of North Carolina Chapel Hill": {
     name: "University of North Carolina Chapel Hill",
@@ -1395,7 +1665,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "UNC Eshelman School of Pharmacy is the number 1 pharmacy school in America - for the third consecutive US News ranking cycle. This is not a close comp",
     the_room: "Approximately 82% of UNC Chapel Hill undergraduates are North Carolina residents - the state legislature maintains a har",
     lifestyle: "",
-    grad_cities: "Raleigh-Durham-Chapel Hill Research Triangle NC (35%) | Charlotte NC (20%) | Washington DC (10%) | New York NY (8%) | At"
+    grad_cities: "Raleigh-Durham-Chapel Hill Research Triangle NC (35%) | Charlotte NC (20%) | Washington DC (10%) | New York NY (8%) | At",
+  
+    netPriceByIncome: { under30k: 2004, from30to48k: 3918, from48to75k: 8538, from75to110k: 16415, over110k: 24396 },
   },
   "UC Berkeley": {
     name: "UC Berkeley",
@@ -1405,7 +1677,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Three hidden pathways. First: The Goldman School of Public Policy is ranked #1 in public policy analysis nationally and #3 overall in public affairs -",
     the_room: "Approximately 33,000 undergraduates. The room at Berkeley is defined by intellectual ambition and geographic destiny mor",
     lifestyle: "",
-    grad_cities: "San Francisco-Bay Area CA (54%) | New York NY (11%) | Los Angeles CA (8%). The Bay Area concentration is the defining fe"
+    grad_cities: "San Francisco-Bay Area CA (54%) | New York NY (11%) | Los Angeles CA (8%). The Bay Area concentration is the defining fe",
+  
+    netPriceByIncome: { under30k: 5311, from30to48k: 6501, from48to75k: 9693, from75to110k: 15074, over110k: 34529 },
   },
   "University of Illinois Urbana-Champaign": {
     name: "University of Illinois Urbana-Champaign",
@@ -1416,7 +1690,9 @@ const UNIVERSITY_CONTENT = {
     the_room: "Illinois residents make up approximately 71% of UIUC freshmen - the remaining 29% from out of state and international, with the university drawing especially heavily from the Chicago metro area.",
     lifestyle: "",
     grad_cities: "Chicago IL (30%) | Champaign-Urbana IL (15%) | San Francisco Bay Area CA (15%) | New York NY (10%) | Other Midwest (10%).",
-    networkCapital: "UIUC's recruiter reach extends well beyond engineering: Google, Meta, Microsoft, Goldman Sachs, JPMorgan Chase, Amazon, EY, and Deloitte all actively recruit across the university, and top graduates place directly into MIT, Stanford, Princeton, Cornell, and Berkeley graduate programs."
+    networkCapital: "UIUC's recruiter reach extends well beyond engineering: Google, Meta, Microsoft, Goldman Sachs, JPMorgan Chase, Amazon, EY, and Deloitte all actively recruit across the university, and top graduates place directly into MIT, Stanford, Princeton, Cornell, and Berkeley graduate programs.",
+  
+    netPriceByIncome: { under30k: 2038, from30to48k: 5373, from48to75k: 7982, from75to110k: 15152, over110k: 28761 },
   },
   "University of Wisconsin-Madison": {
     name: "University of Wisconsin-Madison",
@@ -1427,7 +1703,9 @@ const UNIVERSITY_CONTENT = {
     the_room: "UW-Madison is the only University of Wisconsin campus where fewer than half of students are Wisconsin residents - approx",
     lifestyle: "Madison is a genuine college-and-capital-city hybrid: lakeside campus (Lakeshore vs. Southeast dorm neighborhoods), 1,062 student organizations, 275 study abroad programs, and Big Ten athletics (football and hockey games are the biggest social draws). Niche gives it an A+ for student life and party scene, with 84% of students calling the social scene strong; winters are notably harsh, a recurring theme in student reviews.",
     grad_cities: "Chicago IL (22%) | Madison WI (18%) | Milwaukee WI (10%) | Minneapolis MN (8%) | New York NY (8%) | San Francisco CA (7%",
-    studentExperience: "NSSE 2023 survey (541 participating colleges): UW-Madison seniors work with faculty on research at higher rates than peers (36% vs. 28%), complete internships/field placements at 59% (vs. 54% peers), and report their education contributed 'quite a bit or very much' to solving complex real-world problems at 70% (vs. 64% peer average). 53% hold formal student-org leadership roles (vs. 48% peers)."
+    studentExperience: "NSSE 2023 survey (541 participating colleges): UW-Madison seniors work with faculty on research at higher rates than peers (36% vs. 28%), complete internships/field placements at 59% (vs. 54% peers), and report their education contributed 'quite a bit or very much' to solving complex real-world problems at 70% (vs. 64% peer average). 53% hold formal student-org leadership roles (vs. 48% peers).",
+  
+    netPriceByIncome: { under30k: 4200, from30to48k: 4101, from48to75k: 8134, from75to110k: 17763, over110k: 27292 },
   },
   "Belmont University": {
     name: "Belmont University",
@@ -1437,7 +1715,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Belmont is the songwriting program's alumni royalty infrastructure. The music publishing industry's royalty system means that a ",
     the_room: "Belmont enrolls approximately 8,500 students on a campus that occupies the former Belmont Mansion estate in the Belmont-",
     lifestyle: "",
-    grad_cities: "Nashville TN (55%) | Los Angeles CA (12%) | New York NY (10%) | Atlanta GA (6%) | Austin TX (4%) | Chicago IL (3%) | Int"
+    grad_cities: "Nashville TN (55%) | Los Angeles CA (12%) | New York NY (10%) | Atlanta GA (6%) | Austin TX (4%) | Chicago IL (3%) | Int",
+  
+    netPriceByIncome: { under30k: 22950, from30to48k: 24723, from48to75k: 28009, from75to110k: 32153, over110k: 43606 },
   },
   "Binghamton University": {
     name: "Binghamton University",
@@ -1447,7 +1727,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Binghamton is the School of Management's specific Wall Street and Big 4 accounting recruiting depth relative to its public unive",
     the_room: "Binghamton enrolls approximately 17,000 undergraduates on a campus set in the hills south of the Susquehanna River, 3 mi",
     lifestyle: "",
-    grad_cities: "New York NY (42%) | Albany NY (10%) | Philadelphia PA (7%) | Boston MA (7%) | Washington DC (6%) | San Francisco-Bay Are"
+    grad_cities: "New York NY (42%) | Albany NY (10%) | Philadelphia PA (7%) | Boston MA (7%) | Washington DC (6%) | San Francisco-Bay Are",
+  
+    netPriceByIncome: { under30k: 12171, from30to48k: 15281, from48to75k: 20347, from75to110k: 23533, over110k: 28475 },
   },
   "Denison University": {
     name: "Denison University",
@@ -1457,7 +1739,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Denison is the alumni mentorship culture that the college's development office and alumni relations program have deliberately cu",
     the_room: "Denison enrolls approximately 2,400 undergraduates on a hillside campus above Granville, Ohio — a New England-style vill",
     lifestyle: "",
-    grad_cities: "New York NY (22%) | Columbus OH (20%) | Chicago IL (10%) | Washington DC (8%) | Cleveland OH (7%) | Los Angeles CA (6%) "
+    grad_cities: "New York NY (22%) | Columbus OH (20%) | Chicago IL (10%) | Washington DC (8%) | Cleveland OH (7%) | Los Angeles CA (6%) ",
+  
+    netPriceByIncome: { under30k: 16656, from30to48k: 13086, from48to75k: 17827, from75to110k: 20839, over110k: 48472 },
   },
   "Flagler College": {
     name: "Flagler College",
@@ -1467,7 +1751,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Flagler is the Ponce de León Hotel campus itself as a professional credential for art history, interior design, and hospitality ",
     the_room: "Flagler enrolls approximately 2,800 undergraduates on a campus that is, without serious competition, the most architectu",
     lifestyle: "",
-    grad_cities: "St. Augustine-Jacksonville FL (42%) | Orlando FL (10%) | Daytona Beach FL (8%) | Tampa FL (7%) | Atlanta GA (5%) | New Y"
+    grad_cities: "St. Augustine-Jacksonville FL (42%) | Orlando FL (10%) | Daytona Beach FL (8%) | Tampa FL (7%) | Atlanta GA (5%) | New Y",
+  
+    netPriceByIncome: { under30k: 21733, from30to48k: 23129, from48to75k: 25521, from75to110k: 29663, over110k: 37909 },
   },
   "Furman University": {
     name: "Furman University",
@@ -1477,7 +1763,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Furman is the Furman Advantage program combined with the BMW and Michelin employer relationships in the Greenville-Spartanburg c",
     the_room: "Furman enrolls approximately 2,800 undergraduates on what is consistently described as one of the most beautiful college",
     lifestyle: "",
-    grad_cities: "Greenville-Spartanburg SC (30%) | Charlotte NC (18%) | Atlanta GA (12%) | Washington DC (7%) | New York NY (6%) | Raleig"
+    grad_cities: "Greenville-Spartanburg SC (30%) | Charlotte NC (18%) | Atlanta GA (12%) | Washington DC (7%) | New York NY (6%) | Raleig",
+  
+    netPriceByIncome: { under30k: 16401, from30to48k: 17290, from48to75k: 21041, from75to110k: 27736, over110k: 39310 },
   },
   "Grinnell College": {
     name: "Grinnell College",
@@ -1487,7 +1775,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Grinnell is the endowment itself as a professional credential and curriculum. Grinnell's endowment — over $2 billion for an inst",
     the_room: "Grinnell enrolls approximately 1,700 undergraduates in Grinnell, Iowa — a town of 9,000 in the flat agricultural terrain",
     lifestyle: "",
-    grad_cities: "Chicago IL (18%) | New York NY (20%) | San Francisco-Bay Area CA (12%) | Washington DC (10%) | Boston MA (8%) | Minneapo"
+    grad_cities: "Chicago IL (18%) | New York NY (20%) | San Francisco-Bay Area CA (12%) | Washington DC (10%) | Boston MA (8%) | Minneapo",
+  
+    netPriceByIncome: { under30k: 9970, from30to48k: 7789, from48to75k: 9669, from75to110k: 19348, over110k: 37725 },
   },
   "Georgia State University": {
     name: "Georgia State University",
@@ -1497,7 +1787,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Georgia State is the university's nationally recognized student success and graduation rate improvement program combined with th",
     the_room: "Georgia State enrolls approximately 54,000 students across its Atlanta and Perimeter campuses - one of the largest unive",
     lifestyle: "",
-    grad_cities: "Atlanta GA (72%) | Washington DC (7%) | New York NY (5%) | Charlotte NC (4%) | Dallas TX (3%) | Los Angeles CA (3%) | In"
+    grad_cities: "Atlanta GA (72%) | Washington DC (7%) | New York NY (5%) | Charlotte NC (4%) | Dallas TX (3%) | Los Angeles CA (3%) | In",
+  
+    netPriceByIncome: { under30k: 13787, from30to48k: 14430, from48to75k: 16656, from75to110k: 19390, over110k: 20305 },
   },
   "High Point University": {
     name: "High Point University",
@@ -1507,7 +1799,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at High Point University is the High Point Market combined with the university's entrepreneurship ecosystem. The High Point Market ",
     the_room: "High Point University enrolls approximately 5,000 undergraduates on a campus that President Qubein has deliberately desi",
     lifestyle: "",
-    grad_cities: "Charlotte NC (22%) | Greensboro-Winston Salem-High Point NC (28%) | Raleigh-Durham NC (14%) | Washington DC (6%) | New Y"
+    grad_cities: "Charlotte NC (22%) | Greensboro-Winston Salem-High Point NC (28%) | Raleigh-Durham NC (14%) | Washington DC (6%) | New Y",
+  
+    netPriceByIncome: { under30k: 32763, from30to48k: 31937, from48to75k: 32461, from75to110k: 35508, over110k: 41994 },
   },
   "Ithaca College": {
     name: "Ithaca College",
@@ -1517,7 +1811,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Ithaca College is the Park School's sports broadcasting alumni network combined with the college's partnership with Cornell Univ",
     the_room: "Ithaca College enrolls approximately 5,500 undergraduates on a campus on the south hill above Ithaca, New York — a city ",
     lifestyle: "",
-    grad_cities: "New York NY (38%) | Los Angeles CA (14%) | Boston MA (7%) | Washington DC (6%) | Chicago IL (5%) | Ithaca-Binghamton NY "
+    grad_cities: "New York NY (38%) | Los Angeles CA (14%) | Boston MA (7%) | Washington DC (6%) | Chicago IL (5%) | Ithaca-Binghamton NY ",
+  
+    netPriceByIncome: { under30k: 21901, from30to48k: 23335, from48to75k: 28832, from75to110k: 31846, over110k: 38785 },
   },
   "James Madison University": {
     name: "James Madison University",
@@ -1527,7 +1823,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at JMU is the SMAD program's specific positioning in the DC public affairs and strategic communications ecosystem. Washington DC's ",
     the_room: "JMU enrolls approximately 22,000 undergraduates on a campus that occupies both sides of South Main Street in Harrisonbur",
     lifestyle: "",
-    grad_cities: "Washington DC-Northern Virginia (38%) | Richmond VA (12%) | Harrisonburg-Charlottesville VA (10%) | New York NY (8%) | C"
+    grad_cities: "Washington DC-Northern Virginia (38%) | Richmond VA (12%) | Harrisonburg-Charlottesville VA (10%) | New York NY (8%) | C",
+  
+    netPriceByIncome: { under30k: 11444, from30to48k: 12977, from48to75k: 16475, from75to110k: 22343, over110k: 30147 },
   },
   "Kenyon College": {
     name: "Kenyon College",
@@ -1537,7 +1835,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Kenyon is the Kenyon Review and the alumni culture it has created around literary and intellectual seriousness. The Kenyon Revie",
     the_room: "Kenyon enrolls approximately 1,800 undergraduates in Gambier, Ohio — a hilltop village of stone buildings, mature trees,",
     lifestyle: "",
-    grad_cities: "New York NY (30%) | Columbus OH (12%) | Washington DC (10%) | Boston MA (8%) | Chicago IL (7%) | Los Angeles CA (8%) | A"
+    grad_cities: "New York NY (30%) | Columbus OH (12%) | Washington DC (10%) | Boston MA (8%) | Chicago IL (7%) | Los Angeles CA (8%) | A",
+  
+    netPriceByIncome: { under30k: 18242, from30to48k: 26319, from48to75k: 19156, from75to110k: 23757, over110k: 51432 },
   },
   "Lehigh University": {
     name: "Lehigh University",
@@ -1547,7 +1847,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Lehigh is the IBE program's specific positioning in the quantitative finance and technology product management hiring market. Wa",
     the_room: "Lehigh enrolls approximately 7,200 undergraduates on a hillside campus above Bethlehem, Pennsylvania that is one of the ",
     lifestyle: "",
-    grad_cities: "New York NY (28%) | Philadelphia PA (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco-Bay Area CA (7%) | Chic"
+    grad_cities: "New York NY (28%) | Philadelphia PA (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco-Bay Area CA (7%) | Chic",
+  
+    netPriceByIncome: { under30k: 16917, from30to48k: 17140, from48to75k: 18722, from75to110k: 22184, over110k: 48751 },
   },
   "University of Memphis": {
     name: "University of Memphis",
@@ -1557,7 +1859,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at the University of Memphis is the FedEx corporate relationship combined with the supply chain management program's proximity to t",
     the_room: "The University of Memphis enrolls approximately 21,000 students on a campus in the Midtown neighborhood of Memphis - a h",
     lifestyle: "",
-    grad_cities: "Memphis TN (58%) | Nashville TN (10%) | Atlanta GA (8%) | Dallas TX (6%) | Chicago IL (5%) | Washington DC (4%) | Housto"
+    grad_cities: "Memphis TN (58%) | Nashville TN (10%) | Atlanta GA (8%) | Dallas TX (6%) | Chicago IL (5%) | Washington DC (4%) | Housto",
+  
+    netPriceByIncome: { under30k: 10607, from30to48k: 10968, from48to75k: 13923, from75to110k: 17384, over110k: 18691 },
   },
   "Oberlin College": {
     name: "Oberlin College",
@@ -1567,7 +1871,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Oberlin is the double-degree program that allows Conservatory students to earn both the Bachelor of Music and the Bachelor of Ar",
     the_room: "Oberlin enrolls approximately 2,900 undergraduates — 2,100 in the College and 650 in the Conservatory — on a campus in O",
     lifestyle: "",
-    grad_cities: "New York NY (28%) | Cleveland OH (15%) | Chicago IL (10%) | San Francisco-Bay Area CA (8%) | Washington DC (7%) | Los An"
+    grad_cities: "New York NY (28%) | Cleveland OH (15%) | Chicago IL (10%) | San Francisco-Bay Area CA (8%) | Washington DC (7%) | Los An",
+  
+    netPriceByIncome: { under30k: 18774, from30to48k: 15799, from48to75k: 22123, from75to110k: 29207, over110k: 48731 },
   },
   "Ohio Wesleyan University": {
     name: "Ohio Wesleyan University",
@@ -1577,7 +1883,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Ohio Wesleyan is the Sagan National Colloquium combined with the university's extraordinary study abroad participation rate. The",
     the_room: "Ohio Wesleyan enrolls approximately 1,400 undergraduates on a campus in Delaware, Ohio — a county seat of 40,000 that is",
     lifestyle: "",
-    grad_cities: "Columbus OH (35%) | Cleveland OH (10%) | New York NY (10%) | Chicago IL (8%) | Washington DC (7%) | International (8%) |"
+    grad_cities: "Columbus OH (35%) | Cleveland OH (10%) | New York NY (10%) | Chicago IL (8%) | Washington DC (7%) | International (8%) |",
+  
+    netPriceByIncome: { under30k: 15412, from30to48k: 10706, from48to75k: 13339, from75to110k: 18031, over110k: 30036 },
   },
   "Quinnipiac University": {
     name: "Quinnipiac University",
@@ -1587,7 +1895,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Quinnipiac is the Polling Institute's specific contribution to journalism and political science students. The Quinnipiac Univers",
     the_room: "Quinnipiac enrolls approximately 7,000 undergraduates on two connected campuses in Hamden — the Mount Carmel campus on a",
     lifestyle: "",
-    grad_cities: "New Haven-Hartford CT (38%) | New York NY (22%) | Boston MA (8%) | Providence RI (6%) | Philadelphia PA (5%) | Washingto"
+    grad_cities: "New Haven-Hartford CT (38%) | New York NY (22%) | Boston MA (8%) | Providence RI (6%) | Philadelphia PA (5%) | Washingto",
+  
+    netPriceByIncome: { under30k: 33649, from30to48k: 35827, from48to75k: 36507, from75to110k: 39096, over110k: 42891 },
   },
   "Reed College": {
     name: "Reed College",
@@ -1597,7 +1907,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The Reed senior thesis is the hidden pathway that explains outcomes the acceptance rate alone does not predict. Every Reed student completes a year-lo",
     the_room: "Reed enrolls approximately 1,500 students on a 116-acre campus in the Eastmoreland neighborhood of southeast Portland - ",
     lifestyle: "",
-    grad_cities: "Portland OR (25%) | New York NY (15%) | San Francisco-Bay Area CA (20%) | Boston-Cambridge MA (12%) | Seattle WA (10%) |"
+    grad_cities: "Portland OR (25%) | New York NY (15%) | San Francisco-Bay Area CA (20%) | Boston-Cambridge MA (12%) | Seattle WA (10%) |",
+  
+    netPriceByIncome: { under30k: 12674, from30to48k: 12514, from48to75k: 14513, from75to110k: 23421, over110k: 46711 },
   },
   "Rhode Island School of Design": {
     name: "Rhode Island School of Design",
@@ -1607,7 +1919,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at RISD is the foundation year's development of material intelligence that every subsequent year of the program builds upon. RISD r",
     the_room: "RISD enrolls approximately 2,000 undergraduates in Providence's College Hill neighborhood, sharing a campus boundary wit",
     lifestyle: "",
-    grad_cities: "New York NY (38%) | Providence RI (15%) | San Francisco-Bay Area CA (14%) | Los Angeles CA (12%) | Boston MA (8%) | Inte"
+    grad_cities: "New York NY (38%) | Providence RI (15%) | San Francisco-Bay Area CA (14%) | Los Angeles CA (12%) | Boston MA (8%) | Inte",
+  
+    netPriceByIncome: { under30k: 29135, from30to48k: 30233, from48to75k: 25872, from75to110k: 33893, over110k: 64493 },
   },
   "Rollins College": {
     name: "Rollins College",
@@ -1617,7 +1931,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Rollins is the Crummer Graduate School of Business's physical presence on the undergraduate campus. Most liberal arts colleges a",
     the_room: "Rollins enrolls approximately 1,900 undergraduates on a campus on the shores of Lake Virginia in Winter Park — one of th",
     lifestyle: "",
-    grad_cities: "Orlando FL (40%) | Miami FL (12%) | Tampa FL (8%) | Atlanta GA (7%) | New York NY (7%) | Washington DC (5%) | Academic a"
+    grad_cities: "Orlando FL (40%) | Miami FL (12%) | Tampa FL (8%) | Atlanta GA (7%) | New York NY (7%) | Washington DC (5%) | Academic a",
+  
+    netPriceByIncome: { under30k: 27177, from30to48k: 27965, from48to75k: 30079, from75to110k: 32393, over110k: 41006 },
   },
   "San Jose State University": {
     name: "San Jose State University",
@@ -1627,7 +1943,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at San Jose State is the NASA Ames Research Center relationship combined with the university's aerospace engineering and aviation p",
     the_room: "SJSU enrolls approximately 33,000 students on a campus in downtown San Jose — the urban campus occupies multiple city bl",
     lifestyle: "",
-    grad_cities: "San Jose-Silicon Valley CA (52%) | San Francisco CA (18%) | Oakland-East Bay CA (8%) | Los Angeles CA (5%) | Seattle WA "
+    grad_cities: "San Jose-Silicon Valley CA (52%) | San Francisco CA (18%) | Oakland-East Bay CA (8%) | Los Angeles CA (5%) | Seattle WA ",
+  
+    netPriceByIncome: { under30k: 9730, from30to48k: 10114, from48to75k: 12099, from75to110k: 15102, over110k: 22862 },
   },
   "University of Tulsa": {
     name: "University of Tulsa",
@@ -1637,7 +1955,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at TU is the intersection of its cybersecurity program with the energy industry's accelerating digitization. Every major pipeline o",
     the_room: "TU enrolls approximately 3,800 undergraduates on a campus that punches far above its enrollment weight in physical quali",
     lifestyle: "",
-    grad_cities: "Tulsa OK (42%) | Oklahoma City OK (12%) | Houston TX (15%) | Dallas TX (8%) | Denver CO (6%) | Washington DC (5%) | Inte"
+    grad_cities: "Tulsa OK (42%) | Oklahoma City OK (12%) | Houston TX (15%) | Dallas TX (8%) | Denver CO (6%) | Washington DC (5%) | Inte",
+  
+    netPriceByIncome: { under30k: 5578, from30to48k: 8616, from48to75k: 10871, from75to110k: 18579, over110k: 25473 },
   },
   "University of Idaho": {
     name: "University of Idaho",
@@ -1647,7 +1967,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UIdaho is the Western Undergraduate Exchange program combined with the law school's natural resources and water law specializati",
     the_room: "UIdaho enrolls approximately 11,000 students in Moscow, a college town of 26,000 in the Palouse region of northern Idaho",
     lifestyle: "",
-    grad_cities: "Boise ID (38%) | Seattle WA (12%) | Portland OR (10%) | Spokane WA (8%) | Twin Falls-Magic Valley ID (7%) | Salt Lake Ci"
+    grad_cities: "Boise ID (38%) | Seattle WA (12%) | Portland OR (10%) | Spokane WA (8%) | Twin Falls-Magic Valley ID (7%) | Salt Lake Ci",
+  
+    netPriceByIncome: { under30k: 11270, from30to48k: 11193, from48to75k: 13374, from75to110k: 17130, over110k: 18791 },
   },
   "Union College": {
     name: "Union College",
@@ -1657,7 +1979,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Union is the early assurance medical program with the Icahn School of Medicine at Mount Sinai, which is one of the most prestigi",
     the_room: "Union enrolls approximately 2,300 undergraduates on a campus that is one of the oldest and most physically coherent in t",
     lifestyle: "",
-    grad_cities: "New York NY (30%) | Albany-Schenectady NY (18%) | Boston MA (10%) | Washington DC (8%) | Hartford-Springfield CT (6%) | "
+    grad_cities: "New York NY (30%) | Albany-Schenectady NY (18%) | Boston MA (10%) | Washington DC (8%) | Hartford-Springfield CT (6%) | ",
+  
+    netPriceByIncome: { under30k: 11776, from30to48k: 16415, from48to75k: 23941, from75to110k: 34100, over110k: 45017 },
   },
   "University of Nevada Las Vegas": {
     name: "University of Nevada Las Vegas",
@@ -1667,7 +1991,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UNLV is the intersection of hospitality technology and data analytics that Harrah College is building as a formal concentration.",
     the_room: "UNLV enrolls approximately 30,000 students - a large public university by enrollment but with a distinctive demographic ",
     lifestyle: "",
-    grad_cities: "Las Vegas NV (65%) | Los Angeles CA (8%) | Phoenix AZ (5%) | San Francisco-Bay Area CA (4%) | Seattle WA (3%) | Internat"
+    grad_cities: "Las Vegas NV (65%) | Los Angeles CA (8%) | Phoenix AZ (5%) | San Francisco-Bay Area CA (4%) | Seattle WA (3%) | Internat",
+  
+    netPriceByIncome: { under30k: 8526, from30to48k: 8537, from48to75k: 10606, from75to110k: 13513, over110k: 15905 },
   },
   "University of Nevada Reno": {
     name: "University of Nevada Reno",
@@ -1677,7 +2003,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UNR is the intersection of the Reno-Tahoe technology corridor and the university's engineering programs. The region that locals ",
     the_room: "UNR enrolls approximately 21,000 students on a campus that is genuinely beautiful by Mountain West public university sta",
     lifestyle: "",
-    grad_cities: "Reno-Sparks NV (45%) | Las Vegas NV (12%) | San Francisco-Bay Area CA (14%) | Sacramento CA (8%) | Los Angeles CA (6%) |"
+    grad_cities: "Reno-Sparks NV (45%) | Las Vegas NV (12%) | San Francisco-Bay Area CA (14%) | Sacramento CA (8%) | Los Angeles CA (6%) |",
+  
+    netPriceByIncome: { under30k: 12674, from30to48k: 13125, from48to75k: 14537, from75to110k: 18317, over110k: 21646 },
   },
   "University of Rhode Island": {
     name: "University of Rhode Island",
@@ -1687,7 +2015,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at URI is the intersection of the CVS Health headquarters proximity and the pharmacy program's direct recruiting pipeline. CVS Heal",
     the_room: "URI enrolls approximately 17,000 undergraduates on a campus in Kingston, a college village in the rural South County reg",
     lifestyle: "",
-    grad_cities: "Providence RI (28%) | Boston MA (25%) | New York NY (15%) | Hartford CT (8%) | Washington DC (6%) | San Diego CA (4%) | "
+    grad_cities: "Providence RI (28%) | Boston MA (25%) | New York NY (15%) | Hartford CT (8%) | Washington DC (6%) | San Diego CA (4%) | ",
+  
+    netPriceByIncome: { under30k: 14368, from30to48k: 12923, from48to75k: 17803, from75to110k: 23394, over110k: 28460 },
   },
   "University of Tennessee at Chattanooga": {
     name: "University of Tennessee at Chattanooga",
@@ -1697,7 +2027,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UTC is the Volkswagen co-op program combined with the Gig City technology infrastructure. Volkswagen's Chattanooga facility is t",
     the_room: "UTC enrolls approximately 11,500 students on a campus that occupies the Stringer's Ridge area of Chattanooga — positione",
     lifestyle: "",
-    grad_cities: "Chattanooga TN (48%) | Nashville TN (14%) | Atlanta GA (12%) | Knoxville TN (8%) | Birmingham AL (5%) | Charlotte NC (5%"
+    grad_cities: "Chattanooga TN (48%) | Nashville TN (14%) | Atlanta GA (12%) | Knoxville TN (8%) | Birmingham AL (5%) | Charlotte NC (5%",
+  
+    netPriceByIncome: { under30k: 9876, from30to48k: 10919, from48to75k: 13594, from75to110k: 17374, over110k: 19137 },
   },
   "Washington and Lee University": {
     name: "Washington and Lee University",
@@ -1707,7 +2039,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Washington and Lee is the Honor System's specific effect on employer trust and graduate school admission outcomes. The W&L Honor",
     the_room: "Washington and Lee enrolls approximately 1,850 undergraduates on the Colonnade — one of the most architecturally disting",
     lifestyle: "",
-    grad_cities: "Washington DC (28%) | New York NY (16%) | Richmond VA (12%) | Charlotte NC (8%) | Atlanta GA (7%) | Boston MA (5%) | Roa"
+    grad_cities: "Washington DC (28%) | New York NY (16%) | Richmond VA (12%) | Charlotte NC (8%) | Atlanta GA (7%) | Boston MA (5%) | Roa",
+  
+    netPriceByIncome: { under30k: -1777, from30to48k: 75, from48to75k: 4497, from75to110k: 8162, over110k: 40646 },
   },
   "Wofford College": {
     name: "Wofford College",
@@ -1717,7 +2051,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Wofford is the college's specific positioning at the intersection of the Greenville-Spartanburg BMW and Michelin industrial corr",
     the_room: "Wofford enrolls approximately 1,800 undergraduates on a campus of remarkable physical coherence in the heart of Spartanb",
     lifestyle: "",
-    grad_cities: "Charlotte NC (22%) | Greenville-Spartanburg SC (18%) | Atlanta GA (12%) | Washington DC (8%) | New York NY (8%) | Columb"
+    grad_cities: "Charlotte NC (22%) | Greenville-Spartanburg SC (18%) | Atlanta GA (12%) | Washington DC (8%) | New York NY (8%) | Columb",
+  
+    netPriceByIncome: { under30k: 8493, from30to48k: 11627, from48to75k: 10830, from75to110k: 19092, over110k: 23770 },
   },
   "College of Wooster": {
     name: "College of Wooster",
@@ -1727,7 +2063,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Wooster is the IS program's cumulative effect on graduate and professional school admission outcomes. The Independent Study requ",
     the_room: "Wooster enrolls approximately 1,900 undergraduates on a campus in Wooster, Ohio — the county seat of Wayne County in the",
     lifestyle: "",
-    grad_cities: "Cleveland OH (22%) | Columbus OH (14%) | Pittsburgh PA (8%) | New York NY (10%) | Chicago IL (7%) | Washington DC (8%) |"
+    grad_cities: "Cleveland OH (22%) | Columbus OH (14%) | Pittsburgh PA (8%) | New York NY (10%) | Chicago IL (7%) | Washington DC (8%) |",
+  
+    netPriceByIncome: { under30k: 12512, from30to48k: 14032, from48to75k: 17941, from75to110k: 26165, over110k: 32223 },
   },
   "University of Montana": {
     name: "University of Montana",
@@ -1737,7 +2075,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at the University of Montana is the journalism program's investigative reporting tradition combined with the environmental beat. UM",
     the_room: "UM enrolls approximately 9,000 students on a campus at the base of Mount Sentinel in Missoula — a city of 75,000 at the ",
     lifestyle: "",
-    grad_cities: "Missoula MT (30%) | Billings MT (14%) | Helena MT (8%) | Bozeman MT (8%) | Seattle WA (8%) | Denver CO (6%) | Portland O"
+    grad_cities: "Missoula MT (30%) | Billings MT (14%) | Helena MT (8%) | Bozeman MT (8%) | Seattle WA (8%) | Denver CO (6%) | Portland O",
+  
+    netPriceByIncome: { under30k: 13960, from30to48k: 14892, from48to75k: 17180, from75to110k: 19269, over110k: 20930 },
   },
   "Montana State University": {
     name: "Montana State University",
@@ -1747,7 +2087,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Montana State is the Bozeman technology ecosystem combined with the university's remote work infrastructure positioning. Bozeman",
     the_room: "MSU enrolls approximately 17,000 students on a campus in Bozeman — a city whose transformation from a quiet college town",
     lifestyle: "",
-    grad_cities: "Bozeman MT (28%) | Billings MT (12%) | Missoula MT (10%) | Helena MT (7%) | Denver CO (8%) | Seattle WA (7%) | Portland "
+    grad_cities: "Bozeman MT (28%) | Billings MT (12%) | Missoula MT (10%) | Helena MT (7%) | Denver CO (8%) | Seattle WA (7%) | Portland ",
+  
+    netPriceByIncome: { under30k: 17797, from30to48k: 18570, from48to75k: 21977, from75to110k: 24732, over110k: 25905 },
   },
   "North Dakota State University": {
     name: "North Dakota State University",
@@ -1757,7 +2099,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at NDSU is the coatings and polymers research program's specific industry positioning. The coatings industry — paints, protective c",
     the_room: "NDSU enrolls approximately 12,000 students on a campus in Fargo, North Dakota — the largest city in the state and the ec",
     lifestyle: "",
-    grad_cities: "Fargo-Moorhead ND/MN (40%) | Minneapolis-St. Paul MN (18%) | Bismarck ND (8%) | Grand Forks ND (6%) | Denver CO (5%) | C"
+    grad_cities: "Fargo-Moorhead ND/MN (40%) | Minneapolis-St. Paul MN (18%) | Bismarck ND (8%) | Grand Forks ND (6%) | Denver CO (5%) | C",
+  
+    netPriceByIncome: { under30k: 9370, from30to48k: 11343, from48to75k: 11923, from75to110k: 16082, over110k: 18856 },
   },
   "South Dakota State University": {
     name: "South Dakota State University",
@@ -1767,7 +2111,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at SDSU is the precision agriculture technology sector's specific concentration in the Sioux Falls-Brookings corridor. Raven Indust",
     the_room: "SDSU enrolls approximately 12,000 students on a land-grant campus in Brookings — a college city of 25,000 on the prairie",
     lifestyle: "",
-    grad_cities: "Sioux Falls SD (32%) | Brookings SD (10%) | Rapid City SD (8%) | Minneapolis-St. Paul MN (12%) | Fargo ND (6%) | Denver "
+    grad_cities: "Sioux Falls SD (32%) | Brookings SD (10%) | Rapid City SD (8%) | Minneapolis-St. Paul MN (12%) | Fargo ND (6%) | Denver ",
+  
+    netPriceByIncome: { under30k: 14266, from30to48k: 15248, from48to75k: 18073, from75to110k: 20706, over110k: 21886 },
   },
   "University of New Mexico": {
     name: "University of New Mexico",
@@ -1777,7 +2123,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UNM is the Sandia National Laboratories security clearance pipeline combined with the Intel semiconductor workforce access. Sand",
     the_room: "UNM enrolls approximately 22,000 students on a campus in central Albuquerque designed by John Gaw Meem in the Pueblo Rev",
     lifestyle: "",
-    grad_cities: "Albuquerque NM (48%) | Santa Fe NM (10%) | Phoenix AZ (7%) | Denver CO (6%) | Los Angeles CA (5%) | Washington DC (5%) |"
+    grad_cities: "Albuquerque NM (48%) | Santa Fe NM (10%) | Phoenix AZ (7%) | Denver CO (6%) | Los Angeles CA (5%) | Washington DC (5%) |",
+  
+    netPriceByIncome: { under30k: 11938, from30to48k: 13045, from48to75k: 16196, from75to110k: 17906, over110k: 19053 },
   },
   "New Mexico State University": {
     name: "New Mexico State University",
@@ -1787,7 +2135,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at NMSU is the chile pepper research program's intersection with the global specialty food industry. The Fabian Garcia Science Cent",
     the_room: "NMSU enrolls approximately 14,000 students on a campus in Las Cruces — a city of 115,000 in the Mesilla Valley at the ed",
     lifestyle: "",
-    grad_cities: "Las Cruces NM (32%) | Albuquerque NM (12%) | El Paso TX (14%) | Santa Fe NM (7%) | Phoenix AZ (6%) | Denver CO (5%) | Ac"
+    grad_cities: "Las Cruces NM (32%) | Albuquerque NM (12%) | El Paso TX (14%) | Santa Fe NM (7%) | Phoenix AZ (6%) | Denver CO (5%) | Ac",
+  
+    netPriceByIncome: { under30k: 6648, from30to48k: 7424, from48to75k: 9861, from75to110k: 13146, over110k: 14049 },
   },
   "Berklee College of Music": {
     name: "Berklee College of Music",
@@ -1797,7 +2147,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Berklee is the global alumni network's specific density in the rooms where music is actually made. Every major recording studio ",
     the_room: "Berklee enrolls approximately 6,000 students on a campus that occupies multiple buildings along Massachusetts Avenue in ",
     lifestyle: "",
-    grad_cities: "Boston MA (22%) | Los Angeles CA (32%) | New York NY (20%) | Nashville TN (7%) | London UK (4%) | International music ma"
+    grad_cities: "Boston MA (22%) | Los Angeles CA (32%) | New York NY (20%) | Nashville TN (7%) | London UK (4%) | International music ma",
+  
+    netPriceByIncome: { under30k: 42734, from30to48k: 37987, from48to75k: 47799, from75to110k: 46801, over110k: 54676 },
   },
   "Fashion Institute of Technology": {
     name: "Fashion Institute of Technology",
@@ -1807,7 +2159,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at FIT is the Cosmetics and Fragrance Marketing program's monopoly position in the beauty industry management pipeline. The $600 bi",
     the_room: "FIT enrolls approximately 8,500 students on a campus that occupies a full city block in the Chelsea neighborhood of Manh",
     lifestyle: "",
-    grad_cities: "New York NY (58%) | Los Angeles CA (10%) | Miami FL (6%) | London UK (4%) | Paris France (3%) | International fashion ca"
+    grad_cities: "New York NY (58%) | Los Angeles CA (10%) | Miami FL (6%) | London UK (4%) | Paris France (3%) | International fashion ca",
+  
+    netPriceByIncome: { under30k: 14117, from30to48k: 16238, from48to75k: 20406, from75to110k: 21979, over110k: 26070 },
   },
   "Pratt Institute": {
     name: "Pratt Institute",
@@ -1817,7 +2171,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Pratt is the Pratt sculpture garden combined with the Clinton Hill and Bushwick community access for fine arts students. The Pra",
     the_room: "Pratt enrolls approximately 4,700 students on a 25-acre wooded campus in the Clinton Hill neighborhood of Brooklyn — one",
     lifestyle: "",
-    grad_cities: "New York NY (52%) | Los Angeles CA (14%) | San Francisco CA (6%) | Chicago IL (5%) | Boston MA (4%) | London UK (4%) | I"
+    grad_cities: "New York NY (52%) | Los Angeles CA (14%) | San Francisco CA (6%) | Chicago IL (5%) | Boston MA (4%) | London UK (4%) | I",
+  
+    netPriceByIncome: { under30k: 38545, from30to48k: 44439, from48to75k: 48694, from75to110k: 59020, over110k: 60477 },
   },
   "Rochester Institute of Technology": {
     name: "Rochester Institute of Technology",
@@ -1827,7 +2183,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at RIT is the photonics and optical sciences industry concentration in Rochester and the specific career pathway it creates for RIT",
     the_room: "RIT enrolls approximately 18,000 students on a campus in Henrietta, a suburb of Rochester — a Brutalist brick campus des",
     lifestyle: "",
-    grad_cities: "New York NY (18%) | Boston MA (8%) | Rochester NY (16%) | San Francisco CA (12%) | Seattle WA (10%) | Austin TX (6%) | C"
+    grad_cities: "New York NY (18%) | Boston MA (8%) | Rochester NY (16%) | San Francisco CA (12%) | Seattle WA (10%) | Austin TX (6%) | C",
+  
+    netPriceByIncome: { under30k: 24680, from30to48k: 24820, from48to75k: 28874, from75to110k: 34510, over110k: 44970 },
   },
   "Marquette University": {
     name: "Marquette University",
@@ -1837,7 +2195,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Marquette is the Jesuit network's specific professional reciprocity combined with the Milwaukee manufacturing corridor's relativ",
     the_room: "Marquette enrolls approximately 11,000 students on a campus that occupies the western edge of downtown Milwaukee — an ur",
     lifestyle: "",
-    grad_cities: "Milwaukee WI (38%) | Chicago IL (22%) | Madison WI (8%) | Minneapolis MN (5%) | Washington DC (5%) | New York NY (5%) | "
+    grad_cities: "Milwaukee WI (38%) | Chicago IL (22%) | Madison WI (8%) | Minneapolis MN (5%) | Washington DC (5%) | New York NY (5%) | ",
+  
+    netPriceByIncome: { under30k: 22269, from30to48k: 18916, from48to75k: 27378, from75to110k: 32374, over110k: 36813 },
   },
   "Marshall University": {
     name: "Marshall University",
@@ -1847,7 +2207,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Marshall is the forensic accounting program's specific pipeline into federal financial crime investigation. The FBI's Financial ",
     the_room: "Marshall enrolls approximately 13,000 students on a campus in downtown Huntington — a city of 48,000 at the confluence o",
     lifestyle: "",
-    grad_cities: "Huntington-Charleston WV (35%) | Columbus OH (12%) | Pittsburgh PA (8%) | Lexington KY (7%) | Cincinnati OH (7%) | Washi"
+    grad_cities: "Huntington-Charleston WV (35%) | Columbus OH (12%) | Pittsburgh PA (8%) | Lexington KY (7%) | Cincinnati OH (7%) | Washi",
+  
+    netPriceByIncome: { under30k: 4648, from30to48k: 4430, from48to75k: 6837, from75to110k: 11227, over110k: 15076 },
   },
   "Carleton College": {
     name: "Carleton College",
@@ -1857,7 +2219,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Carleton is the Cowling Arboretum's research infrastructure combined with the geology department's specific strength in earth sc",
     the_room: "Carleton enrolls approximately 2,100 students on a campus in Northfield, Minnesota — a small city of 22,000 sixty miles ",
     lifestyle: "",
-    grad_cities: "Minneapolis-St. Paul MN (22%) | Chicago IL (12%) | New York NY (14%) | Washington DC (12%) | San Francisco CA (10%) | Bo"
+    grad_cities: "Minneapolis-St. Paul MN (22%) | Chicago IL (12%) | New York NY (14%) | Washington DC (12%) | San Francisco CA (10%) | Bo",
+  
+    netPriceByIncome: { under30k: 7881, from30to48k: 8203, from48to75k: 9680, from75to110k: 18485, over110k: 44082 },
   },
   "Howard University": {
     name: "Howard University",
@@ -1867,7 +2231,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Howard is the Capstone Network — the informal name for the Howard University alumni community that functions as one of the most ",
     the_room: "Howard enrolls approximately 10,000 students on a campus in the Shaw neighborhood of Washington DC — five blocks north o",
     lifestyle: "",
-    grad_cities: "Washington DC (42%) | New York NY (16%) | Atlanta GA (8%) | Los Angeles CA (7%) | Chicago IL (5%) | Baltimore MD (4%) | "
+    grad_cities: "Washington DC (42%) | New York NY (16%) | Atlanta GA (8%) | Los Angeles CA (7%) | Chicago IL (5%) | Baltimore MD (4%) | ",
+  
+    netPriceByIncome: { under30k: 46051, from30to48k: 47477, from48to75k: 50245, from75to110k: 52981, over110k: 54270 },
   },
   "Spelman College": {
     name: "Spelman College",
@@ -1877,7 +2243,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Spelman is the Atlanta University Center Consortium's collective resources combined with the specific professional network that ",
     the_room: "Spelman enrolls approximately 2,200 women on a campus in the West End neighborhood of Atlanta adjacent to Morehouse Coll",
     lifestyle: "",
-    grad_cities: "Atlanta GA (42%) | New York NY (12%) | Washington DC (10%) | Los Angeles CA (7%) | Charlotte NC (5%) | Chicago IL (4%) |"
+    grad_cities: "Atlanta GA (42%) | New York NY (12%) | Washington DC (10%) | Los Angeles CA (7%) | Charlotte NC (5%) | Chicago IL (4%) |",
+  
+    netPriceByIncome: { under30k: 32923, from30to48k: 34108, from48to75k: 36602, from75to110k: 38640, over110k: 44529 },
   },
   "Morehead State University": {
     name: "Morehead State University",
@@ -1887,7 +2255,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Morehead State is the Space Science Center's CubeSat program and its specific positioning in the small satellite industry. The c",
     the_room: "MSU enrolls approximately 10,000 students on a campus in Morehead — a city of 7,500 at the gateway to the Daniel Boone N",
     lifestyle: "",
-    grad_cities: "Morehead-Eastern Kentucky (30%) | Lexington KY (20%) | Ashland-Huntington KY/WV (10%) | Louisville KY (8%) | Cincinnati "
+    grad_cities: "Morehead-Eastern Kentucky (30%) | Lexington KY (20%) | Ashland-Huntington KY/WV (10%) | Louisville KY (8%) | Cincinnati ",
+  
+    netPriceByIncome: { under30k: 7150, from30to48k: 7057, from48to75k: 8874, from75to110k: 13341, over110k: 15164 },
   },
   "Franklin and Marshall College": {
     name: "Franklin and Marshall College",
@@ -1897,7 +2267,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at F&M is the Ware Institute for Civic Life and its specific connection to the Lancaster civic community as a professional and rese",
     the_room: "F&M enrolls approximately 2,400 students on a campus in Lancaster, Pennsylvania — a campus of Georgian and Federal-style",
     lifestyle: "",
-    grad_cities: "Philadelphia PA (28%) | New York NY (18%) | Washington DC (10%) | Lancaster PA (8%) | Baltimore MD (6%) | Boston MA (6%)"
+    grad_cities: "Philadelphia PA (28%) | New York NY (18%) | Washington DC (10%) | Lancaster PA (8%) | Baltimore MD (6%) | Boston MA (6%)",
+  
+    netPriceByIncome: { under30k: 12321, from30to48k: 16942, from48to75k: 16245, from75to110k: 25104, over110k: 49996 },
   },
   "Occidental College": {
     name: "Occidental College",
@@ -1907,7 +2279,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Occidental is the Urban and Environmental Policy program's specific use of Los Angeles as a living laboratory for the most conse",
     the_room: "Occidental enrolls approximately 2,100 students on a campus in the Eagle Rock neighborhood of Los Angeles — a hillside c",
     lifestyle: "",
-    grad_cities: "Los Angeles CA (42%) | San Francisco CA (12%) | New York NY (10%) | Washington DC (8%) | Seattle WA (4%) | Academic and "
+    grad_cities: "Los Angeles CA (42%) | San Francisco CA (12%) | New York NY (10%) | Washington DC (8%) | Seattle WA (4%) | Academic and ",
+  
+    netPriceByIncome: { under30k: 20705, from30to48k: 17655, from48to75k: 21468, from75to110k: 28033, over110k: 54959 },
   },
   "Bryn Mawr College": {
     name: "Bryn Mawr College",
@@ -1917,7 +2291,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Bryn Mawr is the Graduate School of Arts and Sciences and its specific effect on undergraduate intellectual life. Bryn Mawr is t",
     the_room: "Bryn Mawr enrolls approximately 1,800 undergraduates on a campus in the Main Line suburb of Bryn Mawr — one of the most ",
     lifestyle: "",
-    grad_cities: "Philadelphia PA (25%) | New York NY (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco CA (7%) | Academic and "
+    grad_cities: "Philadelphia PA (25%) | New York NY (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco CA (7%) | Academic and ",
+  
+    netPriceByIncome: { under30k: 11017, from30to48k: 18457, from48to75k: 17262, from75to110k: 19330, over110k: 40085 },
   },
   "California State University San Bernardino": {
     name: "California State University San Bernardino",
@@ -1927,7 +2303,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at CSUSB is the Inland Empire logistics ecosystem's specific career economics for supply chain and operations management graduates.",
     the_room: "CSUSB enrolls approximately 20,000 students on a campus at the base of the San Bernardino Mountains in San Bernardino — ",
     lifestyle: "",
-    grad_cities: "Inland Empire CA (55%) | Los Angeles CA (18%) | San Diego CA (8%) | Phoenix AZ (5%) | Las Vegas NV (4%) | Academic progr"
+    grad_cities: "Inland Empire CA (55%) | Los Angeles CA (18%) | San Diego CA (8%) | Phoenix AZ (5%) | Las Vegas NV (4%) | Academic progr",
+  
+    netPriceByIncome: { under30k: 2681, from30to48k: 2680, from48to75k: 4735, from75to110k: 7745, over110k: 14316 },
   },
   "Regent University": {
     name: "Regent University",
@@ -1937,7 +2315,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Regent is the Federalist Society pipeline's specific function within the conservative legal movement. The Federalist Society — t",
     the_room: "Regent enrolls approximately 11,000 students — predominantly online and graduate — on a campus in Virginia Beach adjacen",
     lifestyle: "",
-    grad_cities: "Virginia Beach-Norfolk VA (45%) | Washington DC (14%) | Richmond VA (8%) | Charlotte NC (5%) | Raleigh NC (5%) | Academi"
+    grad_cities: "Virginia Beach-Norfolk VA (45%) | Washington DC (14%) | Richmond VA (8%) | Charlotte NC (5%) | Raleigh NC (5%) | Academi",
+  
+    netPriceByIncome: { under30k: 20064, from30to48k: 19327, from48to75k: 17806, from75to110k: 19148, over110k: 22588 },
   },
   "University of Richmond": {
     name: "University of Richmond",
@@ -1947,7 +2327,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Richmond is the Jepson School of Leadership Studies' specific positioning as the only undergraduate leadership school in America",
     the_room: "Richmond enrolls approximately 4,100 undergraduates on a campus on the western edge of Richmond — a campus of Georgian R",
     lifestyle: "",
-    grad_cities: "Richmond VA (32%) | Washington DC (18%) | New York NY (12%) | Charlotte NC (7%) | Atlanta GA (5%) | Boston MA (5%) | Aca"
+    grad_cities: "Richmond VA (32%) | Washington DC (18%) | New York NY (12%) | Charlotte NC (7%) | Atlanta GA (5%) | Boston MA (5%) | Aca",
+  
+    netPriceByIncome: { under30k: 12808, from30to48k: 6507, from48to75k: 15553, from75to110k: 22021, over110k: 49892 },
   },
   "Appalachian State University": {
     name: "Appalachian State University",
@@ -1957,7 +2339,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Appalachian State is the renewable energy and sustainability sector's specific concentration in North Carolina combined with App",
     the_room: "App State enrolls approximately 21,000 students on a campus in Boone — a mountain city of 20,000 at 3,300 feet elevation",
     lifestyle: "",
-    grad_cities: "Asheville NC (16%) | Charlotte NC (24%) | Raleigh-Durham NC (14%) | Boone NC (8%) | Greensboro NC (6%) | Atlanta GA (5%)"
+    grad_cities: "Asheville NC (16%) | Charlotte NC (24%) | Raleigh-Durham NC (14%) | Boone NC (8%) | Greensboro NC (6%) | Atlanta GA (5%)",
+  
+    netPriceByIncome: { under30k: 9325, from30to48k: 11600, from48to75k: 15204, from75to110k: 20840, over110k: 22382 },
   },
   "Bentley University": {
     name: "Bentley University",
@@ -1967,7 +2351,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Bentley is the Marketing Analytics program's specific positioning in a skill shortage that has persisted for a decade without re",
     the_room: "Bentley enrolls approximately 4,200 undergraduates on a campus in Waltham — a suburb 9 miles west of Boston on the Route",
     lifestyle: "",
-    grad_cities: "Boston MA (35%) | New York NY (14%) | Hartford CT (8%) | Providence RI (6%) | Washington DC (5%) | San Francisco CA (5%)"
+    grad_cities: "Boston MA (35%) | New York NY (14%) | Hartford CT (8%) | Providence RI (6%) | Washington DC (5%) | San Francisco CA (5%)",
+  
+    netPriceByIncome: { under30k: 21196, from30to48k: 18587, from48to75k: 26164, from75to110k: 33653, over110k: 49190 },
   },
   "California Lutheran University": {
     name: "California Lutheran University",
@@ -1977,7 +2363,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Cal Lutheran is the Center for Economic Research and Forecasting and its specific function in the regional California economic c",
     the_room: "Cal Lutheran enrolls approximately 4,000 students on a campus in Thousand Oaks — a planned city of 130,000 in the Conejo",
     lifestyle: "",
-    grad_cities: "Los Angeles CA (38%) | Ventura County CA (20%) | San Fernando Valley CA (10%) | San Diego CA (6%) | San Francisco CA (5%"
+    grad_cities: "Los Angeles CA (38%) | Ventura County CA (20%) | San Fernando Valley CA (10%) | San Diego CA (6%) | San Francisco CA (5%",
+  
+    netPriceByIncome: { under30k: 22161, from30to48k: 23668, from48to75k: 24318, from75to110k: 29303, over110k: 38364 },
   },
   "University of Wyoming": {
     name: "University of Wyoming",
@@ -1987,7 +2375,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at the University of Wyoming is the Wyoming Permanent Mineral Trust Fund's specific effect on the institution and its graduates. Wy",
     the_room: "UW enrolls approximately 12,000 students on a campus in Laramie — a high plains city of 33,000 at 7,165 feet elevation o",
     lifestyle: "",
-    grad_cities: "Cheyenne WY (18%) | Casper WY (16%) | Laramie WY (10%) | Denver CO (14%) | Salt Lake City UT (8%) | Billings MT (5%) | A"
+    grad_cities: "Cheyenne WY (18%) | Casper WY (16%) | Laramie WY (10%) | Denver CO (14%) | Salt Lake City UT (8%) | Billings MT (5%) | A",
+  
+    netPriceByIncome: { under30k: 7977, from30to48k: 7730, from48to75k: 9585, from75to110k: 15205, over110k: 19634 },
   },
   "University of Alaska Fairbanks": {
     name: "University of Alaska Fairbanks",
@@ -1997,7 +2387,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UAF is the Poker Flat Research Range and its specific function for space science and geophysics students. Poker Flat, operated b",
     the_room: "UAF enrolls approximately 7,500 students on a campus on a ridge above Fairbanks — a city of 32,000 in the Interior of Al",
     lifestyle: "",
-    grad_cities: "Fairbanks AK (20%) | Anchorage AK (24%) | Juneau AK (6%) | Seattle WA (12%) | Denver CO (6%) | Academic and research pro"
+    grad_cities: "Fairbanks AK (20%) | Anchorage AK (24%) | Juneau AK (6%) | Seattle WA (12%) | Denver CO (6%) | Academic and research pro",
+  
+    netPriceByIncome: { under30k: 7992, from30to48k: 6065, from48to75k: 11323, from75to110k: 15526, over110k: 17512 },
   },
   "University of Vermont": {
     name: "University of Vermont",
@@ -2007,7 +2399,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UVM is the Burlington food systems economy and its specific intersection with the university's sustainable agriculture and food ",
     the_room: "UVM enrolls approximately 13,000 students on a campus on a hillside above Burlington — a city of 45,000 on the eastern s",
     lifestyle: "",
-    grad_cities: "Burlington VT (28%) | Boston MA (16%) | New York NY (10%) | Portland ME (6%) | Montpelier VT (5%) | Washington DC (5%) |"
+    grad_cities: "Burlington VT (28%) | Boston MA (16%) | New York NY (10%) | Portland ME (6%) | Montpelier VT (5%) | Washington DC (5%) |",
+  
+    netPriceByIncome: { under30k: 11127, from30to48k: 13373, from48to75k: 14339, from75to110k: 20926, over110k: 25775 },
   },
   "College of the Ozarks": {
     name: "College of the Ozarks",
@@ -2017,7 +2411,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at College of the Ozarks is the Keeter Center Lodge and its specific function as a professional hospitality training environment. T",
     the_room: "College of the Ozarks enrolls approximately 1,500 students on a campus in Point Lookout — a community on the edge of Lak",
     lifestyle: "",
-    grad_cities: "Branson-Springfield MO (38%) | Kansas City MO (12%) | St. Louis MO (8%) | Tulsa OK (6%) | Little Rock AR (5%) | Academic"
+    grad_cities: "Branson-Springfield MO (38%) | Kansas City MO (12%) | St. Louis MO (8%) | Tulsa OK (6%) | Little Rock AR (5%) | Academic",
+  
+    netPriceByIncome: { under30k: 6381, from30to48k: 6140, from48to75k: 5022, from75to110k: 6409, over110k: 10426 },
   },
   "Vassar College": {
     name: "Vassar College",
@@ -2027,7 +2423,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Vassar is the Hudson Valley arts community's specific transformation and Vassar's position at its center. The stretch of the Hud",
     the_room: "Vassar enrolls approximately 2,400 students on a campus in Poughkeepsie — a city of 30,000 on the eastern bank of the Hu",
     lifestyle: "",
-    grad_cities: "New York NY (38%) | Boston MA (10%) | Washington DC (8%) | Los Angeles CA (7%) | Hudson Valley NY (6%) | Academic and do"
+    grad_cities: "New York NY (38%) | Boston MA (10%) | Washington DC (8%) | Los Angeles CA (7%) | Hudson Valley NY (6%) | Academic and do",
+  
+    netPriceByIncome: { under30k: 15953, from30to48k: 14548, from48to75k: 14126, from75to110k: 25773, over110k: 56615 },
   },
   "East Carolina University": {
     name: "East Carolina University",
@@ -2037,7 +2435,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at ECU is the Brody School of Medicine's specific rural medicine mission and its effect on medical school acceptance rates for ECU ",
     the_room: "ECU enrolls approximately 28,000 students on a campus in Greenville — a city of 92,000 in the coastal plain of Eastern N",
     lifestyle: "",
-    grad_cities: "Greenville NC (24%) | Raleigh-Durham NC (22%) | Charlotte NC (10%) | Wilmington NC (7%) | Washington DC (5%) | Virginia "
+    grad_cities: "Greenville NC (24%) | Raleigh-Durham NC (22%) | Charlotte NC (10%) | Wilmington NC (7%) | Washington DC (5%) | Virginia ",
+  
+    netPriceByIncome: { under30k: 10046, from30to48k: 11699, from48to75k: 14904, from75to110k: 20417, over110k: 23028 },
   },
   "St. John's College": {
     name: "St. John's College",
@@ -2047,7 +2447,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at St. John's is the Great Books curriculum's specific function in the classical Christian school movement and the growing market f",
     the_room: "St. John's enrolls approximately 400 students on the Annapolis campus — a historic property in the center of Annapolis, ",
     lifestyle: "",
-    grad_cities: "Washington DC (22%) | New York NY (16%) | Annapolis-Baltimore MD (12%) | Santa Fe NM (8%) | Boston MA (7%) | Academic an"
+    grad_cities: "Washington DC (22%) | New York NY (16%) | Annapolis-Baltimore MD (12%) | Santa Fe NM (8%) | Boston MA (7%) | Academic an",
+  
+    netPriceByIncome: { under30k: 42528, from30to48k: 46145, from48to75k: 44755, from75to110k: 49373, over110k: 45828 },
   },
   "Providence College": {
     name: "Providence College",
@@ -2057,7 +2459,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Providence College is the Development of Western Civilization program's specific function as graduate school preparation. The DW",
     the_room: "Providence College enrolls approximately 4,400 undergraduates on a campus of Gothic stone buildings in the Smith Hill ne",
     lifestyle: "",
-    grad_cities: "Providence RI (28%) | Boston MA (24%) | New York NY (12%) | Hartford CT (7%) | Washington DC (6%) | Academic and profess"
+    grad_cities: "Providence RI (28%) | Boston MA (24%) | New York NY (12%) | Hartford CT (7%) | Washington DC (6%) | Academic and profess",
+  
+    netPriceByIncome: { under30k: 28152, from30to48k: 21835, from48to75k: 25296, from75to110k: 33169, over110k: 56699 },
   },
   "San Francisco State University": {
     name: "San Francisco State University",
@@ -2067,7 +2471,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at SFSU is the Cinema department's specific alumni network in the Bay Area and national film industry. SFSU's film program has been",
     the_room: "SFSU enrolls approximately 27,000 students on a campus in the Stonestown neighborhood of San Francisco — the southwester",
     lifestyle: "",
-    grad_cities: "San Francisco CA (42%) | Silicon Valley CA (18%) | Los Angeles CA (8%) | Seattle WA (5%) | New York NY (4%) | Academic p"
+    grad_cities: "San Francisco CA (42%) | Silicon Valley CA (18%) | Los Angeles CA (8%) | Seattle WA (5%) | New York NY (4%) | Academic p",
+  
+    netPriceByIncome: { under30k: 9341, from30to48k: 9867, from48to75k: 11825, from75to110k: 14556, over110k: 22523 },
   },
   "Illinois Wesleyan University": {
     name: "Illinois Wesleyan University",
@@ -2077,7 +2483,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Illinois Wesleyan is the State Farm corporate campus's specific function as a career laboratory for IWU business, psychology, an",
     the_room: "Illinois Wesleyan enrolls approximately 1,600 students on a compact residential campus in the northern section of Bloomi",
     lifestyle: "",
-    grad_cities: "Bloomington-Normal IL (22%) | Chicago IL (32%) | Springfield IL (6%) | Indianapolis IN (6%) | St. Louis MO (5%) | Academ"
+    grad_cities: "Bloomington-Normal IL (22%) | Chicago IL (32%) | Springfield IL (6%) | Indianapolis IN (6%) | St. Louis MO (5%) | Academ",
+  
+    netPriceByIncome: { under30k: 17732, from30to48k: 19057, from48to75k: 23152, from75to110k: 27396, over110k: 37104 },
   },
   "Eastern Washington University": {
     name: "Eastern Washington University",
@@ -2087,7 +2495,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at EWU is the physical therapy program's specific positioning in Washington State's rural healthcare shortage. Rural Eastern Washin",
     the_room: "EWU enrolls approximately 12,000 students on a campus in Cheney — a college town of 12,000 in the Channeled Scablands of",
     lifestyle: "",
-    grad_cities: "Spokane WA (38%) | Seattle WA (14%) | Yakima WA (6%) | Tri-Cities WA (6%) | Coeur d'Alene ID (7%) | Portland OR (5%) | A"
+    grad_cities: "Spokane WA (38%) | Seattle WA (14%) | Yakima WA (6%) | Tri-Cities WA (6%) | Coeur d'Alene ID (7%) | Portland OR (5%) | A",
+  
+    netPriceByIncome: { under30k: 9547, from30to48k: 10204, from48to75k: 12292, from75to110k: 17596, over110k: 22279 },
   },
   "Sam Houston State University": {
     name: "Sam Houston State University",
@@ -2097,7 +2507,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Sam Houston State is the College of Criminal Justice's specific positioning as a national research and policy institution disgui",
     the_room: "SHSU enrolls approximately 22,000 students on a campus in Huntsville — a city of 45,000 in the piney woods of East Texas",
     lifestyle: "",
-    grad_cities: "Houston TX (32%) | Huntsville TX (16%) | Dallas TX (10%) | Austin TX (8%) | San Antonio TX (6%) | Federal agencies natio"
+    grad_cities: "Houston TX (32%) | Huntsville TX (16%) | Dallas TX (10%) | Austin TX (8%) | San Antonio TX (6%) | Federal agencies natio",
+  
+    netPriceByIncome: { under30k: 12474, from30to48k: 13389, from48to75k: 15540, from75to110k: 21366, over110k: 24101 },
   },
   "Dickinson College": {
     name: "Dickinson College",
@@ -2107,7 +2519,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Dickinson is the Dickinson College Farm and the Center for Sustainability Education's specific function as professional credenti",
     the_room: "Dickinson enrolls approximately 2,200 students on a campus in Carlisle — a historic Pennsylvania market town of 20,000 a",
     lifestyle: "",
-    grad_cities: "Philadelphia PA (20%) | Washington DC (16%) | New York NY (12%) | Harrisburg PA (8%) | Baltimore MD (7%) | Academic and "
+    grad_cities: "Philadelphia PA (20%) | Washington DC (16%) | New York NY (12%) | Harrisburg PA (8%) | Baltimore MD (7%) | Academic and ",
+  
+    netPriceByIncome: { under30k: 40755, from30to48k: 15081, from48to75k: 16316, from75to110k: 22696, over110k: 45175 },
   },
   "Hamilton College": {
     name: "Hamilton College",
@@ -2117,7 +2531,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Hamilton is the open curriculum's specific effect on intellectual confidence and the professional outcomes this confidence produ",
     the_room: "Hamilton enrolls approximately 2,000 students on a campus atop College Hill in Clinton — a village of 1,800 in the Mohaw",
     lifestyle: "",
-    grad_cities: "New York NY (28%) | Boston MA (12%) | Washington DC (10%) | Albany NY (8%) | Philadelphia PA (6%) | Academic and doctora"
+    grad_cities: "New York NY (28%) | Boston MA (12%) | Washington DC (10%) | Albany NY (8%) | Philadelphia PA (6%) | Academic and doctora",
+  
+    netPriceByIncome: { under30k: 8028, from30to48k: 9489, from48to75k: 10863, from75to110k: 20614, over110k: 46907 },
   },
   "Barnard College": {
     name: "Barnard College",
@@ -2127,7 +2543,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Barnard is the Barnard-Columbia cross-registration system and its specific function in creating a dual institutional identity. B",
     the_room: "Barnard enrolls approximately 2,600 students on a campus of nine acres on the Upper West Side of Manhattan — directly ac",
     lifestyle: "",
-    grad_cities: "New York NY (52%) | Los Angeles CA (10%) | Washington DC (8%) | Boston MA (6%) | San Francisco CA (5%) | Academic and pr"
+    grad_cities: "New York NY (52%) | Los Angeles CA (10%) | Washington DC (8%) | Boston MA (6%) | San Francisco CA (5%) | Academic and pr",
+  
+    netPriceByIncome: { under30k: 11600, from30to48k: 15374, from48to75k: 19094, from75to110k: 24753, over110k: 51378 },
   },
   "Gettysburg College": {
     name: "Gettysburg College",
@@ -2137,7 +2555,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Gettysburg College is the Civil War Institute's specific function as a professional network for the historic preservation, publi",
     the_room: "Gettysburg enrolls approximately 2,400 students on a campus adjacent to the Gettysburg National Military Park — the most",
     lifestyle: "",
-    grad_cities: "Baltimore MD (18%) | Washington DC (16%) | Philadelphia PA (14%) | Harrisburg PA (10%) | New York NY (8%) | Academic and"
+    grad_cities: "Baltimore MD (18%) | Washington DC (16%) | Philadelphia PA (14%) | Harrisburg PA (10%) | New York NY (8%) | Academic and",
+  
+    netPriceByIncome: { under30k: 13625, from30to48k: 13184, from48to75k: 21261, from75to110k: 28822, over110k: 44863 },
   },
   "University of North Texas": {
     name: "University of North Texas",
@@ -2147,7 +2567,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UNT is the One O'Clock Lab Band's specific function as a professional career launch vehicle for jazz musicians. The One O'Clock ",
     the_room: "UNT enrolls approximately 44,000 students on a campus in Denton — a city of 150,000 in the northern reaches of the Dalla",
     lifestyle: "",
-    grad_cities: "Dallas-Fort Worth TX (52%) | Austin TX (8%) | Houston TX (7%) | Denton TX (6%) | Nashville TN (4%) | Los Angeles CA (4%)"
+    grad_cities: "Dallas-Fort Worth TX (52%) | Austin TX (8%) | Houston TX (7%) | Denton TX (6%) | Nashville TN (4%) | Los Angeles CA (4%)",
+  
+    netPriceByIncome: { under30k: 12311, from30to48k: 12668, from48to75k: 14473, from75to110k: 19576, over110k: 22943 },
   },
   "Texas State University": {
     name: "Texas State University",
@@ -2157,7 +2579,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Texas State is the San Marcos River and its specific function in the university's aquatic biology and environmental science prog",
     the_room: "Texas State enrolls approximately 38,000 students on a campus that straddles the San Marcos River in downtown San Marcos",
     lifestyle: "",
-    grad_cities: "Austin TX (32%) | San Antonio TX (20%) | San Marcos TX (10%) | Houston TX (8%) | Dallas TX (6%) | Academic programs (5%)"
+    grad_cities: "Austin TX (32%) | San Antonio TX (20%) | San Marcos TX (10%) | Houston TX (8%) | Dallas TX (6%) | Academic programs (5%)",
+  
+    netPriceByIncome: { under30k: 12715, from30to48k: 13557, from48to75k: 13804, from75to110k: 20028, over110k: 24713 },
   },
   "Wesleyan University": {
     name: "Wesleyan University",
@@ -2167,7 +2591,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at Wesleyan is the film alumni network's specific density in the Los Angeles production community and what this means for Wesleyan ",
     the_room: "Wesleyan enrolls approximately 3,000 students on a campus in Middletown — a Connecticut city of 47,000 on the Connecticu",
     lifestyle: "",
-    grad_cities: "New York NY (30%) | Los Angeles CA (18%) | Boston MA (10%) | Washington DC (8%) | Hartford CT (6%) | Academic and doctor"
+    grad_cities: "New York NY (30%) | Los Angeles CA (18%) | Boston MA (10%) | Washington DC (8%) | Hartford CT (6%) | Academic and doctor",
+  
+    netPriceByIncome: { under30k: 4871, from30to48k: 3604, from48to75k: 6175, from75to110k: 17294, over110k: 51140 },
   },
   "University of Hawaii at Manoa": {
     name: "University of Hawaii at Manoa",
@@ -2177,7 +2603,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The hidden pathway at UH Manoa is the East-West Center's specific function as a diplomatic and international policy career launch vehicle. The East-We",
     the_room: "UH Manoa enrolls approximately 18,000 students on a campus in the Manoa Valley above Honolulu — a lush valley two miles ",
     lifestyle: "",
-    grad_cities: "Honolulu HI (48%) | Los Angeles CA (10%) | San Francisco CA (8%) | Seattle WA (5%) | Washington DC (5%) | Asia-Pacific m"
+    grad_cities: "Honolulu HI (48%) | Los Angeles CA (10%) | San Francisco CA (8%) | Seattle WA (5%) | Washington DC (5%) | Asia-Pacific m",
+  
+    netPriceByIncome: { under30k: 10675, from30to48k: 12246, from48to75k: 14469, from75to110k: 18760, over110k: 22562 },
   },
 
   "United States Merchant Marine Academy": {
@@ -2188,7 +2616,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "The shoreside career path is almost never named. Most students and parents picture ships — but Kings Point graduates run port operations, manage maritime law practices, lead defense logistics companies, direct maritime insurance underwriting, and sit in the executive suites of the companies that move 90% of global trade. The Marine Transportation major specifically prepares students for shoreside maritime careers. The degree, the license, and the commission together create a credential stack no other institution produces.",
     the_room: "962 total undergraduates — roughly one-quarter the size of West Point or Annapolis. Every midshipman is known by name. Sea Year, where students spend close to a year aboard working merchant ships worldwide as sophomores and juniors, creates a shared experience of genuine operational responsibility at sea that no classroom can replicate. The alumni network is small, intensely loyal, and positioned throughout the maritime, defense, and logistics industries in roles that most people outside those industries never see.",
     lifestyle: "",
-    grad_cities: "New York, Houston, Washington DC, Los Angeles, Seattle — wherever major ports and maritime commercial operations concentrate"
+    grad_cities: "New York, Houston, Washington DC, Los Angeles, Seattle — wherever major ports and maritime commercial operations concentrate",
+  
+    netPriceByIncome: { under30k: 1773, from30to48k: 4098, from48to75k: 5897, from75to110k: 8752, over110k: 9168 },
   },
 
   "Maine Maritime Academy": {
@@ -2199,7 +2629,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Power Engineering Technology — the non-seagoing major almost nobody outside Maine knows exists. PET graduates go into shoreside power plant operations, utility companies, and industrial facilities rather than ships. Graduates sit for the Maine Third Class Stationary Engineer license and the Fundamentals of Engineering exam. Siemens Energy and Talen Energy recruit from this program specifically. The student who wants the rigor of a maritime education without ever going to sea has a direct path here that most guidance counselors have never named.",
     the_room: "Approximately 950 students in Castine — a town of 1,300 people on a peninsula in Penobscot Bay. The remoteness is the point. The Training Ship State of Maine and the historic Schooner Bowdoin provide sea time experiences that larger, more conventionally located institutions cannot replicate. The International Business and Logistics program, less well known than the license tracks, produces graduates who move directly into supply chain and freight management roles across the Northeast and beyond. MMA alumni have an industry reputation for being operationally ready on day one — a reputation the placement numbers confirm.",
     lifestyle: "",
-    grad_cities: "Portland ME, Boston, New York, Houston, Seattle — distributed across port cities and industrial facilities throughout the Northeast and Gulf Coast"
+    grad_cities: "Portland ME, Boston, New York, Houston, Seattle — distributed across port cities and industrial facilities throughout the Northeast and Gulf Coast",
+  
+    netPriceByIncome: { under30k: 9511, from30to48k: 21690, from48to75k: 21162, from75to110k: 24372, over110k: 25021 },
   },
 
   "Massachusetts Maritime Academy": {
@@ -2210,7 +2642,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "Energy Systems Engineering — MMA's program for students drawn to the clean energy transition rather than maritime careers. Prepares graduates for careers in power generation planning, design, and installation of technical systems for renewable energy infrastructure. Facilities Engineering is equally undersurfaced — MMA graduates in this major run the mechanical, electrical, and HVAC operations of hospitals, manufacturing plants, and commercial buildings across the country. Neither program requires sea time or a USCG license. Emergency Management is a third non-maritime path producing graduates who join FEMA, state emergency agencies, hospital preparedness programs, and military services.",
     the_room: "Regiment of Cadets structure with NCAA Division III athletics — the only state maritime academy offering both. Seven undergraduate majors span marine transportation, international maritime business, marine science, safety and environmental protection, emergency management, and three engineering tracks. The breadth makes MMA meaningfully different from the other state academies whose programs concentrate more narrowly on license tracks. International Maritime Business specifically prepares students for supply chain, shipping, chartering, and logistics careers in the global marketplace — a business degree with an operational edge that most business schools cannot match.",
     lifestyle: "",
-    grad_cities: "Boston, New York, Providence, Washington DC — Northeast concentration, with energy and facilities engineering graduates distributed nationally across power infrastructure"
+    grad_cities: "Boston, New York, Providence, Washington DC — Northeast concentration, with energy and facilities engineering graduates distributed nationally across power infrastructure",
+  
+    netPriceByIncome: { under30k: 8757, from30to48k: 9051, from48to75k: 10547, from75to110k: 15557, over110k: 27367 },
   },
 
   "Texas A&M University at Galveston": {
@@ -2232,7 +2666,9 @@ const UNIVERSITY_CONTENT = {
     hidden_pathway: "International Strategy and Security — the non-maritime program for students drawn to Pacific Rim geopolitics, maritime law, port security, and trade policy. Graduates enter government agencies, military service, international organizations, and maritime-focused policy firms. Facilities Engineering Technology is the shoreside industrial path — managing mechanical, electrical, and HVAC operations of large commercial and industrial facilities with no sea time required. Both programs sit inside the same Corps of Cadets structure that produces the licensed mariners, giving graduates the leadership and operational discipline that civilian business schools cannot replicate.",
     the_room: "A 67-acre waterfront campus on the San Pablo Bay north of San Francisco, with the 500-foot Training Ship Golden Bear as the centerpiece of a Summer Sea Term that takes cadets on a 60-day Pacific Rim voyage. Approximately 800 students — the most intimate of the state maritime academies, with faculty-to-student relationships that larger institutions cannot provide. San Francisco Bay proximity means recruiting relationships with the Port of Oakland, the Pacific shipping lines, and the West Coast energy infrastructure that connects California ports to global trade. The Cal Poly merger opens new academic pathways and Co-op/internship pipelines that the standalone academy could not access.",
     lifestyle: "",
-    grad_cities: "San Francisco, Los Angeles, Seattle, Portland, Oakland — West Coast port city concentration, with International Strategy graduates distributed through federal agencies and defense contractors"
+    grad_cities: "San Francisco, Los Angeles, Seattle, Portland, Oakland — West Coast port city concentration, with International Strategy graduates distributed through federal agencies and defense contractors",
+  
+    netPriceByIncome: { under30k: 13552, from30to48k: 9768, from48to75k: 16948, from75to110k: 21257, over110k: 24911 },
   }
 };
 

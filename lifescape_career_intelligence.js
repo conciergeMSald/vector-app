@@ -40,6 +40,7 @@ const WORLD_KEYWORDS = _g.WORLD_KEYWORDS = {
   'healing':     ['physician','medicine','pre-med','pre-medical','doctor','hospital','nursing','clinical','residency','medical school','health sciences','public health','pharmacy','pharmacist','dentist','dental','veterinarian','surgery','anatomy','mental health','therapy','wellness','psychology','psychiatry','counseling','social work'],
   'energy':      ['energy','oil','gas','renewable','solar','utilities','petroleum'],
   'real_estate': ['real estate','property','development','construction','realty','reit'],
+  'biomanufacturing': ['biomanufacturing','bioprocessing','pharmaceutical manufacturing','biotech manufacturing','gmp','quality assurance','vaccine manufacturing','cell therapy manufacturing','cdmo','biologics'],
 };
 
 // ── D1: Geographic Fit ──
@@ -52,20 +53,52 @@ const WORLD_KEYWORDS = _g.WORLD_KEYWORDS = {
 
 const IBIS_WORLD_REGISTRY = _g.IBIS_WORLD_REGISTRY = {
 
-  healing: {
-    id: 'healing',
-    label: 'The world of healing',
-    ibis_codes: ['OD4011','OD4012','OD4013','OD4121'],
+  medicine: {
+    id: 'medicine',
+    label: 'The world of medicine',
+    ibis_codes: ['OD4011','OD4012'],
     career_expressions: [
-      { title: 'Physician',             years: 8, pay: '$200K–$500K', path: 'Pre-med → Med school → Residency → Practice' },
+      { title: 'Physician',          years: 8,  pay: '$200K–$500K', path: 'Pre-med → Med school → Residency → Practice' },
+      { title: 'Surgeon',            years: 10, pay: '$300K–$700K', path: 'Pre-med → Med school → Surgical residency → Fellowship' },
       { title: 'Hospital Administrator', years: 5, pay: '$120K–$300K', path: 'Operations → Department director → CMO/COO' },
-      { title: 'Clinical Psychologist', years: 7, pay: '$90K–$180K',  path: 'Psych undergrad → PhD/PsyD → Licensed practice' },
     ],
     top_metros: ['Boston','Baltimore','Nashville','Houston','New York'],
     growth: 'strong',
     v2_affinity: ['human','systems'],
     v4_affinity: ['mixed'],
     university_pipeline: ['Vanderbilt University','Duke University','Emory University','Northwestern University','Wake Forest University','Johns Hopkins University'],
+  },
+
+  healing: {
+    id: 'healing',
+    label: 'The world of healing',
+    ibis_codes: ['OD4013','OD4121'],
+    career_expressions: [
+      { title: 'Physician Assistant', years: 6, pay: '$100K–$150K', path: 'Pre-PA → PA school → Certified practice' },
+      { title: 'Nurse Practitioner',  years: 6, pay: '$95K–$140K',  path: 'BSN → RN → MSN/DNP → Advanced practice' },
+      { title: 'Acupuncturist / Integrative Practitioner', years: 4, pay: '$60K–$120K', path: 'Undergrad → Licensure program → Independent practice' },
+    ],
+    top_metros: ['Boston','Nashville','Portland','San Francisco','Austin'],
+    growth: 'strong',
+    v2_affinity: ['human','systems'],
+    v4_affinity: ['mixed'],
+    university_pipeline: ['University of Pennsylvania','Duke University','Emory University','University of Michigan','Case Western Reserve University'],
+  },
+
+  therapy: {
+    id: 'therapy',
+    label: 'The world of therapy',
+    ibis_codes: ['OD4130','OD4131'],
+    career_expressions: [
+      { title: 'Physical Therapist',       years: 7, pay: '$85K–$120K', path: 'Kinesiology → DPT → Licensed practice' },
+      { title: 'Occupational Therapist',   years: 6, pay: '$80K–$115K', path: 'Pre-OT → OT school → Licensed practice' },
+      { title: 'Clinical Psychologist',    years: 7, pay: '$90K–$180K', path: 'Psych undergrad → PhD/PsyD → Licensed practice' },
+    ],
+    top_metros: ['Boston','Chicago','Los Angeles','Denver','Atlanta'],
+    growth: 'strong',
+    v2_affinity: ['human','systems'],
+    v4_affinity: ['mixed'],
+    university_pipeline: ['University of Southern California','Northwestern University','Emory University','Boston University','Washington University in St. Louis'],
   },
 
   civic: {
@@ -211,6 +244,134 @@ const IBIS_WORLD_REGISTRY = _g.IBIS_WORLD_REGISTRY = {
     v4_affinity: ['self'],
     university_pipeline: ['Harvard University','Princeton University','Yale University','Georgetown University','United States Military Academy','United States Naval Academy'],
   },
+
+  energy: {
+    id: 'energy',
+    label: 'The world of energy',
+    ibis_codes: ['OE2100','OE2110','OE2200','OE2300'],
+    career_expressions: [
+      { title: 'Petroleum Engineer',          years: 4, pay: '$100K–$220K', path: 'BS Petroleum Eng → Field engineer → Reservoir/drilling lead' },
+      { title: 'Energy Trader',               years: 3, pay: '$150K–$500K', path: 'Analyst → Trader → Portfolio lead' },
+      { title: 'Renewable Project Developer', years: 5, pay: '$95K–$200K',  path: 'Project engineer → Development manager → VP Development' },
+    ],
+    top_metros: ['Houston','Tulsa','Denver','Midland','Oklahoma City'],
+    growth: 'strong',
+    v2_affinity: ['systems','analytical'],
+    v4_affinity: ['work'],
+    university_pipeline: ['Texas A&M University','University of Houston','University of Tulsa','Colorado School of Mines','University of Oklahoma'],
+  },
+
+  military: {
+    id: 'military',
+    label: 'The world of military service',
+    ibis_codes: ['OM5500','OM5510','OM5520','OM5530'],
+    career_expressions: [
+      { title: 'Military Officer',                    years: 4,  pay: '$60K–$200K',  path: 'Academy/ROTC → Lieutenant → Colonel/General' },
+      { title: 'Military Physician (Medical Corps)',  years: 11, pay: '$150K–$300K', path: 'Pre-med → USUHS/HPSP scholarship → Residency → Medical Corps practice' },
+      { title: 'Logistics & Sustainment Officer',     years: 4,  pay: '$65K–$150K',  path: 'ROTC/OCS → Logistics officer → Sustainment command' },
+      { title: 'Defense Manufacturing Program Manager', years: 6, pay: '$110K–$220K', path: 'Engineering → Program engineer → Program manager' },
+    ],
+    top_metros: ['Washington DC','San Diego','Norfolk','Colorado Springs','Tampa'],
+    growth: 'stable',
+    v2_affinity: ['systems','human'],
+    v4_affinity: ['work','self'],
+    university_pipeline: ['United States Military Academy','United States Naval Academy','United States Air Force Academy','United States Coast Guard Academy','Virginia Military Institute','Texas A&M University','The Citadel','Norwich University'],
+  },
+
+  making: {
+    id: 'making',
+    label: 'The world of making',
+    ibis_codes: ['OM6600','OM6610','OM6620','OM6630'],
+    career_expressions: [
+      { title: 'Product / UX Designer',          years: 3, pay: '$110K–$220K', path: 'Design portfolio → UX Designer → Design Lead' },
+      { title: 'Quality Assurance Engineer',      years: 3, pay: '$90K–$160K',   path: 'QA analyst → Automation engineer → QA lead' },
+      { title: 'Master Artisan / Luxury Goods Craftsman', years: 8, pay: '$70K–$200K', path: 'Apprenticeship → Journeyman → Atelier lead/Master craftsman' },
+      { title: 'Fine Artist / Studio Practitioner', years: 0, pay: '$0–unbounded', path: 'BFA → Gallery representation → Established practice' },
+      { title: 'Author / Writer',                 years: 3, pay: '$50K–$150K+',  path: 'Craft training → Published work → Established author' },
+    ],
+    top_metros: ['Providence','Savannah','New York','San Francisco','Los Angeles'],
+    growth: 'strong',
+    v2_affinity: ['creative','systems'],
+    v4_affinity: ['work','self'],
+    university_pipeline: ['Rhode Island School of Design','Savannah College of Art and Design','Carnegie Mellon University','Massachusetts Institute of Technology','Fashion Institute of Technology','University of Iowa'],
+  },
+
+  food: {
+    id: 'food',
+    label: 'The world of food',
+    ibis_codes: ['OF3100','OF3110','OF7220','OF4245'],
+    career_expressions: [
+      { title: 'Agricultural Producer / Farm Manager',   years: 4, pay: '$60K–$180K',  path: 'Ag degree → Operations manager → Owner/operator' },
+      { title: 'Food Scientist / Product Developer',     years: 5, pay: '$70K–$150K',  path: 'Food science BS → R&D scientist → Product development lead' },
+      { title: 'Food Safety & Quality Assurance Manager', years: 5, pay: '$75K–$140K', path: 'QA technician → QA manager → Director of Food Safety' },
+      { title: 'Food Supply Chain / Distribution Manager', years: 6, pay: '$90K–$180K', path: 'Ops analyst → Distribution manager → VP Supply Chain' },
+      { title: 'Executive Chef / Culinary Director',      years: 8, pay: '$65K–$200K',  path: 'Culinary training → Sous chef → Executive chef' },
+    ],
+    top_metros: ['Chicago','New York','Des Moines','Napa','Los Angeles'],
+    growth: 'strong',
+    v2_affinity: ['systems','human'],
+    v4_affinity: ['work'],
+    university_pipeline: ['Cornell University','University of California, Davis','Purdue University','Michigan State University','Iowa State University','Culinary Institute of America'],
+  },
+
+  hospitality: {
+    id: 'hospitality',
+    label: 'The world of hospitality',
+    ibis_codes: ['OF7211','OF7212','OF7213'],
+    career_expressions: [
+      { title: 'Hotel General Manager',            years: 8, pay: '$90K–$220K',  path: 'Front office → Department director → General Manager' },
+      { title: 'Luxury / Private Travel Manager',   years: 5, pay: '$80K–$180K',  path: 'Concierge → Guest experience lead → Private travel director' },
+      { title: 'Event & Festival Production Director', years: 6, pay: '$70K–$160K', path: 'Coordinator → Producer → Production Director' },
+      { title: 'Hotel Asset Manager',               years: 7, pay: '$110K–$220K', path: 'Revenue analyst → Asset manager → VP Asset Management' },
+      { title: 'Outdoor / Eco-Tourism Director',    years: 5, pay: '$65K–$140K',  path: 'Guide/ops → Program director → Eco-lodge/expedition GM' },
+      { title: 'Digital Booking & Revenue Systems Manager', years: 5, pay: '$85K–$170K', path: 'Revenue analyst → Distribution manager → Director of Revenue Systems' },
+      { title: 'Casino & Gaming Operations Manager', years: 6, pay: '$85K–$180K', path: 'Floor supervisor → Operations manager → VP Gaming Operations' },
+      { title: 'Corporate Hospitality Brand Manager', years: 8, pay: '$120K–$250K', path: 'Property GM → Regional Director → VP Brand Management' },
+    ],
+    top_metros: ['Orlando','Las Vegas','New York','Miami','Los Angeles'],
+    growth: 'strong',
+    v2_affinity: ['human','systems'],
+    v4_affinity: ['self','mixed'],
+    university_pipeline: ['Cornell University','University of Nevada, Las Vegas','University of Central Florida','Michigan State University','New York University','Brigham Young University','Texas Tech University','Florida Atlantic University','Colorado State University'],
+  },
+
+  logistics: {
+    id: 'logistics',
+    label: 'The world of logistics',
+    ibis_codes: ['OF4841','OF4930','OF4931'],
+    career_expressions: [
+      { title: 'Supply Chain / Procurement Manager',  years: 5, pay: '$85K–$170K', path: 'Analyst → Category manager → Director of Procurement' },
+      { title: 'Warehouse & Distribution Operations Manager', years: 5, pay: '$75K–$150K', path: 'Ops supervisor → Distribution manager → VP Operations' },
+      { title: 'Freight Transportation Manager',      years: 5, pay: '$80K–$160K', path: 'Dispatcher → Fleet manager → Director of Transportation' },
+      { title: 'Supply Chain Analytics Manager',       years: 4, pay: '$90K–$180K', path: 'Analyst → Analytics manager → Director of Supply Chain Tech' },
+      { title: 'Freight Broker / 3PL Manager',         years: 4, pay: '$70K–$160K', path: 'Broker → Branch manager → VP 3PL Operations' },
+    ],
+    top_metros: ['Memphis','Chicago','Atlanta','Dallas','Columbus'],
+    growth: 'strong',
+    v2_affinity: ['systems','analytical'],
+    v4_affinity: ['work'],
+    university_pipeline: ['Massachusetts Institute of Technology','Pennsylvania State University','Michigan State University','Arizona State University','University of Tennessee','University of Arkansas','University of Illinois Urbana-Champaign','Texas A&M University','Louisiana State University'],
+  },
+
+  biomanufacturing: {
+    id: 'biomanufacturing',
+    label: 'The world of biomanufacturing',
+    ibis_codes: ['OM3254','OM3391'],
+    career_expressions: [
+      { title: 'Biomanufacturing Technician',       years: 0, pay: '$40K–$60K',  path: '6-week CC program → Direct hire → No 4-year degree required' },
+      { title: 'Quality Control / QA Technician',   years: 1, pay: '$50K–$70K',  path: 'Technician → QC/QA technician → QA Specialist' },
+      { title: 'Manufacturing Supervisor',          years: 4, pay: '$70K–$100K', path: 'Technician → Shift lead → Supervisor' },
+      { title: 'Validation / Process Specialist',   years: 5, pay: '$75K–$120K', path: 'Technician → Validation associate → Validation Specialist' },
+      { title: 'Plant Manager / Site Director',      years: 15, pay: '$120K–$200K+', path: 'Technician → Supervisor → Plant Manager (real 30+ year arcs exist — technician to President)' },
+    ],
+    top_metros: ['Los Angeles','Raleigh-Durham','Boston','Philadelphia','Baltimore','Austin'],
+    growth: 'very_strong',
+    v2_affinity: ['systems','analytical'],
+    v4_affinity: ['work'],
+    university_pipeline: [],
+    hidden_pathway: true,
+    hidden_pathway_note: 'The most under-the-radar career acceleration track available to a student today. No 4-year degree required to start — a 6-week community college program (available in 26+ states) leads directly to hire at major pharmaceutical and biotech manufacturers. Real career ladder from technician to plant leadership, and many employers pay for further education once a student has shown workplace commitment — a hidden pathway most families never hear about. Strong tailwind, not a guarantee: backed by federal workforce policy (NIIMBL, NSF ATE) and documented demand growth (US Senate Commission: cell/gene therapy workforce demand doubled in 5 years), but no industry is immune to future shifts.',
+  },
 };
 
 // ── WORLD_ALIAS ──
@@ -227,6 +388,12 @@ const WORLD_ALIAS = _g.WORLD_ALIAS = {
   'intelligence':    'defense',
   'law_enforcement': 'defense',
   'military':        'military',
+  'making':          'making',
+  'biomanufacturing':'biomanufacturing',
+  'bioprocessing':   'biomanufacturing',
+  'food':            'food',
+  'hospitality':     'hospitality',
+  'logistics':       'logistics',
   'military_service':'military',
   'armed_forces':    'military',
   'environment':     'environment',
@@ -236,6 +403,8 @@ const WORLD_ALIAS = _g.WORLD_ALIAS = {
   'ministry':        'service',
   'nonprofit':       'service',
   'healing':         'healing',
+  'medicine':        'medicine',
+  'therapy':         'therapy',
   'civic':      'civic',
   'building':   'building',
   'money':      'money',
@@ -248,7 +417,6 @@ const WORLD_ALIAS = _g.WORLD_ALIAS = {
 
   // Common-language aliases used in assessment / v8_gravity
   'healthcare':  'healing',
-  'medicine':    'healing',
   'health':      'healing',
   'tech':        'technology',
   'software':    'technology',
@@ -278,7 +446,7 @@ const WORLD_ALIAS = _g.WORLD_ALIAS = {
   'political':   'power',
   'politics':    'power',
   'leadership':  'power',
-  'energy':      'building',
+  'energy':      'energy',
 };
 
 // ── resolveWorldId(input) ──
@@ -886,6 +1054,212 @@ const BRIDGE_DB = _g.BRIDGE_DB = {
   }
 
 };
+
+/* ══════════════════════════════════════════════════════
+   INDUSTRY_BRIDGE_DB — Community College → Direct Employer
+   Pathways (NOT university transfer — direct hire into industry)
+
+   Distinct from BRIDGE_DB above: BRIDGE_DB is CC → 4-year
+   university transfer. This is CC → real employer, no
+   4-year degree required. Currently scoped to Biomanufacturing
+   (26-state dataset gathered June 2026 — sourced from state
+   workforce hub sites, InnovATEBIO, biomanufacturing.org).
+
+   Keyed by 2-letter state code. Uses resolveStateFromZip()
+   (defined above) for lookup — states not listed here have
+   no fabricated entry; findIndustryBridgePath() returns null
+   and the report falls back to general framing.
+══════════════════════════════════════════════════════ */
+
+const INDUSTRY_BRIDGE_DB = _g.INDUSTRY_BRIDGE_DB = {
+
+  CA: {
+    field: 'biomanufacturing',
+    cc: 'LA Valley College',
+    cc_city: 'Van Nuys, California',
+    program_length: '6 weeks',
+    employers: ['Baxalta', 'Grifols', 'Genentech', 'Amgen', 'Gilead'],
+    hire_rate: '80-85%',
+    note: 'LA Valley College\'s Biotech Bridge Training Academy places students directly with Baxalta and Grifols — 80-85% hire rate, and Bridge-hired employees have 5% turnover vs. 23% for normally-hired employees. No 4-year degree required to start.'
+  },
+  NC: {
+    field: 'biomanufacturing',
+    cc: 'BTEC (NC State) / Wake Technical Community College',
+    cc_city: 'Raleigh-Durham, North Carolina',
+    program_length: 'varies by program',
+    employers: ['Grifols', 'Novo Nordisk', 'Fujifilm Diosynth', 'Biogen', 'GSK', 'Pfizer'],
+    hire_rate: 'strong',
+    note: 'BTEC is a nationally recognized biomanufacturing training center, feeding the deepest biotech manufacturing corridor on the East Coast — 15 named institutions statewide.'
+  },
+  MA: {
+    field: 'biomanufacturing',
+    cc: 'Quinsigamond Community College',
+    cc_city: 'Worcester, Massachusetts',
+    program_length: 'varies by program',
+    employers: ['Amgen', 'Pfizer', 'Genzyme/Sanofi', 'Biogen', 'Alexion', 'Vertex', 'Takeda'],
+    hire_rate: 'strong',
+    note: 'Quinsigamond Community College sits in the same city as WPI\'s Biomanufacturing Education Training Center — a real, cost-accurate community college pathway (not the $60K/year university itself) into Massachusetts\' 20 named biomanufacturing institutions statewide, one of the deepest benches in the country.'
+  },
+  NJ: {
+    field: 'biomanufacturing',
+    cc: 'Middlesex County College',
+    cc_city: 'Edison, New Jersey',
+    program_length: 'varies by program',
+    employers: ['Bristol-Myers Squibb', 'Johnson & Johnson', 'Merck', 'Sanofi', 'Novartis', 'Regeneron'],
+    hire_rate: 'strong',
+    note: 'New Jersey\'s pharmaceutical corridor is one of the oldest and deepest in the country — 10 named institutions feeding direct pharma employment.'
+  },
+  MD: {
+    field: 'biomanufacturing',
+    cc: 'Montgomery College / Biotechnical Institute of Maryland',
+    cc_city: 'Rockville, Maryland',
+    program_length: 'varies by program',
+    employers: ['AstraZeneca', 'Emergent BioSolutions', 'Novavax', 'MedImmune'],
+    hire_rate: 'strong',
+    note: 'Maryland has a dedicated Biotechnical Institute of Maryland, a rare CC-level institution built specifically for this career track.'
+  },
+  TX: {
+    field: 'biomanufacturing',
+    cc: 'Austin Community College (BioLink Regional Center)',
+    cc_city: 'Austin, Texas',
+    program_length: 'varies by program',
+    employers: ['Lonza', 'Agilent', 'regional biotech manufacturers'],
+    hire_rate: 'strong',
+    note: 'Austin Community College runs its own dedicated BioLink Regional Center — a rare distinction among community colleges nationally.'
+  },
+  NY: {
+    field: 'biomanufacturing',
+    cc: 'Finger Lakes Community College',
+    cc_city: 'Canandaigua, New York',
+    program_length: 'varies by program',
+    employers: ['Regeneron', 'Charles River Labs'],
+    hire_rate: 'strong',
+    note: 'Finger Lakes CC is a national hub-host institution for biomanufacturing and advanced therapy training, backed by NSF ATE and NIIMBL federal funding.'
+  },
+  PA: {
+    field: 'biomanufacturing',
+    cc: 'Montgomery County Community College',
+    cc_city: 'Blue Bell, Pennsylvania',
+    program_length: 'varies by program',
+    employers: ['Teva', 'Merck', 'WuXi AppTec', 'Lonza'],
+    hire_rate: 'strong',
+    note: 'Montgomery County CC has led biomanufacturing technician training for over a decade as a national hub-host institution, part of NBC2 (Northeast Biomanufacturing Center and Collaborative).'
+  },
+  AZ: {
+    field: 'biomanufacturing',
+    cc: 'Mesa Community College',
+    cc_city: 'Mesa, Arizona',
+    program_length: 'varies by program',
+    employers: ['Allergan', 'Sonoran Biosciences'],
+    hire_rate: 'moderate',
+    note: 'Thinner coverage than the top-tier states, but a real, named pathway exists.'
+  },
+  FL: {
+    field: 'biomanufacturing',
+    cc: 'St. Petersburg College / Miami-Dade College / Hillsborough Community College',
+    cc_city: 'St. Petersburg, Florida',
+    program_length: 'varies by program',
+    employers: ['Baxalta (Shire)', 'West Pharma', 'Biotest Pharmaceuticals'],
+    hire_rate: 'strong',
+    note: 'Florida has 10 named institutions statewide, spanning the Tampa Bay and Miami-Dade biotech corridors.'
+  },
+  GA: {
+    field: 'biomanufacturing',
+    cc: 'Gwinnett Technical College',
+    cc_city: 'Lawrenceville, Georgia',
+    program_length: 'varies by program',
+    employers: ['WuXi AppTec', 'Aventacell Biomedical'],
+    hire_rate: 'moderate',
+    note: 'Thinner coverage than the top-tier states, but a real, named pathway exists in metro Atlanta.'
+  },
+  OH: {
+    field: 'biomanufacturing',
+    cc: 'Sinclair Community College / Stark State College',
+    cc_city: 'Dayton, Ohio',
+    program_length: 'varies by program',
+    employers: ['Amgen', 'Athersys', 'AstraZeneca'],
+    hire_rate: 'strong',
+    note: 'Ohio has 9 named institutions statewide, anchored by the Edison Biotechnology Institute.'
+  },
+  CT: {
+    field: 'biomanufacturing',
+    cc: 'Connecticut State Community College',
+    cc_city: 'Middletown campus, Connecticut',
+    program_length: 'varies by program',
+    employers: ['Pfizer', 'Alexion Pharma', 'Boehringer-Ingelheim'],
+    hire_rate: 'moderate',
+    note: 'Connecticut merged all 12 of its community colleges (including the former Middlesex Community College) into one statewide accredited institution in 2023. Thinner biomanufacturing coverage than the top-tier states, but a real, named pathway exists via the Middletown campus.'
+  },
+  WI: {
+    field: 'biomanufacturing',
+    cc: 'Madison Area Technical College / Milwaukee Area Technical College',
+    cc_city: 'Madison, Wisconsin',
+    program_length: 'varies by program',
+    employers: ['Promega', 'Catalent', 'Waisman Biomanufacturing'],
+    hire_rate: 'strong',
+    note: 'Anchored by the UW-Madison Biotechnology Center and Bio-Link North Central Regional Center.'
+  },
+  VA: {
+    field: 'biomanufacturing',
+    cc: 'Northern Virginia Community College',
+    cc_city: 'Annandale, Virginia',
+    program_length: 'varies by program',
+    employers: ['Merck', 'Covance', 'ATCC'],
+    hire_rate: 'moderate',
+    note: 'Real, named pathway exists, though thinner than the top-tier states.'
+  },
+  WA: {
+    field: 'biomanufacturing',
+    cc: 'Shoreline Community College',
+    cc_city: 'Shoreline, Washington',
+    program_length: 'varies by program',
+    employers: ['Amgen', 'Seattle Genetics', 'Adaptive Biotechnologies'],
+    hire_rate: 'moderate',
+    note: 'Thinner coverage than the top-tier states, but a real, named pathway exists.'
+  },
+};
+
+/* ─────────────────────────────────────────────────────────────
+   findIndustryBridgePath(session)
+   Returns an INDUSTRY_BRIDGE_DB entry or null.
+
+   Distinct trigger from findBridgePath() above: this is framed
+   as a career ACCELERATION strategy, not a remedial fallback.
+   Explicitly triggers for GPA < 3.2 — students who were not
+   the highest academic achievers still deserve a positive,
+   dignified signal that a real career pathway exists for them,
+   often with a faster timeline than the traditional 4-year track.
+───────────────────────────────────────────────────────────── */
+
+function findIndustryBridgePath(session) {
+  const gpa = parseFloat(session.gpa || (session.identity && session.identity.gpa));
+  const gpaTrigger = !isNaN(gpa) && gpa < 3.2;
+
+  /* Also trigger on explicit interest signal — a student who
+     selected the biomanufacturing world or a manufacturing-
+     leaning NAICS sector should see this regardless of GPA. */
+  const worlds = (
+    (session.identity && session.identity.worlds_chosen) ||
+    (session.worlds) || []
+  ).map(function(w) { return String(w).toLowerCase(); });
+  const interestTrigger = worlds.some(function(w) {
+    return w.includes('biomanufacturing') || w.includes('bioprocessing') || w.includes('making');
+  });
+
+  if (!gpaTrigger && !interestTrigger) return null;
+
+  const state = (session.student_state || '').toUpperCase() ||
+    resolveStateFromZip(session.zip || '');
+  if (!state) return null;
+
+  const entry = INDUSTRY_BRIDGE_DB[state];
+  if (!entry) return null;
+
+  return Object.assign({}, entry, {
+    triggerReason: gpaTrigger ? 'gpa_acceleration' : 'interest_match',
+    state: state
+  });
+}
 
 /* ══════════════════════════════════════════════════════
    findBridgePath(session)

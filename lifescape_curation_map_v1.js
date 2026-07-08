@@ -49,7 +49,8 @@ const TILE_POOLS = {
   systems: [
     'cosmetic_beauty_science','cooking_chemistry','medical_science','how_body_moves',
     'learning_differences','environment_sustainability','engineering_challenges',
-    'architecture','nutrition_food_science','business_startups'
+    'architecture','nutrition_food_science','business_startups',
+    'supply_chain_logistics','precise_procedures','finance_investing'
   ]
 };
 

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script src="lifescape_career_intelligence.js"></script>
 <script src="lifescape_onet_map.js"></script>
-<script src="UNIVERSITY_DB_V5_MASTER_v4_6.js"></script>
+<script src="UNIVERSITY_DB_V5_MASTER.js"></script>
 <script src="lifescape_major_map.js"></script>
 <script src="lifescape_regional_intelligence.js"></script>
 <script src="crosswalk-db.js"></script>
@@ -1476,6 +1476,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <button class="world-card" data-world="hospitality" onclick="selectWorld(this,'hospitality')"><div class="world-icon"><i class="ti ti-bed" aria-hidden="true"></i></div><div class="world-name">The World of Hospitality</div><div class="world-desc">Travel, guest experience, events, welcome</div></button>
     <button class="world-card" data-world="energy" onclick="selectWorld(this,'energy')"><div class="world-icon"><i class="ti ti-bolt" aria-hidden="true"></i></div><div class="world-name">The World of Energy</div><div class="world-desc">Power, infrastructure, the systems that run everything</div></button>
     <button class="world-card" data-world="logistics" onclick="selectWorld(this,'logistics')"><div class="world-icon"><i class="ti ti-truck" aria-hidden="true"></i></div><div class="world-name">The World of Logistics</div><div class="world-desc">Movement, supply chain, getting things where they need to be</div></button>
+    <button class="world-card" data-world="biomanufacturing" onclick="selectWorld(this,'biomanufacturing')"><div class="world-icon"><i class="ti ti-flask" aria-hidden="true"></i></div><div class="world-name">The World of Biomanufacturing</div><div class="world-desc">Making the medicines, vaccines, and therapies the world depends on — a real career pathway that doesn't require a 4-year degree to start</div></button>
   </div>
 
   <div id="world-error" style="display:none;color:#c0392b;margin:12px 0;font-size:14px;">Please select at least one world before continuing.</div>
@@ -3886,8 +3887,26 @@ ${(()=>{
           return id;
         }).filter(Boolean);
     if (worlds.length > 0 && typeof buildCareerLandscape === 'function') {
-      return '── CAREER LANDSCAPE ──\n' + buildCareerLandscape(worlds, IBIS_WORLD_REGISTRY) + '\n\n';
+      return '── CAREER LANDSCAPE ──\n' + buildCareerLandscape({ identity: { worlds_chosen: worlds } }) + '\n\n';
     }
+  } catch(e) {}
+  return '';
+})()}${(()=>{
+  try {
+    if (typeof findIndustryBridgePath !== 'function') return '';
+    const industryPath = findIndustryBridgePath({
+      gpa: ctx.gpa,
+      zip: ctx.zip,
+      student_state: ctx.student_state,
+      identity: { worlds_chosen: ctx.worlds_chosen || [] }
+    });
+    if (!industryPath) return '';
+    return '── HIDDEN PATHWAY: DIRECT-TO-INDUSTRY (no 4-year degree required) ──\n' +
+      'Community college: ' + industryPath.cc + ' (' + industryPath.cc_city + ')\n' +
+      'Program length: ' + industryPath.program_length + '\n' +
+      'Employers: ' + industryPath.employers.join(', ') + '\n' +
+      'Hire rate: ' + industryPath.hire_rate + '\n' +
+      'Note: ' + industryPath.note + '\n\n';
   } catch(e) {}
   return '';
 })()}── OCCUPATION INTELLIGENCE PRIORITY RULES (non-negotiable) ──
@@ -3927,6 +3946,9 @@ CAREER VS LIFE: Never imply that a student who is oriented toward family, commun
 COMMUNITY COLLEGE PATHWAY HACK INSTRUCTION: For EVERY Primary and Adjacent school match where cc_pathway_data is present in the context: add one line beneath that school formatted exactly as:
 Pathway Hack: [CC Name] → [University Name]: [transfer rate vs freshman rate if known]. Estimated savings $[X]–$[Y]. One sentence on why this matters for ${ctx.name || 'this student'}.
 Frame as strategic intelligence — never as a financial limitation or fallback.
+HIDDEN PATHWAY: DIRECT-TO-INDUSTRY INSTRUCTION: If a "HIDDEN PATHWAY: DIRECT-TO-INDUSTRY" block appears above in this prompt, this is a real, sourced, no-4-year-degree career acceleration pathway — surface it explicitly inside the ---INDUSTRIES--- section, as its own short paragraph after the 3 main clusters, formatted as:
+HIDDEN PATHWAY: [Community college name] trains students directly for [employers, named]. [Program length], [hire rate] hire rate. [One sentence from the note field, in your own words]. No four-year degree required to start — many employers pay for further education once a student has shown workplace commitment.
+Frame this the same way as the Pathway Hack above: as strategic intelligence and a genuine head start, never as a fallback for lower-achieving students. If no such block appears in the prompt, do not mention this pathway type at all — never invent one.
 FORBIDDEN: assessment, results, data, score, ranked, you should become, most students like you, personality type
 MINIMUM LISTS: Any list of careers, roles, or pathways must contain a minimum of 3 items. Never output fewer than 3 career examples.`;
 }

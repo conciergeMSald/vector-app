@@ -537,6 +537,12 @@ const VECTOR_CROSSWALK = [
     riasec_weights:{R:1,I:2,A:0,S:0,E:2,C:3},
     naics_sectors:[48,33,56,52] },
 
+  { id:'precise_procedures', label:'I like following exact steps to get something right, every time',
+    label_parent:'Likes following exact steps to get something right, every time',
+    cluster:'systems',
+    riasec_weights:{R:2,I:1,A:1,S:0,E:1,C:3},
+    naics_sectors:[31,62,54] },
+
   { id:'finance_investing', label:'I am interested in investing, markets, or personal finance',
     label_parent:'Is interested in investing, markets, or personal finance',
     cluster:'systems',

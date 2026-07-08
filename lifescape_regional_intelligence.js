@@ -58,6 +58,15 @@ const REGIONAL_INTELLIGENCE = {
         naics: [62, 54]
       },
       {
+        name: 'Biomanufacturing',
+        anchor: 'Van Nuys / San Fernando Valley (distinct from San Diego R&D corridor above — this is hands-on manufacturing, not lab science)',
+        industries: ['Biomanufacturing Technician Training','Pharmaceutical Production','Quality Control','GMP Manufacturing'],
+        employers: ['Baxalta','Grifols','Genentech','Amgen','Gilead'],
+        naics: [31],
+        hidden_pathway: true,
+        cc_pathway: { cc: 'LA Valley College', hire_rate: '80-85%', program_length: '6 weeks' }
+      },
+      {
         name: 'Startup & Venture Ecosystem',
         anchor: 'Distributed — Venice / Culver City / Pasadena / Orange County',
         industries: ['Early Stage Tech','D2C Brands','Health Tech','Climate Tech','Venture Capital'],
@@ -77,7 +86,8 @@ const REGIONAL_INTELLIGENCE = {
           { school: 'California State University Long Beach', corridor: 'Aerospace & Defense', note: '70% LA-Long Beach concentration — SpaceX, Boeing, Northrop recruit here directly. The most efficient path into El Segundo/Hawthorne.' },
           { school: 'San Diego State University', corridor: 'Pharmaceutical & Biotech', note: '65% San Diego concentration — technology and engineering pipeline inside the biotech corridor.' },
           { school: 'University of California San Diego', corridor: 'Pharmaceutical & Biotech', note: 'Sits physically inside Torrey Pines — the center of the biotech corridor. Science programs pipeline directly into Pfizer, Illumina, and Neurocrine.' },
-          { school: 'Pepperdine University', corridor: 'Entertainment & Media', note: '45% LA concentration — Malibu location and business/law programs with strong LA entertainment market placement.' }
+          { school: 'Pepperdine University', corridor: 'Entertainment & Media', note: '45% LA concentration — Malibu location and business/law programs with strong LA entertainment market placement.' },
+          { school: 'LA Valley College', corridor: 'Biomanufacturing', note: 'A hidden pathway most families never hear about: 6-week program, 80-85% hire rate directly into Baxalta and Grifols — no 4-year degree required to start. Community college, not a university, but the fastest real career entry point in this region.' }
         ]
       },
       leave_and_return: {
@@ -376,7 +386,16 @@ Connect this student's specific profile to the corridor, name the trajectory typ
         industries: ['Port Logistics','Supply Chain','Agricultural Technology','Food Processing','Distribution'],
         employers: ['JAXPORT','Port Tampa Bay','Publix HQ','Darden Restaurants'],
         naics: [48, 42, 11]
-      }
+      },
+      {
+        name: 'Biomanufacturing',
+        anchor: 'St. Petersburg / Miami-Dade / Tampa Bay',
+        industries: ['Biomanufacturing Technician Training','Pharmaceutical Production','Quality Control','GMP Manufacturing'],
+        employers: ['Baxalta (Shire)','West Pharma','Biotest Pharmaceuticals'],
+        naics: [31],
+        hidden_pathway: true,
+        cc_pathway: { cc: 'St. Petersburg College / Miami-Dade College / Hillsborough Community College', hire_rate: 'strong', program_length: 'varies by program' }
+      },
     ],
     trajectories: {
       stay_close: {
@@ -389,7 +408,8 @@ Connect this student's specific profile to the corridor, name the trajectory typ
           { school: 'University of Central Florida', corridor: 'Tourism, Hospitality & Entertainment', note: '65% Florida concentration — sits in the backyard of Disney, Universal, and SeaWorld. Hospitality, entertainment operations, simulation and gaming pipeline.' },
           { school: 'Florida International University', corridor: 'Latin American Business & International Trade', note: '70% South Florida concentration — the undisputed pipeline into Miami\'s Latin American business corridor, international trade, and bilingual finance.' },
           { school: 'University of South Florida', corridor: 'Healthcare & Life Sciences', note: '60% Tampa Bay concentration — inside Moffitt Cancer Center and BayCare recruiting zone. Health sciences, public health, biomedical engineering.' },
-          { school: 'Embry-Riddle Aeronautical University', corridor: 'Aerospace, Defense & Technology', note: '40% Florida placement — the premier aerospace university in the state, sitting between Cape Canaveral and the Melbourne corridor. NASA and SpaceX recruit directly on campus.' }
+          { school: 'Embry-Riddle Aeronautical University', corridor: 'Aerospace, Defense & Technology', note: '40% Florida placement — the premier aerospace university in the state, sitting between Cape Canaveral and the Melbourne corridor. NASA and SpaceX recruit directly on campus.' },
+          { school: 'St. Petersburg College', corridor: 'Biomanufacturing', note: 'A hidden pathway most families never hear about: a real, named community college biomanufacturing pipeline feeding Baxalta and West Pharma — no 4-year degree required to start.' }
         ]
       },
       leave_and_return: {
@@ -476,6 +496,15 @@ Connect this student's specific profile to the corridor that fits, name the traj
         industries: ['Management Consulting','Corporate Strategy','Beverage & Consumer Brands','Enterprise Software'],
         employers: ['Coca-Cola','UPS','Home Depot','Cox Enterprises','NCR Voyix'],
         naics: [54, 51]
+      },
+      {
+        name: 'Biomanufacturing',
+        anchor: 'Gwinnett / Metro Atlanta',
+        industries: ['Biomanufacturing Technician Training','Pharmaceutical Production','Quality Control','GMP Manufacturing'],
+        employers: ['WuXi AppTec','Aventacell Biomedical'],
+        naics: [31],
+        hidden_pathway: true,
+        cc_pathway: { cc: 'Gwinnett Technical College', hire_rate: 'moderate', program_length: 'varies by program' }
       }
     ],
     trajectories: {
@@ -488,7 +517,8 @@ Connect this student's specific profile to the corridor that fits, name the traj
           { school: 'Morehouse College', corridor: 'Corporate HQ & Consulting', note: 'Strong Atlanta corporate and consulting placement, particularly into Fortune 500 companies headquartered locally.' },
           { school: 'Spelman College', corridor: 'Corporate HQ & Consulting', note: 'Same corporate recruiting strength as Morehouse, with particular depth into consulting and consumer brands.' },
           { school: 'University of Georgia', corridor: 'Corporate HQ & Consulting', note: 'An hour from the city but one of the strongest Atlanta-feeder schools in the Southeast — Terry College graduates recruit heavily into Atlanta banking, consulting, and Fortune 500 headquarters.' },
-          { school: 'Georgia State University', corridor: 'Fintech & Payments', note: 'Physically inside the Midtown corridor — direct pipeline into Atlanta\'s payments and fintech employers, particularly out of the Robinson College of Business.' }
+          { school: 'Georgia State University', corridor: 'Fintech & Payments', note: 'Physically inside the Midtown corridor — direct pipeline into Atlanta\'s payments and fintech employers, particularly out of the Robinson College of Business.' },
+          { school: 'Gwinnett Technical College', corridor: 'Biomanufacturing', note: 'A hidden pathway most families never hear about: a named community college biomanufacturing pipeline into WuXi AppTec and Aventacell Biomedical — no 4-year degree required to start.' }
         ]
       },
       leave_and_return: {
@@ -661,6 +691,15 @@ Connect this student's specific profile to the corridor that fits, name the traj
         industries: ['Management Consulting','Public Policy Research','Economic Analysis'],
         employers: ['Deloitte','McKinsey (DC)','Brookings','RAND'],
         naics: [54]
+      },
+      {
+        name: 'Biomanufacturing',
+        anchor: 'Northern Virginia (Annandale)',
+        industries: ['Biomanufacturing Technician Training','Pharmaceutical Production','Quality Control','GMP Manufacturing'],
+        employers: ['Merck','Covance','ATCC'],
+        naics: [31],
+        hidden_pathway: true,
+        cc_pathway: { cc: 'Northern Virginia Community College', hire_rate: 'moderate', program_length: 'varies by program' }
       }
     ],
     trajectories: {
@@ -671,7 +710,8 @@ Connect this student's specific profile to the corridor that fits, name the traj
           { school: 'Georgetown University', corridor: 'International Affairs & Diplomacy / Federal Policy', note: 'The School of Foreign Service sits directly inside the diplomatic corridor — unmatched pipeline into State Department, World Bank, and international NGOs.' },
           { school: 'George Washington University', corridor: 'Federal Government & Policy', note: 'Blocks from Foggy Bottom and Federal Triangle — direct recruiting pipeline into federal agencies and government affairs.' },
           { school: 'George Mason University', corridor: 'Defense & Intelligence Contracting', note: 'Sits inside the Tysons/Reston corridor directly — strong cybersecurity and intelligence-adjacent degree pipeline into Booz Allen, Northrop Grumman, and federal contractors.' },
-          { school: 'American University', corridor: 'Law & Regulatory Affairs / Policy', note: 'Washington College of Law and School of Public Affairs feed directly into K Street and regulatory agencies.' }
+          { school: 'American University', corridor: 'Law & Regulatory Affairs / Policy', note: 'Washington College of Law and School of Public Affairs feed directly into K Street and regulatory agencies.' },
+          { school: 'Northern Virginia Community College', corridor: 'Biomanufacturing', note: 'A hidden pathway most families never hear about: a real, named community college biomanufacturing pipeline into Merck, Covance, and ATCC — no 4-year degree required to start.' }
         ]
       },
       leave_and_return: {
@@ -774,112 +814,6 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'AgriTech, Logistics & Supply Chain',          naics: [48, 42, 11], riasec: ['R','C','E'] }
   ]
 };
-
-// ── resolveStudentCorridor ────────────────────────────────────────────────────
-// Given a student's NAICS sectors, RIASEC codes, and regional key,
-// returns the single best-matching corridor for this student in this region.
-// Uses a weighted score: NAICS overlap (primary) + RIASEC affinity (secondary)
-//
-// @param naicsSectors  array of {sector, count/score} from getNAICSProfile()
-// @param riasec        array of {code, score} from getRIASECProfile()
-// @param regionalKey   'socal' | 'bayarea' | 'chicago'
-// @returns { corridorName, naics, riasec, score } | null
-
-function resolveStudentCorridor(naicsSectors, riasec, regionalKey) {
-  if (!naicsSectors || !naicsSectors.length || !regionalKey) return null;
-
-  const corridorMap = CORRIDOR_NAICS_MAP[regionalKey];
-  if (!corridorMap) return null;
-
-  // Student's top RIASEC codes (top 3, ordered)
-  const studentRIASEC = (riasec || []).slice(0, 3).map(r => r.code);
-  const studentRIASECSet = new Set(studentRIASEC);
-
-  // High-signal NAICS codes that are corridor-specific (not generic crossovers)
-  // NAICS 71 (Arts/Entertainment) almost uniquely signals Entertainment — boost it
-  // NAICS 52 (Finance) almost uniquely signals Finance — boost it
-  // NAICS 62 (Healthcare) almost uniquely signals Healthcare — boost it
-  // NAICS 44 (Retail/Consumer) almost uniquely signals CPG/Consumer — boost it
-  // NAICS 33 (Manufacturing) almost uniquely signals Aerospace/Industrial — boost it
-  const HIGH_SIGNAL_NAICS = new Set([71, 52, 62, 44, 31, 33, 48]);
-
-  // Score each corridor
-  const scored = corridorMap.map(corridor => {
-    let score = 0;
-
-    // Primary signal — NAICS overlap, weighted by position and specificity
-    naicsSectors.slice(0, 5).forEach((n, idx) => {
-      if (corridor.naics.includes(n.sector)) {
-        const baseWeight = (5 - idx) * 3; // top sector worth 15, 5th worth 3
-        // High-signal NAICS get a stronger boost when they appear in top-2 positions
-        // This ensures Finance(52), Healthcare(62), Entertainment(71) aren't beaten
-        // by generic 51/54 combinations even when both sectors are tied by count
-        const isTopPosition = idx <= 1;
-        const specificityBoost = HIGH_SIGNAL_NAICS.has(n.sector) ? (isTopPosition ? 14 : 8) : 0;
-        score += baseWeight + specificityBoost;
-      }
-    });
-
-    // Secondary signal — RIASEC affinity, ordered match matters
-    corridor.riasec.forEach((code, corridorRIASECIdx) => {
-      const studentIdx = studentRIASEC.indexOf(code);
-      if (studentIdx !== -1) {
-        // Both corridor position and student position matter
-        const corridorWeight = (3 - corridorRIASECIdx); // primary corridor code worth 3
-        const studentWeight = (3 - studentIdx);          // student's primary code worth 3
-        score += corridorWeight * studentWeight;
-      }
-    });
-
-    return { ...corridor, score };
-  });
-
-  // Return highest-scoring corridor, or null if no real match (score < 3)
-  const best = scored.sort((a, b) => b.score - a.score)[0];
-  return best && best.score >= 3 ? best : null;
-}
-
-// ── getStudentCorridorContext ─────────────────────────────────────────────────
-// Returns a short, prompt-ready string naming the student's matched corridor
-// Used to sharpen callC prompt beyond "here are all corridors"
-
-function getStudentCorridorContext(naicsSectors, riasec, zip) {
-  const region = resolveRegion(zip);
-  if (!region) return '';
-
-  const corridor = resolveStudentCorridor(naicsSectors, riasec, region.key);
-  if (!corridor) return '';
-
-  // Find the full corridor object from the region for employer/detail data
-  const fullCorridor = region.corridors.find(c => c.name === corridor.corridorName);
-  if (!fullCorridor) return `Student corridor match: ${corridor.corridorName}`;
-
-  return `STUDENT CORRIDOR MATCH: ${corridor.corridorName} (${fullCorridor.anchor})
-Key employers in this corridor: ${fullCorridor.employers.slice(0,4).join(', ')}
-Industries: ${fullCorridor.industries.slice(0,3).join(', ')}`;
-}
-
-// ── resolveRegion ─────────────────────────────────────────────────────────────
-// Returns the matching REGIONAL_INTELLIGENCE entry for a given ZIP code
-// Returns null if no region matches (graceful fallback to ZIP-only geo)
-
-function resolveRegion(zip) {
-  if (!zip || typeof zip !== 'string') return null;
-  const prefix = zip.trim().slice(0, 3);
-  for (const [key, region] of Object.entries(REGIONAL_INTELLIGENCE)) {
-    if (region.zipPrefixes.includes(prefix)) return { key, ...region };
-  }
-  return null;
-}
-
-// ── getRegionalCallCContext ───────────────────────────────────────────────────
-// Returns the callC prompt context string for a given ZIP
-// Returns empty string if no region matches
-
-function getRegionalCallCContext(zip) {
-  const region = resolveRegion(zip);
-  return region ? region.callc_context : '';
-}
 
 // ── resolveStudentCorridor ────────────────────────────────────────────────────
 // Given a student's NAICS sectors, RIASEC codes, and regional key,
