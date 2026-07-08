@@ -1054,15 +1054,17 @@ function getRegionSchoolPool(regions) {
   return [...pool];
 }
 
+// DISABLED July 2026 — adjacent-region padding removed globally. This was
+// the root cause of out-of-region schools (Montana/Idaho in California
+// reports, Rocky Mountains schools in Southwest-only reports, etc.)
+// surfacing even after every REGION_POOLS pool itself was cleaned up and
+// verified correct. Region is a hard filter now: a student who selects a
+// region should only ever see schools actually in it — never neighboring
+// regions used as filler. Kept as a function (rather than deleted outright)
+// so the two call sites in matchUniversities() below don't need restructuring;
+// it now unconditionally returns no candidates.
 function getAdjacentRegionPool(regions) {
-  const pool = new Set();
-  (regions || []).forEach(r => {
-    const adj = REGION_ADJACENCY[r];
-    if (adj && !regions.includes(adj)) {
-      (REGION_POOLS[adj] || []).forEach(s => pool.add(s));
-    }
-  });
-  return [...pool];
+  return [];
 }
 
 // ── The ORIGINAL fit-scoring engine — UNCHANGED, renamed for reuse ───────
