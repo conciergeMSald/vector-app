@@ -4220,7 +4220,13 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       state:                    (COLLEGE_PREFS && COLLEGE_PREFS.state_pref) || '',
       regions_selected:         Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(', ') : (COLLEGE_PREFS.regions || ''),
       region_count:             Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.length : 0,
-      trajectory_resolved:      (callAData && callAData.trajectory) ? callAData.trajectory.slice(0, 500) : '',
+      // trajectory_resolved is a Single Select field in Airtable — it needs a short,
+      // pre-registered category label, not free-text narrative. callAData.trajectory
+      // is Claude's full generated paragraph, which is what was causing
+      // INVALID_MULTIPLE_CHOICE_OPTIONS. Omitted until the real short-label mapping
+      // is confirmed against Airtable's configured options (tool access was down
+      // when this was fixed — see chat).
+      // trajectory_resolved:   omitted, see note above,
       riasec_top3:              (profile._meta && profile._meta.topRIASEC) || '',
       naics_top3:               (profile._meta && profile._meta.topNAICS) || '',
       combo_unlocks:            (profile.comboUnlocks || []).map(function(c){ return c.unlocks[0]; }).join(' | '),
@@ -4317,25 +4323,12 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       }
     });
 
-    // ── Cohort Longitudinal Write — supplementary, never blocks the family ──
-    // Reuses the same payload fields already built above. Failure here is
-    // logged only — the family's report experience is never affected.
-    fetch('https://api.abettercollegeconsultant.com/save-cohort-record', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify(payload),
-    })
-    .then(function(r){ return r.json(); })
-    .then(function(d){
-      if (d.success) {
-        console.log('[VECTOR Lifescape] Cohort record saved:', d.airtable_id);
-      } else {
-        console.warn('[VECTOR Lifescape] Cohort record not saved (non-blocking):', d.detail || d.message || d.error || d.reason || 'unknown');
-      }
-    })
-    .catch(function(err){
-      console.warn('[VECTOR Lifescape] Cohort write fetch error (non-blocking):', err);
-    });
+    // NOTE: A duplicate "/save-cohort-record" call previously lived here,
+    // reusing the SESSIONS-shaped `payload` variable and hitting an endpoint
+    // that was never registered in worker.js. The correct cohort write
+    // (/save-cohort-longitudinal, with the properly-shaped cohortLongPayload)
+    // already fires above — this was dead, guaranteed-404 duplicate code.
+    // Removed rather than fixed, since the real write already exists.
 
   } catch(err) {
     console.error('[VECTOR Lifescape] captureToAirtable build error:', {
@@ -5938,74 +5931,19 @@ async function submitLifescape() {
           console.warn('[VECTOR] School Context annotation failed (non-blocking):', err);
         }
 
-        // ── Regional equity: guarantee at least 1 school per selected region ──
-        // If student selected specific regions, ensure each region has representation
-        // before the list is sliced for callD. "anywhere" bypasses this.
-        if (!_anywhereSelected && _regions.length > 0 && typeof UNIVERSITY_CONTENT !== 'undefined') {
-          const _coveredRegions = new Set();
-          const _guaranteedSchools = [];
-
-          // First pass: note which regions are already covered in top _rawMatches
-          _rawMatches.slice(0, _schoolCount * 3).forEach(function(name) {
-            var sc = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(name) : null;
-            if (!sc) return;
-            var r = (sc.vector_region || sc.region || '').toLowerCase().replace(/\s+/g,'_');
-            // Map school regions to student-selected region keys
-            var regionMap = {
-              'new_england': ['new_england','northeast','mid_atlantic'],
-              'northeast':   ['northeast','mid_atlantic','new_england'],
-              'mid_atlantic':['mid_atlantic','northeast'],
-              'southeast':   ['southeast'],
-              'midwest':     ['midwest'],
-              'rocky_mountains':['rocky_mountains','southwest','california'],
-              'pacific_nw':  ['pacific_nw','california'],
-              'california':  ['california','pacific_nw'],
-              'southwest':   ['southwest','rocky_mountains']
-            };
-            _regions.forEach(function(sel) {
-              var aliases = regionMap[sel] || [sel];
-              if (aliases.some(function(a) { return r.includes(a) || (sc.region||'').toLowerCase().includes(a.replace(/_/g,' ')); })) {
-                _coveredRegions.add(sel);
-              }
-            });
-          });
-
-          // Second pass: for uncovered regions, find the best scoring school in that region
-          _regions.forEach(function(sel) {
-            if (_coveredRegions.has(sel)) return;
-            var aliases = (function(){
-              var m = {
-                'new_england': ['new england','northeast'],
-                'northeast':   ['northeast','mid-atlantic','new york','new jersey','pennsylvania'],
-                'mid_atlantic':['mid-atlantic','mid atlantic','virginia','maryland','dc'],
-                'southeast':   ['southeast','south','georgia','florida','north carolina','south carolina','tennessee','alabama','louisiana'],
-                'midwest':     ['midwest','ohio','indiana','illinois','michigan','minnesota','iowa','missouri'],
-                'rocky_mountains':['rocky','mountain','colorado','utah','idaho','montana','wyoming'],
-                'pacific_nw':  ['pacific northwest','northwest','oregon','washington'],
-                'california':  ['california','southern california','bay area','los angeles'],
-                'southwest':   ['southwest','texas','arizona','new mexico','oklahoma']
-              };
-              return m[sel] || [sel.replace(/_/g,' ')];
-            })();
-
-            // Find highest-ranking school in this region not already in raw matches top
-            var _topRaw = new Set(_rawMatches.slice(0, _schoolCount * 3));
-            var _regionFill = null;
-            Object.entries(UNIVERSITY_CONTENT).forEach(function([nm, sc]) {
-              if (_regionFill) return;
-              if (_topRaw.has(nm)) return;
-              var regionStr = ((sc.vector_region || sc.region || '') + ' ' + (sc.location || '')).toLowerCase();
-              if (aliases.some(function(a) { return regionStr.includes(a); })) {
-                _regionFill = nm;
-              }
-            });
-            if (_regionFill) {
-              console.log('[regional-equity] Adding', _regionFill, 'to cover region:', sel);
-              _rawMatches.push(_regionFill);
-            }
-          });
-        }
-        // ── End regional equity ──
+        // NOTE: A "regional equity" fill mechanism previously lived here,
+        // designed to guarantee at least 1 school per selected region.
+        // Removed July 2026 — it duplicated region-matching logic already
+        // done correctly by matchUniversities()/scoreAndRankSchools(), but
+        // used its own separate, buggy alias map (one that treated
+        // California, Rocky Mountains, and Pacific NW as mutually
+        // interchangeable) and pulled fill candidates from the legacy
+        // UNIVERSITY_CONTENT database via loose string matching. This was
+        // the actual cause of out-of-region schools (Montana, Idaho, etc.)
+        // appearing in California-only reports even after the region-pool
+        // data itself was cleaned up. matchUniversities() now enforces
+        // region correctly on its own — this redundant, unsafe second
+        // pass is no longer needed.
 
         // For Jewish tracks: re-sort to prefer schools in the extended Jewish pool
         if (_isJewishTrack && typeof JEWISH_POOL_EXTENDED !== 'undefined') {

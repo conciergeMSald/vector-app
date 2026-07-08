@@ -134,27 +134,34 @@ const REGION_POOLS = {
   ],
 
   california: [
-    "Azusa Pacific University","Biola University","Boise State University","Brigham Young University",
+    // FIXED July 2026: removed 18 out-of-state schools that were incorrectly
+    // embedded in this pool (Boise State/ID, BYU/UT, Colorado College/CO,
+    // Colorado School of Mines/CO, Colorado State/CO, Gonzaga/WA, Montana
+    // State/MT, Oregon State/OR, University of Colorado Boulder/CO,
+    // University of Denver/CO, University of Idaho/ID, University of
+    // Montana/MT, UNLV/NV, UNR/NV, University of Oregon/OR, University of
+    // Utah/UT, University of Washington/WA, University of Hawaii/HI).
+    // Those schools already have their own correct homes in the
+    // rocky_mountains and pacific_nw pools above — this pool should only
+    // ever contain schools actually located in California.
+    "Azusa Pacific University","Biola University",
     "California Institute of Technology","California Lutheran University","California Polytechnic State University San Luis Obispo","California Polytechnic State University, San Luis Obispo",
     "California State University Chico","California State University Fresno","California State University Fullerton","California State University Long Beach",
     "California State University Los Angeles","California State University Northridge","California State University San Bernardino","California State University, Fullerton",
-    "California State University, Long Beach","Claremont McKenna College","Colorado College","Colorado School of Mines",
-    "Colorado State University","Deep Springs College","Gonzaga University","Harvey Mudd College",
-    "Loyola Marymount University","Montana State University","Occidental College","Oregon State University",
+    "California State University, Long Beach","Claremont McKenna College","Harvey Mudd College",
+    "Loyola Marymount University","Occidental College",
     "Pepperdine University","Point Loma Nazarene University","Pomona College","Saint Mary's College of California",
     "San Diego State University","San Jose State University","San José State University","Santa Clara University",
     "Stanford University","UC Berkeley","UC Riverside","UC San Diego",
     "UC Santa Barbara","UCLA","University of California Davis","University of California Irvine",
     "University of California Los Angeles","University of California Santa Barbara","University of California Santa Cruz","University of California, Berkeley",
     "University of California, Los Angeles","University of California, Merced","University of California, San Diego","University of California, Santa Barbara",
-    "University of California, Santa Cruz","University of Colorado Boulder","University of Denver","University of Idaho",
-    "University of Montana","University of Nevada Las Vegas","University of Nevada Reno","University of Oregon",
-    "University of San Diego","University of San Francisco","University of Southern California","University of Utah",
-    "University of Washington","Westmont College",
+    "University of California, Santa Cruz","Deep Springs College",
+    "University of San Diego","University of San Francisco","University of Southern California",
+    "Westmont College",
     "USC",
     "San Francisco State University",
     "California State University Maritime Academy",
-    "University of Hawaii at Manoa",
   ],
 
   southwest: [
@@ -980,7 +987,7 @@ const REGION_ADJACENCY = {
   mid_atlantic: 'southeast',      southeast: 'mid_atlantic',
   midwest: 'northeast',
   rocky_mountains: 'southwest',   southwest: 'rocky_mountains',
-  pacific_nw: 'california',       california: 'pacific_nw',
+  pacific_nw: 'california',       california: 'california',
 };
 
 function schoolsInSizeBand(schoolNames, sizeKey) {
