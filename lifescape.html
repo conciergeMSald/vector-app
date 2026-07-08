@@ -5673,6 +5673,14 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
 async function submitLifescape() {
   if(LS_STATE.submitted) return;
   LS_STATE.submitted = true;
+
+  // ── DIAGNOSTIC: log the true region selection state at the exact moment
+  // Continue is clicked. Added July 2026 to resolve reports of out-of-region
+  // schools (Rocky Mountains/Pacific NW) surfacing in California-only sessions.
+  // If COLLEGE_PREFS.regions shows more than the family visually selected,
+  // this confirms a frontend selection-state bug rather than a matching bug.
+  console.log('[VECTOR DIAGNOSTIC] Regions at submit time:', JSON.stringify(COLLEGE_PREFS.regions));
+
   const btn = document.getElementById('ls-submit-btn');
   btn.disabled=true; btn.textContent='Building your Lifescape...';
 
