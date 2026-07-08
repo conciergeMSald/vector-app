@@ -775,6 +775,109 @@ function getRegionalCallCContext(zip) {
   return region ? region.callc_context : '';
 }
 
+// ── California Trajectory Resolver ────────────────────────────────────────────
+// First real implementation of "stay within region" trajectory logic.
+// Built July 2026 as the working example other regions will extend from,
+// once each region has its own metro-cluster breakdown (most don't yet —
+// see CA_SCHOOL_CLUSTER's comment for known gaps).
+//
+// Maps each real California school to its metro cluster (socal/bayarea).
+// Built from direct knowledge of school locations — NOT fuzzy string
+// matching against location text, which is exactly the bug class that
+// caused out-of-region schools to leak into earlier reports.
+//
+// KNOWN GAP: Chico, Fresno, and Merced sit in the Central Valley/Sacramento
+// area — genuinely neither SoCal nor Bay Area. They're intentionally left
+// unclassified (null) rather than force-fit into the wrong cluster. A
+// student matched to one of these schools gets no cluster-based trajectory
+// framing until a real "central_valley" cluster is built out.
+const CA_SCHOOL_CLUSTER = {
+  // Southern California
+  'Azusa Pacific University': 'socal',
+  'Biola University': 'socal',
+  'California Institute of Technology': 'socal',
+  'California State University Fullerton': 'socal',
+  'California State University, Fullerton': 'socal',
+  'California State University Long Beach': 'socal',
+  'California State University, Long Beach': 'socal',
+  'California State University Los Angeles': 'socal',
+  'California State University Northridge': 'socal',
+  'California State University San Bernardino': 'socal',
+  'Claremont McKenna College': 'socal',
+  'Harvey Mudd College': 'socal',
+  'Loyola Marymount University': 'socal',
+  'Occidental College': 'socal',
+  'Pepperdine University': 'socal',
+  'Point Loma Nazarene University': 'socal',
+  'Pomona College': 'socal',
+  'San Diego State University': 'socal',
+  'UC Riverside': 'socal',
+  'UC San Diego': 'socal',
+  'UC Santa Barbara': 'socal',
+  'UCLA': 'socal',
+  'University of California Irvine': 'socal',
+  'University of California Los Angeles': 'socal',
+  'University of California Santa Barbara': 'socal',
+  'University of California, Los Angeles': 'socal',
+  'University of California, San Diego': 'socal',
+  'University of California, Santa Barbara': 'socal',
+  'University of San Diego': 'socal',
+  'University of Southern California': 'socal',
+  'USC': 'socal',
+
+  // Bay Area
+  'San Jose State University': 'bayarea',
+  'San José State University': 'bayarea',
+  'Santa Clara University': 'bayarea',
+  'Stanford University': 'bayarea',
+  'UC Berkeley': 'bayarea',
+  'University of California, Berkeley': 'bayarea',
+  'University of California Santa Cruz': 'bayarea',
+  'University of California, Santa Cruz': 'bayarea',
+  'UC Santa Cruz': 'bayarea',
+  'University of San Francisco': 'bayarea',
+  'San Francisco State University': 'bayarea',
+  'California State University Maritime Academy': 'bayarea', // Vallejo
+  "Saint Mary's College of California": 'bayarea', // Moraga
+
+  // Known gap — Central Valley/Sacramento, neither cluster. Left unmapped
+  // on purpose (see comment above) rather than guessed.
+  // 'California State University Chico': null,
+  // 'California State University Fresno': null,
+  // 'University of California, Merced': null,
+  // 'California Polytechnic State University San Luis Obispo': null, // Central Coast — also its own thing
+  // 'Westmont College': null, // Santa Barbara, Central Coast
+  // 'Deep Springs College': null, // remote Eastern Sierra
+};
+
+// Returns 'socal', 'bayarea', or null (unclassified/out of state).
+function getCASchoolCluster(schoolName) {
+  if (!schoolName) return null;
+  return CA_SCHOOL_CLUSTER[schoolName] || null;
+}
+
+// Returns one of: 'stay_close', 'leave_same_region', or null.
+// null means either the school isn't a classified CA school, or the
+// student's home ZIP didn't resolve to a known CA cluster — in both cases,
+// the caller should omit trajectory framing rather than guess.
+//
+// 'leave_same_region' deliberately does NOT split further into "return" vs
+// "stay gone" here — that distinction depends on career-gravity data this
+// function doesn't have. The caller (prompt-building code) should let the
+// AI make that call using the student's actual career/world data, but must
+// only ever name the two real CA clusters (Bay Area / Southern California)
+// — never imply the student is leaving California, since region is a hard
+// filter and they explicitly chose to stay in it.
+function resolveCATrajectory(homeZip, schoolName) {
+  const homeRegion = resolveRegion(homeZip);
+  if (!homeRegion || (homeRegion.key !== 'socal' && homeRegion.key !== 'bayarea')) return null;
+
+  const schoolCluster = getCASchoolCluster(schoolName);
+  if (!schoolCluster) return null;
+
+  return schoolCluster === homeRegion.key ? 'stay_close' : 'leave_same_region';
+}
+
 // ── NAICS → Corridor mapping per region ──────────────────────────────────────
 // Maps student's top NAICS sectors to the most relevant regional corridor
 // Returns the corridor object or null if no strong match

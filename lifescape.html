@@ -4838,8 +4838,44 @@ For each school, if there is something specific about that environment that spea
 ${_onetCallD}${_majorContext}
 College preferences: ${prefSummary || 'Open'}
 Combination unlocks fired: ${ctx.comboSummary || 'none'}
-${ctx.trajectoryResolved ? `LIFE GEOGRAPHY: ${ctx.trajectoryResolved} | Pull: ${ctx.trajectoryPull||'—'} | Anchor: ${ctx.trajectoryAnchor||'—'}${ctx.familiarityRegions&&ctx.familiarityRegions.length?' | Familiarity: '+ctx.familiarityRegions.join(', '):''}
-SCHOOL WEIGHTING: Prefer schools whose alumni dispersal pattern matches the resolved trajectory. LEAVE_STAY_GONE→national/global dispersal. STEWARD→high geographicLockIn near student ZIP. LEAVE_COME_BACK→high returnerScore. NAVIGATOR→strong pipeline to target region. Apply 1.4x weight to schools in familiarityRegions.` : ''}
+${(() => {
+  var _hasRegion = ctx.college_prefs && Array.isArray(ctx.college_prefs.regions) && ctx.college_prefs.regions.length > 0 && !ctx.college_prefs.regions.includes('anywhere') && !ctx.college_prefs.regions.includes('no_preference');
+  var _out = '';
+  if (ctx.trajectoryResolved) {
+    _out += `LIFE GEOGRAPHY: ${ctx.trajectoryResolved} | Pull: ${ctx.trajectoryPull||'—'} | Anchor: ${ctx.trajectoryAnchor||'—'}${ctx.familiarityRegions&&ctx.familiarityRegions.length?' | Familiarity: '+ctx.familiarityRegions.join(', '):''}\n`;
+    if (!_hasRegion) {
+      // No specific region selected — national/global dispersal framing is safe here.
+      _out += `SCHOOL WEIGHTING: Prefer schools whose alumni dispersal pattern matches the resolved trajectory. LEAVE_STAY_GONE→national/global dispersal. STEWARD→high geographicLockIn near student ZIP. LEAVE_COME_BACK→high returnerScore. NAVIGATOR→strong pipeline to target region. Apply 1.4x weight to schools in familiarityRegions.\n`;
+    } else {
+      // A specific region was selected — region is a hard filter, so every matched
+      // school is already inside it. Never frame trajectory as leaving the region.
+      _out += `SCHOOL WEIGHTING: This student selected specific region(s) — every matched school is already inside their chosen region(s). Frame trajectory language (stay close / leave and return / leave and stay gone) as movement WITHIN the selected region only. Never imply leaving the region itself — that would contradict the student's own choice.\n`;
+    }
+  }
+  // California-specific cluster grounding (first real implementation — see
+  // resolveCATrajectory in lifescape_regional_intelligence.js). Only fires
+  // when the student's home ZIP resolves to a known CA cluster.
+  if (_hasRegion && typeof resolveCATrajectory === 'function' && ctx.zip) {
+    var _caLines = [];
+    (matchedSchools || []).forEach(function(schoolName) {
+      var traj = resolveCATrajectory(ctx.zip, schoolName);
+      if (traj === 'stay_close') {
+        _caLines.push(schoolName + ': same metro area as home — frame as Stay Close.');
+      } else if (traj === 'leave_same_region') {
+        var homeCluster = (typeof resolveRegion === 'function' && resolveRegion(ctx.zip)) ? resolveRegion(ctx.zip).key : null;
+        var schoolCluster = (typeof getCASchoolCluster === 'function') ? getCASchoolCluster(schoolName) : null;
+        var label = function(k){ return k === 'socal' ? 'Southern California' : k === 'bayarea' ? 'the Bay Area' : k; };
+        if (homeCluster && schoolCluster) {
+          _caLines.push(schoolName + ': home is ' + label(homeCluster) + ', school is in ' + label(schoolCluster) + ' — frame as leaving ' + label(homeCluster) + ' for ' + label(schoolCluster) + ', staying in California. Never say the student is leaving California.');
+        }
+      }
+    });
+    if (_caLines.length > 0) {
+      _out += `CALIFORNIA CLUSTER TRAJECTORY (use these exact framings, do not invent others):\n${_caLines.join('\n')}\n`;
+    }
+  }
+  return _out;
+})()}
 ${ctx.faith_is_jewish ? `JEWISH COMMUNITY CONTEXT: This student selected Jewish faith/community as important.
 RULE: Do NOT recommend any school with a primarily Christian institutional identity (Catholic, Lutheran, Baptist, Evangelical, Methodist, Presbyterian). This is non-negotiable.
 POSITIVE: Surface schools known for strong Hillel presence, significant Jewish enrollment, or strong Jewish social community. Name the Hillel or Jewish student life infrastructure specifically when it exists. For jewish_community track specifically: acknowledge that Jewish identity can be a source of belonging and connection that the student may carry with them even without formal religious practice — the community aspect is about finding their people.
@@ -5665,6 +5701,31 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
 
 async function submitLifescape() {
   if(LS_STATE.submitted) return;
+
+  // ── REQUIRED: at least one region must be selected before submission.
+  // Added July 2026 — the region screen previously had no minimum-selection
+  // validation at all, meaning a student could reach "Build my Lifescape"
+  // having never clicked a single region button, leaving COLLEGE_PREFS.regions
+  // at its default empty array. Region is now a hard filter on matching, so
+  // an empty selection here is no longer a safe "open to anywhere" default —
+  // it must be an explicit choice the student actually makes.
+  if (!Array.isArray(COLLEGE_PREFS.regions) || COLLEGE_PREFS.regions.length === 0) {
+    console.warn('[VECTOR Lifescape] Submission blocked — no region selected.');
+    var _regionSection = document.getElementById('region-map-section');
+    if (_regionSection) {
+      _regionSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      _regionSection.style.outline = '2px solid #c0392b';
+      _regionSection.style.outlineOffset = '6px';
+      setTimeout(function() { _regionSection.style.outline = ''; }, 3000);
+    }
+    if (typeof showLsToast === 'function') {
+      showLsToast('Please select at least one region before continuing.');
+    } else {
+      alert('Please select at least one region before continuing.');
+    }
+    return;
+  }
+
   LS_STATE.submitted = true;
 
   // ── DIAGNOSTIC: log the true region selection state at the exact moment
