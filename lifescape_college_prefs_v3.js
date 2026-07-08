@@ -30,12 +30,14 @@ const REGION_POOLS = {
     "Massachusetts Maritime Academy",
     "Amherst College",
     "Babson College",
+    "Bates College",
     "Bentley University",
     "Berklee College of Music",
     "Boston College",
     "Boston University",
     "Bowdoin College",
     "Brown University",
+    "Colby College",
     "Dartmouth College",
     "Harvard University",
     "Massachusetts Institute of Technology",
@@ -53,18 +55,27 @@ const REGION_POOLS = {
   ],
 
   northeast: [
-    "American University","Bates College",
+    // FIXED July 2026: removed 9 misplaced/duplicate schools. American
+    // University, George Washington University, and Georgetown University
+    // (DC) → moved to mid_atlantic. University of Delaware → moved to
+    // mid_atlantic (grouped with MD/VA/DC rather than NY/NJ/PA). Bates
+    // College and Colby College (ME) → moved to new_england. Case Western
+    // Reserve University (OH) and Kettering University (MI) → already/now
+    // correctly in midwest. Reed College (OR) → already correctly in
+    // pacific_nw. University of Massachusetts Amherst → already correctly
+    // in new_england, was a duplicate here. This pool should only contain
+    // NY/NJ/PA schools — matching the actual region button label "NY · NJ · PA".
     "Binghamton University","Bryn Mawr College",
-    "Bucknell University","Carnegie Mellon University","Case Western Reserve University","Colby College",
-    "Colgate University","Columbia University","Cornell University","Drexel University","Fashion Institute of Technology","Fordham University","Franklin and Marshall College",
-    "George Washington University","Georgetown University","Hamilton College","Haverford College","Ithaca College","Kettering University",
+    "Bucknell University","Carnegie Mellon University","Colgate University",
+    "Columbia University","Cornell University","Drexel University","Fashion Institute of Technology","Fordham University","Franklin and Marshall College",
+    "Hamilton College","Haverford College","Ithaca College",
     "Lehigh University","New York University",
     "Penn State University","Pratt Institute","Princeton University",
-    "Reed College","Rochester Institute of Technology",
+    "Rochester Institute of Technology",
     "Rutgers University","Stevens Institute of Technology","Swarthmore College","Syracuse University",
     "Temple University","Union College","United States Military Academy",
-    "University at Buffalo","University of Delaware",
-    "University of Massachusetts Amherst","University of Pennsylvania","University of Pittsburgh",
+    "University at Buffalo",
+    "University of Pennsylvania","University of Pittsburgh",
     "Vassar College","Villanova University",
     "Webb Institute","Dickinson College",
     "Barnard College",
@@ -73,39 +84,55 @@ const REGION_POOLS = {
   ],
 
   mid_atlantic: [
-    "Old Dominion University","University of Richmond","University of Virginia",
-    "Virginia Tech",
+    // FIXED July 2026: Virginia consolidated here entirely — previously split
+    // across mid_atlantic AND southeast (UVA/Virginia Tech/Richmond duplicated
+    // in both), with William & Mary, JMU, Regent, and Washington & Lee only
+    // in southeast. Virginia is culturally/economically Mid-Atlantic, not
+    // Deep South — all 7 VA schools now live here, and nowhere else.
+    "College of William and Mary","James Madison University","Old Dominion University",
+    "Regent University","University of Richmond","University of Virginia",
+    "Virginia Tech","Washington and Lee University",
     "Johns Hopkins University",
     "University of Maryland College Park",
-    "University of Virginia",
     "St. John's College",
+    "American University","George Washington University","Georgetown University",
+    "University of Delaware","Marshall University","Howard University",
   ],
 
   southeast: [
-    "Appalachian State University","Auburn University","Baylor University","Belmont University",
-    "Clemson University","College of William and Mary","Davidson College","Duke University",
+    // FIXED July 2026: removed Baylor University (TX — already correctly in
+    // southwest, this was a duplicate), University of Oklahoma (OK — already
+    // correctly in southwest, duplicate), and Howard University (DC — not in
+    // the AL/AR/FL/GA/KY/LA/MS/NC/SC/TN label at all, moved to mid_atlantic).
+    // Added Morehead State University (KY, moved here from midwest).
+    "Appalachian State University","Auburn University","Belmont University",
+    "Clemson University","Davidson College","Duke University",
     "Elon University","Emory University","Flagler College","Florida Atlantic University",
     "Florida State University","Furman University","Georgia Institute of Technology","Georgia State University",
-    "High Point University","Howard University","James Madison University","Louisiana State University",
-    "Marion Military Institute","Mississippi State University","North Carolina State University","Regent University",
+    "High Point University","Louisiana State University",
+    "Marion Military Institute","Mississippi State University","Morehead State University","North Carolina State University",
     "Rollins College","Spelman College","Stetson University",
     "The University of Alabama","Tulane University","University of Alabama",
     "University of Arkansas","University of Central Florida","University of Florida","University of Georgia",
     "University of Kentucky","University of Louisville","University of Memphis","University of Miami",
     "University of Mississippi","University of North Carolina Chapel Hill","University of North Carolina at Chapel Hill",
-    "University of Oklahoma","University of Richmond","University of South Carolina","University of South Florida",
-    "University of Tennessee","University of Tennessee at Chattanooga","University of Tennessee, Knoxville","University of Virginia",
-    "University of the South","Vanderbilt University","Virginia Tech","Wake Forest University",
-    "Washington and Lee University","Wofford College",
+    "University of South Carolina","University of South Florida",
+    "University of Tennessee","University of Tennessee at Chattanooga","University of Tennessee, Knoxville",
+    "University of the South","Vanderbilt University","Wake Forest University",
+    "Wofford College",
     "East Carolina University",
   ],
 
   midwest: [
+    // FIXED July 2026: removed Marshall University (WV — not in the midwest
+    // label IA/IL/IN/KS/MI/MN/MO/ND/NE/OH/SD/WI; moved to mid_atlantic,
+    // filling the WV gap flagged in that pool's audit) and Morehead State
+    // University (KY — moved to southeast, where UK/Louisville already live).
     "Butler University","Calvin University","Carleton College","Case Western Reserve University",
     "College of Wooster","Creighton University","Denison University","Drake University",
     "Grinnell College","Indiana University","Indiana University Bloomington","Iowa State University",
-    "Kenyon College","Macalester College","Marquette University","Marshall University",
-    "Michigan State University","Morehead State University","North Dakota State University","Northwestern University",
+    "Kenyon College","Macalester College","Marquette University",
+    "Michigan State University","North Dakota State University","Northwestern University",
     "Oberlin College","Ohio State University","Ohio Wesleyan University","Purdue University",
     "Rose-Hulman Institute of Technology","South Dakota State University","University of Chicago","University of Illinois Urbana-Champaign",
     "University of Iowa","University of Kansas","University of Michigan","University of Minnesota",
@@ -114,6 +141,7 @@ const REGION_POOLS = {
     "Wheaton College",
     "College of the Ozarks",
     "Illinois Wesleyan University",
+    "Kettering University",
   ],
 
   rocky_mountains: [
@@ -165,17 +193,23 @@ const REGION_POOLS = {
   ],
 
   southwest: [
-    "Abilene Christian University","Arizona State University","Baylor University","Brigham Young University",
-    "College of William and Mary","Colorado State University","Duke University","Elon University",
-    "Mississippi State University","New Mexico State University","North Carolina State University","Northern Arizona University",
+    // FIXED July 2026: removed 20 misplaced schools that already have correct
+    // homes elsewhere (Brigham Young/University of Utah → rocky_mountains,
+    // Colorado State/University of Denver → rocky_mountains, College of
+    // William and Mary/Virginia Tech → mid_atlantic, Duke/Elon/Mississippi
+    // State/North Carolina State/Tulane/University of Alabama/University of
+    // Kentucky/University of Louisville/University of Mississippi/University
+    // of Tennessee/University of the South/Vanderbilt/Wake Forest →
+    // southeast, University of Kansas/University of Missouri → midwest).
+    // This pool should only contain schools actually in AZ, NM, OK, or TX —
+    // matching the actual region button label "AZ · NM · OK · TX".
+    "Abilene Christian University","Arizona State University","Baylor University",
+    "New Mexico State University","Northern Arizona University",
     "Oklahoma State University","Prescott College","Rice University","Southern Methodist University",
     "Texas A&M University","Texas Christian University","Texas Tech University","The University of Texas at Dallas",
-    "Tulane University","University of Alabama","University of Arizona","University of Arkansas",
-    "University of Denver","University of Houston","University of Kansas","University of Kentucky",
-    "University of Louisville","University of Mississippi","University of Missouri","University of New Mexico",
-    "University of Oklahoma","University of Tennessee","University of Texas Permian Basin","University of Texas at Austin",
-    "University of Tulsa","University of Utah","University of the South","Vanderbilt University",
-    "Virginia Tech","Wake Forest University",
+    "University of Arizona","University of Houston","University of New Mexico",
+    "University of Oklahoma","University of Texas Permian Basin","University of Texas at Austin",
+    "University of Tulsa",
     "SMU",
     "TCU",
     "UT Austin",
@@ -213,6 +247,21 @@ const SCALE_MAP = {
 };
 
 const SCHOOL_ENROLLMENT = {
+  // FIXED July 2026: none of the military_academies pool schools existed
+  // here at all, meaning that entire region silently returned zero results
+  // regardless of pool contents — a missing-foundational-data bug, distinct
+  // from the pool-contamination issues fixed elsewhere. Figures are real,
+  // stable undergraduate enrollment (federal service academies and senior
+  // military colleges don't fluctuate much year to year).
+  // NOTE: United States Marine Corps University is professional military
+  // education for commissioned officers, not an undergraduate destination —
+  // left OUT of this list rather than given a fabricated enrollment number.
+  // Worth a separate decision on whether it belongs in this pool at all.
+  "United States Air Force Academy":4300,"United States Naval Academy":4500,
+  "United States Military Academy West Point":4400,"United States Coast Guard Academy":1000,
+  "United States Merchant Marine Academy":950,"The Citadel":3700,
+  "Virginia Military Institute":1700,"University of North Georgia":20000,
+  "Norwich University":2700,
   "Vanderbilt University":7000,"University of Michigan":47000,"Indiana University":45000,
   "University of Georgia":40000,"University of Florida":55000,"University of Oklahoma":28000,
   "Louisiana State University":37000,"Auburn University":32000,
