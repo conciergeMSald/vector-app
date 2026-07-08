@@ -1,164 +1,20 @@
 /**
  * VECTOR Lifescape — College Preference Mapping
- * Version: 3.0 — June 17, 2026
+ * Version: 3.1 — July 8, 2026
  * Coverage: All 207 schools across V1 + V2 + V3 + V4 databases
  *
- * Maps student college preferences (conference, region, scale, social scene)
+ * Maps student college preferences (region, scale, social scene)
  * to the university database pool. RIASEC + NAICS ranking fires within
  * the filtered pool to produce final recommendations.
+ *
+ * v3.1 changes: fixed DB_DISPLAY_TO_POOL_KEY — 5 of 10 regions were
+ * silently mapped to the wrong pool or to a nonexistent 'west_coast' key
+ * (california/pacific_nw resolved to nothing; new_england, mid_atlantic,
+ * rocky_mountains resolved to the wrong real pool). Removed CONFERENCE_POOLS
+ * and all conference-filtering logic — no UI screen has ever set this
+ * preference, confirmed dead code.
  */
 
-// ─────────────────────────────────────────────────────────────
-// CONFERENCE → SCHOOL POOL MAP — 207 schools fully covered
-// ─────────────────────────────────────────────────────────────
-
-const CONFERENCE_POOLS = {
-
-  // ── SEC (2025-26 current: 16 members) ───────────────────────────────────
-  // Original 14 + Oklahoma + Texas (both joined July 2025)
-  // Missouri has been SEC since 2012
-  sec: [
-    "University of Georgia","University of Florida","University of Alabama",
-    "Auburn University","Louisiana State University","University of Tennessee",
-    "University of Arkansas","University of South Carolina","University of Kentucky",
-    "Vanderbilt University","University of Mississippi","Mississippi State University",
-    "University of Missouri","University of Oklahoma",
-    "Texas A&M University",
-    "University of Texas at Austin"
-  ],
-
-  // ── BIG TEN (2024-25 current: 18 members) ───────────────────────────────
-  // Added UCLA, USC, Oregon, Washington in 2024
-  big_ten: [
-    "University of Michigan","Michigan State University","Indiana University",
-    "Ohio State University","Penn State University","University of Iowa",
-    "Iowa State University","University of Nebraska-Lincoln","University of Minnesota",
-    "Northwestern University","Purdue University","Rutgers University",
-    "University of Maryland College Park",
-    // 2024 additions from Pac-12
-    "University of Oregon","University of Washington",
-    "University of Illinois Urbana-Champaign",
-    "University of Wisconsin-Madison","University of California Los Angeles"
-  ],
-
-  // ── ACC (2024-25 current: 17 members + Notre Dame partial) ─────────────
-  // Added Cal, Stanford, SMU in 2024
-  acc: [
-    "Duke University","Wake Forest University","University of Virginia",
-    "Clemson University","University of Miami","Georgia Institute of Technology",
-    "North Carolina State University","Virginia Tech","Boston College",
-    "University of Pittsburgh","Syracuse University","University of Louisville",
-    "Florida State University","Elon University","College of William and Mary",
-    // 2024 additions from Pac-12
-    "Stanford University",
-    "Southern Methodist University",
-    "University of North Carolina Chapel Hill"
-  ],
-
-  // ── BIG 12 (2024-25 current: 16 members) ────────────────────────────────
-  // Oklahoma + Texas LEFT for SEC in 2025
-  // Arizona, ASU, Colorado, Utah joined from Pac-12 in 2024
-  // BYU, UCF, Cincinnati, Houston joined 2023
-  big_12: [
-    "University of Kansas","Baylor University","University of Central Florida",
-    "Brigham Young University",
-    // 2024 additions from Pac-12:
-    "University of Arizona","Arizona State University",
-    "University of Colorado Boulder","University of Utah",
-    // Kansas State, Oklahoma State, TCU, Texas Tech, West Virginia, Iowa State
-    // Cincinnati, Houston not in our DB,
-    "Texas Christian University",
-    "Texas Tech University"
-  ],
-
-  // ── WEST COAST / PAC-12 LEGACY ─────────────────────────────────────────
-  // The old Pac-12 has dramatically changed. For students choosing "West Coast
-  // sports culture" we use school geography rather than conference membership.
-  // Oregon, Washington → Big Ten. Arizona, ASU, Colorado, Utah → Big 12.
-  // Stanford → ACC. Oregon State + Washington State remain in rebuilt Pac-12.
-  // We label this "West Coast" for students, not "Pac-12".
-  pac: [
-    // Remaining Pac-12 (rebuilt 2026):
-    "Oregon State University",
-    // West Coast schools regardless of current conference:
-    "Stanford University","UC San Diego",
-    "University of California Irvine","University of California Davis",
-    "University of California Santa Cruz",
-    "California Polytechnic State University San Luis Obispo",
-    "Pepperdine University","Santa Clara University","Gonzaga University",
-    "Boise State University","University of Denver",
-    "University of San Diego","University of San Francisco",
-    "Saint Mary's College of California","California Institute of Technology",
-    "California State University Chico","California State University Fresno",
-    "California State University Fullerton","California State University Long Beach",
-    "California State University Los Angeles","California State University Northridge",
-    "UC Riverside",
-    // Big 12 members who are geographically West Coast:
-    "University of Arizona","Arizona State University",
-    "University of Utah","Brigham Young University",
-    "University of Central Florida",
-    // Big Ten members who are geographically West Coast:
-    "University of Oregon","University of Washington",
-    "San Diego State University",
-    "UC Santa Barbara",
-    "University of Southern California",
-    "UC Berkeley","University of California Los Angeles"
-  ],
-
-  ivy: [
-    // True Ivies
-    "Harvard University","Yale University","Princeton University","Columbia University",
-    "University of Pennsylvania","Brown University","Cornell University","Dartmouth College",
-    // Ivy-equivalent: academic prestige first
-    "Massachusetts Institute of Technology","Stanford University","University of Chicago",
-    "Northwestern University","Duke University","Vanderbilt University",
-    "Georgetown University","University of Notre Dame","Emory University",
-    "Tulane University","Johns Hopkins University","Carnegie Mellon University",
-    "New York University","Boston College","University of Pittsburgh",
-    "Northeastern University","Case Western Reserve University",
-    "George Washington University","American University",
-    "United States Military Academy","College of William and Mary",
-    // Elite liberal arts
-    "Williams College","Amherst College","Bowdoin College","Middlebury College",
-    "Pomona College","Claremont McKenna College","Harvey Mudd College",
-    "Colorado College","Deep Springs College","University of the South",
-    // Elite specialty / technical
-    "Babson College","Webb Institute","Rose-Hulman Institute of Technology",
-    "Stevens Institute of Technology","Colorado School of Mines",
-    "Worcester Polytechnic Institute","Kettering University",
-    // Strong prestige schools
-    "Wake Forest University","University of Virginia","Villanova University",
-    "Boston University","Fordham University"
-  ],
-
-  div1: [
-    "University of Michigan","Ohio State University","University of Georgia",
-    "University of Florida","Clemson University","Auburn University",
-    "Louisiana State University","University of Tennessee","University of Oklahoma",
-    "University of Kansas","University of Oregon","University of Washington",
-    "Arizona State University","University of Arizona","Penn State University",
-    "Indiana University","Michigan State University","University of Iowa",
-    "University of Nebraska-Lincoln","University of Arkansas",
-    "University of South Carolina","University of Kentucky","University of Louisville",
-    "University of Utah","Boise State University","Oregon State University",
-    "University of Minnesota","University of Missouri","University of Colorado Boulder",
-    "Colorado State University","Butler University","Gonzaga University",
-    "Creighton University","Drake University","University of Alabama",
-    "Florida State University","North Carolina State University","Virginia Tech",
-    "Mississippi State University","University of Mississippi",
-    "University of South Florida","University of Central Florida",
-    "Florida Atlantic University","Baylor University","Rutgers University",
-    "Purdue University","Syracuse University","University of Connecticut",
-    "University of Maryland College Park","Brigham Young University",
-    "Iowa State University","University of Notre Dame","University of Pittsburgh",
-    "Boston College","Villanova University","Temple University","Drexel University",
-    "Northeastern University","Stetson University","Boston University",
-    "Fordham University","UC Riverside","University of Delaware","California State University Fullerton",
-    "California State University Northridge","California State University Long Beach"
-  ],
-
-  no_sports: ["__ALL__"]
-};
 
 // ─────────────────────────────────────────────────────────────
 // REGION → SCHOOL POOL MAP — built from database region fields
@@ -1114,11 +970,17 @@ const SIZE_STEP_UP   = { small_campus: 'medium_university', medium_university: '
 const SIZE_STEP_DOWN = { big_university: 'medium_university', medium_university: 'small_campus', small_campus: null };
 
 // OQ-002: geographic adjacency map — used to pad short alternate pools
-// and to build the counselor_3 "Consider Also" set
+// and to build the counselor_3 "Consider Also" set.
+// FIXED July 2026: previous version referenced 'west_coast' and
+// 'south_central', neither of which are real REGION_POOLS keys or
+// selectable UI regions — so this padding silently did nothing for
+// southwest, and had zero entry at all for 6 of the 10 real regions.
 const REGION_ADJACENCY = {
-  southeast: 'south_central', south_central: 'southeast',
-  northeast: 'midwest',       midwest: 'northeast',
-  west_coast: 'southwest',    southwest: 'west_coast',
+  new_england: 'northeast',       northeast: 'new_england',
+  mid_atlantic: 'southeast',      southeast: 'mid_atlantic',
+  midwest: 'northeast',
+  rocky_mountains: 'southwest',   southwest: 'rocky_mountains',
+  pacific_nw: 'california',       california: 'pacific_nw',
 };
 
 function schoolsInSizeBand(schoolNames, sizeKey) {
@@ -1152,14 +1014,8 @@ function getAdjacentRegionPool(regions) {
 // weight, every line of scoring logic is identical to before. It now
 // returns the flat ranked-name array exactly as it always did.
 function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {
-  const { campus_scale, regions, conference, social_scene, religion } = collegePrefs;
+  const { campus_scale, regions, social_scene, religion } = collegePrefs;
   const gpa = gpaData ? gpaData.normalized : null;
-
-  // Step 1 — Conference pool
-  let conferencePool = null;
-  if (conference && conference !== 'no_sports') {
-    conferencePool = CONFERENCE_POOLS[conference] || null;
-  }
 
   // Step 2 — Region pool
   let regionPool = null;
@@ -1176,11 +1032,10 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
   // Step 3 — All school names
   const allSchools = Object.keys(SCHOOL_ENROLLMENT);
 
-  // Step 4 — Intersection filter
+  // Step 4 — Region filter
   let eligible = allSchools.filter(school => {
-    const inConf = conferencePool === null || conferencePool.includes(school);
     const inRegion = regionPool === null || regionPool.includes(school);
-    return inConf && inRegion;
+    return inRegion;
   });
 
   // Step 5 — Scale filter
@@ -1302,15 +1157,23 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
 // This function bridges that gap and ALWAYS returns a flat ranked-name
 // array so the existing callD block (lifescape.html) needs zero changes.
 
+// FIXED July 2026: every region key below has its own distinct, real entry
+// in REGION_POOLS (verified directly against the REGION_POOLS definition
+// above). The previous version of this table incorrectly collapsed
+// new_england->northeast, mid_atlantic->southeast, rocky_mountains->southwest,
+// and pacific_nw/california->'west_coast' (a key that never existed in
+// REGION_POOLS at all). That meant 5 of 10 regions silently routed to the
+// wrong pool or to nothing — most critically, selecting California alone
+// returned zero true California schools for the primary match list.
 const DB_DISPLAY_TO_POOL_KEY = {
-  new_england: 'northeast',
+  new_england: 'new_england',
   northeast: 'northeast',
-  mid_atlantic: 'southeast',
+  mid_atlantic: 'mid_atlantic',
   southeast: 'southeast',
   midwest: 'midwest',
-  rocky_mountains: 'southwest',
-  pacific_nw: 'west_coast',
-  california: 'west_coast',
+  rocky_mountains: 'rocky_mountains',
+  pacific_nw: 'pacific_nw',
+  california: 'california',
   southwest: 'southwest',
   military_academies: 'military_academies',
 };
@@ -1385,12 +1248,7 @@ function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpa
 // ─────────────────────────────────────────────────────────────
 
 function summarizePreferences(collegePrefs) {
-  const { campus_scale, regions, conference, social_scene, religion } = collegePrefs;
-  const confLabels = {
-    sec:'SEC', big_ten:'Big Ten', acc:'ACC', big_12:'Big 12',
-    pac:'Pac-12 / West Coast', ivy:'Ivy / Ivy-equivalent',
-    div1:'Division I', no_sports:'No sports preference'
-  };
+  const { campus_scale, regions, social_scene, religion } = collegePrefs;
   const scaleLabels = {
     big_university:'large university (20,000+)',
     medium_university:'medium university (5,000-25,000)',
@@ -1408,7 +1266,6 @@ function summarizePreferences(collegePrefs) {
     no_preference:'No social scene preference'
   };
   const parts = [];
-  if (conference && confLabels[conference]) parts.push(confLabels[conference]);
   if (campus_scale && scaleLabels[campus_scale]) parts.push(scaleLabels[campus_scale]);
   if (regions && regions.length && !regions.includes('no_preference')) {
     parts.push(regions.map(r => regionLabels[r]).filter(Boolean).join(' or '));
@@ -1418,7 +1275,7 @@ function summarizePreferences(collegePrefs) {
 }
 
 if (typeof module !== 'undefined') module.exports = {
-  CONFERENCE_POOLS, REGION_POOLS, SCALE_MAP, SCHOOL_ENROLLMENT,
+  REGION_POOLS, SCALE_MAP, SCHOOL_ENROLLMENT,
   SOCIAL_SCENE_AFFINITY, RELIGIOUS_AFFILIATION, RELIGIOUS_CULTURE_SCHOOLS,
   SCHOOL_GPA_RANGES, getGPATier, GPA_TIER_THRESHOLDS, HONORS_COLLEGES, getConsultantExpansion, matchUniversities, scoreAndRankSchools, summarizePreferences, getAdjacentMatches, getProfileAdjacentMatches
 };

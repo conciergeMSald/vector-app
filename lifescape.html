@@ -4234,7 +4234,7 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       adjacent_match:           (adjacentPicks && adjacentPicks[0] && adjacentPicks[0].name) || '',
       unexpected_match:         (profileAdjacentPicks && profileAdjacentPicks[0] && profileAdjacentPicks[0].name) || '',
       school_count_total:       (callDData || []).length,
-      cc_pathway_shown:         (LS_STATE.callEResult && LS_STATE.callEResult.actIX) ? 'Y' : 'N',
+      cc_pathway_shown:         !!(LS_STATE.callEResult && LS_STATE.callEResult.actIX),
       report_format:            'Lifescape',
       voice_used:               LS_STATE.voice || 'student',
       consultant_code:          LS_STATE.consultant_code || '',
@@ -4293,14 +4293,25 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
         console.log('[VECTOR Lifescape] Session saved to Airtable:', d.airtable_id, '| Consultant:', LS_STATE.consultant_code || 'none');
       } else {
         var errMsg = d.message || d.error || 'Session capture failed';
-        console.error('[VECTOR Lifescape] Airtable session error:', d);
+        console.error('[VECTOR Lifescape] Airtable session error:', {
+          message: d?.message,
+          error: d?.error,
+          detail: d?.detail,
+          success: d?.success,
+          airtable_status: d?.airtable_status,
+          raw: JSON.stringify(d)
+        });
         if (typeof showLsToast === 'function') {
           showLsToast('Session data could not be saved. Please screenshot your report. (' + errMsg + ')');
         }
       }
     })
     .catch(function(err){
-      console.error('[VECTOR Lifescape] captureToAirtable fetch error:', err);
+      console.error('[VECTOR Lifescape] captureToAirtable fetch error:', {
+        message: err?.message,
+        name: err?.name,
+        stack: err?.stack
+      });
       if (typeof showLsToast === 'function') {
         showLsToast('Connection error — your report is complete but session data was not saved.');
       }
@@ -4327,7 +4338,11 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
     });
 
   } catch(err) {
-    console.error('[VECTOR Lifescape] captureToAirtable build error:', err);
+    console.error('[VECTOR Lifescape] captureToAirtable build error:', {
+      message: err?.message,
+      name: err?.name,
+      stack: err?.stack
+    });
   }
 }
 
