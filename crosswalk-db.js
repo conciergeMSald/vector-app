@@ -135,15 +135,27 @@ const VECTOR_CROSSWALK = [
 
   { id:'nail_art', label:'I do nail art',
     label_parent:'Does nail art',
-    cluster:'make',
+    cluster:'make', gender:'female',
     riasec_weights:{R:1,I:0,A:3,S:1,E:1,C:2},
     naics_sectors:[81,44,54] },
 
   { id:'hair_makeup', label:'I do hair or makeup on myself or others',
     label_parent:'Does hair or makeup on themselves or others',
-    cluster:'make',
+    cluster:'make', gender:'female',
     riasec_weights:{R:1,I:0,A:3,S:2,E:1,C:1},
     naics_sectors:[81,44,62] },
+
+  { id:'roblox_building', label:'I build or play in Roblox',
+    label_parent:'Builds or plays in Roblox',
+    cluster:'make', gender:'male',
+    riasec_weights:{R:1,I:2,A:2,S:1,E:1,C:1},
+    naics_sectors:[51,71,54] },
+
+  { id:'lego_building', label:'I build with LEGOs',
+    label_parent:'Builds with LEGOs',
+    cluster:'make', gender:'male',
+    riasec_weights:{R:3,I:1,A:2,S:0,E:0,C:1},
+    naics_sectors:[31,23,54] },
 
   { id:'three_d_printing', label:'I 3D print things',
     label_parent:'3D prints things',
@@ -251,9 +263,15 @@ const VECTOR_CROSSWALK = [
 
   { id:'dance', label:'I dance — hip hop, ballet, ballroom, anything',
     label_parent:'Dances — hip hop, ballet, ballroom, anything',
-    cluster:'move', sport_type:'individual',
+    cluster:'move', sport_type:'individual', gender:'female',
     riasec_weights:{R:2,I:0,A:3,S:1,E:1,C:1},
     naics_sectors:[71,61] },
+
+  { id:'ride_bike', label:'I ride my bike',
+    label_parent:'Rides their bike',
+    cluster:'move', sport_type:'individual',
+    riasec_weights:{R:3,I:0,A:0,S:1,E:0,C:0},
+    naics_sectors:[71,61,48] },
 
   { id:'yoga', label:'I do yoga',
     label_parent:'Does yoga',
@@ -361,8 +379,14 @@ const VECTOR_CROSSWALK = [
     riasec_weights:{R:0,I:3,A:0,S:0,E:0,C:3},
     naics_sectors:[51,54,52,61] },
 
-  { id:'fantasy_sports', label:'I play fantasy sports',
-    label_parent:'Plays fantasy sports',
+  { id:'youtube_learning', label:'I watch YouTube videos to learn how to do things',
+    label_parent:'Watches YouTube videos to learn how to do things',
+    cluster:'think',
+    riasec_weights:{R:1,I:2,A:1,S:0,E:0,C:1},
+    naics_sectors:[51,61,54] },
+
+  { id:'fantasy_sports', label:'I play fantasy sports in a league',
+    label_parent:'Plays fantasy sports in a league',
     cluster:'think',
     riasec_weights:{R:0,I:2,A:0,S:1,E:3,C:2},
     naics_sectors:[71,52,51,54] },

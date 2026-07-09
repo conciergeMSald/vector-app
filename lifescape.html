@@ -6142,7 +6142,7 @@ async function submitLifescape() {
               matchedSchools,
               profile.naicsSectors,
               profile.comboUnlocks,
-              1,
+              3,
               _adjRegionPool,
               COLLEGE_PREFS.campus_scale || null
             );
@@ -6152,13 +6152,17 @@ async function submitLifescape() {
               matchedSchools,
               profile.riasec,
               profile.naicsSectors,
-              3,
+              6,
               _adjRegionPool,
               COLLEGE_PREFS.campus_scale || null
             );
           }
 
           // ── Size-adjacent picks: same region, same social scene, different size ──
+          // Raised from 2->10 as part of expanding the counselor view to up to
+          // 24 schools total (primary + adjacent + profile-adjacent + size-adjacent
+          // + consultant expansion), spanning sizes outside the family's stated
+          // preference so the counselor can see genuinely comparable alternatives.
           var sizeAdjacentPicks = [];
           if (typeof getSizeAdjacentMatches !== 'undefined') {
             sizeAdjacentPicks = getSizeAdjacentMatches(
@@ -6166,9 +6170,32 @@ async function submitLifescape() {
               COLLEGE_PREFS.regions || [],
               COLLEGE_PREFS.social_scene || null,
               COLLEGE_PREFS.campus_scale || null,
-              2
+              10
             );
           }
+
+          // ── Cross-pool dedup ──────────────────────────────────────────────
+          // adjacentPicks, profileAdjacentPicks, and sizeAdjacentPicks are computed
+          // independently and can legitimately surface the same school (e.g. a
+          // school that's both NAICS-adjacent AND RIASEC-profile-adjacent). Without
+          // this, the counselor view would show the same school twice. Each pool
+          // is filtered against everything already claimed by an earlier pool —
+          // primary matches first, then adjacent, then profile-adjacent, then size.
+          (function dedupeExpansionPools() {
+            const claimed = new Set(matchedSchools);
+            adjacentPicks.forEach(function(s) { claimed.add(s.name); });
+            profileAdjacentPicks = profileAdjacentPicks.filter(function(s) {
+              if (claimed.has(s.name)) return false;
+              claimed.add(s.name);
+              return true;
+            });
+            sizeAdjacentPicks = sizeAdjacentPicks.filter(function(s) {
+              if (claimed.has(s.name)) return false;
+              claimed.add(s.name);
+              return true;
+            });
+          })();
+
           console.log('[callD] size-adjacent picks:', sizeAdjacentPicks.map(s=>s.name));
           LS_STATE.sizeAdjacentPicks = sizeAdjacentPicks;
           console.log('[callD] adjacent picks:', adjacentPicks.map(s=>s.name));
@@ -6185,6 +6212,9 @@ async function submitLifescape() {
                 COLLEGE_PREFS.campus_scale || null,
                 matchedSchools
               );
+              // Same dedup discipline against everything claimed so far
+              const _claimedSoFar = new Set([...matchedSchools, ...adjacentPicks.map(s=>s.name), ...profileAdjacentPicks.map(s=>s.name), ...sizeAdjacentPicks.map(s=>s.name)]);
+              _consultantExpansion = _consultantExpansion.filter(function(s) { return !_claimedSoFar.has(s.name); });
               console.log('[callD] consultant expansion:', _consultantExpansion.map(s=>s.name));
             } catch(expErr) {
               console.warn('[consultantExpansion] failed gracefully:', expErr.message);

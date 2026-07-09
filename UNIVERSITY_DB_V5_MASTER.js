@@ -561,6 +561,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "honorsCollege": {
       "exists": true,
+      "gpaMin": 3.6,
       "name": "Barrett, The Honors College",
       "strength": 100,
       "notes": "Barrett is widely regarded as the premier honors college in American public higher education. It provides small seminar-style classes, dedicated residential communities, priority registration, undergraduate research, national fellowship advising, honors thesis requirements, and a liberal arts experience embedded within one of the country's largest research universities. Barrett significantly alters the undergraduate experience and serves as one of ASU's defining competitive advantages."
@@ -7311,6 +7312,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "honorsCollege": {
       "exists": true,
+      "gpaMin": 3.8,
       "name": "LSA Honors Program",
       "strength": 86,
       "notes": "Provides smaller seminar classes, research opportunities, and priority registration within Michigan's large scale."
@@ -7413,6 +7415,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "honorsCollege": {
       "exists": true,
+      "gpaMin": 3.5,
       "name": "South Carolina Honors College",
       "strength": 92,
       "notes": "Consistently ranked among the top public honors colleges nationally. Offers dedicated honors housing, priority registration, smaller seminar-style general education, and its own study abroad and research funding — a genuinely distinct smaller-school experience within USC's large undergraduate population."
@@ -7972,6 +7975,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "honorsCollege": {
       "exists": true,
+      "gpaMin": 3.7,
       "name": "UGA Honors Program",
       "strength": 78,
       "notes": "Provides smaller seminars and priority registration within UGA's larger SEC flagship structure."
@@ -8217,6 +8221,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "honorsCollege": {
       "exists": true,
+      "gpaMin": 3.7,
       "name": "University Honors Program",
       "strength": 80,
       "notes": "Provides smaller seminars and priority registration within UF's larger flagship structure."
@@ -10156,6 +10161,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "honorsCollege": {
       "exists": true,
+      "gpaMin": 3.8,
       "name": "Echols Scholars Program",
       "strength": 84,
       "notes": "Provides curricular flexibility, priority registration, and a close-knit intellectual community within UVA's broader student body."
@@ -10688,6 +10694,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "honorsCollege": {
       "exists": true,
+      "gpaMin": 3.5,
       "name": "CU Boulder Honors Program",
       "strength": 76,
       "notes": "Provides smaller seminars and priority registration within CU Boulder's larger flagship structure."
@@ -18397,6 +18404,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "honorsCollege": {
       "exists": true,
+      "gpaMin": 3.5,
       "name": "Honors and Scholars Program",
       "strength": 84,
       "notes": "Ohio State's Honors and Scholars program provides smaller cohort communities, priority registration, dedicated advising, and research opportunities inside the university's massive scale, meaningfully altering the undergraduate experience for students who opt in."
@@ -21171,6 +21179,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "honorsCollege": {
       "exists": true,
+      "gpaMin": 3.5,
       "name": "University Honors",
       "strength": 80,
       "notes": "Provides smaller cohorts within Maryland's larger flagship structure."
@@ -23007,6 +23016,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "honorsCollege": {
       "exists": true,
+      "gpaMin": 3.7,
       "name": "Honors Carolina",
       "strength": 82,
       "notes": "Provides smaller seminar classes, research opportunities, and priority registration within UNC's broader student body."
@@ -23251,6 +23261,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "honorsCollege": {
       "exists": true,
+      "gpaMin": 3.8,
       "name": "Plan II Honors",
       "strength": 88,
       "notes": "One of the most respected honors programs at any public university, providing small seminars within UT's massive scale."

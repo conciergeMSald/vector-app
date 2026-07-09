@@ -29,18 +29,19 @@ const TILE_POOLS = {
     'cooking','baking','drawing','painting','photography','filmmaking',
     'fashion_design','graphic_design','animation','music_production',
     'playing_instrument','singing','writing_stories','nail_art','hair_makeup',
-    'woodworking','three_d_printing'
+    'woodworking','three_d_printing','roblox_building','lego_building'
   ],
   move: [
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
     'esports_gaming','horseback_riding','rock_climbing','soccer','basketball',
     'football','flag_football','baseball','softball','volleyball','lacrosse','field_hockey',
-    'swim_team','track_relay','club_travel_sports'
+    'swim_team','track_relay','club_travel_sports','ride_bike'
   ],
   think: [
     'science_experiments','psychology','biology','chemistry','coding_programming',
     'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
-    'true_crime','puzzles_brain_teasers','understanding_why_people'
+    'true_crime','puzzles_brain_teasers','understanding_why_people',
+    'youtube_learning','fantasy_sports'
   ],
   people: [
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
@@ -201,7 +202,25 @@ function curateInitialTiles(answers) {
   // too many students span multiple activities (in-school sports, personal
   // hobbies, club/travel teams) for a curated subset to cover everyone.
   // Signature kept identical so existing callers don't need changes.
-  return Object.values(TILE_POOLS).flat();
+  //
+  // FIXED July 2026: this function was silently discarding answers.pronoun,
+  // meaning gender-restricted tiles (nail_art, hair_makeup, dance, cheerleading
+  // -> female only; roblox_building, lego_building -> male only) were never
+  // actually filtered despite being correctly tagged and despite the caller
+  // in lifescape.html correctly passing pronoun in. getTilesForGender()
+  // already existed in crosswalk-db.js with the right logic — it just wasn't
+  // being called from anywhere. Wired in here, at the one place all tile
+  // curation flows through.
+  const allTileIds = Object.values(TILE_POOLS).flat();
+  const pronoun = answers && answers.pronoun;
+  const gender = pronoun === 'he' ? 'male' : pronoun === 'she' ? 'female' : null;
+  if (!gender || typeof VECTOR_CROSSWALK === 'undefined') return allTileIds;
+
+  return allTileIds.filter(id => {
+    const tile = VECTOR_CROSSWALK.find(t => t.id === id);
+    if (!tile || !tile.gender || tile.gender === 'both') return true;
+    return tile.gender === gender;
+  });
 }
 
 function getCluster(tileId) {

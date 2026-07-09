@@ -22,215 +22,44 @@
 
 const REGION_POOLS = {
   new_england: [
-    "Brown University","Dartmouth College","Gordon College","Harvard University",
-    "Keene State College","Massachusetts Institute of Technology",
-    "University of Connecticut","University of Maine","University of Massachusetts Amherst","University of New Hampshire",
-    "University of Vermont","Williams College","Yale University",
-    "Maine Maritime Academy",
-    "Massachusetts Maritime Academy",
-    "Amherst College",
-    "Babson College",
-    "Bates College",
-    "Bentley University",
-    "Berklee College of Music",
-    "Boston College",
-    "Boston University",
-    "Bowdoin College",
-    "Brown University",
-    "Colby College",
-    "Dartmouth College",
-    "Harvard University",
-    "Massachusetts Institute of Technology",
-    "Middlebury College",
-    "Northeastern University",
-    "Quinnipiac University",
-    "Rhode Island School of Design",
-    "University of Connecticut",
-    "University of Rhode Island",
-    "Williams College",
-    "Worcester Polytechnic Institute",
-    "Yale University",
-    "Providence College",
-    "Wesleyan University",
+    "Brown University","Dartmouth College","Gordon College","Harvard University","Keene State College","Massachusetts Institute of Technology","University of Connecticut","University of Maine","University of Massachusetts Amherst","University of New Hampshire","University of Vermont","Williams College","Yale University","Maine Maritime Academy","Massachusetts Maritime Academy","Amherst College","Babson College","Bates College","Bentley University","Berklee College of Music","Boston College","Boston University","Bowdoin College","Colby College","Middlebury College","Northeastern University","Quinnipiac University","Rhode Island School of Design","University of Rhode Island","Worcester Polytechnic Institute","Providence College","Wesleyan University",
   ],
 
   northeast: [
-    // FIXED July 2026: removed 9 misplaced/duplicate schools. American
-    // University, George Washington University, and Georgetown University
-    // (DC) → moved to mid_atlantic. University of Delaware → moved to
-    // mid_atlantic (grouped with MD/VA/DC rather than NY/NJ/PA). Bates
-    // College and Colby College (ME) → moved to new_england. Case Western
-    // Reserve University (OH) and Kettering University (MI) → already/now
-    // correctly in midwest. Reed College (OR) → already correctly in
-    // pacific_nw. University of Massachusetts Amherst → already correctly
-    // in new_england, was a duplicate here. This pool should only contain
-    // NY/NJ/PA schools — matching the actual region button label "NY · NJ · PA".
-    "Binghamton University","Bryn Mawr College",
-    "Bucknell University","Carnegie Mellon University","Colgate University",
-    "Columbia University","Cornell University","Drexel University","Fashion Institute of Technology","Fordham University","Franklin and Marshall College",
-    "Hamilton College","Haverford College","Ithaca College",
-    "Lehigh University","New York University",
-    "Penn State University","Pratt Institute","Princeton University",
-    "Rochester Institute of Technology",
-    "Rutgers University","Stevens Institute of Technology","Swarthmore College","Syracuse University",
-    "Temple University","Union College","United States Military Academy",
-    "University at Buffalo",
-    "University of Pennsylvania","University of Pittsburgh",
-    "Vassar College","Villanova University",
-    "Webb Institute","Dickinson College",
-    "Barnard College",
-    "Gettysburg College",
-    "United States Merchant Marine Academy",
+    "NY · NJ · PA","Binghamton University","Bryn Mawr College","Bucknell University","Carnegie Mellon University","Colgate University","Columbia University","Cornell University","Drexel University","Fashion Institute of Technology","Fordham University","Franklin and Marshall College","Hamilton College","Haverford College","Ithaca College","Lehigh University","New York University","Penn State University","Pratt Institute","Princeton University","Rochester Institute of Technology","Rutgers University","Stevens Institute of Technology","Swarthmore College","Syracuse University","Temple University","Union College","United States Military Academy","University at Buffalo","University of Pennsylvania","University of Pittsburgh","Vassar College","Villanova University","Webb Institute","Dickinson College","Barnard College","Gettysburg College","United States Merchant Marine Academy",
   ],
 
   mid_atlantic: [
-    // FIXED July 2026: Virginia consolidated here entirely — previously split
-    // across mid_atlantic AND southeast (UVA/Virginia Tech/Richmond duplicated
-    // in both), with William & Mary, JMU, Regent, and Washington & Lee only
-    // in southeast. Virginia is culturally/economically Mid-Atlantic, not
-    // Deep South — all 7 VA schools now live here, and nowhere else.
-    "College of William and Mary","James Madison University","Old Dominion University",
-    "Regent University","University of Richmond","University of Virginia",
-    "Virginia Tech","Washington and Lee University",
-    "Johns Hopkins University",
-    "University of Maryland College Park",
-    "St. John's College",
-    "American University","George Washington University","Georgetown University",
-    "University of Delaware","Marshall University","Howard University",
+    "College of William and Mary","James Madison University","Old Dominion University","Regent University","University of Richmond","University of Virginia","Virginia Tech","Washington and Lee University","Johns Hopkins University","University of Maryland College Park","St. John's College","American University","George Washington University","Georgetown University","University of Delaware","Marshall University","Howard University",
   ],
 
   southeast: [
-    // FIXED July 2026: removed Baylor University (TX — already correctly in
-    // southwest, this was a duplicate), University of Oklahoma (OK — already
-    // correctly in southwest, duplicate), and Howard University (DC — not in
-    // the AL/AR/FL/GA/KY/LA/MS/NC/SC/TN label at all, moved to mid_atlantic).
-    // Added Morehead State University (KY, moved here from midwest).
-    "Appalachian State University","Auburn University","Belmont University",
-    "Clemson University","Davidson College","Duke University",
-    "Elon University","Emory University","Flagler College","Florida Atlantic University",
-    "Florida State University","Furman University","Georgia Institute of Technology","Georgia State University",
-    "High Point University","Louisiana State University",
-    "Marion Military Institute","Mississippi State University","Morehead State University","North Carolina State University",
-    "Rollins College","Spelman College","Stetson University",
-    "The University of Alabama","Tulane University","University of Alabama",
-    "University of Arkansas","University of Central Florida","University of Florida","University of Georgia",
-    "University of Kentucky","University of Louisville","University of Memphis","University of Miami",
-    "University of Mississippi","University of North Carolina Chapel Hill","University of North Carolina at Chapel Hill",
-    "University of South Carolina","University of South Florida",
-    "University of Tennessee","University of Tennessee at Chattanooga","University of Tennessee, Knoxville",
-    "University of the South","Vanderbilt University","Wake Forest University",
-    "Wofford College",
-    "East Carolina University",
+    "Appalachian State University","Auburn University","Belmont University","Clemson University","Davidson College","Duke University","Elon University","Emory University","Flagler College","Florida Atlantic University","Florida State University","Furman University","Georgia Institute of Technology","Georgia State University","High Point University","Louisiana State University","Marion Military Institute","Mississippi State University","Morehead State University","North Carolina State University","Rollins College","Spelman College","Stetson University","University of Alabama","Tulane University","University of Arkansas","University of Central Florida","University of Florida","University of Georgia","University of Kentucky","University of Louisville","University of Memphis","University of Miami","University of Mississippi","University of North Carolina Chapel Hill","University of South Carolina","University of South Florida","University of Tennessee","University of Tennessee at Chattanooga","University of the South","Vanderbilt University","Wake Forest University","Wofford College","East Carolina University",
   ],
 
   midwest: [
-    // FIXED July 2026: removed Marshall University (WV — not in the midwest
-    // label IA/IL/IN/KS/MI/MN/MO/ND/NE/OH/SD/WI; moved to mid_atlantic,
-    // filling the WV gap flagged in that pool's audit) and Morehead State
-    // University (KY — moved to southeast, where UK/Louisville already live).
-    "Butler University","Calvin University","Carleton College","Case Western Reserve University",
-    "College of Wooster","Creighton University","Denison University","Drake University",
-    "Grinnell College","Indiana University","Indiana University Bloomington","Iowa State University",
-    "Kenyon College","Macalester College","Marquette University",
-    "Michigan State University","North Dakota State University","Northwestern University",
-    "Oberlin College","Ohio State University","Ohio Wesleyan University","Purdue University",
-    "Rose-Hulman Institute of Technology","South Dakota State University","University of Chicago","University of Illinois Urbana-Champaign",
-    "University of Iowa","University of Kansas","University of Michigan","University of Minnesota",
-    "University of Missouri","University of Nebraska-Lincoln","University of Nebraska–Lincoln","University of North Dakota",
-    "University of Notre Dame","University of Wisconsin-Madison","University of Wisconsin–Madison","Washington University in St. Louis",
-    "Wheaton College",
-    "College of the Ozarks",
-    "Illinois Wesleyan University",
-    "Kettering University",
+    "Butler University","Calvin University","Carleton College","Case Western Reserve University","College of Wooster","Creighton University","Denison University","Drake University","Grinnell College","Indiana University","Iowa State University","Kenyon College","Macalester College","Marquette University","Michigan State University","North Dakota State University","Northwestern University","Oberlin College","Ohio State University","Ohio Wesleyan University","Purdue University","Rose-Hulman Institute of Technology","South Dakota State University","University of Chicago","University of Illinois Urbana-Champaign","University of Iowa","University of Kansas","University of Michigan","University of Minnesota","University of Missouri","University of Nebraska-Lincoln","University of North Dakota","University of Notre Dame","University of Wisconsin-Madison","Washington University in St. Louis","Wheaton College","College of the Ozarks","Illinois Wesleyan University","Kettering University",
   ],
 
   rocky_mountains: [
-    "Brigham Young University","Carroll College","Colorado College","Colorado School of Mines",
-    "Montana State University","Montana Technological University","Rocky Mountain College",
-    "University of Colorado Boulder","University of Colorado Colorado Springs","University of Denver","University of Montana",
-    "University of Montana Western","University of Nevada Reno","University of Northern Colorado","University of Utah",
-    "University of Wyoming","Utah State University","Utah Valley University","Weber State University",
-    "Western Colorado University",
-    "Colorado State University","Boise State University",
+    "Brigham Young University","Carroll College","Colorado College","Colorado School of Mines","Montana State University","Montana Technological University","Rocky Mountain College","University of Colorado Boulder","University of Colorado Colorado Springs","University of Denver","University of Montana","University of Montana Western","University of Nevada Reno","University of Northern Colorado","University of Utah","University of Wyoming","Utah State University","Utah Valley University","Weber State University","Western Colorado University","Colorado State University","Boise State University",
   ],
 
   pacific_nw: [
-    "Georgetown University","Gonzaga University","Reed College","Seattle Pacific University",
-    "Southern Oregon University","University of Oregon","University of Washington",
-    "Eastern Washington University",
-    "University of Alaska Fairbanks",
+    "Georgetown University","Gonzaga University","Reed College","Seattle Pacific University","Southern Oregon University","University of Oregon","University of Washington","Eastern Washington University","University of Alaska Fairbanks",
   ],
 
   california: [
-    // FIXED July 2026: removed 18 out-of-state schools that were incorrectly
-    // embedded in this pool (Boise State/ID, BYU/UT, Colorado College/CO,
-    // Colorado School of Mines/CO, Colorado State/CO, Gonzaga/WA, Montana
-    // State/MT, Oregon State/OR, University of Colorado Boulder/CO,
-    // University of Denver/CO, University of Idaho/ID, University of
-    // Montana/MT, UNLV/NV, UNR/NV, University of Oregon/OR, University of
-    // Utah/UT, University of Washington/WA, University of Hawaii/HI).
-    // Those schools already have their own correct homes in the
-    // rocky_mountains and pacific_nw pools above — this pool should only
-    // ever contain schools actually located in California.
-    "Azusa Pacific University","Biola University",
-    "California Institute of Technology","California Lutheran University","California Polytechnic State University San Luis Obispo","California Polytechnic State University, San Luis Obispo",
-    "California State University Chico","California State University Fresno","California State University Fullerton","California State University Long Beach",
-    "California State University Los Angeles","California State University Northridge","California State University San Bernardino","California State University, Fullerton",
-    "California State University, Long Beach","Claremont McKenna College","Harvey Mudd College",
-    "Loyola Marymount University","Occidental College",
-    "Pepperdine University","Point Loma Nazarene University","Pomona College","Saint Mary's College of California",
-    "San Diego State University","San Jose State University","San José State University","Santa Clara University",
-    "Stanford University","UC Berkeley","UC Riverside","UC San Diego",
-    "UC Santa Barbara","UCLA","University of California Davis","University of California Irvine",
-    "University of California Los Angeles","University of California Santa Barbara","University of California Santa Cruz","University of California, Berkeley",
-    "University of California, Los Angeles","University of California, Merced","University of California, San Diego","University of California, Santa Barbara",
-    "University of California, Santa Cruz","Deep Springs College",
-    "University of San Diego","University of San Francisco","University of Southern California",
-    "Westmont College",
-    "USC",
-    "San Francisco State University",
-    "California State University Maritime Academy",
+    "Azusa Pacific University","Biola University","California Institute of Technology","California Lutheran University","California Polytechnic State University San Luis Obispo","California State University Chico","California State University Fresno","California State University Fullerton","California State University Long Beach","California State University Los Angeles","California State University Northridge","California State University San Bernardino","Claremont McKenna College","Harvey Mudd College","Loyola Marymount University","Occidental College","Pepperdine University","Point Loma Nazarene University","Pomona College","Saint Mary's College of California","San Diego State University","San Jose State University","Santa Clara University","Stanford University","UC Berkeley","UC Riverside","UC San Diego","UC Santa Barbara","UCLA","University of California Davis","University of California Irvine","University of California Los Angeles","University of California Santa Barbara","University of California Santa Cruz","University of California, Merced","Deep Springs College","University of San Diego","University of San Francisco","University of Southern California","Westmont College","USC","San Francisco State University","California State University Maritime Academy",
   ],
 
   southwest: [
-    // FIXED July 2026: removed 20 misplaced schools that already have correct
-    // homes elsewhere (Brigham Young/University of Utah → rocky_mountains,
-    // Colorado State/University of Denver → rocky_mountains, College of
-    // William and Mary/Virginia Tech → mid_atlantic, Duke/Elon/Mississippi
-    // State/North Carolina State/Tulane/University of Alabama/University of
-    // Kentucky/University of Louisville/University of Mississippi/University
-    // of Tennessee/University of the South/Vanderbilt/Wake Forest →
-    // southeast, University of Kansas/University of Missouri → midwest).
-    // This pool should only contain schools actually in AZ, NM, OK, or TX —
-    // matching the actual region button label "AZ · NM · OK · TX".
-    "Abilene Christian University","Arizona State University","Baylor University",
-    "New Mexico State University","Northern Arizona University",
-    "Oklahoma State University","Prescott College","Rice University","Southern Methodist University",
-    "Texas A&M University","Texas Christian University","Texas Tech University","The University of Texas at Dallas",
-    "University of Arizona","University of Houston","University of New Mexico",
-    "University of Oklahoma","University of Texas Permian Basin","University of Texas at Austin",
-    "University of Tulsa",
-    "SMU",
-    "TCU",
-    "UT Austin",
-    "Sam Houston State University",
-    "University of North Texas",
-    "Texas State University",
-    "Texas A&M University at Galveston",
+    "AZ · NM · OK · TX","Abilene Christian University","Arizona State University","Baylor University","New Mexico State University","Northern Arizona University","Oklahoma State University","Prescott College","Rice University","Southern Methodist University","Texas A&M University","Texas Christian University","Texas Tech University","The University of Texas at Dallas","University of Arizona","University of Houston","University of New Mexico","University of Oklahoma","University of Texas Permian Basin","University of Texas at Austin","University of Tulsa","Sam Houston State University","University of North Texas","Texas State University",
   ],
 
 
   military_academies: [
-    "United States Air Force Academy",
-    "United States Naval Academy",
-    "United States Military Academy West Point",
-    "United States Coast Guard Academy",
-    "United States Marine Corps University",
-    "United States Merchant Marine Academy",
-    "The Citadel",
-    "Virginia Military Institute",
-    "University of North Georgia",
-    "Norwich University",
+    "United States Air Force Academy","United States Naval Academy","United States Military Academy West Point","United States Coast Guard Academy","United States Marine Corps University","United States Merchant Marine Academy","The Citadel","Virginia Military Institute","University of North Georgia","Norwich University",
   ],
 
 };;
@@ -247,6 +76,28 @@ const SCALE_MAP = {
 };
 
 const SCHOOL_ENROLLMENT = {
+  // ADDED July 2026: 56 real schools confirmed correctly placed in a
+  // REGION_POOL but completely missing from this master gating list —
+  // same bug class as the military academies fix, found via full audit.
+  "Gordon College":1600,"Keene State College":2800,"University of Maine":11000,
+  "University of New Hampshire":13000,"University of Vermont":14000,"Maine Maritime Academy":900,
+  "Massachusetts Maritime Academy":1600,"Providence College":4200,"Wesleyan University":3000,
+  "University at Buffalo":32000,"Dickinson College":2200,"Barnard College":2600,
+  "Gettysburg College":2200,"Old Dominion University":24000,"St. John's College":450,
+  "Marion Military Institute":500,"East Carolina University":25000,"Calvin University":3300,
+  "University of North Dakota":13000,"Washington University in St. Louis":8000,"Wheaton College":2400,
+  "College of the Ozarks":1500,"Illinois Wesleyan University":1600,"Carroll College":1300,
+  "Montana Technological University":2000,"Rocky Mountain College":900,"University of Colorado Colorado Springs":12000,
+  "University of Montana Western":1300,"University of Northern Colorado":11000,"University of Wyoming":11000,
+  "Utah State University":27000,"Utah Valley University":41000,"Weber State University":27000,
+  "Western Colorado University":3000,"Seattle Pacific University":2600,"Southern Oregon University":4500,
+  "Eastern Washington University":10000,"University of Alaska Fairbanks":6500,"Azusa Pacific University":5500,
+  "Biola University":6000,"Point Loma Nazarene University":3700,"University of California Merced":8500,
+  "Westmont College":1300,"USC":20000,"San Francisco State University":22000,
+  "California State University Maritime Academy":900,"Abilene Christian University":4300,"Northern Arizona University":22000,
+  "Oklahoma State University":24000,"Prescott College":500,"University of Texas at Dallas":22000,
+  "University of Houston":37000,"University of Texas Permian Basin":5000,"Sam Houston State University":22000,
+  "University of North Texas":32000,"Texas State University":32000,
   // FIXED July 2026: none of the military_academies pool schools existed
   // here at all, meaning that entire region silently returned zero results
   // regardless of pool contents — a missing-foundational-data bug, distinct
@@ -924,22 +775,20 @@ const SCHOOL_GPA_RANGES = {
 // GPA threshold = minimum to be competitive for the honors program.
 // Source: publicly available honors college admission data.
 
-const HONORS_COLLEGES = {
-  "Arizona State University":              { name: "Barrett Honors College",          gpa_min: 3.6, note: "One of the largest honors colleges in the US — small seminar culture inside a major research university. Strong pipeline to graduate school and competitive fellowships." },
-  "University of Georgia":                 { name: "Foundation Fellowship / Honors",  gpa_min: 3.7, note: "Foundation Fellowship is one of the most competitive merit scholarships in the South. Honors Program offers research-intensive tracks across all colleges." },
-  "University of Florida":                 { name: "UF Honors Program",               gpa_min: 3.7, note: "Small cohort experience at a flagship research university. Strong pre-med, engineering, and business honors tracks." },
-  "University of South Carolina":          { name: "South Carolina Honors College",   gpa_min: 3.5, note: "Nationally ranked honors college with its own residence hall, faculty, and curriculum. Consistently produces Goldwater and Fulbright scholars." },
-  "University of Alabama":                 { name: "UA Honors College",               gpa_min: 3.5, note: "Significant merit aid available for out-of-state students with strong profiles. Small-school feel with research university resources." },
-  "University of Arkansas":                { name: "Honors College",                  gpa_min: 3.5, note: "Chancellor's Scholarship covers full tuition for top applicants. Strong STEM and business honors tracks." },
-  "University of Tennessee, Knoxville":    { name: "Honors and Scholars Programs",    gpa_min: 3.5, note: "Haslam Scholars Program is the flagship merit scholarship. Strong engineering and pre-health honors tracks." },
-  "University of Texas at Austin":         { name: "Plan II Liberal Arts / BHP",      gpa_min: 3.8, note: "Plan II is one of the most prestigious honors degrees in the country. Business Honors Program (BHP) rivals Wharton for undergrad business." },
-  "Pennsylvania State University":         { name: "Schreyer Honors College",         gpa_min: 3.6, note: "Full merit scholarship for top students. One of the most funded honors colleges at a public university." },
-  "University of Michigan":                { name: "LSA Honors / Ross BBA",           gpa_min: 3.8, note: "Ross School of Business BBA is among the top undergraduate business programs nationally. LSA Honors adds interdisciplinary research depth." },
-  "University of Virginia":                { name: "Echols Scholars / Rodman Scholars", gpa_min: 3.8, note: "Echols Scholars (College of Arts & Sciences) and Rodman Scholars (Engineering) offer curriculum freedom and research access unavailable to general admits." },
-  "University of North Carolina Chapel Hill": { name: "Morehead-Cain / Robertson Scholars", gpa_min: 3.7, note: "Morehead-Cain is one of the most prestigious merit scholarships in the US — full funding plus summer enrichment programs." },
-  "University of Maryland College Park":   { name: "College Park Scholars / Gemstone", gpa_min: 3.5, note: "Gemstone Honors Program is a four-year team research program — unusual at the undergraduate level. College Park Scholars offers thematic living-learning communities." },
-  "Ohio State University":                 { name: "University Honors",               gpa_min: 3.5, note: "Knowlton School of Architecture and Fisher College of Business have strong honors tracks. Research-intensive with significant merit aid available." },
-  "University of Colorado Boulder":        { name: "Farrand Honors Program / Norlin Scholars", gpa_min: 3.5, note: "Norlin Scholars is a merit fellowship with community leadership focus. Farrand offers interdisciplinary curriculum in a research university setting." },
+// CONSOLIDATED July 2026: the 11 schools that used to live here AND in V5's
+// honorsCollege field now live ONLY in V5 (gpa_min merged in as `gpaMin`
+// alongside the existing exists/name/strength/notes). This is now a single
+// source of truth, not two.
+//
+// These 4 schools genuinely have NO V5 profile at all yet — kept here as an
+// honest, explicitly-labeled supplement rather than pretending V5 covers
+// them. If/when full V5 profiles get built for these, this object should
+// shrink accordingly (or disappear entirely).
+const HONORS_COLLEGES_NON_V5_SUPPLEMENT = {
+  "University of Alabama":               { name: "UA Honors College",             gpa_min: 3.5, note: "Significant merit aid available for out-of-state students with strong profiles. Small-school feel with research university resources." },
+  "University of Arkansas":              { name: "Honors College",                gpa_min: 3.5, note: "Chancellor's Scholarship covers full tuition for top applicants. Strong STEM and business honors tracks." },
+  "University of Tennessee":  { name: "Honors and Scholars Programs",  gpa_min: 3.5, note: "Haslam Scholars Program is the flagship merit scholarship. Strong engineering and pre-health honors tracks." },
+  "Pennsylvania State University":       { name: "Schreyer Honors College",       gpa_min: 3.6, note: "Full merit scholarship for top students. One of the most funded honors colleges at a public university." },
 };
 
 function getGPATier(normalizedGPA) {
@@ -968,6 +817,13 @@ const GPA_TIER_THRESHOLDS = {
 //   1. Must be within the student's selected region(s)
 //   2. GPA must meet the honors threshold
 //   3. Returns up to 5 schools with honors context attached
+//
+// CONSOLIDATED July 2026: now reads honors data from UNIVERSITY_DB_V5 first
+// (single source of truth for the 73 V5 schools), falling back to the small
+// HONORS_COLLEGES_NON_V5_SUPPLEMENT above only for the 4 schools that don't
+// have a V5 profile yet. Requires UNIVERSITY_DB_V5 to be loaded as a global
+// (same pattern as the rest of this file — no top-level require, read only
+// at call time, after all <script> tags have loaded).
 
 function getConsultantExpansion(gpaTier, normalizedGPA, regionPool, campusScale, primaryMatches) {
   if (!gpaTier || gpaTier === 'open') return [];
@@ -976,7 +832,24 @@ function getConsultantExpansion(gpaTier, normalizedGPA, regionPool, campusScale,
   const primarySet = new Set(primaryMatches || []);
   const results = [];
 
-  Object.entries(HONORS_COLLEGES).forEach(([school, honors]) => {
+  // Build the combined honors source: V5 (single source of truth for the
+  // 73 schools that have it) plus the small non-V5 supplement. Read at
+  // call time — UNIVERSITY_DB_V5 is a global from its own <script> tag,
+  // same pattern as everything else in this file.
+  const v5Source = (typeof UNIVERSITY_DB_V5 !== 'undefined') ? UNIVERSITY_DB_V5 : {};
+  const allSchoolNames = new Set([
+    ...Object.keys(v5Source).filter(name => v5Source[name].honorsCollege && v5Source[name].honorsCollege.exists),
+    ...Object.keys(HONORS_COLLEGES_NON_V5_SUPPLEMENT),
+  ]);
+
+  allSchoolNames.forEach((school) => {
+    // V5 takes priority; supplement only used when V5 doesn't have this school
+    const v5Honors = v5Source[school] && v5Source[school].honorsCollege;
+    const honors = (v5Honors && v5Honors.exists)
+      ? { name: v5Honors.name, gpa_min: v5Honors.gpaMin, note: v5Honors.notes, strength: v5Honors.strength }
+      : HONORS_COLLEGES_NON_V5_SUPPLEMENT[school];
+    if (!honors || honors.gpa_min == null) return; // no gpa threshold on file — can't gate, skip
+
     // Hard gates
     if (primarySet.has(school)) return;
     if (regionPool && !regionPool.includes(school)) return;
@@ -1335,7 +1208,7 @@ function summarizePreferences(collegePrefs) {
 if (typeof module !== 'undefined') module.exports = {
   REGION_POOLS, SCALE_MAP, SCHOOL_ENROLLMENT,
   SOCIAL_SCENE_AFFINITY, RELIGIOUS_AFFILIATION, RELIGIOUS_CULTURE_SCHOOLS,
-  SCHOOL_GPA_RANGES, getGPATier, GPA_TIER_THRESHOLDS, HONORS_COLLEGES, getConsultantExpansion, matchUniversities, scoreAndRankSchools, summarizePreferences, getAdjacentMatches, getProfileAdjacentMatches
+  SCHOOL_GPA_RANGES, getGPATier, GPA_TIER_THRESHOLDS, HONORS_COLLEGES_NON_V5_SUPPLEMENT, getConsultantExpansion, matchUniversities, scoreAndRankSchools, summarizePreferences, getAdjacentMatches, getProfileAdjacentMatches, getSizeAdjacentMatches
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -1524,6 +1397,73 @@ function getProfileAdjacentMatches(primaryMatches, riasec, naicsSectors, max=3, 
         secondaryCode === 'R' ? 'technical and applied fields' :
         'structured systems and analysis'}.`
   }));
+}
+
+// ── getSizeAdjacentMatches ────────────────────────────────────────────────
+// FIXED July 2026: this function was CALLED from lifescape.html
+// ("size-adjacent picks: same region, same social scene, different size")
+// but never actually implemented anywhere — the call site's typeof-guard
+// silently no-op'd every time, meaning this counselor-facing feature has
+// never once returned a result. Built now as part of expanding the
+// counselor view's candidate pool beyond the family-facing few schools.
+//
+// Purpose: same region as the student's primary matches, but OUTSIDE their
+// selected campus_scale range — genuine "if you're open to a different
+// size, here's what's comparable" alternatives, split between smaller and
+// larger options. Only uses real, known SCHOOL_ENROLLMENT data — a school
+// with no enrollment figure on file is skipped, never guessed.
+function getSizeAdjacentMatches(primaryMatches, regions, socialScene, campusScale, max = 6) {
+  if (!campusScale || campusScale === 'no_preference') return [];
+  const scaleInfo = SCALE_MAP[campusScale];
+  if (!scaleInfo) return [];
+
+  const primarySet = new Set(primaryMatches || []);
+  const regionPool = new Set();
+  (regions || []).forEach(r => {
+    const key = DB_DISPLAY_TO_POOL_KEY[r] || r;
+    (REGION_POOLS[key] || []).forEach(s => regionPool.add(s));
+  });
+  if (regionPool.size === 0) return [];
+
+  const smaller = [];
+  const larger = [];
+
+  regionPool.forEach(school => {
+    if (primarySet.has(school)) return;
+    const enroll = SCHOOL_ENROLLMENT[school];
+    if (enroll == null) return; // no fabricating a size for an unknown school
+
+    if (enroll < scaleInfo.min) {
+      smaller.push({ name: school, enrollment: enroll });
+    } else if (enroll > scaleInfo.max) {
+      larger.push({ name: school, enrollment: enroll });
+    }
+  });
+
+  // Closest-to-boundary first in each direction — most genuinely comparable
+  smaller.sort((a, b) => b.enrollment - a.enrollment);
+  larger.sort((a, b) => a.enrollment - b.enrollment);
+
+  // Optional social-scene affinity boost — prefer schools matching the
+  // student's stated social scene preference within each size direction
+  function affinitySort(list) {
+    if (!socialScene || !SOCIAL_SCENE_AFFINITY[socialScene]) return list;
+    const affinityPool = new Set(SOCIAL_SCENE_AFFINITY[socialScene]);
+    return [...list].sort((a, b) => (affinityPool.has(b.name) ? 1 : 0) - (affinityPool.has(a.name) ? 1 : 0));
+  }
+
+  const smallerSorted = affinitySort(smaller);
+  const largerSorted = affinitySort(larger);
+
+  // Split roughly evenly between smaller/larger so families/counselors see
+  // genuine range in both directions, not just one.
+  const halfMax = Math.ceil(max / 2);
+  const picks = [
+    ...smallerSorted.slice(0, halfMax).map(p => ({ name: p.name, type: 'size_adjacent', direction: 'smaller', enrollment: p.enrollment })),
+    ...largerSorted.slice(0, max - Math.min(halfMax, smallerSorted.length)).map(p => ({ name: p.name, type: 'size_adjacent', direction: 'larger', enrollment: p.enrollment })),
+  ];
+
+  return picks.slice(0, max);
 }
 
 
