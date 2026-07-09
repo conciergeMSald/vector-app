@@ -4220,7 +4220,6 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       state:                    (COLLEGE_PREFS && COLLEGE_PREFS.state_pref) || '',
       regions_selected:         Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(', ') : (COLLEGE_PREFS.regions || ''),
       region_count:             Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.length : 0,
-      trajectory_resolved:      (callAData && callAData.trajectory) ? callAData.trajectory.slice(0, 500) : '',
       riasec_top3:              (profile._meta && profile._meta.topRIASEC) || '',
       naics_top3:               (profile._meta && profile._meta.topNAICS) || '',
       combo_unlocks:            (profile.comboUnlocks || []).map(function(c){ return c.unlocks[0]; }).join(' | '),
