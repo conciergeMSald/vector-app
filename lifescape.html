@@ -4226,16 +4226,25 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       combo_unlocks:            (profile.comboUnlocks || []).map(function(c){ return c.unlocks[0]; }).join(' | '),
       combo_count:              (profile.comboUnlocks || []).length,
       tile_count:               (LS_STATE.selectedTileIds ? Array.from(LS_STATE.selectedTileIds).length : 0),
-      pronoun_pref:             (LS_STATE.pronouns && LS_STATE.pronouns.label) || '',
-      religion_pref:            (COLLEGE_PREFS && COLLEGE_PREFS.religion) || '',
+      pronoun_pref:             ({ he: 'he_him', she: 'she_her', they_them: 'they_them' }[LS_STATE.pronouns]) || 'not_provided',
+      religion_pref:            ({
+        catholic: 'Catholic', protestant: 'Protestant', evangelical: 'Evangelical',
+        lds: 'LDS', jewish: 'Jewish', jewish_community: 'Jewish_Community',
+        nondenominational: 'nondenominational', secular: 'Secular',
+        no_preference: 'No_preference'
+      }[COLLEGE_PREFS && COLLEGE_PREFS.religion]) || 'No_preference',
       faith_is_jewish:          ['jewish','jewish_community'].includes((COLLEGE_PREFS && COLLEGE_PREFS.religion) || ''),
-      orientation_type:         LS_STATE.voice || 'student',
+      // orientation_type omitted (per spec, July 2026): Airtable's only
+      // configured option for this field is literally "NAVIGATOR" — the
+      // frontend was sending 'student'/'parent', a 100% mismatch every time.
+      // voice_used (below) already captures the same student/parent data
+      // correctly, so this was redundant as well as broken.
       primary_match:            (callDData && callDData[0] && callDData[0].name) || '',
       adjacent_match:           (adjacentPicks && adjacentPicks[0] && adjacentPicks[0].name) || '',
       unexpected_match:         (profileAdjacentPicks && profileAdjacentPicks[0] && profileAdjacentPicks[0].name) || '',
       school_count_total:       (callDData || []).length,
-      cc_pathway_shown:         (LS_STATE.callEResult && LS_STATE.callEResult.actIX) ? 'Y' : 'N',
-      report_format:            'Lifescape',
+      cc_pathway_shown:         !!(LS_STATE.callEResult && LS_STATE.callEResult.actIX),
+      report_format:            LS_STATE.reportFormat || 'both',
       voice_used:               LS_STATE.voice || 'student',
       consultant_code:          LS_STATE.consultant_code || '',
       call_a_success:           !!(callAData && callAData.trajectory),
@@ -4293,41 +4302,43 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
         console.log('[VECTOR Lifescape] Session saved to Airtable:', d.airtable_id, '| Consultant:', LS_STATE.consultant_code || 'none');
       } else {
         var errMsg = d.message || d.error || 'Session capture failed';
-        console.error('[VECTOR Lifescape] Airtable session error:', d);
+        console.error('[VECTOR Lifescape] Airtable session error:', {
+          message: d?.message,
+          error: d?.error,
+          detail: d?.detail,
+          success: d?.success,
+          airtable_status: d?.airtable_status,
+          raw: JSON.stringify(d)
+        });
         if (typeof showLsToast === 'function') {
           showLsToast('Session data could not be saved. Please screenshot your report. (' + errMsg + ')');
         }
       }
     })
     .catch(function(err){
-      console.error('[VECTOR Lifescape] captureToAirtable fetch error:', err);
+      console.error('[VECTOR Lifescape] captureToAirtable fetch error:', {
+        message: err?.message,
+        name: err?.name,
+        stack: err?.stack
+      });
       if (typeof showLsToast === 'function') {
         showLsToast('Connection error — your report is complete but session data was not saved.');
       }
     });
 
-    // ── Cohort Longitudinal Write — supplementary, never blocks the family ──
-    // Reuses the same payload fields already built above. Failure here is
-    // logged only — the family's report experience is never affected.
-    fetch('https://api.abettercollegeconsultant.com/save-cohort-record', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify(payload),
-    })
-    .then(function(r){ return r.json(); })
-    .then(function(d){
-      if (d.success) {
-        console.log('[VECTOR Lifescape] Cohort record saved:', d.airtable_id);
-      } else {
-        console.warn('[VECTOR Lifescape] Cohort record not saved (non-blocking):', d.detail || d.message || d.error || d.reason || 'unknown');
-      }
-    })
-    .catch(function(err){
-      console.warn('[VECTOR Lifescape] Cohort write fetch error (non-blocking):', err);
-    });
+    // NOTE: A duplicate "/save-cohort-record" call previously lived here,
+    // reusing the SESSIONS-shaped `payload` variable and hitting an endpoint
+    // that was never registered in worker.js. The correct cohort write
+    // (/save-cohort-longitudinal, with the properly-shaped cohortLongPayload)
+    // already fires above — this was dead, guaranteed-404 duplicate code.
+    // Removed rather than fixed, since the real write already exists.
 
   } catch(err) {
-    console.error('[VECTOR Lifescape] captureToAirtable build error:', err);
+    console.error('[VECTOR Lifescape] captureToAirtable build error:', {
+      message: err?.message,
+      name: err?.name,
+      stack: err?.stack
+    });
   }
 }
 
@@ -6048,6 +6059,29 @@ async function submitLifescape() {
           console.log('[callD] raw response preview:', callDText?.slice(0,200));
 
           callDData = parseCallD(callDText);
+
+          // FIXED July 2026: Claude occasionally generates two separate
+          // SCHOOL: blocks for the same school in one response (observed
+          // directly in a real test — UC Santa Cruz listed twice in a
+          // 3-item response). parseCallD() correctly and faithfully parses
+          // whatever it's given, so this is a generation-level redundancy,
+          // not a parsing bug — the fix belongs here, as a defensive
+          // dedup-by-name pass, same discipline as the size-adjacent picks
+          // dedup added earlier tonight. Keeps the first (highest-priority)
+          // occurrence of each school name.
+          (function dedupeCallDSchools() {
+            var seen = new Set();
+            var before = callDData.length;
+            callDData = callDData.filter(function(s) {
+              if (seen.has(s.name)) return false;
+              seen.add(s.name);
+              return true;
+            });
+            if (callDData.length < before) {
+              console.log('[callD] Removed', before - callDData.length, 'duplicate school(s) from Claude response');
+            }
+          })();
+
           // HBCU geographic integrity — remove any HBCU outside student's selected regions
           var _regionsForFilter = (typeof COLLEGE_PREFS !== 'undefined' && Array.isArray(COLLEGE_PREFS.regions))
             ? COLLEGE_PREFS.regions : [];
