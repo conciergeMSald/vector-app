@@ -4232,16 +4232,21 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       combo_unlocks:            (profile.comboUnlocks || []).map(function(c){ return c.unlocks[0]; }).join(' | '),
       combo_count:              (profile.comboUnlocks || []).length,
       tile_count:               (LS_STATE.selectedTileIds ? Array.from(LS_STATE.selectedTileIds).length : 0),
-      pronoun_pref:             (LS_STATE.pronouns && LS_STATE.pronouns.label) || '',
+      pronoun_pref:             ({ he: 'he_him', she: 'she_her', they_them: 'they_them' }[LS_STATE.pronouns]) || 'not_provided',
       religion_pref:            (COLLEGE_PREFS && COLLEGE_PREFS.religion) || '',
       faith_is_jewish:          ['jewish','jewish_community'].includes((COLLEGE_PREFS && COLLEGE_PREFS.religion) || ''),
-      orientation_type:         LS_STATE.voice || 'student',
+      // orientation_type omitted (per spec, July 2026): Airtable's only
+      // configured option for this field is literally "NAVIGATOR" — the
+      // frontend was sending 'student'/'parent', a 100% mismatch every time.
+      // voice_used (below) already captures the same student/parent data
+      // correctly, so this was redundant as well as broken. Same treatment
+      // as trajectory_resolved earlier — omit rather than force-fit.
       primary_match:            (callDData && callDData[0] && callDData[0].name) || '',
       adjacent_match:           (adjacentPicks && adjacentPicks[0] && adjacentPicks[0].name) || '',
       unexpected_match:         (profileAdjacentPicks && profileAdjacentPicks[0] && profileAdjacentPicks[0].name) || '',
       school_count_total:       (callDData || []).length,
       cc_pathway_shown:         !!(LS_STATE.callEResult && LS_STATE.callEResult.actIX),
-      report_format:            'Lifescape',
+      report_format:            LS_STATE.reportFormat || 'both',
       voice_used:               LS_STATE.voice || 'student',
       consultant_code:          LS_STATE.consultant_code || '',
       call_a_success:           !!(callAData && callAData.trajectory),
