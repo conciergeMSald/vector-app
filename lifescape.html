@@ -6201,6 +6201,31 @@ async function submitLifescape() {
           console.log('[callD] adjacent picks:', adjacentPicks.map(s=>s.name));
           console.log('[callD] profile adjacent:', profileAdjacentPicks.map(s=>s.name));
 
+          // FIXED July 2026: renderCounselorView() runs once, early (before
+          // callD's async matching completes), so the "#counselor-size-adjacent"
+          // section it renders was always showing stale/empty state — 10 real
+          // schools were being computed correctly but never actually reaching
+          // the page. This targeted re-render fires now, right when the data
+          // is actually ready, instead of waiting for a second full
+          // renderCounselorView() call that doesn't exist. Also fixes a second
+          // bug found in the same block: the old template referenced
+          // "p.reason", a field these objects never had (real fields are
+          // name/direction/enrollment) — every row was silently rendering
+          // "undefined" instead of real text.
+          (function renderSizeAdjacentNow() {
+            var el = document.getElementById('counselor-size-adjacent');
+            if (!el) return;
+            if (sizeAdjacentPicks.length === 0) {
+              el.innerHTML = '<div style="font-size:13px;color:var(--ink4)">No same-region, same-social-scene alternative at a different size was found for this student\'s selections.</div>';
+              return;
+            }
+            el.innerHTML = sizeAdjacentPicks.map(function(p) {
+              var enrollTxt = p.enrollment ? p.enrollment.toLocaleString() + ' students' : '';
+              var dirTxt = p.direction === 'smaller' ? 'A smaller option' : p.direction === 'larger' ? 'A larger option' : 'A different-size option';
+              return '<div style="margin-bottom:8px"><strong>' + p.name + '</strong> — ' + dirTxt + (enrollTxt ? ' (' + enrollTxt + ')' : '') + '</div>';
+            }).join('');
+          })();
+
           // Consultant expansion — honors-eligible reaches within region
           var _consultantExpansion = [];
           if (typeof getConsultantExpansion === 'function' && profile.gpa_tier) {
