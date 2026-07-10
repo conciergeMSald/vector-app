@@ -881,6 +881,44 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </style>
 <!-- ── Supabase Auth ──────────────────────────────────────────────────────── -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<!-- ── Clerk Auth (Families) — IMPL-PLAN-003 Phase 3 ──────────────────────────
+     Separate from the Supabase Auth above (which the consultant portal uses).
+     Families authenticate via Clerk for social login / lower signup friction.
+     verifyClerkJWT() on the Worker verifies tokens from this SDK independently. -->
+<script
+  async
+  crossorigin="anonymous"
+  data-clerk-publishable-key="pk_live_Y2xlcmsuYWJldHRlcmNvbGxlZ2Vjb25zdWx0YW50LmNvbSQ"
+  src="https://clerk.abettercollegeconsultant.com/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+></script>
+<script>
+  window.__clerkReady = false;
+  window.addEventListener('load', function() {
+    if (typeof window.Clerk === 'undefined') {
+      console.warn('[VECTOR Lifescape] Clerk script did not load — family account features unavailable this session.');
+      return;
+    }
+    window.Clerk.load().then(function() {
+      window.__clerkReady = true;
+      console.log('[VECTOR Lifescape] Clerk ready. User:', window.Clerk.user ? window.Clerk.user.id : 'none');
+
+      // Returning, already-signed-in family: cache their family_accounts id
+      // so retake sessions carry family_account_id from the start, without
+      // needing to go through the post-report upsell again.
+      if (window.Clerk.user && window.Clerk.session) {
+        window.Clerk.session.getToken().then(function(token) {
+          return fetch('https://api.abettercollegeconsultant.com/family-me', {
+            headers: { 'Authorization': 'Bearer ' + token },
+          });
+        }).then(function(r) { return r.json(); })
+          .then(function(d) { if (d && d.id) window.__familyAccountId = d.id; })
+          .catch(function(err) { console.warn('[VECTOR Lifescape] family-me prefetch failed:', err); });
+      }
+    }).catch(function(err) {
+      console.error('[VECTOR Lifescape] Clerk load error:', err);
+    });
+  });
+</script>
 <script>
   (function(){
     var SUPABASE_URL  = 'https://pbtyanwkmbrcumwunxrv.supabase.co';
@@ -906,9 +944,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       window.sbSession = session || null;
       console.log('[VECTOR Lifescape] Auth state:', event, session ? session.user.id : 'none');
 
-      // Magic link return — deliver pending report and save record
+      // Legacy Supabase magic-link session restore (pre-Phase-3 users only —
+      // the UI that created new sessions here is retired). Left in place as
+      // a safety net so an old, still-valid session doesn't error; harmless
+      // no-op for every new session going forward, which will use Clerk.
       if ((event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') && window.__pendingLifescapeState) {
-        dismissLifescapeGate();
         saveToSupabase(
           window.__pendingLifescapeState,
           true,
@@ -2282,7 +2322,7 @@ async function submitConsultantCode() {
   // No code entered — treat same as skip
   if (!code) {
     LS_STATE.consultant_code = null;
-    goTo(1);
+    checkAssessmentEligibilityAndProceed();
     return;
   }
 
@@ -2335,7 +2375,83 @@ async function submitConsultantCode() {
 
 function skipConsultantCode() {
   LS_STATE.consultant_code = null;
+  checkAssessmentEligibilityAndProceed();
+}
+
+/* ── checkAssessmentEligibilityAndProceed ─────────────────────────────────
+   IMPL-PLAN-003 Phase 3. Gates entry into the assessment for the
+   family-direct path only — a valid consultant code above bypasses this
+   entirely via its own goTo(1) call, unaffected.
+   No Clerk session -> eligible (first-time visitor, identical to current
+   behavior). Active subscription -> eligible. Anything else -> blocked,
+   routed to the subscribe-required screen (Section 6, step 11 — LOCKED IN,
+   same message every time, no grace period).
+   ───────────────────────────────────────────────────────────────────────── */
+async function checkAssessmentEligibilityAndProceed() {
+  try {
+    var headers = {};
+    if (window.__clerkReady && window.Clerk && window.Clerk.session) {
+      var token = await window.Clerk.session.getToken();
+      headers['Authorization'] = 'Bearer ' + token;
+    }
+    var res  = await fetch('https://api.abettercollegeconsultant.com/assessment-eligibility', { headers: headers });
+    var data = await res.json();
+
+    if (data.eligible === false) {
+      showSubscribeRequiredScreen(data.message);
+      return;
+    }
+  } catch (err) {
+    // Fail open — a connectivity issue must never block a family from
+    // starting their assessment. Same principle as the invite-code catch above.
+    console.warn('[VECTOR Lifescape] Eligibility check failed, failing open:', err);
+  }
   goTo(1);
+}
+
+/* ── showSubscribeRequiredScreen ──────────────────────────────────────────
+   LOCKED IN per IMPL-PLAN-003 Section 6 step 11: identical message on
+   every return visit while unpaid, no grace period, no partial access.
+   ───────────────────────────────────────────────────────────────────────── */
+function showSubscribeRequiredScreen(message) {
+  var overlay = document.createElement('div');
+  overlay.id  = 'subscribeRequiredGate';
+  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(253,250,245,0.97);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box;';
+
+  overlay.innerHTML = `
+    <div style="max-width:440px;width:100%;font-family:Georgia,serif;text-align:center;">
+      <div style="font-family:var(--sans);font-size:var(--type-meta);letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Your Lifescape</div>
+      <div style="font-size:18px;font-weight:400;letter-spacing:1px;color:#0a0a0a;margin-bottom:.75rem;">` + (message || 'You have an account, but need to subscribe to continue.') + `</div>
+      <button id="subscribeNowBtn" onclick="startFamilyCheckoutFromGate()"
+        style="width:100%;padding:15px 36px;background:#0a0a0a;color:#fafaf8;border:none;font-family:var(--sans);font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-top:1.5rem;">
+        Subscribe to Continue
+      </button>
+    </div>`;
+
+  document.body.appendChild(overlay);
+}
+
+async function startFamilyCheckoutFromGate() {
+  var btn = document.getElementById('subscribeNowBtn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Redirecting…'; }
+  try {
+    var token = (window.Clerk && window.Clerk.session) ? await window.Clerk.session.getToken() : null;
+    var res = await fetch('https://api.abettercollegeconsultant.com/create-checkout', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+      body:    JSON.stringify({ plan_key: 'family_monthly', account_type: 'family' }),
+    });
+    var data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      console.error('[VECTOR Lifescape] create-checkout did not return a url:', data);
+      if (btn) { btn.disabled = false; btn.textContent = 'Subscribe to Continue'; }
+    }
+  } catch (err) {
+    console.error('[VECTOR Lifescape] startFamilyCheckoutFromGate error:', err);
+    if (btn) { btn.disabled = false; btn.textContent = 'Subscribe to Continue'; }
+  }
 }
 
 // ── GENOME NARRATIVE (Domain 1 — Narrative & Ideas) ──
@@ -5503,28 +5619,35 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
 
 // ── SUBMIT ─────────────────────────────────────────
 /* ── gateAndDeliver ──────────────────────────────────────────────────────────
-   Called after all Claude calls complete and the report is rendered.
-   If user is already signed in: save to Supabase immediately.
-   If not signed in: show auth gate, hold state for magic link return.
+   Called after callA renders (trajectory is live). Report is NEVER blocked —
+   the free first run is always fully ungated, per IMPL-PLAN-003 Section 6.
+   This function only decides whether to show the post-report "create your
+   account" upsell. Already-signed-in families (retake, second child) don't
+   see it again — they either already went through it, or arrived here via
+   the eligibility gate at Screen 0, which already confirmed their account
+   is active.
+   IMPL-PLAN-003 Phase 3: replaces the old disabled Supabase magic-link gate
+   (showLifescapeGate/handleLifescapeAuth/dismissLifescapeGate, retired).
    ───────────────────────────────────────────────────────────────────────── */
 function gateAndDeliver(stateSnapshot) {
-  // GATE DISABLED — save directly without requiring email/auth
-  if (window.sbSession && window.sbSession.user) {
-    saveToSupabase(stateSnapshot, true);
-  }
-  // No gate shown — report is immediately accessible
-  // State held in memory for any post-auth capture if session arrives later
   window.__pendingLifescapeState = stateSnapshot;
+
+  var alreadySignedIn = window.__clerkReady && window.Clerk && window.Clerk.user;
+  if (!alreadySignedIn) {
+    showFamilyAccountUpsell();
+  }
 }
 
-/* ── showLifescapeGate ───────────────────────────────────────────────────────
-   Auth gate modal. Email + consent + magic link send.
-   Report is already rendered behind it — gate is purely for record capture.
+/* ── showFamilyAccountUpsell ──────────────────────────────────────────────────
+   Post-report account-creation prompt. Report is already rendered behind it —
+   this is purely an invitation, never a block. Mounts Clerk's own sign-up
+   widget (handles email + social login) rather than a custom form.
+   IMPL-PLAN-003 Phase 3, Section 6 step 4.
    ───────────────────────────────────────────────────────────────────────── */
-function showLifescapeGate() {
+function showFamilyAccountUpsell() {
   var overlay = document.createElement('div');
-  overlay.id  = 'lifescapeAuthGate';
-  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(253,250,245,0.97);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box;';
+  overlay.id  = 'familyAccountUpsell';
+  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(253,250,245,0.97);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box;overflow:auto;';
 
   overlay.innerHTML = `
     <div style="max-width:480px;width:100%;font-family:Georgia,serif;text-align:center;">
@@ -5537,96 +5660,94 @@ function showLifescapeGate() {
         </svg>
       </div>
       <div style="font-size:18px;font-weight:400;letter-spacing:1px;color:#0a0a0a;margin-bottom:.75rem;">Your report is ready.</div>
-      <div style="font-family:var(--sans);font-size:13px;color:#6a6a6a;line-height:1.7;margin-bottom:2rem;">Enter your email to save your results and access your full Lifescape report — including your trajectory, industry clusters, and school matches.</div>
-
-      <div style="display:flex;align-items:flex-start;gap:.75rem;text-align:left;background:#f5f3ef;padding:1rem 1.25rem;margin-bottom:1.25rem;border-left:2px solid #C8A97A;">
-        <input type="checkbox" id="lifescapeConsent" style="margin-top:3px;flex-shrink:0;accent-color:#8B7355;">
-        <label for="lifescapeConsent" style="font-family:var(--sans);font-size:var(--type-meta);color:#4a4a4a;line-height:1.6;cursor:pointer;">I agree to VECTOR storing this assessment for my counselor&#39;s review and to improve my trajectory recommendations.</label>
-      </div>
-
-      <input type="email" id="lifescapeEmailInp" placeholder="your@email.com"
-        style="width:100%;padding:13px 16px;border:1px solid #d0d0d0;font-family:var(--sans);font-size:13px;color:#0a0a0a;margin-bottom:.75rem;box-sizing:border-box;outline:none;">
-
-      <button id="lifescapeSignInBtn" onclick="handleLifescapeAuth()"
-        style="width:100%;padding:15px 36px;background:#0a0a0a;color:#fafaf8;border:none;font-family:var(--sans);font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-bottom:1rem;">
-        Send My Report Link
-      </button>
-      <div id="lifescapeAuthMsg" style="font-family:var(--sans);font-size:var(--type-meta);color:#8B7355;min-height:1.5em;line-height:1.6;"></div>
-      <div style="margin-top:1.5rem;font-family:var(--sans);font-size:var(--type-meta);color:#9a9a9a;">Free. No password. No credit card.</div>
+      <div style="font-family:var(--sans);font-size:13px;color:#6a6a6a;line-height:1.7;margin-bottom:1.5rem;">Create a free account to save this report, retake anytime, and add another child.</div>
+      <div id="familyClerkSignUpMount"></div>
+      <button onclick="dismissFamilyAccountUpsell()" style="margin-top:1.25rem;background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Not now — just show me my report</button>
     </div>`;
 
   document.body.appendChild(overlay);
-  window.__pendingConsentEl  = document.getElementById('lifescapeConsent');
-  window.__pendingAuthMsgEl  = document.getElementById('lifescapeAuthMsg');
-  window.__pendingEmailEl    = document.getElementById('lifescapeEmailInp');
+
+  if (window.__clerkReady && window.Clerk) {
+    window.Clerk.mountSignUp(document.getElementById('familyClerkSignUpMount'), {
+      afterSignUpUrl: window.location.href,
+      afterSignInUrl: window.location.href,
+    });
+    window.Clerk.addListener(function(payload) {
+      if (payload.user && !window.__familyOnboardingStarted) {
+        window.__familyOnboardingStarted = true;
+        dismissFamilyAccountUpsell();
+        onFamilySignedIn();
+      }
+    });
+  } else {
+    var mount = document.getElementById('familyClerkSignUpMount');
+    if (mount) mount.innerHTML = '<div style="font-family:var(--sans);font-size:13px;color:#c0392b;">Account creation is temporarily unavailable. Your report above is unaffected.</div>';
+  }
 }
 
-function handleLifescapeAuth() {
-  var consentEl = window.__pendingConsentEl;
-  var msgEl     = window.__pendingAuthMsgEl;
-  var emailEl   = window.__pendingEmailEl;
+function dismissFamilyAccountUpsell() {
+  var el = document.getElementById('familyAccountUpsell');
+  if (el) el.parentNode.removeChild(el);
+}
 
-  if (!consentEl || !consentEl.checked) {
-    msgEl.style.color = '#c0392b';
-    msgEl.textContent = 'Please check the box above to continue.';
-    return;
-  }
-  var email = emailEl ? emailEl.value.trim() : '';
-  if (!email || !email.includes('@')) {
-    msgEl.style.color = '#c0392b';
-    msgEl.textContent = 'Please enter a valid email address.';
-    return;
-  }
+/* ── onFamilySignedIn ─────────────────────────────────────────────────────
+   Fires once, right after a family successfully signs up/in via Clerk from
+   the post-report upsell. IMPL-PLAN-003 Phase 3, Section 6 steps 6–8:
+   1. Ensure the family_accounts row exists (fetch-or-create).
+   2. Attach the free report already saved this session to the new account.
+   3. Send them to Stripe checkout for the family plan.
+   ───────────────────────────────────────────────────────────────────────── */
+async function onFamilySignedIn() {
+  try {
+    var token = await window.Clerk.session.getToken();
 
-  msgEl.style.color = '#8B7355';
-  msgEl.textContent = 'Sending your secure link…';
-  var btn = document.getElementById('lifescapeSignInBtn');
-  if (btn) btn.disabled = true;
+    var meRes  = await fetch('https://api.abettercollegeconsultant.com/family-me', {
+      headers: { 'Authorization': 'Bearer ' + token },
+    });
+    var meData = await meRes.json();
+    if (meData && meData.id) window.__familyAccountId = meData.id;
 
-  window.__pendingConsentTimestamp = new Date().toISOString();
-
-  window.sbClient.auth.signInWithOtp({
-    email: email,
-    options: {
-      emailRedirectTo:  window.location.href,
-      shouldCreateUser: true,
+    if (typeof sessionId !== 'undefined' && sessionId) {
+      await fetch('https://api.abettercollegeconsultant.com/link-family-account', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+        body:    JSON.stringify({ session_id: sessionId }),
+      });
     }
-  }).then(function(result) {
-    if (result.error) {
-      msgEl.style.color = '#c0392b';
-      msgEl.textContent = 'Something went wrong. Please try again.';
-      if (btn) btn.disabled = false;
+
+    var checkoutRes  = await fetch('https://api.abettercollegeconsultant.com/create-checkout', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+      body:    JSON.stringify({ plan_key: 'family_monthly', account_type: 'family' }),
+    });
+    var checkoutData = await checkoutRes.json();
+
+    if (checkoutData.url) {
+      window.location.href = checkoutData.url;
     } else {
-      msgEl.style.color = '#2e7d32';
-      msgEl.textContent = 'Check your email — your secure Lifescape link is on its way.';
-      if (emailEl) emailEl.disabled = true;
+      console.error('[VECTOR Lifescape] create-checkout did not return a url:', checkoutData);
     }
-  }).catch(function(err) {
-    msgEl.style.color = '#c0392b';
-    msgEl.textContent = 'Something went wrong. Please try again.';
-    if (btn) btn.disabled = false;
-    console.error('[VECTOR Lifescape] signInWithOtp error:', err);
-  });
-}
-
-function dismissLifescapeGate() {
-  var gate = document.getElementById('lifescapeAuthGate');
-  if (gate) gate.parentNode.removeChild(gate);
+  } catch (err) {
+    console.error('[VECTOR Lifescape] onFamilySignedIn error:', err);
+  }
 }
 
 /* ── saveToSupabase ──────────────────────────────────────────────────────────
-   Writes the family record to Supabase via /save-family.
-   Fire-and-forget — never blocks report render.
+   Writes the family record to Supabase via /save-family. Fire-and-forget —
+   never blocks report render.
+   IMPL-PLAN-003 Phase 3 fix: previously gated behind window.sbSession (a
+   Supabase Auth session), which families never have — nothing creates one
+   for them. That meant this never fired for an ordinary family run, so no
+   `families` row ever existed for /link-family-account to attach to later.
+   Now fires unconditionally, exactly like /save-session and
+   /save-family-session already do — Supabase Auth fields become optional
+   extras rather than a hard requirement. handleSaveFamily on the Worker
+   requires no auth token, so none is needed here either.
    ───────────────────────────────────────────────────────────────────────── */
 function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
-  if (!window.sbSession || !window.sbSession.access_token) {
-    console.warn('[VECTOR Lifescape] saveToSupabase: no active session — skipping write');
-    return;
-  }
-
-  var token   = window.sbSession.access_token;
   var profile = stateSnapshot.profile || {};
   var callA   = stateSnapshot.callAData || {};
+  var hasSupabaseSession = !!(window.sbSession && window.sbSession.user);
 
   var payload = {
     student_name:      LS_STATE.name                     || null,
@@ -5641,15 +5762,18 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
     consent_obtained:  consentGiven                      || false,
     consent_timestamp: consentTimestamp                  || null,
     session_id:        sessionId                          || null,
-    supabase_user_id:  window.sbSession.user.id,
+    family_account_id: window.__familyAccountId          || null,
+    supabase_user_id:  hasSupabaseSession ? window.sbSession.user.id : null,
   };
+
+  var headers = { 'Content-Type': 'application/json' };
+  if (hasSupabaseSession && window.sbSession.access_token) {
+    headers['Authorization'] = 'Bearer ' + window.sbSession.access_token;
+  }
 
   fetch('https://api.abettercollegeconsultant.com/save-family', {
     method:  'POST',
-    headers: {
-      'Content-Type':  'application/json',
-      'Authorization': 'Bearer ' + token,
-    },
+    headers: headers,
     body: JSON.stringify(payload),
   })
   .then(function(r) { return r.json(); })
@@ -6237,10 +6361,14 @@ async function submitLifescape() {
     // Fire-and-forget. Full record after all calls complete.
     captureToAirtable(profile, callAData, typeof callDData !== 'undefined' ? callDData : [], typeof adjacentPicks !== 'undefined' ? adjacentPicks : [], typeof profileAdjacentPicks !== 'undefined' ? profileAdjacentPicks : []);
 
-    // ── GATE already fired after callA above ────────────
-    // topUniversity is now set — update Supabase if session exists
+    // ── SUPABASE FAMILIES RECORD ─────────────────────────
+    // IMPL-PLAN-003 Phase 3 fix: previously gated behind window.sbSession
+    // (a Supabase Auth session families never have), which meant this
+    // never fired for an ordinary run. Now fires for every completed
+    // report — this is what gives /link-family-account a row to find
+    // later when a family creates an account from the post-report upsell.
     (function() {
-      if(window.sbSession && window.sbSession.user && LS_STATE.topUniversity) {
+      if (LS_STATE.topUniversity) {
         var finalBridgePath = (typeof findBridgePath === 'function') ? findBridgePath({zip: LS_STATE.zip}) : null;
         var finalSnapshot = {
           profile:        profile,
@@ -7252,9 +7380,10 @@ document.addEventListener('keydown', function(e) {
     if (zip && zip.value.length === 5) { goTo(4); }
     return;
   }
-  // Auth gate email — treat Enter as Send My Report Link click
-  var gate = document.getElementById('lifescapeAuthGate');
-  if (gate) { handleLifescapeAuth(); return; }
+  // Note: the post-report Clerk sign-up widget (familyAccountUpsell) and the
+  // subscribe-required gate handle their own keyboard interaction internally —
+  // no custom Enter-key handling needed for either, unlike the retired
+  // lifescapeAuthGate email field this branch used to serve.
 });
 
 // ── COMPILED SCHOOL SHEET ────────────────────────────────────────────────────
