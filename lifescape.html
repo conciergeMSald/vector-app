@@ -884,12 +884,21 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ── Clerk Auth (Families) — IMPL-PLAN-003 Phase 3 ──────────────────────────
      Separate from the Supabase Auth above (which the consultant portal uses).
      Families authenticate via Clerk for social login / lower signup friction.
-     verifyClerkJWT() on the Worker verifies tokens from this SDK independently. -->
+     verifyClerkJWT() on the Worker verifies tokens from this SDK independently.
+
+     Script loads from jsdelivr, NOT clerk.abettercollegeconsultant.com/npm/... —
+     confirmed via direct network test that the custom-domain path returns a
+     hard 503 (not a DNS/proxy issue; DNS for that record is correctly
+     DNS-only). jsdelivr responds 200 with access-control-allow-origin: * and
+     is Clerk's own documented CDN host. The publishable key below still
+     tells the SDK which Frontend API domain to actually authenticate
+     against (clerk.abettercollegeconsultant.com) — only the *script bundle
+     itself* loads from jsdelivr, not the live session/auth traffic. -->
 <script
   async
   crossorigin="anonymous"
   data-clerk-publishable-key="pk_live_Y2xlcmsuYWJldHRlcmNvbGxlZ2Vjb25zdWx0YW50LmNvbSQ"
-  src="https://clerk.abettercollegeconsultant.com/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+  src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
 ></script>
 <script>
   window.__clerkReady = false;
