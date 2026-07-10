@@ -886,19 +886,33 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
      Families authenticate via Clerk for social login / lower signup friction.
      verifyClerkJWT() on the Worker verifies tokens from this SDK independently.
 
-     Script loads from jsdelivr, NOT clerk.abettercollegeconsultant.com/npm/... —
-     confirmed via direct network test that the custom-domain path returns a
-     hard 503 (not a DNS/proxy issue; DNS for that record is correctly
-     DNS-only). jsdelivr responds 200 with access-control-allow-origin: * and
-     is Clerk's own documented CDN host. The publishable key below still
-     tells the SDK which Frontend API domain to actually authenticate
-     against (clerk.abettercollegeconsultant.com) — only the *script bundle
-     itself* loads from jsdelivr, not the live session/auth traffic. -->
+     Two scripts are required as of Clerk's current architecture — UI
+     Components (mountSignUp, mountSignIn, etc.) now ship as a SEPARATE
+     package (@clerk/ui), no longer bundled into clerk.browser.js. Loading
+     only clerk-js (as an earlier version of this fix did) produces "Clerk
+     was not loaded with Ui components" the moment mountSignUp is called,
+     even though Clerk.load() itself succeeds — confirmed by direct browser
+     testing, live, before this fix was written.
+
+     Both load from jsdelivr, not clerk.abettercollegeconsultant.com/npm/... —
+     the custom-domain path returned an outright 503 for @latest and then
+     hung/timed out on other version-pinned paths tested directly; jsdelivr
+     reliably returns 200 with access-control-allow-origin: * for both
+     packages at these exact versions. This is Clerk's own documented CDN
+     host for the script-tag loading method — the publishable key still tells the
+     SDK which Frontend API domain to authenticate against
+     (clerk.abettercollegeconsultant.com); only the static script bundles
+     load from jsdelivr, not live session/auth traffic. -->
 <script
-  async
+  defer
+  crossorigin="anonymous"
+  src="https://cdn.jsdelivr.net/npm/@clerk/ui@1/dist/ui.browser.js"
+></script>
+<script
+  defer
   crossorigin="anonymous"
   data-clerk-publishable-key="pk_live_Y2xlcmsuYWJldHRlcmNvbGxlZ2Vjb25zdWx0YW50LmNvbSQ"
-  src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+  src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@6/dist/clerk.browser.js"
 ></script>
 <script>
   window.__clerkReady = false;
@@ -907,7 +921,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       console.warn('[VECTOR Lifescape] Clerk script did not load — family account features unavailable this session.');
       return;
     }
-    window.Clerk.load().then(function() {
+    // ui.ClerkUI is required — without it, Clerk.load() succeeds but every
+    // mountSignUp/mountSignIn call fails with "Clerk was not loaded with
+    // Ui components". window.__internal_ClerkUICtor is set by the @clerk/ui
+    // script above.
+    window.Clerk.load({ ui: { ClerkUI: window.__internal_ClerkUICtor } }).then(function() {
       window.__clerkReady = true;
       console.log('[VECTOR Lifescape] Clerk ready. User:', window.Clerk.user ? window.Clerk.user.id : 'none');
 
