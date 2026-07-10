@@ -2332,7 +2332,11 @@ async function submitConsultantCode() {
   if (feedback) feedback.textContent = '';
 
   try {
-    var res = await fetch(WORKER_URL + '/validate-invite-code', {
+    // Fixed: WORKER_URL was never defined anywhere in this file — every
+    // call here threw a ReferenceError, silently caught below, meaning
+    // invite-code validation never actually validated anything. Using the
+    // same literal API domain every other fetch() in this file already uses.
+    var res = await fetch('https://api.abettercollegeconsultant.com/validate-invite-code', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ code: code })
@@ -4288,7 +4292,10 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
   try {
     var bridgePath = (typeof findBridgePath === 'function') ? findBridgePath({zip: LS_STATE.zip}) : null;
     var bridgeStr  = bridgePath ? (bridgePath.cc + ' → ' + (bridgePath.target || '')) : 'N';
-    var sessionId  = Date.now() + '-' + (LS_STATE.name || 'anon').toLowerCase().replace(/[^a-z0-9]/g, '');
+    // Canonical session_id, set once in submitLifescape() — falls back to
+    // generating one here only if this ever runs without that having fired.
+    var sessionId  = LS_STATE.session_id || (LS_STATE.session_id =
+      Date.now() + '-' + (LS_STATE.name || 'anon').toLowerCase().replace(/[^a-z0-9]/g, ''));
 
     var payload = {
       session_id:       sessionId,
@@ -5707,11 +5714,11 @@ async function onFamilySignedIn() {
     var meData = await meRes.json();
     if (meData && meData.id) window.__familyAccountId = meData.id;
 
-    if (typeof sessionId !== 'undefined' && sessionId) {
+    if (LS_STATE.session_id) {
       await fetch('https://api.abettercollegeconsultant.com/link-family-account', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
-        body:    JSON.stringify({ session_id: sessionId }),
+        body:    JSON.stringify({ session_id: LS_STATE.session_id }),
       });
     }
 
@@ -5761,7 +5768,7 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
     consultant_code:   LS_STATE.consultant_code          || null,
     consent_obtained:  consentGiven                      || false,
     consent_timestamp: consentTimestamp                  || null,
-    session_id:        sessionId                          || null,
+    session_id:        LS_STATE.session_id                   || null,
     family_account_id: window.__familyAccountId          || null,
     supabase_user_id:  hasSupabaseSession ? window.sbSession.user.id : null,
   };
@@ -5794,6 +5801,17 @@ async function submitLifescape() {
   LS_STATE.submitted = true;
   const btn = document.getElementById('ls-submit-btn');
   btn.disabled=true; btn.textContent='Building your Lifescape...';
+
+  // ── Canonical session_id — generated once, here, before anything that
+  // might need it (captureToAirtable, saveToSupabase, onFamilySignedIn's
+  // /link-family-account call). Previously each of those referenced a bare
+  // `sessionId` that was actually a local variable scoped inside
+  // captureToAirtable() alone — a ReferenceError everywhere else it was
+  // read. Fixed by generating it once here and reading LS_STATE.session_id
+  // everywhere instead of a same-named-but-wrong-scope local.
+  if (!LS_STATE.session_id) {
+    LS_STATE.session_id = Date.now() + '-' + (LS_STATE.name || 'anon').toLowerCase().replace(/[^a-z0-9]/g, '');
+  }
 
   // Switch to loading screen
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
