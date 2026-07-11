@@ -5544,6 +5544,16 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       const adjCCNote = adjHasCC
         ? `<div class="card-cc-note"><strong style="color:var(--gold);">Pathway Hack</strong> — ${adjCC.ccFeederNames.slice(0,2).join(', ')} → ${adj.name}${adjCC.estimatedSavingsRange ? '. Savings: ' + adjCC.estimatedSavingsRange + '.' : ''}</div>`
         : '';
+      // Enriched 2026-07-10: cultural fit + Hillel note added to match primary-card depth
+      const adjCultureEntry = typeof SCHOOL_CULTURE_CATEGORY !== 'undefined' ? SCHOOL_CULTURE_CATEGORY[adj.name] : null;
+      const adjCultureCue = adjCultureEntry ? CULTURE_CATEGORY_CUES[adjCultureEntry.category] : null;
+      const adjCultureNote = adjCultureCue
+        ? `<div class="card-cc-note" style="border-top-color:rgba(47,59,76,0.3);"><strong style="color:var(--ink2);font-weight:600;">The Room</strong> — ${adjCultureCue}</div>`
+        : '';
+      const adjIsJewish = typeof COLLEGE_PREFS !== 'undefined' && ['jewish','jewish_community'].includes(COLLEGE_PREFS.religion || '');
+      const adjHillel = (adjIsJewish && typeof HILLEL_QUALITY !== 'undefined' && HILLEL_QUALITY[adj.name])
+        ? `<div class="card-cc-note" style="border-top-color:rgba(139,107,60,0.3);"><strong style="color:#8B7355;">Jewish Community</strong> — ${HILLEL_QUALITY[adj.name]}</div>`
+        : '';
       return `
         <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:0.5px solid var(--rule)">
           <div class="section-eyebrow" style="margin-bottom:.75rem">One more worth knowing</div>
@@ -5560,7 +5570,10 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
             <div class="card-narrative" style="color:var(--ink2);">
               ${adjData && adjData.one_sentence_summary ? adjData.one_sentence_summary : adjData && adjData.hidden_pathway ? adjData.hidden_pathway : 'A program-adjacent match worth exploring with your counselor.'}
             </div>
+            ${adjData && adjData.grad_cities ? `<div class="card-traj-note">Graduates go to: ${Array.isArray(adjData.grad_cities) ? adjData.grad_cities.slice(0,3).join(', ') : adjData.grad_cities}</div>` : ''}
             ${adjCCNote}
+            ${adjCultureNote}
+            ${adjHillel}
           </div>
         </div>`;
     }).join('');
@@ -5569,15 +5582,37 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
 
   // ── Size-adjacent picks — "Worth knowing at a different scale" (Where You Fit tab) ──
   // Added 2026-07-10: previously computed and logged but never rendered to families —
-  // only reached the counselor-only view. Extended here using the same card pattern
-  // as adjacentPicks above, since sizeAdjacentPicks carries real, non-fabricated data
-  // (actual enrollment figures from SCHOOL_ENROLLMENT, real region-pool membership).
+  // only reached the counselor-only view. Enriched 2026-07-10 to match primary-card
+  // depth (CC pathway, cultural fit, Hillel note) per product owner direction: "as much
+  // information about each university as possible... nothing is a recommendation,
+  // everything is to try and provide as much information... more to base a decision
+  // from than just the logo on a sweatshirt."
   if(sizeAdjacentPicks && sizeAdjacentPicks.length > 0 && schoolsList) {
     const sizeHtml = sizeAdjacentPicks.map(sp => {
       const spData = typeof getFlatSchoolData === 'function'
         ? getFlatSchoolData(sp.name) : null;
       const directionLabel = sp.direction === 'smaller' ? 'A smaller option worth knowing' : 'A larger option worth knowing';
       const enrollLabel = sp.enrollment ? sp.enrollment.toLocaleString() + ' students' : '';
+
+      const _spDb = getDbV5Entry(sp.name);
+      const _spCC = _spDb && _spDb.institutionNarrative && _spDb.institutionNarrative.ccTransferPathway
+        ? _spDb.institutionNarrative.ccTransferPathway : null;
+      const _spHasCC = _spCC && _spCC.hasCCPathway && _spCC.ccFeederNames && _spCC.ccFeederNames.length > 0;
+      const _spCCNote = _spHasCC
+        ? `<div class="card-cc-note"><strong style="color:var(--gold);font-weight:600;">Pathway Hack</strong> — ${_spCC.ccFeederNames.slice(0,2).join(', ')} → ${sp.name}${_spCC.estimatedSavingsRange ? '. Estimated savings: ' + _spCC.estimatedSavingsRange + '.' : ''}</div>`
+        : '';
+
+      const _spCultureEntry = typeof SCHOOL_CULTURE_CATEGORY !== 'undefined' ? SCHOOL_CULTURE_CATEGORY[sp.name] : null;
+      const _spCultureCue = _spCultureEntry ? CULTURE_CATEGORY_CUES[_spCultureEntry.category] : null;
+      const _spCultureNote = _spCultureCue
+        ? `<div class="card-cc-note" style="border-top-color:rgba(47,59,76,0.3);"><strong style="color:var(--ink2);font-weight:600;">The Room</strong> — ${_spCultureCue}</div>`
+        : '';
+
+      const _spIsJewish = typeof COLLEGE_PREFS !== 'undefined' && ['jewish','jewish_community'].includes(COLLEGE_PREFS.religion || '');
+      const _spHillel = (_spIsJewish && typeof HILLEL_QUALITY !== 'undefined' && HILLEL_QUALITY[sp.name])
+        ? `<div class="card-cc-note" style="border-top-color:rgba(139,107,60,0.3);"><strong style="color:#8B7355;">Jewish Community</strong> — ${HILLEL_QUALITY[sp.name]}</div>`
+        : '';
+
       return `
         <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:0.5px solid var(--rule)">
           <div class="section-eyebrow" style="margin-bottom:.75rem">${directionLabel}</div>
@@ -5594,6 +5629,10 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
             <div class="card-narrative" style="color:var(--ink2);">
               ${spData && spData.one_sentence_summary ? spData.one_sentence_summary : spData && spData.hidden_pathway ? spData.hidden_pathway : 'A genuine match on region and social scene, at a different campus scale than your stated preference — worth a look either way.'}
             </div>
+            ${spData && spData.grad_cities ? `<div class="card-traj-note">Graduates go to: ${Array.isArray(spData.grad_cities) ? spData.grad_cities.slice(0,3).join(', ') : spData.grad_cities}</div>` : ''}
+            ${_spCCNote}
+            ${_spCultureNote}
+            ${_spHillel}
           </div>
         </div>`;
     }).join('');
@@ -5601,11 +5640,31 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
   }
 
   // ── Profile-adjacent picks — "Your secondary profile suggests" (Where You Fit tab) ──
-  // Added 2026-07-10: previously counselor-only, never reached the family view.
+  // Added 2026-07-10, enriched same pass as size-adjacent above, same rationale.
   if(profileAdjacentPicks && profileAdjacentPicks.length > 0 && schoolsList) {
     const profAdjHtml = profileAdjacentPicks.map(pa => {
       const paData = typeof getFlatSchoolData === 'function'
         ? getFlatSchoolData(pa.name) : null;
+
+      const _paDb = getDbV5Entry(pa.name);
+      const _paCC = _paDb && _paDb.institutionNarrative && _paDb.institutionNarrative.ccTransferPathway
+        ? _paDb.institutionNarrative.ccTransferPathway : null;
+      const _paHasCC = _paCC && _paCC.hasCCPathway && _paCC.ccFeederNames && _paCC.ccFeederNames.length > 0;
+      const _paCCNote = _paHasCC
+        ? `<div class="card-cc-note"><strong style="color:var(--gold);font-weight:600;">Pathway Hack</strong> — ${_paCC.ccFeederNames.slice(0,2).join(', ')} → ${pa.name}${_paCC.estimatedSavingsRange ? '. Estimated savings: ' + _paCC.estimatedSavingsRange + '.' : ''}</div>`
+        : '';
+
+      const _paCultureEntry = typeof SCHOOL_CULTURE_CATEGORY !== 'undefined' ? SCHOOL_CULTURE_CATEGORY[pa.name] : null;
+      const _paCultureCue = _paCultureEntry ? CULTURE_CATEGORY_CUES[_paCultureEntry.category] : null;
+      const _paCultureNote = _paCultureCue
+        ? `<div class="card-cc-note" style="border-top-color:rgba(47,59,76,0.3);"><strong style="color:var(--ink2);font-weight:600;">The Room</strong> — ${_paCultureCue}</div>`
+        : '';
+
+      const _paIsJewish = typeof COLLEGE_PREFS !== 'undefined' && ['jewish','jewish_community'].includes(COLLEGE_PREFS.religion || '');
+      const _paHillel = (_paIsJewish && typeof HILLEL_QUALITY !== 'undefined' && HILLEL_QUALITY[pa.name])
+        ? `<div class="card-cc-note" style="border-top-color:rgba(139,107,60,0.3);"><strong style="color:#8B7355;">Jewish Community</strong> — ${HILLEL_QUALITY[pa.name]}</div>`
+        : '';
+
       return `
         <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:0.5px solid var(--rule)">
           <div class="section-eyebrow" style="margin-bottom:.75rem">Your secondary profile suggests</div>
@@ -5622,6 +5681,10 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
             <div class="card-narrative" style="color:var(--ink2);">
               ${paData && paData.one_sentence_summary ? paData.one_sentence_summary : paData && paData.hidden_pathway ? paData.hidden_pathway : 'A match on your secondary profile — schools that align with underlying traits you may not have stated as a top preference.'}
             </div>
+            ${paData && paData.grad_cities ? `<div class="card-traj-note">Graduates go to: ${Array.isArray(paData.grad_cities) ? paData.grad_cities.slice(0,3).join(', ') : paData.grad_cities}</div>` : ''}
+            ${_paCCNote}
+            ${_paCultureNote}
+            ${_paHillel}
           </div>
         </div>`;
     }).join('');
@@ -6257,18 +6320,19 @@ async function submitLifescape() {
             .map(function(s) { return buildScorecardBlock(s.name); })
             .filter(Boolean);
 
-          // ── Append Cultural Fit Lens narrative (parent-facing, never numeric) ──
-          var _cultureBlocks = schoolContent.slice(0, _promptCount)
-            .map(function(s) {
-              var n = (typeof getCultureNarrative === 'function') ? getCultureNarrative(s.name) : null;
-              return n ? ('[Room Culture — ' + s.name + ']\n' + n) : null;
-            })
-            .filter(Boolean);
+          // NOTE 2026-07-10: a duplicate cultural-fit injection (_cultureBlocks, using a
+          // newly-implemented getCultureNarrative() in cultural_fit_lens.js) was removed
+          // from here. buildCultureContext()/_cultureD (defined above, injected into the
+          // callD prompt at the CULTURE LINE instruction) already delivers real cultural
+          // fit narrative using CULTURE_CATEGORY_CUES -- this was a genuinely working,
+          // already-wired mechanism, not a dead hook. getCultureNarrative() itself remains
+          // defined in cultural_fit_lens.js (harmless, unused) in case a future consumer
+          // needs it, but is no longer called here to avoid sending Claude the same signal
+          // twice in one prompt.
 
           var schoolContentBlockFull = schoolContentBlock
-            + (_scorecardBlocks.length ? '\n\n' + _scorecardBlocks.join('\n\n') : '')
-            + (_cultureBlocks.length ? '\n\n' + _cultureBlocks.join('\n\n') : '');
-          console.log('[callD] Scorecard blocks attached:', _scorecardBlocks.length, '/', _promptCount, '| Culture blocks:', _cultureBlocks.length);
+            + (_scorecardBlocks.length ? '\n\n' + _scorecardBlocks.join('\n\n') : '');
+          console.log('[callD] Scorecard blocks attached:', _scorecardBlocks.length, '/', _promptCount);
 
           console.log('[callD] prompt block length:', schoolContentBlockFull.length);
 
