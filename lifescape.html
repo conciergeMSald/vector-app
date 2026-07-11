@@ -6326,6 +6326,10 @@ async function submitLifescape() {
           }
 
           // ── Size-adjacent picks: same region, same social scene, different size ──
+          // Cap raised from 2 to 6 (2026-07-10) -- was hardcoded well below the
+          // function's own default (max=6 in lifescape_college_prefs_v3.js) and
+          // was hitting that artificial ceiling exactly (asked for 2, got 2),
+          // meaning real qualifying matches existed and were being cut off.
           var sizeAdjacentPicks = [];
           if (typeof getSizeAdjacentMatches !== 'undefined') {
             sizeAdjacentPicks = getSizeAdjacentMatches(
@@ -6333,7 +6337,7 @@ async function submitLifescape() {
               COLLEGE_PREFS.regions || [],
               COLLEGE_PREFS.social_scene || null,
               COLLEGE_PREFS.campus_scale || null,
-              2
+              6
             );
           }
           console.log('[callD] size-adjacent picks:', sizeAdjacentPicks.map(s=>s.name));
