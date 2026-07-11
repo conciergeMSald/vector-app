@@ -658,7 +658,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* Cluster cards */
 .cluster-card{padding:1.25rem 1.5rem;border:0.5px solid var(--rule);margin-bottom:.75rem;}
-.cluster-card-name{font-family:var(--serif);font-size:15px;font-weight:700;margin-bottom:6px;}
+.cluster-card-name{font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:6px;}
 .cluster-card-why{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;}
 .cluster-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:middle;}
 
@@ -678,12 +678,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* Full report sections */
 .portrait-text{font-size:15px;color:var(--ink2);line-height:2;font-weight:300;}
 .industry-block{padding:1.25rem 0;margin-bottom:0;background:transparent;border:none;border-bottom:0.5px solid var(--rule);}.industry-block:last-child{border-bottom:none;}
-.industry-name{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.industry-name{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);margin-bottom:6px;}
 .industry-why{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;margin-bottom:1rem;}
 .career-pills{display:block;margin-bottom:.75rem;padding:16px 20px;border:1px solid var(--gold);background:var(--color-surface);}
 .career-pill{font-size:15px;color:var(--ink3);display:inline;}
 .career-pill+.career-pill::before{content:' · ';color:var(--gl);font-size:var(--type-meta);}
-.unexpected-pill{font-size:var(--type-meta);padding:4px 10px;border:0.5px solid var(--gl);color:var(--gold);background:var(--gold-pale);}
+.unexpected-pill{font-size:var(--type-meta);color:var(--gold);font-weight:600;}
 .combo-block{padding:1.25rem 1.5rem;border-left:2px solid var(--gold);margin-bottom:.75rem;background:var(--white);}
 .combo-text{font-size:15px;color:var(--ink2);line-height:1.9;font-weight:300;}
 
@@ -6998,8 +6998,8 @@ function renderIndustries(industriesText) {
     const careers = careersMatch?careersMatch[1].split(',').map(c=>c.trim()).filter(Boolean):[];
     const unexpected = unexpectedMatch?unexpectedMatch[1].trim():'';
 
-    return `<div class="industry-block">
-      <div class="industry-name">${name}</div>
+    return `<div class="industry-block" style="border-left:3px solid ${colors[i % colors.length]};padding-left:1.25rem;">
+      <div class="industry-name" style="color:${colors[i % colors.length]};">${name}</div>
       <div class="industry-why">${why}</div>
       <div class="career-pills"><ul style="margin:0;padding-left:1.2rem;list-style:disc;">${careers.map(c=>`<li style="font-size:var(--type-body);color:var(--ink2);line-height:1.65;margin-bottom:4px;">${c}</li>`).join('')}</ul></div>
       ${unexpected?`<div style="margin-top:.5rem"><span class="unexpected-pill">✦ ${unexpected}</span></div>`:''}
