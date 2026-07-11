@@ -172,7 +172,7 @@ function isHBCUOutOfRegion(schoolName, studentRegions) {
   --type-display:36px;
   --type-headline:28px;
   --type-body:17px;
-  --type-meta:13px;
+  --type-meta:15px;
   --color-surface:#FDFAF4;
   --space-card-pad:24px;
   --space-card-gap:40px;
@@ -301,14 +301,14 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   margin-top:6px;
 }
 .cs-date{
-  font-size:12px;
+  font-size:14px;
   color:#6B7280;
   margin-top:4px;
   letter-spacing:1px;
   text-transform:uppercase;
 }
 .cs-total{
-  font-size:12px;
+  font-size:14px;
   color:#C9A84C;
   margin-top:8px;
   letter-spacing:1.5px;
@@ -330,13 +330,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   list-style:disc;
 }
 .cs-school-bullets li{
-  font-size:12px;
+  font-size:14px;
   color:#2C2C2C;
   line-height:1.6;
   margin-bottom:2px;
 }
 .cs-section-label{
-  font-size:12px;
+  font-size:14px;
   letter-spacing:2px;
   text-transform:uppercase;
   color:#6B7280;
@@ -477,7 +477,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* ── VOICE TOGGLE ──────────────────────────────────── */
 .voice-row{display:flex;gap:8px;margin-bottom:1.5rem;}
-.vbtn{flex:1;padding:11px;border:0.5px solid var(--rule);background:transparent;font-family:var(--sans);font-size:13px;color:var(--ink3);cursor:pointer;transition:all .2s;}
+.vbtn{flex:1;padding:11px;border:0.5px solid var(--rule);background:transparent;font-family:var(--sans);font-size:15px;color:var(--ink3);cursor:pointer;transition:all .2s;}
 .vbtn.active{border-color:var(--gold);background:var(--gold-pale);color:var(--ink);}
 
 /* ── PATH CARDS (screen 1) ─────────────────────────── */
@@ -488,12 +488,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .pc-desc{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;}
 
 /* ── INPUTS ────────────────────────────────────────── */
-.worry-btn{font-family:var(--sans);font-size:13px;padding:9px 16px;background:transparent;border:0.5px solid rgba(200,169,122,0.35);color:var(--muted);cursor:pointer;border-radius:2px;transition:all .15s;}
+.worry-btn{font-family:var(--sans);font-size:15px;padding:9px 16px;background:transparent;border:0.5px solid rgba(200,169,122,0.35);color:var(--muted);cursor:pointer;border-radius:2px;transition:all .15s;}
 .worry-btn.selected{background:rgba(200,169,122,0.12);border-color:var(--gold);color:var(--gold);}
 .ls-input{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;font-size:16px;font-family:var(--serif);color:var(--ink);padding:10px 0;outline:none;transition:border-color .3s;margin-bottom:1.5rem;}
 .ls-input:focus{border-bottom-color:var(--gold);}
 .ls-input::placeholder{color:var(--ink4);}
-.ls-select{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;font-size:13px;font-family:var(--sans);color:var(--ink);padding:10px 0;outline:none;margin-bottom:1.5rem;cursor:pointer;-webkit-appearance:none;}
+.ls-select{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;font-size:15px;font-family:var(--sans);color:var(--ink);padding:10px 0;outline:none;margin-bottom:1.5rem;cursor:pointer;-webkit-appearance:none;}
 .input-label{font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;display:block;}
 
 /* ── TILE GRID ─────────────────────────────────────── */
@@ -593,7 +593,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 }
 .eq-intro{
   font-family:var(--sans);
-  font-size:13px;
+  font-size:15px;
   font-weight:400;
   font-style:normal;
   letter-spacing:2.5px;
@@ -622,10 +622,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .fc-desc{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;}
 
 /* ── CTA BUTTON ─────────────────────────────────────── */
-.ls-btn{width:100%;padding:14px;background:var(--ink);color:var(--white);border:none;border-radius:0;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.5px;transition:opacity .2s;margin-top:1.5rem;}
+.ls-btn{width:100%;padding:14px;background:var(--ink);color:var(--white);border:none;border-radius:0;font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer;letter-spacing:.5px;transition:opacity .2s;margin-top:1.5rem;}
 .ls-btn:hover{opacity:.85;}
 .ls-btn:disabled{opacity:.4;cursor:not-allowed;}
-.ls-btn-outline{width:100%;padding:12px;background:transparent;color:var(--ink);border:0.5px solid var(--rule);font-family:var(--sans);font-size:13px;cursor:pointer;margin-top:.75rem;transition:all .2s;}
+.ls-btn-outline{width:100%;padding:12px;background:transparent;color:var(--ink);border:0.5px solid var(--rule);font-family:var(--sans);font-size:15px;cursor:pointer;margin-top:.75rem;transition:all .2s;}
 .ls-btn-outline:hover{border-color:var(--gold);color:var(--gold);}
 
 /* ── VALIDATION HINT ─────────────────────────────── */
@@ -668,7 +668,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 /* Geo spotlight */
 .geo-block{display:flex;gap:1rem;padding:1.25rem;border:0.5px solid var(--rule);background:var(--white);}
-.geo-icon{font-size:13px;flex-shrink:0;margin-top:2px;}
+.geo-icon{font-size:15px;flex-shrink:0;margin-top:2px;}
 .geo-name{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;}
 .geo-text{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;}
 
@@ -717,12 +717,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .riasec-score{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--ink);}
 .riasec-bar-wrap{height:3px;background:var(--rule);margin:4px 0 3px;}
 .riasec-bar-fill{height:3px;background:var(--gold);}
-.riasec-code{font-size:13px;font-weight:500;color:var(--ink3);letter-spacing:1px;}
+.riasec-code{font-size:15px;font-weight:500;color:var(--ink3);letter-spacing:1px;}
 .action-prompt{padding:.75rem 1rem;border-left:2px solid var(--gl);margin-bottom:.75rem;}
 .action-text{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;font-style:italic;}
 .flag-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:.5rem;}
-.flag-yes{font-size:13px;padding:3px 10px;background:rgba(46,110,58,.08);color:#2E6E3A;border:0.5px solid rgba(46,110,58,.2);}
-.flag-no{font-size:13px;padding:3px 10px;background:var(--bg);color:var(--ink4);border:0.5px solid var(--rule);}
+.flag-yes{font-size:15px;padding:3px 10px;background:rgba(46,110,58,.08);color:#2E6E3A;border:0.5px solid rgba(46,110,58,.2);}
+.flag-no{font-size:15px;padding:3px 10px;background:var(--bg);color:var(--ink4);border:0.5px solid var(--rule);}
 
 /* Generating progress bar */
 .gen-progress{margin:1.5rem 0;height:2px;background:var(--rule);}
@@ -732,7 +732,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .orient-q{margin-bottom:2rem;}
 .orient-q-label{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
 .orient-options{display:flex;flex-wrap:wrap;gap:8px;}
-.orient-btn{padding:10px 18px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:13px;color:var(--ink3);cursor:pointer;transition:all .2s;border-radius:0;}
+.orient-btn{padding:10px 18px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:15px;color:var(--ink3);cursor:pointer;transition:all .2s;border-radius:0;}
 .orient-btn:hover{border-color:var(--gl);color:var(--ink);}
 .orient-btn.sel{border-color:var(--gold);background:var(--gold-pale);color:var(--ink);}
 
@@ -740,11 +740,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .pref-section{margin-bottom:2rem;}
 .pref-q-label{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:1rem;line-height:1.4;}
 .pref-options{display:flex;flex-wrap:wrap;gap:8px;}
-.pref-btn{padding:9px 16px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:13px;color:var(--ink3);cursor:pointer;transition:all .2s;border-radius:0;text-align:left;}
+.pref-btn{padding:9px 16px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:15px;color:var(--ink3);cursor:pointer;transition:all .2s;border-radius:0;text-align:left;}
 .pref-btn:hover{border-color:var(--gl);color:var(--ink);}
 .pref-btn.sel{border-color:var(--gold);background:var(--gold-pale);color:var(--ink);}
 .pref-btn-wide{width:100%;display:block;padding:11px 16px;margin-bottom:6px;}
-.pref-sub{font-size:13px;color:var(--ink4);display:block;margin-top:3px;font-weight:300;}
+.pref-sub{font-size:15px;color:var(--ink4);display:block;margin-top:3px;font-weight:300;}
 .conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;}
 @media(max-width:500px){.conf-grid{grid-template-columns:1fr;}}
 
@@ -753,11 +753,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .reveal-label{font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
 .tile-reveal{animation:tileReveal .3s ease forwards;opacity:0;}
 @keyframes tileReveal{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
-.show-all-link{display:block;text-align:center;font-size:13px;color:var(--ink4);cursor:pointer;margin-top:1.5rem;padding:.75rem 0;border-top:0.5px solid var(--rule);transition:color .2s;}
+.show-all-link{display:block;text-align:center;font-size:15px;color:var(--ink4);cursor:pointer;margin-top:1.5rem;padding:.75rem 0;border-top:0.5px solid var(--rule);transition:color .2s;}
 .show-all-link:hover{color:var(--gold);}
 
 /* ── GPA TOGGLE ────────────────────────────────────── */
-.gpa-toggle{padding:7px 14px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:13px;color:var(--ink4);cursor:pointer;transition:all .2s;}
+.gpa-toggle{padding:7px 14px;border:0.5px solid var(--rule);background:var(--white);font-family:var(--sans);font-size:15px;color:var(--ink4);cursor:pointer;transition:all .2s;}
 .gpa-toggle.sel{background:var(--gold-pale);border-color:var(--gold);color:var(--ink);}
 
 /* ── SCHOOL CARDS ─────────────────────────────────── */
@@ -815,12 +815,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* ── UNDER THE RADAR ───────────────────────────────── */
 .radar-section{margin-top:2.5rem;padding-top:2rem;border-top:0.5px solid var(--rule);}
 .radar-eyebrow{font-family:var(--sans);font-size:var(--type-meta);letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;}
-.radar-intro{font-size:12px;color:var(--ink4);font-weight:300;margin-bottom:1.25rem;line-height:1.6;}
+.radar-intro{font-size:14px;color:var(--ink4);font-weight:300;margin-bottom:1.25rem;line-height:1.6;}
 .radar-card{border:0.5px solid var(--gl);padding:1.25rem 1.5rem;margin-bottom:.85rem;background:rgba(200,169,122,.03);position:relative;}
 .radar-card-archetype{font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-family:var(--sans);margin-bottom:.4rem;}
-.radar-card-name{font-family:var(--serif);font-size:13px;font-weight:700;color:var(--gold);margin-bottom:2px;}
+.radar-card-name{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--gold);margin-bottom:2px;}
 .radar-card-location{font-size:var(--type-meta);color:var(--ink4);letter-spacing:.5px;margin-bottom:.65rem;}
-.radar-card-why{font-size:13px;color:var(--ink2);line-height:1.85;font-weight:300;}
+.radar-card-why{font-size:15px;color:var(--ink2);line-height:1.85;font-weight:300;}
 .radar-card-summary{font-size:17px;color:var(--ink3);line-height:1.7;font-weight:300;margin-top:.6rem;font-style:italic;}
 .radar-card-faith{font-size:var(--type-meta);color:#a07850;margin-top:.4rem;}
 .counselor-school-pill{display:inline-block;font-size:var(--type-meta);padding:2px 8px;border:0.5px solid var(--rule);color:var(--ink3);margin-right:4px;margin-top:4px;}
@@ -829,7 +829,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* Quick read school previews */
 .school-preview{display:flex;gap:1rem;align-items:flex-start;padding:.75rem 0;border-bottom:0.5px solid var(--rule);}
 .school-preview:last-child{border-bottom:none;}
-.school-preview-num{font-family:var(--serif);font-size:13px;font-weight:300;color:var(--gl);flex-shrink:0;width:24px;}
+.school-preview-num{font-family:var(--serif);font-size:15px;font-weight:300;color:var(--gl);flex-shrink:0;width:24px;}
 .school-preview-content{}
 .school-preview-name{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--gold);margin-bottom:2px;}
 .school-preview-why{font-size:15px;color:var(--ink3);line-height:1.6;font-weight:300;}
@@ -837,10 +837,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* ── RESPONSIVE ───────────────────────────────────── */
 @media(max-width:600px){
   .ls-wordmark{font-size:36px;letter-spacing:5px;}
-  .q{font-size:13px;}
+  .q{font-size:15px;}
   .voice-row{flex-direction:column;}
   .report-name{font-size:28px;}
-  .trajectory-text{font-size:13px;}
+  .trajectory-text{font-size:15px;}
 }
 
 /* BFI-10 */
@@ -848,9 +848,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .bfi-items{display:flex;flex-direction:column;gap:20px}
 .bfi-item{padding:16px 0;border-bottom:1px solid #e8e4de}
 .bfi-item:last-child{border-bottom:none}
-.bfi-label{font-size:13px;color:#1a1a1a;margin-bottom:12px;line-height:1.5}
+.bfi-label{font-size:15px;color:#1a1a1a;margin-bottom:12px;line-height:1.5}
 .bfi-options{display:flex;gap:8px;justify-content:center}
-.bfi-btn{width:44px;height:44px;border:1.5px solid #e8e4de;border-radius:50%;background:transparent;font-size:13px;color:#666;cursor:pointer;transition:all .15s}
+.bfi-btn{width:44px;height:44px;border:1.5px solid #e8e4de;border-radius:50%;background:transparent;font-size:15px;color:#666;cursor:pointer;transition:all .15s}
 .bfi-btn:hover{border-color:#C8A97A;color:#C8A97A}
 .bfi-btn.bfi-selected{background:#C8A97A;border-color:#C8A97A;color:#fff;font-weight:600}
 /* World Selection */
@@ -858,24 +858,24 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .world-card{display:flex;flex-direction:column;align-items:flex-start;padding:18px 16px;border:1.5px solid #e8e4de;border-radius:8px;background:transparent;cursor:pointer;text-align:left;transition:all .15s}
 .world-card:hover{border-color:#C8A97A;background:rgba(200,169,122,.04)}
 .world-card.world-selected{border-color:#C8A97A;background:rgba(200,169,122,.04);border-left:2px solid #8B7355;}
-.world-icon{font-size:13px;margin-bottom:8px}
-.world-name{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:4px}
-.world-desc{font-size:13px;color:#666;line-height:1.4}
+.world-icon{font-size:15px;margin-bottom:8px}
+.world-name{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:4px}
+.world-desc{font-size:15px;color:#666;line-height:1.4}
 @media(max-width:480px){.world-grid{grid-template-columns:1fr}}
 
 /* Academic Affinity — Screen 38 */
 .aa-block{margin-top:32px}
 .aa-block:first-of-type{margin-top:24px}
-.aa-label{font-size:13px;color:#1a1a1a;margin-bottom:14px;line-height:1.5;font-weight:700}
+.aa-label{font-size:15px;color:#1a1a1a;margin-bottom:14px;line-height:1.5;font-weight:700}
 .aa-chip-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .aa-daypart-grid{display:flex;flex-direction:column;gap:8px}
-.aa-chip{padding:10px 16px;border:1.5px solid #e8e4de;border-radius:20px;background:transparent;font-size:13px;color:#444;cursor:pointer;transition:all .15s;text-align:left}
+.aa-chip{padding:10px 16px;border:1.5px solid #e8e4de;border-radius:20px;background:transparent;font-size:15px;color:#444;cursor:pointer;transition:all .15s;text-align:left}
 .aa-chip:hover{border-color:#C8A97A;color:#C8A97A}
 .aa-chip.aa-chip-selected{background:#C8A97A;border-color:#C8A97A;color:#fff;font-weight:500}
 .aa-chip-none{display:block;width:100%;border-radius:8px;font-style:italic;color:#888;margin-top:4px}
 .aa-chip-none.aa-chip-selected{font-style:normal}
 .aa-daypart-btn{border-radius:8px;width:100%}
-.aa-skip-link{background:none;border:none;color:#999;font-size:13px;text-decoration:underline;cursor:pointer;margin-left:auto;padding:8px}
+.aa-skip-link{background:none;border:none;color:#999;font-size:15px;text-decoration:underline;cursor:pointer;margin-left:auto;padding:8px}
 .aa-skip-link:hover{color:#666}
 
 </style>
@@ -1024,11 +1024,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       oninput="this.value=this.value.toUpperCase()"
     >
   </div>
-  <div id="code-feedback" style="min-height:1.5rem;margin-top:0.75rem;font-family:var(--sans);font-size:13px;letter-spacing:1px;text-align:center;color:var(--muted);"></div>
+  <div id="code-feedback" style="min-height:1.5rem;margin-top:0.75rem;font-family:var(--sans);font-size:15px;letter-spacing:1px;text-align:center;color:var(--muted);"></div>
 
   <button id="code-submit-btn" class="ls-btn" style="margin-top:1rem" onclick="submitConsultantCode()">Continue with code</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="skipConsultantCode()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip — I'm exploring on my own</button>
+    <button onclick="skipConsultantCode()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip — I'm exploring on my own</button>
   </div>
 </div>
 </div>
@@ -1077,10 +1077,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <div id="genome-narrative-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center;"></div>
+  <div id="genome-narrative-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;"></div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeNarrative()">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="skipGenomeNarrative()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+    <button onclick="skipGenomeNarrative()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
   </div>
 </div>
 </div>
@@ -1102,10 +1102,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <div id="genome-building-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center;"></div>
+  <div id="genome-building-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;"></div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeBuilding()">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="skipGenomeBuilding()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+    <button onclick="skipGenomeBuilding()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
   </div>
 </div>
 </div>
@@ -1127,10 +1127,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <div id="genome-geo-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center;"></div>
+  <div id="genome-geo-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;"></div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeGeo()">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="skipGenomeGeo()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+    <button onclick="skipGenomeGeo()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
   </div>
 </div>
 </div>
@@ -1166,10 +1166,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:15px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <div id="genome-worry-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center;"></div>
+  <div id="genome-worry-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;"></div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeWorry()">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="skipGenomeWorry()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+    <button onclick="skipGenomeWorry()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
   </div>
 </div>
 </div>
@@ -1200,7 +1200,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee2')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
+    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
 </div>
 </div>
@@ -1223,9 +1223,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee3')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee1')" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goTo('ee1')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
-    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
+    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
 </div>
 </div>
@@ -1248,9 +1248,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee4')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee2')" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goTo('ee2')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
-    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
+    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
 </div>
 </div>
@@ -1273,9 +1273,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee5')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee3')" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goTo('ee3')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
-    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
+    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
 </div>
 </div>
@@ -1298,9 +1298,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee6')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee4')" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goTo('ee4')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
-    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
+    <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
 </div>
 </div>
@@ -1321,10 +1321,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <div id="essay-evidence-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center;"></div>
+  <div id="essay-evidence-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;"></div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="submitEssayEvidence()">Finish</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee5')" style="background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goTo('ee5')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
   </div>
 </div>
 </div>
@@ -1370,15 +1370,15 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <!-- Pronoun preference — optional, for report writing only -->
   <div style="margin-top:1.75rem;" id="pronoun-section">
     <label class="input-label" id="pronoun-label">How should your report refer to you?</label>
-    <div class="q-sub" id="pronoun-sub" style="font-size:13px;margin-bottom:1rem;margin-top:.25rem;">Optional — this is only used for how we write your report.</div>
+    <div class="q-sub" id="pronoun-sub" style="font-size:15px;margin-bottom:1rem;margin-top:.25rem;">Optional — this is only used for how we write your report.</div>
     <div style="display:flex;flex-wrap:wrap;gap:6px;" id="pronoun-options">
-      <button class="tile" id="pron-he" style="font-size:12px;padding:8px 16px;"
+      <button class="tile" id="pron-he" style="font-size:14px;padding:8px 16px;"
         onclick="selectPronoun('he_him',this)">He / Him</button>
-      <button class="tile" id="pron-she" style="font-size:12px;padding:8px 16px;"
+      <button class="tile" id="pron-she" style="font-size:14px;padding:8px 16px;"
         onclick="selectPronoun('she_her',this)">She / Her</button>
-      <button class="tile" id="pron-they" style="font-size:12px;padding:8px 16px;"
+      <button class="tile" id="pron-they" style="font-size:14px;padding:8px 16px;"
         onclick="selectPronoun('they_them',this)">They / Them</button>
-      <button class="tile" id="pron-skip" style="font-size:12px;padding:8px 16px;"
+      <button class="tile" id="pron-skip" style="font-size:14px;padding:8px 16px;"
         onclick="selectPronoun('prefer_not',this)">Prefer not to say</button>
     </div>
   </div>
@@ -1646,16 +1646,16 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
         grid-template-columns:1fr 1fr 1fr;
         gap:8px;
       ">
-        <button class="region-btn" id="rz-new_england" onclick="toggleRegionBtn(this,'new_england')">New England<span style="display:block;font-size:11px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">CT · MA · ME · NH · RI · VT</span></button>
-        <button class="region-btn" id="rz-northeast" onclick="toggleRegionBtn(this,'northeast')">Northeast<span style="display:block;font-size:11px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">NY · NJ · PA</span></button>
-        <button class="region-btn" id="rz-mid_atlantic" onclick="toggleRegionBtn(this,'mid_atlantic')">Mid-Atlantic<span style="display:block;font-size:11px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">DC · DE · MD · VA · WV</span></button>
-        <button class="region-btn" id="rz-southeast" onclick="toggleRegionBtn(this,'southeast')">Southeast<span style="display:block;font-size:11px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">AL · AR · FL · GA · KY · LA · MS · NC · SC · TN</span></button>
-        <button class="region-btn" id="rz-midwest" onclick="toggleRegionBtn(this,'midwest')">Midwest<span style="display:block;font-size:11px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">IA · IL · IN · KS · MI · MN · MO · ND · NE · OH · SD · WI</span></button>
-        <button class="region-btn" id="rz-rocky_mountains" onclick="toggleRegionBtn(this,'rocky_mountains')">Rocky Mountains<span style="display:block;font-size:11px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">CO · ID · MT · NV · UT · WY</span></button>
-        <button class="region-btn" id="rz-pacific_nw" onclick="toggleRegionBtn(this,'pacific_nw')">Pacific Northwest<span style="display:block;font-size:11px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">OR · WA</span></button>
-        <button class="region-btn" id="rz-california" onclick="toggleRegionBtn(this,'california')">California<span style="display:block;font-size:11px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">CA</span></button>
-        <button class="region-btn" id="rz-southwest" onclick="toggleRegionBtn(this,'southwest')">Southwest<span style="display:block;font-size:11px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">AZ · NM · OK · TX</span></button>
-        <button class="region-btn" id="rz-military_academies" onclick="toggleRegionBtn(this,'military_academies')">Military Service<span style="display:block;font-size:11px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">Federal &amp; senior military colleges</span></button>
+        <button class="region-btn" id="rz-new_england" onclick="toggleRegionBtn(this,'new_england')">New England<span style="display:block;font-size:13px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">CT · MA · ME · NH · RI · VT</span></button>
+        <button class="region-btn" id="rz-northeast" onclick="toggleRegionBtn(this,'northeast')">Northeast<span style="display:block;font-size:13px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">NY · NJ · PA</span></button>
+        <button class="region-btn" id="rz-mid_atlantic" onclick="toggleRegionBtn(this,'mid_atlantic')">Mid-Atlantic<span style="display:block;font-size:13px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">DC · DE · MD · VA · WV</span></button>
+        <button class="region-btn" id="rz-southeast" onclick="toggleRegionBtn(this,'southeast')">Southeast<span style="display:block;font-size:13px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">AL · AR · FL · GA · KY · LA · MS · NC · SC · TN</span></button>
+        <button class="region-btn" id="rz-midwest" onclick="toggleRegionBtn(this,'midwest')">Midwest<span style="display:block;font-size:13px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">IA · IL · IN · KS · MI · MN · MO · ND · NE · OH · SD · WI</span></button>
+        <button class="region-btn" id="rz-rocky_mountains" onclick="toggleRegionBtn(this,'rocky_mountains')">Rocky Mountains<span style="display:block;font-size:13px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">CO · ID · MT · NV · UT · WY</span></button>
+        <button class="region-btn" id="rz-pacific_nw" onclick="toggleRegionBtn(this,'pacific_nw')">Pacific Northwest<span style="display:block;font-size:13px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">OR · WA</span></button>
+        <button class="region-btn" id="rz-california" onclick="toggleRegionBtn(this,'california')">California<span style="display:block;font-size:13px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">CA</span></button>
+        <button class="region-btn" id="rz-southwest" onclick="toggleRegionBtn(this,'southwest')">Southwest<span style="display:block;font-size:13px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">AZ · NM · OK · TX</span></button>
+        <button class="region-btn" id="rz-military_academies" onclick="toggleRegionBtn(this,'military_academies')">Military Service<span style="display:block;font-size:13px;letter-spacing:0.5px;opacity:0.6;margin-top:2px;">Federal &amp; senior military colleges</span></button>
       </div>
     </div>
 
@@ -1808,7 +1808,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       <button onclick="addFamilyLocation()" style="
         flex-shrink:0;padding:10px 16px;background:transparent;
         border:1px solid var(--tile-bdr);color:var(--ink3);
-        font-family:var(--sans);font-size:12px;letter-spacing:1px;
+        font-family:var(--sans);font-size:14px;letter-spacing:1px;
         cursor:pointer;border-radius:0;white-space:nowrap;
         transition:all .18s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--ink)'" onmouseout="this.style.borderColor='var(--tile-bdr)';this.style.color='var(--ink3)'">
         Add
@@ -2992,7 +2992,7 @@ const CLUSTER_ORDER = ['make','move','think','people','systems'];
 function renderTileGrid() {
   if(typeof VECTOR_CROSSWALK === 'undefined' || typeof curateInitialTiles === 'undefined') {
     document.getElementById('activity-tile-grid').innerHTML =
-      '<p style="color:var(--ink3);font-size:13px">Loading tiles...</p>';
+      '<p style="color:var(--ink3);font-size:15px">Loading tiles...</p>';
     return;
   }
 
@@ -3420,7 +3420,7 @@ function renderFamilyLocations() {
       background:var(--gold-pale);border:1px solid var(--gl);
       padding:5px 12px;margin:0 6px 6px 0;
     ">
-      <span style="font-family:var(--sans);font-size:12px;color:var(--ink2)">${loc}</span>
+      <span style="font-family:var(--sans);font-size:14px;color:var(--ink2)">${loc}</span>
       <span onclick="removeFamilyLocation(${i})" style="
         cursor:pointer;color:var(--ink4);font-size:14px;line-height:1;
       " title="Remove">×</span>
@@ -4703,7 +4703,7 @@ function updatePrefPreview() {
 
     contentEl.innerHTML = `
       <span style="display:block;font-weight:500;color:var(--ink);margin-bottom:4px">${count} schools match your preferences</span>
-      <span style="display:block;color:var(--ink3);font-size:12px">${sample.join(', ')}${count > 5 ? ` and ${count - 5} more` : ''}</span>
+      <span style="display:block;color:var(--ink3);font-size:14px">${sample.join(', ')}${count > 5 ? ` and ${count - 5} more` : ''}</span>
     `;
     previewEl.style.display = 'block';
   }
@@ -5409,7 +5409,7 @@ function renderUnderTheRadar(picks) {
   }
 }
 
-function renderSchoolRecommendations(profile, callAData, callDData, adjacentPicks, profileAdjacentPicks, consultantExpansion) {
+function renderSchoolRecommendations(profile, callAData, callDData, adjacentPicks, profileAdjacentPicks, consultantExpansion, sizeAdjacentPicks) {
   if(!callDData || callDData.length === 0) return;
 
   // Render Quick Read preview (top 3)
@@ -5567,6 +5567,67 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     schoolsList.insertAdjacentHTML('beforeend', adjHtml);
   }
 
+  // ── Size-adjacent picks — "Worth knowing at a different scale" (Where You Fit tab) ──
+  // Added 2026-07-10: previously computed and logged but never rendered to families —
+  // only reached the counselor-only view. Extended here using the same card pattern
+  // as adjacentPicks above, since sizeAdjacentPicks carries real, non-fabricated data
+  // (actual enrollment figures from SCHOOL_ENROLLMENT, real region-pool membership).
+  if(sizeAdjacentPicks && sizeAdjacentPicks.length > 0 && schoolsList) {
+    const sizeHtml = sizeAdjacentPicks.map(sp => {
+      const spData = typeof getFlatSchoolData === 'function'
+        ? getFlatSchoolData(sp.name) : null;
+      const directionLabel = sp.direction === 'smaller' ? 'A smaller option worth knowing' : 'A larger option worth knowing';
+      const enrollLabel = sp.enrollment ? sp.enrollment.toLocaleString() + ' students' : '';
+      return `
+        <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:0.5px solid var(--rule)">
+          <div class="section-eyebrow" style="margin-bottom:.75rem">${directionLabel}</div>
+          <div class="uni-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
+              <div>
+                ${spData && spData.archetype ? `<div class="card-eyebrow">${spData.archetype}</div>` : ''}
+                <div class="card-name uni-name uni-name--headline">${sp.name}</div>
+                <div style="font-size:var(--type-meta);color:var(--ink4);">${spData ? spData.location : ''}${enrollLabel ? ' · ' + enrollLabel : ''}</div>
+              </div>
+              <div style="font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding-top:6px">${sp.direction === 'smaller' ? 'Smaller' : 'Larger'}</div>
+            </div>
+            ${spData && spData.faith_tradition ? `<div class="school-badges"><span class="school-badge-faith">${spData.faith_tradition}</span></div>` : ''}
+            <div class="card-narrative" style="color:var(--ink2);">
+              ${spData && spData.one_sentence_summary ? spData.one_sentence_summary : spData && spData.hidden_pathway ? spData.hidden_pathway : 'A genuine match on region and social scene, at a different campus scale than your stated preference — worth a look either way.'}
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+    schoolsList.insertAdjacentHTML('beforeend', sizeHtml);
+  }
+
+  // ── Profile-adjacent picks — "Your secondary profile suggests" (Where You Fit tab) ──
+  // Added 2026-07-10: previously counselor-only, never reached the family view.
+  if(profileAdjacentPicks && profileAdjacentPicks.length > 0 && schoolsList) {
+    const profAdjHtml = profileAdjacentPicks.map(pa => {
+      const paData = typeof getFlatSchoolData === 'function'
+        ? getFlatSchoolData(pa.name) : null;
+      return `
+        <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:0.5px solid var(--rule)">
+          <div class="section-eyebrow" style="margin-bottom:.75rem">Your secondary profile suggests</div>
+          <div class="uni-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
+              <div>
+                ${paData && paData.archetype ? `<div class="card-eyebrow">${paData.archetype}</div>` : ''}
+                <div class="card-name uni-name uni-name--headline">${pa.name}</div>
+                <div style="font-size:var(--type-meta);color:var(--ink4);">${paData ? paData.location : ''}</div>
+              </div>
+              <div style="font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding-top:6px">Profile Adjacent</div>
+            </div>
+            ${paData && paData.faith_tradition ? `<div class="school-badges"><span class="school-badge-faith">${paData.faith_tradition}</span></div>` : ''}
+            <div class="card-narrative" style="color:var(--ink2);">
+              ${paData && paData.one_sentence_summary ? paData.one_sentence_summary : paData && paData.hidden_pathway ? paData.hidden_pathway : 'A match on your secondary profile — schools that align with underlying traits you may not have stated as a top preference.'}
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+    schoolsList.insertAdjacentHTML('beforeend', profAdjHtml);
+  }
+
   // ── Counselor view — direct matches + profile-adjacent picks ──────────────
   const counselorSchools = document.getElementById('counselor-schools');
   if(counselorSchools) {
@@ -5642,8 +5703,8 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       counselorHtml += consultantExpansion.map(s =>
         `<div style="padding:.6rem 0;border-bottom:0.5px solid rgba(255,255,255,0.07);">
           <strong style="color:#f4f1ec;">${s.name}</strong>
-          <span style="color:#C9A84C;font-size:11px;margin-left:.5rem;">${s.honors_name}</span>
-          <div style="font-size:11px;color:#a09880;margin-top:.25rem;">${s.honors_note}</div>
+          <span style="color:#C9A84C;font-size:13px;margin-left:.5rem;">${s.honors_name}</span>
+          <div style="font-size:13px;color:#a09880;margin-top:.25rem;">${s.honors_note}</div>
         </div>`
       ).join('');
     }
@@ -5694,9 +5755,9 @@ function showFamilyAccountUpsell() {
         </svg>
       </div>
       <div style="font-size:18px;font-weight:400;letter-spacing:1px;color:#0a0a0a;margin-bottom:.75rem;">Your report is ready.</div>
-      <div style="font-family:var(--sans);font-size:13px;color:#6a6a6a;line-height:1.7;margin-bottom:1.5rem;">Create a free account to save this report, retake anytime, and add another child.</div>
+      <div style="font-family:var(--sans);font-size:15px;color:#6a6a6a;line-height:1.7;margin-bottom:1.5rem;">Create a free account to save this report, retake anytime, and add another child.</div>
       <div id="familyClerkSignUpMount"></div>
-      <button onclick="dismissFamilyAccountUpsell()" style="margin-top:1.25rem;background:none;border:none;font-family:var(--sans);font-size:12px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Not now — just show me my report</button>
+      <button onclick="dismissFamilyAccountUpsell()" style="margin-top:1.25rem;background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Not now — just show me my report</button>
     </div>`;
 
   document.body.appendChild(overlay);
@@ -5715,7 +5776,7 @@ function showFamilyAccountUpsell() {
     });
   } else {
     var mount = document.getElementById('familyClerkSignUpMount');
-    if (mount) mount.innerHTML = '<div style="font-family:var(--sans);font-size:13px;color:#c0392b;">Account creation is temporarily unavailable. Your report above is unaffected.</div>';
+    if (mount) mount.innerHTML = '<div style="font-family:var(--sans);font-size:15px;color:#c0392b;">Account creation is temporarily unavailable. Your report above is unaffected.</div>';
   }
 }
 
@@ -6381,7 +6442,7 @@ async function submitLifescape() {
             renderSchoolRecommendations(
               profile, callAData, callDData,
               adjacentPicks, profileAdjacentPicks,
-              _consultantExpansion
+              _consultantExpansion, sizeAdjacentPicks
             );
             // Render Act IX if callE returned data
             if (LS_STATE.callEResult) renderActIX(LS_STATE.callEResult);
@@ -6392,7 +6453,7 @@ async function submitLifescape() {
             if (radarPicks.length > 0) renderUnderTheRadar(radarPicks);
 
             // Build compiled school sheet and show print trigger
-            buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPicks, radarPicks, LS_STATE._scenarioSchools || []);
+            buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPicks, radarPicks, LS_STATE._scenarioSchools || [], sizeAdjacentPicks);
             showPrintTrigger();
           } else {
             console.warn('[callD] parseCallD returned 0 schools — check raw response format');
@@ -6609,7 +6670,7 @@ function renderFullReport(profile, callAData, callBData, callCData, essayParsed)
         + '<strong style="display:block;margin-bottom:6px;color:var(--ink)">'
         + c.triggered_by.map(function(s){ return toSentenceCase(stripUnderscores(s)); }).join(' + ')
         + '</strong>'
-        + '<span style="color:var(--gold);font-weight:300;font-size:13px;letter-spacing:1px">'
+        + '<span style="color:var(--gold);font-weight:300;font-size:15px;letter-spacing:1px">'
         + c.unlocks.join(' · ')
         + '</span>'
         + '</div></div>';
@@ -7014,7 +7075,7 @@ function renderCounselorView(profile, callAData, callBData, callCData, essayPars
   const occupationEl = document.getElementById('counselor-occupations');
   if(occupationEl && typeof buildONETCounselorBlock === 'function') {
     const occHtml = buildONETCounselorBlock(profile.naicsSectors, profile.riasec, profile.name);
-    occupationEl.innerHTML = occHtml || '<div style="font-size:13px;color:var(--ink4)">No occupation data available.</div>';
+    occupationEl.innerHTML = occHtml || '<div style="font-size:15px;color:var(--ink4)">No occupation data available.</div>';
   }
 
   // ── University intelligence — major strengths + grad cities (counselor-only) ─
@@ -7027,7 +7088,7 @@ function renderCounselorView(profile, callAData, callBData, callCData, essayPars
     const picks = LS_STATE.sizeAdjacentPicks || [];
     sizeAdjEl.innerHTML = picks.length > 0
       ? picks.map(p => `<div style="margin-bottom:8px"><strong>${p.name}</strong> — ${p.reason}</div>`).join('')
-      : '<div style="font-size:13px;color:var(--ink4)">No same-region, same-social-scene alternative at a different size was found for this student\'s selections.</div>';
+      : '<div style="font-size:15px;color:var(--ink4)">No same-region, same-social-scene alternative at a different size was found for this student\'s selections.</div>';
   }
 
   document.getElementById('counselor-meta').innerHTML = [
@@ -7189,7 +7250,7 @@ function renderCounselorView(profile, callAData, callBData, callCData, essayPars
     ).join('');
   } else {
     document.getElementById('counselor-combos').innerHTML =
-      '<div style="font-size:13px;color:var(--ink3);font-weight:300">No combination unlocks fired — single-tile signals only.</div>';
+      '<div style="font-size:15px;color:var(--ink3);font-weight:300">No combination unlocks fired — single-tile signals only.</div>';
   }
 
   // Counselor note — structured with section headings
@@ -7272,7 +7333,7 @@ function renderCounselorView(profile, callAData, callBData, callCData, essayPars
         return '<div class="combo-block">' +
           '<div class="combo-text"><strong style="display:block;margin-bottom:6px;color:var(--ink)">' + t.topic + '</strong>' +
           '<span style="color:var(--ink3);">' + t.why + '</span>' +
-          '<div style="margin-top:8px;font-size:12px;color:var(--ink4);letter-spacing:0.5px;">' +
+          '<div style="margin-top:8px;font-size:14px;color:var(--ink4);letter-spacing:0.5px;">' +
             'Authenticity ' + (t.authenticity ?? '—') + '/10 · Specificity ' + (t.specificity ?? '—') + '/10 · Differentiation ' + (t.differentiation ?? '—') + '/10' +
             (t.risk && t.risk !== 'none' ? ' · <span style="color:#a05a3a;">Risk: ' + t.risk + '</span>' : '') +
           '</div></div></div>';
@@ -7281,7 +7342,7 @@ function renderCounselorView(profile, callAData, callBData, callCData, essayPars
       var _rejectedHtml = _cView.rejected.length > 0
         ? '<div style="margin-top:1.25rem;"><div class="section-eyebrow" style="margin-bottom:.5rem">Considered and set aside</div>' +
           _cView.rejected.map(function(r) {
-            return '<div style="font-size:13px;color:var(--ink3);margin-bottom:6px;"><strong style="color:var(--ink2);">' + r.direction + '</strong> — ' + r.reason + '</div>';
+            return '<div style="font-size:15px;color:var(--ink3);margin-bottom:6px;"><strong style="color:var(--ink2);">' + r.direction + '</strong> — ' + r.reason + '</div>';
           }).join('') + '</div>'
         : '';
 
@@ -7436,7 +7497,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 // ── COMPILED SCHOOL SHEET ────────────────────────────────────────────────────
-function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPicks, radarPicks, scenarioSchools) {
+function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPicks, radarPicks, scenarioSchools, sizeAdjacentPicks) {
   // Aggregate all schools from all sources
   var allSchools = [];
 
@@ -7461,6 +7522,19 @@ function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPi
         label: 'Adjacent Match',
         bullet1: sd && sd.hidden_pathway ? sd.hidden_pathway.split('.')[0].trim() + '.' : 'Adjacent program match',
         bullet2: sd && sd.grad_cities ? 'Graduates go to: ' + (Array.isArray(sd.grad_cities) ? sd.grad_cities.slice(0,3).join(', ') : sd.grad_cities) : ''
+      });
+    });
+  }
+
+  // Size-adjacent picks — added 2026-07-10, same fix as renderSchoolRecommendations
+  if(sizeAdjacentPicks && sizeAdjacentPicks.length) {
+    sizeAdjacentPicks.forEach(function(sp) {
+      var spd = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(sp.name) : null;
+      allSchools.push({
+        name: sp.name,
+        label: sp.direction === 'smaller' ? 'Smaller Option' : 'Larger Option',
+        bullet1: spd && spd.hidden_pathway ? spd.hidden_pathway.split('.')[0].trim() + '.' : 'A genuine match on region and social scene, at a different scale.',
+        bullet2: sp.enrollment ? sp.enrollment.toLocaleString() + ' students' : ''
       });
     });
   }
