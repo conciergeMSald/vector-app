@@ -13,8 +13,21 @@
  * rocky_mountains resolved to the wrong real pool). Removed CONFERENCE_POOLS
  * and all conference-filtering logic — no UI screen has ever set this
  * preference, confirmed dead code.
+ *
+ * 2026-07-10: Removed the dead "program strength boost" scoring branch from
+ * scoreAndRankSchools() and getAdjacentMatches() (product owner decision). That
+ * branch was gated behind `typeof getMajorStrengths === 'function'` --
+ * getMajorStrengths was never defined anywhere in the project, so the branch
+ * never executed. Since MVP timeline doesn't call for building it now, and it
+ * was dead weight either way, it was removed rather than built out. This also
+ * removed the NAICS_MAJOR_MAP placeholder map that only existed to feed that
+ * branch (it briefly existed as a single deduplicated definition after the
+ * duplicate-copy cleanup earlier the same day, but had no remaining callers
+ * once the dead branch was gone). If school-major-strength scoring is wanted
+ * post-MVP, school_major_outcomes.js (real Scorecard-sourced per-school major
+ * data) is the recommended data source -- see VECTOR_PreDeployment_Systems_
+ * Audit_AddendumA.docx for context.
  */
-
 
 // ─────────────────────────────────────────────────────────────
 // REGION → SCHOOL POOL MAP — built from database region fields
@@ -26,7 +39,7 @@ const REGION_POOLS = {
   ],
 
   northeast: [
-    "NY · NJ · PA","Binghamton University","Bryn Mawr College","Bucknell University","Carnegie Mellon University","Colgate University","Columbia University","Cornell University","Drexel University","Fashion Institute of Technology","Fordham University","Franklin and Marshall College","Hamilton College","Haverford College","Ithaca College","Lehigh University","New York University","Penn State University","Pratt Institute","Princeton University","Rochester Institute of Technology","Rutgers University","Stevens Institute of Technology","Swarthmore College","Syracuse University","Temple University","Union College","United States Military Academy","University at Buffalo","University of Pennsylvania","University of Pittsburgh","Vassar College","Villanova University","Webb Institute","Dickinson College","Barnard College","Gettysburg College","United States Merchant Marine Academy",
+    "Binghamton University","Bryn Mawr College","Bucknell University","Carnegie Mellon University","Colgate University","Columbia University","Cornell University","Drexel University","Fashion Institute of Technology","Fordham University","Franklin and Marshall College","Hamilton College","Haverford College","Ithaca College","Lehigh University","New York University","Penn State University","Pratt Institute","Princeton University","Rochester Institute of Technology","Rutgers University","Stevens Institute of Technology","Swarthmore College","Syracuse University","Temple University","Union College","United States Military Academy","University at Buffalo","University of Pennsylvania","University of Pittsburgh","Vassar College","Villanova University","Webb Institute","Dickinson College","Barnard College","Gettysburg College","United States Merchant Marine Academy",
   ],
 
   mid_atlantic: [
@@ -46,7 +59,7 @@ const REGION_POOLS = {
   ],
 
   pacific_nw: [
-    "Georgetown University","Gonzaga University","Reed College","Seattle Pacific University","Southern Oregon University","University of Oregon","University of Washington","Eastern Washington University","University of Alaska Fairbanks",
+    "Gonzaga University","Reed College","Seattle Pacific University","Southern Oregon University","University of Oregon","University of Washington","Eastern Washington University","University of Alaska Fairbanks",
   ],
 
   california: [
@@ -54,7 +67,7 @@ const REGION_POOLS = {
   ],
 
   southwest: [
-    "AZ · NM · OK · TX","Abilene Christian University","Arizona State University","Baylor University","New Mexico State University","Northern Arizona University","Oklahoma State University","Prescott College","Rice University","Southern Methodist University","Texas A&M University","Texas Christian University","Texas Tech University","The University of Texas at Dallas","University of Arizona","University of Houston","University of New Mexico","University of Oklahoma","University of Texas Permian Basin","University of Texas at Austin","University of Tulsa","Sam Houston State University","University of North Texas","Texas State University",
+    "Abilene Christian University","Arizona State University","Baylor University","New Mexico State University","Northern Arizona University","Oklahoma State University","Prescott College","Rice University","Southern Methodist University","Texas A&M University","Texas Christian University","Texas Tech University","The University of Texas at Dallas","University of Arizona","University of Houston","University of New Mexico","University of Oklahoma","University of Texas Permian Basin","University of Texas at Austin","University of Tulsa","Sam Houston State University","University of North Texas","Texas State University",
   ],
 
 
@@ -986,68 +999,9 @@ function scoreAndRankSchools(collegePrefs, riasec, naicsSectors, comboUnlocks, g
     }
   }
 
-  // Step 6 — Build NAICS → major cluster map for program strength scoring
-  const NAICS_MAJOR_MAP = {
-    52: ['Business'],
-    51: ['Computer Science','Media & Communications','Arts & Design'],
-    54: ['Computer Science','Sciences','Engineering'],
-    62: ['Health Sciences'],
-    61: ['Education','Law & Policy'],
-    71: ['Arts & Design','Media & Communications','Performing Arts'],
-    23: ['Engineering','Arts & Design'],
-    92: ['Law & Policy'],
-    56: ['Business'],
-    81: ['Business','Entrepreneurship'],
-    72: ['Business','Entrepreneurship'],
-    44: ['Business'],
-    48: ['Engineering'],
-    33: ['Engineering'],
-    32: ['Sciences','Engineering'],
-    31: ['Sciences'],
-  };
-
-  // Derive student's desired major clusters from NAICS profile
-  const studentMajorClusters = new Set();
-  (naicsSectors || []).slice(0, 5).forEach(n => {
-    const clusters = NAICS_MAJOR_MAP[n.sector] || [];
-    clusters.forEach(c => studentMajorClusters.add(c));
-  });
-
   // Step 6 — Score and sort
   const scored = eligible.map(school => {
     let score = 5; // base
-
-    // ── Program strength boost — profile-aware specificity ────────────────
-    if (studentMajorClusters.size > 0 && typeof getMajorStrengths === 'function') {
-      const schoolMajors = getMajorStrengths(school);
-
-      const creativeSignalClusters = new Set(['Media & Communications','Performing Arts','Arts & Design']);
-      const stemSignalClusters     = new Set(['Engineering','Computer Science']);
-      const healthSignalClusters   = new Set(['Health Sciences']);
-      const businessSignalClusters = new Set(['Business','Entrepreneurship']);
-
-      const studentCreativeCount  = [...studentMajorClusters].filter(c => creativeSignalClusters.has(c)).length;
-      const studentStemCount      = [...studentMajorClusters].filter(c => stemSignalClusters.has(c)).length;
-      const studentHealthCount    = [...studentMajorClusters].filter(c => healthSignalClusters.has(c)).length;
-      const studentBizCount       = [...studentMajorClusters].filter(c => businessSignalClusters.has(c)).length;
-
-      const creativeOverlap  = schoolMajors.filter(m => studentMajorClusters.has(m) && creativeSignalClusters.has(m));
-      const stemOverlap      = schoolMajors.filter(m => studentMajorClusters.has(m) && stemSignalClusters.has(m));
-      const healthOverlap    = schoolMajors.filter(m => studentMajorClusters.has(m) && healthSignalClusters.has(m));
-      const bizOverlap       = schoolMajors.filter(m => studentMajorClusters.has(m) && businessSignalClusters.has(m));
-
-      if (studentCreativeCount >= 2 && creativeOverlap.length >= 2) score += 25;
-      else if (studentCreativeCount >= 1 && creativeOverlap.length >= 1) score += 15;
-      else if (studentStemCount >= 2 && stemOverlap.length >= 2) score += 25;
-      else if (studentStemCount >= 1 && stemOverlap.length >= 1) score += 15;
-      else if (studentHealthCount >= 1 && healthOverlap.length >= 1) score += 20;
-      else if (studentBizCount >= 1 && bizOverlap.length >= 1) score += 15;
-      else {
-        const generalOverlap = schoolMajors.filter(m => studentMajorClusters.has(m));
-        if (generalOverlap.length >= 2) score += 8;
-        else if (generalOverlap.length === 1) score += 4;
-      }
-    }
 
     // Social scene affinity bonus
     if (social_scene && social_scene !== 'no_preference') {
@@ -1242,32 +1196,6 @@ function getAdjacentMatches(primaryMatches, naicsSectors, comboUnlocks, max=1, r
     return true;
   });
 
-  // NAICS → major cluster map — same mapping used in matchUniversities
-  const NAICS_MAJOR_MAP = {
-    52: ['Business'],
-    51: ['Computer Science','Media & Communications','Arts & Design'],
-    54: ['Computer Science','Sciences','Engineering'],
-    62: ['Health Sciences'],
-    61: ['Education','Law & Policy'],
-    71: ['Arts & Design','Media & Communications','Performing Arts'],
-    23: ['Engineering','Arts & Design'],
-    92: ['Law & Policy'],
-    56: ['Business'],
-    81: ['Business','Entrepreneurship'],
-    72: ['Business','Entrepreneurship'],
-    44: ['Business'],
-    48: ['Engineering'],
-    33: ['Engineering'],
-    32: ['Sciences','Engineering'],
-    31: ['Sciences'],
-  };
-
-  // Derive student's major clusters from NAICS profile — actual signal use
-  const studentMajorClusters = new Set();
-  (naicsSectors || []).slice(0, 5).forEach(n => {
-    (NAICS_MAJOR_MAP[n.sector] || []).forEach(c => studentMajorClusters.add(c));
-  });
-
   // Score candidates on actual program/major fit — this is the real "adjacent" signal
   const scored = candidates.map(school => {
     let score = 0;
@@ -1275,14 +1203,6 @@ function getAdjacentMatches(primaryMatches, naicsSectors, comboUnlocks, max=1, r
     // GPA range alignment (soft — don't hard-filter)
     const range = SCHOOL_GPA_RANGES[school];
     if (range) score += 1;
-
-    // Program strength match — the actual signal this function should use
-    if (studentMajorClusters.size > 0 && typeof getMajorStrengths === 'function') {
-      const schoolMajors = getMajorStrengths(school);
-      const overlap = schoolMajors.filter(m => studentMajorClusters.has(m));
-      if (overlap.length >= 2) score += 20;
-      else if (overlap.length === 1) score += 10;
-    }
 
     // Combo unlock boost — student has fired a multi-tile combination
     if (comboUnlocks && comboUnlocks.length > 0) score += 2;

@@ -1,7 +1,7 @@
 /**
  * VECTOR Lifescape — Geographic Industry Intelligence Database
- * Pass 4: New York Metro + Boston + DC Corridor — 20 ZIP codes
- * Version: 1.0 — June 16, 2026
+ * Pass 4: New York Metro + Boston + DC Corridor — 30 ZIP codes
+ * Version: 1.1 — docstring count corrected 2026-07-10 (previously claimed 20)
  */
 
 const GEO_INDUSTRY_DB_EAST = {
@@ -623,15 +623,8 @@ const GEO_INDUSTRY_DB_EAST = {
         name: "Federal Government & Policy",
         naics: 92,
         distance: "Local",
-        anchor_employers: ["US Patent and Trademark Office", "federal agency regional offices"],
-        student_connection: "Old Town Alexandria sits minutes from DC with a genuine federal-employment identity of its own, distinct from the commuter-suburb reputation of its historic waterfront."
-      },
-      {
-        name: "Law & Regulatory Affairs",
-        naics: 54,
-        distance: "Local",
-        anchor_employers: ["regional law firms", "government-affairs consultancies"],
-        student_connection: "Alexandria's proximity to both DC and the Pentagon supports a genuine concentration of regulatory law and government-affairs firms."
+        anchor_employers: ["US Patent and Trademark Office", "National Science Foundation (HQ)"],
+        student_connection: "Old Town Alexandria is home to both the US Patent and Trademark Office and the National Science Foundation's headquarters — a genuine federal-employment identity of its own, distinct from the commuter-suburb reputation of its historic waterfront."
       }
     ]
   },
@@ -674,8 +667,8 @@ const GEO_INDUSTRY_DB_EAST = {
         name: "Financial Services",
         naics: 52,
         distance: "Local",
-        anchor_employers: ["Freddie Mac (HQ)", "regional banking offices"],
-        student_connection: "Freddie Mac's headquarters gives Vienna a real housing-finance industry identity alongside its federal-contracting reputation."
+        anchor_employers: ["Freddie Mac (HQ)", "Navy Federal Credit Union (HQ)"],
+        student_connection: "Freddie Mac's headquarters and Navy Federal Credit Union — the largest credit union in the United States — together give Vienna a real, substantial financial-services identity alongside its federal-contracting reputation."
       }
     ]
   },
@@ -711,7 +704,7 @@ const GEO_INDUSTRY_DB_EAST = {
         name: "Defense & Intelligence Contracting",
         naics: 92,
         distance: "Local",
-        anchor_employers: ["National Geospatial-Intelligence Agency (NGA)", "Fort Belvoir-adjacent contractors"],
+        anchor_employers: ["National Geospatial-Intelligence Agency (NGA)", "Fort Belvoir"],
         student_connection: "Springfield hosts the National Geospatial-Intelligence Agency's headquarters directly — one of the most specialized intelligence-agency employment bases in the country."
       },
       {

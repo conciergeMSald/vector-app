@@ -6,19 +6,19 @@
  * MASTER FILE — DO NOT EDIT DIRECTLY
  * Edit source files, then run: python3 assemble_master.py
  *
- * Schools complete: 73
- * Last assembled:  July 06, 2026
+ * Schools complete: 116
+ * Last assembled:  July 10, 2026
  *
  * School index:
- *     1. Arizona State University
- *     2. University of Washington
- *     3. University of Arizona
- *     4. University of Oregon
- *     5. Reed College
- *     6. Gonzaga University
- *     7. Indiana University Bloomington
- *     8. Iowa State University
- *     9. Oklahoma State University
+ *    1. Arizona State University
+ *    2. University of Washington
+ *    3. University of Arizona
+ *    4. University of Oregon
+ *    5. Reed College
+ *    6. Gonzaga University
+ *    7. Indiana University Bloomington
+ *    8. Iowa State University
+ *    9. Oklahoma State University
  *    10. University of Kansas
  *    11. University of Houston
  *    12. The University of Texas at Dallas
@@ -50,39 +50,82 @@
  *    38. Elon University
  *    39. Drake University
  *    40. Creighton University
- *    41. Indiana University
- *    42. Baylor University
- *    43. Southern Methodist University
- *    44. Villanova University
- *    45. University of Southern California
- *    46. Washington University in St. Louis
- *    47. Georgia Institute of Technology
- *    48. University of Denver
- *    49. University of Utah
- *    50. Weber State University
- *    51. Towson University
- *    52. Ohio State University
- *    53. Michigan State University
- *    54. University of Wisconsin-Madison
- *    55. American University
- *    56. Belmont University
- *    57. Boston University
- *    58. Colorado State University
- *    59. Fordham University
- *    60. George Washington University
- *    61. Loyola Marymount University
- *    62. Marquette University
- *    63. University of Maryland College Park
- *    64. Northeastern University
- *    65. New York University
- *    66. Penn State University
- *    67. Purdue University
- *    68. SMU
- *    69. TCU
- *    70. University of North Carolina Chapel Hill
- *    71. University of Texas at Austin
- *    72. UCLA
- *    73. Boston College
+ *    41. Baylor University
+ *    42. Southern Methodist University
+ *    43. Villanova University
+ *    44. University of Southern California
+ *    45. Washington University in St. Louis
+ *    46. Georgia Institute of Technology
+ *    47. University of Denver
+ *    48. University of Utah
+ *    49. Weber State University
+ *    50. Towson University
+ *    51. The Ohio State University
+ *    52. Michigan State University
+ *    53. University of Wisconsin-Madison
+ *    54. American University
+ *    55. Belmont University
+ *    56. Boston University
+ *    57. Colorado State University
+ *    58. Fordham University
+ *    59. George Washington University
+ *    60. Loyola Marymount University
+ *    61. Marquette University
+ *    62. University of Maryland, College Park
+ *    63. Northeastern University
+ *    64. New York University
+ *    65. Penn State University
+ *    66. Purdue University
+ *    67. Texas Christian University
+ *    68. University of North Carolina at Chapel Hill
+ *    69. The University of Texas at Austin
+ *    70. University of California-Los Angeles
+ *    71. Boston College
+ *    72. University of California-San Diego
+ *    73. University of California-Santa Barbara
+ *    74. University of California-Davis
+ *    75. University of California-Irvine
+ *    76. University of California-Riverside
+ *    77. University of California-Santa Cruz
+ *    78. Stanford University
+ *    79. California Institute of Technology
+ *    80. University of Iowa
+ *    81. University of Missouri
+ *    82. University of Arkansas
+ *    83. University of Mississippi
+ *    84. University of Nebraska-Lincoln
+ *    85. University of Tennessee
+ *    86. University of Vermont
+ *    87. Florida State University
+ *    88. University of Central Florida
+ *    89. Georgia State University
+ *    90. Temple University
+ *    91. James Madison University
+ *    92. University of Richmond
+ *    93. Princeton University
+ *    94. Yale University
+ *    95. Columbia University
+ *    96. Cornell University
+ *    97. Dartmouth College
+ *    98. University of Pennsylvania
+ *    99. Amherst College
+ *    100. Bowdoin College
+ *    101. Middlebury College
+ *    102. Wesleyan University
+ *    103. Carleton College
+ *    104. Grinnell College
+ *    105. Vassar College
+ *    106. Claremont McKenna College
+ *    107. Harvey Mudd College
+ *    108. Hamilton College
+ *    109. Oberlin College
+ *    110. Kenyon College
+ *    111. Case Western Reserve University
+ *    112. Lehigh University
+ *    113. Drexel University
+ *    114. Worcester Polytechnic Institute
+ *    115. Rochester Institute of Technology
+ *    116. Stevens Institute of Technology
  */
 
 const UNIVERSITY_DB_V5 = {
@@ -133,6 +176,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "ASU maintains one of America's strongest community college transfer ecosystems through the Maricopa County Community College District, creating seamless pathways into engineering, business, healthcare, computer science, and nearly every major."
       },
       "institutionIdentity": {
+      "commonName": "Arizona State University",
         "archetype": "Large Urban Research Innovation University"
       },
       "institutionalPersonality": "innovative, entrepreneurial, ambitious, collaborative, future-focused",
@@ -615,6 +659,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "University of Washington",
       "archetype": "Elite Global Public Research University",
       "institutionalPersonality": "innovative, collaborative, analytical, globally engaged, research-driven",
       "cultureKeywords": [
@@ -1076,6 +1121,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "University of Arizona",
       "archetype": "Elite Public Research University",
       "institutionalPersonality": "scientific, collaborative, adventurous, research-driven, innovative",
       "cultureKeywords": [
@@ -1526,6 +1572,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Oregon maintains transfer agreements with Oregon's community college system."
       },
       "institutionIdentity": {
+      "commonName": "University of Oregon",
         "archetype": "Large Public Flagship, Nike-Adjacent Sports Business Anchor"
       },
       "institutionalPersonality": "laid-back, ambitious, Nike-adjacent, outdoorsy",
@@ -1774,6 +1821,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Reed College",
       "archetype": "Elite Liberal Arts College",
       "institutionalPersonality": "intellectually fearless, scholarly, independent, unconventional, deeply analytical",
       "cultureKeywords": [
@@ -2233,6 +2281,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Gonzaga University",
       "archetype": "Jesuit Comprehensive University",
       "institutionalPersonality": "ethical, collaborative, service-oriented, intellectually curious, community-centered",
       "cultureKeywords": [
@@ -2671,7 +2720,7 @@ const UNIVERSITY_DB_V5 = {
       "comparableInstitutions": [
         "University of Wisconsin",
         "University of Michigan",
-        "Ohio State University",
+        "The Ohio State University",
         "Penn State University",
         "University of Florida"
       ],
@@ -2690,6 +2739,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Indiana University",
       "archetype": "Flagship Public Research University",
       "institutionalPersonality": "professional, collaborative, ambitious, relationship-driven, tradition-rich",
       "cultureKeywords": [
@@ -3147,6 +3197,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Iowa State University",
       "archetype": "Land-Grant Research University",
       "institutionalPersonality": "practical, innovative, collaborative, industrious, down-to-earth",
       "cultureKeywords": [
@@ -3604,6 +3655,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Oklahoma State University",
       "archetype": "Land-Grant Research University",
       "institutionalPersonality": "practical, loyal, entrepreneurial, collaborative, resilient",
       "cultureKeywords": [
@@ -4061,6 +4113,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "University of Kansas",
       "archetype": "Flagship Public Research University",
       "institutionalPersonality": "collaborative, intellectually curious, welcoming, resilient, tradition-rich",
       "cultureKeywords": [
@@ -4518,6 +4571,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "University of Houston",
       "archetype": "Urban Public Research University",
       "institutionalPersonality": "ambitious, entrepreneurial, resilient, diverse, opportunity-driven",
       "cultureKeywords": [
@@ -4975,6 +5029,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "UT Dallas",
       "archetype": "Technology-Focused Public Research University",
       "institutionalPersonality": "analytical, ambitious, innovative, meritocratic, globally connected",
       "cultureKeywords": [
@@ -5432,6 +5487,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Alabama",
       "archetype": "Flagship Public Research University",
       "institutionalPersonality": "confident, welcoming, ambitious, tradition-rich, leadership-oriented",
       "cultureKeywords": [
@@ -5884,6 +5940,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Harvard University",
       "archetype": "Elite Global Ivy League Research University",
       "institutionalPersonality": "authoritative, globally networked, prestige-dominant, intellectually expansive, leadership-oriented",
       "cultureKeywords": [
@@ -6252,6 +6309,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Brown University",
       "archetype": "Ivy League Research University (Open Curriculum Model)",
       "institutionalPersonality": "intellectually free, creative, interdisciplinary, student-driven, innovative",
       "cultureKeywords": [
@@ -6597,6 +6655,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UIUC maintains transfer agreements with Illinois community colleges, though CS transfer remains highly competitive."
       },
       "institutionIdentity": {
+      "commonName": "Illinois",
         "archetype": "Elite Public CS/Engineering Flagship"
       },
       "institutionalPersonality": "technically rigorous, ambitious, Big Ten spirited",
@@ -6828,7 +6887,7 @@ const UNIVERSITY_DB_V5 = {
       "comparableInstitutions": [
         "Penn State University",
         "University of Maryland",
-        "Ohio State University"
+        "The Ohio State University"
       ],
       "ccTransferPathway": {
         "hasCCPathway": true,
@@ -6841,6 +6900,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Rutgers maintains transfer agreements with New Jersey's community college system."
       },
       "institutionIdentity": {
+      "commonName": "Rutgers University",
         "archetype": "Large Public Big Ten Flagship, Pharma Corridor Anchor"
       },
       "institutionalPersonality": "practical, diverse, career-focused, Big Ten spirited",
@@ -7086,6 +7146,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Michigan's transfer admissions are highly selective, reflecting the university's overall elite positioning."
       },
       "institutionIdentity": {
+      "commonName": "University of Michigan",
         "archetype": "Elite Public Research University, 'Public Ivy'"
       },
       "institutionalPersonality": "ambitious, spirited, intellectually serious, competitive",
@@ -7366,6 +7427,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "University of South Carolina",
       "archetype": "International Business, Supply Chain, and Advanced Manufacturing Flagship",
       "institutionalPersonality": "globally-minded, professionally ambitious, SEC-proud, increasingly nationally diverse, Charlotte-orbit-aware, supply-chain-savvy",
       "cultureKeywords": [
@@ -7779,6 +7841,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UGA maintains transfer agreements with Georgia's community college system."
       },
       "institutionIdentity": {
+      "commonName": "University of Georgia",
         "archetype": "Large Public SEC Flagship, Corporate Georgia Anchor"
       },
       "institutionalPersonality": "spirited, business-ambitious, culturally rich, traditional",
@@ -8008,7 +8071,7 @@ const UNIVERSITY_DB_V5 = {
       "comparableInstitutions": [
         "University of Georgia",
         "Florida State University",
-        "University of Texas at Austin"
+        "The University of Texas at Austin"
       ],
       "ccTransferPathway": {
         "hasCCPathway": true,
@@ -8021,6 +8084,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UF maintains strong Florida community college articulation agreements."
       },
       "institutionIdentity": {
+      "commonName": "University of Florida",
         "archetype": "Large Public SEC Flagship, Florida Triangle Anchor"
       },
       "institutionalPersonality": "football-first, underrated academically, Florida-rooted",
@@ -8275,6 +8339,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "University of Oklahoma",
       "archetype": "Energy and Engineering Flagship",
       "institutionalPersonality": "community-oriented, energy-industry-proud, SEC-loyal, practical, regionally dominant, warmly ambitious",
       "cultureKeywords": [
@@ -8678,6 +8743,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Louisiana State University",
       "archetype": "Gulf Coast Energy, Architecture, and Media Flagship",
       "institutionalPersonality": "SEC-proud, Louisiana-loyal, culturally rich, community-oriented, energy-industry-aware, festival-culture embracing",
       "cultureKeywords": [
@@ -9065,6 +9131,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Auburn maintains transfer agreements with Alabama's community college system."
       },
       "institutionIdentity": {
+      "commonName": "Auburn University",
         "archetype": "Large Public SEC Flagship with Elite Technical Niches"
       },
       "institutionalPersonality": "spirited, traditional, technically capable, communal",
@@ -9310,6 +9377,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Clemson maintains transfer agreements with South Carolina's technical college system."
       },
       "institutionIdentity": {
+      "commonName": "Clemson University",
         "archetype": "Large Public ACC Flagship, Automotive Engineering Anchor"
       },
       "institutionalPersonality": "spirited, manufacturing-savvy, traditional, technically capable",
@@ -9552,6 +9620,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Vanderbilt University",
       "archetype": "Elite Private Research University",
       "institutionalPersonality": "ambitious, polished, collaborative, more emotionally balanced than many peer institutions",
       "cultureKeywords": [
@@ -9930,7 +9999,7 @@ const UNIVERSITY_DB_V5 = {
       "comparableInstitutions": [
         "University of Michigan",
         "UC Berkeley",
-        "University of North Carolina Chapel Hill",
+        "University of North Carolina at Chapel Hill",
         "Georgetown University"
       ],
       "ccTransferPathway": {
@@ -9945,6 +10014,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Virginia's Guaranteed Admission Agreement with in-state community colleges creates a structured pathway for qualifying transfer students."
       },
       "institutionIdentity": {
+      "commonName": "University of Virginia",
         "archetype": "Elite Public 'Public Ivy', Founding-Era Prestige"
       },
       "institutionalPersonality": "polished, ambitious, historically rooted, achievement-oriented",
@@ -10207,6 +10277,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Tulane transfer admission is highly competitive, reflecting overall selectivity."
       },
       "institutionIdentity": {
+      "commonName": "Tulane University",
         "archetype": "Private University, New Orleans Cultural and Energy Finance Anchor"
       },
       "institutionalPersonality": "culturally rich, civically engaged, underrated in specific programs",
@@ -10455,6 +10526,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "CU Boulder maintains transfer agreements with Colorado's community college system."
       },
       "institutionIdentity": {
+      "commonName": "CU Boulder",
         "archetype": "Large Public Research Flagship, Aerospace and Wellness Hybrid"
       },
       "institutionalPersonality": "outdoorsy, technically serious, health-conscious, free-spirited",
@@ -10740,6 +10812,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Syracuse maintains transfer agreements with Central New York community colleges."
       },
       "institutionIdentity": {
+      "commonName": "Syracuse University",
         "archetype": "Private Media-First University, Newhouse Anchor"
       },
       "institutionalPersonality": "media-driven, resilient, tribal, spirited",
@@ -10989,6 +11062,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Miami maintains strong articulation agreements with Miami Dade College."
       },
       "institutionIdentity": {
+      "commonName": "University of Miami",
         "archetype": "Private Global Business University, Latin America Gateway"
       },
       "institutionalPersonality": "international, glamorous, business-ambitious, cosmopolitan",
@@ -11237,6 +11311,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Williams College",
       "archetype": "Elite Liberal Arts College",
       "institutionalPersonality": "rigorous, athletic, tight-knit, intellectually direct, outdoors-oriented",
       "cultureKeywords": [
@@ -11674,6 +11749,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Pomona College",
       "archetype": "Elite Liberal Arts College",
       "institutionalPersonality": "intellectually adventurous, well-resourced, collaborative, outdoors-oriented, independent",
       "cultureKeywords": [
@@ -12111,6 +12187,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Saint Mary's College of California",
       "archetype": "Small Catholic Liberal Arts College",
       "institutionalPersonality": "mission-driven, close-knit, discussion-oriented, values-centered, supportive",
       "cultureKeywords": [
@@ -12515,6 +12592,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "USD maintains transfer agreements with San Diego-area community colleges."
       },
       "institutionIdentity": {
+      "commonName": "University of San Diego",
         "archetype": "Private Catholic University, Coastal Peer to Pepperdine/Villanova/Santa Clara"
       },
       "institutionalPersonality": "faith-centered, polished, scenic, values-driven",
@@ -12776,6 +12854,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Santa Clara University",
       "archetype": "Mid-Sized Jesuit University",
       "institutionalPersonality": "professionally ambitious, tech-forward, values-aware, entrepreneurial, disciplined",
       "cultureKeywords": [
@@ -13196,6 +13275,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "California State University Chico",
       "archetype": "Mid-Sized Public University",
       "institutionalPersonality": "community-centered, outdoors-oriented, traditional, practical, welcoming",
       "cultureKeywords": [
@@ -13597,6 +13677,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Elon maintains transfer agreements with North Carolina community colleges."
       },
       "institutionIdentity": {
+      "commonName": "Elon University",
         "archetype": "Private University, Southern Campus with National Media Pipeline"
       },
       "institutionalPersonality": "warm, polished, media-ambitious, experientially-driven",
@@ -13846,6 +13927,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Drake University",
       "archetype": "Mid-Sized Professional University",
       "institutionalPersonality": "professionally focused, civically engaged, practical, Midwestern, community-oriented",
       "cultureKeywords": [
@@ -14255,6 +14337,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Creighton University",
       "archetype": "Mid-Sized Jesuit Health Sciences University",
       "institutionalPersonality": "health-sciences-focused, mission-driven, disciplined, service-oriented, Midwestern",
       "cultureKeywords": [
@@ -14617,252 +14700,9 @@ const UNIVERSITY_DB_V5 = {
       "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_midwest"
     }
-  },
+  }
 
-"Indiana University": {
-    "institutionNarrative": {
-      "name": "Indiana University",
-      "location": "Bloomington, Indiana",
-      "region": "Midwest",
-      "archetype": "The Kelley Pipeline — Business Prestige and the Chicago Financial Corridor",
-      "oneSentenceSummary": "Indiana University's Kelley School of Business feeds one of the strongest Chicago financial services pipelines of any non-Ivy business school, wrapped inside classic Big Ten spirit and college-town charm.",
-      "pipeline": "Approximately 33,000 undergraduates. Kelley School of Business is a top-10 undergraduate program nationally. Major recruiters include major Chicago banks, consulting firms, and Fortune 500 companies with dedicated Kelley recruiting pipelines.",
-      "hiddenPathway": "Kelley's Chicago financial services placement is second only to Michigan Ross among non-Ivy business schools — a fact most families researching by overall university ranking alone will miss.",
-      "institutionalSecret": "IU's true strength isn't broad university prestige — it's Kelley's laser-focused, highly cultivated relationships with Chicago's financial sector.",
-      "theRoom": "Bloomington is a classic Midwest college town, self-contained and built entirely around IU's identity.",
-      "lifestyle": "Classic Big Ten spirit — Greek life, Kirkwood Ave nightlife, Assembly Hall basketball culture as the social center of gravity.",
-      "bestFitPersonality": "Business-ambitious, comfortable in a self-contained college town, energized by Big Ten spirit and Midwest work ethic.",
-      "faithTradition": "None",
-      "geographicInfluenceRadius": "Dominant across Indiana and the Midwest, with an unusually strong Chicago financial services pipeline.",
-      "economicOutcome": "Excellent outcomes in finance via Kelley, among the strongest non-Ivy business placement pipelines in the country.",
-      "gradCities": [
-        "Chicago IL",
-        "Indianapolis IN",
-        "New York NY",
-        "Washington DC",
-        "Columbus OH"
-      ],
-      "comparableInstitutions": [
-        "University of Michigan",
-        "Ohio State University",
-        "University of Illinois Urbana-Champaign"
-      ],
-      "ccTransferPathway": {
-        "hasCCPathway": true,
-        "ccFeederNames": [
-          "Ivy Tech Community College"
-        ],
-        "transferAcceptanceRate": "~68%",
-        "freshmanAcceptanceRate": "~80%",
-        "estimatedSavingsRange": "$10,000-$28,000",
-        "transferNotes": "IU maintains strong articulation agreements with Indiana's Ivy Tech system."
-      },
-      "institutionIdentity": {
-        "archetype": "Large Public Business-Focused Big Ten Flagship"
-      },
-      "institutionalPersonality": "business-ambitious, spirited, Midwest-practical",
-      "cultureKeywords": [
-        "Kelley Business",
-        "Big Ten",
-        "Chicago Pipeline",
-        "College Town",
-        "Basketball"
-      ],
-      "missionOrientation": "Delivering elite business outcomes at public-school scale, anchored by Kelley's Chicago financial services relationships.",
-      "educationalPhilosophy": "Rigorous, career-focused business education reinforced by deep Chicago corporate recruiting relationships.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, business-pragmatic.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite business-specific prestige via Kelley, broader university prestige more regional.",
-      "socialClimate": "Big Ten spirited, Greek-heavy, business-ambitious.",
-      "leadershipStyle": "Leadership through Kelley's structured business education and Chicago corporate relationships."
-    },
-    "institutionIdentity": {
-      "archetype": "The Kelley Pipeline — Business Prestige and the Chicago Financial Corridor",
-      "institutionalPersonality": "business-ambitious, spirited, Midwest-practical",
-      "cultureKeywords": [
-        "Kelley Business",
-        "Big Ten",
-        "Chicago Pipeline",
-        "College Town",
-        "Basketball"
-      ],
-      "missionOrientation": "Delivering elite business outcomes at public-school scale, anchored by Kelley's Chicago financial services relationships.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Rigorous, career-focused business education reinforced by deep Chicago corporate recruiting relationships.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, business-pragmatic.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite business-specific prestige via Kelley, broader university prestige more regional.",
-      "socialClimate": "Big Ten spirited, Greek-heavy, business-ambitious.",
-      "leadershipStyle": "Leadership through Kelley's structured business education and Chicago corporate relationships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
-      "regionalRole": "A primary business talent engine feeding Chicago's financial services sector."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 84,
-      "BosWash": 30,
-      "TorBuffChester": 14,
-      "TexasTriangle": 10,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 8
-    },
-    "comparativePositioning": {
-      "versusMichigan": "Michigan's Ross Business School has stronger national/consulting prestige; Kelley offers a comparably strong and more concentrated Chicago financial services pipeline.",
-      "versusOhioState": "Both are large Big Ten flagships. IU's Kelley Business is more nationally ranked than Ohio State's Fisher, though Ohio State offers broader engineering/medical depth."
-    },
-    "institutionScale": {
-      "enrollmentCategory": "Very Large",
-      "undergraduateEnrollment": 33000,
-      "graduateEnrollment": 9000,
-      "totalEnrollment": 42000,
-      "campusType": "Large Public Flagship, Classic College Town",
-      "residentialIntensity": 62,
-      "communityFeel": 64,
-      "studentFacultyRatio": "15:1",
-      "classSizeExperience": "Large introductory courses; Kelley's structured cohort model provides more personalized business education upper-division.",
-      "scaleAdvantages": [
-        "Top-10 Kelley Business School",
-        "Strong Chicago financial services pipeline",
-        "Classic Big Ten college-town culture"
-      ],
-      "scaleDisadvantages": [
-        "Large introductory courses require initiative",
-        "Business prestige concentrated in Kelley rather than university-wide"
-      ]
-    },
-    "studentFit": {
-      "bigFiveProfile": {
-        "openness": 68,
-        "conscientiousness": 82,
-        "extraversion": 80,
-        "agreeableness": 78,
-        "neuroticism": 38
-      },
-      "hollandCodes": [
-        "E",
-        "C",
-        "S"
-      ],
-      "learningStyle": [
-        "Case-Method Business",
-        "Structured Cohort Learning",
-        "Applied Finance"
-      ],
-      "socialEnvironment": [
-        "Big Ten Spirited",
-        "Greek-Heavy",
-        "Business-Ambitious"
-      ]
-    },
-    "hiddenOpportunities": {
-      "chicagoFinancePipeline": {
-        "strength": 92,
-        "notes": "Kelley's Chicago financial services placement is second only to Michigan Ross among non-Ivy business schools."
-      }
-    },
-    "networkCapital": {
-      "strength": 84,
-      "notes": "Kelley School cohorts build tight bonds that funnel directly into Chicago's financial services sector."
-    },
-    "economicEcosystem": {
-      "finance": {
-        "strength": 90,
-        "notes": "Among the strongest non-Ivy pipelines into Chicago's financial services sector."
-      },
-      "consulting": {
-        "strength": 76,
-        "notes": "Solid Big 4 and regional consulting placement via Kelley."
-      }
-    },
-    "geographicInfluence": {
-      "strength": 78,
-      "notes": "Dominant across Indiana and the Midwest, with an unusually strong Chicago financial pipeline."
-    },
-    "socialCapital": {
-      "strength": 84,
-      "notes": "Kelley cohorts form tight bonds that funnel directly into Chicago's financial sector."
-    },
-    "industryPathways": {
-      "business": {
-        "strength": 92,
-        "notes": "Kelley is a top-10 undergraduate business program nationally."
-      },
-      "finance": {
-        "strength": 90,
-        "notes": "Elite Chicago financial services placement."
-      }
-    },
-    "wealthMobility": {
-      "averageFamilyIncome": "",
-      "socialMobilityIndex": 70,
-      "firstGenerationSupport": 74,
-      "wealthCreationPotential": 82,
-      "familyBusinessPipelineStrength": 54
-    },
-    "futureResilience": {
-      "aiResistance": 74,
-      "automationResistance": 74,
-      "adaptabilityScore": 78,
-      "interdisciplinaryStrength": 74,
-      "futureReadiness": 80,
-      "entrepreneurialFlexibility": 72,
-      "lifelongLearningCulture": 78,
-      "innovationCapacity": 76
-    },
-    "lifeDesignOutcomes": {
-      "wealthCreationPotential": 82,
-      "communityLeadershipPotential": 80,
-      "geographicMobility": 76,
-      "workLifeBalancePotential": 78,
-      "purposeAlignment": 76,
-      "familyFormationSupport": 80,
-      "personalDevelopmentPotential": 80,
-      "careerOptionality": 82,
-      "longTermLifeSatisfaction": 82
-    },
-    "institutionalMoat": {
-      "prestigeMoat": 74,
-      "networkMoat": 84,
-      "geographicMoat": 76,
-      "industryMoat": 84,
-      "alumniMoat": 82,
-      "brandDurability": 82,
-      "overallMoatScore": 80
-    },
-    "trajectoryProfile": {
-      "dominantTrajectory": "STEWARD",
-      "leaverScore": 52,
-      "returnerScore": 66,
-      "stewardScore": 78,
-      "navigatorScore": 62,
-      "geographicLockIn": "moderate",
-      "alumniDispersalPattern": "heavily concentrated in Chicago and the Midwest, with strong secondary presence in Indianapolis and New York"
-    },
-    "jewishLife": {
-      "hillel": {
-        "exists": true,
-        "strength": 76,
-        "type": "Independent Campus Hillel"
-      },
-      "estimatedJewishUndergraduates": 1800,
-      "jewishStudentPercentage": "~5%",
-      "kosherDining": true,
-      "shabbatProgramming": true,
-      "birthrightSupport": true,
-      "jewishCommunityStrength": "Strong",
-      "notes": "IU has an active Hillel community with regular Shabbat programming."
-    },
-    "honorsCollege": {
-      "exists": true,
-      "name": "Hutton Honors College",
-      "strength": 80,
-      "notes": "Provides smaller seminar classes and priority registration within IU's larger structure."
-    }
-  },
+,
 
 "Baylor University": {
     "institutionNarrative": {
@@ -14888,7 +14728,7 @@ const UNIVERSITY_DB_V5 = {
         "San Antonio TX"
       ],
       "comparableInstitutions": [
-        "TCU",
+        "Texas Christian University",
         "SMU"
       ],
       "ccTransferPathway": {
@@ -14902,6 +14742,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Baylor maintains transfer agreements with central Texas community colleges."
       },
       "institutionIdentity": {
+      "commonName": "Baylor University",
         "archetype": "Private Baptist University, Texas Triangle Business and Ministry Anchor"
       },
       "institutionalPersonality": "faith-driven, warm, community-oriented, business-ambitious",
@@ -15162,6 +15003,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "SMU",
       "archetype": "Private Research University",
       "institutionalPersonality": "polished, ambitious, status-conscious, highly networked",
       "cultureKeywords": [
@@ -15550,6 +15392,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Villanova transfer admission is competitive, reflecting overall selectivity."
       },
       "institutionIdentity": {
+      "commonName": "Villanova University",
         "archetype": "Private Catholic University, Business School Anchor"
       },
       "institutionalPersonality": "polished, spirited, community-oriented, Catholic-formed",
@@ -15807,6 +15650,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "USC",
       "archetype": "Major Private Research University",
       "institutionalPersonality": "ambitious, industry-connected, high-energy, entrepreneurial",
       "cultureKeywords": [
@@ -15959,8 +15803,8 @@ const UNIVERSITY_DB_V5 = {
       "relationshipCapitalScore": 92,
       "alumniLoyaltyScore": 96,
       "referralCultureStrength": 94,
-      "donorNetworkStrength": "",
-      "boardMemberDensity": ""
+      "donorNetworkStrength": 88,
+      "boardMemberDensity": 84
     },
     "economicEcosystem": {
       "primaryIndustries": [
@@ -16142,9 +15986,30 @@ const UNIVERSITY_DB_V5 = {
       "brandDurability": 88,
       "overallMoatScore": 92
     },
-    "hillel_strength": "tier_1",
-    "jewish_enrollment": "~15-18% Jewish undergraduate enrollment",
-    "hillel_note": "USC has one of the largest and most active Jewish communities among major private universities, with a well-established Hillel and extensive Jewish life infrastructure integrated into a highly diverse campus.",
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "The School of Cinematic Arts and Iovine and Young Academy carry significant additional selectivity beyond general USC admission, often requiring supplemental portfolios or auditions."
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 92,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 3400,
+      "jewishStudentPercentage": "~16%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Exceptional",
+      "notes": "USC has one of the largest and most active Jewish communities among major private universities, with a well-established Hillel and extensive Jewish life infrastructure integrated into a highly diverse campus."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Thematic Option Honors Program",
+      "strength": 82,
+      "notes": "USC's Thematic Option is a rigorous, discussion-based general education honors program for high-achieving first- and second-year students, alongside the Renaissance Scholars and Discovery Scholars programs that recognize interdisciplinary and research achievement."
+    },
     "trajectoryProfile": {
       "dominantTrajectory": "STEWARD",
       "leaverScore": 44,
@@ -16197,6 +16062,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "WashU",
       "archetype": "Elite Private Research University",
       "institutionalPersonality": "academically intense, research-driven, quietly rigorous, substance-focused",
       "cultureKeywords": [
@@ -16577,6 +16443,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Georgia Tech maintains transfer pathways from Georgia's community college system, though highly competitive."
       },
       "institutionIdentity": {
+      "commonName": "Georgia Institute of Technology",
         "archetype": "Elite Public Engineering-First Urban University"
       },
       "institutionalPersonality": "driven, technically rigorous, urban, value-conscious",
@@ -16822,6 +16689,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "DU maintains transfer agreements with Denver-area community colleges."
       },
       "institutionIdentity": {
+      "commonName": "University of Denver",
         "archetype": "Private Mid-Sized University, International Affairs Hidden Gem"
       },
       "institutionalPersonality": "outdoorsy, globally curious, intimate",
@@ -17066,6 +16934,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Utah maintains strong transfer agreements with Salt Lake Community College."
       },
       "institutionIdentity": {
+      "commonName": "University of Utah",
         "archetype": "Large Public Research Flagship, Silicon Slopes Anchor"
       },
       "institutionalPersonality": "entrepreneurial, tech-forward, outdoor-obsessed, rapidly rising",
@@ -17329,6 +17198,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Weber State University",
       "archetype": "Public Regional Comprehensive University",
       "institutionalPersonality": "practical, applied, outdoors-oriented, career-focused",
       "cultureKeywords": [
@@ -17714,6 +17584,7 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "institutionIdentity": {
+      "commonName": "Towson University",
       "institutionalPersonality": "practical, collaborative, career-focused, accessible, community-oriented",
       "cultureKeywords": [
         "Healthcare",
@@ -18106,9 +17977,9 @@ const UNIVERSITY_DB_V5 = {
     }
   },
 
-"Ohio State University": {
+"The Ohio State University": {
     "institutionNarrative": {
-      "name": "Ohio State University",
+      "name": "The Ohio State University",
       "location": "Columbus, Ohio",
       "region": "Midwest",
       "archetype": "The Big Ten Powerhouse — Engineering, Business, Medicine, and the Reindustrializing Heartland",
@@ -18149,6 +18020,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Ohio State maintains strong articulation agreements with Ohio's community college system, particularly for engineering and business transfer students."
       },
       "institutionIdentity": {
+      "commonName": "Ohio State",
         "archetype": "Large Public Big Ten Flagship Research University"
       },
       "institutionalPersonality": "spirited, ambitious, scale-driven, loyal, increasingly innovation-oriented",
@@ -18437,7 +18309,7 @@ const UNIVERSITY_DB_V5 = {
       "comparableInstitutions": [
         "University of Michigan",
         "Purdue University",
-        "Ohio State University"
+        "The Ohio State University"
       ],
       "ccTransferPathway": {
         "hasCCPathway": true,
@@ -18450,6 +18322,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "MSU maintains transfer agreements with Michigan's community college system."
       },
       "institutionIdentity": {
+      "commonName": "Michigan State University",
         "archetype": "Large Public Big Ten Flagship, Packaging Engineering Anchor"
       },
       "institutionalPersonality": "practical, specialized, Big Ten spirited, underrated",
@@ -18699,7 +18572,7 @@ const UNIVERSITY_DB_V5 = {
       "comparableInstitutions": [
         "University of Michigan",
         "University of Illinois Urbana-Champaign",
-        "Ohio State University"
+        "The Ohio State University"
       ],
       "ccTransferPathway": {
         "hasCCPathway": true,
@@ -18712,6 +18585,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UW-Madison maintains transfer agreements with Wisconsin's technical college system."
       },
       "institutionIdentity": {
+      "commonName": "Wisconsin",
         "archetype": "Elite Public Research Flagship, Progressive College Town"
       },
       "institutionalPersonality": "progressive, research-serious, civically engaged, spirited",
@@ -18959,6 +18833,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "AU maintains transfer agreements with DC-area community colleges."
       },
       "institutionIdentity": {
+      "commonName": "American University",
         "archetype": "Private University, DC Policy Anchor"
       },
       "institutionalPersonality": "politically engaged, ambitious, globally minded",
@@ -19209,6 +19084,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Belmont maintains transfer agreements with Nashville-area community colleges."
       },
       "institutionIdentity": {
+      "commonName": "Belmont University",
         "archetype": "Private Christian University, Music Row Entertainment Business Anchor"
       },
       "institutionalPersonality": "creative, values-driven, industry-embedded, welcoming",
@@ -19456,6 +19332,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "BU accepts transfer students from Massachusetts community colleges at meaningfully higher rates than freshman admission."
       },
       "institutionIdentity": {
+      "commonName": "Boston University",
         "archetype": "Large Urban Private Research University"
       },
       "institutionalPersonality": "independent, urban, ambitious, self-assembled",
@@ -19714,6 +19591,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "CSU maintains strong transfer agreements with Colorado's community college system."
       },
       "institutionIdentity": {
+      "commonName": "Colorado State University",
         "archetype": "Large Public Land-Grant University, Outdoor Recreation Anchor"
       },
       "institutionalPersonality": "outdoorsy, health-conscious, practically minded, land-grant-serious",
@@ -19974,6 +19852,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Fordham maintains transfer agreements with NYC-area community colleges."
       },
       "institutionIdentity": {
+      "commonName": "Fordham University",
         "archetype": "Private Jesuit University, NYC Wall Street/Legal Anchor"
       },
       "institutionalPersonality": "values-driven, ambitious, Jesuit-formed, NYC-embedded",
@@ -20226,6 +20105,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "GW maintains transfer agreements with DC-area community colleges."
       },
       "institutionIdentity": {
+      "commonName": "George Washington University",
         "archetype": "Private University, DC Policy Anchor"
       },
       "institutionalPersonality": "politically engaged, ambitious, internationally minded",
@@ -20473,6 +20353,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "LMU maintains transfer agreements with LA-area community colleges."
       },
       "institutionIdentity": {
+      "commonName": "Loyola Marymount University",
         "archetype": "Private Catholic University, Entertainment-Tech Hidden Gem"
       },
       "institutionalPersonality": "polished, entrepreneurial, dual-industry-embedded, overlooked",
@@ -20718,6 +20599,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Marquette maintains transfer agreements with Milwaukee-area technical colleges."
       },
       "institutionIdentity": {
+      "commonName": "Marquette University",
         "archetype": "Private Jesuit University, Milwaukee Corporate Anchor"
       },
       "institutionalPersonality": "values-driven, urban, practical, Jesuit-formed",
@@ -20931,9 +20813,9 @@ const UNIVERSITY_DB_V5 = {
     }
   },
 
-"University of Maryland College Park": {
+"University of Maryland, College Park": {
     "institutionNarrative": {
-      "name": "University of Maryland College Park",
+      "name": "University of Maryland, College Park",
       "location": "College Park, Maryland",
       "region": "Mid-Atlantic",
       "archetype": "The Federal Feeder — NSA Pipeline Meets Smith Business and Quiet Astronomy Excellence",
@@ -20970,6 +20852,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Maryland maintains transfer agreements with Maryland community colleges."
       },
       "institutionIdentity": {
+      "commonName": "University of Maryland",
         "archetype": "Large Public Flagship, Federal Security Anchor"
       },
       "institutionalPersonality": "career-focused, federal-serious, Big Ten spirited",
@@ -21224,6 +21107,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Northeastern's freshman admission is highly selective; transfer pathways exist but remain competitive."
       },
       "institutionIdentity": {
+      "commonName": "Northeastern University",
         "archetype": "Large Urban Co-op Research University"
       },
       "institutionalPersonality": "career-focused, urban, ambitious, practically minded",
@@ -21480,6 +21364,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "NYU accepts transfer students from CUNY community colleges at meaningfully higher rates than its freshman acceptance rate."
       },
       "institutionIdentity": {
+      "commonName": "New York University",
         "archetype": "Urban Campus-less Global Research University"
       },
       "institutionalPersonality": "independent, ambitious, urban, globally minded",
@@ -21738,7 +21623,7 @@ const UNIVERSITY_DB_V5 = {
         "Harrisburg PA"
       ],
       "comparableInstitutions": [
-        "Ohio State University",
+        "The Ohio State University",
         "University of Michigan",
         "Purdue University",
         "University of Wisconsin-Madison",
@@ -21756,6 +21641,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Penn State's branch campus system (over 20 locations across Pennsylvania) creates a uniquely structured 2+2 pathway into University Park unlike any peer flagship."
       },
       "institutionIdentity": {
+      "commonName": "Penn State University",
         "archetype": "Large Public Big Ten Flagship, Self-Contained College Town"
       },
       "institutionalPersonality": "loyal, tradition-bound, spirited, scale-driven, quietly ambitious",
@@ -22035,7 +21921,7 @@ const UNIVERSITY_DB_V5 = {
       "comparableInstitutions": [
         "Georgia Institute of Technology",
         "University of Illinois Urbana-Champaign",
-        "Ohio State University"
+        "The Ohio State University"
       ],
       "ccTransferPathway": {
         "hasCCPathway": true,
@@ -22048,6 +21934,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Purdue maintains strong articulation agreements with Indiana's Ivy Tech system, particularly for engineering transfer students."
       },
       "institutionIdentity": {
+      "commonName": "Purdue University",
         "archetype": "Large Public Engineering-First Flagship"
       },
       "institutionalPersonality": "technical, humble, rigorous, Midwest-practical",
@@ -22265,257 +22152,13 @@ const UNIVERSITY_DB_V5 = {
       "strength": 80,
       "notes": "Provides smaller cohort communities and enhanced research opportunities within Purdue's engineering-first structure."
     }
-  },
+  }
 
-"SMU": {
-    "institutionNarrative": {
-      "name": "SMU",
-      "location": "Dallas, Texas",
-      "region": "Southwest",
-      "archetype": "The Dallas Wealth Network — Affluence as the Real Curriculum",
-      "oneSentenceSummary": "SMU's defining feature isn't a single program — it's the room itself, one of the wealthiest and most connected student bodies in the country, feeding directly into Dallas's concentrated business elite.",
-      "pipeline": "Cox Business School is strong in finance and real estate. Meadows School of the Arts is genuinely strong in film and theatre, underrated nationally. Perkins School of Theology carries real regional religious influence most families never discover.",
-      "hiddenPathway": "SMU's social capital is the actual product — the concentration of wealthy, well-connected families creates a founder/executive-parent network unmatched by peer-tier schools. A significant and growing share of that network comes from out-of-state students, particularly from the Northeast and California, drawn by warm weather, a fresh start outside hyper-competitive home-region admissions, and access to the same concentrated social network even without Texas roots.",
-      "institutionalSecret": "Meadows School of the Arts is a genuinely elite film/theatre program hiding entirely behind SMU's business-and-wealth reputation.",
-      "theRoom": "One of the most affluent student bodies in American higher education, concentrated in Dallas's wealthiest social and business circles.",
-      "lifestyle": "Polished, wealthy, Dallas-society-adjacent — a distinctly upscale campus culture.",
-      "bestFitPersonality": "Comfortable in an affluent social environment, business-ambitious or creatively driven via Meadows.",
-      "faithTradition": "United Methodist (historically affiliated, broadly ecumenical today)",
-      "geographicInfluenceRadius": "Dominant in Dallas's business and social elite, with Texas-wide reach.",
-      "economicOutcome": "Excellent outcomes in business and finance, reinforced almost entirely by social capital rather than pure academic ranking.",
-      "gradCities": [
-        "Dallas TX",
-        "New York NY",
-        "Houston TX"
-      ],
-      "comparableInstitutions": [
-        "TCU",
-        "Baylor University",
-        "Vanderbilt University"
-      ],
-      "ccTransferPathway": {
-        "hasCCPathway": true,
-        "ccFeederNames": [
-          "Dallas College"
-        ],
-        "transferAcceptanceRate": "~52%",
-        "freshmanAcceptanceRate": "~53%",
-        "estimatedSavingsRange": "$14,000-$34,000",
-        "transferNotes": "SMU maintains transfer agreements with Dallas-area community colleges."
-      },
-      "institutionIdentity": {
-        "archetype": "Private University, Dallas Wealth Network Anchor"
-      },
-      "institutionalPersonality": "polished, affluent, socially connected, ambitious",
-      "cultureKeywords": [
-        "Dallas Wealth",
-        "Social Capital",
-        "Cox Business",
-        "Meadows Arts",
-        "Underrated Theatre/Film"
-      ],
-      "missionOrientation": "Delivering business and arts education inside one of the most socially and financially connected student bodies in the country.",
-      "educationalPhilosophy": "Business and arts education reinforced heavily by Dallas's concentrated wealth and social network.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate to conservative, socially traditional.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Social-capital-driven prestige; underrated academic strength in arts.",
-      "socialClimate": "Polished, wealthy, Dallas-society-adjacent.",
-      "leadershipStyle": "Leadership through social network access and Dallas business community relationships."
-    },
-    "institutionIdentity": {
-      "archetype": "The Dallas Wealth Network — Affluence as the Real Curriculum",
-      "institutionalPersonality": "polished, affluent, socially connected, ambitious",
-      "cultureKeywords": [
-        "Dallas Wealth",
-        "Social Capital",
-        "Cox Business",
-        "Meadows Arts",
-        "Underrated Theatre/Film"
-      ],
-      "missionOrientation": "Delivering business and arts education inside one of the most socially and financially connected student bodies in the country.",
-      "faithTradition": "United Methodist (historically affiliated, broadly ecumenical today)",
-      "educationalPhilosophy": "Business and arts education reinforced heavily by Dallas's concentrated wealth and social network.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate to conservative, socially traditional.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Social-capital-driven prestige; underrated academic strength in arts.",
-      "socialClimate": "Polished, wealthy, Dallas-society-adjacent.",
-      "leadershipStyle": "Leadership through social network access and Dallas business community relationships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "The primary social-capital talent engine for Dallas's business and cultural elite."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 16,
-      "TorBuffChester": 4,
-      "TexasTriangle": 88,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 6,
-      "SoCalCreativeEconomy": 8
-    },
-    "comparativePositioning": {
-      "versusTCU": "TCU offers a more intimate, less overtly wealthy culture; SMU offers unmatched Dallas social capital and a stronger underrated arts program."
-    },
-    "institutionScale": {
-      "enrollmentCategory": "Medium",
-      "undergraduateEnrollment": 7000,
-      "graduateEnrollment": 4000,
-      "totalEnrollment": 11000,
-      "campusType": "Private University, Affluent Dallas Campus",
-      "residentialIntensity": 62,
-      "communityFeel": 77,
-      "studentFacultyRatio": "11:1",
-      "classSizeExperience": "Small, intimate classes reinforced by significant social/family network access.",
-      "scaleAdvantages": [
-        "Unmatched Dallas social capital network",
-        "Underrated Meadows Arts program",
-        "Strong Cox Business placement"
-      ],
-      "scaleDisadvantages": [
-        "Social capital advantage requires being able to access and afford that environment",
-        "Academic prestige overshadowed by social reputation"
-      ]
-    },
-    "studentFit": {
-      "bigFiveProfile": {
-        "openness": 74,
-        "conscientiousness": 78,
-        "extraversion": 84,
-        "agreeableness": 76,
-        "neuroticism": 36
-      },
-      "hollandCodes": [
-        "E",
-        "A",
-        "S"
-      ],
-      "learningStyle": [
-        "Case-Method Business",
-        "Studio-Based Arts",
-        "Network-Driven Learning"
-      ],
-      "socialEnvironment": [
-        "Polished",
-        "Affluent",
-        "Socially Connected"
-      ]
-    },
-    "hiddenOpportunities": {
-      "dallasSocialCapital": {
-        "strength": 94,
-        "notes": "The concentration of wealthy, well-connected families creates a founder/executive-parent network unmatched by peer-tier schools."
-      },
-      "meadowsArtsUnderrated": {
-        "strength": 82,
-        "notes": "Genuinely elite film/theatre program hiding entirely behind SMU's business-and-wealth reputation."
-      }
-    },
-    "networkCapital": {
-      "strength": 90,
-      "notes": "Cox Business School cohorts build direct ties into Dallas' concentrated wealth and corporate leadership networks."
-    },
-    "economicEcosystem": {
-      "businessFinance": {
-        "strength": 88,
-        "notes": "Direct pipeline into Dallas's concentrated business and wealth management community."
-      },
-      "artsFilmTheatre": {
-        "strength": 82,
-        "notes": "Underrated Meadows School pipeline into film and theatre industries."
-      }
-    },
-    "geographicInfluence": {
-      "strength": 82,
-      "notes": "Dominant in Dallas's business and social elite, with Texas-wide reach."
-    },
-    "socialCapital": {
-      "strength": 94,
-      "notes": "The single biggest asset at SMU — access to one of the wealthiest, most connected student bodies in American higher education."
-    },
-    "industryPathways": {
-      "business": {
-        "strength": 88,
-        "notes": "Strong Dallas wealth management and business placement."
-      },
-      "artsFilmTheatre": {
-        "strength": 82,
-        "notes": "Underrated but genuine film/theatre placement."
-      }
-    },
-    "wealthMobility": {
-      "averageFamilyIncome": "",
-      "socialMobilityIndex": 48,
-      "firstGenerationSupport": 46,
-      "wealthCreationPotential": 90,
-      "familyBusinessPipelineStrength": 74
-    },
-    "futureResilience": {
-      "aiResistance": 70,
-      "automationResistance": 70,
-      "adaptabilityScore": 74,
-      "interdisciplinaryStrength": 70,
-      "futureReadiness": 74,
-      "entrepreneurialFlexibility": 78,
-      "lifelongLearningCulture": 72,
-      "innovationCapacity": 72
-    },
-    "lifeDesignOutcomes": {
-      "wealthCreationPotential": 90,
-      "communityLeadershipPotential": 82,
-      "geographicMobility": 70,
-      "workLifeBalancePotential": 76,
-      "purposeAlignment": 72,
-      "familyFormationSupport": 80,
-      "personalDevelopmentPotential": 78,
-      "careerOptionality": 80,
-      "longTermLifeSatisfaction": 82
-    },
-    "institutionalMoat": {
-      "prestigeMoat": 68,
-      "networkMoat": 92,
-      "geographicMoat": 78,
-      "industryMoat": 80,
-      "alumniMoat": 84,
-      "brandDurability": 78,
-      "overallMoatScore": 80
-    },
-    "trajectoryProfile": {
-      "dominantTrajectory": "STEWARD",
-      "leaverScore": 42,
-      "returnerScore": 78,
-      "stewardScore": 84,
-      "navigatorScore": 52,
-      "geographicLockIn": "high",
-      "alumniDispersalPattern": "heavily concentrated in Dallas, with limited but strong secondary presence in Houston and New York"
-    },
-    "jewishLife": {
-      "hillel": {
-        "exists": true,
-        "strength": 62,
-        "type": "Independent Campus Hillel"
-      },
-      "estimatedJewishUndergraduates": 500,
-      "jewishStudentPercentage": "~7%",
-      "kosherDining": false,
-      "shabbatProgramming": true,
-      "birthrightSupport": true,
-      "jewishCommunityStrength": "Solid",
-      "notes": "SMU has an active Hillel with regular programming."
-    },
-    "honorsCollege": {
-      "exists": true,
-      "name": "University Honors Program",
-      "strength": 74,
-      "notes": "Provides smaller cohorts within SMU's broader socially-connected structure."
-    }
-  },
+,
 
-"TCU": {
+"Texas Christian University": {
     "institutionNarrative": {
-      "name": "TCU",
+      "name": "Texas Christian University",
       "location": "Fort Worth, Texas",
       "region": "Southwest",
       "archetype": "The Intimate DFW Alternative — Warmth Over Wealth-First Culture",
@@ -22549,6 +22192,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "TCU maintains transfer agreements with Fort Worth-area community colleges."
       },
       "institutionIdentity": {
+      "commonName": "TCU",
         "archetype": "Private University, Intimate DFW Alternative to SMU"
       },
       "institutionalPersonality": "warm, intimate, Fort Worth-proud, Greek-heavy",
@@ -22758,9 +22402,9 @@ const UNIVERSITY_DB_V5 = {
     }
   },
 
-"University of North Carolina Chapel Hill": {
+"University of North Carolina at Chapel Hill": {
     "institutionNarrative": {
-      "name": "University of North Carolina Chapel Hill",
+      "name": "University of North Carolina at Chapel Hill",
       "location": "Chapel Hill, North Carolina",
       "region": "Southeast",
       "archetype": "The Public Ivy Anchor — Pharmacy, Business, and the Research Triangle Economy",
@@ -22799,6 +22443,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "North Carolina's community college transfer agreements create a structured pathway for qualifying in-state students."
       },
       "institutionIdentity": {
+      "commonName": "UNC Chapel Hill",
         "archetype": "Elite Public Flagship, Research Triangle Anchor"
       },
       "institutionalPersonality": "warm, ambitious, basketball-proud, research-serious",
@@ -23023,9 +22668,9 @@ const UNIVERSITY_DB_V5 = {
     }
   },
 
-"University of Texas at Austin": {
+"The University of Texas at Austin": {
     "institutionNarrative": {
-      "name": "University of Texas at Austin",
+      "name": "The University of Texas at Austin",
       "location": "Austin, Texas",
       "region": "Southwest",
       "archetype": "The Austin Tech Boom Anchor — Communications, Engineering, and a City That Won't Let Go",
@@ -23062,6 +22707,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UT Austin maintains strong transfer agreements with Texas community colleges."
       },
       "institutionIdentity": {
+      "commonName": "UT Austin",
         "archetype": "Large Public Flagship, Austin Tech Boom Anchor"
       },
       "institutionalPersonality": "ambitious, tech-forward, creative, massive in scale",
@@ -23268,22 +22914,22 @@ const UNIVERSITY_DB_V5 = {
     }
   },
 
-"UCLA": {
+"University of California-Los Angeles": {
     "institutionNarrative": {
-      "name": "UCLA",
+      "name": "University of California-Los Angeles",
       "location": "Los Angeles, California",
       "region": "California",
-      "archetype": "The Complete LA Powerhouse — Film, Medicine, Business, and Elite Academics in One Place",
-      "oneSentenceSummary": "UCLA is genuinely exceptional — a top-10 public university with the only film school combining theater, film, TV, and digital media under one roof, elite medicine, strong business, and unmatched direct access to LA's entertainment and tech economy.",
-      "pipeline": "UCLA TFT is the only film school in America combining theater, film, television, and digital media in a single program. Elite pre-med and Anderson Business School. Major recruiters span every major studio, tech company, hospital system, and consulting firm in LA and nationally.",
+      "archetype": "The Complete LA Powerhouse \u2014 Film, Medicine, Business, and Elite Academics in One Place",
+      "oneSentenceSummary": "UCLA is genuinely exceptional \u2014 a top-10 public university with the only film school combining theater, film, TV, and digital media under one roof, elite medicine, strong business, and unmatched direct access to LA's entertainment and tech economy.",
+      "pipeline": "Approximately 33,500 undergraduates. UCLA TFT is the only film school in America combining theater, film, television, and digital media in a single program. Elite pre-med and Anderson Business School. Major recruiters span every major studio, tech company, hospital system, and consulting firm in LA and nationally.",
       "hiddenPathway": "TFT's unique four-discipline integration creates crossover opportunities (actor-writers, director-producers) that siloed film schools structurally cannot replicate.",
-      "institutionalSecret": "UCLA's academic depth is genuinely elite across nearly every field — not just entertainment — making it one of the most complete public universities in the country, not just an LA feeder school.",
+      "institutionalSecret": "UCLA's academic depth is genuinely elite across nearly every field \u2014 not just entertainment \u2014 making it one of the most complete public universities in the country, not just an LA feeder school.",
       "theRoom": "33,500 undergraduates, the most ethnically and economically diverse student body of any top-15 university, embedded directly in Los Angeles.",
-      "lifestyle": "Diverse, entertainment-adjacent, ambitious — the pull of LA's industries shapes campus energy constantly.",
+      "lifestyle": "Diverse, entertainment-adjacent, ambitious \u2014 the pull of LA's industries shapes campus energy constantly.",
       "bestFitPersonality": "Ambitious across any field, drawn to LA's entertainment/tech pull, comfortable with genuine diversity and scale.",
       "faithTradition": "None",
       "geographicInfluenceRadius": "Dominant in Los Angeles across entertainment, tech, medicine, and business, with elite national academic reach.",
-      "economicOutcome": "Elite outcomes across entertainment, medicine, business, and technology — genuinely exceptional breadth for a public university.",
+      "economicOutcome": "Elite outcomes across entertainment, medicine, business, and technology \u2014 genuinely exceptional breadth for a public university.",
       "gradCities": [
         "Los Angeles CA",
         "San Francisco CA",
@@ -23303,30 +22949,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~9%",
         "estimatedSavingsRange": "$16,000-$38,000",
         "transferNotes": "UCLA's transfer admission is highly selective, mirroring its overall elite positioning."
-      },
-      "institutionIdentity": {
-        "archetype": "Elite Public Research University, Complete LA Anchor"
-      },
-      "institutionalPersonality": "ambitious, diverse, entertainment-adjacent, academically elite",
-      "cultureKeywords": [
-        "UCLA TFT",
-        "Elite Public Ivy",
-        "LA Entertainment",
-        "Medicine",
-        "Business",
-        "Diversity"
-      ],
-      "missionOrientation": "Delivering elite academic outcomes across nearly every field, anchored by unmatched Los Angeles industry access.",
-      "educationalPhilosophy": "Rigorous education across all disciplines reinforced by direct LA entertainment, tech, and medical industry proximity.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly progressive, diverse.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite across nearly every field — genuinely one of the most complete public universities in the country.",
-      "socialClimate": "Diverse, ambitious, entertainment-adjacent.",
-      "leadershipStyle": "Leadership through academic excellence and direct LA industry access across multiple sectors simultaneously."
+      }
     },
     "institutionIdentity": {
-      "archetype": "The Complete LA Powerhouse — Film, Medicine, Business, and Elite Academics in One Place",
+      "commonName": "UCLA",
+      "archetype": "Elite Public Research University, Complete LA Anchor",
       "institutionalPersonality": "ambitious, diverse, entertainment-adjacent, academically elite",
       "cultureKeywords": [
         "UCLA TFT",
@@ -23342,7 +22969,7 @@ const UNIVERSITY_DB_V5 = {
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly progressive, diverse.",
       "studentAutonomy": "High",
-      "prestigeOrientation": "Elite across nearly every field — genuinely one of the most complete public universities in the country.",
+      "prestigeOrientation": "Elite across nearly every field \u2014 genuinely one of the most complete public universities in the country.",
       "socialClimate": "Diverse, ambitious, entertainment-adjacent.",
       "leadershipStyle": "Leadership through academic excellence and direct LA industry access across multiple sectors simultaneously."
     },
@@ -23407,57 +23034,236 @@ const UNIVERSITY_DB_V5 = {
       "socialEnvironment": [
         "Diverse",
         "Ambitious",
-        "Entertainment-Adjacent"
+        "Entertainment-Adjacent",
+        "Academically Elite",
+        "High-Energy"
+      ],
+      "idealStudentTraits": [
+        "Ambitious across multiple fields",
+        "Comfortable with genuine diversity and scale",
+        "Drawn to LA's entertainment and tech pull",
+        "Academically elite-minded"
+      ],
+      "thrivesIf": [
+        "Wants elite academics across entertainment, medicine, business, or technology",
+        "Values genuine socioeconomic and ethnic diversity",
+        "Wants public-school cost with private-school-caliber outcomes",
+        "Is comfortable navigating a large, high-achieving research university"
+      ],
+      "strugglesIf": [
+        "Wants a small, intimate liberal arts environment",
+        "Prefers a single clear institutional identity over broad excellence",
+        "Is uncomfortable with a large, competitive student body",
+        "Wants a quieter, less entertainment-industry-adjacent culture"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a smaller, more intimate campus",
+        "Students frustrated by competitive impaction in TFT, business, or pre-med tracks",
+        "Students who prefer a single defining institutional identity"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Very High",
+      "notes": "The School of Theater, Film and Television and pre-business tracks in Anderson carry substantial additional selectivity beyond general UCLA admission, often requiring portfolios, auditions, or secondary application review."
+    },
     "hiddenOpportunities": {
-      "tftIntegratedProgram": {
-        "strength": 96,
-        "notes": "The only film school in America combining theater, film, television, and digital media in a single professional program."
-      }
+      "underratedMajors": [
+        "Design Media Arts",
+        "Public Health",
+        "Cognitive Science",
+        "Global Studies",
+        "Human Biology and Society",
+        "Music Industry",
+        "Atmospheric and Oceanic Sciences",
+        "Public Affairs"
+      ],
+      "hiddenCareerPipelines": [
+        "Entertainment Technology",
+        "Health Policy and Administration",
+        "Sports Media and Business",
+        "Digital Content Production",
+        "Public Sector Leadership"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Every major Hollywood studio",
+        "UCLA Health",
+        "Netflix",
+        "Google",
+        "Goldman Sachs",
+        "Anderson School alumni network"
+      ],
+      "overlookedStrengths": [
+        "UCLA TFT's four-discipline integration (theater, film, TV, digital media) is structurally unique among American film schools.",
+        "UCLA Health is one of the top-ranked academic medical systems in the country, giving pre-med students exceptional clinical exposure.",
+        "The Anderson School of Business has built a formidable entertainment and media finance specialization unmatched by peer business schools.",
+        "UCLA's public university cost structure delivers outcomes that rival private universities costing three times as much."
+      ],
+      "sleeperIndustries": [
+        "Entertainment Technology",
+        "Health Policy and Digital Health",
+        "Sports Media and Analytics",
+        "Public Sector Innovation",
+        "Music and Content Industry Business"
+      ]
     },
     "networkCapital": {
-      "strength": 90,
-      "notes": "Unmatched entertainment industry pipeline, plus a growing battery/materials-science tie into LA's clean-tech corridor and elite medical/business networks."
+      "alumniAccessibility": 88,
+      "mentorshipDensity": 84,
+      "executiveAccess": 86,
+      "internshipNetwork": 92,
+      "familyBusinessExposure": 40,
+      "relationshipCapitalScore": 88,
+      "alumniLoyaltyScore": 86,
+      "referralCultureStrength": 88,
+      "donorNetworkStrength": 84,
+      "boardMemberDensity": 78
     },
     "economicEcosystem": {
-      "entertainment": {
+      "primaryIndustries": [
+        "Entertainment",
+        "Medicine",
+        "Business",
+        "Technology",
+        "Sports"
+      ],
+      "regionalEconomicDrivers": [
+        "Entertainment and Media",
+        "Healthcare",
+        "Technology",
+        "Tourism",
+        "Aerospace"
+      ],
+      "topEmployers": [
+        "UCLA Health",
+        "Disney",
+        "Google",
+        "Warner Bros. Discovery",
+        "Netflix",
+        "Kaiser Permanente",
+        "Goldman Sachs"
+      ],
+      "emergingIndustries": [
+        "Streaming Media",
+        "Digital Health",
+        "AI and Entertainment Technology",
+        "Sports Analytics and Media"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 76,
+      "corporateHeadquartersDensity": 68,
+      "healthcareHubStrength": 92,
+      "innovationIndex": 88
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Los Angeles \u2014 Entertainment, Medicine, Technology, and Business",
+      "secondaryMarkets": [
+        "San Francisco CA",
+        "New York NY",
+        "Seattle WA"
+      ],
+      "alumniStrongholds": [
+        "Los Angeles CA",
+        "San Francisco Bay Area CA",
+        "New York NY"
+      ],
+      "relocationPatterns": [
+        "The vast majority of graduates remain in Los Angeles, entering entertainment, medicine, business, and technology.",
+        "The San Francisco Bay Area draws graduates into technology and biotechnology roles.",
+        "New York recruits graduates into finance, media, and consulting.",
+        "UCLA Health's clinical training pipeline sends physicians throughout California and nationally.",
+        "A smaller international cohort enters global entertainment and business roles."
+      ],
+      "regionalInfluenceScore": 98,
+      "nationalReachScore": 84,
+      "internationalReachScore": 68
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 30,
+      "studentOrganizationStrength": 92,
+      "leadershipDevelopment": 86,
+      "crossDisciplinaryInteraction": 84,
+      "civicEngagement": 82
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 42,
+        "notes": "Meaningful presence given LA's beauty, wellness, and consumer products industry."
+      },
+      "healthWellness": {
+        "strength": 92,
+        "notes": "Elite pipeline through UCLA Health, one of the top-ranked academic medical systems in the country."
+      },
+      "nutraceuticals": {
+        "strength": 30,
+        "notes": "Some overlap through biology and public health research."
+      },
+      "consumerProducts": {
+        "strength": 62,
+        "notes": "Solid pathway through Anderson School of Business and LA's consumer brand economy."
+      },
+      "outdoorIndustry": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis despite Southern California proximity."
+      },
+      "sportsBusiness": {
+        "strength": 68,
+        "notes": "Strong pathway given UCLA's major Division I athletics program and LA's sports industry presence."
+      },
+      "entertainmentMedia": {
         "strength": 94,
-        "notes": "Unique four-discipline TFT program creates crossover entertainment industry pathways no peer school can replicate."
+        "notes": "One of the strongest entertainment pipelines in the country, anchored by the uniquely integrated TFT program."
+      },
+      "ventureCapital": {
+        "strength": 62,
+        "notes": "Growing presence tied to LA's expanding technology and startup ecosystem."
+      },
+      "privateEquity": {
+        "strength": 56,
+        "notes": "Solid placement, particularly in entertainment and healthcare finance."
+      },
+      "investmentBanking": {
+        "strength": 62,
+        "notes": "Strong Anderson School placement into investment banking."
+      },
+      "consulting": {
+        "strength": 70,
+        "notes": "Strong placement into major consulting firms, particularly healthcare and media practices."
       },
       "medicine": {
-        "strength": 90,
-        "notes": "Elite pre-med and clinical training pipeline."
+        "strength": 96,
+        "notes": "Elite pre-med and clinical training pipeline through the David Geffen School of Medicine and UCLA Health."
       },
-      "business": {
+      "healthcareAdministration": {
         "strength": 84,
-        "notes": "Strong Anderson Business School placement."
+        "notes": "Strong pathway through public health and health policy programs."
+      },
+      "defense": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 58,
+        "notes": "Meaningful presence given LA's real estate market and Anderson's real estate finance specialization."
+      },
+      "luxuryBrands": {
+        "strength": 50,
+        "notes": "Notable presence tied to LA's entertainment and consumer culture."
+      },
+      "entrepreneurship": {
+        "strength": 72,
+        "notes": "Strong culture supported by LA's growing startup ecosystem and Anderson's entrepreneurship programs."
       },
       "technology": {
         "strength": 78,
-        "notes": "Rising tech placement, especially entertainment-tech crossover."
-      }
-    },
-    "geographicInfluence": {
-      "strength": 90,
-      "notes": "Dominant in Los Angeles across entertainment, tech, medicine, and business, with elite national academic reach."
-    },
-    "socialCapital": {
-      "strength": 86,
-      "notes": "TFT and engineering cohorts build networks that plug directly into LA's entertainment and tech industries before graduation."
-    },
-    "industryPathways": {
-      "entertainment": {
-        "strength": 94,
-        "notes": "The most comprehensive film/TV/theater program in the country."
+        "notes": "Strong and growing computer science and engineering pipeline, particularly in entertainment-technology crossover."
       },
-      "medicine": {
-        "strength": 90,
-        "notes": "Elite pre-med and clinical pipeline."
+      "publicPolicy": {
+        "strength": 66,
+        "notes": "Solid pathway through the Luskin School of Public Affairs."
       },
-      "business": {
-        "strength": 84,
-        "notes": "Strong Anderson Business placement."
+      "nonprofitLeadership": {
+        "strength": 60,
+        "notes": "Meaningful pathway tied to LA's philanthropic and public service community."
       }
     },
     "wealthMobility": {
@@ -23504,7 +23310,7 @@ const UNIVERSITY_DB_V5 = {
       "stewardScore": 48,
       "navigatorScore": 82,
       "geographicLockIn": "low",
-      "alumniDispersalPattern": "heavily concentrated in Los Angeles, with strong secondary presence in San Francisco and New York"
+      "alumniDispersalPattern": "heavily_concentrated_los_angeles_with_sf_ny_secondary"
     },
     "jewishLife": {
       "hillel": {
@@ -23527,6 +23333,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars, priority registration, and research opportunities within UCLA's larger scale."
     }
   },
+
 
 "Boston College": {
     "institutionNarrative": {
@@ -23567,6 +23374,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "BC transfer admission is competitive, reflecting overall selectivity."
       },
       "institutionIdentity": {
+      "commonName": "Boston College",
         "archetype": "Private Jesuit University, Boston Finance Anchor"
       },
       "institutionalPersonality": "polished, values-driven, pre-professional, spirited",
@@ -23766,7 +23574,18905 @@ const UNIVERSITY_DB_V5 = {
       "strength": 78,
       "notes": "Provides smaller seminars within BC's broader Jesuit university structure."
     }
-  }
+  },
+
+"University of California-San Diego": {
+    "institutionNarrative": {
+      "name": "University of California-San Diego",
+      "location": "La Jolla, California",
+      "region": "California",
+      "archetype": "The Biotech and Deep-Tech Research Engine \u2014 Life Sciences, Engineering, Oceanography, and Precision Medicine",
+      "oneSentenceSummary": "UC San Diego is one of the world's premier research universities, combining elite engineering, computer science, and medicine with unmatched proximity to the Torrey Pines biotech mesa \u2014 one of the densest concentrations of life sciences companies and research institutes on Earth.",
+      "pipeline": "Approximately 42,000 students. UCSD is internationally recognized for Bioengineering, Computer Science, Biological Sciences, Chemistry, Neuroscience, Medicine, Oceanography (Scripps Institution), Data Science, Electrical Engineering, and Global Health. Major recruiters include Illumina, Qualcomm, Genentech, Pfizer, Regeneron, ResMed, Amazon, Google, Northrop Grumman, Sanford Burnham Prebys, Salk Institute, and hundreds of biotech and life sciences startups on the Torrey Pines Mesa.",
+      "hiddenPathway": "UCSD's greatest hidden advantage is direct proximity to the Torrey Pines Mesa \u2014 the highest concentration of biotech companies and research institutes per square mile in the world, including Illumina, the Salk Institute, Sanford Burnham Prebys, and Scripps Research. Students walk to internships that most universities can only offer through relocation.",
+      "institutionalSecret": "While often compared to Berkeley and UCLA for prestige, UCSD has quietly become the single strongest undergraduate feeder into the biotech and genomics industry in the country \u2014 a pipeline built on decades of co-location with the companies that invented modern genomic sequencing.",
+      "theRoom": "Located in La Jolla, students operate inside the Torrey Pines biotech mesa alongside Illumina, Qualcomm, the Salk Institute, Scripps Research, and Sanford Burnham Prebys, with San Diego's broader defense, telecommunications, and life sciences economy immediately accessible.",
+      "lifestyle": "Academically intense, research-driven, outdoorsy, and beach-adjacent. Students balance rigorous STEM coursework with year-round access to surfing, hiking, and a mild coastal climate; the college system (Revelle, Muir, Marshall, Warren, Roosevelt, Sixth, Seventh) creates smaller identity communities inside a large research university.",
+      "bestFitPersonality": "Intellectually rigorous, scientifically curious, self-directed, and motivated by hands-on research rather than traditional campus social life.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout San Diego and Southern California, with national and international influence in biotechnology, genomics, and life sciences research.",
+      "economicOutcome": "Excellent career outcomes across biotechnology, pharmaceuticals, medicine, engineering, computer science, telecommunications, and scientific research.",
+      "gradCities": [
+        "San Diego CA",
+        "San Francisco CA",
+        "Los Angeles CA",
+        "Seattle WA",
+        "Boston MA",
+        "New York NY"
+      ],
+      "comparableInstitutions": [
+        "University of California Berkeley",
+        "University of Washington",
+        "Georgia Institute of Technology",
+        "University of Michigan",
+        "University of California-Los Angeles"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "San Diego Mesa College",
+          "San Diego City College",
+          "Miramar College",
+          "Grossmont College"
+        ],
+        "transferAcceptanceRate": "~27%",
+        "freshmanAcceptanceRate": "~24%",
+        "estimatedSavingsRange": "$25,000-$60,000",
+        "transferNotes": "UCSD maintains California's Transfer Admission Guarantee (TAG) pathway for eligible California community college students. San Diego's local community colleges feed heavily into UCSD's engineering, biological sciences, and business programs, with strict prerequisite sequencing for the most competitive majors."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UC San Diego",
+      "archetype": "Elite Public Research University \u2014 Life Sciences and Engineering Powerhouse",
+      "institutionalPersonality": "rigorous, scientific, research-driven, independent, quietly ambitious",
+      "cultureKeywords": [
+        "Biotechnology",
+        "Research",
+        "Engineering",
+        "Oceanography",
+        "Medicine",
+        "Genomics",
+        "Innovation",
+        "Precision Science"
+      ],
+      "missionOrientation": "Advancing society through world-class scientific research, medicine, engineering, and oceanographic discovery.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through laboratory research, interdisciplinary science, clinical exposure, and direct collaboration with the biotech and engineering firms embedded in the surrounding mesa.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Generally progressive, scientifically oriented, and environmentally conscious.",
+      "studentAutonomy": "Very High",
+      "prestigeOrientation": "One of the world's premier institutions for biological sciences, bioengineering, oceanography, and genomics research.",
+      "socialClimate": "Studious, research-intensive, outdoor-oriented, and less socially traditional than other UC campuses.",
+      "leadershipStyle": "Leadership through scientific discovery, technical excellence, and research output."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "regionalRole": "The nation's premier undergraduate feeder into biotechnology, genomics, and life sciences research, anchored by direct proximity to the Torrey Pines biotech mesa."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 14,
+      "BosWash": 30,
+      "TorBuffChester": 12,
+      "TexasTriangle": 22,
+      "CharLanta": 12,
+      "NorCalInnovationCorridor": 46,
+      "SoCalCreativeEconomy": 92
+    },
+    "comparativePositioning": {
+      "versusUCLA": "UCLA offers broader national brand recognition, entertainment industry ties, and a larger alumni network across business and law, while UCSD maintains substantially deeper integration with biotechnology, genomics, and life sciences research through the Torrey Pines mesa.",
+      "versusBerkeley": "Berkeley possesses greater breadth across the humanities, social sciences, and venture-backed entrepreneurship, while UCSD offers unmatched proximity to applied biotech and genomics companies and a more STEM-concentrated undergraduate population.",
+      "versusUWashington": "UW combines computing with medicine and public health at a larger civic scale in Seattle, while UCSD offers a more concentrated, walkable biotech ecosystem and stronger oceanographic and marine science research through Scripps.",
+      "versusUCIrvine": "UC Irvine offers a more business-adjacent, Orange County corporate environment, while UCSD provides deeper access to frontier biotech, genomics, and oceanographic research institutions."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Large",
+      "undergraduateEnrollment": 33000,
+      "graduateEnrollment": 9000,
+      "totalEnrollment": 42000,
+      "campusType": "Suburban Coastal Public Research University",
+      "residentialIntensity": 68,
+      "communityFeel": 62,
+      "studentFacultyRatio": "19:1",
+      "classSizeExperience": "Large introductory lectures are common in biology, chemistry, math, and computer science; the college system (six residential colleges) creates smaller identity communities, and upper-division students gain increasing access to labs and research groups.",
+      "scaleAdvantages": [
+        "Extraordinary access to biotech and life sciences research",
+        "World-class oceanography through Scripps Institution",
+        "Strong undergraduate research culture",
+        "Direct proximity to major biotech employers"
+      ],
+      "scaleDisadvantages": [
+        "Highly competitive admission into engineering and CS",
+        "Large introductory courses",
+        "Social life is decentralized across six residential colleges",
+        "Students must proactively pursue research and mentorship"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 92,
+        "conscientiousness": 92,
+        "extraversion": 48,
+        "agreeableness": 70,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "I",
+        "R",
+        "C"
+      ],
+      "learningStyle": [
+        "Research",
+        "Laboratory Discovery",
+        "Analytical Learning",
+        "Independent Study",
+        "Interdisciplinary Science"
+      ],
+      "socialEnvironment": [
+        "Studious",
+        "Research Focused",
+        "Outdoor-Oriented",
+        "Academically Intense",
+        "Quietly Ambitious"
+      ],
+      "idealStudentTraits": [
+        "Scientifically curious",
+        "Self-directed",
+        "Comfortable with rigor",
+        "Research-motivated",
+        "Independent"
+      ],
+      "thrivesIf": [
+        "Plans for medicine, biotech, engineering, or scientific research",
+        "Wants direct access to biotech and genomics companies",
+        "Enjoys independent, research-driven learning",
+        "Is comfortable navigating a large research university",
+        "Values coastal outdoor access alongside academics"
+      ],
+      "strugglesIf": [
+        "Needs a traditional, socially centralized campus culture",
+        "Prefers small liberal arts environments",
+        "Dislikes highly competitive STEM admission processes",
+        "Wants strong football/Greek-centered social life"
+      ],
+      "transferRiskFactors": [
+        "Students overwhelmed by the size and pace of a large research university",
+        "Students frustrated by competitive major impaction in CS and engineering",
+        "Students seeking a more socially unified campus identity"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Very High",
+      "notes": "Computer Science, Computer Engineering, and Bioengineering carry additional selectivity and impaction beyond general UCSD admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Bioinformatics",
+        "Human Biology",
+        "Structural Engineering",
+        "Cognitive Science",
+        "Marine Biology",
+        "Public Health",
+        "Data Science",
+        "Nanoengineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Genomics and Sequencing",
+        "Biotech Venture Capital",
+        "Medical Device Engineering",
+        "Oceanographic Research",
+        "Precision Medicine",
+        "Wireless and Telecommunications"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Illumina",
+        "Qualcomm",
+        "Salk Institute",
+        "Sanford Burnham Prebys",
+        "Scripps Research",
+        "Genentech",
+        "ResMed"
+      ],
+      "overlookedStrengths": [
+        "Scripps Institution of Oceanography is one of the world's leading marine and climate science research institutions.",
+        "The Jacobs School of Engineering has become a major feeder into medical device and bioengineering firms.",
+        "UCSD's genomics research pipeline, seeded by proximity to Illumina, is arguably unmatched among American public universities.",
+        "The six-college undergraduate system allows students to find smaller identity communities inside a very large research institution."
+      ],
+      "sleeperIndustries": [
+        "Genomic Medicine",
+        "Ocean and Climate Technology",
+        "Medical Device Engineering",
+        "Wireless Communications",
+        "Synthetic Biology"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 84,
+      "executiveAccess": 88,
+      "internshipNetwork": 94,
+      "familyBusinessExposure": 34,
+      "relationshipCapitalScore": 84,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 82,
+      "donorNetworkStrength": 80,
+      "boardMemberDensity": 78
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Biotechnology",
+        "Life Sciences",
+        "Telecommunications",
+        "Medicine",
+        "Oceanography",
+        "Engineering",
+        "Defense"
+      ],
+      "regionalEconomicDrivers": [
+        "Biotechnology and Genomics",
+        "Telecommunications",
+        "Medical Devices",
+        "Defense",
+        "Life Sciences Research"
+      ],
+      "topEmployers": [
+        "Illumina",
+        "Qualcomm",
+        "Genentech",
+        "Pfizer",
+        "ResMed",
+        "Northrop Grumman",
+        "Sharp HealthCare",
+        "UC San Diego Health",
+        "Salk Institute",
+        "Scripps Research"
+      ],
+      "emergingIndustries": [
+        "Genomic Medicine",
+        "Synthetic Biology",
+        "Ocean and Climate Technology",
+        "AI-Driven Drug Discovery",
+        "Digital Health"
+      ],
+      "startupDensity": "Extremely High",
+      "ventureCapitalAccess": 78,
+      "corporateHeadquartersDensity": 72,
+      "healthcareHubStrength": 96,
+      "innovationIndex": 96
+    },
+    "geographicInfluence": {
+      "dominantMarket": "San Diego's Biotech, Telecommunications, and Life Sciences Economy",
+      "secondaryMarkets": [
+        "San Francisco CA",
+        "Los Angeles CA",
+        "Seattle WA",
+        "Boston MA",
+        "New York NY"
+      ],
+      "alumniStrongholds": [
+        "San Diego CA",
+        "La Jolla CA",
+        "San Francisco Bay Area CA",
+        "Los Angeles CA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in San Diego, joining Illumina, Qualcomm, and the region's dense biotech cluster.",
+        "The San Francisco Bay Area draws graduates into biotech, software engineering, and venture capital.",
+        "Los Angeles recruits graduates into entertainment technology, healthcare, and finance.",
+        "Boston attracts graduates pursuing biotechnology, pharmaceuticals, and academic medicine.",
+        "A growing international alumni network extends through genomics and life sciences companies worldwide."
+      ],
+      "regionalInfluenceScore": 96,
+      "nationalReachScore": 84,
+      "internationalReachScore": 78
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 22,
+      "studentOrganizationStrength": 88,
+      "leadershipDevelopment": 84,
+      "crossDisciplinaryInteraction": 88,
+      "civicEngagement": 78
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis outside biotech-adjacent cosmetic science research."
+      },
+      "healthWellness": {
+        "strength": 96,
+        "notes": "One of the strongest undergraduate pipelines in the country into biotechnology, genomics, and precision medicine."
+      },
+      "nutraceuticals": {
+        "strength": 48,
+        "notes": "Some overlap through biological sciences and nutrition-adjacent research."
+      },
+      "consumerProducts": {
+        "strength": 56,
+        "notes": "Moderate preparation through business and engineering design coursework."
+      },
+      "outdoorIndustry": {
+        "strength": 70,
+        "notes": "Coastal location supports strong student interest in surfing, marine recreation, and outdoor lifestyle industries."
+      },
+      "sportsBusiness": {
+        "strength": 36,
+        "notes": "Not a primary institutional specialty."
+      },
+      "entertainmentMedia": {
+        "strength": 44,
+        "notes": "Limited compared to UCLA or USC, though some graduates enter gaming and interactive media through computer science."
+      },
+      "ventureCapital": {
+        "strength": 72,
+        "notes": "Strong biotech venture capital pipeline given proximity to the Torrey Pines mesa."
+      },
+      "privateEquity": {
+        "strength": 54,
+        "notes": "Moderate pathway, primarily through healthcare-focused funds."
+      },
+      "investmentBanking": {
+        "strength": 50,
+        "notes": "Present but secondary to the school's science and engineering focus."
+      },
+      "consulting": {
+        "strength": 74,
+        "notes": "Major consulting firms recruit for life sciences, healthcare, and technology practices."
+      },
+      "medicine": {
+        "strength": 98,
+        "notes": "Exceptional preparation for medical school, biomedical research, and academic medicine through UC San Diego Health and the School of Medicine."
+      },
+      "healthcareAdministration": {
+        "strength": 82,
+        "notes": "Strong pathway through public health and health policy coursework."
+      },
+      "defense": {
+        "strength": 66,
+        "notes": "Northrop Grumman and San Diego's naval and defense economy provide meaningful engineering pathways."
+      },
+      "realEstate": {
+        "strength": 44,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 20,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 80,
+        "notes": "Strong biotech and deep-tech startup culture, supported by the Rady School of Management and Jacobs School of Engineering."
+      },
+      "technology": {
+        "strength": 88,
+        "notes": "Strong computer science and engineering pipeline, particularly in bioengineering, wireless, and computing hardware."
+      },
+      "publicPolicy": {
+        "strength": 66,
+        "notes": "The School of Global Policy and Strategy provides solid public sector and international affairs pathways."
+      },
+      "nonprofitLeadership": {
+        "strength": 58,
+        "notes": "Moderate nonprofit pathway, often oriented toward global health and public health nonprofits."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 88,
+      "firstGenerationSupport": 90,
+      "wealthCreationPotential": 92,
+      "familyBusinessPipelineStrength": 34
+    },
+    "futureResilience": {
+      "aiResistance": 96,
+      "automationResistance": 96,
+      "adaptabilityScore": 94,
+      "interdisciplinaryStrength": 92,
+      "futureReadiness": 96,
+      "entrepreneurialFlexibility": 84,
+      "lifelongLearningCulture": 94,
+      "innovationCapacity": 96
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 92,
+      "communityLeadershipPotential": 82,
+      "geographicMobility": 88,
+      "workLifeBalancePotential": 82,
+      "purposeAlignment": 92,
+      "familyFormationSupport": 78,
+      "personalDevelopmentPotential": 92,
+      "careerOptionality": 92,
+      "longTermLifeSatisfaction": 88
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 88,
+      "networkMoat": 82,
+      "geographicMoat": 96,
+      "industryMoat": 96,
+      "alumniMoat": 78,
+      "brandDurability": 90,
+      "overallMoatScore": 88
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 84,
+      "returnerScore": 34,
+      "stewardScore": 22,
+      "navigatorScore": 92,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "national_with_regional_anchor"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 68,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 1200,
+      "jewishStudentPercentage": "~4%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "UCSD's Jewish community is smaller and less central than at UCLA or Berkeley but active, with weekly Shabbat dinners and Hillel-run programming serving a growing population."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Sixth College and Revelle College Honors Programs",
+      "strength": 70,
+      "notes": "UCSD does not have a single unified honors college; instead, several of its six residential colleges (notably Revelle and Sixth) offer honors-style research seminars, priority research access, and smaller cohort experiences within the broader research university."
+    }
+  },
+
+"University of California-Santa Barbara": {
+    "institutionNarrative": {
+      "name": "University of California-Santa Barbara",
+      "location": "Santa Barbara, California",
+      "region": "California",
+      "archetype": "The Physical Sciences and Materials Research Powerhouse \u2014 Physics, Engineering, Environmental Science, and Coastal Innovation",
+      "oneSentenceSummary": "UC Santa Barbara combines elite physics, materials science, and engineering research \u2014 with more Nobel laureates on faculty than nearly any public university in the world \u2014 with a globally recognized coastal, environmentally engaged undergraduate culture.",
+      "pipeline": "Approximately 26,000 students. UCSB is internationally recognized for Physics, Materials Science, Computer Science, Environmental Studies, Economics, Chemical Engineering, Communication, and Global Studies. Major recruiters include Google, Amazon, Meta, Raytheon, Northrop Grumman, Deckers Brands, Sonos, Direct Relief, Union Bank, and numerous Bay Area and Los Angeles technology firms.",
+      "hiddenPathway": "UCSB's College of Engineering and physics departments have produced multiple Nobel laureates and an outsized share of materials science and semiconductor research relative to the university's size \u2014 a research intensity that rivals institutions many times its prestige tier, largely invisible to families outside STEM circles.",
+      "institutionalSecret": "Although widely known for its beach culture and Isla Vista social scene, UCSB is quietly one of the most research-intensive undergraduate institutions in the UC system on a per-capita basis, particularly in physics, materials science, and environmental science.",
+      "theRoom": "Located on the Santa Barbara coast, students are positioned within reach of both the Los Angeles entertainment and technology economy to the south and the Silicon Valley technology corridor to the north, alongside a small but dense local outdoor apparel and technology sector.",
+      "lifestyle": "Sun-soaked, outdoor-oriented, and socially vibrant, centered on Isla Vista's beachfront student community, with a countervailing academic intensity in the sciences that surprises many incoming students.",
+      "bestFitPersonality": "Balances intellectual curiosity with an outdoor, socially engaged lifestyle; comfortable with rigorous STEM coursework alongside an active beach and community culture.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout the Santa Barbara region and Southern California, with national influence in physics, materials science, and environmental research.",
+      "economicOutcome": "Excellent outcomes in physics-adjacent engineering, materials science, environmental science, technology, and finance, with strong regional influence in Los Angeles and the Bay Area.",
+      "gradCities": [
+        "Los Angeles CA",
+        "San Francisco CA",
+        "Santa Barbara CA",
+        "San Diego CA",
+        "Seattle WA",
+        "New York NY"
+      ],
+      "comparableInstitutions": [
+        "University of California Berkeley",
+        "University of California-Los Angeles",
+        "University of Michigan",
+        "University of Wisconsin-Madison",
+        "University of Washington"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Santa Barbara City College",
+          "Ventura College",
+          "Allan Hancock College",
+          "Santa Monica College"
+        ],
+        "transferAcceptanceRate": "~30%",
+        "freshmanAcceptanceRate": "~26%",
+        "estimatedSavingsRange": "$20,000-$55,000",
+        "transferNotes": "Santa Barbara City College is one of California's most successful UC transfer feeders, sending a substantial share of its transfer cohort directly into UCSB through the TAG pathway, particularly in physical sciences, engineering, and environmental studies."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UC Santa Barbara",
+      "archetype": "Elite Public Research University \u2014 Physical Sciences and Coastal Culture",
+      "institutionalPersonality": "intellectually rigorous, outdoor-oriented, research-driven, socially vibrant, environmentally engaged",
+      "cultureKeywords": [
+        "Physics",
+        "Materials Science",
+        "Coastal Living",
+        "Environmental Studies",
+        "Research",
+        "Sustainability",
+        "Innovation"
+      ],
+      "missionOrientation": "Advancing scientific research and environmental stewardship while cultivating an engaged, outdoor-oriented undergraduate community.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through laboratory research, quantitative rigor in the physical sciences, and an environmentally engaged approach to coursework grounded in the campus's coastal setting.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Generally progressive and environmentally conscious.",
+      "studentAutonomy": "Very High",
+      "prestigeOrientation": "One of the world's leading institutions for physics and materials science research relative to its size.",
+      "socialClimate": "Socially vibrant and outdoor-centered, balanced against serious academic rigor in STEM fields.",
+      "leadershipStyle": "Leadership through scientific research excellence and environmental stewardship."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "regionalRole": "A physics and materials science research engine bridging the Los Angeles entertainment-technology economy and the Bay Area innovation corridor."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 22,
+      "TorBuffChester": 8,
+      "TexasTriangle": 16,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 42,
+      "SoCalCreativeEconomy": 84
+    },
+    "comparativePositioning": {
+      "versusUCLA": "UCLA offers a larger alumni network, stronger entertainment and business ties, and greater national brand recognition, while UCSB provides a more concentrated physics and materials science research environment and a distinctly coastal, outdoor-oriented culture.",
+      "versusBerkeley": "Berkeley offers greater breadth and national prestige across nearly every discipline, while UCSB provides a smaller, tightly-knit physical sciences research community and one of the strongest environmental studies programs in the UC system.",
+      "versusUCSanDiego": "UC San Diego offers deeper biotech and genomics industry proximity, while UCSB is more concentrated in physics, materials science, and environmental research with a stronger emphasis on undergraduate social community.",
+      "versusUCDavis": "UC Davis specializes in agriculture, veterinary medicine, and environmental science through a land-grant lens, while UCSB concentrates its strength in physics, materials science, and coastal environmental research."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 23000,
+      "graduateEnrollment": 3000,
+      "totalEnrollment": 26000,
+      "campusType": "Coastal Suburban Public Research University",
+      "residentialIntensity": 74,
+      "communityFeel": 80,
+      "studentFacultyRatio": "18:1",
+      "classSizeExperience": "Large introductory lectures in the sciences and economics are common, with increasing access to research labs, honors seminars, and faculty mentorship as students advance, particularly in the College of Creative Studies.",
+      "scaleAdvantages": [
+        "Elite physics and materials science research",
+        "Strong sense of campus and community identity",
+        "Excellent environmental studies programs",
+        "Beautiful coastal setting supports student wellbeing"
+      ],
+      "scaleDisadvantages": [
+        "Isla Vista social culture can overshadow academic reputation",
+        "Large introductory courses in popular majors",
+        "Distance from major metropolitan job markets",
+        "Limited public transportation beyond the immediate area"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 90,
+        "conscientiousness": 84,
+        "extraversion": 72,
+        "agreeableness": 78,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "I",
+        "R",
+        "S"
+      ],
+      "learningStyle": [
+        "Research",
+        "Quantitative Analysis",
+        "Environmental Fieldwork",
+        "Laboratory Discovery",
+        "Collaborative Learning"
+      ],
+      "socialEnvironment": [
+        "Outdoor-Oriented",
+        "Socially Vibrant",
+        "Research Focused",
+        "Environmentally Conscious",
+        "Community-Centered"
+      ],
+      "idealStudentTraits": [
+        "Scientifically curious",
+        "Outdoor-loving",
+        "Socially engaged",
+        "Comfortable with quantitative rigor",
+        "Environmentally minded"
+      ],
+      "thrivesIf": [
+        "Plans for physics, engineering, environmental science, or research",
+        "Wants a strong beach and outdoor lifestyle alongside academics",
+        "Enjoys a socially vibrant campus community",
+        "Is drawn to sustainability and environmental stewardship"
+      ],
+      "strugglesIf": [
+        "Needs a highly urban, metropolitan campus setting",
+        "Prefers a socially quiet or subdued environment",
+        "Dislikes large lecture-based introductory courses",
+        "Wants immediate access to a major city job market"
+      ],
+      "transferRiskFactors": [
+        "Students who find Isla Vista's social intensity distracting",
+        "Students seeking closer proximity to major internship markets",
+        "Students who prefer a more urban campus setting"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Computer Science and select engineering majors carry additional selectivity beyond general UCSB admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Materials Engineering",
+        "Environmental Studies",
+        "Statistics and Applied Probability",
+        "Global Studies",
+        "Actuarial Science",
+        "Chemical Engineering",
+        "Communication",
+        "Geography"
+      ],
+      "hiddenCareerPipelines": [
+        "Semiconductor and Materials Research",
+        "Environmental Consulting",
+        "Climate Science",
+        "Renewable Energy",
+        "Applied Physics R&D",
+        "Outdoor and Apparel Industry"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Raytheon",
+        "Northrop Grumman",
+        "Deckers Brands",
+        "Direct Relief",
+        "Sonos",
+        "Union Bank",
+        "NASA Jet Propulsion Laboratory"
+      ],
+      "overlookedStrengths": [
+        "UCSB's physics department has produced multiple Nobel laureates relative to its size, an extraordinary research density.",
+        "The College of Creative Studies offers a genuinely graduate-school-like research experience for select undergraduates.",
+        "Environmental Studies at UCSB benefits directly from the coastal Santa Barbara Channel ecosystem as a living laboratory.",
+        "Deckers Brands (UGG, HOKA) and other outdoor apparel companies maintain close regional ties to the university."
+      ],
+      "sleeperIndustries": [
+        "Materials Science R&D",
+        "Climate and Environmental Technology",
+        "Renewable Energy",
+        "Applied Physics",
+        "Outdoor Apparel and Recreation Industry"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 74,
+      "mentorshipDensity": 76,
+      "executiveAccess": 74,
+      "internshipNetwork": 80,
+      "familyBusinessExposure": 30,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 76,
+      "referralCultureStrength": 74,
+      "donorNetworkStrength": 70,
+      "boardMemberDensity": 62
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Physics and Materials Research",
+        "Environmental Science",
+        "Technology",
+        "Defense",
+        "Outdoor Apparel",
+        "Finance"
+      ],
+      "regionalEconomicDrivers": [
+        "Materials Science R&D",
+        "Environmental Consulting",
+        "Defense Contracting",
+        "Outdoor Apparel",
+        "Wine and Agriculture"
+      ],
+      "topEmployers": [
+        "Raytheon",
+        "Northrop Grumman",
+        "Deckers Brands",
+        "Sonos",
+        "Direct Relief",
+        "Union Bank",
+        "Cottage Health"
+      ],
+      "emergingIndustries": [
+        "Climate Technology",
+        "Renewable Energy",
+        "Applied Materials Science",
+        "Environmental Data Science"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 58,
+      "corporateHeadquartersDensity": 42,
+      "healthcareHubStrength": 60,
+      "innovationIndex": 84
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Santa Barbara's Research, Environmental, and Outdoor Economy",
+      "secondaryMarkets": [
+        "Los Angeles CA",
+        "San Francisco Bay Area CA",
+        "San Diego CA",
+        "Seattle WA"
+      ],
+      "alumniStrongholds": [
+        "Santa Barbara CA",
+        "Los Angeles CA",
+        "San Francisco Bay Area CA",
+        "San Diego CA"
+      ],
+      "relocationPatterns": [
+        "Many graduates move to Los Angeles for technology, entertainment, and finance roles.",
+        "The San Francisco Bay Area draws graduates into software engineering, materials science, and climate technology.",
+        "A meaningful share remain in the Santa Barbara region working in environmental consulting, outdoor apparel, and local research institutions.",
+        "San Diego attracts graduates into biotech and defense-adjacent engineering roles.",
+        "A smaller international cohort pursues graduate research in physics and materials science globally."
+      ],
+      "regionalInfluenceScore": 88,
+      "nationalReachScore": 74,
+      "internationalReachScore": 62
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 34,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 76,
+      "civicEngagement": 74
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 62,
+        "notes": "Moderate pathway through biology, environmental health, and public health-adjacent coursework."
+      },
+      "nutraceuticals": {
+        "strength": 34,
+        "notes": "Minor overlap through environmental and biological sciences."
+      },
+      "consumerProducts": {
+        "strength": 66,
+        "notes": "Regional outdoor apparel companies (Deckers Brands) provide a distinct consumer products pathway."
+      },
+      "outdoorIndustry": {
+        "strength": 88,
+        "notes": "One of the strongest outdoor industry-adjacent cultures in the UC system, reinforced by the coastal setting and regional apparel companies."
+      },
+      "sportsBusiness": {
+        "strength": 40,
+        "notes": "Not a primary institutional specialty, though surf and outdoor recreation culture is strong."
+      },
+      "entertainmentMedia": {
+        "strength": 48,
+        "notes": "Some access to Los Angeles media industry through proximity, though not a defining institutional strength."
+      },
+      "ventureCapital": {
+        "strength": 56,
+        "notes": "Moderate access to Bay Area and Los Angeles venture ecosystems."
+      },
+      "privateEquity": {
+        "strength": 44,
+        "notes": "Limited institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 46,
+        "notes": "Present through the economics department, though secondary to STEM pathways."
+      },
+      "consulting": {
+        "strength": 64,
+        "notes": "Moderate consulting recruitment, particularly for environmental and technical consulting roles."
+      },
+      "medicine": {
+        "strength": 64,
+        "notes": "Solid pre-med preparation, though UCSB lacks its own medical school."
+      },
+      "healthcareAdministration": {
+        "strength": 50,
+        "notes": "Limited institutional focus relative to UC San Diego or UCLA."
+      },
+      "defense": {
+        "strength": 62,
+        "notes": "Raytheon and Northrop Grumman maintain regional ties through physics and engineering research."
+      },
+      "realEstate": {
+        "strength": 46,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 24,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 66,
+        "notes": "Growing startup culture connected to materials science and environmental technology research."
+      },
+      "technology": {
+        "strength": 78,
+        "notes": "Strong computer science and applied physics pipeline, particularly in materials and semiconductor research."
+      },
+      "publicPolicy": {
+        "strength": 62,
+        "notes": "Environmental policy and global studies provide solid public sector pathways."
+      },
+      "nonprofitLeadership": {
+        "strength": 62,
+        "notes": "Direct Relief and other regional nonprofits provide meaningful pathways, especially in global health and environmental causes."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 80,
+      "firstGenerationSupport": 82,
+      "wealthCreationPotential": 82,
+      "familyBusinessPipelineStrength": 30
+    },
+    "futureResilience": {
+      "aiResistance": 90,
+      "automationResistance": 88,
+      "adaptabilityScore": 86,
+      "interdisciplinaryStrength": 84,
+      "futureReadiness": 88,
+      "entrepreneurialFlexibility": 76,
+      "lifelongLearningCulture": 88,
+      "innovationCapacity": 90
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 82,
+      "communityLeadershipPotential": 78,
+      "geographicMobility": 82,
+      "workLifeBalancePotential": 88,
+      "purposeAlignment": 86,
+      "familyFormationSupport": 78,
+      "personalDevelopmentPotential": 90,
+      "careerOptionality": 82,
+      "longTermLifeSatisfaction": 88
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 78,
+      "networkMoat": 72,
+      "geographicMoat": 84,
+      "industryMoat": 82,
+      "alumniMoat": 70,
+      "brandDurability": 82,
+      "overallMoatScore": 78
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 74,
+      "returnerScore": 38,
+      "stewardScore": 28,
+      "navigatorScore": 82,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "regional_with_national_reach"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 60,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 900,
+      "jewishStudentPercentage": "~4%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "UCSB's Jewish community is active but modest in scale, centered around Hillel programming and Isla Vista's Chabad house, without formal kosher dining facilities."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "College of Creative Studies",
+      "strength": 88,
+      "notes": "The College of Creative Studies functions as UCSB's honors college equivalent, offering a genuinely graduate-school-style research experience with small seminars, direct faculty collaboration, and minimal formal grading in select majors."
+    }
+  },
+
+"University of California-Davis": {
+    "institutionNarrative": {
+      "name": "University of California-Davis",
+      "location": "Davis, California",
+      "region": "California",
+      "archetype": "The Agricultural, Veterinary, and Environmental Sciences Capital \u2014 Food Systems, Viticulture, and Land-Grant Research",
+      "oneSentenceSummary": "UC Davis is the nation's premier land-grant research university for agriculture, veterinary medicine, viticulture, and environmental science, sitting at the center of California's Central Valley food and agricultural economy while training students across engineering, biological sciences, and policy.",
+      "pipeline": "Approximately 39,000 students. UC Davis is internationally recognized for Agricultural and Environmental Sciences, Veterinary Medicine (consistently ranked the #1 veterinary school in the world), Viticulture and Enology, Plant Sciences, Animal Science, Engineering, Biological Sciences, and Economics. Major recruiters include the California Department of Food and Agriculture, E&J Gallo, Constellation Brands, Genentech, Blue Diamond Growers, Sacramento-area healthcare systems, and agricultural technology startups throughout the Central Valley.",
+      "hiddenPathway": "UC Davis's School of Veterinary Medicine has been ranked the #1 veterinary program in the world for over a decade \u2014 a fact largely invisible to families outside pre-veterinary circles, and a pathway that offers extraordinary certainty of professional outcome for students who commit early to the pre-vet track.",
+      "institutionalSecret": "While often overshadowed by Berkeley, UCLA, and San Diego in general prestige rankings, UC Davis is quietly the most important agricultural and food systems research university in the world, training the scientists, veterinarians, and policy leaders who shape how America grows and processes food.",
+      "theRoom": "Located in California's Central Valley near Sacramento, students operate inside the nation's most productive agricultural economy, with direct access to the University of California's statewide agricultural extension network, major wine industry employers, and Sacramento's state government and healthcare sectors.",
+      "lifestyle": "Quiet, bike-centric, and academically earnest. Davis is a genuine college town built around agricultural research, sustainability, and an unusually strong sense of environmental stewardship; Sacramento is 20 minutes away for urban amenities.",
+      "bestFitPersonality": "Grounded, scientifically curious, service-oriented, and drawn to agriculture, animal science, environmental stewardship, or public health.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Dominant throughout California's Central Valley agricultural economy, with national and international influence in veterinary medicine, viticulture, and agricultural science.",
+      "economicOutcome": "Excellent outcomes in veterinary medicine, agricultural science, environmental policy, biotechnology, and food systems, with strong regional influence in Sacramento and the Central Valley.",
+      "gradCities": [
+        "Sacramento CA",
+        "San Francisco CA",
+        "Davis CA",
+        "Los Angeles CA",
+        "Fresno CA",
+        "Seattle WA"
+      ],
+      "comparableInstitutions": [
+        "Cornell University",
+        "Texas A&M University",
+        "Iowa State University",
+        "University of Wisconsin-Madison",
+        "Purdue University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Sacramento City College",
+          "American River College",
+          "Sierra College",
+          "Woodland Community College"
+        ],
+        "transferAcceptanceRate": "~40%",
+        "freshmanAcceptanceRate": "~37%",
+        "estimatedSavingsRange": "$18,000-$50,000",
+        "transferNotes": "UC Davis has one of the UC system's strongest community college transfer cultures, particularly for students pursuing agricultural sciences, biological sciences, and pre-veterinary tracks, supported by California's TAG program and deep ties to Central Valley community colleges."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UC Davis",
+      "archetype": "Elite Public Land-Grant Research University \u2014 Agricultural and Environmental Sciences",
+      "institutionalPersonality": "grounded, scientifically rigorous, service-oriented, sustainability-focused, quietly ambitious",
+      "cultureKeywords": [
+        "Agriculture",
+        "Veterinary Medicine",
+        "Sustainability",
+        "Environmental Science",
+        "Viticulture",
+        "Research",
+        "Food Systems"
+      ],
+      "missionOrientation": "Advancing agricultural science, veterinary medicine, environmental stewardship, and food systems research for California and the world.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through hands-on agricultural and field research, laboratory science, veterinary clinical training, and direct engagement with California's food and agricultural economy.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Generally progressive and strongly environmentally conscious.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "The world's top-ranked veterinary program and one of the leading agricultural and environmental research universities globally.",
+      "socialClimate": "Earnest, community-oriented, bike-centric, and grounded in sustainability values.",
+      "leadershipStyle": "Leadership through applied scientific research and service to California's agricultural and environmental future."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "regionalRole": "The nation's leading land-grant research university for agriculture, veterinary medicine, and food systems, anchored in California's Central Valley."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 20,
+      "BosWash": 18,
+      "TorBuffChester": 8,
+      "TexasTriangle": 20,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 62,
+      "SoCalCreativeEconomy": 40
+    },
+    "comparativePositioning": {
+      "versusBerkeley": "Berkeley offers greater breadth across the humanities, business, and venture-backed technology entrepreneurship, while UC Davis provides unmatched depth in agriculture, veterinary medicine, and environmental science.",
+      "versusCornell": "Cornell combines Ivy League prestige with a similarly strong land-grant agricultural and veterinary tradition, while UC Davis offers a lower cost of attendance for California residents and closer proximity to the nation's largest agricultural economy in the Central Valley.",
+      "versusUCSanDiego": "UC San Diego specializes in biotech, genomics, and engineering, while UC Davis concentrates its strength in agriculture, veterinary medicine, environmental science, and food systems.",
+      "versusTexasAM": "Texas A&M offers a larger student body and a stronger Corps of Cadets and energy-sector pipeline, while UC Davis provides the world's top-ranked veterinary program and deeper integration with California's wine and produce industries."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Large",
+      "undergraduateEnrollment": 31000,
+      "graduateEnrollment": 8000,
+      "totalEnrollment": 39000,
+      "campusType": "College Town Public Research University",
+      "residentialIntensity": 70,
+      "communityFeel": 82,
+      "studentFacultyRatio": "20:1",
+      "classSizeExperience": "Large introductory lectures are common in biological sciences and engineering, but Davis's agricultural and veterinary programs offer unusually hands-on field and clinical experiences even at the undergraduate level.",
+      "scaleAdvantages": [
+        "World's #1-ranked veterinary program",
+        "Unmatched agricultural and food systems research",
+        "Strong environmental science and sustainability programs",
+        "Genuine college-town community feel"
+      ],
+      "scaleDisadvantages": [
+        "Less name recognition outside agricultural and scientific circles",
+        "Distance from major metropolitan job markets outside Sacramento",
+        "Large introductory courses in popular majors",
+        "Less prominent in business, humanities, and entertainment fields"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 84,
+        "conscientiousness": 90,
+        "extraversion": 58,
+        "agreeableness": 82,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "I",
+        "R",
+        "S"
+      ],
+      "learningStyle": [
+        "Field Research",
+        "Laboratory Science",
+        "Clinical Training",
+        "Applied Agricultural Science",
+        "Environmental Fieldwork"
+      ],
+      "socialEnvironment": [
+        "Earnest",
+        "Community-Oriented",
+        "Sustainability-Focused",
+        "Grounded",
+        "Bike-Centric"
+      ],
+      "idealStudentTraits": [
+        "Scientifically grounded",
+        "Service-oriented",
+        "Comfortable with hands-on fieldwork",
+        "Environmentally conscious",
+        "Committed to a defined professional path"
+      ],
+      "thrivesIf": [
+        "Plans for veterinary medicine, agriculture, environmental science, or food systems",
+        "Wants hands-on field and clinical research experience",
+        "Values sustainability and environmental stewardship",
+        "Enjoys a quiet, bike-centric college town"
+      ],
+      "strugglesIf": [
+        "Wants a major urban campus setting",
+        "Needs strong national brand recognition outside scientific fields",
+        "Dislikes hands-on agricultural or field-based coursework",
+        "Prefers a fast-paced, entertainment-adjacent social culture"
+      ],
+      "transferRiskFactors": [
+        "Students seeking closer proximity to major metropolitan job markets",
+        "Students who want stronger business or entertainment industry pathways",
+        "Students who prefer urban university settings"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Admission to the School of Veterinary Medicine and select engineering majors is highly competitive beyond general undergraduate admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Viticulture and Enology",
+        "Animal Science",
+        "Plant Sciences",
+        "Environmental Policy Analysis and Planning",
+        "Food Science",
+        "Sustainable Agriculture and Food Systems",
+        "Wildlife, Fish, and Conservation Biology",
+        "Biomedical Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Wine and Viticulture Industry",
+        "Agricultural Technology",
+        "Veterinary Medicine",
+        "Food Science and Safety",
+        "Environmental Policy",
+        "Sustainable Agriculture"
+      ],
+      "nicheRecruitingAdvantages": [
+        "E&J Gallo",
+        "Constellation Brands",
+        "California Department of Food and Agriculture",
+        "Blue Diamond Growers",
+        "UC Davis Health",
+        "Genentech"
+      ],
+      "overlookedStrengths": [
+        "The School of Veterinary Medicine has been ranked #1 in the world for over a decade.",
+        "UC Davis's viticulture and enology program is the training ground for much of the American wine industry.",
+        "The university's agricultural extension network gives students direct access to California's entire farming and food economy.",
+        "UC Davis Health and the Central Valley's growing healthcare sector provide strong medical pathways for students who remain regionally connected."
+      ],
+      "sleeperIndustries": [
+        "Agricultural Technology (AgTech)",
+        "Viticulture and Wine Business",
+        "Veterinary Medicine",
+        "Food Safety and Science",
+        "Sustainable Water and Land Management"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 74,
+      "mentorshipDensity": 76,
+      "executiveAccess": 66,
+      "internshipNetwork": 78,
+      "familyBusinessExposure": 46,
+      "relationshipCapitalScore": 74,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 72,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 58
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Agriculture",
+        "Veterinary Medicine",
+        "Viticulture",
+        "Environmental Science",
+        "Food Science",
+        "Biotechnology",
+        "Public Policy"
+      ],
+      "regionalEconomicDrivers": [
+        "Agriculture and Food Production",
+        "Wine Industry",
+        "Veterinary and Animal Health",
+        "State Government (Sacramento)",
+        "Environmental Research"
+      ],
+      "topEmployers": [
+        "E&J Gallo",
+        "Constellation Brands",
+        "California Department of Food and Agriculture",
+        "Blue Diamond Growers",
+        "UC Davis Health",
+        "Kaiser Permanente",
+        "State of California"
+      ],
+      "emergingIndustries": [
+        "Agricultural Technology",
+        "Precision Agriculture",
+        "Sustainable Water Management",
+        "Alternative Protein and Food Science",
+        "Climate-Resilient Agriculture"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 48,
+      "corporateHeadquartersDensity": 40,
+      "healthcareHubStrength": 70,
+      "innovationIndex": 78
+    },
+    "geographicInfluence": {
+      "dominantMarket": "California's Central Valley Agricultural and Food Systems Economy",
+      "secondaryMarkets": [
+        "Sacramento CA",
+        "San Francisco Bay Area CA",
+        "Fresno CA",
+        "Los Angeles CA"
+      ],
+      "alumniStrongholds": [
+        "Davis CA",
+        "Sacramento CA",
+        "Central Valley CA",
+        "San Francisco Bay Area CA"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates remain in Sacramento and the Central Valley, entering agriculture, state government, and healthcare.",
+        "The San Francisco Bay Area draws graduates into biotechnology, environmental consulting, and technology.",
+        "Veterinary medicine graduates disperse nationally into private practice, research, and academic veterinary medicine.",
+        "Wine and viticulture graduates concentrate in Napa, Sonoma, and Central Coast wine regions.",
+        "A smaller cohort enters national agricultural policy and environmental science roles in Washington DC."
+      ],
+      "regionalInfluenceScore": 92,
+      "nationalReachScore": 76,
+      "internationalReachScore": 70
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 24,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 74,
+      "civicEngagement": 84
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 82,
+        "notes": "Strong pathway through UC Davis Health, veterinary medicine, and nutrition science."
+      },
+      "nutraceuticals": {
+        "strength": 62,
+        "notes": "Meaningful overlap through food science and plant sciences research."
+      },
+      "consumerProducts": {
+        "strength": 58,
+        "notes": "Moderate pathway through food and beverage product development."
+      },
+      "outdoorIndustry": {
+        "strength": 58,
+        "notes": "Regional access to agricultural and outdoor recreation industries, though not a defining institutional focus."
+      },
+      "sportsBusiness": {
+        "strength": 32,
+        "notes": "Not a primary institutional specialty."
+      },
+      "entertainmentMedia": {
+        "strength": 28,
+        "notes": "Minimal institutional emphasis outside general Bay Area/LA proximity."
+      },
+      "ventureCapital": {
+        "strength": 46,
+        "notes": "Growing agtech venture pathway, though secondary to Bay Area-focused institutions."
+      },
+      "privateEquity": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 34,
+        "notes": "Minor pathway through the economics department."
+      },
+      "consulting": {
+        "strength": 58,
+        "notes": "Environmental and agricultural consulting firms recruit regularly."
+      },
+      "medicine": {
+        "strength": 84,
+        "notes": "Strong pre-med and public health preparation, supported by UC Davis Health and the School of Medicine."
+      },
+      "healthcareAdministration": {
+        "strength": 68,
+        "notes": "Solid pathway through public health and health policy coursework."
+      },
+      "defense": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 42,
+        "notes": "Some overlap through agricultural land economics and water policy."
+      },
+      "luxuryBrands": {
+        "strength": 30,
+        "notes": "Some indirect exposure through the premium wine industry."
+      },
+      "entrepreneurship": {
+        "strength": 64,
+        "notes": "Growing agtech and food science startup ecosystem centered on the Central Valley."
+      },
+      "technology": {
+        "strength": 62,
+        "notes": "Solid engineering and computer science programs, though secondary to the university's agricultural focus."
+      },
+      "publicPolicy": {
+        "strength": 76,
+        "notes": "Strong environmental and agricultural policy pathway, reinforced by proximity to Sacramento's state government."
+      },
+      "nonprofitLeadership": {
+        "strength": 66,
+        "notes": "Meaningful pathway through environmental and agricultural nonprofit organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 86,
+      "firstGenerationSupport": 88,
+      "wealthCreationPotential": 78,
+      "familyBusinessPipelineStrength": 48
+    },
+    "futureResilience": {
+      "aiResistance": 92,
+      "automationResistance": 88,
+      "adaptabilityScore": 84,
+      "interdisciplinaryStrength": 82,
+      "futureReadiness": 86,
+      "entrepreneurialFlexibility": 70,
+      "lifelongLearningCulture": 86,
+      "innovationCapacity": 84
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 78,
+      "communityLeadershipPotential": 82,
+      "geographicMobility": 78,
+      "workLifeBalancePotential": 86,
+      "purposeAlignment": 90,
+      "familyFormationSupport": 84,
+      "personalDevelopmentPotential": 88,
+      "careerOptionality": 80,
+      "longTermLifeSatisfaction": 88
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 74,
+      "networkMoat": 70,
+      "geographicMoat": 92,
+      "industryMoat": 94,
+      "alumniMoat": 72,
+      "brandDurability": 84,
+      "overallMoatScore": 80
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 54,
+      "returnerScore": 58,
+      "stewardScore": 70,
+      "navigatorScore": 62,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "regional_with_professional_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 56,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 1000,
+      "jewishStudentPercentage": "~3%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "UC Davis maintains an active Hillel and Chabad presence serving a modest Jewish student population, without dedicated kosher dining facilities on campus."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "University Honors Program",
+      "strength": 74,
+      "notes": "UC Davis's University Honors Program offers smaller seminar coursework, priority research opportunities, and closer faculty mentorship, though it functions as a supplemental track rather than a fully separate residential honors college."
+    }
+  },
+
+"University of California-Irvine": {
+    "institutionNarrative": {
+      "name": "University of California-Irvine",
+      "location": "Irvine, California",
+      "region": "California",
+      "archetype": "The Orange County Tech and Biomedical Corridor Engine \u2014 Computer Science, Biological Sciences, and Business",
+      "oneSentenceSummary": "UC Irvine combines a rapidly ascending computer science and biological sciences reputation with direct access to Orange County's dense concentration of technology, biomedical device, and business headquarters.",
+      "pipeline": "Approximately 36,000 students. UCI is increasingly recognized for Computer Science, Biological Sciences, Business (Merage), Nursing, Public Health, Criminology, and Engineering. Major recruiters include Broadcom, Edwards Lifesciences, Blizzard Entertainment, Kaiser Permanente, Allergan/AbbVie, Western Digital, Disney, and Southern California's dense biomedical device and gaming industries.",
+      "hiddenPathway": "UC Irvine sits inside Orange County's dense biomedical device corridor, home to Edwards Lifesciences and dozens of medical device companies, giving bioengineering and biological sciences students an internship and employment pathway that most universities can only access through relocation.",
+      "institutionalSecret": "While often perceived as a strong but second-tier UC campus, UCI has quietly built one of the most respected computer science and informatics departments in the UC system and sits at the center of Orange County's underappreciated biomedical device and gaming industries.",
+      "theRoom": "Located in Irvine, students operate inside Orange County's technology, biomedical device, and business corridor, alongside Blizzard Entertainment, Broadcom, Edwards Lifesciences, and a dense concentration of corporate headquarters extending from Irvine to Newport Beach.",
+      "lifestyle": "Safe, orderly, academically intense, and pre-professionally focused. Irvine is a planned community with a strong emphasis on academics, and students balance rigorous STEM and pre-health coursework with Southern California's beach and outdoor culture just minutes away.",
+      "bestFitPersonality": "Academically disciplined, pre-professionally oriented, comfortable with structure, and motivated by clear career pathways in technology, medicine, or business.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Orange County and Southern California, with growing national influence in computer science, biomedical devices, and gaming.",
+      "economicOutcome": "Strong outcomes in technology, biomedical devices, medicine, nursing, business, and gaming, with deep regional influence throughout Orange County.",
+      "gradCities": [
+        "Irvine CA",
+        "Los Angeles CA",
+        "San Diego CA",
+        "San Francisco CA",
+        "Orange County CA",
+        "Seattle WA"
+      ],
+      "comparableInstitutions": [
+        "University of California-Los Angeles",
+        "University of California-San Diego",
+        "University of Michigan",
+        "Georgia Institute of Technology",
+        "University of Washington"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Irvine Valley College",
+          "Santa Ana College",
+          "Orange Coast College",
+          "Saddleback College"
+        ],
+        "transferAcceptanceRate": "~34%",
+        "freshmanAcceptanceRate": "~29%",
+        "estimatedSavingsRange": "$20,000-$55,000",
+        "transferNotes": "UCI draws heavily from Orange County's strong community college network, particularly Irvine Valley College and Orange Coast College, with well-established TAG pathways into business, biological sciences, and computer science."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UC Irvine",
+      "archetype": "Rising Elite Public Research University \u2014 Technology, Biomedical, and Business",
+      "institutionalPersonality": "disciplined, pre-professional, orderly, academically intense, ambitious",
+      "cultureKeywords": [
+        "Computer Science",
+        "Biomedical Devices",
+        "Business",
+        "Research",
+        "Gaming",
+        "Public Health",
+        "Structured Achievement"
+      ],
+      "missionOrientation": "Advancing research and professional preparation in technology, medicine, and business while serving Orange County's economy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through structured coursework, research labs, business case competitions, and direct proximity to Orange County's biomedical device and technology corridor.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Generally progressive, with a strong pre-professional and pragmatic orientation.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "A rapidly ascending UC campus with particular strength in computer science, biological sciences, and biomedical engineering.",
+      "socialClimate": "Orderly, academically intense, and pre-professionally focused, with a large and highly engaged Greek and student organization scene.",
+      "leadershipStyle": "Leadership through structured academic achievement and professional preparation."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "regionalRole": "Orange County's primary technology, biomedical device, and business talent pipeline, bridging Los Angeles and San Diego's innovation economies."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 20,
+      "TorBuffChester": 8,
+      "TexasTriangle": 18,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 34,
+      "SoCalCreativeEconomy": 90
+    },
+    "comparativePositioning": {
+      "versusUCLA": "UCLA offers a larger national alumni network and deeper entertainment and business industry ties, while UCI provides more direct proximity to Orange County's biomedical device and technology corridor at a somewhat less competitive admission tier.",
+      "versusUCSanDiego": "UC San Diego offers deeper biotech and genomics research proximity through the Torrey Pines mesa, while UCI is more closely tied to Orange County's biomedical device manufacturing and business corporate corridor.",
+      "versusUCDavis": "UC Davis specializes in agriculture and veterinary medicine, while UCI concentrates its strength in computer science, biomedical devices, and Orange County's business and gaming industries.",
+      "versusUCSB": "UC Santa Barbara offers a stronger physics and materials science research identity with a more social, coastal culture, while UCI provides a more structured, pre-professional environment closely tied to Orange County's corporate economy."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Large",
+      "undergraduateEnrollment": 30000,
+      "graduateEnrollment": 6000,
+      "totalEnrollment": 36000,
+      "campusType": "Suburban Planned-Community Public Research University",
+      "residentialIntensity": 58,
+      "communityFeel": 68,
+      "studentFacultyRatio": "18:1",
+      "classSizeExperience": "Large introductory lectures are common in biological sciences and computer science, with increasing access to research opportunities and smaller seminars as students progress into upper-division coursework.",
+      "scaleAdvantages": [
+        "Direct proximity to Orange County's biomedical device corridor",
+        "Strong and rapidly rising computer science reputation",
+        "Safe, orderly planned-community setting",
+        "Strong pre-health and pre-professional advising"
+      ],
+      "scaleDisadvantages": [
+        "Less traditional college-town social atmosphere",
+        "Highly competitive admission into computer science and biological sciences",
+        "Perceived as less prestigious than UCLA or Berkeley despite strong outcomes",
+        "Commuter-adjacent culture in a car-dependent region"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 84,
+        "conscientiousness": 92,
+        "extraversion": 62,
+        "agreeableness": 76,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "I",
+        "C",
+        "E"
+      ],
+      "learningStyle": [
+        "Structured Coursework",
+        "Laboratory Research",
+        "Case-Based Business Learning",
+        "Pre-Professional Training",
+        "Applied Technology"
+      ],
+      "socialEnvironment": [
+        "Pre-Professional",
+        "Academically Intense",
+        "Orderly",
+        "Ambitious",
+        "Structured"
+      ],
+      "idealStudentTraits": [
+        "Academically disciplined",
+        "Pre-professionally motivated",
+        "Comfortable with structure",
+        "Career-focused",
+        "Achievement-oriented"
+      ],
+      "thrivesIf": [
+        "Plans for computer science, medicine, biomedical engineering, or business",
+        "Wants direct access to Orange County's biomedical device and technology corridor",
+        "Values a safe, structured campus environment",
+        "Is comfortable navigating a large, pre-professionally focused student body"
+      ],
+      "strugglesIf": [
+        "Wants a traditional college-town social atmosphere",
+        "Prefers a smaller, more intimate campus community",
+        "Dislikes highly competitive STEM admission processes",
+        "Needs a campus with strong public transit and walkability beyond the immediate area"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more traditional residential college social culture",
+        "Students frustrated by competitive impaction in computer science and biological sciences",
+        "Students who prefer a more urban, less car-dependent setting"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Very High",
+      "notes": "Computer Science and Biological Sciences carry additional selectivity and impaction beyond general UCI admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Informatics",
+        "Public Health",
+        "Criminology, Law and Society",
+        "Biomedical Engineering",
+        "Data Science",
+        "Nursing Science",
+        "Pharmaceutical Sciences",
+        "Software Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Biomedical Device Engineering",
+        "Video Game Development",
+        "Health Informatics",
+        "Pharmaceutical Sciences",
+        "Corporate Business Analytics"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Broadcom",
+        "Edwards Lifesciences",
+        "Blizzard Entertainment",
+        "Western Digital",
+        "Allergan/AbbVie",
+        "Kaiser Permanente",
+        "Disney"
+      ],
+      "overlookedStrengths": [
+        "UCI's Donald Bren School of Information and Computer Sciences has become one of the most respected computer science programs in the UC system.",
+        "Orange County's biomedical device corridor, anchored by Edwards Lifesciences, gives biomedical engineering students exceptional local internship access.",
+        "Blizzard Entertainment's Irvine headquarters connects UCI students to the video game and interactive entertainment industry in an underappreciated way.",
+        "The Paul Merage School of Business has built a strong regional reputation in Orange County's corporate economy."
+      ],
+      "sleeperIndustries": [
+        "Biomedical Device Manufacturing",
+        "Video Game Development",
+        "Health Informatics",
+        "Pharmaceutical Sciences",
+        "Corporate Analytics"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 76,
+      "mentorshipDensity": 74,
+      "executiveAccess": 78,
+      "internshipNetwork": 84,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 72,
+      "referralCultureStrength": 74,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 66
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Biomedical Devices",
+        "Technology",
+        "Business",
+        "Healthcare",
+        "Video Gaming",
+        "Pharmaceuticals"
+      ],
+      "regionalEconomicDrivers": [
+        "Biomedical Device Manufacturing",
+        "Corporate Headquarters",
+        "Technology",
+        "Video Game Development",
+        "Healthcare"
+      ],
+      "topEmployers": [
+        "Broadcom",
+        "Edwards Lifesciences",
+        "Blizzard Entertainment",
+        "Western Digital",
+        "Allergan/AbbVie",
+        "Kaiser Permanente",
+        "UCI Health",
+        "Disney"
+      ],
+      "emergingIndustries": [
+        "Digital Health",
+        "Medical Robotics",
+        "Video Game and Interactive Media",
+        "Health Informatics",
+        "Biotechnology"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 62,
+      "corporateHeadquartersDensity": 84,
+      "healthcareHubStrength": 82,
+      "innovationIndex": 84
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Orange County's Technology, Biomedical Device, and Business Corridor",
+      "secondaryMarkets": [
+        "Los Angeles CA",
+        "San Diego CA",
+        "San Francisco Bay Area CA",
+        "Seattle WA"
+      ],
+      "alumniStrongholds": [
+        "Irvine CA",
+        "Orange County CA",
+        "Los Angeles CA",
+        "San Diego CA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Orange County, joining biomedical device companies, technology firms, and corporate headquarters.",
+        "Los Angeles draws graduates into entertainment technology, finance, and healthcare.",
+        "San Diego attracts graduates into biotech and healthcare roles.",
+        "The San Francisco Bay Area recruits graduates into software engineering and technology.",
+        "A smaller cohort enters national healthcare and pharmaceutical roles through nursing and pharmaceutical sciences programs."
+      ],
+      "regionalInfluenceScore": 92,
+      "nationalReachScore": 72,
+      "internationalReachScore": 62
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 38,
+      "studentOrganizationStrength": 86,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 78,
+      "civicEngagement": 70
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis outside general consumer products coursework."
+      },
+      "healthWellness": {
+        "strength": 86,
+        "notes": "Strong pathway through biomedical devices, nursing, and public health programs."
+      },
+      "nutraceuticals": {
+        "strength": 40,
+        "notes": "Some overlap through pharmaceutical sciences coursework."
+      },
+      "consumerProducts": {
+        "strength": 62,
+        "notes": "Moderate preparation through the Merage School of Business."
+      },
+      "outdoorIndustry": {
+        "strength": 46,
+        "notes": "Limited institutional emphasis despite Southern California beach proximity."
+      },
+      "sportsBusiness": {
+        "strength": 38,
+        "notes": "Not a primary institutional specialty."
+      },
+      "entertainmentMedia": {
+        "strength": 58,
+        "notes": "Blizzard Entertainment's Irvine headquarters provides a distinct video game and interactive media pathway."
+      },
+      "ventureCapital": {
+        "strength": 58,
+        "notes": "Growing access to Orange County and Los Angeles venture ecosystems."
+      },
+      "privateEquity": {
+        "strength": 48,
+        "notes": "Moderate pathway through the Merage School of Business."
+      },
+      "investmentBanking": {
+        "strength": 48,
+        "notes": "Present but secondary to the school's STEM and business-generalist focus."
+      },
+      "consulting": {
+        "strength": 68,
+        "notes": "Major consulting firms recruit regularly, particularly for healthcare and technology practices."
+      },
+      "medicine": {
+        "strength": 86,
+        "notes": "Strong pre-med and nursing pipeline, supported by UCI Health and the School of Medicine."
+      },
+      "healthcareAdministration": {
+        "strength": 76,
+        "notes": "Solid pathway through public health and health policy coursework."
+      },
+      "defense": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 50,
+        "notes": "Orange County's real estate and development economy provides moderate opportunity."
+      },
+      "luxuryBrands": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 68,
+        "notes": "Growing biomedical device and technology startup culture connected to Orange County's corporate ecosystem."
+      },
+      "technology": {
+        "strength": 86,
+        "notes": "Strong and rapidly ascending computer science and informatics pipeline."
+      },
+      "publicPolicy": {
+        "strength": 58,
+        "notes": "Moderate pathway through criminology, law and society, and public health coursework."
+      },
+      "nonprofitLeadership": {
+        "strength": 52,
+        "notes": "Limited but present nonprofit pathway, often oriented toward healthcare and public health."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 88,
+      "firstGenerationSupport": 90,
+      "wealthCreationPotential": 84,
+      "familyBusinessPipelineStrength": 40
+    },
+    "futureResilience": {
+      "aiResistance": 90,
+      "automationResistance": 88,
+      "adaptabilityScore": 86,
+      "interdisciplinaryStrength": 82,
+      "futureReadiness": 90,
+      "entrepreneurialFlexibility": 74,
+      "lifelongLearningCulture": 84,
+      "innovationCapacity": 88
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 84,
+      "communityLeadershipPotential": 76,
+      "geographicMobility": 82,
+      "workLifeBalancePotential": 82,
+      "purposeAlignment": 82,
+      "familyFormationSupport": 80,
+      "personalDevelopmentPotential": 84,
+      "careerOptionality": 84,
+      "longTermLifeSatisfaction": 84
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 76,
+      "networkMoat": 74,
+      "geographicMoat": 90,
+      "industryMoat": 88,
+      "alumniMoat": 68,
+      "brandDurability": 80,
+      "overallMoatScore": 79
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 66,
+      "returnerScore": 46,
+      "stewardScore": 32,
+      "navigatorScore": 78,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "regional_with_national_reach"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 62,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 1100,
+      "jewishStudentPercentage": "~3%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "UCI maintains an active Hillel and Chabad presence with kosher dining options, serving a growing Jewish student population within Orange County."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Campuswide Honors Collegium",
+      "strength": 76,
+      "notes": "UCI's Campuswide Honors Collegium provides smaller interdisciplinary seminars, priority registration, and research mentorship for high-achieving students across all majors."
+    }
+  },
+
+"University of California-Riverside": {
+    "institutionNarrative": {
+      "name": "University of California-Riverside",
+      "location": "Riverside, California",
+      "region": "California",
+      "archetype": "The Access and Mobility Engine \u2014 Agriculture, Medicine for the Underserved, and the Inland Empire Economy",
+      "oneSentenceSummary": "UC Riverside combines a historic agricultural research tradition \u2014 birthplace of the California citrus industry \u2014 with a mission-driven medical school focused on serving underserved Inland Empire communities, functioning as one of the nation's strongest engines of first-generation social mobility.",
+      "pipeline": "Approximately 26,000 students. UCR is recognized for Entomology and Agricultural Sciences, Business (School of Business), Biological Sciences, the UCR School of Medicine (focused on training physicians for underserved Inland Empire communities), Public Policy, and Creative Writing. Major recruiters include Kaiser Permanente, Amazon (regional logistics), the University of California health system, Inland Empire school districts and municipal government, and Southern California agricultural and logistics companies.",
+      "hiddenPathway": "UCR's School of Medicine was founded specifically to train physicians who will practice in the medically underserved Inland Empire \u2014 giving pre-med students a mission-driven pathway into medicine with a built-in regional physician shortage they will personally help solve.",
+      "institutionalSecret": "UC Riverside is quietly one of the most effective social mobility engines in the entire University of California system, ranked at or near the top nationally for the gap between what students pay and what they earn afterward \u2014 a fact obscured by lower general prestige rankings.",
+      "theRoom": "Located in the Inland Empire, students operate inside one of the fastest-growing logistics and warehousing economies in the country, alongside Amazon's regional distribution network, a growing healthcare sector, and historic agricultural research institutions rooted in the citrus industry.",
+      "lifestyle": "Warm, inland, and community-oriented, with a strong emphasis on first-generation student support and a diverse, working-class-adjacent student body drawn heavily from the Inland Empire and Los Angeles.",
+      "bestFitPersonality": "Resilient, community-minded, motivated by mission-driven fields like medicine and public service, and drawn to an environment that actively invests in first-generation and underrepresented students.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout the Inland Empire and Southern California, with growing influence in medicine for underserved populations and agricultural entomology research.",
+      "economicOutcome": "Strong social-mobility-adjusted outcomes, particularly in medicine, business, public service, and logistics-adjacent fields, with an exceptional ratio of cost to post-graduation earnings.",
+      "gradCities": [
+        "Riverside CA",
+        "Los Angeles CA",
+        "San Bernardino CA",
+        "San Diego CA",
+        "Sacramento CA",
+        "Ontario CA"
+      ],
+      "comparableInstitutions": [
+        "Arizona State University",
+        "University of Houston",
+        "University of Texas at Dallas",
+        "California State University Chico",
+        "University of Central Florida"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Riverside City College",
+          "San Bernardino Valley College",
+          "Moreno Valley College",
+          "Norco College"
+        ],
+        "transferAcceptanceRate": "~58%",
+        "freshmanAcceptanceRate": "~55%",
+        "estimatedSavingsRange": "$15,000-$45,000",
+        "transferNotes": "UC Riverside maintains one of the UC system's most accessible and successful community college transfer pathways, with deep partnerships across Inland Empire community colleges and a strong institutional commitment to transfer student success."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UC Riverside",
+      "archetype": "Public Research University \u2014 Access, Mobility, and Mission-Driven Medicine",
+      "institutionalPersonality": "resilient, community-oriented, mission-driven, accessible, quietly effective",
+      "cultureKeywords": [
+        "Access",
+        "Social Mobility",
+        "Agriculture",
+        "Underserved Medicine",
+        "Entomology",
+        "Diversity",
+        "Community"
+      ],
+      "missionOrientation": "Expanding access to higher education and training physicians and scientists to serve underserved Inland Empire communities.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through applied research, mission-driven professional training, and a strong institutional commitment to first-generation and underrepresented student success.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Generally progressive, with a strong institutional emphasis on equity and access.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Less prestige-driven than sister UC campuses; oriented instead toward access, mobility, and community impact.",
+      "socialClimate": "Diverse, community-oriented, and supportive, with a strong first-generation student culture.",
+      "leadershipStyle": "Leadership through access, equity, and mission-driven community impact."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "regionalRole": "The Inland Empire's primary access-oriented research university, training physicians and scientists to serve the region's underserved communities."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 14,
+      "BosWash": 12,
+      "TorBuffChester": 6,
+      "TexasTriangle": 12,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 20,
+      "SoCalCreativeEconomy": 74
+    },
+    "comparativePositioning": {
+      "versusUCLA": "UCLA offers dramatically greater national prestige, alumni network density, and entertainment/business industry ties, while UCR offers significantly higher accessibility and a mission-driven medical school focused on underserved communities.",
+      "versusUCSanDiego": "UC San Diego offers deeper biotech and genomics industry proximity and higher general selectivity, while UCR offers stronger accessibility and a distinctive social mobility mission.",
+      "versusArizonaState": "Arizona State offers larger scale and a more nationally recognized innovation brand, while UCR offers the credibility of the University of California system name at a more accessible admissions tier.",
+      "versusUCDavis": "UC Davis specializes in agriculture and veterinary medicine at a larger, more nationally recognized scale, while UCR offers a comparable agricultural research tradition (notably in entomology and citrus research) combined with a stronger access and mobility mission."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 22000,
+      "graduateEnrollment": 4000,
+      "totalEnrollment": 26000,
+      "campusType": "Suburban Public Research University",
+      "residentialIntensity": 56,
+      "communityFeel": 76,
+      "studentFacultyRatio": "20:1",
+      "classSizeExperience": "Large introductory lectures are common, though UCR's smaller size relative to UCLA or Berkeley creates comparatively more accessible faculty relationships and advising support, particularly for first-generation students.",
+      "scaleAdvantages": [
+        "Exceptional social mobility outcomes relative to cost",
+        "Mission-driven medical school focused on underserved communities",
+        "Historic entomology and agricultural research strength",
+        "Strong first-generation student support infrastructure"
+      ],
+      "scaleDisadvantages": [
+        "Lower general prestige recognition than sister UC campuses",
+        "Less developed corporate recruiting pipeline than UCLA, Berkeley, or UCSD",
+        "Inland location further from coastal job markets",
+        "Smaller alumni network in national leadership positions"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 78,
+        "conscientiousness": 84,
+        "extraversion": 64,
+        "agreeableness": 84,
+        "neuroticism": 48
+      },
+      "hollandCodes": [
+        "S",
+        "I",
+        "R"
+      ],
+      "learningStyle": [
+        "Applied Research",
+        "Community-Engaged Learning",
+        "Clinical and Field Training",
+        "Collaborative Study",
+        "Mission-Driven Coursework"
+      ],
+      "socialEnvironment": [
+        "Community-Oriented",
+        "Diverse",
+        "Supportive",
+        "Resilient",
+        "Mission-Driven"
+      ],
+      "idealStudentTraits": [
+        "Resilient",
+        "Community-minded",
+        "Motivated by service and access",
+        "Comfortable in a diverse student body",
+        "Driven by mission over prestige"
+      ],
+      "thrivesIf": [
+        "Is a first-generation or underrepresented student seeking strong institutional support",
+        "Plans for medicine, particularly serving underserved communities",
+        "Values a diverse, community-oriented campus",
+        "Wants the UC system credential at a more accessible admissions tier"
+      ],
+      "strugglesIf": [
+        "Prioritizes maximum national prestige recognition above all else",
+        "Wants the largest possible corporate recruiting pipeline immediately on campus",
+        "Needs a coastal or major-metro campus location",
+        "Prefers a smaller, private-college social culture"
+      ],
+      "transferRiskFactors": [
+        "Students who feel the need for greater national brand recognition",
+        "Students seeking a larger on-campus corporate recruiting presence",
+        "Students who prioritize coastal proximity"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Business and biological sciences carry some additional selectivity, though UCR remains one of the more accessible UC campuses overall."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Entomology",
+        "Public Policy",
+        "Creative Writing",
+        "Business Administration",
+        "Biomedical Sciences",
+        "Environmental Science",
+        "Media and Cultural Studies",
+        "Neuroscience"
+      ],
+      "hiddenCareerPipelines": [
+        "Underserved Community Medicine",
+        "Agricultural Entomology and Pest Management",
+        "Public Sector and Government Service",
+        "Regional Healthcare Administration",
+        "Logistics and Supply Chain (Inland Empire)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Kaiser Permanente",
+        "UC Riverside Health",
+        "Amazon (regional logistics)",
+        "Inland Empire school districts",
+        "State and local government agencies"
+      ],
+      "overlookedStrengths": [
+        "UCR's entomology program traces its roots to the birth of the California citrus industry and remains a globally respected research center.",
+        "The UCR School of Medicine was purpose-built to address a physician shortage in the Inland Empire, giving graduates an unusually clear sense of mission.",
+        "UCR is consistently ranked among the top universities in the country for social mobility \u2014 the gap between cost and post-graduation earning potential.",
+        "The Inland Empire's rapidly growing logistics, healthcare, and government sectors provide expanding regional opportunity."
+      ],
+      "sleeperIndustries": [
+        "Underserved Community Healthcare",
+        "Agricultural Entomology and Pest Science",
+        "Regional Logistics and Supply Chain",
+        "Public Sector Administration",
+        "Environmental and Water Policy"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 66,
+      "mentorshipDensity": 70,
+      "executiveAccess": 54,
+      "internshipNetwork": 66,
+      "familyBusinessExposure": 32,
+      "relationshipCapitalScore": 64,
+      "alumniLoyaltyScore": 68,
+      "referralCultureStrength": 60,
+      "donorNetworkStrength": 48,
+      "boardMemberDensity": 42
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Healthcare",
+        "Agriculture",
+        "Logistics",
+        "Public Sector",
+        "Education"
+      ],
+      "regionalEconomicDrivers": [
+        "Logistics and Warehousing (Inland Empire)",
+        "Healthcare",
+        "Agriculture",
+        "Public Sector Employment",
+        "Regional Retail"
+      ],
+      "topEmployers": [
+        "Kaiser Permanente",
+        "UC Riverside Health",
+        "Amazon",
+        "Inland Empire school districts",
+        "State of California",
+        "San Bernardino and Riverside county governments"
+      ],
+      "emergingIndustries": [
+        "Regional Healthcare Expansion",
+        "Logistics Technology",
+        "Agricultural Technology",
+        "Public Health Infrastructure"
+      ],
+      "startupDensity": "Low to Moderate",
+      "ventureCapitalAccess": 30,
+      "corporateHeadquartersDensity": 34,
+      "healthcareHubStrength": 74,
+      "innovationIndex": 62
+    },
+    "geographicInfluence": {
+      "dominantMarket": "The Inland Empire's Healthcare, Logistics, and Public Sector Economy",
+      "secondaryMarkets": [
+        "Los Angeles CA",
+        "San Diego CA",
+        "Orange County CA",
+        "Sacramento CA"
+      ],
+      "alumniStrongholds": [
+        "Riverside CA",
+        "San Bernardino CA",
+        "Inland Empire CA",
+        "Los Angeles CA"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates remain in the Inland Empire, entering healthcare, education, logistics, and public sector roles.",
+        "Los Angeles draws graduates into broader business, healthcare, and public service careers.",
+        "Medical school graduates disperse into underserved communities throughout California per the school's founding mission.",
+        "A smaller cohort enters agricultural and environmental science roles connected to UCR's entomology and agricultural research strength.",
+        "Public policy and government graduates enter state and local government roles throughout Southern California."
+      ],
+      "regionalInfluenceScore": 84,
+      "nationalReachScore": 48,
+      "internationalReachScore": 38
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 18,
+      "studentOrganizationStrength": 76,
+      "leadershipDevelopment": 72,
+      "crossDisciplinaryInteraction": 68,
+      "civicEngagement": 82
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 82,
+        "notes": "Strong pathway through the UCR School of Medicine and biomedical sciences, with a distinct mission serving underserved populations."
+      },
+      "nutraceuticals": {
+        "strength": 40,
+        "notes": "Some overlap through agricultural and entomological research."
+      },
+      "consumerProducts": {
+        "strength": 40,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 36,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 30,
+        "notes": "Not a primary institutional specialty."
+      },
+      "entertainmentMedia": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis despite Southern California proximity."
+      },
+      "ventureCapital": {
+        "strength": 28,
+        "notes": "Minimal presence relative to coastal UC campuses."
+      },
+      "privateEquity": {
+        "strength": 26,
+        "notes": "Minimal institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 26,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consulting": {
+        "strength": 44,
+        "notes": "Present but modest compared to more prestige-oriented UC campuses."
+      },
+      "medicine": {
+        "strength": 88,
+        "notes": "A defining institutional strength, anchored by a medical school purpose-built to serve underserved Inland Empire communities."
+      },
+      "healthcareAdministration": {
+        "strength": 70,
+        "notes": "Solid pathway given the region's growing healthcare sector."
+      },
+      "defense": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 44,
+        "notes": "The Inland Empire's logistics-driven real estate and warehousing boom offers moderate opportunity."
+      },
+      "luxuryBrands": {
+        "strength": 16,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 48,
+        "notes": "Growing but modest entrepreneurship culture relative to coastal UC campuses."
+      },
+      "technology": {
+        "strength": 52,
+        "notes": "Present but secondary to the university's health sciences and agricultural focus."
+      },
+      "publicPolicy": {
+        "strength": 68,
+        "notes": "Solid pathway through public policy programs oriented toward regional government service."
+      },
+      "nonprofitLeadership": {
+        "strength": 66,
+        "notes": "Meaningful pathway, particularly for community health and social service nonprofits."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 98,
+      "firstGenerationSupport": 98,
+      "wealthCreationPotential": 76,
+      "familyBusinessPipelineStrength": 30
+    },
+    "futureResilience": {
+      "aiResistance": 84,
+      "automationResistance": 82,
+      "adaptabilityScore": 78,
+      "interdisciplinaryStrength": 70,
+      "futureReadiness": 78,
+      "entrepreneurialFlexibility": 60,
+      "lifelongLearningCulture": 78,
+      "innovationCapacity": 72
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 76,
+      "communityLeadershipPotential": 84,
+      "geographicMobility": 68,
+      "workLifeBalancePotential": 82,
+      "purposeAlignment": 92,
+      "familyFormationSupport": 84,
+      "personalDevelopmentPotential": 86,
+      "careerOptionality": 70,
+      "longTermLifeSatisfaction": 84
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 54,
+      "networkMoat": 56,
+      "geographicMoat": 78,
+      "industryMoat": 78,
+      "alumniMoat": 56,
+      "brandDurability": 66,
+      "overallMoatScore": 64
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 46,
+      "returnerScore": 66,
+      "stewardScore": 78,
+      "navigatorScore": 52,
+      "geographicLockIn": "moderate_to_high",
+      "alumniDispersalPattern": "regional_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 34,
+        "type": "Regional Hillel Affiliate"
+      },
+      "estimatedJewishUndergraduates": 300,
+      "jewishStudentPercentage": "~1%",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Limited",
+      "notes": "UCR's Jewish community is small and less institutionally developed than at coastal UC campuses, with limited dedicated programming and no on-campus kosher dining."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "University Honors Program",
+      "strength": 66,
+      "notes": "UCR's University Honors Program offers smaller seminar coursework and priority research opportunities for high-achieving students, functioning as a supplemental distinction rather than a separate residential college."
+    }
+  },
+
+"University of California-Santa Cruz": {
+    "institutionNarrative": {
+      "name": "University of California-Santa Cruz",
+      "location": "Santa Cruz, California",
+      "region": "California",
+      "archetype": "The Silicon Valley-Adjacent Counterculture Research Campus \u2014 Computer Science, Marine Biology, and Independent Scholarship",
+      "oneSentenceSummary": "UC Santa Cruz combines a distinctive, non-traditional academic culture \u2014 narrative evaluations, a redwood-forest residential college system, and a strong independent-scholarship ethos \u2014 with a rapidly strengthening computer science and game design pipeline directly over the hill from Silicon Valley.",
+      "pipeline": "Approximately 19,000 students. UCSC is increasingly recognized for Computer Science and Game Design (Baskin Engineering), Marine Biology, Astronomy and Astrophysics (through historic ties to Lick Observatory), Psychology, Environmental Studies, and Politics. Major recruiters include Apple, Google, Netflix, Electronic Arts, NASA Ames Research Center, Monterey Bay Aquarium Research Institute, and a growing number of Silicon Valley technology firms.",
+      "hiddenPathway": "UCSC sits directly over the hill from Silicon Valley, and its Baskin School of Engineering has quietly become one of the top computer science and game design feeder programs on the West Coast, sending graduates into Apple, Google, Netflix, and Electronic Arts at a rate that surprises families unfamiliar with the campus's STEM evolution.",
+      "institutionalSecret": "Although still culturally associated with its 1960s counterculture origins and narrative-evaluation grading system, UCSC has become a genuine computer science and marine science research powerhouse, sitting at the unusual intersection of Silicon Valley proximity and world-class oceanographic access via the Monterey Bay.",
+      "theRoom": "Located in Santa Cruz, students are positioned less than an hour from Silicon Valley's technology corridor, while also sitting directly on the Monterey Bay, one of the richest marine research environments in the world.",
+      "lifestyle": "Independent, intellectually unconventional, and deeply connected to the redwood forest and coastal setting. UCSC's ten residential colleges each carry a distinct academic identity, and the campus culture rewards self-directed, interdisciplinary thinkers over traditional pre-professional students.",
+      "bestFitPersonality": "Independent-minded, intellectually curious, comfortable with unconventional academic structures, and drawn to nature, marine science, or emerging technology fields.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout the Monterey Bay region and increasingly influential in Silicon Valley's technology and gaming sectors.",
+      "economicOutcome": "Strong outcomes in computer science, game design, marine and environmental science, and psychology, with a growing technology pipeline into Silicon Valley.",
+      "gradCities": [
+        "San Francisco Bay Area CA",
+        "Santa Cruz CA",
+        "Los Angeles CA",
+        "San Diego CA",
+        "Seattle WA",
+        "Portland OR"
+      ],
+      "comparableInstitutions": [
+        "University of California-Santa Barbara",
+        "University of Oregon",
+        "University of Colorado Boulder",
+        "Indiana University Bloomington",
+        "University of Vermont"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Cabrillo College",
+          "Monterey Peninsula College",
+          "De Anza College",
+          "Foothill College"
+        ],
+        "transferAcceptanceRate": "~48%",
+        "freshmanAcceptanceRate": "~44%",
+        "estimatedSavingsRange": "$18,000-$50,000",
+        "transferNotes": "UCSC maintains strong transfer relationships with Cabrillo College and Silicon Valley-adjacent community colleges like De Anza and Foothill, particularly for students pursuing computer science and environmental studies."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UC Santa Cruz",
+      "archetype": "Independent-Minded Public Research University \u2014 Technology and Marine Science",
+      "institutionalPersonality": "independent, intellectually unconventional, nature-oriented, research-driven, quietly technical",
+      "cultureKeywords": [
+        "Computer Science",
+        "Marine Biology",
+        "Independent Scholarship",
+        "Redwoods",
+        "Game Design",
+        "Environmental Studies",
+        "Counterculture Heritage"
+      ],
+      "missionOrientation": "Advancing independent scholarship, marine and environmental research, and technology education within a non-traditional academic culture.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through narrative evaluation alongside traditional grading, self-directed research, interdisciplinary coursework, and close engagement with the natural redwood and coastal environment.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Strongly progressive and environmentally conscious, with a historically countercultural identity.",
+      "studentAutonomy": "Very High",
+      "prestigeOrientation": "An increasingly respected computer science and marine science research institution operating within a distinctly non-traditional academic culture.",
+      "socialClimate": "Independent, intellectually alternative, and community-oriented, with strong environmental and social-justice engagement.",
+      "leadershipStyle": "Leadership through independent scholarship, environmental stewardship, and quiet technical excellence."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "regionalRole": "A Silicon Valley-adjacent research campus combining an emerging computer science and game design pipeline with world-class marine science access via the Monterey Bay."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 20,
+      "TorBuffChester": 8,
+      "TexasTriangle": 14,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 78,
+      "SoCalCreativeEconomy": 32
+    },
+    "comparativePositioning": {
+      "versusUCSB": "UC Santa Barbara offers a more socially traditional, beach-centered campus culture with stronger physics research, while UCSC provides a more unconventional academic culture, closer Silicon Valley proximity, and a stronger computer science and game design pipeline.",
+      "versusBerkeley": "Berkeley offers vastly greater national prestige and a much larger alumni network, while UCSC provides a smaller, more independent-minded academic culture and comparable proximity to the Bay Area's technology economy.",
+      "versusUCSanDiego": "UC San Diego offers deeper biotech and genomics industry proximity, while UCSC provides stronger marine biology access via the Monterey Bay and a more unconventional, independent-scholarship academic culture.",
+      "versusUOregon": "University of Oregon offers a more traditional Pac-12/Big Ten athletic and social culture, while UCSC provides direct Silicon Valley proximity and a more academically unconventional, research-oriented environment."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 17000,
+      "graduateEnrollment": 2000,
+      "totalEnrollment": 19000,
+      "campusType": "Forested Coastal Public Research University",
+      "residentialIntensity": 72,
+      "communityFeel": 84,
+      "studentFacultyRatio": "20:1",
+      "classSizeExperience": "Smaller than most UC campuses, with a ten-college residential system that creates smaller academic identity communities; upper-division students gain strong access to research, particularly in marine science and computer science.",
+      "scaleAdvantages": [
+        "Smaller scale than most UC campuses fosters closer faculty relationships",
+        "Direct Silicon Valley proximity for technology internships",
+        "World-class marine science access via the Monterey Bay",
+        "Distinctive, independent-minded academic culture"
+      ],
+      "scaleDisadvantages": [
+        "Less traditional pre-professional recruiting infrastructure than larger UC campuses",
+        "Narrative evaluation system can complicate some graduate school and employer processes",
+        "Smaller alumni network in national corporate leadership",
+        "More isolated location relative to a major urban center"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 98,
+        "conscientiousness": 78,
+        "extraversion": 56,
+        "agreeableness": 82,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "I",
+        "A",
+        "S"
+      ],
+      "learningStyle": [
+        "Independent Research",
+        "Interdisciplinary Study",
+        "Field Marine Science",
+        "Self-Directed Scholarship",
+        "Applied Computer Science"
+      ],
+      "socialEnvironment": [
+        "Independent-Minded",
+        "Environmentally Conscious",
+        "Intellectually Unconventional",
+        "Community-Oriented",
+        "Nature-Immersed"
+      ],
+      "idealStudentTraits": [
+        "Independent thinker",
+        "Comfortable with unconventional academic structures",
+        "Nature-oriented",
+        "Intellectually curious",
+        "Socially and environmentally conscious"
+      ],
+      "thrivesIf": [
+        "Wants a less traditional, more self-directed academic culture",
+        "Plans for computer science, game design, marine biology, or environmental science",
+        "Values direct Silicon Valley proximity without a large-university pre-professional culture",
+        "Enjoys a forested, coastal, nature-immersed campus setting"
+      ],
+      "strugglesIf": [
+        "Needs a highly structured, traditionally graded academic environment",
+        "Wants a large, prestige-driven corporate recruiting pipeline on campus",
+        "Prefers a more socially conventional college experience",
+        "Dislikes a physically spread-out, hilly, forested campus"
+      ],
+      "transferRiskFactors": [
+        "Students who find the narrative evaluation system confusing or limiting",
+        "Students seeking a more traditional pre-professional recruiting environment",
+        "Students who want a more urban or socially conventional campus setting"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Computer Science admission has become increasingly selective as the program's reputation and Silicon Valley pipeline have grown."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Game Design",
+        "Marine Biology",
+        "Astrophysics",
+        "Environmental Studies",
+        "Cognitive Science",
+        "Bioinformatics",
+        "Linguistics",
+        "Politics"
+      ],
+      "hiddenCareerPipelines": [
+        "Video Game Development",
+        "Silicon Valley Software Engineering",
+        "Marine and Ocean Science Research",
+        "Astrophysics and Space Science",
+        "Environmental Policy"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Apple",
+        "Google",
+        "Netflix",
+        "Electronic Arts",
+        "NASA Ames Research Center",
+        "Monterey Bay Aquarium Research Institute"
+      ],
+      "overlookedStrengths": [
+        "UCSC's Baskin School of Engineering has become one of the strongest game design and computer science programs on the West Coast.",
+        "The campus's direct access to the Monterey Bay makes it one of the best undergraduate marine biology research locations in the country.",
+        "Historic ties to the Lick Observatory give UCSC an outsized reputation in astronomy and astrophysics relative to its size.",
+        "The ten-college residential system creates smaller, identity-driven academic communities within a public research university."
+      ],
+      "sleeperIndustries": [
+        "Video Game and Interactive Media Development",
+        "Marine and Ocean Science",
+        "Astrophysics and Space Science",
+        "Environmental Science and Policy",
+        "Silicon Valley Software Engineering"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 68,
+      "mentorshipDensity": 72,
+      "executiveAccess": 62,
+      "internshipNetwork": 76,
+      "familyBusinessExposure": 26,
+      "relationshipCapitalScore": 68,
+      "alumniLoyaltyScore": 72,
+      "referralCultureStrength": 66,
+      "donorNetworkStrength": 56,
+      "boardMemberDensity": 48
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Technology",
+        "Marine Science",
+        "Environmental Science",
+        "Video Game Development",
+        "Astrophysics"
+      ],
+      "regionalEconomicDrivers": [
+        "Silicon Valley Technology (via proximity)",
+        "Marine and Ocean Science Research",
+        "Agriculture and Tourism (Santa Cruz region)",
+        "Environmental Research"
+      ],
+      "topEmployers": [
+        "Apple",
+        "Google",
+        "Netflix",
+        "Electronic Arts",
+        "NASA Ames Research Center",
+        "Monterey Bay Aquarium Research Institute",
+        "Dominican Hospital"
+      ],
+      "emergingIndustries": [
+        "Video Game and Interactive Media",
+        "Marine Biotechnology",
+        "Climate and Ocean Science",
+        "AI and Software Engineering"
+      ],
+      "startupDensity": "Moderate to High",
+      "ventureCapitalAccess": 60,
+      "corporateHeadquartersDensity": 38,
+      "healthcareHubStrength": 52,
+      "innovationIndex": 80
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Silicon Valley Technology and Monterey Bay Marine Science Economies",
+      "secondaryMarkets": [
+        "San Francisco Bay Area CA",
+        "Los Angeles CA",
+        "Seattle WA",
+        "Portland OR"
+      ],
+      "alumniStrongholds": [
+        "Santa Cruz CA",
+        "San Francisco Bay Area CA",
+        "Monterey CA",
+        "Los Angeles CA"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates move over the hill into Silicon Valley technology and gaming companies.",
+        "Marine biology and environmental science graduates disperse into research institutions, government agencies, and nonprofits along the Pacific coast.",
+        "A meaningful cohort enters graduate programs in astrophysics, marine science, and psychology.",
+        "Some graduates remain in the Santa Cruz and Monterey Bay region working in research and tourism-adjacent fields.",
+        "Los Angeles and Seattle draw graduates into broader technology and entertainment careers."
+      ],
+      "regionalInfluenceScore": 82,
+      "nationalReachScore": 66,
+      "internationalReachScore": 56
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 10,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 70,
+      "crossDisciplinaryInteraction": 82,
+      "civicEngagement": 84
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 58,
+        "notes": "Moderate pathway through biology and psychology, though UCSC lacks a medical school."
+      },
+      "nutraceuticals": {
+        "strength": 34,
+        "notes": "Minor overlap through environmental and biological sciences."
+      },
+      "consumerProducts": {
+        "strength": 50,
+        "notes": "Some pathway through game design and consumer technology development."
+      },
+      "outdoorIndustry": {
+        "strength": 66,
+        "notes": "Strong regional connection to marine, forest, and coastal outdoor recreation industries."
+      },
+      "sportsBusiness": {
+        "strength": 28,
+        "notes": "Not a primary institutional specialty."
+      },
+      "entertainmentMedia": {
+        "strength": 66,
+        "notes": "Strong and growing pathway into video game development and interactive media through Electronic Arts and the broader gaming industry."
+      },
+      "ventureCapital": {
+        "strength": 58,
+        "notes": "Growing Silicon Valley proximity provides meaningful venture capital access."
+      },
+      "privateEquity": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 34,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consulting": {
+        "strength": 52,
+        "notes": "Present but modest, primarily through economics and business coursework."
+      },
+      "medicine": {
+        "strength": 54,
+        "notes": "Solid pre-med foundation, though UCSC has no medical school and a smaller pre-health advising infrastructure than sister campuses."
+      },
+      "healthcareAdministration": {
+        "strength": 42,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 30,
+        "notes": "Some connection through NASA Ames Research Center collaborations."
+      },
+      "realEstate": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 20,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 68,
+        "notes": "Growing technology and game design startup culture connected to Silicon Valley proximity."
+      },
+      "technology": {
+        "strength": 86,
+        "notes": "Rapidly strengthening computer science, game design, and software engineering pipeline directly connected to Silicon Valley."
+      },
+      "publicPolicy": {
+        "strength": 62,
+        "notes": "Solid pathway through environmental studies and politics programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 62,
+        "notes": "Meaningful pathway, particularly for environmental and marine conservation nonprofits."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 82,
+      "firstGenerationSupport": 84,
+      "wealthCreationPotential": 78,
+      "familyBusinessPipelineStrength": 26
+    },
+    "futureResilience": {
+      "aiResistance": 88,
+      "automationResistance": 86,
+      "adaptabilityScore": 88,
+      "interdisciplinaryStrength": 90,
+      "futureReadiness": 88,
+      "entrepreneurialFlexibility": 78,
+      "lifelongLearningCulture": 92,
+      "innovationCapacity": 88
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 78,
+      "communityLeadershipPotential": 78,
+      "geographicMobility": 80,
+      "workLifeBalancePotential": 88,
+      "purposeAlignment": 90,
+      "familyFormationSupport": 78,
+      "personalDevelopmentPotential": 92,
+      "careerOptionality": 78,
+      "longTermLifeSatisfaction": 88
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 64,
+      "networkMoat": 62,
+      "geographicMoat": 86,
+      "industryMoat": 80,
+      "alumniMoat": 62,
+      "brandDurability": 72,
+      "overallMoatScore": 71
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 66,
+      "returnerScore": 44,
+      "stewardScore": 34,
+      "navigatorScore": 76,
+      "geographicLockIn": "low_to_moderate",
+      "alumniDispersalPattern": "regional_with_tech_corridor_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 48,
+        "type": "Regional Hillel Affiliate"
+      },
+      "estimatedJewishUndergraduates": 700,
+      "jewishStudentPercentage": "~4%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "UCSC's Jewish community is modest in scale, supported by a regional Hillel affiliate and Chabad presence, without dedicated kosher dining facilities on campus."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "College Nine and College Ten Honors Seminars",
+      "strength": 62,
+      "notes": "UCSC does not have a unified honors college; instead, honors-style opportunities are distributed through individual residential college seminars and departmental honors thesis programs."
+    }
+  },
+
+
+"Stanford University": {
+    "institutionNarrative": {
+      "name": "Stanford University",
+      "location": "Stanford, California",
+      "region": "California",
+      "archetype": "The Silicon Valley Genesis Engine \u2014 Technology, Entrepreneurship, and Venture Capital at the Source",
+      "oneSentenceSummary": "Stanford is the intellectual and entrepreneurial heart of Silicon Valley, combining elite engineering, computer science, and business with a founder culture and venture capital ecosystem that Stanford itself largely created.",
+      "pipeline": "Approximately 8,000 undergraduates and 9,000 graduate students. Stanford is internationally preeminent in Computer Science, Electrical Engineering, Symbolic Systems, Biology, Economics, and Public Policy. Major recruiters and alumni-founded companies include Google, Nvidia, Hewlett-Packard, Instagram, Snapchat, LinkedIn, Sequoia Capital, Kleiner Perkins, and thousands of venture-backed startups throughout the Bay Area.",
+      "hiddenPathway": "Stanford's Office of Technology Licensing and its physical adjacency to Sand Hill Road's venture capital corridor mean that undergraduate research projects and dorm-room side projects routinely become venture-funded companies before students graduate.",
+      "institutionalSecret": "Stanford does not simply feed graduates into Silicon Valley \u2014 its faculty, alumni, and licensing office effectively built Silicon Valley, from Hewlett-Packard's founding through Google's origins as a Stanford PhD project.",
+      "theRoom": "Located in the heart of Silicon Valley, Stanford sits minutes from Sand Hill Road's venture capital firms, and its alumni and faculty founded or led an outsized share of the technology companies that define the modern economy.",
+      "lifestyle": "Intellectually intense, entrepreneurially charged, and outdoorsy. Students balance elite academics with a founder culture that treats starting a company as a normal undergraduate activity, set against a sunny, low-key Northern California backdrop.",
+      "bestFitPersonality": "Intellectually ambitious, entrepreneurially minded, comfortable with risk-taking, and drawn to building things rather than simply studying them.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Global, with singular concentration and influence throughout Silicon Valley and the world's technology and venture capital economy.",
+      "economicOutcome": "Exceptional outcomes in technology, entrepreneurship, venture capital, finance, medicine, and law, with an unmatched rate of graduates founding or joining venture-backed companies.",
+      "gradCities": [
+        "San Francisco CA",
+        "Palo Alto CA",
+        "New York NY",
+        "Seattle WA",
+        "Los Angeles CA",
+        "Boston MA"
+      ],
+      "comparableInstitutions": [
+        "Massachusetts Institute of Technology",
+        "Harvard University",
+        "University of California Berkeley",
+        "Princeton University",
+        "California Institute of Technology"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "De Anza College",
+          "Foothill College"
+        ],
+        "transferAcceptanceRate": "~1.5%",
+        "freshmanAcceptanceRate": "~4%",
+        "estimatedSavingsRange": "$20,000-$45,000",
+        "transferNotes": "Stanford accepts an extremely small number of transfer students each year, making its transfer pathway one of the most selective in the country, though nearby De Anza and Foothill Colleges have produced occasional successful transfers."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Stanford University",
+      "archetype": "Elite Private Research University \u2014 Technology and Entrepreneurship Epicenter",
+      "institutionalPersonality": "entrepreneurial, intellectually ambitious, collaborative, risk-tolerant, quietly confident",
+      "cultureKeywords": [
+        "Silicon Valley",
+        "Entrepreneurship",
+        "Venture Capital",
+        "Computer Science",
+        "Innovation",
+        "Founder Culture",
+        "Research"
+      ],
+      "missionOrientation": "Advancing knowledge and technology while cultivating the entrepreneurial leaders who build the world's most influential companies.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through research, interdisciplinary collaboration, startup incubation, and direct engagement with the venture capital and technology ecosystem surrounding the campus.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally progressive, though heavily inflected by libertarian and techno-optimist currents within the entrepreneurial community.",
+      "studentAutonomy": "Very High",
+      "prestigeOrientation": "Among the most prestigious universities in the world, particularly dominant in computer science, engineering, and entrepreneurship.",
+      "socialClimate": "Ambitious, collaborative, and quietly competitive, with founder culture as a defining social force.",
+      "leadershipStyle": "Leadership through innovation, company-building, and technological influence at global scale."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "regionalRole": "The intellectual and entrepreneurial origin point of Silicon Valley, producing an outsized share of the world's most influential technology companies and venture capital firms."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 16,
+      "BosWash": 46,
+      "TorBuffChester": 14,
+      "TexasTriangle": 24,
+      "CharLanta": 14,
+      "NorCalInnovationCorridor": 100,
+      "SoCalCreativeEconomy": 56
+    },
+    "comparativePositioning": {
+      "versusMIT": "MIT offers a more intensely technical, engineering-first culture with a similarly strong entrepreneurial ecosystem in Boston, while Stanford provides more direct, physical proximity to venture capital and a broader interdisciplinary range spanning business, law, and the humanities.",
+      "versusHarvard": "Harvard offers greater breadth in the humanities, social sciences, and a more traditional path into law, politics, and finance, while Stanford offers unmatched proximity to Silicon Valley and a defining entrepreneurial culture.",
+      "versusBerkeley": "Berkeley offers a public-school cost structure and a larger, more diverse research enterprise, while Stanford offers a smaller, more concentrated, and better-funded environment with deeper venture capital integration.",
+      "versusCaltech": "Caltech offers a smaller, more intensely technical and scientific environment focused on STEM research, while Stanford offers comparable engineering strength alongside business, law, and a far larger entrepreneurial ecosystem."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 8000,
+      "graduateEnrollment": 9000,
+      "totalEnrollment": 17000,
+      "campusType": "Suburban Private Research University",
+      "residentialIntensity": 88,
+      "communityFeel": 84,
+      "studentFacultyRatio": "5:1",
+      "classSizeExperience": "Small seminars and close faculty mentorship are the norm, with extraordinary access to research labs, startup incubators, and venture-connected faculty from the first year onward.",
+      "scaleAdvantages": [
+        "Unmatched proximity to venture capital and startup ecosystem",
+        "Extremely low student-faculty ratio",
+        "World-leading computer science and engineering",
+        "Strong interdisciplinary flexibility across business, law, and humanities"
+      ],
+      "scaleDisadvantages": [
+        "Extremely low admission rate limits access",
+        "Very high cost of attendance before aid",
+        "Suburban setting lacks a traditional urban college-town feel",
+        "Intense entrepreneurial culture can create pressure to found a company"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 98,
+        "conscientiousness": 92,
+        "extraversion": 68,
+        "agreeableness": 74,
+        "neuroticism": 38
+      },
+      "hollandCodes": [
+        "I",
+        "E",
+        "A"
+      ],
+      "learningStyle": [
+        "Research",
+        "Entrepreneurial Project-Based Learning",
+        "Interdisciplinary Study",
+        "Startup Incubation",
+        "Independent Study"
+      ],
+      "socialEnvironment": [
+        "Entrepreneurial",
+        "Intellectually Ambitious",
+        "Collaborative",
+        "Quietly Competitive",
+        "Innovation-Driven"
+      ],
+      "idealStudentTraits": [
+        "Entrepreneurially minded",
+        "Intellectually curious",
+        "Comfortable with risk",
+        "Self-directed",
+        "Collaborative"
+      ],
+      "thrivesIf": [
+        "Wants direct access to venture capital and startup culture",
+        "Plans for technology, entrepreneurship, or interdisciplinary innovation",
+        "Enjoys a small, research-intensive environment",
+        "Is comfortable navigating a high-achieving, founder-oriented peer group"
+      ],
+      "strugglesIf": [
+        "Wants a traditional urban college-town setting",
+        "Is uncomfortable with a strong entrepreneurial, risk-taking culture",
+        "Needs a larger, more anonymous campus",
+        "Prefers a more structured, less self-directed academic path"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more traditional campus social culture",
+        "Students overwhelmed by the intensity of founder culture",
+        "Students who prefer a more structured academic environment"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Stanford does not impact majors at the undergraduate level; all students are admitted directly to the university rather than to specific majors, though popular CS courses can be oversubscribed."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Symbolic Systems",
+        "Science, Technology, and Society",
+        "Product Design",
+        "Management Science and Engineering",
+        "Human Biology",
+        "Public Policy",
+        "Earth Systems",
+        "Bioengineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Venture Capital",
+        "Startup Founding",
+        "Technology Product Management",
+        "AI Research",
+        "Biotechnology Entrepreneurship"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Sequoia Capital",
+        "Kleiner Perkins",
+        "Google",
+        "Nvidia",
+        "Andreessen Horowitz",
+        "Stanford Research Park companies"
+      ],
+      "overlookedStrengths": [
+        "The d.school (Hasso Plattner Institute of Design) has become a globally influential center for design thinking across every discipline.",
+        "Stanford's StartX accelerator and Office of Technology Licensing give students direct pathways from research to venture-funded company formation.",
+        "The Symbolic Systems major has quietly produced an outsized share of Silicon Valley product leaders and founders.",
+        "Stanford's proximity to Sand Hill Road means venture capitalists are genuinely part of the extended campus community."
+      ],
+      "sleeperIndustries": [
+        "AI Research and Safety",
+        "Biotechnology Entrepreneurship",
+        "Climate Technology",
+        "Design and Human-Computer Interaction",
+        "Space Technology"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 96,
+      "mentorshipDensity": 96,
+      "executiveAccess": 100,
+      "internshipNetwork": 98,
+      "familyBusinessExposure": 58,
+      "relationshipCapitalScore": 98,
+      "alumniLoyaltyScore": 92,
+      "referralCultureStrength": 98,
+      "donorNetworkStrength": 98,
+      "boardMemberDensity": 98
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Technology",
+        "Venture Capital",
+        "Entrepreneurship",
+        "Biotechnology",
+        "Artificial Intelligence"
+      ],
+      "regionalEconomicDrivers": [
+        "Venture Capital",
+        "Software and Internet Technology",
+        "Artificial Intelligence",
+        "Biotechnology",
+        "Semiconductor and Hardware"
+      ],
+      "topEmployers": [
+        "Google",
+        "Nvidia",
+        "Sequoia Capital",
+        "Andreessen Horowitz",
+        "Meta",
+        "Apple",
+        "OpenAI",
+        "Stanford Health Care"
+      ],
+      "emergingIndustries": [
+        "Generative AI",
+        "Climate Technology",
+        "Space Technology",
+        "Biotechnology and Synthetic Biology",
+        "Quantum Computing"
+      ],
+      "startupDensity": "Extremely High",
+      "ventureCapitalAccess": 100,
+      "corporateHeadquartersDensity": 90,
+      "healthcareHubStrength": 82,
+      "innovationIndex": 100
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Silicon Valley's Technology, Venture Capital, and Entrepreneurship Economy",
+      "secondaryMarkets": [
+        "San Francisco CA",
+        "New York NY",
+        "Los Angeles CA",
+        "Seattle WA",
+        "Boston MA"
+      ],
+      "alumniStrongholds": [
+        "Palo Alto CA",
+        "San Francisco CA",
+        "Silicon Valley CA",
+        "New York NY"
+      ],
+      "relocationPatterns": [
+        "The overwhelming majority of graduates remain in the Bay Area, founding or joining technology companies and venture firms.",
+        "New York draws graduates into finance, venture capital, and media technology.",
+        "Los Angeles attracts graduates into entertainment technology and media.",
+        "A globally dispersed alumni network extends throughout international technology hubs including London, Singapore, and Beijing.",
+        "A meaningful cohort pursues graduate and professional degrees in medicine, law, and business before returning to technology and entrepreneurship."
+      ],
+      "regionalInfluenceScore": 100,
+      "nationalReachScore": 96,
+      "internationalReachScore": 92
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 24,
+      "studentOrganizationStrength": 96,
+      "leadershipDevelopment": 96,
+      "crossDisciplinaryInteraction": 96,
+      "civicEngagement": 78
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis outside consumer technology product design."
+      },
+      "healthWellness": {
+        "strength": 78,
+        "notes": "Strong pathway through biotechnology, digital health, and human biology research."
+      },
+      "nutraceuticals": {
+        "strength": 34,
+        "notes": "Minor overlap through biology and human health research."
+      },
+      "consumerProducts": {
+        "strength": 82,
+        "notes": "Strong pathway through product design and consumer technology entrepreneurship."
+      },
+      "outdoorIndustry": {
+        "strength": 52,
+        "notes": "Moderate interest given Northern California's outdoor culture, though not a defining institutional focus."
+      },
+      "sportsBusiness": {
+        "strength": 42,
+        "notes": "Present but secondary to the university's technology and entrepreneurship focus."
+      },
+      "entertainmentMedia": {
+        "strength": 56,
+        "notes": "Growing presence through entertainment technology and streaming platform entrepreneurship."
+      },
+      "ventureCapital": {
+        "strength": 100,
+        "notes": "Stanford's defining institutional strength \u2014 arguably the single strongest venture capital pipeline of any university in the world."
+      },
+      "privateEquity": {
+        "strength": 76,
+        "notes": "Strong placement, though secondary to venture capital and startup founding."
+      },
+      "investmentBanking": {
+        "strength": 68,
+        "notes": "Present, though many top students pursue technology and venture capital instead."
+      },
+      "consulting": {
+        "strength": 78,
+        "notes": "Major consulting firms recruit heavily, particularly for technology strategy practices."
+      },
+      "medicine": {
+        "strength": 88,
+        "notes": "Elite pre-med and biomedical research pipeline, supported by Stanford Health Care and the School of Medicine."
+      },
+      "healthcareAdministration": {
+        "strength": 72,
+        "notes": "Growing pathway through digital health and health policy coursework."
+      },
+      "defense": {
+        "strength": 52,
+        "notes": "Growing presence through dual-use technology and defense-adjacent startups."
+      },
+      "realEstate": {
+        "strength": 54,
+        "notes": "Moderate presence, particularly in proptech entrepreneurship."
+      },
+      "luxuryBrands": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 100,
+        "notes": "The defining institutional identity \u2014 Stanford's entrepreneurial culture and startup formation rate are unmatched among American universities."
+      },
+      "technology": {
+        "strength": 100,
+        "notes": "The world's preeminent undergraduate technology pipeline, spanning software, AI, hardware, and biotechnology."
+      },
+      "publicPolicy": {
+        "strength": 68,
+        "notes": "Solid pathway through public policy and international relations programs, though secondary to technology."
+      },
+      "nonprofitLeadership": {
+        "strength": 62,
+        "notes": "Meaningful pathway, often oriented toward technology-for-good and global development initiatives."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 74,
+      "firstGenerationSupport": 82,
+      "wealthCreationPotential": 100,
+      "familyBusinessPipelineStrength": 58
+    },
+    "futureResilience": {
+      "aiResistance": 100,
+      "automationResistance": 98,
+      "adaptabilityScore": 98,
+      "interdisciplinaryStrength": 96,
+      "futureReadiness": 100,
+      "entrepreneurialFlexibility": 100,
+      "lifelongLearningCulture": 96,
+      "innovationCapacity": 100
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 100,
+      "communityLeadershipPotential": 90,
+      "geographicMobility": 92,
+      "workLifeBalancePotential": 76,
+      "purposeAlignment": 90,
+      "familyFormationSupport": 76,
+      "personalDevelopmentPotential": 96,
+      "careerOptionality": 100,
+      "longTermLifeSatisfaction": 92
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 98,
+      "networkMoat": 98,
+      "geographicMoat": 100,
+      "industryMoat": 100,
+      "alumniMoat": 92,
+      "brandDurability": 98,
+      "overallMoatScore": 98
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 78,
+      "returnerScore": 30,
+      "stewardScore": 22,
+      "navigatorScore": 96,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "global_with_silicon_valley_anchor"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 82,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 900,
+      "jewishStudentPercentage": "~11%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "Stanford maintains an active Hillel and Chabad presence with kosher dining options, serving a well-established Jewish student population."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Stanford does not have a separate honors college; instead, its small size, low student-faculty ratio, and extensive undergraduate research opportunities function as an honors-level experience for the entire student body."
+    }
+  },
+
+"California Institute of Technology": {
+    "institutionNarrative": {
+      "name": "California Institute of Technology",
+      "location": "Pasadena, California",
+      "region": "California",
+      "archetype": "The Pure Science and Engineering Crucible \u2014 Physics, Astronomy, Aerospace, and JPL",
+      "oneSentenceSummary": "Caltech is the most academically intense pure-science institution in the country, an extremely small, research-obsessed community that operates NASA's Jet Propulsion Laboratory and produces an outsized share of Nobel laureates relative to its size.",
+      "pipeline": "Approximately 1,000 undergraduates and 1,300 graduate students, one of the smallest elite research universities in the world. Caltech is preeminent in Physics, Astronomy, Chemistry, Aerospace Engineering, Applied Mathematics, and Computer Science. Major recruiters and partners include NASA's Jet Propulsion Laboratory (managed by Caltech), SpaceX, Northrop Grumman, Google, and numerous physics and astronomy research institutions worldwide.",
+      "hiddenPathway": "Caltech manages NASA's Jet Propulsion Laboratory, giving undergraduates direct access to spacecraft engineering, planetary science, and space mission design work that is otherwise available only to career NASA scientists.",
+      "institutionalSecret": "Despite its small size, Caltech has produced more Nobel laureates per capita than any other American university, and its extraordinarily low student-to-faculty ratio means undergraduates work directly alongside the researchers making these discoveries.",
+      "theRoom": "Located in Pasadena, students are embedded in the Jet Propulsion Laboratory's spacecraft engineering campus and a dense concentration of physics, astronomy, and aerospace research institutions throughout the Los Angeles basin.",
+      "lifestyle": "Intensely academic, intellectually obsessive, and famously quirky. Caltech's small size and demanding curriculum create an unusually tight-knit community organized around a shared identity as elite problem-solvers, with a legendary tradition of elaborate pranks as social release.",
+      "bestFitPersonality": "Extremely high intellectual intensity, comfortable with rigorous problem-solving, drawn to pure science and mathematics over applied business fields, and at ease in a very small, academically singular community.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "National and international influence in physics, astronomy, aerospace, and space science research, disproportionate to its small size.",
+      "economicOutcome": "Exceptional outcomes in physics, aerospace engineering, computer science, and scientific research, with an unusually high rate of graduates entering PhD programs and research careers.",
+      "gradCities": [
+        "Los Angeles CA",
+        "San Francisco CA",
+        "Pasadena CA",
+        "Seattle WA",
+        "Boston MA",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "Massachusetts Institute of Technology",
+        "Stanford University",
+        "Harvey Mudd College",
+        "Princeton University",
+        "University of Chicago"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Pasadena City College"
+        ],
+        "transferAcceptanceRate": "~2%",
+        "freshmanAcceptanceRate": "~3%",
+        "estimatedSavingsRange": "$18,000-$40,000",
+        "transferNotes": "Caltech accepts an extremely small number of transfer students each year, making transfer admission nearly as selective as freshman admission."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Caltech",
+      "archetype": "Elite Private Research University \u2014 Pure Science and Engineering",
+      "institutionalPersonality": "intensely intellectual, obsessively rigorous, quirky, small and tight-knit, research-driven",
+      "cultureKeywords": [
+        "Physics",
+        "Astronomy",
+        "Aerospace",
+        "JPL",
+        "Nobel Prizes",
+        "Pure Science",
+        "Pranks",
+        "Research"
+      ],
+      "missionOrientation": "Advancing fundamental scientific knowledge through rigorous research and an extraordinarily concentrated, small-scale academic community.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through intense problem-set-driven coursework, direct research collaboration with faculty, and hands-on access to JPL's spacecraft engineering programs.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally apolitical to progressive, with the campus culture oriented far more around scientific problem-solving than political engagement.",
+      "studentAutonomy": "Very High",
+      "prestigeOrientation": "One of the most academically prestigious institutions in the world for pure science, mathematics, and engineering, despite its small size.",
+      "socialClimate": "Intensely academic, quirky, and tight-knit, organized around a shared identity as elite scientific problem-solvers.",
+      "leadershipStyle": "Leadership through scientific discovery, technical mastery, and research excellence."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "regionalRole": "The nation's most concentrated pure-science research engine, anchored by its management of NASA's Jet Propulsion Laboratory."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 12,
+      "BosWash": 24,
+      "TorBuffChester": 8,
+      "TexasTriangle": 16,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 44,
+      "SoCalCreativeEconomy": 82
+    },
+    "comparativePositioning": {
+      "versusMIT": "MIT offers a larger scale with greater breadth across engineering disciplines and a stronger entrepreneurial and business culture, while Caltech provides an even more concentrated, smaller-scale pure-science environment with unmatched undergraduate access to JPL.",
+      "versusStanford": "Stanford offers a much larger entrepreneurial ecosystem, business school, and broader interdisciplinary range, while Caltech provides a smaller, more intensely focused pure-science and engineering environment.",
+      "versusHarveyMudd": "Harvey Mudd offers a similarly small, STEM-intensive environment with a stronger undergraduate teaching focus, while Caltech provides deeper graduate-level research intensity and direct JPL access.",
+      "versusUChicago": "The University of Chicago offers greater breadth across the humanities and social sciences alongside strong sciences, while Caltech concentrates entirely on pure science, mathematics, and engineering at an even smaller scale."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Small",
+      "undergraduateEnrollment": 1000,
+      "graduateEnrollment": 1300,
+      "totalEnrollment": 2300,
+      "campusType": "Small Private Research University",
+      "residentialIntensity": 92,
+      "communityFeel": 92,
+      "studentFacultyRatio": "3:1",
+      "classSizeExperience": "Extremely small classes with direct faculty access from the first year; nearly every undergraduate participates in original research alongside faculty and JPL scientists.",
+      "scaleAdvantages": [
+        "Unmatched student-faculty ratio and direct research access",
+        "Direct undergraduate access to NASA's Jet Propulsion Laboratory",
+        "Extraordinarily concentrated pure-science excellence",
+        "Tight-knit community with strong peer support"
+      ],
+      "scaleDisadvantages": [
+        "Extremely demanding, problem-set-heavy curriculum",
+        "Very small social scene with limited breadth outside STEM",
+        "Limited offerings in business, law, and the humanities",
+        "Small size means fewer extracurricular and athletic options"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 94,
+        "conscientiousness": 96,
+        "extraversion": 42,
+        "agreeableness": 68,
+        "neuroticism": 52
+      },
+      "hollandCodes": [
+        "I",
+        "R",
+        "C"
+      ],
+      "learningStyle": [
+        "Research",
+        "Problem-Set-Driven Learning",
+        "Laboratory Discovery",
+        "Independent Study",
+        "Collaborative Problem-Solving"
+      ],
+      "socialEnvironment": [
+        "Intensely Academic",
+        "Tight-Knit",
+        "Quirky",
+        "Intellectually Obsessive",
+        "Small-Scale"
+      ],
+      "idealStudentTraits": [
+        "Extremely high intellectual intensity",
+        "Comfortable with rigorous, demanding coursework",
+        "Drawn to pure science over applied business",
+        "Resilient under academic pressure"
+      ],
+      "thrivesIf": [
+        "Wants the most academically intense pure-science environment available",
+        "Plans for physics, astronomy, aerospace, or theoretical research",
+        "Values direct access to JPL and cutting-edge space science",
+        "Thrives in an extremely small, tight-knit community"
+      ],
+      "strugglesIf": [
+        "Wants a large campus with broad social and extracurricular options",
+        "Needs a lighter academic course load",
+        "Wants strong business, law, or humanities programs",
+        "Prefers a larger, more socially diverse student body"
+      ],
+      "transferRiskFactors": [
+        "Students overwhelmed by the academic intensity",
+        "Students seeking a larger, more socially varied campus",
+        "Students who want stronger non-STEM academic offerings"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Caltech does not impact majors at the undergraduate level; the core curriculum is uniformly rigorous across all students regardless of eventual major."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Planetary Science",
+        "Applied Physics",
+        "Geobiology",
+        "Control and Dynamical Systems",
+        "Computation and Neural Systems",
+        "Business Economics and Management"
+      ],
+      "hiddenCareerPipelines": [
+        "Spacecraft and Planetary Engineering",
+        "Theoretical Physics Research",
+        "Quantum Computing",
+        "Aerospace Systems Design",
+        "Scientific Instrumentation"
+      ],
+      "nicheRecruitingAdvantages": [
+        "NASA Jet Propulsion Laboratory",
+        "SpaceX",
+        "Northrop Grumman",
+        "Google",
+        "National laboratories (Lawrence Berkeley, Los Alamos)"
+      ],
+      "overlookedStrengths": [
+        "Caltech's management of JPL gives undergraduates direct involvement in active NASA spacecraft missions, a pathway no other university can offer at this scale.",
+        "The university's 3:1 student-faculty ratio is among the lowest of any research university in the world.",
+        "Caltech has produced more Nobel laureates per capita than any other American university.",
+        "The tight-knit, prank-loving community culture creates unusually strong lifelong peer bonds despite the academic intensity."
+      ],
+      "sleeperIndustries": [
+        "Space Technology and Planetary Science",
+        "Quantum Computing",
+        "Scientific Instrumentation",
+        "Theoretical Physics Research",
+        "Aerospace Systems Engineering"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 96,
+      "executiveAccess": 74,
+      "internshipNetwork": 82,
+      "familyBusinessExposure": 24,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 74,
+      "donorNetworkStrength": 72,
+      "boardMemberDensity": 60
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Aerospace",
+        "Physics Research",
+        "Technology",
+        "Scientific Instrumentation",
+        "Space Science"
+      ],
+      "regionalEconomicDrivers": [
+        "Aerospace and Space Science",
+        "Applied Physics Research",
+        "Technology",
+        "National Laboratory Research"
+      ],
+      "topEmployers": [
+        "NASA Jet Propulsion Laboratory",
+        "SpaceX",
+        "Northrop Grumman",
+        "Google",
+        "National laboratories",
+        "Amazon"
+      ],
+      "emergingIndustries": [
+        "Space Technology",
+        "Quantum Computing",
+        "AI Research",
+        "Climate and Planetary Science"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 62,
+      "corporateHeadquartersDensity": 40,
+      "healthcareHubStrength": 38,
+      "innovationIndex": 98
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Los Angeles Basin Aerospace, Physics, and Space Science Research Economy",
+      "secondaryMarkets": [
+        "San Francisco Bay Area CA",
+        "Seattle WA",
+        "Boston MA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Pasadena CA",
+        "Los Angeles CA",
+        "San Francisco Bay Area CA",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates remain in the Los Angeles basin, joining JPL, aerospace companies, and research institutions.",
+        "The San Francisco Bay Area draws graduates into technology and AI research roles.",
+        "Washington DC and national laboratories attract graduates into federal science and space policy roles.",
+        "A large cohort pursues PhD programs at peer institutions before entering academic or industrial research careers.",
+        "A smaller international cohort enters global physics and astronomy research institutions."
+      ],
+      "regionalInfluenceScore": 88,
+      "nationalReachScore": 90,
+      "internationalReachScore": 84
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 8,
+      "studentOrganizationStrength": 68,
+      "leadershipDevelopment": 66,
+      "crossDisciplinaryInteraction": 78,
+      "civicEngagement": 48
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 10,
+        "notes": "Minimal institutional relevance."
+      },
+      "healthWellness": {
+        "strength": 46,
+        "notes": "Some overlap through biology and bioengineering research, though not a primary institutional focus."
+      },
+      "nutraceuticals": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis outside applied physics and engineering design."
+      },
+      "outdoorIndustry": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 14,
+        "notes": "Not a primary institutional specialty."
+      },
+      "entertainmentMedia": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis, though some graduates enter visual effects and computer graphics research."
+      },
+      "ventureCapital": {
+        "strength": 48,
+        "notes": "Growing presence, primarily in deep-tech and space technology venture investing."
+      },
+      "privateEquity": {
+        "strength": 26,
+        "notes": "Minimal institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis; most students pursue research and technical careers."
+      },
+      "consulting": {
+        "strength": 44,
+        "notes": "Present but modest, primarily technical and scientific consulting."
+      },
+      "medicine": {
+        "strength": 46,
+        "notes": "Solid pre-med foundation through biology, though Caltech is not oriented toward medicine as a primary outcome."
+      },
+      "healthcareAdministration": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "defense": {
+        "strength": 74,
+        "notes": "Strong pathway through aerospace engineering and JPL-adjacent defense and space technology work."
+      },
+      "realEstate": {
+        "strength": 18,
+        "notes": "Minimal institutional relevance."
+      },
+      "luxuryBrands": {
+        "strength": 8,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 62,
+        "notes": "Growing deep-tech and space technology startup culture, though smaller in scale than Stanford or MIT."
+      },
+      "technology": {
+        "strength": 96,
+        "notes": "Extremely strong computer science, applied physics, and engineering pipeline."
+      },
+      "publicPolicy": {
+        "strength": 40,
+        "notes": "Limited but present pathway, primarily through science policy roles in federal government and national laboratories."
+      },
+      "nonprofitLeadership": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 76,
+      "firstGenerationSupport": 78,
+      "wealthCreationPotential": 88,
+      "familyBusinessPipelineStrength": 24
+    },
+    "futureResilience": {
+      "aiResistance": 100,
+      "automationResistance": 98,
+      "adaptabilityScore": 92,
+      "interdisciplinaryStrength": 88,
+      "futureReadiness": 96,
+      "entrepreneurialFlexibility": 78,
+      "lifelongLearningCulture": 94,
+      "innovationCapacity": 100
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 88,
+      "communityLeadershipPotential": 68,
+      "geographicMobility": 84,
+      "workLifeBalancePotential": 68,
+      "purposeAlignment": 90,
+      "familyFormationSupport": 66,
+      "personalDevelopmentPotential": 90,
+      "careerOptionality": 84,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 94,
+      "networkMoat": 78,
+      "geographicMoat": 88,
+      "industryMoat": 92,
+      "alumniMoat": 76,
+      "brandDurability": 92,
+      "overallMoatScore": 87
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 82,
+      "returnerScore": 26,
+      "stewardScore": 18,
+      "navigatorScore": 92,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "national_research_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 44,
+        "type": "Regional Hillel Affiliate"
+      },
+      "estimatedJewishUndergraduates": 100,
+      "jewishStudentPercentage": "~10%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Modest",
+      "notes": "Caltech's Jewish community is small in absolute numbers given the university's tiny overall size, but proportionally notable, supported by a regional Hillel affiliate and Chabad presence."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Caltech has no separate honors college; its entire undergraduate program functions at an honors-equivalent level of rigor and research access given the university's extremely small size and 3:1 student-faculty ratio."
+    }
+  },
+
+"University of Iowa": {
+    "institutionNarrative": {
+      "name": "University of Iowa",
+      "location": "Iowa City, Iowa",
+      "region": "Midwest",
+      "archetype": "The Writer's Workshop and Health Sciences Anchor \u2014 Creative Writing, Medicine, and Midwestern College-Town Life",
+      "oneSentenceSummary": "The University of Iowa combines the most influential creative writing program in American literary history with a strong academic medical center and a classic, close-knit Midwestern college-town experience.",
+      "pipeline": "Approximately 22,000 undergraduates. Iowa is internationally recognized for the Iowa Writers' Workshop, Nursing, Pharmacy, Business, Journalism, and Health Sciences. Major recruiters include UnityPoint Health, University of Iowa Hospitals and Clinics, John Deere, Principal Financial Group, Rockwell Collins, and regional insurance and agricultural companies.",
+      "hiddenPathway": "The Iowa Writers' Workshop is the oldest and most prestigious MFA creative writing program in the country, and its presence elevates the undergraduate English and journalism programs with faculty and visiting writers most universities cannot access.",
+      "institutionalSecret": "Iowa's academic medical center and hospital system is one of the most respected in the rural Midwest, giving pre-health students clinical exposure and research opportunities usually reserved for much larger metropolitan medical schools.",
+      "theRoom": "Located in Iowa City, students are embedded in a classic Big Ten college town with direct ties to Iowa's insurance, agricultural, and healthcare economy, plus the literary gravity of the Writers' Workshop.",
+      "lifestyle": "Close-knit, spirited, and academically serious beneath a classic Big Ten social culture. Iowa City consistently ranks among the best college towns in the country, and Hawkeye athletics dominate the social calendar.",
+      "bestFitPersonality": "Community-oriented, drawn to writing, health sciences, or business, comfortable in a tight-knit Midwestern college town, and motivated by a strong sense of school spirit.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Iowa and the broader Midwest, with national influence in creative writing and literary arts.",
+      "economicOutcome": "Strong outcomes in healthcare, business, law, and creative writing, with deep regional influence throughout Iowa and the Midwest.",
+      "gradCities": [
+        "Des Moines IA",
+        "Chicago IL",
+        "Iowa City IA",
+        "Minneapolis MN",
+        "Kansas City MO"
+      ],
+      "comparableInstitutions": [
+        "University of Wisconsin-Madison",
+        "Indiana University Bloomington",
+        "University of Kansas",
+        "Purdue University",
+        "University of Nebraska-Lincoln"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Kirkwood Community College",
+          "Des Moines Area Community College"
+        ],
+        "transferAcceptanceRate": "~85%",
+        "freshmanAcceptanceRate": "~85%",
+        "estimatedSavingsRange": "$12,000-$30,000",
+        "transferNotes": "Iowa maintains strong articulation agreements with Iowa's community college system, particularly Kirkwood Community College, supporting transfer into nursing, business, and health sciences."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Iowa",
+      "archetype": "Public Research Flagship \u2014 Creative Writing and Health Sciences",
+      "institutionalPersonality": "community-oriented, spirited, literary, health-focused, Midwestern",
+      "cultureKeywords": [
+        "Creative Writing",
+        "Health Sciences",
+        "Big Ten Athletics",
+        "College Town",
+        "Literature",
+        "Nursing"
+      ],
+      "missionOrientation": "Advancing health sciences, literary arts, and public research while serving Iowa's communities.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through workshop-based writing instruction, clinical health sciences training, and applied business coursework within a supportive college-town environment.",
+      "competitiveness": "Moderately Selective",
+      "politicalCulture": "Mixed, reflecting a college town within a broader conservative-leaning state.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Nationally elite in creative writing; solid regional flagship prestige elsewhere.",
+      "socialClimate": "Spirited, close-knit, and centered around Big Ten athletics and college-town traditions.",
+      "leadershipStyle": "Leadership through literary influence, health sciences excellence, and community engagement."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "regionalRole": "A Midwestern flagship anchoring literary arts and health sciences for Iowa and the broader agricultural Midwest."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 58,
+      "BosWash": 14,
+      "TorBuffChester": 10,
+      "TexasTriangle": 12,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 8,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusWisconsin": "Wisconsin offers a larger, more urban flagship experience with broader research breadth, while Iowa offers the nation's most prestigious creative writing tradition and a more intimate college-town feel.",
+      "versusIndiana": "Indiana offers a stronger business school brand nationally, while Iowa offers deeper literary arts prestige and a strong academic health sciences center.",
+      "versusNebraska": "Nebraska offers a similar Midwestern flagship experience with stronger agricultural engineering ties, while Iowa offers the Writers' Workshop and a nationally distinctive literary identity."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 22000,
+      "graduateEnrollment": 9000,
+      "totalEnrollment": 31000,
+      "campusType": "Classic Big Ten College Town",
+      "residentialIntensity": 66,
+      "communityFeel": 82,
+      "studentFacultyRatio": "15:1",
+      "classSizeExperience": "Moderate lecture sizes in general education, with small workshop-style seminars in writing and honors coursework.",
+      "scaleAdvantages": [
+        "World's most prestigious creative writing tradition",
+        "Strong academic medical center",
+        "Classic, highly-rated college town",
+        "Strong nursing and pharmacy programs"
+      ],
+      "scaleDisadvantages": [
+        "Limited name recognition outside the Midwest and literary circles",
+        "Smaller corporate recruiting pipeline than larger flagships",
+        "Rural location distant from major metropolitan job markets",
+        "Harsh winters may not suit all students"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 82,
+        "conscientiousness": 82,
+        "extraversion": 70,
+        "agreeableness": 80,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "A",
+        "S",
+        "I"
+      ],
+      "learningStyle": [
+        "Workshop-Based Writing",
+        "Clinical Health Sciences Training",
+        "Case-Based Business Learning",
+        "Collaborative Study"
+      ],
+      "socialEnvironment": [
+        "Close-Knit",
+        "Spirited",
+        "Literary",
+        "Community-Oriented",
+        "Health-Sciences-Focused"
+      ],
+      "idealStudentTraits": [
+        "Drawn to writing or health sciences",
+        "Community-minded",
+        "Comfortable in a tight-knit college town",
+        "Motivated by school spirit and tradition"
+      ],
+      "thrivesIf": [
+        "Plans for creative writing, journalism, nursing, or pharmacy",
+        "Wants a classic, highly-rated Big Ten college town experience",
+        "Values a strong academic medical center",
+        "Enjoys close-knit community and school spirit"
+      ],
+      "strugglesIf": [
+        "Wants a major urban campus setting",
+        "Needs immediate proximity to a large metropolitan job market",
+        "Dislikes cold Midwestern winters",
+        "Prefers a large, anonymous research university feel"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more urban campus setting",
+        "Students wanting closer proximity to major coastal job markets",
+        "Students who prefer warmer climates"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Nursing and select health sciences programs carry additional selectivity beyond general university admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Speech and Hearing Science",
+        "Actuarial Science",
+        "Health and Human Physiology",
+        "Rhetoric",
+        "Interpreting and Translating",
+        "Sport and Recreation Management"
+      ],
+      "hiddenCareerPipelines": [
+        "Literary Publishing",
+        "Academic Medicine",
+        "Insurance and Actuarial Science",
+        "Regional Healthcare Administration",
+        "Agricultural Business"
+      ],
+      "nicheRecruitingAdvantages": [
+        "University of Iowa Hospitals and Clinics",
+        "Principal Financial Group",
+        "John Deere",
+        "UnityPoint Health"
+      ],
+      "overlookedStrengths": [
+        "The Iowa Writers' Workshop has produced more Pulitzer Prize winners than any other creative writing program in the country.",
+        "University of Iowa Hospitals and Clinics is consistently ranked among the top academic medical centers in the rural Midwest.",
+        "Iowa City has repeatedly been named one of the best college towns in America.",
+        "The College of Pharmacy and Nursing programs maintain excellent regional employment placement."
+      ],
+      "sleeperIndustries": [
+        "Literary Publishing and Editing",
+        "Academic and Rural Medicine",
+        "Insurance and Actuarial Science",
+        "Agricultural Business Management"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 70,
+      "mentorshipDensity": 72,
+      "executiveAccess": 58,
+      "internshipNetwork": 70,
+      "familyBusinessExposure": 42,
+      "relationshipCapitalScore": 68,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 68,
+      "donorNetworkStrength": 58,
+      "boardMemberDensity": 48
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Healthcare",
+        "Insurance",
+        "Agriculture",
+        "Education",
+        "Publishing"
+      ],
+      "regionalEconomicDrivers": [
+        "Healthcare",
+        "Insurance and Financial Services",
+        "Agriculture",
+        "Manufacturing"
+      ],
+      "topEmployers": [
+        "University of Iowa Hospitals and Clinics",
+        "Principal Financial Group",
+        "John Deere",
+        "UnityPoint Health",
+        "Rockwell Collins"
+      ],
+      "emergingIndustries": [
+        "Digital Health",
+        "Agricultural Technology",
+        "Insurance Technology"
+      ],
+      "startupDensity": "Low to Moderate",
+      "ventureCapitalAccess": 26,
+      "corporateHeadquartersDensity": 34,
+      "healthcareHubStrength": 82,
+      "innovationIndex": 58
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Iowa and the Broader Midwest Healthcare, Insurance, and Agricultural Economy",
+      "secondaryMarkets": [
+        "Chicago IL",
+        "Minneapolis MN",
+        "Kansas City MO",
+        "Des Moines IA"
+      ],
+      "alumniStrongholds": [
+        "Des Moines IA",
+        "Iowa City IA",
+        "Chicago IL",
+        "Cedar Rapids IA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Iowa, entering healthcare, insurance, and agricultural business.",
+        "Chicago draws graduates into finance, consulting, and broader Midwestern business roles.",
+        "Minneapolis and Kansas City attract graduates into healthcare and corporate roles.",
+        "Creative writing and journalism graduates disperse nationally into publishing and media.",
+        "A smaller cohort enters academic medicine and health sciences research nationally."
+      ],
+      "regionalInfluenceScore": 88,
+      "nationalReachScore": 56,
+      "internationalReachScore": 40
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 26,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 72,
+      "crossDisciplinaryInteraction": 66,
+      "civicEngagement": 74
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 88,
+        "notes": "Strong pathway through nursing, pharmacy, and the academic medical center."
+      },
+      "nutraceuticals": {
+        "strength": 36,
+        "notes": "Some overlap through pharmacy and health sciences."
+      },
+      "consumerProducts": {
+        "strength": 40,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 48,
+        "notes": "Moderate pathway given Big Ten athletics culture."
+      },
+      "entertainmentMedia": {
+        "strength": 44,
+        "notes": "Meaningful pathway through journalism and creative writing into publishing and media."
+      },
+      "ventureCapital": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 28,
+        "notes": "Minimal institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 32,
+        "notes": "Limited but present through the business school."
+      },
+      "consulting": {
+        "strength": 48,
+        "notes": "Present through Tippie College of Business placement."
+      },
+      "medicine": {
+        "strength": 86,
+        "notes": "Strong pre-med and clinical pipeline through Carver College of Medicine and University of Iowa Hospitals."
+      },
+      "healthcareAdministration": {
+        "strength": 74,
+        "notes": "Solid pathway given the strength of the academic medical center."
+      },
+      "defense": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 14,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 46,
+        "notes": "Growing but modest entrepreneurship culture."
+      },
+      "technology": {
+        "strength": 44,
+        "notes": "Present but secondary to health sciences and business."
+      },
+      "publicPolicy": {
+        "strength": 48,
+        "notes": "Moderate pathway through public health and policy programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 52,
+        "notes": "Meaningful pathway, particularly for healthcare and community nonprofits."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 72,
+      "firstGenerationSupport": 72,
+      "wealthCreationPotential": 62,
+      "familyBusinessPipelineStrength": 40
+    },
+    "futureResilience": {
+      "aiResistance": 76,
+      "automationResistance": 74,
+      "adaptabilityScore": 70,
+      "interdisciplinaryStrength": 68,
+      "futureReadiness": 68,
+      "entrepreneurialFlexibility": 54,
+      "lifelongLearningCulture": 74,
+      "innovationCapacity": 62
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 62,
+      "communityLeadershipPotential": 76,
+      "geographicMobility": 58,
+      "workLifeBalancePotential": 84,
+      "purposeAlignment": 78,
+      "familyFormationSupport": 82,
+      "personalDevelopmentPotential": 78,
+      "careerOptionality": 62,
+      "longTermLifeSatisfaction": 80
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 62,
+      "networkMoat": 58,
+      "geographicMoat": 80,
+      "industryMoat": 76,
+      "alumniMoat": 68,
+      "brandDurability": 70,
+      "overallMoatScore": 68
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 42,
+      "returnerScore": 62,
+      "stewardScore": 74,
+      "navigatorScore": 46,
+      "geographicLockIn": "moderate_to_high",
+      "alumniDispersalPattern": "regional_concentration_with_creative_writing_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 46,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 400,
+      "jewishStudentPercentage": "~2%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Modest",
+      "notes": "Iowa maintains a small but active Hillel presence serving a modest Jewish student population, without dedicated kosher dining facilities."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "University of Iowa Honors Program",
+      "strength": 70,
+      "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
+    }
+  },
+
+"University of Missouri": {
+    "institutionNarrative": {
+      "name": "University of Missouri",
+      "location": "Columbia, Missouri",
+      "region": "Midwest",
+      "archetype": "The Journalism Pioneer and SEC Flagship \u2014 Media, Agriculture, and Midwestern Athletics Culture",
+      "oneSentenceSummary": "The University of Missouri is home to the world's first journalism school and combines strong agricultural and veterinary sciences with a spirited SEC athletics culture in a classic Midwestern college town.",
+      "pipeline": "Approximately 22,000 undergraduates. Mizzou is internationally recognized for Journalism (the first journalism school in the world), Agriculture, Veterinary Medicine, Engineering, and Business. Major recruiters include major news organizations, Cerner (Oracle Health), Edward Jones, Monsanto/Bayer, and regional agricultural and healthcare employers.",
+      "hiddenPathway": "The Missouri School of Journalism pioneered hands-on, professional-model journalism education, giving students real newsroom experience at the Columbia Missourian, a functioning daily newspaper staffed by students, that most journalism programs can only simulate.",
+      "institutionalSecret": "Mizzou's veterinary medicine and agricultural programs are quietly among the strongest in the country, giving the university an outsized role in Midwestern agricultural science research relative to its general name recognition.",
+      "theRoom": "Located in Columbia, students are positioned within Missouri's broader agricultural and healthcare economy, with direct newsroom-style journalism training and SEC athletics culture defining campus life.",
+      "lifestyle": "Spirited, community-oriented, and journalism-and-athletics-driven. Columbia is a classic college town, and Mizzou's SEC football culture creates an intense football-weekend social calendar.",
+      "bestFitPersonality": "Community-oriented, drawn to journalism, agriculture, veterinary medicine, or business, and comfortable with a spirited SEC athletics culture.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Missouri and the broader Midwest, with national influence in journalism and agricultural sciences.",
+      "economicOutcome": "Strong outcomes in journalism, agriculture, veterinary medicine, business, and healthcare, with deep regional influence throughout Missouri.",
+      "gradCities": [
+        "Kansas City MO",
+        "St. Louis MO",
+        "Chicago IL",
+        "Columbia MO",
+        "Dallas TX"
+      ],
+      "comparableInstitutions": [
+        "University of Kansas",
+        "Indiana University Bloomington",
+        "University of Nebraska-Lincoln",
+        "University of Arkansas",
+        "Iowa State University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "State Fair Community College",
+          "Metropolitan Community College"
+        ],
+        "transferAcceptanceRate": "~80%",
+        "freshmanAcceptanceRate": "~80%",
+        "estimatedSavingsRange": "$12,000-$28,000",
+        "transferNotes": "Missouri maintains broad articulation agreements across the state's community college system, supporting transfer into agriculture, business, and health sciences programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Missouri",
+      "archetype": "Public Research Flagship \u2014 Journalism and Agricultural Sciences",
+      "institutionalPersonality": "spirited, journalism-driven, agriculturally grounded, athletics-oriented, community-minded",
+      "cultureKeywords": [
+        "Journalism",
+        "Agriculture",
+        "Veterinary Medicine",
+        "SEC Athletics",
+        "College Town",
+        "Media"
+      ],
+      "missionOrientation": "Advancing journalism, agricultural science, and veterinary medicine while serving Missouri's communities and economy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through hands-on professional journalism training, applied agricultural and veterinary science, and case-based business coursework.",
+      "competitiveness": "Moderately Selective",
+      "politicalCulture": "Mixed, reflecting a college town within a broader conservative-leaning state.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Nationally elite in journalism; strong regional flagship prestige in agriculture and veterinary medicine.",
+      "socialClimate": "Spirited, athletics-driven, and community-oriented.",
+      "leadershipStyle": "Leadership through journalistic influence, agricultural science excellence, and community engagement."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "regionalRole": "A Midwestern flagship anchoring journalism education and agricultural science for Missouri and the broader Midwest."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 56,
+      "BosWash": 12,
+      "TorBuffChester": 8,
+      "TexasTriangle": 16,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 8,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusKansas": "Kansas offers a comparable Midwestern flagship experience with stronger basketball tradition, while Missouri offers the world's first journalism school and stronger veterinary medicine programs.",
+      "versusArkansas": "Arkansas offers stronger business school placement into regional corporate headquarters, while Missouri offers deeper journalism prestige and stronger agricultural science research.",
+      "versusNebraska": "Nebraska offers comparable agricultural strength with a stronger engineering emphasis, while Missouri offers the world's first journalism program and SEC athletics culture."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 22000,
+      "graduateEnrollment": 8000,
+      "totalEnrollment": 30000,
+      "campusType": "Classic SEC College Town",
+      "residentialIntensity": 62,
+      "communityFeel": 80,
+      "studentFacultyRatio": "18:1",
+      "classSizeExperience": "Moderate lecture sizes in general education, with small hands-on newsroom and laboratory experiences in journalism, agriculture, and veterinary medicine.",
+      "scaleAdvantages": [
+        "World's first journalism school with real newsroom experience",
+        "Strong veterinary medicine and agricultural science programs",
+        "Spirited SEC athletics culture",
+        "Classic Midwestern college town"
+      ],
+      "scaleDisadvantages": [
+        "Limited name recognition outside journalism and agricultural circles",
+        "Smaller corporate recruiting pipeline than larger flagships",
+        "Distance from major coastal metropolitan job markets",
+        "Athletics culture may overshadow academic reputation"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 76,
+        "conscientiousness": 78,
+        "extraversion": 76,
+        "agreeableness": 78,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "E",
+        "S",
+        "R"
+      ],
+      "learningStyle": [
+        "Hands-On Newsroom Training",
+        "Applied Agricultural Science",
+        "Clinical Veterinary Training",
+        "Case-Based Business Learning"
+      ],
+      "socialEnvironment": [
+        "Spirited",
+        "Athletics-Driven",
+        "Community-Oriented",
+        "Journalism-Focused",
+        "Agriculturally Grounded"
+      ],
+      "idealStudentTraits": [
+        "Drawn to journalism, agriculture, or veterinary medicine",
+        "Comfortable with SEC athletics culture",
+        "Community-minded",
+        "Motivated by hands-on professional training"
+      ],
+      "thrivesIf": [
+        "Plans for journalism, agriculture, veterinary medicine, or business",
+        "Wants real professional newsroom experience as an undergraduate",
+        "Enjoys a spirited SEC athletics culture",
+        "Values a classic Midwestern college town"
+      ],
+      "strugglesIf": [
+        "Wants a major urban campus setting",
+        "Needs immediate proximity to a large metropolitan job market",
+        "Is uninterested in athletics-driven campus culture",
+        "Prefers a quieter, less spirited social environment"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more urban campus setting",
+        "Students wanting closer proximity to major coastal job markets",
+        "Students uninterested in a strong athletics culture"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "The School of Journalism and veterinary medicine program carry additional selectivity beyond general university admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Agricultural Journalism",
+        "Animal Sciences",
+        "Parks, Recreation and Sport",
+        "Textile and Apparel Management",
+        "Health Sciences",
+        "Personal Financial Planning"
+      ],
+      "hiddenCareerPipelines": [
+        "Broadcast and Print Journalism",
+        "Veterinary Medicine",
+        "Agricultural Business",
+        "Health Information Management",
+        "Personal Financial Planning"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Columbia Missourian (student-staffed newspaper)",
+        "Cerner (Oracle Health)",
+        "Edward Jones",
+        "Monsanto/Bayer",
+        "Boone Hospital Center"
+      ],
+      "overlookedStrengths": [
+        "The Missouri School of Journalism was the first journalism school in the world and remains a top-ranked program with real professional newsroom experience.",
+        "Missouri's veterinary medicine program is among the strongest in the country.",
+        "The Personal Financial Planning program is one of the oldest and most respected in the nation, feeding directly into Edward Jones and similar firms.",
+        "Mizzou's agricultural research programs maintain deep ties to Missouri's farming economy."
+      ],
+      "sleeperIndustries": [
+        "Broadcast and Digital Journalism",
+        "Veterinary Medicine",
+        "Personal Financial Planning",
+        "Agricultural Business and Technology"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 68,
+      "mentorshipDensity": 70,
+      "executiveAccess": 56,
+      "internshipNetwork": 68,
+      "familyBusinessExposure": 40,
+      "relationshipCapitalScore": 66,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 66,
+      "donorNetworkStrength": 56,
+      "boardMemberDensity": 46
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Journalism and Media",
+        "Agriculture",
+        "Healthcare",
+        "Financial Services",
+        "Veterinary Medicine"
+      ],
+      "regionalEconomicDrivers": [
+        "Agriculture",
+        "Healthcare",
+        "Financial Services",
+        "Media"
+      ],
+      "topEmployers": [
+        "Cerner (Oracle Health)",
+        "Edward Jones",
+        "Monsanto/Bayer",
+        "Boone Hospital Center",
+        "University of Missouri Health Care"
+      ],
+      "emergingIndustries": [
+        "Agricultural Technology",
+        "Digital Health",
+        "Digital Media and Journalism"
+      ],
+      "startupDensity": "Low to Moderate",
+      "ventureCapitalAccess": 24,
+      "corporateHeadquartersDensity": 32,
+      "healthcareHubStrength": 68,
+      "innovationIndex": 54
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Missouri's Agriculture, Journalism, and Healthcare Economy",
+      "secondaryMarkets": [
+        "Kansas City MO",
+        "St. Louis MO",
+        "Chicago IL",
+        "Dallas TX"
+      ],
+      "alumniStrongholds": [
+        "St. Louis MO",
+        "Kansas City MO",
+        "Columbia MO",
+        "Chicago IL"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Missouri, entering agriculture, healthcare, journalism, and financial services.",
+        "Kansas City and St. Louis draw graduates into corporate business, healthcare, and finance.",
+        "Journalism graduates disperse nationally into broadcast and print media markets.",
+        "Veterinary medicine graduates disperse regionally and nationally into private practice.",
+        "A smaller cohort enters national agricultural policy and business roles."
+      ],
+      "regionalInfluenceScore": 86,
+      "nationalReachScore": 58,
+      "internationalReachScore": 36
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 34,
+      "studentOrganizationStrength": 76,
+      "leadershipDevelopment": 70,
+      "crossDisciplinaryInteraction": 62,
+      "civicEngagement": 68
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 74,
+        "notes": "Solid pathway through health sciences and veterinary medicine."
+      },
+      "nutraceuticals": {
+        "strength": 40,
+        "notes": "Some overlap through agricultural and food science research."
+      },
+      "consumerProducts": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 54,
+        "notes": "Moderate pathway given SEC athletics culture and sports management program."
+      },
+      "entertainmentMedia": {
+        "strength": 68,
+        "notes": "Strong pathway through the world's first journalism school into broadcast and digital media."
+      },
+      "ventureCapital": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 26,
+        "notes": "Minimal institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 30,
+        "notes": "Limited but present through the business school."
+      },
+      "consulting": {
+        "strength": 42,
+        "notes": "Present but modest."
+      },
+      "medicine": {
+        "strength": 76,
+        "notes": "Solid pre-med and veterinary medicine pipeline."
+      },
+      "healthcareAdministration": {
+        "strength": 62,
+        "notes": "Moderate pathway through health sciences programs."
+      },
+      "defense": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 12,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 42,
+        "notes": "Modest entrepreneurship culture."
+      },
+      "technology": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis relative to journalism and agriculture."
+      },
+      "publicPolicy": {
+        "strength": 44,
+        "notes": "Moderate pathway, often agriculture-adjacent."
+      },
+      "nonprofitLeadership": {
+        "strength": 46,
+        "notes": "Present pathway, often tied to agricultural and community organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 68,
+      "firstGenerationSupport": 68,
+      "wealthCreationPotential": 58,
+      "familyBusinessPipelineStrength": 42
+    },
+    "futureResilience": {
+      "aiResistance": 68,
+      "automationResistance": 66,
+      "adaptabilityScore": 62,
+      "interdisciplinaryStrength": 60,
+      "futureReadiness": 60,
+      "entrepreneurialFlexibility": 48,
+      "lifelongLearningCulture": 66,
+      "innovationCapacity": 54
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 58,
+      "communityLeadershipPotential": 74,
+      "geographicMobility": 54,
+      "workLifeBalancePotential": 82,
+      "purposeAlignment": 74,
+      "familyFormationSupport": 80,
+      "personalDevelopmentPotential": 74,
+      "careerOptionality": 56,
+      "longTermLifeSatisfaction": 78
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 58,
+      "networkMoat": 54,
+      "geographicMoat": 78,
+      "industryMoat": 72,
+      "alumniMoat": 66,
+      "brandDurability": 66,
+      "overallMoatScore": 64
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 38,
+      "returnerScore": 66,
+      "stewardScore": 76,
+      "navigatorScore": 42,
+      "geographicLockIn": "moderate_to_high",
+      "alumniDispersalPattern": "regional_concentration_with_journalism_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 38,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 300,
+      "jewishStudentPercentage": "~1%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Limited",
+      "notes": "Missouri maintains a small Hillel presence serving a modest Jewish student population, without dedicated kosher dining facilities."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Honors College",
+      "strength": 68,
+      "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
+    }
+  },
+
+"University of Arkansas": {
+    "institutionNarrative": {
+      "name": "University of Arkansas",
+      "location": "Fayetteville, Arkansas",
+      "region": "Southeast",
+      "archetype": "The Retail and Supply Chain Capital \u2014 Business, Walmart Proximity, and SEC Culture",
+      "oneSentenceSummary": "The University of Arkansas offers one of the strongest undergraduate supply chain and retail management programs in the country, built on its direct proximity to Walmart's global headquarters and the dense retail supplier ecosystem that surrounds it.",
+      "pipeline": "Approximately 27,000 undergraduates. Arkansas is nationally recognized for Supply Chain Management, Retail, Accounting, Engineering, and Agriculture. Major recruiters include Walmart, Tyson Foods, J.B. Hunt Transport, Procter & Gamble (via the Walmart supplier ecosystem), and numerous consumer packaged goods companies with offices near Bentonville specifically to serve Walmart accounts.",
+      "hiddenPathway": "Hundreds of major consumer brands maintain 'Walmart teams' or satellite offices near Fayetteville and Bentonville solely to manage their Walmart account relationships, creating a hidden concentration of retail, sales, and supply chain jobs that most students never realize exists outside Arkansas.",
+      "institutionalSecret": "The Sam M. Walton College of Business has quietly become one of the most important undergraduate feeders into retail management and supply chain careers in the country, a direct byproduct of sitting minutes from Walmart's global headquarters.",
+      "theRoom": "Located in Fayetteville near Bentonville, students are embedded in the dense ecosystem of consumer packaged goods companies, retail suppliers, and logistics firms that orbit Walmart's corporate headquarters.",
+      "lifestyle": "Spirited, business-minded, and outdoor-adjacent in the Ozark Mountains, with a strong SEC athletics culture and a growing corporate professionalism driven by the Walmart ecosystem.",
+      "bestFitPersonality": "Business-minded, drawn to retail, supply chain, or consumer products, comfortable with a spirited SEC athletics culture, and motivated by clear corporate career pathways.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Dominant throughout Northwest Arkansas's retail and consumer goods economy, with strong national influence in supply chain and retail management.",
+      "economicOutcome": "Excellent outcomes in retail management, supply chain, consumer products, accounting, and business, driven by unmatched proximity to Walmart's corporate ecosystem.",
+      "gradCities": [
+        "Bentonville AR",
+        "Dallas TX",
+        "Chicago IL",
+        "Atlanta GA",
+        "Fayetteville AR"
+      ],
+      "comparableInstitutions": [
+        "University of Tennessee",
+        "Auburn University",
+        "University of Alabama",
+        "Mississippi State University",
+        "Oklahoma State University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Northwest Arkansas Community College",
+          "Arkansas State University-Beebe"
+        ],
+        "transferAcceptanceRate": "~78%",
+        "freshmanAcceptanceRate": "~80%",
+        "estimatedSavingsRange": "$10,000-$25,000",
+        "transferNotes": "Arkansas maintains strong articulation agreements across the state's community college system, supporting transfer into business, engineering, and agricultural programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Arkansas",
+      "archetype": "Public Research Flagship \u2014 Retail and Supply Chain Management",
+      "institutionalPersonality": "business-minded, spirited, corporate-adjacent, athletics-oriented, pragmatic",
+      "cultureKeywords": [
+        "Retail",
+        "Supply Chain",
+        "Walmart",
+        "SEC Athletics",
+        "Business",
+        "Consumer Products"
+      ],
+      "missionOrientation": "Producing retail, supply chain, and business leaders through direct integration with Northwest Arkansas's consumer goods economy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through applied business coursework, case studies drawn directly from the Walmart supplier ecosystem, and direct corporate recruiting relationships.",
+      "competitiveness": "Moderately Selective",
+      "politicalCulture": "Generally conservative-leaning, reflecting the broader Arkansas region.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Nationally elite in supply chain management and retail; solid regional flagship prestige elsewhere.",
+      "socialClimate": "Spirited, business-minded, and athletics-driven.",
+      "leadershipStyle": "Leadership through corporate pragmatism, retail industry excellence, and SEC school spirit."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "CharLanta",
+      "regionalRole": "The nation's premier undergraduate feeder into retail management and supply chain careers, anchored by direct proximity to Walmart's global headquarters."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 20,
+      "BosWash": 14,
+      "TorBuffChester": 8,
+      "TexasTriangle": 26,
+      "CharLanta": 30,
+      "NorCalInnovationCorridor": 8,
+      "SoCalCreativeEconomy": 8
+    },
+    "comparativePositioning": {
+      "versusTennessee": "Tennessee offers a broader general business and finance placement across Nashville's growing corporate economy, while Arkansas offers an unmatched supply chain and retail management pipeline tied directly to Walmart.",
+      "versusAuburn": "Auburn offers a stronger engineering and aerospace pipeline, while Arkansas offers deeper retail and supply chain industry integration.",
+      "versusAlabama": "Alabama offers a larger, more nationally visible football brand and broader out-of-state draw, while Arkansas offers a more concentrated, industry-specific retail and supply chain advantage."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 27000,
+      "graduateEnrollment": 5000,
+      "totalEnrollment": 32000,
+      "campusType": "SEC Flagship College Town in the Ozarks",
+      "residentialIntensity": 60,
+      "communityFeel": 78,
+      "studentFacultyRatio": "18:1",
+      "classSizeExperience": "Moderate lecture sizes in general education, with case-study-driven, corporate-partnered coursework in the Walton College of Business.",
+      "scaleAdvantages": [
+        "Unmatched retail and supply chain industry proximity via Walmart",
+        "Strong accounting and business placement",
+        "Spirited SEC athletics culture",
+        "Scenic Ozark Mountain setting"
+      ],
+      "scaleDisadvantages": [
+        "Limited name recognition outside business and retail circles",
+        "Smaller research profile than larger flagships",
+        "Distance from major coastal metropolitan job markets",
+        "Strong regional draw may limit national diversity of student body"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 70,
+        "conscientiousness": 82,
+        "extraversion": 76,
+        "agreeableness": 78,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "E",
+        "C",
+        "S"
+      ],
+      "learningStyle": [
+        "Case-Based Business Learning",
+        "Corporate-Partnered Coursework",
+        "Applied Supply Chain Simulation",
+        "Collaborative Study"
+      ],
+      "socialEnvironment": [
+        "Business-Minded",
+        "Spirited",
+        "Corporate-Adjacent",
+        "Athletics-Driven",
+        "Pragmatic"
+      ],
+      "idealStudentTraits": [
+        "Business-minded",
+        "Drawn to retail, supply chain, or consumer products",
+        "Comfortable with SEC athletics culture",
+        "Motivated by clear corporate career pathways"
+      ],
+      "thrivesIf": [
+        "Plans for retail management, supply chain, or consumer products careers",
+        "Wants direct access to Walmart's corporate ecosystem",
+        "Enjoys a spirited SEC athletics culture",
+        "Values a scenic Ozark Mountain setting"
+      ],
+      "strugglesIf": [
+        "Wants a major urban campus setting",
+        "Needs a strong research-university identity outside business",
+        "Is uninterested in athletics-driven campus culture",
+        "Wants a more nationally diverse student body"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more urban campus setting",
+        "Students wanting fields outside business and supply chain",
+        "Students uninterested in a strong regional SEC culture"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "The Walton College of Business, particularly supply chain management, carries additional selectivity and strong internal competition for top recruiting spots."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Supply Chain Management",
+        "Retail Management",
+        "Poultry Science",
+        "Industrial Engineering",
+        "Agricultural Business"
+      ],
+      "hiddenCareerPipelines": [
+        "Retail Category Management",
+        "Consumer Packaged Goods Sales",
+        "Supply Chain Analytics",
+        "Agricultural Business Management"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Walmart",
+        "Tyson Foods",
+        "J.B. Hunt Transport",
+        "Procter & Gamble (Walmart team offices)",
+        "Sam's Club"
+      ],
+      "overlookedStrengths": [
+        "The Sam M. Walton College of Business is one of the most respected undergraduate supply chain programs in the country, built directly on Walmart proximity.",
+        "Hundreds of major consumer brands maintain dedicated 'Walmart team' offices near campus, creating a hidden concentration of retail and sales jobs.",
+        "Tyson Foods and J.B. Hunt Transport provide additional major logistics and food industry recruiting pipelines.",
+        "The Ozark Mountain setting offers a distinctive outdoor lifestyle alongside a business-focused education."
+      ],
+      "sleeperIndustries": [
+        "Retail Category Management",
+        "Supply Chain and Logistics Analytics",
+        "Consumer Packaged Goods Sales",
+        "Agricultural and Food Business"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 74,
+      "mentorshipDensity": 76,
+      "executiveAccess": 72,
+      "internshipNetwork": 84,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 66,
+      "boardMemberDensity": 58
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Retail",
+        "Supply Chain and Logistics",
+        "Consumer Packaged Goods",
+        "Agriculture",
+        "Food Processing"
+      ],
+      "regionalEconomicDrivers": [
+        "Retail and Consumer Goods",
+        "Logistics and Transportation",
+        "Poultry and Agricultural Processing",
+        "Trucking"
+      ],
+      "topEmployers": [
+        "Walmart",
+        "Tyson Foods",
+        "J.B. Hunt Transport",
+        "Sam's Club",
+        "Procter & Gamble (regional offices)"
+      ],
+      "emergingIndustries": [
+        "Retail Technology",
+        "Supply Chain Analytics",
+        "E-Commerce Logistics",
+        "Agricultural Technology"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 36,
+      "corporateHeadquartersDensity": 62,
+      "healthcareHubStrength": 44,
+      "innovationIndex": 58
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Northwest Arkansas's Retail, Supply Chain, and Consumer Goods Economy",
+      "secondaryMarkets": [
+        "Dallas TX",
+        "Atlanta GA",
+        "Chicago IL",
+        "Bentonville AR"
+      ],
+      "alumniStrongholds": [
+        "Bentonville AR",
+        "Fayetteville AR",
+        "Dallas TX",
+        "Atlanta GA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Northwest Arkansas, entering Walmart, its supplier ecosystem, and regional logistics companies.",
+        "Dallas and Atlanta draw graduates into broader retail, consumer goods, and logistics corporate roles.",
+        "Chicago attracts graduates into consumer packaged goods and consulting roles.",
+        "A meaningful cohort enters national retail and supply chain leadership roles across major consumer brands.",
+        "Agricultural and food science graduates disperse regionally into agribusiness roles."
+      ],
+      "regionalInfluenceScore": 94,
+      "nationalReachScore": 62,
+      "internationalReachScore": 38
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 36,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 74,
+      "crossDisciplinaryInteraction": 62,
+      "civicEngagement": 62
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 34,
+        "notes": "Meaningful presence given the concentration of consumer packaged goods companies serving Walmart."
+      },
+      "healthWellness": {
+        "strength": 44,
+        "notes": "Moderate presence, not a primary institutional focus."
+      },
+      "nutraceuticals": {
+        "strength": 38,
+        "notes": "Some overlap through food science and agricultural research."
+      },
+      "consumerProducts": {
+        "strength": 92,
+        "notes": "One of the strongest consumer products and retail pipelines in the country, built directly on Walmart proximity."
+      },
+      "outdoorIndustry": {
+        "strength": 40,
+        "notes": "Moderate presence given the Ozark Mountain setting."
+      },
+      "sportsBusiness": {
+        "strength": 44,
+        "notes": "Moderate pathway given SEC athletics culture."
+      },
+      "entertainmentMedia": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 30,
+        "notes": "Limited but growing, particularly in retail technology."
+      },
+      "privateEquity": {
+        "strength": 36,
+        "notes": "Present, primarily through consumer goods-focused funds."
+      },
+      "investmentBanking": {
+        "strength": 40,
+        "notes": "Present but secondary to retail and supply chain careers."
+      },
+      "consulting": {
+        "strength": 60,
+        "notes": "Strong placement into retail and supply chain consulting practices."
+      },
+      "medicine": {
+        "strength": 40,
+        "notes": "Limited pre-med emphasis relative to business and agriculture."
+      },
+      "healthcareAdministration": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 48,
+        "notes": "Moderate presence given retail real estate development ties."
+      },
+      "luxuryBrands": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 56,
+        "notes": "Growing entrepreneurship culture, particularly in retail technology and consumer products."
+      },
+      "technology": {
+        "strength": 46,
+        "notes": "Growing presence, particularly in retail technology and supply chain analytics."
+      },
+      "publicPolicy": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "nonprofitLeadership": {
+        "strength": 40,
+        "notes": "Present pathway, often tied to the Walton Family Foundation's philanthropic presence in the region."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 68,
+      "firstGenerationSupport": 66,
+      "wealthCreationPotential": 70,
+      "familyBusinessPipelineStrength": 44
+    },
+    "futureResilience": {
+      "aiResistance": 68,
+      "automationResistance": 64,
+      "adaptabilityScore": 66,
+      "interdisciplinaryStrength": 58,
+      "futureReadiness": 66,
+      "entrepreneurialFlexibility": 58,
+      "lifelongLearningCulture": 62,
+      "innovationCapacity": 60
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 70,
+      "communityLeadershipPotential": 68,
+      "geographicMobility": 60,
+      "workLifeBalancePotential": 78,
+      "purposeAlignment": 68,
+      "familyFormationSupport": 76,
+      "personalDevelopmentPotential": 72,
+      "careerOptionality": 62,
+      "longTermLifeSatisfaction": 76
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 56,
+      "networkMoat": 62,
+      "geographicMoat": 88,
+      "industryMoat": 90,
+      "alumniMoat": 66,
+      "brandDurability": 68,
+      "overallMoatScore": 70
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 44,
+      "returnerScore": 60,
+      "stewardScore": 70,
+      "navigatorScore": 48,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "regional_concentration_with_corporate_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 30,
+        "type": "Regional Hillel Affiliate"
+      },
+      "estimatedJewishUndergraduates": 150,
+      "jewishStudentPercentage": "<1%",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Limited",
+      "notes": "Arkansas's Jewish community is small, supported by a regional Hillel affiliate, without dedicated on-campus kosher dining or extensive programming."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Honors College",
+      "strength": 74,
+      "notes": "Offers smaller seminar coursework, priority registration, research opportunities, and dedicated honors housing for high-achieving students across all majors."
+    }
+  },
+
+"University of Mississippi": {
+    "institutionNarrative": {
+      "name": "University of Mississippi",
+      "location": "Oxford, Mississippi",
+      "region": "Southeast",
+      "archetype": "The Southern Literary and Legal Tradition Anchor \u2014 Law, Pharmacy, and Oxford's Literary Legacy",
+      "oneSentenceSummary": "The University of Mississippi, widely known as Ole Miss, combines a respected law school and one of the nation's strongest pharmacy programs with the literary legacy of Oxford, Mississippi \u2014 William Faulkner's hometown \u2014 and a deeply spirited Southern social culture.",
+      "pipeline": "Approximately 19,000 undergraduates. Ole Miss is recognized for Pharmacy, Law, Accounting, Journalism, and Business. Major recruiters include regional and national pharmacy chains, FedEx, Renasant Bank, regional law firms, and Mississippi and Tennessee healthcare systems.",
+      "hiddenPathway": "The School of Pharmacy is consistently ranked among the top pharmacy programs in the South, giving pre-pharmacy students a direct, well-regarded pathway into the profession that is often overlooked by families outside pharmacy circles.",
+      "institutionalSecret": "Oxford's deep literary heritage as William Faulkner's hometown gives Ole Miss's English and creative writing programs an authentic literary gravity that punches above the university's general national reputation.",
+      "theRoom": "Located in Oxford, students are embedded in a nationally celebrated Southern college town with deep literary roots, strong ties to Mississippi's legal, healthcare, and financial sectors, and an intensely spirited SEC social culture.",
+      "lifestyle": "Deeply spirited, socially traditional, and literary beneath the surface. The Grove tailgating tradition on football Saturdays is legendary, and Oxford's small-town charm and literary history create a distinctive Southern college experience.",
+      "bestFitPersonality": "Socially traditional, drawn to law, pharmacy, or Southern literary culture, and comfortable with an intensely spirited SEC social and Greek life culture.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Mississippi and the broader Mid-South, with national reputation in pharmacy education.",
+      "economicOutcome": "Strong outcomes in pharmacy, law, accounting, and business, with deep regional influence throughout Mississippi and the Mid-South.",
+      "gradCities": [
+        "Memphis TN",
+        "Jackson MS",
+        "Nashville TN",
+        "Atlanta GA",
+        "Oxford MS"
+      ],
+      "comparableInstitutions": [
+        "Mississippi State University",
+        "University of Alabama",
+        "University of Arkansas",
+        "Auburn University",
+        "Louisiana State University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Northwest Mississippi Community College",
+          "Itawamba Community College"
+        ],
+        "transferAcceptanceRate": "~82%",
+        "freshmanAcceptanceRate": "~88%",
+        "estimatedSavingsRange": "$10,000-$24,000",
+        "transferNotes": "Ole Miss maintains strong articulation agreements across Mississippi's community college system, supporting transfer into business, pharmacy prerequisites, and liberal arts programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Mississippi",
+      "archetype": "Public Research Flagship \u2014 Law, Pharmacy, and Southern Literary Tradition",
+      "institutionalPersonality": "spirited, traditional, literary, socially formal, Southern",
+      "cultureKeywords": [
+        "Law",
+        "Pharmacy",
+        "The Grove",
+        "Southern Tradition",
+        "Literary Heritage",
+        "SEC Athletics"
+      ],
+      "missionOrientation": "Advancing legal education, pharmaceutical sciences, and Southern literary and cultural scholarship while serving Mississippi.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through case-based legal instruction, clinical pharmacy training, and a strong liberal arts foundation informed by the region's literary heritage.",
+      "competitiveness": "Moderately Selective",
+      "politicalCulture": "Generally conservative-leaning, reflecting the broader Mississippi region, with an active and vocal progressive minority.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Regionally elite in law and pharmacy; nationally recognized literary heritage tied to Oxford's Faulkner legacy.",
+      "socialClimate": "Intensely spirited, socially traditional, and steeped in Southern social ritual, particularly around football tailgating.",
+      "leadershipStyle": "Leadership through legal and pharmaceutical professional excellence and Southern cultural stewardship."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "CharLanta",
+      "regionalRole": "A Deep South flagship anchoring legal education, pharmaceutical sciences, and Southern literary tradition for Mississippi and the Mid-South."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 14,
+      "BosWash": 10,
+      "TorBuffChester": 6,
+      "TexasTriangle": 20,
+      "CharLanta": 42,
+      "NorCalInnovationCorridor": 6,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusMississippiState": "Mississippi State offers stronger engineering and agricultural programs with a more rural, agriculturally grounded culture, while Ole Miss offers stronger law, pharmacy, and a more socially prominent Greek and tailgating culture.",
+      "versusAlabama": "Alabama offers a larger, more nationally visible football brand and broader out-of-state draw, while Ole Miss offers a more intimate college-town experience and a distinctive literary heritage tied to Oxford.",
+      "versusLSU": "LSU offers a larger scale and stronger engineering and business placement into Louisiana's energy sector, while Ole Miss offers a stronger pharmacy program and Oxford's literary legacy."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium to Large",
+      "undergraduateEnrollment": 19000,
+      "graduateEnrollment": 3500,
+      "totalEnrollment": 22500,
+      "campusType": "Classic SEC College Town",
+      "residentialIntensity": 62,
+      "communityFeel": 82,
+      "studentFacultyRatio": "18:1",
+      "classSizeExperience": "Moderate lecture sizes in general education, with smaller, clinically-oriented coursework in pharmacy and case-based instruction in law.",
+      "scaleAdvantages": [
+        "Strong pharmacy and law programs",
+        "Distinctive literary heritage tied to Oxford and Faulkner",
+        "Legendary Grove tailgating tradition and school spirit",
+        "Charming, walkable small-town setting"
+      ],
+      "scaleDisadvantages": [
+        "Limited name recognition outside the South",
+        "Smaller corporate recruiting pipeline than larger flagships",
+        "Distance from major metropolitan job markets",
+        "Socially traditional culture may not suit every student"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 68,
+        "conscientiousness": 76,
+        "extraversion": 80,
+        "agreeableness": 80,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "E",
+        "S",
+        "A"
+      ],
+      "learningStyle": [
+        "Case-Based Legal Instruction",
+        "Clinical Pharmacy Training",
+        "Literary and Humanities Study",
+        "Collaborative Learning"
+      ],
+      "socialEnvironment": [
+        "Spirited",
+        "Socially Traditional",
+        "Literary",
+        "Greek-Life-Present",
+        "Southern"
+      ],
+      "idealStudentTraits": [
+        "Socially traditional",
+        "Drawn to law, pharmacy, or Southern literary culture",
+        "Comfortable with an intensely spirited social scene",
+        "Values regional identity and tradition"
+      ],
+      "thrivesIf": [
+        "Plans for law, pharmacy, or Southern literature and humanities",
+        "Wants a deeply spirited, tradition-rich SEC college experience",
+        "Enjoys a small, charming college-town setting",
+        "Values Greek life and football culture"
+      ],
+      "strugglesIf": [
+        "Wants a major urban campus setting",
+        "Is uncomfortable with a socially traditional Southern culture",
+        "Needs strong national brand recognition outside the South",
+        "Prefers a less football- and Greek-life-centered social scene"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more urban or nationally diverse campus",
+        "Students uncomfortable with intense Greek life and tailgating culture",
+        "Students wanting stronger national brand recognition"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Pharmacy and the School of Law carry additional selectivity beyond general university admission, including separate professional program applications."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Pharmaceutical Sciences",
+        "Southern Studies",
+        "Public Policy Leadership",
+        "Integrated Marketing Communications",
+        "Chemical Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Pharmacy and Pharmaceutical Sciences",
+        "Regional Law Practice",
+        "Financial Services",
+        "Public Relations and Communications"
+      ],
+      "nicheRecruitingAdvantages": [
+        "FedEx",
+        "Renasant Bank",
+        "Regional pharmacy chains",
+        "Mississippi and Tennessee healthcare systems",
+        "Regional law firms"
+      ],
+      "overlookedStrengths": [
+        "The School of Pharmacy is consistently ranked among the top programs in the South, with strong regional employment outcomes.",
+        "Oxford's status as William Faulkner's hometown gives the English and Southern Studies programs a genuine literary gravity.",
+        "The Grove tailgating tradition is widely regarded as one of the best in college football, creating an unusually strong alumni loyalty culture.",
+        "The School of Law maintains strong placement into Mississippi and Mid-South regional legal practice."
+      ],
+      "sleeperIndustries": [
+        "Pharmaceutical Sciences and Pharmacy",
+        "Regional Legal Practice",
+        "Public Relations and Strategic Communications",
+        "Southern Cultural and Literary Studies"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 68,
+      "mentorshipDensity": 70,
+      "executiveAccess": 56,
+      "internshipNetwork": 62,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 68,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 72,
+      "donorNetworkStrength": 58,
+      "boardMemberDensity": 46
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Pharmacy and Pharmaceuticals",
+        "Law",
+        "Financial Services",
+        "Logistics",
+        "Education"
+      ],
+      "regionalEconomicDrivers": [
+        "Healthcare and Pharmacy",
+        "Logistics (FedEx)",
+        "Financial Services",
+        "Agriculture"
+      ],
+      "topEmployers": [
+        "FedEx",
+        "Renasant Bank",
+        "Regional pharmacy chains",
+        "Baptist Memorial Health Care",
+        "Mississippi state government"
+      ],
+      "emergingIndustries": [
+        "Digital Health",
+        "Pharmaceutical Technology",
+        "Financial Technology"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 20,
+      "corporateHeadquartersDensity": 30,
+      "healthcareHubStrength": 60,
+      "innovationIndex": 46
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Mississippi and the Mid-South's Pharmacy, Law, and Financial Services Economy",
+      "secondaryMarkets": [
+        "Memphis TN",
+        "Nashville TN",
+        "Atlanta GA",
+        "Jackson MS"
+      ],
+      "alumniStrongholds": [
+        "Memphis TN",
+        "Jackson MS",
+        "Oxford MS",
+        "Nashville TN"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Mississippi and the Mid-South, entering pharmacy, law, and financial services.",
+        "Memphis draws graduates into logistics, healthcare, and corporate business roles.",
+        "Nashville and Atlanta attract graduates into broader Southeastern corporate and finance roles.",
+        "Pharmacy graduates disperse regionally into retail and hospital pharmacy practice.",
+        "Law graduates concentrate primarily within Mississippi's legal market."
+      ],
+      "regionalInfluenceScore": 88,
+      "nationalReachScore": 46,
+      "internationalReachScore": 26
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 52,
+      "studentOrganizationStrength": 74,
+      "leadershipDevelopment": 70,
+      "crossDisciplinaryInteraction": 58,
+      "civicEngagement": 60
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 78,
+        "notes": "Strong pathway through the School of Pharmacy."
+      },
+      "nutraceuticals": {
+        "strength": 44,
+        "notes": "Some overlap through pharmaceutical sciences research."
+      },
+      "consumerProducts": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 46,
+        "notes": "Moderate pathway given SEC athletics culture."
+      },
+      "entertainmentMedia": {
+        "strength": 40,
+        "notes": "Some presence through journalism and integrated marketing communications."
+      },
+      "ventureCapital": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 30,
+        "notes": "Limited but present through the business school."
+      },
+      "consulting": {
+        "strength": 38,
+        "notes": "Present but modest."
+      },
+      "medicine": {
+        "strength": 68,
+        "notes": "Solid pre-med and pharmacy pipeline."
+      },
+      "healthcareAdministration": {
+        "strength": 54,
+        "notes": "Moderate pathway through health sciences and pharmacy programs."
+      },
+      "defense": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 18,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 38,
+        "notes": "Modest entrepreneurship culture."
+      },
+      "technology": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis relative to law and pharmacy."
+      },
+      "publicPolicy": {
+        "strength": 42,
+        "notes": "Moderate pathway through public policy leadership programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 40,
+        "notes": "Present pathway, often tied to regional community and healthcare organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 62,
+      "firstGenerationSupport": 62,
+      "wealthCreationPotential": 58,
+      "familyBusinessPipelineStrength": 42
+    },
+    "futureResilience": {
+      "aiResistance": 66,
+      "automationResistance": 62,
+      "adaptabilityScore": 58,
+      "interdisciplinaryStrength": 56,
+      "futureReadiness": 58,
+      "entrepreneurialFlexibility": 46,
+      "lifelongLearningCulture": 60,
+      "innovationCapacity": 50
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 58,
+      "communityLeadershipPotential": 70,
+      "geographicMobility": 50,
+      "workLifeBalancePotential": 78,
+      "purposeAlignment": 68,
+      "familyFormationSupport": 78,
+      "personalDevelopmentPotential": 70,
+      "careerOptionality": 54,
+      "longTermLifeSatisfaction": 76
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 54,
+      "networkMoat": 56,
+      "geographicMoat": 76,
+      "industryMoat": 68,
+      "alumniMoat": 72,
+      "brandDurability": 68,
+      "overallMoatScore": 65
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 34,
+      "returnerScore": 66,
+      "stewardScore": 78,
+      "navigatorScore": 38,
+      "geographicLockIn": "high",
+      "alumniDispersalPattern": "deep_regional_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 26,
+        "type": "Regional Hillel Affiliate"
+      },
+      "estimatedJewishUndergraduates": 100,
+      "jewishStudentPercentage": "<1%",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Limited",
+      "notes": "Ole Miss's Jewish community is very small, supported by a regional Hillel affiliate, without dedicated kosher dining or extensive on-campus programming."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Sally McDonnell Barksdale Honors College",
+      "strength": 76,
+      "notes": "One of the more developed honors colleges among Southern flagships, offering smaller seminar coursework, dedicated honors housing, thesis research, and priority faculty access."
+    }
+  },
+
+"University of Nebraska-Lincoln": {
+    "institutionNarrative": {
+      "name": "University of Nebraska-Lincoln",
+      "location": "Lincoln, Nebraska",
+      "region": "Midwest",
+      "archetype": "The Agricultural Engineering and Actuarial Science Hub \u2014 Great Plains Agriculture and Insurance Industry Anchor",
+      "oneSentenceSummary": "The University of Nebraska-Lincoln combines one of the nation's strongest actuarial science programs with deep agricultural engineering research, anchored in a Great Plains economy built on insurance, agriculture, and food processing.",
+      "pipeline": "Approximately 20,000 undergraduates. UNL is nationally recognized for Actuarial Science, Agricultural Engineering, Agronomy, Business, and Engineering. Major recruiters include Berkshire Hathaway (Union Pacific, GEICO, and other subsidiaries), Mutual of Omaha, Nelnet, ConAgra Foods, and major agricultural and insurance employers throughout the Great Plains.",
+      "hiddenPathway": "Nebraska's actuarial science program is one of the oldest and most respected in the country, feeding directly into Omaha's dense concentration of insurance companies including Mutual of Omaha and Berkshire Hathaway's insurance subsidiaries, a pathway few students outside the Midwest know exists.",
+      "institutionalSecret": "Omaha, an hour from campus, is one of the most underappreciated corporate headquarters cities in America, home to Berkshire Hathaway, Mutual of Omaha, and Union Pacific, giving Nebraska graduates access to Fortune 500 leadership roles that far exceed the state's general reputation.",
+      "theRoom": "Located in Lincoln, students are an hour from Omaha's concentration of insurance, finance, and transportation corporate headquarters, alongside deep agricultural research ties throughout Nebraska's farming economy.",
+      "lifestyle": "Community-oriented, practical, and centered around Husker football and Great Plains agricultural values, with a close-knit, hardworking academic culture.",
+      "bestFitPersonality": "Practical, mathematically inclined, drawn to actuarial science, agriculture, or engineering, and comfortable in a close-knit Great Plains community culture.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Nebraska and the broader Great Plains, with national reputation in actuarial science and agricultural engineering.",
+      "economicOutcome": "Strong outcomes in actuarial science, insurance, agriculture, engineering, and business, with deep regional influence throughout the Great Plains.",
+      "gradCities": [
+        "Omaha NE",
+        "Lincoln NE",
+        "Kansas City MO",
+        "Denver CO",
+        "Chicago IL"
+      ],
+      "comparableInstitutions": [
+        "University of Iowa",
+        "Kansas State University",
+        "Iowa State University",
+        "University of Kansas",
+        "South Dakota State University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Southeast Community College",
+          "Metropolitan Community College"
+        ],
+        "transferAcceptanceRate": "~80%",
+        "freshmanAcceptanceRate": "~82%",
+        "estimatedSavingsRange": "$10,000-$26,000",
+        "transferNotes": "Nebraska maintains strong articulation agreements across the state's community college system, supporting transfer into business, agriculture, and engineering programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Nebraska",
+      "archetype": "Public Research Flagship \u2014 Actuarial Science and Agricultural Engineering",
+      "institutionalPersonality": "practical, hardworking, community-oriented, mathematically rigorous, Midwestern",
+      "cultureKeywords": [
+        "Actuarial Science",
+        "Agriculture",
+        "Husker Football",
+        "Insurance Industry",
+        "Great Plains",
+        "Engineering"
+      ],
+      "missionOrientation": "Advancing agricultural science, actuarial mathematics, and engineering while serving Nebraska's economy and communities.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through applied agricultural research, rigorous actuarial mathematics coursework, and hands-on engineering design projects.",
+      "competitiveness": "Moderately Selective",
+      "politicalCulture": "Generally conservative-leaning, reflecting the broader Nebraska and Great Plains region.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Nationally elite in actuarial science; strong regional flagship prestige in agriculture and engineering.",
+      "socialClimate": "Community-oriented, practical, and centered around Husker football tradition.",
+      "leadershipStyle": "Leadership through practical excellence, agricultural stewardship, and mathematical rigor."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "regionalRole": "A Great Plains flagship anchoring actuarial science and agricultural engineering for Nebraska's insurance and farming economy."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 54,
+      "BosWash": 10,
+      "TorBuffChester": 6,
+      "TexasTriangle": 14,
+      "CharLanta": 6,
+      "NorCalInnovationCorridor": 6,
+      "SoCalCreativeEconomy": 4
+    },
+    "comparativePositioning": {
+      "versusIowa": "Iowa offers stronger creative writing and literary arts prestige, while Nebraska offers a stronger actuarial science pipeline directly tied to Omaha's insurance industry.",
+      "versusKansasState": "Kansas State offers comparable agricultural engineering strength with a more rural culture, while Nebraska offers deeper actuarial science and insurance industry integration through Omaha.",
+      "versusIowaState": "Iowa State offers a larger, more comprehensive engineering program, while Nebraska offers a more concentrated actuarial science and insurance industry pathway."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 20000,
+      "graduateEnrollment": 5000,
+      "totalEnrollment": 25000,
+      "campusType": "Great Plains Flagship College Town",
+      "residentialIntensity": 58,
+      "communityFeel": 78,
+      "studentFacultyRatio": "17:1",
+      "classSizeExperience": "Moderate lecture sizes in general education, with rigorous, problem-set-driven coursework in actuarial science and engineering.",
+      "scaleAdvantages": [
+        "One of the oldest and most respected actuarial science programs in the country",
+        "Direct proximity to Omaha's insurance and finance corporate headquarters",
+        "Strong agricultural engineering research",
+        "Close-knit Husker football culture"
+      ],
+      "scaleDisadvantages": [
+        "Limited name recognition outside actuarial and agricultural circles",
+        "Smaller corporate recruiting pipeline outside insurance and agriculture",
+        "Rural Great Plains location distant from major coastal job markets",
+        "Harsh winters may not suit all students"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 72,
+        "conscientiousness": 86,
+        "extraversion": 66,
+        "agreeableness": 78,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "C",
+        "I",
+        "R"
+      ],
+      "learningStyle": [
+        "Actuarial Mathematics",
+        "Applied Agricultural Research",
+        "Hands-On Engineering Design",
+        "Collaborative Study"
+      ],
+      "socialEnvironment": [
+        "Practical",
+        "Community-Oriented",
+        "Mathematically Rigorous",
+        "Husker-Football-Centered",
+        "Midwestern"
+      ],
+      "idealStudentTraits": [
+        "Mathematically inclined",
+        "Practical and hardworking",
+        "Drawn to actuarial science, agriculture, or engineering",
+        "Comfortable in a close-knit Great Plains community"
+      ],
+      "thrivesIf": [
+        "Plans for actuarial science, insurance, agriculture, or engineering",
+        "Wants direct access to Omaha's insurance and finance corporate headquarters",
+        "Values a close-knit, practical Midwestern community",
+        "Enjoys Husker football culture and tradition"
+      ],
+      "strugglesIf": [
+        "Wants a major coastal or urban campus setting",
+        "Needs strong national brand recognition outside actuarial and agricultural fields",
+        "Dislikes cold Great Plains winters",
+        "Prefers a more socially varied, less football-centered culture"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more urban or coastal campus setting",
+        "Students wanting fields outside actuarial science, agriculture, or engineering",
+        "Students who prefer warmer climates"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Actuarial science and select engineering programs carry additional rigor and internal competition for top insurance industry recruiting spots."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Actuarial Science",
+        "Agricultural Engineering",
+        "Agronomy and Horticulture",
+        "Insurance and Risk Management",
+        "Biological Systems Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Actuarial and Insurance Careers",
+        "Agricultural Engineering and Technology",
+        "Food Processing and Agribusiness",
+        "Transportation and Logistics (Union Pacific)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Berkshire Hathaway subsidiaries",
+        "Mutual of Omaha",
+        "Union Pacific",
+        "Nelnet",
+        "ConAgra Foods"
+      ],
+      "overlookedStrengths": [
+        "Nebraska's actuarial science program is one of the oldest and most respected in the country, feeding directly into Omaha's dense insurance industry.",
+        "Omaha, an hour from campus, is home to Berkshire Hathaway, Mutual of Omaha, and Union Pacific, offering Fortune 500 corporate access that exceeds the state's general reputation.",
+        "The agricultural engineering program maintains deep research ties throughout Nebraska's farming economy.",
+        "Husker football culture creates an unusually strong and loyal alumni network relative to the university's size."
+      ],
+      "sleeperIndustries": [
+        "Actuarial Science and Insurance",
+        "Agricultural Engineering and AgTech",
+        "Transportation and Logistics",
+        "Food Processing and Agribusiness"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 70,
+      "mentorshipDensity": 72,
+      "executiveAccess": 62,
+      "internshipNetwork": 74,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 70,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 72,
+      "donorNetworkStrength": 58,
+      "boardMemberDensity": 50
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Insurance",
+        "Agriculture",
+        "Transportation and Logistics",
+        "Financial Services",
+        "Food Processing"
+      ],
+      "regionalEconomicDrivers": [
+        "Insurance",
+        "Agriculture and Agribusiness",
+        "Transportation (Union Pacific)",
+        "Financial Services"
+      ],
+      "topEmployers": [
+        "Berkshire Hathaway subsidiaries",
+        "Mutual of Omaha",
+        "Union Pacific",
+        "Nelnet",
+        "ConAgra Foods"
+      ],
+      "emergingIndustries": [
+        "Insurance Technology",
+        "Agricultural Technology",
+        "Financial Technology"
+      ],
+      "startupDensity": "Low to Moderate",
+      "ventureCapitalAccess": 28,
+      "corporateHeadquartersDensity": 58,
+      "healthcareHubStrength": 50,
+      "innovationIndex": 56
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Nebraska and the Great Plains Insurance, Agriculture, and Transportation Economy",
+      "secondaryMarkets": [
+        "Omaha NE",
+        "Kansas City MO",
+        "Denver CO",
+        "Chicago IL"
+      ],
+      "alumniStrongholds": [
+        "Omaha NE",
+        "Lincoln NE",
+        "Kansas City MO",
+        "Denver CO"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Nebraska, entering insurance, agriculture, and financial services, particularly in Omaha.",
+        "Kansas City and Denver draw graduates into broader Midwestern corporate and agricultural business roles.",
+        "Chicago attracts graduates into finance and consulting roles.",
+        "Actuarial science graduates disperse nationally into insurance companies across the country.",
+        "Agricultural engineering graduates disperse regionally into agribusiness and food processing roles."
+      ],
+      "regionalInfluenceScore": 88,
+      "nationalReachScore": 52,
+      "internationalReachScore": 32
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 28,
+      "studentOrganizationStrength": 76,
+      "leadershipDevelopment": 70,
+      "crossDisciplinaryInteraction": 62,
+      "civicEngagement": 68
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 46,
+        "notes": "Moderate presence, not a primary institutional focus."
+      },
+      "nutraceuticals": {
+        "strength": 46,
+        "notes": "Meaningful overlap through agricultural and food science research."
+      },
+      "consumerProducts": {
+        "strength": 42,
+        "notes": "Some presence through food processing and agribusiness ties."
+      },
+      "outdoorIndustry": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 48,
+        "notes": "Moderate pathway given the strength of Husker football culture."
+      },
+      "entertainmentMedia": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 30,
+        "notes": "Present, primarily through Berkshire Hathaway-adjacent finance ties."
+      },
+      "investmentBanking": {
+        "strength": 34,
+        "notes": "Limited but present through the business school."
+      },
+      "consulting": {
+        "strength": 42,
+        "notes": "Present but modest."
+      },
+      "medicine": {
+        "strength": 52,
+        "notes": "Moderate pre-med pipeline, though Nebraska's medical school is a separate institution in Omaha."
+      },
+      "healthcareAdministration": {
+        "strength": 46,
+        "notes": "Moderate pathway through health sciences and insurance-adjacent programs."
+      },
+      "defense": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 12,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 44,
+        "notes": "Modest entrepreneurship culture, growing in agricultural technology."
+      },
+      "technology": {
+        "strength": 46,
+        "notes": "Growing presence, particularly in agricultural technology and insurance technology."
+      },
+      "publicPolicy": {
+        "strength": 40,
+        "notes": "Moderate pathway, often agriculture-adjacent."
+      },
+      "nonprofitLeadership": {
+        "strength": 42,
+        "notes": "Present pathway, often tied to agricultural and community organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 70,
+      "firstGenerationSupport": 70,
+      "wealthCreationPotential": 64,
+      "familyBusinessPipelineStrength": 46
+    },
+    "futureResilience": {
+      "aiResistance": 72,
+      "automationResistance": 68,
+      "adaptabilityScore": 64,
+      "interdisciplinaryStrength": 60,
+      "futureReadiness": 64,
+      "entrepreneurialFlexibility": 50,
+      "lifelongLearningCulture": 66,
+      "innovationCapacity": 58
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 64,
+      "communityLeadershipPotential": 74,
+      "geographicMobility": 54,
+      "workLifeBalancePotential": 82,
+      "purposeAlignment": 74,
+      "familyFormationSupport": 82,
+      "personalDevelopmentPotential": 74,
+      "careerOptionality": 58,
+      "longTermLifeSatisfaction": 80
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 58,
+      "networkMoat": 60,
+      "geographicMoat": 82,
+      "industryMoat": 82,
+      "alumniMoat": 72,
+      "brandDurability": 70,
+      "overallMoatScore": 70
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 40,
+      "returnerScore": 64,
+      "stewardScore": 76,
+      "navigatorScore": 44,
+      "geographicLockIn": "moderate_to_high",
+      "alumniDispersalPattern": "regional_concentration_with_insurance_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 34,
+        "type": "Regional Hillel Affiliate"
+      },
+      "estimatedJewishUndergraduates": 200,
+      "jewishStudentPercentage": "~1%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Limited",
+      "notes": "Nebraska's Jewish community is small, supported by a regional Hillel affiliate connected to Omaha's more established Jewish community, without dedicated on-campus kosher dining."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "University Honors Program",
+      "strength": 72,
+      "notes": "Offers smaller seminar coursework, priority registration, dedicated honors housing, and research opportunities for high-achieving students across all majors."
+    }
+  },
+
+"University of Tennessee": {
+    "institutionNarrative": {
+      "name": "University of Tennessee",
+      "location": "Knoxville, Tennessee",
+      "region": "Southeast",
+      "archetype": "The Nuclear Engineering and Nashville-Adjacent Business Gateway \u2014 Oak Ridge Research and SEC Culture",
+      "oneSentenceSummary": "The University of Tennessee combines a nationally distinguished nuclear engineering program built on direct proximity to Oak Ridge National Laboratory with growing business and finance placement into Nashville's booming corporate economy, all wrapped in an intensely spirited SEC athletics culture.",
+      "pipeline": "Approximately 30,000 undergraduates. UT Knoxville is nationally recognized for Nuclear Engineering, Supply Chain Management, Business, Agriculture, and Communications. Major recruiters include Oak Ridge National Laboratory, Denso, Eastman Chemical, HCA Healthcare, and a growing pipeline into Nashville's music, healthcare, and corporate economy.",
+      "hiddenPathway": "UT's partnership with Oak Ridge National Laboratory gives undergraduate nuclear and materials engineering students access to national laboratory research facilities that most universities can only offer graduate students, if at all.",
+      "institutionalSecret": "Nashville's explosive growth as a corporate relocation destination has quietly made UT Knoxville, just three hours away, one of the best-positioned state flagships in the country to feed graduates into a booming metro economy most families still associate only with country music.",
+      "theRoom": "Located in Knoxville, students sit between Oak Ridge National Laboratory's nuclear and materials science research campus and Nashville's rapidly growing corporate, healthcare, and music industry economy three hours west.",
+      "lifestyle": "Spirited, outdoorsy, and increasingly ambitious. Neyland Stadium's SEC football culture anchors campus life, while the nearby Great Smoky Mountains support a strong outdoor recreation culture.",
+      "bestFitPersonality": "Spirited, drawn to engineering, business, or healthcare, comfortable with SEC athletics culture, and motivated by the growing opportunity of the Nashville corridor.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Tennessee and increasingly influential in Nashville's corporate economy, with national reputation in nuclear engineering.",
+      "economicOutcome": "Strong outcomes in engineering, business, supply chain, and healthcare, with growing influence in Nashville's expanding corporate and healthcare economy.",
+      "gradCities": [
+        "Nashville TN",
+        "Knoxville TN",
+        "Atlanta GA",
+        "Charlotte NC",
+        "Chattanooga TN"
+      ],
+      "comparableInstitutions": [
+        "University of Alabama",
+        "University of South Carolina",
+        "University of Kentucky",
+        "Clemson University",
+        "Auburn University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Pellissippi State Community College",
+          "Nashville State Community College"
+        ],
+        "transferAcceptanceRate": "~76%",
+        "freshmanAcceptanceRate": "~78%",
+        "estimatedSavingsRange": "$10,000-$26,000",
+        "transferNotes": "UT Knoxville maintains strong articulation agreements across Tennessee's community college system, supporting transfer into engineering, business, and health sciences programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Tennessee",
+      "archetype": "Public Research Flagship \u2014 Nuclear Engineering and Nashville-Adjacent Business",
+      "institutionalPersonality": "spirited, ambitious, outdoorsy, increasingly corporate-minded, Southern",
+      "cultureKeywords": [
+        "Nuclear Engineering",
+        "Oak Ridge",
+        "SEC Athletics",
+        "Nashville",
+        "Supply Chain",
+        "Great Smoky Mountains"
+      ],
+      "missionOrientation": "Advancing nuclear engineering, business, and applied research while serving Tennessee's growing economy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through national-laboratory-connected engineering research, applied business coursework, and hands-on supply chain simulation.",
+      "competitiveness": "Moderately Selective",
+      "politicalCulture": "Generally conservative-leaning, reflecting the broader Tennessee region.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Nationally elite in nuclear engineering; growing regional prestige in business tied to Nashville's economic boom.",
+      "socialClimate": "Spirited, outdoorsy, and increasingly ambitious given Nashville's growth.",
+      "leadershipStyle": "Leadership through engineering research excellence and growing corporate ambition."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "CharLanta",
+      "regionalRole": "A Southeastern flagship anchoring nuclear engineering research and increasingly feeding into Nashville's booming corporate economy."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 14,
+      "BosWash": 12,
+      "TorBuffChester": 8,
+      "TexasTriangle": 16,
+      "CharLanta": 44,
+      "NorCalInnovationCorridor": 6,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusAlabama": "Alabama offers a larger, more nationally visible football brand, while Tennessee offers a stronger nuclear engineering pipeline through Oak Ridge and closer proximity to Nashville's booming corporate economy.",
+      "versusSouthCarolina": "South Carolina offers stronger international business placement, while Tennessee offers deeper engineering research ties to Oak Ridge National Laboratory.",
+      "versusClemson": "Clemson offers a more concentrated engineering identity with strong automotive research ties, while Tennessee offers broader business growth tied to Nashville alongside nuclear engineering strength."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 30000,
+      "graduateEnrollment": 5500,
+      "totalEnrollment": 35500,
+      "campusType": "SEC Flagship College Town",
+      "residentialIntensity": 58,
+      "communityFeel": 76,
+      "studentFacultyRatio": "17:1",
+      "classSizeExperience": "Moderate lecture sizes in general education, with strong research-lab access in nuclear and materials engineering through Oak Ridge partnerships.",
+      "scaleAdvantages": [
+        "Direct research partnership with Oak Ridge National Laboratory",
+        "Growing proximity advantage to Nashville's booming economy",
+        "Strong supply chain and business placement",
+        "Access to Great Smoky Mountains outdoor recreation"
+      ],
+      "scaleDisadvantages": [
+        "Limited name recognition outside engineering and SEC circles",
+        "Nashville's growth benefit is still relatively recent and developing",
+        "Smaller research profile than top-tier engineering schools",
+        "Athletics culture may overshadow academic reputation"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 74,
+        "conscientiousness": 80,
+        "extraversion": 76,
+        "agreeableness": 78,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "R",
+        "E",
+        "I"
+      ],
+      "learningStyle": [
+        "National-Laboratory-Connected Research",
+        "Applied Business Casework",
+        "Supply Chain Simulation",
+        "Collaborative Learning"
+      ],
+      "socialEnvironment": [
+        "Spirited",
+        "Outdoorsy",
+        "Ambitious",
+        "SEC-Athletics-Centered",
+        "Southern"
+      ],
+      "idealStudentTraits": [
+        "Spirited",
+        "Drawn to engineering, business, or healthcare",
+        "Comfortable with SEC athletics culture",
+        "Motivated by growing regional opportunity"
+      ],
+      "thrivesIf": [
+        "Plans for nuclear engineering, business, or supply chain",
+        "Wants direct access to Oak Ridge National Laboratory research",
+        "Values proximity to Nashville's growing corporate economy",
+        "Enjoys SEC athletics culture and outdoor recreation"
+      ],
+      "strugglesIf": [
+        "Wants a major coastal urban campus setting",
+        "Needs strong national brand recognition outside engineering",
+        "Is uninterested in athletics-driven campus culture",
+        "Prefers a quieter, less spirited social environment"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more urban coastal campus setting",
+        "Students wanting fields outside engineering, business, or supply chain",
+        "Students uninterested in a strong SEC athletics culture"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Nuclear engineering and supply chain management carry additional rigor and selectivity within the Haslam College of Business and Tickle College of Engineering."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Nuclear Engineering",
+        "Supply Chain Management",
+        "Communication Studies",
+        "Textiles, Merchandising and Design",
+        "Forestry, Wildlife and Fisheries"
+      ],
+      "hiddenCareerPipelines": [
+        "Nuclear and Energy Engineering",
+        "Nashville Healthcare Corporate Roles",
+        "Supply Chain and Logistics",
+        "Music Industry Business (via Nashville proximity)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Oak Ridge National Laboratory",
+        "Denso",
+        "Eastman Chemical",
+        "HCA Healthcare",
+        "Nashville corporate relocations"
+      ],
+      "overlookedStrengths": [
+        "UT's nuclear engineering program benefits from an unmatched research partnership with Oak Ridge National Laboratory.",
+        "Nashville's rapid corporate growth, just three hours away, has created a booming recruiting pipeline most families still overlook.",
+        "The Haslam College of Business has built increasingly strong supply chain and healthcare management placement.",
+        "Proximity to the Great Smoky Mountains supports a distinctive outdoor recreation culture alongside academics."
+      ],
+      "sleeperIndustries": [
+        "Nuclear and Clean Energy Engineering",
+        "Healthcare Corporate Management (Nashville)",
+        "Supply Chain and Logistics",
+        "Music and Entertainment Business"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 70,
+      "mentorshipDensity": 70,
+      "executiveAccess": 62,
+      "internshipNetwork": 72,
+      "familyBusinessExposure": 42,
+      "relationshipCapitalScore": 70,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 70,
+      "donorNetworkStrength": 60,
+      "boardMemberDensity": 50
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Nuclear Engineering",
+        "Healthcare",
+        "Business",
+        "Manufacturing",
+        "Logistics"
+      ],
+      "regionalEconomicDrivers": [
+        "Energy and Nuclear Research",
+        "Healthcare (Nashville)",
+        "Automotive Manufacturing",
+        "Logistics"
+      ],
+      "topEmployers": [
+        "Oak Ridge National Laboratory",
+        "Denso",
+        "Eastman Chemical",
+        "HCA Healthcare",
+        "Regal Rexnord"
+      ],
+      "emergingIndustries": [
+        "Clean Energy Technology",
+        "Digital Health",
+        "Advanced Manufacturing"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 34,
+      "corporateHeadquartersDensity": 42,
+      "healthcareHubStrength": 66,
+      "innovationIndex": 62
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Tennessee's Nuclear Research, Healthcare, and Growing Corporate Economy",
+      "secondaryMarkets": [
+        "Nashville TN",
+        "Atlanta GA",
+        "Charlotte NC",
+        "Chattanooga TN"
+      ],
+      "alumniStrongholds": [
+        "Knoxville TN",
+        "Nashville TN",
+        "Chattanooga TN",
+        "Atlanta GA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Tennessee, entering engineering, healthcare, and business roles across Knoxville and Nashville.",
+        "Nashville draws a growing share of graduates into healthcare corporate, finance, and music industry business roles.",
+        "Atlanta and Charlotte attract graduates into broader Southeastern corporate roles.",
+        "Nuclear and materials engineering graduates disperse nationally into national laboratories and energy companies.",
+        "A smaller cohort enters national supply chain and logistics leadership roles."
+      ],
+      "regionalInfluenceScore": 88,
+      "nationalReachScore": 58,
+      "internationalReachScore": 34
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 34,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 72,
+      "crossDisciplinaryInteraction": 64,
+      "civicEngagement": 66
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 70,
+        "notes": "Growing pathway tied to Nashville's expanding healthcare corporate sector."
+      },
+      "nutraceuticals": {
+        "strength": 34,
+        "notes": "Some overlap through agricultural and food science research."
+      },
+      "consumerProducts": {
+        "strength": 44,
+        "notes": "Moderate presence through business school placement."
+      },
+      "outdoorIndustry": {
+        "strength": 54,
+        "notes": "Meaningful presence given proximity to the Great Smoky Mountains."
+      },
+      "sportsBusiness": {
+        "strength": 50,
+        "notes": "Moderate pathway given SEC athletics culture."
+      },
+      "entertainmentMedia": {
+        "strength": 46,
+        "notes": "Growing presence through Nashville's music and entertainment business proximity."
+      },
+      "ventureCapital": {
+        "strength": 28,
+        "notes": "Limited but growing, particularly tied to Nashville's expanding economy."
+      },
+      "privateEquity": {
+        "strength": 34,
+        "notes": "Present, primarily through Nashville-adjacent healthcare finance."
+      },
+      "investmentBanking": {
+        "strength": 38,
+        "notes": "Limited but present through the business school."
+      },
+      "consulting": {
+        "strength": 50,
+        "notes": "Present, particularly for healthcare and supply chain consulting."
+      },
+      "medicine": {
+        "strength": 62,
+        "notes": "Solid pre-med pipeline, strengthened by proximity to Nashville's major hospital systems."
+      },
+      "healthcareAdministration": {
+        "strength": 68,
+        "notes": "Growing pathway given Nashville's concentration of healthcare corporate headquarters."
+      },
+      "defense": {
+        "strength": 40,
+        "notes": "Present through nuclear and materials engineering ties to national security research."
+      },
+      "realEstate": {
+        "strength": 40,
+        "notes": "Moderate presence given Nashville and Knoxville's growing real estate markets."
+      },
+      "luxuryBrands": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 52,
+        "notes": "Growing entrepreneurship culture, particularly tied to Nashville's expanding startup scene."
+      },
+      "technology": {
+        "strength": 58,
+        "notes": "Growing presence, particularly in nuclear and energy technology."
+      },
+      "publicPolicy": {
+        "strength": 42,
+        "notes": "Moderate pathway through public policy and energy policy programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 44,
+        "notes": "Present pathway, often tied to regional community organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 68,
+      "firstGenerationSupport": 68,
+      "wealthCreationPotential": 66,
+      "familyBusinessPipelineStrength": 42
+    },
+    "futureResilience": {
+      "aiResistance": 74,
+      "automationResistance": 70,
+      "adaptabilityScore": 68,
+      "interdisciplinaryStrength": 62,
+      "futureReadiness": 70,
+      "entrepreneurialFlexibility": 56,
+      "lifelongLearningCulture": 66,
+      "innovationCapacity": 68
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 66,
+      "communityLeadershipPotential": 70,
+      "geographicMobility": 60,
+      "workLifeBalancePotential": 80,
+      "purposeAlignment": 70,
+      "familyFormationSupport": 78,
+      "personalDevelopmentPotential": 74,
+      "careerOptionality": 62,
+      "longTermLifeSatisfaction": 78
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 60,
+      "networkMoat": 58,
+      "geographicMoat": 78,
+      "industryMoat": 76,
+      "alumniMoat": 68,
+      "brandDurability": 68,
+      "overallMoatScore": 68
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 44,
+      "returnerScore": 60,
+      "stewardScore": 68,
+      "navigatorScore": 52,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "regional_concentration_with_nashville_growth"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 40,
+        "type": "Regional Hillel Affiliate"
+      },
+      "estimatedJewishUndergraduates": 250,
+      "jewishStudentPercentage": "~1%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Limited",
+      "notes": "UT Knoxville maintains a small Hillel presence, without dedicated kosher dining facilities on campus."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Haslam Scholars Program and Chancellor's Honors Program",
+      "strength": 74,
+      "notes": "Offers smaller seminar coursework, priority research access, and dedicated honors housing for high-achieving students across all majors."
+    }
+  },
+
+"University of Vermont": {
+    "institutionNarrative": {
+      "name": "University of Vermont",
+      "location": "Burlington, Vermont",
+      "region": "New England",
+      "archetype": "The Environmental Sustainability and Rural Medicine Anchor \u2014 Green Living and New England Small-City Life",
+      "oneSentenceSummary": "The University of Vermont is a national leader in environmental studies and sustainability science, combining a strong medical school focused on rural healthcare with an authentic, outdoors-oriented New England lifestyle in one of the country's most livable small cities.",
+      "pipeline": "Approximately 11,000 undergraduates. UVM is nationally recognized for Environmental Studies, Sustainability Science, Medicine (particularly rural and primary care), Nursing, and Business. Major recruiters include University of Vermont Medical Center, Green Mountain Coffee Roasters, Ben & Jerry's, IBM, and regional healthcare and environmental organizations.",
+      "hiddenPathway": "UVM's Rubenstein School of Environment and Natural Resources and its Gund Institute for Environment give students genuine access to cutting-edge sustainability research that most environmental studies programs can only reference secondhand.",
+      "institutionalSecret": "UVM's Larner College of Medicine has an outsized focus on training physicians for rural and primary care practice, a mission-driven pathway that gives pre-med students a distinctive and less cutthroat route into medicine than more prestige-driven programs.",
+      "theRoom": "Located in Burlington, a small city consistently ranked among the most livable in America, students are embedded in Vermont's environmental sustainability economy alongside easy access to Lake Champlain and the Green Mountains.",
+      "lifestyle": "Outdoorsy, environmentally conscious, and community-minded. Burlington's small-city charm, farm-to-table food culture, and proximity to skiing and hiking create a distinctive New England lifestyle woven directly into academics.",
+      "bestFitPersonality": "Environmentally conscious, outdoors-oriented, community-minded, and drawn to sustainability, medicine, or public health.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout New England and growing national influence in environmental studies and sustainability research.",
+      "economicOutcome": "Strong outcomes in environmental science, medicine, public health, and sustainability-focused business, with meaningful regional influence throughout New England.",
+      "gradCities": [
+        "Boston MA",
+        "Burlington VT",
+        "New York NY",
+        "Portland ME",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "University of New Hampshire",
+        "University of Massachusetts Amherst",
+        "University of Maine",
+        "University of Connecticut",
+        "Colorado State University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Community College of Vermont"
+        ],
+        "transferAcceptanceRate": "~72%",
+        "freshmanAcceptanceRate": "~64%",
+        "estimatedSavingsRange": "$14,000-$32,000",
+        "transferNotes": "UVM maintains strong articulation agreements with the Community College of Vermont, supporting transfer into environmental studies, business, and health sciences programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Vermont",
+      "archetype": "Public Research University \u2014 Environmental Sustainability and Rural Medicine",
+      "institutionalPersonality": "environmentally conscious, outdoorsy, community-minded, progressive, authentic",
+      "cultureKeywords": [
+        "Environmental Studies",
+        "Sustainability",
+        "Rural Medicine",
+        "Lake Champlain",
+        "Green Mountains",
+        "Farm-to-Table"
+      ],
+      "missionOrientation": "Advancing environmental sustainability, rural and primary care medicine, and public health while serving Vermont and New England.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through place-based environmental research, community-engaged medicine, and hands-on sustainability coursework grounded in Vermont's landscape.",
+      "competitiveness": "Moderately Selective",
+      "politicalCulture": "Strongly progressive and environmentally conscious.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Nationally recognized in environmental studies and sustainability; solid regional prestige in medicine and business.",
+      "socialClimate": "Outdoorsy, community-minded, and environmentally engaged.",
+      "leadershipStyle": "Leadership through environmental stewardship, rural healthcare mission, and sustainable community engagement."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "New England's leading environmental sustainability research university, combined with a mission-driven rural medicine program."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 56,
+      "TorBuffChester": 20,
+      "TexasTriangle": 6,
+      "CharLanta": 6,
+      "NorCalInnovationCorridor": 8,
+      "SoCalCreativeEconomy": 4
+    },
+    "comparativePositioning": {
+      "versusUNH": "UNH offers a stronger engineering and business identity, while UVM offers deeper environmental studies prestige and a stronger rural medicine mission.",
+      "versusUMassAmherst": "UMass Amherst offers a larger, more comprehensive research university with broader program breadth, while UVM offers a more concentrated environmental sustainability identity and a more intimate small-city setting.",
+      "versusColoradoState": "Colorado State offers a larger scale with strong agricultural and environmental science research in a mountain setting, while UVM offers a more compact New England experience with deeper rural medicine integration."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 11000,
+      "graduateEnrollment": 2500,
+      "totalEnrollment": 13500,
+      "campusType": "Small City Public Research University",
+      "residentialIntensity": 74,
+      "communityFeel": 84,
+      "studentFacultyRatio": "15:1",
+      "classSizeExperience": "Moderate class sizes with strong opportunities for undergraduate research in environmental science and increasing access to community-engaged medicine.",
+      "scaleAdvantages": [
+        "Nationally recognized environmental studies and sustainability programs",
+        "Mission-driven rural medicine pipeline",
+        "Burlington's status as one of the most livable small cities in America",
+        "Direct access to Lake Champlain and Green Mountains outdoor recreation"
+      ],
+      "scaleDisadvantages": [
+        "Limited name recognition outside environmental and medical circles",
+        "Smaller corporate recruiting pipeline than larger flagships",
+        "High out-of-state cost of attendance",
+        "Rural New England location distant from major metropolitan job markets"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 92,
+        "conscientiousness": 82,
+        "extraversion": 58,
+        "agreeableness": 82,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "I",
+        "S",
+        "R"
+      ],
+      "learningStyle": [
+        "Place-Based Environmental Research",
+        "Community-Engaged Medicine",
+        "Sustainability-Focused Coursework",
+        "Collaborative Study"
+      ],
+      "socialEnvironment": [
+        "Outdoorsy",
+        "Environmentally Conscious",
+        "Community-Minded",
+        "Progressive",
+        "Authentic"
+      ],
+      "idealStudentTraits": [
+        "Environmentally conscious",
+        "Outdoors-oriented",
+        "Community-minded",
+        "Drawn to sustainability, medicine, or public health"
+      ],
+      "thrivesIf": [
+        "Plans for environmental science, sustainability, or rural/primary care medicine",
+        "Wants an authentic outdoor New England lifestyle",
+        "Values a small, livable city setting",
+        "Enjoys a progressive, environmentally engaged campus culture"
+      ],
+      "strugglesIf": [
+        "Wants a major urban campus setting",
+        "Needs strong national brand recognition outside environmental and medical fields",
+        "Dislikes cold New England winters",
+        "Prefers a large, anonymous research university feel"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more urban campus setting",
+        "Students wanting a larger, more comprehensive research university",
+        "Students who prefer warmer climates"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Nursing and select environmental science tracks carry additional selectivity beyond general university admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Environmental Sciences",
+        "Community and International Development",
+        "Public Communication",
+        "Wildlife Biology",
+        "Food Systems"
+      ],
+      "hiddenCareerPipelines": [
+        "Environmental Consulting and Policy",
+        "Rural and Primary Care Medicine",
+        "Sustainable Food Systems",
+        "Nonprofit Environmental Leadership"
+      ],
+      "nicheRecruitingAdvantages": [
+        "University of Vermont Medical Center",
+        "Green Mountain Coffee Roasters",
+        "Ben & Jerry's",
+        "IBM (Vermont operations)"
+      ],
+      "overlookedStrengths": [
+        "The Gund Institute for Environment gives undergraduates genuine access to cutting-edge sustainability research.",
+        "The Larner College of Medicine's rural and primary care focus offers a less cutthroat, mission-driven pathway into medicine.",
+        "Burlington is consistently ranked among the most livable small cities in America.",
+        "UVM's food systems and sustainable agriculture programs benefit directly from Vermont's farm-to-table culture."
+      ],
+      "sleeperIndustries": [
+        "Environmental Policy and Consulting",
+        "Rural and Primary Care Medicine",
+        "Sustainable Food Systems",
+        "Nonprofit Environmental Leadership"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 62,
+      "mentorshipDensity": 68,
+      "executiveAccess": 52,
+      "internshipNetwork": 62,
+      "familyBusinessExposure": 32,
+      "relationshipCapitalScore": 62,
+      "alumniLoyaltyScore": 72,
+      "referralCultureStrength": 62,
+      "donorNetworkStrength": 52,
+      "boardMemberDensity": 44
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Healthcare",
+        "Environmental Science",
+        "Food and Agriculture",
+        "Education",
+        "Technology"
+      ],
+      "regionalEconomicDrivers": [
+        "Healthcare",
+        "Sustainable Agriculture and Food",
+        "Tourism",
+        "Technology (IBM)"
+      ],
+      "topEmployers": [
+        "University of Vermont Medical Center",
+        "IBM",
+        "Green Mountain Coffee Roasters",
+        "Ben & Jerry's",
+        "State of Vermont"
+      ],
+      "emergingIndustries": [
+        "Sustainable Food Technology",
+        "Climate Science and Policy",
+        "Digital Health"
+      ],
+      "startupDensity": "Low to Moderate",
+      "ventureCapitalAccess": 26,
+      "corporateHeadquartersDensity": 28,
+      "healthcareHubStrength": 66,
+      "innovationIndex": 54
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Vermont and New England's Environmental, Healthcare, and Sustainable Food Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "New York NY",
+        "Portland ME",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Burlington VT",
+        "Boston MA",
+        "Portland ME",
+        "New York NY"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates remain in Vermont and New England, entering healthcare, environmental organizations, and sustainable food businesses.",
+        "Boston draws graduates into healthcare, consulting, and environmental policy roles.",
+        "New York attracts graduates into finance, nonprofit leadership, and environmental consulting.",
+        "Medical graduates disperse regionally into rural and primary care practice throughout New England.",
+        "A smaller cohort enters national environmental policy roles in Washington DC."
+      ],
+      "regionalInfluenceScore": 84,
+      "nationalReachScore": 52,
+      "internationalReachScore": 34
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 14,
+      "studentOrganizationStrength": 74,
+      "leadershipDevelopment": 68,
+      "crossDisciplinaryInteraction": 72,
+      "civicEngagement": 78
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 82,
+        "notes": "Strong pathway through the Larner College of Medicine and nursing programs."
+      },
+      "nutraceuticals": {
+        "strength": 48,
+        "notes": "Meaningful overlap through food systems and sustainable agriculture research."
+      },
+      "consumerProducts": {
+        "strength": 44,
+        "notes": "Some presence through sustainable consumer products (Ben & Jerry's, Green Mountain Coffee)."
+      },
+      "outdoorIndustry": {
+        "strength": 78,
+        "notes": "Strong pathway given Vermont's outdoor recreation economy and student culture."
+      },
+      "sportsBusiness": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consulting": {
+        "strength": 44,
+        "notes": "Present, particularly for environmental and sustainability consulting."
+      },
+      "medicine": {
+        "strength": 80,
+        "notes": "Strong pre-med and rural/primary care medicine pipeline through the Larner College of Medicine."
+      },
+      "healthcareAdministration": {
+        "strength": 62,
+        "notes": "Solid pathway through public health and health policy programs."
+      },
+      "defense": {
+        "strength": 12,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 12,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 48,
+        "notes": "Growing sustainability and food systems entrepreneurship culture."
+      },
+      "technology": {
+        "strength": 42,
+        "notes": "Present through IBM ties and growing environmental technology programs."
+      },
+      "publicPolicy": {
+        "strength": 62,
+        "notes": "Strong pathway through environmental policy programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 68,
+        "notes": "Strong pathway, particularly for environmental and community development nonprofits."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 66,
+      "firstGenerationSupport": 64,
+      "wealthCreationPotential": 58,
+      "familyBusinessPipelineStrength": 32
+    },
+    "futureResilience": {
+      "aiResistance": 78,
+      "automationResistance": 76,
+      "adaptabilityScore": 72,
+      "interdisciplinaryStrength": 70,
+      "futureReadiness": 74,
+      "entrepreneurialFlexibility": 58,
+      "lifelongLearningCulture": 76,
+      "innovationCapacity": 66
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 58,
+      "communityLeadershipPotential": 78,
+      "geographicMobility": 62,
+      "workLifeBalancePotential": 88,
+      "purposeAlignment": 84,
+      "familyFormationSupport": 80,
+      "personalDevelopmentPotential": 84,
+      "careerOptionality": 60,
+      "longTermLifeSatisfaction": 84
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 58,
+      "networkMoat": 52,
+      "geographicMoat": 68,
+      "industryMoat": 70,
+      "alumniMoat": 62,
+      "brandDurability": 64,
+      "overallMoatScore": 62
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 46,
+      "returnerScore": 58,
+      "stewardScore": 66,
+      "navigatorScore": 52,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "new_england_concentration_with_national_environmental_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 56,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 900,
+      "jewishStudentPercentage": "~8%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "UVM has a proportionally notable Jewish population for its size, supported by an active Hillel, though without dedicated kosher dining facilities."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "UVM Honors College",
+      "strength": 76,
+      "notes": "Offers smaller seminar coursework, dedicated honors housing, thesis research, and priority faculty access for high-achieving students across all majors."
+    }
+  },
+
+"Florida State University": {
+    "institutionNarrative": {
+      "name": "Florida State University",
+      "location": "Tallahassee, Florida",
+      "region": "Southeast",
+      "archetype": "The Criminology and Flying High Circus Anchor \u2014 Public Policy, Film, and Florida State Government Proximity",
+      "oneSentenceSummary": "Florida State University combines a nationally top-ranked criminology program and a respected film school with direct proximity to Florida's state government in Tallahassee, wrapped in a spirited ACC athletics culture.",
+      "pipeline": "Approximately 32,000 undergraduates. FSU is nationally recognized for Criminology, Film (the College of Motion Picture Arts), Public Administration, Business, and Social Work. Major recruiters include Florida state government agencies, law enforcement and criminal justice agencies nationally, regional law firms, and Florida's growing film and media production industry.",
+      "hiddenPathway": "FSU's location in Tallahassee, Florida's state capital, gives public administration, criminology, and political science students direct internship access to the Florida Legislature, the Governor's office, and state agencies that students elsewhere can only study from a distance.",
+      "institutionalSecret": "FSU's College of Criminology and Criminal Justice is consistently ranked among the top programs in the country, a reputation that significantly exceeds the university's general public perception as primarily an athletics and party school.",
+      "theRoom": "Located in Tallahassee, students are embedded directly in Florida's state government apparatus, with the Florida Legislature, Governor's office, and state agencies within walking distance of campus.",
+      "lifestyle": "Spirited, socially vibrant, and increasingly professionally ambitious beneath a strong ACC athletics and Greek life culture. The Flying High Circus is a unique campus tradition dating back nearly a century.",
+      "bestFitPersonality": "Spirited, drawn to criminology, public policy, film, or business, and comfortable with a strong ACC athletics and Greek life social culture.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Florida and the Southeast, with national reputation in criminology and growing influence in film production.",
+      "economicOutcome": "Strong outcomes in criminology, public administration, law, film production, and business, with deep regional influence throughout Florida.",
+      "gradCities": [
+        "Tallahassee FL",
+        "Miami FL",
+        "Orlando FL",
+        "Atlanta GA",
+        "Tampa FL"
+      ],
+      "comparableInstitutions": [
+        "University of Florida",
+        "University of Georgia",
+        "University of South Carolina",
+        "Clemson University",
+        "Auburn University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Tallahassee Community College",
+          "Santa Fe College"
+        ],
+        "transferAcceptanceRate": "~65%",
+        "freshmanAcceptanceRate": "~28%",
+        "estimatedSavingsRange": "$12,000-$30,000",
+        "transferNotes": "FSU maintains one of Florida's strongest 2+2 articulation pathways through Tallahassee Community College and the state's broader community college system."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Florida State University",
+      "archetype": "Public Research Flagship \u2014 Criminology, Public Policy, and Film",
+      "institutionalPersonality": "spirited, socially vibrant, increasingly ambitious, policy-adjacent, Southern",
+      "cultureKeywords": [
+        "Criminology",
+        "Public Policy",
+        "Film",
+        "ACC Athletics",
+        "State Government",
+        "Flying High Circus"
+      ],
+      "missionOrientation": "Advancing criminology, public administration, and film education while serving Florida's state government and creative economy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through applied criminal justice research, hands-on film production, and direct internship access to Florida's state government.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Mixed, reflecting the presence of both state government and a large, socially vibrant student body.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Nationally elite in criminology; strong and growing reputation in film production.",
+      "socialClimate": "Spirited, socially vibrant, and centered around ACC athletics and Greek life.",
+      "leadershipStyle": "Leadership through criminal justice policy influence, creative production, and public administration excellence."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "CharLanta",
+      "regionalRole": "Florida's public policy and criminology capital, anchored by direct proximity to the state capitol in Tallahassee."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 14,
+      "TorBuffChester": 6,
+      "TexasTriangle": 18,
+      "CharLanta": 46,
+      "NorCalInnovationCorridor": 6,
+      "SoCalCreativeEconomy": 8
+    },
+    "comparativePositioning": {
+      "versusFlorida": "The University of Florida offers a broader research profile and stronger STEM prestige, while FSU offers a nationally top-ranked criminology program and direct proximity to Florida's state government.",
+      "versusGeorgia": "Georgia offers a stronger business school brand and larger alumni network in Atlanta, while FSU offers deeper criminology and film production strength.",
+      "versusSouthCarolina": "South Carolina offers stronger international business placement, while FSU offers a more concentrated criminology and public policy identity tied to state government access."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 32000,
+      "graduateEnrollment": 9000,
+      "totalEnrollment": 41000,
+      "campusType": "State Capital College Town",
+      "residentialIntensity": 56,
+      "communityFeel": 72,
+      "studentFacultyRatio": "20:1",
+      "classSizeExperience": "Moderate to large lecture sizes in general education, with smaller, production-based coursework in the College of Motion Picture Arts and applied research in criminology.",
+      "scaleAdvantages": [
+        "Nationally top-ranked criminology program",
+        "Direct access to Florida's state government for internships",
+        "Respected film school with real production experience",
+        "Spirited ACC athletics culture"
+      ],
+      "scaleDisadvantages": [
+        "General public perception as a party school undersells strong programs",
+        "Large lecture sizes in popular majors",
+        "Distance from major coastal metropolitan job markets outside Florida",
+        "Athletics and Greek life culture may overshadow academic reputation"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 76,
+        "conscientiousness": 76,
+        "extraversion": 80,
+        "agreeableness": 76,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "E",
+        "S",
+        "A"
+      ],
+      "learningStyle": [
+        "Applied Criminal Justice Research",
+        "Hands-On Film Production",
+        "State Government Internships",
+        "Collaborative Study"
+      ],
+      "socialEnvironment": [
+        "Spirited",
+        "Socially Vibrant",
+        "Policy-Adjacent",
+        "Greek-Life-Present",
+        "ACC-Athletics-Centered"
+      ],
+      "idealStudentTraits": [
+        "Spirited",
+        "Drawn to criminology, public policy, film, or business",
+        "Comfortable with a strong Greek life and athletics culture",
+        "Motivated by direct government or creative industry access"
+      ],
+      "thrivesIf": [
+        "Plans for criminology, public policy, film, or law",
+        "Wants direct internship access to Florida's state government",
+        "Enjoys a spirited ACC athletics and Greek life culture",
+        "Values hands-on film production experience"
+      ],
+      "strugglesIf": [
+        "Wants a quieter, less socially intense campus culture",
+        "Needs a smaller, more intimate academic environment",
+        "Is uninterested in athletics-driven campus culture",
+        "Wants a campus outside Florida's political and cultural orbit"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a quieter, more academically focused environment",
+        "Students who prefer a smaller campus community",
+        "Students uninterested in Greek life and athletics culture"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "The College of Motion Picture Arts and select business and nursing programs carry significant additional selectivity, often requiring portfolios or secondary applications."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Criminology and Criminal Justice",
+        "Editing, Writing, and Media",
+        "Public Administration",
+        "Social Work",
+        "Interior Architecture and Design"
+      ],
+      "hiddenCareerPipelines": [
+        "State and Local Government Administration",
+        "Criminal Justice and Law Enforcement Leadership",
+        "Film and Television Production",
+        "Nonprofit and Public Sector Leadership"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Florida state government agencies",
+        "Florida Department of Law Enforcement",
+        "Regional film and media production companies",
+        "Florida law firms"
+      ],
+      "overlookedStrengths": [
+        "FSU's College of Criminology and Criminal Justice is consistently ranked among the top three programs in the country.",
+        "Tallahassee's status as Florida's capital gives public administration and political science students direct legislative and executive branch internship access.",
+        "The College of Motion Picture Arts has produced graduates working across major film and television productions.",
+        "The Flying High Circus is a unique, century-old campus tradition that builds unusually strong student community."
+      ],
+      "sleeperIndustries": [
+        "Criminal Justice Policy and Administration",
+        "State and Local Government Leadership",
+        "Film and Television Production",
+        "Public Sector Nonprofit Leadership"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 68,
+      "mentorshipDensity": 66,
+      "executiveAccess": 58,
+      "internshipNetwork": 74,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 68,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 68,
+      "donorNetworkStrength": 58,
+      "boardMemberDensity": 48
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Government and Public Administration",
+        "Criminal Justice",
+        "Film and Media",
+        "Education",
+        "Law"
+      ],
+      "regionalEconomicDrivers": [
+        "State Government",
+        "Higher Education",
+        "Tourism",
+        "Healthcare"
+      ],
+      "topEmployers": [
+        "State of Florida",
+        "Florida Department of Law Enforcement",
+        "Tallahassee Memorial HealthCare",
+        "Regional law firms",
+        "Florida State University itself"
+      ],
+      "emergingIndustries": [
+        "Digital Media Production",
+        "GovTech",
+        "Criminal Justice Technology"
+      ],
+      "startupDensity": "Low to Moderate",
+      "ventureCapitalAccess": 26,
+      "corporateHeadquartersDensity": 32,
+      "healthcareHubStrength": 52,
+      "innovationIndex": 52
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Florida's State Government, Criminal Justice, and Public Administration Economy",
+      "secondaryMarkets": [
+        "Miami FL",
+        "Orlando FL",
+        "Tampa FL",
+        "Atlanta GA"
+      ],
+      "alumniStrongholds": [
+        "Tallahassee FL",
+        "Miami FL",
+        "Orlando FL",
+        "Tampa FL"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Florida, entering state government, criminal justice, law, and education.",
+        "Miami and Orlando draw graduates into business, tourism, and entertainment industry roles.",
+        "Tampa attracts graduates into healthcare and corporate business roles.",
+        "Film graduates disperse into regional and national film and television production.",
+        "A smaller cohort enters national criminal justice policy and public administration roles."
+      ],
+      "regionalInfluenceScore": 88,
+      "nationalReachScore": 52,
+      "internationalReachScore": 32
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 44,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 72,
+      "crossDisciplinaryInteraction": 62,
+      "civicEngagement": 66
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 54,
+        "notes": "Moderate presence through nursing and social work programs."
+      },
+      "nutraceuticals": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 40,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 54,
+        "notes": "Moderate pathway given ACC athletics culture."
+      },
+      "entertainmentMedia": {
+        "strength": 72,
+        "notes": "Strong pathway through the College of Motion Picture Arts."
+      },
+      "ventureCapital": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 26,
+        "notes": "Minimal institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 30,
+        "notes": "Limited but present through the business school."
+      },
+      "consulting": {
+        "strength": 46,
+        "notes": "Present, particularly for public sector and policy consulting."
+      },
+      "medicine": {
+        "strength": 48,
+        "notes": "Moderate pre-med pipeline; FSU has its own College of Medicine focused on primary care and underserved communities."
+      },
+      "healthcareAdministration": {
+        "strength": 52,
+        "notes": "Moderate pathway through social work and health administration programs."
+      },
+      "defense": {
+        "strength": 26,
+        "notes": "Limited but present through criminology-adjacent federal law enforcement pathways."
+      },
+      "realEstate": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 18,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 46,
+        "notes": "Growing entrepreneurship culture, particularly in media and film production."
+      },
+      "technology": {
+        "strength": 40,
+        "notes": "Limited institutional emphasis relative to criminology and public policy."
+      },
+      "publicPolicy": {
+        "strength": 82,
+        "notes": "One of the university's defining strengths, driven by direct proximity to Florida's state government."
+      },
+      "nonprofitLeadership": {
+        "strength": 58,
+        "notes": "Meaningful pathway through social work and public administration programs."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 72,
+      "firstGenerationSupport": 70,
+      "wealthCreationPotential": 60,
+      "familyBusinessPipelineStrength": 36
+    },
+    "futureResilience": {
+      "aiResistance": 68,
+      "automationResistance": 64,
+      "adaptabilityScore": 62,
+      "interdisciplinaryStrength": 58,
+      "futureReadiness": 62,
+      "entrepreneurialFlexibility": 50,
+      "lifelongLearningCulture": 62,
+      "innovationCapacity": 56
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 60,
+      "communityLeadershipPotential": 74,
+      "geographicMobility": 56,
+      "workLifeBalancePotential": 78,
+      "purposeAlignment": 72,
+      "familyFormationSupport": 76,
+      "personalDevelopmentPotential": 74,
+      "careerOptionality": 58,
+      "longTermLifeSatisfaction": 78
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 60,
+      "networkMoat": 58,
+      "geographicMoat": 82,
+      "industryMoat": 76,
+      "alumniMoat": 66,
+      "brandDurability": 66,
+      "overallMoatScore": 66
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 42,
+      "returnerScore": 62,
+      "stewardScore": 70,
+      "navigatorScore": 48,
+      "geographicLockIn": "moderate_to_high",
+      "alumniDispersalPattern": "florida_concentration_with_criminology_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 62,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 2400,
+      "jewishStudentPercentage": "~7%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "FSU maintains an active Hillel and Chabad presence with kosher dining options, serving a well-established Jewish student population."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Honors Program",
+      "strength": 70,
+      "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
+    }
+  },
+
+"University of Central Florida": {
+    "institutionNarrative": {
+      "name": "University of Central Florida",
+      "location": "Orlando, Florida",
+      "region": "Southeast",
+      "archetype": "The Simulation and Modeling Capital \u2014 Aerospace, Gaming, and Orlando's Themed Entertainment Economy",
+      "oneSentenceSummary": "The University of Central Florida is one of the largest universities in the country and the undisputed academic center of the modeling, simulation, and themed entertainment industry that defines Orlando's economy, alongside deep ties to the nearby aerospace and defense corridor.",
+      "pipeline": "Approximately 58,000 undergraduates, one of the largest student bodies in the country. UCF is nationally recognized for Modeling and Simulation, Game Design, Hospitality Management, Optics and Photonics, and Engineering. Major recruiters include Walt Disney World, Universal Orlando Resort, Lockheed Martin, Northrop Grumman, Electronic Arts, and the U.S. military's simulation and training command headquartered nearby.",
+      "hiddenPathway": "UCF sits at the center of 'Central Florida Research Park,' one of the largest concentrations of military simulation and training technology companies in the country, giving modeling and simulation students direct access to an industry cluster invisible to most families outside defense and gaming circles.",
+      "institutionalSecret": "UCF's modeling, simulation, and gaming programs make it the de facto academic home of the technology underlying both Orlando's theme park industry and the U.S. military's simulation and training programs, a dual pipeline unmatched by any other American university.",
+      "theRoom": "Located in Orlando, students sit at the intersection of the world's largest concentration of theme parks and themed entertainment companies and one of the country's largest military simulation and training technology clusters.",
+      "lifestyle": "Large, energetic, and increasingly professionally connected. UCF's size creates a sprawling, diverse campus culture, with strong internship pipelines into Orlando's theme park and hospitality economy shaping student life.",
+      "bestFitPersonality": "Drawn to simulation, gaming, hospitality, or aerospace engineering, comfortable in a very large student body, and motivated by direct industry-connected coursework.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Dominant throughout Central Florida's themed entertainment and simulation technology economy, with growing national influence in modeling, simulation, and game design.",
+      "economicOutcome": "Strong outcomes in hospitality management, modeling and simulation, engineering, and themed entertainment, driven by unmatched proximity to Orlando's theme park and defense simulation industries.",
+      "gradCities": [
+        "Orlando FL",
+        "Tampa FL",
+        "Miami FL",
+        "Washington DC",
+        "Los Angeles CA"
+      ],
+      "comparableInstitutions": [
+        "University of South Florida",
+        "Florida International University",
+        "Arizona State University",
+        "University of Houston",
+        "Texas A&M University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Valencia College",
+          "Seminole State College of Florida"
+        ],
+        "transferAcceptanceRate": "~85%",
+        "freshmanAcceptanceRate": "~44%",
+        "estimatedSavingsRange": "$12,000-$28,000",
+        "transferNotes": "UCF operates one of the largest and most successful 2+2 transfer partnerships in the country through Valencia College's DirectConnect program, sending thousands of transfer students annually."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Central Florida",
+      "archetype": "Public Research University \u2014 Modeling, Simulation, and Themed Entertainment",
+      "institutionalPersonality": "large-scale, energetic, industry-connected, pragmatic, entrepreneurial",
+      "cultureKeywords": [
+        "Modeling and Simulation",
+        "Gaming",
+        "Hospitality",
+        "Theme Parks",
+        "Aerospace",
+        "Optics"
+      ],
+      "missionOrientation": "Producing industry-ready graduates through direct integration with Orlando's themed entertainment and defense simulation economy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through applied simulation and modeling coursework, hospitality management case studies, and direct industry partnerships with theme parks and defense contractors.",
+      "competitiveness": "Moderately Selective",
+      "politicalCulture": "Mixed, reflecting Central Florida's broad political diversity.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Nationally distinctive in modeling and simulation and hospitality management; growing overall research profile.",
+      "socialClimate": "Large, energetic, and increasingly professionally ambitious.",
+      "leadershipStyle": "Leadership through industry-connected innovation and applied technical excellence."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "CharLanta",
+      "regionalRole": "The academic center of Orlando's themed entertainment and military simulation technology economy."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 12,
+      "TorBuffChester": 6,
+      "TexasTriangle": 16,
+      "CharLanta": 44,
+      "NorCalInnovationCorridor": 8,
+      "SoCalCreativeEconomy": 10
+    },
+    "comparativePositioning": {
+      "versusFlorida": "The University of Florida offers greater general research prestige and a more traditional flagship identity, while UCF offers an unmatched pipeline into modeling, simulation, gaming, and themed entertainment.",
+      "versusUSF": "USF offers a stronger general research profile in Tampa, while UCF offers deeper industry integration with Orlando's theme park and defense simulation economy.",
+      "versusASU": "Arizona State offers a larger, more nationally recognized innovation brand, while UCF offers a more concentrated and unique simulation, gaming, and hospitality industry pipeline."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Large",
+      "undergraduateEnrollment": 58000,
+      "graduateEnrollment": 10000,
+      "totalEnrollment": 68000,
+      "campusType": "Large Suburban Public Research University",
+      "residentialIntensity": 42,
+      "communityFeel": 54,
+      "studentFacultyRatio": "27:1",
+      "classSizeExperience": "Large introductory lectures are common given the university's size, with increasingly hands-on, industry-connected coursework in modeling, simulation, and hospitality as students advance.",
+      "scaleAdvantages": [
+        "Unmatched pipeline into Orlando's theme park and hospitality industry",
+        "Direct connection to the military simulation and training technology cluster",
+        "One of the largest and most successful community college transfer partnerships in the country",
+        "Strong optics, photonics, and aerospace engineering research"
+      ],
+      "scaleDisadvantages": [
+        "Very large class sizes, especially in introductory courses",
+        "Lower general prestige recognition than flagship research universities",
+        "Commuter-adjacent culture given the size and suburban Orlando setting",
+        "Less traditional college-town social atmosphere"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 76,
+        "conscientiousness": 78,
+        "extraversion": 72,
+        "agreeableness": 74,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "R",
+        "E",
+        "I"
+      ],
+      "learningStyle": [
+        "Applied Simulation and Modeling",
+        "Hospitality Case Studies",
+        "Industry-Connected Engineering Projects",
+        "Collaborative Learning"
+      ],
+      "socialEnvironment": [
+        "Large-Scale",
+        "Energetic",
+        "Industry-Connected",
+        "Diverse",
+        "Pragmatic"
+      ],
+      "idealStudentTraits": [
+        "Drawn to simulation, gaming, hospitality, or engineering",
+        "Comfortable in a very large student body",
+        "Pragmatic and industry-focused",
+        "Self-directed in navigating a large university"
+      ],
+      "thrivesIf": [
+        "Plans for modeling and simulation, gaming, hospitality management, or aerospace engineering",
+        "Wants direct access to Orlando's theme park and defense simulation industries",
+        "Is comfortable navigating a very large, diverse student body",
+        "Values a strong community college transfer pathway"
+      ],
+      "strugglesIf": [
+        "Wants a small, intimate campus community",
+        "Needs a traditional college-town social atmosphere",
+        "Dislikes very large introductory lecture courses",
+        "Prefers a campus with a stronger general research prestige identity"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a smaller, more intimate campus",
+        "Students wanting a traditional college-town experience",
+        "Students who prefer smaller class sizes throughout their education"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Nursing, engineering, and select hospitality management tracks carry additional selectivity given high demand relative to overall university size."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Modeling and Simulation of Behavioral CyberSecurity",
+        "Digital Media (Games)",
+        "Event Management",
+        "Photonic Science and Engineering",
+        "Forensic Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Military Simulation and Training Technology",
+        "Theme Park Design and Operations",
+        "Video Game Development",
+        "Optics and Photonics Engineering",
+        "Hospitality Revenue Management"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Walt Disney World",
+        "Universal Orlando Resort",
+        "Lockheed Martin",
+        "Northrop Grumman",
+        "Electronic Arts",
+        "U.S. Army simulation and training command"
+      ],
+      "overlookedStrengths": [
+        "UCF sits inside Central Florida Research Park, one of the largest concentrations of military simulation and training technology companies in the country.",
+        "The Rosen College of Hospitality Management is consistently ranked among the top hospitality programs in the world, feeding directly into Orlando's theme park and resort economy.",
+        "UCF's optics and photonics program (CREOL) is nationally distinguished and closely tied to the region's defense and aerospace industry.",
+        "The Valencia College DirectConnect transfer partnership is one of the largest and most successful in the country."
+      ],
+      "sleeperIndustries": [
+        "Military Simulation and Training Technology",
+        "Themed Entertainment Design",
+        "Video Game Development",
+        "Optics and Photonics Engineering"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 64,
+      "mentorshipDensity": 62,
+      "executiveAccess": 56,
+      "internshipNetwork": 78,
+      "familyBusinessExposure": 34,
+      "relationshipCapitalScore": 64,
+      "alumniLoyaltyScore": 68,
+      "referralCultureStrength": 66,
+      "donorNetworkStrength": 48,
+      "boardMemberDensity": 42
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Themed Entertainment",
+        "Hospitality",
+        "Defense and Simulation Technology",
+        "Aerospace",
+        "Optics and Photonics"
+      ],
+      "regionalEconomicDrivers": [
+        "Tourism and Themed Entertainment",
+        "Defense and Simulation Technology",
+        "Aerospace",
+        "Hospitality"
+      ],
+      "topEmployers": [
+        "Walt Disney World",
+        "Universal Orlando Resort",
+        "Lockheed Martin",
+        "Northrop Grumman",
+        "Electronic Arts",
+        "SeaWorld"
+      ],
+      "emergingIndustries": [
+        "Virtual and Augmented Reality",
+        "Military Simulation Technology",
+        "Themed Entertainment Technology",
+        "Optics and Photonics"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 36,
+      "corporateHeadquartersDensity": 40,
+      "healthcareHubStrength": 46,
+      "innovationIndex": 66
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Orlando's Themed Entertainment, Hospitality, and Defense Simulation Economy",
+      "secondaryMarkets": [
+        "Tampa FL",
+        "Miami FL",
+        "Washington DC",
+        "Los Angeles CA"
+      ],
+      "alumniStrongholds": [
+        "Orlando FL",
+        "Tampa FL",
+        "Miami FL",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Orlando, entering theme park operations, hospitality management, and defense simulation technology.",
+        "Washington DC draws graduates into defense and simulation technology roles tied to military contracts.",
+        "Los Angeles attracts graduates into gaming and interactive media careers.",
+        "Tampa and Miami draw graduates into broader Florida business and hospitality roles.",
+        "A smaller cohort enters national aerospace and optics engineering roles."
+      ],
+      "regionalInfluenceScore": 92,
+      "nationalReachScore": 54,
+      "internationalReachScore": 38
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 24,
+      "studentOrganizationStrength": 74,
+      "leadershipDevelopment": 66,
+      "crossDisciplinaryInteraction": 62,
+      "civicEngagement": 58
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 52,
+        "notes": "Moderate presence through nursing and health sciences programs."
+      },
+      "nutraceuticals": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 48,
+        "notes": "Moderate presence through hospitality and business programs."
+      },
+      "outdoorIndustry": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 42,
+        "notes": "Moderate pathway, growing given UCF's Big 12 athletics transition."
+      },
+      "entertainmentMedia": {
+        "strength": 82,
+        "notes": "Strong pathway through gaming, digital media, and themed entertainment industry ties."
+      },
+      "ventureCapital": {
+        "strength": 32,
+        "notes": "Growing but modest presence, primarily in gaming and simulation technology."
+      },
+      "privateEquity": {
+        "strength": 28,
+        "notes": "Minimal institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 28,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consulting": {
+        "strength": 44,
+        "notes": "Present, particularly for hospitality and technology consulting."
+      },
+      "medicine": {
+        "strength": 46,
+        "notes": "Moderate pre-med pipeline; UCF has its own College of Medicine."
+      },
+      "healthcareAdministration": {
+        "strength": 48,
+        "notes": "Moderate pathway through health sciences programs."
+      },
+      "defense": {
+        "strength": 82,
+        "notes": "One of the university's defining strengths, driven by the region's military simulation and training technology cluster."
+      },
+      "realEstate": {
+        "strength": 38,
+        "notes": "Moderate presence given Orlando's growing real estate and development market."
+      },
+      "luxuryBrands": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 56,
+        "notes": "Growing entrepreneurship culture, particularly in gaming and simulation technology."
+      },
+      "technology": {
+        "strength": 78,
+        "notes": "Strong pathway through modeling, simulation, optics, and gaming technology programs."
+      },
+      "publicPolicy": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "nonprofitLeadership": {
+        "strength": 38,
+        "notes": "Limited but present pathway."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 78,
+      "firstGenerationSupport": 76,
+      "wealthCreationPotential": 62,
+      "familyBusinessPipelineStrength": 34
+    },
+    "futureResilience": {
+      "aiResistance": 78,
+      "automationResistance": 74,
+      "adaptabilityScore": 74,
+      "interdisciplinaryStrength": 66,
+      "futureReadiness": 76,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 66,
+      "innovationCapacity": 74
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 62,
+      "communityLeadershipPotential": 62,
+      "geographicMobility": 60,
+      "workLifeBalancePotential": 76,
+      "purposeAlignment": 66,
+      "familyFormationSupport": 70,
+      "personalDevelopmentPotential": 70,
+      "careerOptionality": 66,
+      "longTermLifeSatisfaction": 74
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 52,
+      "networkMoat": 50,
+      "geographicMoat": 84,
+      "industryMoat": 82,
+      "alumniMoat": 56,
+      "brandDurability": 62,
+      "overallMoatScore": 64
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 44,
+      "returnerScore": 58,
+      "stewardScore": 62,
+      "navigatorScore": 54,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "central_florida_concentration_with_defense_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 50,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 1800,
+      "jewishStudentPercentage": "~3%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "UCF maintains an active Hillel presence given its very large overall student body, without dedicated on-campus kosher dining facilities."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Burnett Honors College",
+      "strength": 72,
+      "notes": "Offers smaller seminar coursework, priority registration, dedicated honors housing, and research opportunities, providing a more intimate experience within UCF's very large student body."
+    }
+  },
+
+"Georgia State University": {
+    "institutionNarrative": {
+      "name": "Georgia State University",
+      "location": "Atlanta, Georgia",
+      "region": "Southeast",
+      "archetype": "The Student Success and Urban Atlanta Access Engine \u2014 Business, Public Health, and Downtown Corporate Proximity",
+      "oneSentenceSummary": "Georgia State University has become a national model for student success and social mobility, combining a large, diverse urban student body in the heart of downtown Atlanta with direct walking-distance access to a dense concentration of Fortune 500 headquarters.",
+      "pipeline": "Approximately 25,000 undergraduates. Georgia State is nationally recognized for its Robinson College of Business, Public Health, Nursing, Computer Science, and Film/Media (through its downtown Atlanta production ties). Major recruiters include Coca-Cola, Delta Air Lines, Home Depot, Cox Enterprises, and the dense concentration of corporate headquarters throughout downtown and Midtown Atlanta.",
+      "hiddenPathway": "Georgia State's downtown Atlanta campus sits within walking distance of numerous Fortune 500 headquarters, giving business and finance students direct internship access that suburban or rural flagship campuses simply cannot replicate.",
+      "institutionalSecret": "Georgia State has become a widely studied national model for improving graduation rates among first-generation and lower-income students, using predictive analytics and proactive advising to close achievement gaps that most universities have failed to address.",
+      "theRoom": "Located in the heart of downtown Atlanta, students are embedded directly among the headquarters of Coca-Cola, Delta Air Lines, Home Depot, and dozens of other major corporations, alongside Atlanta's rapidly growing film and television production industry.",
+      "lifestyle": "Urban, diverse, and professionally pragmatic. Georgia State's downtown location means campus life blends directly into the fabric of the city, with students commuting via MARTA and building professional networks well before graduation.",
+      "bestFitPersonality": "Urban-minded, pragmatic, drawn to business, public health, or media, and motivated by direct access to a major metropolitan corporate economy.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Dominant throughout metro Atlanta's corporate and public health economy, with a growing national reputation for student success innovation.",
+      "economicOutcome": "Strong outcomes in business, finance, public health, nursing, and media production, driven by unmatched proximity to downtown Atlanta's corporate headquarters.",
+      "gradCities": [
+        "Atlanta GA",
+        "Charlotte NC",
+        "Nashville TN",
+        "Washington DC",
+        "New York NY"
+      ],
+      "comparableInstitutions": [
+        "Georgia Institute of Technology",
+        "University of Alabama at Birmingham",
+        "Temple University",
+        "University of Houston",
+        "Wayne State University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Perimeter College (Georgia State's own two-year division)",
+          "Atlanta Technical College"
+        ],
+        "transferAcceptanceRate": "~90%",
+        "freshmanAcceptanceRate": "~65%",
+        "estimatedSavingsRange": "$10,000-$24,000",
+        "transferNotes": "Georgia State's own Perimeter College functions as an internal two-year transfer pathway, seamlessly moving students into the university's four-year programs with strong institutional support."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Georgia State University",
+      "archetype": "Public Urban Research University \u2014 Business, Public Health, and Student Success Innovation",
+      "institutionalPersonality": "urban, pragmatic, diverse, professionally ambitious, innovation-oriented",
+      "cultureKeywords": [
+        "Downtown Atlanta",
+        "Business",
+        "Public Health",
+        "Student Success",
+        "Diversity",
+        "Urban Access"
+      ],
+      "missionOrientation": "Advancing student success and social mobility while providing direct access to Atlanta's corporate, healthcare, and media economy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through applied business coursework, urban public health research, and direct professional engagement with downtown Atlanta's corporate community.",
+      "competitiveness": "Moderately Selective",
+      "politicalCulture": "Generally progressive, reflecting Atlanta's urban political culture.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Growing national reputation for student success innovation and strong regional business school prestige.",
+      "socialClimate": "Urban, diverse, and professionally pragmatic, with a commuter-influenced but increasingly residential campus culture.",
+      "leadershipStyle": "Leadership through student success innovation, urban economic integration, and social mobility impact."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "CharLanta",
+      "regionalRole": "A rapidly rising urban research university providing direct downtown Atlanta corporate access and pioneering student success innovation nationally."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 16,
+      "TorBuffChester": 8,
+      "TexasTriangle": 20,
+      "CharLanta": 62,
+      "NorCalInnovationCorridor": 6,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusGeorgiaTech": "Georgia Tech offers a much stronger engineering and STEM research identity, while Georgia State offers stronger business, public health, and a more accessible admissions profile with direct downtown corporate proximity.",
+      "versusUGA": "The University of Georgia offers a more traditional flagship campus experience and larger alumni network, while Georgia State offers unmatched walking-distance access to Atlanta's corporate headquarters.",
+      "versusTemple": "Temple offers a comparable urban access model in Philadelphia, while Georgia State offers deeper integration with Atlanta's specific corporate, film, and public health economy."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 25000,
+      "graduateEnrollment": 8000,
+      "totalEnrollment": 33000,
+      "campusType": "Urban Downtown Public Research University",
+      "residentialIntensity": 32,
+      "communityFeel": 54,
+      "studentFacultyRatio": "19:1",
+      "classSizeExperience": "Moderate to large lecture sizes in general education, with increasingly applied, industry-connected coursework in business and public health as students advance.",
+      "scaleAdvantages": [
+        "Unmatched walking-distance access to downtown Atlanta corporate headquarters",
+        "Nationally recognized student success and retention innovation",
+        "Strong public health and nursing programs",
+        "Highly diverse, urban student body"
+      ],
+      "scaleDisadvantages": [
+        "Commuter-heavy culture with less traditional campus community feel",
+        "Lower general prestige recognition than Georgia Tech or UGA",
+        "Urban downtown setting lacks a traditional green campus quad",
+        "Large class sizes in popular introductory courses"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 78,
+        "conscientiousness": 78,
+        "extraversion": 70,
+        "agreeableness": 76,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "E",
+        "S",
+        "C"
+      ],
+      "learningStyle": [
+        "Applied Business Casework",
+        "Urban Public Health Research",
+        "Industry-Connected Media Production",
+        "Collaborative Study"
+      ],
+      "socialEnvironment": [
+        "Urban",
+        "Diverse",
+        "Professionally Pragmatic",
+        "Commuter-Influenced",
+        "Ambitious"
+      ],
+      "idealStudentTraits": [
+        "Urban-minded",
+        "Pragmatic",
+        "Drawn to business, public health, or media",
+        "Motivated by direct corporate access"
+      ],
+      "thrivesIf": [
+        "Plans for business, finance, public health, or media production",
+        "Wants direct walking-distance access to major corporate headquarters",
+        "Values a diverse, urban student body",
+        "Is self-directed in navigating a commuter-influenced campus culture"
+      ],
+      "strugglesIf": [
+        "Wants a traditional, green, residential campus quad",
+        "Needs a strong built-in campus community from day one",
+        "Prefers a smaller, more intimate academic environment",
+        "Wants a campus with a stronger sports and Greek life culture"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more traditional residential campus experience",
+        "Students wanting a stronger built-in social community",
+        "Students who prioritize sports and Greek life culture"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Nursing and select business concentrations carry additional selectivity given strong demand relative to program capacity."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Public Health",
+        "Risk Management and Insurance",
+        "Film and Media Studies",
+        "Actuarial Science",
+        "Real Estate"
+      ],
+      "hiddenCareerPipelines": [
+        "Downtown Atlanta Corporate Finance",
+        "Public Health Policy and Administration",
+        "Film and Television Production",
+        "Insurance and Risk Management"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Coca-Cola",
+        "Delta Air Lines",
+        "Home Depot",
+        "Cox Enterprises",
+        "Atlanta film and television production companies"
+      ],
+      "overlookedStrengths": [
+        "Georgia State has become a nationally studied model for using predictive analytics to improve student success and close achievement gaps.",
+        "The Robinson College of Business benefits from walking-distance proximity to numerous Fortune 500 headquarters.",
+        "Atlanta's booming film and television production industry gives media students direct access to a major production hub.",
+        "The School of Public Health benefits from direct ties to the CDC and Atlanta's concentration of public health organizations."
+      ],
+      "sleeperIndustries": [
+        "Public Health Policy and Administration",
+        "Film and Television Production",
+        "Insurance and Risk Management",
+        "Urban Real Estate Development"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 66,
+      "mentorshipDensity": 64,
+      "executiveAccess": 66,
+      "internshipNetwork": 78,
+      "familyBusinessExposure": 36,
+      "relationshipCapitalScore": 68,
+      "alumniLoyaltyScore": 64,
+      "referralCultureStrength": 66,
+      "donorNetworkStrength": 50,
+      "boardMemberDensity": 46
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Corporate Business",
+        "Public Health",
+        "Media and Film",
+        "Finance",
+        "Healthcare"
+      ],
+      "regionalEconomicDrivers": [
+        "Corporate Headquarters",
+        "Film and Television Production",
+        "Healthcare and Public Health",
+        "Logistics (Delta)"
+      ],
+      "topEmployers": [
+        "Coca-Cola",
+        "Delta Air Lines",
+        "Home Depot",
+        "Cox Enterprises",
+        "Emory Healthcare",
+        "Georgia-Pacific"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Digital Media Production",
+        "Public Health Technology"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 52,
+      "corporateHeadquartersDensity": 88,
+      "healthcareHubStrength": 66,
+      "innovationIndex": 70
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Downtown Atlanta's Corporate, Public Health, and Media Economy",
+      "secondaryMarkets": [
+        "Charlotte NC",
+        "Nashville TN",
+        "Washington DC",
+        "New York NY"
+      ],
+      "alumniStrongholds": [
+        "Atlanta GA",
+        "Charlotte NC",
+        "Nashville TN",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "The overwhelming majority of graduates remain in Atlanta, entering corporate business, public health, and media roles.",
+        "Charlotte and Nashville draw graduates into broader Southeastern corporate and finance roles.",
+        "Washington DC attracts graduates into public health policy and government roles.",
+        "Film and media graduates disperse into Atlanta's growing production industry and, secondarily, into Los Angeles and New York.",
+        "A smaller cohort enters national public health leadership roles tied to the CDC's Atlanta presence."
+      ],
+      "regionalInfluenceScore": 92,
+      "nationalReachScore": 56,
+      "internationalReachScore": 38
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 18,
+      "studentOrganizationStrength": 70,
+      "leadershipDevelopment": 66,
+      "crossDisciplinaryInteraction": 68,
+      "civicEngagement": 70
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 78,
+        "notes": "Strong pathway through the School of Public Health and nursing programs, reinforced by CDC proximity."
+      },
+      "nutraceuticals": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 56,
+        "notes": "Solid pathway through business school placement into Coca-Cola and Home Depot corporate roles."
+      },
+      "outdoorIndustry": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 66,
+        "notes": "Strong and growing pathway through Atlanta's film and television production industry."
+      },
+      "ventureCapital": {
+        "strength": 44,
+        "notes": "Growing presence tied to Atlanta's expanding startup and fintech ecosystem."
+      },
+      "privateEquity": {
+        "strength": 42,
+        "notes": "Present, particularly through corporate finance placement."
+      },
+      "investmentBanking": {
+        "strength": 44,
+        "notes": "Present through the Robinson College of Business."
+      },
+      "consulting": {
+        "strength": 56,
+        "notes": "Solid placement into major consulting firms."
+      },
+      "medicine": {
+        "strength": 60,
+        "notes": "Solid pre-med and public health pipeline, though Georgia State has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 72,
+        "notes": "Strong pathway through the School of Public Health."
+      },
+      "defense": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 54,
+        "notes": "Meaningful presence given Atlanta's growing urban real estate market."
+      },
+      "luxuryBrands": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 58,
+        "notes": "Growing entrepreneurship culture tied to Atlanta's expanding startup scene."
+      },
+      "technology": {
+        "strength": 56,
+        "notes": "Growing computer science and fintech pipeline."
+      },
+      "publicPolicy": {
+        "strength": 58,
+        "notes": "Solid pathway through public health and policy programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 54,
+        "notes": "Meaningful pathway tied to Atlanta's concentration of public health and civic organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 92,
+      "firstGenerationSupport": 92,
+      "wealthCreationPotential": 66,
+      "familyBusinessPipelineStrength": 36
+    },
+    "futureResilience": {
+      "aiResistance": 76,
+      "automationResistance": 72,
+      "adaptabilityScore": 74,
+      "interdisciplinaryStrength": 66,
+      "futureReadiness": 74,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 70,
+      "innovationCapacity": 68
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 66,
+      "communityLeadershipPotential": 70,
+      "geographicMobility": 62,
+      "workLifeBalancePotential": 74,
+      "purposeAlignment": 72,
+      "familyFormationSupport": 72,
+      "personalDevelopmentPotential": 76,
+      "careerOptionality": 66,
+      "longTermLifeSatisfaction": 76
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 54,
+      "networkMoat": 56,
+      "geographicMoat": 88,
+      "industryMoat": 82,
+      "alumniMoat": 56,
+      "brandDurability": 62,
+      "overallMoatScore": 66
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 50,
+      "returnerScore": 54,
+      "stewardScore": 48,
+      "navigatorScore": 66,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "atlanta_concentration_with_growing_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 48,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 600,
+      "jewishStudentPercentage": "~2%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Georgia State maintains an active Hillel presence connected to Atlanta's broader Jewish community, without dedicated on-campus kosher dining facilities."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Honors College",
+      "strength": 68,
+      "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors within the university's large urban student body."
+    }
+  },
+
+"Temple University": {
+    "institutionNarrative": {
+      "name": "Temple University",
+      "location": "Philadelphia, Pennsylvania",
+      "region": "Mid-Atlantic",
+      "archetype": "The Urban Access and Media Production Engine \u2014 Journalism, Law, and North Philadelphia Grit",
+      "oneSentenceSummary": "Temple University combines a respected journalism and media program, a well-regarded law school, and direct urban immersion in Philadelphia, offering a pragmatic, access-oriented alternative to the region's more expensive private universities.",
+      "pipeline": "Approximately 27,000 undergraduates. Temple is nationally recognized for Journalism (the Klein College of Media and Communication), Law, Podiatric Medicine, Business, and Public Health. Major recruiters include Comcast, Vanguard, Independence Blue Cross, regional law firms and courts, and Philadelphia's growing healthcare and media sectors.",
+      "hiddenPathway": "Temple's Klein College of Media and Communication maintains deep ties to Philadelphia's news and broadcast media market, giving journalism students real newsroom experience and internship access most regional universities cannot match.",
+      "institutionalSecret": "Temple's Beasley School of Law is quietly one of the best value legal educations in the country, consistently ranked for strong bar passage and employment outcomes relative to its cost, a fact largely overshadowed by the university's general urban-commuter reputation.",
+      "theRoom": "Located in North Philadelphia, students are embedded directly in one of the largest media markets on the East Coast, with Comcast, major hospital systems, and Philadelphia's legal and financial sectors all within the metro area.",
+      "lifestyle": "Urban, pragmatic, and gritty. Temple's North Philadelphia campus places students directly in the fabric of the city, with a diverse, often first-generation student body building careers through direct urban engagement rather than a traditional campus bubble.",
+      "bestFitPersonality": "Urban-minded, pragmatic, drawn to journalism, law, or healthcare, and comfortable navigating a real, unpolished city environment rather than an insulated campus.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Philadelphia and the Mid-Atlantic, with national reputation in journalism and law.",
+      "economicOutcome": "Strong outcomes in journalism, law, healthcare, and business, with an unusually strong value proposition relative to cost of attendance.",
+      "gradCities": [
+        "Philadelphia PA",
+        "New York NY",
+        "Washington DC",
+        "Baltimore MD",
+        "Pittsburgh PA"
+      ],
+      "comparableInstitutions": [
+        "Drexel University",
+        "University of Pittsburgh",
+        "Rutgers University",
+        "George Washington University",
+        "Syracuse University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Community College of Philadelphia",
+          "Montgomery County Community College"
+        ],
+        "transferAcceptanceRate": "~72%",
+        "freshmanAcceptanceRate": "~68%",
+        "estimatedSavingsRange": "$14,000-$32,000",
+        "transferNotes": "Temple maintains a strong 'Dual Admission' partnership with the Community College of Philadelphia, supporting a well-established transfer pathway into journalism, business, and health sciences."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Temple University",
+      "archetype": "Public Urban Research University \u2014 Journalism, Law, and Access",
+      "institutionalPersonality": "pragmatic, urban, gritty, access-oriented, professionally focused",
+      "cultureKeywords": [
+        "Journalism",
+        "Law",
+        "Urban Philadelphia",
+        "Media",
+        "Public Health",
+        "Access"
+      ],
+      "missionOrientation": "Providing accessible, high-value professional education through direct integration with Philadelphia's media, legal, and healthcare economy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through hands-on newsroom experience, case-based legal instruction, and applied public health and business coursework grounded in Philadelphia's urban environment.",
+      "competitiveness": "Moderately Selective",
+      "politicalCulture": "Generally progressive, reflecting Philadelphia's urban political culture.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Strong regional and national reputation in journalism and law; solid value-oriented reputation overall.",
+      "socialClimate": "Urban, pragmatic, and diverse, with a strong first-generation and commuter-adjacent student population.",
+      "leadershipStyle": "Leadership through pragmatic professional excellence and urban civic engagement."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "A pragmatic, access-oriented urban research university anchoring journalism and legal education in Philadelphia."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 78,
+      "TorBuffChester": 24,
+      "TexasTriangle": 8,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 6,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusDrexel": "Drexel offers a stronger STEM and co-op-based engineering identity, while Temple offers deeper journalism and law prestige and a lower overall cost of attendance.",
+      "versusPitt": "Pitt offers a stronger general research profile and medical school prestige, while Temple offers a more concentrated journalism, law, and urban media market advantage in Philadelphia.",
+      "versusRutgers": "Rutgers offers a larger, more comprehensive flagship research identity, while Temple offers a more urban, media-and-law-focused professional pathway directly integrated with Philadelphia."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 27000,
+      "graduateEnrollment": 6000,
+      "totalEnrollment": 33000,
+      "campusType": "Urban Public Research University",
+      "residentialIntensity": 44,
+      "communityFeel": 58,
+      "studentFacultyRatio": "13:1",
+      "classSizeExperience": "Moderate class sizes overall, with hands-on newsroom and clinical legal experience available from relatively early in a student's academic career.",
+      "scaleAdvantages": [
+        "Strong journalism and law programs with real professional experience",
+        "Direct access to Philadelphia's media, legal, and healthcare economy",
+        "Strong value relative to cost of attendance",
+        "Diverse, pragmatic student body"
+      ],
+      "scaleDisadvantages": [
+        "North Philadelphia campus setting can feel less polished than suburban peer campuses",
+        "Commuter-heavy culture with less traditional campus community feel",
+        "Lower general prestige recognition outside journalism and law",
+        "Urban safety perceptions can concern some families"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 78,
+        "conscientiousness": 78,
+        "extraversion": 68,
+        "agreeableness": 74,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "E",
+        "S",
+        "A"
+      ],
+      "learningStyle": [
+        "Hands-On Newsroom Training",
+        "Case-Based Legal Instruction",
+        "Applied Public Health Research",
+        "Urban Civic Engagement"
+      ],
+      "socialEnvironment": [
+        "Urban",
+        "Pragmatic",
+        "Gritty",
+        "Diverse",
+        "Access-Oriented"
+      ],
+      "idealStudentTraits": [
+        "Urban-minded",
+        "Pragmatic",
+        "Drawn to journalism, law, or healthcare",
+        "Comfortable in a real, unpolished city environment"
+      ],
+      "thrivesIf": [
+        "Plans for journalism, law, public health, or business",
+        "Wants direct access to Philadelphia's media and legal economy",
+        "Values a strong value proposition relative to cost",
+        "Is comfortable in an urban, commuter-influenced setting"
+      ],
+      "strugglesIf": [
+        "Wants a traditional, insulated residential campus",
+        "Needs a highly polished, suburban campus environment",
+        "Prefers a smaller, more intimate academic community",
+        "Is uncomfortable with an urban, sometimes gritty setting"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more traditional residential campus experience",
+        "Students uncomfortable with an urban, commuter-influenced setting",
+        "Students who prefer a more insulated suburban campus"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Journalism, nursing, and the Fox School of Business's most popular concentrations carry additional selectivity beyond general university admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Media Studies and Production",
+        "Risk Management and Insurance",
+        "Public Health",
+        "Criminal Justice",
+        "Podiatric Medicine (pre-professional track)"
+      ],
+      "hiddenCareerPipelines": [
+        "Broadcast and Digital Journalism",
+        "Regional Legal Practice",
+        "Healthcare Administration",
+        "Insurance and Risk Management"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Comcast",
+        "Vanguard",
+        "Independence Blue Cross",
+        "Philadelphia news and broadcast media outlets",
+        "Regional courts and law firms"
+      ],
+      "overlookedStrengths": [
+        "The Beasley School of Law is consistently ranked among the best value legal educations in the country given its bar passage and employment outcomes.",
+        "Klein College of Media and Communication maintains deep ties to Philadelphia's broadcast and digital news market.",
+        "Temple's Fox School of Business has built strong actuarial science and risk management placement.",
+        "Temple's podiatric medicine program is one of the oldest and most respected in the country."
+      ],
+      "sleeperIndustries": [
+        "Broadcast and Digital Journalism",
+        "Legal Practice and Paralegal Studies",
+        "Actuarial Science and Risk Management",
+        "Podiatric and Allied Health Medicine"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 66,
+      "mentorshipDensity": 64,
+      "executiveAccess": 58,
+      "internshipNetwork": 72,
+      "familyBusinessExposure": 34,
+      "relationshipCapitalScore": 66,
+      "alumniLoyaltyScore": 64,
+      "referralCultureStrength": 64,
+      "donorNetworkStrength": 50,
+      "boardMemberDensity": 44
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Media and Journalism",
+        "Law",
+        "Healthcare",
+        "Financial Services",
+        "Education"
+      ],
+      "regionalEconomicDrivers": [
+        "Media and Broadcasting",
+        "Healthcare",
+        "Financial Services",
+        "Legal Services"
+      ],
+      "topEmployers": [
+        "Comcast",
+        "Vanguard",
+        "Independence Blue Cross",
+        "Temple University Health System",
+        "Regional law firms"
+      ],
+      "emergingIndustries": [
+        "Digital Media and Streaming",
+        "Health Technology",
+        "Insurance Technology"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 38,
+      "corporateHeadquartersDensity": 52,
+      "healthcareHubStrength": 74,
+      "innovationIndex": 60
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Philadelphia's Media, Legal, and Healthcare Economy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Washington DC",
+        "Baltimore MD",
+        "Pittsburgh PA"
+      ],
+      "alumniStrongholds": [
+        "Philadelphia PA",
+        "New York NY",
+        "Washington DC",
+        "South Jersey"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Philadelphia, entering media, law, healthcare, and financial services.",
+        "New York draws graduates into broader media, finance, and legal roles.",
+        "Washington DC attracts graduates into policy, law, and government roles.",
+        "Journalism graduates disperse regionally and nationally into broadcast and digital media markets.",
+        "Law graduates concentrate primarily within Pennsylvania and the broader Mid-Atlantic legal market."
+      ],
+      "regionalInfluenceScore": 88,
+      "nationalReachScore": 56,
+      "internationalReachScore": 36
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 20,
+      "studentOrganizationStrength": 72,
+      "leadershipDevelopment": 66,
+      "crossDisciplinaryInteraction": 64,
+      "civicEngagement": 72
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 72,
+        "notes": "Strong pathway through public health, nursing, and podiatric medicine programs."
+      },
+      "nutraceuticals": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 42,
+        "notes": "Moderate presence through the Fox School of Business."
+      },
+      "outdoorIndustry": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 42,
+        "notes": "Moderate pathway given Temple's Division I athletics program."
+      },
+      "entertainmentMedia": {
+        "strength": 78,
+        "notes": "Strong pathway through the Klein College of Media and Communication into Philadelphia's broadcast and digital media market."
+      },
+      "ventureCapital": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 32,
+        "notes": "Limited but present through the business school."
+      },
+      "investmentBanking": {
+        "strength": 36,
+        "notes": "Present but modest."
+      },
+      "consulting": {
+        "strength": 48,
+        "notes": "Present, particularly for healthcare and public sector consulting."
+      },
+      "medicine": {
+        "strength": 66,
+        "notes": "Solid pre-med, nursing, and podiatric medicine pipeline."
+      },
+      "healthcareAdministration": {
+        "strength": 62,
+        "notes": "Solid pathway through public health programs."
+      },
+      "defense": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 46,
+        "notes": "Moderate presence given Philadelphia's urban real estate market."
+      },
+      "luxuryBrands": {
+        "strength": 16,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 48,
+        "notes": "Moderate entrepreneurship culture."
+      },
+      "technology": {
+        "strength": 42,
+        "notes": "Limited institutional emphasis relative to journalism, law, and healthcare."
+      },
+      "publicPolicy": {
+        "strength": 54,
+        "notes": "Solid pathway through public policy and law programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 52,
+        "notes": "Meaningful pathway tied to Philadelphia's civic and public health organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 80,
+      "firstGenerationSupport": 78,
+      "wealthCreationPotential": 62,
+      "familyBusinessPipelineStrength": 36
+    },
+    "futureResilience": {
+      "aiResistance": 72,
+      "automationResistance": 68,
+      "adaptabilityScore": 66,
+      "interdisciplinaryStrength": 62,
+      "futureReadiness": 66,
+      "entrepreneurialFlexibility": 54,
+      "lifelongLearningCulture": 66,
+      "innovationCapacity": 60
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 62,
+      "communityLeadershipPotential": 70,
+      "geographicMobility": 60,
+      "workLifeBalancePotential": 74,
+      "purposeAlignment": 70,
+      "familyFormationSupport": 70,
+      "personalDevelopmentPotential": 72,
+      "careerOptionality": 62,
+      "longTermLifeSatisfaction": 74
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 54,
+      "networkMoat": 52,
+      "geographicMoat": 78,
+      "industryMoat": 74,
+      "alumniMoat": 56,
+      "brandDurability": 60,
+      "overallMoatScore": 62
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 44,
+      "returnerScore": 58,
+      "stewardScore": 62,
+      "navigatorScore": 52,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "philadelphia_concentration_with_mid_atlantic_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 54,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 1400,
+      "jewishStudentPercentage": "~5%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Temple maintains an active Hillel with kosher dining options, serving a meaningful Jewish student population within Philadelphia's broader Jewish community."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Honors Program",
+      "strength": 68,
+      "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
+    }
+  },
+
+"James Madison University": {
+    "institutionNarrative": {
+      "name": "James Madison University",
+      "location": "Harrisonburg, Virginia",
+      "region": "Southeast",
+      "archetype": "The Undergraduate Teaching Excellence Anchor \u2014 Business, Health Sciences, and Shenandoah Valley Community",
+      "oneSentenceSummary": "James Madison University has built a national reputation for undergraduate teaching excellence and student satisfaction, combining strong business and health sciences programs with an unusually close-knit, community-oriented campus culture in Virginia's Shenandoah Valley.",
+      "pipeline": "Approximately 20,000 undergraduates. JMU is nationally recognized for its College of Business, Health Sciences, Nursing, Education, and Communication Sciences and Disorders. Major recruiters include Capital One, Deloitte, Northrop Grumman, regional healthcare systems, and federal government agencies given proximity to Washington DC.",
+      "hiddenPathway": "JMU's proximity to the Washington DC metro area, roughly two hours away, combined with a strong reputation for producing polished, professionally prepared graduates, has made it an increasingly popular target for federal contractors and government-adjacent employers seeking reliable early-career talent.",
+      "institutionalSecret": "JMU has consistently ranked among the top universities in the country for student satisfaction and undergraduate teaching quality, a reputation built deliberately around faculty who prioritize teaching over research, unusual among public universities of its size.",
+      "theRoom": "Located in Harrisonburg in Virginia's Shenandoah Valley, students are positioned within a scenic, community-oriented college town roughly two hours from Washington DC's federal and government contracting economy.",
+      "lifestyle": "Community-oriented, spirited, and deliberately student-centered. JMU's campus culture emphasizes a strong sense of belonging and school pride, supported by a picturesque Shenandoah Valley setting.",
+      "bestFitPersonality": "Community-oriented, drawn to business, health sciences, or education, and motivated by a strong sense of school spirit and belonging rather than large-scale research university anonymity.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Virginia and growing influence in the Washington DC metro area's government contracting and consulting economy.",
+      "economicOutcome": "Strong outcomes in business, health sciences, education, and government-adjacent consulting, with a distinctive value proposition built on teaching quality and student satisfaction.",
+      "gradCities": [
+        "Washington DC",
+        "Richmond VA",
+        "Northern Virginia",
+        "Baltimore MD",
+        "Charlotte NC"
+      ],
+      "comparableInstitutions": [
+        "College of William and Mary",
+        "University of Delaware",
+        "Virginia Tech",
+        "University of Mary Washington",
+        "Elon University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Northern Virginia Community College",
+          "Blue Ridge Community College"
+        ],
+        "transferAcceptanceRate": "~76%",
+        "freshmanAcceptanceRate": "~78%",
+        "estimatedSavingsRange": "$12,000-$28,000",
+        "transferNotes": "JMU maintains strong articulation agreements with Virginia's community college system, particularly Northern Virginia Community College, supporting transfer into business, health sciences, and education programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "James Madison University",
+      "archetype": "Public Undergraduate-Focused University \u2014 Business, Health Sciences, and Community",
+      "institutionalPersonality": "community-oriented, spirited, student-centered, professionally polished, warm",
+      "cultureKeywords": [
+        "Undergraduate Teaching Excellence",
+        "School Spirit",
+        "Business",
+        "Health Sciences",
+        "Shenandoah Valley",
+        "Community"
+      ],
+      "missionOrientation": "Delivering exceptional undergraduate teaching and a strong sense of community while preparing professionally polished graduates.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through faculty deeply committed to undergraduate teaching, applied business and health sciences coursework, and a strong emphasis on student engagement.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Mixed, reflecting Virginia's broader political diversity.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Nationally recognized for undergraduate teaching quality and student satisfaction rather than research prestige.",
+      "socialClimate": "Spirited, warm, and deliberately community-oriented, with unusually strong school pride relative to peer institutions.",
+      "leadershipStyle": "Leadership through teaching excellence, student engagement, and community-building."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "A teaching-focused public university feeding polished, professionally prepared graduates into the Washington DC metro area's government and consulting economy."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 62,
+      "TorBuffChester": 12,
+      "TexasTriangle": 8,
+      "CharLanta": 22,
+      "NorCalInnovationCorridor": 6,
+      "SoCalCreativeEconomy": 4
+    },
+    "comparativePositioning": {
+      "versusWilliamAndMary": "William and Mary offers greater research prestige and a more selective, historically elite identity, while JMU offers a more deliberately student-centered teaching culture and stronger business and health sciences placement.",
+      "versusVirginiaTech": "Virginia Tech offers a much larger, more comprehensive engineering and research identity, while JMU offers a more intimate, teaching-focused undergraduate experience.",
+      "versusElon": "Elon offers a similarly student-centered private university experience at a smaller scale, while JMU offers a comparable community culture at public-school cost."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 20000,
+      "graduateEnrollment": 2000,
+      "totalEnrollment": 22000,
+      "campusType": "Shenandoah Valley College Town",
+      "residentialIntensity": 70,
+      "communityFeel": 88,
+      "studentFacultyRatio": "16:1",
+      "classSizeExperience": "Moderate class sizes with a deliberate institutional emphasis on faculty accessibility and teaching quality over large-scale research output.",
+      "scaleAdvantages": [
+        "Nationally recognized undergraduate teaching quality and student satisfaction",
+        "Strong business and health sciences placement",
+        "Unusually strong sense of school community and spirit",
+        "Scenic Shenandoah Valley setting"
+      ],
+      "scaleDisadvantages": [
+        "Lower general research prestige than flagship universities",
+        "Limited name recognition outside the Mid-Atlantic region",
+        "Distance from major metropolitan job markets outside DC",
+        "Less institutional emphasis on graduate and PhD-level research"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 76,
+        "conscientiousness": 84,
+        "extraversion": 78,
+        "agreeableness": 84,
+        "neuroticism": 38
+      },
+      "hollandCodes": [
+        "S",
+        "E",
+        "C"
+      ],
+      "learningStyle": [
+        "Faculty-Centered Undergraduate Teaching",
+        "Applied Business Casework",
+        "Clinical Health Sciences Training",
+        "Collaborative Community Learning"
+      ],
+      "socialEnvironment": [
+        "Community-Oriented",
+        "Spirited",
+        "Warm",
+        "Student-Centered",
+        "Professionally Polished"
+      ],
+      "idealStudentTraits": [
+        "Community-minded",
+        "Drawn to business, health sciences, or education",
+        "Values strong school spirit and belonging",
+        "Appreciates dedicated undergraduate teaching"
+      ],
+      "thrivesIf": [
+        "Plans for business, health sciences, or education",
+        "Wants a strong sense of school community and spirit",
+        "Values dedicated, teaching-focused faculty over large-scale research",
+        "Wants proximity to Washington DC's job market without an urban campus"
+      ],
+      "strugglesIf": [
+        "Wants a large-scale research university identity",
+        "Needs strong national brand recognition outside the Mid-Atlantic",
+        "Prefers an urban campus setting",
+        "Wants extensive graduate and PhD program breadth"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a larger research university identity",
+        "Students wanting a more urban campus setting",
+        "Students who prioritize national brand recognition over teaching quality"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "The College of Business and select health sciences programs carry additional selectivity beyond general university admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Communication Sciences and Disorders",
+        "Hospitality Management",
+        "Kinesiology",
+        "Justice Studies",
+        "Integrated Science and Technology"
+      ],
+      "hiddenCareerPipelines": [
+        "Government Contracting and Consulting",
+        "Speech-Language Pathology",
+        "Healthcare Administration",
+        "Corporate Training and Development"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Capital One",
+        "Deloitte",
+        "Northrop Grumman",
+        "Federal government agencies (via DC proximity)",
+        "Regional healthcare systems"
+      ],
+      "overlookedStrengths": [
+        "JMU has consistently ranked among the top public universities in the country for student satisfaction and undergraduate teaching quality.",
+        "Proximity to Washington DC has made JMU an increasingly popular target for federal contractors and consulting firms seeking reliable early-career talent.",
+        "The Communication Sciences and Disorders program is one of the strongest in the region for speech-language pathology.",
+        "JMU's College of Business maintains strong placement into consulting and financial services firms relative to the university's overall selectivity."
+      ],
+      "sleeperIndustries": [
+        "Government Contracting and Consulting",
+        "Speech-Language Pathology and Audiology",
+        "Corporate Training and Development",
+        "Healthcare Administration"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 70,
+      "mentorshipDensity": 72,
+      "executiveAccess": 60,
+      "internshipNetwork": 74,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 72,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 72,
+      "donorNetworkStrength": 54,
+      "boardMemberDensity": 46
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Business Consulting",
+        "Healthcare",
+        "Government Contracting",
+        "Education",
+        "Financial Services"
+      ],
+      "regionalEconomicDrivers": [
+        "Government Contracting (DC proximity)",
+        "Healthcare",
+        "Financial Services",
+        "Education"
+      ],
+      "topEmployers": [
+        "Capital One",
+        "Deloitte",
+        "Northrop Grumman",
+        "Sentara Healthcare",
+        "Federal government agencies"
+      ],
+      "emergingIndustries": [
+        "Government Technology Consulting",
+        "Digital Health",
+        "EdTech"
+      ],
+      "startupDensity": "Low to Moderate",
+      "ventureCapitalAccess": 28,
+      "corporateHeadquartersDensity": 38,
+      "healthcareHubStrength": 56,
+      "innovationIndex": 56
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Virginia and the Washington DC Metro Area's Government Contracting and Consulting Economy",
+      "secondaryMarkets": [
+        "Northern Virginia",
+        "Richmond VA",
+        "Baltimore MD",
+        "Charlotte NC"
+      ],
+      "alumniStrongholds": [
+        "Northern Virginia",
+        "Washington DC",
+        "Richmond VA",
+        "Harrisonburg VA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates enter the Washington DC metro area, particularly Northern Virginia, working in government contracting, consulting, and financial services.",
+        "Richmond draws graduates into business, healthcare, and state government roles.",
+        "Baltimore attracts graduates into healthcare and corporate business roles.",
+        "Health sciences graduates disperse regionally into hospital systems and clinical practice.",
+        "A smaller cohort enters national consulting and corporate training roles."
+      ],
+      "regionalInfluenceScore": 86,
+      "nationalReachScore": 48,
+      "internationalReachScore": 28
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 26,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 68,
+      "civicEngagement": 74
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 68,
+        "notes": "Solid pathway through health sciences, nursing, and communication sciences and disorders programs."
+      },
+      "nutraceuticals": {
+        "strength": 26,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 40,
+        "notes": "Moderate presence through the College of Business."
+      },
+      "outdoorIndustry": {
+        "strength": 42,
+        "notes": "Moderate presence given the Shenandoah Valley setting."
+      },
+      "sportsBusiness": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 26,
+        "notes": "Minimal institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 30,
+        "notes": "Limited but present through the business school."
+      },
+      "investmentBanking": {
+        "strength": 34,
+        "notes": "Present but modest."
+      },
+      "consulting": {
+        "strength": 62,
+        "notes": "Strong pathway given proximity to Washington DC's government consulting economy."
+      },
+      "medicine": {
+        "strength": 56,
+        "notes": "Moderate pre-med and health sciences pipeline."
+      },
+      "healthcareAdministration": {
+        "strength": 58,
+        "notes": "Solid pathway through health sciences programs."
+      },
+      "defense": {
+        "strength": 48,
+        "notes": "Meaningful pathway given proximity to federal defense contractors."
+      },
+      "realEstate": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 16,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 44,
+        "notes": "Modest entrepreneurship culture."
+      },
+      "technology": {
+        "strength": 44,
+        "notes": "Growing presence through integrated science and technology programs."
+      },
+      "publicPolicy": {
+        "strength": 50,
+        "notes": "Moderate pathway given DC proximity."
+      },
+      "nonprofitLeadership": {
+        "strength": 46,
+        "notes": "Present pathway, often tied to education and healthcare nonprofits."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 68,
+      "firstGenerationSupport": 62,
+      "wealthCreationPotential": 64,
+      "familyBusinessPipelineStrength": 38
+    },
+    "futureResilience": {
+      "aiResistance": 70,
+      "automationResistance": 66,
+      "adaptabilityScore": 64,
+      "interdisciplinaryStrength": 60,
+      "futureReadiness": 64,
+      "entrepreneurialFlexibility": 52,
+      "lifelongLearningCulture": 64,
+      "innovationCapacity": 58
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 64,
+      "communityLeadershipPotential": 78,
+      "geographicMobility": 58,
+      "workLifeBalancePotential": 80,
+      "purposeAlignment": 76,
+      "familyFormationSupport": 80,
+      "personalDevelopmentPotential": 80,
+      "careerOptionality": 62,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 56,
+      "networkMoat": 56,
+      "geographicMoat": 74,
+      "industryMoat": 66,
+      "alumniMoat": 70,
+      "brandDurability": 66,
+      "overallMoatScore": 64
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 48,
+      "returnerScore": 56,
+      "stewardScore": 62,
+      "navigatorScore": 54,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "dc_metro_concentration_with_virginia_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 44,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 500,
+      "jewishStudentPercentage": "~2%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Modest",
+      "notes": "JMU maintains a modest but active Hillel presence, without dedicated on-campus kosher dining facilities."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Honors College",
+      "strength": 76,
+      "notes": "Offers smaller seminar coursework, dedicated honors housing, thesis research, and priority faculty access for high-achieving students across all majors."
+    }
+  },
+
+"University of Richmond": {
+    "institutionNarrative": {
+      "name": "University of Richmond",
+      "location": "Richmond, Virginia",
+      "region": "Southeast",
+      "archetype": "The Small Liberal Arts and Leadership Studies Anchor \u2014 Business, Law, and Elite Small-College Resources",
+      "oneSentenceSummary": "The University of Richmond combines a small, well-endowed liberal arts college experience with a distinctive School of Leadership Studies, a respected undergraduate business school, and direct proximity to Virginia's state capital and legal community.",
+      "pipeline": "Approximately 3,300 undergraduates. Richmond is nationally recognized for its Jepson School of Leadership Studies (the first undergraduate leadership studies school in the country), the Robins School of Business, Law, and strong pre-professional advising. Major recruiters include regional and national law firms, Capital One, Dominion Energy, financial services firms, and consulting companies drawn to Richmond's small class sizes and strong alumni network.",
+      "hiddenPathway": "The Jepson School of Leadership Studies is the first and one of the only standalone undergraduate leadership studies schools in the country, giving students a distinctive academic credential in organizational leadership that virtually no other university offers at the undergraduate level.",
+      "institutionalSecret": "Richmond's endowment per student is exceptionally large relative to its small size, funding extensive merit scholarships, low student-faculty ratios, and research opportunities that rival much more expensive and prestigious institutions.",
+      "theRoom": "Located in Richmond, Virginia's state capital, students have direct access to state government, a strong regional legal community, and corporate headquarters including Capital One and Dominion Energy, all within a short drive of a picturesque, self-contained campus.",
+      "lifestyle": "Polished, well-resourced, and pre-professionally minded. Richmond's small size and strong financial resources create an intimate, close-knit campus culture with unusually strong access to internships and career services.",
+      "bestFitPersonality": "Pre-professionally minded, drawn to leadership studies, business, or law, and comfortable in a small, well-resourced, close-knit liberal arts environment.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Virginia and the broader Mid-Atlantic, with a distinctive national reputation in leadership studies.",
+      "economicOutcome": "Excellent outcomes in business, law, leadership and organizational development, and finance, supported by strong career services and a well-resourced alumni network.",
+      "gradCities": [
+        "Richmond VA",
+        "Washington DC",
+        "New York NY",
+        "Charlotte NC",
+        "Northern Virginia"
+      ],
+      "comparableInstitutions": [
+        "Washington and Lee University",
+        "Wake Forest University",
+        "Davidson College",
+        "Bucknell University",
+        "Colgate University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "J. Sargeant Reynolds Community College"
+        ],
+        "transferAcceptanceRate": "~28%",
+        "freshmanAcceptanceRate": "~24%",
+        "estimatedSavingsRange": "$18,000-$42,000",
+        "transferNotes": "Richmond accepts a modest number of transfer students each year, making transfer admission nearly as selective as its overall freshman admission rate."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Richmond",
+      "archetype": "Elite Small Private University \u2014 Leadership Studies and Business",
+      "institutionalPersonality": "polished, well-resourced, pre-professionally minded, close-knit, ambitious",
+      "cultureKeywords": [
+        "Leadership Studies",
+        "Business",
+        "Law",
+        "Small Liberal Arts",
+        "Well-Endowed",
+        "Pre-Professional"
+      ],
+      "missionOrientation": "Cultivating principled, effective leaders through a distinctive combination of liberal arts education, leadership studies, and pre-professional preparation.",
+      "faithTradition": "Historically Baptist-affiliated; today nonsectarian.",
+      "educationalPhilosophy": "Students learn through small seminar-style coursework, close faculty mentorship, and a distinctive interdisciplinary leadership studies curriculum alongside strong pre-professional programs.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Mixed, generally moderate to progressive, reflecting a small private university culture.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite among small liberal arts universities, with a nationally distinctive leadership studies program.",
+      "socialClimate": "Polished, well-resourced, and pre-professionally ambitious, with a close-knit campus community.",
+      "leadershipStyle": "Leadership through principled organizational leadership training and pre-professional excellence."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "A well-resourced small liberal arts university anchoring leadership studies education and feeding Virginia's legal, business, and government economy."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 68,
+      "TorBuffChester": 14,
+      "TexasTriangle": 8,
+      "CharLanta": 24,
+      "NorCalInnovationCorridor": 6,
+      "SoCalCreativeEconomy": 4
+    },
+    "comparativePositioning": {
+      "versusWashingtonAndLee": "Washington and Lee offers a similarly small, well-resourced experience with a stronger traditional liberal arts identity, while Richmond offers the distinctive Jepson School of Leadership Studies and a somewhat larger, more urban-adjacent setting.",
+      "versusWakeForest": "Wake Forest offers a larger scale with stronger Division I athletics and a more prominent national brand, while Richmond offers a smaller, more intimate environment with a unique leadership studies credential.",
+      "versusDavidson": "Davidson offers a similarly small, highly selective liberal arts experience with a stronger athletic conference profile, while Richmond offers the distinctive leadership studies program and closer proximity to Virginia's state government and legal community."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 3300,
+      "graduateEnrollment": 700,
+      "totalEnrollment": 4000,
+      "campusType": "Small Private University, Suburban Richmond",
+      "residentialIntensity": 92,
+      "communityFeel": 90,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with extensive faculty accessibility and close mentorship supported by the university's unusually large endowment per student.",
+      "scaleAdvantages": [
+        "The nation's first standalone undergraduate leadership studies school",
+        "Exceptionally large endowment per student funding scholarships and resources",
+        "Very low student-faculty ratio with close mentorship",
+        "Direct access to Richmond's legal, business, and state government community"
+      ],
+      "scaleDisadvantages": [
+        "Small size limits breadth of course offerings compared to larger universities",
+        "Less name recognition nationally than peer institutions of similar quality",
+        "Social scene can feel insular given the small student body",
+        "Limited graduate and PhD program offerings"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 78,
+        "conscientiousness": 88,
+        "extraversion": 72,
+        "agreeableness": 78,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "E",
+        "S",
+        "C"
+      ],
+      "learningStyle": [
+        "Small Seminar Discussion",
+        "Leadership Studies Coursework",
+        "Case-Based Business Learning",
+        "Close Faculty Mentorship"
+      ],
+      "socialEnvironment": [
+        "Polished",
+        "Well-Resourced",
+        "Pre-Professionally Minded",
+        "Close-Knit",
+        "Ambitious"
+      ],
+      "idealStudentTraits": [
+        "Pre-professionally minded",
+        "Drawn to leadership studies, business, or law",
+        "Comfortable in a small, close-knit community",
+        "Values extensive institutional resources and mentorship"
+      ],
+      "thrivesIf": [
+        "Plans for leadership development, business, or law",
+        "Wants a small, well-resourced liberal arts environment",
+        "Values close faculty mentorship and low student-faculty ratios",
+        "Wants direct access to Richmond's legal and business community"
+      ],
+      "strugglesIf": [
+        "Wants a large university with extensive course breadth",
+        "Needs strong national brand recognition immediately",
+        "Prefers a large, anonymous social scene",
+        "Wants extensive graduate and PhD program options"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a larger university with more course variety",
+        "Students wanting a bigger, more anonymous social environment",
+        "Students who prioritize national brand name recognition"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low to Moderate",
+      "notes": "The Jepson School of Leadership Studies and Robins School of Business have selective secondary admission processes beyond general university admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Leadership Studies",
+        "Rhetoric and Communication Studies",
+        "Healthcare Studies",
+        "Environmental Studies",
+        "Law, Politics, and Society"
+      ],
+      "hiddenCareerPipelines": [
+        "Organizational Leadership and Development",
+        "Regional Legal Practice",
+        "Corporate Finance",
+        "State Government and Public Affairs"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Capital One",
+        "Dominion Energy",
+        "Regional and national law firms",
+        "Financial services firms",
+        "Virginia state government"
+      ],
+      "overlookedStrengths": [
+        "The Jepson School of Leadership Studies is the first undergraduate leadership studies school in the country and remains virtually unmatched at the undergraduate level.",
+        "Richmond's endowment per student is exceptionally large relative to its size, funding extensive scholarships and low student-faculty ratios.",
+        "The Robins School of Business maintains strong regional placement into finance, consulting, and corporate roles.",
+        "Direct proximity to Virginia's state capital gives law and public policy students genuine access to government and legal internships."
+      ],
+      "sleeperIndustries": [
+        "Organizational Leadership and Development",
+        "Regional Legal Practice",
+        "State Government and Public Affairs",
+        "Corporate Finance"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 88,
+      "executiveAccess": 76,
+      "internshipNetwork": 80,
+      "familyBusinessExposure": 48,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 78,
+      "boardMemberDensity": 68
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance",
+        "Law",
+        "Energy",
+        "Consulting",
+        "Government"
+      ],
+      "regionalEconomicDrivers": [
+        "Financial Services",
+        "Energy (Dominion Energy)",
+        "Legal Services",
+        "State Government"
+      ],
+      "topEmployers": [
+        "Capital One",
+        "Dominion Energy",
+        "Regional law firms",
+        "Wells Fargo",
+        "Virginia state government"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Energy Technology",
+        "Government Technology Consulting"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 40,
+      "corporateHeadquartersDensity": 56,
+      "healthcareHubStrength": 52,
+      "innovationIndex": 58
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Richmond, Virginia's Finance, Law, and State Government Economy",
+      "secondaryMarkets": [
+        "Washington DC",
+        "New York NY",
+        "Charlotte NC",
+        "Northern Virginia"
+      ],
+      "alumniStrongholds": [
+        "Richmond VA",
+        "Washington DC",
+        "New York NY",
+        "Northern Virginia"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates remain in Richmond, entering finance, law, and corporate roles at Capital One and Dominion Energy.",
+        "Washington DC draws graduates into government, consulting, and policy roles.",
+        "New York attracts graduates into finance and consulting careers.",
+        "Charlotte and Northern Virginia draw graduates into broader corporate and financial services roles.",
+        "A smaller cohort enters national leadership development and organizational consulting roles."
+      ],
+      "regionalInfluenceScore": 84,
+      "nationalReachScore": 60,
+      "internationalReachScore": 40
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 38,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 92,
+      "crossDisciplinaryInteraction": 78,
+      "civicEngagement": 74
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 46,
+        "notes": "Moderate presence through healthcare studies, though Richmond has no medical school."
+      },
+      "nutraceuticals": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 46,
+        "notes": "Moderate presence through the Robins School of Business."
+      },
+      "outdoorIndustry": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 36,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 28,
+        "notes": "Minimal institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 42,
+        "notes": "Growing presence, primarily through alumni finance networks."
+      },
+      "privateEquity": {
+        "strength": 56,
+        "notes": "Solid placement given strong finance-oriented alumni network."
+      },
+      "investmentBanking": {
+        "strength": 62,
+        "notes": "Strong placement through the Robins School of Business."
+      },
+      "consulting": {
+        "strength": 66,
+        "notes": "Strong placement into major consulting firms, reinforced by leadership studies credential."
+      },
+      "medicine": {
+        "strength": 48,
+        "notes": "Moderate pre-med pipeline; Richmond has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 46,
+        "notes": "Moderate pathway through healthcare studies programs."
+      },
+      "defense": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 48,
+        "notes": "Moderate presence given Richmond's corporate real estate market."
+      },
+      "luxuryBrands": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 54,
+        "notes": "Growing entrepreneurship culture supported by strong alumni mentorship."
+      },
+      "technology": {
+        "strength": 42,
+        "notes": "Limited institutional emphasis relative to business, law, and leadership studies."
+      },
+      "publicPolicy": {
+        "strength": 58,
+        "notes": "Solid pathway given proximity to Virginia's state government."
+      },
+      "nonprofitLeadership": {
+        "strength": 56,
+        "notes": "Meaningful pathway, reinforced by the leadership studies curriculum's organizational focus."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 58,
+      "firstGenerationSupport": 56,
+      "wealthCreationPotential": 78,
+      "familyBusinessPipelineStrength": 48
+    },
+    "futureResilience": {
+      "aiResistance": 78,
+      "automationResistance": 74,
+      "adaptabilityScore": 76,
+      "interdisciplinaryStrength": 74,
+      "futureReadiness": 76,
+      "entrepreneurialFlexibility": 64,
+      "lifelongLearningCulture": 76,
+      "innovationCapacity": 68
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 78,
+      "communityLeadershipPotential": 84,
+      "geographicMobility": 68,
+      "workLifeBalancePotential": 78,
+      "purposeAlignment": 78,
+      "familyFormationSupport": 76,
+      "personalDevelopmentPotential": 84,
+      "careerOptionality": 74,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 68,
+      "networkMoat": 70,
+      "geographicMoat": 70,
+      "industryMoat": 68,
+      "alumniMoat": 72,
+      "brandDurability": 70,
+      "overallMoatScore": 70
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 58,
+      "returnerScore": 46,
+      "stewardScore": 40,
+      "navigatorScore": 66,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "mid_atlantic_concentration_with_national_finance_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 58,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 350,
+      "jewishStudentPercentage": "~10%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Richmond has a proportionally notable Jewish population for its small size, supported by an active Hillel, though without dedicated kosher dining facilities."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Richmond does not have a separate honors college; its small size, low student-faculty ratio, and Jepson School of Leadership Studies function as an honors-level experience for much of the student body."
+    }
+  },
+
+"Princeton University": {
+    "institutionNarrative": {
+      "name": "Princeton University",
+      "location": "Princeton, New Jersey",
+      "region": "Mid-Atlantic",
+      "archetype": "The Undergraduate-First Ivy \u2014 Public Policy, Theoretical Research, and Senior Thesis Rigor",
+      "oneSentenceSummary": "Princeton is the most undergraduate-focused of the Ivy League universities, combining elite theoretical research in mathematics, physics, and economics with a distinctive senior thesis requirement and the Woodrow Wilson School's public policy tradition, all within a small residential college town.",
+      "pipeline": "Approximately 5,600 undergraduates. Princeton is preeminent in Mathematics, Physics, Economics, Public and International Affairs (SPIA), Computer Science, and Politics. Major recruiters include Goldman Sachs, McKinsey & Company, Bridgewater Associates, Google, and the full spectrum of federal government agencies and international organizations.",
+      "hiddenPathway": "Princeton's senior thesis requirement, mandatory for every undergraduate regardless of major, produces original independent research at a level most universities reserve for graduate students, giving Princeton graduates a distinctive credential when applying to top graduate programs and employers who value independent work.",
+      "institutionalSecret": "Princeton has no medical, law, or business school, an unusual choice among elite research universities that concentrates all of its resources and faculty attention on undergraduate and PhD education, resulting in an unusually high ratio of senior faculty actually teaching undergraduates.",
+      "theRoom": "Located in Princeton, New Jersey, students are an hour from both New York City and Philadelphia, with the Institute for Advanced Study next door and deep pipelines into Washington DC's policy establishment through the School of Public and International Affairs.",
+      "lifestyle": "Intellectually intense, traditionally elite, and residentially cohesive. The eating club system defines much of upperclassmen social life, and the mandatory senior thesis creates a shared rite of passage across the entire student body.",
+      "bestFitPersonality": "Intellectually rigorous, comfortable with independent research, drawn to theoretical fields or public policy, and at ease within a small, traditionally elite community.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Global, with especially concentrated influence throughout Washington DC's policy establishment, Wall Street, and academic research institutions worldwide.",
+      "economicOutcome": "Exceptional outcomes in finance, consulting, public policy, academia, and law, with an unusually strong pipeline into federal government and international organizations.",
+      "gradCities": [
+        "New York NY",
+        "Washington DC",
+        "Boston MA",
+        "San Francisco CA",
+        "Philadelphia PA"
+      ],
+      "comparableInstitutions": [
+        "Harvard University",
+        "Yale University",
+        "Massachusetts Institute of Technology",
+        "Stanford University",
+        "University of Chicago"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Mercer County Community College"
+        ],
+        "transferAcceptanceRate": "~1%",
+        "freshmanAcceptanceRate": "~4%",
+        "estimatedSavingsRange": "$20,000-$45,000",
+        "transferNotes": "Princeton reinstated transfer admission in 2018 after decades without a transfer program, but it remains one of the most selective transfer pathways in the country, admitting only a small handful of students annually."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Princeton University",
+      "archetype": "Elite Private Research University \u2014 Undergraduate-First Ivy League",
+      "institutionalPersonality": "intellectually rigorous, traditional, independent-research-oriented, quietly prestigious",
+      "cultureKeywords": [
+        "Senior Thesis",
+        "Public Policy",
+        "Theoretical Research",
+        "Eating Clubs",
+        "Undergraduate Focus",
+        "Ivy League"
+      ],
+      "missionOrientation": "Advancing knowledge in service of humanity through rigorous undergraduate and doctoral education, with a historic emphasis on public service.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through independent research culminating in a mandatory senior thesis, small precept-based discussion sections, and close faculty mentorship uncommon at universities with large professional schools.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally progressive, with a strong public service and policy orientation.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most prestigious universities in the world, particularly dominant in mathematics, physics, economics, and public policy.",
+      "socialClimate": "Traditionally elite, intellectually intense, and residentially cohesive, with the eating club system as a defining social institution.",
+      "leadershipStyle": "Leadership through public service, theoretical research excellence, and policy influence."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "An undergraduate-focused Ivy League research university anchoring theoretical scholarship and public policy education within the Boston-Washington corridor."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 96,
+      "TorBuffChester": 18,
+      "TexasTriangle": 8,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 14,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusHarvard": "Harvard offers greater breadth through its law, business, and medical schools and a larger global brand, while Princeton offers a more concentrated undergraduate focus and a mandatory independent senior thesis tradition.",
+      "versusYale": "Yale offers a stronger drama, law, and residential college social culture, while Princeton offers deeper theoretical mathematics and physics strength and a more policy-oriented public affairs school.",
+      "versusMIT": "MIT offers a more intensely technical, engineering-first culture, while Princeton offers comparable theoretical strength in mathematics and physics alongside a broader humanities and public policy tradition."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 5600,
+      "graduateEnrollment": 3100,
+      "totalEnrollment": 8700,
+      "campusType": "Small Residential College Town",
+      "residentialIntensity": 96,
+      "communityFeel": 88,
+      "studentFacultyRatio": "5:1",
+      "classSizeExperience": "Small precept-based discussion sections supplement lectures, with extensive faculty mentorship and a mandatory senior thesis requiring sustained one-on-one advising.",
+      "scaleAdvantages": [
+        "No professional schools means undivided faculty focus on undergraduates",
+        "Mandatory senior thesis produces genuine independent research experience",
+        "Extremely low student-faculty ratio",
+        "Strong public policy pipeline into Washington DC"
+      ],
+      "scaleDisadvantages": [
+        "Extremely low admission rate limits access",
+        "Small town setting lacks a major city's immediate resources",
+        "Eating club social system can feel exclusionary to some students",
+        "No law, business, or medical school limits certain pre-professional pathways on campus"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 94,
+        "conscientiousness": 94,
+        "extraversion": 62,
+        "agreeableness": 72,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "I",
+        "C",
+        "E"
+      ],
+      "learningStyle": [
+        "Independent Thesis Research",
+        "Precept-Based Discussion",
+        "Theoretical Problem-Solving",
+        "Policy Analysis"
+      ],
+      "socialEnvironment": [
+        "Traditionally Elite",
+        "Intellectually Intense",
+        "Residentially Cohesive",
+        "Policy-Oriented",
+        "Quietly Competitive"
+      ],
+      "idealStudentTraits": [
+        "Intellectually rigorous",
+        "Comfortable with independent research",
+        "Drawn to theoretical fields or public policy",
+        "Self-motivated over a full academic year"
+      ],
+      "thrivesIf": [
+        "Wants a mandatory, substantial independent research experience",
+        "Plans for public policy, theoretical sciences, or economics",
+        "Values an extremely low student-faculty ratio",
+        "Is comfortable in a small, traditionally elite residential community"
+      ],
+      "strugglesIf": [
+        "Wants immediate access to law, business, or medical school resources on campus",
+        "Prefers a large city campus setting",
+        "Is uncomfortable with a historically exclusive social system",
+        "Wants a large, anonymous university experience"
+      ],
+      "transferRiskFactors": [
+        "Students wanting on-campus professional school resources",
+        "Students seeking a major urban campus",
+        "Students uncomfortable with the eating club social system"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Princeton does not impact majors at the undergraduate level, though the Woodrow Wilson School (SPIA) has a competitive secondary application process for junior and senior year."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Operations Research and Financial Engineering",
+        "Near Eastern Studies",
+        "Astrophysical Sciences",
+        "Comparative Literature",
+        "Ecology and Evolutionary Biology"
+      ],
+      "hiddenCareerPipelines": [
+        "Federal Government and International Organizations",
+        "Quantitative Finance",
+        "Academic Research",
+        "Public Policy Analysis"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Bridgewater Associates",
+        "Institute for Advanced Study",
+        "Federal government agencies"
+      ],
+      "overlookedStrengths": [
+        "The mandatory senior thesis gives every Princeton graduate a substantial independent research credential, regardless of major.",
+        "Princeton's proximity to the Institute for Advanced Study creates unusual access to some of the world's leading theoretical physicists and mathematicians.",
+        "The absence of law, business, and medical schools means undergraduate teaching receives undivided institutional priority.",
+        "The Woodrow Wilson School (SPIA) has an outsized alumni presence throughout federal government and international organizations relative to the university's small size."
+      ],
+      "sleeperIndustries": [
+        "Quantitative Finance and Trading",
+        "International Development and Diplomacy",
+        "Theoretical Physics and Mathematics Research",
+        "Public Policy Analysis"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 92,
+      "mentorshipDensity": 94,
+      "executiveAccess": 96,
+      "internshipNetwork": 92,
+      "familyBusinessExposure": 54,
+      "relationshipCapitalScore": 94,
+      "alumniLoyaltyScore": 90,
+      "referralCultureStrength": 92,
+      "donorNetworkStrength": 96,
+      "boardMemberDensity": 94
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance",
+        "Public Policy",
+        "Academia",
+        "Consulting",
+        "Technology"
+      ],
+      "regionalEconomicDrivers": [
+        "Financial Services",
+        "Government and Policy",
+        "Higher Education and Research",
+        "Pharmaceuticals"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Bridgewater Associates",
+        "Google",
+        "U.S. federal government"
+      ],
+      "emergingIndustries": [
+        "AI Policy and Governance",
+        "Quantitative Investment Strategies",
+        "Climate Policy",
+        "Biotechnology"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 68,
+      "corporateHeadquartersDensity": 56,
+      "healthcareHubStrength": 58,
+      "innovationIndex": 90
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New York and Washington DC's Finance, Policy, and Consulting Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "San Francisco CA",
+        "Philadelphia PA",
+        "London"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Washington DC",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates enter New York for finance, consulting, and law.",
+        "Washington DC draws a distinctively large share of graduates into federal government, policy, and international organizations.",
+        "Boston and San Francisco attract graduates into academia, biotechnology, and technology roles.",
+        "A globally dispersed cohort enters international organizations, diplomacy, and global development roles.",
+        "A meaningful share pursue PhD programs and academic research careers."
+      ],
+      "regionalInfluenceScore": 96,
+      "nationalReachScore": 96,
+      "internationalReachScore": 88
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 6,
+      "studentOrganizationStrength": 90,
+      "leadershipDevelopment": 92,
+      "crossDisciplinaryInteraction": 88,
+      "civicEngagement": 86
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 56,
+        "notes": "Moderate presence through molecular biology and public health-adjacent policy work, though Princeton has no medical school."
+      },
+      "nutraceuticals": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 40,
+        "notes": "Limited institutional emphasis relative to finance and policy."
+      },
+      "outdoorIndustry": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis despite strong Division I athletics participation."
+      },
+      "entertainmentMedia": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis, though some graduates enter media and publishing."
+      },
+      "ventureCapital": {
+        "strength": 62,
+        "notes": "Growing presence, particularly among alumni in finance and technology."
+      },
+      "privateEquity": {
+        "strength": 82,
+        "notes": "Very strong placement given Princeton's dense Wall Street alumni network."
+      },
+      "investmentBanking": {
+        "strength": 88,
+        "notes": "One of the strongest investment banking pipelines among elite universities."
+      },
+      "consulting": {
+        "strength": 86,
+        "notes": "Extremely strong placement into McKinsey, Bain, BCG, and similar top consulting firms."
+      },
+      "medicine": {
+        "strength": 50,
+        "notes": "Solid pre-med foundation, though Princeton has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 42,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 44,
+        "notes": "Present through public policy and international affairs pathways into national security roles."
+      },
+      "realEstate": {
+        "strength": 46,
+        "notes": "Moderate presence through finance-oriented alumni."
+      },
+      "luxuryBrands": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 62,
+        "notes": "Growing entrepreneurship culture, though secondary to finance and policy as primary outcomes."
+      },
+      "technology": {
+        "strength": 76,
+        "notes": "Strong computer science and engineering pipeline, growing steadily in recent years."
+      },
+      "publicPolicy": {
+        "strength": 94,
+        "notes": "One of Princeton's defining institutional strengths through the School of Public and International Affairs."
+      },
+      "nonprofitLeadership": {
+        "strength": 66,
+        "notes": "Meaningful pathway, often tied to international development and public service."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 62,
+      "firstGenerationSupport": 78,
+      "wealthCreationPotential": 94,
+      "familyBusinessPipelineStrength": 54
+    },
+    "futureResilience": {
+      "aiResistance": 94,
+      "automationResistance": 92,
+      "adaptabilityScore": 90,
+      "interdisciplinaryStrength": 88,
+      "futureReadiness": 92,
+      "entrepreneurialFlexibility": 76,
+      "lifelongLearningCulture": 92,
+      "innovationCapacity": 90
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 94,
+      "communityLeadershipPotential": 90,
+      "geographicMobility": 90,
+      "workLifeBalancePotential": 72,
+      "purposeAlignment": 86,
+      "familyFormationSupport": 74,
+      "personalDevelopmentPotential": 92,
+      "careerOptionality": 96,
+      "longTermLifeSatisfaction": 88
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 98,
+      "networkMoat": 96,
+      "geographicMoat": 90,
+      "industryMoat": 92,
+      "alumniMoat": 90,
+      "brandDurability": 98,
+      "overallMoatScore": 95
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 82,
+      "returnerScore": 26,
+      "stewardScore": 20,
+      "navigatorScore": 94,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "global_with_nyc_dc_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 84,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 750,
+      "jewishStudentPercentage": "~13%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "Princeton maintains an active Hillel and Chabad presence with kosher dining options, serving a well-established Jewish student population."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Princeton has no separate honors college; the university's small size, low student-faculty ratio, and mandatory senior thesis function as an honors-level experience for the entire undergraduate student body."
+    }
+  },
+
+"Yale University": {
+    "institutionNarrative": {
+      "name": "Yale University",
+      "location": "New Haven, Connecticut",
+      "region": "New England",
+      "archetype": "The Drama, Law, and Residential College Anchor \u2014 Humanities Prestige and Elite Legal Pathways",
+      "oneSentenceSummary": "Yale combines the country's most prestigious drama and law schools with a distinctive residential college system that creates smaller, intensely bonded communities within an elite research university, producing an outsized share of Supreme Court justices, playwrights, and cultural leaders.",
+      "pipeline": "Approximately 6,600 undergraduates. Yale is preeminent in Drama and Theater (David Geffen School of Drama), Law, History, Political Science, and Economics. Major recruiters include top law firms nationally, McKinsey & Company, Goldman Sachs, major theater and entertainment companies, and federal judiciary clerkships at every level.",
+      "hiddenPathway": "Yale Law School's outsized influence on the federal judiciary means Yale undergraduates interested in law benefit from mentorship networks and clerkship pipelines that funnel directly into Supreme Court and federal appellate clerkships at a rate no other university approaches.",
+      "institutionalSecret": "Yale's residential college system, modeled after Oxford and Cambridge, creates twelve distinct sub-communities each with their own dining hall, dean, and traditions, giving students a smaller, more intimate social identity inside a large, globally famous university.",
+      "theRoom": "Located in New Haven, Yale sits an hour from New York City, with deep pipelines into the city's legal, financial, and cultural institutions, alongside its own world-renowned art, drama, and museum resources on campus.",
+      "lifestyle": "Intellectually vibrant, artistically rich, and residentially intimate. The residential college system anchors social life, and Yale's drama, art, and music resources create a uniquely creative undercurrent within an otherwise traditional Ivy League culture.",
+      "bestFitPersonality": "Intellectually curious across the humanities and sciences, drawn to law, drama, or public service, and comfortable in an intensely bonded, smaller residential community.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Global, with an outsized concentration of influence within the American legal profession, federal judiciary, and cultural and arts institutions.",
+      "economicOutcome": "Exceptional outcomes in law, finance, consulting, drama and the arts, and public service, with an unmatched pipeline into the federal judiciary.",
+      "gradCities": [
+        "New York NY",
+        "Washington DC",
+        "Boston MA",
+        "Los Angeles CA",
+        "San Francisco CA"
+      ],
+      "comparableInstitutions": [
+        "Harvard University",
+        "Princeton University",
+        "Stanford University",
+        "Columbia University",
+        "University of Pennsylvania"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Gateway Community College"
+        ],
+        "transferAcceptanceRate": "~2%",
+        "freshmanAcceptanceRate": "~5%",
+        "estimatedSavingsRange": "$20,000-$45,000",
+        "transferNotes": "Yale accepts a small number of transfer students annually, making its transfer pathway one of the most selective in the country."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Yale University",
+      "archetype": "Elite Private Research University \u2014 Law, Drama, and Residential College Life",
+      "institutionalPersonality": "intellectually vibrant, artistically rich, traditionally elite, residentially bonded",
+      "cultureKeywords": [
+        "Law",
+        "Drama",
+        "Residential Colleges",
+        "Humanities",
+        "Federal Judiciary",
+        "Arts"
+      ],
+      "missionOrientation": "Cultivating leaders in law, the arts, public service, and scholarship through a rigorous liberal arts education within an intimate residential community.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through small seminar discussion, residential college community life, and unusually deep access to Yale's law, drama, and art school resources even as undergraduates.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally progressive, with a strong legal and public service orientation.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most prestigious universities in the world, particularly dominant in law, drama, and the humanities.",
+      "socialClimate": "Intellectually vibrant, artistically engaged, and residentially intimate through the college system.",
+      "leadershipStyle": "Leadership through legal and judicial influence, artistic excellence, and public service tradition."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "An elite Ivy League research university anchoring legal education and the arts within the Boston-Washington corridor, with an outsized influence on the federal judiciary."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 94,
+      "TorBuffChester": 22,
+      "TexasTriangle": 6,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 12,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusHarvard": "Harvard offers greater breadth through its business and medical schools and a larger global brand, while Yale offers a more intimate residential college system and an unmatched pipeline into the federal judiciary through its law school.",
+      "versusPrinceton": "Princeton offers a more concentrated theoretical and public policy focus without professional schools, while Yale offers world-class law and drama schools directly integrated with undergraduate life.",
+      "versusColumbia": "Columbia offers deeper integration with New York City's professional and cultural institutions, while Yale offers a more residentially cohesive campus community and a stronger drama and legal tradition."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small to Medium",
+      "undergraduateEnrollment": 6600,
+      "graduateEnrollment": 7400,
+      "totalEnrollment": 14000,
+      "campusType": "Small City Residential College University",
+      "residentialIntensity": 94,
+      "communityFeel": 90,
+      "studentFacultyRatio": "6:1",
+      "classSizeExperience": "Small seminar discussions dominate the undergraduate experience, with the residential college system providing dedicated deans, faculty fellows, and intimate community structures.",
+      "scaleAdvantages": [
+        "World-renowned law and drama schools directly accessible to undergraduates",
+        "Distinctive residential college system creating smaller sub-communities",
+        "Extremely low student-faculty ratio",
+        "Unmatched pipeline into the federal judiciary"
+      ],
+      "scaleDisadvantages": [
+        "Extremely low admission rate limits access",
+        "New Haven is a smaller city with less immediate economic activity than New York or Boston",
+        "Traditional elite culture can feel insular to some students",
+        "High cost of attendance before financial aid"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 96,
+        "conscientiousness": 90,
+        "extraversion": 66,
+        "agreeableness": 76,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "A",
+        "I",
+        "E"
+      ],
+      "learningStyle": [
+        "Small Seminar Discussion",
+        "Residential College Community Learning",
+        "Legal Case Analysis",
+        "Creative and Performance-Based Study"
+      ],
+      "socialEnvironment": [
+        "Intellectually Vibrant",
+        "Artistically Rich",
+        "Residentially Bonded",
+        "Traditionally Elite",
+        "Legally Oriented"
+      ],
+      "idealStudentTraits": [
+        "Intellectually curious across humanities and sciences",
+        "Drawn to law, drama, or public service",
+        "Values a residentially intimate community",
+        "Comfortable with rigorous seminar discussion"
+      ],
+      "thrivesIf": [
+        "Plans for law, drama and the arts, or public service",
+        "Wants a distinctive residential college community structure",
+        "Values direct access to world-class law and drama school resources",
+        "Enjoys a smaller city with strong on-campus cultural resources"
+      ],
+      "strugglesIf": [
+        "Wants a large city campus environment",
+        "Needs a stronger STEM and engineering identity",
+        "Is uncomfortable with a traditionally elite social culture",
+        "Prefers a large, anonymous university experience"
+      ],
+      "transferRiskFactors": [
+        "Students wanting a larger city campus setting",
+        "Students seeking a stronger engineering or technical identity",
+        "Students uncomfortable with a smaller, tightly-bonded residential culture"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Yale does not impact majors at the undergraduate level, though certain popular seminars and drama/theater studies courses can be competitive to enter."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Ethics, Politics, and Economics",
+        "History of Art",
+        "Cognitive Science",
+        "Near Eastern Languages and Civilizations",
+        "Environmental Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Federal Judicial Clerkships",
+        "Theater and Performing Arts Production",
+        "Museum and Arts Administration",
+        "Public Interest Law"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Top national law firms",
+        "McKinsey & Company",
+        "Goldman Sachs",
+        "Federal judiciary clerkships",
+        "Major theater and entertainment companies"
+      ],
+      "overlookedStrengths": [
+        "Yale Law School's influence on the federal judiciary is unmatched, giving undergraduates interested in law an unusually direct mentorship pipeline.",
+        "The residential college system creates twelve distinct sub-communities, each with genuine institutional identity and resources.",
+        "The David Geffen School of Drama gives undergraduates access to some of the best theater training and production resources in the country.",
+        "Yale's museums, including the Yale University Art Gallery, are world-class resources available directly to undergraduates."
+      ],
+      "sleeperIndustries": [
+        "Federal Judicial Clerkships and Public Interest Law",
+        "Theater and Performing Arts Production",
+        "Museum and Cultural Institution Leadership",
+        "International Human Rights Law"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 90,
+      "mentorshipDensity": 92,
+      "executiveAccess": 94,
+      "internshipNetwork": 90,
+      "familyBusinessExposure": 52,
+      "relationshipCapitalScore": 92,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 90,
+      "donorNetworkStrength": 94,
+      "boardMemberDensity": 92
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Law",
+        "Finance",
+        "Arts and Entertainment",
+        "Consulting",
+        "Public Service"
+      ],
+      "regionalEconomicDrivers": [
+        "Legal Services",
+        "Higher Education and Research",
+        "Healthcare (Yale New Haven Health)",
+        "Financial Services"
+      ],
+      "topEmployers": [
+        "Top national law firms",
+        "McKinsey & Company",
+        "Goldman Sachs",
+        "Federal judiciary",
+        "Yale New Haven Health"
+      ],
+      "emergingIndustries": [
+        "Legal Technology",
+        "Arts and Media Technology",
+        "Biotechnology",
+        "Climate Law and Policy"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 60,
+      "corporateHeadquartersDensity": 46,
+      "healthcareHubStrength": 68,
+      "innovationIndex": 84
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New York and Washington DC's Legal, Finance, and Policy Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "Los Angeles CA",
+        "San Francisco CA",
+        "London"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Washington DC",
+        "Boston MA",
+        "Los Angeles CA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates enter New York for law, finance, and consulting.",
+        "Washington DC draws graduates into public interest law, government, and federal judicial clerkships.",
+        "Los Angeles attracts graduates into entertainment, drama, and media careers.",
+        "Boston and San Francisco draw graduates into academia, biotechnology, and technology.",
+        "A globally dispersed alumni network extends into international law and diplomacy."
+      ],
+      "regionalInfluenceScore": 94,
+      "nationalReachScore": 96,
+      "internationalReachScore": 86
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 10,
+      "studentOrganizationStrength": 92,
+      "leadershipDevelopment": 90,
+      "crossDisciplinaryInteraction": 90,
+      "civicEngagement": 84
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 58,
+        "notes": "Moderate presence through Yale School of Medicine-adjacent research, though undergraduate focus is limited."
+      },
+      "nutraceuticals": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis relative to law and finance."
+      },
+      "outdoorIndustry": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 68,
+        "notes": "Strong pathway through the David Geffen School of Drama and undergraduate theater programs."
+      },
+      "ventureCapital": {
+        "strength": 58,
+        "notes": "Growing presence, particularly among alumni in finance and technology."
+      },
+      "privateEquity": {
+        "strength": 80,
+        "notes": "Very strong placement given Yale's dense Wall Street and law alumni network."
+      },
+      "investmentBanking": {
+        "strength": 84,
+        "notes": "Strong pipeline into major investment banks."
+      },
+      "consulting": {
+        "strength": 84,
+        "notes": "Extremely strong placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 56,
+        "notes": "Solid pre-med foundation, supported by Yale School of Medicine research opportunities."
+      },
+      "healthcareAdministration": {
+        "strength": 48,
+        "notes": "Moderate presence."
+      },
+      "defense": {
+        "strength": 38,
+        "notes": "Present through public policy and international affairs-adjacent pathways."
+      },
+      "realEstate": {
+        "strength": 44,
+        "notes": "Moderate presence through finance-oriented alumni."
+      },
+      "luxuryBrands": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 58,
+        "notes": "Growing presence, though secondary to law and finance as primary outcomes."
+      },
+      "technology": {
+        "strength": 66,
+        "notes": "Growing computer science pipeline, though secondary to Yale's traditional law and humanities strengths."
+      },
+      "publicPolicy": {
+        "strength": 84,
+        "notes": "Strong pathway through the Jackson School of Global Affairs and political science department."
+      },
+      "nonprofitLeadership": {
+        "strength": 70,
+        "notes": "Strong pathway, reinforced by Yale's public interest law tradition."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 60,
+      "firstGenerationSupport": 78,
+      "wealthCreationPotential": 92,
+      "familyBusinessPipelineStrength": 52
+    },
+    "futureResilience": {
+      "aiResistance": 90,
+      "automationResistance": 88,
+      "adaptabilityScore": 88,
+      "interdisciplinaryStrength": 90,
+      "futureReadiness": 88,
+      "entrepreneurialFlexibility": 72,
+      "lifelongLearningCulture": 92,
+      "innovationCapacity": 84
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 92,
+      "communityLeadershipPotential": 92,
+      "geographicMobility": 88,
+      "workLifeBalancePotential": 72,
+      "purposeAlignment": 88,
+      "familyFormationSupport": 74,
+      "personalDevelopmentPotential": 94,
+      "careerOptionality": 94,
+      "longTermLifeSatisfaction": 88
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 98,
+      "networkMoat": 94,
+      "geographicMoat": 84,
+      "industryMoat": 92,
+      "alumniMoat": 90,
+      "brandDurability": 98,
+      "overallMoatScore": 94
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 80,
+      "returnerScore": 28,
+      "stewardScore": 22,
+      "navigatorScore": 92,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "global_with_nyc_dc_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 82,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 900,
+      "jewishStudentPercentage": "~14%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "Yale maintains an active Hillel and Chabad presence with kosher dining options, serving a well-established Jewish student population."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Yale has no separate honors college; the residential college system and small seminar culture function as an honors-level experience for the entire undergraduate student body."
+    }
+  },
+
+"Columbia University": {
+    "institutionNarrative": {
+      "name": "Columbia University",
+      "location": "New York, New York",
+      "region": "Mid-Atlantic",
+      "archetype": "The Core Curriculum and Manhattan Anchor \u2014 Journalism, Finance, and Urban Immersion",
+      "oneSentenceSummary": "Columbia combines a distinctive, mandatory Core Curriculum in the Western canon with unmatched physical immersion in Manhattan, giving students direct daily access to the world's most concentrated financial, media, and cultural institutions.",
+      "pipeline": "Approximately 8,000 undergraduates across Columbia College and the Fu Foundation School of Engineering. Columbia is preeminent in Journalism (Columbia Journalism School), Finance and Economics, Political Science, International Affairs (SIPA), and Creative Writing. Major recruiters include every major Wall Street bank, McKinsey & Company, the United Nations, major publishing houses, and New York's media and finance establishment.",
+      "hiddenPathway": "Columbia's location in Manhattan means students can and regularly do hold part-time internships at investment banks, publishing houses, and media companies during the semester, a pathway essentially unavailable to students at rural or suburban Ivy League campuses.",
+      "institutionalSecret": "Columbia's Core Curriculum, requiring every undergraduate to take the same sequence of foundational humanities and science courses regardless of major, creates a shared intellectual language across the entire student body that alumni consistently cite as a defining bonding experience.",
+      "theRoom": "Located in Morningside Heights in Manhattan, students are minutes from Wall Street, the United Nations, major publishing houses, and the full concentration of New York's financial, media, and cultural institutions.",
+      "lifestyle": "Intellectually intense and urgently urban. Columbia's mandatory Core Curriculum creates shared academic rigor, while Manhattan's constant presence shapes a less traditionally collegiate, more professionally accelerated campus culture.",
+      "bestFitPersonality": "Intellectually rigorous, comfortable with urban intensity, drawn to finance, journalism, or international affairs, and eager for direct professional access during undergraduate years.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Global, with singular concentration and influence throughout New York's financial, media, and international affairs institutions.",
+      "economicOutcome": "Exceptional outcomes in finance, journalism, international affairs, law, and consulting, driven by unmatched daily access to Manhattan's professional ecosystem.",
+      "gradCities": [
+        "New York NY",
+        "Washington DC",
+        "London",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "comparableInstitutions": [
+        "Harvard University",
+        "Yale University",
+        "University of Pennsylvania",
+        "New York University",
+        "University of Chicago"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Borough of Manhattan Community College",
+          "LaGuardia Community College"
+        ],
+        "transferAcceptanceRate": "~6%",
+        "freshmanAcceptanceRate": "~4%",
+        "estimatedSavingsRange": "$22,000-$48,000",
+        "transferNotes": "Columbia accepts a modest number of transfer students annually, drawing occasionally from New York's CUNY community college system, though remaining highly selective."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Columbia University",
+      "archetype": "Elite Private Research University \u2014 Core Curriculum and Manhattan Immersion",
+      "institutionalPersonality": "intellectually intense, urgently urban, professionally accelerated, cosmopolitan",
+      "cultureKeywords": [
+        "Core Curriculum",
+        "Manhattan",
+        "Journalism",
+        "Finance",
+        "International Affairs",
+        "Urban Intensity"
+      ],
+      "missionOrientation": "Advancing knowledge and preparing engaged citizens through a shared foundational curriculum and direct immersion in New York City's global institutions.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through a mandatory shared Core Curriculum in the humanities and sciences, combined with direct professional engagement enabled by the university's Manhattan location.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally progressive, with an internationally engaged and urban political sensibility.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most prestigious universities in the world, particularly dominant in journalism, finance, and international affairs.",
+      "socialClimate": "Intellectually intense, cosmopolitan, and professionally accelerated given constant proximity to Manhattan's institutions.",
+      "leadershipStyle": "Leadership through intellectual rigor, professional acceleration, and global urban engagement."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "The most urban-integrated Ivy League university, providing direct daily access to Manhattan's financial, media, and international affairs institutions."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 12,
+      "BosWash": 100,
+      "TorBuffChester": 20,
+      "TexasTriangle": 10,
+      "CharLanta": 12,
+      "NorCalInnovationCorridor": 16,
+      "SoCalCreativeEconomy": 8
+    },
+    "comparativePositioning": {
+      "versusNYU": "NYU offers a larger, more sprawling urban university experience without a mandatory shared curriculum, while Columbia offers a smaller, more traditionally elite Ivy League identity combined with the same Manhattan access.",
+      "versusHarvard": "Harvard offers a larger global brand and broader professional school breadth, while Columbia offers unmatched daily immersion in Manhattan's financial and media institutions.",
+      "versusUPenn": "Penn offers a similarly professionally accelerated culture with a stronger dedicated undergraduate business school (Wharton), while Columbia offers deeper journalism and international affairs strength and Manhattan's unmatched urban density."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 8000,
+      "graduateEnrollment": 23000,
+      "totalEnrollment": 31000,
+      "campusType": "Urban Manhattan Campus",
+      "residentialIntensity": 78,
+      "communityFeel": 66,
+      "studentFacultyRatio": "6:1",
+      "classSizeExperience": "Small, discussion-based Core Curriculum seminars are mandatory for all students, supplemented by larger lectures in major-specific coursework as students advance.",
+      "scaleAdvantages": [
+        "Unmatched daily access to Manhattan's financial, media, and international institutions",
+        "Distinctive mandatory Core Curriculum creating shared intellectual foundation",
+        "Strong journalism and international affairs graduate schools accessible to ambitious undergraduates",
+        "Extremely low student-faculty ratio for an Ivy League university"
+      ],
+      "scaleDisadvantages": [
+        "Extremely low admission rate limits access",
+        "Urban campus lacks a traditional green quad or college-town feel",
+        "High cost of living in Manhattan beyond tuition",
+        "Intensely accelerated culture can create early professional pressure"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 92,
+        "conscientiousness": 90,
+        "extraversion": 72,
+        "agreeableness": 68,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "I",
+        "E",
+        "A"
+      ],
+      "learningStyle": [
+        "Core Curriculum Seminar Discussion",
+        "Direct Professional Internship Engagement",
+        "Urban Research Immersion",
+        "Independent Study"
+      ],
+      "socialEnvironment": [
+        "Intellectually Intense",
+        "Cosmopolitan",
+        "Professionally Accelerated",
+        "Urgently Urban",
+        "Ambitious"
+      ],
+      "idealStudentTraits": [
+        "Intellectually rigorous",
+        "Comfortable with urban intensity",
+        "Drawn to finance, journalism, or international affairs",
+        "Eager for direct professional access during college"
+      ],
+      "thrivesIf": [
+        "Wants direct daily access to Manhattan's financial and media institutions",
+        "Plans for finance, journalism, international affairs, or law",
+        "Values a distinctive shared intellectual foundation through the Core Curriculum",
+        "Is energized rather than overwhelmed by constant urban intensity"
+      ],
+      "strugglesIf": [
+        "Wants a traditional, green residential college campus",
+        "Needs a quieter, less professionally accelerated environment",
+        "Is uncomfortable with high urban cost of living and density",
+        "Prefers a more traditional college-town social atmosphere"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a traditional residential college campus",
+        "Students overwhelmed by urban intensity and cost",
+        "Students who prefer a quieter, less accelerated academic culture"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low to Moderate",
+      "notes": "Columbia does not impact most majors at the undergraduate level, though the Fu Foundation School of Engineering has separate admission from Columbia College."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Sustainable Development",
+        "Urban Studies",
+        "Comparative Literature and Society",
+        "Financial Economics",
+        "Human Rights Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Investment Banking and Wall Street Finance",
+        "Broadcast and Print Journalism",
+        "International Development and Diplomacy",
+        "Publishing and Media"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Every major Wall Street investment bank",
+        "McKinsey & Company",
+        "The United Nations",
+        "Major publishing houses",
+        "New York media companies"
+      ],
+      "overlookedStrengths": [
+        "Columbia's Core Curriculum, unchanged in its foundational structure for over a century, creates a genuinely shared intellectual bond across an otherwise diverse student body.",
+        "Columbia Journalism School's presence gives ambitious undergraduate writers unusual access to leading journalists and editors.",
+        "The School of International and Public Affairs (SIPA) creates direct pipelines into the United Nations and international development organizations, given the university's proximity.",
+        "Columbia's location allows students to hold genuine part-time internships at major financial and media institutions during the academic year, not just summers."
+      ],
+      "sleeperIndustries": [
+        "Investment Banking and Wall Street Finance",
+        "International Development and Diplomacy",
+        "Publishing and Media",
+        "Urban Planning and Development"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 88,
+      "mentorshipDensity": 86,
+      "executiveAccess": 96,
+      "internshipNetwork": 96,
+      "familyBusinessExposure": 56,
+      "relationshipCapitalScore": 92,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 90,
+      "donorNetworkStrength": 92,
+      "boardMemberDensity": 92
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance",
+        "Journalism and Media",
+        "International Affairs",
+        "Consulting",
+        "Law"
+      ],
+      "regionalEconomicDrivers": [
+        "Financial Services",
+        "Media and Publishing",
+        "International Organizations",
+        "Legal Services"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "JPMorgan Chase",
+        "McKinsey & Company",
+        "The United Nations",
+        "Major New York media companies"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Digital Media",
+        "Climate Finance",
+        "AI Policy"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 78,
+      "corporateHeadquartersDensity": 92,
+      "healthcareHubStrength": 74,
+      "innovationIndex": 90
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New York City's Finance, Media, and International Affairs Economy",
+      "secondaryMarkets": [
+        "Washington DC",
+        "London",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Washington DC",
+        "London",
+        "Boston MA"
+      ],
+      "relocationPatterns": [
+        "The overwhelming majority of graduates remain in New York, entering finance, media, law, and consulting.",
+        "Washington DC draws graduates into international affairs, policy, and government roles.",
+        "London attracts graduates into global finance and international organizations.",
+        "Boston and San Francisco draw graduates into academia, biotechnology, and technology.",
+        "A globally dispersed alumni network extends throughout international diplomacy and development organizations."
+      ],
+      "regionalInfluenceScore": 98,
+      "nationalReachScore": 92,
+      "internationalReachScore": 90
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 14,
+      "studentOrganizationStrength": 88,
+      "leadershipDevelopment": 86,
+      "crossDisciplinaryInteraction": 84,
+      "civicEngagement": 82
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 28,
+        "notes": "Some presence given New York's concentration of beauty and consumer brand headquarters."
+      },
+      "healthWellness": {
+        "strength": 58,
+        "notes": "Moderate presence through Columbia's medical center research ties, though undergraduate focus is limited."
+      },
+      "nutraceuticals": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 54,
+        "notes": "Moderate presence given New York's concentration of consumer brand headquarters."
+      },
+      "outdoorIndustry": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 70,
+        "notes": "Strong pathway through journalism, publishing, and New York's media industry proximity."
+      },
+      "ventureCapital": {
+        "strength": 68,
+        "notes": "Strong and growing presence tied to New York's expanding venture ecosystem."
+      },
+      "privateEquity": {
+        "strength": 88,
+        "notes": "One of the strongest private equity pipelines among elite universities given Wall Street proximity."
+      },
+      "investmentBanking": {
+        "strength": 94,
+        "notes": "Among the strongest investment banking pipelines of any American university."
+      },
+      "consulting": {
+        "strength": 84,
+        "notes": "Extremely strong placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 60,
+        "notes": "Solid pre-med foundation, supported by Columbia's medical center."
+      },
+      "healthcareAdministration": {
+        "strength": 52,
+        "notes": "Moderate presence."
+      },
+      "defense": {
+        "strength": 30,
+        "notes": "Limited but present through international affairs-adjacent national security pathways."
+      },
+      "realEstate": {
+        "strength": 62,
+        "notes": "Strong presence given New York's concentration of real estate finance and development firms."
+      },
+      "luxuryBrands": {
+        "strength": 46,
+        "notes": "Meaningful presence given New York's luxury retail and fashion industry proximity."
+      },
+      "entrepreneurship": {
+        "strength": 62,
+        "notes": "Growing presence, particularly in fintech and media technology."
+      },
+      "technology": {
+        "strength": 68,
+        "notes": "Growing computer science and engineering pipeline through the Fu Foundation School."
+      },
+      "publicPolicy": {
+        "strength": 82,
+        "notes": "Strong pathway through SIPA and political science, reinforced by UN proximity."
+      },
+      "nonprofitLeadership": {
+        "strength": 68,
+        "notes": "Strong pathway, particularly for international development and human rights organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 64,
+      "firstGenerationSupport": 76,
+      "wealthCreationPotential": 96,
+      "familyBusinessPipelineStrength": 56
+    },
+    "futureResilience": {
+      "aiResistance": 90,
+      "automationResistance": 88,
+      "adaptabilityScore": 88,
+      "interdisciplinaryStrength": 88,
+      "futureReadiness": 90,
+      "entrepreneurialFlexibility": 74,
+      "lifelongLearningCulture": 88,
+      "innovationCapacity": 86
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 96,
+      "communityLeadershipPotential": 86,
+      "geographicMobility": 90,
+      "workLifeBalancePotential": 66,
+      "purposeAlignment": 82,
+      "familyFormationSupport": 68,
+      "personalDevelopmentPotential": 90,
+      "careerOptionality": 96,
+      "longTermLifeSatisfaction": 84
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 96,
+      "networkMoat": 94,
+      "geographicMoat": 98,
+      "industryMoat": 96,
+      "alumniMoat": 86,
+      "brandDurability": 96,
+      "overallMoatScore": 94
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 78,
+      "returnerScore": 30,
+      "stewardScore": 22,
+      "navigatorScore": 92,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "global_with_extreme_nyc_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 86,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 1400,
+      "jewishStudentPercentage": "~18%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Exceptional",
+      "notes": "Columbia has one of the largest Jewish undergraduate populations among elite private universities, supported by an active Hillel and Chabad presence with extensive kosher dining."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Columbia has no separate honors college; the mandatory Core Curriculum and small seminar structure function as an honors-level shared experience for the entire undergraduate student body."
+    }
+  },
+
+"Cornell University": {
+    "institutionNarrative": {
+      "name": "Cornell University",
+      "location": "Ithaca, New York",
+      "region": "Mid-Atlantic",
+      "archetype": "The Any Person, Any Study Anchor \u2014 Hospitality, Agriculture, Engineering, and Land-Grant Breadth",
+      "oneSentenceSummary": "Cornell is the most academically comprehensive Ivy League university, combining a land-grant mission of practical and agricultural education with elite engineering, the world's top hospitality management program, and eight distinct undergraduate colleges within one university.",
+      "pipeline": "Approximately 15,700 undergraduates across seven undergraduate colleges. Cornell is preeminent in Hotel Administration (Nolan School of Hotel Administration), Engineering, Agriculture and Life Sciences, Industrial and Labor Relations, and Architecture. Major recruiters include Marriott, Hilton, Goldman Sachs, McKinsey & Company, Boeing, and major agricultural and life sciences companies.",
+      "hiddenPathway": "Cornell's status as a land-grant university means several of its colleges, including Agriculture and Life Sciences, Human Ecology, and Industrial and Labor Relations, are partially state-funded, giving qualified New York residents access to an Ivy League education at a meaningfully lower cost than Cornell's private colleges.",
+      "institutionalSecret": "Cornell's motto, 'I would found an institution where any person can find instruction in any study,' is not just rhetoric \u2014 the university's seven distinct undergraduate colleges give it a breadth of practical, technical, and vocational programs unmatched by any other Ivy League school, from viticulture to labor relations to hotel management.",
+      "theRoom": "Located in Ithaca in the Finger Lakes region, Cornell is more geographically isolated than other Ivy League campuses, but this isolation is offset by an unusually self-contained, comprehensive academic ecosystem spanning engineering, agriculture, hospitality, and the liberal arts.",
+      "lifestyle": "Academically intense, practically minded, and scenic. Ithaca's Finger Lakes setting and Cornell's famous gorges create a distinctive outdoor backdrop, while the university's sheer size and college breadth create genuinely varied sub-cultures depending on a student's college.",
+      "bestFitPersonality": "Practically minded, drawn to a specific applied field such as hospitality, agriculture, engineering, or labor relations, and comfortable in a large, academically comprehensive university.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Global, with particularly concentrated influence in hospitality management, agricultural science, and engineering worldwide.",
+      "economicOutcome": "Exceptional outcomes in hospitality management, engineering, finance, agriculture and life sciences, and architecture, with the world's most respected hotel administration pipeline.",
+      "gradCities": [
+        "New York NY",
+        "Boston MA",
+        "San Francisco CA",
+        "Washington DC",
+        "Chicago IL"
+      ],
+      "comparableInstitutions": [
+        "University of Pennsylvania",
+        "Massachusetts Institute of Technology",
+        "Georgia Institute of Technology",
+        "Carnegie Mellon University",
+        "University of California Berkeley"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Tompkins Cortland Community College"
+        ],
+        "transferAcceptanceRate": "~19%",
+        "freshmanAcceptanceRate": "~7%",
+        "estimatedSavingsRange": "$18,000-$42,000",
+        "transferNotes": "Cornell maintains one of the more accessible transfer pathways among Ivy League universities, particularly for its state-supported colleges including Agriculture and Life Sciences and Industrial and Labor Relations."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Cornell University",
+      "archetype": "Elite Private-Public Hybrid Research University \u2014 Land-Grant Breadth and Practical Education",
+      "institutionalPersonality": "practically minded, academically comprehensive, egalitarian in spirit, scenic and self-contained",
+      "cultureKeywords": [
+        "Any Person, Any Study",
+        "Hospitality",
+        "Agriculture",
+        "Engineering",
+        "Land-Grant Mission",
+        "Finger Lakes"
+      ],
+      "missionOrientation": "Providing instruction in any study to any person, combining elite research with genuinely practical and applied education across seven distinct colleges.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through college-specific applied coursework spanning hospitality case studies, engineering design, agricultural field research, and traditional liberal arts seminars.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally progressive, with a strong practical and egalitarian undercurrent given the land-grant mission.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most prestigious universities in the world, with the singular distinction of being the top-ranked hospitality management program globally.",
+      "socialClimate": "Academically intense and practically minded, with genuinely distinct sub-cultures across the university's seven undergraduate colleges.",
+      "leadershipStyle": "Leadership through practical excellence, applied research, and comprehensive academic breadth."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "The most academically comprehensive Ivy League university, combining land-grant practical education with elite research across engineering, hospitality, and agriculture."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 16,
+      "BosWash": 82,
+      "TorBuffChester": 30,
+      "TexasTriangle": 10,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 16,
+      "SoCalCreativeEconomy": 8
+    },
+    "comparativePositioning": {
+      "versusUPenn": "Penn offers a more concentrated professional school culture centered on Wharton, while Cornell offers unmatched breadth across seven distinct colleges, including the world's top hospitality management program.",
+      "versusMIT": "MIT offers a more intensely technical, engineering-first culture, while Cornell offers comparable engineering strength alongside hospitality, agriculture, and a broader land-grant mission.",
+      "versusGeorgiaTech": "Georgia Tech offers a more affordable, engineering-concentrated public university experience, while Cornell offers Ivy League prestige combined with unmatched breadth across applied fields."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 15700,
+      "graduateEnrollment": 9500,
+      "totalEnrollment": 25200,
+      "campusType": "Large Rural College Town",
+      "residentialIntensity": 82,
+      "communityFeel": 78,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Class sizes vary significantly by college; smaller, applied coursework in hospitality and agriculture contrasts with larger engineering lectures, though all colleges offer substantial research access.",
+      "scaleAdvantages": [
+        "World's top-ranked hotel administration program",
+        "Unmatched breadth across seven distinct undergraduate colleges",
+        "Land-grant status provides reduced cost for New York residents in certain colleges",
+        "Scenic Finger Lakes setting with famous campus gorges"
+      ],
+      "scaleDisadvantages": [
+        "More geographically isolated than other Ivy League campuses",
+        "Larger overall size can create less cohesive university-wide identity",
+        "Ithaca's remote location limits immediate access to a major city",
+        "Notoriously harsh winters and challenging terrain"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 88,
+        "conscientiousness": 90,
+        "extraversion": 68,
+        "agreeableness": 76,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "R",
+        "I",
+        "E"
+      ],
+      "learningStyle": [
+        "Applied Case-Based Learning",
+        "Engineering Design Projects",
+        "Agricultural Field Research",
+        "Hospitality Case Simulation"
+      ],
+      "socialEnvironment": [
+        "Practically Minded",
+        "Academically Comprehensive",
+        "Scenic and Outdoorsy",
+        "Egalitarian",
+        "Diverse by College"
+      ],
+      "idealStudentTraits": [
+        "Practically minded",
+        "Drawn to a specific applied field",
+        "Comfortable in a large, comprehensive university",
+        "Values both prestige and hands-on training"
+      ],
+      "thrivesIf": [
+        "Plans for hospitality, engineering, agriculture, or labor relations",
+        "Wants Ivy League prestige combined with genuinely applied, practical training",
+        "Values a scenic, outdoor-adjacent campus setting",
+        "Is comfortable navigating a large university with distinct college identities"
+      ],
+      "strugglesIf": [
+        "Wants a smaller, more unified campus community",
+        "Needs immediate proximity to a major city",
+        "Dislikes harsh winters and remote settings",
+        "Prefers a single unified undergraduate college experience"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a smaller, more unified campus community",
+        "Students wanting closer proximity to a major city",
+        "Students who dislike remote, harsh-winter settings"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Each undergraduate college has separate admission, and popular colleges like Engineering and the Nolan School of Hotel Administration carry significant additional selectivity."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Viticulture and Enology",
+        "Industrial and Labor Relations",
+        "Landscape Architecture",
+        "Fiber Science and Apparel Design",
+        "Applied Economics and Management"
+      ],
+      "hiddenCareerPipelines": [
+        "Global Hospitality Management",
+        "Agricultural Science and AgTech",
+        "Labor Relations and Human Resources Leadership",
+        "Architecture and Urban Planning"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Marriott",
+        "Hilton",
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Boeing"
+      ],
+      "overlookedStrengths": [
+        "The Nolan School of Hotel Administration is consistently ranked the top hospitality management program in the world.",
+        "Cornell's land-grant colleges give qualified New York residents access to an Ivy League education at a meaningfully reduced cost.",
+        "The School of Industrial and Labor Relations is the only program of its kind among Ivy League universities, feeding directly into HR leadership and labor policy roles.",
+        "Cornell's agricultural and life sciences research maintains deep ties to New York's farming and food economy despite the university's broader global prestige."
+      ],
+      "sleeperIndustries": [
+        "Global Hospitality and Hotel Management",
+        "Labor Relations and Human Resources Leadership",
+        "Viticulture and Wine Business",
+        "Agricultural Technology"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 80,
+      "executiveAccess": 84,
+      "internshipNetwork": 86,
+      "familyBusinessExposure": 50,
+      "relationshipCapitalScore": 84,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 82,
+      "donorNetworkStrength": 84,
+      "boardMemberDensity": 78
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Hospitality",
+        "Engineering",
+        "Finance",
+        "Agriculture",
+        "Architecture"
+      ],
+      "regionalEconomicDrivers": [
+        "Hospitality and Tourism",
+        "Agriculture",
+        "Financial Services",
+        "Engineering and Technology"
+      ],
+      "topEmployers": [
+        "Marriott",
+        "Hilton",
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Boeing"
+      ],
+      "emergingIndustries": [
+        "Hospitality Technology",
+        "Agricultural Technology",
+        "Climate-Resilient Agriculture",
+        "Engineering Sustainability"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 58,
+      "corporateHeadquartersDensity": 52,
+      "healthcareHubStrength": 60,
+      "innovationIndex": 84
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New York and National Hospitality, Finance, and Engineering Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "San Francisco CA",
+        "Washington DC",
+        "Chicago IL"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Boston MA",
+        "San Francisco CA",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates enter New York for finance, consulting, and hospitality corporate roles.",
+        "Hospitality graduates disperse globally into hotel management and hospitality corporate leadership.",
+        "San Francisco and Boston draw graduates into technology and biotechnology roles.",
+        "Agriculture and life sciences graduates disperse regionally and nationally into agricultural business and research.",
+        "A smaller cohort enters national architecture and urban planning roles."
+      ],
+      "regionalInfluenceScore": 90,
+      "nationalReachScore": 88,
+      "internationalReachScore": 76
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 28,
+      "studentOrganizationStrength": 88,
+      "leadershipDevelopment": 84,
+      "crossDisciplinaryInteraction": 82,
+      "civicEngagement": 76
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 28,
+        "notes": "Some overlap through Human Ecology and fiber science and apparel design programs."
+      },
+      "healthWellness": {
+        "strength": 62,
+        "notes": "Moderate presence through Human Ecology and life sciences research."
+      },
+      "nutraceuticals": {
+        "strength": 50,
+        "notes": "Meaningful overlap through agriculture and food science research."
+      },
+      "consumerProducts": {
+        "strength": 58,
+        "notes": "Solid presence through Human Ecology and applied economics programs."
+      },
+      "outdoorIndustry": {
+        "strength": 52,
+        "notes": "Moderate presence given the Finger Lakes setting and outdoor recreation culture."
+      },
+      "sportsBusiness": {
+        "strength": 40,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 60,
+        "notes": "Growing presence, particularly in agricultural and hospitality technology."
+      },
+      "privateEquity": {
+        "strength": 74,
+        "notes": "Strong placement given Cornell's dense Wall Street and consulting alumni network."
+      },
+      "investmentBanking": {
+        "strength": 78,
+        "notes": "Strong pipeline into major investment banks, particularly from the Dyson School of Applied Economics."
+      },
+      "consulting": {
+        "strength": 80,
+        "notes": "Strong placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 62,
+        "notes": "Solid pre-med foundation, supported by strong life sciences research."
+      },
+      "healthcareAdministration": {
+        "strength": 52,
+        "notes": "Moderate presence."
+      },
+      "defense": {
+        "strength": 36,
+        "notes": "Present through engineering pathways into aerospace and defense contractors."
+      },
+      "realEstate": {
+        "strength": 56,
+        "notes": "Meaningful presence through the hospitality and real estate finance programs."
+      },
+      "luxuryBrands": {
+        "strength": 34,
+        "notes": "Limited but present, particularly through hospitality management."
+      },
+      "entrepreneurship": {
+        "strength": 66,
+        "notes": "Strong entrepreneurship culture, particularly in agricultural and hospitality technology."
+      },
+      "technology": {
+        "strength": 78,
+        "notes": "Strong engineering and computer science pipeline through Cornell Tech and the College of Engineering."
+      },
+      "publicPolicy": {
+        "strength": 62,
+        "notes": "Solid pathway through the Industrial and Labor Relations school and applied economics."
+      },
+      "nonprofitLeadership": {
+        "strength": 56,
+        "notes": "Meaningful pathway, often tied to agricultural and labor policy organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 70,
+      "firstGenerationSupport": 80,
+      "wealthCreationPotential": 88,
+      "familyBusinessPipelineStrength": 50
+    },
+    "futureResilience": {
+      "aiResistance": 88,
+      "automationResistance": 86,
+      "adaptabilityScore": 86,
+      "interdisciplinaryStrength": 92,
+      "futureReadiness": 88,
+      "entrepreneurialFlexibility": 76,
+      "lifelongLearningCulture": 86,
+      "innovationCapacity": 88
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 88,
+      "communityLeadershipPotential": 84,
+      "geographicMobility": 84,
+      "workLifeBalancePotential": 76,
+      "purposeAlignment": 82,
+      "familyFormationSupport": 78,
+      "personalDevelopmentPotential": 88,
+      "careerOptionality": 92,
+      "longTermLifeSatisfaction": 84
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 92,
+      "networkMoat": 84,
+      "geographicMoat": 82,
+      "industryMoat": 92,
+      "alumniMoat": 82,
+      "brandDurability": 90,
+      "overallMoatScore": 87
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 72,
+      "returnerScore": 36,
+      "stewardScore": 28,
+      "navigatorScore": 84,
+      "geographicLockIn": "low_to_moderate",
+      "alumniDispersalPattern": "national_with_global_hospitality_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 78,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 2800,
+      "jewishStudentPercentage": "~18%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Exceptional",
+      "notes": "Cornell has one of the largest Jewish undergraduate populations among Ivy League universities, supported by an active Hillel and Chabad presence with extensive kosher dining."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "College Scholar Program and Honors Programs by College",
+      "strength": 70,
+      "notes": "Cornell does not have a single unified honors college; instead, individual colleges (Arts and Sciences, Engineering, Agriculture and Life Sciences) offer their own honors and research distinction programs."
+    }
+  },
+
+"Dartmouth College": {
+    "institutionNarrative": {
+      "name": "Dartmouth College",
+      "location": "Hanover, New Hampshire",
+      "region": "New England",
+      "archetype": "The Small Ivy Wilderness Anchor \u2014 Undergraduate Teaching, Tuck Business, and Rural New England Immersion",
+      "oneSentenceSummary": "Dartmouth is the smallest and most undergraduate-focused Ivy League institution, combining an unusually intimate liberal arts college experience with the elite Tuck School of Business and a distinctive outdoor and wilderness culture rooted in rural New Hampshire.",
+      "pipeline": "Approximately 4,500 undergraduates. Dartmouth is preeminent in Economics, Government, Engineering (Thayer School), and pre-business preparation feeding into the Tuck School of Business. Major recruiters include Goldman Sachs, McKinsey & Company, Bain & Company, Bridgewater Associates, and top consulting and finance firms nationally.",
+      "hiddenPathway": "Dartmouth's small size and close-knit alumni network create an unusually strong 'Dartmouth mafia' effect in finance and consulting recruiting, where alumni actively prioritize hiring fellow graduates at a rate that punches above the college's smaller undergraduate population.",
+      "institutionalSecret": "Despite being formally a 'College' rather than a university, Dartmouth's Thayer School of Engineering and Tuck School of Business give students access to elite professional and technical resources that most true liberal arts colleges cannot offer, while retaining Dartmouth's small, undergraduate-first identity.",
+      "theRoom": "Located in rural Hanover, New Hampshire, Dartmouth is more geographically isolated than any other Ivy League campus, but this isolation supports a legendary outdoor culture built around the Dartmouth Outing Club, the oldest and largest collegiate outing club in the country.",
+      "lifestyle": "Outdoorsy, tightly bonded, and traditionally spirited. Dartmouth's remote setting and strong Greek life create an intensely close-knit social culture, with the Dartmouth Outing Club anchoring a distinctive wilderness identity uncommon among Ivy League schools.",
+      "bestFitPersonality": "Outdoors-oriented, drawn to finance, consulting, or engineering, and comfortable in a small, tightly bonded, traditionally spirited rural community.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "National, with a particularly concentrated and outsized alumni network in finance, consulting, and business leadership relative to the college's small size.",
+      "economicOutcome": "Exceptional outcomes in finance, consulting, and business leadership, with an alumni network in these fields disproportionately powerful relative to Dartmouth's small undergraduate population.",
+      "gradCities": [
+        "New York NY",
+        "Boston MA",
+        "San Francisco CA",
+        "Washington DC",
+        "Chicago IL"
+      ],
+      "comparableInstitutions": [
+        "Williams College",
+        "Amherst College",
+        "Princeton University",
+        "Duke University",
+        "Brown University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Community College System of New Hampshire"
+        ],
+        "transferAcceptanceRate": "~2%",
+        "freshmanAcceptanceRate": "~6%",
+        "estimatedSavingsRange": "$18,000-$42,000",
+        "transferNotes": "Dartmouth accepts a very small number of transfer students annually, making its transfer pathway one of the most selective in the Ivy League."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Dartmouth College",
+      "archetype": "Elite Small Private College \u2014 Undergraduate Teaching, Business, and Outdoor Wilderness Culture",
+      "institutionalPersonality": "outdoorsy, tightly bonded, traditionally spirited, professionally ambitious",
+      "cultureKeywords": [
+        "Dartmouth Outing Club",
+        "Tuck Business",
+        "Greek Life",
+        "Wilderness Culture",
+        "Small Ivy",
+        "Undergraduate Focus"
+      ],
+      "missionOrientation": "Cultivating leaders through a rigorous undergraduate liberal arts education combined with elite business and engineering resources within an intimate rural community.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through small seminar discussion, close faculty mentorship uncommon at larger research universities, and direct pipelines into the Tuck School of Business and Thayer School of Engineering.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally progressive, with a strong traditional and spirited undercurrent given Greek life and outdoor culture.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most prestigious undergraduate-focused institutions in the world, with disproportionate alumni influence in finance and consulting.",
+      "socialClimate": "Outdoorsy, tightly bonded, and traditionally spirited, anchored by Greek life and the Dartmouth Outing Club.",
+      "leadershipStyle": "Leadership through close alumni network activation, business excellence, and outdoor wilderness stewardship."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "The smallest and most undergraduate-focused Ivy League institution, producing a disproportionately powerful alumni network in finance and consulting relative to its size."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 88,
+      "TorBuffChester": 26,
+      "TexasTriangle": 6,
+      "CharLanta": 6,
+      "NorCalInnovationCorridor": 10,
+      "SoCalCreativeEconomy": 4
+    },
+    "comparativePositioning": {
+      "versusWilliams": "Williams offers a similarly small, undergraduate-focused liberal arts experience without Ivy League branding, while Dartmouth offers comparable intimacy plus Ivy League prestige and the Tuck School of Business.",
+      "versusBrown": "Brown offers a more flexible, open curriculum with a more urban-adjacent Providence setting, while Dartmouth offers a more traditional, structured curriculum and a stronger finance and consulting alumni network.",
+      "versusPrinceton": "Princeton offers a larger scale with a stronger theoretical research identity and no professional schools, while Dartmouth offers a smaller, more intimate community with direct access to the Tuck School of Business."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 4500,
+      "graduateEnrollment": 2000,
+      "totalEnrollment": 6500,
+      "campusType": "Small Rural New England College Town",
+      "residentialIntensity": 94,
+      "communityFeel": 90,
+      "studentFacultyRatio": "7:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with extensive faculty accessibility uncommon even among Ivy League universities given Dartmouth's smaller size and undergraduate-first mission.",
+      "scaleAdvantages": [
+        "Extremely low student-faculty ratio with genuine undergraduate-first faculty priorities",
+        "Direct access to the Tuck School of Business and Thayer School of Engineering",
+        "Legendary outdoor culture through the Dartmouth Outing Club",
+        "Disproportionately powerful alumni network in finance and consulting"
+      ],
+      "scaleDisadvantages": [
+        "Most geographically isolated Ivy League campus",
+        "Small size limits breadth of course offerings compared to larger universities",
+        "Strong Greek life culture may not suit every student",
+        "Harsh, remote New Hampshire winters"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 82,
+        "conscientiousness": 88,
+        "extraversion": 76,
+        "agreeableness": 78,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "E",
+        "R",
+        "I"
+      ],
+      "learningStyle": [
+        "Small Seminar Discussion",
+        "Outdoor and Wilderness-Based Learning",
+        "Pre-Business Case Analysis",
+        "Engineering Design Projects"
+      ],
+      "socialEnvironment": [
+        "Outdoorsy",
+        "Tightly Bonded",
+        "Traditionally Spirited",
+        "Greek-Life-Present",
+        "Professionally Ambitious"
+      ],
+      "idealStudentTraits": [
+        "Outdoors-oriented",
+        "Drawn to finance, consulting, or engineering",
+        "Comfortable in a small, tightly bonded community",
+        "Values traditional collegiate spirit"
+      ],
+      "thrivesIf": [
+        "Plans for finance, consulting, business, or engineering",
+        "Wants a legendary outdoor and wilderness culture",
+        "Values an extremely low student-faculty ratio",
+        "Enjoys a small, tightly bonded, traditionally spirited community"
+      ],
+      "strugglesIf": [
+        "Wants a major city campus setting",
+        "Needs a larger, more anonymous social environment",
+        "Is uncomfortable with strong Greek life culture",
+        "Dislikes remote, harsh-winter rural settings"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a major urban campus setting",
+        "Students uncomfortable with a strong Greek life presence",
+        "Students who dislike remote, harsh-winter rural settings"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Dartmouth does not impact majors at the undergraduate level, though admission to the Thayer School of Engineering's five-year BE program has additional requirements."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Native American and Indigenous Studies",
+        "Earth Sciences",
+        "Quantitative Social Science",
+        "Studio Art",
+        "Environmental Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Investment Banking and Consulting",
+        "Environmental Science and Policy",
+        "Engineering Design",
+        "Outdoor Recreation and Conservation"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Bain & Company",
+        "Bridgewater Associates",
+        "Tuck School of Business alumni network"
+      ],
+      "overlookedStrengths": [
+        "Dartmouth's small alumni base creates an unusually powerful and active 'Dartmouth mafia' effect in finance and consulting recruiting.",
+        "The Dartmouth Outing Club is the oldest and largest collegiate outing club in the country, creating a genuine wilderness culture uncommon among Ivy League schools.",
+        "The Thayer School of Engineering's five-year BE program gives students a rare combined liberal arts and professional engineering credential.",
+        "Direct undergraduate proximity to the Tuck School of Business creates unusually strong pre-MBA mentorship opportunities."
+      ],
+      "sleeperIndustries": [
+        "Investment Banking and Consulting",
+        "Environmental Science and Conservation",
+        "Outdoor Recreation Industry",
+        "Engineering Design and Consulting"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 90,
+      "mentorshipDensity": 90,
+      "executiveAccess": 90,
+      "internshipNetwork": 86,
+      "familyBusinessExposure": 52,
+      "relationshipCapitalScore": 92,
+      "alumniLoyaltyScore": 94,
+      "referralCultureStrength": 94,
+      "donorNetworkStrength": 88,
+      "boardMemberDensity": 84
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance",
+        "Consulting",
+        "Engineering",
+        "Business",
+        "Environmental Science"
+      ],
+      "regionalEconomicDrivers": [
+        "Financial Services",
+        "Consulting",
+        "Higher Education",
+        "Outdoor Recreation and Tourism"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Bain & Company",
+        "Bridgewater Associates",
+        "Dartmouth-Hitchcock Medical Center"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Climate Science and Policy",
+        "Engineering Consulting"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 56,
+      "corporateHeadquartersDensity": 32,
+      "healthcareHubStrength": 56,
+      "innovationIndex": 80
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New York and Boston's Finance and Consulting Economy",
+      "secondaryMarkets": [
+        "San Francisco CA",
+        "Washington DC",
+        "Chicago IL",
+        "London"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Boston MA",
+        "San Francisco CA",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates enter New York for finance and consulting.",
+        "Boston draws graduates into consulting, healthcare, and biotechnology.",
+        "San Francisco attracts graduates into technology and venture capital.",
+        "A meaningful cohort pursues the Tuck School of Business MBA before returning to finance and business leadership.",
+        "A smaller cohort enters environmental science and outdoor recreation industry roles."
+      ],
+      "regionalInfluenceScore": 88,
+      "nationalReachScore": 92,
+      "internationalReachScore": 70
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 60,
+      "studentOrganizationStrength": 86,
+      "leadershipDevelopment": 88,
+      "crossDisciplinaryInteraction": 82,
+      "civicEngagement": 76
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 56,
+        "notes": "Moderate presence through Dartmouth-Hitchcock Medical Center research ties."
+      },
+      "nutraceuticals": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 42,
+        "notes": "Limited institutional emphasis relative to finance and consulting."
+      },
+      "outdoorIndustry": {
+        "strength": 82,
+        "notes": "One of the strongest outdoor recreation cultures among Ivy League schools, anchored by the Dartmouth Outing Club."
+      },
+      "sportsBusiness": {
+        "strength": 40,
+        "notes": "Moderate presence given strong Division I athletics participation."
+      },
+      "entertainmentMedia": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 58,
+        "notes": "Growing presence, particularly among alumni in finance and technology."
+      },
+      "privateEquity": {
+        "strength": 82,
+        "notes": "One of the strongest private equity pipelines among elite universities given Dartmouth's dense finance alumni network."
+      },
+      "investmentBanking": {
+        "strength": 88,
+        "notes": "Among the strongest investment banking pipelines of any American university relative to its small size."
+      },
+      "consulting": {
+        "strength": 88,
+        "notes": "Extremely strong placement into McKinsey, Bain, BCG, and similar top consulting firms."
+      },
+      "medicine": {
+        "strength": 56,
+        "notes": "Solid pre-med foundation, supported by Dartmouth-Hitchcock Medical Center."
+      },
+      "healthcareAdministration": {
+        "strength": 46,
+        "notes": "Moderate presence."
+      },
+      "defense": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 44,
+        "notes": "Moderate presence through finance-oriented alumni."
+      },
+      "luxuryBrands": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 58,
+        "notes": "Growing entrepreneurship culture, though secondary to finance and consulting as primary outcomes."
+      },
+      "technology": {
+        "strength": 64,
+        "notes": "Solid engineering and computer science pipeline through the Thayer School of Engineering."
+      },
+      "publicPolicy": {
+        "strength": 54,
+        "notes": "Moderate pathway through government and environmental studies programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 50,
+        "notes": "Moderate pathway, often tied to environmental and outdoor conservation organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 58,
+      "firstGenerationSupport": 72,
+      "wealthCreationPotential": 92,
+      "familyBusinessPipelineStrength": 52
+    },
+    "futureResilience": {
+      "aiResistance": 88,
+      "automationResistance": 86,
+      "adaptabilityScore": 84,
+      "interdisciplinaryStrength": 82,
+      "futureReadiness": 86,
+      "entrepreneurialFlexibility": 74,
+      "lifelongLearningCulture": 84,
+      "innovationCapacity": 82
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 92,
+      "communityLeadershipPotential": 86,
+      "geographicMobility": 84,
+      "workLifeBalancePotential": 74,
+      "purposeAlignment": 80,
+      "familyFormationSupport": 78,
+      "personalDevelopmentPotential": 88,
+      "careerOptionality": 90,
+      "longTermLifeSatisfaction": 86
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 92,
+      "networkMoat": 92,
+      "geographicMoat": 76,
+      "industryMoat": 88,
+      "alumniMoat": 92,
+      "brandDurability": 90,
+      "overallMoatScore": 88
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 76,
+      "returnerScore": 30,
+      "stewardScore": 22,
+      "navigatorScore": 88,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "national_finance_concentration_with_global_reach"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 62,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 450,
+      "jewishStudentPercentage": "~10%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate to Strong",
+      "notes": "Dartmouth maintains an active Hillel and Chabad presence with kosher dining options, serving a well-established Jewish student population relative to the college's small size."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Dartmouth has no separate honors college; the college's small size, low student-faculty ratio, and departmental honors thesis programs function as an honors-level experience for high-achieving students."
+    }
+  },
+
+"University of Pennsylvania": {
+    "institutionNarrative": {
+      "name": "University of Pennsylvania",
+      "location": "Philadelphia, Pennsylvania",
+      "region": "Mid-Atlantic",
+      "archetype": "The Pre-Professional Powerhouse \u2014 Wharton Business, Nursing, and Interdisciplinary Ivy League Ambition",
+      "oneSentenceSummary": "The University of Pennsylvania is the most explicitly pre-professional Ivy League university, anchored by the Wharton School, the world's most influential undergraduate business program, alongside a top nursing school and unusually strong cross-disciplinary dual-degree options.",
+      "pipeline": "Approximately 10,500 undergraduates across four undergraduate schools. Penn is preeminent in Business (Wharton), Nursing, Communication (Annenberg), and Biomedical Engineering. Major recruiters include every major Wall Street investment bank, McKinsey & Company, Goldman Sachs, major healthcare systems, and consulting firms nationally and globally.",
+      "hiddenPathway": "Penn's Huntsman Program, Management and Technology Program, and other cross-school dual-degree options give students the ability to combine a Wharton business degree with engineering, international studies, or nursing in a structurally unified four-year program that few other universities can replicate.",
+      "institutionalSecret": "Wharton's undergraduate program, distinct from its more famous MBA, is arguably the single most powerful undergraduate business credential in the world, producing an outsized share of Wall Street's most senior finance leaders relative to its class size.",
+      "theRoom": "Located in West Philadelphia, Penn sits within its own self-contained campus while remaining an easy train ride from New York and Washington DC, with Philadelphia's own healthcare, legal, and financial sector immediately surrounding campus.",
+      "lifestyle": "Professionally ambitious, socially vibrant, and pragmatically pre-professional. Penn's culture blends Ivy League intellectual rigor with an unusually intense, career-focused social atmosphere, reinforced by a prominent Greek life and social scene.",
+      "bestFitPersonality": "Professionally ambitious, drawn to business, nursing, or interdisciplinary dual-degree study, and comfortable with an intensely career-focused social culture.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Global, with an outsized concentration of influence throughout Wall Street, global finance, and healthcare leadership.",
+      "economicOutcome": "Exceptional outcomes in finance, consulting, healthcare, and business leadership, with the world's most influential undergraduate business school driving disproportionate Wall Street placement.",
+      "gradCities": [
+        "New York NY",
+        "Philadelphia PA",
+        "San Francisco CA",
+        "Washington DC",
+        "Boston MA"
+      ],
+      "comparableInstitutions": [
+        "Harvard University",
+        "Columbia University",
+        "Cornell University",
+        "Duke University",
+        "Northwestern University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Community College of Philadelphia"
+        ],
+        "transferAcceptanceRate": "~7%",
+        "freshmanAcceptanceRate": "~6%",
+        "estimatedSavingsRange": "$20,000-$46,000",
+        "transferNotes": "Penn accepts a modest number of transfer students annually, remaining highly selective, with occasional transfers from the Community College of Philadelphia into the College of Arts and Sciences."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Pennsylvania",
+      "archetype": "Elite Private Research University \u2014 Pre-Professional Business and Interdisciplinary Ambition",
+      "institutionalPersonality": "professionally ambitious, pragmatic, socially vibrant, interdisciplinary",
+      "cultureKeywords": [
+        "Wharton",
+        "Business",
+        "Nursing",
+        "Dual-Degree Programs",
+        "Pre-Professional",
+        "Ivy League"
+      ],
+      "missionOrientation": "Producing professionally ambitious leaders through an unusually pre-professional, interdisciplinary Ivy League education anchored by the world's leading undergraduate business program.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through case-based business instruction, clinical nursing training, and unusually structured cross-school dual-degree programs combining business with engineering, nursing, or international studies.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally progressive, with a strong pragmatic, career-focused undercurrent given Wharton's influence.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most prestigious universities in the world, with Wharton representing the single most influential undergraduate business credential globally.",
+      "socialClimate": "Professionally ambitious, socially vibrant, and pragmatically pre-professional, with a prominent Greek life culture.",
+      "leadershipStyle": "Leadership through business excellence, interdisciplinary innovation, and professional network activation."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "The most explicitly pre-professional Ivy League university, anchored by the world's most influential undergraduate business program."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 92,
+      "TorBuffChester": 26,
+      "TexasTriangle": 8,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 14,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusHarvard": "Harvard offers a broader liberal arts identity and larger global brand, while Penn offers a more explicitly pre-professional focus anchored by Wharton's undergraduate business program.",
+      "versusColumbia": "Columbia offers deeper Manhattan integration and a mandatory shared Core Curriculum, while Penn offers Wharton's unmatched undergraduate business prestige and more structured dual-degree options.",
+      "versusCornell": "Cornell offers broader academic breadth across seven distinct colleges including hospitality and agriculture, while Penn offers a more concentrated, business-and-professionally-focused Ivy League identity."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium to Large",
+      "undergraduateEnrollment": 10500,
+      "graduateEnrollment": 12000,
+      "totalEnrollment": 22500,
+      "campusType": "Urban Self-Contained Campus",
+      "residentialIntensity": 84,
+      "communityFeel": 78,
+      "studentFacultyRatio": "6:1",
+      "classSizeExperience": "Small seminar and case-study-based coursework dominate within Wharton and Nursing, with strong faculty accessibility across all four undergraduate schools.",
+      "scaleAdvantages": [
+        "World's most influential undergraduate business program (Wharton)",
+        "Unusually structured cross-school dual-degree programs",
+        "Strong nursing and biomedical engineering programs",
+        "Self-contained urban campus with strong internal community"
+      ],
+      "scaleDisadvantages": [
+        "Extremely low admission rate limits access",
+        "Intensely pre-professional culture can create early career pressure",
+        "Prominent Greek life culture may not suit every student",
+        "West Philadelphia setting requires navigating urban surroundings beyond the immediate campus"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 84,
+        "conscientiousness": 92,
+        "extraversion": 78,
+        "agreeableness": 72,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "E",
+        "C",
+        "S"
+      ],
+      "learningStyle": [
+        "Case-Based Business Instruction",
+        "Clinical Nursing Training",
+        "Cross-School Dual-Degree Study",
+        "Collaborative Team Projects"
+      ],
+      "socialEnvironment": [
+        "Professionally Ambitious",
+        "Socially Vibrant",
+        "Pragmatic",
+        "Greek-Life-Present",
+        "Interdisciplinary"
+      ],
+      "idealStudentTraits": [
+        "Professionally ambitious",
+        "Drawn to business, nursing, or interdisciplinary study",
+        "Comfortable with an intensely career-focused culture",
+        "Values structured cross-disciplinary programs"
+      ],
+      "thrivesIf": [
+        "Plans for business, finance, nursing, or a structured dual-degree path",
+        "Wants the world's most influential undergraduate business credential",
+        "Values an intensely professionally ambitious social culture",
+        "Enjoys a self-contained urban campus with strong internal community"
+      ],
+      "strugglesIf": [
+        "Wants a less explicitly pre-professional academic culture",
+        "Needs a quieter, less career-focused social environment",
+        "Is uncomfortable with a prominent Greek life presence",
+        "Prefers a more traditional liberal arts-first identity"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a less explicitly pre-professional culture",
+        "Students uncomfortable with intense career-focused social pressure",
+        "Students who prefer a more traditional liberal arts identity"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Each of Penn's four undergraduate schools (Wharton, Engineering, Nursing, College of Arts and Sciences) has separate admission, with Wharton and dual-degree programs carrying the highest additional selectivity."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Health Care Management",
+        "Digital Media Design",
+        "Environmental Studies",
+        "Legal Studies and History",
+        "Systems Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Investment Banking and Private Equity",
+        "Healthcare Management and Nursing Leadership",
+        "Management Consulting",
+        "Biomedical Engineering and Health Technology"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Every major Wall Street investment bank",
+        "McKinsey & Company",
+        "Goldman Sachs",
+        "Major healthcare systems",
+        "Boston Consulting Group"
+      ],
+      "overlookedStrengths": [
+        "Wharton's undergraduate program is arguably the single most influential undergraduate business credential in the world, producing an outsized share of Wall Street's senior leadership.",
+        "Penn's Huntsman Program and Management and Technology Program offer structurally unified dual-degree options unmatched by peer universities.",
+        "The School of Nursing consistently ranks among the very best in the country, an unusual pairing alongside Wharton's business prestige.",
+        "Penn's Annenberg School for Communication has produced an outsized share of media and communications industry leaders relative to its small size."
+      ],
+      "sleeperIndustries": [
+        "Investment Banking and Private Equity",
+        "Healthcare Management and Nursing Leadership",
+        "Management Consulting",
+        "Biomedical Engineering and Health Technology"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 90,
+      "mentorshipDensity": 88,
+      "executiveAccess": 96,
+      "internshipNetwork": 94,
+      "familyBusinessExposure": 56,
+      "relationshipCapitalScore": 94,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 94,
+      "donorNetworkStrength": 92,
+      "boardMemberDensity": 92
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance",
+        "Consulting",
+        "Healthcare",
+        "Business",
+        "Biomedical Engineering"
+      ],
+      "regionalEconomicDrivers": [
+        "Financial Services",
+        "Healthcare",
+        "Consulting",
+        "Biomedical Research"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "JPMorgan Chase",
+        "Penn Medicine",
+        "Boston Consulting Group"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Digital Health",
+        "Biomedical Technology",
+        "AI in Finance"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 76,
+      "corporateHeadquartersDensity": 68,
+      "healthcareHubStrength": 84,
+      "innovationIndex": 90
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New York and Philadelphia's Finance, Consulting, and Healthcare Economy",
+      "secondaryMarkets": [
+        "Washington DC",
+        "San Francisco CA",
+        "Boston MA",
+        "London"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Philadelphia PA",
+        "San Francisco CA",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "The overwhelming majority of graduates enter New York for finance, consulting, and business roles.",
+        "Philadelphia retains a meaningful share of graduates, particularly in healthcare and Penn Medicine-adjacent roles.",
+        "San Francisco attracts graduates into technology and venture capital.",
+        "Washington DC draws graduates into policy and consulting roles.",
+        "A globally dispersed alumni network extends throughout international finance centers including London and Hong Kong."
+      ],
+      "regionalInfluenceScore": 92,
+      "nationalReachScore": 94,
+      "internationalReachScore": 84
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 42,
+      "studentOrganizationStrength": 88,
+      "leadershipDevelopment": 88,
+      "crossDisciplinaryInteraction": 88,
+      "civicEngagement": 74
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis relative to finance and healthcare."
+      },
+      "healthWellness": {
+        "strength": 82,
+        "notes": "Strong pathway through the School of Nursing and Penn Medicine research ties."
+      },
+      "nutraceuticals": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 54,
+        "notes": "Moderate presence through Wharton's marketing and consumer behavior coursework."
+      },
+      "outdoorIndustry": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 42,
+        "notes": "Moderate pathway through Wharton's sports business coursework."
+      },
+      "entertainmentMedia": {
+        "strength": 46,
+        "notes": "Moderate presence through the Annenberg School for Communication."
+      },
+      "ventureCapital": {
+        "strength": 72,
+        "notes": "Strong and growing presence tied to Wharton's finance and entrepreneurship alumni network."
+      },
+      "privateEquity": {
+        "strength": 90,
+        "notes": "One of the strongest private equity pipelines of any American university given Wharton's dominance."
+      },
+      "investmentBanking": {
+        "strength": 96,
+        "notes": "Arguably the single strongest undergraduate investment banking pipeline in the world through Wharton."
+      },
+      "consulting": {
+        "strength": 88,
+        "notes": "Extremely strong placement into McKinsey, Bain, BCG, and similar top consulting firms."
+      },
+      "medicine": {
+        "strength": 78,
+        "notes": "Strong pre-med and nursing pipeline, supported by Penn Medicine."
+      },
+      "healthcareAdministration": {
+        "strength": 78,
+        "notes": "Strong pathway given the combination of Wharton business training and nursing/health policy programs."
+      },
+      "defense": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 66,
+        "notes": "Strong presence through Wharton's real estate finance concentration."
+      },
+      "luxuryBrands": {
+        "strength": 40,
+        "notes": "Moderate presence through Wharton's marketing and brand management coursework."
+      },
+      "entrepreneurship": {
+        "strength": 74,
+        "notes": "Strong entrepreneurship culture supported by Wharton's dedicated entrepreneurship programs."
+      },
+      "technology": {
+        "strength": 74,
+        "notes": "Strong presence, particularly in fintech and biomedical engineering."
+      },
+      "publicPolicy": {
+        "strength": 58,
+        "notes": "Moderate pathway, often finance-and-healthcare-policy-adjacent."
+      },
+      "nonprofitLeadership": {
+        "strength": 56,
+        "notes": "Moderate pathway, often tied to healthcare and business-oriented nonprofits."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 60,
+      "firstGenerationSupport": 74,
+      "wealthCreationPotential": 98,
+      "familyBusinessPipelineStrength": 58
+    },
+    "futureResilience": {
+      "aiResistance": 88,
+      "automationResistance": 86,
+      "adaptabilityScore": 86,
+      "interdisciplinaryStrength": 88,
+      "futureReadiness": 88,
+      "entrepreneurialFlexibility": 78,
+      "lifelongLearningCulture": 86,
+      "innovationCapacity": 88
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 98,
+      "communityLeadershipPotential": 86,
+      "geographicMobility": 88,
+      "workLifeBalancePotential": 66,
+      "purposeAlignment": 78,
+      "familyFormationSupport": 72,
+      "personalDevelopmentPotential": 86,
+      "careerOptionality": 96,
+      "longTermLifeSatisfaction": 84
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 96,
+      "networkMoat": 96,
+      "geographicMoat": 88,
+      "industryMoat": 96,
+      "alumniMoat": 90,
+      "brandDurability": 96,
+      "overallMoatScore": 94
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 80,
+      "returnerScore": 28,
+      "stewardScore": 20,
+      "navigatorScore": 92,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "global_with_extreme_finance_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 88,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 2200,
+      "jewishStudentPercentage": "~21%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Exceptional",
+      "notes": "Penn has one of the largest Jewish undergraduate populations among Ivy League universities, supported by an extensive Hillel and Chabad presence with robust kosher dining options."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Penn has no separate honors college; its four distinct undergraduate schools and structured dual-degree programs function as honors-equivalent pathways for high-achieving students."
+    }
+  },
+
+"Amherst College": {
+    "institutionNarrative": {
+      "name": "Amherst College",
+      "location": "Amherst, Massachusetts",
+      "region": "New England",
+      "archetype": "The Open Curriculum Powerhouse \u2014 No Requirements, Total Intellectual Freedom, Elite Outcomes",
+      "oneSentenceSummary": "Amherst College is one of the most selective liberal arts colleges in the country, distinguished by having no distribution requirements at all \u2014 students design their entire curriculum from day one \u2014 within the Five College Consortium's shared academic resources.",
+      "pipeline": "Approximately 1,900 undergraduates. Amherst is nationally recognized for Economics, English, Political Science, and Mathematics, with unusually strong placement into finance, consulting, law, and academia. Major recruiters include Goldman Sachs, McKinsey & Company, top law schools, and PhD programs nationally.",
+      "hiddenPathway": "Amherst's open curriculum \u2014 zero required courses or distribution requirements \u2014 combined with the Five College Consortium (Amherst, Smith, Mount Holyoke, Hampshire, UMass Amherst) gives students access to a research-university-scale course catalog inside a tiny liberal arts college.",
+      "institutionalSecret": "Amherst has one of the highest per-student endowments of any liberal arts college in the country, funding a need-blind, loan-free financial aid policy that makes it genuinely more affordable for many families than in-state public flagships.",
+      "theRoom": "Located in the Pioneer Valley of western Massachusetts, students are embedded in the Five College Consortium alongside Smith, Mount Holyoke, Hampshire, and UMass Amherst, with Boston and New York both accessible for internships.",
+      "lifestyle": "Intellectually intense, small, and academically unstructured in the best sense \u2014 the open curriculum forces genuine self-direction from the first semester onward, within a tight-knit residential community.",
+      "bestFitPersonality": "Highly self-directed, intellectually curious across disciplines, comfortable designing an entire academic path without external structure, and drawn to a very small, intensely academic community.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout New England and the Northeast, with elite national reach into finance, law, and academia.",
+      "economicOutcome": "Exceptional outcomes in finance, consulting, law, and academia, supported by a needs-blind, loan-free aid policy and a powerful small-college alumni network.",
+      "gradCities": [
+        "New York NY",
+        "Boston MA",
+        "Washington DC",
+        "San Francisco CA"
+      ],
+      "comparableInstitutions": [
+        "Williams College",
+        "Swarthmore College",
+        "Pomona College",
+        "Bowdoin College",
+        "Wesleyan University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Holyoke Community College",
+          "Greenfield Community College"
+        ],
+        "transferAcceptanceRate": "~5%",
+        "freshmanAcceptanceRate": "~9%",
+        "estimatedSavingsRange": "$18,000-$42,000",
+        "transferNotes": "Amherst accepts a very small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Amherst",
+      "archetype": "Elite Small Liberal Arts College \u2014 Open Curriculum",
+      "institutionalPersonality": "self-directed, intellectually intense, small, quietly prestigious",
+      "cultureKeywords": [
+        "Open Curriculum",
+        "Five College Consortium",
+        "Liberal Arts",
+        "Need-Blind Aid",
+        "Self-Direction"
+      ],
+      "missionOrientation": "Cultivating independent thinkers through total curricular freedom and a rigorous liberal arts education.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students design their own course of study from the first semester, with no distribution requirements, supported by small seminar discussion and close faculty mentorship.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Strongly progressive.",
+      "studentAutonomy": "Very High",
+      "prestigeOrientation": "Among the most prestigious liberal arts colleges in the country.",
+      "socialClimate": "Intellectually intense and tight-knit, with a small residential community.",
+      "leadershipStyle": "Leadership through independent scholarship and quiet institutional prestige."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "An elite, open-curriculum liberal arts college anchoring the Five College Consortium in western Massachusetts."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 84,
+      "TorBuffChester": 20,
+      "TexasTriangle": 6,
+      "CharLanta": 6,
+      "NorCalInnovationCorridor": 10,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusWilliams": "Williams offers a similarly small, elite experience with a distribution-requirement curriculum and a stronger athletics culture, while Amherst offers a completely open curriculum with zero requirements.",
+      "versusSwarthmore": "Swarthmore offers a more intensely academic, engineering-inclusive curriculum, while Amherst offers greater curricular freedom and Five College Consortium access.",
+      "versusWesleyan": "Wesleyan offers a larger, more artistically alternative culture, while Amherst offers a smaller, more concentrated academic environment with an open curriculum."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Small",
+      "undergraduateEnrollment": 1900,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 1900,
+      "campusType": "Small New England Liberal Arts College",
+      "residentialIntensity": 96,
+      "communityFeel": 92,
+      "studentFacultyRatio": "7:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with extensive faculty accessibility and close mentorship given the college's very small size.",
+      "scaleAdvantages": [
+        "Completely open curriculum with no requirements",
+        "Five College Consortium access to a much larger course catalog",
+        "Need-blind, loan-free financial aid",
+        "Extremely low student-faculty ratio"
+      ],
+      "scaleDisadvantages": [
+        "Very small size limits some specialized offerings without the consortium",
+        "Rural New England setting distant from a major city",
+        "No graduate programs or professional schools on campus",
+        "Total curricular freedom can be daunting for less self-directed students"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 94,
+        "conscientiousness": 90,
+        "extraversion": 62,
+        "agreeableness": 76,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "I",
+        "A",
+        "S"
+      ],
+      "learningStyle": [
+        "Independent Curriculum Design",
+        "Small Seminar Discussion",
+        "Consortium Course-Taking",
+        "Close Faculty Mentorship"
+      ],
+      "socialEnvironment": [
+        "Intellectually Intense",
+        "Small",
+        "Self-Directed",
+        "Tight-Knit",
+        "Quietly Prestigious"
+      ],
+      "idealStudentTraits": [
+        "Highly self-directed",
+        "Intellectually curious across disciplines",
+        "Comfortable without external academic structure",
+        "Drawn to a very small community"
+      ],
+      "thrivesIf": [
+        "Wants total control over their own curriculum",
+        "Values a tiny, intensely academic community",
+        "Wants need-blind, loan-free financial aid",
+        "Enjoys accessing a larger course catalog through the Five College Consortium"
+      ],
+      "strugglesIf": [
+        "Needs external structure and required coursework",
+        "Wants a large university with many majors",
+        "Prefers an urban campus setting",
+        "Wants graduate school resources on the same campus"
+      ],
+      "transferRiskFactors": [
+        "Students who struggle without required coursework structure",
+        "Students seeking a larger, more urban campus",
+        "Students wanting on-campus graduate program resources"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Amherst has no distribution requirements and does not impact majors; all departments are equally accessible to any admitted student."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Law, Jurisprudence, and Social Thought",
+        "Black Studies",
+        "European Studies",
+        "Environmental Studies",
+        "Mathematics"
+      ],
+      "hiddenCareerPipelines": [
+        "Federal Judicial Clerkships",
+        "Academic Research",
+        "Finance and Consulting",
+        "Public Interest Law"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Five College Consortium faculty network",
+        "Top law schools and PhD programs"
+      ],
+      "overlookedStrengths": [
+        "Amherst's open curriculum is one of only a handful in the country with truly zero distribution requirements.",
+        "The Five College Consortium gives Amherst students access to a course catalog rivaling a mid-sized research university.",
+        "Amherst's endowment per student funds one of the most generous need-blind, loan-free aid policies among liberal arts colleges.",
+        "The college's small size produces an unusually tight, activated alumni network relative to its scale."
+      ],
+      "sleeperIndustries": [
+        "Academic Research and PhD Placement",
+        "Federal Judicial Clerkships",
+        "Public Interest and Human Rights Law",
+        "Environmental Policy"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 86,
+      "mentorshipDensity": 88,
+      "executiveAccess": 84,
+      "internshipNetwork": 78,
+      "familyBusinessExposure": 46,
+      "relationshipCapitalScore": 86,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 86,
+      "boardMemberDensity": 74
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance",
+        "Law",
+        "Academia",
+        "Consulting"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Healthcare",
+        "Agriculture (Pioneer Valley)"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Five College Consortium institutions",
+        "Baystate Health"
+      ],
+      "emergingIndustries": [
+        "EdTech",
+        "Climate Policy Research"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 44,
+      "corporateHeadquartersDensity": 20,
+      "healthcareHubStrength": 46,
+      "innovationIndex": 68
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New England and Northeast Finance, Law, and Academic Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "New York NY",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Boston MA",
+        "Washington DC",
+        "Pioneer Valley MA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates enter New York for finance, consulting, and law.",
+        "Boston draws graduates into consulting, academia, and healthcare.",
+        "Washington DC attracts graduates into public interest law and policy.",
+        "A meaningful cohort pursues PhD programs and academic careers nationally.",
+        "A smaller international cohort enters global finance and diplomacy."
+      ],
+      "regionalInfluenceScore": 84,
+      "nationalReachScore": 80,
+      "internationalReachScore": 58
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 6,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 84,
+      "crossDisciplinaryInteraction": 88,
+      "civicEngagement": 78
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 48,
+        "notes": "Moderate pre-med foundation, though Amherst has no medical school."
+      },
+      "nutraceuticals": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 40,
+        "notes": "Moderate presence given the New England rural setting."
+      },
+      "sportsBusiness": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis despite strong NESCAC athletics participation."
+      },
+      "entertainmentMedia": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 48,
+        "notes": "Moderate presence through alumni finance networks."
+      },
+      "privateEquity": {
+        "strength": 68,
+        "notes": "Strong placement given Amherst's dense Wall Street alumni network."
+      },
+      "investmentBanking": {
+        "strength": 74,
+        "notes": "Strong pipeline into major investment banks."
+      },
+      "consulting": {
+        "strength": 78,
+        "notes": "Extremely strong placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 54,
+        "notes": "Solid pre-med foundation, though Amherst has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 36,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 22,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 46,
+        "notes": "Modest entrepreneurship culture relative to finance and law."
+      },
+      "technology": {
+        "strength": 48,
+        "notes": "Growing but modest computer science pipeline."
+      },
+      "publicPolicy": {
+        "strength": 66,
+        "notes": "Solid pathway through political science and law, jurisprudence, and social thought."
+      },
+      "nonprofitLeadership": {
+        "strength": 60,
+        "notes": "Meaningful pathway, often tied to public interest law and social justice organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 72,
+      "firstGenerationSupport": 84,
+      "wealthCreationPotential": 84,
+      "familyBusinessPipelineStrength": 46
+    },
+    "futureResilience": {
+      "aiResistance": 90,
+      "automationResistance": 88,
+      "adaptabilityScore": 90,
+      "interdisciplinaryStrength": 92,
+      "futureReadiness": 88,
+      "entrepreneurialFlexibility": 70,
+      "lifelongLearningCulture": 92,
+      "innovationCapacity": 80
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 84,
+      "communityLeadershipPotential": 84,
+      "geographicMobility": 82,
+      "workLifeBalancePotential": 76,
+      "purposeAlignment": 86,
+      "familyFormationSupport": 76,
+      "personalDevelopmentPotential": 92,
+      "careerOptionality": 88,
+      "longTermLifeSatisfaction": 86
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 88,
+      "networkMoat": 82,
+      "geographicMoat": 68,
+      "industryMoat": 74,
+      "alumniMoat": 84,
+      "brandDurability": 86,
+      "overallMoatScore": 80
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 78,
+      "returnerScore": 28,
+      "stewardScore": 22,
+      "navigatorScore": 88,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "national_with_nyc_boston_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 62,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 250,
+      "jewishStudentPercentage": "~13%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "Amherst maintains an active Hillel and kosher dining option, serving a well-established Jewish student population relative to the college's small size."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Amherst has no honors college; the open curriculum and small size mean every student already has honors-level access to independent study and thesis work."
+    }
+  },
+
+"Bowdoin College": {
+    "institutionNarrative": {
+      "name": "Bowdoin College",
+      "location": "Brunswick, Maine",
+      "region": "New England",
+      "archetype": "The Maine Coast Powerhouse \u2014 No-Loan Aid, Polar Exploration Legacy, and Small-College Elite Outcomes",
+      "oneSentenceSummary": "Bowdoin College combines one of the most generous no-loan financial aid policies in the country with a distinctive legacy in polar exploration and environmental science, producing an outsized share of graduates in finance, law, and public service relative to its small size.",
+      "pipeline": "Approximately 1,900 undergraduates. Bowdoin is nationally recognized for Government and Legal Studies, Economics, Environmental Studies, and English. Major recruiters include Goldman Sachs, top law schools, federal government agencies, and environmental research organizations.",
+      "hiddenPathway": "Bowdoin's Arctic Studies Center and polar exploration legacy (alumni Robert Peary and Donald MacMillan were among the first to reach the North Pole) give environmental studies and earth science students a genuinely unique research identity tied to climate science.",
+      "institutionalSecret": "Bowdoin eliminated loans from financial aid packages entirely, replacing them with grants \u2014 one of the most generous policies among liberal arts colleges \u2014 making it more affordable for many middle-income families than they initially assume.",
+      "theRoom": "Located on the Maine coast in Brunswick, students are positioned within a small-town New England setting with strong ties to Boston's finance and consulting economy, a two-hour drive south.",
+      "lifestyle": "Outdoorsy, close-knit, and quietly intense. Bowdoin's coastal Maine setting supports a strong outdoor culture, and the small size creates a tight residential community with a well-known dining hall food culture.",
+      "bestFitPersonality": "Outdoors-oriented, intellectually serious, drawn to public service, law, or environmental science, and comfortable in a small, close-knit New England community.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout New England, with national reach into law, finance, and environmental policy.",
+      "economicOutcome": "Excellent outcomes in law, finance, public service, and environmental policy, supported by a no-loan aid policy and a loyal, activated alumni network.",
+      "gradCities": [
+        "Boston MA",
+        "New York NY",
+        "Washington DC",
+        "Portland ME"
+      ],
+      "comparableInstitutions": [
+        "Colby College",
+        "Bates College",
+        "Middlebury College",
+        "Williams College",
+        "Amherst College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Southern Maine Community College"
+        ],
+        "transferAcceptanceRate": "~6%",
+        "freshmanAcceptanceRate": "~9%",
+        "estimatedSavingsRange": "$16,000-$40,000",
+        "transferNotes": "Bowdoin accepts a very small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Bowdoin",
+      "archetype": "Elite Small Liberal Arts College \u2014 No-Loan Aid and Environmental Legacy",
+      "institutionalPersonality": "outdoorsy, quietly intense, close-knit, service-oriented",
+      "cultureKeywords": [
+        "No-Loan Aid",
+        "Polar Exploration",
+        "Environmental Studies",
+        "Maine Coast",
+        "Public Service"
+      ],
+      "missionOrientation": "Cultivating engaged citizens and public servants through a rigorous liberal arts education and a distinctive environmental and polar research legacy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through small seminar discussion, close faculty mentorship, and hands-on environmental and field research supported by the college's coastal Maine location.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Strongly progressive.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most prestigious liberal arts colleges in the country, with a distinctive polar and environmental research legacy.",
+      "socialClimate": "Outdoorsy, close-knit, and quietly intense, with a well-known dining hall culture.",
+      "leadershipStyle": "Leadership through public service, environmental stewardship, and quiet institutional prestige."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "A coastal Maine liberal arts college with a distinctive environmental and polar research legacy, feeding Boston's finance and consulting economy."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 6,
+      "BosWash": 78,
+      "TorBuffChester": 16,
+      "TexasTriangle": 4,
+      "CharLanta": 4,
+      "NorCalInnovationCorridor": 8,
+      "SoCalCreativeEconomy": 4
+    },
+    "comparativePositioning": {
+      "versusColby": "Colby offers a similarly small, environmentally-focused Maine liberal arts experience, while Bowdoin offers a more generous no-loan aid policy and a stronger legacy in polar and government studies.",
+      "versusWilliams": "Williams offers a larger endowment and a stronger athletics and arts culture, while Bowdoin offers a more intimate coastal Maine setting and a distinctive environmental research identity.",
+      "versusMiddlebury": "Middlebury offers stronger international and language study programs, while Bowdoin offers deeper environmental science and government studies strength."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Small",
+      "undergraduateEnrollment": 1900,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 1900,
+      "campusType": "Small Coastal Maine Liberal Arts College",
+      "residentialIntensity": 96,
+      "communityFeel": 92,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with extensive faculty accessibility and hands-on environmental fieldwork given the college's coastal setting.",
+      "scaleAdvantages": [
+        "No-loan financial aid policy",
+        "Distinctive polar exploration and environmental research legacy",
+        "Strong government and legal studies placement",
+        "Tight-knit residential community with strong dining culture"
+      ],
+      "scaleDisadvantages": [
+        "Small, rural coastal Maine setting distant from a major city",
+        "Limited breadth of majors given small size",
+        "No graduate programs on campus",
+        "Cold, long winters may not suit all students"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 88,
+        "conscientiousness": 88,
+        "extraversion": 66,
+        "agreeableness": 80,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "I",
+        "S",
+        "A"
+      ],
+      "learningStyle": [
+        "Small Seminar Discussion",
+        "Environmental Fieldwork",
+        "Independent Research",
+        "Close Faculty Mentorship"
+      ],
+      "socialEnvironment": [
+        "Outdoorsy",
+        "Close-Knit",
+        "Quietly Intense",
+        "Service-Oriented",
+        "Community-Focused"
+      ],
+      "idealStudentTraits": [
+        "Outdoors-oriented",
+        "Intellectually serious",
+        "Drawn to public service, law, or environmental science",
+        "Comfortable in a small, close-knit community"
+      ],
+      "thrivesIf": [
+        "Plans for law, public service, government, or environmental science",
+        "Wants a generous no-loan financial aid policy",
+        "Values a small, tight-knit coastal community",
+        "Enjoys an outdoor, Maine-coast lifestyle"
+      ],
+      "strugglesIf": [
+        "Wants a large university with many majors",
+        "Needs proximity to a major city",
+        "Dislikes cold, long winters",
+        "Prefers graduate program resources on campus"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a larger, more urban campus",
+        "Students who dislike remote, cold-climate settings",
+        "Students wanting a broader range of majors"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Bowdoin does not impact majors at the undergraduate level; all departments are equally accessible to any admitted student."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Arctic Studies",
+        "Government and Legal Studies",
+        "Earth and Oceanographic Science",
+        "Africana Studies",
+        "Environmental Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Environmental Policy and Climate Science",
+        "Federal Government and Public Service",
+        "Law",
+        "Polar and Arctic Research"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "Federal government agencies",
+        "Environmental research organizations",
+        "Top law schools"
+      ],
+      "overlookedStrengths": [
+        "Bowdoin's Arctic Studies Center gives students genuine access to a distinctive polar research legacy tied to two of the first explorers to the North Pole.",
+        "The college's no-loan financial aid policy makes it more affordable for many middle-income families than they initially assume.",
+        "Government and Legal Studies at Bowdoin has an outsized placement into federal government and law relative to the college's small size.",
+        "The dining hall program is nationally recognized, reflecting a broader institutional commitment to student quality of life."
+      ],
+      "sleeperIndustries": [
+        "Environmental Policy and Climate Science",
+        "Polar and Arctic Research",
+        "Federal Government and Public Service",
+        "Public Interest Law"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 84,
+      "executiveAccess": 78,
+      "internshipNetwork": 74,
+      "familyBusinessExposure": 42,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 80,
+      "donorNetworkStrength": 80,
+      "boardMemberDensity": 68
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Law",
+        "Finance",
+        "Government",
+        "Environmental Science"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Healthcare",
+        "Tourism",
+        "Fishing and Maritime"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "Federal government agencies",
+        "MaineHealth",
+        "Environmental research organizations"
+      ],
+      "emergingIndustries": [
+        "Climate Science Research",
+        "Sustainable Fisheries",
+        "EdTech"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 36,
+      "corporateHeadquartersDensity": 16,
+      "healthcareHubStrength": 42,
+      "innovationIndex": 62
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New England Law, Finance, and Government Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "New York NY",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Boston MA",
+        "Portland ME",
+        "New York NY",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates enter Boston for finance, consulting, and law.",
+        "New York attracts graduates into finance and consulting roles.",
+        "Washington DC draws graduates into federal government and public service, reinforced by the Government and Legal Studies program.",
+        "A meaningful cohort remains in Maine, entering environmental science, healthcare, and education.",
+        "A smaller cohort enters polar and environmental research institutions nationally and internationally."
+      ],
+      "regionalInfluenceScore": 82,
+      "nationalReachScore": 72,
+      "internationalReachScore": 50
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 4,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 82,
+      "crossDisciplinaryInteraction": 84,
+      "civicEngagement": 82
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 48,
+        "notes": "Moderate pre-med foundation, though Bowdoin has no medical school."
+      },
+      "nutraceuticals": {
+        "strength": 26,
+        "notes": "Some overlap through environmental and earth science research."
+      },
+      "consumerProducts": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 78,
+        "notes": "Strong pathway given the coastal Maine setting and outdoor recreation culture."
+      },
+      "sportsBusiness": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis despite NESCAC athletics participation."
+      },
+      "entertainmentMedia": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 40,
+        "notes": "Limited but present through alumni finance networks."
+      },
+      "privateEquity": {
+        "strength": 62,
+        "notes": "Solid placement given Bowdoin's Wall Street alumni network."
+      },
+      "investmentBanking": {
+        "strength": 66,
+        "notes": "Solid pipeline into major investment banks."
+      },
+      "consulting": {
+        "strength": 68,
+        "notes": "Strong placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 52,
+        "notes": "Solid pre-med foundation, though Bowdoin has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 18,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 42,
+        "notes": "Modest entrepreneurship culture."
+      },
+      "technology": {
+        "strength": 40,
+        "notes": "Limited institutional emphasis relative to law, government, and environmental studies."
+      },
+      "publicPolicy": {
+        "strength": 78,
+        "notes": "One of the college's defining strengths through Government and Legal Studies."
+      },
+      "nonprofitLeadership": {
+        "strength": 66,
+        "notes": "Strong pathway, often tied to environmental and public service organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 74,
+      "firstGenerationSupport": 82,
+      "wealthCreationPotential": 78,
+      "familyBusinessPipelineStrength": 42
+    },
+    "futureResilience": {
+      "aiResistance": 88,
+      "automationResistance": 86,
+      "adaptabilityScore": 86,
+      "interdisciplinaryStrength": 88,
+      "futureReadiness": 86,
+      "entrepreneurialFlexibility": 66,
+      "lifelongLearningCulture": 88,
+      "innovationCapacity": 74
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 78,
+      "communityLeadershipPotential": 84,
+      "geographicMobility": 76,
+      "workLifeBalancePotential": 82,
+      "purposeAlignment": 88,
+      "familyFormationSupport": 78,
+      "personalDevelopmentPotential": 88,
+      "careerOptionality": 82,
+      "longTermLifeSatisfaction": 86
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 84,
+      "networkMoat": 76,
+      "geographicMoat": 60,
+      "industryMoat": 68,
+      "alumniMoat": 82,
+      "brandDurability": 82,
+      "overallMoatScore": 76
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 68,
+      "returnerScore": 34,
+      "stewardScore": 28,
+      "navigatorScore": 80,
+      "geographicLockIn": "low_to_moderate",
+      "alumniDispersalPattern": "new_england_concentration_with_dc_reach"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 46,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 150,
+      "jewishStudentPercentage": "~8%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Bowdoin maintains an active Hillel presence, without dedicated kosher dining facilities given the college's small size."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Bowdoin has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
+    }
+  },
+
+"Middlebury College": {
+    "institutionNarrative": {
+      "name": "Middlebury College",
+      "location": "Middlebury, Vermont",
+      "region": "New England",
+      "archetype": "The Global Languages and Diplomacy Anchor \u2014 World-Class Language Immersion and International Affairs",
+      "oneSentenceSummary": "Middlebury College is the undisputed national leader in foreign language immersion education, combining a legendary summer Language Schools program with strong international studies and environmental science, all within a scenic Green Mountains setting.",
+      "pipeline": "Approximately 2,800 undergraduates. Middlebury is nationally recognized for International and Global Studies, Environmental Studies, Economics, and Foreign Languages (Arabic, Chinese, French, German, Italian, Japanese, Russian, Spanish, Portuguese, Hebrew, Korean). Major recruiters include the U.S. State Department, international NGOs, top consulting firms, and environmental organizations.",
+      "hiddenPathway": "Middlebury's famous Language Schools \u2014 an intensive summer immersion program requiring a 'language pledge' of total immersion \u2014 gives undergraduates language fluency that most universities cannot replicate, feeding directly into State Department and international affairs careers.",
+      "institutionalSecret": "The Middlebury Institute of International Studies at Monterey, a graduate school affiliated with the college, gives undergraduates an unusually direct pipeline into international affairs graduate education and careers most liberal arts colleges cannot offer.",
+      "theRoom": "Located in Middlebury, Vermont, students are embedded in the Green Mountains with a strong outdoor and skiing culture, while the college's global language programs connect students to international affairs institutions worldwide.",
+      "lifestyle": "Outdoorsy, globally-minded, and intellectually serious. Middlebury's Vermont setting supports a strong skiing and outdoor recreation culture alongside a genuinely international, multilingual campus atmosphere.",
+      "bestFitPersonality": "Globally-minded, drawn to languages, international affairs, or environmental science, and comfortable in a small, outdoorsy, intellectually serious New England community.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout New England, with a distinctive national and international reach into diplomacy, international affairs, and language education.",
+      "economicOutcome": "Excellent outcomes in international affairs, diplomacy, environmental policy, finance, and consulting, with an unmatched foreign language fluency credential.",
+      "gradCities": [
+        "Washington DC",
+        "New York NY",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "comparableInstitutions": [
+        "Williams College",
+        "Amherst College",
+        "Bowdoin College",
+        "Colby College",
+        "Georgetown University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Community College of Vermont"
+        ],
+        "transferAcceptanceRate": "~7%",
+        "freshmanAcceptanceRate": "~10%",
+        "estimatedSavingsRange": "$16,000-$40,000",
+        "transferNotes": "Middlebury accepts a small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Middlebury",
+      "archetype": "Elite Small Liberal Arts College \u2014 Global Languages and International Affairs",
+      "institutionalPersonality": "globally-minded, outdoorsy, intellectually serious, multilingual",
+      "cultureKeywords": [
+        "Language Immersion",
+        "International Affairs",
+        "Environmental Studies",
+        "Green Mountains",
+        "Global Studies"
+      ],
+      "missionOrientation": "Cultivating globally engaged citizens through world-class language immersion and international studies within a rigorous liberal arts education.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through small seminar discussion, intensive language immersion, and international field study, supported by close faculty mentorship.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Strongly progressive and internationally engaged.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most prestigious liberal arts colleges in the country, with a globally unmatched reputation in language education.",
+      "socialClimate": "Globally-minded, outdoorsy, and intellectually serious, with a genuinely multilingual campus culture.",
+      "leadershipStyle": "Leadership through global engagement, language fluency, and environmental stewardship."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "The nation's leading undergraduate language immersion institution, anchoring international affairs education within a Green Mountains setting."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 76,
+      "TorBuffChester": 18,
+      "TexasTriangle": 4,
+      "CharLanta": 4,
+      "NorCalInnovationCorridor": 10,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusWilliams": "Williams offers a stronger athletics and arts culture with a larger endowment, while Middlebury offers an unmatched language immersion program and international affairs pipeline.",
+      "versusAmherst": "Amherst offers a completely open curriculum with Five College Consortium access, while Middlebury offers deeper international studies and language fluency training.",
+      "versusGeorgetown": "Georgetown offers a much larger scale with direct Washington DC proximity, while Middlebury offers a more intimate, language-immersion-focused liberal arts environment with its own direct DC-adjacent graduate school pipeline through the Middlebury Institute."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 2800,
+      "graduateEnrollment": 200,
+      "totalEnrollment": 3000,
+      "campusType": "Small Vermont Liberal Arts College",
+      "residentialIntensity": 92,
+      "communityFeel": 88,
+      "studentFacultyRatio": "8:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with intensive language immersion coursework requiring total commitment, and strong faculty accessibility given the college's modest size.",
+      "scaleAdvantages": [
+        "Nationally unmatched language immersion programs",
+        "Direct pipeline into international affairs through the Middlebury Institute of International Studies",
+        "Strong environmental studies and outdoor recreation culture",
+        "Extremely low student-faculty ratio"
+      ],
+      "scaleDisadvantages": [
+        "Rural Vermont setting distant from a major city",
+        "Small size limits some specialized offerings",
+        "No large-scale graduate programs on the undergraduate campus",
+        "Cold, long winters may not suit all students"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 92,
+        "conscientiousness": 86,
+        "extraversion": 70,
+        "agreeableness": 80,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "A",
+        "I",
+        "S"
+      ],
+      "learningStyle": [
+        "Language Immersion",
+        "Small Seminar Discussion",
+        "International Field Study",
+        "Independent Research"
+      ],
+      "socialEnvironment": [
+        "Globally-Minded",
+        "Outdoorsy",
+        "Multilingual",
+        "Intellectually Serious",
+        "Community-Focused"
+      ],
+      "idealStudentTraits": [
+        "Globally-minded",
+        "Drawn to languages, international affairs, or environmental science",
+        "Comfortable with intensive academic immersion",
+        "Enjoys an outdoor, mountain lifestyle"
+      ],
+      "thrivesIf": [
+        "Plans for international affairs, diplomacy, or language-based careers",
+        "Wants unmatched language immersion training",
+        "Values a global, multilingual campus community",
+        "Enjoys skiing and outdoor recreation alongside academics"
+      ],
+      "strugglesIf": [
+        "Wants a large university with many majors",
+        "Needs proximity to a major city",
+        "Is uninterested in language study or global affairs",
+        "Dislikes cold, long winters"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a larger, more urban campus",
+        "Students uninterested in language immersion or global affairs",
+        "Students who dislike remote, cold-climate settings"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Middlebury does not impact majors at the undergraduate level, though its Language Schools have their own separate summer admission process."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "International and Global Studies",
+        "Arabic Studies",
+        "Environmental Studies",
+        "Geography",
+        "Comparative Literature"
+      ],
+      "hiddenCareerPipelines": [
+        "Diplomacy and Foreign Service",
+        "International Development",
+        "Environmental Policy",
+        "Translation and Interpretation"
+      ],
+      "nicheRecruitingAdvantages": [
+        "U.S. State Department",
+        "International NGOs",
+        "Middlebury Institute of International Studies at Monterey",
+        "Environmental research organizations"
+      ],
+      "overlookedStrengths": [
+        "Middlebury's Language Schools are considered the gold standard of American language immersion education, requiring a strict 'language pledge' of total immersion.",
+        "The Middlebury Institute of International Studies at Monterey gives undergraduates a direct pipeline into graduate international affairs education.",
+        "Middlebury's environmental studies program benefits from the college's Vermont setting and strong sustainability commitments.",
+        "The college's foreign language breadth \u2014 including Arabic, Chinese, and Russian \u2014 is unusually broad for a liberal arts college of its size."
+      ],
+      "sleeperIndustries": [
+        "Diplomacy and Foreign Service",
+        "International Development and NGO Leadership",
+        "Translation and Language Services",
+        "Environmental Policy"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 82,
+      "executiveAccess": 74,
+      "internshipNetwork": 76,
+      "familyBusinessExposure": 40,
+      "relationshipCapitalScore": 80,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 76,
+      "boardMemberDensity": 64
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "International Affairs",
+        "Environmental Science",
+        "Finance",
+        "Education"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Tourism and Skiing",
+        "Agriculture",
+        "Healthcare"
+      ],
+      "topEmployers": [
+        "U.S. State Department",
+        "International NGOs",
+        "Middlebury Institute of International Studies",
+        "Porter Medical Center"
+      ],
+      "emergingIndustries": [
+        "Climate Policy",
+        "International Development Technology",
+        "Language Technology and Translation AI"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 32,
+      "corporateHeadquartersDensity": 14,
+      "healthcareHubStrength": 38,
+      "innovationIndex": 60
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Washington DC and Northeast International Affairs and Policy Economy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "alumniStrongholds": [
+        "Washington DC",
+        "New York NY",
+        "Boston MA",
+        "Burlington VT"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates enter Washington DC for international affairs, diplomacy, and policy roles.",
+        "New York draws graduates into finance and consulting.",
+        "Boston attracts graduates into consulting, academia, and environmental organizations.",
+        "A meaningful cohort enters international NGOs and development organizations worldwide.",
+        "A smaller cohort remains in Vermont, entering education and environmental science."
+      ],
+      "regionalInfluenceScore": 78,
+      "nationalReachScore": 76,
+      "internationalReachScore": 68
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 8,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 82,
+      "crossDisciplinaryInteraction": 84,
+      "civicEngagement": 82
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 44,
+        "notes": "Moderate pre-med foundation, though Middlebury has no medical school."
+      },
+      "nutraceuticals": {
+        "strength": 30,
+        "notes": "Some overlap through environmental and food systems research."
+      },
+      "consumerProducts": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 76,
+        "notes": "Strong pathway given the Green Mountains setting and skiing culture."
+      },
+      "sportsBusiness": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis despite strong NESCAC and skiing programs."
+      },
+      "entertainmentMedia": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 38,
+        "notes": "Limited but present through alumni networks."
+      },
+      "privateEquity": {
+        "strength": 56,
+        "notes": "Solid placement given Middlebury's finance-oriented alumni network."
+      },
+      "investmentBanking": {
+        "strength": 60,
+        "notes": "Solid pipeline into major investment banks."
+      },
+      "consulting": {
+        "strength": 66,
+        "notes": "Strong placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 46,
+        "notes": "Moderate pre-med foundation, though Middlebury has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 38,
+        "notes": "Present through international affairs and language pathways into government and intelligence roles."
+      },
+      "realEstate": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 20,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 44,
+        "notes": "Modest entrepreneurship culture."
+      },
+      "technology": {
+        "strength": 42,
+        "notes": "Limited institutional emphasis relative to international affairs and languages."
+      },
+      "publicPolicy": {
+        "strength": 84,
+        "notes": "One of the college's defining strengths, reinforced by the Middlebury Institute of International Studies."
+      },
+      "nonprofitLeadership": {
+        "strength": 70,
+        "notes": "Strong pathway, particularly for international development and human rights organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 70,
+      "firstGenerationSupport": 78,
+      "wealthCreationPotential": 76,
+      "familyBusinessPipelineStrength": 40
+    },
+    "futureResilience": {
+      "aiResistance": 86,
+      "automationResistance": 84,
+      "adaptabilityScore": 88,
+      "interdisciplinaryStrength": 90,
+      "futureReadiness": 86,
+      "entrepreneurialFlexibility": 64,
+      "lifelongLearningCulture": 90,
+      "innovationCapacity": 72
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 76,
+      "communityLeadershipPotential": 84,
+      "geographicMobility": 80,
+      "workLifeBalancePotential": 84,
+      "purposeAlignment": 90,
+      "familyFormationSupport": 78,
+      "personalDevelopmentPotential": 90,
+      "careerOptionality": 80,
+      "longTermLifeSatisfaction": 86
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 84,
+      "networkMoat": 72,
+      "geographicMoat": 58,
+      "industryMoat": 72,
+      "alumniMoat": 78,
+      "brandDurability": 82,
+      "overallMoatScore": 75
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 70,
+      "returnerScore": 30,
+      "stewardScore": 24,
+      "navigatorScore": 82,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "dc_concentration_with_global_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 52,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 250,
+      "jewishStudentPercentage": "~9%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Middlebury maintains an active Hillel presence, without dedicated kosher dining facilities given the college's small size."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Middlebury has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
+    }
+  },
+
+"Wesleyan University": {
+    "institutionNarrative": {
+      "name": "Wesleyan University",
+      "location": "Middletown, Connecticut",
+      "region": "New England",
+      "archetype": "The Artistic Alternative Powerhouse \u2014 Film, Music, and Progressive Intellectual Culture",
+      "oneSentenceSummary": "Wesleyan University combines a globally influential film studies program (alumni include Joss Whedon, Lin-Manuel Miranda, and Michael Bay) with a genuinely alternative, artistically experimental intellectual culture that punches far above its liberal-arts-college size.",
+      "pipeline": "Approximately 3,000 undergraduates. Wesleyan is nationally recognized for Film Studies, Music, Government, and Neuroscience and Behavior. Major recruiters include major film and television studios, top consulting firms, PhD programs, and technology companies.",
+      "hiddenPathway": "Wesleyan's film studies alumni network is disproportionately powerful in Hollywood relative to the program's small size, producing directors, writers, and producers who actively recruit and mentor current Wesleyan students breaking into the industry.",
+      "institutionalSecret": "Wesleyan has one of the most artistically experimental and intellectually alternative cultures among elite liberal arts colleges, a reputation that attracts a self-selecting group of creatively ambitious students who go on to reshape entertainment, music, and media.",
+      "theRoom": "Located in Middletown, Connecticut, Wesleyan sits within reach of both New York City and Boston, with an unusually active alumni network in film, television, and music actively pulling current students into the industry.",
+      "lifestyle": "Artistically alternative, intellectually intense, and socially progressive. Wesleyan's culture rewards creative risk-taking and experimental thinking well beyond what a typical liberal arts college encourages.",
+      "bestFitPersonality": "Artistically ambitious, intellectually unconventional, drawn to film, music, or experimental scholarship, and comfortable in a progressive, alternative campus culture.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout New England and New York, with an outsized national influence in film, television, and music relative to the university's small size.",
+      "economicOutcome": "Excellent outcomes in film and television, music, consulting, and academia, with an unusually powerful entertainment industry alumni network.",
+      "gradCities": [
+        "New York NY",
+        "Los Angeles CA",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "comparableInstitutions": [
+        "Vassar College",
+        "Oberlin College",
+        "Bard College",
+        "Amherst College",
+        "Bowdoin College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Middlesex Community College",
+          "Manchester Community College"
+        ],
+        "transferAcceptanceRate": "~11%",
+        "freshmanAcceptanceRate": "~13%",
+        "estimatedSavingsRange": "$16,000-$40,000",
+        "transferNotes": "Wesleyan maintains a modest transfer pathway, somewhat more accessible than peer NESCAC institutions, though still highly selective."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Wesleyan",
+      "archetype": "Elite Small Liberal Arts University \u2014 Film, Music, and Artistic Experimentation",
+      "institutionalPersonality": "artistically alternative, intellectually unconventional, progressive, creatively ambitious",
+      "cultureKeywords": [
+        "Film Studies",
+        "Music",
+        "Artistic Experimentation",
+        "Progressive Culture",
+        "Neuroscience"
+      ],
+      "missionOrientation": "Cultivating creatively and intellectually independent thinkers through an artistically experimental liberal arts education.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through small seminar discussion, hands-on film and music production, and an unusually open, interdisciplinary approach to scholarship.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Strongly progressive, with an actively alternative and countercultural undercurrent.",
+      "studentAutonomy": "Very High",
+      "prestigeOrientation": "Among the most artistically influential liberal arts colleges in the country, particularly in film and music.",
+      "socialClimate": "Artistically alternative, intellectually intense, and socially progressive.",
+      "leadershipStyle": "Leadership through creative and artistic influence, disproportionate to the university's small size."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "An artistically experimental liberal arts university with an outsized influence on American film, television, and music relative to its size."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 82,
+      "TorBuffChester": 20,
+      "TexasTriangle": 4,
+      "CharLanta": 4,
+      "NorCalInnovationCorridor": 14,
+      "SoCalCreativeEconomy": 12
+    },
+    "comparativePositioning": {
+      "versusVassar": "Vassar offers a similarly artistic and progressive culture with a stronger visual arts identity, while Wesleyan offers a more powerful film and television industry alumni network.",
+      "versusOberlin": "Oberlin offers a world-renowned conservatory-level music program, while Wesleyan offers a stronger film studies pipeline and a similarly experimental intellectual culture.",
+      "versusAmherst": "Amherst offers a completely open curriculum with a more traditionally prestigious finance and law pipeline, while Wesleyan offers a more artistically alternative culture with unmatched film industry connections."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 3000,
+      "graduateEnrollment": 200,
+      "totalEnrollment": 3200,
+      "campusType": "Small New England University",
+      "residentialIntensity": 90,
+      "communityFeel": 86,
+      "studentFacultyRatio": "8:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with hands-on production experience in film and music from early in a student's academic career.",
+      "scaleAdvantages": [
+        "Disproportionately powerful film and television alumni network",
+        "Strong music and neuroscience programs",
+        "Artistically experimental, intellectually alternative culture",
+        "Reach into both New York and Boston"
+      ],
+      "scaleDisadvantages": [
+        "Smaller endowment than peer NESCAC institutions",
+        "Middletown, Connecticut offers less immediate access to a major city than some peers",
+        "Alternative culture may not suit more traditionally-minded students",
+        "Limited breadth of majors given small size"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 98,
+        "conscientiousness": 82,
+        "extraversion": 68,
+        "agreeableness": 76,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "A",
+        "I",
+        "S"
+      ],
+      "learningStyle": [
+        "Creative Production",
+        "Small Seminar Discussion",
+        "Independent Artistic Study",
+        "Interdisciplinary Scholarship"
+      ],
+      "socialEnvironment": [
+        "Artistically Alternative",
+        "Progressive",
+        "Intellectually Unconventional",
+        "Creatively Ambitious",
+        "Socially Open"
+      ],
+      "idealStudentTraits": [
+        "Artistically ambitious",
+        "Intellectually unconventional",
+        "Drawn to film, music, or experimental scholarship",
+        "Comfortable in a progressive, alternative culture"
+      ],
+      "thrivesIf": [
+        "Plans for film, television, music, or creative industries",
+        "Wants a genuinely alternative, artistically experimental culture",
+        "Values a powerful entertainment industry alumni network",
+        "Enjoys interdisciplinary, unconventional scholarship"
+      ],
+      "strugglesIf": [
+        "Wants a more traditionally structured, conservative campus culture",
+        "Needs a stronger finance/consulting-first identity",
+        "Prefers a larger university with more majors",
+        "Wants a campus closer to a major city"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more traditional, conservative campus culture",
+        "Students wanting stronger finance or pre-professional pipelines",
+        "Students who prefer closer proximity to a major city"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Film Studies and Music carry additional selectivity and portfolio-based review beyond general university admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Science in Society",
+        "African American Studies",
+        "College of Letters",
+        "Neuroscience and Behavior",
+        "East Asian Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Film and Television Production",
+        "Music Composition and Production",
+        "Academic Neuroscience Research",
+        "Documentary Filmmaking"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Major film and television studios",
+        "Music industry labels and production companies",
+        "PhD programs in neuroscience and behavioral science",
+        "Technology companies"
+      ],
+      "overlookedStrengths": [
+        "Wesleyan's film studies alumni network is disproportionately powerful in Hollywood relative to the program's small size, including some of the most influential directors and producers working today.",
+        "The Neuroscience and Behavior program is unusually strong for a liberal arts college of Wesleyan's size.",
+        "Wesleyan's music program includes a world-recognized ethnomusicology department alongside strong Western classical and contemporary tracks.",
+        "The university's artistically alternative culture has produced a self-reinforcing cycle of creative alumni actively recruiting current students."
+      ],
+      "sleeperIndustries": [
+        "Film and Television Production",
+        "Music Industry and Production",
+        "Documentary and Independent Film",
+        "Academic Neuroscience Research"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 82,
+      "executiveAccess": 76,
+      "internshipNetwork": 78,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 72,
+      "boardMemberDensity": 62
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Film and Television",
+        "Music",
+        "Consulting",
+        "Academia"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Healthcare",
+        "Insurance (Hartford-adjacent)"
+      ],
+      "topEmployers": [
+        "Major film and television studios",
+        "Music labels and production companies",
+        "Middlesex Health",
+        "Consulting firms"
+      ],
+      "emergingIndustries": [
+        "Streaming Media Production",
+        "Music Technology",
+        "Neurotechnology"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 46,
+      "corporateHeadquartersDensity": 22,
+      "healthcareHubStrength": 44,
+      "innovationIndex": 70
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New York and Los Angeles Film, Television, and Music Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "San Francisco CA",
+        "Hartford CT"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Los Angeles CA",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates move to Los Angeles, entering film, television, and music production.",
+        "New York draws graduates into media, finance, and consulting.",
+        "Boston attracts graduates into academia, consulting, and healthcare.",
+        "A meaningful cohort pursues PhD programs in neuroscience and the sciences.",
+        "A smaller cohort enters music industry roles in Nashville and internationally."
+      ],
+      "regionalInfluenceScore": 78,
+      "nationalReachScore": 78,
+      "internationalReachScore": 54
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 10,
+      "studentOrganizationStrength": 88,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 88,
+      "civicEngagement": 76
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis outside creative production coursework."
+      },
+      "healthWellness": {
+        "strength": 50,
+        "notes": "Moderate presence through neuroscience and behavior research."
+      },
+      "nutraceuticals": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 92,
+        "notes": "One of the university's defining strengths \u2014 a disproportionately powerful film, television, and music industry pipeline."
+      },
+      "ventureCapital": {
+        "strength": 42,
+        "notes": "Limited but present, particularly in media technology."
+      },
+      "privateEquity": {
+        "strength": 52,
+        "notes": "Moderate placement through alumni finance networks."
+      },
+      "investmentBanking": {
+        "strength": 56,
+        "notes": "Moderate pipeline, secondary to creative industries."
+      },
+      "consulting": {
+        "strength": 64,
+        "notes": "Solid placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 56,
+        "notes": "Solid pre-med foundation, reinforced by the strong neuroscience program."
+      },
+      "healthcareAdministration": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 54,
+        "notes": "Growing entrepreneurship culture, particularly in media and creative technology."
+      },
+      "technology": {
+        "strength": 46,
+        "notes": "Limited but growing, particularly at the intersection of neuroscience and technology."
+      },
+      "publicPolicy": {
+        "strength": 50,
+        "notes": "Moderate pathway through government and science in society programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 56,
+        "notes": "Meaningful pathway, often tied to arts and social justice organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 70,
+      "firstGenerationSupport": 76,
+      "wealthCreationPotential": 74,
+      "familyBusinessPipelineStrength": 38
+    },
+    "futureResilience": {
+      "aiResistance": 84,
+      "automationResistance": 82,
+      "adaptabilityScore": 88,
+      "interdisciplinaryStrength": 90,
+      "futureReadiness": 84,
+      "entrepreneurialFlexibility": 74,
+      "lifelongLearningCulture": 88,
+      "innovationCapacity": 82
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 74,
+      "communityLeadershipPotential": 80,
+      "geographicMobility": 82,
+      "workLifeBalancePotential": 78,
+      "purposeAlignment": 90,
+      "familyFormationSupport": 74,
+      "personalDevelopmentPotential": 92,
+      "careerOptionality": 82,
+      "longTermLifeSatisfaction": 86
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 82,
+      "networkMoat": 76,
+      "geographicMoat": 66,
+      "industryMoat": 80,
+      "alumniMoat": 78,
+      "brandDurability": 80,
+      "overallMoatScore": 77
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 76,
+      "returnerScore": 26,
+      "stewardScore": 20,
+      "navigatorScore": 86,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "nyc_la_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 68,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 600,
+      "jewishStudentPercentage": "~20%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "Wesleyan has one of the higher proportional Jewish student populations among elite liberal arts colleges, supported by an active Hillel with kosher dining options."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Wesleyan has no honors college; the university's small size and thesis-based senior year function as an honors-level experience for the entire student body."
+    }
+  },
+
+"Carleton College": {
+    "institutionNarrative": {
+      "name": "Carleton College",
+      "location": "Northfield, Minnesota",
+      "region": "Midwest",
+      "archetype": "The Quirky Intellectual Powerhouse \u2014 Highest PhD Production Rate and Genuine Love of Learning",
+      "oneSentenceSummary": "Carleton College produces PhDs at one of the highest rates of any undergraduate institution in the country, combining a famously quirky, non-careerist intellectual culture with elite outcomes across the sciences, economics, and the humanities.",
+      "pipeline": "Approximately 2,100 undergraduates. Carleton is nationally recognized for Economics, Mathematics, Biology, and Political Science, with an unusually high rate of graduates pursuing PhDs relative to any other liberal arts college. Major recruiters include top PhD programs, Goldman Sachs, McKinsey & Company, and Teach for America.",
+      "hiddenPathway": "Carleton's rate of students who go on to earn PhDs is consistently ranked among the top 3 of all American colleges and universities on a per-capita basis \u2014 a distinction that gives students unusually direct faculty mentorship toward doctoral-level research even as undergraduates.",
+      "institutionalSecret": "Carleton's famously quirky, non-careerist culture \u2014 including student traditions like the trebuchet-adjacent 'Pumpkin Chunkin' contest \u2014 masks one of the most academically rigorous and intellectually serious student bodies in the country.",
+      "theRoom": "Located in Northfield, Minnesota, an hour from Minneapolis-St. Paul, Carleton shares its small town with rival Saint Olaf College, creating an unusually dense concentration of high-achieving liberal arts students in one small Midwestern town.",
+      "lifestyle": "Quirky, intellectually earnest, and genuinely unpretentious. Carleton's culture prizes learning for its own sake over resume-building, with an unusually strong sense of humor about itself.",
+      "bestFitPersonality": "Genuinely intellectually curious, unpretentious, drawn to research or the sciences, and comfortable in a quirky, non-careerist Midwestern liberal arts culture.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout the Upper Midwest, with national reach into academia, finance, and research institutions.",
+      "economicOutcome": "Excellent outcomes in academia, research, finance, and consulting, with an unmatched per-capita PhD production rate among liberal arts colleges.",
+      "gradCities": [
+        "Minneapolis MN",
+        "Chicago IL",
+        "New York NY",
+        "San Francisco CA"
+      ],
+      "comparableInstitutions": [
+        "Grinnell College",
+        "Oberlin College",
+        "Macalester College",
+        "Williams College",
+        "Pomona College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Normandale Community College",
+          "Minneapolis Community and Technical College"
+        ],
+        "transferAcceptanceRate": "~15%",
+        "freshmanAcceptanceRate": "~17%",
+        "estimatedSavingsRange": "$16,000-$38,000",
+        "transferNotes": "Carleton maintains a modest transfer pathway, drawing occasionally from Twin Cities community colleges, though remaining highly selective overall."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Carleton",
+      "archetype": "Elite Small Liberal Arts College \u2014 PhD Production and Intellectual Seriousness",
+      "institutionalPersonality": "quirky, intellectually earnest, unpretentious, genuinely curious",
+      "cultureKeywords": [
+        "PhD Production",
+        "Intellectual Seriousness",
+        "Quirky Culture",
+        "Non-Careerist",
+        "Midwest"
+      ],
+      "missionOrientation": "Cultivating genuine intellectual curiosity and rigorous scholarship for its own sake, producing an outsized share of future PhDs and researchers.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through small seminar discussion, close faculty mentorship, and a culture that genuinely prizes learning over careerist credentialing.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Strongly progressive.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most academically rigorous liberal arts colleges in the country, with a nationally top-ranked PhD production rate.",
+      "socialClimate": "Quirky, intellectually earnest, and unpretentious, with a strong sense of self-deprecating humor.",
+      "leadershipStyle": "Leadership through genuine scholarly rigor and quiet intellectual seriousness."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "regionalRole": "The Upper Midwest's leading undergraduate feeder into PhD programs and academic research careers."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 58,
+      "BosWash": 14,
+      "TorBuffChester": 8,
+      "TexasTriangle": 6,
+      "CharLanta": 6,
+      "NorCalInnovationCorridor": 10,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusGrinnell": "Grinnell offers a larger endowment per student and a more overtly progressive activist culture, while Carleton offers a slightly more quirky, less politically intense intellectual atmosphere.",
+      "versusOberlin": "Oberlin offers a world-class conservatory and a more artistically alternative culture, while Carleton offers a more STEM- and research-focused intellectual identity.",
+      "versusMacalester": "Macalester offers a Twin Cities urban location with a stronger international studies focus, while Carleton offers a more rural small-town setting with a higher per-capita PhD production rate."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 2100,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 2100,
+      "campusType": "Small Midwestern College Town",
+      "residentialIntensity": 92,
+      "communityFeel": 90,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with extensive faculty accessibility and a genuine culture of intellectual mentorship toward doctoral-level research.",
+      "scaleAdvantages": [
+        "Top-3 per-capita PhD production rate among American colleges",
+        "Genuinely non-careerist, intellectually serious culture",
+        "Strong economics, mathematics, and biology programs",
+        "Close-knit, quirky community"
+      ],
+      "scaleDisadvantages": [
+        "Small-town Minnesota setting distant from a major city",
+        "Limited breadth of majors given small size",
+        "Harsh winters may not suit all students",
+        "Less name recognition outside academic and Midwest circles"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 94,
+        "conscientiousness": 90,
+        "extraversion": 62,
+        "agreeableness": 82,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "I",
+        "A",
+        "S"
+      ],
+      "learningStyle": [
+        "Small Seminar Discussion",
+        "Independent Research",
+        "Close Faculty Mentorship",
+        "Collaborative Study"
+      ],
+      "socialEnvironment": [
+        "Quirky",
+        "Intellectually Earnest",
+        "Unpretentious",
+        "Genuinely Curious",
+        "Close-Knit"
+      ],
+      "idealStudentTraits": [
+        "Genuinely intellectually curious",
+        "Unpretentious",
+        "Drawn to research or the sciences",
+        "Comfortable in a quirky, non-careerist culture"
+      ],
+      "thrivesIf": [
+        "Wants a genuinely non-careerist, intellectually serious culture",
+        "Plans for graduate school or academic research",
+        "Values a quirky, unpretentious community",
+        "Enjoys small-town Midwest life"
+      ],
+      "strugglesIf": [
+        "Wants a strongly pre-professional, careerist culture",
+        "Needs proximity to a major city",
+        "Prefers a large university with many majors",
+        "Dislikes cold Midwestern winters"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more careerist, pre-professional culture",
+        "Students wanting closer proximity to a major city",
+        "Students who dislike cold, rural settings"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Carleton does not impact majors at the undergraduate level; all departments are equally accessible to any admitted student."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Geology",
+        "Cognitive Science",
+        "Statistics",
+        "Classics",
+        "Environmental Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Academic Research and PhD Placement",
+        "Actuarial Science",
+        "Data Science",
+        "Teaching and Education"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Top PhD programs nationally",
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Teach for America"
+      ],
+      "overlookedStrengths": [
+        "Carleton's per-capita PhD production rate is consistently ranked among the top 3 of all American colleges and universities, public or private.",
+        "The college's genuinely non-careerist culture produces students with unusually deep subject-matter mastery by graduation.",
+        "Carleton's mathematics and statistics departments feed directly into data science and actuarial careers at a rate that belies the college's small size.",
+        "The Northfield, Minnesota location, shared with rival Saint Olaf College, creates an unusually dense concentration of serious students in one small town."
+      ],
+      "sleeperIndustries": [
+        "Academic Research and PhD Placement",
+        "Actuarial Science and Data Science",
+        "Education and Teaching",
+        "Environmental and Geological Science"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 86,
+      "executiveAccess": 68,
+      "internshipNetwork": 68,
+      "familyBusinessExposure": 34,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 74,
+      "donorNetworkStrength": 70,
+      "boardMemberDensity": 56
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Academia",
+        "Finance",
+        "Data Science",
+        "Education"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Agriculture",
+        "Healthcare",
+        "Financial Services (Twin Cities)"
+      ],
+      "topEmployers": [
+        "Top PhD-granting universities",
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Mayo Clinic (regional)"
+      ],
+      "emergingIndustries": [
+        "Data Science and Analytics",
+        "EdTech",
+        "Agricultural Technology"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 34,
+      "corporateHeadquartersDensity": 24,
+      "healthcareHubStrength": 48,
+      "innovationIndex": 66
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Upper Midwest Academic, Finance, and Research Economy",
+      "secondaryMarkets": [
+        "Minneapolis-St. Paul MN",
+        "Chicago IL",
+        "New York NY"
+      ],
+      "alumniStrongholds": [
+        "Minneapolis-St. Paul MN",
+        "Chicago IL",
+        "New York NY",
+        "San Francisco CA"
+      ],
+      "relocationPatterns": [
+        "A meaningful share of graduates remain in the Twin Cities, entering finance, education, and healthcare.",
+        "A significant cohort pursues PhD programs nationally before entering academic careers.",
+        "New York and San Francisco draw graduates into finance, consulting, and technology.",
+        "Chicago attracts graduates into consulting and finance roles.",
+        "A smaller cohort enters K-12 education and Teach for America placements nationally."
+      ],
+      "regionalInfluenceScore": 78,
+      "nationalReachScore": 70,
+      "internationalReachScore": 44
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 4,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 86,
+      "civicEngagement": 76
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 12,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 54,
+        "notes": "Moderate pre-med foundation, though Carleton has no medical school."
+      },
+      "nutraceuticals": {
+        "strength": 26,
+        "notes": "Some overlap through biology and environmental science research."
+      },
+      "consumerProducts": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 40,
+        "notes": "Moderate presence given the rural Minnesota setting."
+      },
+      "sportsBusiness": {
+        "strength": 20,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 50,
+        "notes": "Moderate placement given Carleton's finance-oriented alumni network."
+      },
+      "investmentBanking": {
+        "strength": 54,
+        "notes": "Moderate pipeline into major investment banks."
+      },
+      "consulting": {
+        "strength": 64,
+        "notes": "Strong placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 58,
+        "notes": "Solid pre-med foundation, though Carleton has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 14,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 42,
+        "notes": "Modest entrepreneurship culture relative to academia and finance."
+      },
+      "technology": {
+        "strength": 56,
+        "notes": "Solid computer science and data science pipeline, growing steadily."
+      },
+      "publicPolicy": {
+        "strength": 50,
+        "notes": "Moderate pathway through political science programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 52,
+        "notes": "Meaningful pathway, often tied to education and environmental organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 74,
+      "firstGenerationSupport": 78,
+      "wealthCreationPotential": 72,
+      "familyBusinessPipelineStrength": 34
+    },
+    "futureResilience": {
+      "aiResistance": 90,
+      "automationResistance": 88,
+      "adaptabilityScore": 88,
+      "interdisciplinaryStrength": 90,
+      "futureReadiness": 86,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 94,
+      "innovationCapacity": 78
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 72,
+      "communityLeadershipPotential": 78,
+      "geographicMobility": 74,
+      "workLifeBalancePotential": 84,
+      "purposeAlignment": 90,
+      "familyFormationSupport": 80,
+      "personalDevelopmentPotential": 92,
+      "careerOptionality": 80,
+      "longTermLifeSatisfaction": 88
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 80,
+      "networkMoat": 66,
+      "geographicMoat": 58,
+      "industryMoat": 68,
+      "alumniMoat": 76,
+      "brandDurability": 78,
+      "overallMoatScore": 71
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 62,
+      "returnerScore": 38,
+      "stewardScore": 30,
+      "navigatorScore": 78,
+      "geographicLockIn": "low_to_moderate",
+      "alumniDispersalPattern": "twin_cities_concentration_with_academic_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 48,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 200,
+      "jewishStudentPercentage": "~9%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Carleton maintains an active Hillel presence, without dedicated kosher dining facilities given the college's small size."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Carleton has no honors college; the college's small size and comprehensive exercise/thesis requirements function as an honors-level experience for the entire student body."
+    }
+  },
+
+"Grinnell College": {
+    "institutionNarrative": {
+      "name": "Grinnell College",
+      "location": "Grinnell, Iowa",
+      "region": "Midwest",
+      "archetype": "The Endowment-Rich Social Justice Anchor \u2014 Open Curriculum, Radical Financial Aid, and Rural Iowa Intellectual Intensity",
+      "oneSentenceSummary": "Grinnell College combines one of the largest endowments per student of any liberal arts college in the country with a completely open curriculum and a deeply progressive, social-justice-oriented intellectual culture, all in a small Iowa town.",
+      "pipeline": "Approximately 1,700 undergraduates. Grinnell is nationally recognized for Economics, Political Science, Biology, and Mathematics/Statistics, with an unusually high rate of graduates pursuing PhDs and careers in social justice-oriented fields. Major recruiters include Goldman Sachs, top PhD programs, Teach for America, and nonprofit and social enterprise organizations.",
+      "hiddenPathway": "Grinnell's endowment per student is among the very highest of any liberal arts college in the country, funding a genuinely need-blind, no-loan financial aid policy and extensive student research funding that most peer institutions cannot match.",
+      "institutionalSecret": "Grinnell's open curriculum, with only a single required first-year seminar, gives students almost the same degree of curricular freedom as Amherst, combined with an unusually well-funded and well-resourced small-town Iowa campus most families overlook.",
+      "theRoom": "Located in Grinnell, Iowa, a small rural town an hour from Des Moines, students are geographically isolated from a major city but exceptionally well-resourced given the college's outsized endowment.",
+      "lifestyle": "Intellectually intense, deeply progressive, and socially engaged. Grinnell's small-town isolation is offset by an unusually well-funded campus and a strong culture of student-led social and political engagement.",
+      "bestFitPersonality": "Intellectually independent, socially and politically engaged, drawn to social justice or research, and comfortable in a small, isolated, deeply progressive Midwestern community.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout the Midwest, with national reach into academia, social enterprise, and progressive policy organizations.",
+      "economicOutcome": "Excellent outcomes in academia, social enterprise, law, and finance, supported by an exceptionally generous no-loan financial aid policy.",
+      "gradCities": [
+        "Chicago IL",
+        "Minneapolis MN",
+        "New York NY",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "Carleton College",
+        "Oberlin College",
+        "Macalester College",
+        "Swarthmore College",
+        "Reed College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Des Moines Area Community College",
+          "Iowa Valley Community College District"
+        ],
+        "transferAcceptanceRate": "~18%",
+        "freshmanAcceptanceRate": "~10%",
+        "estimatedSavingsRange": "$16,000-$38,000",
+        "transferNotes": "Grinnell maintains a modest transfer pathway, though it remains highly selective given its small class size and generous financial aid model."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Grinnell",
+      "archetype": "Elite Small Liberal Arts College \u2014 Endowment-Rich Social Justice Culture",
+      "institutionalPersonality": "intellectually intense, deeply progressive, socially engaged, well-resourced",
+      "cultureKeywords": [
+        "Open Curriculum",
+        "Social Justice",
+        "Endowment-Rich",
+        "Progressive Activism",
+        "Rural Iowa"
+      ],
+      "missionOrientation": "Cultivating independent thinkers and social justice leaders through an open curriculum and exceptionally generous institutional resources.",
+      "faithTradition": "Historically Congregationalist; today nonsectarian.",
+      "educationalPhilosophy": "Students design almost their entire curriculum after a single required first-year seminar, supported by small seminar discussion and extensive funded research opportunities.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Strongly progressive, with an actively engaged social justice and activist culture.",
+      "studentAutonomy": "Very High",
+      "prestigeOrientation": "Among the most academically rigorous and well-resourced liberal arts colleges in the country.",
+      "socialClimate": "Intellectually intense, deeply progressive, and socially engaged, in a small, isolated rural setting.",
+      "leadershipStyle": "Leadership through social justice engagement, intellectual independence, and institutional resource stewardship."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "regionalRole": "An exceptionally well-resourced Midwestern liberal arts college anchoring social-justice-oriented intellectual culture in rural Iowa."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 56,
+      "BosWash": 12,
+      "TorBuffChester": 6,
+      "TexasTriangle": 6,
+      "CharLanta": 6,
+      "NorCalInnovationCorridor": 8,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusCarleton": "Carleton offers a quirkier, slightly less overtly activist culture with a stronger PhD production rate, while Grinnell offers a more explicitly social-justice-oriented culture and an even more generous per-student endowment.",
+      "versusOberlin": "Oberlin offers a world-class conservatory and a more urban-adjacent Ohio setting, while Grinnell offers a more isolated rural setting with an exceptionally larger endowment per student.",
+      "versusSwarthmore": "Swarthmore offers proximity to Philadelphia and a stronger engineering program, while Grinnell offers a more open curriculum and deeper rural-Midwest isolation."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Small",
+      "undergraduateEnrollment": 1700,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 1700,
+      "campusType": "Small Rural Iowa College Town",
+      "residentialIntensity": 94,
+      "communityFeel": 90,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with extensive funded research opportunities given the college's exceptionally large endowment per student.",
+      "scaleAdvantages": [
+        "Among the largest per-student endowments of any liberal arts college",
+        "Near-completely open curriculum after one required seminar",
+        "Generous need-blind, no-loan financial aid",
+        "Deeply engaged social justice and activist culture"
+      ],
+      "scaleDisadvantages": [
+        "Very isolated rural Iowa setting, an hour from Des Moines",
+        "Small size limits breadth of majors",
+        "Limited access to internships without significant travel",
+        "Cold winters and rural isolation may not suit all students"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 96,
+        "conscientiousness": 86,
+        "extraversion": 62,
+        "agreeableness": 82,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "I",
+        "S",
+        "A"
+      ],
+      "learningStyle": [
+        "Independent Curriculum Design",
+        "Small Seminar Discussion",
+        "Funded Independent Research",
+        "Social Justice-Oriented Scholarship"
+      ],
+      "socialEnvironment": [
+        "Intellectually Intense",
+        "Deeply Progressive",
+        "Socially Engaged",
+        "Well-Resourced",
+        "Isolated but Tight-Knit"
+      ],
+      "idealStudentTraits": [
+        "Intellectually independent",
+        "Socially and politically engaged",
+        "Drawn to social justice or research",
+        "Comfortable in a small, isolated, progressive community"
+      ],
+      "thrivesIf": [
+        "Wants an open curriculum with generous funded research opportunities",
+        "Plans for social justice, academia, or nonprofit leadership",
+        "Values a deeply progressive, socially engaged culture",
+        "Is comfortable with significant rural isolation"
+      ],
+      "strugglesIf": [
+        "Needs proximity to a major city",
+        "Wants a more politically moderate or apolitical campus culture",
+        "Prefers a large university with more majors",
+        "Dislikes rural isolation and cold winters"
+      ],
+      "transferRiskFactors": [
+        "Students needing closer proximity to a major city",
+        "Students wanting a more politically neutral campus culture",
+        "Students who dislike rural isolation"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Grinnell does not impact majors at the undergraduate level; the open curriculum makes all departments equally accessible to any admitted student."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Peace and Conflict Studies",
+        "Statistics",
+        "Anthropology",
+        "Environmental Studies",
+        "Global Development Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Social Enterprise and Nonprofit Leadership",
+        "Academic Research and PhD Placement",
+        "Progressive Policy Organizations",
+        "Data Science"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "Top PhD programs nationally",
+        "Teach for America",
+        "National and international nonprofit organizations"
+      ],
+      "overlookedStrengths": [
+        "Grinnell's endowment per student is among the highest of any liberal arts college in the country, funding an unusually generous no-loan financial aid policy.",
+        "The near-completely open curriculum, requiring only a single first-year seminar, gives students Amherst-level curricular freedom in a much less well-known package.",
+        "Grinnell's Center for Careers, Life, and Service provides funded internship stipends that make unpaid opportunities in expensive cities genuinely accessible to all students.",
+        "The college's rural isolation has produced an unusually self-reliant, socially engaged, and tight-knit student culture."
+      ],
+      "sleeperIndustries": [
+        "Social Enterprise and Nonprofit Leadership",
+        "Academic Research and PhD Placement",
+        "Progressive Policy and Advocacy Organizations",
+        "Data Science and Statistics"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 74,
+      "mentorshipDensity": 82,
+      "executiveAccess": 62,
+      "internshipNetwork": 66,
+      "familyBusinessExposure": 30,
+      "relationshipCapitalScore": 74,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 72,
+      "donorNetworkStrength": 76,
+      "boardMemberDensity": 54
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Academia",
+        "Nonprofit and Social Enterprise",
+        "Finance",
+        "Education"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Agriculture",
+        "Insurance (Des Moines-adjacent)"
+      ],
+      "topEmployers": [
+        "Top PhD-granting universities",
+        "Goldman Sachs",
+        "National nonprofit organizations",
+        "Grinnell Regional Medical Center"
+      ],
+      "emergingIndustries": [
+        "Social Enterprise Technology",
+        "Agricultural Technology",
+        "EdTech"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 28,
+      "corporateHeadquartersDensity": 16,
+      "healthcareHubStrength": 38,
+      "innovationIndex": 62
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Midwest Academic, Nonprofit, and Social Enterprise Economy",
+      "secondaryMarkets": [
+        "Chicago IL",
+        "Minneapolis MN",
+        "Des Moines IA"
+      ],
+      "alumniStrongholds": [
+        "Chicago IL",
+        "Minneapolis MN",
+        "New York NY",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "A significant cohort pursues PhD programs nationally before entering academic careers.",
+        "Chicago and Minneapolis draw graduates into finance, consulting, and nonprofit leadership.",
+        "Washington DC attracts graduates into progressive policy and advocacy organizations.",
+        "New York draws graduates into finance and social enterprise roles.",
+        "A smaller cohort enters international development and global nonprofit organizations."
+      ],
+      "regionalInfluenceScore": 70,
+      "nationalReachScore": 68,
+      "internationalReachScore": 46
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 0,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 84,
+      "civicEngagement": 88
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 10,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 52,
+        "notes": "Moderate pre-med foundation, though Grinnell has no medical school."
+      },
+      "nutraceuticals": {
+        "strength": 24,
+        "notes": "Some overlap through biology and environmental science research."
+      },
+      "consumerProducts": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis despite rural Iowa setting."
+      },
+      "sportsBusiness": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 44,
+        "notes": "Moderate placement given Grinnell's finance-oriented alumni network."
+      },
+      "investmentBanking": {
+        "strength": 48,
+        "notes": "Moderate pipeline into major investment banks."
+      },
+      "consulting": {
+        "strength": 58,
+        "notes": "Solid placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 56,
+        "notes": "Solid pre-med foundation, though Grinnell has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 12,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 10,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 48,
+        "notes": "Growing social entrepreneurship culture, reinforced by the college's social justice orientation."
+      },
+      "technology": {
+        "strength": 48,
+        "notes": "Solid and growing computer science and data science pipeline."
+      },
+      "publicPolicy": {
+        "strength": 62,
+        "notes": "Strong pathway through political science and peace and conflict studies programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 76,
+        "notes": "One of the college's defining strengths, reinforced by its deeply progressive, socially engaged culture."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 78,
+      "firstGenerationSupport": 84,
+      "wealthCreationPotential": 66,
+      "familyBusinessPipelineStrength": 30
+    },
+    "futureResilience": {
+      "aiResistance": 88,
+      "automationResistance": 86,
+      "adaptabilityScore": 86,
+      "interdisciplinaryStrength": 90,
+      "futureReadiness": 84,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 92,
+      "innovationCapacity": 74
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 66,
+      "communityLeadershipPotential": 82,
+      "geographicMobility": 70,
+      "workLifeBalancePotential": 84,
+      "purposeAlignment": 92,
+      "familyFormationSupport": 80,
+      "personalDevelopmentPotential": 92,
+      "careerOptionality": 76,
+      "longTermLifeSatisfaction": 88
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 76,
+      "networkMoat": 62,
+      "geographicMoat": 54,
+      "industryMoat": 62,
+      "alumniMoat": 74,
+      "brandDurability": 74,
+      "overallMoatScore": 67
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 66,
+      "returnerScore": 32,
+      "stewardScore": 26,
+      "navigatorScore": 80,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "midwest_concentration_with_academic_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 44,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 150,
+      "jewishStudentPercentage": "~9%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Grinnell maintains an active Hillel presence, without dedicated kosher dining facilities given the college's small size and rural setting."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Grinnell has no honors college; the college's open curriculum and generous funded research opportunities function as an honors-level experience for the entire student body."
+    }
+  },
+
+"Vassar College": {
+    "institutionNarrative": {
+      "name": "Vassar College",
+      "location": "Poughkeepsie, New York",
+      "region": "New England",
+      "archetype": "The Artistic and Literary Powerhouse \u2014 Former Seven Sisters Prestige, Theater, and Progressive Intellectualism",
+      "oneSentenceSummary": "Vassar College combines the historical prestige of the former Seven Sisters women's colleges (now fully coeducational) with an exceptionally strong theater, film, and English program, producing a disproportionate share of writers, actors, and creative leaders relative to its small size.",
+      "pipeline": "Approximately 2,450 undergraduates. Vassar is nationally recognized for English, Drama, Film, Art History, and Political Science. Major recruiters include major publishing houses, theater and film production companies, top consulting firms, and PhD programs.",
+      "hiddenPathway": "Vassar's drama and film program has produced an outsized share of working actors, playwrights, and directors relative to the college's small size, supported by an unusually well-resourced theater facility and active alumni casting networks.",
+      "institutionalSecret": "Vassar was the first of the Seven Sisters colleges to go fully coeducational, and it has retained the rigorous, women's-college-era academic intensity in its humanities and arts programs while building a genuinely mixed-gender, artistically vibrant culture.",
+      "theRoom": "Located in Poughkeepsie in the Hudson Valley, Vassar sits roughly 90 minutes from New York City, giving students genuine access to the city's publishing, theater, and finance industries while retaining a self-contained, arboretum-like campus.",
+      "lifestyle": "Artistically vibrant, intellectually serious, and socially progressive. Vassar's Hudson Valley campus is famously beautiful, and the college's arts culture creates a distinctly creative undercurrent throughout academic life.",
+      "bestFitPersonality": "Artistically and intellectually ambitious, drawn to writing, theater, or the humanities, and comfortable in a progressive, historically significant small college community.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout the Hudson Valley and New York City, with national reach into publishing, theater, and the arts.",
+      "economicOutcome": "Excellent outcomes in publishing, theater and film, law, and consulting, with a historically powerful alumni network in the arts and letters.",
+      "gradCities": [
+        "New York NY",
+        "Boston MA",
+        "Los Angeles CA",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "Wesleyan University",
+        "Oberlin College",
+        "Bard College",
+        "Smith College",
+        "Bryn Mawr College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Dutchess Community College"
+        ],
+        "transferAcceptanceRate": "~18%",
+        "freshmanAcceptanceRate": "~19%",
+        "estimatedSavingsRange": "$16,000-$38,000",
+        "transferNotes": "Vassar maintains a relatively accessible transfer pathway among elite liberal arts colleges, drawing occasionally from Hudson Valley community colleges."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Vassar",
+      "archetype": "Elite Small Liberal Arts College \u2014 Arts, Letters, and Former Seven Sisters Prestige",
+      "institutionalPersonality": "artistically vibrant, intellectually serious, progressive, historically significant",
+      "cultureKeywords": [
+        "Theater and Drama",
+        "English and Writing",
+        "Seven Sisters Legacy",
+        "Hudson Valley",
+        "Progressive Arts Culture"
+      ],
+      "missionOrientation": "Cultivating artistically and intellectually ambitious leaders through a rigorous liberal arts education with deep roots in the humanities and performing arts.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through small seminar discussion, hands-on theater and film production, and close faculty mentorship within a historically significant liberal arts tradition.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Strongly progressive.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most artistically and academically prestigious liberal arts colleges in the country, with deep historical significance.",
+      "socialClimate": "Artistically vibrant, intellectually serious, and socially progressive.",
+      "leadershipStyle": "Leadership through artistic and literary influence and historically-grounded intellectual seriousness."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "A historically significant Hudson Valley liberal arts college with an outsized influence on American theater, film, and letters."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 88,
+      "TorBuffChester": 22,
+      "TexasTriangle": 4,
+      "CharLanta": 4,
+      "NorCalInnovationCorridor": 12,
+      "SoCalCreativeEconomy": 8
+    },
+    "comparativePositioning": {
+      "versusWesleyan": "Wesleyan offers a stronger film industry alumni network and a more artistically alternative culture, while Vassar offers deeper theater and English program strength and closer proximity to New York City.",
+      "versusOberlin": "Oberlin offers a world-class conservatory, while Vassar offers a stronger literary and theatrical tradition tied to its historic Seven Sisters legacy.",
+      "versusSmith": "Smith retains a women's college identity with strong STEM and engineering programs, while Vassar is fully coeducational with a stronger arts and letters focus."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 2450,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 2450,
+      "campusType": "Small Hudson Valley Liberal Arts College",
+      "residentialIntensity": 92,
+      "communityFeel": 88,
+      "studentFacultyRatio": "8:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with unusually well-resourced theater and film production facilities supporting hands-on artistic work from early in a student's academic career.",
+      "scaleAdvantages": [
+        "Exceptional theater, film, and English programs",
+        "90-minute proximity to New York City",
+        "Historic Seven Sisters academic rigor in a coeducational setting",
+        "Beautiful, self-contained Hudson Valley campus"
+      ],
+      "scaleDisadvantages": [
+        "Smaller endowment than some peer institutions",
+        "Poughkeepsie itself offers limited off-campus amenities",
+        "Limited breadth of STEM offerings relative to the arts and humanities",
+        "No graduate programs on campus"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 96,
+        "conscientiousness": 84,
+        "extraversion": 68,
+        "agreeableness": 80,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "A",
+        "I",
+        "S"
+      ],
+      "learningStyle": [
+        "Small Seminar Discussion",
+        "Hands-On Theater and Film Production",
+        "Independent Research",
+        "Close Faculty Mentorship"
+      ],
+      "socialEnvironment": [
+        "Artistically Vibrant",
+        "Intellectually Serious",
+        "Progressive",
+        "Historically Grounded",
+        "Close-Knit"
+      ],
+      "idealStudentTraits": [
+        "Artistically and intellectually ambitious",
+        "Drawn to writing, theater, or the humanities",
+        "Comfortable in a progressive, historically significant community",
+        "Values close proximity to New York City"
+      ],
+      "thrivesIf": [
+        "Plans for theater, film, publishing, or the humanities",
+        "Wants strong New York City access without an urban campus",
+        "Values a historically significant liberal arts tradition",
+        "Enjoys an artistically vibrant campus culture"
+      ],
+      "strugglesIf": [
+        "Wants a strong engineering or hard-sciences identity",
+        "Needs a larger university with more majors",
+        "Prefers a more politically moderate campus culture",
+        "Wants graduate program resources on campus"
+      ],
+      "transferRiskFactors": [
+        "Students seeking stronger STEM and engineering programs",
+        "Students wanting a larger, more comprehensive university",
+        "Students who prefer a more politically neutral culture"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Drama and Film carry additional selectivity and audition/portfolio-based review beyond general college admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Media Studies",
+        "Art History",
+        "Science, Technology, and Society",
+        "Urban Studies",
+        "Africana Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Theater and Film Production",
+        "Publishing and Editorial",
+        "Arts Journalism",
+        "Museum and Curatorial Work"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Major publishing houses",
+        "Theater and film production companies",
+        "Top consulting firms",
+        "PhD programs nationally"
+      ],
+      "overlookedStrengths": [
+        "Vassar's drama department has produced an outsized share of working actors, playwrights, and directors relative to the college's small size.",
+        "The college's 90-minute proximity to New York City gives arts and humanities students genuine access to the city's publishing and theater industries.",
+        "Vassar's historic status as a Seven Sisters college gives it an unusually powerful and loyal alumnae network in the arts and letters.",
+        "The Vassar College Art Gallery and its collections give students hands-on curatorial experience uncommon at peer institutions."
+      ],
+      "sleeperIndustries": [
+        "Theater and Film Production",
+        "Publishing and Editorial",
+        "Museum and Curatorial Work",
+        "Arts Journalism and Criticism"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 80,
+      "executiveAccess": 70,
+      "internshipNetwork": 76,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 72,
+      "boardMemberDensity": 60
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Publishing",
+        "Theater and Film",
+        "Consulting",
+        "Academia"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Healthcare",
+        "Tourism (Hudson Valley)"
+      ],
+      "topEmployers": [
+        "Major publishing houses",
+        "Theater and film production companies",
+        "Vassar Brothers Medical Center",
+        "Consulting firms"
+      ],
+      "emergingIndustries": [
+        "Digital Media and Publishing",
+        "Streaming Content Production",
+        "Arts Technology"
+      ],
+      "startupDensity": "Low to Moderate",
+      "ventureCapitalAccess": 40,
+      "corporateHeadquartersDensity": 20,
+      "healthcareHubStrength": 42,
+      "innovationIndex": 66
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New York City Publishing, Theater, and Arts Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "Los Angeles CA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Hudson Valley NY",
+        "Boston MA",
+        "Los Angeles CA"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates enter New York for publishing, theater, and finance roles.",
+        "Los Angeles draws graduates into film and television production.",
+        "Boston attracts graduates into academia and consulting.",
+        "A meaningful cohort pursues PhD programs in the humanities and social sciences.",
+        "A smaller cohort remains in the Hudson Valley, entering education and healthcare."
+      ],
+      "regionalInfluenceScore": 84,
+      "nationalReachScore": 70,
+      "internationalReachScore": 48
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 4,
+      "studentOrganizationStrength": 86,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 84,
+      "civicEngagement": 78
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 30,
+        "notes": "Some presence through art history and visual culture programs."
+      },
+      "healthWellness": {
+        "strength": 44,
+        "notes": "Moderate pre-med foundation, though Vassar has no medical school."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis despite the Hudson Valley setting."
+      },
+      "sportsBusiness": {
+        "strength": 20,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 84,
+        "notes": "One of the college's defining strengths \u2014 a powerful theater, film, and publishing pipeline."
+      },
+      "ventureCapital": {
+        "strength": 36,
+        "notes": "Limited institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 50,
+        "notes": "Moderate placement given Vassar's finance-oriented alumni network."
+      },
+      "investmentBanking": {
+        "strength": 54,
+        "notes": "Moderate pipeline into major investment banks."
+      },
+      "consulting": {
+        "strength": 62,
+        "notes": "Solid placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 46,
+        "notes": "Moderate pre-med foundation, though Vassar has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 32,
+        "notes": "Some presence through art history and visual culture ties to the fashion and design industries."
+      },
+      "entrepreneurship": {
+        "strength": 46,
+        "notes": "Modest entrepreneurship culture, growing in arts and media technology."
+      },
+      "technology": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis relative to the arts and humanities."
+      },
+      "publicPolicy": {
+        "strength": 52,
+        "notes": "Moderate pathway through political science programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 58,
+        "notes": "Meaningful pathway, often tied to arts and cultural nonprofit organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 68,
+      "firstGenerationSupport": 74,
+      "wealthCreationPotential": 70,
+      "familyBusinessPipelineStrength": 38
+    },
+    "futureResilience": {
+      "aiResistance": 84,
+      "automationResistance": 82,
+      "adaptabilityScore": 86,
+      "interdisciplinaryStrength": 88,
+      "futureReadiness": 82,
+      "entrepreneurialFlexibility": 66,
+      "lifelongLearningCulture": 88,
+      "innovationCapacity": 74
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 70,
+      "communityLeadershipPotential": 80,
+      "geographicMobility": 78,
+      "workLifeBalancePotential": 80,
+      "purposeAlignment": 88,
+      "familyFormationSupport": 76,
+      "personalDevelopmentPotential": 90,
+      "careerOptionality": 78,
+      "longTermLifeSatisfaction": 84
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 82,
+      "networkMoat": 70,
+      "geographicMoat": 66,
+      "industryMoat": 74,
+      "alumniMoat": 78,
+      "brandDurability": 80,
+      "overallMoatScore": 74
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 72,
+      "returnerScore": 30,
+      "stewardScore": 24,
+      "navigatorScore": 82,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "nyc_concentration_with_la_secondary"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 60,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 350,
+      "jewishStudentPercentage": "~14%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "Vassar maintains an active Hillel and kosher dining option, serving a well-established Jewish student population."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Vassar has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
+    }
+  },
+
+"Claremont McKenna College": {
+    "institutionNarrative": {
+      "name": "Claremont McKenna College",
+      "location": "Claremont, California",
+      "region": "California",
+      "archetype": "The Government-Economics-Finance Powerhouse \u2014 Claremont Consortium Access and Wall Street Placement",
+      "oneSentenceSummary": "Claremont McKenna College is the most pre-professionally and politically-engaged member of the Claremont Consortium, combining an unusually strong government and economics program with elite Wall Street and consulting placement rates that rival much larger universities.",
+      "pipeline": "Approximately 1,400 undergraduates. CMC is nationally recognized for Government, Economics, International Relations, and Finance (through the Robert Day School of Economics and Finance). Major recruiters include Goldman Sachs, McKinsey & Company, top law schools, and federal government agencies.",
+      "hiddenPathway": "As one of the five undergraduate Claremont Colleges (alongside Pomona, Scripps, Harvey Mudd, and Pitzer), CMC students can cross-register for classes at any of the five campuses, effectively giving them access to a mid-sized university's course catalog while remaining enrolled at one of the most pre-professionally focused small colleges in the country.",
+      "institutionalSecret": "CMC has one of the highest rates of Wall Street and consulting placement of any liberal arts college in the country, a reputation built deliberately around the Robert Day School of Economics and Finance and the Kravis Leadership Institute.",
+      "theRoom": "Located in Claremont, California, part of the five-college Claremont Consortium, CMC sits an hour from downtown Los Angeles, with strong direct pipelines into Southern California and national finance and government careers.",
+      "lifestyle": "Pre-professionally ambitious, politically engaged, and socially structured through a strong network of eating houses (CMC's version of Greek life). Students balance rigorous coursework with active career preparation from the first year.",
+      "bestFitPersonality": "Pre-professionally ambitious, drawn to government, economics, or finance, and comfortable with a politically engaged, career-focused campus culture.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Southern California, with elite national reach into finance, government, and consulting.",
+      "economicOutcome": "Exceptional outcomes in finance, consulting, government, and law, with Wall Street and consulting placement rates that rival much larger and more prestigious universities.",
+      "gradCities": [
+        "Los Angeles CA",
+        "New York NY",
+        "San Francisco CA",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "Pomona College",
+        "Williams College",
+        "Amherst College",
+        "Georgetown University",
+        "University of Pennsylvania"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Mt. San Antonio College",
+          "Citrus College"
+        ],
+        "transferAcceptanceRate": "~4%",
+        "freshmanAcceptanceRate": "~9%",
+        "estimatedSavingsRange": "$18,000-$42,000",
+        "transferNotes": "CMC accepts a very small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "CMC",
+      "archetype": "Elite Small Liberal Arts College \u2014 Government, Economics, and Finance",
+      "institutionalPersonality": "pre-professionally ambitious, politically engaged, structured, career-focused",
+      "cultureKeywords": [
+        "Government and Economics",
+        "Claremont Consortium",
+        "Finance",
+        "Eating Houses",
+        "Political Engagement"
+      ],
+      "missionOrientation": "Preparing thoughtful and productive leaders through rigorous training in government, economics, and finance within a small liberal arts setting.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through small seminar discussion, case-based economics and finance coursework, and structured leadership development through the Kravis Leadership Institute.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "More ideologically mixed than most elite liberal arts colleges, with a notably active conservative and libertarian presence alongside a progressive majority.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most pre-professionally successful liberal arts colleges in the country, particularly in finance and government.",
+      "socialClimate": "Pre-professionally ambitious and politically engaged, structured through eating houses rather than traditional Greek life.",
+      "leadershipStyle": "Leadership through structured leadership development and pre-professional excellence in government and finance."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "regionalRole": "The Claremont Consortium's most pre-professionally focused college, anchoring government, economics, and finance training in Southern California."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 22,
+      "TorBuffChester": 6,
+      "TexasTriangle": 8,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 20,
+      "SoCalCreativeEconomy": 78
+    },
+    "comparativePositioning": {
+      "versusPomona": "Pomona offers a more traditionally liberal arts, less overtly pre-professional culture with broader prestige, while CMC offers a more concentrated government, economics, and finance identity with stronger Wall Street placement.",
+      "versusWilliams": "Williams offers a stronger athletics culture and broader national prestige, while CMC offers a more explicitly pre-professional government and finance focus and direct Southern California access.",
+      "versusGeorgetown": "Georgetown offers a much larger scale with direct Washington DC proximity, while CMC offers a more intimate liberal arts environment with comparable government and economics rigor."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Small",
+      "undergraduateEnrollment": 1400,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 1400,
+      "campusType": "Small College within the Claremont Consortium",
+      "residentialIntensity": 90,
+      "communityFeel": 86,
+      "studentFacultyRatio": "8:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with cross-registration access to the broader Claremont Consortium's course catalog across five undergraduate colleges.",
+      "scaleAdvantages": [
+        "Elite Wall Street and consulting placement rates",
+        "Cross-registration access across the five Claremont Colleges",
+        "Strong government and economics programs",
+        "Direct access to Los Angeles and Southern California"
+      ],
+      "scaleDisadvantages": [
+        "Very small standalone size before consortium access",
+        "More overtly pre-professional culture may not suit all students",
+        "Eating house social system can feel exclusionary to some",
+        "Claremont's suburban setting is less distinctive than a major city campus"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 84,
+        "conscientiousness": 92,
+        "extraversion": 74,
+        "agreeableness": 72,
+        "neuroticism": 38
+      },
+      "hollandCodes": [
+        "E",
+        "I",
+        "C"
+      ],
+      "learningStyle": [
+        "Case-Based Economics and Finance",
+        "Small Seminar Discussion",
+        "Structured Leadership Development",
+        "Consortium Cross-Registration"
+      ],
+      "socialEnvironment": [
+        "Pre-Professionally Ambitious",
+        "Politically Engaged",
+        "Structured",
+        "Career-Focused",
+        "Ideologically Mixed"
+      ],
+      "idealStudentTraits": [
+        "Pre-professionally ambitious",
+        "Drawn to government, economics, or finance",
+        "Comfortable with a politically engaged, ideologically mixed campus",
+        "Values structured leadership development"
+      ],
+      "thrivesIf": [
+        "Plans for government, economics, finance, or law",
+        "Wants elite Wall Street and consulting placement from a small college",
+        "Values cross-registration access across five colleges",
+        "Enjoys a politically engaged, ideologically diverse campus"
+      ],
+      "strugglesIf": [
+        "Wants a purely traditional liberal arts culture without pre-professional emphasis",
+        "Needs a large university with broad major offerings",
+        "Prefers a politically homogeneous campus culture",
+        "Wants a distinctly urban campus setting"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a less overtly pre-professional culture",
+        "Students wanting a larger, more comprehensive university",
+        "Students who prefer a more politically uniform campus"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "The Robert Day School of Economics and Finance's sequenced coursework carries additional rigor beyond general college admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Philosophy, Politics, and Economics",
+        "Science, Technology, and Society",
+        "Sequence in Data Science",
+        "Leadership Studies",
+        "International Relations"
+      ],
+      "hiddenCareerPipelines": [
+        "Wall Street Finance",
+        "Federal Government and Policy",
+        "Management Consulting",
+        "Political Campaign Strategy"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Federal government agencies",
+        "Top law schools"
+      ],
+      "overlookedStrengths": [
+        "CMC's Robert Day School of Economics and Finance has built one of the strongest undergraduate finance placement records of any liberal arts college in the country.",
+        "Cross-registration across the five Claremont Colleges gives CMC students access to Harvey Mudd's engineering, Scripps's sciences, and Pomona's broader liberal arts catalog.",
+        "The Kravis Leadership Institute provides structured leadership development uncommon at peer liberal arts colleges.",
+        "CMC's more ideologically mixed campus culture, relative to peer elite liberal arts colleges, produces graduates comfortable navigating genuinely diverse political environments."
+      ],
+      "sleeperIndustries": [
+        "Wall Street Finance and Trading",
+        "Federal Government and Policy Analysis",
+        "Management Consulting",
+        "Political Strategy and Campaigns"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 82,
+      "executiveAccess": 82,
+      "internshipNetwork": 80,
+      "familyBusinessExposure": 48,
+      "relationshipCapitalScore": 84,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 78,
+      "boardMemberDensity": 70
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance",
+        "Government",
+        "Consulting",
+        "Law"
+      ],
+      "regionalEconomicDrivers": [
+        "Entertainment and Technology (Los Angeles)",
+        "Finance",
+        "Government and Public Administration"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Federal government agencies",
+        "Los Angeles-area finance and consulting firms"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Political Technology",
+        "Data-Driven Policy Analysis"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 56,
+      "corporateHeadquartersDensity": 34,
+      "healthcareHubStrength": 44,
+      "innovationIndex": 74
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Southern California and National Finance and Government Economy",
+      "secondaryMarkets": [
+        "New York NY",
+        "San Francisco CA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Los Angeles CA",
+        "New York NY",
+        "San Francisco CA",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates remain in Los Angeles and Southern California, entering finance, entertainment, and consulting.",
+        "New York draws graduates into Wall Street finance and consulting roles.",
+        "Washington DC attracts graduates into federal government and policy roles.",
+        "San Francisco draws graduates into technology and venture capital.",
+        "A smaller cohort enters national law school and legal careers."
+      ],
+      "regionalInfluenceScore": 84,
+      "nationalReachScore": 76,
+      "internationalReachScore": 48
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 32,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 90,
+      "crossDisciplinaryInteraction": 82,
+      "civicEngagement": 78
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 20,
+        "notes": "Limited institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 40,
+        "notes": "Limited institutional emphasis relative to government, economics, and finance."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 44,
+        "notes": "Moderate presence through economics and finance coursework."
+      },
+      "outdoorIndustry": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 34,
+        "notes": "Moderate pathway through economics and finance coursework applied to sports management."
+      },
+      "entertainmentMedia": {
+        "strength": 42,
+        "notes": "Some presence given Los Angeles proximity, though secondary to government and finance."
+      },
+      "ventureCapital": {
+        "strength": 60,
+        "notes": "Growing presence tied to Southern California's expanding venture ecosystem."
+      },
+      "privateEquity": {
+        "strength": 78,
+        "notes": "Very strong placement given CMC's dense Wall Street alumni network."
+      },
+      "investmentBanking": {
+        "strength": 84,
+        "notes": "One of the strongest undergraduate investment banking pipelines among liberal arts colleges."
+      },
+      "consulting": {
+        "strength": 84,
+        "notes": "Extremely strong placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 36,
+        "notes": "Limited pre-med emphasis relative to government, economics, and finance."
+      },
+      "healthcareAdministration": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 50,
+        "notes": "Meaningful pathway through government and international relations programs into national security roles."
+      },
+      "realEstate": {
+        "strength": 54,
+        "notes": "Moderate presence given Southern California's real estate market and finance program strength."
+      },
+      "luxuryBrands": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 64,
+        "notes": "Strong entrepreneurship culture, reinforced by the Kravis Leadership Institute and Southern California's startup ecosystem."
+      },
+      "technology": {
+        "strength": 52,
+        "notes": "Growing presence, particularly through cross-registration with Harvey Mudd's engineering programs."
+      },
+      "publicPolicy": {
+        "strength": 86,
+        "notes": "One of the college's defining strengths through the Government department."
+      },
+      "nonprofitLeadership": {
+        "strength": 54,
+        "notes": "Moderate pathway, often tied to policy-oriented nonprofit organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 62,
+      "firstGenerationSupport": 68,
+      "wealthCreationPotential": 86,
+      "familyBusinessPipelineStrength": 48
+    },
+    "futureResilience": {
+      "aiResistance": 86,
+      "automationResistance": 84,
+      "adaptabilityScore": 84,
+      "interdisciplinaryStrength": 84,
+      "futureReadiness": 86,
+      "entrepreneurialFlexibility": 74,
+      "lifelongLearningCulture": 82,
+      "innovationCapacity": 78
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 86,
+      "communityLeadershipPotential": 82,
+      "geographicMobility": 82,
+      "workLifeBalancePotential": 74,
+      "purposeAlignment": 80,
+      "familyFormationSupport": 74,
+      "personalDevelopmentPotential": 86,
+      "careerOptionality": 86,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 80,
+      "networkMoat": 78,
+      "geographicMoat": 74,
+      "industryMoat": 82,
+      "alumniMoat": 78,
+      "brandDurability": 78,
+      "overallMoatScore": 78
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 70,
+      "returnerScore": 34,
+      "stewardScore": 26,
+      "navigatorScore": 84,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "socal_concentration_with_nyc_dc_secondary"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 56,
+        "type": "Claremont Consortium Shared Hillel"
+      },
+      "estimatedJewishUndergraduates": 180,
+      "jewishStudentPercentage": "~13%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "CMC students access a shared Hillel serving the Claremont Consortium, with kosher dining options available across the five colleges."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "CMC has no honors college; the college's small size and structured leadership programs function as an honors-level experience for the entire student body."
+    }
+  },
+
+"Harvey Mudd College": {
+    "institutionNarrative": {
+      "name": "Harvey Mudd College",
+      "location": "Claremont, California",
+      "region": "California",
+      "archetype": "The Liberal Arts Engineering Anomaly \u2014 Pure STEM Rigor with a Humanities Requirement, Claremont Consortium Access",
+      "oneSentenceSummary": "Harvey Mudd College is the only truly STEM-exclusive undergraduate institution built as a liberal arts college, combining Caltech-level technical rigor with a mandatory humanities and social science core and direct cross-registration into the other four Claremont Colleges.",
+      "pipeline": "Approximately 900 undergraduates. Harvey Mudd is nationally recognized for Engineering, Computer Science, Mathematics, and Physics. Major recruiters include Google, SpaceX, Northrop Grumman, top graduate engineering programs, and quantitative finance firms.",
+      "hiddenPathway": "Harvey Mudd's mandatory humanities, social science, and arts requirement \u2014 roughly a third of the curriculum \u2014 produces engineers with genuine communication and interdisciplinary skills that pure technical institutes often lack, a distinction employers increasingly value.",
+      "institutionalSecret": "Harvey Mudd's small size and 8:1 student-faculty ratio give undergraduates access to research and engineering design projects normally reserved for graduate students at larger technical institutes, while cross-registration into CMC, Pomona, Scripps, and Pitzer provides genuine liberal arts breadth.",
+      "theRoom": "Located in Claremont, California, part of the five-college Claremont Consortium, Harvey Mudd sits an hour from Los Angeles, with strong pipelines into Southern California's aerospace, technology, and engineering economy.",
+      "lifestyle": "Intensely academic, quirky, and collaborative rather than cutthroat. Harvey Mudd's famously demanding curriculum is offset by a strong culture of peer support and problem-set collaboration.",
+      "bestFitPersonality": "Extremely strong in mathematics and science, drawn to engineering or computer science, but also genuinely interested in humanities and social science breadth, and comfortable with intense academic rigor.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Southern California's aerospace and technology economy, with national reach into engineering graduate programs and quantitative finance.",
+      "economicOutcome": "Exceptional outcomes in engineering, computer science, and quantitative finance, with one of the highest early-career salary outcomes of any undergraduate institution in the country.",
+      "gradCities": [
+        "Los Angeles CA",
+        "San Francisco CA",
+        "San Diego CA",
+        "Seattle WA"
+      ],
+      "comparableInstitutions": [
+        "California Institute of Technology",
+        "Massachusetts Institute of Technology",
+        "Claremont McKenna College",
+        "Pomona College",
+        "Worcester Polytechnic Institute"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Mt. San Antonio College"
+        ],
+        "transferAcceptanceRate": "~3%",
+        "freshmanAcceptanceRate": "~10%",
+        "estimatedSavingsRange": "$18,000-$42,000",
+        "transferNotes": "Harvey Mudd accepts a very small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Harvey Mudd",
+      "archetype": "Elite Small STEM-Focused Liberal Arts College",
+      "institutionalPersonality": "intensely academic, quirky, collaborative, technically rigorous",
+      "cultureKeywords": [
+        "Engineering",
+        "Computer Science",
+        "Humanities Requirement",
+        "Claremont Consortium",
+        "Collaborative Rigor"
+      ],
+      "missionOrientation": "Educating engineers, scientists, and mathematicians who understand the humanistic and social context of their work, through rigorous technical training paired with a genuine liberal arts core.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through intensive problem-set-driven STEM coursework balanced by a required humanities, social science, and arts curriculum, supported by an unusually low student-faculty ratio.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally progressive, with the campus culture oriented more around technical problem-solving than political engagement.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most academically rigorous STEM-focused undergraduate institutions in the country, with Caltech-level technical intensity.",
+      "socialClimate": "Intensely academic and quirky, with a strong culture of collaboration over competition.",
+      "leadershipStyle": "Leadership through technical excellence balanced with genuine humanistic and interdisciplinary awareness."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "regionalRole": "A STEM-exclusive liberal arts college anchoring Southern California's aerospace and technology talent pipeline within the Claremont Consortium."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 20,
+      "TorBuffChester": 6,
+      "TexasTriangle": 8,
+      "CharLanta": 6,
+      "NorCalInnovationCorridor": 34,
+      "SoCalCreativeEconomy": 82
+    },
+    "comparativePositioning": {
+      "versusCaltech": "Caltech offers a larger scale with more extensive graduate research programs and JPL access, while Harvey Mudd offers a genuinely required humanities and social science core alongside comparable undergraduate technical rigor.",
+      "versusMIT": "MIT offers a much larger scale with a stronger entrepreneurial ecosystem, while Harvey Mudd offers an even lower student-faculty ratio and a more deliberately humanistic engineering education.",
+      "versusCMC": "Claremont McKenna offers government, economics, and finance strength, while Harvey Mudd offers pure STEM rigor \u2014 the two colleges' cross-registration lets students access both."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Small",
+      "undergraduateEnrollment": 900,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 900,
+      "campusType": "Very Small STEM College within the Claremont Consortium",
+      "residentialIntensity": 92,
+      "communityFeel": 90,
+      "studentFacultyRatio": "8:1",
+      "classSizeExperience": "Extremely small classes with direct faculty access from the first year; nearly every undergraduate participates in original engineering design or research projects.",
+      "scaleAdvantages": [
+        "Caltech-level technical rigor with genuine humanities breadth",
+        "Extremely low student-faculty ratio",
+        "Cross-registration access across the five Claremont Colleges",
+        "Among the highest early-career salary outcomes of any undergraduate institution"
+      ],
+      "scaleDisadvantages": [
+        "Extremely demanding, problem-set-heavy curriculum",
+        "Very small size limits some specialized offerings without the consortium",
+        "Intense academic pressure may not suit all students",
+        "Limited breadth of majors outside STEM without consortium cross-registration"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 90,
+        "conscientiousness": 94,
+        "extraversion": 58,
+        "agreeableness": 78,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "I",
+        "R",
+        "C"
+      ],
+      "learningStyle": [
+        "Problem-Set-Driven STEM Coursework",
+        "Collaborative Engineering Design",
+        "Required Humanities Seminars",
+        "Independent Research"
+      ],
+      "socialEnvironment": [
+        "Intensely Academic",
+        "Quirky",
+        "Collaborative",
+        "Technically Rigorous",
+        "Supportive"
+      ],
+      "idealStudentTraits": [
+        "Extremely strong in mathematics and science",
+        "Genuinely interested in humanities breadth",
+        "Comfortable with intense academic rigor",
+        "Collaborative rather than competitive"
+      ],
+      "thrivesIf": [
+        "Wants Caltech-level STEM rigor with a genuine humanities core",
+        "Plans for engineering, computer science, or mathematics",
+        "Values an extremely low student-faculty ratio",
+        "Wants cross-registration access to a broader liberal arts catalog"
+      ],
+      "strugglesIf": [
+        "Wants a purely technical program without humanities requirements",
+        "Needs a larger campus with more social variety",
+        "Prefers a less academically intense environment",
+        "Wants a large university with graduate program resources on campus"
+      ],
+      "transferRiskFactors": [
+        "Students overwhelmed by the academic intensity",
+        "Students wanting a purely technical program without required humanities coursework",
+        "Students seeking a larger, more socially varied campus"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Harvey Mudd does not impact majors at the undergraduate level; the shared core curriculum in the first year is uniformly rigorous across all students."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Engineering (General)",
+        "Mathematical Biology",
+        "Computer Science-Mathematics",
+        "Physics",
+        "Off-Campus Major (individualized interdisciplinary programs)"
+      ],
+      "hiddenCareerPipelines": [
+        "Aerospace Engineering",
+        "Quantitative Finance",
+        "Robotics and Automation",
+        "Data Science and Machine Learning"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Google",
+        "SpaceX",
+        "Northrop Grumman",
+        "Quantitative hedge funds and trading firms"
+      ],
+      "overlookedStrengths": [
+        "Harvey Mudd's mandatory humanities, social science, and arts requirement is unusually substantial for a STEM-focused institution, producing engineers with genuine communication skills.",
+        "The college's 8:1 student-faculty ratio gives undergraduates research access normally reserved for graduate students at larger technical institutes.",
+        "Cross-registration into Claremont McKenna, Pomona, Scripps, and Pitzer gives Harvey Mudd students genuine liberal arts breadth uncommon at pure technical institutes.",
+        "Harvey Mudd consistently ranks among the highest early-career salary outcomes of any undergraduate institution in the country, public or private."
+      ],
+      "sleeperIndustries": [
+        "Aerospace and Defense Engineering",
+        "Quantitative Finance and Trading",
+        "Robotics and Automation",
+        "Applied Mathematics and Data Science"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 92,
+      "executiveAccess": 76,
+      "internshipNetwork": 82,
+      "familyBusinessExposure": 32,
+      "relationshipCapitalScore": 80,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 74,
+      "boardMemberDensity": 62
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Aerospace",
+        "Technology",
+        "Engineering",
+        "Quantitative Finance"
+      ],
+      "regionalEconomicDrivers": [
+        "Aerospace and Defense",
+        "Technology",
+        "Engineering Research"
+      ],
+      "topEmployers": [
+        "Google",
+        "SpaceX",
+        "Northrop Grumman",
+        "Amazon",
+        "Quantitative trading firms"
+      ],
+      "emergingIndustries": [
+        "AI and Machine Learning",
+        "Space Technology",
+        "Robotics"
+      ],
+      "startupDensity": "Moderate to High",
+      "ventureCapitalAccess": 62,
+      "corporateHeadquartersDensity": 30,
+      "healthcareHubStrength": 38,
+      "innovationIndex": 92
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Southern California Aerospace, Technology, and Engineering Economy",
+      "secondaryMarkets": [
+        "San Francisco Bay Area CA",
+        "Seattle WA",
+        "San Diego CA"
+      ],
+      "alumniStrongholds": [
+        "Los Angeles CA",
+        "San Francisco Bay Area CA",
+        "San Diego CA",
+        "Seattle WA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Southern California, entering aerospace, technology, and engineering firms.",
+        "The San Francisco Bay Area draws graduates into software engineering and technology roles.",
+        "Seattle attracts graduates into technology and aerospace roles.",
+        "A meaningful cohort pursues graduate engineering and PhD programs nationally.",
+        "A smaller cohort enters quantitative finance roles in New York and Chicago."
+      ],
+      "regionalInfluenceScore": 82,
+      "nationalReachScore": 78,
+      "internationalReachScore": 56
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 10,
+      "studentOrganizationStrength": 76,
+      "leadershipDevelopment": 74,
+      "crossDisciplinaryInteraction": 86,
+      "civicEngagement": 62
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 12,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 46,
+        "notes": "Some overlap through mathematical biology and bioengineering coursework."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis outside engineering design."
+      },
+      "outdoorIndustry": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis, though some graduates enter game engineering and visual effects."
+      },
+      "ventureCapital": {
+        "strength": 56,
+        "notes": "Growing presence, particularly in deep-tech venture investing."
+      },
+      "privateEquity": {
+        "strength": 48,
+        "notes": "Moderate placement, primarily through quantitative finance pathways."
+      },
+      "investmentBanking": {
+        "strength": 46,
+        "notes": "Present but secondary to engineering and technology careers."
+      },
+      "consulting": {
+        "strength": 62,
+        "notes": "Solid placement into technical and engineering consulting practices."
+      },
+      "medicine": {
+        "strength": 44,
+        "notes": "Moderate pre-med foundation through mathematical and biological engineering tracks."
+      },
+      "healthcareAdministration": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "defense": {
+        "strength": 70,
+        "notes": "Strong pathway through aerospace and defense-adjacent engineering careers."
+      },
+      "realEstate": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 10,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 68,
+        "notes": "Strong deep-tech entrepreneurship culture, reinforced by Southern California's growing startup ecosystem."
+      },
+      "technology": {
+        "strength": 96,
+        "notes": "One of the college's defining strengths \u2014 an elite undergraduate engineering and computer science pipeline."
+      },
+      "publicPolicy": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis relative to engineering and technology."
+      },
+      "nonprofitLeadership": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 68,
+      "firstGenerationSupport": 74,
+      "wealthCreationPotential": 92,
+      "familyBusinessPipelineStrength": 32
+    },
+    "futureResilience": {
+      "aiResistance": 92,
+      "automationResistance": 90,
+      "adaptabilityScore": 88,
+      "interdisciplinaryStrength": 86,
+      "futureReadiness": 92,
+      "entrepreneurialFlexibility": 76,
+      "lifelongLearningCulture": 88,
+      "innovationCapacity": 92
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 92,
+      "communityLeadershipPotential": 70,
+      "geographicMobility": 82,
+      "workLifeBalancePotential": 68,
+      "purposeAlignment": 82,
+      "familyFormationSupport": 70,
+      "personalDevelopmentPotential": 86,
+      "careerOptionality": 88,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 84,
+      "networkMoat": 72,
+      "geographicMoat": 78,
+      "industryMoat": 88,
+      "alumniMoat": 76,
+      "brandDurability": 82,
+      "overallMoatScore": 80
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 76,
+      "returnerScore": 30,
+      "stewardScore": 20,
+      "navigatorScore": 88,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "socal_concentration_with_bay_area_secondary"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 50,
+        "type": "Claremont Consortium Shared Hillel"
+      },
+      "estimatedJewishUndergraduates": 90,
+      "jewishStudentPercentage": "~10%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Harvey Mudd students access a shared Hillel serving the Claremont Consortium, with kosher dining options available across the five colleges."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Harvey Mudd has no honors college; the entire undergraduate program functions at an honors-equivalent level of rigor given the college's small size and low student-faculty ratio."
+    }
+  },
+
+"Hamilton College": {
+    "institutionNarrative": {
+      "name": "Hamilton College",
+      "location": "Clinton, New York",
+      "region": "New England",
+      "archetype": "The Open Curriculum Writing Powerhouse \u2014 No Core Requirements and Nationally Elite Writing Instruction",
+      "oneSentenceSummary": "Hamilton College combines a fully open curriculum \u2014 no distribution requirements of any kind \u2014 with one of the most respected undergraduate writing programs in the country, producing graduates with unusually strong communication skills across every field.",
+      "pipeline": "Approximately 2,000 undergraduates. Hamilton is nationally recognized for its Writing Program, Economics, Government, and Public Policy. Major recruiters include Goldman Sachs, McKinsey & Company, top law schools, and financial services firms.",
+      "hiddenPathway": "Hamilton's Writing Center and required writing-intensive courses across every discipline give graduates a communication skill set that consistently outperforms peer institutions in employer surveys, regardless of major.",
+      "institutionalSecret": "Hamilton has one of the very few genuinely open curricula in the country \u2014 like Amherst and Brown, students choose every course themselves \u2014 but with a distinctive additional emphasis on rigorous writing instruction embedded across all disciplines.",
+      "theRoom": "Located in Clinton, New York, in the Mohawk Valley, Hamilton is roughly a nine-hour drive or short flight from New York City, with a strong alumni network concentrated in New York finance and law.",
+      "lifestyle": "Intellectually serious, socially traditional, and writing-intensive. Hamilton's rural upstate New York setting supports a close-knit residential community with strong outdoor access.",
+      "bestFitPersonality": "Intellectually curious, strong communicator or eager to become one, comfortable with total curricular freedom, and drawn to economics, government, or the humanities.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout the Northeast, with elite national reach into finance, law, and government.",
+      "economicOutcome": "Excellent outcomes in finance, law, consulting, and government, reinforced by a writing skill set that gives graduates a durable competitive edge.",
+      "gradCities": [
+        "New York NY",
+        "Boston MA",
+        "Washington DC",
+        "Chicago IL"
+      ],
+      "comparableInstitutions": [
+        "Colgate University",
+        "Middlebury College",
+        "Bowdoin College",
+        "Amherst College",
+        "Williams College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Mohawk Valley Community College",
+          "Herkimer College"
+        ],
+        "transferAcceptanceRate": "~14%",
+        "freshmanAcceptanceRate": "~15%",
+        "estimatedSavingsRange": "$16,000-$38,000",
+        "transferNotes": "Hamilton maintains a modest transfer pathway, drawing occasionally from upstate New York community colleges."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Hamilton",
+      "archetype": "Elite Small Liberal Arts College \u2014 Open Curriculum and Writing Excellence",
+      "institutionalPersonality": "intellectually serious, articulate, traditional, self-directed",
+      "cultureKeywords": [
+        "Open Curriculum",
+        "Writing Program",
+        "Economics and Government",
+        "Upstate New York",
+        "Communication Excellence"
+      ],
+      "missionOrientation": "Cultivating clear thinkers and clear writers through total curricular freedom and rigorous writing instruction embedded across every discipline.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students design their own curriculum from day one, with mandatory writing-intensive coursework across all disciplines and close faculty mentorship in small seminars.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally progressive, with an active and vocal moderate-to-conservative minority.",
+      "studentAutonomy": "Very High",
+      "prestigeOrientation": "Among the most respected liberal arts colleges in the country for writing instruction and open curricular design.",
+      "socialClimate": "Intellectually serious and socially traditional, with a close-knit residential community.",
+      "leadershipStyle": "Leadership through clear communication, intellectual independence, and quiet institutional prestige."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "An open-curriculum liberal arts college anchoring elite writing instruction and finance/government placement in upstate New York."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 80,
+      "TorBuffChester": 24,
+      "TexasTriangle": 4,
+      "CharLanta": 4,
+      "NorCalInnovationCorridor": 8,
+      "SoCalCreativeEconomy": 4
+    },
+    "comparativePositioning": {
+      "versusColgate": "Colgate offers a similar upstate New York setting with distribution requirements and a stronger Greek life culture, while Hamilton offers a fully open curriculum and a more writing-centered academic identity.",
+      "versusAmherst": "Amherst offers a similarly open curriculum with Five College Consortium access and greater national prestige, while Hamilton offers a more concentrated emphasis on writing instruction specifically.",
+      "versusMiddlebury": "Middlebury offers unmatched language immersion programs, while Hamilton offers a fully open curriculum and a stronger finance and government placement pipeline."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 2000,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 2000,
+      "campusType": "Small Rural New York Liberal Arts College",
+      "residentialIntensity": 94,
+      "communityFeel": 88,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with mandatory writing-intensive coursework and close faculty mentorship given the college's small size.",
+      "scaleAdvantages": [
+        "Fully open curriculum with no distribution requirements",
+        "Nationally elite writing instruction embedded across all disciplines",
+        "Strong finance, law, and government placement",
+        "Close-knit residential community"
+      ],
+      "scaleDisadvantages": [
+        "Very rural upstate New York setting distant from a major city",
+        "Small size limits breadth of majors",
+        "Harsh, long winters may not suit all students",
+        "Less name recognition than some New England peers outside the Northeast"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 88,
+        "conscientiousness": 90,
+        "extraversion": 68,
+        "agreeableness": 78,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "I",
+        "A",
+        "E"
+      ],
+      "learningStyle": [
+        "Independent Curriculum Design",
+        "Writing-Intensive Coursework",
+        "Small Seminar Discussion",
+        "Close Faculty Mentorship"
+      ],
+      "socialEnvironment": [
+        "Intellectually Serious",
+        "Articulate",
+        "Traditional",
+        "Self-Directed",
+        "Close-Knit"
+      ],
+      "idealStudentTraits": [
+        "Intellectually curious",
+        "Strong communicator or eager to become one",
+        "Comfortable with total curricular freedom",
+        "Drawn to economics, government, or the humanities"
+      ],
+      "thrivesIf": [
+        "Wants total control over their own curriculum",
+        "Values rigorous writing instruction across every discipline",
+        "Plans for finance, law, government, or consulting",
+        "Enjoys a close-knit, traditional New England-style community"
+      ],
+      "strugglesIf": [
+        "Needs external academic structure and requirements",
+        "Wants a large university with many majors",
+        "Needs proximity to a major city",
+        "Dislikes harsh, long winters"
+      ],
+      "transferRiskFactors": [
+        "Students who struggle without required coursework structure",
+        "Students seeking a larger, more urban campus",
+        "Students who dislike remote, cold-climate settings"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Hamilton has no distribution requirements and does not impact majors; all departments are equally accessible to any admitted student."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Public Policy",
+        "World Politics",
+        "Communication",
+        "Philosophy",
+        "Environmental Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Finance and Wealth Management",
+        "Law and Public Policy",
+        "Journalism and Editorial",
+        "Government and Federal Service"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Top law schools",
+        "Financial services firms"
+      ],
+      "overlookedStrengths": [
+        "Hamilton's Writing Center and writing-intensive curriculum requirements consistently produce graduates who outperform peers in employer communication assessments.",
+        "The college's fully open curriculum, one of only a handful in the country, gives students genuine total control over their academic path from day one.",
+        "Hamilton's Levitt Center for Public Affairs connects economics and government students directly to internships in finance and policy.",
+        "The college's small size and rural setting have produced an unusually loyal and activated alumni network relative to its size."
+      ],
+      "sleeperIndustries": [
+        "Wealth Management and Private Banking",
+        "Public Policy Analysis",
+        "Journalism and Editorial Writing",
+        "Federal Government Service"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 78,
+      "executiveAccess": 72,
+      "internshipNetwork": 72,
+      "familyBusinessExposure": 40,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 76,
+      "donorNetworkStrength": 72,
+      "boardMemberDensity": 60
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance",
+        "Law",
+        "Government",
+        "Consulting"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Healthcare",
+        "Manufacturing (Mohawk Valley)"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Financial services firms",
+        "Regional healthcare systems"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Public Policy Analytics",
+        "EdTech"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 34,
+      "corporateHeadquartersDensity": 18,
+      "healthcareHubStrength": 38,
+      "innovationIndex": 60
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New York and Northeast Finance, Law, and Government Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "Washington DC",
+        "Chicago IL"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Boston MA",
+        "Washington DC",
+        "Upstate New York"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates enter New York for finance, consulting, and law.",
+        "Washington DC draws graduates into government and public policy roles.",
+        "Boston attracts graduates into consulting and finance.",
+        "A smaller cohort remains in upstate New York, entering education and healthcare.",
+        "A meaningful cohort pursues law school and legal careers nationally."
+      ],
+      "regionalInfluenceScore": 80,
+      "nationalReachScore": 72,
+      "internationalReachScore": 42
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 34,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 82,
+      "civicEngagement": 72
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 46,
+        "notes": "Moderate pre-med foundation, though Hamilton has no medical school."
+      },
+      "nutraceuticals": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 42,
+        "notes": "Moderate presence given the rural upstate New York setting."
+      },
+      "sportsBusiness": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis despite strong NESCAC athletics participation."
+      },
+      "entertainmentMedia": {
+        "strength": 40,
+        "notes": "Moderate presence through the strong writing and journalism-adjacent program."
+      },
+      "ventureCapital": {
+        "strength": 38,
+        "notes": "Limited but present through alumni finance networks."
+      },
+      "privateEquity": {
+        "strength": 60,
+        "notes": "Solid placement given Hamilton's Wall Street alumni network."
+      },
+      "investmentBanking": {
+        "strength": 66,
+        "notes": "Solid pipeline into major investment banks."
+      },
+      "consulting": {
+        "strength": 68,
+        "notes": "Strong placement into top consulting firms."
+      },
+      "medicine": {
+        "strength": 48,
+        "notes": "Moderate pre-med foundation, though Hamilton has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 38,
+        "notes": "Moderate presence through finance-oriented alumni."
+      },
+      "luxuryBrands": {
+        "strength": 20,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 46,
+        "notes": "Modest entrepreneurship culture."
+      },
+      "technology": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis relative to finance, law, and government."
+      },
+      "publicPolicy": {
+        "strength": 72,
+        "notes": "Strong pathway through government and the Levitt Center for Public Affairs."
+      },
+      "nonprofitLeadership": {
+        "strength": 52,
+        "notes": "Moderate pathway, often tied to public policy and education organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 66,
+      "firstGenerationSupport": 70,
+      "wealthCreationPotential": 76,
+      "familyBusinessPipelineStrength": 40
+    },
+    "futureResilience": {
+      "aiResistance": 86,
+      "automationResistance": 84,
+      "adaptabilityScore": 84,
+      "interdisciplinaryStrength": 82,
+      "futureReadiness": 82,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 86,
+      "innovationCapacity": 68
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 76,
+      "communityLeadershipPotential": 76,
+      "geographicMobility": 74,
+      "workLifeBalancePotential": 78,
+      "purposeAlignment": 80,
+      "familyFormationSupport": 76,
+      "personalDevelopmentPotential": 86,
+      "careerOptionality": 78,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 72,
+      "networkMoat": 66,
+      "geographicMoat": 58,
+      "industryMoat": 68,
+      "alumniMoat": 74,
+      "brandDurability": 74,
+      "overallMoatScore": 69
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 68,
+      "returnerScore": 34,
+      "stewardScore": 26,
+      "navigatorScore": 78,
+      "geographicLockIn": "low_to_moderate",
+      "alumniDispersalPattern": "nyc_concentration_with_northeast_secondary"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 54,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 250,
+      "jewishStudentPercentage": "~13%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Hamilton maintains an active Hillel presence, without dedicated kosher dining facilities given the college's small size."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Hamilton has no honors college; the open curriculum and small size function as an honors-level experience for the entire student body."
+    }
+  },
+
+"Oberlin College": {
+    "institutionNarrative": {
+      "name": "Oberlin College",
+      "location": "Oberlin, Ohio",
+      "region": "Midwest",
+      "archetype": "The Conservatory-Liberal Arts Hybrid \u2014 World-Class Music Training Alongside Rigorous Academics",
+      "oneSentenceSummary": "Oberlin College is the only institution in the country combining a top-tier liberal arts college with a world-renowned conservatory of music under one roof, alongside a deeply progressive activist tradition dating to its founding as the first coeducational and one of the first racially integrated colleges in America.",
+      "pipeline": "Approximately 2,900 undergraduates across the College of Arts and Sciences and the Conservatory of Music. Oberlin is nationally recognized for Music Performance and Composition, Biology, Environmental Studies, and Neuroscience. Major recruiters include major orchestras and music institutions, top PhD and medical programs, and progressive nonprofit organizations.",
+      "hiddenPathway": "Oberlin's dual-degree program lets College of Arts and Sciences students take conservatory-level music courses and vice versa, giving liberal arts students access to genuine professional music training that no other liberal arts college can match.",
+      "institutionalSecret": "Oberlin was the first American college to regularly admit women and one of the first to admit Black students, and this historically progressive founding identity remains genuinely central to campus culture today, not just institutional marketing.",
+      "theRoom": "Located in Oberlin, Ohio, a small town near Cleveland, students are embedded in a self-contained college town built almost entirely around the college and conservatory, with strong ties to Cleveland's healthcare, manufacturing, and orchestral music economy.",
+      "lifestyle": "Deeply progressive, artistically vibrant, and intellectually intense. Oberlin's combination of a rigorous liberal arts college and a world-class conservatory creates a uniquely music-infused campus culture alongside serious academic engagement.",
+      "bestFitPersonality": "Artistically and academically ambitious, drawn to music or the sciences, deeply committed to social justice, and comfortable in a genuinely progressive, historically significant community.",
+      "faithTradition": "Historically Congregationalist; today nonsectarian.",
+      "geographicInfluenceRadius": "Strong throughout the Midwest and Northeast Ohio, with national and international reach into classical music and progressive policy organizations.",
+      "economicOutcome": "Excellent outcomes in music performance, academia, medicine, and progressive nonprofit leadership, with a globally respected conservatory credential.",
+      "gradCities": [
+        "New York NY",
+        "Chicago IL",
+        "Cleveland OH",
+        "Boston MA"
+      ],
+      "comparableInstitutions": [
+        "Carleton College",
+        "Grinnell College",
+        "Vassar College",
+        "Wesleyan University",
+        "Bard College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Lorain County Community College",
+          "Cuyahoga Community College"
+        ],
+        "transferAcceptanceRate": "~30%",
+        "freshmanAcceptanceRate": "~34%",
+        "estimatedSavingsRange": "$14,000-$36,000",
+        "transferNotes": "Oberlin maintains a relatively accessible transfer pathway among elite liberal arts colleges, drawing from Northeast Ohio community colleges."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Oberlin",
+      "archetype": "Elite Liberal Arts College and Conservatory \u2014 Music, Progressivism, and Academic Rigor",
+      "institutionalPersonality": "deeply progressive, artistically vibrant, intellectually intense, historically significant",
+      "cultureKeywords": [
+        "Conservatory of Music",
+        "Progressive Activism",
+        "Historical Firsts",
+        "Liberal Arts Rigor",
+        "Social Justice"
+      ],
+      "missionOrientation": "Cultivating artistically and academically excellent, socially conscious leaders through the unique combination of a liberal arts college and a world-class conservatory.",
+      "faithTradition": "Historically Congregationalist; today nonsectarian.",
+      "educationalPhilosophy": "Students learn through small seminar discussion, rigorous conservatory-level music training where applicable, and a deeply held institutional commitment to social justice and civic engagement.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Strongly progressive and actively engaged in social justice activism, dating to the college's founding.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most artistically and academically distinguished liberal arts colleges in the country, with a globally respected conservatory.",
+      "socialClimate": "Deeply progressive, artistically vibrant, and intellectually intense.",
+      "leadershipStyle": "Leadership through artistic excellence, social justice engagement, and historically-grounded progressive values."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "regionalRole": "A historically progressive liberal arts college and conservatory anchoring music, sciences, and social justice education in Northeast Ohio."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 52,
+      "BosWash": 18,
+      "TorBuffChester": 14,
+      "TexasTriangle": 4,
+      "CharLanta": 6,
+      "NorCalInnovationCorridor": 8,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusCarleton": "Carleton offers a stronger PhD production rate and a quirkier, less overtly activist culture, while Oberlin offers a world-class conservatory and a deeper historical progressive identity.",
+      "versusGrinnell": "Grinnell offers a larger endowment per student and a more rural isolated setting, while Oberlin offers the unique addition of a conservatory-level music program.",
+      "versusWesleyan": "Wesleyan offers a stronger film industry alumni network, while Oberlin offers unmatched conservatory-level music training integrated directly into the liberal arts curriculum."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 2900,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 2900,
+      "campusType": "Small Midwestern College Town",
+      "residentialIntensity": 90,
+      "communityFeel": 86,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Small seminar-style classes are the norm in the College of Arts and Sciences, with rigorous conservatory-level individual instruction for music students, and cross-registration available between the two.",
+      "scaleAdvantages": [
+        "Only liberal arts college with a world-class conservatory under one roof",
+        "Historically progressive founding identity remains genuinely central to campus life",
+        "Strong biology, neuroscience, and environmental studies programs",
+        "Relatively accessible transfer pathway among elite liberal arts colleges"
+      ],
+      "scaleDisadvantages": [
+        "Small-town Ohio setting distant from a major city",
+        "Conservatory and college students can feel somewhat socially separate",
+        "Limited breadth of majors outside sciences, humanities, and music",
+        "Harsh winters may not suit all students"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 96,
+        "conscientiousness": 84,
+        "extraversion": 66,
+        "agreeableness": 82,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "A",
+        "S",
+        "I"
+      ],
+      "learningStyle": [
+        "Conservatory-Level Music Instruction",
+        "Small Seminar Discussion",
+        "Independent Research",
+        "Social Justice-Oriented Scholarship"
+      ],
+      "socialEnvironment": [
+        "Deeply Progressive",
+        "Artistically Vibrant",
+        "Intellectually Intense",
+        "Historically Significant",
+        "Socially Engaged"
+      ],
+      "idealStudentTraits": [
+        "Artistically and academically ambitious",
+        "Drawn to music or the sciences",
+        "Deeply committed to social justice",
+        "Comfortable in a genuinely progressive community"
+      ],
+      "thrivesIf": [
+        "Plans for music performance, composition, or conservatory training alongside liberal arts study",
+        "Wants a deeply and genuinely progressive campus culture",
+        "Values Oberlin's historically significant founding identity",
+        "Enjoys interdisciplinary study between music and the sciences or humanities"
+      ],
+      "strugglesIf": [
+        "Wants a politically moderate or neutral campus culture",
+        "Needs proximity to a major city",
+        "Prefers a large university with more majors",
+        "Is uninterested in the college's strong social justice orientation"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more politically neutral campus culture",
+        "Students wanting closer proximity to a major city",
+        "Students who prefer a larger, more comprehensive university"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "The Conservatory of Music has a separate, highly competitive audition-based admission process distinct from the College of Arts and Sciences."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Environmental Studies",
+        "Africana Studies",
+        "Neuroscience",
+        "Historic Preservation",
+        "TIMARA (Technology in Music and Related Arts)"
+      ],
+      "hiddenCareerPipelines": [
+        "Music Performance and Composition",
+        "Academic Neuroscience Research",
+        "Progressive Policy and Advocacy",
+        "Environmental Science"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Major orchestras and music institutions",
+        "Top PhD and medical programs",
+        "Progressive nonprofit and advocacy organizations",
+        "Cleveland Clinic-adjacent medical research"
+      ],
+      "overlookedStrengths": [
+        "Oberlin is the only institution in the country combining a top liberal arts college and a world-class conservatory under one roof, with genuine dual-degree cross-registration.",
+        "The college's biology and neuroscience programs have unusually strong PhD and medical school placement relative to its size.",
+        "Oberlin's historically progressive identity \u2014 first to admit women, among the first to admit Black students \u2014 remains a genuinely lived campus value, not just institutional history.",
+        "TIMARA (Technology in Music and Related Arts) gives students access to electronic and experimental music production at the intersection of technology and composition."
+      ],
+      "sleeperIndustries": [
+        "Music Performance and Composition",
+        "Academic Neuroscience Research",
+        "Progressive Policy and Nonprofit Advocacy",
+        "Environmental Science and Sustainability"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 74,
+      "mentorshipDensity": 78,
+      "executiveAccess": 62,
+      "internshipNetwork": 66,
+      "familyBusinessExposure": 32,
+      "relationshipCapitalScore": 72,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 70,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 54
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Music and Performing Arts",
+        "Academia",
+        "Healthcare Research",
+        "Nonprofit Advocacy"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Healthcare (Cleveland Clinic)",
+        "Manufacturing",
+        "Orchestral and Performing Arts"
+      ],
+      "topEmployers": [
+        "Major orchestras",
+        "Cleveland Clinic-adjacent research institutions",
+        "Top PhD-granting universities",
+        "Progressive nonprofit organizations"
+      ],
+      "emergingIndustries": [
+        "Music Technology",
+        "Neurotechnology",
+        "Environmental Sustainability Research"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 26,
+      "corporateHeadquartersDensity": 18,
+      "healthcareHubStrength": 56,
+      "innovationIndex": 64
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Midwest and Northeast Academic, Music, and Progressive Policy Economy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Chicago IL",
+        "Boston MA"
+      ],
+      "alumniStrongholds": [
+        "Cleveland OH",
+        "New York NY",
+        "Chicago IL",
+        "Boston MA"
+      ],
+      "relocationPatterns": [
+        "A significant cohort pursues music performance careers or graduate conservatory training nationally and internationally.",
+        "New York and Chicago draw graduates into music, finance, and consulting roles.",
+        "A meaningful cohort pursues PhD and medical school programs in the sciences.",
+        "Washington DC and other policy centers attract graduates into progressive advocacy organizations.",
+        "A smaller cohort remains in Northeast Ohio, entering healthcare research and education."
+      ],
+      "regionalInfluenceScore": 72,
+      "nationalReachScore": 68,
+      "internationalReachScore": 52
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 2,
+      "studentOrganizationStrength": 86,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 88,
+      "civicEngagement": 88
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 56,
+        "notes": "Solid pre-med and neuroscience pipeline, though Oberlin has no medical school."
+      },
+      "nutraceuticals": {
+        "strength": 26,
+        "notes": "Some overlap through environmental and biological sciences."
+      },
+      "consumerProducts": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 78,
+        "notes": "One of the college's defining strengths through the Conservatory of Music and TIMARA."
+      },
+      "ventureCapital": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 36,
+        "notes": "Limited pipeline, secondary to music, academia, and social justice careers."
+      },
+      "consulting": {
+        "strength": 50,
+        "notes": "Moderate placement into consulting firms."
+      },
+      "medicine": {
+        "strength": 62,
+        "notes": "Solid pre-med and neuroscience pipeline into medical school."
+      },
+      "healthcareAdministration": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 10,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 14,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 42,
+        "notes": "Modest entrepreneurship culture, growing in music and environmental technology."
+      },
+      "technology": {
+        "strength": 42,
+        "notes": "Growing presence, particularly at the intersection of music technology and neuroscience."
+      },
+      "publicPolicy": {
+        "strength": 62,
+        "notes": "Solid pathway through environmental studies and Africana studies programs."
+      },
+      "nonprofitLeadership": {
+        "strength": 76,
+        "notes": "One of the college's defining strengths, reinforced by its historically progressive activist culture."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 76,
+      "firstGenerationSupport": 80,
+      "wealthCreationPotential": 64,
+      "familyBusinessPipelineStrength": 32
+    },
+    "futureResilience": {
+      "aiResistance": 86,
+      "automationResistance": 84,
+      "adaptabilityScore": 86,
+      "interdisciplinaryStrength": 90,
+      "futureReadiness": 82,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 90,
+      "innovationCapacity": 74
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 64,
+      "communityLeadershipPotential": 84,
+      "geographicMobility": 74,
+      "workLifeBalancePotential": 80,
+      "purposeAlignment": 92,
+      "familyFormationSupport": 76,
+      "personalDevelopmentPotential": 92,
+      "careerOptionality": 74,
+      "longTermLifeSatisfaction": 86
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 78,
+      "networkMoat": 62,
+      "geographicMoat": 56,
+      "industryMoat": 70,
+      "alumniMoat": 74,
+      "brandDurability": 78,
+      "overallMoatScore": 70
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 64,
+      "returnerScore": 36,
+      "stewardScore": 30,
+      "navigatorScore": 74,
+      "geographicLockIn": "low_to_moderate",
+      "alumniDispersalPattern": "midwest_concentration_with_music_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 58,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 400,
+      "jewishStudentPercentage": "~14%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "Oberlin maintains an active Hillel and kosher dining option, serving a well-established Jewish student population."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Oberlin has no honors college; the college's small size and rigorous conservatory/academic standards function as an honors-level experience for the entire student body."
+    }
+  },
+
+"Kenyon College": {
+    "institutionNarrative": {
+      "name": "Kenyon College",
+      "location": "Gambier, Ohio",
+      "region": "Midwest",
+      "archetype": "The Literary Powerhouse \u2014 Kenyon Review Legacy and Genuine Rural Isolation as Intellectual Feature",
+      "oneSentenceSummary": "Kenyon College is home to the Kenyon Review, one of the most influential literary journals in American history, giving the college an outsized reputation in creative writing and literature relative to its small size and remote rural Ohio setting.",
+      "pipeline": "Approximately 1,800 undergraduates. Kenyon is nationally recognized for English and Creative Writing, Political Science, Biology, and Economics. Major recruiters include major publishing houses, literary magazines, top law schools, and PhD programs in the humanities.",
+      "hiddenPathway": "The Kenyon Review Young Writers Workshop and the college's deep literary tradition give aspiring writers direct mentorship access to one of the most historically significant literary institutions in the country, producing a disproportionate share of published authors relative to the college's small size.",
+      "institutionalSecret": "Kenyon's extreme rural isolation \u2014 a single road, Middle Path, running through the entire campus in Gambier, Ohio \u2014 is treated by the college as a genuine intellectual feature rather than a limitation, forcing an unusually deep, undistracted engagement with academic and literary life.",
+      "theRoom": "Located in Gambier, Ohio, a tiny village built entirely around the college, Kenyon is roughly an hour from Columbus, with an isolated setting that concentrates student life almost entirely on campus.",
+      "lifestyle": "Literary, intellectually earnest, and genuinely isolated in a way the college treats as a feature. Kenyon's Middle Path pedestrian walkway is the social and physical spine of an unusually self-contained campus community.",
+      "bestFitPersonality": "Literary and intellectually serious, drawn to writing, the humanities, or the sciences, and genuinely comfortable with rural isolation as an asset rather than a drawback.",
+      "faithTradition": "Historically Episcopalian; today nonsectarian.",
+      "geographicInfluenceRadius": "Strong throughout Ohio and the Midwest, with a distinctive national reputation in literature and creative writing.",
+      "economicOutcome": "Excellent outcomes in publishing, law, academia, and the sciences, with an unmatched literary and creative writing pedigree for a college of its size.",
+      "gradCities": [
+        "New York NY",
+        "Chicago IL",
+        "Washington DC",
+        "Columbus OH"
+      ],
+      "comparableInstitutions": [
+        "Oberlin College",
+        "Denison University",
+        "College of Wooster",
+        "Sewanee: The University of the South",
+        "Bard College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Columbus State Community College"
+        ],
+        "transferAcceptanceRate": "~20%",
+        "freshmanAcceptanceRate": "~30%",
+        "estimatedSavingsRange": "$14,000-$36,000",
+        "transferNotes": "Kenyon maintains a moderately accessible transfer pathway among elite liberal arts colleges, drawing occasionally from central Ohio community colleges."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Kenyon",
+      "archetype": "Elite Small Liberal Arts College \u2014 Literary Tradition and Rural Isolation",
+      "institutionalPersonality": "literary, intellectually earnest, genuinely isolated, self-contained",
+      "cultureKeywords": [
+        "Kenyon Review",
+        "Creative Writing",
+        "Middle Path",
+        "Rural Isolation",
+        "Literary Tradition"
+      ],
+      "missionOrientation": "Cultivating serious writers and thinkers through deep, undistracted engagement with literature and the liberal arts in a genuinely self-contained community.",
+      "faithTradition": "Historically Episcopalian; today nonsectarian.",
+      "educationalPhilosophy": "Students learn through small seminar discussion, intensive creative writing workshops, and close faculty mentorship within an unusually self-contained rural campus community.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Strongly progressive.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most literarily distinguished liberal arts colleges in the country, home to one of America's most influential literary journals.",
+      "socialClimate": "Literary, intellectually earnest, and genuinely isolated, with Middle Path as the social and physical spine of campus life.",
+      "leadershipStyle": "Leadership through literary and intellectual distinction, disproportionate to the college's small size and remote setting."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "regionalRole": "A literarily distinguished liberal arts college anchoring creative writing and the humanities in rural central Ohio."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 54,
+      "BosWash": 16,
+      "TorBuffChester": 10,
+      "TexasTriangle": 4,
+      "CharLanta": 6,
+      "NorCalInnovationCorridor": 6,
+      "SoCalCreativeEconomy": 4
+    },
+    "comparativePositioning": {
+      "versusOberlin": "Oberlin offers a world-class conservatory and a more overtly activist culture, while Kenyon offers a more concentrated literary tradition and an even more isolated, self-contained rural setting.",
+      "versusDenison": "Denison offers a stronger business and economics program with a similar rural Ohio setting, while Kenyon offers a nationally distinguished literary and creative writing tradition.",
+      "versusSewanee": "Sewanee offers a Southern Episcopalian identity with a similarly isolated rural setting, while Kenyon offers a more secular, more literarily distinguished academic reputation."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 1800,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 1800,
+      "campusType": "Very Small Rural Ohio Village College",
+      "residentialIntensity": 96,
+      "communityFeel": 92,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Small seminar-style classes are the norm, with intensive creative writing workshops and close faculty mentorship given the college's small size and self-contained village setting.",
+      "scaleAdvantages": [
+        "Home to the historically influential Kenyon Review literary journal",
+        "Genuinely undistracted, self-contained academic environment",
+        "Strong English, creative writing, and political science programs",
+        "Tight-knit community centered on Middle Path"
+      ],
+      "scaleDisadvantages": [
+        "Extreme rural isolation, an hour from Columbus",
+        "Very small size limits breadth of majors",
+        "Limited access to internships without significant travel",
+        "Isolation may feel confining to students who need more external stimulation"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 92,
+        "conscientiousness": 86,
+        "extraversion": 62,
+        "agreeableness": 80,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "A",
+        "I",
+        "S"
+      ],
+      "learningStyle": [
+        "Intensive Creative Writing Workshops",
+        "Small Seminar Discussion",
+        "Independent Literary Research",
+        "Close Faculty Mentorship"
+      ],
+      "socialEnvironment": [
+        "Literary",
+        "Intellectually Earnest",
+        "Self-Contained",
+        "Isolated but Tight-Knit",
+        "Community-Focused"
+      ],
+      "idealStudentTraits": [
+        "Literary and intellectually serious",
+        "Drawn to writing, the humanities, or the sciences",
+        "Genuinely comfortable with rural isolation",
+        "Values deep, undistracted academic engagement"
+      ],
+      "thrivesIf": [
+        "Plans for creative writing, publishing, law, or the humanities",
+        "Wants access to one of America's most historically significant literary journals",
+        "Values genuine rural isolation as an asset for deep academic focus",
+        "Enjoys a tight-knit, self-contained campus community"
+      ],
+      "strugglesIf": [
+        "Needs proximity to a major city",
+        "Wants a large university with many majors",
+        "Is uncomfortable with extreme rural isolation",
+        "Prefers a socially and geographically diverse setting"
+      ],
+      "transferRiskFactors": [
+        "Students needing closer proximity to a major city",
+        "Students uncomfortable with extreme rural isolation",
+        "Students wanting a larger, more comprehensive university"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Kenyon does not impact majors at the undergraduate level; the creative writing program has competitive workshop enrollment but no formal admission gate."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Creative Writing",
+        "Classics",
+        "Religious Studies",
+        "Environmental Studies",
+        "Women's and Gender Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Publishing and Editorial",
+        "Creative Writing and Literary Careers",
+        "Law",
+        "Academic Humanities Research"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Major publishing houses",
+        "Literary magazines and journals",
+        "Top law schools",
+        "PhD programs in the humanities"
+      ],
+      "overlookedStrengths": [
+        "The Kenyon Review is one of the most historically influential literary journals in American history, giving students direct mentorship access to the literary establishment.",
+        "The Kenyon Review Young Writers Workshop has trained generations of successful authors, several of whom later attended Kenyon as undergraduates.",
+        "The college's genuine rural isolation is treated as a deliberate academic asset, producing an unusually deep, undistracted engagement with literature and ideas.",
+        "Kenyon's political science and pre-law advising have unusually strong law school placement relative to the college's small size."
+      ],
+      "sleeperIndustries": [
+        "Publishing and Editorial",
+        "Creative Writing and Literary Arts",
+        "Academic Humanities Research",
+        "Legal Writing and Advocacy"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 72,
+      "mentorshipDensity": 78,
+      "executiveAccess": 60,
+      "internshipNetwork": 60,
+      "familyBusinessExposure": 30,
+      "relationshipCapitalScore": 70,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 70,
+      "donorNetworkStrength": 64,
+      "boardMemberDensity": 50
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Publishing",
+        "Law",
+        "Academia",
+        "Literary Arts"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Agriculture",
+        "Healthcare (Columbus-adjacent)"
+      ],
+      "topEmployers": [
+        "Major publishing houses",
+        "Literary magazines",
+        "Top law firms",
+        "Academic institutions"
+      ],
+      "emergingIndustries": [
+        "Digital Publishing",
+        "EdTech",
+        "Literary Podcasting and Media"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 20,
+      "corporateHeadquartersDensity": 12,
+      "healthcareHubStrength": 36,
+      "innovationIndex": 56
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Midwest and Northeast Publishing, Law, and Academic Economy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Chicago IL",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Columbus OH",
+        "New York NY",
+        "Chicago IL",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates enter New York for publishing, law, and editorial roles.",
+        "Chicago and Washington DC draw graduates into law, consulting, and policy roles.",
+        "A meaningful cohort pursues PhD programs in the humanities nationally.",
+        "A smaller cohort remains in Ohio, entering education, healthcare, and regional business.",
+        "A distinctive cohort enters creative writing and literary careers nationally and internationally."
+      ],
+      "regionalInfluenceScore": 68,
+      "nationalReachScore": 66,
+      "internationalReachScore": 40
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 22,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 72,
+      "crossDisciplinaryInteraction": 82,
+      "civicEngagement": 74
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 46,
+        "notes": "Moderate pre-med foundation, though Kenyon has no medical school."
+      },
+      "nutraceuticals": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 34,
+        "notes": "Moderate presence given the rural Ohio setting."
+      },
+      "sportsBusiness": {
+        "strength": 18,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 68,
+        "notes": "Strong pathway through creative writing, publishing, and the Kenyon Review's literary influence."
+      },
+      "ventureCapital": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 36,
+        "notes": "Limited pipeline, secondary to law, publishing, and academia."
+      },
+      "consulting": {
+        "strength": 48,
+        "notes": "Moderate placement into consulting firms."
+      },
+      "medicine": {
+        "strength": 48,
+        "notes": "Moderate pre-med foundation, though Kenyon has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 12,
+        "notes": "Minimal institutional emphasis."
+      },
+      "realEstate": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 14,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 38,
+        "notes": "Modest entrepreneurship culture."
+      },
+      "technology": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis relative to writing, law, and the humanities."
+      },
+      "publicPolicy": {
+        "strength": 56,
+        "notes": "Solid pathway through political science and pre-law advising."
+      },
+      "nonprofitLeadership": {
+        "strength": 58,
+        "notes": "Meaningful pathway, often tied to literary and educational nonprofit organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 68,
+      "firstGenerationSupport": 70,
+      "wealthCreationPotential": 62,
+      "familyBusinessPipelineStrength": 30
+    },
+    "futureResilience": {
+      "aiResistance": 88,
+      "automationResistance": 86,
+      "adaptabilityScore": 82,
+      "interdisciplinaryStrength": 84,
+      "futureReadiness": 78,
+      "entrepreneurialFlexibility": 56,
+      "lifelongLearningCulture": 88,
+      "innovationCapacity": 62
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 62,
+      "communityLeadershipPotential": 76,
+      "geographicMobility": 68,
+      "workLifeBalancePotential": 82,
+      "purposeAlignment": 88,
+      "familyFormationSupport": 76,
+      "personalDevelopmentPotential": 88,
+      "careerOptionality": 70,
+      "longTermLifeSatisfaction": 84
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 74,
+      "networkMoat": 58,
+      "geographicMoat": 50,
+      "industryMoat": 64,
+      "alumniMoat": 72,
+      "brandDurability": 74,
+      "overallMoatScore": 65
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 62,
+      "returnerScore": 38,
+      "stewardScore": 32,
+      "navigatorScore": 72,
+      "geographicLockIn": "low_to_moderate",
+      "alumniDispersalPattern": "national_with_literary_concentration_nyc"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 46,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 200,
+      "jewishStudentPercentage": "~11%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Kenyon maintains an active Hillel presence, without dedicated kosher dining facilities given the college's small, isolated setting."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Kenyon has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
+    }
+  },
+
+"Case Western Reserve University": {
+    "institutionNarrative": {
+      "name": "Case Western Reserve University",
+      "location": "Cleveland, Ohio",
+      "region": "Midwest",
+      "archetype": "The Medicine-Engineering Fusion Anchor \u2014 Cleveland Clinic Proximity and Cross-Disciplinary Research Intensity",
+      "oneSentenceSummary": "Case Western Reserve University combines elite biomedical engineering and medical research with direct proximity to the Cleveland Clinic, one of the top hospital systems in the world, giving undergraduates clinical and research access most universities can only offer graduate students.",
+      "pipeline": "Approximately 5,700 undergraduates. Case Western is nationally recognized for Biomedical Engineering, Computer Science, Nursing, and Management (Weatherhead School). Major recruiters include the Cleveland Clinic, University Hospitals, NASA Glenn Research Center, Progressive Insurance, and major biomedical device and technology companies.",
+      "hiddenPathway": "Case Western's direct affiliation and physical proximity to the Cleveland Clinic gives undergraduate biomedical engineering and pre-health students clinical research access and shadowing opportunities that most universities reserve for medical students.",
+      "institutionalSecret": "The university's PRIME program and its five-year combined BS/MD track with Cleveland Clinic Lerner College of Medicine give exceptionally qualified undergraduates a guaranteed medical school pathway integrated directly with clinical research from the first year.",
+      "theRoom": "Located in Cleveland's University Circle, students are embedded alongside the Cleveland Clinic, University Hospitals, the Cleveland Museum of Art, and NASA Glenn Research Center, one of the densest concentrations of research and cultural institutions in the Midwest.",
+      "lifestyle": "Academically intense and research-driven, with a strong emphasis on interdisciplinary collaboration between engineering, medicine, and the sciences. University Circle's cultural institutions provide a rich backdrop to rigorous coursework.",
+      "bestFitPersonality": "Academically intense, drawn to medicine, engineering, or interdisciplinary research, and comfortable navigating a demanding, STEM-forward research university culture.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Ohio and the Midwest, with national reach into biomedical research, engineering, and healthcare innovation.",
+      "economicOutcome": "Excellent outcomes in medicine, biomedical engineering, nursing, and business, with an unusually direct pipeline into the Cleveland Clinic and University Hospitals systems.",
+      "gradCities": [
+        "Cleveland OH",
+        "Boston MA",
+        "New York NY",
+        "Chicago IL"
+      ],
+      "comparableInstitutions": [
+        "Carnegie Mellon University",
+        "Johns Hopkins University",
+        "Washington University in St. Louis",
+        "Rensselaer Polytechnic Institute",
+        "University of Rochester"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Cuyahoga Community College",
+          "Lakeland Community College"
+        ],
+        "transferAcceptanceRate": "~38%",
+        "freshmanAcceptanceRate": "~32%",
+        "estimatedSavingsRange": "$18,000-$40,000",
+        "transferNotes": "Case Western maintains articulation agreements with Northeast Ohio community colleges, supporting transfer into engineering, nursing, and business programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Case Western",
+      "archetype": "Elite Private Research University \u2014 Medicine-Engineering Fusion",
+      "institutionalPersonality": "academically intense, research-driven, interdisciplinary, quietly ambitious",
+      "cultureKeywords": [
+        "Biomedical Engineering",
+        "Cleveland Clinic",
+        "University Circle",
+        "Medical Research",
+        "Interdisciplinary Science"
+      ],
+      "missionOrientation": "Advancing medicine, engineering, and interdisciplinary research through direct integration with Cleveland's world-class healthcare institutions.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through rigorous STEM coursework, direct clinical and research exposure via Cleveland Clinic partnerships, and cross-disciplinary collaboration between engineering and medicine.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Generally progressive, with a pragmatic, research-focused undercurrent.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite in biomedical engineering and medical research, with strong regional and growing national prestige.",
+      "socialClimate": "Academically intense and research-driven, enriched by University Circle's cultural institutions.",
+      "leadershipStyle": "Leadership through interdisciplinary research excellence and medical-engineering innovation."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "regionalRole": "The Midwest's leading medicine-engineering fusion research university, anchored by direct Cleveland Clinic integration."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 56,
+      "BosWash": 22,
+      "TorBuffChester": 16,
+      "TexasTriangle": 6,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 10,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusCarnegieMellon": "Carnegie Mellon offers a stronger computer science and robotics identity, while Case Western offers deeper medical and biomedical engineering integration through the Cleveland Clinic.",
+      "versusJohnsHopkins": "Johns Hopkins offers greater overall prestige and a larger research budget, while Case Western offers a more accessible admissions tier with comparable clinical research proximity.",
+      "versusWashU": "WashU St. Louis offers a stronger overall university brand and broader program breadth, while Case Western offers a more concentrated medicine-engineering identity tied to a single elite hospital system."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 5700,
+      "graduateEnrollment": 6300,
+      "totalEnrollment": 12000,
+      "campusType": "Urban Research University within University Circle",
+      "residentialIntensity": 72,
+      "communityFeel": 68,
+      "studentFacultyRatio": "10:1",
+      "classSizeExperience": "Moderate class sizes with strong upper-division research access, particularly in biomedical engineering and pre-health tracks connected to Cleveland Clinic and University Hospitals.",
+      "scaleAdvantages": [
+        "Direct proximity and affiliation with the Cleveland Clinic",
+        "Strong five-year BS/MD combined degree pathway",
+        "Rich cultural and research ecosystem in University Circle",
+        "Strong biomedical engineering and nursing placement"
+      ],
+      "scaleDisadvantages": [
+        "Cleveland's broader economic profile is less nationally prominent than coastal peer cities",
+        "Demanding STEM-forward culture can create high academic pressure",
+        "Less name recognition nationally outside biomedical and engineering circles",
+        "Winters are harsh and campus is less socially vibrant than some peers"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 84,
+        "conscientiousness": 92,
+        "extraversion": 58,
+        "agreeableness": 74,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "I",
+        "R",
+        "S"
+      ],
+      "learningStyle": [
+        "Clinical and Research Exposure",
+        "Interdisciplinary STEM Coursework",
+        "Applied Biomedical Engineering Design",
+        "Collaborative Research"
+      ],
+      "socialEnvironment": [
+        "Academically Intense",
+        "Research-Driven",
+        "Interdisciplinary",
+        "Pragmatic",
+        "Quietly Ambitious"
+      ],
+      "idealStudentTraits": [
+        "Academically intense",
+        "Drawn to medicine, engineering, or interdisciplinary research",
+        "Comfortable with a demanding STEM-forward culture",
+        "Motivated by direct clinical or research access"
+      ],
+      "thrivesIf": [
+        "Plans for medicine, biomedical engineering, or interdisciplinary research",
+        "Wants direct access to the Cleveland Clinic's clinical and research ecosystem",
+        "Values a rigorous, research-intensive academic culture",
+        "Enjoys University Circle's cultural and scientific density"
+      ],
+      "strugglesIf": [
+        "Wants a socially vibrant, traditional college-town experience",
+        "Needs a lighter academic course load",
+        "Prefers a campus with stronger national brand recognition outside STEM",
+        "Wants a warmer climate or more prominent surrounding city"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more socially vibrant campus culture",
+        "Students wanting stronger name recognition outside STEM fields",
+        "Students who prefer a warmer or more prominent city"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "The PRIME/BS-MD combined medical program and biomedical engineering carry substantial additional selectivity beyond general university admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Biomedical Engineering",
+        "Nutritional Biochemistry and Metabolism",
+        "Systems Biology",
+        "Nursing",
+        "Cognitive Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Medical Device Engineering",
+        "Clinical Research",
+        "Healthcare Innovation and Technology",
+        "Academic Medicine"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Cleveland Clinic",
+        "University Hospitals",
+        "NASA Glenn Research Center",
+        "Progressive Insurance",
+        "Medical device and biotech companies"
+      ],
+      "overlookedStrengths": [
+        "Case Western's PRIME program and BS/MD pathway with Cleveland Clinic Lerner College of Medicine give qualified students a guaranteed, integrated medical school pipeline.",
+        "University Circle concentrates the Cleveland Clinic, University Hospitals, the Cleveland Museum of Art, and NASA Glenn Research Center within walking distance of campus.",
+        "The Weatherhead School of Management has built strong placement into healthcare-focused consulting and finance.",
+        "Case Western's nursing program benefits directly from clinical training access at two top-tier hospital systems."
+      ],
+      "sleeperIndustries": [
+        "Medical Device Engineering",
+        "Clinical and Translational Research",
+        "Healthcare Technology Innovation",
+        "Academic and Research Medicine"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 68,
+      "mentorshipDensity": 74,
+      "executiveAccess": 62,
+      "internshipNetwork": 78,
+      "familyBusinessExposure": 34,
+      "relationshipCapitalScore": 70,
+      "alumniLoyaltyScore": 70,
+      "referralCultureStrength": 68,
+      "donorNetworkStrength": 62,
+      "boardMemberDensity": 54
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Healthcare and Medicine",
+        "Biomedical Engineering",
+        "Insurance",
+        "Research"
+      ],
+      "regionalEconomicDrivers": [
+        "Healthcare (Cleveland Clinic, University Hospitals)",
+        "Manufacturing",
+        "Insurance (Progressive)",
+        "Aerospace Research (NASA Glenn)"
+      ],
+      "topEmployers": [
+        "Cleveland Clinic",
+        "University Hospitals",
+        "Progressive Insurance",
+        "NASA Glenn Research Center",
+        "Medical device companies"
+      ],
+      "emergingIndustries": [
+        "Digital Health",
+        "Medical Robotics",
+        "Biomedical AI",
+        "Precision Medicine"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 42,
+      "corporateHeadquartersDensity": 40,
+      "healthcareHubStrength": 92,
+      "innovationIndex": 78
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Cleveland's Healthcare, Biomedical, and Research Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "New York NY",
+        "Chicago IL"
+      ],
+      "alumniStrongholds": [
+        "Cleveland OH",
+        "Columbus OH",
+        "Boston MA",
+        "New York NY"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates remain in Cleveland, entering the Cleveland Clinic, University Hospitals, and regional biomedical companies.",
+        "Boston draws graduates into biotechnology, medical research, and academic medicine.",
+        "New York and Chicago attract graduates into healthcare consulting and finance.",
+        "A meaningful cohort enters medical school nationally, reinforced by the PRIME BS/MD pipeline.",
+        "A smaller cohort enters national biomedical engineering and medical device companies."
+      ],
+      "regionalInfluenceScore": 86,
+      "nationalReachScore": 62,
+      "internationalReachScore": 42
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 26,
+      "studentOrganizationStrength": 74,
+      "leadershipDevelopment": 70,
+      "crossDisciplinaryInteraction": 82,
+      "civicEngagement": 62
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 96,
+        "notes": "One of the university's defining strengths, anchored by direct Cleveland Clinic and University Hospitals integration."
+      },
+      "nutraceuticals": {
+        "strength": 48,
+        "notes": "Meaningful overlap through nutritional biochemistry and metabolism programs."
+      },
+      "consumerProducts": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 40,
+        "notes": "Growing presence, particularly in digital health and medical technology."
+      },
+      "privateEquity": {
+        "strength": 38,
+        "notes": "Limited but present through healthcare-focused finance."
+      },
+      "investmentBanking": {
+        "strength": 36,
+        "notes": "Limited institutional emphasis relative to medicine and engineering."
+      },
+      "consulting": {
+        "strength": 60,
+        "notes": "Solid placement, particularly for healthcare consulting practices."
+      },
+      "medicine": {
+        "strength": 98,
+        "notes": "Among the university's defining strengths, reinforced by the PRIME BS/MD pipeline and Cleveland Clinic affiliation."
+      },
+      "healthcareAdministration": {
+        "strength": 84,
+        "notes": "Strong pathway given the university's deep integration with major hospital systems."
+      },
+      "defense": {
+        "strength": 36,
+        "notes": "Present through NASA Glenn Research Center-adjacent aerospace engineering ties."
+      },
+      "realEstate": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 14,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 54,
+        "notes": "Growing biomedical and health technology entrepreneurship culture."
+      },
+      "technology": {
+        "strength": 72,
+        "notes": "Strong biomedical engineering and computer science pipeline."
+      },
+      "publicPolicy": {
+        "strength": 40,
+        "notes": "Limited but present through health policy-adjacent coursework."
+      },
+      "nonprofitLeadership": {
+        "strength": 44,
+        "notes": "Moderate pathway, often tied to healthcare nonprofit organizations."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 70,
+      "firstGenerationSupport": 72,
+      "wealthCreationPotential": 76,
+      "familyBusinessPipelineStrength": 34
+    },
+    "futureResilience": {
+      "aiResistance": 92,
+      "automationResistance": 90,
+      "adaptabilityScore": 84,
+      "interdisciplinaryStrength": 88,
+      "futureReadiness": 88,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 82,
+      "innovationCapacity": 82
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 76,
+      "communityLeadershipPotential": 68,
+      "geographicMobility": 68,
+      "workLifeBalancePotential": 70,
+      "purposeAlignment": 84,
+      "familyFormationSupport": 74,
+      "personalDevelopmentPotential": 82,
+      "careerOptionality": 78,
+      "longTermLifeSatisfaction": 78
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 70,
+      "networkMoat": 62,
+      "geographicMoat": 84,
+      "industryMoat": 90,
+      "alumniMoat": 62,
+      "brandDurability": 72,
+      "overallMoatScore": 73
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 48,
+      "returnerScore": 56,
+      "stewardScore": 62,
+      "navigatorScore": 56,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "cleveland_concentration_with_medical_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 66,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 900,
+      "jewishStudentPercentage": "~16%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "Case Western maintains an active Hillel and kosher dining option, serving a well-established Jewish student population."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Susan and John Major Scholars Program and Themed Living Communities",
+      "strength": 66,
+      "notes": "Offers smaller cohort experiences and priority research access, though functions as a supplemental distinction rather than a fully separate honors college."
+    }
+  },
+
+"Lehigh University": {
+    "institutionNarrative": {
+      "name": "Lehigh University",
+      "location": "Bethlehem, Pennsylvania",
+      "region": "Mid-Atlantic",
+      "archetype": "The Integrated Business-Engineering Anchor \u2014 Wall Street Placement from a Technical Foundation",
+      "oneSentenceSummary": "Lehigh University combines a historically strong engineering program with an unusually direct pipeline into Wall Street finance and consulting, producing graduates who blend technical rigor with elite business placement at a rate uncommon among mid-sized private universities.",
+      "pipeline": "Approximately 5,300 undergraduates. Lehigh is nationally recognized for Engineering, Business (College of Business), Computer Science, and Integrated Business and Engineering (IBE) programs. Major recruiters include Goldman Sachs, JPMorgan Chase, Lockheed Martin, Air Products, and major consulting and engineering firms.",
+      "hiddenPathway": "Lehigh's Integrated Business and Engineering (IBE) program, one of the oldest and most respected combined degree programs of its kind, gives students a genuinely dual technical-and-business credential that most universities only offer as separate, uncoordinated majors.",
+      "institutionalSecret": "Lehigh's engineering alumni network has an outsized presence on Wall Street relative to the university's size, a legacy of the university's historic ties to the steel and industrial engineering economy that evolved into modern finance and consulting placement.",
+      "theRoom": "Located in Bethlehem, Pennsylvania, on the site of the former Bethlehem Steel plant, Lehigh sits roughly 90 minutes from both New York City and Philadelphia, with strong direct pipelines into both cities' finance and engineering economies.",
+      "lifestyle": "Academically rigorous and pre-professionally ambitious, with a strong Greek life presence and a historic industrial-engineering identity that has evolved into a broader business-technical culture.",
+      "bestFitPersonality": "Academically rigorous, drawn to engineering, business, or a combination of both, and comfortable with a pre-professionally ambitious, Greek-life-present campus culture.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout the Mid-Atlantic, with elite national reach into engineering, finance, and consulting.",
+      "economicOutcome": "Excellent outcomes in engineering, finance, consulting, and business, with an unusually direct and well-regarded combined technical-business degree pathway.",
+      "gradCities": [
+        "New York NY",
+        "Philadelphia PA",
+        "Boston MA",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "Lafayette College",
+        "Bucknell University",
+        "Villanova University",
+        "Rensselaer Polytechnic Institute",
+        "Carnegie Mellon University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Northampton Community College",
+          "Lehigh Carbon Community College"
+        ],
+        "transferAcceptanceRate": "~30%",
+        "freshmanAcceptanceRate": "~33%",
+        "estimatedSavingsRange": "$16,000-$38,000",
+        "transferNotes": "Lehigh maintains articulation agreements with regional Pennsylvania community colleges, supporting transfer into engineering and business programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Lehigh",
+      "archetype": "Elite Private Research University \u2014 Integrated Business and Engineering",
+      "institutionalPersonality": "academically rigorous, pre-professionally ambitious, historically industrial, technically grounded",
+      "cultureKeywords": [
+        "Engineering",
+        "Business",
+        "Integrated Business and Engineering",
+        "Wall Street Placement",
+        "Historic Steel Legacy"
+      ],
+      "missionOrientation": "Producing technically grounded business and engineering leaders through a historically strong combined degree tradition.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through rigorous engineering and business coursework, with the IBE program offering a genuinely integrated curriculum spanning both disciplines from the first year.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Generally moderate to progressive, with a pragmatic, career-focused undercurrent.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite in integrated business-engineering education, with strong regional and growing national prestige.",
+      "socialClimate": "Academically rigorous and pre-professionally ambitious, with a strong Greek life presence.",
+      "leadershipStyle": "Leadership through technical-business integration and pragmatic professional excellence."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "A historically industrial engineering university that has evolved into a strong integrated business-engineering pipeline into New York and Philadelphia finance."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 14,
+      "BosWash": 76,
+      "TorBuffChester": 22,
+      "TexasTriangle": 6,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 10,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusLafayette": "Lafayette offers a smaller, more purely liberal-arts-adjacent engineering experience, while Lehigh offers a larger scale and a more explicitly integrated business-engineering pipeline into Wall Street.",
+      "versusBucknell": "Bucknell offers a stronger overall liberal arts identity alongside engineering, while Lehigh offers a more concentrated technical-business focus and stronger historic Wall Street placement.",
+      "versusRPI": "RPI offers a more purely technical, engineering-first identity, while Lehigh offers a genuinely integrated business-engineering credential and stronger finance placement."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 5300,
+      "graduateEnrollment": 2000,
+      "totalEnrollment": 7300,
+      "campusType": "Mid-Sized Private University, Former Steel Town",
+      "residentialIntensity": 82,
+      "communityFeel": 76,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Moderate class sizes with strong upper-division research and design project access, particularly in the Integrated Business and Engineering program.",
+      "scaleAdvantages": [
+        "Genuinely integrated business-engineering degree program",
+        "Strong historic and current Wall Street placement",
+        "90-minute proximity to both New York City and Philadelphia",
+        "Strong Greek life and pre-professional networking culture"
+      ],
+      "scaleDisadvantages": [
+        "Bethlehem, Pennsylvania offers limited off-campus amenities relative to a major city",
+        "Strong Greek life culture may not suit all students",
+        "Less name recognition nationally outside engineering and finance circles",
+        "Historic industrial town setting lacks a traditional college-town feel"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 78,
+        "conscientiousness": 90,
+        "extraversion": 74,
+        "agreeableness": 76,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "E",
+        "R",
+        "C"
+      ],
+      "learningStyle": [
+        "Integrated Business-Engineering Coursework",
+        "Applied Engineering Design",
+        "Case-Based Business Learning",
+        "Collaborative Study"
+      ],
+      "socialEnvironment": [
+        "Academically Rigorous",
+        "Pre-Professionally Ambitious",
+        "Greek-Life-Present",
+        "Technically Grounded",
+        "Pragmatic"
+      ],
+      "idealStudentTraits": [
+        "Academically rigorous",
+        "Drawn to engineering, business, or both",
+        "Comfortable with a pre-professionally ambitious culture",
+        "Values a strong Greek life and networking presence"
+      ],
+      "thrivesIf": [
+        "Plans for engineering, business, finance, or consulting",
+        "Wants a genuinely integrated technical-business degree",
+        "Values proximity to both New York City and Philadelphia",
+        "Enjoys a strong Greek life and pre-professional networking culture"
+      ],
+      "strugglesIf": [
+        "Wants a purely liberal arts education without technical/business emphasis",
+        "Needs a traditional college-town social atmosphere",
+        "Is uninterested in Greek life culture",
+        "Prefers a campus in a more prominent city"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a purely liberal arts experience",
+        "Students uninterested in a strong Greek life presence",
+        "Students who prefer a campus with a bigger surrounding city"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "The Integrated Business and Engineering program and Computer Science carry substantial additional selectivity beyond general university admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Integrated Business and Engineering",
+        "Materials Science and Engineering",
+        "Supply Chain and Information Systems",
+        "Environmental Engineering",
+        "Behavioral Neuroscience"
+      ],
+      "hiddenCareerPipelines": [
+        "Wall Street Finance from a Technical Background",
+        "Management Consulting for Engineers",
+        "Supply Chain and Operations Management",
+        "Materials and Manufacturing Engineering"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "JPMorgan Chase",
+        "Lockheed Martin",
+        "Air Products",
+        "Major engineering and consulting firms"
+      ],
+      "overlookedStrengths": [
+        "Lehigh's Integrated Business and Engineering (IBE) program is one of the oldest and most respected combined degree programs of its kind in the country.",
+        "The university's historic ties to the Bethlehem Steel industrial economy evolved into an unusually strong Wall Street and consulting alumni network relative to Lehigh's size.",
+        "Lehigh's 90-minute proximity to both New York and Philadelphia gives students genuine access to two major finance and business hubs.",
+        "The College of Business's supply chain and information systems program has strong placement into operations and logistics leadership roles."
+      ],
+      "sleeperIndustries": [
+        "Wall Street Finance and Trading",
+        "Management Consulting",
+        "Supply Chain and Operations Management",
+        "Materials Science and Manufacturing Engineering"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 76,
+      "executiveAccess": 76,
+      "internshipNetwork": 82,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 80,
+      "donorNetworkStrength": 72,
+      "boardMemberDensity": 64
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance",
+        "Engineering",
+        "Consulting",
+        "Manufacturing"
+      ],
+      "regionalEconomicDrivers": [
+        "Financial Services",
+        "Engineering and Manufacturing",
+        "Pharmaceuticals",
+        "Logistics"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "JPMorgan Chase",
+        "Lockheed Martin",
+        "Air Products",
+        "Major consulting firms"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Advanced Manufacturing",
+        "Supply Chain Technology"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 48,
+      "corporateHeadquartersDensity": 38,
+      "healthcareHubStrength": 46,
+      "innovationIndex": 74
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New York and Philadelphia Finance and Engineering Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "Washington DC",
+        "Pittsburgh PA"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Philadelphia PA",
+        "New Jersey",
+        "Boston MA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates enter New York for finance, consulting, and engineering roles.",
+        "Philadelphia draws graduates into business, engineering, and healthcare corporate roles.",
+        "Boston attracts graduates into consulting and technology roles.",
+        "A meaningful cohort remains in the Lehigh Valley, entering regional manufacturing and engineering firms.",
+        "A smaller cohort enters national engineering and materials science research roles."
+      ],
+      "regionalInfluenceScore": 84,
+      "nationalReachScore": 66,
+      "internationalReachScore": 44
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 44,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 76,
+      "civicEngagement": 60
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 42,
+        "notes": "Limited institutional emphasis relative to engineering and business."
+      },
+      "nutraceuticals": {
+        "strength": 24,
+        "notes": "Some overlap through chemical engineering research."
+      },
+      "consumerProducts": {
+        "strength": 50,
+        "notes": "Moderate presence through the College of Business."
+      },
+      "outdoorIndustry": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 22,
+        "notes": "Minimal institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 46,
+        "notes": "Growing presence, particularly among engineering-finance alumni."
+      },
+      "privateEquity": {
+        "strength": 66,
+        "notes": "Strong placement given Lehigh's dense Wall Street alumni network."
+      },
+      "investmentBanking": {
+        "strength": 74,
+        "notes": "Strong pipeline into major investment banks, reinforced by the IBE program."
+      },
+      "consulting": {
+        "strength": 72,
+        "notes": "Strong placement into top consulting firms, particularly for engineering-background candidates."
+      },
+      "medicine": {
+        "strength": 40,
+        "notes": "Limited pre-med emphasis relative to engineering and business."
+      },
+      "healthcareAdministration": {
+        "strength": 36,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 46,
+        "notes": "Present through engineering pathways into defense contractors like Lockheed Martin."
+      },
+      "realEstate": {
+        "strength": 48,
+        "notes": "Moderate presence through the College of Business."
+      },
+      "luxuryBrands": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 58,
+        "notes": "Growing entrepreneurship culture, particularly in engineering-adjacent startups."
+      },
+      "technology": {
+        "strength": 68,
+        "notes": "Strong engineering and computer science pipeline."
+      },
+      "publicPolicy": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "nonprofitLeadership": {
+        "strength": 38,
+        "notes": "Limited institutional emphasis."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 64,
+      "firstGenerationSupport": 64,
+      "wealthCreationPotential": 84,
+      "familyBusinessPipelineStrength": 44
+    },
+    "futureResilience": {
+      "aiResistance": 84,
+      "automationResistance": 82,
+      "adaptabilityScore": 80,
+      "interdisciplinaryStrength": 82,
+      "futureReadiness": 82,
+      "entrepreneurialFlexibility": 68,
+      "lifelongLearningCulture": 76,
+      "innovationCapacity": 78
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 84,
+      "communityLeadershipPotential": 70,
+      "geographicMobility": 76,
+      "workLifeBalancePotential": 68,
+      "purposeAlignment": 74,
+      "familyFormationSupport": 72,
+      "personalDevelopmentPotential": 78,
+      "careerOptionality": 82,
+      "longTermLifeSatisfaction": 78
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 68,
+      "networkMoat": 70,
+      "geographicMoat": 78,
+      "industryMoat": 80,
+      "alumniMoat": 74,
+      "brandDurability": 72,
+      "overallMoatScore": 74
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 66,
+      "returnerScore": 40,
+      "stewardScore": 32,
+      "navigatorScore": 76,
+      "geographicLockIn": "low_to_moderate",
+      "alumniDispersalPattern": "nyc_philly_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 68,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 1000,
+      "jewishStudentPercentage": "~19%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "Lehigh maintains an active Hillel and kosher dining option, serving a well-established Jewish student population."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Lehigh University Honors Program",
+      "strength": 68,
+      "notes": "Offers smaller seminar coursework and priority research opportunities for high-achieving students across all majors."
+    }
+  },
+
+"Drexel University": {
+    "institutionNarrative": {
+      "name": "Drexel University",
+      "location": "Philadelphia, Pennsylvania",
+      "region": "Mid-Atlantic",
+      "archetype": "The Co-Op Powerhouse \u2014 Paid Professional Experience Built Directly Into the Degree",
+      "oneSentenceSummary": "Drexel University operates one of the largest and oldest cooperative education programs in the country, giving students up to eighteen months of paid, full-time professional experience integrated directly into a five-year undergraduate degree.",
+      "pipeline": "Approximately 15,000 undergraduates. Drexel is nationally recognized for Engineering, Computer Science, Business, Nursing, and Design. Major recruiters include Comcast, Vanguard, Lockheed Martin, GlaxoSmithKline, Children's Hospital of Philadelphia, and hundreds of co-op employer partners nationally.",
+      "hiddenPathway": "Drexel's co-op program places students in three separate six-month full-time paid professional positions over the course of a five-year degree, giving graduates up to 18 months of resume-ready work experience and often multiple job offers before graduation.",
+      "institutionalSecret": "Drexel's co-op employer network spans thousands of companies nationally and internationally, meaning students aren't limited to Philadelphia-area placements \u2014 a fact that surprises families who assume co-op means local-only opportunities.",
+      "theRoom": "Located in Philadelphia's University City, adjacent to the University of Pennsylvania and Children's Hospital of Philadelphia, Drexel sits within one of the densest concentrations of higher education and healthcare institutions in the country.",
+      "lifestyle": "Pragmatic, professionally focused, and urban. Drexel's five-year, co-op-integrated degree structure creates a campus culture oriented around real-world professional readiness rather than a traditional four-year college experience.",
+      "bestFitPersonality": "Pragmatic, career-focused, comfortable alternating between academic terms and full-time work, and drawn to engineering, business, design, or healthcare fields.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Philadelphia and the Mid-Atlantic, with a national co-op employer network extending well beyond the immediate region.",
+      "economicOutcome": "Excellent outcomes in engineering, business, nursing, and design, driven by an unmatched cooperative education program that gives graduates real professional experience before entering the job market.",
+      "gradCities": [
+        "Philadelphia PA",
+        "New York NY",
+        "Washington DC",
+        "Boston MA"
+      ],
+      "comparableInstitutions": [
+        "Northeastern University",
+        "Rochester Institute of Technology",
+        "University of Cincinnati",
+        "Georgia Institute of Technology",
+        "Temple University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Community College of Philadelphia",
+          "Montgomery County Community College"
+        ],
+        "transferAcceptanceRate": "~75%",
+        "freshmanAcceptanceRate": "~76%",
+        "estimatedSavingsRange": "$18,000-$42,000",
+        "transferNotes": "Drexel maintains dual admission and articulation agreements with regional community colleges, supporting transfer into engineering, business, and health sciences programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Drexel",
+      "archetype": "Elite Private Research University \u2014 Cooperative Education and Professional Readiness",
+      "institutionalPersonality": "pragmatic, professionally focused, urban, career-oriented",
+      "cultureKeywords": [
+        "Co-Op Education",
+        "Five-Year Degree",
+        "Professional Readiness",
+        "University City",
+        "Applied Learning"
+      ],
+      "missionOrientation": "Producing professionally ready graduates through the most extensive cooperative education program of its kind in the country.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students alternate between academic terms and full-time, paid professional co-op placements, integrating real-world work experience directly into the degree structure.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Generally progressive, reflecting Philadelphia's urban political culture.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite in cooperative education and professional placement, with strong regional prestige in engineering, business, and design.",
+      "socialClimate": "Pragmatic, professionally focused, and urban, with a five-year degree structure shaping campus culture and social rhythms.",
+      "leadershipStyle": "Leadership through applied professional readiness and cooperative education innovation."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "The nation's leading cooperative education university, embedding professional experience directly into undergraduate degrees from a Philadelphia base."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 74,
+      "TorBuffChester": 20,
+      "TexasTriangle": 6,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 8,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusNortheastern": "Northeastern offers a larger, more nationally prominent co-op brand and stronger overall prestige, while Drexel offers a comparably extensive co-op program with a somewhat more accessible admissions tier.",
+      "versusRIT": "RIT offers a stronger design and imaging science identity, while Drexel offers deeper co-op integration and a more urban Philadelphia setting.",
+      "versusTemple": "Temple offers a lower cost and a similar urban Philadelphia setting, while Drexel offers a much more extensive cooperative education program and stronger engineering placement."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 15000,
+      "graduateEnrollment": 8000,
+      "totalEnrollment": 23000,
+      "campusType": "Urban University City Campus",
+      "residentialIntensity": 62,
+      "communityFeel": 64,
+      "studentFacultyRatio": "11:1",
+      "classSizeExperience": "Moderate class sizes with the defining structural feature being three separate six-month co-op placements integrated throughout the five-year degree, providing hands-on professional experience well beyond typical internships.",
+      "scaleAdvantages": [
+        "One of the largest and oldest cooperative education programs in the country",
+        "Up to 18 months of paid professional experience built into the degree",
+        "Strong engineering, nursing, and design placement",
+        "Adjacent to Penn and Children's Hospital of Philadelphia in University City"
+      ],
+      "scaleDisadvantages": [
+        "Five-year degree structure takes longer than a traditional four-year program",
+        "Co-op terms mean less continuous on-campus residential experience",
+        "Urban campus lacks a traditional green quad",
+        "Large university size can feel less personal in introductory coursework"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 78,
+        "conscientiousness": 88,
+        "extraversion": 68,
+        "agreeableness": 74,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "R",
+        "E",
+        "C"
+      ],
+      "learningStyle": [
+        "Cooperative Full-Time Professional Placement",
+        "Applied Engineering and Design Coursework",
+        "Case-Based Business Learning",
+        "Clinical Nursing Training"
+      ],
+      "socialEnvironment": [
+        "Pragmatic",
+        "Professionally Focused",
+        "Urban",
+        "Career-Oriented",
+        "Applied"
+      ],
+      "idealStudentTraits": [
+        "Pragmatic and career-focused",
+        "Comfortable alternating between academics and full-time work",
+        "Drawn to engineering, business, design, or healthcare",
+        "Values professional readiness over a traditional four-year timeline"
+      ],
+      "thrivesIf": [
+        "Wants extensive, paid, resume-ready professional experience before graduating",
+        "Plans for engineering, business, design, or nursing",
+        "Is comfortable with a five-year degree structure",
+        "Wants an urban Philadelphia campus adjacent to major institutions"
+      ],
+      "strugglesIf": [
+        "Wants a traditional four-year, fully residential college experience",
+        "Needs continuous on-campus social continuity",
+        "Prefers a smaller, more intimate university",
+        "Wants to graduate as quickly as possible"
+      ],
+      "transferRiskFactors": [
+        "Students who want a traditional four-year timeline",
+        "Students seeking a more continuous residential college experience",
+        "Students who prefer a smaller, more intimate university"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Nursing and select engineering programs carry additional selectivity beyond general university admission, and co-op placement competitiveness varies by employer and major."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Game Art and Production",
+        "Architectural Engineering",
+        "Fashion Design",
+        "Health Services Administration",
+        "Entrepreneurship and Innovation"
+      ],
+      "hiddenCareerPipelines": [
+        "Engineering via Extensive Co-Op Experience",
+        "Nursing and Clinical Practice",
+        "Design and User Experience",
+        "Healthcare Administration"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Comcast",
+        "Vanguard",
+        "Lockheed Martin",
+        "GlaxoSmithKline",
+        "Children's Hospital of Philadelphia"
+      ],
+      "overlookedStrengths": [
+        "Drexel's cooperative education program is one of the largest and oldest in the country, giving students up to 18 months of paid professional experience before graduation.",
+        "The co-op employer network spans thousands of companies nationally and internationally, not just the Philadelphia region.",
+        "Drexel's University City location places it directly adjacent to the University of Pennsylvania and Children's Hospital of Philadelphia, creating dense cross-institutional opportunity.",
+        "Many Drexel students receive full-time job offers from a co-op employer before their final year, effectively de-risking the post-graduation job search."
+      ],
+      "sleeperIndustries": [
+        "Engineering via Cooperative Education",
+        "Healthcare Administration",
+        "Design and User Experience",
+        "Nursing and Clinical Practice"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 68,
+      "mentorshipDensity": 66,
+      "executiveAccess": 62,
+      "internshipNetwork": 92,
+      "familyBusinessExposure": 36,
+      "relationshipCapitalScore": 70,
+      "alumniLoyaltyScore": 66,
+      "referralCultureStrength": 70,
+      "donorNetworkStrength": 56,
+      "boardMemberDensity": 52
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Engineering",
+        "Healthcare",
+        "Business",
+        "Media and Telecommunications"
+      ],
+      "regionalEconomicDrivers": [
+        "Healthcare",
+        "Media and Telecommunications (Comcast)",
+        "Financial Services (Vanguard)",
+        "Pharmaceuticals"
+      ],
+      "topEmployers": [
+        "Comcast",
+        "Vanguard",
+        "Lockheed Martin",
+        "GlaxoSmithKline",
+        "Children's Hospital of Philadelphia"
+      ],
+      "emergingIndustries": [
+        "Health Technology",
+        "Media Technology",
+        "Advanced Manufacturing"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 44,
+      "corporateHeadquartersDensity": 42,
+      "healthcareHubStrength": 76,
+      "innovationIndex": 72
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Philadelphia's Engineering, Healthcare, and Media Economy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Washington DC",
+        "Boston MA"
+      ],
+      "alumniStrongholds": [
+        "Philadelphia PA",
+        "New York NY",
+        "New Jersey",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Philadelphia, entering engineering, healthcare, media, and financial services roles.",
+        "New York draws graduates into finance and media roles.",
+        "Washington DC attracts graduates into government-adjacent engineering and consulting roles.",
+        "A meaningful cohort converts co-op placements directly into full-time roles nationally, following the employer rather than staying regional.",
+        "A smaller cohort enters national healthcare administration and nursing roles."
+      ],
+      "regionalInfluenceScore": 84,
+      "nationalReachScore": 62,
+      "internationalReachScore": 38
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 22,
+      "studentOrganizationStrength": 74,
+      "leadershipDevelopment": 68,
+      "crossDisciplinaryInteraction": 68,
+      "civicEngagement": 62
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 24,
+        "notes": "Some presence through design programs."
+      },
+      "healthWellness": {
+        "strength": 78,
+        "notes": "Strong pathway through nursing and health services administration programs."
+      },
+      "nutraceuticals": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 48,
+        "notes": "Moderate presence through business and design programs."
+      },
+      "outdoorIndustry": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 56,
+        "notes": "Meaningful pathway given Comcast's Philadelphia headquarters and media-adjacent programs."
+      },
+      "ventureCapital": {
+        "strength": 38,
+        "notes": "Limited but growing institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 42,
+        "notes": "Moderate presence through business co-op placements."
+      },
+      "investmentBanking": {
+        "strength": 44,
+        "notes": "Present through business co-op placements, particularly with Vanguard."
+      },
+      "consulting": {
+        "strength": 56,
+        "notes": "Solid placement, reinforced by co-op experience."
+      },
+      "medicine": {
+        "strength": 62,
+        "notes": "Solid pre-med and nursing pipeline, reinforced by proximity to Children's Hospital of Philadelphia."
+      },
+      "healthcareAdministration": {
+        "strength": 72,
+        "notes": "Strong pathway given the university's health services administration program and hospital proximity."
+      },
+      "defense": {
+        "strength": 40,
+        "notes": "Present through engineering co-op placements with Lockheed Martin."
+      },
+      "realEstate": {
+        "strength": 36,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 56,
+        "notes": "Growing entrepreneurship culture, reinforced by co-op-derived industry exposure."
+      },
+      "technology": {
+        "strength": 68,
+        "notes": "Strong engineering and computer science pipeline, reinforced by extensive co-op placements."
+      },
+      "publicPolicy": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "nonprofitLeadership": {
+        "strength": 40,
+        "notes": "Limited institutional emphasis."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 74,
+      "firstGenerationSupport": 72,
+      "wealthCreationPotential": 70,
+      "familyBusinessPipelineStrength": 36
+    },
+    "futureResilience": {
+      "aiResistance": 82,
+      "automationResistance": 80,
+      "adaptabilityScore": 82,
+      "interdisciplinaryStrength": 74,
+      "futureReadiness": 84,
+      "entrepreneurialFlexibility": 66,
+      "lifelongLearningCulture": 76,
+      "innovationCapacity": 74
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 70,
+      "communityLeadershipPotential": 66,
+      "geographicMobility": 68,
+      "workLifeBalancePotential": 74,
+      "purposeAlignment": 76,
+      "familyFormationSupport": 72,
+      "personalDevelopmentPotential": 78,
+      "careerOptionality": 78,
+      "longTermLifeSatisfaction": 76
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 60,
+      "networkMoat": 62,
+      "geographicMoat": 78,
+      "industryMoat": 82,
+      "alumniMoat": 60,
+      "brandDurability": 68,
+      "overallMoatScore": 68
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 52,
+      "returnerScore": 52,
+      "stewardScore": 54,
+      "navigatorScore": 58,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "philadelphia_concentration_with_coop_driven_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 50,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 700,
+      "jewishStudentPercentage": "~5%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Drexel maintains an active Hillel presence, without dedicated on-campus kosher dining facilities."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Pennoni Honors College",
+      "strength": 68,
+      "notes": "Offers smaller seminar coursework, priority research access, and interdisciplinary programming for high-achieving students across all majors."
+    }
+  },
+
+"Worcester Polytechnic Institute": {
+    "institutionNarrative": {
+      "name": "Worcester Polytechnic Institute",
+      "location": "Worcester, Massachusetts",
+      "region": "New England",
+      "archetype": "The Project-Based Learning Pioneer \u2014 Theory Into Practice at Every Level",
+      "oneSentenceSummary": "Worcester Polytechnic Institute pioneered project-based STEM education through its distinctive WPI Plan, requiring every student to complete significant applied research and global project work rather than relying solely on traditional coursework and exams.",
+      "pipeline": "Approximately 4,700 undergraduates. WPI is nationally recognized for Robotics Engineering, Computer Science, Mechanical Engineering, and Data Science. Major recruiters include Raytheon/RTX, General Electric, MathWorks, MITRE, and major aerospace, robotics, and technology companies.",
+      "hiddenPathway": "WPI's Global Projects Program sends nearly every student abroad or to a domestic project center to complete a real-world applied research project for an actual sponsoring organization, giving graduates a portfolio of completed, sponsor-validated work before graduation.",
+      "institutionalSecret": "WPI was one of the first institutions in the country to build project-based learning into its core degree requirements rather than treating it as an elective supplement, a structural distinction that predates the current national push toward experiential STEM education by decades.",
+      "theRoom": "Located in Worcester, Massachusetts, roughly 45 minutes from Boston, WPI sits within New England's dense biotech, robotics, and technology corridor while maintaining a distinct identity from larger Boston-area technical institutes.",
+      "lifestyle": "Intensely project-driven and collaborative rather than purely exam-focused. WPI's academic calendar and structure are built around sustained project work, creating a hands-on, applied engineering culture from the first year.",
+      "bestFitPersonality": "Hands-on and applied in orientation, drawn to solving real-world problems over pure theory, comfortable with sustained project-based work, and interested in robotics, engineering, or data science.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout New England, with national reach into robotics, aerospace, and applied engineering fields.",
+      "economicOutcome": "Excellent outcomes in robotics, mechanical and electrical engineering, computer science, and data science, with a distinctive portfolio-based credential from real sponsored project work.",
+      "gradCities": [
+        "Boston MA",
+        "New York NY",
+        "Hartford CT",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "Rensselaer Polytechnic Institute",
+        "Rochester Institute of Technology",
+        "Northeastern University",
+        "Case Western Reserve University",
+        "Stevens Institute of Technology"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Quinsigamond Community College",
+          "Massachusetts Bay Community College"
+        ],
+        "transferAcceptanceRate": "~40%",
+        "freshmanAcceptanceRate": "~48%",
+        "estimatedSavingsRange": "$16,000-$38,000",
+        "transferNotes": "WPI maintains articulation agreements with regional Massachusetts community colleges, supporting transfer into engineering and computer science programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "WPI",
+      "archetype": "Elite Private STEM University \u2014 Project-Based Learning Pioneer",
+      "institutionalPersonality": "hands-on, applied, collaborative, project-driven",
+      "cultureKeywords": [
+        "Project-Based Learning",
+        "WPI Plan",
+        "Global Projects Program",
+        "Robotics",
+        "Applied Engineering"
+      ],
+      "missionOrientation": "Educating engineers and scientists through sustained, real-world applied project work rather than theory alone.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through the WPI Plan, a project-based curriculum requiring significant applied research culminating in a sponsored global or domestic project, alongside traditional coursework.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Generally moderate to progressive, with a pragmatic, technically-focused undercurrent.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite in project-based STEM education, with a distinctive and long-standing pedagogical identity.",
+      "socialClimate": "Intensely project-driven and collaborative, oriented around applied problem-solving.",
+      "leadershipStyle": "Leadership through applied project execution and pragmatic technical innovation."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "A project-based STEM pioneer anchoring applied robotics and engineering education within New England's technology corridor."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 12,
+      "BosWash": 78,
+      "TorBuffChester": 20,
+      "TexasTriangle": 4,
+      "CharLanta": 4,
+      "NorCalInnovationCorridor": 12,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusRPI": "RPI offers a larger scale and broader graduate research program, while WPI offers a more distinctively project-based undergraduate curriculum structured around the WPI Plan.",
+      "versusRIT": "RIT offers stronger design, imaging science, and co-op integration, while WPI offers a more concentrated project-based learning model with mandatory global project work.",
+      "versusNortheastern": "Northeastern offers a much larger scale and co-op program, while WPI offers a smaller, more concentrated project-based curriculum with every student completing sponsored applied research."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 4700,
+      "graduateEnrollment": 2000,
+      "totalEnrollment": 6700,
+      "campusType": "Mid-Sized New England Technical University",
+      "residentialIntensity": 84,
+      "communityFeel": 78,
+      "studentFacultyRatio": "13:1",
+      "classSizeExperience": "Moderate class sizes combined with mandatory sustained project work in small project teams, giving students hands-on applied research experience throughout their degree.",
+      "scaleAdvantages": [
+        "Distinctive, decades-old project-based learning model",
+        "Global Projects Program sending students to sponsored project sites worldwide",
+        "Strong robotics and applied engineering placement",
+        "45 minutes from Boston's biotech and technology corridor"
+      ],
+      "scaleDisadvantages": [
+        "Project-based structure requires strong self-management skills",
+        "Worcester offers less name recognition than Boston proper",
+        "Smaller scale than some peer technical institutes",
+        "Intensely applied focus may not suit students wanting pure theoretical study"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 82,
+        "conscientiousness": 88,
+        "extraversion": 64,
+        "agreeableness": 78,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "R",
+        "I",
+        "E"
+      ],
+      "learningStyle": [
+        "Sustained Project-Based Research",
+        "Global Sponsored Project Work",
+        "Applied Engineering Design",
+        "Collaborative Team-Based Learning"
+      ],
+      "socialEnvironment": [
+        "Hands-On",
+        "Applied",
+        "Collaborative",
+        "Project-Driven",
+        "Pragmatic"
+      ],
+      "idealStudentTraits": [
+        "Hands-on and applied in orientation",
+        "Drawn to solving real-world problems",
+        "Comfortable with sustained, self-directed project work",
+        "Interested in robotics, engineering, or data science"
+      ],
+      "thrivesIf": [
+        "Wants a portfolio of real, sponsored applied research before graduating",
+        "Plans for robotics, mechanical/electrical engineering, or data science",
+        "Values global project experience integrated into the degree",
+        "Enjoys collaborative, team-based problem-solving"
+      ],
+      "strugglesIf": [
+        "Prefers purely theoretical coursework over applied project work",
+        "Wants a traditional exam-based academic structure",
+        "Needs a larger university with broader non-STEM offerings",
+        "Wants a campus with a bigger surrounding city"
+      ],
+      "transferRiskFactors": [
+        "Students who prefer purely theoretical, exam-based coursework",
+        "Students wanting a larger, more comprehensive university",
+        "Students who struggle with sustained self-directed project work"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Robotics Engineering and Computer Science carry additional selectivity given high demand relative to program capacity."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Robotics Engineering",
+        "Actuarial Mathematics",
+        "Interactive Media and Game Development",
+        "Bioinformatics and Computational Biology",
+        "Environmental Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Robotics and Automation Engineering",
+        "Aerospace and Defense Engineering",
+        "Data Science and Analytics",
+        "Applied Research and Development"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Raytheon/RTX",
+        "General Electric",
+        "MathWorks",
+        "MITRE",
+        "Major aerospace and robotics companies"
+      ],
+      "overlookedStrengths": [
+        "WPI's Global Projects Program sends nearly every student to complete a real, sponsored applied research project domestically or abroad, producing a portfolio most graduates from other universities cannot match.",
+        "WPI was one of the first institutions in the country to structurally embed project-based learning into core degree requirements, decades before this became a broader trend in STEM education.",
+        "The Robotics Engineering program is among the oldest and most established standalone robotics degrees in the country.",
+        "WPI's proximity to Boston's biotech and technology corridor provides meaningful internship access beyond Worcester itself."
+      ],
+      "sleeperIndustries": [
+        "Robotics and Automation",
+        "Aerospace and Defense Engineering",
+        "Applied Data Science",
+        "Sponsored Research and Development"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 68,
+      "mentorshipDensity": 74,
+      "executiveAccess": 58,
+      "internshipNetwork": 78,
+      "familyBusinessExposure": 32,
+      "relationshipCapitalScore": 70,
+      "alumniLoyaltyScore": 76,
+      "referralCultureStrength": 68,
+      "donorNetworkStrength": 58,
+      "boardMemberDensity": 48
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Robotics",
+        "Aerospace and Defense",
+        "Technology",
+        "Applied Research"
+      ],
+      "regionalEconomicDrivers": [
+        "Biotechnology",
+        "Aerospace and Defense",
+        "Technology",
+        "Manufacturing"
+      ],
+      "topEmployers": [
+        "Raytheon/RTX",
+        "General Electric",
+        "MathWorks",
+        "MITRE",
+        "UMass Memorial Health"
+      ],
+      "emergingIndustries": [
+        "Robotics and Automation",
+        "AI-Driven Engineering",
+        "Biomedical Robotics"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 44,
+      "corporateHeadquartersDensity": 30,
+      "healthcareHubStrength": 48,
+      "innovationIndex": 80
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New England Robotics, Aerospace, and Technology Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "New York NY",
+        "Hartford CT"
+      ],
+      "alumniStrongholds": [
+        "Boston MA",
+        "Worcester MA",
+        "Hartford CT",
+        "New York NY"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in New England, entering robotics, aerospace, and technology companies around Boston.",
+        "New York draws graduates into finance-adjacent data science and technology roles.",
+        "Washington DC and the broader Mid-Atlantic attract graduates into defense engineering roles.",
+        "A meaningful cohort pursues graduate engineering programs nationally.",
+        "A smaller cohort enters international engineering roles connected to Global Projects Program placements."
+      ],
+      "regionalInfluenceScore": 82,
+      "nationalReachScore": 62,
+      "internationalReachScore": 48
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 24,
+      "studentOrganizationStrength": 76,
+      "leadershipDevelopment": 72,
+      "crossDisciplinaryInteraction": 80,
+      "civicEngagement": 64
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 12,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 44,
+        "notes": "Some overlap through biomedical engineering and bioinformatics programs."
+      },
+      "nutraceuticals": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis outside engineering design."
+      },
+      "outdoorIndustry": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 32,
+        "notes": "Some presence through interactive media and game development programs."
+      },
+      "ventureCapital": {
+        "strength": 40,
+        "notes": "Growing presence, particularly in robotics and deep-tech."
+      },
+      "privateEquity": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis relative to engineering."
+      },
+      "consulting": {
+        "strength": 54,
+        "notes": "Solid placement into technical and engineering consulting practices."
+      },
+      "medicine": {
+        "strength": 42,
+        "notes": "Limited pre-med emphasis, though biomedical engineering provides some overlap."
+      },
+      "healthcareAdministration": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 68,
+        "notes": "Strong pathway through aerospace and defense-focused engineering placements."
+      },
+      "realEstate": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 12,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 58,
+        "notes": "Growing entrepreneurship culture, reinforced by project-based learning and robotics innovation."
+      },
+      "technology": {
+        "strength": 88,
+        "notes": "One of the university's defining strengths \u2014 a strong robotics, computer science, and applied engineering pipeline."
+      },
+      "publicPolicy": {
+        "strength": 24,
+        "notes": "Minimal institutional emphasis."
+      },
+      "nonprofitLeadership": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 70,
+      "firstGenerationSupport": 68,
+      "wealthCreationPotential": 78,
+      "familyBusinessPipelineStrength": 32
+    },
+    "futureResilience": {
+      "aiResistance": 92,
+      "automationResistance": 90,
+      "adaptabilityScore": 84,
+      "interdisciplinaryStrength": 82,
+      "futureReadiness": 90,
+      "entrepreneurialFlexibility": 70,
+      "lifelongLearningCulture": 80,
+      "innovationCapacity": 86
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 78,
+      "communityLeadershipPotential": 66,
+      "geographicMobility": 72,
+      "workLifeBalancePotential": 74,
+      "purposeAlignment": 78,
+      "familyFormationSupport": 74,
+      "personalDevelopmentPotential": 82,
+      "careerOptionality": 78,
+      "longTermLifeSatisfaction": 78
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 66,
+      "networkMoat": 60,
+      "geographicMoat": 74,
+      "industryMoat": 80,
+      "alumniMoat": 66,
+      "brandDurability": 72,
+      "overallMoatScore": 70
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 60,
+      "returnerScore": 42,
+      "stewardScore": 34,
+      "navigatorScore": 70,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "new_england_concentration_with_defense_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 42,
+        "type": "Regional Hillel Affiliate"
+      },
+      "estimatedJewishUndergraduates": 250,
+      "jewishStudentPercentage": "~5%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "WPI maintains a regional Hillel affiliate presence, without dedicated on-campus kosher dining facilities."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "WPI has no separate honors college; the mandatory project-based WPI Plan functions as an honors-level applied research experience for the entire student body."
+    }
+  },
+
+"Rochester Institute of Technology": {
+    "institutionNarrative": {
+      "name": "Rochester Institute of Technology",
+      "location": "Rochester, New York",
+      "region": "Northeast",
+      "archetype": "The Design-Technology Fusion Anchor \u2014 Imaging Science, Deaf Education, and Co-Op Integration",
+      "oneSentenceSummary": "Rochester Institute of Technology combines a globally unique imaging science program rooted in Rochester's photography and optics heritage with the National Technical Institute for the Deaf, the largest program of its kind in the world, alongside an extensive cooperative education system.",
+      "pipeline": "Approximately 15,000 undergraduates. RIT is nationally recognized for Imaging Science, Game Design and Development, Photography, Engineering, and Business. Major recruiters include Kodak-legacy optics and imaging companies, major game studios, Xerox, and technology and design firms nationally.",
+      "hiddenPathway": "RIT's imaging science program, rooted in Rochester's history as home to Kodak and Xerox, gives students access to optics, computational imaging, and photographic science expertise that exists at almost no other undergraduate institution in the country.",
+      "institutionalSecret": "The National Technical Institute for the Deaf at RIT is the largest technical college program for deaf and hard-of-hearing students in the world, creating a genuinely integrated, bilingual (ASL and English) campus culture that shapes the broader university's inclusive design and communication programs.",
+      "theRoom": "Located in Rochester, New York, a city with a deep legacy in imaging, optics, and photographic technology through Kodak and Xerox, RIT sits within a regional economy still shaped by that technical heritage even as it has diversified.",
+      "lifestyle": "Pragmatic, design-and-technology focused, and genuinely inclusive given the deaf and hard-of-hearing student population integrated throughout campus life. RIT's co-op program shapes a professionally-oriented campus rhythm.",
+      "bestFitPersonality": "Drawn to design, imaging science, game development, or engineering, comfortable in a genuinely diverse and inclusive campus community, and pragmatic about professional preparation.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout Upstate New York, with national and international reach into imaging science, game design, and technology fields.",
+      "economicOutcome": "Excellent outcomes in imaging science, game design, engineering, and business, supported by an extensive cooperative education program.",
+      "gradCities": [
+        "New York NY",
+        "Rochester NY",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "comparableInstitutions": [
+        "Rensselaer Polytechnic Institute",
+        "Worcester Polytechnic Institute",
+        "Drexel University",
+        "Savannah College of Art and Design",
+        "Carnegie Mellon University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Monroe Community College",
+          "Finger Lakes Community College"
+        ],
+        "transferAcceptanceRate": "~62%",
+        "freshmanAcceptanceRate": "~68%",
+        "estimatedSavingsRange": "$16,000-$38,000",
+        "transferNotes": "RIT maintains strong articulation agreements with regional New York community colleges, particularly Monroe Community College, supporting transfer into engineering, business, and design programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "RIT",
+      "archetype": "Elite Private Technical University \u2014 Design, Imaging Science, and Inclusive Education",
+      "institutionalPersonality": "pragmatic, design-focused, genuinely inclusive, technically grounded",
+      "cultureKeywords": [
+        "Imaging Science",
+        "Co-Op Education",
+        "National Technical Institute for the Deaf",
+        "Game Design",
+        "Photography"
+      ],
+      "missionOrientation": "Advancing design, imaging science, and technology education through applied professional preparation and a genuinely inclusive campus community.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through applied design and imaging science coursework, extensive cooperative education placements, and a campus culture genuinely shaped by ASL-English bilingual integration.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Generally progressive, with a strong institutional commitment to disability inclusion and accessibility.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite and globally unique in imaging science and deaf education; strong regional and national prestige in design and game development.",
+      "socialClimate": "Pragmatic and design-focused, with a genuinely integrated, inclusive campus culture given the deaf and hard-of-hearing student population.",
+      "leadershipStyle": "Leadership through design innovation, technical imaging expertise, and institutional commitment to accessibility and inclusion."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "TorBuffChester",
+      "regionalRole": "The nation's leading imaging science and inclusive design-technology university, anchored in Rochester's historic optics and photography industry."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 24,
+      "TorBuffChester": 62,
+      "TexasTriangle": 4,
+      "CharLanta": 4,
+      "NorCalInnovationCorridor": 10,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusRPI": "RPI offers a stronger traditional engineering research identity, while RIT offers unmatched imaging science, game design, and a globally unique deaf education program.",
+      "versusWPI": "WPI offers a more concentrated project-based engineering curriculum, while RIT offers broader design and technology breadth alongside extensive co-op integration.",
+      "versusSCAD": "Savannah College of Art and Design offers a more purely arts-and-design-focused curriculum, while RIT offers a stronger technical and engineering foundation alongside design programs."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 15000,
+      "graduateEnrollment": 3000,
+      "totalEnrollment": 18000,
+      "campusType": "Large Technical University in Upstate New York",
+      "residentialIntensity": 72,
+      "communityFeel": 70,
+      "studentFacultyRatio": "13:1",
+      "classSizeExperience": "Moderate class sizes with strong applied studio and lab access in imaging science, design, and game development, supported by extensive co-op placements throughout the degree.",
+      "scaleAdvantages": [
+        "Globally unique imaging science program rooted in Rochester's optics heritage",
+        "National Technical Institute for the Deaf creates a genuinely inclusive campus culture",
+        "Strong game design and development program",
+        "Extensive cooperative education system"
+      ],
+      "scaleDisadvantages": [
+        "Rochester's regional economy is less nationally prominent than coastal peer cities",
+        "Large university size can feel less personal in introductory coursework",
+        "Harsh Upstate New York winters",
+        "Less name recognition nationally outside design and imaging circles"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 84,
+        "conscientiousness": 84,
+        "extraversion": 64,
+        "agreeableness": 80,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "R",
+        "A",
+        "I"
+      ],
+      "learningStyle": [
+        "Applied Studio and Lab Work",
+        "Cooperative Professional Placement",
+        "Imaging Science Research",
+        "Collaborative Design Projects"
+      ],
+      "socialEnvironment": [
+        "Pragmatic",
+        "Design-Focused",
+        "Genuinely Inclusive",
+        "Technically Grounded",
+        "Diverse"
+      ],
+      "idealStudentTraits": [
+        "Drawn to design, imaging science, or game development",
+        "Comfortable in a genuinely diverse and inclusive community",
+        "Pragmatic about professional preparation",
+        "Interested in applied technical and creative fields"
+      ],
+      "thrivesIf": [
+        "Plans for imaging science, game design, photography, or engineering",
+        "Wants extensive cooperative education experience",
+        "Values a genuinely inclusive, ASL-integrated campus culture",
+        "Enjoys applied studio and lab-based learning"
+      ],
+      "strugglesIf": [
+        "Wants a purely liberal arts education",
+        "Needs a smaller, more intimate university",
+        "Prefers a campus with a more prominent surrounding city",
+        "Dislikes harsh Upstate New York winters"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a purely liberal arts experience",
+        "Students wanting a smaller, more intimate university",
+        "Students who dislike cold, Upstate New York winters"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Game Design and Development and select imaging science tracks carry additional selectivity given high demand relative to program capacity."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Imaging Science",
+        "Photographic Sciences",
+        "American Sign Language-English Interpretation",
+        "Museum Studies",
+        "Motion Picture Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Computational Imaging and Optics",
+        "Game Design and Development",
+        "Accessibility and Inclusive Design",
+        "Photographic and Visual Technology"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Legacy Kodak and Xerox-adjacent optics and imaging companies",
+        "Major video game studios",
+        "Technology and design firms nationally"
+      ],
+      "overlookedStrengths": [
+        "RIT's imaging science program is one of very few in the country, rooted directly in Rochester's historic Kodak and Xerox optics legacy.",
+        "The National Technical Institute for the Deaf is the largest program of its kind in the world, creating a genuinely bilingual, inclusive campus culture that shapes broader institutional design thinking.",
+        "RIT's game design and development program is consistently ranked among the best in the country.",
+        "The university's extensive co-op program gives students professional experience comparable to Drexel's and Northeastern's, though with less name recognition nationally."
+      ],
+      "sleeperIndustries": [
+        "Computational Imaging and Optics",
+        "Game Design and Development",
+        "Accessibility and Inclusive Technology Design",
+        "Photographic and Motion Picture Science"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 66,
+      "mentorshipDensity": 68,
+      "executiveAccess": 56,
+      "internshipNetwork": 80,
+      "familyBusinessExposure": 30,
+      "relationshipCapitalScore": 68,
+      "alumniLoyaltyScore": 70,
+      "referralCultureStrength": 66,
+      "donorNetworkStrength": 54,
+      "boardMemberDensity": 46
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Imaging and Optics",
+        "Game Design and Technology",
+        "Engineering",
+        "Design"
+      ],
+      "regionalEconomicDrivers": [
+        "Optics and Imaging Technology",
+        "Healthcare",
+        "Higher Education",
+        "Manufacturing"
+      ],
+      "topEmployers": [
+        "Legacy Kodak and Xerox-adjacent companies",
+        "Major video game studios",
+        "University of Rochester Medical Center (regional)",
+        "Technology firms"
+      ],
+      "emergingIndustries": [
+        "Computational Imaging",
+        "AR/VR Game Technology",
+        "Accessibility Technology"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 38,
+      "corporateHeadquartersDensity": 26,
+      "healthcareHubStrength": 50,
+      "innovationIndex": 74
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Upstate New York Imaging, Optics, and Technology Economy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "alumniStrongholds": [
+        "Rochester NY",
+        "New York NY",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "relocationPatterns": [
+        "A meaningful share of graduates remain in Rochester, entering optics, imaging, and regional technology companies.",
+        "New York draws graduates into design, media, and technology roles.",
+        "San Francisco and Seattle attract graduates into game design and technology roles.",
+        "Boston draws graduates into technology and engineering roles.",
+        "A smaller cohort enters accessibility-focused technology and design roles nationally, reinforced by the deaf education program's influence."
+      ],
+      "regionalInfluenceScore": 78,
+      "nationalReachScore": 62,
+      "internationalReachScore": 44
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 18,
+      "studentOrganizationStrength": 76,
+      "leadershipDevelopment": 66,
+      "crossDisciplinaryInteraction": 78,
+      "civicEngagement": 68
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 30,
+        "notes": "Some presence through photography and imaging science programs."
+      },
+      "healthWellness": {
+        "strength": 40,
+        "notes": "Limited institutional emphasis relative to design and imaging."
+      },
+      "nutraceuticals": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 46,
+        "notes": "Moderate presence through design and business programs."
+      },
+      "outdoorIndustry": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 72,
+        "notes": "Strong pathway through game design, photography, and motion picture science programs."
+      },
+      "ventureCapital": {
+        "strength": 36,
+        "notes": "Limited but growing institutional emphasis."
+      },
+      "privateEquity": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis relative to design and engineering."
+      },
+      "consulting": {
+        "strength": 46,
+        "notes": "Moderate placement into technical and design consulting practices."
+      },
+      "medicine": {
+        "strength": 34,
+        "notes": "Limited pre-med emphasis relative to design and imaging science."
+      },
+      "healthcareAdministration": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 34,
+        "notes": "Present through imaging science and optics-adjacent defense applications."
+      },
+      "realEstate": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis."
+      },
+      "luxuryBrands": {
+        "strength": 26,
+        "notes": "Some presence through photography and design programs."
+      },
+      "entrepreneurship": {
+        "strength": 56,
+        "notes": "Growing entrepreneurship culture, particularly in game design and imaging technology."
+      },
+      "technology": {
+        "strength": 82,
+        "notes": "One of the university's defining strengths, spanning imaging science, game design, and engineering."
+      },
+      "publicPolicy": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis."
+      },
+      "nonprofitLeadership": {
+        "strength": 46,
+        "notes": "Meaningful pathway, reinforced by the deaf education and accessibility-focused programs."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 74,
+      "firstGenerationSupport": 74,
+      "wealthCreationPotential": 68,
+      "familyBusinessPipelineStrength": 30
+    },
+    "futureResilience": {
+      "aiResistance": 84,
+      "automationResistance": 82,
+      "adaptabilityScore": 82,
+      "interdisciplinaryStrength": 80,
+      "futureReadiness": 82,
+      "entrepreneurialFlexibility": 66,
+      "lifelongLearningCulture": 78,
+      "innovationCapacity": 80
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 68,
+      "communityLeadershipPotential": 70,
+      "geographicMobility": 68,
+      "workLifeBalancePotential": 76,
+      "purposeAlignment": 78,
+      "familyFormationSupport": 74,
+      "personalDevelopmentPotential": 80,
+      "careerOptionality": 74,
+      "longTermLifeSatisfaction": 78
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 62,
+      "networkMoat": 58,
+      "geographicMoat": 74,
+      "industryMoat": 82,
+      "alumniMoat": 60,
+      "brandDurability": 68,
+      "overallMoatScore": 68
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 52,
+      "returnerScore": 50,
+      "stewardScore": 54,
+      "navigatorScore": 58,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "upstate_ny_concentration_with_design_tech_national_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 46,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 500,
+      "jewishStudentPercentage": "~4%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "RIT maintains an active Hillel presence, without dedicated on-campus kosher dining facilities."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "RIT Honors Program",
+      "strength": 62,
+      "notes": "Offers smaller seminar coursework and priority research opportunities for high-achieving students across all majors."
+    }
+  },
+
+"Stevens Institute of Technology": {
+    "institutionNarrative": {
+      "name": "Stevens Institute of Technology",
+      "location": "Hoboken, New Jersey",
+      "region": "Mid-Atlantic",
+      "archetype": "The Manhattan-Adjacent Quant Finance Engine \u2014 Engineering Rigor Meets Wall Street Proximity",
+      "oneSentenceSummary": "Stevens Institute of Technology sits directly across the Hudson River from Manhattan, giving its engineering and quantitative finance students uniquely direct access to Wall Street while maintaining a technically rigorous, research-oriented engineering identity.",
+      "pipeline": "Approximately 4,300 undergraduates. Stevens is nationally recognized for Quantitative Finance, Computer Science, Mechanical Engineering, and Cybersecurity. Major recruiters include Goldman Sachs, JPMorgan Chase, Bloomberg, major quantitative hedge funds, and technology and engineering firms throughout the New York metro area.",
+      "hiddenPathway": "Stevens's location directly across the Hudson from Manhattan, with a PATH train connection under 15 minutes to the Financial District, lets students hold genuine part-time roles at quantitative trading firms and banks during the academic year, not just summers.",
+      "institutionalSecret": "Stevens's Quantitative Finance program is one of the oldest and most respected undergraduate quant finance degrees in the country, combining rigorous engineering-style mathematical training with direct proximity to the firms that hire for exactly that skill set.",
+      "theRoom": "Located in Hoboken, New Jersey, directly across the Hudson River from Manhattan, students have a shorter commute to Wall Street than many students who live in outer boroughs of New York City itself.",
+      "lifestyle": "Technically rigorous and quietly ambitious, with an unusually direct relationship to Manhattan's finance and technology economy despite the campus's smaller New Jersey setting.",
+      "bestFitPersonality": "Mathematically strong, drawn to engineering, quantitative finance, or cybersecurity, and motivated by direct access to Wall Street without needing to attend a New York City-based university.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Dominant throughout the New York metro area's finance and technology economy, with growing national reach in quantitative finance and cybersecurity.",
+      "economicOutcome": "Exceptional outcomes in quantitative finance, engineering, computer science, and cybersecurity, driven by unmatched proximity to Wall Street.",
+      "gradCities": [
+        "New York NY",
+        "New Jersey",
+        "Boston MA",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "Rensselaer Polytechnic Institute",
+        "Worcester Polytechnic Institute",
+        "Carnegie Mellon University",
+        "New York University",
+        "Lehigh University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Hudson County Community College",
+          "Bergen Community College"
+        ],
+        "transferAcceptanceRate": "~48%",
+        "freshmanAcceptanceRate": "~44%",
+        "estimatedSavingsRange": "$16,000-$38,000",
+        "transferNotes": "Stevens maintains articulation agreements with New Jersey community colleges, supporting transfer into engineering, computer science, and business programs."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Stevens",
+      "archetype": "Elite Private Technical University \u2014 Quantitative Finance and Wall Street Proximity",
+      "institutionalPersonality": "technically rigorous, quietly ambitious, finance-adjacent, pragmatic",
+      "cultureKeywords": [
+        "Quantitative Finance",
+        "Manhattan Proximity",
+        "Engineering",
+        "Cybersecurity",
+        "Wall Street Access"
+      ],
+      "missionOrientation": "Producing technically rigorous engineers and quantitative finance professionals through direct integration with the New York metro area's finance and technology economy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through rigorous engineering-style mathematical training, applied quantitative finance coursework, and direct professional engagement enabled by Manhattan's immediate proximity.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Generally moderate to progressive, with a pragmatic, technically-focused undercurrent.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite in quantitative finance and engineering, with growing national prestige in cybersecurity.",
+      "socialClimate": "Technically rigorous and quietly ambitious, shaped by proximity to Manhattan's finance and technology economy.",
+      "leadershipStyle": "Leadership through quantitative rigor, technical excellence, and pragmatic proximity to major financial markets."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "An engineering-first technical university providing the most direct undergraduate access to Wall Street of any university not physically located in Manhattan."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 96,
+      "TorBuffChester": 20,
+      "TexasTriangle": 6,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 10,
+      "SoCalCreativeEconomy": 6
+    },
+    "comparativePositioning": {
+      "versusRPI": "RPI offers a larger scale and broader engineering research program, while Stevens offers unmatched direct proximity to Manhattan's finance industry.",
+      "versusNYU": "NYU offers a much larger scale and broader program breadth in the heart of Manhattan, while Stevens offers a more concentrated, engineering-first quantitative finance identity just across the river.",
+      "versusCMU": "Carnegie Mellon offers a stronger overall computer science and robotics research reputation, while Stevens offers a smaller, more finance-proximate environment with comparable quantitative rigor."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 4300,
+      "graduateEnrollment": 3200,
+      "totalEnrollment": 7500,
+      "campusType": "Small Urban Technical University on the Hudson",
+      "residentialIntensity": 78,
+      "communityFeel": 72,
+      "studentFacultyRatio": "10:1",
+      "classSizeExperience": "Moderate class sizes with strong upper-division research and quantitative finance project access, reinforced by direct internship access to Manhattan during the academic year.",
+      "scaleAdvantages": [
+        "Unmatched undergraduate proximity to Wall Street",
+        "One of the oldest and most respected quantitative finance programs",
+        "Strong engineering and cybersecurity programs",
+        "PATH train access to Manhattan in under 15 minutes"
+      ],
+      "scaleDisadvantages": [
+        "Smaller campus with less green space than a traditional college setting",
+        "High cost of living in the Hoboken/Manhattan-adjacent area",
+        "Smaller scale than some peer technical institutes",
+        "Less name recognition nationally outside quantitative finance and engineering circles"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 82,
+        "conscientiousness": 90,
+        "extraversion": 68,
+        "agreeableness": 74,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "I",
+        "C",
+        "E"
+      ],
+      "learningStyle": [
+        "Quantitative Finance Modeling",
+        "Applied Engineering Design",
+        "Cybersecurity Case Studies",
+        "Collaborative Technical Research"
+      ],
+      "socialEnvironment": [
+        "Technically Rigorous",
+        "Quietly Ambitious",
+        "Finance-Adjacent",
+        "Pragmatic",
+        "Urban-Proximate"
+      ],
+      "idealStudentTraits": [
+        "Mathematically strong",
+        "Drawn to engineering, quantitative finance, or cybersecurity",
+        "Motivated by direct access to Wall Street",
+        "Comfortable with a smaller, urban-adjacent campus"
+      ],
+      "thrivesIf": [
+        "Plans for quantitative finance, engineering, or cybersecurity",
+        "Wants direct, near-daily access to Manhattan's finance industry",
+        "Values a technically rigorous, engineering-first education",
+        "Enjoys a smaller campus with immediate access to a major city"
+      ],
+      "strugglesIf": [
+        "Wants a traditional, sprawling college campus with a large green quad",
+        "Needs a lower cost of living",
+        "Prefers a larger university with broader non-STEM offerings",
+        "Wants a campus with a stronger traditional college-town social scene"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more traditional, spacious college campus",
+        "Students wanting a lower cost of living",
+        "Students who prefer a larger university with broader offerings"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Quantitative Finance and Computer Science carry additional selectivity given high demand relative to program capacity."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Quantitative Finance",
+        "Cybersecurity",
+        "Systems Engineering",
+        "Naval Engineering",
+        "Music and Technology"
+      ],
+      "hiddenCareerPipelines": [
+        "Quantitative Trading and Financial Engineering",
+        "Cybersecurity and Information Assurance",
+        "Systems and Naval Engineering",
+        "Financial Technology Development"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "JPMorgan Chase",
+        "Bloomberg",
+        "Major quantitative hedge funds",
+        "New York metro technology and engineering firms"
+      ],
+      "overlookedStrengths": [
+        "Stevens's Quantitative Finance program is one of the oldest and most respected undergraduate quant finance degrees in the country.",
+        "The Hoboken campus's PATH train connection puts students closer to Wall Street, commute-wise, than many students who live in New York City's outer boroughs.",
+        "Stevens's cybersecurity program benefits from direct proximity to New York's dense concentration of financial institutions requiring information security expertise.",
+        "The university's engineering programs maintain strong placement into naval and systems engineering roles, an underappreciated niche given the school's maritime heritage."
+      ],
+      "sleeperIndustries": [
+        "Quantitative Trading and Financial Engineering",
+        "Cybersecurity and Information Assurance",
+        "Naval and Systems Engineering",
+        "Financial Technology Development"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 74,
+      "mentorshipDensity": 72,
+      "executiveAccess": 74,
+      "internshipNetwork": 86,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 74,
+      "referralCultureStrength": 76,
+      "donorNetworkStrength": 64,
+      "boardMemberDensity": 58
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance",
+        "Technology",
+        "Cybersecurity",
+        "Engineering"
+      ],
+      "regionalEconomicDrivers": [
+        "Financial Services",
+        "Technology",
+        "Pharmaceuticals (New Jersey)",
+        "Media"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "JPMorgan Chase",
+        "Bloomberg",
+        "Major quantitative hedge funds",
+        "New York metro technology firms"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Cybersecurity Technology",
+        "Algorithmic Trading Systems"
+      ],
+      "startupDensity": "Moderate to High",
+      "ventureCapitalAccess": 62,
+      "corporateHeadquartersDensity": 52,
+      "healthcareHubStrength": 48,
+      "innovationIndex": 82
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New York Metro Finance and Technology Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "Washington DC",
+        "Philadelphia PA"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "New Jersey",
+        "Boston MA",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "The overwhelming majority of graduates remain in the New York metro area, entering finance, technology, and engineering roles.",
+        "Boston draws graduates into technology and quantitative finance roles.",
+        "Washington DC attracts graduates into cybersecurity and government-adjacent technology roles.",
+        "A meaningful cohort pursues graduate engineering and quantitative finance programs.",
+        "A smaller cohort enters national naval and systems engineering roles."
+      ],
+      "regionalInfluenceScore": 90,
+      "nationalReachScore": 64,
+      "internationalReachScore": 42
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 20,
+      "studentOrganizationStrength": 72,
+      "leadershipDevelopment": 70,
+      "crossDisciplinaryInteraction": 76,
+      "civicEngagement": 56
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 36,
+        "notes": "Limited institutional emphasis relative to finance and engineering."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis."
+      },
+      "entertainmentMedia": {
+        "strength": 32,
+        "notes": "Some presence given New York proximity, though secondary to finance and engineering."
+      },
+      "ventureCapital": {
+        "strength": 56,
+        "notes": "Growing presence tied to New York's expanding fintech ecosystem."
+      },
+      "privateEquity": {
+        "strength": 72,
+        "notes": "Strong placement given Stevens's proximity to Wall Street and quantitative finance program."
+      },
+      "investmentBanking": {
+        "strength": 78,
+        "notes": "Strong pipeline into major investment banks, reinforced by the Quantitative Finance program."
+      },
+      "consulting": {
+        "strength": 64,
+        "notes": "Solid placement into technical and financial consulting practices."
+      },
+      "medicine": {
+        "strength": 30,
+        "notes": "Minimal pre-med emphasis relative to engineering and finance."
+      },
+      "healthcareAdministration": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 48,
+        "notes": "Present through systems and naval engineering programs."
+      },
+      "realEstate": {
+        "strength": 40,
+        "notes": "Moderate presence given New York metro real estate finance ties."
+      },
+      "luxuryBrands": {
+        "strength": 20,
+        "notes": "Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 58,
+        "notes": "Growing entrepreneurship culture, particularly in fintech and cybersecurity."
+      },
+      "technology": {
+        "strength": 84,
+        "notes": "Strong pathway through computer science, cybersecurity, and engineering programs."
+      },
+      "publicPolicy": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "nonprofitLeadership": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 64,
+      "firstGenerationSupport": 62,
+      "wealthCreationPotential": 88,
+      "familyBusinessPipelineStrength": 38
+    },
+    "futureResilience": {
+      "aiResistance": 88,
+      "automationResistance": 86,
+      "adaptabilityScore": 84,
+      "interdisciplinaryStrength": 80,
+      "futureReadiness": 88,
+      "entrepreneurialFlexibility": 70,
+      "lifelongLearningCulture": 78,
+      "innovationCapacity": 84
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 88,
+      "communityLeadershipPotential": 64,
+      "geographicMobility": 74,
+      "workLifeBalancePotential": 66,
+      "purposeAlignment": 74,
+      "familyFormationSupport": 68,
+      "personalDevelopmentPotential": 78,
+      "careerOptionality": 80,
+      "longTermLifeSatisfaction": 76
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 68,
+      "networkMoat": 66,
+      "geographicMoat": 88,
+      "industryMoat": 84,
+      "alumniMoat": 64,
+      "brandDurability": 70,
+      "overallMoatScore": 73
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 58,
+      "returnerScore": 46,
+      "stewardScore": 36,
+      "navigatorScore": 68,
+      "geographicLockIn": "moderate_to_high",
+      "alumniDispersalPattern": "extreme_nyc_metro_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 58,
+        "type": "University Hillel"
+      },
+      "estimatedJewishUndergraduates": 550,
+      "jewishStudentPercentage": "~13%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "Stevens maintains an active Hillel and kosher dining option, serving a well-established Jewish student population given the university's New York metro proximity."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Pinnacle Scholars Program",
+      "strength": 64,
+      "notes": "Offers smaller seminar coursework and priority research opportunities for high-achieving students across all majors."
+    }
+  },
 };
 
 if (typeof module !== "undefined") module.exports = { UNIVERSITY_DB_V5 };

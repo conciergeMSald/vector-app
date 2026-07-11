@@ -1,7 +1,7 @@
 /**
  * VECTOR Lifescape — Geographic Industry Intelligence Database
- * Pass 2: San Francisco Bay Area — 10 ZIP codes
- * Version: 1.0 — June 16, 2026
+ * Pass 2: San Francisco Bay Area — 19 ZIP codes
+ * Version: 1.2 — added 3 Marin County ZIPs (Novato, Corte Madera, San Anselmo) 2026-07-10
  */
 
 const GEO_INDUSTRY_DB_BAYAREA = {
@@ -595,6 +595,51 @@ const GEO_INDUSTRY_DB_BAYAREA = {
         distance: "8 miles — San Francisco",
         anchor_employers: ["SF-headquartered tech and venture firms"],
         student_connection: "Sausalito sits at the base of the Golden Gate Bridge — an 8-mile, scenic commute for tech and finance professionals working in the city."
+      }
+    ]
+  },
+
+  "94945": {
+    zip: "94945",
+    neighborhood: "Novato",
+    county: "Marin",
+    clusters: [
+      {
+        name: "Biomedical Research — Aging & Longevity Science",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["Buck Institute for Research on Aging"],
+        student_connection: "The Buck Institute for Research on Aging — one of the only research institutes in the world focused exclusively on the biology of aging — is headquartered in Novato, giving North Marin a genuine, if under-recognized, biomedical research identity."
+      }
+    ]
+  },
+
+  "94925": {
+    zip: "94925",
+    neighborhood: "Corte Madera",
+    county: "Marin",
+    clusters: [
+      {
+        name: "Publishing, Bookselling & Literary Programming",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Book Passage"],
+        student_connection: "Book Passage in Corte Madera is one of the most nationally recognized independent bookstores in America for its author events and writing conferences — a real literary-industry anchor inside a retail corridor most people just drive past."
+      }
+    ]
+  },
+
+  "94960": {
+    zip: "94960",
+    neighborhood: "San Anselmo",
+    county: "Marin",
+    clusters: [
+      {
+        name: "Theology, Divinity & Religious Studies",
+        naics: 61,
+        distance: "Local",
+        anchor_employers: ["San Francisco Theological Seminary"],
+        student_connection: "San Francisco Theological Seminary, one of the oldest and most established divinity schools on the West Coast, has been based in San Anselmo since 1892 — a genuine academic and religious-studies anchor in a small Marin town."
       }
     ]
   }

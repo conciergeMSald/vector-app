@@ -2677,10 +2677,64 @@ function getSchoolContent(schoolNames) {
   return schoolNames.map(n => UNIVERSITY_CONTENT[n]||null).filter(Boolean);
 }
 
-function formatSchoolsForPrompt(schools) {
-  return schools.map(s =>
-    `SCHOOL: ${s.name} (${s.location})\nPIPELINE: ${s.pipeline}\nHIDDEN PATHWAY: ${s.hidden_pathway}\nTHE ROOM: ${s.the_room}\nLIFESTYLE: ${s.lifestyle}\nGRADS GO TO: ${s.grad_cities}`
-  ).join("\n\n---\n\n");
+// ─────────────────────────────────────────────────────────────
+// Truncation guard — added 2026-07-10
+// A systemic character-limit bug (documented in VECTOR_PreDeployment_Systems_
+// Audit_AddendumA.docx) left 521 of 1,013 prose fields across 196 of 221
+// schools cut off mid-sentence at fixed length boundaries per field. The real
+// fix is re-authoring that content (post-MVP, per product owner decision).
+// Until then, this guard detects the exact truncation signature and omits the
+// affected field from the prompt rather than emit a broken sentence to a live
+// family report. This is a suppression, not a fix -- it reduces information
+// (a school may show fewer fields than it should), never fabricates content.
+// ─────────────────────────────────────────────────────────────
+const TRUNCATION_LENGTH_SIGNATURES = {
+  pipeline: [199, 200, 279, 280],
+  hidden_pathway: [149, 150, 249, 250],
+  the_room: [119, 120, 199, 200],
+  lifestyle: [179, 180],
+  grad_cities: [119, 120],
+};
+
+function isFieldTruncated(fieldName, value) {
+  if (typeof value !== "string") return false;
+  const trimmed = value.trim();
+  if (trimmed.length === 0) return false;
+  const suspectLengths = TRUNCATION_LENGTH_SIGNATURES[fieldName];
+  if (!suspectLengths || !suspectLengths.includes(trimmed.length)) return false;
+  // Ends with real terminal punctuation -> coincidental length match, not truncation
+  return !/[.!?)%"]$/.test(trimmed);
 }
 
-if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolContent,formatSchoolsForPrompt};
+function formatSchoolsForPrompt(schools) {
+  return schools.map(s => {
+    const lines = [`SCHOOL: ${s.name} (${s.location})`];
+
+    const proseFields = [
+      ["pipeline", "PIPELINE"],
+      ["hidden_pathway", "HIDDEN PATHWAY"],
+      ["the_room", "THE ROOM"],
+      ["lifestyle", "LIFESTYLE"],
+      ["grad_cities", "GRADS GO TO"],
+    ];
+    for (const [field, label] of proseFields) {
+      if (isFieldTruncated(field, s[field])) continue; // omit rather than emit broken text
+      if (s[field]) lines.push(`${label}: ${s[field]}`);
+    }
+
+    let block = lines.join("\n");
+
+    if (s.netPriceByIncome) {
+      const p = s.netPriceByIncome;
+      block += `\nNET PRICE BY INCOME: <$30k $${p.under30k} | $30-48k $${p.from30to48k} | $48-75k $${p.from48to75k} | $75-110k $${p.from75to110k} | >$110k $${p.over110k}`;
+    }
+
+    if (s.networkCapital) {
+      block += `\nNETWORK CAPITAL: ${s.networkCapital}`;
+    }
+
+    return block;
+  }).join("\n\n---\n\n");
+}
+
+if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolContent,formatSchoolsForPrompt,isFieldTruncated};

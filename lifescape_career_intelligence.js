@@ -3,11 +3,28 @@ const _g = typeof window !== 'undefined' ? window : typeof globalThis !== 'undef
 
 /**
  * VECTOR Lifescape — Career Intelligence Layer
- * Version: 1.0 — June 17, 2026
+ * Version: 1.2 — architectural decision logged 2026-07-10
+ *
+ * ARCHITECTURAL DECISION (2026-07-10, product owner): IBIS_WORLD_REGISTRY's 19 worlds
+ * and UNIVERSITY_DB_V5_MASTER.js's 20 industryPathways categories will NOT be crosswalked
+ * onto NAICS. Decision: keep as intentionally separate narrative layers -- NAICS remains
+ * the shared spine for MAJOR_MAP, GEO_INDUSTRY_DB, NAICS_TO_ONET, and the CIP bridge, but
+ * the IBIS/V5 narrative taxonomies exist for family-facing storytelling, not statistical
+ * classification, and forcing a crosswalk would constrain narrative flexibility for no
+ * current product benefit. Revisit only if a specific future feature requires formally
+ * connecting a student's IBIS world / V5 industryPathway score to the NAICS-coded systems
+ * (e.g. surfacing GEO_INDUSTRY_DB clusters that match a student's hidden-pathway world) --
+ * until then, no bridge should be built or assumed by other files.
  *
  * Provides:
- *   IBIS_WORLD_REGISTRY   — 10 career worlds with occupations, pay, and university pipelines
+ *   IBIS_WORLD_REGISTRY   — 19 career worlds with occupations, pay, and university pipelines
+ *                            (previously documented as 10 -- count corrected 2026-07-10)
  *   BRIDGE_DB             — 67 metro community college transfer pathways
+ *   INDUSTRY_BRIDGE_DB    — 16 state-code-keyed industry bridge entries (CA, NC, MA, NJ, MD,
+ *                            TX, NY, PA, AZ, FL, GA, OH, CT, WI, VA, WA). Not previously listed
+ *                            in this header at all; not currently in module.exports either --
+ *                            status (finished/in-progress/abandoned) unconfirmed, flagged for
+ *                            follow-up, not wired to anything found in the project so far.
  *   buildCareerLandscape() — formats IBIS data for callB prompt injection
  *   findBridgePath()       — surfaces CC pathway for callC prompt injection
  *   resolveWorldId()       — maps NAICS/combo labels to canonical world ID

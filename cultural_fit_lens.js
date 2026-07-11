@@ -105,6 +105,7 @@ const SCHOOL_CULTURE_CATEGORY = {
   "Kettering University": { "category": "Private / Flat Tuition" },
   "Lehigh University": { "category": "Private / Flat Tuition" },
   "Louisiana State University": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 2.4, "admitRate": 0.733 },
+  "Loyola Marymount University": { "category": "Private / Flat Tuition" },
   "Maine Maritime Academy": { "category": "Selective on Merit", "tuitionRatio": 2.05, "admitRate": 0.541 },
   "Marquette University": { "category": "Private / Flat Tuition" },
   "Marshall University": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 2.22, "admitRate": 0.957 },
@@ -125,6 +126,7 @@ const SCHOOL_CULTURE_CATEGORY = {
   "Occidental College": { "category": "Private / Flat Tuition" },
   "Ohio State University": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 3.02, "admitRate": 0.606 },
   "Ohio Wesleyan University": { "category": "Private / Flat Tuition" },
+  "Oklahoma State University": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 2.52, "admitRate": 0.75 },
   "Oregon State University": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 2.65, "admitRate": 0.773 },
   "Penn State University": { "category": "Broadly Accessible", "tuitionRatio": 2.02, "admitRate": 0.606 },
   "Pepperdine University": { "category": "Private / Flat Tuition" },
@@ -161,6 +163,7 @@ const SCHOOL_CULTURE_CATEGORY = {
   "Texas A&M University": { "category": "Exclusive & Protective", "tuitionRatio": 3.05, "admitRate": 0.574 },
   "Texas State University": { "category": "Broadly Accessible", "tuitionRatio": 2.0, "admitRate": 0.893 },
   "Texas Tech University": { "category": "Broadly Accessible", "tuitionRatio": 2.06, "admitRate": 0.727 },
+  "Towson University": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 2.54, "admitRate": 0.82 },
   "Tulane University": { "category": "Private / Flat Tuition" },
   "UC Berkeley": { "category": "Exclusive & Protective", "tuitionRatio": 3.09, "admitRate": 0.11 },
   "UC Riverside": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 3.19, "admitRate": 0.764 },
@@ -185,6 +188,7 @@ const SCHOOL_CULTURE_CATEGORY = {
   "University of Florida": { "category": "Exclusive & Protective", "tuitionRatio": 4.49, "admitRate": 0.242 },
   "University of Georgia": { "category": "Exclusive & Protective", "tuitionRatio": 2.77, "admitRate": 0.377 },
   "University of Hawaii at Manoa": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 2.81, "admitRate": 0.866 },
+  "University of Houston": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 2.32, "admitRate": 0.739 },
   "University of Idaho": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 3.12, "admitRate": 0.755 },
   "University of Illinois Urbana-Champaign": { "category": "Selective on Merit", "tuitionRatio": 2.19, "admitRate": 0.424 },
   "University of Iowa": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 2.96, "admitRate": 0.836 },
@@ -218,6 +222,7 @@ const SCHOOL_CULTURE_CATEGORY = {
   "University of South Florida": { "category": "Exclusive & Protective", "tuitionRatio": 2.7, "admitRate": 0.432 },
   "University of Tennessee": { "category": "Exclusive & Protective", "tuitionRatio": 2.41, "admitRate": 0.416 },
   "University of Tennessee at Chattanooga": { "category": "Broadly Accessible", "tuitionRatio": 1.77, "admitRate": 0.811 },
+  "University of Texas at Dallas": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 2.74, "admitRate": 0.651 },
   "University of Tulsa": { "category": "Private / Flat Tuition" },
   "University of Utah": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 3.21, "admitRate": 0.86 },
   "University of Vermont": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 2.39, "admitRate": 0.653 },
@@ -232,7 +237,9 @@ const SCHOOL_CULTURE_CATEGORY = {
   "Virginia Tech": { "category": "Exclusive & Protective", "tuitionRatio": 2.37, "admitRate": 0.548 },
   "Wake Forest University": { "category": "Private / Flat Tuition" },
   "Washington and Lee University": { "category": "Private / Flat Tuition" },
+  "Washington University in St. Louis": { "category": "Private / Flat Tuition" },
   "Webb Institute": { "category": "Private / Flat Tuition" },
+  "Weber State University": { "category": "Open Door, Local Lifestyle", "tuitionRatio": 2.68 },
   "Wesleyan University": { "category": "Private / Flat Tuition" },
   "Williams College": { "category": "Private / Flat Tuition" },
   "Wofford College": { "category": "Private / Flat Tuition" },
@@ -241,3 +248,46 @@ const SCHOOL_CULTURE_CATEGORY = {
 };
 
 if (typeof module !== "undefined") module.exports = { SCHOOL_CULTURE_CATEGORY };
+
+// ─────────────────────────────────────────────────────────────
+// getCultureNarrative(schoolName) — added 2026-07-10 (Step 7 wiring)
+//
+// lifescape.html already calls this function (in the callD prompt builder,
+// via `typeof getCultureNarrative === 'function'`) but it was never defined
+// anywhere -- the exact same dead-hook pattern as getMajorStrengths found
+// earlier in this audit. This implements it at the location the app's own
+// architecture already expects, rather than routing the same value through
+// a different file (university-content.js's formatSchoolsForPrompt was
+// tried first, then reverted, once this was discovered).
+//
+// Per CULTURAL-FIT-LENS-001's original design: category narrative only,
+// NEVER the raw tuitionRatio/admitRate numbers -- parent-facing reports
+// never show scores. Returns null (not empty string) when a school has no
+// category, matching the caller's own null-check pattern at lifescape.html
+// line ~6202.
+// ─────────────────────────────────────────────────────────────
+const CULTURE_CATEGORY_NARRATIVE = {
+  "Exclusive & Protective":
+    "This school sits at the intersection of genuine selectivity and a real cost premium over comparable public options -- the kind of place where the name itself does quiet social work for a family long after graduation.",
+  "Selective on Merit":
+    "Hard to get into, but not because of what a family can pay -- this school's selectivity is a genuine academic filter, not a price filter, and that distinction matters to how it should be framed.",
+  "Open Door, Local Lifestyle":
+    "Admission here is genuinely accessible, but the cost premium over an in-state public option is real -- this is a school chosen for a specific regional identity and lifestyle fit, not for exclusivity.",
+  "Broadly Accessible":
+    "Both admission and cost here are genuinely open -- this is a practical, low-friction choice without a prestige premium attached, and that should be framed as a strength, not a fallback.",
+  "Private / Flat Tuition":
+    "As a private school, there's no in-state/out-of-state cost distinction here -- the sticker price is the same for every family, which changes how affordability conversations should be framed relative to a public flagship.",
+};
+
+function getCultureNarrative(schoolName) {
+  const entry = SCHOOL_CULTURE_CATEGORY[schoolName];
+  if (!entry) return null;
+  return CULTURE_CATEGORY_NARRATIVE[entry.category] || null;
+}
+
+if (typeof window !== "undefined") {
+  window.getCultureNarrative = getCultureNarrative;
+}
+if (typeof module !== "undefined") {
+  module.exports.getCultureNarrative = getCultureNarrative;
+}

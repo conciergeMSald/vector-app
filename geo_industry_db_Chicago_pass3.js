@@ -1,12 +1,36 @@
 /**
  * VECTOR Lifescape — Geographic Industry Intelligence Database
- * Pass 3: Chicago Metro — 20 ZIP codes
- * Version: 1.0 — June 16, 2026
+ * Pass 3: Chicago Metro — 32 ZIP codes (expanded north to Wisconsin, south to
+ * Gary/Whiting Indiana, downtown core, River North, Bronzeville, and food/
+ * agribusiness corridor — 2026-07-10)
+ * Version: 1.4 — June 16, 2026 (original) / July 10, 2026 (full depth pass:
+ * geography, downtown core, architecture/advertising/media/arts/PE/hedge
+ * funds, ethnic hair care manufacturing, agribusiness, food manufacturing)
+ *
+ * NOTE ON CONFIDENCE: Oppenheimer & Co. is included as a real Chicago office
+ * (wealth management), NOT a headquarters claim -- their actual HQ is New
+ * York. Flavorchem Corporation (Mundelein) was named directly by the product
+ * owner; its Mundelein location is my own best-knowledge recollection, not
+ * independently browser-verified (no web search available this session).
+ * Flagged here per the same confidence-disclosure standard used throughout
+ * this file's other additions.
  *
  * Chicago is the third-largest financial center in the US,
  * the largest pharmaceutical corridor in the Midwest,
  * and the home of more Fortune 500 HQs per capita than any city
  * except New York. These facts change what students see as possible.
+ *
+ * RESOLVED 2026-07-10: the previous version of this file had zero downtown
+ * Loop coverage despite this docstring's own claim about Chicago's financial-
+ * center status. Added The Loop (Kirkland & Ellis, Sidley Austin, Winston &
+ * Strawn, CME Group, Cboe, CNA Financial, Hyatt Hotels, United Airlines) and
+ * West Loop/Fulton Market (McDonald's, Kraft Heinz, Conagra Brands, Exelon),
+ * plus North Chicago (AbbVie, Abbott Laboratories) and Northbrook (Allstate).
+ *
+ * STILL OPEN: 33 of the original 302 employer entries (10.9%) in the suburban
+ * ZIPs remain generic filler ("various private wealth offices," "various
+ * Chicago tech companies") rather than real named companies. Filed to the
+ * post-MVP punch list.
  */
 
 const GEO_INDUSTRY_DB_CHICAGO = {
@@ -253,7 +277,7 @@ const GEO_INDUSTRY_DB_CHICAGO = {
         name: "Finance & Investment Banking",
         naics: 52,
         distance: "15 miles south — Chicago Loop",
-        anchor_employers: ["Northern Trust", "William Blair", "Citadel", "Baird"],
+        anchor_employers: ["Northern Trust", "William Blair", "Citadel", "Baird", "Magnetar Capital (HQ)"],
         student_connection: "Northwestern's Kellogg School of Management is the primary feeder for Chicago investment banking and private equity — and the Loop is a 30-minute train ride south. Evanston residents commute into one of the largest financial markets in the US."
       },
       {
@@ -359,6 +383,13 @@ const GEO_INDUSTRY_DB_CHICAGO = {
         distance: "15 miles — Lisle / Warrenville",
         anchor_employers: ["Molex (Lisle)", "Navient (Willow Springs)", "various I-88 tech corridor companies"],
         student_connection: "The I-88 Research and Technology Corridor — running west from Oak Brook through Lisle and Naperville — is one of the largest concentrations of technology and engineering companies in the Midwest."
+      },
+      {
+        name: "Consumer Products & OTC Pharmaceutical Manufacturing",
+        naics: 32,
+        distance: "Local",
+        anchor_employers: ["Blistex Inc. (HQ)"],
+        student_connection: "Blistex — the lip care and OTC pharmaceutical manufacturer — is genuinely headquartered in Oak Brook, a real, specific consumer-products and pharmaceutical-manufacturing career pathway most students would never connect to this corporate-park suburb."
       }
     ]
   },
@@ -880,6 +911,289 @@ const GEO_INDUSTRY_DB_CHICAGO = {
         distance: "15 miles south",
         anchor_employers: ["Vista Medical Center (Waukegan)", "Northwestern Medicine Lake Forest", "Advocate Condell (Libertyville)"],
         student_connection: "Vista Medical Center in Waukegan is the primary hospital serving northern Lake County — and the NorthShore and Northwestern Medicine systems extend into this area."
+      }
+    ]
+  },
+
+  "53142": {
+    zip: "53142",
+    neighborhood: "Kenosha",
+    county: "Kenosha",
+    state: "Wisconsin",
+    clusters: [
+      {
+        name: "Tools & Industrial Manufacturing",
+        naics: 33,
+        distance: "Local",
+        anchor_employers: ["Snap-on Incorporated (HQ)"],
+        student_connection: "Snap-on's global headquarters is in Kenosha — a real, iconic American tool manufacturer with a genuine advanced-manufacturing and industrial-design career pathway, not a Chicago satellite office."
+      }
+    ]
+  },
+
+  "53158": {
+    zip: "53158",
+    neighborhood: "Pleasant Prairie",
+    county: "Kenosha",
+    state: "Wisconsin",
+    clusters: [
+      {
+        name: "Logistics & E-Commerce Distribution",
+        naics: 48,
+        distance: "Local",
+        anchor_employers: ["Uline (HQ)"],
+        student_connection: "Uline's headquarters and primary distribution operations are in Pleasant Prairie, just north of the Illinois line — a genuine large-scale logistics and distribution career pathway anchoring the northern edge of the Chicago-Milwaukee corridor."
+      }
+    ]
+  },
+
+  "46402": {
+    zip: "46402",
+    neighborhood: "Gary",
+    county: "Lake",
+    state: "Indiana",
+    clusters: [
+      {
+        name: "Steel Manufacturing",
+        naics: 33,
+        distance: "Local",
+        anchor_employers: ["U.S. Steel (Gary Works)"],
+        student_connection: "U.S. Steel's Gary Works is one of the largest integrated steel mills in North America — a real, historic heavy-manufacturing career pathway that predates and sits entirely outside Chicago's finance-and-corporate reputation."
+      }
+    ]
+  },
+
+  "46394": {
+    zip: "46394",
+    neighborhood: "Whiting",
+    county: "Lake",
+    state: "Indiana",
+    clusters: [
+      {
+        name: "Oil Refining & Petrochemicals",
+        naics: 32,
+        distance: "Local",
+        anchor_employers: ["BP (Whiting Refinery)"],
+        student_connection: "BP's Whiting Refinery is one of the largest oil refineries in the Midwest — a genuine petrochemical and energy-industry career pathway on the Indiana side of the metro, distinct from Chicago's own economy but very much part of the same labor market."
+      }
+    ]
+  },
+
+  "60602": {
+    zip: "60602",
+    neighborhood: "The Loop",
+    county: "Cook",
+    clusters: [
+      {
+        name: "Corporate Law",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["Kirkland & Ellis (HQ)", "Sidley Austin (HQ)", "Winston & Strawn (HQ)"],
+        student_connection: "Kirkland & Ellis — one of the highest-revenue law firms in the world — along with Sidley Austin and Winston & Strawn, are all genuinely headquartered in the Loop, not just maintaining a satellite office. This is one of the most concentrated corporate law markets in the country."
+      },
+      {
+        name: "Financial Exchanges & Trading",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["CME Group (HQ)", "Cboe Global Markets (HQ)", "Chicago Board of Trade (CBOT, now part of CME Group)", "Goldman Sachs (major Chicago office)"],
+        student_connection: "CME Group and Cboe — two of the largest financial derivatives and options exchanges in the world — are both genuinely headquartered in the Loop. The Chicago Board of Trade, now part of CME Group, is where modern commodities futures trading was invented in the 1800s and remains the real historic foundation of Chicago's reputation as a top-3 US financial center. Goldman Sachs maintains a major trading and investment banking office here as well — real, substantial Wall Street presence outside New York."
+      },
+      {
+        name: "Private Equity & Hedge Funds",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["Madison Dearborn Partners (HQ)", "GTCR (HQ)", "Balyasny Asset Management (HQ)"],
+        student_connection: "Madison Dearborn Partners and GTCR — both major, genuinely Chicago-headquartered private equity firms — sit alongside Balyasny Asset Management, a real, large-scale hedge fund headquartered in the Loop. Private equity and hedge fund careers here are a genuine, substantial industry, not an outpost of New York."
+      },
+      {
+        name: "Private Family Offices",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["Pritzker Group"],
+        student_connection: "The Pritzker Group — the Chicago-based Pritzker family's private investment and family office vehicle, distinct from the publicly traded Hyatt Hotels the family also founded — represents a genuine, real private wealth and family-office career pathway specific to Chicago's business history."
+      },
+      {
+        name: "Insurance",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["CNA Financial (HQ)"],
+        student_connection: "CNA Financial, one of the largest commercial insurance companies in the country, is genuinely headquartered in the Loop — a real insurance-industry career pathway sitting alongside the exchanges and law firms most people associate with this address."
+      },
+      {
+        name: "Hospitality & Travel",
+        naics: 72,
+        distance: "Local",
+        anchor_employers: ["Hyatt Hotels Corporation (HQ)"],
+        student_connection: "Hyatt Hotels Corporation, founded and still substantially controlled by Chicago's Pritzker family, is genuinely headquartered in the Loop — a real global hospitality-industry career pathway with deep, specific Chicago roots."
+      },
+      {
+        name: "Aviation & Fortune 500 Corporate HQ",
+        naics: 48,
+        distance: "Local",
+        anchor_employers: ["United Airlines Holdings (HQ)"],
+        student_connection: "United Airlines' global headquarters is in the Loop — one of the largest airlines in the world run out of downtown Chicago, a genuine aviation-industry corporate career pathway distinct from an airport-adjacent operations job."
+      }
+    ]
+  },
+
+  "60607": {
+    zip: "60607",
+    neighborhood: "West Loop / Fulton Market",
+    county: "Cook",
+    clusters: [
+      {
+        name: "Consumer Packaged Goods & Fortune 500 HQ",
+        naics: 31,
+        distance: "Local",
+        anchor_employers: ["McDonald's Corporation (global HQ)", "Kraft Heinz (HQ)", "Conagra Brands (HQ)"],
+        student_connection: "McDonald's moved its global headquarters to Fulton Market specifically to be near this neighborhood's tech and creative talent — Kraft Heinz and Conagra Brands are both headquartered within blocks, making West Loop one of the most concentrated consumer packaged goods corporate hubs in the country."
+      },
+      {
+        name: "Utilities & Energy",
+        naics: 22,
+        distance: "1 mile — Loop",
+        anchor_employers: ["Exelon Corporation (HQ)"],
+        student_connection: "Exelon, one of the largest utility holding companies in the country, is headquartered in downtown Chicago — a real energy-sector corporate career pathway independent of the West Loop's consumer-brand reputation."
+      }
+    ]
+  },
+
+  "60064": {
+    zip: "60064",
+    neighborhood: "North Chicago",
+    county: "Lake",
+    clusters: [
+      {
+        name: "Pharmaceuticals & Biotech",
+        naics: 32,
+        distance: "Local",
+        anchor_employers: ["AbbVie (global HQ)", "Abbott Laboratories (global HQ)"],
+        student_connection: "AbbVie and Abbott Laboratories — both genuine Fortune 500 pharmaceutical and healthcare giants — are headquartered in North Chicago and adjacent Abbott Park, a real, large-scale pharmaceutical career pathway most students would assume only exists in Boston or New Jersey."
+      }
+    ]
+  },
+
+  "60062": {
+    zip: "60062",
+    neighborhood: "Northbrook",
+    county: "Cook",
+    clusters: [
+      {
+        name: "Insurance",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["Allstate (global HQ)"],
+        student_connection: "Allstate's global headquarters is in Northbrook — one of the largest insurance companies in the country, a genuine, large-scale insurance-industry career pathway anchored in the Chicago suburbs rather than downtown."
+      },
+      {
+        name: "Chemical Manufacturing — Flavors & Fragrances",
+        naics: 32,
+        distance: "Local",
+        anchor_employers: ["Bell Flavors & Fragrances (HQ)"],
+        student_connection: "Bell Flavors & Fragrances, a real flavor and fragrance chemical manufacturer headquartered in Northbrook, gives this suburb a genuine chemical-engineering and flavor-science career pathway most students would never think to connect to Chicago's north suburbs."
+      }
+    ]
+  },
+
+  "60654": {
+    zip: "60654",
+    neighborhood: "River North",
+    county: "Cook",
+    clusters: [
+      {
+        name: "Architecture & Design",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["Skidmore, Owings & Merrill (SOM) (HQ)"],
+        student_connection: "SOM — the firm behind Willis Tower, One World Trade Center, and the Burj Khalifa — is genuinely headquartered in Chicago, the city that invented the modern skyscraper. This is one of the most influential architecture firms in the world, not a regional office."
+      },
+      {
+        name: "Advertising",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["Leo Burnett (HQ)", "DDB Chicago (HQ)"],
+        student_connection: "Leo Burnett — the advertising agency behind the Marlboro Man and Tony the Tiger — and DDB Chicago, another agency with deep, genuine Chicago roots, are both headquartered here, a real advertising-industry career pathway independent of New York's Madison Avenue reputation."
+      },
+      {
+        name: "Media & Journalism",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Chicago Tribune (HQ)"],
+        student_connection: "The Chicago Tribune, one of the largest and most historically significant newspapers in the country, is genuinely headquartered in Chicago — a real, large-market journalism career pathway."
+      },
+      {
+        name: "Arts & Performing Arts",
+        naics: 71,
+        distance: "Local",
+        anchor_employers: ["Art Institute of Chicago", "Steppenwolf Theatre Company"],
+        student_connection: "The Art Institute of Chicago is one of the largest and most significant art museums in the country, and Steppenwolf Theatre Company is a genuinely nationally significant, Chicago-founded theater company — real arts-administration and performing-arts career pathways, not community-theater scale."
+      }
+    ]
+  },
+
+  "60653": {
+    zip: "60653",
+    neighborhood: "Bronzeville",
+    county: "Cook",
+    clusters: [
+      {
+        name: "Ethnic Hair Care Manufacturing",
+        naics: 32,
+        distance: "Local",
+        anchor_employers: ["Johnson Products Company (historic HQ)", "Soft Sheen (founded here)"],
+        student_connection: "Johnson Products Company, maker of Ultra Sheen, was one of the first Black-owned companies listed on a U.S. stock exchange and was founded and based in Bronzeville — alongside Soft Sheen, founded by Edward Gardner in Chicago, this is real, historically significant Black-owned manufacturing history, not a footnote to the broader beauty industry."
+      }
+    ]
+  },
+
+  "60606": {
+    zip: "60606",
+    neighborhood: "The Loop (West)",
+    county: "Cook",
+    clusters: [
+      {
+        name: "Agribusiness & Commodities Processing",
+        naics: 11,
+        distance: "Local",
+        anchor_employers: ["Archer-Daniels-Midland (ADM) (HQ)"],
+        student_connection: "ADM — one of the largest agribusiness and food-processing companies in the world — relocated its global headquarters to Chicago in 2014, a genuine agribusiness corporate career pathway most students would assume only exists in a rural farm-belt town."
+      },
+      {
+        name: "Wealth Management",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["Oppenheimer & Co. (Chicago office)"],
+        student_connection: "Oppenheimer & Co. maintains a real, substantial wealth management office in Chicago — not a headquarters, but genuine private wealth management career access outside New York."
+      }
+    ]
+  },
+
+  "60018": {
+    zip: "60018",
+    neighborhood: "Rosemont",
+    county: "Cook",
+    clusters: [
+      {
+        name: "Food Manufacturing & Distribution",
+        naics: 31,
+        distance: "Local",
+        anchor_employers: ["US Foods (HQ)", "Ferrara Candy Company (HQ)"],
+        student_connection: "US Foods, one of the largest food distribution companies in the country, and Ferrara Candy Company — maker of Nerds and SweeTarts — are both genuinely headquartered in Rosemont, a real, large-scale food manufacturing and distribution career pathway most students overlook in favor of the CPG giants downtown."
+      }
+    ]
+  },
+
+  "60060": {
+    zip: "60060",
+    neighborhood: "Mundelein",
+    county: "Lake",
+    clusters: [
+      {
+        name: "Chemical Manufacturing — Flavors & Fragrances",
+        naics: 32,
+        distance: "Local",
+        anchor_employers: ["Flavorchem Corporation (HQ)"],
+        student_connection: "Flavorchem, a flavor and fragrance chemical manufacturer, is headquartered in Mundelein — a genuine, specific chemical-manufacturing career pathway in the northern suburbs, alongside Bell Flavors & Fragrances in nearby Northbrook."
       }
     ]
   }
