@@ -5030,7 +5030,9 @@ THRIVES: [One honest sentence starting naturally with what makes this student th
 WATCH: [One honest sentence naming a single genuine thing to know — a real trade-off or condition this student should walk in aware of. Never a disguised compliment. Never alarming. Stated with respect, the way a trusted advisor levels with someone they respect.]
 RESILIENCE: [One sentence — what this school equips this specific student to do or become that holds up over time, beyond the first job. Specific to their profile, not a generic outcomes claim.]
 
-Write all ${matchedSchools.length} schools in this format. This student selected ${ctx.college_prefs && ctx.college_prefs.regions ? ctx.college_prefs.regions.filter(r=>r!=="anyone").length : 0} region(s). CRITICAL: If specific regions were selected, every region the student chose must have at least one school represented. Do not cluster all recommendations in one region.
+MANDATORY COVERAGE — READ CAREFULLY: You must write exactly ${matchedSchools.length} SCHOOL blocks, one for each of these schools, by exact name, in any order:
+${matchedSchools.map((s, i) => `${i + 1}. ${s}`).join('\n')}
+Before finishing your response, count your SCHOOL: lines against this numbered list. If any name above is missing a block, add it before ending your response. Do not skip, merge, or consolidate any school on this list, even if two schools feel similar — each gets its own full block. This student selected ${ctx.college_prefs && ctx.college_prefs.regions ? ctx.college_prefs.regions.filter(r=>r!=="anyone").length : 0} region(s). CRITICAL: If specific regions were selected, every region the student chose must have at least one school represented. Do not cluster all recommendations in one region.
 
 ${_reportUpgradeD}${_longevityD}${_competeD}\n\n── PHILOSOPHY LAYER (always active) ──
 NO HIERARCHY: School recommendations must NEVER imply that the schools not recommended are failures. Every school on the list is there because it fits this student — not because it ranks above some threshold.
@@ -6401,6 +6403,49 @@ async function submitLifescape() {
             }
           }
           console.log('[callD] parsed schools:', callDData.length, callDData.map(s=>s.name));
+
+          // ── GUARANTEED COVERAGE BACKFILL ──
+          // Claude is instructed to write one SCHOOL block per candidate, but
+          // nothing enforces that — observed directly: University of Michigan
+          // sent as a valid candidate, silently absent from Claude's response,
+          // with no error and no indication anything was wrong. The prompt-side
+          // fix (MANDATORY COVERAGE checklist above) helps but doesn't
+          // guarantee compliance. This backfill is the actual guarantee: any
+          // sent candidate missing from Claude's response gets a real,
+          // V5-sourced block constructed deterministically, not silently
+          // dropped. Added 2026-07-12.
+          (function backfillMissingSchools() {
+            var sentNames = matchedSchools.slice(0, _schoolCount);
+            var returnedNames = new Set(callDData.map(function(s) { return s.name; }));
+            var missing = sentNames.filter(function(n) { return !returnedNames.has(n); });
+            if (!missing.length) return;
+
+            console.warn('[callD] Backfilling', missing.length, 'school(s) Claude omitted:', missing);
+
+            missing.forEach(function(name) {
+              var src = (typeof UNIVERSITY_CONTENT !== 'undefined') ? UNIVERSITY_CONTENT[name] : null;
+              if (!src) {
+                console.warn('[callD] Cannot backfill "' + name + '" — no V5/UNIVERSITY_CONTENT entry found. Omitting rather than fabricating.');
+                return;
+              }
+              var narrative = src.institutionNarrative || src; // supports both new-schema and legacy-flat shapes
+              var summary = narrative.oneSentenceSummary || '';
+              var hidden = narrative.hiddenPathway || narrative.pipeline || '';
+              var thrivesArr = (src.studentFit && src.studentFit.thrivesIf) || [];
+              var strugglesArr = (src.studentFit && src.studentFit.strugglesIf) || [];
+
+              callDData.push({
+                name: name,
+                match: summary ? stripMD(summary) : ('A strong fit worth a real look based on your profile.'),
+                why: [summary, hidden].filter(Boolean).map(stripMD).join(' ') || 'This school surfaced as a strong match for your profile — worth a direct conversation with your counselor about why.',
+                thrivesIf: thrivesArr.length ? stripMD(thrivesArr[0]) : 'Students who want what this school is genuinely known for tend to do well here.',
+                watchFor: strugglesArr.length ? stripMD(strugglesArr[0]) : 'Worth a direct conversation with your counselor about whether the day-to-day fit is right.',
+                resilience: 'Ask your counselor to walk through why this one surfaced — it\'s a real match, not a filler pick.'
+              });
+            });
+
+            console.log('[callD] After backfill:', callDData.length, callDData.map(function(s){return s.name;}));
+          })();
 
           // ── GPA hard gate — prevents academic mismatches (e.g. Harvard for a 3.2 GPA) ──
           // Uses the student's normalized GPA tier against each school's real
