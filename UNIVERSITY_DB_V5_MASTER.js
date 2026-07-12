@@ -1597,15 +1597,9 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Lundquist Business cohorts build direct ties to Nike and the broader Portland-Seattle business corridor."
     },
     "industryPathways": {
-      "sportsBusiness": {
-        "strength": 92,
-        "notes": "Arguably the best sports business pipeline in the country via Nike."
-      },
-      "marketing": {
-        "strength": 82,
-        "notes": "Strong marketing career placement."
-      }
-    },
+    "sportsBusiness": { "strength": 92, "notes": "Arguably the best sports business pipeline in the country via Nike." },
+    "consumerProducts": { "strength": 82, "notes": "Strong marketing career placement, reinforced by Nike brand proximity. (Remapped 2026-07-12 from non-standard key 'marketing'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 66,
@@ -3358,6 +3352,7 @@ const UNIVERSITY_DB_V5 = {
         "strength": 68,
         "notes": "Nutrition, kinesiology, food science, and biomedical engineering provide meaningful preparation, though healthcare is not the university's primary institutional focus."
       },
+      "agriculture": { "strength": 98, "notes": "One of the top agricultural and life sciences universities in the country -- Iowa State's College of Agriculture and Life Sciences is a defining institutional identity, not a secondary pathway. (Added 2026-07-12: previously scattered thin across nutraceuticals, outdoorIndustry, publicPolicy, entrepreneurship, and nonprofitLeadership notes with no dedicated signal.)" },
       "nutraceuticals": {
         "strength": 72,
         "notes": "Food science, nutrition, bioprocessing, and agricultural research create strong opportunities within food innovation and functional ingredients."
@@ -3815,6 +3810,7 @@ const UNIVERSITY_DB_V5 = {
         "strength": 68,
         "notes": "Strong preparation through nutrition, human sciences, and allied health, though healthcare is not a defining institutional focus."
       },
+      "agriculture": { "strength": 92, "notes": "OSU's land-grant agricultural sciences programs are a core institutional strength, reinforced by strong Extension and agricultural policy pathways. (Added 2026-07-12: previously scattered thin across nutraceuticals, outdoorIndustry, publicPolicy, and nonprofitLeadership notes.)" },
       "nutraceuticals": {
         "strength": 66,
         "notes": "Food science, agricultural sciences, and animal nutrition provide pathways into nutrition and agricultural biotechnology."
@@ -6076,31 +6072,13 @@ const UNIVERSITY_DB_V5 = {
       "civicEngagement": 92
     },
     "industryPathways": {
-      "finance": {
-        "strength": 100,
-        "notes": "Top global feeder into investment banking, private equity, hedge funds, and sovereign wealth funds."
-      },
-      "law": {
-        "strength": 100,
-        "notes": "Harvard Law School dominates global legal elite pipeline."
-      },
-      "consulting": {
-        "strength": 100,
-        "notes": "Highest global penetration into McKinsey, Bain, and BCG."
-      },
-      "medicine": {
-        "strength": 100,
-        "notes": "Harvard Medical School is among the strongest biomedical research and clinical training institutions globally."
-      },
-      "government": {
-        "strength": 100,
-        "notes": "Dominant pipeline into U.S. federal government and global policy institutions."
-      },
-      "entrepreneurship": {
-        "strength": 92,
-        "notes": "Strong but secondary to Stanford in startup ecosystem density."
-      }
-    },
+    "investmentBanking": { "strength": 100, "notes": "Top global feeder into investment banking, private equity, hedge funds, and sovereign wealth funds. (Remapped from non-standard key 'finance', 2026-07-12.)" },
+    "privateEquity": { "strength": 95, "notes": "Deep alumni presence across mega-fund and middle-market PE, reinforced by HBS network. (Estimated during remap, not independently re-verified.)" },
+    "consulting": { "strength": 100, "notes": "Highest global penetration into McKinsey, Bain, and BCG." },
+    "medicine": { "strength": 100, "notes": "Harvard Medical School is among the strongest biomedical research and clinical training institutions globally." },
+    "publicPolicy": { "strength": 100, "notes": "Dominant pipeline into U.S. federal government and global policy institutions; also reflects Harvard Law School's elite legal pipeline, folded in here since no standalone 'law' key exists in the standard schema. (Remapped from non-standard keys 'law' and 'government', 2026-07-12.)" },
+    "entrepreneurship": { "strength": 92, "notes": "Strong but secondary to Stanford in startup ecosystem density." }
+  },
     "wealthMobility": {
       "socialMobilityIndex": 90,
       "firstGenerationSupport": 94,
@@ -6432,27 +6410,12 @@ const UNIVERSITY_DB_V5 = {
       "civicEngagement": 88
     },
     "industryPathways": {
-      "technology": {
-        "strength": 95,
-        "notes": "Strong CS and product pipeline into top tech firms."
-      },
-      "finance": {
-        "strength": 88,
-        "notes": "Strong placement into investment banking and hedge funds."
-      },
-      "consulting": {
-        "strength": 90,
-        "notes": "High placement into MBB consulting firms."
-      },
-      "medicine": {
-        "strength": 92,
-        "notes": "Strong pre-med pipeline and public health preparation."
-      },
-      "entrepreneurship": {
-        "strength": 90,
-        "notes": "Strong startup culture driven by intellectual independence."
-      }
-    },
+    "technology": { "strength": 95, "notes": "Strong CS and product pipeline into top tech firms." },
+    "investmentBanking": { "strength": 88, "notes": "Strong placement into investment banking and hedge funds. (Remapped from non-standard key 'finance', 2026-07-12.)" },
+    "consulting": { "strength": 90, "notes": "High placement into MBB consulting firms." },
+    "medicine": { "strength": 92, "notes": "Strong pre-med pipeline and public health preparation." },
+    "entrepreneurship": { "strength": 90, "notes": "Strong startup culture driven by intellectual independence." }
+  },
     "wealthMobility": {
       "socialMobilityIndex": 88,
       "firstGenerationSupport": 90,
@@ -6668,15 +6631,8 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Grainger CS cohorts form elite technical networks that rival top private schools in caliber and reach."
     },
     "industryPathways": {
-      "computerScience": {
-        "strength": 96,
-        "notes": "One of the most selective and highly-placed CS programs in the country."
-      },
-      "engineering": {
-        "strength": 88,
-        "notes": "Strong broader engineering placement."
-      }
-    },
+    "technology": { "strength": 96, "notes": "One of the most selective and highly-placed CS programs in the country, with strong broader engineering placement. (Remapped 2026-07-12, combined from non-standard keys 'computerScience' (96) and 'engineering' (88) into one standard key.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 74,
@@ -6916,11 +6872,8 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Pharmacy cohorts build direct relationships with the dense New Jersey pharmaceutical corridor before graduating."
     },
     "industryPathways": {
-      "pharmacy": {
-        "strength": 90,
-        "notes": "The most geographically advantaged pharmacy pipeline in the country."
-      }
-    },
+    "healthcareAdministration": { "strength": 90, "notes": "The most geographically advantaged pharmacy pipeline in the country. (Remapped 2026-07-12 from non-standard key 'pharmacy'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 74,
@@ -7180,19 +7133,11 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Ambitious peer cohorts create networks that convert directly into elite consulting/finance placement."
     },
     "industryPathways": {
-      "engineering": {
-        "strength": 92,
-        "notes": "Top-10 nationally across nearly every engineering discipline."
-      },
-      "business": {
-        "strength": 96,
-        "notes": "Ross Business School rivals the very top private business schools."
-      },
-      "publicPolicy": {
-        "strength": 82,
-        "notes": "Ford School is a strong, underrecognized government/policy pipeline."
-      }
-    },
+    "technology": { "strength": 92, "notes": "Top-10 nationally across nearly every engineering discipline. (Remapped from non-standard key 'engineering', 2026-07-12.)" },
+    "consulting": { "strength": 96, "notes": "Ross Business School rivals the very top private business schools for consulting placement. (Remapped from non-standard key 'business', split across consulting/investmentBanking, 2026-07-12 — judgment call, not independently verified.)" },
+    "investmentBanking": { "strength": 90, "notes": "Ross Business School has a strong Wall Street pipeline alongside its consulting placement. (Remapped from non-standard key 'business', 2026-07-12 — judgment call.)" },
+    "publicPolicy": { "strength": 82, "notes": "Ford School is a strong, underrecognized government/policy pipeline." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 78,
@@ -7851,18 +7796,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Terry College cohorts form the backbone of Atlanta's Fortune 500 corporate network long before graduation."
     },
     "industryPathways": {
-      "business": {
-        "strength": 90,
-        "notes": "Terry College feeds directly into Atlanta's Fortune 500 concentration."
-      }
-    },
-    "wealthMobility": {
-      "averageFamilyIncome": "",
-      "socialMobilityIndex": 72,
-      "firstGenerationSupport": 76,
-      "wealthCreationPotential": 82,
-      "familyBusinessPipelineStrength": 54
-    },
+    "consulting": { "strength": 82, "notes": "Terry College feeds directly into Atlanta's Fortune 500 concentration." },
+    "investmentBanking": { "strength": 74, "notes": "Real Atlanta and Wall Street finance placement pipeline." },
+    "realEstate": { "strength": 80, "notes": "Terry College's real estate program is genuinely well-regarded, a distinctive specialty beyond general business placement. (Corrected 2026-07-12: previously folded entirely into generic consulting/investmentBanking.)" }
+  },
     "futureResilience": {
       "aiResistance": 74,
       "automationResistance": 76,
@@ -8093,15 +8030,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Warrington Business and UF Health cohorts build networks that stay concentrated within Florida's major metro corridor."
     },
     "industryPathways": {
-      "healthcare": {
-        "strength": 86,
-        "notes": "Strong pre-health pipeline into UF's own medical school."
-      },
-      "business": {
-        "strength": 80,
-        "notes": "Solid Florida-triangle business placement."
-      }
-    },
+    "healthcareAdministration": { "strength": 86, "notes": "Strong pre-health pipeline into UF's own medical school. (Remapped 2026-07-12 from non-standard key 'healthcare'.)" },
+    "consulting": { "strength": 80, "notes": "Solid Florida-triangle business placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
+    "investmentBanking": { "strength": 72, "notes": "Real, secondary Florida-triangle finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 74,
@@ -9137,15 +9069,9 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Engineering and vet-med cohorts build strong bonds that carry into aerospace/defense and veterinary networks nationally."
     },
     "industryPathways": {
-      "aerospace": {
-        "strength": 88,
-        "notes": "Direct Boeing/NASA Marshall pipeline."
-      },
-      "veterinaryMedicine": {
-        "strength": 92,
-        "notes": "Top-5 nationally ranked program."
-      }
-    },
+    "defense": { "strength": 88, "notes": "Direct Boeing/NASA Marshall aerospace pipeline. (Remapped 2026-07-12 from non-standard key 'aerospace'.)" },
+    "healthWellness": { "strength": 92, "notes": "Top-5 nationally ranked veterinary medicine program. (Remapped 2026-07-12 from non-standard key 'veterinaryMedicine'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 68,
@@ -9382,11 +9308,8 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Engineering cohorts tied to CU-ICAR build direct relationships with BMW, Michelin, and Bosch before graduation."
     },
     "industryPathways": {
-      "automotiveEngineering": {
-        "strength": 92,
-        "notes": "The strongest automotive engineering pipeline of any Southeast public university."
-      }
-    },
+    "technology": { "strength": 92, "notes": "The strongest automotive engineering pipeline of any Southeast public university. (Remapped 2026-07-12 from non-standard key 'automotiveEngineering'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 70,
@@ -9529,6 +9452,7 @@ const UNIVERSITY_DB_V5 = {
       "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
+    "versusNotreDame": "Notre Dame offers a more explicitly Catholic institutional identity and football-driven national alumni loyalty; Vanderbilt offers a similarly nationally-recruited elite Southern identity with strong healthcare and finance placement in Nashville.", "versusRice": "Rice offers a smaller, more STEM-concentrated environment with unmatched direct access to the Texas Medical Center and Houston's energy sector; Vanderbilt offers a larger scale and Nashville's faster-growing economy.",
       "versusEmory": "Vanderbilt has stronger pre-med outcomes and a more vibrant Greek/athletics social scene; Emory has stronger public health and deeper Atlanta integration.",
       "versusDuke": "Duke offers a stronger research ecosystem via the Research Triangle; Vanderbilt wins on campus culture, Nashville access, and athletic energy.",
       "versusTulane": "Vanderbilt is more selective and more career-credential-focused; Tulane offers New Orleans culture and a looser, more creative social fabric."
@@ -10029,19 +9953,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "McIntire's small, elite cohort creates some of the tightest pre-professional bonds of any public university program."
     },
     "industryPathways": {
-      "business": {
-        "strength": 96,
-        "notes": "McIntire rivals top private business schools for selectivity and placement."
-      },
-      "government": {
-        "strength": 84,
-        "notes": "Strong pipeline into federal government via DC proximity."
-      },
-      "law": {
-        "strength": 82,
-        "notes": "Strong pre-law track feeding into UVA's own top-10 law school and peer institutions."
-      }
-    },
+    "consulting": { "strength": 96, "notes": "McIntire rivals top private business schools for selectivity and consulting placement. (Remapped from non-standard key 'business', split across consulting/investmentBanking, 2026-07-12 — judgment call.)" },
+    "investmentBanking": { "strength": 90, "notes": "McIntire has a strong Wall Street pipeline alongside its consulting placement. (Remapped from non-standard key 'business', 2026-07-12 — judgment call.)" },
+    "publicPolicy": { "strength": 86, "notes": "Strong pipeline into federal government via DC proximity, and a strong pre-law track feeding into UVA's own top-10 law school. (Remapped and combined from non-standard keys 'government' (84) and 'law' (82), 2026-07-12 — no standalone 'law' key exists in the standard schema.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 66,
@@ -10282,15 +10197,9 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Shared immersion in a genuinely unique city creates strong bonds, plus energy sector recruiting ties."
     },
     "industryPathways": {
-      "energyFinance": {
-        "strength": 82,
-        "notes": "Underrated Gulf Coast energy finance pipeline."
-      },
-      "architecture": {
-        "strength": 80,
-        "notes": "Strong, distinctive architecture placement."
-      }
-    },
+    "investmentBanking": { "strength": 82, "notes": "Underrated Gulf Coast energy finance pipeline. (Remapped 2026-07-12 from non-standard key 'energyFinance'.)" },
+    "realEstate": { "strength": 80, "notes": "Strong, distinctive architecture placement. (Remapped 2026-07-12 from non-standard key 'architecture' — closest available standard key, no dedicated architecture key exists.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 58,
@@ -10550,38 +10459,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Aerospace and LASP research groups create tight technical bonds; Leeds Business and Environmental Studies cohorts build natural products industry ties."
     },
     "industryPathways": {
-      "aerospace": {
-        "strength": 94,
-        "notes": "Elite space/aerospace engineering pipeline via LASP."
-      },
-      "business": {
-        "strength": 78,
-        "notes": "Leeds Business School strength in finance and entrepreneurship."
-      },
-      "environmentalStudies": {
-        "strength": 84,
-        "notes": "Strong pipeline into sustainability and natural products industry roles."
-      },
-      "mechanicalElectricalEngineering": {
-        "strength": 86,
-        "notes": "Comprehensive engineering strength beyond aerospace specialization."
-      },
-      "filmJournalism": {
-        "strength": 74,
-        "notes": "Solid Film Studies and Journalism programs benefiting from Sundance Film Festival proximity."
-      },
-      "artsAndSciences": {
-        "strength": 80,
-        "notes": "Genuinely strong College of Arts and Sciences, notably in Philosophy, Psychology, and Molecular Biology."
-      }
-    },
-    "wealthMobility": {
-      "averageFamilyIncome": "",
-      "socialMobilityIndex": 70,
-      "firstGenerationSupport": 72,
-      "wealthCreationPotential": 80,
-      "familyBusinessPipelineStrength": 56
-    },
+    "defense": { "strength": 94, "notes": "Elite space/aerospace engineering pipeline via LASP." },
+    "entrepreneurship": { "strength": 84, "notes": "Leeds School of Business is genuinely known for entrepreneurship, anchored by the Deming Center for Entrepreneurship — this is Leeds' actual signature strength, not generic consulting placement. (Corrected 2026-07-12: previously mapped to generic consulting/investmentBanking.)" },
+    "outdoorIndustry": { "strength": 84, "notes": "Strong pipeline into sustainability and natural products industry roles." },
+    "technology": { "strength": 86, "notes": "Comprehensive mechanical and electrical engineering strength beyond aerospace specialization." },
+    "entertainmentMedia": { "strength": 74, "notes": "Solid Film Studies and Journalism programs benefiting from Sundance Film Festival proximity." }
+  },
     "futureResilience": {
       "aiResistance": 84,
       "automationResistance": 84,
@@ -10816,15 +10699,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The alumni network's density in actual working studios and newsrooms creates direct professional access unmatched by peer institutions."
     },
     "industryPathways": {
-      "media": {
-        "strength": 96,
-        "notes": "The single most recognized media/communications program in American higher education."
-      },
-      "business": {
-        "strength": 76,
-        "notes": "Whitman School of Management offers solid finance, marketing, and entrepreneurship placement, often overshadowed by Newhouse's fame."
-      }
-    },
+    "entertainmentMedia": { "strength": 96, "notes": "The single most recognized media/communications program in American higher education. (Remapped 2026-07-12 from non-standard key 'media'.)" },
+    "consulting": { "strength": 76, "notes": "Whitman School of Management offers solid finance, marketing, and entrepreneurship placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
+    "investmentBanking": { "strength": 68, "notes": "Whitman School has a real, if secondary, finance placement pipeline. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 64,
@@ -11061,11 +10939,8 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Deep ties into Latin American business networks make this a uniquely international social and professional environment."
     },
     "industryPathways": {
-      "internationalBusiness": {
-        "strength": 92,
-        "notes": "Unmatched Latin American business gateway pipeline."
-      }
-    },
+    "consulting": { "strength": 92, "notes": "Unmatched Latin American international business and trade gateway pipeline. (Remapped 2026-07-12 from non-standard key 'internationalBusiness'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 62,
@@ -12597,15 +12472,8 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Small size plus the Kroc Institute's unique military-peace intersection creates distinctive professional networks in San Diego."
     },
     "industryPathways": {
-      "law": {
-        "strength": 84,
-        "notes": "Top-55 nationally ranked law school."
-      },
-      "peaceJusticeStudies": {
-        "strength": 82,
-        "notes": "Unique military-adjacent peace studies pipeline."
-      }
-    },
+    "publicPolicy": { "strength": 84, "notes": "Top-55 nationally ranked law school, reinforced by a unique military-adjacent peace and justice studies pipeline. (Remapped 2026-07-12, combined from non-standard keys 'law' (84) and 'peaceJusticeStudies' (82) — no dedicated law key exists in the standard schema.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 62,
@@ -13669,15 +13537,8 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Individual placement infrastructure means every student builds real industry relationships as part of their degree."
     },
     "industryPathways": {
-      "media": {
-        "strength": 84,
-        "notes": "Structured LA and NYC media industry placement pipeline."
-      },
-      "communications": {
-        "strength": 82,
-        "notes": "Strong general communications/PR placement."
-      }
-    },
+    "entertainmentMedia": { "strength": 84, "notes": "Structured LA and NYC media industry placement pipeline, reinforced by strong general communications/PR placement. (Remapped 2026-07-12, combined from non-standard keys 'media' (84) and 'communications' (82).)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 62,
@@ -14736,19 +14597,11 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Faith community and Greek life create deep, values-aligned bonds that carry into Texas business and medical networks."
     },
     "industryPathways": {
-      "business": {
-        "strength": 82,
-        "notes": "Strong Texas Triangle business placement."
-      },
-      "religiousLeadership": {
-        "strength": 84,
-        "notes": "Genuine Truett Seminary leadership pipeline."
-      },
-      "energyLegal": {
-        "strength": 74,
-        "notes": "Real energy/legal ties via central Texas position."
-      }
-    },
+    "consulting": { "strength": 82, "notes": "Strong Texas Triangle business placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
+    "investmentBanking": { "strength": 74, "notes": "Secondary Texas Triangle finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "nonprofitLeadership": { "strength": 84, "notes": "Genuine Truett Seminary leadership pipeline. (Remapped 2026-07-12 from non-standard key 'religiousLeadership' — closest available standard key for mission-driven leadership training.)" },
+    "publicPolicy": { "strength": 74, "notes": "Real energy/legal regulatory ties via central Texas position. (Remapped 2026-07-12 from non-standard key 'energyLegal'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 66,
@@ -15381,19 +15234,11 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Small size plus strong alumni loyalty creates tight, faith-and-community-rooted professional bonds."
     },
     "industryPathways": {
-      "business": {
-        "strength": 90,
-        "notes": "Elite VSB finance/accounting placement."
-      },
-      "nursing": {
-        "strength": 82,
-        "notes": "Strong clinical placement."
-      },
-      "engineering": {
-        "strength": 78,
-        "notes": "Solid, underrated engineering placement."
-      }
-    },
+    "consulting": { "strength": 90, "notes": "Elite VSB finance/accounting placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
+    "investmentBanking": { "strength": 84, "notes": "Elite VSB Wall Street placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "healthWellness": { "strength": 82, "notes": "Strong clinical nursing placement. (Remapped 2026-07-12 from non-standard key 'nursing'.)" },
+    "technology": { "strength": 78, "notes": "Solid, underrated engineering placement. (Remapped 2026-07-12 from non-standard key 'engineering'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 64,
@@ -15953,6 +15798,7 @@ const UNIVERSITY_DB_V5 = {
       "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
+    "versusRice": "Rice offers a smaller residential college culture and direct access to Houston's three-industry economy (energy, medicine, aerospace) that WashU's St. Louis location cannot replicate; Washington University in St. Louis offers a similarly elite pre-med and STEM identity with strong need-based aid.",
       "versusDuke": "Duke offers a stronger athletics culture and slightly larger national brand; WashU offers a more research-intensive, less socially competitive academic environment.",
       "versusEmory": "Both are strong in pre-med, but WashU's connection to its own top-five medical school gives it a sharper edge in research access."
     },
@@ -16428,15 +16274,8 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Co-op cohorts build professional networks alongside classroom ones."
     },
     "industryPathways": {
-      "engineering": {
-        "strength": 92,
-        "notes": "Elite, comprehensive engineering breadth."
-      },
-      "technology": {
-        "strength": 90,
-        "notes": "Direct Atlanta tech-corridor pipeline."
-      }
-    },
+    "technology": { "strength": 92, "notes": "Elite, comprehensive engineering breadth plus a direct Atlanta tech-corridor pipeline. (Remapped 2026-07-12, combined from non-standard keys 'engineering' (92) and 'technology' (90) into one standard key.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 78,
@@ -16672,22 +16511,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Small size plus Daniels Business School ties create close relationships that convert directly into Denver's finance/real estate scene."
     },
     "industryPathways": {
-      "internationalAffairs": {
-        "strength": 92,
-        "notes": "Elite Korbel School pipeline into government and diplomacy."
-      },
-      "business": {
-        "strength": 74,
-        "notes": "Solid Daniels Business placement."
-      }
-    },
-    "wealthMobility": {
-      "averageFamilyIncome": "",
-      "socialMobilityIndex": 60,
-      "firstGenerationSupport": 62,
-      "wealthCreationPotential": 74,
-      "familyBusinessPipelineStrength": 50
-    },
+    "publicPolicy": { "strength": 92, "notes": "Elite Korbel School pipeline into government and diplomacy." },
+    "realEstate": { "strength": 84, "notes": "Daniels College of Business houses the Franklin L. Burns School of Real Estate and Construction Management, a named, distinct real estate program — this is Daniels' actual signature specialty, not generic business placement. (Corrected 2026-07-12: previously mapped to generic consulting/investmentBanking, which buried the real signal.)" },
+    "consulting": { "strength": 68, "notes": "Solid general Daniels Business placement beyond the real estate specialty." }
+  },
     "futureResilience": {
       "aiResistance": 74,
       "automationResistance": 74,
@@ -16932,26 +16759,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "CS and business cohorts build direct ties to Silicon Slopes' 155,000-worker tech ecosystem before graduation."
     },
     "industryPathways": {
-      "technology": {
-        "strength": 90,
-        "notes": "Direct Silicon Slopes tech corridor pipeline."
-      },
-      "supplementsWellness": {
-        "strength": 88,
-        "notes": "Unique manufacturing industry pipeline unmatched by peer schools."
-      },
-      "business": {
-        "strength": 82,
-        "notes": "Strong entrepreneurship and general business placement."
-      }
-    },
-    "wealthMobility": {
-      "averageFamilyIncome": "",
-      "socialMobilityIndex": 72,
-      "firstGenerationSupport": 74,
-      "wealthCreationPotential": 84,
-      "familyBusinessPipelineStrength": 58
-    },
+    "technology": { "strength": 90, "notes": "Direct Silicon Slopes tech corridor pipeline." },
+    "nutraceuticals": { "strength": 88, "notes": "Unique supplements/wellness manufacturing industry pipeline unmatched by peer schools." },
+    "entrepreneurship": { "strength": 86, "notes": "Eccles School of Business houses the Lassonde Entrepreneur Institute, one of the most recognized university entrepreneurship centers in the country, directly tied to the Silicon Slopes startup ecosystem — this is Eccles' actual signature strength, not generic business placement. (Corrected 2026-07-12: previously mapped to generic consulting/investmentBanking.)" }
+  },
     "futureResilience": {
       "aiResistance": 84,
       "automationResistance": 82,
@@ -18047,30 +17858,11 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Size means your real network is whatever college/major cohort or organization you actively join, not the university as a whole. Once built, Buckeye loyalty is exceptionally durable."
     },
     "industryPathways": {
-      "engineering": {
-        "strength": 92,
-        "notes": "Top-20 nationally, comprehensive across nearly every engineering discipline including nuclear and welding, rare specializations at this scale."
-      },
-      "medicine": {
-        "strength": 96,
-        "notes": "One of the largest academic medical centers in the country."
-      },
-      "business": {
-        "strength": 84,
-        "notes": "Fisher College of Business has strong Midwest corporate placement, particularly in consulting, insurance, and finance."
-      },
-      "agriculture": {
-        "strength": 78,
-        "notes": "Serves Ohio's substantial agricultural economy directly."
-      }
-    },
-    "wealthMobility": {
-      "averageFamilyIncome": "",
-      "socialMobilityIndex": 82,
-      "firstGenerationSupport": 88,
-      "wealthCreationPotential": 82,
-      "familyBusinessPipelineStrength": 58
-    },
+    "technology": { "strength": 92, "notes": "Top-20 nationally, comprehensive across nearly every engineering discipline including nuclear and welding, rare specializations at this scale." },
+    "medicine": { "strength": 96, "notes": "One of the largest academic medical centers in the country." },
+    "consulting": { "strength": 78, "notes": "Fisher College of Business has strong Midwest corporate placement in consulting." },
+    "insurance": { "strength": 88, "notes": "Fisher College of Business has a genuine, distinctive insurance and risk management specialty, reinforced by Ohio's dense insurance industry base — Nationwide, Progressive, and Grange are all Ohio-based. (Added 2026-07-12: previously dropped entirely for lack of a standard key — this was Fisher's most distinctive signal, not a generic finance placement.)" }
+  },
     "futureResilience": {
       "aiResistance": 84,
       "automationResistance": 84,
@@ -18225,6 +18017,7 @@ const UNIVERSITY_DB_V5 = {
       "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
+    "versusUNLV": "UNLV offers unmatched direct access to the world's largest concentration of casino resort operators specifically; Michigan State's School of Hospitality Business offers a longer institutional history (founded 1927) and broader Midwest hospitality and foodservice industry connections.",
       "versusMichigan": "Michigan offers stronger elite consulting/finance prestige; MSU offers the unmatched, near-monopoly Packaging program that Michigan simply doesn't have.",
       "versusPurdue": "Purdue leans more aerospace/semiconductor; MSU's Packaging niche is genuinely unmatched by any peer Big Ten school.",
       "versusOhioState": "Ohio State offers larger medical center scale; MSU's Packaging program is a uniquely specific competitive advantage Ohio State can't replicate."
@@ -18310,40 +18103,11 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The School of Packaging's near-monopoly status creates uniquely tight, in-demand professional networks in a field almost no other university teaches."
     },
     "industryPathways": {
-      "packagingEngineering": {
-        "strength": 96,
-        "notes": "The single strongest packaging/supply-chain-science pipeline in the country."
-      },
-      "supplyChain": {
-        "strength": 88,
-        "notes": "Strong Broad Business supply chain placement."
-      },
-      "business": {
-        "strength": 78,
-        "notes": "Solid general management and consulting placement."
-      },
-      "foodScience": {
-        "strength": 86,
-        "notes": "Elite land-grant Food Science program feeding directly into major food companies and regulatory roles."
-      }
-    },
-    "wealthMobility": {
-      "averageFamilyIncome": "",
-      "socialMobilityIndex": 70,
-      "firstGenerationSupport": 74,
-      "wealthCreationPotential": 76,
-      "familyBusinessPipelineStrength": 50
-    },
-    "futureResilience": {
-      "aiResistance": 78,
-      "automationResistance": 80,
-      "adaptabilityScore": 78,
-      "interdisciplinaryStrength": 74,
-      "futureReadiness": 80,
-      "entrepreneurialFlexibility": 66,
-      "lifelongLearningCulture": 76,
-      "innovationCapacity": 78
-    },
+    "consumerProducts": { "strength": 92, "notes": "The single strongest packaging engineering pipeline in the country." },
+    "supplyChain": { "strength": 98, "notes": "Broad Business's supply chain management program is consistently ranked #1 in the country, feeding directly into Amazon, P&G, and Whirlpool." },
+    "nutraceuticals": { "strength": 86, "notes": "Elite land-grant Food Science program feeding directly into major food companies and regulatory roles." },
+    "hospitality": { "strength": 88, "notes": "The School of Hospitality Business, founded in 1927, is one of the oldest and most respected hospitality management programs in the country — this was missed in the first hospitality pass despite being a genuine, distinctive MSU specialty on par with its supply chain program. (Added 2026-07-12.)" }
+  },
     "lifeDesignOutcomes": {
       "wealthCreationPotential": 76,
       "communityLeadershipPotential": 80,
@@ -18566,15 +18330,9 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Engineering and health-tech cohorts build networks that feed directly into Epic Systems and the Madison tech corridor."
     },
     "industryPathways": {
-      "healthTech": {
-        "strength": 92,
-        "notes": "The strongest health-tech pipeline of any Big Ten school via Epic Systems."
-      },
-      "lifeSciences": {
-        "strength": 86,
-        "notes": "Elite research depth in life sciences."
-      }
-    },
+    "technology": { "strength": 92, "notes": "The strongest health-tech pipeline of any Big Ten school via Epic Systems. (Remapped 2026-07-12 from non-standard key 'healthTech' — Epic Systems is health-record software, genuinely a technology pathway.)" },
+    "medicine": { "strength": 86, "notes": "Elite research depth in life sciences. (Remapped 2026-07-12 from non-standard key 'lifeSciences'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 74,
@@ -18811,19 +18569,11 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Elliott-style SIS cohorts build direct government and international affairs relationships simply by being in DC."
     },
     "industryPathways": {
-      "internationalAffairs": {
-        "strength": 92,
-        "notes": "One of the most DC-embedded international affairs pipelines in the country."
-      },
-      "business": {
-        "strength": 74,
-        "notes": "Solid Kogod placement."
-      },
-      "media": {
-        "strength": 76,
-        "notes": "Underrated but genuine media production pipeline."
-      }
-    },
+    "publicPolicy": { "strength": 92, "notes": "One of the most DC-embedded international affairs pipelines in the country. (Remapped 2026-07-12 from non-standard key 'internationalAffairs'.)" },
+    "consulting": { "strength": 74, "notes": "Solid Kogod business consulting placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
+    "investmentBanking": { "strength": 66, "notes": "Real, secondary Kogod finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "entertainmentMedia": { "strength": 76, "notes": "Underrated but genuine media production pipeline. (Remapped 2026-07-12 from non-standard key 'media'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 62,
@@ -19064,11 +18814,8 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Songwriting and music business cohorts build direct royalty-system and industry relationships before graduating."
     },
     "industryPathways": {
-      "musicEntertainmentBusiness": {
-        "strength": 92,
-        "notes": "The single most connected music-industry credential outside dedicated conservatories."
-      }
-    },
+    "entertainmentMedia": { "strength": 92, "notes": "The single most connected music-industry credential outside dedicated conservatories. (Remapped 2026-07-12 from non-standard key 'musicEntertainmentBusiness'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 62,
@@ -19316,19 +19063,11 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Your network forms through clubs, internships, and Boston's dense professional scene rather than dorm proximity."
     },
     "industryPathways": {
-      "business": {
-        "strength": 84,
-        "notes": "Questrom has strong Boston-area corporate placement."
-      },
-      "communications": {
-        "strength": 82,
-        "notes": "Strong pipeline into media and journalism nationally."
-      },
-      "publicHealth": {
-        "strength": 78,
-        "notes": "Solid pipeline into Boston's biotech and healthcare sector."
-      }
-    },
+    "consulting": { "strength": 84, "notes": "Questrom has strong Boston-area corporate placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
+    "investmentBanking": { "strength": 76, "notes": "Questrom has a secondary Wall Street placement pipeline. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "entertainmentMedia": { "strength": 82, "notes": "Strong pipeline into media and journalism nationally. (Remapped 2026-07-12 from non-standard key 'communications'.)" },
+    "healthWellness": { "strength": 78, "notes": "Solid pipeline into Boston's biotech and healthcare sector. (Remapped 2026-07-12 from non-standard key 'publicHealth'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 62,
@@ -19576,26 +19315,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Veterinary Medicine and engineering cohorts build tight bonds; hospitality students build direct ties to resort and parks employers before graduating."
     },
     "industryPathways": {
-      "veterinaryMedicine": {
-        "strength": 94,
-        "notes": "Top-5 nationally, alumni go on to veterinary practices nationwide."
-      },
-      "hospitalityTourism": {
-        "strength": 86,
-        "notes": "Alumni go directly into Rocky Mountain resort management, ski industry operations, and National Park Service roles."
-      },
-      "environmentalScience": {
-        "strength": 84,
-        "notes": "Alumni enter conservation, forestry, and environmental agency careers."
-      }
-    },
-    "wealthMobility": {
-      "averageFamilyIncome": "",
-      "socialMobilityIndex": 68,
-      "firstGenerationSupport": 72,
-      "wealthCreationPotential": 74,
-      "familyBusinessPipelineStrength": 52
-    },
+    "healthWellness": { "strength": 94, "notes": "Top-5 nationally ranked veterinary medicine program." },
+    "outdoorIndustry": { "strength": 84, "notes": "Alumni enter conservation, forestry, and environmental agency careers." },
+    "hospitality": { "strength": 86, "notes": "Genuine, distinctive pipeline into Rocky Mountain resort management, ski industry operations, and National Park Service roles. (Added 2026-07-12: previously dropped entirely for lack of a standard key.)" }
+  },
     "futureResilience": {
       "aiResistance": 78,
       "automationResistance": 80,
@@ -19833,15 +19556,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Physical proximity to Wall Street and the legal district creates real, ongoing professional networking most peer Jesuit schools can't replicate."
     },
     "industryPathways": {
-      "law": {
-        "strength": 88,
-        "notes": "Top-40 nationally ranked, strong NYC BigLaw and clerkship pipeline."
-      },
-      "business": {
-        "strength": 84,
-        "notes": "Gabelli Business feeds directly into Wall Street."
-      }
-    },
+    "publicPolicy": { "strength": 88, "notes": "Top-40 nationally ranked law school, strong NYC BigLaw and clerkship pipeline. (Remapped 2026-07-12 from non-standard key 'law' — no dedicated law key exists in the standard schema.)" },
+    "investmentBanking": { "strength": 86, "notes": "Gabelli Business feeds directly into Wall Street — this is the primary, authored signal for Gabelli, not a generic consulting placement. (Corrected 2026-07-12: weighting flipped to lead with investmentBanking, matching the original authored note rather than defaulting consulting to the higher score.)" },
+    "consulting": { "strength": 72, "notes": "Real, secondary Gabelli Business consulting placement." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 66,
@@ -20080,15 +19798,9 @@ const UNIVERSITY_DB_V5 = {
       "notes": "SFS-style cohorts build networks that plug directly into DC power structures before graduation."
     },
     "industryPathways": {
-      "internationalAffairs": {
-        "strength": 92,
-        "notes": "Elite Elliott School pipeline."
-      },
-      "consulting": {
-        "strength": 84,
-        "notes": "Strong DC consulting placement."
-      }
-    },
+    "publicPolicy": { "strength": 92, "notes": "Elite Elliott School pipeline into international affairs and foreign policy. (Remapped 2026-07-12 from non-standard key 'internationalAffairs'.)" },
+    "consulting": { "strength": 84, "notes": "Strong DC consulting placement." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 62,
@@ -20325,15 +20037,9 @@ const UNIVERSITY_DB_V5 = {
       "notes": "LMU is quietly building real Silicon Beach tech placement alongside its traditional entertainment industry ties."
     },
     "industryPathways": {
-      "entertainment": {
-        "strength": 84,
-        "notes": "Strong Hollywood studio pipeline."
-      },
-      "technology": {
-        "strength": 78,
-        "notes": "Rising Silicon Beach tech pipeline, a genuine hidden advantage."
-      }
-    },
+    "entertainmentMedia": { "strength": 84, "notes": "Strong Hollywood studio pipeline. (Remapped 2026-07-12 from non-standard key 'entertainment'.)" },
+    "technology": { "strength": 78, "notes": "Rising Silicon Beach tech pipeline, a genuine hidden advantage." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 64,
@@ -20573,19 +20279,11 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The Jesuit alumni network's professional reciprocity creates real hiring relationships across Wisconsin's legal and business sectors."
     },
     "industryPathways": {
-      "business": {
-        "strength": 80,
-        "notes": "Strong Milwaukee corporate pipeline."
-      },
-      "law": {
-        "strength": 84,
-        "notes": "Wisconsin's most connected law school."
-      },
-      "engineering": {
-        "strength": 74,
-        "notes": "Solid manufacturing pipeline."
-      }
-    },
+    "consulting": { "strength": 80, "notes": "Strong Milwaukee corporate pipeline. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
+    "investmentBanking": { "strength": 72, "notes": "Real, secondary Milwaukee finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "publicPolicy": { "strength": 84, "notes": "Wisconsin's most connected law school. (Remapped 2026-07-12 from non-standard key 'law' — no dedicated law key exists in the standard schema.)" },
+    "technology": { "strength": 74, "notes": "Solid manufacturing-adjacent engineering pipeline. (Remapped 2026-07-12 from non-standard key 'engineering'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 66,
@@ -20827,26 +20525,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "CS and engineering cohorts build direct relationships with federal agencies, especially NSA-adjacent research and recruiting."
     },
     "industryPathways": {
-      "federalSecurity": {
-        "strength": 92,
-        "notes": "The strongest federal security agency pipeline of any public university."
-      },
-      "business": {
-        "strength": 78,
-        "notes": "Solid Smith Business placement."
-      },
-      "physicsAstronomy": {
-        "strength": 84,
-        "notes": "Elite, underrated research placement."
-      }
-    },
-    "wealthMobility": {
-      "averageFamilyIncome": "",
-      "socialMobilityIndex": 74,
-      "firstGenerationSupport": 76,
-      "wealthCreationPotential": 82,
-      "familyBusinessPipelineStrength": 50
-    },
+    "defense": { "strength": 92, "notes": "The strongest federal security agency pipeline of any public university." },
+    "entrepreneurship": { "strength": 80, "notes": "Smith School of Business is specifically known for social entrepreneurship, anchored by the Center for Social Value Creation — this is a genuine, distinctive Smith specialty, not generic business placement. (Corrected 2026-07-12: previously mapped to generic consulting/investmentBanking.)" },
+    "technology": { "strength": 84, "notes": "Elite, underrated physics and astronomy research placement." }
+  },
     "futureResilience": {
       "aiResistance": 86,
       "automationResistance": 84,
@@ -21081,19 +20763,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Co-op placements build real workplace relationships that often convert directly into full-time offers."
     },
     "industryPathways": {
-      "engineering": {
-        "strength": 84,
-        "notes": "Strong co-op-driven engineering placement."
-      },
-      "business": {
-        "strength": 78,
-        "notes": "Solid business placement reinforced by co-op experience."
-      },
-      "healthSciences": {
-        "strength": 84,
-        "notes": "Strong pipeline into Boston's biotech and healthcare sector via co-op."
-      }
-    },
+    "technology": { "strength": 84, "notes": "Strong co-op-driven engineering placement. (Remapped 2026-07-12 from non-standard key 'engineering'.)" },
+    "consulting": { "strength": 78, "notes": "Solid business placement reinforced by co-op experience. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "healthWellness": { "strength": 84, "notes": "Strong pipeline into Boston's biotech and healthcare sector via co-op. (Remapped 2026-07-12 from non-standard key 'healthSciences'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 68,
@@ -21355,19 +21028,11 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Stern cohorts build direct Wall Street relationships reinforced by walking distance to the financial district."
     },
     "industryPathways": {
-      "business": {
-        "strength": 94,
-        "notes": "Stern rivals Wharton for Wall Street placement."
-      },
-      "film": {
-        "strength": 90,
-        "notes": "Tisch is one of the top film schools in the world."
-      },
-      "medicine": {
-        "strength": 90,
-        "notes": "Grossman's tuition-free model attracts top pre-med talent nationally."
-      }
-    },
+    "investmentBanking": { "strength": 94, "notes": "Stern rivals Wharton for Wall Street placement. (Remapped from non-standard key 'business', split across investmentBanking/consulting, 2026-07-12 — judgment call.)" },
+    "consulting": { "strength": 88, "notes": "Stern places strongly into MBB consulting alongside its dominant Wall Street pipeline. (Remapped from non-standard key 'business', 2026-07-12 — judgment call.)" },
+    "entertainmentMedia": { "strength": 90, "notes": "Tisch is one of the top film schools in the world. (Remapped from non-standard key 'film', 2026-07-12.)" },
+    "medicine": { "strength": 90, "notes": "Grossman's tuition-free model attracts top pre-med talent nationally." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 68,
@@ -21647,23 +21312,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The self-contained college-town experience creates unusually deep bonds that convert directly into the legendary alumni-hiring-alumni culture Penn State is known for."
     },
     "industryPathways": {
-      "engineering": {
-        "strength": 86,
-        "notes": "Strong across mechanical, electrical, and industrial engineering, with solid Mid-Atlantic corporate placement."
-      },
-      "business": {
-        "strength": 84,
-        "notes": "Smeal College of Business has strong Mid-Atlantic corporate placement, particularly in consulting and finance."
-      },
-      "actuarialScience": {
-        "strength": 94,
-        "notes": "One of the strongest actuarial science pipelines in the country."
-      },
-      "meteorology": {
-        "strength": 88,
-        "notes": "Elite pipeline into broadcast meteorology and the National Weather Service."
-      }
-    },
+    "technology": { "strength": 86, "notes": "Strong across mechanical, electrical, and industrial engineering, with solid Mid-Atlantic corporate placement. (Remapped 2026-07-12 from non-standard key 'engineering'.)" },
+    "consulting": { "strength": 84, "notes": "Smeal College of Business has strong Mid-Atlantic consulting placement." },
+    "insurance": { "strength": 94, "notes": "One of the strongest actuarial science pipelines in the country — actuaries work primarily in insurance and pension/reinsurance, not investment banking. (Corrected 2026-07-12: previously mapped to investmentBanking for lack of a better key, which misrepresented the field. Now uses the new insurance key.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 76,
@@ -21909,19 +21561,8 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Engineering cohorts form tight, technically-minded networks that carry into aerospace and semiconductor careers nationally."
     },
     "industryPathways": {
-      "engineering": {
-        "strength": 92,
-        "notes": "Comprehensive engineering breadth with elite aerospace specialization."
-      },
-      "semiconductors": {
-        "strength": 88,
-        "notes": "Rapidly rising, structurally significant pathway."
-      },
-      "manufacturing": {
-        "strength": 80,
-        "notes": "Strong Midwest industrial placement."
-      }
-    },
+    "technology": { "strength": 92, "notes": "Comprehensive engineering breadth with elite aerospace specialization, a rapidly rising semiconductor pathway, and strong Midwest manufacturing placement. (Remapped 2026-07-12, combined from non-standard keys 'engineering' (92), 'semiconductors' (88), and 'manufacturing' (80) into one standard key — judgment call, not independently re-verified.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 74,
@@ -22158,15 +21799,10 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Small size plus Greek life density creates unusually close bonds converting directly into DFW networks."
     },
     "industryPathways": {
-      "nursingHealthcare": {
-        "strength": 90,
-        "notes": "Top-9 nurse anesthesia pipeline."
-      },
-      "business": {
-        "strength": 76,
-        "notes": "Solid DFW placement."
-      }
-    },
+    "healthWellness": { "strength": 90, "notes": "Top-9 nurse anesthesia pipeline. (Remapped 2026-07-12 from non-standard key 'nursingHealthcare'.)" },
+    "consulting": { "strength": 76, "notes": "Solid DFW business placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
+    "investmentBanking": { "strength": 68, "notes": "Secondary DFW finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 60,
@@ -22419,19 +22055,11 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Kenan-Flagler cohorts build tight bonds reinforced by Research Triangle proximity."
     },
     "industryPathways": {
-      "pharmacy": {
-        "strength": 98,
-        "notes": "The #1 pharmacy school pipeline in the country."
-      },
-      "business": {
-        "strength": 88,
-        "notes": "Kenan-Flagler rivals top private business schools regionally."
-      },
-      "medicine": {
-        "strength": 84,
-        "notes": "Strong pre-med pipeline reinforced by UNC's own top-tier medical school."
-      }
-    },
+    "healthcareAdministration": { "strength": 98, "notes": "The #1 pharmacy school pipeline in the country. (Remapped from non-standard key 'pharmacy', 2026-07-12.)" },
+    "consulting": { "strength": 88, "notes": "Kenan-Flagler rivals top private business schools regionally for consulting placement. (Remapped from non-standard key 'business', split across consulting/investmentBanking, 2026-07-12 — judgment call.)" },
+    "investmentBanking": { "strength": 82, "notes": "Kenan-Flagler has a real, if secondary, Wall Street pipeline alongside its consulting placement. (Remapped from non-standard key 'business', 2026-07-12 — judgment call.)" },
+    "medicine": { "strength": 84, "notes": "Strong pre-med pipeline reinforced by UNC's own top-tier medical school." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 78,
@@ -22668,15 +22296,9 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Petroleum engineering and tech cohorts build direct ties to Texas energy companies and Austin's booming tech scene."
     },
     "industryPathways": {
-      "technology": {
-        "strength": 90,
-        "notes": "Direct Austin tech ecosystem pipeline."
-      },
-      "communications": {
-        "strength": 94,
-        "notes": "Elite #1-ranked public communications pipeline."
-      }
-    },
+    "technology": { "strength": 90, "notes": "Direct Austin tech ecosystem pipeline." },
+    "entertainmentMedia": { "strength": 94, "notes": "Elite #1-ranked public communications pipeline. (Remapped 2026-07-12 from non-standard key 'communications'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 76,
@@ -23333,11 +22955,8 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Carroll School cohorts build tight bonds that convert directly into Boston's concentrated financial services ecosystem."
     },
     "industryPathways": {
-      "finance": {
-        "strength": 92,
-        "notes": "One of the strongest Boston finance pipelines of any Jesuit university."
-      }
-    },
+    "investmentBanking": { "strength": 92, "notes": "One of the strongest Boston finance pipelines of any Jesuit university. (Remapped 2026-07-12 from non-standard key 'finance'.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 62,
@@ -24588,6 +24207,7 @@ const UNIVERSITY_DB_V5 = {
         "strength": 82,
         "notes": "Strong pathway through UC Davis Health, veterinary medicine, and nutrition science."
       },
+      "agriculture": { "strength": 96, "notes": "UC Davis is widely regarded as the top agricultural and viticulture research university in the country -- this is the university's single most defining institutional identity. (Added 2026-07-12: previously scattered across consulting, nonprofitLeadership, outdoorIndustry, publicPolicy, realEstate, and technology notes with no dedicated signal, despite being UC Davis's core strength.)" },
       "nutraceuticals": {
         "strength": 62,
         "notes": "Meaningful overlap through food science and plant sciences research."
@@ -27596,6 +27216,7 @@ const UNIVERSITY_DB_V5 = {
         "strength": 74,
         "notes": "Solid pathway through health sciences and veterinary medicine."
       },
+      "agriculture": { "strength": 82, "notes": "A genuine, historic land-grant agricultural strength alongside journalism. (Added 2026-07-12: previously scattered thin across nonprofitLeadership, publicPolicy, and technology notes.)" },
       "nutraceuticals": {
         "strength": 40,
         "notes": "Some overlap through agricultural and food science research."
@@ -28015,6 +27636,7 @@ const UNIVERSITY_DB_V5 = {
         "strength": 44,
         "notes": "Moderate presence, not a primary institutional focus."
       },
+      "agriculture": { "strength": 84, "notes": "A genuine land-grant agricultural strength, reinforced by proximity to major agribusiness headquarters (Tyson Foods, J.B. Hunt). (Added 2026-07-12: previously scattered thin across medicine and nutraceuticals notes.)" },
       "nutraceuticals": {
         "strength": 38,
         "notes": "Some overlap through food science and agricultural research."
@@ -28851,6 +28473,7 @@ const UNIVERSITY_DB_V5 = {
         "strength": 46,
         "notes": "Moderate presence, not a primary institutional focus."
       },
+      "agriculture": { "strength": 90, "notes": "A defining land-grant institutional strength, reinforced by growing agricultural technology entrepreneurship. (Added 2026-07-12: previously scattered thin across entrepreneurship, nonprofitLeadership, publicPolicy, and technology notes.)" },
       "nutraceuticals": {
         "strength": 46,
         "notes": "Meaningful overlap through agricultural and food science research."
@@ -33668,6 +33291,7 @@ const UNIVERSITY_DB_V5 = {
       "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
+    "versusUNLV": "UNLV's Harrah College offers deeper, more direct industry embedding literally inside the Las Vegas Strip resort industry, with faculty frequently drawn from former resort executives; Cornell offers Ivy League prestige and a broader liberal-arts context alongside the hospitality specialty.",
       "versusUPenn": "Penn offers a more concentrated professional school culture centered on Wharton, while Cornell offers unmatched breadth across seven distinct colleges, including the world's top hospitality management program.",
       "versusMIT": "MIT offers a more intensely technical, engineering-first culture, while Cornell offers comparable engineering strength alongside hospitality, agriculture, and a broader land-grant mission.",
       "versusGeorgiaTech": "Georgia Tech offers a more affordable, engineering-concentrated public university experience, while Cornell offers Ivy League prestige combined with unmatched breadth across applied fields."
@@ -33861,87 +33485,28 @@ const UNIVERSITY_DB_V5 = {
       "civicEngagement": 76
     },
     "industryPathways": {
-      "aestheticsAndBeauty": {
-        "strength": 28,
-        "notes": "Some overlap through Human Ecology and fiber science and apparel design programs."
-      },
-      "healthWellness": {
-        "strength": 62,
-        "notes": "Moderate presence through Human Ecology and life sciences research."
-      },
-      "nutraceuticals": {
-        "strength": 50,
-        "notes": "Meaningful overlap through agriculture and food science research."
-      },
-      "consumerProducts": {
-        "strength": 58,
-        "notes": "Solid presence through Human Ecology and applied economics programs."
-      },
-      "outdoorIndustry": {
-        "strength": 52,
-        "notes": "Moderate presence given the Finger Lakes setting and outdoor recreation culture."
-      },
-      "sportsBusiness": {
-        "strength": 40,
-        "notes": "Limited institutional emphasis."
-      },
-      "entertainmentMedia": {
-        "strength": 34,
-        "notes": "Limited institutional emphasis."
-      },
-      "ventureCapital": {
-        "strength": 60,
-        "notes": "Growing presence, particularly in agricultural and hospitality technology."
-      },
-      "privateEquity": {
-        "strength": 74,
-        "notes": "Strong placement given Cornell's dense Wall Street and consulting alumni network."
-      },
-      "investmentBanking": {
-        "strength": 78,
-        "notes": "Strong pipeline into major investment banks, particularly from the Dyson School of Applied Economics."
-      },
-      "consulting": {
-        "strength": 80,
-        "notes": "Strong placement into top consulting firms."
-      },
-      "medicine": {
-        "strength": 62,
-        "notes": "Solid pre-med foundation, supported by strong life sciences research."
-      },
-      "healthcareAdministration": {
-        "strength": 52,
-        "notes": "Moderate presence."
-      },
-      "defense": {
-        "strength": 36,
-        "notes": "Present through engineering pathways into aerospace and defense contractors."
-      },
-      "realEstate": {
-        "strength": 56,
-        "notes": "Meaningful presence through the hospitality and real estate finance programs."
-      },
-      "luxuryBrands": {
-        "strength": 34,
-        "notes": "Limited but present, particularly through hospitality management."
-      },
-      "entrepreneurship": {
-        "strength": 66,
-        "notes": "Strong entrepreneurship culture, particularly in agricultural and hospitality technology."
-      },
-      "technology": {
-        "strength": 78,
-        "notes": "Strong engineering and computer science pipeline through Cornell Tech and the College of Engineering."
-      },
-      "publicPolicy": {
-        "strength": 62,
-        "notes": "Solid pathway through the Industrial and Labor Relations school and applied economics."
-      },
-      "nonprofitLeadership": {
-        "strength": 56,
-        "notes": "Meaningful pathway, often tied to agricultural and labor policy organizations."
-      }
-    },
+    "aestheticsAndBeauty": { "strength": 28, "notes": "Some overlap through Human Ecology and fiber science and apparel design programs." },
+    "healthWellness": { "strength": 62, "notes": "Moderate presence through Human Ecology and life sciences research." },
+    "nutraceuticals": { "strength": 50, "notes": "Meaningful overlap through agriculture and food science research." },
+    "consumerProducts": { "strength": 58, "notes": "Solid presence through Human Ecology and applied economics programs." },
+    "outdoorIndustry": { "strength": 52, "notes": "Moderate presence given the Finger Lakes setting and outdoor recreation culture." },
+    "sportsBusiness": { "strength": 40, "notes": "Limited institutional emphasis." },
+    "entertainmentMedia": { "strength": 34, "notes": "Limited institutional emphasis." },
+    "ventureCapital": { "strength": 60, "notes": "Growing presence, particularly in agricultural technology." },
+    "privateEquity": { "strength": 74, "notes": "Strong placement given Cornell's dense Wall Street and consulting alumni network." },
+    "investmentBanking": { "strength": 78, "notes": "Strong pipeline into major investment banks, particularly from the Dyson School of Applied Economics." },
+    "consulting": { "strength": 80, "notes": "Strong placement into top consulting firms." },
+    "medicine": { "strength": 62, "notes": "Solid pre-med foundation, supported by strong life sciences research." },
+    "healthcareAdministration": { "strength": 52, "notes": "Moderate presence." },
+    "defense": { "strength": 36, "notes": "Present through engineering pathways into aerospace and defense contractors." },
+    "realEstate": { "strength": 56, "notes": "Meaningful presence through real estate finance programs." },
+    "luxuryBrands": { "strength": 34, "notes": "Limited but present." },
+    "entrepreneurship": { "strength": 66, "notes": "Strong entrepreneurship culture, particularly in agricultural technology." },
+    "technology": { "strength": 78, "notes": "Strong engineering and computer science pipeline through Cornell Tech and the College of Engineering." },
+    "publicPolicy": { "strength": 62, "notes": "Solid pathway through the Industrial and Labor Relations school and applied economics." },
+    "nonprofitLeadership": { "strength": 56, "notes": "Meaningful pathway, often tied to agricultural and labor policy organizations." },
+    "hospitality": { "strength": 96, "notes": "The Nolan School of Hotel Administration is the single most famous, most prestigious hospitality management program in the country — this was previously buried as scattered fragments inside realEstate, luxuryBrands, and entrepreneurship, none of which gave it the standalone weight it actually deserves. (Added 2026-07-12.)" }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 70,
@@ -42334,6 +41899,7 @@ const UNIVERSITY_DB_V5 = {
       "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
+    "versusJohnsHopkins": "Hopkins offers a stronger academic medicine and public health research identity, with SAIS providing genuine international affairs depth; Georgetown offers an unmatched Foreign Service and DC policy pipeline through SFS without Hopkins' medicine-first focus.", "versusNotreDame": "Notre Dame offers a stronger, more disproportionately elite finance and consulting pipeline through Mendoza, reinforced by football-driven national alumni loyalty; Georgetown offers an unmatched Foreign Service and DC policy pipeline through SFS.",
       "versusGeorgeWashington": "GW offers a larger, less selective alternative with genuine DC proximity; Georgetown holds a clear selectivity and global-brand edge, with an SFS pipeline into the Foreign Service and international institutions that GW's Elliott School does not match at the same scale.",
       "versusNotreDame": "Both share Catholic/Jesuit-adjacent identity and elite, tightly networked alumni cultures. Georgetown's DC location gives it a structural, unreplicable advantage for students specifically pursuing foreign policy, government, or international affairs careers that Notre Dame's Indiana campus cannot offer.",
       "versusDuke": "Duke offers stronger basketball culture, a larger research-university footprint, and broader STEM depth. Georgetown's SFS brand and Washington location give it a decisive edge for any student whose primary interest is government, diplomacy, or international affairs specifically."
@@ -43387,6 +42953,7 @@ const UNIVERSITY_DB_V5 = {
         "strength": 34,
         "notes": "A minor, secondary pathway relative to A&M's core engineering, agriculture, and veterinary strengths."
       },
+      "agriculture": { "strength": 88, "notes": "A genuine, historic land-grant strength alongside engineering and military tradition -- A&M's agricultural programs are a defining, not secondary, institutional identity. (Added 2026-07-12: previously scattered thin across nutraceuticals, outdoorIndustry, publicPolicy, entrepreneurship, and nonprofitLeadership notes.)" },
       "nutraceuticals": {
         "strength": 30,
         "notes": "Some real overlap through agricultural science and food science programs, though not a central institutional focus."
@@ -43603,6 +43170,7 @@ const UNIVERSITY_DB_V5 = {
       "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
+    "versusJohnsHopkins": "Hopkins offers the single strongest medicine and public health research identity of any American university, with biomedical engineering as its clearest technical overlap with MIT; MIT offers a stronger engineering and technology entrepreneurship identity across nearly every discipline.",
       "versusCaltech": "Caltech offers an even more concentrated, smaller-scale pure-science environment with unmatched undergraduate access to JPL; MIT offers a larger scale with greater breadth across engineering disciplines and a substantially stronger entrepreneurial and business culture through Sloan.",
       "versusStanford": "Stanford offers denser direct access to Silicon Valley venture capital and a larger, more California-native startup ecosystem; MIT offers a more concentrated engineering-first culture and an entrepreneurship infrastructure that produces founders at a comparable rate from a smaller, more technically singular student body.",
       "versusCarnegieMellon": "Carnegie Mellon offers a more concentrated computer science identity at a smaller scale with strong industry ties to Pittsburgh's robotics and AI sector; MIT offers broader engineering breadth across nearly every discipline and a substantially larger, more mature entrepreneurship ecosystem."
@@ -44857,6 +44425,7 @@ const UNIVERSITY_DB_V5 = {
       "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
+    "versusJohnsHopkins": "Johns Hopkins offers the single strongest academic medicine and public health research reputation in the world, reinforced by four decades as the top recipient of federal research funding; Duke offers a more nationally-recruited, broadly prestigious student body and a more prominent basketball tradition.", "versusNotreDame": "Notre Dame offers a more explicitly Catholic institutional identity and a disproportionately strong finance/consulting pipeline relative to its undergraduate business cohort size; Duke offers a stronger academic medical center and Research Triangle biotech proximity.", "versusRice": "Rice offers a smaller, more personalized STEM-elite experience with direct Texas Medical Center proximity rather than an on-campus hospital; Duke offers a stronger academic medical center of its own and greater national prestige.",
       "versusUNC": "UNC offers comparable Research Triangle access at meaningfully lower cost with the #1-ranked pharmacy school in the country; Duke is more selective and privately funded, with stronger national (rather than primarily in-state) recruiting and a more prominent basketball and national-prestige identity.",
       "versusNorthwestern": "Northwestern offers stronger journalism and a Chicago-based recruiting economy; Duke offers a stronger academic medicine pipeline through its own major medical center and deeper Research Triangle biotech ties.",
       "versusVanderbilt": "Vanderbilt offers a similarly nationally-recruited elite Southern identity with strong healthcare and finance placement in Nashville; Duke offers a stronger academic medical center and denser Research Triangle biotech and pharma proximity.",
@@ -45274,6 +44843,7 @@ const UNIVERSITY_DB_V5 = {
       "SoCalCreativeEconomy": 20
     },
     "comparativePositioning": {
+    "versusRice": "Rice offers a smaller, more STEM-concentrated environment with unmatched Texas Medical Center and Houston energy-sector access; Northwestern offers nationally dominant journalism and stronger direct Chicago corporate access.",
       "versusUChicago": "UChicago offers a more intensely analytical, countercultural intellectual identity and the strongest economics department in the country; Northwestern offers a more conventionally pre-professional culture with nationally dominant journalism, strong engineering, and a genuinely elite performance and media pipeline.",
       "versusDuke": "Duke offers a stronger academic medicine pipeline through its own medical center and a more prominent basketball tradition; Northwestern offers nationally dominant journalism and media placement and direct Chicago corporate access.",
       "versusGeorgetown": "Georgetown offers an unmatched Foreign Service and DC policy pipeline; Northwestern offers a nationally dominant journalism program and stronger engineering, with a Chicago rather than Washington economic anchor.",
@@ -47677,6 +47247,766 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and priority course access within Seaver College's broader undergraduate structure."
     }
   }
+,
+  "Rice University": {
+  "institutionNarrative": {
+    "name": "Rice University",
+    "location": "Houston, Texas",
+    "region": "Southwest",
+    "archetype": "The Small STEM Elite With Houston's Energy and Medicine Economy at the Door",
+    "oneSentenceSummary": "Rice combines MIT/Caltech-caliber STEM rigor with genuine strength across humanities and architecture, inside a small, residential-college campus culture, with direct access to Houston's energy, medicine, and aerospace economy.",
+    "pipeline": "Approximately 4,600 undergraduates. The George R. Brown School of Engineering is elite, particularly in bioengineering, computer science, and chemical engineering, reinforced by direct proximity to the Texas Medical Center (the largest medical complex in the world) and Houston's energy sector. The Jones Graduate School of Business's undergraduate-adjacent coursework feeds into consulting and energy finance. Rice Architecture is one of the most respected small architecture programs in the country. Major recruiters include ExxonMobil, Chevron, McKinsey, NASA Johnson Space Center, and the Texas Medical Center's research hospitals.",
+    "hiddenPathway": "Rice's direct proximity to the Texas Medical Center — the largest medical complex in the world, employing over 100,000 people — gives bioengineering and pre-med students research and clinical access that most universities' students would need to relocate for.",
+    "institutionalSecret": "Rice's residential college system, modeled loosely on Oxford/Cambridge, means the university's small size (about the same as a large high school) produces an unusually tight-knit, low-attrition undergraduate culture rarely found at other research-intensive STEM universities.",
+    "theRoom": "Houston is the energy capital of the world and home to NASA Johnson Space Center and the Texas Medical Center — Rice sits inside a genuine three-industry economic engine (energy, aerospace, medicine) unmatched by any other city of its size.",
+    "lifestyle": "Quietly intense and collaborative rather than cutthroat — the residential college system deliberately dampens competition in favor of tight-knit community, an unusual culture for an institution this academically rigorous.",
+    "bestFitPersonality": "Intellectually serious and STEM-capable, but not narrowly technical — comfortable with genuine breadth across engineering, humanities, and architecture, energized by a small, close-knit community rather than a large research-university scale.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Dominant in Houston's energy, medicine, and aerospace economy, with strong national reach in engineering and architecture specifically.",
+    "economicOutcome": "Exceptional outcomes in engineering, medicine, and energy-sector finance, reinforced by direct access to the Texas Medical Center and Houston's energy corporate base.",
+    "gradCities": ["Houston TX", "New York NY", "San Francisco Bay Area CA", "Washington DC"],
+    "comparableInstitutions": ["Vanderbilt University", "Duke University", "Northwestern University", "Washington University in St. Louis"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Houston Community College"],
+      "transferAcceptanceRate": "~9%",
+      "freshmanAcceptanceRate": "~9%",
+      "estimatedSavingsRange": "$18,000-$42,000",
+      "transferNotes": "Rice accepts a very small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Rice University",
+    "archetype": "The Small STEM Elite With Houston's Energy and Medicine Economy at the Door",
+    "institutionalPersonality": "intellectually serious, collaborative, quietly intense, broadly capable",
+    "cultureKeywords": ["Residential Colleges", "Texas Medical Center Proximity", "Engineering", "Houston Energy Sector", "Small-Scale Elite"],
+    "missionOrientation": "Delivering elite STEM and humanities education at small scale, reinforced by direct access to Houston's energy, medicine, and aerospace economy.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Rigorous STEM and humanities education delivered through a residential college system designed to dampen competition in favor of community.",
+    "competitiveness": "Extremely Selective",
+    "politicalCulture": "Broadly progressive to moderate, with a quieter political culture than larger research universities.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Elite nationally in engineering and architecture, with genuine strength across humanities — MIT/Caltech-caliber STEM rigor without the narrow technical focus.",
+    "socialClimate": "Quietly intense, collaborative, tight-knit.",
+    "leadershipStyle": "Leadership through technical mastery and close-knit community involvement rather than large-scale institutional visibility."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Texas Triangle",
+    "regionalRole": "The most academically elite small STEM university inside the Texas Triangle, with direct pipelines into Houston's energy, medicine, and aerospace economy."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 16, "BosWash": 32, "TorBuffChester": 10,
+    "TexasTriangle": 94, "CharLanta": 14, "NorCalInnovationCorridor": 18, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusVanderbilt": "Vanderbilt offers a larger scale and Nashville's faster-growing economy; Rice offers a smaller, more STEM-concentrated environment with unmatched direct access to the Texas Medical Center and Houston's energy sector.",
+    "versusDuke": "Duke offers a stronger academic medical center of its own and greater national prestige; Rice offers a smaller, more personalized STEM-elite experience with direct Texas Medical Center proximity rather than an on-campus hospital.",
+    "versusWashU": "Washington University in St. Louis offers a similarly elite pre-med and STEM identity with strong need-based aid; Rice offers a smaller residential college culture and direct access to Houston's three-industry economy (energy, medicine, aerospace) that WashU's St. Louis location cannot replicate."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Small",
+    "undergraduateEnrollment": 4600, "graduateEnrollment": 3900, "totalEnrollment": 8500,
+    "campusType": "Private Research University, Residential College System",
+    "residentialIntensity": 88, "communityFeel": 90, "studentFacultyRatio": "6:1",
+    "classSizeExperience": "Small classes with strong faculty access throughout, reinforced by the residential college system's tight-knit community structure.",
+    "scaleAdvantages": [
+      "Direct proximity to the Texas Medical Center, the largest medical complex in the world",
+      "Houston's three-industry economic engine — energy, medicine, aerospace — unmatched by any city of similar size",
+      "Residential college system produces unusually low attrition and tight-knit community for a STEM-elite institution",
+      "Genuine breadth across engineering, humanities, and architecture rare at similarly STEM-focused universities"
+    ],
+    "scaleDisadvantages": [
+      "Very small size limits breadth of course offerings relative to larger research universities",
+      "Houston's sprawl and heat mean off-campus access requires a car",
+      "Narrow transfer pathway limits community college entry routes",
+      "Smaller national brand recognition outside Texas relative to peer institutions"
+    ]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 86, "conscientiousness": 88, "extraversion": 62, "agreeableness": 78, "neuroticism": 40 },
+    "hollandCodes": ["I", "R", "A"],
+    "learningStyle": ["Research", "Applied Engineering", "Residential College Seminar", "Studio-Based Architecture"],
+    "socialEnvironment": ["Quietly Intense", "Collaborative", "Tight-Knit", "Broadly Capable"],
+    "idealStudentTraits": ["Intellectually serious and STEM-capable but not narrowly technical", "Comfortable with a small, tight-knit community", "Drawn to Houston's energy, medicine, or aerospace economy", "Values collaboration over competition"],
+    "thrivesIf": ["Wants MIT/Caltech-caliber STEM rigor at a much smaller scale", "Values direct access to the Texas Medical Center and Houston's energy sector", "Wants genuine breadth across engineering, humanities, and architecture", "Is energized by a low-attrition, tight-knit residential college culture"],
+    "strugglesIf": ["Wants a large campus with extensive course breadth", "Needs an easier, higher-acceptance transfer pathway", "Prefers a walkable urban campus without needing a car", "Wants a more nationally prominent brand outside Texas"],
+    "transferRiskFactors": ["Very low transfer acceptance rate close to freshman admission rate", "Small undergraduate cohort limits open seats overall", "Highly competitive incoming class raises the bar for lateral entry"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Moderate",
+    "notes": "Rice does not formally impact most majors at the undergraduate level, though bioengineering and computer science carry substantial informal competitive pressure given their national reputations and direct Texas Medical Center ties."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Kinesiology", "Sport Management", "Earth, Environmental and Planetary Sciences", "Cognitive Sciences", "Global Health Technologies"],
+    "hiddenCareerPipelines": ["Biomedical Engineering (Texas Medical Center)", "Energy Sector Finance", "Aerospace Engineering (NASA Johnson Space Center)", "Architecture", "Space Medicine"],
+    "nicheRecruitingAdvantages": ["ExxonMobil", "Chevron", "NASA Johnson Space Center", "Texas Medical Center research hospitals", "McKinsey & Company"],
+    "overlookedStrengths": [
+      "Direct Texas Medical Center proximity gives bioengineering and pre-med students research and clinical access most universities' students would need to relocate for.",
+      "Rice Architecture is one of the most respected small architecture programs in the country, systematically underrated relative to Rice's STEM fame.",
+      "The residential college system produces a genuinely low-attrition, tight-knit culture unusual for an institution this academically rigorous.",
+      "Houston's three-industry economic engine — energy, medicine, aerospace — gives Rice students direct access to career pathways most universities' students only encounter through internships requiring relocation."
+    ],
+    "sleeperIndustries": ["Space Medicine", "Energy Transition Technology", "Biomedical Engineering", "Aerospace Systems Engineering"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 84, "mentorshipDensity": 84, "executiveAccess": 82, "internshipNetwork": 88,
+    "familyBusinessExposure": 48, "relationshipCapitalScore": 86, "alumniLoyaltyScore": 88,
+    "referralCultureStrength": 86, "donorNetworkStrength": 78, "boardMemberDensity": 72
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Energy", "Academic Medicine and Biomedical Engineering", "Aerospace", "Architecture", "Management Consulting"],
+    "regionalEconomicDrivers": ["Oil and Gas Energy", "Academic Medicine", "Aerospace", "Petrochemical Manufacturing"],
+    "topEmployers": ["ExxonMobil", "Chevron", "NASA Johnson Space Center", "Texas Medical Center research hospitals", "McKinsey & Company", "Shell"],
+    "emergingIndustries": ["Energy Transition Technology", "Biomedical Engineering", "Space Medicine", "Carbon Capture Technology"],
+    "startupDensity": "Moderate", "ventureCapitalAccess": 52, "corporateHeadquartersDensity": 64,
+    "healthcareHubStrength": 92, "innovationIndex": 80
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Houston — Energy, Academic Medicine, and Aerospace",
+    "secondaryMarkets": ["New York NY", "San Francisco Bay Area CA", "Washington DC"],
+    "alumniStrongholds": ["Houston TX", "Dallas-Fort Worth TX", "New York NY", "San Francisco Bay Area CA"],
+    "relocationPatterns": [
+      "A large share of graduates remain in Houston, entering energy, medicine, and aerospace roles.",
+      "New York draws graduates into investment banking and consulting.",
+      "The Bay Area recruits engineering graduates into technology roles.",
+      "A meaningful cohort enters academic medicine and biomedical research through Texas Medical Center ties."
+    ],
+    "regionalInfluenceScore": 94, "nationalReachScore": 78, "internationalReachScore": 54
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 8, "studentOrganizationStrength": 84, "leadershipDevelopment": 82,
+    "crossDisciplinaryInteraction": 86, "civicEngagement": 70
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 58, "notes": "A real, secondary pathway through kinesiology and health sciences, reinforced by Texas Medical Center proximity." },
+    "nutraceuticals": { "strength": 22, "notes": "Minimal institutional emphasis." },
+    "consumerProducts": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "outdoorIndustry": { "strength": 24, "notes": "Minimal institutional emphasis; Houston's climate and geography aren't outdoor-recreation-oriented." },
+    "sportsBusiness": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "entertainmentMedia": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 48, "notes": "A real, growing pathway tied to Houston's expanding energy-tech and biotech startup ecosystem." },
+    "privateEquity": { "strength": 56, "notes": "A real, secondary pathway, particularly in energy-sector private equity." },
+    "investmentBanking": { "strength": 68, "notes": "A real, solid pathway, particularly into energy-sector finance." },
+    "consulting": { "strength": 74, "notes": "A strong pathway into major consulting firms, particularly energy and technical strategy practices." },
+    "medicine": { "strength": 84, "notes": "A very strong pre-med pathway reinforced directly by Texas Medical Center proximity, though Rice has no medical school of its own." },
+    "healthcareAdministration": { "strength": 62, "notes": "A real, secondary pathway reinforced by Texas Medical Center ties." },
+    "defense": { "strength": 58, "notes": "A real pathway through aerospace engineering and NASA Johnson Space Center proximity." },
+    "realEstate": { "strength": 46, "notes": "A real, secondary pathway relative to Rice's dominant STEM and medicine pipelines." },
+    "luxuryBrands": { "strength": 22, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 64, "notes": "A real, growing pathway, particularly in energy-tech and biotech startups." },
+    "technology": { "strength": 82, "notes": "A strong pathway through the George R. Brown School of Engineering, particularly computer science and bioengineering." },
+    "publicPolicy": { "strength": 44, "notes": "A modest, secondary pathway relative to Rice's dominant STEM and medicine identity." },
+    "nonprofitLeadership": { "strength": 42, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 38, "notes": "A modest, secondary pathway tied to Houston's energy and petrochemical logistics economy." },
+    "insurance": { "strength": 26, "notes": "Minimal institutional emphasis." },
+    "agriculture": { "strength": 14, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 68, "firstGenerationSupport": 70,
+    "wealthCreationPotential": 84, "familyBusinessPipelineStrength": 46
+  },
+  "futureResilience": {
+    "aiResistance": 88, "automationResistance": 86, "adaptabilityScore": 84, "interdisciplinaryStrength": 86,
+    "futureReadiness": 88, "entrepreneurialFlexibility": 72, "lifelongLearningCulture": 84, "innovationCapacity": 86
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 84, "communityLeadershipPotential": 80, "geographicMobility": 78,
+    "workLifeBalancePotential": 74, "purposeAlignment": 80, "familyFormationSupport": 76,
+    "personalDevelopmentPotential": 86, "careerOptionality": 84, "longTermLifeSatisfaction": 84
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 84, "networkMoat": 78, "geographicMoat": 88, "industryMoat": 86,
+    "alumniMoat": 80, "brandDurability": 84, "overallMoatScore": 83
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 52, "returnerScore": 60, "stewardScore": 72, "navigatorScore": 68,
+    "geographicLockIn": "moderate",
+    "alumniDispersalPattern": "heavily_concentrated_houston_with_ny_bay_area_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 58, "type": "Campus Hillel" },
+    "estimatedJewishUndergraduates": 350, "jewishStudentPercentage": "~7.5%",
+    "kosherDining": true, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Moderate",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "Rice has no separate honors college; the entire undergraduate institution functions at an honors-equivalent level of rigor given its small size, 6:1 student-faculty ratio, and residential college structure."
+  }
+},
+  "University of Notre Dame": {
+  "institutionNarrative": {
+    "name": "University of Notre Dame",
+    "location": "Notre Dame, Indiana",
+    "region": "Great Lakes",
+    "archetype": "Catholic Tradition, Football Culture, and an Elite Finance-and-Consulting Pipeline",
+    "oneSentenceSummary": "Notre Dame combines genuine Catholic institutional identity and one of the most storied traditions in college football with an elite, disproportionately strong finance and consulting placement pipeline through the Mendoza College of Business.",
+    "pipeline": "Approximately 8,900 undergraduates. The Mendoza College of Business is a genuine undergraduate business program with elite Wall Street and consulting placement, consistently ranked among the top undergraduate business schools in the country. The College of Engineering is solid across most disciplines. Strong pre-law and pre-med tracks are reinforced by Notre Dame's own law school and a nationally-recruited student body. Major recruiters include every major investment bank, McKinsey, Bain, Deloitte, and top law and medical schools nationally.",
+    "hiddenPathway": "Notre Dame's alumni network operates with an intensity and reciprocal obligation that rivals or exceeds much larger universities — the 'Notre Dame family' framing is not just marketing, it functions as a genuine, active career-placement mechanism reinforced by shared Catholic identity and football culture.",
+    "institutionalSecret": "Mendoza's finance and consulting placement rates are disproportionately strong relative to Notre Dame's smaller undergraduate business cohort — the school punches meaningfully above its size in Wall Street recruiting, systematically undersold relative to Notre Dame's football fame.",
+    "theRoom": "Notre Dame, Indiana is a small, self-contained campus community in the South Bend area, distinct from the more urban settings of many peer institutions — the football stadium and Golden Dome are the literal and symbolic center of campus life.",
+    "lifestyle": "Deeply traditional, spirited, and values-driven — football Saturdays, Catholic Mass attendance, and a genuine sense of shared institutional identity create a campus culture built on tradition and loyalty to a degree unusual even among religiously-affiliated universities.",
+    "bestFitPersonality": "Values-driven and comfortable with explicit Catholic institutional identity, ambitious and pre-professionally focused, energized by intense school spirit and tradition.",
+    "faithTradition": "Catholic",
+    "geographicInfluenceRadius": "National prestige and recruiting reach, particularly strong in finance, consulting, and law, with a genuinely national (not regional) alumni network reinforced by football culture.",
+    "economicOutcome": "Excellent outcomes in finance, consulting, and law, with placement rates through Mendoza disproportionately strong relative to Notre Dame's undergraduate business cohort size.",
+    "gradCities": ["Chicago IL", "New York NY", "Washington DC", "Los Angeles CA"],
+    "comparableInstitutions": ["Georgetown University", "Duke University", "Vanderbilt University", "Boston College"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Ivy Tech Community College"],
+      "transferAcceptanceRate": "~10%",
+      "freshmanAcceptanceRate": "~12%",
+      "estimatedSavingsRange": "$18,000-$40,000",
+      "transferNotes": "Notre Dame accepts a small number of transfer students annually, remaining highly selective relative to most peer institutions."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Notre Dame",
+    "archetype": "Catholic Tradition, Football Culture, and an Elite Finance-and-Consulting Pipeline",
+    "institutionalPersonality": "values-driven, tradition-proud, ambitious, spirited",
+    "cultureKeywords": ["Fighting Irish Football", "Mendoza Business", "Catholic Identity", "Golden Dome", "Notre Dame Family Network"],
+    "missionOrientation": "Delivering elite Catholic education combined with genuinely elite finance and consulting outcomes, reinforced by an unusually active, reciprocal alumni network.",
+    "faithTradition": "Catholic",
+    "educationalPhilosophy": "Rigorous pre-professional and liberal arts education reinforced by explicit Catholic values and an intensely loyal institutional culture.",
+    "competitiveness": "Extremely Selective",
+    "politicalCulture": "Broadly moderate to conservative, genuinely distinctive relative to most elite national universities, reinforced by Catholic institutional identity.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Elite in finance and consulting through Mendoza, disproportionately strong relative to cohort size; strong national prestige reinforced by football culture and Catholic identity.",
+    "socialClimate": "Spirited, tradition-bound, values-driven, ambitious.",
+    "leadershipStyle": "Leadership through tradition, Catholic values, and an intensely loyal, reciprocal alumni network."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "regionalRole": "A nationally-recruited Catholic elite institution whose alumni network and finance/consulting placement extend well beyond its Great Lakes location, reinforced by football-driven national visibility."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 68, "BosWash": 44, "TorBuffChester": 16,
+    "TexasTriangle": 14, "CharLanta": 14, "NorCalInnovationCorridor": 16, "SoCalCreativeEconomy": 14
+  },
+  "comparativePositioning": {
+    "versusGeorgetown": "Georgetown offers an unmatched Foreign Service and DC policy pipeline through SFS; Notre Dame offers a stronger, more disproportionately elite finance and consulting pipeline through Mendoza, reinforced by football-driven national alumni loyalty Georgetown's DC-centered identity doesn't replicate.",
+    "versusDuke": "Duke offers a stronger academic medical center and Research Triangle biotech proximity; Notre Dame offers a more explicitly Catholic institutional identity and a disproportionately strong finance/consulting pipeline relative to its undergraduate business cohort size.",
+    "versusBostonCollege": "Boston College offers a larger Boston-area alumni network and direct access to a major Northeastern financial-services hub; Notre Dame offers a more nationally (rather than regionally) distributed alumni network and a more storied football tradition."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Medium",
+    "undergraduateEnrollment": 8900, "graduateEnrollment": 4200, "totalEnrollment": 13100,
+    "campusType": "Private Catholic Research University, Self-Contained Campus Community",
+    "residentialIntensity": 88, "communityFeel": 90, "studentFacultyRatio": "9:1",
+    "classSizeExperience": "Small-to-moderate classes with strong faculty access, particularly within Mendoza's cohort-based business curriculum.",
+    "scaleAdvantages": [
+      "Disproportionately strong finance and consulting placement through Mendoza relative to cohort size",
+      "An unusually active, reciprocal alumni network reinforced by shared Catholic identity and football culture",
+      "Genuine Catholic institutional identity and values-driven community",
+      "Intensely loyal, nationally-distributed alumni base"
+    ],
+    "scaleDisadvantages": [
+      "South Bend is a small city with limited independent economic pull",
+      "More conservative, tradition-bound campus culture may not fit every student",
+      "High cost of attendance",
+      "Narrow transfer pathway limits community college entry routes"
+    ]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 72, "conscientiousness": 88, "extraversion": 78, "agreeableness": 82, "neuroticism": 38 },
+    "hollandCodes": ["E", "S", "C"],
+    "learningStyle": ["Case-Method Business", "Values-Integrated Seminar Discussion", "Clinical Pre-Med Training"],
+    "socialEnvironment": ["Values-Driven", "Tradition-Proud", "Spirited", "Ambitious"],
+    "idealStudentTraits": ["Comfortable with an explicit Catholic institutional identity", "Ambitious and pre-professionally focused", "Energized by intense school spirit and tradition", "Values loyalty and long-term community over individual distinctiveness"],
+    "thrivesIf": ["Wants a disproportionately strong finance and consulting pipeline at a values-driven institution", "Values explicit Catholic identity and tradition", "Wants an intensely loyal, nationally-distributed alumni network", "Enjoys football-driven campus-wide identity and shared tradition"],
+    "strugglesIf": ["Wants a secular or areligious institutional culture", "Needs a major city's direct economic and cultural access", "Prefers a more politically progressive or mixed campus culture", "Is uncomfortable with an intensely tradition-bound, spirited campus culture"],
+    "transferRiskFactors": ["Students seeking a secular institutional culture", "Students who want a larger city's direct access", "Students uncomfortable with Notre Dame's tradition-bound, football-centered campus culture"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Moderate",
+    "notes": "Mendoza College of Business admits as a competitive internal application distinct from general Notre Dame admission, and pre-med tracks carry substantial informal competitive pressure given Notre Dame's strong medical school placement record."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Constitutional Studies", "Science-Business", "Peace Studies", "Film, Television, and Theatre", "Environmental Science"],
+    "hiddenCareerPipelines": ["Catholic Nonprofit and Ministry Leadership", "Sports Business and Athletics Administration", "Political Campaigns and Advocacy", "Academic Medicine", "Broadcast Media (football-adjacent)"],
+    "nicheRecruitingAdvantages": ["Goldman Sachs", "McKinsey & Company", "Bain & Company", "Deloitte", "Every major NBC/broadcast sports media outlet via football ties"],
+    "overlookedStrengths": [
+      "Mendoza's finance and consulting placement rates are disproportionately strong relative to Notre Dame's smaller undergraduate business cohort, systematically undersold relative to football fame.",
+      "The 'Notre Dame family' alumni network functions as a genuine, active career-placement mechanism, not just marketing language.",
+      "Notre Dame's football-driven national visibility gives graduates a recognition advantage in networking and interviews that most peer institutions' alumni don't have.",
+      "Constitutional Studies and Science-Business are genuinely distinctive, less-recognized interdisciplinary programs."
+    ],
+    "sleeperIndustries": ["Sports Business and Media", "Catholic Nonprofit Leadership", "Political Campaigns", "Academic Medicine"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 92, "mentorshipDensity": 88, "executiveAccess": 86, "internshipNetwork": 88,
+    "familyBusinessExposure": 52, "relationshipCapitalScore": 94, "alumniLoyaltyScore": 96,
+    "referralCultureStrength": 92, "donorNetworkStrength": 86, "boardMemberDensity": 78
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Financial Services", "Management Consulting", "Law", "Sports Media", "Catholic Nonprofit and Ministry"],
+    "regionalEconomicDrivers": ["Financial Services", "Management Consulting", "Legal Services", "Sports and Broadcast Media"],
+    "topEmployers": ["Goldman Sachs", "McKinsey & Company", "Bain & Company", "Deloitte", "JPMorgan Chase", "Major broadcast sports media companies"],
+    "emergingIndustries": ["Sports Analytics and Media", "Fintech", "Healthcare Consulting", "AI Policy"],
+    "startupDensity": "Low-Moderate", "ventureCapitalAccess": 44, "corporateHeadquartersDensity": 42,
+    "healthcareHubStrength": 56, "innovationIndex": 62
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Chicago and National — Financial Services, Consulting, and Sports Media",
+    "secondaryMarkets": ["New York NY", "Washington DC", "Los Angeles CA"],
+    "alumniStrongholds": ["Chicago IL", "New York NY", "Washington DC", "Los Angeles CA"],
+    "relocationPatterns": [
+      "Chicago draws a significant share of graduates into finance, consulting, and corporate roles.",
+      "New York recruits the largest share of graduates into investment banking and consulting.",
+      "Washington DC draws graduates into law, policy, and government roles.",
+      "A genuinely national (not regionally concentrated) alumni distribution, reinforced by football-driven visibility."
+    ],
+    "regionalInfluenceScore": 78, "nationalReachScore": 94, "internationalReachScore": 58
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 0, "studentOrganizationStrength": 88, "leadershipDevelopment": 88,
+    "crossDisciplinaryInteraction": 74, "civicEngagement": 84
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 44, "notes": "A modest, secondary pathway relative to Notre Dame's dominant finance and consulting identity." },
+    "nutraceuticals": { "strength": 18, "notes": "Minimal institutional emphasis." },
+    "consumerProducts": { "strength": 44, "notes": "A real, secondary pathway through Mendoza Business coursework." },
+    "outdoorIndustry": { "strength": 22, "notes": "Minimal institutional emphasis." },
+    "sportsBusiness": { "strength": 78, "notes": "A genuinely strong, distinctive pathway given Notre Dame's football program's national prominence and a growing sports management and analytics curriculum." },
+    "entertainmentMedia": { "strength": 42, "notes": "A real, secondary pathway tied to broadcast sports media given football's national visibility." },
+    "ventureCapital": { "strength": 38, "notes": "A modest, secondary pathway relative to Notre Dame's dominant finance and consulting identity." },
+    "privateEquity": { "strength": 72, "notes": "A strong pathway, competitive with peer elite private universities." },
+    "investmentBanking": { "strength": 88, "notes": "A very strong pathway, disproportionately strong relative to Notre Dame's smaller undergraduate business cohort — systematically undersold relative to football fame." },
+    "consulting": { "strength": 90, "notes": "One of the strongest management consulting pipelines of any university, reinforced by Mendoza's elite placement record." },
+    "medicine": { "strength": 62, "notes": "A real, solid pre-med pathway; Notre Dame has no medical school of its own." },
+    "healthcareAdministration": { "strength": 48, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 34, "notes": "A modest, secondary pathway; ROTC has a genuine presence but Notre Dame is not primarily positioned as a defense-recruiting campus." },
+    "realEstate": { "strength": 48, "notes": "A real, secondary pathway through Mendoza Business coursework." },
+    "luxuryBrands": { "strength": 24, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 58, "notes": "A real, growing pathway, though secondary to Notre Dame's dominant finance and consulting pipelines." },
+    "technology": { "strength": 50, "notes": "A real but secondary pathway; Notre Dame is not positioned as a technology-recruiting campus in the way engineering-first institutions are." },
+    "publicPolicy": { "strength": 54, "notes": "A real, secondary pathway, reinforced by strong pre-law placement." },
+    "nonprofitLeadership": { "strength": 68, "notes": "A genuinely strong, distinctive pathway reinforced by Notre Dame's Catholic institutional identity and mission-driven alumni culture." },
+    "hospitality": { "strength": 26, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "insurance": { "strength": 32, "notes": "A modest, secondary pathway relative to Notre Dame's dominant investment banking and consulting identity." },
+    "agriculture": { "strength": 16, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 52, "firstGenerationSupport": 58,
+    "wealthCreationPotential": 88, "familyBusinessPipelineStrength": 56
+  },
+  "futureResilience": {
+    "aiResistance": 78, "automationResistance": 80, "adaptabilityScore": 78, "interdisciplinaryStrength": 74,
+    "futureReadiness": 78, "entrepreneurialFlexibility": 62, "lifelongLearningCulture": 78, "innovationCapacity": 68
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 88, "communityLeadershipPotential": 90, "geographicMobility": 78,
+    "workLifeBalancePotential": 70, "purposeAlignment": 86, "familyFormationSupport": 84,
+    "personalDevelopmentPotential": 84, "careerOptionality": 84, "longTermLifeSatisfaction": 88
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 88, "networkMoat": 92, "geographicMoat": 74, "industryMoat": 82,
+    "alumniMoat": 96, "brandDurability": 94, "overallMoatScore": 88
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "NAVIGATOR",
+    "leaverScore": 68, "returnerScore": 40, "stewardScore": 42, "navigatorScore": 78,
+    "geographicLockIn": "low",
+    "alumniDispersalPattern": "chicago_ny_dc_concentration_with_genuinely_national_spread"
+  },
+  "jewishLife": {
+    "hillel": { "exists": false, "strength": 16, "type": "No formal Hillel; small informal Jewish student presence" },
+    "estimatedJewishUndergraduates": 80, "jewishStudentPercentage": "~1%",
+    "kosherDining": false, "shabbatProgramming": false, "birthrightSupport": false,
+    "jewishCommunityStrength": "Minimal",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified. Notre Dame's explicit Catholic institutional identity makes it a less common choice for Jewish students relative to secular or nonsectarian peers — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Glynn Family Honors Program", "strength": 66,
+    "notes": "Provides smaller seminars and priority course access within Notre Dame's broader undergraduate structure."
+  }
+},
+  "Johns Hopkins University": {
+  "institutionNarrative": {
+    "name": "Johns Hopkins University",
+    "location": "Baltimore, Maryland",
+    "region": "Mid-Atlantic",
+    "archetype": "The World's Top Research Funding Recipient — Medicine, Public Health, and International Affairs",
+    "oneSentenceSummary": "Johns Hopkins combines the world's top medical research funding and hospital system with the Bloomberg School of Public Health (the top-ranked public health program globally) and SAIS's elite international affairs pipeline, inside America's first research university.",
+    "pipeline": "Approximately 6,300 undergraduates. Johns Hopkins Hospital and School of Medicine anchor one of the strongest academic medicine and biomedical research pipelines in the world — Hopkins has led the nation in federal research funding for over four decades. The Whiting School of Engineering is particularly strong in biomedical engineering, consistently ranked #1 in the country. The Bloomberg School of Public Health is the top-ranked public health program globally. The School of Advanced International Studies (SAIS), though primarily graduate, reinforces a genuine undergraduate international affairs pipeline. Major recruiters include every major academic medical center, the CDC, McKinsey, and top consulting and finance firms.",
+    "hiddenPathway": "Hopkins' status as America's first research university and its four-decade run as the top recipient of federal research funding means undergraduates doing research here are frequently working alongside faculty on genuinely field-defining biomedical and public health research, not simulated lab exercises.",
+    "institutionalSecret": "Hopkins' economics department has an outsized, historically strong applied economics and public policy pipeline that gets systematically overshadowed by the university's medical fame — the department has produced disproportionate numbers of Federal Reserve economists and World Bank staff relative to its size.",
+    "theRoom": "Baltimore sits inside the BosWash corridor, close enough to Washington DC for real federal policy access while maintaining Hopkins' own dense biomedical research ecosystem centered on Johns Hopkins Hospital.",
+    "lifestyle": "Intensely academic and research-driven — Hopkins' culture prioritizes research rigor and pre-professional achievement over traditional collegiate social life, producing a genuinely serious, less socially performative undergraduate experience than many peer institutions.",
+    "bestFitPersonality": "Extremely research-oriented and academically serious, comfortable with a demanding, achievement-focused culture, drawn to medicine, public health, biomedical engineering, or international affairs specifically.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Global dominance in academic medicine and public health research, with strong national reach in biomedical engineering and international affairs.",
+    "economicOutcome": "Exceptional outcomes in medicine, public health, and biomedical engineering, with a genuinely global research reputation and placement into the world's top academic medical institutions.",
+    "gradCities": ["Baltimore MD", "Washington DC", "New York NY", "Boston MA"],
+    "comparableInstitutions": ["Duke University", "Georgetown University", "Massachusetts Institute of Technology", "Emory University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Community College of Baltimore County"],
+      "transferAcceptanceRate": "~8%",
+      "freshmanAcceptanceRate": "~7%",
+      "estimatedSavingsRange": "$18,000-$42,000",
+      "transferNotes": "Hopkins accepts a small number of transfer students annually, remaining highly selective relative to most peer institutions."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Johns Hopkins",
+    "archetype": "The World's Top Research Funding Recipient — Medicine, Public Health, and International Affairs",
+    "institutionalPersonality": "intensely research-driven, academically serious, achievement-focused, globally oriented",
+    "cultureKeywords": ["Johns Hopkins Hospital", "Bloomberg School of Public Health", "SAIS", "America's First Research University", "Biomedical Engineering"],
+    "missionOrientation": "Advancing medicine, public health, and research at the highest global level, reinforced by America's original research-university model.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Rigorous, research-first education where undergraduates work directly alongside faculty on field-defining biomedical and public health research.",
+    "competitiveness": "Extremely Selective",
+    "politicalCulture": "Broadly progressive, with a research-and-achievement-focused campus energy more than an overtly political one.",
+    "studentAutonomy": "Very High",
+    "prestigeOrientation": "Among the most academically prestigious institutions in the world for medicine, public health, and biomedical engineering.",
+    "socialClimate": "Intensely academic, research-driven, achievement-focused.",
+    "leadershipStyle": "Leadership through research excellence and technical mastery in medicine, public health, and biomedical science."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "BosWash",
+    "regionalRole": "The world's leading academic medicine and public health research engine inside the BosWash corridor, with genuine DC-adjacent international affairs and federal policy reach through SAIS."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 14, "BosWash": 92, "TorBuffChester": 12,
+    "TexasTriangle": 10, "CharLanta": 22, "NorCalInnovationCorridor": 18, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusDuke": "Duke offers a more nationally-recruited, broadly prestigious student body and a more prominent basketball tradition; Hopkins offers the single strongest academic medicine and public health research reputation in the world, reinforced by four decades as the top recipient of federal research funding.",
+    "versusGeorgetown": "Georgetown offers an unmatched Foreign Service and DC policy pipeline through SFS; Hopkins offers a stronger academic medicine and public health research identity, with SAIS providing genuine international affairs depth without Georgetown's undergraduate-first policy focus.",
+    "versusMIT": "MIT offers a stronger engineering and technology entrepreneurship identity across nearly every discipline; Hopkins offers the single strongest medicine and public health research identity of any American university, with biomedical engineering as its clearest technical overlap with MIT."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Medium",
+    "undergraduateEnrollment": 6300, "graduateEnrollment": 6900, "totalEnrollment": 13200,
+    "campusType": "Private Research University, Urban Baltimore Campus",
+    "residentialIntensity": 76, "communityFeel": 68, "studentFacultyRatio": "6:1",
+    "classSizeExperience": "Small classes with strong faculty access, reinforced by extensive undergraduate research participation through UROP-equivalent programs tied directly to Johns Hopkins Hospital and the Bloomberg School.",
+    "scaleAdvantages": [
+      "The world's leading academic medicine and public health research reputation",
+      "Four decades as the top recipient of federal research funding, giving undergraduates access to field-defining research",
+      "Whiting School's biomedical engineering program is consistently ranked #1 in the country",
+      "SAIS provides genuine international affairs depth with DC-adjacent policy access"
+    ],
+    "scaleDisadvantages": [
+      "Intensely research-focused culture prioritizes academic achievement over traditional collegiate social life",
+      "Baltimore's urban setting and safety perception concern some families relative to peer campuses",
+      "Extremely demanding pre-med and biomedical engineering workload",
+      "Narrow transfer pathway limits community college entry routes"
+    ]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 88, "conscientiousness": 90, "extraversion": 56, "agreeableness": 70, "neuroticism": 46 },
+    "hollandCodes": ["I", "S", "R"],
+    "learningStyle": ["Research", "Clinical Pre-Med Training", "Biomedical Engineering Laboratory Work", "Policy Case Study"],
+    "socialEnvironment": ["Intensely Academic", "Research-Driven", "Achievement-Focused", "Globally Oriented"],
+    "idealStudentTraits": ["Extremely research-oriented and academically serious", "Comfortable with a demanding, achievement-focused culture", "Drawn to medicine, public health, biomedical engineering, or international affairs specifically", "Values substantive research access over traditional collegiate social life"],
+    "thrivesIf": ["Wants the world's leading academic medicine and public health research access", "Is drawn to biomedical engineering at the #1-ranked program in the country", "Wants genuine undergraduate research alongside field-defining faculty", "Values SAIS-adjacent international affairs depth"],
+    "strugglesIf": ["Wants a traditional, socially vibrant collegiate atmosphere", "Needs a lighter academic and research workload", "Prefers a suburban or traditional campus setting over urban Baltimore", "Wants strong Greek life or big-time athletics culture"],
+    "transferRiskFactors": ["Students overwhelmed by Hopkins' intensely research-focused academic culture", "Students seeking a more socially vibrant, traditional collegiate experience", "Students uncomfortable with Baltimore's urban setting"]
+  },
+  "competitiveMajorPressure": {
+    "level": "High",
+    "notes": "Biomedical engineering and neuroscience carry substantial informal competitive pressure given their #1-ranked national reputations, though Hopkins does not formally impact most majors beyond general admission."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Applied Mathematics and Statistics", "Behavioral Biology", "Public Health Studies (undergraduate)", "Cognitive Science", "Museums and Society"],
+    "hiddenCareerPipelines": ["Global Health Policy", "Biomedical Device Engineering", "Epidemiology and Public Health Research", "Federal Reserve and Economic Policy Research", "International Development"],
+    "nicheRecruitingAdvantages": ["Johns Hopkins Hospital and Medicine", "Centers for Disease Control and Prevention", "World Bank", "McKinsey & Company", "Federal Reserve System"],
+    "overlookedStrengths": [
+      "Hopkins' economics department has a disproportionately strong applied economics and public policy pipeline, systematically overshadowed by the university's medical fame.",
+      "SAIS provides genuine undergraduate-adjacent international affairs depth most families researching Hopkins for medicine never discover.",
+      "Undergraduates doing research at Hopkins are frequently working alongside faculty on genuinely field-defining biomedical and public health research, not simulated lab exercises.",
+      "Whiting School's biomedical engineering program is consistently ranked #1 in the country, a specific, elite credential many families researching Hopkins broadly never isolate."
+    ],
+    "sleeperIndustries": ["Global Health Policy", "Epidemiology and Public Health Research", "Biomedical Device Engineering", "Economic Policy Research"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 78, "mentorshipDensity": 82, "executiveAccess": 84, "internshipNetwork": 90,
+    "familyBusinessExposure": 38, "relationshipCapitalScore": 80, "alumniLoyaltyScore": 76,
+    "referralCultureStrength": 78, "donorNetworkStrength": 84, "boardMemberDensity": 78
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Academic Medicine and Biomedical Research", "Public Health", "Biomedical Engineering", "International Development Policy", "Management Consulting"],
+    "regionalEconomicDrivers": ["Academic Medicine", "Biomedical Research", "Public Health Policy", "Biotechnology"],
+    "topEmployers": ["Johns Hopkins Hospital and Medicine", "Centers for Disease Control and Prevention", "World Bank", "McKinsey & Company", "Major pharmaceutical and biotech firms", "Federal Reserve System"],
+    "emergingIndustries": ["Global Health Technology", "Biomedical Device Engineering", "AI in Medicine", "Precision Public Health"],
+    "startupDensity": "Moderate", "ventureCapitalAccess": 56, "corporateHeadquartersDensity": 48,
+    "healthcareHubStrength": 98, "innovationIndex": 88
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Baltimore-Washington Corridor — Academic Medicine, Public Health, and Biomedical Research",
+    "secondaryMarkets": ["New York NY", "Boston MA", "San Francisco Bay Area CA"],
+    "alumniStrongholds": ["Washington DC", "Baltimore MD", "New York NY", "Boston MA"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in the Baltimore-Washington corridor, entering academic medicine, public health, and federal policy roles.",
+      "New York and Boston draw graduates into finance, consulting, and biotech.",
+      "A meaningful cohort enters global health and international development roles internationally, reinforced by SAIS and Bloomberg School ties.",
+      "The Bay Area recruits graduates into biotech and health technology roles."
+    ],
+    "regionalInfluenceScore": 92, "nationalReachScore": 92, "internationalReachScore": 82
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 22, "studentOrganizationStrength": 78, "leadershipDevelopment": 78,
+    "crossDisciplinaryInteraction": 84, "civicEngagement": 76
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 14, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 86, "notes": "A very strong pathway reinforced by Johns Hopkins Hospital and the Bloomberg School of Public Health." },
+    "nutraceuticals": { "strength": 30, "notes": "A modest, secondary pathway relative to Hopkins' dominant medicine and public health identity." },
+    "consumerProducts": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "outdoorIndustry": { "strength": 18, "notes": "Minimal institutional emphasis." },
+    "sportsBusiness": { "strength": 20, "notes": "Not a primary institutional specialty; Hopkins' athletics program (notably lacrosse) is strong but not a defining institutional identity." },
+    "entertainmentMedia": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 46, "notes": "A real, growing pathway, particularly in health technology venture investing." },
+    "privateEquity": { "strength": 52, "notes": "A real, secondary pathway relative to Hopkins' dominant medicine and research identity." },
+    "investmentBanking": { "strength": 58, "notes": "A real, secondary pathway, smaller than Hopkins' dominant medicine and research pipelines." },
+    "consulting": { "strength": 78, "notes": "A strong pathway into major consulting firms, particularly healthcare consulting practices." },
+    "medicine": { "strength": 98, "notes": "The single strongest pathway at the institution — Johns Hopkins Hospital and School of Medicine anchor one of the strongest academic medicine pipelines in the world." },
+    "healthcareAdministration": { "strength": 94, "notes": "A very strong, distinctive pathway reinforced by the Bloomberg School of Public Health, the top-ranked public health program globally." },
+    "defense": { "strength": 36, "notes": "A modest, secondary pathway, primarily through the Applied Physics Laboratory's defense-adjacent research." },
+    "realEstate": { "strength": 28, "notes": "Not a defining institutional strength." },
+    "luxuryBrands": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 56, "notes": "A real, growing pathway, particularly in health technology startups, though secondary to Hopkins' core medicine and research pipelines." },
+    "technology": { "strength": 72, "notes": "A strong pathway through the Whiting School of Engineering, particularly biomedical engineering, the #1-ranked program in the country." },
+    "publicPolicy": { "strength": 82, "notes": "A very strong, distinctive pathway reinforced by SAIS and Hopkins' applied economics department's disproportionately strong Federal Reserve and World Bank placement." },
+    "nonprofitLeadership": { "strength": 74, "notes": "A genuinely strong pathway reinforced by global health and international development ties through the Bloomberg School and SAIS." },
+    "hospitality": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 32, "notes": "A modest, secondary pathway, primarily through healthcare and pharmaceutical supply chain research." },
+    "insurance": { "strength": 34, "notes": "A modest, secondary pathway relative to Hopkins' dominant medicine and public health identity." },
+    "agriculture": { "strength": 14, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 62, "firstGenerationSupport": 66,
+    "wealthCreationPotential": 84, "familyBusinessPipelineStrength": 34
+  },
+  "futureResilience": {
+    "aiResistance": 92, "automationResistance": 92, "adaptabilityScore": 86, "interdisciplinaryStrength": 88,
+    "futureReadiness": 92, "entrepreneurialFlexibility": 64, "lifelongLearningCulture": 90, "innovationCapacity": 88
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 84, "communityLeadershipPotential": 82, "geographicMobility": 84,
+    "workLifeBalancePotential": 58, "purposeAlignment": 92, "familyFormationSupport": 64,
+    "personalDevelopmentPotential": 88, "careerOptionality": 88, "longTermLifeSatisfaction": 82
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 94, "networkMoat": 80, "geographicMoat": 88, "industryMoat": 96,
+    "alumniMoat": 76, "brandDurability": 94, "overallMoatScore": 88
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "NAVIGATOR",
+    "leaverScore": 70, "returnerScore": 32, "stewardScore": 30, "navigatorScore": 86,
+    "geographicLockIn": "low",
+    "alumniDispersalPattern": "baltimore_dc_concentration_with_national_international_medicine_dispersal"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 74, "type": "Independent Campus Hillel" },
+    "estimatedJewishUndergraduates": 1000, "jewishStudentPercentage": "~16%",
+    "kosherDining": true, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Strong",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "Hopkins has no separate honors college; the entire undergraduate institution functions at an honors-equivalent level given its small size, 6:1 student-faculty ratio, and extensive undergraduate research participation."
+  }
+},
+  "University of Nevada, Las Vegas": {
+  "institutionNarrative": {
+    "name": "University of Nevada, Las Vegas",
+    "location": "Las Vegas, Nevada",
+    "region": "Southwest",
+    "archetype": "The World's Most Specialized Hospitality and Gaming Management Program, Inside the Industry It Studies",
+    "oneSentenceSummary": "UNLV's William F. Harrah College of Hospitality is the most specialized, most industry-embedded hospitality and casino/resort management program in the country, located literally inside the industry it trains students for.",
+    "pipeline": "Approximately 25,000 undergraduates. The Harrah College of Hospitality is UNLV's defining institutional identity — genuinely the top program in the country for casino, resort, and gaming management, with direct, structural relationships to every major Las Vegas Strip operator. The Lee Business School has real, if secondary, general business placement. Engineering and computer science are growing but not yet a defining strength. Major recruiters include MGM Resorts, Caesars Entertainment, Wynn Resorts, and Las Vegas Sands.",
+    "hiddenPathway": "UNLV students in the Harrah College routinely complete internships and case projects directly with Strip resort operators as standing coursework, not as a competitive add-on — the industry access is structurally built into the degree, not something students have to independently seek out.",
+    "institutionalSecret": "UNLV's hospitality program is genuinely more specialized and industry-embedded than Cornell's — Cornell's Hotel School operates inside an Ivy League liberal-arts context; Harrah College operates inside the actual industry, with faculty who are frequently former Strip resort executives.",
+    "theRoom": "UNLV sits inside Las Vegas, home to the largest concentration of casino resort operators in the world — students are not adjacent to the hospitality and gaming industry, they are embedded inside the city that defines it globally.",
+    "lifestyle": "Practical, industry-oriented, and less traditionally collegiate than peer institutions — a large share of students work in the hospitality industry while enrolled, given Las Vegas's employment density in the field.",
+    "bestFitPersonality": "Practically minded and industry-oriented, drawn specifically to hospitality, gaming, or resort management, comfortable with a large public university and direct, hands-on industry integration.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Globally dominant in hospitality, gaming, and resort management specifically; regionally solid in general business and a growing but secondary strength in technology and engineering.",
+    "economicOutcome": "Exceptional, industry-specific outcomes in hospitality, gaming, and resort management; solid but unremarkable outcomes in general business and other fields.",
+    "gradCities": ["Las Vegas NV", "Los Angeles CA", "Macau/International Gaming Markets"],
+    "comparableInstitutions": ["Cornell University", "University of Nevada, Reno", "Michigan State University", "Purdue University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["College of Southern Nevada"],
+      "transferAcceptanceRate": "~85%",
+      "freshmanAcceptanceRate": "~82%",
+      "estimatedSavingsRange": "$8,000-$18,000",
+      "transferNotes": "UNLV maintains a genuinely accessible transfer pathway, particularly from College of Southern Nevada, reflecting its broader public-access mission."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "UNLV",
+    "archetype": "The World's Most Specialized Hospitality and Gaming Management Program, Inside the Industry It Studies",
+    "institutionalPersonality": "practical, industry-embedded, accessible, specialized",
+    "cultureKeywords": ["Harrah College of Hospitality", "Las Vegas Strip Integration", "Gaming Management", "Resort Operations", "Industry-Embedded Learning"],
+    "missionOrientation": "Delivering the country's most specialized, industry-embedded hospitality and gaming management education, alongside broad public-access general education.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, industry-embedded education, particularly within Harrah College, where coursework and Strip resort internships are structurally integrated rather than optional add-ons.",
+    "competitiveness": "Moderately Selective",
+    "politicalCulture": "Broadly moderate, reflecting Nevada's politically mixed electorate.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Globally elite specifically in hospitality and gaming management; a solid, unremarkable regional public university outside that specialty.",
+    "socialClimate": "Practical, industry-oriented, accessible.",
+    "leadershipStyle": "Leadership through direct industry competence and hands-on operational experience."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "SoCal Creative Economy",
+    "regionalRole": "The world's most specialized hospitality and gaming management talent engine, embedded directly inside the Las Vegas Strip resort industry."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 10, "BosWash": 12, "TorBuffChester": 6,
+    "TexasTriangle": 16, "CharLanta": 10, "NorCalInnovationCorridor": 14, "SoCalCreativeEconomy": 52
+  },
+  "comparativePositioning": {
+    "versusCornell": "Cornell's Nolan School of Hotel Administration offers Ivy League prestige and a broader liberal-arts context; UNLV's Harrah College offers deeper, more direct industry embedding — literally inside the Las Vegas Strip resort industry — with faculty frequently drawn from former resort executives, a specialization Cornell's context cannot fully replicate.",
+    "versusMichiganState": "Michigan State's School of Hospitality Business offers a longer institutional history (founded 1927) and a broader Midwest hospitality and foodservice industry connection; UNLV offers unmatched direct access to the world's largest concentration of casino resort operators specifically."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Very Large",
+    "undergraduateEnrollment": 25000, "graduateEnrollment": 5500, "totalEnrollment": 30500,
+    "campusType": "Large Public Research University, Urban Las Vegas Campus",
+    "residentialIntensity": 34, "communityFeel": 52, "studentFacultyRatio": "19:1",
+    "classSizeExperience": "Large introductory courses typical of a large public university; Harrah College's upper-division coursework becomes substantially more hands-on and industry-embedded.",
+    "scaleAdvantages": [
+      "The world's most specialized, most industry-embedded hospitality and gaming management program",
+      "Direct, structural relationships with every major Las Vegas Strip resort operator",
+      "Genuinely accessible admission and transfer pathway relative to specialty peer institutions",
+      "Faculty frequently drawn from former Strip resort executives"
+    ],
+    "scaleDisadvantages": [
+      "Large public-university scale outside the Harrah College specialty",
+      "Less traditionally collegiate residential culture than peer institutions",
+      "General academic prestige outside hospitality and gaming is modest",
+      "Large introductory courses require significant student initiative"
+    ]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 66, "conscientiousness": 72, "extraversion": 78, "agreeableness": 74, "neuroticism": 44 },
+    "hollandCodes": ["E", "S", "C"],
+    "learningStyle": ["Industry-Embedded Internship", "Applied Hospitality Operations", "Case-Method Business"],
+    "socialEnvironment": ["Practical", "Industry-Oriented", "Accessible", "Hands-On"],
+    "idealStudentTraits": ["Practically minded and industry-oriented", "Drawn specifically to hospitality, gaming, or resort management", "Comfortable with a large public university", "Values direct, hands-on industry integration over traditional academic prestige"],
+    "thrivesIf": ["Wants the single most specialized hospitality and gaming management program in the world", "Values direct, structural access to Las Vegas Strip resort operators", "Wants an accessible, genuinely reachable admission and transfer pathway", "Is energized by hands-on, industry-embedded learning over traditional lecture-based coursework"],
+    "strugglesIf": ["Wants a small, intimate residential college experience", "Needs strong programs outside hospitality, gaming, and general business", "Prefers a traditional, prestige-driven academic culture", "Wants a program with broader non-Las-Vegas geographic identity"],
+    "transferRiskFactors": ["Students seeking a smaller, more traditionally residential campus", "Students whose intended field sits outside hospitality, gaming, or general business", "Students who want broader national academic prestige outside the hospitality specialty"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "UNLV does not formally impact most majors at the undergraduate level, including Harrah College hospitality programs, which remain accessible relative to the program's actual industry prestige."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Meeting and Event Management", "Golf Course and Club Management", "Entertainment Engineering and Design", "Culinary Arts and Nutritional Science", "Gaming Analytics"],
+    "hiddenCareerPipelines": ["Casino and Gaming Operations Management", "Resort and Convention Management", "International Gaming Market Development (Macau, Singapore)", "Entertainment Production Engineering", "Culinary and Food and Beverage Direction"],
+    "nicheRecruitingAdvantages": ["MGM Resorts International", "Caesars Entertainment", "Wynn Resorts", "Las Vegas Sands", "International gaming operators in Macau and Singapore"],
+    "overlookedStrengths": [
+      "Harrah College's structural, standing relationships with Strip resort operators mean industry access is built into coursework, not a competitive add-on students must independently seek out.",
+      "UNLV's Entertainment Engineering and Design program is a genuinely unique offering tied directly to Las Vegas's live entertainment production industry, unavailable at almost any other university.",
+      "International gaming market development (Macau, Singapore) is a real, distinctive career pathway UNLV graduates access more directly than any other university's students.",
+      "Faculty frequently drawn from former Strip resort executives give students direct, current industry perspective uncommon in traditional academic hospitality programs."
+    ],
+    "sleeperIndustries": ["International Gaming Market Development", "Entertainment Production Engineering", "Casino Analytics and Revenue Management", "Convention and Meeting Management"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 72, "mentorshipDensity": 70, "executiveAccess": 78, "internshipNetwork": 92,
+    "familyBusinessExposure": 34, "relationshipCapitalScore": 76, "alumniLoyaltyScore": 68,
+    "referralCultureStrength": 82, "donorNetworkStrength": 58, "boardMemberDensity": 52
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Hospitality and Gaming", "Resort and Casino Operations", "Entertainment Production", "Convention and Meeting Management", "Tourism"],
+    "regionalEconomicDrivers": ["Casino Gaming", "Resort Hospitality", "Live Entertainment Production", "Convention Tourism"],
+    "topEmployers": ["MGM Resorts International", "Caesars Entertainment", "Wynn Resorts", "Las Vegas Sands", "Station Casinos"],
+    "emergingIndustries": ["Sports Betting and Gaming Analytics", "Entertainment Technology Production", "International Gaming Market Development", "Convention Technology"],
+    "startupDensity": "Low", "ventureCapitalAccess": 30, "corporateHeadquartersDensity": 58,
+    "healthcareHubStrength": 44, "innovationIndex": 48
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Las Vegas — Hospitality, Gaming, and Resort Operations",
+    "secondaryMarkets": ["Los Angeles CA", "Macau/International Gaming Markets"],
+    "alumniStrongholds": ["Las Vegas NV", "Los Angeles CA", "Reno NV"],
+    "relocationPatterns": [
+      "The large majority of Harrah College graduates remain in Las Vegas, entering resort and casino operations management.",
+      "A meaningful cohort enters international gaming market development in Macau and Singapore.",
+      "Los Angeles draws graduates into broader hospitality, entertainment, and event management roles.",
+      "General business graduates disperse more broadly across the Southwest region."
+    ],
+    "regionalInfluenceScore": 96, "nationalReachScore": 58, "internationalReachScore": 64
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 14, "studentOrganizationStrength": 62, "leadershipDevelopment": 64,
+    "crossDisciplinaryInteraction": 54, "civicEngagement": 56
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 34, "notes": "A modest, secondary pathway tied to resort spa and wellness operations." },
+    "healthWellness": { "strength": 32, "notes": "A modest, secondary pathway relative to UNLV's dominant hospitality identity." },
+    "nutraceuticals": { "strength": 20, "notes": "Minimal institutional emphasis." },
+    "consumerProducts": { "strength": 38, "notes": "A modest, secondary pathway relative to UNLV's core hospitality identity." },
+    "outdoorIndustry": { "strength": 22, "notes": "Minimal institutional emphasis; Las Vegas's desert setting isn't outdoor-recreation-oriented in the way mountain or coastal peer schools are." },
+    "sportsBusiness": { "strength": 56, "notes": "A real, growing pathway tied to Las Vegas's expanding professional sports presence (Raiders, Golden Knights) and sports betting/gaming analytics." },
+    "entertainmentMedia": { "strength": 68, "notes": "A genuinely strong pathway through Entertainment Engineering and Design, tied directly to Las Vegas's live entertainment production industry." },
+    "ventureCapital": { "strength": 24, "notes": "Not a defining institutional strength; Las Vegas's venture ecosystem is far smaller than tech-hub peer cities." },
+    "privateEquity": { "strength": 30, "notes": "A modest, secondary pathway, primarily tied to gaming and hospitality industry investment." },
+    "investmentBanking": { "strength": 26, "notes": "Not a defining institutional strength; UNLV is not positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 42, "notes": "A real, secondary pathway, particularly hospitality and gaming industry consulting." },
+    "medicine": { "strength": 28, "notes": "A modest, secondary pathway; UNLV's medical school is newer and smaller relative to peer research universities." },
+    "healthcareAdministration": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 48, "notes": "A real, secondary pathway tied to Las Vegas's resort and commercial real estate development economy." },
+    "luxuryBrands": { "strength": 58, "notes": "A real, distinctive pathway tied to Las Vegas Strip luxury resort and retail operations." },
+    "entrepreneurship": { "strength": 40, "notes": "A real, secondary pathway relative to UNLV's dominant hospitality operations identity." },
+    "technology": { "strength": 36, "notes": "A real but secondary, growing pathway; UNLV is not yet positioned as a major technology-recruiting campus." },
+    "publicPolicy": { "strength": 30, "notes": "A modest, secondary pathway, particularly gaming regulatory policy." },
+    "nonprofitLeadership": { "strength": 28, "notes": "Minimal institutional emphasis relative to UNLV's dominant hospitality industry identity." },
+    "hospitality": { "strength": 100, "notes": "The single defining institutional strength — the William F. Harrah College of Hospitality is the most specialized, most industry-embedded casino, resort, and gaming management program in the country, located literally inside the industry it trains students for." },
+    "supplyChain": { "strength": 42, "notes": "A real, secondary pathway tied to large-scale resort and convention supply chain operations." },
+    "insurance": { "strength": 22, "notes": "Not a defining institutional strength." },
+    "agriculture": { "strength": 12, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 82, "firstGenerationSupport": 84,
+    "wealthCreationPotential": 62, "familyBusinessPipelineStrength": 38
+  },
+  "futureResilience": {
+    "aiResistance": 58, "automationResistance": 56, "adaptabilityScore": 66, "interdisciplinaryStrength": 54,
+    "futureReadiness": 62, "entrepreneurialFlexibility": 58, "lifelongLearningCulture": 62, "innovationCapacity": 56
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 62, "communityLeadershipPotential": 62, "geographicMobility": 58,
+    "workLifeBalancePotential": 60, "purposeAlignment": 68, "familyFormationSupport": 68,
+    "personalDevelopmentPotential": 66, "careerOptionality": 56, "longTermLifeSatisfaction": 68
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 48, "networkMoat": 62, "geographicMoat": 88, "industryMoat": 92,
+    "alumniMoat": 58, "brandDurability": 70, "overallMoatScore": 70
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 38, "returnerScore": 62, "stewardScore": 74, "navigatorScore": 48,
+    "geographicLockIn": "high",
+    "alumniDispersalPattern": "overwhelmingly_concentrated_las_vegas_with_international_gaming_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 40, "type": "Campus Hillel" },
+    "estimatedJewishUndergraduates": 400, "jewishStudentPercentage": "~1.6%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Modest",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate and kosher dining status are best-effort figures, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Barrick Honors College", "strength": 58,
+    "notes": "Provides smaller seminars and priority course access within UNLV's very large scale; less centralized than a dedicated honors college like ASU's Barrett."
+  }
+}
 }
 
 if (typeof window !== 'undefined') window.UNIVERSITY_DB_V5 = UNIVERSITY_DB_V5;

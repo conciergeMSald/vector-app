@@ -21,12 +21,21 @@
  * around a white-collar/prestige lens. Closing these gaps means adding new
  * V5 industryPathways keys, not just extending this crosswalk — out of
  * scope for this pass, flagged for its own future round.
+ * SCHEMA UPDATE 2026-07-12: expanded from 20 to 23 standard industryPathways
+ * keys. Added hospitality, supplyChain, and insurance after finding real,
+ * disclosed content with nowhere to go — Cornell's Hotel School buried
+ * inside realEstate/luxuryBrands, Michigan State's #1-ranked supply chain
+ * program folded into consumerProducts, Ohio State's genuine insurance
+ * specialty (Nationwide, Progressive, Grange all Ohio-based) dropped
+ * entirely for lack of a key. These are real, common enough fields to
+ * warrant first-class treatment rather than continuing to force-fit them.
  */
 
 const NAICS_TO_INDUSTRY_PATHWAYS = {
   // ── HIGH CONFIDENCE ──────────────────────────────────────────
   "51": { keys: ["technology", "entertainmentMedia"], confidence: "HIGH" },
-  "52": { keys: ["investmentBanking", "privateEquity", "ventureCapital"], confidence: "HIGH" },
+  "52": { keys: ["investmentBanking", "privateEquity", "ventureCapital", "insurance"], confidence: "HIGH" },
+  "11": { keys: ["agriculture"], confidence: "HIGH", note: "Agriculture & Food Systems — was a GAP, now has a proper key. Added 2026-07-12 after finding real, disclosed agricultural content scattered across 20+ schools' nutraceuticals/outdoorIndustry/publicPolicy notes with nowhere dedicated to live." },
   "54": { keys: ["consulting"], confidence: "HIGH" },
   "62": { keys: ["medicine", "healthcareAdministration", "healthWellness"], confidence: "HIGH" },
   "81": { keys: ["aestheticsAndBeauty"], confidence: "HIGH" },
@@ -34,29 +43,28 @@ const NAICS_TO_INDUSTRY_PATHWAYS = {
   "94": { keys: ["privateEquity", "investmentBanking"], confidence: "HIGH", note: "Acquisition Economy — confirmed via actual major content (M&A/PE/IB tracks)" },
   "95": { keys: ["healthWellness", "medicine"], confidence: "HIGH", note: "Longevity Economy — confirmed via actual major content (biogerontology/aging)" },
   "100": { keys: ["defense"], confidence: "HIGH", note: "Military & Post-Service — direct match" },
+  "72": { keys: ["hospitality"], confidence: "HIGH", note: "Hospitality & Food Service — was a GAP, now has a proper key" },
+  "97": { keys: ["supplyChain"], confidence: "HIGH", note: "Physical Logistics Economy (ports/rail/warehousing) — was a GAP, now has a proper key" },
+  "48": { keys: ["supplyChain"], confidence: "HIGH", note: "Transportation/Warehousing — was a GAP, now has a proper key" },
+  "42": { keys: ["supplyChain"], confidence: "HIGH", note: "Wholesale Trade — upgraded from a weak consumerProducts fit (was MEDIUM) to a proper supplyChain match" },
 
   // ── MEDIUM CONFIDENCE — my calibration call, flagged for review ──
-  "44": { keys: ["consumerProducts", "luxuryBrands"], confidence: "MEDIUM", note: "luxuryBrands likely only fits a subset of retail majors, not all — worth a narrower split later" },
+  "44": { keys: ["consumerProducts", "luxuryBrands", "supplyChain"], confidence: "MEDIUM", note: "luxuryBrands likely only fits a subset of retail majors, not all — worth a narrower split later. supplyChain added 2026-07-12 since 'Supply Chain Management' as a major literally lives in this NAICS sector." },
   "45": { keys: ["consumerProducts", "luxuryBrands"], confidence: "MEDIUM", note: "same as 44" },
   "96": { keys: ["privateEquity", "realEstate"], confidence: "MEDIUM", note: "Legacy Economy (wealth mgmt/estate/family office) — neither V5 key is a clean fit; split across both rather than force one" },
   "91": { keys: ["realEstate"], confidence: "MEDIUM", note: "Intelligent Trades (construction mgmt) — weak fit, 'trades' has no real V5 counterpart, realEstate is closest available" },
   "98": { keys: ["technology"], confidence: "MEDIUM", note: "Systems & Automation Economy — plausible but stretches 'technology' to cover industrial automation" },
   "23": { keys: ["realEstate"], confidence: "MEDIUM", note: "Construction — same weak-fit logic as 91" },
-  "42": { keys: ["consumerProducts"], confidence: "MEDIUM", note: "Wholesale Trade — weak fit" },
 
   // ── GAP — no V5 key exists, majors here get no aligned_schools ──
-  "72": { keys: [], confidence: "GAP", note: "Hospitality & Food Service — no V5 key" },
   "93": { keys: [], confidence: "GAP", note: "The Orchestration Layer (org communication/ops) — no V5 key" },
-  "97": { keys: [], confidence: "GAP", note: "Physical Logistics Economy (ports/rail/warehousing) — no V5 key" },
   "99": { keys: [], confidence: "GAP", note: "Reshoring & Domestic Supply Chain Economy (manufacturing) — no V5 key" },
   "101": { keys: [], confidence: "GAP", note: "The Planning Economy — no V5 key" },
-  "11": { keys: [], confidence: "GAP", note: "Agriculture — no V5 key" },
   "21": { keys: [], confidence: "GAP", note: "Mining/Energy — no V5 key" },
   "22": { keys: [], confidence: "GAP", note: "Utilities — no V5 key" },
   "31": { keys: [], confidence: "GAP", note: "Manufacturing — no V5 key" },
   "32": { keys: [], confidence: "GAP", note: "Manufacturing — no V5 key" },
   "33": { keys: [], confidence: "GAP", note: "Manufacturing — no V5 key" },
-  "48": { keys: [], confidence: "GAP", note: "Transportation/Warehousing — no V5 key" },
 };
 
 function getIndustryPathwayKeys(naicsSector) {

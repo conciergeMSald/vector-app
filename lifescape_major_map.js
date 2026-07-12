@@ -2238,7 +2238,28 @@ MAJOR_MAP[11] = [
         edge: 'The agricultural carbon market is asking farmers to change how they manage their land — reducing tillage, planting cover crops, integrating livestock — and then measuring whether those changes actually put carbon into the soil. The soil scientists who design those measurement protocols and verify that carbon sequestration claims are scientifically defensible are working at the intersection of pedology, environmental science, and agricultural economics in a field that was essentially nonexistent at commercial scale five years ago. Indigo Agriculture, Nori, and the Nature Conservancy\'s agricultural programs all employ soil scientists in measurement and verification roles. UC Davis\'s Department of Land, Air and Water Resources and Cornell\'s Soil and Crop Sciences program have both produced soil carbon researchers whose methodologies are now being used to set the verification standards that agricultural carbon markets are building their credibility on.'
       }
     ]
-  }
+  },
+{
+      major_label: 'Agricultural Business',
+      career_world: 'food',
+      riasec_affinity: ['E', 'C', 'R'],
+      riasec_conflict: ['A'],
+      program_keywords: ['agricultural business', 'agribusiness', 'commodity trading', 'farm management', 'agricultural supply chain', 'food systems'],
+      entry_careers: ['Grain Merchandiser', 'Agricultural Lender', 'Farm Manager', 'Agricultural Sales Representative', 'Commodity Trader'],
+      world_alignment: 'Systems',
+      cc_transfer_friendly: true,
+      emerging_role: 'Agricultural Data Intelligence Analyst — the agribusiness professional who uses satellite imagery, soil sensor networks, weather modeling, and machine learning to optimize crop production decisions — advising farmers on planting timing, input application rates, harvest scheduling, and storage decisions based on data integration that was not available at scale a decade ago. Precision agriculture is restructuring the information asymmetry between farmers and the input suppliers, buyers, and lenders who serve them, and the analyst who can translate agricultural data into actionable operational recommendations is providing genuine value to both sides.',
+      deployment_contexts: [
+        {
+          domain: 'Commodity Trading & Grain Merchandising',
+          edge: 'The grain trader at Cargill, ADM, Bunge, or Louis Dreyfus manages commodity positions worth hundreds of millions of dollars — buying grain from farmers, hedging price risk on commodity exchanges, and selling to end users including ethanol plants, feed mills, and export elevators. The path from agricultural business undergraduate to commodity trader is one of the highest-compensation career trajectories in agriculture and one of the least visible in high school career guidance. Kansas State University, Iowa State, and the University of Illinois all have agricultural economics programs with strong commodity trading placement at the major grain companies whose operations span the agricultural supply chain from farm to export terminal.'
+        },
+        {
+          domain: 'Precision Agriculture & Farm Technology',
+          edge: 'The average American farm now uses GPS-guided equipment, variable rate input application, drone monitoring, and yield mapping technology that did not exist twenty years ago — and the adoption of these technologies is accelerating as the generational transition in farm ownership brings younger operators with higher technology comfort. The agricultural business professional who understands both the agronomic science behind precision agriculture and the business systems that make farms profitable is building toward a career where the work combines technology, science, and business at a scale that few other industries provide. Purdue\'s College of Agriculture has the strongest precision agriculture concentration in the Midwest and direct placement into the agricultural technology companies and major input suppliers who are building this capability.'
+        }
+      ]
+    }
 ];
 
 // ─── NAICS 42 — Wholesale Trade & Distribution ───────────────────────────────
@@ -3595,27 +3616,6 @@ Object.assign(MAJOR_MAP, {
         {
           domain: 'Power Electronics & Energy Systems',
           edge: 'Every electric vehicle, every renewable energy system, every battery storage installation, and every data center requires power electronics — the circuits and systems that convert, control, and distribute electrical power efficiently. The electrical engineer who specializes in power electronics is working across the most active hardware investment categories in the American economy simultaneously. Wide-bandgap semiconductors including silicon carbide and gallium nitride are enabling power electronics performance improvements that are restructuring everything from EV powertrains to grid-scale inverters. Purdue, Georgia Tech, and MIT all have power electronics research groups with strong industry placement.'
-        }
-      ]
-    },
-    {
-      major_label: 'Agricultural Business',
-      career_world: 'food',
-      riasec_affinity: ['E', 'C', 'R'],
-      riasec_conflict: ['A'],
-      program_keywords: ['agricultural business', 'agribusiness', 'commodity trading', 'farm management', 'agricultural supply chain', 'food systems'],
-      entry_careers: ['Grain Merchandiser', 'Agricultural Lender', 'Farm Manager', 'Agricultural Sales Representative', 'Commodity Trader'],
-      world_alignment: 'Systems',
-      cc_transfer_friendly: true,
-      emerging_role: 'Agricultural Data Intelligence Analyst — the agribusiness professional who uses satellite imagery, soil sensor networks, weather modeling, and machine learning to optimize crop production decisions — advising farmers on planting timing, input application rates, harvest scheduling, and storage decisions based on data integration that was not available at scale a decade ago. Precision agriculture is restructuring the information asymmetry between farmers and the input suppliers, buyers, and lenders who serve them, and the analyst who can translate agricultural data into actionable operational recommendations is providing genuine value to both sides.',
-      deployment_contexts: [
-        {
-          domain: 'Commodity Trading & Grain Merchandising',
-          edge: 'The grain trader at Cargill, ADM, Bunge, or Louis Dreyfus manages commodity positions worth hundreds of millions of dollars — buying grain from farmers, hedging price risk on commodity exchanges, and selling to end users including ethanol plants, feed mills, and export elevators. The path from agricultural business undergraduate to commodity trader is one of the highest-compensation career trajectories in agriculture and one of the least visible in high school career guidance. Kansas State University, Iowa State, and the University of Illinois all have agricultural economics programs with strong commodity trading placement at the major grain companies whose operations span the agricultural supply chain from farm to export terminal.'
-        },
-        {
-          domain: 'Precision Agriculture & Farm Technology',
-          edge: 'The average American farm now uses GPS-guided equipment, variable rate input application, drone monitoring, and yield mapping technology that did not exist twenty years ago — and the adoption of these technologies is accelerating as the generational transition in farm ownership brings younger operators with higher technology comfort. The agricultural business professional who understands both the agronomic science behind precision agriculture and the business systems that make farms profitable is building toward a career where the work combines technology, science, and business at a scale that few other industries provide. Purdue\'s College of Agriculture has the strongest precision agriculture concentration in the Midwest and direct placement into the agricultural technology companies and major input suppliers who are building this capability.'
         }
       ]
     },
