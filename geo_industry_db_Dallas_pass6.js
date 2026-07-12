@@ -68,6 +68,20 @@ const GEO_INDUSTRY_DB_DALLAS = {
         distance: "Local",
         anchor_employers: ["Neiman Marcus (flagship store and historic HQ)"],
         student_connection: "Neiman Marcus was founded in Dallas in 1907, and its flagship store and historic corporate headquarters at 1618 Main Street are still downtown — luxury retail merchandising and buying careers have a genuine, century-old home here, not a New York or LA one."
+      },
+      {
+        name: "Utility & Energy Infrastructure",
+        naics: 22,
+        distance: "Local",
+        anchor_employers: ["Oncor Electric Delivery (HQ)"],
+        student_connection: "Oncor — Texas's largest electric transmission and distribution utility, serving over 10 million people — is headquartered in Downtown Dallas. Grid engineering and utility operations are stable, essential careers that rarely get discussed alongside Downtown's finance and law firms, but are genuinely local here."
+      },
+      {
+        name: "Civil & Infrastructure Engineering",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["Jacobs Engineering Group (corporate HQ)"],
+        student_connection: "Jacobs Engineering Group — one of the largest infrastructure and civil engineering firms in the world, responsible for major transit, water, and public-works projects nationally — relocated its global headquarters to Downtown Dallas. Civil engineering has a genuine, direct pathway here distinct from the finance and energy corridors that dominate the rest of Downtown."
       }
     ]
   },
@@ -231,6 +245,13 @@ const GEO_INDUSTRY_DB_DALLAS = {
         distance: "Local",
         anchor_employers: ["American Airlines (World HQ)"],
         student_connection: "American Airlines' global headquarters sits directly at DFW Airport — one of the largest airlines in the world, and one of the most direct airline-management career pathways in the country, not a satellite office of a company based elsewhere."
+      },
+      {
+        name: "Community Financial Services",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["American Airlines Federal Credit Union (HQ)"],
+        student_connection: "American Airlines Federal Credit Union, headquartered in the DFW Airport area and built to serve the tens of thousands of employees the airline supports locally, is a genuine, stable community-banking career pathway distinct from the corporate finance jobs inside AA itself."
       }
     ]
   },

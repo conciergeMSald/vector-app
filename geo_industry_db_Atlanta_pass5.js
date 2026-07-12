@@ -325,6 +325,20 @@ const GEO_INDUSTRY_DB_ATLANTA = {
         distance: "Local",
         anchor_employers: ["State Farm Arena (Atlanta Hawks, NBA)", "Georgia World Congress Center"],
         student_connection: "State Farm Arena — home of the Atlanta Hawks — and the Georgia World Congress Center anchor a genuine sports-and-live-events business corridor downtown — event management, stadium operations, and hospitality careers are a real local pathway, not just game-day jobs. The Georgia World Congress Center also hosts the Bronner Bros International Beauty Show, one of the largest hair and beauty trade shows in the world."
+      },
+      {
+        name: "Utility & Energy Infrastructure",
+        naics: 22,
+        distance: "Local",
+        anchor_employers: ["Southern Company (corporate HQ)"],
+        student_connection: "Southern Company — one of the largest energy utility holding companies in the country, and the parent of Georgia Power — is headquartered directly in Downtown Atlanta. Utility engineering, grid operations, and energy infrastructure careers are stable, essential local pathways that rarely get discussed alongside Atlanta's finance and media narrative."
+      },
+      {
+        name: "Public Transit Infrastructure",
+        naics: 48,
+        distance: "Local",
+        anchor_employers: ["MARTA (Metropolitan Atlanta Rapid Transit Authority)"],
+        student_connection: "MARTA operates Atlanta's rail and bus network from downtown — transit planning, operations, and infrastructure engineering are genuine public-service career pathways supporting the region's daily functioning, distinct from the corporate headquarters that dominate the rest of downtown's identity."
       }
     ]
   },
@@ -376,6 +390,13 @@ const GEO_INDUSTRY_DB_ATLANTA = {
         distance: "Local",
         anchor_employers: ["Porsche Cars North America (HQ)", "Chick-fil-A (HQ)"],
         student_connection: "Porsche Cars North America relocated its entire U.S. headquarters to the airport corridor in 2015, joining Chick-fil-A's headquarters nearby — a real concentration of major corporate headquarters most students would associate with Buckhead, not the airport."
+      },
+      {
+        name: "Community Financial Services",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["Delta Community Credit Union (HQ)"],
+        student_connection: "Delta Community Credit Union, built to serve Delta Air Lines' massive local workforce and headquartered in the same corridor, gives students a genuine, stable community-banking career pathway alongside the airline and aviation careers that dominate this ZIP's identity."
       }
     ]
   },

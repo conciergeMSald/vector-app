@@ -1,7 +1,16 @@
 /**
  * VECTOR Lifescape — Geographic Industry Intelligence Database
  * Pass 1: Los Angeles Basin — 23 ZIP codes
- * Version: 1.1 — docstring count corrected 2026-07-10 (previously claimed 20)
+ * Version: 1.3 — 2026-07-11: renamed GEO_INDUSTRY_DB/getGeoIntelligence/etc. to
+ * _LA-suffixed names (naming collision fix); added Southern California Edison
+ * (San Marino), AECOM (Westwood/UCLA), Kinecta FCU (Manhattan Beach) as
+ * civic-infrastructure anchors; added Travel/Cruise Lines cluster to Calabasas
+ * / Hidden Hills (91302) — AmaWaterways and Viking, both named directly by
+ * the product owner. AmaWaterways' Calabasas HQ is independently high-
+ * confidence; Viking's Calabasas presence is product-owner-provided and has
+ * not been independently verified this session (no web search available) —
+ * flagged per the same confidence-disclosure standard used elsewhere in
+ * these files (see Chicago pass, Flavorchem entry).
  *
  * STRUCTURE PER ZIP ENTRY:
  * {
@@ -23,7 +32,7 @@
  * Anchor employers must be recognizable — not obscure subsidiaries.
  */
 
-const GEO_INDUSTRY_DB = {
+const GEO_INDUSTRY_DB_LA = {
 
   // ─────────────────────────────────────────────────────────────
   // CONEJO VALLEY / CALABASAS CORRIDOR
@@ -103,6 +112,27 @@ const GEO_INDUSTRY_DB = {
         distance: "10 miles — Agoura Hills",
         anchor_employers: ["National Veterinary Associates (HQ)", "VCA Animal Hospitals", "Banfield Pet Hospital"],
         student_connection: "National Veterinary Associates — the largest privately owned veterinary hospital network in North America — is headquartered in Agoura Hills, 10 miles from home."
+      },
+      {
+        name: "Travel, Tourism & Cruise Lines",
+        naics: 48,
+        distance: "Local",
+        anchor_employers: ["AmaWaterways (HQ)", "Viking"],
+        student_connection: "AmaWaterways, one of the leading river cruise lines in the world, is headquartered in Calabasas — alongside a Viking cruise line presence in the same corridor. Travel industry careers here run from itinerary design and destination marketing to fleet operations and hospitality management, a genuine local pathway most students wouldn't expect from an inland LA suburb."
+      },
+      {
+        name: "Consumer Brands, Retail & Restaurant Headquarters",
+        naics: 44,
+        distance: "Local",
+        anchor_employers: ["The Cheesecake Factory (corporate HQ)", "Harbor Freight Tools (corporate HQ)"],
+        student_connection: "The Cheesecake Factory and Harbor Freight Tools are both headquartered directly in Calabasas — two very different national consumer brands (restaurant/hospitality operations and retail/supply chain) built and run from the same small city, giving students a genuine, local look at corporate brand management, operations, and retail strategy careers."
+      },
+      {
+        name: "Professional Sports Business",
+        naics: 71,
+        distance: "Local — Woodland Hills",
+        anchor_employers: ["Los Angeles Rams (team headquarters & training facility)"],
+        student_connection: "The LA Rams' team headquarters and training facility sit in Woodland Hills, immediately adjacent to Calabasas — team operations, sports business, athletic training, and front-office careers are a genuine local pathway here, distinct from the SoFi Stadium game-day operations covered further south."
       }
     ]
   },
@@ -623,6 +653,13 @@ const GEO_INDUSTRY_DB = {
         distance: "10 miles — Culver City",
         anchor_employers: ["Amazon Studios", "Sony Pictures", "Apple TV+"],
         student_connection: "UCLA's film school is among the most prestigious in the world — and Culver City's studio corridor is 10 minutes south."
+      },
+      {
+        name: "Civil & Infrastructure Engineering",
+        naics: 54,
+        distance: "3 miles — Century City",
+        anchor_employers: ["AECOM (corporate HQ)"],
+        student_connection: "AECOM — one of the largest infrastructure engineering firms in the world, responsible for major transit, water, and public-works projects across the country — is headquartered in Century City, 3 miles from Westwood. Civil engineering is a genuine, stable career pathway here, distinct from the software and entertainment industries that dominate LA's tech and media narrative."
       }
     ]
   },
@@ -717,6 +754,13 @@ const GEO_INDUSTRY_DB = {
         distance: "10 miles — Torrance / El Segundo",
         anchor_employers: ["Providence Little Company of Mary", "Torrance Memorial Medical Center", "DaVita (El Segundo HQ)"],
         student_connection: "DaVita — one of the largest kidney care companies in the world — is headquartered in El Segundo, and the South Bay has a dense cluster of hospital systems and medical groups."
+      },
+      {
+        name: "Community Financial Services",
+        naics: 52,
+        distance: "Local",
+        anchor_employers: ["Kinecta Federal Credit Union (HQ)"],
+        student_connection: "Kinecta Federal Credit Union — one of the largest credit unions in the country — is headquartered directly in Manhattan Beach. Credit union and community-banking careers are a genuine, stable local pathway distinct from the investment banking and private equity firms that dominate LA's finance narrative."
       }
     ]
   },
@@ -850,6 +894,13 @@ const GEO_INDUSTRY_DB = {
         distance: "15 miles — Pasadena / Arcadia tech corridor",
         anchor_employers: ["various Caltech spinoff companies", "Idealab (Pasadena)", "Green Dot Corporation"],
         student_connection: "Pasadena's proximity to Caltech has generated dozens of technology spinoff companies — and the San Gabriel Valley technology sector is growing as companies seek space outside of Downtown LA and Silicon Beach."
+      },
+      {
+        name: "Utility & Energy Infrastructure",
+        naics: 22,
+        distance: "3 miles — Rosemead",
+        anchor_employers: ["Southern California Edison (corporate HQ)"],
+        student_connection: "Southern California Edison — the electric utility serving 15 million people across Central, Coastal, and Southern California — is headquartered in Rosemead, 3 miles from San Marino. Utility engineering, grid operations, and infrastructure management are stable, essential careers rarely discussed alongside the region's finance and entertainment industries, but genuinely local here."
       }
     ]
   },
@@ -1085,30 +1136,30 @@ const GEO_INDUSTRY_DB = {
 // Returns the richest possible match for a given ZIP
 // ─────────────────────────────────────────────────────────────
 
-function getGeoIntelligence(zip) {
-  if (!zip || zip.length < 5) return getDefaultGeo(zip);
+function getLAGeoIntelligence(zip) {
+  if (!zip || zip.length < 5) return getDefaultGeoLA(zip);
 
   // Exact ZIP match first
-  if (GEO_INDUSTRY_DB[zip]) return GEO_INDUSTRY_DB[zip];
+  if (GEO_INDUSTRY_DB_LA[zip]) return GEO_INDUSTRY_DB_LA[zip];
 
   // 3-digit prefix match
   const prefix3 = zip.slice(0, 3);
-  const prefix3Match = Object.values(GEO_INDUSTRY_DB).find(entry =>
+  const prefix3Match = Object.values(GEO_INDUSTRY_DB_LA).find(entry =>
     entry.zip.startsWith(prefix3)
   );
   if (prefix3Match) return prefix3Match;
 
   // 2-digit prefix match
   const prefix2 = zip.slice(0, 2);
-  const prefix2Match = Object.values(GEO_INDUSTRY_DB).find(entry =>
+  const prefix2Match = Object.values(GEO_INDUSTRY_DB_LA).find(entry =>
     entry.zip.startsWith(prefix2)
   );
   if (prefix2Match) return prefix2Match;
 
-  return getDefaultGeo(zip);
+  return getDefaultGeoLA(zip);
 }
 
-function getDefaultGeo(zip) {
+function getDefaultGeoLA(zip) {
   return {
     zip: zip || 'unknown',
     neighborhood: 'your area',
@@ -1141,8 +1192,8 @@ function getDefaultGeo(zip) {
 
 // Helper: get top N clusters for a student profile
 // Filters clusters by NAICS alignment with student's top sectors
-function getRelevantClusters(zip, naicsSectors, maxClusters = 4) {
-  const geo = getGeoIntelligence(zip);
+function getRelevantClustersLA(zip, naicsSectors, maxClusters = 4) {
+  const geo = getLAGeoIntelligence(zip);
   if (!geo || !geo.clusters) return [];
 
   const topNAICS = new Set((naicsSectors || []).slice(0, 5).map(n => n.sector));
@@ -1159,8 +1210,8 @@ function getRelevantClusters(zip, naicsSectors, maxClusters = 4) {
 }
 
 if (typeof module !== 'undefined') module.exports = {
-  GEO_INDUSTRY_DB,
-  getGeoIntelligence,
-  getDefaultGeo,
-  getRelevantClusters
+  GEO_INDUSTRY_DB_LA,
+  getLAGeoIntelligence,
+  getDefaultGeoLA,
+  getRelevantClustersLA
 };

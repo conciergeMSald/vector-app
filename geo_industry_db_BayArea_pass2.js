@@ -1,7 +1,13 @@
 /**
  * VECTOR Lifescape — Geographic Industry Intelligence Database
  * Pass 2: San Francisco Bay Area — 19 ZIP codes
- * Version: 1.2 — added 3 Marin County ZIPs (Novato, Corte Madera, San Anselmo) 2026-07-10
+ * Version: 1.3 — 2026-07-11: added civic-infrastructure pass to Piedmont/
+ * Oakland Hills (94611) — PG&E (utility), BART (transit infrastructure),
+ * and Patelco Credit Union (community financial services) — completing the
+ * same infrastructure-of-society pass already applied to LA, Dallas, and
+ * Atlanta this session. This is the only Alameda County ZIP in the file,
+ * which is where all three anchors are actually located, so no new ZIP
+ * was needed.
  */
 
 const GEO_INDUSTRY_DB_BAYAREA = {
@@ -362,6 +368,27 @@ const GEO_INDUSTRY_DB_BAYAREA = {
         distance: "8 miles — San Francisco Financial District",
         anchor_employers: ["BlackRock (SF office)", "Wells Fargo", "various hedge funds & family offices"],
         student_connection: "The San Francisco Financial District — one of the largest in the US — is 8 miles west across the bay, and the East Bay's growing professional community increasingly works in finance and investment management."
+      },
+      {
+        name: "Utility & Energy Infrastructure",
+        naics: 22,
+        distance: "5 miles — Oakland",
+        anchor_employers: ["PG&E Corporation (corporate HQ)"],
+        student_connection: "Pacific Gas and Electric — one of the largest utility companies in the country, serving 16 million people across Northern and Central California — is headquartered in downtown Oakland. Utility engineering, grid operations, and wildfire-mitigation infrastructure work are stable, essential careers that rarely get discussed alongside the Peninsula's venture capital and startup narrative, but are genuinely local here."
+      },
+      {
+        name: "Public Transit Infrastructure",
+        naics: 48,
+        distance: "5 miles — Oakland",
+        anchor_employers: ["BART (Bay Area Rapid Transit) headquarters"],
+        student_connection: "BART operates the Bay Area's regional rail network from its Oakland headquarters — transit planning, systems engineering, and infrastructure operations are genuine public-service career pathways supporting the daily functioning of the whole region, distinct from the venture-backed companies that dominate the Peninsula's identity."
+      },
+      {
+        name: "Community Financial Services",
+        naics: 52,
+        distance: "12 miles — Dublin",
+        anchor_employers: ["Patelco Credit Union (HQ)"],
+        student_connection: "Patelco — one of the largest credit unions in the country — is headquartered in Dublin, in the same East Bay economic orbit as Piedmont and Oakland Hills. Credit union and community-banking careers are a genuine, stable local pathway distinct from the venture capital and hedge fund finance that dominates the Bay Area's usual finance narrative."
       }
     ]
   },

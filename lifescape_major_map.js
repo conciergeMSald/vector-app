@@ -57,6 +57,7 @@ const MAJOR_MAP = {
   51: [
     {
       major_label: 'Computer Science',
+      career_world: 'technology',
       riasec_affinity: ['I', 'R', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['computer science', 'software engineering', 'CS ranking', 'coding bootcamp pipeline', 'tech recruitment'],
@@ -159,6 +160,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Information Systems',
+      career_world: 'technology',
       riasec_affinity: ['C', 'I', 'E'],
       riasec_conflict: ['A'],
       program_keywords: ['information systems', 'MIS', 'business technology', 'data management', 'enterprise software'],
@@ -216,6 +218,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Journalism',
+      career_world: 'persuasion',
       riasec_affinity: ['A', 'E', 'S'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['journalism', 'reporting', 'media', 'news', 'investigative', 'broadcast'],
@@ -250,6 +253,7 @@ const MAJOR_MAP = {
   52: [
     {
       major_label: 'Finance',
+      career_world: 'money',
       riasec_affinity: ['C', 'E', 'I'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['finance', 'investment banking', 'Wall Street recruiting', 'financial modeling', 'Bloomberg terminal'],
@@ -282,6 +286,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Accounting',
+      career_world: 'money',
       riasec_affinity: ['C', 'I', 'R'],
       riasec_conflict: ['A', 'E'],
       program_keywords: ['accounting', 'CPA pipeline', 'audit', 'tax', 'Big Four recruiting'],
@@ -310,6 +315,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Economics',
+      career_world: 'money',
       riasec_affinity: ['I', 'C', 'E'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['economics', 'econometrics', 'policy', 'quantitative analysis', 'research'],
@@ -338,6 +344,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Business Administration',
+      career_world: 'money',
       riasec_affinity: ['E', 'C', 'S'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['business administration', 'management', 'operations', 'business fundamentals', 'MBA pipeline'],
@@ -366,6 +373,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Real Estate',
+      career_world: 'money',
       riasec_affinity: ['E', 'C', 'S'],
       riasec_conflict: ['I', 'A'],
       program_keywords: ['real estate', 'property management', 'REIT', 'development', 'commercial real estate'],
@@ -396,6 +404,7 @@ const MAJOR_MAP = {
   54: [
     {
       major_label: 'Marketing',
+      career_world: 'persuasion',
       riasec_affinity: ['E', 'A', 'S'],
       riasec_conflict: ['R', 'I'],
       program_keywords: ['marketing', 'brand management', 'consumer behavior', 'digital marketing', 'advertising'],
@@ -440,6 +449,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Political Science / Pre-Law',
+      career_world: 'justice',
       riasec_affinity: ['E', 'S', 'I'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['political science', 'pre-law', 'law school pipeline', 'policy', 'government'],
@@ -468,6 +478,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Psychology',
+      career_world: 'power',
       riasec_affinity: ['S', 'I', 'A'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['psychology', 'behavioral science', 'human behavior', 'counseling pipeline', 'research methods'],
@@ -512,6 +523,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Communications & Public Relations',
+      career_world: 'persuasion',
       riasec_affinity: ['E', 'S', 'A'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['public relations', 'communications', 'media relations', 'corporate communications', 'messaging'],
@@ -540,6 +552,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Management Consulting (Business)',
+      career_world: 'power',
       riasec_affinity: ['E', 'I', 'C'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['consulting', 'strategy', 'management', 'McKinsey recruiting', 'case interview', 'operations'],
@@ -568,6 +581,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Architecture',
+      career_world: 'building',
       riasec_affinity: ['A', 'R', 'I'],
       riasec_conflict: ['S', 'E'],
       program_keywords: ['architecture', 'design', 'urban planning', 'studio program', 'NAAB accredited'],
@@ -596,6 +610,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Human Resources Management',
+      career_world: 'power',
       riasec_affinity: ['S', 'E', 'C'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['human resources', 'HR', 'talent management', 'organizational behavior', 'people operations'],
@@ -620,6 +635,21 @@ const MAJOR_MAP = {
           domain: 'People Analytics & Workforce Intelligence',
           edge: 'The organizations that manage their human capital most effectively are increasingly the ones that treat workforce decisions with the same analytical rigor they apply to financial decisions. People analytics — understanding turnover patterns, predicting performance, designing experiments around management practices — is a discipline that sits at the intersection of HR and data science, and the professionals who develop both are building toward one of the fastest-growing specialties in the function. An HR management student who develops quantitative skills alongside organizational knowledge is building toward a career that most HR programs have not yet fully incorporated into their curricula — which means the people who arrive with it are still unusual enough to stand out.'
         }
+      ]
+    },
+    {
+      major_label: 'Industrial-Organizational Psychology',
+      career_world: 'power',
+      riasec_affinity: ['I', 'S', 'E'],
+      riasec_conflict: ['R', 'A'],
+      program_keywords: ['industrial organizational psychology', 'IO psychology', 'organizational behavior', 'workforce psychology', 'people analytics'],
+      entry_careers: ['People Analyst', 'Talent Assessment Specialist', 'Organizational Development Consultant', 'HR Research Analyst'],
+      world_alignment: 'People',
+      cc_transfer_friendly: false,
+      emerging_role: 'People Analytics Lead — the professional who applies psychological research methods and data analysis to organizational questions — measuring what actually predicts performance, designing selection systems that reduce bias, and helping organizations understand their own culture with the same rigor they measure their financial performance.',
+      deployment_contexts: [
+        { domain: 'Talent Assessment & Selection Systems', edge: 'Most organizations hire badly — relying on unstructured interviews that predict job performance at barely better than chance. The I-O psychologist who designs selection systems that actually predict performance is delivering one of the highest-ROI interventions available to any organization. Rollins College and the University of Minnesota both have applied psychology programs with strong practitioner tracks.' },
+        { domain: 'Organizational Culture & Employee Experience', edge: 'The organizations that perform best over time are not the ones with the most sophisticated strategy. They are the ones whose people understand the strategy, believe in its purpose, and choose to give more than their contracts require. The I-O psychologist who can measure organizational culture with research-grade rigor and design interventions that move the right levers is doing work whose impact compounds across every business outcome the organization cares about.' }
       ]
     }
   ],
@@ -957,6 +987,7 @@ const MAJOR_MAP = {
   44: [
     {
       major_label: 'Marketing',
+      career_world: 'persuasion',
       riasec_affinity: ['E', 'A', 'S'],
       riasec_conflict: ['R', 'I'],
       program_keywords: ['marketing', 'consumer behavior', 'brand management', 'retail marketing', 'e-commerce'],
@@ -981,6 +1012,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Retail Management',
+      career_world: 'logistics',
       riasec_affinity: ['E', 'S', 'C'],
       riasec_conflict: ['I', 'A'],
       program_keywords: ['retail management', 'merchandising', 'store operations', 'loss prevention', 'supply chain retail'],
@@ -1005,6 +1037,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Supply Chain Management',
+      career_world: 'logistics',
       riasec_affinity: ['C', 'R', 'E'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['supply chain', 'logistics', 'procurement', 'inventory management', 'APICS'],
@@ -1033,6 +1066,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Entrepreneurship',
+      career_world: 'power',
       riasec_affinity: ['E', 'A', 'I'],
       riasec_conflict: ['C', 'R'],
       program_keywords: ['entrepreneurship', 'startup', 'small business', 'venture', 'innovation', 'founder pipeline'],
@@ -1067,6 +1101,7 @@ const MAJOR_MAP = {
   81: [
     {
       major_label: 'Health & Wellness Coaching',
+      career_world: 'healing',
       riasec_affinity: ['S', 'E', 'R'],
       riasec_conflict: ['I', 'C'],
       program_keywords: ['health coaching', 'wellness', 'fitness management', 'personal training', 'lifestyle'],
@@ -1091,6 +1126,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Social Work',
+      career_world: 'civic',
       riasec_affinity: ['S', 'I', 'E'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['social work', 'BSW pipeline', 'community services', 'case management', 'nonprofit services'],
@@ -1119,6 +1155,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Cosmetology / Esthetics (Applied)',
+      career_world: 'beauty',
       riasec_affinity: ['A', 'R', 'S'],
       riasec_conflict: ['I', 'C'],
       program_keywords: ['cosmetology', 'esthetics', 'beauty industry', 'salon management', 'personal care'],
@@ -1147,6 +1184,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Family & Consumer Sciences',
+      career_world: 'civic',
       riasec_affinity: ['S', 'I', 'R'],
       riasec_conflict: ['E', 'C'],
       program_keywords: ['family sciences', 'consumer sciences', 'child development', 'human development', 'family studies'],
@@ -1211,6 +1249,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Music / Music Industry',
+      career_world: 'beauty',
       riasec_affinity: ['A', 'E', 'S'],
       riasec_conflict: ['C', 'R'],
       program_keywords: ['music', 'music industry', 'recording', 'music business', 'Berklee', 'performance', 'music production'],
@@ -1239,6 +1278,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Theatre / Performing Arts',
+      career_world: 'beauty',
       riasec_affinity: ['A', 'S', 'E'],
       riasec_conflict: ['C', 'R'],
       program_keywords: ['theatre', 'performing arts', 'acting', 'drama', 'BFA', 'conservatory', 'stage management'],
@@ -1267,6 +1307,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Sports Management',
+      career_world: 'compete',
       riasec_affinity: ['E', 'S', 'C'],
       riasec_conflict: ['I', 'A'],
       program_keywords: ['sports management', 'athletics administration', 'sports marketing', 'sports business', 'agent pipeline'],
@@ -1295,6 +1336,7 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Dance',
+      career_world: 'beauty',
       riasec_affinity: ['A', 'S', 'R'],
       riasec_conflict: ['C', 'I'],
       program_keywords: ['dance', 'choreography', 'movement', 'BFA dance', 'performance', 'dance company'],
@@ -1408,6 +1450,7 @@ if (typeof module !== 'undefined' && module.exports) {
 MAJOR_MAP[61] = [
   {
     major_label: 'Education',
+    career_world: 'civic',
     riasec_affinity: ['S', 'A', 'I'],
     riasec_conflict: ['R', 'C'],
     program_keywords: ['education', 'teaching', 'curriculum', 'instructional design', 'learning sciences'],
@@ -1440,6 +1483,7 @@ MAJOR_MAP[61] = [
   },
   {
     major_label: 'Learning Sciences & Human Development',
+    career_world: 'technology',
     riasec_affinity: ['I', 'S', 'A'],
     riasec_conflict: ['R', 'E'],
     program_keywords: ['learning sciences', 'cognitive development', 'educational psychology', 'child development', 'human development'],
@@ -1464,6 +1508,7 @@ MAJOR_MAP[61] = [
   },
   {
     major_label: 'Sports Management & Coaching Sciences',
+    career_world: 'compete',
     riasec_affinity: ['E', 'S', 'R'],
     riasec_conflict: ['I', 'A'],
     program_keywords: ['sports management', 'athletic administration', 'coaching', 'kinesiology', 'sports education'],
@@ -1484,6 +1529,7 @@ MAJOR_MAP[61] = [
   },
   {
     major_label: 'Library & Information Science',
+    career_world: 'technology',
     riasec_affinity: ['I', 'C', 'S'],
     riasec_conflict: ['E', 'R'],
     program_keywords: ['library science', 'information management', 'archival studies', 'knowledge management', 'data curation'],
@@ -1509,6 +1555,7 @@ MAJOR_MAP[61] = [
 MAJOR_MAP[23] = [
   {
     major_label: 'Architecture',
+    career_world: 'building',
     riasec_affinity: ['A', 'I', 'R'],
     riasec_conflict: ['S', 'C'],
     program_keywords: ['architecture', 'design', 'building design', 'urban design', 'sustainable architecture'],
@@ -1537,6 +1584,7 @@ MAJOR_MAP[23] = [
   },
   {
     major_label: 'Civil Engineering',
+    career_world: 'building',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['civil engineering', 'structural engineering', 'transportation engineering', 'geotechnical', 'water resources'],
@@ -1561,6 +1609,7 @@ MAJOR_MAP[23] = [
   },
   {
     major_label: 'Urban Planning & Development',
+    career_world: 'building',
     riasec_affinity: ['I', 'S', 'E'],
     riasec_conflict: ['R', 'A'],
     program_keywords: ['urban planning', 'city planning', 'land use', 'community development', 'zoning'],
@@ -1585,6 +1634,7 @@ MAJOR_MAP[23] = [
   },
   {
     major_label: 'Construction Management',
+    career_world: 'building',
     riasec_affinity: ['R', 'E', 'C'],
     riasec_conflict: ['A', 'I'],
     program_keywords: ['construction management', 'project management', 'estimating', 'scheduling', 'building systems'],
@@ -1610,6 +1660,7 @@ MAJOR_MAP[23] = [
 MAJOR_MAP[33] = [
   {
     major_label: 'Mechanical Engineering',
+    career_world: 'making',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['mechanical engineering', 'thermodynamics', 'fluid mechanics', 'manufacturing', 'product design'],
@@ -1634,6 +1685,7 @@ MAJOR_MAP[33] = [
   },
   {
     major_label: 'Electrical Engineering',
+    career_world: 'making',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['electrical engineering', 'circuits', 'power systems', 'signal processing', 'embedded systems'],
@@ -1654,6 +1706,7 @@ MAJOR_MAP[33] = [
   },
   {
     major_label: 'Industrial Engineering & Manufacturing Systems',
+    career_world: 'making',
     riasec_affinity: ['R', 'I', 'E'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['industrial engineering', 'manufacturing systems', 'operations research', 'lean manufacturing', 'quality engineering'],
@@ -1678,6 +1731,7 @@ MAJOR_MAP[33] = [
   },
   {
     major_label: 'Chemical Engineering',
+    career_world: 'making',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['chemical engineering', 'process engineering', 'thermodynamics', 'reaction engineering', 'separation processes'],
@@ -1771,6 +1825,7 @@ MAJOR_MAP[48] = [
 MAJOR_MAP[92] = [
   {
     major_label: 'Political Science & Government',
+    career_world: 'justice',
     riasec_affinity: ['E', 'S', 'I'],
     riasec_conflict: ['R', 'C'],
     program_keywords: ['political science', 'government', 'politics', 'international relations', 'comparative politics'],
@@ -1795,6 +1850,7 @@ MAJOR_MAP[92] = [
   },
   {
     major_label: 'Public Policy & Administration',
+    career_world: 'justice',
     riasec_affinity: ['I', 'E', 'S'],
     riasec_conflict: ['R', 'A'],
     program_keywords: ['public policy', 'public administration', 'policy analysis', 'program evaluation', 'public management'],
@@ -1819,6 +1875,7 @@ MAJOR_MAP[92] = [
   },
   {
     major_label: 'Criminal Justice & Law Enforcement',
+    career_world: 'justice',
     riasec_affinity: ['S', 'E', 'R'],
     riasec_conflict: ['A', 'I'],
     program_keywords: ['criminal justice', 'criminology', 'law enforcement', 'corrections', 'forensic science'],
@@ -1839,6 +1896,7 @@ MAJOR_MAP[92] = [
   },
   {
     major_label: 'International Relations & Diplomacy',
+    career_world: 'justice',
     riasec_affinity: ['I', 'S', 'E'],
     riasec_conflict: ['R', 'C'],
     program_keywords: ['international relations', 'diplomacy', 'foreign policy', 'global affairs', 'international security'],
@@ -1868,6 +1926,7 @@ MAJOR_MAP[92] = [
 MAJOR_MAP[22] = [
   {
     major_label: 'Energy Systems Engineering',
+    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['energy systems', 'power engineering', 'renewable energy', 'grid integration', 'energy storage'],
@@ -1896,6 +1955,7 @@ MAJOR_MAP[22] = [
   },
   {
     major_label: 'Environmental Engineering',
+    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'S'],
     riasec_conflict: ['E', 'A'],
     program_keywords: ['environmental engineering', 'water treatment', 'air quality', 'remediation', 'environmental systems'],
@@ -1916,6 +1976,7 @@ MAJOR_MAP[22] = [
   },
   {
     major_label: 'Sustainability Management',
+    career_world: 'energy',
     riasec_affinity: ['I', 'E', 'S'],
     riasec_conflict: ['R', 'C'],
     program_keywords: ['sustainability', 'ESG', 'corporate sustainability', 'environmental management', 'climate strategy'],
@@ -1940,6 +2001,7 @@ MAJOR_MAP[22] = [
   },
   {
     major_label: 'Nuclear Engineering',
+    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['nuclear engineering', 'reactor design', 'radiation safety', 'nuclear materials', 'small modular reactors'],
@@ -1965,6 +2027,7 @@ MAJOR_MAP[22] = [
 MAJOR_MAP[32] = [
   {
     major_label: 'Materials Science & Engineering',
+    career_world: 'making',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['materials science', 'materials engineering', 'metallurgy', 'polymers', 'nanomaterials', 'biomaterials'],
@@ -1993,6 +2056,7 @@ MAJOR_MAP[32] = [
   },
   {
     major_label: 'Green Chemistry & Sustainable Processes',
+    career_world: 'biomanufacturing',
     riasec_affinity: ['I', 'R', 'S'],
     riasec_conflict: ['E', 'A'],
     program_keywords: ['green chemistry', 'sustainable chemistry', 'bio-based materials', 'circular economy', 'process sustainability'],
@@ -2013,6 +2077,7 @@ MAJOR_MAP[32] = [
   },
   {
     major_label: 'Polymer Engineering & Science',
+    career_world: 'biomanufacturing',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['polymer engineering', 'polymer science', 'plastics engineering', 'rubber science', 'composites'],
@@ -2033,6 +2098,7 @@ MAJOR_MAP[32] = [
   },
   {
     major_label: 'Industrial & Process Chemistry',
+    career_world: 'biomanufacturing',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['industrial chemistry', 'process chemistry', 'chemical manufacturing', 'reaction engineering', 'scale-up'],
@@ -2180,6 +2246,7 @@ MAJOR_MAP[11] = [
 MAJOR_MAP[42] = [
   {
     major_label: 'Distribution Management & Wholesale Operations',
+    career_world: 'logistics',
     riasec_affinity: ['E', 'C', 'R'],
     riasec_conflict: ['A', 'I'],
     program_keywords: ['distribution', 'wholesale', 'inventory management', 'warehouse operations', 'trade finance'],
@@ -2204,6 +2271,7 @@ MAJOR_MAP[42] = [
   },
   {
     major_label: 'Trade Finance & Global Commerce',
+    career_world: 'logistics',
     riasec_affinity: ['E', 'C', 'I'],
     riasec_conflict: ['R', 'A'],
     program_keywords: ['trade finance', 'international trade', 'letters of credit', 'export management', 'global sourcing'],
@@ -2224,6 +2292,7 @@ MAJOR_MAP[42] = [
   },
   {
     major_label: 'Warehouse & Fulfillment Technology Management',
+    career_world: 'logistics',
     riasec_affinity: ['R', 'C', 'I'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['warehouse management', 'WMS systems', 'fulfillment operations', 'automation systems', 'inventory technology'],
@@ -2249,6 +2318,7 @@ MAJOR_MAP[42] = [
 MAJOR_MAP[51].push(
   {
     major_label: 'Mathematics & Statistics',
+    career_world: 'technology',
     riasec_affinity: ['I', 'C', 'R'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['mathematics', 'statistics', 'applied math', 'data analysis', 'quantitative methods', 'probability'],
@@ -2277,6 +2347,7 @@ MAJOR_MAP[51].push(
   },
   {
     major_label: 'AI Infrastructure & Systems Design',
+    career_world: 'technology',
     riasec_affinity: ['I', 'R', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['artificial intelligence', 'machine learning infrastructure', 'MLOps', 'distributed systems', 'AI systems'],
@@ -2312,6 +2383,7 @@ MAJOR_MAP[51].push(
 MAJOR_MAP[21] = [
   {
     major_label: 'Mining Engineering',
+    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['mining engineering', 'mine design', 'rock mechanics', 'blasting', 'mineral extraction'],
@@ -2336,6 +2408,7 @@ MAJOR_MAP[21] = [
   },
   {
     major_label: 'Geological Engineering & Earth Sciences',
+    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['geology', 'geoscience', 'mineralogy', 'geophysics', 'earth sciences', 'hydrogeology'],
@@ -2356,6 +2429,7 @@ MAJOR_MAP[21] = [
   },
   {
     major_label: 'Petroleum Engineering',
+    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['petroleum engineering', 'reservoir engineering', 'drilling engineering', 'production engineering', 'well completion'],
@@ -2457,6 +2531,7 @@ MAJOR_MAP[31] = [
 
 MAJOR_MAP[31].push({
   major_label: 'Packaging Engineering & Design',
+  career_world: 'making',
   riasec_affinity: ['R', 'I', 'A'],
   riasec_conflict: ['S', 'C'],
   program_keywords: ['packaging engineering', 'packaging design', 'materials packaging', 'sustainable packaging', 'package development'],
@@ -2488,6 +2563,7 @@ MAJOR_MAP[31].push({
 
 MAJOR_MAP[62].push({
   major_label: 'Integrative Skin Biology & Dermatology',
+  career_world: 'beauty',
   riasec_affinity: ['I', 'R', 'S'],
   riasec_conflict: ['E', 'C'],
   program_keywords: ['dermatology', 'skin biology', 'cellular biology', 'DNA repair', 'microbiome', 'photobiology'],
@@ -2515,6 +2591,7 @@ MAJOR_MAP[62].push({
 
 MAJOR_MAP[62].push({
   major_label: 'Biomedical Informatics & Computational Medicine',
+  career_world: 'technology',
   riasec_affinity: ['I', 'C', 'R'],
   riasec_conflict: ['A', 'S'],
   program_keywords: ['biomedical informatics', 'computational biology', 'health data science', 'systems biology', 'clinical informatics', 'bioinformatics'],
@@ -2546,6 +2623,7 @@ MAJOR_MAP[62].push({
 
 MAJOR_MAP[62].push({
   major_label: 'Human Performance Science & Enhancement Medicine',
+  career_world: 'medicine',
   riasec_affinity: ['I', 'R', 'E'],
   riasec_conflict: ['A', 'C'],
   program_keywords: ['exercise physiology', 'human performance', 'neuroscience', 'endocrinology', 'sport science', 'performance optimization'],
@@ -2577,6 +2655,7 @@ MAJOR_MAP[62].push({
 
 MAJOR_MAP[32].push({
   major_label: 'Cosmetic Science & Formulation Chemistry',
+  career_world: 'beauty',
   riasec_affinity: ['I', 'R', 'A'],
   riasec_conflict: ['E', 'S'],
   program_keywords: ['cosmetic science', 'formulation chemistry', 'skin care', 'personal care', 'cosmetic chemistry', 'active ingredients'],
@@ -2608,6 +2687,7 @@ MAJOR_MAP[32].push({
 
 MAJOR_MAP[44].push({
   major_label: 'Beauty Industry Management & Commerce',
+  career_world: 'beauty',
   riasec_affinity: ['E', 'A', 'S'],
   riasec_conflict: ['R', 'I'],
   program_keywords: ['beauty industry', 'cosmetics business', 'beauty brand management', 'retail beauty', 'social commerce', 'beauty marketing'],
@@ -2640,6 +2720,7 @@ Object.assign(MAJOR_MAP, {
   91: [
     {
       major_label: 'Construction Management',
+      career_world: 'building',
       riasec_affinity: ['R', 'E', 'C'],
       riasec_conflict: ['A'],
       program_keywords: ['construction management', 'project management', 'building systems', 'construction science', 'civil technology'],
@@ -2656,6 +2737,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Electrical Engineering Technology',
+      career_world: 'making',
       riasec_affinity: ['R', 'I', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['electrical technology', 'power systems', 'building automation', 'electrical engineering technology', 'EET'],
@@ -2671,6 +2753,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Mechanical Engineering Technology',
+      career_world: 'making',
       riasec_affinity: ['R', 'I'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['mechanical technology', 'HVAC', 'CNC machining', 'manufacturing technology', 'mechatronics'],
@@ -2686,6 +2769,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Sustainable Energy Technology',
+      career_world: 'energy',
       riasec_affinity: ['R', 'I', 'E'],
       riasec_conflict: ['A'],
       program_keywords: ['renewable energy', 'solar installation', 'wind energy', 'energy systems', 'clean energy technology'],
@@ -2700,6 +2784,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Industrial Technology',
+      career_world: 'making',
       riasec_affinity: ['R', 'E', 'I'],
       riasec_conflict: ['A'],
       program_keywords: ['industrial technology', 'manufacturing management', 'operations technology', 'industrial supervision'],
@@ -2720,6 +2805,7 @@ Object.assign(MAJOR_MAP, {
   93: [
     {
       major_label: 'Organizational Communication',
+      career_world: 'power',
       riasec_affinity: ['E', 'S', 'A'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['organizational communication', 'communication studies', 'corporate communication', 'leadership communication', 'interpersonal communication'],
@@ -2735,6 +2821,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Human Resources Management',
+      career_world: 'power',
       riasec_affinity: ['S', 'E', 'C'],
       riasec_conflict: ['R', 'A'],
       program_keywords: ['human resources', 'HR management', 'talent management', 'people operations', 'workforce development'],
@@ -2749,6 +2836,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Operations Management',
+      career_world: 'power',
       riasec_affinity: ['E', 'C', 'I'],
       riasec_conflict: ['A'],
       program_keywords: ['operations management', 'process improvement', 'project management', 'supply chain operations', 'business operations'],
@@ -2761,20 +2849,6 @@ Object.assign(MAJOR_MAP, {
         { domain: 'Healthcare Operations', edge: 'Hospitals and health systems are among the most operationally complex organizations in existence — with patient safety, regulatory compliance, labor relations, supply chain management, and financial performance all running simultaneously under conditions where the consequences of failure are measured in human lives. The operations professional who chooses healthcare is entering a field where the demand for management talent is persistent and the stakes make the work feel consequential in a way most business environments cannot match.' }
       ]
     },
-    {
-      major_label: 'Industrial-Organizational Psychology',
-      riasec_affinity: ['I', 'S', 'E'],
-      riasec_conflict: ['R', 'A'],
-      program_keywords: ['industrial organizational psychology', 'IO psychology', 'organizational behavior', 'workforce psychology', 'people analytics'],
-      entry_careers: ['People Analyst', 'Talent Assessment Specialist', 'Organizational Development Consultant', 'HR Research Analyst'],
-      world_alignment: 'People',
-      cc_transfer_friendly: false,
-      emerging_role: 'People Analytics Lead — the professional who applies psychological research methods and data analysis to organizational questions — measuring what actually predicts performance, designing selection systems that reduce bias, and helping organizations understand their own culture with the same rigor they measure their financial performance.',
-      deployment_contexts: [
-        { domain: 'Talent Assessment & Selection Systems', edge: 'Most organizations hire badly — relying on unstructured interviews that predict job performance at barely better than chance. The I-O psychologist who designs selection systems that actually predict performance is delivering one of the highest-ROI interventions available to any organization. Rollins College and the University of Minnesota both have applied psychology programs with strong practitioner tracks.' },
-        { domain: 'Organizational Culture & Employee Experience', edge: 'The organizations that perform best over time are not the ones with the most sophisticated strategy. They are the ones whose people understand the strategy, believe in its purpose, and choose to give more than their contracts require. The I-O psychologist who can measure organizational culture with research-grade rigor and design interventions that move the right levers is doing work whose impact compounds across every business outcome the organization cares about.' }
-      ]
-    }
   ]
 });
 
@@ -2783,6 +2857,7 @@ Object.assign(MAJOR_MAP, {
   94: [
     {
       major_label: 'Finance',
+      career_world: 'money',
       riasec_affinity: ['E', 'I', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['finance', 'investment banking', 'private equity', 'financial modeling', 'corporate finance', 'deal structuring'],
@@ -2811,6 +2886,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Economics',
+      career_world: 'money',
       riasec_affinity: ['I', 'E', 'C'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['economics', 'microeconomics', 'market analysis', 'valuation', 'quantitative analysis', 'economic modeling'],
@@ -2831,6 +2907,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Accounting',
+      career_world: 'money',
       riasec_affinity: ['C', 'E', 'I'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['accounting', 'financial reporting', 'audit', 'due diligence', 'forensic accounting', 'transaction advisory'],
@@ -2851,6 +2928,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Real Estate',
+      career_world: 'money',
       riasec_affinity: ['E', 'I', 'C'],
       riasec_conflict: ['A'],
       program_keywords: ['real estate', 'real estate finance', 'property investment', 'commercial real estate', 'real estate development'],
@@ -2871,6 +2949,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Business Administration',
+      career_world: 'money',
       riasec_affinity: ['E', 'C', 'I'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['business administration', 'entrepreneurship', 'deal making', 'negotiation', 'strategy', 'general management'],
@@ -2897,6 +2976,7 @@ Object.assign(MAJOR_MAP, {
   95: [
     {
       major_label: 'Biology / Pre-Medicine (Longevity Track)',
+      career_world: 'medicine',
       riasec_affinity: ['I', 'R', 'S'],
       riasec_conflict: ['A', 'C'],
       program_keywords: ['longevity medicine', 'preventive medicine', 'gerontology', 'biogerontology', 'aging biology', 'healthspan'],
@@ -2917,6 +2997,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Gerontology',
+      career_world: 'healing',
       riasec_affinity: ['S', 'I', 'E'],
       riasec_conflict: ['R', 'A'],
       program_keywords: ['gerontology', 'aging studies', 'elder care', 'aging policy', 'senior services', 'USC Davis'],
@@ -2937,6 +3018,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Nursing (Gerontological Specialty)',
+      career_world: 'healing',
       riasec_affinity: ['S', 'I', 'R'],
       riasec_conflict: ['A', 'C'],
       program_keywords: ['nursing', 'gerontological nursing', 'adult-gerontology nurse practitioner', 'AGNP', 'geriatric care', 'long-term care nursing'],
@@ -2957,6 +3039,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Public Health',
+      career_world: 'healing',
       riasec_affinity: ['I', 'S', 'E'],
       riasec_conflict: ['R', 'A'],
       program_keywords: ['public health', 'population health', 'aging policy', 'health equity', 'epidemiology', 'aging demographics'],
@@ -2977,6 +3060,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Kinesiology / Exercise Science (Longevity Track)',
+      career_world: 'healing',
       riasec_affinity: ['R', 'I', 'S'],
       riasec_conflict: ['A', 'C'],
       program_keywords: ['exercise science', 'kinesiology', 'longevity fitness', 'strength conditioning', 'fall prevention', 'physical therapy pathway'],
@@ -3003,6 +3087,7 @@ Object.assign(MAJOR_MAP, {
   96: [
     {
       major_label: 'Finance (Wealth Management Track)',
+      career_world: 'money',
       riasec_affinity: ['C', 'E', 'I'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['wealth management', 'financial planning', 'estate planning', 'family office', 'fiduciary advisory', 'CFP'],
@@ -3027,6 +3112,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Accounting (Trust & Estate Track)',
+      career_world: 'money',
       riasec_affinity: ['C', 'I', 'E'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['estate accounting', 'trust administration', 'fiduciary accounting', 'tax planning', 'CPA', 'estate tax'],
@@ -3047,6 +3133,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Pre-Law (Estate & Trust Law)',
+      career_world: 'justice',
       riasec_affinity: ['E', 'I', 'C'],
       riasec_conflict: ['R', 'A'],
       program_keywords: ['estate law', 'trust law', 'elder law', 'estate planning attorney', 'wealth transfer law', 'probate'],
@@ -3067,6 +3154,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Philosophy (Wealth Ethics & Fiduciary Track)',
+      career_world: 'ideas',
       riasec_affinity: ['I', 'E', 'A'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['philosophy', 'ethics', 'fiduciary duty', 'pre-law', 'bioethics', 'values-based investing'],
@@ -3087,6 +3175,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Financial Planning',
+      career_world: 'money',
       riasec_affinity: ['C', 'E', 'S'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['financial planning', 'CFP certification', 'retirement planning', 'tax planning', 'insurance planning', 'investment planning'],
@@ -3115,6 +3204,7 @@ Object.assign(MAJOR_MAP, {
   101: [
     {
       major_label: 'Supply Chain Management',
+      career_world: 'logistics',
       riasec_affinity: ['C', 'E', 'I'],
       riasec_conflict: ['A'],
       program_keywords: ['supply chain management', 'logistics', 'operations management', 'procurement', 'inventory management', 'demand planning'],
@@ -3139,6 +3229,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Event Management',
+      career_world: 'hospitality',
       riasec_affinity: ['E', 'C', 'S'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['event management', 'event planning', 'hospitality management', 'conference management', 'meeting planning', 'CMP certification'],
@@ -3163,6 +3254,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Operations Management',
+      career_world: 'power',
       riasec_affinity: ['C', 'E', 'I'],
       riasec_conflict: ['A'],
       program_keywords: ['operations management', 'project management', 'process improvement', 'lean management', 'operations planning', 'PMP'],
@@ -3183,6 +3275,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Hospitality Management',
+      career_world: 'hospitality',
       riasec_affinity: ['E', 'S', 'C'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['hospitality management', 'hotel management', 'food and beverage management', 'tourism', 'resort management'],
@@ -3203,6 +3296,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Family & Consumer Sciences',
+      career_world: 'civic',
       riasec_affinity: ['S', 'C', 'E'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['family and consumer sciences', 'human ecology', 'consumer economics', 'family resource management', 'community services'],
@@ -3347,6 +3441,7 @@ Object.assign(MAJOR_MAP, {
   98: [
     {
       major_label: 'Information Systems',
+      career_world: 'technology',
       riasec_affinity: ['I', 'C', 'E'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['information systems', 'ERP', 'TMS', 'WMS', 'supply chain technology', 'enterprise systems', 'SAP', 'Oracle'],
@@ -3367,6 +3462,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Computer Science (Supply Chain & Logistics Track)',
+      career_world: 'technology',
       riasec_affinity: ['I', 'R', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['supply chain data science', 'logistics AI', 'route optimization', 'demand forecasting ML', 'autonomous vehicle technology'],
@@ -3387,6 +3483,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Data Science (Supply Chain Track)',
+      career_world: 'technology',
       riasec_affinity: ['I', 'C', 'R'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['supply chain analytics', 'demand forecasting', 'inventory optimization', 'logistics data', 'operations research'],
@@ -3407,6 +3504,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Business Analytics',
+      career_world: 'technology',
       riasec_affinity: ['I', 'C', 'E'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['business analytics', 'supply chain analytics', 'operations analytics', 'digital transformation', 'process automation'],
@@ -3427,6 +3525,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Mechanical Engineering (Automation Track)',
+      career_world: 'making',
       riasec_affinity: ['R', 'I', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['robotics', 'automation engineering', 'warehouse robotics', 'autonomous systems', 'mechatronics', 'systems integration'],
@@ -3455,6 +3554,7 @@ Object.assign(MAJOR_MAP, {
   99: [
     {
       major_label: 'Chemical Engineering',
+      career_world: 'making',
       riasec_affinity: ['I', 'R', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['chemical engineering', 'process engineering', 'pharmaceutical manufacturing', 'semiconductor process', 'battery chemistry', 'GMP'],
@@ -3479,6 +3579,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Electrical Engineering (Semiconductor Track)',
+      career_world: 'making',
       riasec_affinity: ['I', 'R', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['semiconductor engineering', 'VLSI', 'chip design', 'fab operations', 'electrical engineering', 'microelectronics'],
@@ -3499,6 +3600,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Agricultural Business',
+      career_world: 'food',
       riasec_affinity: ['E', 'C', 'R'],
       riasec_conflict: ['A'],
       program_keywords: ['agricultural business', 'agribusiness', 'commodity trading', 'farm management', 'agricultural supply chain', 'food systems'],
@@ -3519,6 +3621,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Regulatory Affairs',
+      career_world: 'justice',
       riasec_affinity: ['C', 'I', 'E'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['regulatory affairs', 'FDA compliance', 'GMP', 'ITAR', 'drug approval', 'medical device regulation', 'RAC certification'],
@@ -3539,6 +3642,7 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Materials Science & Engineering',
+      career_world: 'making',
       riasec_affinity: ['I', 'R', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['materials science', 'materials engineering', 'battery materials', 'semiconductor materials', 'advanced manufacturing materials'],

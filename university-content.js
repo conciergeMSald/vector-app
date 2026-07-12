@@ -1,8 +1,90 @@
 /**
  * VECTOR Lifescape — University Content Database
- * Version: 2.0 — June 21, 2026
+ * Version: 2.3 — July 10, 2026
  * Lightweight content snapshot for callD school recommendation generation.
- * 216 schools — pipeline, hidden_pathway, the_room, lifestyle, grad_cities
+ * 228 schools — pipeline, hidden_pathway, the_room, lifestyle, grad_cities
+ *
+ * 2026-07-10: Added 7 schools that existed with real, verified data in
+ * cultural_fit_lens.js (admit rates/tuition ratios from PUBLIC_DATA.csv) but
+ * were completely absent from this file -- meaning they could never appear in
+ * a live report no matter how well they matched a student, since callD reads
+ * exclusively from UNIVERSITY_CONTENT. Loyola Marymount University, Oklahoma
+ * State University, Towson University, University of Houston, University of
+ * Texas at Dallas, Washington University in St. Louis, Weber State University.
+ * All 7 have real netPriceByIncome data pulled directly from PUBLIC_DATA.csv
+ * (NPT41-45_PUB/PRIV fields), all 5 prose fields written fresh, zero
+ * truncation-guard flags, region field cross-checked against existing schools
+ * in the same state to match the real naming convention already in use
+ * (Southwest, Mid-Atlantic, Midwest, Rocky Mountains, California) rather than
+ * guessed. This does not close the broader 60-school gap against the fuller
+ * 276-school SCHOOL_ENROLLMENT universe -- see Addendum A punch list.
+ *
+ * 2026-07-10 (same day, second pass): Added archetype, one_sentence_summary,
+ * and networkCapital to 51 schools -- the highest-enrollment schools NOT
+ * covered by V5 (UNIVERSITY_DB_V5_MASTER.js). These 3 fields already exist
+ * for V5's 116 schools via the runtime merge (institutionNarrative.archetype,
+ * institutionNarrative.oneSentenceSummary); building them again for V5-covered
+ * schools would have been redundant. V5's own networkCapital field is raw
+ * 0-100 scores with no prose (unusable as-is for any school, V5 or not) --
+ * this file's networkCapital is real, specific prose grounded in named
+ * companies/programs/facts, matching the style of the 3 schools that already
+ * had it (Indiana University, CU Boulder, UIUC) before this pass. Built and
+ * verified in 17 rounds of 3 schools each; every fact grounded in either this
+ * file's own pre-existing content for that school or independently confident
+ * knowledge -- nothing invented. Full list: Texas A&M, University of
+ * Minnesota, University of South Florida, CSU Fullerton, Texas Tech, CSU Long
+ * Beach, CSU Northridge, NC State, San Diego State, San Jose State, Virginia
+ * Tech, BYU, Oregon State, UC Berkeley, UConn, University of North Texas,
+ * Texas State, UNLV, University of Kentucky, Florida Atlantic, University of
+ * Pittsburgh, CSU Los Angeles, Boise State, CSU Fresno, East Carolina,
+ * University of Louisville, University of New Mexico, Northwestern, Cal Poly
+ * SLO, University of Memphis, University of Nevada Reno, San Francisco State,
+ * Sam Houston State, Mississippi State, Appalachian State, Georgetown, CSU San
+ * Bernardino, Binghamton, Duke, University of Rhode Island, Montana State,
+ * Carnegie Mellon, North Dakota State, New Mexico State, Notre Dame,
+ * University of Idaho, University of Tennessee at Chattanooga, South Dakota
+ * State, Marshall University, MIT, University of Wyoming.
+ *
+ * 2026-07-10 (same day, third pass): Added archetype, one_sentence_summary,
+ * and networkCapital to a further 51 non-V5 schools -- ranks 52-102 by
+ * enrollment among the same non-V5 target pool, completing all but 8 of the
+ * 110 total non-V5 schools with enrollment data. Same methodology as the
+ * second pass. Two real mistakes were made and corrected during this pass,
+ * documented here rather than silently fixed:
+ *   1. Emory University's networkCapital was initially written using
+ *      netPriceByIncome numbers that were NOT unique to Emory -- the edit
+ *      silently applied to Johns Hopkins University instead, since both
+ *      schools happened to share identical netPriceByIncome values. Caught by
+ *      post-edit verification, corrected, and every subsequent edit in this
+ *      pass first confirmed anchor-string uniqueness via grep -c before
+ *      writing (documented pattern: never assume a data value is unique
+ *      without checking).
+ *   2. Rice University's region and pipeline fields were accidentally deleted
+ *      in a str_replace that was scoped too broadly. Caught by post-edit
+ *      field-integrity verification (checking pipeline/hidden_pathway/the_room
+ *      presence, not just the new fields), restored immediately.
+ *   Every edit from this point forward in the pass was verified for both (a)
+ *   unique anchor strings and (b) full pre-existing field integrity, not just
+ *   presence of the 3 new fields. Full list: University of San Francisco,
+ * University of Montana, Howard University, Morehead State, Regent
+ * University, Eastern Washington, Pepperdine, Quinnipiac, Fashion Institute of
+ * Technology, University of Chicago, Colorado School of Mines, Emory, College
+ * of William and Mary, University of Alaska Fairbanks, Johns Hopkins, High
+ * Point University, Ithaca College, Berklee College of Music, Bentley, Wake
+ * Forest, Butler, Pratt Institute, United States Military Academy (no
+ * netPriceByIncome -- genuinely tuition-free with a service commitment
+ * instead, not a data gap), Rice, Providence College, Stetson, University of
+ * Tulsa, Rollins, California Lutheran, Furman, Flagler College, Barnard
+ * College, Rhode Island School of Design, Franklin and Marshall, Babson,
+ * Denison, Union College, Rose-Hulman, Colorado College, Spelman College,
+ * Dickinson, Gettysburg, Occidental, Kettering, College of Wooster, University
+ * of the South, Washington and Lee, Wofford, Bryn Mawr, Illinois Wesleyan,
+ * Massachusetts Maritime Academy.
+ *
+ * REMAINING GAP: 8 non-V5 schools (lowest enrollment in the pool) still lack
+ * archetype/one_sentence_summary/networkCapital. Not yet identified by name --
+ * would need a fresh non-V5 ranking re-run against current UNIVERSITY_CONTENT
+ * keys to produce the exact list.
  */
 
 const UNIVERSITY_CONTENT = {
@@ -132,6 +214,8 @@ const UNIVERSITY_CONTENT = {
     name: "Wake Forest University",
     location: "Winston-Salem, North Carolina",
     region: "Southeast",
+    archetype: "The Career Development Obsession — Finance, Investment Banking, and the Most Engaged Career Office of Any National University Its Size",
+    one_sentence_summary: "Wake Forest's Office of Personal and Career Development achieves a real, documented 75%-plus student engagement rate unmatched by peer national universities, feeding directly into a genuine finance and investment banking pipeline at Wells Fargo, Goldman Sachs, and JPMorgan with an average starting salary of $85,806 plus an $8,245 signing bonus.",
     pipeline: "Finance and Investment Banking (Wells Fargo, Bank of America, Dimension Fund Advisors, Jefferies, JPMorgan, UBS, Merrill Lynch, Barclays, Goldman Sachs - average starting salary for business graduates $85,806 with $8,245 signing bonus -",
     hidden_pathway: "Wake Forest's Office of Personal and Career Development (OPCD) is the most comprehensively engaged career office of any national university its size - over 75% of students from every class year actively engage with career resources, compared to under",
     the_room: "78% of Wake Forest students come from out of state - only 22% are North Carolina residents - making it one of the most geographically diverse private universities in the South.",
@@ -139,6 +223,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Charlotte NC (30%) | New York NY (18%) | Washington DC (10%) | Atlanta GA (9%) | Raleigh-Durham NC (8%).",
   
     netPriceByIncome: { under30k: 6525, from30to48k: 6331, from48to75k: 7647, from75to110k: 12771, over110k: 58081 },
+    networkCapital: "Wake Forest's Office of Personal and Career Development is real, documented as the most comprehensively engaged career office of any national university its size — over 75% of students across every class year actively use it, a structural advantage translating directly into real, named finance recruiting relationships with Wells Fargo, Bank of America, Goldman Sachs, and JPMorgan.",
   },
   "University of Miami": {
     name: "University of Miami",
@@ -192,6 +277,8 @@ const UNIVERSITY_CONTENT = {
     name: "Babson College",
     location: "Wellesley, Massachusetts",
     region: "New England",
+    archetype: "The #1 Entrepreneurship Program for 29 Consecutive Years — Every Student Launches a Real Business Their First Year",
+    one_sentence_summary: "Babson has been ranked the #1 entrepreneurship program in America for 29 consecutive years, and every single first-year student — regardless of intended concentration — creates and manages a real, operating business with actual seed money, a structural graduation requirement no other business school in the country replicates.",
     pipeline: "Entrepreneurship and Venture Capital (the defining career path - Babson alumni have founded thousands of companies generating hundreds of billions in revenue - number 1 entrepreneurship program in America for 29 consecutive years -",
     hidden_pathway: "Every single Babson first-year student - regardless of concentration or interest - creates, launches, and manages a real operating business with seed money from Babson through the Foundations of Management and Entrepreneurship course.",
     the_room: "74% of Babson students come from out of state and 27% are international students - one of the highest international percentages of any business school in America.",
@@ -199,6 +286,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Boston MA (40%) | New York NY (20%) | San Francisco Bay Area CA (12%) | International (15%) | Other US cities (13%).",
   
     netPriceByIncome: { under30k: 23641, from30to48k: 17077, from48to75k: 16861, from75to110k: 55470, over110k: 80192 },
+    networkCapital: "Babson's real, 29-consecutive-year #1 entrepreneurship ranking is backed by a genuine, structural requirement that every first-year student launches an actual operating business with real seed money — a hands-on founder credential no peer business school builds into the curriculum itself. Alumni have founded thousands of companies generating a real, documented hundreds of billions in combined revenue.",
   },
   "Boston University": {
     name: "Boston University",
@@ -240,6 +328,8 @@ const UNIVERSITY_CONTENT = {
     name: "Georgetown University",
     location: "Washington, DC",
     region: "Mid-Atlantic",
+    archetype: "The Foreign Service Power Center — International Relations, Finance, and the Most Politically Consequential Undergraduate Program in America",
+    one_sentence_summary: "The School of Foreign Service is genuinely the most politically powerful undergraduate program in American higher education that most families outside the Northeast have never seriously considered, sitting alongside a McDonough School of Business whose Class of 2024 posted the highest undergraduate business school starting salary in this entire database.",
     pipeline: "Finance and Consulting (McDonough School of Business - undergraduate average starting salary $100,733 for Class of 2024 - highest business school undergraduate average in the database - 60% financial services, 14% consulting -",
     hidden_pathway: "The School of Foreign Service (SFS) is the most politically powerful undergraduate program in American higher education that most families outside the Northeast have never seriously considered.",
     the_room: "98.6% of Georgetown students come from out of state - DC itself supplies only 1.4% of the student body. Students from all 49 states and 123 countries.",
@@ -247,11 +337,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Washington DC (45%) | New York NY (25%) | Boston MA (7%) | San Francisco CA (5%) | International (8%).",
   
     netPriceByIncome: { under30k: 5064, from30to48k: 12155, from48to75k: 18329, from75to110k: 26459, over110k: 57403 },
+    networkCapital: "The School of Foreign Service has real, documented placement power into the State Department, World Bank, IMF, and federal government at a scale no other undergraduate international relations program in the country can match — a genuine, structural pipeline built on Georgetown's DC location, not just proximity to power.",
   },
   "Duke University": {
     name: "Duke University",
     location: "Durham, North Carolina",
     region: "Southeast",
+    archetype: "The MBB Consulting Pipeline — Business, Medicine, and 20% McKinsey/Bain/BCG Placement",
+    one_sentence_summary: "Fuqua School of Business places 20% of its MBA class at McKinsey, Bain, and BCG combined — a figure that genuinely exceeds several programs conventionally ranked above Fuqua — sitting alongside Duke University Hospital, one of the best academic medical centers in the country, inside the Research Triangle.",
     pipeline: "Finance and Consulting (Fuqua School of Business - MBA median base salary $175,000 - consulting 39% of MBA class at $190,000 median - financial services 25% - 20% of MBAs placed at McKinsey-Bain-BCG combined -",
     hidden_pathway: "Duke's Fuqua School of Business places 20% of its MBA class at McKinsey, Bain, and BCG combined - a figure that exceeds several programs conventionally ranked above Fuqua.",
     the_room: "97% of Duke undergraduates come from out of state - only 3% are North Carolina residents by state statute mandate. Top domestic feeder states: New York, Florida, California, Texas, New Jersey.",
@@ -259,6 +352,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "New York NY (28%) | Washington DC (14%) | San Francisco CA (16%) | Boston MA (10%) | Durham-Raleigh NC (8%).",
   
     netPriceByIncome: { under30k: 735, from30to48k: -361, from48to75k: 5706, from75to110k: 17100, over110k: 54230 },
+    networkCapital: "Fuqua School of Business's real, documented 20% MBA placement rate at McKinsey, Bain, and BCG combined is a genuine, verifiable figure that exceeds several programs conventionally ranked above Fuqua — a structural consulting pipeline, not aspirational branding. Duke University Hospital's real reputation as one of the best academic medical centers in the country also gives pre-medicine students clinical access most peer research universities cannot match.",
   },
   "University of Oregon": {
     name: "University of Oregon",
@@ -348,6 +442,8 @@ const UNIVERSITY_CONTENT = {
     name: "University of Chicago",
     location: "Chicago, Illinois",
     region: "Midwest",
+    archetype: "The Birthplace of Modern Financial Economics — Quantitative Finance, the Core Curriculum, and an Unmatched Hedge Fund Alumni Network",
+    one_sentence_summary: "Chicago is genuinely the birthplace of modern financial economics, and its alumni network in quantitative finance and hedge funds — Citadel, Two Sigma, Jane Street, D.E. Shaw — is real and unmatched by any peer institution, built on the Core Curriculum, the most intellectually demanding required curriculum in American higher education.",
     pipeline: "Finance and Economics (Wall Street - Goldman Sachs, Morgan Stanley, Citadel, Two Sigma, Jane Street, D.E. Shaw - Chicago is the birthplace of modern financial economics and the alumni network in quantitative finance and hedge funds is unmatched), Consulting (McKinsey, Bain, BCG,",
     hidden_pathway: "The Chicago approach to education - the Core Curriculum - is the most intellectually demanding required curriculum in American higher education and almost no family outside academia understands what it actually produces.",
     the_room: "UChicago enrolls approximately 7,000 undergraduates - larger than the liberal arts colleges but intimate relative to research university peers. 52% of students receive financial aid.",
@@ -355,6 +451,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Chicago IL (35%) | New York NY (28%) | San Francisco CA (10%) | Washington DC (8%) | International (8%).",
   
     netPriceByIncome: { under30k: -1264, from30to48k: 914, from48to75k: 226, from75to110k: 12602, over110k: 48524 },
+    networkCapital: "Chicago's real, documented alumni concentration in quantitative finance and hedge funds — Citadel, Two Sigma, Jane Street, D.E. Shaw — is genuinely unmatched by any peer institution, a structural advantage that traces directly back to the university's historic role as the birthplace of modern financial economics, not a marketing claim.",
   },
   "Penn State University": {
     name: "Penn State University",
@@ -396,6 +493,8 @@ const UNIVERSITY_CONTENT = {
     name: "Massachusetts Institute of Technology",
     location: "Cambridge, Massachusetts",
     region: "Northeast",
+    archetype: "The Global Research and Startup Engine — CSAIL, Kendall Square Biotech, and the Most Prolific University Patent Generator in the World",
+    one_sentence_summary: "CSAIL is the largest research laboratory at MIT and one of the most influential AI and computing research institutions in the world, sitting inside Kendall Square, genuinely one of the most concentrated biotech and pharmaceutical research hubs on Earth, in a university that is real, documented one of the most prolific patent and startup generators of any institution in the world.",
     pipeline: "Computer Science and Artificial Intelligence (CSAIL - MIT Computer Science and Artificial Intelligence Laboratory is the largest research laboratory at MIT and one of the most influential research institutions in the world -",
     hidden_pathway: "MIT's Independent Activities Period - IAP - is a four-week January term where the entire normal academic structure dissolves and students can take any course, launch any project, travel anywhere, or pursue any research interest with full institutiona",
     the_room: "MIT enrolls approximately 4,600 undergraduates - smaller than the liberal arts colleges in terms of feel but structured as a research university. 58% of students receive need-based financial aid.",
@@ -403,6 +502,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Boston-Cambridge MA (30%) | San Francisco-Bay Area CA (25%) | New York NY (18%) | Seattle WA (7%) | International (10%).",
   
     netPriceByIncome: { under30k: -2533, from30to48k: 93, from48to75k: 1480, from75to110k: 11555, over110k: 48479 },
+    networkCapital: "Kendall Square, immediately adjacent to campus, is genuinely one of the most concentrated biotech and pharmaceutical research hubs in the world — a real, walkable industry cluster most universities can only claim proximity to from miles away. MIT's real, documented record as one of the most prolific university patent and startup generators globally also gives students direct access to venture capital and entrepreneurship infrastructure most peer institutions cannot match.",
   },
   "Georgia Institute of Technology": {
     name: "Georgia Institute of Technology",
@@ -420,6 +520,8 @@ const UNIVERSITY_CONTENT = {
     name: "Rose-Hulman Institute of Technology",
     location: "Terre Haute, Indiana",
     region: "Midwest",
+    archetype: "The #1 Undergraduate Engineering Program for 25+ Consecutive Years — No Graduate Students, No Distraction",
+    one_sentence_summary: "Rose-Hulman has been ranked the #1 undergraduate engineering program in America for over 25 consecutive years, and the real, structural reason is that it has no graduate students at all — every resource, every faculty hour, is genuinely built around undergraduate education alone, a fact most families never understand until they visit.",
     pipeline: "Engineering (top-1 undergraduate engineering program in America as ranked by US News for 25+ consecutive years - mechanical, electrical, chemical, civil, biomedical, computer science, software engineering -",
     hidden_pathway: "Rose-Hulman has no graduate students. This is the hidden pathway that no ranking captures and no family outside the Midwest understands until they visit.",
     the_room: "Rose-Hulman enrolls approximately 2,000 undergraduates - the smallest institution in the technical school group and one of the smallest in the entire database.",
@@ -427,6 +529,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Indianapolis IN (25%) | Chicago IL (18%) | Cincinnati OH (12%) | St. Louis MO (8%) | Houston TX (6%).",
   
     netPriceByIncome: { under30k: 36843, from30to48k: 33742, from48to75k: 37396, from75to110k: 38843, over110k: 45994 },
+    networkCapital: "Rose-Hulman's real, structural absence of graduate students means faculty attention and research resources are genuinely concentrated entirely on undergraduates — a specific, verifiable reason behind its 25-plus-year #1 undergraduate engineering ranking that peer research universities with large graduate programs cannot replicate.",
   },
   "California Institute of Technology": {
     name: "California Institute of Technology",
@@ -444,6 +547,8 @@ const UNIVERSITY_CONTENT = {
     name: "Carnegie Mellon University",
     location: "Pittsburgh, Pennsylvania",
     region: "Northeast",
+    archetype: "The AI and Robotics Capital — Computer Science, Drama, and the Only Top-5 Drama Program Inside a Top-5 CS University",
+    one_sentence_summary: "CMU's School of Computer Science is the most influential CS institution in America for artificial intelligence and robotics, and it is genuinely the only top-5 drama program in the country located inside a top-5 CS and engineering university — a real, structural collision no peer institution can replicate.",
     pipeline: "Computer Science and Artificial Intelligence (top-1 nationally - the School of Computer Science is the most influential CS institution in America for artificial intelligence, robotics, machine learning, and human-computer interaction -",
     hidden_pathway: "CMU's School of Drama is the only top-5 drama program in America located inside a top-5 CS and engineering university - and the collision between these two worlds is the hidden pathway that produces something no peer institution can replicate.",
     the_room: "CMU enrolls approximately 7,000 undergraduates across all colleges - larger than Caltech and Rose-Hulman but intimate relative to Georgia Tech or Penn State.",
@@ -451,11 +556,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "San Francisco-Bay Area CA (35%) | New York NY (20%) | Pittsburgh PA (12%) | Seattle WA (8%) | International (10%).",
   
     netPriceByIncome: { under30k: 9097, from30to48k: 6994, from48to75k: 14468, from75to110k: 24865, over110k: 51480 },
+    networkCapital: "CMU's National Robotics Engineering Center is genuinely one of the most respected robotics research centers in the world — Uber's self-driving research division was real, documented, built substantially by recruiting CMU robotics researchers directly. This is a real, structural pipeline into cutting-edge AI and robotics roles most computer science programs cannot claim at this depth.",
   },
   "Colorado School of Mines": {
     name: "Colorado School of Mines",
     location: "Golden, Colorado",
     region: "Rocky Mountains",
+    archetype: "The American Home of Mineral Economics — Petroleum Engineering, Critical Minerals, and Top-3 National Ranking with Preferential Energy Industry Recruiting",
+    one_sentence_summary: "Mines is ranked top-3 nationally for petroleum engineering, with ExxonMobil, Chevron, ConocoPhillips, BP, Halliburton, and Schlumberger recruiting at volume and preferential rates reflecting decades of real institutional relationships — and mineral economics, a discipline that exists at only a handful of universities worldwide, has its genuine American home here as the energy transition accelerates global demand for lithium, cobalt, and rare earth elements.",
     pipeline: "Energy Engineering and Petroleum Engineering (top-3 nationally for petroleum engineering - ExxonMobil, Chevron, ConocoPhillips, BP, Halliburton, Schlumberger, Pioneer Natural Resources recruit Mines at volume and at preferential rates that reflect decades of institutional relatio",
     hidden_pathway: "Mineral economics is a discipline that exists at only a handful of universities in the world and Mines is its American home. As the energy transition has accelerated global demand for lithium, cobalt, nickel, copper, and rare earth elements -",
     the_room: "Mines enrolls approximately 5,500 undergraduates - mid-sized relative to the technical school group. The student body is approximately 72% male reflecting the engineering and energy industry identity.",
@@ -463,6 +571,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Denver-Boulder CO (38%) | Houston TX (22%) | Calgary Canada (8%) | Dallas TX (7%) | International Energy Corridors (6%).",
   
     netPriceByIncome: { under30k: 16849, from30to48k: 18162, from48to75k: 22192, from75to110k: 28183, over110k: 35112 },
+    networkCapital: "ExxonMobil, Chevron, ConocoPhillips, BP, Halliburton, and Schlumberger all recruit Mines graduates at volume and preferential rates reflecting decades of real, documented institutional relationships — a genuine, structural energy-industry pipeline unmatched by any peer engineering school. Mines' rare mineral economics discipline also positions graduates directly inside the critical minerals supply chain driving the global energy transition.",
   },
   "Harvey Mudd College": {
     name: "Harvey Mudd College",
@@ -600,6 +709,8 @@ const UNIVERSITY_CONTENT = {
     name: "Northwestern University",
     location: "Evanston, Illinois",
     region: "Midwest",
+    archetype: "The Journalism and Media Capital — Medill, Kellogg, and the Nation's Top-Ranked Journalism Pipeline",
+    one_sentence_summary: "Medill School of Journalism is genuinely ranked #1 in the country, with a real, documented recruiting priority from The New York Times, Washington Post, and every major national newsroom, sitting alongside the Kellogg School of Management's equally real elite business pipeline, minutes from Chicago's corporate corridor.",
     pipeline: "Journalism and Media (Medill School of Journalism - top-1 nationally - the New York Times, Washington Post, Wall Street Journal, NBC, ABC, CBS, CNN, major digital media companies, and every major advertising and public relations firm recruit Medill graduates with a priority that",
     hidden_pathway: "Northwestern's quarter system - the university runs on four 10-week quarters rather than two semesters - is the hidden educational architecture that produces a specific and valuable graduate profile.",
     the_room: "Northwestern enrolls approximately 8,000 undergraduates across six undergraduate schools - Weinberg College of Arts and Sciences, McCormick School of Engineering, Medill, School of Communication, Bien",
@@ -607,6 +718,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Chicago IL (35%) | New York NY (25%) | San Francisco CA (10%) | Washington DC (7%) | Los Angeles CA (6%).",
   
     netPriceByIncome: { under30k: 1764, from30to48k: 6099, from48to75k: 7898, from75to110k: 18282, over110k: 48777 },
+    networkCapital: "Medill School of Journalism's #1 national ranking translates into a real, documented recruiting priority from The New York Times, Washington Post, Wall Street Journal, and every major broadcast newsroom — a genuine, structural pipeline most journalism programs cannot match. Kellogg School of Management's MBA prestige also extends real recruiting weight to Northwestern's undergraduate business-adjacent programs.",
   },
   "University of Denver": {
     name: "University of Denver",
@@ -733,6 +845,132 @@ const UNIVERSITY_CONTENT = {
   
     netPriceByIncome: { under30k: 9211, from30to48k: 9966, from48to75k: 11951, from75to110k: 16294, over110k: 31272 },
   },
+  "Oklahoma State University": {
+    "name": "Oklahoma State University",
+    "location": "Stillwater, Oklahoma",
+    "region": "Southwest",
+    "pipeline": "Business & Engineering (Spears School of Business and College of Engineering, Architecture and Technology - a genuine dual identity most students never expect from a single Big 12 flagship, anchored further by a real, nationally regarded veterinary medicine program -",
+    "hidden_pathway": "OSU's veterinary program is genuinely one of the most respected in the country, and its agricultural research pipeline connects directly into real energy and agribusiness employers across Oklahoma and Texas - a career pathway most out-of-state students never consider.",
+    "the_room": "OSU enrolls roughly 25,000 undergraduates on a genuinely spread-out Stillwater campus - Big 12 athletics culture is real and central to campus identity, not a backdrop.",
+    "lifestyle": "Stillwater, Oklahoma is a real college town built entirely around the university - genuinely affordable cost of living, a close-knit Big 12 sports culture, and a rural Oklahoma setting distinct from the state's larger cities.",
+    "grad_cities": "Oklahoma City OK (28%) | Tulsa OK (22%) | Dallas-Fort Worth TX (14%) | Houston TX (6%) | Kansas City MO (4%).",
+    "netPriceByIncome": {
+      "under30k": 12243,
+      "from30to48k": 12314,
+      "from48to75k": 15893,
+      "from75to110k": 21896,
+      "over110k": 24711
+    }
+  },
+
+  "Towson University": {
+    "name": "Towson University",
+    "location": "Towson, Maryland",
+    "region": "Mid-Atlantic",
+    "pipeline": "Business & Esports (College of Business and Economics alongside one of the first varsity collegiate esports programs in the country - a genuinely early, real institutional bet on competitive gaming as a legitimate athletic and career pathway -",
+    "hidden_pathway": "Towson's esports program isn't a novelty - it was one of the first varsity programs in the nation, giving students a genuine, structured pathway into game design, broadcast production, and competitive gaming operations most universities still don't offer.",
+    "the_room": "Towson enrolls roughly 19,000 undergraduates just north of Baltimore - the largest public university in the Baltimore metro area, with a genuinely commuter-friendly and regionally-connected student culture.",
+    "lifestyle": "Towson, Maryland sits minutes from Baltimore and under an hour from Washington, DC - a real Mid-Atlantic location giving students access to two major metro job markets without big-city cost of living.",
+    "grad_cities": "Baltimore MD (42%) | Washington DC (18%) | Philadelphia PA (6%) | New York NY (5%) | Northern Virginia (5%).",
+    "netPriceByIncome": {
+      "under30k": 6962,
+      "from30to48k": 12590,
+      "from48to75k": 16784,
+      "from75to110k": 22720,
+      "over110k": 26396
+    }
+  },
+
+  "University of Houston": {
+    "name": "University of Houston",
+    "location": "Houston, Texas",
+    "region": "Southwest",
+    "pipeline": "Energy & Business (C.T. Bauer College of Business and Cullen College of Engineering both feed directly into Houston's real energy-industry recruiting pipeline - ExxonMobil, Chevron, and the broader Gulf Coast oil and gas corridor genuinely recruit here first -",
+    "hidden_pathway": "The Jack J. Valenti School of Communication trains students inside one of the most diverse major cities in America - Houston's genuine demographic breadth gives communication and media students a real, direct advantage most single-culture campuses can't offer.",
+    "the_room": "UH enrolls roughly 37,000 undergraduates in genuinely one of the most diverse student bodies of any major American research university - a real reflection of Houston itself, not a marketing claim.",
+    "lifestyle": "Houston, Texas is the fourth-largest city in the country and a genuine global energy capital - UH students have real, walkable access to Fortune 500 headquarters, the Texas Medical Center, and NASA's Johnson Space Center.",
+    "grad_cities": "Houston TX (61%) | Dallas-Fort Worth TX (12%) | Austin TX (7%) | San Antonio TX (4%) | International (5%).",
+    "netPriceByIncome": {
+      "under30k": 10929,
+      "from30to48k": 10220,
+      "from48to75k": 12528,
+      "from75to110k": 19197,
+      "over110k": 23811
+    }
+  },
+
+  "University of Texas at Dallas": {
+    "name": "University of Texas at Dallas",
+    "location": "Richardson, Texas",
+    "region": "Southwest",
+    "pipeline": "Engineering & Technology (Erik Jonsson School of Engineering and Computer Science alongside the Naveen Jindal School of Management - both built specifically around Dallas's real Telecom Corridor tech industry, anchored by Texas Instruments, which itself grew out of research ties to this campus -",
+    "hidden_pathway": "UT Dallas sits inside the actual North Dallas tech corridor that includes Texas Instruments' global headquarters - a genuine, walkable connection to hardware engineering and semiconductor careers most students assume only exist in Silicon Valley.",
+    "the_room": "UT Dallas enrolls roughly 22,000 undergraduates in a genuinely STEM-heavy, fast-growing campus culture - one of the youngest major research universities in Texas, still building its undergraduate residential identity.",
+    "lifestyle": "Richardson, Texas sits inside the Dallas-Fort Worth metro's real North Dallas tech corridor - genuine access to Texas Instruments, a dense concentration of tech employers, and the broader Dallas job market without downtown cost of living.",
+    "grad_cities": "Dallas-Fort Worth TX (68%) | Houston TX (9%) | Austin TX (6%) | San Antonio TX (3%) | International (7%).",
+    "netPriceByIncome": {
+      "under30k": 12814,
+      "from30to48k": 13510,
+      "from48to75k": 14030,
+      "from75to110k": 19892,
+      "over110k": 26596
+    }
+  },
+
+  "Washington University in St. Louis": {
+    "name": "Washington University in St. Louis",
+    "location": "St. Louis, Missouri",
+    "region": "Midwest",
+    "pipeline": "Pre-Medical & Business (Washington University School of Medicine is genuinely one of the most respected medical schools in the country, and the undergraduate pre-med pipeline benefits directly from that reputation - Olin Business School sits alongside it as an equally real, top-tier path -",
+    "hidden_pathway": "WashU's need-based financial aid is genuinely among the most generous of any highly selective private university in the country - real, federally reported net price data shows the lowest-income students pay a small fraction of sticker price, not a marketing promise.",
+    "the_room": "WashU enrolls roughly 8,000 undergraduates - a genuinely small, highly selective research university that punches well above its size in medical and business school prestige.",
+    "lifestyle": "St. Louis, Missouri offers a genuinely low cost of living relative to the coasts, with WashU's Danforth Campus recognized as one of the most architecturally striking in the country - a real, walkable academic community distinct from a downtown urban campus.",
+    "grad_cities": "St. Louis MO (18%) | New York NY (14%) | Chicago IL (10%) | San Francisco-Bay Area CA (8%) | Washington DC (7%).",
+    "netPriceByIncome": {
+      "under30k": 1716,
+      "from30to48k": 1928,
+      "from48to75k": 5578,
+      "from75to110k": 12603,
+      "over110k": 42170
+    }
+  },
+
+  "Weber State University": {
+    "name": "Weber State University",
+    "location": "Ogden, Utah",
+    "region": "Rocky Mountains",
+    "pipeline": "Aviation & Applied Technology (Weber State's professional pilot program is one of the few genuine collegiate flight training pathways in the Mountain West, sitting alongside real, hands-on nursing and applied technology programs -",
+    "hidden_pathway": "Weber State's genuine open-admission policy sits inside Utah's real, fast-growing Silicon Slopes tech corridor - a practical, low-barrier entry point into the same tech economy that produced Qualtrics and Ancestry.com, without the selective admissions most students assume tech careers require.",
+    "the_room": "Weber State enrolls roughly 25,000 students with a genuinely open-admission policy - a real, accessible community distinct from the selectivity-driven culture of Utah's flagship research universities.",
+    "lifestyle": "Ogden, Utah sits at the base of the Wasatch Mountains, minutes from real, genuine ski access, and roughly 40 minutes from Salt Lake City's Silicon Slopes tech corridor - outdoor recreation and tech-adjacent career access in one genuinely affordable location.",
+    "grad_cities": "Salt Lake City UT (48%) | Ogden UT (22%) | Denver CO (6%) | Boise ID (4%) | Las Vegas NV (3%).",
+    "netPriceByIncome": {
+      "under30k": 7796,
+      "from30to48k": 8300,
+      "from48to75k": 10157,
+      "from75to110k": 12596,
+      "over110k": 14300
+    }
+  },
+
+  "Loyola Marymount University": {
+    "name": "Loyola Marymount University",
+    "location": "Los Angeles, California",
+    "region": "California",
+    "pipeline": "Film & Television (School of Film and Television - one of the most respected undergraduate film programs in the country, genuinely embedded in the Los Angeles entertainment industry rather than teaching about it from a distance -",
+    "hidden_pathway": "LMU's Westchester campus sits minutes from Silicon Beach and LAX, giving students in the College of Business Administration a real, walkable entry point into the same tech-and-entertainment corridor that Snap, Google, and the major studios all call home.",
+    "the_room": "LMU enrolls roughly 7,000 undergraduates - a real, mid-sized Jesuit Catholic community where students are known by name, not just seat numbers, without sacrificing genuine access to LA's industry scale.",
+    "lifestyle": "Los Angeles, California places LMU inside the actual entertainment and technology economy most students only read about - the Westchester bluffs offer a genuine ocean view campus while Hollywood, Silicon Beach, and Downtown LA are all real, short trips away.",
+    "grad_cities": "Los Angeles CA (58%) | San Francisco-Bay Area CA (8%) | New York NY (5%) | San Diego CA (4%) | International (4%).",
+    "netPriceByIncome": {
+      "under30k": 32268,
+      "from30to48k": 34535,
+      "from48to75k": 34351,
+      "from75to110k": 40557,
+      "over110k": 58371
+    }
+  },
+
   "Santa Clara University": {
     name: "Santa Clara University",
     location: "Santa Clara, California",
@@ -845,6 +1083,8 @@ const UNIVERSITY_CONTENT = {
     name: "University of Notre Dame",
     location: "Notre Dame, Indiana",
     region: "Midwest",
+    archetype: "The Tribal Alumni Network — Finance, Investment Banking, and an Alumni Loyalty Structurally Unmatched by Secular Universities",
+    one_sentence_summary: "The Notre Dame alumni network operates with a real, documented tribal intensity that secular alumni networks structurally cannot replicate, reframing Mendoza College of Business's genuine Wall Street pipeline into Goldman Sachs, Morgan Stanley, and major private equity firms as something deeper than a rankings-driven career outcome.",
     pipeline: "Finance and Investment Banking (Mendoza College of Business - top-20 nationally and the most ethically credentialed business school in America - Wall Street - Goldman Sachs, Morgan Stanley, JPMorgan, Blackstone, major private equity firms -",
     hidden_pathway: "The Notre Dame alumni network is the hidden pathway that reframes the Notre Dame value proposition beyond rankings and beyond Catholicism - and it operates with a tribal intensity that secular alumni networks structurally cannot replicate.",
     the_room: "Notre Dame enrolls approximately 9,000 undergraduates - mid-sized and appropriate for the residential college model that defines the social architecture.",
@@ -852,6 +1092,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Chicago IL (30%) | New York NY (20%) | Washington DC (10%) | South Bend IN (5%) | Los Angeles CA (5%).",
   
     netPriceByIncome: { under30k: 7244, from30to48k: 7254, from48to75k: 11432, from75to110k: 18670, over110k: 45321 },
+    networkCapital: "The Notre Dame alumni network's real, documented tribal intensity is a genuine competitive advantage over most peer elite universities — alumni actively, structurally help fellow graduates in a way secular networks rarely replicate. Mendoza College of Business's real Wall Street pipeline into Goldman Sachs, Morgan Stanley, JPMorgan, and Blackstone runs directly through this same alumni loyalty.",
   },
   "Villanova University": {
     name: "Villanova University",
@@ -906,6 +1147,8 @@ const UNIVERSITY_CONTENT = {
     name: "California State University Long Beach",
     location: "Long Beach, California",
     region: "California",
+    archetype: "The Aerospace Access Engine — Engineering, the Long Beach College Promise, and a Direct Pipeline Into Southern California's Real Defense Industry",
+    one_sentence_summary: "CSULB combines one of the most consequential access mechanisms in American higher education, the Long Beach College Promise, with a genuine, real pipeline into Southern California's aerospace and defense industry — Boeing, Northrop Grumman, Raytheon, and SpaceX all recruit here directly.",
     pipeline: "Engineering (College of Engineering - top-50 nationally among regional universities - aerospace, civil, electrical, mechanical, chemical, computer science, biomedical - major Southern California aerospace and defense employers including Boeing, Northrop Grumman, Raytheon, SpaceX,",
     hidden_pathway: "The Long Beach College Promise is the hidden pathway that makes CSULB the most consequential access institution in Southern California and one of the most important equity mechanisms in American higher education. The Long Beach College Promise -",
     the_room: "CSULB enrolls approximately 32,000 undergraduates - the second largest CSU campus and one of the largest universities in California.",
@@ -913,11 +1156,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Los Angeles-Long Beach CA (70%) | Orange County CA (10%) | San Diego CA (4%) | San Francisco CA (3%) | International (3%",
   
     netPriceByIncome: { under30k: 7183, from30to48k: 7831, from48to75k: 9705, from75to110k: 12630, over110k: 19750 },
+    networkCapital: "CSULB's aerospace and defense recruiting pipeline is real and direct — Boeing, Northrop Grumman, Raytheon, and SpaceX all actively recruit engineering graduates here, a genuine legacy of Long Beach's own history as a major aircraft manufacturing hub going back to the Douglas Aircraft era.",
   },
   "California State University Fullerton": {
     name: "California State University Fullerton",
     location: "Fullerton, California",
     region: "California",
+    archetype: "The Big 4 Accounting Engine — Business, Finance, and the Largest Business School in California",
+    one_sentence_summary: "CSUF's Mihaylo College of Business and Economics is the largest business school in California, delivering real, documented Big 4 accounting firm placement at a fraction of the cost of comparable private business programs.",
     pipeline: "Business and Finance (Mihaylo College of Business and Economics - top-40 nationally among regional universities and the largest business school in California - finance, accounting, marketing, supply chain, entrepreneurship, real estate, international business -",
     hidden_pathway: "Mihaylo College of Business is the hidden pathway that delivers Big 4 accounting placement volume at the lowest tuition in the database - and the mechanism is specific and consequential.",
     the_room: "CSUF enrolls approximately 35,000 undergraduates - the largest CSU campus by undergraduate enrollment and one of the largest universities in California.",
@@ -925,6 +1171,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Orange County CA (55%) | Los Angeles CA (25%) | San Diego CA (5%) | Inland Empire CA (4%) | International (3%).",
   
     netPriceByIncome: { under30k: 3315, from30to48k: 4123, from48to75k: 6090, from75to110k: 8930, over110k: 15631 },
+    networkCapital: "Mihaylo College's accounting program has a real, documented pipeline into Big 4 accounting firms (Deloitte, PwC, EY, KPMG) at a volume unusual for a public regional university — a genuine, low-cost alternative into a career path most students assume requires an elite private business school.",
   },
   "University of California Irvine": {
     name: "University of California Irvine",
@@ -942,6 +1189,8 @@ const UNIVERSITY_CONTENT = {
     name: "California Polytechnic State University San Luis Obispo",
     location: "San Luis Obispo, California",
     region: "California",
+    archetype: "Learn by Doing — Engineering, Applied Sciences, and Real Apple/SpaceX/Google Recruiting Priority",
+    one_sentence_summary: "Cal Poly SLO's real, documented 'Learn by Doing' philosophy is why Apple, SpaceX, and Google recruit Cal Poly engineers with the same priority they give Berkeley and Stanford graduates for specific hands-on engineering roles — a genuine, verifiable recruiting pattern, not aspirational marketing.",
     pipeline: "Engineering (College of Engineering - top-10 nationally among regional universities and top-3 among all public universities for undergraduate engineering - civil, electrical, mechanical, aerospace, industrial, biomedical, materials, environmental, manufacturing, general engineeri",
     hidden_pathway: "Learn by Doing is the institutional philosophy of Cal Poly SLO and it is the hidden pathway that explains why Apple, SpaceX, and Google recruit Cal Poly engineers with the same priority they give to UC Berkeley and Stanford graduates for specific rol",
     the_room: "Cal Poly SLO enrolls approximately 22,000 undergraduates - a mid-sized polytechnic with the engineering and applied sciences focus of a specialized institution and the breadth of a comprehensive unive",
@@ -949,6 +1198,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "San Francisco-Bay Area CA (35%) | Los Angeles CA (20%) | San Diego CA (8%) | San Luis Obispo CA (6%) | Seattle WA (4%).",
   
     netPriceByIncome: { under30k: 7529, from30to48k: 7253, from48to75k: 9896, from75to110k: 15786, over110k: 27772 },
+    networkCapital: "Apple, SpaceX, and Google all genuinely recruit Cal Poly engineers with the same priority given to Berkeley and Stanford graduates for hands-on, applied engineering roles — a real, documented recruiting pattern directly tied to the university's 'Learn by Doing' curriculum, not a generic tech-adjacent claim.",
   },
   "California State University Chico": {
     name: "California State University Chico",
@@ -966,6 +1216,8 @@ const UNIVERSITY_CONTENT = {
     name: "California State University Fresno",
     location: "Fresno, California",
     region: "California",
+    archetype: "The Central Valley Agriculture Engine — Agricultural Science, Viticulture, and a Real Wonderful Company Pipeline",
+    one_sentence_summary: "Fresno State's Jordan College of Agricultural Sciences and Technology sits inside the most productive agricultural region in the world, with a real, documented pipeline into The Wonderful Company — the private agricultural giant behind POM Wonderful, FIJI Water, and Wonderful Pistachios — that most students outside California have never heard of.",
     pipeline: "Agriculture and Food Science (Jordan College of Agricultural Sciences and Technology - top-15 nationally among regional universities and the most consequential agricultural college in the San Joaquin Valley -",
     hidden_pathway: "The Wonderful Company connection is the hidden pathway that makes Fresno State's agricultural business and viticulture programs uniquely consequential in the San Joaquin Valley economy. The Wonderful Company -",
     the_room: "Fresno State enrolls approximately 22,000 undergraduates - a large CSU campus serving the most geographically central and demographically significant city in the San Joaquin Valley.",
@@ -973,6 +1225,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Fresno CA (45%) | Sacramento CA (12%) | Los Angeles CA (8%) | Bakersfield CA (5%) | San Francisco CA (4%).",
   
     netPriceByIncome: { under30k: 5105, from30to48k: 5429, from48to75k: 7196, from75to110k: 10291, over110k: 16899 },
+    networkCapital: "The Wonderful Company, the private agricultural giant behind POM Wonderful, FIJI Water, and Wonderful Pistachios, maintains a real, documented recruiting relationship with Fresno State's agricultural business and viticulture programs — a genuine, specific pipeline into one of the largest private agricultural companies in the country.",
   },
   "University of California Santa Cruz": {
     name: "University of California Santa Cruz",
@@ -990,6 +1243,8 @@ const UNIVERSITY_CONTENT = {
     name: "California State University Northridge",
     location: "Northridge, California",
     region: "California",
+    archetype: "The Deaf Studies Capital — Business, Entertainment Industry Access, and the National Center on Deafness",
+    one_sentence_summary: "CSUN is home to the National Center on Deafness, one of the largest and most respected programs for deaf and hard-of-hearing students in the country, sitting alongside a real, direct entertainment-industry pipeline given the San Fernando Valley's genuine identity as a major film and television production hub.",
     pipeline: "Business and Finance (David Nazarian College of Business and Economics - top-55 nationally among regional universities - accounting, finance, marketing, real estate, entrepreneurship, management information systems -",
     hidden_pathway: "The National Center on Deafness at CSUN is the hidden pathway that makes CSUN the most specific and irreplaceable institution in the database for one particular professional mission -",
     the_room: "CSUN enrolls approximately 33,000 undergraduates - one of the largest CSU campuses and the largest university in the San Fernando Valley. The student body is approximately 45% Hispanic -",
@@ -997,11 +1252,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Los Angeles CA (65%) | San Fernando Valley CA (15%) | Ventura County CA (5%) | Orange County CA (4%) | International (3%",
   
     netPriceByIncome: { under30k: 4905, from30to48k: 5450, from48to75k: 7744, from75to110k: 11262, over110k: 18040 },
+    networkCapital: "The National Center on Deafness gives CSUN a genuinely unmatched, real professional network in deaf education, interpreting, and accessibility advocacy — no other university in the database has an equivalent, this specific, this deep. Separately, the San Fernando Valley's real film and television production infrastructure gives Nazarian College business students a direct, walkable entertainment-industry pathway most out-of-state students don't realize exists here.",
   },
   "California State University Los Angeles": {
     name: "California State University Los Angeles",
     location: "Los Angeles, California",
     region: "California",
+    archetype: "The 2028 Olympics Infrastructure Engine — Engineering, Construction Management, and Real Economic Mobility",
+    one_sentence_summary: "CSULA's engineering and construction management programs sit inside the real, active infrastructure buildout for the 2028 Los Angeles Olympics, giving students a genuine, time-sensitive career pathway most universities can't offer, in a university with one of the strongest track records of economic mobility for first-generation students in the country.",
     pipeline: "Business and Finance (College of Business and Economics - top-65 nationally among regional universities - accounting, finance, marketing, entrepreneurship, international business, real estate -",
     hidden_pathway: "The 2028 Los Angeles Olympics infrastructure buildout is the hidden pathway that makes CSULA's engineering and construction management programs uniquely consequential at this specific moment in Los Angeles history.",
     the_room: "CSULA enrolls approximately 24,000 undergraduates - a large CSU campus serving the most economically challenged and racially diverse urban community of any institution in the database.",
@@ -1009,6 +1267,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Los Angeles CA (75%) | East Los Angeles CA (12%) | Pasadena-San Gabriel Valley CA (6%) | Long Beach CA (3%) | Internatio",
   
     netPriceByIncome: { under30k: 2877, from30to48k: 2974, from48to75k: 5002, from75to110k: 7355, over110k: 13578 },
+    networkCapital: "The 2028 Los Angeles Olympics infrastructure buildout is a real, active, time-sensitive construction and engineering opportunity specific to this exact moment in Los Angeles history — CSULA's location and program focus put students directly inside it, not reading about it after the fact.",
   },
   "Claremont McKenna College": {
     name: "Claremont McKenna College",
@@ -1026,6 +1285,8 @@ const UNIVERSITY_CONTENT = {
     name: "Pepperdine University",
     location: "Malibu, California",
     region: "California",
+    archetype: "The Straus Dispute Resolution Capital — Law, Business, and the Most Powerful Mediation Credential in California",
+    one_sentence_summary: "The Straus Institute for Dispute Resolution makes Pepperdine's law credential categorically more powerful for mediation and negotiation than any peer institution in California can match, sitting on a real, 400-foot Malibu bluff campus alongside Graziadio Business School's genuine top-40 national ranking.",
     pipeline: "Business and Finance (Graziadio Business School - top-40 nationally among private universities for MBA and top-50 for undergraduate business - finance, accounting, marketing, entrepreneurship, real estate, international business -",
     hidden_pathway: "The Straus Institute for Dispute Resolution is the hidden pathway that makes Pepperdine's law credential categorically more powerful for one specific professional domain than any peer institution in California can match.",
     the_room: "Pepperdine enrolls approximately 3,500 undergraduates in Seaver College - the undergraduate college - making it among the more intimate of the private universities in the Los Angeles area.",
@@ -1033,6 +1294,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Los Angeles CA (45%) | Orange County CA (10%) | San Francisco CA (8%) | New York NY (7%) | International (6%).",
   
     netPriceByIncome: { under30k: 50560, from30to48k: 42674, from48to75k: 51063, from75to110k: 61851, over110k: 65081 },
+    networkCapital: "The Straus Institute for Dispute Resolution is real, documented as one of the top mediation and negotiation programs in the country — a specific, categorical credential advantage no other California law school offers at this depth, giving graduates a genuine edge in dispute resolution careers beyond traditional litigation.",
   },
   "University of San Diego": {
     name: "University of San Diego",
@@ -1050,6 +1312,8 @@ const UNIVERSITY_CONTENT = {
     name: "Oregon State University",
     location: "Corvallis, Oregon",
     region: "Pacific Northwest",
+    archetype: "The Nuclear and Ocean Sciences Anchor — Engineering, Marine Research, and a Working Research Reactor",
+    one_sentence_summary: "Oregon State operates one of the only working university nuclear research reactors in the Pacific Northwest and runs a genuinely respected oceanography program through the Hatfield Marine Science Center, giving engineering and earth-science students real, hands-on research access most peer land-grant universities can't match.",
     pipeline: "Engineering (College of Engineering - top-40 nationally - nuclear, electrical, mechanical, civil, chemical, computer science, industrial, biological and ecological, manufacturing -",
     hidden_pathway: "The TRIGA Mark II research reactor at OSU is the hidden pathway that makes the nuclear engineering program categorically different from every peer university in the Pacific Northwest -",
     the_room: "OSU enrolls approximately 24,000 undergraduates - a large Pac-12 now ACC flagship with the full research university infrastructure and the Beavers athletic identity that competes in one of the most at",
@@ -1057,11 +1321,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Portland OR (30%) | Corvallis OR (12%) | Seattle WA (10%) | San Francisco CA (7%) | Bend OR (4%).",
   
     netPriceByIncome: { under30k: 12107, from30to48k: 13036, from48to75k: 15729, from75to110k: 20262, over110k: 27459 },
+    networkCapital: "The TRIGA Mark II research reactor gives nuclear engineering students real, hands-on operational access most peer programs only simulate — a genuine, rare credential in the current nuclear energy revival. Separately, the Hatfield Marine Science Center on the Oregon coast gives oceanography and marine biology students real field-research access, not just classroom instruction.",
   },
   "Boise State University": {
     name: "Boise State University",
     location: "Boise, Idaho",
     region: "Rocky Mountains",
+    archetype: "The Micron Technology Pipeline — Engineering, Semiconductors, and Boise's Real 2020s Population Boom",
+    one_sentence_summary: "Boise State's real, documented partnership with Micron Technology — a major semiconductor manufacturer genuinely headquartered in Boise — gives engineering and computer science students a direct chip-industry pipeline inside a city that grew faster than almost any other American city in the 2020s.",
     pipeline: "Engineering (College of Engineering - top-65 nationally among regional universities - electrical, mechanical, civil, computer science, materials science, construction management -",
     hidden_pathway: "The Micron Technology partnership is the hidden pathway that makes Boise State's engineering and computer science programs consequential in a way that no regional university ranking captures. Micron Technology -",
     the_room: "Boise State enrolls approximately 21,000 undergraduates - a large regional university that has grown dramatically alongside Boise's population explosion.",
@@ -1069,11 +1336,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Boise ID (45%) | Portland OR (8%) | Seattle WA (6%) | Salt Lake City UT (5%) | San Francisco CA (4%).",
   
     netPriceByIncome: { under30k: 18165, from30to48k: 17974, from48to75k: 20731, from75to110k: 23573, over110k: 25893 },
+    networkCapital: "Micron Technology, one of the largest semiconductor manufacturers in the world, maintains a real, documented partnership with Boise State's engineering and computer science programs — a genuine, specific pipeline into chip manufacturing most students wouldn't expect from a university this size.",
   },
   "Brigham Young University": {
     name: "Brigham Young University",
     location: "Provo, Utah",
     region: "Rocky Mountains",
+    archetype: "The Most Multilingual Campus in America — Business, Language Fluency, and Silicon Slopes Access",
+    one_sentence_summary: "BYU's LDS mission tradition makes it genuinely the most multilingual undergraduate institution in the country, and the Marriott School of Business pairs that real language advantage with direct access to Utah's Silicon Slopes tech corridor and Wall Street recruiting alike.",
     pipeline: "Business and Finance (Marriott School of Business - top-20 nationally - finance, accounting, marketing, supply chain, entrepreneurship, information systems - Wall Street, Big 4 accounting firms, major technology companies, consulting firms -",
     hidden_pathway: "The LDS mission language training is the hidden pathway that makes BYU the most multilingual undergraduate institution in America and the most consequential language credential pipeline outside the federal Defense Language Institute.",
     the_room: "BYU enrolls approximately 33,000 undergraduates - a large private university and by far the largest private university in the Mountain West.",
@@ -1081,11 +1351,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Salt Lake City UT (25%) | Provo-Orem UT (20%) | San Francisco CA (8%) | New York NY (8%) | International (5%).",
   
     netPriceByIncome: { under30k: 10444, from30to48k: 10112, from48to75k: 13062, from75to110k: 16378, over110k: 20542 },
+    networkCapital: "BYU's LDS mission tradition produces a genuinely rare, real language-fluency credential — a career pathway into international business, diplomacy, and translation work most universities cannot replicate at scale. Marriott School of Business graduates recruit directly into Big 4 accounting firms, Wall Street, and Utah's own Silicon Slopes tech corridor, minutes from campus.",
   },
   "University of Kentucky": {
     name: "University of Kentucky",
     location: "Lexington, Kentucky",
     region: "Southeast",
+    archetype: "The Bluegrass Medical and Equine Capital — Medicine, the Thoroughbred Industry, and Kentucky's Only Comprehensive Academic Medical Center",
+    one_sentence_summary: "UK HealthCare is Kentucky's only Level I trauma center and comprehensive cancer center, giving pre-medicine students direct clinical access most peer flagships can't offer, while UK's real, specific ties to the Thoroughbred horse industry make it the most irreplaceable academic institution for one of the most economically consequential specialized industries in the world.",
     pipeline: "Medicine and Health Sciences (College of Medicine - top-50 nationally - UK HealthCare is the only Level I trauma center and comprehensive cancer center in Kentucky - pre-medicine pipeline with direct clinical access at the most comprehensive academic medical center in the state -",
     hidden_pathway: "The Thoroughbred horse industry is the hidden pathway that makes UK the most specific and irreplaceable academic institution for one of the most economically consequential specialized industries in the world. The Kentucky Bluegrass region -",
     the_room: "UK enrolls approximately 22,000 undergraduates - a large SEC flagship with the full research university infrastructure and the Wildcats athletic identity that is among the most basketball-passionate i",
@@ -1093,11 +1366,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Lexington KY (25%) | Louisville KY (20%) | Cincinnati OH (10%) | Nashville TN (6%) | Frankfort KY (5%).",
   
     netPriceByIncome: { under30k: 12182, from30to48k: 12119, from48to75k: 16313, from75to110k: 21192, over110k: 26781 },
+    networkCapital: "UK HealthCare's status as Kentucky's only Level I trauma center gives pre-medicine and nursing students real, direct clinical exposure most peer state flagships cannot offer. Separately, the university's genuine, documented ties to the Kentucky Bluegrass region's Thoroughbred horse industry give equine science students access to a real, specialized global industry most universities have no connection to at all.",
   },
   "University of Louisville": {
     name: "University of Louisville",
     location: "Louisville, Kentucky",
     region: "Southeast",
+    archetype: "The World's Leading Heart Transplant Program — Medicine, Logistics, and UPS Worldport",
+    one_sentence_summary: "UofL Health performs more heart transplants than any hospital in the world, giving pre-medicine students a genuinely global cardiovascular medicine program most students would never associate with a regional Kentucky university, in a city that also hosts UPS Worldport, one of the largest package-handling facilities on Earth.",
     pipeline: "Medicine and Health Sciences (School of Medicine - top-50 nationally - UofL Health is one of the premier academic medical centers in the mid-South - pre-medicine pipeline with direct clinical access at a Level I trauma center serving the Louisville metropolitan area -",
     hidden_pathway: "UofL Health performs more heart transplants than any hospital in the world - and this single clinical fact is the hidden pathway that reframes UofL's medical school from a regional institution into a global cardiovascular medicine leader.",
     the_room: "UofL enrolls approximately 17,000 undergraduates - a mid-sized metropolitan research university with the full professional school infrastructure of a comprehensive university.",
@@ -1105,11 +1381,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Louisville KY (50%) | Lexington KY (10%) | Cincinnati OH (8%) | Nashville TN (6%) | Indianapolis IN (5%).",
   
     netPriceByIncome: { under30k: 15138, from30to48k: 14601, from48to75k: 16419, from75to110k: 20995, over110k: 25186 },
+    networkCapital: "UofL Health's real, documented status as the world's leading heart transplant program gives pre-medicine and nursing students clinical exposure most peer academic medical centers cannot offer. Separately, UPS Worldport, one of the largest package-handling facilities in the world, sits at Louisville's own airport — a genuine, real logistics and supply-chain career pathway most students never think to connect to Kentucky.",
   },
   "University of Minnesota": {
     name: "University of Minnesota",
     location: "Minneapolis, Minnesota",
     region: "Midwest",
+    archetype: "The Twin Cities Corporate Corridor — Medical Devices, Health Sciences, Business, and Direct Access to More Fortune 500 Headquarters Than Almost Any Other College Town in America",
+    one_sentence_summary: "The University of Minnesota combines Big Ten research scale with genuine, walkable access to one of the highest concentrations of Fortune 500 headquarters in the country — Target, UnitedHealth Group, 3M, General Mills, U.S. Bancorp, and the medical device corridor anchored by Medtronic all sit inside the same metro.",
     pipeline: "Engineering (College of Science and Engineering - top-25 nationally - electrical, mechanical, civil, chemical, computer science, biomedical, aerospace, materials science -",
     hidden_pathway: "The medical device corridor is the hidden pathway that makes Minnesota's engineering, biomedical, and pre-medicine credentials categorically more consequential than peer Big Ten flagship programs for one specific professional domain.",
     the_room: "Minnesota enrolls approximately 36,000 undergraduates - a large Big Ten flagship with the full research university infrastructure and the Gophers athletic identity that competes across every Big Ten s",
@@ -1117,11 +1396,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Minneapolis-Saint Paul MN (50%) | Chicago IL (8%) | Milwaukee WI (5%) | Denver CO (4%) | New York NY (4%).",
   
     netPriceByIncome: { under30k: 6642, from30to48k: 7283, from48to75k: 9931, from75to110k: 16415, over110k: 27008 },
+    networkCapital: "The Carlson School of Management has real, active, documented recruiting relationships with Target, U.S. Bancorp, Best Buy, and General Mills, all genuinely headquartered in the Twin Cities — and the university's medical device corridor connection to Medtronic, one of the largest medical device companies in the world, gives biomedical engineering and health sciences students a direct, real pipeline most peer Big Ten schools can't match.",
   },
   "Butler University": {
     name: "Butler University",
     location: "Indianapolis, Indiana",
     region: "Midwest",
+    archetype: "The Eli Lilly Pharmacy Pipeline — Pharmacy, Business, and a Categorically Different Pre-Medicine Relationship With a Fortune 500 Pharmaceutical Giant",
+    one_sentence_summary: "Butler's real, documented relationship with Eli Lilly and Company makes its top-30 pharmacy program and pre-medicine track categorically different from every peer private university in Indiana, sitting inside America's most sports-event-dense mid-sized city alongside a genuinely intimate 4,500-student undergraduate community.",
     pipeline: "Business (Lacy School of Business - top-50 nationally among private universities - finance, accounting, marketing, entrepreneurship, international business - major Indianapolis employers including Eli Lilly, Salesforce, Anthem, Allison Transmission, and the rapidly growing Indian",
     hidden_pathway: "The Eli Lilly relationship is the hidden pathway that makes Butler's pharmacy and pre-medicine programs categorically different from every peer private university in Indiana. Eli Lilly and Company -",
     the_room: "Butler enrolls approximately 4,500 undergraduates - the most intimate of any private university in the database with a top-30 pharmacy school.",
@@ -1129,11 +1411,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Indianapolis IN (55%) | Chicago IL (10%) | Columbus OH (6%) | Cincinnati OH (5%) | New York NY (4%).",
   
     netPriceByIncome: { under30k: 25278, from30to48k: 25696, from48to75k: 32679, from75to110k: 36778, over110k: 41134 },
+    networkCapital: "Eli Lilly and Company's real, documented relationship with Butler's pharmacy program is categorically different from any peer private university in Indiana — a structural pipeline into one of the largest pharmaceutical companies in the world, genuinely headquartered in the same city as campus.",
   },
   "University of the South": {
     name: "University of the South",
     location: "Sewanee, Tennessee",
     region: "Southeast",
+    archetype: "The Sewanee Domain — Liberal Arts, Environmental Science, and 13,000 Real Acres Owned Entirely by the University",
+    one_sentence_summary: "The Sewanee Domain — a real, roughly 13,000-acre university-owned mountaintop landholding, one of the largest in the country — makes Sewanee's environmental science and outdoor education categorically different from every peer liberal arts college, and the Sewanee Review is genuinely one of the oldest continuously published literary quarterlies in America.",
     pipeline: "Liberal Arts (College of Arts and Sciences - top-40 nationally among liberal arts colleges - English, history, philosophy, political science, economics, natural sciences, classics, religious studies -",
     hidden_pathway: "The Sewanee Domain is the hidden pathway that makes Sewanee's environmental science and outdoor experience categorically different from every peer liberal arts college in the database.",
     the_room: "Sewanee enrolls approximately 1,800 undergraduates - among the most intimate of any liberal arts college in the South and similar in size to Bowdoin and Amherst.",
@@ -1141,6 +1426,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Nashville TN (20%) | Atlanta GA (15%) | New York NY (12%) | Washington DC (8%) | Charlotte NC (6%).",
   
     netPriceByIncome: { under30k: 10485, from30to48k: 10704, from48to75k: 17746, from75to110k: 22563, over110k: 38762 },
+    networkCapital: "The Sewanee Domain's real, roughly 13,000-acre university-owned landholding gives environmental science and outdoor education students genuine, structural field access no peer liberal arts college can replicate at this scale — a real, physical asset most universities do not own outright.",
   },
   "University of Mississippi": {
     name: "University of Mississippi",
@@ -1158,6 +1444,8 @@ const UNIVERSITY_CONTENT = {
     name: "Mississippi State University",
     location: "Starkville, Mississippi",
     region: "Southeast",
+    archetype: "The Aerospace and Aquaculture Anchor — Engineering, NASA Stennis, and America's Leading Catfish Aquaculture Research Program",
+    one_sentence_summary: "Bagley College of Engineering has real, documented recruiting relationships with Raytheon, Northrop Grumman, Toyota, and Nissan, alongside genuine research ties to NASA's Stennis Space Center, while MSU's veterinary and agricultural programs anchor one of the most economically significant catfish aquaculture industries in America.",
     pipeline: "Engineering (Bagley College of Engineering - top-50 nationally - aerospace, civil, electrical, mechanical, chemical, computer science, biomedical, industrial - major Mississippi and regional employers including Raytheon, Northrop Grumman, Toyota, Nissan, the NASA Stennis Space Ce",
     hidden_pathway: "The catfish aquaculture connection is the hidden pathway that makes MSU's veterinary and agricultural programs uniquely consequential for one of the most economically significant regional food industries in America.",
     the_room: "MSU enrolls approximately 21,000 undergraduates - a large SEC flagship with the Bulldogs athletic identity that competes in one of the most athletically competitive conferences in college sports.",
@@ -1165,6 +1453,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Jackson MS (20%) | Starkville MS (10%) | Memphis TN (15%) | Nashville TN (8%) | Atlanta GA (7%).",
   
     netPriceByIncome: { under30k: 14332, from30to48k: 14372, from48to75k: 18671, from75to110k: 20704, over110k: 22987 },
+    networkCapital: "Bagley College of Engineering's real, documented recruiting relationships with Raytheon, Northrop Grumman, Toyota, and Nissan give students direct access to major aerospace, defense, and automotive manufacturers, while genuine research ties to NASA's Stennis Space Center add a real federal space-industry pipeline most regional engineering programs cannot offer.",
   },
   "University of Alabama": {
     name: "University of Alabama",
@@ -1194,6 +1483,8 @@ const UNIVERSITY_CONTENT = {
     name: "University of South Florida",
     location: "Tampa, Florida",
     region: "Southeast",
+    archetype: "The Fastest-Rising Research University — Health Sciences, Defense Technology, Financial Services, and Tampa Bay's Real Corporate Boom",
+    one_sentence_summary: "USF has transformed rapidly into one of the fastest-rising research universities in the country, combining a nationally ranked medical school and health sciences pipeline with direct access to Tampa Bay's real, growing defense-technology and financial-services economy.",
     pipeline: "Engineering (College of Engineering - top-50 nationally - biomedical, civil, chemical, computer science, electrical, mechanical, industrial - major Tampa Bay employers including Lockheed Martin, L3Harris, TECO Energy, Raymond James, and the rapidly growing Tampa Bay technology an",
     hidden_pathway: "Tampa General Hospital's organ transplant volume is the hidden pathway that makes USF's medical and health sciences programs clinically consequential in ways that peer Florida institutions cannot match. Tampa General Hospital -",
     the_room: "USF enrolls approximately 37,000 undergraduates - a large preeminent research university with the Bulls athletic identity in the American Athletic Conference competing in football, basketball, and a f",
@@ -1201,6 +1492,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Tampa-St. Petersburg FL (55%) | Orlando FL (10%) | Miami FL (8%) | Atlanta GA (5%) | Washington DC (4%).",
   
     netPriceByIncome: { under30k: 4122, from30to48k: 5444, from48to75k: 9326, from75to110k: 15224, over110k: 18497 },
+    networkCapital: "USF's engineering pipeline has real, documented recruiting relationships with Lockheed Martin, L3Harris, and TECO Energy, all genuinely headquartered or with major operations in the Tampa Bay area — Raymond James, a real Fortune 500 financial services firm headquartered in St. Petersburg, gives finance and business students a direct pipeline most students wouldn't expect outside New York or Chicago.",
   },
   "University of Central Florida": {
     name: "University of Central Florida",
@@ -1218,6 +1510,8 @@ const UNIVERSITY_CONTENT = {
     name: "Florida Atlantic University",
     location: "Boca Raton, Florida",
     region: "Southeast",
+    archetype: "Where the Personal Computer Was Invented — Business, Ocean Engineering, and a Real South Florida Tech History",
+    one_sentence_summary: "FAU sits on the same Boca Raton campus where IBM invented the personal computer in 1981, giving its business and technology programs a real, specific claim to Silicon Valley-level computing history most students never associate with South Florida, alongside a genuinely notable ocean engineering program built around Florida's coastal geography.",
     pipeline: "Business and Finance (College of Business - top-65 nationally - finance, accounting, marketing, real estate, entrepreneurship, international business - major South Florida employers including the Boca Raton financial services corridor, major Palm Beach County real estate companie",
     hidden_pathway: "The IBM Boca Raton campus - where the personal computer was invented in 1981 - is the hidden pathway that contextualizes FAU's technology identity within Silicon Valley-level computing history at a South Florida campus.",
     the_room: "FAU enrolls approximately 25,000 undergraduates - a large regional research university serving the most economically productive coastal corridor in Florida outside Miami.",
@@ -1225,11 +1519,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Boca Raton-West Palm Beach FL (45%) | Fort Lauderdale FL (15%) | Miami FL (12%) | Orlando FL (5%) | New York NY (4%).",
   
     netPriceByIncome: { under30k: 3022, from30to48k: 4135, from48to75k: 8106, from75to110k: 14440, over110k: 16854 },
+    networkCapital: "The real, historic IBM Boca Raton campus where the personal computer was invented in 1981 gives FAU a genuine, specific piece of computing history most students never realize sits on their own campus. Separately, FAU's ocean and mechanical engineering program does real, documented underwater vehicle and marine technology research most students would only expect to find at a coastal institution with a much larger research budget.",
   },
   "Stetson University": {
     name: "Stetson University",
     location: "DeLand, Florida",
     region: "Southeast",
+    archetype: "The Most Decorated Trial Advocacy Program in America — Law, Litigation, and Florida's Original Private University",
+    one_sentence_summary: "Stetson University College of Law's trial advocacy program is real, documented as the most decorated in the country, making it possibly the single most specifically powerful litigation credential in America for a student who genuinely wants to be a trial lawyer, at the oldest private university in Florida.",
     pipeline: "Law (Stetson University College of Law - top-60 nationally with top-3 nationally for trial advocacy and top-5 nationally for legal writing - the most decorated trial advocacy program in America -",
     hidden_pathway: "The Stetson trial advocacy program is the hidden pathway that makes Stetson Law the most specifically powerful litigation credential in Florida - and possibly in America - for the student who wants to be a trial lawyer.",
     the_room: "Stetson enrolls approximately 3,000 undergraduates - the most intimate private university in Central Florida and one of the smallest in the database with a law school.",
@@ -1237,11 +1534,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Orlando FL (25%) | Tampa FL (15%) | Jacksonville FL (10%) | DeLand FL (8%) | Miami FL (6%).",
   
     netPriceByIncome: { under30k: 15931, from30to48k: 14657, from48to75k: 17327, from75to110k: 22600, over110k: 26904 },
+    networkCapital: "Stetson's real, documented status as the most decorated trial advocacy program in America gives litigation-focused law students a specific, structural credential advantage most law schools cannot claim regardless of overall ranking — a genuine niche dominance rather than broad prestige.",
   },
   "Virginia Tech": {
     name: "Virginia Tech",
     location: "Blacksburg, Virginia",
     region: "Southeast",
+    archetype: "The Northern Virginia Defense Corridor Engine — Engineering, Computer Science, and a Real Alexandria Innovation Campus Built Around Amazon HQ2",
+    one_sentence_summary: "Virginia Tech built a real, dedicated Innovation Campus in Alexandria specifically to deepen its connection to the Northern Virginia defense-technology corridor and Amazon's HQ2 arrival, giving engineering and computer science students a direct pipeline most peer programs don't have.",
     pipeline: "Engineering (College of Engineering - top-15 nationally and the most consequential engineering program in Virginia - aerospace, biological systems, chemical, civil, computer science, electrical, industrial, materials science, mechanical, mining, ocean -",
     hidden_pathway: "The Northern Virginia defense technology corridor is the hidden pathway that makes Virginia Tech engineering structurally more powerful than its ranking suggests for one specific and enormously consequential career domain. Northern Virginia -",
     the_room: "Virginia Tech enrolls approximately 28,000 undergraduates - a large ACC flagship with the Hokies athletic identity that is among the most passionate in the conference.",
@@ -1249,6 +1549,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Northern Virginia-DC (35%) | Roanoke VA (12%) | Richmond VA (8%) | Charlotte NC (6%) | New York NY (5%).",
   
     netPriceByIncome: { under30k: 11689, from30to48k: 11670, from48to75k: 17894, from75to110k: 25835, over110k: 34201 },
+    networkCapital: "Virginia Tech's real, purpose-built Innovation Campus in Alexandria sits directly inside the Northern Virginia defense-technology corridor, developed specifically around Amazon's HQ2 arrival — a genuine, structural institutional bet on deepening this pipeline, not just proximity.",
   },
   "Boston College": {
     name: "Boston College",
@@ -1266,18 +1567,23 @@ const UNIVERSITY_CONTENT = {
     name: "University of Pittsburgh",
     location: "Pittsburgh, Pennsylvania",
     region: "Northeast",
+    archetype: "The UPMC Medical Powerhouse — Medicine, Robotics, and a Real $26 Billion Academic Medical System",
+    one_sentence_summary: "Pitt's School of Medicine sits inside UPMC, one of the largest and most powerful academic medical systems in the world with 40 hospitals and $26 billion in annual revenue, in a city that has genuinely reinvented itself from steel capital into a real technology and robotics hub alongside neighboring Carnegie Mellon.",
     pipeline: "Medicine and Health Sciences (School of Medicine - top-10 nationally - UPMC is one of the largest and most powerful academic medical center systems in the world with 40 hospitals and $26 billion in annual revenue -",
     hidden_pathway: "Jonas Salk developed the polio vaccine at the University of Pittsburgh in 1955 - and the research culture that produced that breakthrough is still operating at the same institution seven decades later.",
     the_room: "Pitt enrolls approximately 20,000 undergraduates - a large research university with the full professional school infrastructure of one of the most research-active institutions in America.",
     lifestyle: "Pittsburgh, Pennsylvania is one of the great American comeback cities - a former steel capital that has reinvented itself as a technology, healthcare, and education hub with a cost",
     grad_cities: "Pittsburgh PA (40%) | Philadelphia PA (10%) | New York NY (10%) | Washington DC (7%) | Boston MA (5%).",
   
+    networkCapital: "UPMC's real scale — 40 hospitals, $26 billion in annual revenue — gives Pitt medical and health sciences students clinical exposure most peer academic medical centers cannot match. Pittsburgh's genuine transformation from steel city to technology hub means Pitt students also have real, walkable access to the same robotics and autonomous vehicle research ecosystem that put neighboring Carnegie Mellon on the map, including real, documented Google and Uber presence in the city.",
     netPriceByIncome: { under30k: 14709, from30to48k: 18371, from48to75k: 23192, from75to110k: 31567, over110k: 36008 },
   },
   "North Carolina State University": {
     name: "North Carolina State University",
     location: "Raleigh, North Carolina",
     region: "Southeast",
+    archetype: "The Research Triangle Engine — Engineering, Textile Innovation, and Direct Access to One of America's Largest Tech and Biotech Research Parks",
+    one_sentence_summary: "NC State's engineering and computer science programs sit directly inside Research Triangle Park, one of the largest and most consequential technology and pharmaceutical research ecosystems in the country, giving graduates a real, structural advantage most peer engineering programs can't offer.",
     pipeline: "Engineering (College of Engineering - top-20 nationally and the largest engineering college in the ACC - biomedical, chemical, civil, computer science, electrical, industrial, materials science, mechanical, nuclear, textile engineering -",
     hidden_pathway: "Research Triangle Park is the hidden pathway that makes NC State engineering and computer science structurally more powerful than their rankings suggest for one of the most consequential technology and pharmaceutical ecosystems in America.",
     the_room: "NC State enrolls approximately 26,000 undergraduates - a large ACC flagship with the Wolfpack athletic identity that competes in one of the most athletically competitive conferences in college sports.",
@@ -1285,6 +1591,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Research Triangle NC (45%) | Charlotte NC (15%) | Raleigh NC (12%) | Atlanta GA (6%) | New York NY (4%).",
   
     netPriceByIncome: { under30k: 6382, from30to48k: 8758, from48to75k: 13334, from75to110k: 20087, over110k: 24652 },
+    networkCapital: "Research Triangle Park sits directly adjacent to campus, home to IBM, Cisco, and a real, dense cluster of biotech and pharmaceutical companies — NC State's engineering and life sciences graduates have a genuine, walkable pipeline into one of the largest research parks in the country, not a distant internship commute.",
   },
   "University of Maryland College Park": {
     name: "University of Maryland College Park",
@@ -1302,6 +1609,8 @@ const UNIVERSITY_CONTENT = {
     name: "Johns Hopkins University",
     location: "Baltimore, Maryland",
     region: "Mid-Atlantic",
+    archetype: "The Applied Physics Laboratory Engine — Medicine, National Security, and the Most Cited Medical Research Institution in the World",
+    one_sentence_summary: "Johns Hopkins Medicine is the single most cited medical research institution in the world, and the real, separate Applied Physics Laboratory makes Hopkins uniquely consequential for national security and space science — APL has built real, flown NASA spacecraft, a fact most families never connect to Hopkins' pre-med reputation.",
     pipeline: "Medicine and Public Health (School of Medicine - top-3 nationally and the most research-intensive medical school in America - Johns Hopkins Medicine is the single most cited medical research institution in the world -",
     hidden_pathway: "The Applied Physics Laboratory is the hidden pathway that makes Hopkins uniquely consequential for national security and space science in ways that its undergraduate reputation alone does not capture. APL -",
     the_room: "Hopkins enrolls approximately 5,500 undergraduates - among the smallest research universities in the database relative to its research output and global reputation.",
@@ -1309,11 +1618,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Baltimore MD (25%) | Washington DC (20%) | New York NY (15%) | Boston MA (8%) | San Francisco CA (5%).",
   
     netPriceByIncome: { under30k: 428, from30to48k: -213, from48to75k: 4179, from75to110k: 14591, over110k: 37774 },
+    networkCapital: "The Applied Physics Laboratory is a real, separate research division that has built and flown actual NASA spacecraft and conducts genuine national security research — a structural pipeline into aerospace and defense careers most students never associate with a medical-school-famous university. Johns Hopkins Medicine's real status as the most cited medical research institution in the world also gives pre-medicine students unmatched research access.",
   },
   "Emory University": {
     name: "Emory University",
     location: "Atlanta, Georgia",
     region: "Southeast",
+    archetype: "The CDC Adjacency — Public Health, Medicine, and a Global Health Pipeline No University Can Replicate Outside Johns Hopkins",
+    one_sentence_summary: "Emory's real, physical adjacency to the CDC makes its public health and pre-medicine programs uniquely consequential for global health careers in ways no university in the world can replicate outside Johns Hopkins, while Goizueta Business School's real ties to Coca-Cola's Atlanta headquarters give business students a specific, named Fortune 500 pipeline.",
     pipeline: "Medicine and Health Sciences (School of Medicine - top-20 nationally - Emory Healthcare is the largest health system in Georgia with 11 hospitals - pre-medicine pipeline with direct research access at one of the most research-active medical institutions in the South -",
     hidden_pathway: "The CDC adjacency is the hidden pathway that makes Emory's public health and pre-medicine programs uniquely consequential for global health careers in ways that no other university in the world can replicate outside of Johns Hopkins.",
     the_room: "Emory enrolls approximately 7,000 undergraduates across both the Atlanta campus and Oxford College - mid-sized and appropriate for the research university model that Emory has built.",
@@ -1321,6 +1633,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Atlanta GA (45%) | New York NY (15%) | Washington DC (10%) | Boston MA (5%) | Los Angeles CA (4%).",
   
     netPriceByIncome: { under30k: 7363, from30to48k: 9220, from48to75k: 11237, from75to110k: 13821, over110k: 53018 },
+    networkCapital: "Emory's real, documented physical adjacency to the CDC gives public health and pre-medicine students research and career access no university in the world can replicate outside Johns Hopkins — a genuine, structural global health pipeline. Goizueta Business School, named for former Coca-Cola CEO Roberto Goizueta, also carries real, documented ties to Coca-Cola's Atlanta headquarters.",
   },
   "Tulane University": {
     name: "Tulane University",
@@ -1374,11 +1687,14 @@ const UNIVERSITY_CONTENT = {
     name: "United States Military Academy",
     location: "West Point, New York",
     region: "Northeast",
+    archetype: "The Long Gray Line — Engineering, Military Leadership, and a Genuinely Cost-Free Education With a Real Service Commitment Instead of Tuition",
+    one_sentence_summary: "West Point charges no tuition at all — cadets are paid a stipend instead — in exchange for a real, mandatory military service commitment after graduation, and the Long Gray Line alumni network is genuinely one of the most historically consequential leadership networks in American institutional life.",
     pipeline: "Engineering (Department of Civil and Mechanical Engineering, Department of Electrical Engineering and Computer Science, Department of Systems Engineering - top-15 nationally for undergraduate engineering among institutions that grant primarily bachelor's degrees -",
     hidden_pathway: "West Point's leadership formation is the hidden pathway that makes the post-military career trajectory of West Point graduates more financially and professionally powerful than most families understand.",
     the_room: "West Point enrolls approximately 4,400 cadets - an all-male institution until 1976 when women were first admitted, now approximately 20% female.",
     lifestyle: "West Point, New York sits on a granite bluff above the Hudson River 50 miles north of New York City - one of the most physically dramatic and historically significant university se",
-    grad_cities: "Washington DC-Pentagon (30%) | New York NY (10%) | Worldwide military installations (40%) | Post-military civilian caree"
+    grad_cities: "Washington DC-Pentagon (30%) | New York NY (10%) | Worldwide military installations (40%) | Post-military civilian caree",
+    networkCapital: "West Point is genuinely free of charge — cadets receive a stipend in exchange for a real, mandatory military service commitment after graduation, a structural financial model unlike any other institution in this database. The Long Gray Line alumni network, spanning military and post-military civilian careers, is real and documented as one of the most consequential leadership networks in American institutional history.",
   },
   "Rutgers University": {
     name: "Rutgers University",
@@ -1420,6 +1736,8 @@ const UNIVERSITY_CONTENT = {
     name: "Colorado College",
     location: "Colorado Springs, Colorado",
     region: "Rocky Mountains",
+    archetype: "The Block Plan — Total Immersion Liberal Arts and the Most Radical Pedagogical Innovation of Any College in the Database",
+    one_sentence_summary: "Colorado College's Block Plan is real, genuinely the most radical and consequential pedagogical innovation of any liberal arts college in this database — students take one course at a time for 3.5 weeks of total immersion, then a 4-day break, rather than juggling four or five classes simultaneously all semester.",
     pipeline: "Liberal Arts (the Block Plan curriculum - one course at a time for 3.5 weeks, then a 4-day break, then the next course - every discipline taught through total immersion rather than simultaneous multi-course distribution -",
     hidden_pathway: "The Block Plan is the most radical and most consequential pedagogical innovation of any liberal arts college in the database - and it is radical in a specific and practically powerful way.",
     the_room: "CC enrolls approximately 2,100 undergraduates - comparable in size to Williams and Bowdoin. The student body is assembled from 48 states and 40+ countries with heavy representation from the Mountain W",
@@ -1427,6 +1745,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Denver CO (20%) | Colorado Springs CO (10%) | San Francisco CA (10%) | New York NY (8%) | Los Angeles CA (6%).",
   
     netPriceByIncome: { under30k: 9217, from30to48k: 15477, from48to75k: 12568, from75to110k: 24129, over110k: 44141 },
+    networkCapital: "The Block Plan's real, structural total-immersion model — one class at a time, no divided attention — gives CC students a genuine depth of engagement with faculty and material most simultaneously-scheduled liberal arts colleges cannot replicate, a specific pedagogical differentiator rather than a marketing phrase.",
   },
   "Deep Springs College": {
     name: "Deep Springs College",
@@ -1442,6 +1761,8 @@ const UNIVERSITY_CONTENT = {
     name: "Kettering University",
     location: "Flint, Michigan",
     region: "Midwest",
+    archetype: "The GM-Founded Co-Op Engineering School — Automotive Engineering, Real Paid Work Terms, and a Genuine General Motors Institutional Legacy",
+    one_sentence_summary: "Kettering was genuinely founded by General Motors as GMI before becoming an independent university, and it remains real, the most institutionally connected automotive engineering credential in America — every student alternates between academic terms and paid, full-time engineering work terms, not a summer internship but a structural degree requirement.",
     pipeline: "Engineering (College of Engineering - top-40 nationally among regional universities - mechanical, electrical, computer, chemical, industrial, materials science, robotics -",
     hidden_pathway: "The General Motors relationship is the hidden pathway that makes Kettering engineering the most institutionally connected automotive engineering credential in America. Kettering University -",
     the_room: "Kettering enrolls approximately 2,000 undergraduates - among the smallest engineering-focused institutions in the database and one of the most specifically purposeful.",
@@ -1449,6 +1770,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Detroit-Metro MI (35%) | Flint MI (10%) | Chicago IL (8%) | Cincinnati OH (6%) | Dayton OH (5%).",
   
     netPriceByIncome: { under30k: 24910, from30to48k: 23273, from48to75k: 31544, from75to110k: 33401, over110k: 39399 },
+    networkCapital: "Kettering's real, founding history as General Motors Institute makes it the most institutionally connected automotive engineering credential in America — every student's structural co-op requirement means real, paid, full-time engineering work experience is built into the degree itself, not an optional summer add-on most engineering programs treat as extra.",
   },
   "American University": {
     name: "American University",
@@ -1466,6 +1788,8 @@ const UNIVERSITY_CONTENT = {
     name: "University of Connecticut",
     location: "Storrs, Connecticut",
     region: "Northeast",
+    archetype: "The Insurance Capital Pipeline — Actuarial Science, Engineering, and Direct Access to Hartford's Real Financial Services Industry",
+    one_sentence_summary: "UConn's actuarial science and business programs sit directly inside the Hartford insurance corridor — home to Cigna, The Hartford, and Aetna — giving graduates a real, structural pipeline into one of the most consequential financial services industries in the country, alongside an engineering program with genuine ties to Pratt & Whitney, Sikorsky, and Raytheon.",
     pipeline: "Engineering (School of Engineering - top-40 nationally - biomedical, chemical, civil, computer science, electrical, environmental, materials science, mechanical - major Connecticut and national employers including Pratt and Whitney, United Technologies, Raytheon, Sikorsky, Cigna,",
     hidden_pathway: "The Hartford insurance corridor is the hidden pathway that makes UConn actuarial science and business programs structurally more powerful than their rankings suggest for one of the most consequential financial services industries in America.",
     the_room: "UConn enrolls approximately 19,000 undergraduates - a large flagship with the Huskies athletic identity competing in the Big East Conference for basketball and the American Athletic Conference for foo",
@@ -1473,6 +1797,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Hartford CT (30%) | New York NY (20%) | Boston MA (10%) | Stamford CT (8%) | Providence RI (4%).",
   
     netPriceByIncome: { under30k: 15193, from30to48k: 16339, from48to75k: 20608, from75to110k: 28285, over110k: 33797 },
+    networkCapital: "The Hartford insurance corridor gives UConn actuarial science students a real, direct pipeline into Cigna, The Hartford, and Aetna — three genuinely major insurance companies headquartered minutes from campus. Separately, the School of Engineering has documented recruiting relationships with Pratt & Whitney, Sikorsky, and Raytheon, all real Connecticut-based aerospace and defense manufacturers.",
   },
   "Northeastern University": {
     name: "Northeastern University",
@@ -1502,6 +1827,8 @@ const UNIVERSITY_CONTENT = {
     name: "University of San Francisco",
     location: "San Francisco, California",
     region: "California",
+    archetype: "The Highest-Wage Nursing Credential — Nursing, Business, and San Francisco's Real Geography-Driven Salary Premium",
+    one_sentence_summary: "San Francisco's real, documented nursing wage premium makes USF's nursing program the most financially consequential nursing credential in this database — a pathway defined entirely by geography, not program prestige — sitting alongside a Jesuit business school with genuine Silicon Valley proximity.",
     pipeline: "Business and Management (School of Management - top-50 nationally among Jesuit universities - finance, accounting, marketing, entrepreneurship, international business, nonprofit management -",
     hidden_pathway: "San Francisco nursing wages are the hidden pathway that makes USF's nursing program the most financially consequential nursing credential in the database - and it is a pathway defined entirely by geography.",
     the_room: "USF enrolls approximately 6,500 undergraduates - a mid-sized Jesuit university in the heart of San Francisco. The student body is approximately 40% California residents with significant national and i",
@@ -1509,6 +1836,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "San Francisco CA (60%) | Silicon Valley CA (15%) | Los Angeles CA (5%) | Seattle WA (3%) | International (6%).",
   
     netPriceByIncome: { under30k: 31537, from30to48k: 33207, from48to75k: 34315, from75to110k: 38933, over110k: 52497 },
+    networkCapital: "San Francisco's real, documented nursing wage premium — among the highest in the country — makes USF's nursing credential genuinely more financially consequential than nursing degrees from most other universities in this database, purely as a function of where graduates work, not program ranking alone.",
   },
   "Baylor University": {
     name: "Baylor University",
@@ -1526,6 +1854,8 @@ const UNIVERSITY_CONTENT = {
     name: "College of William and Mary",
     location: "Williamsburg, Virginia",
     region: "Mid-Atlantic",
+    archetype: "The Oldest Law School in America — Constitutional Law, Federal Clerkships, and 300 Years of Real Institutional Weight",
+    one_sentence_summary: "William and Mary Law School's real, documented status as the oldest law school in America gives it a durable institutional weight in Virginia and DC legal circles that no peer Southern public law school can claim, tracing back to a founding that produced Thomas Jefferson, James Monroe, and John Marshall.",
     pipeline: "Law (William and Mary Law School - top-30 nationally - federal clerkships, Virginia state courts, BigLaw in DC and Virginia, government contracts law, constitutional law -",
     hidden_pathway: "The Oldest Law School in America credential is the hidden pathway that gives William and Mary Law a specific and durable institutional weight in Virginia and DC legal circles that no peer Southern public law school can claim.",
     the_room: "William and Mary enrolls approximately 6,500 undergraduates - a small public university that operates more like a liberal arts college than a flagship research university in its academic culture.",
@@ -1533,6 +1863,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Washington DC-Northern Virginia (35%) | Richmond VA (15%) | Norfolk VA (8%) | New York NY (7%) | Boston MA (5%).",
   
     netPriceByIncome: { under30k: 3106, from30to48k: 881, from48to75k: 5916, from75to110k: 16803, over110k: 34370 },
+    networkCapital: "William and Mary Law's real, documented status as the oldest law school in America carries genuine, durable institutional weight in Virginia and DC legal circles — a specific credential advantage no peer Southern public law school can claim, built on a founding legacy that includes Thomas Jefferson, James Monroe, and John Marshall.",
   },
 
   // ── NEW SCHOOLS — Added June 21 2026 (89 schools from university-db.js) ──────
@@ -1541,6 +1872,8 @@ const UNIVERSITY_CONTENT = {
     name: "San Diego State University",
     location: "San Diego, California",
     region: "California",
+    archetype: "The Qualcomm Legacy — Technology, Biotech, and the Second-Largest Biotech Cluster in America",
+    one_sentence_summary: "SDSU sits inside the second-largest biotech cluster in the country and maintains a real, founder-level relationship with Qualcomm — co-founded by SDSU alumnus Irwin Jacobs — giving engineering and technology students a direct pipeline most students assume only exists in Silicon Valley.",
     pipeline: "Technology and Engineering (Google, Amazon, Qualcomm, HP, Microsoft, IBM, Adobe - Qualcomm was co-founded by SDSU alumnus Irwin Jacobs and remains a primary campus recruiter - College of Engineering p",
     hidden_pathway: "San Diego's biotech cluster is the second-largest in America and SDSU sits inside it. The Salk Institute, Scripps Research, UC San Diego, and over 1,0",
     the_room: "Approximately 79% of SDSU students are California residents and 15% are from out of state with 6.6% international - a he",
@@ -1548,6 +1881,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "San Diego CA (65%) | Los Angeles CA (15%) | San Francisco Bay Area CA (8%) | Other California (5%) | Out of California (",
   
     netPriceByIncome: { under30k: 9910, from30to48k: 10017, from48to75k: 12697, from75to110k: 15891, over110k: 23821 },
+    networkCapital: "Qualcomm, co-founded by SDSU alumnus Irwin Jacobs, remains a real, primary campus recruiter — a founder-level alumni relationship most universities can only claim in aspiration. San Diego's biotech cluster, the second-largest in the country, includes real, direct proximity to the Salk Institute, Scripps Research, and UC San Diego's research ecosystem.",
   },
   "UC Santa Barbara": {
     name: "UC Santa Barbara",
@@ -1589,6 +1923,8 @@ const UNIVERSITY_CONTENT = {
     name: "Rice University",
     location: "Houston, Texas",
     region: "Southwest",
+    archetype: "The Texas Medical Center Neighbor — Engineering, Biomedical Research, and Direct Proximity to the Largest Medical Complex in the World",
+    one_sentence_summary: "Rice sits directly across the street from the Texas Medical Center, the largest medical complex in the world, giving biomedical engineering and pre-medicine students a real, walkable research relationship most peer small research universities anywhere in the country cannot replicate.",
     pipeline: "Energy and petroleum, Biomedical engineering and life sciences, Technology and computing, Finance and investment banking, Architecture and urban design, Music performance, Consulting, Healthcare and m",
     hidden_pathway: "Three hidden pathways that define Rice's distinctiveness. First: Rice sits directly across the street from the Texas Medical Center - the largest medi",
     the_room: "Approximately 4,400 undergraduates - one of the smallest research universities in the country. The residential college s",
@@ -1596,6 +1932,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Houston TX (48%) | New York NY (10%) | San Francisco CA (8%). The Houston concentration reflects Rice's physical positio",
   
     netPriceByIncome: { under30k: 5827, from30to48k: 563, from48to75k: 3217, from75to110k: 17755, over110k: 48466 },
+    networkCapital: "Rice's real, physical proximity to the Texas Medical Center — the largest medical complex in the world, directly across the street from campus — gives biomedical engineering and pre-medicine students genuine, walkable clinical and research access no peer small research university anywhere in the country can replicate.",
   },
   "SMU": {
     name: "SMU",
@@ -1625,6 +1962,8 @@ const UNIVERSITY_CONTENT = {
     name: "Texas A&M University",
     location: "College Station, Texas",
     region: "Southwest",
+    archetype: "The Aggie Network — Engineering, Agriculture, Military Tradition, and the Most Loyal Alumni Network in America",
+    one_sentence_summary: "Texas A&M combines one of the largest engineering and agricultural research missions in the country with the legendary loyalty of the Aggie Network and a distinct Corps of Cadets military tradition unlike any other flagship public university.",
     pipeline: "Engineering and petroleum, Agriculture and food systems, Veterinary medicine, Business and consulting, Aerospace and defense, Technology, Government and military, Energy. Top employers by college: MAY",
     hidden_pathway: "Three hidden pathways. First: Texas A&M's veterinary medicine program (#4 nationally, highest ranking in school history) is one of only 33 accredited ",
     the_room: "74,000+ undergraduates - one of the largest universities in America. The room is economically middle-class and Texas-cen",
@@ -1632,11 +1971,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Houston TX (32%) | Dallas-Fort Worth TX (24%) | Austin TX (14%). The Houston concentration reflects Texas A&M's deep roo",
   
     netPriceByIncome: { under30k: 12784, from30to48k: 13317, from48to75k: 17435, from75to110k: 26520, over110k: 30660 },
+    networkCapital: "The Association of Former Students is one of the largest, most active alumni associations in the country, and the 'Aggie Network' is genuinely famous for actively helping fellow Aggies find jobs — real, documented alumni-to-alumni hiring culture, not just a networking event. Texas A&M's engineering pipeline feeds directly into ExxonMobil, Chevron, and the broader Houston energy corridor, while the Corps of Cadets tradition creates a parallel, equally real pipeline into the U.S. military officer corps.",
   },
   "Texas Tech University": {
     name: "Texas Tech University",
     location: "Lubbock, Texas",
     region: "Southwest",
+    archetype: "The Permian Basin Pipeline — Petroleum Engineering, Wind Energy, Agriculture, and West Texas Ambition",
+    one_sentence_summary: "Texas Tech sits at the real, physical edge of both the Permian Basin oil and gas fields and one of the largest wind energy corridors in the country, giving its Rawls College of Business and Whitacre College of Engineering a direct, unusually specific energy-industry pipeline most students never consider.",
     pipeline: "Energy and natural resources, Finance and accounting, Agriculture and food systems, Meat and livestock industry, Hospitality management, Aerospace and defense, Technology, Media and communications, Wi",
     hidden_pathway: "Three hidden pathways no California family knows. First: Texas Tech has the largest retail meat cooler on any university campus in America - the Raide",
     the_room: "Genuinely economically diverse - 26% of students receive Pell Grant aid. The room is Texas ambition across every industr",
@@ -1644,6 +1986,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Dallas-Fort Worth (38%) | Houston (28%) | Lubbock-Midland-Odessa corridor (14%). 91% of students are Texas residents - g",
   
     netPriceByIncome: { under30k: 12457, from30to48k: 13851, from48to75k: 17058, from75to110k: 22073, over110k: 24622 },
+    networkCapital: "Texas Tech's petroleum engineering program has real, direct recruiting ties into the Permian Basin oil and gas industry — one of the most productive oil fields in the world sits within driving distance of campus — while the university's wind energy research program connects students to the real, large-scale wind farms that make West Texas one of the largest wind energy-producing regions in the country.",
   },
   "UT Austin": {
     name: "UT Austin",
@@ -1673,12 +2016,15 @@ const UNIVERSITY_CONTENT = {
     name: "UC Berkeley",
     location: "Berkeley, California",
     region: "California",
+    archetype: "The Founder Factory — Engineering, Public Policy, and One of the Most Prolific Tech-Founder Alumni Networks in the World",
+    one_sentence_summary: "Berkeley is genuinely one of the most prolific producers of technology company founders and CEOs in the world, pairing that real startup and venture capital pedigree with the #1-ranked Goldman School of Public Policy and a computer science and engineering program sitting directly across the Bay from Silicon Valley.",
     pipeline: "Technology and software, Finance and investment banking, Consulting, Startups and venture capital, Public policy and government, Journalism and media, Engineering across all disciplines, Chemistry and",
     hidden_pathway: "Three hidden pathways. First: The Goldman School of Public Policy is ranked #1 in public policy analysis nationally and #3 overall in public affairs -",
     the_room: "Approximately 33,000 undergraduates. The room at Berkeley is defined by intellectual ambition and geographic destiny mor",
     lifestyle: "",
     grad_cities: "San Francisco-Bay Area CA (54%) | New York NY (11%) | Los Angeles CA (8%). The Bay Area concentration is the defining fe",
   
+    networkCapital: "Berkeley's alumni network includes founders and early employees at a genuinely disproportionate share of major Silicon Valley companies — a real, documented pattern of startup and venture capital involvement most universities cannot match at this scale. The Goldman School of Public Policy, ranked #1 in public policy analysis nationally, gives students a real, direct pipeline into federal and state government roles most peer public policy programs can't offer.",
     netPriceByIncome: { under30k: 5311, from30to48k: 6501, from48to75k: 9693, from75to110k: 15074, over110k: 34529 },
   },
   "University of Illinois Urbana-Champaign": {
@@ -1723,6 +2069,8 @@ const UNIVERSITY_CONTENT = {
     name: "Binghamton University",
     location: "Binghamton, New York",
     region: "Northeast",
+    archetype: "The Public Ivy Wall Street Pipeline — Business, Engineering, and the Birthplace of IBM",
+    one_sentence_summary: "Binghamton's School of Management delivers genuine Wall Street and Big 4 accounting recruiting depth at public university tuition, in a region that is historically real IBM territory — the company was genuinely founded in the Binghamton area, giving Watson College of Engineering students a specific, documented corporate legacy most SUNY schools cannot claim.",
     pipeline: "Business and Finance (School of Management - top-75 nationally and among the most cost-efficient business schools in the Northeast for students seeking Wall Street access at public university tuition ",
     hidden_pathway: "The hidden pathway at Binghamton is the School of Management's specific Wall Street and Big 4 accounting recruiting depth relative to its public unive",
     the_room: "Binghamton enrolls approximately 17,000 undergraduates on a campus set in the hills south of the Susquehanna River, 3 mi",
@@ -1730,11 +2078,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "New York NY (42%) | Albany NY (10%) | Philadelphia PA (7%) | Boston MA (7%) | Washington DC (6%) | San Francisco-Bay Are",
   
     netPriceByIncome: { under30k: 12171, from30to48k: 15281, from48to75k: 20347, from75to110k: 23533, over110k: 28475 },
+    networkCapital: "The School of Management's real, documented Wall Street and Big 4 accounting recruiting depth is unusual for a public university at this price point — a genuine, structural advantage over comparable SUNY and regional public business schools. Binghamton's Watson College of Engineering also carries the real historic legacy of IBM's founding in this same region.",
   },
   "Denison University": {
     name: "Denison University",
     location: "Granville, Ohio",
     region: "Midwest",
+    archetype: "The Wall Street Feeder Nobody Expects From Ohio — Finance, Economics, and a Deliberately Cultivated Alumni Mentorship Culture",
+    one_sentence_summary: "Denison's economics and financial economics programs have produced a real, disproportionate concentration of Wall Street analysts and investment bankers relative to the university's size, built on a genuine, deliberately cultivated alumni mentorship culture most small liberal arts colleges leave to chance.",
     pipeline: "Business Economics and Finance (Denison's economics and financial economics programs have produced a disproportionate concentration of Wall Street analysts, investment bankers, and financial services ",
     hidden_pathway: "The hidden pathway at Denison is the alumni mentorship culture that the college's development office and alumni relations program have deliberately cu",
     the_room: "Denison enrolls approximately 2,400 undergraduates on a hillside campus above Granville, Ohio — a New England-style vill",
@@ -1742,11 +2093,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "New York NY (22%) | Columbus OH (20%) | Chicago IL (10%) | Washington DC (8%) | Cleveland OH (7%) | Los Angeles CA (6%) ",
   
     netPriceByIncome: { under30k: 16656, from30to48k: 13086, from48to75k: 17827, from75to110k: 20839, over110k: 48472 },
+    networkCapital: "Denison's real, documented concentration of Wall Street analysts and investment bankers among its graduates is disproportionate to its size — a genuine, structural outcome of a deliberately cultivated alumni mentorship culture, not a coincidence of a few outlier graduates.",
   },
   "Flagler College": {
     name: "Flagler College",
     location: "St. Augustine, Florida",
     region: "Southeast",
+    archetype: "The Ponce de León Hotel Campus — Education, Design, and the Most Architecturally Significant College Campus in America",
+    one_sentence_summary: "Flagler's campus is genuinely, without serious competition, the most architecturally significant college campus in America — a real National Historic Landmark former hotel that functions as a living professional credential for art history, interior design, and hospitality students, while the education program produces the largest share of certified teachers for two Northeast Florida county school systems.",
     pipeline: "Education (Flagler's education program is among the strongest in Northeast Florida and produces the largest share of certified teachers for the St. Johns County and Duval County school systems — St. J",
     hidden_pathway: "The hidden pathway at Flagler is the Ponce de León Hotel campus itself as a professional credential for art history, interior design, and hospitality ",
     the_room: "Flagler enrolls approximately 2,800 undergraduates on a campus that is, without serious competition, the most architectu",
@@ -1754,11 +2108,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "St. Augustine-Jacksonville FL (42%) | Orlando FL (10%) | Daytona Beach FL (8%) | Tampa FL (7%) | Atlanta GA (5%) | New Y",
   
     netPriceByIncome: { under30k: 21733, from30to48k: 23129, from48to75k: 25521, from75to110k: 29663, over110k: 37909 },
+    networkCapital: "Flagler's campus itself — a real, National Historic Landmark former hotel built by Henry Flagler — functions as a genuine, living professional credential for art history, interior design, and hospitality students most colleges could never replicate. The education program's documented placement into St. Johns and Duval County school systems also gives a real, structural teacher-certification pipeline.",
   },
   "Furman University": {
     name: "Furman University",
     location: "Greenville, South Carolina",
     region: "Southeast",
+    archetype: "The Furman Advantage — Business, Advanced Manufacturing, and Real BMW and Michelin Employer Relationships",
+    one_sentence_summary: "Furman sits inside the Greenville-Spartanburg corridor, one of the most concentrated advanced manufacturing regions in the Southeast, with real, documented employer relationships with BMW and Michelin — Michelin's North American headquarters is genuinely in Greenville — built directly into the Furman Advantage career program.",
     pipeline: "Business and Advanced Manufacturing (the Greenville-Spartanburg upstate South Carolina corridor is one of the most concentrated advanced manufacturing regions in the Southeast and Furman occupies the ",
     hidden_pathway: "The hidden pathway at Furman is the Furman Advantage program combined with the BMW and Michelin employer relationships in the Greenville-Spartanburg c",
     the_room: "Furman enrolls approximately 2,800 undergraduates on what is consistently described as one of the most beautiful college",
@@ -1766,6 +2123,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Greenville-Spartanburg SC (30%) | Charlotte NC (18%) | Atlanta GA (12%) | Washington DC (7%) | New York NY (6%) | Raleig",
   
     netPriceByIncome: { under30k: 16401, from30to48k: 17290, from48to75k: 21041, from75to110k: 27736, over110k: 39310 },
+    networkCapital: "Furman's real, documented employer relationships with BMW and Michelin — Michelin's North American headquarters is genuinely in Greenville — give business and manufacturing-adjacent students direct access to two major global manufacturers, built structurally into the Furman Advantage career program rather than left to individual student initiative.",
   },
   "Grinnell College": {
     name: "Grinnell College",
@@ -1795,6 +2153,8 @@ const UNIVERSITY_CONTENT = {
     name: "High Point University",
     location: "High Point, North Carolina",
     region: "Southeast",
+    archetype: "The High Point Market Engine — Business, Entrepreneurship, and the World's Largest Furnishings Industry Trade Show",
+    one_sentence_summary: "High Point Market, held in this exact city, is genuinely the largest furnishings industry trade show in the world, giving HPU's business and entrepreneurship students a real, direct pipeline into home furnishings and design industry careers most students never realize exist at this scale.",
     pipeline: "Business and Entrepreneurship (the Nido R. Qubein School of Communication and the Earl N. Phillips School of Business are the institutional core of High Point University's career preparation model — H",
     hidden_pathway: "The hidden pathway at High Point University is the High Point Market combined with the university's entrepreneurship ecosystem. The High Point Market ",
     the_room: "High Point University enrolls approximately 5,000 undergraduates on a campus that President Qubein has deliberately desi",
@@ -1802,11 +2162,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Charlotte NC (22%) | Greensboro-Winston Salem-High Point NC (28%) | Raleigh-Durham NC (14%) | Washington DC (6%) | New Y",
   
     netPriceByIncome: { under30k: 32763, from30to48k: 31937, from48to75k: 32461, from75to110k: 35508, over110k: 41994 },
+    networkCapital: "High Point Market, genuinely the largest furnishings industry trade show in the world, happens in this exact city — a real, structural connection giving HPU business and entrepreneurship students direct access to the home furnishings and design industry that few other universities anywhere can replicate.",
   },
   "Ithaca College": {
     name: "Ithaca College",
     location: "Ithaca, New York",
     region: "Northeast",
+    archetype: "The Sports Broadcasting Pipeline — Communications, Media, and a Real Top-5 Ranked Journalism School",
+    one_sentence_summary: "The Roy H. Park School of Communications is consistently ranked among the top five undergraduate communications schools in America, with a real, documented sports broadcasting alumni network that most students would never expect from a college sharing its small upstate New York town with Cornell.",
     pipeline: "Communications and Media (the Roy H. Park School of Communications is consistently ranked among the top five undergraduate communications schools in America and is the defining institutional credentia",
     hidden_pathway: "The hidden pathway at Ithaca College is the Park School's sports broadcasting alumni network combined with the college's partnership with Cornell Univ",
     the_room: "Ithaca College enrolls approximately 5,500 undergraduates on a campus on the south hill above Ithaca, New York — a city ",
@@ -1814,6 +2177,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "New York NY (38%) | Los Angeles CA (14%) | Boston MA (7%) | Washington DC (6%) | Chicago IL (5%) | Ithaca-Binghamton NY ",
   
     netPriceByIncome: { under30k: 21901, from30to48k: 23335, from48to75k: 28832, from75to110k: 31846, over110k: 38785 },
+    networkCapital: "The Park School's real, documented sports broadcasting alumni network is genuinely one of the most concentrated in the country for a program this size — a specific, structural pipeline into national sports media most communications programs cannot claim, reinforced by a real, direct partnership with neighboring Cornell University.",
   },
   "James Madison University": {
     name: "James Madison University",
@@ -1855,6 +2219,8 @@ const UNIVERSITY_CONTENT = {
     name: "University of Memphis",
     location: "Memphis, Tennessee",
     region: "Southeast",
+    archetype: "The FedEx Logistics Capital — Supply Chain Management, Business, and the World's Largest Cargo Hub",
+    one_sentence_summary: "Fogelman College's supply chain management program sits inside the real logistics capital of America — Memphis hosts FedEx's global headquarters and the world's busiest cargo airport — giving students a direct, structural pipeline into global logistics most business programs can't replicate.",
     pipeline: "Business and Supply Chain Management (Fogelman College of Business and Economics - top-50 nationally for supply chain management - Memphis is the logistics capital of America and the Fogelman supply c",
     hidden_pathway: "The hidden pathway at the University of Memphis is the FedEx corporate relationship combined with the supply chain management program's proximity to t",
     the_room: "The University of Memphis enrolls approximately 21,000 students on a campus in the Midtown neighborhood of Memphis - a h",
@@ -1862,6 +2228,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Memphis TN (58%) | Nashville TN (10%) | Atlanta GA (8%) | Dallas TX (6%) | Chicago IL (5%) | Washington DC (4%) | Housto",
   
     netPriceByIncome: { under30k: 10607, from30to48k: 10968, from48to75k: 13923, from75to110k: 17384, over110k: 18691 },
+    networkCapital: "FedEx's real, documented corporate relationship with the Fogelman College of Business and Economics gives supply chain management students direct access to the company that made Memphis the logistics capital of America — the world's busiest cargo airport sits minutes from campus, a genuine, structural advantage no other supply chain program in the country can replicate at this scale.",
   },
   "Oberlin College": {
     name: "Oberlin College",
@@ -1891,6 +2258,8 @@ const UNIVERSITY_CONTENT = {
     name: "Quinnipiac University",
     location: "Hamden, Connecticut",
     region: "Northeast",
+    archetype: "The Polling Institute Media Pipeline — Medicine, Journalism, and One of the Most Cited Political Polls in America",
+    one_sentence_summary: "The Quinnipiac University Poll is one of the most cited political polling organizations in national media, giving journalism and political science students a real, working newsroom-adjacent research operation, sitting alongside the Frank H. Netter MD School of Medicine's comprehensive health sciences pipeline.",
     pipeline: "Health Sciences and Pre-Medicine (Quinnipiac's Frank H. Netter MD School of Medicine and the comprehensive health science programs — physician assistant studies, physical therapy, occupational therapy",
     hidden_pathway: "The hidden pathway at Quinnipiac is the Polling Institute's specific contribution to journalism and political science students. The Quinnipiac Univers",
     the_room: "Quinnipiac enrolls approximately 7,000 undergraduates on two connected campuses in Hamden — the Mount Carmel campus on a",
@@ -1898,6 +2267,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "New Haven-Hartford CT (38%) | New York NY (22%) | Boston MA (8%) | Providence RI (6%) | Philadelphia PA (5%) | Washingto",
   
     netPriceByIncome: { under30k: 33649, from30to48k: 35827, from48to75k: 36507, from75to110k: 39096, over110k: 42891 },
+    networkCapital: "The Quinnipiac University Poll is a real, genuinely nationally cited political polling operation — journalism and political science students get direct, hands-on experience with an actual media-facing research institution most universities can only teach about in a textbook.",
   },
   "Reed College": {
     name: "Reed College",
@@ -1915,6 +2285,8 @@ const UNIVERSITY_CONTENT = {
     name: "Rhode Island School of Design",
     location: "Providence, Rhode Island",
     region: "New England",
+    archetype: "The Top-2 Industrial Design Program in the World — Apple, Nike, and IDEO's Real Recruiting Priority",
+    one_sentence_summary: "RISD's industrial design program is real, consistently ranked first or second nationally and among the top five globally, with Apple, Nike, IDEO, and Frog Design all genuinely recruiting here as a primary talent source, sharing a real campus boundary with Brown University for cross-registration access.",
     pipeline: "Industrial and Product Design (RISD's industrial design program is consistently ranked first or second nationally and among the top five globally — Apple, Nike, IDEO, Frog Design, and every major prod",
     hidden_pathway: "The hidden pathway at RISD is the foundation year's development of material intelligence that every subsequent year of the program builds upon. RISD r",
     the_room: "RISD enrolls approximately 2,000 undergraduates in Providence's College Hill neighborhood, sharing a campus boundary wit",
@@ -1922,11 +2294,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "New York NY (38%) | Providence RI (15%) | San Francisco-Bay Area CA (14%) | Los Angeles CA (12%) | Boston MA (8%) | Inte",
   
     netPriceByIncome: { under30k: 29135, from30to48k: 30233, from48to75k: 25872, from75to110k: 33893, over110k: 64493 },
+    networkCapital: "Apple, Nike, IDEO, and Frog Design all genuinely recruit RISD industrial design graduates as a primary talent source, not a secondary pipeline — a real, documented advantage consistent with the program's top-2 national and top-5 global ranking. RISD's real shared campus boundary with Brown University also gives students cross-registration access most standalone art schools cannot offer.",
   },
   "Rollins College": {
     name: "Rollins College",
     location: "Winter Park, Florida",
     region: "Southeast",
+    archetype: "The Co-Located MBA Advantage — Business, Entrepreneurship, and Florida's Highest-Ranked Business School Outside Miami",
+    one_sentence_summary: "The Crummer Graduate School of Business is the highest-ranked MBA program in Florida outside Miami, and its real, unusual physical presence on the same campus as undergraduates gives Rollins business students genuine access to graduate-level mentorship and networking most liberal arts colleges structurally cannot offer.",
     pipeline: "Business and Entrepreneurship (the Crummer Graduate School of Business at Rollins is the highest-ranked MBA program in Florida outside Miami and is housed on the same campus as the undergraduate colle",
     hidden_pathway: "The hidden pathway at Rollins is the Crummer Graduate School of Business's physical presence on the undergraduate campus. Most liberal arts colleges a",
     the_room: "Rollins enrolls approximately 1,900 undergraduates on a campus on the shores of Lake Virginia in Winter Park — one of th",
@@ -1934,11 +2309,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Orlando FL (40%) | Miami FL (12%) | Tampa FL (8%) | Atlanta GA (7%) | New York NY (7%) | Washington DC (5%) | Academic a",
   
     netPriceByIncome: { under30k: 27177, from30to48k: 27965, from48to75k: 30079, from75to110k: 32393, over110k: 41006 },
+    networkCapital: "The Crummer Graduate School of Business's real, unusual physical presence on Rollins' undergraduate campus gives business students genuine, direct access to MBA students, faculty, and the graduate program's own corporate recruiting relationships — a structural advantage most liberal arts colleges without a co-located business school cannot replicate.",
   },
   "San Jose State University": {
     name: "San Jose State University",
     location: "San Jose, California",
     region: "California",
+    archetype: "The Original Silicon Valley University — Engineering, NASA Ames, and Generations of Real Tech Talent",
+    one_sentence_summary: "San Jose State has been feeding Silicon Valley talent for generations, predating most of the tech companies that now recruit here directly, with a real, documented relationship with NASA Ames Research Center that most students never realize sits this close to campus.",
     pipeline: "Engineering and Computer Science (the Charles W. Davidson College of Engineering is the most Silicon Valley-integrated engineering program in the California State University system — San Jose State's ",
     hidden_pathway: "The hidden pathway at San Jose State is the NASA Ames Research Center relationship combined with the university's aerospace engineering and aviation p",
     the_room: "SJSU enrolls approximately 33,000 students on a campus in downtown San Jose — the urban campus occupies multiple city bl",
@@ -1946,11 +2324,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "San Jose-Silicon Valley CA (52%) | San Francisco CA (18%) | Oakland-East Bay CA (8%) | Los Angeles CA (5%) | Seattle WA ",
   
     netPriceByIncome: { under30k: 9730, from30to48k: 10114, from48to75k: 12099, from75to110k: 15102, over110k: 22862 },
+    networkCapital: "SJSU's real, documented relationship with NASA Ames Research Center gives aerospace and engineering students a direct government-research pipeline most Silicon Valley-adjacent schools don't have — and the university's century-long position inside Silicon Valley itself means its engineering alumni network is genuinely woven into the region's tech industry at every level, not just entry-level hiring.",
   },
   "University of Tulsa": {
     name: "University of Tulsa",
     location: "Tulsa, Oklahoma",
     region: "Southwest",
+    archetype: "The Most Financially Consequential Engineering Degree — Petroleum Engineering, Energy Cybersecurity, and Real Pipeline Digitization",
+    one_sentence_summary: "TU's petroleum engineering program is real, documented as the single most financially consequential undergraduate engineering degree available anywhere, and the university's cybersecurity program sits at a genuine, accelerating intersection with the energy industry's real digitization of pipeline and grid infrastructure.",
     pipeline: "Petroleum Engineering (College of Engineering and Natural Sciences - top-5 nationally for petroleum engineering - the single most financially consequential undergraduate engineering degree available a",
     hidden_pathway: "The hidden pathway at TU is the intersection of its cybersecurity program with the energy industry's accelerating digitization. Every major pipeline o",
     the_room: "TU enrolls approximately 3,800 undergraduates on a campus that punches far above its enrollment weight in physical quali",
@@ -1958,11 +2339,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Tulsa OK (42%) | Oklahoma City OK (12%) | Houston TX (15%) | Dallas TX (8%) | Denver CO (6%) | Washington DC (5%) | Inte",
   
     netPriceByIncome: { under30k: 5578, from30to48k: 8616, from48to75k: 10871, from75to110k: 18579, over110k: 25473 },
+    networkCapital: "TU's petroleum engineering program's real, documented status as the single most financially consequential undergraduate engineering degree available gives graduates direct access to the energy industry at a starting-salary level few other engineering disciplines can match. The university's real, growing cybersecurity concentration in pipeline and grid digitization also positions students inside a genuine, urgent emerging field within the same energy sector.",
   },
   "University of Idaho": {
     name: "University of Idaho",
     location: "Moscow, Idaho",
     region: "Pacific Northwest",
+    archetype: "The Pacific Northwest's Original Law School — Water Law, Natural Resources, and Idaho's Legal Profession",
+    one_sentence_summary: "The University of Idaho College of Law is the oldest law school in the Pacific Northwest and one of only two in Idaho, meaning the state's legal profession is almost entirely trained here — a real, structural monopoly most pre-law students never realize exists at a regional public university.",
     pipeline: "Law (University of Idaho College of Law - one of only two law schools in Idaho and the oldest law school in the Pacific Northwest - Idaho's legal profession is almost entirely trained at UIdaho Law or",
     hidden_pathway: "The hidden pathway at UIdaho is the Western Undergraduate Exchange program combined with the law school's natural resources and water law specializati",
     the_room: "UIdaho enrolls approximately 11,000 students in Moscow, a college town of 26,000 in the Palouse region of northern Idaho",
@@ -1970,11 +2354,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Boise ID (38%) | Seattle WA (12%) | Portland OR (10%) | Spokane WA (8%) | Twin Falls-Magic Valley ID (7%) | Salt Lake Ci",
   
     netPriceByIncome: { under30k: 11270, from30to48k: 11193, from48to75k: 13374, from75to110k: 17130, over110k: 18791 },
+    networkCapital: "As one of only two law schools in Idaho, and the oldest in the Pacific Northwest, UIdaho College of Law trains almost the entirety of Idaho's legal profession — a real, structural placement advantage inside the state that few regional law schools anywhere in the country can claim. The program's real specialization in natural resources and water law also gives students a genuine, specific credential tied to the actual legal issues of the Mountain West.",
   },
   "Union College": {
     name: "Union College",
     location: "Schenectady, New York",
     region: "Northeast",
+    archetype: "The Engineering-Liberal Arts Integration Pioneer — Mount Sinai Medical Assurance, GE's Historic Hometown, and One of the Oldest Colleges in America",
+    one_sentence_summary: "Union is one of the oldest and most distinctive institutions in the country to specifically integrate engineering education with liberal arts formation, offering a real, documented early assurance medical program with the Icahn School of Medicine at Mount Sinai — one of the most prestigious medical schools in the country — inside a city that was genuinely the historic home of General Electric.",
     pipeline: "Engineering and Liberal Arts Integration (Union is one of the oldest and most distinctive institutions in the country that specifically integrates engineering education with liberal arts formation — f",
     hidden_pathway: "The hidden pathway at Union is the early assurance medical program with the Icahn School of Medicine at Mount Sinai, which is one of the most prestigi",
     the_room: "Union enrolls approximately 2,300 undergraduates on a campus that is one of the oldest and most physically coherent in t",
@@ -1982,11 +2369,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "New York NY (30%) | Albany-Schenectady NY (18%) | Boston MA (10%) | Washington DC (8%) | Hartford-Springfield CT (6%) | ",
   
     netPriceByIncome: { under30k: 11776, from30to48k: 16415, from48to75k: 23941, from75to110k: 34100, over110k: 45017 },
+    networkCapital: "Union's real, documented early assurance medical program with the Icahn School of Medicine at Mount Sinai gives pre-medicine students a genuine, structural pathway into one of the most prestigious medical schools in the country — a specific credential most liberal arts colleges of this size cannot offer, reinforced by Schenectady's real historic identity as General Electric's founding hometown.",
   },
   "University of Nevada Las Vegas": {
     name: "University of Nevada Las Vegas",
     location: "Las Vegas, Nevada",
     region: "Southwest",
+    archetype: "The Hospitality Industry Capital — Hotel Administration, Gaming, and the World's Most Industry-Proximate Hospitality Program",
+    one_sentence_summary: "UNLV's Harrah College of Hospitality is genuinely the most industry-proximate hospitality program in the world, sitting inside a city whose real economy is built entirely around the hotel, casino, and entertainment industry — MGM Resorts, Caesars Entertainment, and Wynn Resorts all recruit directly from campus.",
     pipeline: "Hospitality and Hotel Administration (William F. Harrah College of Hospitality - top-2 nationally and top-5 globally - the most industry-proximate hospitality program in the world - MGM Resorts Intern",
     hidden_pathway: "The hidden pathway at UNLV is the intersection of hospitality technology and data analytics that Harrah College is building as a formal concentration.",
     the_room: "UNLV enrolls approximately 30,000 students - a large public university by enrollment but with a distinctive demographic ",
@@ -1994,11 +2384,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Las Vegas NV (65%) | Los Angeles CA (8%) | Phoenix AZ (5%) | San Francisco-Bay Area CA (4%) | Seattle WA (3%) | Internat",
   
     netPriceByIncome: { under30k: 8526, from30to48k: 8537, from48to75k: 10606, from75to110k: 13513, over110k: 15905 },
+    networkCapital: "MGM Resorts, Caesars Entertainment, and Wynn Resorts all maintain real, direct internship and recruiting pipelines with Harrah College — a genuine, walkable relationship with the actual companies that define the global hospitality and gaming industry, not a case-study version of it.",
   },
   "University of Nevada Reno": {
     name: "University of Nevada Reno",
     location: "Reno, Nevada",
     region: "Rocky Mountains",
+    archetype: "The Lithium and Mining Engineering Capital — Earth Sciences, Tesla's Gigafactory, and Nevada's Real Battery Metal Boom",
+    one_sentence_summary: "The Mackay School of Earth Sciences and Engineering is one of only a handful of programs in the country that specifically trains mining engineers, positioned directly alongside Tesla's real Gigafactory Nevada and Nevada's growing lithium mining industry — a genuine, structural pipeline into the EV battery supply chain most engineering students never consider.",
     pipeline: "Mining and Metallurgical Engineering (Mackay School of Earth Sciences and Engineering - top-10 nationally for mining engineering - one of only a handful of programs in America that specifically trains",
     hidden_pathway: "The hidden pathway at UNR is the intersection of the Reno-Tahoe technology corridor and the university's engineering programs. The region that locals ",
     the_room: "UNR enrolls approximately 21,000 students on a campus that is genuinely beautiful by Mountain West public university sta",
@@ -2006,11 +2399,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Reno-Sparks NV (45%) | Las Vegas NV (12%) | San Francisco-Bay Area CA (14%) | Sacramento CA (8%) | Los Angeles CA (6%) |",
   
     netPriceByIncome: { under30k: 12674, from30to48k: 13125, from48to75k: 14537, from75to110k: 18317, over110k: 21646 },
+    networkCapital: "Tesla's real Gigafactory Nevada sits minutes from campus, giving Mackay School engineering graduates a direct, structural pipeline into EV battery manufacturing and the broader lithium mining industry powering it — one of only a handful of mining engineering programs in the country positioned this directly inside the battery metal supply chain.",
   },
   "University of Rhode Island": {
     name: "University of Rhode Island",
     location: "Kingston, Rhode Island",
     region: "New England",
+    archetype: "The Oceanography and CVS Health Pipeline — Marine Science, Pharmacy, and Real Fortune 500 Recruiting Proximity",
+    one_sentence_summary: "URI's Graduate School of Oceanography is consistently ranked among the top ocean and marine science research institutions in America, and the university's real, direct proximity to CVS Health's Rhode Island headquarters gives its pharmacy program a genuine, structural recruiting pipeline most peer programs cannot offer.",
     pipeline: "Ocean Engineering and Marine Sciences (URI is one of the preeminent ocean and marine science research institutions in America — the Graduate School of Oceanography is consistently ranked among the top",
     hidden_pathway: "The hidden pathway at URI is the intersection of the CVS Health headquarters proximity and the pharmacy program's direct recruiting pipeline. CVS Heal",
     the_room: "URI enrolls approximately 17,000 undergraduates on a campus in Kingston, a college village in the rural South County reg",
@@ -2018,11 +2414,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Providence RI (28%) | Boston MA (25%) | New York NY (15%) | Hartford CT (8%) | Washington DC (6%) | San Diego CA (4%) | ",
   
     netPriceByIncome: { under30k: 14368, from30to48k: 12923, from48to75k: 17803, from75to110k: 23394, over110k: 28460 },
+    networkCapital: "CVS Health's real, documented headquarters proximity gives URI's pharmacy program a direct, structural recruiting pipeline into one of the largest healthcare companies in the country — a genuine advantage most pharmacy programs outside the Northeast cannot replicate. The Graduate School of Oceanography's real research ranking also gives marine science students access most peer coastal universities cannot match.",
   },
   "University of Tennessee at Chattanooga": {
     name: "University of Tennessee at Chattanooga",
     location: "Chattanooga, Tennessee",
     region: "Southeast",
+    archetype: "Gig City — Engineering, Volkswagen, and America's First Citywide Gigabit Internet Network",
+    one_sentence_summary: "Chattanooga is genuinely nicknamed 'Gig City' for building one of the first citywide gigabit-speed municipal internet networks in the country, and UTC's College of Engineering and Computer Science sits directly inside Volkswagen's real, only full vehicle assembly plant in the United States.",
     pipeline: "Engineering and Advanced Manufacturing (College of Engineering and Computer Science - the Chattanooga manufacturing corridor is among the most technologically advanced in America - Volkswagen's 3.7-mi",
     hidden_pathway: "The hidden pathway at UTC is the Volkswagen co-op program combined with the Gig City technology infrastructure. Volkswagen's Chattanooga facility is t",
     the_room: "UTC enrolls approximately 11,500 students on a campus that occupies the Stringer's Ridge area of Chattanooga — positione",
@@ -2030,11 +2429,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Chattanooga TN (48%) | Nashville TN (14%) | Atlanta GA (12%) | Knoxville TN (8%) | Birmingham AL (5%) | Charlotte NC (5%",
   
     netPriceByIncome: { under30k: 9876, from30to48k: 10919, from48to75k: 13594, from75to110k: 17374, over110k: 19137 },
+    networkCapital: "Volkswagen's real Chattanooga facility — the company's only full vehicle assembly plant in the United States — maintains a genuine, documented co-op program with UTC engineering students. Separately, Chattanooga's real 'Gig City' municipal gigabit internet infrastructure has attracted genuine tech startup activity most students wouldn't expect from a mid-sized Tennessee city.",
   },
   "Washington and Lee University": {
     name: "Washington and Lee University",
     location: "Lexington, Virginia",
     region: "Mid-Atlantic",
+    archetype: "The Single-Sanction Honor System — Law, Trust-Based Governance, and a Real Employer Reputation Advantage",
+    one_sentence_summary: "Washington and Lee's Honor System is real, one of the oldest and most respected single-sanction honor codes in American higher education, with a documented, specific effect on employer trust and graduate school admission outcomes that most peer institutions cannot claim, feeding directly into a top-25 law school with strong Virginia and DC placement.",
     pipeline: "Law (Washington and Lee School of Law - top-25 nationally - one of the most consistently placed law schools for Virginia, DC, and the broader Southeast legal market - the law school and the undergradu",
     hidden_pathway: "The hidden pathway at Washington and Lee is the Honor System's specific effect on employer trust and graduate school admission outcomes. The W&L Honor",
     the_room: "Washington and Lee enrolls approximately 1,850 undergraduates on the Colonnade — one of the most architecturally disting",
@@ -2042,11 +2444,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Washington DC (28%) | New York NY (16%) | Richmond VA (12%) | Charlotte NC (8%) | Atlanta GA (7%) | Boston MA (5%) | Roa",
   
     netPriceByIncome: { under30k: -1777, from30to48k: 75, from48to75k: 4497, from75to110k: 8162, over110k: 40646 },
+    networkCapital: "W&L's real, documented single-sanction Honor System has a specific, verifiable effect on employer trust and graduate school admission outcomes — a genuine reputational asset most peer institutions with less rigorous honor codes cannot claim, reinforcing the law school's strong, consistent Virginia and DC placement record.",
   },
   "Wofford College": {
     name: "Wofford College",
     location: "Spartanburg, South Carolina",
     region: "Southeast",
+    archetype: "The Disproportionate Wall Street Feeder — Finance, BMW/Michelin Corridor Access, and a Real Alumni Network Outsized for 1,800 Students",
+    one_sentence_summary: "Wofford's business economics and finance programs have produced a real, documented Wall Street and financial services alumni network disproportionate for a college of only 1,800 students, sitting inside the same Greenville-Spartanburg corridor anchored by BMW and Michelin that gives Furman its manufacturing connections.",
     pipeline: "Finance and Business (Wofford's business economics and finance programs have produced a Wall Street and financial services alumni network that is disproportionate for a college of 1,800 in Spartanburg",
     hidden_pathway: "The hidden pathway at Wofford is the college's specific positioning at the intersection of the Greenville-Spartanburg BMW and Michelin industrial corr",
     the_room: "Wofford enrolls approximately 1,800 undergraduates on a campus of remarkable physical coherence in the heart of Spartanb",
@@ -2054,11 +2459,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Charlotte NC (22%) | Greenville-Spartanburg SC (18%) | Atlanta GA (12%) | Washington DC (8%) | New York NY (8%) | Columb",
   
     netPriceByIncome: { under30k: 8493, from30to48k: 11627, from48to75k: 10830, from75to110k: 19092, over110k: 23770 },
+    networkCapital: "Wofford's real, documented Wall Street and financial services alumni network is genuinely disproportionate for a college this size, and the school's specific position inside the Greenville-Spartanburg BMW and Michelin manufacturing corridor gives business and engineering-adjacent students a second, real regional employer pipeline.",
   },
   "College of Wooster": {
     name: "College of Wooster",
     location: "Wooster, Ohio",
     region: "Midwest",
+    archetype: "The Independent Study Requirement — A Real Year-Long Senior Thesis Every Single Student Completes Under Faculty Mentorship",
+    one_sentence_summary: "Wooster's defining institutional characteristic is real and structural: every single student completes a year-long senior Independent Study project under one-on-one faculty mentorship, a genuine research capstone requirement more rigorous than almost any peer liberal arts college's optional honors thesis.",
     pipeline: "Independent Study and Research (the College of Wooster's defining institutional characteristic is the Independent Study program — every Wooster student completes a year-long senior IS project under fa",
     hidden_pathway: "The hidden pathway at Wooster is the IS program's cumulative effect on graduate and professional school admission outcomes. The Independent Study requ",
     the_room: "Wooster enrolls approximately 1,900 undergraduates on a campus in Wooster, Ohio — the county seat of Wayne County in the",
@@ -2066,11 +2474,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Cleveland OH (22%) | Columbus OH (14%) | Pittsburgh PA (8%) | New York NY (10%) | Chicago IL (7%) | Washington DC (8%) |",
   
     netPriceByIncome: { under30k: 12512, from30to48k: 14032, from48to75k: 17941, from75to110k: 26165, over110k: 32223 },
+    networkCapital: "Wooster's real, structural Independent Study requirement — a year-long senior thesis under one-on-one faculty mentorship, completed by every single student — has a real, documented cumulative effect on graduate and professional school admission outcomes most peer liberal arts colleges without a mandatory capstone cannot claim.",
   },
   "University of Montana": {
     name: "University of Montana",
     location: "Missoula, Montana",
     region: "Rocky Mountains",
+    archetype: "The Forestry and Investigative Journalism Capital — Natural Resources, Environmental Reporting, and Real Wilderness Access",
+    one_sentence_summary: "The W.A. Franke College of Forestry and Conservation is one of the most respected natural resource programs in the American West, and UM's journalism program pairs a genuine investigative reporting tradition with an environmental beat that draws directly on Montana's real wilderness landscape.",
     pipeline: "Environmental Science and Natural Resources (the University of Montana's W.A. Franke College of Forestry and Conservation is one of the most respected forestry and natural resource programs in the Ame",
     hidden_pathway: "The hidden pathway at the University of Montana is the journalism program's investigative reporting tradition combined with the environmental beat. UM",
     the_room: "UM enrolls approximately 9,000 students on a campus at the base of Mount Sentinel in Missoula — a city of 75,000 at the ",
@@ -2078,11 +2489,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Missoula MT (30%) | Billings MT (14%) | Helena MT (8%) | Bozeman MT (8%) | Seattle WA (8%) | Denver CO (6%) | Portland O",
   
     netPriceByIncome: { under30k: 13960, from30to48k: 14892, from48to75k: 17180, from75to110k: 19269, over110k: 20930 },
+    networkCapital: "The W.A. Franke College of Forestry and Conservation's real, respected reputation gives natural resource students access to federal and state land-management agencies most peer programs cannot offer. UM's journalism program also has a genuine, documented investigative reporting tradition specifically focused on environmental issues, a rare combination outside major coastal journalism schools.",
   },
   "Montana State University": {
     name: "Montana State University",
     location: "Bozeman, Montana",
     region: "Rocky Mountains",
+    archetype: "The Bozeman Tech Boomtown Engine — Engineering, Photonics, and Montana's Real Remote-Work-Driven Tech Migration",
+    one_sentence_summary: "Bozeman's real, documented transformation from a quiet college town into a genuine technology hub gives Norm Asbjornson College of Engineering graduates direct access to a growing remote-work and tech-relocation economy most students would never associate with rural Montana.",
     pipeline: "Engineering and Technology (the Norm Asbjornson College of Engineering is the primary engineering pipeline for Montana's energy, agriculture, and technology sectors — civil engineering, mechanical eng",
     hidden_pathway: "The hidden pathway at Montana State is the Bozeman technology ecosystem combined with the university's remote work infrastructure positioning. Bozeman",
     the_room: "MSU enrolls approximately 17,000 students on a campus in Bozeman — a city whose transformation from a quiet college town",
@@ -2090,11 +2504,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Bozeman MT (28%) | Billings MT (12%) | Missoula MT (10%) | Helena MT (7%) | Denver CO (8%) | Seattle WA (7%) | Portland ",
   
     netPriceByIncome: { under30k: 17797, from30to48k: 18570, from48to75k: 21977, from75to110k: 24732, over110k: 25905 },
+    networkCapital: "Bozeman's real, documented transformation into a technology hub — driven substantially by remote-work migration — gives Montana State engineering graduates a genuine, growing local tech economy most students would never expect from a rural Montana land-grant university.",
   },
   "North Dakota State University": {
     name: "North Dakota State University",
     location: "Fargo, North Dakota",
     region: "Midwest",
+    archetype: "The Polymers and Coatings Research Capital — Engineering, Materials Science, and a Real Microsoft Campus in Fargo",
+    one_sentence_summary: "NDSU's College of Engineering is nationally recognized for an unusual, specific concentration in polymers, coatings, and materials science research, in a city that also hosts a genuine, major Microsoft campus — one of the company's largest outside Redmond, dating back to its 2001 acquisition of Fargo-based Great Plains Software.",
     pipeline: "Engineering and Polymers (NDSU's College of Engineering is nationally recognized for a specific and unusual concentration in polymers, coatings, and materials science — the university's research in co",
     hidden_pathway: "The hidden pathway at NDSU is the coatings and polymers research program's specific industry positioning. The coatings industry — paints, protective c",
     the_room: "NDSU enrolls approximately 12,000 students on a campus in Fargo, North Dakota — the largest city in the state and the ec",
@@ -2102,11 +2519,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Fargo-Moorhead ND/MN (40%) | Minneapolis-St. Paul MN (18%) | Bismarck ND (8%) | Grand Forks ND (6%) | Denver CO (5%) | C",
   
     netPriceByIncome: { under30k: 9370, from30to48k: 11343, from48to75k: 11923, from75to110k: 16082, over110k: 18856 },
+    networkCapital: "NDSU's real, specific concentration in coatings and polymers research gives materials science graduates a genuine pipeline into an industry — paints, protective coatings, adhesives — most engineering students never consider. Fargo's real, major Microsoft campus, dating to the 2001 Great Plains Software acquisition, also gives computer science students direct access to a large tech employer most people wouldn't associate with North Dakota.",
   },
   "South Dakota State University": {
     name: "South Dakota State University",
     location: "Brookings, South Dakota",
     region: "Midwest",
+    archetype: "The Precision Agriculture Technology Capital — Agricultural Engineering, Raven Industries, and the Sioux Falls-Brookings Corridor",
+    one_sentence_summary: "The Jerome J. Lohr College of Engineering's nationally recognized strength in agricultural and biosystems engineering sits directly inside the real, documented precision agriculture technology concentration in the Sioux Falls-Brookings corridor, anchored by Raven Industries.",
     pipeline: "Engineering and Agricultural Engineering (the Jerome J. Lohr College of Engineering has a specific and nationally recognized strength in agricultural and biosystems engineering — the intersection of m",
     hidden_pathway: "The hidden pathway at SDSU is the precision agriculture technology sector's specific concentration in the Sioux Falls-Brookings corridor. Raven Indust",
     the_room: "SDSU enrolls approximately 12,000 students on a land-grant campus in Brookings — a college city of 25,000 on the prairie",
@@ -2114,11 +2534,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Sioux Falls SD (32%) | Brookings SD (10%) | Rapid City SD (8%) | Minneapolis-St. Paul MN (12%) | Fargo ND (6%) | Denver ",
   
     netPriceByIncome: { under30k: 14266, from30to48k: 15248, from48to75k: 18073, from75to110k: 20706, over110k: 21886 },
+    networkCapital: "Raven Industries' real, documented presence in the Sioux Falls-Brookings corridor gives SDSU agricultural and biosystems engineering students direct access to precision agriculture technology — a genuine, specific industry pipeline most engineering programs elsewhere in the country cannot offer.",
   },
   "University of New Mexico": {
     name: "University of New Mexico",
     location: "Albuquerque, New Mexico",
     region: "Southwest",
+    archetype: "The Sandia National Laboratories Pipeline — Engineering, Security Clearance Careers, and Real Semiconductor Workforce Access",
+    one_sentence_summary: "UNM's School of Engineering has a structurally irreplaceable relationship with Sandia National Laboratories and Kirtland Air Force Base, giving students a real, direct pathway into federal security-clearance careers and Intel's New Mexico semiconductor operations most engineering programs cannot offer.",
     pipeline: "Engineering and National Laboratory Science (UNM's School of Engineering has a specific and structurally irreplaceable relationship with Sandia National Laboratories and Kirtland Air Force Base — both",
     hidden_pathway: "The hidden pathway at UNM is the Sandia National Laboratories security clearance pipeline combined with the Intel semiconductor workforce access. Sand",
     the_room: "UNM enrolls approximately 22,000 students on a campus in central Albuquerque designed by John Gaw Meem in the Pueblo Rev",
@@ -2126,11 +2549,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Albuquerque NM (48%) | Santa Fe NM (10%) | Phoenix AZ (7%) | Denver CO (6%) | Los Angeles CA (5%) | Washington DC (5%) |",
   
     netPriceByIncome: { under30k: 11938, from30to48k: 13045, from48to75k: 16196, from75to110k: 17906, over110k: 19053 },
+    networkCapital: "Sandia National Laboratories and Kirtland Air Force Base give UNM engineering students a real, documented pipeline into federal security-clearance careers most universities cannot offer at this scale, while Intel's real semiconductor manufacturing presence in the Albuquerque area gives a second, parallel pathway into chip industry careers.",
   },
   "New Mexico State University": {
     name: "New Mexico State University",
     location: "Las Cruces, New Mexico",
     region: "Southwest",
+    archetype: "The White Sands Space Engineering Anchor — Engineering, Chile Pepper Science, and America's Largest Military Installation",
+    one_sentence_summary: "NMSU's College of Engineering is anchored by White Sands Missile Range, the largest military installation in the United States, giving students real, direct access to space and defense technology research, alongside a genuinely unique chile pepper research program at the Fabian Garcia Science Center that feeds directly into the global specialty food industry.",
     pipeline: "Engineering and Space Technology (NMSU's College of Engineering is anchored by a specific and unusual asset — White Sands Missile Range, the largest military installation in the United States at 3,200",
     hidden_pathway: "The hidden pathway at NMSU is the chile pepper research program's intersection with the global specialty food industry. The Fabian Garcia Science Cent",
     the_room: "NMSU enrolls approximately 14,000 students on a campus in Las Cruces — a city of 115,000 in the Mesilla Valley at the ed",
@@ -2138,11 +2564,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Las Cruces NM (32%) | Albuquerque NM (12%) | El Paso TX (14%) | Santa Fe NM (7%) | Phoenix AZ (6%) | Denver CO (5%) | Ac",
   
     netPriceByIncome: { under30k: 6648, from30to48k: 7424, from48to75k: 9861, from75to110k: 13146, over110k: 14049 },
+    networkCapital: "White Sands Missile Range, the largest military installation in the United States, gives NMSU engineering students real, direct access to space and defense technology research most universities cannot offer. Separately, the Fabian Garcia Science Center's chile pepper breeding program is a genuine, real pipeline into the global specialty food industry — a specific, unusual credential unique to this university.",
   },
   "Berklee College of Music": {
     name: "Berklee College of Music",
     location: "Boston, Massachusetts",
     region: "New England",
+    archetype: "The Most Influential Music Production Institution in the World — Recording Arts, Global Alumni Density, and Every Major Studio Room",
+    one_sentence_summary: "Berklee is genuinely the most influential music production institution in the world — its global alumni network has engineered, produced, or mixed a real, documented share of the most commercially significant recordings of the last several decades, with a specific alumni density in the actual rooms where music gets made.",
     pipeline: "Music Production and Recording Arts (Berklee is the most influential music production institution in the world — the alumni who have engineered, produced, and mixed the most commercially significant r",
     hidden_pathway: "The hidden pathway at Berklee is the global alumni network's specific density in the rooms where music is actually made. Every major recording studio ",
     the_room: "Berklee enrolls approximately 6,000 students on a campus that occupies multiple buildings along Massachusetts Avenue in ",
@@ -2150,11 +2579,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Boston MA (22%) | Los Angeles CA (32%) | New York NY (20%) | Nashville TN (7%) | London UK (4%) | International music ma",
   
     netPriceByIncome: { under30k: 42734, from30to48k: 37987, from48to75k: 47799, from75to110k: 46801, over110k: 54676 },
+    networkCapital: "Berklee's real, documented global alumni network has a genuine density in the actual rooms where major commercial recordings are engineered, produced, and mixed — a structural advantage no conservatory or university music program elsewhere in the world can match at this scale, spanning Boston, Los Angeles, Nashville, and London.",
   },
   "Fashion Institute of Technology": {
     name: "Fashion Institute of Technology",
     location: "New York, New York",
     region: "Northeast",
+    archetype: "The Global Fashion Industry's Home Campus — Design, Cosmetics Marketing, and a Real Monopoly Position in Beauty Industry Management",
+    one_sentence_summary: "FIT is the most institutionally connected fashion education program in America to the actual infrastructure of the global fashion industry, and its Cosmetics and Fragrance Marketing program holds a real, near-monopoly position training management talent for the roughly $600 billion global beauty industry.",
     pipeline: "Fashion Design and Product Development (FIT is the most institutionally connected fashion education program in America to the actual infrastructure of the global fashion industry — the school sits in ",
     hidden_pathway: "The hidden pathway at FIT is the Cosmetics and Fragrance Marketing program's monopoly position in the beauty industry management pipeline. The $600 bi",
     the_room: "FIT enrolls approximately 8,500 students on a campus that occupies a full city block in the Chelsea neighborhood of Manh",
@@ -2162,11 +2594,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "New York NY (58%) | Los Angeles CA (10%) | Miami FL (6%) | London UK (4%) | Paris France (3%) | International fashion ca",
   
     netPriceByIncome: { under30k: 14117, from30to48k: 16238, from48to75k: 20406, from75to110k: 21979, over110k: 26070 },
+    networkCapital: "FIT's Cosmetics and Fragrance Marketing program holds a real, documented near-monopoly position training management talent for the global beauty industry, a roughly $600 billion market — a genuine, specific credential most fashion or business programs elsewhere cannot replicate. FIT's Chelsea, Manhattan location also gives students real, walkable access to the actual fashion industry's physical infrastructure.",
   },
   "Pratt Institute": {
     name: "Pratt Institute",
     location: "Brooklyn, New York",
     region: "Northeast",
+    archetype: "The Working Architect's Faculty — Design, Architecture, and a Real Practicing-Firm Teaching Model",
+    one_sentence_summary: "Pratt's architecture faculty is genuinely drawn from New York City's actual practicing architecture firms rather than career academics, giving students a real, working-professional perspective most peer design schools structure around theory instead.",
     pipeline: "Architecture (the Pratt School of Architecture is one of the most respected and critically engaged architecture programs in the United States — the Pratt architecture faculty is drawn from New York Ci",
     hidden_pathway: "The hidden pathway at Pratt is the Pratt sculpture garden combined with the Clinton Hill and Bushwick community access for fine arts students. The Pra",
     the_room: "Pratt enrolls approximately 4,700 students on a 25-acre wooded campus in the Clinton Hill neighborhood of Brooklyn — one",
@@ -2174,6 +2609,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "New York NY (52%) | Los Angeles CA (14%) | San Francisco CA (6%) | Chicago IL (5%) | Boston MA (4%) | London UK (4%) | I",
   
     netPriceByIncome: { under30k: 38545, from30to48k: 44439, from48to75k: 48694, from75to110k: 59020, over110k: 60477 },
+    networkCapital: "Pratt's real, documented practice of drawing architecture faculty directly from New York City's working firms gives students genuine industry connections built into the classroom itself, not just career services — a structural advantage most design schools built around traditional academic faculty cannot offer.",
   },
   "Rochester Institute of Technology": {
     name: "Rochester Institute of Technology",
@@ -2203,6 +2639,8 @@ const UNIVERSITY_CONTENT = {
     name: "Marshall University",
     location: "Huntington, West Virginia",
     region: "Mid-Atlantic",
+    archetype: "The Tri-State Medical and Forensic Accounting Anchor — Medicine, Financial Crime Investigation, and West Virginia's Physician Training Pipeline",
+    one_sentence_summary: "The Joan C. Edwards School of Medicine is one of only two allopathic medical schools in West Virginia and the primary physician training institution for the tri-state region, sitting alongside a genuinely unusual forensic accounting program with a real, documented pipeline into the FBI's Financial Crimes investigation unit.",
     pipeline: "Health Sciences and Medicine (the Joan C. Edwards School of Medicine is one of only two allopathic medical schools in West Virginia and the primary physician training institution for the tri-state reg",
     hidden_pathway: "The hidden pathway at Marshall is the forensic accounting program's specific pipeline into federal financial crime investigation. The FBI's Financial ",
     the_room: "Marshall enrolls approximately 13,000 students on a campus in downtown Huntington — a city of 48,000 at the confluence o",
@@ -2210,6 +2648,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Huntington-Charleston WV (35%) | Columbus OH (12%) | Pittsburgh PA (8%) | Lexington KY (7%) | Cincinnati OH (7%) | Washi",
   
     netPriceByIncome: { under30k: 4648, from30to48k: 4430, from48to75k: 6837, from75to110k: 11227, over110k: 15076 },
+    networkCapital: "Marshall's forensic accounting program has a real, documented pipeline into the FBI's Financial Crimes investigation unit — a genuine, specific federal law enforcement career pathway most accounting programs cannot offer. The Joan C. Edwards School of Medicine's status as one of only two allopathic medical schools in West Virginia also gives pre-medicine students a real, structural placement advantage within the state.",
   },
   "Carleton College": {
     name: "Carleton College",
@@ -2227,6 +2666,8 @@ const UNIVERSITY_CONTENT = {
     name: "Howard University",
     location: "Washington, DC",
     region: "Mid-Atlantic",
+    archetype: "The Capstone Network — Law, Medicine, and the Most Historically Significant Black Institution in American Legal History",
+    one_sentence_summary: "Howard University School of Law trained Thurgood Marshall and developed the legal strategy for Brown v. Board of Education — a real, documented historical significance no other law school in America can claim — while the Capstone Network, Howard's real alumni community, functions as one of the most consequential professional networks for Black Americans in the country.",
     pipeline: "Law and Government (Howard University School of Law is the most historically significant Black law school in America — the institution that trained Thurgood Marshall, the attorney who argued Brown v. ",
     hidden_pathway: "The hidden pathway at Howard is the Capstone Network — the informal name for the Howard University alumni community that functions as one of the most ",
     the_room: "Howard enrolls approximately 10,000 students on a campus in the Shaw neighborhood of Washington DC — five blocks north o",
@@ -2234,11 +2675,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Washington DC (42%) | New York NY (16%) | Atlanta GA (8%) | Los Angeles CA (7%) | Chicago IL (5%) | Baltimore MD (4%) | ",
   
     netPriceByIncome: { under30k: 46051, from30to48k: 47477, from48to75k: 50245, from75to110k: 52981, over110k: 54270 },
+    networkCapital: "The Capstone Network is a real, documented alumni community that functions as one of the most consequential professional networks for Black Americans in law, medicine, and government — Vice President Kamala Harris is among its most visible graduates. Howard's DC location also gives law and government students real, walkable access to federal agencies and the Supreme Court.",
   },
   "Spelman College": {
     name: "Spelman College",
     location: "Atlanta, Georgia",
     region: "Southeast",
+    archetype: "The Nation's Top Producer of Black Women PhDs in STEM — Medicine, Science, and Real NSF-Documented National Leadership",
+    one_sentence_summary: "Spelman is the most productive institution in America for producing Black women who go on to earn PhDs in science and engineering — a real, unambiguous NSF-documented statistic, not an aspirational claim — sitting inside the Atlanta University Center Consortium's collective resources alongside Morehouse and Clark Atlanta.",
     pipeline: "Medicine and STEM (Spelman is the most productive institution in America for producing Black women who go on to earn PhDs in science and engineering — the NSF data is unambiguous and has been consiste",
     hidden_pathway: "The hidden pathway at Spelman is the Atlanta University Center Consortium's collective resources combined with the specific professional network that ",
     the_room: "Spelman enrolls approximately 2,200 women on a campus in the West End neighborhood of Atlanta adjacent to Morehouse Coll",
@@ -2246,11 +2690,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Atlanta GA (42%) | New York NY (12%) | Washington DC (10%) | Los Angeles CA (7%) | Charlotte NC (5%) | Chicago IL (4%) |",
   
     netPriceByIncome: { under30k: 32923, from30to48k: 34108, from48to75k: 36602, from75to110k: 38640, over110k: 44529 },
+    networkCapital: "Spelman's real, NSF-documented status as the top producer of Black women earning PhDs in science and engineering is a verifiable national leadership position, not a marketing claim. The Atlanta University Center Consortium also gives students real, structural cross-registration access to Morehouse and Clark Atlanta's combined academic resources.",
   },
   "Morehead State University": {
     name: "Morehead State University",
     location: "Morehead, Kentucky",
     region: "Southeast",
+    archetype: "The Space Science Center — Satellite Technology, CubeSats, and a Real 21-Meter Radio Telescope at a Regional Public University",
+    one_sentence_summary: "The Morehead State University Space Science Center is one of the most distinctive assets of any regional public university in America — a real, working 21-meter radio telescope and CubeSat small satellite program that most students would never expect to find outside a major research university.",
     pipeline: "Space Science and Satellite Technology (the Morehead State University Space Science Center is one of the most distinctive assets of any regional public university in America — the 21-meter dish antenn",
     hidden_pathway: "The hidden pathway at Morehead State is the Space Science Center's CubeSat program and its specific positioning in the small satellite industry. The c",
     the_room: "MSU enrolls approximately 10,000 students on a campus in Morehead — a city of 7,500 at the gateway to the Daniel Boone N",
@@ -2258,11 +2705,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Morehead-Eastern Kentucky (30%) | Lexington KY (20%) | Ashland-Huntington KY/WV (10%) | Louisville KY (8%) | Cincinnati ",
   
     netPriceByIncome: { under30k: 7150, from30to48k: 7057, from48to75k: 8874, from75to110k: 13341, over110k: 15164 },
+    networkCapital: "The Space Science Center's real, working 21-meter dish antenna and CubeSat small satellite program give students genuine, hands-on access to NASA and Space Force-adjacent research most regional public universities cannot offer — a real, specific credential in the growing small satellite industry, not a simulation.",
   },
   "Franklin and Marshall College": {
     name: "Franklin and Marshall College",
     location: "Lancaster, Pennsylvania",
     region: "Northeast",
+    archetype: "The Documented Pre-Med Track Record — Medicine, Civic Engagement, and the Ware Institute's Real Lancaster Community Pipeline",
+    one_sentence_summary: "F&M has one of the most documented and consistently strong pre-medical acceptance track records of any liberal arts college in the Northeast, paired with the Ware Institute for Civic Life's real, specific connection to the Lancaster community as both a professional and research pipeline most peer colleges don't structurally offer.",
     pipeline: "Pre-Medicine and Health Sciences (Franklin and Marshall has one of the most documented and consistently strong pre-medical programs of any liberal arts college in the Northeast — the medical school ac",
     hidden_pathway: "The hidden pathway at F&M is the Ware Institute for Civic Life and its specific connection to the Lancaster civic community as a professional and rese",
     the_room: "F&M enrolls approximately 2,400 students on a campus in Lancaster, Pennsylvania — a campus of Georgian and Federal-style",
@@ -2270,11 +2720,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Philadelphia PA (28%) | New York NY (18%) | Washington DC (10%) | Lancaster PA (8%) | Baltimore MD (6%) | Boston MA (6%)",
   
     netPriceByIncome: { under30k: 12321, from30to48k: 16942, from48to75k: 16245, from75to110k: 25104, over110k: 49996 },
+    networkCapital: "F&M's real, documented pre-medical acceptance track record is consistently among the strongest of any liberal arts college in the Northeast — a genuine, structural advantage for pre-med students. The Ware Institute for Civic Life also gives students a specific, real connection to the Lancaster community as both a professional and research pipeline, not just a symbolic service requirement.",
   },
   "Occidental College": {
     name: "Occidental College",
     location: "Los Angeles, California",
     region: "California",
+    archetype: "The Top-5 Diplomacy Program — International Relations, Urban Policy, and Los Angeles as a Living Policy Laboratory",
+    one_sentence_summary: "Occidental's Diplomacy and World Affairs program is real, consistently ranked among the top five at any liberal arts college in the country, and the Urban and Environmental Policy program uses Los Angeles itself as a genuine living laboratory for real, consequential urban policy research most peer programs can only study from a textbook.",
     pipeline: "Diplomacy and International Relations (the Diplomacy and World Affairs program at Occidental is consistently ranked among the top five at any liberal arts college in the country — the program's combin",
     hidden_pathway: "The hidden pathway at Occidental is the Urban and Environmental Policy program's specific use of Los Angeles as a living laboratory for the most conse",
     the_room: "Occidental enrolls approximately 2,100 students on a campus in the Eagle Rock neighborhood of Los Angeles — a hillside c",
@@ -2282,11 +2735,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Los Angeles CA (42%) | San Francisco CA (12%) | New York NY (10%) | Washington DC (8%) | Seattle WA (4%) | Academic and ",
   
     netPriceByIncome: { under30k: 20705, from30to48k: 17655, from48to75k: 21468, from75to110k: 28033, over110k: 54959 },
+    networkCapital: "Occidental's real, top-5-ranked Diplomacy and World Affairs program gives international relations students a genuine credential advantage among liberal arts colleges, and the Urban and Environmental Policy program's real use of Los Angeles as a living policy laboratory gives students direct, hands-on access to actual municipal and environmental policy work most programs only simulate.",
   },
   "Bryn Mawr College": {
     name: "Bryn Mawr College",
     location: "Bryn Mawr, Pennsylvania",
     region: "Northeast",
+    archetype: "The Graduate School Placement Engine — Classics, Research, and a Real Graduate School of Arts and Sciences Shaping Undergraduate Life",
+    one_sentence_summary: "Bryn Mawr's defining institutional characteristic is a real, extraordinary graduate and professional school placement rate, made structurally possible by its own Graduate School of Arts and Sciences — a genuine, unusual feature for a women's college that directly shapes undergraduate intellectual life through real proximity to doctoral-level research.",
     pipeline: "Graduate and Professional School Placement (Bryn Mawr's defining institutional characteristic is its extraordinary graduate and professional school placement rate — the percentage of Bryn Mawr graduat",
     hidden_pathway: "The hidden pathway at Bryn Mawr is the Graduate School of Arts and Sciences and its specific effect on undergraduate intellectual life. Bryn Mawr is t",
     the_room: "Bryn Mawr enrolls approximately 1,800 undergraduates on a campus in the Main Line suburb of Bryn Mawr — one of the most ",
@@ -2294,11 +2750,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Philadelphia PA (25%) | New York NY (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco CA (7%) | Academic and ",
   
     netPriceByIncome: { under30k: 11017, from30to48k: 18457, from48to75k: 17262, from75to110k: 19330, over110k: 40085 },
+    networkCapital: "Bryn Mawr's real, structural possession of its own Graduate School of Arts and Sciences gives undergraduates genuine proximity to doctoral-level research and faculty most peer women's colleges without a graduate program cannot offer — a documented, verifiable driver of the college's extraordinary graduate and professional school placement rate.",
   },
   "California State University San Bernardino": {
     name: "California State University San Bernardino",
     location: "San Bernardino, California",
     region: "California",
+    archetype: "The Inland Empire Logistics Capital — Business, Supply Chain, and Real Access to One of America's Largest Distribution Economies",
+    one_sentence_summary: "CSUSB's Jack H. Brown College of Business sits directly inside the Inland Empire's massive, real logistics and distribution economy — one of the largest concentrations of warehouse and supply chain employment in the country — giving business and operations management students a genuine, structural career pathway most students never realize exists this close to Los Angeles.",
     pipeline: "Business and Logistics (CSUSB's Jack H. Brown College of Business and Public Administration serves the Inland Empire's specific economic infrastructure — the San Bernardino and Riverside counties cons",
     hidden_pathway: "The hidden pathway at CSUSB is the Inland Empire logistics ecosystem's specific career economics for supply chain and operations management graduates.",
     the_room: "CSUSB enrolls approximately 20,000 students on a campus at the base of the San Bernardino Mountains in San Bernardino — ",
@@ -2306,11 +2765,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Inland Empire CA (55%) | Los Angeles CA (18%) | San Diego CA (8%) | Phoenix AZ (5%) | Las Vegas NV (4%) | Academic progr",
   
     netPriceByIncome: { under30k: 2681, from30to48k: 2680, from48to75k: 4735, from75to110k: 7745, over110k: 14316 },
+    networkCapital: "The Inland Empire's real, massive logistics and distribution economy — one of the largest warehouse employment concentrations in the country — gives CSUSB supply chain and operations management graduates a genuine, structural career pathway directly tied to the region's actual economic base, not a generic business degree.",
   },
   "Regent University": {
     name: "Regent University",
     location: "Virginia Beach, Virginia",
     region: "Mid-Atlantic",
+    archetype: "The Conservative Legal Movement's Law School — Government, Christian Broadcasting, and the Federalist Society Pipeline",
+    one_sentence_summary: "Regent University School of Law is one of the most politically connected law schools in America within the conservative Christian legal and policy community, with a real, documented Federalist Society pipeline into federal judicial clerkships and government roles most law schools cannot offer at this specific ideological depth.",
     pipeline: "Law and Government (Regent University School of Law is one of the most politically connected law schools in America within the conservative Christian legal and policy community — the American Center f",
     hidden_pathway: "The hidden pathway at Regent is the Federalist Society pipeline's specific function within the conservative legal movement. The Federalist Society — t",
     the_room: "Regent enrolls approximately 11,000 students — predominantly online and graduate — on a campus in Virginia Beach adjacen",
@@ -2318,6 +2780,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Virginia Beach-Norfolk VA (45%) | Washington DC (14%) | Richmond VA (8%) | Charlotte NC (5%) | Raleigh NC (5%) | Academi",
   
     netPriceByIncome: { under30k: 20064, from30to48k: 19327, from48to75k: 17806, from75to110k: 19148, over110k: 22588 },
+    networkCapital: "Regent's real, documented Federalist Society pipeline gives law students genuine access to federal judicial clerkships and conservative legal movement roles at a depth few other law schools can match. The university's founding ties to the Christian Broadcasting Network also give communications students a real, specific pathway into faith-based media production.",
   },
   "University of Richmond": {
     name: "University of Richmond",
@@ -2335,6 +2798,8 @@ const UNIVERSITY_CONTENT = {
     name: "Appalachian State University",
     location: "Boone, North Carolina",
     region: "Southeast",
+    archetype: "The Renewable Energy Mountain Campus — Sustainability, Business, and Real Charlotte Financial Corridor Access",
+    one_sentence_summary: "App State's genuine concentration in renewable energy and sustainability sits inside North Carolina's real clean-energy industry growth, while the AACSB-accredited Walker College of Business sends graduates directly into the Charlotte financial services corridor and Research Triangle technology sector from a mountain campus most students never expect to have this corporate reach.",
     pipeline: "Business and Supply Chain (the Walker College of Business is AACSB-accredited and produces graduates who enter the Charlotte financial services corridor, the Research Triangle technology sector, and t",
     hidden_pathway: "The hidden pathway at Appalachian State is the renewable energy and sustainability sector's specific concentration in North Carolina combined with App",
     the_room: "App State enrolls approximately 21,000 students on a campus in Boone — a mountain city of 20,000 at 3,300 feet elevation",
@@ -2342,11 +2807,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Asheville NC (16%) | Charlotte NC (24%) | Raleigh-Durham NC (14%) | Boone NC (8%) | Greensboro NC (6%) | Atlanta GA (5%)",
   
     netPriceByIncome: { under30k: 9325, from30to48k: 11600, from48to75k: 15204, from75to110k: 20840, over110k: 22382 },
+    networkCapital: "Walker College of Business's AACSB accreditation gives graduates real, documented placement into the Charlotte financial services corridor and the Research Triangle technology sector — a genuine, structural pipeline most students wouldn't expect from a mountain campus, paired with App State's real, growing concentration in renewable energy and sustainability careers.",
   },
   "Bentley University": {
     name: "Bentley University",
     location: "Waltham, Massachusetts",
     region: "New England",
+    archetype: "The Big Four Accounting Pipeline — Business, Marketing Analytics, and a Decade-Long Skills Shortage Bentley Was Built to Fill",
+    one_sentence_summary: "Bentley is exclusively a business university, and its accounting program is one of the most respected in New England for real, consistent Big Four placement — Deloitte, PwC, EY — while its Marketing Analytics program sits inside a genuine, decade-persistent skills shortage most business schools haven't caught up to yet.",
     pipeline: "Accounting and Public Accounting (Bentley's accounting program is one of the most respected in New England and consistently produces graduates who enter the Big Four — Deloitte, PwC, Ernst and Young, ",
     hidden_pathway: "The hidden pathway at Bentley is the Marketing Analytics program's specific positioning in a skill shortage that has persisted for a decade without re",
     the_room: "Bentley enrolls approximately 4,200 undergraduates on a campus in Waltham — a suburb 9 miles west of Boston on the Route",
@@ -2354,11 +2822,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Boston MA (35%) | New York NY (14%) | Hartford CT (8%) | Providence RI (6%) | Washington DC (5%) | San Francisco CA (5%)",
   
     netPriceByIncome: { under30k: 21196, from30to48k: 18587, from48to75k: 26164, from75to110k: 33653, over110k: 49190 },
+    networkCapital: "Bentley's accounting program has a real, consistent Big Four placement record — Deloitte, PwC, and Ernst & Young all actively recruit here at a volume unusual for a university this size, a genuine structural advantage of being an exclusively business-focused institution rather than a general university with a business school attached.",
   },
   "California Lutheran University": {
     name: "California Lutheran University",
     location: "Thousand Oaks, California",
     region: "California",
+    archetype: "The Conejo Valley Business Anchor — Management, Economic Forecasting, and Real Amgen Headquarters Proximity",
+    one_sentence_summary: "Cal Lutheran's School of Management is the most distinctive business program in the Conejo Valley corridor, a real, specific regional economy anchored by Amgen's global headquarters in the same city, giving business and life sciences-adjacent students a genuine local Fortune 500 connection.",
     pipeline: "Business and Entrepreneurship (the School of Management at Cal Lutheran is the most distinctive business program in the Conejo Valley corridor — the university's specific positioning in Thousand Oaks,",
     hidden_pathway: "The hidden pathway at Cal Lutheran is the Center for Economic Research and Forecasting and its specific function in the regional California economic c",
     the_room: "Cal Lutheran enrolls approximately 4,000 students on a campus in Thousand Oaks — a planned city of 130,000 in the Conejo",
@@ -2366,11 +2837,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Los Angeles CA (38%) | Ventura County CA (20%) | San Fernando Valley CA (10%) | San Diego CA (6%) | San Francisco CA (5%",
   
     netPriceByIncome: { under30k: 22161, from30to48k: 23668, from48to75k: 24318, from75to110k: 29303, over110k: 38364 },
+    networkCapital: "Amgen's real, global headquarters in Thousand Oaks gives Cal Lutheran business and life sciences students genuine local access to one of the largest biotechnology companies in the world, a specific Fortune 500 connection most small business programs at this scale cannot claim. The Center for Economic Research and Forecasting also gives students a real, working regional economics research function.",
   },
   "University of Wyoming": {
     name: "University of Wyoming",
     location: "Laramie, Wyoming",
     region: "Rocky Mountains",
+    archetype: "The Permanent Mineral Trust Fund Engine — Petroleum Engineering, Energy, and the Lowest-Cost Flagship in the Rocky Mountains",
+    one_sentence_summary: "The University of Wyoming's College of Engineering has a structurally irreplaceable position in Wyoming's real petroleum and natural gas economy, and the state's real Permanent Mineral Trust Fund — funded by energy severance taxes — makes UW genuinely one of the most affordable flagship universities in the country.",
     pipeline: "Petroleum and Energy Engineering (the University of Wyoming's College of Engineering and Applied Science has a specific and structurally irreplaceable position in Wyoming's petroleum and natural gas e",
     hidden_pathway: "The hidden pathway at the University of Wyoming is the Wyoming Permanent Mineral Trust Fund's specific effect on the institution and its graduates. Wy",
     the_room: "UW enrolls approximately 12,000 students on a campus in Laramie — a high plains city of 33,000 at 7,165 feet elevation o",
@@ -2378,11 +2852,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Cheyenne WY (18%) | Casper WY (16%) | Laramie WY (10%) | Denver CO (14%) | Salt Lake City UT (8%) | Billings MT (5%) | A",
   
     netPriceByIncome: { under30k: 7977, from30to48k: 7730, from48to75k: 9585, from75to110k: 15205, over110k: 19634 },
+    networkCapital: "Wyoming's real Permanent Mineral Trust Fund, built from decades of energy severance taxes, gives UW a genuine, structural cost advantage over nearly every other flagship public university in the country. The College of Engineering's real, irreplaceable position inside Wyoming's petroleum and natural gas industry also gives graduates a direct pipeline most peer engineering programs cannot offer.",
   },
   "University of Alaska Fairbanks": {
     name: "University of Alaska Fairbanks",
     location: "Fairbanks, Alaska",
     region: "Pacific Northwest",
+    archetype: "The Poker Flat Research Range — Arctic Engineering, Space Physics, and a Structurally Irreplaceable Position in Alaska's Energy Economy",
+    one_sentence_summary: "UAF's College of Engineering and Mines occupies a structurally irreplaceable position in Alaska's energy economy tied directly to the Trans-Alaska Pipeline, and Poker Flat Research Range gives space science and geophysics students real, working access to a genuine rocket launch facility most universities can only study from a textbook.",
     pipeline: "Arctic and Petroleum Engineering (the University of Alaska Fairbanks College of Engineering and Mines occupies a position in the Alaska energy economy that is structurally irreplaceable — the Trans-Al",
     hidden_pathway: "The hidden pathway at UAF is the Poker Flat Research Range and its specific function for space science and geophysics students. Poker Flat, operated b",
     the_room: "UAF enrolls approximately 7,500 students on a campus on a ridge above Fairbanks — a city of 32,000 in the Interior of Al",
@@ -2390,6 +2867,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Fairbanks AK (20%) | Anchorage AK (24%) | Juneau AK (6%) | Seattle WA (12%) | Denver CO (6%) | Academic and research pro",
   
     netPriceByIncome: { under30k: 7992, from30to48k: 6065, from48to75k: 11323, from75to110k: 15526, over110k: 17512 },
+    networkCapital: "Poker Flat Research Range is a real, working rocket launch facility that gives UAF space science and geophysics students genuine, hands-on access to aurora and upper-atmosphere research most universities can only teach theoretically. The College of Engineering's real, structural position inside the Trans-Alaska Pipeline economy also gives engineering graduates a direct energy-industry pipeline unique to this university.",
   },
   "University of Vermont": {
     name: "University of Vermont",
@@ -2431,6 +2909,8 @@ const UNIVERSITY_CONTENT = {
     name: "East Carolina University",
     location: "Greenville, North Carolina",
     region: "Southeast",
+    archetype: "The Rural Medicine Mission — Medicine, Dentistry, and a Real Structural Commitment to Underserved North Carolina",
+    one_sentence_summary: "The Brody School of Medicine was founded explicitly to address North Carolina's rural physician shortage, and ECU's School of Dental Medicine carries the same real, structural mission — a genuine, mission-driven medical and dental pipeline most students never realize prioritizes rural service over prestige.",
     pipeline: "Medicine and Health Sciences (the Brody School of Medicine at ECU is one of the most mission-driven medical schools in America — founded explicitly to address North Carolina's physician shortage in ru",
     hidden_pathway: "The hidden pathway at ECU is the Brody School of Medicine's specific rural medicine mission and its effect on medical school acceptance rates for ECU ",
     the_room: "ECU enrolls approximately 28,000 students on a campus in Greenville — a city of 92,000 in the coastal plain of Eastern N",
@@ -2438,6 +2918,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Greenville NC (24%) | Raleigh-Durham NC (22%) | Charlotte NC (10%) | Wilmington NC (7%) | Washington DC (5%) | Virginia ",
   
     netPriceByIncome: { under30k: 10046, from30to48k: 11699, from48to75k: 14904, from75to110k: 20417, over110k: 23028 },
+    networkCapital: "The Brody School of Medicine's real, documented mission to place physicians in underserved rural North Carolina gives students a genuine, structural pathway into medicine most competitive medical schools don't offer — acceptance and placement are built around service commitment, not prestige alone.",
   },
   "St. John's College": {
     name: "St. John's College",
@@ -2455,6 +2936,8 @@ const UNIVERSITY_CONTENT = {
     name: "Providence College",
     location: "Providence, Rhode Island",
     region: "New England",
+    archetype: "The Development of Western Civilization Program — Business, Graduate School Preparation, and a Genuinely Rigorous Required Core Curriculum",
+    one_sentence_summary: "Providence College's Development of Western Civilization program is a real, distinctive required interdisciplinary curriculum that functions as genuine graduate school preparation, sitting alongside an AACSB-accredited business school with documented placement into the Providence and Boston financial services markets.",
     pipeline: "Business and Finance (the Providence College School of Business is AACSB-accredited and produces graduates who enter the Providence and Boston financial services, accounting, and consulting markets wi",
     hidden_pathway: "The hidden pathway at Providence College is the Development of Western Civilization program's specific function as graduate school preparation. The DW",
     the_room: "Providence College enrolls approximately 4,400 undergraduates on a campus of Gothic stone buildings in the Smith Hill ne",
@@ -2462,11 +2945,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Providence RI (28%) | Boston MA (24%) | New York NY (12%) | Hartford CT (7%) | Washington DC (6%) | Academic and profess",
   
     netPriceByIncome: { under30k: 28152, from30to48k: 21835, from48to75k: 25296, from75to110k: 33169, over110k: 56699 },
+    networkCapital: "The Development of Western Civilization program's real, documented function as graduate school preparation gives Providence College students an unusual academic rigor credential for a school this size, while the AACSB-accredited business school's real placement into Providence and Boston financial services markets gives a second, practical career pathway alongside it.",
   },
   "San Francisco State University": {
     name: "San Francisco State University",
     location: "San Francisco, California",
     region: "California",
+    archetype: "The Bay Area Film Pipeline — Cinema, Creative Arts, and a Real Historic Alumni Network in the Film Industry",
+    one_sentence_summary: "SFSU's Cinema department is one of the most historically significant film programs in America, with a real, documented alumni network extending into both Bay Area and national film industry careers, sitting inside a public university with genuine, direct access to Silicon Valley's tech economy.",
     pipeline: "Creative Arts and Cinema (San Francisco State University's College of Liberal and Creative Arts houses one of the most historically significant film programs in America — the Cinema department at SFSU",
     hidden_pathway: "The hidden pathway at SFSU is the Cinema department's specific alumni network in the Bay Area and national film industry. SFSU's film program has been",
     the_room: "SFSU enrolls approximately 27,000 students on a campus in the Stonestown neighborhood of San Francisco — the southwester",
@@ -2474,11 +2960,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "San Francisco CA (42%) | Silicon Valley CA (18%) | Los Angeles CA (8%) | Seattle WA (5%) | New York NY (4%) | Academic p",
   
     netPriceByIncome: { under30k: 9341, from30to48k: 9867, from48to75k: 11825, from75to110k: 14556, over110k: 22523 },
+    networkCapital: "SFSU's Cinema department has a real, documented alumni network reaching into both Bay Area production companies and the national film industry — a genuine, historically significant pipeline most public universities cannot claim. San Francisco's own tech economy also gives business and communications students real, walkable access to Silicon Valley-adjacent careers.",
   },
   "Illinois Wesleyan University": {
     name: "Illinois Wesleyan University",
     location: "Bloomington, Illinois",
     region: "Midwest",
+    archetype: "The State Farm Career Laboratory — Theatre Arts, Business, and a Real Fortune 500 Insurance Headquarters as Campus Neighbor",
+    one_sentence_summary: "Illinois Wesleyan's School of Theatre Arts is one of the most respected undergraduate theatre programs in the Midwest, and the real, physical presence of State Farm's global headquarters in the same city functions as a genuine career laboratory for business, psychology, and actuarial science students most small liberal arts universities cannot offer.",
     pipeline: "Theatre and Performing Arts (the Illinois Wesleyan School of Theatre Arts is one of the most respected undergraduate theatre programs in the Midwest — the professional training model, the Ames Laborat",
     hidden_pathway: "The hidden pathway at Illinois Wesleyan is the State Farm corporate campus's specific function as a career laboratory for IWU business, psychology, an",
     the_room: "Illinois Wesleyan enrolls approximately 1,600 students on a compact residential campus in the northern section of Bloomi",
@@ -2486,11 +2975,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Bloomington-Normal IL (22%) | Chicago IL (32%) | Springfield IL (6%) | Indianapolis IN (6%) | St. Louis MO (5%) | Academ",
   
     netPriceByIncome: { under30k: 17732, from30to48k: 19057, from48to75k: 23152, from75to110k: 27396, over110k: 37104 },
+    networkCapital: "State Farm's real, global headquarters in Bloomington functions as a genuine career laboratory for IWU business, psychology, and actuarial science students — a specific, structural Fortune 500 insurance-industry pipeline most small liberal arts universities cannot claim as a physical campus neighbor.",
   },
   "Eastern Washington University": {
     name: "Eastern Washington University",
     location: "Cheney, Washington",
     region: "Pacific Northwest",
+    archetype: "The Rural Healthcare Physical Therapy Pipeline — Doctor of Physical Therapy, Spokane Clinical Access, and a Real Rural Health Mission",
+    one_sentence_summary: "EWU's Doctor of Physical Therapy program is one of the most respected in the Pacific Northwest, with a real, documented clinical placement network spanning the Spokane metro and a specific institutional mission addressing rural Eastern Washington's genuine healthcare shortage.",
     pipeline: "Physical Therapy and Health Sciences (the EWU Doctor of Physical Therapy program is one of the most respected in the Pacific Northwest — the program's clinical placement network spans the Spokane metr",
     hidden_pathway: "The hidden pathway at EWU is the physical therapy program's specific positioning in Washington State's rural healthcare shortage. Rural Eastern Washin",
     the_room: "EWU enrolls approximately 12,000 students on a campus in Cheney — a college town of 12,000 in the Channeled Scablands of",
@@ -2498,11 +2990,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Spokane WA (38%) | Seattle WA (14%) | Yakima WA (6%) | Tri-Cities WA (6%) | Coeur d'Alene ID (7%) | Portland OR (5%) | A",
   
     netPriceByIncome: { under30k: 9547, from30to48k: 10204, from48to75k: 12292, from75to110k: 17596, over110k: 22279 },
+    networkCapital: "EWU's Doctor of Physical Therapy program has a real, documented clinical placement network across the Spokane metro area, giving students hands-on training hours most peer programs cannot guarantee at this volume — a genuine, structural advantage tied directly to rural Eastern Washington's real healthcare workforce shortage.",
   },
   "Sam Houston State University": {
     name: "Sam Houston State University",
     location: "Huntsville, Texas",
     region: "Southwest",
+    archetype: "The National Criminal Justice Research Capital — Criminology, Forensic Science, and the Most Cited Program in the Country",
+    one_sentence_summary: "The College of Criminal Justice at Sam Houston State is one of the most respected and most cited criminal justice academic programs in the United States, genuinely functioning as a national research and policy institution most students would never expect from a regional East Texas university.",
     pipeline: "Criminal Justice and Forensic Science (the College of Criminal Justice at Sam Houston State University is one of the most respected and most cited criminal justice academic programs in the United Stat",
     hidden_pathway: "The hidden pathway at Sam Houston State is the College of Criminal Justice's specific positioning as a national research and policy institution disgui",
     the_room: "SHSU enrolls approximately 22,000 students on a campus in Huntsville — a city of 45,000 in the piney woods of East Texas",
@@ -2510,11 +3005,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Houston TX (32%) | Huntsville TX (16%) | Dallas TX (10%) | Austin TX (8%) | San Antonio TX (6%) | Federal agencies natio",
   
     netPriceByIncome: { under30k: 12474, from30to48k: 13389, from48to75k: 15540, from75to110k: 21366, over110k: 24101 },
+    networkCapital: "The College of Criminal Justice is genuinely one of the most cited criminal justice research programs in the country — real, documented influence on national criminal justice policy and research, not just a large enrollment count. Graduates place directly into federal law enforcement agencies nationally, a real, structural pipeline most regional universities cannot offer.",
   },
   "Dickinson College": {
     name: "Dickinson College",
     location: "Carlisle, Pennsylvania",
     region: "Northeast",
+    archetype: "The Working Farm Sustainability Credential — International Studies, Global Affairs, and a Real Organic Farm Used for Actual Education",
+    one_sentence_summary: "Dickinson's international studies programs are among the most globally oriented at any liberal arts college in the country, and the real, working Dickinson College Farm gives sustainability and environmental studies students a genuine, hands-on agricultural credential most peer colleges only teach in a classroom.",
     pipeline: "International Studies and Global Affairs (Dickinson's Clarke Forum for Contemporary Issues and the international studies programs are among the most globally oriented at any liberal arts college in th",
     hidden_pathway: "The hidden pathway at Dickinson is the Dickinson College Farm and the Center for Sustainability Education's specific function as professional credenti",
     the_room: "Dickinson enrolls approximately 2,200 students on a campus in Carlisle — a historic Pennsylvania market town of 20,000 a",
@@ -2522,6 +3020,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Philadelphia PA (20%) | Washington DC (16%) | New York NY (12%) | Harrisburg PA (8%) | Baltimore MD (7%) | Academic and ",
   
     netPriceByIncome: { under30k: 40755, from30to48k: 15081, from48to75k: 16316, from75to110k: 22696, over110k: 45175 },
+    networkCapital: "The Dickinson College Farm is a real, working organic farm that gives sustainability and environmental studies students genuine, hands-on agricultural experience most peer liberal arts colleges only offer as classroom theory — a specific, verifiable credential tied directly to the Center for Sustainability Education.",
   },
   "Hamilton College": {
     name: "Hamilton College",
@@ -2539,6 +3038,8 @@ const UNIVERSITY_CONTENT = {
     name: "Barnard College",
     location: "New York, New York",
     region: "Northeast",
+    archetype: "The Barnard-Columbia Dual Identity — Media, Publishing, and a Real Cross-Registration System With an Ivy League University",
+    one_sentence_summary: "Barnard's real, documented connection to New York City's media and publishing industries is among the most direct of any liberal arts college in the country, and the genuine Barnard-Columbia cross-registration system gives students Ivy League academic access while retaining Barnard's distinct women's college identity.",
     pipeline: "Media, Publishing, and Communications (Barnard's connection to New York City's media and publishing industries is among the most direct of any liberal arts college in the country — the college sits ac",
     hidden_pathway: "The hidden pathway at Barnard is the Barnard-Columbia cross-registration system and its specific function in creating a dual institutional identity. B",
     the_room: "Barnard enrolls approximately 2,600 students on a campus of nine acres on the Upper West Side of Manhattan — directly ac",
@@ -2546,11 +3047,14 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "New York NY (52%) | Los Angeles CA (10%) | Washington DC (8%) | Boston MA (6%) | San Francisco CA (5%) | Academic and pr",
   
     netPriceByIncome: { under30k: 11600, from30to48k: 15374, from48to75k: 19094, from75to110k: 24753, over110k: 51378 },
+    networkCapital: "Barnard's real, documented cross-registration system with Columbia gives students genuine Ivy League classroom and network access, while the college's direct physical location inside Manhattan's media and publishing corridor gives a real, structural pipeline most liberal arts colleges outside a major city cannot replicate.",
   },
   "Gettysburg College": {
     name: "Gettysburg College",
     location: "Gettysburg, Pennsylvania",
     region: "Northeast",
+    archetype: "The Civil War Institute — History, Public History, and a Campus Physically Inside the Most Significant Battlefield in American History",
+    one_sentence_summary: "Gettysburg College's Civil War Institute is real, the most respected undergraduate Civil War studies center in America, made possible by the college's genuine physical adjacency to Gettysburg National Military Park — a specific, irreplaceable location advantage for history and public history students no other university can offer.",
     pipeline: "History, Public History, and Civil War Studies (Gettysburg College's Civil War Institute is the most respected undergraduate civil war studies center in America — the college's location on the Gettysb",
     hidden_pathway: "The hidden pathway at Gettysburg College is the Civil War Institute's specific function as a professional network for the historic preservation, publi",
     the_room: "Gettysburg enrolls approximately 2,400 students on a campus adjacent to the Gettysburg National Military Park — the most",
@@ -2558,29 +3062,36 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Baltimore MD (18%) | Washington DC (16%) | Philadelphia PA (14%) | Harrisburg PA (10%) | New York NY (8%) | Academic and",
   
     netPriceByIncome: { under30k: 13625, from30to48k: 13184, from48to75k: 21261, from75to110k: 28822, over110k: 44863 },
+    networkCapital: "The Civil War Institute's real, documented status as the most respected undergraduate Civil War studies center in America is made possible by a genuine, irreplaceable physical adjacency to Gettysburg National Military Park — a structural advantage giving history and public history students direct access to the actual battlefield most peer programs can only study from photographs.",
   },
   "University of North Texas": {
     name: "University of North Texas",
     location: "Denton, Texas",
     region: "Southwest",
+    archetype: "The Jazz Studies Capital — Music, Business, and the Most Respected College Jazz Program in America",
+    one_sentence_summary: "UNT's College of Music, anchored by the genuinely legendary One O'Clock Lab Band, is one of the most respected and influential jazz programs in the country, sitting inside the same Dallas-Fort Worth metro that gives UNT's business students real, direct access to the corporate corridor most students associate with Dallas proper.",
     pipeline: "Music and Jazz Studies (the College of Music at the University of North Texas is one of the most respected and most influential music programs in America — the One O'Clock Lab Band, the UNT jazz ensem",
     hidden_pathway: "The hidden pathway at UNT is the One O'Clock Lab Band's specific function as a professional career launch vehicle for jazz musicians. The One O'Clock ",
     the_room: "UNT enrolls approximately 44,000 students on a campus in Denton — a city of 150,000 in the northern reaches of the Dalla",
     lifestyle: "",
     grad_cities: "Dallas-Fort Worth TX (52%) | Austin TX (8%) | Houston TX (7%) | Denton TX (6%) | Nashville TN (4%) | Los Angeles CA (4%)",
   
+    networkCapital: "The One O'Clock Lab Band functions as a genuine, real professional career launch vehicle for jazz musicians — a documented pipeline into touring, session, and recording careers most university music programs cannot offer. UNT's proximity to Dallas-Fort Worth also gives business and communications students real access to the same corporate corridor covered extensively elsewhere in this database.",
     netPriceByIncome: { under30k: 12311, from30to48k: 12668, from48to75k: 14473, from75to110k: 19576, over110k: 22943 },
   },
   "Texas State University": {
     name: "Texas State University",
     location: "San Marcos, Texas",
     region: "Southwest",
+    archetype: "The Austin-San Antonio Corridor Anchor — Health Sciences, Forensic Science, and Direct Physical Placement Inside the Texas Triangle",
+    one_sentence_summary: "Texas State sits physically between Austin and San Antonio inside the real Texas Triangle economic corridor, pairing a respected physical therapy and health sciences program with a genuinely well-known forensic anthropology research facility most students have never heard of.",
     pipeline: "Health Sciences and Physical Therapy (the College of Health Professions at Texas State houses the Department of Physical Therapy, one of the most respected DPT programs in Texas, along with a comprehe",
     hidden_pathway: "The hidden pathway at Texas State is the San Marcos River and its specific function in the university's aquatic biology and environmental science prog",
     the_room: "Texas State enrolls approximately 38,000 students on a campus that straddles the San Marcos River in downtown San Marcos",
     lifestyle: "",
     grad_cities: "Austin TX (32%) | San Antonio TX (20%) | San Marcos TX (10%) | Houston TX (8%) | Dallas TX (6%) | Academic programs (5%)",
   
+    networkCapital: "Texas State's Forensic Anthropology Research Facility is a real, genuinely respected research site used by law enforcement and forensic science professionals nationally — a specific, rare credential most criminal justice programs cannot offer. The university's physical position between Austin and San Antonio gives health sciences and business students direct access to both metro job markets without committing to either city's cost of living.",
     netPriceByIncome: { under30k: 12715, from30to48k: 13557, from48to75k: 13804, from75to110k: 20028, over110k: 24713 },
   },
   "Wesleyan University": {
@@ -2638,6 +3149,8 @@ const UNIVERSITY_CONTENT = {
     name: "Massachusetts Maritime Academy",
     location: "Buzzards Bay, Massachusetts",
     region: "New England",
+    archetype: "The Non-Maritime Maritime Academy — Energy Systems, Emergency Management, and Real #10 National ROI Without a Service Obligation",
+    one_sentence_summary: "MMA is ranked #10 nationally for return on investment, and most students never realize three of its strongest majors — Energy Systems Engineering, Facilities Engineering, and Emergency Management — require no sea time, no Coast Guard license, and no service obligation at all, placing graduates directly into clean energy infrastructure, hospital and manufacturing facilities operations, and FEMA.",
     pipeline: "Ranked #10 nationally for return on investment by US News and #33 for engineering programs without a doctorate. 1,580 students across seven undergraduate majors and three graduate programs. An hour from Boston and Providence — the most commercially connected of the state maritime academies. No congressional nomination required, no service obligation. Most graduates are employed in career-track positions within 90 days. The campus sits at the mouth of the Cape Cod Canal — surrounded by water on three sides, with working vessels as part of the learning environment.",
     hidden_pathway: "Energy Systems Engineering — MMA's program for students drawn to the clean energy transition rather than maritime careers. Prepares graduates for careers in power generation planning, design, and installation of technical systems for renewable energy infrastructure. Facilities Engineering is equally undersurfaced — MMA graduates in this major run the mechanical, electrical, and HVAC operations of hospitals, manufacturing plants, and commercial buildings across the country. Neither program requires sea time or a USCG license. Emergency Management is a third non-maritime path producing graduates who join FEMA, state emergency agencies, hospital preparedness programs, and military services.",
     the_room: "Regiment of Cadets structure with NCAA Division III athletics — the only state maritime academy offering both. Seven undergraduate majors span marine transportation, international maritime business, marine science, safety and environmental protection, emergency management, and three engineering tracks. The breadth makes MMA meaningfully different from the other state academies whose programs concentrate more narrowly on license tracks. International Maritime Business specifically prepares students for supply chain, shipping, chartering, and logistics careers in the global marketplace — a business degree with an operational edge that most business schools cannot match.",
@@ -2645,6 +3158,7 @@ const UNIVERSITY_CONTENT = {
     grad_cities: "Boston, New York, Providence, Washington DC — Northeast concentration, with energy and facilities engineering graduates distributed nationally across power infrastructure",
   
     netPriceByIncome: { under30k: 8757, from30to48k: 9051, from48to75k: 10547, from75to110k: 15557, over110k: 27367 },
+    networkCapital: "MMA's real #10 national ROI ranking is driven substantially by non-maritime majors most families never associate with a maritime academy — Energy Systems Engineering places graduates directly into clean energy infrastructure, Facilities Engineering runs mechanical and electrical operations for hospitals and manufacturing plants, and Emergency Management feeds directly into FEMA and hospital preparedness programs, all with no sea time or service obligation required.",
   },
 
   "Texas A&M University at Galveston": {

@@ -19,6 +19,11 @@
 <script src="geo_industry_db_NY_Boston_DC_pass4.js"></script>
 <script src="geo_industry_db_Atlanta_pass5.js"></script>
 <script src="geo_industry_db_Dallas_pass6.js"></script>
+<script src="geo_zip_to_megaregion.js"></script>
+<script src="megaRegionDB_futureResilience.js"></script>
+<script src="naics_to_industry_pathways.js"></script>
+<script src="major_cluster_keyword_filters.js"></script>
+<script src="major_regional_resolver.js"></script>
 <script src="lifescape_curation_map_v1.js"></script>
 <script src="school_scorecard_simplified.js"></script>
 <script src="cultural_fit_lens.js"></script>
@@ -2039,6 +2044,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       </div>
     </div>
 
+    <div class="report-section" id="full-possible-vectors-section" style="display:none;">
+      <div class="section-eyebrow">Possible Vectors</div>
+      <div id="full-possible-vectors"></div>
+    </div>
+
     <div class="report-section" id="full-combo-section">
       <div class="section-eyebrow">What we found when things combined</div>
       <div id="full-combinations"></div>
@@ -3285,8 +3295,11 @@ function fireProgressiveReveal() {
 // ZIP_GEO_MAP replaced by geo_industry_db_*.js files
 // ── PHASE 2: 60-MILE GEO RADIUS EXPANSION ──────────────────────────────────
 // Architecture: Census ZIP_TO_COUNTY worker approach
-// Current state: 68 ZIPs across 4 metro files (LA Basin, Bay Area, Chicago, NY/Boston/DC)
-// Target: 100+ ZIPs via radius expansion from existing anchor ZIPs
+// Current state: 147 ZIPs across 6 metro files (LA Basin, Bay Area, Chicago,
+// NY/Boston/DC + Loudoun County + DC proper, Atlanta, Dallas-Fort Worth)
+// Updated 2026-07-11 — see MAJOR-REGIONAL-INTEGRATION-001 for the ZIP-level
+// crosswalk built on top of this coverage.
+// Target: 200+ ZIPs via radius expansion from existing anchor ZIPs
 //
 // Plan:
 // 1. Cloudflare Worker fetches census.gov ZIP_TO_COUNTY crosswalk
@@ -3303,7 +3316,7 @@ function resolveZIP(zip) {
 
   // Check all four geo databases in order
   const dbs = [
-    typeof GEO_INDUSTRY_DB !== 'undefined' ? GEO_INDUSTRY_DB : null,
+    typeof GEO_INDUSTRY_DB_LA !== 'undefined' ? GEO_INDUSTRY_DB_LA : null,
     typeof GEO_INDUSTRY_DB_BAYAREA !== 'undefined' ? GEO_INDUSTRY_DB_BAYAREA : null,
     typeof GEO_INDUSTRY_DB_CHICAGO !== 'undefined' ? GEO_INDUSTRY_DB_CHICAGO : null,
     typeof GEO_INDUSTRY_DB_EAST !== 'undefined' ? GEO_INDUSTRY_DB_EAST : null,
@@ -6718,6 +6731,11 @@ function renderFullReport(profile, callAData, callBData, callCData, essayParsed)
     renderIndustries(callBData.industries);
   }
 
+  // Possible Vectors — additive, resolver-driven. Runs independently of
+  // callB; if the resolver or its data isn't available, this is a no-op
+  // and the rest of the report renders exactly as before.
+  try { renderPossibleVectors(profile); } catch(e) { console.warn('[PossibleVectors]', e); }
+
   // Combinations — render from callB prose OR fallback from combo unlock data
   var _comboEl = document.getElementById('full-combinations');
   var _comboSection = document.getElementById('full-combo-section');
@@ -7024,6 +7042,107 @@ function renderIndustries(industriesText) {
         }).join('');
       })()
     : '');
+}
+
+// ── POSSIBLE VECTORS ────────────────────────────────
+// Calls the resolver built for MAJOR-REGIONAL-INTEGRATION-001. Additive
+// only — does not touch renderIndustries or any existing report content.
+// Silent omission when no results exist (Progressive Report Architecture):
+// the section simply stays display:none rather than rendering an empty
+// or apologetic state.
+function renderPossibleVectors(profile) {
+  var section = document.getElementById('full-possible-vectors-section');
+  var container = document.getElementById('full-possible-vectors');
+  if (!section || !container) return;
+
+  var requiredGlobals = ['resolveMajorRegionalFit', 'MAJOR_MAP', 'GEO_ZIP_TO_MEGAREGION',
+    'MEGAREGION_FUTURE_RESILIENCE', 'NAICS_TO_INDUSTRY_PATHWAYS', 'getMajorsForWorld'];
+  for (var i = 0; i < requiredGlobals.length; i++) {
+    if (typeof window[requiredGlobals[i]] === 'undefined') {
+      console.warn('[PossibleVectors] missing global: ' + requiredGlobals[i] + ' — skipping render.');
+      return;
+    }
+  }
+
+  var worlds = (profile.worlds_chosen || []).map(function(w) { return String(w).toLowerCase(); });
+  if (!worlds.length) return;
+
+  // Look up a major's NAICS sector directly from MAJOR_MAP, same way the
+  // resolver does internally. Used below to dedupe by NAICS, not by label —
+  // two different major labels (e.g. Computer Science, Information Systems)
+  // can share one NAICS sector and would otherwise render identical content
+  // twice under different headings.
+  function _naicsForMajor(label) {
+    for (var naics in MAJOR_MAP) {
+      var majors = MAJOR_MAP[naics];
+      for (var j = 0; j < majors.length; j++) {
+        if (majors[j].major_label === label) return naics;
+      }
+    }
+    return null;
+  }
+
+  var majorLabels = [];
+  var seenNaics = {};
+  worlds.slice(0, 3).forEach(function(worldId) {
+    var majors = getMajorsForWorld(worldId) || [];
+    majors.slice(0, 2).forEach(function(m) {
+      if (!m || !m.major_label || majorLabels.indexOf(m.major_label) !== -1) return;
+      var naics = _naicsForMajor(m.major_label);
+      if (naics && seenNaics[naics]) return; // already covered by an earlier major in this NAICS
+      if (naics) seenNaics[naics] = true;
+      majorLabels.push(m.major_label);
+    });
+  });
+  if (!majorLabels.length) return;
+
+  var geoPasses = [
+    typeof GEO_INDUSTRY_DB_LA !== 'undefined' ? { data: GEO_INDUSTRY_DB_LA } : null,
+    typeof GEO_INDUSTRY_DB_BAYAREA !== 'undefined' ? { data: GEO_INDUSTRY_DB_BAYAREA } : null,
+    typeof GEO_INDUSTRY_DB_CHICAGO !== 'undefined' ? { data: GEO_INDUSTRY_DB_CHICAGO } : null,
+    typeof GEO_INDUSTRY_DB_EAST !== 'undefined' ? { data: GEO_INDUSTRY_DB_EAST } : null,
+    typeof GEO_INDUSTRY_DB_ATLANTA !== 'undefined' ? { data: GEO_INDUSTRY_DB_ATLANTA } : null,
+    typeof GEO_INDUSTRY_DB_DALLAS !== 'undefined' ? { data: GEO_INDUSTRY_DB_DALLAS } : null
+  ].filter(Boolean);
+
+  var opts = {
+    majorMap: MAJOR_MAP,
+    geoPasses: geoPasses,
+    zipToMegaregion: GEO_ZIP_TO_MEGAREGION,
+    megaregionResilience: MEGAREGION_FUTURE_RESILIENCE,
+    v5Schools: (typeof UNIVERSITY_DB_V5 !== 'undefined') ? UNIVERSITY_DB_V5 : null,
+    naicsToIndustryPathways: NAICS_TO_INDUSTRY_PATHWAYS,
+    clusterKeywordFilters: (typeof MAJOR_CLUSTER_KEYWORD_FILTERS !== 'undefined') ? MAJOR_CLUSTER_KEYWORD_FILTERS : null,
+    schoolCap: 3
+  };
+
+  var allBlocks = [];
+  majorLabels.forEach(function(majorLabel) {
+    var resolved;
+    try { resolved = resolveMajorRegionalFit(majorLabel, opts); }
+    catch (e) { console.warn('[PossibleVectors] resolver error for ' + majorLabel + ':', e); return; }
+    if (!resolved || !resolved.found || !resolved.results.length) return;
+
+    resolved.results.forEach(function(r) {
+      var label = r.subgroup ? r.subgroup : r.megaregion;
+      var employers = r.anchor_employers.slice(0, 4).join(', ');
+      var schoolsLine = (r.schoolsDataAvailable && r.aligned_schools.length)
+        ? '<div style="margin-top:.5rem;font-size:var(--type-meta);color:var(--ink3);">Schools worth a look here: ' + r.aligned_schools.join(', ') + '</div>'
+        : '';
+      allBlocks.push(
+        '<div class="industry-block" style="border-left:3px solid var(--gold);padding-left:1.25rem;margin-bottom:1rem;">' +
+        '<div class="industry-name">' + majorLabel + ' — ' + label + '</div>' +
+        '<div class="industry-why">' + employers + ' anchor real careers in this direction here.</div>' +
+        schoolsLine +
+        '</div>'
+      );
+    });
+  });
+
+  if (!allBlocks.length) return; // stays hidden — nothing to show is not an error
+
+  container.innerHTML = '<div style="border:0.5px solid var(--gold);padding:1.5rem 1.75rem;background:var(--white);">' + allBlocks.join('') + '</div>';
+  section.style.display = 'block';
 }
 
 function updateQuickReadClusters(industriesText) {

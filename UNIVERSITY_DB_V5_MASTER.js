@@ -1,136 +1,34 @@
 /**
- * VECTOR University Intelligence Database
- * Schema: v5.0 — Full 14-Section Architecture + CC Transfer Pathway
- * Assembly: Sequential retrofit — one school per approval cycle
+ * VECTOR Lifescape — UNIVERSITY_DB_V5_MASTER (UPDATED)
+ * Generated 2026-07-12 — Track A batch complete.
  *
- * MASTER FILE — DO NOT EDIT DIRECTLY
- * Edit source files, then run: python3 assemble_master.py
+ * Base: 116 schools (original UNIVERSITY_DB_V5_MASTER.js, 2026-07-10)
+ * Added this session: 13 schools (Georgetown, UC Berkeley, Texas A&M, MIT,
+ *   Carnegie Mellon, University of Chicago, Duke, Northwestern, Virginia Tech,
+ *   NC State, Emory, Wake Forest, Pepperdine)
+ * Patched: comparativePositioning additions to 5 existing schools (UCLA, USC,
+ *   UNC Chapel Hill, University of Illinois Urbana-Champaign, Loyola Marymount)
  *
- * Schools complete: 116
- * Last assembled:  July 10, 2026
+ * New total: 129 schools
  *
- * School index:
- *    1. Arizona State University
- *    2. University of Washington
- *    3. University of Arizona
- *    4. University of Oregon
- *    5. Reed College
- *    6. Gonzaga University
- *    7. Indiana University Bloomington
- *    8. Iowa State University
- *    9. Oklahoma State University
- *    10. University of Kansas
- *    11. University of Houston
- *    12. The University of Texas at Dallas
- *    13. The University of Alabama
- *    14. Harvard University
- *    15. Brown University
- *    16. University of Illinois Urbana-Champaign
- *    17. Rutgers University
- *    18. University of Michigan
- *    19. University of South Carolina
- *    20. University of Georgia
- *    21. University of Florida
- *    22. University of Oklahoma
- *    23. Louisiana State University
- *    24. Auburn University
- *    25. Clemson University
- *    26. Vanderbilt University
- *    27. University of Virginia
- *    28. Tulane University
- *    29. University of Colorado Boulder
- *    30. Syracuse University
- *    31. University of Miami
- *    32. Williams College
- *    33. Pomona College
- *    34. Saint Mary's College of California
- *    35. University of San Diego
- *    36. Santa Clara University
- *    37. California State University Chico
- *    38. Elon University
- *    39. Drake University
- *    40. Creighton University
- *    41. Baylor University
- *    42. Southern Methodist University
- *    43. Villanova University
- *    44. University of Southern California
- *    45. Washington University in St. Louis
- *    46. Georgia Institute of Technology
- *    47. University of Denver
- *    48. University of Utah
- *    49. Weber State University
- *    50. Towson University
- *    51. The Ohio State University
- *    52. Michigan State University
- *    53. University of Wisconsin-Madison
- *    54. American University
- *    55. Belmont University
- *    56. Boston University
- *    57. Colorado State University
- *    58. Fordham University
- *    59. George Washington University
- *    60. Loyola Marymount University
- *    61. Marquette University
- *    62. University of Maryland, College Park
- *    63. Northeastern University
- *    64. New York University
- *    65. Penn State University
- *    66. Purdue University
- *    67. Texas Christian University
- *    68. University of North Carolina at Chapel Hill
- *    69. The University of Texas at Austin
- *    70. University of California-Los Angeles
- *    71. Boston College
- *    72. University of California-San Diego
- *    73. University of California-Santa Barbara
- *    74. University of California-Davis
- *    75. University of California-Irvine
- *    76. University of California-Riverside
- *    77. University of California-Santa Cruz
- *    78. Stanford University
- *    79. California Institute of Technology
- *    80. University of Iowa
- *    81. University of Missouri
- *    82. University of Arkansas
- *    83. University of Mississippi
- *    84. University of Nebraska-Lincoln
- *    85. University of Tennessee
- *    86. University of Vermont
- *    87. Florida State University
- *    88. University of Central Florida
- *    89. Georgia State University
- *    90. Temple University
- *    91. James Madison University
- *    92. University of Richmond
- *    93. Princeton University
- *    94. Yale University
- *    95. Columbia University
- *    96. Cornell University
- *    97. Dartmouth College
- *    98. University of Pennsylvania
- *    99. Amherst College
- *    100. Bowdoin College
- *    101. Middlebury College
- *    102. Wesleyan University
- *    103. Carleton College
- *    104. Grinnell College
- *    105. Vassar College
- *    106. Claremont McKenna College
- *    107. Harvey Mudd College
- *    108. Hamilton College
- *    109. Oberlin College
- *    110. Kenyon College
- *    111. Case Western Reserve University
- *    112. Lehigh University
- *    113. Drexel University
- *    114. Worcester Polytechnic Institute
- *    115. Rochester Institute of Technology
- *    116. Stevens Institute of Technology
+ * KNOWN ISSUES CARRIED FORWARD, NOT FIXED IN THIS PASS:
+ * - Vanderbilt University's jewishLife section uses malformed flat keys
+ *   (hillel_strength, jewish_enrollment, hillel_note) instead of the standard
+ *   nested object, and is missing honorsCollege entirely. Flagged, not touched.
+ * - ~103 of the original 116 schools still use the older, thinner schema
+ *   pattern (duplicated institutionIdentity fields inside institutionNarrative,
+ *   flat {strength,notes} networkCapital/economicEcosystem, no
+ *   competitiveMajorPressure section) rather than the fuller ASU/UCLA-style
+ *   standard used for all 13 new entries this session. Not retrofitted here —
+ *   out of scope for this batch.
+ * - industryPathways (20-key) to NAICS crosswalk and megaRegionExposure
+ *   (7-key) to the 11-megaregion framework remain unbuilt — see
+ *   MAJOR-REGIONAL-INTEGRATION-001 Section 7 for the open architecture
+ *   question this reopens.
  */
 
 const UNIVERSITY_DB_V5 = {
-
-"Arizona State University": {
+  "Arizona State University": {
     "institutionNarrative": {
       "name": "Arizona State University",
       "location": "Tempe, Arizona",
@@ -176,7 +74,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "ASU maintains one of America's strongest community college transfer ecosystems through the Maricopa County Community College District, creating seamless pathways into engineering, business, healthcare, computer science, and nearly every major."
       },
       "institutionIdentity": {
-      "commonName": "Arizona State University",
+        "commonName": "Arizona State University",
         "archetype": "Large Urban Research Innovation University"
       },
       "institutionalPersonality": "innovative, entrepreneurial, ambitious, collaborative, future-focused",
@@ -611,8 +509,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Barrett is widely regarded as the premier honors college in American public higher education. It provides small seminar-style classes, dedicated residential communities, priority registration, undergraduate research, national fellowship advising, honors thesis requirements, and a liberal arts experience embedded within one of the country's largest research universities. Barrett significantly alters the undergraduate experience and serves as one of ASU's defining competitive advantages."
     }
   },
-
-"University of Washington": {
+  "University of Washington": {
     "institutionNarrative": {
       "name": "University of Washington",
       "location": "Seattle, Washington",
@@ -1073,8 +970,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "UW's Interdisciplinary Honors Program provides small seminar-based coursework, priority access to faculty, research opportunities, and an academically intimate liberal arts experience within a major research university. Departmental Honors programs further allow high-achieving students to complete advanced research and honors theses within their majors."
     }
   },
-
-"University of Arizona": {
+  "University of Arizona": {
     "institutionNarrative": {
       "name": "University of Arizona",
       "location": "Tucson, Arizona",
@@ -1531,8 +1427,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The W.A. Franke Honors College provides an academically rigorous, small-college experience within the University of Arizona. Students benefit from honors seminars, dedicated advising, priority registration, undergraduate research, faculty mentorship, honors housing, national fellowship support, and interdisciplinary thesis opportunities. It significantly enhances the undergraduate experience, particularly for students pursuing STEM, medicine, business, and research careers."
     }
   },
-
-"University of Oregon": {
+  "University of Oregon": {
     "institutionNarrative": {
       "name": "University of Oregon",
       "location": "Eugene, Oregon",
@@ -1572,7 +1467,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Oregon maintains transfer agreements with Oregon's community college system."
       },
       "institutionIdentity": {
-      "commonName": "University of Oregon",
+        "commonName": "University of Oregon",
         "archetype": "Large Public Flagship, Nike-Adjacent Sports Business Anchor"
       },
       "institutionalPersonality": "laid-back, ambitious, Nike-adjacent, outdoorsy",
@@ -1778,8 +1673,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and priority registration within Oregon's larger flagship structure."
     }
   },
-
-"Reed College": {
+  "Reed College": {
     "institutionNarrative": {
       "name": "Reed College",
       "location": "Portland, Oregon",
@@ -2229,12 +2123,11 @@ const UNIVERSITY_DB_V5 = {
       "exists": false,
       "name": "",
       "strength": 0,
-      "notes": "Reed does not maintain a separate honors college because the entire institution functions as an honors-level academic experience. Every student participates in an interdisciplinary humanities sequence, completes an original senior thesis, and studies within small discussion-based classes emphasizing scholarship, writing, and independent inquiry."
-    ,
-      "wholeInstitutionRigor": true}
+      "notes": "Reed does not maintain a separate honors college because the entire institution functions as an honors-level academic experience. Every student participates in an interdisciplinary humanities sequence, completes an original senior thesis, and studies within small discussion-based classes emphasizing scholarship, writing, and independent inquiry.",
+      "wholeInstitutionRigor": true
+    }
   },
-
-"Gonzaga University": {
+  "Gonzaga University": {
     "institutionNarrative": {
       "name": "Gonzaga University",
       "location": "Spokane, Washington",
@@ -2691,8 +2584,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The Gonzaga Honors Program creates a liberal arts, seminar-based experience within the university through interdisciplinary coursework, close faculty mentorship, priority registration, undergraduate research, and a senior thesis. The program emphasizes critical thinking, ethics, writing, and leadership while allowing students to complete majors across business, engineering, sciences, and the humanities."
     }
   },
-
-"Indiana University Bloomington": {
+  "Indiana University Bloomington": {
     "institutionNarrative": {
       "name": "Indiana University Bloomington",
       "location": "Bloomington, Indiana",
@@ -3149,8 +3041,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The Hutton Honors College is one of the nation's premier honors programs at a public university. Students receive honors seminars, priority registration, dedicated advising, research funding, scholarships, international study support, and close faculty mentorship while retaining access to the full resources of Indiana University and schools such as Kelley, O'Neill, Jacobs, and Luddy."
     }
   },
-
-"Iowa State University": {
+  "Iowa State University": {
     "institutionNarrative": {
       "name": "Iowa State University",
       "location": "Ames, Iowa",
@@ -3607,8 +3498,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The University Honors Program provides honors seminars, faculty mentoring, undergraduate research, priority registration, international experiences, and interdisciplinary learning. Honors students benefit from smaller academic communities while maintaining access to Iowa State's extensive engineering, agriculture, design, and research ecosystem."
     }
   },
-
-"Oklahoma State University": {
+  "Oklahoma State University": {
     "institutionNarrative": {
       "name": "Oklahoma State University",
       "location": "Stillwater, Oklahoma",
@@ -4065,8 +3955,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The Honors College offers smaller seminar courses, priority enrollment, faculty mentorship, undergraduate research, honors housing, and interdisciplinary academic opportunities. Students combine the personalized honors experience with the extensive resources of a major land-grant research university."
     }
   },
-
-"University of Kansas": {
+  "University of Kansas": {
     "institutionNarrative": {
       "name": "University of Kansas",
       "location": "Lawrence, Kansas",
@@ -4523,8 +4412,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "KU's University Honors Program provides interdisciplinary seminars, faculty mentorship, undergraduate research, priority enrollment, global learning opportunities, and honors housing. Students gain the benefits of a close academic community while leveraging the resources of a comprehensive flagship research university."
     }
   },
-
-"University of Houston": {
+  "University of Houston": {
     "institutionNarrative": {
       "name": "University of Houston",
       "location": "Houston, Texas",
@@ -4981,8 +4869,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The Honors College is one of UH's signature academic assets. It offers interdisciplinary seminars, priority registration, undergraduate research, close faculty mentoring, prestigious scholarship advising, and specialized programs in medicine, law, public policy, entrepreneurship, and the humanities. The Honors College creates a small-college academic experience within one of the nation's largest urban research universities."
     }
   },
-
-"The University of Texas at Dallas": {
+  "The University of Texas at Dallas": {
     "institutionNarrative": {
       "name": "The University of Texas at Dallas",
       "location": "Richardson, Texas",
@@ -5439,8 +5326,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The Hobson Wildenthal Honors College is one of UTD's signature differentiators. It provides small interdisciplinary seminars, priority registration, faculty mentorship, undergraduate research, generous scholarship opportunities, and accelerated pathways into graduate study. Combined with UTD's STEM focus, it creates an elite academic experience within a rapidly ascending public research university."
     }
   },
-
-"The University of Alabama": {
+  "The University of Alabama": {
     "institutionNarrative": {
       "name": "The University of Alabama",
       "location": "Tuscaloosa, Alabama",
@@ -5897,8 +5783,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The Honors College is widely regarded as one of the premier public honors programs in the United States. Students benefit from small seminars, priority registration, undergraduate research, nationally competitive fellowships, specialized housing, close faculty mentorship, and programs such as Randall Research Scholars and Blount Scholars. For many high-achieving students, it delivers an honors experience comparable to far more selective institutions while paired with substantial merit scholarships."
     }
   },
-
-"Harvard University": {
+  "Harvard University": {
     "institutionNarrative": {
       "name": "Harvard University",
       "location": "Cambridge, Massachusetts",
@@ -6262,8 +6147,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "global elite concentration"
     }
   },
-
-"Brown University": {
+  "Brown University": {
     "institutionNarrative": {
       "name": "Brown University",
       "location": "Providence, Rhode Island",
@@ -6615,8 +6499,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "highly distributed global professionals"
     }
   },
-
-"University of Illinois Urbana-Champaign": {
+  "University of Illinois Urbana-Champaign": {
     "institutionNarrative": {
       "name": "University of Illinois Urbana-Champaign",
       "location": "Urbana-Champaign, Illinois",
@@ -6655,7 +6538,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UIUC maintains transfer agreements with Illinois community colleges, though CS transfer remains highly competitive."
       },
       "institutionIdentity": {
-      "commonName": "Illinois",
+        "commonName": "Illinois",
         "archetype": "Elite Public CS/Engineering Flagship"
       },
       "institutionalPersonality": "technically rigorous, ambitious, Big Ten spirited",
@@ -6710,7 +6593,8 @@ const UNIVERSITY_DB_V5 = {
     },
     "comparativePositioning": {
       "versusGeorgiaTech": "Georgia Tech offers stronger Atlanta startup ties; Illinois offers a more selective CS admissions bar and stronger direct Silicon Valley pipeline.",
-      "versusPurdue": "Purdue leans more aerospace/manufacturing; Illinois leans more pure CS/software with stronger Silicon Valley placement."
+      "versusPurdue": "Purdue leans more aerospace/manufacturing; Illinois leans more pure CS/software with stronger Silicon Valley placement.",
+      "versusVirginiaTech": "Illinois offers a more selective computer science admissions bar and a stronger direct Silicon Valley pipeline; Virginia Tech offers a genuinely distinctive Northern Virginia defense and technology corridor foothold through its Innovation Campus, plus a Corps of Cadets tradition Illinois does not have."
     },
     "institutionScale": {
       "enrollmentCategory": "Very Large",
@@ -6860,8 +6744,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and priority registration within UIUC's larger structure."
     }
   },
-
-"Rutgers University": {
+  "Rutgers University": {
     "institutionNarrative": {
       "name": "Rutgers University",
       "location": "New Brunswick, New Jersey",
@@ -6900,7 +6783,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Rutgers maintains transfer agreements with New Jersey's community college system."
       },
       "institutionIdentity": {
-      "commonName": "Rutgers University",
+        "commonName": "Rutgers University",
         "archetype": "Large Public Big Ten Flagship, Pharma Corridor Anchor"
       },
       "institutionalPersonality": "practical, diverse, career-focused, Big Ten spirited",
@@ -7105,8 +6988,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller cohorts within Rutgers' larger multi-campus structure."
     }
   },
-
-"University of Michigan": {
+  "University of Michigan": {
     "institutionNarrative": {
       "name": "University of Michigan",
       "location": "Ann Arbor, Michigan",
@@ -7146,7 +7028,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Michigan's transfer admissions are highly selective, reflecting the university's overall elite positioning."
       },
       "institutionIdentity": {
-      "commonName": "University of Michigan",
+        "commonName": "University of Michigan",
         "archetype": "Elite Public Research University, 'Public Ivy'"
       },
       "institutionalPersonality": "ambitious, spirited, intellectually serious, competitive",
@@ -7379,8 +7261,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminar classes, research opportunities, and priority registration within Michigan's large scale."
     }
   },
-
-"University of South Carolina": {
+  "University of South Carolina": {
     "institutionNarrative": {
       "name": "University of South Carolina",
       "location": "Columbia, South Carolina",
@@ -7801,8 +7682,7 @@ const UNIVERSITY_DB_V5 = {
       "narrative": "R1 status, Darla Moore School (#1 international business among publics for decades), ~92% retention, $323M FY25 research funding. In-state tuition ~$12k/yr, ~80% receive grants. Two-thirds of in-state alumni live outside Columbia metro -- strong statewide reach."
     }
   },
-
-"University of Georgia": {
+  "University of Georgia": {
     "institutionNarrative": {
       "name": "University of Georgia",
       "location": "Athens, Georgia",
@@ -7841,7 +7721,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UGA maintains transfer agreements with Georgia's community college system."
       },
       "institutionIdentity": {
-      "commonName": "University of Georgia",
+        "commonName": "University of Georgia",
         "archetype": "Large Public SEC Flagship, Corporate Georgia Anchor"
       },
       "institutionalPersonality": "spirited, business-ambitious, culturally rich, traditional",
@@ -8044,8 +7924,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and priority registration within UGA's larger SEC flagship structure."
     }
   },
-
-"University of Florida": {
+  "University of Florida": {
     "institutionNarrative": {
       "name": "University of Florida",
       "location": "Gainesville, Florida",
@@ -8084,7 +7963,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UF maintains strong Florida community college articulation agreements."
       },
       "institutionIdentity": {
-      "commonName": "University of Florida",
+        "commonName": "University of Florida",
         "archetype": "Large Public SEC Flagship, Florida Triangle Anchor"
       },
       "institutionalPersonality": "football-first, underrated academically, Florida-rooted",
@@ -8291,8 +8170,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and priority registration within UF's larger flagship structure."
     }
   },
-
-"University of Oklahoma": {
+  "University of Oklahoma": {
     "institutionNarrative": {
       "name": "University of Oklahoma",
       "location": "Norman, Oklahoma",
@@ -8695,8 +8573,7 @@ const UNIVERSITY_DB_V5 = {
       "overallMoatScore": 80
     }
   },
-
-"Louisiana State University": {
+  "Louisiana State University": {
     "institutionNarrative": {
       "name": "Louisiana State University",
       "location": "Baton Rouge, Louisiana",
@@ -9091,8 +8968,7 @@ const UNIVERSITY_DB_V5 = {
       "overallMoatScore": 78
     }
   },
-
-"Auburn University": {
+  "Auburn University": {
     "institutionNarrative": {
       "name": "Auburn University",
       "location": "Auburn, Alabama",
@@ -9131,7 +9007,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Auburn maintains transfer agreements with Alabama's community college system."
       },
       "institutionIdentity": {
-      "commonName": "Auburn University",
+        "commonName": "Auburn University",
         "archetype": "Large Public SEC Flagship with Elite Technical Niches"
       },
       "institutionalPersonality": "spirited, traditional, technically capable, communal",
@@ -9337,8 +9213,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and priority registration within Auburn's larger SEC flagship structure."
     }
   },
-
-"Clemson University": {
+  "Clemson University": {
     "institutionNarrative": {
       "name": "Clemson University",
       "location": "Clemson, South Carolina",
@@ -9377,7 +9252,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Clemson maintains transfer agreements with South Carolina's technical college system."
       },
       "institutionIdentity": {
-      "commonName": "Clemson University",
+        "commonName": "Clemson University",
         "archetype": "Large Public ACC Flagship, Automotive Engineering Anchor"
       },
       "institutionalPersonality": "spirited, manufacturing-savvy, traditional, technically capable",
@@ -9579,8 +9454,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and priority registration within Clemson's larger flagship structure."
     }
   },
-
-"Vanderbilt University": {
+  "Vanderbilt University": {
     "institutionNarrative": {
       "name": "Vanderbilt University",
       "location": "Nashville, Tennessee",
@@ -9972,8 +9846,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "regional_southeast_national"
     }
   },
-
-"University of Virginia": {
+  "University of Virginia": {
     "institutionNarrative": {
       "name": "University of Virginia",
       "location": "Charlottesville, Virginia",
@@ -10014,7 +9887,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Virginia's Guaranteed Admission Agreement with in-state community colleges creates a structured pathway for qualifying transfer students."
       },
       "institutionIdentity": {
-      "commonName": "University of Virginia",
+        "commonName": "University of Virginia",
         "archetype": "Elite Public 'Public Ivy', Founding-Era Prestige"
       },
       "institutionalPersonality": "polished, ambitious, historically rooted, achievement-oriented",
@@ -10237,8 +10110,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides curricular flexibility, priority registration, and a close-knit intellectual community within UVA's broader student body."
     }
   },
-
-"Tulane University": {
+  "Tulane University": {
     "institutionNarrative": {
       "name": "Tulane University",
       "location": "New Orleans, Louisiana",
@@ -10277,7 +10149,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Tulane transfer admission is highly competitive, reflecting overall selectivity."
       },
       "institutionIdentity": {
-      "commonName": "Tulane University",
+        "commonName": "Tulane University",
         "archetype": "Private University, New Orleans Cultural and Energy Finance Anchor"
       },
       "institutionalPersonality": "culturally rich, civically engaged, underrated in specific programs",
@@ -10486,8 +10358,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars within Tulane's broader civically-engaged structure."
     }
   },
-
-"University of Colorado Boulder": {
+  "University of Colorado Boulder": {
     "institutionNarrative": {
       "name": "University of Colorado Boulder",
       "location": "Boulder, Colorado",
@@ -10526,7 +10397,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "CU Boulder maintains transfer agreements with Colorado's community college system."
       },
       "institutionIdentity": {
-      "commonName": "CU Boulder",
+        "commonName": "CU Boulder",
         "archetype": "Large Public Research Flagship, Aerospace and Wellness Hybrid"
       },
       "institutionalPersonality": "outdoorsy, technically serious, health-conscious, free-spirited",
@@ -10772,8 +10643,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and priority registration within CU Boulder's larger flagship structure."
     }
   },
-
-"Syracuse University": {
+  "Syracuse University": {
     "institutionNarrative": {
       "name": "Syracuse University",
       "location": "Syracuse, New York",
@@ -10812,7 +10682,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Syracuse maintains transfer agreements with Central New York community colleges."
       },
       "institutionIdentity": {
-      "commonName": "Syracuse University",
+        "commonName": "Syracuse University",
         "archetype": "Private Media-First University, Newhouse Anchor"
       },
       "institutionalPersonality": "media-driven, resilient, tribal, spirited",
@@ -11022,8 +10892,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and enhanced advising within Syracuse's broader student body."
     }
   },
-
-"University of Miami": {
+  "University of Miami": {
     "institutionNarrative": {
       "name": "University of Miami",
       "location": "Coral Gables, Florida",
@@ -11062,7 +10931,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Miami maintains strong articulation agreements with Miami Dade College."
       },
       "institutionIdentity": {
-      "commonName": "University of Miami",
+        "commonName": "University of Miami",
         "archetype": "Private Global Business University, Latin America Gateway"
       },
       "institutionalPersonality": "international, glamorous, business-ambitious, cosmopolitan",
@@ -11264,8 +11133,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and enhanced advising within Miami's broader student body."
     }
   },
-
-"Williams College": {
+  "Williams College": {
     "institutionNarrative": {
       "name": "Williams College",
       "location": "Williamstown, Massachusetts",
@@ -11702,8 +11570,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "national_international"
     }
   },
-
-"Pomona College": {
+  "Pomona College": {
     "institutionNarrative": {
       "name": "Pomona College",
       "location": "Claremont, California",
@@ -12141,8 +12008,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "west_coast_national"
     }
   },
-
-"Saint Mary's College of California": {
+  "Saint Mary's College of California": {
     "institutionNarrative": {
       "name": "Saint Mary's College of California",
       "location": "Moraga, California",
@@ -12551,8 +12417,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "regional_bay_area"
     }
   },
-
-"University of San Diego": {
+  "University of San Diego": {
     "institutionNarrative": {
       "name": "University of San Diego",
       "location": "San Diego, California",
@@ -12592,7 +12457,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "USD maintains transfer agreements with San Diego-area community colleges."
       },
       "institutionIdentity": {
-      "commonName": "University of San Diego",
+        "commonName": "University of San Diego",
         "archetype": "Private Catholic University, Coastal Peer to Pepperdine/Villanova/Santa Clara"
       },
       "institutionalPersonality": "faith-centered, polished, scenic, values-driven",
@@ -12808,8 +12673,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars within USD's broader Catholic university structure."
     }
   },
-
-"Santa Clara University": {
+  "Santa Clara University": {
     "institutionNarrative": {
       "name": "Santa Clara University",
       "location": "Santa Clara, California",
@@ -13229,8 +13093,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "regional_silicon_valley"
     }
   },
-
-"California State University Chico": {
+  "California State University Chico": {
     "institutionNarrative": {
       "name": "California State University Chico",
       "location": "Chico, California",
@@ -13637,8 +13500,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "regional_northern_california"
     }
   },
-
-"Elon University": {
+  "Elon University": {
     "institutionNarrative": {
       "name": "Elon University",
       "location": "Elon, North Carolina",
@@ -13677,7 +13539,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Elon maintains transfer agreements with North Carolina community colleges."
       },
       "institutionIdentity": {
-      "commonName": "Elon University",
+        "commonName": "Elon University",
         "archetype": "Private University, Southern Campus with National Media Pipeline"
       },
       "institutionalPersonality": "warm, polished, media-ambitious, experientially-driven",
@@ -13883,8 +13745,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller cohorts and enhanced advising within Elon's broader experiential-learning-focused structure."
     }
   },
-
-"Drake University": {
+  "Drake University": {
     "institutionNarrative": {
       "name": "Drake University",
       "location": "Des Moines, Iowa",
@@ -14293,8 +14154,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "regional_midwest"
     }
   },
-
-"Creighton University": {
+  "Creighton University": {
     "institutionNarrative": {
       "name": "Creighton University",
       "location": "Omaha, Nebraska",
@@ -14700,11 +14560,8 @@ const UNIVERSITY_DB_V5 = {
       "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_midwest"
     }
-  }
-
-,
-
-"Baylor University": {
+  },
+  "Baylor University": {
     "institutionNarrative": {
       "name": "Baylor University",
       "location": "Waco, Texas",
@@ -14742,7 +14599,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Baylor maintains transfer agreements with central Texas community colleges."
       },
       "institutionIdentity": {
-      "commonName": "Baylor University",
+        "commonName": "Baylor University",
         "archetype": "Private Baptist University, Texas Triangle Business and Ministry Anchor"
       },
       "institutionalPersonality": "faith-driven, warm, community-oriented, business-ambitious",
@@ -14959,8 +14816,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and priority registration within Baylor's broader faith-centered structure."
     }
   },
-
-"Southern Methodist University": {
+  "Southern Methodist University": {
     "institutionNarrative": {
       "name": "Southern Methodist University",
       "location": "Dallas, Texas",
@@ -15352,8 +15208,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "regional_texas"
     }
   },
-
-"Villanova University": {
+  "Villanova University": {
     "institutionNarrative": {
       "name": "Villanova University",
       "location": "Villanova, Pennsylvania",
@@ -15392,7 +15247,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Villanova transfer admission is competitive, reflecting overall selectivity."
       },
       "institutionIdentity": {
-      "commonName": "Villanova University",
+        "commonName": "Villanova University",
         "archetype": "Private Catholic University, Business School Anchor"
       },
       "institutionalPersonality": "polished, spirited, community-oriented, Catholic-formed",
@@ -15606,8 +15461,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and enhanced advising within Villanova's broader Catholic university structure."
     }
   },
-
-"University of Southern California": {
+  "University of Southern California": {
     "institutionNarrative": {
       "name": "University of Southern California",
       "location": "Los Angeles, California",
@@ -15688,7 +15542,10 @@ const UNIVERSITY_DB_V5 = {
     },
     "comparativePositioning": {
       "versusUCLA": "UCLA offers a lower cost as a public flagship with similarly strong LA access; USC offers a smaller private-school network density and a stronger entertainment industry pipeline.",
-      "versusNYU": "NYU offers New York's finance and media capital; USC offers unmatched entertainment industry access and a more concentrated alumni loyalty culture."
+      "versusNYU": "NYU offers New York's finance and media capital; USC offers unmatched entertainment industry access and a more concentrated alumni loyalty culture.",
+      "versusStanford": "Stanford offers unmatched Silicon Valley venture capital proximity and a smaller, better-funded environment; USC offers the single strongest entertainment-industry alumni network in the country (the 'Trojan Network') and denser Los Angeles corporate and media placement.",
+      "versusBerkeley": "Berkeley offers a public-school cost structure and the largest-volume Silicon Valley engineering pipeline of any university; USC offers a smaller, more concentrated private-school network with unmatched entertainment-industry alumni density and direct Los Angeles media access.",
+      "versusNorthwestern": "Northwestern's Medill School is the stronger pathway into journalism and broadcast news, with a performance program feeding comedy writing and television; USC's School of Cinematic Arts is the strongest film and television production pipeline in the country, backed by the 'Trojan Network's' unmatched entertainment-industry alumni density in Los Angeles. Students choosing between them are usually choosing between reporting the story (Northwestern) and producing it (USC)."
     },
     "institutionScale": {
       "enrollmentCategory": "Large",
@@ -16020,8 +15877,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "regional_los_angeles"
     }
   },
-
-"Washington University in St. Louis": {
+  "Washington University in St. Louis": {
     "institutionNarrative": {
       "name": "Washington University in St. Louis",
       "location": "St. Louis, Missouri",
@@ -16403,8 +16259,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "national"
     }
   },
-
-"Georgia Institute of Technology": {
+  "Georgia Institute of Technology": {
     "institutionNarrative": {
       "name": "Georgia Institute of Technology",
       "location": "Atlanta, Georgia",
@@ -16443,7 +16298,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Georgia Tech maintains transfer pathways from Georgia's community college system, though highly competitive."
       },
       "institutionIdentity": {
-      "commonName": "Georgia Institute of Technology",
+        "commonName": "Georgia Institute of Technology",
         "archetype": "Elite Public Engineering-First Urban University"
       },
       "institutionalPersonality": "driven, technically rigorous, urban, value-conscious",
@@ -16646,12 +16501,11 @@ const UNIVERSITY_DB_V5 = {
       "exists": false,
       "name": "",
       "strength": 0,
-      "notes": "Georgia Tech does not have a formal honors college; research opportunities and the Grand Challenges program serve a similar function."
-    ,
-      "selectiveRigorAlternative": true}
+      "notes": "Georgia Tech does not have a formal honors college; research opportunities and the Grand Challenges program serve a similar function.",
+      "selectiveRigorAlternative": true
+    }
   },
-
-"University of Denver": {
+  "University of Denver": {
     "institutionNarrative": {
       "name": "University of Denver",
       "location": "Denver, Colorado",
@@ -16689,7 +16543,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "DU maintains transfer agreements with Denver-area community colleges."
       },
       "institutionIdentity": {
-      "commonName": "University of Denver",
+        "commonName": "University of Denver",
         "archetype": "Private Mid-Sized University, International Affairs Hidden Gem"
       },
       "institutionalPersonality": "outdoorsy, globally curious, intimate",
@@ -16894,8 +16748,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller cohorts within DU's already intimate structure."
     }
   },
-
-"University of Utah": {
+  "University of Utah": {
     "institutionNarrative": {
       "name": "University of Utah",
       "location": "Salt Lake City, Utah",
@@ -16934,7 +16787,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Utah maintains strong transfer agreements with Salt Lake Community College."
       },
       "institutionIdentity": {
-      "commonName": "University of Utah",
+        "commonName": "University of Utah",
         "archetype": "Large Public Research Flagship, Silicon Slopes Anchor"
       },
       "institutionalPersonality": "entrepreneurial, tech-forward, outdoor-obsessed, rapidly rising",
@@ -17159,8 +17012,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller cohorts and enhanced advising within Utah's larger research flagship structure."
     }
   },
-
-"Weber State University": {
+  "Weber State University": {
     "institutionNarrative": {
       "name": "Weber State University",
       "location": "Ogden, Utah",
@@ -17536,8 +17388,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "regional_wasatch_front"
     }
   },
-
-"Towson University": {
+  "Towson University": {
     "institutionNarrative": {
       "name": "Towson University",
       "location": "Towson, Maryland",
@@ -17976,8 +17827,7 @@ const UNIVERSITY_DB_V5 = {
       "alumniDispersalPattern": "regional"
     }
   },
-
-"The Ohio State University": {
+  "The Ohio State University": {
     "institutionNarrative": {
       "name": "The Ohio State University",
       "location": "Columbus, Ohio",
@@ -18020,7 +17870,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Ohio State maintains strong articulation agreements with Ohio's community college system, particularly for engineering and business transfer students."
       },
       "institutionIdentity": {
-      "commonName": "Ohio State",
+        "commonName": "Ohio State",
         "archetype": "Large Public Big Ten Flagship Research University"
       },
       "institutionalPersonality": "spirited, ambitious, scale-driven, loyal, increasingly innovation-oriented",
@@ -18282,8 +18132,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Ohio State's Honors and Scholars program provides smaller cohort communities, priority registration, dedicated advising, and research opportunities inside the university's massive scale, meaningfully altering the undergraduate experience for students who opt in."
     }
   },
-
-"Michigan State University": {
+  "Michigan State University": {
     "institutionNarrative": {
       "name": "Michigan State University",
       "location": "East Lansing, Michigan",
@@ -18322,7 +18171,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "MSU maintains transfer agreements with Michigan's community college system."
       },
       "institutionIdentity": {
-      "commonName": "Michigan State University",
+        "commonName": "Michigan State University",
         "archetype": "Large Public Big Ten Flagship, Packaging Engineering Anchor"
       },
       "institutionalPersonality": "practical, specialized, Big Ten spirited, underrated",
@@ -18545,8 +18394,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller cohorts and enhanced research opportunities within MSU's larger Big Ten structure."
     }
   },
-
-"University of Wisconsin-Madison": {
+  "University of Wisconsin-Madison": {
     "institutionNarrative": {
       "name": "University of Wisconsin-Madison",
       "location": "Madison, Wisconsin",
@@ -18585,7 +18433,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UW-Madison maintains transfer agreements with Wisconsin's technical college system."
       },
       "institutionIdentity": {
-      "commonName": "Wisconsin",
+        "commonName": "Wisconsin",
         "archetype": "Elite Public Research Flagship, Progressive College Town"
       },
       "institutionalPersonality": "progressive, research-serious, civically engaged, spirited",
@@ -18794,8 +18642,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller cohorts and enhanced research opportunities within UW's larger research structure."
     }
   },
-
-"American University": {
+  "American University": {
     "institutionNarrative": {
       "name": "American University",
       "location": "Washington, DC",
@@ -18833,7 +18680,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "AU maintains transfer agreements with DC-area community colleges."
       },
       "institutionIdentity": {
-      "commonName": "American University",
+        "commonName": "American University",
         "archetype": "Private University, DC Policy Anchor"
       },
       "institutionalPersonality": "politically engaged, ambitious, globally minded",
@@ -19044,8 +18891,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars within AU's broader policy-focused structure."
     }
   },
-
-"Belmont University": {
+  "Belmont University": {
     "institutionNarrative": {
       "name": "Belmont University",
       "location": "Nashville, Tennessee",
@@ -19084,7 +18930,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Belmont maintains transfer agreements with Nashville-area community colleges."
       },
       "institutionIdentity": {
-      "commonName": "Belmont University",
+        "commonName": "Belmont University",
         "archetype": "Private Christian University, Music Row Entertainment Business Anchor"
       },
       "institutionalPersonality": "creative, values-driven, industry-embedded, welcoming",
@@ -19290,8 +19136,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars within Belmont's broader entertainment-business-focused structure."
     }
   },
-
-"Boston University": {
+  "Boston University": {
     "institutionNarrative": {
       "name": "Boston University",
       "location": "Boston, Massachusetts",
@@ -19332,7 +19177,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "BU accepts transfer students from Massachusetts community colleges at meaningfully higher rates than freshman admission."
       },
       "institutionIdentity": {
-      "commonName": "Boston University",
+        "commonName": "Boston University",
         "archetype": "Large Urban Private Research University"
       },
       "institutionalPersonality": "independent, urban, ambitious, self-assembled",
@@ -19551,8 +19396,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides interdisciplinary seminars, dedicated housing, and mentorship within BU's broader urban campus."
     }
   },
-
-"Colorado State University": {
+  "Colorado State University": {
     "institutionNarrative": {
       "name": "Colorado State University",
       "location": "Fort Collins, Colorado",
@@ -19591,7 +19435,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "CSU maintains strong transfer agreements with Colorado's community college system."
       },
       "institutionIdentity": {
-      "commonName": "Colorado State University",
+        "commonName": "Colorado State University",
         "archetype": "Large Public Land-Grant University, Outdoor Recreation Anchor"
       },
       "institutionalPersonality": "outdoorsy, health-conscious, practically minded, land-grant-serious",
@@ -19812,8 +19656,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller cohorts and priority registration within CSU's larger land-grant structure."
     }
   },
-
-"Fordham University": {
+  "Fordham University": {
     "institutionNarrative": {
       "name": "Fordham University",
       "location": "New York, New York",
@@ -19852,7 +19695,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Fordham maintains transfer agreements with NYC-area community colleges."
       },
       "institutionIdentity": {
-      "commonName": "Fordham University",
+        "commonName": "Fordham University",
         "archetype": "Private Jesuit University, NYC Wall Street/Legal Anchor"
       },
       "institutionalPersonality": "values-driven, ambitious, Jesuit-formed, NYC-embedded",
@@ -20066,8 +19909,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and enhanced advising within Fordham's broader Jesuit university structure."
     }
   },
-
-"George Washington University": {
+  "George Washington University": {
     "institutionNarrative": {
       "name": "George Washington University",
       "location": "Washington, DC",
@@ -20105,7 +19947,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "GW maintains transfer agreements with DC-area community colleges."
       },
       "institutionIdentity": {
-      "commonName": "George Washington University",
+        "commonName": "George Washington University",
         "archetype": "Private University, DC Policy Anchor"
       },
       "institutionalPersonality": "politically engaged, ambitious, internationally minded",
@@ -20314,8 +20156,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars within GW's broader DC-embedded structure."
     }
   },
-
-"Loyola Marymount University": {
+  "Loyola Marymount University": {
     "institutionNarrative": {
       "name": "Loyola Marymount University",
       "location": "Los Angeles, California",
@@ -20353,7 +20194,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "LMU maintains transfer agreements with LA-area community colleges."
       },
       "institutionIdentity": {
-      "commonName": "Loyola Marymount University",
+        "commonName": "Loyola Marymount University",
         "archetype": "Private Catholic University, Entertainment-Tech Hidden Gem"
       },
       "institutionalPersonality": "polished, entrepreneurial, dual-industry-embedded, overlooked",
@@ -20408,7 +20249,8 @@ const UNIVERSITY_DB_V5 = {
     },
     "comparativePositioning": {
       "versusUSC": "USC offers larger scale and stronger name recognition; LMU offers a genuinely closer Silicon Beach tech proximity often overlooked by families fixated on USC.",
-      "versusSantaClara": "Santa Clara offers Silicon Valley proximity; LMU offers the unique LA dual advantage of entertainment plus Silicon Beach in one location."
+      "versusSantaClara": "Santa Clara offers Silicon Valley proximity; LMU offers the unique LA dual advantage of entertainment plus Silicon Beach in one location.",
+      "versusPepperdine": "Pepperdine offers a more scenic, higher-cost Malibu setting, a top-ranked dispute resolution law program, and a more extensive international study-abroad network; LMU offers a genuinely closer Silicon Beach tech proximity and a Jesuit rather than Church of Christ institutional identity."
     },
     "institutionScale": {
       "enrollmentCategory": "Medium",
@@ -20559,8 +20401,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars within LMU's broader Catholic university structure."
     }
   },
-
-"Marquette University": {
+  "Marquette University": {
     "institutionNarrative": {
       "name": "Marquette University",
       "location": "Milwaukee, Wisconsin",
@@ -20599,7 +20440,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Marquette maintains transfer agreements with Milwaukee-area technical colleges."
       },
       "institutionIdentity": {
-      "commonName": "Marquette University",
+        "commonName": "Marquette University",
         "archetype": "Private Jesuit University, Milwaukee Corporate Anchor"
       },
       "institutionalPersonality": "values-driven, urban, practical, Jesuit-formed",
@@ -20812,8 +20653,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars within Marquette's broader Jesuit university structure."
     }
   },
-
-"University of Maryland, College Park": {
+  "University of Maryland, College Park": {
     "institutionNarrative": {
       "name": "University of Maryland, College Park",
       "location": "College Park, Maryland",
@@ -20852,7 +20692,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Maryland maintains transfer agreements with Maryland community colleges."
       },
       "institutionIdentity": {
-      "commonName": "University of Maryland",
+        "commonName": "University of Maryland",
         "archetype": "Large Public Flagship, Federal Security Anchor"
       },
       "institutionalPersonality": "career-focused, federal-serious, Big Ten spirited",
@@ -21068,8 +20908,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller cohorts within Maryland's larger flagship structure."
     }
   },
-
-"Northeastern University": {
+  "Northeastern University": {
     "institutionNarrative": {
       "name": "Northeastern University",
       "location": "Boston, Massachusetts",
@@ -21107,7 +20946,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Northeastern's freshman admission is highly selective; transfer pathways exist but remain competitive."
       },
       "institutionIdentity": {
-      "commonName": "Northeastern University",
+        "commonName": "Northeastern University",
         "archetype": "Large Urban Co-op Research University"
       },
       "institutionalPersonality": "career-focused, urban, ambitious, practically minded",
@@ -21322,8 +21161,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and enhanced advising within Northeastern's co-op-centered structure."
     }
   },
-
-"New York University": {
+  "New York University": {
     "institutionNarrative": {
       "name": "New York University",
       "location": "New York, New York",
@@ -21364,7 +21202,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "NYU accepts transfer students from CUNY community colleges at meaningfully higher rates than its freshman acceptance rate."
       },
       "institutionIdentity": {
-      "commonName": "New York University",
+        "commonName": "New York University",
         "archetype": "Urban Campus-less Global Research University"
       },
       "institutionalPersonality": "independent, ambitious, urban, globally minded",
@@ -21594,12 +21432,11 @@ const UNIVERSITY_DB_V5 = {
       "exists": false,
       "name": "",
       "strength": 0,
-      "notes": "NYU does not have a formal honors college; selective programs like Stern and Tisch function as de facto honors experiences."
-    ,
-      "selectiveRigorAlternative": true}
+      "notes": "NYU does not have a formal honors college; selective programs like Stern and Tisch function as de facto honors experiences.",
+      "selectiveRigorAlternative": true
+    }
   },
-
-"Penn State University": {
+  "Penn State University": {
     "institutionNarrative": {
       "name": "Penn State University",
       "location": "University Park, Pennsylvania",
@@ -21641,7 +21478,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Penn State's branch campus system (over 20 locations across Pennsylvania) creates a uniquely structured 2+2 pathway into University Park unlike any peer flagship."
       },
       "institutionIdentity": {
-      "commonName": "Penn State University",
+        "commonName": "Penn State University",
         "archetype": "Large Public Big Ten Flagship, Self-Contained College Town"
       },
       "institutionalPersonality": "loyal, tradition-bound, spirited, scale-driven, quietly ambitious",
@@ -21894,8 +21731,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Schreyer Honors College provides smaller cohort communities, priority registration, dedicated advising, and enhanced research opportunities inside Penn State's massive scale, meaningfully altering the undergraduate experience for students who opt in."
     }
   },
-
-"Purdue University": {
+  "Purdue University": {
     "institutionNarrative": {
       "name": "Purdue University",
       "location": "West Lafayette, Indiana",
@@ -21934,7 +21770,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Purdue maintains strong articulation agreements with Indiana's Ivy Tech system, particularly for engineering transfer students."
       },
       "institutionIdentity": {
-      "commonName": "Purdue University",
+        "commonName": "Purdue University",
         "archetype": "Large Public Engineering-First Flagship"
       },
       "institutionalPersonality": "technical, humble, rigorous, Midwest-practical",
@@ -22152,11 +21988,8 @@ const UNIVERSITY_DB_V5 = {
       "strength": 80,
       "notes": "Provides smaller cohort communities and enhanced research opportunities within Purdue's engineering-first structure."
     }
-  }
-
-,
-
-"Texas Christian University": {
+  },
+  "Texas Christian University": {
     "institutionNarrative": {
       "name": "Texas Christian University",
       "location": "Fort Worth, Texas",
@@ -22192,7 +22025,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "TCU maintains transfer agreements with Fort Worth-area community colleges."
       },
       "institutionIdentity": {
-      "commonName": "TCU",
+        "commonName": "TCU",
         "archetype": "Private University, Intimate DFW Alternative to SMU"
       },
       "institutionalPersonality": "warm, intimate, Fort Worth-proud, Greek-heavy",
@@ -22401,8 +22234,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars and priority registration within TCU's already intimate structure."
     }
   },
-
-"University of North Carolina at Chapel Hill": {
+  "University of North Carolina at Chapel Hill": {
     "institutionNarrative": {
       "name": "University of North Carolina at Chapel Hill",
       "location": "Chapel Hill, North Carolina",
@@ -22443,7 +22275,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "North Carolina's community college transfer agreements create a structured pathway for qualifying in-state students."
       },
       "institutionIdentity": {
-      "commonName": "UNC Chapel Hill",
+        "commonName": "UNC Chapel Hill",
         "archetype": "Elite Public Flagship, Research Triangle Anchor"
       },
       "institutionalPersonality": "warm, ambitious, basketball-proud, research-serious",
@@ -22501,7 +22333,8 @@ const UNIVERSITY_DB_V5 = {
     "comparativePositioning": {
       "versusVirginia": "UVA offers stronger DC-corridor placement; UNC offers the #1 pharmacy school and deeper Research Triangle biotech ties.",
       "versusDuke": "Duke is more selective and private with stronger national prestige; UNC offers comparable Research Triangle access at meaningfully lower cost.",
-      "versusMichigan": "Michigan offers larger scale and stronger engineering; UNC offers a more intimate size and the strongest pharmacy program in the country."
+      "versusMichigan": "Michigan offers larger scale and stronger engineering; UNC offers a more intimate size and the strongest pharmacy program in the country.",
+      "versusNCState": "NC State offers a larger, more applied engineering program and the country's leading textile engineering program, with Centennial Campus's direct corporate R&D partnerships; UNC offers the #1-ranked pharmacy school in the country and a broader liberal-arts-plus-business identity."
     },
     "institutionScale": {
       "enrollmentCategory": "Large",
@@ -22667,8 +22500,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminar classes, research opportunities, and priority registration within UNC's broader student body."
     }
   },
-
-"The University of Texas at Austin": {
+  "The University of Texas at Austin": {
     "institutionNarrative": {
       "name": "The University of Texas at Austin",
       "location": "Austin, Texas",
@@ -22707,7 +22539,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UT Austin maintains strong transfer agreements with Texas community colleges."
       },
       "institutionIdentity": {
-      "commonName": "UT Austin",
+        "commonName": "UT Austin",
         "archetype": "Large Public Flagship, Austin Tech Boom Anchor"
       },
       "institutionalPersonality": "ambitious, tech-forward, creative, massive in scale",
@@ -22913,23 +22745,22 @@ const UNIVERSITY_DB_V5 = {
       "notes": "One of the most respected honors programs at any public university, providing small seminars within UT's massive scale."
     }
   },
-
-"University of California-Los Angeles": {
+  "University of California-Los Angeles": {
     "institutionNarrative": {
       "name": "University of California-Los Angeles",
       "location": "Los Angeles, California",
       "region": "California",
-      "archetype": "The Complete LA Powerhouse \u2014 Film, Medicine, Business, and Elite Academics in One Place",
-      "oneSentenceSummary": "UCLA is genuinely exceptional \u2014 a top-10 public university with the only film school combining theater, film, TV, and digital media under one roof, elite medicine, strong business, and unmatched direct access to LA's entertainment and tech economy.",
+      "archetype": "The Complete LA Powerhouse — Film, Medicine, Business, and Elite Academics in One Place",
+      "oneSentenceSummary": "UCLA is genuinely exceptional — a top-10 public university with the only film school combining theater, film, TV, and digital media under one roof, elite medicine, strong business, and unmatched direct access to LA's entertainment and tech economy.",
       "pipeline": "Approximately 33,500 undergraduates. UCLA TFT is the only film school in America combining theater, film, television, and digital media in a single program. Elite pre-med and Anderson Business School. Major recruiters span every major studio, tech company, hospital system, and consulting firm in LA and nationally.",
       "hiddenPathway": "TFT's unique four-discipline integration creates crossover opportunities (actor-writers, director-producers) that siloed film schools structurally cannot replicate.",
-      "institutionalSecret": "UCLA's academic depth is genuinely elite across nearly every field \u2014 not just entertainment \u2014 making it one of the most complete public universities in the country, not just an LA feeder school.",
+      "institutionalSecret": "UCLA's academic depth is genuinely elite across nearly every field — not just entertainment — making it one of the most complete public universities in the country, not just an LA feeder school.",
       "theRoom": "33,500 undergraduates, the most ethnically and economically diverse student body of any top-15 university, embedded directly in Los Angeles.",
-      "lifestyle": "Diverse, entertainment-adjacent, ambitious \u2014 the pull of LA's industries shapes campus energy constantly.",
+      "lifestyle": "Diverse, entertainment-adjacent, ambitious — the pull of LA's industries shapes campus energy constantly.",
       "bestFitPersonality": "Ambitious across any field, drawn to LA's entertainment/tech pull, comfortable with genuine diversity and scale.",
       "faithTradition": "None",
       "geographicInfluenceRadius": "Dominant in Los Angeles across entertainment, tech, medicine, and business, with elite national academic reach.",
-      "economicOutcome": "Elite outcomes across entertainment, medicine, business, and technology \u2014 genuinely exceptional breadth for a public university.",
+      "economicOutcome": "Elite outcomes across entertainment, medicine, business, and technology — genuinely exceptional breadth for a public university.",
       "gradCities": [
         "Los Angeles CA",
         "San Francisco CA",
@@ -22969,7 +22800,7 @@ const UNIVERSITY_DB_V5 = {
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly progressive, diverse.",
       "studentAutonomy": "High",
-      "prestigeOrientation": "Elite across nearly every field \u2014 genuinely one of the most complete public universities in the country.",
+      "prestigeOrientation": "Elite across nearly every field — genuinely one of the most complete public universities in the country.",
       "socialClimate": "Diverse, ambitious, entertainment-adjacent.",
       "leadershipStyle": "Leadership through academic excellence and direct LA industry access across multiple sectors simultaneously."
     },
@@ -22988,7 +22819,8 @@ const UNIVERSITY_DB_V5 = {
     },
     "comparativePositioning": {
       "versusUSC": "USC offers a more concentrated entertainment-industry alumni network (the 'Trojan Network'); UCLA offers broader academic excellence across medicine, business, and sciences alongside comparable entertainment access, at public-school cost.",
-      "versusBerkeley": "Berkeley leans more toward tech/Silicon Valley; UCLA leans more toward entertainment, medicine, and LA's broader economy."
+      "versusBerkeley": "Berkeley leans more toward tech/Silicon Valley; UCLA leans more toward entertainment, medicine, and LA's broader economy.",
+      "versusStanford": "Stanford offers a smaller, better-funded environment with unmatched venture capital proximity and a stronger private-school alumni network; UCLA offers broader academic breadth across medicine, business, and entertainment at public-school cost, with comparable direct access to LA's industry economy."
     },
     "institutionScale": {
       "enrollmentCategory": "Large",
@@ -23155,7 +22987,7 @@ const UNIVERSITY_DB_V5 = {
       "innovationIndex": 88
     },
     "geographicInfluence": {
-      "dominantMarket": "Los Angeles \u2014 Entertainment, Medicine, Technology, and Business",
+      "dominantMarket": "Los Angeles — Entertainment, Medicine, Technology, and Business",
       "secondaryMarkets": [
         "San Francisco CA",
         "New York NY",
@@ -23333,9 +23165,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars, priority registration, and research opportunities within UCLA's larger scale."
     }
   },
-
-
-"Boston College": {
+  "Boston College": {
     "institutionNarrative": {
       "name": "Boston College",
       "location": "Chestnut Hill, Massachusetts",
@@ -23374,7 +23204,7 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "BC transfer admission is competitive, reflecting overall selectivity."
       },
       "institutionIdentity": {
-      "commonName": "Boston College",
+        "commonName": "Boston College",
         "archetype": "Private Jesuit University, Boston Finance Anchor"
       },
       "institutionalPersonality": "polished, values-driven, pre-professional, spirited",
@@ -23575,17 +23405,16 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Provides smaller seminars within BC's broader Jesuit university structure."
     }
   },
-
-"University of California-San Diego": {
+  "University of California-San Diego": {
     "institutionNarrative": {
       "name": "University of California-San Diego",
       "location": "La Jolla, California",
       "region": "California",
-      "archetype": "The Biotech and Deep-Tech Research Engine \u2014 Life Sciences, Engineering, Oceanography, and Precision Medicine",
-      "oneSentenceSummary": "UC San Diego is one of the world's premier research universities, combining elite engineering, computer science, and medicine with unmatched proximity to the Torrey Pines biotech mesa \u2014 one of the densest concentrations of life sciences companies and research institutes on Earth.",
+      "archetype": "The Biotech and Deep-Tech Research Engine — Life Sciences, Engineering, Oceanography, and Precision Medicine",
+      "oneSentenceSummary": "UC San Diego is one of the world's premier research universities, combining elite engineering, computer science, and medicine with unmatched proximity to the Torrey Pines biotech mesa — one of the densest concentrations of life sciences companies and research institutes on Earth.",
       "pipeline": "Approximately 42,000 students. UCSD is internationally recognized for Bioengineering, Computer Science, Biological Sciences, Chemistry, Neuroscience, Medicine, Oceanography (Scripps Institution), Data Science, Electrical Engineering, and Global Health. Major recruiters include Illumina, Qualcomm, Genentech, Pfizer, Regeneron, ResMed, Amazon, Google, Northrop Grumman, Sanford Burnham Prebys, Salk Institute, and hundreds of biotech and life sciences startups on the Torrey Pines Mesa.",
-      "hiddenPathway": "UCSD's greatest hidden advantage is direct proximity to the Torrey Pines Mesa \u2014 the highest concentration of biotech companies and research institutes per square mile in the world, including Illumina, the Salk Institute, Sanford Burnham Prebys, and Scripps Research. Students walk to internships that most universities can only offer through relocation.",
-      "institutionalSecret": "While often compared to Berkeley and UCLA for prestige, UCSD has quietly become the single strongest undergraduate feeder into the biotech and genomics industry in the country \u2014 a pipeline built on decades of co-location with the companies that invented modern genomic sequencing.",
+      "hiddenPathway": "UCSD's greatest hidden advantage is direct proximity to the Torrey Pines Mesa — the highest concentration of biotech companies and research institutes per square mile in the world, including Illumina, the Salk Institute, Sanford Burnham Prebys, and Scripps Research. Students walk to internships that most universities can only offer through relocation.",
+      "institutionalSecret": "While often compared to Berkeley and UCLA for prestige, UCSD has quietly become the single strongest undergraduate feeder into the biotech and genomics industry in the country — a pipeline built on decades of co-location with the companies that invented modern genomic sequencing.",
       "theRoom": "Located in La Jolla, students operate inside the Torrey Pines biotech mesa alongside Illumina, Qualcomm, the Salk Institute, Scripps Research, and Sanford Burnham Prebys, with San Diego's broader defense, telecommunications, and life sciences economy immediately accessible.",
       "lifestyle": "Academically intense, research-driven, outdoorsy, and beach-adjacent. Students balance rigorous STEM coursework with year-round access to surfing, hiking, and a mild coastal climate; the college system (Revelle, Muir, Marshall, Warren, Roosevelt, Sixth, Seventh) creates smaller identity communities inside a large research university.",
       "bestFitPersonality": "Intellectually rigorous, scientifically curious, self-directed, and motivated by hands-on research rather than traditional campus social life.",
@@ -23623,7 +23452,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "UC San Diego",
-      "archetype": "Elite Public Research University \u2014 Life Sciences and Engineering Powerhouse",
+      "archetype": "Elite Public Research University — Life Sciences and Engineering Powerhouse",
       "institutionalPersonality": "rigorous, scientific, research-driven, independent, quietly ambitious",
       "cultureKeywords": [
         "Biotechnology",
@@ -24022,16 +23851,15 @@ const UNIVERSITY_DB_V5 = {
       "notes": "UCSD does not have a single unified honors college; instead, several of its six residential colleges (notably Revelle and Sixth) offer honors-style research seminars, priority research access, and smaller cohort experiences within the broader research university."
     }
   },
-
-"University of California-Santa Barbara": {
+  "University of California-Santa Barbara": {
     "institutionNarrative": {
       "name": "University of California-Santa Barbara",
       "location": "Santa Barbara, California",
       "region": "California",
-      "archetype": "The Physical Sciences and Materials Research Powerhouse \u2014 Physics, Engineering, Environmental Science, and Coastal Innovation",
-      "oneSentenceSummary": "UC Santa Barbara combines elite physics, materials science, and engineering research \u2014 with more Nobel laureates on faculty than nearly any public university in the world \u2014 with a globally recognized coastal, environmentally engaged undergraduate culture.",
+      "archetype": "The Physical Sciences and Materials Research Powerhouse — Physics, Engineering, Environmental Science, and Coastal Innovation",
+      "oneSentenceSummary": "UC Santa Barbara combines elite physics, materials science, and engineering research — with more Nobel laureates on faculty than nearly any public university in the world — with a globally recognized coastal, environmentally engaged undergraduate culture.",
       "pipeline": "Approximately 26,000 students. UCSB is internationally recognized for Physics, Materials Science, Computer Science, Environmental Studies, Economics, Chemical Engineering, Communication, and Global Studies. Major recruiters include Google, Amazon, Meta, Raytheon, Northrop Grumman, Deckers Brands, Sonos, Direct Relief, Union Bank, and numerous Bay Area and Los Angeles technology firms.",
-      "hiddenPathway": "UCSB's College of Engineering and physics departments have produced multiple Nobel laureates and an outsized share of materials science and semiconductor research relative to the university's size \u2014 a research intensity that rivals institutions many times its prestige tier, largely invisible to families outside STEM circles.",
+      "hiddenPathway": "UCSB's College of Engineering and physics departments have produced multiple Nobel laureates and an outsized share of materials science and semiconductor research relative to the university's size — a research intensity that rivals institutions many times its prestige tier, largely invisible to families outside STEM circles.",
       "institutionalSecret": "Although widely known for its beach culture and Isla Vista social scene, UCSB is quietly one of the most research-intensive undergraduate institutions in the UC system on a per-capita basis, particularly in physics, materials science, and environmental science.",
       "theRoom": "Located on the Santa Barbara coast, students are positioned within reach of both the Los Angeles entertainment and technology economy to the south and the Silicon Valley technology corridor to the north, alongside a small but dense local outdoor apparel and technology sector.",
       "lifestyle": "Sun-soaked, outdoor-oriented, and socially vibrant, centered on Isla Vista's beachfront student community, with a countervailing academic intensity in the sciences that surprises many incoming students.",
@@ -24070,7 +23898,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "UC Santa Barbara",
-      "archetype": "Elite Public Research University \u2014 Physical Sciences and Coastal Culture",
+      "archetype": "Elite Public Research University — Physical Sciences and Coastal Culture",
       "institutionalPersonality": "intellectually rigorous, outdoor-oriented, research-driven, socially vibrant, environmentally engaged",
       "cultureKeywords": [
         "Physics",
@@ -24461,16 +24289,15 @@ const UNIVERSITY_DB_V5 = {
       "notes": "The College of Creative Studies functions as UCSB's honors college equivalent, offering a genuinely graduate-school-style research experience with small seminars, direct faculty collaboration, and minimal formal grading in select majors."
     }
   },
-
-"University of California-Davis": {
+  "University of California-Davis": {
     "institutionNarrative": {
       "name": "University of California-Davis",
       "location": "Davis, California",
       "region": "California",
-      "archetype": "The Agricultural, Veterinary, and Environmental Sciences Capital \u2014 Food Systems, Viticulture, and Land-Grant Research",
+      "archetype": "The Agricultural, Veterinary, and Environmental Sciences Capital — Food Systems, Viticulture, and Land-Grant Research",
       "oneSentenceSummary": "UC Davis is the nation's premier land-grant research university for agriculture, veterinary medicine, viticulture, and environmental science, sitting at the center of California's Central Valley food and agricultural economy while training students across engineering, biological sciences, and policy.",
       "pipeline": "Approximately 39,000 students. UC Davis is internationally recognized for Agricultural and Environmental Sciences, Veterinary Medicine (consistently ranked the #1 veterinary school in the world), Viticulture and Enology, Plant Sciences, Animal Science, Engineering, Biological Sciences, and Economics. Major recruiters include the California Department of Food and Agriculture, E&J Gallo, Constellation Brands, Genentech, Blue Diamond Growers, Sacramento-area healthcare systems, and agricultural technology startups throughout the Central Valley.",
-      "hiddenPathway": "UC Davis's School of Veterinary Medicine has been ranked the #1 veterinary program in the world for over a decade \u2014 a fact largely invisible to families outside pre-veterinary circles, and a pathway that offers extraordinary certainty of professional outcome for students who commit early to the pre-vet track.",
+      "hiddenPathway": "UC Davis's School of Veterinary Medicine has been ranked the #1 veterinary program in the world for over a decade — a fact largely invisible to families outside pre-veterinary circles, and a pathway that offers extraordinary certainty of professional outcome for students who commit early to the pre-vet track.",
       "institutionalSecret": "While often overshadowed by Berkeley, UCLA, and San Diego in general prestige rankings, UC Davis is quietly the most important agricultural and food systems research university in the world, training the scientists, veterinarians, and policy leaders who shape how America grows and processes food.",
       "theRoom": "Located in California's Central Valley near Sacramento, students operate inside the nation's most productive agricultural economy, with direct access to the University of California's statewide agricultural extension network, major wine industry employers, and Sacramento's state government and healthcare sectors.",
       "lifestyle": "Quiet, bike-centric, and academically earnest. Davis is a genuine college town built around agricultural research, sustainability, and an unusually strong sense of environmental stewardship; Sacramento is 20 minutes away for urban amenities.",
@@ -24509,7 +24336,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "UC Davis",
-      "archetype": "Elite Public Land-Grant Research University \u2014 Agricultural and Environmental Sciences",
+      "archetype": "Elite Public Land-Grant Research University — Agricultural and Environmental Sciences",
       "institutionalPersonality": "grounded, scientifically rigorous, service-oriented, sustainability-focused, quietly ambitious",
       "cultureKeywords": [
         "Agriculture",
@@ -24901,13 +24728,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "UC Davis's University Honors Program offers smaller seminar coursework, priority research opportunities, and closer faculty mentorship, though it functions as a supplemental track rather than a fully separate residential honors college."
     }
   },
-
-"University of California-Irvine": {
+  "University of California-Irvine": {
     "institutionNarrative": {
       "name": "University of California-Irvine",
       "location": "Irvine, California",
       "region": "California",
-      "archetype": "The Orange County Tech and Biomedical Corridor Engine \u2014 Computer Science, Biological Sciences, and Business",
+      "archetype": "The Orange County Tech and Biomedical Corridor Engine — Computer Science, Biological Sciences, and Business",
       "oneSentenceSummary": "UC Irvine combines a rapidly ascending computer science and biological sciences reputation with direct access to Orange County's dense concentration of technology, biomedical device, and business headquarters.",
       "pipeline": "Approximately 36,000 students. UCI is increasingly recognized for Computer Science, Biological Sciences, Business (Merage), Nursing, Public Health, Criminology, and Engineering. Major recruiters include Broadcom, Edwards Lifesciences, Blizzard Entertainment, Kaiser Permanente, Allergan/AbbVie, Western Digital, Disney, and Southern California's dense biomedical device and gaming industries.",
       "hiddenPathway": "UC Irvine sits inside Orange County's dense biomedical device corridor, home to Edwards Lifesciences and dozens of medical device companies, giving bioengineering and biological sciences students an internship and employment pathway that most universities can only access through relocation.",
@@ -24949,7 +24775,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "UC Irvine",
-      "archetype": "Rising Elite Public Research University \u2014 Technology, Biomedical, and Business",
+      "archetype": "Rising Elite Public Research University — Technology, Biomedical, and Business",
       "institutionalPersonality": "disciplined, pre-professional, orderly, academically intense, ambitious",
       "cultureKeywords": [
         "Computer Science",
@@ -25341,17 +25167,16 @@ const UNIVERSITY_DB_V5 = {
       "notes": "UCI's Campuswide Honors Collegium provides smaller interdisciplinary seminars, priority registration, and research mentorship for high-achieving students across all majors."
     }
   },
-
-"University of California-Riverside": {
+  "University of California-Riverside": {
     "institutionNarrative": {
       "name": "University of California-Riverside",
       "location": "Riverside, California",
       "region": "California",
-      "archetype": "The Access and Mobility Engine \u2014 Agriculture, Medicine for the Underserved, and the Inland Empire Economy",
-      "oneSentenceSummary": "UC Riverside combines a historic agricultural research tradition \u2014 birthplace of the California citrus industry \u2014 with a mission-driven medical school focused on serving underserved Inland Empire communities, functioning as one of the nation's strongest engines of first-generation social mobility.",
+      "archetype": "The Access and Mobility Engine — Agriculture, Medicine for the Underserved, and the Inland Empire Economy",
+      "oneSentenceSummary": "UC Riverside combines a historic agricultural research tradition — birthplace of the California citrus industry — with a mission-driven medical school focused on serving underserved Inland Empire communities, functioning as one of the nation's strongest engines of first-generation social mobility.",
       "pipeline": "Approximately 26,000 students. UCR is recognized for Entomology and Agricultural Sciences, Business (School of Business), Biological Sciences, the UCR School of Medicine (focused on training physicians for underserved Inland Empire communities), Public Policy, and Creative Writing. Major recruiters include Kaiser Permanente, Amazon (regional logistics), the University of California health system, Inland Empire school districts and municipal government, and Southern California agricultural and logistics companies.",
-      "hiddenPathway": "UCR's School of Medicine was founded specifically to train physicians who will practice in the medically underserved Inland Empire \u2014 giving pre-med students a mission-driven pathway into medicine with a built-in regional physician shortage they will personally help solve.",
-      "institutionalSecret": "UC Riverside is quietly one of the most effective social mobility engines in the entire University of California system, ranked at or near the top nationally for the gap between what students pay and what they earn afterward \u2014 a fact obscured by lower general prestige rankings.",
+      "hiddenPathway": "UCR's School of Medicine was founded specifically to train physicians who will practice in the medically underserved Inland Empire — giving pre-med students a mission-driven pathway into medicine with a built-in regional physician shortage they will personally help solve.",
+      "institutionalSecret": "UC Riverside is quietly one of the most effective social mobility engines in the entire University of California system, ranked at or near the top nationally for the gap between what students pay and what they earn afterward — a fact obscured by lower general prestige rankings.",
       "theRoom": "Located in the Inland Empire, students operate inside one of the fastest-growing logistics and warehousing economies in the country, alongside Amazon's regional distribution network, a growing healthcare sector, and historic agricultural research institutions rooted in the citrus industry.",
       "lifestyle": "Warm, inland, and community-oriented, with a strong emphasis on first-generation student support and a diverse, working-class-adjacent student body drawn heavily from the Inland Empire and Los Angeles.",
       "bestFitPersonality": "Resilient, community-minded, motivated by mission-driven fields like medicine and public service, and drawn to an environment that actively invests in first-generation and underrepresented students.",
@@ -25389,7 +25214,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "UC Riverside",
-      "archetype": "Public Research University \u2014 Access, Mobility, and Mission-Driven Medicine",
+      "archetype": "Public Research University — Access, Mobility, and Mission-Driven Medicine",
       "institutionalPersonality": "resilient, community-oriented, mission-driven, accessible, quietly effective",
       "cultureKeywords": [
         "Access",
@@ -25536,7 +25361,7 @@ const UNIVERSITY_DB_V5 = {
       "overlookedStrengths": [
         "UCR's entomology program traces its roots to the birth of the California citrus industry and remains a globally respected research center.",
         "The UCR School of Medicine was purpose-built to address a physician shortage in the Inland Empire, giving graduates an unusually clear sense of mission.",
-        "UCR is consistently ranked among the top universities in the country for social mobility \u2014 the gap between cost and post-graduation earning potential.",
+        "UCR is consistently ranked among the top universities in the country for social mobility — the gap between cost and post-graduation earning potential.",
         "The Inland Empire's rapidly growing logistics, healthcare, and government sectors provide expanding regional opportunity."
       ],
       "sleeperIndustries": [
@@ -25775,14 +25600,13 @@ const UNIVERSITY_DB_V5 = {
       "notes": "UCR's University Honors Program offers smaller seminar coursework and priority research opportunities for high-achieving students, functioning as a supplemental distinction rather than a separate residential college."
     }
   },
-
-"University of California-Santa Cruz": {
+  "University of California-Santa Cruz": {
     "institutionNarrative": {
       "name": "University of California-Santa Cruz",
       "location": "Santa Cruz, California",
       "region": "California",
-      "archetype": "The Silicon Valley-Adjacent Counterculture Research Campus \u2014 Computer Science, Marine Biology, and Independent Scholarship",
-      "oneSentenceSummary": "UC Santa Cruz combines a distinctive, non-traditional academic culture \u2014 narrative evaluations, a redwood-forest residential college system, and a strong independent-scholarship ethos \u2014 with a rapidly strengthening computer science and game design pipeline directly over the hill from Silicon Valley.",
+      "archetype": "The Silicon Valley-Adjacent Counterculture Research Campus — Computer Science, Marine Biology, and Independent Scholarship",
+      "oneSentenceSummary": "UC Santa Cruz combines a distinctive, non-traditional academic culture — narrative evaluations, a redwood-forest residential college system, and a strong independent-scholarship ethos — with a rapidly strengthening computer science and game design pipeline directly over the hill from Silicon Valley.",
       "pipeline": "Approximately 19,000 students. UCSC is increasingly recognized for Computer Science and Game Design (Baskin Engineering), Marine Biology, Astronomy and Astrophysics (through historic ties to Lick Observatory), Psychology, Environmental Studies, and Politics. Major recruiters include Apple, Google, Netflix, Electronic Arts, NASA Ames Research Center, Monterey Bay Aquarium Research Institute, and a growing number of Silicon Valley technology firms.",
       "hiddenPathway": "UCSC sits directly over the hill from Silicon Valley, and its Baskin School of Engineering has quietly become one of the top computer science and game design feeder programs on the West Coast, sending graduates into Apple, Google, Netflix, and Electronic Arts at a rate that surprises families unfamiliar with the campus's STEM evolution.",
       "institutionalSecret": "Although still culturally associated with its 1960s counterculture origins and narrative-evaluation grading system, UCSC has become a genuine computer science and marine science research powerhouse, sitting at the unusual intersection of Silicon Valley proximity and world-class oceanographic access via the Monterey Bay.",
@@ -25823,7 +25647,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "UC Santa Cruz",
-      "archetype": "Independent-Minded Public Research University \u2014 Technology and Marine Science",
+      "archetype": "Independent-Minded Public Research University — Technology and Marine Science",
       "institutionalPersonality": "independent, intellectually unconventional, nature-oriented, research-driven, quietly technical",
       "cultureKeywords": [
         "Computer Science",
@@ -26210,18 +26034,16 @@ const UNIVERSITY_DB_V5 = {
       "notes": "UCSC does not have a unified honors college; instead, honors-style opportunities are distributed through individual residential college seminars and departmental honors thesis programs."
     }
   },
-
-
-"Stanford University": {
+  "Stanford University": {
     "institutionNarrative": {
       "name": "Stanford University",
       "location": "Stanford, California",
       "region": "California",
-      "archetype": "The Silicon Valley Genesis Engine \u2014 Technology, Entrepreneurship, and Venture Capital at the Source",
+      "archetype": "The Silicon Valley Genesis Engine — Technology, Entrepreneurship, and Venture Capital at the Source",
       "oneSentenceSummary": "Stanford is the intellectual and entrepreneurial heart of Silicon Valley, combining elite engineering, computer science, and business with a founder culture and venture capital ecosystem that Stanford itself largely created.",
       "pipeline": "Approximately 8,000 undergraduates and 9,000 graduate students. Stanford is internationally preeminent in Computer Science, Electrical Engineering, Symbolic Systems, Biology, Economics, and Public Policy. Major recruiters and alumni-founded companies include Google, Nvidia, Hewlett-Packard, Instagram, Snapchat, LinkedIn, Sequoia Capital, Kleiner Perkins, and thousands of venture-backed startups throughout the Bay Area.",
       "hiddenPathway": "Stanford's Office of Technology Licensing and its physical adjacency to Sand Hill Road's venture capital corridor mean that undergraduate research projects and dorm-room side projects routinely become venture-funded companies before students graduate.",
-      "institutionalSecret": "Stanford does not simply feed graduates into Silicon Valley \u2014 its faculty, alumni, and licensing office effectively built Silicon Valley, from Hewlett-Packard's founding through Google's origins as a Stanford PhD project.",
+      "institutionalSecret": "Stanford does not simply feed graduates into Silicon Valley — its faculty, alumni, and licensing office effectively built Silicon Valley, from Hewlett-Packard's founding through Google's origins as a Stanford PhD project.",
       "theRoom": "Located in the heart of Silicon Valley, Stanford sits minutes from Sand Hill Road's venture capital firms, and its alumni and faculty founded or led an outsized share of the technology companies that define the modern economy.",
       "lifestyle": "Intellectually intense, entrepreneurially charged, and outdoorsy. Students balance elite academics with a founder culture that treats starting a company as a normal undergraduate activity, set against a sunny, low-key Northern California backdrop.",
       "bestFitPersonality": "Intellectually ambitious, entrepreneurially minded, comfortable with risk-taking, and drawn to building things rather than simply studying them.",
@@ -26257,7 +26079,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Stanford University",
-      "archetype": "Elite Private Research University \u2014 Technology and Entrepreneurship Epicenter",
+      "archetype": "Elite Private Research University — Technology and Entrepreneurship Epicenter",
       "institutionalPersonality": "entrepreneurial, intellectually ambitious, collaborative, risk-tolerant, quietly confident",
       "cultureKeywords": [
         "Silicon Valley",
@@ -26530,7 +26352,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "ventureCapital": {
         "strength": 100,
-        "notes": "Stanford's defining institutional strength \u2014 arguably the single strongest venture capital pipeline of any university in the world."
+        "notes": "Stanford's defining institutional strength — arguably the single strongest venture capital pipeline of any university in the world."
       },
       "privateEquity": {
         "strength": 76,
@@ -26566,7 +26388,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "entrepreneurship": {
         "strength": 100,
-        "notes": "The defining institutional identity \u2014 Stanford's entrepreneurial culture and startup formation rate are unmatched among American universities."
+        "notes": "The defining institutional identity — Stanford's entrepreneurial culture and startup formation rate are unmatched among American universities."
       },
       "technology": {
         "strength": 100,
@@ -26648,13 +26470,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Stanford does not have a separate honors college; instead, its small size, low student-faculty ratio, and extensive undergraduate research opportunities function as an honors-level experience for the entire student body."
     }
   },
-
-"California Institute of Technology": {
+  "California Institute of Technology": {
     "institutionNarrative": {
       "name": "California Institute of Technology",
       "location": "Pasadena, California",
       "region": "California",
-      "archetype": "The Pure Science and Engineering Crucible \u2014 Physics, Astronomy, Aerospace, and JPL",
+      "archetype": "The Pure Science and Engineering Crucible — Physics, Astronomy, Aerospace, and JPL",
       "oneSentenceSummary": "Caltech is the most academically intense pure-science institution in the country, an extremely small, research-obsessed community that operates NASA's Jet Propulsion Laboratory and produces an outsized share of Nobel laureates relative to its size.",
       "pipeline": "Approximately 1,000 undergraduates and 1,300 graduate students, one of the smallest elite research universities in the world. Caltech is preeminent in Physics, Astronomy, Chemistry, Aerospace Engineering, Applied Mathematics, and Computer Science. Major recruiters and partners include NASA's Jet Propulsion Laboratory (managed by Caltech), SpaceX, Northrop Grumman, Google, and numerous physics and astronomy research institutions worldwide.",
       "hiddenPathway": "Caltech manages NASA's Jet Propulsion Laboratory, giving undergraduates direct access to spacecraft engineering, planetary science, and space mission design work that is otherwise available only to career NASA scientists.",
@@ -26693,7 +26514,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Caltech",
-      "archetype": "Elite Private Research University \u2014 Pure Science and Engineering",
+      "archetype": "Elite Private Research University — Pure Science and Engineering",
       "institutionalPersonality": "intensely intellectual, obsessively rigorous, quirky, small and tight-knit, research-driven",
       "cultureKeywords": [
         "Physics",
@@ -27076,13 +26897,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Caltech has no separate honors college; its entire undergraduate program functions at an honors-equivalent level of rigor and research access given the university's extremely small size and 3:1 student-faculty ratio."
     }
   },
-
-"University of Iowa": {
+  "University of Iowa": {
     "institutionNarrative": {
       "name": "University of Iowa",
       "location": "Iowa City, Iowa",
       "region": "Midwest",
-      "archetype": "The Writer's Workshop and Health Sciences Anchor \u2014 Creative Writing, Medicine, and Midwestern College-Town Life",
+      "archetype": "The Writer's Workshop and Health Sciences Anchor — Creative Writing, Medicine, and Midwestern College-Town Life",
       "oneSentenceSummary": "The University of Iowa combines the most influential creative writing program in American literary history with a strong academic medical center and a classic, close-knit Midwestern college-town experience.",
       "pipeline": "Approximately 22,000 undergraduates. Iowa is internationally recognized for the Iowa Writers' Workshop, Nursing, Pharmacy, Business, Journalism, and Health Sciences. Major recruiters include UnityPoint Health, University of Iowa Hospitals and Clinics, John Deere, Principal Financial Group, Rockwell Collins, and regional insurance and agricultural companies.",
       "hiddenPathway": "The Iowa Writers' Workshop is the oldest and most prestigious MFA creative writing program in the country, and its presence elevates the undergraduate English and journalism programs with faculty and visiting writers most universities cannot access.",
@@ -27121,7 +26941,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "University of Iowa",
-      "archetype": "Public Research Flagship \u2014 Creative Writing and Health Sciences",
+      "archetype": "Public Research Flagship — Creative Writing and Health Sciences",
       "institutionalPersonality": "community-oriented, spirited, literary, health-focused, Midwestern",
       "cultureKeywords": [
         "Creative Writing",
@@ -27496,13 +27316,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
     }
   },
-
-"University of Missouri": {
+  "University of Missouri": {
     "institutionNarrative": {
       "name": "University of Missouri",
       "location": "Columbia, Missouri",
       "region": "Midwest",
-      "archetype": "The Journalism Pioneer and SEC Flagship \u2014 Media, Agriculture, and Midwestern Athletics Culture",
+      "archetype": "The Journalism Pioneer and SEC Flagship — Media, Agriculture, and Midwestern Athletics Culture",
       "oneSentenceSummary": "The University of Missouri is home to the world's first journalism school and combines strong agricultural and veterinary sciences with a spirited SEC athletics culture in a classic Midwestern college town.",
       "pipeline": "Approximately 22,000 undergraduates. Mizzou is internationally recognized for Journalism (the first journalism school in the world), Agriculture, Veterinary Medicine, Engineering, and Business. Major recruiters include major news organizations, Cerner (Oracle Health), Edward Jones, Monsanto/Bayer, and regional agricultural and healthcare employers.",
       "hiddenPathway": "The Missouri School of Journalism pioneered hands-on, professional-model journalism education, giving students real newsroom experience at the Columbia Missourian, a functioning daily newspaper staffed by students, that most journalism programs can only simulate.",
@@ -27541,7 +27360,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "University of Missouri",
-      "archetype": "Public Research Flagship \u2014 Journalism and Agricultural Sciences",
+      "archetype": "Public Research Flagship — Journalism and Agricultural Sciences",
       "institutionalPersonality": "spirited, journalism-driven, agriculturally grounded, athletics-oriented, community-minded",
       "cultureKeywords": [
         "Journalism",
@@ -27917,13 +27736,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
     }
   },
-
-"University of Arkansas": {
+  "University of Arkansas": {
     "institutionNarrative": {
       "name": "University of Arkansas",
       "location": "Fayetteville, Arkansas",
       "region": "Southeast",
-      "archetype": "The Retail and Supply Chain Capital \u2014 Business, Walmart Proximity, and SEC Culture",
+      "archetype": "The Retail and Supply Chain Capital — Business, Walmart Proximity, and SEC Culture",
       "oneSentenceSummary": "The University of Arkansas offers one of the strongest undergraduate supply chain and retail management programs in the country, built on its direct proximity to Walmart's global headquarters and the dense retail supplier ecosystem that surrounds it.",
       "pipeline": "Approximately 27,000 undergraduates. Arkansas is nationally recognized for Supply Chain Management, Retail, Accounting, Engineering, and Agriculture. Major recruiters include Walmart, Tyson Foods, J.B. Hunt Transport, Procter & Gamble (via the Walmart supplier ecosystem), and numerous consumer packaged goods companies with offices near Bentonville specifically to serve Walmart accounts.",
       "hiddenPathway": "Hundreds of major consumer brands maintain 'Walmart teams' or satellite offices near Fayetteville and Bentonville solely to manage their Walmart account relationships, creating a hidden concentration of retail, sales, and supply chain jobs that most students never realize exists outside Arkansas.",
@@ -27962,7 +27780,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "University of Arkansas",
-      "archetype": "Public Research Flagship \u2014 Retail and Supply Chain Management",
+      "archetype": "Public Research Flagship — Retail and Supply Chain Management",
       "institutionalPersonality": "business-minded, spirited, corporate-adjacent, athletics-oriented, pragmatic",
       "cultureKeywords": [
         "Retail",
@@ -28337,14 +28155,13 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, priority registration, research opportunities, and dedicated honors housing for high-achieving students across all majors."
     }
   },
-
-"University of Mississippi": {
+  "University of Mississippi": {
     "institutionNarrative": {
       "name": "University of Mississippi",
       "location": "Oxford, Mississippi",
       "region": "Southeast",
-      "archetype": "The Southern Literary and Legal Tradition Anchor \u2014 Law, Pharmacy, and Oxford's Literary Legacy",
-      "oneSentenceSummary": "The University of Mississippi, widely known as Ole Miss, combines a respected law school and one of the nation's strongest pharmacy programs with the literary legacy of Oxford, Mississippi \u2014 William Faulkner's hometown \u2014 and a deeply spirited Southern social culture.",
+      "archetype": "The Southern Literary and Legal Tradition Anchor — Law, Pharmacy, and Oxford's Literary Legacy",
+      "oneSentenceSummary": "The University of Mississippi, widely known as Ole Miss, combines a respected law school and one of the nation's strongest pharmacy programs with the literary legacy of Oxford, Mississippi — William Faulkner's hometown — and a deeply spirited Southern social culture.",
       "pipeline": "Approximately 19,000 undergraduates. Ole Miss is recognized for Pharmacy, Law, Accounting, Journalism, and Business. Major recruiters include regional and national pharmacy chains, FedEx, Renasant Bank, regional law firms, and Mississippi and Tennessee healthcare systems.",
       "hiddenPathway": "The School of Pharmacy is consistently ranked among the top pharmacy programs in the South, giving pre-pharmacy students a direct, well-regarded pathway into the profession that is often overlooked by families outside pharmacy circles.",
       "institutionalSecret": "Oxford's deep literary heritage as William Faulkner's hometown gives Ole Miss's English and creative writing programs an authentic literary gravity that punches above the university's general national reputation.",
@@ -28382,7 +28199,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "University of Mississippi",
-      "archetype": "Public Research Flagship \u2014 Law, Pharmacy, and Southern Literary Tradition",
+      "archetype": "Public Research Flagship — Law, Pharmacy, and Southern Literary Tradition",
       "institutionalPersonality": "spirited, traditional, literary, socially formal, Southern",
       "cultureKeywords": [
         "Law",
@@ -28756,13 +28573,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "One of the more developed honors colleges among Southern flagships, offering smaller seminar coursework, dedicated honors housing, thesis research, and priority faculty access."
     }
   },
-
-"University of Nebraska-Lincoln": {
+  "University of Nebraska-Lincoln": {
     "institutionNarrative": {
       "name": "University of Nebraska-Lincoln",
       "location": "Lincoln, Nebraska",
       "region": "Midwest",
-      "archetype": "The Agricultural Engineering and Actuarial Science Hub \u2014 Great Plains Agriculture and Insurance Industry Anchor",
+      "archetype": "The Agricultural Engineering and Actuarial Science Hub — Great Plains Agriculture and Insurance Industry Anchor",
       "oneSentenceSummary": "The University of Nebraska-Lincoln combines one of the nation's strongest actuarial science programs with deep agricultural engineering research, anchored in a Great Plains economy built on insurance, agriculture, and food processing.",
       "pipeline": "Approximately 20,000 undergraduates. UNL is nationally recognized for Actuarial Science, Agricultural Engineering, Agronomy, Business, and Engineering. Major recruiters include Berkshire Hathaway (Union Pacific, GEICO, and other subsidiaries), Mutual of Omaha, Nelnet, ConAgra Foods, and major agricultural and insurance employers throughout the Great Plains.",
       "hiddenPathway": "Nebraska's actuarial science program is one of the oldest and most respected in the country, feeding directly into Omaha's dense concentration of insurance companies including Mutual of Omaha and Berkshire Hathaway's insurance subsidiaries, a pathway few students outside the Midwest know exists.",
@@ -28801,7 +28617,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Nebraska",
-      "archetype": "Public Research Flagship \u2014 Actuarial Science and Agricultural Engineering",
+      "archetype": "Public Research Flagship — Actuarial Science and Agricultural Engineering",
       "institutionalPersonality": "practical, hardworking, community-oriented, mathematically rigorous, Midwestern",
       "cultureKeywords": [
         "Actuarial Science",
@@ -29175,13 +28991,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, priority registration, dedicated honors housing, and research opportunities for high-achieving students across all majors."
     }
   },
-
-"University of Tennessee": {
+  "University of Tennessee": {
     "institutionNarrative": {
       "name": "University of Tennessee",
       "location": "Knoxville, Tennessee",
       "region": "Southeast",
-      "archetype": "The Nuclear Engineering and Nashville-Adjacent Business Gateway \u2014 Oak Ridge Research and SEC Culture",
+      "archetype": "The Nuclear Engineering and Nashville-Adjacent Business Gateway — Oak Ridge Research and SEC Culture",
       "oneSentenceSummary": "The University of Tennessee combines a nationally distinguished nuclear engineering program built on direct proximity to Oak Ridge National Laboratory with growing business and finance placement into Nashville's booming corporate economy, all wrapped in an intensely spirited SEC athletics culture.",
       "pipeline": "Approximately 30,000 undergraduates. UT Knoxville is nationally recognized for Nuclear Engineering, Supply Chain Management, Business, Agriculture, and Communications. Major recruiters include Oak Ridge National Laboratory, Denso, Eastman Chemical, HCA Healthcare, and a growing pipeline into Nashville's music, healthcare, and corporate economy.",
       "hiddenPathway": "UT's partnership with Oak Ridge National Laboratory gives undergraduate nuclear and materials engineering students access to national laboratory research facilities that most universities can only offer graduate students, if at all.",
@@ -29220,7 +29035,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "University of Tennessee",
-      "archetype": "Public Research Flagship \u2014 Nuclear Engineering and Nashville-Adjacent Business",
+      "archetype": "Public Research Flagship — Nuclear Engineering and Nashville-Adjacent Business",
       "institutionalPersonality": "spirited, ambitious, outdoorsy, increasingly corporate-minded, Southern",
       "cultureKeywords": [
         "Nuclear Engineering",
@@ -29594,13 +29409,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, priority research access, and dedicated honors housing for high-achieving students across all majors."
     }
   },
-
-"University of Vermont": {
+  "University of Vermont": {
     "institutionNarrative": {
       "name": "University of Vermont",
       "location": "Burlington, Vermont",
       "region": "New England",
-      "archetype": "The Environmental Sustainability and Rural Medicine Anchor \u2014 Green Living and New England Small-City Life",
+      "archetype": "The Environmental Sustainability and Rural Medicine Anchor — Green Living and New England Small-City Life",
       "oneSentenceSummary": "The University of Vermont is a national leader in environmental studies and sustainability science, combining a strong medical school focused on rural healthcare with an authentic, outdoors-oriented New England lifestyle in one of the country's most livable small cities.",
       "pipeline": "Approximately 11,000 undergraduates. UVM is nationally recognized for Environmental Studies, Sustainability Science, Medicine (particularly rural and primary care), Nursing, and Business. Major recruiters include University of Vermont Medical Center, Green Mountain Coffee Roasters, Ben & Jerry's, IBM, and regional healthcare and environmental organizations.",
       "hiddenPathway": "UVM's Rubenstein School of Environment and Natural Resources and its Gund Institute for Environment give students genuine access to cutting-edge sustainability research that most environmental studies programs can only reference secondhand.",
@@ -29638,7 +29452,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "University of Vermont",
-      "archetype": "Public Research University \u2014 Environmental Sustainability and Rural Medicine",
+      "archetype": "Public Research University — Environmental Sustainability and Rural Medicine",
       "institutionalPersonality": "environmentally conscious, outdoorsy, community-minded, progressive, authentic",
       "cultureKeywords": [
         "Environmental Studies",
@@ -30011,13 +29825,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, dedicated honors housing, thesis research, and priority faculty access for high-achieving students across all majors."
     }
   },
-
-"Florida State University": {
+  "Florida State University": {
     "institutionNarrative": {
       "name": "Florida State University",
       "location": "Tallahassee, Florida",
       "region": "Southeast",
-      "archetype": "The Criminology and Flying High Circus Anchor \u2014 Public Policy, Film, and Florida State Government Proximity",
+      "archetype": "The Criminology and Flying High Circus Anchor — Public Policy, Film, and Florida State Government Proximity",
       "oneSentenceSummary": "Florida State University combines a nationally top-ranked criminology program and a respected film school with direct proximity to Florida's state government in Tallahassee, wrapped in a spirited ACC athletics culture.",
       "pipeline": "Approximately 32,000 undergraduates. FSU is nationally recognized for Criminology, Film (the College of Motion Picture Arts), Public Administration, Business, and Social Work. Major recruiters include Florida state government agencies, law enforcement and criminal justice agencies nationally, regional law firms, and Florida's growing film and media production industry.",
       "hiddenPathway": "FSU's location in Tallahassee, Florida's state capital, gives public administration, criminology, and political science students direct internship access to the Florida Legislature, the Governor's office, and state agencies that students elsewhere can only study from a distance.",
@@ -30056,7 +29869,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Florida State University",
-      "archetype": "Public Research Flagship \u2014 Criminology, Public Policy, and Film",
+      "archetype": "Public Research Flagship — Criminology, Public Policy, and Film",
       "institutionalPersonality": "spirited, socially vibrant, increasingly ambitious, policy-adjacent, Southern",
       "cultureKeywords": [
         "Criminology",
@@ -30429,13 +30242,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
     }
   },
-
-"University of Central Florida": {
+  "University of Central Florida": {
     "institutionNarrative": {
       "name": "University of Central Florida",
       "location": "Orlando, Florida",
       "region": "Southeast",
-      "archetype": "The Simulation and Modeling Capital \u2014 Aerospace, Gaming, and Orlando's Themed Entertainment Economy",
+      "archetype": "The Simulation and Modeling Capital — Aerospace, Gaming, and Orlando's Themed Entertainment Economy",
       "oneSentenceSummary": "The University of Central Florida is one of the largest universities in the country and the undisputed academic center of the modeling, simulation, and themed entertainment industry that defines Orlando's economy, alongside deep ties to the nearby aerospace and defense corridor.",
       "pipeline": "Approximately 58,000 undergraduates, one of the largest student bodies in the country. UCF is nationally recognized for Modeling and Simulation, Game Design, Hospitality Management, Optics and Photonics, and Engineering. Major recruiters include Walt Disney World, Universal Orlando Resort, Lockheed Martin, Northrop Grumman, Electronic Arts, and the U.S. military's simulation and training command headquartered nearby.",
       "hiddenPathway": "UCF sits at the center of 'Central Florida Research Park,' one of the largest concentrations of military simulation and training technology companies in the country, giving modeling and simulation students direct access to an industry cluster invisible to most families outside defense and gaming circles.",
@@ -30474,7 +30286,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "University of Central Florida",
-      "archetype": "Public Research University \u2014 Modeling, Simulation, and Themed Entertainment",
+      "archetype": "Public Research University — Modeling, Simulation, and Themed Entertainment",
       "institutionalPersonality": "large-scale, energetic, industry-connected, pragmatic, entrepreneurial",
       "cultureKeywords": [
         "Modeling and Simulation",
@@ -30852,13 +30664,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, priority registration, dedicated honors housing, and research opportunities, providing a more intimate experience within UCF's very large student body."
     }
   },
-
-"Georgia State University": {
+  "Georgia State University": {
     "institutionNarrative": {
       "name": "Georgia State University",
       "location": "Atlanta, Georgia",
       "region": "Southeast",
-      "archetype": "The Student Success and Urban Atlanta Access Engine \u2014 Business, Public Health, and Downtown Corporate Proximity",
+      "archetype": "The Student Success and Urban Atlanta Access Engine — Business, Public Health, and Downtown Corporate Proximity",
       "oneSentenceSummary": "Georgia State University has become a national model for student success and social mobility, combining a large, diverse urban student body in the heart of downtown Atlanta with direct walking-distance access to a dense concentration of Fortune 500 headquarters.",
       "pipeline": "Approximately 25,000 undergraduates. Georgia State is nationally recognized for its Robinson College of Business, Public Health, Nursing, Computer Science, and Film/Media (through its downtown Atlanta production ties). Major recruiters include Coca-Cola, Delta Air Lines, Home Depot, Cox Enterprises, and the dense concentration of corporate headquarters throughout downtown and Midtown Atlanta.",
       "hiddenPathway": "Georgia State's downtown Atlanta campus sits within walking distance of numerous Fortune 500 headquarters, giving business and finance students direct internship access that suburban or rural flagship campuses simply cannot replicate.",
@@ -30897,7 +30708,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Georgia State University",
-      "archetype": "Public Urban Research University \u2014 Business, Public Health, and Student Success Innovation",
+      "archetype": "Public Urban Research University — Business, Public Health, and Student Success Innovation",
       "institutionalPersonality": "urban, pragmatic, diverse, professionally ambitious, innovation-oriented",
       "cultureKeywords": [
         "Downtown Atlanta",
@@ -31272,13 +31083,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors within the university's large urban student body."
     }
   },
-
-"Temple University": {
+  "Temple University": {
     "institutionNarrative": {
       "name": "Temple University",
       "location": "Philadelphia, Pennsylvania",
       "region": "Mid-Atlantic",
-      "archetype": "The Urban Access and Media Production Engine \u2014 Journalism, Law, and North Philadelphia Grit",
+      "archetype": "The Urban Access and Media Production Engine — Journalism, Law, and North Philadelphia Grit",
       "oneSentenceSummary": "Temple University combines a respected journalism and media program, a well-regarded law school, and direct urban immersion in Philadelphia, offering a pragmatic, access-oriented alternative to the region's more expensive private universities.",
       "pipeline": "Approximately 27,000 undergraduates. Temple is nationally recognized for Journalism (the Klein College of Media and Communication), Law, Podiatric Medicine, Business, and Public Health. Major recruiters include Comcast, Vanguard, Independence Blue Cross, regional law firms and courts, and Philadelphia's growing healthcare and media sectors.",
       "hiddenPathway": "Temple's Klein College of Media and Communication maintains deep ties to Philadelphia's news and broadcast media market, giving journalism students real newsroom experience and internship access most regional universities cannot match.",
@@ -31317,7 +31127,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Temple University",
-      "archetype": "Public Urban Research University \u2014 Journalism, Law, and Access",
+      "archetype": "Public Urban Research University — Journalism, Law, and Access",
       "institutionalPersonality": "pragmatic, urban, gritty, access-oriented, professionally focused",
       "cultureKeywords": [
         "Journalism",
@@ -31691,13 +31501,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
     }
   },
-
-"James Madison University": {
+  "James Madison University": {
     "institutionNarrative": {
       "name": "James Madison University",
       "location": "Harrisonburg, Virginia",
       "region": "Southeast",
-      "archetype": "The Undergraduate Teaching Excellence Anchor \u2014 Business, Health Sciences, and Shenandoah Valley Community",
+      "archetype": "The Undergraduate Teaching Excellence Anchor — Business, Health Sciences, and Shenandoah Valley Community",
       "oneSentenceSummary": "James Madison University has built a national reputation for undergraduate teaching excellence and student satisfaction, combining strong business and health sciences programs with an unusually close-knit, community-oriented campus culture in Virginia's Shenandoah Valley.",
       "pipeline": "Approximately 20,000 undergraduates. JMU is nationally recognized for its College of Business, Health Sciences, Nursing, Education, and Communication Sciences and Disorders. Major recruiters include Capital One, Deloitte, Northrop Grumman, regional healthcare systems, and federal government agencies given proximity to Washington DC.",
       "hiddenPathway": "JMU's proximity to the Washington DC metro area, roughly two hours away, combined with a strong reputation for producing polished, professionally prepared graduates, has made it an increasingly popular target for federal contractors and government-adjacent employers seeking reliable early-career talent.",
@@ -31736,7 +31545,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "James Madison University",
-      "archetype": "Public Undergraduate-Focused University \u2014 Business, Health Sciences, and Community",
+      "archetype": "Public Undergraduate-Focused University — Business, Health Sciences, and Community",
       "institutionalPersonality": "community-oriented, spirited, student-centered, professionally polished, warm",
       "cultureKeywords": [
         "Undergraduate Teaching Excellence",
@@ -32110,13 +31919,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, dedicated honors housing, thesis research, and priority faculty access for high-achieving students across all majors."
     }
   },
-
-"University of Richmond": {
+  "University of Richmond": {
     "institutionNarrative": {
       "name": "University of Richmond",
       "location": "Richmond, Virginia",
       "region": "Southeast",
-      "archetype": "The Small Liberal Arts and Leadership Studies Anchor \u2014 Business, Law, and Elite Small-College Resources",
+      "archetype": "The Small Liberal Arts and Leadership Studies Anchor — Business, Law, and Elite Small-College Resources",
       "oneSentenceSummary": "The University of Richmond combines a small, well-endowed liberal arts college experience with a distinctive School of Leadership Studies, a respected undergraduate business school, and direct proximity to Virginia's state capital and legal community.",
       "pipeline": "Approximately 3,300 undergraduates. Richmond is nationally recognized for its Jepson School of Leadership Studies (the first undergraduate leadership studies school in the country), the Robins School of Business, Law, and strong pre-professional advising. Major recruiters include regional and national law firms, Capital One, Dominion Energy, financial services firms, and consulting companies drawn to Richmond's small class sizes and strong alumni network.",
       "hiddenPathway": "The Jepson School of Leadership Studies is the first and one of the only standalone undergraduate leadership studies schools in the country, giving students a distinctive academic credential in organizational leadership that virtually no other university offers at the undergraduate level.",
@@ -32154,7 +31962,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "University of Richmond",
-      "archetype": "Elite Small Private University \u2014 Leadership Studies and Business",
+      "archetype": "Elite Small Private University — Leadership Studies and Business",
       "institutionalPersonality": "polished, well-resourced, pre-professionally minded, close-knit, ambitious",
       "cultureKeywords": [
         "Leadership Studies",
@@ -32528,13 +32336,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Richmond does not have a separate honors college; its small size, low student-faculty ratio, and Jepson School of Leadership Studies function as an honors-level experience for much of the student body."
     }
   },
-
-"Princeton University": {
+  "Princeton University": {
     "institutionNarrative": {
       "name": "Princeton University",
       "location": "Princeton, New Jersey",
       "region": "Mid-Atlantic",
-      "archetype": "The Undergraduate-First Ivy \u2014 Public Policy, Theoretical Research, and Senior Thesis Rigor",
+      "archetype": "The Undergraduate-First Ivy — Public Policy, Theoretical Research, and Senior Thesis Rigor",
       "oneSentenceSummary": "Princeton is the most undergraduate-focused of the Ivy League universities, combining elite theoretical research in mathematics, physics, and economics with a distinctive senior thesis requirement and the Woodrow Wilson School's public policy tradition, all within a small residential college town.",
       "pipeline": "Approximately 5,600 undergraduates. Princeton is preeminent in Mathematics, Physics, Economics, Public and International Affairs (SPIA), Computer Science, and Politics. Major recruiters include Goldman Sachs, McKinsey & Company, Bridgewater Associates, Google, and the full spectrum of federal government agencies and international organizations.",
       "hiddenPathway": "Princeton's senior thesis requirement, mandatory for every undergraduate regardless of major, produces original independent research at a level most universities reserve for graduate students, giving Princeton graduates a distinctive credential when applying to top graduate programs and employers who value independent work.",
@@ -32572,7 +32379,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Princeton University",
-      "archetype": "Elite Private Research University \u2014 Undergraduate-First Ivy League",
+      "archetype": "Elite Private Research University — Undergraduate-First Ivy League",
       "institutionalPersonality": "intellectually rigorous, traditional, independent-research-oriented, quietly prestigious",
       "cultureKeywords": [
         "Senior Thesis",
@@ -32947,13 +32754,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Princeton has no separate honors college; the university's small size, low student-faculty ratio, and mandatory senior thesis function as an honors-level experience for the entire undergraduate student body."
     }
   },
-
-"Yale University": {
+  "Yale University": {
     "institutionNarrative": {
       "name": "Yale University",
       "location": "New Haven, Connecticut",
       "region": "New England",
-      "archetype": "The Drama, Law, and Residential College Anchor \u2014 Humanities Prestige and Elite Legal Pathways",
+      "archetype": "The Drama, Law, and Residential College Anchor — Humanities Prestige and Elite Legal Pathways",
       "oneSentenceSummary": "Yale combines the country's most prestigious drama and law schools with a distinctive residential college system that creates smaller, intensely bonded communities within an elite research university, producing an outsized share of Supreme Court justices, playwrights, and cultural leaders.",
       "pipeline": "Approximately 6,600 undergraduates. Yale is preeminent in Drama and Theater (David Geffen School of Drama), Law, History, Political Science, and Economics. Major recruiters include top law firms nationally, McKinsey & Company, Goldman Sachs, major theater and entertainment companies, and federal judiciary clerkships at every level.",
       "hiddenPathway": "Yale Law School's outsized influence on the federal judiciary means Yale undergraduates interested in law benefit from mentorship networks and clerkship pipelines that funnel directly into Supreme Court and federal appellate clerkships at a rate no other university approaches.",
@@ -32991,7 +32797,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Yale University",
-      "archetype": "Elite Private Research University \u2014 Law, Drama, and Residential College Life",
+      "archetype": "Elite Private Research University — Law, Drama, and Residential College Life",
       "institutionalPersonality": "intellectually vibrant, artistically rich, traditionally elite, residentially bonded",
       "cultureKeywords": [
         "Law",
@@ -33366,13 +33172,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Yale has no separate honors college; the residential college system and small seminar culture function as an honors-level experience for the entire undergraduate student body."
     }
   },
-
-"Columbia University": {
+  "Columbia University": {
     "institutionNarrative": {
       "name": "Columbia University",
       "location": "New York, New York",
       "region": "Mid-Atlantic",
-      "archetype": "The Core Curriculum and Manhattan Anchor \u2014 Journalism, Finance, and Urban Immersion",
+      "archetype": "The Core Curriculum and Manhattan Anchor — Journalism, Finance, and Urban Immersion",
       "oneSentenceSummary": "Columbia combines a distinctive, mandatory Core Curriculum in the Western canon with unmatched physical immersion in Manhattan, giving students direct daily access to the world's most concentrated financial, media, and cultural institutions.",
       "pipeline": "Approximately 8,000 undergraduates across Columbia College and the Fu Foundation School of Engineering. Columbia is preeminent in Journalism (Columbia Journalism School), Finance and Economics, Political Science, International Affairs (SIPA), and Creative Writing. Major recruiters include every major Wall Street bank, McKinsey & Company, the United Nations, major publishing houses, and New York's media and finance establishment.",
       "hiddenPathway": "Columbia's location in Manhattan means students can and regularly do hold part-time internships at investment banks, publishing houses, and media companies during the semester, a pathway essentially unavailable to students at rural or suburban Ivy League campuses.",
@@ -33411,7 +33216,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Columbia University",
-      "archetype": "Elite Private Research University \u2014 Core Curriculum and Manhattan Immersion",
+      "archetype": "Elite Private Research University — Core Curriculum and Manhattan Immersion",
       "institutionalPersonality": "intellectually intense, urgently urban, professionally accelerated, cosmopolitan",
       "cultureKeywords": [
         "Core Curriculum",
@@ -33786,17 +33591,16 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Columbia has no separate honors college; the mandatory Core Curriculum and small seminar structure function as an honors-level shared experience for the entire undergraduate student body."
     }
   },
-
-"Cornell University": {
+  "Cornell University": {
     "institutionNarrative": {
       "name": "Cornell University",
       "location": "Ithaca, New York",
       "region": "Mid-Atlantic",
-      "archetype": "The Any Person, Any Study Anchor \u2014 Hospitality, Agriculture, Engineering, and Land-Grant Breadth",
+      "archetype": "The Any Person, Any Study Anchor — Hospitality, Agriculture, Engineering, and Land-Grant Breadth",
       "oneSentenceSummary": "Cornell is the most academically comprehensive Ivy League university, combining a land-grant mission of practical and agricultural education with elite engineering, the world's top hospitality management program, and eight distinct undergraduate colleges within one university.",
       "pipeline": "Approximately 15,700 undergraduates across seven undergraduate colleges. Cornell is preeminent in Hotel Administration (Nolan School of Hotel Administration), Engineering, Agriculture and Life Sciences, Industrial and Labor Relations, and Architecture. Major recruiters include Marriott, Hilton, Goldman Sachs, McKinsey & Company, Boeing, and major agricultural and life sciences companies.",
       "hiddenPathway": "Cornell's status as a land-grant university means several of its colleges, including Agriculture and Life Sciences, Human Ecology, and Industrial and Labor Relations, are partially state-funded, giving qualified New York residents access to an Ivy League education at a meaningfully lower cost than Cornell's private colleges.",
-      "institutionalSecret": "Cornell's motto, 'I would found an institution where any person can find instruction in any study,' is not just rhetoric \u2014 the university's seven distinct undergraduate colleges give it a breadth of practical, technical, and vocational programs unmatched by any other Ivy League school, from viticulture to labor relations to hotel management.",
+      "institutionalSecret": "Cornell's motto, 'I would found an institution where any person can find instruction in any study,' is not just rhetoric — the university's seven distinct undergraduate colleges give it a breadth of practical, technical, and vocational programs unmatched by any other Ivy League school, from viticulture to labor relations to hotel management.",
       "theRoom": "Located in Ithaca in the Finger Lakes region, Cornell is more geographically isolated than other Ivy League campuses, but this isolation is offset by an unusually self-contained, comprehensive academic ecosystem spanning engineering, agriculture, hospitality, and the liberal arts.",
       "lifestyle": "Academically intense, practically minded, and scenic. Ithaca's Finger Lakes setting and Cornell's famous gorges create a distinctive outdoor backdrop, while the university's sheer size and college breadth create genuinely varied sub-cultures depending on a student's college.",
       "bestFitPersonality": "Practically minded, drawn to a specific applied field such as hospitality, agriculture, engineering, or labor relations, and comfortable in a large, academically comprehensive university.",
@@ -33830,7 +33634,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Cornell University",
-      "archetype": "Elite Private-Public Hybrid Research University \u2014 Land-Grant Breadth and Practical Education",
+      "archetype": "Elite Private-Public Hybrid Research University — Land-Grant Breadth and Practical Education",
       "institutionalPersonality": "practically minded, academically comprehensive, egalitarian in spirit, scenic and self-contained",
       "cultureKeywords": [
         "Any Person, Any Study",
@@ -34205,13 +34009,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Cornell does not have a single unified honors college; instead, individual colleges (Arts and Sciences, Engineering, Agriculture and Life Sciences) offer their own honors and research distinction programs."
     }
   },
-
-"Dartmouth College": {
+  "Dartmouth College": {
     "institutionNarrative": {
       "name": "Dartmouth College",
       "location": "Hanover, New Hampshire",
       "region": "New England",
-      "archetype": "The Small Ivy Wilderness Anchor \u2014 Undergraduate Teaching, Tuck Business, and Rural New England Immersion",
+      "archetype": "The Small Ivy Wilderness Anchor — Undergraduate Teaching, Tuck Business, and Rural New England Immersion",
       "oneSentenceSummary": "Dartmouth is the smallest and most undergraduate-focused Ivy League institution, combining an unusually intimate liberal arts college experience with the elite Tuck School of Business and a distinctive outdoor and wilderness culture rooted in rural New Hampshire.",
       "pipeline": "Approximately 4,500 undergraduates. Dartmouth is preeminent in Economics, Government, Engineering (Thayer School), and pre-business preparation feeding into the Tuck School of Business. Major recruiters include Goldman Sachs, McKinsey & Company, Bain & Company, Bridgewater Associates, and top consulting and finance firms nationally.",
       "hiddenPathway": "Dartmouth's small size and close-knit alumni network create an unusually strong 'Dartmouth mafia' effect in finance and consulting recruiting, where alumni actively prioritize hiring fellow graduates at a rate that punches above the college's smaller undergraduate population.",
@@ -34249,7 +34052,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Dartmouth College",
-      "archetype": "Elite Small Private College \u2014 Undergraduate Teaching, Business, and Outdoor Wilderness Culture",
+      "archetype": "Elite Small Private College — Undergraduate Teaching, Business, and Outdoor Wilderness Culture",
       "institutionalPersonality": "outdoorsy, tightly bonded, traditionally spirited, professionally ambitious",
       "cultureKeywords": [
         "Dartmouth Outing Club",
@@ -34623,13 +34426,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Dartmouth has no separate honors college; the college's small size, low student-faculty ratio, and departmental honors thesis programs function as an honors-level experience for high-achieving students."
     }
   },
-
-"University of Pennsylvania": {
+  "University of Pennsylvania": {
     "institutionNarrative": {
       "name": "University of Pennsylvania",
       "location": "Philadelphia, Pennsylvania",
       "region": "Mid-Atlantic",
-      "archetype": "The Pre-Professional Powerhouse \u2014 Wharton Business, Nursing, and Interdisciplinary Ivy League Ambition",
+      "archetype": "The Pre-Professional Powerhouse — Wharton Business, Nursing, and Interdisciplinary Ivy League Ambition",
       "oneSentenceSummary": "The University of Pennsylvania is the most explicitly pre-professional Ivy League university, anchored by the Wharton School, the world's most influential undergraduate business program, alongside a top nursing school and unusually strong cross-disciplinary dual-degree options.",
       "pipeline": "Approximately 10,500 undergraduates across four undergraduate schools. Penn is preeminent in Business (Wharton), Nursing, Communication (Annenberg), and Biomedical Engineering. Major recruiters include every major Wall Street investment bank, McKinsey & Company, Goldman Sachs, major healthcare systems, and consulting firms nationally and globally.",
       "hiddenPathway": "Penn's Huntsman Program, Management and Technology Program, and other cross-school dual-degree options give students the ability to combine a Wharton business degree with engineering, international studies, or nursing in a structurally unified four-year program that few other universities can replicate.",
@@ -34667,7 +34469,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "University of Pennsylvania",
-      "archetype": "Elite Private Research University \u2014 Pre-Professional Business and Interdisciplinary Ambition",
+      "archetype": "Elite Private Research University — Pre-Professional Business and Interdisciplinary Ambition",
       "institutionalPersonality": "professionally ambitious, pragmatic, socially vibrant, interdisciplinary",
       "cultureKeywords": [
         "Wharton",
@@ -35042,19 +34844,18 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Penn has no separate honors college; its four distinct undergraduate schools and structured dual-degree programs function as honors-equivalent pathways for high-achieving students."
     }
   },
-
-"Amherst College": {
+  "Amherst College": {
     "institutionNarrative": {
       "name": "Amherst College",
       "location": "Amherst, Massachusetts",
       "region": "New England",
-      "archetype": "The Open Curriculum Powerhouse \u2014 No Requirements, Total Intellectual Freedom, Elite Outcomes",
-      "oneSentenceSummary": "Amherst College is one of the most selective liberal arts colleges in the country, distinguished by having no distribution requirements at all \u2014 students design their entire curriculum from day one \u2014 within the Five College Consortium's shared academic resources.",
+      "archetype": "The Open Curriculum Powerhouse — No Requirements, Total Intellectual Freedom, Elite Outcomes",
+      "oneSentenceSummary": "Amherst College is one of the most selective liberal arts colleges in the country, distinguished by having no distribution requirements at all — students design their entire curriculum from day one — within the Five College Consortium's shared academic resources.",
       "pipeline": "Approximately 1,900 undergraduates. Amherst is nationally recognized for Economics, English, Political Science, and Mathematics, with unusually strong placement into finance, consulting, law, and academia. Major recruiters include Goldman Sachs, McKinsey & Company, top law schools, and PhD programs nationally.",
-      "hiddenPathway": "Amherst's open curriculum \u2014 zero required courses or distribution requirements \u2014 combined with the Five College Consortium (Amherst, Smith, Mount Holyoke, Hampshire, UMass Amherst) gives students access to a research-university-scale course catalog inside a tiny liberal arts college.",
+      "hiddenPathway": "Amherst's open curriculum — zero required courses or distribution requirements — combined with the Five College Consortium (Amherst, Smith, Mount Holyoke, Hampshire, UMass Amherst) gives students access to a research-university-scale course catalog inside a tiny liberal arts college.",
       "institutionalSecret": "Amherst has one of the highest per-student endowments of any liberal arts college in the country, funding a need-blind, loan-free financial aid policy that makes it genuinely more affordable for many families than in-state public flagships.",
       "theRoom": "Located in the Pioneer Valley of western Massachusetts, students are embedded in the Five College Consortium alongside Smith, Mount Holyoke, Hampshire, and UMass Amherst, with Boston and New York both accessible for internships.",
-      "lifestyle": "Intellectually intense, small, and academically unstructured in the best sense \u2014 the open curriculum forces genuine self-direction from the first semester onward, within a tight-knit residential community.",
+      "lifestyle": "Intellectually intense, small, and academically unstructured in the best sense — the open curriculum forces genuine self-direction from the first semester onward, within a tight-knit residential community.",
       "bestFitPersonality": "Highly self-directed, intellectually curious across disciplines, comfortable designing an entire academic path without external structure, and drawn to a very small, intensely academic community.",
       "faithTradition": "None",
       "geographicInfluenceRadius": "Strong throughout New England and the Northeast, with elite national reach into finance, law, and academia.",
@@ -35086,7 +34887,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Amherst",
-      "archetype": "Elite Small Liberal Arts College \u2014 Open Curriculum",
+      "archetype": "Elite Small Liberal Arts College — Open Curriculum",
       "institutionalPersonality": "self-directed, intellectually intense, small, quietly prestigious",
       "cultureKeywords": [
         "Open Curriculum",
@@ -35453,17 +35254,16 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Amherst has no honors college; the open curriculum and small size mean every student already has honors-level access to independent study and thesis work."
     }
   },
-
-"Bowdoin College": {
+  "Bowdoin College": {
     "institutionNarrative": {
       "name": "Bowdoin College",
       "location": "Brunswick, Maine",
       "region": "New England",
-      "archetype": "The Maine Coast Powerhouse \u2014 No-Loan Aid, Polar Exploration Legacy, and Small-College Elite Outcomes",
+      "archetype": "The Maine Coast Powerhouse — No-Loan Aid, Polar Exploration Legacy, and Small-College Elite Outcomes",
       "oneSentenceSummary": "Bowdoin College combines one of the most generous no-loan financial aid policies in the country with a distinctive legacy in polar exploration and environmental science, producing an outsized share of graduates in finance, law, and public service relative to its small size.",
       "pipeline": "Approximately 1,900 undergraduates. Bowdoin is nationally recognized for Government and Legal Studies, Economics, Environmental Studies, and English. Major recruiters include Goldman Sachs, top law schools, federal government agencies, and environmental research organizations.",
       "hiddenPathway": "Bowdoin's Arctic Studies Center and polar exploration legacy (alumni Robert Peary and Donald MacMillan were among the first to reach the North Pole) give environmental studies and earth science students a genuinely unique research identity tied to climate science.",
-      "institutionalSecret": "Bowdoin eliminated loans from financial aid packages entirely, replacing them with grants \u2014 one of the most generous policies among liberal arts colleges \u2014 making it more affordable for many middle-income families than they initially assume.",
+      "institutionalSecret": "Bowdoin eliminated loans from financial aid packages entirely, replacing them with grants — one of the most generous policies among liberal arts colleges — making it more affordable for many middle-income families than they initially assume.",
       "theRoom": "Located on the Maine coast in Brunswick, students are positioned within a small-town New England setting with strong ties to Boston's finance and consulting economy, a two-hour drive south.",
       "lifestyle": "Outdoorsy, close-knit, and quietly intense. Bowdoin's coastal Maine setting supports a strong outdoor culture, and the small size creates a tight residential community with a well-known dining hall food culture.",
       "bestFitPersonality": "Outdoors-oriented, intellectually serious, drawn to public service, law, or environmental science, and comfortable in a small, close-knit New England community.",
@@ -35496,7 +35296,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Bowdoin",
-      "archetype": "Elite Small Liberal Arts College \u2014 No-Loan Aid and Environmental Legacy",
+      "archetype": "Elite Small Liberal Arts College — No-Loan Aid and Environmental Legacy",
       "institutionalPersonality": "outdoorsy, quietly intense, close-knit, service-oriented",
       "cultureKeywords": [
         "No-Loan Aid",
@@ -35865,16 +35665,15 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Bowdoin has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
     }
   },
-
-"Middlebury College": {
+  "Middlebury College": {
     "institutionNarrative": {
       "name": "Middlebury College",
       "location": "Middlebury, Vermont",
       "region": "New England",
-      "archetype": "The Global Languages and Diplomacy Anchor \u2014 World-Class Language Immersion and International Affairs",
+      "archetype": "The Global Languages and Diplomacy Anchor — World-Class Language Immersion and International Affairs",
       "oneSentenceSummary": "Middlebury College is the undisputed national leader in foreign language immersion education, combining a legendary summer Language Schools program with strong international studies and environmental science, all within a scenic Green Mountains setting.",
       "pipeline": "Approximately 2,800 undergraduates. Middlebury is nationally recognized for International and Global Studies, Environmental Studies, Economics, and Foreign Languages (Arabic, Chinese, French, German, Italian, Japanese, Russian, Spanish, Portuguese, Hebrew, Korean). Major recruiters include the U.S. State Department, international NGOs, top consulting firms, and environmental organizations.",
-      "hiddenPathway": "Middlebury's famous Language Schools \u2014 an intensive summer immersion program requiring a 'language pledge' of total immersion \u2014 gives undergraduates language fluency that most universities cannot replicate, feeding directly into State Department and international affairs careers.",
+      "hiddenPathway": "Middlebury's famous Language Schools — an intensive summer immersion program requiring a 'language pledge' of total immersion — gives undergraduates language fluency that most universities cannot replicate, feeding directly into State Department and international affairs careers.",
       "institutionalSecret": "The Middlebury Institute of International Studies at Monterey, a graduate school affiliated with the college, gives undergraduates an unusually direct pipeline into international affairs graduate education and careers most liberal arts colleges cannot offer.",
       "theRoom": "Located in Middlebury, Vermont, students are embedded in the Green Mountains with a strong outdoor and skiing culture, while the college's global language programs connect students to international affairs institutions worldwide.",
       "lifestyle": "Outdoorsy, globally-minded, and intellectually serious. Middlebury's Vermont setting supports a strong skiing and outdoor recreation culture alongside a genuinely international, multilingual campus atmosphere.",
@@ -35908,7 +35707,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Middlebury",
-      "archetype": "Elite Small Liberal Arts College \u2014 Global Languages and International Affairs",
+      "archetype": "Elite Small Liberal Arts College — Global Languages and International Affairs",
       "institutionalPersonality": "globally-minded, outdoorsy, intellectually serious, multilingual",
       "cultureKeywords": [
         "Language Immersion",
@@ -36046,7 +35845,7 @@ const UNIVERSITY_DB_V5 = {
         "Middlebury's Language Schools are considered the gold standard of American language immersion education, requiring a strict 'language pledge' of total immersion.",
         "The Middlebury Institute of International Studies at Monterey gives undergraduates a direct pipeline into graduate international affairs education.",
         "Middlebury's environmental studies program benefits from the college's Vermont setting and strong sustainability commitments.",
-        "The college's foreign language breadth \u2014 including Arabic, Chinese, and Russian \u2014 is unusually broad for a liberal arts college of its size."
+        "The college's foreign language breadth — including Arabic, Chinese, and Russian — is unusually broad for a liberal arts college of its size."
       ],
       "sleeperIndustries": [
         "Diplomacy and Foreign Service",
@@ -36277,13 +36076,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Middlebury has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
     }
   },
-
-"Wesleyan University": {
+  "Wesleyan University": {
     "institutionNarrative": {
       "name": "Wesleyan University",
       "location": "Middletown, Connecticut",
       "region": "New England",
-      "archetype": "The Artistic Alternative Powerhouse \u2014 Film, Music, and Progressive Intellectual Culture",
+      "archetype": "The Artistic Alternative Powerhouse — Film, Music, and Progressive Intellectual Culture",
       "oneSentenceSummary": "Wesleyan University combines a globally influential film studies program (alumni include Joss Whedon, Lin-Manuel Miranda, and Michael Bay) with a genuinely alternative, artistically experimental intellectual culture that punches far above its liberal-arts-college size.",
       "pipeline": "Approximately 3,000 undergraduates. Wesleyan is nationally recognized for Film Studies, Music, Government, and Neuroscience and Behavior. Major recruiters include major film and television studios, top consulting firms, PhD programs, and technology companies.",
       "hiddenPathway": "Wesleyan's film studies alumni network is disproportionately powerful in Hollywood relative to the program's small size, producing directors, writers, and producers who actively recruit and mentor current Wesleyan students breaking into the industry.",
@@ -36321,7 +36119,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Wesleyan",
-      "archetype": "Elite Small Liberal Arts University \u2014 Film, Music, and Artistic Experimentation",
+      "archetype": "Elite Small Liberal Arts University — Film, Music, and Artistic Experimentation",
       "institutionalPersonality": "artistically alternative, intellectually unconventional, progressive, creatively ambitious",
       "cultureKeywords": [
         "Film Studies",
@@ -36567,7 +36365,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "entertainmentMedia": {
         "strength": 92,
-        "notes": "One of the university's defining strengths \u2014 a disproportionately powerful film, television, and music industry pipeline."
+        "notes": "One of the university's defining strengths — a disproportionately powerful film, television, and music industry pipeline."
       },
       "ventureCapital": {
         "strength": 42,
@@ -36689,17 +36487,16 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Wesleyan has no honors college; the university's small size and thesis-based senior year function as an honors-level experience for the entire student body."
     }
   },
-
-"Carleton College": {
+  "Carleton College": {
     "institutionNarrative": {
       "name": "Carleton College",
       "location": "Northfield, Minnesota",
       "region": "Midwest",
-      "archetype": "The Quirky Intellectual Powerhouse \u2014 Highest PhD Production Rate and Genuine Love of Learning",
+      "archetype": "The Quirky Intellectual Powerhouse — Highest PhD Production Rate and Genuine Love of Learning",
       "oneSentenceSummary": "Carleton College produces PhDs at one of the highest rates of any undergraduate institution in the country, combining a famously quirky, non-careerist intellectual culture with elite outcomes across the sciences, economics, and the humanities.",
       "pipeline": "Approximately 2,100 undergraduates. Carleton is nationally recognized for Economics, Mathematics, Biology, and Political Science, with an unusually high rate of graduates pursuing PhDs relative to any other liberal arts college. Major recruiters include top PhD programs, Goldman Sachs, McKinsey & Company, and Teach for America.",
-      "hiddenPathway": "Carleton's rate of students who go on to earn PhDs is consistently ranked among the top 3 of all American colleges and universities on a per-capita basis \u2014 a distinction that gives students unusually direct faculty mentorship toward doctoral-level research even as undergraduates.",
-      "institutionalSecret": "Carleton's famously quirky, non-careerist culture \u2014 including student traditions like the trebuchet-adjacent 'Pumpkin Chunkin' contest \u2014 masks one of the most academically rigorous and intellectually serious student bodies in the country.",
+      "hiddenPathway": "Carleton's rate of students who go on to earn PhDs is consistently ranked among the top 3 of all American colleges and universities on a per-capita basis — a distinction that gives students unusually direct faculty mentorship toward doctoral-level research even as undergraduates.",
+      "institutionalSecret": "Carleton's famously quirky, non-careerist culture — including student traditions like the trebuchet-adjacent 'Pumpkin Chunkin' contest — masks one of the most academically rigorous and intellectually serious student bodies in the country.",
       "theRoom": "Located in Northfield, Minnesota, an hour from Minneapolis-St. Paul, Carleton shares its small town with rival Saint Olaf College, creating an unusually dense concentration of high-achieving liberal arts students in one small Midwestern town.",
       "lifestyle": "Quirky, intellectually earnest, and genuinely unpretentious. Carleton's culture prizes learning for its own sake over resume-building, with an unusually strong sense of humor about itself.",
       "bestFitPersonality": "Genuinely intellectually curious, unpretentious, drawn to research or the sciences, and comfortable in a quirky, non-careerist Midwestern liberal arts culture.",
@@ -36733,7 +36530,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Carleton",
-      "archetype": "Elite Small Liberal Arts College \u2014 PhD Production and Intellectual Seriousness",
+      "archetype": "Elite Small Liberal Arts College — PhD Production and Intellectual Seriousness",
       "institutionalPersonality": "quirky, intellectually earnest, unpretentious, genuinely curious",
       "cultureKeywords": [
         "PhD Production",
@@ -37102,13 +36899,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Carleton has no honors college; the college's small size and comprehensive exercise/thesis requirements function as an honors-level experience for the entire student body."
     }
   },
-
-"Grinnell College": {
+  "Grinnell College": {
     "institutionNarrative": {
       "name": "Grinnell College",
       "location": "Grinnell, Iowa",
       "region": "Midwest",
-      "archetype": "The Endowment-Rich Social Justice Anchor \u2014 Open Curriculum, Radical Financial Aid, and Rural Iowa Intellectual Intensity",
+      "archetype": "The Endowment-Rich Social Justice Anchor — Open Curriculum, Radical Financial Aid, and Rural Iowa Intellectual Intensity",
       "oneSentenceSummary": "Grinnell College combines one of the largest endowments per student of any liberal arts college in the country with a completely open curriculum and a deeply progressive, social-justice-oriented intellectual culture, all in a small Iowa town.",
       "pipeline": "Approximately 1,700 undergraduates. Grinnell is nationally recognized for Economics, Political Science, Biology, and Mathematics/Statistics, with an unusually high rate of graduates pursuing PhDs and careers in social justice-oriented fields. Major recruiters include Goldman Sachs, top PhD programs, Teach for America, and nonprofit and social enterprise organizations.",
       "hiddenPathway": "Grinnell's endowment per student is among the very highest of any liberal arts college in the country, funding a genuinely need-blind, no-loan financial aid policy and extensive student research funding that most peer institutions cannot match.",
@@ -37146,7 +36942,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Grinnell",
-      "archetype": "Elite Small Liberal Arts College \u2014 Endowment-Rich Social Justice Culture",
+      "archetype": "Elite Small Liberal Arts College — Endowment-Rich Social Justice Culture",
       "institutionalPersonality": "intellectually intense, deeply progressive, socially engaged, well-resourced",
       "cultureKeywords": [
         "Open Curriculum",
@@ -37514,13 +37310,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Grinnell has no honors college; the college's open curriculum and generous funded research opportunities function as an honors-level experience for the entire student body."
     }
   },
-
-"Vassar College": {
+  "Vassar College": {
     "institutionNarrative": {
       "name": "Vassar College",
       "location": "Poughkeepsie, New York",
       "region": "New England",
-      "archetype": "The Artistic and Literary Powerhouse \u2014 Former Seven Sisters Prestige, Theater, and Progressive Intellectualism",
+      "archetype": "The Artistic and Literary Powerhouse — Former Seven Sisters Prestige, Theater, and Progressive Intellectualism",
       "oneSentenceSummary": "Vassar College combines the historical prestige of the former Seven Sisters women's colleges (now fully coeducational) with an exceptionally strong theater, film, and English program, producing a disproportionate share of writers, actors, and creative leaders relative to its small size.",
       "pipeline": "Approximately 2,450 undergraduates. Vassar is nationally recognized for English, Drama, Film, Art History, and Political Science. Major recruiters include major publishing houses, theater and film production companies, top consulting firms, and PhD programs.",
       "hiddenPathway": "Vassar's drama and film program has produced an outsized share of working actors, playwrights, and directors relative to the college's small size, supported by an unusually well-resourced theater facility and active alumni casting networks.",
@@ -37557,7 +37352,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Vassar",
-      "archetype": "Elite Small Liberal Arts College \u2014 Arts, Letters, and Former Seven Sisters Prestige",
+      "archetype": "Elite Small Liberal Arts College — Arts, Letters, and Former Seven Sisters Prestige",
       "institutionalPersonality": "artistically vibrant, intellectually serious, progressive, historically significant",
       "cultureKeywords": [
         "Theater and Drama",
@@ -37803,7 +37598,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "entertainmentMedia": {
         "strength": 84,
-        "notes": "One of the college's defining strengths \u2014 a powerful theater, film, and publishing pipeline."
+        "notes": "One of the college's defining strengths — a powerful theater, film, and publishing pipeline."
       },
       "ventureCapital": {
         "strength": 36,
@@ -37925,13 +37720,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Vassar has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
     }
   },
-
-"Claremont McKenna College": {
+  "Claremont McKenna College": {
     "institutionNarrative": {
       "name": "Claremont McKenna College",
       "location": "Claremont, California",
       "region": "California",
-      "archetype": "The Government-Economics-Finance Powerhouse \u2014 Claremont Consortium Access and Wall Street Placement",
+      "archetype": "The Government-Economics-Finance Powerhouse — Claremont Consortium Access and Wall Street Placement",
       "oneSentenceSummary": "Claremont McKenna College is the most pre-professionally and politically-engaged member of the Claremont Consortium, combining an unusually strong government and economics program with elite Wall Street and consulting placement rates that rival much larger universities.",
       "pipeline": "Approximately 1,400 undergraduates. CMC is nationally recognized for Government, Economics, International Relations, and Finance (through the Robert Day School of Economics and Finance). Major recruiters include Goldman Sachs, McKinsey & Company, top law schools, and federal government agencies.",
       "hiddenPathway": "As one of the five undergraduate Claremont Colleges (alongside Pomona, Scripps, Harvey Mudd, and Pitzer), CMC students can cross-register for classes at any of the five campuses, effectively giving them access to a mid-sized university's course catalog while remaining enrolled at one of the most pre-professionally focused small colleges in the country.",
@@ -37969,7 +37763,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "CMC",
-      "archetype": "Elite Small Liberal Arts College \u2014 Government, Economics, and Finance",
+      "archetype": "Elite Small Liberal Arts College — Government, Economics, and Finance",
       "institutionalPersonality": "pre-professionally ambitious, politically engaged, structured, career-focused",
       "cultureKeywords": [
         "Government and Economics",
@@ -38337,16 +38131,15 @@ const UNIVERSITY_DB_V5 = {
       "notes": "CMC has no honors college; the college's small size and structured leadership programs function as an honors-level experience for the entire student body."
     }
   },
-
-"Harvey Mudd College": {
+  "Harvey Mudd College": {
     "institutionNarrative": {
       "name": "Harvey Mudd College",
       "location": "Claremont, California",
       "region": "California",
-      "archetype": "The Liberal Arts Engineering Anomaly \u2014 Pure STEM Rigor with a Humanities Requirement, Claremont Consortium Access",
+      "archetype": "The Liberal Arts Engineering Anomaly — Pure STEM Rigor with a Humanities Requirement, Claremont Consortium Access",
       "oneSentenceSummary": "Harvey Mudd College is the only truly STEM-exclusive undergraduate institution built as a liberal arts college, combining Caltech-level technical rigor with a mandatory humanities and social science core and direct cross-registration into the other four Claremont Colleges.",
       "pipeline": "Approximately 900 undergraduates. Harvey Mudd is nationally recognized for Engineering, Computer Science, Mathematics, and Physics. Major recruiters include Google, SpaceX, Northrop Grumman, top graduate engineering programs, and quantitative finance firms.",
-      "hiddenPathway": "Harvey Mudd's mandatory humanities, social science, and arts requirement \u2014 roughly a third of the curriculum \u2014 produces engineers with genuine communication and interdisciplinary skills that pure technical institutes often lack, a distinction employers increasingly value.",
+      "hiddenPathway": "Harvey Mudd's mandatory humanities, social science, and arts requirement — roughly a third of the curriculum — produces engineers with genuine communication and interdisciplinary skills that pure technical institutes often lack, a distinction employers increasingly value.",
       "institutionalSecret": "Harvey Mudd's small size and 8:1 student-faculty ratio give undergraduates access to research and engineering design projects normally reserved for graduate students at larger technical institutes, while cross-registration into CMC, Pomona, Scripps, and Pitzer provides genuine liberal arts breadth.",
       "theRoom": "Located in Claremont, California, part of the five-college Claremont Consortium, Harvey Mudd sits an hour from Los Angeles, with strong pipelines into Southern California's aerospace, technology, and engineering economy.",
       "lifestyle": "Intensely academic, quirky, and collaborative rather than cutthroat. Harvey Mudd's famously demanding curriculum is offset by a strong culture of peer support and problem-set collaboration.",
@@ -38415,7 +38208,7 @@ const UNIVERSITY_DB_V5 = {
     "comparativePositioning": {
       "versusCaltech": "Caltech offers a larger scale with more extensive graduate research programs and JPL access, while Harvey Mudd offers a genuinely required humanities and social science core alongside comparable undergraduate technical rigor.",
       "versusMIT": "MIT offers a much larger scale with a stronger entrepreneurial ecosystem, while Harvey Mudd offers an even lower student-faculty ratio and a more deliberately humanistic engineering education.",
-      "versusCMC": "Claremont McKenna offers government, economics, and finance strength, while Harvey Mudd offers pure STEM rigor \u2014 the two colleges' cross-registration lets students access both."
+      "versusCMC": "Claremont McKenna offers government, economics, and finance strength, while Harvey Mudd offers pure STEM rigor — the two colleges' cross-registration lets students access both."
     },
     "institutionScale": {
       "enrollmentCategory": "Very Small",
@@ -38671,7 +38464,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "technology": {
         "strength": 96,
-        "notes": "One of the college's defining strengths \u2014 an elite undergraduate engineering and computer science pipeline."
+        "notes": "One of the college's defining strengths — an elite undergraduate engineering and computer science pipeline."
       },
       "publicPolicy": {
         "strength": 34,
@@ -38749,17 +38542,16 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Harvey Mudd has no honors college; the entire undergraduate program functions at an honors-equivalent level of rigor given the college's small size and low student-faculty ratio."
     }
   },
-
-"Hamilton College": {
+  "Hamilton College": {
     "institutionNarrative": {
       "name": "Hamilton College",
       "location": "Clinton, New York",
       "region": "New England",
-      "archetype": "The Open Curriculum Writing Powerhouse \u2014 No Core Requirements and Nationally Elite Writing Instruction",
-      "oneSentenceSummary": "Hamilton College combines a fully open curriculum \u2014 no distribution requirements of any kind \u2014 with one of the most respected undergraduate writing programs in the country, producing graduates with unusually strong communication skills across every field.",
+      "archetype": "The Open Curriculum Writing Powerhouse — No Core Requirements and Nationally Elite Writing Instruction",
+      "oneSentenceSummary": "Hamilton College combines a fully open curriculum — no distribution requirements of any kind — with one of the most respected undergraduate writing programs in the country, producing graduates with unusually strong communication skills across every field.",
       "pipeline": "Approximately 2,000 undergraduates. Hamilton is nationally recognized for its Writing Program, Economics, Government, and Public Policy. Major recruiters include Goldman Sachs, McKinsey & Company, top law schools, and financial services firms.",
       "hiddenPathway": "Hamilton's Writing Center and required writing-intensive courses across every discipline give graduates a communication skill set that consistently outperforms peer institutions in employer surveys, regardless of major.",
-      "institutionalSecret": "Hamilton has one of the very few genuinely open curricula in the country \u2014 like Amherst and Brown, students choose every course themselves \u2014 but with a distinctive additional emphasis on rigorous writing instruction embedded across all disciplines.",
+      "institutionalSecret": "Hamilton has one of the very few genuinely open curricula in the country — like Amherst and Brown, students choose every course themselves — but with a distinctive additional emphasis on rigorous writing instruction embedded across all disciplines.",
       "theRoom": "Located in Clinton, New York, in the Mohawk Valley, Hamilton is roughly a nine-hour drive or short flight from New York City, with a strong alumni network concentrated in New York finance and law.",
       "lifestyle": "Intellectually serious, socially traditional, and writing-intensive. Hamilton's rural upstate New York setting supports a close-knit residential community with strong outdoor access.",
       "bestFitPersonality": "Intellectually curious, strong communicator or eager to become one, comfortable with total curricular freedom, and drawn to economics, government, or the humanities.",
@@ -38793,7 +38585,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Hamilton",
-      "archetype": "Elite Small Liberal Arts College \u2014 Open Curriculum and Writing Excellence",
+      "archetype": "Elite Small Liberal Arts College — Open Curriculum and Writing Excellence",
       "institutionalPersonality": "intellectually serious, articulate, traditional, self-directed",
       "cultureKeywords": [
         "Open Curriculum",
@@ -39161,13 +38953,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Hamilton has no honors college; the open curriculum and small size function as an honors-level experience for the entire student body."
     }
   },
-
-"Oberlin College": {
+  "Oberlin College": {
     "institutionNarrative": {
       "name": "Oberlin College",
       "location": "Oberlin, Ohio",
       "region": "Midwest",
-      "archetype": "The Conservatory-Liberal Arts Hybrid \u2014 World-Class Music Training Alongside Rigorous Academics",
+      "archetype": "The Conservatory-Liberal Arts Hybrid — World-Class Music Training Alongside Rigorous Academics",
       "oneSentenceSummary": "Oberlin College is the only institution in the country combining a top-tier liberal arts college with a world-renowned conservatory of music under one roof, alongside a deeply progressive activist tradition dating to its founding as the first coeducational and one of the first racially integrated colleges in America.",
       "pipeline": "Approximately 2,900 undergraduates across the College of Arts and Sciences and the Conservatory of Music. Oberlin is nationally recognized for Music Performance and Composition, Biology, Environmental Studies, and Neuroscience. Major recruiters include major orchestras and music institutions, top PhD and medical programs, and progressive nonprofit organizations.",
       "hiddenPathway": "Oberlin's dual-degree program lets College of Arts and Sciences students take conservatory-level music courses and vice versa, giving liberal arts students access to genuine professional music training that no other liberal arts college can match.",
@@ -39205,7 +38996,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Oberlin",
-      "archetype": "Elite Liberal Arts College and Conservatory \u2014 Music, Progressivism, and Academic Rigor",
+      "archetype": "Elite Liberal Arts College and Conservatory — Music, Progressivism, and Academic Rigor",
       "institutionalPersonality": "deeply progressive, artistically vibrant, intellectually intense, historically significant",
       "cultureKeywords": [
         "Conservatory of Music",
@@ -39342,7 +39133,7 @@ const UNIVERSITY_DB_V5 = {
       "overlookedStrengths": [
         "Oberlin is the only institution in the country combining a top liberal arts college and a world-class conservatory under one roof, with genuine dual-degree cross-registration.",
         "The college's biology and neuroscience programs have unusually strong PhD and medical school placement relative to its size.",
-        "Oberlin's historically progressive identity \u2014 first to admit women, among the first to admit Black students \u2014 remains a genuinely lived campus value, not just institutional history.",
+        "Oberlin's historically progressive identity — first to admit women, among the first to admit Black students — remains a genuinely lived campus value, not just institutional history.",
         "TIMARA (Technology in Music and Related Arts) gives students access to electronic and experimental music production at the intersection of technology and composition."
       ],
       "sleeperIndustries": [
@@ -39574,17 +39365,16 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Oberlin has no honors college; the college's small size and rigorous conservatory/academic standards function as an honors-level experience for the entire student body."
     }
   },
-
-"Kenyon College": {
+  "Kenyon College": {
     "institutionNarrative": {
       "name": "Kenyon College",
       "location": "Gambier, Ohio",
       "region": "Midwest",
-      "archetype": "The Literary Powerhouse \u2014 Kenyon Review Legacy and Genuine Rural Isolation as Intellectual Feature",
+      "archetype": "The Literary Powerhouse — Kenyon Review Legacy and Genuine Rural Isolation as Intellectual Feature",
       "oneSentenceSummary": "Kenyon College is home to the Kenyon Review, one of the most influential literary journals in American history, giving the college an outsized reputation in creative writing and literature relative to its small size and remote rural Ohio setting.",
       "pipeline": "Approximately 1,800 undergraduates. Kenyon is nationally recognized for English and Creative Writing, Political Science, Biology, and Economics. Major recruiters include major publishing houses, literary magazines, top law schools, and PhD programs in the humanities.",
       "hiddenPathway": "The Kenyon Review Young Writers Workshop and the college's deep literary tradition give aspiring writers direct mentorship access to one of the most historically significant literary institutions in the country, producing a disproportionate share of published authors relative to the college's small size.",
-      "institutionalSecret": "Kenyon's extreme rural isolation \u2014 a single road, Middle Path, running through the entire campus in Gambier, Ohio \u2014 is treated by the college as a genuine intellectual feature rather than a limitation, forcing an unusually deep, undistracted engagement with academic and literary life.",
+      "institutionalSecret": "Kenyon's extreme rural isolation — a single road, Middle Path, running through the entire campus in Gambier, Ohio — is treated by the college as a genuine intellectual feature rather than a limitation, forcing an unusually deep, undistracted engagement with academic and literary life.",
       "theRoom": "Located in Gambier, Ohio, a tiny village built entirely around the college, Kenyon is roughly an hour from Columbus, with an isolated setting that concentrates student life almost entirely on campus.",
       "lifestyle": "Literary, intellectually earnest, and genuinely isolated in a way the college treats as a feature. Kenyon's Middle Path pedestrian walkway is the social and physical spine of an unusually self-contained campus community.",
       "bestFitPersonality": "Literary and intellectually serious, drawn to writing, the humanities, or the sciences, and genuinely comfortable with rural isolation as an asset rather than a drawback.",
@@ -39617,7 +39407,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Kenyon",
-      "archetype": "Elite Small Liberal Arts College \u2014 Literary Tradition and Rural Isolation",
+      "archetype": "Elite Small Liberal Arts College — Literary Tradition and Rural Isolation",
       "institutionalPersonality": "literary, intellectually earnest, genuinely isolated, self-contained",
       "cultureKeywords": [
         "Kenyon Review",
@@ -39985,13 +39775,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Kenyon has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
     }
   },
-
-"Case Western Reserve University": {
+  "Case Western Reserve University": {
     "institutionNarrative": {
       "name": "Case Western Reserve University",
       "location": "Cleveland, Ohio",
       "region": "Midwest",
-      "archetype": "The Medicine-Engineering Fusion Anchor \u2014 Cleveland Clinic Proximity and Cross-Disciplinary Research Intensity",
+      "archetype": "The Medicine-Engineering Fusion Anchor — Cleveland Clinic Proximity and Cross-Disciplinary Research Intensity",
       "oneSentenceSummary": "Case Western Reserve University combines elite biomedical engineering and medical research with direct proximity to the Cleveland Clinic, one of the top hospital systems in the world, giving undergraduates clinical and research access most universities can only offer graduate students.",
       "pipeline": "Approximately 5,700 undergraduates. Case Western is nationally recognized for Biomedical Engineering, Computer Science, Nursing, and Management (Weatherhead School). Major recruiters include the Cleveland Clinic, University Hospitals, NASA Glenn Research Center, Progressive Insurance, and major biomedical device and technology companies.",
       "hiddenPathway": "Case Western's direct affiliation and physical proximity to the Cleveland Clinic gives undergraduate biomedical engineering and pre-health students clinical research access and shadowing opportunities that most universities reserve for medical students.",
@@ -40029,7 +39818,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Case Western",
-      "archetype": "Elite Private Research University \u2014 Medicine-Engineering Fusion",
+      "archetype": "Elite Private Research University — Medicine-Engineering Fusion",
       "institutionalPersonality": "academically intense, research-driven, interdisciplinary, quietly ambitious",
       "cultureKeywords": [
         "Biomedical Engineering",
@@ -40401,13 +40190,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller cohort experiences and priority research access, though functions as a supplemental distinction rather than a fully separate honors college."
     }
   },
-
-"Lehigh University": {
+  "Lehigh University": {
     "institutionNarrative": {
       "name": "Lehigh University",
       "location": "Bethlehem, Pennsylvania",
       "region": "Mid-Atlantic",
-      "archetype": "The Integrated Business-Engineering Anchor \u2014 Wall Street Placement from a Technical Foundation",
+      "archetype": "The Integrated Business-Engineering Anchor — Wall Street Placement from a Technical Foundation",
       "oneSentenceSummary": "Lehigh University combines a historically strong engineering program with an unusually direct pipeline into Wall Street finance and consulting, producing graduates who blend technical rigor with elite business placement at a rate uncommon among mid-sized private universities.",
       "pipeline": "Approximately 5,300 undergraduates. Lehigh is nationally recognized for Engineering, Business (College of Business), Computer Science, and Integrated Business and Engineering (IBE) programs. Major recruiters include Goldman Sachs, JPMorgan Chase, Lockheed Martin, Air Products, and major consulting and engineering firms.",
       "hiddenPathway": "Lehigh's Integrated Business and Engineering (IBE) program, one of the oldest and most respected combined degree programs of its kind, gives students a genuinely dual technical-and-business credential that most universities only offer as separate, uncoordinated majors.",
@@ -40445,7 +40233,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Lehigh",
-      "archetype": "Elite Private Research University \u2014 Integrated Business and Engineering",
+      "archetype": "Elite Private Research University — Integrated Business and Engineering",
       "institutionalPersonality": "academically rigorous, pre-professionally ambitious, historically industrial, technically grounded",
       "cultureKeywords": [
         "Engineering",
@@ -40816,17 +40604,16 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework and priority research opportunities for high-achieving students across all majors."
     }
   },
-
-"Drexel University": {
+  "Drexel University": {
     "institutionNarrative": {
       "name": "Drexel University",
       "location": "Philadelphia, Pennsylvania",
       "region": "Mid-Atlantic",
-      "archetype": "The Co-Op Powerhouse \u2014 Paid Professional Experience Built Directly Into the Degree",
+      "archetype": "The Co-Op Powerhouse — Paid Professional Experience Built Directly Into the Degree",
       "oneSentenceSummary": "Drexel University operates one of the largest and oldest cooperative education programs in the country, giving students up to eighteen months of paid, full-time professional experience integrated directly into a five-year undergraduate degree.",
       "pipeline": "Approximately 15,000 undergraduates. Drexel is nationally recognized for Engineering, Computer Science, Business, Nursing, and Design. Major recruiters include Comcast, Vanguard, Lockheed Martin, GlaxoSmithKline, Children's Hospital of Philadelphia, and hundreds of co-op employer partners nationally.",
       "hiddenPathway": "Drexel's co-op program places students in three separate six-month full-time paid professional positions over the course of a five-year degree, giving graduates up to 18 months of resume-ready work experience and often multiple job offers before graduation.",
-      "institutionalSecret": "Drexel's co-op employer network spans thousands of companies nationally and internationally, meaning students aren't limited to Philadelphia-area placements \u2014 a fact that surprises families who assume co-op means local-only opportunities.",
+      "institutionalSecret": "Drexel's co-op employer network spans thousands of companies nationally and internationally, meaning students aren't limited to Philadelphia-area placements — a fact that surprises families who assume co-op means local-only opportunities.",
       "theRoom": "Located in Philadelphia's University City, adjacent to the University of Pennsylvania and Children's Hospital of Philadelphia, Drexel sits within one of the densest concentrations of higher education and healthcare institutions in the country.",
       "lifestyle": "Pragmatic, professionally focused, and urban. Drexel's five-year, co-op-integrated degree structure creates a campus culture oriented around real-world professional readiness rather than a traditional four-year college experience.",
       "bestFitPersonality": "Pragmatic, career-focused, comfortable alternating between academic terms and full-time work, and drawn to engineering, business, design, or healthcare fields.",
@@ -40860,7 +40647,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Drexel",
-      "archetype": "Elite Private Research University \u2014 Cooperative Education and Professional Readiness",
+      "archetype": "Elite Private Research University — Cooperative Education and Professional Readiness",
       "institutionalPersonality": "pragmatic, professionally focused, urban, career-oriented",
       "cultureKeywords": [
         "Co-Op Education",
@@ -41231,13 +41018,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework, priority research access, and interdisciplinary programming for high-achieving students across all majors."
     }
   },
-
-"Worcester Polytechnic Institute": {
+  "Worcester Polytechnic Institute": {
     "institutionNarrative": {
       "name": "Worcester Polytechnic Institute",
       "location": "Worcester, Massachusetts",
       "region": "New England",
-      "archetype": "The Project-Based Learning Pioneer \u2014 Theory Into Practice at Every Level",
+      "archetype": "The Project-Based Learning Pioneer — Theory Into Practice at Every Level",
       "oneSentenceSummary": "Worcester Polytechnic Institute pioneered project-based STEM education through its distinctive WPI Plan, requiring every student to complete significant applied research and global project work rather than relying solely on traditional coursework and exams.",
       "pipeline": "Approximately 4,700 undergraduates. WPI is nationally recognized for Robotics Engineering, Computer Science, Mechanical Engineering, and Data Science. Major recruiters include Raytheon/RTX, General Electric, MathWorks, MITRE, and major aerospace, robotics, and technology companies.",
       "hiddenPathway": "WPI's Global Projects Program sends nearly every student abroad or to a domestic project center to complete a real-world applied research project for an actual sponsoring organization, giving graduates a portfolio of completed, sponsor-validated work before graduation.",
@@ -41275,7 +41061,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "WPI",
-      "archetype": "Elite Private STEM University \u2014 Project-Based Learning Pioneer",
+      "archetype": "Elite Private STEM University — Project-Based Learning Pioneer",
       "institutionalPersonality": "hands-on, applied, collaborative, project-driven",
       "cultureKeywords": [
         "Project-Based Learning",
@@ -41568,7 +41354,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "technology": {
         "strength": 88,
-        "notes": "One of the university's defining strengths \u2014 a strong robotics, computer science, and applied engineering pipeline."
+        "notes": "One of the university's defining strengths — a strong robotics, computer science, and applied engineering pipeline."
       },
       "publicPolicy": {
         "strength": 24,
@@ -41646,13 +41432,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "WPI has no separate honors college; the mandatory project-based WPI Plan functions as an honors-level applied research experience for the entire student body."
     }
   },
-
-"Rochester Institute of Technology": {
+  "Rochester Institute of Technology": {
     "institutionNarrative": {
       "name": "Rochester Institute of Technology",
       "location": "Rochester, New York",
       "region": "Northeast",
-      "archetype": "The Design-Technology Fusion Anchor \u2014 Imaging Science, Deaf Education, and Co-Op Integration",
+      "archetype": "The Design-Technology Fusion Anchor — Imaging Science, Deaf Education, and Co-Op Integration",
       "oneSentenceSummary": "Rochester Institute of Technology combines a globally unique imaging science program rooted in Rochester's photography and optics heritage with the National Technical Institute for the Deaf, the largest program of its kind in the world, alongside an extensive cooperative education system.",
       "pipeline": "Approximately 15,000 undergraduates. RIT is nationally recognized for Imaging Science, Game Design and Development, Photography, Engineering, and Business. Major recruiters include Kodak-legacy optics and imaging companies, major game studios, Xerox, and technology and design firms nationally.",
       "hiddenPathway": "RIT's imaging science program, rooted in Rochester's history as home to Kodak and Xerox, gives students access to optics, computational imaging, and photographic science expertise that exists at almost no other undergraduate institution in the country.",
@@ -41690,7 +41475,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "RIT",
-      "archetype": "Elite Private Technical University \u2014 Design, Imaging Science, and Inclusive Education",
+      "archetype": "Elite Private Technical University — Design, Imaging Science, and Inclusive Education",
       "institutionalPersonality": "pragmatic, design-focused, genuinely inclusive, technically grounded",
       "cultureKeywords": [
         "Imaging Science",
@@ -42058,13 +41843,12 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework and priority research opportunities for high-achieving students across all majors."
     }
   },
-
-"Stevens Institute of Technology": {
+  "Stevens Institute of Technology": {
     "institutionNarrative": {
       "name": "Stevens Institute of Technology",
       "location": "Hoboken, New Jersey",
       "region": "Mid-Atlantic",
-      "archetype": "The Manhattan-Adjacent Quant Finance Engine \u2014 Engineering Rigor Meets Wall Street Proximity",
+      "archetype": "The Manhattan-Adjacent Quant Finance Engine — Engineering Rigor Meets Wall Street Proximity",
       "oneSentenceSummary": "Stevens Institute of Technology sits directly across the Hudson River from Manhattan, giving its engineering and quantitative finance students uniquely direct access to Wall Street while maintaining a technically rigorous, research-oriented engineering identity.",
       "pipeline": "Approximately 4,300 undergraduates. Stevens is nationally recognized for Quantitative Finance, Computer Science, Mechanical Engineering, and Cybersecurity. Major recruiters include Goldman Sachs, JPMorgan Chase, Bloomberg, major quantitative hedge funds, and technology and engineering firms throughout the New York metro area.",
       "hiddenPathway": "Stevens's location directly across the Hudson from Manhattan, with a PATH train connection under 15 minutes to the Financial District, lets students hold genuine part-time roles at quantitative trading firms and banks during the academic year, not just summers.",
@@ -42102,7 +41886,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Stevens",
-      "archetype": "Elite Private Technical University \u2014 Quantitative Finance and Wall Street Proximity",
+      "archetype": "Elite Private Technical University — Quantitative Finance and Wall Street Proximity",
       "institutionalPersonality": "technically rigorous, quietly ambitious, finance-adjacent, pragmatic",
       "cultureKeywords": [
         "Quantitative Finance",
@@ -42473,6 +42257,5427 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Offers smaller seminar coursework and priority research opportunities for high-achieving students across all majors."
     }
   },
-};
+  "Georgetown University": {
+    "institutionNarrative": {
+      "name": "Georgetown University",
+      "location": "Washington, DC",
+      "region": "Mid-Atlantic",
+      "archetype": "The Diplomatic Engine — Foreign Service and Power-Corridor Access as the Default Campus Experience",
+      "oneSentenceSummary": "Georgetown combines the country's most dominant School of Foreign Service pipeline with a Jesuit institutional identity and a campus positioned inside Washington's actual power corridor, producing more Foreign Service Officers, State Department staff, and K Street principals than any other undergraduate institution in the country.",
+      "pipeline": "The Edmund A. Walsh School of Foreign Service (SFS) is the oldest and most prestigious undergraduate international affairs program in the United States, feeding directly into the State Department, CIA, USAID, the World Bank, the IMF, and international NGOs. The McDonough School of Business runs a finance and consulting recruiting pipeline (Goldman Sachs, McKinsey, BCG, Bain, JPMorgan) that rivals dedicated business schools, strengthened rather than diluted by DC's professional-services density. Government and Political Science majors move directly into Capitol Hill staff positions, often before graduation. The McCourt School of Public Policy extends this into graduate public policy work.",
+      "hiddenPathway": "Georgetown undergraduates routinely hold real, substantive internships at the White House, State Department, World Bank, and on Capitol Hill while still enrolled — not as a summer program, but as a standing feature of being a DC-based student with SFS's institutional relationships behind them. The pathway into the Foreign Service exam and the intelligence community (CIA, NSA, State Department Diplomatic Security) is denser here than anywhere else in the country.",
+      "institutionalSecret": "Georgetown's fame runs through SFS and foreign policy, but McDonough's Wall Street and consulting placement is comparably elite and structurally underrated relative to peer business schools — DC's professional-services economy (strategy consulting, government-facing finance, litigation-adjacent advisory work) gives McDonough graduates a recruiting pipeline that doesn't announce itself the way SFS's does.",
+      "theRoom": "The Georgetown neighborhood is one of the wealthiest, most historically established residential areas in Washington, DC, minutes from the White House, the State Department, the World Bank, the IMF, and the K Street lobbying corridor. Students are not adjacent to American political and economic power — they are embedded inside the neighborhood where it physically operates.",
+      "lifestyle": "Traditional, preppy, intellectually serious, and politically engaged, shaped by Jesuit institutional identity (cura personalis — care for the whole person) alongside high-achievement, establishment-oriented ambition. Big East basketball (Hoyas) provides a genuine, unifying social anchor uncommon at similarly policy-focused institutions.",
+      "bestFitPersonality": "Intellectually serious, comfortable inside a values-driven Jesuit framework, internationally curious, and motivated by a blend of public service and elite private-sector ambition rather than either alone.",
+      "faithTradition": "Catholic (Jesuit)",
+      "geographicInfluenceRadius": "Dominant nationally and internationally in foreign policy, diplomacy, and international affairs; elite-tier in finance, consulting, and law via DC's professional-services economy.",
+      "economicOutcome": "Excellent outcomes concentrated in government and diplomacy, international affairs, finance, management consulting, and law — among the strongest placement records into federal government and the Foreign Service of any university in the country.",
+      "gradCities": [
+        "Washington DC",
+        "New York NY",
+        "Boston MA",
+        "Los Angeles CA",
+        "International"
+      ],
+      "comparableInstitutions": [
+        "Duke University",
+        "University of Notre Dame",
+        "Northwestern University",
+        "George Washington University",
+        "Boston College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Montgomery College",
+          "Northern Virginia Community College"
+        ],
+        "transferAcceptanceRate": "~12%",
+        "freshmanAcceptanceRate": "~12%",
+        "estimatedSavingsRange": "$16,000-$40,000",
+        "transferNotes": "Georgetown's transfer pathway is narrow — acceptance rates for transfer applicants track close to freshman admission rates rather than offering a meaningfully easier entry point, unlike many peer institutions' community college pipelines."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Georgetown University",
+      "archetype": "The Diplomatic Engine — Foreign Service and Power-Corridor Access as the Default Campus Experience",
+      "institutionalPersonality": "intellectually rigorous, internationally engaged, tradition-conscious, ambitious",
+      "cultureKeywords": [
+        "School of Foreign Service",
+        "Jesuit Values",
+        "K Street Pipeline",
+        "Global Affairs",
+        "Hoya Basketball"
+      ],
+      "missionOrientation": "Educating leaders in service of others through Jesuit values, combined with unmatched access to the institutions of American and global governance.",
+      "faithTradition": "Catholic (Jesuit)",
+      "educationalPhilosophy": "Cura personalis — care for the whole person — delivered through a rigorous, DC-embedded professional and policy curriculum.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Broadly center-left with an unusually visible, policy-literate moderate and conservative minority; political engagement is a campus-wide norm rather than a subculture.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Globally elite in international affairs and foreign service; highly elite in finance and consulting via McDonough; historic Jesuit institutional prestige.",
+      "socialClimate": "Preppy, politically engaged, ambitious, tradition-conscious.",
+      "leadershipStyle": "Leadership framed through public service and direct access to DC's actual power corridor."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "The nation's most direct undergraduate pipeline into the State Department, the White House, the World Bank, and Capitol Hill — the establishment engine of BosWash's policy economy."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 97,
+      "TorBuffChester": 8,
+      "TexasTriangle": 6,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 10,
+      "SoCalCreativeEconomy": 8
+    },
+    "comparativePositioning": {
+      "versusGeorgeWashington": "GW offers a larger, less selective alternative with genuine DC proximity; Georgetown holds a clear selectivity and global-brand edge, with an SFS pipeline into the Foreign Service and international institutions that GW's Elliott School does not match at the same scale.",
+      "versusNotreDame": "Both share Catholic/Jesuit-adjacent identity and elite, tightly networked alumni cultures. Georgetown's DC location gives it a structural, unreplicable advantage for students specifically pursuing foreign policy, government, or international affairs careers that Notre Dame's Indiana campus cannot offer.",
+      "versusDuke": "Duke offers stronger basketball culture, a larger research-university footprint, and broader STEM depth. Georgetown's SFS brand and Washington location give it a decisive edge for any student whose primary interest is government, diplomacy, or international affairs specifically."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 7500,
+      "graduateEnrollment": 11000,
+      "totalEnrollment": 19500,
+      "campusType": "Private University, Historic Urban Neighborhood Campus",
+      "residentialIntensity": 80,
+      "communityFeel": 78,
+      "studentFacultyRatio": "10:1",
+      "classSizeExperience": "Predominantly small-to-moderate classes, particularly within SFS's cohort-based structure; upper-level seminars are common and faculty access is strong relative to peer research universities.",
+      "scaleAdvantages": [
+        "Historic, self-contained neighborhood campus minutes from the actual centers of federal power",
+        "School of Foreign Service — the country's most dominant Foreign Service Officer and State Department pipeline",
+        "Jesuit alumni network spanning global government, NGO, and financial institutions",
+        "McDonough finance and consulting recruiting strengthened by DC's professional-services density"
+      ],
+      "scaleDisadvantages": [
+        "Extremely high cost of living in the Georgetown neighborhood",
+        "Highly selective, competitive culture with less flexibility than larger DC-area peers",
+        "Historic campus footprint constrains expansion and undergraduate housing capacity",
+        "Narrow transfer pathway limits community college entry routes"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 82,
+        "conscientiousness": 88,
+        "extraversion": 76,
+        "agreeableness": 76,
+        "neuroticism": 38
+      },
+      "hollandCodes": [
+        "E",
+        "S",
+        "C"
+      ],
+      "learningStyle": [
+        "Policy Case Study",
+        "Cohort-Based Seminar",
+        "DC Internship Immersion",
+        "Case-Method Business"
+      ],
+      "socialEnvironment": [
+        "Politically Engaged",
+        "Tradition-Conscious",
+        "Ambitious",
+        "Service-Oriented"
+      ],
+      "idealStudentTraits": [
+        "Intellectually serious",
+        "Comfortable operating inside a values-driven Jesuit framework",
+        "Driven toward public service, diplomacy, or elite private-sector careers",
+        "Able to thrive in a high-achievement, competitive cohort"
+      ],
+      "thrivesIf": [
+        "Wants walk-to-work access to the White House, State Department, World Bank, and Capitol Hill",
+        "Is drawn to Jesuit values of service alongside elite professional ambition",
+        "Wants a genuine Foreign Service or intelligence-community career pathway",
+        "Enjoys a tradition-conscious, cohort-based academic culture"
+      ],
+      "strugglesIf": [
+        "Wants a large, anonymous research-university feel",
+        "Prefers a traditional sprawling campus quad over a dense urban neighborhood",
+        "Expects a primarily secular or areligious institutional culture",
+        "Needs an easier, higher-acceptance transfer pathway"
+      ],
+      "transferRiskFactors": [
+        "Very low transfer acceptance rate close to freshman admission rate",
+        "Small undergraduate cohort limits open seats overall",
+        "Highly competitive incoming class raises the bar for lateral entry"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Very High",
+      "notes": "Georgetown admits directly into one of four schools (College, SFS, McDonough, Nursing) as part of a single application — applying into SFS or McDonough functions as a distinct, effectively more competitive sub-pool within an already highly selective overall admission, rather than a secondary internal application after enrollment."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Science, Technology and International Affairs (STIA)",
+        "Justice and Peace Studies",
+        "Classics",
+        "Philosophy",
+        "Health Care Management and Policy"
+      ],
+      "hiddenCareerPipelines": [
+        "Intelligence Community (CIA, NSA, State Department Diplomatic Security)",
+        "International Development and NGO Leadership",
+        "K Street Lobbying and Government Affairs",
+        "International Development Finance (World Bank, IMF)",
+        "Healthcare Policy"
+      ],
+      "nicheRecruitingAdvantages": [
+        "State Department Foreign Service",
+        "World Bank",
+        "International Monetary Fund",
+        "K Street lobbying and government-affairs firms",
+        "McKinsey & Company",
+        "Goldman Sachs"
+      ],
+      "overlookedStrengths": [
+        "K Street lobbying and government-affairs firms recruit directly from Georgetown undergraduates at a density no other university matches.",
+        "McDonough's finance and consulting placement rivals dedicated business schools despite operating in SFS's shadow.",
+        "Jesuit values framework (cura personalis) produces a genuinely distinct, service-oriented alumni culture relative to peer elite institutions.",
+        "Historic Georgetown neighborhood campus offers an intimate, walkable environment uncommon among urban research universities."
+      ],
+      "sleeperIndustries": [
+        "International Development",
+        "Healthcare Policy",
+        "Intelligence and National Security",
+        "Government Affairs and Lobbying"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 90,
+      "mentorshipDensity": 86,
+      "executiveAccess": 94,
+      "internshipNetwork": 97,
+      "familyBusinessExposure": 56,
+      "relationshipCapitalScore": 92,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 90,
+      "donorNetworkStrength": 88,
+      "boardMemberDensity": 88
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Government and Diplomacy",
+        "International Affairs",
+        "Financial Services",
+        "Management Consulting",
+        "Law",
+        "Nonprofit and NGO Leadership"
+      ],
+      "regionalEconomicDrivers": [
+        "Federal Government",
+        "Government Contracting",
+        "International Development Finance",
+        "Management Consulting",
+        "Legal Services",
+        "Lobbying and Government Affairs"
+      ],
+      "topEmployers": [
+        "U.S. Department of State",
+        "World Bank",
+        "International Monetary Fund",
+        "McKinsey & Company",
+        "Goldman Sachs",
+        "Boston Consulting Group",
+        "Bain & Company",
+        "Deloitte",
+        "Central Intelligence Agency"
+      ],
+      "emergingIndustries": [
+        "Health Care Policy",
+        "Cybersecurity Policy",
+        "Climate and Energy Policy",
+        "Financial Technology Regulation"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 58,
+      "corporateHeadquartersDensity": 62,
+      "healthcareHubStrength": 68,
+      "innovationIndex": 68
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Washington, DC and the Federal Government / International Institution Economy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Boston MA",
+        "Los Angeles CA",
+        "International — Europe and multilateral institution hubs"
+      ],
+      "alumniStrongholds": [
+        "Washington DC",
+        "New York NY",
+        "Boston MA",
+        "International"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in Washington DC, entering federal government, international institutions, consulting, and law.",
+        "New York draws graduates into investment banking, management consulting, and corporate law.",
+        "A meaningfully larger share of graduates relocate internationally than at most domestic peer institutions, entering the Foreign Service, international NGOs, and multilateral institutions abroad."
+      ],
+      "regionalInfluenceScore": 98,
+      "nationalReachScore": 90,
+      "internationalReachScore": 78
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 12,
+      "studentOrganizationStrength": 88,
+      "leadershipDevelopment": 92,
+      "crossDisciplinaryInteraction": 78,
+      "civicEngagement": 92
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 18,
+        "notes": "Not a meaningful pathway; Georgetown's economy and recruiting infrastructure are oriented toward government, policy, and finance, not consumer beauty."
+      },
+      "healthWellness": {
+        "strength": 48,
+        "notes": "Health Care Management and Policy and pre-med tracks provide a real but secondary pathway, oriented more toward healthcare policy than clinical or wellness industries."
+      },
+      "nutraceuticals": {
+        "strength": 14,
+        "notes": "No meaningful institutional pathway or recruiting presence."
+      },
+      "consumerProducts": {
+        "strength": 28,
+        "notes": "McDonough graduates enter consumer-facing brand and marketing roles, but this is a minor pathway relative to finance, consulting, and government."
+      },
+      "outdoorIndustry": {
+        "strength": 10,
+        "notes": "No meaningful institutional pathway; not part of Georgetown's economic identity."
+      },
+      "sportsBusiness": {
+        "strength": 34,
+        "notes": "Big East basketball culture is real, but sports business as a career pipeline is modest relative to Georgetown's policy and finance strengths."
+      },
+      "entertainmentMedia": {
+        "strength": 40,
+        "notes": "Journalism and international media careers exist through SFS-adjacent programs, but this is not a primary institutional strength."
+      },
+      "ventureCapital": {
+        "strength": 42,
+        "notes": "A real but secondary pathway; DC's venture ecosystem is far smaller than the Bay Area's or New York's, though McDonough graduates do enter VC and growth equity."
+      },
+      "privateEquity": {
+        "strength": 62,
+        "notes": "Meaningful placement into private equity and growth equity, primarily through McDonough and New York-based recruiting rather than a DC-based industry cluster."
+      },
+      "investmentBanking": {
+        "strength": 80,
+        "notes": "Strong, well-established McDonough pipeline into bulge-bracket and elite boutique investment banks, competitive with dedicated undergraduate business programs."
+      },
+      "consulting": {
+        "strength": 92,
+        "notes": "One of the strongest management consulting pipelines in the country — McKinsey, BCG, and Bain all recruit heavily, strengthened by DC's government-consulting economy alongside traditional strategy consulting."
+      },
+      "medicine": {
+        "strength": 40,
+        "notes": "A real but secondary pathway; Georgetown does not have the pre-med scale or dedicated infrastructure of large research universities, though its program is respected."
+      },
+      "healthcareAdministration": {
+        "strength": 52,
+        "notes": "Health Care Management and Policy provides a genuine, DC-specific pathway into healthcare policy and administration roles tied to federal health agencies."
+      },
+      "defense": {
+        "strength": 78,
+        "notes": "A genuinely strong and distinctive pathway — SFS's Security Studies concentration and DC's defense and intelligence establishment feed directly into the intelligence community, defense policy, and national security careers."
+      },
+      "realEstate": {
+        "strength": 30,
+        "notes": "A minor pathway; DC's real estate economy is smaller and less central to Georgetown's institutional identity than finance, consulting, or government."
+      },
+      "luxuryBrands": {
+        "strength": 20,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "entrepreneurship": {
+        "strength": 46,
+        "notes": "A real but secondary pathway; Georgetown's entrepreneurship ecosystem is far smaller than peer institutions with dedicated innovation infrastructure, though McDonough has grown this area."
+      },
+      "technology": {
+        "strength": 44,
+        "notes": "A real but secondary pathway; Georgetown is not positioned as a technology-recruiting campus in the way Bay Area or engineering-heavy institutions are, though policy-adjacent technology roles (tech policy, cybersecurity policy) are a genuine niche."
+      },
+      "publicPolicy": {
+        "strength": 98,
+        "notes": "The single strongest pathway at the institution — SFS and the McCourt School make Georgetown the most direct undergraduate pipeline into federal government, the Foreign Service, and international institutions in the country."
+      },
+      "nonprofitLeadership": {
+        "strength": 74,
+        "notes": "A genuinely strong, distinctive pathway — Jesuit values and SFS's international-development orientation produce real placement into NGO leadership and international development careers."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 52,
+      "firstGenerationSupport": 54,
+      "wealthCreationPotential": 86,
+      "familyBusinessPipelineStrength": 46
+    },
+    "futureResilience": {
+      "aiResistance": 78,
+      "automationResistance": 80,
+      "adaptabilityScore": 78,
+      "interdisciplinaryStrength": 76,
+      "futureReadiness": 80,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 80,
+      "innovationCapacity": 68
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 84,
+      "communityLeadershipPotential": 90,
+      "geographicMobility": 78,
+      "workLifeBalancePotential": 66,
+      "purposeAlignment": 88,
+      "familyFormationSupport": 70,
+      "personalDevelopmentPotential": 84,
+      "careerOptionality": 88,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 90,
+      "networkMoat": 90,
+      "geographicMoat": 96,
+      "industryMoat": 92,
+      "alumniMoat": 84,
+      "brandDurability": 90,
+      "overallMoatScore": 90
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 74,
+      "returnerScore": 36,
+      "stewardScore": 40,
+      "navigatorScore": 84,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "heavily concentrated in Washington DC, with strong New York and significant international presence through the Foreign Service and multilateral institutions"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 66,
+        "type": "Campus Hillel (Jewish Chaplaincy within Campus Ministry)"
+      },
+      "estimatedJewishUndergraduates": 500,
+      "jewishStudentPercentage": "~7%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate",
+      "notes": "Georgetown's Jewish population is smaller than at large secular research universities, consistent with its Catholic/Jesuit institutional identity, but Hillel and kosher dining are established and active. CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Georgetown does not operate a separate honors college; the entire undergraduate institution functions at a uniformly high selectivity level, and rigor is delivered through SFS's cohort structure and departmental honors programs rather than a dedicated honors college."
+    }
+  },
+  "University of California-Berkeley": {
+    "institutionNarrative": {
+      "name": "University of California-Berkeley",
+      "location": "Berkeley, California",
+      "region": "California",
+      "archetype": "The Public Ivy of Silicon Valley — Engineering, Policy, and Protest at the Top of American Public Higher Education",
+      "oneSentenceSummary": "Berkeley combines the single strongest computer science and engineering pipeline into Silicon Valley of any public university with a century-long identity as the intellectual and political conscience of American higher education.",
+      "pipeline": "Approximately 33,000 undergraduates. The College of Engineering and EECS (Electrical Engineering and Computer Sciences) feed directly into every major Bay Area technology company, often ahead of Stanford in sheer volume of hires. Haas School of Business runs an elite, small-cohort undergraduate business program. The Goldman School of Public Policy and a nationally dominant Political Science department extend Berkeley's influence into government and law. Major recruiters span the entire Bay Area technology, venture capital, and biotechnology economy.",
+      "hiddenPathway": "Berkeley's EECS program produces more Silicon Valley engineering hires than any other single university, public or private — a volume advantage that Stanford's smaller, more selective program cannot match, even though Stanford holds the more prestigious brand.",
+      "institutionalSecret": "Haas School of Business's small, highly selective undergraduate cohort (roughly 250 students per year) produces investment banking, consulting, and venture capital placement rates that rival elite private business programs, despite operating inside a massive public research university.",
+      "theRoom": "Berkeley sits at the literal center of the San Francisco Bay Area's technology and venture capital economy, minutes from Silicon Valley by train, embedded in a city with a globally recognized identity as the birthplace of the Free Speech Movement and a continuous center of American political activism.",
+      "lifestyle": "Intellectually intense, politically engaged, and unapologetically activist, layered on top of a genuinely elite engineering and technology culture — Berkeley students are as likely to debate policy as to debug code, often in the same conversation.",
+      "bestFitPersonality": "Intellectually ambitious, comfortable with political engagement and debate, drawn to both technical rigor and social impact, self-directed within a large public research university.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Dominant in the San Francisco Bay Area across technology, venture capital, and biotechnology, with elite national reach in public policy, law, and academia.",
+      "economicOutcome": "Elite outcomes concentrated in technology, engineering, venture capital, and consulting, with genuinely strong secondary pathways into public policy, law, and academia.",
+      "gradCities": [
+        "San Francisco CA",
+        "Los Angeles CA",
+        "New York NY",
+        "Seattle WA"
+      ],
+      "comparableInstitutions": [
+        "University of California-Los Angeles",
+        "Stanford University",
+        "University of Michigan",
+        "Georgia Institute of Technology"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "De Anza College",
+          "Diablo Valley College",
+          "Santa Monica College"
+        ],
+        "transferAcceptanceRate": "~24%",
+        "freshmanAcceptanceRate": "~11%",
+        "estimatedSavingsRange": "$18,000-$40,000",
+        "transferNotes": "Berkeley maintains one of the strongest and most structured California Community College transfer pipelines in the UC system, with Transfer Admission Guarantee (TAG) agreements available at select feeder colleges."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UC Berkeley",
+      "archetype": "The Public Ivy of Silicon Valley — Engineering, Policy, and Protest at the Top of American Public Higher Education",
+      "institutionalPersonality": "intellectually intense, politically engaged, technically elite, activist",
+      "cultureKeywords": [
+        "EECS",
+        "Silicon Valley Pipeline",
+        "Free Speech Movement",
+        "Haas School of Business",
+        "Public Ivy"
+      ],
+      "missionOrientation": "Delivering elite public research and technology education at public-university cost, anchored by direct Silicon Valley access and a century-long identity as a center of political engagement.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Rigorous, research-driven education reinforced by direct proximity to the Bay Area technology and venture capital economy.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Strongly progressive with an active, visible activist tradition dating to the 1964 Free Speech Movement.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite in engineering, computer science, and technology; genuinely elite in business via Haas; strong national reach in public policy and law.",
+      "socialClimate": "Intellectually intense, politically engaged, technically ambitious.",
+      "leadershipStyle": "Leadership through technical excellence and direct engagement with Silicon Valley's innovation economy."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "regionalRole": "The single largest volume pipeline of engineering and technology talent into Silicon Valley of any university, public or private."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 22,
+      "TorBuffChester": 6,
+      "TexasTriangle": 12,
+      "CharLanta": 8,
+      "NorCalInnovationCorridor": 96,
+      "SoCalCreativeEconomy": 26
+    },
+    "comparativePositioning": {
+      "versusStanford": "Stanford holds the more prestigious brand and a denser venture capital founder network; Berkeley offers a substantially larger EECS program that places more total engineers into Silicon Valley companies annually, at public-school cost.",
+      "versusUCLA": "UCLA leans toward entertainment, medicine, and LA's broader economy; Berkeley leans decisively toward technology, engineering, and Silicon Valley, with a more overtly political and activist campus culture."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 33000,
+      "graduateEnrollment": 12000,
+      "totalEnrollment": 45000,
+      "campusType": "Large Public Research Flagship, Urban Bay Area Campus",
+      "residentialIntensity": 48,
+      "communityFeel": 58,
+      "studentFacultyRatio": "19:1",
+      "classSizeExperience": "Large introductory lecture courses, particularly in EECS and popular sciences; upper-division coursework, Haas, and research opportunities become substantially more personalized.",
+      "scaleAdvantages": [
+        "Largest-volume Silicon Valley engineering pipeline of any university, public or private",
+        "Haas School of Business delivers elite small-cohort business education inside a massive public university",
+        "Direct rail access to Silicon Valley",
+        "Nationally dominant public policy and political science programs"
+      ],
+      "scaleDisadvantages": [
+        "Large introductory courses require significant student initiative",
+        "High cost of living in the Bay Area",
+        "Highly competitive internal admission to Haas and EECS beyond general Berkeley admission",
+        "Large lecture format in early coursework can feel impersonal"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 92,
+        "conscientiousness": 84,
+        "extraversion": 68,
+        "agreeableness": 68,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "I",
+        "E",
+        "A"
+      ],
+      "learningStyle": [
+        "Research",
+        "Technical Problem-Solving",
+        "Policy Debate",
+        "Case-Method Business"
+      ],
+      "socialEnvironment": [
+        "Politically Engaged",
+        "Intellectually Intense",
+        "Technically Ambitious",
+        "Activist"
+      ],
+      "idealStudentTraits": [
+        "Intellectually ambitious and self-directed",
+        "Comfortable with political engagement and debate",
+        "Drawn to both technical rigor and social impact",
+        "Able to navigate a large, competitive public research university"
+      ],
+      "thrivesIf": [
+        "Wants the largest-volume engineering pipeline into Silicon Valley at public-school cost",
+        "Values political engagement and activism as part of campus life",
+        "Is comfortable navigating a large, decentralized public research university",
+        "Wants elite business education without a dedicated private business school price tag"
+      ],
+      "strugglesIf": [
+        "Wants a small, intimate liberal arts environment",
+        "Prefers a politically quiet or neutral campus culture",
+        "Needs significant structured guidance rather than self-direction",
+        "Is uncomfortable with large introductory lecture courses"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a smaller, more intimate campus",
+        "Students frustrated by competitive internal admission to Haas or EECS",
+        "Students uncomfortable with Berkeley's overtly political campus culture"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Very High",
+      "notes": "Haas School of Business admits as a highly selective internal transfer after freshman year (roughly 250 students annually from a much larger applicant pool), and EECS carries substantial additional impaction beyond general Berkeley admission — both function as distinct, harder admission tracks within the broader university."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Operations Research and Management Science",
+        "Data Science",
+        "Society and Environment",
+        "Cognitive Science",
+        "Public Health",
+        "Environmental Economics and Policy"
+      ],
+      "hiddenCareerPipelines": [
+        "Climate Technology",
+        "Biotechnology and Bioengineering",
+        "AI Policy and Governance",
+        "Venture Capital",
+        "Public Interest Technology"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Google",
+        "Meta",
+        "Apple",
+        "Genentech",
+        "Sequoia Capital and other Sand Hill Road venture firms",
+        "McKinsey & Company",
+        "Goldman Sachs"
+      ],
+      "overlookedStrengths": [
+        "Haas School of Business's small-cohort model produces elite finance and consulting placement rates rivaling dedicated private business schools.",
+        "Berkeley's EECS program produces a larger total volume of Silicon Valley engineering hires than any other single university.",
+        "The Goldman School of Public Policy gives Berkeley a genuine, distinctive pathway into technology policy and governance as AI regulation becomes a major career field.",
+        "Direct rail (BART) access to San Francisco and proximity to Silicon Valley give students real internship access without a car."
+      ],
+      "sleeperIndustries": [
+        "Climate Technology",
+        "AI Policy and Governance",
+        "Biotechnology",
+        "Public Interest Technology",
+        "Venture Capital"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 80,
+      "executiveAccess": 88,
+      "internshipNetwork": 94,
+      "familyBusinessExposure": 42,
+      "relationshipCapitalScore": 86,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 88,
+      "donorNetworkStrength": 84,
+      "boardMemberDensity": 82
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Technology",
+        "Venture Capital",
+        "Biotechnology",
+        "Financial Services",
+        "Management Consulting",
+        "Public Policy"
+      ],
+      "regionalEconomicDrivers": [
+        "Software and Internet Technology",
+        "Artificial Intelligence",
+        "Venture Capital",
+        "Biotechnology",
+        "Cloud Computing",
+        "Financial Technology"
+      ],
+      "topEmployers": [
+        "Google",
+        "Meta",
+        "Apple",
+        "Genentech",
+        "Salesforce",
+        "McKinsey & Company",
+        "Goldman Sachs",
+        "Sequoia Capital",
+        "Kaiser Permanente"
+      ],
+      "emergingIndustries": [
+        "Artificial Intelligence",
+        "Climate Technology",
+        "Biotechnology and Bioengineering",
+        "AI Policy and Governance"
+      ],
+      "startupDensity": "Very High",
+      "ventureCapitalAccess": 96,
+      "corporateHeadquartersDensity": 82,
+      "healthcareHubStrength": 78,
+      "innovationIndex": 98
+    },
+    "geographicInfluence": {
+      "dominantMarket": "San Francisco Bay Area — Technology, Venture Capital, and Biotechnology",
+      "secondaryMarkets": [
+        "Los Angeles CA",
+        "New York NY",
+        "Seattle WA"
+      ],
+      "alumniStrongholds": [
+        "San Francisco Bay Area CA",
+        "Los Angeles CA",
+        "Seattle WA",
+        "New York NY"
+      ],
+      "relocationPatterns": [
+        "The large majority of graduates remain in the Bay Area, entering technology, venture capital, and biotechnology.",
+        "Los Angeles draws graduates into entertainment technology, consumer products, and finance.",
+        "New York recruits graduates into investment banking, consulting, and financial technology.",
+        "Seattle draws graduates into cloud computing and technology roles through Amazon and Microsoft.",
+        "A meaningful cohort enters public policy and government roles in Sacramento and Washington DC."
+      ],
+      "regionalInfluenceScore": 98,
+      "nationalReachScore": 90,
+      "internationalReachScore": 74
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 18,
+      "studentOrganizationStrength": 94,
+      "leadershipDevelopment": 84,
+      "crossDisciplinaryInteraction": 86,
+      "civicEngagement": 90
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 20,
+        "notes": "Not a meaningful institutional pathway; Berkeley's economy and identity are oriented toward technology and policy, not consumer beauty."
+      },
+      "healthWellness": {
+        "strength": 56,
+        "notes": "Meaningful pathway through public health and biology programs, secondary to Berkeley's core technology and policy strengths."
+      },
+      "nutraceuticals": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis, some overlap through biology and nutritional science research."
+      },
+      "consumerProducts": {
+        "strength": 48,
+        "notes": "Solid pathway through Haas and Bay Area consumer technology and brand economy."
+      },
+      "outdoorIndustry": {
+        "strength": 38,
+        "notes": "Modest presence tied to Northern California's outdoor recreation culture, not a major institutional pathway."
+      },
+      "sportsBusiness": {
+        "strength": 36,
+        "notes": "A real but secondary pathway; Berkeley's athletics program is Division I but not central to its institutional identity."
+      },
+      "entertainmentMedia": {
+        "strength": 44,
+        "notes": "A real but secondary pathway; Berkeley's strength is technology-adjacent media (streaming, gaming infrastructure) rather than traditional entertainment."
+      },
+      "ventureCapital": {
+        "strength": 92,
+        "notes": "One of the strongest venture capital pathways of any university, given direct proximity to Sand Hill Road and a dense founder alumni network."
+      },
+      "privateEquity": {
+        "strength": 66,
+        "notes": "Solid placement, particularly through Haas, though smaller than Berkeley's technology and venture capital pathways."
+      },
+      "investmentBanking": {
+        "strength": 74,
+        "notes": "Strong Haas placement into investment banking, competitive with dedicated private business programs despite Haas's small cohort size."
+      },
+      "consulting": {
+        "strength": 82,
+        "notes": "Strong placement into major consulting firms through Haas and the broader university, particularly technology and strategy practices."
+      },
+      "medicine": {
+        "strength": 50,
+        "notes": "A real but secondary pathway; Berkeley has no medical school of its own, so pre-med students typically pursue this through partnership programs or graduate elsewhere for medical school."
+      },
+      "healthcareAdministration": {
+        "strength": 52,
+        "notes": "Meaningful pathway through public health programs, oriented toward health policy more than clinical administration."
+      },
+      "defense": {
+        "strength": 22,
+        "notes": "Not a central institutional pathway; Berkeley's culture and location are oriented toward commercial technology rather than defense."
+      },
+      "realEstate": {
+        "strength": 46,
+        "notes": "A real but secondary pathway through Haas's real estate finance offerings and the Bay Area's real estate market."
+      },
+      "luxuryBrands": {
+        "strength": 24,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "entrepreneurship": {
+        "strength": 94,
+        "notes": "One of the strongest entrepreneurship cultures of any university, supported by direct Silicon Valley proximity, a dense startup founder alumni network, and campus-based accelerators."
+      },
+      "technology": {
+        "strength": 98,
+        "notes": "The single strongest pathway at the institution — EECS produces more total Silicon Valley engineering hires than any other university, public or private."
+      },
+      "publicPolicy": {
+        "strength": 76,
+        "notes": "A genuinely strong, distinctive pathway through the Goldman School of Public Policy and a nationally dominant Political Science department, increasingly relevant as AI and technology policy becomes a major career field."
+      },
+      "nonprofitLeadership": {
+        "strength": 58,
+        "notes": "A real but secondary pathway; Berkeley's activist campus culture produces meaningful nonprofit and public-interest career placement, though smaller than its core technology and policy pathways."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 88,
+      "firstGenerationSupport": 84,
+      "wealthCreationPotential": 94,
+      "familyBusinessPipelineStrength": 48
+    },
+    "futureResilience": {
+      "aiResistance": 88,
+      "automationResistance": 86,
+      "adaptabilityScore": 90,
+      "interdisciplinaryStrength": 88,
+      "futureReadiness": 96,
+      "entrepreneurialFlexibility": 92,
+      "lifelongLearningCulture": 88,
+      "innovationCapacity": 98
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 94,
+      "communityLeadershipPotential": 82,
+      "geographicMobility": 84,
+      "workLifeBalancePotential": 68,
+      "purposeAlignment": 80,
+      "familyFormationSupport": 68,
+      "personalDevelopmentPotential": 86,
+      "careerOptionality": 92,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 92,
+      "networkMoat": 90,
+      "geographicMoat": 96,
+      "industryMoat": 96,
+      "alumniMoat": 84,
+      "brandDurability": 92,
+      "overallMoatScore": 92
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 62,
+      "returnerScore": 46,
+      "stewardScore": 40,
+      "navigatorScore": 88,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "heavily_concentrated_bay_area_with_la_seattle_ny_secondary"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 78,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 2400,
+      "jewishStudentPercentage": "~8%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Berkeley Honors and various departmental honors programs",
+      "strength": 62,
+      "notes": "Berkeley does not operate a single unified honors college on the ASU Barrett or UCLA College Honors model; honors experiences are distributed across departmental programs (e.g. Regents' and Chancellor's Scholars, College Honors within Letters & Science), making the honors experience less centralized than at peer institutions."
+    }
+  },
+  "Texas A&M University": {
+    "institutionNarrative": {
+      "name": "Texas A&M University",
+      "location": "College Station, Texas",
+      "region": "Southwest",
+      "archetype": "The Aggie Network — Loyalty, Engineering, and the Largest Cadet Corps Outside the Service Academies",
+      "oneSentenceSummary": "Texas A&M combines a massive, elite engineering program with the largest uniformed Corps of Cadets outside the U.S. service academies and an alumni network — the Aggie Network — whose career loyalty and mentorship density has no real peer among public universities.",
+      "pipeline": "The College of Engineering is one of the largest and most respected in the country, feeding directly into Texas's oil and gas, aerospace, and industrial economy. Mays Business School places strongly into finance, consulting, and energy-sector corporate roles. The Corps of Cadets commissions more officers than any institution except the service academies themselves, feeding directly into every branch of the U.S. military. The College of Veterinary Medicine and Biomedical Sciences is consistently ranked among the top handful of veterinary programs in the country.",
+      "hiddenPathway": "The Aggie Network's defining feature isn't size, it's obligation — Aggies actively recruit, mentor, and hire other Aggies as a matter of cultural expectation, not networking etiquette, producing a career-placement density that alumni networks at larger or more prestigious universities routinely fail to match.",
+      "institutionalSecret": "Texas A&M's veterinary and agricultural programs are genuinely elite, not a fallback identity behind engineering — the College of Veterinary Medicine and Biomedical Sciences ranks among the top programs in the country and operates one of the most advanced large-animal and biomedical research infrastructures of any university.",
+      "theRoom": "College Station sits inside the Texas Triangle, within driving distance of Houston's energy economy, Austin's tech boom, and Dallas's corporate corridor, giving a genuinely rural-feeling campus direct access to three of the largest metro economies in the country.",
+      "lifestyle": "Deeply traditional and spirit-driven — Aggie traditions (the 12th Man, Ring Day, Silver Taps, Muster) create a campus culture built on loyalty and shared identity to a degree unusual even among large public universities, reinforced by the visible presence of the Corps of Cadets.",
+      "bestFitPersonality": "Loyal, tradition-oriented, comfortable with structure and shared identity, drawn to engineering, agriculture, veterinary medicine, or military service as much as to a specific career outcome.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Dominant across Texas and the broader Southwest in engineering, energy, agriculture, and veterinary medicine, with a nationally unmatched military-officer commissioning pipeline.",
+      "economicOutcome": "Excellent outcomes concentrated in engineering, energy, agriculture, veterinary medicine, and the U.S. military, reinforced by an alumni network with unusually high career-placement loyalty.",
+      "gradCities": [
+        "Houston TX",
+        "Dallas-Fort Worth TX",
+        "Austin TX",
+        "San Antonio TX"
+      ],
+      "comparableInstitutions": [
+        "The University of Texas at Austin",
+        "Purdue University",
+        "Penn State University",
+        "Clemson University",
+        "Virginia Tech"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Blinn College",
+          "Houston Community College"
+        ],
+        "transferAcceptanceRate": "~62%",
+        "freshmanAcceptanceRate": "~63%",
+        "estimatedSavingsRange": "$12,000-$30,000",
+        "transferNotes": "Texas A&M maintains one of the strongest and most heavily used community college transfer pipelines of any major public research university, anchored by a long-standing partnership with Blinn College."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Texas A&M",
+      "archetype": "The Aggie Network — Loyalty, Engineering, and the Largest Cadet Corps Outside the Service Academies",
+      "institutionalPersonality": "loyal, tradition-driven, disciplined, spirited",
+      "cultureKeywords": [
+        "Aggie Network",
+        "Corps of Cadets",
+        "12th Man",
+        "Engineering",
+        "Aggie Traditions"
+      ],
+      "missionOrientation": "Developing leaders of character through engineering, agriculture, and military tradition, bound together by an alumni culture defined by mutual obligation.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Applied, discipline-driven education reinforced by tradition, shared identity, and direct industry and military pipelines.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Broadly conservative, especially relative to Texas's other flagship public universities.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite in engineering and veterinary medicine; nationally unmatched in military officer commissioning; strong regional prestige in business and agriculture.",
+      "socialClimate": "Spirited, tradition-bound, loyal, disciplined.",
+      "leadershipStyle": "Leadership through tradition, service, and the Corps of Cadets' structured leadership development model."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "Texas Triangle",
+      "regionalRole": "The primary engineering, energy, and agricultural talent engine for the Texas Triangle, with a nationally unmatched military-officer commissioning pipeline layered on top."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 14,
+      "BosWash": 10,
+      "TorBuffChester": 6,
+      "TexasTriangle": 96,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 12,
+      "SoCalCreativeEconomy": 8
+    },
+    "comparativePositioning": {
+      "versusUTAustin": "UT Austin offers unmatched Austin tech-boom proximity and the #1 public communications program in the country; Texas A&M offers a stronger military and engineering tradition, a genuinely elite veterinary program, and an alumni network with unusually high career-placement loyalty.",
+      "versusPurdue": "Purdue holds a stronger national engineering research reputation; Texas A&M offers a larger, more unified campus culture and a much larger, more actively obligated alumni network through Aggie tradition."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Large",
+      "undergraduateEnrollment": 58000,
+      "graduateEnrollment": 12000,
+      "totalEnrollment": 70000,
+      "campusType": "Large Public Flagship, College Town Campus",
+      "residentialIntensity": 54,
+      "communityFeel": 76,
+      "studentFacultyRatio": "20:1",
+      "classSizeExperience": "Large introductory courses, particularly in engineering; upper-division coursework, Corps of Cadets units, and veterinary/agricultural programs become substantially more personalized.",
+      "scaleAdvantages": [
+        "Aggie Network alumni culture produces unusually loyal, obligation-driven career placement",
+        "Largest Corps of Cadets outside the U.S. service academies",
+        "Elite veterinary medicine program with advanced research infrastructure",
+        "Direct access to Houston, Austin, and Dallas economies from a single campus"
+      ],
+      "scaleDisadvantages": [
+        "Large introductory courses require significant student initiative",
+        "College Station is a genuinely rural college town, not an urban campus",
+        "Strong traditional and spirit-driven culture may not fit every student"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 68,
+        "conscientiousness": 88,
+        "extraversion": 76,
+        "agreeableness": 80,
+        "neuroticism": 36
+      },
+      "hollandCodes": [
+        "R",
+        "C",
+        "E"
+      ],
+      "learningStyle": [
+        "Applied Engineering",
+        "Structured/Disciplined Learning",
+        "Hands-On Agricultural and Veterinary Training"
+      ],
+      "socialEnvironment": [
+        "Tradition-Bound",
+        "Loyal",
+        "Spirited",
+        "Disciplined"
+      ],
+      "idealStudentTraits": [
+        "Comfortable with structure, tradition, and shared identity",
+        "Drawn to engineering, agriculture, veterinary medicine, or military service",
+        "Values loyalty and long-term community over individual distinctiveness",
+        "Self-directed within a very large public university"
+      ],
+      "thrivesIf": [
+        "Wants a genuinely loyal, obligation-driven alumni network for career placement",
+        "Is drawn to military structure through the Corps of Cadets, even without a full commissioning commitment",
+        "Wants elite veterinary, agricultural, or engineering training",
+        "Values shared tradition and campus-wide identity over urban campus energy"
+      ],
+      "strugglesIf": [
+        "Wants an urban campus embedded in a major city",
+        "Is uncomfortable with a strongly traditional, spirit-driven campus culture",
+        "Prefers a politically progressive campus environment",
+        "Needs a small, intimate liberal arts setting"
+      ],
+      "transferRiskFactors": [
+        "Students seeking an urban rather than college-town setting",
+        "Students uncomfortable with Texas A&M's traditional and military-adjacent campus culture",
+        "Students whose intended major sits outside A&M's core engineering/agriculture/business strengths"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Engineering admission is more selective than general university admission, with many engineering majors requiring separate application review and space-limited enrollment; the College of Veterinary Medicine's DVM program is highly selective at the graduate level, drawing from a large national applicant pool."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Maritime Business Administration (Texas A&M at Galveston)",
+        "Agricultural Economics",
+        "Construction Science",
+        "Ocean Engineering",
+        "Poultry Science",
+        "Nuclear Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Oil and Gas Engineering",
+        "Aerospace and Defense",
+        "Large-Animal Veterinary Practice",
+        "Agribusiness Management",
+        "Military Officer Corps (all branches)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "ExxonMobil",
+        "Chevron",
+        "Shell",
+        "Lockheed Martin",
+        "Boeing",
+        "NASA Johnson Space Center (Houston)",
+        "USDA and major agribusiness firms"
+      ],
+      "overlookedStrengths": [
+        "The Aggie Network's mutual-obligation alumni culture produces career-placement density that alumni networks at more prestigious universities routinely fail to match.",
+        "The College of Veterinary Medicine and Biomedical Sciences is genuinely elite, not a secondary identity behind engineering.",
+        "The Corps of Cadets provides a structured leadership-development pathway available even to students not pursuing a military commission.",
+        "Direct proximity to Houston's energy economy and NASA Johnson Space Center gives engineering students uncommonly direct industry access."
+      ],
+      "sleeperIndustries": [
+        "Agricultural Technology",
+        "Large-Animal and Production Veterinary Medicine",
+        "Ocean and Maritime Engineering",
+        "Nuclear Engineering"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 96,
+      "mentorshipDensity": 94,
+      "executiveAccess": 82,
+      "internshipNetwork": 88,
+      "familyBusinessExposure": 62,
+      "relationshipCapitalScore": 96,
+      "alumniLoyaltyScore": 98,
+      "referralCultureStrength": 96,
+      "donorNetworkStrength": 88,
+      "boardMemberDensity": 76
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Energy (Oil and Gas)",
+        "Aerospace and Defense",
+        "Agriculture",
+        "Veterinary and Animal Science",
+        "Engineering and Construction",
+        "Military and Federal Service"
+      ],
+      "regionalEconomicDrivers": [
+        "Oil and Gas Engineering",
+        "Petrochemical Manufacturing",
+        "Aerospace",
+        "Agribusiness",
+        "Construction and Infrastructure"
+      ],
+      "topEmployers": [
+        "ExxonMobil",
+        "Chevron",
+        "Shell",
+        "Lockheed Martin",
+        "Boeing",
+        "Halliburton",
+        "USDA",
+        "U.S. Army, Navy, Air Force, and Marine Corps"
+      ],
+      "emergingIndustries": [
+        "Renewable Energy",
+        "Agricultural Technology",
+        "Space and Aerospace Manufacturing",
+        "Nuclear Engineering"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 38,
+      "corporateHeadquartersDensity": 52,
+      "healthcareHubStrength": 56,
+      "innovationIndex": 68
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Texas Triangle — Houston, Dallas-Fort Worth, and Austin combined",
+      "secondaryMarkets": [
+        "San Antonio TX",
+        "Washington DC (military)",
+        "International — energy and agriculture"
+      ],
+      "alumniStrongholds": [
+        "Houston TX",
+        "Dallas-Fort Worth TX",
+        "San Antonio TX",
+        "Austin TX"
+      ],
+      "relocationPatterns": [
+        "The large majority of graduates remain within the Texas Triangle, entering energy, engineering, agriculture, and corporate roles.",
+        "A significant military-commissioning cohort deploys nationally and internationally through all branches of the U.S. armed forces.",
+        "Veterinary and agricultural graduates place throughout rural and agricultural Texas and the broader Southwest.",
+        "Engineering graduates increasingly relocate to Gulf Coast petrochemical hubs and aerospace centers nationally."
+      ],
+      "regionalInfluenceScore": 98,
+      "nationalReachScore": 78,
+      "internationalReachScore": 52
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 14,
+      "studentOrganizationStrength": 90,
+      "leadershipDevelopment": 94,
+      "crossDisciplinaryInteraction": 62,
+      "civicEngagement": 88
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 12,
+        "notes": "Not a meaningful institutional pathway; entirely outside A&M's economic identity."
+      },
+      "healthWellness": {
+        "strength": 34,
+        "notes": "A minor, secondary pathway relative to A&M's core engineering, agriculture, and veterinary strengths."
+      },
+      "nutraceuticals": {
+        "strength": 30,
+        "notes": "Some real overlap through agricultural science and food science programs, though not a central institutional focus."
+      },
+      "consumerProducts": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis; Mays Business School graduates enter this field at modest rates relative to energy and industrial sectors."
+      },
+      "outdoorIndustry": {
+        "strength": 40,
+        "notes": "A real, if modest, pathway tied to A&M's agricultural and natural resources programs."
+      },
+      "sportsBusiness": {
+        "strength": 44,
+        "notes": "A real pathway given A&M's major Division I athletics program and passionate fan culture, though secondary to the university's core strengths."
+      },
+      "entertainmentMedia": {
+        "strength": 16,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "ventureCapital": {
+        "strength": 28,
+        "notes": "A minor pathway; College Station's venture ecosystem is far smaller than Austin's or the Bay Area's."
+      },
+      "privateEquity": {
+        "strength": 40,
+        "notes": "A real but secondary pathway, primarily through Mays Business School into energy-sector private equity."
+      },
+      "investmentBanking": {
+        "strength": 48,
+        "notes": "A real but secondary pathway through Mays Business School, smaller than A&M's core engineering and energy placement."
+      },
+      "consulting": {
+        "strength": 56,
+        "notes": "A solid, growing pathway through Mays Business School, oriented toward energy and industrial consulting practices."
+      },
+      "medicine": {
+        "strength": 46,
+        "notes": "A real pathway through pre-med tracks, secondary to A&M's much stronger veterinary medicine identity."
+      },
+      "healthcareAdministration": {
+        "strength": 38,
+        "notes": "A modest, secondary pathway relative to A&M's core strengths."
+      },
+      "defense": {
+        "strength": 90,
+        "notes": "One of the strongest defense and military pathways of any university in the country — the Corps of Cadets commissions more officers than any institution except the U.S. service academies themselves."
+      },
+      "realEstate": {
+        "strength": 42,
+        "notes": "A real, secondary pathway through Mays Business School's real estate finance offerings and Texas's construction economy."
+      },
+      "luxuryBrands": {
+        "strength": 10,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "entrepreneurship": {
+        "strength": 52,
+        "notes": "A real and growing pathway, particularly in agricultural technology and energy-adjacent startups, though smaller than A&M's core corporate and military pipelines."
+      },
+      "technology": {
+        "strength": 60,
+        "notes": "A solid, growing pathway through the College of Engineering, oriented toward industrial, energy, and aerospace technology rather than consumer software."
+      },
+      "publicPolicy": {
+        "strength": 42,
+        "notes": "A real but secondary pathway, oriented toward agricultural policy and Texas state government rather than federal policy."
+      },
+      "nonprofitLeadership": {
+        "strength": 38,
+        "notes": "A modest, secondary pathway relative to A&M's core corporate, military, and agricultural placement."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 78,
+      "firstGenerationSupport": 80,
+      "wealthCreationPotential": 78,
+      "familyBusinessPipelineStrength": 62
+    },
+    "futureResilience": {
+      "aiResistance": 74,
+      "automationResistance": 76,
+      "adaptabilityScore": 72,
+      "interdisciplinaryStrength": 68,
+      "futureReadiness": 76,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 78,
+      "innovationCapacity": 70
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 78,
+      "communityLeadershipPotential": 92,
+      "geographicMobility": 68,
+      "workLifeBalancePotential": 76,
+      "purposeAlignment": 84,
+      "familyFormationSupport": 82,
+      "personalDevelopmentPotential": 82,
+      "careerOptionality": 74,
+      "longTermLifeSatisfaction": 86
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 74,
+      "networkMoat": 96,
+      "geographicMoat": 84,
+      "industryMoat": 82,
+      "alumniMoat": 98,
+      "brandDurability": 92,
+      "overallMoatScore": 88
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 44,
+      "returnerScore": 62,
+      "stewardScore": 82,
+      "navigatorScore": 58,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "heavily_concentrated_texas_triangle_with_national_military_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 42,
+        "type": "Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 350,
+      "jewishStudentPercentage": "~1%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Modest",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate and kosher dining status are best-effort figures, not independently verified — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "University Honors Program / Terry Foundation",
+      "strength": 68,
+      "notes": "Provides smaller seminars, priority course access, and undergraduate research opportunities within A&M's very large scale; less centralized than a dedicated honors college like ASU's Barrett."
+    }
+  },
+  "Massachusetts Institute of Technology": {
+    "institutionNarrative": {
+      "name": "Massachusetts Institute of Technology",
+      "location": "Cambridge, Massachusetts",
+      "region": "Northeast",
+      "archetype": "The Engineering and Entrepreneurship Engine — From Lab Bench to Billion-Dollar Company",
+      "oneSentenceSummary": "MIT combines the broadest and deepest engineering program in the world with an entrepreneurial culture so dense that companies founded by MIT alumni collectively generate revenue comparable to a major national economy.",
+      "pipeline": "Approximately 4,600 undergraduates. MIT is preeminent across nearly every engineering discipline, computer science (CSAIL is one of the largest computer science and AI research labs in the world), and physics, layered with the Sloan School of Management's elite business program and the Media Lab's unique interdisciplinary technology-design research. Major recruiters and partners span every major technology company, aerospace and defense contractor, biotechnology firm, and a startup ecosystem MIT itself substantially created.",
+      "hiddenPathway": "MIT's entrepreneurship infrastructure — the Martin Trust Center, the Delta V accelerator, and a campus-wide culture that treats founding a company as a legitimate default career path — means students building real startups while enrolled is normal, not exceptional, in a way that changes what 'career pipeline' even means here.",
+      "institutionalSecret": "MIT's motto, mens et manus (mind and hand), is not decorative — the university's defining strength is translating pure research directly into working systems and companies faster and more consistently than any peer institution, a cultural trait as much as an academic one.",
+      "theRoom": "Cambridge sits directly across the Charles River from Boston, inside one of the densest concentrations of venture capital, biotechnology, and research institutions in the country, with cross-registration access to Harvard immediately next door.",
+      "lifestyle": "Intensely technical, hands-on, and hacking-culture-driven, balanced by a famously irreverent prank tradition and a work culture that treats building things — not just studying them — as the core identity of the institution.",
+      "bestFitPersonality": "Extremely high intellectual intensity, comfortable with rigorous technical coursework, drawn to building and shipping real systems rather than pure theory alone, and energized by entrepreneurial risk-taking.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "National and international dominance in engineering, computer science, and technology entrepreneurship, with a startup ecosystem influence disproportionate to its size.",
+      "economicOutcome": "Exceptional outcomes across engineering, computer science, technology entrepreneurship, and finance — among the highest wealth-creation potential of any university in the country through founder equity alone.",
+      "gradCities": [
+        "Boston MA",
+        "San Francisco CA",
+        "New York NY",
+        "Seattle WA",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "California Institute of Technology",
+        "Stanford University",
+        "Carnegie Mellon University",
+        "Harvard University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Bunker Hill Community College"
+        ],
+        "transferAcceptanceRate": "~4%",
+        "freshmanAcceptanceRate": "~4%",
+        "estimatedSavingsRange": "$18,000-$42,000",
+        "transferNotes": "MIT accepts an extremely small number of transfer students each year, making transfer admission nearly as selective as freshman admission."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "MIT",
+      "archetype": "Elite Private Research University — Engineering and Entrepreneurship",
+      "institutionalPersonality": "intensely technical, hands-on, entrepreneurial, hacking-culture-driven",
+      "cultureKeywords": [
+        "Mens et Manus",
+        "CSAIL",
+        "Sloan School",
+        "Media Lab",
+        "Startup Culture",
+        "Hacking Tradition"
+      ],
+      "missionOrientation": "Advancing knowledge and educating students in science, technology, and other areas of scholarship that will best serve the world, with a defining emphasis on translating research directly into working systems.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Rigorous, problem-set-driven technical education combined with hands-on building, research, and an institution-wide expectation that ideas get shipped, not just studied.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally progressive to apolitical, with campus energy oriented far more around technical problem-solving and building than political engagement.",
+      "studentAutonomy": "Very High",
+      "prestigeOrientation": "Among the most academically prestigious institutions in the world for engineering, computer science, and technology entrepreneurship.",
+      "socialClimate": "Intensely technical, hacking-culture-driven, entrepreneurial, irreverent.",
+      "leadershipStyle": "Leadership through technical mastery, building real systems, and entrepreneurial execution."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "The single most influential engineering and technology-entrepreneurship engine in BosWash, with a startup ecosystem influence extending well beyond the corridor itself."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 10,
+      "BosWash": 92,
+      "TorBuffChester": 10,
+      "TexasTriangle": 10,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 48,
+      "SoCalCreativeEconomy": 14
+    },
+    "comparativePositioning": {
+      "versusCaltech": "Caltech offers an even more concentrated, smaller-scale pure-science environment with unmatched undergraduate access to JPL; MIT offers a larger scale with greater breadth across engineering disciplines and a substantially stronger entrepreneurial and business culture through Sloan.",
+      "versusStanford": "Stanford offers denser direct access to Silicon Valley venture capital and a larger, more California-native startup ecosystem; MIT offers a more concentrated engineering-first culture and an entrepreneurship infrastructure that produces founders at a comparable rate from a smaller, more technically singular student body.",
+      "versusCarnegieMellon": "Carnegie Mellon offers a more concentrated computer science identity at a smaller scale with strong industry ties to Pittsburgh's robotics and AI sector; MIT offers broader engineering breadth across nearly every discipline and a substantially larger, more mature entrepreneurship ecosystem."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 4600,
+      "graduateEnrollment": 7100,
+      "totalEnrollment": 11700,
+      "campusType": "Small Private Research University",
+      "residentialIntensity": 88,
+      "communityFeel": 84,
+      "studentFacultyRatio": "3:1",
+      "classSizeExperience": "Extremely small classes with direct faculty access from the first year; nearly every undergraduate participates in original research (UROP) alongside faculty.",
+      "scaleAdvantages": [
+        "Unmatched student-faculty ratio and direct research access",
+        "Broadest and deepest engineering program of any university, public or private",
+        "Entrepreneurship infrastructure that makes founding a company a normal undergraduate outcome",
+        "Cross-registration access to Harvard immediately across the river"
+      ],
+      "scaleDisadvantages": [
+        "Extremely demanding, problem-set-heavy curriculum",
+        "Small size means a more limited social and extracurricular scene outside STEM",
+        "High cost of living in the Boston/Cambridge area",
+        "Intensely technical culture may not suit students seeking broader humanities emphasis"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 94,
+        "conscientiousness": 92,
+        "extraversion": 58,
+        "agreeableness": 66,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "I",
+        "R",
+        "E"
+      ],
+      "learningStyle": [
+        "Problem-Set-Driven Learning",
+        "Undergraduate Research (UROP)",
+        "Hands-On Building",
+        "Entrepreneurial Project Work"
+      ],
+      "socialEnvironment": [
+        "Intensely Technical",
+        "Hacking Culture",
+        "Entrepreneurial",
+        "Tight-Knit"
+      ],
+      "idealStudentTraits": [
+        "Extremely high intellectual intensity",
+        "Comfortable with rigorous, demanding technical coursework",
+        "Drawn to building and shipping real systems, not just studying theory",
+        "Energized by entrepreneurial risk-taking"
+      ],
+      "thrivesIf": [
+        "Wants the broadest and deepest engineering program available anywhere",
+        "Is drawn to founding a company as a legitimate default career path",
+        "Values hands-on building over purely theoretical study",
+        "Thrives in a small, intensely technical, tight-knit community"
+      ],
+      "strugglesIf": [
+        "Wants a large campus with broad social and extracurricular options",
+        "Needs a lighter academic course load",
+        "Prefers strong humanities or social science programs as a primary focus",
+        "Wants a less intensely technical, more balanced campus culture"
+      ],
+      "transferRiskFactors": [
+        "Students overwhelmed by the academic intensity",
+        "Students seeking a larger, more socially varied campus",
+        "Students who want stronger non-STEM academic offerings as a primary focus"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "MIT does not impact majors at the undergraduate level — all students are admitted to the Institute generally and declare a major after arriving, with no secondary application required for any department, including the most popular ones like Course 6 (EECS)."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Course 2 (Mechanical Engineering) — broader industry applicability than its EECS-dominated reputation suggests",
+        "Brain and Cognitive Sciences",
+        "Materials Science and Engineering",
+        "Urban Studies and Planning",
+        "Nuclear Science and Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Quantum Computing",
+        "Biotechnology and Synthetic Biology",
+        "Robotics",
+        "Climate and Energy Technology",
+        "Defense Technology"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Every major technology company",
+        "SpaceX",
+        "Every top-tier venture capital firm (as a recruiting and investment target)",
+        "Moderna and the Boston/Cambridge biotech cluster",
+        "Draper Laboratory"
+      ],
+      "overlookedStrengths": [
+        "MIT's entrepreneurship infrastructure (Martin Trust Center, Delta V accelerator) produces founders at a rate that rivals or exceeds Stanford's, despite a smaller student body.",
+        "Sloan School of Management delivers elite finance and consulting placement inside an engineering-first institution, giving graduates a technical-plus-business combination few peer business schools can replicate.",
+        "The Media Lab's interdisciplinary technology-design research produces graduates with a genuinely unique blend of engineering and design fluency.",
+        "UROP (Undergraduate Research Opportunities Program) gives nearly every student direct, funded research experience alongside faculty starting freshman year."
+      ],
+      "sleeperIndustries": [
+        "Synthetic Biology",
+        "Quantum Computing",
+        "Climate Technology",
+        "Defense Technology",
+        "Robotics"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 90,
+      "mentorshipDensity": 88,
+      "executiveAccess": 94,
+      "internshipNetwork": 96,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 92,
+      "alumniLoyaltyScore": 86,
+      "referralCultureStrength": 90,
+      "donorNetworkStrength": 92,
+      "boardMemberDensity": 88
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Technology",
+        "Biotechnology",
+        "Venture Capital",
+        "Aerospace and Defense",
+        "Financial Services",
+        "Robotics and Advanced Manufacturing"
+      ],
+      "regionalEconomicDrivers": [
+        "Software and AI",
+        "Biotechnology and Life Sciences",
+        "Venture Capital",
+        "Robotics",
+        "Defense Technology",
+        "Financial Technology"
+      ],
+      "topEmployers": [
+        "Google",
+        "Meta",
+        "Microsoft",
+        "Moderna",
+        "SpaceX",
+        "Goldman Sachs",
+        "McKinsey & Company",
+        "Draper Laboratory",
+        "Numerous MIT-founded startups"
+      ],
+      "emergingIndustries": [
+        "Quantum Computing",
+        "Synthetic Biology",
+        "Climate Technology",
+        "Robotics and Automation",
+        "Artificial Intelligence"
+      ],
+      "startupDensity": "Very High",
+      "ventureCapitalAccess": 94,
+      "corporateHeadquartersDensity": 68,
+      "healthcareHubStrength": 82,
+      "innovationIndex": 100
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Boston-Cambridge — Technology, Biotechnology, and Venture Capital",
+      "secondaryMarkets": [
+        "San Francisco Bay Area CA",
+        "New York NY",
+        "Seattle WA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Boston MA",
+        "San Francisco Bay Area CA",
+        "New York NY",
+        "Seattle WA"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates remain in Boston/Cambridge, joining biotechnology firms, startups, and research institutions.",
+        "The San Francisco Bay Area draws a large share of graduates into technology and venture capital roles.",
+        "New York recruits graduates into investment banking, consulting, and financial technology.",
+        "A substantial cohort founds companies directly rather than joining existing employers.",
+        "A meaningful international cohort enters global technology and research institutions."
+      ],
+      "regionalInfluenceScore": 96,
+      "nationalReachScore": 96,
+      "internationalReachScore": 90
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 20,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 82,
+      "crossDisciplinaryInteraction": 92,
+      "civicEngagement": 62
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 12,
+        "notes": "Minimal institutional relevance."
+      },
+      "healthWellness": {
+        "strength": 52,
+        "notes": "Real overlap through bioengineering and health technology research, though not a primary institutional focus relative to core engineering."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 40,
+        "notes": "A real but secondary pathway through product design and hardware engineering programs."
+      },
+      "outdoorIndustry": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 20,
+        "notes": "Not a primary institutional specialty; MIT's athletics program is DIII and not central to its identity."
+      },
+      "entertainmentMedia": {
+        "strength": 34,
+        "notes": "A modest pathway, primarily through Media Lab-adjacent technology and interactive design work rather than traditional entertainment."
+      },
+      "ventureCapital": {
+        "strength": 88,
+        "notes": "One of the strongest venture capital pathways of any university, both as founders raising capital and as graduates entering VC firms directly."
+      },
+      "privateEquity": {
+        "strength": 48,
+        "notes": "A real but secondary pathway, smaller than MIT's dominant technology and venture capital pipelines."
+      },
+      "investmentBanking": {
+        "strength": 58,
+        "notes": "A solid Sloan-driven pathway, though smaller in relative emphasis than MIT's technology and entrepreneurship pipelines."
+      },
+      "consulting": {
+        "strength": 72,
+        "notes": "Strong placement into major consulting firms, particularly technology and strategy practices, through Sloan and the broader institute."
+      },
+      "medicine": {
+        "strength": 40,
+        "notes": "A real but secondary pathway; MIT has no medical school of its own, so pre-med students typically pursue this through partnerships or graduate elsewhere for medical school."
+      },
+      "healthcareAdministration": {
+        "strength": 34,
+        "notes": "A modest, secondary pathway relative to MIT's core technology and biotechnology strengths."
+      },
+      "defense": {
+        "strength": 68,
+        "notes": "A genuinely strong pathway through aerospace, robotics, and defense-adjacent research, including Draper Laboratory and Lincoln Laboratory affiliations."
+      },
+      "realEstate": {
+        "strength": 28,
+        "notes": "Minimal institutional relevance outside urban studies and planning coursework."
+      },
+      "luxuryBrands": {
+        "strength": 10,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 98,
+        "notes": "Among the strongest entrepreneurship cultures of any university in the world — companies founded by MIT alumni collectively generate revenue comparable to a major national economy, supported by dense on-campus accelerator infrastructure."
+      },
+      "technology": {
+        "strength": 100,
+        "notes": "The single strongest and broadest engineering and computer science pipeline of any university, public or private."
+      },
+      "publicPolicy": {
+        "strength": 46,
+        "notes": "A real but secondary pathway, primarily through technology policy and science policy roles rather than traditional government affairs."
+      },
+      "nonprofitLeadership": {
+        "strength": 36,
+        "notes": "A modest, secondary pathway relative to MIT's overwhelmingly dominant technology and entrepreneurship pipelines."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 82,
+      "firstGenerationSupport": 80,
+      "wealthCreationPotential": 98,
+      "familyBusinessPipelineStrength": 30
+    },
+    "futureResilience": {
+      "aiResistance": 98,
+      "automationResistance": 96,
+      "adaptabilityScore": 94,
+      "interdisciplinaryStrength": 92,
+      "futureReadiness": 100,
+      "entrepreneurialFlexibility": 96,
+      "lifelongLearningCulture": 92,
+      "innovationCapacity": 100
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 98,
+      "communityLeadershipPotential": 76,
+      "geographicMobility": 88,
+      "workLifeBalancePotential": 62,
+      "purposeAlignment": 88,
+      "familyFormationSupport": 64,
+      "personalDevelopmentPotential": 92,
+      "careerOptionality": 96,
+      "longTermLifeSatisfaction": 84
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 98,
+      "networkMoat": 92,
+      "geographicMoat": 90,
+      "industryMoat": 98,
+      "alumniMoat": 88,
+      "brandDurability": 98,
+      "overallMoatScore": 94
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 78,
+      "returnerScore": 30,
+      "stewardScore": 22,
+      "navigatorScore": 94,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "national_and_international_technology_concentration"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 72,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 550,
+      "jewishStudentPercentage": "~12%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "MIT has no separate honors college; its entire undergraduate program functions at an honors-equivalent level of rigor and research access given the university's small size, 3:1 student-faculty ratio, and universal UROP research participation."
+    }
+  },
+  "Carnegie Mellon University": {
+    "institutionNarrative": {
+      "name": "Carnegie Mellon University",
+      "location": "Pittsburgh, Pennsylvania",
+      "region": "Mid-Atlantic",
+      "archetype": "The Computer Science and Robotics Crucible That Also Runs a World-Class Drama School",
+      "oneSentenceSummary": "Carnegie Mellon combines the single most concentrated computer science and robotics research engine in the country with a School of Drama ranked among the best in the world, an unusual and genuine dual identity no other technical university replicates.",
+      "pipeline": "The School of Computer Science is consistently ranked #1 or #2 in the country, anchored by the Robotics Institute — one of the largest and most influential robotics research programs in the world. The College of Engineering is elite across nearly every discipline. Tepper School of Business runs a strong, analytically rigorous undergraduate business program. The School of Drama, one of the oldest conservatory drama programs in the country alongside Juilliard, sends graduates directly to Broadway and major film and television productions. Major recruiters span every major technology company, robotics and autonomous vehicle firms, and the entertainment industry.",
+      "hiddenPathway": "CMU's robotics and autonomous systems research directly seeded Pittsburgh's real-world self-driving car industry — Uber's Advanced Technologies Group and multiple autonomous vehicle startups were built substantially on CMU Robotics Institute talent and research, giving students direct, local access to a commercial autonomous vehicle industry most students would assume only exists in Silicon Valley.",
+      "institutionalSecret": "CMU's School of Drama is genuinely one of the best conservatory drama programs in the country, not a secondary identity behind computer science — the two programs coexist at elite levels within the same university, an institutional combination with no real peer.",
+      "theRoom": "Pittsburgh has transformed from a former steel-industry city into a genuine robotics and autonomous-vehicle technology hub substantially because of CMU's research output, giving students a real, walkable technology ecosystem the university itself largely created.",
+      "lifestyle": "Intensely technical and famously demanding — CMU has a well-known reputation among its own students for academic intensity and stress, balanced by a tight-knit, collaborative culture built around shared workload rather than competition.",
+      "bestFitPersonality": "Extremely high intellectual intensity, comfortable with rigorous technical coursework and heavy workload, drawn to computer science, robotics, or performing arts specifically rather than a broad liberal arts exploration.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "National and international dominance in computer science and robotics research, with a distinctive secondary national reach in conservatory drama training.",
+      "economicOutcome": "Exceptional outcomes in computer science, robotics, and software engineering, with a genuinely elite and distinct secondary outcome pathway into professional theater, film, and television for Drama School graduates.",
+      "gradCities": [
+        "San Francisco CA",
+        "Pittsburgh PA",
+        "New York NY",
+        "Seattle WA"
+      ],
+      "comparableInstitutions": [
+        "Massachusetts Institute of Technology",
+        "California Institute of Technology",
+        "Georgia Institute of Technology",
+        "University of Illinois Urbana-Champaign"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Community College of Allegheny County"
+        ],
+        "transferAcceptanceRate": "~15%",
+        "freshmanAcceptanceRate": "~11%",
+        "estimatedSavingsRange": "$16,000-$38,000",
+        "transferNotes": "CMU's transfer admission is highly selective and varies significantly by school, with the School of Computer Science admitting transfers at a substantially lower rate than the university overall."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Carnegie Mellon",
+      "archetype": "The Computer Science and Robotics Crucible That Also Runs a World-Class Drama School",
+      "institutionalPersonality": "intensely technical, demanding, collaborative, distinctively dual-identity",
+      "cultureKeywords": [
+        "School of Computer Science",
+        "Robotics Institute",
+        "School of Drama",
+        "Autonomous Vehicles",
+        "Academic Intensity"
+      ],
+      "missionOrientation": "Advancing computer science, robotics, and engineering research at the highest level while sustaining a genuinely elite conservatory arts program within the same institution.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Rigorous, project-based technical education paired with a collaborative culture built around shared academic intensity rather than internal competition.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Generally progressive to apolitical, with campus energy oriented around technical and creative work rather than political engagement.",
+      "studentAutonomy": "Very High",
+      "prestigeOrientation": "Among the most academically prestigious institutions in the world for computer science and robotics; genuinely elite in conservatory drama training.",
+      "socialClimate": "Intensely technical, demanding, collaborative, quietly dual-identity between engineering and the arts.",
+      "leadershipStyle": "Leadership through technical mastery, research output, and — within Drama — genuine conservatory-level artistic training."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "regionalRole": "The research engine that substantially built Pittsburgh's transformation from a former steel city into a genuine robotics and autonomous-vehicle technology hub."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 68,
+      "BosWash": 34,
+      "TorBuffChester": 22,
+      "TexasTriangle": 10,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 42,
+      "SoCalCreativeEconomy": 14
+    },
+    "comparativePositioning": {
+      "versusMIT": "MIT offers broader engineering breadth across nearly every discipline and a substantially larger, more mature entrepreneurship ecosystem; Carnegie Mellon offers a more concentrated computer science and robotics identity at a smaller scale, with strong direct industry ties to Pittsburgh's robotics and autonomous-vehicle sector, plus a genuinely elite drama program MIT does not offer.",
+      "versusGeorgiaTech": "Georgia Tech offers a larger scale and stronger integration with Atlanta's broader corporate economy; Carnegie Mellon offers a more concentrated, higher-prestige computer science identity specifically, anchored by the Robotics Institute's research dominance.",
+      "versusCaltech": "Caltech provides an even more concentrated, smaller-scale pure-science environment; Carnegie Mellon offers a comparable computer science prestige level at a larger scale, with direct applied robotics industry ties and a genuinely distinctive drama program Caltech does not have."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 7200,
+      "graduateEnrollment": 10500,
+      "totalEnrollment": 17700,
+      "campusType": "Private Research University, Urban Pittsburgh Campus",
+      "residentialIntensity": 68,
+      "communityFeel": 70,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Small-to-moderate classes with strong faculty access, particularly within the School of Computer Science's project-based upper-division coursework and the School of Drama's conservatory model.",
+      "scaleAdvantages": [
+        "The most concentrated top-tier computer science and robotics research engine in the country",
+        "Direct local access to Pittsburgh's real, commercial autonomous-vehicle and robotics industry",
+        "A genuinely elite conservatory drama program coexisting with elite computer science",
+        "Strong faculty access relative to peer technical research universities"
+      ],
+      "scaleDisadvantages": [
+        "Extremely demanding workload with a well-known reputation for student stress",
+        "Smaller, less prominent brand recognition outside computer science relative to MIT or Stanford",
+        "Pittsburgh offers a smaller-scale metro economy than Boston, the Bay Area, or New York",
+        "Highly selective, school-specific admission (especially Computer Science) beyond general university admission"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 90,
+        "conscientiousness": 90,
+        "extraversion": 56,
+        "agreeableness": 66,
+        "neuroticism": 54
+      },
+      "hollandCodes": [
+        "I",
+        "R",
+        "A"
+      ],
+      "learningStyle": [
+        "Project-Based Technical Learning",
+        "Research",
+        "Conservatory Training (Drama)",
+        "Collaborative Problem-Solving"
+      ],
+      "socialEnvironment": [
+        "Intensely Technical",
+        "Demanding",
+        "Collaborative",
+        "Dual-Identity (Engineering and Arts)"
+      ],
+      "idealStudentTraits": [
+        "Extremely high intellectual intensity",
+        "Comfortable with a demanding, high-workload academic culture",
+        "Drawn specifically to computer science, robotics, or conservatory performing arts",
+        "Values collaborative rather than competitive peer culture despite academic intensity"
+      ],
+      "thrivesIf": [
+        "Wants the most concentrated top-tier computer science and robotics program available",
+        "Is drawn to Pittsburgh's real, local autonomous-vehicle and robotics industry",
+        "Wants a genuine conservatory-level drama program without leaving a major research university",
+        "Can handle CMU's well-known reputation for heavy academic workload"
+      ],
+      "strugglesIf": [
+        "Wants a lighter or more flexible academic workload",
+        "Needs a large, prominent brand-name social scene outside STEM and the arts",
+        "Prefers a warmer climate or larger metro area than Pittsburgh",
+        "Wants broad liberal arts exploration rather than a specific technical or artistic focus"
+      ],
+      "transferRiskFactors": [
+        "Students overwhelmed by CMU's academic intensity and workload",
+        "Students frustrated by highly selective internal admission to Computer Science specifically",
+        "Students who want a bigger, more socially prominent campus brand"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Very High",
+      "notes": "The School of Computer Science admits directly and separately from the rest of the university, with acceptance rates substantially lower than CMU's overall rate — switching into Computer Science after enrolling in another college is notoriously difficult. The School of Drama requires a competitive audition process distinct from general admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Engineering and Public Policy",
+        "Information Systems (Heinz College undergraduate track)",
+        "Human-Computer Interaction",
+        "Materials Science and Engineering",
+        "Statistics and Data Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Autonomous Vehicle Engineering",
+        "Robotics",
+        "Entertainment Technology (games, animation, VFX pipelines via Drama/CS crossover)",
+        "AI Safety and Policy",
+        "Human-Computer Interaction Design"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Uber Advanced Technologies Group (Pittsburgh)",
+        "Google (Pittsburgh office, built substantially around CMU talent)",
+        "Duolingo (Pittsburgh, founded by a CMU professor)",
+        "Aurora Innovation and other autonomous vehicle startups",
+        "Broadway and major film/television casting directly through the School of Drama"
+      ],
+      "overlookedStrengths": [
+        "CMU substantially built Pittsburgh's modern robotics and autonomous-vehicle industry through direct research spinoffs, giving students a real local commercial ecosystem most peer institutions cannot offer.",
+        "The School of Drama's placement into Broadway, film, and television rivals Juilliard's, an outcome almost no other computer-science-elite university can claim.",
+        "Duolingo was founded by a CMU computer science professor and remains closely tied to the university's research culture.",
+        "Heinz College gives CMU a distinctive, less-known pathway into public policy and information systems careers."
+      ],
+      "sleeperIndustries": [
+        "Autonomous Vehicles and Robotics",
+        "AI Safety and Governance",
+        "Entertainment Technology",
+        "Human-Computer Interaction"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 80,
+      "executiveAccess": 84,
+      "internshipNetwork": 90,
+      "familyBusinessExposure": 36,
+      "relationshipCapitalScore": 84,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 76,
+      "boardMemberDensity": 72
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Computer Science and Software",
+        "Robotics",
+        "Autonomous Vehicles",
+        "Entertainment and Performing Arts",
+        "Financial Technology",
+        "Artificial Intelligence"
+      ],
+      "regionalEconomicDrivers": [
+        "Robotics Research and Commercialization",
+        "Autonomous Vehicle Technology",
+        "Software Engineering",
+        "Artificial Intelligence Research"
+      ],
+      "topEmployers": [
+        "Google",
+        "Uber Advanced Technologies Group",
+        "Duolingo",
+        "Meta",
+        "Microsoft",
+        "Aurora Innovation",
+        "Major Broadway and film/television production companies"
+      ],
+      "emergingIndustries": [
+        "Autonomous Vehicles",
+        "AI Safety and Governance",
+        "Robotics",
+        "Entertainment Technology"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 68,
+      "corporateHeadquartersDensity": 44,
+      "healthcareHubStrength": 52,
+      "innovationIndex": 92
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Pittsburgh — Robotics, Autonomous Vehicles, and Software Engineering",
+      "secondaryMarkets": [
+        "San Francisco Bay Area CA",
+        "New York NY",
+        "Seattle WA"
+      ],
+      "alumniStrongholds": [
+        "San Francisco Bay Area CA",
+        "Pittsburgh PA",
+        "New York NY",
+        "Seattle WA"
+      ],
+      "relocationPatterns": [
+        "The San Francisco Bay Area draws the largest share of graduates into technology and robotics roles.",
+        "A meaningful cohort remains in Pittsburgh, joining the robotics and autonomous-vehicle ecosystem CMU itself substantially built.",
+        "New York recruits graduates into finance, consulting, and Broadway/entertainment via the School of Drama.",
+        "Seattle draws graduates into cloud computing and technology roles."
+      ],
+      "regionalInfluenceScore": 86,
+      "nationalReachScore": 90,
+      "internationalReachScore": 76
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 22,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 84,
+      "civicEngagement": 58
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 14,
+        "notes": "Minimal institutional relevance."
+      },
+      "healthWellness": {
+        "strength": 38,
+        "notes": "A modest pathway through biomedical engineering, secondary to CMU's core computer science and robotics identity."
+      },
+      "nutraceuticals": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 36,
+        "notes": "A modest pathway through human-computer interaction and product design programs."
+      },
+      "outdoorIndustry": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 18,
+        "notes": "Not a primary institutional specialty."
+      },
+      "entertainmentMedia": {
+        "strength": 62,
+        "notes": "A genuinely strong and distinctive pathway through the School of Drama, placing graduates directly into Broadway, film, and television at a level unusual for a computer-science-elite university."
+      },
+      "ventureCapital": {
+        "strength": 62,
+        "notes": "A real and growing pathway, tied to robotics and AI startup activity substantially seeded by CMU research."
+      },
+      "privateEquity": {
+        "strength": 40,
+        "notes": "A modest, secondary pathway through Tepper School of Business."
+      },
+      "investmentBanking": {
+        "strength": 46,
+        "notes": "A real but secondary pathway through Tepper, smaller than CMU's dominant technology pipelines."
+      },
+      "consulting": {
+        "strength": 68,
+        "notes": "Strong placement into major consulting firms, particularly technology strategy practices, through Tepper and the broader university."
+      },
+      "medicine": {
+        "strength": 32,
+        "notes": "A minor pathway; CMU has no medical school and is not oriented toward medicine as a primary outcome."
+      },
+      "healthcareAdministration": {
+        "strength": 30,
+        "notes": "Minimal institutional emphasis."
+      },
+      "defense": {
+        "strength": 58,
+        "notes": "A real and growing pathway through robotics and autonomous systems research with direct defense-technology applications."
+      },
+      "realEstate": {
+        "strength": 22,
+        "notes": "Minimal institutional relevance."
+      },
+      "luxuryBrands": {
+        "strength": 12,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 84,
+        "notes": "A very strong pathway — Duolingo and multiple robotics/autonomous-vehicle companies trace directly to CMU research and faculty, supported by a genuine campus-to-commercialization pipeline."
+      },
+      "technology": {
+        "strength": 98,
+        "notes": "One of the two or three strongest computer science and robotics pipelines of any university in the world."
+      },
+      "publicPolicy": {
+        "strength": 48,
+        "notes": "A real, distinctive pathway through Heinz College's information systems and public policy programs, though secondary to CMU's core technical identity."
+      },
+      "nonprofitLeadership": {
+        "strength": 30,
+        "notes": "Minimal institutional emphasis relative to CMU's dominant technology and arts pathways."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 74,
+      "firstGenerationSupport": 72,
+      "wealthCreationPotential": 92,
+      "familyBusinessPipelineStrength": 28
+    },
+    "futureResilience": {
+      "aiResistance": 96,
+      "automationResistance": 94,
+      "adaptabilityScore": 88,
+      "interdisciplinaryStrength": 86,
+      "futureReadiness": 96,
+      "entrepreneurialFlexibility": 86,
+      "lifelongLearningCulture": 88,
+      "innovationCapacity": 96
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 92,
+      "communityLeadershipPotential": 70,
+      "geographicMobility": 84,
+      "workLifeBalancePotential": 58,
+      "purposeAlignment": 78,
+      "familyFormationSupport": 62,
+      "personalDevelopmentPotential": 86,
+      "careerOptionality": 90,
+      "longTermLifeSatisfaction": 78
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 90,
+      "networkMoat": 82,
+      "geographicMoat": 78,
+      "industryMoat": 94,
+      "alumniMoat": 76,
+      "brandDurability": 88,
+      "overallMoatScore": 85
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 76,
+      "returnerScore": 28,
+      "stewardScore": 24,
+      "navigatorScore": 88,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "bay_area_concentration_with_pittsburgh_and_ny_secondary"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 68,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 900,
+      "jewishStudentPercentage": "~13%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "CMU has no separate honors college; rigor is delivered through each school's own demanding curriculum (especially Computer Science and Drama's conservatory model) rather than a centralized honors program."
+    }
+  },
+  "University of Chicago": {
+    "institutionNarrative": {
+      "name": "University of Chicago",
+      "location": "Chicago, Illinois",
+      "region": "Great Lakes",
+      "archetype": "The Life of the Mind — Where Rigorous Ideas Come Before Career Positioning",
+      "oneSentenceSummary": "UChicago pairs the most demanding mandatory Core Curriculum of any elite American university with the Chicago School of Economics' Nobel-laureate density, producing graduates whose defining trait is genuine intellectual seriousness rather than pre-professional networking.",
+      "pipeline": "Approximately 7,500 undergraduates. The Core Curriculum requires every student to complete a rigorous, discussion-based sequence across humanities, social sciences, and natural sciences regardless of major. The Department of Economics has produced more Nobel laureates than any other university's economics department in history. Booth School of Business ranks among the top business schools in the country. Major recruiters span top consulting firms, investment banks, and a research and academic pipeline stronger than almost any peer institution.",
+      "hiddenPathway": "UChicago's Nobel-laureate-dense Economics department and its historic 'Chicago School' influence on real-world monetary and fiscal policy give undergraduates direct exposure to faculty whose ideas have shaped actual Federal Reserve and global economic policy, not just textbook theory.",
+      "institutionalSecret": "UChicago's famously self-deprecating 'where fun goes to die' campus culture reflects a genuine institutional choice to prioritize intellectual rigor over pre-professional polish — a trait that has become a recruiting advantage as employers increasingly value the analytical depth this culture produces.",
+      "theRoom": "Hyde Park, on Chicago's South Side, is a self-contained academic neighborhood distinct from Chicago's downtown Loop, giving students an intense, insulated intellectual community with the broader city's finance, consulting, and cultural institutions a short train ride away.",
+      "lifestyle": "Intensely intellectual and proudly countercultural relative to peer Ivies — the Core Curriculum, the world's largest scavenger hunt (Scav), and a campus identity built around ideas for their own sake create a genuinely distinctive undergraduate culture.",
+      "bestFitPersonality": "Intellectually serious to an unusual degree, comfortable with rigorous discussion-based learning, drawn to ideas and analysis as ends in themselves rather than purely as career preparation.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "National and international influence in economics, law, and academia, with strong regional dominance in Chicago's finance and consulting economy.",
+      "economicOutcome": "Exceptional outcomes in economics, finance, consulting, law, and academia, with an unusually high rate of graduates entering PhD programs relative to peer institutions.",
+      "gradCities": [
+        "Chicago IL",
+        "New York NY",
+        "Washington DC",
+        "San Francisco CA"
+      ],
+      "comparableInstitutions": [
+        "Columbia University",
+        "Princeton University",
+        "Duke University",
+        "Northwestern University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Harold Washington College"
+        ],
+        "transferAcceptanceRate": "~5%",
+        "freshmanAcceptanceRate": "~5%",
+        "estimatedSavingsRange": "$20,000-$44,000",
+        "transferNotes": "UChicago accepts a very small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Chicago",
+      "archetype": "Elite Private Research University — Core Curriculum and Intellectual Rigor",
+      "institutionalPersonality": "intensely intellectual, analytically rigorous, countercultural, quietly ambitious",
+      "cultureKeywords": [
+        "The Core",
+        "Chicago School of Economics",
+        "Life of the Mind",
+        "Scav",
+        "Hyde Park"
+      ],
+      "missionOrientation": "Advancing rigorous inquiry and analytical thinking through a shared foundational curriculum that treats ideas as valuable in themselves.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Students learn through the mandatory Core Curriculum's discussion-based, primary-text-driven seminars, combined with rigorous departmental training reinforced by the university's historic emphasis on analytical depth over applied polish.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Broadly progressive, with a strong tradition of free-expression norms and a genuinely open, debate-oriented intellectual culture.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most academically prestigious universities in the world, particularly dominant in economics, law, and the social sciences.",
+      "socialClimate": "Intensely intellectual, self-deprecating, proudly countercultural relative to peer Ivies.",
+      "leadershipStyle": "Leadership through rigorous analysis and intellectual depth rather than pre-professional networking."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "regionalRole": "The most intellectually rigorous economics and analytical-thinking engine in the Mid-Continent corridor, with an outsized national influence on economic policy relative to its regional footprint."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 88,
+      "BosWash": 30,
+      "TorBuffChester": 18,
+      "TexasTriangle": 10,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 20,
+      "SoCalCreativeEconomy": 10
+    },
+    "comparativePositioning": {
+      "versusColumbia": "Columbia offers unmatched daily immersion in Manhattan's financial and media institutions with a similarly mandatory Core Curriculum; UChicago offers an even more intensely analytical, discussion-based intellectual culture and the strongest economics department in the country, inside a quieter, more self-contained Hyde Park campus.",
+      "versusNorthwestern": "Northwestern offers a more conventionally pre-professional, broadly recruited campus culture with strong journalism and business programs; UChicago offers a more intensely analytical, countercultural intellectual identity and the single strongest economics department of any American university.",
+      "versusPrinceton": "Princeton offers a more traditional, residential Ivy League campus experience with strong undergraduate teaching focus; UChicago offers a more urban, analytically intense culture built around the Core Curriculum and a historically unmatched economics department."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 7500,
+      "graduateEnrollment": 10000,
+      "totalEnrollment": 17500,
+      "campusType": "Private Research University, Urban Chicago Neighborhood Campus",
+      "residentialIntensity": 76,
+      "communityFeel": 74,
+      "studentFacultyRatio": "5:1",
+      "classSizeExperience": "Small, discussion-based Core Curriculum seminars are mandatory for all students, supplemented by rigorous upper-division coursework with strong faculty access.",
+      "scaleAdvantages": [
+        "The most rigorous mandatory Core Curriculum among elite American universities",
+        "The strongest economics department in the country by Nobel laureate density",
+        "Strong faculty access given an extremely low student-faculty ratio",
+        "Genuinely distinctive countercultural intellectual identity relative to peer Ivies"
+      ],
+      "scaleDisadvantages": [
+        "Famously demanding academic culture with limited traditional collegiate social life",
+        "Hyde Park is a self-contained neighborhood, somewhat separate from downtown Chicago",
+        "Extremely low admission rate limits access",
+        "Less conventionally pre-professional than some peer institutions, requiring more self-direction toward career outcomes"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 96,
+        "conscientiousness": 88,
+        "extraversion": 54,
+        "agreeableness": 62,
+        "neuroticism": 48
+      },
+      "hollandCodes": [
+        "I",
+        "A",
+        "C"
+      ],
+      "learningStyle": [
+        "Core Curriculum Discussion Seminar",
+        "Primary-Text Analysis",
+        "Independent Research",
+        "Rigorous Departmental Coursework"
+      ],
+      "socialEnvironment": [
+        "Intensely Intellectual",
+        "Countercultural",
+        "Analytically Rigorous",
+        "Self-Deprecating"
+      ],
+      "idealStudentTraits": [
+        "Genuinely intellectually curious, not just credential-focused",
+        "Comfortable with rigorous, discussion-based coursework",
+        "Drawn to ideas and analysis as ends in themselves",
+        "Self-directed toward eventual career outcomes"
+      ],
+      "thrivesIf": [
+        "Wants the most intellectually rigorous Core Curriculum of any elite university",
+        "Values genuine intellectual discourse over pre-professional networking",
+        "Plans for economics, law, academia, or analytically demanding fields",
+        "Is energized rather than drained by constant rigorous discussion"
+      ],
+      "strugglesIf": [
+        "Wants a conventionally pre-professional, career-services-driven campus culture",
+        "Needs a traditional, socially vibrant collegiate atmosphere",
+        "Prefers a lighter or more flexible academic workload",
+        "Is uncomfortable with intense, near-constant intellectual debate"
+      ],
+      "transferRiskFactors": [
+        "Students overwhelmed by the Core Curriculum's academic intensity",
+        "Students seeking a more traditionally social or pre-professional campus culture",
+        "Students who want a warmer climate or more conventional college-town setting"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "UChicago does not impact most majors at the undergraduate level; the Core Curriculum applies uniformly to all students regardless of eventual major, and departmental admission is generally not competitive beyond general university admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Public Policy Studies",
+        "Statistics",
+        "Fundamentals: Issues and Texts",
+        "Environmental and Urban Studies",
+        "Comparative Human Development"
+      ],
+      "hiddenCareerPipelines": [
+        "Academic Economics and Policy Research",
+        "Quantitative Finance",
+        "Federal Reserve and Central Banking",
+        "Legal Academia",
+        "Data Science and Analytics"
+      ],
+      "nicheRecruitingAdvantages": [
+        "McKinsey & Company",
+        "Federal Reserve System",
+        "Citadel (Chicago-based quantitative trading)",
+        "Boston Consulting Group",
+        "Top PhD programs nationally"
+      ],
+      "overlookedStrengths": [
+        "The Chicago School of Economics has produced more Nobel laureates than any other university economics department in history, giving undergraduates direct access to faculty whose research has shaped real-world policy.",
+        "UChicago's rigorous analytical culture is increasingly recognized by employers as a differentiator relative to more conventionally pre-professional peer institutions.",
+        "Citadel and other major Chicago-based quantitative trading firms recruit UChicago students directly, given the university's mathematical and economic rigor.",
+        "The Core Curriculum's discussion-based, primary-text approach produces unusually strong writing and analytical reasoning skills across all majors, not just humanities."
+      ],
+      "sleeperIndustries": [
+        "Quantitative Trading and Finance",
+        "Central Banking and Monetary Policy",
+        "Legal Academia and Policy Research",
+        "Data Science"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 78,
+      "executiveAccess": 86,
+      "internshipNetwork": 88,
+      "familyBusinessExposure": 46,
+      "relationshipCapitalScore": 84,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 82,
+      "donorNetworkStrength": 84,
+      "boardMemberDensity": 80
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Economics and Policy Research",
+        "Quantitative Finance",
+        "Management Consulting",
+        "Law",
+        "Academia"
+      ],
+      "regionalEconomicDrivers": [
+        "Quantitative Trading",
+        "Financial Services",
+        "Management Consulting",
+        "Academic and Policy Research"
+      ],
+      "topEmployers": [
+        "Citadel",
+        "McKinsey & Company",
+        "Boston Consulting Group",
+        "Goldman Sachs",
+        "Federal Reserve System",
+        "Major research universities and think tanks"
+      ],
+      "emergingIndustries": [
+        "Quantitative Trading and FinTech",
+        "Data Science and Analytics",
+        "AI Policy and Economics"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 54,
+      "corporateHeadquartersDensity": 68,
+      "healthcareHubStrength": 66,
+      "innovationIndex": 78
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Chicago — Quantitative Finance, Consulting, and Economic Policy Research",
+      "secondaryMarkets": [
+        "New York NY",
+        "Washington DC",
+        "San Francisco CA"
+      ],
+      "alumniStrongholds": [
+        "Chicago IL",
+        "New York NY",
+        "Washington DC",
+        "San Francisco CA"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates remain in Chicago, entering quantitative finance, consulting, and law.",
+        "New York draws graduates into investment banking, consulting, and finance.",
+        "Washington DC recruits graduates into economic policy, the Federal Reserve, and federal government roles.",
+        "A notably high share of graduates pursue PhD programs before entering academic or research careers, relative to peer institutions."
+      ],
+      "regionalInfluenceScore": 94,
+      "nationalReachScore": 90,
+      "internationalReachScore": 78
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 16,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 90,
+      "civicEngagement": 74
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 14,
+        "notes": "Minimal institutional relevance."
+      },
+      "healthWellness": {
+        "strength": 46,
+        "notes": "A real but secondary pathway through biology and public health-adjacent coursework, secondary to UChicago's core economics and policy strengths."
+      },
+      "nutraceuticals": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 34,
+        "notes": "A modest pathway through economics and business-adjacent coursework."
+      },
+      "outdoorIndustry": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 20,
+        "notes": "Not a primary institutional specialty; UChicago's athletics program is DIII and not central to its identity."
+      },
+      "entertainmentMedia": {
+        "strength": 36,
+        "notes": "A modest, secondary pathway; not a defining institutional strength relative to peer urban universities."
+      },
+      "ventureCapital": {
+        "strength": 52,
+        "notes": "A real and growing pathway, tied to Chicago's expanding technology and startup ecosystem."
+      },
+      "privateEquity": {
+        "strength": 74,
+        "notes": "A strong pathway, reinforced by UChicago's deep quantitative and analytical training."
+      },
+      "investmentBanking": {
+        "strength": 78,
+        "notes": "A strong pathway into investment banking, competitive with peer Ivy-tier institutions."
+      },
+      "consulting": {
+        "strength": 86,
+        "notes": "One of the strongest management consulting pipelines of any university, drawing on UChicago's analytical rigor."
+      },
+      "medicine": {
+        "strength": 48,
+        "notes": "A real but secondary pathway; UChicago has a strong medical school but undergraduate emphasis is smaller relative to economics and policy."
+      },
+      "healthcareAdministration": {
+        "strength": 40,
+        "notes": "A modest, secondary pathway."
+      },
+      "defense": {
+        "strength": 30,
+        "notes": "A minor pathway, primarily through international relations and policy coursework rather than direct defense-sector recruiting."
+      },
+      "realEstate": {
+        "strength": 42,
+        "notes": "A real but secondary pathway through economics and finance coursework."
+      },
+      "luxuryBrands": {
+        "strength": 18,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 56,
+        "notes": "A real and growing pathway, supported by the Polsky Center for Entrepreneurship, though smaller than UChicago's dominant economics and consulting pipelines."
+      },
+      "technology": {
+        "strength": 62,
+        "notes": "A real and growing pathway through computer science and data science, secondary to UChicago's historically dominant economics identity."
+      },
+      "publicPolicy": {
+        "strength": 90,
+        "notes": "One of the strongest public policy and economic policy pathways of any university, reinforced by the Harris School of Public Policy and the Chicago School of Economics' direct influence on real-world policy."
+      },
+      "nonprofitLeadership": {
+        "strength": 54,
+        "notes": "A real, secondary pathway, reinforced by UChicago's policy and social science strengths."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 66,
+      "firstGenerationSupport": 74,
+      "wealthCreationPotential": 90,
+      "familyBusinessPipelineStrength": 46
+    },
+    "futureResilience": {
+      "aiResistance": 90,
+      "automationResistance": 88,
+      "adaptabilityScore": 86,
+      "interdisciplinaryStrength": 90,
+      "futureReadiness": 88,
+      "entrepreneurialFlexibility": 68,
+      "lifelongLearningCulture": 94,
+      "innovationCapacity": 84
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 90,
+      "communityLeadershipPotential": 78,
+      "geographicMobility": 84,
+      "workLifeBalancePotential": 62,
+      "purposeAlignment": 86,
+      "familyFormationSupport": 64,
+      "personalDevelopmentPotential": 92,
+      "careerOptionality": 90,
+      "longTermLifeSatisfaction": 80
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 94,
+      "networkMoat": 84,
+      "geographicMoat": 82,
+      "industryMoat": 88,
+      "alumniMoat": 78,
+      "brandDurability": 92,
+      "overallMoatScore": 87
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 74,
+      "returnerScore": 32,
+      "stewardScore": 26,
+      "navigatorScore": 86,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "chicago_concentration_with_ny_dc_secondary"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 80,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 1300,
+      "jewishStudentPercentage": "~17%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "UChicago has no separate honors college; the mandatory Core Curriculum functions as an honors-level shared intellectual experience for the entire undergraduate student body."
+    }
+  },
+  "Duke University": {
+    "institutionNarrative": {
+      "name": "Duke University",
+      "location": "Durham, North Carolina",
+      "region": "Southeast",
+      "archetype": "The National Research Triangle Anchor — Medicine, Basketball, and Elite National Recruiting",
+      "oneSentenceSummary": "Duke combines an elite, nationally (not regionally) recruited student body with a top-tier academic medical center and one of the most storied programs in college basketball, all inside the same Research Triangle ecosystem that also includes UNC and NC State.",
+      "pipeline": "Approximately 6,700 undergraduates. Trinity College of Arts and Sciences and the Pratt School of Engineering feed directly into finance, consulting, and technology. Duke University Medical Center and School of Medicine anchor one of the strongest pre-med pipelines in the country. The Sanford School of Public Policy is a genuine, distinctive strength. Major recruiters include every major consulting firm, Wall Street bank, and technology company, alongside Duke's own academic medical system.",
+      "hiddenPathway": "Duke's Research Triangle location gives students the same biotech and pharma industry proximity as UNC and NC State, but Duke's national (rather than primarily in-state) recruiting pulls a meaningfully different, more geographically diverse student body into that same regional ecosystem.",
+      "institutionalSecret": "Duke's investment banking and management consulting placement rates are comparable to the Ivy League, an outcome that is systematically undersold relative to the university's basketball fame.",
+      "theRoom": "Durham sits inside the Research Triangle alongside UNC and NC State, giving Duke direct access to one of the densest biotech, pharma, and technology clusters in the country, layered on top of Duke's own major academic medical center.",
+      "lifestyle": "Intense school pride anchored by Duke basketball's Cameron Crazies tradition, combined with a genuinely ambitious, nationally-recruited student culture that treats elite outcomes — medicine, finance, consulting — as the default expectation.",
+      "bestFitPersonality": "Ambitious and achievement-oriented, comfortable with intense school spirit and tradition, drawn to medicine, finance, consulting, or public policy specifically.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "National prestige and recruiting reach, with dominant direct proximity to the Research Triangle's biotech, pharma, and academic medicine ecosystem.",
+      "economicOutcome": "Exceptional outcomes in medicine, finance, management consulting, and public policy, with placement rates into elite Wall Street and consulting firms comparable to the Ivy League.",
+      "gradCities": [
+        "New York NY",
+        "Washington DC",
+        "Raleigh-Durham-Chapel Hill Research Triangle NC",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "comparableInstitutions": [
+        "Northwestern University",
+        "Vanderbilt University",
+        "University of North Carolina at Chapel Hill",
+        "Emory University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Durham Technical Community College"
+        ],
+        "transferAcceptanceRate": "~5%",
+        "freshmanAcceptanceRate": "~6%",
+        "estimatedSavingsRange": "$20,000-$46,000",
+        "transferNotes": "Duke accepts a very small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Duke University",
+      "archetype": "The National Research Triangle Anchor — Medicine, Basketball, and Elite National Recruiting",
+      "institutionalPersonality": "ambitious, tradition-proud, nationally elite, achievement-oriented",
+      "cultureKeywords": [
+        "Duke Basketball",
+        "Cameron Crazies",
+        "Research Triangle",
+        "Duke Medicine",
+        "Sanford Public Policy"
+      ],
+      "missionOrientation": "Delivering elite national education and academic medicine, anchored by a genuinely nationally-recruited student body inside the Research Triangle's biotech and pharma ecosystem.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Rigorous liberal arts and pre-professional education reinforced by direct access to Duke's own academic medical center and the broader Research Triangle economy.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Broadly progressive to moderate, with intense school spirit cutting across political identity.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite national prestige in medicine, finance, and consulting, with placement rates comparable to the Ivy League.",
+      "socialClimate": "Intensely spirited, tradition-proud, achievement-oriented.",
+      "leadershipStyle": "Leadership through achievement, tradition, and elite professional placement."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "CharLanta",
+      "regionalRole": "A primary national-recruiting talent engine for the Research Triangle's biotech, pharma, and academic medicine ecosystem, alongside UNC and NC State."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 14,
+      "BosWash": 46,
+      "TorBuffChester": 12,
+      "TexasTriangle": 14,
+      "CharLanta": 90,
+      "NorCalInnovationCorridor": 18,
+      "SoCalCreativeEconomy": 10
+    },
+    "comparativePositioning": {
+      "versusUNC": "UNC offers comparable Research Triangle access at meaningfully lower cost with the #1-ranked pharmacy school in the country; Duke is more selective and privately funded, with stronger national (rather than primarily in-state) recruiting and a more prominent basketball and national-prestige identity.",
+      "versusNorthwestern": "Northwestern offers stronger journalism and a Chicago-based recruiting economy; Duke offers a stronger academic medicine pipeline through its own major medical center and deeper Research Triangle biotech ties.",
+      "versusVanderbilt": "Vanderbilt offers a similarly nationally-recruited elite Southern identity with strong healthcare and finance placement in Nashville; Duke offers a stronger academic medical center and denser Research Triangle biotech and pharma proximity.",
+      "versusNCState": "NC State offers a larger, more applied engineering program at meaningfully lower cost, with direct corporate R&D partnerships through Centennial Campus; Duke offers an elite academic medical center and a nationally-recruited, more broadly prestigious student body."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 6700,
+      "graduateEnrollment": 9800,
+      "totalEnrollment": 16500,
+      "campusType": "Private Research University, Research Triangle College Town",
+      "residentialIntensity": 84,
+      "communityFeel": 82,
+      "studentFacultyRatio": "6:1",
+      "classSizeExperience": "Small-to-moderate classes with strong faculty access, particularly within Pratt Engineering, Sanford Public Policy, and pre-med tracks.",
+      "scaleAdvantages": [
+        "Elite academic medical center directly attached to the undergraduate campus",
+        "Nationally (not regionally) recruited student body inside the Research Triangle's biotech ecosystem",
+        "One of the most storied programs in college basketball, producing genuine, unifying school spirit",
+        "Investment banking and consulting placement comparable to the Ivy League"
+      ],
+      "scaleDisadvantages": [
+        "Extremely high cost of attendance relative to Research Triangle public peers",
+        "Highly selective, intensely achievement-oriented culture",
+        "Durham is a smaller city than Boston, New York, or the Bay Area",
+        "Narrow transfer pathway limits community college entry routes"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 82,
+        "conscientiousness": 88,
+        "extraversion": 78,
+        "agreeableness": 76,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "E",
+        "I",
+        "S"
+      ],
+      "learningStyle": [
+        "Case-Method Business",
+        "Clinical Pre-Med Training",
+        "Policy Case Study",
+        "Research"
+      ],
+      "socialEnvironment": [
+        "Ambitious",
+        "Tradition-Proud",
+        "Spirited",
+        "Achievement-Oriented"
+      ],
+      "idealStudentTraits": [
+        "Ambitious and achievement-oriented",
+        "Comfortable with intense school pride and tradition",
+        "Drawn to medicine, finance, consulting, or public policy specifically",
+        "Able to thrive in a highly selective, nationally-recruited cohort"
+      ],
+      "thrivesIf": [
+        "Wants direct access to an elite academic medical center as an undergraduate",
+        "Values intense, unifying school spirit and tradition",
+        "Wants Ivy League-comparable finance and consulting placement outside the Northeast",
+        "Is energized by a highly ambitious, achievement-oriented peer culture"
+      ],
+      "strugglesIf": [
+        "Wants a large, anonymous public-university feel",
+        "Is uncomfortable with intense school spirit and athletics-centered campus culture",
+        "Needs an easier, higher-acceptance transfer pathway",
+        "Prefers a larger city than Durham"
+      ],
+      "transferRiskFactors": [
+        "Very low transfer acceptance rate close to freshman admission rate",
+        "Highly competitive incoming class raises the bar for lateral entry",
+        "Small undergraduate cohort limits open seats overall"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Duke does not formally impact most majors at the undergraduate level, though Pratt School of Engineering admits somewhat separately from Trinity College of Arts and Sciences, and pre-med tracks carry substantial informal competitive pressure given Duke's academic medical center pipeline."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Public Policy Studies",
+        "Statistical Science",
+        "Global Health",
+        "Environmental Science and Policy",
+        "Biomedical Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Academic Medicine and Physician-Scientist Tracks",
+        "Healthcare Consulting",
+        "Global Health Policy",
+        "Biomedical Engineering and MedTech",
+        "Sports Business and Athletics Administration"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Duke University Health System",
+        "McKinsey & Company",
+        "Goldman Sachs",
+        "Boston Consulting Group",
+        "Major biotech and pharma firms via Research Triangle proximity"
+      ],
+      "overlookedStrengths": [
+        "Duke's investment banking and consulting placement rates are systematically undersold relative to the university's basketball fame.",
+        "Duke University Medical Center gives undergraduates direct proximity to a top-tier academic medical system rarely available at this scale to undergraduates elsewhere.",
+        "The Sanford School of Public Policy is a genuinely distinctive, less-recognized strength relative to Duke's finance and medicine reputation.",
+        "Duke's nationally-recruited student body gives it a meaningfully different geographic and cultural mix than its Research Triangle public peers."
+      ],
+      "sleeperIndustries": [
+        "Global Health Policy",
+        "Biomedical Engineering",
+        "Healthcare Consulting",
+        "Sports Business"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 86,
+      "mentorshipDensity": 82,
+      "executiveAccess": 90,
+      "internshipNetwork": 90,
+      "familyBusinessExposure": 52,
+      "relationshipCapitalScore": 88,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 86,
+      "donorNetworkStrength": 86,
+      "boardMemberDensity": 80
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Academic Medicine and Healthcare",
+        "Financial Services",
+        "Management Consulting",
+        "Biotechnology and Pharma",
+        "Public Policy"
+      ],
+      "regionalEconomicDrivers": [
+        "Academic Medicine",
+        "Biotechnology",
+        "Pharmaceutical Research",
+        "Management Consulting",
+        "Financial Services"
+      ],
+      "topEmployers": [
+        "Duke University Health System",
+        "McKinsey & Company",
+        "Goldman Sachs",
+        "Boston Consulting Group",
+        "Bain & Company",
+        "Major Research Triangle biotech and pharma firms"
+      ],
+      "emergingIndustries": [
+        "Global Health Technology",
+        "Biomedical Engineering",
+        "Healthcare AI",
+        "Precision Medicine"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 56,
+      "corporateHeadquartersDensity": 58,
+      "healthcareHubStrength": 94,
+      "innovationIndex": 80
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Research Triangle — Academic Medicine, Biotech, and Pharma",
+      "secondaryMarkets": [
+        "New York NY",
+        "Washington DC",
+        "Boston MA",
+        "San Francisco CA"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Washington DC",
+        "Research Triangle NC",
+        "Boston MA"
+      ],
+      "relocationPatterns": [
+        "New York draws graduates into investment banking, consulting, and finance.",
+        "Washington DC recruits graduates into public policy, government, and international affairs.",
+        "A meaningful share of graduates remain in the Research Triangle, entering academic medicine, biotech, and pharma.",
+        "Boston and San Francisco draw graduates into biotechnology, healthcare, and technology roles."
+      ],
+      "regionalInfluenceScore": 90,
+      "nationalReachScore": 92,
+      "internationalReachScore": 76
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 32,
+      "studentOrganizationStrength": 86,
+      "leadershipDevelopment": 86,
+      "crossDisciplinaryInteraction": 78,
+      "civicEngagement": 78
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 18,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "healthWellness": {
+        "strength": 82,
+        "notes": "A very strong pathway reinforced directly by Duke University Medical Center and Duke Health's academic medicine ecosystem."
+      },
+      "nutraceuticals": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis outside general biology and public health research."
+      },
+      "consumerProducts": {
+        "strength": 34,
+        "notes": "A modest, secondary pathway relative to Duke's core medicine, finance, and consulting strengths."
+      },
+      "outdoorIndustry": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 56,
+        "notes": "A real, distinctive pathway given Duke basketball's national prominence and a growing sports business and analytics curriculum."
+      },
+      "entertainmentMedia": {
+        "strength": 30,
+        "notes": "A modest, secondary pathway; not a defining institutional strength."
+      },
+      "ventureCapital": {
+        "strength": 50,
+        "notes": "A real and growing pathway, particularly in healthcare and biotech venture investing."
+      },
+      "privateEquity": {
+        "strength": 68,
+        "notes": "A strong pathway, competitive with peer elite private universities."
+      },
+      "investmentBanking": {
+        "strength": 84,
+        "notes": "A strong pathway with placement rates comparable to the Ivy League, systematically undersold relative to Duke's basketball fame."
+      },
+      "consulting": {
+        "strength": 88,
+        "notes": "One of the strongest management consulting pipelines of any university, particularly into healthcare consulting practices."
+      },
+      "medicine": {
+        "strength": 92,
+        "notes": "An elite pathway directly reinforced by Duke's own academic medical center — one of the strongest pre-med and physician-scientist pipelines in the country."
+      },
+      "healthcareAdministration": {
+        "strength": 78,
+        "notes": "A strong, distinctive pathway reinforced by Duke Health and the Fuqua School's healthcare management programs."
+      },
+      "defense": {
+        "strength": 32,
+        "notes": "A modest, secondary pathway, primarily through Sanford School public policy and national security coursework."
+      },
+      "realEstate": {
+        "strength": 40,
+        "notes": "A real but secondary pathway relative to Duke's dominant medicine and finance pipelines."
+      },
+      "luxuryBrands": {
+        "strength": 22,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "entrepreneurship": {
+        "strength": 58,
+        "notes": "A real and growing pathway, particularly in health technology and biotech startups, though secondary to Duke's core corporate and medical pipelines."
+      },
+      "technology": {
+        "strength": 54,
+        "notes": "A real but secondary pathway; Duke is not positioned as a technology-recruiting campus in the way engineering-first institutions are, though Pratt Engineering is genuinely strong."
+      },
+      "publicPolicy": {
+        "strength": 72,
+        "notes": "A genuinely strong, distinctive pathway through the Sanford School of Public Policy, though less institutionally dominant than Duke's medicine and finance identity."
+      },
+      "nonprofitLeadership": {
+        "strength": 56,
+        "notes": "A real, secondary pathway, reinforced by Sanford's public policy and global health orientation."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 56,
+      "firstGenerationSupport": 62,
+      "wealthCreationPotential": 90,
+      "familyBusinessPipelineStrength": 54
+    },
+    "futureResilience": {
+      "aiResistance": 84,
+      "automationResistance": 84,
+      "adaptabilityScore": 82,
+      "interdisciplinaryStrength": 84,
+      "futureReadiness": 86,
+      "entrepreneurialFlexibility": 70,
+      "lifelongLearningCulture": 82,
+      "innovationCapacity": 82
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 90,
+      "communityLeadershipPotential": 86,
+      "geographicMobility": 82,
+      "workLifeBalancePotential": 68,
+      "purposeAlignment": 84,
+      "familyFormationSupport": 72,
+      "personalDevelopmentPotential": 86,
+      "careerOptionality": 88,
+      "longTermLifeSatisfaction": 84
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 92,
+      "networkMoat": 88,
+      "geographicMoat": 84,
+      "industryMoat": 90,
+      "alumniMoat": 86,
+      "brandDurability": 92,
+      "overallMoatScore": 89
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 72,
+      "returnerScore": 36,
+      "stewardScore": 32,
+      "navigatorScore": 84,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "national_concentration_ny_dc_with_research_triangle_secondary"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 78,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 800,
+      "jewishStudentPercentage": "~12%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Duke has no separate honors college; the entire undergraduate institution functions at a uniformly high selectivity level, with rigor delivered through Pratt Engineering, Sanford Public Policy, and pre-med program structures rather than a dedicated honors college."
+    }
+  },
+  "Northwestern University": {
+    "institutionNarrative": {
+      "name": "Northwestern University",
+      "location": "Evanston, Illinois",
+      "region": "Great Lakes",
+      "archetype": "The Medill and McCormick Balance — Journalism, Engineering, and Performance Under One Roof",
+      "oneSentenceSummary": "Northwestern combines Medill's historic dominance in journalism, McCormick's strong engineering program, and a genuinely elite theater and performance tradition into a single elite private university with direct access to Chicago's media and corporate economy.",
+      "pipeline": "Approximately 8,600 undergraduates. Medill School of Journalism has produced more prominent working journalists and media executives than almost any other program in the country. McCormick School of Engineering is strong across computer science and biomedical engineering. Kellogg School of Management's undergraduate-adjacent business coursework feeds directly into consulting and finance. The School of Communication's theater and performance studies program has an outsized alumni presence in television, film, and comedy. Major recruiters include every major consulting firm, national media organization, and Chicago's corporate economy.",
+      "hiddenPathway": "Northwestern's School of Communication has produced an unusually large number of prominent comedy writers and performers relative to its size, a pipeline that runs parallel to and often intersects with Medill's journalism dominance in ways few students research before applying.",
+      "institutionalSecret": "Northwestern's proximity to Chicago (a short train ride from Evanston) gives students the same corporate and financial-services access as University of Chicago, without Chicago's more intensely countercultural academic culture — Northwestern is meaningfully more conventionally pre-professional.",
+      "theRoom": "Evanston's lakefront campus on Lake Michigan sits just north of Chicago, giving students a genuine college-town environment with the city's media, consulting, and financial economy directly accessible by train.",
+      "lifestyle": "Ambitious and conventionally pre-professional, balanced by genuine strength in journalism and performance that gives the campus a more creative, media-attuned energy than most peer elite research universities.",
+      "bestFitPersonality": "Ambitious and achievement-oriented, drawn specifically to journalism, media, engineering, or performance, comfortable with a more conventionally pre-professional campus culture than UChicago's intensely academic identity.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "National dominance in journalism and media, strong regional dominance in Chicago's consulting and financial-services economy, with a genuinely elite performance and entertainment pipeline.",
+      "economicOutcome": "Exceptional outcomes in journalism and media, strong outcomes in consulting, finance, and engineering, with a distinctive and elite pathway into entertainment and performance.",
+      "gradCities": [
+        "Chicago IL",
+        "New York NY",
+        "Los Angeles CA",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "University of Chicago",
+        "Duke University",
+        "Vanderbilt University",
+        "Georgetown University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Oakton Community College"
+        ],
+        "transferAcceptanceRate": "~8%",
+        "freshmanAcceptanceRate": "~7%",
+        "estimatedSavingsRange": "$18,000-$42,000",
+        "transferNotes": "Northwestern accepts a modest number of transfer students annually, remaining highly selective relative to most peer institutions."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Northwestern",
+      "archetype": "The Medill and McCormick Balance — Journalism, Engineering, and Performance Under One Roof",
+      "institutionalPersonality": "ambitious, media-attuned, conventionally pre-professional, creatively strong",
+      "cultureKeywords": [
+        "Medill Journalism",
+        "McCormick Engineering",
+        "School of Communication",
+        "Chicago Proximity",
+        "Big Ten"
+      ],
+      "missionOrientation": "Delivering elite journalism, engineering, and performance education with direct access to Chicago's media and corporate economy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Rigorous, pre-professionally oriented education reinforced by genuinely elite journalism and performance training alongside strong engineering and business coursework.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Broadly progressive, with a media-attuned, socially engaged campus culture.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite and nationally dominant in journalism; strong in engineering, business, and performance; a more conventionally pre-professional culture than UChicago.",
+      "socialClimate": "Ambitious, media-attuned, conventionally pre-professional with genuine creative strength.",
+      "leadershipStyle": "Leadership through media influence, professional achievement, and creative and technical excellence."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "regionalRole": "The nation's most dominant journalism and media talent engine, layered on top of direct access to Chicago's consulting and financial-services economy."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 84,
+      "BosWash": 34,
+      "TorBuffChester": 18,
+      "TexasTriangle": 10,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 22,
+      "SoCalCreativeEconomy": 20
+    },
+    "comparativePositioning": {
+      "versusUChicago": "UChicago offers a more intensely analytical, countercultural intellectual identity and the strongest economics department in the country; Northwestern offers a more conventionally pre-professional culture with nationally dominant journalism, strong engineering, and a genuinely elite performance and media pipeline.",
+      "versusDuke": "Duke offers a stronger academic medicine pipeline through its own medical center and a more prominent basketball tradition; Northwestern offers nationally dominant journalism and media placement and direct Chicago corporate access.",
+      "versusGeorgetown": "Georgetown offers an unmatched Foreign Service and DC policy pipeline; Northwestern offers a nationally dominant journalism program and stronger engineering, with a Chicago rather than Washington economic anchor.",
+      "versusUSC": "USC's School of Cinematic Arts is the strongest film and television production pipeline in the country, backed by the 'Trojan Network's' unmatched entertainment-industry alumni density in Los Angeles; Northwestern's Medill School is the stronger pathway specifically into journalism and broadcast news, with the School of Communication's performance program feeding comedy writing and television at a level distinct from USC's production-and-studio-system focus. Students choosing between them are usually choosing between reporting the story (Northwestern) and producing it (USC)."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 8600,
+      "graduateEnrollment": 12000,
+      "totalEnrollment": 20600,
+      "campusType": "Private Research University, Lakefront College Town",
+      "residentialIntensity": 74,
+      "communityFeel": 76,
+      "studentFacultyRatio": "6:1",
+      "classSizeExperience": "Small-to-moderate classes with strong faculty access, particularly within Medill's cohort-based journalism training and the School of Communication's performance programs.",
+      "scaleAdvantages": [
+        "Nationally dominant journalism program with unmatched media industry placement",
+        "Direct Chicago corporate, consulting, and financial-services access by train",
+        "Genuinely elite theater and performance pipeline alongside strong STEM and business programs",
+        "Lakefront college-town setting distinct from Chicago's urban intensity"
+      ],
+      "scaleDisadvantages": [
+        "High cost of attendance",
+        "Highly selective, competitive culture",
+        "Evanston winters are genuinely harsh",
+        "Narrow transfer pathway limits community college entry routes"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 84,
+        "conscientiousness": 84,
+        "extraversion": 76,
+        "agreeableness": 74,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "A",
+        "E",
+        "I"
+      ],
+      "learningStyle": [
+        "Cohort-Based Journalism Training",
+        "Applied Engineering",
+        "Performance and Studio Practice",
+        "Case-Method Business"
+      ],
+      "socialEnvironment": [
+        "Ambitious",
+        "Media-Attuned",
+        "Pre-Professional",
+        "Creatively Strong"
+      ],
+      "idealStudentTraits": [
+        "Ambitious and achievement-oriented",
+        "Drawn specifically to journalism, media, engineering, or performance",
+        "Comfortable with a conventionally pre-professional campus culture",
+        "Able to thrive in a highly selective, well-rounded cohort"
+      ],
+      "thrivesIf": [
+        "Wants the nation's most dominant journalism and media training",
+        "Values direct Chicago corporate and financial-services access",
+        "Wants a genuinely elite performance or theater pipeline alongside strong STEM options",
+        "Prefers a more conventionally pre-professional culture than UChicago's intensely analytical identity"
+      ],
+      "strugglesIf": [
+        "Wants a large, anonymous public-university feel",
+        "Needs a warmer climate than Chicago-area winters",
+        "Prefers UChicago's more intensely countercultural intellectual culture",
+        "Needs an easier, higher-acceptance transfer pathway"
+      ],
+      "transferRiskFactors": [
+        "Highly selective transfer admission close to freshman rates",
+        "Small undergraduate cohort limits open seats overall",
+        "Highly competitive incoming class raises the bar for lateral entry"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Medill (Journalism) and the School of Communication's theater programs require separate application and, for some performance tracks, audition, distinct from general Northwestern admission; McCormick Engineering and Kellogg-adjacent business coursework are competitive but not formally impacted beyond general admission."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Learning and Organizational Change",
+        "Radio/Television/Film",
+        "Legal Studies",
+        "Environmental Policy and Culture",
+        "Integrated Marketing Communications"
+      ],
+      "hiddenCareerPipelines": [
+        "Investigative and Broadcast Journalism",
+        "Comedy Writing and Performance",
+        "Biomedical Engineering",
+        "Sports Media and Analytics",
+        "Political Communications"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Every major national news organization",
+        "Saturday Night Live and major comedy writing rooms",
+        "McKinsey & Company",
+        "Boston Consulting Group",
+        "Chicago's major financial and consulting firms"
+      ],
+      "overlookedStrengths": [
+        "Medill's journalism placement is genuinely unmatched — Northwestern produces a disproportionate share of prominent working journalists and media executives relative to its size.",
+        "The School of Communication's theater and performance program has an outsized, genuinely elite alumni presence in television and comedy writing.",
+        "McCormick Engineering's biomedical engineering program is strong and underrated relative to Northwestern's journalism fame.",
+        "Direct train access to Chicago gives students real, substantive internship access without needing to relocate."
+      ],
+      "sleeperIndustries": [
+        "Comedy Writing and Performance",
+        "Sports Media and Analytics",
+        "Biomedical Engineering",
+        "Political Communications and Campaigns"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 80,
+      "executiveAccess": 86,
+      "internshipNetwork": 90,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 86,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 86,
+      "donorNetworkStrength": 82,
+      "boardMemberDensity": 78
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Journalism and Media",
+        "Management Consulting",
+        "Financial Services",
+        "Entertainment and Performance",
+        "Engineering and Technology"
+      ],
+      "regionalEconomicDrivers": [
+        "Media and Journalism",
+        "Management Consulting",
+        "Financial Services",
+        "Corporate Headquarters (Chicago)"
+      ],
+      "topEmployers": [
+        "Major national news organizations (NYT, WSJ, CNN, ABC)",
+        "McKinsey & Company",
+        "Boston Consulting Group",
+        "Goldman Sachs",
+        "Google",
+        "Major entertainment and comedy production companies"
+      ],
+      "emergingIndustries": [
+        "Digital Media and Content Strategy",
+        "Sports Media and Analytics",
+        "Biomedical Engineering",
+        "Political and Campaign Communications"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 54,
+      "corporateHeadquartersDensity": 72,
+      "healthcareHubStrength": 68,
+      "innovationIndex": 78
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Chicago — Journalism, Media, Consulting, and Financial Services",
+      "secondaryMarkets": [
+        "New York NY",
+        "Los Angeles CA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Chicago IL",
+        "New York NY",
+        "Los Angeles CA",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "New York draws the largest share of graduates into journalism, media, finance, and consulting.",
+        "A significant share remain in Chicago, entering consulting, finance, and corporate roles.",
+        "Los Angeles recruits Communication and journalism graduates into entertainment and media production.",
+        "Washington DC draws graduates into political journalism, communications, and policy roles."
+      ],
+      "regionalInfluenceScore": 88,
+      "nationalReachScore": 92,
+      "internationalReachScore": 68
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 38,
+      "studentOrganizationStrength": 88,
+      "leadershipDevelopment": 84,
+      "crossDisciplinaryInteraction": 80,
+      "civicEngagement": 76
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 22,
+        "notes": "Not a central institutional pathway."
+      },
+      "healthWellness": {
+        "strength": 46,
+        "notes": "A real but secondary pathway through biomedical engineering and pre-med tracks."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 46,
+        "notes": "A real pathway through Kellogg-adjacent business coursework and Chicago's consumer brand economy."
+      },
+      "outdoorIndustry": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 58,
+        "notes": "A real, distinctive pathway through Medill's sports journalism concentration and Northwestern's Big Ten athletics culture."
+      },
+      "entertainmentMedia": {
+        "strength": 92,
+        "notes": "One of the strongest journalism and media pipelines of any university in the country, reinforced by an outsized alumni presence in television, comedy, and film."
+      },
+      "ventureCapital": {
+        "strength": 46,
+        "notes": "A modest, secondary pathway relative to Northwestern's dominant media and consulting pipelines."
+      },
+      "privateEquity": {
+        "strength": 54,
+        "notes": "A real but secondary pathway through Kellogg-adjacent business coursework."
+      },
+      "investmentBanking": {
+        "strength": 66,
+        "notes": "A solid pathway, smaller in relative institutional emphasis than Northwestern's journalism and consulting strengths."
+      },
+      "consulting": {
+        "strength": 82,
+        "notes": "A strong pathway into major consulting firms, reinforced by Chicago's corporate proximity."
+      },
+      "medicine": {
+        "strength": 50,
+        "notes": "A real but secondary pathway; Northwestern has a strong medical school but undergraduate emphasis is smaller relative to journalism and business."
+      },
+      "healthcareAdministration": {
+        "strength": 42,
+        "notes": "A modest, secondary pathway."
+      },
+      "defense": {
+        "strength": 24,
+        "notes": "Not a central institutional pathway."
+      },
+      "realEstate": {
+        "strength": 38,
+        "notes": "A modest, secondary pathway relative to Northwestern's core strengths."
+      },
+      "luxuryBrands": {
+        "strength": 28,
+        "notes": "A modest pathway tied to Chicago's consumer brand economy."
+      },
+      "entrepreneurship": {
+        "strength": 56,
+        "notes": "A real and growing pathway, supported by The Garage entrepreneurship hub, though secondary to journalism and consulting."
+      },
+      "technology": {
+        "strength": 62,
+        "notes": "A real and growing pathway through McCormick Engineering, particularly computer science and biomedical engineering, secondary to Northwestern's journalism dominance."
+      },
+      "publicPolicy": {
+        "strength": 54,
+        "notes": "A real, secondary pathway, reinforced by political journalism and communications strength."
+      },
+      "nonprofitLeadership": {
+        "strength": 48,
+        "notes": "A real, secondary pathway relative to Northwestern's dominant media and consulting pipelines."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 62,
+      "firstGenerationSupport": 68,
+      "wealthCreationPotential": 84,
+      "familyBusinessPipelineStrength": 46
+    },
+    "futureResilience": {
+      "aiResistance": 78,
+      "automationResistance": 78,
+      "adaptabilityScore": 82,
+      "interdisciplinaryStrength": 84,
+      "futureReadiness": 84,
+      "entrepreneurialFlexibility": 72,
+      "lifelongLearningCulture": 82,
+      "innovationCapacity": 80
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 84,
+      "communityLeadershipPotential": 82,
+      "geographicMobility": 82,
+      "workLifeBalancePotential": 68,
+      "purposeAlignment": 82,
+      "familyFormationSupport": 68,
+      "personalDevelopmentPotential": 86,
+      "careerOptionality": 86,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 88,
+      "networkMoat": 84,
+      "geographicMoat": 82,
+      "industryMoat": 86,
+      "alumniMoat": 82,
+      "brandDurability": 88,
+      "overallMoatScore": 85
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 68,
+      "returnerScore": 38,
+      "stewardScore": 32,
+      "navigatorScore": 82,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "chicago_ny_la_concentration_media_driven"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 82,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 1400,
+      "jewishStudentPercentage": "~16%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Northwestern has no separate honors college; rigor is delivered through Medill's cohort-based journalism training, McCormick Engineering, and the School of Communication's performance programs rather than a centralized honors program."
+    }
+  },
+  "Virginia Tech": {
+    "institutionNarrative": {
+      "name": "Virginia Tech",
+      "location": "Blacksburg, Virginia",
+      "region": "Southeast",
+      "archetype": "The Engineering Land-Grant with a Northern Virginia Back Door",
+      "oneSentenceSummary": "Virginia Tech pairs a large, historically strong College of Engineering and one of the oldest Corps of Cadets programs in the country with a genuinely unusual asset — its own Innovation Campus built directly inside the Northern Virginia tech and defense corridor, 230 miles from the Blacksburg campus itself.",
+      "pipeline": "The College of Engineering is large and consistently strong, particularly in aerospace, mechanical, and computer engineering. The Corps of Cadets, dating to 1872, is one of the oldest in the country and commissions officers across every branch of the military. The Innovation Campus in Alexandria — built as part of Virginia's package to win Amazon's HQ2 — gives Virginia Tech students and graduate researchers a direct, physical foothold inside the same Northern Virginia tech and defense-contracting corridor covered by Reston, Herndon, McLean, and Loudoun County's data center economy. Major recruiters include Amazon, Northrop Grumman, Lockheed Martin, and the broader Northern Virginia defense-technology contractor base.",
+      "hiddenPathway": "The Innovation Campus means a Virginia Tech student's degree isn't tied to a single physical location the way most land-grant universities are — computer science and engineering graduate students can be physically embedded inside the Northern Virginia tech corridor while still a Virginia Tech student, a structural advantage almost no other land-grant university has built.",
+      "institutionalSecret": "Virginia Tech's Corps of Cadets, though smaller than Texas A&M's, is actually older, dating to the university's 1872 founding, and produces a disproportionate number of general and flag officers relative to its size.",
+      "theRoom": "Blacksburg is a genuine rural college town in southwestern Virginia, but the Innovation Campus gives Virginia Tech a second, very different 'room' entirely — inside the same Northern Virginia defense and technology corridor that includes Amazon HQ2, Reston's tech firms, and the broader DC-area contractor base.",
+      "lifestyle": "Traditional and spirited in Blacksburg — Hokies football and the Corps of Cadets create genuine, tradition-bound school pride — layered with a wholly separate, career-focused graduate research culture at the Innovation Campus in Alexandria.",
+      "bestFitPersonality": "Comfortable with a traditional, spirited land-grant culture, drawn to engineering, technology, or military service, and — for graduate-track students — interested in a direct Northern Virginia tech-corridor career pathway.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Dominant across Virginia and the Mid-Atlantic in engineering, with an increasingly significant, distinct foothold in the Northern Virginia technology and defense-contracting corridor via the Innovation Campus.",
+      "economicOutcome": "Excellent outcomes in engineering, technology, and defense-adjacent fields, reinforced by both a traditional Blacksburg engineering pipeline and a genuinely distinctive Northern Virginia tech-corridor pathway.",
+      "gradCities": [
+        "Washington DC",
+        "Richmond VA",
+        "Charlotte NC",
+        "Atlanta GA"
+      ],
+      "comparableInstitutions": [
+        "Georgia Institute of Technology",
+        "University of Illinois Urbana-Champaign",
+        "Texas A&M University",
+        "North Carolina State University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Northern Virginia Community College",
+          "Virginia Western Community College"
+        ],
+        "transferAcceptanceRate": "~55%",
+        "freshmanAcceptanceRate": "~57%",
+        "estimatedSavingsRange": "$12,000-$30,000",
+        "transferNotes": "Virginia Tech maintains strong, structured transfer agreements with Virginia's community college system, including Northern Virginia Community College given the Innovation Campus's Alexandria location."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Virginia Tech",
+      "archetype": "The Engineering Land-Grant with a Northern Virginia Back Door",
+      "institutionalPersonality": "traditional, spirited, engineering-focused, quietly strategic",
+      "cultureKeywords": [
+        "Corps of Cadets",
+        "Hokies Football",
+        "Innovation Campus",
+        "Engineering",
+        "Land-Grant Tradition"
+      ],
+      "missionOrientation": "Delivering large-scale engineering and technology education rooted in land-grant tradition, extended directly into the Northern Virginia tech corridor through the Innovation Campus.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Applied, engineering-first education reinforced by military tradition in Blacksburg and direct industry embedding at the Innovation Campus.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Broadly moderate to conservative, especially relative to Virginia's other flagship public universities.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Strong regional and national prestige in engineering; a genuinely distinctive, growing prestige asset in Northern Virginia tech and defense via the Innovation Campus.",
+      "socialClimate": "Traditional, spirited, engineering-focused in Blacksburg; career-focused and corridor-embedded at the Innovation Campus.",
+      "leadershipStyle": "Leadership through engineering competence, military tradition, and — increasingly — direct technology-corridor positioning."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "A large-scale engineering talent engine with a genuinely unusual, purpose-built foothold inside the Northern Virginia tech and defense-contracting corridor via the Innovation Campus."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 16,
+      "BosWash": 62,
+      "TorBuffChester": 14,
+      "TexasTriangle": 14,
+      "CharLanta": 48,
+      "NorCalInnovationCorridor": 20,
+      "SoCalCreativeEconomy": 10
+    },
+    "comparativePositioning": {
+      "versusGeorgiaTech": "Georgia Tech offers stronger Atlanta startup and fintech access; Virginia Tech offers stronger Northern Virginia defense-tech ties, reinforced directly by the Innovation Campus's physical presence inside that corridor.",
+      "versusUIUC": "Illinois offers a more selective computer science admissions bar and a stronger direct Silicon Valley pipeline; Virginia Tech offers a genuinely distinctive Northern Virginia defense and technology corridor foothold through the Innovation Campus, plus a Corps of Cadets tradition Illinois does not have.",
+      "versusTexasAM": "Texas A&M offers a larger Corps of Cadets and a stronger oil-and-gas/energy engineering pipeline tied to Texas's economy; Virginia Tech offers a comparable land-grant engineering tradition with a genuinely distinctive Northern Virginia tech-corridor asset Texas A&M has no equivalent to."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Large",
+      "undergraduateEnrollment": 30000,
+      "graduateEnrollment": 8000,
+      "totalEnrollment": 38000,
+      "campusType": "Large Public Land-Grant Flagship, Rural College Town + Northern Virginia Innovation Campus",
+      "residentialIntensity": 62,
+      "communityFeel": 74,
+      "studentFacultyRatio": "16:1",
+      "classSizeExperience": "Large introductory courses, particularly in engineering; upper-division coursework, Corps of Cadets units, and Innovation Campus graduate programs become substantially more personalized.",
+      "scaleAdvantages": [
+        "Large, strong College of Engineering across nearly every discipline",
+        "One of the oldest Corps of Cadets programs in the country",
+        "A genuinely unique Northern Virginia tech-corridor foothold via the Innovation Campus",
+        "Strong land-grant agriculture and veterinary medicine programs alongside engineering"
+      ],
+      "scaleDisadvantages": [
+        "Large introductory courses require significant student initiative",
+        "Blacksburg is a genuinely rural, isolated college town, several hours from any major metro",
+        "The Innovation Campus's benefits are concentrated at the graduate level, less directly available to undergraduates",
+        "Traditional, military-adjacent campus culture may not fit every student"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 70,
+        "conscientiousness": 84,
+        "extraversion": 74,
+        "agreeableness": 78,
+        "neuroticism": 38
+      },
+      "hollandCodes": [
+        "R",
+        "I",
+        "C"
+      ],
+      "learningStyle": [
+        "Applied Engineering",
+        "Structured/Disciplined Learning",
+        "Hands-On Laboratory Work"
+      ],
+      "socialEnvironment": [
+        "Traditional",
+        "Spirited",
+        "Engineering-Focused",
+        "Disciplined"
+      ],
+      "idealStudentTraits": [
+        "Comfortable with structure and land-grant tradition",
+        "Drawn to engineering, technology, agriculture, or military service",
+        "Values large-scale school spirit and football culture",
+        "Self-directed within a very large public university"
+      ],
+      "thrivesIf": [
+        "Wants a large, strong engineering program with genuine tradition",
+        "Is drawn to the Corps of Cadets or military-adjacent structure without requiring full commissioning",
+        "Wants an eventual pathway into the Northern Virginia tech and defense corridor",
+        "Values Hokies football and shared campus tradition"
+      ],
+      "strugglesIf": [
+        "Wants an urban campus embedded in a major city",
+        "Is uncomfortable with a traditional, spirited, military-adjacent campus culture",
+        "Wants immediate undergraduate access to the Northern Virginia tech corridor rather than a primarily graduate-level asset",
+        "Needs a smaller, more intimate campus"
+      ],
+      "transferRiskFactors": [
+        "Students seeking an urban rather than rural college-town setting",
+        "Students uncomfortable with Virginia Tech's traditional and military-adjacent campus culture",
+        "Students whose intended major sits outside VT's core engineering/agriculture strengths"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Computer science and select engineering majors carry additional selectivity beyond general Virginia Tech admission, particularly given growing demand tied to the Innovation Campus's Northern Virginia tech-corridor pipeline."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Industrial and Systems Engineering",
+        "Agricultural Technology",
+        "Forestry and Natural Resources",
+        "Apparel, Housing, and Resource Management",
+        "Data Science (Innovation Campus track)"
+      ],
+      "hiddenCareerPipelines": [
+        "Northern Virginia Defense Contracting",
+        "Amazon and Northern Virginia Tech Corridor Roles",
+        "Aerospace Engineering",
+        "Military Officer Corps (all branches)",
+        "Veterinary Medicine"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Amazon (direct Innovation Campus partnership)",
+        "Northrop Grumman",
+        "Lockheed Martin",
+        "General Dynamics",
+        "Booz Allen Hamilton"
+      ],
+      "overlookedStrengths": [
+        "The Innovation Campus gives Virginia Tech a physical presence inside the Northern Virginia tech corridor that almost no other land-grant university has built.",
+        "The Corps of Cadets, dating to 1872, is older than Texas A&M's and produces a disproportionate number of general and flag officers relative to its size.",
+        "Virginia Tech's veterinary medicine program (Virginia-Maryland College of Veterinary Medicine) is genuinely strong, operating jointly with the University of Maryland.",
+        "Hokies football and campus-wide tradition create a genuine sense of shared identity uncommon at universities this large."
+      ],
+      "sleeperIndustries": [
+        "Data Science and Analytics (via Innovation Campus)",
+        "Defense Technology",
+        "Veterinary Medicine",
+        "Forestry and Natural Resources"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 78,
+      "executiveAccess": 74,
+      "internshipNetwork": 82,
+      "familyBusinessExposure": 46,
+      "relationshipCapitalScore": 84,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 82,
+      "donorNetworkStrength": 74,
+      "boardMemberDensity": 64
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Engineering and Technology",
+        "Defense Contracting",
+        "Agriculture",
+        "Aerospace",
+        "Veterinary and Animal Science"
+      ],
+      "regionalEconomicDrivers": [
+        "Northern Virginia Technology and Defense Contracting",
+        "Engineering and Construction",
+        "Agriculture",
+        "Aerospace"
+      ],
+      "topEmployers": [
+        "Amazon",
+        "Northrop Grumman",
+        "Lockheed Martin",
+        "General Dynamics",
+        "Booz Allen Hamilton",
+        "Virginia state government"
+      ],
+      "emergingIndustries": [
+        "Data Science and AI (Innovation Campus)",
+        "Defense Technology",
+        "Cybersecurity",
+        "Agricultural Technology"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 42,
+      "corporateHeadquartersDensity": 48,
+      "healthcareHubStrength": 52,
+      "innovationIndex": 68
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Northern Virginia and Washington DC — Defense Technology and Engineering",
+      "secondaryMarkets": [
+        "Richmond VA",
+        "Charlotte NC",
+        "Atlanta GA"
+      ],
+      "alumniStrongholds": [
+        "Northern Virginia / Washington DC",
+        "Richmond VA",
+        "Charlotte NC"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates enter the Northern Virginia defense and technology corridor, reinforced directly by the Innovation Campus.",
+        "Richmond and the broader Virginia corridor draw graduates into engineering and corporate roles.",
+        "A meaningful military-commissioning cohort deploys nationally and internationally through the Corps of Cadets.",
+        "Charlotte and Atlanta draw engineering and business graduates into the broader Southeast corporate economy."
+      ],
+      "regionalInfluenceScore": 90,
+      "nationalReachScore": 74,
+      "internationalReachScore": 44
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 20,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 86,
+      "crossDisciplinaryInteraction": 60,
+      "civicEngagement": 78
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 12,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "healthWellness": {
+        "strength": 40,
+        "notes": "A real but secondary pathway through veterinary medicine and biological sciences, secondary to VT's core engineering identity."
+      },
+      "nutraceuticals": {
+        "strength": 26,
+        "notes": "Some overlap through agricultural and food science programs."
+      },
+      "consumerProducts": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis outside general business coursework."
+      },
+      "outdoorIndustry": {
+        "strength": 44,
+        "notes": "A real, secondary pathway tied to VT's forestry and natural resources programs."
+      },
+      "sportsBusiness": {
+        "strength": 38,
+        "notes": "A real but secondary pathway given Hokies football's prominence, smaller than VT's core engineering and defense strengths."
+      },
+      "entertainmentMedia": {
+        "strength": 16,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "ventureCapital": {
+        "strength": 34,
+        "notes": "A modest, growing pathway tied to the Innovation Campus's tech-corridor proximity."
+      },
+      "privateEquity": {
+        "strength": 36,
+        "notes": "A modest, secondary pathway relative to VT's dominant engineering and defense pipelines."
+      },
+      "investmentBanking": {
+        "strength": 34,
+        "notes": "A minor pathway; VT is not positioned as a finance-recruiting campus."
+      },
+      "consulting": {
+        "strength": 54,
+        "notes": "A real and growing pathway, particularly government and technology consulting tied to the Northern Virginia corridor."
+      },
+      "medicine": {
+        "strength": 38,
+        "notes": "A real but secondary pathway; VT's strength runs through veterinary rather than human medicine."
+      },
+      "healthcareAdministration": {
+        "strength": 34,
+        "notes": "A modest, secondary pathway."
+      },
+      "defense": {
+        "strength": 82,
+        "notes": "A very strong, distinctive pathway reinforced both by the Corps of Cadets' military commissioning tradition and the Innovation Campus's direct Northern Virginia defense-contractor proximity."
+      },
+      "realEstate": {
+        "strength": 32,
+        "notes": "A modest, secondary pathway."
+      },
+      "luxuryBrands": {
+        "strength": 10,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "entrepreneurship": {
+        "strength": 48,
+        "notes": "A real and growing pathway, particularly around the Innovation Campus's tech-corridor proximity, though secondary to VT's core engineering and defense pipelines."
+      },
+      "technology": {
+        "strength": 78,
+        "notes": "A strong and growing pathway, substantially reinforced by the Innovation Campus's direct embedding inside the Northern Virginia tech corridor."
+      },
+      "publicPolicy": {
+        "strength": 38,
+        "notes": "A modest, secondary pathway relative to VT's dominant engineering and defense identity."
+      },
+      "nonprofitLeadership": {
+        "strength": 30,
+        "notes": "Minimal institutional emphasis."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 76,
+      "firstGenerationSupport": 78,
+      "wealthCreationPotential": 76,
+      "familyBusinessPipelineStrength": 48
+    },
+    "futureResilience": {
+      "aiResistance": 80,
+      "automationResistance": 80,
+      "adaptabilityScore": 78,
+      "interdisciplinaryStrength": 72,
+      "futureReadiness": 84,
+      "entrepreneurialFlexibility": 66,
+      "lifelongLearningCulture": 78,
+      "innovationCapacity": 78
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 76,
+      "communityLeadershipPotential": 84,
+      "geographicMobility": 68,
+      "workLifeBalancePotential": 76,
+      "purposeAlignment": 80,
+      "familyFormationSupport": 78,
+      "personalDevelopmentPotential": 80,
+      "careerOptionality": 74,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 68,
+      "networkMoat": 84,
+      "geographicMoat": 80,
+      "industryMoat": 78,
+      "alumniMoat": 88,
+      "brandDurability": 82,
+      "overallMoatScore": 80
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 46,
+      "returnerScore": 58,
+      "stewardScore": 78,
+      "navigatorScore": 60,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "heavily_concentrated_northern_virginia_dc_with_national_military_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 40,
+        "type": "Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 400,
+      "jewishStudentPercentage": "~1.5%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Modest",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate and kosher dining status are best-effort figures, not independently verified — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Honors College",
+      "strength": 62,
+      "notes": "Provides smaller seminars and priority course access within Virginia Tech's very large scale; less centralized than a dedicated honors college like ASU's Barrett."
+    }
+  },
+  "North Carolina State University": {
+    "institutionNarrative": {
+      "name": "North Carolina State University",
+      "location": "Raleigh, North Carolina",
+      "region": "Southeast",
+      "archetype": "The Research Triangle's Engineering Workhorse — Textiles, Design, and Centennial Campus Partnerships",
+      "oneSentenceSummary": "NC State pairs one of the largest engineering programs in the country with the nation's leading textile engineering program and Centennial Campus — a dedicated research campus built around direct corporate R&D partnerships — giving students an applied, industry-embedded identity distinct from Research Triangle neighbors UNC and Duke.",
+      "pipeline": "The College of Engineering is one of the largest in the country, strong across nearly every discipline. The Wilson College of Textiles is the leading textile engineering and design program in the United States, a genuinely unique specialty. Poole College of Management runs a solid, growing business program. Centennial Campus hosts direct corporate research partnerships with companies including Red Hat (co-founded by an NC State alumnus) and numerous biotechnology and engineering firms. Major recruiters include IBM, Red Hat, SAS Institute, Fidelity Investments, and the broader Research Triangle biotech and technology economy.",
+      "hiddenPathway": "Centennial Campus puts undergraduate and graduate students in physical proximity to real corporate R&D operations, not just career fairs — students can walk to companies actively developing the technology they're studying, a structural advantage most large public engineering schools don't have built directly into their campus.",
+      "institutionalSecret": "The Wilson College of Textiles is the best textile engineering and design program in the country, a genuinely unique, high-demand specialty that most families researching NC State never discover because it sits in the shadow of the university's much larger general engineering program.",
+      "theRoom": "Raleigh sits inside the Research Triangle alongside UNC and Duke, but NC State's Centennial Campus gives it a distinct, direct corporate R&D presence on campus that its Triangle neighbors do not have in the same form.",
+      "lifestyle": "Applied and technically focused — Wolfpack pride runs deep, but the defining campus energy is engineering-and-industry-oriented rather than the more traditionally academic Research Triangle identity UNC and Duke project.",
+      "bestFitPersonality": "Practically minded, drawn to applied engineering, design, or textiles specifically, comfortable in a large public university, energized by direct industry proximity rather than pure academic theory.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Dominant across North Carolina and the Research Triangle in applied engineering, textiles, and corporate R&D partnerships, with growing national reach in technology.",
+      "economicOutcome": "Strong outcomes in engineering, technology, and textiles, reinforced by Centennial Campus's direct corporate R&D partnerships and Research Triangle proximity.",
+      "gradCities": [
+        "Raleigh-Durham-Chapel Hill Research Triangle NC",
+        "Charlotte NC",
+        "Atlanta GA",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "University of North Carolina at Chapel Hill",
+        "Duke University",
+        "Georgia Institute of Technology",
+        "Virginia Tech"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Wake Technical Community College",
+          "Durham Technical Community College"
+        ],
+        "transferAcceptanceRate": "~50%",
+        "freshmanAcceptanceRate": "~44%",
+        "estimatedSavingsRange": "$12,000-$30,000",
+        "transferNotes": "NC State maintains strong, structured transfer agreements with North Carolina's community college system, particularly Wake Technical Community College given its proximity to campus."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "NC State",
+      "archetype": "The Research Triangle's Engineering Workhorse — Textiles, Design, and Centennial Campus Partnerships",
+      "institutionalPersonality": "applied, technically focused, industry-embedded, practical",
+      "cultureKeywords": [
+        "Centennial Campus",
+        "Wilson College of Textiles",
+        "Wolfpack",
+        "Engineering",
+        "Research Triangle"
+      ],
+      "missionOrientation": "Delivering large-scale, applied engineering and technical education directly embedded in corporate research partnerships through Centennial Campus.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Applied, hands-on engineering and design education reinforced by direct, physical proximity to corporate R&D partners on Centennial Campus.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Broadly moderate, pragmatic, and less politically visible than Triangle neighbors UNC and Duke.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Strong national prestige in engineering and the single strongest textile engineering program in the country; less broadly prestigious than UNC or Duke outside technical fields.",
+      "socialClimate": "Applied, practical, Wolfpack-proud, industry-oriented.",
+      "leadershipStyle": "Leadership through applied technical competence and direct industry partnership."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "CharLanta",
+      "regionalRole": "The Research Triangle's applied engineering and corporate R&D partnership engine, distinct from UNC's biotech/pharma identity and Duke's academic medicine identity."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 16,
+      "BosWash": 32,
+      "TorBuffChester": 12,
+      "TexasTriangle": 16,
+      "CharLanta": 92,
+      "NorCalInnovationCorridor": 20,
+      "SoCalCreativeEconomy": 10
+    },
+    "comparativePositioning": {
+      "versusUNC": "UNC offers the #1-ranked pharmacy school in the country and a broader liberal-arts-plus-business identity; NC State offers a larger, more applied engineering program and the country's leading textile engineering program, with Centennial Campus's direct corporate R&D partnerships UNC does not have in the same form.",
+      "versusDuke": "Duke offers an elite academic medical center and a nationally-recruited, more broadly prestigious student body; NC State offers a larger, more applied engineering program at meaningfully lower cost, with direct corporate R&D partnerships through Centennial Campus.",
+      "versusGeorgiaTech": "Georgia Tech offers a more selective, more nationally prestigious engineering brand with denser Atlanta startup access; NC State offers a comparable applied engineering scale with a genuinely unique textile engineering specialty and Centennial Campus's direct corporate partnership model.",
+      "versusVirginiaTech": "Virginia Tech offers a comparable land-grant engineering scale with its own distinctive Northern Virginia tech-corridor asset (the Innovation Campus); NC State offers Centennial Campus's on-site corporate R&D partnership model and the country's leading textile engineering program, inside the Research Triangle rather than a rural Blacksburg setting."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Large",
+      "undergraduateEnrollment": 26000,
+      "graduateEnrollment": 9000,
+      "totalEnrollment": 35000,
+      "campusType": "Large Public Land-Grant Flagship, Research Triangle Urban Campus",
+      "residentialIntensity": 54,
+      "communityFeel": 66,
+      "studentFacultyRatio": "17:1",
+      "classSizeExperience": "Large introductory courses, particularly in engineering; upper-division coursework and Centennial Campus research programs become substantially more personalized.",
+      "scaleAdvantages": [
+        "One of the largest and strongest applied engineering programs in the country",
+        "The leading textile engineering and design program in the United States, a genuinely unique specialty",
+        "Centennial Campus's direct, on-site corporate R&D partnerships",
+        "Research Triangle proximity to UNC and Duke's complementary academic and biotech ecosystem"
+      ],
+      "scaleDisadvantages": [
+        "Large introductory courses require significant student initiative",
+        "Less broadly prestigious outside engineering and technical fields relative to UNC or Duke",
+        "Large public university scale can feel impersonal without active community-building",
+        "High in-state enrollment share limits geographic diversity for some students"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 72,
+        "conscientiousness": 82,
+        "extraversion": 72,
+        "agreeableness": 76,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "R",
+        "I",
+        "C"
+      ],
+      "learningStyle": [
+        "Applied Engineering",
+        "Hands-On Laboratory Work",
+        "Industry-Embedded Research"
+      ],
+      "socialEnvironment": [
+        "Applied",
+        "Practical",
+        "Wolfpack-Proud",
+        "Industry-Oriented"
+      ],
+      "idealStudentTraits": [
+        "Practically minded and applied in orientation",
+        "Drawn to engineering, design, or textiles specifically",
+        "Comfortable with a large public university",
+        "Energized by direct industry proximity rather than pure theory"
+      ],
+      "thrivesIf": [
+        "Wants a large, strong, applied engineering program at public-school cost",
+        "Is drawn to the country's leading textile engineering and design program",
+        "Values direct, walkable proximity to real corporate R&D partners",
+        "Wants Research Triangle access without UNC or Duke's price tag or admissions bar"
+      ],
+      "strugglesIf": [
+        "Wants a smaller, more intimate campus",
+        "Needs strong programs outside engineering, design, and applied technical fields",
+        "Prefers UNC or Duke's broader national prestige outside technical fields",
+        "Is uncomfortable with a large, less personalized public university"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a smaller, more intimate campus",
+        "Students whose intended major sits outside NC State's core engineering/design/textiles strengths",
+        "Students who want UNC or Duke's broader non-technical prestige"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Select engineering majors and the Wilson College of Textiles carry additional selectivity beyond general NC State admission, particularly given growing national demand for the textile engineering program's unique specialty."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Textile Engineering",
+        "Industrial and Systems Engineering",
+        "Paper Science and Engineering",
+        "Nuclear Engineering",
+        "Landscape Architecture"
+      ],
+      "hiddenCareerPipelines": [
+        "Textile and Apparel Engineering",
+        "Corporate R&D (via Centennial Campus)",
+        "Open-Source Software (Red Hat pipeline)",
+        "Agricultural Technology",
+        "Nuclear Engineering"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Red Hat",
+        "IBM",
+        "SAS Institute",
+        "Fidelity Investments",
+        "Major apparel and textile manufacturers nationally"
+      ],
+      "overlookedStrengths": [
+        "The Wilson College of Textiles is the leading textile engineering and design program in the country, a genuinely unique credential most applicants never research.",
+        "Centennial Campus gives students walkable, physical proximity to real corporate R&D operations, not just career-fair access.",
+        "Red Hat, one of the most influential open-source software companies in the world, was co-founded by an NC State alumnus and maintains close ties to the university.",
+        "NC State's engineering scale rivals much more selective peer institutions at meaningfully lower cost."
+      ],
+      "sleeperIndustries": [
+        "Textile and Apparel Technology",
+        "Open-Source Software",
+        "Nuclear Engineering",
+        "Agricultural Technology"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 74,
+      "executiveAccess": 72,
+      "internshipNetwork": 84,
+      "familyBusinessExposure": 42,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 76,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 62
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Engineering and Technology",
+        "Textiles and Apparel",
+        "Corporate R&D",
+        "Agriculture",
+        "Software"
+      ],
+      "regionalEconomicDrivers": [
+        "Applied Engineering Research",
+        "Corporate R&D Partnerships",
+        "Textile and Apparel Technology",
+        "Software and Open-Source Technology"
+      ],
+      "topEmployers": [
+        "Red Hat",
+        "IBM",
+        "SAS Institute",
+        "Fidelity Investments",
+        "Major Research Triangle biotech and pharma firms",
+        "North Carolina state government"
+      ],
+      "emergingIndustries": [
+        "Advanced Textiles and Materials",
+        "Open-Source Software",
+        "Nuclear Engineering",
+        "Agricultural Technology"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 48,
+      "corporateHeadquartersDensity": 52,
+      "healthcareHubStrength": 58,
+      "innovationIndex": 76
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Research Triangle — Applied Engineering, Textiles, and Corporate R&D",
+      "secondaryMarkets": [
+        "Charlotte NC",
+        "Atlanta GA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Raleigh-Durham NC",
+        "Charlotte NC",
+        "Atlanta GA"
+      ],
+      "relocationPatterns": [
+        "A large share of graduates remain in the Research Triangle, entering engineering, technology, and corporate R&D roles.",
+        "Charlotte draws graduates into corporate and financial-services-adjacent engineering roles.",
+        "Atlanta and the broader Southeast draw engineering graduates into the region's growing corporate economy.",
+        "A smaller national cohort enters textile and apparel industry roles nationally, reflecting the Wilson College's unique specialty."
+      ],
+      "regionalInfluenceScore": 92,
+      "nationalReachScore": 66,
+      "internationalReachScore": 40
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 18,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 68,
+      "civicEngagement": 70
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 24,
+        "notes": "Some overlap through the Wilson College of Textiles' apparel and design programs."
+      },
+      "healthWellness": {
+        "strength": 36,
+        "notes": "A modest, secondary pathway relative to NC State's dominant engineering and textiles identity."
+      },
+      "nutraceuticals": {
+        "strength": 28,
+        "notes": "Some overlap through agricultural and food science programs, part of NC State's land-grant tradition."
+      },
+      "consumerProducts": {
+        "strength": 52,
+        "notes": "A real pathway through the Wilson College of Textiles' apparel and consumer product design programs."
+      },
+      "outdoorIndustry": {
+        "strength": 34,
+        "notes": "A modest, secondary pathway tied to textiles and materials science applications."
+      },
+      "sportsBusiness": {
+        "strength": 32,
+        "notes": "A modest, secondary pathway relative to NC State's core engineering identity."
+      },
+      "entertainmentMedia": {
+        "strength": 18,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "ventureCapital": {
+        "strength": 38,
+        "notes": "A modest, growing pathway tied to Centennial Campus's corporate R&D proximity."
+      },
+      "privateEquity": {
+        "strength": 30,
+        "notes": "A minor pathway; NC State is not positioned as a finance-recruiting campus."
+      },
+      "investmentBanking": {
+        "strength": 28,
+        "notes": "A minor pathway relative to NC State's dominant engineering and technical identity."
+      },
+      "consulting": {
+        "strength": 50,
+        "notes": "A real, growing pathway, particularly technical and engineering consulting tied to Research Triangle proximity."
+      },
+      "medicine": {
+        "strength": 32,
+        "notes": "A minor pathway; NC State has no medical school and is not oriented toward medicine as a primary outcome."
+      },
+      "healthcareAdministration": {
+        "strength": 28,
+        "notes": "Minimal institutional emphasis."
+      },
+      "defense": {
+        "strength": 40,
+        "notes": "A real, secondary pathway through engineering and materials science applications, smaller than NC State's core corporate R&D identity."
+      },
+      "realEstate": {
+        "strength": 30,
+        "notes": "A minor, secondary pathway."
+      },
+      "luxuryBrands": {
+        "strength": 22,
+        "notes": "Some overlap through textiles and apparel design, a modest but genuine niche."
+      },
+      "entrepreneurship": {
+        "strength": 58,
+        "notes": "A real and growing pathway, reinforced by Centennial Campus's direct corporate R&D partnership model and the Red Hat alumni pipeline."
+      },
+      "technology": {
+        "strength": 80,
+        "notes": "A strong, defining pathway reinforced directly by Centennial Campus's on-site corporate technology partnerships."
+      },
+      "publicPolicy": {
+        "strength": 32,
+        "notes": "A minor, secondary pathway relative to NC State's dominant applied engineering identity."
+      },
+      "nonprofitLeadership": {
+        "strength": 28,
+        "notes": "Minimal institutional emphasis."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 80,
+      "firstGenerationSupport": 82,
+      "wealthCreationPotential": 76,
+      "familyBusinessPipelineStrength": 46
+    },
+    "futureResilience": {
+      "aiResistance": 82,
+      "automationResistance": 80,
+      "adaptabilityScore": 80,
+      "interdisciplinaryStrength": 74,
+      "futureReadiness": 84,
+      "entrepreneurialFlexibility": 70,
+      "lifelongLearningCulture": 78,
+      "innovationCapacity": 82
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 76,
+      "communityLeadershipPotential": 76,
+      "geographicMobility": 66,
+      "workLifeBalancePotential": 78,
+      "purposeAlignment": 76,
+      "familyFormationSupport": 78,
+      "personalDevelopmentPotential": 78,
+      "careerOptionality": 74,
+      "longTermLifeSatisfaction": 80
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 66,
+      "networkMoat": 74,
+      "geographicMoat": 82,
+      "industryMoat": 82,
+      "alumniMoat": 76,
+      "brandDurability": 78,
+      "overallMoatScore": 77
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 44,
+      "returnerScore": 62,
+      "stewardScore": 76,
+      "navigatorScore": 58,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "heavily_concentrated_research_triangle_with_charlotte_secondary"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 44,
+        "type": "Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 350,
+      "jewishStudentPercentage": "~1.3%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Modest",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate and kosher dining status are best-effort figures, not independently verified — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "University Honors Program",
+      "strength": 64,
+      "notes": "Provides smaller seminars and priority course access within NC State's very large scale; less centralized than a dedicated honors college like ASU's Barrett."
+    }
+  },
+  "Emory University": {
+    "institutionNarrative": {
+      "name": "Emory University",
+      "location": "Atlanta, Georgia",
+      "region": "Southeast",
+      "archetype": "The CDC's Neighbor — Public Health, Medicine, and Deep Atlanta Corporate Integration",
+      "oneSentenceSummary": "Emory combines the Rollins School of Public Health — literally across the street from the CDC's headquarters — with Emory Healthcare's major academic medical system and Goizueta Business School's deep ties to Atlanta's Fortune 500 corporate base, most visibly Coca-Cola.",
+      "pipeline": "Approximately 7,000 undergraduates. Rollins School of Public Health is one of the top public health programs in the country, with a genuinely unmatched structural advantage: the Centers for Disease Control and Prevention's global headquarters sits directly across the street from campus. Goizueta Business School has deep, historic ties to Atlanta's corporate base, particularly Coca-Cola, whose longtime CEO the school is named after. Emory Healthcare anchors a strong pre-med and academic medicine pipeline. Major recruiters include the CDC, the Carter Center, Coca-Cola, Goldman Sachs, McKinsey, and Atlanta's broader corporate and healthcare economy.",
+      "hiddenPathway": "Public health students at Emory don't just study epidemiology in a classroom — the literal headquarters of the CDC across the street means real internships, guest faculty, and direct career pathways into the organization that runs U.S. public health policy, a structural advantage no other university's public health program can physically replicate.",
+      "institutionalSecret": "Emory's connection to Coca-Cola runs deeper than most students realize — Goizueta Business School is named for a former Coca-Cola CEO, and the university's endowment and Atlanta corporate ties give business students genuine access to one of the most recognized brands in the world, not just a case study.",
+      "theRoom": "Druid Hills, Emory's Atlanta neighborhood, sits directly across from the CDC's global headquarters and within the broader Atlanta metro's deep corporate base, including Coca-Cola, Delta, and Home Depot.",
+      "lifestyle": "Academically serious and health-and-service-oriented, with genuine Atlanta corporate and civic integration — the Carter Center, founded by President Jimmy Carter, is based at Emory, reinforcing a campus culture oriented toward public service alongside pre-professional ambition.",
+      "bestFitPersonality": "Academically serious, drawn to public health, medicine, or business specifically, comfortable with a service-oriented institutional culture, energized by direct proximity to major public health and corporate institutions.",
+      "faithTradition": "Methodist-affiliated historically; today entirely secular and nonsectarian.",
+      "geographicInfluenceRadius": "Dominant in Atlanta's healthcare, public health, and corporate economy, with strong national reach in public health and academic medicine specifically.",
+      "economicOutcome": "Excellent outcomes in public health, medicine, business, and law, reinforced by direct CDC proximity and deep Atlanta corporate integration.",
+      "gradCities": [
+        "Atlanta GA",
+        "New York NY",
+        "Washington DC",
+        "Chicago IL"
+      ],
+      "comparableInstitutions": [
+        "Vanderbilt University",
+        "Duke University",
+        "Washington University in St. Louis",
+        "Rice University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Georgia State University",
+          "Georgia Perimeter College"
+        ],
+        "transferAcceptanceRate": "~14%",
+        "freshmanAcceptanceRate": "~11%",
+        "estimatedSavingsRange": "$18,000-$40,000",
+        "transferNotes": "Emory accepts a modest number of transfer students annually, remaining highly selective relative to most peer institutions."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Emory University",
+      "archetype": "The CDC's Neighbor — Public Health, Medicine, and Deep Atlanta Corporate Integration",
+      "institutionalPersonality": "academically serious, service-oriented, corporately integrated, health-focused",
+      "cultureKeywords": [
+        "Rollins Public Health",
+        "CDC Proximity",
+        "Goizueta Business",
+        "Carter Center",
+        "Emory Healthcare"
+      ],
+      "missionOrientation": "Delivering elite public health, medicine, and business education directly integrated with Atlanta's public health institutions and corporate economy.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Rigorous pre-professional education reinforced by direct proximity to the CDC, the Carter Center, and Atlanta's Fortune 500 corporate base.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Broadly progressive, with a genuine public-service and civic orientation reinforced by the Carter Center's presence.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite in public health, given unmatched CDC proximity; strong in medicine and business, reinforced by deep Atlanta corporate integration.",
+      "socialClimate": "Academically serious, service-oriented, corporately connected.",
+      "leadershipStyle": "Leadership through public health impact, corporate integration, and civic service."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "CharLanta",
+      "regionalRole": "The nation's most direct undergraduate pipeline into public health policy via unmatched CDC proximity, layered on top of deep Atlanta corporate integration through Goizueta."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 14,
+      "BosWash": 32,
+      "TorBuffChester": 12,
+      "TexasTriangle": 16,
+      "CharLanta": 96,
+      "NorCalInnovationCorridor": 14,
+      "SoCalCreativeEconomy": 10
+    },
+    "comparativePositioning": {
+      "versusVanderbilt": "Vanderbilt has stronger pre-med outcomes and a more vibrant Greek/athletics social scene; Emory has stronger public health and deeper Atlanta integration.",
+      "versusDuke": "Duke offers a stronger academic medical center and a more nationally prominent basketball tradition; Emory offers an unmatched public health pathway through direct CDC proximity and deeper corporate integration with Atlanta's Fortune 500 base.",
+      "versusWashU": "Washington University in St. Louis offers a similarly elite pre-med and academic research identity with strong need-based aid; Emory offers a genuinely unique public health pathway through direct CDC proximity that no other university can structurally replicate."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 7000,
+      "graduateEnrollment": 8500,
+      "totalEnrollment": 15500,
+      "campusType": "Private Research University, Atlanta Neighborhood Campus",
+      "residentialIntensity": 76,
+      "communityFeel": 74,
+      "studentFacultyRatio": "8:1",
+      "classSizeExperience": "Small-to-moderate classes with strong faculty access, particularly within Rollins Public Health and Goizueta Business.",
+      "scaleAdvantages": [
+        "Unmatched public health pathway through direct CDC headquarters proximity",
+        "Deep Atlanta corporate integration through Goizueta Business School",
+        "Strong academic medicine pipeline through Emory Healthcare",
+        "The Carter Center's presence reinforces a genuine public-service institutional identity"
+      ],
+      "scaleDisadvantages": [
+        "Smaller national brand recognition relative to Duke or Vanderbilt outside public health specifically",
+        "High cost of attendance",
+        "Atlanta's sprawl means off-campus access requires a car more than walkable peer campuses",
+        "Highly selective, academically serious culture may feel less socially vibrant than SEC-culture peers"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 80,
+        "conscientiousness": 86,
+        "extraversion": 68,
+        "agreeableness": 78,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "I",
+        "S",
+        "E"
+      ],
+      "learningStyle": [
+        "Public Health Case Study",
+        "Clinical Pre-Med Training",
+        "Case-Method Business",
+        "Civic Engagement"
+      ],
+      "socialEnvironment": [
+        "Academically Serious",
+        "Service-Oriented",
+        "Corporately Integrated",
+        "Health-Focused"
+      ],
+      "idealStudentTraits": [
+        "Academically serious and achievement-oriented",
+        "Drawn to public health, medicine, or business specifically",
+        "Comfortable with a service-oriented institutional culture",
+        "Energized by direct proximity to major public health and corporate institutions"
+      ],
+      "thrivesIf": [
+        "Wants unmatched direct access to the CDC for public health study",
+        "Values deep corporate integration with Atlanta's Fortune 500 base",
+        "Is drawn to a genuine public-service institutional culture reinforced by the Carter Center",
+        "Wants strong pre-med preparation inside a health-focused campus identity"
+      ],
+      "strugglesIf": [
+        "Wants a more vibrant Greek life and SEC athletics social scene like Vanderbilt's",
+        "Needs a highly walkable campus without relying on a car",
+        "Prefers a larger national brand outside public health specifically",
+        "Wants a lighter, less academically serious campus culture"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a more socially vibrant, Greek-centric campus culture",
+        "Students who want a larger, more nationally prominent brand outside public health",
+        "Students uncomfortable with Atlanta's car-dependent sprawl"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Emory does not formally impact most majors at the undergraduate level, though pre-med tracks carry substantial informal competitive pressure given the university's strong academic medicine identity, and Goizueta Business coursework is competitive within Emory College."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Human Health",
+        "Global Health, Culture, and Society",
+        "Quantitative Sciences",
+        "Environmental Sciences",
+        "Middle Eastern and South Asian Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Epidemiology and Public Health Policy",
+        "Global Health and Humanitarian Response",
+        "Healthcare Consulting",
+        "Corporate Strategy (Coca-Cola-adjacent)",
+        "Nonprofit and NGO Leadership (Carter Center pipeline)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Centers for Disease Control and Prevention",
+        "The Carter Center",
+        "Coca-Cola",
+        "Emory Healthcare",
+        "McKinsey & Company"
+      ],
+      "overlookedStrengths": [
+        "Rollins School of Public Health's direct CDC proximity is a genuinely unmatched structural advantage no other university's public health program can replicate.",
+        "The Carter Center, founded by President Jimmy Carter and based at Emory, gives students real access to global humanitarian and public health policy work.",
+        "Goizueta Business School's ties to Coca-Cola give students genuine access to one of the most recognized global brands, not just a case study.",
+        "Emory Healthcare's academic medical system gives pre-med students substantive clinical exposure inside a major health system."
+      ],
+      "sleeperIndustries": [
+        "Epidemiology and Public Health Policy",
+        "Global Health and Humanitarian Response",
+        "Healthcare Consulting",
+        "Nonprofit and NGO Leadership"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 78,
+      "executiveAccess": 82,
+      "internshipNetwork": 86,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 80,
+      "donorNetworkStrength": 78,
+      "boardMemberDensity": 74
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Public Health",
+        "Academic Medicine",
+        "Corporate Business",
+        "Consulting",
+        "Nonprofit and Global Health"
+      ],
+      "regionalEconomicDrivers": [
+        "Public Health Policy",
+        "Corporate Headquarters (Atlanta)",
+        "Healthcare",
+        "Management Consulting"
+      ],
+      "topEmployers": [
+        "Centers for Disease Control and Prevention",
+        "The Carter Center",
+        "Coca-Cola",
+        "Emory Healthcare",
+        "McKinsey & Company",
+        "Goldman Sachs"
+      ],
+      "emergingIndustries": [
+        "Global Health Technology",
+        "Health Policy Analytics",
+        "Biotechnology",
+        "Healthcare AI"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 46,
+      "corporateHeadquartersDensity": 68,
+      "healthcareHubStrength": 92,
+      "innovationIndex": 72
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Atlanta — Public Health, Academic Medicine, and Corporate Business",
+      "secondaryMarkets": [
+        "New York NY",
+        "Washington DC",
+        "Chicago IL"
+      ],
+      "alumniStrongholds": [
+        "Atlanta GA",
+        "New York NY",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "A significant share of graduates remain in Atlanta, entering public health, corporate, and healthcare roles.",
+        "Washington DC draws public health and policy graduates into federal agencies and the CDC's broader network.",
+        "New York recruits graduates into consulting, finance, and corporate roles.",
+        "A meaningful cohort enters global health and humanitarian work internationally, reinforced by the Carter Center's network."
+      ],
+      "regionalInfluenceScore": 92,
+      "nationalReachScore": 78,
+      "internationalReachScore": 62
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 34,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 82,
+      "crossDisciplinaryInteraction": 76,
+      "civicEngagement": 84
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 16,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "healthWellness": {
+        "strength": 94,
+        "notes": "The single strongest pathway at the institution, reinforced by unmatched direct CDC proximity and Emory Healthcare's academic medical system."
+      },
+      "nutraceuticals": {
+        "strength": 28,
+        "notes": "Some overlap through public health and nutrition science coursework."
+      },
+      "consumerProducts": {
+        "strength": 42,
+        "notes": "A real pathway through Goizueta Business School's ties to Coca-Cola and Atlanta's consumer brand economy."
+      },
+      "outdoorIndustry": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 28,
+        "notes": "A modest, secondary pathway relative to Emory's dominant health-focused identity."
+      },
+      "entertainmentMedia": {
+        "strength": 26,
+        "notes": "A modest, secondary pathway; not a defining institutional strength."
+      },
+      "ventureCapital": {
+        "strength": 40,
+        "notes": "A modest, growing pathway, particularly in health technology venture investing."
+      },
+      "privateEquity": {
+        "strength": 50,
+        "notes": "A real, secondary pathway through Goizueta Business School."
+      },
+      "investmentBanking": {
+        "strength": 56,
+        "notes": "A real, secondary pathway, smaller than Emory's dominant health and public health pipelines."
+      },
+      "consulting": {
+        "strength": 76,
+        "notes": "A strong pathway, particularly healthcare consulting practices, reinforced by Emory's health-focused institutional identity."
+      },
+      "medicine": {
+        "strength": 88,
+        "notes": "An elite pathway reinforced directly by Emory Healthcare's academic medical system and a strong pre-med tradition."
+      },
+      "healthcareAdministration": {
+        "strength": 86,
+        "notes": "A very strong, distinctive pathway reinforced by Rollins Public Health and Emory Healthcare together."
+      },
+      "defense": {
+        "strength": 18,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "realEstate": {
+        "strength": 32,
+        "notes": "A modest, secondary pathway relative to Emory's dominant health-focused identity."
+      },
+      "luxuryBrands": {
+        "strength": 18,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "entrepreneurship": {
+        "strength": 48,
+        "notes": "A real, growing pathway, particularly in health technology startups, though secondary to Emory's core public health and medicine pipelines."
+      },
+      "technology": {
+        "strength": 42,
+        "notes": "A real but secondary pathway; Emory is not positioned as a technology-recruiting campus, though health technology is a genuine, growing niche."
+      },
+      "publicPolicy": {
+        "strength": 82,
+        "notes": "A very strong, distinctive pathway reinforced directly by CDC proximity and the Carter Center's global health and humanitarian policy work."
+      },
+      "nonprofitLeadership": {
+        "strength": 78,
+        "notes": "A very strong, distinctive pathway reinforced by the Carter Center's presence and Emory's genuine public-service institutional culture."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 60,
+      "firstGenerationSupport": 62,
+      "wealthCreationPotential": 82,
+      "familyBusinessPipelineStrength": 46
+    },
+    "futureResilience": {
+      "aiResistance": 82,
+      "automationResistance": 82,
+      "adaptabilityScore": 80,
+      "interdisciplinaryStrength": 80,
+      "futureReadiness": 82,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 80,
+      "innovationCapacity": 74
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 82,
+      "communityLeadershipPotential": 88,
+      "geographicMobility": 76,
+      "workLifeBalancePotential": 72,
+      "purposeAlignment": 90,
+      "familyFormationSupport": 74,
+      "personalDevelopmentPotential": 84,
+      "careerOptionality": 82,
+      "longTermLifeSatisfaction": 84
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 78,
+      "networkMoat": 78,
+      "geographicMoat": 84,
+      "industryMoat": 88,
+      "alumniMoat": 76,
+      "brandDurability": 82,
+      "overallMoatScore": 81
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 54,
+      "returnerScore": 58,
+      "stewardScore": 72,
+      "navigatorScore": 66,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "atlanta_concentration_with_dc_ny_secondary_global_health_dispersal"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 84,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 1600,
+      "jewishStudentPercentage": "~23%",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Exceptional",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing. Emory is generally recognized as having one of the largest Jewish undergraduate populations of any Southeastern university."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Emory has no separate honors college; rigor is delivered through Emory College's own selective structure and departmental honors programs rather than a centralized honors college."
+    }
+  },
+  "Wake Forest University": {
+    "institutionNarrative": {
+      "name": "Wake Forest University",
+      "location": "Winston-Salem, North Carolina",
+      "region": "Southeast",
+      "archetype": "Work Hard, Play Hard — Ivy-Caliber Outcomes at Small-College Scale",
+      "oneSentenceSummary": "Wake Forest delivers Ivy-caliber pre-professional outcomes — finance, consulting, law, medicine — inside a genuinely small, teaching-focused undergraduate experience, anchored by one of the only true undergraduate business schools at an elite research university.",
+      "pipeline": "Approximately 5,400 undergraduates. The Wayne Calloway School of Business is a genuine undergraduate business program, unusual among elite research universities where business is typically graduate-only. Strong pre-med placement is reinforced by Wake Forest University School of Medicine and the Atrium Health Wake Forest Baptist academic medical system. Major recruiters include every major investment bank, Deloitte, Ernst & Young, and top law and medical schools nationally.",
+      "hiddenPathway": "Wake Forest's small undergraduate scale means finance and consulting recruiters build direct, personal relationships with career services and faculty, giving students recruiting access disproportionate to the university's size relative to much larger peer institutions competing for the same Wall Street slots.",
+      "institutionalSecret": "The Calloway School of Business is one of the only true undergraduate business programs at an elite, research-active private university — most peer institutions at Wake Forest's prestige tier only offer business at the graduate level, making this a genuinely distinctive structural advantage.",
+      "theRoom": "Winston-Salem is a smaller Southern city than Nashville, Atlanta, or Durham, giving Wake Forest a quieter, more traditionally collegiate setting than its Research Triangle or Nashville peers, with Charlotte's banking economy a reasonable drive away.",
+      "lifestyle": "The 'Work Hard, Play Hard' reputation is genuinely earned — intense academic and pre-professional ambition paired with an active Greek and social scene, all inside a small, tight-knit undergraduate community.",
+      "bestFitPersonality": "Ambitious and pre-professionally focused, comfortable with a small, tight-knit campus community, drawn to finance, consulting, law, or medicine specifically, energized by both academic intensity and active social life.",
+      "faithTradition": "Historically Baptist-affiliated; today entirely secular and nonsectarian.",
+      "geographicInfluenceRadius": "Strong regional dominance in the Carolinas, with genuine national reach in finance, consulting, and law relative to its small size.",
+      "economicOutcome": "Excellent outcomes in finance, consulting, law, and medicine, with placement rates disproportionate to Wake Forest's smaller undergraduate scale.",
+      "gradCities": [
+        "New York NY",
+        "Charlotte NC",
+        "Washington DC",
+        "Atlanta GA"
+      ],
+      "comparableInstitutions": [
+        "Vanderbilt University",
+        "Duke University",
+        "Boston College",
+        "Washington University in St. Louis"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Forsyth Technical Community College"
+        ],
+        "transferAcceptanceRate": "~28%",
+        "freshmanAcceptanceRate": "~22%",
+        "estimatedSavingsRange": "$16,000-$36,000",
+        "transferNotes": "Wake Forest accepts a modest number of transfer students annually, more accessible than many peer institutions at a similar prestige tier."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Wake Forest",
+      "archetype": "Work Hard, Play Hard — Ivy-Caliber Outcomes at Small-College Scale",
+      "institutionalPersonality": "ambitious, tight-knit, pre-professionally focused, socially active",
+      "cultureKeywords": [
+        "Work Hard Play Hard",
+        "Calloway Business",
+        "Demon Deacons",
+        "Small-Scale Recruiting",
+        "Greek Life"
+      ],
+      "missionOrientation": "Delivering elite pre-professional outcomes through genuinely personalized, small-scale undergraduate teaching.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "Rigorous, teaching-focused education reinforced by small class sizes and direct faculty access uncommon at similarly prestigious research universities.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Broadly moderate, with a socially active but less politically visible campus culture than larger peer institutions.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Elite pre-professional outcomes in finance, consulting, and law disproportionate to its small size, reinforced by a genuine undergraduate business school.",
+      "socialClimate": "Ambitious, tight-knit, socially active, Greek-life-present.",
+      "leadershipStyle": "Leadership through pre-professional achievement and close-knit community involvement."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "CharLanta",
+      "regionalRole": "A small-scale but disproportionately strong finance and consulting talent pipeline, benefiting from Charlotte's banking economy and broader CharLanta corporate access."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 14,
+      "BosWash": 40,
+      "TorBuffChester": 12,
+      "TexasTriangle": 14,
+      "CharLanta": 90,
+      "NorCalInnovationCorridor": 14,
+      "SoCalCreativeEconomy": 10
+    },
+    "comparativePositioning": {
+      "versusVanderbilt": "Vanderbilt offers a larger scale, a top-10 academic medical center directly on campus, and Nashville's faster-growing economy; Wake Forest offers a smaller, more personalized undergraduate experience with a genuine undergraduate business school most peer institutions don't have.",
+      "versusDuke": "Duke offers a much stronger academic medical center, greater national prestige, and a larger research enterprise; Wake Forest offers a smaller, more teaching-focused undergraduate experience with disproportionately strong finance and consulting recruiting relative to its size.",
+      "versusBostonCollege": "Boston College offers a larger Boston-area alumni network and direct access to a major Northeastern financial-services hub; Wake Forest offers a smaller, more personalized undergraduate scale and a genuine undergraduate business school."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 5400,
+      "graduateEnrollment": 3200,
+      "totalEnrollment": 8600,
+      "campusType": "Private Research University, Small Southern City Campus",
+      "residentialIntensity": 82,
+      "communityFeel": 84,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Small classes with strong, personal faculty access across nearly all coursework, closer to a liberal arts college experience than most research universities at a similar prestige tier.",
+      "scaleAdvantages": [
+        "One of the only true undergraduate business schools at an elite research university",
+        "Small scale produces genuinely personal faculty and career-services relationships",
+        "Disproportionately strong finance and consulting recruiting relative to size",
+        "Tight-knit community with strong school spirit despite research-university status"
+      ],
+      "scaleDisadvantages": [
+        "Winston-Salem is a smaller city with less economic pull than Research Triangle or Nashville peers",
+        "Smaller alumni network in absolute numbers than larger peer institutions",
+        "Less academic breadth in certain specialized fields relative to larger research universities",
+        "High cost of attendance"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 74,
+        "conscientiousness": 86,
+        "extraversion": 78,
+        "agreeableness": 76,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "E",
+        "C",
+        "S"
+      ],
+      "learningStyle": [
+        "Case-Method Business",
+        "Small Seminar Discussion",
+        "Clinical Pre-Med Training"
+      ],
+      "socialEnvironment": [
+        "Ambitious",
+        "Tight-Knit",
+        "Socially Active",
+        "Pre-Professional"
+      ],
+      "idealStudentTraits": [
+        "Ambitious and pre-professionally focused",
+        "Comfortable with a small, tight-knit campus community",
+        "Drawn to finance, consulting, law, or medicine specifically",
+        "Energized by both academic intensity and active social life"
+      ],
+      "thrivesIf": [
+        "Wants Ivy-caliber finance and consulting outcomes at small-college scale",
+        "Values a genuine undergraduate business school inside a research university",
+        "Wants close, personal faculty and career-services relationships",
+        "Enjoys an active Greek and social scene alongside academic ambition"
+      ],
+      "strugglesIf": [
+        "Wants a large research university with extensive academic breadth",
+        "Needs a major city's economic and cultural pull",
+        "Is uncomfortable with an active Greek-life social culture",
+        "Prefers a larger, more anonymous campus"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a larger campus with broader academic offerings",
+        "Students who want a major city's direct economic and cultural access",
+        "Students uncomfortable with Wake Forest's active Greek and social culture"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "The Calloway School of Business admits as a competitive internal application after initial enrollment, distinct from general Wake Forest admission; pre-med tracks carry substantial informal competitive pressure given the university's strong medical school pipeline."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Politics and International Affairs",
+        "Health and Exercise Science",
+        "Communication",
+        "Environmental Science",
+        "Mathematical Business"
+      ],
+      "hiddenCareerPipelines": [
+        "Regional Banking (Charlotte proximity)",
+        "Healthcare Administration",
+        "Sports Management",
+        "Law (strong pre-law placement)",
+        "Academic Medicine"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Every major Wall Street investment bank",
+        "Deloitte",
+        "Ernst & Young",
+        "Bank of America (Charlotte proximity)",
+        "Top law and medical schools nationally"
+      ],
+      "overlookedStrengths": [
+        "The Calloway School of Business is a genuine undergraduate business program most peer institutions at Wake Forest's prestige tier don't offer.",
+        "Wake Forest's small scale gives students disproportionately personal access to finance and consulting recruiters relative to much larger peer institutions.",
+        "Wake Forest University School of Medicine and Atrium Health Wake Forest Baptist give pre-med students substantive academic medicine exposure.",
+        "Charlotte's banking economy is a reasonable drive away, giving finance-focused students real regional access beyond New York recruiting alone."
+      ],
+      "sleeperIndustries": [
+        "Regional Banking and Finance",
+        "Healthcare Administration",
+        "Sports Management",
+        "Law"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 82,
+      "executiveAccess": 76,
+      "internshipNetwork": 82,
+      "familyBusinessExposure": 48,
+      "relationshipCapitalScore": 86,
+      "alumniLoyaltyScore": 86,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 74,
+      "boardMemberDensity": 68
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Financial Services",
+        "Management Consulting",
+        "Law",
+        "Healthcare",
+        "Academic Medicine"
+      ],
+      "regionalEconomicDrivers": [
+        "Regional Banking (Charlotte)",
+        "Healthcare",
+        "Management Consulting",
+        "Legal Services"
+      ],
+      "topEmployers": [
+        "Bank of America",
+        "Deloitte",
+        "Ernst & Young",
+        "Goldman Sachs",
+        "Atrium Health Wake Forest Baptist",
+        "Major regional law firms"
+      ],
+      "emergingIndustries": [
+        "Healthcare Technology",
+        "Financial Technology",
+        "Sports Analytics"
+      ],
+      "startupDensity": "Low-Moderate",
+      "ventureCapitalAccess": 36,
+      "corporateHeadquartersDensity": 46,
+      "healthcareHubStrength": 68,
+      "innovationIndex": 62
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Charlotte and the Carolinas — Regional Banking and Corporate Business",
+      "secondaryMarkets": [
+        "New York NY",
+        "Atlanta GA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Charlotte NC",
+        "New York NY",
+        "Atlanta GA",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "New York draws the largest share of graduates into investment banking and consulting.",
+        "Charlotte's banking economy draws a significant regional cohort into finance roles.",
+        "Atlanta and Washington DC draw graduates into consulting, law, and corporate roles.",
+        "A meaningful cohort enters academic medicine and healthcare administration through Wake Forest's medical school pipeline."
+      ],
+      "regionalInfluenceScore": 84,
+      "nationalReachScore": 72,
+      "internationalReachScore": 44
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 58,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 68,
+      "civicEngagement": 66
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 16,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "healthWellness": {
+        "strength": 52,
+        "notes": "A real, secondary pathway reinforced by Wake Forest University School of Medicine and Atrium Health Wake Forest Baptist."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 38,
+        "notes": "A real, secondary pathway through Calloway Business coursework."
+      },
+      "outdoorIndustry": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 42,
+        "notes": "A real, secondary pathway given Demon Deacons ACC athletics and a growing sports management curriculum."
+      },
+      "entertainmentMedia": {
+        "strength": 24,
+        "notes": "Not a defining institutional strength."
+      },
+      "ventureCapital": {
+        "strength": 34,
+        "notes": "A modest pathway; Wake Forest is not positioned as a major venture-capital-recruiting campus."
+      },
+      "privateEquity": {
+        "strength": 58,
+        "notes": "A real, solid pathway through Calloway Business, competitive relative to Wake Forest's small size."
+      },
+      "investmentBanking": {
+        "strength": 76,
+        "notes": "A strong pathway, disproportionate to Wake Forest's small undergraduate scale, reinforced by Calloway Business's direct Wall Street recruiting relationships."
+      },
+      "consulting": {
+        "strength": 74,
+        "notes": "A strong pathway into major consulting firms, reinforced by Calloway Business's recruiting relationships."
+      },
+      "medicine": {
+        "strength": 62,
+        "notes": "A real, solid pre-med pathway reinforced by Wake Forest's own medical school and academic health system."
+      },
+      "healthcareAdministration": {
+        "strength": 54,
+        "notes": "A real, secondary pathway reinforced by Atrium Health Wake Forest Baptist proximity."
+      },
+      "defense": {
+        "strength": 20,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "realEstate": {
+        "strength": 42,
+        "notes": "A real, secondary pathway through Calloway Business and Charlotte's regional real estate market."
+      },
+      "luxuryBrands": {
+        "strength": 24,
+        "notes": "Not a defining institutional strength."
+      },
+      "entrepreneurship": {
+        "strength": 46,
+        "notes": "A real, growing pathway, though secondary to Wake Forest's core finance and consulting pipelines."
+      },
+      "technology": {
+        "strength": 38,
+        "notes": "A modest, secondary pathway; Wake Forest is not positioned as a technology-recruiting campus."
+      },
+      "publicPolicy": {
+        "strength": 42,
+        "notes": "A real, secondary pathway through Politics and International Affairs coursework."
+      },
+      "nonprofitLeadership": {
+        "strength": 40,
+        "notes": "A modest, secondary pathway relative to Wake Forest's dominant finance and consulting identity."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 50,
+      "firstGenerationSupport": 54,
+      "wealthCreationPotential": 82,
+      "familyBusinessPipelineStrength": 52
+    },
+    "futureResilience": {
+      "aiResistance": 74,
+      "automationResistance": 76,
+      "adaptabilityScore": 76,
+      "interdisciplinaryStrength": 70,
+      "futureReadiness": 78,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 76,
+      "innovationCapacity": 66
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 82,
+      "communityLeadershipPotential": 80,
+      "geographicMobility": 74,
+      "workLifeBalancePotential": 70,
+      "purposeAlignment": 76,
+      "familyFormationSupport": 76,
+      "personalDevelopmentPotential": 80,
+      "careerOptionality": 78,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 74,
+      "networkMoat": 80,
+      "geographicMoat": 76,
+      "industryMoat": 78,
+      "alumniMoat": 82,
+      "brandDurability": 78,
+      "overallMoatScore": 78
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "STEWARD",
+      "leaverScore": 56,
+      "returnerScore": 56,
+      "stewardScore": 68,
+      "navigatorScore": 66,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "charlotte_ny_concentration_with_southeast_secondary"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 48,
+        "type": "Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": 300,
+      "jewishStudentPercentage": "~5%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Modest",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate and kosher dining status are best-effort figures, not independently verified — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Wake Forest has no separate honors college; its small overall scale and low student-faculty ratio deliver an honors-equivalent experience across the undergraduate population."
+    }
+  },
+  "Pepperdine University": {
+    "institutionNarrative": {
+      "name": "Pepperdine University",
+      "location": "Malibu, California",
+      "region": "California",
+      "archetype": "The Malibu Bluffs — Christian Values, International Business, and a Genuinely Elite Dispute Resolution Program",
+      "oneSentenceSummary": "Pepperdine combines one of the most scenic, expensive campus settings in the country with a genuinely distinctive Church of Christ institutional identity, an extensive owned-campus international study-abroad network, and the nation's top-ranked dispute resolution law program.",
+      "pipeline": "Seaver College delivers undergraduate liberal arts and business education from an oceanfront Malibu bluff campus. The Caruso School of Law's Straus Institute for Dispute Resolution is consistently ranked #1 in the country for dispute resolution and mediation training. The Graziadio Business School and International Business program are reinforced by Pepperdine's unusually extensive network of owned international campuses (London, Florence, Buenos Aires, Shanghai, Washington DC, and others). Major recruiters include entertainment and media companies via LA proximity, major law firms, and international business roles supported by the study-abroad network.",
+      "hiddenPathway": "Pepperdine's School of Public Policy runs a small, elite, Washington DC-embedded program that gives undergraduates direct federal policy exposure most students researching Pepperdine for its beach campus never discover.",
+      "institutionalSecret": "The Straus Institute for Dispute Resolution is genuinely the top-ranked program of its kind in the country, a specific, elite credential most families researching Pepperdine for its Christian identity or ocean views never realize exists.",
+      "theRoom": "Pepperdine's Malibu campus sits on oceanfront bluffs overlooking the Pacific, among the most expensive real estate settings of any American university, roughly 30 minutes from Los Angeles's entertainment and business economy.",
+      "lifestyle": "Values-driven and Christian-identified (Church of Christ), with a genuinely more conservative political culture than most California universities, balanced by Malibu's beach-adjacent, outdoor-oriented social scene.",
+      "bestFitPersonality": "Values-driven and comfortable with an explicitly Christian institutional identity, drawn to international business, law, or communication, energized by an extensive study-abroad culture and Malibu's distinctive setting.",
+      "faithTradition": "Church of Christ",
+      "geographicInfluenceRadius": "Strong regional presence in LA's entertainment and business economy, with a genuinely distinctive national reach in dispute resolution law and international business through its owned-campus study-abroad network.",
+      "economicOutcome": "Strong outcomes in law (particularly dispute resolution), international business, and communication, reinforced by an unusually extensive study-abroad network and LA proximity.",
+      "gradCities": [
+        "Los Angeles CA",
+        "San Francisco CA",
+        "Washington DC",
+        "International"
+      ],
+      "comparableInstitutions": [
+        "Loyola Marymount University",
+        "University of San Diego",
+        "Baylor University",
+        "Southern Methodist University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "Santa Monica College",
+          "Pepperdine's own transfer partnerships"
+        ],
+        "transferAcceptanceRate": "~38%",
+        "freshmanAcceptanceRate": "~34%",
+        "estimatedSavingsRange": "$16,000-$36,000",
+        "transferNotes": "Pepperdine maintains structured transfer pathways, more accessible than many similarly-priced private California peers."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Pepperdine",
+      "archetype": "The Malibu Bluffs — Christian Values, International Business, and a Genuinely Elite Dispute Resolution Program",
+      "institutionalPersonality": "values-driven, internationally minded, Christian-identified, polished",
+      "cultureKeywords": [
+        "Church of Christ",
+        "Malibu Campus",
+        "Straus Dispute Resolution",
+        "International Programs",
+        "Christian Values"
+      ],
+      "missionOrientation": "Strengthening lives for purpose, service, and leadership through a Christian-affiliated education combined with an unusually extensive international study-abroad network.",
+      "faithTradition": "Church of Christ",
+      "educationalPhilosophy": "Values-driven liberal arts and pre-professional education reinforced by an extensive owned-campus international study-abroad program.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Broadly conservative to moderate, genuinely distinctive relative to most California universities.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Nationally elite specifically in dispute resolution law; strong regional prestige in international business and communication.",
+      "socialClimate": "Values-driven, polished, beach-adjacent, internationally minded.",
+      "leadershipStyle": "Leadership through Christian values, service, and international engagement."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "SoCal Creative Economy",
+      "regionalRole": "A values-driven talent engine combining LA entertainment and business proximity with a nationally elite dispute resolution law program and an unusually extensive international study-abroad network."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 16,
+      "TorBuffChester": 6,
+      "TexasTriangle": 12,
+      "CharLanta": 10,
+      "NorCalInnovationCorridor": 18,
+      "SoCalCreativeEconomy": 78
+    },
+    "comparativePositioning": {
+      "versusLMU": "LMU offers a genuinely closer Silicon Beach tech proximity and a Jesuit rather than Church of Christ institutional identity; Pepperdine offers a more scenic, higher-cost Malibu setting, a top-ranked dispute resolution law program, and a more extensive international study-abroad network.",
+      "versusUSD": "Pepperdine offers a more luxury/Malibu-coded setting; USD offers comparable coastal beauty with a stronger overall law school and the unique Kroc Peace Institute.",
+      "versusBaylor": "Baylor offers a larger, more traditionally Southern Baptist-identified campus culture with strong SEC-adjacent Big 12 athletics; Pepperdine offers a smaller, oceanfront Malibu setting with a nationally elite dispute resolution program and deeper LA entertainment and business proximity."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 3600,
+      "graduateEnrollment": 3400,
+      "totalEnrollment": 7000,
+      "campusType": "Private Christian University, Oceanfront Malibu Campus",
+      "residentialIntensity": 70,
+      "communityFeel": 78,
+      "studentFacultyRatio": "13:1",
+      "classSizeExperience": "Small, intimate classes with genuine faculty access throughout Seaver College.",
+      "scaleAdvantages": [
+        "One of the most scenic, oceanfront campus settings of any American university",
+        "Nationally top-ranked dispute resolution law program (Straus Institute)",
+        "Unusually extensive owned-campus international study-abroad network",
+        "Genuine Christian institutional identity and values-driven community"
+      ],
+      "scaleDisadvantages": [
+        "Extremely high cost of attendance, reinforced by Malibu's expensive setting",
+        "Smaller alumni network in absolute numbers than larger LA peers like USC or UCLA",
+        "More conservative campus culture may not fit every student, even within a Christian-affiliated context",
+        "Malibu's remote, car-dependent setting limits walkable off-campus access"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 68,
+        "conscientiousness": 80,
+        "extraversion": 74,
+        "agreeableness": 80,
+        "neuroticism": 38
+      },
+      "hollandCodes": [
+        "S",
+        "E",
+        "A"
+      ],
+      "learningStyle": [
+        "Values-Integrated Seminar Discussion",
+        "International Study Abroad",
+        "Case-Method Business",
+        "Dispute Resolution Practicum"
+      ],
+      "socialEnvironment": [
+        "Values-Driven",
+        "Polished",
+        "Internationally Minded",
+        "Beach-Adjacent"
+      ],
+      "idealStudentTraits": [
+        "Comfortable with an explicit Christian institutional identity",
+        "Drawn to international business, law, or communication",
+        "Energized by an extensive study-abroad culture",
+        "Values a genuinely distinctive, scenic campus setting"
+      ],
+      "thrivesIf": [
+        "Wants an explicitly Christian, values-driven institutional culture",
+        "Is drawn to the nation's top-ranked dispute resolution law program",
+        "Wants an unusually extensive international study-abroad experience",
+        "Values Malibu's distinctive, oceanfront setting"
+      ],
+      "strugglesIf": [
+        "Wants a secular or areligious institutional culture",
+        "Needs a large, urban campus with extensive walkable access",
+        "Prefers a more politically progressive or mixed campus culture",
+        "Wants USC or UCLA's larger alumni network and brand scale"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a secular institutional culture",
+        "Students who want a larger, more urban campus setting",
+        "Students uncomfortable with Pepperdine's more conservative campus culture"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low to Moderate",
+      "notes": "Pepperdine does not formally impact most majors at the undergraduate level, though the International Business program and the pre-law pipeline into the Straus Institute carry informal competitive pressure given their national reputations."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "International Studies",
+        "Sports Medicine",
+        "Public Relations",
+        "Advertising",
+        "Political Science (School of Public Policy track)"
+      ],
+      "hiddenCareerPipelines": [
+        "Dispute Resolution and Mediation Law",
+        "International Business (via owned-campus network)",
+        "Entertainment Industry Communications",
+        "Federal Policy (DC program)",
+        "Christian Nonprofit and Ministry Leadership"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Major Los Angeles entertainment and media companies",
+        "Top law firms nationally (via Straus Institute reputation)",
+        "International businesses tied to Pepperdine's owned-campus network",
+        "Christian nonprofit and ministry organizations"
+      ],
+      "overlookedStrengths": [
+        "The Straus Institute for Dispute Resolution is genuinely the top-ranked program of its kind in the country, an elite credential most families never discover.",
+        "Pepperdine's owned-campus international network (London, Florence, Buenos Aires, Shanghai, Washington DC) is more extensive than almost any peer university's study-abroad program.",
+        "The School of Public Policy's small, DC-embedded program gives undergraduates direct federal policy exposure.",
+        "Pepperdine's Malibu campus, while expensive, is genuinely one of the most distinctive settings of any American university."
+      ],
+      "sleeperIndustries": [
+        "Dispute Resolution and Mediation",
+        "International Business",
+        "Federal Policy",
+        "Christian Nonprofit Leadership"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 76,
+      "mentorshipDensity": 74,
+      "executiveAccess": 68,
+      "internshipNetwork": 76,
+      "familyBusinessExposure": 46,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 70,
+      "boardMemberDensity": 62
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Law (Dispute Resolution)",
+        "International Business",
+        "Entertainment and Media",
+        "Christian Nonprofit and Ministry",
+        "Communication"
+      ],
+      "regionalEconomicDrivers": [
+        "Los Angeles Entertainment and Media",
+        "International Trade and Business",
+        "Legal Services",
+        "Nonprofit and Faith-Based Organizations"
+      ],
+      "topEmployers": [
+        "Major Los Angeles entertainment and media companies",
+        "Top national law firms",
+        "International businesses via the study-abroad network",
+        "Christian nonprofit and ministry organizations"
+      ],
+      "emergingIndustries": [
+        "International Dispute Resolution",
+        "Faith-Based Nonprofit Technology",
+        "Entertainment Technology"
+      ],
+      "startupDensity": "Low-Moderate",
+      "ventureCapitalAccess": 38,
+      "corporateHeadquartersDensity": 44,
+      "healthcareHubStrength": 46,
+      "innovationIndex": 58
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Los Angeles — Entertainment, Business, and Law",
+      "secondaryMarkets": [
+        "Washington DC",
+        "International — via owned-campus network"
+      ],
+      "alumniStrongholds": [
+        "Los Angeles CA",
+        "San Francisco CA",
+        "Washington DC"
+      ],
+      "relocationPatterns": [
+        "The majority of graduates remain in Los Angeles, entering entertainment, business, and law.",
+        "A meaningful cohort enters law specifically, reinforced by the Straus Institute's national reputation.",
+        "Washington DC draws graduates through the School of Public Policy's program.",
+        "A distinctive international cohort enters global business roles tied to Pepperdine's owned-campus network."
+      ],
+      "regionalInfluenceScore": 78,
+      "nationalReachScore": 62,
+      "internationalReachScore": 58
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 16,
+      "studentOrganizationStrength": 76,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 66,
+      "civicEngagement": 74
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 22,
+        "notes": "A modest, secondary pathway tied to LA's consumer and lifestyle brand proximity."
+      },
+      "healthWellness": {
+        "strength": 34,
+        "notes": "A modest, secondary pathway; not a defining institutional strength."
+      },
+      "nutraceuticals": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 40,
+        "notes": "A real, secondary pathway through International Business and LA's consumer brand economy."
+      },
+      "outdoorIndustry": {
+        "strength": 30,
+        "notes": "A modest pathway tied to Malibu's beach and outdoor-adjacent culture."
+      },
+      "sportsBusiness": {
+        "strength": 34,
+        "notes": "A modest, secondary pathway; Pepperdine's athletics program is smaller-scale than most LA peers."
+      },
+      "entertainmentMedia": {
+        "strength": 58,
+        "notes": "A real, solid pathway through Communication and LA entertainment industry proximity, smaller than USC or LMU's dedicated production programs."
+      },
+      "ventureCapital": {
+        "strength": 34,
+        "notes": "A modest, secondary pathway relative to Pepperdine's core law and business identity."
+      },
+      "privateEquity": {
+        "strength": 42,
+        "notes": "A real, secondary pathway through Graziadio Business School."
+      },
+      "investmentBanking": {
+        "strength": 44,
+        "notes": "A real, secondary pathway, smaller than Pepperdine's dominant law and international business pipelines."
+      },
+      "consulting": {
+        "strength": 52,
+        "notes": "A real, growing pathway through Graziadio Business School."
+      },
+      "medicine": {
+        "strength": 26,
+        "notes": "A minor pathway; Pepperdine has no medical school and limited pre-med infrastructure relative to peer institutions."
+      },
+      "healthcareAdministration": {
+        "strength": 28,
+        "notes": "Minimal institutional emphasis."
+      },
+      "defense": {
+        "strength": 20,
+        "notes": "Not a meaningful institutional pathway."
+      },
+      "realEstate": {
+        "strength": 44,
+        "notes": "A real, secondary pathway tied to Malibu and LA's high-value real estate market."
+      },
+      "luxuryBrands": {
+        "strength": 38,
+        "notes": "A real, secondary pathway tied to Malibu's affluent setting and LA's consumer brand economy."
+      },
+      "entrepreneurship": {
+        "strength": 50,
+        "notes": "A real, growing pathway through Graziadio Business School, though secondary to Pepperdine's core law and international business identity."
+      },
+      "technology": {
+        "strength": 36,
+        "notes": "A modest, secondary pathway; Pepperdine is not positioned as a technology-recruiting campus."
+      },
+      "publicPolicy": {
+        "strength": 56,
+        "notes": "A real, distinctive pathway through the School of Public Policy's DC-embedded program."
+      },
+      "nonprofitLeadership": {
+        "strength": 62,
+        "notes": "A real, distinctive pathway reinforced by Pepperdine's Christian institutional identity and ministry-adjacent career placement."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 48,
+      "firstGenerationSupport": 52,
+      "wealthCreationPotential": 74,
+      "familyBusinessPipelineStrength": 48
+    },
+    "futureResilience": {
+      "aiResistance": 72,
+      "automationResistance": 74,
+      "adaptabilityScore": 74,
+      "interdisciplinaryStrength": 70,
+      "futureReadiness": 74,
+      "entrepreneurialFlexibility": 66,
+      "lifelongLearningCulture": 74,
+      "innovationCapacity": 62
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 74,
+      "communityLeadershipPotential": 78,
+      "geographicMobility": 76,
+      "workLifeBalancePotential": 76,
+      "purposeAlignment": 84,
+      "familyFormationSupport": 82,
+      "personalDevelopmentPotential": 80,
+      "careerOptionality": 72,
+      "longTermLifeSatisfaction": 82
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 62,
+      "networkMoat": 70,
+      "geographicMoat": 82,
+      "industryMoat": 70,
+      "alumniMoat": 74,
+      "brandDurability": 74,
+      "overallMoatScore": 72
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 58,
+      "returnerScore": 46,
+      "stewardScore": 46,
+      "navigatorScore": 68,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "la_concentration_with_international_dispersal_via_study_abroad"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": 20,
+        "type": "No formal Hillel; small informal Jewish student presence"
+      },
+      "estimatedJewishUndergraduates": 100,
+      "jewishStudentPercentage": "~3%",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Minimal",
+      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified. Pepperdine's explicit Church of Christ institutional identity and chapel requirements make it a less common choice for Jewish students relative to secular or Catholic LA peers — flag for confirmation before publishing."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Seaver College Honors Program",
+      "strength": 60,
+      "notes": "Provides smaller seminars and priority course access within Seaver College's broader undergraduate structure."
+    }
+  }
+}
 
+if (typeof window !== 'undefined') window.UNIVERSITY_DB_V5 = UNIVERSITY_DB_V5;
 if (typeof module !== "undefined") module.exports = { UNIVERSITY_DB_V5 };

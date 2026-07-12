@@ -1,7 +1,15 @@
 /**
  * VECTOR Lifescape — Geographic Industry Intelligence Database
- * Pass 4: New York Metro + Boston + DC Corridor — 30 ZIP codes
- * Version: 1.1 — docstring count corrected 2026-07-10 (previously claimed 20)
+ * Pass 4: New York Metro + Boston + DC Corridor + Loudoun County + DC Proper — 34 ZIP codes
+ * Version: 1.3 — 2026-07-11: added first DC-proper (200xx) coverage —
+ * Southwest DC (20024, Navy Yard/NAVSEA + federal agency HQs) and Downtown/
+ * K Street (20005, consulting downtown offices + Big Four DC offices +
+ * lobbying). All prior "DC Corridor" entries were VA/MD suburbs only.
+ * Corrected DARPA's location to Arlington, VA (22201) rather than DC proper
+ * — DARPA HQ is genuinely in Arlington's Ballston neighborhood. No
+ * manufacturing cluster added anywhere in DC proper: the District has
+ * essentially no industrial manufacturing base; defense manufacturing
+ * primes remain correctly placed in Virginia.
  */
 
 const GEO_INDUSTRY_DB_EAST = {
@@ -594,8 +602,8 @@ const GEO_INDUSTRY_DB_EAST = {
         name: "Defense & Intelligence Contracting",
         naics: 92,
         distance: "Local",
-        anchor_employers: ["The Pentagon", "Boeing", "Lockheed Martin regional offices"],
-        student_connection: "Arlington sits directly across the river from the Pentagon — one of the highest concentrations of defense and intelligence careers in the country runs through this single county."
+        anchor_employers: ["The Pentagon", "DARPA (Defense Advanced Research Projects Agency, HQ)", "Boeing", "Lockheed Martin regional offices"],
+        student_connection: "Arlington sits directly across the river from the Pentagon — one of the highest concentrations of defense and intelligence careers in the country runs through this single county. DARPA's own headquarters is in Arlington's Ballston neighborhood, not downtown DC as many families assume — advanced defense research and next-generation technology development are a genuinely local pathway here."
       },
       {
         name: "Technology & Corporate HQ",
@@ -706,13 +714,6 @@ const GEO_INDUSTRY_DB_EAST = {
         distance: "Local",
         anchor_employers: ["National Geospatial-Intelligence Agency (NGA)", "Fort Belvoir"],
         student_connection: "Springfield hosts the National Geospatial-Intelligence Agency's headquarters directly — one of the most specialized intelligence-agency employment bases in the country."
-      },
-      {
-        name: "Federal Government & Policy",
-        naics: 92,
-        distance: "Local",
-        anchor_employers: ["federal agency support offices"],
-        student_connection: "Springfield's proximity to Fort Belvoir and NGA makes federal and defense-adjacent careers a genuine local pathway."
       }
     ]
   },
@@ -723,11 +724,11 @@ const GEO_INDUSTRY_DB_EAST = {
     county: "Fairfax",
     clusters: [
       {
-        name: "Federal Government & Policy",
-        naics: 92,
-        distance: "Local / 12 miles to DC",
-        anchor_employers: ["federal agency regional offices", "government contractors"],
-        student_connection: "Annandale's central Fairfax location makes it an accessible base for federal and government-adjacent careers across the DC metro without a premium Arlington or Alexandria price tag."
+        name: "Higher Education & Community College Access",
+        naics: 61,
+        distance: "Local",
+        anchor_employers: ["Northern Virginia Community College (Annandale Campus)"],
+        student_connection: "NOVA's Annandale Campus is the largest of its six campuses and the flagship of the largest community college in Virginia — a genuine, local higher-education anchor and a real transfer pathway into George Mason, UVA, and William & Mary for Annandale students."
       },
       {
         name: "Healthcare Systems",
@@ -745,11 +746,11 @@ const GEO_INDUSTRY_DB_EAST = {
     county: "Fairfax",
     clusters: [
       {
-        name: "Federal Government & Policy",
+        name: "Defense & Federal Commuter Base",
         naics: 92,
-        distance: "Local / 18 miles to DC",
-        anchor_employers: ["federal agency regional offices", "government contractors"],
-        student_connection: "Burke is a classic Fairfax County federal-commuter suburb — residents work across the full range of DC-area federal agencies and contractors."
+        distance: "6 miles — Fort Belvoir / Springfield",
+        anchor_employers: ["Fort Belvoir (Army installation)", "National Geospatial-Intelligence Agency (NGA, Springfield)"],
+        student_connection: "Burke is a residential, VRE-commuter community — its own genuine federal-career identity runs through Fort Belvoir and the National Geospatial-Intelligence Agency in neighboring Springfield, not a local employer inside Burke itself."
       }
     ]
   },
@@ -762,9 +763,9 @@ const GEO_INDUSTRY_DB_EAST = {
       {
         name: "Defense & Intelligence Contracting",
         naics: 92,
-        distance: "10 miles — Dulles corridor",
-        anchor_employers: ["defense contractors along the Dulles corridor"],
-        student_connection: "Centreville sits close enough to the Dulles Technology Corridor that defense and intelligence contracting careers remain genuinely accessible."
+        distance: "10 miles — Route 28 / Dulles Technology Corridor",
+        anchor_employers: ["ManTech International (Herndon HQ)", "Northrop Grumman (Chantilly campus)"],
+        student_connection: "Centreville sits close enough to the Route 28 / Dulles Technology Corridor — anchored by ManTech International's Herndon headquarters and Northrop Grumman's Chantilly campus — that defense and intelligence contracting careers remain genuinely accessible without a Reston or Tysons commute."
       }
     ]
   },
@@ -790,11 +791,11 @@ const GEO_INDUSTRY_DB_EAST = {
     county: "Falls Church City",
     clusters: [
       {
-        name: "Federal Government & Policy",
+        name: "Defense & Aerospace Corporate Headquarters",
         naics: 92,
-        distance: "Local / 7 miles to DC",
-        anchor_employers: ["federal agency regional offices", "government contractors"],
-        student_connection: "Falls Church is one of the closest-in Virginia suburbs to DC — a small, independent city with an outsized concentration of federal careers relative to its size."
+        distance: "Local",
+        anchor_employers: ["Northrop Grumman Corporation (corporate HQ)"],
+        student_connection: "Northrop Grumman's global corporate headquarters relocated to Falls Church in 2011 — one of the largest defense and aerospace contractors in the world is headquartered directly in this small, independent city, not a satellite office of a company based elsewhere."
       }
     ]
   },
@@ -853,6 +854,130 @@ const GEO_INDUSTRY_DB_EAST = {
         distance: "5 miles east — Washington DC",
         anchor_employers: ["The Washington Post", "NPR (headquarters)", "Politico", "National Geographic"],
         student_connection: "The Washington Post — one of the most significant newspapers in the world — is headquartered in DC, 5 miles east. NPR, National Geographic, and Politico are also DC-based, making Washington one of the most significant centers of journalism and media in the country."
+      }
+    ]
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // LOUDOUN COUNTY — DATA CENTER ALLEY
+  // NOTE ON CONFIDENCE: Ashburn entries (AWS, Equinix, Janelia Research
+  // Campus, Telos Corporation) are high-confidence, widely documented
+  // facts. The "~70% of world internet traffic" figure is a commonly
+  // cited Loudoun County economic-development statistic, not an
+  // independently verified count -- framed below as "widely cited," per
+  // the same confidence-disclosure standard used elsewhere in this file.
+  // ─────────────────────────────────────────────────────────────
+
+  "20147": {
+    zip: "20147",
+    neighborhood: "Ashburn",
+    county: "Loudoun",
+    clusters: [
+      {
+        name: "Data Infrastructure & Cloud Computing",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Amazon Web Services (AWS East data center campus)", "Equinix", "Iron Mountain Data Centers"],
+        student_connection: "Ashburn is globally known as \"Data Center Alley\" — AWS's largest data center campus anchors a corridor that Loudoun County's own economic development office describes as carrying a widely cited estimate of roughly 70% of the world's internet traffic. Cloud infrastructure, data center engineering, and network operations are genuine local careers here, not abstractions."
+      },
+      {
+        name: "Biomedical & Neuroscience Research",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["Janelia Research Campus (Howard Hughes Medical Institute)"],
+        student_connection: "The Howard Hughes Medical Institute's Janelia Research Campus — one of the most distinctive basic-science research institutions in the country — is headquartered directly in Ashburn, giving Loudoun students a genuine, world-class neuroscience and biomedical research anchor most students would not expect in a data-center suburb."
+      },
+      {
+        name: "Cybersecurity",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Telos Corporation (Ashburn HQ)"],
+        student_connection: "Telos Corporation, a cybersecurity and secure-networks company serving federal and defense clients, is headquartered in Ashburn — a direct, local extension of Northern Virginia's broader cybersecurity and defense-technology corridor."
+      }
+    ]
+  },
+
+  "20176": {
+    zip: "20176",
+    neighborhood: "Leesburg",
+    county: "Loudoun",
+    clusters: [
+      {
+        name: "County Government & Regional Services",
+        naics: 92,
+        distance: "Local",
+        anchor_employers: ["Loudoun County Government (county seat)"],
+        student_connection: "Leesburg is the seat of Loudoun County government, one of the fastest-growing and wealthiest counties in the country — public administration, planning, and regional-government careers have a genuine local base here distinct from Ashburn's data-center corridor a few miles east."
+      },
+      {
+        name: "Data Infrastructure & Cloud Computing (corridor)",
+        naics: 51,
+        distance: "8 miles — Ashburn",
+        anchor_employers: ["Amazon Web Services", "Equinix"],
+        student_connection: "Leesburg sits close enough to Ashburn's Data Center Alley that Loudoun's defining tech-infrastructure economy remains a short, genuine commute rather than a distant abstraction."
+      }
+    ]
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // WASHINGTON DC PROPER
+  // NOTE: This is the first DC-proper (200xx) coverage in this file — all
+  // prior "DC Corridor" entries were Virginia/Maryland suburbs. No
+  // manufacturing cluster is included here on purpose: DC proper has
+  // essentially no industrial manufacturing base (it is a federal/services
+  // economy); defense manufacturing primes (Northrop Grumman, Lockheed,
+  // General Dynamics) remain correctly placed in the Virginia section.
+  // DARPA itself is also correctly placed in Arlington, VA (22201), not
+  // here — see that entry's update.
+  // ─────────────────────────────────────────────────────────────
+
+  "20024": {
+    zip: "20024",
+    neighborhood: "Southwest Waterfront / Navy Yard",
+    county: "District of Columbia",
+    clusters: [
+      {
+        name: "Naval & Defense Engineering",
+        naics: 92,
+        distance: "Local",
+        anchor_employers: ["Washington Navy Yard", "Naval Sea Systems Command (NAVSEA, HQ)"],
+        student_connection: "The Washington Navy Yard is a genuine, working naval installation inside DC itself — NAVSEA, the Navy's ship design, acquisition, and engineering command, is headquartered here. This is a real, distinct defense-engineering pathway from the Pentagon/Arlington contractor corridor across the river — naval architecture, systems engineering, and acquisition careers anchored directly in the District."
+      },
+      {
+        name: "Federal Agency Headquarters",
+        naics: 92,
+        distance: "Local",
+        anchor_employers: ["U.S. Department of Energy (Forrestal Building, HQ)", "U.S. Department of Transportation (HQ)", "Federal Aviation Administration (HQ)"],
+        student_connection: "Southwest DC hosts several full federal department headquarters directly, not regional offices — energy policy, transportation policy, and aviation safety careers all have a genuine, walkable home here."
+      }
+    ]
+  },
+
+  "20005": {
+    zip: "20005",
+    neighborhood: "Downtown / K Street / Farragut Square",
+    county: "District of Columbia",
+    clusters: [
+      {
+        name: "Management Consulting (Downtown Offices)",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["McKinsey & Company (DC office)", "Boston Consulting Group (DC office)", "IBM Consulting (federal practice)"],
+        student_connection: "Unlike Deloitte's Rosslyn headquarters across the river, McKinsey and BCG's DC presence here is a downtown office, not a national HQ — but it's a genuine, large-scale one, given how much of both firms' federal and public-sector consulting work runs through Washington rather than New York or Boston."
+      },
+      {
+        name: "Tax, Audit & Professional Services (Downtown Offices)",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["PwC (DC office)", "EY (DC office)", "KPMG (DC office)"],
+        student_connection: "PwC, EY, and KPMG are all headquartered in New York, not Washington — but each maintains a substantial DC office here, driven heavily by federal audit, government contracting compliance, and public-sector advisory work that has no real equivalent in their New York headquarters' client base."
+      },
+      {
+        name: "Lobbying & Government Affairs",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["Brownstein Hyatt Farber Schreck", "Squire Patton Boggs", "BGR Group"],
+        student_connection: "K Street is the literal, physical center of the American lobbying industry — this ZIP is where the term comes from. Government affairs and lobbying careers are about as distinctly Washington as any career path in the country."
       }
     ]
   },

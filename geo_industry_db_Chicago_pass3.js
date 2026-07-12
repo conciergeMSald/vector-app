@@ -164,6 +164,13 @@ const GEO_INDUSTRY_DB_CHICAGO = {
         distance: "5 miles",
         anchor_employers: ["NorthShore Glenbrook Hospital", "Northwestern Medicine", "Advocate Health Care"],
         student_connection: "NorthShore University HealthSystem — one of the most respected regional health systems in Illinois — operates major facilities within 5 miles of Glencoe."
+      },
+      {
+        name: "Private Equity & Venture Capital",
+        naics: 52,
+        distance: "20 miles south — Chicago Loop",
+        anchor_employers: ["GTCR", "Madison Dearborn Partners", "Thoma Bravo (Chicago office)"],
+        student_connection: "Chicago's private equity industry — GTCR and Madison Dearborn Partners have both been headquartered in the Loop since the 1980s — draws as heavily on North Shore families as the banking and legal sectors do. Glencoe is a residential, commuter community: the careers that support it sit downtown, not locally, the same as its finance and legal clusters above."
       }
     ]
   },
@@ -523,6 +530,20 @@ const GEO_INDUSTRY_DB_CHICAGO = {
         distance: "Local / 5 miles south",
         anchor_employers: ["Tribune Publishing", "Encyclopaedia Britannica (Chicago)", "Second City (Chicago)"],
         student_connection: "Chicago has one of the richest arts and media ecosystems in the US — Second City, the comedy institution that launched Bill Murray, Tina Fey, and Stephen Colbert, is 2 miles north. The city's theater, journalism, and publishing industries are internationally recognized."
+      },
+      {
+        name: "Private Equity & Venture Capital",
+        naics: 52,
+        distance: "5 miles south — Chicago Loop",
+        anchor_employers: ["GTCR", "Madison Dearborn Partners", "Thoma Bravo (Chicago office)"],
+        student_connection: "Chicago is one of the oldest and deepest private equity markets outside New York — GTCR and Madison Dearborn Partners are both headquartered in the Loop, 5 miles south, and have been investing since the 1980s. Lincoln Park's finance families draw as heavily from private equity and buyout careers as they do from banking and trading."
+      },
+      {
+        name: "Higher Education",
+        naics: 61,
+        distance: "Local",
+        anchor_employers: ["DePaul University (Lincoln Park campus)"],
+        student_connection: "DePaul University's main campus sits directly inside Lincoln Park — the largest Catholic university in the country by enrollment, and a genuine, walkable higher-education presence for a student growing up here, not a distant institution."
       }
     ]
   },
