@@ -19,6 +19,8 @@
 <script src="geo_industry_db_NY_Boston_DC_pass4.js"></script>
 <script src="geo_industry_db_Atlanta_pass5.js"></script>
 <script src="geo_industry_db_Dallas_pass6.js"></script>
+<script src="geo_industry_db_RockyMountains_pass7.js"></script>
+<script src="geo_industry_db_PacificNW_pass8.js"></script>
 <script src="geo_zip_to_megaregion.js"></script>
 <script src="megaRegionDB_futureResilience.js"></script>
 <script src="naics_to_industry_pathways.js"></script>
@@ -683,7 +685,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* Full report sections */
 .portrait-text{font-size:15px;color:var(--ink2);line-height:2;font-weight:300;}
 .industry-block{padding:1.25rem 0;margin-bottom:0;background:transparent;border:none;border-bottom:0.5px solid var(--rule);}.industry-block:last-child{border-bottom:none;}
-.industry-name{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.industry-name{font-family:var(--serif);font-size:19px;font-weight:300;color:var(--ink);margin-bottom:6px;}
 .industry-why{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;margin-bottom:1rem;}
 .career-pills{display:block;margin-bottom:.75rem;padding:16px 20px;border:1px solid var(--gold);background:var(--color-surface);}
 .career-pill{font-size:15px;color:var(--ink3);display:inline;}
@@ -954,7 +956,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <script>
   (function(){
     var SUPABASE_URL  = 'https://pbtyanwkmbrcumwunxrv.supabase.co';
-    var SUPABASE_ANON = 'sb_publishable_1-441ulmvTM1kayxgo-C2g_ywYOg1Tc';
+    var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBidHlhbndrbWJyY3Vtd3VueHJ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMTU3MDIsImV4cCI6MjA2Mjg5MTcwMn0.kSzlOBElQlB5gV_OLAkUuOiIOmomZ4pvtx7tJNJbhGc';
 
     window.sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
       auth: {
@@ -1938,7 +1940,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
   <!-- Report header -->
   <div class="report-header">
-    <div class="report-eyebrow" id="report-eyebrow">VECTOR</div>
+    <div class="report-eyebrow" id="report-eyebrow" style="display:none;">VECTOR</div>
     <div class="report-name" id="report-name"></div>
     <div class="report-opening">This is what we found in this moment, based on what you shared. Your Lifescape is not fixed. It evolves when you do.</div>
   </div>
@@ -6888,7 +6890,7 @@ function renderFullReport(profile, callAData, callBData, callCData, essayParsed)
         var ccPath = dbEntry && dbEntry.institutionNarrative && dbEntry.institutionNarrative.ccTransferPathway;
         var hasCCPath = ccPath && ccPath.hasCCPathway && ccPath.ccFeederNames && ccPath.ccFeederNames.length > 0;
         var ccNote = hasCCPath
-          ? '<div class="card-cc-note"><strong style="color:var(--gold);font-weight:600;">Pathway Hack</strong> — '
+          ? '<div class="card-cc-note" style="font-weight:600;"><strong style="color:var(--gold);">Pathway Hack</strong> — '
             + ccPath.ccFeederNames.slice(0,2).join(', ') + ' → ' + school.name
             + (ccPath.estimatedSavingsRange ? '. Savings: ' + ccPath.estimatedSavingsRange + '.' : '') + '</div>'
           : '';
@@ -7153,7 +7155,9 @@ function renderPossibleVectors(profile) {
     typeof GEO_INDUSTRY_DB_CHICAGO !== 'undefined' ? { data: GEO_INDUSTRY_DB_CHICAGO } : null,
     typeof GEO_INDUSTRY_DB_EAST !== 'undefined' ? { data: GEO_INDUSTRY_DB_EAST } : null,
     typeof GEO_INDUSTRY_DB_ATLANTA !== 'undefined' ? { data: GEO_INDUSTRY_DB_ATLANTA } : null,
-    typeof GEO_INDUSTRY_DB_DALLAS !== 'undefined' ? { data: GEO_INDUSTRY_DB_DALLAS } : null
+    typeof GEO_INDUSTRY_DB_DALLAS !== 'undefined' ? { data: GEO_INDUSTRY_DB_DALLAS } : null,
+    typeof GEO_INDUSTRY_DB_ROCKYMOUNTAINS !== 'undefined' ? { data: GEO_INDUSTRY_DB_ROCKYMOUNTAINS } : null,
+    typeof GEO_INDUSTRY_DB_PACIFICNW !== 'undefined' ? { data: GEO_INDUSTRY_DB_PACIFICNW } : null
   ].filter(Boolean);
 
   var opts = {
@@ -7167,6 +7171,50 @@ function renderPossibleVectors(profile) {
     schoolCap: 3
   };
 
+  // ── REGION FILTER ──
+  // Possible Vectors previously showed every megaregion with NAICS coverage
+  // regardless of what regions the family actually selected — a student
+  // restricted to "Midwest" would still see Southern California or Texas
+  // Triangle results. This maps the 9 real UI region IDs to the resolver's
+  // actual megaregion output values. As of 2026-07-13, Rocky Mountains
+  // (Denver/Boulder/Golden/Colorado Springs + Salt Lake/Provo/Lehi) and
+  // Pacific Northwest (Seattle/Bellevue/Redmond) are built and covered.
+  // Las Vegas is tagged its own "Southwest" megaregion (distinct from
+  // Texas Triangle) per the 2026-07-13 decision, even though it lives in
+  // the same source file as the Rocky Mountains ZIPs.
+  // KNOWN REMAINING GAP: Portland/Oregon has no dedicated ZIP coverage yet
+  // — Pacific Northwest currently means Seattle-area only.
+  var REGION_TO_MEGAREGION = {
+    'new_england':     [{ megaregion: 'Northeast', subgroup: null }],
+    'northeast':       [{ megaregion: 'Northeast', subgroup: null }],
+    'mid_atlantic':    [{ megaregion: 'Piedmont Atlantic', subgroup: 'Washington D.C. area' }],
+    'southeast':       [{ megaregion: 'Piedmont Atlantic', subgroup: 'Atlanta' }],
+    'midwest':         [{ megaregion: 'Great Lakes', subgroup: null }],
+    'california':      [{ megaregion: 'Northern California', subgroup: null }, { megaregion: 'Southern California', subgroup: null }],
+    'southwest':       [{ megaregion: 'Texas Triangle', subgroup: null }, { megaregion: 'Southwest', subgroup: null }],
+    'rocky_mountains': [{ megaregion: 'Rocky Mountains', subgroup: null }],
+    'pacific_nw':      [{ megaregion: 'Pacific Northwest', subgroup: null }]
+    // military_academies intentionally omitted — it's an interest flag,
+    // not a geographic constraint, so it never restricts megaregion results.
+  };
+
+  var _selectedRegions = (typeof COLLEGE_PREFS !== 'undefined' && Array.isArray(COLLEGE_PREFS.regions)) ? COLLEGE_PREFS.regions : [];
+  var _geoRegions = _selectedRegions.filter(function(r) { return r !== 'military_academies'; });
+  var _noRegionRestriction = _geoRegions.length === 0 || _geoRegions.indexOf('anywhere') !== -1;
+  var _allowedMegaregions = null; // null = no restriction, show everything
+  if (!_noRegionRestriction) {
+    _allowedMegaregions = [];
+    _geoRegions.forEach(function(rid) {
+      (REGION_TO_MEGAREGION[rid] || []).forEach(function(pair) { _allowedMegaregions.push(pair); });
+    });
+  }
+  function _megaregionAllowed(megaregion, subgroup) {
+    if (_allowedMegaregions === null) return true;
+    return _allowedMegaregions.some(function(pair) {
+      return pair.megaregion === megaregion && (pair.subgroup === null || pair.subgroup === subgroup);
+    });
+  }
+
   var allBlocks = [];
   majorLabels.forEach(function(majorLabel) {
     var resolved;
@@ -7175,6 +7223,7 @@ function renderPossibleVectors(profile) {
     if (!resolved || !resolved.found || !resolved.results.length) return;
 
     resolved.results.forEach(function(r) {
+      if (!_megaregionAllowed(r.megaregion, r.subgroup)) return; // outside selected regions
       var label = r.subgroup ? r.subgroup : r.megaregion;
       var employers = r.anchor_employers.slice(0, 4).join(', ');
       var schoolsLine = (r.schoolsDataAvailable && r.aligned_schools.length)

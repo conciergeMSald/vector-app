@@ -72,6 +72,23 @@ for (const { zip } of extractZipCountyPairs('geo_industry_db_BayArea_pass2.js'))
   crosswalk[zip] = { megaregion: 'Northern California', pass: 'Bay Area (pass 2) - COMPLETE' };
 }
 
+// Rocky Mountains (Denver/Boulder/Golden/Colorado Springs + Salt Lake/
+// Provo/Lehi) -> Rocky Mountains, EXCEPT Las Vegas (89109) which is tagged
+// Southwest per the 2026-07-13 region-mapping decision even though it
+// lives in this same file.
+for (const { zip } of extractZipCountyPairs('geo_industry_db_RockyMountains_pass7.js')) {
+  if (zip === '89109') {
+    crosswalk[zip] = { megaregion: 'Southwest', pass: 'Rocky Mountains (pass 7) - Las Vegas special-cased' };
+  } else {
+    crosswalk[zip] = { megaregion: 'Rocky Mountains', pass: 'Rocky Mountains (pass 7)' };
+  }
+}
+
+// Pacific Northwest (Seattle/Bellevue/Redmond) -> Pacific Northwest
+for (const { zip } of extractZipCountyPairs('geo_industry_db_PacificNW_pass8.js')) {
+  crosswalk[zip] = { megaregion: 'Pacific Northwest', pass: 'Pacific Northwest (pass 8)' };
+}
+
 const output = `/**
  * VECTOR Lifescape — GEO_ZIP_TO_MEGAREGION crosswalk
  * Generated ${new Date().toISOString().slice(0,10)} per MAJOR-REGIONAL-INTEGRATION-001 v4, Section 3.
@@ -79,9 +96,11 @@ const output = `/**
  *
  * COVERAGE STATUS:
  *   - LA Basin, Chicago, Dallas-Fort Worth, Atlanta, Bay Area,
- *     NY/Boston/DC+Loudoun: COMPLETE — 6 of 11 megaregions, 145 ZIPs
- *   - 5 of 11 megaregions have zero coverage: Florida, Gulf Coast, Front
- *     Range, Arizona Sun Corridor, Cascadia.
+ *     NY/Boston/DC+Loudoun+DC-proper, Rocky Mountains (CO/UT), Pacific
+ *     Northwest (Seattle/Bellevue/Redmond), Southwest (Texas Triangle +
+ *     Las Vegas): 8 of 11 megaregions covered.
+ *   - 3 of 11 megaregions have zero coverage: Florida, Gulf Coast,
+ *     Cascadia (Portland/Oregon still open — only Seattle/WA built so far).
  */
 
 const GEO_ZIP_TO_MEGAREGION = ${JSON.stringify(crosswalk, null, 2)};

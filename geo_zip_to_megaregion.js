@@ -1,13 +1,15 @@
 /**
  * VECTOR Lifescape — GEO_ZIP_TO_MEGAREGION crosswalk
- * Generated 2026-07-12 per MAJOR-REGIONAL-INTEGRATION-001 v4, Section 3.
+ * Generated 2026-07-13 per MAJOR-REGIONAL-INTEGRATION-001 v4, Section 3.
  * Generated programmatically from the actual pass files — not hand-typed.
  *
  * COVERAGE STATUS:
  *   - LA Basin, Chicago, Dallas-Fort Worth, Atlanta, Bay Area,
- *     NY/Boston/DC+Loudoun: COMPLETE — 6 of 11 megaregions, 145 ZIPs
- *   - 5 of 11 megaregions have zero coverage: Florida, Gulf Coast, Front
- *     Range, Arizona Sun Corridor, Cascadia.
+ *     NY/Boston/DC+Loudoun+DC-proper, Rocky Mountains (CO/UT), Pacific
+ *     Northwest (Seattle/Bellevue/Redmond), Southwest (Texas Triangle +
+ *     Las Vegas): 8 of 11 megaregions covered.
+ *   - 3 of 11 megaregions have zero coverage: Florida, Gulf Coast,
+ *     Cascadia (Portland/Oregon still open — only Seattle/WA built so far).
  */
 
 const GEO_ZIP_TO_MEGAREGION = {
@@ -467,6 +469,38 @@ const GEO_ZIP_TO_MEGAREGION = {
     "megaregion": "Texas Triangle",
     "pass": "Dallas-Fort Worth (pass 6)"
   },
+  "80202": {
+    "megaregion": "Rocky Mountains",
+    "pass": "Rocky Mountains (pass 7)"
+  },
+  "80301": {
+    "megaregion": "Rocky Mountains",
+    "pass": "Rocky Mountains (pass 7)"
+  },
+  "80401": {
+    "megaregion": "Rocky Mountains",
+    "pass": "Rocky Mountains (pass 7)"
+  },
+  "80903": {
+    "megaregion": "Rocky Mountains",
+    "pass": "Rocky Mountains (pass 7)"
+  },
+  "84043": {
+    "megaregion": "Rocky Mountains",
+    "pass": "Rocky Mountains (pass 7)"
+  },
+  "84101": {
+    "megaregion": "Rocky Mountains",
+    "pass": "Rocky Mountains (pass 7)"
+  },
+  "84604": {
+    "megaregion": "Rocky Mountains",
+    "pass": "Rocky Mountains (pass 7)"
+  },
+  "89109": {
+    "megaregion": "Southwest",
+    "pass": "Rocky Mountains (pass 7) - Las Vegas special-cased"
+  },
   "90024": {
     "megaregion": "Southern California",
     "pass": "LA Basin (pass 1)"
@@ -634,6 +668,26 @@ const GEO_ZIP_TO_MEGAREGION = {
   "95070": {
     "megaregion": "Northern California",
     "pass": "Bay Area (pass 2) - COMPLETE"
+  },
+  "98004": {
+    "megaregion": "Pacific Northwest",
+    "pass": "Pacific Northwest (pass 8)"
+  },
+  "98052": {
+    "megaregion": "Pacific Northwest",
+    "pass": "Pacific Northwest (pass 8)"
+  },
+  "98101": {
+    "megaregion": "Pacific Northwest",
+    "pass": "Pacific Northwest (pass 8)"
+  },
+  "98109": {
+    "megaregion": "Pacific Northwest",
+    "pass": "Pacific Northwest (pass 8)"
+  },
+  "98121": {
+    "megaregion": "Pacific Northwest",
+    "pass": "Pacific Northwest (pass 8)"
   },
   "06830": {
     "megaregion": "Northeast",
