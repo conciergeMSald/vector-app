@@ -3882,6 +3882,10 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 76,
         "notes": "Extension programs, agricultural outreach, youth development, and civic engagement cultivate nonprofit and community leadership throughout Oklahoma and the broader region."
+      },
+      "energy": {
+        "strength": 90,
+        "notes": "A very strong, defining pathway — energy is mentioned as a modifier across six other keys (privateEquity, investmentBanking, consulting, realEstate, entrepreneurship, publicPolicy) with no dedicated signal until now. OSU shares Oklahoma's genuine energy-industry-first regional economy with OU. (Added 2026-07-12.)"
       }
     },
     "wealthMobility": {
@@ -8465,6 +8469,10 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 56,
         "notes": "Community-oriented culture and civic engagement create solid nonprofit pathways in Oklahoma."
+      },
+      "energy": {
+        "strength": 94,
+        "notes": "The single defining institutional strength — OU's own privateEquity and entrepreneurship notes already described energy as regionally dominant ('the strongest corridor... unlike any other industry') before this key existed to hold that signal properly. (Added 2026-07-12.)"
       }
     },
     "wealthMobility": {
@@ -8860,6 +8868,10 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 62,
         "notes": "Louisiana's extensive nonprofit and community development sector, particularly in New Orleans post-Katrina rebuilding, creates active pathways."
+      },
+      "energy": {
+        "strength": 84,
+        "notes": "A very strong, distinctive pathway — LSU's petroleum engineering program feeds directly into the Gulf Coast's oil and gas industry, reinforced by direct proximity to Louisiana's refining and offshore energy corridor. (Added 2026-07-12: previously scattered as a modifier inside privateEquity, investmentBanking, consulting, and entrepreneurship notes, none of which represented it as LSU's own real, distinctive strength.)"
       }
     },
     "wealthMobility": {
@@ -14600,7 +14612,8 @@ const UNIVERSITY_DB_V5 = {
     "consulting": { "strength": 82, "notes": "Strong Texas Triangle business placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
     "investmentBanking": { "strength": 74, "notes": "Secondary Texas Triangle finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
     "nonprofitLeadership": { "strength": 84, "notes": "Genuine Truett Seminary leadership pipeline. (Remapped 2026-07-12 from non-standard key 'religiousLeadership' — closest available standard key for mission-driven leadership training.)" },
-    "publicPolicy": { "strength": 74, "notes": "Real energy/legal regulatory ties via central Texas position. (Remapped 2026-07-12 from non-standard key 'energyLegal'.)" }
+    "publicPolicy": { "strength": 60, "notes": "Real legal and regulatory policy ties via central Texas position, particularly energy regulation. (Corrected 2026-07-12: split from the original 'energyLegal' remap — the energy-industry portion now has its own dedicated key below.)" },
+    "energy": { "strength": 68, "notes": "A real, secondary pathway — Waco sits inside the broader Texas Triangle energy corridor, with real alumni ties into Texas oil, gas, and energy regulatory law. (Added 2026-07-12: this was literally the other half of the original non-standard 'energyLegal' key, previously folded entirely into publicPolicy.)" }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -22297,7 +22310,8 @@ const UNIVERSITY_DB_V5 = {
     },
     "industryPathways": {
     "technology": { "strength": 90, "notes": "Direct Austin tech ecosystem pipeline." },
-    "entertainmentMedia": { "strength": 94, "notes": "Elite #1-ranked public communications pipeline. (Remapped 2026-07-12 from non-standard key 'communications'.)" }
+    "entertainmentMedia": { "strength": 94, "notes": "Elite #1-ranked public communications pipeline. (Remapped 2026-07-12 from non-standard key 'communications'.)" },
+    "energy": { "strength": 62, "notes": "A real, secondary pathway — the Cockrell School of Engineering has a genuine petroleum engineering program, and Texas's broader energy corridor (Houston, Permian Basin) recruits UT Austin engineering and business graduates directly. (Added 2026-07-12. NOTE: this entry only has 2 industryPathways keys total, far thinner than peer flagship publics — worth a fuller remap pass beyond just this energy addition.)" }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -43025,6 +43039,10 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 38,
         "notes": "A modest, secondary pathway relative to A&M's core corporate, military, and agricultural placement."
+      },
+      "energy": {
+        "strength": 82,
+        "notes": "A very strong, distinctive pathway — the College of Engineering's industrial and energy technology tracks feed directly into Texas's oil, gas, and petrochemical corridor. (Added 2026-07-12: previously scattered as a modifier across privateEquity, investmentBanking, consulting, entrepreneurship, and technology notes with no dedicated signal.)"
       }
     },
     "wealthMobility": {
@@ -48005,6 +48023,4470 @@ const UNIVERSITY_DB_V5 = {
   "honorsCollege": {
     "exists": true, "name": "Barrick Honors College", "strength": 58,
     "notes": "Provides smaller seminars and priority course access within UNLV's very large scale; less centralized than a dedicated honors college like ASU's Barrett."
+  }
+}
+,
+  "University of Minnesota": {
+  "institutionNarrative": {
+    "name": "University of Minnesota",
+    "location": "Minneapolis-Saint Paul, Minnesota",
+    "region": "Great Lakes",
+    "archetype": "The Twin Cities Corporate Headquarters Pipeline — Big Ten Scale With a Genuine Fortune 500 Backyard",
+    "oneSentenceSummary": "Minnesota combines Big Ten research-university scale with an unusually dense concentration of Fortune 500 corporate headquarters in its own backyard — Target, UnitedHealth Group, 3M, Best Buy, General Mills — giving Carlson School of Management graduates direct, walkable access most flagship publics can't match.",
+    "pipeline": "Approximately 34,000 undergraduates. The Carlson School of Management feeds directly into the Twin Cities' dense Fortune 500 corporate base. The College of Science and Engineering is strong across most disciplines, particularly biomedical engineering reinforced by the University's own major academic medical center. The College of Food, Agricultural and Natural Resource Sciences is a genuine land-grant strength. Major recruiters include Target, UnitedHealth Group, 3M, Best Buy, General Mills, and Cargill.",
+    "hiddenPathway": "Minneapolis-Saint Paul has one of the highest concentrations of Fortune 500 corporate headquarters per capita of any U.S. metro — Carlson School students routinely intern and network directly with these companies without needing to relocate, a genuine structural advantage over peer flagship publics in less corporate-dense metros.",
+    "institutionalSecret": "Minnesota's academic medical center and Mayo Clinic partnership (Rochester, about 90 minutes away) give the University a genuine, underrated pre-med and biomedical research pipeline that gets overshadowed by Wisconsin and Michigan's larger national profiles.",
+    "theRoom": "The Twin Cities metro is home to Target, UnitedHealth Group, 3M, Best Buy, General Mills, U.S. Bancorp, and Ameriprise Financial headquarters — a genuine, walkable corporate ecosystem most Big Ten universities' host cities don't have.",
+    "lifestyle": "Practical, Midwestern, and genuinely spirited around Big Ten athletics, balanced by a large, urban-adjacent campus with real corporate internship access most students don't have to travel for.",
+    "bestFitPersonality": "Practically minded and comfortable with a large public university, drawn to business, engineering, or agricultural sciences specifically, energized by direct access to a dense corporate ecosystem.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Dominant in the Twin Cities' corporate and healthcare economy, with strong regional reach across the Upper Midwest.",
+    "economicOutcome": "Excellent outcomes in business, particularly consumer products and healthcare management, reinforced by direct access to Target, UnitedHealth, 3M, and General Mills.",
+    "gradCities": ["Minneapolis-Saint Paul MN", "Chicago IL", "New York NY"],
+    "comparableInstitutions": ["University of Wisconsin-Madison", "University of Michigan", "Ohio State University", "Purdue University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Normandale Community College"],
+      "transferAcceptanceRate": "~55%",
+      "freshmanAcceptanceRate": "~70%",
+      "estimatedSavingsRange": "$10,000-$26,000",
+      "transferNotes": "Minnesota maintains strong, structured transfer agreements with Minnesota State community colleges."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "University of Minnesota",
+    "archetype": "The Twin Cities Corporate Headquarters Pipeline — Big Ten Scale With a Genuine Fortune 500 Backyard",
+    "institutionalPersonality": "practical, corporately-connected, Midwestern, spirited",
+    "cultureKeywords": ["Carlson School", "Twin Cities Fortune 500 Corridor", "Big Ten", "Land-Grant Agriculture", "Academic Medicine"],
+    "missionOrientation": "Delivering large-scale public education directly connected to the Twin Cities' unusually dense Fortune 500 corporate ecosystem.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, corporate-connected education reinforced by direct proximity to Target, UnitedHealth, 3M, and General Mills headquarters.",
+    "competitiveness": "Selective",
+    "politicalCulture": "Broadly moderate to progressive, reflecting the Twin Cities' politically engaged urban culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Strong regional and Big Ten prestige, elite specifically in consumer products and healthcare management via direct Fortune 500 access.",
+    "socialClimate": "Practical, spirited, corporately-connected.",
+    "leadershipStyle": "Leadership through direct corporate access and applied business competence."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "regionalRole": "The Upper Midwest's most corporate-connected flagship public, with unmatched direct access to the Twin Cities' Fortune 500 headquarters density."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 88, "BosWash": 24, "TorBuffChester": 14,
+    "TexasTriangle": 10, "CharLanta": 12, "NorCalInnovationCorridor": 14, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusWisconsin": "Wisconsin offers the strongest health-tech pipeline of any Big Ten school via Epic Systems; Minnesota offers a denser, more diverse Fortune 500 corporate backyard spanning consumer products, healthcare, and industrials.",
+    "versusMichigan": "Michigan offers stronger national academic prestige and a larger overall alumni network; Minnesota offers more direct, walkable access to Fortune 500 headquarters without needing to relocate for internships."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Very Large",
+    "undergraduateEnrollment": 34000, "graduateEnrollment": 16000, "totalEnrollment": 50000,
+    "campusType": "Large Public Flagship, Urban Twin Cities Campus",
+    "residentialIntensity": 44, "communityFeel": 58, "studentFacultyRatio": "17:1",
+    "classSizeExperience": "Large introductory courses typical of a large public university; Carlson Business and upper-division coursework become substantially more personalized.",
+    "scaleAdvantages": ["Unmatched direct access to Twin Cities Fortune 500 headquarters", "Strong land-grant agricultural sciences alongside business and engineering", "Genuine academic medical center and Mayo Clinic partnership", "Large, comprehensive course offerings typical of a major flagship"],
+    "scaleDisadvantages": ["Large introductory courses require significant student initiative", "Harsh Minnesota winters", "Large public-university scale can feel impersonal without active community-building", "Less national brand recognition outside the Midwest relative to Michigan or Wisconsin"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 74, "conscientiousness": 82, "extraversion": 68, "agreeableness": 78, "neuroticism": 42 },
+    "hollandCodes": ["E", "C", "I"],
+    "learningStyle": ["Case-Method Business", "Applied Engineering", "Clinical Pre-Med Training"],
+    "socialEnvironment": ["Practical", "Corporately-Connected", "Midwestern", "Spirited"],
+    "idealStudentTraits": ["Practically minded and comfortable with a large public university", "Drawn to business, engineering, or agricultural sciences specifically", "Energized by direct access to a dense corporate ecosystem", "Comfortable with harsh winters"],
+    "thrivesIf": ["Wants direct, walkable access to Fortune 500 headquarters (Target, UnitedHealth, 3M, General Mills)", "Values Big Ten scale and athletics culture", "Wants strong land-grant agricultural sciences alongside business", "Is comfortable navigating a very large public university"],
+    "strugglesIf": ["Wants a small, intimate campus", "Needs a warmer climate", "Prefers a more nationally prominent brand outside the Midwest", "Wants significant structured guidance rather than self-direction"],
+    "transferRiskFactors": ["Students seeking a smaller, more intimate campus", "Students who want a warmer climate", "Students whose intended major sits outside Minnesota's core business/engineering/agriculture strengths"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Moderate",
+    "notes": "Carlson School of Business admits as a competitive internal application distinct from general University of Minnesota admission."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Applied Economics", "Food Science", "Bioproducts and Biosystems Engineering", "Retail Merchandising", "Actuarial Science"],
+    "hiddenCareerPipelines": ["Consumer Products Management (Target, General Mills)", "Healthcare Management (UnitedHealth Group)", "Industrial Engineering (3M)", "Agricultural Business (Cargill)", "Retail Analytics (Best Buy)"],
+    "nicheRecruitingAdvantages": ["Target Corporation", "UnitedHealth Group", "3M", "General Mills", "Best Buy", "Cargill"],
+    "overlookedStrengths": [
+      "The Twin Cities' Fortune 500 headquarters density gives Carlson students direct networking access most peer flagship publics' students would need to relocate for.",
+      "Minnesota's Mayo Clinic partnership gives pre-med and biomedical engineering students a genuine, underrated research pipeline overshadowed by Wisconsin and Michigan's larger national profiles.",
+      "Food Science and Bioproducts Engineering are genuinely distinctive programs tied directly to General Mills and Cargill's headquarters presence.",
+      "Retail Merchandising has a direct, structural pipeline into Target and Best Buy's corporate merchandising teams."
+    ],
+    "sleeperIndustries": ["Consumer Products Management", "Healthcare Management", "Food Science", "Retail Analytics"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 78, "mentorshipDensity": 76, "executiveAccess": 82, "internshipNetwork": 88,
+    "familyBusinessExposure": 42, "relationshipCapitalScore": 80, "alumniLoyaltyScore": 78,
+    "referralCultureStrength": 82, "donorNetworkStrength": 72, "boardMemberDensity": 68
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Consumer Products", "Healthcare Management", "Industrial Manufacturing", "Agriculture and Food Science", "Financial Services"],
+    "regionalEconomicDrivers": ["Consumer Products Corporate Headquarters", "Healthcare Management", "Industrial Manufacturing", "Agribusiness"],
+    "topEmployers": ["Target Corporation", "UnitedHealth Group", "3M", "General Mills", "Best Buy", "Cargill", "U.S. Bancorp"],
+    "emergingIndustries": ["Healthcare Technology", "Agricultural Technology", "Retail Analytics", "Medical Device Innovation"],
+    "startupDensity": "Moderate", "ventureCapitalAccess": 44, "corporateHeadquartersDensity": 82,
+    "healthcareHubStrength": 78, "innovationIndex": 72
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Twin Cities — Consumer Products, Healthcare Management, and Industrial Manufacturing",
+    "secondaryMarkets": ["Chicago IL", "New York NY"],
+    "alumniStrongholds": ["Minneapolis-Saint Paul MN", "Chicago IL", "New York NY"],
+    "relocationPatterns": [
+      "The large majority of graduates remain in the Twin Cities, entering consumer products, healthcare, and industrial roles.",
+      "Chicago draws a meaningful cohort into finance and consulting.",
+      "New York recruits graduates into investment banking and consulting."
+    ],
+    "regionalInfluenceScore": 94, "nationalReachScore": 66, "internationalReachScore": 38
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 16, "studentOrganizationStrength": 80, "leadershipDevelopment": 76,
+    "crossDisciplinaryInteraction": 66, "civicEngagement": 68
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 20, "notes": "Minimal institutional emphasis." },
+    "healthWellness": { "strength": 62, "notes": "A real, solid pathway reinforced by UnitedHealth Group proximity and the Mayo Clinic partnership." },
+    "nutraceuticals": { "strength": 48, "notes": "A real, secondary pathway through Food Science and General Mills ties." },
+    "consumerProducts": { "strength": 88, "notes": "A very strong, defining pathway reinforced directly by Target, General Mills, and Best Buy headquarters proximity." },
+    "outdoorIndustry": { "strength": 32, "notes": "A modest pathway; Minnesota's outdoor recreation culture is real but not a defining institutional strength." },
+    "sportsBusiness": { "strength": 42, "notes": "A real, secondary pathway given Big Ten athletics." },
+    "entertainmentMedia": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 38, "notes": "A modest, secondary pathway; the Twin Cities' venture ecosystem is smaller than tech-hub peer cities." },
+    "privateEquity": { "strength": 48, "notes": "A real, secondary pathway relative to Minnesota's dominant corporate consumer products identity." },
+    "investmentBanking": { "strength": 56, "notes": "A real, secondary pathway, smaller than Minnesota's dominant consumer products and healthcare pipelines." },
+    "consulting": { "strength": 74, "notes": "A strong pathway into major consulting firms, particularly healthcare and consumer products consulting practices." },
+    "medicine": { "strength": 64, "notes": "A real, solid pre-med pathway reinforced by Minnesota's own medical school and Mayo Clinic partnership." },
+    "healthcareAdministration": { "strength": 82, "notes": "A very strong, distinctive pathway reinforced directly by UnitedHealth Group's headquarters proximity." },
+    "defense": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "realEstate": { "strength": 40, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 26, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 54, "notes": "A real, growing pathway, though secondary to Minnesota's dominant corporate consumer products pipeline." },
+    "technology": { "strength": 58, "notes": "A real, growing pathway through the College of Science and Engineering, reinforced by 3M's industrial technology presence." },
+    "publicPolicy": { "strength": 42, "notes": "A modest, secondary pathway relative to Minnesota's dominant corporate identity." },
+    "nonprofitLeadership": { "strength": 38, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 24, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 62, "notes": "A real, solid pathway reinforced by Target and Cargill's supply chain operations proximity." },
+    "insurance": { "strength": 44, "notes": "A modest, secondary pathway; Minnesota's insurance presence is real but smaller than dedicated insurance-hub schools." },
+    "agriculture": { "strength": 68, "notes": "A genuine, historic land-grant strength reinforced by Cargill and General Mills proximity, though secondary to Minnesota's dominant corporate consumer products identity." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 74, "firstGenerationSupport": 74,
+    "wealthCreationPotential": 72, "familyBusinessPipelineStrength": 44
+  },
+  "futureResilience": {
+    "aiResistance": 74, "automationResistance": 74, "adaptabilityScore": 76, "interdisciplinaryStrength": 70,
+    "futureReadiness": 76, "entrepreneurialFlexibility": 62, "lifelongLearningCulture": 74, "innovationCapacity": 72
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 72, "communityLeadershipPotential": 74, "geographicMobility": 62,
+    "workLifeBalancePotential": 76, "purposeAlignment": 72, "familyFormationSupport": 78,
+    "personalDevelopmentPotential": 74, "careerOptionality": 72, "longTermLifeSatisfaction": 78
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 62, "networkMoat": 74, "geographicMoat": 82, "industryMoat": 80,
+    "alumniMoat": 72, "brandDurability": 74, "overallMoatScore": 74
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 42, "returnerScore": 64, "stewardScore": 76, "navigatorScore": 56,
+    "geographicLockIn": "moderate",
+    "alumniDispersalPattern": "heavily_concentrated_twin_cities_with_chicago_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 62, "type": "Independent Campus Hillel" },
+    "estimatedJewishUndergraduates": 1400, "jewishStudentPercentage": "~4%",
+    "kosherDining": true, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Moderate",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "University Honors Program", "strength": 62,
+    "notes": "Provides smaller seminars and priority course access within Minnesota's very large scale; less centralized than a dedicated honors college like ASU's Barrett."
+  }
+},
+  "University of Pittsburgh": {
+  "institutionNarrative": {
+    "name": "University of Pittsburgh",
+    "location": "Pittsburgh, Pennsylvania",
+    "region": "Mid-Atlantic",
+    "archetype": "UPMC's Academic Medical Engine — Health Sciences Inside a Genuine Hospital System",
+    "oneSentenceSummary": "Pitt combines a top-10 nationally funded academic medical research program with direct integration into UPMC — one of the largest integrated health systems in the country — giving pre-health students clinical and research access most universities' students only encounter through outside internships.",
+    "pipeline": "Approximately 19,500 undergraduates. The School of Medicine and UPMC partnership anchor one of the strongest academic medicine pipelines in the country, reinforced by consistent top-10 national rankings in NIH research funding. The Swanson School of Engineering is strong, particularly bioengineering given direct UPMC ties. The College of Business Administration has solid regional placement. Major recruiters include UPMC, PNC Financial Services, PwC, and major consulting firms.",
+    "hiddenPathway": "Pitt undergraduates in bioengineering and pre-health tracks routinely work directly with UPMC clinical researchers as standing coursework, not as a competitive external internship — the hospital-system integration is structurally built into the degree.",
+    "institutionalSecret": "Pitt's economics and political science departments have a genuinely strong, underrated pipeline into Pittsburgh's growing robotics and autonomous-vehicle sector (spillover from Carnegie Mellon's research ecosystem), a connection most families researching Pitt for medicine never discover.",
+    "theRoom": "Pittsburgh has transformed from a former steel city into a genuine healthcare, robotics, and technology hub, anchored by UPMC and reinforced by Carnegie Mellon's research spillover — Pitt sits directly inside this same transformed economy.",
+    "lifestyle": "Practical and health-sciences-driven, with genuine school spirit around Panthers athletics, inside an increasingly vibrant, revitalized city that has real 21st-century industry beyond its steel-era reputation.",
+    "bestFitPersonality": "Practically minded and drawn to medicine, health sciences, or engineering specifically, comfortable with a large public-adjacent research university, energized by direct clinical or research access.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Dominant in Pittsburgh's healthcare and academic medicine economy, with growing reach into robotics and technology given Carnegie Mellon spillover proximity.",
+    "economicOutcome": "Excellent outcomes in medicine, health sciences, and academic research, reinforced by direct UPMC integration and top-10 national NIH funding rankings.",
+    "gradCities": ["Pittsburgh PA", "Philadelphia PA", "New York NY", "Washington DC"],
+    "comparableInstitutions": ["University of Maryland, College Park", "University of Wisconsin-Madison", "University of Michigan", "Ohio State University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Community College of Allegheny County"],
+      "transferAcceptanceRate": "~62%",
+      "freshmanAcceptanceRate": "~48%",
+      "estimatedSavingsRange": "$10,000-$28,000",
+      "transferNotes": "Pitt maintains a genuinely accessible transfer pathway from Pennsylvania community colleges."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "University of Pittsburgh",
+    "archetype": "UPMC's Academic Medical Engine — Health Sciences Inside a Genuine Hospital System",
+    "institutionalPersonality": "practical, health-sciences-driven, research-intensive, revitalized-city energy",
+    "cultureKeywords": ["UPMC Integration", "Academic Medicine", "NIH Research Funding", "Panthers Athletics", "Pittsburgh Renaissance"],
+    "missionOrientation": "Delivering large-scale public research education directly integrated with UPMC's academic medical system.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, research-driven education reinforced by direct clinical and research access through the UPMC partnership.",
+    "competitiveness": "Selective",
+    "politicalCulture": "Broadly progressive, reflecting Pittsburgh's revitalized urban culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Elite in academic medicine and health sciences research, reinforced by consistent top-10 national NIH funding rankings.",
+    "socialClimate": "Practical, health-sciences-driven, spirited.",
+    "leadershipStyle": "Leadership through clinical and research competence in academic medicine."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "regionalRole": "A top-10 nationally funded academic medicine research engine, directly integrated with UPMC, inside Pittsburgh's transformed healthcare-and-technology economy."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 72, "BosWash": 42, "TorBuffChester": 22,
+    "TexasTriangle": 10, "CharLanta": 14, "NorCalInnovationCorridor": 16, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusMaryland": "Maryland offers the strongest federal security agency pipeline of any public university; Pitt offers a stronger, more directly integrated academic medicine pipeline through UPMC.",
+    "versusWisconsin": "Wisconsin offers the strongest health-tech pipeline of any Big Ten school via Epic Systems; Pitt offers deeper direct clinical integration through UPMC's actual hospital system, not just health-tech software."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Large",
+    "undergraduateEnrollment": 19500, "graduateEnrollment": 9500, "totalEnrollment": 29000,
+    "campusType": "Large Public Research University, Urban Pittsburgh Campus",
+    "residentialIntensity": 56, "communityFeel": 62, "studentFacultyRatio": "14:1",
+    "classSizeExperience": "Moderate-to-large introductory courses; bioengineering and pre-health upper-division coursework become substantially more research-intensive and personalized through UPMC ties.",
+    "scaleAdvantages": ["Direct, structural integration with UPMC's academic medical system", "Consistent top-10 national NIH research funding rankings", "Growing spillover access to Pittsburgh's robotics and technology sector via Carnegie Mellon proximity", "Revitalized urban campus with real 21st-century industry beyond Pittsburgh's steel-era reputation"],
+    "scaleDisadvantages": ["Moderate-to-large introductory courses require student initiative", "Less national brand recognition outside academic medicine relative to larger flagship publics", "Urban campus setting requires comfort with city living", "Competitive internal admission to bioengineering and pre-health tracks"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 76, "conscientiousness": 84, "extraversion": 64, "agreeableness": 76, "neuroticism": 44 },
+    "hollandCodes": ["I", "S", "R"],
+    "learningStyle": ["Clinical Pre-Med Training", "Research", "Applied Bioengineering"],
+    "socialEnvironment": ["Practical", "Health-Sciences-Driven", "Research-Intensive", "Spirited"],
+    "idealStudentTraits": ["Practically minded and drawn to medicine or health sciences specifically", "Comfortable with a large public-adjacent research university", "Energized by direct clinical or research access", "Values UPMC's structural integration into coursework"],
+    "thrivesIf": ["Wants direct, structural integration with UPMC's academic medical system", "Values top-10 national NIH research funding access", "Wants a revitalized urban campus with real 21st-century industry", "Is drawn to bioengineering or pre-health tracks specifically"],
+    "strugglesIf": ["Wants a traditional suburban or rural campus setting", "Needs a program with broader non-medicine institutional identity", "Prefers a smaller, more intimate campus", "Wants strong Greek life or big-time football culture as the defining identity"],
+    "transferRiskFactors": ["Students seeking a non-urban campus setting", "Students whose intended field sits outside Pitt's core medicine/health-sciences/engineering strengths", "Students who want a more nationally prominent brand outside academic medicine"]
+  },
+  "competitiveMajorPressure": {
+    "level": "High",
+    "notes": "Bioengineering and pre-health tracks carry substantial informal competitive pressure given direct UPMC ties and national research funding reputation, though Pitt does not formally impact most majors beyond general admission."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Health Information Management", "Rehabilitation Science", "Emergency Medicine (undergraduate track)", "Public and Professional Writing", "Urban Studies"],
+    "hiddenCareerPipelines": ["Academic Medical Research", "Health Information Technology", "Robotics-Adjacent Bioengineering (Carnegie Mellon spillover)", "Healthcare Consulting", "Rehabilitation Medicine"],
+    "nicheRecruitingAdvantages": ["UPMC", "PNC Financial Services", "PwC", "McKinsey & Company (healthcare practice)", "Highmark Health"],
+    "overlookedStrengths": [
+      "Pitt undergraduates in bioengineering and pre-health tracks work directly with UPMC clinical researchers as standing coursework, not competitive external internships.",
+      "Pitt's economics and political science departments have a genuinely underrated pipeline into Pittsburgh's growing robotics and autonomous-vehicle sector via Carnegie Mellon spillover.",
+      "Pitt consistently ranks top-10 nationally in NIH research funding, an elite research credential systematically undersold relative to more famous medical-research peer institutions.",
+      "Pittsburgh's revitalization into a genuine healthcare-and-technology hub gives Pitt students real, current-generation industry access most families researching the city's steel-era reputation don't expect."
+    ],
+    "sleeperIndustries": ["Health Information Technology", "Robotics-Adjacent Bioengineering", "Rehabilitation Medicine", "Healthcare Consulting"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 72, "mentorshipDensity": 74, "executiveAccess": 76, "internshipNetwork": 86,
+    "familyBusinessExposure": 36, "relationshipCapitalScore": 76, "alumniLoyaltyScore": 72,
+    "referralCultureStrength": 78, "donorNetworkStrength": 68, "boardMemberDensity": 62
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Academic Medicine", "Healthcare", "Bioengineering", "Robotics-Adjacent Technology", "Financial Services"],
+    "regionalEconomicDrivers": ["Academic Medicine", "Healthcare Systems", "Robotics Research", "Financial Services"],
+    "topEmployers": ["UPMC", "Highmark Health", "PNC Financial Services", "PwC", "Google (Pittsburgh office)"],
+    "emergingIndustries": ["Health Information Technology", "Robotics-Adjacent Bioengineering", "AI in Medicine", "Telehealth"],
+    "startupDensity": "Moderate", "ventureCapitalAccess": 48, "corporateHeadquartersDensity": 52,
+    "healthcareHubStrength": 94, "innovationIndex": 76
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Pittsburgh — Academic Medicine, Healthcare, and Bioengineering",
+    "secondaryMarkets": ["Philadelphia PA", "New York NY", "Washington DC"],
+    "alumniStrongholds": ["Pittsburgh PA", "Philadelphia PA", "New York NY"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in Pittsburgh, entering UPMC and academic medicine roles.",
+      "Philadelphia and New York draw graduates into finance, consulting, and broader healthcare roles.",
+      "A meaningful cohort enters academic medical research nationally, reinforced by Pitt's NIH funding reputation."
+    ],
+    "regionalInfluenceScore": 90, "nationalReachScore": 70, "internationalReachScore": 44
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 14, "studentOrganizationStrength": 76, "leadershipDevelopment": 72,
+    "crossDisciplinaryInteraction": 68, "civicEngagement": 66
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 78, "notes": "A very strong pathway reinforced directly by UPMC integration." },
+    "nutraceuticals": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "consumerProducts": { "strength": 28, "notes": "Not a defining institutional strength." },
+    "outdoorIndustry": { "strength": 22, "notes": "Minimal institutional emphasis." },
+    "sportsBusiness": { "strength": 38, "notes": "A modest, secondary pathway given Panthers athletics." },
+    "entertainmentMedia": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 40, "notes": "A modest, growing pathway tied to Pittsburgh's expanding robotics and health-tech startup ecosystem." },
+    "privateEquity": { "strength": 42, "notes": "A modest, secondary pathway relative to Pitt's dominant medicine identity." },
+    "investmentBanking": { "strength": 46, "notes": "A modest, secondary pathway; Pitt is not primarily positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 68, "notes": "A real, solid pathway into major consulting firms, particularly healthcare consulting practices." },
+    "medicine": { "strength": 96, "notes": "The single strongest pathway at the institution, reinforced directly by UPMC's academic medical system and consistent top-10 national NIH funding rankings." },
+    "healthcareAdministration": { "strength": 88, "notes": "A very strong, distinctive pathway reinforced by UPMC's health system scale." },
+    "defense": { "strength": 22, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 48, "notes": "A real, growing pathway, particularly in health-tech startups, though secondary to Pitt's core medicine identity." },
+    "technology": { "strength": 62, "notes": "A real, growing pathway through the Swanson School of Engineering, reinforced by robotics spillover from Carnegie Mellon proximity." },
+    "publicPolicy": { "strength": 44, "notes": "A modest, secondary pathway, particularly health policy." },
+    "nonprofitLeadership": { "strength": 42, "notes": "A modest, secondary pathway relative to Pitt's dominant medicine identity." },
+    "hospitality": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 36, "notes": "A modest, secondary pathway, primarily healthcare supply chain." },
+    "insurance": { "strength": 38, "notes": "A modest, secondary pathway, reinforced by Highmark Health proximity." },
+    "agriculture": { "strength": 16, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 68, "firstGenerationSupport": 70,
+    "wealthCreationPotential": 68, "familyBusinessPipelineStrength": 34
+  },
+  "futureResilience": {
+    "aiResistance": 82, "automationResistance": 82, "adaptabilityScore": 78, "interdisciplinaryStrength": 74,
+    "futureReadiness": 82, "entrepreneurialFlexibility": 58, "lifelongLearningCulture": 78, "innovationCapacity": 76
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 68, "communityLeadershipPotential": 70, "geographicMobility": 62,
+    "workLifeBalancePotential": 66, "purposeAlignment": 82, "familyFormationSupport": 70,
+    "personalDevelopmentPotential": 78, "careerOptionality": 70, "longTermLifeSatisfaction": 76
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 66, "networkMoat": 68, "geographicMoat": 78, "industryMoat": 88,
+    "alumniMoat": 66, "brandDurability": 72, "overallMoatScore": 73
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 44, "returnerScore": 62, "stewardScore": 72, "navigatorScore": 58,
+    "geographicLockIn": "moderate",
+    "alumniDispersalPattern": "heavily_concentrated_pittsburgh_with_philadelphia_ny_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 54, "type": "Campus Hillel" },
+    "estimatedJewishUndergraduates": 900, "jewishStudentPercentage": "~4.6%",
+    "kosherDining": true, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Moderate",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "University Honors College", "strength": 68,
+    "notes": "Provides smaller seminars, priority course access, and enhanced research opportunities within Pitt's large scale."
+  }
+},
+  "University of Connecticut": {
+  "institutionNarrative": {
+    "name": "University of Connecticut",
+    "location": "Storrs, Connecticut",
+    "region": "Northeast",
+    "archetype": "A Genuine Public Ivy With Direct Insurance-Capital and Financial Services Access",
+    "oneSentenceSummary": "UConn combines a strong flagship public research identity with unusually direct proximity to Hartford's insurance industry capital and the broader Connecticut financial services corridor, alongside one of the most storied athletics programs in the country.",
+    "pipeline": "Approximately 19,000 undergraduates. The School of Business has a genuine, distinctive insurance and risk management pipeline reinforced by Hartford's status as a national insurance industry capital (The Hartford, Travelers, Aetna all headquartered nearby). The College of Engineering is solid across most disciplines. Strong pre-law and pre-med tracks are reinforced by UConn's own law and medical schools. Major recruiters include The Hartford, Travelers, Aetna/CVS Health, and major consulting firms.",
+    "hiddenPathway": "UConn's proximity to Hartford — a genuine national insurance industry capital — gives business students direct, structural access to insurance and risk management careers most flagship publics' students would need to relocate for.",
+    "institutionalSecret": "UConn's actuarial science and risk management programs are genuinely elite, systematically overshadowed by the university's basketball fame — the insurance industry recruits directly and heavily from this specific program.",
+    "theRoom": "Storrs is a rural New England college town, but Hartford — one of the country's most significant insurance industry hubs — sits within a genuine commuting distance, giving students real access to a distinctive regional economy.",
+    "lifestyle": "Spirited and athletics-driven — UConn's storied basketball program (both men's and women's) creates genuine, unifying school pride — balanced by a solid, practical academic culture.",
+    "bestFitPersonality": "Practically minded and comfortable with a flagship public university, drawn to business, insurance/risk management, or engineering specifically, energized by strong athletics culture.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Dominant in Connecticut and the broader Hartford insurance industry corridor, with strong regional reach across New England.",
+    "economicOutcome": "Excellent, distinctive outcomes in insurance and risk management, reinforced by direct Hartford industry proximity, alongside solid outcomes in business, engineering, and law.",
+    "gradCities": ["Hartford CT", "New York NY", "Boston MA"],
+    "comparableInstitutions": ["Penn State University", "University of Maryland, College Park", "Rutgers University", "University of Massachusetts Amherst"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Manchester Community College"],
+      "transferAcceptanceRate": "~58%",
+      "freshmanAcceptanceRate": "~56%",
+      "estimatedSavingsRange": "$10,000-$26,000",
+      "transferNotes": "UConn maintains structured transfer agreements with Connecticut's community college system."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "UConn",
+    "archetype": "A Genuine Public Ivy With Direct Insurance-Capital and Financial Services Access",
+    "institutionalPersonality": "practical, spirited, athletics-driven, industry-connected",
+    "cultureKeywords": ["Hartford Insurance Corridor", "Storied Basketball Program", "Actuarial Science", "Public Ivy", "New England Setting"],
+    "missionOrientation": "Delivering flagship public research education directly connected to Hartford's distinctive national insurance industry capital.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, industry-connected education reinforced by direct proximity to Hartford's insurance and financial services corridor.",
+    "competitiveness": "Selective",
+    "politicalCulture": "Broadly progressive, reflecting Connecticut's politically engaged electorate.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Genuine Public Ivy reputation, elite specifically in actuarial science and risk management via direct Hartford insurance industry access.",
+    "socialClimate": "Spirited, athletics-driven, practical.",
+    "leadershipStyle": "Leadership through athletics-driven school pride and applied industry competence."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "BosWash",
+    "regionalRole": "The most direct undergraduate pipeline into Hartford's national insurance industry capital of any university in the country."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 12, "BosWash": 88, "TorBuffChester": 14,
+    "TexasTriangle": 8, "CharLanta": 10, "NorCalInnovationCorridor": 12, "SoCalCreativeEconomy": 8
+  },
+  "comparativePositioning": {
+    "versusPennState": "Penn State offers one of the strongest actuarial science pipelines in the country at a larger scale; UConn offers more direct, walkable proximity to Hartford's actual insurance industry headquarters, not just the academic training.",
+    "versusRutgers": "Rutgers offers direct New York City financial services proximity; UConn offers a more specifically insurance-industry-focused pipeline through direct Hartford access, a genuinely distinct financial services niche."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Large",
+    "undergraduateEnrollment": 19000, "graduateEnrollment": 8000, "totalEnrollment": 27000,
+    "campusType": "Public Flagship Research University, Rural New England Campus",
+    "residentialIntensity": 74, "communityFeel": 72, "studentFacultyRatio": "16:1",
+    "classSizeExperience": "Moderate introductory courses; upper-division business and insurance-specific coursework become substantially more personalized with direct Hartford industry ties.",
+    "scaleAdvantages": ["Direct, distinctive pipeline into Hartford's national insurance industry capital", "Genuinely elite actuarial science and risk management programs", "Storied athletics program creating unifying school pride", "Genuine Public Ivy academic reputation"],
+    "scaleDisadvantages": ["Rural Storrs location requires a car for off-campus access", "Harsh New England winters", "Less national brand recognition outside insurance/actuarial science and basketball", "Moderate introductory courses require student initiative"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 70, "conscientiousness": 82, "extraversion": 70, "agreeableness": 76, "neuroticism": 42 },
+    "hollandCodes": ["C", "E", "I"],
+    "learningStyle": ["Case-Method Business", "Applied Actuarial Science", "Clinical Pre-Med Training"],
+    "socialEnvironment": ["Practical", "Spirited", "Athletics-Driven", "Industry-Connected"],
+    "idealStudentTraits": ["Practically minded and comfortable with a flagship public university", "Drawn to business, actuarial science, or insurance/risk management specifically", "Energized by strong athletics culture", "Comfortable with a rural New England setting"],
+    "thrivesIf": ["Wants direct access to Hartford's national insurance industry capital", "Values genuinely elite actuarial science and risk management training", "Enjoys storied athletics culture and school spirit", "Wants a genuine Public Ivy academic reputation at public-school cost"],
+    "strugglesIf": ["Wants an urban campus embedded in a major city", "Needs a warmer climate", "Prefers a program with broader non-insurance financial services identity", "Wants a smaller, more intimate campus"],
+    "transferRiskFactors": ["Students seeking an urban rather than rural campus setting", "Students who want a warmer climate", "Students whose intended field sits outside UConn's core business/insurance/engineering strengths"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Moderate",
+    "notes": "The School of Business's actuarial science track carries substantial informal competitive pressure given its national reputation, though UConn does not formally impact most majors beyond general admission."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Actuarial Science", "Risk Management and Insurance", "Digital Media and Design", "Puppet Arts", "Natural Resources"],
+    "hiddenCareerPipelines": ["Actuarial Science and Risk Management", "Insurance Underwriting", "Healthcare Insurance Administration", "Reinsurance", "Insurance Technology (Insurtech)"],
+    "nicheRecruitingAdvantages": ["The Hartford", "Travelers", "Aetna/CVS Health", "Cigna", "MassMutual"],
+    "overlookedStrengths": [
+      "UConn's actuarial science and risk management programs are genuinely elite, systematically overshadowed by the university's basketball fame.",
+      "Hartford's status as a national insurance industry capital gives UConn business students direct, structural access most flagship publics' students would need to relocate for.",
+      "UConn's Puppet Arts program is a genuinely unique, one-of-a-kind offering in American higher education.",
+      "The insurance and reinsurance industry's growing technology transformation (insurtech) is a real, underrecognized career pathway for UConn's actuarial and computer science students together."
+    ],
+    "sleeperIndustries": ["Actuarial Science", "Insurance Technology (Insurtech)", "Reinsurance", "Healthcare Insurance Administration"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 74, "mentorshipDensity": 72, "executiveAccess": 74, "internshipNetwork": 82,
+    "familyBusinessExposure": 38, "relationshipCapitalScore": 76, "alumniLoyaltyScore": 78,
+    "referralCultureStrength": 78, "donorNetworkStrength": 64, "boardMemberDensity": 58
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Insurance", "Financial Services", "Healthcare Insurance", "Actuarial Science", "Engineering"],
+    "regionalEconomicDrivers": ["Insurance and Reinsurance", "Financial Services", "Healthcare Insurance Administration"],
+    "topEmployers": ["The Hartford", "Travelers", "Aetna/CVS Health", "Cigna", "MassMutual", "United Technologies"],
+    "emergingIndustries": ["Insurance Technology (Insurtech)", "Healthcare Data Analytics", "Cybersecurity Insurance", "Climate Risk Modeling"],
+    "startupDensity": "Low-Moderate", "ventureCapitalAccess": 34, "corporateHeadquartersDensity": 58,
+    "healthcareHubStrength": 62, "innovationIndex": 58
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Hartford — Insurance, Reinsurance, and Financial Services",
+    "secondaryMarkets": ["New York NY", "Boston MA"],
+    "alumniStrongholds": ["Hartford CT", "New York NY", "Boston MA"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in the Hartford insurance corridor, entering actuarial and risk management roles.",
+      "New York draws graduates into broader financial services and insurance roles.",
+      "Boston recruits graduates into healthcare insurance and consulting roles."
+    ],
+    "regionalInfluenceScore": 90, "nationalReachScore": 60, "internationalReachScore": 36
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 16, "studentOrganizationStrength": 74, "leadershipDevelopment": 72,
+    "crossDisciplinaryInteraction": 62, "civicEngagement": 64
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 46, "notes": "A real, secondary pathway reinforced by UConn's own medical school." },
+    "nutraceuticals": { "strength": 24, "notes": "Minimal institutional emphasis." },
+    "consumerProducts": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "outdoorIndustry": { "strength": 26, "notes": "A modest, secondary pathway tied to New England's natural resources programs." },
+    "sportsBusiness": { "strength": 58, "notes": "A real, distinctive pathway given UConn's storied men's and women's basketball programs." },
+    "entertainmentMedia": { "strength": 30, "notes": "A modest, secondary pathway, though the Puppet Arts program is a genuinely unique niche." },
+    "ventureCapital": { "strength": 30, "notes": "A modest, secondary pathway; Connecticut's venture ecosystem is smaller than tech-hub peer states." },
+    "privateEquity": { "strength": 44, "notes": "A real, secondary pathway relative to UConn's dominant insurance identity." },
+    "investmentBanking": { "strength": 48, "notes": "A real, secondary pathway, smaller than UConn's dominant insurance and actuarial pipelines." },
+    "consulting": { "strength": 62, "notes": "A real, solid pathway into major consulting firms, particularly insurance and healthcare consulting practices." },
+    "medicine": { "strength": 58, "notes": "A real, solid pre-med pathway reinforced by UConn's own medical school." },
+    "healthcareAdministration": { "strength": 56, "notes": "A real, secondary pathway relative to UConn's dominant insurance identity." },
+    "defense": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "realEstate": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 44, "notes": "A modest, growing pathway, particularly in insurtech startups, though secondary to UConn's core insurance identity." },
+    "technology": { "strength": 52, "notes": "A real, secondary pathway through the College of Engineering, increasingly tied to insurtech applications." },
+    "publicPolicy": { "strength": 42, "notes": "A modest, secondary pathway relative to UConn's dominant insurance identity." },
+    "nonprofitLeadership": { "strength": 36, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 22, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "insurance": { "strength": 96, "notes": "The single strongest, most distinctive pathway at the institution — UConn's actuarial science and risk management programs are genuinely elite and directly reinforced by Hartford's status as a national insurance industry capital." },
+    "agriculture": { "strength": 24, "notes": "A modest, secondary pathway through natural resources and agricultural programs, a genuine but minor land-grant-adjacent strength." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 68, "firstGenerationSupport": 68,
+    "wealthCreationPotential": 66, "familyBusinessPipelineStrength": 36
+  },
+  "futureResilience": {
+    "aiResistance": 70, "automationResistance": 72, "adaptabilityScore": 72, "interdisciplinaryStrength": 62,
+    "futureReadiness": 72, "entrepreneurialFlexibility": 54, "lifelongLearningCulture": 70, "innovationCapacity": 62
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 66, "communityLeadershipPotential": 68, "geographicMobility": 56,
+    "workLifeBalancePotential": 74, "purposeAlignment": 66, "familyFormationSupport": 76,
+    "personalDevelopmentPotential": 70, "careerOptionality": 62, "longTermLifeSatisfaction": 76
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 60, "networkMoat": 66, "geographicMoat": 76, "industryMoat": 82,
+    "alumniMoat": 70, "brandDurability": 72, "overallMoatScore": 71
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 38, "returnerScore": 66, "stewardScore": 76, "navigatorScore": 50,
+    "geographicLockIn": "high",
+    "alumniDispersalPattern": "heavily_concentrated_hartford_ct_with_ny_boston_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 58, "type": "Independent Campus Hillel" },
+    "estimatedJewishUndergraduates": 1200, "jewishStudentPercentage": "~6.3%",
+    "kosherDining": true, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Moderate",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Honors Program", "strength": 62,
+    "notes": "Provides smaller seminars and priority course access within UConn's large public-flagship scale."
+  }
+}
+,
+  "College of William and Mary": {
+  "institutionNarrative": {
+    "name": "College of William and Mary",
+    "location": "Williamsburg, Virginia",
+    "region": "Mid-Atlantic",
+    "archetype": "The Original Public Ivy — America's Second-Oldest University With a Genuine Law and Government Pipeline",
+    "oneSentenceSummary": "William and Mary combines the small-college feel of an elite private liberal arts school with genuine public-school cost, anchored by the country's oldest law school and direct Williamsburg-to-Richmond-to-DC government and public-policy access.",
+    "pipeline": "Approximately 6,300 undergraduates. The Marshall-Wythe School of Law is the oldest law school in the country, reinforcing a genuinely elite undergraduate pre-law pipeline. Government and international relations programs are strong, reinforced by proximity to Richmond and Washington DC. The Mason School of Business has solid, growing placement. Major recruiters include federal government agencies, top law schools nationally, McKinsey, and major consulting and financial services firms.",
+    "hiddenPathway": "William and Mary's direct historical and physical proximity to Colonial Williamsburg and Virginia's state government in Richmond gives government and public history students access to primary-source archival and civic institutions most universities' students only study from a distance.",
+    "institutionalSecret": "William and Mary's acceptance rate and academic rigor rival many private elite universities, but its public-school tuition means it delivers a genuinely elite education at a fraction of the cost of its private peer institutions — a value proposition systematically undersold relative to its historical-college reputation.",
+    "theRoom": "Williamsburg sits inside Virginia's historic triangle, with Richmond's state government and Washington DC's federal government both within a reasonable drive, giving government and law-focused students real, tangible access to both state and federal power centers.",
+    "lifestyle": "Intellectually serious and historically minded, with a genuine small-college, close-knit culture uncommon among public universities — William and Mary functions socially much more like a small private liberal arts college than a large public flagship.",
+    "bestFitPersonality": "Intellectually serious and history-minded, comfortable with a small, close-knit public university, drawn to law, government, or international relations specifically, values genuine academic rigor at public-school cost.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Strong regional dominance in Virginia's government and legal sectors, with genuine national reach in law and public policy specifically.",
+    "economicOutcome": "Excellent outcomes in law, government, and public policy, reinforced by the country's oldest law school and direct Richmond/DC proximity, delivered at public-school cost.",
+    "gradCities": ["Washington DC", "Richmond VA", "New York NY", "Boston MA"],
+    "comparableInstitutions": ["Georgetown University", "University of Virginia", "Vanderbilt University", "Wake Forest University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Thomas Nelson Community College"],
+      "transferAcceptanceRate": "~28%",
+      "freshmanAcceptanceRate": "~33%",
+      "estimatedSavingsRange": "$14,000-$32,000",
+      "transferNotes": "William and Mary accepts a modest number of transfer students annually, remaining selective relative to most public peer institutions."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "William & Mary",
+    "archetype": "The Original Public Ivy — America's Second-Oldest University With a Genuine Law and Government Pipeline",
+    "institutionalPersonality": "intellectually serious, historically minded, close-knit, quietly prestigious",
+    "cultureKeywords": ["Public Ivy", "Oldest Law School in America", "Colonial Williamsburg", "Small-College Feel", "Government and Public Policy"],
+    "missionOrientation": "Delivering elite liberal arts and pre-professional education at genuine public-school cost, reinforced by direct government and legal institution access.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Rigorous liberal arts and pre-professional education in the small-college tradition, reinforced by proximity to Virginia and federal government institutions.",
+    "competitiveness": "Extremely Selective",
+    "politicalCulture": "Broadly moderate to progressive, with a genuinely civically engaged culture reinforced by government and public-policy proximity.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Genuine Public Ivy reputation rivaling private elite universities academically, delivered at public-school cost.",
+    "socialClimate": "Intellectually serious, close-knit, historically minded.",
+    "leadershipStyle": "Leadership through civic engagement and genuine academic rigor."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Piedmont Atlantic",
+    "regionalRole": "A genuinely elite small public university with direct access to both Virginia state government (Richmond) and federal government (Washington DC), anchored by the country's oldest law school."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 14, "BosWash": 58, "TorBuffChester": 12,
+    "TexasTriangle": 10, "CharLanta": 76, "NorCalInnovationCorridor": 12, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusGeorgetown": "Georgetown offers an unmatched Foreign Service and DC-embedded policy pipeline through SFS; William and Mary offers a smaller, more intimate small-college culture and genuine public-school cost with comparable law and government placement strength.",
+    "versusUVA": "UVA offers a larger scale, McIntire Business School's elite finance placement, and greater national brand recognition; William and Mary offers a smaller, more intimate campus with the country's oldest law school and a genuinely closer, small-college undergraduate culture."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Small",
+    "undergraduateEnrollment": 6300, "graduateEnrollment": 2400, "totalEnrollment": 8700,
+    "campusType": "Public Liberal Arts and Research University, Historic Small-College Campus",
+    "residentialIntensity": 82, "communityFeel": 86, "studentFacultyRatio": "11:1",
+    "classSizeExperience": "Small classes with strong faculty access, functioning much more like a private liberal arts college than a typical public university.",
+    "scaleAdvantages": ["Genuine Public Ivy academic rigor at public-school cost", "The country's oldest law school, reinforcing an elite pre-law pipeline", "Direct access to both Richmond state government and Washington DC federal government", "Small-college, close-knit culture uncommon among public universities"],
+    "scaleDisadvantages": ["Williamsburg is a small, historic town with limited independent economic pull", "Smaller alumni network in absolute numbers than larger public flagships", "Less national brand recognition outside the Mid-Atlantic relative to UVA or Georgetown", "Selective admission relative to typical public-school expectations"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 82, "conscientiousness": 88, "extraversion": 62, "agreeableness": 78, "neuroticism": 40 },
+    "hollandCodes": ["I", "S", "E"],
+    "learningStyle": ["Small Seminar Discussion", "Case-Method Pre-Law", "Government and Policy Case Study"],
+    "socialEnvironment": ["Intellectually Serious", "Close-Knit", "Historically Minded", "Civically Engaged"],
+    "idealStudentTraits": ["Intellectually serious and history-minded", "Comfortable with a small, close-knit public university", "Drawn to law, government, or international relations specifically", "Values genuine academic rigor at public-school cost"],
+    "thrivesIf": ["Wants a genuine Public Ivy education at a fraction of private-school cost", "Values the country's oldest law school and elite pre-law pipeline", "Wants direct access to both state and federal government institutions", "Enjoys a small-college, close-knit undergraduate culture"],
+    "strugglesIf": ["Wants a large public-university scale with extensive course breadth", "Needs a major city's direct economic and cultural access", "Prefers a big-time athletics or Greek-dominant social culture", "Wants a program with broader non-government/law institutional identity"],
+    "transferRiskFactors": ["Students seeking a larger campus with broader academic offerings", "Students who want a major city's direct access", "Students whose intended field sits outside William and Mary's core law/government/liberal-arts strengths"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low to Moderate",
+    "notes": "William and Mary does not formally impact most majors at the undergraduate level, though the Mason School of Business's integrated 5-year MBA track carries some informal competitive pressure."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Government", "Anthropology", "Kinesiology and Health Sciences", "Data Science", "Public Policy"],
+    "hiddenCareerPipelines": ["Federal Government and Foreign Service", "State Government (Richmond)", "Public History and Museum Administration", "Legal Services", "Public Policy Research"],
+    "nicheRecruitingAdvantages": ["U.S. State Department", "Federal government agencies broadly", "McKinsey & Company", "Top law schools nationally", "Colonial Williamsburg Foundation"],
+    "overlookedStrengths": [
+      "William and Mary's academic rigor and selectivity genuinely rival private elite universities, delivered at a fraction of the cost — systematically undersold relative to its 'historic college' branding.",
+      "Direct physical and institutional proximity to Colonial Williamsburg gives public history and government students primary-source access most universities' students only study from a distance.",
+      "The Marshall-Wythe School of Law, the oldest in the country, reinforces a genuinely elite undergraduate pre-law pipeline.",
+      "William and Mary's small-college social culture is a genuine, distinctive advantage relative to large public flagships, rarely emphasized in how the school gets marketed."
+    ],
+    "sleeperIndustries": ["Public History and Museum Administration", "State Government Policy", "Federal Foreign Service", "Public Policy Research"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 80, "mentorshipDensity": 78, "executiveAccess": 76, "internshipNetwork": 80,
+    "familyBusinessExposure": 40, "relationshipCapitalScore": 82, "alumniLoyaltyScore": 82,
+    "referralCultureStrength": 80, "donorNetworkStrength": 68, "boardMemberDensity": 62
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Government", "Law", "Public Policy", "Public History and Museums", "Management Consulting"],
+    "regionalEconomicDrivers": ["State and Federal Government", "Legal Services", "Public Policy Research", "Historical Tourism"],
+    "topEmployers": ["U.S. State Department", "Federal government agencies broadly", "McKinsey & Company", "Top national law firms", "Colonial Williamsburg Foundation"],
+    "emergingIndustries": ["Public Policy Technology", "Legal Technology", "Digital Public History"],
+    "startupDensity": "Low", "ventureCapitalAccess": 28, "corporateHeadquartersDensity": 32,
+    "healthcareHubStrength": 44, "innovationIndex": 52
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Washington DC and Richmond — Government, Law, and Public Policy",
+    "secondaryMarkets": ["New York NY", "Boston MA"],
+    "alumniStrongholds": ["Washington DC", "Richmond VA", "New York NY"],
+    "relocationPatterns": [
+      "Washington DC draws the largest share of graduates into federal government, law, and policy roles.",
+      "Richmond retains a meaningful cohort in Virginia state government roles.",
+      "New York and Boston recruit graduates into law, finance, and consulting."
+    ],
+    "regionalInfluenceScore": 88, "nationalReachScore": 66, "internationalReachScore": 42
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 28, "studentOrganizationStrength": 82, "leadershipDevelopment": 80,
+    "crossDisciplinaryInteraction": 74, "civicEngagement": 86
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 34, "notes": "A modest, secondary pathway relative to William and Mary's dominant law and government identity." },
+    "nutraceuticals": { "strength": 18, "notes": "Minimal institutional emphasis." },
+    "consumerProducts": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "outdoorIndustry": { "strength": 26, "notes": "A modest, secondary pathway tied to Virginia's coastal and historic setting." },
+    "sportsBusiness": { "strength": 26, "notes": "A modest, secondary pathway; William and Mary's athletics program is not a defining institutional identity." },
+    "entertainmentMedia": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 30, "notes": "A modest, secondary pathway relative to William and Mary's dominant law and government identity." },
+    "privateEquity": { "strength": 44, "notes": "A real, secondary pathway through Mason Business's growing placement." },
+    "investmentBanking": { "strength": 48, "notes": "A real, secondary pathway, smaller than William and Mary's dominant law and government pipelines." },
+    "consulting": { "strength": 62, "notes": "A real, solid pathway into major consulting firms, particularly government and public-sector consulting practices." },
+    "medicine": { "strength": 44, "notes": "A modest, secondary pathway; William and Mary has no medical school of its own." },
+    "healthcareAdministration": { "strength": 36, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 42, "notes": "A real, secondary pathway through government and international relations coursework, reinforced by federal government proximity." },
+    "realEstate": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 40, "notes": "A modest, growing pathway, though secondary to William and Mary's dominant law and government identity." },
+    "technology": { "strength": 38, "notes": "A modest, secondary pathway; William and Mary is not positioned as a technology-recruiting campus." },
+    "publicPolicy": { "strength": 92, "notes": "A very strong, defining pathway reinforced by the country's oldest law school and direct Richmond/DC government proximity." },
+    "nonprofitLeadership": { "strength": 64, "notes": "A genuinely strong, distinctive pathway reinforced by public history, museum administration, and civic-engagement-oriented campus culture." },
+    "hospitality": { "strength": 28, "notes": "A modest, secondary pathway tied to Colonial Williamsburg's tourism economy." },
+    "supplyChain": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "insurance": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "agriculture": { "strength": 14, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 60, "firstGenerationSupport": 62,
+    "wealthCreationPotential": 76, "familyBusinessPipelineStrength": 38
+  },
+  "futureResilience": {
+    "aiResistance": 76, "automationResistance": 78, "adaptabilityScore": 76, "interdisciplinaryStrength": 74,
+    "futureReadiness": 76, "entrepreneurialFlexibility": 56, "lifelongLearningCulture": 78, "innovationCapacity": 62
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 76, "communityLeadershipPotential": 84, "geographicMobility": 70,
+    "workLifeBalancePotential": 72, "purposeAlignment": 84, "familyFormationSupport": 76,
+    "personalDevelopmentPotential": 80, "careerOptionality": 74, "longTermLifeSatisfaction": 82
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 76, "networkMoat": 72, "geographicMoat": 78, "industryMoat": 78,
+    "alumniMoat": 76, "brandDurability": 80, "overallMoatScore": 77
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "NAVIGATOR",
+    "leaverScore": 62, "returnerScore": 44, "stewardScore": 48, "navigatorScore": 72,
+    "geographicLockIn": "low",
+    "alumniDispersalPattern": "dc_richmond_concentration_with_ny_boston_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 52, "type": "Campus Hillel" },
+    "estimatedJewishUndergraduates": 300, "jewishStudentPercentage": "~4.8%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Modest",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "William and Mary has no separate honors college; its small overall scale and low student-faculty ratio deliver an honors-equivalent experience across the undergraduate population."
+  }
+},
+  "University of Kentucky": {
+  "institutionNarrative": {
+    "name": "University of Kentucky",
+    "location": "Lexington, Kentucky",
+    "region": "Southeast",
+    "archetype": "UK HealthCare's Academic Medical Engine, Inside Bourbon and Bluegrass Horse Country",
+    "oneSentenceSummary": "Kentucky combines a major academic medical center (UK HealthCare, the region's most comprehensive) with genuinely distinctive equine science and bourbon-industry-adjacent programs unmatched by any other university in the country, inside one of college basketball's most storied programs.",
+    "pipeline": "Approximately 24,000 undergraduates. UK HealthCare anchors one of the most comprehensive academic medical centers in the region, reinforcing a strong pre-med and nursing pipeline. The Equine Science program is genuinely the most respected in the country, reinforced by direct proximity to the Bluegrass region's thoroughbred horse industry. The Gatton College of Business has solid regional placement, including a distinctive bourbon and spirits industry management track. Major recruiters include UK HealthCare, Toyota (Georgetown, KY manufacturing plant), Humana, and the bourbon and equine industries directly.",
+    "hiddenPathway": "Kentucky's Equine Science program gives students direct, structural access to the Bluegrass region's thoroughbred horse industry — breeding, training, veterinary care, and racing operations — a genuinely unique career pathway essentially unavailable anywhere else in the country at this depth.",
+    "institutionalSecret": "Kentucky's bourbon industry management coursework, tied to the state's identity as the source of 95% of the world's bourbon, gives business students a genuinely distinctive, real-world distilling and spirits industry pipeline most universities cannot offer at all.",
+    "theRoom": "Lexington sits inside the Bluegrass region, the historic center of the thoroughbred horse industry and Kentucky's bourbon distilling heritage — Kentucky's academic programs are directly, structurally tied to both.",
+    "lifestyle": "Spirited and basketball-driven — Kentucky basketball is one of the most storied programs in college sports — balanced by a genuine Southern hospitality culture and distinctive regional industries (bourbon, horses) most universities don't have access to.",
+    "bestFitPersonality": "Practically minded and comfortable with a large public flagship, drawn to medicine, equine science, or agriculture specifically, energized by storied athletics culture and distinctive regional industries.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Dominant in Kentucky's healthcare, equine, and bourbon industries, with strong regional reach across the Southeast and Ohio Valley.",
+    "economicOutcome": "Excellent, genuinely distinctive outcomes in equine science and academic medicine, alongside solid outcomes in business and agriculture, reinforced by direct access to industries essentially unique to the region.",
+    "gradCities": ["Lexington KY", "Louisville KY", "Nashville TN", "Cincinnati OH"],
+    "comparableInstitutions": ["University of Tennessee", "University of Georgia", "University of South Carolina", "University of Missouri"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Bluegrass Community and Technical College"],
+      "transferAcceptanceRate": "~78%",
+      "freshmanAcceptanceRate": "~93%",
+      "estimatedSavingsRange": "$8,000-$20,000",
+      "transferNotes": "Kentucky maintains a genuinely accessible transfer pathway from Kentucky's community and technical college system."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "University of Kentucky",
+    "archetype": "UK HealthCare's Academic Medical Engine, Inside Bourbon and Bluegrass Horse Country",
+    "institutionalPersonality": "spirited, practically minded, Southern-hospitable, distinctively regional",
+    "cultureKeywords": ["UK HealthCare", "Equine Science", "Bourbon Industry Ties", "Storied Basketball Program", "Bluegrass Region"],
+    "missionOrientation": "Delivering large-scale public research education directly tied to Kentucky's distinctive equine, bourbon, and academic medicine industries.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, industry-connected education reinforced by direct access to the Bluegrass region's thoroughbred horse industry and Kentucky's bourbon distilling heritage.",
+    "competitiveness": "Moderately Selective",
+    "politicalCulture": "Broadly moderate, reflecting Kentucky's politically mixed electorate.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Regionally strong, genuinely elite and nationally distinctive specifically in equine science.",
+    "socialClimate": "Spirited, basketball-driven, Southern-hospitable.",
+    "leadershipStyle": "Leadership through athletics-driven school pride and applied regional-industry competence."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Piedmont Atlantic",
+    "regionalRole": "The country's most academically distinctive equine science program, combined with a major regional academic medical center, inside the Bluegrass region's genuinely unique horse and bourbon industries."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 38, "BosWash": 16, "TorBuffChester": 10,
+    "TexasTriangle": 14, "CharLanta": 68, "NorCalInnovationCorridor": 10, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusTennessee": "Tennessee offers a larger scale and stronger overall Southeast Conference national visibility; Kentucky offers a genuinely unmatched equine science program and direct bourbon industry ties unavailable at any other university.",
+    "versusGeorgia": "Georgia offers a stronger, more comprehensive agricultural sciences program at Southeast Conference scale; Kentucky offers the single most respected equine science program in the country and a genuinely distinctive bourbon industry pipeline."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Large",
+    "undergraduateEnrollment": 24000, "graduateEnrollment": 6500, "totalEnrollment": 30500,
+    "campusType": "Large Public Flagship, Urban Lexington Campus",
+    "residentialIntensity": 52, "communityFeel": 64, "studentFacultyRatio": "17:1",
+    "classSizeExperience": "Large introductory courses typical of a large public university; Equine Science and upper-division coursework become substantially more hands-on and specialized.",
+    "scaleAdvantages": ["The single most respected equine science program in the country", "Genuinely distinctive bourbon industry management coursework unavailable elsewhere", "Comprehensive UK HealthCare academic medical center", "Storied basketball program creating unifying school pride"],
+    "scaleDisadvantages": ["Large introductory courses require significant student initiative", "Less national brand recognition outside equine science, bourbon, and basketball", "Moderately selective admission may not signal rigor to all families", "Large public-university scale can feel impersonal without active community-building"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 68, "conscientiousness": 78, "extraversion": 74, "agreeableness": 80, "neuroticism": 44 },
+    "hollandCodes": ["R", "S", "E"],
+    "learningStyle": ["Applied Equine Science", "Clinical Pre-Med Training", "Case-Method Business"],
+    "socialEnvironment": ["Spirited", "Practically Minded", "Southern-Hospitable", "Distinctively Regional"],
+    "idealStudentTraits": ["Practically minded and comfortable with a large public flagship", "Drawn to medicine, equine science, or agriculture specifically", "Energized by storied athletics culture", "Values access to distinctive regional industries (bourbon, horses)"],
+    "thrivesIf": ["Wants the single most respected equine science program in the country", "Values genuinely distinctive bourbon industry management coursework", "Wants comprehensive academic medical center access through UK HealthCare", "Enjoys storied basketball culture and Southern hospitality"],
+    "strugglesIf": ["Wants a small, intimate campus", "Needs a program with broader non-regional institutional identity", "Prefers a more nationally prominent brand outside basketball, equine science, and bourbon", "Wants significant structured guidance rather than self-direction"],
+    "transferRiskFactors": ["Students seeking a smaller, more intimate campus", "Students whose intended field sits outside Kentucky's core medicine/equine/agriculture strengths", "Students who want a more nationally prominent brand outside its regional specialties"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low to Moderate",
+    "notes": "Kentucky does not formally impact most majors at the undergraduate level, though pre-med and equine science tracks carry substantial informal competitive pressure given their strong reputations."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Equine Science and Management", "Merchandising, Apparel, and Textiles", "Community and Leadership Development", "Nutrition and Food Science", "Forestry and Natural Resources"],
+    "hiddenCareerPipelines": ["Equine Industry Management", "Bourbon and Spirits Industry Management", "Academic Medical Research", "Agricultural Business", "Toyota Manufacturing (Georgetown, KY plant)"],
+    "nicheRecruitingAdvantages": ["UK HealthCare", "Toyota Motor Manufacturing Kentucky", "Humana", "Kentucky's major bourbon distillers", "Keeneland and Kentucky's thoroughbred racing industry"],
+    "overlookedStrengths": [
+      "Kentucky's Equine Science program is genuinely the most respected in the country, giving students direct access to the Bluegrass region's thoroughbred horse industry that essentially no other university can replicate.",
+      "The bourbon industry management coursework gives business students a genuinely distinctive, real-world distilling and spirits industry pipeline unique to Kentucky's status as the source of 95% of the world's bourbon.",
+      "UK HealthCare is one of the most comprehensive academic medical centers in the region, systematically overshadowed by Kentucky's basketball fame.",
+      "Toyota's major manufacturing plant in Georgetown, Kentucky, gives engineering and business students direct access to advanced automotive manufacturing careers."
+    ],
+    "sleeperIndustries": ["Equine Industry Management", "Bourbon and Spirits Industry Management", "Academic Medical Research", "Advanced Automotive Manufacturing"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 72, "mentorshipDensity": 70, "executiveAccess": 68, "internshipNetwork": 78,
+    "familyBusinessExposure": 44, "relationshipCapitalScore": 76, "alumniLoyaltyScore": 82,
+    "referralCultureStrength": 78, "donorNetworkStrength": 62, "boardMemberDensity": 54
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Academic Medicine", "Equine Industry", "Bourbon and Spirits", "Agriculture", "Advanced Manufacturing"],
+    "regionalEconomicDrivers": ["Academic Medicine", "Thoroughbred Horse Industry", "Bourbon Distilling", "Automotive Manufacturing"],
+    "topEmployers": ["UK HealthCare", "Toyota Motor Manufacturing Kentucky", "Humana", "Kentucky's major bourbon distillers", "Keeneland Association"],
+    "emergingIndustries": ["Equine Veterinary Technology", "Bourbon Tourism and Hospitality", "Advanced Manufacturing Automation", "Agricultural Technology"],
+    "startupDensity": "Low-Moderate", "ventureCapitalAccess": 30, "corporateHeadquartersDensity": 44,
+    "healthcareHubStrength": 80, "innovationIndex": 56
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Lexington and Central Kentucky — Academic Medicine, Equine Industry, and Bourbon",
+    "secondaryMarkets": ["Louisville KY", "Nashville TN", "Cincinnati OH"],
+    "alumniStrongholds": ["Lexington KY", "Louisville KY", "Nashville TN"],
+    "relocationPatterns": [
+      "A large majority of graduates remain in Kentucky, entering healthcare, equine industry, and bourbon-adjacent roles.",
+      "Louisville and Nashville draw graduates into broader corporate and healthcare roles.",
+      "A meaningful cohort enters national equine industry roles given Kentucky's unmatched reputation in the field."
+    ],
+    "regionalInfluenceScore": 92, "nationalReachScore": 56, "internationalReachScore": 34
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 22, "studentOrganizationStrength": 72, "leadershipDevelopment": 70,
+    "crossDisciplinaryInteraction": 60, "civicEngagement": 62
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 22, "notes": "A modest, secondary pathway." },
+    "healthWellness": { "strength": 68, "notes": "A real, solid pathway reinforced by UK HealthCare's comprehensive academic medical center." },
+    "nutraceuticals": { "strength": 38, "notes": "A real, secondary pathway through nutrition and food science programs." },
+    "consumerProducts": { "strength": 46, "notes": "A real, secondary pathway, reinforced by the distinctive bourbon and spirits industry management track." },
+    "outdoorIndustry": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "sportsBusiness": { "strength": 48, "notes": "A real, secondary pathway given Kentucky's storied basketball program." },
+    "entertainmentMedia": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 26, "notes": "A modest, secondary pathway; Kentucky's venture ecosystem is smaller than tech-hub peer states." },
+    "privateEquity": { "strength": 38, "notes": "A modest, secondary pathway." },
+    "investmentBanking": { "strength": 38, "notes": "A modest, secondary pathway; Kentucky is not primarily positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 50, "notes": "A real, secondary pathway, particularly healthcare consulting." },
+    "medicine": { "strength": 78, "notes": "A strong pathway reinforced directly by UK HealthCare's comprehensive academic medical center." },
+    "healthcareAdministration": { "strength": 72, "notes": "A real, solid pathway reinforced by UK HealthCare's scale." },
+    "defense": { "strength": 22, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 36, "notes": "A real, distinctive pathway tied to Kentucky's premium bourbon industry." },
+    "entrepreneurship": { "strength": 44, "notes": "A modest, growing pathway, particularly in bourbon and equine-adjacent startups." },
+    "technology": { "strength": 34, "notes": "A modest, secondary pathway; Kentucky is not positioned as a major technology-recruiting campus." },
+    "publicPolicy": { "strength": 38, "notes": "A modest, secondary pathway." },
+    "nonprofitLeadership": { "strength": 36, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 52, "notes": "A real, growing pathway tied to Kentucky's expanding bourbon tourism industry and horse racing hospitality (Keeneland, Kentucky Derby proximity)." },
+    "supplyChain": { "strength": 48, "notes": "A real, secondary pathway reinforced by Toyota's Georgetown manufacturing plant proximity." },
+    "insurance": { "strength": 32, "notes": "A modest, secondary pathway, reinforced by Humana's headquarters proximity." },
+    "agriculture": { "strength": 86, "notes": "A very strong, defining land-grant pathway, anchored by the country's single most respected equine science program and Kentucky's broader agricultural economy." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 76, "firstGenerationSupport": 78,
+    "wealthCreationPotential": 60, "familyBusinessPipelineStrength": 48
+  },
+  "futureResilience": {
+    "aiResistance": 62, "automationResistance": 64, "adaptabilityScore": 66, "interdisciplinaryStrength": 58,
+    "futureReadiness": 62, "entrepreneurialFlexibility": 54, "lifelongLearningCulture": 62, "innovationCapacity": 54
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 60, "communityLeadershipPotential": 68, "geographicMobility": 50,
+    "workLifeBalancePotential": 76, "purposeAlignment": 70, "familyFormationSupport": 78,
+    "personalDevelopmentPotential": 68, "careerOptionality": 58, "longTermLifeSatisfaction": 76
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 54, "networkMoat": 64, "geographicMoat": 84, "industryMoat": 82,
+    "alumniMoat": 74, "brandDurability": 72, "overallMoatScore": 71
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 32, "returnerScore": 72, "stewardScore": 82, "navigatorScore": 44,
+    "geographicLockIn": "high",
+    "alumniDispersalPattern": "overwhelmingly_concentrated_kentucky_with_nashville_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 34, "type": "Small Campus Hillel" },
+    "estimatedJewishUndergraduates": 150, "jewishStudentPercentage": "~0.6%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Minimal",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Lewis Honors College", "strength": 66,
+    "notes": "A genuinely well-regarded, centralized honors college providing dedicated housing, smaller seminars, and priority course access within Kentucky's large public-flagship scale."
+  }
+},
+  "Texas Tech University": {
+  "institutionNarrative": {
+    "name": "Texas Tech University",
+    "location": "Lubbock, Texas",
+    "region": "Southwest",
+    "archetype": "The Nation's #1 Personal Financial Planning Program, Inside West Texas's Energy and Agriculture Economy",
+    "oneSentenceSummary": "Texas Tech combines the #1-ranked undergraduate personal financial planning program in the country with direct access to West Texas's petroleum, wind energy, and cotton agriculture economy, inside a large, spirited Big 12 public flagship.",
+    "pipeline": "Approximately 33,000 undergraduates. The Personal Financial Planning program is consistently ranked #1 in the country, a genuinely elite, specific credential. The Bob L. Herd Department of Petroleum Engineering is strong, reinforced by direct proximity to the Permian Basin, one of the most productive oil fields in the world. Agricultural and Applied Economics is a real land-grant-adjacent strength given West Texas's cotton and livestock economy. Major recruiters include major financial planning firms, ExxonMobil, Chevron, and West Texas agricultural and energy companies.",
+    "hiddenPathway": "Texas Tech's Personal Financial Planning program has structural, direct relationships with major financial planning firms nationally that most other universities' finance programs don't have — this is a genuinely elite, specific credential hiding inside a large general public university.",
+    "institutionalSecret": "West Texas's wind energy corridor, one of the most productive in the country, gives Texas Tech's wind energy and atmospheric science programs (reinforced by the National Wind Institute) a genuinely distinctive, underrated research pipeline most families researching Texas Tech for football or petroleum engineering never discover.",
+    "theRoom": "Lubbock sits inside the Permian Basin's petroleum economy and West Texas's wind energy corridor and cotton agriculture economy — a genuine three-industry regional economic base most universities' host cities don't have.",
+    "lifestyle": "Spirited and Red Raider-proud, with a practical, energy-and-agriculture-minded culture reflecting West Texas's regional economy, balanced by a large, comprehensive public-university experience.",
+    "bestFitPersonality": "Practically minded and comfortable with a large public flagship, drawn to financial planning, petroleum engineering, or agricultural economics specifically, energized by spirited Big 12 athletics culture.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Dominant in West Texas's energy and agriculture economy, with genuine national reach in personal financial planning specifically.",
+    "economicOutcome": "Exceptional, genuinely distinctive outcomes in personal financial planning (the #1-ranked program nationally), alongside strong outcomes in petroleum engineering and agricultural economics.",
+    "gradCities": ["Dallas-Fort Worth TX", "Houston TX", "Austin TX", "Lubbock TX"],
+    "comparableInstitutions": ["Texas A&M University", "Oklahoma State University", "University of Oklahoma", "Baylor University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["South Plains College"],
+      "transferAcceptanceRate": "~72%",
+      "freshmanAcceptanceRate": "~68%",
+      "estimatedSavingsRange": "$8,000-$20,000",
+      "transferNotes": "Texas Tech maintains a genuinely accessible transfer pathway from West Texas community colleges."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Texas Tech",
+    "archetype": "The Nation's #1 Personal Financial Planning Program, Inside West Texas's Energy and Agriculture Economy",
+    "institutionalPersonality": "practical, spirited, energy-and-agriculture-minded, West-Texas-proud",
+    "cultureKeywords": ["#1 Personal Financial Planning", "Permian Basin Petroleum", "Red Raiders", "West Texas Wind Energy", "Big 12 Athletics"],
+    "missionOrientation": "Delivering large-scale public research education directly connected to West Texas's petroleum, wind energy, and agriculture economy, anchored by a genuinely elite financial planning program.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, industry-connected education reinforced by direct proximity to the Permian Basin's petroleum economy and West Texas's wind energy corridor.",
+    "competitiveness": "Moderately Selective",
+    "politicalCulture": "Broadly conservative, reflecting West Texas's regional political culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Nationally elite specifically in personal financial planning; regionally strong in petroleum engineering and agricultural economics.",
+    "socialClimate": "Spirited, practical, West-Texas-proud.",
+    "leadershipStyle": "Leadership through applied industry competence and Red Raider school spirit."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Texas Triangle",
+    "regionalRole": "The nation's #1-ranked personal financial planning program, combined with direct access to West Texas's petroleum, wind energy, and agriculture economy."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 24, "BosWash": 14, "TorBuffChester": 8,
+    "TexasTriangle": 82, "CharLanta": 12, "NorCalInnovationCorridor": 10, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusTexasAM": "Texas A&M offers a larger scale, a legendary Aggie Network alumni culture, and stronger overall national prestige; Texas Tech offers the single #1-ranked personal financial planning program in the country and more direct Permian Basin petroleum engineering proximity.",
+    "versusOklahomaState": "Oklahoma State offers a comparable land-grant agricultural and energy-adjacent identity; Texas Tech offers a genuinely elite, nationally distinctive financial planning program unmatched by any other university."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Very Large",
+    "undergraduateEnrollment": 33000, "graduateEnrollment": 6000, "totalEnrollment": 39000,
+    "campusType": "Large Public Flagship, West Texas Campus",
+    "residentialIntensity": 42, "communityFeel": 62, "studentFacultyRatio": "19:1",
+    "classSizeExperience": "Large introductory courses typical of a large public university; Personal Financial Planning and upper-division coursework become substantially more personalized given the program's structural industry relationships.",
+    "scaleAdvantages": ["The single #1-ranked personal financial planning program in the country", "Direct Permian Basin petroleum engineering proximity", "Genuinely distinctive West Texas wind energy research pipeline", "Spirited Big 12 athletics culture and strong regional pride"],
+    "scaleDisadvantages": ["Lubbock's remote West Texas location limits independent economic and cultural pull outside energy/agriculture", "Large introductory courses require significant student initiative", "Less national brand recognition outside financial planning and football", "Large public-university scale can feel impersonal without active community-building"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 66, "conscientiousness": 80, "extraversion": 74, "agreeableness": 78, "neuroticism": 42 },
+    "hollandCodes": ["E", "C", "R"],
+    "learningStyle": ["Applied Financial Planning", "Petroleum Engineering Laboratory Work", "Agricultural Economics Case Study"],
+    "socialEnvironment": ["Practical", "Spirited", "West-Texas-Proud", "Energy-and-Agriculture-Minded"],
+    "idealStudentTraits": ["Practically minded and comfortable with a large public flagship", "Drawn to financial planning, petroleum engineering, or agricultural economics specifically", "Energized by spirited Big 12 athletics culture", "Comfortable with a remote West Texas setting"],
+    "thrivesIf": ["Wants the single #1-ranked personal financial planning program in the country", "Values direct Permian Basin petroleum engineering access", "Wants genuine West Texas wind energy and agricultural economics exposure", "Enjoys spirited Red Raider school pride"],
+    "strugglesIf": ["Wants a major city's direct economic and cultural access", "Needs a program with broader non-West-Texas institutional identity", "Prefers a smaller, more intimate campus", "Wants significant structured guidance rather than self-direction"],
+    "transferRiskFactors": ["Students seeking a major city's direct access", "Students whose intended field sits outside Texas Tech's core financial planning/petroleum/agriculture strengths", "Students who want a more nationally prominent brand outside West Texas"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low to Moderate",
+    "notes": "Texas Tech does not formally impact most majors at the undergraduate level, though the Personal Financial Planning program's structural industry relationships create informal competitive pressure given its #1 national ranking."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Personal Financial Planning", "Wind Energy Science, Engineering, and Policy", "Agricultural and Applied Economics", "Retail Management", "Land-Use Planning, Management, and Design"],
+    "hiddenCareerPipelines": ["Personal Financial Planning (structural industry placement)", "Petroleum Engineering (Permian Basin)", "Wind Energy Research and Development", "Agricultural Commodity Trading (cotton)", "Agribusiness Management"],
+    "nicheRecruitingAdvantages": ["Major national financial planning firms", "ExxonMobil", "Chevron", "West Texas cotton and agricultural commodity companies", "National Wind Institute-adjacent energy firms"],
+    "overlookedStrengths": [
+      "Texas Tech's Personal Financial Planning program has structural, direct relationships with major financial planning firms nationally that most other universities' finance programs simply don't have.",
+      "West Texas's wind energy corridor gives Texas Tech's wind energy programs, reinforced by the National Wind Institute, a genuinely distinctive research pipeline most families never discover.",
+      "Direct Permian Basin proximity gives petroleum engineering students access to one of the most productive oil fields in the world without needing to relocate.",
+      "Agricultural and Applied Economics ties directly into West Texas's cotton and livestock commodity trading economy, a real, underrated career pathway."
+    ],
+    "sleeperIndustries": ["Personal Financial Planning", "Wind Energy Research and Development", "Agricultural Commodity Trading", "Petroleum Engineering"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 70, "mentorshipDensity": 68, "executiveAccess": 66, "internshipNetwork": 78,
+    "familyBusinessExposure": 46, "relationshipCapitalScore": 74, "alumniLoyaltyScore": 80,
+    "referralCultureStrength": 76, "donorNetworkStrength": 60, "boardMemberDensity": 52
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Personal Financial Planning", "Petroleum Engineering", "Wind Energy", "Agricultural Economics", "Cotton and Livestock Commodities"],
+    "regionalEconomicDrivers": ["Permian Basin Petroleum", "West Texas Wind Energy", "Cotton and Livestock Agriculture"],
+    "topEmployers": ["Major national financial planning firms", "ExxonMobil", "Chevron", "West Texas agricultural commodity companies", "Permian Basin energy operators"],
+    "emergingIndustries": ["Wind Energy Technology", "Agricultural Technology", "Financial Planning Technology (Fintech)", "Water Resource Management"],
+    "startupDensity": "Low", "ventureCapitalAccess": 24, "corporateHeadquartersDensity": 38,
+    "healthcareHubStrength": 48, "innovationIndex": 50
+  },
+  "geographicInfluence": {
+    "dominantMarket": "West Texas — Petroleum, Wind Energy, and Agriculture",
+    "secondaryMarkets": ["Dallas-Fort Worth TX", "Houston TX", "Austin TX"],
+    "alumniStrongholds": ["Lubbock TX", "Dallas-Fort Worth TX", "Houston TX"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in West Texas, entering petroleum, wind energy, and agricultural roles.",
+      "Dallas-Fort Worth draws the largest share of graduates into financial planning and broader corporate roles.",
+      "Houston recruits graduates into the broader energy industry."
+    ],
+    "regionalInfluenceScore": 88, "nationalReachScore": 56, "internationalReachScore": 30
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 18, "studentOrganizationStrength": 74, "leadershipDevelopment": 70,
+    "crossDisciplinaryInteraction": 58, "civicEngagement": 60
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 20, "notes": "A modest, secondary pathway through retail management coursework." },
+    "healthWellness": { "strength": 38, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 34, "notes": "A modest, secondary pathway through agricultural economics." },
+    "consumerProducts": { "strength": 44, "notes": "A real, secondary pathway through retail management coursework." },
+    "outdoorIndustry": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "sportsBusiness": { "strength": 40, "notes": "A real, secondary pathway given spirited Big 12 athletics culture." },
+    "entertainmentMedia": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 26, "notes": "A modest, secondary pathway; West Texas's venture ecosystem is smaller than tech-hub peer regions." },
+    "privateEquity": { "strength": 58, "notes": "A real, secondary pathway, reinforced by the financial planning program's industry relationships." },
+    "investmentBanking": { "strength": 84, "notes": "A very strong, defining pathway — the Personal Financial Planning program's #1 national ranking comes with structural, direct placement relationships with major financial planning and wealth management firms most other universities' finance programs simply don't have." },
+    "consulting": { "strength": 42, "notes": "A modest, secondary pathway relative to Texas Tech's dominant financial planning and energy identity." },
+    "medicine": { "strength": 42, "notes": "A modest, secondary pathway; Texas Tech's health sciences center is real but secondary to its core financial planning and energy identity." },
+    "healthcareAdministration": { "strength": 40, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 24, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 42, "notes": "A real, secondary pathway through land-use planning and agricultural land management coursework." },
+    "luxuryBrands": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 46, "notes": "A real, growing pathway, particularly in agricultural and energy-adjacent startups." },
+    "technology": { "strength": 38, "notes": "A modest, secondary pathway; Texas Tech is not positioned as a major technology-recruiting campus generally." },
+    "publicPolicy": { "strength": 34, "notes": "A modest, secondary pathway, particularly energy and water policy." },
+    "nonprofitLeadership": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "supplyChain": { "strength": 46, "notes": "A real, secondary pathway reinforced by West Texas's cotton and agricultural commodity logistics economy." },
+    "insurance": { "strength": 68, "notes": "A real, distinctive pathway reinforced by the #1-ranked Personal Financial Planning program's insurance and risk management coursework." },
+    "agriculture": { "strength": 72, "notes": "A strong, genuine land-grant-adjacent pathway reinforced by West Texas's cotton and livestock agricultural economy." },
+    "energy": { "strength": 82, "notes": "A very strong, distinctive pathway — direct Permian Basin petroleum engineering access plus the National Wind Institute's genuinely underrated West Texas wind energy research pipeline. (Added 2026-07-12: previously buried as a modifier inside the technology score.)" }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 74, "firstGenerationSupport": 74,
+    "wealthCreationPotential": 62, "familyBusinessPipelineStrength": 46
+  },
+  "futureResilience": {
+    "aiResistance": 62, "automationResistance": 64, "adaptabilityScore": 64, "interdisciplinaryStrength": 56,
+    "futureReadiness": 64, "entrepreneurialFlexibility": 56, "lifelongLearningCulture": 62, "innovationCapacity": 56
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 62, "communityLeadershipPotential": 66, "geographicMobility": 52,
+    "workLifeBalancePotential": 76, "purposeAlignment": 66, "familyFormationSupport": 78,
+    "personalDevelopmentPotential": 64, "careerOptionality": 58, "longTermLifeSatisfaction": 76
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 52, "networkMoat": 62, "geographicMoat": 80, "industryMoat": 78,
+    "alumniMoat": 74, "brandDurability": 70, "overallMoatScore": 69
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 30, "returnerScore": 74, "stewardScore": 82, "navigatorScore": 42,
+    "geographicLockIn": "high",
+    "alumniDispersalPattern": "overwhelmingly_concentrated_west_texas_dfw_with_houston_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": false, "strength": 12, "type": "No formal Hillel; minimal Jewish student presence" },
+    "estimatedJewishUndergraduates": 60, "jewishStudentPercentage": "~0.2%",
+    "kosherDining": false, "shabbatProgramming": false, "birthrightSupport": false,
+    "jewishCommunityStrength": "Minimal",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Honors College", "strength": 60,
+    "notes": "Provides smaller seminars and priority course access within Texas Tech's very large public-flagship scale."
+  }
+}
+,
+  "San Diego State University": {
+  "institutionNarrative": {
+    "name": "San Diego State University",
+    "location": "San Diego, California",
+    "region": "California",
+    "archetype": "Direct Access to San Diego's Biotech Corridor and Border-Region Public Affairs",
+    "oneSentenceSummary": "San Diego State combines direct proximity to San Diego's major biotech and life sciences corridor with a genuinely distinctive homeland security and border-studies pipeline reinforced by its location minutes from the U.S.-Mexico border.",
+    "pipeline": "Approximately 30,000 undergraduates. The Fowler College of Business has solid, growing placement, reinforced by San Diego's biotech and tourism economy. The School of Public Affairs has a genuinely distinctive homeland security and border studies concentration, unique given SDSU's direct proximity to the U.S.-Mexico border. Public health and biology programs benefit directly from San Diego's dense biotech corridor (Illumina, and dozens of biotech firms). Major recruiters include Illumina, Qualcomm, major San Diego biotech firms, and federal homeland security agencies.",
+    "hiddenPathway": "SDSU's direct proximity to the U.S.-Mexico border gives homeland security, public affairs, and international business students genuine, structural access to border-region policy and trade issues most universities only study abstractly.",
+    "institutionalSecret": "San Diego's biotech corridor — anchored by Illumina and dozens of smaller genomics and life sciences firms — gives SDSU's biology and public health students real, direct industry access systematically overshadowed by the university's beach-and-sunshine reputation.",
+    "theRoom": "San Diego is one of the country's most significant biotech and life sciences hubs, alongside a genuine tourism and hospitality economy and direct proximity to the U.S.-Mexico border — SDSU sits inside all three simultaneously.",
+    "lifestyle": "Sunny, outdoorsy, and spirited around growing Aztecs athletics, balanced by genuine access to San Diego's biotech, tourism, and cross-border economic ecosystem.",
+    "bestFitPersonality": "Practically minded and comfortable with a large public university, drawn to biotech, public affairs, or hospitality specifically, energized by San Diego's outdoor and coastal lifestyle.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Strong regional dominance in San Diego's biotech, tourism, and border-region public affairs sectors.",
+    "economicOutcome": "Strong outcomes in biotech-adjacent biology and public health roles, homeland security and border-region public affairs, and hospitality management, reinforced by direct San Diego industry access.",
+    "gradCities": ["San Diego CA", "Los Angeles CA", "Washington DC"],
+    "comparableInstitutions": ["San Jose State University", "California Polytechnic State University San Luis Obispo", "Arizona State University", "University of San Diego"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["San Diego City College", "San Diego Mesa College"],
+      "transferAcceptanceRate": "~62%",
+      "freshmanAcceptanceRate": "~42%",
+      "estimatedSavingsRange": "$10,000-$24,000",
+      "transferNotes": "SDSU maintains strong, structured transfer agreements with San Diego's community college system, a well-established pathway."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "San Diego State",
+    "archetype": "Direct Access to San Diego's Biotech Corridor and Border-Region Public Affairs",
+    "institutionalPersonality": "sunny, practical, outdoorsy, border-region-connected",
+    "cultureKeywords": ["San Diego Biotech Corridor", "Border Region Public Affairs", "Aztecs Athletics", "Coastal Lifestyle", "Homeland Security"],
+    "missionOrientation": "Delivering large-scale public education directly connected to San Diego's biotech industry and border-region public affairs landscape.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, industry-connected education reinforced by direct San Diego biotech corridor and border-region proximity.",
+    "competitiveness": "Selective",
+    "politicalCulture": "Broadly progressive, reflecting Southern California's politically engaged coastal culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Strong regional prestige, growing national reputation, genuinely distinctive in border-region public affairs and homeland security.",
+    "socialClimate": "Sunny, spirited, outdoorsy.",
+    "leadershipStyle": "Leadership through applied competence and border-region civic engagement."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Southern California",
+    "regionalRole": "A growing biotech-and-public-affairs talent engine anchored by San Diego's life sciences corridor and its uniquely direct U.S.-Mexico border proximity."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 10, "BosWash": 14, "TorBuffChester": 8,
+    "TexasTriangle": 12, "CharLanta": 10, "NorCalInnovationCorridor": 16, "SoCalCreativeEconomy": 78
+  },
+  "comparativePositioning": {
+    "versusSanJoseState": "San Jose State offers direct Silicon Valley tech proximity; San Diego State offers direct San Diego biotech corridor access and a genuinely distinctive border-region public affairs pipeline San Jose State doesn't have.",
+    "versusUSD": "University of San Diego offers a smaller, more intimate private Catholic university experience; SDSU offers larger public-school scale with more direct biotech corridor and border-region public affairs access."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Very Large",
+    "undergraduateEnrollment": 30000, "graduateEnrollment": 4500, "totalEnrollment": 34500,
+    "campusType": "Large Public University, Coastal San Diego Campus",
+    "residentialIntensity": 38, "communityFeel": 58, "studentFacultyRatio": "24:1",
+    "classSizeExperience": "Large introductory courses typical of a large public university; upper-division biology, public affairs, and business coursework become more specialized with direct San Diego industry ties.",
+    "scaleAdvantages": ["Direct access to San Diego's major biotech and life sciences corridor", "Genuinely distinctive homeland security and border studies pipeline", "Sunny, outdoorsy coastal lifestyle with growing athletics culture", "Strong, well-established community college transfer pathway"],
+    "scaleDisadvantages": ["Large introductory courses require significant student initiative", "Higher student-faculty ratio than many peer public universities", "Less national brand recognition outside California relative to UC system peers", "High cost of living in San Diego"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 72, "conscientiousness": 74, "extraversion": 76, "agreeableness": 78, "neuroticism": 42 },
+    "hollandCodes": ["S", "E", "I"],
+    "learningStyle": ["Applied Public Affairs Case Study", "Biology and Public Health Laboratory Work", "Case-Method Business"],
+    "socialEnvironment": ["Sunny", "Outdoorsy", "Spirited", "Border-Region-Connected"],
+    "idealStudentTraits": ["Practically minded and comfortable with a large public university", "Drawn to biotech, public affairs, or hospitality specifically", "Energized by San Diego's outdoor and coastal lifestyle", "Values direct border-region policy and trade exposure"],
+    "thrivesIf": ["Wants direct access to San Diego's biotech and life sciences corridor", "Values a genuinely distinctive homeland security and border studies pipeline", "Enjoys San Diego's sunny, outdoorsy coastal lifestyle", "Wants growing, spirited Aztecs athletics culture"],
+    "strugglesIf": ["Wants a small, intimate campus", "Needs significant structured academic guidance", "Prefers a program with broader non-California institutional identity", "Wants a lower cost-of-living location"],
+    "transferRiskFactors": ["Students seeking a smaller, more intimate campus", "Students overwhelmed by a large public-university student-faculty ratio", "Students whose intended field sits outside SDSU's core biotech/public-affairs/hospitality strengths"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Moderate",
+    "notes": "SDSU does not formally impact most majors at the undergraduate level, though impacted-major status applies to several high-demand programs including nursing and certain business concentrations, requiring competitive internal application."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Homeland Security", "Public Health", "Hospitality and Tourism Management", "Geography (border studies track)", "Sustainability"],
+    "hiddenCareerPipelines": ["Biotech and Genomics (Illumina-adjacent)", "Border Region Trade and Policy", "Homeland Security and Federal Law Enforcement", "Hospitality and Tourism Management", "Public Health Research"],
+    "nicheRecruitingAdvantages": ["Illumina", "Qualcomm", "Major San Diego biotech firms", "U.S. Customs and Border Protection", "San Diego's hospitality and tourism industry"],
+    "overlookedStrengths": [
+      "SDSU's direct proximity to the U.S.-Mexico border gives homeland security and public affairs students genuine, structural access to border-region policy issues most universities only study abstractly.",
+      "San Diego's biotech corridor, anchored by Illumina and dozens of smaller genomics firms, gives SDSU's biology and public health students real, direct industry access systematically overshadowed by the university's beach reputation.",
+      "The School of Public Affairs' border and homeland security concentration is a genuinely unique offering unavailable at almost any other public university.",
+      "SDSU's community college transfer pathway is unusually strong and well-established, a real value proposition for cost-conscious families."
+    ],
+    "sleeperIndustries": ["Biotech and Genomics", "Homeland Security and Federal Law Enforcement", "Border Region Trade Policy", "Hospitality and Tourism Management"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 68, "mentorshipDensity": 64, "executiveAccess": 62, "internshipNetwork": 76,
+    "familyBusinessExposure": 36, "relationshipCapitalScore": 70, "alumniLoyaltyScore": 72,
+    "referralCultureStrength": 70, "donorNetworkStrength": 54, "boardMemberDensity": 48
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Biotech and Life Sciences", "Homeland Security", "Hospitality and Tourism", "Public Health", "Border Region Trade"],
+    "regionalEconomicDrivers": ["Biotech and Genomics", "Tourism and Hospitality", "Cross-Border Trade", "Defense (San Diego's naval presence)"],
+    "topEmployers": ["Illumina", "Qualcomm", "Major San Diego biotech firms", "U.S. Customs and Border Protection", "San Diego's hospitality industry"],
+    "emergingIndustries": ["Genomics and Precision Medicine", "Cross-Border Trade Technology", "Sustainable Tourism", "Cybersecurity (border/homeland security adjacent)"],
+    "startupDensity": "Moderate", "ventureCapitalAccess": 46, "corporateHeadquartersDensity": 44,
+    "healthcareHubStrength": 68, "innovationIndex": 62
+  },
+  "geographicInfluence": {
+    "dominantMarket": "San Diego — Biotech, Border Region Public Affairs, and Tourism",
+    "secondaryMarkets": ["Los Angeles CA", "Washington DC"],
+    "alumniStrongholds": ["San Diego CA", "Los Angeles CA", "Washington DC"],
+    "relocationPatterns": [
+      "The large majority of graduates remain in San Diego, entering biotech, tourism, and public affairs roles.",
+      "Washington DC draws a meaningful cohort into homeland security and federal policy roles.",
+      "Los Angeles recruits graduates into broader business and hospitality roles."
+    ],
+    "regionalInfluenceScore": 88, "nationalReachScore": 52, "internationalReachScore": 48
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 20, "studentOrganizationStrength": 70, "leadershipDevelopment": 66,
+    "crossDisciplinaryInteraction": 58, "civicEngagement": 62
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "healthWellness": { "strength": 62, "notes": "A real, solid pathway reinforced by San Diego's biotech and public health ecosystem." },
+    "nutraceuticals": { "strength": 38, "notes": "A modest, secondary pathway." },
+    "consumerProducts": { "strength": 38, "notes": "A modest, secondary pathway." },
+    "outdoorIndustry": { "strength": 48, "notes": "A real, secondary pathway tied to San Diego's coastal and outdoor recreation culture." },
+    "sportsBusiness": { "strength": 42, "notes": "A real, secondary pathway given growing Aztecs athletics visibility." },
+    "entertainmentMedia": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "ventureCapital": { "strength": 42, "notes": "A real, secondary pathway tied to San Diego's growing biotech startup ecosystem." },
+    "privateEquity": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "investmentBanking": { "strength": 36, "notes": "A modest, secondary pathway; SDSU is not primarily positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 50, "notes": "A real, secondary pathway." },
+    "medicine": { "strength": 56, "notes": "A real, secondary pathway; SDSU has no medical school of its own but real pre-health placement." },
+    "healthcareAdministration": { "strength": 58, "notes": "A real, secondary pathway reinforced by San Diego's healthcare and biotech ecosystem." },
+    "defense": { "strength": 56, "notes": "A real, distinctive pathway reinforced by homeland security coursework and San Diego's significant naval and defense presence." },
+    "realEstate": { "strength": 36, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "entrepreneurship": { "strength": 46, "notes": "A real, growing pathway, particularly in biotech startups." },
+    "technology": { "strength": 54, "notes": "A real, growing pathway reinforced by San Diego's biotech and Qualcomm-adjacent technology ecosystem." },
+    "publicPolicy": { "strength": 64, "notes": "A real, distinctive pathway reinforced by the School of Public Affairs' homeland security and border studies concentration." },
+    "nonprofitLeadership": { "strength": 44, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 62, "notes": "A real, distinctive pathway reinforced directly by San Diego's tourism and hospitality economy." },
+    "supplyChain": { "strength": 44, "notes": "A real, secondary pathway tied to cross-border trade logistics given proximity to Mexico." },
+    "insurance": { "strength": 28, "notes": "Not a defining institutional strength." },
+    "agriculture": { "strength": 22, "notes": "A modest, secondary pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 76, "firstGenerationSupport": 78,
+    "wealthCreationPotential": 64, "familyBusinessPipelineStrength": 38
+  },
+  "futureResilience": {
+    "aiResistance": 68, "automationResistance": 68, "adaptabilityScore": 70, "interdisciplinaryStrength": 64,
+    "futureReadiness": 70, "entrepreneurialFlexibility": 58, "lifelongLearningCulture": 68, "innovationCapacity": 62
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 64, "communityLeadershipPotential": 66, "geographicMobility": 58,
+    "workLifeBalancePotential": 78, "purposeAlignment": 68, "familyFormationSupport": 74,
+    "personalDevelopmentPotential": 68, "careerOptionality": 62, "longTermLifeSatisfaction": 78
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 52, "networkMoat": 58, "geographicMoat": 82, "industryMoat": 72,
+    "alumniMoat": 62, "brandDurability": 66, "overallMoatScore": 65
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 36, "returnerScore": 68, "stewardScore": 74, "navigatorScore": 50,
+    "geographicLockIn": "high",
+    "alumniDispersalPattern": "overwhelmingly_concentrated_san_diego_with_la_dc_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 52, "type": "Campus Hillel" },
+    "estimatedJewishUndergraduates": 900, "jewishStudentPercentage": "~3%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Moderate",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Weber Honors College", "strength": 58,
+    "notes": "Provides smaller seminars and priority course access within SDSU's very large public-university scale."
+  }
+},
+  "California Polytechnic State University, San Luis Obispo": {
+  "institutionNarrative": {
+    "name": "California Polytechnic State University, San Luis Obispo",
+    "location": "San Luis Obispo, California",
+    "region": "California",
+    "archetype": "\"Learn by Doing\" — The Most Selective, Most Industry-Placed Public Engineering and Architecture Program in the Country",
+    "oneSentenceSummary": "Cal Poly SLO's 'Learn by Doing' hands-on pedagogy produces engineering and architecture graduates with job placement rates and industry reputations that rival elite private universities, at genuine public-school cost, reinforced by direct Silicon Valley and aerospace industry pipelines.",
+    "pipeline": "Approximately 22,000 undergraduates. The College of Engineering is one of the most respected undergraduate engineering programs in the country, with hands-on, project-based coursework producing graduates that major tech and aerospace employers recruit directly and heavily. The College of Architecture and Environmental Design is consistently ranked among the top architecture programs nationally. The College of Agriculture, Food and Environmental Sciences is a genuine, well-regarded strength given the Central Coast's wine and agricultural economy. Major recruiters include major Silicon Valley tech companies, Boeing, major architecture firms, and Central Coast wine and agricultural businesses.",
+    "hiddenPathway": "Cal Poly's 'Learn by Doing' hands-on, project-based engineering curriculum produces graduates who arrive at Silicon Valley tech companies with more direct, applied project experience than many private-university engineering graduates — a genuine, structural hiring advantage.",
+    "institutionalSecret": "Cal Poly's admission selectivity for its impacted engineering and architecture programs specifically rivals private elite universities, even though the university's overall CSU-system branding sometimes obscures how genuinely difficult and prestigious these specific programs are to enter.",
+    "theRoom": "San Luis Obispo sits on California's Central Coast, close enough to both Silicon Valley and Los Angeles for real industry access, while also anchoring the Central Coast's wine and agricultural economy directly.",
+    "lifestyle": "Practical, hands-on, and outdoorsy — the 'Learn by Doing' philosophy shapes a genuinely applied, project-based academic culture, balanced by San Luis Obispo's relaxed Central Coast setting.",
+    "bestFitPersonality": "Practically minded and hands-on, drawn to engineering, architecture, or agriculture specifically, comfortable with rigorous, project-based coursework, energized by a relaxed Central Coast setting.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Strong direct pipeline into Silicon Valley technology and Southern California aerospace industries, with genuine regional dominance in Central Coast wine and agriculture.",
+    "economicOutcome": "Exceptional outcomes in engineering and architecture, rivaling elite private universities' placement rates, reinforced by direct Silicon Valley and aerospace industry pipelines, at genuine public-school cost.",
+    "gradCities": ["San Francisco Bay Area CA", "Los Angeles CA", "San Diego CA"],
+    "comparableInstitutions": ["Rose-Hulman Institute of Technology", "Colorado School of Mines", "Purdue University", "Georgia Institute of Technology"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Cuesta College"],
+      "transferAcceptanceRate": "~28%",
+      "freshmanAcceptanceRate": "~30%",
+      "estimatedSavingsRange": "$12,000-$28,000",
+      "transferNotes": "Cal Poly SLO is highly selective for transfers, particularly into impacted engineering and architecture majors."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Cal Poly SLO",
+    "archetype": "\"Learn by Doing\" — The Most Selective, Most Industry-Placed Public Engineering and Architecture Program in the Country",
+    "institutionalPersonality": "practical, hands-on, rigorous, quietly prestigious",
+    "cultureKeywords": ["Learn by Doing", "Applied Engineering", "Top Architecture Program", "Central Coast Wine Country", "Silicon Valley Pipeline"],
+    "missionOrientation": "Delivering hands-on, project-based engineering, architecture, and agricultural education that rivals elite private universities' industry placement at public-school cost.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "\"Learn by Doing\" — rigorous, hands-on, project-based coursework across engineering, architecture, and agriculture.",
+    "competitiveness": "Extremely Selective",
+    "politicalCulture": "Broadly moderate, reflecting California's Central Coast political culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Elite specifically in engineering and architecture, with placement rates and industry reputations rivaling private technical universities.",
+    "socialClimate": "Practical, hands-on, quietly prestigious.",
+    "leadershipStyle": "Leadership through applied technical competence and hands-on project execution."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Northern California",
+    "regionalRole": "The most selective, most industry-placed public engineering and architecture program on the West Coast, with a direct pipeline into both Silicon Valley technology and Southern California aerospace."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 8, "BosWash": 12, "TorBuffChester": 6,
+    "TexasTriangle": 10, "CharLanta": 8, "NorCalInnovationCorridor": 62, "SoCalCreativeEconomy": 44
+  },
+  "comparativePositioning": {
+    "versusRoseHulman": "Rose-Hulman offers a smaller, more intensely STEM-focused private university experience; Cal Poly SLO offers genuine public-school cost with placement rates and industry reputation rivaling Rose-Hulman, plus a well-regarded architecture program Rose-Hulman doesn't have.",
+    "versusPurdue": "Purdue offers a larger scale and broader academic breadth across nearly every engineering discipline; Cal Poly SLO offers a more selective, more hands-on 'Learn by Doing' pedagogy and more direct Silicon Valley proximity."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Large",
+    "undergraduateEnrollment": 22000, "graduateEnrollment": 1200, "totalEnrollment": 23200,
+    "campusType": "Public Polytechnic University, Central Coast Campus",
+    "residentialIntensity": 58, "communityFeel": 72, "studentFacultyRatio": "19:1",
+    "classSizeExperience": "Moderate classes with genuinely hands-on, project-based instruction, particularly within engineering and architecture's applied coursework.",
+    "scaleAdvantages": ["Engineering and architecture placement rates and industry reputation rivaling elite private universities", "Genuine public-school cost for a private-tier technical education", "Direct Silicon Valley and aerospace industry pipelines", "Genuinely hands-on, applied 'Learn by Doing' curriculum"],
+    "scaleDisadvantages": ["Extremely selective admission to impacted engineering and architecture majors specifically", "San Luis Obispo is a smaller city with limited independent economic pull outside its core industries", "Less national brand recognition outside engineering and architecture relative to private technical peers", "Rigorous, hands-on coursework demands significant time commitment"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 78, "conscientiousness": 88, "extraversion": 62, "agreeableness": 74, "neuroticism": 38 },
+    "hollandCodes": ["R", "I", "A"],
+    "learningStyle": ["Applied Project-Based Engineering", "Studio-Based Architecture", "Hands-On Agricultural Science"],
+    "socialEnvironment": ["Practical", "Hands-On", "Rigorous", "Quietly Prestigious"],
+    "idealStudentTraits": ["Practically minded and hands-on", "Drawn to engineering, architecture, or agriculture specifically", "Comfortable with rigorous, project-based coursework", "Energized by a relaxed Central Coast setting"],
+    "thrivesIf": ["Wants engineering or architecture placement rates rivaling elite private universities at public-school cost", "Values genuinely hands-on, project-based 'Learn by Doing' pedagogy", "Wants direct Silicon Valley or aerospace industry pipelines", "Enjoys a relaxed Central Coast setting"],
+    "strugglesIf": ["Wants a program outside engineering, architecture, or agriculture specifically", "Needs a large city's direct cultural and economic access", "Prefers a less rigorous, less hands-on academic culture", "Wants a larger overall university scale"],
+    "transferRiskFactors": ["Students whose intended major sits outside Cal Poly's core engineering/architecture/agriculture strengths", "Students seeking a major city's direct access", "Students overwhelmed by the intensity of hands-on, project-based coursework"]
+  },
+  "competitiveMajorPressure": {
+    "level": "High",
+    "notes": "Engineering and architecture are formally impacted majors requiring separate, highly competitive admission distinct from general Cal Poly admission — genuinely one of the most selective major-specific admission processes among public universities."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Wine and Viticulture", "Landscape Architecture", "Construction Management", "Bioresource and Agricultural Engineering", "Recreation, Parks, and Tourism Administration"],
+    "hiddenCareerPipelines": ["Applied Silicon Valley Software Engineering", "Aerospace Engineering (Boeing, SpaceX)", "Architecture and Sustainable Design", "Central Coast Wine and Viticulture", "Construction Project Management"],
+    "nicheRecruitingAdvantages": ["Major Silicon Valley tech companies", "Boeing", "SpaceX", "Major architecture firms nationally", "Central Coast wine industry"],
+    "overlookedStrengths": [
+      "Cal Poly's 'Learn by Doing' hands-on engineering curriculum produces graduates with more direct, applied project experience than many private-university engineering graduates — a genuine, structural hiring advantage at Silicon Valley companies.",
+      "The Wine and Viticulture program is genuinely one of the best in the country, tied directly to the Central Coast's real wine industry.",
+      "Cal Poly's admission selectivity for engineering and architecture specifically rivals private elite universities, though the CSU-system branding sometimes obscures this.",
+      "Landscape Architecture and sustainable design programs are genuinely well-regarded, distinctive offerings beyond the university's core engineering reputation."
+    ],
+    "sleeperIndustries": ["Wine and Viticulture", "Sustainable Architecture and Design", "Aerospace Engineering", "Construction Project Management"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 76, "mentorshipDensity": 74, "executiveAccess": 74, "internshipNetwork": 88,
+    "familyBusinessExposure": 34, "relationshipCapitalScore": 78, "alumniLoyaltyScore": 80,
+    "referralCultureStrength": 82, "donorNetworkStrength": 58, "boardMemberDensity": 54
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Software Engineering", "Aerospace Engineering", "Architecture", "Wine and Agriculture", "Construction Management"],
+    "regionalEconomicDrivers": ["Silicon Valley Technology", "Aerospace Manufacturing", "Central Coast Wine Industry", "Sustainable Architecture"],
+    "topEmployers": ["Major Silicon Valley tech companies", "Boeing", "SpaceX", "Major architecture firms", "Central Coast wine producers"],
+    "emergingIndustries": ["Sustainable Building Technology", "Precision Viticulture", "Aerospace Systems Engineering", "Construction Technology"],
+    "startupDensity": "Moderate", "ventureCapitalAccess": 52, "corporateHeadquartersDensity": 34,
+    "healthcareHubStrength": 42, "innovationIndex": 78
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Silicon Valley and Central Coast — Software Engineering, Architecture, and Wine",
+    "secondaryMarkets": ["Los Angeles CA", "San Diego CA"],
+    "alumniStrongholds": ["San Francisco Bay Area CA", "Los Angeles CA", "San Luis Obispo CA"],
+    "relocationPatterns": [
+      "A significant share of graduates enter Silicon Valley technology roles directly.",
+      "Southern California draws graduates into aerospace engineering roles.",
+      "A meaningful cohort remains on the Central Coast, entering wine industry and architecture roles."
+    ],
+    "regionalInfluenceScore": 82, "nationalReachScore": 66, "internationalReachScore": 38
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 18, "studentOrganizationStrength": 78, "leadershipDevelopment": 74,
+    "crossDisciplinaryInteraction": 68, "civicEngagement": 58
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 42, "notes": "A real, secondary pathway through agricultural and food science programs." },
+    "consumerProducts": { "strength": 44, "notes": "A real, secondary pathway, particularly through wine industry product development." },
+    "outdoorIndustry": { "strength": 52, "notes": "A real, secondary pathway tied to the Central Coast's outdoor recreation culture." },
+    "sportsBusiness": { "strength": 28, "notes": "Not a defining institutional strength." },
+    "entertainmentMedia": { "strength": 22, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 48, "notes": "A real, growing pathway tied to Silicon Valley proximity and graduate startup involvement." },
+    "privateEquity": { "strength": 34, "notes": "A modest, secondary pathway relative to Cal Poly's dominant engineering identity." },
+    "investmentBanking": { "strength": 30, "notes": "Not a defining institutional strength; Cal Poly is not positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 44, "notes": "A real, secondary pathway, particularly technical and engineering consulting." },
+    "medicine": { "strength": 32, "notes": "A modest, secondary pathway; Cal Poly has no medical school and limited pre-med infrastructure relative to peer institutions." },
+    "healthcareAdministration": { "strength": 28, "notes": "Not a defining institutional strength." },
+    "defense": { "strength": 58, "notes": "A real, distinctive pathway reinforced by direct aerospace engineering placement at Boeing and SpaceX." },
+    "realEstate": { "strength": 48, "notes": "A real, secondary pathway through architecture and construction management coursework." },
+    "luxuryBrands": { "strength": 38, "notes": "A real, secondary pathway tied to the Central Coast's premium wine industry." },
+    "entrepreneurship": { "strength": 56, "notes": "A real, growing pathway reinforced by direct Silicon Valley proximity and hands-on project experience." },
+    "technology": { "strength": 92, "notes": "A very strong, defining pathway — Cal Poly's 'Learn by Doing' engineering curriculum produces graduates recruited directly and heavily by Silicon Valley's top technology companies." },
+    "publicPolicy": { "strength": 28, "notes": "Not a defining institutional strength." },
+    "nonprofitLeadership": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 44, "notes": "A real, secondary pathway through the Recreation, Parks, and Tourism Administration program, reinforced by Central Coast wine tourism." },
+    "supplyChain": { "strength": 40, "notes": "A modest, secondary pathway." },
+    "insurance": { "strength": 22, "notes": "Not a meaningful institutional pathway." },
+    "agriculture": { "strength": 82, "notes": "A very strong, distinctive pathway — the College of Agriculture, Food and Environmental Sciences is genuinely well-regarded, reinforced by the Central Coast's real wine and agricultural economy." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 62, "firstGenerationSupport": 64,
+    "wealthCreationPotential": 82, "familyBusinessPipelineStrength": 36
+  },
+  "futureResilience": {
+    "aiResistance": 84, "automationResistance": 82, "adaptabilityScore": 82, "interdisciplinaryStrength": 72,
+    "futureReadiness": 84, "entrepreneurialFlexibility": 68, "lifelongLearningCulture": 78, "innovationCapacity": 84
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 82, "communityLeadershipPotential": 68, "geographicMobility": 74,
+    "workLifeBalancePotential": 76, "purposeAlignment": 76, "familyFormationSupport": 72,
+    "personalDevelopmentPotential": 80, "careerOptionality": 76, "longTermLifeSatisfaction": 80
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 68, "networkMoat": 70, "geographicMoat": 80, "industryMoat": 88,
+    "alumniMoat": 74, "brandDurability": 76, "overallMoatScore": 76
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "NAVIGATOR",
+    "leaverScore": 58, "returnerScore": 44, "stewardScore": 46, "navigatorScore": 68,
+    "geographicLockIn": "low",
+    "alumniDispersalPattern": "bay_area_socal_concentration_with_central_coast_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 42, "type": "Small Campus Hillel" },
+    "estimatedJewishUndergraduates": 500, "jewishStudentPercentage": "~2.3%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Modest",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "Cal Poly SLO has no separate honors college; its impacted-major structure and hands-on, project-based curriculum deliver an honors-equivalent rigor across engineering and architecture without a centralized program."
+  }
+},
+  "Oregon State University": {
+  "institutionNarrative": {
+    "name": "Oregon State University",
+    "location": "Corvallis, Oregon",
+    "region": "Pacific Northwest",
+    "archetype": "A Land-, Sea-, and Space-Grant University — Forestry, Oceanography, and a Genuine Craft Brewing Science Program",
+    "oneSentenceSummary": "Oregon State is one of only a small handful of universities in the country holding land-, sea-, and space-grant status simultaneously, anchoring genuinely elite forestry and oceanography programs alongside a distinctive fermentation science program tied directly to Oregon's craft brewing industry.",
+    "pipeline": "Approximately 29,000 undergraduates. The College of Forestry is consistently ranked among the best in the country, reinforced by Oregon's real timber and forest management economy. The College of Earth, Ocean, and Atmospheric Sciences operates the Hatfield Marine Science Center, a genuine oceanographic research facility. The Fermentation Science program is a distinctive, real pipeline into Oregon's nationally significant craft brewing industry. Major recruiters include Nike, Intel (Oregon's Silicon Forest), the U.S. Forest Service, and Oregon's craft brewing industry directly.",
+    "hiddenPathway": "Oregon State's Fermentation Science program gives students direct, structural access to Oregon's nationally significant craft brewing and cidery industry — a genuinely unique career pathway most universities cannot offer at this depth.",
+    "institutionalSecret": "Oregon State's status as one of the only land-, sea-, and space-grant universities in the country is a genuinely rare, elite research designation systematically undersold relative to the university's broader Pacific Northwest public-school reputation.",
+    "theRoom": "Corvallis sits inside Oregon's timber and agricultural economy, within reach of Portland's 'Silicon Forest' technology corridor (Intel, Nike) and the Oregon coast's oceanographic research facilities — a genuine three-industry regional economic base.",
+    "lifestyle": "Practical, outdoorsy, and environmentally minded, reflecting the Pacific Northwest's broader culture, balanced by growing Beavers athletics pride and a genuinely research-intensive academic core.",
+    "bestFitPersonality": "Practically minded and environmentally conscious, drawn to forestry, oceanography, or agricultural sciences specifically, comfortable with a large public flagship, energized by Pacific Northwest outdoor culture.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Dominant in Oregon's timber, agriculture, and craft brewing industries, with growing reach into Portland's Silicon Forest technology corridor.",
+    "economicOutcome": "Excellent, genuinely distinctive outcomes in forestry, oceanography, and fermentation science, alongside solid outcomes in engineering and business given Nike and Intel proximity.",
+    "gradCities": ["Portland OR", "Seattle WA", "San Francisco Bay Area CA"],
+    "comparableInstitutions": ["Colorado State University", "University of California-Davis", "Washington State University", "University of Vermont"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Linn-Benton Community College"],
+      "transferAcceptanceRate": "~82%",
+      "freshmanAcceptanceRate": "~85%",
+      "estimatedSavingsRange": "$8,000-$20,000",
+      "transferNotes": "Oregon State maintains a genuinely accessible transfer pathway from Oregon's community college system."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Oregon State",
+    "archetype": "A Land-, Sea-, and Space-Grant University — Forestry, Oceanography, and a Genuine Craft Brewing Science Program",
+    "institutionalPersonality": "practical, outdoorsy, environmentally minded, research-intensive",
+    "cultureKeywords": ["College of Forestry", "Hatfield Marine Science Center", "Fermentation Science", "Land-Sea-Space Grant", "Silicon Forest Proximity"],
+    "missionOrientation": "Delivering large-scale public research education anchored by a rare land-, sea-, and space-grant research designation.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, research-driven education reinforced by direct access to Oregon's timber, oceanographic, and craft brewing industries.",
+    "competitiveness": "Moderately Selective",
+    "politicalCulture": "Broadly progressive, reflecting the Pacific Northwest's politically engaged culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Nationally elite specifically in forestry and oceanography; genuinely distinctive in fermentation science.",
+    "socialClimate": "Practical, outdoorsy, environmentally minded.",
+    "leadershipStyle": "Leadership through environmental stewardship and applied research competence."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Northern California",
+    "regionalRole": "The Pacific Northwest's most research-distinctive land-, sea-, and space-grant university, anchoring elite forestry and oceanography programs alongside growing Silicon Forest technology proximity."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 10, "BosWash": 12, "TorBuffChester": 8,
+    "TexasTriangle": 8, "CharLanta": 8, "NorCalInnovationCorridor": 58, "SoCalCreativeEconomy": 18
+  },
+  "comparativePositioning": {
+    "versusColoradoState": "Colorado State offers a top-5 nationally ranked veterinary medicine program; Oregon State offers a genuinely rare land-sea-space-grant research designation and elite forestry and oceanography programs Colorado State doesn't have.",
+    "versusUCDavis": "UC Davis offers a broader, more comprehensive agricultural sciences powerhouse reputation; Oregon State offers a genuinely distinctive combination of forestry, oceanography, and craft brewing fermentation science unmatched by UC Davis's broader focus."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Large",
+    "undergraduateEnrollment": 29000, "graduateEnrollment": 4500, "totalEnrollment": 33500,
+    "campusType": "Public Land-Grant Research University, College Town Campus",
+    "residentialIntensity": 56, "communityFeel": 68, "studentFacultyRatio": "18:1",
+    "classSizeExperience": "Moderate-to-large introductory courses typical of a large public university; Forestry and Marine Science coursework become substantially more field-based and specialized.",
+    "scaleAdvantages": ["One of the only land-, sea-, and space-grant universities in the country", "Elite forestry and oceanography programs reinforced by real Pacific Northwest industry ties", "Genuinely distinctive fermentation science program tied to Oregon's craft brewing industry", "Growing Silicon Forest technology corridor proximity (Nike, Intel)"],
+    "scaleDisadvantages": ["Corvallis is a smaller college town with limited independent economic pull outside its core industries", "Moderate-to-large introductory courses require significant student initiative", "Less national brand recognition outside forestry, oceanography, and craft brewing", "Pacific Northwest's rainy climate may not suit every student"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 78, "conscientiousness": 78, "extraversion": 62, "agreeableness": 80, "neuroticism": 40 },
+    "hollandCodes": ["I", "R", "S"],
+    "learningStyle": ["Field-Based Forestry Research", "Oceanographic Laboratory Work", "Applied Fermentation Science"],
+    "socialEnvironment": ["Practical", "Outdoorsy", "Environmentally Minded", "Research-Intensive"],
+    "idealStudentTraits": ["Practically minded and environmentally conscious", "Drawn to forestry, oceanography, or agricultural sciences specifically", "Comfortable with a large public flagship", "Energized by Pacific Northwest outdoor culture"],
+    "thrivesIf": ["Wants access to one of the only land-, sea-, and space-grant universities in the country", "Values elite forestry and oceanography research access", "Wants a genuinely distinctive fermentation science pipeline into Oregon's craft brewing industry", "Enjoys Pacific Northwest outdoor and environmental culture"],
+    "strugglesIf": ["Wants a warmer, sunnier climate", "Needs a major city's direct economic and cultural access", "Prefers a program with broader non-Pacific-Northwest institutional identity", "Wants a smaller, more intimate campus"],
+    "transferRiskFactors": ["Students seeking a warmer climate", "Students who want a major city's direct access", "Students whose intended field sits outside Oregon State's core forestry/oceanography/agriculture strengths"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low to Moderate",
+    "notes": "Oregon State does not formally impact most majors at the undergraduate level, though forestry, oceanography, and fermentation science tracks carry substantial informal competitive pressure given their national reputations."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Fermentation Science", "Renewable Materials", "Fisheries and Wildlife Sciences", "Sustainability", "Natural Resources"],
+    "hiddenCareerPipelines": ["Craft Brewing and Fermentation Science", "Forest Management and Conservation", "Oceanographic and Marine Research", "Sustainable Materials Science", "Silicon Forest Technology (Nike, Intel)"],
+    "nicheRecruitingAdvantages": ["Nike", "Intel", "U.S. Forest Service", "Oregon's craft brewing industry directly", "NOAA and marine research institutions"],
+    "overlookedStrengths": [
+      "Oregon State's Fermentation Science program gives students direct, structural access to Oregon's nationally significant craft brewing and cidery industry, a genuinely unique career pathway.",
+      "Oregon State's status as one of the only land-, sea-, and space-grant universities in the country is a genuinely rare, elite research designation systematically undersold relative to its broader public-school reputation.",
+      "The Hatfield Marine Science Center gives oceanography students genuine field research access most universities' students only encounter through competitive summer programs.",
+      "Growing Silicon Forest proximity gives Oregon State's engineering and business students real access to Nike and Intel beyond the university's core forestry and marine science reputation."
+    ],
+    "sleeperIndustries": ["Craft Brewing and Fermentation Science", "Sustainable Materials Science", "Oceanographic and Marine Research", "Forest Conservation Technology"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 70, "mentorshipDensity": 68, "executiveAccess": 64, "internshipNetwork": 78,
+    "familyBusinessExposure": 32, "relationshipCapitalScore": 72, "alumniLoyaltyScore": 76,
+    "referralCultureStrength": 74, "donorNetworkStrength": 56, "boardMemberDensity": 50
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Forestry and Timber", "Oceanography and Marine Science", "Craft Brewing and Fermentation", "Technology (Silicon Forest)", "Agriculture"],
+    "regionalEconomicDrivers": ["Timber and Forest Products", "Craft Brewing", "Technology (Nike, Intel)", "Sustainable Agriculture"],
+    "topEmployers": ["Nike", "Intel", "U.S. Forest Service", "Oregon's craft brewing industry", "NOAA-adjacent marine research institutions"],
+    "emergingIndustries": ["Sustainable Materials Science", "Craft Beverage Technology", "Marine Renewable Energy", "Precision Forestry"],
+    "startupDensity": "Moderate", "ventureCapitalAccess": 44, "corporateHeadquartersDensity": 38,
+    "healthcareHubStrength": 46, "innovationIndex": 66
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Oregon — Forestry, Craft Brewing, and Oceanography",
+    "secondaryMarkets": ["Seattle WA", "San Francisco Bay Area CA"],
+    "alumniStrongholds": ["Portland OR", "Corvallis OR", "Seattle WA"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in Oregon, entering forestry, brewing, and agricultural roles.",
+      "Portland's Silicon Forest draws graduates into technology roles at Nike and Intel.",
+      "Seattle and the Bay Area recruit graduates into broader technology and corporate roles."
+    ],
+    "regionalInfluenceScore": 88, "nationalReachScore": 52, "internationalReachScore": 34
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 16, "studentOrganizationStrength": 74, "leadershipDevelopment": 70,
+    "crossDisciplinaryInteraction": 66, "civicEngagement": 68
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 42, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 52, "notes": "A real, secondary pathway through fermentation science and food science programs." },
+    "consumerProducts": { "strength": 58, "notes": "A real, solid pathway reinforced directly by Nike's headquarters proximity." },
+    "outdoorIndustry": { "strength": 78, "notes": "A very strong, defining pathway reinforced by Oregon's forestry, fisheries, and outdoor recreation economy." },
+    "sportsBusiness": { "strength": 46, "notes": "A real, secondary pathway, reinforced by Nike proximity and growing Beavers athletics." },
+    "entertainmentMedia": { "strength": 22, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 34, "notes": "A modest, secondary pathway; Oregon's venture ecosystem is smaller than Bay Area or Seattle peers." },
+    "privateEquity": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "investmentBanking": { "strength": 28, "notes": "Not a defining institutional strength; Oregon State is not positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 42, "notes": "A modest, secondary pathway." },
+    "medicine": { "strength": 36, "notes": "A modest, secondary pathway; Oregon State has no medical school of its own." },
+    "healthcareAdministration": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 26, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 30, "notes": "A modest, secondary pathway tied to Nike's premium athletic brand proximity." },
+    "entrepreneurship": { "strength": 48, "notes": "A real, growing pathway, particularly in craft brewing and sustainable materials startups." },
+    "technology": { "strength": 62, "notes": "A real, solid pathway, reinforced by growing Silicon Forest proximity (Nike, Intel)." },
+    "publicPolicy": { "strength": 44, "notes": "A real, secondary pathway, particularly environmental and natural resources policy." },
+    "nonprofitLeadership": { "strength": 46, "notes": "A real, secondary pathway, reinforced by environmental conservation-oriented campus culture." },
+    "hospitality": { "strength": 38, "notes": "A modest, secondary pathway tied to Oregon's craft brewing tourism." },
+    "supplyChain": { "strength": 42, "notes": "A real, secondary pathway tied to timber and agricultural logistics." },
+    "insurance": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "agriculture": { "strength": 84, "notes": "A very strong, defining land-grant pathway, reinforced by Oregon's real timber, forestry, and agricultural economy, alongside the distinctive fermentation science program." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 70, "firstGenerationSupport": 70,
+    "wealthCreationPotential": 62, "familyBusinessPipelineStrength": 32
+  },
+  "futureResilience": {
+    "aiResistance": 74, "automationResistance": 76, "adaptabilityScore": 74, "interdisciplinaryStrength": 68,
+    "futureReadiness": 74, "entrepreneurialFlexibility": 58, "lifelongLearningCulture": 74, "innovationCapacity": 66
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 62, "communityLeadershipPotential": 70, "geographicMobility": 56,
+    "workLifeBalancePotential": 78, "purposeAlignment": 78, "familyFormationSupport": 76,
+    "personalDevelopmentPotential": 72, "careerOptionality": 62, "longTermLifeSatisfaction": 80
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 56, "networkMoat": 62, "geographicMoat": 78, "industryMoat": 80,
+    "alumniMoat": 68, "brandDurability": 70, "overallMoatScore": 69
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 38, "returnerScore": 66, "stewardScore": 76, "navigatorScore": 50,
+    "geographicLockIn": "moderate",
+    "alumniDispersalPattern": "heavily_concentrated_oregon_with_seattle_bay_area_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 38, "type": "Small Campus Hillel" },
+    "estimatedJewishUndergraduates": 300, "jewishStudentPercentage": "~1%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Modest",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "University Honors College", "strength": 64,
+    "notes": "Provides smaller seminars, priority course access, and enhanced research opportunities within Oregon State's large public-flagship scale."
+  }
+}
+,
+  "Brigham Young University": {
+  "institutionNarrative": {
+    "name": "Brigham Young University",
+    "location": "Provo, Utah",
+    "region": "Southwest",
+    "archetype": "The Church of Jesus Christ of Latter-day Saints' Flagship University — Genuinely Elite Accounting and Actuarial Placement at Remarkably Low Cost",
+    "oneSentenceSummary": "BYU, owned and operated by The Church of Jesus Christ of Latter-day Saints (LDS), combines an explicit religious honor code and values-driven campus culture with genuinely elite accounting, actuarial science, and language programs, delivered at exceptionally low tuition for church members.",
+    "pipeline": "Approximately 34,000 undergraduates. The Marriott School of Business has a consistently top-ranked undergraduate accounting program, reinforced by a distinctive missionary-driven multilingual student body that gives BYU graduates real language fluency most peer institutions' students don't have. Actuarial science and statistics are genuinely strong. Major recruiters include the Big Four accounting firms, major consulting firms, and technology companies drawn to BYU's multilingual talent pool.",
+    "hiddenPathway": "A large share of BYU students complete two-year LDS missions before or during college, often gaining genuine fluency in a second language — this gives BYU's graduate pool a real, structural multilingual advantage in international business, consulting, and government recruiting that most universities' students don't have.",
+    "institutionalSecret": "BYU's accounting program is genuinely one of the best in the country by placement metrics, systematically overshadowed nationally by the university's religious identity and honor code reputation.",
+    "theRoom": "Provo, Utah sits inside a rapidly growing Silicon Slopes technology corridor, giving BYU students real regional technology industry access alongside the university's core religious and pre-professional identity.",
+    "lifestyle": "Explicitly values-driven and community-oriented — BYU's Honor Code governs dress, conduct, and daily life in ways most universities do not, creating a genuinely distinctive, tightly-knit campus culture organized around LDS religious practice.",
+    "bestFitPersonality": "Comfortable with an explicit religious honor code and values-driven daily life, drawn to accounting, actuarial science, or business specifically, values a genuinely tight-knit, mission-oriented community.",
+    "faithTradition": "The Church of Jesus Christ of Latter-day Saints (LDS)",
+    "geographicInfluenceRadius": "Strong national reach specifically in accounting and actuarial science placement, reinforced by a genuinely national and international LDS alumni and missionary network.",
+    "economicOutcome": "Exceptional outcomes in accounting and actuarial science specifically, reinforced by structural multilingual fluency from missionary service, delivered at remarkably low cost for church members.",
+    "gradCities": ["Salt Lake City UT", "Phoenix AZ", "Los Angeles CA"],
+    "comparableInstitutions": ["University of Utah", "Baylor University", "Texas A&M University", "University of Notre Dame"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Utah Valley University"],
+      "transferAcceptanceRate": "~48%",
+      "freshmanAcceptanceRate": "~66%",
+      "estimatedSavingsRange": "$4,000-$14,000",
+      "transferNotes": "BYU maintains remarkably low tuition for LDS church members specifically, with a genuinely accessible transfer pathway from Utah's community college system."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "BYU",
+    "archetype": "The Church of Jesus Christ of Latter-day Saints' Flagship University — Genuinely Elite Accounting and Actuarial Placement at Remarkably Low Cost",
+    "institutionalPersonality": "values-driven, community-oriented, mission-minded, pre-professionally rigorous",
+    "cultureKeywords": ["LDS Church Ownership", "Honor Code", "Missionary-Driven Multilingualism", "Elite Accounting Placement", "Silicon Slopes Proximity"],
+    "missionOrientation": "Delivering explicitly LDS values-driven education combined with genuinely elite pre-professional outcomes in accounting and actuarial science.",
+    "faithTradition": "The Church of Jesus Christ of Latter-day Saints (LDS)",
+    "educationalPhilosophy": "Rigorous pre-professional education explicitly integrated with LDS religious values and an enforced Honor Code governing student conduct.",
+    "competitiveness": "Selective",
+    "politicalCulture": "Broadly conservative, reflecting the LDS Church's institutional values and Utah's regional political culture.",
+    "studentAutonomy": "Moderate",
+    "prestigeOrientation": "Nationally elite specifically in accounting and actuarial science placement, reinforced by a distinctive missionary-driven multilingual student body.",
+    "socialClimate": "Values-driven, community-oriented, mission-minded.",
+    "leadershipStyle": "Leadership through religious values, service (missionary tradition), and applied pre-professional competence."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Southern California",
+    "regionalRole": "A genuinely elite accounting and actuarial science pipeline, explicitly organized around LDS religious identity, with growing Silicon Slopes technology corridor proximity."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 14, "BosWash": 14, "TorBuffChester": 8,
+    "TexasTriangle": 14, "CharLanta": 10, "NorCalInnovationCorridor": 20, "SoCalCreativeEconomy": 42
+  },
+  "comparativePositioning": {
+    "versusUtah": "The University of Utah offers a secular public-university identity with direct Silicon Slopes tech corridor access; BYU offers explicit LDS religious identity and values-driven community, alongside genuinely elite accounting placement Utah doesn't match.",
+    "versusBaylor": "Baylor offers a similarly values-driven religious identity (Baptist) with strong SEC-adjacent Big 12 athletics culture; BYU offers a more explicitly enforced Honor Code and a distinctive missionary-driven multilingual student body Baylor doesn't have."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Very Large",
+    "undergraduateEnrollment": 34000, "graduateEnrollment": 3500, "totalEnrollment": 37500,
+    "campusType": "Private Religious University (LDS Church-Owned), Provo Campus",
+    "residentialIntensity": 62, "communityFeel": 84, "studentFacultyRatio": "20:1",
+    "classSizeExperience": "Large introductory courses typical of a large university; Marriott Business accounting coursework becomes substantially more personalized given the program's elite reputation.",
+    "scaleAdvantages": ["Genuinely elite accounting and actuarial science placement", "Remarkably low tuition for LDS church members", "Distinctive missionary-driven multilingual student body", "Explicitly values-driven, tight-knit community culture"],
+    "scaleDisadvantages": ["Explicit Honor Code governs dress, conduct, and daily life in ways most universities do not", "Less appealing or accessible to students outside LDS religious identity", "Large introductory courses require significant student initiative", "Limited social culture outside LDS-organized community life"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 58, "conscientiousness": 88, "extraversion": 70, "agreeableness": 84, "neuroticism": 34 },
+    "hollandCodes": ["C", "E", "S"],
+    "learningStyle": ["Case-Method Accounting", "Applied Actuarial Science", "Values-Integrated Seminar Discussion"],
+    "socialEnvironment": ["Values-Driven", "Community-Oriented", "Mission-Minded", "Pre-Professionally Rigorous"],
+    "idealStudentTraits": ["Comfortable with an explicit LDS religious identity and enforced Honor Code", "Drawn to accounting, actuarial science, or business specifically", "Values a genuinely tight-knit, mission-oriented community", "Benefits from missionary-driven multilingual fluency"],
+    "thrivesIf": ["Is a practicing member of The Church of Jesus Christ of Latter-day Saints or genuinely comfortable with its explicit values and Honor Code", "Wants genuinely elite accounting and actuarial science placement", "Values remarkably low tuition as an LDS church member", "Wants a tight-knit, mission-oriented campus community"],
+    "strugglesIf": ["Is not LDS and is uncomfortable with an explicitly religious, enforced Honor Code campus culture", "Wants a secular institutional identity", "Prefers a more socially unstructured, less values-regulated campus life", "Wants a program with broader non-accounting/business institutional identity"],
+    "transferRiskFactors": ["Students who are not LDS or are uncomfortable with the explicit religious Honor Code", "Students seeking a secular institutional culture", "Students whose intended field sits outside BYU's core accounting/business strengths"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Moderate",
+    "notes": "The Marriott School of Business admits as a competitive internal application distinct from general BYU admission, particularly for accounting and finance concentrations."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Actuarial Science", "Family Life", "Linguistics", "Information Systems", "Statistics"],
+    "hiddenCareerPipelines": ["Big Four Accounting", "Actuarial Science", "International Business (missionary-driven multilingualism)", "Government and Federal Language-Critical Roles", "Silicon Slopes Technology"],
+    "nicheRecruitingAdvantages": ["Deloitte", "EY", "KPMG", "PwC", "Major Silicon Slopes technology companies"],
+    "overlookedStrengths": [
+      "BYU's missionary-driven multilingual student body gives graduates real, structural language fluency advantages in international business, consulting, and government recruiting most universities' students don't have.",
+      "BYU's accounting program is genuinely one of the best in the country by placement metrics, systematically overshadowed nationally by the university's religious identity.",
+      "Remarkably low tuition for LDS church members makes BYU one of the best value propositions in American higher education for students within that community.",
+      "Growing Silicon Slopes technology corridor proximity gives BYU students real regional technology industry access beyond the university's core accounting and business reputation."
+    ],
+    "sleeperIndustries": ["Actuarial Science", "International Business (multilingual advantage)", "Government Language-Critical Roles", "Silicon Slopes Technology"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 84, "mentorshipDensity": 82, "executiveAccess": 76, "internshipNetwork": 82,
+    "familyBusinessExposure": 46, "relationshipCapitalScore": 88, "alumniLoyaltyScore": 92,
+    "referralCultureStrength": 88, "donorNetworkStrength": 74, "boardMemberDensity": 62
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Accounting", "Actuarial Science", "International Business", "Technology (Silicon Slopes)", "Financial Services"],
+    "regionalEconomicDrivers": ["Accounting and Professional Services", "Technology (Silicon Slopes)", "Financial Services"],
+    "topEmployers": ["Deloitte", "EY", "KPMG", "PwC", "Major Silicon Slopes technology companies"],
+    "emergingIndustries": ["Fintech", "International Trade Technology", "Actuarial Data Science"],
+    "startupDensity": "Moderate", "ventureCapitalAccess": 42, "corporateHeadquartersDensity": 44,
+    "healthcareHubStrength": 42, "innovationIndex": 60
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Utah — Accounting, Actuarial Science, and Silicon Slopes Technology",
+    "secondaryMarkets": ["Phoenix AZ", "Los Angeles CA"],
+    "alumniStrongholds": ["Salt Lake City UT", "Phoenix AZ", "Los Angeles CA"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in Utah, entering accounting and Silicon Slopes technology roles.",
+      "A genuinely national LDS alumni network draws graduates broadly across the Mountain West and Southwest.",
+      "A meaningful cohort enters international business roles, reinforced by missionary-driven language fluency."
+    ],
+    "regionalInfluenceScore": 84, "nationalReachScore": 68, "internationalReachScore": 56
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 0, "studentOrganizationStrength": 76, "leadershipDevelopment": 78,
+    "crossDisciplinaryInteraction": 58, "civicEngagement": 74
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 38, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "consumerProducts": { "strength": 42, "notes": "A real, secondary pathway." },
+    "outdoorIndustry": { "strength": 44, "notes": "A real, secondary pathway tied to Utah's outdoor recreation culture." },
+    "sportsBusiness": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "entertainmentMedia": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 38, "notes": "A modest, growing pathway tied to Silicon Slopes proximity." },
+    "privateEquity": { "strength": 58, "notes": "A real, solid pathway, reinforced by the accounting program's elite placement." },
+    "investmentBanking": { "strength": 62, "notes": "A real, solid pathway reinforced by elite accounting and finance placement." },
+    "consulting": { "strength": 68, "notes": "A real, strong pathway into major consulting firms." },
+    "medicine": { "strength": 42, "notes": "A modest, secondary pathway; BYU has no medical school of its own." },
+    "healthcareAdministration": { "strength": 36, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "realEstate": { "strength": 40, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 54, "notes": "A real, growing pathway, reinforced by Silicon Slopes proximity." },
+    "technology": { "strength": 56, "notes": "A real, growing pathway, reinforced by Silicon Slopes proximity." },
+    "publicPolicy": { "strength": 38, "notes": "A modest, secondary pathway." },
+    "nonprofitLeadership": { "strength": 56, "notes": "A real, distinctive pathway reinforced by LDS Church-affiliated service and missionary culture." },
+    "hospitality": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "supplyChain": { "strength": 38, "notes": "A modest, secondary pathway." },
+    "insurance": { "strength": 64, "notes": "A real, distinctive pathway reinforced directly by BYU's genuinely elite actuarial science program." },
+    "agriculture": { "strength": 22, "notes": "A modest, secondary pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 70, "firstGenerationSupport": 66,
+    "wealthCreationPotential": 74, "familyBusinessPipelineStrength": 48
+  },
+  "futureResilience": {
+    "aiResistance": 72, "automationResistance": 74, "adaptabilityScore": 70, "interdisciplinaryStrength": 62,
+    "futureReadiness": 72, "entrepreneurialFlexibility": 60, "lifelongLearningCulture": 74, "innovationCapacity": 60
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 74, "communityLeadershipPotential": 84, "geographicMobility": 64,
+    "workLifeBalancePotential": 78, "purposeAlignment": 90, "familyFormationSupport": 92,
+    "personalDevelopmentPotential": 78, "careerOptionality": 68, "longTermLifeSatisfaction": 86
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 62, "networkMoat": 80, "geographicMoat": 74, "industryMoat": 78,
+    "alumniMoat": 88, "brandDurability": 84, "overallMoatScore": 78
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 34, "returnerScore": 68, "stewardScore": 84, "navigatorScore": 44,
+    "geographicLockIn": "high",
+    "alumniDispersalPattern": "heavily_concentrated_utah_mountain_west_with_national_lds_network_dispersal"
+  },
+  "jewishLife": {
+    "hillel": { "exists": false, "strength": 6, "type": "No formal Hillel; negligible Jewish student presence" },
+    "estimatedJewishUndergraduates": 20, "jewishStudentPercentage": "~0.06%",
+    "kosherDining": false, "shabbatProgramming": false, "birthrightSupport": false,
+    "jewishCommunityStrength": "Negligible",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified. BYU's explicit LDS Church ownership and admission preference for church members make it an exceptionally uncommon choice for Jewish students — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Honors Program", "strength": 56,
+    "notes": "Provides smaller seminars and priority course access within BYU's very large scale."
+  }
+},
+  "Babson College": {
+  "institutionNarrative": {
+    "name": "Babson College",
+    "location": "Wellesley, Massachusetts",
+    "region": "Northeast",
+    "archetype": "The #1-Ranked Entrepreneurship School in the Country, Full Stop",
+    "oneSentenceSummary": "Babson is the single most specialized, most consistently #1-ranked undergraduate entrepreneurship program in the country — every major, every course, and the entire institutional culture is built around starting and running businesses, not just studying them.",
+    "pipeline": "Approximately 2,600 undergraduates, entirely business-focused — Babson has no traditional liberal arts college in the way most universities do. The entrepreneurship curriculum requires every first-year student to actually launch a real business with real capital as a graduation requirement. Major recruiters include major consulting and finance firms specifically seeking entrepreneurial talent, alongside a very large share of graduates who found their own companies directly.",
+    "hiddenPathway": "Babson's Foundations of Management and Entrepreneurship (FME) course requires every first-year student to launch and run an actual business with real seed capital — students graduate having genuinely started a company, not just studied the theory of starting one.",
+    "institutionalSecret": "Babson has been ranked the #1 undergraduate entrepreneurship program in the country by U.S. News for over three decades consecutively — a level of category dominance essentially unmatched by any other specific program ranking in American higher education.",
+    "theRoom": "Wellesley, Massachusetts sits inside the Boston metro's dense startup and venture capital ecosystem, giving Babson students direct access to one of the country's most active entrepreneurial funding environments.",
+    "lifestyle": "Intensely entrepreneurial and pre-professionally focused — nearly every student is actively building or planning a venture, creating a genuinely distinctive, single-minded campus culture organized entirely around starting businesses.",
+    "bestFitPersonality": "Entrepreneurially driven and comfortable with a single-minded, business-focused institutional culture, wants hands-on venture-building experience rather than traditional liberal arts breadth.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "National dominance in entrepreneurship education specifically, with strong direct access to the Boston venture capital and startup ecosystem.",
+    "economicOutcome": "Exceptional, genuinely category-leading outcomes in entrepreneurship and startup founding, reinforced by direct required venture-launch experience and Boston's venture capital ecosystem.",
+    "gradCities": ["Boston MA", "New York NY", "San Francisco Bay Area CA"],
+    "comparableInstitutions": ["Bentley University", "Northeastern University", "Boston University", "University of Pennsylvania (Wharton)"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Bunker Hill Community College"],
+      "transferAcceptanceRate": "~40%",
+      "freshmanAcceptanceRate": "~22%",
+      "estimatedSavingsRange": "$16,000-$36,000",
+      "transferNotes": "Babson accepts a modest number of transfer students annually, remaining selective given its small, specialized scale."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Babson College",
+    "archetype": "The #1-Ranked Entrepreneurship School in the Country, Full Stop",
+    "institutionalPersonality": "intensely entrepreneurial, single-minded, hands-on, pre-professionally focused",
+    "cultureKeywords": ["#1 Entrepreneurship Ranking", "Required First-Year Venture Launch", "Boston Startup Ecosystem", "Business-Only Curriculum", "Founder Culture"],
+    "missionOrientation": "Producing entrepreneurs and business builders through required, hands-on venture creation rather than theoretical business study alone.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Entirely applied, entrepreneurship-first business education — every student launches a real business as a graduation requirement.",
+    "competitiveness": "Highly Selective",
+    "politicalCulture": "Broadly moderate, with a pre-professional, achievement-focused campus energy more than an overtly political one.",
+    "studentAutonomy": "Very High",
+    "prestigeOrientation": "The single most category-dominant, consistently #1-ranked entrepreneurship program in the country for over three decades.",
+    "socialClimate": "Intensely entrepreneurial, single-minded, founder-oriented.",
+    "leadershipStyle": "Leadership through venture creation and applied entrepreneurial risk-taking."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "BosWash",
+    "regionalRole": "The single most category-dominant entrepreneurship education engine in the country, embedded directly inside Boston's dense startup and venture capital ecosystem."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 12, "BosWash": 88, "TorBuffChester": 14,
+    "TexasTriangle": 10, "CharLanta": 10, "NorCalInnovationCorridor": 24, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusBentley": "Bentley offers a broader general business curriculum with strong analytics and finance placement; Babson offers an entirely entrepreneurship-first curriculum where every student launches a real business as a graduation requirement, a genuinely different institutional model.",
+    "versusWharton": "Wharton (Penn) offers Ivy League prestige and a much broader academic institution around its business school; Babson offers total, singular institutional focus on entrepreneurship specifically, with required hands-on venture creation Wharton's broader curriculum doesn't structurally require."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Very Small",
+    "undergraduateEnrollment": 2600, "graduateEnrollment": 900, "totalEnrollment": 3500,
+    "campusType": "Private Specialized Business College, Suburban Boston Campus",
+    "residentialIntensity": 84, "communityFeel": 88, "studentFacultyRatio": "13:1",
+    "classSizeExperience": "Small classes with strong faculty access, reinforced by hands-on, required venture-building coursework from the first year onward.",
+    "scaleAdvantages": ["The single most category-dominant entrepreneurship program in the country, unbroken for over three decades", "Required, hands-on venture launch experience with real seed capital", "Direct access to Boston's dense startup and venture capital ecosystem", "Genuinely tight-knit, founder-oriented community"],
+    "scaleDisadvantages": ["Entirely business-focused curriculum offers no traditional liberal arts breadth", "Very small scale limits course offerings outside business and entrepreneurship", "Less appealing to students uncertain about a business-first path", "Single-minded institutional culture may feel narrow to some students"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 78, "conscientiousness": 84, "extraversion": 82, "agreeableness": 72, "neuroticism": 40 },
+    "hollandCodes": ["E", "C", "I"],
+    "learningStyle": ["Required Venture Launch", "Case-Method Business", "Applied Entrepreneurship Practicum"],
+    "socialEnvironment": ["Intensely Entrepreneurial", "Single-Minded", "Hands-On", "Founder-Oriented"],
+    "idealStudentTraits": ["Entrepreneurially driven and comfortable with a single-minded business focus", "Wants hands-on venture-building experience over theoretical study", "Values direct access to Boston's startup and venture capital ecosystem", "Comfortable with a very small, specialized institutional scale"],
+    "thrivesIf": ["Wants the single most category-dominant entrepreneurship program in the country", "Values required, hands-on venture launch experience with real capital", "Wants direct access to Boston's dense startup ecosystem", "Is certain business and entrepreneurship is the right path"],
+    "strugglesIf": ["Wants traditional liberal arts breadth alongside business coursework", "Is uncertain whether business is the right academic path", "Prefers a larger university with broader academic and social offerings", "Wants a traditional college social culture outside business-focused community"],
+    "transferRiskFactors": ["Students who discover business/entrepreneurship isn't the right path for them", "Students wanting broader liberal arts coursework", "Students seeking a larger, more traditionally collegiate campus"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "Babson has no competitive internal major admission — the entire institution is business and entrepreneurship-focused by design, so there is no separate 'business school' to gain admission to beyond the college itself."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Retailing", "Innovation and Design", "Sustainability", "Sports Marketing", "Arts and Entertainment Media Management"],
+    "hiddenCareerPipelines": ["Direct Startup Founding", "Venture Capital and Angel Investing", "Family Business Management and Succession", "Corporate Innovation and Intrapreneurship", "Social Entrepreneurship"],
+    "nicheRecruitingAdvantages": ["Major Boston venture capital firms", "Direct startup founding pipelines", "Family business succession placement", "Major consulting firms specifically seeking entrepreneurial talent"],
+    "overlookedStrengths": [
+      "Babson's Foundations of Management and Entrepreneurship course requires every first-year student to launch and run an actual business with real seed capital — students graduate having genuinely started a company.",
+      "Babson has been ranked the #1 undergraduate entrepreneurship program in the country for over three decades consecutively, a level of category dominance essentially unmatched in American higher education.",
+      "Babson's family business program is genuinely distinctive, giving students from family-owned businesses real, structured succession-planning education most universities don't offer.",
+      "Direct Boston venture capital ecosystem access gives Babson students real early-career funding and networking opportunities most universities' students would need to relocate for."
+    ],
+    "sleeperIndustries": ["Direct Startup Founding", "Family Business Succession Management", "Social Entrepreneurship", "Corporate Innovation"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 88, "mentorshipDensity": 88, "executiveAccess": 82, "internshipNetwork": 84,
+    "familyBusinessExposure": 68, "relationshipCapitalScore": 90, "alumniLoyaltyScore": 90,
+    "referralCultureStrength": 88, "donorNetworkStrength": 76, "boardMemberDensity": 68
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Entrepreneurship and Startup Founding", "Venture Capital", "Family Business Management", "Management Consulting", "Corporate Innovation"],
+    "regionalEconomicDrivers": ["Startup Founding", "Venture Capital Investment", "Management Consulting"],
+    "topEmployers": ["Direct startup founding (largest single 'employer' category)", "Major Boston venture capital firms", "Major consulting firms", "Family businesses"],
+    "emergingIndustries": ["Social Entrepreneurship", "Fintech Startups", "Sustainability-Focused Ventures", "Corporate Intrapreneurship Programs"],
+    "startupDensity": "Very High", "ventureCapitalAccess": 84, "corporateHeadquartersDensity": 38,
+    "healthcareHubStrength": 34, "innovationIndex": 92
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Boston — Entrepreneurship, Venture Capital, and Startup Founding",
+    "secondaryMarkets": ["New York NY", "San Francisco Bay Area CA"],
+    "alumniStrongholds": ["Boston MA", "New York NY", "San Francisco Bay Area CA"],
+    "relocationPatterns": [
+      "A significant share of graduates found their own companies directly rather than entering traditional employment.",
+      "Boston retains a meaningful cohort in the venture capital and startup ecosystem.",
+      "New York and the Bay Area draw graduates into finance, consulting, and startup roles."
+    ],
+    "regionalInfluenceScore": 78, "nationalReachScore": 84, "internationalReachScore": 62
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 8, "studentOrganizationStrength": 86, "leadershipDevelopment": 90,
+    "crossDisciplinaryInteraction": 62, "civicEngagement": 62
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 30, "notes": "A real, secondary pathway; entrepreneurial graduates found beauty and consumer brand startups at real rates." },
+    "healthWellness": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "consumerProducts": { "strength": 66, "notes": "A strong, real pathway given Babson's entrepreneurship-first curriculum's overlap with direct-to-consumer startup founding." },
+    "outdoorIndustry": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "sportsBusiness": { "strength": 44, "notes": "A real, secondary pathway through the Sports Marketing concentration." },
+    "entertainmentMedia": { "strength": 38, "notes": "A real, secondary pathway through the Arts and Entertainment Media Management concentration." },
+    "ventureCapital": { "strength": 82, "notes": "A very strong, defining pathway given direct Boston venture capital ecosystem access and Babson's founder-oriented alumni network." },
+    "privateEquity": { "strength": 56, "notes": "A real, solid pathway, secondary to Babson's dominant entrepreneurship identity." },
+    "investmentBanking": { "strength": 52, "notes": "A real, secondary pathway, smaller than Babson's dominant entrepreneurship and venture capital pipelines." },
+    "consulting": { "strength": 62, "notes": "A real, solid pathway, particularly firms seeking entrepreneurial talent specifically." },
+    "medicine": { "strength": 18, "notes": "Not a meaningful institutional pathway; Babson has no pre-med infrastructure." },
+    "healthcareAdministration": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "defense": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 46, "notes": "A real, secondary pathway, particularly real estate entrepreneurship and development." },
+    "luxuryBrands": { "strength": 38, "notes": "A real, secondary pathway tied to consumer brand startup founding." },
+    "entrepreneurship": { "strength": 100, "notes": "The single defining institutional strength — Babson is the #1-ranked undergraduate entrepreneurship program in the country, unbroken for over three decades, with required hands-on venture launch as a graduation requirement." },
+    "technology": { "strength": 54, "notes": "A real, growing pathway, particularly technology startup founding, though secondary to Babson's core general entrepreneurship identity." },
+    "publicPolicy": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "nonprofitLeadership": { "strength": 48, "notes": "A real, secondary pathway through the social entrepreneurship concentration." },
+    "hospitality": { "strength": 34, "notes": "A modest, secondary pathway tied to hospitality startup founding." },
+    "supplyChain": { "strength": 36, "notes": "A modest, secondary pathway." },
+    "insurance": { "strength": 28, "notes": "Not a defining institutional strength." },
+    "agriculture": { "strength": 16, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 48, "firstGenerationSupport": 52,
+    "wealthCreationPotential": 90, "familyBusinessPipelineStrength": 68
+  },
+  "futureResilience": {
+    "aiResistance": 78, "automationResistance": 76, "adaptabilityScore": 88, "interdisciplinaryStrength": 66,
+    "futureReadiness": 84, "entrepreneurialFlexibility": 96, "lifelongLearningCulture": 82, "innovationCapacity": 90
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 90, "communityLeadershipPotential": 78, "geographicMobility": 76,
+    "workLifeBalancePotential": 58, "purposeAlignment": 84, "familyFormationSupport": 66,
+    "personalDevelopmentPotential": 86, "careerOptionality": 78, "longTermLifeSatisfaction": 80
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 72, "networkMoat": 82, "geographicMoat": 76, "industryMoat": 94,
+    "alumniMoat": 82, "brandDurability": 84, "overallMoatScore": 82
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "NAVIGATOR",
+    "leaverScore": 78, "returnerScore": 32, "stewardScore": 34, "navigatorScore": 88,
+    "geographicLockIn": "low",
+    "alumniDispersalPattern": "boston_ny_bay_area_concentration_with_founder_driven_global_dispersal"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 48, "type": "Small Campus Hillel" },
+    "estimatedJewishUndergraduates": 200, "jewishStudentPercentage": "~7.7%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Modest",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "Babson has no separate honors college; its very small scale and entrepreneurship-first curriculum deliver an intensive, applied rigor across the entire undergraduate population without a centralized honors program."
+  }
+},
+  "Bentley University": {
+  "institutionNarrative": {
+    "name": "Bentley University",
+    "location": "Waltham, Massachusetts",
+    "region": "Northeast",
+    "archetype": "Business Analytics and Corporate Finance, Delivered With Liberal Arts Integration",
+    "oneSentenceSummary": "Bentley combines a specialized, all-business undergraduate curriculum with a genuinely strong business analytics and corporate finance placement record, deliberately integrated with liberal arts coursework most single-focus business schools skip entirely.",
+    "pipeline": "Approximately 4,300 undergraduates, entirely business-focused with a distinctive required liberal arts integration most peer business-only schools don't have. The corporate finance and accounting programs place strongly into Boston's financial services sector. The Business Analytics program is genuinely well-regarded, reinforced by direct proximity to Boston's growing data and technology corridor. Major recruiters include major accounting and financial services firms, technology companies, and consulting firms.",
+    "hiddenPathway": "Bentley requires every business student to complete substantive liberal arts coursework integrated directly into the business curriculum, not as a separate general-education requirement — this produces graduates who communicate and think more broadly than typical single-focus business school graduates, a real differentiator employers notice.",
+    "institutionalSecret": "Bentley's Business Analytics program has grown into one of the most respected in the country, systematically overshadowed by Babson's more famous entrepreneurship-first reputation despite being a genuinely distinct, comparably strong specialty.",
+    "theRoom": "Waltham sits directly inside the Boston metro's dense financial services and growing technology corridor, giving Bentley students real, walkable access to major employers without needing to commute far.",
+    "lifestyle": "Practical and pre-professionally focused, balanced by genuine liberal arts integration that gives Bentley a somewhat broader intellectual culture than purely single-focus business schools.",
+    "bestFitPersonality": "Practically minded and business-focused, but wants genuine liberal arts integration rather than an entirely single-focus business curriculum, comfortable with a small, specialized institution.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Strong direct access to Boston's financial services and technology corridor, with solid regional reach across the Northeast.",
+    "economicOutcome": "Strong outcomes in corporate finance, accounting, and business analytics, reinforced by direct Boston financial services and technology corridor access.",
+    "gradCities": ["Boston MA", "New York NY", "Hartford CT"],
+    "comparableInstitutions": ["Babson College", "Northeastern University", "Boston University", "University of Connecticut"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Bunker Hill Community College"],
+      "transferAcceptanceRate": "~48%",
+      "freshmanAcceptanceRate": "~54%",
+      "estimatedSavingsRange": "$14,000-$32,000",
+      "transferNotes": "Bentley maintains a reasonably accessible transfer pathway relative to similarly specialized peer institutions."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Bentley University",
+    "archetype": "Business Analytics and Corporate Finance, Delivered With Liberal Arts Integration",
+    "institutionalPersonality": "practical, pre-professionally focused, intellectually broader than typical business-only peers",
+    "cultureKeywords": ["Business Analytics", "Corporate Finance", "Liberal Arts Integration", "Boston Financial Services Proximity", "Applied Curriculum"],
+    "missionOrientation": "Delivering specialized business education deliberately integrated with liberal arts coursework, producing broader-thinking business graduates.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied business education with required, curriculum-integrated liberal arts coursework rather than separate general-education requirements.",
+    "competitiveness": "Selective",
+    "politicalCulture": "Broadly moderate, with a pre-professional, achievement-focused campus energy.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Strong regional and growing national reputation, particularly elite in business analytics specifically.",
+    "socialClimate": "Practical, pre-professionally focused, intellectually broader than typical business-only peers.",
+    "leadershipStyle": "Leadership through applied business competence integrated with genuine liberal arts perspective."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "BosWash",
+    "regionalRole": "A specialized business analytics and corporate finance talent engine directly embedded in Boston's financial services and growing technology corridor."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 10, "BosWash": 84, "TorBuffChester": 14,
+    "TexasTriangle": 8, "CharLanta": 10, "NorCalInnovationCorridor": 18, "SoCalCreativeEconomy": 8
+  },
+  "comparativePositioning": {
+    "versusBabson": "Babson offers total, singular institutional focus on entrepreneurship specifically, with required hands-on venture creation; Bentley offers broader corporate finance and business analytics placement with deliberate liberal arts integration Babson's entrepreneurship-first curriculum doesn't emphasize the same way."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Small",
+    "undergraduateEnrollment": 4300, "graduateEnrollment": 1200, "totalEnrollment": 5500,
+    "campusType": "Private Specialized Business University, Suburban Boston Campus",
+    "residentialIntensity": 76, "communityFeel": 78, "studentFacultyRatio": "13:1",
+    "classSizeExperience": "Small classes with strong faculty access, reinforced by the curriculum's deliberate liberal-arts-and-business integration.",
+    "scaleAdvantages": ["Genuinely well-regarded business analytics program", "Direct walkable access to Boston's financial services corridor", "Deliberate liberal arts integration most single-focus business schools skip", "Strong corporate finance and accounting placement"],
+    "scaleDisadvantages": ["Entirely business-focused curriculum offers no traditional liberal arts major options", "Small scale limits course offerings outside business", "Less nationally famous than Babson's entrepreneurship-first brand", "Suburban Waltham setting requires transportation into Boston proper"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 68, "conscientiousness": 84, "extraversion": 70, "agreeableness": 76, "neuroticism": 42 },
+    "hollandCodes": ["C", "E", "I"],
+    "learningStyle": ["Case-Method Business", "Applied Business Analytics", "Liberal-Arts-Integrated Seminar"],
+    "socialEnvironment": ["Practical", "Pre-Professionally Focused", "Intellectually Broader", "Boston-Connected"],
+    "idealStudentTraits": ["Practically minded and business-focused", "Wants genuine liberal arts integration rather than single-focus business curriculum", "Comfortable with a small, specialized institution", "Values direct Boston financial services access"],
+    "thrivesIf": ["Wants strong business analytics and corporate finance placement", "Values deliberate liberal arts integration within a business curriculum", "Wants direct, walkable access to Boston's financial services corridor", "Is certain business is the right academic path but wants some intellectual breadth"],
+    "strugglesIf": ["Wants a traditional standalone liberal arts major", "Is uncertain whether business is the right path", "Prefers a larger university with broader academic and social offerings", "Wants Babson's more famous entrepreneurship-first brand specifically"],
+    "transferRiskFactors": ["Students wanting a traditional standalone liberal arts major", "Students discovering business isn't the right path for them", "Students seeking a larger, more traditionally collegiate campus"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "Bentley has no significant competitive internal major admission given its specialized, entirely business-focused curriculum."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Business Analytics", "Actuarial Science", "Corporate Finance and Accounting", "Information Design and Corporate Communication", "Health Industry Leadership"],
+    "hiddenCareerPipelines": ["Corporate Finance", "Business Analytics and Data Science", "Public Accounting", "Actuarial Science", "Corporate Communications"],
+    "nicheRecruitingAdvantages": ["Major Boston financial services firms", "Big Four accounting firms", "Growing Boston technology and data analytics companies", "Major consulting firms"],
+    "overlookedStrengths": [
+      "Bentley requires every business student to complete substantive liberal arts coursework integrated directly into the business curriculum, producing broader-thinking graduates than typical single-focus business schools.",
+      "Bentley's Business Analytics program has grown into one of the most respected in the country, systematically overshadowed by Babson's more famous entrepreneurship-first reputation.",
+      "Direct, walkable proximity to Boston's financial services corridor gives Bentley students real networking access without needing to commute far.",
+      "The Health Industry Leadership concentration is a genuinely distinctive, underrated offering tied to Boston's dense healthcare and biotech economy."
+    ],
+    "sleeperIndustries": ["Business Analytics and Data Science", "Actuarial Science", "Health Industry Leadership", "Corporate Communications"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 76, "mentorshipDensity": 74, "executiveAccess": 72, "internshipNetwork": 80,
+    "familyBusinessExposure": 42, "relationshipCapitalScore": 78, "alumniLoyaltyScore": 76,
+    "referralCultureStrength": 78, "donorNetworkStrength": 62, "boardMemberDensity": 56
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Corporate Finance", "Business Analytics", "Public Accounting", "Actuarial Science", "Corporate Communications"],
+    "regionalEconomicDrivers": ["Financial Services", "Business Analytics and Data", "Public Accounting"],
+    "topEmployers": ["Major Boston financial services firms", "Big Four accounting firms", "Growing Boston technology and analytics companies", "Major consulting firms"],
+    "emergingIndustries": ["Fintech", "Business Analytics Technology", "Health Industry Analytics"],
+    "startupDensity": "Low-Moderate", "ventureCapitalAccess": 42, "corporateHeadquartersDensity": 48,
+    "healthcareHubStrength": 52, "innovationIndex": 62
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Boston — Corporate Finance, Business Analytics, and Public Accounting",
+    "secondaryMarkets": ["New York NY", "Hartford CT"],
+    "alumniStrongholds": ["Boston MA", "New York NY", "Hartford CT"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in Boston, entering finance, analytics, and accounting roles.",
+      "New York draws graduates into broader financial services and analytics roles.",
+      "Hartford recruits graduates into insurance and actuarial roles."
+    ],
+    "regionalInfluenceScore": 82, "nationalReachScore": 56, "internationalReachScore": 38
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 12, "studentOrganizationStrength": 74, "leadershipDevelopment": 74,
+    "crossDisciplinaryInteraction": 64, "civicEngagement": 58
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 40, "notes": "A real, secondary pathway through the Health Industry Leadership concentration." },
+    "nutraceuticals": { "strength": 22, "notes": "Minimal institutional emphasis." },
+    "consumerProducts": { "strength": 42, "notes": "A real, secondary pathway." },
+    "outdoorIndustry": { "strength": 22, "notes": "Minimal institutional emphasis." },
+    "sportsBusiness": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "entertainmentMedia": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 44, "notes": "A real, secondary pathway, smaller than Babson's dominant entrepreneurship ecosystem access." },
+    "privateEquity": { "strength": 58, "notes": "A real, solid pathway reinforced by strong corporate finance placement." },
+    "investmentBanking": { "strength": 64, "notes": "A real, strong pathway reinforced by direct Boston financial services corridor access." },
+    "consulting": { "strength": 62, "notes": "A real, solid pathway into major consulting firms." },
+    "medicine": { "strength": 20, "notes": "Not a meaningful institutional pathway; Bentley has no pre-med infrastructure." },
+    "healthcareAdministration": { "strength": 42, "notes": "A real, secondary pathway through the Health Industry Leadership concentration." },
+    "defense": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 40, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "entrepreneurship": { "strength": 52, "notes": "A real, secondary pathway, smaller than Babson's dominant entrepreneurship-first identity." },
+    "technology": { "strength": 58, "notes": "A real, solid pathway reinforced by the Business Analytics program's growing reputation." },
+    "publicPolicy": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "nonprofitLeadership": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "supplyChain": { "strength": 40, "notes": "A modest, secondary pathway." },
+    "insurance": { "strength": 52, "notes": "A real, solid pathway, reinforced by the actuarial science program and Hartford proximity." },
+    "agriculture": { "strength": 14, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 54, "firstGenerationSupport": 56,
+    "wealthCreationPotential": 76, "familyBusinessPipelineStrength": 42
+  },
+  "futureResilience": {
+    "aiResistance": 72, "automationResistance": 72, "adaptabilityScore": 74, "interdisciplinaryStrength": 62,
+    "futureReadiness": 74, "entrepreneurialFlexibility": 60, "lifelongLearningCulture": 72, "innovationCapacity": 66
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 76, "communityLeadershipPotential": 66, "geographicMobility": 68,
+    "workLifeBalancePotential": 66, "purposeAlignment": 68, "familyFormationSupport": 70,
+    "personalDevelopmentPotential": 70, "careerOptionality": 68, "longTermLifeSatisfaction": 74
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 58, "networkMoat": 66, "geographicMoat": 78, "industryMoat": 76,
+    "alumniMoat": 68, "brandDurability": 70, "overallMoatScore": 69
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "NAVIGATOR",
+    "leaverScore": 52, "returnerScore": 44, "stewardScore": 44, "navigatorScore": 62,
+    "geographicLockIn": "moderate",
+    "alumniDispersalPattern": "boston_concentration_with_ny_hartford_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 44, "type": "Small Campus Hillel" },
+    "estimatedJewishUndergraduates": 350, "jewishStudentPercentage": "~8.1%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Modest",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "Bentley has no separate honors college; its small, specialized scale delivers a consistently rigorous experience across the undergraduate population."
+  }
+}
+,
+  "Occidental College": {
+  "institutionNarrative": {
+    "name": "Occidental College",
+    "location": "Los Angeles, California",
+    "region": "California",
+    "archetype": "A Small, Politically Engaged Liberal Arts College Directly Inside Los Angeles",
+    "oneSentenceSummary": "Occidental combines genuine small liberal arts college intimacy with a rare, direct location inside Los Angeles proper, producing a politically engaged, urban-connected student body with real entertainment and civic industry access most rural LACs can't offer.",
+    "pipeline": "Approximately 2,000 undergraduates. Occidental's Diplomacy and World Affairs program is genuinely well-regarded, reinforced by direct Los Angeles access to consulates and international organizations. The Media Arts and Culture program benefits directly from Los Angeles's entertainment industry proximity. Economics and politics programs are solid, reinforced by genuine civic engagement culture. Major recruiters include entertainment industry companies, nonprofit and civic organizations, and graduate programs nationally.",
+    "hiddenPathway": "Occidental's location directly inside Los Angeles — unlike most liberal arts colleges' rural or small-town settings — gives students genuine, walkable access to entertainment industry internships and civic institutions most LAC students would need to relocate for during breaks.",
+    "institutionalSecret": "Occidental's Diplomacy and World Affairs program has produced a genuinely disproportionate number of foreign service officers and international NGO leaders relative to the college's small size, systematically overshadowed by Occidental's fame as briefly attended by Barack Obama.",
+    "theRoom": "Occidental sits inside Los Angeles's Eagle Rock neighborhood, giving students direct access to the entertainment industry, civic institutions, and Los Angeles's broader economy without needing to relocate.",
+    "lifestyle": "Intellectually engaged and politically active, with a genuine small-college intimacy uncommon inside a major city — Occidental functions as a quiet, tree-lined liberal arts enclave directly inside Los Angeles's urban sprawl.",
+    "bestFitPersonality": "Intellectually curious and politically engaged, wants small liberal arts college intimacy without sacrificing access to a major city, comfortable with an urban-adjacent but genuinely close-knit campus culture.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Strong direct access to Los Angeles's entertainment, civic, and nonprofit sectors, with a genuinely national graduate school and international affairs placement record.",
+    "economicOutcome": "Strong outcomes in entertainment media, international affairs, and nonprofit/civic leadership, reinforced by direct Los Angeles access at small liberal arts college scale.",
+    "gradCities": ["Los Angeles CA", "Washington DC", "New York NY"],
+    "comparableInstitutions": ["Colorado College", "Franklin and Marshall College", "Bryn Mawr College", "Whitman College"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Pasadena City College"],
+      "transferAcceptanceRate": "~24%",
+      "freshmanAcceptanceRate": "~34%",
+      "estimatedSavingsRange": "$16,000-$36,000",
+      "transferNotes": "Occidental accepts a modest number of transfer students annually, remaining selective given its small liberal arts college scale."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Occidental College",
+    "archetype": "A Small, Politically Engaged Liberal Arts College Directly Inside Los Angeles",
+    "institutionalPersonality": "intellectually engaged, politically active, urban-connected, close-knit",
+    "cultureKeywords": ["Los Angeles Location", "Diplomacy and World Affairs", "Civic Engagement", "Small Liberal Arts Intimacy", "Entertainment Industry Proximity"],
+    "missionOrientation": "Delivering genuine small liberal arts education with direct, walkable access to a major city's entertainment, civic, and international affairs institutions.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Rigorous liberal arts education reinforced by genuine civic engagement and direct Los Angeles urban access.",
+    "competitiveness": "Highly Selective",
+    "politicalCulture": "Strongly progressive, with a genuinely politically engaged and civically active student body.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Strong regional and national liberal arts college reputation, particularly elite in diplomacy and world affairs.",
+    "socialClimate": "Intellectually engaged, politically active, close-knit despite urban setting.",
+    "leadershipStyle": "Leadership through civic engagement and political activism."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Southern California",
+    "regionalRole": "A small, politically engaged liberal arts college with a genuinely rare direct-urban location inside Los Angeles, giving students real entertainment and civic industry access most LACs can't replicate."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 8, "BosWash": 16, "TorBuffChester": 6,
+    "TexasTriangle": 8, "CharLanta": 10, "NorCalInnovationCorridor": 14, "SoCalCreativeEconomy": 80
+  },
+  "comparativePositioning": {
+    "versusColoradoCollege": "Colorado College offers a distinctive block-plan academic calendar and direct Rocky Mountain outdoor access; Occidental offers direct Los Angeles urban and entertainment industry access Colorado College's mountain setting doesn't have.",
+    "versusFranklinMarshall": "Franklin and Marshall offers a quieter Pennsylvania small-college-town setting; Occidental offers genuine major-city access directly inside Los Angeles, a structurally different environment for a similarly small liberal arts college."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Very Small",
+    "undergraduateEnrollment": 2000, "graduateEnrollment": 0, "totalEnrollment": 2000,
+    "campusType": "Small Liberal Arts College, Urban Los Angeles Campus",
+    "residentialIntensity": 82, "communityFeel": 86, "studentFacultyRatio": "9:1",
+    "classSizeExperience": "Small classes with strong faculty access, a genuine small liberal arts college experience despite the urban Los Angeles setting.",
+    "scaleAdvantages": ["Rare, direct location inside Los Angeles for a small liberal arts college", "Genuinely well-regarded Diplomacy and World Affairs program", "Direct entertainment industry and civic institution access", "Strongly civically engaged, politically active student culture"],
+    "scaleDisadvantages": ["Very small scale limits course breadth relative to larger universities", "Los Angeles's high cost of living", "Smaller alumni network in absolute numbers than larger peer institutions", "Politically homogeneous campus culture may not suit every student"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 88, "conscientiousness": 80, "extraversion": 68, "agreeableness": 78, "neuroticism": 44 },
+    "hollandCodes": ["A", "S", "I"],
+    "learningStyle": ["Small Seminar Discussion", "Diplomacy Case Study", "Applied Media Arts"],
+    "socialEnvironment": ["Intellectually Engaged", "Politically Active", "Urban-Connected", "Close-Knit"],
+    "idealStudentTraits": ["Intellectually curious and politically engaged", "Wants small liberal arts intimacy without sacrificing major-city access", "Comfortable with an urban-adjacent but close-knit campus culture", "Values genuine civic engagement"],
+    "thrivesIf": ["Wants direct, walkable Los Angeles access from a small liberal arts college", "Values a genuinely well-regarded diplomacy and world affairs program", "Is drawn to entertainment media or civic/nonprofit leadership specifically", "Wants a strongly politically engaged campus culture"],
+    "strugglesIf": ["Wants a traditional rural or small-town liberal arts college setting", "Prefers a politically mixed or moderate campus culture", "Needs a larger university with broader course offerings", "Wants a lower cost-of-living location"],
+    "transferRiskFactors": ["Students seeking a traditional rural liberal arts college setting", "Students who want a more politically mixed campus culture", "Students needing broader academic offerings than a very small college provides"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "Occidental does not formally impact any majors at the undergraduate level, consistent with its small liberal arts college structure."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Diplomacy and World Affairs", "Cognitive Science", "Urban and Environmental Policy", "Media Arts and Culture", "Kinesiology"],
+    "hiddenCareerPipelines": ["Foreign Service and International NGOs", "Entertainment Industry Production", "Urban Policy and Civic Leadership", "Environmental Nonprofit Leadership", "Education Policy"],
+    "nicheRecruitingAdvantages": ["Major Los Angeles entertainment companies", "International NGOs and foreign service", "Los Angeles civic and nonprofit organizations", "Top graduate schools nationally"],
+    "overlookedStrengths": [
+      "Occidental's location directly inside Los Angeles gives students genuine, walkable access to entertainment industry internships most LAC students would need to relocate for.",
+      "The Diplomacy and World Affairs program has produced a genuinely disproportionate number of foreign service officers and international NGO leaders relative to the college's small size.",
+      "Occidental's genuine civic engagement culture translates into real, structural nonprofit and policy career pipelines beyond typical LAC placement.",
+      "Urban and Environmental Policy is a distinctive, underrated program tied directly to Los Angeles's real urban policy challenges."
+    ],
+    "sleeperIndustries": ["Foreign Service and International NGOs", "Urban Policy and Civic Leadership", "Environmental Nonprofit Leadership", "Entertainment Industry Production"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 74, "mentorshipDensity": 76, "executiveAccess": 70, "internshipNetwork": 78,
+    "familyBusinessExposure": 34, "relationshipCapitalScore": 76, "alumniLoyaltyScore": 76,
+    "referralCultureStrength": 74, "donorNetworkStrength": 62, "boardMemberDensity": 56
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Entertainment Media", "International Affairs and Diplomacy", "Civic and Nonprofit Leadership", "Environmental Policy", "Education"],
+    "regionalEconomicDrivers": ["Entertainment Industry", "Civic and Nonprofit Sector", "Urban Policy"],
+    "topEmployers": ["Major Los Angeles entertainment companies", "International NGOs", "U.S. State Department", "Los Angeles civic and nonprofit organizations"],
+    "emergingIndustries": ["Entertainment Technology", "Climate Policy", "Social Impact Media"],
+    "startupDensity": "Low-Moderate", "ventureCapitalAccess": 38, "corporateHeadquartersDensity": 44,
+    "healthcareHubStrength": 40, "innovationIndex": 60
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Los Angeles — Entertainment Media, Civic Leadership, and Nonprofit",
+    "secondaryMarkets": ["Washington DC", "New York NY"],
+    "alumniStrongholds": ["Los Angeles CA", "Washington DC", "San Francisco Bay Area CA"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in Los Angeles, entering entertainment, civic, and nonprofit roles.",
+      "Washington DC draws graduates into foreign service and federal policy roles.",
+      "A meaningful cohort pursues graduate school nationally before entering the workforce."
+    ],
+    "regionalInfluenceScore": 76, "nationalReachScore": 62, "internationalReachScore": 52
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 10, "studentOrganizationStrength": 78, "leadershipDevelopment": 76,
+    "crossDisciplinaryInteraction": 74, "civicEngagement": 88
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 24, "notes": "A modest, secondary pathway tied to Los Angeles's consumer brand proximity." },
+    "healthWellness": { "strength": 36, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 22, "notes": "Minimal institutional emphasis." },
+    "consumerProducts": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "outdoorIndustry": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "sportsBusiness": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "entertainmentMedia": { "strength": 66, "notes": "A real, strong pathway reinforced directly by Occidental's location inside Los Angeles and the Media Arts and Culture program." },
+    "ventureCapital": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "privateEquity": { "strength": 32, "notes": "A modest, secondary pathway relative to Occidental's dominant civic and media identity." },
+    "investmentBanking": { "strength": 34, "notes": "A modest, secondary pathway; Occidental is not primarily positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 44, "notes": "A real, secondary pathway, particularly nonprofit and social-impact consulting." },
+    "medicine": { "strength": 44, "notes": "A modest, secondary pathway; Occidental has no medical school of its own." },
+    "healthcareAdministration": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 22, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 28, "notes": "A modest, secondary pathway tied to Los Angeles's consumer brand economy." },
+    "entrepreneurship": { "strength": 42, "notes": "A modest, growing pathway, particularly social-impact and media startups." },
+    "technology": { "strength": 36, "notes": "A modest, secondary pathway; Occidental is not positioned as a technology-recruiting campus." },
+    "publicPolicy": { "strength": 76, "notes": "A very strong, defining pathway reinforced by the Diplomacy and World Affairs program and genuinely civically engaged campus culture." },
+    "nonprofitLeadership": { "strength": 78, "notes": "A very strong, defining pathway reinforced by Occidental's genuinely civically engaged, politically active institutional culture." },
+    "hospitality": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "supplyChain": { "strength": 22, "notes": "Not a meaningful institutional pathway." },
+    "insurance": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "agriculture": { "strength": 14, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 58, "firstGenerationSupport": 62,
+    "wealthCreationPotential": 62, "familyBusinessPipelineStrength": 32
+  },
+  "futureResilience": {
+    "aiResistance": 76, "automationResistance": 76, "adaptabilityScore": 78, "interdisciplinaryStrength": 78,
+    "futureReadiness": 76, "entrepreneurialFlexibility": 62, "lifelongLearningCulture": 80, "innovationCapacity": 66
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 62, "communityLeadershipPotential": 84, "geographicMobility": 68,
+    "workLifeBalancePotential": 74, "purposeAlignment": 86, "familyFormationSupport": 68,
+    "personalDevelopmentPotential": 82, "careerOptionality": 66, "longTermLifeSatisfaction": 78
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 66, "networkMoat": 64, "geographicMoat": 78, "industryMoat": 68,
+    "alumniMoat": 68, "brandDurability": 70, "overallMoatScore": 69
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "NAVIGATOR",
+    "leaverScore": 58, "returnerScore": 36, "stewardScore": 38, "navigatorScore": 72,
+    "geographicLockIn": "low",
+    "alumniDispersalPattern": "la_concentration_with_dc_national_grad_school_dispersal"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 56, "type": "Campus Hillel" },
+    "estimatedJewishUndergraduates": 220, "jewishStudentPercentage": "~11%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Moderate",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "Occidental has no separate honors college; its very small scale and low student-faculty ratio deliver an honors-equivalent experience across the entire undergraduate population."
+  }
+},
+  "Colorado College": {
+  "institutionNarrative": {
+    "name": "Colorado College",
+    "location": "Colorado Springs, Colorado",
+    "region": "Rocky Mountains",
+    "archetype": "The Block Plan — One Class at a Time, Direct Rocky Mountain Outdoor Immersion",
+    "oneSentenceSummary": "Colorado College's distinctive Block Plan — students take one intensive, immersive course at a time rather than a traditional multi-course semester — is paired with direct Rocky Mountain outdoor access, producing a genuinely unique academic model unavailable almost anywhere else.",
+    "pipeline": "Approximately 2,200 undergraduates. The Block Plan structures the entire curriculum around single-course, 3.5-week immersive blocks rather than traditional simultaneous coursework, allowing genuinely intensive field research, travel-based coursework, and outdoor-based learning most universities' semester structures can't accommodate. Environmental science and geology programs benefit directly from immediate Rocky Mountain access. Major recruiters include environmental and outdoor industry organizations, graduate programs nationally, and Colorado's growing outdoor recreation economy.",
+    "hiddenPathway": "The Block Plan's single-course intensive structure allows genuinely immersive field research and travel-based coursework — students in geology, environmental science, or anthropology courses routinely spend the entire block in the field, not squeezing research trips around three other simultaneous classes.",
+    "institutionalSecret": "Colorado College's Block Plan produces a genuinely distinctive academic experience that either transforms how a student learns or doesn't suit them at all — there's essentially no middle ground, making it one of the most self-selecting academic models in American higher education.",
+    "theRoom": "Colorado Springs sits directly at the base of the Rocky Mountains, giving Colorado College students genuine, immediate outdoor and geological field access most universities' students would need substantial travel to reach.",
+    "lifestyle": "Intensely outdoorsy and environmentally engaged, with the Block Plan's single-course-at-a-time structure creating a genuinely unusual academic rhythm — total immersion in one subject, then a complete reset before the next.",
+    "bestFitPersonality": "Wants a genuinely unconventional academic structure, drawn to environmental science, outdoor-based learning, or intensive single-subject immersion, comfortable with direct Rocky Mountain access shaping daily life.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Strong direct access to Colorado's outdoor recreation and environmental science economy, with a genuinely national graduate school placement record.",
+    "economicOutcome": "Strong outcomes in environmental science, outdoor industry, and graduate school placement, reinforced by the Block Plan's genuinely immersive, field-based academic model.",
+    "gradCities": ["Denver CO", "Seattle WA", "San Francisco Bay Area CA"],
+    "comparableInstitutions": ["Occidental College", "Whitman College", "Franklin and Marshall College", "Bryn Mawr College"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Pikes Peak Community College"],
+      "transferAcceptanceRate": "~26%",
+      "freshmanAcceptanceRate": "~14%",
+      "estimatedSavingsRange": "$16,000-$36,000",
+      "transferNotes": "Colorado College is highly selective for transfers, particularly given the Block Plan's structural requirements for entering students."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Colorado College",
+    "archetype": "The Block Plan — One Class at a Time, Direct Rocky Mountain Outdoor Immersion",
+    "institutionalPersonality": "intensely outdoorsy, environmentally engaged, unconventionally structured, self-selecting",
+    "cultureKeywords": ["The Block Plan", "Rocky Mountain Immersion", "Environmental Science", "Field-Based Learning", "Single-Subject Intensity"],
+    "missionOrientation": "Delivering genuinely immersive, single-subject academic intensity through the distinctive Block Plan, reinforced by direct Rocky Mountain outdoor access.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "The Block Plan — one intensive, immersive course at a time rather than traditional simultaneous multi-course semesters.",
+    "competitiveness": "Highly Selective",
+    "politicalCulture": "Broadly progressive, with a genuinely environmentally engaged campus culture.",
+    "studentAutonomy": "Very High",
+    "prestigeOrientation": "Strong national liberal arts college reputation, genuinely distinctive for its unconventional Block Plan academic model.",
+    "socialClimate": "Intensely outdoorsy, environmentally engaged, unconventionally structured.",
+    "leadershipStyle": "Leadership through environmental stewardship and intensive academic focus."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Rocky Mountains",
+    "regionalRole": "A genuinely distinctive liberal arts college whose Block Plan academic model and direct Rocky Mountain access produce field-based, immersive learning unavailable almost anywhere else."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 18, "BosWash": 14, "TorBuffChester": 8,
+    "TexasTriangle": 14, "CharLanta": 10, "NorCalInnovationCorridor": 16, "SoCalCreativeEconomy": 14
+  },
+  "comparativePositioning": {
+    "versusOccidental": "Occidental offers direct Los Angeles urban and entertainment industry access; Colorado College offers a genuinely unique Block Plan academic structure and direct Rocky Mountain outdoor immersion Occidental's urban setting doesn't have.",
+    "versusWhitman": "Whitman College offers a similarly outdoorsy Pacific Northwest liberal arts identity with a traditional semester structure; Colorado College offers the genuinely distinctive Block Plan model, a structurally different academic experience."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Very Small",
+    "undergraduateEnrollment": 2200, "graduateEnrollment": 0, "totalEnrollment": 2200,
+    "campusType": "Small Liberal Arts College, Rocky Mountain Foothills Campus",
+    "residentialIntensity": 84, "communityFeel": 88, "studentFacultyRatio": "10:1",
+    "classSizeExperience": "Very small, single-subject-focused classes under the Block Plan, producing an unusually intensive, immersive learning environment.",
+    "scaleAdvantages": ["The genuinely distinctive Block Plan academic model, unavailable almost anywhere else", "Direct, immediate Rocky Mountain outdoor and geological field access", "Intensive, field-based learning most universities' semester structures can't accommodate", "Small, close-knit community"],
+    "scaleDisadvantages": ["The Block Plan's single-course-at-a-time structure doesn't suit every learning style", "Very small scale limits course breadth relative to larger universities", "Colorado Springs is a smaller city with limited independent economic pull outside outdoor recreation", "High cost of attendance"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 90, "conscientiousness": 78, "extraversion": 62, "agreeableness": 78, "neuroticism": 40 },
+    "hollandCodes": ["I", "R", "A"],
+    "learningStyle": ["Block Plan Intensive Immersion", "Field-Based Environmental Research", "Outdoor-Based Learning"],
+    "socialEnvironment": ["Intensely Outdoorsy", "Environmentally Engaged", "Unconventionally Structured", "Self-Selecting"],
+    "idealStudentTraits": ["Wants a genuinely unconventional academic structure", "Drawn to environmental science, outdoor-based learning, or intensive single-subject immersion", "Comfortable with direct Rocky Mountain access shaping daily life", "Thrives with total focus on one subject at a time"],
+    "thrivesIf": ["Wants the genuinely distinctive Block Plan academic model", "Values direct, immediate Rocky Mountain outdoor and field research access", "Is drawn to environmental science or outdoor-based learning specifically", "Thrives with intensive, single-subject academic immersion"],
+    "strugglesIf": ["Prefers a traditional multi-course simultaneous semester structure", "Wants a larger university with broader course offerings", "Needs a major city's direct economic and cultural access", "Struggles with intensive, immersive single-subject academic pacing"],
+    "transferRiskFactors": ["Students who discover the Block Plan's single-course structure doesn't suit their learning style", "Students wanting a traditional semester structure", "Students seeking a major city's direct access"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "Colorado College does not formally impact any majors at the undergraduate level, consistent with its small liberal arts college structure."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Environmental Science", "Geology", "Southwest Studies", "Anthropology", "Race, Ethnicity, and Migration Studies"],
+    "hiddenCareerPipelines": ["Environmental Science and Conservation", "Outdoor Industry Management", "Field Research and Geology", "Environmental Nonprofit Leadership", "Sustainable Tourism"],
+    "nicheRecruitingAdvantages": ["Major environmental and outdoor industry organizations", "Colorado's growing outdoor recreation economy", "National Park Service and federal land management agencies", "Top graduate schools nationally"],
+    "overlookedStrengths": [
+      "The Block Plan's single-course intensive structure allows genuinely immersive field research and travel-based coursework most universities' semester structures can't accommodate.",
+      "Colorado College's direct Rocky Mountain access gives geology and environmental science students immediate field research opportunities most universities' students would need substantial travel to reach.",
+      "Southwest Studies is a genuinely distinctive, underrated interdisciplinary program tied directly to the college's regional setting.",
+      "The Block Plan model, while unconventional, produces graduates with a genuinely distinctive capacity for total focus and intensive project completion that employers in research-heavy fields notice."
+    ],
+    "sleeperIndustries": ["Environmental Science and Conservation", "Outdoor Industry Management", "Field Research and Geology", "Sustainable Tourism"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 72, "mentorshipDensity": 74, "executiveAccess": 62, "internshipNetwork": 70,
+    "familyBusinessExposure": 30, "relationshipCapitalScore": 74, "alumniLoyaltyScore": 78,
+    "referralCultureStrength": 72, "donorNetworkStrength": 58, "boardMemberDensity": 50
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Environmental Science", "Outdoor Recreation Industry", "Geology and Field Research", "Environmental Nonprofit", "Sustainable Tourism"],
+    "regionalEconomicDrivers": ["Outdoor Recreation", "Environmental Conservation", "Tourism"],
+    "topEmployers": ["Major environmental and outdoor industry organizations", "National Park Service and federal land management agencies", "Colorado's outdoor recreation companies", "Environmental nonprofits"],
+    "emergingIndustries": ["Sustainable Tourism Technology", "Climate Science Research", "Outdoor Recreation Technology"],
+    "startupDensity": "Low-Moderate", "ventureCapitalAccess": 30, "corporateHeadquartersDensity": 28,
+    "healthcareHubStrength": 34, "innovationIndex": 56
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Colorado — Environmental Science, Outdoor Recreation, and Field Research",
+    "secondaryMarkets": ["Seattle WA", "San Francisco Bay Area CA"],
+    "alumniStrongholds": ["Denver CO", "Seattle WA", "San Francisco Bay Area CA"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in Colorado, entering environmental and outdoor industry roles.",
+      "The Pacific Northwest and Bay Area draw graduates into broader environmental and technology roles.",
+      "A meaningful cohort pursues graduate school nationally, particularly in environmental science and geology."
+    ],
+    "regionalInfluenceScore": 78, "nationalReachScore": 54, "internationalReachScore": 32
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 8, "studentOrganizationStrength": 76, "leadershipDevelopment": 72,
+    "crossDisciplinaryInteraction": 68, "civicEngagement": 68
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 40, "notes": "A real, secondary pathway tied to outdoor and wellness-adjacent culture." },
+    "nutraceuticals": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "consumerProducts": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "outdoorIndustry": { "strength": 88, "notes": "A very strong, defining pathway reinforced by direct Rocky Mountain access and the Block Plan's field-based, outdoor-immersive academic model." },
+    "sportsBusiness": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "entertainmentMedia": { "strength": 22, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "privateEquity": { "strength": 26, "notes": "A modest, secondary pathway relative to Colorado College's dominant environmental identity." },
+    "investmentBanking": { "strength": 26, "notes": "Not a defining institutional strength; Colorado College is not positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 36, "notes": "A modest, secondary pathway, particularly environmental consulting." },
+    "medicine": { "strength": 38, "notes": "A modest, secondary pathway; Colorado College has no medical school of its own." },
+    "healthcareAdministration": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 42, "notes": "A real, growing pathway, particularly outdoor industry and sustainability-focused startups." },
+    "technology": { "strength": 32, "notes": "A modest, secondary pathway; Colorado College is not positioned as a technology-recruiting campus." },
+    "publicPolicy": { "strength": 48, "notes": "A real, secondary pathway, particularly environmental and land-use policy." },
+    "nonprofitLeadership": { "strength": 62, "notes": "A real, strong pathway reinforced by genuine environmental and civic engagement culture." },
+    "hospitality": { "strength": 42, "notes": "A real, secondary pathway tied to Colorado's outdoor tourism economy." },
+    "supplyChain": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "insurance": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "agriculture": { "strength": 26, "notes": "A modest, secondary pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 54, "firstGenerationSupport": 58,
+    "wealthCreationPotential": 56, "familyBusinessPipelineStrength": 28
+  },
+  "futureResilience": {
+    "aiResistance": 78, "automationResistance": 78, "adaptabilityScore": 82, "interdisciplinaryStrength": 76,
+    "futureReadiness": 76, "entrepreneurialFlexibility": 62, "lifelongLearningCulture": 82, "innovationCapacity": 66
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 56, "communityLeadershipPotential": 74, "geographicMobility": 64,
+    "workLifeBalancePotential": 82, "purposeAlignment": 84, "familyFormationSupport": 72,
+    "personalDevelopmentPotential": 84, "careerOptionality": 60, "longTermLifeSatisfaction": 82
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 62, "networkMoat": 58, "geographicMoat": 76, "industryMoat": 66,
+    "alumniMoat": 66, "brandDurability": 70, "overallMoatScore": 66
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "NAVIGATOR",
+    "leaverScore": 54, "returnerScore": 42, "stewardScore": 44, "navigatorScore": 66,
+    "geographicLockIn": "moderate",
+    "alumniDispersalPattern": "colorado_pacific_northwest_bay_area_dispersal"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 46, "type": "Small Campus Hillel" },
+    "estimatedJewishUndergraduates": 200, "jewishStudentPercentage": "~9%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Modest",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "Colorado College has no separate honors college; the Block Plan's intensive, single-subject structure delivers an honors-equivalent rigor across the entire undergraduate population."
+  }
+},
+  "Dickinson College": {
+  "institutionNarrative": {
+    "name": "Dickinson College",
+    "location": "Carlisle, Pennsylvania",
+    "region": "Mid-Atlantic",
+    "archetype": "The Country's Original Study-Abroad Pioneer, Reinforced by a Genuine Sustainability-First Curriculum",
+    "oneSentenceSummary": "Dickinson pioneered American study-abroad education and maintains one of the highest study-abroad participation rates in the country, paired with a genuinely early, structural commitment to sustainability across its entire curriculum.",
+    "pipeline": "Approximately 2,000 undergraduates. Dickinson's study-abroad program, one of the oldest and most structurally integrated in the country, sends a majority of students abroad for a full semester or more. International business and international studies programs are genuinely strong given this infrastructure. Environmental studies and sustainability are woven directly into the curriculum, reinforced by Dickinson's own working farm. Major recruiters include international business and NGOs, environmental organizations, and graduate programs nationally.",
+    "hiddenPathway": "Dickinson's own working farm, integrated directly into coursework across multiple departments, gives students genuine, hands-on sustainable agriculture experience most liberal arts colleges only discuss theoretically.",
+    "institutionalSecret": "Dickinson was one of the first American colleges to establish a formal study-abroad program, and its current participation rate — a majority of students studying abroad for a full semester or more — remains genuinely exceptional relative to peer liberal arts colleges.",
+    "theRoom": "Carlisle, Pennsylvania sits inside a quiet, historic small-college town, but Dickinson's institutional identity is genuinely global given its study-abroad infrastructure, sending students to every populated continent.",
+    "lifestyle": "Intellectually curious and globally minded, with a genuine sustainability-conscious campus culture reinforced by Dickinson's own working farm and structural environmental commitments.",
+    "bestFitPersonality": "Globally curious and wants extensive study-abroad experience as a structural part of their education, drawn to sustainability and international studies specifically, comfortable with a small, quiet college town.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Genuinely global reach through study-abroad infrastructure, with strong regional access to Washington DC and Philadelphia.",
+    "economicOutcome": "Strong outcomes in international business, NGO and nonprofit leadership, and environmental sustainability, reinforced by exceptional study-abroad participation and a genuine sustainability-first curriculum.",
+    "gradCities": ["Washington DC", "Philadelphia PA", "New York NY"],
+    "comparableInstitutions": ["Gettysburg College", "Franklin and Marshall College", "Bryn Mawr College", "Colorado College"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Harrisburg Area Community College"],
+      "transferAcceptanceRate": "~48%",
+      "freshmanAcceptanceRate": "~46%",
+      "estimatedSavingsRange": "$16,000-$34,000",
+      "transferNotes": "Dickinson maintains a reasonably accessible transfer pathway relative to similarly selective liberal arts college peers."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Dickinson College",
+    "archetype": "The Country's Original Study-Abroad Pioneer, Reinforced by a Genuine Sustainability-First Curriculum",
+    "institutionalPersonality": "globally minded, sustainability-conscious, intellectually curious, quietly historic",
+    "cultureKeywords": ["Study Abroad Pioneer", "Working Farm", "Sustainability-First Curriculum", "International Studies", "Historic Small-College Town"],
+    "missionOrientation": "Delivering globally-oriented liberal arts education reinforced by exceptional study-abroad infrastructure and a genuine sustainability commitment.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Globally-integrated liberal arts education with structural study-abroad participation and sustainability woven directly into the curriculum.",
+    "competitiveness": "Selective",
+    "politicalCulture": "Broadly progressive, reflecting a genuinely globally-minded and environmentally engaged campus culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Strong regional liberal arts college reputation, genuinely distinctive for its exceptional study-abroad infrastructure.",
+    "socialClimate": "Globally minded, sustainability-conscious, intellectually curious.",
+    "leadershipStyle": "Leadership through global engagement and environmental sustainability commitment."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Piedmont Atlantic",
+    "regionalRole": "A genuinely globally-oriented liberal arts college whose exceptional study-abroad infrastructure and sustainability-first curriculum produce a distinctive international and environmental focus."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 14, "BosWash": 62, "TorBuffChester": 16,
+    "TexasTriangle": 8, "CharLanta": 40, "NorCalInnovationCorridor": 10, "SoCalCreativeEconomy": 8
+  },
+  "comparativePositioning": {
+    "versusGettysburg": "Gettysburg offers a strong Civil War-adjacent history program and direct battlefield access; Dickinson offers exceptional study-abroad infrastructure and a genuinely structural sustainability commitment Gettysburg's curriculum doesn't emphasize the same way.",
+    "versusFranklinMarshall": "Franklin and Marshall offers a similarly quiet Pennsylvania small-college setting with strong pre-professional placement; Dickinson offers genuinely exceptional study-abroad participation rates and a distinctive working-farm sustainability curriculum."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Very Small",
+    "undergraduateEnrollment": 2000, "graduateEnrollment": 0, "totalEnrollment": 2000,
+    "campusType": "Small Liberal Arts College, Historic Pennsylvania Campus",
+    "residentialIntensity": 84, "communityFeel": 84, "studentFacultyRatio": "9:1",
+    "classSizeExperience": "Small classes with strong faculty access, reinforced by extensive study-abroad integration across nearly every department.",
+    "scaleAdvantages": ["Exceptional study-abroad participation rate, among the highest of any American college", "Genuine, structural sustainability commitment reinforced by Dickinson's own working farm", "Strong international business and international studies programs", "Small, close-knit historic college-town community"],
+    "scaleDisadvantages": ["Very small scale limits course breadth relative to larger universities", "Carlisle is a quiet, small college town with limited independent economic pull", "Extensive study-abroad participation means less continuous on-campus community for some students", "Less national brand recognition relative to more famous peer liberal arts colleges"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 86, "conscientiousness": 80, "extraversion": 68, "agreeableness": 80, "neuroticism": 40 },
+    "hollandCodes": ["S", "A", "I"],
+    "learningStyle": ["Small Seminar Discussion", "Study-Abroad Immersion", "Hands-On Sustainable Agriculture"],
+    "socialEnvironment": ["Globally Minded", "Sustainability-Conscious", "Intellectually Curious", "Quietly Historic"],
+    "idealStudentTraits": ["Globally curious and wants extensive study-abroad experience", "Drawn to sustainability and international studies specifically", "Comfortable with a small, quiet college town", "Values hands-on environmental and agricultural learning"],
+    "thrivesIf": ["Wants exceptional, structurally integrated study-abroad participation", "Values a genuine, hands-on sustainability curriculum reinforced by a working farm", "Is drawn to international business, NGO work, or environmental studies specifically", "Enjoys a small, close-knit historic college-town setting"],
+    "strugglesIf": ["Wants a large university with broader course offerings", "Needs a major city's direct economic and cultural access", "Prefers continuous on-campus community over extensive time abroad", "Wants a program with broader non-global/sustainability institutional identity"],
+    "transferRiskFactors": ["Students seeking a larger campus with broader academic offerings", "Students who want continuous on-campus community rather than extensive study abroad", "Students whose intended field sits outside Dickinson's core global/sustainability strengths"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "Dickinson does not formally impact any majors at the undergraduate level, consistent with its small liberal arts college structure."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Environmental Studies", "International Business and Management", "Food Studies", "Judaic Studies", "Earth Sciences"],
+    "hiddenCareerPipelines": ["International Business and Trade", "Sustainable Agriculture and Food Systems", "Environmental NGO Leadership", "Foreign Service and International Development", "Sustainability Consulting"],
+    "nicheRecruitingAdvantages": ["International business and trade organizations", "Environmental NGOs nationally", "Foreign service and international development agencies", "Sustainability-focused consulting firms"],
+    "overlookedStrengths": [
+      "Dickinson's own working farm, integrated directly into coursework across multiple departments, gives students genuine, hands-on sustainable agriculture experience most liberal arts colleges only discuss theoretically.",
+      "Dickinson was one of the first American colleges to establish a formal study-abroad program, and its current participation rate remains genuinely exceptional relative to peer institutions.",
+      "The Food Studies program is a genuinely distinctive, underrated offering tied directly to Dickinson's working farm and sustainability commitment.",
+      "Dickinson's international business program benefits from genuinely deep study-abroad infrastructure most peer colleges' international business programs don't have access to."
+    ],
+    "sleeperIndustries": ["Sustainable Agriculture and Food Systems", "International Business and Trade", "Environmental NGO Leadership", "Sustainability Consulting"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 72, "mentorshipDensity": 72, "executiveAccess": 62, "internshipNetwork": 70,
+    "familyBusinessExposure": 32, "relationshipCapitalScore": 74, "alumniLoyaltyScore": 76,
+    "referralCultureStrength": 72, "donorNetworkStrength": 56, "boardMemberDensity": 48
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["International Business", "Environmental Sustainability", "Sustainable Agriculture", "Nonprofit and NGO Leadership", "Foreign Service"],
+    "regionalEconomicDrivers": ["International Trade", "Environmental Nonprofit Sector", "Sustainable Agriculture"],
+    "topEmployers": ["International business and trade organizations", "Environmental NGOs", "Foreign service and international development agencies", "Sustainability consulting firms"],
+    "emergingIndustries": ["Sustainable Food Technology", "Climate Policy", "International Development Technology"],
+    "startupDensity": "Low", "ventureCapitalAccess": 26, "corporateHeadquartersDensity": 24,
+    "healthcareHubStrength": 32, "innovationIndex": 52
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Washington DC and Philadelphia — International Business, NGO Leadership, and Sustainability",
+    "secondaryMarkets": ["New York NY"],
+    "alumniStrongholds": ["Washington DC", "Philadelphia PA", "New York NY"],
+    "relocationPatterns": [
+      "Washington DC draws a significant share of graduates into international development, foreign service, and NGO roles.",
+      "Philadelphia and New York recruit graduates into broader business and nonprofit roles.",
+      "A meaningful cohort enters international roles directly, reinforced by extensive study-abroad connections."
+    ],
+    "regionalInfluenceScore": 70, "nationalReachScore": 54, "internationalReachScore": 64
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 22, "studentOrganizationStrength": 74, "leadershipDevelopment": 72,
+    "crossDisciplinaryInteraction": 70, "civicEngagement": 72
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 44, "notes": "A real, secondary pathway through the Food Studies program and working farm." },
+    "consumerProducts": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "outdoorIndustry": { "strength": 42, "notes": "A real, secondary pathway tied to the working farm and sustainability curriculum." },
+    "sportsBusiness": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "entertainmentMedia": { "strength": 22, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "privateEquity": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "investmentBanking": { "strength": 34, "notes": "A modest, secondary pathway; Dickinson is not primarily positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 46, "notes": "A real, secondary pathway, particularly sustainability and international business consulting." },
+    "medicine": { "strength": 36, "notes": "A modest, secondary pathway; Dickinson has no medical school of its own." },
+    "healthcareAdministration": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 44, "notes": "A real, growing pathway, particularly sustainability and food-systems startups." },
+    "technology": { "strength": 28, "notes": "A modest, secondary pathway; Dickinson is not positioned as a technology-recruiting campus." },
+    "publicPolicy": { "strength": 58, "notes": "A real, solid pathway, particularly environmental and international policy." },
+    "nonprofitLeadership": { "strength": 68, "notes": "A real, strong pathway reinforced by genuine international and environmental engagement culture." },
+    "hospitality": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "supplyChain": { "strength": 38, "notes": "A real, secondary pathway through international business and trade coursework." },
+    "insurance": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "agriculture": { "strength": 62, "notes": "A real, distinctive pathway reinforced directly by Dickinson's own working farm, integrated into coursework across multiple departments." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 56, "firstGenerationSupport": 58,
+    "wealthCreationPotential": 54, "familyBusinessPipelineStrength": 28
+  },
+  "futureResilience": {
+    "aiResistance": 76, "automationResistance": 76, "adaptabilityScore": 80, "interdisciplinaryStrength": 78,
+    "futureReadiness": 76, "entrepreneurialFlexibility": 58, "lifelongLearningCulture": 82, "innovationCapacity": 62
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 54, "communityLeadershipPotential": 76, "geographicMobility": 70,
+    "workLifeBalancePotential": 76, "purposeAlignment": 84, "familyFormationSupport": 70,
+    "personalDevelopmentPotential": 84, "careerOptionality": 60, "longTermLifeSatisfaction": 78
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 56, "networkMoat": 56, "geographicMoat": 66, "industryMoat": 62,
+    "alumniMoat": 62, "brandDurability": 64, "overallMoatScore": 61
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "NAVIGATOR",
+    "leaverScore": 62, "returnerScore": 32, "stewardScore": 34, "navigatorScore": 76,
+    "geographicLockIn": "low",
+    "alumniDispersalPattern": "dc_philadelphia_concentration_with_genuine_international_dispersal"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 58, "type": "Campus Hillel" },
+    "estimatedJewishUndergraduates": 240, "jewishStudentPercentage": "~12%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Moderate",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified. Dickinson's Judaic Studies program suggests a genuinely engaged Jewish community — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "Dickinson has no separate honors college; its very small scale and low student-faculty ratio deliver an honors-equivalent experience across the entire undergraduate population."
+  }
+}
+,
+  "Colorado School of Mines": {
+  "institutionNarrative": {
+    "name": "Colorado School of Mines",
+    "location": "Golden, Colorado",
+    "region": "Rocky Mountains",
+    "archetype": "The Country's Most Focused Applied Engineering School — Mining, Energy, and Earth Sciences, Nowhere Else at This Depth",
+    "oneSentenceSummary": "Colorado School of Mines is a small, singularly focused public engineering institution producing the country's most specialized mining, petroleum, and earth-resources engineers, with placement rates and starting salaries that rival much larger, more famous technical universities.",
+    "pipeline": "Approximately 5,700 undergraduates, entirely STEM and engineering-focused. Mining engineering, petroleum engineering, and geological engineering programs are the most specialized and respected in the country, essentially unmatched in depth by any other university. Computer science and mechanical engineering are also genuinely strong given the school's overall STEM rigor. Major recruiters include major energy and mining companies, aerospace firms, and a growing number of technology companies drawn to Mines graduates' quantitative rigor.",
+    "hiddenPathway": "Mines' starting salary outcomes for engineering graduates are consistently among the highest of any public university in the country, systematically underrecognized because the school's mining and energy focus doesn't carry the same cultural cachet as computer science-first tech schools.",
+    "institutionalSecret": "Mines' small size and singular STEM focus mean nearly every graduate has genuine, direct access to the school's extremely strong energy and mining industry recruiting relationships — there's no large student body diluting the placement pipeline the way there is at bigger technical universities.",
+    "theRoom": "Golden, Colorado sits at the base of the Rockies, close enough to Denver for real city access while anchoring direct connections to the broader Rocky Mountain region's mining, energy, and natural resources economy.",
+    "lifestyle": "Intensely technical and quantitatively rigorous — Mines' small size and singular STEM focus produce a genuinely close-knit, hardworking engineering culture uncommon even among other technical universities.",
+    "bestFitPersonality": "Intensely quantitative and technically minded, drawn to mining, petroleum, geological, or general engineering specifically, comfortable with a small, singularly STEM-focused institution.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Nationally dominant in mining, petroleum, and geological engineering specifically, with strong reach into the broader global energy and natural resources industry.",
+    "economicOutcome": "Exceptional, genuinely category-leading outcomes in mining, petroleum, and geological engineering, with starting salaries consistently among the highest of any public university.",
+    "gradCities": ["Denver CO", "Houston TX", "San Francisco Bay Area CA"],
+    "comparableInstitutions": ["Rose-Hulman Institute of Technology", "Georgia Institute of Technology", "Colorado State University", "Texas A&M University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Red Rocks Community College"],
+      "transferAcceptanceRate": "~38%",
+      "freshmanAcceptanceRate": "~54%",
+      "estimatedSavingsRange": "$10,000-$26,000",
+      "transferNotes": "Mines maintains a reasonably accessible transfer pathway given its highly technical, STEM-focused curriculum."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Colorado School of Mines",
+    "archetype": "The Country's Most Focused Applied Engineering School — Mining, Energy, and Earth Sciences, Nowhere Else at This Depth",
+    "institutionalPersonality": "intensely technical, quantitatively rigorous, singularly focused, hardworking",
+    "cultureKeywords": ["Mining Engineering", "Petroleum Engineering", "Earth Sciences", "Highest Engineering Starting Salaries", "Golden, Colorado Setting"],
+    "missionOrientation": "Delivering the country's most specialized, most technically rigorous mining, energy, and earth-resources engineering education.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Intensely applied, quantitatively rigorous engineering education focused specifically on mining, energy, and earth sciences.",
+    "competitiveness": "Highly Selective",
+    "politicalCulture": "Broadly moderate, reflecting a pragmatic, technically-focused campus energy more than an overtly political one.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "The single most specialized, most respected mining and petroleum engineering program in the country, with starting salaries rivaling much larger technical universities.",
+    "socialClimate": "Intensely technical, close-knit, hardworking.",
+    "leadershipStyle": "Leadership through applied technical mastery and quantitative rigor."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Rocky Mountains",
+    "regionalRole": "The single most specialized, most singularly focused mining and energy engineering institution in the country, anchoring the Rocky Mountain region's natural resources economy."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 24, "BosWash": 14, "TorBuffChester": 8,
+    "TexasTriangle": 22, "CharLanta": 10, "NorCalInnovationCorridor": 18, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusRoseHulman": "Rose-Hulman offers broader mechanical, electrical, and general engineering breadth; Mines offers the single most specialized mining, petroleum, and geological engineering program in the country, essentially unmatched in depth.",
+    "versusGeorgiaTech": "Georgia Tech offers a much larger scale and broader academic breadth across nearly every engineering discipline; Mines offers a smaller, more singularly focused institution with the country's most respected mining and energy engineering specialization specifically."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Small",
+    "undergraduateEnrollment": 5700, "graduateEnrollment": 2200, "totalEnrollment": 7900,
+    "campusType": "Public Specialized Engineering University, Rocky Mountain Foothills Campus",
+    "residentialIntensity": 62, "communityFeel": 76, "studentFacultyRatio": "16:1",
+    "classSizeExperience": "Small-to-moderate classes with strong faculty access, reinforced by the school's singular STEM focus and close-knit engineering culture.",
+    "scaleAdvantages": ["The single most specialized mining and petroleum engineering program in the country", "Starting salaries consistently among the highest of any public university", "Small size means direct, undiluted access to strong energy and mining recruiting relationships", "Close-knit, intensely technical campus culture"],
+    "scaleDisadvantages": ["Entirely STEM-focused curriculum offers no traditional liberal arts breadth", "Small scale limits course offerings outside engineering and earth sciences", "Intensely rigorous, quantitative coursework demands significant time commitment", "Less national brand recognition outside mining and energy engineering specifically"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 68, "conscientiousness": 90, "extraversion": 54, "agreeableness": 68, "neuroticism": 40 },
+    "hollandCodes": ["R", "I", "C"],
+    "learningStyle": ["Applied Mining and Petroleum Engineering", "Quantitative Problem Sets", "Field-Based Geological Research"],
+    "socialEnvironment": ["Intensely Technical", "Quantitatively Rigorous", "Singularly Focused", "Hardworking"],
+    "idealStudentTraits": ["Intensely quantitative and technically minded", "Drawn to mining, petroleum, geological, or general engineering specifically", "Comfortable with a small, singularly STEM-focused institution", "Values direct, undiluted access to energy and mining industry recruiting"],
+    "thrivesIf": ["Wants the single most specialized mining and petroleum engineering program in the country", "Values starting salaries rivaling much larger technical universities", "Is certain engineering, specifically earth-resources engineering, is the right path", "Wants a small, close-knit, intensely technical campus culture"],
+    "strugglesIf": ["Wants a program outside engineering or earth sciences specifically", "Needs traditional liberal arts breadth alongside technical coursework", "Prefers a larger university with broader academic and social offerings", "Wants a less intensely quantitative academic culture"],
+    "transferRiskFactors": ["Students whose intended field sits outside Mines' core mining/petroleum/engineering strengths", "Students wanting broader liberal arts coursework", "Students seeking a larger, more traditionally collegiate campus"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "Mines does not formally impact any majors at the undergraduate level, consistent with its entirely STEM-focused institutional structure."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Geological Engineering", "Metallurgical and Materials Engineering", "Engineering Physics", "Environmental Engineering", "Hydrology"],
+    "hiddenCareerPipelines": ["Mining Engineering", "Petroleum Engineering", "Geological and Earth Resources Engineering", "Renewable Energy Engineering", "Metallurgical Engineering"],
+    "nicheRecruitingAdvantages": ["Major global energy and mining companies", "ExxonMobil", "Chevron", "Major aerospace firms", "Growing technology companies seeking quantitative rigor"],
+    "overlookedStrengths": [
+      "Mines' starting salary outcomes for engineering graduates are consistently among the highest of any public university in the country, systematically underrecognized relative to computer-science-first tech schools.",
+      "Mines' small size means nearly every graduate has genuine, direct access to the school's extremely strong energy and mining industry recruiting relationships, undiluted by a large student body.",
+      "The renewable energy engineering pathway is a genuinely growing, underrated specialty as the mining and energy industries transition toward sustainable resource extraction.",
+      "Mines' Engineering Physics program is a genuinely elite, small, quantitatively intense offering that produces graduates competitive with much more famous technical universities' physics programs."
+    ],
+    "sleeperIndustries": ["Renewable Energy Engineering", "Metallurgical Engineering", "Hydrology and Water Resources", "Critical Minerals and Battery Technology"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 78, "mentorshipDensity": 78, "executiveAccess": 76, "internshipNetwork": 86,
+    "familyBusinessExposure": 38, "relationshipCapitalScore": 80, "alumniLoyaltyScore": 84,
+    "referralCultureStrength": 82, "donorNetworkStrength": 62, "boardMemberDensity": 56
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Mining Engineering", "Petroleum Engineering", "Geological Engineering", "Renewable Energy", "Metallurgical Engineering"],
+    "regionalEconomicDrivers": ["Mining and Natural Resources", "Energy (Oil, Gas, Renewable)", "Materials Science"],
+    "topEmployers": ["Major global energy and mining companies", "ExxonMobil", "Chevron", "Major aerospace firms", "Critical minerals and battery technology companies"],
+    "emergingIndustries": ["Renewable Energy Engineering", "Critical Minerals and Battery Technology", "Carbon Capture Engineering", "Water Resource Engineering"],
+    "startupDensity": "Low-Moderate", "ventureCapitalAccess": 36, "corporateHeadquartersDensity": 42,
+    "healthcareHubStrength": 24, "innovationIndex": 74
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Rocky Mountain Region — Mining, Petroleum, and Energy Engineering",
+    "secondaryMarkets": ["Houston TX", "San Francisco Bay Area CA"],
+    "alumniStrongholds": ["Denver CO", "Houston TX", "San Francisco Bay Area CA"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in Colorado and the Rocky Mountain region, entering mining and energy roles.",
+      "Houston draws a substantial cohort into petroleum engineering roles.",
+      "The Bay Area recruits graduates into technology and renewable energy roles given the school's overall STEM rigor."
+    ],
+    "regionalInfluenceScore": 86, "nationalReachScore": 68, "internationalReachScore": 54
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 20, "studentOrganizationStrength": 72, "leadershipDevelopment": 68,
+    "crossDisciplinaryInteraction": 58, "civicEngagement": 54
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 12, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "nutraceuticals": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "consumerProducts": { "strength": 22, "notes": "Not a defining institutional strength." },
+    "outdoorIndustry": { "strength": 38, "notes": "A real, secondary pathway tied to the Rocky Mountain setting." },
+    "sportsBusiness": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "entertainmentMedia": { "strength": 14, "notes": "Not a meaningful institutional pathway." },
+    "ventureCapital": { "strength": 32, "notes": "A modest, secondary pathway tied to growing energy-tech and critical minerals startups." },
+    "privateEquity": { "strength": 36, "notes": "A modest, secondary pathway, particularly energy sector private equity." },
+    "investmentBanking": { "strength": 34, "notes": "A modest, secondary pathway; Mines is not primarily positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 46, "notes": "A real, secondary pathway, particularly technical and energy consulting." },
+    "medicine": { "strength": 16, "notes": "Not a meaningful institutional pathway; Mines has no pre-med infrastructure." },
+    "healthcareAdministration": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "defense": { "strength": 46, "notes": "A real, secondary pathway, particularly materials and aerospace engineering." },
+    "realEstate": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 14, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 48, "notes": "A real, growing pathway, particularly energy-tech and critical minerals startups." },
+    "technology": { "strength": 88, "notes": "A very strong pathway reflecting Mines' overall quantitative engineering rigor — mining, geological, and materials engineering specifically, distinct from the school's equally-defining energy identity now captured in the energy key below." },
+    "publicPolicy": { "strength": 34, "notes": "A modest, secondary pathway, particularly energy and resources policy." },
+    "nonprofitLeadership": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "hospitality": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 62, "notes": "A real, strong secondary pathway — mining and petroleum engineering are fundamentally resource-extraction and energy-logistics disciplines, and Mines graduates are heavily recruited into upstream energy supply chain roles." },
+    "insurance": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "agriculture": { "strength": 20, "notes": "Not a defining institutional strength." },
+    "energy": { "strength": 98, "notes": "The single defining institutional strength, co-equal with mining engineering — Mines' petroleum engineering, renewable energy, and critical minerals programs are the most specialized in the country. (Added 2026-07-12: previously conflated entirely into the technology score, which understated energy as its own distinct, equally-defining identity alongside mining.)" }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 68, "firstGenerationSupport": 66,
+    "wealthCreationPotential": 86, "familyBusinessPipelineStrength": 36
+  },
+  "futureResilience": {
+    "aiResistance": 84, "automationResistance": 82, "adaptabilityScore": 76, "interdisciplinaryStrength": 62,
+    "futureReadiness": 82, "entrepreneurialFlexibility": 60, "lifelongLearningCulture": 76, "innovationCapacity": 76
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 86, "communityLeadershipPotential": 62, "geographicMobility": 76,
+    "workLifeBalancePotential": 66, "purposeAlignment": 70, "familyFormationSupport": 68,
+    "personalDevelopmentPotential": 74, "careerOptionality": 70, "longTermLifeSatisfaction": 76
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 66, "networkMoat": 68, "geographicMoat": 82, "industryMoat": 92,
+    "alumniMoat": 76, "brandDurability": 78, "overallMoatScore": 77
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 44, "returnerScore": 56, "stewardScore": 66, "navigatorScore": 58,
+    "geographicLockIn": "moderate",
+    "alumniDispersalPattern": "colorado_houston_concentration_with_bay_area_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 36, "type": "Small Campus Hillel" },
+    "estimatedJewishUndergraduates": 150, "jewishStudentPercentage": "~2.6%",
+    "kosherDining": false, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Modest",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "Mines has no separate honors college; its small, singularly STEM-focused scale delivers an honors-equivalent rigor across the entire undergraduate population."
+  }
+},
+  "United States Military Academy": {
+  "institutionNarrative": {
+    "name": "United States Military Academy",
+    "location": "West Point, New York",
+    "region": "Northeast",
+    "archetype": "Zero Tuition, a Guaranteed Officer Commission, and a Leadership Network That Rivals Any Elite University's",
+    "oneSentenceSummary": "West Point delivers a fully-funded elite education — zero tuition, room, and board — in exchange for a structured military service commitment, producing graduates with a leadership development and alumni network intensity essentially unmatched anywhere in American higher education.",
+    "pipeline": "Approximately 4,400 cadets. Every cadet graduates with a Bachelor of Science degree and a commission as a U.S. Army officer, with no tuition cost in exchange for a minimum five-year active duty service commitment. The curriculum combines rigorous STEM coursework with leadership development, military science, and physical training unlike any civilian university. Major post-service pathways include continued military career, major consulting firms, defense contractors, and graduate school, particularly law and business.",
+    "hiddenPathway": "West Point graduates who complete their five-year service commitment enter the civilian workforce with a leadership credential that top consulting firms, defense contractors, and business schools actively recruit for specifically — the 'West Point ring knocker' network functions with a reciprocal intensity most civilian alumni networks don't match.",
+    "institutionalSecret": "West Point's academic rigor, particularly in engineering and STEM fields, genuinely rivals top civilian technical universities — the academy's military identity sometimes obscures how academically demanding the actual coursework is.",
+    "theRoom": "West Point sits on the Hudson River in a historic, self-contained military academy setting, entirely distinct from any civilian university campus — cadet life is structured around military discipline, academics, and physical training simultaneously.",
+    "lifestyle": "Intensely structured and discipline-driven — cadet life combines demanding academics, military training, and physical fitness requirements unlike any civilian college experience, producing a genuinely unique four-year formation process.",
+    "bestFitPersonality": "Wants a fully-funded elite education in exchange for military service, comfortable with intense structure and discipline, driven by leadership development and service to country.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "National reach through the U.S. Army and a genuinely intense, reciprocal post-service alumni network extending into consulting, defense, business, and government.",
+    "economicOutcome": "Exceptional, entirely distinctive outcomes — zero-debt elite education, guaranteed employment as a commissioned officer, and post-service civilian career outcomes reinforced by an intensely loyal alumni network.",
+    "gradCities": ["Washington DC", "New York NY", "Various military installations nationally"],
+    "comparableInstitutions": ["United States Naval Academy", "United States Air Force Academy", "Virginia Military Institute", "The Citadel"],
+    "ccTransferPathway": {
+      "hasCCPathway": false,
+      "ccFeederNames": [],
+      "transferAcceptanceRate": "Not applicable",
+      "freshmanAcceptanceRate": "~10%",
+      "estimatedSavingsRange": "Full cost of attendance covered — tuition, room, and board",
+      "transferNotes": "West Point does not accept traditional transfer students; admission requires a separate nomination process (typically through a member of Congress) alongside standard application requirements."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "West Point",
+    "archetype": "Zero Tuition, a Guaranteed Officer Commission, and a Leadership Network That Rivals Any Elite University's",
+    "institutionalPersonality": "intensely disciplined, service-oriented, academically rigorous, leadership-focused",
+    "cultureKeywords": ["Zero Tuition", "Guaranteed Officer Commission", "Leadership Development", "Military Discipline", "Reciprocal Alumni Network"],
+    "missionOrientation": "Developing commissioned U.S. Army officers through rigorous academic, military, and physical formation, entirely tuition-free in exchange for service.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Rigorous STEM-integrated liberal arts education combined with military science, leadership development, and physical training.",
+    "competitiveness": "Extremely Selective",
+    "politicalCulture": "Institutionally apolitical, reflecting the U.S. military's tradition of nonpartisan service.",
+    "studentAutonomy": "Low (structured military environment)",
+    "prestigeOrientation": "Nationally elite, entirely distinctive institutional model unmatched by any civilian university.",
+    "socialClimate": "Intensely disciplined, service-oriented, leadership-focused.",
+    "leadershipStyle": "Leadership through military command structure and formalized officer development."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "BosWash",
+    "regionalRole": "The country's most formalized, most intensely developed leadership pipeline, producing commissioned military officers who go on to disproportionate civilian leadership roles in business, consulting, and government."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 14, "BosWash": 76, "TorBuffChester": 18,
+    "TexasTriangle": 14, "CharLanta": 16, "NorCalInnovationCorridor": 12, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusNavalAcademy": "The Naval Academy commissions officers into the Navy and Marine Corps with a maritime-focused curriculum; West Point commissions officers into the Army with a more land-warfare-focused curriculum, though both share the same zero-tuition, guaranteed-commission institutional model."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Small",
+    "undergraduateEnrollment": 4400, "graduateEnrollment": 0, "totalEnrollment": 4400,
+    "campusType": "Federal Service Academy, Historic Hudson River Campus",
+    "residentialIntensity": 100, "communityFeel": 92, "studentFacultyRatio": "8:1",
+    "classSizeExperience": "Small, rigorous classes with strong faculty access, integrated directly with military training and leadership development structure.",
+    "scaleAdvantages": ["Entirely tuition-free elite education with guaranteed post-graduation employment", "Genuinely unmatched leadership development and reciprocal alumni network intensity", "Academic rigor, particularly in STEM, rivaling top civilian technical universities", "A four-year formation process producing a genuinely distinctive leadership credential"],
+    "scaleDisadvantages": ["Minimum five-year active duty service commitment required after graduation", "Intensely structured, low-autonomy environment unlike any civilian college experience", "Not suitable for students uncertain about military service", "Rigorous physical and disciplinary standards beyond typical university expectations"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 58, "conscientiousness": 96, "extraversion": 72, "agreeableness": 74, "neuroticism": 32 },
+    "hollandCodes": ["R", "E", "C"],
+    "learningStyle": ["Rigorous STEM-Integrated Coursework", "Military Leadership Training", "Applied Physical and Tactical Training"],
+    "socialEnvironment": ["Intensely Disciplined", "Service-Oriented", "Academically Rigorous", "Leadership-Focused"],
+    "idealStudentTraits": ["Wants a fully-funded elite education in exchange for military service", "Comfortable with intense structure and discipline", "Driven by leadership development and service to country", "Certain about committing to military service after graduation"],
+    "thrivesIf": ["Wants zero-tuition elite education with guaranteed post-graduation employment", "Values genuinely unmatched leadership development and formation", "Is certain about committing to a minimum five-year military service obligation", "Thrives with intense structure, discipline, and physical rigor"],
+    "strugglesIf": ["Is uncertain about committing to military service", "Wants a traditional, low-structure civilian college social experience", "Prefers significant personal autonomy over daily schedule and structure", "Wants broad academic exploration without military science requirements"],
+    "transferRiskFactors": ["Cadets who determine military service isn't the right path", "Students uncomfortable with the intensity of structure and discipline", "Students who prefer significant personal autonomy"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "West Point does not have competitive internal major admission in the traditional sense; academic major selection occurs within the broader, uniformly rigorous curriculum required of all cadets."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Systems Engineering", "Nuclear Engineering", "Foreign Area Studies", "Applied Statistics and Data Science", "Behavioral Sciences and Leadership"],
+    "hiddenCareerPipelines": ["Military Officer Career", "Defense Contracting and Consulting", "Management Consulting (post-service)", "Federal Government Leadership", "Business School (post-service MBA pipeline)"],
+    "nicheRecruitingAdvantages": ["The U.S. Army directly (guaranteed)", "Major management consulting firms specifically recruiting former military officers", "Major defense contractors", "Top MBA programs with strong veteran-recruiting pipelines"],
+    "overlookedStrengths": [
+      "West Point graduates who complete their service commitment enter the civilian workforce with a leadership credential that top consulting firms and defense contractors actively recruit for specifically.",
+      "West Point's academic rigor, particularly in engineering and STEM fields, genuinely rivals top civilian technical universities, sometimes obscured by the academy's military identity.",
+      "The 'West Point ring knocker' alumni network functions with a genuinely reciprocal intensity most civilian alumni networks don't match, extending well beyond active military service.",
+      "Post-service, West Point graduates have a genuinely disproportionate presence in top MBA programs, reinforced by business schools' active veteran recruiting."
+    ],
+    "sleeperIndustries": ["Management Consulting (post-service)", "Defense Contracting and Consulting", "Federal Government Leadership", "Business School Pipeline"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 92, "mentorshipDensity": 92, "executiveAccess": 84, "internshipNetwork": 70,
+    "familyBusinessExposure": 24, "relationshipCapitalScore": 96, "alumniLoyaltyScore": 98,
+    "referralCultureStrength": 96, "donorNetworkStrength": 70, "boardMemberDensity": 64
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Military Service", "Defense Contracting", "Management Consulting (post-service)", "Federal Government", "Business Leadership (post-service)"],
+    "regionalEconomicDrivers": ["National Defense", "Federal Government", "Defense Contracting"],
+    "topEmployers": ["The U.S. Army", "Major management consulting firms", "Major defense contractors", "Federal government agencies"],
+    "emergingIndustries": ["Defense Technology", "Cybersecurity", "Space and Missile Defense Systems"],
+    "startupDensity": "Low", "ventureCapitalAccess": 24, "corporateHeadquartersDensity": 20,
+    "healthcareHubStrength": 30, "innovationIndex": 58
+  },
+  "geographicInfluence": {
+    "dominantMarket": "National — Military Service, Defense, and Post-Service Business Leadership",
+    "secondaryMarkets": ["Washington DC", "New York NY"],
+    "alumniStrongholds": ["Washington DC", "Various military installations nationally", "New York NY"],
+    "relocationPatterns": [
+      "Graduates serve at military installations nationally and internationally for their minimum five-year commitment.",
+      "Post-service, Washington DC draws a significant share into defense contracting and government roles.",
+      "New York and other major cities recruit post-service graduates into consulting and business roles."
+    ],
+    "regionalInfluenceScore": 72, "nationalReachScore": 96, "internationalReachScore": 68
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 0, "studentOrganizationStrength": 88, "leadershipDevelopment": 100,
+    "crossDisciplinaryInteraction": 70, "civicEngagement": 92
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 8, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 34, "notes": "A modest, secondary pathway, though physical training is central to daily cadet life." },
+    "nutraceuticals": { "strength": 14, "notes": "Not a meaningful institutional pathway." },
+    "consumerProducts": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "outdoorIndustry": { "strength": 32, "notes": "A modest, secondary pathway tied to field training exercises." },
+    "sportsBusiness": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "entertainmentMedia": { "strength": 12, "notes": "Not a meaningful institutional pathway." },
+    "ventureCapital": { "strength": 20, "notes": "Not a defining institutional strength." },
+    "privateEquity": { "strength": 28, "notes": "A modest, secondary pathway, post-service." },
+    "investmentBanking": { "strength": 30, "notes": "A modest, secondary pathway, post-service." },
+    "consulting": { "strength": 72, "notes": "A very strong, distinctive post-service pathway — major consulting firms actively recruit former West Point officers specifically for their leadership credential." },
+    "medicine": { "strength": 24, "notes": "A modest pathway; West Point is not primarily a pre-med institution, though some cadets pursue military medicine." },
+    "healthcareAdministration": { "strength": 22, "notes": "Not a defining institutional strength." },
+    "defense": { "strength": 100, "notes": "The single defining institutional strength — West Point exists specifically to commission U.S. Army officers, guaranteed for every graduate." },
+    "realEstate": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "luxuryBrands": { "strength": 8, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 38, "notes": "A real, growing post-service pathway, particularly defense-tech and veteran-founded startups." },
+    "technology": { "strength": 52, "notes": "A real, solid pathway through Systems Engineering and Nuclear Engineering, reinforced by genuinely rigorous STEM coursework." },
+    "publicPolicy": { "strength": 62, "notes": "A real, strong pathway, particularly national security policy and federal government leadership." },
+    "nonprofitLeadership": { "strength": 44, "notes": "A real, secondary pathway, particularly veteran-services organizations." },
+    "hospitality": { "strength": 12, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 48, "notes": "A real, secondary pathway — military logistics is a genuine, direct pipeline into civilian supply chain leadership roles." },
+    "insurance": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "agriculture": { "strength": 10, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 88, "firstGenerationSupport": 84,
+    "wealthCreationPotential": 70, "familyBusinessPipelineStrength": 20
+  },
+  "futureResilience": {
+    "aiResistance": 82, "automationResistance": 84, "adaptabilityScore": 84, "interdisciplinaryStrength": 68,
+    "futureReadiness": 82, "entrepreneurialFlexibility": 56, "lifelongLearningCulture": 82, "innovationCapacity": 64
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 70, "communityLeadershipPotential": 96, "geographicMobility": 82,
+    "workLifeBalancePotential": 48, "purposeAlignment": 94, "familyFormationSupport": 62,
+    "personalDevelopmentPotential": 92, "careerOptionality": 62, "longTermLifeSatisfaction": 84
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 82, "networkMoat": 92, "geographicMoat": 70, "industryMoat": 98,
+    "alumniMoat": 96, "brandDurability": 96, "overallMoatScore": 89
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 30, "returnerScore": 40, "stewardScore": 92, "navigatorScore": 46,
+    "geographicLockIn": "high",
+    "alumniDispersalPattern": "national_military_deployment_with_dc_post_service_concentration"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 30, "type": "Jewish Chapel and Chaplain-Led Community" },
+    "estimatedJewishUndergraduates": 40, "jewishStudentPercentage": "~0.9%",
+    "kosherDining": true, "shabbatProgramming": true, "birthrightSupport": false,
+    "jewishCommunityStrength": "Minimal",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified. West Point maintains a Jewish Chapel and chaplain-led religious life program as part of its broader multi-faith religious support structure — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "West Point has no separate honors college; the entire curriculum is uniformly rigorous and required of all cadets, delivering an honors-equivalent standard across the entire student body."
+  }
+},
+  "Rhode Island School of Design": {
+  "institutionNarrative": {
+    "name": "Rhode Island School of Design",
+    "location": "Providence, Rhode Island",
+    "region": "Northeast",
+    "archetype": "The Country's Most Respected Standalone Art and Design School, Full Stop",
+    "oneSentenceSummary": "RISD is the single most respected standalone art and design institution in the country, producing graduates who lead major design departments at Apple, major fashion houses, and architecture firms nationally, with a rigor and selectivity rivaling any Ivy League institution.",
+    "pipeline": "Approximately 2,000 undergraduates, entirely arts and design-focused across illustration, industrial design, architecture, fashion design, graphic design, and fine arts. RISD's foundational first-year curriculum requires every student, regardless of eventual major, to master core drawing, design, and visual thinking skills before specializing. Major recruiters include Apple, major fashion houses, architecture firms, animation studios, and design consultancies nationally.",
+    "hiddenPathway": "RISD's Industrial Design program has placed graduates directly into Apple's design team and other major product design departments at a rate most engineering schools' industrial design programs can't match — RISD trains designers who think about form and usability first, a genuinely different skill set from engineering-first design programs.",
+    "institutionalSecret": "RISD's shared campus and cross-registration relationship with Brown University gives students genuine access to a full research university's academic breadth alongside RISD's specialized studio intensity, a combination essentially unique among standalone art schools.",
+    "theRoom": "Providence, Rhode Island houses both RISD and Brown University on adjacent campuses, giving RISD students genuine cross-registration access to a full Ivy League research university's course catalog.",
+    "lifestyle": "Intensely creative and studio-focused — RISD's culture revolves around long studio hours, critique culture, and a genuinely single-minded devotion to craft and visual thinking.",
+    "bestFitPersonality": "Intensely creative and visually oriented, wants rigorous, studio-intensive art and design training, comfortable with a demanding critique culture and long studio hours.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "National dominance in art and design specifically, with graduates placed in major design departments, fashion houses, and architecture firms across the country.",
+    "economicOutcome": "Exceptional, genuinely category-leading outcomes in industrial design, illustration, architecture, and fashion design, reinforced by direct placement into major design-driven companies.",
+    "gradCities": ["New York NY", "Los Angeles CA", "San Francisco Bay Area CA"],
+    "comparableInstitutions": ["Pratt Institute", "Parsons School of Design", "Fashion Institute of Technology", "California College of the Arts"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Community College of Rhode Island"],
+      "transferAcceptanceRate": "~18%",
+      "freshmanAcceptanceRate": "~20%",
+      "estimatedSavingsRange": "$16,000-$36,000",
+      "transferNotes": "RISD requires a portfolio review for all transfer applicants regardless of academic record, reflecting its specialized studio-based curriculum."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "RISD",
+    "archetype": "The Country's Most Respected Standalone Art and Design School, Full Stop",
+    "institutionalPersonality": "intensely creative, studio-focused, rigorous, visually oriented",
+    "cultureKeywords": ["Foundational Studio Curriculum", "Industrial Design", "Brown University Cross-Registration", "Critique Culture", "Apple Design Pipeline"],
+    "missionOrientation": "Producing the country's most rigorously trained visual artists and designers through intensive, studio-based foundational and specialized curriculum.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Intensive, studio-based art and design education beginning with a rigorous foundational curriculum required of every student before specialization.",
+    "competitiveness": "Extremely Selective",
+    "politicalCulture": "Broadly progressive, reflecting a genuinely creative, artistically engaged campus culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "The single most respected standalone art and design institution in the country, with selectivity and rigor rivaling Ivy League institutions.",
+    "socialClimate": "Intensely creative, studio-focused, critique-driven.",
+    "leadershipStyle": "Leadership through creative vision and design craft mastery."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "BosWash",
+    "regionalRole": "The single most respected standalone art and design education engine in the country, with a unique cross-registration relationship with Brown University giving students research-university academic breadth alongside specialized studio intensity."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 10, "BosWash": 82, "TorBuffChester": 14,
+    "TexasTriangle": 8, "CharLanta": 10, "NorCalInnovationCorridor": 20, "SoCalCreativeEconomy": 24
+  },
+  "comparativePositioning": {
+    "versusPratt": "Pratt offers a larger scale and direct New York City location; RISD offers a smaller, more intensely selective program with a unique Brown University cross-registration relationship Pratt doesn't have.",
+    "versusParsons": "Parsons offers direct New York City fashion and design industry proximity as part of The New School; RISD offers a more intensely rigorous foundational studio curriculum and genuinely elite selectivity rivaling Ivy League admission rates."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Very Small",
+    "undergraduateEnrollment": 2000, "graduateEnrollment": 400, "totalEnrollment": 2400,
+    "campusType": "Specialized Art and Design College, Providence Campus (adjacent to Brown University)",
+    "residentialIntensity": 78, "communityFeel": 82, "studentFacultyRatio": "9:1",
+    "classSizeExperience": "Very small, intensive studio classes with direct faculty access, centered around long studio hours and critique culture.",
+    "scaleAdvantages": ["The single most respected standalone art and design institution in the country", "Unique cross-registration access to Brown University's full research university course catalog", "Genuinely elite industrial design pipeline into Apple and other major design-driven companies", "Rigorous foundational curriculum ensuring strong visual thinking skills across every discipline"],
+    "scaleDisadvantages": ["Entirely arts and design-focused curriculum with limited traditional academic breadth outside Brown cross-registration", "Very small scale and extremely selective admission", "High cost of attendance", "Intensely demanding studio culture requires significant time commitment"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 96, "conscientiousness": 82, "extraversion": 62, "agreeableness": 70, "neuroticism": 46 },
+    "hollandCodes": ["A", "R", "I"],
+    "learningStyle": ["Intensive Studio Practice", "Critique-Based Learning", "Foundational Visual Thinking Curriculum"],
+    "socialEnvironment": ["Intensely Creative", "Studio-Focused", "Rigorous", "Visually Oriented"],
+    "idealStudentTraits": ["Intensely creative and visually oriented", "Wants rigorous, studio-intensive art and design training", "Comfortable with a demanding critique culture and long studio hours", "Values genuine academic breadth through Brown cross-registration"],
+    "thrivesIf": ["Wants the single most respected standalone art and design education in the country", "Values a genuinely elite industrial design pipeline into major design-driven companies", "Wants access to Brown University's research university breadth alongside studio intensity", "Thrives with intensive, critique-driven studio culture"],
+    "strugglesIf": ["Wants a traditional liberal arts college experience without specialized studio focus", "Is uncertain whether art and design is the right path", "Prefers a less intensely demanding studio and critique culture", "Wants a larger, less specialized institution"],
+    "transferRiskFactors": ["Students who discover art and design isn't the right specialized path for them", "Students wanting a traditional liberal arts college experience", "Students overwhelmed by the intensity of studio and critique culture"]
+  },
+  "competitiveMajorPressure": {
+    "level": "High",
+    "notes": "Industrial Design and Architecture are among the most selective concentrations within RISD's already highly selective admission, requiring strong portfolio work even within the RISD student body."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Industrial Design", "Furniture Design", "Textile Design", "Landscape Architecture", "Glass"],
+    "hiddenCareerPipelines": ["Product and Industrial Design (Apple, major tech companies)", "Architecture and Landscape Architecture", "Fashion Design", "Animation and Motion Design", "Furniture and Object Design"],
+    "nicheRecruitingAdvantages": ["Apple", "Major fashion houses", "Major architecture firms", "Animation studios", "Design consultancies nationally"],
+    "overlookedStrengths": [
+      "RISD's Industrial Design program has placed graduates directly into Apple's design team at a rate most engineering schools' industrial design programs can't match.",
+      "The Brown University cross-registration relationship gives RISD students genuine access to a full research university's academic breadth, essentially unique among standalone art schools.",
+      "RISD's Furniture Design and Glass programs are genuinely distinctive, world-class specialized offerings unavailable at almost any other American art school.",
+      "RISD's foundational first-year curriculum, required of every student regardless of eventual major, produces graduates with genuinely rigorous cross-disciplinary visual thinking skills."
+    ],
+    "sleeperIndustries": ["Product and Industrial Design", "Furniture and Object Design", "Landscape Architecture", "Animation and Motion Design"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 78, "mentorshipDensity": 80, "executiveAccess": 74, "internshipNetwork": 82,
+    "familyBusinessExposure": 32, "relationshipCapitalScore": 80, "alumniLoyaltyScore": 82,
+    "referralCultureStrength": 80, "donorNetworkStrength": 62, "boardMemberDensity": 54
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Industrial Design", "Fashion Design", "Architecture", "Fine Arts", "Animation and Motion Design"],
+    "regionalEconomicDrivers": ["Design and Creative Industries", "Architecture", "Fashion"],
+    "topEmployers": ["Apple", "Major fashion houses", "Major architecture firms", "Animation studios", "Design consultancies"],
+    "emergingIndustries": ["Sustainable Product Design", "Design Technology and AI Tools", "Immersive and Experience Design"],
+    "startupDensity": "Moderate", "ventureCapitalAccess": 44, "corporateHeadquartersDensity": 30,
+    "healthcareHubStrength": 26, "innovationIndex": 82
+  },
+  "geographicInfluence": {
+    "dominantMarket": "New York and California — Industrial Design, Fashion, and Architecture",
+    "secondaryMarkets": ["Boston MA", "Providence RI"],
+    "alumniStrongholds": ["New York NY", "Los Angeles CA", "San Francisco Bay Area CA"],
+    "relocationPatterns": [
+      "New York draws the largest share of graduates into fashion, design, and architecture roles.",
+      "The Bay Area recruits industrial design graduates directly into major technology companies.",
+      "Los Angeles draws graduates into animation, motion design, and entertainment-adjacent design roles."
+    ],
+    "regionalInfluenceScore": 68, "nationalReachScore": 78, "internationalReachScore": 58
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 0, "studentOrganizationStrength": 68, "leadershipDevelopment": 62,
+    "crossDisciplinaryInteraction": 82, "civicEngagement": 52
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 58, "notes": "A real, strong pathway through fashion and textile design programs." },
+    "healthWellness": { "strength": 24, "notes": "Not a defining institutional strength." },
+    "nutraceuticals": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "consumerProducts": { "strength": 84, "notes": "A very strong, defining pathway reinforced directly by RISD's elite Industrial Design program and its pipeline into Apple and other major product design departments." },
+    "outdoorIndustry": { "strength": 30, "notes": "A modest, secondary pathway through industrial design applications." },
+    "sportsBusiness": { "strength": 20, "notes": "Not a defining institutional strength." },
+    "entertainmentMedia": { "strength": 62, "notes": "A real, strong pathway through animation, motion design, and illustration programs." },
+    "ventureCapital": { "strength": 32, "notes": "A modest, secondary pathway relative to RISD's dominant design identity." },
+    "privateEquity": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "investmentBanking": { "strength": 16, "notes": "Not a meaningful institutional pathway; RISD is not positioned as a finance-recruiting campus." },
+    "consulting": { "strength": 44, "notes": "A real, secondary pathway, particularly design consultancies." },
+    "medicine": { "strength": 14, "notes": "Not a meaningful institutional pathway; RISD has no pre-med infrastructure." },
+    "healthcareAdministration": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "defense": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 46, "notes": "A real, secondary pathway through the Architecture and Landscape Architecture programs." },
+    "luxuryBrands": { "strength": 62, "notes": "A real, strong pathway reinforced by fashion design and industrial design placement into premium consumer brands." },
+    "entrepreneurship": { "strength": 58, "notes": "A real, strong pathway, particularly independent design studios and product ventures." },
+    "technology": { "strength": 48, "notes": "A real, secondary pathway through industrial design's growing overlap with technology product development." },
+    "publicPolicy": { "strength": 22, "notes": "Not a defining institutional strength." },
+    "nonprofitLeadership": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 28, "notes": "A modest, secondary pathway through interior architecture applications." },
+    "supplyChain": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "insurance": { "strength": 12, "notes": "Not a meaningful institutional pathway." },
+    "agriculture": { "strength": 10, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 44, "firstGenerationSupport": 46,
+    "wealthCreationPotential": 68, "familyBusinessPipelineStrength": 26
+  },
+  "futureResilience": {
+    "aiResistance": 62, "automationResistance": 60, "adaptabilityScore": 78, "interdisciplinaryStrength": 74,
+    "futureReadiness": 70, "entrepreneurialFlexibility": 70, "lifelongLearningCulture": 76, "innovationCapacity": 84
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 68, "communityLeadershipPotential": 58, "geographicMobility": 74,
+    "workLifeBalancePotential": 54, "purposeAlignment": 88, "familyFormationSupport": 60,
+    "personalDevelopmentPotential": 90, "careerOptionality": 66, "longTermLifeSatisfaction": 78
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 82, "networkMoat": 68, "geographicMoat": 62, "industryMoat": 90,
+    "alumniMoat": 70, "brandDurability": 82, "overallMoatScore": 76
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "NAVIGATOR",
+    "leaverScore": 72, "returnerScore": 24, "stewardScore": 26, "navigatorScore": 82,
+    "geographicLockIn": "low",
+    "alumniDispersalPattern": "ny_la_bay_area_concentration_with_global_design_industry_dispersal"
+  },
+  "jewishLife": {
+    "hillel": { "exists": true, "strength": 42, "type": "Shared Hillel with Brown University" },
+    "estimatedJewishUndergraduates": 180, "jewishStudentPercentage": "~9%",
+    "kosherDining": true, "shabbatProgramming": true, "birthrightSupport": true,
+    "jewishCommunityStrength": "Moderate",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified. RISD students have access to Brown University's Hillel given the adjacent campus and cross-registration relationship — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "RISD has no separate honors college; its very small, specialized scale and rigorous foundational curriculum deliver an honors-equivalent standard across the entire undergraduate population."
+  }
+},
+  "Rose-Hulman Institute of Technology": {
+  "institutionNarrative": {
+    "name": "Rose-Hulman Institute of Technology",
+    "location": "Terre Haute, Indiana",
+    "region": "Great Lakes",
+    "archetype": "The Country's #1-Ranked Undergraduate Engineering-Focused College — Teaching Rigor Without a Graduate School Diluting It",
+    "oneSentenceSummary": "Rose-Hulman has been ranked the #1 undergraduate engineering-focused institution in the country by U.S. News for over two decades consecutively, delivering an intensity of undergraduate teaching focus that larger research universities' graduate-school-first culture structurally can't match.",
+    "pipeline": "Approximately 2,200 undergraduates, entirely STEM-focused with no graduate school competing for faculty attention. Every engineering discipline — mechanical, electrical, chemical, computer, biomedical — is taught with an undergraduate-first intensity uncommon even at other technical universities. Major recruiters include major aerospace, automotive, and technology companies specifically seeking Rose-Hulman's reputation for hands-on, immediately job-ready engineering graduates.",
+    "hiddenPathway": "Because Rose-Hulman has no graduate school, every faculty member's primary professional focus is undergraduate teaching, not managing a research lab staffed by graduate students — this produces a genuinely different, more personally invested teaching relationship than students get at even prestigious research universities' undergraduate engineering programs.",
+    "institutionalSecret": "Rose-Hulman's small size and total undergraduate focus mean its engineering graduates arrive at employers with a level of direct, hands-on project experience that often exceeds graduates of much more famous research universities, whose undergraduate engineering students compete with graduate students for lab access and faculty attention.",
+    "theRoom": "Terre Haute, Indiana is a quiet Midwest college town, but Rose-Hulman's reputation and recruiting relationships extend nationally, particularly into aerospace, automotive, and technology industries.",
+    "lifestyle": "Intensely academic and quantitatively rigorous, with a genuinely close-knit, small-college engineering culture reinforced by total institutional focus on undergraduate teaching.",
+    "bestFitPersonality": "Intensely quantitative and technically minded, wants undergraduate-first teaching intensity without competing with graduate students for faculty attention, comfortable with a small, singularly STEM-focused institution.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "National reach in engineering recruiting specifically, particularly aerospace, automotive, and technology industries.",
+    "economicOutcome": "Exceptional outcomes in engineering placement specifically, with graduates arriving at employers with hands-on project experience that often exceeds larger research universities' undergraduate engineering programs.",
+    "gradCities": ["Chicago IL", "Detroit MI", "Indianapolis IN"],
+    "comparableInstitutions": ["Colorado School of Mines", "Harvey Mudd College", "Worcester Polytechnic Institute", "Kettering University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Ivy Tech Community College"],
+      "transferAcceptanceRate": "~52%",
+      "freshmanAcceptanceRate": "~64%",
+      "estimatedSavingsRange": "$14,000-$32,000",
+      "transferNotes": "Rose-Hulman maintains a reasonably accessible transfer pathway given its highly technical, STEM-focused curriculum."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Rose-Hulman",
+    "archetype": "The Country's #1-Ranked Undergraduate Engineering-Focused College — Teaching Rigor Without a Graduate School Diluting It",
+    "institutionalPersonality": "intensely academic, quantitatively rigorous, undergraduate-first, close-knit",
+    "cultureKeywords": ["#1 Undergraduate Engineering Ranking", "No Graduate School Competing for Attention", "Hands-On Project Experience", "Small-College Engineering Culture", "Total Undergraduate Focus"],
+    "missionOrientation": "Delivering the most intensely focused, undergraduate-first engineering education in the country, unencumbered by competing graduate school priorities.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Total institutional focus on undergraduate teaching, with hands-on, project-based engineering coursework across every discipline.",
+    "competitiveness": "Highly Selective",
+    "studentAutonomy": "High",
+    "politicalCulture": "Broadly moderate, with a pragmatic, technically-focused campus energy more than an overtly political one.",
+    "prestigeOrientation": "The #1-ranked undergraduate engineering-focused institution in the country for over two decades consecutively.",
+    "socialClimate": "Intensely academic, quantitatively rigorous, close-knit.",
+    "leadershipStyle": "Leadership through applied technical mastery and hands-on project execution."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "regionalRole": "The country's single most intensely undergraduate-focused engineering institution, producing hands-on, immediately job-ready engineers for the aerospace, automotive, and technology industries nationally."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 72, "BosWash": 20, "TorBuffChester": 14,
+    "TexasTriangle": 14, "CharLanta": 14, "NorCalInnovationCorridor": 22, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusColoradoMines": "Colorado School of Mines offers deep specialization in mining, petroleum, and geological engineering specifically; Rose-Hulman offers broader excellence across nearly every engineering discipline with a total undergraduate-first teaching focus Mines' research-active graduate programs don't replicate as purely.",
+    "versusHarveyMudd": "Harvey Mudd offers a required liberal arts core alongside engineering and a Claremont Colleges consortium relationship; Rose-Hulman offers a more purely engineering-focused curriculum with the single longest-running #1 undergraduate engineering ranking in the country."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Very Small",
+    "undergraduateEnrollment": 2200, "graduateEnrollment": 200, "totalEnrollment": 2400,
+    "campusType": "Private Specialized Engineering Institute, Midwest College Town Campus",
+    "residentialIntensity": 84, "communityFeel": 86, "studentFacultyRatio": "11:1",
+    "classSizeExperience": "Very small, intensive classes with direct, personally invested faculty access, unencumbered by competing graduate student priorities.",
+    "scaleAdvantages": ["The #1-ranked undergraduate engineering-focused institution in the country for over two decades", "No graduate school competing for faculty teaching attention", "Genuinely hands-on, immediately job-ready engineering graduates", "Close-knit, intensely academic small-college culture"],
+    "scaleDisadvantages": ["Entirely STEM-focused curriculum offers no traditional liberal arts breadth", "Terre Haute is a quiet Midwest college town with limited independent economic pull", "Very small scale limits course offerings outside engineering and science", "Intensely rigorous, quantitative coursework demands significant time commitment"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 68, "conscientiousness": 92, "extraversion": 56, "agreeableness": 70, "neuroticism": 40 },
+    "hollandCodes": ["R", "I", "C"],
+    "learningStyle": ["Hands-On Applied Engineering", "Quantitative Problem Sets", "Project-Based Team Design"],
+    "socialEnvironment": ["Intensely Academic", "Quantitatively Rigorous", "Undergraduate-First", "Close-Knit"],
+    "idealStudentTraits": ["Intensely quantitative and technically minded", "Wants undergraduate-first teaching intensity", "Comfortable with a small, singularly STEM-focused institution", "Values hands-on project experience over theoretical study alone"],
+    "thrivesIf": ["Wants the #1-ranked undergraduate engineering-focused education in the country", "Values direct, personally invested faculty attention unencumbered by graduate students", "Wants genuinely hands-on, immediately job-ready engineering training", "Is certain engineering is the right path"],
+    "strugglesIf": ["Wants a program outside engineering or science specifically", "Needs traditional liberal arts breadth alongside technical coursework", "Prefers a larger university with broader academic and social offerings", "Wants direct access to graduate-level research opportunities"],
+    "transferRiskFactors": ["Students whose intended field sits outside Rose-Hulman's core engineering/science strengths", "Students wanting broader liberal arts coursework", "Students seeking a larger, more traditionally collegiate campus"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "Rose-Hulman does not formally impact any majors at the undergraduate level, consistent with its entirely STEM-focused institutional structure."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Biomedical Engineering", "Optical Engineering", "Software Engineering", "Applied Physics", "Engineering Management"],
+    "hiddenCareerPipelines": ["Aerospace Engineering", "Automotive Engineering", "Biomedical Device Engineering", "Software and Systems Engineering", "Engineering Management and Technical Leadership"],
+    "nicheRecruitingAdvantages": ["Major aerospace companies", "Major automotive companies", "Major technology companies specifically seeking hands-on engineering talent", "Biomedical device companies"],
+    "overlookedStrengths": [
+      "Because Rose-Hulman has no graduate school, every faculty member's primary professional focus is undergraduate teaching, producing a genuinely more personally invested teaching relationship than research universities offer.",
+      "Rose-Hulman's small size means its engineering graduates arrive at employers with hands-on project experience that often exceeds graduates of much more famous research universities.",
+      "The Optical Engineering program is a genuinely distinctive, specialized offering unavailable at almost any other undergraduate-focused institution.",
+      "Rose-Hulman's Engineering Management program gives technically-minded students a real pathway into technical leadership roles most pure engineering programs don't offer."
+    ],
+    "sleeperIndustries": ["Biomedical Device Engineering", "Optical Engineering", "Engineering Management", "Aerospace Systems Engineering"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 80, "mentorshipDensity": 82, "executiveAccess": 74, "internshipNetwork": 84,
+    "familyBusinessExposure": 36, "relationshipCapitalScore": 80, "alumniLoyaltyScore": 84,
+    "referralCultureStrength": 82, "donorNetworkStrength": 60, "boardMemberDensity": 52
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Aerospace Engineering", "Automotive Engineering", "Biomedical Engineering", "Software Engineering", "Engineering Management"],
+    "regionalEconomicDrivers": ["Advanced Manufacturing", "Aerospace and Automotive Engineering", "Technology"],
+    "topEmployers": ["Major aerospace companies", "Major automotive companies", "Major technology companies", "Biomedical device companies"],
+    "emergingIndustries": ["Autonomous Vehicle Engineering", "Biomedical Device Technology", "Advanced Manufacturing Automation"],
+    "startupDensity": "Low-Moderate", "ventureCapitalAccess": 32, "corporateHeadquartersDensity": 30,
+    "healthcareHubStrength": 38, "innovationIndex": 74
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Midwest — Aerospace, Automotive, and Advanced Manufacturing Engineering",
+    "secondaryMarkets": ["Detroit MI", "Chicago IL"],
+    "alumniStrongholds": ["Chicago IL", "Detroit MI", "Indianapolis IN"],
+    "relocationPatterns": [
+      "A significant share of graduates enter Midwest automotive and manufacturing engineering roles.",
+      "Aerospace companies nationally recruit Rose-Hulman graduates directly.",
+      "A meaningful cohort enters technology company engineering roles, particularly hardware and hands-on product engineering."
+    ],
+    "regionalInfluenceScore": 78, "nationalReachScore": 68, "internationalReachScore": 40
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 32, "studentOrganizationStrength": 74, "leadershipDevelopment": 68,
+    "crossDisciplinaryInteraction": 58, "civicEngagement": 52
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 10, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "consumerProducts": { "strength": 44, "notes": "A real, secondary pathway through hands-on product engineering." },
+    "outdoorIndustry": { "strength": 22, "notes": "Not a defining institutional strength." },
+    "sportsBusiness": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "entertainmentMedia": { "strength": 14, "notes": "Not a meaningful institutional pathway." },
+    "ventureCapital": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "privateEquity": { "strength": 26, "notes": "A modest, secondary pathway relative to Rose-Hulman's dominant engineering identity." },
+    "investmentBanking": { "strength": 24, "notes": "Not a defining institutional strength; Rose-Hulman is not positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 44, "notes": "A real, secondary pathway, particularly technical and engineering consulting." },
+    "medicine": { "strength": 22, "notes": "A modest pathway; Rose-Hulman has limited pre-med infrastructure relative to its engineering focus." },
+    "healthcareAdministration": { "strength": 20, "notes": "Not a defining institutional strength." },
+    "defense": { "strength": 58, "notes": "A real, strong pathway, reinforced by direct aerospace and defense engineering placement." },
+    "realEstate": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "luxuryBrands": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 44, "notes": "A real, growing pathway, particularly engineering-driven startups." },
+    "technology": { "strength": 96, "notes": "The single defining institutional strength — Rose-Hulman is the #1-ranked undergraduate engineering-focused institution in the country, producing hands-on, immediately job-ready engineers across nearly every discipline." },
+    "publicPolicy": { "strength": 20, "notes": "Not a defining institutional strength." },
+    "nonprofitLeadership": { "strength": 22, "notes": "Not a defining institutional strength." },
+    "hospitality": { "strength": 12, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 46, "notes": "A real, secondary pathway tied to automotive and advanced manufacturing logistics." },
+    "insurance": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "agriculture": { "strength": 14, "notes": "Not a meaningful institutional pathway." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 62, "firstGenerationSupport": 60,
+    "wealthCreationPotential": 82, "familyBusinessPipelineStrength": 32
+  },
+  "futureResilience": {
+    "aiResistance": 84, "automationResistance": 82, "adaptabilityScore": 78, "interdisciplinaryStrength": 64,
+    "futureReadiness": 84, "entrepreneurialFlexibility": 58, "lifelongLearningCulture": 78, "innovationCapacity": 78
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 82, "communityLeadershipPotential": 62, "geographicMobility": 68,
+    "workLifeBalancePotential": 62, "purposeAlignment": 74, "familyFormationSupport": 70,
+    "personalDevelopmentPotential": 76, "careerOptionality": 70, "longTermLifeSatisfaction": 78
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 66, "networkMoat": 66, "geographicMoat": 62, "industryMoat": 90,
+    "alumniMoat": 74, "brandDurability": 76, "overallMoatScore": 74
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 46, "returnerScore": 52, "stewardScore": 62, "navigatorScore": 60,
+    "geographicLockIn": "moderate",
+    "alumniDispersalPattern": "midwest_concentration_chicago_detroit_with_national_aerospace_dispersal"
+  },
+  "jewishLife": {
+    "hillel": { "exists": false, "strength": 14, "type": "No formal Hillel; minimal Jewish student presence" },
+    "estimatedJewishUndergraduates": 40, "jewishStudentPercentage": "~1.8%",
+    "kosherDining": false, "shabbatProgramming": false, "birthrightSupport": false,
+    "jewishCommunityStrength": "Minimal",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": false, "name": "", "strength": 0,
+    "notes": "Rose-Hulman has no separate honors college; its very small, singularly STEM-focused scale delivers an honors-equivalent rigor across the entire undergraduate population."
+  }
+}
+,
+  "University of Tulsa": {
+  "institutionNarrative": {
+    "name": "University of Tulsa",
+    "location": "Tulsa, Oklahoma",
+    "region": "Southwest",
+    "archetype": "A Historically Elite Petroleum Engineering Program, Small Enough to Also Do Creative Writing Well",
+    "oneSentenceSummary": "The University of Tulsa combines one of the most historically respected petroleum engineering programs in the country with a genuinely small, private-university breadth — including a nationally recognized creative writing program — that larger, more singularly energy-focused schools don't offer.",
+    "pipeline": "Approximately 3,200 undergraduates. The McDougall School of Petroleum Engineering has a long, historically elite reputation, reinforced by direct ties to Tulsa's status as a historic oil industry capital ('the Oil Capital of the World' in the early 20th century). The creative writing program is genuinely well-regarded nationally, an unusual pairing alongside petroleum engineering. Major recruiters include major energy companies, oilfield services firms, and a smaller but real cohort entering publishing and writing-adjacent fields.",
+    "hiddenPathway": "Tulsa's petroleum engineering alumni network, reinforced by the city's century-long identity as an oil industry capital, gives students direct, personal access to senior energy executives most larger universities' students would need to work much harder to reach.",
+    "institutionalSecret": "The University of Tulsa's creative writing program is genuinely nationally respected, a real, distinctive strength systematically overshadowed by the university's petroleum engineering fame — most families researching Tulsa for energy never discover this.",
+    "theRoom": "Tulsa, Oklahoma was historically known as 'the Oil Capital of the World,' and the university's petroleum engineering program grew directly out of that regional industry identity, reinforced by ongoing energy company headquarters presence.",
+    "lifestyle": "Practical and pre-professionally focused around energy, balanced by a genuinely small, close-knit private-university culture with real intellectual breadth beyond engineering alone.",
+    "bestFitPersonality": "Practically minded and drawn to petroleum engineering specifically, or alternatively genuinely serious about creative writing, comfortable with a small, private university that doesn't fit a single easy category.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Strong national reach in petroleum engineering specifically, reinforced by Tulsa's historic energy industry identity.",
+    "economicOutcome": "Excellent, historically elite outcomes in petroleum engineering, alongside a genuinely distinctive creative writing placement record for a school this energy-focused.",
+    "gradCities": ["Tulsa OK", "Houston TX", "Dallas-Fort Worth TX"],
+    "comparableInstitutions": ["Colorado School of Mines", "Texas Tech University", "Oklahoma State University", "Southern Methodist University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Tulsa Community College"],
+      "transferAcceptanceRate": "~58%",
+      "freshmanAcceptanceRate": "~44%",
+      "estimatedSavingsRange": "$14,000-$32,000",
+      "transferNotes": "Tulsa maintains a reasonably accessible transfer pathway relative to similarly specialized peer institutions."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "University of Tulsa",
+    "archetype": "A Historically Elite Petroleum Engineering Program, Small Enough to Also Do Creative Writing Well",
+    "institutionalPersonality": "practical, energy-industry-connected, intellectually broader than its engineering fame suggests",
+    "cultureKeywords": ["McDougall Petroleum Engineering", "Historic Oil Capital", "Creative Writing", "Small Private University", "Energy Industry Alumni Network"],
+    "missionOrientation": "Delivering historically elite petroleum engineering education alongside genuine intellectual breadth uncommon at similarly energy-focused institutions.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, industry-connected petroleum engineering education paired with genuine liberal arts strength, particularly creative writing.",
+    "competitiveness": "Selective",
+    "politicalCulture": "Broadly moderate, reflecting Oklahoma's regional political culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Historically elite specifically in petroleum engineering, with a genuinely distinctive, less-known strength in creative writing.",
+    "socialClimate": "Practical, energy-connected, intellectually broader than expected.",
+    "leadershipStyle": "Leadership through applied technical competence and, distinctively, creative and intellectual achievement."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Texas Triangle",
+    "regionalRole": "A historically elite, energy-industry-embedded petroleum engineering program with genuine intellectual breadth, anchored in a city whose identity was built directly on the oil industry."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 48, "BosWash": 12, "TorBuffChester": 8,
+    "TexasTriangle": 62, "CharLanta": 10, "NorCalInnovationCorridor": 10, "SoCalCreativeEconomy": 8
+  },
+  "comparativePositioning": {
+    "versusColoradoMines": "Mines offers the single most specialized mining AND petroleum engineering program in the country at public-school scale; Tulsa offers a smaller, private-university experience with a historically elite petroleum-specific reputation and genuine breadth (including creative writing) Mines' entirely STEM-focused curriculum doesn't have.",
+    "versusOklahomaState": "Oklahoma State offers a larger, land-grant public university scale with broader agricultural and general engineering strength; Tulsa offers a smaller, more specifically petroleum-engineering-elite private university experience with real intellectual breadth beyond energy."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Small",
+    "undergraduateEnrollment": 3200, "graduateEnrollment": 900, "totalEnrollment": 4100,
+    "campusType": "Private University, Historic Oil City Campus",
+    "residentialIntensity": 68, "communityFeel": 76, "studentFacultyRatio": "10:1",
+    "classSizeExperience": "Small classes with strong faculty access, reinforced by direct energy-industry alumni ties.",
+    "scaleAdvantages": ["Historically elite petroleum engineering reputation", "Genuinely distinctive, nationally respected creative writing program", "Direct, personal access to Tulsa's energy industry alumni network", "Small, close-knit private-university culture"],
+    "scaleDisadvantages": ["Small scale limits course offerings outside its core strengths", "Less national brand recognition outside petroleum engineering specifically", "Tulsa is a smaller city with less overall economic pull than Houston or Dallas", "High cost of attendance relative to public land-grant peers"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 74, "conscientiousness": 84, "extraversion": 62, "agreeableness": 76, "neuroticism": 42 },
+    "hollandCodes": ["R", "I", "A"],
+    "learningStyle": ["Applied Petroleum Engineering", "Small Seminar Creative Writing Workshop", "Quantitative Problem Sets"],
+    "socialEnvironment": ["Practical", "Energy-Industry-Connected", "Intellectually Broader Than Expected", "Close-Knit"],
+    "idealStudentTraits": ["Practically minded and drawn to petroleum engineering specifically", "Or genuinely serious about creative writing", "Comfortable with a small, private university", "Values direct energy-industry alumni access"],
+    "thrivesIf": ["Wants a historically elite petroleum engineering program at small-university scale", "Values direct, personal access to Tulsa's energy industry alumni network", "Is genuinely drawn to creative writing alongside or instead of engineering", "Wants a small, close-knit private university culture"],
+    "strugglesIf": ["Wants a large public university with broad course offerings", "Needs a major city's direct economic and cultural pull", "Wants a program with broader non-energy institutional identity", "Prefers public-school cost over private-university tuition"],
+    "transferRiskFactors": ["Students whose intended field sits outside petroleum engineering or creative writing specifically", "Students seeking a larger campus with broader offerings", "Students who want a major city's direct access"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Moderate",
+    "notes": "Petroleum engineering carries substantial informal competitive pressure given the program's elite historical reputation, though Tulsa does not formally impact most majors beyond general admission."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Creative Writing", "Geosciences", "Chemical Engineering", "Cyber Security", "Film Studies"],
+    "hiddenCareerPipelines": ["Petroleum and Energy Engineering", "Creative Writing and Publishing", "Oilfield Services", "Cybersecurity (growing program)", "Energy Finance"],
+    "nicheRecruitingAdvantages": ["Major energy companies headquartered in or near Tulsa", "Oilfield services firms", "Major publishing houses (creative writing alumni network)", "Regional energy finance firms"],
+    "overlookedStrengths": [
+      "Tulsa's petroleum engineering alumni network, reinforced by the city's century-long identity as an oil industry capital, gives students direct, personal access to senior energy executives.",
+      "The creative writing program is genuinely nationally respected, a real, distinctive strength systematically overshadowed by the university's petroleum engineering fame.",
+      "Tulsa's smaller scale means students in the petroleum engineering program get more direct, personal faculty and industry access than at larger energy-focused public universities.",
+      "The growing Cyber Security program benefits from Tulsa's historic National Security Agency-adjacent research ties, a genuinely underrated pathway."
+    ],
+    "sleeperIndustries": ["Creative Writing and Publishing", "Cybersecurity", "Oilfield Services Technology", "Energy Finance"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 78, "mentorshipDensity": 78, "executiveAccess": 76, "internshipNetwork": 80,
+    "familyBusinessExposure": 42, "relationshipCapitalScore": 80, "alumniLoyaltyScore": 82,
+    "referralCultureStrength": 80, "donorNetworkStrength": 60, "boardMemberDensity": 54
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Petroleum Engineering", "Oilfield Services", "Energy Finance", "Creative Writing and Publishing", "Cybersecurity"],
+    "regionalEconomicDrivers": ["Oil and Gas Energy", "Oilfield Services", "Energy Finance"],
+    "topEmployers": ["Major energy companies", "Oilfield services firms", "Regional energy finance firms", "Major publishing houses"],
+    "emergingIndustries": ["Energy Technology", "Cybersecurity", "Carbon Capture Engineering"],
+    "startupDensity": "Low-Moderate", "ventureCapitalAccess": 30, "corporateHeadquartersDensity": 40,
+    "healthcareHubStrength": 40, "innovationIndex": 58
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Tulsa and the Southwest — Petroleum Engineering and Energy",
+    "secondaryMarkets": ["Houston TX", "Dallas-Fort Worth TX"],
+    "alumniStrongholds": ["Tulsa OK", "Houston TX", "Dallas-Fort Worth TX"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in Tulsa or relocate to Houston, entering energy industry roles.",
+      "Dallas-Fort Worth draws a meaningful cohort into broader corporate and finance roles.",
+      "A smaller but real cohort enters publishing and writing-adjacent fields, often relocating to New York."
+    ],
+    "regionalInfluenceScore": 76, "nationalReachScore": 56, "internationalReachScore": 38
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 26, "studentOrganizationStrength": 68, "leadershipDevelopment": 64,
+    "crossDisciplinaryInteraction": 60, "civicEngagement": 54
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 14, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "consumerProducts": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "outdoorIndustry": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "sportsBusiness": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "entertainmentMedia": { "strength": 48, "notes": "A real, distinctive pathway reinforced by the nationally respected creative writing and film studies programs." },
+    "ventureCapital": { "strength": 30, "notes": "A modest, secondary pathway tied to growing energy-tech startups." },
+    "privateEquity": { "strength": 46, "notes": "A real, secondary pathway, particularly energy sector private equity." },
+    "investmentBanking": { "strength": 44, "notes": "A real, secondary pathway, smaller than Tulsa's dominant petroleum engineering pipeline." },
+    "consulting": { "strength": 46, "notes": "A real, secondary pathway, particularly technical and energy consulting." },
+    "medicine": { "strength": 34, "notes": "A modest pathway; Tulsa has limited pre-med infrastructure relative to its engineering focus." },
+    "healthcareAdministration": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "defense": { "strength": 38, "notes": "A real, secondary pathway, reinforced by cybersecurity program ties." },
+    "realEstate": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 46, "notes": "A real, growing pathway, particularly energy-tech startups." },
+    "technology": { "strength": 48, "notes": "A real, secondary pathway reinforced by the growing Cyber Security program." },
+    "publicPolicy": { "strength": 28, "notes": "Not a defining institutional strength." },
+    "nonprofitLeadership": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 44, "notes": "A real, secondary pathway tied to oilfield services logistics." },
+    "insurance": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "agriculture": { "strength": 18, "notes": "Not a defining institutional strength." },
+    "energy": { "strength": 96, "notes": "The single defining institutional strength — the McDougall School of Petroleum Engineering has a long, historically elite reputation directly tied to Tulsa's identity as a historic oil industry capital." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 62, "firstGenerationSupport": 62,
+    "wealthCreationPotential": 78, "familyBusinessPipelineStrength": 40
+  },
+  "futureResilience": {
+    "aiResistance": 78, "automationResistance": 78, "adaptabilityScore": 74, "interdisciplinaryStrength": 68,
+    "futureReadiness": 76, "entrepreneurialFlexibility": 58, "lifelongLearningCulture": 74, "innovationCapacity": 68
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 78, "communityLeadershipPotential": 64, "geographicMobility": 62,
+    "workLifeBalancePotential": 68, "purposeAlignment": 72, "familyFormationSupport": 74,
+    "personalDevelopmentPotential": 74, "careerOptionality": 64, "longTermLifeSatisfaction": 76
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 62, "networkMoat": 68, "geographicMoat": 76, "industryMoat": 84,
+    "alumniMoat": 72, "brandDurability": 70, "overallMoatScore": 72
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 40, "returnerScore": 60, "stewardScore": 68, "navigatorScore": 54,
+    "geographicLockIn": "moderate",
+    "alumniDispersalPattern": "tulsa_houston_concentration_with_dfw_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": false, "strength": 16, "type": "No formal Hillel; small informal Jewish student presence" },
+    "estimatedJewishUndergraduates": 40, "jewishStudentPercentage": "~1.3%",
+    "kosherDining": false, "shabbatProgramming": false, "birthrightSupport": false,
+    "jewishCommunityStrength": "Minimal",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Honors Program", "strength": 58,
+    "notes": "Provides smaller seminars and priority course access within Tulsa's already small overall scale."
+  }
+},
+  "North Dakota State University": {
+  "institutionNarrative": {
+    "name": "North Dakota State University",
+    "location": "Fargo, North Dakota",
+    "region": "Great Plains",
+    "archetype": "A Land-Grant University Sitting Directly on the Bakken Shale Oil Boom",
+    "oneSentenceSummary": "North Dakota State combines genuine land-grant agricultural strength — spring wheat, sugar beets, and pulse crops — with direct statewide proximity to the Bakken shale formation, one of the most significant oil discoveries in recent American history.",
+    "pipeline": "Approximately 12,000 undergraduates. The College of Agriculture, Food Systems, and Natural Resources is a genuine land-grant strength, particularly in spring wheat and pulse crop research given North Dakota's agricultural economy. The College of Engineering has grown substantially given direct Bakken shale oil field proximity statewide, particularly petroleum-adjacent civil and chemical engineering. Major recruiters include Bakken-region energy companies, major agricultural companies, and growing regional employers in Fargo's diversifying economy.",
+    "hiddenPathway": "North Dakota State's direct statewide proximity to the Bakken shale formation — one of the largest oil discoveries in the U.S. in decades — gives engineering and geology students genuine access to an active, major oil boom most universities' students would need to relocate for.",
+    "institutionalSecret": "NDSU's spring wheat breeding program has produced varieties that are genuinely significant to the entire Northern Plains wheat industry, a real agricultural research impact systematically undersold relative to the university's Bison football fame.",
+    "theRoom": "Fargo, North Dakota sits at the edge of the Bakken shale region's broader economic influence, while anchoring the state's agricultural economy directly — a genuine dual-industry regional identity.",
+    "lifestyle": "Practical and Midwest-plains-minded, with spirited Bison football pride (an FCS dynasty) balanced by a genuinely hardworking, land-grant agricultural and energy-adjacent campus culture.",
+    "bestFitPersonality": "Practically minded and comfortable with a large public land-grant university, drawn to agriculture, engineering, or energy-adjacent fields specifically, comfortable with a Northern Plains setting and climate.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Dominant in North Dakota's agricultural and Bakken-region energy economy, with strong regional reach across the Upper Midwest and Great Plains.",
+    "economicOutcome": "Strong outcomes in agriculture and agricultural research, with a genuinely growing engineering placement pipeline reinforced by direct Bakken shale oil field proximity.",
+    "gradCities": ["Fargo ND", "Minneapolis-Saint Paul MN", "Bismarck ND"],
+    "comparableInstitutions": ["South Dakota State University", "Iowa State University", "University of Wyoming", "Montana State University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["North Dakota State College of Science"],
+      "transferAcceptanceRate": "~86%",
+      "freshmanAcceptanceRate": "~94%",
+      "estimatedSavingsRange": "$8,000-$18,000",
+      "transferNotes": "NDSU maintains a genuinely accessible transfer pathway from North Dakota's community and technical college system."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "North Dakota State",
+    "archetype": "A Land-Grant University Sitting Directly on the Bakken Shale Oil Boom",
+    "institutionalPersonality": "practical, Midwest-plains-minded, hardworking, dual-industry-connected",
+    "cultureKeywords": ["Bakken Shale Proximity", "Spring Wheat Research", "Bison Football Dynasty", "Land-Grant Agriculture", "Northern Plains Setting"],
+    "missionOrientation": "Delivering large-scale public land-grant education directly connected to North Dakota's agricultural economy and the Bakken shale oil boom.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, industry-connected education reinforced by direct agricultural and Bakken-region energy industry proximity.",
+    "competitiveness": "Moderately Selective",
+    "politicalCulture": "Broadly conservative, reflecting North Dakota's regional political culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Strong regional land-grant reputation, genuinely significant national impact in spring wheat agricultural research.",
+    "socialClimate": "Practical, spirited, hardworking.",
+    "leadershipStyle": "Leadership through applied agricultural and engineering competence and Bison football-driven school pride."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "regionalRole": "A land-grant agricultural research engine sitting directly on one of the most significant American oil discoveries in decades, giving students a genuine dual-industry regional economy."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 84, "BosWash": 12, "TorBuffChester": 10,
+    "TexasTriangle": 14, "CharLanta": 10, "NorCalInnovationCorridor": 10, "SoCalCreativeEconomy": 8
+  },
+  "comparativePositioning": {
+    "versusSouthDakotaState": "South Dakota State offers a comparable land-grant agricultural identity without the Bakken shale oil proximity; NDSU offers the genuine dual-industry advantage of agriculture plus direct oil boom access South Dakota State doesn't have.",
+    "versusIowaState": "Iowa State offers a larger, more comprehensive agricultural sciences powerhouse reputation; NDSU offers a smaller scale with the distinctive, genuine Bakken shale oil boom proximity Iowa State doesn't have."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Large",
+    "undergraduateEnrollment": 12000, "graduateEnrollment": 2200, "totalEnrollment": 14200,
+    "campusType": "Public Land-Grant Research University, Northern Plains Campus",
+    "residentialIntensity": 46, "communityFeel": 62, "studentFacultyRatio": "18:1",
+    "classSizeExperience": "Moderate-to-large introductory courses typical of a public land-grant university; Agriculture and Engineering coursework become substantially more specialized and hands-on.",
+    "scaleAdvantages": ["Direct statewide proximity to the Bakken shale oil boom", "Genuine, nationally significant spring wheat agricultural research", "Storied Bison football program (FCS dynasty) creating unifying school pride", "Genuinely accessible transfer pathway and affordable cost"],
+    "scaleDisadvantages": ["Fargo's Northern Plains climate is harsh and may not suit every student", "Less national brand recognition outside agriculture and Bakken-region energy", "Moderate-to-large introductory courses require student initiative", "Limited independent economic pull outside agriculture and energy"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 66, "conscientiousness": 78, "extraversion": 70, "agreeableness": 80, "neuroticism": 42 },
+    "hollandCodes": ["R", "I", "C"],
+    "learningStyle": ["Applied Agricultural Research", "Hands-On Engineering", "Field-Based Crop Science"],
+    "socialEnvironment": ["Practical", "Midwest-Plains-Minded", "Hardworking", "Dual-Industry-Connected"],
+    "idealStudentTraits": ["Practically minded and comfortable with a large public land-grant university", "Drawn to agriculture, engineering, or energy-adjacent fields specifically", "Comfortable with a Northern Plains setting and climate", "Values genuine dual-industry (agriculture plus energy) regional access"],
+    "thrivesIf": ["Wants direct access to the Bakken shale oil boom alongside genuine agricultural research strength", "Values nationally significant spring wheat and pulse crop agricultural research", "Enjoys storied Bison football culture and school pride", "Wants an accessible, affordable public land-grant education"],
+    "strugglesIf": ["Wants a warmer climate", "Needs a major city's direct economic and cultural access", "Prefers a program with broader non-agriculture/energy institutional identity", "Wants a smaller, more intimate campus"],
+    "transferRiskFactors": ["Students seeking a warmer climate", "Students who want a major city's direct access", "Students whose intended field sits outside NDSU's core agriculture/engineering/energy strengths"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "NDSU does not formally impact most majors at the undergraduate level, consistent with its accessible, land-grant public university structure."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Agricultural and Biosystems Engineering", "Plant Sciences", "Coatings and Polymeric Materials", "Cereal Science", "Agribusiness"],
+    "hiddenCareerPipelines": ["Bakken Shale Oil Field Engineering", "Agricultural Research and Plant Breeding", "Agribusiness Management", "Coatings and Materials Science", "Pulse Crop and Cereal Science"],
+    "nicheRecruitingAdvantages": ["Bakken-region energy companies", "Major agricultural companies", "Cereal and grain processing companies", "Coatings and polymer manufacturers"],
+    "overlookedStrengths": [
+      "NDSU's direct statewide proximity to the Bakken shale formation gives engineering and geology students genuine access to an active major oil boom most universities' students would need to relocate for.",
+      "The spring wheat breeding program has produced varieties genuinely significant to the entire Northern Plains wheat industry, real agricultural research impact undersold relative to Bison football fame.",
+      "The Coatings and Polymeric Materials program is a genuinely unique, distinctive offering unavailable at almost any other American university.",
+      "NDSU's Cereal Science program is a real, distinctive pathway into the grain processing and food science industry tied directly to the Northern Plains wheat economy."
+    ],
+    "sleeperIndustries": ["Bakken Shale Oil Field Engineering", "Agricultural Research and Plant Breeding", "Coatings and Materials Science", "Cereal and Grain Science"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 70, "mentorshipDensity": 68, "executiveAccess": 58, "internshipNetwork": 72,
+    "familyBusinessExposure": 42, "relationshipCapitalScore": 72, "alumniLoyaltyScore": 78,
+    "referralCultureStrength": 74, "donorNetworkStrength": 52, "boardMemberDensity": 46
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Agriculture", "Bakken Shale Oil and Gas", "Agribusiness", "Coatings and Materials Science", "Food Science"],
+    "regionalEconomicDrivers": ["Spring Wheat and Pulse Crop Agriculture", "Bakken Shale Oil Production", "Agribusiness"],
+    "topEmployers": ["Bakken-region energy companies", "Major agricultural companies", "Cereal and grain processing companies", "Coatings and polymer manufacturers"],
+    "emergingIndustries": ["Precision Agriculture Technology", "Shale Oil Extraction Technology", "Sustainable Coatings Science"],
+    "startupDensity": "Low", "ventureCapitalAccess": 24, "corporateHeadquartersDensity": 32,
+    "healthcareHubStrength": 38, "innovationIndex": 52
+  },
+  "geographicInfluence": {
+    "dominantMarket": "North Dakota — Agriculture and Bakken Shale Energy",
+    "secondaryMarkets": ["Minneapolis-Saint Paul MN", "Bismarck ND"],
+    "alumniStrongholds": ["Fargo ND", "Bismarck ND", "Minneapolis-Saint Paul MN"],
+    "relocationPatterns": [
+      "A large majority of graduates remain in North Dakota, entering agriculture and Bakken-region energy roles.",
+      "Minneapolis-Saint Paul draws a meaningful cohort into broader corporate roles.",
+      "A real cohort enters energy engineering roles specifically tied to Bakken shale operations."
+    ],
+    "regionalInfluenceScore": 88, "nationalReachScore": 44, "internationalReachScore": 26
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 14, "studentOrganizationStrength": 68, "leadershipDevelopment": 62,
+    "crossDisciplinaryInteraction": 56, "civicEngagement": 58
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 12, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 36, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 48, "notes": "A real, secondary pathway through cereal science and food science programs." },
+    "consumerProducts": { "strength": 40, "notes": "A real, secondary pathway through agricultural and coatings product development." },
+    "outdoorIndustry": { "strength": 36, "notes": "A modest, secondary pathway." },
+    "sportsBusiness": { "strength": 38, "notes": "A real, secondary pathway given Bison football's FCS dynasty status." },
+    "entertainmentMedia": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "ventureCapital": { "strength": 20, "notes": "Not a defining institutional strength; North Dakota's venture ecosystem is minimal." },
+    "privateEquity": { "strength": 32, "notes": "A modest, secondary pathway, particularly energy sector." },
+    "investmentBanking": { "strength": 28, "notes": "Not a defining institutional strength; NDSU is not positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "medicine": { "strength": 32, "notes": "A modest pathway; NDSU has limited pre-med infrastructure relative to its agricultural and engineering focus." },
+    "healthcareAdministration": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 10, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 40, "notes": "A real, growing pathway, particularly agricultural technology and energy-adjacent startups." },
+    "technology": { "strength": 40, "notes": "A modest, secondary pathway, growing through precision agriculture technology applications." },
+    "publicPolicy": { "strength": 32, "notes": "A modest, secondary pathway, particularly agricultural and energy policy." },
+    "nonprofitLeadership": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 56, "notes": "A real, solid pathway tied to agricultural and energy logistics across the Northern Plains." },
+    "insurance": { "strength": 24, "notes": "A modest, secondary pathway." },
+    "agriculture": { "strength": 90, "notes": "A very strong, defining land-grant pathway — spring wheat and pulse crop research genuinely significant to the entire Northern Plains agricultural industry." },
+    "energy": { "strength": 78, "notes": "A very strong, distinctive pathway reinforced by direct statewide proximity to the Bakken shale formation, one of the most significant American oil discoveries in recent decades." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 76, "firstGenerationSupport": 76,
+    "wealthCreationPotential": 58, "familyBusinessPipelineStrength": 46
+  },
+  "futureResilience": {
+    "aiResistance": 62, "automationResistance": 64, "adaptabilityScore": 64, "interdisciplinaryStrength": 54,
+    "futureReadiness": 62, "entrepreneurialFlexibility": 54, "lifelongLearningCulture": 62, "innovationCapacity": 54
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 58, "communityLeadershipPotential": 66, "geographicMobility": 46,
+    "workLifeBalancePotential": 78, "purposeAlignment": 68, "familyFormationSupport": 80,
+    "personalDevelopmentPotential": 64, "careerOptionality": 54, "longTermLifeSatisfaction": 76
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 46, "networkMoat": 58, "geographicMoat": 82, "industryMoat": 76,
+    "alumniMoat": 70, "brandDurability": 66, "overallMoatScore": 66
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 26, "returnerScore": 78, "stewardScore": 84, "navigatorScore": 36,
+    "geographicLockIn": "very_high",
+    "alumniDispersalPattern": "overwhelmingly_concentrated_north_dakota_with_minneapolis_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": false, "strength": 8, "type": "No formal Hillel; negligible Jewish student presence" },
+    "estimatedJewishUndergraduates": 20, "jewishStudentPercentage": "~0.17%",
+    "kosherDining": false, "shabbatProgramming": false, "birthrightSupport": false,
+    "jewishCommunityStrength": "Negligible",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Honors Program", "strength": 52,
+    "notes": "Provides smaller seminars and priority course access within NDSU's large public land-grant scale."
+  }
+}
+,
+  "South Dakota State University": {
+  "institutionNarrative": {
+    "name": "South Dakota State University",
+    "location": "Brookings, South Dakota",
+    "region": "Great Plains",
+    "archetype": "A Land-Grant Agriculture and Dairy Science Powerhouse With a Genuinely Elite Pharmacy Program",
+    "oneSentenceSummary": "South Dakota State combines genuine land-grant agricultural strength — particularly dairy science and precision agriculture — with a pharmacy program that punches well above the university's overall national profile.",
+    "pipeline": "Approximately 10,500 undergraduates. The College of Agriculture, Food and Environmental Sciences is South Dakota State's defining institutional strength, particularly dairy science, given South Dakota's significant dairy industry, and precision agriculture technology. The pharmacy program is genuinely well-regarded nationally, disproportionately strong relative to the university's overall profile. Major recruiters include major agricultural and dairy companies, regional healthcare systems, and growing precision agriculture technology firms.",
+    "hiddenPathway": "South Dakota State's Dairy Science program gives students direct, structural access to South Dakota's genuinely significant dairy industry — one of the fastest-growing dairy production states in the country — a career pathway most universities outside the Upper Midwest simply don't offer.",
+    "institutionalSecret": "SDSU's pharmacy program is genuinely well-regarded nationally, disproportionately strong relative to the university's overall public profile, systematically undersold relative to its land-grant agricultural fame.",
+    "theRoom": "Brookings, South Dakota anchors the state's significant agricultural and dairy economy directly, with growing precision agriculture technology research reinforced by John Deere and other major agricultural equipment manufacturers' regional presence.",
+    "lifestyle": "Practical and Midwest-plains-minded, with a genuinely hardworking, land-grant agricultural campus culture and spirited Jackrabbits athletics pride.",
+    "bestFitPersonality": "Practically minded and comfortable with a large public land-grant university, drawn to agriculture, dairy science, or pharmacy specifically, comfortable with a Northern Plains setting.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Dominant in South Dakota's agricultural and dairy economy, with strong regional reach across the Upper Midwest and genuinely national reach in pharmacy specifically.",
+    "economicOutcome": "Strong, genuinely distinctive outcomes in dairy science and precision agriculture, alongside a disproportionately strong pharmacy placement record.",
+    "gradCities": ["Sioux Falls SD", "Minneapolis-Saint Paul MN", "Omaha NE"],
+    "comparableInstitutions": ["North Dakota State University", "Iowa State University", "University of Nebraska-Lincoln", "Kansas State University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Southeast Technical College"],
+      "transferAcceptanceRate": "~84%",
+      "freshmanAcceptanceRate": "~92%",
+      "estimatedSavingsRange": "$8,000-$18,000",
+      "transferNotes": "SDSU maintains a genuinely accessible transfer pathway from South Dakota's technical college system."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "South Dakota State",
+    "archetype": "A Land-Grant Agriculture and Dairy Science Powerhouse With a Genuinely Elite Pharmacy Program",
+    "institutionalPersonality": "practical, Midwest-plains-minded, hardworking, agriculturally proud",
+    "cultureKeywords": ["Dairy Science", "Precision Agriculture", "Elite Pharmacy Program", "Jackrabbits Athletics", "Land-Grant Identity"],
+    "missionOrientation": "Delivering large-scale public land-grant education directly connected to South Dakota's agricultural and dairy economy, reinforced by a disproportionately strong pharmacy program.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, industry-connected education reinforced by direct agricultural, dairy, and precision agriculture technology proximity.",
+    "competitiveness": "Moderately Selective",
+    "politicalCulture": "Broadly conservative, reflecting South Dakota's regional political culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Strong regional land-grant reputation, genuinely elite national reputation specifically in pharmacy.",
+    "socialClimate": "Practical, hardworking, agriculturally proud.",
+    "leadershipStyle": "Leadership through applied agricultural competence and Jackrabbits athletics-driven school pride."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "regionalRole": "A land-grant dairy and precision agriculture research engine with a disproportionately strong national pharmacy program, anchoring South Dakota's agricultural economy."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 82, "BosWash": 10, "TorBuffChester": 8,
+    "TexasTriangle": 12, "CharLanta": 8, "NorCalInnovationCorridor": 10, "SoCalCreativeEconomy": 8
+  },
+  "comparativePositioning": {
+    "versusNorthDakotaState": "North Dakota State offers direct Bakken shale oil boom proximity alongside agriculture; South Dakota State offers a more purely agriculture-and-dairy-focused identity with a genuinely elite, disproportionately strong pharmacy program North Dakota State doesn't match.",
+    "versusIowaState": "Iowa State offers a larger, more comprehensive agricultural sciences powerhouse reputation across more disciplines; South Dakota State offers a more specifically dairy-science-focused identity and a pharmacy program punching well above the university's overall national profile."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Large",
+    "undergraduateEnrollment": 10500, "graduateEnrollment": 1800, "totalEnrollment": 12300,
+    "campusType": "Public Land-Grant Research University, Northern Plains Campus",
+    "residentialIntensity": 48, "communityFeel": 66, "studentFacultyRatio": "16:1",
+    "classSizeExperience": "Moderate introductory courses typical of a public land-grant university; Dairy Science and Pharmacy coursework become substantially more specialized and hands-on.",
+    "scaleAdvantages": ["Genuine, significant dairy science and precision agriculture strength", "A pharmacy program genuinely disproportionately strong relative to the university's overall profile", "Spirited Jackrabbits athletics program creating unifying school pride", "Genuinely accessible transfer pathway and affordable cost"],
+    "scaleDisadvantages": ["Brookings is a small college town with limited independent economic pull", "Northern Plains climate is harsh and may not suit every student", "Less national brand recognition outside agriculture, dairy, and pharmacy", "Moderate introductory courses require student initiative"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 62, "conscientiousness": 78, "extraversion": 68, "agreeableness": 82, "neuroticism": 40 },
+    "hollandCodes": ["R", "I", "S"],
+    "learningStyle": ["Applied Dairy and Agricultural Science", "Clinical Pharmacy Training", "Precision Agriculture Technology"],
+    "socialEnvironment": ["Practical", "Midwest-Plains-Minded", "Hardworking", "Agriculturally Proud"],
+    "idealStudentTraits": ["Practically minded and comfortable with a large public land-grant university", "Drawn to agriculture, dairy science, or pharmacy specifically", "Comfortable with a Northern Plains setting and climate", "Values genuine agricultural and dairy industry access"],
+    "thrivesIf": ["Wants genuine dairy science and precision agriculture research access", "Values a pharmacy program that's disproportionately strong relative to the university's overall size", "Enjoys spirited Jackrabbits athletics culture", "Wants an accessible, affordable public land-grant education"],
+    "strugglesIf": ["Wants a warmer climate", "Needs a major city's direct economic and cultural access", "Prefers a program with broader non-agriculture/dairy/pharmacy institutional identity", "Wants a larger, more nationally prominent university"],
+    "transferRiskFactors": ["Students seeking a warmer climate", "Students who want a major city's direct access", "Students whose intended field sits outside SDSU's core agriculture/dairy/pharmacy strengths"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Moderate",
+    "notes": "The pharmacy program admits as a competitive internal application distinct from general SDSU admission, given its disproportionately strong national reputation."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Dairy Manufacturing", "Precision Agriculture", "Pharmacy", "Wildlife and Fisheries Sciences", "Agricultural Communications"],
+    "hiddenCareerPipelines": ["Dairy Science and Manufacturing", "Precision Agriculture Technology", "Pharmacy and Clinical Pharmacy", "Agricultural Equipment Technology (John Deere-adjacent)", "Agricultural Communications and Marketing"],
+    "nicheRecruitingAdvantages": ["Major dairy and agricultural companies", "John Deere and major agricultural equipment manufacturers", "Regional healthcare and pharmacy systems", "Precision agriculture technology firms"],
+    "overlookedStrengths": [
+      "South Dakota State's Dairy Science program gives students direct, structural access to South Dakota's genuinely significant, fast-growing dairy industry, a career pathway most universities outside the Upper Midwest don't offer.",
+      "SDSU's pharmacy program is genuinely well-regarded nationally, disproportionately strong relative to the university's overall public profile.",
+      "Precision Agriculture Technology is a genuinely growing, distinctive program tied directly to major agricultural equipment manufacturers' regional presence.",
+      "Agricultural Communications is a real, underrated pathway combining journalism and agricultural science, distinctive to land-grant universities like SDSU."
+    ],
+    "sleeperIndustries": ["Dairy Science and Manufacturing", "Precision Agriculture Technology", "Clinical Pharmacy", "Agricultural Equipment Technology"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 68, "mentorshipDensity": 66, "executiveAccess": 56, "internshipNetwork": 70,
+    "familyBusinessExposure": 44, "relationshipCapitalScore": 70, "alumniLoyaltyScore": 76,
+    "referralCultureStrength": 72, "donorNetworkStrength": 48, "boardMemberDensity": 42
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Dairy Science and Manufacturing", "Precision Agriculture", "Pharmacy", "Agricultural Equipment Technology", "Agribusiness"],
+    "regionalEconomicDrivers": ["Dairy Production", "Row Crop Agriculture", "Agricultural Equipment Manufacturing"],
+    "topEmployers": ["Major dairy and agricultural companies", "John Deere and major agricultural equipment manufacturers", "Regional healthcare and pharmacy systems", "Precision agriculture technology firms"],
+    "emergingIndustries": ["Precision Agriculture Technology", "Dairy Processing Innovation", "Agricultural Data Analytics"],
+    "startupDensity": "Low", "ventureCapitalAccess": 20, "corporateHeadquartersDensity": 26,
+    "healthcareHubStrength": 42, "innovationIndex": 48
+  },
+  "geographicInfluence": {
+    "dominantMarket": "South Dakota — Dairy Science, Agriculture, and Pharmacy",
+    "secondaryMarkets": ["Sioux Falls SD", "Minneapolis-Saint Paul MN"],
+    "alumniStrongholds": ["Sioux Falls SD", "Brookings SD", "Minneapolis-Saint Paul MN"],
+    "relocationPatterns": [
+      "A large majority of graduates remain in South Dakota, entering agriculture, dairy, and healthcare roles.",
+      "Sioux Falls draws a significant share into regional healthcare and pharmacy roles.",
+      "Minneapolis-Saint Paul recruits graduates into broader corporate and agricultural business roles."
+    ],
+    "regionalInfluenceScore": 86, "nationalReachScore": 42, "internationalReachScore": 22
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 12, "studentOrganizationStrength": 66, "leadershipDevelopment": 60,
+    "crossDisciplinaryInteraction": 54, "civicEngagement": 56
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 12, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 58, "notes": "A real, solid pathway reinforced by the pharmacy program and regional healthcare ties." },
+    "nutraceuticals": { "strength": 62, "notes": "A real, solid pathway through dairy science and food science programs." },
+    "consumerProducts": { "strength": 48, "notes": "A real, secondary pathway through dairy and agricultural product development." },
+    "outdoorIndustry": { "strength": 34, "notes": "A modest, secondary pathway through wildlife and fisheries sciences." },
+    "sportsBusiness": { "strength": 32, "notes": "A modest, secondary pathway given Jackrabbits athletics." },
+    "entertainmentMedia": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "ventureCapital": { "strength": 18, "notes": "Not a defining institutional strength; South Dakota's venture ecosystem is minimal." },
+    "privateEquity": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "investmentBanking": { "strength": 24, "notes": "Not a defining institutional strength; SDSU is not positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "medicine": { "strength": 48, "notes": "A real, secondary pathway; SDSU has no medical school of its own but real regional pre-health placement." },
+    "healthcareAdministration": { "strength": 56, "notes": "A real, secondary pathway reinforced by pharmacy program and regional healthcare ties." },
+    "defense": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 24, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 8, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 38, "notes": "A modest, growing pathway, particularly agricultural technology startups." },
+    "technology": { "strength": 38, "notes": "A modest, secondary pathway, growing through precision agriculture technology applications." },
+    "publicPolicy": { "strength": 30, "notes": "A modest, secondary pathway, particularly agricultural policy." },
+    "nonprofitLeadership": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "supplyChain": { "strength": 48, "notes": "A real, secondary pathway tied to dairy and agricultural logistics." },
+    "insurance": { "strength": 22, "notes": "A modest, secondary pathway." },
+    "agriculture": { "strength": 94, "notes": "The single defining institutional strength — dairy science and precision agriculture are genuinely significant, distinctive land-grant specialties tied directly to South Dakota's fast-growing dairy industry." },
+    "energy": { "strength": 26, "notes": "A modest, secondary pathway; South Dakota's energy economy is real but much smaller than North Dakota's Bakken shale proximity." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 74, "firstGenerationSupport": 74,
+    "wealthCreationPotential": 54, "familyBusinessPipelineStrength": 46
+  },
+  "futureResilience": {
+    "aiResistance": 60, "automationResistance": 62, "adaptabilityScore": 62, "interdisciplinaryStrength": 52,
+    "futureReadiness": 60, "entrepreneurialFlexibility": 50, "lifelongLearningCulture": 60, "innovationCapacity": 50
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 54, "communityLeadershipPotential": 64, "geographicMobility": 42,
+    "workLifeBalancePotential": 78, "purposeAlignment": 66, "familyFormationSupport": 80,
+    "personalDevelopmentPotential": 62, "careerOptionality": 50, "longTermLifeSatisfaction": 76
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 42, "networkMoat": 54, "geographicMoat": 80, "industryMoat": 72,
+    "alumniMoat": 68, "brandDurability": 62, "overallMoatScore": 63
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 22, "returnerScore": 82, "stewardScore": 86, "navigatorScore": 32,
+    "geographicLockIn": "very_high",
+    "alumniDispersalPattern": "overwhelmingly_concentrated_south_dakota_with_minneapolis_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": false, "strength": 6, "type": "No formal Hillel; negligible Jewish student presence" },
+    "estimatedJewishUndergraduates": 15, "jewishStudentPercentage": "~0.14%",
+    "kosherDining": false, "shabbatProgramming": false, "birthrightSupport": false,
+    "jewishCommunityStrength": "Negligible",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Honors College", "strength": 50,
+    "notes": "Provides smaller seminars and priority course access within SDSU's large public land-grant scale."
+  }
+},
+  "University of Wyoming": {
+  "institutionNarrative": {
+    "name": "University of Wyoming",
+    "location": "Laramie, Wyoming",
+    "region": "Rocky Mountains",
+    "archetype": "The Only Public University in a State That Produces More Coal Than Any Other — With a Genuine School of Energy Resources",
+    "oneSentenceSummary": "The University of Wyoming is the state's only public four-year university, anchoring a genuinely distinctive School of Energy Resources that spans coal, uranium, oil and gas, and Wyoming's rapidly growing wind energy corridor, all inside one dedicated academic unit.",
+    "pipeline": "Approximately 9,500 undergraduates. The School of Energy Resources is a genuinely distinctive, dedicated academic unit spanning coal, uranium, oil and gas, and renewable energy — Wyoming produces more coal than any other state and has one of the strongest wind energy corridors in the country. The College of Agriculture and Natural Resources is a real land-grant strength given Wyoming's ranching economy. Major recruiters include major coal, oil and gas, and uranium mining companies, alongside a rapidly growing wind energy sector.",
+    "hiddenPathway": "Wyoming's School of Energy Resources gives students direct exposure to the full spectrum of American energy production — coal, uranium, oil and gas, and wind — inside one dedicated academic unit, a genuinely comprehensive energy education most universities' more narrowly-focused programs don't offer.",
+    "institutionalSecret": "Wyoming produces more coal than any other U.S. state by a wide margin, and the university's energy program reflects this reality directly — a level of institutional-industry alignment most universities' energy programs don't have.",
+    "theRoom": "Laramie, Wyoming sits inside a state whose economy is built directly on energy extraction — coal, uranium, oil, gas, and increasingly wind — giving University of Wyoming students genuine, direct access to the full range of American energy production.",
+    "lifestyle": "Practical and outdoorsy, reflecting Wyoming's ranching and energy-extraction culture, balanced by direct access to Rocky Mountain outdoor recreation given the university's high-altitude setting.",
+    "bestFitPersonality": "Practically minded and comfortable with a large public flagship university, drawn to energy resources, agriculture, or natural resources specifically, comfortable with Wyoming's remote, high-altitude setting.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Dominant in Wyoming's energy and agricultural economy, as the state's only public four-year university, with growing reach into the broader Rocky Mountain wind energy corridor.",
+    "economicOutcome": "Excellent, genuinely comprehensive outcomes across every major American energy sector — coal, uranium, oil and gas, and wind — reinforced by the dedicated School of Energy Resources.",
+    "gradCities": ["Denver CO", "Casper WY", "Salt Lake City UT"],
+    "comparableInstitutions": ["Colorado School of Mines", "Montana State University", "University of North Dakota", "Texas Tech University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Laramie County Community College"],
+      "transferAcceptanceRate": "~92%",
+      "freshmanAcceptanceRate": "~96%",
+      "estimatedSavingsRange": "$8,000-$18,000",
+      "transferNotes": "Wyoming maintains a genuinely accessible transfer pathway, reflecting its status as the state's only public four-year university and broad-access mission."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "University of Wyoming",
+    "archetype": "The Only Public University in a State That Produces More Coal Than Any Other — With a Genuine School of Energy Resources",
+    "institutionalPersonality": "practical, outdoorsy, energy-industry-aligned, ranching-culture-connected",
+    "cultureKeywords": ["School of Energy Resources", "Coal Production Leader", "Wind Energy Corridor", "Ranching and Agriculture", "Only Public Four-Year University in the State"],
+    "missionOrientation": "Delivering comprehensive American energy education — coal, uranium, oil and gas, and wind — directly aligned with Wyoming's actual energy-extraction economy.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, industry-connected education reinforced by direct alignment with Wyoming's full-spectrum energy economy and ranching culture.",
+    "competitiveness": "Moderately Selective",
+    "politicalCulture": "Broadly conservative, reflecting Wyoming's regional political culture.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Strong regional flagship reputation, genuinely distinctive nationally for its comprehensive School of Energy Resources.",
+    "socialClimate": "Practical, outdoorsy, energy-industry-aligned.",
+    "leadershipStyle": "Leadership through applied energy-industry competence and ranching-culture self-reliance."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Rocky Mountains",
+    "regionalRole": "The only public four-year university in America's leading coal-producing state, with a genuinely comprehensive School of Energy Resources spanning coal, uranium, oil and gas, and wind."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 32, "BosWash": 8, "TorBuffChester": 6,
+    "TexasTriangle": 16, "CharLanta": 8, "NorCalInnovationCorridor": 12, "SoCalCreativeEconomy": 8
+  },
+  "comparativePositioning": {
+    "versusColoradoMines": "Colorado School of Mines offers the single most specialized mining and petroleum engineering program in the country at a private-tier, entirely STEM-focused institution; Wyoming offers a broader public flagship experience with a genuinely comprehensive energy program spanning coal, uranium, oil and gas, and wind, reflecting the state's actual energy economy directly.",
+    "versusMontanaState": "Montana State offers stronger engineering breadth and a genuinely notable NASA-adjacent space science research program; Wyoming offers a more singularly energy-focused institutional identity, reflecting its status as the nation's leading coal-producing state."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Medium",
+    "undergraduateEnrollment": 9500, "graduateEnrollment": 2500, "totalEnrollment": 12000,
+    "campusType": "Public Flagship Research University, High-Altitude Rocky Mountain Campus",
+    "residentialIntensity": 52, "communityFeel": 68, "studentFacultyRatio": "14:1",
+    "classSizeExperience": "Moderate classes with real faculty access, particularly within the School of Energy Resources' specialized, industry-connected coursework.",
+    "scaleAdvantages": ["A genuinely comprehensive School of Energy Resources spanning coal, uranium, oil and gas, and wind", "The state's only public four-year university, giving genuine statewide industry alignment", "Real land-grant agricultural and ranching-economy strength", "Direct Rocky Mountain outdoor recreation access"],
+    "scaleDisadvantages": ["Laramie's remote, high-altitude setting limits independent economic pull outside energy and agriculture", "Less national brand recognition outside energy resources specifically", "Harsh, high-altitude winter climate may not suit every student", "Limited breadth outside energy, agriculture, and natural resources"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 66, "conscientiousness": 78, "extraversion": 66, "agreeableness": 78, "neuroticism": 40 },
+    "hollandCodes": ["R", "I", "C"],
+    "learningStyle": ["Applied Energy Resources Coursework", "Field-Based Agricultural and Ranching Science", "Quantitative Engineering Problem Sets"],
+    "socialEnvironment": ["Practical", "Outdoorsy", "Energy-Industry-Aligned", "Ranching-Culture-Connected"],
+    "idealStudentTraits": ["Practically minded and comfortable with a large public flagship university", "Drawn to energy resources, agriculture, or natural resources specifically", "Comfortable with Wyoming's remote, high-altitude setting", "Values comprehensive exposure across every major energy sector"],
+    "thrivesIf": ["Wants a genuinely comprehensive energy education spanning coal, uranium, oil and gas, and wind", "Values direct alignment with Wyoming's actual energy-extraction economy", "Wants real land-grant agricultural and ranching-culture access", "Enjoys direct Rocky Mountain outdoor recreation access"],
+    "strugglesIf": ["Wants a major city's direct economic and cultural access", "Needs broader academic breadth outside energy, agriculture, and natural resources", "Prefers a warmer, lower-altitude climate", "Wants a larger, more nationally prominent university"],
+    "transferRiskFactors": ["Students seeking a major city's direct access", "Students whose intended field sits outside Wyoming's core energy/agriculture/natural resources strengths", "Students who want a warmer, lower-altitude climate"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "Wyoming does not formally impact most majors at the undergraduate level, consistent with its status as the state's only public four-year university and broad-access mission."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Energy Resource Management", "Rangeland Ecology and Watershed Management", "Petroleum Engineering", "Wind Energy Engineering", "Agricultural and Applied Economics"],
+    "hiddenCareerPipelines": ["Coal Mining Engineering and Management", "Uranium and Nuclear Fuel Cycle Engineering", "Wind Energy Engineering", "Petroleum Engineering", "Rangeland and Natural Resources Management"],
+    "nicheRecruitingAdvantages": ["Major coal mining companies", "Major oil and gas operators", "Uranium and nuclear fuel companies", "Rapidly growing wind energy developers"],
+    "overlookedStrengths": [
+      "Wyoming's School of Energy Resources gives students direct exposure to the full spectrum of American energy production inside one dedicated academic unit, a genuinely comprehensive education most narrower energy programs don't offer.",
+      "Wyoming produces more coal than any other U.S. state by a wide margin, and the university's energy program reflects this reality directly.",
+      "Wyoming's genuinely strong wind energy corridor gives the university's renewable energy engineering track real, growing industry relevance beyond its traditional coal and oil and gas fame.",
+      "As the state's only public four-year university, Wyoming has a genuine, structural alignment with the entire state's energy and agricultural economy that few other flagship publics can match."
+    ],
+    "sleeperIndustries": ["Uranium and Nuclear Fuel Cycle Engineering", "Wind Energy Engineering", "Rangeland and Natural Resources Management", "Coal Mining Engineering"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 70, "mentorshipDensity": 68, "executiveAccess": 62, "internshipNetwork": 76,
+    "familyBusinessExposure": 40, "relationshipCapitalScore": 72, "alumniLoyaltyScore": 78,
+    "referralCultureStrength": 74, "donorNetworkStrength": 54, "boardMemberDensity": 48
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Coal Mining", "Oil and Gas", "Uranium and Nuclear Fuel", "Wind Energy", "Agriculture and Ranching"],
+    "regionalEconomicDrivers": ["Coal Production", "Oil and Gas Extraction", "Wind Energy Development", "Ranching"],
+    "topEmployers": ["Major coal mining companies", "Major oil and gas operators", "Uranium and nuclear fuel companies", "Growing wind energy developers"],
+    "emergingIndustries": ["Wind Energy Technology", "Carbon Capture Technology", "Uranium Enrichment Technology", "Sustainable Ranching Practices"],
+    "startupDensity": "Low", "ventureCapitalAccess": 22, "corporateHeadquartersDensity": 30,
+    "healthcareHubStrength": 36, "innovationIndex": 54
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Wyoming — Coal, Oil and Gas, Uranium, and Wind Energy",
+    "secondaryMarkets": ["Denver CO", "Salt Lake City UT"],
+    "alumniStrongholds": ["Casper WY", "Denver CO", "Cheyenne WY"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in Wyoming, entering coal, oil and gas, and ranching roles.",
+      "Denver draws a meaningful cohort into broader energy and corporate roles.",
+      "A growing cohort enters wind energy roles specifically, reflecting the state's expanding renewable energy corridor."
+    ],
+    "regionalInfluenceScore": 90, "nationalReachScore": 44, "internationalReachScore": 24
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 16, "studentOrganizationStrength": 66, "leadershipDevelopment": 62,
+    "crossDisciplinaryInteraction": 56, "civicEngagement": 56
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 10, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "consumerProducts": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "outdoorIndustry": { "strength": 62, "notes": "A real, strong pathway reinforced by direct Rocky Mountain outdoor recreation access and rangeland ecology programs." },
+    "sportsBusiness": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "entertainmentMedia": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "ventureCapital": { "strength": 22, "notes": "Not a defining institutional strength; Wyoming's venture ecosystem is minimal." },
+    "privateEquity": { "strength": 34, "notes": "A modest, secondary pathway, particularly energy sector private equity." },
+    "investmentBanking": { "strength": 30, "notes": "A modest, secondary pathway; Wyoming is not primarily positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 38, "notes": "A modest, secondary pathway, particularly energy and natural resources consulting." },
+    "medicine": { "strength": 30, "notes": "A modest pathway; Wyoming has no medical school of its own." },
+    "healthcareAdministration": { "strength": 30, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "realEstate": { "strength": 34, "notes": "A modest, secondary pathway through ranchland and rangeland management." },
+    "luxuryBrands": { "strength": 10, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 40, "notes": "A modest, growing pathway, particularly energy-tech startups." },
+    "technology": { "strength": 36, "notes": "A modest, secondary pathway; Wyoming is not positioned as a major technology-recruiting campus outside energy engineering applications." },
+    "publicPolicy": { "strength": 44, "notes": "A real, secondary pathway, particularly energy and natural resources policy." },
+    "nonprofitLeadership": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 26, "notes": "A modest, secondary pathway tied to Wyoming's tourism economy (Yellowstone-adjacent)." },
+    "supplyChain": { "strength": 46, "notes": "A real, secondary pathway tied to energy and agricultural logistics." },
+    "insurance": { "strength": 22, "notes": "A modest, secondary pathway." },
+    "agriculture": { "strength": 68, "notes": "A strong, genuine land-grant-adjacent pathway reinforced by Wyoming's significant ranching and rangeland economy." },
+    "energy": { "strength": 100, "notes": "The single defining institutional strength — the School of Energy Resources spans coal, uranium, oil and gas, and wind, directly reflecting Wyoming's status as the nation's leading coal-producing state and a genuinely strong wind energy corridor." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 70, "firstGenerationSupport": 68,
+    "wealthCreationPotential": 62, "familyBusinessPipelineStrength": 44
+  },
+  "futureResilience": {
+    "aiResistance": 68, "automationResistance": 68, "adaptabilityScore": 62, "interdisciplinaryStrength": 54,
+    "futureReadiness": 64, "entrepreneurialFlexibility": 50, "lifelongLearningCulture": 60, "innovationCapacity": 56
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 62, "communityLeadershipPotential": 62, "geographicMobility": 48,
+    "workLifeBalancePotential": 76, "purposeAlignment": 66, "familyFormationSupport": 78,
+    "personalDevelopmentPotential": 64, "careerOptionality": 54, "longTermLifeSatisfaction": 76
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 46, "networkMoat": 56, "geographicMoat": 86, "industryMoat": 84,
+    "alumniMoat": 68, "brandDurability": 66, "overallMoatScore": 68
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 28, "returnerScore": 76, "stewardScore": 82, "navigatorScore": 38,
+    "geographicLockIn": "very_high",
+    "alumniDispersalPattern": "overwhelmingly_concentrated_wyoming_with_denver_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": false, "strength": 8, "type": "No formal Hillel; negligible Jewish student presence" },
+    "estimatedJewishUndergraduates": 20, "jewishStudentPercentage": "~0.2%",
+    "kosherDining": false, "shabbatProgramming": false, "birthrightSupport": false,
+    "jewishCommunityStrength": "Negligible",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Honors College", "strength": 54,
+    "notes": "Provides smaller seminars and priority course access within Wyoming's flagship public university scale."
+  }
+},
+  "University of Montana": {
+  "institutionNarrative": {
+    "name": "University of Montana",
+    "location": "Missoula, Montana",
+    "region": "Rocky Mountains",
+    "archetype": "Montana's Humanities-and-Wilderness Flagship — A Genuinely Elite Creative Writing MFA Inside Big Sky Country",
+    "oneSentenceSummary": "The University of Montana is the state's more humanities-and-liberal-arts-oriented flagship, anchored by a genuinely elite creative writing MFA program and a strong forestry and wildlife biology tradition, distinct from Montana State's engineering-first sister institution.",
+    "pipeline": "Approximately 8,500 undergraduates. The Creative Writing MFA program is genuinely one of the most respected in the country, producing nationally recognized authors. The W.A. Franke College of Forestry and Conservation is a real, historic strength given Montana's forestry and wildlife management economy. Major recruiters include the U.S. Forest Service, wildlife and conservation organizations, regional healthcare systems, and a real cohort entering publishing and writing-adjacent fields nationally.",
+    "hiddenPathway": "Montana's Creative Writing MFA program has produced a genuinely disproportionate number of nationally recognized authors relative to the university's size, a real, distinctive strength most families researching Montana for its wilderness setting never discover.",
+    "institutionalSecret": "The University of Montana's forestry and wildlife biology programs give students direct, immediate access to genuine wilderness field research in and around Glacier National Park and the broader Northern Rockies ecosystem, unmatched by universities without this direct geographic access.",
+    "theRoom": "Missoula, Montana sits inside the Northern Rockies, giving University of Montana students direct, immediate access to wilderness field research and outdoor recreation most universities' students would need substantial travel to reach.",
+    "lifestyle": "Intellectually curious and outdoors-oriented, with a genuinely strong creative and literary culture uncommon at similarly outdoor-focused flagship publics.",
+    "bestFitPersonality": "Intellectually curious, particularly drawn to writing or humanities, comfortable with a large public flagship university, energized by direct wilderness and outdoor access.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Strong regional dominance in Montana's forestry, conservation, and creative arts sectors, with a genuinely national reputation in creative writing specifically.",
+    "economicOutcome": "Strong, genuinely distinctive outcomes in creative writing and publishing, alongside solid outcomes in forestry, wildlife biology, and conservation.",
+    "gradCities": ["Missoula MT", "Seattle WA", "Denver CO"],
+    "comparableInstitutions": ["Montana State University", "University of Wyoming", "University of Colorado Boulder", "University of Oregon"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Missoula College"],
+      "transferAcceptanceRate": "~90%",
+      "freshmanAcceptanceRate": "~94%",
+      "estimatedSavingsRange": "$8,000-$18,000",
+      "transferNotes": "Montana maintains a genuinely accessible transfer pathway, reflecting its broad-access public flagship mission."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "University of Montana",
+    "archetype": "Montana's Humanities-and-Wilderness Flagship — A Genuinely Elite Creative Writing MFA Inside Big Sky Country",
+    "institutionalPersonality": "intellectually curious, outdoors-oriented, literary, genuinely wilderness-connected",
+    "cultureKeywords": ["Creative Writing MFA", "Forestry and Conservation", "Northern Rockies Wilderness Access", "Big Sky Country", "Humanities-First Identity"],
+    "missionOrientation": "Delivering strong humanities and natural resources education directly connected to Montana's wilderness and creative literary traditions.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied natural resources and humanities education reinforced by direct wilderness field access and a genuinely strong creative writing tradition.",
+    "competitiveness": "Moderately Selective",
+    "politicalCulture": "Broadly progressive, reflecting Missoula's politically distinct culture relative to Montana's broader conservative electorate.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Strong regional flagship reputation, genuinely elite national reputation specifically in creative writing.",
+    "socialClimate": "Intellectually curious, outdoors-oriented, literary.",
+    "leadershipStyle": "Leadership through conservation stewardship and creative and intellectual achievement."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Rocky Mountains",
+    "regionalRole": "Montana's humanities-and-wilderness-focused flagship, anchoring a genuinely elite creative writing tradition alongside direct Northern Rockies field research access."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 16, "BosWash": 12, "TorBuffChester": 8,
+    "TexasTriangle": 10, "CharLanta": 8, "NorCalInnovationCorridor": 14, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusMontanaState": "Montana State offers stronger engineering, agriculture, and a notable NASA-adjacent space science program; University of Montana offers a genuinely elite creative writing MFA and stronger humanities identity Montana State's STEM-first culture doesn't emphasize.",
+    "versusWyoming": "Wyoming offers a genuinely comprehensive, singularly energy-focused School of Energy Resources; Montana offers a more humanities-and-wilderness-oriented identity with direct Northern Rockies conservation and creative writing strength Wyoming's energy-first identity doesn't have."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Medium",
+    "undergraduateEnrollment": 8500, "graduateEnrollment": 1800, "totalEnrollment": 10300,
+    "campusType": "Public Flagship Research University, Northern Rockies Campus",
+    "residentialIntensity": 48, "communityFeel": 68, "studentFacultyRatio": "15:1",
+    "classSizeExperience": "Moderate classes with real faculty access, particularly within the genuinely elite Creative Writing MFA program.",
+    "scaleAdvantages": ["A genuinely elite, nationally respected Creative Writing MFA program", "Direct, immediate access to Northern Rockies wilderness field research", "Real forestry and wildlife biology strength", "Missoula's distinctively progressive, culturally rich college-town setting relative to Montana's broader political culture"],
+    "scaleDisadvantages": ["Less STEM and engineering breadth than sister institution Montana State", "Remote setting limits independent economic pull outside forestry and creative arts", "Harsh, high-altitude winter climate may not suit every student", "Less national brand recognition outside creative writing specifically"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 84, "conscientiousness": 74, "extraversion": 62, "agreeableness": 78, "neuroticism": 42 },
+    "hollandCodes": ["A", "I", "S"],
+    "learningStyle": ["Small Seminar Creative Writing Workshop", "Field-Based Wildlife and Forestry Research", "Wilderness-Immersive Natural Resources Study"],
+    "socialEnvironment": ["Intellectually Curious", "Outdoors-Oriented", "Literary", "Genuinely Wilderness-Connected"],
+    "idealStudentTraits": ["Intellectually curious, particularly drawn to writing or humanities", "Comfortable with a large public flagship university", "Energized by direct wilderness and outdoor access", "Values a genuinely progressive college-town culture"],
+    "thrivesIf": ["Wants a genuinely elite creative writing MFA program", "Values direct, immediate Northern Rockies wilderness field research access", "Is drawn to forestry, wildlife biology, or conservation specifically", "Enjoys Missoula's distinctively literary, progressive college-town culture"],
+    "strugglesIf": ["Wants strong engineering or STEM breadth", "Needs a major city's direct economic and cultural access", "Prefers a warmer climate", "Wants Montana State's stronger technical and agricultural identity instead"],
+    "transferRiskFactors": ["Students wanting strong engineering or STEM programs", "Students seeking a major city's direct access", "Students who want a warmer climate"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low to Moderate",
+    "notes": "The Creative Writing MFA program is highly competitive at the graduate level, though Montana does not formally impact most undergraduate majors."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Wildlife Biology", "Forestry", "Environmental Studies", "Native American Studies", "Journalism"],
+    "hiddenCareerPipelines": ["Creative Writing and Publishing", "Forestry and Conservation", "Wildlife Biology Research", "Environmental Journalism", "National Park Service and Federal Land Management"],
+    "nicheRecruitingAdvantages": ["U.S. Forest Service", "National Park Service", "Major publishing houses (creative writing alumni network)", "Wildlife and conservation organizations nationally"],
+    "overlookedStrengths": [
+      "Montana's Creative Writing MFA program has produced a genuinely disproportionate number of nationally recognized authors relative to the university's size.",
+      "The forestry and wildlife biology programs give students direct, immediate access to genuine wilderness field research in and around Glacier National Park and the broader Northern Rockies ecosystem.",
+      "Missoula's distinctively progressive, literary college-town culture is a real differentiator relative to Montana's broader political and cultural landscape.",
+      "Native American Studies is a genuinely well-regarded, distinctive program given Montana's significant tribal nations and reservations."
+    ],
+    "sleeperIndustries": ["Creative Writing and Publishing", "Environmental Journalism", "Wildlife Biology Research", "Federal Land Management"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 68, "mentorshipDensity": 70, "executiveAccess": 54, "internshipNetwork": 66,
+    "familyBusinessExposure": 32, "relationshipCapitalScore": 70, "alumniLoyaltyScore": 74,
+    "referralCultureStrength": 68, "donorNetworkStrength": 48, "boardMemberDensity": 42
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Creative Writing and Publishing", "Forestry and Conservation", "Wildlife Biology", "Environmental Journalism", "Federal Land Management"],
+    "regionalEconomicDrivers": ["Forestry and Timber", "Conservation and Land Management", "Tourism"],
+    "topEmployers": ["U.S. Forest Service", "National Park Service", "Major publishing houses", "Wildlife and conservation organizations"],
+    "emergingIndustries": ["Sustainable Forestry Technology", "Conservation Technology", "Environmental Journalism and Media"],
+    "startupDensity": "Low", "ventureCapitalAccess": 22, "corporateHeadquartersDensity": 24,
+    "healthcareHubStrength": 38, "innovationIndex": 50
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Montana — Forestry, Conservation, and Creative Writing",
+    "secondaryMarkets": ["Seattle WA", "Denver CO"],
+    "alumniStrongholds": ["Missoula MT", "Seattle WA", "Denver CO"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in Montana, entering forestry, conservation, and education roles.",
+      "Seattle and the Pacific Northwest draw graduates into publishing and environmental roles.",
+      "A meaningful cohort enters national creative writing and publishing careers, often relocating to major publishing hubs."
+    ],
+    "regionalInfluenceScore": 78, "nationalReachScore": 48, "internationalReachScore": 26
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 10, "studentOrganizationStrength": 68, "leadershipDevelopment": 62,
+    "crossDisciplinaryInteraction": 64, "civicEngagement": 66
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 14, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 42, "notes": "A real, secondary pathway." },
+    "nutraceuticals": { "strength": 24, "notes": "A modest, secondary pathway." },
+    "consumerProducts": { "strength": 26, "notes": "Not a defining institutional strength." },
+    "outdoorIndustry": { "strength": 82, "notes": "A very strong, defining pathway reinforced by direct Northern Rockies wilderness access and the forestry and wildlife biology programs." },
+    "sportsBusiness": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "entertainmentMedia": { "strength": 58, "notes": "A real, strong pathway reinforced by the genuinely elite Creative Writing MFA program and journalism strength." },
+    "ventureCapital": { "strength": 20, "notes": "Not a defining institutional strength." },
+    "privateEquity": { "strength": 22, "notes": "Not a defining institutional strength relative to Montana's dominant conservation and creative writing identity." },
+    "investmentBanking": { "strength": 20, "notes": "Not a meaningful institutional pathway; Montana is not positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 32, "notes": "A modest, secondary pathway, particularly environmental consulting." },
+    "medicine": { "strength": 34, "notes": "A modest pathway; Montana has no medical school of its own." },
+    "healthcareAdministration": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
+    "realEstate": { "strength": 26, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 12, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 38, "notes": "A modest, growing pathway, particularly outdoor recreation and publishing-adjacent startups." },
+    "technology": { "strength": 26, "notes": "Not a defining institutional strength; Montana is not positioned as a technology-recruiting campus." },
+    "publicPolicy": { "strength": 46, "notes": "A real, secondary pathway, particularly environmental and land-use policy." },
+    "nonprofitLeadership": { "strength": 62, "notes": "A real, strong pathway reinforced by genuine conservation and civic engagement culture." },
+    "hospitality": { "strength": 38, "notes": "A real, secondary pathway tied to Montana's outdoor tourism economy." },
+    "supplyChain": { "strength": 26, "notes": "A modest, secondary pathway tied to forestry and timber logistics." },
+    "insurance": { "strength": 16, "notes": "Not a meaningful institutional pathway." },
+    "agriculture": { "strength": 40, "notes": "A real, secondary pathway relative to Montana's dominant forestry and conservation identity, smaller than Montana State's stronger agricultural focus." },
+    "energy": { "strength": 32, "notes": "A modest, secondary pathway; Montana's coal-adjacent energy economy is real but much smaller a focus at this university than at Wyoming or Montana State." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 62, "firstGenerationSupport": 62,
+    "wealthCreationPotential": 50, "familyBusinessPipelineStrength": 30
+  },
+  "futureResilience": {
+    "aiResistance": 68, "automationResistance": 68, "adaptabilityScore": 72, "interdisciplinaryStrength": 66,
+    "futureReadiness": 66, "entrepreneurialFlexibility": 52, "lifelongLearningCulture": 70, "innovationCapacity": 52
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 50, "communityLeadershipPotential": 66, "geographicMobility": 52,
+    "workLifeBalancePotential": 84, "purposeAlignment": 78, "familyFormationSupport": 76,
+    "personalDevelopmentPotential": 76, "careerOptionality": 52, "longTermLifeSatisfaction": 82
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 50, "networkMoat": 54, "geographicMoat": 78, "industryMoat": 68,
+    "alumniMoat": 64, "brandDurability": 64, "overallMoatScore": 63
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 34, "returnerScore": 68, "stewardScore": 74, "navigatorScore": 46,
+    "geographicLockIn": "high",
+    "alumniDispersalPattern": "montana_concentration_with_seattle_denver_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": false, "strength": 14, "type": "No formal Hillel; small informal Jewish student presence" },
+    "estimatedJewishUndergraduates": 60, "jewishStudentPercentage": "~0.7%",
+    "kosherDining": false, "shabbatProgramming": false, "birthrightSupport": false,
+    "jewishCommunityStrength": "Minimal",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Davidson Honors College", "strength": 56,
+    "notes": "Provides smaller seminars and priority course access within Montana's public flagship scale."
+  }
+},
+  "Montana State University": {
+  "institutionNarrative": {
+    "name": "Montana State University",
+    "location": "Bozeman, Montana",
+    "region": "Rocky Mountains",
+    "archetype": "Montana's STEM-and-Agriculture Land-Grant, With a Genuinely Real NASA Small Satellite Research Program",
+    "oneSentenceSummary": "Montana State is Montana's engineering-and-agriculture-focused land-grant flagship, anchored by a genuinely real, NASA-funded small satellite research program that most families researching Montana State for its Yellowstone-adjacent setting never discover.",
+    "pipeline": "Approximately 14,000 undergraduates. The College of Engineering is Montana State's defining strength, reinforced by a genuinely real, NASA-funded Space Science and Engineering Laboratory conducting small satellite research. The College of Agriculture is a real land-grant strength given Montana's ranching and dry-land farming economy. Major recruiters include NASA and aerospace contractors, major agricultural companies, and growing Bozeman-area technology companies. Montana State also anchors real photonics and optics research.",
+    "hiddenPathway": "Montana State's Space Science and Engineering Laboratory has flown genuine small satellites funded directly by NASA, giving undergraduate engineering students hands-on aerospace research access most universities' students would need a much larger, more famous aerospace program to reach.",
+    "institutionalSecret": "Montana State's photonics and optics research program is genuinely well-regarded nationally, a real, distinctive strength systematically overshadowed by the university's Yellowstone-adjacent outdoor recreation fame.",
+    "theRoom": "Bozeman, Montana sits at the gateway to Yellowstone National Park, anchoring both a genuine outdoor recreation economy and a growing technology sector, alongside Montana's broader ranching and agricultural economy statewide.",
+    "lifestyle": "Practically minded and STEM-oriented, balanced by genuine access to Yellowstone-adjacent outdoor recreation and a growing, increasingly vibrant Bozeman technology and startup scene.",
+    "bestFitPersonality": "Practically minded and STEM-oriented, drawn to engineering, agriculture, or aerospace research specifically, comfortable with a large public land-grant university, energized by direct Yellowstone-adjacent outdoor access.",
+    "faithTradition": "None",
+    "geographicInfluenceRadius": "Strong regional dominance in Montana's agricultural and growing technology economy, with a genuinely real, if niche, national reputation in aerospace and small satellite research.",
+    "economicOutcome": "Strong outcomes in engineering and agriculture, reinforced by a genuinely distinctive NASA-funded aerospace research pipeline and growing Bozeman technology sector placement.",
+    "gradCities": ["Bozeman MT", "Denver CO", "Seattle WA"],
+    "comparableInstitutions": ["University of Montana", "University of Wyoming", "Colorado State University", "Utah State University"],
+    "ccTransferPathway": {
+      "hasCCPathway": true,
+      "ccFeederNames": ["Gallatin College"],
+      "transferAcceptanceRate": "~88%",
+      "freshmanAcceptanceRate": "~90%",
+      "estimatedSavingsRange": "$8,000-$18,000",
+      "transferNotes": "Montana State maintains a genuinely accessible transfer pathway, reflecting its broad-access public land-grant mission."
+    }
+  },
+  "institutionIdentity": {
+    "commonName": "Montana State University",
+    "archetype": "Montana's STEM-and-Agriculture Land-Grant, With a Genuinely Real NASA Small Satellite Research Program",
+    "institutionalPersonality": "practically minded, STEM-oriented, outdoors-connected, quietly innovative",
+    "cultureKeywords": ["NASA Small Satellite Research", "Photonics and Optics", "Yellowstone Gateway", "Land-Grant Agriculture", "Growing Bozeman Tech Scene"],
+    "missionOrientation": "Delivering land-grant engineering and agricultural education reinforced by genuinely real, NASA-funded aerospace research and growing Bozeman-area technology industry access.",
+    "faithTradition": "None",
+    "educationalPhilosophy": "Applied, industry-connected STEM and agricultural education reinforced by direct NASA-funded research access and Yellowstone-adjacent outdoor culture.",
+    "competitiveness": "Moderately Selective",
+    "politicalCulture": "Broadly moderate, reflecting Bozeman's increasingly diverse, tech-influenced political culture relative to Montana's broader conservative electorate.",
+    "studentAutonomy": "High",
+    "prestigeOrientation": "Strong regional land-grant reputation, genuinely distinctive niche national reputation in small satellite aerospace research and photonics.",
+    "socialClimate": "Practically minded, STEM-oriented, outdoors-connected.",
+    "leadershipStyle": "Leadership through applied engineering competence and genuine research innovation."
+  },
+  "megaRegionIntegration": {
+    "primaryMegaRegion": "Rocky Mountains",
+    "regionalRole": "Montana's STEM-and-agriculture land-grant flagship, anchoring a genuinely real NASA-funded small satellite research program alongside a growing Bozeman technology sector."
+  },
+  "megaRegionExposure": {
+    "MidContinentIndustrialEnergyCorridor": 16, "BosWash": 12, "TorBuffChester": 8,
+    "TexasTriangle": 10, "CharLanta": 8, "NorCalInnovationCorridor": 20, "SoCalCreativeEconomy": 10
+  },
+  "comparativePositioning": {
+    "versusMontana": "University of Montana offers a genuinely elite creative writing MFA and stronger humanities identity; Montana State offers stronger engineering, agriculture, and a genuinely real NASA-funded aerospace research program Montana's humanities-first culture doesn't have.",
+    "versusColoradoState": "Colorado State offers a top-5 nationally ranked veterinary medicine program at larger scale; Montana State offers a smaller scale with a genuinely distinctive, real NASA small satellite research program Colorado State doesn't have."
+  },
+  "institutionScale": {
+    "enrollmentCategory": "Large",
+    "undergraduateEnrollment": 14000, "graduateEnrollment": 2200, "totalEnrollment": 16200,
+    "campusType": "Public Land-Grant Research University, Yellowstone Gateway Campus",
+    "residentialIntensity": 50, "communityFeel": 68, "studentFacultyRatio": "17:1",
+    "classSizeExperience": "Moderate-to-large introductory courses typical of a land-grant university; Space Science and Engineering coursework become substantially more specialized and research-intensive.",
+    "scaleAdvantages": ["A genuinely real, NASA-funded small satellite research program", "Well-regarded photonics and optics research", "Direct Yellowstone-adjacent outdoor recreation access", "Growing, increasingly vibrant Bozeman technology and startup scene"],
+    "scaleDisadvantages": ["Bozeman's real estate costs have risen substantially given the area's growing popularity", "Less national brand recognition outside its niche aerospace and photonics research", "Moderate-to-large introductory courses require student initiative", "Remote setting limits broader independent economic pull outside agriculture and tourism"]
+  },
+  "studentFit": {
+    "bigFiveProfile": { "openness": 76, "conscientiousness": 82, "extraversion": 66, "agreeableness": 76, "neuroticism": 40 },
+    "hollandCodes": ["R", "I", "C"],
+    "learningStyle": ["Applied Aerospace Engineering Research", "Field-Based Agricultural Science", "Photonics and Optics Laboratory Work"],
+    "socialEnvironment": ["Practically Minded", "STEM-Oriented", "Outdoors-Connected", "Quietly Innovative"],
+    "idealStudentTraits": ["Practically minded and STEM-oriented", "Drawn to engineering, agriculture, or aerospace research specifically", "Comfortable with a large public land-grant university", "Energized by direct Yellowstone-adjacent outdoor access"],
+    "thrivesIf": ["Wants genuinely real, NASA-funded small satellite research access", "Values well-regarded photonics and optics research", "Wants direct Yellowstone-adjacent outdoor recreation access", "Enjoys Bozeman's growing, increasingly vibrant technology scene"],
+    "strugglesIf": ["Wants University of Montana's stronger humanities and creative writing identity instead", "Needs a major city's direct economic and cultural access", "Prefers a warmer climate", "Wants a smaller, more intimate campus"],
+    "transferRiskFactors": ["Students wanting a stronger humanities or creative writing program", "Students seeking a major city's direct access", "Students who want a warmer climate"]
+  },
+  "competitiveMajorPressure": {
+    "level": "Low",
+    "notes": "Montana State does not formally impact most majors at the undergraduate level, consistent with its land-grant, broad-access public university structure."
+  },
+  "hiddenOpportunities": {
+    "underratedMajors": ["Photonics and Optics Engineering", "Land Rehabilitation", "Sustainable Food and Bioenergy Systems", "Cell Biology and Neuroscience", "Land Resources and Environmental Sciences"],
+    "hiddenCareerPipelines": ["NASA and Aerospace Small Satellite Engineering", "Photonics and Optics Engineering", "Agricultural and Ranching Business", "Outdoor Recreation Technology", "Sustainable Agriculture Technology"],
+    "nicheRecruitingAdvantages": ["NASA and aerospace contractors", "Major agricultural companies", "Growing Bozeman-area technology companies", "Photonics and optics manufacturers"],
+    "overlookedStrengths": [
+      "Montana State's Space Science and Engineering Laboratory has flown genuine small satellites funded directly by NASA, giving undergraduate engineering students hands-on aerospace research access most universities' students would need a much larger program to reach.",
+      "The photonics and optics research program is genuinely well-regarded nationally, a real, distinctive strength systematically overshadowed by the university's Yellowstone-adjacent outdoor fame.",
+      "Bozeman's growing technology and startup scene gives Montana State students real, increasingly relevant local technology industry access beyond the university's traditional agriculture and engineering identity.",
+      "Land Rehabilitation is a genuinely distinctive, underrated program tied directly to Montana's mining and ranching land-management needs."
+    ],
+    "sleeperIndustries": ["NASA and Aerospace Small Satellite Engineering", "Photonics and Optics Engineering", "Outdoor Recreation Technology", "Sustainable Agriculture Technology"]
+  },
+  "networkCapital": {
+    "alumniAccessibility": 70, "mentorshipDensity": 70, "executiveAccess": 60, "internshipNetwork": 74,
+    "familyBusinessExposure": 38, "relationshipCapitalScore": 72, "alumniLoyaltyScore": 76,
+    "referralCultureStrength": 72, "donorNetworkStrength": 52, "boardMemberDensity": 46
+  },
+  "economicEcosystem": {
+    "primaryIndustries": ["Aerospace Engineering", "Agriculture and Ranching", "Photonics and Optics", "Technology (growing Bozeman scene)", "Outdoor Recreation"],
+    "regionalEconomicDrivers": ["Agriculture and Ranching", "Growing Technology Sector", "Outdoor Recreation and Tourism"],
+    "topEmployers": ["NASA and aerospace contractors", "Major agricultural companies", "Growing Bozeman-area technology companies", "Photonics and optics manufacturers"],
+    "emergingIndustries": ["Small Satellite Aerospace Technology", "Photonics and Optics Technology", "Outdoor Recreation Technology", "Agricultural Technology"],
+    "startupDensity": "Moderate", "ventureCapitalAccess": 40, "corporateHeadquartersDensity": 32,
+    "healthcareHubStrength": 40, "innovationIndex": 64
+  },
+  "geographicInfluence": {
+    "dominantMarket": "Montana — Aerospace Research, Agriculture, and Growing Technology",
+    "secondaryMarkets": ["Denver CO", "Seattle WA"],
+    "alumniStrongholds": ["Bozeman MT", "Denver CO", "Seattle WA"],
+    "relocationPatterns": [
+      "A significant share of graduates remain in Montana, entering agriculture, technology, and outdoor recreation roles.",
+      "Denver and Seattle draw graduates into broader aerospace and technology roles.",
+      "A real, distinctive cohort enters NASA and aerospace contractor roles nationally, reinforced by the Space Science Lab's reputation."
+    ],
+    "regionalInfluenceScore": 82, "nationalReachScore": 50, "internationalReachScore": 28
+  },
+  "socialCapital": {
+    "greekLifeInfluence": 14, "studentOrganizationStrength": 70, "leadershipDevelopment": 66,
+    "crossDisciplinaryInteraction": 62, "civicEngagement": 58
+  },
+  "industryPathways": {
+    "aestheticsAndBeauty": { "strength": 12, "notes": "Not a meaningful institutional pathway." },
+    "healthWellness": { "strength": 38, "notes": "A modest, secondary pathway." },
+    "nutraceuticals": { "strength": 32, "notes": "A modest, secondary pathway through agricultural and food science programs." },
+    "consumerProducts": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "outdoorIndustry": { "strength": 74, "notes": "A very strong pathway reinforced by direct Yellowstone-adjacent outdoor recreation access and growing outdoor recreation technology research." },
+    "sportsBusiness": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "entertainmentMedia": { "strength": 22, "notes": "Not a defining institutional strength." },
+    "ventureCapital": { "strength": 38, "notes": "A real, growing pathway tied to Bozeman's increasingly vibrant technology and startup scene." },
+    "privateEquity": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "investmentBanking": { "strength": 24, "notes": "Not a meaningful institutional pathway; Montana State is not positioned as a Wall Street-recruiting campus." },
+    "consulting": { "strength": 38, "notes": "A modest, secondary pathway, particularly technical and aerospace consulting." },
+    "medicine": { "strength": 32, "notes": "A modest pathway; Montana State has no medical school of its own." },
+    "healthcareAdministration": { "strength": 28, "notes": "A modest, secondary pathway." },
+    "defense": { "strength": 62, "notes": "A real, strong pathway reinforced directly by the NASA-funded Space Science and Engineering Laboratory's aerospace research." },
+    "realEstate": { "strength": 32, "notes": "A modest, secondary pathway." },
+    "luxuryBrands": { "strength": 14, "notes": "Not a meaningful institutional pathway." },
+    "entrepreneurship": { "strength": 52, "notes": "A real, growing pathway reinforced by Bozeman's increasingly vibrant startup ecosystem." },
+    "technology": { "strength": 68, "notes": "A real, strong pathway reinforced by the NASA-funded aerospace research program, photonics and optics research, and growing Bozeman technology sector." },
+    "publicPolicy": { "strength": 34, "notes": "A modest, secondary pathway." },
+    "nonprofitLeadership": { "strength": 40, "notes": "A modest, secondary pathway." },
+    "hospitality": { "strength": 40, "notes": "A real, secondary pathway tied to Yellowstone-adjacent tourism." },
+    "supplyChain": { "strength": 38, "notes": "A modest, secondary pathway tied to agricultural logistics." },
+    "insurance": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
+    "agriculture": { "strength": 76, "notes": "A strong, genuine land-grant pathway reinforced by Montana's ranching and dry-land farming economy." },
+    "energy": { "strength": 48, "notes": "A real, secondary pathway tied to Montana's coal-adjacent energy economy, though secondary to Montana State's dominant aerospace, agriculture, and outdoor recreation identity." }
+  },
+  "wealthMobility": {
+    "averageFamilyIncome": "", "socialMobilityIndex": 66, "firstGenerationSupport": 66,
+    "wealthCreationPotential": 62, "familyBusinessPipelineStrength": 36
+  },
+  "futureResilience": {
+    "aiResistance": 78, "automationResistance": 76, "adaptabilityScore": 76, "interdisciplinaryStrength": 66,
+    "futureReadiness": 78, "entrepreneurialFlexibility": 60, "lifelongLearningCulture": 74, "innovationCapacity": 74
+  },
+  "lifeDesignOutcomes": {
+    "wealthCreationPotential": 62, "communityLeadershipPotential": 64, "geographicMobility": 58,
+    "workLifeBalancePotential": 82, "purposeAlignment": 74, "familyFormationSupport": 78,
+    "personalDevelopmentPotential": 74, "careerOptionality": 62, "longTermLifeSatisfaction": 80
+  },
+  "institutionalMoat": {
+    "prestigeMoat": 52, "networkMoat": 56, "geographicMoat": 80, "industryMoat": 74,
+    "alumniMoat": 66, "brandDurability": 68, "overallMoatScore": 66
+  },
+  "trajectoryProfile": {
+    "dominantTrajectory": "STEWARD",
+    "leaverScore": 36, "returnerScore": 66, "stewardScore": 70, "navigatorScore": 52,
+    "geographicLockIn": "high",
+    "alumniDispersalPattern": "montana_concentration_with_denver_seattle_secondary"
+  },
+  "jewishLife": {
+    "hillel": { "exists": false, "strength": 12, "type": "No formal Hillel; small informal Jewish student presence" },
+    "estimatedJewishUndergraduates": 80, "jewishStudentPercentage": "~0.6%",
+    "kosherDining": false, "shabbatProgramming": false, "birthrightSupport": false,
+    "jewishCommunityStrength": "Minimal",
+    "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+  },
+  "honorsCollege": {
+    "exists": true, "name": "Honors College", "strength": 56,
+    "notes": "Provides smaller seminars and priority course access within Montana State's large land-grant scale."
   }
 }
 }

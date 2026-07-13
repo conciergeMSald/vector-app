@@ -2133,7 +2133,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <!-- ── UNDER THE RADAR — student-facing (2 schools) ── -->
     <div id="radar-section-student" style="display:none">
       <div class="radar-section">
-        <div class="radar-eyebrow">Under the radar</div>
+        <div class="radar-eyebrow">Additional matches</div>
         <div class="radar-intro">Schools most families haven't considered — matched precisely to what you shared.</div>
         <div id="radar-list-student"></div>
       </div>
@@ -2229,7 +2229,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     </div>
 
     <div style="margin-bottom:2rem" id="radar-section-counselor" style="display:none">
-      <div class="section-eyebrow">Under the radar — 5 specialist picks</div>
+      <div class="section-eyebrow">Additional matches — 5 specialist picks</div>
       <div style="font-size:var(--type-meta);color:var(--ink4);font-weight:300;margin-bottom:.75rem">Schools with precise specialty alignment. Family sees the top 2 — all 5 are here for your use.</div>
       <div id="radar-list-counselor"></div>
     </div>
@@ -5417,6 +5417,7 @@ function renderUnderTheRadar(picks) {
           ${n.bestFitPersonality ? `<div style="font-size:var(--type-meta);color:var(--ink3);margin-top:3px;font-weight:300">Best fit: ${n.bestFitPersonality}</div>` : ''}
           ${n.comparableInstitutions && n.comparableInstitutions.length ? `<div style="font-size:var(--type-body);color:var(--ink4);margin-top:2px;font-style:italic;font-weight:300">Compare to: ${n.comparableInstitutions.join(', ')}</div>` : ''}
           <div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5">${pick.reason.slice(0, 500)}${pick.reason.length > 500 ? '…' : ''}</div>
+          ${n.ccTransferPathway && n.ccTransferPathway.hasCCPathway && n.ccTransferPathway.ccFeederNames && n.ccTransferPathway.ccFeederNames.length ? `<div style="font-size:14px;color:var(--gold);margin-top:6px;font-weight:600">Pathway Hack: ${n.ccTransferPathway.ccFeederNames[0]} → ${pick.name}${n.ccTransferPathway.estimatedSavingsRange ? ' (' + n.ccTransferPathway.estimatedSavingsRange + ' savings)' : ''}</div>` : ''}
         </div>
       </div>`;
     }).join('');
@@ -5747,10 +5748,15 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       const comparableLine  = cComparable ? `<div style="font-size:var(--type-body);color:var(--ink4);margin-top:3px;font-weight:300;font-style:italic">Compare to: ${cComparable}</div>` : '';
       const summaryLine     = cSummary ? `<div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5;font-style:italic">${cSummary}</div>` :
                               cHidden ? `<div style="font-size:15px;color:var(--ink3);margin-top:4px;font-weight:300;line-height:1.5;font-style:italic">${cHidden.slice(0,400)}${cHidden.length>400?'…':''}</div>` : '';
+      const _ccDirectEntry = typeof getDbV5Entry === 'function' ? getDbV5Entry(s.name) : null;
+      const _ccDirect = _ccDirectEntry && _ccDirectEntry.institutionNarrative ? _ccDirectEntry.institutionNarrative.ccTransferPathway : null;
+      const ccLine = (_ccDirect && _ccDirect.hasCCPathway && _ccDirect.ccFeederNames && _ccDirect.ccFeederNames.length)
+        ? `<div style="font-size:14px;color:var(--gold);margin-top:6px;font-weight:600">Pathway Hack: ${_ccDirect.ccFeederNames[0]} → ${s.name}${_ccDirect.estimatedSavingsRange ? ' (' + _ccDirect.estimatedSavingsRange + ' savings)' : ''}</div>`
+        : '';
 
       return `<div class="action-prompt"><div class="action-text">
         <strong>${i+1}. ${s.name}</strong> — ${toCounselorVoice(s.match)}
-        ${archetypeLine}${majorLine}${cityLine}${pillLine}${personalityLine}${economicLine}${comparableLine}${summaryLine}
+        ${archetypeLine}${majorLine}${cityLine}${pillLine}${personalityLine}${economicLine}${comparableLine}${summaryLine}${ccLine}
       </div></div>`;
     }).join('');
 

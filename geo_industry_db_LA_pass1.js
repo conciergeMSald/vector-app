@@ -544,8 +544,8 @@ const GEO_INDUSTRY_DB_LA = {
         name: "Entertainment & Talent Industry",
         naics: 51,
         distance: "Local",
-        anchor_employers: ["CAA (Creative Artists Agency)", "WME / Endeavor", "UTA"],
-        student_connection: "The three largest talent agencies in the world are headquartered in Beverly Hills — representing athletes, musicians, actors, and directors and employing hundreds of agents, lawyers, and business executives."
+        anchor_employers: ["CAA (Creative Artists Agency)", "WME / Endeavor", "UTA", "Live Nation Entertainment (HQ)"],
+        student_connection: "The three largest talent agencies in the world are headquartered in Beverly Hills, alongside Live Nation's global headquarters — representing athletes, musicians, actors, and directors and employing hundreds of agents, lawyers, and business executives."
       },
       {
         name: "Luxury Retail & Fashion",

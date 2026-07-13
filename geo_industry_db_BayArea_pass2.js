@@ -154,7 +154,7 @@ const GEO_INDUSTRY_DB_BAYAREA = {
         name: "Technology & Software",
         naics: 51,
         distance: "Local / 5 miles",
-        anchor_employers: ["Hewlett Packard Enterprise", "VMware", "Tesla (Palo Alto HQ)", "Palantir"],
+        anchor_employers: ["Hewlett Packard Enterprise", "VMware", "Tesla (Palo Alto HQ)", "Palantir", "Applovin", "Rubrik", "D-Wave Quantum"],
         student_connection: "Palo Alto is the birthplace of Silicon Valley — William Hewlett and David Packard started HP in a garage here in 1939, and the tradition of technology innovation they started has never stopped."
       },
       {
@@ -168,7 +168,7 @@ const GEO_INDUSTRY_DB_BAYAREA = {
         name: "Biomedical Research & Healthcare",
         naics: 62,
         distance: "Local — Stanford Medical Center",
-        anchor_employers: ["Stanford Health Care", "Lucile Packard Children's Hospital", "Stanford School of Medicine"],
+        anchor_employers: ["Stanford Health Care", "Lucile Packard Children's Hospital", "Stanford School of Medicine", "Guardant Health", "BridgeBio Pharma"],
         student_connection: "Stanford Medical Center is adjacent to Palo Alto — one of the top 10 medical centers in the country and the source of some of the most significant biomedical research discoveries of the last century."
       },
       {
@@ -218,14 +218,14 @@ const GEO_INDUSTRY_DB_BAYAREA = {
         name: "Semiconductor & Hardware",
         naics: 33,
         distance: "10 miles — Santa Clara / Sunnyvale",
-        anchor_employers: ["NVIDIA", "Intel", "Marvell Technology"],
-        student_connection: "The semiconductor companies powering AI, smartphones, and data centers are 10 miles south — and the engineering pipeline from Menlo Park into the semiconductor corridor is one of the strongest in the valley."
+        anchor_employers: ["NVIDIA", "Intel", "Marvell Technology", "Applied Materials (Santa Clara)", "Lam Research (Fremont)", "Palo Alto Networks (Santa Clara)", "Arista Networks (Santa Clara)", "Western Digital (San Jose)", "Cadence Design Systems (San Jose)", "Synopsys (Sunnyvale)", "Sandisk (Milpitas)", "Fortinet (Sunnyvale)", "NetApp (San Jose)"],
+        student_connection: "The semiconductor companies powering AI, smartphones, and data centers are 10 miles south — NVIDIA and Intel anchor a much larger corridor spanning Santa Clara, San Jose, Sunnyvale, Fremont, and Milpitas, and the engineering pipeline from Menlo Park into this semiconductor corridor is one of the strongest in the valley."
       },
       {
         name: "Financial Technology",
         naics: 52,
         distance: "Local / 10 miles",
-        anchor_employers: ["Robinhood (Menlo Park)", "Lending Club", "SoFi"],
+        anchor_employers: ["Robinhood (Menlo Park)", "Lending Club", "SoFi", "PayPal (San Jose)", "eBay (San Jose)"],
         student_connection: "Financial technology companies that are rebuilding how the world moves money are headquartered in Menlo Park — and the intersection of finance and software engineering is one of the highest-demand skill combinations in the industry."
       }
     ]
@@ -496,8 +496,8 @@ const GEO_INDUSTRY_DB_BAYAREA = {
         name: "Technology & Software",
         naics: 51,
         distance: "Local",
-        anchor_employers: ["Salesforce Tower (HQ)", "Airbnb (HQ)", "Stripe", "Pinterest"],
-        student_connection: "SoMa is the literal center of San Francisco's technology industry — Salesforce Tower anchors the skyline, and Airbnb, Stripe, and Pinterest all headquarter within walking distance."
+        anchor_employers: ["Salesforce Tower (HQ)", "Airbnb (HQ)", "Stripe", "Pinterest", "Uber", "Cloudflare", "DoorDash", "Reddit", "Twilio", "Okta", "Zscaler", "Samsara"],
+        student_connection: "SoMa is the literal center of San Francisco's technology industry — Salesforce Tower anchors the skyline, Uber and DoorDash headquarter here alongside Airbnb, Stripe, Cloudflare, and Pinterest, all within walking distance of each other."
       },
       {
         name: "Startup & Venture Ecosystem",
