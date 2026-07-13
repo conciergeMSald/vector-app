@@ -7793,7 +7793,7 @@ function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPi
         name: s.name || s,
         label: 'Under the Radar',
         bullet1: sd && sd.one_sentence_summary ? sd.one_sentence_summary.split('.')[0].trim() + '.' : (sd && sd.hidden_pathway ? sd.hidden_pathway.split('.')[0].trim() + '.' : 'Specialist match'),
-        bullet2: sd && sd.location ? sd.location : ''
+        bullet2: ''
       });
     });
   }
@@ -7852,8 +7852,15 @@ function buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPi
       if(_ccCs && _ccCs.hasCCPathway && _ccCs.ccFeederNames && _ccCs.ccFeederNames.length) {
         bullets.push('Pathway Hack: ' + _ccCs.ccFeederNames[0] + ' → ' + s.name + (_ccCs.estimatedSavingsRange ? ' (' + _ccCs.estimatedSavingsRange + ' savings)' : ''));
       }
+      // Location — pulled authoritatively from the school's own data, not
+      // from bullet2 (whose meaning varies by category: sometimes a "why"
+      // sentence, sometimes grad_cities, sometimes enrollment count).
+      var _locCs = (_dbEcs && _dbEcs.institutionNarrative && _dbEcs.institutionNarrative.location)
+        ? _dbEcs.institutionNarrative.location
+        : (function() { var _fd = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(s.name) : null; return _fd && _fd.location ? _fd.location : ''; })();
       html += '<div class="cs-school-entry">';
       html += '<div class="cs-school-name">' + s.name + '</div>';
+      if(_locCs) html += '<div class="cs-school-location" style="font-size:13px;color:var(--ink4);font-weight:300;margin-bottom:6px">' + _locCs + '</div>';
       if(bullets.length) {
         html += '<ul class="cs-school-bullets">';
         bullets.forEach(function(b) { if(b) html += '<li>' + b + '</li>'; });
