@@ -371,7 +371,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   font-family:var(--sans);
 }
 .uni-card .card-name{
-  font-size:var(--type-headline);
+  font-size:22px;
   font-weight:700;
   color:var(--gold);
   font-family:var(--serif);
@@ -379,9 +379,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   line-height:1.2;
 }
 .uni-card .card-narrative{
-  font-size:var(--type-body);
+  font-size:15px;
   color:var(--ink2);
-  line-height:1.65;
+  line-height:1.7;
   margin-bottom:10px;
 }
 .uni-card .card-traj-note{
@@ -666,7 +666,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* Cluster cards */
 .cluster-card{padding:1.25rem 1.5rem;border:0.5px solid var(--rule);margin-bottom:.75rem;}
 .cluster-card-name{font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:6px;}
-.cluster-card-why{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;}
+.cluster-card-why{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
 .cluster-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:middle;}
 
 /* Trajectory */
@@ -677,31 +677,31 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .geo-block{display:flex;gap:1rem;padding:1.25rem;border:0.5px solid var(--rule);background:var(--white);}
 .geo-icon{font-size:15px;flex-shrink:0;margin-top:2px;}
 .geo-name{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;}
-.geo-text{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;}
+.geo-text{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
 
 /* Invitation */
 .invitation{text-align:center;font-family:var(--serif);font-size:15px;font-style:italic;color:var(--ink3);margin:2rem 0;padding:1.5rem 0;border-top:0.5px solid var(--rule);border-bottom:0.5px solid var(--rule);}
 
 /* Full report sections */
-.portrait-text{font-size:15px;color:var(--ink2);line-height:2;font-weight:300;}
+.portrait-text{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
 .industry-block{padding:1.25rem 0;margin-bottom:0;background:transparent;border:none;border-bottom:0.5px solid var(--rule);}.industry-block:last-child{border-bottom:none;}
 .industry-name{font-family:var(--serif);font-size:19px;font-weight:300;color:var(--ink);margin-bottom:6px;}
-.industry-why{font-size:15px;color:var(--ink3);line-height:1.7;font-weight:300;margin-bottom:1rem;}
+.industry-why{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;margin-bottom:1rem;}
 .career-pills{display:block;margin-bottom:.75rem;padding:16px 20px;border:1px solid var(--gold);background:var(--color-surface);}
 .career-pill{font-size:15px;color:var(--ink3);display:inline;}
 .career-pill+.career-pill::before{content:' · ';color:var(--gl);font-size:var(--type-meta);}
 .unexpected-pill{font-size:var(--type-meta);color:var(--gold);font-weight:600;}
 .combo-block{padding:1.25rem 1.5rem;border-left:2px solid var(--gold);margin-bottom:.75rem;background:var(--white);}
-.combo-text{font-size:15px;color:var(--ink2);line-height:1.9;font-weight:300;}
+.combo-text{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
 
 /* Counselor note */
 .counselor-block{padding:2rem;border:0.5px solid var(--gl);background:var(--gold-pale);margin-top:2rem;}
 .counselor-label{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:0.5px solid rgba(196,168,130,0.4);}
-.counselor-text{font-size:15px;color:var(--ink2);line-height:1.9;font-weight:300;}
+.counselor-text{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
 .counselor-section{margin-bottom:1.75rem;}
 .counselor-section:last-child{margin-bottom:0;}
 .counselor-section-head{font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;font-family:var(--sans);}
-.counselor-section-body{font-size:15px;color:var(--ink2);line-height:1.85;font-weight:300;}
+.counselor-section-body{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
 .counselor-prompt{padding:.6rem 0;border-bottom:0.5px solid rgba(196,168,130,0.25);font-size:15px;color:var(--ink2);line-height:1.7;}
 .counselor-prompt:last-child{border-bottom:none;}
 
@@ -815,8 +815,6 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .school-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.75rem;margin-top:.5rem;}
 .school-badge{font-size:var(--type-meta);padding:3px 10px;border:0.5px solid var(--gl);color:var(--gold);}
 .school-badge-faith{font-size:var(--type-meta);padding:3px 10px;border:0.5px solid #a07850;color:#a07850;background:rgba(200,169,122,.07);}
-.school-why{font-size:15px;color:var(--ink2);line-height:1.9;font-weight:300;}
-.school-summary{font-size:17px;color:var(--ink3);line-height:1.7;font-weight:300;margin-top:.75rem;padding-top:.75rem;font-style:italic;}
 .school-generating{font-size:15px;color:var(--ink4);font-style:italic;text-align:center;padding:2rem 0;}
 
 /* ── UNDER THE RADAR ───────────────────────────────── */
@@ -827,7 +825,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .radar-card-archetype{font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-family:var(--sans);margin-bottom:.4rem;}
 .radar-card-name{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--gold);margin-bottom:2px;}
 .radar-card-location{font-size:var(--type-meta);color:var(--ink4);letter-spacing:.5px;margin-bottom:.65rem;}
-.radar-card-why{font-size:15px;color:var(--ink2);line-height:1.85;font-weight:300;}
+.radar-card-why{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
 .radar-card-summary{font-size:17px;color:var(--ink3);line-height:1.7;font-weight:300;margin-top:.6rem;font-style:italic;}
 .radar-card-faith{font-size:var(--type-meta);color:#a07850;margin-top:.4rem;}
 .counselor-school-pill{display:inline-block;font-size:var(--type-meta);padding:2px 8px;border:0.5px solid var(--rule);color:var(--ink3);margin-right:4px;margin-top:4px;}
@@ -839,7 +837,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .school-preview-num{font-family:var(--serif);font-size:15px;font-weight:300;color:var(--gl);flex-shrink:0;width:24px;}
 .school-preview-content{}
 .school-preview-name{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--gold);margin-bottom:2px;}
-.school-preview-why{font-size:15px;color:var(--ink3);line-height:1.6;font-weight:300;}
+.school-preview-why{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
 
 /* ── RESPONSIVE ───────────────────────────────────── */
 @media(max-width:600px){
@@ -5419,7 +5417,7 @@ function renderUnderTheRadar(picks) {
           ${n.bestFitPersonality ? `<div style="font-size:var(--type-meta);color:var(--ink3);margin-top:3px;font-weight:300">Best fit: ${n.bestFitPersonality}</div>` : ''}
           ${n.comparableInstitutions && n.comparableInstitutions.length ? `<div style="font-size:var(--type-body);color:var(--ink4);margin-top:2px;font-style:italic;font-weight:300">Compare to: ${n.comparableInstitutions.join(', ')}</div>` : ''}
           <div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5">${pick.reason.slice(0, 500)}${pick.reason.length > 500 ? '…' : ''}</div>
-          ${n.ccTransferPathway && n.ccTransferPathway.hasCCPathway && n.ccTransferPathway.ccFeederNames && n.ccTransferPathway.ccFeederNames.length ? `<div style="font-size:14px;color:var(--gold);margin-top:6px;font-weight:600">Pathway Hack: ${n.ccTransferPathway.ccFeederNames[0]} → ${pick.name}${n.ccTransferPathway.estimatedSavingsRange ? ' (' + n.ccTransferPathway.estimatedSavingsRange + ' savings)' : ''}</div>` : ''}
+          ${n.ccTransferPathway && n.ccTransferPathway.hasCCPathway && n.ccTransferPathway.ccFeederNames && n.ccTransferPathway.ccFeederNames.length ? `<div style="font-size:14px;color:var(--ink);margin-top:6px;font-weight:700">Pathway Hack: ${n.ccTransferPathway.ccFeederNames[0]} → ${pick.name}${n.ccTransferPathway.estimatedSavingsRange ? ' (' + n.ccTransferPathway.estimatedSavingsRange + ' savings)' : ''}</div>` : ''}
         </div>
       </div>`;
     }).join('');
@@ -5490,7 +5488,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     const _ccTxRate  = _hasCCPath && _ccPathway.transferAcceptanceRate ? _ccPathway.transferAcceptanceRate : '';
     const _ccFrRate  = _hasCCPath && _ccPathway.freshmanAcceptanceRate ? _ccPathway.freshmanAcceptanceRate : '';
     const _ccNote = _hasCCPath
-      ? `<div class="card-cc-note"><strong style="color:var(--gold);font-weight:600;">Pathway Hack</strong> — ${_ccFeeders} → ${s.name}${_ccTxRate ? ` (Transfer: ${_ccTxRate} vs Freshman: ${_ccFrRate})` : ''}${_ccSavings ? `. Estimated savings: ${_ccSavings}.` : ''}</div>`
+      ? `<div class="card-cc-note" style="color:var(--ink);font-weight:700;"><strong>Pathway Hack</strong> — ${_ccFeeders} → ${s.name}${_ccTxRate ? ` (Transfer: ${_ccTxRate} vs Freshman: ${_ccFrRate})` : ''}${_ccSavings ? `. Estimated savings: ${_ccSavings}.` : ''}</div>`
       : '';
 
     // ── Cultural Fit Lens — parent-facing, narrative only, never numeric ──
@@ -5527,16 +5525,10 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     return `<div class="uni-card">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
         <div>
-          ${archetype ? `<div class="card-eyebrow">${archetype}</div>` : ''}
-          <div class="card-name uni-name uni-name--headline">${s.name}</div>
+          ${archetype ? `<div class="card-name uni-name uni-name--headline">${s.name}</div><div class="card-eyebrow">${archetype}</div>` : `<div class="card-name uni-name uni-name--headline">${s.name}</div>`}
           <div style="font-size:var(--type-meta);color:var(--ink4);letter-spacing:.5px;margin-top:2px;">${schoolData ? schoolData.location : ''}</div>
         </div>
         <div style="font-family:var(--serif);font-size:var(--type-headline);font-weight:300;color:rgba(201,168,76,0.4);margin-left:12px;flex-shrink:0;">${i+1}</div>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:5px;margin:8px 0 10px;">
-        ${scaleLabel ? `<span class="school-badge">${scaleLabel}</span>` : ''}
-        ${schoolData ? `<span class="school-badge">${schoolData.region}</span>` : ''}
-        ${faithTradition ? `<span class="school-badge-faith">${faithTradition}</span>` : ''}
       </div>
       <div class="card-narrative"><strong style="font-weight:600;color:var(--ink);display:block;margin-bottom:6px;">${s.match.replace(/\s*-{2,}\s*$/g,"").trim()}</strong>${s.why.replace(/\s*-{2,}\s*$/g,"").trim()}</div>
       ${footerContent ? `<div class="card-traj-note">${footerContent}</div>` : ''}
@@ -5547,6 +5539,11 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       ${s.thrivesIf ? `<div class="card-honest-note" style="margin-top:10px;padding-top:10px;border-top:0.5px solid var(--rule);font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--ink2);font-weight:600;">You will thrive here if:</strong> ${s.thrivesIf.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
       ${s.watchFor ? `<div class="card-honest-note" style="margin-top:6px;font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--ink2);font-weight:600;">One thing to know:</strong> ${s.watchFor.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
       ${s.resilience ? `<div class="card-honest-note" style="margin-top:6px;font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--gold);font-weight:600;">Where this leads:</strong> ${s.resilience.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin:12px 0 0;padding-top:10px;border-top:0.5px solid var(--rule);">
+        ${scaleLabel ? `<span class="school-badge">${scaleLabel}</span>` : ''}
+        ${schoolData ? `<span class="school-badge">${schoolData.region}</span>` : ''}
+        ${faithTradition ? `<span class="school-badge-faith">${faithTradition}</span>` : ''}
+      </div>
     </div>`;
   }).join('');
 
@@ -5560,7 +5557,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         ? adjDb.institutionNarrative.ccTransferPathway : null;
       const adjHasCC = adjCC && adjCC.hasCCPathway && adjCC.ccFeederNames && adjCC.ccFeederNames.length > 0;
       const adjCCNote = adjHasCC
-        ? `<div class="card-cc-note"><strong style="color:var(--gold);">Pathway Hack</strong> — ${adjCC.ccFeederNames.slice(0,2).join(', ')} → ${adj.name}${adjCC.estimatedSavingsRange ? '. Savings: ' + adjCC.estimatedSavingsRange + '.' : ''}</div>`
+        ? `<div class="card-cc-note" style="color:var(--ink);font-weight:700;"><strong>Pathway Hack</strong> — ${adjCC.ccFeederNames.slice(0,2).join(', ')} → ${adj.name}${adjCC.estimatedSavingsRange ? '. Savings: ' + adjCC.estimatedSavingsRange + '.' : ''}</div>`
         : '';
       // Enriched 2026-07-10: cultural fit + Hillel note added to match primary-card depth
       const adjCultureEntry = typeof SCHOOL_CULTURE_CATEGORY !== 'undefined' ? SCHOOL_CULTURE_CATEGORY[adj.name] : null;
@@ -5578,8 +5575,8 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
           <div class="uni-card">
             <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
               <div>
-                ${adjData && adjData.archetype ? `<div class="card-eyebrow">${adjData.archetype}</div>` : ''}
                 <div class="card-name uni-name uni-name--headline">${adj.name}</div>
+                ${adjData && adjData.archetype ? `<div class="card-eyebrow">${adjData.archetype}</div>` : ''}
                 <div style="font-size:var(--type-meta);color:var(--ink4);">${adjData ? adjData.location : ''}</div>
               </div>
               <div style="font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding-top:6px">Adjacent</div>
@@ -5617,7 +5614,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         ? _spDb.institutionNarrative.ccTransferPathway : null;
       const _spHasCC = _spCC && _spCC.hasCCPathway && _spCC.ccFeederNames && _spCC.ccFeederNames.length > 0;
       const _spCCNote = _spHasCC
-        ? `<div class="card-cc-note"><strong style="color:var(--gold);font-weight:600;">Pathway Hack</strong> — ${_spCC.ccFeederNames.slice(0,2).join(', ')} → ${sp.name}${_spCC.estimatedSavingsRange ? '. Estimated savings: ' + _spCC.estimatedSavingsRange + '.' : ''}</div>`
+        ? `<div class="card-cc-note" style="color:var(--ink);font-weight:700;"><strong>Pathway Hack</strong> — ${_spCC.ccFeederNames.slice(0,2).join(', ')} → ${sp.name}${_spCC.estimatedSavingsRange ? '. Estimated savings: ' + _spCC.estimatedSavingsRange + '.' : ''}</div>`
         : '';
 
       const _spCultureEntry = typeof SCHOOL_CULTURE_CATEGORY !== 'undefined' ? SCHOOL_CULTURE_CATEGORY[sp.name] : null;
@@ -5637,8 +5634,8 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
           <div class="uni-card">
             <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
               <div>
-                ${spData && spData.archetype ? `<div class="card-eyebrow">${spData.archetype}</div>` : ''}
                 <div class="card-name uni-name uni-name--headline">${sp.name}</div>
+                ${spData && spData.archetype ? `<div class="card-eyebrow">${spData.archetype}</div>` : ''}
                 <div style="font-size:var(--type-meta);color:var(--ink4);">${spData ? spData.location : ''}${enrollLabel ? ' · ' + enrollLabel : ''}</div>
               </div>
               <div style="font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding-top:6px">${sp.direction === 'smaller' ? 'Smaller' : 'Larger'}</div>
@@ -5669,7 +5666,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         ? _paDb.institutionNarrative.ccTransferPathway : null;
       const _paHasCC = _paCC && _paCC.hasCCPathway && _paCC.ccFeederNames && _paCC.ccFeederNames.length > 0;
       const _paCCNote = _paHasCC
-        ? `<div class="card-cc-note"><strong style="color:var(--gold);font-weight:600;">Pathway Hack</strong> — ${_paCC.ccFeederNames.slice(0,2).join(', ')} → ${pa.name}${_paCC.estimatedSavingsRange ? '. Estimated savings: ' + _paCC.estimatedSavingsRange + '.' : ''}</div>`
+        ? `<div class="card-cc-note" style="color:var(--ink);font-weight:700;"><strong>Pathway Hack</strong> — ${_paCC.ccFeederNames.slice(0,2).join(', ')} → ${pa.name}${_paCC.estimatedSavingsRange ? '. Estimated savings: ' + _paCC.estimatedSavingsRange + '.' : ''}</div>`
         : '';
 
       const _paCultureEntry = typeof SCHOOL_CULTURE_CATEGORY !== 'undefined' ? SCHOOL_CULTURE_CATEGORY[pa.name] : null;
@@ -5689,8 +5686,8 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
           <div class="uni-card">
             <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px;">
               <div>
-                ${paData && paData.archetype ? `<div class="card-eyebrow">${paData.archetype}</div>` : ''}
                 <div class="card-name uni-name uni-name--headline">${pa.name}</div>
+                ${paData && paData.archetype ? `<div class="card-eyebrow">${paData.archetype}</div>` : ''}
                 <div style="font-size:var(--type-meta);color:var(--ink4);">${paData ? paData.location : ''}</div>
               </div>
               <div style="font-size:var(--type-meta);letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding-top:6px">Profile Adjacent</div>
@@ -5753,7 +5750,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       const _ccDirectEntry = typeof getDbV5Entry === 'function' ? getDbV5Entry(s.name) : null;
       const _ccDirect = _ccDirectEntry && _ccDirectEntry.institutionNarrative ? _ccDirectEntry.institutionNarrative.ccTransferPathway : null;
       const ccLine = (_ccDirect && _ccDirect.hasCCPathway && _ccDirect.ccFeederNames && _ccDirect.ccFeederNames.length)
-        ? `<div style="font-size:14px;color:var(--gold);margin-top:6px;font-weight:600">Pathway Hack: ${_ccDirect.ccFeederNames[0]} → ${s.name}${_ccDirect.estimatedSavingsRange ? ' (' + _ccDirect.estimatedSavingsRange + ' savings)' : ''}</div>`
+        ? `<div style="font-size:14px;color:var(--ink);margin-top:6px;font-weight:700">Pathway Hack: ${_ccDirect.ccFeederNames[0]} → ${s.name}${_ccDirect.estimatedSavingsRange ? ' (' + _ccDirect.estimatedSavingsRange + ' savings)' : ''}</div>`
         : '';
 
       return `<div class="action-prompt"><div class="action-text">
@@ -6890,7 +6887,7 @@ function renderFullReport(profile, callAData, callBData, callCData, essayParsed)
         var ccPath = dbEntry && dbEntry.institutionNarrative && dbEntry.institutionNarrative.ccTransferPathway;
         var hasCCPath = ccPath && ccPath.hasCCPathway && ccPath.ccFeederNames && ccPath.ccFeederNames.length > 0;
         var ccNote = hasCCPath
-          ? '<div class="card-cc-note" style="font-weight:600;"><strong style="color:var(--gold);">Pathway Hack</strong> — '
+          ? '<div class="card-cc-note" style="font-weight:700;color:var(--ink);"><strong>Pathway Hack</strong> — '
             + ccPath.ccFeederNames.slice(0,2).join(', ') + ' → ' + school.name
             + (ccPath.estimatedSavingsRange ? '. Savings: ' + ccPath.estimatedSavingsRange + '.' : '') + '</div>'
           : '';
