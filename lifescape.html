@@ -5477,6 +5477,8 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
 
     // Use one_sentence_summary if populated, otherwise fall back to hidden_pathway
     const footerContent  = summary || hiddenPath;
+    const gradCitiesLine = schoolData && schoolData.grad_cities
+      ? `<div class="card-traj-note">Graduates go to: ${Array.isArray(schoolData.grad_cities) ? schoolData.grad_cities.slice(0,3).join(', ') : schoolData.grad_cities}</div>` : '';
 
     // ── CC pathway from UNIVERSITY_DB_V5 ──
     const _dbEntry = getDbV5Entry(s.name);
@@ -5532,6 +5534,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       </div>
       <div class="card-narrative"><strong style="font-weight:600;color:var(--ink);display:block;margin-bottom:6px;">${s.match.replace(/\s*-{2,}\s*$/g,"").trim()}</strong>${s.why.replace(/\s*-{2,}\s*$/g,"").trim()}</div>
       ${footerContent ? `<div class="card-traj-note">${footerContent}</div>` : ''}
+      ${gradCitiesLine}
       ${_trajNote ? `<div class="card-traj-note" style="margin-top:4px;">${_trajNote}</div>` : ''}
       ${_ccNote}
       ${_cultureNote}
@@ -5725,7 +5728,6 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       const intel = typeof getUniversityIntel === 'function' ? getUniversityIntel(s.name) : null;
       const schoolD = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(s.name) : null;
       const majors = typeof getMajorStrengths === 'function' ? getMajorStrengths(s.name) : [];
-      const cities = typeof getTopGradCities === 'function' ? getTopGradCities(s.name) : [];
 
       // New schema fields
       const cArchetype    = schoolD && schoolD.archetype ? schoolD.archetype : '';
@@ -5736,10 +5738,11 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       const cEconomic     = schoolD && schoolD.economic_outcome ? schoolD.economic_outcome : '';
       const cSummary      = schoolD && schoolD.one_sentence_summary ? schoolD.one_sentence_summary : '';
       const cHidden       = intel?.hidden_pathway || (schoolD && schoolD.hidden_pathway) || '';
+      const cGradCities   = schoolD && schoolD.grad_cities ? schoolD.grad_cities : '';
 
       const archetypeLine   = cArchetype ? `<div style="font-size:var(--type-meta);color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;font-weight:500">${cArchetype}</div>` : '';
       const majorLine       = majors.length ? `<div style="font-size:var(--type-meta);color:var(--gold);letter-spacing:1px;margin-top:4px;font-weight:500">${majors.join(' · ')}</div>` : '';
-      const cityLine        = cities.length ? `<div style="font-size:var(--type-meta);color:var(--ink4);margin-top:2px;font-weight:300">Grads → ${cities.map(c=>c.city+' '+c.pct+'%').join(' | ')}</div>` : '';
+      const cityLine        = cGradCities ? `<div style="font-size:15px;color:var(--ink2);margin-top:2px;font-weight:300">Graduates go to: ${Array.isArray(cGradCities) ? cGradCities.slice(0,3).join(', ') : cGradCities}</div>` : '';
       const pillRow         = [cFaith, cGeoRadius].filter(Boolean).map(v => `<span class="counselor-school-pill counselor-school-pill-gold">${v}</span>`).join('');
       const pillLine        = pillRow ? `<div style="margin-top:5px">${pillRow}</div>` : '';
       const personalityLine = cPersonality ? `<div style="font-size:15px;color:var(--ink2);margin-top:4px;font-weight:300">Best fit: ${cPersonality}</div>` : '';
