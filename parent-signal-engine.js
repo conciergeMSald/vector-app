@@ -34,12 +34,24 @@ export const ALL_DOMAINS = [
 ];
 
 /**
+ * Input shape for extractParentSignals(). Consolidated into a single
+ * @typedef rather than multiple dotted `@param input.property` lines —
+ * TypeScript's checkJs (via VS Code's TS language server) resolves a
+ * @typedef reliably, whereas nested dotted @param annotations have been
+ * observed to fall out of sync after edits (see: TS2353 "does not exist
+ * in type" false positive on preFilledSignals, July 2026). This is a
+ * type-annotation robustness fix only — no behavior change.
+ *
+ * @typedef {Object} ExtractParentSignalsInput
+ * @property {string} familyMemberId - UUID, passed through untouched for the caller to attach to the DB row. Engine does not write it anywhere.
+ * @property {Object} transcriptByDomain - { domainKey: string (raw transcript text) }. Missing keys = domain not reached.
+ * @property {Object} [preFilledSignals] - Optional structured extraction from callF (Claude). When present, layered over the scaffolding output field-by-field. Untrusted input — never merged wholesale.
+ */
+
+/**
  * Main entry point. Call this and only this from outside the module.
  *
- * @param {Object} input
- * @param {string} input.familyMemberId - UUID, passed through untouched for the caller to attach to the DB row. Engine does not write it anywhere.
- * @param {Object} input.transcriptByDomain - { domainKey: string (raw transcript text) }. Missing keys = domain not reached.
- * @param {Object} [input.preFilledSignals] - Optional structured extraction from callF (Claude). When present, layered over the scaffolding output field-by-field. Untrusted input — never merged wholesale.
+ * @param {ExtractParentSignalsInput} input
  * @returns {Object} Parent Intelligence Profile — matches parent_intelligence_profiles schema shape (minus id/created_at, which the caller sets on write).
  */
 export function extractParentSignals(input) {
