@@ -1014,15 +1014,15 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="screen active" id="screen-0">
 <div class="container" style="padding-top:7rem">
   <div class="gold-rule"></div>
-  <div class="q">Do you have a consultant code?</div>
-  <div class="q-sub">Your college counselor may have given you a 5-character code. Enter it here to connect your Lifescape to their practice. You can also skip this and explore on your own.</div>
+  <div class="q">Have a beta invite code?</div>
+  <div class="q-sub">If a friend gave you an early access code, enter it here. Otherwise, skip and continue — Lifescape is free to explore either way.</div>
 
   <div style="margin-top:2rem;">
     <input
       id="consultant-code-input"
       class="ls-input"
-      placeholder="e.g. JONES"
-      maxlength="6"
+      placeholder="e.g. FRIEND1"
+      maxlength="20"
       autocomplete="off"
       autocapitalize="characters"
       style="text-transform:uppercase;letter-spacing:4px;font-size:22px;text-align:center;"
@@ -2382,6 +2382,10 @@ async function submitConsultantCode() {
 
     if (data.valid) {
       LS_STATE.consultant_code = code;
+      // IMPL-PLAN-004: stored so onFamilySignedIn() knows whether this code
+      // is a beta invite code (code_type === 'beta') vs. a future consultant
+      // referral code — only 'beta' codes trigger /redeem-invite-code.
+      LS_STATE.invite_code_type = data.code_type || null;
       // Store personalization context for agent use if present
       if (data.personalization_context && Object.keys(data.personalization_context).length) {
         LS_STATE.personalization_context = data.personalization_context;
@@ -2389,9 +2393,12 @@ async function submitConsultantCode() {
       if (data.consultant_name && feedback) {
         feedback.style.color = 'var(--gold)';
         feedback.textContent = 'Connected to ' + data.consultant_name + '’s practice.';
+      } else if (data.code_type === 'beta' && feedback) {
+        feedback.style.color = 'var(--gold)';
+        feedback.textContent = 'Code accepted — beta access will activate after you create your free account.';
       }
       // Brief moment to show confirmation before advancing
-      setTimeout(function() { goTo(1); }, data.consultant_name ? 900 : 0);
+      setTimeout(function() { goTo(1); }, (data.consultant_name || data.code_type === 'beta') ? 900 : 0);
     } else {
       LS_STATE.consultant_code = null;
       btn.disabled = false;
@@ -2399,11 +2406,11 @@ async function submitConsultantCode() {
       if (feedback) {
         feedback.style.color = '#c0392b';
         var messages = {
-          invalid_code: 'That code wasn’t recognized. Check with your counselor and try again.',
-          expired:      'That code has expired. Ask your counselor for a new one.',
-          exhausted:    'That code has already been used. Ask your counselor for a new one.',
+          invalid_code: 'That code wasn’t recognized. Double-check it and try again.',
+          expired:      'That code has expired.',
+          exhausted:    'That code has already been used.',
         };
-        feedback.textContent = messages[data.reason] || 'That code wasn’t recognized. Check with your counselor and try again.';
+        feedback.textContent = messages[data.reason] || 'That code wasn’t recognized. Double-check it and try again.';
       }
     }
   } catch (err) {
@@ -5876,7 +5883,14 @@ function dismissFamilyAccountUpsell() {
    the post-report upsell. IMPL-PLAN-003 Phase 3, Section 6 steps 6–8:
    1. Ensure the family_accounts row exists (fetch-or-create).
    2. Attach the free report already saved this session to the new account.
-   3. Send them to Stripe checkout for the family plan.
+   3. IMPL-PLAN-004 Gate 4, Item 7: if a beta code was entered at Screen 0,
+      redeem it now — this is the actual consumption point, deliberately
+      AFTER a real account exists (see IMPL-PLAN-004's correction to
+      /validate-invite-code). On a successful beta grant, the automatic
+      Stripe redirect below is skipped entirely — a beta friend should
+      never be sent to a paywall for something they already have for free.
+   4. Otherwise, send them to Stripe checkout for the family plan, exactly
+      as before.
    ───────────────────────────────────────────────────────────────────────── */
 async function onFamilySignedIn() {
   try {
@@ -5896,6 +5910,30 @@ async function onFamilySignedIn() {
       });
     }
 
+    // ── IMPL-PLAN-004 Gate 4, Item 7: beta code redemption ────────────────
+    // Only attempted when Screen 0's code was flagged code_type === 'beta'
+    // (see submitConsultantCode). Consultant-referral codes, if/when they
+    // return, will carry a different code_type and never reach this branch.
+    if (LS_STATE.consultant_code && LS_STATE.invite_code_type === 'beta') {
+      try {
+        var redeemRes = await fetch('https://api.abettercollegeconsultant.com/redeem-invite-code', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+          body:    JSON.stringify({ code: LS_STATE.consultant_code }),
+        });
+        var redeemData = await redeemRes.json();
+
+        if (redeemData && redeemData.success) {
+          showBetaAccessActivatedMessage(redeemData.unlimited ? null : redeemData.assessments_granted);
+          return; // Beta grant applied — never redirect to Stripe checkout.
+        } else {
+          console.warn('[VECTOR Lifescape] Beta code redemption did not succeed, falling through to normal checkout:', redeemData && redeemData.reason);
+        }
+      } catch (err) {
+        console.warn('[VECTOR Lifescape] Beta code redemption request failed, falling through to normal checkout:', err);
+      }
+    }
+
     var checkoutRes  = await fetch('https://api.abettercollegeconsultant.com/create-checkout', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
@@ -5911,6 +5949,39 @@ async function onFamilySignedIn() {
   } catch (err) {
     console.error('[VECTOR Lifescape] onFamilySignedIn error:', err);
   }
+}
+
+/* ── showBetaAccessActivatedMessage ────────────────────────────────────────
+   IMPL-PLAN-004 Gate 4, Item 7. Shown in place of the Stripe redirect when
+   a beta code redemption succeeds. assessmentsGranted is null for an
+   unlimited grant (OQ-3's personal-friend cohort); a number for a
+   fixed-count grant. Report the family already has stays fully visible
+   underneath — this is a brief confirmation, not a blocking gate.
+   ───────────────────────────────────────────────────────────────────────── */
+function showBetaAccessActivatedMessage(assessmentsGranted) {
+  var detail = assessmentsGranted == null
+    ? 'You have unlimited free access.'
+    : 'You have ' + assessmentsGranted + ' free assessment' + (assessmentsGranted === 1 ? '' : 's') + '.';
+
+  var overlay = document.createElement('div');
+  overlay.id  = 'betaAccessActivated';
+  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(253,250,245,0.97);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box;';
+  overlay.innerHTML = `
+    <div style="max-width:440px;width:100%;font-family:Georgia,serif;text-align:center;">
+      <div style="font-family:var(--sans);font-size:var(--type-meta);letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Your Lifescape</div>
+      <div style="font-size:18px;font-weight:400;letter-spacing:1px;color:#0a0a0a;margin-bottom:.75rem;">Beta access activated.</div>
+      <div style="font-family:var(--sans);font-size:15px;color:#6a6a6a;line-height:1.7;margin-bottom:1.5rem;">` + detail + `</div>
+      <button onclick="dismissBetaAccessActivatedMessage()"
+        style="width:100%;padding:15px 36px;background:#0a0a0a;color:#fafaf8;border:none;font-family:var(--sans);font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-top:.5rem;">
+        Continue to My Report
+      </button>
+    </div>`;
+  document.body.appendChild(overlay);
+}
+
+function dismissBetaAccessActivatedMessage() {
+  var el = document.getElementById('betaAccessActivated');
+  if (el) el.parentNode.removeChild(el);
 }
 
 /* ── saveToSupabase ──────────────────────────────────────────────────────────
