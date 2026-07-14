@@ -836,7 +836,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .school-preview:last-child{border-bottom:none;}
 .school-preview-num{font-family:var(--serif);font-size:15px;font-weight:300;color:var(--gl);flex-shrink:0;width:24px;}
 .school-preview-content{}
-.school-preview-name{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--gold);margin-bottom:2px;}
+.school-preview-name{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--gold);margin-bottom:2px;}
 .school-preview-why{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
 
 /* ── RESPONSIVE ───────────────────────────────────── */
@@ -5414,9 +5414,9 @@ function renderUnderTheRadar(picks) {
           <div class="school-name" style="display:inline;">${i+1}. ${pick.name}</div>
           ${n.location ? `<span style="font-size:var(--type-meta);color:var(--ink4);font-weight:300"> — ${n.location}</span>` : ''}
           ${n.faithTradition && n.faithTradition !== 'None' ? `<div style="font-size:var(--type-meta);color:#a07850;margin-top:2px">${n.faithTradition}</div>` : ''}
-          ${n.bestFitPersonality ? `<div style="font-size:var(--type-meta);color:var(--ink3);margin-top:3px;font-weight:300">Best fit: ${n.bestFitPersonality}</div>` : ''}
-          ${n.comparableInstitutions && n.comparableInstitutions.length ? `<div style="font-size:var(--type-body);color:var(--ink4);margin-top:2px;font-style:italic;font-weight:300">Compare to: ${n.comparableInstitutions.join(', ')}</div>` : ''}
-          <div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5">${pick.reason.slice(0, 500)}${pick.reason.length > 500 ? '…' : ''}</div>
+          ${n.bestFitPersonality ? `<div style="font-size:15px;color:var(--ink2);margin-top:3px;font-weight:300">Best fit: ${n.bestFitPersonality}</div>` : ''}
+          ${n.comparableInstitutions && n.comparableInstitutions.length ? `<div style="font-size:15px;color:var(--ink2);margin-top:2px;font-style:italic;font-weight:300"><strong style="font-style:normal;">Compare to:</strong> ${n.comparableInstitutions.join(', ')}</div>` : ''}
+          <div style="font-size:15px;color:var(--ink2);margin-top:5px;font-weight:300;line-height:1.7">${pick.reason.slice(0, 500)}${pick.reason.length > 500 ? '…' : ''}</div>
           ${n.ccTransferPathway && n.ccTransferPathway.hasCCPathway && n.ccTransferPathway.ccFeederNames && n.ccTransferPathway.ccFeederNames.length ? `<div style="font-size:14px;color:var(--ink);margin-top:6px;"><strong>Pathway Hack:</strong> ${n.ccTransferPathway.ccFeederNames[0]} → ${pick.name}${n.ccTransferPathway.estimatedSavingsRange ? ' (' + n.ccTransferPathway.estimatedSavingsRange + ' savings)' : ''}</div>` : ''}
         </div>
       </div>`;
@@ -5729,7 +5729,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
 
       // New schema fields
       const cArchetype    = schoolD && schoolD.archetype ? schoolD.archetype : '';
-      const cFaith        = schoolD && schoolD.faith_tradition ? schoolD.faith_tradition : '';
+      const cFaith        = schoolD && schoolD.faith_tradition && schoolD.faith_tradition !== 'None' ? schoolD.faith_tradition : '';
       const cPersonality  = schoolD && schoolD.best_fit_personality ? schoolD.best_fit_personality : '';
       const cComparable   = schoolD && schoolD.comparable_institutions ? schoolD.comparable_institutions : '';
       const cGeoRadius    = schoolD && schoolD.geographic_influence_radius ? schoolD.geographic_influence_radius : '';
@@ -5742,11 +5742,11 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       const cityLine        = cities.length ? `<div style="font-size:var(--type-meta);color:var(--ink4);margin-top:2px;font-weight:300">Grads → ${cities.map(c=>c.city+' '+c.pct+'%').join(' | ')}</div>` : '';
       const pillRow         = [cFaith, cGeoRadius].filter(Boolean).map(v => `<span class="counselor-school-pill counselor-school-pill-gold">${v}</span>`).join('');
       const pillLine        = pillRow ? `<div style="margin-top:5px">${pillRow}</div>` : '';
-      const personalityLine = cPersonality ? `<div style="font-size:var(--type-meta);color:var(--ink3);margin-top:4px;font-weight:300">Best fit: ${cPersonality}</div>` : '';
-      const economicLine    = cEconomic ? `<div style="font-size:var(--type-meta);color:var(--ink3);margin-top:3px;font-weight:300">${cEconomic}</div>` : '';
-      const comparableLine  = cComparable ? `<div style="font-size:var(--type-body);color:var(--ink4);margin-top:3px;font-weight:300;font-style:italic">Compare to: ${cComparable}</div>` : '';
-      const summaryLine     = cSummary ? `<div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5;font-style:italic">${cSummary}</div>` :
-                              cHidden ? `<div style="font-size:15px;color:var(--ink3);margin-top:4px;font-weight:300;line-height:1.5;font-style:italic">${cHidden.slice(0,400)}${cHidden.length>400?'…':''}</div>` : '';
+      const personalityLine = cPersonality ? `<div style="font-size:15px;color:var(--ink2);margin-top:4px;font-weight:300">Best fit: ${cPersonality}</div>` : '';
+      const economicLine    = cEconomic ? `<div style="font-size:15px;color:var(--ink2);margin-top:3px;font-weight:300">${cEconomic}</div>` : '';
+      const comparableLine  = cComparable ? `<div style="font-size:15px;color:var(--ink2);margin-top:3px;font-weight:300;font-style:italic"><strong style="font-style:normal;">Compare to:</strong> ${cComparable}</div>` : '';
+      const summaryLine     = cSummary ? `<div style="font-size:15px;color:var(--ink2);margin-top:5px;font-weight:300;line-height:1.7;font-style:italic">${cSummary}</div>` :
+                              cHidden ? `<div style="font-size:15px;color:var(--ink2);margin-top:4px;font-weight:300;line-height:1.7;font-style:italic">${cHidden.slice(0,400)}${cHidden.length>400?'…':''}</div>` : '';
       const _ccDirectEntry = typeof getDbV5Entry === 'function' ? getDbV5Entry(s.name) : null;
       const _ccDirect = _ccDirectEntry && _ccDirectEntry.institutionNarrative ? _ccDirectEntry.institutionNarrative.ccTransferPathway : null;
       const ccLine = (_ccDirect && _ccDirect.hasCCPathway && _ccDirect.ccFeederNames && _ccDirect.ccFeederNames.length)
