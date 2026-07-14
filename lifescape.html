@@ -5945,6 +5945,10 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
     session_id:        LS_STATE.session_id                   || null,
     family_account_id: window.__familyAccountId          || null,
     supabase_user_id:  hasSupabaseSession ? window.sbSession.user.id : null,
+    worlds:            Array.isArray(LS_STATE.worlds_chosen) ? LS_STATE.worlds_chosen.join(', ') : null,
+    state_pref:        Array.isArray(COLLEGE_PREFS.regions) ? COLLEGE_PREFS.regions.join(', ') : (COLLEGE_PREFS.regions || null),
+    campus_size_pref:  COLLEGE_PREFS.campus_scale         || null,
+    faith_pref:        COLLEGE_PREFS.religion             || null,
   };
 
   var headers = { 'Content-Type': 'application/json' };
