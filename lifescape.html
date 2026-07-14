@@ -685,12 +685,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* Full report sections */
 .portrait-text{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
 .industry-block{padding:1.25rem 0;margin-bottom:0;background:transparent;border:none;border-bottom:0.5px solid var(--rule);}.industry-block:last-child{border-bottom:none;}
-.industry-name{font-family:var(--serif);font-size:19px;font-weight:300;color:var(--ink);margin-bottom:6px;}
+.industry-name{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);margin-bottom:6px;}
 .industry-why{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;margin-bottom:1rem;}
 .career-pills{display:block;margin-bottom:.75rem;padding:16px 20px;border:1px solid var(--gold);background:var(--color-surface);}
 .career-pill{font-size:15px;color:var(--ink3);display:inline;}
 .career-pill+.career-pill::before{content:' · ';color:var(--gl);font-size:var(--type-meta);}
-.unexpected-pill{font-size:var(--type-meta);color:var(--gold);font-weight:600;}
+.unexpected-pill{font-size:var(--type-meta);color:var(--gold);font-weight:300;}
 .combo-block{padding:1.25rem 1.5rem;border-left:2px solid var(--gold);margin-bottom:.75rem;background:var(--white);}
 .combo-text{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
 
@@ -5417,7 +5417,7 @@ function renderUnderTheRadar(picks) {
           ${n.bestFitPersonality ? `<div style="font-size:var(--type-meta);color:var(--ink3);margin-top:3px;font-weight:300">Best fit: ${n.bestFitPersonality}</div>` : ''}
           ${n.comparableInstitutions && n.comparableInstitutions.length ? `<div style="font-size:var(--type-body);color:var(--ink4);margin-top:2px;font-style:italic;font-weight:300">Compare to: ${n.comparableInstitutions.join(', ')}</div>` : ''}
           <div style="font-size:15px;color:var(--ink3);margin-top:5px;font-weight:300;line-height:1.5">${pick.reason.slice(0, 500)}${pick.reason.length > 500 ? '…' : ''}</div>
-          ${n.ccTransferPathway && n.ccTransferPathway.hasCCPathway && n.ccTransferPathway.ccFeederNames && n.ccTransferPathway.ccFeederNames.length ? `<div style="font-size:14px;color:var(--ink);margin-top:6px;font-weight:700">Pathway Hack: ${n.ccTransferPathway.ccFeederNames[0]} → ${pick.name}${n.ccTransferPathway.estimatedSavingsRange ? ' (' + n.ccTransferPathway.estimatedSavingsRange + ' savings)' : ''}</div>` : ''}
+          ${n.ccTransferPathway && n.ccTransferPathway.hasCCPathway && n.ccTransferPathway.ccFeederNames && n.ccTransferPathway.ccFeederNames.length ? `<div style="font-size:14px;color:var(--ink);margin-top:6px;"><strong>Pathway Hack:</strong> ${n.ccTransferPathway.ccFeederNames[0]} → ${pick.name}${n.ccTransferPathway.estimatedSavingsRange ? ' (' + n.ccTransferPathway.estimatedSavingsRange + ' savings)' : ''}</div>` : ''}
         </div>
       </div>`;
     }).join('');
@@ -5488,7 +5488,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
     const _ccTxRate  = _hasCCPath && _ccPathway.transferAcceptanceRate ? _ccPathway.transferAcceptanceRate : '';
     const _ccFrRate  = _hasCCPath && _ccPathway.freshmanAcceptanceRate ? _ccPathway.freshmanAcceptanceRate : '';
     const _ccNote = _hasCCPath
-      ? `<div class="card-cc-note" style="color:var(--ink);font-weight:700;"><strong>Pathway Hack</strong> — ${_ccFeeders} → ${s.name}${_ccTxRate ? ` (Transfer: ${_ccTxRate} vs Freshman: ${_ccFrRate})` : ''}${_ccSavings ? `. Estimated savings: ${_ccSavings}.` : ''}</div>`
+      ? `<div class="card-cc-note" style="color:var(--ink);"><strong>Pathway Hack</strong> — ${_ccFeeders} → ${s.name}${_ccTxRate ? ` (Transfer: ${_ccTxRate} vs Freshman: ${_ccFrRate})` : ''}${_ccSavings ? `. Estimated savings: ${_ccSavings}.` : ''}</div>`
       : '';
 
     // ── Cultural Fit Lens — parent-facing, narrative only, never numeric ──
@@ -5557,7 +5557,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         ? adjDb.institutionNarrative.ccTransferPathway : null;
       const adjHasCC = adjCC && adjCC.hasCCPathway && adjCC.ccFeederNames && adjCC.ccFeederNames.length > 0;
       const adjCCNote = adjHasCC
-        ? `<div class="card-cc-note" style="color:var(--ink);font-weight:700;"><strong>Pathway Hack</strong> — ${adjCC.ccFeederNames.slice(0,2).join(', ')} → ${adj.name}${adjCC.estimatedSavingsRange ? '. Savings: ' + adjCC.estimatedSavingsRange + '.' : ''}</div>`
+        ? `<div class="card-cc-note" style="color:var(--ink);"><strong>Pathway Hack</strong> — ${adjCC.ccFeederNames.slice(0,2).join(', ')} → ${adj.name}${adjCC.estimatedSavingsRange ? '. Savings: ' + adjCC.estimatedSavingsRange + '.' : ''}</div>`
         : '';
       // Enriched 2026-07-10: cultural fit + Hillel note added to match primary-card depth
       const adjCultureEntry = typeof SCHOOL_CULTURE_CATEGORY !== 'undefined' ? SCHOOL_CULTURE_CATEGORY[adj.name] : null;
@@ -5614,7 +5614,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         ? _spDb.institutionNarrative.ccTransferPathway : null;
       const _spHasCC = _spCC && _spCC.hasCCPathway && _spCC.ccFeederNames && _spCC.ccFeederNames.length > 0;
       const _spCCNote = _spHasCC
-        ? `<div class="card-cc-note" style="color:var(--ink);font-weight:700;"><strong>Pathway Hack</strong> — ${_spCC.ccFeederNames.slice(0,2).join(', ')} → ${sp.name}${_spCC.estimatedSavingsRange ? '. Estimated savings: ' + _spCC.estimatedSavingsRange + '.' : ''}</div>`
+        ? `<div class="card-cc-note" style="color:var(--ink);"><strong>Pathway Hack</strong> — ${_spCC.ccFeederNames.slice(0,2).join(', ')} → ${sp.name}${_spCC.estimatedSavingsRange ? '. Estimated savings: ' + _spCC.estimatedSavingsRange + '.' : ''}</div>`
         : '';
 
       const _spCultureEntry = typeof SCHOOL_CULTURE_CATEGORY !== 'undefined' ? SCHOOL_CULTURE_CATEGORY[sp.name] : null;
@@ -5666,7 +5666,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         ? _paDb.institutionNarrative.ccTransferPathway : null;
       const _paHasCC = _paCC && _paCC.hasCCPathway && _paCC.ccFeederNames && _paCC.ccFeederNames.length > 0;
       const _paCCNote = _paHasCC
-        ? `<div class="card-cc-note" style="color:var(--ink);font-weight:700;"><strong>Pathway Hack</strong> — ${_paCC.ccFeederNames.slice(0,2).join(', ')} → ${pa.name}${_paCC.estimatedSavingsRange ? '. Estimated savings: ' + _paCC.estimatedSavingsRange + '.' : ''}</div>`
+        ? `<div class="card-cc-note" style="color:var(--ink);"><strong>Pathway Hack</strong> — ${_paCC.ccFeederNames.slice(0,2).join(', ')} → ${pa.name}${_paCC.estimatedSavingsRange ? '. Estimated savings: ' + _paCC.estimatedSavingsRange + '.' : ''}</div>`
         : '';
 
       const _paCultureEntry = typeof SCHOOL_CULTURE_CATEGORY !== 'undefined' ? SCHOOL_CULTURE_CATEGORY[pa.name] : null;
@@ -5750,7 +5750,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       const _ccDirectEntry = typeof getDbV5Entry === 'function' ? getDbV5Entry(s.name) : null;
       const _ccDirect = _ccDirectEntry && _ccDirectEntry.institutionNarrative ? _ccDirectEntry.institutionNarrative.ccTransferPathway : null;
       const ccLine = (_ccDirect && _ccDirect.hasCCPathway && _ccDirect.ccFeederNames && _ccDirect.ccFeederNames.length)
-        ? `<div style="font-size:14px;color:var(--ink);margin-top:6px;font-weight:700">Pathway Hack: ${_ccDirect.ccFeederNames[0]} → ${s.name}${_ccDirect.estimatedSavingsRange ? ' (' + _ccDirect.estimatedSavingsRange + ' savings)' : ''}</div>`
+        ? `<div style="font-size:14px;color:var(--ink);margin-top:6px;"><strong>Pathway Hack:</strong> ${_ccDirect.ccFeederNames[0]} → ${s.name}${_ccDirect.estimatedSavingsRange ? ' (' + _ccDirect.estimatedSavingsRange + ' savings)' : ''}</div>`
         : '';
 
       return `<div class="action-prompt"><div class="action-text">
@@ -6887,7 +6887,7 @@ function renderFullReport(profile, callAData, callBData, callCData, essayParsed)
         var ccPath = dbEntry && dbEntry.institutionNarrative && dbEntry.institutionNarrative.ccTransferPathway;
         var hasCCPath = ccPath && ccPath.hasCCPathway && ccPath.ccFeederNames && ccPath.ccFeederNames.length > 0;
         var ccNote = hasCCPath
-          ? '<div class="card-cc-note" style="font-weight:700;color:var(--ink);"><strong>Pathway Hack</strong> — '
+          ? '<div class="card-cc-note" style="color:var(--ink);"><strong>Pathway Hack</strong> — '
             + ccPath.ccFeederNames.slice(0,2).join(', ') + ' → ' + school.name
             + (ccPath.estimatedSavingsRange ? '. Savings: ' + ccPath.estimatedSavingsRange + '.' : '') + '</div>'
           : '';
@@ -7069,7 +7069,7 @@ function renderIndustries(industriesText) {
     return `<div class="industry-block" style="border-left:3px solid ${colors[i % colors.length]};padding-left:1.25rem;">
       <div class="industry-name" style="color:${colors[i % colors.length]};">${name}</div>
       <div class="industry-why">${why}</div>
-      <div class="career-pills"><ul style="margin:0;padding-left:1.2rem;list-style:disc;">${careers.map(c=>`<li style="font-size:var(--type-body);color:var(--ink2);line-height:1.65;margin-bottom:4px;">${c}</li>`).join('')}</ul></div>
+      <div class="career-pills"><ul style="margin:0;padding-left:1.2rem;list-style:disc;">${careers.map(c=>`<li style="font-size:15px;color:var(--ink2);line-height:1.7;margin-bottom:4px;">${c}</li>`).join('')}</ul></div>
       ${unexpected?`<div style="margin-top:.5rem"><span class="unexpected-pill">✦ ${unexpected}</span></div>`:''}
     </div>`;
   }).join('');
