@@ -1012,16 +1012,16 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen active" id="screen-0">
-<div class="container" style="padding-top:7rem">
+<div class="container" style="padding-top:8rem">
   <div class="gold-rule"></div>
-  <div class="q">Have a beta invite code?</div>
-  <div class="q-sub">If a friend gave you an early access code, enter it here. Otherwise, skip and continue — Lifescape is free to explore either way.</div>
+  <div class="q" style="font-family:var(--serif);letter-spacing:1px;">Lifescape is currently invite-only.</div>
+  <div class="q-sub">Enter your access code to begin.</div>
 
-  <div style="margin-top:2rem;">
+  <div style="margin-top:2.5rem;">
     <input
       id="consultant-code-input"
       class="ls-input"
-      placeholder="e.g. FRIEND1"
+      placeholder="ACCESS CODE"
       maxlength="20"
       autocomplete="off"
       autocapitalize="characters"
@@ -1031,9 +1031,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   </div>
   <div id="code-feedback" style="min-height:1.5rem;margin-top:0.75rem;font-family:var(--sans);font-size:15px;letter-spacing:1px;text-align:center;color:var(--muted);"></div>
 
-  <button id="code-submit-btn" class="ls-btn" style="margin-top:1rem" onclick="submitConsultantCode()">Continue with code</button>
-  <div style="text-align:center;margin-top:1rem;">
-    <button onclick="skipConsultantCode()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip — I'm exploring on my own</button>
+  <button id="code-submit-btn" class="ls-btn" style="margin-top:.75rem" onclick="submitConsultantCode()">Continue</button>
+
+  <div id="no-code-message" style="display:none;text-align:center;margin-top:2rem;font-family:var(--sans);font-size:14px;letter-spacing:0.5px;color:var(--muted);line-height:1.7;">
+    Access is limited to invited families right now.
   </div>
 </div>
 </div>
@@ -2371,19 +2372,24 @@ function goTo(n) {
   if(n===4) updateS2Voice();
 }
 
-// ── CONSULTANT CODE (SCREEN 0) ────────────────────────
+// ── ACCESS CODE GATE (SCREEN 0) ────────────────────────
+// Mandatory gate — no anonymous path. Per the Brunello Cucinelli standard
+// review (July 2026): this screen is the front door, not a side door, for
+// both the free beta cohort (Code A) and the first paid customers (Code B).
 async function submitConsultantCode() {
   var inp = document.getElementById('consultant-code-input');
   var code = inp ? inp.value.trim().toUpperCase() : '';
   var feedback = document.getElementById('code-feedback');
   var btn = document.getElementById('code-submit-btn');
+  var noCodeMsg = document.getElementById('no-code-message');
 
-  // No code entered — treat same as skip
+  // No code entered — this is the professional dead-end, not a silent
+  // bypass into the assessment. The gate stays up.
   if (!code) {
-    LS_STATE.consultant_code = null;
-    checkAssessmentEligibilityAndProceed();
+    if (noCodeMsg) noCodeMsg.style.display = 'block';
     return;
   }
+  if (noCodeMsg) noCodeMsg.style.display = 'none';
 
   // Validate against Worker
   btn.disabled = true;
@@ -2391,10 +2397,6 @@ async function submitConsultantCode() {
   if (feedback) feedback.textContent = '';
 
   try {
-    // Fixed: WORKER_URL was never defined anywhere in this file — every
-    // call here threw a ReferenceError, silently caught below, meaning
-    // invite-code validation never actually validated anything. Using the
-    // same literal API domain every other fetch() in this file already uses.
     var res = await fetch('https://api.abettercollegeconsultant.com/validate-invite-code', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -2424,7 +2426,7 @@ async function submitConsultantCode() {
     } else {
       LS_STATE.consultant_code = null;
       btn.disabled = false;
-      btn.textContent = 'Continue with code';
+      btn.textContent = 'Continue';
       if (feedback) {
         feedback.style.color = '#c0392b';
         var messages = {
@@ -2436,16 +2438,17 @@ async function submitConsultantCode() {
       }
     }
   } catch (err) {
-    // Network error — fail open so a connectivity issue never blocks a family
-    console.warn('[VECTOR] Code validation failed, continuing without code:', err);
-    LS_STATE.consultant_code = code;
-    goTo(1);
+    // Network error — per the mandatory-gate decision, this must NOT fail
+    // open into the assessment (a connectivity hiccup is not a valid
+    // access code). Ask the family to retry instead.
+    console.warn('[VECTOR] Code validation request failed:', err);
+    btn.disabled = false;
+    btn.textContent = 'Continue';
+    if (feedback) {
+      feedback.style.color = '#c0392b';
+      feedback.textContent = 'Could not verify your code — check your connection and try again.';
+    }
   }
-}
-
-function skipConsultantCode() {
-  LS_STATE.consultant_code = null;
-  checkAssessmentEligibilityAndProceed();
 }
 
 /* ── checkAssessmentEligibilityAndProceed ─────────────────────────────────
@@ -6492,7 +6495,12 @@ async function submitLifescape() {
           const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0, _schoolCount), schoolContentBlockFull);
           console.log('[callD] firing Claude, prompt length:', callDPrompt.length);
 
-          const callDText = await fireCall(callDPrompt, 3000, 0, 55000);
+          // Bumped from 55000 → 90000: this is the largest call (3000 max_tokens,
+          // often 14k+ char prompts) and was observed timing out on both the
+          // initial attempt AND the retry at 55s, leaving the school section
+          // permanently stuck with no user-facing signal. See catch block below
+          // for the honest-failure-state fix that goes with this.
+          const callDText = await fireCall(callDPrompt, 3000, 0, 90000);
           console.log('[callD] raw response length:', callDText?.length);
           console.log('[callD] raw response preview:', callDText?.slice(0,200));
 
@@ -6715,7 +6723,17 @@ async function submitLifescape() {
         }
       } catch(callDErr) {
         console.warn('callD failed gracefully:', callDErr.message);
-        // School tab shows graceful fallback — already set to "generating"
+        // Previously left the "Finding your schools... generating in the
+        // background" placeholder stuck forever with zero signal to the
+        // family. Now shows an honest failure state with a real retry.
+        var schoolsListEl = document.getElementById('schools-list');
+        if (schoolsListEl) {
+          schoolsListEl.innerHTML =
+            '<div class="industry-block">' +
+              '<div class="industry-name">We had trouble generating your school matches.</div>' +
+              '<div class="industry-why">The rest of your report is complete and unaffected. If this section stays empty, let us know and we will regenerate it for you directly.</div>' +
+            '</div>';
+        }
       }
     }
 
