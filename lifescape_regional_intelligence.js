@@ -58,13 +58,11 @@ const REGIONAL_INTELLIGENCE = {
         naics: [62, 54]
       },
       {
-        name: 'Biomanufacturing',
-        anchor: 'Van Nuys / San Fernando Valley (distinct from San Diego R&D corridor above — this is hands-on manufacturing, not lab science)',
-        industries: ['Biomanufacturing Technician Training','Pharmaceutical Production','Quality Control','GMP Manufacturing'],
-        employers: ['Baxalta','Grifols','Genentech','Amgen','Gilead'],
-        naics: [31],
-        hidden_pathway: true,
-        cc_pathway: { cc: 'LA Valley College', hire_rate: '80-85%', program_length: '6 weeks' }
+        name: 'Pharmaceutical & Biotech (Ventura County)',
+        anchor: 'Thousand Oaks / Westlake Village (Conejo Valley)',
+        industries: ['Biopharmaceutical R&D','Biotech Manufacturing','Clinical Research','Genomics'],
+        employers: ['Amgen (global HQ)','Gilead Sciences','Atara Biotherapeutics','Baxalta'],
+        naics: [62, 54]
       },
       {
         name: 'Startup & Venture Ecosystem',
@@ -86,8 +84,8 @@ const REGIONAL_INTELLIGENCE = {
           { school: 'California State University Long Beach', corridor: 'Aerospace & Defense', note: '70% LA-Long Beach concentration — SpaceX, Boeing, Northrop recruit here directly. The most efficient path into El Segundo/Hawthorne.' },
           { school: 'San Diego State University', corridor: 'Pharmaceutical & Biotech', note: '65% San Diego concentration — technology and engineering pipeline inside the biotech corridor.' },
           { school: 'University of California San Diego', corridor: 'Pharmaceutical & Biotech', note: 'Sits physically inside Torrey Pines — the center of the biotech corridor. Science programs pipeline directly into Pfizer, Illumina, and Neurocrine.' },
-          { school: 'Pepperdine University', corridor: 'Entertainment & Media', note: '45% LA concentration — Malibu location and business/law programs with strong LA entertainment market placement.' },
-          { school: 'LA Valley College', corridor: 'Biomanufacturing', note: 'A hidden pathway most families never hear about: 6-week program, 80-85% hire rate directly into Baxalta and Grifols — no 4-year degree required to start. Community college, not a university, but the fastest real career entry point in this region.' }
+          { school: 'California Lutheran University', corridor: 'Pharmaceutical & Biotech (Ventura County)', note: 'Sits in Thousand Oaks, 8 miles from Amgen\'s global headquarters — one of the largest biotech employers in the world, in a city most families never connect to biotech at all.' },
+          { school: 'Pepperdine University', corridor: 'Entertainment & Media', note: '45% LA concentration — Malibu location and business/law programs with strong LA entertainment market placement.' }
         ]
       },
       leave_and_return: {
@@ -122,6 +120,7 @@ KEY CORRIDORS BY PROFILE MATCH:
 - CPG, Action Sports & Lifestyle (Orange County): Vans, Oakley, Quiksilver — surf/skate/outdoor, brand management, consumer products
 - Fashion, Beauty & Cosmetics (Downtown LA/Chatsworth): Apparel, cosmetics manufacturing, personal care brands
 - Pharmaceutical & Biotech (San Diego/Torrey Pines): Pfizer, Illumina, Neurocrine — one of the top 3 biotech corridors in the US
+- Pharmaceutical & Biotech (Thousand Oaks/Ventura County): Amgen's global headquarters — one of the largest biotech employers in the world, a separate corridor from San Diego and often overlooked
 - Startup & Venture (distributed): Second-largest startup ecosystem in the country
 
 THREE TRAJECTORIES TO NAME EXPLICITLY:
@@ -386,16 +385,7 @@ Connect this student's specific profile to the corridor, name the trajectory typ
         industries: ['Port Logistics','Supply Chain','Agricultural Technology','Food Processing','Distribution'],
         employers: ['JAXPORT','Port Tampa Bay','Publix HQ','Darden Restaurants'],
         naics: [48, 42, 11]
-      },
-      {
-        name: 'Biomanufacturing',
-        anchor: 'St. Petersburg / Miami-Dade / Tampa Bay',
-        industries: ['Biomanufacturing Technician Training','Pharmaceutical Production','Quality Control','GMP Manufacturing'],
-        employers: ['Baxalta (Shire)','West Pharma','Biotest Pharmaceuticals'],
-        naics: [31],
-        hidden_pathway: true,
-        cc_pathway: { cc: 'St. Petersburg College / Miami-Dade College / Hillsborough Community College', hire_rate: 'strong', program_length: 'varies by program' }
-      },
+      }
     ],
     trajectories: {
       stay_close: {
@@ -408,8 +398,7 @@ Connect this student's specific profile to the corridor, name the trajectory typ
           { school: 'University of Central Florida', corridor: 'Tourism, Hospitality & Entertainment', note: '65% Florida concentration — sits in the backyard of Disney, Universal, and SeaWorld. Hospitality, entertainment operations, simulation and gaming pipeline.' },
           { school: 'Florida International University', corridor: 'Latin American Business & International Trade', note: '70% South Florida concentration — the undisputed pipeline into Miami\'s Latin American business corridor, international trade, and bilingual finance.' },
           { school: 'University of South Florida', corridor: 'Healthcare & Life Sciences', note: '60% Tampa Bay concentration — inside Moffitt Cancer Center and BayCare recruiting zone. Health sciences, public health, biomedical engineering.' },
-          { school: 'Embry-Riddle Aeronautical University', corridor: 'Aerospace, Defense & Technology', note: '40% Florida placement — the premier aerospace university in the state, sitting between Cape Canaveral and the Melbourne corridor. NASA and SpaceX recruit directly on campus.' },
-          { school: 'St. Petersburg College', corridor: 'Biomanufacturing', note: 'A hidden pathway most families never hear about: a real, named community college biomanufacturing pipeline feeding Baxalta and West Pharma — no 4-year degree required to start.' }
+          { school: 'Embry-Riddle Aeronautical University', corridor: 'Aerospace, Defense & Technology', note: '40% Florida placement — the premier aerospace university in the state, sitting between Cape Canaveral and the Melbourne corridor. NASA and SpaceX recruit directly on campus.' }
         ]
       },
       leave_and_return: {
@@ -453,303 +442,6 @@ LEAVE AND RETURN: Michigan or Georgetown finance/law → return to Brickell or P
 LEAVE AND STAY GONE: Wharton → Wall Street, not Brickell. Stanford → Silicon Valley, not Miami. Northwestern → Chicago, not Tampa. NYU → New York finance and media, no Florida equivalent.
 
 Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it. If this student has family in Florida but lives elsewhere, name Florida as a legitimate Leave and Return destination with the specific corridor their interests map to.`
-  },
-
-  // ── ATLANTA ───────────────────────────────────────────────────────────────
-  atlanta: {
-    name: 'Atlanta Metro',
-    zipPrefixes: [
-      '300','301','302','303','305','306'
-    ],
-    corridors: [
-      {
-        name: 'Logistics & Supply Chain',
-        anchor: 'Hartsfield-Jackson Airport / South Atlanta',
-        industries: ['Air Cargo & Freight','Supply Chain Management','Distribution','Aviation Operations'],
-        employers: ['Delta Air Lines','UPS','Norfolk Southern','Home Depot'],
-        naics: [48, 44]
-      },
-      {
-        name: 'Fintech & Payments',
-        anchor: 'Midtown / Buckhead',
-        industries: ['Payment Processing','Fintech','Transaction Banking','Insurance Tech'],
-        employers: ['NCR Voyix','Global Payments','Truist','Intercontinental Exchange'],
-        naics: [52, 54]
-      },
-      {
-        name: 'Film, Media & Entertainment',
-        anchor: 'Trilith Studios / Pinewood Atlanta',
-        industries: ['Film & TV Production','Post-Production','Music','Streaming Content'],
-        employers: ['Tyler Perry Studios','Trilith Studios','Marvel Studios Atlanta productions'],
-        naics: [51, 71]
-      },
-      {
-        name: 'Healthcare & Public Health',
-        anchor: 'Emory / CDC Corridor (Druid Hills)',
-        industries: ['Public Health','Biomedical Research','Hospital Systems','Health Policy'],
-        employers: ['CDC','Emory Healthcare','Grady Health System','Piedmont Healthcare'],
-        naics: [62, 54]
-      },
-      {
-        name: 'Corporate HQ & Consulting',
-        anchor: 'Downtown / Midtown Atlanta',
-        industries: ['Management Consulting','Corporate Strategy','Beverage & Consumer Brands','Enterprise Software'],
-        employers: ['Coca-Cola','UPS','Home Depot','Cox Enterprises','NCR Voyix'],
-        naics: [54, 51]
-      },
-      {
-        name: 'Biomanufacturing',
-        anchor: 'Gwinnett / Metro Atlanta',
-        industries: ['Biomanufacturing Technician Training','Pharmaceutical Production','Quality Control','GMP Manufacturing'],
-        employers: ['WuXi AppTec','Aventacell Biomedical'],
-        naics: [31],
-        hidden_pathway: true,
-        cc_pathway: { cc: 'Gwinnett Technical College', hire_rate: 'moderate', program_length: 'varies by program' }
-      }
-    ],
-    trajectories: {
-      stay_close: {
-        label: 'Stay Close',
-        summary: 'Atlanta-area schools that put you directly inside a corridor\'s recruiting zone.',
-        connections: [
-          { school: 'Georgia Institute of Technology', corridor: 'Logistics & Corporate HQ', note: 'Deep, direct pipeline into Atlanta corporate and logistics recruiting — one of the strongest in-state-to-industry connections in the Southeast.' },
-          { school: 'Emory University', corridor: 'Healthcare & Public Health', note: 'Sits inside the CDC/Emory Healthcare corridor directly — public health and pre-med students recruit from campus.' },
-          { school: 'Morehouse College', corridor: 'Corporate HQ & Consulting', note: 'Strong Atlanta corporate and consulting placement, particularly into Fortune 500 companies headquartered locally.' },
-          { school: 'Spelman College', corridor: 'Corporate HQ & Consulting', note: 'Same corporate recruiting strength as Morehouse, with particular depth into consulting and consumer brands.' },
-          { school: 'University of Georgia', corridor: 'Corporate HQ & Consulting', note: 'An hour from the city but one of the strongest Atlanta-feeder schools in the Southeast — Terry College graduates recruit heavily into Atlanta banking, consulting, and Fortune 500 headquarters.' },
-          { school: 'Georgia State University', corridor: 'Fintech & Payments', note: 'Physically inside the Midtown corridor — direct pipeline into Atlanta\'s payments and fintech employers, particularly out of the Robinson College of Business.' },
-          { school: 'Gwinnett Technical College', corridor: 'Biomanufacturing', note: 'A hidden pathway most families never hear about: a named community college biomanufacturing pipeline into WuXi AppTec and Aventacell Biomedical — no 4-year degree required to start.' }
-        ]
-      },
-      leave_and_return: {
-        label: 'Leave and Return',
-        summary: 'Schools outside the region with documented Atlanta return pipelines.',
-        connections: [
-          { school: 'University of Michigan', corridor: 'Corporate HQ & Consulting', note: 'Well-documented consulting and consumer-brand pipeline back into Atlanta corporate headquarters.' },
-          { school: 'Vanderbilt University', corridor: 'Healthcare & Public Health', note: 'Southeast healthcare network with a real pipeline back into Emory and Atlanta hospital systems.' },
-          { school: 'Northwestern University', corridor: 'Film, Media & Entertainment', note: 'Medill and film program graduates increasingly return to Atlanta\'s growing production industry rather than only LA or New York.' }
-        ]
-      },
-      leave_and_stay: {
-        label: 'Leave and Stay Gone',
-        summary: 'Schools that represent a geographic bet away from Atlanta.',
-        connections: [
-          { school: 'Wharton (University of Pennsylvania)', corridor: 'National Finance', note: 'Wall Street and national finance draw Atlanta students away permanently far more often than a return to local fintech.' },
-          { school: 'Stanford University', corridor: 'Silicon Valley Tech', note: 'An Atlanta student at Stanford is making a Silicon Valley bet, not a Midtown tech-corridor one.' },
-          { school: 'NYU', corridor: 'National Media & Finance', note: 'New York media and finance pull graduates away from Atlanta\'s growing but smaller equivalent industries.' }
-        ]
-      }
-    },
-    callc_context: `ATLANTA REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
-
-This student lives in the fastest-growing corporate and logistics hub in the Southeast. Atlanta is not one industry — it splits into distinct corridors built around a handful of anchor employers and institutions.
-
-KEY CORRIDORS BY PROFILE MATCH:
-- Logistics & Supply Chain (Hartsfield-Jackson/South Atlanta): Delta, UPS, Norfolk Southern — air cargo, distribution, supply chain
-- Fintech & Payments (Midtown/Buckhead): NCR Voyix, Global Payments, Truist — one of the densest payments-processing corridors in the country
-- Film, Media & Entertainment (Trilith/Pinewood): major studio productions — Atlanta is now one of the largest film production hubs in North America
-- Healthcare & Public Health (Emory/CDC corridor): CDC, Emory Healthcare, Grady — public health and biomedical research anchored by federal presence
-- Corporate HQ & Consulting (Downtown/Midtown): Coca-Cola, UPS, Home Depot, Cox — dense concentration of Fortune 500 headquarters
-
-THREE TRAJECTORIES TO NAME EXPLICITLY:
-STAY CLOSE: Georgia Tech → Atlanta logistics/corporate recruiting. Emory → CDC/healthcare corridor. Morehouse/Spelman → Atlanta corporate and consulting pipeline.
-LEAVE AND RETURN: Michigan → consulting/consumer-brand return to Atlanta HQs. Vanderbilt → Southeast healthcare return to Emory network. Northwestern → media/film return to Atlanta's growing production industry.
-LEAVE AND STAY GONE: Wharton → Wall Street, not Atlanta fintech. Stanford → Silicon Valley, not Midtown tech. NYU → New York media/finance, not Atlanta's smaller equivalent.
-
-Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it.`
-  },
-
-  // ── DALLAS-FORT WORTH ───────────────────────────────────────────────────────
-  dallas: {
-    name: 'Dallas-Fort Worth Metro',
-    zipPrefixes: [
-      '750','751','752','753','760','761','762'
-    ],
-    corridors: [
-      {
-        name: 'Corporate HQ & Consulting',
-        anchor: 'Downtown Dallas / Las Colinas / Plano',
-        industries: ['Corporate Strategy','Management Consulting','Telecom','Retail HQ Operations'],
-        employers: ['AT&T','Toyota North America','American Airlines','7-Eleven','Southwest Airlines'],
-        naics: [54, 51]
-      },
-      {
-        name: 'Energy',
-        anchor: 'Downtown Dallas / Irving',
-        industries: ['Oil & Gas','Energy Trading','Pipeline Operations','Energy Finance'],
-        employers: ['ExxonMobil','Energy Transfer','Atmos Energy'],
-        naics: [21, 22]
-      },
-      {
-        name: 'Finance & Banking',
-        anchor: 'Downtown Dallas / Uptown',
-        industries: ['Commercial Banking','Investment Management','Insurance','Real Estate Finance'],
-        employers: ['Comerica','Capital One (Plano)','Fidelity Investments','Highland Capital'],
-        naics: [52, 54]
-      },
-      {
-        name: 'Tech & Telecom ("Silicon Prairie")',
-        anchor: 'Plano / Frisco / Richardson',
-        industries: ['Telecommunications','Enterprise Tech','Semiconductor','Defense Electronics'],
-        employers: ['Texas Instruments','Cisco','Ericsson','Raytheon'],
-        naics: [51, 54, 33]
-      },
-      {
-        name: 'Logistics & Distribution',
-        anchor: 'DFW Airport / Alliance Corridor',
-        industries: ['Air Cargo','Freight & Distribution','E-commerce Fulfillment'],
-        employers: ['American Airlines','FedEx','Amazon','BNSF Railway'],
-        naics: [48, 44]
-      }
-    ],
-    trajectories: {
-      stay_close: {
-        label: 'Stay Close',
-        summary: 'DFW-area schools that put you directly inside a corridor\'s recruiting zone.',
-        connections: [
-          { school: 'Southern Methodist University', corridor: 'Corporate HQ & Consulting / Finance', note: 'Cox School of Business sits directly inside the Uptown/Downtown corridor — one of the strongest local corporate and finance recruiting pipelines in the region.' },
-          { school: 'Texas Christian University', corridor: 'Energy & Finance', note: 'Fort Worth-based, with a real pipeline into Fort Worth energy and finance firms, plus Dallas corporate recruiting.' },
-          { school: 'University of Texas at Dallas', corridor: 'Tech & Telecom', note: 'Sits inside the Plano/Richardson tech corridor directly — strong computer science and engineering placement into Texas Instruments, Cisco, and defense electronics.' }
-        ]
-      },
-      leave_and_return: {
-        label: 'Leave and Return',
-        summary: 'Schools outside the region with documented DFW return pipelines.',
-        connections: [
-          { school: 'University of Texas at Austin', corridor: 'Corporate HQ & Energy', note: 'Deep, well-documented pipeline from Austin back into Dallas corporate headquarters and energy firms — one of the strongest in-state return patterns in the country.' },
-          { school: 'Texas A&M University', corridor: 'Energy & Logistics', note: 'Strong engineering and energy pipeline back into DFW, particularly into oil & gas and logistics operations.' },
-          { school: 'Vanderbilt University', corridor: 'Finance & Consulting', note: 'Southern private-school network with a real pipeline back into Dallas finance and consulting.' }
-        ]
-      },
-      leave_and_stay: {
-        label: 'Leave and Stay Gone',
-        summary: 'Schools that represent a geographic bet away from DFW.',
-        connections: [
-          { school: 'Wharton (University of Pennsylvania)', corridor: 'National Finance', note: 'Wall Street draws graduates away from Dallas finance permanently far more often than a return to Uptown banking.' },
-          { school: 'Stanford University', corridor: 'Silicon Valley Tech', note: 'A DFW student at Stanford is making a Silicon Valley bet, not a Plano/Richardson tech-corridor one.' },
-          { school: 'Columbia University', corridor: 'National Media & Finance', note: 'New York finance and media pull graduates away from Dallas\'s corporate-HQ equivalent.' }
-        ]
-      }
-    },
-    callc_context: `DALLAS-FORT WORTH REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
-
-This student lives inside one of the densest concentrations of Fortune 500 corporate headquarters in the country. DFW is not one industry — it splits into distinct corridors built around corporate HQs, energy, finance, tech, and logistics.
-
-KEY CORRIDORS BY PROFILE MATCH:
-- Corporate HQ & Consulting (Downtown/Las Colinas/Plano): AT&T, Toyota North America, American Airlines — one of the highest concentrations of major corporate headquarters in the U.S.
-- Energy (Downtown/Irving): ExxonMobil, Energy Transfer — a major U.S. energy-sector hub outside Houston
-- Finance & Banking (Uptown): Comerica, Capital One, Fidelity — growing regional banking and investment center
-- Tech & Telecom "Silicon Prairie" (Plano/Frisco/Richardson): Texas Instruments, Cisco, Ericsson — a real, underrated tech corridor
-- Logistics & Distribution (DFW Airport/Alliance): American Airlines, FedEx, Amazon, BNSF — one of the busiest air-cargo and freight hubs in North America
-
-THREE TRAJECTORIES TO NAME EXPLICITLY:
-STAY CLOSE: SMU → Uptown/Downtown corporate and finance recruiting. TCU → Fort Worth energy and finance. UT Dallas → Plano/Richardson tech corridor.
-LEAVE AND RETURN: UT Austin → strong return pipeline into Dallas corporate HQs and energy. Texas A&M → energy and logistics return. Vanderbilt → Southern network back into Dallas finance.
-LEAVE AND STAY GONE: Wharton → Wall Street, not Uptown banking. Stanford → Silicon Valley, not Plano tech. Columbia → New York finance/media, not Dallas corporate.
-
-Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it.`
-  },
-
-  // ── WASHINGTON DC / VIRGINIA SUBURBS ─────────────────────────────────────────
-  dc_metro: {
-    name: 'Washington DC Metro',
-    zipPrefixes: [
-      '200','201','202','220','221','222','223','224'
-    ],
-    corridors: [
-      {
-        name: 'Federal Government & Policy',
-        anchor: 'Capitol Hill / Federal Triangle',
-        industries: ['Federal Agencies','Legislative Affairs','Regulatory Policy','Federal Law'],
-        employers: ['State Department','Department of Defense','EPA','Congressional offices'],
-        naics: [92]
-      },
-      {
-        name: 'Defense & Intelligence Contracting',
-        anchor: 'Tysons Corner / Reston / Arlington',
-        industries: ['Defense Contracting','Cybersecurity','Intelligence Analysis','Systems Engineering'],
-        employers: ['Booz Allen Hamilton','Northrop Grumman','Leidos','CIA','NSA'],
-        naics: [92, 54]
-      },
-      {
-        name: 'International Affairs & Diplomacy',
-        anchor: 'Foggy Bottom / Dupont Circle',
-        industries: ['Diplomacy','International Development','Global Policy','NGO Leadership'],
-        employers: ['World Bank','State Department','USAID','major international NGOs'],
-        naics: [92, 54]
-      },
-      {
-        name: 'Law & Regulatory Affairs',
-        anchor: 'Downtown DC / K Street',
-        industries: ['Regulatory Law','Lobbying','Government Affairs','Public Interest Law'],
-        employers: ['Major DC law firms','K Street lobbying firms','federal regulatory agencies'],
-        naics: [54]
-      },
-      {
-        name: 'Consulting & Think Tanks',
-        anchor: 'Downtown DC / Massachusetts Ave "Think Tank Row"',
-        industries: ['Management Consulting','Public Policy Research','Economic Analysis'],
-        employers: ['Deloitte','McKinsey (DC)','Brookings','RAND'],
-        naics: [54]
-      },
-      {
-        name: 'Biomanufacturing',
-        anchor: 'Northern Virginia (Annandale)',
-        industries: ['Biomanufacturing Technician Training','Pharmaceutical Production','Quality Control','GMP Manufacturing'],
-        employers: ['Merck','Covance','ATCC'],
-        naics: [31],
-        hidden_pathway: true,
-        cc_pathway: { cc: 'Northern Virginia Community College', hire_rate: 'moderate', program_length: 'varies by program' }
-      }
-    ],
-    trajectories: {
-      stay_close: {
-        label: 'Stay Close',
-        summary: 'DC-area schools that put you directly inside a corridor\'s recruiting zone.',
-        connections: [
-          { school: 'Georgetown University', corridor: 'International Affairs & Diplomacy / Federal Policy', note: 'The School of Foreign Service sits directly inside the diplomatic corridor — unmatched pipeline into State Department, World Bank, and international NGOs.' },
-          { school: 'George Washington University', corridor: 'Federal Government & Policy', note: 'Blocks from Foggy Bottom and Federal Triangle — direct recruiting pipeline into federal agencies and government affairs.' },
-          { school: 'George Mason University', corridor: 'Defense & Intelligence Contracting', note: 'Sits inside the Tysons/Reston corridor directly — strong cybersecurity and intelligence-adjacent degree pipeline into Booz Allen, Northrop Grumman, and federal contractors.' },
-          { school: 'American University', corridor: 'Law & Regulatory Affairs / Policy', note: 'Washington College of Law and School of Public Affairs feed directly into K Street and regulatory agencies.' },
-          { school: 'Northern Virginia Community College', corridor: 'Biomanufacturing', note: 'A hidden pathway most families never hear about: a real, named community college biomanufacturing pipeline into Merck, Covance, and ATCC — no 4-year degree required to start.' }
-        ]
-      },
-      leave_and_return: {
-        label: 'Leave and Return',
-        summary: 'Schools outside the region with documented DC return pipelines.',
-        connections: [
-          { school: 'University of Virginia', corridor: 'Federal Policy & Law', note: 'Well-documented pipeline from Charlottesville back into DC federal agencies, law firms, and consulting.' },
-          { school: 'University of Michigan', corridor: 'Consulting & Think Tanks', note: 'Strong public policy and consulting pipeline back into DC-based firms and research institutions.' },
-          { school: 'Duke University', corridor: 'Federal Policy & International Affairs', note: 'Sanford School graduates return to DC policy and international development roles at a well-documented rate.' }
-        ]
-      },
-      leave_and_stay: {
-        label: 'Leave and Stay Gone',
-        summary: 'Schools that represent a geographic bet away from DC.',
-        connections: [
-          { school: 'Wharton (University of Pennsylvania)', corridor: 'National Finance', note: 'Wall Street draws graduates away from DC policy and consulting permanently.' },
-          { school: 'Stanford University', corridor: 'Silicon Valley Tech', note: 'A DC-area student at Stanford is making a Silicon Valley bet, not a Tysons/Reston defense-tech one.' },
-          { school: 'NYU', corridor: 'National Media & Finance', note: 'New York finance and media pull graduates away from DC\'s policy-centric equivalent.' }
-        ]
-      }
-    },
-    callc_context: `WASHINGTON DC METRO REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
-
-This student lives inside the center of federal power and policy in the United States. DC is not one industry — it splits into distinct corridors built around government, defense, diplomacy, law, and policy research.
-
-KEY CORRIDORS BY PROFILE MATCH:
-- Federal Government & Policy (Capitol Hill/Federal Triangle): State Department, DoD, EPA — direct federal agency pipeline
-- Defense & Intelligence Contracting (Tysons/Reston/Arlington): Booz Allen, Northrop Grumman, CIA, NSA — one of the densest defense-contracting corridors in the country
-- International Affairs & Diplomacy (Foggy Bottom/Dupont Circle): World Bank, State Department, USAID — a genuinely global corridor unmatched elsewhere in the U.S.
-- Law & Regulatory Affairs (K Street): major law firms, lobbying, regulatory agencies
-- Consulting & Think Tanks (Think Tank Row): Deloitte, McKinsey DC, Brookings, RAND — policy-adjacent consulting and research
-
-THREE TRAJECTORIES TO NAME EXPLICITLY:
-STAY CLOSE: Georgetown → diplomatic/international affairs corridor. GW → federal government pipeline. George Mason → Tysons/Reston defense-tech corridor. American → K Street law and policy.
-LEAVE AND RETURN: UVA → federal policy and law return. Michigan → consulting/think-tank return. Duke → federal policy and international affairs return.
-LEAVE AND STAY GONE: Wharton → Wall Street, not DC policy. Stanford → Silicon Valley, not Tysons defense-tech. NYU → New York finance/media, not DC's policy-centric equivalent.
-
-Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it.`
   }
 };
 
@@ -773,109 +465,6 @@ function resolveRegion(zip) {
 function getRegionalCallCContext(zip) {
   const region = resolveRegion(zip);
   return region ? region.callc_context : '';
-}
-
-// ── California Trajectory Resolver ────────────────────────────────────────────
-// First real implementation of "stay within region" trajectory logic.
-// Built July 2026 as the working example other regions will extend from,
-// once each region has its own metro-cluster breakdown (most don't yet —
-// see CA_SCHOOL_CLUSTER's comment for known gaps).
-//
-// Maps each real California school to its metro cluster (socal/bayarea).
-// Built from direct knowledge of school locations — NOT fuzzy string
-// matching against location text, which is exactly the bug class that
-// caused out-of-region schools to leak into earlier reports.
-//
-// KNOWN GAP: Chico, Fresno, and Merced sit in the Central Valley/Sacramento
-// area — genuinely neither SoCal nor Bay Area. They're intentionally left
-// unclassified (null) rather than force-fit into the wrong cluster. A
-// student matched to one of these schools gets no cluster-based trajectory
-// framing until a real "central_valley" cluster is built out.
-const CA_SCHOOL_CLUSTER = {
-  // Southern California
-  'Azusa Pacific University': 'socal',
-  'Biola University': 'socal',
-  'California Institute of Technology': 'socal',
-  'California State University Fullerton': 'socal',
-  'California State University, Fullerton': 'socal',
-  'California State University Long Beach': 'socal',
-  'California State University, Long Beach': 'socal',
-  'California State University Los Angeles': 'socal',
-  'California State University Northridge': 'socal',
-  'California State University San Bernardino': 'socal',
-  'Claremont McKenna College': 'socal',
-  'Harvey Mudd College': 'socal',
-  'Loyola Marymount University': 'socal',
-  'Occidental College': 'socal',
-  'Pepperdine University': 'socal',
-  'Point Loma Nazarene University': 'socal',
-  'Pomona College': 'socal',
-  'San Diego State University': 'socal',
-  'UC Riverside': 'socal',
-  'UC San Diego': 'socal',
-  'UC Santa Barbara': 'socal',
-  'UCLA': 'socal',
-  'University of California Irvine': 'socal',
-  'University of California Los Angeles': 'socal',
-  'University of California Santa Barbara': 'socal',
-  'University of California, Los Angeles': 'socal',
-  'University of California, San Diego': 'socal',
-  'University of California, Santa Barbara': 'socal',
-  'University of San Diego': 'socal',
-  'University of Southern California': 'socal',
-  'USC': 'socal',
-
-  // Bay Area
-  'San Jose State University': 'bayarea',
-  'San José State University': 'bayarea',
-  'Santa Clara University': 'bayarea',
-  'Stanford University': 'bayarea',
-  'UC Berkeley': 'bayarea',
-  'University of California, Berkeley': 'bayarea',
-  'University of California Santa Cruz': 'bayarea',
-  'University of California, Santa Cruz': 'bayarea',
-  'UC Santa Cruz': 'bayarea',
-  'University of San Francisco': 'bayarea',
-  'San Francisco State University': 'bayarea',
-  'California State University Maritime Academy': 'bayarea', // Vallejo
-  "Saint Mary's College of California": 'bayarea', // Moraga
-
-  // Known gap — Central Valley/Sacramento, neither cluster. Left unmapped
-  // on purpose (see comment above) rather than guessed.
-  // 'California State University Chico': null,
-  // 'California State University Fresno': null,
-  // 'University of California, Merced': null,
-  // 'California Polytechnic State University San Luis Obispo': null, // Central Coast — also its own thing
-  // 'Westmont College': null, // Santa Barbara, Central Coast
-  // 'Deep Springs College': null, // remote Eastern Sierra
-};
-
-// Returns 'socal', 'bayarea', or null (unclassified/out of state).
-function getCASchoolCluster(schoolName) {
-  if (!schoolName) return null;
-  return CA_SCHOOL_CLUSTER[schoolName] || null;
-}
-
-// Returns one of: 'stay_close', 'leave_same_region', or null.
-// null means either the school isn't a classified CA school, or the
-// student's home ZIP didn't resolve to a known CA cluster — in both cases,
-// the caller should omit trajectory framing rather than guess.
-//
-// 'leave_same_region' deliberately does NOT split further into "return" vs
-// "stay gone" here — that distinction depends on career-gravity data this
-// function doesn't have. The caller (prompt-building code) should let the
-// AI make that call using the student's actual career/world data, but must
-// only ever name the two real CA clusters (Bay Area / Southern California)
-// — never imply the student is leaving California, since region is a hard
-// filter and they explicitly chose to stay in it.
-function resolveCATrajectory(homeZip, schoolName) {
-  const homeRegion = resolveRegion(homeZip);
-  if (!homeRegion || (homeRegion.key !== 'socal' && homeRegion.key !== 'bayarea')) return null;
-
-  const schoolCluster = getCASchoolCluster(schoolName);
-  if (!schoolCluster) return null;
-
-  return schoolCluster === homeRegion.key ? 'stay_close' : 'leave_same_region';
 }
 
 // ── NAICS → Corridor mapping per region ──────────────────────────────────────
@@ -917,6 +506,112 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'AgriTech, Logistics & Supply Chain',          naics: [48, 42, 11], riasec: ['R','C','E'] }
   ]
 };
+
+// ── resolveStudentCorridor ────────────────────────────────────────────────────
+// Given a student's NAICS sectors, RIASEC codes, and regional key,
+// returns the single best-matching corridor for this student in this region.
+// Uses a weighted score: NAICS overlap (primary) + RIASEC affinity (secondary)
+//
+// @param naicsSectors  array of {sector, count/score} from getNAICSProfile()
+// @param riasec        array of {code, score} from getRIASECProfile()
+// @param regionalKey   'socal' | 'bayarea' | 'chicago'
+// @returns { corridorName, naics, riasec, score } | null
+
+function resolveStudentCorridor(naicsSectors, riasec, regionalKey) {
+  if (!naicsSectors || !naicsSectors.length || !regionalKey) return null;
+
+  const corridorMap = CORRIDOR_NAICS_MAP[regionalKey];
+  if (!corridorMap) return null;
+
+  // Student's top RIASEC codes (top 3, ordered)
+  const studentRIASEC = (riasec || []).slice(0, 3).map(r => r.code);
+  const studentRIASECSet = new Set(studentRIASEC);
+
+  // High-signal NAICS codes that are corridor-specific (not generic crossovers)
+  // NAICS 71 (Arts/Entertainment) almost uniquely signals Entertainment — boost it
+  // NAICS 52 (Finance) almost uniquely signals Finance — boost it
+  // NAICS 62 (Healthcare) almost uniquely signals Healthcare — boost it
+  // NAICS 44 (Retail/Consumer) almost uniquely signals CPG/Consumer — boost it
+  // NAICS 33 (Manufacturing) almost uniquely signals Aerospace/Industrial — boost it
+  const HIGH_SIGNAL_NAICS = new Set([71, 52, 62, 44, 31, 33, 48]);
+
+  // Score each corridor
+  const scored = corridorMap.map(corridor => {
+    let score = 0;
+
+    // Primary signal — NAICS overlap, weighted by position and specificity
+    naicsSectors.slice(0, 5).forEach((n, idx) => {
+      if (corridor.naics.includes(n.sector)) {
+        const baseWeight = (5 - idx) * 3; // top sector worth 15, 5th worth 3
+        // High-signal NAICS get a stronger boost when they appear in top-2 positions
+        // This ensures Finance(52), Healthcare(62), Entertainment(71) aren't beaten
+        // by generic 51/54 combinations even when both sectors are tied by count
+        const isTopPosition = idx <= 1;
+        const specificityBoost = HIGH_SIGNAL_NAICS.has(n.sector) ? (isTopPosition ? 14 : 8) : 0;
+        score += baseWeight + specificityBoost;
+      }
+    });
+
+    // Secondary signal — RIASEC affinity, ordered match matters
+    corridor.riasec.forEach((code, corridorRIASECIdx) => {
+      const studentIdx = studentRIASEC.indexOf(code);
+      if (studentIdx !== -1) {
+        // Both corridor position and student position matter
+        const corridorWeight = (3 - corridorRIASECIdx); // primary corridor code worth 3
+        const studentWeight = (3 - studentIdx);          // student's primary code worth 3
+        score += corridorWeight * studentWeight;
+      }
+    });
+
+    return { ...corridor, score };
+  });
+
+  // Return highest-scoring corridor, or null if no real match (score < 3)
+  const best = scored.sort((a, b) => b.score - a.score)[0];
+  return best && best.score >= 3 ? best : null;
+}
+
+// ── getStudentCorridorContext ─────────────────────────────────────────────────
+// Returns a short, prompt-ready string naming the student's matched corridor
+// Used to sharpen callC prompt beyond "here are all corridors"
+
+function getStudentCorridorContext(naicsSectors, riasec, zip) {
+  const region = resolveRegion(zip);
+  if (!region) return '';
+
+  const corridor = resolveStudentCorridor(naicsSectors, riasec, region.key);
+  if (!corridor) return '';
+
+  // Find the full corridor object from the region for employer/detail data
+  const fullCorridor = region.corridors.find(c => c.name === corridor.corridorName);
+  if (!fullCorridor) return `Student corridor match: ${corridor.corridorName}`;
+
+  return `STUDENT CORRIDOR MATCH: ${corridor.corridorName} (${fullCorridor.anchor})
+Key employers in this corridor: ${fullCorridor.employers.slice(0,4).join(', ')}
+Industries: ${fullCorridor.industries.slice(0,3).join(', ')}`;
+}
+
+// ── resolveRegion ─────────────────────────────────────────────────────────────
+// Returns the matching REGIONAL_INTELLIGENCE entry for a given ZIP code
+// Returns null if no region matches (graceful fallback to ZIP-only geo)
+
+function resolveRegion(zip) {
+  if (!zip || typeof zip !== 'string') return null;
+  const prefix = zip.trim().slice(0, 3);
+  for (const [key, region] of Object.entries(REGIONAL_INTELLIGENCE)) {
+    if (region.zipPrefixes.includes(prefix)) return { key, ...region };
+  }
+  return null;
+}
+
+// ── getRegionalCallCContext ───────────────────────────────────────────────────
+// Returns the callC prompt context string for a given ZIP
+// Returns empty string if no region matches
+
+function getRegionalCallCContext(zip) {
+  const region = resolveRegion(zip);
+  return region ? region.callc_context : '';
+}
 
 // ── resolveStudentCorridor ────────────────────────────────────────────────────
 // Given a student's NAICS sectors, RIASEC codes, and regional key,

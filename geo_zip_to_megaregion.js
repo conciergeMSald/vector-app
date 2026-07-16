@@ -10,6 +10,12 @@
  *     Las Vegas): 8 of 11 megaregions covered.
  *   - 3 of 11 megaregions have zero coverage: Florida, Gulf Coast,
  *     Cascadia (Portland/Oregon still open — only Seattle/WA built so far).
+ *   - Research Triangle (Durham/Chapel Hill/Raleigh, under Piedmont Atlantic)
+ *     added 2026-07-15 as a 4-ZIP SEED ONLY (Duke, UNC, NC State campus ZIPs
+ *     + RTP) — not a real pass. Flagged here so it isn't mistaken for full
+ *     coverage; a proper Research Triangle pass (residential ZIPs, employer
+ *     density, corridor structure matching the other 8 megaregions) is still
+ *     an open build item.
  */
 
 const GEO_ZIP_TO_MEGAREGION = {
@@ -728,6 +734,30 @@ const GEO_ZIP_TO_MEGAREGION = {
     "megaregion": "Northeast",
     "pass": "NY/Boston/DC pass 4",
     "county": "Middlesex"
+  },
+  "27708": {
+    "megaregion": "Piedmont Atlantic",
+    "subgroup": "Research Triangle",
+    "pass": "Research Triangle seed — Duke, UNC, NC State only, not a full pass",
+    "county": "Durham"
+  },
+  "27514": {
+    "megaregion": "Piedmont Atlantic",
+    "subgroup": "Research Triangle",
+    "pass": "Research Triangle seed — Duke, UNC, NC State only, not a full pass",
+    "county": "Orange"
+  },
+  "27606": {
+    "megaregion": "Piedmont Atlantic",
+    "subgroup": "Research Triangle",
+    "pass": "Research Triangle seed — Duke, UNC, NC State only, not a full pass",
+    "county": "Wake"
+  },
+  "27709": {
+    "megaregion": "Piedmont Atlantic",
+    "subgroup": "Research Triangle",
+    "pass": "Research Triangle seed — Duke, UNC, NC State only, not a full pass",
+    "county": "Durham"
   }
 };
 

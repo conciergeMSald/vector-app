@@ -1487,26 +1487,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Laid-back, outdoorsy, ambitious undercurrent via Nike ties.",
       "leadershipStyle": "Leadership through Nike-alumni network access and Pacific Northwest business relationships."
     },
-    "institutionIdentity": {
-      "archetype": "The Nike Campus — Sports Business and Pacific Northwest Innovation",
-      "institutionalPersonality": "laid-back, ambitious, Nike-adjacent, outdoorsy",
-      "cultureKeywords": [
-        "Nike",
-        "Sports Business",
-        "Pacific Northwest",
-        "Outdoors",
-        "Innovation"
-      ],
-      "missionOrientation": "Delivering strong business and sports management education with unmatched direct Nike alumni access.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Applied business education reinforced by deep Nike and Pacific Northwest corporate relationships.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly progressive, environmentally engaged.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in sports business; solid regional business prestige more broadly.",
-      "socialClimate": "Laid-back, outdoorsy, ambitious undercurrent via Nike ties.",
-      "leadershipStyle": "Leadership through Nike-alumni network access and Pacific Northwest business relationships."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "NorCal Innovation Corridor",
       "regionalRole": "The primary sports business talent engine for the Pacific Northwest, anchored by Nike."
@@ -1568,33 +1548,101 @@ const UNIVERSITY_DB_V5 = {
         "Ambitious"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Oregon does not formally impact most majors, though the Lundquist College of Business sports business concentration has grown popular enough to create real informal advising and course-seat pressure given its Nike-driven national reputation."
+    },
     "hiddenOpportunities": {
-      "nikeAlumniPipeline": {
-        "strength": 90,
-        "notes": "Phil Knight's Nike money and alumni ties create direct pathways into Nike leadership roles most families don't realize exist."
-      }
+      "underratedMajors": [
+        "Product Design",
+        "Journalism (Sports Media)",
+        "Environmental Science",
+        "Cinema Studies",
+        "Advertising"
+      ],
+      "hiddenCareerPipelines": [
+        "Athletic Apparel Design and Product Development",
+        "Sports Marketing and Brand Management",
+        "Sports Media and Broadcasting",
+        "Environmental Science and Outdoor Recreation Policy",
+        "Advertising and Creative Strategy"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Nike",
+        "Adidas America",
+        "Columbia Sportswear",
+        "Portland's outdoor apparel and footwear industry cluster",
+        "Pacific Northwest tech companies"
+      ],
+      "overlookedStrengths": [
+        "Phil Knight's Nike money has funded major science and business infrastructure on campus, creating direct pathways into Nike leadership roles most families don't realize exist.",
+        "Oregon's sports business program is arguably the best in the country for students who want to work in athletic apparel, sports marketing, or sports management — a genuinely singular institutional advantage.",
+        "Portland's broader footwear and outdoor apparel industry cluster — Nike, Adidas America, Columbia Sportswear all headquartered in the region — gives Oregon students a geographic advantage no other university's sports business program can replicate."
+      ]
     },
     "networkCapital": {
-      "strength": 82,
-      "notes": "Direct Nike alumni network plus growing Portland-Seattle tech/business corridor placement."
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 78,
+      "executiveAccess": 76,
+      "internshipNetwork": 84,
+      "familyBusinessExposure": 42,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 82,
+      "donorNetworkStrength": 76,
+      "boardMemberDensity": 58
     },
     "economicEcosystem": {
-      "sportsBusinessApparel": {
-        "strength": 92,
-        "notes": "Unmatched pipeline into Nike and the broader athletic apparel industry."
-      },
-      "marketing": {
-        "strength": 82,
-        "notes": "Strong marketing placement reinforced by Nike ties."
-      }
+      "primaryIndustries": [
+        "Athletic Apparel and Footwear",
+        "Sports Marketing and Business",
+        "Outdoor Recreation",
+        "Technology",
+        "Advertising"
+      ],
+      "regionalEconomicDrivers": [
+        "Athletic Apparel Industry (Nike, Adidas, Columbia)",
+        "Portland-Seattle Tech Corridor",
+        "Outdoor Recreation Industry",
+        "Sports Marketing and Media"
+      ],
+      "topEmployers": [
+        "Nike",
+        "Adidas America",
+        "Columbia Sportswear",
+        "Pacific Northwest tech companies",
+        "Regional advertising agencies"
+      ],
+      "emergingIndustries": [
+        "Sustainable Apparel Manufacturing",
+        "Sports Analytics",
+        "Outdoor Recreation Technology",
+        "Digital Marketing"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 52,
+      "corporateHeadquartersDensity": 56,
+      "healthcareHubStrength": 50,
+      "innovationIndex": 68
     },
     "geographicInfluence": {
-      "strength": 74,
-      "notes": "Strong across Oregon and the Pacific Northwest, with distinctive national sports business reach."
+      "dominantMarket": "Pacific Northwest — Athletic Apparel and Sports Business",
+      "secondaryMarkets": [
+        "San Francisco CA",
+        "Los Angeles CA"
+      ],
+      "alumniStrongholds": [
+        "Portland OR",
+        "Seattle WA",
+        "San Francisco CA"
+      ]
     },
     "socialCapital": {
-      "strength": 80,
-      "notes": "Lundquist Business cohorts build direct ties to Nike and the broader Portland-Seattle business corridor."
+      "greekLifeInfluence": 26,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 74,
+      "crossDisciplinaryInteraction": 68,
+      "civicEngagement": 66
     },
     "industryPathways": {
     "sportsBusiness": { "strength": 92, "notes": "Arguably the best sports business pipeline in the country via Nike." },
@@ -5943,6 +5991,10 @@ const UNIVERSITY_DB_V5 = {
         "Difficulty navigating self-directed elite ecosystem"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Harvard does not formally impact any undergraduate concentration; every field is open to any student regardless of GPA, though economics and computer science carry substantial informal competitive intensity given their enrollment volume and recruiting prestige."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Applied Mathematics",
@@ -6292,6 +6344,10 @@ const UNIVERSITY_DB_V5 = {
         "Mismatch with self-directed system"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Brown's Open Curriculum means no concentration is formally capped or GPA-gated, though the computer science concentration has grown popular enough to create real informal capacity pressure on advising and course seats."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Cognitive Science",
@@ -6525,26 +6581,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Big Ten spirited, technically serious.",
       "leadershipStyle": "Leadership through technical excellence and direct tech-industry recruiting relationships."
     },
-    "institutionIdentity": {
-      "archetype": "The Silicon Valley Feeder — Elite CS at Public Scale",
-      "institutionalPersonality": "technically rigorous, ambitious, Big Ten spirited",
-      "cultureKeywords": [
-        "Grainger CS",
-        "Silicon Valley Pipeline",
-        "Big Ten",
-        "Elite Selectivity",
-        "Value"
-      ],
-      "missionOrientation": "Delivering elite computer science and engineering education at public-school scale and cost.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Rigorous technical education reinforced by direct Silicon Valley and Chicago tech recruiting relationships.",
-      "competitiveness": "Highly Selective (CS/Engineering)",
-      "politicalCulture": "Broadly moderate, practically minded.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite CS-specific prestige rivaling top private universities.",
-      "socialClimate": "Big Ten spirited, technically serious.",
-      "leadershipStyle": "Leadership through technical excellence and direct tech-industry recruiting relationships."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
       "regionalRole": "A primary CS/tech talent engine feeding Chicago and Silicon Valley."
@@ -6606,33 +6642,102 @@ const UNIVERSITY_DB_V5 = {
         "Big Ten Spirited"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Grainger College of Engineering, and Computer Science specifically, admit by direct entry — a student cannot transfer into CS from another Illinois college after enrolling, making it one of the most consequential application-day decisions at any public university in the country."
+    },
     "hiddenOpportunities": {
-      "graingerCSSelectivity": {
-        "strength": 94,
-        "notes": "Grainger CS admissions are more selective than most Ivy League schools, hidden behind public-school sticker price."
-      }
+      "underratedMajors": [
+        "Actuarial Science",
+        "Accountancy (Gies College of Business)",
+        "Agricultural and Biological Engineering",
+        "Statistics",
+        "Materials Science and Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Actuarial and Insurance Analytics",
+        "Quantitative Trading and Finance",
+        "Agricultural Technology and AgTech",
+        "Semiconductor and Hardware Engineering",
+        "Big Ten Athletics-Adjacent Sports Analytics"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Google",
+        "Meta",
+        "Microsoft",
+        "Amazon",
+        "Chicago's financial and trading firms (CME-adjacent quant recruiting)"
+      ],
+      "overlookedStrengths": [
+        "Grainger CS admissions are more selective than most Ivy League schools, a fact hidden behind Illinois's public-school sticker price.",
+        "The Gies College of Business accountancy program is consistently ranked #1 or #2 nationally, a genuinely elite credential most families never associate with a Big Ten engineering school.",
+        "UIUC's actuarial science program is one of the oldest and most respected in the country, feeding directly into the insurance and financial risk industries."
+      ]
     },
     "networkCapital": {
-      "strength": 86,
-      "notes": "Direct Silicon Valley and Chicago tech pipeline, with CS placement rivaling top private universities."
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 78,
+      "executiveAccess": 76,
+      "internshipNetwork": 92,
+      "familyBusinessExposure": 34,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 58
     },
     "economicEcosystem": {
-      "technology": {
-        "strength": 94,
-        "notes": "Elite pipeline into Silicon Valley's top tech companies."
-      },
-      "finance": {
-        "strength": 72,
-        "notes": "Solid Chicago financial services placement."
-      }
+      "primaryIndustries": [
+        "Technology and Software",
+        "Financial Services and Actuarial",
+        "Engineering and Semiconductor",
+        "Agricultural Technology",
+        "Management Consulting"
+      ],
+      "regionalEconomicDrivers": [
+        "Silicon Valley Technology",
+        "Chicago Financial Services and Trading",
+        "Agricultural Technology (Illinois farm belt)",
+        "Semiconductor and Hardware Engineering"
+      ],
+      "topEmployers": [
+        "Google",
+        "Meta",
+        "Microsoft",
+        "Amazon",
+        "Chicago financial and trading firms"
+      ],
+      "emergingIndustries": [
+        "AI and Machine Learning Infrastructure",
+        "Semiconductor Manufacturing",
+        "AgTech and Precision Agriculture",
+        "Quantitative Finance"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 62,
+      "corporateHeadquartersDensity": 48,
+      "healthcareHubStrength": 54,
+      "innovationIndex": 92
     },
     "geographicInfluence": {
-      "strength": 82,
-      "notes": "Dominant across Illinois and the Midwest, with elite national CS reach."
+      "dominantMarket": "Silicon Valley and Chicago — Technology, Engineering, and Finance",
+      "secondaryMarkets": [
+        "Seattle WA",
+        "New York NY",
+        "Champaign-Urbana IL"
+      ],
+      "alumniStrongholds": [
+        "San Francisco Bay Area CA",
+        "Chicago IL",
+        "Seattle WA"
+      ]
     },
     "socialCapital": {
-      "strength": 84,
-      "notes": "Grainger CS cohorts form elite technical networks that rival top private schools in caliber and reach."
+      "greekLifeInfluence": 48,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 70,
+      "civicEngagement": 62
     },
     "industryPathways": {
     "technology": { "strength": 96, "notes": "One of the most selective and highly-placed CS programs in the country, with strong broader engineering placement. (Remapped 2026-07-12, combined from non-standard keys 'computerScience' (96) and 'engineering' (88) into one standard key.)" }
@@ -6763,26 +6868,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Big Ten spirited, practical, diverse.",
       "leadershipStyle": "Leadership through scale and direct pharmaceutical industry partnership."
     },
-    "institutionIdentity": {
-      "archetype": "The Pharma Corridor Anchor — Big Ten Scale Meets NJ's Pharmaceutical Density",
-      "institutionalPersonality": "practical, diverse, career-focused, Big Ten spirited",
-      "cultureKeywords": [
-        "Pharmacy",
-        "Pharma Corridor",
-        "Big Ten",
-        "New Jersey",
-        "Diversity"
-      ],
-      "missionOrientation": "Delivering strong pharmacy and business education with direct NJ pharmaceutical industry access.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Applied education reinforced by direct pharmaceutical industry proximity.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly progressive, diverse.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Strong regional prestige, especially in pharmacy.",
-      "socialClimate": "Big Ten spirited, practical, diverse.",
-      "leadershipStyle": "Leadership through scale and direct pharmaceutical industry partnership."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "A key pharmaceutical industry talent engine for the NJ corridor."
@@ -6843,37 +6928,101 @@ const UNIVERSITY_DB_V5 = {
         "Practical"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Rutgers' Ernest Mario School of Pharmacy is a direct-entry program with its own competitive admission, and internal transfer into it after starting elsewhere at Rutgers is difficult and not guaranteed."
+    },
     "hiddenOpportunities": {
-      "pharmaCorridorAccess": {
-        "strength": 90,
-        "notes": "Direct proximity to Johnson & Johnson, Merck, and Bristol Myers Squibb, unmatched by peer Big Ten schools."
-      }
+      "underratedMajors": [
+        "Cosmetic Science",
+        "Food Science",
+        "Industrial and Systems Engineering",
+        "Labor Studies and Employment Relations",
+        "Genetics"
+      ],
+      "hiddenCareerPipelines": [
+        "Pharmaceutical Regulatory Affairs and Manufacturing",
+        "Cosmetics and Personal Care Formulation Chemistry",
+        "Supply Chain and Logistics (NJ's port and distribution corridor)",
+        "Food Science and Product Development",
+        "Labor Relations and HR Analytics"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Johnson & Johnson",
+        "Merck",
+        "Bristol Myers Squibb",
+        "L'Oréal and Church & Dwight (cosmetics/personal care)",
+        "New Jersey's pharmaceutical manufacturing base"
+      ],
+      "overlookedStrengths": [
+        "New Jersey's pharmaceutical corridor density gives Rutgers pharmacy and business students direct industry access most peer Big Ten schools structurally cannot replicate.",
+        "New Jersey is also a major hub for cosmetics and personal-care chemistry, and Rutgers' formulation science ties feed directly into that industry — a genuinely distinctive, under-recognized pathway.",
+        "Rutgers competes directly with Big Ten peers for pharma industry placement despite being overlooked nationally as primarily a New York/NJ commuter option."
+      ]
     },
     "networkCapital": {
-      "strength": 78,
-      "notes": "Deep pharmaceutical industry ties reinforced by NJ's dense corridor of major pharma headquarters."
+      "alumniAccessibility": 76,
+      "mentorshipDensity": 74,
+      "executiveAccess": 72,
+      "internshipNetwork": 84,
+      "familyBusinessExposure": 40,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 76,
+      "donorNetworkStrength": 62,
+      "boardMemberDensity": 52
     },
     "economicEcosystem": {
-      "pharmacy": {
-        "strength": 90,
-        "notes": "Direct pipeline into NJ's concentrated pharmaceutical industry."
-      },
-      "business": {
-        "strength": 74,
-        "notes": "Solid NYC/NJ business placement."
-      },
-      "cosmeticsFormulationChemistry": {
-        "strength": 78,
-        "notes": "Genuine pipeline into NJ's cosmetics/personal care formulation industry (L'Oréal, Church & Dwight), an under-recognized chemistry career path."
-      }
+      "primaryIndustries": [
+        "Pharmaceutical Manufacturing and Research",
+        "Cosmetics and Personal Care Formulation",
+        "Business and Financial Services",
+        "Food Science",
+        "Logistics and Supply Chain"
+      ],
+      "regionalEconomicDrivers": [
+        "New Jersey Pharmaceutical Corridor",
+        "Cosmetics and Personal Care Manufacturing",
+        "NYC/Philadelphia Business Proximity",
+        "Port Newark/Elizabeth Logistics"
+      ],
+      "topEmployers": [
+        "Johnson & Johnson",
+        "Merck",
+        "Bristol Myers Squibb",
+        "L'Oréal",
+        "Church & Dwight"
+      ],
+      "emergingIndustries": [
+        "Biotech Manufacturing",
+        "Cosmetics Science and Formulation",
+        "Supply Chain Technology",
+        "Food Science Innovation"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 42,
+      "corporateHeadquartersDensity": 60,
+      "healthcareHubStrength": 70,
+      "innovationIndex": 66
     },
     "geographicInfluence": {
-      "strength": 76,
-      "notes": "Dominant across New Jersey, with strong NYC and Philadelphia reach."
+      "dominantMarket": "New Jersey — Pharmaceutical and Cosmetics Manufacturing",
+      "secondaryMarkets": [
+        "New York NY",
+        "Philadelphia PA"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Newark-Trenton NJ",
+        "Philadelphia PA"
+      ]
     },
     "socialCapital": {
-      "strength": 74,
-      "notes": "Pharmacy cohorts build direct relationships with the dense New Jersey pharmaceutical corridor before graduating."
+      "greekLifeInfluence": 26,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 72,
+      "crossDisciplinaryInteraction": 68,
+      "civicEngagement": 70
     },
     "industryPathways": {
     "healthcareAdministration": { "strength": 90, "notes": "The most geographically advantaged pharmacy pipeline in the country. (Remapped 2026-07-12 from non-standard key 'pharmacy'.)" }
@@ -7006,27 +7155,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Ambitious, Big Ten spirited, intellectually serious.",
       "leadershipStyle": "Leadership through academic rigor, research excellence, and elite corporate placement."
     },
-    "institutionIdentity": {
-      "archetype": "The Public Ivy — Elite Engineering, Business, and Research at Massive Scale",
-      "institutionalPersonality": "ambitious, spirited, intellectually serious, competitive",
-      "cultureKeywords": [
-        "Public Ivy",
-        "Big Ten",
-        "Elite Consulting",
-        "Engineering",
-        "Research",
-        "Ambition"
-      ],
-      "missionOrientation": "Delivering Ivy-caliber outcomes at public-university scale and cost.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Rigorous, research-driven education combined with elite corporate recruiting pipelines.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly progressive, intellectually engaged.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite national prestige rivaling top private universities.",
-      "socialClimate": "Ambitious, Big Ten spirited, intellectually serious.",
-      "leadershipStyle": "Leadership through academic rigor, research excellence, and elite corporate placement."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
       "regionalRole": "The Midwest's top academic talent engine, feeding elite consulting, finance, and Detroit's automotive/mobility economy."
@@ -7092,49 +7220,104 @@ const UNIVERSITY_DB_V5 = {
         "Intellectually Competitive"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Ross Business School and the College of Engineering are both direct-admit at the freshman level, and internal transfer into either after enrollment is highly competitive and not guaranteed — a meaningful application-day decision, not a fallback available after arrival."
+    },
     "hiddenOpportunities": {
-      "eliteConsultingFinance": {
-        "strength": 96,
-        "notes": "Ross Business School's placement rivals Wharton and Stern at public-school cost for in-state students."
-      },
-      "automotiveMobility": {
-        "strength": 84,
-        "notes": "Direct proximity to Detroit's automotive and future-mobility economy."
-      },
-      "publicPolicy": {
-        "strength": 80,
-        "notes": "Ford School of Public Policy is a strong, less-known pipeline into government and policy careers."
-      }
+      "underratedMajors": [
+        "Naval Architecture and Marine Engineering",
+        "Program in the Environment",
+        "Ford School Public Policy",
+        "Data Science (LSA)",
+        "Industrial and Operations Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Automotive and Future Mobility Engineering",
+        "Healthcare Administration via Michigan Medicine",
+        "Government and Public Policy (Ford School)",
+        "Actuarial Science",
+        "Semiconductor and Advanced Manufacturing"
+      ],
+      "nicheRecruitingAdvantages": [
+        "McKinsey, Bain, and BCG",
+        "Goldman Sachs and major Wall Street banks",
+        "General Motors, Ford, and Stellantis (Detroit automotive)",
+        "Google, Microsoft, and major tech recruiters",
+        "Michigan Medicine (one of the largest academic health systems in the country)"
+      ],
+      "overlookedStrengths": [
+        "Ross Business School's consulting and finance placement genuinely rivals Wharton and Stern at a fraction of the in-state cost, an outcome most families researching only private elites never discover.",
+        "Michigan out-recruits many Ivies for top consulting and finance jobs simply on scale — more total elite graduates per year, even if per-capita selectivity looks lower on paper.",
+        "The Ford School of Public Policy is a genuinely strong, underrecognized pipeline into federal and state government careers, overshadowed by Michigan's business and engineering reputation."
+      ]
     },
     "networkCapital": {
-      "strength": 92,
-      "notes": "Michigan's alumni network rivals Ivy League peers in reach and hiring power, particularly in consulting and finance."
+      "alumniAccessibility": 90,
+      "mentorshipDensity": 88,
+      "executiveAccess": 90,
+      "internshipNetwork": 94,
+      "familyBusinessExposure": 46,
+      "relationshipCapitalScore": 92,
+      "alumniLoyaltyScore": 94,
+      "referralCultureStrength": 90,
+      "donorNetworkStrength": 90,
+      "boardMemberDensity": 78
     },
     "economicEcosystem": {
-      "consulting": {
-        "strength": 96,
-        "notes": "Among the strongest MBB (McKinsey/Bain/BCG) placement of any public university in the country."
-      },
-      "investmentBanking": {
-        "strength": 90,
-        "notes": "Strong Wall Street placement rivaling elite private universities."
-      },
-      "automotive": {
-        "strength": 88,
-        "notes": "Direct pipeline into Detroit's automotive and mobility technology sector."
-      },
-      "technology": {
-        "strength": 84,
-        "notes": "Strong Silicon Valley and Seattle tech placement via CS and engineering."
-      }
+      "primaryIndustries": [
+        "Management Consulting",
+        "Investment Banking and Financial Services",
+        "Automotive and Future Mobility",
+        "Technology",
+        "Academic Medicine and Healthcare"
+      ],
+      "regionalEconomicDrivers": [
+        "Detroit Automotive and Mobility Technology",
+        "Management Consulting (MBB placement)",
+        "Financial Services",
+        "Academic Medicine (Michigan Medicine)"
+      ],
+      "topEmployers": [
+        "McKinsey & Company",
+        "Bain & Company",
+        "Boston Consulting Group",
+        "General Motors, Ford, and Stellantis",
+        "Michigan Medicine"
+      ],
+      "emergingIndustries": [
+        "Autonomous Vehicle Technology",
+        "Semiconductor and Advanced Manufacturing",
+        "AI and Machine Learning",
+        "Mobility-as-a-Service"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 68,
+      "corporateHeadquartersDensity": 66,
+      "healthcareHubStrength": 88,
+      "innovationIndex": 90
     },
     "geographicInfluence": {
-      "strength": 90,
-      "notes": "National elite prestige with dominant Midwest and Detroit-area influence."
+      "dominantMarket": "Detroit-Ann Arbor — Automotive/Mobility, plus National Consulting and Finance",
+      "secondaryMarkets": [
+        "Chicago IL",
+        "New York NY",
+        "San Francisco CA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Chicago IL",
+        "New York NY",
+        "Detroit-Ann Arbor MI",
+        "San Francisco CA"
+      ]
     },
     "socialCapital": {
-      "strength": 88,
-      "notes": "Ambitious peer cohorts create networks that convert directly into elite consulting/finance placement."
+      "greekLifeInfluence": 36,
+      "studentOrganizationStrength": 90,
+      "leadershipDevelopment": 88,
+      "crossDisciplinaryInteraction": 82,
+      "civicEngagement": 78
     },
     "industryPathways": {
     "technology": { "strength": 92, "notes": "Top-10 nationally across nearly every engineering discipline. (Remapped from non-standard key 'engineering', 2026-07-12.)" },
@@ -7690,26 +7873,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Football-first, Greek-heavy, genuinely culturally rich via Athens.",
       "leadershipStyle": "Leadership through tradition, school spirit, and direct Atlanta corporate partnership."
     },
-    "institutionIdentity": {
-      "archetype": "The Atlanta Fortune 500 Pipeline — SEC Spirit Meets Corporate Georgia",
-      "institutionalPersonality": "spirited, business-ambitious, culturally rich, traditional",
-      "cultureKeywords": [
-        "SEC Football",
-        "Atlanta Fortune 500",
-        "Terry Business",
-        "Athens Music Scene",
-        "Tradition"
-      ],
-      "missionOrientation": "Delivering strong business education with direct pipeline access to Atlanta's concentrated corporate economy.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Rigorous business education reinforced by deep Atlanta Fortune 500 recruiting relationships.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, tradition-focused.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Strong regional prestige, especially in business, amplified by Atlanta proximity.",
-      "socialClimate": "Football-first, Greek-heavy, genuinely culturally rich via Athens.",
-      "leadershipStyle": "Leadership through tradition, school spirit, and direct Atlanta corporate partnership."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "CharLanta",
       "regionalRole": "The primary business talent engine feeding Atlanta's Fortune 500 concentration."
@@ -7771,33 +7934,109 @@ const UNIVERSITY_DB_V5 = {
         "Culturally Rich"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Terry College of Business requires students to apply for direct admission after their sophomore year rather than entering freshman year, and this secondary review is genuinely competitive, not a formality."
+    },
     "hiddenOpportunities": {
-      "atlantaFortune500Pipeline": {
-        "strength": 92,
-        "notes": "The single strongest pipeline into Atlanta's Fortune 500 concentration of any Georgia public university."
-      }
+      "underratedMajors": [
+        "Real Estate (Terry College)",
+        "Poultry Science",
+        "Music Business",
+        "Veterinary Medicine pre-track",
+        "Genetics"
+      ],
+      "hiddenCareerPipelines": [
+        "Corporate Real Estate and Development",
+        "Music Industry Business (Athens' music scene ties)",
+        "Agricultural Science and Poultry Industry",
+        "Consumer Packaged Goods Brand Management",
+        "Logistics and Supply Chain (Atlanta corridor)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Coca-Cola",
+        "Delta Air Lines",
+        "UPS",
+        "Home Depot",
+        "CNN"
+      ],
+      "overlookedStrengths": [
+        "UGA is the single strongest pipeline into Atlanta's Fortune 500 concentration of any Georgia public university, a fact genuinely hidden behind the school's football-first public image.",
+        "Terry College's real estate program is genuinely well-regarded, a distinctive specialty most families researching UGA for general business never discover.",
+        "Athens' independent music scene gives UGA real cultural depth and a specific music-business career pathway that contrasts sharply with its SEC football reputation."
+      ]
     },
     "networkCapital": {
-      "strength": 86,
-      "notes": "The single strongest pipeline into Atlanta's Fortune 500 concentration — Coca-Cola, Delta, UPS, Home Depot, CNN."
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 82,
+      "executiveAccess": 82,
+      "internshipNetwork": 88,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 86,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 86,
+      "donorNetworkStrength": 78,
+      "boardMemberDensity": 64
     },
     "economicEcosystem": {
-      "business": {
-        "strength": 90,
-        "notes": "Direct pipeline into Atlanta's dense Fortune 500 corporate concentration."
-      },
-      "consulting": {
-        "strength": 76,
-        "notes": "Solid Big 4 and regional consulting placement via Terry."
-      }
+      "primaryIndustries": [
+        "Consumer Packaged Goods",
+        "Logistics and Transportation",
+        "Media",
+        "Real Estate",
+        "Agriculture"
+      ],
+      "regionalEconomicDrivers": [
+        "Atlanta Fortune 500 Corporate Concentration",
+        "Logistics and Transportation (Delta, UPS)",
+        "Consumer Packaged Goods (Coca-Cola, Home Depot)",
+        "Georgia Agriculture"
+      ],
+      "topEmployers": [
+        "Coca-Cola",
+        "Delta Air Lines",
+        "UPS",
+        "Home Depot",
+        "CNN"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Logistics Technology",
+        "Media and Streaming",
+        "AgTech"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 54,
+      "corporateHeadquartersDensity": 66,
+      "healthcareHubStrength": 58,
+      "innovationIndex": 68
     },
     "geographicInfluence": {
-      "strength": 82,
-      "notes": "Dominant across Georgia and the Southeast, with the strongest Atlanta corporate pipeline of any in-state school."
+      "dominantMarket": "Atlanta — Consumer Goods, Logistics, and Media",
+      "secondaryMarkets": [
+        "New York NY",
+        "Charlotte NC",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Atlanta GA",
+        "Charlotte NC",
+        "New York NY"
+      ]
     },
     "socialCapital": {
-      "strength": 84,
-      "notes": "Terry College cohorts form the backbone of Atlanta's Fortune 500 corporate network long before graduation."
+      "greekLifeInfluence": 52,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 66,
+      "civicEngagement": 68
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 74,
+      "firstGenerationSupport": 76,
+      "wealthCreationPotential": 82,
+      "familyBusinessPipelineStrength": 52
     },
     "industryPathways": {
     "consulting": { "strength": 82, "notes": "Terry College feeds directly into Atlanta's Fortune 500 concentration." },
@@ -7924,26 +8163,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Football-dominant, Greek-heavy, genuinely academically serious once inside.",
       "leadershipStyle": "Leadership through school spirit and deep in-state Florida corporate/medical partnerships."
     },
-    "institutionIdentity": {
-      "archetype": "The Florida Triangle Anchor — Football Fame Hiding Real Academic Depth",
-      "institutionalPersonality": "football-first, underrated academically, Florida-rooted",
-      "cultureKeywords": [
-        "The Swamp",
-        "SEC Football",
-        "Florida Triangle",
-        "Underrated Rigor",
-        "In-State Loyalty"
-      ],
-      "missionOrientation": "Delivering genuinely strong academic outcomes inside a football-first public image.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Rigorous business and pre-health education reinforced by Florida's major metro corridor recruiting relationships.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly moderate, Florida-focused.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Genuinely strong academic prestige hidden behind football-first public reputation.",
-      "socialClimate": "Football-dominant, Greek-heavy, genuinely academically serious once inside.",
-      "leadershipStyle": "Leadership through school spirit and deep in-state Florida corporate/medical partnerships."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "CharLanta",
       "regionalRole": "The primary business/healthcare talent engine for Florida's Miami-Tampa-Orlando corridor."
@@ -8005,33 +8224,101 @@ const UNIVERSITY_DB_V5 = {
         "In-State Rooted"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "UF's Warrington College of Business and pre-health tracks both carry real secondary GPA thresholds for students who arrive undeclared or seek to transfer in after starting elsewhere in the university, and UF's own medical school pipeline makes pre-health advising genuinely competitive at scale."
+    },
     "hiddenOpportunities": {
-      "underratedRigor": {
-        "strength": 86,
-        "notes": "UF's academic rigor is genuinely underrated relative to its party-school reputation, especially in pre-health."
-      }
+      "underratedMajors": [
+        "Actuarial Science",
+        "Sport Management",
+        "Agricultural and Biological Engineering",
+        "Wildlife Ecology and Conservation",
+        "Data Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Healthcare Administration and Medicine (UF Health system)",
+        "Actuarial and Insurance Analytics",
+        "Agricultural Technology and AgTech",
+        "Sports Business and Athletics Administration",
+        "Law (UF's own top-tier law school pipeline)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "UF Health (one of the largest academic health systems in the Southeast)",
+        "Major Florida-based insurance and financial services firms",
+        "Florida's tourism and hospitality industry (Orlando)",
+        "Publix and major Florida-based retailers",
+        "Florida's agricultural and citrus industry"
+      ],
+      "overlookedStrengths": [
+        "UF's academic rigor is genuinely underrated relative to its football-first, party-school public image, especially in pre-health tracks that feed directly into UF's own top-tier medical school.",
+        "The 88% in-state enrollment concentration means UF's alumni network is deeply and durably Florida-rooted in a way most families researching the school nationally never fully appreciate — a real advantage for students planning to build a career inside Florida's Miami-Tampa-Orlando triangle.",
+        "UF Health is one of the largest academic health systems in the Southeast, giving pre-health students a direct, high-volume clinical training pathway most flagship publics cannot match at this scale."
+      ]
     },
     "networkCapital": {
-      "strength": 82,
-      "notes": "Dominant Florida in-state network across healthcare, business, and law, concentrated in Miami-Tampa-Orlando."
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 78,
+      "executiveAccess": 74,
+      "internshipNetwork": 82,
+      "familyBusinessExposure": 48,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 76,
+      "boardMemberDensity": 60
     },
     "economicEcosystem": {
-      "healthcare": {
-        "strength": 86,
-        "notes": "Strong pre-health pipeline feeding UF's own top-tier medical school."
-      },
-      "business": {
-        "strength": 80,
-        "notes": "Solid Warrington Business placement across Florida's metro corridor."
-      }
+      "primaryIndustries": [
+        "Healthcare and Academic Medicine",
+        "Financial Services and Insurance",
+        "Agriculture and AgTech",
+        "Tourism and Hospitality",
+        "Law"
+      ],
+      "regionalEconomicDrivers": [
+        "UF Health and Florida's Healthcare Sector",
+        "Florida Insurance and Financial Services",
+        "Florida Agriculture (citrus, agtech)",
+        "Orlando Tourism and Hospitality"
+      ],
+      "topEmployers": [
+        "UF Health",
+        "Major Florida-based insurance and financial services firms",
+        "Publix",
+        "Florida's tourism and hospitality industry",
+        "Florida law firms"
+      ],
+      "emergingIndustries": [
+        "AgTech and Precision Agriculture",
+        "Digital Health",
+        "Insurtech",
+        "Sports Business Analytics"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 48,
+      "corporateHeadquartersDensity": 54,
+      "healthcareHubStrength": 84,
+      "innovationIndex": 68
     },
     "geographicInfluence": {
-      "strength": 82,
-      "notes": "Dominant across Florida's major metro triangle — Miami, Tampa, Orlando."
+      "dominantMarket": "Florida's Miami-Tampa-Orlando Triangle — Healthcare, Finance, and Insurance",
+      "secondaryMarkets": [
+        "Atlanta GA",
+        "New York NY"
+      ],
+      "alumniStrongholds": [
+        "Miami FL",
+        "Tampa FL",
+        "Orlando FL"
+      ]
     },
     "socialCapital": {
-      "strength": 78,
-      "notes": "Warrington Business and UF Health cohorts build networks that stay concentrated within Florida's major metro corridor."
+      "greekLifeInfluence": 40,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 68,
+      "civicEngagement": 70
     },
     "industryPathways": {
     "healthcareAdministration": { "strength": 86, "notes": "Strong pre-health pipeline into UF's own medical school. (Remapped 2026-07-12 from non-standard key 'healthcare'.)" },
@@ -8971,26 +9258,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Intensely communal, football-centric, Greek-heavy.",
       "leadershipStyle": "Leadership through tradition, school spirit, and deep technical/veterinary industry partnerships."
     },
-    "institutionIdentity": {
-      "archetype": "The Aerospace-Vet Med Dual Threat — SEC Spirit With Real Technical Depth",
-      "institutionalPersonality": "spirited, traditional, technically capable, communal",
-      "cultureKeywords": [
-        "SEC Football",
-        "Aerospace",
-        "Veterinary Medicine",
-        "Tradition",
-        "Toomer's Corner"
-      ],
-      "missionOrientation": "Delivering strong technical and veterinary education inside a deeply traditional SEC flagship community.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Rigorous technical and veterinary education reinforced by deep aerospace/defense industry ties.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly conservative, tradition-focused.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in specific niches (aerospace, veterinary medicine) inside a broader SEC flagship identity.",
-      "socialClimate": "Intensely communal, football-centric, Greek-heavy.",
-      "leadershipStyle": "Leadership through tradition, school spirit, and deep technical/veterinary industry partnerships."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "CharLanta",
       "regionalRole": "A regional aerospace/defense and veterinary medicine talent engine for the Southeast."
@@ -9052,33 +9319,102 @@ const UNIVERSITY_DB_V5 = {
         "Deeply Communal"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Auburn's veterinary medicine program is a separate, highly competitive professional admission (undergraduate pre-vet is not a guarantee of entry), and the College of Engineering uses GPA-based secondary review for students seeking to enter or transfer into its most competitive majors."
+    },
     "hiddenOpportunities": {
-      "aerospaceDefensePipeline": {
-        "strength": 88,
-        "notes": "Direct pipeline into Boeing and NASA Marshall Space Flight Center, hidden behind Auburn's football-first image."
-      }
+      "underratedMajors": [
+        "Poultry Science",
+        "Aviation Management",
+        "Building Science",
+        "Wildlife Ecology and Management",
+        "Supply Chain Management"
+      ],
+      "hiddenCareerPipelines": [
+        "Aerospace and Defense Engineering (Boeing, NASA Marshall)",
+        "Veterinary Medicine and Animal Science",
+        "Poultry and Agricultural Science",
+        "Aviation and Airport Management",
+        "Building Science and Construction Management"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Boeing",
+        "NASA Marshall Space Flight Center",
+        "Lockheed Martin",
+        "Southeast veterinary and agricultural employers",
+        "Major poultry industry companies (Alabama's poultry economy)"
+      ],
+      "overlookedStrengths": [
+        "Auburn's direct aerospace/defense pipeline into Boeing and NASA Marshall Space Flight Center is a genuine, distinctive strength almost entirely hidden behind the university's football-first public image.",
+        "Auburn's veterinary medicine program is top-5 nationally, one of only a limited number of accredited programs in the country — a fact most families researching by SEC reputation alone never discover.",
+        "Alabama's significant poultry and agricultural economy gives Auburn's agricultural science graduates a real, specific regional industry pipeline most peer SEC schools cannot match."
+      ]
     },
     "networkCapital": {
-      "strength": 82,
-      "notes": "Unmatched alumni loyalty network, especially energy/engineering/military."
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 82,
+      "executiveAccess": 74,
+      "internshipNetwork": 80,
+      "familyBusinessExposure": 52,
+      "relationshipCapitalScore": 86,
+      "alumniLoyaltyScore": 92,
+      "referralCultureStrength": 86,
+      "donorNetworkStrength": 76,
+      "boardMemberDensity": 58
     },
     "economicEcosystem": {
-      "aerospace": {
-        "strength": 88,
-        "notes": "Elite pipeline into Boeing, NASA Marshall, and defense contractors."
-      },
-      "veterinaryMedicine": {
-        "strength": 92,
-        "notes": "Top-5 nationally ranked, one of only a limited number of accredited programs in the country."
-      }
+      "primaryIndustries": [
+        "Aerospace and Defense",
+        "Veterinary Medicine and Animal Science",
+        "Agriculture and Poultry",
+        "Manufacturing",
+        "Aviation"
+      ],
+      "regionalEconomicDrivers": [
+        "Aerospace and Defense (Boeing, NASA Marshall)",
+        "Veterinary and Animal Science",
+        "Alabama Poultry and Agriculture",
+        "Automotive Manufacturing (Southeast corridor)"
+      ],
+      "topEmployers": [
+        "Boeing",
+        "NASA Marshall Space Flight Center",
+        "Lockheed Martin",
+        "Southeast veterinary and agricultural employers",
+        "Alabama poultry industry companies"
+      ],
+      "emergingIndustries": [
+        "Space and Satellite Technology",
+        "Precision Agriculture",
+        "Animal Health Biotechnology",
+        "Advanced Manufacturing"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 34,
+      "corporateHeadquartersDensity": 44,
+      "healthcareHubStrength": 60,
+      "innovationIndex": 66
     },
     "geographicInfluence": {
-      "strength": 78,
-      "notes": "Dominant across Alabama and the Southeast, with a distinctive national aerospace/defense pipeline."
+      "dominantMarket": "Alabama and the Southeast — Aerospace/Defense and Veterinary Medicine",
+      "secondaryMarkets": [
+        "Houston TX",
+        "Atlanta GA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Atlanta GA",
+        "Birmingham AL",
+        "Houston TX"
+      ]
     },
     "socialCapital": {
-      "strength": 84,
-      "notes": "Engineering and vet-med cohorts build strong bonds that carry into aerospace/defense and veterinary networks nationally."
+      "greekLifeInfluence": 56,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 62,
+      "civicEngagement": 72
     },
     "industryPathways": {
     "defense": { "strength": 88, "notes": "Direct Boeing/NASA Marshall aerospace pipeline. (Remapped 2026-07-12 from non-standard key 'aerospace'.)" },
@@ -9210,26 +9546,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Loud, proud, football-centric, manufacturing-serious.",
       "leadershipStyle": "Leadership through school spirit and direct automotive industry partnership."
     },
-    "institutionIdentity": {
-      "archetype": "The Automotive Engineering Bridge — BMW/Michelin Manufacturing Pipeline",
-      "institutionalPersonality": "spirited, manufacturing-savvy, traditional, technically capable",
-      "cultureKeywords": [
-        "CU-ICAR",
-        "Automotive Engineering",
-        "BMW/Michelin",
-        "ACC Football",
-        "Manufacturing"
-      ],
-      "missionOrientation": "Delivering strong automotive/manufacturing engineering education inside a spirited ACC flagship community.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Applied engineering education reinforced by direct automotive industry co-location.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate to conservative, tradition-focused.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in automotive engineering niche inside a broader ACC flagship identity.",
-      "socialClimate": "Loud, proud, football-centric, manufacturing-serious.",
-      "leadershipStyle": "Leadership through school spirit and direct automotive industry partnership."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "CharLanta",
       "regionalRole": "The primary automotive manufacturing engineering talent engine for the Greenville-Spartanburg corridor."
@@ -9291,33 +9607,102 @@ const UNIVERSITY_DB_V5 = {
         "Traditional"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Clemson's College of Engineering, Computing and Applied Sciences uses a GPA-based secondary review for students seeking to declare or transfer into its most competitive majors, and CU-ICAR's automotive engineering track effectively functions as its own selective cohort within the college."
+    },
     "hiddenOpportunities": {
-      "cuIcarAutomotivePipeline": {
-        "strength": 90,
-        "notes": "Direct co-location with BMW manufacturing R&D creates employer relationships unmatched by peer programs."
-      }
+      "underratedMajors": [
+        "Automotive Engineering (CU-ICAR)",
+        "Packaging Science",
+        "Textile Engineering (historical strength)",
+        "Wildlife and Fisheries Biology",
+        "Construction Science and Management"
+      ],
+      "hiddenCareerPipelines": [
+        "Automotive Manufacturing and R&D",
+        "Advanced Manufacturing Engineering",
+        "Packaging Science",
+        "Construction and Project Management",
+        "Textile and Materials Engineering"
+      ],
+      "nicheRecruitingAdvantages": [
+        "BMW Manufacturing",
+        "Michelin",
+        "Bosch",
+        "The Greenville-Spartanburg manufacturing corridor",
+        "Major automotive suppliers co-located at CU-ICAR"
+      ],
+      "overlookedStrengths": [
+        "CU-ICAR creates direct co-location with BMW's manufacturing R&D, giving Clemson engineering students employer relationships most peer automotive engineering programs structurally cannot replicate.",
+        "Clemson's automotive engineering identity is genuinely elite but overshadowed nationally by its football program, a mismatch most families researching by general reputation never correct for.",
+        "The Greenville-Spartanburg corridor is one of the densest automotive manufacturing regions in the country, and Clemson sits directly inside it — a geographic advantage that functions almost like an extended campus."
+      ]
     },
     "networkCapital": {
-      "strength": 80,
-      "notes": "Unmatched automotive-industry pipeline via CU-ICAR, concentrated in the Greenville-Spartanburg manufacturing corridor."
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 78,
+      "executiveAccess": 72,
+      "internshipNetwork": 86,
+      "familyBusinessExposure": 46,
+      "relationshipCapitalScore": 80,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 82,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 54
     },
     "economicEcosystem": {
-      "automotive": {
-        "strength": 92,
-        "notes": "Direct BMW and Michelin pipeline via CU-ICAR."
-      },
-      "manufacturing": {
-        "strength": 84,
-        "notes": "Strong broader Southeast manufacturing placement."
-      }
+      "primaryIndustries": [
+        "Automotive Manufacturing and Engineering",
+        "Advanced Manufacturing",
+        "Textiles and Materials",
+        "Construction",
+        "Packaging Science"
+      ],
+      "regionalEconomicDrivers": [
+        "Automotive Manufacturing (BMW, Michelin, Bosch)",
+        "Greenville-Spartanburg Manufacturing Corridor",
+        "Advanced Materials and Textiles",
+        "Construction and Infrastructure"
+      ],
+      "topEmployers": [
+        "BMW Manufacturing",
+        "Michelin",
+        "Bosch",
+        "Major automotive suppliers",
+        "Southeast manufacturing firms"
+      ],
+      "emergingIndustries": [
+        "Electric Vehicle Manufacturing",
+        "Advanced Materials",
+        "Robotics and Automation",
+        "Sustainable Packaging"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 36,
+      "corporateHeadquartersDensity": 48,
+      "healthcareHubStrength": 48,
+      "innovationIndex": 74
     },
     "geographicInfluence": {
-      "strength": 76,
-      "notes": "Dominant across South Carolina and the Southeast, with a distinctive automotive manufacturing national pipeline."
+      "dominantMarket": "Greenville-Spartanburg — Automotive Manufacturing",
+      "secondaryMarkets": [
+        "Charlotte NC",
+        "Atlanta GA",
+        "Columbia SC"
+      ],
+      "alumniStrongholds": [
+        "Greenville-Spartanburg SC",
+        "Charlotte NC",
+        "Atlanta GA"
+      ]
     },
     "socialCapital": {
-      "strength": 80,
-      "notes": "Engineering cohorts tied to CU-ICAR build direct relationships with BMW, Michelin, and Bosch before graduation."
+      "greekLifeInfluence": 48,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 74,
+      "crossDisciplinaryInteraction": 64,
+      "civicEngagement": 66
     },
     "industryPathways": {
     "technology": { "strength": 92, "notes": "The strongest automotive engineering pipeline of any Southeast public university. (Remapped 2026-07-12 from non-standard key 'automotiveEngineering'.)" }
@@ -9541,6 +9926,10 @@ const UNIVERSITY_DB_V5 = {
         "Students wanting a larger, more anonymous campus",
         "Students prioritizing academic breadth over pre-professional focus"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Vanderbilt admits directly by school (Arts & Science, Engineering, Peabody, Blair) rather than allowing free movement between them, so a student admitted to one school faces a real, competitive secondary review to transfer into another after enrolling."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -9844,27 +10233,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Polished, tradition-bound, ambitious.",
       "leadershipStyle": "Leadership through tradition, historical gravitas, and elite selective-program excellence."
     },
-    "institutionIdentity": {
-      "archetype": "The Jeffersonian Public Ivy — History, Rigor, and DC-Corridor Ambition",
-      "institutionalPersonality": "polished, ambitious, historically rooted, achievement-oriented",
-      "cultureKeywords": [
-        "Jeffersonian",
-        "Public Ivy",
-        "McIntire",
-        "Tradition",
-        "DC Corridor",
-        "Prestige"
-      ],
-      "missionOrientation": "Delivering elite outcomes at public-school cost, rooted in Jefferson's founding vision.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Rigorous, tradition-informed education with elite selective programs inside a broader public university.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly moderate to progressive, achievement-focused.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite public prestige rivaling top private universities, especially in business and government.",
-      "socialClimate": "Polished, tradition-bound, ambitious.",
-      "leadershipStyle": "Leadership through tradition, historical gravitas, and elite selective-program excellence."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "A primary talent engine for the DC corridor's consulting, government, and finance sectors."
@@ -9928,41 +10296,102 @@ const UNIVERSITY_DB_V5 = {
         "Achievement-Oriented"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "McIntire admits by application after two years on Grounds, not at freshman entry — meaning students arrive at UVA without a business school seat guaranteed, and roughly 5.5% of McIntire applicants are admitted, making it more selective than the university's overall admit rate."
+    },
     "hiddenOpportunities": {
-      "mcIntireSelectivity": {
-        "strength": 96,
-        "notes": "McIntire's 5.5% acceptance rate creates one of the most selective business credentials in the country at public-school cost."
-      },
-      "dcGovernmentPipeline": {
-        "strength": 84,
-        "notes": "Two-hour proximity to DC creates strong government, consulting, and policy career pathways."
-      }
+      "underratedMajors": [
+        "Politics (distinct from Government pre-law track)",
+        "Systems Engineering",
+        "Media Studies",
+        "Statistics",
+        "Global Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Government Contracting and Policy Analysis",
+        "Intelligence and National Security (DC-adjacent)",
+        "Systems Engineering and Defense Technology",
+        "Nonprofit and Public Sector Leadership",
+        "Wealth Management (McIntire's finance concentration)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Deloitte",
+        "McKinsey & Company",
+        "Capital One (Richmond-based, McIntire pipeline)",
+        "Major DC-area government contractors",
+        "Federal agencies via two-hour DC proximity"
+      ],
+      "overlookedStrengths": [
+        "McIntire's roughly 5.5% acceptance rate makes it harder to get into than the university itself, creating one of the most selective business credentials in the country hidden inside a public-school price tag.",
+        "UVA's founding-era prestige and the Lawn/Academical Village give it a historical gravitas that converts directly into DC-corridor hiring advantages most public universities cannot replicate.",
+        "The two-hour proximity to Washington DC gives government, policy, and intelligence-track students a genuine pipeline advantage without the cost of living directly in the DC metro area."
+      ]
     },
     "networkCapital": {
-      "strength": 86,
-      "notes": "Exceptional DC-Northern Virginia consulting/finance placement, reinforced by McIntire's ultra-selective reputation."
+      "alumniAccessibility": 86,
+      "mentorshipDensity": 84,
+      "executiveAccess": 84,
+      "internshipNetwork": 88,
+      "familyBusinessExposure": 50,
+      "relationshipCapitalScore": 88,
+      "alumniLoyaltyScore": 90,
+      "referralCultureStrength": 86,
+      "donorNetworkStrength": 82,
+      "boardMemberDensity": 70
     },
     "economicEcosystem": {
-      "consulting": {
-        "strength": 90,
-        "notes": "Strong MBB and Big 4 placement, particularly into DC-area offices."
-      },
-      "government": {
-        "strength": 84,
-        "notes": "Direct pipeline into federal government and policy careers via DC proximity."
-      },
-      "investmentBanking": {
-        "strength": 82,
-        "notes": "Solid Wall Street placement via McIntire."
-      }
+      "primaryIndustries": [
+        "Management Consulting",
+        "Financial Services",
+        "Government and Public Policy",
+        "Investment Banking",
+        "Law (via UVA's top-10 law school pipeline)"
+      ],
+      "regionalEconomicDrivers": [
+        "Washington DC Government and Policy",
+        "Northern Virginia Government Contracting",
+        "Management Consulting",
+        "Financial Services"
+      ],
+      "topEmployers": [
+        "Deloitte",
+        "McKinsey & Company",
+        "Capital One",
+        "Major DC-area government contractors",
+        "Federal government agencies"
+      ],
+      "emergingIndustries": [
+        "Defense Technology and Systems Engineering",
+        "Data Science and Analytics",
+        "Cybersecurity Policy",
+        "ESG and Impact Investing"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 52,
+      "corporateHeadquartersDensity": 58,
+      "healthcareHubStrength": 62,
+      "innovationIndex": 74
     },
     "geographicInfluence": {
-      "strength": 84,
-      "notes": "Dominant across Virginia and the DC corridor with strong national reach in consulting."
+      "dominantMarket": "Washington DC-Northern Virginia — Consulting, Government, and Finance",
+      "secondaryMarkets": [
+        "New York NY",
+        "Richmond VA",
+        "Charlotte NC"
+      ],
+      "alumniStrongholds": [
+        "Washington DC-Northern Virginia",
+        "New York NY",
+        "Richmond VA"
+      ]
     },
     "socialCapital": {
-      "strength": 82,
-      "notes": "McIntire's small, elite cohort creates some of the tightest pre-professional bonds of any public university program."
+      "greekLifeInfluence": 46,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 84,
+      "crossDisciplinaryInteraction": 72,
+      "civicEngagement": 76
     },
     "industryPathways": {
     "consulting": { "strength": 96, "notes": "McIntire rivals top private business schools for selectivity and consulting placement. (Remapped from non-standard key 'business', split across consulting/investmentBanking, 2026-07-12 — judgment call.)" },
@@ -10096,26 +10525,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Culturally rich, present, civically engaged.",
       "leadershipStyle": "Leadership through civic engagement and distinctive New Orleans immersion."
     },
-    "institutionIdentity": {
-      "archetype": "The New Orleans Immersion — Energy Finance and Architecture Hiding Behind Mardi Gras",
-      "institutionalPersonality": "culturally rich, civically engaged, underrated in specific programs",
-      "cultureKeywords": [
-        "New Orleans",
-        "Energy Finance",
-        "Architecture",
-        "Public Service",
-        "Mardi Gras"
-      ],
-      "missionOrientation": "Delivering distinctive, civically-engaged education embedded in one of America's most unique cities.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Mandatory public service combined with genuine energy finance and architecture strength.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly moderate, civically engaged.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Underrated in energy finance and architecture relative to broader party-school reputation.",
-      "socialClimate": "Culturally rich, present, civically engaged.",
-      "leadershipStyle": "Leadership through civic engagement and distinctive New Orleans immersion."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "Texas Triangle",
       "regionalRole": "A Gulf Coast energy finance talent engine, distinctive for its New Orleans cultural identity."
@@ -10176,37 +10585,102 @@ const UNIVERSITY_DB_V5 = {
         "Civically Engaged"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Tulane does not formally impact most majors, though the School of Architecture's studio-based program admits by portfolio review and functions as its own distinct track from general admission."
+    },
     "hiddenOpportunities": {
-      "energyFinanceGulfCoast": {
-        "strength": 82,
-        "notes": "Genuine, underrated Freeman Business pipeline into Gulf Coast energy finance."
-      },
-      "architectureNewOrleans": {
-        "strength": 80,
-        "notes": "Genuinely strong program benefiting from New Orleans' distinctive built environment."
-      }
+      "underratedMajors": [
+        "Architecture",
+        "Public Health (via mandatory public service ties)",
+        "Environmental Studies",
+        "Digital Media Practices",
+        "Latin American Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Gulf Coast Energy Finance",
+        "Architecture and Urban Design",
+        "Public Health and Nonprofit Leadership",
+        "Environmental Policy (post-Katrina resilience expertise)",
+        "Real Estate Development"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Gulf Coast energy companies",
+        "New Orleans architecture and design firms",
+        "Major nonprofit and public health organizations",
+        "Regional real estate developers",
+        "Environmental consulting firms"
+      ],
+      "overlookedStrengths": [
+        "Freeman Business School's Gulf Coast energy finance ties are a genuine, underrated pipeline hiding behind Tulane's party-school reputation.",
+        "Tulane's Architecture program benefits from studying and literally rebuilding a city with one of the most distinctive built environments in America, a real-world laboratory most peer programs cannot offer.",
+        "The mandatory public service requirement embeds every student in real civic work, giving Tulane graduates a genuine, documented commitment to public health and nonprofit leadership that most peer schools only claim in mission statements."
+      ]
     },
     "networkCapital": {
-      "strength": 76,
-      "notes": "Strong Gulf Coast energy sector recruiting ties from Gulf Coast presence."
+      "alumniAccessibility": 74,
+      "mentorshipDensity": 72,
+      "executiveAccess": 70,
+      "internshipNetwork": 76,
+      "familyBusinessExposure": 48,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 74,
+      "donorNetworkStrength": 66,
+      "boardMemberDensity": 52
     },
     "economicEcosystem": {
-      "energyFinance": {
-        "strength": 82,
-        "notes": "Genuine Gulf Coast energy finance pipeline via Freeman."
-      },
-      "architecture": {
-        "strength": 80,
-        "notes": "Strong pipeline into distinctive architectural and urban design careers."
-      }
+      "primaryIndustries": [
+        "Energy and Energy Finance",
+        "Architecture and Urban Design",
+        "Public Health and Nonprofit",
+        "Environmental Policy",
+        "Real Estate"
+      ],
+      "regionalEconomicDrivers": [
+        "Gulf Coast Energy",
+        "New Orleans Architecture and Design",
+        "Public Health and Nonprofit Sector",
+        "Environmental Resilience Consulting"
+      ],
+      "topEmployers": [
+        "Gulf Coast energy companies",
+        "New Orleans architecture and design firms",
+        "Major nonprofit and public health organizations",
+        "Regional real estate developers",
+        "Environmental consulting firms"
+      ],
+      "emergingIndustries": [
+        "Climate Resilience Consulting",
+        "Digital Media",
+        "Renewable Energy",
+        "Urban Planning Technology"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 40,
+      "corporateHeadquartersDensity": 42,
+      "healthcareHubStrength": 58,
+      "innovationIndex": 62
     },
     "geographicInfluence": {
-      "strength": 70,
-      "notes": "Strong Gulf Coast energy ties, distinctive New Orleans cultural identity."
+      "dominantMarket": "New Orleans and the Gulf Coast — Energy Finance and Architecture",
+      "secondaryMarkets": [
+        "Houston TX",
+        "Atlanta GA",
+        "New York NY"
+      ],
+      "alumniStrongholds": [
+        "New Orleans LA",
+        "Houston TX",
+        "Atlanta GA"
+      ]
     },
     "socialCapital": {
-      "strength": 76,
-      "notes": "Shared immersion in a genuinely unique city creates strong bonds, plus energy sector recruiting ties."
+      "greekLifeInfluence": 44,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 72,
+      "civicEngagement": 90
     },
     "industryPathways": {
     "investmentBanking": { "strength": 82, "notes": "Underrated Gulf Coast energy finance pipeline. (Remapped 2026-07-12 from non-standard key 'energyFinance'.)" },
@@ -10339,27 +10813,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Outdoorsy, free-spirited, technically serious.",
       "leadershipStyle": "Leadership through research excellence, environmental engagement, and outdoor-lifestyle balance."
     },
-    "institutionIdentity": {
-      "archetype": "The Aerospace-Wellness Hybrid — Space Engineering Meets Natural Products Country",
-      "institutionalPersonality": "outdoorsy, technically serious, health-conscious, free-spirited",
-      "cultureKeywords": [
-        "Leeds Business",
-        "Aerospace",
-        "LASP",
-        "Natural Products",
-        "Environmental Studies",
-        "Outdoors"
-      ],
-      "missionOrientation": "Delivering elite aerospace research and business education inside a genuinely health-conscious, outdoors-oriented culture.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Rigorous engineering and business education paired with direct access to Boulder's aerospace research infrastructure and natural products industry.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly progressive, environmentally engaged.",
-      "studentAutonomy": "Very High",
-      "prestigeOrientation": "Elite in aerospace/space research; strong regional prestige in business and environmental studies.",
-      "socialClimate": "Outdoorsy, free-spirited, technically serious.",
-      "leadershipStyle": "Leadership through research excellence, environmental engagement, and outdoor-lifestyle balance."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "NorCal Innovation Corridor",
       "regionalRole": "A significant aerospace research talent engine, plus a uniquely positioned hub for the natural products and wellness industry."
@@ -10422,6 +10875,10 @@ const UNIVERSITY_DB_V5 = {
         "Technically Serious"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "The College of Engineering and Applied Science and Leeds School of Business both use secondary GPA review for students seeking to declare or transfer into aerospace engineering or business after starting in a different college."
+    },
     "hiddenOpportunities": {
       "naturalProductsIndustry": {
         "strength": 88,
@@ -10441,34 +10898,76 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "networkCapital": {
-      "strength": 84,
-      "notes": "Unmatched astronaut/aerospace alumni density among public universities, concentrated in Colorado's aerospace corridor, plus growing natural products industry ties."
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 80,
+      "executiveAccess": 76,
+      "internshipNetwork": 84,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 80,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 56
     },
     "economicEcosystem": {
-      "aerospace": {
-        "strength": 94,
-        "notes": "Elite pipeline into NASA, Lockheed Martin, and Colorado's aerospace corridor via LASP."
-      },
-      "naturalProductsWellness": {
-        "strength": 86,
-        "notes": "Direct pipeline into Boulder's dense natural foods and supplement industry cluster."
-      },
-      "business": {
-        "strength": 78,
-        "notes": "Leeds Business School has strong finance, entrepreneurship, and real estate placement."
-      },
-      "environmentalSustainability": {
-        "strength": 84,
-        "notes": "Strong Environmental Studies pipeline feeding both wellness industry and sustainability careers."
-      }
+      "primaryIndustries": [
+        "Aerospace and Space Research",
+        "Natural Products and Wellness",
+        "Business and Entrepreneurship",
+        "Environmental Science and Sustainability",
+        "Technology"
+      ],
+      "regionalEconomicDrivers": [
+        "Colorado Aerospace Corridor (NASA, Lockheed Martin)",
+        "Boulder Natural Products and Wellness Cluster",
+        "Colorado Tech and Startup Ecosystem",
+        "Environmental and Sustainability Consulting"
+      ],
+      "topEmployers": [
+        "NASA",
+        "Lockheed Martin",
+        "Celestial Seasonings",
+        "White Wave",
+        "Ball Aerospace"
+      ],
+      "emergingIndustries": [
+        "Space Technology and Satellites",
+        "Wellness and Supplement Innovation",
+        "Climate Technology",
+        "Outdoor Recreation Technology"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 66,
+      "corporateHeadquartersDensity": 54,
+      "healthcareHubStrength": 60,
+      "innovationIndex": 84
     },
     "geographicInfluence": {
-      "strength": 82,
-      "notes": "Dominant across Colorado, with distinctive national reach in aerospace and natural products."
+      "dominantMarket": "Colorado — Aerospace Research and Natural Products",
+      "secondaryMarkets": [
+        "San Francisco CA",
+        "Seattle WA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Denver-Boulder CO",
+        "San Francisco CA",
+        "Seattle WA"
+      ]
     },
     "socialCapital": {
-      "strength": 80,
-      "notes": "Aerospace and LASP research groups create tight technical bonds; Leeds Business and Environmental Studies cohorts build natural products industry ties."
+      "greekLifeInfluence": 24,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 78,
+      "civicEngagement": 74
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 70,
+      "firstGenerationSupport": 72,
+      "wealthCreationPotential": 80,
+      "familyBusinessPipelineStrength": 46
     },
     "industryPathways": {
     "defense": { "strength": 94, "notes": "Elite space/aerospace engineering pipeline via LASP." },
@@ -10597,26 +11096,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Media-obsessed, resilient, Orange athletics-proud.",
       "leadershipStyle": "Leadership through media industry tribal loyalty and shared institutional identity."
     },
-    "institutionIdentity": {
-      "archetype": "The Media Tribe — Newhouse's Legendary Hiring Network",
-      "institutionalPersonality": "media-driven, resilient, tribal, spirited",
-      "cultureKeywords": [
-        "Newhouse",
-        "Media Tribe",
-        "Orange Pride",
-        "Resilience",
-        "Journalism"
-      ],
-      "missionOrientation": "Producing the most professionally connected media and communications graduates in the country.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Practical, industry-embedded media education reinforced by an unusually active alumni network.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly progressive, media-engaged.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "The single most recognized media/communications brand in American higher education.",
-      "socialClimate": "Media-obsessed, resilient, Orange athletics-proud.",
-      "leadershipStyle": "Leadership through media industry tribal loyalty and shared institutional identity."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "The primary media/communications talent engine feeding New York City's newsrooms and networks."
@@ -10678,37 +11157,102 @@ const UNIVERSITY_DB_V5 = {
         "Orange Spirited"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Newhouse School of Public Communications is a direct-entry program with its own admission review, and internal transfer in after starting in another Syracuse college is competitive and not guaranteed."
+    },
     "hiddenOpportunities": {
-      "newhouseTribalNetwork": {
-        "strength": 96,
-        "notes": "Newhouse alumni hire Newhouse alumni with documented tribal loyalty, one of the most functional hiring networks in any industry."
-      },
-      "whitmanBusinessSchool": {
-        "strength": 78,
-        "notes": "The Whitman School of Management is a genuinely strong, underrecognized business program overshadowed nationally by Newhouse's media fame — feeds into finance, entrepreneurship, and marketing roles."
-      }
+      "underratedMajors": [
+        "Whitman School of Management (Business)",
+        "Sport Management (Falk College)",
+        "Information Management and Technology",
+        "Architecture",
+        "Forensic Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Sports Broadcasting and Sports Media",
+        "Finance and Entrepreneurship (Whitman)",
+        "Information Technology Management",
+        "Advertising and Public Relations",
+        "Architecture and Urban Design"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Every major TV network and top newspaper",
+        "ESPN and major sports media companies",
+        "Whitman's growing finance and consulting employer base",
+        "Digital media and streaming companies",
+        "Major PR and advertising agencies"
+      ],
+      "overlookedStrengths": [
+        "Newhouse alumni hire Newhouse alumni with documented tribal loyalty — one of the most functional, self-reinforcing hiring networks in any single industry nationally.",
+        "The Whitman School of Management is a genuinely strong, underrecognized business program overshadowed nationally by Newhouse's media fame, feeding into finance, entrepreneurship, and marketing roles.",
+        "Syracuse's brutal winters build genuine grit and resilience that becomes part of the shared alumni identity, reinforcing loyalty long after graduation in a way milder-climate schools cannot replicate."
+      ]
     },
     "networkCapital": {
-      "strength": 94,
-      "notes": "The most powerful media industry hiring network in the country, operating with genuine tribal loyalty among Newhouse graduates."
+      "alumniAccessibility": 92,
+      "mentorshipDensity": 90,
+      "executiveAccess": 84,
+      "internshipNetwork": 92,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 94,
+      "alumniLoyaltyScore": 96,
+      "referralCultureStrength": 96,
+      "donorNetworkStrength": 78,
+      "boardMemberDensity": 62
     },
     "economicEcosystem": {
-      "media": {
-        "strength": 96,
-        "notes": "Unmatched pipeline into television, print, and digital media newsrooms nationally."
-      },
-      "journalism": {
-        "strength": 94,
-        "notes": "Elite journalism training feeding directly into top newsrooms."
-      }
+      "primaryIndustries": [
+        "Media and Journalism",
+        "Broadcasting",
+        "Advertising and Public Relations",
+        "Finance (Whitman)",
+        "Sports Media"
+      ],
+      "regionalEconomicDrivers": [
+        "National Media Industry (concentrated in NYC)",
+        "Broadcasting and Television",
+        "Advertising and PR",
+        "Sports Media and Broadcasting"
+      ],
+      "topEmployers": [
+        "Every major TV network",
+        "Top newspapers and digital media companies",
+        "ESPN",
+        "Major PR and advertising agencies",
+        "Whitman's finance and consulting employer base"
+      ],
+      "emergingIndustries": [
+        "Streaming Media",
+        "Podcast and Digital Audio",
+        "Sports Analytics Media",
+        "Content Strategy and Social Media"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 38,
+      "corporateHeadquartersDensity": 44,
+      "healthcareHubStrength": 48,
+      "innovationIndex": 62
     },
     "geographicInfluence": {
-      "strength": 80,
-      "notes": "National media industry reach, concentrated heavily in New York City."
+      "dominantMarket": "New York City — Media, Broadcasting, and Journalism",
+      "secondaryMarkets": [
+        "Los Angeles CA",
+        "Washington DC",
+        "Boston MA"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Los Angeles CA",
+        "Washington DC"
+      ]
     },
     "socialCapital": {
-      "strength": 92,
-      "notes": "The alumni network's density in actual working studios and newsrooms creates direct professional access unmatched by peer institutions."
+      "greekLifeInfluence": 38,
+      "studentOrganizationStrength": 88,
+      "leadershipDevelopment": 82,
+      "crossDisciplinaryInteraction": 70,
+      "civicEngagement": 70
     },
     "industryPathways": {
     "entertainmentMedia": { "strength": 96, "notes": "The single most recognized media/communications program in American higher education. (Remapped 2026-07-12 from non-standard key 'media'.)" },
@@ -10841,26 +11385,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Glamorous, international, beach-adjacent.",
       "leadershipStyle": "Leadership through global business fluency and Latin American market relationships."
     },
-    "institutionIdentity": {
-      "archetype": "The Latin America Gateway — Global Business at the Edge of Two Continents",
-      "institutionalPersonality": "international, glamorous, business-ambitious, cosmopolitan",
-      "cultureKeywords": [
-        "Latin America Gateway",
-        "International Business",
-        "Miami Glamour",
-        "Global",
-        "Coral Gables"
-      ],
-      "missionOrientation": "Delivering elite international business education at the crossroads of North and South America.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Business education reinforced by direct Latin American trade and finance relationships.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, internationally minded.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Strong international business prestige, especially in Latin American markets.",
-      "socialClimate": "Glamorous, international, beach-adjacent.",
-      "leadershipStyle": "Leadership through global business fluency and Latin American market relationships."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "CharLanta",
       "regionalRole": "The primary Latin American business gateway university in the country."
@@ -10922,33 +11446,102 @@ const UNIVERSITY_DB_V5 = {
         "Beach-Adjacent"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Miami does not formally impact most undergraduate majors, though the Miami Herbert Business School's most prestigious concentrations and the Frost School of Music's performance programs carry real audition- or application-based secondary selectivity."
+    },
     "hiddenOpportunities": {
-      "latinAmericaGateway": {
-        "strength": 92,
-        "notes": "The strongest Latin American business gateway of any US university, a genuinely unique institutional advantage."
-      }
+      "underratedMajors": [
+        "Marine and Atmospheric Science (Rosenstiel School)",
+        "Music Business and Entertainment Industries (Frost School)",
+        "Motion Pictures",
+        "Ecosystem Science and Policy",
+        "Actuarial Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Latin American Trade Finance and Banking",
+        "Marine and Climate Science Policy",
+        "Music Industry and Entertainment Business (Frost School's Miami/Latin music industry ties)",
+        "Real Estate Development and Investment",
+        "International Arbitration and Trade Law"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Miami's Latin American banking and trade sector",
+        "Major Miami real estate developers",
+        "Univision and the Miami Spanish-language media industry",
+        "Royal Caribbean and Miami's cruise line headquarters cluster",
+        "Frost School of Music's ties to the Miami/Latin recording industry"
+      ],
+      "overlookedStrengths": [
+        "Miami is the strongest Latin American business gateway of any US university — a genuinely singular institutional advantage most East-Coast-prestige-focused families overlook entirely.",
+        "The Rosenstiel School of Marine and Atmospheric Science is a serious, federally funded research institution, not a beach-adjacent afterthought — a real credential for climate and ocean science careers.",
+        "Miami is headquarters to the world's largest cruise line industry cluster (Royal Caribbean, Carnival, Norwegian all nearby), a specific, underrecognized regional employer base."
+      ]
     },
     "networkCapital": {
-      "strength": 84,
-      "notes": "The strongest Latin American business/finance gateway of any US university, layered onto a growing Miami financial hub."
+      "alumniAccessibility": 74,
+      "mentorshipDensity": 72,
+      "executiveAccess": 76,
+      "internshipNetwork": 80,
+      "familyBusinessExposure": 62,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 74,
+      "referralCultureStrength": 76,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 58
     },
     "economicEcosystem": {
-      "internationalBusiness": {
-        "strength": 92,
-        "notes": "Unmatched Latin American trade and finance pipeline."
-      },
-      "realEstate": {
-        "strength": 78,
-        "notes": "Strong Miami real estate industry placement."
-      }
+      "primaryIndustries": [
+        "International Trade and Banking",
+        "Real Estate",
+        "Tourism and Hospitality (cruise line industry)",
+        "Media and Entertainment (Spanish-language)",
+        "Marine and Climate Science"
+      ],
+      "regionalEconomicDrivers": [
+        "Latin American Trade and Banking",
+        "Miami Real Estate Development",
+        "Cruise Line Industry Headquarters",
+        "Spanish-Language Media"
+      ],
+      "topEmployers": [
+        "Major Miami real estate developers",
+        "Royal Caribbean",
+        "Univision",
+        "Latin American banking institutions with Miami offices",
+        "Baptist Health South Florida"
+      ],
+      "emergingIndustries": [
+        "Fintech (Miami's growing tech scene)",
+        "Climate and Marine Science Policy",
+        "Crypto and Digital Assets (Miami's tech-friendly policy environment)",
+        "International Arbitration and Trade Law"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 52,
+      "corporateHeadquartersDensity": 58,
+      "healthcareHubStrength": 66,
+      "innovationIndex": 60
     },
     "geographicInfluence": {
-      "strength": 82,
-      "notes": "Dominant Miami-South Florida influence with unmatched reach into Latin American business."
+      "dominantMarket": "Miami-South Florida — International Trade, Real Estate, and Latin American Business",
+      "secondaryMarkets": [
+        "New York NY",
+        "Latin America (regional headquarters cities)",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Miami-South Florida",
+        "Latin America and international",
+        "New York NY"
+      ]
     },
     "socialCapital": {
-      "strength": 82,
-      "notes": "Deep ties into Latin American business networks make this a uniquely international social and professional environment."
+      "greekLifeInfluence": 38,
+      "studentOrganizationStrength": 74,
+      "leadershipDevelopment": 70,
+      "crossDisciplinaryInteraction": 62,
+      "civicEngagement": 66
     },
     "industryPathways": {
     "consulting": { "strength": 92, "notes": "Unmatched Latin American international business and trade gateway pipeline. (Remapped 2026-07-12 from non-standard key 'internationalBusiness'.)" }
@@ -11186,6 +11779,10 @@ const UNIVERSITY_DB_V5 = {
         "Students changing into engineering-heavy disciplines",
         "Students who find the remote location isolating"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Williams does not formally impact any major; the tutorial system and small class sizes mean the real constraint is seat availability in the most popular tutorials and seminars, not GPA-gated declaration."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -14492,26 +15089,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Faith-centered, football-proud, warm.",
       "leadershipStyle": "Leadership through faith integration and Texas Triangle business/legal relationships."
     },
-    "institutionIdentity": {
-      "archetype": "The Faith-and-Business Texan — Seminary Leadership Meets Hankamer Business",
-      "institutionalPersonality": "faith-driven, warm, community-oriented, business-ambitious",
-      "cultureKeywords": [
-        "Hankamer Business",
-        "Truett Seminary",
-        "Faith",
-        "Texas Triangle",
-        "Energy/Legal"
-      ],
-      "missionOrientation": "Delivering values-driven business and religious leadership education across Texas's core economic triangle.",
-      "faithTradition": "Baptist (Christian, values-driven campus culture)",
-      "educationalPhilosophy": "Faith-integrated education reinforced by real Texas business, energy, and legal industry ties.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly conservative, faith-informed.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Strong regional Texas prestige in business; distinctive national reputation in religious leadership training.",
-      "socialClimate": "Faith-centered, football-proud, warm.",
-      "leadershipStyle": "Leadership through faith integration and Texas Triangle business/legal relationships."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "Texas Triangle",
       "regionalRole": "A faith-driven business and religious leadership talent engine at the center of the Dallas-Austin-Houston triangle."
@@ -14572,41 +15149,102 @@ const UNIVERSITY_DB_V5 = {
         "Warm"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Hankamer School of Business requires a separate application for direct admission, and pre-med and nursing tracks both carry real secondary GPA thresholds given Baylor's own strong placement into medical and health professional schools."
+    },
     "hiddenOpportunities": {
-      "truettSeminaryLeadership": {
-        "strength": 84,
-        "notes": "Real regional Baptist religious leadership influence most families researching Baylor for business alone overlook."
-      },
-      "texasTriangleEnergyLegal": {
-        "strength": 76,
-        "notes": "Genuine energy and legal industry ties beyond Baylor's faith-based reputation, from its central Texas Triangle position."
-      }
+      "underratedMajors": [
+        "Truett Seminary (Religious Leadership)",
+        "Environmental Science",
+        "Aviation Sciences",
+        "Museum Studies",
+        "Family and Consumer Sciences"
+      ],
+      "hiddenCareerPipelines": [
+        "Religious and Nonprofit Leadership",
+        "Texas Energy and Legal Regulatory Affairs",
+        "Aviation Management",
+        "Healthcare Administration (pre-med adjacent)",
+        "Museum and Cultural Institution Management"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Texas Triangle energy companies",
+        "Regional Baptist and nonprofit organizations",
+        "Central Texas legal and regulatory firms",
+        "Major Texas healthcare systems",
+        "Texas Triangle finance and accounting employers"
+      ],
+      "overlookedStrengths": [
+        "Truett Seminary's religious leadership pipeline carries real regional influence that most families researching Baylor for business alone overlook entirely.",
+        "Waco's central Texas Triangle position gives Baylor genuine energy and legal industry ties beyond its faith-based reputation, a real geographic advantage most families don't credit it for.",
+        "Baylor's Hankamer Business School has solid, if underrecognized, Texas Triangle finance and accounting placement that competes directly with larger in-state flagships."
+      ]
     },
     "networkCapital": {
-      "strength": 78,
-      "notes": "Faith community and Greek life create deep, values-aligned bonds that carry into Texas business and medical networks."
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 80,
+      "executiveAccess": 72,
+      "internshipNetwork": 78,
+      "familyBusinessExposure": 54,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 74,
+      "boardMemberDensity": 58
     },
     "economicEcosystem": {
-      "business": {
-        "strength": 82,
-        "notes": "Strong Hankamer finance/accounting placement across the Texas Triangle."
-      },
-      "religiousLeadership": {
-        "strength": 84,
-        "notes": "Genuine Truett Seminary pipeline into regional Baptist leadership roles."
-      },
-      "energyLegal": {
-        "strength": 74,
-        "notes": "Real energy and legal industry ties via Texas Triangle position."
-      }
+      "primaryIndustries": [
+        "Business and Finance",
+        "Religious and Nonprofit Leadership",
+        "Energy",
+        "Law",
+        "Healthcare"
+      ],
+      "regionalEconomicDrivers": [
+        "Texas Triangle Business and Finance",
+        "Texas Energy Sector",
+        "Regional Baptist and Nonprofit Networks",
+        "Central Texas Legal and Regulatory Affairs"
+      ],
+      "topEmployers": [
+        "Texas Triangle energy companies",
+        "Regional Baptist and nonprofit organizations",
+        "Central Texas legal and regulatory firms",
+        "Major Texas healthcare systems",
+        "Texas Triangle finance firms"
+      ],
+      "emergingIndustries": [
+        "Faith-Based Nonprofit Innovation",
+        "Energy Regulatory Technology",
+        "Healthcare Administration",
+        "Aviation Management"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 36,
+      "corporateHeadquartersDensity": 44,
+      "healthcareHubStrength": 60,
+      "innovationIndex": 58
     },
     "geographicInfluence": {
-      "strength": 78,
-      "notes": "Strong across the Texas Triangle, with distinctive religious leadership influence regionally."
+      "dominantMarket": "Texas Triangle — Business, Energy, and Religious Leadership",
+      "secondaryMarkets": [
+        "Dallas-Fort Worth TX",
+        "Houston TX",
+        "Austin TX"
+      ],
+      "alumniStrongholds": [
+        "Dallas-Fort Worth TX",
+        "Houston TX",
+        "Austin TX"
+      ]
     },
     "socialCapital": {
-      "strength": 78,
-      "notes": "Faith community and Greek life create deep, values-aligned bonds that carry into Texas business and medical networks."
+      "greekLifeInfluence": 46,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 66,
+      "civicEngagement": 82
     },
     "industryPathways": {
     "consulting": { "strength": 82, "notes": "Strong Texas Triangle business placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
@@ -15133,26 +15771,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Warm, basketball-proud, polished.",
       "leadershipStyle": "Leadership through Catholic community values and elite business school placement."
     },
-    "institutionIdentity": {
-      "archetype": "The March Madness Business School — Basketball Fame Meets Wall Street Polish",
-      "institutionalPersonality": "polished, spirited, community-oriented, Catholic-formed",
-      "cultureKeywords": [
-        "March Madness",
-        "Villanova Business School",
-        "Main Line",
-        "Catholic Community",
-        "Nursing"
-      ],
-      "missionOrientation": "Delivering elite business, nursing, and engineering education inside a warm Catholic community.",
-      "faithTradition": "Roman Catholic (Augustinian)",
-      "educationalPhilosophy": "Rigorous pre-professional education reinforced by Augustinian values and Philadelphia industry proximity.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly moderate, values-informed.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in business; strong in nursing and engineering, all boosted by basketball-driven national visibility.",
-      "socialClimate": "Warm, basketball-proud, polished.",
-      "leadershipStyle": "Leadership through Catholic community values and elite business school placement."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "A key business talent engine feeding Philadelphia and NYC financial services."
@@ -15214,37 +15832,102 @@ const UNIVERSITY_DB_V5 = {
         "Main Line Polish"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Villanova School of Business is a direct-entry college with its own admission review separate from the College of Liberal Arts and Sciences, and internal transfer in after starting elsewhere at Villanova is competitive."
+    },
     "hiddenOpportunities": {
-      "nursingEngineeringUnderrated": {
-        "strength": 82,
-        "notes": "Genuinely strong programs overshadowed nationally by VSB's business fame and the basketball program."
-      }
+      "underratedMajors": [
+        "Nursing (Fitzpatrick College)",
+        "Civil and Environmental Engineering",
+        "Actuarial Science",
+        "Political Science (strong DC/Philadelphia pipeline)",
+        "Cognitive Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Clinical Nursing and Healthcare Administration",
+        "Actuarial and Insurance Analytics",
+        "Civil Engineering and Infrastructure",
+        "Government and Public Policy",
+        "Real Estate Finance"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Major Philadelphia and NYC banks",
+        "Big 4 accounting firms",
+        "Major Philadelphia and regional healthcare systems",
+        "Vanguard (headquartered nearby on the Main Line)",
+        "Regional civil engineering and infrastructure firms"
+      ],
+      "overlookedStrengths": [
+        "VSB's Wall Street and Philadelphia financial services placement genuinely rivals bigger-name business schools, a fact almost entirely hidden behind Villanova's basketball reputation.",
+        "Nursing and Engineering are both genuinely strong programs that get overshadowed nationally by VSB's business fame and the basketball program's visibility.",
+        "Vanguard's headquarters sits directly on the Main Line near campus, giving finance-minded students a distinctive, walkable-distance employer relationship most families never connect to Villanova specifically."
+      ]
     },
     "networkCapital": {
-      "strength": 82,
-      "notes": "Strong Philadelphia and NYC financial services placement, powered by Main Line corporate proximity."
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 82,
+      "executiveAccess": 80,
+      "internshipNetwork": 86,
+      "familyBusinessExposure": 48,
+      "relationshipCapitalScore": 84,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 74,
+      "boardMemberDensity": 60
     },
     "economicEcosystem": {
-      "business": {
-        "strength": 90,
-        "notes": "Elite VSB placement rivaling bigger-name business schools."
-      },
-      "nursing": {
-        "strength": 82,
-        "notes": "Strong, underrated clinical placement."
-      },
-      "engineering": {
-        "strength": 78,
-        "notes": "Solid engineering placement, less famous than VSB."
-      }
+      "primaryIndustries": [
+        "Financial Services",
+        "Accounting",
+        "Nursing and Healthcare",
+        "Engineering",
+        "Real Estate"
+      ],
+      "regionalEconomicDrivers": [
+        "Philadelphia and NYC Financial Services",
+        "Big 4 Accounting",
+        "Regional Healthcare Systems",
+        "Main Line Asset Management (Vanguard)"
+      ],
+      "topEmployers": [
+        "Major Philadelphia and NYC banks",
+        "Big 4 accounting firms",
+        "Vanguard",
+        "Major Philadelphia healthcare systems",
+        "Regional engineering firms"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Digital Health",
+        "ESG and Impact Investing",
+        "Healthcare Analytics"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 44,
+      "corporateHeadquartersDensity": 58,
+      "healthcareHubStrength": 74,
+      "innovationIndex": 66
     },
     "geographicInfluence": {
-      "strength": 80,
-      "notes": "Dominant across Philadelphia and the Mid-Atlantic, with strong NYC finance reach."
+      "dominantMarket": "Philadelphia and NYC — Financial Services and Accounting",
+      "secondaryMarkets": [
+        "Washington DC",
+        "Boston MA",
+        "Chicago IL"
+      ],
+      "alumniStrongholds": [
+        "Philadelphia PA",
+        "New York NY",
+        "Washington DC"
+      ]
     },
     "socialCapital": {
-      "strength": 82,
-      "notes": "Small size plus strong alumni loyalty creates tight, faith-and-community-rooted professional bonds."
+      "greekLifeInfluence": 8,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 72,
+      "civicEngagement": 78
     },
     "industryPathways": {
     "consulting": { "strength": 90, "notes": "Elite VSB finance/accounting placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
@@ -15887,6 +16570,10 @@ const UNIVERSITY_DB_V5 = {
         "Students uncomfortable with intense academic rigor"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "WashU admits directly into its undergraduate schools (Arts & Sciences, Engineering, Business, Art & Architecture), and while intra-university transfer is possible, moving into the McKelvey School of Engineering or Olin Business School after starting elsewhere requires a competitive secondary review."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Biomedical Engineering",
@@ -16177,26 +16864,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Urban, driven, technically serious.",
       "leadershipStyle": "Leadership through technical rigor and structured Co-op industry experience."
     },
-    "institutionIdentity": {
-      "archetype": "The Co-op Engineering Elite — Atlanta's Tech Corridor Anchor",
-      "institutionalPersonality": "driven, technically rigorous, urban, value-conscious",
-      "cultureKeywords": [
-        "Co-op",
-        "Engineering",
-        "Atlanta Tech Corridor",
-        "Value",
-        "Rigor"
-      ],
-      "missionOrientation": "Delivering elite engineering education at exceptional value, embedded directly in Atlanta's tech economy.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Rigorous technical education reinforced by structured Co-op work experience.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly moderate, practically minded.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite engineering-specific prestige at exceptional value.",
-      "socialClimate": "Urban, driven, technically serious.",
-      "leadershipStyle": "Leadership through technical rigor and structured Co-op industry experience."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "CharLanta",
       "regionalRole": "The primary engineering/tech talent engine for Atlanta's booming tech and startup corridor."
@@ -16258,33 +16925,103 @@ const UNIVERSITY_DB_V5 = {
         "Technically Serious"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Georgia Tech's College of Computing and Computer Science major carry significant internal competition and GPA thresholds for students who arrive undeclared or in a related engineering major, and the Co-op program's most sought-after employer slots are themselves competitively assigned."
+    },
     "hiddenOpportunities": {
-      "coopIndustryAccess": {
-        "strength": 90,
-        "notes": "Co-op program builds real industry contacts and experience before graduation."
-      }
+      "underratedMajors": [
+        "Industrial and Systems Engineering",
+        "Building Construction",
+        "Public Policy (technology-focused)",
+        "Materials Science and Engineering",
+        "Aerospace Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Fintech and Payments Technology (Atlanta's fintech corridor)",
+        "Supply Chain and Logistics Engineering",
+        "Cybersecurity",
+        "Robotics and Automation",
+        "Sports Technology and Analytics"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Delta Air Lines",
+        "Coca-Cola",
+        "NCR Voyix",
+        "Atlanta's fintech and payments cluster (NCR, Global Payments, ADP)",
+        "Lockheed Martin (Marietta)"
+      ],
+      "overlookedStrengths": [
+        "The Co-op program means many students graduate with a full year or more of real, paid industry experience — an advantage most peer technical schools cannot structurally match.",
+        "Georgia Tech's low in-state and even out-of-state sticker price relative to its top-10 engineering outcomes makes it one of the single best value propositions in American higher education.",
+        "Atlanta's fintech and payments technology cluster — NCR, Global Payments, ADP — is one of the least-known concentrations of a specific industry anywhere in the country, and Georgia Tech sits directly inside it."
+      ]
     },
     "networkCapital": {
-      "strength": 84,
-      "notes": "The strongest tech recruiting pipeline in the Southeast, with deep Atlanta corporate and startup ties."
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 84,
+      "executiveAccess": 78,
+      "internshipNetwork": 94,
+      "familyBusinessExposure": 36,
+      "relationshipCapitalScore": 84,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 86,
+      "donorNetworkStrength": 72,
+      "boardMemberDensity": 60
     },
     "economicEcosystem": {
-      "technology": {
-        "strength": 90,
-        "notes": "Direct pipeline into Atlanta's booming tech and fintech startup scene."
-      },
-      "engineering": {
-        "strength": 92,
-        "notes": "Elite pipeline across nearly every engineering discipline."
-      }
+      "primaryIndustries": [
+        "Technology and Software",
+        "Engineering (all disciplines)",
+        "Fintech and Payments",
+        "Aerospace and Defense",
+        "Logistics and Supply Chain"
+      ],
+      "regionalEconomicDrivers": [
+        "Atlanta Tech and Startup Corridor",
+        "Fintech and Payments Processing",
+        "Aerospace and Defense (Lockheed Martin, Marietta)",
+        "Logistics (Atlanta's transportation hub status)"
+      ],
+      "topEmployers": [
+        "Delta Air Lines",
+        "Coca-Cola",
+        "NCR Voyix",
+        "Lockheed Martin",
+        "Atlanta's fintech and payments cluster"
+      ],
+      "emergingIndustries": [
+        "Cybersecurity",
+        "Robotics and Automation",
+        "AI and Machine Learning",
+        "Sports Technology"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 66,
+      "corporateHeadquartersDensity": 68,
+      "healthcareHubStrength": 52,
+      "innovationIndex": 90
     },
     "geographicInfluence": {
-      "strength": 86,
-      "notes": "Dominant across the Southeast, especially Atlanta's tech corridor."
+      "dominantMarket": "Atlanta — Technology, Fintech, and Aerospace/Defense",
+      "secondaryMarkets": [
+        "Washington DC",
+        "New York NY",
+        "San Francisco Bay Area CA",
+        "Charlotte NC"
+      ],
+      "alumniStrongholds": [
+        "Atlanta GA",
+        "Washington DC",
+        "San Francisco Bay Area CA"
+      ]
     },
     "socialCapital": {
-      "strength": 82,
-      "notes": "Co-op cohorts build professional networks alongside classroom ones."
+      "greekLifeInfluence": 44,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 72,
+      "civicEngagement": 64
     },
     "industryPathways": {
     "technology": { "strength": 92, "notes": "Elite, comprehensive engineering breadth plus a direct Atlanta tech-corridor pipeline. (Remapped 2026-07-12, combined from non-standard keys 'engineering' (92) and 'technology' (90) into one standard key.)" }
@@ -16648,27 +17385,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Tech-forward, outdoorsy, entrepreneurial energy.",
       "leadershipStyle": "Leadership through entrepreneurial ambition and direct tech/supplement industry access."
     },
-    "institutionIdentity": {
-      "archetype": "Silicon Slopes — Tech, Supplements, and Skiing All in One Zip Code",
-      "institutionalPersonality": "entrepreneurial, tech-forward, outdoor-obsessed, rapidly rising",
-      "cultureKeywords": [
-        "Silicon Slopes",
-        "Supplements",
-        "Skiing",
-        "Entrepreneurship",
-        "Tech",
-        "Out-of-State Growth"
-      ],
-      "missionOrientation": "Delivering elite tech and business education inside one of the fastest-rising innovation economies in the country.",
-      "faithTradition": "None (state institution, though LDS culture influences broader Utah/Provo region)",
-      "educationalPhilosophy": "Applied, entrepreneurial education reinforced by direct Silicon Slopes and supplement industry access.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, business-pragmatic.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Rapidly rising national reputation in tech and entrepreneurship.",
-      "socialClimate": "Tech-forward, outdoorsy, entrepreneurial energy.",
-      "leadershipStyle": "Leadership through entrepreneurial ambition and direct tech/supplement industry access."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "NorCal Innovation Corridor",
       "regionalRole": "The anchor talent engine for Silicon Slopes, one of the fastest-growing tech corridors in the country."
@@ -16731,45 +17447,109 @@ const UNIVERSITY_DB_V5 = {
         "Entrepreneurial"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Utah does not formally impact most majors, though the Eccles School of Business's most popular concentrations and the Kahlert School of Computing's CS major have grown competitive enough to create real informal advising and course-seat pressure."
+    },
     "hiddenOpportunities": {
-      "supplementManufacturingCluster": {
-        "strength": 88,
-        "notes": "Utah hosts one of the largest vitamin/supplement manufacturing clusters in the country (USANA, Nature's Sunshine, Younique, Nu Skin), a genuine business/science pipeline hiding behind the ski-town image."
-      },
-      "siliconSlopesAccess": {
-        "strength": 90,
-        "notes": "Direct access to Silicon Slopes tech corridor at a fraction of Silicon Valley's cost of living."
-      }
+      "underratedMajors": [
+        "Metallurgical Engineering",
+        "Ski Business and Resort Management",
+        "Nutrition and Integrative Physiology",
+        "Film and Media Arts",
+        "Actuarial Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Supplement and Nutraceutical Manufacturing",
+        "Silicon Slopes Tech (Adobe, Qualtrics, Microsoft)",
+        "Ski Resort and Outdoor Recreation Management",
+        "Entrepreneurship and Startups (Lassonde Institute)",
+        "Mining and Metallurgical Engineering"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Adobe",
+        "Qualtrics",
+        "Microsoft",
+        "Podium",
+        "USANA, Nature's Sunshine, Nu Skin (supplement manufacturing)"
+      ],
+      "overlookedStrengths": [
+        "Utah's supplement and wellness manufacturing cluster is one of the largest and least-known in the country — a genuine business and science pipeline hiding behind the ski-town reputation.",
+        "Out-of-state students are flocking to Utah specifically because it offers Silicon Valley-adjacent tech access at a fraction of the cost, plus genuinely world-class skiing 30-40 minutes from campus.",
+        "The Lassonde Entrepreneur Institute is one of the most recognized university entrepreneurship centers in the country, directly tied to the Silicon Slopes startup ecosystem — a genuine signature strength, not generic business-school branding."
+      ]
     },
     "networkCapital": {
-      "strength": 82,
-      "notes": "Direct Silicon Slopes tech pipeline (Adobe, Qualtrics, Microsoft), one of the fastest-growing tech hubs in the country."
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 78,
+      "executiveAccess": 74,
+      "internshipNetwork": 86,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 80,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 82,
+      "donorNetworkStrength": 66,
+      "boardMemberDensity": 54
     },
     "economicEcosystem": {
-      "technology": {
-        "strength": 90,
-        "notes": "Elite pipeline into Silicon Slopes' tech corridor."
-      },
-      "supplementsWellness": {
-        "strength": 88,
-        "notes": "Unmatched access to the country's largest vitamin/supplement manufacturing cluster."
-      },
-      "entrepreneurship": {
-        "strength": 86,
-        "notes": "Strong startup ecosystem tied to Silicon Slopes' rapid growth."
-      },
-      "outdoorRecreation": {
-        "strength": 90,
-        "notes": "World-class skiing and outdoor recreation industry access, a genuine lifestyle and career draw."
-      }
+      "primaryIndustries": [
+        "Technology (Silicon Slopes)",
+        "Supplements and Nutraceuticals",
+        "Entrepreneurship and Startups",
+        "Outdoor Recreation",
+        "Mining and Metallurgy"
+      ],
+      "regionalEconomicDrivers": [
+        "Silicon Slopes Tech Corridor",
+        "Utah Supplement Manufacturing Cluster",
+        "Outdoor Recreation and Ski Industry",
+        "Startup Ecosystem (Lassonde Institute)"
+      ],
+      "topEmployers": [
+        "Adobe",
+        "Qualtrics",
+        "Microsoft",
+        "Podium",
+        "USANA, Nature's Sunshine, Nu Skin"
+      ],
+      "emergingIndustries": [
+        "Health and Wellness Technology",
+        "Outdoor Recreation Technology",
+        "Fintech",
+        "Biotech Manufacturing"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 64,
+      "corporateHeadquartersDensity": 58,
+      "healthcareHubStrength": 60,
+      "innovationIndex": 82
     },
     "geographicInfluence": {
-      "strength": 80,
-      "notes": "Dominant across the Mountain West, with rapidly rising national relevance in tech and supplements."
+      "dominantMarket": "Salt Lake City-Provo — Tech, Supplements, and Outdoor Recreation",
+      "secondaryMarkets": [
+        "San Francisco CA",
+        "Denver CO",
+        "Seattle WA"
+      ],
+      "alumniStrongholds": [
+        "Salt Lake City-Provo UT",
+        "San Francisco CA",
+        "Denver CO"
+      ]
     },
     "socialCapital": {
-      "strength": 80,
-      "notes": "CS and business cohorts build direct ties to Silicon Slopes' 155,000-worker tech ecosystem before graduation."
+      "greekLifeInfluence": 18,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 74,
+      "civicEngagement": 66
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 72,
+      "firstGenerationSupport": 74,
+      "wealthCreationPotential": 82,
+      "familyBusinessPipelineStrength": 50
     },
     "industryPathways": {
     "technology": { "strength": 90, "notes": "Direct Silicon Slopes tech corridor pipeline." },
@@ -17717,29 +18497,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Large, spirited, football-centric, Greek-heavy, and increasingly professionally ambitious.",
       "leadershipStyle": "Leadership through scale, tradition, school spirit, and increasingly through innovation and economic development partnerships."
     },
-    "institutionIdentity": {
-      "archetype": "The Big Ten Powerhouse — Engineering, Business, Medicine, and the Reindustrializing Heartland",
-      "institutionalPersonality": "spirited, ambitious, scale-driven, loyal, increasingly innovation-oriented",
-      "cultureKeywords": [
-        "Big Ten",
-        "Football",
-        "Engineering",
-        "Medicine",
-        "Scale",
-        "Loyalty",
-        "Reindustrialization",
-        "Research"
-      ],
-      "missionOrientation": "Expanding access to excellence at massive scale while advancing research, medicine, and Ohio's economic development.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Students build their own path through a vast catalog of programs, research opportunities, and one of the largest academic medical centers in the country, with the size rewarding self-directed students.",
-      "competitiveness": "Moderately Selective",
-      "politicalCulture": "Broadly representative of Midwest political diversity, pragmatic, and increasingly focused on economic development and reindustrialization.",
-      "studentAutonomy": "Very High",
-      "prestigeOrientation": "Elite public flagship prestige, especially strong in engineering, medicine, and business, amplified by massive scale and Big Ten visibility.",
-      "socialClimate": "Large, spirited, football-centric, Greek-heavy, and increasingly professionally ambitious.",
-      "leadershipStyle": "Leadership through scale, tradition, school spirit, and increasingly through innovation and economic development partnerships."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
       "regionalRole": "One of the Midwest's primary talent engines, now central to the reshoring of American semiconductor manufacturing alongside traditional strength in medicine, insurance, and engineering."
@@ -17810,65 +18567,110 @@ const UNIVERSITY_DB_V5 = {
         "Community-Built-Not-Given"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Ohio State's College of Engineering and Fisher College of Business both use a competitive secondary review for students who arrive undeclared or seek to transfer in from another college, and admission to the direct-from-high-school Fisher Business cohort is more selective than general university admission."
+    },
     "hiddenOpportunities": {
-      "semiconductorManufacturing": {
-        "strength": 96,
-        "notes": "The Intel New Albany investment, roughly 20 miles from campus, has created a transformative and still-underappreciated pipeline for engineering graduates into chip manufacturing careers."
-      },
-      "academicMedicine": {
-        "strength": 96,
-        "notes": "The Wexner Medical Center is one of the largest academic medical centers in the country, creating exceptional pre-med, nursing, and health sciences pathways."
-      },
-      "insuranceFinance": {
-        "strength": 84,
-        "notes": "Nationwide's headquarters and Columbus's growing role as a regional financial hub create strong actuarial science and finance placement."
-      },
-      "agriculture": {
-        "strength": 78,
-        "notes": "Ohio State's College of Food, Agricultural, and Environmental Sciences serves Ohio's significant agricultural economy."
-      }
+      "underratedMajors": [
+        "Actuarial Science (Fisher College)",
+        "Welding Engineering",
+        "Nuclear Engineering",
+        "Agricultural and Environmental Sciences",
+        "Sports Industry (Fisher College)"
+      ],
+      "hiddenCareerPipelines": [
+        "Semiconductor Manufacturing and Chip Fabrication",
+        "Insurance and Risk Management (Fisher's distinctive specialty)",
+        "Academic Medicine and Clinical Research (Wexner Medical Center)",
+        "Sports Business and Athletics Administration",
+        "Aerospace and Defense Engineering (Wright-Patterson AFB proximity)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Intel (New Albany semiconductor fabrication plant)",
+        "Nationwide, Progressive, and Grange (Ohio's dense insurance industry base)",
+        "The Ohio State University Wexner Medical Center",
+        "Honda of America Manufacturing",
+        "Wright-Patterson Air Force Base and defense contractors"
+      ],
+      "overlookedStrengths": [
+        "The Intel New Albany semiconductor investment — one of the largest private investments in Ohio history — has fundamentally changed the value of an Ohio State engineering degree in the last three years, and most families researching the university by football reputation alone have no idea it exists.",
+        "Fisher College of Business has a genuine, distinctive insurance and risk management specialty, reinforced by Ohio's dense insurance industry base — Nationwide, Progressive, and Grange are all Ohio-based — a specific regional advantage most peer business schools cannot match.",
+        "The Wexner Medical Center is one of the largest academic medical centers in the country, giving undergraduates direct proximity to a research hospital system on a scale few other universities can offer at this size."
+      ]
     },
     "networkCapital": {
-      "strength": 92,
-      "notes": "Size means the real network is whatever college, major cohort, or organization a student actively joins — not the university as a whole. Once built deliberately, the Buckeye alumni network is one of the largest and most loyal in the country."
+      "alumniAccessibility": 88,
+      "mentorshipDensity": 82,
+      "executiveAccess": 80,
+      "internshipNetwork": 88,
+      "familyBusinessExposure": 42,
+      "relationshipCapitalScore": 86,
+      "alumniLoyaltyScore": 92,
+      "referralCultureStrength": 86,
+      "donorNetworkStrength": 82,
+      "boardMemberDensity": 62
     },
     "economicEcosystem": {
-      "sportsBusiness": {
-        "strength": 90,
-        "notes": "Ohio State's athletic department is one of the largest and most commercially significant in college sports, creating real sports business and media pathways."
-      },
-      "entrepreneurship": {
-        "strength": 78,
-        "notes": "Columbus's growing startup ecosystem, amplified by Rev1 Ventures and the broader Intel-driven economic momentum, is creating new entrepreneurial pathways."
-      },
-      "technology": {
-        "strength": 88,
-        "notes": "Rapidly rising due to the Intel semiconductor investment and Columbus's emergence as a secondary Midwest tech hub."
-      },
-      "consulting": {
-        "strength": 80,
-        "notes": "Strong recruiting by Deloitte, EY, PwC, and regional strategy firms out of the Fisher College of Business."
-      },
-      "medicine": {
-        "strength": 96,
-        "notes": "Among the strongest pre-med and clinical training pathways in the country via the Wexner Medical Center."
-      },
-      "defense": {
-        "strength": 68,
-        "notes": "Solid pathways into aerospace and defense engineering, reinforced by proximity to Wright-Patterson Air Force Base."
-      },
-      "realEstate": {
-        "strength": 72,
-        "notes": "Columbus's rapid growth has created meaningful opportunities in development and commercial real estate."
-      }
+      "primaryIndustries": [
+        "Semiconductor Manufacturing",
+        "Academic Medicine and Healthcare",
+        "Insurance",
+        "Engineering (all disciplines)",
+        "Sports Business"
+      ],
+      "regionalEconomicDrivers": [
+        "Intel Semiconductor Manufacturing",
+        "Ohio Insurance Industry (Nationwide, Progressive, Grange)",
+        "Academic Medicine (Wexner Medical Center)",
+        "Automotive and Advanced Manufacturing (Honda)"
+      ],
+      "topEmployers": [
+        "Intel",
+        "Nationwide",
+        "Wexner Medical Center",
+        "Honda of America Manufacturing",
+        "JPMorgan Chase"
+      ],
+      "emergingIndustries": [
+        "Semiconductor Fabrication",
+        "Insurtech",
+        "Digital Health",
+        "Advanced Manufacturing and Robotics"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 54,
+      "corporateHeadquartersDensity": 62,
+      "healthcareHubStrength": 92,
+      "innovationIndex": 82
     },
     "geographicInfluence": {
-      "strength": 90,
-      "notes": "Dominant across Ohio and the Midwest, with the Intel investment rapidly expanding Ohio State's relevance in national semiconductor and advanced manufacturing conversations."
+      "dominantMarket": "Columbus/Ohio — Semiconductor Manufacturing, Insurance, and Academic Medicine",
+      "secondaryMarkets": [
+        "Chicago IL",
+        "Cleveland OH",
+        "Cincinnati OH"
+      ],
+      "alumniStrongholds": [
+        "Columbus OH",
+        "Cleveland OH",
+        "Cincinnati OH",
+        "Chicago IL"
+      ]
     },
     "socialCapital": {
-      "strength": 88,
-      "notes": "Size means your real network is whatever college/major cohort or organization you actively join, not the university as a whole. Once built, Buckeye loyalty is exceptionally durable."
+      "greekLifeInfluence": 44,
+      "studentOrganizationStrength": 90,
+      "leadershipDevelopment": 82,
+      "crossDisciplinaryInteraction": 76,
+      "civicEngagement": 74
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 78,
+      "firstGenerationSupport": 82,
+      "wealthCreationPotential": 80,
+      "familyBusinessPipelineStrength": 48
     },
     "industryPathways": {
     "technology": { "strength": 92, "notes": "Top-20 nationally, comprehensive across nearly every engineering discipline including nuclear and welding, rare specializations at this scale." },
@@ -17996,26 +18798,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Big Ten spirited, practical, food-science-forward.",
       "leadershipStyle": "Leadership through niche technical specialization and direct consumer goods industry partnership."
     },
-    "institutionIdentity": {
-      "archetype": "The Packaging Monopoly — A Hidden Niche Feeding Every Consumer Goods Giant",
-      "institutionalPersonality": "practical, specialized, Big Ten spirited, underrated",
-      "cultureKeywords": [
-        "School of Packaging",
-        "Broad Business",
-        "Supply Chain",
-        "Big Ten",
-        "Underrated Niche"
-      ],
-      "missionOrientation": "Delivering a rare, highly specialized packaging engineering credential alongside strong general business education.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Applied, industry-embedded education reinforced by a near-monopoly packaging program and strong supply chain ties.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, practically minded.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite and largely unmatched in packaging engineering; solid broader business prestige via Broad College.",
-      "socialClimate": "Big Ten spirited, practical, food-science-forward.",
-      "leadershipStyle": "Leadership through niche technical specialization and direct consumer goods industry partnership."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
       "regionalRole": "The nation's primary packaging engineering talent engine, feeding consumer goods companies with nowhere else to recruit at this depth."
@@ -18079,41 +18861,119 @@ const UNIVERSITY_DB_V5 = {
         "Food-Science-Forward"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "MSU does not formally impact most majors, though the School of Packaging and the Eli Broad College of Business supply chain concentration both carry real, if informal, cohort-based selectivity once students seek upper-division standing."
+    },
     "hiddenOpportunities": {
-      "packagingMonopoly": {
-        "strength": 96,
-        "notes": "One of only a handful of packaging engineering programs in the country, creating a near-monopoly pipeline into consumer goods giants."
-      },
-      "foodScienceLandGrant": {
-        "strength": 86,
-        "notes": "A genuinely elite, underrated Food Science program feeding directly into Kellogg's, General Mills, and food safety/regulatory careers."
-      }
+      "underratedMajors": [
+        "Packaging Engineering",
+        "Food Science and Human Nutrition",
+        "Hospitality Business",
+        "Actuarial Science",
+        "Agricultural Operations Management"
+      ],
+      "hiddenCareerPipelines": [
+        "Consumer Packaged Goods Packaging Engineering",
+        "Supply Chain Management (nationally #1-ranked at Broad)",
+        "Food Science and Regulatory Affairs",
+        "Hospitality and Foodservice Management",
+        "Agricultural Technology"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Procter & Gamble",
+        "Kellogg's",
+        "Amazon",
+        "General Mills",
+        "Whirlpool"
+      ],
+      "overlookedStrengths": [
+        "MSU's School of Packaging is one of only a handful in the country, giving graduates a near-monopoly pipeline into consumer goods companies that have nowhere else to recruit at this depth — a genuinely bigger deal than most families researching by general prestige realize.",
+        "Broad College's supply chain management program is consistently ranked #1 in the country, feeding directly into Amazon, P&G, and Whirlpool, and is systematically undersold relative to Michigan's broader statewide prestige.",
+        "The School of Hospitality Business, founded in 1927, is one of the oldest and most respected hospitality management programs in the country — a genuine, distinctive MSU specialty on par with its supply chain program that most families never discover."
+      ]
     },
     "networkCapital": {
-      "strength": 84,
-      "notes": "The single strongest packaging/supply-chain-science network in the country, an academic monopoly with no real competitor."
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 78,
+      "executiveAccess": 74,
+      "internshipNetwork": 86,
+      "familyBusinessExposure": 42,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 82,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 56
     },
     "economicEcosystem": {
-      "packagingEngineering": {
-        "strength": 96,
-        "notes": "Unmatched pipeline into Procter & Gamble, Kellogg's, Amazon, and nearly every major consumer goods company."
-      },
-      "supplyChain": {
-        "strength": 88,
-        "notes": "Broad College of Business has strong supply chain management placement."
-      },
-      "business": {
-        "strength": 78,
-        "notes": "Solid general business placement via Broad College."
-      }
+      "primaryIndustries": [
+        "Consumer Packaged Goods",
+        "Supply Chain and Logistics",
+        "Food Science",
+        "Hospitality",
+        "Agriculture"
+      ],
+      "regionalEconomicDrivers": [
+        "Packaging Engineering and CPG Manufacturing",
+        "Supply Chain Management",
+        "Food Science and Agriculture",
+        "Hospitality and Foodservice"
+      ],
+      "topEmployers": [
+        "Procter & Gamble",
+        "Kellogg's",
+        "Amazon",
+        "General Mills",
+        "Whirlpool"
+      ],
+      "emergingIndustries": [
+        "Sustainable Packaging",
+        "Supply Chain Technology",
+        "Food Safety Technology",
+        "AgTech"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 40,
+      "corporateHeadquartersDensity": 48,
+      "healthcareHubStrength": 56,
+      "innovationIndex": 70
     },
     "geographicInfluence": {
-      "strength": 78,
-      "notes": "Dominant across Michigan and the Midwest, with a distinctive national packaging industry reach."
+      "dominantMarket": "Midwest — Consumer Packaged Goods and Supply Chain",
+      "secondaryMarkets": [
+        "Chicago IL",
+        "Detroit-Ann Arbor MI",
+        "Grand Rapids MI"
+      ],
+      "alumniStrongholds": [
+        "Detroit-Ann Arbor MI",
+        "Chicago IL",
+        "Grand Rapids MI"
+      ]
     },
     "socialCapital": {
-      "strength": 82,
-      "notes": "The School of Packaging's near-monopoly status creates uniquely tight, in-demand professional networks in a field almost no other university teaches."
+      "greekLifeInfluence": 34,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 70,
+      "civicEngagement": 68
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 74,
+      "firstGenerationSupport": 78,
+      "wealthCreationPotential": 76,
+      "familyBusinessPipelineStrength": 46
+    },
+    "futureResilience": {
+      "aiResistance": 78,
+      "automationResistance": 76,
+      "adaptabilityScore": 78,
+      "interdisciplinaryStrength": 74,
+      "futureReadiness": 80,
+      "entrepreneurialFlexibility": 68,
+      "lifelongLearningCulture": 76,
+      "innovationCapacity": 76
     },
     "industryPathways": {
     "consumerProducts": { "strength": 92, "notes": "The single strongest packaging engineering pipeline in the country." },
@@ -18181,7 +19041,7 @@ const UNIVERSITY_DB_V5 = {
       "pipeline": "Approximately 36,000 undergraduates. Strong Engineering, Computer Science, and Life Sciences programs. Major recruiters include Epic Systems, American Family Insurance, and Madison's growing health-tech ecosystem.",
       "hiddenPathway": "Direct pipeline into Epic Systems, the dominant electronic health records company, headquartered minutes from campus — a career pathway few families researching by general rankings discover.",
       "institutionalSecret": "Madison's theatre-seat density rivals any city its size, giving UW a genuine arts/culture depth that contrasts with its Big Ten athletic image.",
-      "theRoom": "Minneapolis-St. Paul is the metro area, a metropolitan area of 3.7 million with a world-class arts scene layered onto serious Gopher pride.",
+      "theRoom": "Madison is a state capital and college town of roughly 280,000 on an isthmus between two lakes, with Epic Systems' sprawling campus just minutes away and a genuine arts and civic-activism scene layered onto serious Badger pride.",
       "lifestyle": "Progressive, lake-adjacent, activism-friendly culture layered onto strong Big Ten athletics.",
       "bestFitPersonality": "Intellectually curious, comfortable with activism and civic engagement, drawn to research depth alongside Big Ten spirit.",
       "faithTradition": "None",
@@ -18223,27 +19083,6 @@ const UNIVERSITY_DB_V5 = {
         "Big Ten"
       ],
       "missionOrientation": "Delivering elite research education embedded in a genuinely progressive, arts-rich college town.",
-      "educationalPhilosophy": "Rigorous research education paired with civic engagement and direct health-tech industry access.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Progressive, activism-friendly.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite public research prestige, especially strong in life sciences and health-tech.",
-      "socialClimate": "Progressive, lake-adjacent, Big Ten spirited.",
-      "leadershipStyle": "Leadership through research excellence and civic/activist engagement."
-    },
-    "institutionIdentity": {
-      "archetype": "The Epic Systems Pipeline — Health-Tech and Progressive Research Depth",
-      "institutionalPersonality": "progressive, research-serious, civically engaged, spirited",
-      "cultureKeywords": [
-        "Epic Systems",
-        "Health-Tech",
-        "Progressive",
-        "Research",
-        "Arts",
-        "Big Ten"
-      ],
-      "missionOrientation": "Delivering elite research education embedded in a genuinely progressive, arts-rich college town.",
-      "faithTradition": "None",
       "educationalPhilosophy": "Rigorous research education paired with civic engagement and direct health-tech industry access.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Progressive, activism-friendly.",
@@ -18314,33 +19153,102 @@ const UNIVERSITY_DB_V5 = {
         "Big Ten Spirited"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "UW-Madison does not formally impact most majors at declaration, but Computer Science has grown competitive enough to include GPA-based secondary requirements, and the direct-admit Wisconsin School of Business carries real freshman-application selectivity separate from general admission."
+    },
     "hiddenOpportunities": {
-      "epicSystemsPipeline": {
-        "strength": 92,
-        "notes": "Direct pipeline into Epic Systems and the broader Madison health-tech ecosystem."
-      }
+      "underratedMajors": [
+        "Life Sciences Communication",
+        "Actuarial Science",
+        "Genetics and Genomics",
+        "Agricultural and Applied Economics",
+        "Industrial and Systems Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Health Information Technology and Electronic Health Records",
+        "Actuarial and Insurance Analytics",
+        "Agricultural Biotechnology",
+        "Biomedical Research",
+        "Public Health Informatics"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Epic Systems",
+        "American Family Insurance",
+        "Exact Sciences (genomic diagnostics, Madison-based)",
+        "Madison's growing health-tech startup ecosystem",
+        "Kohl's and major Wisconsin-based retailers"
+      ],
+      "overlookedStrengths": [
+        "Epic Systems, the dominant electronic health records company in American healthcare, is headquartered minutes from campus and recruits directly from UW-Madison — a career pathway most families researching by general prestige rankings never discover.",
+        "Madison's genuinely progressive, arts-and-activism-rich civic culture is a real differentiator from the standard Big Ten athletics-first image most families assume.",
+        "Exact Sciences, a major genomic diagnostics company, is also Madison-based, giving life sciences students a second, less-known local biotech pathway beyond Epic."
+      ]
     },
     "networkCapital": {
-      "strength": 84,
-      "notes": "Direct pipeline into Epic Systems and the broader Midwest health-tech ecosystem, plus strong Chicago ties."
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 76,
+      "executiveAccess": 72,
+      "internshipNetwork": 86,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 70,
+      "boardMemberDensity": 56
     },
     "economicEcosystem": {
-      "healthTech": {
-        "strength": 92,
-        "notes": "Unmatched pipeline into Epic Systems, the dominant electronic health records company."
-      },
-      "insurance": {
-        "strength": 74,
-        "notes": "Solid placement via American Family Insurance and Madison's insurance sector."
-      }
+      "primaryIndustries": [
+        "Health Technology and Electronic Health Records",
+        "Insurance",
+        "Life Sciences and Biotechnology",
+        "Agricultural Science",
+        "Engineering"
+      ],
+      "regionalEconomicDrivers": [
+        "Health-Tech (Epic Systems)",
+        "Insurance (American Family)",
+        "Genomic Diagnostics (Exact Sciences)",
+        "Agricultural Biotechnology"
+      ],
+      "topEmployers": [
+        "Epic Systems",
+        "American Family Insurance",
+        "Exact Sciences",
+        "UW Health",
+        "Kohl's"
+      ],
+      "emergingIndustries": [
+        "Health Information Technology",
+        "Genomic Diagnostics",
+        "AgTech",
+        "Digital Health"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 48,
+      "corporateHeadquartersDensity": 54,
+      "healthcareHubStrength": 82,
+      "innovationIndex": 76
     },
     "geographicInfluence": {
-      "strength": 82,
-      "notes": "Dominant across Wisconsin and the Upper Midwest, with a distinctive national health-tech pipeline."
+      "dominantMarket": "Madison — Health-Tech, Insurance, and Life Sciences",
+      "secondaryMarkets": [
+        "Chicago IL",
+        "Milwaukee WI",
+        "Minneapolis MN"
+      ],
+      "alumniStrongholds": [
+        "Chicago IL",
+        "Madison WI",
+        "Milwaukee WI"
+      ]
     },
     "socialCapital": {
-      "strength": 80,
-      "notes": "Engineering and health-tech cohorts build networks that feed directly into Epic Systems and the Madison tech corridor."
+      "greekLifeInfluence": 28,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 76,
+      "civicEngagement": 88
     },
     "industryPathways": {
     "technology": { "strength": 92, "notes": "The strongest health-tech pipeline of any Big Ten school via Epic Systems. (Remapped 2026-07-12 from non-standard key 'healthTech' — Epic Systems is health-record software, genuinely a technology pathway.)" },
@@ -18470,25 +19378,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Politically engaged, ambitious, globally minded.",
       "leadershipStyle": "Leadership through policy engagement and DC proximity."
     },
-    "institutionIdentity": {
-      "archetype": "The Policy Wonk's Campus — DC Embedded, With a Hidden Media Program",
-      "institutionalPersonality": "politically engaged, ambitious, globally minded",
-      "cultureKeywords": [
-        "SIS International Affairs",
-        "DC Embedded",
-        "Kogod Business",
-        "Hidden Media Program"
-      ],
-      "missionOrientation": "Delivering elite international affairs education with constant DC political immersion.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Policy-focused education reinforced by direct DC government proximity.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly progressive, politically engaged.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in international affairs; solid business; underrated in media production.",
-      "socialClimate": "Politically engaged, ambitious, globally minded.",
-      "leadershipStyle": "Leadership through policy engagement and DC proximity."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "A key international affairs and policy talent engine embedded directly in DC."
@@ -18549,37 +19438,102 @@ const UNIVERSITY_DB_V5 = {
         "Globally Minded"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "AU does not formally impact most undergraduate majors, though the School of International Service's most competitive concentrations and the Kogod direct-entry business track both carry their own secondary review."
+    },
     "hiddenOpportunities": {
-      "audioMediaProgram": {
-        "strength": 78,
-        "notes": "Surprisingly strong audio technology and media production program, overshadowed by AU's policy reputation."
-      }
+      "underratedMajors": [
+        "Audio Technology",
+        "Public Communication",
+        "Justice, Law and Criminology",
+        "Environmental Studies",
+        "Data Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Audio Engineering and Podcast Production",
+        "International Development and NGO Leadership",
+        "Government Relations and Lobbying",
+        "Criminal Justice Policy",
+        "Environmental Policy"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Federal agencies and the State Department",
+        "Major international NGOs and think tanks",
+        "DC-area lobbying and government affairs firms",
+        "NPR and major DC-based media organizations",
+        "World Bank and international development organizations"
+      ],
+      "overlookedStrengths": [
+        "AU's audio technology and media production program is surprisingly strong, entirely overshadowed by the university's dominant policy and international affairs reputation.",
+        "Being blocks from the State Department and White House makes DC internships almost a given at AU, not the competitive scramble they are at schools without this same walking-distance proximity.",
+        "The School of International Service is one of the best international affairs programs in the country, a credential that stands on its own merits independent of AU's broader DC-embedded brand."
+      ]
     },
     "networkCapital": {
-      "strength": 82,
-      "notes": "One of the most accessible DC immersion pipelines in the country, extending well beyond AU's own student body."
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 80,
+      "executiveAccess": 82,
+      "internshipNetwork": 94,
+      "familyBusinessExposure": 36,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 76,
+      "referralCultureStrength": 80,
+      "donorNetworkStrength": 62,
+      "boardMemberDensity": 56
     },
     "economicEcosystem": {
-      "internationalAffairs": {
-        "strength": 92,
-        "notes": "Elite SIS pipeline into government, NGOs, and international policy."
-      },
-      "business": {
-        "strength": 74,
-        "notes": "Solid Kogod business placement, boosted by DC proximity."
-      },
-      "media": {
-        "strength": 76,
-        "notes": "Underrated audio/media production pipeline."
-      }
+      "primaryIndustries": [
+        "International Affairs and Development",
+        "Government and Policy",
+        "Media and Communications",
+        "Business and Consulting",
+        "Nonprofit and NGO Leadership"
+      ],
+      "regionalEconomicDrivers": [
+        "Federal Government",
+        "International NGOs and Think Tanks",
+        "Government Affairs and Lobbying",
+        "DC Media and Communications"
+      ],
+      "topEmployers": [
+        "Federal government agencies",
+        "Major international NGOs and think tanks",
+        "DC-area lobbying and government affairs firms",
+        "NPR and major DC-based media organizations",
+        "World Bank and international development organizations"
+      ],
+      "emergingIndustries": [
+        "Podcast and Digital Audio Production",
+        "GovTech",
+        "International Development Analytics",
+        "Environmental Policy"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 38,
+      "corporateHeadquartersDensity": 48,
+      "healthcareHubStrength": 52,
+      "innovationIndex": 62
     },
     "geographicInfluence": {
-      "strength": 82,
-      "notes": "Dominant in DC's policy and international affairs ecosystem."
+      "dominantMarket": "Washington DC — International Affairs and Policy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Boston MA",
+        "International"
+      ],
+      "alumniStrongholds": [
+        "Washington DC",
+        "New York NY",
+        "International"
+      ]
     },
     "socialCapital": {
-      "strength": 80,
-      "notes": "Elliott-style SIS cohorts build direct government and international affairs relationships simply by being in DC."
+      "greekLifeInfluence": 18,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 74,
+      "civicEngagement": 90
     },
     "industryPathways": {
     "publicPolicy": { "strength": 92, "notes": "One of the most DC-embedded international affairs pipelines in the country. (Remapped 2026-07-12 from non-standard key 'internationalAffairs'.)" },
@@ -18958,27 +19912,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Independent, urban, self-assembled.",
       "leadershipStyle": "Leadership through independence and direct professional-industry proximity."
     },
-    "institutionIdentity": {
-      "archetype": "The Urban Independent — Finance, Media, and Boston's Dense Professional Economy",
-      "institutionalPersonality": "independent, urban, ambitious, self-assembled",
-      "cultureKeywords": [
-        "Urban",
-        "Finance",
-        "Media",
-        "Independence",
-        "Boston",
-        "Self-Assembled"
-      ],
-      "missionOrientation": "Providing an urban, professionally-embedded education inside one of the country's densest finance and biotech economies.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Learning through direct urban immersion in Boston's professional core.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly progressive, urban-minded.",
-      "studentAutonomy": "Very High",
-      "prestigeOrientation": "Strong national reputation, especially in communications, business, and public health.",
-      "socialClimate": "Independent, urban, self-assembled.",
-      "leadershipStyle": "Leadership through independence and direct professional-industry proximity."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "A major talent engine for Boston's finance, biotech, and media industries."
@@ -19043,37 +19976,102 @@ const UNIVERSITY_DB_V5 = {
         "Ambitious"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "BU does not formally impact most majors at the point of application, but Questrom School of Business admits as a direct-entry freshman college separate from the College of Arts and Sciences, and internal transfer in after enrolling elsewhere is competitive."
+    },
     "hiddenOpportunities": {
-      "bostonFinanceBiotech": {
-        "strength": 88,
-        "notes": "Direct access to one of the most concentrated finance/biotech job markets in the country without relocating after graduation."
-      }
+      "underratedMajors": [
+        "Public Health (School of Public Health)",
+        "Film and Television (College of Communication)",
+        "Neuroscience",
+        "Actuarial Science",
+        "Hospitality Administration (School of Hospitality Administration)"
+      ],
+      "hiddenCareerPipelines": [
+        "Biotech and Life Sciences Research",
+        "Public Health Policy and Administration",
+        "Film, Television, and Streaming Production",
+        "Actuarial and Insurance Analytics",
+        "Hospitality and Hotel Management"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Fidelity Investments",
+        "State Street",
+        "Boston's biotech and pharmaceutical cluster",
+        "Major Boston hospital systems (public health pipeline)",
+        "Boston's growing film and television production industry"
+      ],
+      "overlookedStrengths": [
+        "BU's lack of a traditional quad often reads as a weakness on a campus tour, but it mirrors NYU's model closely — the city itself becomes the extracurricular life and the professional network, a real advantage for students who want urban immersion from day one.",
+        "The School of Public Health is a genuinely strong, less-recognized credential relative to BU's business and communications reputation, feeding directly into Boston's hospital and biotech ecosystem.",
+        "BU's direct access to one of the most concentrated finance and biotech job markets in the country means students can build a full career network without ever needing to relocate after graduation."
+      ]
     },
     "networkCapital": {
-      "strength": 78,
-      "notes": "Broad reach across finance, media, and healthcare, concentrated in Boston but extending nationally."
+      "alumniAccessibility": 76,
+      "mentorshipDensity": 74,
+      "executiveAccess": 76,
+      "internshipNetwork": 88,
+      "familyBusinessExposure": 40,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 74,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 64,
+      "boardMemberDensity": 54
     },
     "economicEcosystem": {
-      "finance": {
-        "strength": 86,
-        "notes": "Direct pipeline into Boston's dense financial services sector via Questrom."
-      },
-      "biotech": {
-        "strength": 78,
-        "notes": "Strong proximity to Boston's biotech corridor for public health and life sciences graduates."
-      },
-      "media": {
-        "strength": 76,
-        "notes": "Communications program feeds into media and journalism careers nationally."
-      }
+      "primaryIndustries": [
+        "Financial Services",
+        "Biotechnology and Life Sciences",
+        "Media and Communications",
+        "Public Health and Healthcare",
+        "Hospitality"
+      ],
+      "regionalEconomicDrivers": [
+        "Boston Financial Services",
+        "Boston Biotech and Life Sciences",
+        "Academic Medicine and Public Health",
+        "Media and Journalism"
+      ],
+      "topEmployers": [
+        "Fidelity Investments",
+        "State Street",
+        "Boston's biotech and pharmaceutical cluster",
+        "Major Boston hospital systems",
+        "Deloitte"
+      ],
+      "emergingIndustries": [
+        "Digital Health",
+        "Biotech Startups",
+        "Streaming Media Production",
+        "Fintech"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 58,
+      "corporateHeadquartersDensity": 58,
+      "healthcareHubStrength": 78,
+      "innovationIndex": 74
     },
     "geographicInfluence": {
-      "strength": 78,
-      "notes": "Strong throughout the Northeast, especially Boston's finance and biotech corridor."
+      "dominantMarket": "Boston — Finance, Biotech, and Media",
+      "secondaryMarkets": [
+        "New York NY",
+        "Washington DC",
+        "San Francisco CA"
+      ],
+      "alumniStrongholds": [
+        "Boston MA",
+        "New York NY",
+        "Washington DC"
+      ]
     },
     "socialCapital": {
-      "strength": 74,
-      "notes": "Your network forms through clubs, internships, and Boston's dense professional scene rather than dorm proximity."
+      "greekLifeInfluence": 22,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 74,
+      "crossDisciplinaryInteraction": 70,
+      "civicEngagement": 68
     },
     "industryPathways": {
     "consulting": { "strength": 84, "notes": "Questrom has strong Boston-area corporate placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
@@ -19451,26 +20449,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Jesuit values meet Manhattan ambition.",
       "leadershipStyle": "Leadership through values-driven formation and direct NYC industry proximity."
     },
-    "institutionIdentity": {
-      "archetype": "The Jesuit Wall Street Bridge — Law, Business, and NYC Proximity",
-      "institutionalPersonality": "values-driven, ambitious, Jesuit-formed, NYC-embedded",
-      "cultureKeywords": [
-        "Jesuit Values",
-        "Wall Street Proximity",
-        "Fordham Law",
-        "Gabelli Business",
-        "NYC"
-      ],
-      "missionOrientation": "Delivering values-driven education with direct pipeline access to NYC's legal and financial core.",
-      "faithTradition": "Roman Catholic (Jesuit)",
-      "educationalPhilosophy": "Jesuit-formed education reinforced by direct Wall Street and legal-district proximity.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, values-informed.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Strong regional NYC prestige, especially in law and finance.",
-      "socialClimate": "Jesuit values meet Manhattan ambition.",
-      "leadershipStyle": "Leadership through values-driven formation and direct NYC industry proximity."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "A key talent engine feeding NYC's legal and financial sectors via Fordham Law and Gabelli Business."
@@ -19532,41 +20510,102 @@ const UNIVERSITY_DB_V5 = {
         "NYC-Embedded"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Gabelli School of Business is a direct-entry college with its own admission review separate from Fordham College at Rose Hill or Lincoln Center, and internal transfer in after starting elsewhere is competitive."
+    },
     "hiddenOpportunities": {
-      "wallStreetProximity": {
-        "strength": 90,
-        "notes": "Physical proximity to Wall Street means internships and networking happen constantly, blurring the line between classroom and career."
-      },
-      "fordhamLawNYCPlacement": {
-        "strength": 86,
-        "notes": "Fordham Law's NYC BigLaw and judicial clerkship placement is genuinely elite but often overshadowed nationally."
-      }
+      "underratedMajors": [
+        "Communication and Media Studies",
+        "International Political Economy",
+        "Theatre (Lincoln Center's performing arts ties)",
+        "Urban Studies",
+        "Psychology"
+      ],
+      "hiddenCareerPipelines": [
+        "BigLaw and Judicial Clerkships (Fordham Law pipeline)",
+        "Wall Street Finance and Accounting",
+        "Media and Entertainment (Lincoln Center proximity)",
+        "Urban Policy and Planning",
+        "Nonprofit and Social Services (Jesuit mission ties)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Major Wall Street banks",
+        "Big 4 accounting firms",
+        "Top NYC law firms",
+        "Major NYC media and entertainment companies (Lincoln Center campus)",
+        "NYC judicial clerkships"
+      ],
+      "overlookedStrengths": [
+        "Physical proximity to Wall Street means internships and networking happen constantly for Gabelli students, blurring the line between classroom and career in a way most peer Jesuit schools structurally cannot replicate.",
+        "Fordham Law's reputation for producing NYC judges and BigLaw partners is genuinely elite but often overshadowed nationally by more famous NYC law schools.",
+        "The Lincoln Center campus puts students steps from Manhattan's performing arts and media industry, a genuine, underrecognized advantage for communication and theatre students specifically."
+      ]
     },
     "networkCapital": {
-      "strength": 82,
-      "notes": "Direct Wall Street placement pipeline reflecting sheer physical proximity, concentrated almost entirely in NYC business and legal sectors."
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 78,
+      "executiveAccess": 80,
+      "internshipNetwork": 92,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 80,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 58
     },
     "economicEcosystem": {
-      "law": {
-        "strength": 88,
-        "notes": "Fordham Law is top-40 nationally with strong NYC BigLaw and judicial clerkship placement."
-      },
-      "business": {
-        "strength": 84,
-        "notes": "Gabelli Business feeds directly into Wall Street finance, consulting, and Big 4 accounting."
-      },
-      "finance": {
-        "strength": 86,
-        "notes": "Direct Wall Street internship and hiring pipeline via sheer proximity."
-      }
+      "primaryIndustries": [
+        "Law",
+        "Financial Services",
+        "Accounting and Consulting",
+        "Media and Entertainment",
+        "Nonprofit and Social Services"
+      ],
+      "regionalEconomicDrivers": [
+        "Wall Street Finance",
+        "NYC Legal Sector (BigLaw)",
+        "Media and Entertainment (Lincoln Center)",
+        "Big 4 Accounting"
+      ],
+      "topEmployers": [
+        "Major Wall Street banks",
+        "Top NYC law firms",
+        "Big 4 accounting firms",
+        "Major NYC media and entertainment companies",
+        "NYC courts and judicial system"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Legal Technology",
+        "ESG and Impact Investing",
+        "Digital Media"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 52,
+      "corporateHeadquartersDensity": 68,
+      "healthcareHubStrength": 56,
+      "innovationIndex": 66
     },
     "geographicInfluence": {
-      "strength": 84,
-      "notes": "Dominant NYC influence in law, business, and finance, with strong regional Northeast reach."
+      "dominantMarket": "New York City — Law, Finance, and Business",
+      "secondaryMarkets": [
+        "Boston MA",
+        "Washington DC",
+        "Los Angeles CA"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Boston MA",
+        "Washington DC"
+      ]
     },
     "socialCapital": {
-      "strength": 80,
-      "notes": "Physical proximity to Wall Street and the legal district creates real, ongoing professional networking most peer Jesuit schools can't replicate."
+      "greekLifeInfluence": 10,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 70,
+      "civicEngagement": 76
     },
     "industryPathways": {
     "publicPolicy": { "strength": 88, "notes": "Top-40 nationally ranked law school, strong NYC BigLaw and clerkship pipeline. (Remapped 2026-07-12 from non-standard key 'law' — no dedicated law key exists in the standard schema.)" },
@@ -19647,8 +20686,8 @@ const UNIVERSITY_DB_V5 = {
       "region": "Mid-Atlantic",
       "archetype": "The Foggy Bottom Insider — Politics as the Whole Environment",
       "oneSentenceSummary": "GW's Foggy Bottom location, blocks from the State Department and White House, makes political and international affairs immersion the default campus experience, not an elective.",
-      "pipeline": "Elliott School of International Affairs is top-10 nationally. Strong Political Science, Pre-Law, and Business programs feeding directly into DC government, consulting, and law.",
-      "hiddenPathway": "GW's campus location means students land internships at federal agencies and think tanks simply by being nearby, not through extraordinary competition.",
+      "pipeline": "Elliott School of International Affairs is top-10 nationally. Strong Political Science, Pre-Law, and Business programs feeding directly into DC government, consulting, and law. Less publicized: the Milken Institute School of Public Health runs one of the country's most established Master's programs in Clinical Research Administration, feeding graduates directly into CRA, clinical operations, and health policy roles at CROs (IQVIA, ICON) and federal health agencies headquartered a few miles away.",
+      "hiddenPathway": "GW's campus location means students land internships at federal agencies and think tanks simply by being nearby, not through extraordinary competition. Less known: Milken's clinical research administration program sits inside a policy school students rarely associate with clinical trial operations, giving public-health-minded students a distinctive, under-recruited path into pharma and CRO careers most peer schools cannot match from a policy-school setting.",
       "institutionalSecret": "GW's business school benefits enormously from DC's consulting/government-contracting economy, an underrated career pipeline vs. its policy fame.",
       "theRoom": "Foggy Bottom is the most politically consequential neighborhood in America, and GW's campus sits directly inside it.",
       "lifestyle": "Politically engaged, internationally minded, ambitious.",
@@ -19690,26 +20729,6 @@ const UNIVERSITY_DB_V5 = {
         "Consulting"
       ],
       "missionOrientation": "Delivering elite international affairs and government education with unmatched DC proximity.",
-      "educationalPhilosophy": "Policy-focused education reinforced by constant DC political immersion.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly progressive, intensely politically engaged.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in international affairs; strong business/consulting via DC proximity.",
-      "socialClimate": "Politically engaged, ambitious, DC-embedded.",
-      "leadershipStyle": "Leadership through policy engagement and DC government/consulting proximity."
-    },
-    "institutionIdentity": {
-      "archetype": "The Foggy Bottom Insider — Politics as the Whole Environment",
-      "institutionalPersonality": "politically engaged, ambitious, internationally minded",
-      "cultureKeywords": [
-        "Elliott School",
-        "Foggy Bottom",
-        "DC Immersion",
-        "Politics",
-        "Consulting"
-      ],
-      "missionOrientation": "Delivering elite international affairs and government education with unmatched DC proximity.",
-      "faithTradition": "None",
       "educationalPhilosophy": "Policy-focused education reinforced by constant DC political immersion.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly progressive, intensely politically engaged.",
@@ -19778,37 +20797,102 @@ const UNIVERSITY_DB_V5 = {
         "DC-Embedded"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "GW does not formally impact most undergraduate majors, though the Elliott School of International Affairs and the direct-entry business program each carry their own separate application review from general university admission."
+    },
     "hiddenOpportunities": {
-      "dcInternshipAccess": {
-        "strength": 92,
-        "notes": "Students land federal agency and think tank internships simply by being nearby, not through extraordinary competition."
-      }
+      "underratedMajors": [
+        "Clinical Research Administration (Milken Institute School of Public Health)",
+        "Homeland Security and Emergency Management",
+        "Public Health",
+        "Statistics",
+        "Systems Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Clinical Research Administration and CRA roles at CROs (IQVIA, ICON)",
+        "Federal Health Policy (CMS, HHS)",
+        "Homeland Security and Emergency Management",
+        "Government Contracting and Consulting",
+        "International Development"
+      ],
+      "nicheRecruitingAdvantages": [
+        "IQVIA, ICON, and major contract research organizations",
+        "Federal health agencies (CMS, HHS, FDA)",
+        "Major DC-area consulting and government contracting firms",
+        "The World Bank and international development organizations",
+        "Federal agencies and think tanks (via sheer walking-distance proximity)"
+      ],
+      "overlookedStrengths": [
+        "The Milken Institute School of Public Health runs one of the country's most established Master's programs in Clinical Research Administration — a genuine, distinctive pathway into pharma and CRO careers that sits almost entirely outside GW's dominant policy-school reputation.",
+        "GW's campus location means students land internships at federal agencies and think tanks simply by being nearby, not through extraordinary competition — a structural advantage no amount of institutional marketing at other schools can replicate.",
+        "GW's business school benefits enormously from DC's consulting and government-contracting economy, a genuinely underrated career pipeline relative to the university's international-affairs fame."
+      ]
     },
     "networkCapital": {
-      "strength": 86,
-      "notes": "The strongest pipeline into DC finance, consulting, and foreign policy of any university in the country."
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 82,
+      "executiveAccess": 84,
+      "internshipNetwork": 96,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 84,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 82,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 60
     },
     "economicEcosystem": {
-      "internationalAffairs": {
-        "strength": 92,
-        "notes": "Elite Elliott School pipeline into government and diplomacy."
-      },
-      "consulting": {
-        "strength": 84,
-        "notes": "Strong DC-area consulting and government contracting placement."
-      },
-      "law": {
-        "strength": 82,
-        "notes": "Solid pre-law pipeline into DC's legal community."
-      }
+      "primaryIndustries": [
+        "International Affairs and Diplomacy",
+        "Government Consulting and Contracting",
+        "Law and Policy",
+        "Public Health and Clinical Research",
+        "Nonprofit and International Development"
+      ],
+      "regionalEconomicDrivers": [
+        "Federal Government",
+        "Government Consulting and Contracting",
+        "International Development and Diplomacy",
+        "Federal Health Policy and Clinical Research"
+      ],
+      "topEmployers": [
+        "Federal government agencies",
+        "World Bank and international development organizations",
+        "Major DC-area consulting and government contracting firms",
+        "IQVIA and major contract research organizations",
+        "DC-area law firms"
+      ],
+      "emergingIndustries": [
+        "Clinical Research Administration",
+        "Cybersecurity Policy",
+        "Health Policy Analytics",
+        "GovTech"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 42,
+      "corporateHeadquartersDensity": 54,
+      "healthcareHubStrength": 62,
+      "innovationIndex": 66
     },
     "geographicInfluence": {
-      "strength": 88,
-      "notes": "Dominant in DC's policy, law, and government contracting ecosystem."
+      "dominantMarket": "Washington DC — International Affairs, Government, and Policy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Boston MA",
+        "International"
+      ],
+      "alumniStrongholds": [
+        "Washington DC",
+        "New York NY",
+        "International"
+      ]
     },
     "socialCapital": {
-      "strength": 84,
-      "notes": "SFS-style cohorts build networks that plug directly into DC power structures before graduation."
+      "greekLifeInfluence": 32,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 82,
+      "crossDisciplinaryInteraction": 74,
+      "civicEngagement": 88
     },
     "industryPathways": {
     "publicPolicy": { "strength": 92, "notes": "Elite Elliott School pipeline into international affairs and foreign policy. (Remapped 2026-07-12 from non-standard key 'internationalAffairs'.)" },
@@ -19939,26 +21023,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Polished, entrepreneurial, dual-industry-embedded.",
       "leadershipStyle": "Leadership through Catholic formation and dual entertainment/tech industry access."
     },
-    "institutionIdentity": {
-      "archetype": "The Silicon Beach Hidden Gem — Entertainment and Tech at the Same Crossroads",
-      "institutionalPersonality": "polished, entrepreneurial, dual-industry-embedded, overlooked",
-      "cultureKeywords": [
-        "Silicon Beach",
-        "Entertainment Industry",
-        "Hidden Gem",
-        "Dual Pipeline",
-        "LA"
-      ],
-      "missionOrientation": "Delivering values-driven education with unmatched dual access to LA's entertainment and tech industries.",
-      "faithTradition": "Roman Catholic (Jesuit and Marymount)",
-      "educationalPhilosophy": "Jesuit/Marymount formation reinforced by direct entertainment and Silicon Beach industry proximity.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, values-informed.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Overlooked regional prestige with genuine dual-industry access most peers can't match.",
-      "socialClimate": "Polished, entrepreneurial, dual-industry-embedded.",
-      "leadershipStyle": "Leadership through Catholic formation and dual entertainment/tech industry access."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "SoCal Creative Economy",
       "regionalRole": "An overlooked dual talent engine feeding both LA entertainment and Silicon Beach tech."
@@ -20021,33 +21085,101 @@ const UNIVERSITY_DB_V5 = {
         "Dual-Industry-Embedded"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "LMU does not formally impact most majors, though the School of Film and Television's production tracks admit by portfolio/audition review and function as their own selective cohort within the university."
+    },
     "hiddenOpportunities": {
-      "siliconBeachProximity": {
-        "strength": 88,
-        "notes": "LMU's Westchester location puts it genuinely closer to Silicon Beach's tech offices than USC or UCLA, a hidden geographic advantage."
-      }
+      "underratedMajors": [
+        "Screenwriting",
+        "Entrepreneurship",
+        "Recording Arts",
+        "Animation",
+        "Marketing"
+      ],
+      "hiddenCareerPipelines": [
+        "Silicon Beach Tech (Snap, YouTube, Google)",
+        "Film and Television Production",
+        "Entertainment Marketing and Talent Management",
+        "Startup Entrepreneurship",
+        "Music and Recording Industry"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Snap",
+        "YouTube",
+        "Google (Playa Vista campus)",
+        "Major Hollywood studios",
+        "Silicon Beach startups"
+      ],
+      "overlookedStrengths": [
+        "LMU's Westchester location puts it genuinely closer to Silicon Beach's tech offices than USC or UCLA, a hidden geographic advantage most families chasing bigger-name LA schools never discover.",
+        "LMU is quietly building real Silicon Beach tech placement alongside its traditional entertainment industry ties, a dual pipeline few peer LA schools can match.",
+        "The bluff-top Westchester campus sits directly between Hollywood's entertainment core and Silicon Beach's tech offices, giving students genuine walking- or short-drive-distance access to both industries simultaneously."
+      ]
     },
     "networkCapital": {
-      "strength": 78,
-      "notes": "Growing dual-industry alumni network spanning both entertainment studios and Silicon Beach tech companies."
+      "alumniAccessibility": 74,
+      "mentorshipDensity": 72,
+      "executiveAccess": 68,
+      "internshipNetwork": 82,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 74,
+      "referralCultureStrength": 74,
+      "donorNetworkStrength": 58,
+      "boardMemberDensity": 48
     },
     "economicEcosystem": {
-      "entertainment": {
-        "strength": 84,
-        "notes": "Strong Film/TV production pipeline into Hollywood studios."
-      },
-      "technology": {
-        "strength": 78,
-        "notes": "Rising Silicon Beach tech placement (Snap, YouTube, Google), an overlooked advantage."
-      }
+      "primaryIndustries": [
+        "Entertainment and Media",
+        "Technology (Silicon Beach)",
+        "Business and Entrepreneurship",
+        "Marketing",
+        "Music and Recording"
+      ],
+      "regionalEconomicDrivers": [
+        "Hollywood Entertainment Industry",
+        "Silicon Beach Tech Corridor",
+        "LA Startup Ecosystem",
+        "Entertainment Marketing"
+      ],
+      "topEmployers": [
+        "Major Hollywood studios",
+        "Snap",
+        "YouTube",
+        "Google",
+        "Silicon Beach startups"
+      ],
+      "emergingIndustries": [
+        "Streaming Media Production",
+        "Creator Economy Technology",
+        "Entertainment Tech Startups",
+        "Digital Marketing"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 60,
+      "corporateHeadquartersDensity": 56,
+      "healthcareHubStrength": 48,
+      "innovationIndex": 74
     },
     "geographicInfluence": {
-      "strength": 76,
-      "notes": "Strong across LA's entertainment and Silicon Beach tech corridor, an overlooked but genuine dual advantage."
+      "dominantMarket": "Los Angeles — Entertainment and Silicon Beach Tech",
+      "secondaryMarkets": [
+        "San Francisco CA",
+        "New York NY"
+      ],
+      "alumniStrongholds": [
+        "Los Angeles CA",
+        "San Francisco CA",
+        "San Diego CA"
+      ]
     },
     "socialCapital": {
-      "strength": 76,
-      "notes": "LMU is quietly building real Silicon Beach tech placement alongside its traditional entertainment industry ties."
+      "greekLifeInfluence": 24,
+      "studentOrganizationStrength": 76,
+      "leadershipDevelopment": 74,
+      "crossDisciplinaryInteraction": 72,
+      "civicEngagement": 66
     },
     "industryPathways": {
     "entertainmentMedia": { "strength": 84, "notes": "Strong Hollywood studio pipeline. (Remapped 2026-07-12 from non-standard key 'entertainment'.)" },
@@ -20179,26 +21311,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Urban, Jesuit-values-driven, practically minded.",
       "leadershipStyle": "Leadership through Jesuit values and Milwaukee corporate/legal relationships."
     },
-    "institutionIdentity": {
-      "archetype": "The Jesuit Business Bridge — Catholic Identity Meets Milwaukee Corporate Access",
-      "institutionalPersonality": "values-driven, urban, practical, Jesuit-formed",
-      "cultureKeywords": [
-        "Jesuit Catholic",
-        "Milwaukee Business",
-        "Engineering",
-        "Law",
-        "Alumni Reciprocity"
-      ],
-      "missionOrientation": "Delivering values-driven education with direct pipeline access to Milwaukee's business and legal community.",
-      "faithTradition": "Roman Catholic (Jesuit)",
-      "educationalPhilosophy": "Jesuit-formed education reinforced by Milwaukee corporate and manufacturing industry ties.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, values-informed.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Strong regional Wisconsin prestige, especially in law and business.",
-      "socialClimate": "Urban, Jesuit-values-driven, practically minded.",
-      "leadershipStyle": "Leadership through Jesuit values and Milwaukee corporate/legal relationships."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
       "regionalRole": "A key business and legal talent engine for Milwaukee and Wisconsin."
@@ -20259,37 +21371,102 @@ const UNIVERSITY_DB_V5 = {
         "Practical"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Marquette does not formally impact most majors, though the College of Engineering and Marquette Law's accelerated pre-law tracks carry real secondary GPA and application-based selectivity."
+    },
     "hiddenOpportunities": {
-      "jesuitAlumniReciprocity": {
-        "strength": 84,
-        "notes": "Jesuit alumni actively hire fellow Marquette graduates, a quiet but real hiring advantage in Wisconsin business and legal circles."
-      }
+      "underratedMajors": [
+        "Marquette Law (Pre-Law Pipeline)",
+        "Physical Therapy (accelerated pathway)",
+        "Speech-Language Pathology",
+        "Supply Chain Management",
+        "Nursing"
+      ],
+      "hiddenCareerPipelines": [
+        "Wisconsin Legal and Judicial Careers",
+        "Milwaukee Corporate Finance (Northwestern Mutual)",
+        "Manufacturing Engineering (Rockwell Automation)",
+        "Healthcare and Physical Therapy",
+        "Big 4 Accounting"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Northwestern Mutual",
+        "Rockwell Automation",
+        "Regional Big 4 accounting offices",
+        "Wisconsin state courts and legislature (Marquette Law ties)",
+        "Milwaukee's downtown corporate corridor"
+      ],
+      "overlookedStrengths": [
+        "Marquette Law School is the most respected and connected law school in Wisconsin, reaching directly into the state Supreme Court and legislature — a genuine, singular institutional advantage.",
+        "Jesuit alumni reciprocity — alumni actively hiring fellow Marquette graduates — functions as a real, quiet hiring advantage in Wisconsin's business and legal community that most families never factor into their research.",
+        "Marquette's urban downtown Milwaukee campus gives students direct walking-distance access to the city's corporate corridor, a genuine advantage over more suburban Jesuit peers."
+      ]
     },
     "networkCapital": {
-      "strength": 78,
-      "notes": "The Jesuit alumni network's professional reciprocity creates real hiring relationships across Wisconsin's legal and business sectors."
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 78,
+      "executiveAccess": 70,
+      "internshipNetwork": 82,
+      "familyBusinessExposure": 46,
+      "relationshipCapitalScore": 80,
+      "alumniLoyaltyScore": 86,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 66,
+      "boardMemberDensity": 54
     },
     "economicEcosystem": {
-      "business": {
-        "strength": 80,
-        "notes": "Strong Milwaukee corporate placement, especially Northwestern Mutual and regional firms."
-      },
-      "law": {
-        "strength": 84,
-        "notes": "Marquette Law is the most connected law school in Wisconsin."
-      },
-      "engineering": {
-        "strength": 74,
-        "notes": "Solid manufacturing/engineering placement via Rockwell Automation and regional employers."
-      }
+      "primaryIndustries": [
+        "Law and Legal Services",
+        "Business and Finance",
+        "Manufacturing Engineering",
+        "Healthcare",
+        "Accounting"
+      ],
+      "regionalEconomicDrivers": [
+        "Wisconsin Legal and Judicial System",
+        "Milwaukee Corporate and Insurance Sector (Northwestern Mutual)",
+        "Manufacturing (Rockwell Automation)",
+        "Healthcare and Physical Therapy"
+      ],
+      "topEmployers": [
+        "Northwestern Mutual",
+        "Rockwell Automation",
+        "Regional Big 4 accounting offices",
+        "Wisconsin state courts and legislature",
+        "Milwaukee healthcare systems"
+      ],
+      "emergingIndustries": [
+        "Legal Technology",
+        "Advanced Manufacturing",
+        "Digital Health",
+        "Fintech"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 38,
+      "corporateHeadquartersDensity": 54,
+      "healthcareHubStrength": 62,
+      "innovationIndex": 60
     },
     "geographicInfluence": {
-      "strength": 72,
-      "notes": "Dominant across Wisconsin, especially Milwaukee's corporate and legal community."
+      "dominantMarket": "Milwaukee and Wisconsin — Law, Business, and Manufacturing",
+      "secondaryMarkets": [
+        "Chicago IL",
+        "Madison WI",
+        "Minneapolis MN"
+      ],
+      "alumniStrongholds": [
+        "Milwaukee WI",
+        "Chicago IL",
+        "Madison WI"
+      ]
     },
     "socialCapital": {
-      "strength": 76,
-      "notes": "The Jesuit alumni network's professional reciprocity creates real hiring relationships across Wisconsin's legal and business sectors."
+      "greekLifeInfluence": 14,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 66,
+      "civicEngagement": 78
     },
     "industryPathways": {
     "consulting": { "strength": 80, "notes": "Strong Milwaukee corporate pipeline. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
@@ -20422,25 +21599,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Big Ten spirited, career-focused, federal-serious.",
       "leadershipStyle": "Leadership through federal proximity and technical/business excellence."
     },
-    "institutionIdentity": {
-      "archetype": "The Federal Feeder — NSA Pipeline Meets Smith Business and Quiet Astronomy Excellence",
-      "institutionalPersonality": "career-focused, federal-serious, Big Ten spirited",
-      "cultureKeywords": [
-        "NSA Pipeline",
-        "Smith Business",
-        "Federal DC Access",
-        "Underrated Astronomy"
-      ],
-      "missionOrientation": "Delivering strong federal, business, and science education directly adjacent to Washington DC.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Applied education reinforced by direct federal agency and business industry proximity.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly progressive, federally engaged.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in federal security tech; strong business; underrated in astronomy/physics.",
-      "socialClimate": "Big Ten spirited, career-focused, federal-serious.",
-      "leadershipStyle": "Leadership through federal proximity and technical/business excellence."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "The primary federal security talent engine for the DC-Maryland-Virginia corridor."
@@ -20501,41 +21659,109 @@ const UNIVERSITY_DB_V5 = {
         "Career-Focused"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Computer Science is a Limited Enrollment Program at Maryland — students apply directly or must meet a competitive GPA threshold to enter or transfer in after starting elsewhere in the university, making it one of the more consequential program-access decisions among large public flagships."
+    },
     "hiddenOpportunities": {
-      "nsaFederalPipeline": {
-        "strength": 92,
-        "notes": "Unmatched NSA/federal security agency pipeline via computer science."
-      },
-      "underratedAstronomyPhysics": {
-        "strength": 84,
-        "notes": "Genuinely elite Astronomy/Physics programs, criminally overshadowed by CS/security fame."
-      }
+      "underratedMajors": [
+        "Astronomy",
+        "Government and Politics",
+        "Atmospheric and Oceanic Science",
+        "Information Science",
+        "Aerospace Engineering"
+      ],
+      "hiddenCareerPipelines": [
+        "Federal Intelligence and Cybersecurity (NSA, adjacent to campus)",
+        "Aerospace and Federal Research (NASA Goddard, 10 miles away)",
+        "Social Entrepreneurship (Smith School's Center for Social Value Creation)",
+        "Government Contracting and Policy Analysis",
+        "Atmospheric and Climate Science"
+      ],
+      "nicheRecruitingAdvantages": [
+        "National Security Agency (NSA)",
+        "NASA Goddard Space Flight Center",
+        "Booz Allen Hamilton and major federal contractors",
+        "Smith School social entrepreneurship network",
+        "Northrop Grumman and Lockheed Martin (Maryland/DC defense corridor)"
+      ],
+      "overlookedStrengths": [
+        "Maryland's Astronomy and Physics departments are genuinely elite research programs, quietly overshadowed by the university's computer science and federal security reputation.",
+        "NASA Goddard Space Flight Center sits 10 miles from campus, giving astronomy and aerospace students a direct, walkable-distance federal research pathway most families never realize exists.",
+        "The Smith School's Center for Social Value Creation is a genuine, distinctive social entrepreneurship specialty, not generic business-school branding."
+      ]
     },
     "networkCapital": {
-      "strength": 84,
-      "notes": "Unmatched NSA/federal security agency pipeline, concentrated in the DC-Maryland-Virginia corridor."
+      "alumniAccessibility": 76,
+      "mentorshipDensity": 74,
+      "executiveAccess": 78,
+      "internshipNetwork": 88,
+      "familyBusinessExposure": 32,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 72,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 62,
+      "boardMemberDensity": 54
     },
     "economicEcosystem": {
-      "federalSecurity": {
-        "strength": 92,
-        "notes": "Unmatched pipeline into NSA and federal security agencies."
-      },
-      "business": {
-        "strength": 78,
-        "notes": "Solid Smith Business finance/management placement."
-      },
-      "physicsAstronomy": {
-        "strength": 84,
-        "notes": "Elite, underrated research pipeline."
-      }
+      "primaryIndustries": [
+        "Federal Security and Intelligence",
+        "Aerospace and Federal Research",
+        "Government Contracting",
+        "Financial Services and Management (Smith Business)",
+        "Physical Sciences Research"
+      ],
+      "regionalEconomicDrivers": [
+        "Federal Government and Intelligence Agencies",
+        "Defense Contracting",
+        "Aerospace Research (NASA Goddard)",
+        "DC-Metro Financial and Consulting Services"
+      ],
+      "topEmployers": [
+        "National Security Agency",
+        "NASA Goddard Space Flight Center",
+        "Booz Allen Hamilton",
+        "Northrop Grumman",
+        "Lockheed Martin"
+      ],
+      "emergingIndustries": [
+        "Cybersecurity",
+        "Space and Satellite Technology",
+        "AI and Data Science for Government Applications",
+        "Climate and Atmospheric Science"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 48,
+      "corporateHeadquartersDensity": 56,
+      "healthcareHubStrength": 54,
+      "innovationIndex": 78
     },
     "geographicInfluence": {
-      "strength": 84,
-      "notes": "Dominant across the DC-Maryland-Virginia corridor."
+      "dominantMarket": "Washington DC-Maryland-Virginia — Federal Government, Intelligence, and Defense",
+      "secondaryMarkets": [
+        "Baltimore MD",
+        "New York NY",
+        "Philadelphia PA"
+      ],
+      "alumniStrongholds": [
+        "Washington DC-Maryland",
+        "Northern Virginia",
+        "Baltimore MD"
+      ]
     },
     "socialCapital": {
-      "strength": 80,
-      "notes": "CS and engineering cohorts build direct relationships with federal agencies, especially NSA-adjacent research and recruiting."
+      "greekLifeInfluence": 30,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 72,
+      "civicEngagement": 74
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 76,
+      "firstGenerationSupport": 78,
+      "wealthCreationPotential": 80,
+      "familyBusinessPipelineStrength": 42
     },
     "industryPathways": {
     "defense": { "strength": 92, "notes": "The strongest federal security agency pipeline of any public university." },
@@ -20661,26 +21887,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Urban, career-focused, constantly in motion.",
       "leadershipStyle": "Leadership through practical experience and direct industry co-op relationships."
     },
-    "institutionIdentity": {
-      "archetype": "The Co-op Machine — Real Work Experience Built Into the Degree",
-      "institutionalPersonality": "career-focused, urban, ambitious, practically minded",
-      "cultureKeywords": [
-        "Co-op",
-        "Real Work Experience",
-        "Boston",
-        "Career-First",
-        "Practical"
-      ],
-      "missionOrientation": "Integrating real-world professional experience directly into the undergraduate degree via co-op.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Learning through alternating semesters of classroom study and full-time paid industry work.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly progressive, career-pragmatic.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Rapidly rising national reputation driven by measurable co-op outcomes.",
-      "socialClimate": "Urban, career-focused, constantly in motion.",
-      "leadershipStyle": "Leadership through practical experience and direct industry co-op relationships."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "A major talent engine for Boston's biotech and engineering sectors, with co-op reach extending nationally."
@@ -20743,37 +21949,102 @@ const UNIVERSITY_DB_V5 = {
         "In Constant Motion"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Northeastern does not formally impact most majors, though its most competitive co-op placements (biotech, top-tier engineering firms) function as their own selective process layered on top of admission."
+    },
     "hiddenOpportunities": {
-      "coopConversion": {
-        "strength": 92,
-        "notes": "Co-op placements often convert directly into full-time offers, locking in employment before graduation."
-      }
+      "underratedMajors": [
+        "Health Sciences (co-op into Boston biotech)",
+        "Game Design",
+        "Cybersecurity",
+        "Human Services",
+        "Supply Chain Management"
+      ],
+      "hiddenCareerPipelines": [
+        "Biotech and Pharmaceutical Co-op (Moderna, Biogen)",
+        "Defense and Aerospace Engineering (Raytheon)",
+        "Cybersecurity",
+        "Game Design and Interactive Media",
+        "Supply Chain and Operations Management"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Moderna",
+        "Biogen",
+        "Raytheon",
+        "Fidelity Investments",
+        "Hundreds of national co-op employer partners"
+      ],
+      "overlookedStrengths": [
+        "Co-op placements often convert directly into full-time job offers, meaning many Northeastern students have their post-graduation job locked in a year or more before they walk across the stage.",
+        "Northeastern's rapid rise in national rankings over the past two decades is largely attributable to the co-op model's measurable outcomes, not just marketing — a genuine structural advantage, not a branding exercise.",
+        "The co-op model gives students real, paid, resume-building experience at companies like Moderna and Raytheon before graduation, a level of documented work history most traditional four-year programs cannot match."
+      ]
     },
     "networkCapital": {
-      "strength": 82,
-      "notes": "Deep Boston biotech/engineering co-op pipeline, building professional networks years before graduation."
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 84,
+      "executiveAccess": 78,
+      "internshipNetwork": 96,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 62,
+      "boardMemberDensity": 54
     },
     "economicEcosystem": {
-      "biotech": {
-        "strength": 84,
-        "notes": "Strong co-op pipeline into Moderna, Biogen, and Boston's biotech corridor."
-      },
-      "engineering": {
-        "strength": 82,
-        "notes": "Strong co-op placement with Raytheon and regional engineering firms."
-      },
-      "business": {
-        "strength": 76,
-        "notes": "Solid co-op-driven business placement in Boston's corporate economy."
-      }
+      "primaryIndustries": [
+        "Biotechnology and Pharmaceuticals",
+        "Engineering",
+        "Financial Services",
+        "Cybersecurity",
+        "Health Sciences"
+      ],
+      "regionalEconomicDrivers": [
+        "Boston Biotech Corridor",
+        "Defense and Aerospace Engineering",
+        "Financial Services",
+        "Health Sciences and Co-op Placement"
+      ],
+      "topEmployers": [
+        "Moderna",
+        "Biogen",
+        "Raytheon",
+        "Fidelity Investments",
+        "Hundreds of national co-op partners"
+      ],
+      "emergingIndustries": [
+        "Cybersecurity",
+        "Digital Health",
+        "AI and Robotics",
+        "Biotech Manufacturing"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 58,
+      "corporateHeadquartersDensity": 56,
+      "healthcareHubStrength": 78,
+      "innovationIndex": 78
     },
     "geographicInfluence": {
-      "strength": 78,
-      "notes": "Strong throughout Boston and the Northeast, with co-op-driven reach extending nationally."
+      "dominantMarket": "Boston — Biotech, Engineering, and Co-op Placement",
+      "secondaryMarkets": [
+        "New York NY",
+        "San Francisco CA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Boston MA",
+        "New York NY",
+        "San Francisco CA"
+      ]
     },
     "socialCapital": {
-      "strength": 80,
-      "notes": "Co-op placements build real workplace relationships that often convert directly into full-time offers."
+      "greekLifeInfluence": 20,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 74,
+      "civicEngagement": 66
     },
     "industryPathways": {
     "technology": { "strength": 84, "notes": "Strong co-op-driven engineering placement. (Remapped 2026-07-12 from non-standard key 'engineering'.)" },
@@ -20909,27 +22180,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Independent, urban, self-assembled, ambitious.",
       "leadershipStyle": "Leadership through independence, global network access, and direct industry proximity."
     },
-    "institutionIdentity": {
-      "archetype": "The City Campus — Wall Street, Media, and Global Ambition Without Borders",
-      "institutionalPersonality": "independent, ambitious, urban, globally minded",
-      "cultureKeywords": [
-        "No Campus",
-        "Wall Street",
-        "Media",
-        "Global",
-        "Independence",
-        "Manhattan"
-      ],
-      "missionOrientation": "Providing a global, urban education without the constraints of a traditional campus.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Learning through direct immersion in New York City's finance, media, and cultural industries.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly progressive, globally engaged.",
-      "studentAutonomy": "Very High",
-      "prestigeOrientation": "Elite global prestige, especially strong in finance, film, and international business.",
-      "socialClimate": "Independent, urban, self-assembled, ambitious.",
-      "leadershipStyle": "Leadership through independence, global network access, and direct industry proximity."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "One of the primary talent engines for Wall Street, global media, and entertainment industries centered in New York City."
@@ -20996,6 +22246,10 @@ const UNIVERSITY_DB_V5 = {
         "Globally Minded"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Stern School of Business and Tisch School of the Arts are both separate-application colleges with their own admission review distinct from NYU's College of Arts and Science, and internal transfer into either after starting elsewhere is very difficult."
+    },
     "hiddenOpportunities": {
       "wallStreetProximity": {
         "strength": 96,
@@ -21011,34 +22265,69 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "networkCapital": {
-      "strength": 88,
-      "notes": "Deep Wall Street and entertainment-industry placement via Stern and Tisch, reinforced by sheer NYC proximity."
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 80,
+      "executiveAccess": 86,
+      "internshipNetwork": 94,
+      "familyBusinessExposure": 48,
+      "relationshipCapitalScore": 84,
+      "alumniLoyaltyScore": 76,
+      "referralCultureStrength": 82,
+      "donorNetworkStrength": 82,
+      "boardMemberDensity": 66
     },
     "economicEcosystem": {
-      "investmentBanking": {
-        "strength": 94,
-        "notes": "Among the strongest Wall Street pipelines in the country via Stern."
-      },
-      "entertainmentMedia": {
-        "strength": 88,
-        "notes": "Tisch School of the Arts feeds directly into film, television, and media industries."
-      },
-      "consulting": {
-        "strength": 86,
-        "notes": "Strong MBB and Big 4 placement via Stern."
-      },
-      "fashion": {
-        "strength": 74,
-        "notes": "Direct proximity to the global fashion industry headquartered in Manhattan."
-      }
+      "primaryIndustries": [
+        "Investment Banking and Finance",
+        "Entertainment and Media",
+        "Management Consulting",
+        "Fashion",
+        "Medicine and Healthcare"
+      ],
+      "regionalEconomicDrivers": [
+        "Wall Street Finance",
+        "Global Media and Entertainment",
+        "Fashion Industry",
+        "Academic Medicine"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "Morgan Stanley",
+        "Every major consulting firm",
+        "NYC media and entertainment companies",
+        "NYU Langone Health"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "Streaming Media",
+        "Fashion Technology",
+        "Digital Health"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 78,
+      "corporateHeadquartersDensity": 84,
+      "healthcareHubStrength": 80,
+      "innovationIndex": 84
     },
     "geographicInfluence": {
-      "strength": 92,
-      "notes": "Global reach through NYC's finance and media industries plus international campus network."
+      "dominantMarket": "New York City — Wall Street, Media, and Global Business",
+      "secondaryMarkets": [
+        "Los Angeles CA",
+        "London UK",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "New York NY",
+        "Los Angeles CA",
+        "London UK"
+      ]
     },
     "socialCapital": {
-      "strength": 82,
-      "notes": "Stern cohorts build direct Wall Street relationships reinforced by walking distance to the financial district."
+      "greekLifeInfluence": 14,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 78,
+      "civicEngagement": 68
     },
     "industryPathways": {
     "investmentBanking": { "strength": 94, "notes": "Stern rivals Wharton for Wall Street placement. (Remapped from non-standard key 'business', split across investmentBanking/consulting, 2026-07-12 — judgment call.)" },
@@ -21178,28 +22467,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Large, spirited, football-centric, Greek-heavy, genuinely self-contained college-town culture.",
       "leadershipStyle": "Leadership through tradition, scale, and one of the most active alumni-to-student mentorship cultures in the country."
     },
-    "institutionIdentity": {
-      "archetype": "The Loyal Giant — Engineering, Business, and the Nation's Most Powerful Alumni Network",
-      "institutionalPersonality": "loyal, tradition-bound, spirited, scale-driven, quietly ambitious",
-      "cultureKeywords": [
-        "Big Ten",
-        "Loyalty",
-        "Football",
-        "Engineering",
-        "Actuarial Science",
-        "Alumni Network",
-        "Tradition"
-      ],
-      "missionOrientation": "Providing access to excellence at scale across Pennsylvania through a distinctive branch-campus commonwealth system feeding into University Park.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Students build community deliberately in a self-contained college town, with the university's scale rewarding self-direction and networking initiative.",
-      "competitiveness": "Moderately Selective",
-      "politicalCulture": "Broadly representative of Pennsylvania's political diversity, pragmatic, tradition-focused.",
-      "studentAutonomy": "Very High",
-      "prestigeOrientation": "Strong regional and Mid-Atlantic prestige, amplified nationally by an unusually loyal and dispersed alumni network.",
-      "socialClimate": "Large, spirited, football-centric, Greek-heavy, genuinely self-contained college-town culture.",
-      "leadershipStyle": "Leadership through tradition, scale, and one of the most active alumni-to-student mentorship cultures in the country."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "A major talent engine for the Mid-Atlantic corridor, feeding Philadelphia, Pittsburgh, New York, and Washington DC with engineering, business, and actuarial science graduates."
@@ -21268,61 +22535,103 @@ const UNIVERSITY_DB_V5 = {
         "Tradition-Bound"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Penn State's Smeal College of Business and the College of Engineering both use a change-of-campus/change-of-major secondary review process for students who don't enter University Park directly into those colleges as freshmen, which is common given how many students begin at branch campuses."
+    },
     "hiddenOpportunities": {
-      "actuarialScience": {
-        "strength": 94,
-        "notes": "Penn State's actuarial science program is one of the most respected in the country, feeding directly into the insurance industry with an unusually strong alumni hiring pipeline."
-      },
-      "alumniNetworkHiring": {
-        "strength": 96,
-        "notes": "The Penn State alumni network's willingness to hire fellow alumni is a documented and unusually powerful hiring advantage across nearly every industry."
-      },
-      "meteorology": {
-        "strength": 88,
-        "notes": "Penn State's meteorology program is one of the most respected in the country, feeding directly into broadcast meteorology and the National Weather Service."
-      },
-      "agriculture": {
-        "strength": 74,
-        "notes": "Serves Pennsylvania's significant agricultural economy through the College of Agricultural Sciences."
-      }
+      "underratedMajors": [
+        "Actuarial Science",
+        "Meteorology",
+        "Agricultural Sciences",
+        "Supply Chain and Information Systems",
+        "Turfgrass Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Insurance and Actuarial Analytics",
+        "Broadcast Meteorology and the National Weather Service",
+        "Agricultural Science and AgTech",
+        "Sports Business and Athletics Administration",
+        "Aerospace and Defense Engineering"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Deloitte, EY, and PwC",
+        "Highmark and major insurance carriers",
+        "Lockheed Martin and Boeing",
+        "The National Weather Service and major broadcast networks",
+        "The Penn State alumni network itself — genuinely functions as an employer relationship in its own right"
+      ],
+      "overlookedStrengths": [
+        "The Penn State alumni network's documented willingness to hire fellow alumni — sometimes called the 'Penn State mafia' by students themselves — is a genuine, measurable hiring advantage that punches above the university's academic rankings in many industries.",
+        "Penn State's actuarial science program is one of the most respected in the country, an unusually strong, quiet pipeline into the insurance industry.",
+        "The meteorology program is a top-tier, often-overlooked credential feeding directly into broadcast meteorology and the National Weather Service."
+      ]
     },
     "networkCapital": {
-      "strength": 96,
-      "notes": "Penn State's alumni network is arguably the most loyal and hiring-active in American higher education — a documented phenomenon that functions as a genuine career accelerant across industries."
+      "alumniAccessibility": 94,
+      "mentorshipDensity": 92,
+      "executiveAccess": 82,
+      "internshipNetwork": 84,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 94,
+      "alumniLoyaltyScore": 98,
+      "referralCultureStrength": 96,
+      "donorNetworkStrength": 84,
+      "boardMemberDensity": 62
     },
     "economicEcosystem": {
-      "sportsBusiness": {
-        "strength": 84,
-        "notes": "Beaver Stadium's scale and Penn State's athletic department create meaningful sports business and media pathways."
-      },
-      "insurance": {
-        "strength": 92,
-        "notes": "Direct pipeline into the insurance industry via the actuarial science program, among the strongest in the country."
-      },
-      "technology": {
-        "strength": 64,
-        "notes": "Solid but not dominant technology placement, with graduates entering enterprise tech and consulting roles regionally."
-      },
-      "consulting": {
-        "strength": 82,
-        "notes": "Strong recruiting by Deloitte, EY, PwC, and regional strategy firms out of Smeal College of Business."
-      },
-      "defense": {
-        "strength": 72,
-        "notes": "Solid pathways into aerospace and defense engineering via Lockheed Martin and Boeing recruiting relationships."
-      },
-      "realEstate": {
-        "strength": 62,
-        "notes": "Moderate opportunities in Mid-Atlantic commercial real estate and development."
-      }
+      "primaryIndustries": [
+        "Insurance and Actuarial Services",
+        "Engineering (mechanical, electrical, industrial)",
+        "Management Consulting",
+        "Aerospace and Defense",
+        "Agriculture and Agricultural Science"
+      ],
+      "regionalEconomicDrivers": [
+        "Insurance (Highmark and major carriers)",
+        "Mid-Atlantic Engineering and Manufacturing",
+        "Aerospace and Defense (Lockheed Martin, Boeing)",
+        "Pennsylvania Agriculture"
+      ],
+      "topEmployers": [
+        "Deloitte, EY, and PwC",
+        "Highmark",
+        "JPMorgan Chase",
+        "Lockheed Martin",
+        "Boeing"
+      ],
+      "emergingIndustries": [
+        "Insurtech",
+        "AgTech and Precision Agriculture",
+        "Data Science and Analytics",
+        "Semiconductor and Advanced Manufacturing"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 40,
+      "corporateHeadquartersDensity": 52,
+      "healthcareHubStrength": 58,
+      "innovationIndex": 68
     },
     "geographicInfluence": {
-      "strength": 88,
-      "notes": "Dominant across Pennsylvania and the Mid-Atlantic, with an unusually wide national dispersal of loyal alumni relative to peer public flagships."
+      "dominantMarket": "Pennsylvania and the Mid-Atlantic — Insurance, Engineering, and Consulting",
+      "secondaryMarkets": [
+        "New York NY",
+        "Washington DC",
+        "Pittsburgh PA"
+      ],
+      "alumniStrongholds": [
+        "Philadelphia PA",
+        "Pittsburgh PA",
+        "New York NY",
+        "Washington DC"
+      ]
     },
     "socialCapital": {
-      "strength": 94,
-      "notes": "The self-contained college-town experience creates unusually deep bonds that convert directly into the legendary alumni-hiring-alumni culture Penn State is known for."
+      "greekLifeInfluence": 58,
+      "studentOrganizationStrength": 88,
+      "leadershipDevelopment": 84,
+      "crossDisciplinaryInteraction": 68,
+      "civicEngagement": 74
     },
     "industryPathways": {
     "technology": { "strength": 86, "notes": "Strong across mechanical, electrical, and industrial engineering, with solid Mid-Atlantic corporate placement. (Remapped 2026-07-12 from non-standard key 'engineering'.)" },
@@ -21455,26 +22764,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Boilermaker-proud, technically serious, Big Ten spirited.",
       "leadershipStyle": "Leadership through engineering rigor and deep aerospace/manufacturing industry partnerships."
     },
-    "institutionIdentity": {
-      "archetype": "The Astronaut Factory — Engineering Prestige and the New Semiconductor Corridor",
-      "institutionalPersonality": "technical, humble, rigorous, Midwest-practical",
-      "cultureKeywords": [
-        "Astronauts",
-        "Engineering",
-        "Semiconductors",
-        "Big Ten",
-        "Boilermaker Pride"
-      ],
-      "missionOrientation": "Producing elite engineering talent at public-school scale, now central to America's semiconductor reshoring effort.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Rigorous, hands-on engineering education reinforced by deep aerospace and manufacturing industry ties.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, practically minded.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite engineering-specific prestige, historically astronaut-linked, now semiconductor-linked.",
-      "socialClimate": "Boilermaker-proud, technically serious, Big Ten spirited.",
-      "leadershipStyle": "Leadership through engineering rigor and deep aerospace/manufacturing industry partnerships."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
       "regionalRole": "A primary engineering talent engine for the Midwest, now central to the semiconductor manufacturing reshoring wave."
@@ -21537,41 +22826,102 @@ const UNIVERSITY_DB_V5 = {
         "Big Ten Spirited"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "Purdue's College of Engineering and Computer Science major both use competitive secondary GPA review for students seeking to declare or transfer in after their first year, given demand for seats significantly exceeds general admission volume."
+    },
     "hiddenOpportunities": {
-      "semiconductorManufacturing": {
-        "strength": 90,
-        "notes": "Purdue's new fabrication partnerships position it as a primary talent pipeline for CHIPS Act reshoring."
-      },
-      "aerospaceLegacy": {
-        "strength": 92,
-        "notes": "Purdue has produced more astronauts than any public university, a genuine and durable engineering credibility marker."
-      }
+      "underratedMajors": [
+        "Aviation Technology",
+        "Agricultural Engineering",
+        "Nuclear Engineering",
+        "Actuarial Science",
+        "Veterinary Medicine"
+      ],
+      "hiddenCareerPipelines": [
+        "Semiconductor Manufacturing and Chip Fabrication",
+        "Aerospace and Astronaut Training Pipeline",
+        "Agricultural Technology and Engineering",
+        "Nuclear Power Engineering",
+        "Aviation Management and Flight Training"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Boeing",
+        "Lockheed Martin",
+        "Intel",
+        "Cummins",
+        "A rapidly growing roster of semiconductor manufacturers"
+      ],
+      "overlookedStrengths": [
+        "Purdue's new semiconductor fabrication partnerships position it as a primary talent pipeline for the CHIPS Act reshoring wave, a hidden pathway families researching engineering rankings alone will miss.",
+        "Purdue has produced more astronauts than any public university in America — a genuine, documented engineering credibility marker that predates and now reinforces its emerging semiconductor role.",
+        "Purdue's aviation technology program, including its own airport and flight training fleet, is a distinctive, often-overlooked credential most families never associate with a Big Ten engineering school."
+      ]
     },
     "networkCapital": {
-      "strength": 82,
-      "notes": "Deep aerospace and engineering alumni density, now amplified by Purdue's growing semiconductor manufacturing role."
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 78,
+      "executiveAccess": 76,
+      "internshipNetwork": 86,
+      "familyBusinessExposure": 40,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 82,
+      "donorNetworkStrength": 72,
+      "boardMemberDensity": 58
     },
     "economicEcosystem": {
-      "aerospace": {
-        "strength": 92,
-        "notes": "Elite pipeline into Boeing, Lockheed Martin, and NASA via astronaut-producing legacy programs."
-      },
-      "semiconductors": {
-        "strength": 88,
-        "notes": "Rapidly rising role in America's chip manufacturing reshoring effort."
-      },
-      "manufacturing": {
-        "strength": 80,
-        "notes": "Strong Midwest industrial manufacturing placement via Cummins and regional employers."
-      }
+      "primaryIndustries": [
+        "Aerospace and Defense",
+        "Semiconductor Manufacturing",
+        "Advanced Manufacturing",
+        "Agricultural Technology",
+        "Nuclear Engineering"
+      ],
+      "regionalEconomicDrivers": [
+        "Aerospace and Defense (Boeing, Lockheed Martin, NASA)",
+        "Semiconductor Manufacturing (CHIPS Act reshoring)",
+        "Midwest Industrial Manufacturing (Cummins)",
+        "Agricultural Technology"
+      ],
+      "topEmployers": [
+        "Boeing",
+        "Lockheed Martin",
+        "Intel",
+        "Cummins",
+        "NASA"
+      ],
+      "emergingIndustries": [
+        "Semiconductor Fabrication",
+        "Space Technology",
+        "Advanced Manufacturing Robotics",
+        "AgTech"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 42,
+      "corporateHeadquartersDensity": 52,
+      "healthcareHubStrength": 54,
+      "innovationIndex": 82
     },
     "geographicInfluence": {
-      "strength": 82,
-      "notes": "Dominant across Indiana and the Midwest, with rapidly expanding national relevance in semiconductors."
+      "dominantMarket": "Midwest — Aerospace, Semiconductor Manufacturing, and Industrial Engineering",
+      "secondaryMarkets": [
+        "Chicago IL",
+        "Detroit MI",
+        "Indianapolis IN"
+      ],
+      "alumniStrongholds": [
+        "Indianapolis IN",
+        "Chicago IL",
+        "Detroit MI"
+      ]
     },
     "socialCapital": {
-      "strength": 78,
-      "notes": "Engineering cohorts form tight, technically-minded networks that carry into aerospace and semiconductor careers nationally."
+      "greekLifeInfluence": 30,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 70,
+      "civicEngagement": 66
     },
     "industryPathways": {
     "technology": { "strength": 92, "notes": "Comprehensive engineering breadth with elite aerospace specialization, a rapidly rising semiconductor pathway, and strong Midwest manufacturing placement. (Remapped 2026-07-12, combined from non-standard keys 'engineering' (92), 'semiconductors' (88), and 'manufacturing' (80) into one standard key — judgment call, not independently re-verified.)" }
@@ -21699,26 +23049,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Warm, Greek-heavy, Fort Worth-proud.",
       "leadershipStyle": "Leadership through genuine community and direct DFW industry access."
     },
-    "institutionIdentity": {
-      "archetype": "The Intimate DFW Alternative — Warmth Over Wealth-First Culture",
-      "institutionalPersonality": "warm, intimate, Fort Worth-proud, Greek-heavy",
-      "cultureKeywords": [
-        "Nurse Anesthesia",
-        "DFW Access",
-        "Intimate Scale",
-        "Fort Worth",
-        "Greek Life"
-      ],
-      "missionOrientation": "Delivering strong nursing and business education in a genuinely intimate Texas community.",
-      "faithTradition": "Disciples of Christ (historically affiliated, broadly ecumenical today)",
-      "educationalPhilosophy": "Small-cohort education reinforced by real faculty mentorship and DFW industry proximity.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate to conservative, community-oriented.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in nurse anesthesia; solid regional business prestige.",
-      "socialClimate": "Warm, Greek-heavy, Fort Worth-proud.",
-      "leadershipStyle": "Leadership through genuine community and direct DFW industry access."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "Texas Triangle",
       "regionalRole": "A healthcare and business talent engine for Dallas-Fort Worth."
@@ -21779,37 +23109,100 @@ const UNIVERSITY_DB_V5 = {
         "Fort Worth-Proud"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "TCU's Harris College of Nursing, including its nurse anesthesia pipeline, has a separate, competitive admission track distinct from general university admission, and Neeley School of Business majors carry real secondary GPA thresholds for internal transfer."
+    },
     "hiddenOpportunities": {
-      "nurseAnesthesiaTop9": {
-        "strength": 90,
-        "notes": "Ranked #9 nationally, a genuinely elite clinical credential hiding behind the football/Greek-life image."
-      }
+      "underratedMajors": [
+        "Nurse Anesthesia (Harris College)",
+        "Energy Management",
+        "Ranch Management",
+        "Supply Chain Management",
+        "Strategic Communication"
+      ],
+      "hiddenCareerPipelines": [
+        "Nurse Anesthesia and Clinical Healthcare",
+        "Oil and Gas (Barnett Shale energy management)",
+        "Ranch and Land Management",
+        "DFW Corporate Finance",
+        "Supply Chain and Logistics"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Major DFW healthcare systems",
+        "Barnett Shale energy companies",
+        "DFW corporate headquarters cluster",
+        "American Airlines (Fort Worth-based)",
+        "Regional ranching and agribusiness firms"
+      ],
+      "overlookedStrengths": [
+        "TCU's nurse anesthesia program is ranked #9 in the country, a genuinely elite clinical credential hiding behind the university's football and Greek-life image.",
+        "Fort Worth sits inside the Barnett Shale region, giving TCU business students real oil and gas industry ties most families never associate with a small private university.",
+        "TCU's smaller size, roughly 10,000 undergraduates, creates real, lasting faculty mentorship that SMU's larger scale can't always match — a genuine trade-off, not just a consolation prize."
+      ]
     },
     "networkCapital": {
-      "strength": 76,
-      "notes": "Small size plus Greek life density creates unusually close bonds that convert directly into DFW's business and healthcare networks."
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 80,
+      "executiveAccess": 68,
+      "internshipNetwork": 76,
+      "familyBusinessExposure": 56,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 80,
+      "donorNetworkStrength": 66,
+      "boardMemberDensity": 52
     },
     "economicEcosystem": {
-      "nursingHealthcare": {
-        "strength": 90,
-        "notes": "Elite nurse anesthesia pipeline, top-9 nationally."
-      },
-      "business": {
-        "strength": 76,
-        "notes": "Solid DFW business placement."
-      },
-      "energy": {
-        "strength": 68,
-        "notes": "Real Barnett Shale oil & gas ties given Fort Worth's location."
-      }
+      "primaryIndustries": [
+        "Nursing and Healthcare",
+        "Energy (Oil and Gas)",
+        "Business and Finance",
+        "Ranching and Agribusiness",
+        "Aviation"
+      ],
+      "regionalEconomicDrivers": [
+        "DFW Healthcare Systems",
+        "Barnett Shale Energy",
+        "DFW Corporate Headquarters Cluster",
+        "American Airlines and Aviation"
+      ],
+      "topEmployers": [
+        "Major DFW healthcare systems",
+        "Barnett Shale energy companies",
+        "American Airlines",
+        "DFW corporate headquarters",
+        "Regional ranching and agribusiness firms"
+      ],
+      "emergingIndustries": [
+        "Digital Health",
+        "Energy Transition Technology",
+        "Fintech",
+        "Logistics Technology"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 38,
+      "corporateHeadquartersDensity": 58,
+      "healthcareHubStrength": 76,
+      "innovationIndex": 60
     },
     "geographicInfluence": {
-      "strength": 74,
-      "notes": "Dominant across Dallas-Fort Worth, with strong Texas-wide reach."
+      "dominantMarket": "Dallas-Fort Worth — Healthcare, Energy, and Business",
+      "secondaryMarkets": [
+        "Houston TX",
+        "New York NY"
+      ],
+      "alumniStrongholds": [
+        "Dallas-Fort Worth TX",
+        "Houston TX"
+      ]
     },
     "socialCapital": {
-      "strength": 78,
-      "notes": "Small size plus Greek life density creates unusually close bonds converting directly into DFW networks."
+      "greekLifeInfluence": 54,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 62,
+      "civicEngagement": 68
     },
     "industryPathways": {
     "healthWellness": { "strength": 90, "notes": "Top-9 nurse anesthesia pipeline. (Remapped 2026-07-12 from non-standard key 'nursingHealthcare'.)" },
@@ -21945,27 +23338,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Warm, basketball-proud, achievement-oriented.",
       "leadershipStyle": "Leadership through community, tradition, and direct research/industry proximity."
     },
-    "institutionIdentity": {
-      "archetype": "The Public Ivy Anchor — Pharmacy, Business, and the Research Triangle Economy",
-      "institutionalPersonality": "warm, ambitious, basketball-proud, research-serious",
-      "cultureKeywords": [
-        "Public Ivy",
-        "Research Triangle",
-        "Pharmacy",
-        "Basketball",
-        "Kenan-Flagler",
-        "Southern Warmth"
-      ],
-      "missionOrientation": "Delivering elite public education embedded directly in one of the country's densest research/biotech economies.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Rigorous education paired with direct Research Triangle industry access and genuine school-spirit community.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly moderate to progressive, community-oriented.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite public prestige, especially strong in pharmacy and business.",
-      "socialClimate": "Warm, basketball-proud, achievement-oriented.",
-      "leadershipStyle": "Leadership through community, tradition, and direct research/industry proximity."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "CharLanta",
       "regionalRole": "A primary talent engine for the Research Triangle's biotech, pharma, and business ecosystem alongside Duke and NC State."
@@ -22031,41 +23403,104 @@ const UNIVERSITY_DB_V5 = {
         "Research-Serious"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "UNC does not formally impact most majors at the undergraduate level, but Kenan-Flagler Business School (junior-year application) and the Eshelman School of Pharmacy carry real secondary admission, and pre-med tracks are competitive given the size of UNC's own medical school pipeline."
+    },
     "hiddenOpportunities": {
-      "pharmacySchool": {
-        "strength": 98,
-        "notes": "Ranked #1 in the country for three consecutive US News cycles, one of the most underrated credentials in the database."
-      },
-      "researchTriangleBiotech": {
-        "strength": 90,
-        "notes": "Direct proximity to one of the densest biotech/pharma clusters in the country."
-      }
+      "underratedMajors": [
+        "Health Policy and Management",
+        "Statistics and Analytics",
+        "Public Policy",
+        "Biostatistics",
+        "Environmental Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Pharmaceutical Research and Regulatory Affairs",
+        "Health Economics and Outcomes Research",
+        "Healthcare Consulting",
+        "Biotech and Pharma R&D via Research Triangle proximity",
+        "Public Health Policy"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Bank of America",
+        "Wells Fargo",
+        "IBM",
+        "Major Research Triangle biotech and pharma firms",
+        "UNC Health System"
+      ],
+      "overlookedStrengths": [
+        "The #1-ranked pharmacy school in the country, three consecutive US News cycles, is genuinely underrated relative to UNC's basketball and Kenan-Flagler reputation.",
+        "UNC's own academic medical center and UNC Health System give undergraduates direct proximity to a major research hospital system, not just a regional biotech cluster.",
+        "In-state tuition combined with Research Triangle access delivers a return on investment few flagship publics can match."
+      ]
     },
     "networkCapital": {
-      "strength": 84,
-      "notes": "Kenan-Flagler cohorts build tight bonds that feed directly into the Research Triangle's business and pharma ecosystem."
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 76,
+      "executiveAccess": 74,
+      "internshipNetwork": 84,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 80,
+      "donorNetworkStrength": 76,
+      "boardMemberDensity": 62
     },
     "economicEcosystem": {
-      "pharmaBiotech": {
-        "strength": 92,
-        "notes": "Unmatched pipeline into pharma and biotech via the #1-ranked pharmacy school and Research Triangle proximity."
-      },
-      "business": {
-        "strength": 86,
-        "notes": "Kenan-Flagler has strong Southeast and national corporate placement."
-      },
-      "consulting": {
-        "strength": 78,
-        "notes": "Solid MBB and Big 4 placement out of Kenan-Flagler."
-      }
+      "primaryIndustries": [
+        "Pharmaceutical Research and Biotech",
+        "Academic Medicine and Healthcare",
+        "Financial Services",
+        "Management Consulting",
+        "Technology"
+      ],
+      "regionalEconomicDrivers": [
+        "Pharmaceutical Research",
+        "Biotechnology",
+        "Academic Medicine",
+        "Banking and Financial Services",
+        "Research Triangle Technology"
+      ],
+      "topEmployers": [
+        "UNC Health System",
+        "Bank of America",
+        "Wells Fargo",
+        "IBM",
+        "Major Research Triangle biotech and pharma firms"
+      ],
+      "emergingIndustries": [
+        "Health Economics and Outcomes Research",
+        "Biostatistics and Health Data Science",
+        "Digital Health",
+        "Biomanufacturing"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 58,
+      "corporateHeadquartersDensity": 52,
+      "healthcareHubStrength": 92,
+      "innovationIndex": 78
     },
     "geographicInfluence": {
-      "strength": 86,
-      "notes": "Dominant across North Carolina and the Southeast, with strong national reach in pharmacy."
+      "dominantMarket": "Research Triangle — Pharmacy, Biotech, and Academic Medicine",
+      "secondaryMarkets": [
+        "Charlotte NC",
+        "Washington DC",
+        "New York NY",
+        "Atlanta GA"
+      ],
+      "alumniStrongholds": [
+        "Raleigh-Durham-Chapel Hill Research Triangle NC",
+        "Charlotte NC",
+        "Washington DC"
+      ]
     },
     "socialCapital": {
-      "strength": 82,
-      "notes": "Kenan-Flagler cohorts build tight bonds reinforced by Research Triangle proximity."
+      "greekLifeInfluence": 42,
+      "studentOrganizationStrength": 84,
+      "leadershipDevelopment": 82,
+      "crossDisciplinaryInteraction": 74,
+      "civicEngagement": 80
     },
     "industryPathways": {
     "healthcareAdministration": { "strength": 98, "notes": "The #1 pharmacy school pipeline in the country. (Remapped from non-standard key 'pharmacy', 2026-07-12.)" },
@@ -22200,26 +23635,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Massive, creative, tech-forward.",
       "leadershipStyle": "Leadership through scale and direct Austin tech-industry proximity."
     },
-    "institutionIdentity": {
-      "archetype": "The Austin Tech Boom Anchor — Communications, Engineering, and a City That Won't Let Go",
-      "institutionalPersonality": "ambitious, tech-forward, creative, massive in scale",
-      "cultureKeywords": [
-        "Austin Tech Boom",
-        "Moody Communications",
-        "Silicon Hills",
-        "Scale",
-        "Retention"
-      ],
-      "missionOrientation": "Delivering elite communications and tech education inside one of the fastest-growing tech economies in the country.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Applied education reinforced by direct Austin tech and media industry access.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly progressive, especially relative to the rest of Texas.",
-      "studentAutonomy": "Very High",
-      "prestigeOrientation": "Elite in communications; rapidly rising in tech via Austin's boom.",
-      "socialClimate": "Massive, creative, tech-forward.",
-      "leadershipStyle": "Leadership through scale and direct Austin tech-industry proximity."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "Texas Triangle",
       "regionalRole": "The primary tech and communications talent engine for Austin's booming economy."
@@ -22280,33 +23695,102 @@ const UNIVERSITY_DB_V5 = {
         "Tech-Forward"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "High",
+      "notes": "UT Austin admits by major, not just by university, for its most competitive programs — Computer Science (Turing Scholars aside) and McCombs Business both require separate, more selective application review, and internal transfer into either after enrolling in a different college is difficult and not guaranteed."
+    },
     "hiddenOpportunities": {
-      "austinTechBoom": {
-        "strength": 92,
-        "notes": "Austin's tech boom means students often never have to leave for Silicon Valley — the ecosystem is right there."
-      }
+      "underratedMajors": [
+        "Petroleum Engineering (Cockrell School)",
+        "Radio-Television-Film (Moody College)",
+        "Aerospace Engineering",
+        "Geological Sciences (Jackson School)",
+        "Government (LBJ School pipeline)"
+      ],
+      "hiddenCareerPipelines": [
+        "Energy and Petroleum Engineering (Permian Basin/Houston corridor)",
+        "Film and Media Production (Austin's growing production industry)",
+        "Semiconductor Manufacturing (Samsung, Austin)",
+        "Public Policy and Government (LBJ School)",
+        "Video Game Development (Austin's gaming industry cluster)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Tesla (Austin Gigafactory)",
+        "Apple (Austin campus)",
+        "Samsung (Austin semiconductor fab)",
+        "Major Texas energy companies (ExxonMobil, Chevron)",
+        "Austin's video game and film production industry"
+      ],
+      "overlookedStrengths": [
+        "The Cockrell School's petroleum engineering program is a genuine, distinctive pathway into the Texas energy economy that the university's tech-boom, communications-heavy public image almost entirely obscures.",
+        "Austin's retention rate — the number of graduates who simply never leave — is one of the strongest of any college town in the country, meaning the local economy itself functions as an extended career pipeline.",
+        "Samsung's massive semiconductor fabrication plant in Austin gives engineering students a direct, less-recognized pathway into chip manufacturing, distinct from the software-heavy tech-boom narrative most families associate with the city."
+      ]
     },
     "networkCapital": {
-      "strength": 84,
-      "notes": "Direct Austin tech pipeline plus the #1 public communications program's national media network."
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 78,
+      "executiveAccess": 78,
+      "internshipNetwork": 92,
+      "familyBusinessExposure": 46,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 88,
+      "referralCultureStrength": 84,
+      "donorNetworkStrength": 78,
+      "boardMemberDensity": 62
     },
     "economicEcosystem": {
-      "technology": {
-        "strength": 90,
-        "notes": "Direct pipeline into Austin's booming tech/startup ecosystem."
-      },
-      "communications": {
-        "strength": 94,
-        "notes": "The #1 public university communications program in the country."
-      }
+      "primaryIndustries": [
+        "Technology and Software",
+        "Media and Communications",
+        "Energy (Oil and Gas)",
+        "Semiconductor Manufacturing",
+        "Film and Entertainment Production"
+      ],
+      "regionalEconomicDrivers": [
+        "Austin Tech and Startup Boom",
+        "Texas Energy Sector",
+        "Semiconductor Manufacturing",
+        "Media and Communications"
+      ],
+      "topEmployers": [
+        "Tesla",
+        "Apple",
+        "Samsung",
+        "Google",
+        "Major Texas energy companies"
+      ],
+      "emergingIndustries": [
+        "Semiconductor Manufacturing",
+        "AI and Machine Learning",
+        "Film and Streaming Production",
+        "Clean Energy"
+      ],
+      "startupDensity": "High",
+      "ventureCapitalAccess": 72,
+      "corporateHeadquartersDensity": 66,
+      "healthcareHubStrength": 56,
+      "innovationIndex": 86
     },
     "geographicInfluence": {
-      "strength": 86,
-      "notes": "Dominant across Texas, with rapidly rising national tech relevance via Austin."
+      "dominantMarket": "Austin — Technology, Media, and Semiconductor Manufacturing",
+      "secondaryMarkets": [
+        "Dallas-Fort Worth TX",
+        "Houston TX",
+        "San Francisco CA"
+      ],
+      "alumniStrongholds": [
+        "Austin TX",
+        "Dallas-Fort Worth TX",
+        "Houston TX"
+      ]
     },
     "socialCapital": {
-      "strength": 80,
-      "notes": "Petroleum engineering and tech cohorts build direct ties to Texas energy companies and Austin's booming tech scene."
+      "greekLifeInfluence": 34,
+      "studentOrganizationStrength": 86,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 74,
+      "civicEngagement": 70
     },
     "industryPathways": {
     "technology": { "strength": 90, "notes": "Direct Austin tech ecosystem pipeline." },
@@ -22860,26 +24344,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Polished, spirited, pre-professional.",
       "leadershipStyle": "Leadership through Jesuit values and elite Boston finance placement."
     },
-    "institutionIdentity": {
-      "archetype": "The Jesuit Wall Street Feeder — Boston Finance Meets Genuine Values",
-      "institutionalPersonality": "polished, values-driven, pre-professional, spirited",
-      "cultureKeywords": [
-        "Carroll Business",
-        "Boston Finance",
-        "Jesuit Values",
-        "Polished",
-        "Pre-Professional"
-      ],
-      "missionOrientation": "Delivering elite business education with genuine Jesuit values, feeding directly into Boston finance.",
-      "faithTradition": "Roman Catholic (Jesuit)",
-      "educationalPhilosophy": "Rigorous business education reinforced by Jesuit formation and Boston financial services proximity.",
-      "competitiveness": "Highly Selective",
-      "politicalCulture": "Broadly moderate, values-informed.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in business/finance, reinforced by genuine values-driven reputation.",
-      "socialClimate": "Polished, spirited, pre-professional.",
-      "leadershipStyle": "Leadership through Jesuit values and elite Boston finance placement."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "BosWash",
       "regionalRole": "A key business talent engine feeding Boston's dense financial services sector."
@@ -22940,33 +24404,102 @@ const UNIVERSITY_DB_V5 = {
         "Pre-Professional"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Carroll School of Business admits a meaningful share of students directly from high school as a separate applicant pool from Morrissey College of Arts and Sciences, and internal transfer into Carroll after enrollment is competitive and not guaranteed."
+    },
     "hiddenOpportunities": {
-      "bostonFinancePipeline": {
-        "strength": 90,
-        "notes": "Carroll School cohorts build tight bonds that convert directly into Boston's concentrated financial services ecosystem."
-      }
+      "underratedMajors": [
+        "Applied Psychology and Human Development (Lynch School)",
+        "Human-Centered Engineering",
+        "Political Science (strong DC/Boston public-sector pipeline)",
+        "Nursing (Connell School)",
+        "Theology and Ministry"
+      ],
+      "hiddenCareerPipelines": [
+        "Asset Management and Institutional Investing",
+        "Actuarial and Insurance Analytics",
+        "Healthcare Administration via Connell School Nursing network",
+        "Catholic Education and Nonprofit Leadership",
+        "Compliance and Risk Management"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Fidelity Investments",
+        "Wellington Management",
+        "State Street",
+        "Bain Capital",
+        "Massachusetts Mutual (MassMutual)"
+      ],
+      "overlookedStrengths": [
+        "Carroll School cohorts convert directly into Boston's asset management ecosystem — Fidelity, Wellington, State Street — one of the most concentrated in the country and distinct from New York's investment banking-heavy pipeline.",
+        "BC's Jesuit values framework is a genuine differentiator for students and employers who want technical finance skill paired with an explicit ethical formation, not a marketing gloss.",
+        "The Connell School of Nursing is a nationally respected, often-overlooked credential for a school known primarily for business and finance."
+      ]
     },
     "networkCapital": {
-      "strength": 86,
-      "notes": "Deep Boston financial services pipeline (Fidelity, Wellington, State Street), among the most concentrated in the country."
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 82,
+      "executiveAccess": 80,
+      "internshipNetwork": 88,
+      "familyBusinessExposure": 48,
+      "relationshipCapitalScore": 86,
+      "alumniLoyaltyScore": 90,
+      "referralCultureStrength": 88,
+      "donorNetworkStrength": 78,
+      "boardMemberDensity": 64
     },
     "economicEcosystem": {
-      "finance": {
-        "strength": 92,
-        "notes": "Elite pipeline into Boston's dense financial services sector."
-      },
-      "consulting": {
-        "strength": 80,
-        "notes": "Strong Big 4 and regional consulting placement."
-      }
+      "primaryIndustries": [
+        "Asset Management and Investing",
+        "Financial Services",
+        "Management Consulting",
+        "Insurance and Actuarial Services",
+        "Healthcare (via Connell School Nursing)"
+      ],
+      "regionalEconomicDrivers": [
+        "Boston Asset Management",
+        "Financial Services",
+        "Insurance (Massachusetts's large insurance sector)",
+        "Management Consulting"
+      ],
+      "topEmployers": [
+        "Fidelity Investments",
+        "Wellington Management",
+        "State Street",
+        "Bain Capital",
+        "MassMutual"
+      ],
+      "emergingIndustries": [
+        "Fintech",
+        "ESG and Impact Investing",
+        "Healthcare Administration",
+        "Compliance and RegTech"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 44,
+      "corporateHeadquartersDensity": 56,
+      "healthcareHubStrength": 58,
+      "innovationIndex": 62
     },
     "geographicInfluence": {
-      "strength": 82,
-      "notes": "Dominant in Boston's financial services sector, with strong Northeast reach."
+      "dominantMarket": "Boston — Asset Management, Financial Services, and Insurance",
+      "secondaryMarkets": [
+        "New York NY",
+        "Washington DC",
+        "Hartford CT-Providence RI"
+      ],
+      "alumniStrongholds": [
+        "Boston MA",
+        "New York NY",
+        "Washington DC"
+      ]
     },
     "socialCapital": {
-      "strength": 84,
-      "notes": "Carroll School cohorts build tight bonds that convert directly into Boston's concentrated financial services ecosystem."
+      "greekLifeInfluence": 12,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 82,
+      "crossDisciplinaryInteraction": 68,
+      "civicEngagement": 84
     },
     "industryPathways": {
     "investmentBanking": { "strength": 92, "notes": "One of the strongest Boston finance pipelines of any Jesuit university. (Remapped 2026-07-12 from non-standard key 'finance'.)" }
@@ -44375,8 +45908,8 @@ const UNIVERSITY_DB_V5 = {
       "region": "Southeast",
       "archetype": "The National Research Triangle Anchor — Medicine, Basketball, and Elite National Recruiting",
       "oneSentenceSummary": "Duke combines an elite, nationally (not regionally) recruited student body with a top-tier academic medical center and one of the most storied programs in college basketball, all inside the same Research Triangle ecosystem that also includes UNC and NC State.",
-      "pipeline": "Approximately 6,700 undergraduates. Trinity College of Arts and Sciences and the Pratt School of Engineering feed directly into finance, consulting, and technology. Duke University Medical Center and School of Medicine anchor one of the strongest pre-med pipelines in the country. The Sanford School of Public Policy is a genuine, distinctive strength. Major recruiters include every major consulting firm, Wall Street bank, and technology company, alongside Duke's own academic medical system.",
-      "hiddenPathway": "Duke's Research Triangle location gives students the same biotech and pharma industry proximity as UNC and NC State, but Duke's national (rather than primarily in-state) recruiting pulls a meaningfully different, more geographically diverse student body into that same regional ecosystem.",
+      "pipeline": "Approximately 6,700 undergraduates. Trinity College of Arts and Sciences and the Pratt School of Engineering feed directly into finance, consulting, and technology. Duke University Medical Center and School of Medicine anchor one of the strongest pre-med pipelines in the country. The Duke Clinical Research Institute (DCRI) — the largest academic clinical research organization in the world — runs trials for sponsors and CROs globally and gives Duke undergraduates a direct, named pathway into clinical trial operations and biostatistics careers that most pre-med-focused peer schools cannot offer. The Sanford School of Public Policy is a genuine, distinctive strength. Major recruiters include every major consulting firm, Wall Street bank, and technology company, alongside Duke's own academic medical system.",
+      "hiddenPathway": "Duke's Research Triangle location gives students the same biotech and pharma industry proximity as UNC and NC State, but Duke's national (rather than primarily in-state) recruiting pulls a meaningfully different, more geographically diverse student body into that same regional ecosystem. Less visible: the DCRI is a named, walkable campus institution, not just a regional proximity advantage — undergraduates with research interest can work inside the actual organization running the trials, not just near companies that do.",
       "institutionalSecret": "Duke's investment banking and management consulting placement rates are comparable to the Ivy League, an outcome that is systematically undersold relative to the university's basketball fame.",
       "theRoom": "Durham sits inside the Research Triangle alongside UNC and NC State, giving Duke direct access to one of the densest biotech, pharma, and technology clusters in the country, layered on top of Duke's own major academic medical center.",
       "lifestyle": "Intense school pride anchored by Duke basketball's Cameron Crazies tradition, combined with a genuinely ambitious, nationally-recruited student culture that treats elite outcomes — medicine, finance, consulting — as the default expectation.",
