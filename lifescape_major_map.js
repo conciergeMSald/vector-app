@@ -2680,6 +2680,34 @@ MAJOR_MAP[62].push({
   ]
 });
 
+// ─── NAICS 62 Amendment — Public Health / Regulatory Science ──────────────────
+
+MAJOR_MAP[62].push({
+  major_label: 'Public Health / Regulatory Science',
+  career_world: 'medicine',
+  riasec_affinity: ['I', 'C', 'S'],
+  riasec_conflict: ['R', 'A'],
+  program_keywords: ['public health', 'regulatory affairs', 'regulatory science', 'epidemiology', 'health policy', 'biostatistics', 'drug safety'],
+  entry_careers: ['Pharmacovigilance Case Processor', 'Regulatory Affairs Associate', 'Clinical Safety Associate'],
+  world_alignment: 'Systems',
+  cc_transfer_friendly: true,
+  emerging_role: 'Pharmacovigilance Safety Scientist — the professional who monitors a drug\'s real-world safety profile for the entire length of its commercial life, reviewing incoming case reports, coding adverse events, and making the clinical judgment calls about seriousness and causality that determine whether a signal gets escalated toward a labeling change or dismissed as noise. Where clinical trial research asks whether a drug works on a few thousand carefully selected patients, pharmacovigilance asks what happens when a million different people with different conditions, ages, and other medications take it — and that question never stops being asked as long as the drug is on the market. The undergraduate foundation is public health, regulatory science, or biochemistry, with adverse event terminology, MedDRA coding, and clinical reasoning layered on through entry-level case processing roles at the specialist safety vendors — IQVIA, ICON plc, Parexel, Syneos Health — that now perform the majority of this work on behalf of the pharmaceutical companies that hold the products. It is a field that has grown faster than almost any other life sciences service line over the past five years, driven by every new drug approval and every new market entry creating another permanent stream of safety data that has to be caught and assessed within days — and it remains one of the least visible career paths in the industry relative to how much hiring it actually generates.',
+  deployment_contexts: [
+    {
+      domain: 'PV Systems, Data & Automation',
+      edge: 'The safety database that sits behind every pharmacovigilance operation is becoming one of the more interesting automation frontiers in healthcare technology — companies are now building tools that use natural language processing to draft case narratives, flag likely duplicate reports, and triage incoming adverse events before a human ever opens the file, but every one of those tools still requires a person who understands both the underlying medical judgment and the system logic well enough to know when the automation is wrong. This is a genuinely new role that safety database vendors and larger pharmaceutical companies are still defining as they build it — part public health science, part data and systems literacy — and it did not exist in its current form five years ago. A regulatory science or public health student who pairs their coursework with even modest data analysis or systems training is positioned for a function that most life sciences graduates do not know exists yet, at companies ranging from Veeva Systems and Oracle Health Sciences, which build the safety databases themselves, to the pharmaceutical companies and CROs that configure and operate them.'
+    },
+    {
+      domain: 'CRO & Distributor Safety Oversight',
+      edge: 'As pharmaceutical companies increasingly rely on distributors, licensing partners, and contract research organizations to sell and study their products across dozens of countries, someone inside the company has to confirm that every one of those partners is actually catching and reporting safety information the way their contracts require — and that job, vendor and partner safety oversight, sits at the unusual intersection of clinical judgment, contract literacy, and operational auditing. It is not a role most undergraduates have heard of, but it is one that every mid-size and large pharmaceutical company is actively building out as their commercial footprint expands into new markets, because a distributor that fails to report a serious adverse event on time becomes the company\'s regulatory problem, not the distributor\'s. Regulatory science and public health graduates who can speak credibly about clinical safety data while also being comfortable auditing a partner\'s performance against a contract are unusually well positioned for this work at companies like Bristol Myers Squibb, Novartis, and the specialist safety vendors who increasingly perform this oversight function on a company\'s behalf.'
+    },
+    {
+      domain: 'Health Authority Submissions & Regulatory Strategy',
+      edge: 'Every drug approval, every labeling change, and every post-marketing safety commitment eventually becomes a document that has to be submitted to the FDA or an equivalent health authority in a specific format, on a specific timeline, built from safety and clinical evidence that regulatory affairs professionals have to organize and defend. This is not administrative paperwork — it is the function that determines whether years of clinical and safety work actually translates into a product patients can access, and it requires someone equally comfortable reading a safety database export and negotiating with a health authority reviewer. Genentech, Regeneron, and regulatory-focused specialty firms like Certara run structured regulatory affairs programs that recruit directly from public health and regulatory science graduate programs, and the professionals who enter this track with genuine safety-data fluency move into submission strategy roles faster than those who arrive with policy background alone.'
+    }
+  ]
+});
+
 // ─── NAICS 32 Amendment — Cosmetic Science & Formulation Chemistry ────────────
 
 MAJOR_MAP[32].push({

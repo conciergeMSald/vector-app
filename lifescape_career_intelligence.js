@@ -78,6 +78,7 @@ const IBIS_WORLD_REGISTRY = _g.IBIS_WORLD_REGISTRY = {
       { title: 'Physician',          years: 8,  pay: '$200K–$500K', path: 'Pre-med → Med school → Residency → Practice' },
       { title: 'Surgeon',            years: 10, pay: '$300K–$700K', path: 'Pre-med → Med school → Surgical residency → Fellowship' },
       { title: 'Hospital Administrator', years: 5, pay: '$120K–$300K', path: 'Operations → Department director → CMO/COO' },
+      { title: 'Pharmacovigilance Safety Scientist', years: 4, pay: '$70K–$140K', path: 'Public health/regulatory science → Case processor → Safety scientist → PV lead' },
     ],
     top_metros: ['Boston','Baltimore','Nashville','Houston','New York'],
     growth: 'strong',

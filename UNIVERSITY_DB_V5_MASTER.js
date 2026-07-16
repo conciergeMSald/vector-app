@@ -98,30 +98,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Large, energetic, professionally ambitious, socially active, and exceptionally diverse.",
       "leadershipStyle": "Leadership through innovation, experimentation, interdisciplinary collaboration, and entrepreneurial thinking."
     },
-    "institutionIdentity": {
-      "archetype": "The Innovation Metropolis — Entrepreneurship, Engineering, Business, Technology, and the Future Economy",
-      "institutionalPersonality": "innovative, entrepreneurial, ambitious, collaborative, future-focused",
-      "cultureKeywords": [
-        "Innovation",
-        "Entrepreneurship",
-        "Engineering",
-        "Technology",
-        "Research",
-        "Sustainability",
-        "Business",
-        "Leadership",
-        "Discovery"
-      ],
-      "missionOrientation": "Expanding educational access while advancing research, entrepreneurship, economic development, and societal innovation.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Students learn through interdisciplinary collaboration, applied research, entrepreneurship, internships, innovation labs, and industry partnerships.",
-      "competitiveness": "Moderately Selective",
-      "politicalCulture": "Broadly diverse and pragmatic with strong emphasis on innovation, economic development, sustainability, and technology.",
-      "studentAutonomy": "Very High",
-      "prestigeOrientation": "Rapidly rising global research university with exceptional reputation for innovation, entrepreneurship, and applied research.",
-      "socialClimate": "Large, energetic, professionally ambitious, socially active, and exceptionally diverse.",
-      "leadershipStyle": "Leadership through innovation, experimentation, interdisciplinary collaboration, and entrepreneurial thinking."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "Southwest Innovation Corridor",
       "regionalRole": "One of the Southwest's primary talent engines supporting semiconductors, aerospace, defense, healthcare, fintech, logistics, artificial intelligence, and advanced manufacturing."
@@ -217,6 +193,10 @@ const UNIVERSITY_DB_V5 = {
         "Students seeking traditional residential college intimacy",
         "Students uncomfortable advocating for themselves academically"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "W. P. Carey School of Business and the Fulton Schools of Engineering both use GPA-based secondary review for students seeking to declare or transfer in after starting in a different college, given ASU's overall scale and the volume of interest in those specific programs."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -1137,6 +1117,10 @@ const UNIVERSITY_DB_V5 = {
         "Students looking for smaller residential colleges"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Arizona's Eller College of Management and its optical sciences/engineering programs both use GPA-based secondary review for students seeking to declare or transfer in after starting in a different college."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Optical Sciences & Engineering",
@@ -1878,6 +1862,10 @@ const UNIVERSITY_DB_V5 = {
         "Students uncomfortable with sustained academic intensity"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Reed does not formally impact any major; the senior thesis requirement and Reed's demanding conference-style courses create real informal rigor pressure across every field, not a GPA-gated declaration process."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Linguistics",
@@ -2336,6 +2324,10 @@ const UNIVERSITY_DB_V5 = {
         "Students looking for a highly secular campus culture"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Gonzaga's School of Business Administration requires a separate application for direct admission, and the nursing program admits by its own competitive secondary review distinct from general university admission."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Supply Chain Management",
@@ -2792,6 +2784,10 @@ const UNIVERSITY_DB_V5 = {
         "Students wanting top-tier engineering research",
         "Students uncomfortable navigating large institutions independently"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "The Kelley School of Business is a direct-entry program with its own admission review, and the Jacobs School of Music admits by audition — both function as separate, competitive selections layered on top of general IU admission."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -3250,6 +3246,10 @@ const UNIVERSITY_DB_V5 = {
         "Students uninterested in technical or scientific disciplines"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Iowa State's College of Engineering uses a GPA-based secondary review for students seeking to declare or transfer into its most competitive majors, and the veterinary medicine pre-professional track is a separate, highly competitive admission."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Industrial Engineering",
@@ -3707,6 +3707,10 @@ const UNIVERSITY_DB_V5 = {
         "Students wanting nationally elite research prestige",
         "Students primarily interested in media, entertainment, or luxury industries"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Oklahoma State's veterinary medicine and aerospace administration programs both carry real secondary admission requirements distinct from general university acceptance, given demand relative to program capacity."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -4170,6 +4174,10 @@ const UNIVERSITY_DB_V5 = {
         "Students primarily pursuing entertainment or fashion industries"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "KU does not formally impact most majors, though its journalism school and pharmacy program both carry real secondary review distinct from general university admission."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Health Information Management",
@@ -4626,6 +4634,10 @@ const UNIVERSITY_DB_V5 = {
         "Students uncomfortable with commuting or urban environments",
         "Students looking for a highly insulated residential experience"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "University of Houston's Bauer College of Business and Cullen College of Engineering both use GPA-based secondary review for students seeking to declare or transfer in after starting in a different college."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -5084,6 +5096,10 @@ const UNIVERSITY_DB_V5 = {
         "Students wanting humanities-centered liberal arts experiences"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "UT Dallas's Jindal School of Management and its computer science programs both use GPA-based secondary review for students seeking to declare or transfer in after starting in a different school, given demand relative to capacity."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Cognitive Science",
@@ -5540,6 +5556,10 @@ const UNIVERSITY_DB_V5 = {
         "Students seeking a predominantly urban experience",
         "Students wanting a more politically progressive campus culture"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Culverhouse College of Business requires a separate application for direct admission, and the nursing program admits by its own competitive secondary review distinct from general university admission."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -7552,6 +7572,10 @@ const UNIVERSITY_DB_V5 = {
         "Out-of-state students who expected more urban energy than Columbia provides"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "The Darla Moore School of Business requires a separate application for direct admission after the first year, and students who don't gain entry can feel structurally outside the university's primary professional identity."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Sport and Entertainment Management",
@@ -8551,6 +8575,10 @@ const UNIVERSITY_DB_V5 = {
         "Students targeting national consulting or technology careers who find OKC market limiting"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "OU's Price College of Business and the petroleum/geological engineering programs both use secondary GPA review for students seeking to declare or transfer in after starting in a different college."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Meteorology and Atmospheric Science",
@@ -8951,6 +8979,10 @@ const UNIVERSITY_DB_V5 = {
         "Out-of-state students who find Louisiana's culture less accessible than expected",
         "Students targeting national careers who find Baton Rouge market limiting"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "LSU's E.J. Ourso College of Business and petroleum engineering programs both use GPA-based secondary review for students seeking to declare or transfer in after starting in a different college."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -12221,6 +12253,10 @@ const UNIVERSITY_DB_V5 = {
         "Students wanting stronger East Coast finance recruiting proximity"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Pomona does not formally impact any major; as a member of the Claremont Consortium, the real constraint is occasional cross-registration seat availability at the other four undergraduate colleges, not GPA-gated declaration."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Media Studies",
@@ -12658,6 +12694,10 @@ const UNIVERSITY_DB_V5 = {
         "Students who find the suburban Moraga location too quiet"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Saint Mary's does not formally impact most majors, though its nursing and kinesiology pre-professional tracks carry their own separate, competitive secondary admission review."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Kinesiology",
@@ -12961,26 +13001,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Faith-centered, scenic, community-oriented.",
       "leadershipStyle": "Leadership through Catholic formation and peace/justice-oriented global engagement."
     },
-    "institutionIdentity": {
-      "archetype": "The Coastal Catholic Peer — WCC Athletics and Peace Studies at the Edge of the Pacific",
-      "institutionalPersonality": "faith-centered, polished, scenic, values-driven",
-      "cultureKeywords": [
-        "Catholic Formation",
-        "Kroc Peace Institute",
-        "WCC Athletics",
-        "Coastal Campus",
-        "Law School"
-      ],
-      "missionOrientation": "Delivering values-centered education in an intimate, scenic Catholic university setting.",
-      "faithTradition": "Roman Catholic",
-      "educationalPhilosophy": "Catholic formation model emphasizing individual development within a genuine faith community.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, faith-informed.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Strong regional prestige in law and business, distinctive national reputation via Kroc Institute.",
-      "socialClimate": "Faith-centered, scenic, community-oriented.",
-      "leadershipStyle": "Leadership through Catholic formation and peace/justice-oriented global engagement."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "SoCal Creative Economy",
       "regionalRole": "A values-driven business and legal talent engine for San Diego, distinctive for its peace/justice studies niche."
@@ -13044,41 +13064,102 @@ const UNIVERSITY_DB_V5 = {
         "Community-Oriented"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "USD does not formally impact most undergraduate majors, though its 3+3 accelerated law pathway and nursing program both carry their own separate, competitive secondary admission review."
+    },
     "hiddenOpportunities": {
-      "krocPeaceInstitute": {
-        "strength": 84,
-        "notes": "Uniquely positions USD at the intersection of military power and peace-making, given San Diego's massive military base complex."
-      },
-      "wccAthleticsBalance": {
-        "strength": 78,
-        "notes": "Division I West Coast Conference athletics (alongside Santa Clara, LMU, Gonzaga) gives student-athletes real competition without football dominating academic life."
-      }
+      "underratedMajors": [
+        "Real Estate (School of Business)",
+        "International Relations (Kroc-adjacent)",
+        "Marine Science and Environmental Studies",
+        "Supply Chain Management",
+        "Nursing"
+      ],
+      "hiddenCareerPipelines": [
+        "International Peace and Justice Work",
+        "Real Estate Law and Development",
+        "Military-Adjacent Policy and Defense Contracting",
+        "San Diego Business and Finance",
+        "Marine and Environmental Science"
+      ],
+      "nicheRecruitingAdvantages": [
+        "San Diego's military-adjacent defense and policy sector",
+        "Regional real estate developers and law firms",
+        "International NGOs and peace organizations",
+        "San Diego biotech and business firms",
+        "West Coast law firms"
+      ],
+      "overlookedStrengths": [
+        "The Kroc Institute for Peace and Justice positions USD at the intersection of military power and peace-making, uniquely relevant given San Diego's massive military base complex — a genuinely distinctive academic niche most families researching USD for its coastal beauty alone never discover.",
+        "USD's West Coast Conference athletics — the same conference as Santa Clara, Loyola Marymount, and Gonzaga — gives student-athletes real Division I competition without football dominating campus academic life.",
+        "USD's law school real estate and tax law specialties are genuinely strong, an underrecognized credential relative to the university's broader Catholic-coastal-campus reputation."
+      ]
     },
     "networkCapital": {
-      "strength": 74,
-      "notes": "Small size plus the Kroc Institute's unique military-peace intersection creates distinctive professional networks in San Diego."
+      "alumniAccessibility": 74,
+      "mentorshipDensity": 76,
+      "executiveAccess": 68,
+      "internshipNetwork": 78,
+      "familyBusinessExposure": 48,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 76,
+      "referralCultureStrength": 76,
+      "donorNetworkStrength": 62,
+      "boardMemberDensity": 52
     },
     "economicEcosystem": {
-      "law": {
-        "strength": 84,
-        "notes": "Top-55 nationally, strong in business, tax, and real estate law."
-      },
-      "peaceJusticeStudies": {
-        "strength": 82,
-        "notes": "Distinctive pipeline into international peace-building and military-adjacent policy work."
-      },
-      "business": {
-        "strength": 74,
-        "notes": "Solid San Diego business placement."
-      }
+      "primaryIndustries": [
+        "Law (Real Estate, Tax, Business)",
+        "International Peace and Policy",
+        "San Diego Business",
+        "Defense and Military-Adjacent Policy",
+        "Marine and Environmental Science"
+      ],
+      "regionalEconomicDrivers": [
+        "San Diego Legal Sector",
+        "San Diego Military-Defense Complex",
+        "International NGOs and Peace Organizations",
+        "San Diego Business and Real Estate"
+      ],
+      "topEmployers": [
+        "San Diego's military-adjacent defense sector",
+        "Regional real estate developers and law firms",
+        "International NGOs and peace organizations",
+        "San Diego biotech and business firms",
+        "West Coast law firms"
+      ],
+      "emergingIndustries": [
+        "Defense Technology Policy",
+        "International Development",
+        "PropTech and Real Estate Technology",
+        "Marine Conservation Technology"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 48,
+      "corporateHeadquartersDensity": 46,
+      "healthcareHubStrength": 58,
+      "innovationIndex": 62
     },
     "geographicInfluence": {
-      "strength": 68,
-      "notes": "Strong in San Diego's business/legal community, with WCC athletics reach."
+      "dominantMarket": "San Diego — Law, Defense-Adjacent Policy, and Business",
+      "secondaryMarkets": [
+        "Los Angeles CA",
+        "San Francisco CA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "San Diego CA",
+        "Los Angeles CA",
+        "International"
+      ]
     },
     "socialCapital": {
-      "strength": 74,
-      "notes": "Small size plus the Kroc Institute's unique military-peace intersection creates distinctive professional networks in San Diego."
+      "greekLifeInfluence": 24,
+      "studentOrganizationStrength": 76,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 70,
+      "civicEngagement": 78
     },
     "industryPathways": {
     "publicPolicy": { "strength": 84, "notes": "Top-55 nationally ranked law school, reinforced by a unique military-adjacent peace and justice studies pipeline. (Remapped 2026-07-12, combined from non-standard keys 'law' (84) and 'peaceJusticeStudies' (82) — no dedicated law key exists in the standard schema.)" }
@@ -13314,6 +13395,10 @@ const UNIVERSITY_DB_V5 = {
         "Students wanting a campus culture less centered on technology and business",
         "Students prioritizing a larger research university environment"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "The Leavey School of Business is a direct-entry program with its own admission review, and Santa Clara's engineering programs use secondary GPA review for students seeking to transfer in after starting in a different school."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -13735,6 +13820,10 @@ const UNIVERSITY_DB_V5 = {
         "Students prioritizing large research university resources"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Chico State does not formally impact most majors, though its nursing and construction management programs carry their own separate, competitive secondary admission review."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Agricultural Business",
@@ -14036,26 +14125,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Warm, polished, experientially-driven.",
       "leadershipStyle": "Leadership through structured experiential learning and direct media industry placement."
     },
-    "institutionIdentity": {
-      "archetype": "The Quiet Media Pipeline — Southern Charm, LA and NYC Connections",
-      "institutionalPersonality": "warm, polished, media-ambitious, experientially-driven",
-      "cultureKeywords": [
-        "Elon in LA",
-        "Media Pipeline",
-        "Experiential Learning",
-        "Communications",
-        "Southern Charm"
-      ],
-      "missionOrientation": "Delivering a genuinely structured pipeline into media and entertainment careers via built-in experiential learning.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Every student completes real-world experiential learning as a graduation requirement, not an optional extra.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, career-pragmatic.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Rising national reputation in communications/media, an unexpected strength relative to its Southern campus image.",
-      "socialClimate": "Warm, polished, experientially-driven.",
-      "leadershipStyle": "Leadership through structured experiential learning and direct media industry placement."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "CharLanta",
       "regionalRole": "A regional Southeast talent engine with an unusually direct pipeline into LA and NYC media industries."
@@ -14117,33 +14186,103 @@ const UNIVERSITY_DB_V5 = {
         "Experientially-Driven"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Elon does not formally impact most majors, though acceptance into the Elon in LA program itself is competitive and application-based, functioning as its own selective admission layered on top of general enrollment."
+    },
     "hiddenOpportunities": {
-      "elonInLA": {
-        "strength": 88,
-        "notes": "A fully immersive semester program placing students inside real entertainment industry jobs, an unusually structured Hollywood pipeline for a small Southern school."
-      }
+      "underratedMajors": [
+        "Cinema and Television Arts",
+        "Strategic Communications",
+        "Journalism",
+        "Media Analytics",
+        "Sport Management"
+      ],
+      "hiddenCareerPipelines": [
+        "Entertainment Industry Production (via Elon in LA)",
+        "Media and Broadcast Journalism",
+        "Public Relations and Strategic Communications",
+        "Sport Management and Broadcasting",
+        "Digital Media and Content Strategy"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Major Hollywood studios and production companies (Elon in LA placements)",
+        "NYC media companies (Elon in NY program)",
+        "Regional Southeast broadcasting and PR firms",
+        "ESPN and sports media companies",
+        "National advertising and marketing agencies"
+      ],
+      "overlookedStrengths": [
+        "Elon in LA is a fully immersive semester program placing students inside real entertainment industry jobs — an unusually structured Hollywood pipeline for a school best known for its beautiful Southern campus.",
+        "Elon's Experiential Learning requirement means internships and industry placements are built into the curriculum itself, not left to chance, unlike most peer schools where students must independently secure their own opportunities.",
+        "A picturesque, arboretum-like campus in North Carolina quietly feeds graduates directly into LA and NYC media careers, a genuine mismatch between campus image and actual career outcomes most families never investigate."
+      ]
     },
     "networkCapital": {
-      "strength": 76,
-      "notes": "Individual placement infrastructure means every student builds real industry relationships as part of their degree, not extracurricular to it."
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 80,
+      "executiveAccess": 68,
+      "internshipNetwork": 88,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 76,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 56,
+      "boardMemberDensity": 44
     },
     "economicEcosystem": {
-      "media": {
-        "strength": 84,
-        "notes": "Strong pipeline into television, film, and digital media via Elon in LA and Elon in NY programs."
-      },
-      "communications": {
-        "strength": 82,
-        "notes": "Solid broader communications and PR industry placement."
-      }
+      "primaryIndustries": [
+        "Entertainment and Media Production",
+        "Broadcast Journalism",
+        "Public Relations and Communications",
+        "Sport Management",
+        "Digital Media"
+      ],
+      "regionalEconomicDrivers": [
+        "Hollywood Entertainment Industry (via Elon in LA)",
+        "NYC Media Industry (via Elon in NY)",
+        "Southeast Regional Broadcasting",
+        "Sports Media"
+      ],
+      "topEmployers": [
+        "Major Hollywood studios and production companies",
+        "NYC media companies",
+        "Regional Southeast broadcasting and PR firms",
+        "ESPN and sports media companies",
+        "National advertising agencies"
+      ],
+      "emergingIndustries": [
+        "Streaming Media Production",
+        "Podcast and Digital Audio",
+        "Content Strategy and Social Media",
+        "Sports Analytics Media"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 36,
+      "corporateHeadquartersDensity": 40,
+      "healthcareHubStrength": 42,
+      "innovationIndex": 58
     },
     "geographicInfluence": {
-      "strength": 68,
-      "notes": "Strong regional Southeast reach, with a surprisingly direct pipeline into LA and NYC media industries."
+      "dominantMarket": "Southeast, with a structured pipeline into Los Angeles and New York Media",
+      "secondaryMarkets": [
+        "Los Angeles CA",
+        "New York NY",
+        "Charlotte NC"
+      ],
+      "alumniStrongholds": [
+        "Charlotte NC",
+        "Raleigh-Durham NC",
+        "New York NY",
+        "Los Angeles CA"
+      ]
     },
     "socialCapital": {
-      "strength": 78,
-      "notes": "Individual placement infrastructure means every student builds real industry relationships as part of their degree."
+      "greekLifeInfluence": 40,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 72,
+      "civicEngagement": 70
     },
     "industryPathways": {
     "entertainmentMedia": { "strength": 84, "notes": "Structured LA and NYC media industry placement pipeline, reinforced by strong general communications/PR placement. (Remapped 2026-07-12, combined from non-standard keys 'media' (84) and 'communications' (82).)" }
@@ -14377,6 +14516,10 @@ const UNIVERSITY_DB_V5 = {
         "Students wanting a warmer climate or coastal location",
         "Students prioritizing nationally prominent athletics over academic pipeline"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Drake's PharmD program is a separate, highly competitive professional admission, and the law school's 3+3 accelerated pathway carries its own distinct secondary review from general undergraduate admission."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -14786,6 +14929,10 @@ const UNIVERSITY_DB_V5 = {
         "Students wanting a warmer climate or coastal location",
         "Students prioritizing broad program breadth over health sciences depth"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Creighton's health sciences pre-professional tracks (pharmacy, occupational therapy, physical therapy) each carry their own separate, competitive admission review distinct from general university acceptance."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -15475,6 +15622,10 @@ const UNIVERSITY_DB_V5 = {
         "Students uncomfortable with Greek-heavy social culture",
         "Students prioritizing lower cost over network access"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "The Cox School of Business is a direct-entry program with its own admission review separate from Dedman College, and internal transfer in after starting elsewhere at SMU is competitive."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -17152,26 +17303,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Outdoorsy, intimate, globally curious.",
       "leadershipStyle": "Leadership through small-school mentorship and genuine international affairs depth."
     },
-    "institutionIdentity": {
-      "archetype": "The Hidden Diplomat — Small School, Serious Global Reach",
-      "institutionalPersonality": "outdoorsy, globally curious, intimate",
-      "cultureKeywords": [
-        "Korbel International Affairs",
-        "Daniels Business",
-        "Denver",
-        "Small School",
-        "Global"
-      ],
-      "missionOrientation": "Delivering an intimate private-school experience with genuinely elite international affairs depth.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Small-cohort education paired with serious global affairs and business training.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, globally engaged.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in international affairs via Korbel; solid regional business prestige via Daniels.",
-      "socialClimate": "Outdoorsy, intimate, globally curious.",
-      "leadershipStyle": "Leadership through small-school mentorship and genuine international affairs depth."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "NorCal Innovation Corridor",
       "regionalRole": "A notable international affairs and business talent engine for the Denver region."
@@ -17232,33 +17363,102 @@ const UNIVERSITY_DB_V5 = {
         "Globally Curious"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "DU does not formally impact most majors, though the Josef Korbel School's graduate-track-focused international affairs concentration and Daniels' real estate program both carry real informal advising demand given their national reputations relative to DU's overall size."
+    },
     "hiddenOpportunities": {
-      "korbelInternationalAffairs": {
-        "strength": 92,
-        "notes": "One of the most consequential international affairs programs in America, hidden behind DU's small-school reputation."
-      }
+      "underratedMajors": [
+        "Real Estate and Construction Management (Burns School)",
+        "International Studies",
+        "Hospitality Management",
+        "Emergent Digital Practices",
+        "Environmental Science"
+      ],
+      "hiddenCareerPipelines": [
+        "International Affairs and Diplomacy (Korbel)",
+        "Commercial Real Estate Development (Burns School)",
+        "Denver Finance and Business",
+        "Federal Government and Foreign Service",
+        "Hospitality and Ski Resort Management"
+      ],
+      "nicheRecruitingAdvantages": [
+        "The State Department and federal agencies",
+        "Major international NGOs",
+        "Denver's commercial real estate developers",
+        "Denver-area finance and banking firms",
+        "Rocky Mountain resort operators"
+      ],
+      "overlookedStrengths": [
+        "The Korbel School is one of the most consequential international affairs programs in America, hiding behind DU's reputation as a small ski-adjacent business school — Condoleezza Rice and Madeleine Albright both have deep Korbel School ties, a fact almost no family researching DU discovers.",
+        "Daniels College of Business houses the named Franklin L. Burns School of Real Estate and Construction Management, a genuine, distinct specialty most families researching DU for general business never discover.",
+        "Denver's booming economy and quality of life make DU a genuinely appealing small-school option in a big-opportunity city, a combination few small private universities can offer."
+      ]
     },
     "networkCapital": {
-      "strength": 76,
-      "notes": "Strong Denver business/real estate placement, plus a uniquely powerful international affairs network via Korbel."
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 80,
+      "executiveAccess": 74,
+      "internshipNetwork": 80,
+      "familyBusinessExposure": 46,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 74,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 64,
+      "boardMemberDensity": 54
     },
     "economicEcosystem": {
-      "internationalAffairs": {
-        "strength": 92,
-        "notes": "Elite pipeline into government, diplomacy, and international policy careers."
-      },
-      "business": {
-        "strength": 74,
-        "notes": "Solid Denver finance and real estate placement via Daniels."
-      }
+      "primaryIndustries": [
+        "International Affairs and Diplomacy",
+        "Real Estate and Construction Management",
+        "Business and Finance",
+        "Hospitality",
+        "Environmental Science"
+      ],
+      "regionalEconomicDrivers": [
+        "Federal Government and International Policy",
+        "Denver Commercial Real Estate",
+        "Denver Finance and Business",
+        "Rocky Mountain Resort Industry"
+      ],
+      "topEmployers": [
+        "The State Department and federal agencies",
+        "Major international NGOs",
+        "Denver's commercial real estate developers",
+        "Denver-area finance and banking firms",
+        "Rocky Mountain resort operators"
+      ],
+      "emergingIndustries": [
+        "International Development Analytics",
+        "Real Estate Technology (PropTech)",
+        "Sustainable Real Estate Development",
+        "Digital Diplomacy"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 50,
+      "corporateHeadquartersDensity": 52,
+      "healthcareHubStrength": 54,
+      "innovationIndex": 68
     },
     "geographicInfluence": {
-      "strength": 70,
-      "notes": "Strong Denver influence, with distinctive national reach in international affairs."
+      "dominantMarket": "Denver — Real Estate, Finance, and International Affairs",
+      "secondaryMarkets": [
+        "Washington DC",
+        "New York NY",
+        "International"
+      ],
+      "alumniStrongholds": [
+        "Denver CO",
+        "Washington DC",
+        "International"
+      ]
     },
     "socialCapital": {
-      "strength": 74,
-      "notes": "Small size plus Daniels Business School ties create close relationships that convert directly into Denver's finance/real estate scene."
+      "greekLifeInfluence": 20,
+      "studentOrganizationStrength": 76,
+      "leadershipDevelopment": 76,
+      "crossDisciplinaryInteraction": 78,
+      "civicEngagement": 72
     },
     "industryPathways": {
     "publicPolicy": { "strength": 92, "notes": "Elite Korbel School pipeline into government and diplomacy." },
@@ -17763,6 +17963,10 @@ const UNIVERSITY_DB_V5 = {
         "Students prioritizing research opportunities"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Weber State's respiratory therapy and radiologic sciences programs both carry their own separate, competitive clinical-cohort admission distinct from general university acceptance, given limited clinical placement capacity."
+    },
     "hiddenOpportunities": {
       "underratedMajors": [
         "Respiratory Therapy",
@@ -18157,6 +18361,10 @@ const UNIVERSITY_DB_V5 = {
         "Students wanting a more residential campus culture",
         "Students looking for stronger STEM research opportunities"
       ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Towson's occupational therapy and speech-language pathology programs both carry their own separate, competitive clinical-cohort admission distinct from general university acceptance, given limited clinical placement capacity."
     },
     "hiddenOpportunities": {
       "underratedMajors": [
@@ -19667,26 +19875,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Creative, industry-embedded, welcoming.",
       "leadershipStyle": "Leadership through real industry access and values-driven community."
     },
-    "institutionIdentity": {
-      "archetype": "The Music Row Campus — Entertainment Business for More Than Musicians",
-      "institutionalPersonality": "creative, values-driven, industry-embedded, welcoming",
-      "cultureKeywords": [
-        "Music Row",
-        "Curb Entertainment Business",
-        "Royalty Training",
-        "Christian-Affiliated",
-        "Nashville"
-      ],
-      "missionOrientation": "Delivering elite entertainment business education with direct Music Row industry access, open to students beyond just performers.",
-      "faithTradition": "Christian (Church of Christ heritage, welcoming to broader faiths)",
-      "educationalPhilosophy": "Industry-embedded education reinforced by real royalty-system and label training from working professionals.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, values-informed but welcoming.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in music/entertainment business, drawing students well beyond musicians.",
-      "socialClimate": "Creative, industry-embedded, welcoming.",
-      "leadershipStyle": "Leadership through real industry access and values-driven community."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "CharLanta",
       "regionalRole": "The primary entertainment business talent engine for Nashville's music and creative economy."
@@ -19748,37 +19936,102 @@ const UNIVERSITY_DB_V5 = {
         "Welcoming"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Curb College of Entertainment and Music Business performance-based tracks admit by audition, and the music business concentration itself has grown popular enough to create real informal advising and course-seat pressure given its national reputation."
+    },
     "hiddenOpportunities": {
-      "musicRowProximity": {
-        "strength": 92,
-        "notes": "Belmont sits blocks from the heart of Nashville's music industry, not just near it."
-      },
-      "royaltySystemTraining": {
-        "strength": 86,
-        "notes": "Students learn the actual mechanics of how songs make money, taught by working industry professionals."
-      }
+      "underratedMajors": [
+        "Audio Engineering Technology",
+        "Songwriting",
+        "Entertainment Industry Studies",
+        "Music Business (non-performance track)",
+        "Publishing (music licensing and rights)"
+      ],
+      "hiddenCareerPipelines": [
+        "Music Publishing and Royalty Administration",
+        "Record Label Business and A&R",
+        "Entertainment Law",
+        "Audio Engineering and Production",
+        "Artist Management and Booking"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Major record labels (Nashville offices)",
+        "Music publishers",
+        "Entertainment law firms",
+        "Performance rights organizations (ASCAP, BMI)",
+        "Nashville's broader creative economy"
+      ],
+      "overlookedStrengths": [
+        "Students learn the actual mechanics of how songs make money — royalties, publishing, licensing — taught by people who work in the industry, not just theory, a genuine curricular advantage most peer entertainment business programs cannot match.",
+        "Belmont pulls far more than aspiring musicians — business, law, and audio engineering students all use the same Music Row proximity to break into the industry from the business side, not just performance.",
+        "Belmont sits blocks from the heart of Nashville's music industry, not just near it — Music Row is essentially an extension of campus, a level of literal industry proximity almost no other university can replicate."
+      ]
     },
     "networkCapital": {
-      "strength": 84,
-      "notes": "Direct pipeline into Nashville's music publishing and entertainment industry infrastructure."
+      "alumniAccessibility": 84,
+      "mentorshipDensity": 86,
+      "executiveAccess": 78,
+      "internshipNetwork": 90,
+      "familyBusinessExposure": 42,
+      "relationshipCapitalScore": 86,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 86,
+      "donorNetworkStrength": 68,
+      "boardMemberDensity": 56
     },
     "economicEcosystem": {
-      "musicEntertainmentBusiness": {
-        "strength": 92,
-        "notes": "Unmatched Music Row proximity and industry-professional faculty access."
-      },
-      "entertainmentLaw": {
-        "strength": 78,
-        "notes": "Strong pipeline into entertainment law via Nashville's music industry legal community."
-      }
+      "primaryIndustries": [
+        "Music Publishing and Entertainment Business",
+        "Entertainment Law",
+        "Audio Engineering",
+        "Record Label Business",
+        "Artist Management"
+      ],
+      "regionalEconomicDrivers": [
+        "Nashville Music Row Publishing and Labels",
+        "Entertainment Law",
+        "Performance Rights Organizations",
+        "Nashville's Broader Creative Economy"
+      ],
+      "topEmployers": [
+        "Major record labels (Nashville offices)",
+        "Music publishers",
+        "Entertainment law firms",
+        "ASCAP and BMI",
+        "Nashville's broader creative economy"
+      ],
+      "emergingIndustries": [
+        "Music Streaming and Digital Rights",
+        "Podcast Production",
+        "Music Technology Startups",
+        "Sync Licensing (film/TV/advertising)"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 42,
+      "corporateHeadquartersDensity": 48,
+      "healthcareHubStrength": 44,
+      "innovationIndex": 62
     },
     "geographicInfluence": {
-      "strength": 76,
-      "notes": "Dominant in Nashville's music/entertainment industry, with national entertainment business reach."
+      "dominantMarket": "Nashville — Music Publishing, Entertainment Business, and Entertainment Law",
+      "secondaryMarkets": [
+        "Los Angeles CA",
+        "New York NY",
+        "Atlanta GA"
+      ],
+      "alumniStrongholds": [
+        "Nashville TN",
+        "Los Angeles CA",
+        "New York NY"
+      ]
     },
     "socialCapital": {
-      "strength": 82,
-      "notes": "Songwriting and music business cohorts build direct royalty-system and industry relationships before graduating."
+      "greekLifeInfluence": 30,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 76,
+      "civicEngagement": 72
     },
     "industryPathways": {
     "entertainmentMedia": { "strength": 92, "notes": "The single most connected music-industry credential outside dedicated conservatories. (Remapped 2026-07-12 from non-standard key 'musicEntertainmentBusiness'.)" }
@@ -20205,26 +20458,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Outdoorsy, health-conscious, genuinely livable.",
       "leadershipStyle": "Leadership through land-grant practicality and direct outdoor-industry/veterinary partnerships."
     },
-    "institutionIdentity": {
-      "archetype": "The Land-Grant Trifecta — Veterinary Medicine, Hospitality, and Environmental Science",
-      "institutionalPersonality": "outdoorsy, health-conscious, practically minded, land-grant-serious",
-      "cultureKeywords": [
-        "Veterinary Medicine",
-        "Hospitality Management",
-        "National Parks",
-        "Environmental Science",
-        "Outdoors"
-      ],
-      "missionOrientation": "Delivering elite veterinary and environmental education alongside a genuinely strong hospitality/tourism management pipeline.",
-      "faithTradition": "None",
-      "educationalPhilosophy": "Applied, land-grant education reinforced by direct ties to Colorado's outdoor recreation and agricultural economy.",
-      "competitiveness": "Selective",
-      "politicalCulture": "Broadly moderate, environmentally engaged.",
-      "studentAutonomy": "High",
-      "prestigeOrientation": "Elite in veterinary medicine; strong regional prestige in hospitality and environmental science.",
-      "socialClimate": "Outdoorsy, health-conscious, genuinely livable.",
-      "leadershipStyle": "Leadership through land-grant practicality and direct outdoor-industry/veterinary partnerships."
-    },
     "megaRegionIntegration": {
       "primaryMegaRegion": "NorCal Innovation Corridor",
       "regionalRole": "A key talent engine for Colorado's outdoor recreation, hospitality, and agricultural/veterinary economy."
@@ -20285,45 +20518,102 @@ const UNIVERSITY_DB_V5 = {
         "Community-Oriented"
       ]
     },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "CSU's veterinary medicine track (pre-vet into the College of Veterinary Medicine and Biomedical Sciences) is a separate, highly competitive professional admission that most undergraduates do not automatically enter, regardless of their undergraduate major."
+    },
     "hiddenOpportunities": {
-      "hospitalityNationalParksPipeline": {
-        "strength": 86,
-        "notes": "Direct, underrated pipeline into Rocky Mountain resort and national parks tourism management."
-      },
-      "veterinaryMedicineTop5": {
-        "strength": 94,
-        "notes": "Top-5 nationally ranked veterinary medicine program, genuinely elite but overshadowed by CSU's broader outdoorsy reputation."
-      }
+      "underratedMajors": [
+        "Equine Science",
+        "Ecosystem Science and Sustainability",
+        "Fermentation Science (brewing industry ties)",
+        "Construction Management",
+        "Fish, Wildlife, and Conservation Biology"
+      ],
+      "hiddenCareerPipelines": [
+        "Rocky Mountain Resort and Ski Industry Management",
+        "National Park Service and Federal Land Management",
+        "Veterinary Medicine and Animal Science",
+        "Craft Brewing and Fermentation Science (Fort Collins' brewing cluster)",
+        "Environmental Consulting and Conservation"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Rocky Mountain resort operators (Vail, Aspen, Breckenridge)",
+        "The National Park Service",
+        "Colorado's craft brewing industry (New Belgium, Odell)",
+        "Veterinary practices nationwide",
+        "Colorado agricultural and environmental agencies"
+      ],
+      "overlookedStrengths": [
+        "CSU's Hospitality Management program has a direct, underrated pipeline into Rocky Mountain resort and national parks tourism management — few families researching CSU by its outdoorsy reputation alone discover this structured career track.",
+        "CSU's veterinary school ranks among the top-5 in the country, a genuinely elite credential often overshadowed by the university's broader land-grant, outdoors-first image.",
+        "Fort Collins is home to New Belgium and Odell, two of the most respected craft breweries in the country, and CSU's fermentation science program gives students a genuine, distinctive pathway into that industry."
+      ]
     },
     "networkCapital": {
-      "strength": 80,
-      "notes": "Veterinary Medicine and engineering cohorts build strong bonds within a broader outdoor-recreation-minded student body; hospitality alumni network into Rocky Mountain resort operators and the National Park Service."
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 76,
+      "executiveAccess": 66,
+      "internshipNetwork": 82,
+      "familyBusinessExposure": 40,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 62,
+      "boardMemberDensity": 50
     },
     "economicEcosystem": {
-      "veterinaryMedicine": {
-        "strength": 94,
-        "notes": "Elite, top-5 nationally ranked program."
-      },
-      "hospitalityTourism": {
-        "strength": 86,
-        "notes": "Direct pipeline into Rocky Mountain resort operators, ski industry, and National Park Service management roles."
-      },
-      "environmentalScience": {
-        "strength": 84,
-        "notes": "Strong Warner College of Natural Resources pipeline into conservation and forestry careers."
-      },
-      "agriculture": {
-        "strength": 80,
-        "notes": "Solid pipeline into Colorado's agricultural economy."
-      }
+      "primaryIndustries": [
+        "Veterinary Medicine",
+        "Hospitality and Tourism",
+        "Environmental Science and Conservation",
+        "Agriculture",
+        "Craft Brewing and Fermentation"
+      ],
+      "regionalEconomicDrivers": [
+        "Rocky Mountain Resort and Ski Industry",
+        "National Park Service and Federal Land Management",
+        "Colorado Agricultural Economy",
+        "Fort Collins Craft Brewing Cluster"
+      ],
+      "topEmployers": [
+        "Rocky Mountain resort operators",
+        "The National Park Service",
+        "New Belgium and Odell Brewing",
+        "Veterinary practices nationwide",
+        "Colorado agricultural and environmental agencies"
+      ],
+      "emergingIndustries": [
+        "Craft Fermentation Science",
+        "Sustainable Agriculture Technology",
+        "Environmental Consulting",
+        "Outdoor Recreation Technology"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 36,
+      "corporateHeadquartersDensity": 38,
+      "healthcareHubStrength": 56,
+      "innovationIndex": 62
     },
     "geographicInfluence": {
-      "strength": 78,
-      "notes": "Dominant across Colorado's outdoor recreation, hospitality, and agricultural economy."
+      "dominantMarket": "Colorado — Outdoor Recreation, Veterinary Medicine, and Hospitality",
+      "secondaryMarkets": [
+        "Denver CO",
+        "Wyoming",
+        "San Francisco CA"
+      ],
+      "alumniStrongholds": [
+        "Denver-Fort Collins CO",
+        "Vail-Aspen CO resort corridor",
+        "Cheyenne WY"
+      ]
     },
     "socialCapital": {
-      "strength": 78,
-      "notes": "Veterinary Medicine and engineering cohorts build tight bonds; hospitality students build direct ties to resort and parks employers before graduating."
+      "greekLifeInfluence": 22,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 74,
+      "crossDisciplinaryInteraction": 70,
+      "civicEngagement": 74
     },
     "industryPathways": {
     "healthWellness": { "strength": 94, "notes": "Top-5 nationally ranked veterinary medicine program." },
@@ -54021,6 +54311,310 @@ const UNIVERSITY_DB_V5 = {
     "exists": true, "name": "Honors College", "strength": 56,
     "notes": "Provides smaller seminars and priority course access within Montana State's large land-grant scale."
   }
+},
+  "Howard University": {
+    "institutionNarrative": {
+      "name": "Howard University",
+      "location": "Washington, District of Columbia",
+      "region": "Mid-Atlantic",
+      "archetype": "The Mecca — America's Most Consequential HBCU, Blocks from Capitol Hill",
+      "oneSentenceSummary": "Howard pairs the deepest Black excellence network in American higher education with a law school that produced the legal architecture of the Civil Rights Movement, all a short walk from the U.S. Capitol.",
+      "pipeline": "Approximately 10,000 undergraduates. The School of Law is the single most historically consequential law school for civil rights litigation in American history — Charles Hamilton Houston and Thurgood Marshall both trained and taught there, and its graduates argued Brown v. Board of Education. The College of Engineering and Architecture, Chadwick A. Boseman College of Fine Arts, and School of Business all place graduates directly into federal government, entertainment, law, and finance. Major recruiters include top law firms, federal agencies, Wall Street banks, and every major entertainment studio actively recruiting Howard's fine arts and communications graduates.",
+      "hiddenPathway": "Howard's own teaching hospital, Howard University Hospital, is one of a small handful of hospitals in the country directly attached to an HBCU, giving pre-med and nursing students a level of direct clinical access and mentorship from Black physicians that is genuinely rare in American medical education.",
+      "institutionalSecret": "Homecoming is not a social event at Howard — it is the single largest annual gathering of successful Black professionals in the country returning to recruit, mentor, and hire current students, functioning as an unofficial but massively effective career fair that most families researching Howard from outside the HBCU tradition never fully understand.",
+      "theRoom": "Howard sits in DC's Shaw/LeDroit Park neighborhood, walking distance to the Capitol, K Street lobbying corridor, and downtown DC's law and consulting firms — the campus is not near the center of American power, it is inside it.",
+      "lifestyle": "Intensely proud, achievement-oriented, and culturally rich — Howard students describe an experience of being surrounded by excellence and legacy in a way few other institutions can replicate.",
+      "bestFitPersonality": "Ambitious, culturally grounded, drawn to legacy and consequence, comfortable being surrounded by high-achieving peers with similar backgrounds and similarly high expectations.",
+      "faithTradition": "None (historically rooted in Black church tradition broadly, non-denominational as an institution)",
+      "geographicInfluenceRadius": "Dominant national reach across Black professional networks in law, politics, medicine, entertainment, and business; especially strong in Washington DC, Atlanta, New York, and Los Angeles.",
+      "economicOutcome": "Excellent outcomes in law, medicine, and government; strong and rapidly growing outcomes in finance, consulting, and entertainment as recruiting pipelines from historically white-dominated industries have expanded significantly.",
+      "gradCities": [
+        "Washington DC",
+        "New York NY",
+        "Atlanta GA",
+        "Los Angeles CA",
+        "Chicago IL"
+      ],
+      "comparableInstitutions": [
+        "Spelman College",
+        "Morehouse College",
+        "American University",
+        "George Washington University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": [
+          "University of the District of Columbia Community College"
+        ],
+        "transferAcceptanceRate": "~55%",
+        "freshmanAcceptanceRate": "~38%",
+        "estimatedSavingsRange": "$16,000-$38,000",
+        "transferNotes": "Howard maintains transfer pathways with DC-area community colleges and select HBCU feeder programs."
+      },
+      "institutionIdentity": {
+        "commonName": "Howard University",
+        "archetype": "Private HBCU Research University, Washington DC's Black Excellence Anchor"
+      },
+      "institutionalPersonality": "proud, legacy-conscious, ambitious, culturally rich",
+      "cultureKeywords": [
+        "The Mecca",
+        "Black Excellence",
+        "Howard Law",
+        "Homecoming",
+        "Capitol Hill Proximity"
+      ],
+      "missionOrientation": "Producing the next generation of Black leadership across law, medicine, government, business, and the arts, rooted in a 150+ year legacy of civil rights consequence.",
+      "educationalPhilosophy": "Rigorous professional and pre-professional training reinforced by an unmatched Black alumni network and direct proximity to federal power.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Broadly progressive, civically and politically engaged.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "The most prestigious HBCU in the country, with a law school whose historical consequence rivals any in America.",
+      "socialClimate": "Proud, celebratory, high-achieving, deeply connected to Black cultural and professional legacy.",
+      "leadershipStyle": "Leadership through legacy, historical consequence, and an alumni network defined by returning to lift up the next generation."
+    },
+    "megaRegionIntegration": {
+      "primaryMegaRegion": "BosWash",
+      "regionalRole": "The nation's most consequential HBCU talent engine, embedded directly in the federal government and law corridor."
+    },
+    "megaRegionExposure": {
+      "MidContinentIndustrialEnergyCorridor": 8,
+      "BosWash": 62,
+      "TorBuffChester": 6,
+      "TexasTriangle": 8,
+      "CharLanta": 22,
+      "NorCalInnovationCorridor": 8,
+      "SoCalCreativeEconomy": 14
+    },
+    "comparativePositioning": {
+      "versusSpelmanMorehouse": "Spelman and Morehouse offer a smaller, single-gender, historically intimate HBCU experience; Howard offers a larger, coeducational research-university scale with an unmatched law school legacy and direct DC federal government access.",
+      "versusGWU": "GWU offers a larger, more internationally-focused DC-embedded experience; Howard offers a comparable DC location with a historically unmatched Black professional network and civil rights legacy GWU cannot replicate."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium",
+      "undergraduateEnrollment": 10000,
+      "graduateEnrollment": 2500,
+      "totalEnrollment": 12500,
+      "campusType": "Private HBCU Research University, Urban DC Campus",
+      "residentialIntensity": 62,
+      "communityFeel": 88,
+      "studentFacultyRatio": "11:1",
+      "classSizeExperience": "Moderate class sizes with genuine faculty mentorship, reinforced by a strong tradition of alumni returning to teach and mentor.",
+      "scaleAdvantages": [
+        "Unmatched Black professional alumni network across law, medicine, government, and entertainment",
+        "Direct Capitol Hill and federal agency proximity",
+        "Historically consequential law school legacy",
+        "Homecoming as a functioning annual career and mentorship event"
+      ],
+      "scaleDisadvantages": [
+        "Urban DC campus lacks a traditional enclosed quad feel",
+        "High cost of living in Washington DC"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 80,
+        "conscientiousness": 84,
+        "extraversion": 80,
+        "agreeableness": 78,
+        "neuroticism": 40
+      },
+      "hollandCodes": [
+        "E",
+        "S",
+        "A"
+      ],
+      "learningStyle": [
+        "Case-Method Law",
+        "Applied Pre-Professional Training",
+        "Mentorship-Based"
+      ],
+      "socialEnvironment": [
+        "Proud",
+        "Achievement-Oriented",
+        "Culturally Rich"
+      ],
+      "idealCandidateProfile": [
+        "Wants to be surrounded by high-achieving Black peers and mentors",
+        "Drawn to law, medicine, government, or entertainment careers",
+        "Values legacy and historical consequence",
+        "Wants direct DC federal government proximity"
+      ],
+      "transferRiskFactors": [
+        "Students seeking a large traditional residential quad campus",
+        "Students uninterested in DC's political and legal industries",
+        "Students prioritizing lowest possible cost of attendance"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Howard's College of Engineering and Architecture and the School of Business both use secondary GPA review for students seeking to declare or transfer in after starting in a different college, and the pre-med track is genuinely competitive given the volume of students pursuing it."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Political Science (direct Capitol Hill pipeline)",
+        "Radio, Television and Film (Chadwick Boseman College)",
+        "Architecture",
+        "Actuarial Science",
+        "Africana Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Federal Government and Congressional Staff",
+        "Civil Rights and Public Interest Law",
+        "Entertainment Industry (via Chadwick Boseman College of Fine Arts alumni network)",
+        "Wall Street Finance (rapidly growing recruiting pipeline)",
+        "Academic Medicine (Howard University Hospital)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Major law firms and federal agencies",
+        "Every major Wall Street bank (rapidly expanding HBCU recruiting pipelines)",
+        "Entertainment studios and networks",
+        "Howard University Hospital",
+        "Congressional offices and federal government"
+      ],
+      "overlookedStrengths": [
+        "Homecoming is not a social event at Howard — it is the single largest annual gathering of successful Black professionals in the country returning to recruit and mentor, functioning as an unofficial but massively effective career fair.",
+        "Howard's own teaching hospital gives pre-med students direct clinical access and mentorship from Black physicians that is genuinely rare in American medical education.",
+        "Charles Hamilton Houston and Thurgood Marshall both trained and taught at Howard Law, and its graduates argued Brown v. Board of Education — a legal legacy of consequence that no other law school in America can claim in quite the same way."
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 94,
+      "mentorshipDensity": 96,
+      "executiveAccess": 88,
+      "internshipNetwork": 90,
+      "familyBusinessExposure": 44,
+      "relationshipCapitalScore": 96,
+      "alumniLoyaltyScore": 98,
+      "referralCultureStrength": 96,
+      "donorNetworkStrength": 82,
+      "boardMemberDensity": 68
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Law and Civil Rights Litigation",
+        "Federal Government and Policy",
+        "Academic Medicine",
+        "Entertainment and Media",
+        "Financial Services"
+      ],
+      "regionalEconomicDrivers": [
+        "Washington DC Federal Government",
+        "Capitol Hill and Congressional Staff Pipeline",
+        "K Street Law and Lobbying",
+        "National Black Professional Network"
+      ],
+      "topEmployers": [
+        "Major law firms and federal agencies",
+        "Every major Wall Street bank",
+        "Entertainment studios and networks",
+        "Howard University Hospital",
+        "Congressional offices"
+      ],
+      "emergingIndustries": [
+        "DEI and Organizational Leadership Consulting",
+        "Entertainment and Media Production",
+        "Fintech",
+        "Health Equity Research"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 54,
+      "corporateHeadquartersDensity": 56,
+      "healthcareHubStrength": 72,
+      "innovationIndex": 68
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Washington DC — Federal Government, Law, and Policy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Atlanta GA",
+        "Los Angeles CA"
+      ],
+      "alumniStrongholds": [
+        "Washington DC",
+        "Atlanta GA",
+        "New York NY",
+        "Los Angeles CA"
+      ]
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 68,
+      "studentOrganizationStrength": 92,
+      "leadershipDevelopment": 90,
+      "crossDisciplinaryInteraction": 74,
+      "civicEngagement": 92
+    },
+    "industryPathways": {
+      "publicPolicy": { "strength": 92, "notes": "Historically unmatched civil rights law legacy and direct Capitol Hill proximity." },
+      "medicine": { "strength": 84, "notes": "Howard University Hospital provides direct academic medicine and clinical training access." },
+      "entertainmentMedia": { "strength": 80, "notes": "Chadwick A. Boseman College of Fine Arts feeds directly into film, television, and entertainment industries." },
+      "investmentBanking": { "strength": 74, "notes": "Rapidly growing Wall Street recruiting pipeline as major banks have expanded HBCU-focused hiring programs." }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 82,
+      "firstGenerationSupport": 84,
+      "wealthCreationPotential": 82,
+      "familyBusinessPipelineStrength": 44
+    },
+    "futureResilience": {
+      "aiResistance": 78,
+      "automationResistance": 78,
+      "adaptabilityScore": 82,
+      "interdisciplinaryStrength": 78,
+      "futureReadiness": 82,
+      "entrepreneurialFlexibility": 74,
+      "lifelongLearningCulture": 82,
+      "innovationCapacity": 76
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 82,
+      "communityLeadershipPotential": 96,
+      "geographicMobility": 82,
+      "workLifeBalancePotential": 74,
+      "purposeAlignment": 92,
+      "familyFormationSupport": 82,
+      "personalDevelopmentPotential": 88,
+      "careerOptionality": 84,
+      "longTermLifeSatisfaction": 90
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 84,
+      "networkMoat": 96,
+      "geographicMoat": 88,
+      "industryMoat": 86,
+      "alumniMoat": 98,
+      "brandDurability": 92,
+      "overallMoatScore": 91
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 58,
+      "returnerScore": 62,
+      "stewardScore": 68,
+      "navigatorScore": 78,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "concentrated in Washington DC, with major secondary presence in Atlanta, New York, and Los Angeles across law, government, medicine, and entertainment"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": 5,
+        "type": "None"
+      },
+      "estimatedJewishUndergraduates": 20,
+      "jewishStudentPercentage": "<1%",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Minimal",
+      "notes": "Howard has a very small Jewish undergraduate population, consistent with its historic identity as a Black institution."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Howard University Honors Program",
+      "strength": 76,
+      "notes": "Provides smaller cohorts, priority advising, and enhanced research opportunities within Howard's broader structure."
+    }
 }
 }
 
