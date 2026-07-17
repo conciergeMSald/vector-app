@@ -3813,6 +3813,97 @@ Object.assign(MAJOR_MAP, {
   ]
 });
 
+// ── ENERGY-001 v3 additions — appended to existing MAJOR_MAP[21]/[22] (NOT overwritten) ──
+// Existing 21/22 content (Mining/Geological/Petroleum Engineering, Energy Systems
+// Engineering, Environmental Engineering, Sustainability Management, Nuclear Engineering)
+// already covers Traditional Energy upstream + most of Transition Energy.
+// This adds only the genuinely missing spec content:
+//   - Section 3B: oil & gas trading/maritime-logistics depth (NAICS 486/483/424-425
+//     folded in as career_world tagging per OQ2 — Traditional Energy depth, not a
+//     Logistics-connector precedent)
+//   - Policy & Regulatory tile (not previously covered — Sustainability Management is
+//     corporate ESG, not energy regulatory/FERC/utility law)
+//   - Battery Tech & AI Power micro-tile (energy storage was a keyword only, no
+//     dedicated battery/materials major existed)
+//   - Section 3A: Plant Operations/Fuel & Supply Chain/Asset Lifecycle/Risk depth
+
+MAJOR_MAP[21].push(
+  {
+    major_label: 'Energy Trading & Commodities',
+    career_world: 'energy',
+    riasec_affinity: ['E', 'C', 'I'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['commodity trading', 'energy finance', 'energy markets', 'derivatives', 'trading desk', 'risk management'],
+    entry_careers: ['Energy Trader', 'Market Analyst', 'Crude & Products Trader', 'Corporate Development Analyst'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: true,
+    emerging_role: 'Energy Transition Risk Analyst — the trading-desk analyst who prices and hedges the financial risk created by the shift between traditional and renewable power generation, a role energy trading desks are building out as more of the physical grid becomes weather-dependent and volatile.',
+    deployment_contexts: [
+      { domain: 'Crude & Products Trading', edge: 'Houston runs the commercial side of the American energy business the way New York runs finance — every major trading house recruits directly from Oklahoma State\'s Spears School energy finance program and Texas A&M\'s Mays Business School energy concentration.' },
+      { domain: 'Corporate Development & Market Strategy', edge: 'The market and financial strategy function inside an electricity generation company — corporate development, market analysis, energy trading — is where the Enterprising-forward business student meets the physical energy business, a genuine, well-compensated bridge between finance and engineering that most students never hear about until an internship.' }
+    ]
+  },
+  {
+    major_label: 'Maritime & Energy Logistics Management',
+    career_world: 'energy',
+    riasec_affinity: ['E', 'C', 'R'],
+    riasec_conflict: ['A'],
+    program_keywords: ['maritime logistics', 'supply chain', 'international business', 'chartering', 'trade compliance', 'terminal operations', 'petroleum wholesale', 'pipeline transportation'],
+    entry_careers: ['Chartering Desk Analyst', 'Terminal Operations Manager', 'Trade Compliance Analyst', 'Freight Broker (Energy)'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: true,
+    emerging_role: 'Sanctions & Trade Compliance Analyst — the commercial specialist who screens crude and refined-product cargoes and counterparties against evolving sanctions regimes, a function that has grown sharply as energy trade compliance has become one of the most consequential legal-commercial intersections in the industry.',
+    deployment_contexts: [
+      { domain: 'Oil Shipping, Pipelines & Chartering', edge: 'Moving crude and refined products from field to market runs through pipeline operators, tanker charterers, and terminal managers — a genuine commercial logistics career sitting between extraction and the refinery gate. Texas A&M Galveston and the maritime academies feed directly into this pipeline alongside supply chain and international business graduates.' }
+    ]
+  }
+);
+
+MAJOR_MAP[22].push(
+  {
+    major_label: 'Energy Storage & Battery Systems',
+    career_world: 'energy',
+    riasec_affinity: ['I', 'R', 'C'],
+    riasec_conflict: ['A', 'S'],
+    program_keywords: ['battery technology', 'energy storage', 'materials science', 'electrochemistry', 'battery manufacturing', 'grid-scale storage'],
+    entry_careers: ['Storage Systems Analyst', 'Battery Materials Engineer', 'Storage Systems Design Engineer'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: false,
+    emerging_role: 'Grid-Scale Battery Systems Engineer — the engineer who designs and commissions the utility-scale battery installations now being built alongside renewable projects and directly at data centers, sitting at the exact intersection of Battery Tech and AI Power this micro-tile is named for.',
+    deployment_contexts: [
+      { domain: 'Battery Materials Research', edge: 'UC Berkeley\'s proximity to Lawrence Berkeley National Lab and Stanford\'s battery materials research pipeline are two of the strongest undergraduate entry points in the country into battery science, both placing graduates directly into battery manufacturing and grid storage firms racing to scale up production.' }
+    ]
+  },
+  {
+    major_label: 'Energy Policy & Regulatory Affairs',
+    career_world: 'energy',
+    riasec_affinity: ['E', 'S', 'I'],
+    riasec_conflict: ['R'],
+    program_keywords: ['energy policy', 'energy law', 'public policy', 'regulatory affairs', 'utility regulation', 'FERC'],
+    entry_careers: ['Regulatory Affairs Analyst', 'Compliance Officer', 'Energy Policy Analyst', 'Legislative Aide (Energy)'],
+    world_alignment: 'People',
+    cc_transfer_friendly: true,
+    emerging_role: 'Grid Interconnection Policy Analyst — the regulatory specialist who works the interconnection queue backlogs now delaying renewable and data center projects nationally, a bottleneck significant enough it has become its own policy specialty inside FERC and state utility commissions.',
+    deployment_contexts: [
+      { domain: 'Utility Regulation & Compliance', edge: 'Every power plant, pipeline, and transmission line in America operates inside a regulatory structure that determines whether it gets built at all. The University of Virginia\'s energy policy coursework and Georgetown\'s energy law offerings both feed this pipeline directly.' }
+    ]
+  },
+  {
+    major_label: 'Power Plant Operations & Systems Management',
+    career_world: 'energy',
+    riasec_affinity: ['R', 'C', 'I'],
+    riasec_conflict: ['A'],
+    program_keywords: ['power plant operations', 'energy systems management', 'asset management', 'fuel procurement', 'plant performance engineering'],
+    entry_careers: ['Power Plant Operations Engineer', 'Performance Engineer', 'Fuel Procurement Analyst', 'Asset Manager'],
+    world_alignment: 'Systems',
+    cc_transfer_friendly: true,
+    emerging_role: 'Plant Performance Data Engineer — the operations engineer who applies predictive analytics to power plant performance and asset lifecycle management, replacing scheduled maintenance with condition-based maintenance across an aging US generation fleet.',
+    deployment_contexts: [
+      { domain: 'Plant Operations & Asset Lifecycle', edge: 'Running a power plant profitably takes the same operational discipline as running any large industrial asset — performance engineering, fuel procurement, weather and fuel-volatility risk management, and CapEx/decommissioning planning across the asset\'s full lifecycle. LSU\'s Gulf Coast energy corridor placement and Texas A&M\'s energy engineering programs both send graduates directly into utility and independent power producer operations roles.' }
+    ]
+  }
+);
+
 // ─────────────────────────────────────────────────────────────────────────────
 // getMajorsForWorld(worldId)
 // ─────────────────────────────────────────────────────────────────────────────

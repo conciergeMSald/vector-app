@@ -271,12 +271,15 @@ const IBIS_WORLD_REGISTRY = _g.IBIS_WORLD_REGISTRY = {
       { title: 'Petroleum Engineer',          years: 4, pay: '$100K–$220K', path: 'BS Petroleum Eng → Field engineer → Reservoir/drilling lead' },
       { title: 'Energy Trader',               years: 3, pay: '$150K–$500K', path: 'Analyst → Trader → Portfolio lead' },
       { title: 'Renewable Project Developer', years: 5, pay: '$95K–$200K',  path: 'Project engineer → Development manager → VP Development' },
+      { title: 'Energy Regulatory Affairs Analyst', years: 3, pay: '$80K–$150K', path: 'Public policy/energy law → Regulatory analyst → Compliance lead' },
+      { title: 'Grid-Scale Battery Systems Engineer', years: 4, pay: '$100K–$190K', path: 'Materials/electrical engineering → Storage systems analyst → Systems design engineer' },
+      { title: 'Crude & Products Trader / Chartering Analyst', years: 3, pay: '$110K–$350K', path: 'Supply chain/international business → Chartering desk → Trader' },
     ],
-    top_metros: ['Houston','Tulsa','Denver','Midland','Oklahoma City'],
+    top_metros: ['Houston','Tulsa','Denver','Midland','Oklahoma City','Washington DC'],
     growth: 'strong',
     v2_affinity: ['systems','analytical'],
     v4_affinity: ['work'],
-    university_pipeline: ['Texas A&M University','University of Houston','University of Tulsa','Colorado School of Mines','University of Oklahoma'],
+    university_pipeline: ['Texas A&M University','University of Houston','University of Tulsa','Colorado School of Mines','University of Oklahoma','Oklahoma State University','LSU','UC Berkeley','Stanford University','University of Washington','UC San Diego','University of Virginia'],
   },
 
   military: {
