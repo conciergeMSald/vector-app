@@ -29,6 +29,36 @@
  * specialty (Nationwide, Progressive, Grange all Ohio-based) dropped
  * entirely for lack of a key. These are real, common enough fields to
  * warrant first-class treatment rather than continuing to force-fit them.
+ *
+ * SCHEMA UPDATE 2026-07-17 (Chunk 1 of pharma-manufacturing V5 buildout):
+ * Added a 24th key, pharmaceuticalManufacturing, and moved NAICS 32 out of
+ * GAP to route to it. This closes a real miscalibration surfaced during the
+ * Southeast biomanufacturing research pass: pharmaceutical manufacturing is
+ * federally classified as NAICS 3254, under the NAICS 32 (Chemical
+ * Manufacturing) supersector — NOT NAICS 62 (Health Care and Social
+ * Assistance). Every biomanufacturing company built into anchor_employers_db
+ * this session (Amgen, Lilly, UCB, Takeda, DifGen, Piramal, etc.) had been
+ * tagged naics: 62 by established convention predating this fix, which
+ * meant biomanufacturing majors were being matched to schools on generic
+ * "medicine" strength rather than any manufacturing-specific signal.
+ * NAICS 33 stays in GAP deliberately — it covers industrial/mechanical/
+ * electronics manufacturing (machinery, computers, transportation
+ * equipment), a genuinely different and still-unaddressed gap, not the
+ * same thing as pharma manufacturing. Do not conflate the two.
+ *
+ * IMPORTANT — INTERIM STATE, NOT A BUG: this is schema declaration and
+ * routing ONLY. Zero V5 schools have been scored on pharmaceuticalManufacturing
+ * yet (that's Chunk 2/3 of this buildout, not done here). Until schools are
+ * scored, resolveMajorRegionalFit() will set schoolsDataAvailable: true for
+ * any major routed to this key (since the key now exists and pathwayKeys.length
+ * > 0), but aligned_schools will still return [] (since every school's score
+ * on this key is 0, filtered out by the existing `.filter(s => s.score > 0)`
+ * step). That is a DIFFERENT signal than the pre-Chunk-1 GAP state
+ * (schoolsDataAvailable: false) — "the capability exists but no schools are
+ * scored yet" vs. "this pathway isn't supported at all." Anything reading
+ * schoolsDataAvailable directly (report rendering, UI) should know this
+ * distinction exists before Chunk 2 lands, or the interim state may look
+ * like a silent regression rather than expected progress.
  */
 
 const NAICS_TO_INDUSTRY_PATHWAYS = {
@@ -57,14 +87,14 @@ const NAICS_TO_INDUSTRY_PATHWAYS = {
   "91": { keys: ["realEstate"], confidence: "MEDIUM", note: "Intelligent Trades (construction mgmt) — weak fit, 'trades' has no real V5 counterpart, realEstate is closest available" },
   "98": { keys: ["technology"], confidence: "MEDIUM", note: "Systems & Automation Economy — plausible but stretches 'technology' to cover industrial automation" },
   "23": { keys: ["realEstate"], confidence: "MEDIUM", note: "Construction — same weak-fit logic as 91" },
+  "32": { keys: ["pharmaceuticalManufacturing"], confidence: "HIGH", note: "Pharmaceutical manufacturing (NAICS 3254) lives under the NAICS 32 Chemical Manufacturing supersector — semantic match to the new pharmaceuticalManufacturing key is direct and unambiguous. SCHEMA-ONLY as of 2026-07-17: this key exists and routes correctly, but zero V5 schools have been scored on it yet (Chunk 2/3, not done here). Every company built into anchor_employers_db this session under the old naics: 62 convention (Amgen, Lilly, UCB, Takeda, DifGen, Piramal, etc.) should eventually be corrected to naics: 32 to actually benefit from this routing — that re-tagging is scoped as its own later chunk, not done here either." },
 
   // ── GAP — no V5 key exists, majors here get no aligned_schools ──
   "93": { keys: [], confidence: "GAP", note: "The Orchestration Layer (org communication/ops) — no V5 key" },
   "99": { keys: [], confidence: "GAP", note: "Reshoring & Domestic Supply Chain Economy (manufacturing) — no V5 key" },
   "101": { keys: [], confidence: "GAP", note: "The Planning Economy — no V5 key" },
   "31": { keys: [], confidence: "GAP", note: "Manufacturing — no V5 key" },
-  "32": { keys: [], confidence: "GAP", note: "Manufacturing — no V5 key" },
-  "33": { keys: [], confidence: "GAP", note: "Manufacturing — no V5 key" },
+  "33": { keys: [], confidence: "GAP", note: "Manufacturing (industrial/mechanical/electronics — machinery, computers, transportation equipment) — no V5 key. Deliberately NOT merged with the new pharmaceuticalManufacturing key added under NAICS 32 (2026-07-17) — genuinely different industries, both real gaps, kept separate." },
 };
 
 function getIndustryPathwayKeys(naicsSector) {

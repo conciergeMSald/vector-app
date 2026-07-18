@@ -1108,9 +1108,9 @@ const INDUSTRY_BRIDGE_DB = _g.INDUSTRY_BRIDGE_DB = {
     cc: 'BTEC (NC State) / Wake Technical Community College',
     cc_city: 'Raleigh-Durham, North Carolina',
     program_length: 'varies by program',
-    employers: ['Grifols', 'Novo Nordisk', 'Fujifilm Diosynth', 'Biogen', 'GSK', 'Pfizer'],
+    employers: ['Grifols', 'Novo Nordisk', 'Fujifilm Diosynth', 'Biogen', 'GSK', 'Pfizer', 'Amgen', 'Lilly'],
     hire_rate: 'strong',
-    note: 'BTEC is a nationally recognized biomanufacturing training center, feeding the deepest biotech manufacturing corridor on the East Coast — 15 named institutions statewide.'
+    note: 'BTEC is a nationally recognized biomanufacturing training center, feeding the deepest biotech manufacturing corridor on the East Coast — 15 named institutions statewide. Updated to include Amgen (Holly Springs, opened Jan 2025 — the company\'s newest, most advanced U.S. facility) and Lilly (RTP/Concord, $474M+ former GSK campus) — both real, verified additions to what was already the strongest single corridor in this database.'
   },
   MA: {
     field: 'biomanufacturing',
@@ -1189,9 +1189,36 @@ const INDUSTRY_BRIDGE_DB = _g.INDUSTRY_BRIDGE_DB = {
     cc: 'Gwinnett Technical College',
     cc_city: 'Lawrenceville, Georgia',
     program_length: 'varies by program',
-    employers: ['WuXi AppTec', 'Aventacell Biomedical'],
+    employers: ['WuXi AppTec', 'Aventacell Biomedical', 'UCB', 'Takeda'],
     hire_rate: 'moderate',
-    note: 'Thinner coverage than the top-tier states, but a real, named pathway exists in metro Atlanta.'
+    note: 'Updated — Georgia\'s biomanufacturing corridor changed substantially in the last year. UCB is building its first-ever U.S. biologics plant ($2B, announced March 2026) directly inside the Rowen innovation district in Gwinnett County — the same county Gwinnett Technical College serves — and explicitly cited the Georgia Tech-Emory biomedical engineering program by name as a reason for the site decision. Takeda operates a 1.1M sq ft plasma fractionation plant in nearby Covington/Social Circle (Newton County), 1,100+ employees. No longer accurately described as "thinner coverage than top-tier states" — this is now a genuinely major corridor, just a newer one than NC or MA.'
+  },
+  AL: {
+    field: 'biomanufacturing',
+    cc: 'Calhoun Community College',
+    cc_city: 'Huntsville/Decatur, Alabama',
+    program_length: 'varies by program',
+    employers: ['Lilly'],
+    hire_rate: 'emerging — too new for a track record yet',
+    note: 'Calhoun is the named 2-year workforce partner (alongside 4-year University of Alabama in Huntsville) for Eli Lilly\'s new $6B API manufacturing plant — the largest single investment in Alabama\'s history (announced Dec 2025, ~450 jobs). Calhoun\'s paid apprenticeship programs have a real, verified 100% in-field job placement rate generally (2021), though that figure predates the Lilly partnership and is not Lilly-specific — honestly marked "emerging" rather than claiming an established biomanufacturing-specific hire rate that doesn\'t exist yet.'
+  },
+  TN: {
+    field: 'biomanufacturing',
+    cc: 'Volunteer State Community College',
+    cc_city: 'Gallatin, Tennessee (instruction also at Heritage High School, White House, TN)',
+    program_length: '8 weeks (Biotechnology Bootcamp)',
+    employers: ['Thermo Fisher Scientific', 'August Bioservices'],
+    hire_rate: 'emerging — program launched May 2026, too new for a track record',
+    note: 'Vol State\'s paid Biotechnology Bootcamp (launched May 2026) is run in partnership with Vanderbilt University and CREST — participants earn up to $7,000 over 8 weeks, no prior coursework required, and graduates are eligible for the nationally recognized Biotechnology Aptitude and Competency Exam (BACE), preparing them for lab technician, QC technician, and biomanufacturing technician roles. This is a real, current, and unusually accessible pathway (open to career-changers, not just traditional students) — but it is brand new, so employer placement outcomes specific to Thermo Fisher or August Bioservices are not yet independently confirmed; do not overstate the employer connection beyond "operates in the same regional labor market."'
+  },
+  KY: {
+    field: 'biomanufacturing',
+    cc: 'Bluegrass Community and Technical College (BCTC)',
+    cc_city: 'Lexington, Kentucky',
+    program_length: 'AAS (2-year) or stackable Advanced/Basic Biotechnician Certificates',
+    employers: ['Piramal Pharma Solutions'],
+    hire_rate: 'strong — direct curriculum alignment with named employer',
+    note: 'BCTC runs the ONLY two-year biotechnology program in the state of Kentucky, and explicitly aligns its curriculum (bioreactor operation, recombinant DNA technology, cell culture, GMPs) with the biomanufacturing demands of Piramal Pharma Solutions — whose Lexington facility sits physically inside the University of Kentucky\'s own Coldstream Research Campus. This is the tightest employer-curriculum alignment found in this database: a single named employer, a single named 2-year program built specifically around it, both on the same research campus.'
   },
   OH: {
     field: 'biomanufacturing',

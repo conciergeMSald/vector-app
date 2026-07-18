@@ -758,7 +758,31 @@ const GEO_ZIP_TO_MEGAREGION = {
     "subgroup": "Research Triangle",
     "pass": "Research Triangle seed — Duke, UNC, NC State only, not a full pass",
     "county": "Durham"
-  }
+  },
+
+  "27701": { "megaregion": "Piedmont Atlantic", "subgroup": "Research Triangle", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Durham" },
+  "27705": { "megaregion": "Piedmont Atlantic", "subgroup": "Research Triangle", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Durham" },
+  "27513": { "megaregion": "Piedmont Atlantic", "subgroup": "Research Triangle", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Wake" },
+  "27601": { "megaregion": "Piedmont Atlantic", "subgroup": "Research Triangle", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Wake" },
+
+  "35801": { "megaregion": "Piedmont Atlantic", "subgroup": "Huntsville", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Madison" },
+  "35802": { "megaregion": "Piedmont Atlantic", "subgroup": "Huntsville", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Madison" },
+  "35803": { "megaregion": "Piedmont Atlantic", "subgroup": "Huntsville", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Madison" },
+  "35805": { "megaregion": "Piedmont Atlantic", "subgroup": "Huntsville", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Madison" },
+  "35806": { "megaregion": "Piedmont Atlantic", "subgroup": "Huntsville", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Madison" },
+  "35758": { "megaregion": "Piedmont Atlantic", "subgroup": "Huntsville", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Madison" },
+
+  "37201": { "megaregion": "Piedmont Atlantic", "subgroup": "Nashville", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Davidson" },
+  "37203": { "megaregion": "Piedmont Atlantic", "subgroup": "Nashville", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Davidson" },
+  "37215": { "megaregion": "Piedmont Atlantic", "subgroup": "Nashville", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Davidson" },
+  "37027": { "megaregion": "Piedmont Atlantic", "subgroup": "Nashville", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Williamson" },
+  "37122": { "megaregion": "Piedmont Atlantic", "subgroup": "Nashville", "pass": "Southeast biomanufacturing pass, 2026-07-17 — Mount Juliet, the Thermo Fisher/Wilson County manufacturing ZIP", "county": "Wilson" },
+
+  "40502": { "megaregion": "Great Lakes", "subgroup": "Lexington (RPA area of influence, not core membership)", "pass": "Southeast biomanufacturing pass, 2026-07-17 — per RPA/America 2050, Lexington-Fayette-Frankfort-Richmond KY CSA is explicitly an 'area of influence' of Great Lakes, not a core megaregion member; flagged honestly rather than force-fit into Piedmont Atlantic despite its Southeast geography", "county": "Fayette" },
+  "40503": { "megaregion": "Great Lakes", "subgroup": "Lexington (RPA area of influence, not core membership)", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Fayette" },
+  "40504": { "megaregion": "Great Lakes", "subgroup": "Lexington (RPA area of influence, not core membership)", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Fayette" },
+  "40505": { "megaregion": "Great Lakes", "subgroup": "Lexington (RPA area of influence, not core membership)", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Fayette" },
+  "40511": { "megaregion": "Great Lakes", "subgroup": "Lexington (RPA area of influence, not core membership)", "pass": "Southeast biomanufacturing pass, 2026-07-17 — closest ZIP to UK's Coldstream Research Campus, the Piramal Pharma Solutions site", "county": "Fayette" }
 };
 
 if (typeof window !== 'undefined') window.GEO_ZIP_TO_MEGAREGION = GEO_ZIP_TO_MEGAREGION;

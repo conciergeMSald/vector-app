@@ -455,6 +455,169 @@ LEAVE AND RETURN: Michigan or Georgetown finance/law → return to Brickell or P
 LEAVE AND STAY GONE: Wharton → Wall Street, not Brickell. Stanford → Silicon Valley, not Miami. Northwestern → Chicago, not Tampa. NYU → New York finance and media, no Florida equivalent.
 
 Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it. If this student has family in Florida but lives elsewhere, name Florida as a legitimate Leave and Return destination with the specific corridor their interests map to.`
+  },
+  alabama_huntsville: {
+    zipPrefixes: ['356','357','358','359'],
+    corridors: [
+      {
+        name: 'Pharmaceutical Manufacturing & Advanced Engineering',
+        anchor: 'Huntsville (Cummings Research Park / Redstone Arsenal vicinity)',
+        industries: ['Pharmaceutical/API Manufacturing', 'Aerospace & Defense Systems', 'Advanced Engineering'],
+        employers: ['Lilly', 'Northrop Grumman'],
+        naics: [62, 33],
+        note: 'Huntsville is a genuinely dual-identity city: Lilly\'s $6B API manufacturing plant (largest investment in Alabama history, Dec 2025) sits in the same metro as Northrop Grumman\'s missile defense and space systems work — meaning the city\'s "science and innovation" workforce, explicitly cited by Lilly itself, spans pharma and defense simultaneously, not one or the other.'
+      }
+    ],
+    trajectories: {
+      stay_close: {
+        label: 'Stay Close',
+        summary: 'Huntsville schools that put you directly inside a real, current pharmaceutical manufacturing build-out.',
+        connections: [
+          { school: 'University of Alabama in Huntsville', corridor: 'Pharmaceutical Manufacturing & Advanced Engineering', note: 'A publicly announced, real workforce partnership with Lilly — UAH\'s engineering programs explicitly cited as part of "applying engineering excellence" to the new biopharma plant.' },
+          { school: 'Calhoun Community College', corridor: 'Pharmaceutical Manufacturing & Advanced Engineering', note: 'Named 2-year workforce partner alongside UAH — a real technician-entry pathway into Lilly\'s Huntsville plant that does not require a 4-year degree to start.' }
+        ]
+      }
+    },
+    callc_context: `ALABAMA (HUNTSVILLE) REGIONAL INTELLIGENCE:
+
+This student lives near one of the newest and largest pharmaceutical manufacturing investments in the country: Eli Lilly's $6 billion Huntsville API plant (announced Dec 2025, ~450 jobs), described by Lilly itself as chosen for "Huntsville's track record of science and innovation, supported by advanced manufacturing expertise and a skilled workforce" — the same workforce identity that has long supported Northrop Grumman's missile defense and space systems work in the same metro.
+
+KEY CORRIDOR: Pharmaceutical Manufacturing & Advanced Engineering (Cummings Research Park / Redstone Arsenal vicinity) — Lilly, Northrop Grumman. A dual-industry corridor: pharma manufacturing and defense engineering both draw on the same technical talent base.
+
+STAY CLOSE: University of Alabama in Huntsville → real, publicly announced Lilly workforce partnership. Calhoun Community College → 2-year technician pathway into the same plant, no 4-year degree required.
+
+This is a genuinely new opportunity, not a legacy corridor — the Lilly plant broke ground within the last two years. A student here doesn't have to choose between "leave for pharma" and "stay for defense" the way most regions force that choice; Huntsville's science/engineering workforce identity now spans both.`
+  },
+  georgia_atlanta: {
+    zipPrefixes: ['300','301','302','303','305','306','307','308','309'],
+    corridors: [
+      {
+        name: 'Pharmaceutical & Biologics Manufacturing',
+        anchor: 'Gwinnett County ("Rowen") / Covington-Social Circle',
+        industries: ['Biologics Manufacturing', 'Plasma-Derived Therapies', 'Pharmaceutical Production'],
+        employers: ['UCB', 'Takeda'],
+        naics: [62],
+        note: 'Two international pharma majors, neither headquartered in the U.S. (Belgium and Japan respectively), both choosing real American manufacturing footprint in the same Georgia exurbs — UCB\'s first-ever U.S. biologics plant and Takeda\'s 1.1M sq ft plasma fractionation facility. Genuinely different therapeutic models: UCB (immunology/neurology biologics) vs. Takeda (donor-dependent plasma economics).'
+      }
+    ],
+    trajectories: {
+      stay_close: {
+        label: 'Stay Close',
+        summary: 'Atlanta-area schools with a real, company-stated connection to the new biologics manufacturing corridor.',
+        connections: [
+          { school: 'Georgia Institute of Technology', corridor: 'Pharmaceutical & Biologics Manufacturing', note: 'UCB itself explicitly cited "the Georgia Tech-Emory biomedical engineering program" as ranking "among the best in the nation" as a stated reason for choosing Georgia — a company-sourced connection, not an inferred one.' },
+          { school: 'Emory University', corridor: 'Pharmaceutical & Biologics Manufacturing', note: 'Named jointly with Georgia Tech in UCB\'s own site-selection reasoning — the Georgia Tech-Emory biomedical engineering partnership is a real, named academic program, not two separate schools loosely associated with the region.' }
+        ]
+      }
+    },
+    callc_context: `GEORGIA (ATLANTA) REGIONAL INTELLIGENCE:
+
+This student lives near a brand-new biologics manufacturing corridor that did not exist five years ago: UCB's first-ever U.S. plant ($2B, announced March 2026, Gwinnett County) and Takeda's 1.1 million sq ft plasma fractionation facility (Covington/Social Circle) — two international pharma majors choosing Georgia specifically, neither one relocating an existing American headquarters.
+
+KEY CORRIDOR: Pharmaceutical & Biologics Manufacturing (Gwinnett County "Rowen" / Covington-Social Circle) — UCB, Takeda. UCB explicitly named the Georgia Tech-Emory biomedical engineering program as a reason for the site decision, in the company's own words.
+
+STAY CLOSE: Georgia Tech → the biomedical engineering program UCB itself cited by name. Emory → named jointly with Georgia Tech in that same reasoning.
+
+This is a company-sourced, not inferred, university connection — rare in this dataset. Worth naming to a student directly: a real, named employer said this specific academic program mattered to their decision to build in Georgia.`
+  },
+  tennessee_nashville: {
+    zipPrefixes: ['370','371','372','373'],
+    corridors: [
+      {
+        name: 'Sterile Injectable & Bioprocessing Manufacturing',
+        anchor: 'Nashville / Wilson County (Mt. Juliet)',
+        industries: ['Sterile Injectable CDMO', 'Bioprocessing Technology Manufacturing'],
+        employers: ['Thermo Fisher Scientific', 'August Bioservices'],
+        naics: [62],
+        note: 'No single headline investment number the way Alabama or Georgia has — this corridor is real depth (Thermo Fisher\'s $100M+/1,400-job Wilson County plant, August Bioservices\' $64.7M CDMO expansion) built around Nashville\'s existing healthcare-industry reputation (HCA Healthcare\'s global HQ, a massive hospital-management sector), not one university lab or one company.'
+      }
+    ],
+    trajectories: {
+      stay_close: {
+        label: 'Stay Close',
+        summary: 'Nashville schools sitting inside a real but distributed manufacturing corridor — honestly, no single confirmed university partnership exists here yet.',
+        connections: []
+      }
+    },
+    callc_context: `TENNESSEE (NASHVILLE) REGIONAL INTELLIGENCE:
+
+This student lives near a real but differently-shaped biomanufacturing corridor than Alabama or Georgia: no single headline investment number, but genuine depth — Thermo Fisher's Wilson County single-use bioprocessing plant ($100M+, 1,400 jobs, ribbon-cut ~2023) and August Bioservices' sterile injectable CDMO expansion ($64.7M, 180 jobs, 2020). Both are explicitly tied to Nashville's existing healthcare-industry reputation (HCA Healthcare's global headquarters, one of the largest hospital-management sectors in the country) rather than to one specific university lab.
+
+KEY CORRIDOR: Sterile Injectable & Bioprocessing Manufacturing (Nashville / Wilson County) — Thermo Fisher Scientific, August Bioservices.
+
+HONEST GAP: unlike Alabama (UAH/Calhoun), Georgia (Georgia Tech-Emory), or Kentucky (University of Kentucky), no confirmed university partnership surfaced for this corridor in the research behind this dataset. Do not fabricate a Vanderbilt or Belmont connection — if a student asks, the honest answer is that Nashville's biomanufacturing pull is about the city's healthcare-industry identity broadly, not a named academic pipeline yet.`
+  },
+  kentucky_lexington: {
+    zipPrefixes: ['403','404','405'],
+    corridors: [
+      {
+        name: 'Pharmaceutical Manufacturing & CDMO',
+        anchor: 'Lexington (Coldstream Research Campus)',
+        industries: ['Injectable Drug Manufacturing', 'Contract Development & Manufacturing (CDMO)'],
+        employers: ['Piramal Pharma Solutions'],
+        naics: [62],
+        note: 'The tightest university-industry link in this entire database — Piramal doesn\'t just partner with the University of Kentucky, it physically operates inside UK\'s own Coldstream Research Campus.'
+      }
+    ],
+    trajectories: {
+      stay_close: {
+        label: 'Stay Close',
+        summary: 'A university and an employer sharing the same physical campus — as close as "stay close" can literally get.',
+        connections: [
+          { school: 'University of Kentucky', corridor: 'Pharmaceutical Manufacturing & CDMO', note: 'Piramal Pharma Solutions physically operates on UK-owned Coldstream Research Campus land — per Commerce Lexington, this "provides valuable opportunities for UK students." This is structural proximity, not a marketing partnership.' }
+        ]
+      }
+    },
+    callc_context: `KENTUCKY (LEXINGTON) REGIONAL INTELLIGENCE:
+
+This student lives near a smaller-dollar but structurally unique biomanufacturing story: Piramal Pharma Solutions' injectable manufacturing site sits physically inside the University of Kentucky's own Coldstream Research Campus — not merely partnered with UK, but literally built on university-owned research park land. The 2025 expansion ($80-90M, doubling capacity by 2027, 40 new jobs) is modest next to Alabama's or Georgia's headline numbers, but the university proximity is unmatched anywhere else in this dataset.
+
+KEY CORRIDOR: Pharmaceutical Manufacturing & CDMO (Lexington/Coldstream Research Campus) — Piramal Pharma Solutions.
+
+STAY CLOSE: University of Kentucky → the employer operates on the university's own land. For a student who wants a real biomanufacturing career without leaving home at all, this may be the single clearest "stay close" story in the entire Southeast dataset — dollar-for-dollar smaller than Alabama or Georgia, but geographically as close as it gets.`
+  },
+  north_carolina_rtp: {
+    zipPrefixes: ['275','276','277','278'],
+    corridors: [
+      {
+        name: 'Pharmaceutical & Biologics Manufacturing',
+        anchor: 'Research Triangle Park / Holly Springs / Sanford / Rocky Mount (broader Raleigh-Durham region)',
+        industries: ['Biologics Manufacturing', 'Injectable Drug Manufacturing', 'Pharmaceutical Production'],
+        employers: ['Amgen', 'Biogen', 'Lilly', 'Pfizer', 'Novo Nordisk'],
+        naics: [62],
+        note: 'The deepest, most company-dense biomanufacturing corridor in this entire dataset — five major pharma companies with real, verified NC manufacturing presence, including Biogen\'s LARGEST manufacturing footprint globally (not a satellite site) and Amgen\'s newest, most advanced U.S. facility (Holly Springs, opened Jan 2025).'
+      },
+      {
+        name: 'Academic Medicine & Health Systems',
+        anchor: 'Durham (Duke) / Chapel Hill (UNC)',
+        industries: ['Academic Medical Centers', 'Clinical Research', 'Graduate Medical Education'],
+        employers: ['Duke University Hospital', 'UNC Medical Center'],
+        naics: [62],
+        note: 'A genuinely different door into "medicine" than the manufacturing corridor above — direct patient care and academic research, not drug commercialization. A student doesn\'t have to choose between industry and academic medicine in this region; both exist at serious scale in the same commute radius.'
+      }
+    ],
+    trajectories: {
+      stay_close: {
+        label: 'Stay Close',
+        summary: 'Triangle schools sitting directly inside the deepest biomanufacturing corridor in this entire dataset.',
+        connections: [
+          { school: 'Duke University', corridor: 'Academic Medicine & Health Systems', note: 'Duke University Hospital is Durham County\'s largest employer and directly affiliated with Duke\'s own medical school — the clearest possible "stay close" academic medicine pathway.' },
+          { school: 'University of North Carolina at Chapel Hill', corridor: 'Academic Medicine & Health Systems', note: 'UNC Medical Center is a Level 1 trauma center explicitly serving patients "from all 100 NC counties" — a public-university, statewide-mission version of the same academic medicine pathway Duke represents.' },
+          { school: 'North Carolina State University', corridor: 'Pharmaceutical & Biologics Manufacturing', note: 'NC State\'s engineering and life sciences programs sit closest geographically to the RTP manufacturing corridor itself — Amgen, Biogen, Lilly, Pfizer, and Novo Nordisk all operate within the same metro.' }
+        ]
+      }
+    },
+    callc_context: `NORTH CAROLINA (RESEARCH TRIANGLE) REGIONAL INTELLIGENCE:
+
+This student lives inside the deepest, most company-dense biomanufacturing corridor in the entire Southeast: Amgen ($1B+ second NC facility, Holly Springs, opened Jan 2025), Biogen (its LARGEST manufacturing footprint globally — North Carolina's largest biotech employer, not a satellite operation), Lilly ($474M+ RTP facility on a former GSK campus), Pfizer (Sanford + Rocky Mount, though Sanford specifically has faced real recent layoffs and uncertainty), and Novo Nordisk-adjacent activity in the broader region. Alongside this sits a genuinely separate academic-medicine corridor: Duke University Hospital and UNC Medical Center, two of the region's largest employers doing direct patient care and academic research rather than drug commercialization.
+
+KEY CORRIDORS:
+- Pharmaceutical & Biologics Manufacturing (RTP) — Amgen, Biogen, Lilly, Pfizer, Novo Nordisk
+- Academic Medicine & Health Systems (Durham/Chapel Hill) — Duke University Hospital, UNC Medical Center
+
+STAY CLOSE: Duke → Duke University Hospital, Durham County's largest employer. UNC Chapel Hill → UNC Medical Center, statewide public-mission academic medicine. NC State → closest geographically to the RTP manufacturing corridor itself.
+
+This region offers something no other Southeast state in this dataset does: a genuine choice between industry biomanufacturing and academic medicine, both at serious scale, inside the same commute radius — not a forced trade-off between "go into pharma" and "stay in medicine."`
   }
 };
 
@@ -519,6 +682,22 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'Latin American Business & International Trade',naics: [48, 52, 42],riasec: ['E','S','C'] },
     { corridorName: 'Aerospace, Defense & Technology',             naics: [33, 54, 92], riasec: ['R','I','C'] },
     { corridorName: 'AgriTech, Logistics & Supply Chain',          naics: [48, 42, 11], riasec: ['R','C','E'] }
+  ],
+  alabama_huntsville: [
+    { corridorName: 'Pharmaceutical Manufacturing & Advanced Engineering', naics: [62, 33], riasec: ['R','C','I'] }
+  ],
+  georgia_atlanta: [
+    { corridorName: 'Pharmaceutical & Biologics Manufacturing', naics: [62], riasec: ['R','C','I'] }
+  ],
+  tennessee_nashville: [
+    { corridorName: 'Sterile Injectable & Bioprocessing Manufacturing', naics: [62], riasec: ['R','C','I'] }
+  ],
+  kentucky_lexington: [
+    { corridorName: 'Pharmaceutical Manufacturing & CDMO', naics: [62], riasec: ['R','C','I'] }
+  ],
+  north_carolina_rtp: [
+    { corridorName: 'Pharmaceutical & Biologics Manufacturing', naics: [62], riasec: ['R','C','I'] },
+    { corridorName: 'Academic Medicine & Health Systems', naics: [62], riasec: ['I','S','C'] }
   ]
 };
 
@@ -586,115 +765,106 @@ function resolveStudentCorridor(naicsSectors, riasec, regionalKey) {
   return best && best.score >= 3 ? best : null;
 }
 
-// ── getStudentCorridorContext ─────────────────────────────────────────────────
-// Returns a short, prompt-ready string naming the student's matched corridor
-// Used to sharpen callC prompt beyond "here are all corridors"
+// ── Anchor employer enrichment (wired in July 17 2026) ────────────────────────
+// Loads ANCHOR_EMPLOYERS as a global if already present in this environment —
+// matches how REGIONAL_INTELLIGENCE, CORRIDOR_NAICS_MAP, and every other *_DB/
+// *_MAP constant in this codebase are shared as globals across concatenated/
+// bundled files. Falls back to require() only in a Node.js test/dev context.
+// Never throws if unavailable: the enrichment is strictly additive. If
+// anchor_employers_db.js isn't loaded for any reason, getStudentCorridorContext
+// falls back to exactly its original plain-name-list behavior — nothing breaks.
 
-function getStudentCorridorContext(naicsSectors, riasec, zip) {
-  const region = resolveRegion(zip);
-  if (!region) return '';
-
-  const corridor = resolveStudentCorridor(naicsSectors, riasec, region.key);
-  if (!corridor) return '';
-
-  // Find the full corridor object from the region for employer/detail data
-  const fullCorridor = region.corridors.find(c => c.name === corridor.corridorName);
-  if (!fullCorridor) return `Student corridor match: ${corridor.corridorName}`;
-
-  return `STUDENT CORRIDOR MATCH: ${corridor.corridorName} (${fullCorridor.anchor})
-Key employers in this corridor: ${fullCorridor.employers.slice(0,4).join(', ')}
-Industries: ${fullCorridor.industries.slice(0,3).join(', ')}`;
-}
-
-// ── resolveRegion ─────────────────────────────────────────────────────────────
-// Returns the matching REGIONAL_INTELLIGENCE entry for a given ZIP code
-// Returns null if no region matches (graceful fallback to ZIP-only geo)
-
-function resolveRegion(zip) {
-  if (!zip || typeof zip !== 'string') return null;
-  const prefix = zip.trim().slice(0, 3);
-  for (const [key, region] of Object.entries(REGIONAL_INTELLIGENCE)) {
-    if (region.zipPrefixes.includes(prefix)) return { key, ...region };
+let __ANCHOR_EMPLOYERS = (typeof ANCHOR_EMPLOYERS !== 'undefined') ? ANCHOR_EMPLOYERS : null;
+if (!__ANCHOR_EMPLOYERS && typeof require === 'function') {
+  try {
+    __ANCHOR_EMPLOYERS = require('./anchor_employers_db.js').ANCHOR_EMPLOYERS;
+  } catch (e) {
+    __ANCHOR_EMPLOYERS = null;
   }
-  return null;
 }
 
-// ── getRegionalCallCContext ───────────────────────────────────────────────────
-// Returns the callC prompt context string for a given ZIP
-// Returns empty string if no region matches
+const __ANCHOR_BY_NAME = __ANCHOR_EMPLOYERS
+  ? new Map(__ANCHOR_EMPLOYERS.map(c => [c.company_name, c]))
+  : new Map();
 
-function getRegionalCallCContext(zip) {
-  const region = resolveRegion(zip);
-  return region ? region.callc_context : '';
+function __findAnchorMatch(employerName) {
+  // Exact match ONLY. An earlier version of this function used loose substring
+  // matching ("Roche".includes(x) || x.includes("Roche")) intended to catch
+  // legitimate abbreviations, but it also incorrectly matched "Roche" (the
+  // bayarea corridor's generic reference to Roche/Genentech) against "Roche
+  // Diagnostics" (our distinct Indianapolis North American diagnostics entry)
+  // — two genuinely different entities that happen to share a word. Caught
+  // live in end-to-end testing before deployment. Exact-match-only trades a
+  // small amount of matching flexibility for zero cross-contamination risk;
+  // the fix for legitimate abbreviations is keeping corridor employer names
+  // and anchor_employers_db company_name fields consistent, not fuzzy string
+  // matching. All currently-working matches (Gilead Sciences, ResMed, Vertex
+  // Pharmaceuticals, FIS, UCB, Takeda, etc.) already use exact full names in
+  // both places, so this fix breaks nothing that was correctly working.
+  return __ANCHOR_BY_NAME.get(employerName) || null;
 }
 
-// ── resolveStudentCorridor ────────────────────────────────────────────────────
-// Given a student's NAICS sectors, RIASEC codes, and regional key,
-// returns the single best-matching corridor for this student in this region.
-// Uses a weighted score: NAICS overlap (primary) + RIASEC affinity (secondary)
-//
-// @param naicsSectors  array of {sector, count/score} from getNAICSProfile()
-// @param riasec        array of {code, score} from getRIASECProfile()
-// @param regionalKey   'socal' | 'bayarea' | 'chicago'
-// @returns { corridorName, naics, riasec, score } | null
+function __scoreCapabilityRole(riasecTags, studentTop, studentSecondary) {
+  let s = 0;
+  for (const t of riasecTags) {
+    if (studentTop.includes(t)) s += 2;
+    else if (studentSecondary.includes(t)) s += 1;
+  }
+  return s;
+}
 
-function resolveStudentCorridor(naicsSectors, riasec, regionalKey) {
-  if (!naicsSectors || !naicsSectors.length || !regionalKey) return null;
+// Given a corridor's plain employer list + a student's RIASEC top/secondary
+// codes + the corridor's own region anchor (for multi-site company location
+// disambiguation — see the Vertex/San Diego correction from this session),
+// returns an array of enriched, prompt-ready employer lines. Employers with
+// no anchor_employers_db entry pass through as plain names — nothing invented.
+function enrichCorridorEmployers(employerNames, studentTop, studentSecondary, regionAnchorHint) {
+  return employerNames.map(name => {
+    const match = __findAnchorMatch(name);
+    if (!match) return name;
 
-  const corridorMap = CORRIDOR_NAICS_MAP[regionalKey];
-  if (!corridorMap) return null;
+    const scoredRoles = (match.capability_roles || [])
+      .map(r => ({ ...r, score: __scoreCapabilityRole(r.riasec_tags || [], studentTop, studentSecondary) }))
+      .sort((a, b) => b.score - a.score);
+    const best = scoredRoles[0];
+    if (!best) return name;
 
-  // Student's top RIASEC codes (top 3, ordered)
-  const studentRIASEC = (riasec || []).slice(0, 3).map(r => r.code);
-  const studentRIASECSet = new Set(studentRIASEC);
-
-  // High-signal NAICS codes that are corridor-specific (not generic crossovers)
-  // NAICS 71 (Arts/Entertainment) almost uniquely signals Entertainment — boost it
-  // NAICS 52 (Finance) almost uniquely signals Finance — boost it
-  // NAICS 62 (Healthcare) almost uniquely signals Healthcare — boost it
-  // NAICS 44 (Retail/Consumer) almost uniquely signals CPG/Consumer — boost it
-  // NAICS 33 (Manufacturing) almost uniquely signals Aerospace/Industrial — boost it
-  const HIGH_SIGNAL_NAICS = new Set([71, 52, 62, 44, 31, 33, 48]);
-
-  // Score each corridor
-  const scored = corridorMap.map(corridor => {
-    let score = 0;
-
-    // Primary signal — NAICS overlap, weighted by position and specificity
-    naicsSectors.slice(0, 5).forEach((n, idx) => {
-      if (corridor.naics.includes(n.sector)) {
-        const baseWeight = (5 - idx) * 3; // top sector worth 15, 5th worth 3
-        // High-signal NAICS get a stronger boost when they appear in top-2 positions
-        // This ensures Finance(52), Healthcare(62), Entertainment(71) aren't beaten
-        // by generic 51/54 combinations even when both sectors are tied by count
-        const isTopPosition = idx <= 1;
-        const specificityBoost = HIGH_SIGNAL_NAICS.has(n.sector) ? (isTopPosition ? 14 : 8) : 0;
-        score += baseWeight + specificityBoost;
+    let locationLabel = `${match.hq_city}, ${match.hq_state}`;
+    if (regionAnchorHint) {
+      // Token-overlap check, not whole-string containment. Caught live in
+      // end-to-end testing across the Southeast regions: "Research Triangle
+      // Park (Raleigh-Durham-Chapel Hill)" and "Research Triangle Park /
+      // Concord" clearly refer to the same place, but neither string fully
+      // CONTAINS the other because each has a different qualifier appended —
+      // the earlier bidirectional-includes() fix (which correctly handled
+      // Vertex's simple "San Diego" case) silently failed here, falling back
+      // to HQ display for Amgen, Pfizer, and Lilly in the NC corridor even
+      // though all three have real, listed NC facilities.
+      const normalize = s => s.toLowerCase().replace(/[()\/,]/g, ' ').split(/\s+/).filter(w => w.length > 3);
+      const hintWords = new Set(normalize(regionAnchorHint));
+      const localFacility = (match.facility_locations || []).find(f => {
+        const cityWords = normalize(f.city_or_region);
+        return cityWords.some(w => hintWords.has(w));
+      });
+      if (localFacility && localFacility.city_or_region !== match.hq_city) {
+        locationLabel = `${localFacility.city_or_region} (${match.hq_city} HQ)`;
       }
-    });
+    }
 
-    // Secondary signal — RIASEC affinity, ordered match matters
-    corridor.riasec.forEach((code, corridorRIASECIdx) => {
-      const studentIdx = studentRIASEC.indexOf(code);
-      if (studentIdx !== -1) {
-        // Both corridor position and student position matter
-        const corridorWeight = (3 - corridorRIASECIdx); // primary corridor code worth 3
-        const studentWeight = (3 - studentIdx);          // student's primary code worth 3
-        score += corridorWeight * studentWeight;
-      }
-    });
-
-    return { ...corridor, score };
+    return `${name} [${locationLabel} — likely entry point: ${best.role}]`;
   });
-
-  // Return highest-scoring corridor, or null if no real match (score < 3)
-  const best = scored.sort((a, b) => b.score - a.score)[0];
-  return best && best.score >= 3 ? best : null;
 }
 
 // ── getStudentCorridorContext ─────────────────────────────────────────────────
 // Returns a short, prompt-ready string naming the student's matched corridor
 // Used to sharpen callC prompt beyond "here are all corridors"
+//
+// UPDATED July 17 2026: employer names are now passed through enrichCorridorEmployers()
+// when anchor_employers_db data is available for a given company — this is pass #3
+// of the resolver design from this session: RIASEC-tagged functional-slice matching,
+// independent of which world/major the student selected. A student never sees this
+// happen; it just makes callC's prompt sharper when the data exists, and degrades
+// silently to the original plain-name behavior when it doesn't.
 
 function getStudentCorridorContext(naicsSectors, riasec, zip) {
   const region = resolveRegion(zip);
@@ -707,7 +877,32 @@ function getStudentCorridorContext(naicsSectors, riasec, zip) {
   const fullCorridor = region.corridors.find(c => c.name === corridor.corridorName);
   if (!fullCorridor) return `Student corridor match: ${corridor.corridorName}`;
 
+  const studentTop = (riasec || []).slice(0, 2).map(r => r.code);
+  const studentSecondary = (riasec || []).slice(2, 3).map(r => r.code);
+
+  // Prioritize employers with real anchor_employers_db data BEFORE truncating
+  // to 4 — caught in end-to-end testing: the original slice(0,4) ran before
+  // enrichment, so richer/verified entries sitting 5th+ in a corridor's plain
+  // list (e.g. Vertex Pharmaceuticals, ResMed in socal) were silently cut
+  // even though they had the best data of anyone in that corridor.
+  const allEmployers = fullCorridor.employers;
+  const withData = allEmployers.filter(name => __ANCHOR_BY_NAME.has(name));
+  const withoutData = allEmployers.filter(name => !__ANCHOR_BY_NAME.has(name));
+  const prioritized = __ANCHOR_EMPLOYERS ? [...withData, ...withoutData] : allEmployers;
+
+  const enrichedEmployers = __ANCHOR_EMPLOYERS
+    ? enrichCorridorEmployers(prioritized.slice(0, 4), studentTop, studentSecondary, fullCorridor.anchor)
+    : prioritized.slice(0, 4);
+
   return `STUDENT CORRIDOR MATCH: ${corridor.corridorName} (${fullCorridor.anchor})
-Key employers in this corridor: ${fullCorridor.employers.slice(0,4).join(', ')}
+Key employers in this corridor: ${enrichedEmployers.join(', ')}
 Industries: ${fullCorridor.industries.slice(0,3).join(', ')}`;
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    REGIONAL_INTELLIGENCE, CORRIDOR_NAICS_MAP,
+    resolveRegion, getRegionalCallCContext, resolveStudentCorridor, getStudentCorridorContext,
+    enrichCorridorEmployers,
+  };
 }

@@ -259,6 +259,13 @@ const GEO_INDUSTRY_DB_ATLANTA = {
         distance: "Local",
         anchor_employers: ["major TV/film production sites", "Covington historic square (frequent filming location)"],
         student_connection: "Covington has been called the 'Hollywood of the South' for decades of continuous film and TV production — from In the Heat of the Night to The Vampire Diaries — a genuine, sustained production-industry identity, not a one-off filming location."
+      },
+      {
+        name: "Pharmaceutical & Plasma Manufacturing",
+        naics: 62,
+        distance: "Local",
+        anchor_employers: ["Takeda (Covington/Social Circle plasma fractionation facility)"],
+        student_connection: "Takeda operates a 1.1 million square foot plasma fractionation plant here — 1,100+ full-time employees, described by Takeda itself as 'the cornerstone of a global strategy' for worldwide plasma-derived therapy supply. Covington's identity as a filming location is well known; its identity as a major biomanufacturing site is not, despite employing more people than most local productions ever do."
       }
     ]
   },
@@ -274,6 +281,13 @@ const GEO_INDUSTRY_DB_ATLANTA = {
         distance: "Local",
         anchor_employers: ["Georgia Gwinnett College"],
         student_connection: "Georgia Gwinnett College anchors Lawrenceville's identity as the seat of Gwinnett County — Georgia's second-most-populous county — giving the area a genuine higher-education and civic-administration career pathway."
+      },
+      {
+        name: "Biologics Manufacturing",
+        naics: 62,
+        distance: "Local",
+        anchor_employers: ["UCB (Rowen Life Sciences Park biologics campus)"],
+        student_connection: "UCB, a Belgian pharmaceutical company, is building its first-ever U.S. biologics manufacturing facility here inside the Rowen innovation district — a $2 billion investment (announced March 2026) creating 330 permanent jobs. UCB itself cited the Georgia Tech-Emory biomedical engineering program by name as a reason for choosing this location, a company-stated connection rather than an inferred one."
       }
     ]
   },
