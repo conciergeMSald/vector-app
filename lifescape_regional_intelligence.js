@@ -62,7 +62,7 @@ const REGIONAL_INTELLIGENCE = {
         anchor: 'Thousand Oaks / Westlake Village / Northridge / Van Nuys (Ventura County / San Fernando Valley)',
         industries: ['Biologics Manufacturing','Contract Development & Manufacturing (CDMO)','Drug Delivery Systems','Pharmaceutical Production','Quality & Regulatory Operations'],
         employers: ['Amgen','Baxter Healthcare','Kindeva Drug Delivery','Takeda (Van Nuys)'],
-        naics: [62, 33],
+        naics: [32, 33], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
         note: 'Distinct from the San Diego biotech corridor above — this is Southern California\'s pharmaceutical MANUFACTURING cluster, not its research cluster. A student can move between the two without leaving the region: San Diego trains the scientists, Thousand Oaks/Van Nuys is where a meaningful share of them end up producing the drug at scale.'
       },
       {
@@ -464,7 +464,7 @@ Connect this student's specific profile to the corridor that fits, name the traj
         anchor: 'Huntsville (Cummings Research Park / Redstone Arsenal vicinity)',
         industries: ['Pharmaceutical/API Manufacturing', 'Aerospace & Defense Systems', 'Advanced Engineering'],
         employers: ['Lilly', 'Northrop Grumman'],
-        naics: [62, 33],
+        naics: [32, 33], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
         note: 'Huntsville is a genuinely dual-identity city: Lilly\'s $6B API manufacturing plant (largest investment in Alabama history, Dec 2025) sits in the same metro as Northrop Grumman\'s missile defense and space systems work — meaning the city\'s "science and innovation" workforce, explicitly cited by Lilly itself, spans pharma and defense simultaneously, not one or the other.'
       }
     ],
@@ -496,7 +496,7 @@ This is a genuinely new opportunity, not a legacy corridor — the Lilly plant b
         anchor: 'Gwinnett County ("Rowen") / Covington-Social Circle',
         industries: ['Biologics Manufacturing', 'Plasma-Derived Therapies', 'Pharmaceutical Production'],
         employers: ['UCB', 'Takeda'],
-        naics: [62],
+        naics: [32], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
         note: 'Two international pharma majors, neither headquartered in the U.S. (Belgium and Japan respectively), both choosing real American manufacturing footprint in the same Georgia exurbs — UCB\'s first-ever U.S. biologics plant and Takeda\'s 1.1M sq ft plasma fractionation facility. Genuinely different therapeutic models: UCB (immunology/neurology biologics) vs. Takeda (donor-dependent plasma economics).'
       }
     ],
@@ -528,7 +528,7 @@ This is a company-sourced, not inferred, university connection — rare in this 
         anchor: 'Nashville / Wilson County (Mt. Juliet)',
         industries: ['Sterile Injectable CDMO', 'Bioprocessing Technology Manufacturing'],
         employers: ['Thermo Fisher Scientific', 'August Bioservices'],
-        naics: [62],
+        naics: [32], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
         note: 'No single headline investment number the way Alabama or Georgia has — this corridor is real depth (Thermo Fisher\'s $100M+/1,400-job Wilson County plant, August Bioservices\' $64.7M CDMO expansion) built around Nashville\'s existing healthcare-industry reputation (HCA Healthcare\'s global HQ, a massive hospital-management sector), not one university lab or one company.'
       }
     ],
@@ -555,7 +555,7 @@ HONEST GAP: unlike Alabama (UAH/Calhoun), Georgia (Georgia Tech-Emory), or Kentu
         anchor: 'Lexington (Coldstream Research Campus)',
         industries: ['Injectable Drug Manufacturing', 'Contract Development & Manufacturing (CDMO)'],
         employers: ['Piramal Pharma Solutions'],
-        naics: [62],
+        naics: [32], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
         note: 'The tightest university-industry link in this entire database — Piramal doesn\'t just partner with the University of Kentucky, it physically operates inside UK\'s own Coldstream Research Campus.'
       }
     ],
@@ -584,7 +584,7 @@ STAY CLOSE: University of Kentucky → the employer operates on the university's
         anchor: 'Research Triangle Park / Holly Springs / Sanford / Rocky Mount (broader Raleigh-Durham region)',
         industries: ['Biologics Manufacturing', 'Injectable Drug Manufacturing', 'Pharmaceutical Production'],
         employers: ['Amgen', 'Biogen', 'Lilly', 'Pfizer', 'Novo Nordisk'],
-        naics: [62],
+        naics: [32], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
         note: 'The deepest, most company-dense biomanufacturing corridor in this entire dataset — five major pharma companies with real, verified NC manufacturing presence, including Biogen\'s LARGEST manufacturing footprint globally (not a satellite site) and Amgen\'s newest, most advanced U.S. facility (Holly Springs, opened Jan 2025).'
       },
       {
@@ -655,7 +655,7 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'CPG, Action Sports & Lifestyle Brands', naics: [44, 71, 81], riasec: ['E','S','A'] },
     { corridorName: 'Fashion, Beauty & Cosmetics',        naics: [31, 44],     riasec: ['A','E','R'] },
     { corridorName: 'Pharmaceutical & Biotech',           naics: [62, 54],     riasec: ['I','R','S'] },
-    { corridorName: 'Pharmaceutical Manufacturing & CDMO', naics: [62, 33],    riasec: ['R','C','I'] },
+    { corridorName: 'Pharmaceutical Manufacturing & CDMO', naics: [32, 33],    riasec: ['R','C','I'] }, // corrected Chunk 4
     { corridorName: 'Startup & Venture Ecosystem',        naics: [54, 51, 81], riasec: ['E','I','C'] }
   ],
   bayarea: [
@@ -684,19 +684,19 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'AgriTech, Logistics & Supply Chain',          naics: [48, 42, 11], riasec: ['R','C','E'] }
   ],
   alabama_huntsville: [
-    { corridorName: 'Pharmaceutical Manufacturing & Advanced Engineering', naics: [62, 33], riasec: ['R','C','I'] }
+    { corridorName: 'Pharmaceutical Manufacturing & Advanced Engineering', naics: [32, 33], riasec: ['R','C','I'] } // corrected Chunk 4
   ],
   georgia_atlanta: [
-    { corridorName: 'Pharmaceutical & Biologics Manufacturing', naics: [62], riasec: ['R','C','I'] }
+    { corridorName: 'Pharmaceutical & Biologics Manufacturing', naics: [32], riasec: ['R','C','I'] } // corrected Chunk 4
   ],
   tennessee_nashville: [
-    { corridorName: 'Sterile Injectable & Bioprocessing Manufacturing', naics: [62], riasec: ['R','C','I'] }
+    { corridorName: 'Sterile Injectable & Bioprocessing Manufacturing', naics: [32], riasec: ['R','C','I'] } // corrected Chunk 4
   ],
   kentucky_lexington: [
-    { corridorName: 'Pharmaceutical Manufacturing & CDMO', naics: [62], riasec: ['R','C','I'] }
+    { corridorName: 'Pharmaceutical Manufacturing & CDMO', naics: [32], riasec: ['R','C','I'] } // corrected Chunk 4
   ],
   north_carolina_rtp: [
-    { corridorName: 'Pharmaceutical & Biologics Manufacturing', naics: [62], riasec: ['R','C','I'] },
+    { corridorName: 'Pharmaceutical & Biologics Manufacturing', naics: [32], riasec: ['R','C','I'] }, // corrected Chunk 4
     { corridorName: 'Academic Medicine & Health Systems', naics: [62], riasec: ['I','S','C'] }
   ]
 };

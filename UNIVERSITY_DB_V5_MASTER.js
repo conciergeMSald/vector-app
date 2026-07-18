@@ -420,7 +420,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 78,
         "notes": "Community engagement, sustainability initiatives, education, and public service create meaningful nonprofit leadership opportunities."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 58, "notes": "Company-adjacent evidence: ASU has a documented, named partnership with TGen (Translational Genomics Research Institute, a real nonprofit genomics research institute now part of City of Hope), per ASU's own clinical partnerships page. TGen is genomics/diagnostics/precision-medicine research, not manufacturing specifically — scored to reflect that real but discovery-weighted connection." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 90,
@@ -882,7 +884,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 92,
         "notes": "The Gates Foundation, global health ecosystem, public service, and international development organizations create exceptional nonprofit leadership pathways."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 72, "notes": "Strong, multi-point real evidence: Fred Hutchinson Cancer Center operates a real GMP manufacturing facility (Therapeutic Products core, biologic/cellular therapeutic products) and is explicitly described as 'the cancer program for UW Medicine' — a direct institutional affiliation, not just regional proximity. Seattle overall is a documented top-10 U.S. biotech/life-science cluster (42,000+ jobs, South Lake Union corridor), and UW's own BioEngage program has worked with 50+ biotech/biomedical companies. One of the stronger multi-source evidence bases in this pass." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 90,
@@ -1343,7 +1347,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 84,
         "notes": "Environmental organizations, healthcare systems, education, conservation, and community development provide meaningful nonprofit leadership pathways."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 40, "notes": "General regional evidence: University of Arizona's Tucson Health Sciences campus is real and substantial, but no specific pharmaceutical manufacturing program or company partnership was identified this session, unlike ASU's documented TGen relationship. Scored as plausible regional presence, not a confirmed pipeline." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 88,
@@ -1631,6 +1637,8 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "sportsBusiness": { "strength": 92, "notes": "Arguably the best sports business pipeline in the country via Nike." },
     "consumerProducts": { "strength": 82, "notes": "Strong marketing career placement, reinforced by Nike brand proximity. (Remapped 2026-07-12 from non-standard key 'marketing'.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 30, "notes": "Weaker evidence than Oregon State: University of Oregon's institutional strength skews more toward liberal arts and business than applied engineering or biosciences. Same regional Genentech Hillsboro proximity applies as OSU, but without OSU's stronger applied-science institutional profile. Scored lower accordingly." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -3011,7 +3019,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 92,
         "notes": "Indiana produces significant numbers of nonprofit executives, philanthropic leaders, healthcare administrators, and public-sector innovators through O'Neill and extensive civic engagement."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 42, "notes": "Same state as Lilly's Indianapolis HQ and new Huntsville, AL plant, and IU Bloomington already carries a strong existing medicine score (82) reflecting real biology/chemistry/neuroscience preparation. No company-stated partnership with Lilly was found this session (unlike UAH's or Calhoun's explicit citations) — scored at the same moderate, proximity-based tier as Purdue (44) rather than the higher company-confirmed tier." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 84,
@@ -3473,7 +3483,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 70,
         "notes": "Extension programs, community development, engineering outreach, and agricultural organizations provide strong opportunities for civic leadership."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 30, "notes": "IMPORTANT DISTINCTION: Iowa State is a separate institution from the University of Iowa, and the strong UI Pharmaceuticals/Center for Biocatalysis and Bioprocessing evidence found this session belongs specifically to the University of Iowa, not Iowa State. Iowa State's own institutional strength is agricultural and engineering-focused as a land-grant university, with plausible but unconfirmed adjacency to agricultural/industrial bioprocessing. Scored well below University of Iowa to avoid crediting Iowa State for a sibling institution's real, verified facility." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 90,
@@ -3939,7 +3951,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 90,
         "notes": "A very strong, defining pathway — energy is mentioned as a modifier across six other keys (privateEquity, investmentBanking, consulting, realEstate, entrepreneurship, publicPolicy) with no dedicated signal until now. OSU shares Oklahoma's genuine energy-industry-first regional economy with OU. (Added 2026-07-12.)"
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 28, "notes": "Weak, unconfirmed evidence: no specific pharmaceutical manufacturing program or company relationship was identified this session distinguishing Oklahoma State from University of Oklahoma. OSU's genuine strength in veterinary medicine could plausibly connect to animal-health-adjacent manufacturing (similar logic to the Kansas City corridor schools), but this was not independently verified. Scored conservatively." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 88,
@@ -4400,7 +4414,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 90,
         "notes": "Strong traditions in education, healthcare, philanthropy, public service, and community engagement produce graduates who frequently lead nonprofit organizations throughout the Midwest."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 54, "notes": "Real regional evidence: KU-Lawrence sits roughly 40 miles from the Kansas City Animal Health Corridor, independently verified as the world's largest concentration of animal health companies (220+ companies, Boehringer Ingelheim Vetmedica, Bayer Animal Health, Zoetis, Catalent Pharma Solutions, 56% of global animal health/diagnostics/pet food sales). IMPORTANT DISTINCTION: this is animal/veterinary pharmaceutical manufacturing, a real but distinct sub-industry from human pharma manufacturing — scored to reflect genuine but adjacent relevance, not identical to a human-drug manufacturing pipeline." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 88,
@@ -5322,7 +5338,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 62,
         "notes": "Leadership opportunities exist through civic organizations and STEM outreach, though nonprofit leadership is not a defining institutional pathway."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 30, "notes": "Weak evidence: a new North Texas biomanufacturing training initiative was found this session (UTA + Texas A&M TEES, opened Dec 2025, Bridge Labs) — but that program is specifically tied to University of Texas at Arlington, a DIFFERENT UT System institution not present in this V5 database at all, not UT Dallas. UT Dallas itself is generally stronger in engineering/computer science/business than biosciences. Scored low and separately to avoid incorrectly crediting UT Dallas for a program that belongs to a different, unlisted school." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 94,
@@ -6761,6 +6779,8 @@ const UNIVERSITY_DB_V5 = {
     },
     "industryPathways": {
     "technology": { "strength": 96, "notes": "One of the most selective and highly-placed CS programs in the country, with strong broader engineering placement. (Remapped 2026-07-12, combined from non-standard keys 'computerScience' (96) and 'engineering' (88) into one standard key.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 48, "notes": "Self-referential evidence: UIUC is already cited in this database's own Industrial & Process Chemistry deployment_context (lifescape_major_map.js) as a school placing API chemists into pharmaceutical manufacturing roles. That citation was itself a reasonable but not independently re-verified judgment call — scored as real but not company-confirmed." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -7046,6 +7066,8 @@ const UNIVERSITY_DB_V5 = {
     },
     "industryPathways": {
     "healthcareAdministration": { "strength": 90, "notes": "The most geographically advantaged pharmacy pipeline in the country. (Remapped 2026-07-12 from non-standard key 'pharmacy'.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 66, "notes": "Built directly on this school's own existing data: Rutgers' healthcareAdministration score (90) already describes it as 'the most geographically advantaged pharmacy pipeline in the country,' reflecting genuine embeddedness in the historic New Jersey pharmaceutical corridor (Merck, Bristol Myers Squibb, Johnson & Johnson — none independently verified this session, general industry knowledge). That existing note is about clinical pharmacy training specifically; this key is scored separately for industrial/manufacturing pathways, which a large public research university with Rutgers' engineering breadth plausibly also feeds, though not confirmed via any company citation this session." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -7781,7 +7803,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 60,
         "notes": "Public service culture and Arnold School public health create solid nonprofit pathways."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 48, "notes": "Regional cluster evidence: South Carolina has real, named biomanufacturing companies (AmbioPharm peptide CDMO, The Ritedose Corporation blow-fill-seal manufacturing, Poly-Med absorbable polymers), and University of South Carolina is described as collaborating with the South Carolina Research Authority (SCRA) on biomedical devices and translational research. Same sourcing caveat as Clemson — synthesized summary, not independently primary-source verified this session." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "Middle to Upper-Middle",
       "socialMobilityIndex": 74,
@@ -8789,7 +8813,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 94,
         "notes": "The single defining institutional strength — OU's own privateEquity and entrepreneurship notes already described energy as regionally dominant ('the strongest corridor... unlike any other industry') before this key existed to hold that signal properly. (Added 2026-07-12.)"
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 44, "notes": "Moderate, softer evidence: OU's CBA Research program is described in the university's own materials as training students and postdocs who go on to biotech and pharmaceutical company careers. Real Oklahoma City biopharma companies exist nearby (Cytovance Biologics, a genuine biologics CDMO, and ARL Bio Pharma, a pharmaceutical testing lab) plus OMRF (Oklahoma Medical Research Foundation, 450+ staff), but none of these were confirmed as formal OU partnerships this session — scored as real but unconfirmed regional presence." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "Middle",
       "socialMobilityIndex": 78,
@@ -9738,6 +9764,8 @@ const UNIVERSITY_DB_V5 = {
     },
     "industryPathways": {
     "technology": { "strength": 92, "notes": "The strongest automotive engineering pipeline of any Southeast public university. (Remapped 2026-07-12 from non-standard key 'automotiveEngineering'.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 56, "notes": "Direct, specific industry alignment: Clemson's institutional focus on biomaterials and absorbable polymers directly matches Poly-Med, Inc. (Anderson, SC), a real company specializing in absorbable polymers for drug delivery and surgical devices. Sourced from a synthesized search summary (SCbio-attributed), not independently verified via a primary company or government source this session — treat as plausible and specific, not confirmed at the same evidence tier as Merck/Elkton or UCB/Georgia Tech." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -10429,6 +10457,8 @@ const UNIVERSITY_DB_V5 = {
     "consulting": { "strength": 96, "notes": "McIntire rivals top private business schools for selectivity and consulting placement. (Remapped from non-standard key 'business', split across consulting/investmentBanking, 2026-07-12 — judgment call.)" },
     "investmentBanking": { "strength": 90, "notes": "McIntire has a strong Wall Street pipeline alongside its consulting placement. (Remapped from non-standard key 'business', 2026-07-12 — judgment call.)" },
     "publicPolicy": { "strength": 86, "notes": "Strong pipeline into federal government via DC proximity, and a strong pre-law track feeding into UVA's own top-10 law school. (Remapped and combined from non-standard keys 'government' (84) and 'law' (82), 2026-07-12 — no standalone 'law' key exists in the standard schema.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 68, "notes": "Strong, exceptionally well-verified underlying investment: Merck's $3 billion, 400,000 sq ft Center of Excellence for Pharmaceutical Manufacturing at its Elkton, Virginia site (confirmed directly via Merck's own October 2025 press release, corroborated independently by U.S. Senators Warner and Kaine's official statements, the Virginia Governor, and multiple business journals) — 500-600 permanent jobs, a site Merck has operated for nearly 85 years. UVA (~30-35 miles from Elkton) is closer than Virginia Tech. A specific UVA-Merck workforce-collaboration claim appeared in a synthesized search summary, not a primary source directly viewed this session — the underlying investment is rock-solid, the specific university partnership framing carries more uncertainty." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -11007,6 +11037,8 @@ const UNIVERSITY_DB_V5 = {
     "outdoorIndustry": { "strength": 84, "notes": "Strong pipeline into sustainability and natural products industry roles." },
     "technology": { "strength": 86, "notes": "Comprehensive mechanical and electrical engineering strength beyond aerospace specialization." },
     "entertainmentMedia": { "strength": 74, "notes": "Solid Film Studies and Journalism programs benefiting from Sundance Film Festival proximity." }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 66, "notes": "Multi-point real evidence: a documented Center for Pharmaceutical Biotechnology (with a linked presence at the CU Anschutz Medical Campus in Denver), a real Pfizer Boulder Research & Development site (Pfizer independently verified elsewhere in this database), KBI Biopharma, and multiple Boulder-based biotech companies (Crestone, Bactria Pharmaceuticals). Colorado's bioscience industry overall employs 38,102 people with $4.4B in payroll (Boulder Economic Council). Real, dense regional cluster, not a single confirmed CU-specific manufacturing pipeline." }
   },
     "futureResilience": {
       "aiResistance": 84,
@@ -15399,6 +15431,8 @@ const UNIVERSITY_DB_V5 = {
     "nonprofitLeadership": { "strength": 84, "notes": "Genuine Truett Seminary leadership pipeline. (Remapped 2026-07-12 from non-standard key 'religiousLeadership' — closest available standard key for mission-driven leadership training.)" },
     "publicPolicy": { "strength": 60, "notes": "Real legal and regulatory policy ties via central Texas position, particularly energy regulation. (Corrected 2026-07-12: split from the original 'energyLegal' remap — the energy-industry portion now has its own dedicated key below.)" },
     "energy": { "strength": 68, "notes": "A real, secondary pathway — Waco sits inside the broader Texas Triangle energy corridor, with real alumni ties into Texas oil, gas, and energy regulatory law. (Added 2026-07-12: this was literally the other half of the original non-standard 'energyLegal' key, previously folded entirely into publicPolicy.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 26, "notes": "IMPORTANT DISTINCTION: this is Baylor University, the undergraduate institution in Waco, Texas — NOT Baylor College of Medicine, a separate and distinct institution in Houston with genuine, substantial biomedical research standing. Conflating the two would be a real error. Baylor University (Waco) has no particular industrial pharmaceutical manufacturing pipeline identified this session; scored in the low tier accordingly." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -16905,7 +16939,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 48,
         "notes": "Moderate presence tied to healthcare and research mission."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 58, "notes": "CORRECTION to a prior scoring round: this school was previously and incorrectly stated to be absent from V5 (a search error — searching for 'Missouri' in school names does not match 'Washington University in St. Louis'). It is present, and deserves real consideration given its genuinely elite biomedical research standing (among the top NIH-funded medical schools in the country) and St. Louis's real pharma-adjacent history. No specific manufacturing company partnership was independently confirmed this session, so scored on institutional research strength rather than a confirmed pipeline." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 68,
@@ -17176,6 +17212,8 @@ const UNIVERSITY_DB_V5 = {
     },
     "industryPathways": {
     "technology": { "strength": 92, "notes": "Elite, comprehensive engineering breadth plus a direct Atlanta tech-corridor pipeline. (Remapped 2026-07-12, combined from non-standard keys 'engineering' (92) and 'technology' (90) into one standard key.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 78, "notes": "Company-stated: UCB explicitly cited \"the Georgia Tech-Emory biomedical engineering program\" by name as a reason for choosing Georgia for its first-ever U.S. biologics manufacturing plant ($2B, Gwinnett County, announced March 2026). Strongest, most direct evidence in this dataset — but this reflects biomedical engineering feeding into pharma manufacturing broadly, not a dedicated pharmaceutical manufacturing program specifically." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -17755,6 +17793,8 @@ const UNIVERSITY_DB_V5 = {
     "technology": { "strength": 90, "notes": "Direct Silicon Slopes tech corridor pipeline." },
     "nutraceuticals": { "strength": 88, "notes": "Unique supplements/wellness manufacturing industry pipeline unmatched by peer schools." },
     "entrepreneurship": { "strength": 86, "notes": "Eccles School of Business houses the Lassonde Entrepreneur Institute, one of the most recognized university entrepreneurship centers in the country, directly tied to the Silicon Slopes startup ecosystem — this is Eccles' actual signature strength, not generic business placement. (Corrected 2026-07-12: previously mapped to generic consulting/investmentBanking.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 36, "notes": "Weakest-evidence tier, included for completeness: the University of Utah has no existing medicine key in this database at all, reflecting a generally thin overall profile. Real Salt Lake City ecosystem connections exist (Recursion Pharmaceuticals and University of Utah Health, both independently verified this session), but no company-stated or structural university partnership was found — this is a plausibility score based on geographic proximity alone, the most conservative of any school added in this pass, and a strong candidate for the university's broader V5 profile to be revisited independent of this specific key." }
   },
     "futureResilience": {
       "aiResistance": 84,
@@ -18885,6 +18925,8 @@ const UNIVERSITY_DB_V5 = {
     "medicine": { "strength": 96, "notes": "One of the largest academic medical centers in the country." },
     "consulting": { "strength": 78, "notes": "Fisher College of Business has strong Midwest corporate placement in consulting." },
     "insurance": { "strength": 88, "notes": "Fisher College of Business has a genuine, distinctive insurance and risk management specialty, reinforced by Ohio's dense insurance industry base — Nationwide, Progressive, and Grange are all Ohio-based. (Added 2026-07-12: previously dropped entirely for lack of a standard key — this was Fisher's most distinctive signal, not a generic finance placement.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 70, "notes": "Real, substantial partnership evidence: Battelle Memorial Institute (Columbus, OH) operates the largest private Biosafety Level 3 lab in the U.S. and provides agile manufacturing/scale-up engineering for the pharmaceutical industry (confirmed via Battelle's own official site). Ohio State is described as partnering with Battelle 'to drive clinical trials, medical device development, and novel drug delivery research' — sourced from a synthesized search summary rather than a single primary citation, so the specific partnership framing carries slightly more uncertainty than the Merck Elkton facts found in this same batch, but the underlying Battelle facility and Columbus location are independently confirmed." }
   },
     "futureResilience": {
       "aiResistance": 84,
@@ -20619,6 +20661,8 @@ const UNIVERSITY_DB_V5 = {
     "healthWellness": { "strength": 94, "notes": "Top-5 nationally ranked veterinary medicine program." },
     "outdoorIndustry": { "strength": 84, "notes": "Alumni enter conservation, forestry, and environmental agency careers." },
     "hospitality": { "strength": 86, "notes": "Genuine, distinctive pipeline into Rocky Mountain resort management, ski industry operations, and National Park Service roles. (Added 2026-07-12: previously dropped entirely for lack of a standard key.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 84, "notes": "Structural evidence, same pattern as University of Iowa: BioMARC is described in its own materials as 'a non-profit Contract Development & Manufacturing Organization for pre-clinical and clinical biologics owned and operated by Colorado State University' — not a nearby company, but a university-run manufacturing operation. Scored just below University of Iowa (88) since Iowa's own materials make a stronger 'largest in the nation' superlative claim, but this is the same class of evidence: the university itself, not an external partner." }
   },
     "futureResilience": {
       "aiResistance": 78,
@@ -23215,6 +23259,8 @@ const UNIVERSITY_DB_V5 = {
     },
     "industryPathways": {
     "technology": { "strength": 92, "notes": "Comprehensive engineering breadth with elite aerospace specialization, a rapidly rising semiconductor pathway, and strong Midwest manufacturing placement. (Remapped 2026-07-12, combined from non-standard keys 'engineering' (92), 'semiconductors' (88), and 'manufacturing' (80) into one standard key — judgment call, not independently re-verified.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 44, "notes": "General industry/geographic plausibility, NOT independently verified this session: Purdue was not named by any specific company researched in this dataset. Score reflects its strong, real chemical/biomedical engineering reputation and Indiana/Midwest proximity to Lilly's Indianapolis home base, but this is a plausibility judgment, not a confirmed pipeline the way Georgia Tech or University of Kentucky's scores are. Flagged honestly as the weaker-evidence tier." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -23498,6 +23544,8 @@ const UNIVERSITY_DB_V5 = {
     "healthWellness": { "strength": 90, "notes": "Top-9 nurse anesthesia pipeline. (Remapped 2026-07-12 from non-standard key 'nursingHealthcare'.)" },
     "consulting": { "strength": 76, "notes": "Solid DFW business placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
     "investmentBanking": { "strength": 68, "notes": "Secondary DFW finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 20, "notes": "No pharmaceutical manufacturing pathway identified this session. TCU's institutional strength is in business, communications, and liberal arts rather than industrial bioscience or engineering. Included for completeness at the lowest tier in this batch, not a meaningful pathway." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -23797,6 +23845,8 @@ const UNIVERSITY_DB_V5 = {
     "consulting": { "strength": 88, "notes": "Kenan-Flagler rivals top private business schools regionally for consulting placement. (Remapped from non-standard key 'business', split across consulting/investmentBanking, 2026-07-12 — judgment call.)" },
     "investmentBanking": { "strength": 82, "notes": "Kenan-Flagler has a real, if secondary, Wall Street pipeline alongside its consulting placement. (Remapped from non-standard key 'business', 2026-07-12 — judgment call.)" },
     "medicine": { "strength": 84, "notes": "Strong pre-med pipeline reinforced by UNC's own top-tier medical school." }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 42, "notes": "Same reasoning as Duke: real Research Triangle Park corridor proximity (Amgen, Biogen, Lilly, Pfizer, Novo Nordisk all operate in the region), but UNC's own institutional strength here is UNC Medical Center — clinical academic medicine, not manufacturing. Already has a strong healthcareAdministration score (98, #1 pharmacy pipeline) reflecting pharmacy/clinical strength; this key is deliberately scored separately and lower to avoid conflating pharmacy training with industrial pharmaceutical manufacturing." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -24086,6 +24136,8 @@ const UNIVERSITY_DB_V5 = {
     "technology": { "strength": 90, "notes": "Direct Austin tech ecosystem pipeline." },
     "entertainmentMedia": { "strength": 94, "notes": "Elite #1-ranked public communications pipeline. (Remapped 2026-07-12 from non-standard key 'communications'.)" },
     "energy": { "strength": 62, "notes": "A real, secondary pathway — the Cockrell School of Engineering has a genuine petroleum engineering program, and Texas's broader energy corridor (Houston, Permian Basin) recruits UT Austin engineering and business graduates directly. (Added 2026-07-12. NOTE: this entry only has 2 industryPathways keys total, far thinner than peer flagship publics — worth a fuller remap pass beyond just this energy addition.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 42, "notes": "General industry knowledge, weakly evidenced: UT Austin has a genuinely thin existing profile in this database (no medicine key), suggesting healthcare/bioscience dimensions are underdeveloped here relative to the university's real scale. Austin's biotech scene is real but still emerging compared to Houston's established Texas Medical Center corridor. No company-specific or program-specific evidence found this session." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -25239,7 +25291,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 58,
         "notes": "Moderate nonprofit pathway, often oriented toward global health and public health nonprofits."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 74, "notes": "Geographic-cluster evidence: UCSD sits inside the Torrey Pines/San Diego biotech corridor, the same cluster anchoring ResMed's headquarters and Vertex Pharmaceuticals' major research site (both independently verified this session). Score weighted toward the cluster's genuine strength — R&D and discovery science — since San Diego's biotech density skews research-heavy rather than large-scale manufacturing-heavy. Not a company-stated pipeline like Georgia Tech or UK, but a real, dense geographic cluster." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 88,
@@ -27859,7 +27913,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 62,
         "notes": "Meaningful pathway, often oriented toward technology-for-good and global development initiatives."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 62, "notes": "Geographic-cluster evidence: Stanford sits in the broader Bay Area biotech ecosystem near Gilead Sciences' Foster City headquarters (independently verified this session). Stanford's bioengineering and chemistry departments are elite, but the school's institutional culture skews toward biotech startup formation and venture-backed research rather than large-scale industrial manufacturing — scored to reflect that real but R&D-weighted strength, not equivalent to a manufacturing-workforce pipeline." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 74,
@@ -28705,7 +28761,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 52,
         "notes": "Meaningful pathway, particularly for healthcare and community nonprofits."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 88, "notes": "The strongest single finding in this entire V5 scoring pass: UI Pharmaceuticals is not a nearby company or a shared campus — it is literally owned and operated by the University of Iowa itself, described in its own materials as 'the largest and most experienced university-affiliated FDA-registered pharmaceutical manufacturing facility in the United States,' with over 50 years operating under cGMP standards. A second facility, the Center for Biocatalysis and Bioprocessing, adds a distinct microbial biomanufacturing research operation. Scored above even Kentucky's Piramal relationship (82) because here the manufacturing operation IS the university, not an external company sited on or near it." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 72,
@@ -29126,7 +29184,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 46,
         "notes": "Present pathway, often tied to agricultural and community organizations."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 40, "notes": "Same Kansas City Animal Health Corridor evidence as University of Kansas, but scored lower to reflect genuine geographic distance: Mizzou's Columbia campus sits roughly 120 miles from Kansas City, a meaningfully weaker proximity than KU-Lawrence's ~40 miles. Same animal-health-vs-human-pharma distinction applies." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 68,
@@ -29546,7 +29606,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 40,
         "notes": "Present pathway, often tied to the Walton Family Foundation's philanthropic presence in the region."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 22, "notes": "No specific pharmaceutical manufacturing pathway identified this session. Arkansas does not have a documented major pharma manufacturing cluster comparable to the other states reviewed. Low tier, included for completeness." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 68,
@@ -34146,7 +34208,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 66,
         "notes": "Meaningful pathway, often tied to international development and public service."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 34, "notes": "Same New Jersey pharma-corridor geography as Rutgers, but scored substantially lower: Princeton has no engineering school at the scale of Rutgers' industrial programs, and its institutional culture and placement patterns skew toward academia, finance, and consulting rather than direct industrial manufacturing workforce roles. Geographic proximity alone does not imply an equivalent pipeline — a deliberate contrast with Rutgers' score despite shared geography." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 62,
@@ -36178,7 +36242,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 56,
         "notes": "Moderate pathway, often tied to healthcare and business-oriented nonprofits."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 68, "notes": "Distinctive, defensible evidence not tied to this session's Southeast research: Katalin Karikó and Drew Weissman's Nobel Prize-winning mRNA research, foundational to the modern mRNA vaccine manufacturing industry (Moderna, and the Pfizer-BioNTech platform), originated at Penn. Real and substantial, but primarily a discovery-science contribution rather than a confirmed manufacturing-workforce pipeline — scored accordingly, below the structural (UK) and company-stated (Georgia Tech) tiers from Chunk 2." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 60,
@@ -42352,7 +42418,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 40,
         "notes": "Limited institutional emphasis."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 40, "notes": "Weakest-evidence tier, included on general Philadelphia-pharma-corridor knowledge (GSK, Bristol Myers Squibb, Merck all have significant Philadelphia-area presence) rather than any company or connection actually researched and verified this session. Included in this Chunk 2 pass for completeness against the original scoping list, but should be treated as the least certain of the 9 scores added here — a candidate for real verification in a future pass, not a confirmed pipeline." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 74,
@@ -44442,7 +44510,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 58,
         "notes": "A real but secondary pathway; Berkeley's activist campus culture produces meaningful nonprofit and public-interest career placement, though smaller than its core technology and policy pathways."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 64, "notes": "Same Bay Area cluster as Stanford, near Gilead Sciences (independently verified this session), but scored slightly higher given Berkeley's chemical engineering program has a stronger applied/industrial-process orientation than Stanford's more startup-and-research-culture bent. Still R&D-cluster evidence, not a company-stated or structural pipeline." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 88,
@@ -44867,7 +44937,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 82,
         "notes": "A very strong, distinctive pathway — the College of Engineering's industrial and energy technology tracks feed directly into Texas's oil, gas, and petrochemical corridor. (Added 2026-07-12: previously scattered as a modifier across privateEquity, investmentBanking, consulting, entrepreneurship, and technology notes with no dedicated signal.)"
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 80, "notes": "The strongest verified evidence found in this entire V5 scoring pass outside Kentucky: Texas A&M's National Center for Therapeutics Manufacturing (NCTM) is a real, federally-documented biopharmaceutical and vaccine manufacturing workforce center with actual production history (COVID-19 vaccine candidate manufacturing, 2020) and current cGMP mRNA training programs (verified July 2026). A new, dedicated biologics development and manufacturing facility is under construction adjacent to NCTM per official government (medicalcountermeasures.gov) documentation. Not a single-company relationship like Kentucky's Piramal — a whole federally-recognized manufacturing institution embedded in the university itself." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 78,
@@ -45294,7 +45366,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 36,
         "notes": "A modest, secondary pathway relative to MIT's overwhelmingly dominant technology and entrepreneurship pipelines."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 56, "notes": "Real chemical/biological engineering pedigree with genuine pharma-industry recruiting, located near Biogen's Cambridge R&D headquarters and Vertex Pharmaceuticals' Boston HQ (both verified this session) — but MIT's own medicine score (40) already reflects that it has no medical school and is not institutionally positioned as a clinical/pharma-focused campus. This score reflects engineering-driven process/manufacturing science strength specifically, not general biotech breadth, and should not be read as equivalent to a school with a stronger medicine profile." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 82,
@@ -46542,7 +46616,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 56,
         "notes": "A real, secondary pathway, reinforced by Sanford's public policy and global health orientation."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 42, "notes": "Regional corridor proximity, not a company-stated or structural connection: Duke sits inside the Research Triangle Park biomanufacturing corridor (Amgen, Biogen, Lilly, Pfizer, Novo Nordisk), but Duke's own institutional strength in this region is Duke University Hospital — academic medicine and clinical research, not pharmaceutical manufacturing specifically. Scored as real but secondary regional benefit, not a direct pipeline." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 56,
@@ -46958,7 +47034,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 48,
         "notes": "A real, secondary pathway relative to Northwestern's dominant media and consulting pipelines."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 48, "notes": "Geographic-cluster evidence: Northwestern sits near the North Chicago suburban corridor anchoring Abbott Laboratories and AbbVie (neither independently verified this session — general industry knowledge, not confirmed via company research), with a genuinely strong biomedical engineering program. Scored in the moderate tier, comparable to Purdue and Indiana University Bloomington, reflecting real but unconfirmed proximity rather than any company-stated relationship." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 62,
@@ -47371,7 +47449,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 30,
         "notes": "Minimal institutional emphasis."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 62, "notes": "Same exceptionally well-verified Merck Elkton investment as UVA ($3B, 500-600 jobs, Merck's own press release), scored slightly lower to reflect genuine geographic distance — Virginia Tech's Blacksburg campus sits roughly 60-70 miles from Elkton, meaningfully farther than UVA's ~30-35 miles. Same sourcing caveat: the specific workforce-collaboration claim came from a synthesized summary, not independently verified this session." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 76,
@@ -47785,7 +47865,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 28,
         "notes": "Minimal institutional emphasis."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 58, "notes": "Regional corridor proximity, scored higher than Duke/UNC: NC State's engineering programs sit geographically closest to the actual RTP manufacturing corridor itself (Amgen, Biogen, Lilly, Pfizer, Novo Nordisk), and its applied-engineering institutional identity is a more direct match to manufacturing work than Duke's or UNC's medicine-oriented strength. Not a company-stated pipeline, but the most defensible of the three RTP-adjacent schools for this specific key." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 80,
@@ -48199,7 +48281,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 78,
         "notes": "A very strong, distinctive pathway reinforced by the Carter Center's presence and Emory's genuine public-service institutional culture."
       }
-    },
+    ,
+    "pharmaceuticalManufacturing": { "strength": 68, "notes": "Company-stated, shared citation: named jointly with Georgia Tech in UCB's own site-selection reasoning for its new Georgia biologics plant. Emory's contribution skews toward biomedical/health sciences research strength rather than manufacturing/process engineering specifically — scored lower than Georgia Tech for that reason." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 60,
@@ -49243,6 +49327,8 @@ const UNIVERSITY_DB_V5 = {
     "supplyChain": { "strength": 38, "notes": "A modest, secondary pathway tied to Houston's energy and petrochemical logistics economy." },
     "insurance": { "strength": 26, "notes": "Minimal institutional emphasis." },
     "agriculture": { "strength": 14, "notes": "Not a meaningful institutional pathway." }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 46, "notes": "Geographic-cluster evidence: Rice sits adjacent to the Texas Medical Center (the world's largest medical complex, not independently verified this session), with a strong bioengineering department. Like Stanford, Rice's institutional culture skews toward biotech research and startup formation rather than industrial-scale manufacturing — scored to reflect that R&D-weighted strength, not a confirmed manufacturing pipeline." }
   },
   "wealthMobility": {
     "averageFamilyIncome": "", "socialMobilityIndex": 68, "firstGenerationSupport": 70,
@@ -49812,6 +49898,8 @@ const UNIVERSITY_DB_V5 = {
     "supplyChain": { "strength": 42, "notes": "A real, secondary pathway tied to large-scale resort and convention supply chain operations." },
     "insurance": { "strength": 22, "notes": "Not a defining institutional strength." },
     "agriculture": { "strength": 12, "notes": "Not a meaningful institutional pathway." }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 18, "notes": "No pharmaceutical manufacturing pathway identified this session. UNLV's strongest institutional identities are hospitality management and gaming/entertainment, not bioscience or industrial chemistry. Lowest tier in this batch." }
   },
   "wealthMobility": {
     "averageFamilyIncome": "", "socialMobilityIndex": 82, "firstGenerationSupport": 84,
@@ -50704,6 +50792,8 @@ const UNIVERSITY_DB_V5 = {
     "supplyChain": { "strength": 48, "notes": "A real, secondary pathway reinforced by Toyota's Georgetown manufacturing plant proximity." },
     "insurance": { "strength": 32, "notes": "A modest, secondary pathway, reinforced by Humana's headquarters proximity." },
     "agriculture": { "strength": 86, "notes": "A very strong, defining land-grant pathway, anchored by the country's single most respected equine science program and Kentucky's broader agricultural economy." }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 82, "notes": "Structural, physical evidence, the strongest kind found this session: Piramal Pharma Solutions' Lexington injectable manufacturing facility operates literally inside UK's own Coldstream Research Campus — not a partnership between separate institutions, but a single shared campus. Highest score of the 9 schools added in this pass despite being a single-employer relationship, because the connection is structural rather than merely stated." }
   },
   "wealthMobility": {
     "averageFamilyIncome": "", "socialMobilityIndex": 76, "firstGenerationSupport": 78,
@@ -50883,6 +50973,8 @@ const UNIVERSITY_DB_V5 = {
     "insurance": { "strength": 68, "notes": "A real, distinctive pathway reinforced by the #1-ranked Personal Financial Planning program's insurance and risk management coursework." },
     "agriculture": { "strength": 72, "notes": "A strong, genuine land-grant-adjacent pathway reinforced by West Texas's cotton and livestock agricultural economy." },
     "energy": { "strength": 82, "notes": "A very strong, distinctive pathway — direct Permian Basin petroleum engineering access plus the National Wind Institute's genuinely underrated West Texas wind energy research pipeline. (Added 2026-07-12: previously buried as a modifier inside the technology score.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 32, "notes": "Modest evidence: Texas Tech operates a genuine Health Sciences Center (Lubbock), but no specific industrial pharmaceutical manufacturing program or company relationship was identified this session. Scored as a real but unconfirmed regional academic-medicine presence, not a manufacturing-specific pipeline." }
   },
   "wealthMobility": {
     "averageFamilyIncome": "", "socialMobilityIndex": 74, "firstGenerationSupport": 74,
@@ -51418,6 +51510,8 @@ const UNIVERSITY_DB_V5 = {
     "supplyChain": { "strength": 42, "notes": "A real, secondary pathway tied to timber and agricultural logistics." },
     "insurance": { "strength": 20, "notes": "Not a meaningful institutional pathway." },
     "agriculture": { "strength": 84, "notes": "A very strong, defining land-grant pathway, reinforced by Oregon's real timber, forestry, and agricultural economy, alongside the distinctive fermentation science program." }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 48, "notes": "State-level evidence, not a confirmed university partnership: Genentech's Hillsboro, Oregon facility is described by Genentech/Roche as its 'primary manufacturing site for US drug' production — a real, massive 75-acre site roughly 80 miles from OSU's Corvallis campus, with a $175M expansion announced in 2021. No direct OSU-Genentech partnership was confirmed this session, unlike Georgia Tech's company-stated UCB citation — scored to reflect the facility's real scale while being honest that the university connection itself is inferred, not confirmed." }
   },
   "wealthMobility": {
     "averageFamilyIncome": "", "socialMobilityIndex": 70, "firstGenerationSupport": 70,
@@ -51597,6 +51691,8 @@ const UNIVERSITY_DB_V5 = {
     "supplyChain": { "strength": 38, "notes": "A modest, secondary pathway." },
     "insurance": { "strength": 64, "notes": "A real, distinctive pathway reinforced directly by BYU's genuinely elite actuarial science program." },
     "agriculture": { "strength": 22, "notes": "A modest, secondary pathway." }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 30, "notes": "General, unverified evidence: BYU has real chemistry and life sciences programs, but no specific pharmaceutical manufacturing company relationship or program was independently verified this session, unlike the University of Utah's documented connections to Recursion Pharmaceuticals and University of Utah Health (scored separately, 36). Scored conservatively as a distinct Utah institution, not assumed equivalent to University of Utah's evidence." }
   },
   "wealthMobility": {
     "averageFamilyIncome": "", "socialMobilityIndex": 70, "firstGenerationSupport": 66,
@@ -52309,6 +52405,8 @@ const UNIVERSITY_DB_V5 = {
     "supplyChain": { "strength": 24, "notes": "Not a defining institutional strength." },
     "insurance": { "strength": 18, "notes": "Not a meaningful institutional pathway." },
     "agriculture": { "strength": 26, "notes": "A modest, secondary pathway." }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 16, "notes": "No pharmaceutical manufacturing pathway identified this session. A small liberal arts college with no particular bioscience or industrial chemistry institutional focus. Included for completeness at the lowest tier." }
   },
   "wealthMobility": {
     "averageFamilyIncome": "", "socialMobilityIndex": 54, "firstGenerationSupport": 58,
@@ -52667,6 +52765,8 @@ const UNIVERSITY_DB_V5 = {
     "insurance": { "strength": 26, "notes": "A modest, secondary pathway." },
     "agriculture": { "strength": 20, "notes": "Not a defining institutional strength." },
     "energy": { "strength": 98, "notes": "The single defining institutional strength, co-equal with mining engineering — Mines' petroleum engineering, renewable energy, and critical minerals programs are the most specialized in the country. (Added 2026-07-12: previously conflated entirely into the technology score, which understated energy as its own distinct, equally-defining identity alongside mining.)" }
+  ,
+    "pharmaceuticalManufacturing": { "strength": 26, "notes": "Weak, unconfirmed evidence: Mines' institutional strength is mining, energy, and general engineering rather than biosciences specifically. Chemical engineering has plausible tangential relevance to process/manufacturing science broadly, but no pharmaceutical-specific program or company relationship was identified this session." }
   },
   "wealthMobility": {
     "averageFamilyIncome": "", "socialMobilityIndex": 68, "firstGenerationSupport": 66,

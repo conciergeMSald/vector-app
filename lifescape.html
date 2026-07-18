@@ -11,6 +11,7 @@
 <script src="lifescape_onet_map.js"></script>
 <script src="UNIVERSITY_DB_V5_MASTER.js"></script>
 <script src="lifescape_major_map.js"></script>
+<script src="anchor_employers_db.js"></script>
 <script src="lifescape_regional_intelligence.js"></script>
 <script src="crosswalk-db.js"></script>
 <script src="geo_industry_db_LA_pass1.js"></script>
@@ -21,6 +22,18 @@
 <script src="geo_industry_db_Dallas_pass6.js"></script>
 <script src="geo_industry_db_RockyMountains_pass7.js"></script>
 <script src="geo_industry_db_PacificNW_pass8.js"></script>
+<script src="geo_industry_db_Huntsville_pass9.js"></script>
+<script src="geo_industry_db_Nashville_pass10.js"></script>
+<script src="geo_industry_db_KY_pass11.js"></script>
+<script src="geo_industry_db_Miami_pass12.js"></script>
+<script src="geo_industry_db_Orlando_pass13.js"></script>
+<script src="geo_industry_db_TampaBay_pass14.js"></script>
+<script src="geo_industry_db_Jacksonville_pass15.js"></script>
+<script src="geo_industry_db_FL_AgEnergy_pass16.js"></script>
+<script src="geo_industry_db_SC_pass17.js"></script>
+<script src="geo_industry_db_AR_pass18.js"></script>
+<script src="geo_industry_db_LA_pass19.js"></script>
+<script src="geo_industry_db_MS_pass20.js"></script>
 <script src="geo_zip_to_megaregion.js"></script>
 <script src="megaRegionDB_futureResilience.js"></script>
 <script src="naics_to_industry_pathways.js"></script>
@@ -3358,14 +3371,28 @@ function fireProgressiveReveal() {
 function resolveZIP(zip) {
   if(!zip || zip.length < 5) return _defaultGeo(zip);
 
-  // Check all four geo databases in order
+  // Check all geo databases in order
   const dbs = [
     typeof GEO_INDUSTRY_DB_LA !== 'undefined' ? GEO_INDUSTRY_DB_LA : null,
     typeof GEO_INDUSTRY_DB_BAYAREA !== 'undefined' ? GEO_INDUSTRY_DB_BAYAREA : null,
     typeof GEO_INDUSTRY_DB_CHICAGO !== 'undefined' ? GEO_INDUSTRY_DB_CHICAGO : null,
     typeof GEO_INDUSTRY_DB_EAST !== 'undefined' ? GEO_INDUSTRY_DB_EAST : null,
     typeof GEO_INDUSTRY_DB_ATLANTA !== 'undefined' ? GEO_INDUSTRY_DB_ATLANTA : null,
-    typeof GEO_INDUSTRY_DB_DALLAS !== 'undefined' ? GEO_INDUSTRY_DB_DALLAS : null
+    typeof GEO_INDUSTRY_DB_DALLAS !== 'undefined' ? GEO_INDUSTRY_DB_DALLAS : null,
+    typeof GEO_INDUSTRY_DB_ROCKYMOUNTAINS !== 'undefined' ? GEO_INDUSTRY_DB_ROCKYMOUNTAINS : null,
+    typeof GEO_INDUSTRY_DB_PACIFICNW !== 'undefined' ? GEO_INDUSTRY_DB_PACIFICNW : null,
+    typeof GEO_INDUSTRY_DB_HUNTSVILLE !== 'undefined' ? GEO_INDUSTRY_DB_HUNTSVILLE : null,
+    typeof GEO_INDUSTRY_DB_NASHVILLE !== 'undefined' ? GEO_INDUSTRY_DB_NASHVILLE : null,
+    typeof GEO_INDUSTRY_DB_KY !== 'undefined' ? GEO_INDUSTRY_DB_KY : null,
+    typeof GEO_INDUSTRY_DB_MIAMI !== 'undefined' ? GEO_INDUSTRY_DB_MIAMI : null,
+    typeof GEO_INDUSTRY_DB_ORLANDO !== 'undefined' ? GEO_INDUSTRY_DB_ORLANDO : null,
+    typeof GEO_INDUSTRY_DB_TAMPABAY !== 'undefined' ? GEO_INDUSTRY_DB_TAMPABAY : null,
+    typeof GEO_INDUSTRY_DB_JACKSONVILLE !== 'undefined' ? GEO_INDUSTRY_DB_JACKSONVILLE : null,
+    typeof GEO_INDUSTRY_DB_FL_AGENERGY !== 'undefined' ? GEO_INDUSTRY_DB_FL_AGENERGY : null,
+    typeof GEO_INDUSTRY_DB_SC !== 'undefined' ? GEO_INDUSTRY_DB_SC : null,
+    typeof GEO_INDUSTRY_DB_AR !== 'undefined' ? GEO_INDUSTRY_DB_AR : null,
+    typeof GEO_INDUSTRY_DB_LA_STATE !== 'undefined' ? GEO_INDUSTRY_DB_LA_STATE : null,
+    typeof GEO_INDUSTRY_DB_MS !== 'undefined' ? GEO_INDUSTRY_DB_MS : null
   ].filter(Boolean);
 
   // Exact match
@@ -7297,7 +7324,19 @@ function renderPossibleVectors(profile) {
     typeof GEO_INDUSTRY_DB_ATLANTA !== 'undefined' ? { data: GEO_INDUSTRY_DB_ATLANTA } : null,
     typeof GEO_INDUSTRY_DB_DALLAS !== 'undefined' ? { data: GEO_INDUSTRY_DB_DALLAS } : null,
     typeof GEO_INDUSTRY_DB_ROCKYMOUNTAINS !== 'undefined' ? { data: GEO_INDUSTRY_DB_ROCKYMOUNTAINS } : null,
-    typeof GEO_INDUSTRY_DB_PACIFICNW !== 'undefined' ? { data: GEO_INDUSTRY_DB_PACIFICNW } : null
+    typeof GEO_INDUSTRY_DB_PACIFICNW !== 'undefined' ? { data: GEO_INDUSTRY_DB_PACIFICNW } : null,
+    typeof GEO_INDUSTRY_DB_HUNTSVILLE !== 'undefined' ? { data: GEO_INDUSTRY_DB_HUNTSVILLE } : null,
+    typeof GEO_INDUSTRY_DB_NASHVILLE !== 'undefined' ? { data: GEO_INDUSTRY_DB_NASHVILLE } : null,
+    typeof GEO_INDUSTRY_DB_KY !== 'undefined' ? { data: GEO_INDUSTRY_DB_KY } : null,
+    typeof GEO_INDUSTRY_DB_MIAMI !== 'undefined' ? { data: GEO_INDUSTRY_DB_MIAMI } : null,
+    typeof GEO_INDUSTRY_DB_ORLANDO !== 'undefined' ? { data: GEO_INDUSTRY_DB_ORLANDO } : null,
+    typeof GEO_INDUSTRY_DB_TAMPABAY !== 'undefined' ? { data: GEO_INDUSTRY_DB_TAMPABAY } : null,
+    typeof GEO_INDUSTRY_DB_JACKSONVILLE !== 'undefined' ? { data: GEO_INDUSTRY_DB_JACKSONVILLE } : null,
+    typeof GEO_INDUSTRY_DB_FL_AGENERGY !== 'undefined' ? { data: GEO_INDUSTRY_DB_FL_AGENERGY } : null,
+    typeof GEO_INDUSTRY_DB_SC !== 'undefined' ? { data: GEO_INDUSTRY_DB_SC } : null,
+    typeof GEO_INDUSTRY_DB_AR !== 'undefined' ? { data: GEO_INDUSTRY_DB_AR } : null,
+    typeof GEO_INDUSTRY_DB_LA_STATE !== 'undefined' ? { data: GEO_INDUSTRY_DB_LA_STATE } : null,
+    typeof GEO_INDUSTRY_DB_MS !== 'undefined' ? { data: GEO_INDUSTRY_DB_MS } : null
   ].filter(Boolean);
 
   var opts = {
@@ -7324,11 +7363,53 @@ function renderPossibleVectors(profile) {
   // the same source file as the Rocky Mountains ZIPs.
   // KNOWN REMAINING GAP: Portland/Oregon has no dedicated ZIP coverage yet
   // — Pacific Northwest currently means Seattle-area only.
+  // UPDATED 2026-07-18: 'southeast' previously mapped to Piedmont Atlantic /
+  // Atlanta ONLY -- a family selecting "Southeast" as their region would see
+  // Atlanta content but never Huntsville or Nashville content, even though
+  // both are real, built Piedmont Atlantic subgroups (geo_industry_db_
+  // Huntsville_pass9.js, geo_industry_db_Nashville_pass10.js). Fixed by
+  // adding both as additional allowed pairs. Kentucky (Lexington/Louisville/
+  // Covington, geo_industry_db_KY_pass11.js) is NOT added here -- it's
+  // correctly reached via 'midwest' -> Great Lakes with subgroup: null,
+  // which already allows any Great Lakes subgroup without a code change.
+  //
+  // FURTHER UPDATE 2026-07-18 (second pass): the fix above was incomplete.
+  // The actual "Southeast" button visible to families explicitly lists
+  // "AL · AR · FL · GA · KY · LA · MS · NC · SC · TN" as the states it
+  // covers (see button definition, id="rz-southeast") -- but Florida is a
+  // completely separate megaregion ("Florida", not "Piedmont Atlantic") and
+  // Kentucky is Great Lakes, not Piedmont Atlantic. This means selecting
+  // "Southeast" had NEVER shown Florida content (a pre-existing gap, not
+  // something this session's work caused) and never reached Kentucky either
+  // despite the earlier note above claiming 'midwest' handled it -- that
+  // note was about a family selecting MIDWEST, not a family selecting
+  // SOUTHEAST expecting Kentucky content per the button's own stated
+  // coverage. Fixed now: Florida added with subgroup: null (safe, no other
+  // button claims Florida). Kentucky's three specific Great Lakes subgroups
+  // (Lexington, Louisville, Northern Kentucky/Covington) added explicitly
+  // by name rather than subgroup: null, to avoid also pulling in unrelated
+  // core Midwest states (IL, MI, OH, WI, etc.) that the separate 'midwest'
+  // button already correctly serves.
+  // STILL NOT COVERED: Arkansas, Louisiana, Mississippi, South Carolina --
+  // all named on the Southeast button, none have a GEO_INDUSTRY_DB pass
+  // file built yet. Adding them to this mapping now would have no visible
+  // effect until that content exists, so left for a future pass.
+  //
+  // RESOLVED 2026-07-18 (third pass, same day): all 4 states above are now
+  // built (geo_industry_db_SC_pass17.js, _AR_pass18.js, _LA_pass19.js,
+  // _MS_pass20.js) and their real subgroups added to 'southeast' below.
+  // The Southeast button now genuinely covers every state it promises
+  // families: AL, FL, GA, KY, TN (via Piedmont Atlantic/Florida/Great
+  // Lakes subgroups already fixed), plus AR, LA, MS, SC (new this pass).
+  // NC is the one remaining gap -- Research Triangle has full
+  // REGIONAL_INTELLIGENCE.js corridor coverage but no GEO_INDUSTRY_DB pass
+  // file yet, so it reaches the narrative/callC report path but not
+  // Possible Vectors or resolveZIP's local-area section.
   var REGION_TO_MEGAREGION = {
     'new_england':     [{ megaregion: 'Northeast', subgroup: null }],
     'northeast':       [{ megaregion: 'Northeast', subgroup: null }],
     'mid_atlantic':    [{ megaregion: 'Piedmont Atlantic', subgroup: 'Washington D.C. area' }],
-    'southeast':       [{ megaregion: 'Piedmont Atlantic', subgroup: 'Atlanta' }],
+    'southeast':       [{ megaregion: 'Piedmont Atlantic', subgroup: 'Atlanta' }, { megaregion: 'Piedmont Atlantic', subgroup: 'Huntsville' }, { megaregion: 'Piedmont Atlantic', subgroup: 'Nashville' }, { megaregion: 'Florida', subgroup: null }, { megaregion: 'Great Lakes', subgroup: 'Lexington (RPA area of influence, not core membership)' }, { megaregion: 'Great Lakes', subgroup: "Louisville (RPA area of influence, extended from Lexington's classification — not independently re-verified for Louisville specifically)" }, { megaregion: 'Great Lakes', subgroup: 'Northern Kentucky/Covington (Cincinnati metro-adjacent — extended classification, not independently re-verified)' }, { megaregion: 'Piedmont Atlantic', subgroup: 'Greenville-Spartanburg-Anderson, SC' }, { megaregion: 'Piedmont Atlantic', subgroup: 'Charleston, SC (extended classification, not explicitly RPA-confirmed like Greenville-Spartanburg-Anderson)' }, { megaregion: 'Piedmont Atlantic', subgroup: 'Northwest Arkansas (extended classification, not independently RPA-confirmed the same way Piedmont Atlantic core members are)' }, { megaregion: 'Piedmont Atlantic', subgroup: 'Louisiana (extended classification, not independently RPA-confirmed)' }, { megaregion: 'Piedmont Atlantic', subgroup: 'Mississippi (extended classification, not independently RPA-confirmed)' }],
     'midwest':         [{ megaregion: 'Great Lakes', subgroup: null }],
     'california':      [{ megaregion: 'Northern California', subgroup: null }, { megaregion: 'Southern California', subgroup: null }],
     'southwest':       [{ megaregion: 'Texas Triangle', subgroup: null }, { megaregion: 'Southwest', subgroup: null }],

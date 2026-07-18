@@ -85,7 +85,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'Singapore', state_or_country: 'Singapore', function: 'Regional operations/production' },
       { city_or_region: 'Iceland', state_or_country: 'Iceland', function: 'Human genetics research (via deCODE genetics)' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'medicine',
     therapeutic_or_functional_focus: [
       'Oncology & hematology', 'Inflammation', 'Bone health',
@@ -146,7 +146,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'Ireland', state_or_country: 'Ireland', function: 'Manufacturing (long-standing network)' },
       { city_or_region: 'United States & Europe (unspecified)', state_or_country: 'Multi-country', function: 'Kite cell-therapy specialized manufacturing (autologous CAR-T production/distribution)' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'medicine',
     therapeutic_or_functional_focus: [
       'HIV treatment & prevention', 'Viral hepatitis & liver disease', 'Oncology (solid tumor)', 'Cell therapy (CAR-T)', 'COVID-19 hospital antivirals',
@@ -281,7 +281,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'San Diego', state_or_country: 'California', function: 'Important U.S. research activity' },
       { city_or_region: 'Europe (unspecified cities)', state_or_country: 'Multi-country', function: 'Commercial and administrative presence' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'medicine',
     therapeutic_or_functional_focus: [
       'Cystic fibrosis (CFTR modulators)', 'Gene-edited cell therapy (sickle cell, beta thalassemia)', 'Acute pain (non-opioid)', 'APOL1-mediated kidney disease', 'Type 1 diabetes cell therapy',
@@ -402,7 +402,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'Research Triangle Park', state_or_country: 'North Carolina', function: "Biogen's LARGEST manufacturing footprint globally — 2 campuses, North Carolina's largest biotechnology employer, an 8th factory under construction (2025), $2B investment announced July 2025. This is the correction worth noting: earlier passes on this entry under-weighted RTP relative to Switzerland; RTP is actually primary, not secondary." },
       { city_or_region: 'Switzerland', state_or_country: 'Switzerland', function: 'Major manufacturing operations' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'medicine',
     therapeutic_or_functional_focus: [
       'Multiple sclerosis', 'Alzheimer\'s disease', 'Spinal muscular atrophy', 'Amyotrophic lateral sclerosis (ALS)', 'Friedreich\'s ataxia', 'Immunology (newer, via HI-Bio)',
@@ -460,7 +460,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'Wilson County (Mt. Juliet area)', state_or_country: 'Tennessee', function: 'Single-use bioprocessing technology manufacturing — $100M+ investment, 1,400 jobs, ribbon-cut ~2023, explicitly positioned to leverage Nashville\'s "international/national medical center reputation" per Tennessee state economic development materials' },
       { city_or_region: 'North America, Europe, Asia-Pacific (unspecified cities)', state_or_country: 'Multi-region', function: 'Manufacturing, distribution, biopharma-services (Patheon/PPD) infrastructure — most geographically diffuse company in this set, not concentrated the way a single-product biopharma is' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'biomanufacturing', // Deliberate departure from 'medicine': Patheon (CDMO) and broad manufacturing/distribution network make this the first real anchor for the previously-empty biomanufacturing IBIS world (technician-to-plant-leadership pathway), distinct from the drugmaker profiles elsewhere in this set.
     therapeutic_or_functional_focus: [
       'Life science tools & consumables', 'Analytical instruments', 'Specialty diagnostics', 'Laboratory distribution', 'Outsourced biopharma services (CDMO via Patheon, CRO via PPD)',
@@ -520,7 +520,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'Rocky Mount', state_or_country: 'North Carolina', function: 'Large-scale manufacturing — 1.4 million sq ft on 250 acres, Eastern North Carolina' },
       { city_or_region: 'Belgium, Germany, Ireland, Italy (unspecified cities)', state_or_country: 'Multi-country', function: 'International manufacturing network' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'medicine',
     therapeutic_or_functional_focus: [
       'Oncology (incl. antibody-drug conjugates via Seagen)', 'Vaccines', 'Internal medicine', 'Inflammation & immunology', 'Rare disease', 'Hospital/sterile injectables',
@@ -580,7 +580,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'Chartres', state_or_country: 'France', function: 'Major production hub' },
       { city_or_region: 'Brazil, China (unspecified cities)', state_or_country: 'Multi-country', function: 'Manufacturing network' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'medicine',
     therapeutic_or_functional_focus: [
       'Diabetes care (insulin, GLP-1)', 'Obesity care (semaglutide/Wegovy)', 'Rare disease (hemophilia, growth disorders)',
@@ -644,7 +644,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'Huntsville', state_or_country: 'Alabama', function: 'API (active pharmaceutical ingredient) manufacturing — $6B investment (largest in Alabama history), ~450 jobs (engineers, scientists, operations), announced Dec 2025. Real workforce partnerships with University of Alabama in Huntsville (4-year) and Calhoun Community College (2-year). Lilly\'s own stated reason for the site: "Huntsville\'s track record of science and innovation, supported by advanced manufacturing expertise and a skilled workforce."' },
       { city_or_region: 'Ireland (unspecified cities)', state_or_country: 'Ireland', function: 'Major international manufacturing hub' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'medicine',
     therapeutic_or_functional_focus: [
       'Cardiometabolic disease & obesity (tirzepatide/Mounjaro/Zepbound)', 'Oncology', 'Immunology', 'Neuroscience (incl. Alzheimer\'s)',
@@ -1223,7 +1223,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'Tamarac', state_or_country: 'Florida', function: 'Primary manufacturing facility (10200 NW 67th St)' },
       { city_or_region: 'Miramar', state_or_country: 'Florida', function: 'Additional facility (3200 Commerce Pkwy) — combined footprint over 400,000 sq ft across the Fort Lauderdale/Broward County area' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'biomanufacturing',
     therapeutic_or_functional_focus: [
       'Transdermal drug delivery (patches)', 'Generic pharmaceuticals', 'Specialty pharmaceuticals', 'Rx, OTC, and controlled-substance manufacturing',
@@ -1277,7 +1277,7 @@ const ANCHOR_EMPLOYERS = [
     facility_locations: [
       { city_or_region: 'Tampa', state_or_country: 'Florida', function: '455,000 sq ft cGMP-compliant, FDA-approved manufacturing campus — described as having "a rich history of pharmaceutical production"' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'biomanufacturing',
     therapeutic_or_functional_focus: [
       'Contract pharmaceutical manufacturing', 'OTC and consumer health product manufacturing', 'cGMP production',
@@ -1398,7 +1398,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'Atlanta', state_or_country: 'Georgia', function: 'Existing substantial U.S. commercial presence (pre-dates the new manufacturing investment — UCB\'s own profile confirms this)' },
       { city_or_region: 'Gwinnett County ("Rowen")', state_or_country: 'Georgia', function: 'UCB\'s first-ever U.S. biologics manufacturing facility — $2B investment announced March 2026, 79-acre campus, 330 permanent jobs plus 500+ construction jobs' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'medicine',
     therapeutic_or_functional_focus: [
       'Immunology (Bimzelx — flagship growth brand)', 'Epilepsy/neurology (Briviact, Fintepla)', 'Rare autoimmune neurology — generalized myasthenia gravis (Rystiggo, Zilbrysq)', 'Mature immunology (Cimzia)',
@@ -1456,7 +1456,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'Osaka', state_or_country: 'Japan', function: 'Historical founding site (1781) — traditional medicines origin' },
       { city_or_region: 'Covington/Social Circle', state_or_country: 'Georgia', function: 'Plasma fractionation manufacturing — 1.1 million sq ft, 160-acre greenfield campus, 1,100+ full-time employees, described by Takeda as "the cornerstone of a global strategy" for worldwide plasma-derived therapy supply. Note: Takeda\'s own site states its "global hub and research center" for the U.S. is Cambridge, Massachusetts — Georgia is specifically a manufacturing hub, not the company\'s overall American headquarters.' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'biomanufacturing',
     therapeutic_or_functional_focus: [
       'Plasma-derived therapies (immunoglobulins — GAMMAGARD, HYQVIA, CUVITRU)', 'Gastroenterology/inflammation (ENTYVIO)', 'Rare disease (TAKHZYRO — hereditary angioedema)', 'Oncology', 'Vaccines (QDENGA — dengue)',
@@ -1518,7 +1518,7 @@ const ANCHOR_EMPLOYERS = [
     facility_locations: [
       { city_or_region: 'Nashville', state_or_country: 'Tennessee', function: 'HQ and manufacturing — $64.7M investment (announced Nov 2020), 180 jobs over five years, 60,000 sq ft new commercial-stage plant plus expansion of an existing facility' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'biomanufacturing',
     therapeutic_or_functional_focus: [
       'Sterile injectable medications (contract development and manufacturing)', 'Clinical to commercial-stage CDMO services',
@@ -1882,7 +1882,7 @@ const ANCHOR_EMPLOYERS = [
       { city_or_region: 'Lexington', state_or_country: 'Kentucky', function: 'Injectable drug manufacturing, physically located inside the University of Kentucky\'s own Coldstream Research Campus — the tightest university-industry link found anywhere in this database. $80-90M expansion (announced 2025) to double capacity by 2027, 40 new jobs, 24,000 sq ft addition. Per Commerce Lexington, the site explicitly "provides valuable opportunities for UK students."' },
       { city_or_region: 'Mumbai', state_or_country: 'India', function: 'Parent company (Piramal Pharma Limited) headquarters' },
     ],
-    naics: 62,
+    naics: 32, // corrected 2026-07-17 from 62 -> pharma manufacturing is NAICS 3254, under the 32 supersector, per Chunk 1's NAICS_TO_INDUSTRY_PATHWAYS fix
     career_world: 'biomanufacturing',
     therapeutic_or_functional_focus: [
       'Injectable/sterile drug contract manufacturing', 'Commercial-scale CDMO services',
