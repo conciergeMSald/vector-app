@@ -54,15 +54,16 @@ const REGIONAL_INTELLIGENCE = {
         name: 'Pharmaceutical & Biotech',
         anchor: 'San Diego (Torrey Pines / Sorrento Valley / La Jolla)',
         industries: ['Pharmaceutical R&D','Biotech','Clinical Research','Medical Devices','Genomics'],
-        employers: ['Pfizer','J&J','Illumina','Neurocrine','Vertex Pharmaceuticals'],
+        employers: ['Pfizer','J&J','Illumina','Neurocrine','Vertex Pharmaceuticals','ResMed'],
         naics: [62, 54]
       },
       {
-        name: 'Pharmaceutical & Biotech (Ventura County)',
-        anchor: 'Thousand Oaks / Westlake Village (Conejo Valley)',
-        industries: ['Biopharmaceutical R&D','Biotech Manufacturing','Clinical Research','Genomics'],
-        employers: ['Amgen (global HQ)','Gilead Sciences','Atara Biotherapeutics','Baxalta'],
-        naics: [62, 54]
+        name: 'Pharmaceutical Manufacturing & CDMO',
+        anchor: 'Thousand Oaks / Westlake Village / Northridge / Van Nuys (Ventura County / San Fernando Valley)',
+        industries: ['Biologics Manufacturing','Contract Development & Manufacturing (CDMO)','Drug Delivery Systems','Pharmaceutical Production','Quality & Regulatory Operations'],
+        employers: ['Amgen','Baxter Healthcare','Kindeva Drug Delivery','Takeda (Van Nuys)'],
+        naics: [62, 33],
+        note: 'Distinct from the San Diego biotech corridor above — this is Southern California\'s pharmaceutical MANUFACTURING cluster, not its research cluster. A student can move between the two without leaving the region: San Diego trains the scientists, Thousand Oaks/Van Nuys is where a meaningful share of them end up producing the drug at scale.'
       },
       {
         name: 'Startup & Venture Ecosystem',
@@ -84,7 +85,8 @@ const REGIONAL_INTELLIGENCE = {
           { school: 'California State University Long Beach', corridor: 'Aerospace & Defense', note: '70% LA-Long Beach concentration — SpaceX, Boeing, Northrop recruit here directly. The most efficient path into El Segundo/Hawthorne.' },
           { school: 'San Diego State University', corridor: 'Pharmaceutical & Biotech', note: '65% San Diego concentration — technology and engineering pipeline inside the biotech corridor.' },
           { school: 'University of California San Diego', corridor: 'Pharmaceutical & Biotech', note: 'Sits physically inside Torrey Pines — the center of the biotech corridor. Science programs pipeline directly into Pfizer, Illumina, and Neurocrine.' },
-          { school: 'California Lutheran University', corridor: 'Pharmaceutical & Biotech (Ventura County)', note: 'Sits in Thousand Oaks, 8 miles from Amgen\'s global headquarters — one of the largest biotech employers in the world, in a city most families never connect to biotech at all.' },
+          { school: 'University of California San Diego', corridor: 'Pharmaceutical Manufacturing & CDMO', note: 'A genuinely common and underappreciated path: UCSD biology or bioengineering graduates who go into large-scale manufacturing, process development, or quality operations frequently end up 100+ miles north at Amgen in Thousand Oaks or Baxter in Westlake Village, not staying in Torrey Pines. Still Southern California — still "stay close" in the broadest sense — but a real relocation within the state that most families never hear framed this way.' },
+          { school: 'San Diego State University', corridor: 'Pharmaceutical Manufacturing & CDMO', note: 'Applied science and engineering programs with a documented path into Ventura County biomanufacturing — process development and manufacturing operations roles at Amgen and the CDMO cluster around Thousand Oaks and Northridge.' },
           { school: 'Pepperdine University', corridor: 'Entertainment & Media', note: '45% LA concentration — Malibu location and business/law programs with strong LA entertainment market placement.' }
         ]
       },
@@ -119,8 +121,8 @@ KEY CORRIDORS BY PROFILE MATCH:
 - Tech & Digital Media (Santa Monica/Venice/Playa Vista): Snap, Hulu, Google LA, Riot Games — consumer and media tech
 - CPG, Action Sports & Lifestyle (Orange County): Vans, Oakley, Quiksilver — surf/skate/outdoor, brand management, consumer products
 - Fashion, Beauty & Cosmetics (Downtown LA/Chatsworth): Apparel, cosmetics manufacturing, personal care brands
-- Pharmaceutical & Biotech (San Diego/Torrey Pines): Pfizer, Illumina, Neurocrine — one of the top 3 biotech corridors in the US
-- Pharmaceutical & Biotech (Thousand Oaks/Ventura County): Amgen's global headquarters — one of the largest biotech employers in the world, a separate corridor from San Diego and often overlooked
+- Pharmaceutical & Biotech (San Diego/Torrey Pines): Pfizer, Illumina, Neurocrine, ResMed — one of the top 3 biotech corridors in the US
+- Pharmaceutical Manufacturing & CDMO (Thousand Oaks/Westlake Village/Northridge/Van Nuys): Amgen, Baxter Healthcare, Kindeva Drug Delivery, Takeda (Van Nuys) — Southern California's large-scale biologics manufacturing cluster, distinct from the San Diego research corridor; a common intra-state path for UCSD/SDSU science graduates
 - Startup & Venture (distributed): Second-largest startup ecosystem in the country
 
 THREE TRAJECTORIES TO NAME EXPLICITLY:
@@ -353,10 +355,19 @@ Connect this student's specific profile to the corridor, name the trajectory typ
       },
       {
         name: 'Healthcare & Life Sciences',
-        anchor: 'Tampa Bay / Miami Medical District / Orlando',
-        industries: ['Hospital Systems','Pharmaceutical Distribution','Medical Devices','Health Insurance','Telehealth'],
-        employers: ['HCA Healthcare','AdventHealth','Moffitt Cancer Center','BayCare','Humana'],
-        naics: [62, 54]
+        anchor: 'Tampa Bay / Miami Medical District / Orlando / Jupiter (Palm Beach) / Broward',
+        industries: ['Hospital Systems','Pharmaceutical Manufacturing','Biotech Research','Medical Devices','Health Insurance','Telehealth'],
+        employers: ['HCA Healthcare','AdventHealth','Moffitt Cancer Center','BayCare','Humana','UF Scripps','DifGen Pharmaceuticals','Formulated Solutions'],
+        naics: [62, 54],
+        note: 'Corrected from an earlier version of this corridor that named only hospital systems and one insurer despite claiming to cover "Pharmaceutical Distribution" and "Medical Devices" — UF Scripps (Jupiter, biotech research), DifGen Pharmaceuticals (Tamarac/Miramar, one of the largest pharmaceutical manufacturers in Florida per its own 2024 press materials), and Formulated Solutions (Tampa, 455,000 sq ft cGMP campus) now give this corridor real pharma/bio-manufacturing substance, not just hospital employment.'
+      },
+      {
+        name: 'Fintech & Financial Infrastructure Technology',
+        anchor: 'Jacksonville (primary) / Miami (emerging, mostly private-stage)',
+        industries: ['Core Banking Technology','Payments Infrastructure','Capital Markets Software','Digital Banking','Embedded Finance'],
+        employers: ['FIS'],
+        naics: [52, 51],
+        note: 'New corridor, deliberately separated from "Finance, Wealth Management & Private Equity" above — that corridor is about managing and deploying capital (Blackstone, Citadel, family offices); this one is about building the technology infrastructure banks and capital-markets firms run on. FIS (Jacksonville) is a genuine Fortune 500-scale anchor — $10B+ revenue, self-described as a "Fintech Company," explicitly not headquartered in Miami. Miami\'s fintech scene is real (Payabli, Bizcap, Majority, and 100+ others per Built In/Crunchbase) but currently skews private/early-stage — no comparable large public anchor confirmed there as of this pass. Worth revisiting as that scene matures.'
       },
       {
         name: 'Tourism, Hospitality & Entertainment',
@@ -393,12 +404,13 @@ Connect this student's specific profile to the corridor, name the trajectory typ
         summary: 'Florida schools that put you directly inside the state\'s strongest corridors.',
         connections: [
           { school: 'University of Miami', corridor: 'Finance, Wealth Management & Private Equity', note: '55% Miami concentration — Business school inside the Brickell finance corridor. Latin American business network strongest in the country for Florida-rooted students.' },
-          { school: 'University of Florida', corridor: 'Healthcare & Life Sciences', note: '45% Florida placement — #1 public in the state, direct pipeline into Gainesville biotech, Tampa and Miami hospital networks.' },
+          { school: 'University of Florida', corridor: 'Healthcare & Life Sciences', note: '45% Florida placement — #1 public in the state, direct pipeline into UF Scripps (Jupiter) biotech research, plus Tampa and Miami hospital networks. UF Scripps is now formally a UF institute, not just a nearby employer.' },
           { school: 'Florida State University', corridor: 'Finance, Wealth Management & Private Equity', note: '50% Florida placement — College of Business feeds Tallahassee government, Tampa finance, and the broader Florida professional network.' },
           { school: 'University of Central Florida', corridor: 'Tourism, Hospitality & Entertainment', note: '65% Florida concentration — sits in the backyard of Disney, Universal, and SeaWorld. Hospitality, entertainment operations, simulation and gaming pipeline.' },
           { school: 'Florida International University', corridor: 'Latin American Business & International Trade', note: '70% South Florida concentration — the undisputed pipeline into Miami\'s Latin American business corridor, international trade, and bilingual finance.' },
-          { school: 'University of South Florida', corridor: 'Healthcare & Life Sciences', note: '60% Tampa Bay concentration — inside Moffitt Cancer Center and BayCare recruiting zone. Health sciences, public health, biomedical engineering.' },
-          { school: 'Embry-Riddle Aeronautical University', corridor: 'Aerospace, Defense & Technology', note: '40% Florida placement — the premier aerospace university in the state, sitting between Cape Canaveral and the Melbourne corridor. NASA and SpaceX recruit directly on campus.' }
+          { school: 'University of South Florida', corridor: 'Healthcare & Life Sciences', note: '60% Tampa Bay concentration — inside Moffitt Cancer Center, BayCare, and Formulated Solutions\' 455,000 sq ft manufacturing campus. Health sciences, public health, biomedical engineering, and real pharmaceutical manufacturing careers, not only hospital work.' },
+          { school: 'Embry-Riddle Aeronautical University', corridor: 'Aerospace, Defense & Technology', note: '40% Florida placement — the premier aerospace university in the state, sitting between Cape Canaveral and the Melbourne corridor. NASA and SpaceX recruit directly on campus.' },
+          { school: 'University of North Florida', corridor: 'Fintech & Financial Infrastructure Technology', note: 'Jacksonville\'s primary public university, sitting directly in FIS\'s home market — a real, if not yet independently verified, campus-to-employer proximity worth confirming directly with FIS before presenting as a formal pipeline.' }
         ]
       },
       leave_and_return: {
@@ -425,19 +437,20 @@ Connect this student's specific profile to the corridor, name the trajectory typ
     },
     callc_context: `FLORIDA REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
 
-This student lives in one of the most economically complex states in the country. Florida is not a single market — it is a collection of distinct corridors sharing geography: the Brickell finance district that rivals mid-tier Wall Street, the Orlando entertainment economy, the Space Coast aerospace cluster, the Miami international trade gateway, and the Tampa Bay health sciences hub.
+This student lives in one of the most economically complex states in the country. Florida is not a single market — it is a collection of distinct corridors sharing geography: the Brickell finance district that rivals mid-tier Wall Street, the Orlando entertainment economy, the Space Coast aerospace cluster, the Miami international trade gateway, a genuine pharmaceutical manufacturing and biotech research base spanning Tampa/Jupiter/Broward, and — as of this update — a real fintech infrastructure corridor anchored in Jacksonville.
 
 KEY CORRIDORS BY PROFILE MATCH:
 - Finance, Wealth Management & Private Equity (Miami Brickell / Palm Beach): Blackstone, Apollo, Citadel, family offices — serious money, real dealmaking
 - Real Estate & Development (statewide): Lennar, Related Group, CBRE — the industry that built Florida and keeps building it
-- Healthcare & Life Sciences (Tampa / Miami Medical District): HCA, Moffitt, AdventHealth — one of the fastest-growing health markets in the US
+- Healthcare & Life Sciences (Tampa / Miami Medical District / Jupiter / Broward): HCA, Moffitt, AdventHealth for hospital care; UF Scripps for biotech research; DifGen Pharmaceuticals and Formulated Solutions for real large-scale pharmaceutical manufacturing — this is not just hospitals, it's a genuine pharma production and research base
+- Fintech & Financial Infrastructure Technology (Jacksonville): FIS — a $10B+ revenue, Fortune 500-scale company building the technology banks and capital-markets firms actually run on, distinct from Brickell's wealth-management/dealmaking corridor
 - Tourism, Hospitality & Entertainment (Orlando / Miami Beach): Disney, Universal, Royal Caribbean, Carnival — a $100B+ industry hiding in plain sight
 - Latin American Business & International Trade (Miami / Doral): The US-Latin America commerce gateway — bilingual, bicultural, globally connected
 - Aerospace, Defense & Technology (Space Coast / Cape Canaveral): NASA, SpaceX, L3Harris — a legitimate aerospace corridor
 - AgriTech, Logistics & Supply Chain (Jacksonville / Tampa Port): JAXPORT, Publix HQ — infrastructure and distribution at national scale
 
 THREE TRAJECTORIES TO NAME EXPLICITLY:
-STAY CLOSE: FIU → Latin American business in Miami (70% in-state). UCF → Disney/Universal entertainment operations. USF → Tampa Bay health systems. Embry-Riddle → NASA and SpaceX on the Space Coast. UM → Brickell finance and international business.
+STAY CLOSE: FIU → Latin American business in Miami (70% in-state). UCF → Disney/Universal entertainment operations. USF → Tampa Bay health systems and Formulated Solutions manufacturing careers. Embry-Riddle → NASA and SpaceX on the Space Coast. UM → Brickell finance and international business. UF → UF Scripps biotech research (now a formal UF institute, not just a nearby employer).
 LEAVE AND RETURN: Michigan or Georgetown finance/law → return to Brickell or Palm Beach. Cornell Hotel → return to manage Orlando or Miami resort. Vanderbilt health → return to Tampa or Miami hospital systems. Tulane → Gulf South network back to Florida finance.
 LEAVE AND STAY GONE: Wharton → Wall Street, not Brickell. Stanford → Silicon Valley, not Miami. Northwestern → Chicago, not Tampa. NYU → New York finance and media, no Florida equivalent.
 
@@ -479,6 +492,7 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'CPG, Action Sports & Lifestyle Brands', naics: [44, 71, 81], riasec: ['E','S','A'] },
     { corridorName: 'Fashion, Beauty & Cosmetics',        naics: [31, 44],     riasec: ['A','E','R'] },
     { corridorName: 'Pharmaceutical & Biotech',           naics: [62, 54],     riasec: ['I','R','S'] },
+    { corridorName: 'Pharmaceutical Manufacturing & CDMO', naics: [62, 33],    riasec: ['R','C','I'] },
     { corridorName: 'Startup & Venture Ecosystem',        naics: [54, 51, 81], riasec: ['E','I','C'] }
   ],
   bayarea: [
@@ -500,6 +514,7 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'Finance, Wealth Management & Private Equity', naics: [52, 54],     riasec: ['E','C','I'] },
     { corridorName: 'Real Estate & Development',                   naics: [52, 23, 54], riasec: ['E','R','C'] },
     { corridorName: 'Healthcare & Life Sciences',                  naics: [62, 54],     riasec: ['I','S','R'] },
+    { corridorName: 'Fintech & Financial Infrastructure Technology', naics: [52, 51],    riasec: ['I','C','E'] },
     { corridorName: 'Tourism, Hospitality & Entertainment',        naics: [71, 72, 48], riasec: ['E','S','A'] },
     { corridorName: 'Latin American Business & International Trade',naics: [48, 52, 42],riasec: ['E','S','C'] },
     { corridorName: 'Aerospace, Defense & Technology',             naics: [33, 54, 92], riasec: ['R','I','C'] },
