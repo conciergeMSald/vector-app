@@ -59,6 +59,45 @@
  * schoolsDataAvailable directly (report rendering, UI) should know this
  * distinction exists before Chunk 2 lands, or the interim state may look
  * like a silent regression rather than expected progress.
+ *
+ * SCHEMA UPDATE 2026-07-18 (Chunk 1 of advancedManufacturing V5 buildout):
+ * Added a 25th key, advancedManufacturing, and moved NAICS 33 out of GAP to
+ * route to it. Surfaced by a Southeast Possible Vectors test run: real
+ * employers (NASA Marshall, Northrop Grumman, Blue Origin, SpaceX, BMW's
+ * largest plant in the world, Boeing's 787 line, Nissan, Ingalls
+ * Shipbuilding — the largest private employer in Mississippi) were all
+ * correctly surfacing, but every one returned zero aligned_schools, since
+ * NAICS 33 had been left as a disclosed GAP. Checked MAJOR_MAP['33'] before
+ * naming the key: it holds four broad general-engineering majors (Mechanical
+ * Engineering, Electrical Engineering, Industrial Engineering & Manufacturing
+ * Systems, Chemical Engineering) — none narrowly scoped to one sub-industry
+ * (no separate "Aerospace Engineering" or "Automotive Engineering" major
+ * exists in this system). That argued against building three sub-industry-
+ * specific keys (aerospaceDefense / automotiveManufacturing / shipbuilding)
+ * the way pharmaceuticalManufacturing might have suggested by analogy — the
+ * major granularity doesn't support that split, so one broader key matching
+ * the actual major list is the right fit here, not over-engineering.
+ *
+ * NAICS 33 employer tagging did NOT need correcting the way NAICS 62 did for
+ * pharma — every Southeast manufacturing entry (Northrop Grumman, and every
+ * geo_industry_db cluster for NASA/SpaceX/BMW/Boeing/Nissan/Ingalls) was
+ * already correctly tagged naics: 33 from the start. This buildout's Chunk 4
+ * equivalent is therefore expected to be a no-op re-tagging step, not a real
+ * correction pass.
+ *
+ * NAICS 31 (food manufacturing) is explicitly NOT touched by this change and
+ * remains its own separate, unaddressed GAP — MAJOR_MAP['31'] holds entirely
+ * different majors (Food Manufacturing & Processing Engineering, Food
+ * Quality Systems & Safety Engineering, Culinary Science & Product
+ * Innovation, Packaging Engineering & Design), a genuinely different problem
+ * from general mechanical/electrical/industrial engineering. Do not conflate
+ * the two or route NAICS 31 to advancedManufacturing as a shortcut.
+ *
+ * EXPECTATION FOR CHUNK 2/3: likely a BROADER school-scoring pass than
+ * pharmaceuticalManufacturing's 50 schools, not narrower. Pharma manufacturing
+ * is a specialized niche most schools don't touch; general mechanical/
+ * electrical/industrial engineering strength is common across most state
+ * flagships and technical universities. Plan Chunk 2/3 sizing accordingly.
  */
 
 const NAICS_TO_INDUSTRY_PATHWAYS = {
@@ -94,7 +133,7 @@ const NAICS_TO_INDUSTRY_PATHWAYS = {
   "99": { keys: [], confidence: "GAP", note: "Reshoring & Domestic Supply Chain Economy (manufacturing) — no V5 key" },
   "101": { keys: [], confidence: "GAP", note: "The Planning Economy — no V5 key" },
   "31": { keys: [], confidence: "GAP", note: "Manufacturing — no V5 key" },
-  "33": { keys: [], confidence: "GAP", note: "Manufacturing (industrial/mechanical/electronics — machinery, computers, transportation equipment) — no V5 key. Deliberately NOT merged with the new pharmaceuticalManufacturing key added under NAICS 32 (2026-07-17) — genuinely different industries, both real gaps, kept separate." },
+  "33": { keys: ["advancedManufacturing"], confidence: "HIGH", note: "General mechanical/electrical/industrial/chemical engineering manufacturing (MAJOR_MAP['33'] holds exactly these four broad majors) -- semantic match to the new advancedManufacturing key is direct. SCHEMA-ONLY as of 2026-07-18: this key exists and routes correctly, but zero V5 schools have been scored on it yet (Chunk 2/3, not done here). Employer-side naics:33 tagging in anchor_employers_db.js and every relevant geo_industry_db pass file was already correct before this fix -- no re-tagging chunk needed, unlike the earlier pharmaceuticalManufacturing buildout which required correcting naics:62 to naics:32 across 14 companies." },
 };
 
 function getIndustryPathwayKeys(naicsSector) {

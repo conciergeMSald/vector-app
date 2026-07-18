@@ -28,6 +28,8 @@ const GEO_INDUSTRY_DB_HUNTSVILLE = {
       {
         name: "Biotech & Genomics Research",
         naics: 62, // matches the UF Scripps precedent (also naics:62), not 54 -- avoids the known NAICS-54 breadth issue already flagged elsewhere in this codebase
+        distance: "Local",
+        anchor_employers: ["HudsonAlpha Institute for Biotechnology"],
         student_connection: "HudsonAlpha's own address (601 Genome Way) sits inside Cummings Research Park, the second-largest research park in the country. A genomics research institute, not a manufacturing site — the discovery-science counterpart to Lilly's manufacturing plant across town, the same 'brains and factory, different buildings' pattern found across this database."
       },
       {
@@ -96,6 +98,8 @@ const GEO_INDUSTRY_DB_HUNTSVILLE = {
       {
         name: "Biotech & Genomics Research",
         naics: 62, // consistent with the UF Scripps / HudsonAlpha precedent above
+        distance: "Local",
+        anchor_employers: ["Cummings Research Park West tenants"],
         student_connection: "The western portion of Cummings Research Park, adjacent to the same technical-workforce ecosystem HudsonAlpha and Lilly both draw from."
       }
     ]

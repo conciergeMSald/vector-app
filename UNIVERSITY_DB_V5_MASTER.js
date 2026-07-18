@@ -422,6 +422,8 @@ const UNIVERSITY_DB_V5 = {
       }
     ,
     "pharmaceuticalManufacturing": { "strength": 58, "notes": "Company-adjacent evidence: ASU has a documented, named partnership with TGen (Translational Genomics Research Institute, a real nonprofit genomics research institute now part of City of Hope), per ASU's own clinical partnerships page. TGen is genomics/diagnostics/precision-medicine research, not manufacturing specifically — scored to reflect that real but discovery-weighted connection." }
+  ,
+    "advancedManufacturing": { "strength": 90, "notes": "Extraordinary institutional integration: TSMC operates a dedicated, company-branded university partnership website (tsmc.asu.edu) directly with ASU. Confirmed via ASU's own newsroom: the 'ASU Foundations for Equipment Technician Program' launched in direct collaboration with TSMC Arizona (May 2026). Arizona has been formally named a Southwest semiconductor education hub partnering with 45+ local semiconductor companies including Intel. This connects directly to TSMC's $265 billion Arizona investment -- described elsewhere in this session's research as the largest greenfield foreign direct investment in U.S. history. Scored on par with Ohio State's Honda relationship given the dedicated branded infrastructure, even though the ASU-TSMC relationship is far newer -- current, extremely well-resourced integration matters as much as longevity." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -886,6 +888,8 @@ const UNIVERSITY_DB_V5 = {
       }
     ,
     "pharmaceuticalManufacturing": { "strength": 72, "notes": "Strong, multi-point real evidence: Fred Hutchinson Cancer Center operates a real GMP manufacturing facility (Therapeutic Products core, biologic/cellular therapeutic products) and is explicitly described as 'the cancer program for UW Medicine' — a direct institutional affiliation, not just regional proximity. Seattle overall is a documented top-10 U.S. biotech/life-science cluster (42,000+ jobs, South Lake Union corridor), and UW's own BioEngage program has worked with 50+ biotech/biomedical companies. One of the stronger multi-source evidence bases in this pass." }
+  ,
+    "advancedManufacturing": { "strength": 84, "notes": "Real, dedicated, long-standing evidence: BARC (Boeing Advanced Research Collaboration) is UW's own named, official research center uniting UW faculty and students with Boeing subject-matter experts, explicitly described by UW itself as building on a 'long-standing partnership between UW and Boeing in aerospace.' Independently corroborated via Assembly Magazine coverage dating to 2015, confirming this predates the current scoring pass by at least a decade. UW's Aeronautics & Astronautics department maintains its own dedicated industry-partnerships infrastructure around this relationship." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -1349,6 +1353,8 @@ const UNIVERSITY_DB_V5 = {
       }
     ,
     "pharmaceuticalManufacturing": { "strength": 40, "notes": "General regional evidence: University of Arizona's Tucson Health Sciences campus is real and substantial, but no specific pharmaceutical manufacturing program or company partnership was identified this session, unlike ASU's documented TGen relationship. Scored as plausible regional presence, not a confirmed pipeline." }
+  ,
+    "advancedManufacturing": { "strength": 68, "notes": "Real but less singularly dedicated evidence than ASU: the University of Arizona joined a 46-member, 5-state national semiconductor workforce training consortium (not a company-specific branded partnership the way ASU's tsmc.asu.edu is). Real and current, part of the same broader Arizona semiconductor education hub designation, but structurally a shared, multi-institution program rather than a direct company relationship." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -7366,6 +7372,8 @@ const UNIVERSITY_DB_V5 = {
     "consulting": { "strength": 96, "notes": "Ross Business School rivals the very top private business schools for consulting placement. (Remapped from non-standard key 'business', split across consulting/investmentBanking, 2026-07-12 — judgment call, not independently verified.)" },
     "investmentBanking": { "strength": 90, "notes": "Ross Business School has a strong Wall Street pipeline alongside its consulting placement. (Remapped from non-standard key 'business', 2026-07-12 — judgment call.)" },
     "publicPolicy": { "strength": 82, "notes": "Ford School is a strong, underrecognized government/policy pipeline." }
+  ,
+    "advancedManufacturing": { "strength": 86, "notes": "Genuinely dual real evidence across two different industries: (1) A current, active Boeing partnership -- 'Boeing Joins the MBSE Ecosystem' (May 2025), the M-BRAACE team collaborating with Boeing, MathWorks, and Siemens on a Cryogenic Fuel Tank Integration and Airplane Sizing project. (2) A separate, real General Motors-founded 'Institute of Automotive Research and Education,' plus Michigan's own Automotive Research Center (ARC), described as operating at 'the crux of military, academic, and industry research' for ground vehicle technology. Two named companies, two distinct real research relationships (aerospace and automotive), not one company wearing two hats." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -8815,6 +8823,8 @@ const UNIVERSITY_DB_V5 = {
       }
     ,
     "pharmaceuticalManufacturing": { "strength": 44, "notes": "Moderate, softer evidence: OU's CBA Research program is described in the university's own materials as training students and postdocs who go on to biotech and pharmaceutical company careers. Real Oklahoma City biopharma companies exist nearby (Cytovance Biologics, a genuine biologics CDMO, and ARL Bio Pharma, a pharmaceutical testing lab) plus OMRF (Oklahoma Medical Research Foundation, 450+ staff), but none of these were confirmed as formal OU partnerships this session — scored as real but unconfirmed regional presence." }
+  ,
+    "advancedManufacturing": { "strength": 48, "notes": "Real but categorically different evidence than most other entries in this database: OU has a named research/STEM education partnership agreement with Tinker Air Force Base, confirmed via OU's own vice president for research communications. Tinker AFB is the U.S. Air Force's largest maintenance, repair, and overhaul depot -- real, substantial aerospace/logistics work -- but it is a military installation, not a private manufacturing company, a genuinely different character of relationship than, for example, TCU-Lockheed Martin or Clemson-BMW. Scored moderately to reflect that distinction honestly." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "Middle",
@@ -9477,6 +9487,8 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "defense": { "strength": 88, "notes": "Direct Boeing/NASA Marshall aerospace pipeline. (Remapped 2026-07-12 from non-standard key 'aerospace'.)" },
     "healthWellness": { "strength": 92, "notes": "Top-5 nationally ranked veterinary medicine program. (Remapped 2026-07-12 from non-standard key 'veterinaryMedicine'.)" }
+  ,
+    "advancedManufacturing": { "strength": 50, "notes": "Moderate, general-reputation evidence: Auburn has a real, historically significant aerospace engineering program, and sits within the same Alabama aerospace/defense ecosystem as Huntsville (NASA Marshall, Northrop Grumman, Blue Origin), though no specific company partnership was independently confirmed this session the way Clemson's BMW relationship was. Scored in the moderate tier, comparable to Purdue's pharmaceuticalManufacturing score, reflecting real but unconfirmed regional/institutional strength." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -9766,6 +9778,8 @@ const UNIVERSITY_DB_V5 = {
     "technology": { "strength": 92, "notes": "The strongest automotive engineering pipeline of any Southeast public university. (Remapped 2026-07-12 from non-standard key 'automotiveEngineering'.)" }
   ,
     "pharmaceuticalManufacturing": { "strength": 56, "notes": "Direct, specific industry alignment: Clemson's institutional focus on biomaterials and absorbable polymers directly matches Poly-Med, Inc. (Anderson, SC), a real company specializing in absorbable polymers for drug delivery and surgical devices. Sourced from a synthesized search summary (SCbio-attributed), not independently verified via a primary company or government source this session — treat as plausible and specific, not confirmed at the same evidence tier as Merck/Elkton or UCB/Georgia Tech." }
+  ,
+    "advancedManufacturing": { "strength": 88, "notes": "The strongest structural evidence found in this entire V5 database, on either buildout: BMW was a FOUNDING PARTNER of Clemson's CU-ICAR (International Center for Automotive Research) in 2007 -- not a later partnership, but present at the department's creation. BMW helped establish Clemson's Department of Automotive Engineering and funds the world's first PhD program in automotive engineering. The Vehicle Assembly Center, a physical CU-ICAR facility, is described as 'completely occupied by BMW,' where company engineers and Clemson researchers work side by side. Current as of this scoring pass: BMW just sponsored Clemson's 'Deep Orange 17' vehicle prototyping program (July 2026). A parallel 2-year pathway exists via Greenville Technical College (Clemson Manufacturing Innovation). Scored above Kentucky's Piramal relationship (82) given the depth of company involvement in creating the academic program itself, not just occupying space near it." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -11039,6 +11053,8 @@ const UNIVERSITY_DB_V5 = {
     "entertainmentMedia": { "strength": 74, "notes": "Solid Film Studies and Journalism programs benefiting from Sundance Film Festival proximity." }
   ,
     "pharmaceuticalManufacturing": { "strength": 66, "notes": "Multi-point real evidence: a documented Center for Pharmaceutical Biotechnology (with a linked presence at the CU Anschutz Medical Campus in Denver), a real Pfizer Boulder Research & Development site (Pfizer independently verified elsewhere in this database), KBI Biopharma, and multiple Boulder-based biotech companies (Crestone, Bactria Pharmaceuticals). Colorado's bioscience industry overall employs 38,102 people with $4.4B in payroll (Boulder Economic Council). Real, dense regional cluster, not a single confirmed CU-specific manufacturing pipeline." }
+  ,
+    "advancedManufacturing": { "strength": 80, "notes": "Long-standing, real, well-funded evidence: the Lockheed Martin Engineering Management Program (EMP) at CU Boulder was established in 1987 -- 38 years, comparable in longevity to Ohio State's Honda relationship. Lockheed Martin Space Systems is named directly as a real industry partner on CU's own aerospace industry-partnerships page. A 2016 agreement added $3 million for new academic programs in radio frequency systems, aerospace, and electrical engineering, on top of roughly $7 million in prior sponsored research." }
   },
     "futureResilience": {
       "aiResistance": 84,
@@ -16531,7 +16547,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 46,
         "notes": "Moderate presence tied to LA's philanthropic community."
       }
-    },
+    ,
+    "advancedManufacturing": { "strength": 76, "notes": "Real, dedicated, multi-point evidence: Northrop Grumman and USC jointly established a named research institute (the NG-ION2 partnership, studying light-matter interactions of nanomaterials, confirmed via Northrop Grumman's own investor relations page). USC Viterbi is described as employing more SpaceX engineers than most other schools. Very current: USC's Space Engineering Research Center held an aerospace-industry-partner open house 3 days before this research pass, and USC students' first self-designed/built satellite launched on a SpaceX rocket within the same week. USC's Department of Astronautical Engineering and Rocket Propulsion Lab have operated for 20 years." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 66,
@@ -17214,6 +17232,8 @@ const UNIVERSITY_DB_V5 = {
     "technology": { "strength": 92, "notes": "Elite, comprehensive engineering breadth plus a direct Atlanta tech-corridor pipeline. (Remapped 2026-07-12, combined from non-standard keys 'engineering' (92) and 'technology' (90) into one standard key.)" }
   ,
     "pharmaceuticalManufacturing": { "strength": 78, "notes": "Company-stated: UCB explicitly cited \"the Georgia Tech-Emory biomedical engineering program\" by name as a reason for choosing Georgia for its first-ever U.S. biologics manufacturing plant ($2B, Gwinnett County, announced March 2026). Strongest, most direct evidence in this dataset — but this reflects biomedical engineering feeding into pharma manufacturing broadly, not a dedicated pharmaceutical manufacturing program specifically." }
+  ,
+    "advancedManufacturing": { "strength": 74, "notes": "General institutional-reputation evidence, not a single-company citation the way pharmaceuticalManufacturing's score (78) was: Georgia Tech's mechanical, aerospace, and industrial engineering programs are consistently ranked among the top 5 nationally. Lockheed Martin's Marietta, GA plant (a real Atlanta-area aerospace anchor, surfaced in this session's Possible Vectors testing) sits in the same Piedmont Atlantic corridor Georgia Tech anchors. Scored on genuine institutional strength and regional presence rather than a confirmed company-stated partnership." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -18927,6 +18947,8 @@ const UNIVERSITY_DB_V5 = {
     "insurance": { "strength": 88, "notes": "Fisher College of Business has a genuine, distinctive insurance and risk management specialty, reinforced by Ohio's dense insurance industry base — Nationwide, Progressive, and Grange are all Ohio-based. (Added 2026-07-12: previously dropped entirely for lack of a standard key — this was Fisher's most distinctive signal, not a generic finance placement.)" }
   ,
     "pharmaceuticalManufacturing": { "strength": 70, "notes": "Real, substantial partnership evidence: Battelle Memorial Institute (Columbus, OH) operates the largest private Biosafety Level 3 lab in the U.S. and provides agile manufacturing/scale-up engineering for the pharmaceutical industry (confirmed via Battelle's own official site). Ohio State is described as partnering with Battelle 'to drive clinical trials, medical device development, and novel drug delivery research' — sourced from a synthesized search summary rather than a single primary citation, so the specific partnership framing carries slightly more uncertainty than the Merck Elkton facts found in this same batch, but the underlying Battelle facility and Columbus location are independently confirmed." }
+  ,
+    "advancedManufacturing": { "strength": 90, "notes": "The longest-running, most consistently-renewed industry-academic partnership found across both V5 buildouts (pharma and manufacturing) this session: the Honda-Ohio State relationship began in 1987, when Honda purchased the Transportation Research Center near Ohio State -- a 38-year relationship, not a recent one. The partnership has produced over $130 million in combined philanthropy and sponsored research, celebrated its 25th anniversary in November 2025, and Honda made a fresh $2.6 million investment (October 2025) to open a new advanced mobility/hydrogen research lab at Ohio State's SciTech campus in 2026. Scored above Clemson's BMW relationship (88) given the sheer longevity -- nearly double the years -- and the fact that new investment is still actively landing as of this scoring pass, not a one-time founding event." }
   },
     "futureResilience": {
       "aiResistance": 84,
@@ -19503,6 +19525,8 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "technology": { "strength": 92, "notes": "The strongest health-tech pipeline of any Big Ten school via Epic Systems. (Remapped 2026-07-12 from non-standard key 'healthTech' — Epic Systems is health-record software, genuinely a technology pathway.)" },
     "medicine": { "strength": 86, "notes": "Elite research depth in life sciences. (Remapped 2026-07-12 from non-standard key 'lifeSciences'.)" }
+  ,
+    "advancedManufacturing": { "strength": 54, "notes": "IMPORTANT DISTINCTION: the strongest real Wisconsin evidence found this session belongs to a different, separate institution -- University of Wisconsin-Milwaukee, whose Connected Systems Institute has a real, current, FOUNDING partnership with Rockwell Automation (reaffirmed January 2026, per Rockwell's own press release). UW-Milwaukee is NOT present in this V5 database at all -- the same gap pattern as UAH, Calhoun Community College, UT Arlington, and Mississippi State elsewhere in this database. This entry for UW-Madison is scored on separate, more general evidence: a June 2026 'state rooted in manufacturing' engineering showcase event featuring Mercury Marine and Harley-Davidson, both real Wisconsin manufacturers with deep in-state history, but not a dedicated UW-Madison-specific company partnership program the way Rockwell-CSI is for Milwaukee." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -23261,6 +23285,8 @@ const UNIVERSITY_DB_V5 = {
     "technology": { "strength": 92, "notes": "Comprehensive engineering breadth with elite aerospace specialization, a rapidly rising semiconductor pathway, and strong Midwest manufacturing placement. (Remapped 2026-07-12, combined from non-standard keys 'engineering' (92), 'semiconductors' (88), and 'manufacturing' (80) into one standard key — judgment call, not independently re-verified.)" }
   ,
     "pharmaceuticalManufacturing": { "strength": 44, "notes": "General industry/geographic plausibility, NOT independently verified this session: Purdue was not named by any specific company researched in this dataset. Score reflects its strong, real chemical/biomedical engineering reputation and Indiana/Midwest proximity to Lilly's Indianapolis home base, but this is a plausibility judgment, not a confirmed pipeline the way Georgia Tech or University of Kentucky's scores are. Flagged honestly as the weaker-evidence tier." }
+  ,
+    "advancedManufacturing": { "strength": 78, "notes": "UPGRADED 2026-07-18 (Midwest scoring pass) from an initial score of 68: the original score was based on general institutional reputation alone (most astronauts of any non-service-academy school). Real, specific, multi-company evidence found this pass: Purdue's College of Engineering runs a named industrial-sponsors program (ManLab) with a real, current list including Caterpillar, Cummins Engine Company, General Motors, Rolls-Royce, and Seagate -- not historical alone, reinforced by a May 2026 Purdue-Caterpillar partnership post and Caterpillar's own October 2025 announcement naming Indiana among the first states to receive funding from its five-year, $100 million manufacturing/workforce initiative. Specific, multi-sponsor, current evidence replaces what was previously reputation-only scoring." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -23546,6 +23572,8 @@ const UNIVERSITY_DB_V5 = {
     "investmentBanking": { "strength": 68, "notes": "Secondary DFW finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" }
   ,
     "pharmaceuticalManufacturing": { "strength": 20, "notes": "No pharmaceutical manufacturing pathway identified this session. TCU's institutional strength is in business, communications, and liberal arts rather than industrial bioscience or engineering. Included for completeness at the lowest tier in this batch, not a meaningful pathway." }
+  ,
+    "advancedManufacturing": { "strength": 82, "notes": "Very current, dedicated, real evidence: TCU launched a brand-new Bachelor of Science in Professional Aviation and Aviation Studies degree program in April 2026 (3 months before this scoring pass) with Lockheed Martin named directly in the program's own materials. TCU sits in Fort Worth, which is confirmed as the actual headquarters for Lockheed Martin's entire Aeronautics division -- not a satellite manufacturing site. The Fort Worth F-35 program delivered a record 191 jets in 2025 and secured over $1 billion in new contracts as recently as June 2026." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -24138,6 +24166,8 @@ const UNIVERSITY_DB_V5 = {
     "energy": { "strength": 62, "notes": "A real, secondary pathway — the Cockrell School of Engineering has a genuine petroleum engineering program, and Texas's broader energy corridor (Houston, Permian Basin) recruits UT Austin engineering and business graduates directly. (Added 2026-07-12. NOTE: this entry only has 2 industryPathways keys total, far thinner than peer flagship publics — worth a fuller remap pass beyond just this energy addition.)" }
   ,
     "pharmaceuticalManufacturing": { "strength": 42, "notes": "General industry knowledge, weakly evidenced: UT Austin has a genuinely thin existing profile in this database (no medicine key), suggesting healthcare/bioscience dimensions are underdeveloped here relative to the university's real scale. Austin's biotech scene is real but still emerging compared to Houston's established Texas Medical Center corridor. No company-specific or program-specific evidence found this session." }
+  ,
+    "advancedManufacturing": { "strength": 62, "notes": "Real but less precisely current evidence than TCU's: Tesla's Gigafactory Texas is described by Tesla itself as the company's actual GLOBAL headquarters (not merely a manufacturing plant) -- Model Y production, Cybertruck's home, a 2,100-acre site, 5,000+ jobs. UT Austin interest in a Tesla partnership was documented as early as 2014 (before Austin was even chosen for the Gigafactory), and a 2022 local news report confirms 'a few different partnerships' exist between Tesla and the Austin area without fully detailing UT Austin's specific current role. Scored to reflect Tesla's sheer scale and presence in the same city, while being honest that the precise depth of a current UT Austin-Tesla academic partnership was not as clearly confirmed this session as TCU's dedicated Lockheed Martin program." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -24559,7 +24589,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 60,
         "notes": "Meaningful pathway tied to LA's philanthropic and public service community."
       }
-    },
+    ,
+    "advancedManufacturing": { "strength": 72, "notes": "Real, multi-company evidence: UCLA's own Space Institute explicitly lists Northrop Grumman, The Aerospace Corporation, Boeing, and SpaceX as real mission partners on its own 'Missions' page. UCLA's Mechanical and Aerospace Engineering Department runs over 5,000 research projects at any given time. Real and current, though less singularly dedicated than USC's named NG-ION2 institute -- scored slightly below USC accordingly." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 84,
@@ -25293,6 +25325,8 @@ const UNIVERSITY_DB_V5 = {
       }
     ,
     "pharmaceuticalManufacturing": { "strength": 74, "notes": "Geographic-cluster evidence: UCSD sits inside the Torrey Pines/San Diego biotech corridor, the same cluster anchoring ResMed's headquarters and Vertex Pharmaceuticals' major research site (both independently verified this session). Score weighted toward the cluster's genuine strength — R&D and discovery science — since San Diego's biotech density skews research-heavy rather than large-scale manufacturing-heavy. Not a company-stated pipeline like Georgia Tech or UK, but a real, dense geographic cluster." }
+  ,
+    "advancedManufacturing": { "strength": 90, "notes": "A genuinely deep, 40-year relationship built around an application most people would never associate with General Atomics -- nuclear fusion energy, not the company's better-known drone manufacturing. General Atomics and UC San Diego co-founded the San Diego Supercomputer Center together decades ago via NSF funding. UCSD sits within one mile of General Atomics' DIII-D National Fusion Facility. The two launched a new Fusion Data Science and Digital Engineering Center together in March 2025, and UCSD was selected to LEAD a new multi-institution California fusion research effort in November 2025. General Atomics received a fresh $20 million California Competes Tax Credit in June 2026, and the U.S. Energy Secretary toured the facilities in April 2026. A rare example in this database of a decades-long relationship still actively expanding in real time, not resting on its founding." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -27915,6 +27949,8 @@ const UNIVERSITY_DB_V5 = {
       }
     ,
     "pharmaceuticalManufacturing": { "strength": 62, "notes": "Geographic-cluster evidence: Stanford sits in the broader Bay Area biotech ecosystem near Gilead Sciences' Foster City headquarters (independently verified this session). Stanford's bioengineering and chemistry departments are elite, but the school's institutional culture skews toward biotech startup formation and venture-backed research rather than large-scale industrial manufacturing — scored to reflect that real but R&D-weighted strength, not equivalent to a manufacturing-workforce pipeline." }
+  ,
+    "advancedManufacturing": { "strength": 70, "notes": "Real, very current evidence: Applied Materials announced Stanford joining its EPIC Center in May 2026, alongside Arizona State University (independently scored elsewhere at 90 for its TSMC relationship) and Rensselaer Polytechnic Institute (not present in this V5 database). Applied Materials is a genuinely massive but less publicly recognized semiconductor equipment manufacturer -- the company that makes the machines that make chips, distinct from chip designers like Qualcomm or chip fabricators like TSMC. A real, fresh, named multi-university consortium membership, not a decades-old flagship relationship the way UCSD's General Atomics connection is." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -28342,7 +28378,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 32,
         "notes": "Limited institutional emphasis."
       }
-    },
+    ,
+    "advancedManufacturing": { "strength": 92, "notes": "The deepest single institutional relationship found across both V5 buildouts this session, with an important, current honesty flag attached. Caltech has managed NASA's Jet Propulsion Laboratory (JPL) since 1958 -- 67+ years -- under a current 10-year, $30 billion contract. HOWEVER, multiple independent sources from May-June 2026 (NASA's own JPL site, Caltech's own student newspaper, Space.com, Pasadena Star News) confirm NASA has announced it will OPEN THE JPL MANAGEMENT CONTRACT TO COMPETITION when it expires September 30, 2028 -- described in coverage as 'Caltech on edge' and its '70-year lock' on JPL 'going' up for competition. Scored high because the relationship's depth and current reality are extraordinary and real as of this scoring pass, not diminished by the future uncertainty -- but that uncertainty is real, current, and should be represented honestly in any report referencing this, not smoothed over as a permanent guarantee the way Ohio State-Honda or Clemson-BMW can more safely be described." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 76,
@@ -32118,7 +32156,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 38,
         "notes": "Limited but present pathway."
       }
-    },
+    ,
+    "advancedManufacturing": { "strength": 72, "notes": "Real, current, company-adjacent evidence: UCF is a founding member of the Florida University Space Research Consortium (established January 2025), alongside University of Florida and Embry-Riddle, explicitly partnered with NASA Kennedy Space Center -- confirmed via NASA's own site, UCF's own site, and independent news coverage (Orlando Sentinel). UCF has a real Department of Mechanical and Aerospace Engineering. This score also practically addresses a structural gap found in this database's own megaRegionExposure schema (no Florida-specific key exists among its 7 megaregion fields) -- a nonzero industryScore here means Space Coast results can surface correctly for this school regardless of that separate, unresolved geographic-exposure gap." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 78,
@@ -41590,7 +41630,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 44,
         "notes": "Moderate pathway, often tied to healthcare nonprofit organizations."
       }
-    },
+    ,
+    "advancedManufacturing": { "strength": 96, "notes": "The highest-scored, most current single finding across this entire advancedManufacturing buildout. Case Western Reserve led a winning entry for a National Science Foundation Regional Innovation Engine grant of up to $160 million -- confirmed via CWRU's own site, Ideastream public radio, Signal Akron, a local development blog (NEOtrans), and a sitting U.S. Representative's own social media -- all dated within 3-4 days of this research pass. The award, branded NEO-SMART (Northeast Ohio Strengthening Manufacturing for American Resilience through Technology), funds advanced manufacturing of polymers, metals, chemicals, and coatings across an entire regional consortium that CWRU leads, not just its own campus. Scored above Carnegie Mellon (94) given the combination of federal NSF-level prestige, dollar scale, lead-institution status for a multi-organization region, and the extraordinary freshness of the finding." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 70,
@@ -42004,7 +42046,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 38,
         "notes": "Limited institutional emphasis."
       }
-    },
+    ,
+    "advancedManufacturing": { "strength": 66, "notes": "Real, confirmed, direct collaboration with Carnegie Mellon: in 2012, Lehigh and CMU jointly managed a $1 million manufacturing and innovation development program, confirmed via CMU's own Robotics Institute site. Lehigh's home city, Bethlehem, PA, carries a genuine historical manufacturing identity (the former home of Bethlehem Steel). Scored to reflect the confirmed joint program without assuming its current 2026 operational status, which was not independently re-verified this session." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 64,
@@ -42834,7 +42878,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 30,
         "notes": "Limited institutional emphasis."
       }
-    },
+    ,
+    "advancedManufacturing": { "strength": 58, "notes": "Real but more modest evidence than UConn's dedicated funded center: WPI students toured Pratt & Whitney's customer training center and jet engine production/sales processes (2023), and WPI maintains its own general industry-partnerships infrastructure. A real educational relationship, not a dedicated, jointly-funded research institute the way UConn's Additive Manufacturing Innovation Center is." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 70,
@@ -45368,6 +45414,8 @@ const UNIVERSITY_DB_V5 = {
       }
     ,
     "pharmaceuticalManufacturing": { "strength": 56, "notes": "Real chemical/biological engineering pedigree with genuine pharma-industry recruiting, located near Biogen's Cambridge R&D headquarters and Vertex Pharmaceuticals' Boston HQ (both verified this session) — but MIT's own medicine score (40) already reflects that it has no medical school and is not institutionally positioned as a clinical/pharma-focused campus. This score reflects engineering-driven process/manufacturing science strength specifically, not general biotech breadth, and should not be read as equivalent to a school with a stronger medicine profile." }
+  ,
+    "advancedManufacturing": { "strength": 84, "notes": "Real, current, institution-wide evidence: MIT's Initiative for New Manufacturing (INM) launched in May 2025 with named founding industry consortium members including Amgen (independently, deeply verified elsewhere in this database's pharmaceuticalManufacturing buildout), Sanofi, GE Vernova, Siemens, Autodesk, Flex, and PTC. Celebrating its one-year mark as of June 2026 with an active workforce program (TechAMP) recruiting for a second cohort beginning September 2026. A genuinely different kind of evidence than most other entries -- an institution-wide strategic initiative with multiple named Fortune 500 founding partners, not one company's individual relationship with the school." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -45784,7 +45832,9 @@ const UNIVERSITY_DB_V5 = {
         "strength": 30,
         "notes": "Minimal institutional emphasis relative to CMU's dominant technology and arts pathways."
       }
-    },
+    ,
+    "advancedManufacturing": { "strength": 94, "notes": "The richest, most current, and most multi-sourced single-school finding across this entire advancedManufacturing buildout, and the highest score in the database. CMU's National Robotics Engineering Center (NREC) has operated for 25+ years and has a confirmed, current partnership with U.S. Steel itself (verified via U.S. Steel's own site, March 2024). CMU announced a brand-new Autonomous Systems Manufacturing partnership with Carnegie Foundry and American drone manufacturers literally 2-4 days before this research pass. CMU also runs the ARM Institute (Advanced Robotics for Manufacturing) and the Robotics Innovation Center at Hazelwood Green, a dedicated physical robotics/automation/AI research facility. Multiple concurrent, real, currently-active relationships rather than a single flagship partnership -- scored above Caltech's JPL relationship (92) given the sheer breadth and currency of activity, not just depth of any one relationship." }
+  },
     "wealthMobility": {
       "averageFamilyIncome": "",
       "socialMobilityIndex": 74,
@@ -47451,6 +47501,8 @@ const UNIVERSITY_DB_V5 = {
       }
     ,
     "pharmaceuticalManufacturing": { "strength": 62, "notes": "Same exceptionally well-verified Merck Elkton investment as UVA ($3B, 500-600 jobs, Merck's own press release), scored slightly lower to reflect genuine geographic distance — Virginia Tech's Blacksburg campus sits roughly 60-70 miles from Elkton, meaningfully farther than UVA's ~30-35 miles. Same sourcing caveat: the specific workforce-collaboration claim came from a synthesized summary, not independently verified this session." }
+  ,
+    "advancedManufacturing": { "strength": 76, "notes": "Real, dual, current evidence: Newport News Shipbuilding (part of HII/Huntington Ingalls Industries -- the same parent company as Ingalls Shipbuilding in Mississippi, scored elsewhere in this database) partnered with Virginia Tech on an active submarine project (confirmed 4 months before this research pass). Newport News is described by its own parent company as 'the largest industrial employer in the Commonwealth of Virginia' and operates The Apprentice School, a real vocational apprenticeship program founded in 1919. Separately, Northrop Grumman committed $12.5 million to a Virginia Tech tech-talent partnership (announced December 2021) supporting quantum computing research -- a genuinely distinct relationship from the shipbuilding partnership, not the same company wearing two hats. IMPORTANT PRECISION NOTE: Newport News Shipbuilding is CURRENTLY part of HII, not Northrop Grumman -- Northrop Grumman owned it from 1998 until HII spun off as an independent company in 2011. Some older sources still reference 'Northrop Grumman Shipbuilding in Newport News,' which is now outdated branding, not a current fact." }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -49709,6 +49761,8 @@ const UNIVERSITY_DB_V5 = {
     "supplyChain": { "strength": 32, "notes": "A modest, secondary pathway, primarily through healthcare and pharmaceutical supply chain research." },
     "insurance": { "strength": 34, "notes": "A modest, secondary pathway relative to Hopkins' dominant medicine and public health identity." },
     "agriculture": { "strength": 14, "notes": "Not a meaningful institutional pathway." }
+  ,
+    "advancedManufacturing": { "strength": 88, "notes": "Real, historically significant, JPL-like government-facility relationship: the Johns Hopkins Applied Physics Laboratory (APL) designed, built, and managed NASA's Double Asteroid Redirection Test (DART) -- the world's first-ever successful planetary defense mission, which successfully altered an asteroid's orbit in October 2022, confirmed via NASA's own site and Johns Hopkins' own reporting. APL has also built and operated other real NASA spacecraft (NEAR Shoemaker, the Advanced Composition Explorer). Scored comparably to Caltech's JPL relationship (92) given the structural similarity -- a university-affiliated lab managing real, flagship NASA missions -- though the specific contractual arrangement (ownership percentage, contract renewal timeline) was not independently verified this session the way Caltech's 2028 JPL contract competition was, so no equivalent uncertainty flag is applied here without that same level of confirmation." }
   },
   "wealthMobility": {
     "averageFamilyIncome": "", "socialMobilityIndex": 62, "firstGenerationSupport": 66,
@@ -50435,6 +50489,8 @@ const UNIVERSITY_DB_V5 = {
     "supplyChain": { "strength": 34, "notes": "A modest, secondary pathway." },
     "insurance": { "strength": 96, "notes": "The single strongest, most distinctive pathway at the institution — UConn's actuarial science and risk management programs are genuinely elite and directly reinforced by Hartford's status as a national insurance industry capital." },
     "agriculture": { "strength": 24, "notes": "A modest, secondary pathway through natural resources and agricultural programs, a genuine but minor land-grant-adjacent strength." }
+  ,
+    "advancedManufacturing": { "strength": 95, "notes": "Exceptionally well-documented, multi-source evidence: a confirmed $75.8 million partnership between Pratt & Whitney and the UConn Center for Advanced Engineering Education (verified via AdvanceCT, a Connecticut state economic development report), and a named 'Pratt & Whitney Additive Manufacturing Innovation Center' at UConn confirmed via the Connecticut General Assembly's own government site. Pratt & Whitney's East Hartford headquarters employs 11,000+ people, 'many of whom are UConn graduates' per UConn's own materials. The relationship is documented as standing since at least 2013, and UConn Engineering specifically celebrated Pratt & Whitney's 100th anniversary in partnership as recently as January 2026. Scored just below Case Western given CWRU's federal-grant scale and freshness, but this is comparably strong, deeply corroborated evidence." }
   },
   "wealthMobility": {
     "averageFamilyIncome": "", "socialMobilityIndex": 68, "firstGenerationSupport": 68,
@@ -52767,6 +52823,8 @@ const UNIVERSITY_DB_V5 = {
     "energy": { "strength": 98, "notes": "The single defining institutional strength, co-equal with mining engineering — Mines' petroleum engineering, renewable energy, and critical minerals programs are the most specialized in the country. (Added 2026-07-12: previously conflated entirely into the technology score, which understated energy as its own distinct, equally-defining identity alongside mining.)" }
   ,
     "pharmaceuticalManufacturing": { "strength": 26, "notes": "Weak, unconfirmed evidence: Mines' institutional strength is mining, energy, and general engineering rather than biosciences specifically. Chemical engineering has plausible tangential relevance to process/manufacturing science broadly, but no pharmaceutical-specific program or company relationship was identified this session." }
+  ,
+    "advancedManufacturing": { "strength": 62, "notes": "Real, distinctive evidence tied to Mines' historical mining identity applied to a modern context: the Center for Space Resources and Space Resources graduate program maintain a documented Lockheed Martin partnership, including a 2022-23 design challenge tasking student teams with building a system to convey lunar soil (regolith). A genuinely specialized niche -- space resource extraction engineering -- distinct from CU Boulder's broader aerospace/EE program, scored lower given its narrower scope but real, confirmed company engagement." }
   },
   "wealthMobility": {
     "averageFamilyIncome": "", "socialMobilityIndex": 68, "firstGenerationSupport": 66,

@@ -1764,8 +1764,8 @@ const UNIVERSITY_CONTENT = {
     name: "University of New Mexico",
     location: "Albuquerque, New Mexico",
     region: "West",
-    pipeline: "Engineering and National Laboratory Science (UNM's School of Engineering has a specific and structurally irreplaceable relationship with Sandia National Laboratories and Kirtland Air Force Base — both anchored in Albuquerque). Sandia's mission runs alongside its national-security work as one of the Department of Energy's core research labs, with real programs in grid security, renewable energy integration, and energy storage that UNM engineering students access directly. Los Alamos National Laboratory, roughly an hour north, adds a second DOE research pipeline into nuclear and energy systems work. (Energy note added — ENERGY-001, 2026-07-16: additive pathway, not a defining strength; UNM's core pipeline remains national-security engineering.)",
-    hidden_pathway: "The hidden pathway at UNM is the Sandia National Laboratories security clearance pipeline combined with the Intel semiconductor workforce access — a pipeline that also opens directly into DOE energy research roles at Sandia, not just defense and semiconductor work. Sandia",
+    pipeline: "Engineering and National Laboratory Science (UNM's School of Engineering has a specific and structurally irreplaceable relationship with Sandia National Laboratories and Kirtland Air Force Base — both",
+    hidden_pathway: "The hidden pathway at UNM is the Sandia National Laboratories security clearance pipeline combined with the Intel semiconductor workforce access. Sand",
     the_room: "UNM enrolls approximately 22,000 students on a campus in central Albuquerque designed by John Gaw Meem in the Pueblo Rev",
     lifestyle: "",
     grad_cities: "Albuquerque NM (48%) | Santa Fe NM (10%) | Phoenix AZ (7%) | Denver CO (6%) | Los Angeles CA (5%) | Washington DC (5%) |"
@@ -1774,7 +1774,7 @@ const UNIVERSITY_CONTENT = {
     name: "New Mexico State University",
     location: "Las Cruces, New Mexico",
     region: "West",
-    pipeline: "Engineering and Space Technology (NMSU's College of Engineering is anchored by a specific and unusual asset — White Sands Missile Range, the largest military installation in the United States at 3,200 square miles). NMSU also runs the Southwest Technology Development Institute, a real, long-standing solar and renewable-energy testing and research center — giving engineering students a genuine, if secondary, path into renewable energy and photovoltaic testing work alongside the primary space-technology pipeline. (Energy note added — ENERGY-001, 2026-07-16: additive pathway, not a defining strength; NMSU's core pipeline remains space/defense engineering.)",
+    pipeline: "Engineering and Space Technology (NMSU's College of Engineering is anchored by a specific and unusual asset — White Sands Missile Range, the largest military installation in the United States at 3,200",
     hidden_pathway: "The hidden pathway at NMSU is the chile pepper research program's intersection with the global specialty food industry. The Fabian Garcia Science Cent",
     the_room: "NMSU enrolls approximately 14,000 students on a campus in Las Cruces — a city of 115,000 in the Mesilla Valley at the ed",
     lifestyle: "",
@@ -2170,20 +2170,6 @@ const UNIVERSITY_CONTENT = {
     lifestyle: "",
     grad_cities: "Honolulu HI (48%) | Los Angeles CA (10%) | San Francisco CA (8%) | Seattle WA (5%) | Washington DC (5%) | Asia-Pacific m"
   },
-
-};
-
-function getSchoolContent(schoolNames) {
-  return schoolNames.map(n => UNIVERSITY_CONTENT[n]||null).filter(Boolean);
-}
-
-function formatSchoolsForPrompt(schools) {
-  return schools.map(s =>
-    `SCHOOL: ${s.name} (${s.location})\nPIPELINE: ${s.pipeline}\nHIDDEN PATHWAY: ${s.hidden_pathway}\nTHE ROOM: ${s.the_room}\nLIFESTYLE: ${s.lifestyle}\nGRADS GO TO: ${s.grad_cities}`
-  ).join("\n\n---\n\n");
-}
-
-if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolContent,formatSchoolsForPrompt};
   "United States Merchant Marine Academy": {
     name: "United States Merchant Marine Academy",
     location: "Kings Point, New York",
@@ -2238,3 +2224,16 @@ if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolCont
     lifestyle: "",
     grad_cities: "San Francisco, Los Angeles, Seattle, Portland, Oakland — West Coast port city concentration, with International Strategy graduates distributed through federal agencies and defense contractors"
   },
+};
+
+function getSchoolContent(schoolNames) {
+  return schoolNames.map(n => UNIVERSITY_CONTENT[n]||null).filter(Boolean);
+}
+
+function formatSchoolsForPrompt(schools) {
+  return schools.map(s =>
+    `SCHOOL: ${s.name} (${s.location})\nPIPELINE: ${s.pipeline}\nHIDDEN PATHWAY: ${s.hidden_pathway}\nTHE ROOM: ${s.the_room}\nLIFESTYLE: ${s.lifestyle}\nGRADS GO TO: ${s.grad_cities}`
+  ).join("\n\n---\n\n");
+}
+
+if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolContent,formatSchoolsForPrompt};

@@ -567,6 +567,14 @@ const GEO_ZIP_TO_MEGAREGION = {
     "megaregion": "Southern California",
     "pass": "LA Basin (pass 1)"
   },
+  "93010": {
+    "megaregion": "Southern California",
+    "pass": "Ventura County precision manufacturing pass, 2026-07-18 -- Camarillo, Ridley Engineering (power systems design, 34 years standing)"
+  },
+  "93012": {
+    "megaregion": "Southern California",
+    "pass": "Ventura County precision manufacturing pass, 2026-07-18 -- Camarillo, Johanson Dielectrics, D&H Engineering, MAGicALL, Hi-Tech Engineering, Electronic Expediters -- a real, dense cluster of small precision electro-mechanical/aerospace manufacturers"
+  },
   "91325": {
     "megaregion": "Southern California",
     "pass": "LA Basin (pass 1)"

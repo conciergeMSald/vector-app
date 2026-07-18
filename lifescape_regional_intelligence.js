@@ -66,6 +66,14 @@ const REGIONAL_INTELLIGENCE = {
         note: 'Distinct from the San Diego biotech corridor above — this is Southern California\'s pharmaceutical MANUFACTURING cluster, not its research cluster. A student can move between the two without leaving the region: San Diego trains the scientists, Thousand Oaks/Van Nuys is where a meaningful share of them end up producing the drug at scale.'
       },
       {
+        name: 'Precision Manufacturing & Electronics',
+        anchor: 'Camarillo (Ventura County)',
+        industries: ['Precision CNC Machining','Electro-Mechanical Assembly','Power Electronics Design','Electric Motor & Generator Manufacturing','Aerospace/Defense Component Manufacturing'],
+        employers: ['Johanson Dielectrics', 'D&H Engineering', 'MAGicALL', 'Hi-Tech Engineering', 'Ridley Engineering', 'Electronic Expediters Inc.'],
+        naics: [33, 54],
+        note: 'A real, dense cluster of small, privately-held precision manufacturers sitting in the same Camarillo/Ventura County corridor as the pharma companies above (Amgen, Baxter) — genuinely different products (motors, capacitors, CNC-machined aerospace parts) rather than drugs, kept as a separate corridor since NAICS 33/54 and NAICS 32 route to different V5 pathways. None of these six companies are large enough to appear in national news or have dedicated university partnerships the way BMW-Clemson or Rockwell-UWM do — but together they represent the kind of dense, real, unglamorous manufacturing employment base that a single famous anchor company can obscure. Ridley Engineering (naics:54, design/consulting) is genuinely different in kind from the other five (naics:33, physical production) — a design/consulting door into the same industry, not a production job.'
+      },
+      {
         name: 'Startup & Venture Ecosystem',
         anchor: 'Distributed — Venice / Culver City / Pasadena / Orange County',
         industries: ['Early Stage Tech','D2C Brands','Health Tech','Climate Tech','Venture Capital'],
@@ -656,6 +664,7 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'Fashion, Beauty & Cosmetics',        naics: [31, 44],     riasec: ['A','E','R'] },
     { corridorName: 'Pharmaceutical & Biotech',           naics: [62, 54],     riasec: ['I','R','S'] },
     { corridorName: 'Pharmaceutical Manufacturing & CDMO', naics: [32, 33],    riasec: ['R','C','I'] }, // corrected Chunk 4
+    { corridorName: 'Precision Manufacturing & Electronics', naics: [33, 54], riasec: ['R','C','I'] },
     { corridorName: 'Startup & Venture Ecosystem',        naics: [54, 51, 81], riasec: ['E','I','C'] }
   ],
   bayarea: [
