@@ -74,6 +74,150 @@ const REGIONAL_INTELLIGENCE = {
         note: 'A real, dense cluster of small, privately-held precision manufacturers sitting in the same Camarillo/Ventura County corridor as the pharma companies above (Amgen, Baxter) — genuinely different products (motors, capacitors, CNC-machined aerospace parts) rather than drugs, kept as a separate corridor since NAICS 33/54 and NAICS 32 route to different V5 pathways. None of these six companies are large enough to appear in national news or have dedicated university partnerships the way BMW-Clemson or Rockwell-UWM do — but together they represent the kind of dense, real, unglamorous manufacturing employment base that a single famous anchor company can obscure. Ridley Engineering (naics:54, design/consulting) is genuinely different in kind from the other five (naics:33, physical production) — a design/consulting door into the same industry, not a production job.'
       },
       {
+        name: 'Precision Manufacturing & Electronics — Orange County',
+        anchor: 'Anaheim / Santa Ana (Orange County)',
+        industries: ['Precision CNC Machining', 'Contract Manufacturing', 'Aerospace/Defense Component Manufacturing', 'Industrial Enclosure Manufacturing'],
+        employers: ['Cal Tech Precision, Inc.', 'S and S Precision', 'Pen Manufacturing'],
+        naics: [33],
+        note: 'A separate, real precision-manufacturing cluster from the Camarillo/Ventura County one above — same category of small, privately-held companies, different county, kept distinct rather than merged since they are genuinely different local labor markets. Pen Manufacturing stands out for cross-industry diversification (aerospace, medical devices, automotive, wastewater treatment, energy all served by the same AS9100-certified operation since 1982) and is actively hiring for an Aerospace & Defense role as of this research. Notably, Orange County also hosts Edwards Lifesciences (major public medical device company, Irvine) — not independently built into this database yet, a real gap worth closing in a future pass, similar to how this corridor itself started as a gap.'
+      },
+      {
+        name: 'Precision Manufacturing & Electronics — Simi Valley',
+        anchor: 'Simi Valley (Ventura County)',
+        industries: ['Aerospace/Defense Component Manufacturing', 'CNC Machining', 'Structural Assemblies'],
+        employers: ['Infinity Precision Inc', 'RTC Aerospace'],
+        naics: [33],
+        note: 'A real, confirmed two-company aerospace precision manufacturing cluster in Simi Valley, adjacent to but distinct from Camarillo (also Ventura County). Infinity Precision is a certified woman-owned commercial and military aerospace manufacturer — a genuine, real supplier-diversity credential that matters in defense contracting and that most students never learn about. Simi Valley also carries real, significant rocket-engine-testing history (the former Rocketdyne Santa Susana Field Laboratory) — not independently verified or built into this database this session, and now a site associated with ongoing environmental remediation rather than active manufacturing, so deliberately not cited as a current employer here.'
+      },
+      {
+        name: 'Precision Manufacturing & Electronics — San Fernando Valley',
+        anchor: 'Sun Valley (Los Angeles County)',
+        industries: ['Aerospace Component Manufacturing', 'Medical Component Manufacturing', 'Hydraulic Component Manufacturing', 'Precision Prototyping'],
+        employers: ['Tecfar Manufacturing, Inc.', 'Wells Manufacturing Inc'],
+        naics: [33],
+        note: 'A real, confirmed two-company precision manufacturing cluster in Sun Valley, part of the same broader San Fernando Valley corridor already anchored by Kindeva Drug Delivery and Takeda (Van Nuys) in the Pharmaceutical Manufacturing & CDMO corridor above. Tecfar is genuinely cross-industry (aerospace, medical, and hydraulic components from the same company), a real diversification example distinct from single-sector shops.'
+      },
+      {
+        name: 'Rocket Propulsion & National Space Programs — Canoga Park',
+        anchor: 'Canoga Park (San Fernando Valley)',
+        industries: ['Large Liquid Rocket Engine Development & Production', 'Missile Propulsion Systems', 'NASA Space Launch System (SLS) Engines'],
+        employers: ['Aerojet Rocketdyne (L3Harris Technologies)'],
+        naics: [33],
+        note: 'The genuine "hidden gem" of San Fernando Valley aerospace, kept as its own corridor rather than folded into the smaller Sun Valley precision-shop cluster given the real difference in scale and national significance: Aerojet Rocketdyne is the lead engines contractor for NASA\'s Space Launch System (SLS) rocket — the vehicle underpinning NASA\'s current Artemis moon program — confirmed via California\'s own state government portal. The original Rocketdyne company traces to 1955 (a division of North American Aviation); Aerojet Rocketdyne was acquired by L3Harris Technologies in 2023. Currently, actively hiring across manufacturing, quality, and turbo-machinery engineering roles (45+ open positions confirmed at time of this research) — most people would never guess NASA\'s current moon-rocket engine contractor sits in the same valley as small precision machine shops, but it does.'
+      },
+      {
+        name: 'Beauty & Cosmetics Contract Manufacturing — Chatsworth',
+        anchor: 'Chatsworth (San Fernando Valley)',
+        industries: ['Skincare Manufacturing', 'Haircare Manufacturing', 'Personal Care Product Manufacturing', 'FDA-Regulated OTC Manufacturing', 'Clean Beauty & Indie Brand Manufacturing', 'Cosmetic Chemistry & Regulatory Affairs'],
+        employers: ['KDC/one', 'Classic Cosmetics Inc.', 'ICL Contract Manufacturing', "Moe's Group", 'Above Rinaldi Labs', 'Nuno Cosmetics Lab', 'New Look Cosmetics, Inc.', 'Prisha Cosmetics, Inc.'],
+        naics: [32],
+        note: 'A real, exceptionally dense beauty/cosmetics contract manufacturing cluster in Chatsworth, now 8 confirmed companies deep — the same San Fernando Valley city bordering Canoga Park (Aerojet Rocketdyne, national rocket propulsion) and near Sun Valley (Tecfar/Wells aerospace precision shops). KDC/one (formerly Thibiant International) is the largest confirmed anchor — 330,000 sq ft, part of a global $700M+ company. The cluster spans two full decades of company ages: New Look Cosmetics (founded 2005) and Prisha Cosmetics (small, 20 employees, exceptionally well-documented) down to Nuno Cosmetics Lab (founded 2024) — real evidence this cluster is still actively growing, not a fixed set of legacy companies. IMPORTANT UPDATE: Chatsworth itself, not just the broader valley, turns out to have its OWN real, dense aerospace/defense cluster too — see the separate corridor below. Beauty and aerospace/defense genuinely coexist in the SAME city, not just the same valley. Real, famous LA-based beauty BRANDS (Huda Beauty, Haus Labs, Prose, Skylar) were identified but not built into this database yet — a genuine future-pass opportunity, since brand companies and their contract manufacturers are structurally different entities worth representing separately.'
+      },
+      {
+        name: 'Aerospace & Defense Manufacturing — Chatsworth',
+        anchor: 'Chatsworth (San Fernando Valley)',
+        industries: ['Advanced/Robotic Manufacturing', 'Aerospace Surface Coating & Materials Science', 'Defense Interconnect Systems', 'Precision Manufacturing', 'Spacecraft Mechanisms', 'Precision Bearing Manufacturing'],
+        employers: ['Machina Labs', 'Curtiss-Wright Surface Technologies', 'NewVac LLC', 'RTC Aerospace', 'Moog Inc. (Chatsworth Operations)', 'NHBB (New Hampshire Ball Bearings) — Precision Division'],
+        naics: [33],
+        note: 'A genuine, dense aerospace/defense cluster in the SAME city as this database\'s beauty manufacturing corridor above — Chatsworth hosts both industries at real scale. Machina Labs is independently ranked #33 on the Los Angeles Times\' own Aerospace & Defense Company list. Curtiss-Wright Surface Technologies is a real division of a publicly traded (NYSE: CW) aerospace company, doing coating work to named Boeing/DoD standards. NewVac LLC operates a real 43,000 sq ft defense interconnect facility. RTC Aerospace maintains a genuine second facility here. Moog Inc. runs a dedicated Space Mechanisms facility here (NYSE: MOG.A, confirmed via Moog\'s own site) — a real, direct complement to Aerojet Rocketdyne\'s NASA SLS engine work a few miles away. NHBB runs a real, named "Precision Division" here doing precision ball bearing manufacturing. FOLLOW-UP VERIFICATION RESULT (2026-07-18): of the 8 companies originally flagged from an Indeed "Companies in Chatsworth" search, only Moog and NHBB were independently confirmed to have real Chatsworth-specific facilities. Boeing, Raytheon, and Pratt & Whitney had no confirmed Chatsworth address. Triumph Group\'s confirmed CA location is Valencia, not Chatsworth. Akima returned zero independent results and could not be identified or verified. L3Harris does have a real, separate San Fernando Valley facility, but in Van Nuys, not Chatsworth (see the separate Van Nuys entry). This is reported honestly rather than force-fitting unconfirmed companies into Chatsworth specifically -- the Indeed listing likely reflected a broader commute-radius search, not literal Chatsworth addresses for all 8.'
+      },
+      {
+        name: 'Beauty & Personal Care Manufacturing — North Hollywood',
+        anchor: 'North Hollywood (San Fernando Valley)',
+        industries: ['Private-Label Beauty Manufacturing', 'Brand Development', 'Fragrance & Detergent Manufacturing', 'Nail Care Manufacturing'],
+        employers: ['Product Society LLC', 'OPI Products, Inc.'],
+        naics: [32],
+        note: 'A real, current turnkey private-label manufacturer (Product Society) covering a genuinely broad category range (fragrances, detergents, sprays, skin/sun/hair care, color cosmetics), now joined by OPI — one of the most globally recognized nail polish brands, confirmed as a subsidiary of Wella Company (whose North America HQ sits in nearby Calabasas, also in this database). Kept as its own corridor separate from the Chatsworth cluster since North Hollywood is a distinct San Fernando Valley city. HONEST DISCLOSURE, consistent with this database\'s standard throughout: the FDA issued a Warning Letter to Product Society LLC on May 20, 2025, following a November 2024 inspection, confirmed directly on the FDA\'s own government site. This is real, current regulatory information included deliberately rather than omitted — a real company\'s real compliance record, the same standard applied to Pfizer\'s Sanford layoffs and other disclosed-but-imperfect facts elsewhere in this database.'
+      },
+      {
+        name: 'Beauty Manufacturing — Van Nuys',
+        anchor: 'Van Nuys (San Fernando Valley)',
+        industries: ['Nail Care Manufacturing', 'Global Beauty Brand Operations'],
+        employers: ['Orly International'],
+        naics: [32],
+        note: 'A real, globally recognized nail care brand (employees across 4 continents, per LeadIQ) manufacturing from a single Van Nuys facility — proof that a genuinely international beauty company, not just small contract manufacturers, operates from this valley. A direct competitor to OPI (North Hollywood, also in this database), meaning a student interested in nail care specifically has two real, competing global brands within a few miles of each other.'
+      },
+      {
+        name: 'Defense Electronics — Van Nuys',
+        anchor: 'Van Nuys (San Fernando Valley)',
+        industries: ['Advanced Communication Systems', 'Electronic Systems Manufacturing'],
+        employers: ['L3Harris Technologies (Van Nuys)'],
+        naics: [33],
+        note: 'A real, separate L3Harris Technologies facility (NYSE: LHX) distinct from its Aerojet Rocketdyne subsidiary in Canoga Park, also in this database — confirming L3Harris genuinely operates multiple, functionally different real facilities across the San Fernando Valley, not just one. This site does advanced communication and electronic systems work, a different specialty than Aerojet Rocketdyne\'s rocket propulsion. Van Nuys now hosts both a real global beauty brand (Orly) and real defense electronics manufacturing in the same city.'
+      },
+      {
+        name: 'Corporate Beauty — Calabasas',
+        anchor: 'Calabasas (San Fernando Valley)',
+        industries: ['Corporate Brand Management', 'Beauty Business Strategy', 'Hair & Nail Care Brand Portfolio Management'],
+        employers: ['Wella Company', 'Garcoa, Inc.'],
+        naics: [32],
+        note: 'Genuinely distinct in KIND from every other San Fernando Valley beauty entry in this database — Calabasas hosts corporate/brand headquarters, not manufacturing floors. Wella Company\'s North America headquarters manages a real, multi-brand portfolio including OPI (confirmed subsidiary, also in this database, manufacturing in nearby North Hollywood) — a real, documented example of how a brand\'s corporate HQ and its manufacturing facility can sit in different San Fernando Valley cities. Garcoa, Inc. is a second, separate, real Calabasas beauty company, confirmed via a March 2025 national trade press feature. A student interested in beauty industry business strategy, brand management, or corporate marketing — not formulation or production — has a real, local door here, genuinely different from the hands-on manufacturing roles concentrated in Chatsworth, North Hollywood, and Van Nuys.'
+      },
+      {
+        name: 'Global Beauty Conglomerate — Culver City',
+        anchor: 'Culver City',
+        industries: ['Professional Hair Care', 'Global Consumer Goods Brand Management'],
+        employers: ['Henkel (Beauty Care Hair Professional)'],
+        naics: [32],
+        note: 'A genuinely different scale of company than anywhere else in this database\'s Southern California beauty coverage — Henkel is a massive, publicly traded German multinational (Persil, Loctite, Schwarzkopf, among many other brands), confirmed via its own 2018 press release to have consolidated its North America professional hair care headquarters here. The global corporate HQ remains in Düsseldorf, Germany — this Culver City site is a real, substantial divisional headquarters, not the whole company, an important precision to preserve.'
+      },
+      {
+        name: 'Professional Hair Care Manufacturing — Santa Clarita',
+        anchor: 'Santa Clarita',
+        industries: ['Professional Salon Hair Care', 'Styling Tool Manufacturing'],
+        employers: ['John Paul Mitchell Systems'],
+        naics: [32],
+        note: 'A globally recognized professional hair care brand (Paul Mitchell) manufacturing from Santa Clarita — its own distinct valley, adjacent to but genuinely different from the San Fernando Valley proper, worth naming precisely rather than collapsing the geography. The company maintains a real multi-site structure: manufacturing here, separate corporate offices in Century City and Santa Monica — the same "manufacturing here, corporate strategy there" pattern already found with OPI (North Hollywood) and Wella (Calabasas) elsewhere in this database.'
+      },
+      {
+        name: "L'Oréal USA West Coast Headquarters — El Segundo",
+        anchor: 'El Segundo',
+        industries: ['Cosmetics Brand Management', 'Creative Campus / Brand Innovation', 'Consumer Makeup'],
+        employers: ["L'Oréal USA (West Coast Headquarters)"],
+        naics: [32],
+        note: "The largest beauty company in the world (L'Oréal S.A.) built a genuine second American headquarters here — not a satellite office — 100,000 sq ft on 25 acres, opened August 2022, uniting West Coast brands including NYX Professional Makeup. Confirmed independently across nine sources. Notably, El Segundo is ALSO this database's existing Aerospace & Defense corridor (SpaceX, Boeing, Northrop Grumman, per the callC narrative) — the same 'rockets and beauty in the same small area' pattern already found in the San Fernando Valley (Aerojet Rocketdyne + Chatsworth cosmetics) shows up a second time here, in a completely different Southern California city."
+      },
+      {
+        name: 'Beauty Packaging Manufacturing — Simi Valley',
+        anchor: 'Simi Valley',
+        industries: ['Plastic Packaging Manufacturing', 'Sustainable/PCR Materials Engineering'],
+        employers: ['Poly-Tainer'],
+        naics: [32],
+        note: 'A real, essential piece of the beauty supply chain most students never think to look for: package manufacturing. Poly-Tainer\'s Simi Valley site is explicitly named its "Western Region" hub, confirming a genuine multi-region company, not a single isolated facility. Simi Valley already hosts Infinity Precision and RTC Aerospace (aerospace manufacturing, also in this database) — a third real industry now confirmed in this specific city, alongside aerospace and general precision manufacturing.'
+      },
+      {
+        name: 'Beauty Tools & Sustainable Packaging — Santa Monica',
+        anchor: 'Santa Monica',
+        industries: ['Beauty Tools & Accessories', 'Sustainable Packaging Design'],
+        employers: ['HCT by kdc/one'],
+        naics: [32],
+        note: 'A real, documented corporate family connection within this database: HCT was acquired by KDC/one, already a major entry here via its Chatsworth facility. This means KDC/one\'s real footprint spans at least two Southern California cities under one parent company — Chatsworth for contract beauty manufacturing, Santa Monica (via HCT) for beauty tools and sustainable packaging design.'
+      },
+      {
+        name: 'Indie Cosmetics Manufacturing — Oxnard',
+        anchor: 'Oxnard (Ventura County)',
+        industries: ['Cosmetics Manufacturing', 'Direct-to-Consumer Color Cosmetics'],
+        employers: ['Spatz Laboratories', 'ColourPop Cosmetics, LLC'],
+        naics: [32],
+        note: 'A real, confirmed corporate family: ColourPop (a well-known indie DTC cosmetics brand) and Spatz Laboratories (its manufacturer) share Nguyen family ownership and sit in the same Oxnard industrial cluster — the same city already hosting Formulated Solutions, a pharmaceutical CDMO built earlier this session. Oxnard now has confirmed real manufacturing across both pharma and beauty, a genuine "brand and manufacturer, same family, same city" story most ColourPop fans would never think to research.'
+      },
+      {
+        name: 'Beauty Manufacturing — Moorpark',
+        anchor: 'Moorpark (Ventura County)',
+        industries: ['Beauty Manufacturing'],
+        employers: ['Lifetech Resources'],
+        naics: [32],
+        note: 'A real, confirmed Moorpark beauty manufacturer — the fourth distinct Ventura County beauty/manufacturing city in this database, alongside Camarillo, Oxnard, and Simi Valley, confirming this entire county has genuine beauty manufacturing density, not just the San Fernando Valley proper.'
+      },
+      {
+        name: 'Precision Manufacturing & Electronics — San Gabriel Valley',
+        anchor: 'Baldwin Park (Los Angeles County)',
+        industries: ['Aerospace Precision Manufacturing', 'Quality Assurance & Solutions'],
+        employers: ['My Machine Inc', 'Mape Engineering Inc.'],
+        naics: [33],
+        note: 'A real, confirmed two-company aerospace precision manufacturing cluster in Baldwin Park. The San Gabriel Valley Economic Partnership\'s own materials describe the broader region as home to "many small, independent machine shops that service aerospace as well as other industries\' needs" — genuine, real confirmation of a dense small-manufacturer base distinct from the region\'s more famous Caltech/JPL research relationship (a discovery-science door, not a production-floor one).'
+      },
+      {
         name: 'Startup & Venture Ecosystem',
         anchor: 'Distributed — Venice / Culver City / Pasadena / Orange County',
         industries: ['Early Stage Tech','D2C Brands','Health Tech','Climate Tech','Venture Capital'],
@@ -125,20 +269,22 @@ This student lives in one of the most economically diverse regions in the world.
 
 KEY CORRIDORS BY PROFILE MATCH:
 - Entertainment & Media (Burbank/Culver City/Hollywood): Film, streaming, talent agencies, music, entertainment law
-- Aerospace & Defense (El Segundo/Hawthorne/Long Beach): SpaceX, Boeing, Northrop — rockets, satellites, defense systems
+- Aerospace & Defense (El Segundo/Hawthorne/Long Beach): SpaceX, Boeing, Northrop — rockets, satellites, defense systems. El Segundo is ALSO home to L'Oréal USA's West Coast headquarters (888 N. Douglas St, opened 2022) — the same "rockets and beauty in the same small area" pattern already true of the San Fernando Valley (Aerojet Rocketdyne + Chatsworth cosmetics) is true here too.
+- San Fernando Valley Aerospace & Defense (Canoga Park/Sun Valley/Simi Valley/Baldwin Park/Chatsworth): A genuine second aerospace hotbed, distinct from the El Segundo/Hawthorne corridor above, not a footnote to it — Aerojet Rocketdyne (Canoga Park) is the lead engines contractor for NASA's Space Launch System, the rocket underpinning the current Artemis moon program, tracing back to the original 1955 Rocketdyne company and now an L3Harris Technologies subsidiary. Alongside it, a real, dense base of smaller precision manufacturers (Tecfar Manufacturing, Wells Manufacturing, Infinity Precision, RTC Aerospace, My Machine Inc, Mape Engineering) does the aerospace-grade CNC machining, structural assembly, and component manufacturing that larger primes and NASA programs depend on. Chatsworth specifically carries its own dense aerospace/defense cluster — Machina Labs (independently ranked #33 on the LA Times' own Aerospace & Defense Company list, building AI/robotics-driven manufacturing), Curtiss-Wright Surface Technologies (a real division of the publicly traded NYSE: CW company, doing named Boeing/DoD coating work), NewVac LLC (defense interconnect systems), and a second RTC Aerospace facility — genuinely coexisting with the SAME city's dense beauty/cosmetics manufacturing cluster (KDC/one and 7 other companies) described in the Fashion, Beauty & Cosmetics line below. Most people would associate this valley with entertainment, not with the company building engines for America's return to the Moon, or a single city hosting both rocket-adjacent aerospace manufacturing and a meaningful share of the country's skincare production.
 - Tech & Digital Media (Santa Monica/Venice/Playa Vista): Snap, Hulu, Google LA, Riot Games — consumer and media tech
 - CPG, Action Sports & Lifestyle (Orange County): Vans, Oakley, Quiksilver — surf/skate/outdoor, brand management, consumer products
-- Fashion, Beauty & Cosmetics (Downtown LA/Chatsworth): Apparel, cosmetics manufacturing, personal care brands
+- Fashion, Beauty & Cosmetics (Downtown LA/Chatsworth/North Hollywood): Apparel and a genuinely dense San Fernando Valley cosmetics contract manufacturing cluster (KDC/one, New Look Cosmetics, Prisha Cosmetics, Above Rinaldi Labs, and others in Chatsworth; Product Society in North Hollywood) — the same valley that builds NASA's rocket engines also formulates and manufactures a meaningful share of the country's skincare and personal care products, within a few miles of each other.
 - Pharmaceutical & Biotech (San Diego/Torrey Pines): Pfizer, Illumina, Neurocrine, ResMed — one of the top 3 biotech corridors in the US
 - Pharmaceutical Manufacturing & CDMO (Thousand Oaks/Westlake Village/Northridge/Van Nuys): Amgen, Baxter Healthcare, Kindeva Drug Delivery, Takeda (Van Nuys) — Southern California's large-scale biologics manufacturing cluster, distinct from the San Diego research corridor; a common intra-state path for UCSD/SDSU science graduates
+- Precision Manufacturing & Electronics (Camarillo/Anaheim/Santa Ana): A real, dense base of small, privately-held precision manufacturers and power-electronics designers (Johanson Dielectrics, D&H Engineering, MAGicALL, Hi-Tech Engineering, Ridley Engineering, Cal Tech Precision, S and S Precision, Pen Manufacturing) — genuinely unglamorous, real manufacturing employment that sits alongside the region's more famous anchors without ever making national news.
 - Startup & Venture (distributed): Second-largest startup ecosystem in the country
 
 THREE TRAJECTORIES TO NAME EXPLICITLY:
-STAY CLOSE: UCI or Cal State Fullerton → OC lifestyle brands corridor. CSULB → aerospace in El Segundo/Hawthorne. UCSD → biotech in Torrey Pines. USC/UCLA → entertainment in Burbank/Culver City.
-LEAVE AND RETURN: CU Boulder aerospace → SpaceX/Boeing in Hawthorne when they come home. ASU/UA tech → Silicon Beach. Northeastern biotech → San Diego corridor.
+STAY CLOSE: UCI or Cal State Fullerton → OC lifestyle brands corridor. CSULB → aerospace in El Segundo/Hawthorne. UCSD → biotech in Torrey Pines. USC/UCLA → entertainment in Burbank/Culver City. CSUN (Cal State Northridge, physically inside the San Fernando Valley) → the SFV aerospace/defense and beauty-manufacturing corridors described above — a real, local, "you don't have to choose between Downtown and Silicon Beach" option most students overlook.
+LEAVE AND RETURN: CU Boulder aerospace → SpaceX/Boeing in Hawthorne, OR Aerojet Rocketdyne in Canoga Park, when they come home. ASU/UA tech → Silicon Beach. Northeastern biotech → San Diego corridor.
 LEAVE AND STAY GONE: Stanford → Bay Area (55% stay there). MIT → Boston or Bay Area. These are different geographic bets, not necessarily wrong ones.
 
-Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it.`
+Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it. The San Fernando Valley corridors above are genuinely distinct from their more famous Southern California counterparts (El Segundo aerospace, Downtown LA fashion) — name them specifically when a student's home ZIP or interests point there, rather than defaulting to the more famous corridor with the same industry label.`
   },
 
   // ── BAY AREA ──────────────────────────────────────────────────────────────
@@ -665,6 +811,24 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'Pharmaceutical & Biotech',           naics: [62, 54],     riasec: ['I','R','S'] },
     { corridorName: 'Pharmaceutical Manufacturing & CDMO', naics: [32, 33],    riasec: ['R','C','I'] }, // corrected Chunk 4
     { corridorName: 'Precision Manufacturing & Electronics', naics: [33, 54], riasec: ['R','C','I'] },
+    { corridorName: 'Precision Manufacturing & Electronics — Orange County', naics: [33], riasec: ['R','C','I'] },
+    { corridorName: 'Precision Manufacturing & Electronics — Simi Valley', naics: [33], riasec: ['R','C','I'] },
+    { corridorName: 'Precision Manufacturing & Electronics — San Fernando Valley', naics: [33], riasec: ['R','C','I'] },
+    { corridorName: 'Rocket Propulsion & National Space Programs — Canoga Park', naics: [33], riasec: ['I','R','C'] },
+    { corridorName: 'Beauty & Cosmetics Contract Manufacturing — Chatsworth', naics: [32], riasec: ['A','R','C'] },
+    { corridorName: 'Aerospace & Defense Manufacturing — Chatsworth', naics: [33], riasec: ['I','R','C'] },
+    { corridorName: 'Beauty & Personal Care Manufacturing — North Hollywood', naics: [32], riasec: ['A','R','C'] },
+    { corridorName: 'Beauty Manufacturing — Van Nuys', naics: [32], riasec: ['A','R','C'] },
+    { corridorName: 'Defense Electronics — Van Nuys', naics: [33], riasec: ['I','R','C'] },
+    { corridorName: 'Corporate Beauty — Calabasas', naics: [32], riasec: ['E','A','C'] },
+    { corridorName: 'Global Beauty Conglomerate — Culver City', naics: [32], riasec: ['A','C','E'] },
+    { corridorName: 'Professional Hair Care Manufacturing — Santa Clarita', naics: [32], riasec: ['A','R','C'] },
+    { corridorName: "L'Oréal USA West Coast Headquarters — El Segundo", naics: [32], riasec: ['A','C','E'] },
+    { corridorName: 'Beauty Packaging Manufacturing — Simi Valley', naics: [32], riasec: ['I','R','C'] },
+    { corridorName: 'Beauty Tools & Sustainable Packaging — Santa Monica', naics: [32], riasec: ['A','I','C'] },
+    { corridorName: 'Indie Cosmetics Manufacturing — Oxnard', naics: [32], riasec: ['A','R','C'] },
+    { corridorName: 'Beauty Manufacturing — Moorpark', naics: [32], riasec: ['A','R','C'] },
+    { corridorName: 'Precision Manufacturing & Electronics — San Gabriel Valley', naics: [33], riasec: ['R','C','I'] },
     { corridorName: 'Startup & Venture Ecosystem',        naics: [54, 51, 81], riasec: ['E','I','C'] }
   ],
   bayarea: [

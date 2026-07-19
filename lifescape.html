@@ -12,6 +12,7 @@
 <script src="UNIVERSITY_DB_V5_MASTER.js"></script>
 <script src="lifescape_major_map.js"></script>
 <script src="anchor_employers_db.js"></script>
+<script src="geo_distance_engine.js"></script>
 <script src="lifescape_regional_intelligence.js"></script>
 <script src="crosswalk-db.js"></script>
 <script src="geo_industry_db_LA_pass1.js"></script>
@@ -2027,11 +2028,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <!-- Geo spotlight -->
     <div class="report-section" id="quick-geo-section">
       <div class="section-eyebrow">Your Region</div>
-      <div class="geo-block" id="quick-geo">
-        <div class="geo-icon">◎</div>
-        <div>
-          <div class="geo-name" id="geo-name-quick">Locating nearby industries...</div>
-          <div class="geo-text" id="geo-text-quick"></div>
+      <div id="quick-geo-list">
+        <div class="geo-block">
+          <div class="geo-icon">◎</div>
+          <div>
+            <div class="geo-name" id="geo-name-quick">Locating nearby industries...</div>
+            <div class="geo-text" id="geo-text-quick"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -3441,6 +3444,61 @@ function _defaultGeo(zip) {
     distance: 'in your region',
     clusters: []
   };
+}
+
+// ── YOUR REGION — real distance-computed nearby employers ──────────────
+// Replaces the old hardcoded "within 60 miles" text and stale
+// resolveZIP()-only data. Built 2026-07-19: geo_distance_engine.js
+// computes REAL Haversine distance between the student's ZIP and every
+// anchor_employers_db.js company with a known Southern California
+// facility, picks 3 diversified-where-possible, nearest-first companies
+// within 40 miles, and this function renders them with their real,
+// specific growth_initiative_note hook -- not a generic industry label.
+//
+// IMPORTANT SCOPE NOTE: geo_distance_engine.js's ZIP_COORDINATES table
+// currently only covers Southern California (the region this session's
+// beauty/aerospace deep-dive work concentrated on). For any ZIP outside
+// that table, this function falls back to the older resolveZIP()-based
+// single-line behavior rather than showing nothing -- every other region
+// built this session (Southeast states, Midwest, Northeast, etc.) still
+// gets a reasonable "Your Region" experience, just not yet the new
+// distance-computed, 3-company format. Expanding ZIP_COORDINATES and this
+// rendering pattern to those regions is real, valuable follow-up work,
+// not done in this pass.
+function renderYourRegion(zip) {
+  const listEl = document.getElementById('quick-geo-list');
+  if (!listEl) return;
+
+  const hasEngine = typeof findNearbyEmployers === 'function' && typeof ANCHOR_EMPLOYERS !== 'undefined';
+  const result = hasEngine ? findNearbyEmployers(zip, ANCHOR_EMPLOYERS, 40, 3) : { found: false };
+
+  if (result.found && result.results.length > 0) {
+    listEl.innerHTML = result.results.map(c => `
+      <div class="geo-block" style="margin-bottom:1rem">
+        <div class="geo-icon">◎</div>
+        <div>
+          <div class="geo-name">${c.name} <span style="color:var(--gold);font-weight:normal">— ${c.distanceMiles} mi, ${c.city}</span></div>
+          <div class="geo-text">${c.hook || (c.focus && c.focus[0]) || ''}</div>
+        </div>
+      </div>
+    `).join('');
+    return;
+  }
+
+  // Fallback: outside the current distance-engine coverage area — use the
+  // older resolveZIP() single-line behavior rather than show nothing.
+  const geo = resolveZIP(zip);
+  if (geo && geo.industries[0]) {
+    listEl.innerHTML = `
+      <div class="geo-block">
+        <div class="geo-icon">◎</div>
+        <div>
+          <div class="geo-name">${geo.industries[0]} · ${geo.neighborhood}</div>
+          <div class="geo-text">${geo.distance && geo.distance !== 'in your region' ? geo.distance : 'in your region'} — worth exploring with your counselor.</div>
+        </div>
+      </div>
+    `;
+  }
 }
 
 function handleZIPInput(val) {
@@ -6917,14 +6975,9 @@ function renderQuickRead(profile, callAData) {
       `<div class="trajectory-text">${callAData.trajectory}</div>` + _presenceInsertQuick;
   }
 
-  // Geo spotlight (from ZIP data — available immediately, no Claude needed)
-  const geo = resolveZIP(profile.zip);
-  if(geo && geo.industries[0]) {
-    document.getElementById('geo-name-quick').textContent =
-      `${geo.industries[0]} · ${geo.neighborhood}`;
-    document.getElementById('geo-text-quick').textContent =
-      `within 60 miles — worth exploring with your counselor.`;
-  }
+  // Geo spotlight — real, distance-computed nearby employers (replaces the
+  // old hardcoded "within 60 miles" text and stale resolveZIP() data)
+  renderYourRegion(profile.zip);
 
   // Clusters placeholder — will update when callB resolves
   document.getElementById('quick-clusters').innerHTML = `
@@ -7866,16 +7919,12 @@ function renderCounselorView(profile, callAData, callBData, callCData, essayPars
 
 // ── FALLBACK RENDER ────────────────────────────────
 function renderFallback(profile) {
-  const geo = resolveZIP(profile.zip);
   document.getElementById('quote-text').textContent =
     '"The two most important days in your life are the day you are born and the day you find out why."';
   document.getElementById('quote-attr').textContent = 'Mark Twain (author and satirist)';
   document.getElementById('quick-trajectory').innerHTML =
     `<div class="trajectory-text">You are someone whose particular combination of curiosity, feeling, and capability points toward fields most people never think to look — and that is exactly where the most interesting work is waiting.</div>`;
-  if(geo.industries[0]) {
-    document.getElementById('geo-name-quick').textContent = `${geo.industries[0]} · ${geo.neighborhood}`;
-    document.getElementById('geo-text-quick').textContent = `within 60 miles — worth exploring with your counselor.`;
-  }
+  renderYourRegion(profile.zip);
 }
 
 
