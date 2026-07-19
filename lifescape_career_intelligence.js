@@ -560,6 +560,14 @@ const BRIDGE_DB = _g.BRIDGE_DB = {
     years: "2",
     note: "CSUN is among the strongest feeder schools for the entertainment industry in Los Angeles — the alumni network runs through every major studio and production company in the Valley. Students who transfer from LAVC carry the same degree and the same access as students who entered as freshmen."
   },
+  "Pomona Valley": {
+    cc: "Mt. San Antonio College",
+    cc_city: "Walnut, California",
+    target: "Cal Poly Pomona — Collins College of Hospitality Management",
+    gpa: "2.0",
+    years: "2",
+    note: "Mt. SAC's Hospitality Management AS-T degree is specifically designed to articulate into Collins College — ranked #6 in the world for hospitality and hotel management (CEOWORLD, 2024). A January 2025 MOU between Mt. SAC and Cal Poly Pomona formalized the broader transfer relationship. Collins College requires 800 hours of Hospitality Work Experience before graduation; up to 400 of those hours completed before CPP admission transfer directly, giving Mt. SAC students a genuine head start most freshman admits don't have."
+  },
 
   /* ── TEXAS ───────────────────────────────────────────── */
   "Austin": {

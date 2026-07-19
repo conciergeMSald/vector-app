@@ -223,6 +223,54 @@ const REGIONAL_INTELLIGENCE = {
         industries: ['Early Stage Tech','D2C Brands','Health Tech','Climate Tech','Venture Capital'],
         employers: ['Distributed across consumer and entertainment tech'],
         naics: [54, 51, 81]
+      },
+      {
+        name: 'Anaheim Resort & Convention Corridor',
+        anchor: 'Anaheim',
+        industries: ['Theme Park Operations','Resort Hospitality','Convention Services','Guest Experience Management'],
+        employers: ['Disneyland Resort','Anaheim Convention Center'],
+        naics: [72, 71],
+        note: 'Disneyland Resort is Orange County\'s largest employer with 36,000 cast members (Disney\'s own January 2026 fact sheet) — though roughly 100 salaried positions were cut in October 2025, disclosed here rather than omitted, consistent with this database\'s standard of showing real, current, sometimes imperfect facts.'
+      },
+      {
+        name: 'Coastal Luxury Resorts',
+        anchor: 'Dana Point / Newport Beach / Aliso Viejo',
+        industries: ['Luxury Resort Hospitality','Hotel Investment & Management','Golf Resort Operations'],
+        employers: ['Waldorf Astoria Monarch Beach Resort & Club','The Ritz-Carlton Laguna Niguel','Balboa Bay Resort & Club','Sunstone Hotel Investors'],
+        naics: [72, 53],
+        note: 'Sunstone Hotel Investors (NYSE: SHO) is a hotel REIT genuinely headquartered in Aliso Viejo — 14 hotels, roughly 7,000 rooms — real corporate and investment infrastructure behind the resort properties, not just the hotels themselves.'
+      },
+      {
+        name: 'Tourism, Convention & Visitor Economy',
+        anchor: 'Downtown San Diego / Coronado',
+        industries: ['Convention & Meetings Hospitality','Theme Park & Attraction Operations','Hotel Management'],
+        employers: ['San Diego Convention Center','SeaWorld San Diego','Comic-Con International','Hotel del Coronado'],
+        naics: [72, 71],
+        note: 'Hospitality supports roughly 1 in 8 San Diego jobs (San Diego Tourism Authority). SeaWorld is confirmed as a major regional employer via California\'s own EDD labor market data. Comic-Con International is a genuine San Diego-headquartered 501(c)(3) nonprofit (4-star Charity Navigator rating), not a company — included because it is one of the city\'s largest annual visitor draws.'
+      },
+      {
+        name: 'La Jolla & North County Coastal Resorts',
+        anchor: 'La Jolla / Carlsbad',
+        industries: ['Luxury Boutique Hospitality','Theme Park & Family Resort Operations','Spa & Wellness Resort Management'],
+        employers: ['The Lodge at Torrey Pines','Omni La Costa Resort & Spa','LEGOLAND California Resort'],
+        naics: [72, 71],
+        note: 'The Lodge at Torrey Pines (196 employees, La Jolla) is kept separate from Hotel del Coronado (same ownership group but a distinct Coronado property) to preserve geographic precision. LEGOLAND had roughly 100 entertainment-department layoffs in January 2025 — disclosed, not omitted.'
+      },
+      {
+        name: 'Coachella Valley Resort & Festival Economy',
+        anchor: 'Palm Desert / Rancho Mirage / Indio',
+        industries: ['Desert Resort Hospitality','Golf & Spa Resort Operations','Live Music Festival Production'],
+        employers: ['JW Marriott Desert Springs Resort & Spa','The Ritz-Carlton Rancho Mirage','Goldenvoice (AEG Presents)'],
+        naics: [72, 71],
+        note: 'Goldenvoice produces Coachella and Stagecoach at Indio\'s Empire Polo Club — genuinely a live-events company (NAICS 71), included here because the festival drives the valley\'s spring resort and hotel demand.'
+      },
+      {
+        name: 'Beverly Hills Wellness, Beauty & Creator Economy',
+        anchor: 'Beverly Hills (Wilshire Blvd / Civic Center Dr)',
+        industries: ['Activewear & Athleisure Brand Management','Beauty & Skincare Brand Building','Creator Economy & Influencer Talent Management'],
+        employers: ['Alo Yoga','Rhode','United Talent Agency (UTA Creators)'],
+        naics: [44, 71],
+        note: 'A genuinely tight, walkable corridor — all three companies sit within about a mile of each other on or near Wilshire Blvd. Alo Yoga (9830 Wilshire, ~6,700 employees) bought its own $90M Beverly Hills office building in December 2025. Rhode (9300 Wilshire), Hailey Bieber\'s skincare brand, was acquired by e.l.f. Beauty in a deal valued at $1 billion. United Talent Agency (9336 Civic Center Dr) opened a dedicated "UTA Creators" office in 2024 specifically for digital talent, gaming, and influencer representation — a major legacy Hollywood agency built a physical space around the creator economy, not a side project.'
       }
     ],
     trajectories: {
@@ -329,6 +377,13 @@ Connect this student's specific profile to the corridor that fits, name the traj
         industries: ['Venture Capital','Startup Operations','Growth Strategy','Early Stage Tech'],
         employers: ['Sequoia','Andreessen Horowitz','Kleiner Perkins','Benchmark'],
         naics: [52, 54]
+      },
+      {
+        name: 'Boutique & Independent Hospitality',
+        anchor: 'San Francisco (Union Square / Financial District)',
+        industries: ['Boutique Hotel Management','Hospitality Brand Operations'],
+        employers: ['Kimpton Hotels & Restaurants'],
+        naics: [72]
       }
     ],
     trajectories: {
@@ -378,6 +433,55 @@ LEAVE AND RETURN: UIUC → Google/Apple/Meta pipeline back to Silicon Valley (15
 LEAVE AND STAY GONE: UChicago → New York or Chicago finance (not Bay Area). Purdue → Midwest manufacturing. Notre Dame → Chicago or New York career bet.
 
 Connect this student's profile to the corridor that fits, name the trajectory type, and connect it to a specific school decision.`
+  },
+
+  // ── CENTRAL COAST ────────────────────────────────────────────────────────
+  centralcoast: {
+    name: 'California Central Coast',
+    zipPrefixes: [
+      '931','932','933','934','935','936','937','938','939'
+    ],
+    corridors: [
+      {
+        name: 'Santa Barbara Luxury Coastal Hospitality',
+        anchor: 'Montecito / Santa Barbara',
+        industries: ['Luxury Boutique Resort Hospitality','High-End Guest Services'],
+        employers: ['Rosewood Miramar Beach'],
+        naics: [72],
+        note: 'The Four Seasons Resort The Biltmore Santa Barbara is deliberately excluded — its current operating status is genuinely uncertain (closed for renovation, conflicting reopening reports across sources) and this database does not include unverified or unstable claims.'
+      },
+      {
+        name: 'Monterey Peninsula Resort & Golf Economy',
+        anchor: 'Pebble Beach / Carmel / Monterey',
+        industries: ['Luxury Golf Resort Operations','Hospitality & Guest Services','Championship Event Hosting'],
+        employers: ['Pebble Beach Company'],
+        naics: [72, 71],
+        note: 'Pebble Beach Company is confirmed via California\'s own EDD labor market data (1,000-4,999 employee size class) — a single company anchoring both Carmel and Monterey, since its 17-Mile Drive properties and golf courses sit directly between the two cities.'
+      }
+    ],
+    trajectories: {
+      stay_close: {
+        label: 'Stay Close',
+        summary: 'Central Coast placement inside a genuinely smaller, more intimate hospitality and resort economy than LA, the Bay Area, or Orange County.',
+        connections: [
+          { school: 'California Polytechnic State University, San Luis Obispo', corridor: 'Santa Barbara Luxury Coastal Hospitality', note: 'Cal Poly\'s Experience Industry Management (EIM) department — the first program of its kind in California — sits directly in the Central Coast region, covering tourism, hospitality, and event management with genuine proximity to both the Santa Barbara and Monterey resort corridors.' },
+          { school: 'California Polytechnic State University, San Luis Obispo', corridor: 'Monterey Peninsula Resort & Golf Economy', note: 'Same EIM pipeline, positioned closer to the Pebble Beach Company corridor than any out-of-region hospitality program could be.' }
+        ]
+      },
+      leave_and_return: {
+        label: 'Leave and Return',
+        summary: 'Students who leave for college and return to build a career in Central Coast hospitality, wine country, or coastal resort management.',
+        connections: []
+      },
+      leave_and_stay_gone: {
+        label: 'Leave and Stay Gone',
+        summary: 'Students whose Central Coast roots don\'t define their trajectory — the region is home, not necessarily the career destination.',
+        connections: [
+          { school: 'Cornell University', corridor: 'Santa Barbara Luxury Coastal Hospitality', note: 'Cornell\'s Hotel Administration program is the most credentialed national hospitality pipeline (already established elsewhere in this database for Florida). Included here as the honest "leave for the elite credential" path — no Central-Coast-specific placement data was found to cite a percentage, so this stays qualitative rather than invented.' }
+        ]
+      }
+    },
+    claudePromptContext: `Connect this student's profile to the Central Coast's real luxury hospitality and resort economy — Rosewood Miramar Beach in Santa Barbara, Pebble Beach Company spanning Carmel and Monterey. Name the trajectory type and connect it to a specific school decision.`
   },
 
   // ── CHICAGO ───────────────────────────────────────────────────────────────

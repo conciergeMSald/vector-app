@@ -99,7 +99,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through innovation, experimentation, interdisciplinary collaboration, and entrepreneurial thinking."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Southwest Innovation Corridor",
+      "primaryMegaRegion": "Arizona Sun Corridor",
       "regionalRole": "One of the Southwest's primary talent engines supporting semiconductors, aerospace, defense, healthcare, fintech, logistics, artificial intelligence, and advanced manufacturing."
     },
     "megaRegionExposure": {
@@ -565,7 +565,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through discovery, scientific excellence, technological innovation, and public impact."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Cascadia Innovation Corridor",
+      "primaryMegaRegion": "Cascadia",
       "regionalRole": "One of the world's primary talent generators for cloud computing, artificial intelligence, biotechnology, aerospace, healthcare, and Pacific Rim commerce."
     },
     "megaRegionExposure": {
@@ -1030,7 +1030,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through scientific excellence, innovation, exploration, and interdisciplinary collaboration."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Southwest Innovation Corridor",
+      "primaryMegaRegion": "Arizona Sun Corridor",
       "regionalRole": "A leading scientific and research institution powering aerospace, defense, optics, healthcare, mining, environmental science, and advanced manufacturing throughout the American Southwest."
     },
     "megaRegionExposure": {
@@ -1484,7 +1484,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through Nike-alumni network access and Pacific Northwest business relationships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "primaryMegaRegion": "Cascadia",
       "regionalRole": "The primary sports business talent engine for the Pacific Northwest, anchored by Nike."
     },
     "megaRegionExposure": {
@@ -1542,6 +1542,31 @@ const UNIVERSITY_DB_V5 = {
         "Laid-Back",
         "Outdoorsy",
         "Ambitious"
+      ],
+      "idealStudentTraits": [
+        "Laid-back but ambitious",
+        "Outdoor-oriented",
+        "Interested in sports business or marketing",
+        "Comfortable with a less intensely competitive academic pace",
+        "Values a Pacific Northwest lifestyle alongside career ambition"
+      ],
+      "thrivesIf": [
+        "Wants sports business or marketing training with a direct Nike/PNW innovation pipeline",
+        "Enjoys a laid-back, outdoorsy campus culture that's still genuinely ambitious",
+        "Values Pacific Northwest lifestyle and scenery as part of the college experience",
+        "Is comfortable with a less cutthroat academic pace than peer public flagships",
+        "Wants project-based, applied marketing coursework"
+      ],
+      "strugglesIf": [
+        "Wants an intensely competitive, high-pressure academic environment",
+        "Isn't interested in sports business, marketing, or PNW innovation culture",
+        "Needs a fast-paced urban environment",
+        "Wants a school with a stronger overall academic reputation over a specific niche"
+      ],
+      "transferRiskFactors": [
+        "Students outside sports business/marketing who feel like a secondary priority",
+        "Students who wanted a more academically intense flagship experience",
+        "Students who struggle with Eugene's rainy, low-sun climate"
       ]
     },
     "competitiveMajorPressure": {
@@ -1780,7 +1805,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through intellectual rigor, original thinking, scholarship, and independent inquiry."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Pacific Northwest Innovation Corridor",
+      "primaryMegaRegion": "Cascadia",
       "regionalRole": "A distinctive liberal arts institution producing scholars, scientists, physicians, researchers, and intellectually oriented leaders for graduate education, technology, healthcare, and public service."
     },
     "megaRegionExposure": {
@@ -2243,7 +2268,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through service, ethical decision-making, personal integrity, and community engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Pacific Northwest Innovation Corridor",
+      "primaryMegaRegion": "Cascadia",
       "regionalRole": "A leading private university developing business, healthcare, engineering, and civic leaders for the Inland Northwest and broader Pacific Northwest economy."
     },
     "megaRegionExposure": {
@@ -2704,7 +2729,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through professional excellence, collaboration, service, integrity, and lifelong relationships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial & Corporate Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "One of the Midwest's leading talent engines for corporate leadership, finance, healthcare administration, consulting, public policy, accounting, and professional services."
     },
     "megaRegionExposure": {
@@ -3167,7 +3192,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through innovation, technical excellence, collaboration, practical problem-solving, and service."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial & Agricultural Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "One of America's leading talent engines for engineering, advanced manufacturing, agriculture, food systems, renewable energy, infrastructure, and industrial innovation."
     },
     "megaRegionExposure": {
@@ -3631,7 +3656,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through service, technical excellence, entrepreneurship, resilience, and community engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "South-Central Energy & Industrial Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "One of the leading talent producers for the energy industry, advanced manufacturing, aviation, engineering, agriculture, and business leadership across the South-Central United States."
     },
     "megaRegionExposure": {
@@ -4099,7 +4124,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through service, scholarship, innovation, collaboration, and civic engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Innovation & Healthcare Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "One of the Midwest's leading talent producers for healthcare, engineering, architecture, journalism, business, education, and public leadership."
     },
     "megaRegionExposure": {
@@ -5486,7 +5511,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through service, tradition, professional excellence, and community engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "A leading producer of business, engineering, healthcare, accounting, communications, and public-sector talent across the Southeast."
     },
     "megaRegionExposure": {
@@ -5942,7 +5967,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through institutional placement, intellectual authority, and global network leverage"
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash Innovation + Policy Corridor",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "Anchor institution in the Boston-Cambridge ecosystem spanning academia, biotech, finance, venture capital, and government policy"
     },
     "megaRegionExposure": {
@@ -6295,7 +6320,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through intellectual originality, innovation, and self-directed exploration"
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash Innovation Corridor",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "Academic anchor feeding talent into Boston biotech, New York finance/media, and national/global innovation ecosystems"
     },
     "megaRegionExposure": {
@@ -6626,7 +6651,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through technical excellence and direct tech-industry recruiting relationships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "A primary CS/tech talent engine feeding Chicago and Silicon Valley."
     },
     "megaRegionExposure": {
@@ -6684,6 +6709,31 @@ const UNIVERSITY_DB_V5 = {
       "socialEnvironment": [
         "Technically Serious",
         "Big Ten Spirited"
+      ],
+      "idealStudentTraits": [
+        "Technically rigorous, especially in computer science or engineering",
+        "Comfortable in an intensely competitive CS/engineering peer culture",
+        "Research-oriented and self-driven",
+        "Big Ten school-spirited alongside serious academic focus",
+        "Resilient under significant academic pressure"
+      ],
+      "thrivesIf": [
+        "Wants elite computer science or engineering with real Silicon Valley hiring pipelines at public-school cost",
+        "Is comfortable in a technically serious, competitively rigorous academic environment",
+        "Enjoys Big Ten culture without needing it to be the dominant identity",
+        "Values research opportunities and technical depth over broad breadth",
+        "Can handle a demanding CS/engineering course sequence independently"
+      ],
+      "strugglesIf": [
+        "Wants a softer, less technically intense academic pace",
+        "Prefers humanities or liberal-arts-centered coursework",
+        "Needs a highly social, low-pressure campus culture",
+        "Struggles with rigorous, fast-paced technical coursework"
+      ],
+      "transferRiskFactors": [
+        "Students outside CS/engineering who feel like a secondary priority",
+        "Students overwhelmed by the technical intensity and competitive peer culture",
+        "Students who underestimated Champaign-Urbana's relatively remote, small-town setting"
       ]
     },
     "competitiveMajorPressure": {
@@ -6915,7 +6965,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through scale and direct pharmaceutical industry partnership."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A key pharmaceutical industry talent engine for the NJ corridor."
     },
     "megaRegionExposure": {
@@ -6972,6 +7022,31 @@ const UNIVERSITY_DB_V5 = {
         "Big Ten Spirited",
         "Diverse",
         "Practical"
+      ],
+      "idealStudentTraits": [
+        "Practical and career-oriented",
+        "Comfortable in a large, diverse public-university environment",
+        "Interested in pharmacy, life sciences, or business",
+        "Big Ten school-spirited",
+        "Resourceful in navigating a large, decentralized campus"
+      ],
+      "thrivesIf": [
+        "Wants pharmacy or life sciences with direct access to NJ's pharmaceutical industry density",
+        "Is comfortable in a large, highly diverse public-university setting",
+        "Enjoys Big Ten school spirit at a genuinely massive scale",
+        "Values practical, career-connected coursework over abstract theory",
+        "Can self-advocate within a large, multi-campus institution"
+      ],
+      "strugglesIf": [
+        "Wants a small, intimate campus environment",
+        "Isn't interested in pharmacy, life sciences, or practical STEM/business tracks",
+        "Needs significant hand-holding in navigating academic bureaucracy",
+        "Prefers a single unified campus over Rutgers' multi-campus structure"
+      ],
+      "transferRiskFactors": [
+        "Students overwhelmed by the size and decentralization of a multi-campus system",
+        "Students outside pharmacy/life sciences who feel the fit is generic",
+        "Students who need more individualized advising than a large public university offers"
       ]
     },
     "competitiveMajorPressure": {
@@ -7204,7 +7279,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through academic rigor, research excellence, and elite corporate placement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "The Midwest's top academic talent engine, feeding elite consulting, finance, and Detroit's automotive/mobility economy."
     },
     "megaRegionExposure": {
@@ -7266,6 +7341,31 @@ const UNIVERSITY_DB_V5 = {
         "Ambitious",
         "Big Ten Spirited",
         "Intellectually Competitive"
+      ],
+      "idealStudentTraits": [
+        "Intellectually competitive and ambitious",
+        "Comfortable with elite-level rigor at massive public-school scale",
+        "Big Ten school-spirited alongside serious academic identity",
+        "Research-oriented and self-directed",
+        "Resilient under high-achieving peer pressure"
+      ],
+      "thrivesIf": [
+        "Wants Ivy-caliber engineering, business, or research at public-school scale and cost",
+        "Is comfortable in an intellectually competitive, ambitious peer environment",
+        "Enjoys Big Ten spirit without it diluting serious academic identity",
+        "Values research opportunities and rigorous coursework across disciplines",
+        "Can self-advocate within a very large, high-achieving institution"
+      ],
+      "strugglesIf": [
+        "Wants a smaller, more intimate academic environment",
+        "Struggles with intense intellectual competition among peers",
+        "Needs significant hand-holding to navigate a large institution",
+        "Prefers a less achievement-driven, more laid-back culture"
+      ],
+      "transferRiskFactors": [
+        "Students overwhelmed by the intensity of Michigan's competitive academic culture",
+        "Students who feel anonymous despite the school's high profile",
+        "Students who underestimated Ann Arbor's winters and Midwest isolation from major coastal metros"
       ]
     },
     "competitiveMajorPressure": {
@@ -7546,7 +7646,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "Consistently ranked among the top public honors colleges nationally. Offers dedicated honors housing, priority registration, smaller seminar-style general education, and its own study abroad and research funding — a genuinely distinct smaller-school experience within USC's large undergraduate population."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "SEC flagship university supplying business, communications, and regional leadership talent across the Southeast."
     },
     "studentFit": {
@@ -7930,7 +8030,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through tradition, school spirit, and direct Atlanta corporate partnership."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "The primary business talent engine feeding Atlanta's Fortune 500 concentration."
     },
     "megaRegionExposure": {
@@ -7988,6 +8088,31 @@ const UNIVERSITY_DB_V5 = {
         "SEC Spirited",
         "Greek-Heavy",
         "Culturally Rich"
+      ],
+      "idealStudentTraits": [
+        "SEC school-spirited",
+        "Career-focused toward business or corporate tracks",
+        "Comfortable in a Greek-heavy, culturally rich Southern campus culture",
+        "Values direct pipelines into Atlanta's Fortune 500 corporate economy",
+        "Community- and tradition-oriented"
+      ],
+      "thrivesIf": [
+        "Wants business or corporate-track training with a direct pipeline into Atlanta's Fortune 500 economy",
+        "Enjoys SEC-level school spirit and Greek-heavy social culture",
+        "Values a culturally rich, tradition-bound Southern public-university experience",
+        "Is comfortable with large lecture-based coursework paired with applied corporate training",
+        "Wants strong career outcomes at in-state public-school cost"
+      ],
+      "strugglesIf": [
+        "Isn't drawn to SEC football culture or Greek life",
+        "Wants a smaller, more intimate campus environment",
+        "Prefers an urban or ideologically diverse social culture",
+        "Isn't interested in business or corporate-track careers"
+      ],
+      "transferRiskFactors": [
+        "Students who don't connect with Greek life/SEC culture and feel socially isolated",
+        "Students outside business/corporate tracks who feel like a secondary priority",
+        "Students overwhelmed by large lecture courses and campus scale"
       ]
     },
     "competitiveMajorPressure": {
@@ -8220,7 +8345,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through school spirit and deep in-state Florida corporate/medical partnerships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Florida",
       "regionalRole": "The primary business/healthcare talent engine for Florida's Miami-Tampa-Orlando corridor."
     },
     "megaRegionExposure": {
@@ -8278,6 +8403,31 @@ const UNIVERSITY_DB_V5 = {
         "Football-Dominant",
         "Greek-Heavy",
         "In-State Rooted"
+      ],
+      "idealStudentTraits": [
+        "Football-and-school-spirit oriented",
+        "Comfortable in a large, Greek-heavy public-university culture",
+        "In-state rooted or drawn to Florida's growing economy",
+        "Career-focused toward business or pre-health",
+        "Values a strong sense of tradition and rootedness"
+      ],
+      "thrivesIf": [
+        "Wants elite public-university academics wrapped inside a football-dominant Southern culture",
+        "Enjoys Greek life and SEC-caliber school spirit",
+        "Values in-state or Florida-rooted community and identity",
+        "Is comfortable in large lecture-based coursework balanced with clinical/pre-health training",
+        "Wants strong outcomes at a fraction of private-school cost"
+      ],
+      "strugglesIf": [
+        "Isn't drawn to football culture or Greek life",
+        "Wants a smaller, more intimate academic environment",
+        "Prefers an out-of-state, non-rooted social culture",
+        "Needs a more urban or culturally diverse campus setting"
+      ],
+      "transferRiskFactors": [
+        "Students who don't connect with football/Greek-centric culture and feel socially out of step",
+        "Out-of-state students who feel like outsiders in a heavily in-state-rooted social scene",
+        "Students overwhelmed by large lecture courses"
       ]
     },
     "competitiveMajorPressure": {
@@ -8551,7 +8701,7 @@ const UNIVERSITY_DB_V5 = {
       "notes": "One of the oldest and most established honors colleges among public flagships, founded 1961. Offers small-seminar general education, priority registration, and dedicated honors housing — a genuinely smaller-school experience within OU's large undergraduate population."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "TexasTriangle",
+      "primaryMegaRegion": "Texas Triangle",
       "regionalRole": "Public flagship supplying energy, business, and meteorology talent across the South Central region."
     },
     "studentFit": {
@@ -8960,7 +9110,7 @@ const UNIVERSITY_DB_V5 = {
       ]
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "TexasTriangle",
+      "primaryMegaRegion": "Texas Triangle",
       "regionalRole": "Public flagship supplying energy, agriculture, and business talent across the Gulf South."
     },
     "studentFit": {
@@ -9327,7 +9477,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through tradition, school spirit, and deep technical/veterinary industry partnerships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "A regional aerospace/defense and veterinary medicine talent engine for the Southeast."
     },
     "megaRegionExposure": {
@@ -9385,6 +9535,31 @@ const UNIVERSITY_DB_V5 = {
         "SEC Spirited",
         "Greek-Heavy",
         "Deeply Communal"
+      ],
+      "idealStudentTraits": [
+        "Communally minded",
+        "School-spirited",
+        "Comfortable in a large traditional environment",
+        "Technically capable in engineering or life sciences",
+        "Values a warm, tight-knit social culture"
+      ],
+      "thrivesIf": [
+        "Wants SEC-level school spirit alongside real engineering or veterinary depth",
+        "Enjoys Greek life and a highly communal campus culture",
+        "Interested in aerospace, engineering, or veterinary medicine",
+        "Comfortable in a large public university with a traditional Southern identity",
+        "Values tradition and consistency over constant reinvention"
+      ],
+      "strugglesIf": [
+        "Wants a politically progressive or highly diverse social environment",
+        "Prefers an urban, non-football-centric campus culture",
+        "Dislikes large lecture-heavy introductory coursework",
+        "Feels alienated by a strongly Greek-centric social scene"
+      ],
+      "transferRiskFactors": [
+        "Students who don't connect with Greek life and feel socially isolated as a result",
+        "Students overwhelmed by large intro STEM lecture sizes",
+        "Students seeking a more urban or ideologically diverse environment"
       ]
     },
     "competitiveMajorPressure": {
@@ -9617,7 +9792,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through school spirit and direct automotive industry partnership."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "The primary automotive manufacturing engineering talent engine for the Greenville-Spartanburg corridor."
     },
     "megaRegionExposure": {
@@ -9675,6 +9850,31 @@ const UNIVERSITY_DB_V5 = {
         "ACC Spirited",
         "Manufacturing-Serious",
         "Traditional"
+      ],
+      "idealStudentTraits": [
+        "Technically minded, especially toward engineering or manufacturing",
+        "School-spirited and drawn to ACC athletics culture",
+        "Comfortable with a traditional, structured academic environment",
+        "Values direct industry pipelines over abstract theory",
+        "Communal and tradition-oriented socially"
+      ],
+      "thrivesIf": [
+        "Wants automotive or manufacturing engineering with a direct employer pipeline (BMW, Michelin)",
+        "Enjoys ACC-level school spirit and a traditional Southern campus culture",
+        "Prefers applied, industry-co-located learning over theory-heavy coursework",
+        "Values a tight-knit, tradition-minded community",
+        "Is comfortable in a large public university with a strong institutional identity"
+      ],
+      "strugglesIf": [
+        "Wants a small, discussion-based liberal arts environment",
+        "Isn't interested in engineering, manufacturing, or applied technical fields",
+        "Prefers an urban or ideologically diverse campus culture",
+        "Dislikes large lecture-format introductory coursework"
+      ],
+      "transferRiskFactors": [
+        "Students outside engineering/technical majors who feel like an afterthought",
+        "Students seeking more social or ideological diversity than Clemson's traditional culture offers",
+        "Students who don't connect with the school-spirit-heavy social scene"
       ]
     },
     "competitiveMajorPressure": {
@@ -9910,7 +10110,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through professional credentialing, campus involvement, and social visibility."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "Elite research university supplying medicine, education, law, and business leadership anchored by Nashville's fast-growing healthcare and entertainment economy."
     },
     "megaRegionExposure": {
@@ -10308,7 +10508,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through tradition, historical gravitas, and elite selective-program excellence."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A primary talent engine for the DC corridor's consulting, government, and finance sectors."
     },
     "megaRegionExposure": {
@@ -10368,6 +10568,31 @@ const UNIVERSITY_DB_V5 = {
         "Polished",
         "Tradition-Bound",
         "Achievement-Oriented"
+      ],
+      "idealStudentTraits": [
+        "Polished and achievement-oriented",
+        "Comfortable with tradition-bound institutional culture",
+        "Rigorous academically, especially toward government, policy, or business",
+        "Values DC-corridor career ambition",
+        "Tolerant of a formal, historically-minded campus identity"
+      ],
+      "thrivesIf": [
+        "Wants Ivy-caliber rigor in government, policy, or business at public-school cost",
+        "Enjoys a polished, tradition-bound, achievement-oriented campus culture",
+        "Values DC-corridor proximity for policy and government career pipelines",
+        "Is comfortable with a historically self-aware institutional identity (Jefferson's university)",
+        "Wants elite outcomes without private-school cost"
+      ],
+      "strugglesIf": [
+        "Wants a laid-back, informal campus culture",
+        "Isn't interested in government, policy, or DC-corridor careers",
+        "Struggles with tradition-heavy, achievement-driven peer pressure",
+        "Prefers a large urban setting over a college town"
+      ],
+      "transferRiskFactors": [
+        "Students who find UVA's tradition and polish alienating rather than aspirational",
+        "Students overwhelmed by the achievement-oriented peer culture",
+        "Students who wanted a more informal or urban environment"
       ]
     },
     "competitiveMajorPressure": {
@@ -10659,6 +10884,31 @@ const UNIVERSITY_DB_V5 = {
         "Culturally Rich",
         "Present",
         "Civically Engaged"
+      ],
+      "idealStudentTraits": [
+        "Culturally curious and civically engaged",
+        "Comfortable with a city as vivid and present as New Orleans",
+        "Interested in architecture, energy finance, or civic-facing careers",
+        "Values community service and real-world engagement",
+        "Open to a school whose serious academics hide behind a famous party reputation"
+      ],
+      "thrivesIf": [
+        "Wants architecture or energy finance training with genuine civic engagement built in",
+        "Is energized rather than distracted by New Orleans' culture and constant presence",
+        "Values service-learning and community-embedded coursework",
+        "Can see past Tulane's party-school reputation to real academic rigor underneath",
+        "Wants a mid-size private school with a truly distinctive host city"
+      ],
+      "strugglesIf": [
+        "Needs a quiet, low-distraction campus environment",
+        "Isn't interested in architecture, energy, or civic/service-oriented fields",
+        "Struggles with the intensity and unpredictability of New Orleans as a backdrop",
+        "Wants a more traditional, less culturally overwhelming college town"
+      ],
+      "transferRiskFactors": [
+        "Students who came for the reputation/culture without connecting to Tulane's academic core",
+        "Students overwhelmed by New Orleans' intensity or its post-Katrina civic-engagement expectations",
+        "Students who wanted a quieter, more conventional campus setting"
       ]
     },
     "competitiveMajorPressure": {
@@ -10890,7 +11140,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through research excellence, environmental engagement, and outdoor-lifestyle balance."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "primaryMegaRegion": "Front Range",
       "regionalRole": "A significant aerospace research talent engine, plus a uniquely positioned hub for the natural products and wellness industry."
     },
     "megaRegionExposure": {
@@ -10949,6 +11199,31 @@ const UNIVERSITY_DB_V5 = {
         "Outdoorsy",
         "Health-Conscious",
         "Technically Serious"
+      ],
+      "idealStudentTraits": [
+        "Outdoor-oriented and health-conscious",
+        "Technically serious, especially in aerospace or engineering",
+        "Comfortable blending rigorous STEM work with an active lifestyle",
+        "Environmentally minded",
+        "Independent and self-directed"
+      ],
+      "thrivesIf": [
+        "Wants aerospace engineering or environmental science with a genuinely outdoorsy, wellness-driven campus culture",
+        "Enjoys hiking, skiing, or an active lifestyle as part of daily college life",
+        "Is comfortable with a technically serious academic core wrapped in a laid-back social culture",
+        "Values field-based and applied research over pure lecture",
+        "Wants Rocky Mountain proximity built into the college experience, not just nearby"
+      ],
+      "strugglesIf": [
+        "Isn't interested in outdoor recreation or an active lifestyle",
+        "Wants a fast-paced urban environment",
+        "Prefers a more traditional, less wellness-centric campus culture",
+        "Needs a smaller, more structured academic environment"
+      ],
+      "transferRiskFactors": [
+        "Students who don't connect with Boulder's outdoorsy/wellness culture and feel out of place socially",
+        "Students outside aerospace/STEM who feel like a secondary priority",
+        "Students priced out by Boulder's rising cost of living"
       ]
     },
     "competitiveMajorPressure": {
@@ -11177,7 +11452,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through media industry tribal loyalty and shared institutional identity."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "The primary media/communications talent engine feeding New York City's newsrooms and networks."
     },
     "megaRegionExposure": {
@@ -11235,6 +11510,31 @@ const UNIVERSITY_DB_V5 = {
         "Media-Obsessed",
         "Resilient",
         "Orange Spirited"
+      ],
+      "idealStudentTraits": [
+        "Media- and communications-obsessed",
+        "Resilient — comfortable with upstate NY winters and a demanding creative pace",
+        "Orange-spirited and community-minded",
+        "Career-focused toward journalism, broadcast, or media production",
+        "Values industry hiring networks as much as classroom instruction"
+      ],
+      "thrivesIf": [
+        "Wants journalism, broadcast, or media production with Newhouse's legendary industry hiring pipeline",
+        "Is resilient enough to embrace Syracuse winters as part of the community-building experience",
+        "Enjoys a media-obsessed, tightly-knit creative peer culture",
+        "Values applied, industry-immersion training over purely academic media study",
+        "Wants Orange school spirit alongside serious professional preparation"
+      ],
+      "strugglesIf": [
+        "Isn't interested in media, journalism, or communications careers",
+        "Struggles with harsh winter climates and reduced sunlight",
+        "Wants a warm-weather or urban-metro campus setting",
+        "Prefers a school where media isn't the dominant cultural identity"
+      ],
+      "transferRiskFactors": [
+        "Students outside Newhouse/media programs who feel like a secondary priority",
+        "Students who struggle with Syracuse's winter climate and isolation",
+        "Students who wanted a bigger city than Syracuse offers"
       ]
     },
     "competitiveMajorPressure": {
@@ -11466,7 +11766,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through global business fluency and Latin American market relationships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Florida",
       "regionalRole": "The primary Latin American business gateway university in the country."
     },
     "megaRegionExposure": {
@@ -11524,6 +11824,31 @@ const UNIVERSITY_DB_V5 = {
         "Glamorous",
         "International",
         "Beach-Adjacent"
+      ],
+      "idealStudentTraits": [
+        "Internationally minded, especially toward Latin America",
+        "Glamorous and socially confident",
+        "Career-driven toward business or finance",
+        "Comfortable with a beach-adjacent, warm-weather lifestyle alongside academics",
+        "Values global business exposure over a purely domestic focus"
+      ],
+      "thrivesIf": [
+        "Wants global/international business with genuine Latin America gateway positioning",
+        "Enjoys a glamorous, socially vibrant, beach-adjacent campus culture",
+        "Values international immersion and case-method business training",
+        "Is energized by Miami's international, multicultural environment",
+        "Wants strong career outcomes without giving up a warm-weather lifestyle"
+      ],
+      "strugglesIf": [
+        "Isn't interested in international or Latin America-focused business",
+        "Wants a more understated, low-key social culture",
+        "Prefers a cooler climate or a less status-conscious social scene",
+        "Needs a large public-university scale and price point"
+      ],
+      "transferRiskFactors": [
+        "Students who came for the Miami lifestyle without connecting to the international-business core",
+        "Students who find the glamorous, appearance-conscious social culture alienating",
+        "Students priced out relative to Miami's private-school cost"
       ]
     },
     "competitiveMajorPressure": {
@@ -11764,7 +12089,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through intellectual rigor, direct communication, athletic team culture, and lifelong institutional loyalty."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "Elite liberal arts institution supplying leaders to finance, consulting, graduate education, and the Northeast knowledge economy."
     },
     "megaRegionExposure": {
@@ -12205,7 +12530,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through intellectual curiosity, interdisciplinary thinking, and consortium-wide collaboration."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCalCreativeEconomy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "Elite liberal arts institution supplying leaders to finance, consulting, technology, entertainment, and graduate education across Southern California and nationally."
     },
     "megaRegionExposure": {
@@ -12646,7 +12971,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through service, community engagement, and values-based decision-making."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCalInnovationCorridor",
+      "primaryMegaRegion": "Northern California",
       "regionalRole": "Small Catholic liberal arts college supplying regionally-focused business, education, and healthcare professionals to the Bay Area."
     },
     "megaRegionExposure": {
@@ -13050,7 +13375,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through Catholic formation and peace/justice-oriented global engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCal Creative Economy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "A values-driven business and legal talent engine for San Diego, distinctive for its peace/justice studies niche."
     },
     "megaRegionExposure": {
@@ -13110,6 +13435,31 @@ const UNIVERSITY_DB_V5 = {
         "Faith-Centered",
         "Scenic",
         "Community-Oriented"
+      ],
+      "idealStudentTraits": [
+        "Faith-centered",
+        "Community-oriented",
+        "Comfortable with a smaller, scenic private-school setting",
+        "Interested in business, law, or peace/international studies",
+        "Values warmth and campus beauty alongside academics"
+      ],
+      "thrivesIf": [
+        "Wants a Catholic, faith-informed education in a genuinely scenic coastal setting",
+        "Values community-oriented, WCC-level (not power-conference) athletics culture",
+        "Is interested in business, pre-law, or peace and justice studies",
+        "Enjoys a warm, close-knit private-school community",
+        "Wants San Diego's lifestyle without USD needing to be UCSD- or USC-scale"
+      ],
+      "strugglesIf": [
+        "Isn't comfortable with an explicitly Catholic/faith-centered institutional identity",
+        "Wants big-time Division I power-conference athletics culture",
+        "Prefers a large public-university scale",
+        "Needs a lower cost of attendance than USD's private-school price point"
+      ],
+      "transferRiskFactors": [
+        "Students who feel out of step with the school's Catholic identity",
+        "Students who wanted bigger-name San Diego schools (UCSD) and see USD as a compromise",
+        "Students priced out relative to outcomes"
       ]
     },
     "competitiveMajorPressure": {
@@ -13348,7 +13698,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through technical competence, ethical reasoning, and entrepreneurial initiative."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCalInnovationCorridor",
+      "primaryMegaRegion": "Northern California",
       "regionalRole": "Jesuit university supplying technology, business, and engineering talent directly into the Silicon Valley innovation economy."
     },
     "megaRegionExposure": {
@@ -13772,7 +14122,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through practical experience, community involvement, and regional workforce readiness."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCalInnovationCorridor",
+      "primaryMegaRegion": "Northern California",
       "regionalRole": "Regional public university supplying business, agriculture, construction, and education professionals to Northern California and the Sacramento Valley."
     },
     "megaRegionExposure": {
@@ -14174,7 +14524,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through structured experiential learning and direct media industry placement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "A regional Southeast talent engine with an unusually direct pipeline into LA and NYC media industries."
     },
     "megaRegionExposure": {
@@ -14232,6 +14582,31 @@ const UNIVERSITY_DB_V5 = {
         "Warm",
         "Polished",
         "Experientially-Driven"
+      ],
+      "idealStudentTraits": [
+        "Polished and professionally minded early",
+        "Drawn to experiential, industry-immersion learning over lecture",
+        "Warm and socially engaged",
+        "Comfortable in a smaller, tightly-run institutional environment",
+        "Interested in media, communications, or applied professional fields"
+      ],
+      "thrivesIf": [
+        "Wants media or communications training with real LA/NYC industry connections",
+        "Values experiential learning — internships and applied projects over passive lecture",
+        "Enjoys a warm, polished, Southern-charm campus culture",
+        "Prefers a smaller, well-resourced private university over a large public one",
+        "Wants career-relevant experience built into every year, not saved for senior year"
+      ],
+      "strugglesIf": [
+        "Wants a large, anonymous research-university environment",
+        "Isn't interested in media, communications, or experiential/applied learning models",
+        "Prefers an intellectually unstructured or maximally diverse environment over Elon's polish",
+        "Wants a big-city campus rather than a suburban North Carolina setting"
+      ],
+      "transferRiskFactors": [
+        "Students who feel Elon's polish and structure is confining rather than supportive",
+        "Students outside media/communications who feel like the pipeline doesn't serve them",
+        "Students wanting more social or intellectual unpredictability than a tightly-run culture offers"
       ]
     },
     "competitiveMajorPressure": {
@@ -14469,7 +14844,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through professional competence, civic engagement, and direct industry relationships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "MidContinentIndustrialEnergyCorridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "Professional university supplying law, pharmacy, business, and journalism talent directly into the Des Moines insurance and financial services corridor."
     },
     "megaRegionExposure": {
@@ -14882,7 +15257,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through service, clinical competence, and Jesuit mission-based values."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "MidContinentIndustrialEnergyCorridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "Jesuit health sciences university supplying medicine, pharmacy, dentistry, and nursing talent to Nebraska and the broader Midwest."
     },
     "megaRegionExposure": {
@@ -15342,6 +15717,31 @@ const UNIVERSITY_DB_V5 = {
         "Faith-Centered",
         "Football-Proud",
         "Warm"
+      ],
+      "idealStudentTraits": [
+        "Faith-centered",
+        "Warm and relational",
+        "Comfortable in a values-explicit academic environment",
+        "Career-driven, especially toward business or ministry",
+        "Values community over anonymity"
+      ],
+      "thrivesIf": [
+        "Wants Christian faith actively integrated into academic and campus life",
+        "Interested in business (Hankamer), ministry, or pre-professional tracks",
+        "Enjoys football-centered Big 12 school spirit",
+        "Values a warm, relationally tight-knit Texas campus culture",
+        "Comfortable with an explicitly faith-centered institutional identity"
+      ],
+      "strugglesIf": [
+        "Is not comfortable with an explicitly religious campus culture",
+        "Wants a secular or ideologically diverse academic environment",
+        "Prefers large-city urban immersion over a mid-size Texas city",
+        "Dislikes chapel or faith-integration requirements"
+      ],
+      "transferRiskFactors": [
+        "Students who feel out of step with the school's religious identity",
+        "Students seeking more ideological diversity in the classroom",
+        "Students who wanted Waco to feel more like a big city and don't adjust"
       ]
     },
     "competitiveMajorPressure": {
@@ -15584,7 +15984,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Executive Leadership Development"
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "TexasTriangle",
+      "primaryMegaRegion": "Texas Triangle",
       "regionalRole": "Private university supplying finance, real estate, and executive leadership talent directly into the Dallas wealth economy."
     },
     "megaRegionExposure": {
@@ -15973,7 +16373,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through Catholic community values and elite business school placement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A key business talent engine feeding Philadelphia and NYC financial services."
     },
     "megaRegionExposure": {
@@ -16031,6 +16431,31 @@ const UNIVERSITY_DB_V5 = {
         "Warm",
         "Basketball-Proud",
         "Main Line Polish"
+      ],
+      "idealStudentTraits": [
+        "Polished and achievement-oriented",
+        "Basketball-proud and school-spirited",
+        "Career-driven toward business, nursing, or engineering",
+        "Comfortable with a values-informed (Augustinian Catholic) institutional framework",
+        "Warm and community-minded despite pre-professional intensity"
+      ],
+      "thrivesIf": [
+        "Wants business, nursing, or engineering with a direct Wall Street/Philadelphia corporate pipeline",
+        "Enjoys basketball-centered school spirit as part of campus identity",
+        "Values an Augustinian Catholic, mission-informed institutional culture",
+        "Is comfortable in a polished, Main Line-adjacent suburban setting",
+        "Wants strong career outcomes inside a warm, tight-knit community rather than a cutthroat one"
+      ],
+      "strugglesIf": [
+        "Wants a secular or non-values-explicit institutional identity",
+        "Isn't interested in business, nursing, or engineering",
+        "Prefers an urban campus over a suburban Main Line setting",
+        "Wants a large public-university scale and anonymity"
+      ],
+      "transferRiskFactors": [
+        "Students who feel out of step with the school's Catholic/Augustinian identity",
+        "Students outside business/nursing/engineering who feel like a secondary priority",
+        "Students who wanted a Philadelphia-proper urban experience and find the suburban Main Line setting limiting"
       ]
     },
     "competitiveMajorPressure": {
@@ -16270,7 +16695,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through industry connection, entrepreneurial initiative, and network activation."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCalCreativeEconomy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "Major research university supplying entertainment, business, and technology leadership directly to the Los Angeles economy."
     },
     "megaRegionExposure": {
@@ -16684,7 +17109,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through academic rigor and research excellence."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "MidContinentIndustrialEnergyCorridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "Elite research university supplying medicine, research, and business leadership to St. Louis and nationally."
     },
     "megaRegionExposure": {
@@ -17070,7 +17495,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through technical rigor and structured Co-op industry experience."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "The primary engineering/tech talent engine for Atlanta's booming tech and startup corridor."
     },
     "megaRegionExposure": {
@@ -17128,6 +17553,31 @@ const UNIVERSITY_DB_V5 = {
         "Urban",
         "Driven",
         "Technically Serious"
+      ],
+      "idealStudentTraits": [
+        "Technically rigorous",
+        "Driven and achievement-oriented",
+        "Comfortable with intense STEM workload",
+        "Values applied co-op experience over pure classroom learning",
+        "Resilient under academic pressure"
+      ],
+      "thrivesIf": [
+        "Wants elite engineering or computer science with real co-op industry placement",
+        "Is comfortable in a demanding, technically serious academic culture",
+        "Values Atlanta's tech corridor proximity for internships and post-grad hiring",
+        "Enjoys working alongside equally driven, technically capable peers",
+        "Can handle a heavy STEM workload without needing constant reassurance"
+      ],
+      "strugglesIf": [
+        "Wants a softer, less technically intense academic pace",
+        "Prefers humanities or liberal-arts-centered coursework",
+        "Needs a highly social, low-pressure campus culture",
+        "Struggles with rigorous math/science course sequences"
+      ],
+      "transferRiskFactors": [
+        "Students who underestimated the technical intensity and feel overwhelmed",
+        "Students outside STEM who feel like an afterthought at an engineering-dominant school",
+        "Students who need more social softness than Georgia Tech's driven culture offers"
       ]
     },
     "competitiveMajorPressure": {
@@ -17362,7 +17812,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through small-school mentorship and genuine international affairs depth."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "primaryMegaRegion": "Front Range",
       "regionalRole": "A notable international affairs and business talent engine for the Denver region."
     },
     "megaRegionExposure": {
@@ -17419,6 +17869,31 @@ const UNIVERSITY_DB_V5 = {
         "Outdoorsy",
         "Intimate",
         "Globally Curious"
+      ],
+      "idealStudentTraits": [
+        "Globally curious",
+        "Comfortable in a small, intimate academic setting",
+        "Interested in international affairs or applied business",
+        "Values close faculty relationships over large-lecture anonymity",
+        "Outdoorsy but academically serious"
+      ],
+      "thrivesIf": [
+        "Wants international affairs or global business training at a small school with real diplomatic-track outcomes",
+        "Values small seminar classes and close faculty access",
+        "Enjoys Denver's outdoor access without sacrificing academic intimacy",
+        "Prefers being known by name over being one of thousands",
+        "Wants a hidden-gem private school over a bigger-name but more anonymous option"
+      ],
+      "strugglesIf": [
+        "Wants a large public-university scale and energy",
+        "Needs a well-known, high-prestige brand name over substance",
+        "Isn't interested in international affairs, diplomacy, or global business",
+        "Wants a bigger, more socially expansive student body"
+      ],
+      "transferRiskFactors": [
+        "Students who wanted a bigger-name school and see DU as a fallback",
+        "Students outside international affairs/business who feel the fit is generic",
+        "Students who find the small-school intimacy limiting rather than supportive"
       ]
     },
     "competitiveMajorPressure": {
@@ -17644,7 +18119,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through entrepreneurial ambition and direct tech/supplement industry access."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "primaryMegaRegion": "Front Range",
       "regionalRole": "The anchor talent engine for Silicon Slopes, one of the fastest-growing tech corridors in the country."
     },
     "megaRegionExposure": {
@@ -17703,6 +18178,31 @@ const UNIVERSITY_DB_V5 = {
         "Tech-Forward",
         "Outdoorsy",
         "Entrepreneurial"
+      ],
+      "idealStudentTraits": [
+        "Tech-forward and entrepreneurial",
+        "Outdoor-oriented, especially toward skiing",
+        "Comfortable in a fast-growing tech-adjacent regional economy",
+        "Practical and startup-minded",
+        "Values lifestyle and career opportunity in equal measure"
+      ],
+      "thrivesIf": [
+        "Wants tech, CS, or entrepreneurship training with direct Silicon Slopes startup access",
+        "Loves skiing or mountain outdoor recreation as part of daily life",
+        "Values a fast-growing, entrepreneurial regional tech economy",
+        "Enjoys applied, project-based business and CS coursework",
+        "Wants strong career outcomes in a rapidly rising tech hub at public-school cost"
+      ],
+      "strugglesIf": [
+        "Isn't interested in tech, entrepreneurship, or startup culture",
+        "Wants a slower-paced, more traditional college town",
+        "Prefers a warm-weather or coastal setting over mountain climate",
+        "Needs a higher overall graduation-rate flagship experience"
+      ],
+      "transferRiskFactors": [
+        "Students outside tech/business who feel the fit is generic",
+        "Students who underestimated Utah's cultural and religious context and feel out of step",
+        "Students who wanted a higher-graduation-rate, more traditional flagship"
       ]
     },
     "competitiveMajorPressure": {
@@ -17936,7 +18436,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through practical competence and regional workforce readiness."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCalInnovationCorridor",
+      "primaryMegaRegion": "Front Range",
       "regionalRole": "Regional public university supplying healthcare, business, and technical talent to the Wasatch Front corridor."
     },
     "megaRegionExposure": {
@@ -18326,7 +18826,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through service, professionalism, applied learning, and community engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A major workforce university supporting the Baltimore-Washington healthcare, government, cybersecurity, education, and business economy."
     },
     "megaRegionExposure": {
@@ -18766,7 +19266,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through scale, tradition, school spirit, and increasingly through innovation and economic development partnerships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "One of the Midwest's primary talent engines, now central to the reshoring of American semiconductor manufacturing alongside traditional strength in medicine, insurance, and engineering."
     },
     "megaRegionExposure": {
@@ -18833,6 +19333,31 @@ const UNIVERSITY_DB_V5 = {
         "Greek-Heavy",
         "Football-Centric",
         "Community-Built-Not-Given"
+      ],
+      "idealStudentTraits": [
+        "Big Ten school-spirited",
+        "Comfortable in a very large, football-centric environment",
+        "Proactive about building community rather than expecting it to be handed to them",
+        "Interested in engineering, business, or medicine at scale",
+        "Resilient and self-starting in a massive institution"
+      ],
+      "thrivesIf": [
+        "Wants engineering, business, or medicine at a Big Ten powerhouse with real reindustrialization-era employer connections",
+        "Enjoys football-centric, Greek-heavy Big Ten culture",
+        "Is willing to proactively build their own community rather than have it built-in",
+        "Can self-advocate and navigate a very large public research university",
+        "Values applied learning paired with large lecture and discussion-section structure"
+      ],
+      "strugglesIf": [
+        "Wants a small, intimate campus with built-in community",
+        "Isn't drawn to football culture or Big Ten school spirit",
+        "Needs significant structure and hand-holding to feel connected",
+        "Prefers a quieter, less football-dominant social atmosphere"
+      ],
+      "transferRiskFactors": [
+        "Students who feel anonymous and struggle to proactively build community at OSU's scale",
+        "Students who don't connect with football/Greek-centric culture and feel socially isolated",
+        "Students overwhelmed by large lecture courses and campus scale"
       ]
     },
     "competitiveMajorPressure": {
@@ -19071,7 +19596,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through niche technical specialization and direct consumer goods industry partnership."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "The nation's primary packaging engineering talent engine, feeding consumer goods companies with nowhere else to recruit at this depth."
     },
     "megaRegionExposure": {
@@ -19131,6 +19656,31 @@ const UNIVERSITY_DB_V5 = {
         "Big Ten Spirited",
         "Practical",
         "Food-Science-Forward"
+      ],
+      "idealStudentTraits": [
+        "Practical and applied in orientation",
+        "Big Ten school-spirited",
+        "Comfortable with a niche, industry-specific specialty rather than broad prestige",
+        "Interested in supply chain, food science, or packaging engineering",
+        "Grounded and team-oriented"
+      ],
+      "thrivesIf": [
+        "Wants packaging engineering, supply chain, or food science with direct consumer-goods industry pipelines",
+        "Enjoys Big Ten school spirit and a large traditional public-university culture",
+        "Values practical, project-based coursework over abstract theory",
+        "Is comfortable being at a school whose real strength is a specific hidden niche, not general prestige",
+        "Wants a large, comprehensive university experience with a genuine specialty"
+      ],
+      "strugglesIf": [
+        "Wants a small, intimate academic environment",
+        "Isn't interested in supply chain, packaging, food science, or applied business",
+        "Needs strong general prestige signaling over a specific niche strength",
+        "Dislikes large lecture-format coursework"
+      ],
+      "transferRiskFactors": [
+        "Students outside MSU's core niche strengths who feel like the fit is generic",
+        "Students overwhelmed by the size of a large Big Ten institution",
+        "Students who need more prestige signaling than MSU's practical identity offers"
       ]
     },
     "competitiveMajorPressure": {
@@ -19364,7 +19914,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through research excellence and civic/activist engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "A primary health-tech and research talent engine for the Upper Midwest, anchored by Epic Systems."
     },
     "megaRegionExposure": {
@@ -19423,6 +19973,31 @@ const UNIVERSITY_DB_V5 = {
         "Progressive",
         "Lake-Adjacent",
         "Big Ten Spirited"
+      ],
+      "idealStudentTraits": [
+        "Progressive and civically engaged",
+        "Research-oriented, especially in health sciences or health-tech",
+        "Big Ten school-spirited",
+        "Comfortable in a politically and intellectually progressive environment",
+        "Values lake-adjacent lifestyle alongside serious research"
+      ],
+      "thrivesIf": [
+        "Wants health sciences or health-tech training with a direct Epic Systems-caliber pipeline",
+        "Values a progressive, civically engaged campus culture",
+        "Enjoys Big Ten spirit paired with serious research depth",
+        "Wants a lake-adjacent, scenic public-university setting",
+        "Is drawn to applied health sciences and civic-engagement coursework"
+      ],
+      "strugglesIf": [
+        "Wants a politically conservative or apolitical campus culture",
+        "Isn't interested in health sciences, health-tech, or research-heavy tracks",
+        "Prefers a warm-weather setting over Midwest winters",
+        "Needs a smaller, more intimate academic environment"
+      ],
+      "transferRiskFactors": [
+        "Students who feel politically out of step with Madison's progressive culture",
+        "Students outside health sciences/research who feel like a secondary priority",
+        "Students who struggle with Wisconsin winters and Midwest isolation"
       ]
     },
     "competitiveMajorPressure": {
@@ -19653,15 +20228,15 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through policy engagement and DC proximity."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "A key international affairs and policy talent engine embedded directly in DC."
     },
     "megaRegionExposure": {
       "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 92,
+      "BosWash": 8,
       "TorBuffChester": 10,
       "TexasTriangle": 6,
-      "CharLanta": 8,
+      "CharLanta": 92,
       "NorCalInnovationCorridor": 8,
       "SoCalCreativeEconomy": 8
     },
@@ -19710,6 +20285,31 @@ const UNIVERSITY_DB_V5 = {
         "Politically Engaged",
         "Ambitious",
         "Globally Minded"
+      ],
+      "idealStudentTraits": [
+        "Politically engaged",
+        "Ambitious",
+        "Comfortable networking early",
+        "Globally minded",
+        "Drawn to real-world policy work over campus insularity"
+      ],
+      "thrivesIf": [
+        "Wants a DC internship built into the college experience, not bolted onto it",
+        "Interested in policy, international affairs, journalism, or government",
+        "Enjoys a politically active, debate-heavy social environment",
+        "Comfortable in a mid-size urban campus without a traditional sports culture",
+        "Can self-direct toward professional opportunities early"
+      ],
+      "strugglesIf": [
+        "Wants a traditional big-school spirit and football culture",
+        "Prefers a rural or suburban self-contained campus",
+        "Finds constant political engagement exhausting rather than energizing",
+        "Needs a larger undergraduate cohort to feel anonymity when wanted"
+      ],
+      "transferRiskFactors": [
+        "Students who wanted classic campus/Greek life culture and didn't find it",
+        "Students burned out by the intensity of DC's political atmosphere",
+        "Students who feel disconnected without a big-school athletics identity"
       ]
     },
     "competitiveMajorPressure": {
@@ -19942,7 +20542,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through real industry access and values-driven community."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "The primary entertainment business talent engine for Nashville's music and creative economy."
     },
     "megaRegionExposure": {
@@ -20000,6 +20600,31 @@ const UNIVERSITY_DB_V5 = {
         "Creative",
         "Industry-Embedded",
         "Welcoming"
+      ],
+      "idealStudentTraits": [
+        "Creatively driven",
+        "Comfortable in an industry-embedded, mentorship-heavy environment",
+        "Entrepreneurial about the arts or entertainment business",
+        "Welcoming and collaborative rather than cutthroat",
+        "Motivated by proximity to a real industry, not just a classroom"
+      ],
+      "thrivesIf": [
+        "Wants to study music business, entertainment, or the creative industries with direct Nashville industry access",
+        "Values mentorship-based, applied learning over traditional lecture",
+        "Enjoys a warm, welcoming, small-to-mid-size campus culture",
+        "Is comfortable pursuing a creative career path that isn't purely performance",
+        "Wants a college experience embedded inside a working industry town"
+      ],
+      "strugglesIf": [
+        "Isn't interested in the music, entertainment, or creative-industry world at all",
+        "Wants a large-research-university breadth of academic programs",
+        "Needs the anonymity of a big student body",
+        "Prefers a campus disconnected from a surrounding industry identity"
+      ],
+      "transferRiskFactors": [
+        "Students who enrolled for the Nashville/music draw but aren't creatively or industry-oriented",
+        "Students who find the program breadth too narrow outside entertainment-adjacent fields",
+        "Students seeking a bigger, more traditional university experience"
       ]
     },
     "competitiveMajorPressure": {
@@ -20232,7 +20857,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through independence and direct professional-industry proximity."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A major talent engine for Boston's finance, biotech, and media industries."
     },
     "megaRegionExposure": {
@@ -20293,6 +20918,31 @@ const UNIVERSITY_DB_V5 = {
         "Urban",
         "Self-Assembled",
         "Ambitious"
+      ],
+      "idealStudentTraits": [
+        "Self-directed",
+        "Comfortable being one of many in a dense urban environment",
+        "Independent socially — builds their own community rather than having one assigned",
+        "Career-focused, especially toward finance, media, or communications",
+        "Resourceful in navigating a large, sprawling campus footprint"
+      ],
+      "thrivesIf": [
+        "Wants a real city, not a campus bubble — Boston as classroom and social life",
+        "Is comfortable assembling their own friend group rather than a built-in cohort",
+        "Interested in finance, media, communications, or international relations",
+        "Enjoys a large, high-energy, ambitious peer environment",
+        "Can self-advocate in a sizable institution without much hand-holding"
+      ],
+      "strugglesIf": [
+        "Wants a self-contained, traditional college-town campus feel",
+        "Needs a smaller, more structured social environment to feel connected",
+        "Dislikes urban noise, commuting, and a campus that blends into the city",
+        "Prefers built-in community over one they have to assemble themselves"
+      ],
+      "transferRiskFactors": [
+        "Students who feel lost or anonymous in BU's size and urban sprawl",
+        "Students who wanted classic campus/dorm-centered social life and didn't find it",
+        "Students overwhelmed by having to self-initiate their social community"
       ]
     },
     "competitiveMajorPressure": {
@@ -20525,7 +21175,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through land-grant practicality and direct outdoor-industry/veterinary partnerships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "primaryMegaRegion": "Front Range",
       "regionalRole": "A key talent engine for Colorado's outdoor recreation, hospitality, and agricultural/veterinary economy."
     },
     "megaRegionExposure": {
@@ -20582,6 +21232,31 @@ const UNIVERSITY_DB_V5 = {
         "Outdoorsy",
         "Health-Conscious",
         "Community-Oriented"
+      ],
+      "idealStudentTraits": [
+        "Outdoor-oriented",
+        "Health- and environmentally-conscious",
+        "Comfortable with hands-on clinical or field-based learning",
+        "Community-minded rather than intensely competitive",
+        "Drawn to land-grant, applied-science strengths over prestige-chasing"
+      ],
+      "thrivesIf": [
+        "Wants veterinary medicine, hospitality management, or environmental science with real field/clinical training",
+        "Loves an outdoorsy, active lifestyle alongside academics",
+        "Values a community-oriented, less cutthroat public-university culture",
+        "Enjoys field research and applied science over pure lecture",
+        "Is drawn to Fort Collins' health-conscious, active-lifestyle setting"
+      ],
+      "strugglesIf": [
+        "Wants a fast-paced urban environment",
+        "Needs a highly prestige-driven or hyper-competitive peer culture",
+        "Isn't interested in the outdoors, environmental science, or land-grant strengths",
+        "Wants a small, intimate campus feel"
+      ],
+      "transferRiskFactors": [
+        "Students outside CSU's core strengths (vet med, hospitality, environmental science) who feel the fit is generic",
+        "Students seeking a more urban or fast-paced setting",
+        "Students who need more institutional prestige signaling than a land-grant identity provides"
       ]
     },
     "competitiveMajorPressure": {
@@ -20808,7 +21483,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through values-driven formation and direct NYC industry proximity."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A key talent engine feeding NYC's legal and financial sectors via Fordham Law and Gabelli Business."
     },
     "megaRegionExposure": {
@@ -20866,6 +21541,31 @@ const UNIVERSITY_DB_V5 = {
         "Jesuit Values",
         "Ambitious",
         "NYC-Embedded"
+      ],
+      "idealStudentTraits": [
+        "Ambitious and career-focused, especially toward law, business, or finance",
+        "Comfortable with a values-informed (Jesuit) institutional framework",
+        "Wants NYC access without a fully open-campus urban environment",
+        "Motivated by proximity to major professional industries",
+        "Balances Jesuit values-orientation with pre-professional drive"
+      ],
+      "thrivesIf": [
+        "Wants direct NYC proximity for finance, law, or business recruiting",
+        "Values a Jesuit, mission-driven institutional identity alongside ambition",
+        "Prefers a defined campus within a major city rather than a fully open urban footprint",
+        "Is interested in law school preparation or Gabelli business programs",
+        "Wants career pipeline strength without giving up a structured campus feel"
+      ],
+      "strugglesIf": [
+        "Wants a secular or non-values-explicit institutional identity",
+        "Prefers a fully open, unstructured urban campus like BU or NYU",
+        "Isn't interested in law, business, or finance-adjacent careers",
+        "Wants a large public-university scale and anonymity"
+      ],
+      "transferRiskFactors": [
+        "Students who wanted the fully immersive Manhattan experience and find the Bronx campus limiting",
+        "Students outside law/business/finance who feel the institutional focus doesn't serve them",
+        "Students uncomfortable with the school's Jesuit/Catholic identity"
       ]
     },
     "competitiveMajorPressure": {
@@ -21096,15 +21796,15 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through policy engagement and DC government/consulting proximity."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "The most DC-embedded international affairs talent engine in the country."
     },
     "megaRegionExposure": {
       "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 94,
+      "BosWash": 8,
       "TorBuffChester": 10,
       "TexasTriangle": 6,
-      "CharLanta": 8,
+      "CharLanta": 94,
       "NorCalInnovationCorridor": 8,
       "SoCalCreativeEconomy": 8
     },
@@ -21153,6 +21853,31 @@ const UNIVERSITY_DB_V5 = {
         "Politically Engaged",
         "Ambitious",
         "DC-Embedded"
+      ],
+      "idealStudentTraits": [
+        "Politically ambitious",
+        "Comfortable with an all-consuming DC-centric environment",
+        "Career-focused early, especially toward politics, law, or international affairs",
+        "Socially confident and networking-oriented",
+        "Drawn to proximity over prestige-for-prestige's-sake"
+      ],
+      "thrivesIf": [
+        "Wants to live and breathe DC politics — internships, think tanks, Capitol Hill access built into daily life",
+        "Interested in political science, international affairs, or public policy",
+        "Enjoys a highly ambitious, career-focused peer environment",
+        "Is comfortable with a campus that has no clear geographic edge — DC is the campus",
+        "Can juggle serious academics with early professional networking"
+      ],
+      "strugglesIf": [
+        "Wants a self-contained, traditional campus feel with clear boundaries",
+        "Finds constant political conversation and ambition exhausting",
+        "Prefers a school with strong athletics/spirit culture",
+        "Isn't interested in politics, policy, or DC-adjacent careers"
+      ],
+      "transferRiskFactors": [
+        "Students who wanted a traditional campus and found GW too diffuse and urban",
+        "Students uninterested in politics who feel out of step with the dominant culture",
+        "Students overwhelmed by the intensity of DC's professional ambition"
       ]
     },
     "competitiveMajorPressure": {
@@ -21382,7 +22107,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through Catholic formation and dual entertainment/tech industry access."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCal Creative Economy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "An overlooked dual talent engine feeding both LA entertainment and Silicon Beach tech."
     },
     "megaRegionExposure": {
@@ -21441,6 +22166,31 @@ const UNIVERSITY_DB_V5 = {
         "Polished",
         "Entrepreneurial",
         "Dual-Industry-Embedded"
+      ],
+      "idealStudentTraits": [
+        "Creatively and entrepreneurially minded",
+        "Polished and professionally ambitious",
+        "Comfortable straddling entertainment and tech industries",
+        "Values a smaller, close-knit private-school community",
+        "Drawn to LA's dual-industry access without wanting a massive research university"
+      ],
+      "thrivesIf": [
+        "Wants film/TV production or entrepreneurship with direct Silicon Beach (tech + entertainment) access",
+        "Values a polished, close-knit community over a sprawling anonymous campus",
+        "Is interested in the intersection of creative and business/tech careers",
+        "Enjoys project-based, entrepreneurial coursework",
+        "Wants LA industry access without USC- or UCLA-scale size"
+      ],
+      "strugglesIf": [
+        "Isn't interested in entertainment, media, or tech-adjacent careers",
+        "Wants a large public-university scale and anonymity",
+        "Prefers a campus disconnected from surrounding industry",
+        "Needs a lower cost of attendance than LMU's private-school price point"
+      ],
+      "transferRiskFactors": [
+        "Students outside film/entertainment/tech who feel the industry focus doesn't serve them",
+        "Students who wanted a bigger-name, larger-scale LA school (USC/UCLA) and see LMU as a compromise",
+        "Students priced out or frustrated by cost relative to outcomes"
       ]
     },
     "competitiveMajorPressure": {
@@ -21670,7 +22420,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through Jesuit values and Milwaukee corporate/legal relationships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "A key business and legal talent engine for Milwaukee and Wisconsin."
     },
     "megaRegionExposure": {
@@ -21727,6 +22477,31 @@ const UNIVERSITY_DB_V5 = {
         "Urban",
         "Jesuit Values",
         "Practical"
+      ],
+      "idealStudentTraits": [
+        "Practical and career-minded",
+        "Comfortable with a values-informed (Jesuit) academic framework",
+        "Urban but not overwhelmed by big-city scale",
+        "Drawn to business or engineering with direct regional employer access",
+        "Grounded rather than status-chasing"
+      ],
+      "thrivesIf": [
+        "Wants business or engineering with direct Milwaukee corporate pipeline access",
+        "Values a Jesuit, values-informed institutional identity",
+        "Prefers a mid-size city over a massive metro or small college town",
+        "Wants practical, career-relevant education over prestige-chasing",
+        "Is comfortable with a Catholic institutional identity"
+      ],
+      "strugglesIf": [
+        "Wants a secular or non-values-explicit academic environment",
+        "Needs a major coastal metro's scale of opportunity",
+        "Isn't interested in business, engineering, or practical career tracks",
+        "Wants a large, anonymous research-university environment"
+      ],
+      "transferRiskFactors": [
+        "Students who feel out of step with the school's Catholic/Jesuit identity",
+        "Students who wanted bigger-city (Chicago, NYC) access and find Milwaukee limiting",
+        "Students outside business/engineering who feel like a secondary priority"
       ]
     },
     "competitiveMajorPressure": {
@@ -21958,15 +22733,15 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through federal proximity and technical/business excellence."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "The primary federal security talent engine for the DC-Maryland-Virginia corridor."
     },
     "megaRegionExposure": {
       "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 90,
+      "BosWash": 10,
       "TorBuffChester": 12,
       "TexasTriangle": 6,
-      "CharLanta": 10,
+      "CharLanta": 90,
       "NorCalInnovationCorridor": 12,
       "SoCalCreativeEconomy": 6
     },
@@ -22015,6 +22790,31 @@ const UNIVERSITY_DB_V5 = {
         "Federal-Serious",
         "Big Ten Spirited",
         "Career-Focused"
+      ],
+      "idealStudentTraits": [
+        "Career-serious, especially toward federal/security-adjacent fields",
+        "Technically capable in CS, cybersecurity, or business",
+        "Big Ten school-spirited",
+        "Comfortable with a DC-proximate, federal-minded institutional culture",
+        "Practical and outcomes-focused"
+      ],
+      "thrivesIf": [
+        "Wants cybersecurity, computer science, or business with direct federal/NSA-adjacent pipelines",
+        "Values DC-metro proximity for internships and federal agency access",
+        "Enjoys Big Ten spirit paired with a serious, career-focused academic culture",
+        "Is comfortable with applied, security- and research-based coursework",
+        "Wants strong public-school outcomes at a fraction of private-school cost"
+      ],
+      "strugglesIf": [
+        "Isn't interested in cybersecurity, federal work, or business tracks",
+        "Wants a small, intimate campus environment",
+        "Prefers a campus culture with a more relaxed, less career-serious tone",
+        "Needs a fully independent (non-DC-adjacent) identity rather than federal proximity"
+      ],
+      "transferRiskFactors": [
+        "Students outside CS/business/federal-adjacent tracks who feel like a secondary priority",
+        "Students who wanted a less career-focused, more traditional college experience",
+        "Students overwhelmed by the size and suburban sprawl of the campus"
       ]
     },
     "competitiveMajorPressure": {
@@ -22246,7 +23046,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through practical experience and direct industry co-op relationships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A major talent engine for Boston's biotech and engineering sectors, with co-op reach extending nationally."
     },
     "megaRegionExposure": {
@@ -22305,6 +23105,31 @@ const UNIVERSITY_DB_V5 = {
         "Career-Focused",
         "Urban",
         "In Constant Motion"
+      ],
+      "idealStudentTraits": [
+        "Career-focused from day one",
+        "Comfortable with a non-traditional four-year rhythm (co-op cycles)",
+        "Urban and in-motion socially",
+        "Resourceful and proactive about building a resume alongside a transcript",
+        "Values real-world experience over a purely academic path"
+      ],
+      "thrivesIf": [
+        "Wants real, paid, full-time co-op work experience built directly into the degree",
+        "Is comfortable with a non-linear college timeline built around alternating work/study terms",
+        "Enjoys a career-focused, always-in-motion urban culture",
+        "Values employability and direct industry experience over a purely academic four years",
+        "Can handle the logistics of co-op cycles (moving, adjusting friend groups) without losing momentum"
+      ],
+      "strugglesIf": [
+        "Wants a traditional, uninterrupted four-year residential college experience",
+        "Needs a stable, consistent friend group across all four years",
+        "Isn't focused on career outcomes as a primary driver",
+        "Dislikes the disruption of alternating study/work terms"
+      ],
+      "transferRiskFactors": [
+        "Students who find the co-op cycle disruptive to social continuity and academic rhythm",
+        "Students who wanted a traditional college experience and feel Northeastern is too work-focused",
+        "Students who struggle with the self-management co-op scheduling requires"
       ]
     },
     "competitiveMajorPressure": {
@@ -22539,7 +23364,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through independence, global network access, and direct industry proximity."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "One of the primary talent engines for Wall Street, global media, and entertainment industries centered in New York City."
     },
     "megaRegionExposure": {
@@ -22602,6 +23427,31 @@ const UNIVERSITY_DB_V5 = {
         "Self-Assembled",
         "Ambitious",
         "Globally Minded"
+      ],
+      "idealStudentTraits": [
+        "Highly independent",
+        "Globally minded and ambitious",
+        "Comfortable assembling their own community in a borderless urban campus",
+        "Career-driven, especially toward finance, media, or the arts",
+        "Self-directed without needing a traditional campus structure"
+      ],
+      "thrivesIf": [
+        "Wants Manhattan itself as the campus — no quad, no boundary, the city is the environment",
+        "Is comfortable being one of many in a very large, very diverse student body",
+        "Interested in finance, media, film, or global affairs with direct industry access",
+        "Can self-assemble community rather than relying on built-in structure",
+        "Wants global ambition and independence over traditional college-town intimacy"
+      ],
+      "strugglesIf": [
+        "Wants a traditional, self-contained campus with clear boundaries",
+        "Needs built-in community rather than one they construct themselves",
+        "Prefers a stronger athletics/school-spirit culture",
+        "Feels overwhelmed by a fully urban, boundary-less environment"
+      ],
+      "transferRiskFactors": [
+        "Students who feel anonymous or unmoored without a traditional campus structure",
+        "Students who wanted school spirit and Greek life and found neither",
+        "Students overwhelmed by NYU's cost relative to the self-directed nature of the experience"
       ]
     },
     "competitiveMajorPressure": {
@@ -22826,7 +23676,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through tradition, scale, and one of the most active alumni-to-student mentorship cultures in the country."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A major talent engine for the Mid-Atlantic corridor, feeding Philadelphia, Pittsburgh, New York, and Washington DC with engineering, business, and actuarial science graduates."
     },
     "megaRegionExposure": {
@@ -22891,6 +23741,31 @@ const UNIVERSITY_DB_V5 = {
         "Greek-Heavy",
         "Self-Contained College Town",
         "Tradition-Bound"
+      ],
+      "idealStudentTraits": [
+        "Tradition-minded and loyal",
+        "Big Ten school-spirited",
+        "Comfortable in a large, self-contained college-town environment",
+        "Values a powerful alumni network as much as the degree itself",
+        "Team- and community-oriented"
+      ],
+      "thrivesIf": [
+        "Wants engineering, business, or actuarial science backed by the nation's most powerful alumni network",
+        "Enjoys Big Ten spirit and Greek-heavy campus culture",
+        "Values a self-contained college town over an urban or suburban campus",
+        "Is comfortable with large lecture courses paired with discussion sections",
+        "Wants deep institutional tradition and loyalty as part of the experience"
+      ],
+      "strugglesIf": [
+        "Wants an urban or culturally diverse campus setting",
+        "Prefers small, discussion-based classes over large lectures",
+        "Isn't drawn to school spirit, tradition, or Greek life",
+        "Wants a fast-moving, non-traditional college experience"
+      ],
+      "transferRiskFactors": [
+        "Students who feel isolated by the self-contained, rural college-town setting",
+        "Students who don't connect with Greek life or Big Ten spirit and feel socially out of step",
+        "Students overwhelmed by large intro lecture courses"
       ]
     },
     "competitiveMajorPressure": {
@@ -23123,7 +23998,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through engineering rigor and deep aerospace/manufacturing industry partnerships."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "A primary engineering talent engine for the Midwest, now central to the semiconductor manufacturing reshoring wave."
     },
     "megaRegionExposure": {
@@ -23182,6 +24057,31 @@ const UNIVERSITY_DB_V5 = {
         "Boilermaker Proud",
         "Technically Serious",
         "Big Ten Spirited"
+      ],
+      "idealStudentTraits": [
+        "Technically serious and rigor-tolerant",
+        "Boilermaker-proud and Big Ten spirited",
+        "Comfortable with a heavy STEM-focused workload",
+        "Drawn to hands-on, research-based engineering training",
+        "Practical and achievement-oriented"
+      ],
+      "thrivesIf": [
+        "Wants elite engineering or aerospace training with real research and semiconductor-corridor pipelines",
+        "Is comfortable with a technically serious, rigorous academic culture",
+        "Enjoys Big Ten school spirit alongside intense STEM coursework",
+        "Values hands-on technical training and applied research opportunities",
+        "Can handle a demanding workload without needing a softer academic pace"
+      ],
+      "strugglesIf": [
+        "Wants a softer, less STEM-intensive academic environment",
+        "Prefers humanities or liberal-arts-centered coursework",
+        "Needs a highly social, low-pressure campus culture",
+        "Struggles with rigorous math/engineering course sequences"
+      ],
+      "transferRiskFactors": [
+        "Students outside engineering/STEM who feel like an afterthought",
+        "Students who underestimated the technical intensity and feel overwhelmed",
+        "Students who need more social softness than Purdue's technically serious culture offers"
       ]
     },
     "competitiveMajorPressure": {
@@ -23469,6 +24369,31 @@ const UNIVERSITY_DB_V5 = {
         "Warm",
         "Greek-Heavy",
         "Fort Worth-Proud"
+      ],
+      "idealStudentTraits": [
+        "Warm and relationally oriented",
+        "Comfortable with a Greek-heavy social culture",
+        "Values a smaller, close-knit alternative to SMU-style wealth-first culture",
+        "Career-minded, especially toward nursing or business",
+        "Fort Worth-proud and community-oriented"
+      ],
+      "thrivesIf": [
+        "Wants a warm, relationally close-knit campus over a status-driven one",
+        "Values nursing, business, or pre-professional programs in a small-seminar setting",
+        "Enjoys Greek life without an overwhelming wealth-signaling culture",
+        "Prefers Fort Worth's identity to Dallas's more status-conscious scene",
+        "Wants a mid-size private school with genuine warmth as the differentiator"
+      ],
+      "strugglesIf": [
+        "Wants the most prestigious or wealth-signaling private-school brand in DFW",
+        "Isn't interested in nursing, business, or pre-professional tracks",
+        "Prefers a large public-university scale",
+        "Wants an urban, non-Greek-centric social scene"
+      ],
+      "transferRiskFactors": [
+        "Students who wanted higher-prestige brand signaling and see TCU as a compromise",
+        "Students who don't connect with Greek life and feel socially out of step",
+        "Students outside nursing/business who feel like a secondary priority"
       ]
     },
     "competitiveMajorPressure": {
@@ -23705,7 +24630,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through community, tradition, and direct research/industry proximity."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "A primary talent engine for the Research Triangle's biotech, pharma, and business ecosystem alongside Duke and NC State."
     },
     "megaRegionExposure": {
@@ -23767,6 +24692,31 @@ const UNIVERSITY_DB_V5 = {
         "Basketball-Proud",
         "Community-Oriented",
         "Research-Serious"
+      ],
+      "idealStudentTraits": [
+        "Warm and community-oriented",
+        "Basketball-proud and school-spirited",
+        "Research-serious, especially in pharmacy or business",
+        "Comfortable with elite academics inside a friendly, less cutthroat culture",
+        "Values Research Triangle regional economic access"
+      ],
+      "thrivesIf": [
+        "Wants pharmacy or business training with direct Research Triangle economic access",
+        "Enjoys a warm, community-oriented public-university culture rather than a purely competitive one",
+        "Values basketball-centered school spirit as part of campus identity",
+        "Is drawn to research-serious academics without Michigan- or Berkeley-level cutthroat intensity",
+        "Wants elite public-school outcomes with genuine community warmth"
+      ],
+      "strugglesIf": [
+        "Wants a small, intimate private-school environment",
+        "Isn't interested in pharmacy, business, or Research Triangle-adjacent careers",
+        "Prefers an intensely competitive, less community-warm academic culture",
+        "Needs an urban (non-college-town) setting"
+      ],
+      "transferRiskFactors": [
+        "Students outside pharmacy/business who feel like a secondary priority",
+        "Students who wanted an urban environment and find Chapel Hill too college-town",
+        "Students overwhelmed by the size despite the school's warm reputation"
       ]
     },
     "competitiveMajorPressure": {
@@ -24061,6 +25011,31 @@ const UNIVERSITY_DB_V5 = {
         "Massive Scale",
         "Creative",
         "Tech-Forward"
+      ],
+      "idealStudentTraits": [
+        "Creative and tech-forward",
+        "Comfortable at massive institutional scale",
+        "Drawn to Austin's cultural and tech-industry energy specifically",
+        "Career-ambitious toward communications, engineering, or tech",
+        "Self-directed within a very large public university"
+      ],
+      "thrivesIf": [
+        "Wants communications, engineering, or tech with direct access to Austin's booming tech scene",
+        "Is comfortable at a genuinely massive public-university scale",
+        "Enjoys a creative, tech-forward, culturally vibrant city as the backdrop to college",
+        "Values a school and city so intertwined that graduates often don't leave",
+        "Can self-advocate and navigate a very large, decentralized institution"
+      ],
+      "strugglesIf": [
+        "Wants a small, intimate campus environment",
+        "Isn't drawn to Austin's specific tech/creative culture",
+        "Needs significant structure and hand-holding to succeed academically",
+        "Prefers a quieter, less rapidly-growing city"
+      ],
+      "transferRiskFactors": [
+        "Students overwhelmed by UT Austin's sheer scale and feel anonymous",
+        "Students outside tech/communications who feel like the city's draw doesn't serve their major",
+        "Students priced out of Austin's rapidly rising cost of living relative to the degree"
       ]
     },
     "competitiveMajorPressure": {
@@ -24297,7 +25272,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through academic excellence and direct LA industry access across multiple sectors simultaneously."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCal Creative Economy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "The most complete talent engine in Los Angeles, spanning entertainment, tech, medicine, and business simultaneously."
     },
     "megaRegionExposure": {
@@ -24719,7 +25694,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through Jesuit values and elite Boston finance placement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A key business talent engine feeding Boston's dense financial services sector."
     },
     "megaRegionExposure": {
@@ -24776,6 +25751,31 @@ const UNIVERSITY_DB_V5 = {
         "Polished",
         "Faith-Informed",
         "Pre-Professional"
+      ],
+      "idealStudentTraits": [
+        "Pre-professionally ambitious",
+        "Comfortable with a values-informed (Jesuit) academic framework",
+        "Polished and socially confident",
+        "Driven toward finance, consulting, or business",
+        "Able to balance rigor with a structured, tradition-minded campus culture"
+      ],
+      "thrivesIf": [
+        "Wants a direct pipeline into Boston/Wall Street finance and consulting recruiting",
+        "Values a Jesuit, mission-driven institutional identity alongside pre-professional intensity",
+        "Enjoys a polished, tradition-heavy campus social culture",
+        "Is comfortable in a competitive, achievement-oriented peer environment",
+        "Wants strong career outcomes without sacrificing a residential liberal-arts feel"
+      ],
+      "strugglesIf": [
+        "Wants a secular or non-values-explicit academic environment",
+        "Is uncomfortable in a socially polished, pre-professional-heavy culture",
+        "Prefers an unstructured or highly experimental academic path",
+        "Dislikes intensity around recruiting and career positioning starting freshman year"
+      ],
+      "transferRiskFactors": [
+        "Students who feel out of step with the school's Catholic/Jesuit identity",
+        "Students overwhelmed by the pre-professional intensity and recruiting culture",
+        "Students who wanted more academic or social nonconformity than BC's polish allows"
       ]
     },
     "competitiveMajorPressure": {
@@ -25015,7 +26015,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through scientific discovery, technical excellence, and research output."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "The nation's premier undergraduate feeder into biotechnology, genomics, and life sciences research, anchored by direct proximity to the Torrey Pines biotech mesa."
     },
     "megaRegionExposure": {
@@ -25464,7 +26464,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through scientific research excellence and environmental stewardship."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "A physics and materials science research engine bridging the Los Angeles entertainment-technology economy and the Bay Area innovation corridor."
     },
     "megaRegionExposure": {
@@ -25902,7 +26902,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through applied scientific research and service to California's agricultural and environmental future."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "primaryMegaRegion": "Northern California",
       "regionalRole": "The nation's leading land-grant research university for agriculture, veterinary medicine, and food systems, anchored in California's Central Valley."
     },
     "megaRegionExposure": {
@@ -26342,7 +27342,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through structured academic achievement and professional preparation."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "Orange County's primary technology, biomedical device, and business talent pipeline, bridging Los Angeles and San Diego's innovation economies."
     },
     "megaRegionExposure": {
@@ -26781,7 +27781,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through access, equity, and mission-driven community impact."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "The Inland Empire's primary access-oriented research university, training physicians and scientists to serve the region's underserved communities."
     },
     "megaRegionExposure": {
@@ -27214,7 +28214,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through independent scholarship, environmental stewardship, and quiet technical excellence."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "primaryMegaRegion": "Northern California",
       "regionalRole": "A Silicon Valley-adjacent research campus combining an emerging computer science and game design pipeline with world-class marine science access via the Monterey Bay."
     },
     "megaRegionExposure": {
@@ -27646,7 +28646,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through innovation, company-building, and technological influence at global scale."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "primaryMegaRegion": "Northern California",
       "regionalRole": "The intellectual and entrepreneurial origin point of Silicon Valley, producing an outsized share of the world's most influential technology companies and venture capital firms."
     },
     "megaRegionExposure": {
@@ -28086,7 +29086,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through scientific discovery, technical mastery, and research excellence."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "The nation's most concentrated pure-science research engine, anchored by its management of NASA's Jet Propulsion Laboratory."
     },
     "megaRegionExposure": {
@@ -28513,7 +29513,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through literary influence, health sciences excellence, and community engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "A Midwestern flagship anchoring literary arts and health sciences for Iowa and the broader agricultural Midwest."
     },
     "megaRegionExposure": {
@@ -28934,7 +29934,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through journalistic influence, agricultural science excellence, and community engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "A Midwestern flagship anchoring journalism education and agricultural science for Missouri and the broader Midwest."
     },
     "megaRegionExposure": {
@@ -29357,7 +30357,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through corporate pragmatism, retail industry excellence, and SEC school spirit."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "The nation's premier undergraduate feeder into retail management and supply chain careers, anchored by direct proximity to Walmart's global headquarters."
     },
     "megaRegionExposure": {
@@ -29779,7 +30779,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through legal and pharmaceutical professional excellence and Southern cultural stewardship."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "A Deep South flagship anchoring legal education, pharmaceutical sciences, and Southern literary tradition for Mississippi and the Mid-South."
     },
     "megaRegionExposure": {
@@ -30197,7 +31197,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through practical excellence, agricultural stewardship, and mathematical rigor."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "A Great Plains flagship anchoring actuarial science and agricultural engineering for Nebraska's insurance and farming economy."
     },
     "megaRegionExposure": {
@@ -30616,7 +31616,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through engineering research excellence and growing corporate ambition."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "A Southeastern flagship anchoring nuclear engineering research and increasingly feeding into Nashville's booming corporate economy."
     },
     "megaRegionExposure": {
@@ -31033,7 +32033,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through environmental stewardship, rural healthcare mission, and sustainable community engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "New England's leading environmental sustainability research university, combined with a mission-driven rural medicine program."
     },
     "megaRegionExposure": {
@@ -31450,7 +32450,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through criminal justice policy influence, creative production, and public administration excellence."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Florida",
       "regionalRole": "Florida's public policy and criminology capital, anchored by direct proximity to the state capitol in Tallahassee."
     },
     "megaRegionExposure": {
@@ -31867,7 +32867,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through industry-connected innovation and applied technical excellence."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Florida",
       "regionalRole": "The academic center of Orlando's themed entertainment and military simulation technology economy."
     },
     "megaRegionExposure": {
@@ -32291,7 +33291,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through student success innovation, urban economic integration, and social mobility impact."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "A rapidly rising urban research university providing direct downtown Atlanta corporate access and pioneering student success innovation nationally."
     },
     "megaRegionExposure": {
@@ -32710,7 +33710,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through pragmatic professional excellence and urban civic engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A pragmatic, access-oriented urban research university anchoring journalism and legal education in Philadelphia."
     },
     "megaRegionExposure": {
@@ -33128,7 +34128,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through teaching excellence, student engagement, and community-building."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A teaching-focused public university feeding polished, professionally prepared graduates into the Washington DC metro area's government and consulting economy."
     },
     "megaRegionExposure": {
@@ -33545,7 +34545,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through principled organizational leadership training and pre-professional excellence."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A well-resourced small liberal arts university anchoring leadership studies education and feeding Virginia's legal, business, and government economy."
     },
     "megaRegionExposure": {
@@ -33962,7 +34962,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through public service, theoretical research excellence, and policy influence."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "An undergraduate-focused Ivy League research university anchoring theoretical scholarship and public policy education within the Boston-Washington corridor."
     },
     "megaRegionExposure": {
@@ -34382,7 +35382,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through legal and judicial influence, artistic excellence, and public service tradition."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "An elite Ivy League research university anchoring legal education and the arts within the Boston-Washington corridor, with an outsized influence on the federal judiciary."
     },
     "megaRegionExposure": {
@@ -34801,7 +35801,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through intellectual rigor, professional acceleration, and global urban engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "The most urban-integrated Ivy League university, providing direct daily access to Manhattan's financial, media, and international affairs institutions."
     },
     "megaRegionExposure": {
@@ -35219,7 +36219,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through practical excellence, applied research, and comprehensive academic breadth."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "The most academically comprehensive Ivy League university, combining land-grant practical education with elite research across engineering, hospitality, and agriculture."
     },
     "megaRegionExposure": {
@@ -35579,7 +36579,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through close alumni network activation, business excellence, and outdoor wilderness stewardship."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "The smallest and most undergraduate-focused Ivy League institution, producing a disproportionately powerful alumni network in finance and consulting relative to its size."
     },
     "megaRegionExposure": {
@@ -35996,7 +36996,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through business excellence, interdisciplinary innovation, and professional network activation."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "The most explicitly pre-professional Ivy League university, anchored by the world's most influential undergraduate business program."
     },
     "megaRegionExposure": {
@@ -36415,7 +37415,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through independent scholarship and quiet institutional prestige."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "An elite, open-curriculum liberal arts college anchoring the Five College Consortium in western Massachusetts."
     },
     "megaRegionExposure": {
@@ -36824,7 +37824,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through public service, environmental stewardship, and quiet institutional prestige."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A coastal Maine liberal arts college with a distinctive environmental and polar research legacy, feeding Boston's finance and consulting economy."
     },
     "megaRegionExposure": {
@@ -37235,7 +38235,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through global engagement, language fluency, and environmental stewardship."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "The nation's leading undergraduate language immersion institution, anchoring international affairs education within a Green Mountains setting."
     },
     "megaRegionExposure": {
@@ -37647,7 +38647,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through creative and artistic influence, disproportionate to the university's small size."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "An artistically experimental liberal arts university with an outsized influence on American film, television, and music relative to its size."
     },
     "megaRegionExposure": {
@@ -38058,7 +39058,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through genuine scholarly rigor and quiet intellectual seriousness."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "The Upper Midwest's leading undergraduate feeder into PhD programs and academic research careers."
     },
     "megaRegionExposure": {
@@ -38470,7 +39470,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through social justice engagement, intellectual independence, and institutional resource stewardship."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "An exceptionally well-resourced Midwestern liberal arts college anchoring social-justice-oriented intellectual culture in rural Iowa."
     },
     "megaRegionExposure": {
@@ -38880,7 +39880,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through artistic and literary influence and historically-grounded intellectual seriousness."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A historically significant Hudson Valley liberal arts college with an outsized influence on American theater, film, and letters."
     },
     "megaRegionExposure": {
@@ -39291,7 +40291,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through structured leadership development and pre-professional excellence in government and finance."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "The Claremont Consortium's most pre-professionally focused college, anchoring government, economics, and finance training in Southern California."
     },
     "megaRegionExposure": {
@@ -39701,7 +40701,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through technical excellence balanced with genuine humanistic and interdisciplinary awareness."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCal Creative and Innovation Economy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "A STEM-exclusive liberal arts college anchoring Southern California's aerospace and technology talent pipeline within the Claremont Consortium."
     },
     "megaRegionExposure": {
@@ -40113,7 +41113,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through clear communication, intellectual independence, and quiet institutional prestige."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "An open-curriculum liberal arts college anchoring elite writing instruction and finance/government placement in upstate New York."
     },
     "megaRegionExposure": {
@@ -40524,7 +41524,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through artistic excellence, social justice engagement, and historically-grounded progressive values."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "A historically progressive liberal arts college and conservatory anchoring music, sciences, and social justice education in Northeast Ohio."
     },
     "megaRegionExposure": {
@@ -40935,7 +41935,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through literary and intellectual distinction, disproportionate to the college's small size and remote setting."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "A literarily distinguished liberal arts college anchoring creative writing and the humanities in rural central Ohio."
     },
     "megaRegionExposure": {
@@ -41346,7 +42346,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through interdisciplinary research excellence and medical-engineering innovation."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "MidContinent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "The Midwest's leading medicine-engineering fusion research university, anchored by direct Cleveland Clinic integration."
     },
     "megaRegionExposure": {
@@ -41763,7 +42763,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through technical-business integration and pragmatic professional excellence."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A historically industrial engineering university that has evolved into a strong integrated business-engineering pipeline into New York and Philadelphia finance."
     },
     "megaRegionExposure": {
@@ -42179,7 +43179,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through applied professional readiness and cooperative education innovation."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "The nation's leading cooperative education university, embedding professional experience directly into undergraduate degrees from a Philadelphia base."
     },
     "megaRegionExposure": {
@@ -42595,7 +43595,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through applied project execution and pragmatic technical innovation."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A project-based STEM pioneer anchoring applied robotics and engineering education within New England's technology corridor."
     },
     "megaRegionExposure": {
@@ -43011,7 +44011,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through design innovation, technical imaging expertise, and institutional commitment to accessibility and inclusion."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "TorBuffChester",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "The nation's leading imaging science and inclusive design-technology university, anchored in Rochester's historic optics and photography industry."
     },
     "megaRegionExposure": {
@@ -43422,7 +44422,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through quantitative rigor, technical excellence, and pragmatic proximity to major financial markets."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "An engineering-first technical university providing the most direct undergraduate access to Wall Street of any university not physically located in Manhattan."
     },
     "megaRegionExposure": {
@@ -43837,15 +44837,15 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership framed through public service and direct access to DC's actual power corridor."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "The nation's most direct undergraduate pipeline into the State Department, the White House, the World Bank, and Capitol Hill — the establishment engine of BosWash's policy economy."
     },
     "megaRegionExposure": {
       "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 97,
+      "BosWash": 10,
       "TorBuffChester": 8,
       "TexasTriangle": 6,
-      "CharLanta": 10,
+      "CharLanta": 97,
       "NorCalInnovationCorridor": 10,
       "SoCalCreativeEconomy": 8
     },
@@ -44261,7 +45261,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through technical excellence and direct engagement with Silicon Valley's innovation economy."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "NorCal Innovation Corridor",
+      "primaryMegaRegion": "Northern California",
       "regionalRole": "The single largest volume pipeline of engineering and technology talent into Silicon Valley of any university, public or private."
     },
     "megaRegionExposure": {
@@ -45116,7 +46116,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through technical mastery, building real systems, and entrepreneurial execution."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "The single most influential engineering and technology-entrepreneurship engine in BosWash, with a startup ecosystem influence extending well beyond the corridor itself."
     },
     "megaRegionExposure": {
@@ -45545,7 +46545,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through technical mastery, research output, and — within Drama — genuine conservatory-level artistic training."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "The research engine that substantially built Pittsburgh's transformation from a former steel city into a genuine robotics and autonomous-vehicle technology hub."
     },
     "megaRegionExposure": {
@@ -45963,7 +46963,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through rigorous analysis and intellectual depth rather than pre-professional networking."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "The most intellectually rigorous economics and analytical-thinking engine in the Mid-Continent corridor, with an outsized national influence on economic policy relative to its regional footprint."
     },
     "megaRegionExposure": {
@@ -46377,7 +47377,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through achievement, tradition, and elite professional placement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "A primary national-recruiting talent engine for the Research Triangle's biotech, pharma, and academic medicine ecosystem, alongside UNC and NC State."
     },
     "megaRegionExposure": {
@@ -46797,7 +47797,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through media influence, professional achievement, and creative and technical excellence."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+      "primaryMegaRegion": "Great Lakes",
       "regionalRole": "The nation's most dominant journalism and media talent engine, layered on top of direct access to Chicago's consulting and financial-services economy."
     },
     "megaRegionExposure": {
@@ -47216,7 +48216,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through engineering competence, military tradition, and — increasingly — direct technology-corridor positioning."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Northeast",
       "regionalRole": "A large-scale engineering talent engine with a genuinely unusual, purpose-built foothold inside the Northern Virginia tech and defense-contracting corridor via the Innovation Campus."
     },
     "megaRegionExposure": {
@@ -47633,7 +48633,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through applied technical competence and direct industry partnership."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "The Research Triangle's applied engineering and corporate R&D partnership engine, distinct from UNC's biotech/pharma identity and Duke's academic medicine identity."
     },
     "megaRegionExposure": {
@@ -48049,7 +49049,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through public health impact, corporate integration, and civic service."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "The nation's most direct undergraduate pipeline into public health policy via unmatched CDC proximity, layered on top of deep Atlanta corporate integration through Goizueta."
     },
     "megaRegionExposure": {
@@ -48464,7 +49464,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through pre-professional achievement and close-knit community involvement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "CharLanta",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "A small-scale but disproportionately strong finance and consulting talent pipeline, benefiting from Charlotte's banking economy and broader CharLanta corporate access."
     },
     "megaRegionExposure": {
@@ -48877,7 +49877,7 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through Christian values, service, and international engagement."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "SoCal Creative Economy",
+      "primaryMegaRegion": "Southern California",
       "regionalRole": "A values-driven talent engine combining LA entertainment and business proximity with a nationally elite dispute resolution law program and an unusually extensive international study-abroad network."
     },
     "megaRegionExposure": {
@@ -49460,7 +50460,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through tradition, Catholic values, and an intensely loyal, reciprocal alumni network."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "primaryMegaRegion": "Great Lakes",
     "regionalRole": "A nationally-recruited Catholic elite institution whose alumni network and finance/consulting placement extend well beyond its Great Lakes location, reinforced by football-driven national visibility."
   },
   "megaRegionExposure": {
@@ -49650,7 +50650,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through research excellence and technical mastery in medicine, public health, and biomedical science."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "BosWash",
+    "primaryMegaRegion": "Northeast",
     "regionalRole": "The world's leading academic medicine and public health research engine inside the BosWash corridor, with genuine DC-adjacent international affairs and federal policy reach through SAIS."
   },
   "megaRegionExposure": {
@@ -49842,7 +50842,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through direct industry competence and hands-on operational experience."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "SoCal Creative Economy",
+    "primaryMegaRegion": "Southern California",
     "regionalRole": "The world's most specialized hospitality and gaming management talent engine, embedded directly inside the Las Vegas Strip resort industry."
   },
   "megaRegionExposure": {
@@ -50034,7 +51034,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through direct corporate access and applied business competence."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "primaryMegaRegion": "Great Lakes",
     "regionalRole": "The Upper Midwest's most corporate-connected flagship public, with unmatched direct access to the Twin Cities' Fortune 500 headquarters density."
   },
   "megaRegionExposure": {
@@ -50212,7 +51212,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through clinical and research competence in academic medicine."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "primaryMegaRegion": "Great Lakes",
     "regionalRole": "A top-10 nationally funded academic medicine research engine, directly integrated with UPMC, inside Pittsburgh's transformed healthcare-and-technology economy."
   },
   "megaRegionExposure": {
@@ -50390,7 +51390,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through athletics-driven school pride and applied industry competence."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "BosWash",
+    "primaryMegaRegion": "Northeast",
     "regionalRole": "The most direct undergraduate pipeline into Hartford's national insurance industry capital of any university in the country."
   },
   "megaRegionExposure": {
@@ -51828,7 +52828,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through venture creation and applied entrepreneurial risk-taking."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "BosWash",
+    "primaryMegaRegion": "Northeast",
     "regionalRole": "The single most category-dominant entrepreneurship education engine in the country, embedded directly inside Boston's dense startup and venture capital ecosystem."
   },
   "megaRegionExposure": {
@@ -52006,7 +53006,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through applied business competence integrated with genuine liberal arts perspective."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "BosWash",
+    "primaryMegaRegion": "Northeast",
     "regionalRole": "A specialized business analytics and corporate finance talent engine directly embedded in Boston's financial services and growing technology corridor."
   },
   "megaRegionExposure": {
@@ -52362,7 +53362,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through environmental stewardship and intensive academic focus."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "Rocky Mountains",
+    "primaryMegaRegion": "Front Range",
     "regionalRole": "A genuinely distinctive liberal arts college whose Block Plan academic model and direct Rocky Mountain access produce field-based, immersive learning unavailable almost anywhere else."
   },
   "megaRegionExposure": {
@@ -52721,7 +53721,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through applied technical mastery and quantitative rigor."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "Rocky Mountains",
+    "primaryMegaRegion": "Front Range",
     "regionalRole": "The single most specialized, most singularly focused mining and energy engineering institution in the country, anchoring the Rocky Mountain region's natural resources economy."
   },
   "megaRegionExposure": {
@@ -52904,7 +53904,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through military command structure and formalized officer development."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "BosWash",
+    "primaryMegaRegion": "Northeast",
     "regionalRole": "The country's most formalized, most intensely developed leadership pipeline, producing commissioned military officers who go on to disproportionate civilian leadership roles in business, consulting, and government."
   },
   "megaRegionExposure": {
@@ -53081,7 +54081,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through creative vision and design craft mastery."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "BosWash",
+    "primaryMegaRegion": "Northeast",
     "regionalRole": "The single most respected standalone art and design education engine in the country, with a unique cross-registration relationship with Brown University giving students research-university academic breadth alongside specialized studio intensity."
   },
   "megaRegionExposure": {
@@ -53259,7 +54259,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through applied technical mastery and hands-on project execution."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "primaryMegaRegion": "Great Lakes",
     "regionalRole": "The country's single most intensely undergraduate-focused engineering institution, producing hands-on, immediately job-ready engineers for the aerospace, automotive, and technology industries nationally."
   },
   "megaRegionExposure": {
@@ -53617,7 +54617,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through applied agricultural and engineering competence and Bison football-driven school pride."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "primaryMegaRegion": "Great Lakes",
     "regionalRole": "A land-grant agricultural research engine sitting directly on one of the most significant American oil discoveries in decades, giving students a genuine dual-industry regional economy."
   },
   "megaRegionExposure": {
@@ -53797,7 +54797,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through applied agricultural competence and Jackrabbits athletics-driven school pride."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "Mid-Continent Industrial Energy Corridor",
+    "primaryMegaRegion": "Great Lakes",
     "regionalRole": "A land-grant dairy and precision agriculture research engine with a disproportionately strong national pharmacy program, anchoring South Dakota's agricultural economy."
   },
   "megaRegionExposure": {
@@ -53976,7 +54976,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through applied energy-industry competence and ranching-culture self-reliance."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "Rocky Mountains",
+    "primaryMegaRegion": "Front Range",
     "regionalRole": "The only public four-year university in America's leading coal-producing state, with a genuinely comprehensive School of Energy Resources spanning coal, uranium, oil and gas, and wind."
   },
   "megaRegionExposure": {
@@ -54155,7 +55155,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through conservation stewardship and creative and intellectual achievement."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "Rocky Mountains",
+    "primaryMegaRegion": "Front Range",
     "regionalRole": "Montana's humanities-and-wilderness-focused flagship, anchoring a genuinely elite creative writing tradition alongside direct Northern Rockies field research access."
   },
   "megaRegionExposure": {
@@ -54334,7 +55334,7 @@ const UNIVERSITY_DB_V5 = {
     "leadershipStyle": "Leadership through applied engineering competence and genuine research innovation."
   },
   "megaRegionIntegration": {
-    "primaryMegaRegion": "Rocky Mountains",
+    "primaryMegaRegion": "Front Range",
     "regionalRole": "Montana's STEM-and-agriculture land-grant flagship, anchoring a genuinely real NASA-funded small satellite research program alongside a growing Bozeman technology sector."
   },
   "megaRegionExposure": {
@@ -54531,15 +55531,15 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through legacy, historical consequence, and an alumni network defined by returning to lift up the next generation."
     },
     "megaRegionIntegration": {
-      "primaryMegaRegion": "BosWash",
+      "primaryMegaRegion": "Piedmont Atlantic",
       "regionalRole": "The nation's most consequential HBCU talent engine, embedded directly in the federal government and law corridor."
     },
     "megaRegionExposure": {
       "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 62,
+      "BosWash": 22,
       "TorBuffChester": 6,
       "TexasTriangle": 8,
-      "CharLanta": 22,
+      "CharLanta": 62,
       "NorCalInnovationCorridor": 8,
       "SoCalCreativeEconomy": 14
     },
@@ -54601,6 +55601,19 @@ const UNIVERSITY_DB_V5 = {
         "Students seeking a large traditional residential quad campus",
         "Students uninterested in DC's political and legal industries",
         "Students prioritizing lowest possible cost of attendance"
+      ],
+      "thrivesIf": [
+        "Wants to be surrounded by high-achieving Black peers, faculty, and mentors as the norm, not the exception",
+        "Is drawn to law, medicine, government, or entertainment as a career path",
+        "Values being part of an institution with deep historical and cultural consequence",
+        "Wants direct proximity to DC's federal government and legal establishment",
+        "Is energized by a proud, achievement-oriented campus culture"
+      ],
+      "strugglesIf": [
+        "Wants a large, traditional residential quad-style campus experience",
+        "Is not interested in DC's political, legal, or government-adjacent industries",
+        "Needs the lowest possible cost of attendance as a primary constraint",
+        "Prefers a more anonymous, spread-out campus feel"
       ]
     },
     "competitiveMajorPressure": {

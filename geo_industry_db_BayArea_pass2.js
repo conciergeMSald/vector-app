@@ -534,6 +534,13 @@ const GEO_INDUSTRY_DB_BAYAREA = {
         distance: "Local",
         anchor_employers: ["major California law firms", "management consulting offices"],
         student_connection: "Nob Hill and the Financial District support one of the highest concentrations of corporate law and professional services firms on the West Coast."
+      },
+      {
+        name: "Hospitality & Hotel Brand Management",
+        naics: 72,
+        distance: "Local",
+        anchor_employers: ["Kimpton Hotels & Restaurants (HQ)"],
+        student_connection: "Kimpton Hotels & Restaurants — the boutique hotel brand behind 44 properties nationwide — is headquartered right here on Kearny Street, putting hotel brand management, guest experience design, and hospitality operations leadership within walking distance rather than a concept from somewhere else."
       }
     ]
   },

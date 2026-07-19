@@ -282,7 +282,7 @@ const NAICS_TO_ONET = {
   // NAICS 72 — Food Service & Hospitality
   72: {
     clusterName: 'Hospitality & Experience Economy',
-    metros: ['Orlando FL','Las Vegas NV','New York NY'],
+    metros: ['Orlando FL','Las Vegas NV','New York NY','Orange County CA','San Diego CA','San Francisco CA'],
     riasecAffinity: ['E','S','A'],
     titles: [
       'Hotel General Manager',
