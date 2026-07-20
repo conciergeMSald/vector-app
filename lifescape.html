@@ -218,6 +218,20 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .screen.active{display:block;animation:fadeUp .4s ease forwards;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
+/* ── ESSAY-ENGINE-003 v1.2 Pacing Addendum ────────────────────────────────
+   Scoped to .ee-screen only (screens ee1-ee6) via the extra class raising
+   selector specificity — does NOT alter .screen.active above, which every
+   other screen in the app still uses unchanged. Pure opacity fade only,
+   no transform — the addendum is explicit that this should read as
+   unhurried, not decorative (no float/bounce/slide). Reuses existing
+   tokens only (--gold, --rule) — no new design tokens introduced. */
+.screen.ee-screen.active{animation:eeFadeIn 700ms ease-in forwards;}
+@keyframes eeFadeIn{from{opacity:0;}to{opacity:1;}}
+.ee-screen.ee-leaving{transition:opacity .35s ease;opacity:.12;}
+.ee-dots{display:flex;gap:8px;margin:1.5rem 0 0;}
+.ee-dot{width:6px;height:6px;border-radius:50%;background:var(--rule);transition:background .3s ease;}
+.ee-dot.ee-dot-filled{background:var(--gold);}
+
 /* ── PROGRESS BAR ──────────────────────────────────── */
 .progress-track{position:fixed;top:0;left:0;right:0;height:2px;background:var(--rule);z-index:100;}
 .progress-fill{height:2px;background:var(--gold);transition:width .5s ease;}
@@ -1238,7 +1252,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 
 <!-- EE-1 — ACCOMPLISHMENT EVIDENCE -->
-<div class="screen" id="screen-ee1">
+<div class="screen ee-screen" id="screen-ee1">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1253,7 +1267,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee2')">Continue</button>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goToEE('ee2')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
     <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
@@ -1261,7 +1276,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- EE-2 — PRIDE WITHOUT BRAGGING -->
-<div class="screen" id="screen-ee2">
+<div class="screen ee-screen" id="screen-ee2">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1276,9 +1291,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee3')">Continue</button>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goToEE('ee3')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee1')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goToEE('ee1')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
     <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
@@ -1286,7 +1302,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- EE-3 — INTELLECTUAL CURIOSITY -->
-<div class="screen" id="screen-ee3">
+<div class="screen ee-screen" id="screen-ee3">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1301,9 +1317,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee4')">Continue</button>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goToEE('ee4')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee2')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goToEE('ee2')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
     <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
@@ -1311,7 +1328,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- EE-4 — FAMILY AND CONTEXT (explicitly optional/sensitive) -->
-<div class="screen" id="screen-ee4">
+<div class="screen ee-screen" id="screen-ee4">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1326,9 +1343,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee5')">Continue</button>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot"></div><div class="ee-dot"></div></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goToEE('ee5')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee3')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goToEE('ee3')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
     <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
@@ -1336,7 +1354,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- EE-5 — ENVIRONMENT AND BELONGING -->
-<div class="screen" id="screen-ee5">
+<div class="screen ee-screen" id="screen-ee5">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1351,9 +1369,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee6')">Continue</button>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot"></div></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goToEE('ee6')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee4')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goToEE('ee4')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
     <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
@@ -1361,7 +1380,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- EE-6 — VOICE CAPTURE -->
-<div class="screen" id="screen-ee6">
+<div class="screen ee-screen" id="screen-ee6">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1376,10 +1395,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div></div>
   <div id="essay-evidence-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;"></div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="submitEssayEvidence()">Finish</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee5')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goToEE('ee5')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
   </div>
 </div>
 </div>
@@ -2399,6 +2419,25 @@ function goTo(n) {
   if(n===25) updateOrientVoice();
   if(n===35) { resetPrefState(); updatePrefVoice(); }
   if(n===4) updateS2Voice();
+}
+
+// ── ESSAY-ENGINE-003 v1.2 Pacing Addendum — goToEE() ────────────────────
+// Used only by the essay evidence screens (ee1-ee6) in place of a direct
+// goTo() call. goTo() itself removes .active from every screen instantly
+// (display:none has no transition), which is exactly the "snapping away"
+// the addendum's motion spec calls out. This wrapper dims the current
+// question first (.ee-leaving, .35s), then swaps screens via the
+// unmodified goTo() — so the outgoing question fades/dims rather than
+// being cut off mid-thought, without changing goTo()'s behavior for any
+// other screen in the app.
+function goToEE(target) {
+  var current = document.querySelector('.screen.ee-screen.active');
+  if (!current) { goTo(target); return; }
+  current.classList.add('ee-leaving');
+  setTimeout(function() {
+    current.classList.remove('ee-leaving');
+    goTo(target);
+  }, 350);
 }
 
 // ── CONSULTANT CODE (SCREEN 0) ────────────────────────
@@ -4535,7 +4574,13 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        consultant_id:  LS_STATE.consultant_code || null,
+        // FIXED: previously sent as consultant_id, but LS_STATE.consultant_code
+        // is a plain-text access code (e.g. "MATT1"), not a uuid — every call
+        // was failing with a Postgres 22P02 (invalid input syntax for type
+        // uuid) since assessment_completions.consultant_id is a real uuid FK.
+        // Sent under its actual name now; the Worker resolves it to a real
+        // consultants.id before inserting.
+        consultant_code: LS_STATE.consultant_code || null,
         family_surname: (LS_STATE.name || '').split(' ').pop() || null,
         status:         'complete',
       }),
