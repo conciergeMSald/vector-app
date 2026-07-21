@@ -336,6 +336,248 @@ const NAICS_TO_ONET = {
     ],
     counselorPay: '$75K–$350K (transportation planner to airline captain)',
     counselorNote: 'Aviation is experiencing a significant pilot shortage — commercial pilot pay has risen 40-60% since 2020. Embry-Riddle, Purdue, and UND are the primary aviation pipelines. Logistics and supply chain roles at Amazon, FedEx, and UPS now pay at technology company rates for quantitative candidates.'
+  },
+
+  // NAICS 22 — Utilities
+  22: {
+    clusterName: 'Utilities & Infrastructure',
+    metros: ['Atlanta GA','Charlotte NC','Chicago IL','San Francisco CA','Richmond VA','Minneapolis MN'],
+    riasecAffinity: ['R','C','I'],
+    titles: [
+      'Power Systems Engineer',
+      'Grid Operations Manager',
+      'Utility Regulatory Affairs Analyst',
+      'Renewable Energy Project Manager',
+      'Smart Grid Analyst',
+      'Water Systems Engineer',
+      'Nuclear Plant Operator',
+      'Utility Rate Analyst'
+    ],
+    counselorPay: '$65K–$220K+ (systems engineer to VP of operations)',
+    counselorNote: 'Utilities is a regulated, stable-pay industry undergoing a genuine transformation — grid modernization and renewable integration are creating engineering roles that did not exist a decade ago. Unlike most fields on this list, career stability here is a real differentiator, not a compromise. Engineering programs near a major utility headquarters (Georgia Tech near Southern Company, NC State near Duke Energy) have direct recruiting pipelines.'
+  },
+
+  // NAICS 42 — Wholesale Trade
+  42: {
+    clusterName: 'Wholesale Trade & Distribution',
+    metros: ['Chicago IL','Dallas TX','Atlanta GA','Memphis TN','Columbus OH','Kansas City MO'],
+    riasecAffinity: ['E','C','R'],
+    titles: [
+      'Supply Chain Analyst',
+      'Distribution Center Director',
+      'Procurement Manager',
+      'Import/Export Specialist',
+      'Category Manager',
+      'Wholesale Account Manager',
+      'Logistics Coordinator',
+      'Regional Sales Director'
+    ],
+    counselorPay: '$55K–$300K+ (distribution coordinator to VP of supply chain)',
+    counselorNote: 'Wholesale is the invisible middle layer of the economy most families never think to name — it is the actual business of moving goods from manufacturers to the retailers and businesses that use them, and it has a genuine, well-paid career ladder from operations analyst to regional leadership. Supply chain management programs (Michigan State, Arizona State, Penn State) have specific recruiting pipelines here that general business programs do not.'
+  },
+
+  // NAICS 53 — Real Estate
+  53: {
+    clusterName: 'Real Estate & Property',
+    metros: ['New York NY','Los Angeles CA','Miami FL','Dallas TX','Chicago IL','San Francisco Bay Area CA'],
+    riasecAffinity: ['E','C','S'],
+    titles: [
+      'Real Estate Developer',
+      'Commercial Broker',
+      'Real Estate Investment Analyst',
+      'Property Manager',
+      'Asset Manager',
+      'Leasing Director',
+      'REIT Analyst',
+      'Real Estate Attorney'
+    ],
+    counselorPay: '$50K–$10M+ (leasing agent to major developer — heavily commission and equity-driven upside)',
+    counselorNote: 'Real estate has no single dominant academic pipeline the way law or medicine does — it is one of the most relationship- and network-driven fields on this list, and family connections in the industry genuinely accelerate entry more than in almost any other cluster. For students without that network, real estate finance and development programs (Wharton, USC Lusk, NYU Schack) build one deliberately.'
+  },
+
+  // NAICS 55 — Management of Companies & Enterprises
+  55: {
+    clusterName: 'Corporate Management & Holding Companies',
+    metros: ['New York NY','Chicago IL','San Francisco CA','Omaha NE','Charlotte NC'],
+    riasecAffinity: ['E','C','I'],
+    titles: [
+      'Corporate Strategy Director',
+      'M&A Analyst',
+      'Corporate Development Manager',
+      'Chief of Staff',
+      'Investor Relations Director',
+      'Holding Company Executive',
+      'Board Governance Analyst'
+    ],
+    counselorPay: '$90K–$2M+ (corporate strategy analyst to holding company executive)',
+    counselorNote: 'This sector is genuinely distinct from NAICS 56 (Business Operations) — it is specifically the "parent company" layer that owns and directs other businesses, not the operating business itself (think Berkshire Hathaway\'s headquarters staff, not one of its subsidiaries). It is an unusually MBA-heavy track, and corporate strategy or M&A analyst roles are the most common entry point for a student aiming at this cluster.'
+  },
+
+  // ── PROPRIETARY VECTOR SECTORS (91, 93-100) ──────────────────────────
+  // These are VECTOR's own coined categories, not federal NAICS codes —
+  // grounded in the real definitions/notes documented in
+  // naics_to_industry_pathways.js (the crosswalk that routes these to V5
+  // school-scoring keys), not invented independently. Two flagged for a
+  // quick gut-check rather than treated as fully confident: 93 (thinnest
+  // source material — only "org communication/ops" to build from) and
+  // 91 (the source file itself calls the V5 school-side fit "weak").
+  // 101 ("The Planning Economy") is deliberately NOT included here — the
+  // source file gives no descriptive detail at all beyond that name, and
+  // guessing at 91-101's job titles/pay from a bare label crosses from
+  // "grounded content" into fabrication.
+
+  // NAICS 91 — Intelligent Trades (construction management)
+  91: {
+    clusterName: 'Intelligent Trades & Construction Management',
+    metros: ['Dallas TX','Phoenix AZ','Atlanta GA','Charlotte NC','Nashville TN'],
+    riasecAffinity: ['R','C','E'],
+    titles: [
+      'Construction Project Manager',
+      'General Contractor',
+      'Construction Technology Specialist',
+      'BIM (Building Information Modeling) Manager',
+      'Site Superintendent',
+      'Construction Estimator',
+      'Construction Safety Manager'
+    ],
+    counselorPay: '$55K–$400K+ (project coordinator to general contracting business owner)',
+    counselorNote: 'The trades carry a real, underrated wealth-building path most families overlook — ownership (running your own contracting business) has a higher ceiling than almost any salaried track in this database. Construction management programs bridge hands-on trades knowledge with real project and business leadership, and there is a genuine, persistent national shortage of skilled construction management talent.'
+  },
+
+  // NAICS 93 — The Orchestration Layer (organizational communication/operations)
+  93: {
+    clusterName: 'Organizational Orchestration & Internal Operations',
+    metros: ['New York NY','Chicago IL','Atlanta GA','San Francisco CA'],
+    riasecAffinity: ['S','C','E'],
+    titles: [
+      'Internal Communications Director',
+      'Chief of Staff',
+      'Organizational Development Manager',
+      'People Operations Director',
+      'Change Management Consultant',
+      'Cross-Functional Program Manager'
+    ],
+    counselorPay: '$65K–$350K (program coordinator to Chief of Staff)',
+    counselorNote: 'This is the "connective tissue" role inside large organizations — coordinating communication and operations across teams that would otherwise not talk to each other. It has a less defined academic pipeline than most fields on this list; a generalist skill set (communication plus systems thinking) matters more than a specific major, and real demand tends to appear once a company scales past a certain size.'
+  },
+
+  // NAICS 94 — Acquisition Economy
+  94: {
+    clusterName: 'Acquisition Economy',
+    metros: ['New York NY','San Francisco CA','Chicago IL','Boston MA','Greenwich CT'],
+    riasecAffinity: ['E','I','C'],
+    titles: [
+      'M&A Analyst',
+      'Private Equity Associate',
+      'Corporate Development Analyst',
+      'Deal Structuring Specialist',
+      'Investment Banking Analyst',
+      'Post-Merger Integration Manager'
+    ],
+    counselorPay: '$100K–$3M+ (first-year analyst to PE partner)',
+    counselorNote: 'Closely related to NAICS 52\'s finance cluster, but centered specifically on acquiring and integrating companies rather than trading or portfolio management. Target-school recruiting and rigorous quantitative preparation matter as much here as anywhere in finance — this is one of the more credential- and pedigree-sensitive tracks in the database.'
+  },
+
+  // NAICS 95 — Longevity Economy
+  95: {
+    clusterName: 'Longevity Economy',
+    metros: ['Boston MA','Rochester MN','San Diego CA','San Francisco Bay Area CA','Raleigh-Durham NC'],
+    riasecAffinity: ['I','S','R'],
+    titles: [
+      'Biogerontology Researcher',
+      'Longevity Biotech Scientist',
+      'Geriatric Care Innovation Specialist',
+      'Clinical Research Scientist (Aging)',
+      'Aging-in-Place Technology Designer',
+      'Elder Care Systems Consultant'
+    ],
+    counselorPay: '$70K–$400K+ (research associate to longevity-focused biotech executive)',
+    counselorNote: 'A genuinely emerging field, driven by an aging population and real biotech investment specifically in aging biology and lifespan research — distinct from general healthcare because the focus is aging itself, not acute care. Programs with strong gerontology or aging-biology research (USC Leonard Davis School among them) are the real pipeline, not a generic pre-med track.'
+  },
+
+  // NAICS 96 — Legacy Economy (wealth management / estate / family office)
+  96: {
+    clusterName: 'Legacy Economy',
+    metros: ['New York NY','Greenwich CT','Palm Beach FL','San Francisco CA','Chicago IL'],
+    riasecAffinity: ['E','C','S'],
+    titles: [
+      'Family Office Advisor',
+      'Wealth Manager',
+      'Estate Planning Attorney',
+      'Trust Officer',
+      'Private Banker',
+      'Multi-Generational Wealth Consultant'
+    ],
+    counselorPay: '$80K–$1.5M+ (private banking associate to family office principal)',
+    counselorNote: 'This centers on managing and transferring wealth across generations, not growing it through active investing — a relationship- and discretion-driven field where trust and long-term client relationships matter more than deal volume. It often intersects with both law (estate planning) and finance (wealth management) rather than sitting cleanly in one academic track.'
+  },
+
+  // NAICS 97 — Physical Logistics Economy (ports/rail/warehousing)
+  97: {
+    clusterName: 'Physical Logistics Economy',
+    metros: ['Long Beach CA','Savannah GA','Houston TX','Memphis TN','Chicago IL','Newark NJ'],
+    riasecAffinity: ['R','C','E'],
+    titles: [
+      'Port Operations Manager',
+      'Rail Logistics Coordinator',
+      'Warehouse Automation Manager',
+      'Freight Network Analyst',
+      'Terminal Operations Director',
+      'Customs & Trade Compliance Specialist'
+    ],
+    counselorPay: '$55K–$300K+ (logistics coordinator to terminal operations director)',
+    counselorNote: 'The physical infrastructure side of supply chain — actual ports, rail yards, and warehouses — distinct from the more corporate/analytical supply chain roles in wholesale and transportation (NAICS 42/48). Hands-on operations experience often matters as much as a degree, and the sector is seeing real wage growth amid a persistent skilled-labor shortage.'
+  },
+
+  // NAICS 98 — Systems & Automation Economy
+  98: {
+    clusterName: 'Systems & Automation Economy',
+    metros: ['Detroit MI','Pittsburgh PA','Cincinnati OH','Chicago IL'],
+    riasecAffinity: ['R','I','C'],
+    titles: [
+      'Automation Engineer',
+      'Robotics Systems Engineer',
+      'Industrial Controls Engineer',
+      'Manufacturing Systems Integrator',
+      'PLC Programmer',
+      'Process Automation Specialist'
+    ],
+    counselorPay: '$65K–$220K+ (automation technician to senior controls engineer)',
+    counselorNote: 'The industrial side of "technology" — programming and maintaining the robotics and control systems that run modern factories and logistics centers. A genuinely different skill set from consumer or software technology despite the surface-level overlap. Mechatronics and industrial engineering programs (Georgia Tech, Purdue, Kettering) are the real pipeline.'
+  },
+
+  // NAICS 99 — Reshoring & Domestic Supply Chain Economy (manufacturing)
+  99: {
+    clusterName: 'Reshoring & Domestic Manufacturing Economy',
+    metros: ['Huntsville AL','Covington GA','Nashville TN','Lexington KY'],
+    riasecAffinity: ['R','C','E'],
+    titles: [
+      'Domestic Manufacturing Site Director',
+      'Reshoring Strategy Analyst',
+      'Supply Chain Resilience Manager',
+      'Manufacturing Workforce Development Specialist',
+      'Plant Startup Manager',
+      'Onshore Procurement Specialist'
+    ],
+    counselorPay: '$60K–$280K+ (production supervisor to site director)',
+    counselorNote: 'A genuinely growing category driven by real corporate and policy shifts bringing manufacturing capital back to the U.S. — distinct from traditional manufacturing because it specifically involves standing up NEW domestic capacity, not operating established plants. States investing heavily in workforce pipelines (community-college partnerships in Alabama, Georgia, Kentucky) are creating fast, non-four-year entry paths alongside the traditional engineering track.'
+  },
+
+  // NAICS 100 — Military & Post-Service
+  100: {
+    clusterName: 'Military & Post-Service Careers',
+    metros: ['Norfolk VA','San Antonio TX','Colorado Springs CO','Washington DC','San Diego CA'],
+    riasecAffinity: ['R','C','E'],
+    titles: [
+      'Military Officer',
+      'Defense Contractor Program Manager',
+      'Military Intelligence Analyst',
+      'Defense Systems Engineer',
+      'Veteran Transition Consultant',
+      'Post-Service Government Contractor'
+    ],
+    counselorPay: '$50K–$250K+ (junior officer to senior defense program executive — veteran benefits and pension not reflected in salary alone)',
+    counselorNote: 'Spans both active military service and the "second career" defense/government-contracting path many service members build afterward. Service academy admission (West Point, Annapolis, Air Force Academy) and ROTC scholarships are separate, distinct application processes from standard college admissions — and veteran status itself becomes a real career asset in defense-adjacent civilian roles.'
   }
 
 };
@@ -445,8 +687,17 @@ function getCareerMetroMatch(naicsSectors, riasec, matchedSchools) {
   }
 
   // Top cluster drives the metro target — strongest signal
-  const topClusterRaw = naicsSectors && naicsSectors[0]
-    ? (typeof NAICS_TO_ONET !== 'undefined' ? NAICS_TO_ONET[naicsSectors[0].sector] : null)
+  // FIXED: previously looked up NAICS_TO_ONET[naicsSectors[0].sector] directly,
+  // with no alias normalization — meaning a student whose #1 sector was 45,
+  // 49, 32, or 33 (aliases for 44/48/31) got undefined here even though
+  // getONETClusters (a few lines above, same file) correctly resolves the
+  // exact same sector via its sectorKey normalization. Now uses identical
+  // normalization logic so both functions behave consistently on the same
+  // input.
+  const topSector = naicsSectors && naicsSectors[0] ? naicsSectors[0].sector : null;
+  const topSectorKey = topSector === 45 ? 44 : topSector === 49 ? 48 : topSector === 32 ? 31 : topSector === 33 ? 31 : topSector;
+  const topClusterRaw = topSectorKey != null
+    ? (typeof NAICS_TO_ONET !== 'undefined' ? NAICS_TO_ONET[topSectorKey] : null)
     : null;
   const targetMetros = (topClusterRaw && topClusterRaw.metros) ? topClusterRaw.metros : [];
   const targetCores = targetMetros.map(_metroCore).filter(Boolean);
