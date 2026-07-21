@@ -2696,7 +2696,96 @@ function skipGenomeWorry() {
 // Separate, optional data structure. Does not touch genome_* fields
 // or ESSAY-ENGINE-002's existing pipeline. Feeds Stage 1 normalization
 // (built in a later step) only when populated.
-function submitEssayEvidence() {
+// ── Maps the six ee1-ee6 single-field answers into the real Stage 1
+// survey shape (ESSAY-ARCH-004 / essay-stage1-normalize.js).
+//
+// HONEST GAP: the real spec defines 6 REQUIRED groups
+// (accomplishment_evidence, pride_without_bragging, intellectual_curiosity,
+// environment_and_belonging, emotional_intelligence, voice_capture) plus
+// one optional group (family_and_context). The current ee1-ee6 UI only
+// has screens for 5 of the 6 required groups plus the optional one —
+// there is no screen for emotional_intelligence at all. This does not
+// break anything (Stage 1's validateSurveyCompleteness only notes a
+// missing group in the prompt, it never blocks), but the resulting
+// topics will never have direct evidence for that dimension until a 7th
+// screen is added. Flagged here rather than silently mapping unrelated
+// content into that field.
+function buildSurveyResponsesFromEssayEvidence(ev) {
+  ev = ev || {};
+  var groups = {};
+  if (ev.accomplishment) groups.accomplishment_evidence = { built_fixed_led: ev.accomplishment };
+  if (ev.pride) groups.pride_without_bragging = { proud_not_on_transcript: ev.pride };
+  if (ev.curiosity) groups.intellectual_curiosity = { loses_track_of_time: ev.curiosity };
+  if (ev.family) groups.family_and_context = { responsibilities: ev.family };
+  if (ev.belonging) groups.environment_and_belonging = { feels_most_like_self: ev.belonging };
+  if (ev.voice) groups.voice_capture = { casual_retelling: ev.voice };
+  return groups;
+}
+
+// Best-effort snapshot of already-computed signal at the point ee1-ee6 is
+// reached (always post-report today — the only entry point is the
+// "deepen" button on an already-rendered report). Stage 1 treats this as
+// pass-through context and never re-derives it, so a partial snapshot
+// just means less context, not a failure. Deliberately uses only fields
+// that genuinely persist on LS_STATE (topRIASEC lives on a local
+// profile/ctx object inside submitLifescape() and is not accessible
+// here — left null rather than faked).
+function buildExistingProfileSnapshot() {
+  return {
+    riasec: null,
+    worlds_chosen: LS_STATE.worlds_chosen || [],
+    geography: LS_STATE.genome_geo || null,
+  };
+}
+
+// ── Wires the optional "Deepen Your Essay" answers into the REAL 5-stage
+// Essay Engine backend (Stage 1-5, ESSAY-ARCH-004) rather than only ever
+// feeding the lightweight single-call version. Best-effort and
+// non-blocking: any failure here (network, pipeline error) leaves the
+// lightweight version exactly as it already rendered at report time — per
+// direction, the family should never see nothing when something is
+// possible, and the lightweight version is the floor, never removed
+// pre-emptively just because the richer attempt was made.
+async function runDeepEssayEngine() {
+  try {
+    var surveyResponses = buildSurveyResponsesFromEssayEvidence(LS_STATE.essayEvidence);
+    if (Object.keys(surveyResponses).length === 0) return; // nothing usable — bypass rule, no call made
+
+    var startRes = await fetch('https://api.abettercollegeconsultant.com/essay-session-start-student', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        student_id: LS_STATE.session_id || null,
+        cycle_label: null,
+        family_member_id: null, // no Parent Agent bridge context available client-side yet
+      }),
+    });
+    if (!startRes.ok) throw new Error('essay-session-start-student failed: ' + startRes.status);
+    var startData = await startRes.json();
+
+    var completeRes = await fetch('https://api.abettercollegeconsultant.com/essay-session-complete-student', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        essay_session_id: startData.essay_session_id,
+        surveyResponses: surveyResponses,
+        existingProfile: buildExistingProfileSnapshot(),
+        applicationContext: { platform: 'common_app' },
+      }),
+    });
+    if (!completeRes.ok) throw new Error('essay-session-complete-student failed: ' + completeRes.status);
+    var completeData = await completeRes.json();
+
+    if (completeData && Array.isArray(completeData.familyView) && completeData.familyView.length > 0) {
+      LS_STATE.essayEngineFamilyView = completeData.familyView;
+      renderEssayTopicsSection(completeData.familyView, { rich: true });
+    }
+  } catch (err) {
+    console.warn('[Essay Engine] deep pipeline failed (non-blocking, lightweight version remains):', err.message);
+  }
+}
+
+async function submitEssayEvidence() {
   LS_STATE.essayEvidence = {
     accomplishment: (document.getElementById('essay-evidence-accomplishment') || {}).value || null,
     pride: (document.getElementById('essay-evidence-pride') || {}).value || null,
@@ -2711,6 +2800,26 @@ function submitEssayEvidence() {
       LS_STATE.essayEvidence[k] = null;
     }
   });
+
+  var hasAnyContent = ['accomplishment', 'pride', 'curiosity', 'family', 'belonging', 'voice'].some(function(k) {
+    return !!LS_STATE.essayEvidence[k];
+  });
+
+  if (hasAnyContent) {
+    // Real pipeline is up to 5 sequential Claude calls plus an Airtable
+    // write — meaningfully slower than the instant snap-back this screen
+    // used to do. Loading state here, not a silent long wait.
+    var msgEl = document.getElementById('essay-evidence-msg');
+    var btn = document.querySelector('#screen-ee6 .ls-btn');
+    if (msgEl) msgEl.textContent = 'Refining your essay directions — this can take a moment…';
+    if (btn) btn.disabled = true;
+
+    await runDeepEssayEngine();
+
+    if (msgEl) msgEl.textContent = '';
+    if (btn) btn.disabled = false;
+  }
+
   returnToReportFromEssayEvidence();
 }
 
@@ -4400,7 +4509,7 @@ function parseCallC(text) {
 }
 
 // ── API CALL ───────────────────────────────────────
-async function fireCall(prompt, maxTokens, retryCount=0, timeoutMs=30000) {
+async function fireCall(prompt, maxTokens, retryCount=0, timeoutMs=30000, label='unlabeled') {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
@@ -4419,15 +4528,55 @@ async function fireCall(prompt, maxTokens, retryCount=0, timeoutMs=30000) {
     const data = await res.json();
     const text = data.content?.[0]?.text;
     if(!text) throw new Error('Empty response');
+
+    // ── Real token usage logging ──────────────────────────────────────
+    // data.usage comes directly from the Claude API response — actual
+    // input/output tokens consumed by this call, not the max_tokens
+    // ceiling. Logged per-call immediately, and accumulated on
+    // LS_STATE.tokenUsage so a full-report total can be printed once
+    // every call in the sequence has resolved (see logReportTokenSummary).
+    if (data.usage) {
+      var _usageEntry = {
+        label: label,
+        input_tokens: data.usage.input_tokens || 0,
+        output_tokens: data.usage.output_tokens || 0,
+        max_tokens_budget: maxTokens,
+      };
+      console.log('[token usage] ' + label + ' — input: ' + _usageEntry.input_tokens + ' | output: ' + _usageEntry.output_tokens + ' | budget: ' + maxTokens + (_usageEntry.output_tokens >= maxTokens ? '  ⚠ hit ceiling — likely truncated' : ''));
+      if (!LS_STATE.tokenUsage) LS_STATE.tokenUsage = [];
+      LS_STATE.tokenUsage.push(_usageEntry);
+    }
+
     return text;
   } catch(e) {
     clearTimeout(timeout);
     if(retryCount===0) {
       await new Promise(r=>setTimeout(r,1500));
-      return fireCall(prompt, maxTokens, 1, timeoutMs);
+      return fireCall(prompt, maxTokens, 1, timeoutMs, label);
     }
     throw e;
   }
+}
+
+// ── Prints (and returns) a full per-report token usage summary once
+// every call in the sequence has resolved — real numbers from the API,
+// not the max_tokens budget estimate. Called after callD, the last call
+// in the sequence, so every earlier call's usage has already accumulated.
+function logReportTokenSummary() {
+  var entries = LS_STATE.tokenUsage || [];
+  if (entries.length === 0) return null;
+
+  var totalInput = 0, totalOutput = 0;
+  entries.forEach(function(e) { totalInput += e.input_tokens; totalOutput += e.output_tokens; });
+
+  console.log('─────────────────────────────────────────');
+  console.log('[token usage] REPORT TOTAL — input: ' + totalInput + ' | output: ' + totalOutput + ' | combined: ' + (totalInput + totalOutput));
+  entries.forEach(function(e) {
+    console.log('  ' + e.label + ': input ' + e.input_tokens + ', output ' + e.output_tokens + ' (budget ' + e.max_tokens_budget + ')');
+  });
+  console.log('─────────────────────────────────────────');
+
+  return { totalInput: totalInput, totalOutput: totalOutput, calls: entries };
 }
 
 // ── SHEETS CAPTURE ─────────────────────────────────
@@ -5220,14 +5369,22 @@ function parseCallD(rawText) {
       const whyMatch = block.match(/WHY:\s*([\s\S]*?)(?=\nTHRIVES:|\n\nSCHOOL:|\nSCHOOL:|$)/) || block.match(/WHY:\s*([\s\S]+)$/m);
       const thrivesMatch = block.match(/THRIVES:\s*([\s\S]*?)(?=\nWATCH:|$)/);
       const watchMatch = block.match(/WATCH:\s*([\s\S]*?)(?=\nRESILIENCE:|$)/);
-      const resilienceMatch = block.match(/RESILIENCE:\s*([\s\S]*?)(?=\n\nSCHOOL:|\nSCHOOL:|$)/) || block.match(/RESILIENCE:\s*([\s\S]+)$/m);
+      // FIXED: previously this regex's lookahead only stopped at the next
+      // SCHOOL: block or end of string — meaning when Claude added an
+      // optional CULTURE: line after RESILIENCE: (per the CULTURE LINE
+      // instruction in the prompt), that entire line got swallowed into
+      // resilience's captured text instead of being its own field. Now
+      // stops at CULTURE: or CC_PATH: too, whichever comes first.
+      const resilienceMatch = block.match(/RESILIENCE:\s*([\s\S]*?)(?=\nCULTURE:|\nCC_PATH:|\n\nSCHOOL:|\nSCHOOL:|$)/) || block.match(/RESILIENCE:\s*([\s\S]+)$/m);
+      const cultureMatch = block.match(/CULTURE:\s*([\s\S]*?)(?=\nCC_PATH:|\n\nSCHOOL:|\nSCHOOL:|$)/) || block.match(/CULTURE:\s*([\s\S]+)$/m);
       return {
         name: nameMatch ? nameMatch[1].trim() : '',
         match: matchMatch ? stripMD(matchMatch[1].trim().replace(/\n/g,' ')) : '',
         why: whyMatch ? stripMD(whyMatch[1].trim()) : '',
         thrivesIf: thrivesMatch ? stripMD(thrivesMatch[1].trim().replace(/\n/g,' ')) : '',
         watchFor: watchMatch ? stripMD(watchMatch[1].trim().replace(/\n/g,' ')) : '',
-        resilience: resilienceMatch ? stripMD(resilienceMatch[1].trim().replace(/\n/g,' ')) : ''
+        resilience: resilienceMatch ? stripMD(resilienceMatch[1].trim().replace(/\n/g,' ')) : '',
+        culture: cultureMatch ? stripMD(cultureMatch[1].trim().replace(/\n/g,' ')) : ''
       };
     }).filter(s => s.name && s.name.length > 2 && s.match && s.match.length > 5);
   } catch(e) {
@@ -5688,6 +5845,7 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       ${s.thrivesIf ? `<div class="card-honest-note" style="margin-top:10px;padding-top:10px;border-top:0.5px solid var(--rule);font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--ink2);font-weight:600;">You will thrive here if:</strong> ${s.thrivesIf.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
       ${s.watchFor ? `<div class="card-honest-note" style="margin-top:6px;font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--ink2);font-weight:600;">One thing to know:</strong> ${s.watchFor.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
       ${s.resilience ? `<div class="card-honest-note" style="margin-top:6px;font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--gold);font-weight:600;">Where this leads:</strong> ${s.resilience.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
+      ${s.culture ? `<div class="card-honest-note" style="margin-top:6px;font-size:var(--type-meta);line-height:1.6;color:var(--ink3);"><strong style="color:var(--gold);font-weight:600;">Culture:</strong> ${s.culture.replace(/\s*-{2,}\s*$/g,"").trim()}</div>` : ''}
       <div style="display:flex;flex-wrap:wrap;gap:5px;margin:12px 0 0;padding-top:10px;border-top:0.5px solid var(--rule);">
         ${scaleLabel ? `<span class="school-badge">${scaleLabel}</span>` : ''}
         ${schoolData ? `<span class="school-badge">${schoolData.region}</span>` : ''}
@@ -6175,6 +6333,10 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
     // The Worker's handleSaveFamily is the intended write path to
     // student_cognitive_profiles — see worker-patch deliverable.
     student_genome:    profile._studentGenome              || null,
+    // Real per-call token usage (from Claude's own response.usage),
+    // accumulated by fireCall() during report generation. Worker writes
+    // these to report_token_usage using the just-created family id.
+    token_usage:       LS_STATE.tokenUsage                 || [],
   };
 
   var headers = { 'Content-Type': 'application/json' };
@@ -6270,7 +6432,7 @@ async function submitLifescape() {
 
   try {
     // ── CALL A — fires first ──────────────────────
-    const callAText = await fireCall(buildCallAPrompt(ctx), 900);
+    const callAText = await fireCall(buildCallAPrompt(ctx), 900, 0, 30000, 'callA');
     const callAData = parseCallA(callAText);
     LS_STATE.callAResult = callAData;
     setGenProgress(40);
@@ -6319,12 +6481,12 @@ async function submitLifescape() {
 
     // Build parallel call array — callB + callC always, callE conditionally
     var _parallelCalls = [
-      fireCall(buildCallBPrompt(ctx), 1600, 0, 45000),
-      fireCall(buildCallCPrompt(ctx), 1000, 0, 30000)
+      fireCall(buildCallBPrompt(ctx), 1600, 0, 45000, 'callB'),
+      fireCall(buildCallCPrompt(ctx), 2400, 0, 30000, 'callC')
     ];
     if (_ccShouldShow && _ccContext && _ccContext.hasCCPathway) {
       console.log('[callE] CC pathway triggered — source:', _ccContext.source, 'CC:', _ccContext.ccName);
-      _parallelCalls.push(fireCall(buildCallEPrompt(profile, _ccContext, _ccTargetSchool), 800, 0, 30000));
+      _parallelCalls.push(fireCall(buildCallEPrompt(profile, _ccContext, _ccTargetSchool), 800, 0, 30000, 'callE'));
     }
 
     // ── ESSAY-ENGINE-003 Stage 1: normalize Essay Evidence Layer ──
@@ -6354,7 +6516,7 @@ async function submitLifescape() {
     var _essayPrompt = (typeof buildEssayTopicPrompt === 'function') ? buildEssayTopicPrompt(ctx, _essayEvidenceStructured, _narrativeThemeInstructions, _promptMatchInstructions, _scoringRubricInstructions, _writingPacketInstructions) : null;
     var _essayCallIndex = _parallelCalls.length;
     if (_essayPrompt) {
-      _parallelCalls.push(fireCall(_essayPrompt, 1400, 0, 30000));
+      _parallelCalls.push(fireCall(_essayPrompt, 1400, 0, 30000, 'essayTopics'));
     }
 
     const _parallelResults = await Promise.allSettled(_parallelCalls);
@@ -6638,11 +6800,17 @@ async function submitLifescape() {
           const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0, _schoolCount), schoolContentBlockFull);
           console.log('[callD] firing Claude, prompt length:', callDPrompt.length);
 
-          const callDText = await fireCall(callDPrompt, 3000, 0, 55000);
+          const callDText = await fireCall(callDPrompt, 3000, 0, 55000, 'callD');
           console.log('[callD] raw response length:', callDText?.length);
           console.log('[callD] raw response preview:', callDText?.slice(0,200));
 
           callDData = parseCallD(callDText);
+
+          // callD is the last call in the report-generation sequence —
+          // every earlier call (callA/B/C/E/essayTopics) has already
+          // resolved and accumulated by this point, so this is where the
+          // full real-token report total is printed.
+          logReportTokenSummary();
 
           // FIXED July 2026: Claude occasionally generates two separate
           // SCHOOL: blocks for the same school in one response (observed
@@ -7036,6 +7204,39 @@ function renderQuickRead(profile, callAData) {
 }
 
 // ── RENDER: FULL REPORT ────────────────────────────
+// ── Essay topics section renderer — shared by both the lightweight
+// single-call version (rendered at report time) and the real 5-stage
+// Essay Engine's richer familyView (rendered later, if the student
+// completes the optional "Deepen Your Essay" screens). Same container,
+// called a second time to upgrade in place — never removes what's
+// already showing unless there's something better to replace it with.
+function renderEssayTopicsSection(items, opts) {
+  var rich = !!(opts && opts.rich);
+  var el = document.getElementById('full-essay-topics');
+  var section = document.getElementById('full-essay-section');
+  if (!el || !items || items.length === 0) return;
+
+  el.innerHTML = items.map(function(t) {
+    if (rich) {
+      var questions = (Array.isArray(t.reflection_questions) ? t.reflection_questions : [])
+        .map(function(q) { return '<li style="margin-bottom:4px;">' + q + '</li>'; })
+        .join('');
+      return '<div class="combo-block">' +
+        '<div class="combo-text">' +
+          '<strong style="display:block;margin-bottom:6px;color:var(--ink)">' + (t.topic_title || '') + '</strong>' +
+          '<span style="color:var(--ink3);display:block;margin-bottom:8px;">' + (t.one_sentence_summary || '') + '</span>' +
+          (t.why_it_fits ? '<span style="color:var(--ink3);display:block;margin-bottom:8px;"><em>Why this fits:</em> ' + t.why_it_fits + '</span>' : '') +
+          (questions ? '<div style="margin-top:10px;"><span style="color:var(--muted);font-size:13px;letter-spacing:0.5px;">Questions to consider before writing:</span><ul style="margin:6px 0 0 1.1rem;color:var(--ink3);font-size:14px;">' + questions + '</ul></div>' : '') +
+        '</div></div>';
+    }
+    return '<div class="combo-block">' +
+      '<div class="combo-text"><strong style="display:block;margin-bottom:6px;color:var(--ink)">' + t.topic + '</strong>' +
+      '<span style="color:var(--ink3);">' + t.why + '</span></div></div>';
+  }).join('');
+
+  if (section) section.style.display = '';
+}
+
 function renderFullReport(profile, callAData, callBData, callCData, essayParsed) {
   // Portrait
   if(callAData?.portrait) {
@@ -7115,7 +7316,22 @@ function renderFullReport(profile, callAData, callBData, callCData, essayParsed)
       var leaveReturn = leaveReturnM ? leaveReturnM[1].trim() : '';
       var leaveGone   = leaveGoneM   ? leaveGoneM[1].trim()   : '';
 
-      document.getElementById('full-geo-local').textContent = localText;
+      // FIXED: this previously overwrote full-geo-local's entire content
+      // (textContent =) with just this one paragraph, discarding the
+      // richer multi-cluster list rendered above at _geoLocalEl — meaning
+      // the moment callC resolved (which is basically always), a genuine
+      // multi-item, data-driven list collapsed down to one AI-generated
+      // sentence. Now appended alongside the cluster list instead of
+      // replacing it — the family gets both the concrete local industries
+      // AND the one surprising connection Claude surfaced, not one or the
+      // other.
+      if (localText) {
+        var _geoLocalNarrativeEl = document.getElementById('full-geo-local');
+        if (_geoLocalNarrativeEl) {
+          _geoLocalNarrativeEl.insertAdjacentHTML('beforeend',
+            '<div style="margin-top:14px;padding-top:14px;border-top:0.5px solid var(--rule);font-style:italic;color:var(--ink3);">' + localText + '</div>');
+        }
+      }
 
       // Helper: safely set text on an element
       function safeSetText(id, val) {
@@ -7296,18 +7512,15 @@ function renderFullReport(profile, callAData, callBData, callCData, essayParsed)
   }
 
   // ── Essay Topic Engine — In Full tab (clean: topic + why only, no scores) ──
-  var _essayFamilyEl = document.getElementById('full-essay-topics');
+  // Renders the lightweight single-call version first — this is the floor,
+  // always shown when any topics exist at all (never show nothing when
+  // something is possible). If the student later completes the optional
+  // "Deepen Your Essay" screens, runDeepEssayEngine() calls
+  // renderEssayTopicsSection() again with the richer real-pipeline output,
+  // replacing this in place — same container, same section.
   if (essayParsed && typeof getFamilyEssayTopics === 'function') {
     var _familyTopics = getFamilyEssayTopics(essayParsed);
-    if (_familyTopics.length > 0 && _essayFamilyEl) {
-      _essayFamilyEl.innerHTML = _familyTopics.map(function(t) {
-        return '<div class="combo-block">' +
-          '<div class="combo-text"><strong style="display:block;margin-bottom:6px;color:var(--ink)">' + t.topic + '</strong>' +
-          '<span style="color:var(--ink3);">' + t.why + '</span></div></div>';
-      }).join('');
-      var _essaySection = document.getElementById('full-essay-section');
-      if (_essaySection) _essaySection.style.display = '';
-    }
+    renderEssayTopicsSection(_familyTopics, { rich: false });
   }
 
   // Update Quick Read clusters now that callB has resolved
