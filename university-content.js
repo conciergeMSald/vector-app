@@ -821,11 +821,11 @@ const UNIVERSITY_CONTENT = {
     name: "California State University Northridge",
     location: "Northridge, California",
     region: "West Coast",
-    pipeline: "Business and Finance (David Nazarian College of Business and Economics - top-55 nationally among regional universities - accounting, finance, marketing, real estate, entrepreneurship, management information systems -",
-    hidden_pathway: "The National Center on Deafness at CSUN is the hidden pathway that makes CSUN the most specific and irreplaceable institution in the database for one particular professional mission -",
-    the_room: "CSUN enrolls approximately 33,000 undergraduates - one of the largest CSU campuses and the largest university in the San Fernando Valley. The student body is approximately 45% Hispanic -",
-    lifestyle: "Northridge, California sits in the central San Fernando Valley - a suburban community of 60,000 within the city of Los Angeles, surrounded by the Santa Susana Mountains to the nort",
-    grad_cities: "Los Angeles CA (65%) | San Fernando Valley CA (15%) | Ventura County CA (5%) | Orange County CA (4%) | International (3%"
+    pipeline: "Business and Finance (David Nazarian College of Business and Economics - top-55 nationally among regional universities - accounting, finance, marketing, real estate, entrepreneurship, management information systems - the Valley's business ecosystem, including major entertainment and media companies, provides a real regional recruiting pipeline), Deaf Studies and American Sign Language, Cinema and Television Arts, Engineering, Nursing.",
+    hidden_pathway: "The National Center on Deafness at CSUN is the hidden pathway that makes CSUN the most specific and irreplaceable institution in the database for one particular professional mission - training teachers, interpreters, and audiologists specifically for deaf and hard-of-hearing education, a genuinely unique institutional specialty among American universities that few other schools can match at this depth.",
+    the_room: "CSUN enrolls approximately 33,000 undergraduates - one of the largest CSU campuses and the largest university in the San Fernando Valley. The student body is approximately 45% Hispanic - reflecting the San Fernando Valley's own demographic makeup, with a large first-generation college population and a genuinely diverse, commuter-heavy campus culture.",
+    lifestyle: "Northridge, California sits in the central San Fernando Valley - a suburban community of 60,000 within the city of Los Angeles, surrounded by the Santa Susana Mountains to the north. The setting is genuinely suburban rather than urban, with real access to both the broader LA entertainment and business economy and the Valley's own more affordable, family-oriented character.",
+    grad_cities: "Los Angeles CA (65%) | San Fernando Valley CA (15%) | Ventura County CA (5%) | Orange County CA (4%) | International (3%) | Other markets (8%). The Los Angeles and San Fernando Valley retention reflects CSUN's role as a primary undergraduate feeder into the region's own business, media, and education workforce."
   },
   "California State University Los Angeles": {
     name: "California State University Los Angeles",
@@ -1295,11 +1295,12 @@ const UNIVERSITY_CONTENT = {
     name: "UC Santa Barbara",
     location: "Santa Barbara, California",
     region: "Southern California",
-    pipeline: "Technology and Engineering (College of Engineering - electrical and computer engineering, mechanical, chemical, materials science - Silicon Valley and Santa Barbara tech corridor employers - Google, A",
-    hidden_pathway: "UCSB has produced 8 Nobel Prize-winning faculty members in physics, chemistry, and economics - a concentration of Nobel laureates that rivals institut",
-    the_room: "Approximately 80% of UCSB students are California residents - approximately 15% are from out of state and 11% are intern",
+    pipeline: "Technology and Engineering (College of Engineering - electrical and computer engineering, mechanical, chemical, materials science - Silicon Valley and Santa Barbara tech corridor employers - Google, Amazon, and a growing local tech and biotech ecosystem all recruit directly from UCSB's engineering programs), Marine Biology, Economics, Communication, Psychology.",
+    hidden_pathway: "UCSB has produced 8 Nobel Prize-winning faculty members in physics, chemistry, and economics - a concentration of Nobel laureates that rivals institutions many times its size, particularly in physics and materials science research, giving undergraduates genuine access to world-class research labs most peer public universities cannot offer.",
+    the_room: "Approximately 80% of UCSB students are California residents - approximately 15% are from out of state and 11% are international, giving the room a strong California-resident base with a meaningful national and global presence. The campus's beachfront location has long shaped its reputation as one of the more social UC campuses, alongside its genuine research intensity.",
+    lifestyle: "UCSB's campus sits directly on the Pacific coastline, with Isla Vista's beach culture immediately adjacent — surfing, beach volleyball, and an outdoor lifestyle are a daily reality here, not an occasional escape. Santa Barbara itself is one of the most beautiful small cities in California, though also one of the more expensive, and the balance between serious academic research and a famously social beach-town culture is genuinely part of the UCSB identity.",
     lifestyle: "",
-    grad_cities: "San Francisco Bay Area CA (25%) | Los Angeles CA (25%) | Santa Barbara CA (12%) | San Diego CA (8%) | Other California ("
+    grad_cities: "San Francisco Bay Area CA (25%) | Los Angeles CA (25%) | Santa Barbara CA (12%) | San Diego CA (8%) | Other California (12%) | Other markets (18%). The Bay Area and Los Angeles concentration reflects UCSB's strong pipeline into both Northern and Southern California's major tech and business hubs."
   },
   "UCLA": {
     name: "UCLA",
@@ -1327,11 +1328,12 @@ const UNIVERSITY_CONTENT = {
     name: "Rice University",
     location: "Houston, Texas",
     region: "Texas + Southwest",
-    pipeline: "Energy and petroleum, Biomedical engineering and life sciences, Technology and computing, Finance and investment banking, Architecture and urban design, Music performance, Consulting, Healthcare and m",
-    hidden_pathway: "Three hidden pathways that define Rice's distinctiveness. First: Rice sits directly across the street from the Texas Medical Center - the largest medi",
-    the_room: "Approximately 4,400 undergraduates - one of the smallest research universities in the country. The residential college s",
+    pipeline: "Energy and petroleum, Biomedical engineering and life sciences, Technology and computing, Finance and investment banking, Architecture and urban design, Music performance, Consulting, Healthcare and medicine, Law, Data Science, Environmental Engineering. Rice's proximity to the Texas Medical Center and Houston's global energy industry headquarters gives graduates direct access to two of the most consequential industries in the region.",
+    hidden_pathway: "Three hidden pathways that define Rice's distinctiveness. First: Rice sits directly across the street from the Texas Medical Center - the largest medical complex in the world, giving Rice students genuine research and clinical access most universities have to fly students across the country to reach. Second: the residential college system, modeled on Oxford and Cambridge, creates a tight-knit social structure that persists across all four years rather than fading after freshman year. Third: Rice's endowment per student is among the highest of any American research university, funding need-blind admission and extensive merit aid that keeps a genuinely elite education affordable relative to its private-school peers.",
+    the_room: "Approximately 4,400 undergraduates - one of the smallest research universities in the country. The residential college system divides students into eleven distinct communities, each with its own traditions, dining hall, and identity, functioning as the primary social unit throughout a student's four years rather than just freshman year.",
+    lifestyle: "Rice's residential college system is the defining feature of daily life — each student's college becomes a genuine home base with its own traditions, rivalries, and identity that persists all four years, an unusually strong social structure for a research university of this caliber. Houston itself offers real access to the country's most diverse major city, the Texas Medical Center, and the global energy industry, all within a short drive of Rice's tree-lined, self-contained campus.",
     lifestyle: "",
-    grad_cities: "Houston TX (48%) | New York NY (10%) | San Francisco CA (8%). The Houston concentration reflects Rice's physical positio"
+    grad_cities: "Houston TX (48%) | New York NY (10%) | San Francisco CA (8%) | Washington DC (6%) | Austin TX (5%) | Other markets (23%). The Houston concentration reflects Rice's physical position inside the country's energy capital and the Texas Medical Center's gravitational pull on its biomedical engineering and life sciences graduates."
   },
   "SMU": {
     name: "SMU",
@@ -1964,131 +1966,144 @@ const UNIVERSITY_CONTENT = {
     name: "Bryn Mawr College",
     location: "Bryn Mawr, Pennsylvania",
     region: "Northeast",
-    pipeline: "Graduate and Professional School Placement (Bryn Mawr's defining institutional characteristic is its extraordinary graduate and professional school placement rate — the percentage of Bryn Mawr graduat",
-    hidden_pathway: "The hidden pathway at Bryn Mawr is the Graduate School of Arts and Sciences and its specific effect on undergraduate intellectual life. Bryn Mawr is t",
-    the_room: "Bryn Mawr enrolls approximately 1,800 undergraduates on a campus in the Main Line suburb of Bryn Mawr — one of the most ",
+    pipeline: "Graduate and Professional School Placement (Bryn Mawr's defining institutional characteristic is its extraordinary graduate and professional school placement rate — the percentage of Bryn Mawr graduates who go on to earn PhDs is among the highest of any women's college in American history), Classics, Archaeology, Mathematics, Social Work.",
+    hidden_pathway: "The hidden pathway at Bryn Mawr is the Graduate School of Arts and Sciences and its specific effect on undergraduate intellectual life. Bryn Mawr is the only women's college with a full doctoral graduate program on the same campus, giving undergraduates direct exposure to PhD-level research culture rarely available at peer institutions — a genuine structural advantage for students planning academic careers.",
+    the_room: "Bryn Mawr enrolls approximately 1,800 undergraduates on a campus in the Main Line suburb of Bryn Mawr — one of the most architecturally distinguished women's college campuses in the country, built in a Collegiate Gothic style. The student body is intensely academically serious, with a long institutional history of training women for fields that were closed to them elsewhere.",
+    lifestyle: "Bryn Mawr's Main Line location puts students in a quiet, affluent Philadelphia suburb, with the city itself about 20 minutes away by train for students who want an occasional break from campus. The academic culture here is intense and self-directed, and Bryn Mawr's tri-college consortium with Haverford and Swarthmore gives students genuine access to a much larger academic and social community than the small enrollment alone would suggest.",
     lifestyle: "",
-    grad_cities: "Philadelphia PA (25%) | New York NY (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco CA (7%) | Academic and "
+    grad_cities: "Philadelphia PA (25%) | New York NY (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco CA (7%) | Academic and graduate school (22%). The unusually high graduate-school share reflects Bryn Mawr's exceptional PhD-placement rate — a large proportion of graduates continue directly into doctoral programs rather than entering the workforce."
   },
   "California State University San Bernardino": {
     name: "California State University San Bernardino",
     location: "San Bernardino, California",
     region: "West",
-    pipeline: "Business and Logistics (CSUSB's Jack H. Brown College of Business and Public Administration serves the Inland Empire's specific economic infrastructure — the San Bernardino and Riverside counties cons",
-    hidden_pathway: "The hidden pathway at CSUSB is the Inland Empire logistics ecosystem's specific career economics for supply chain and operations management graduates.",
-    the_room: "CSUSB enrolls approximately 20,000 students on a campus at the base of the San Bernardino Mountains in San Bernardino — ",
+    pipeline: "Business and Logistics (CSUSB's Jack H. Brown College of Business and Public Administration serves the Inland Empire's specific economic infrastructure — the San Bernardino and Riverside counties constitute the Inland Empire, one of the largest logistics and distribution hubs in the country), Criminal Justice, Nursing, Education, Public Administration.",
+    hidden_pathway: "The hidden pathway at CSUSB is the Inland Empire logistics ecosystem's specific career economics for supply chain and operations management graduates. Amazon, major national retailers, and countless third-party logistics companies operate massive distribution centers throughout the region, creating a genuine, well-paid career pipeline most families overlook in favor of more recognizable industries.",
+    the_room: "CSUSB enrolls approximately 20,000 students on a campus at the base of the San Bernardino Mountains in San Bernardino — a genuinely diverse, majority-Hispanic student body reflecting the surrounding Inland Empire community. A large share of students are first-generation and working students, commuting from throughout the region rather than living in traditional dorms.",
+    lifestyle: "CSUSB sits at the base of the San Bernardino Mountains, with real access to mountain recreation (Big Bear, Lake Arrowhead) a short drive away, alongside the more affordable cost of living the Inland Empire offers relative to coastal Southern California. The campus culture is practical and commuter-heavy, reflecting the working, first-generation student population it primarily serves.",
     lifestyle: "",
-    grad_cities: "Inland Empire CA (55%) | Los Angeles CA (18%) | San Diego CA (8%) | Phoenix AZ (5%) | Las Vegas NV (4%) | Academic progr"
+    grad_cities: "Inland Empire CA (55%) | Los Angeles CA (18%) | San Diego CA (8%) | Phoenix AZ (5%) | Las Vegas NV (4%) | Academic programs and other markets (10%). The Inland Empire retention rate is exceptionally high — CSUSB functions as the primary undergraduate feeder into the region's own logistics and public sector economy."
   },
   "Regent University": {
     name: "Regent University",
     location: "Virginia Beach, Virginia",
     region: "Southeast",
-    pipeline: "Law and Government (Regent University School of Law is one of the most politically connected law schools in America within the conservative Christian legal and policy community — the American Center f",
-    hidden_pathway: "The hidden pathway at Regent is the Federalist Society pipeline's specific function within the conservative legal movement. The Federalist Society — t",
-    the_room: "Regent enrolls approximately 11,000 students — predominantly online and graduate — on a campus in Virginia Beach adjacen",
+    pipeline: "Law and Government (Regent University School of Law is one of the most politically connected law schools in America within the conservative Christian legal and policy community — the American Center for Law and Justice, one of the most influential conservative Christian legal advocacy organizations in the country, was founded by Regent's own chancellor), Divinity, Communication and Media, Business, Psychology.",
+    hidden_pathway: "The hidden pathway at Regent is the Federalist Society pipeline's specific function within the conservative legal movement. The Federalist Society — the most influential conservative and libertarian legal organization in America, with direct pipelines into federal judicial clerkships and Republican administration appointments — has an unusually strong presence at Regent relative to the law school's size, giving students real access to a national conservative legal network most law schools cannot offer.",
+    the_room: "Regent enrolls approximately 11,000 students — predominantly online and graduate — on a campus in Virginia Beach adjacent to the Christian Broadcasting Network headquarters, founded by the same figure who founded the university. The undergraduate residential population is comparatively small, and the student body is overwhelmingly evangelical Christian, with a specific institutional mission families should understand clearly before applying.",
+    lifestyle: "Regent's Virginia Beach campus sits within the broader Hampton Roads region, with real beach access and a lower cost of living than most Northeast or West Coast alternatives. Campus culture is built explicitly around evangelical Christian faith and values, shaping daily life, academics, and social norms in a way that is central to the institution's identity, not incidental to it.",
     lifestyle: "",
-    grad_cities: "Virginia Beach-Norfolk VA (45%) | Washington DC (14%) | Richmond VA (8%) | Charlotte NC (5%) | Raleigh NC (5%) | Academi"
+    grad_cities: "Virginia Beach-Norfolk VA (45%) | Washington DC (14%) | Richmond VA (8%) | Charlotte NC (5%) | Raleigh NC (5%) | Academic and other markets (23%). The Washington DC concentration reflects Regent's specific pipeline into conservative legal and policy institutions in the nation's capital."
   },
   "University of Richmond": {
     name: "University of Richmond",
     location: "Richmond, Virginia",
     region: "Southeast",
-    pipeline: "Law and Government (the T.C. Williams School of Law — one of the most respected regional law schools in the Mid-Atlantic — feeds directly into the Virginia Bar, the Richmond federal courthouse, and th",
-    hidden_pathway: "The hidden pathway at Richmond is the Jepson School of Leadership Studies' specific positioning as the only undergraduate leadership school in America",
-    the_room: "Richmond enrolls approximately 4,100 undergraduates on a campus on the western edge of Richmond — a campus of Georgian R",
+    pipeline: "Law and Government (the T.C. Williams School of Law — one of the most respected regional law schools in the Mid-Atlantic — feeds directly into the Virginia Bar, the Richmond federal courthouse, and the broader Virginia legal and government establishment), Business, Leadership Studies, Biology, Political Science.",
+    hidden_pathway: "The hidden pathway at Richmond is the Jepson School of Leadership Studies' specific positioning as the only undergraduate leadership school in America that grants a full undergraduate degree specifically in leadership studies, rather than treating leadership as a minor or co-curricular add-on — a genuinely distinctive academic credential that signals something specific to employers and graduate programs most other degrees cannot.",
+    the_room: "Richmond enrolls approximately 4,100 undergraduates on a campus on the western edge of Richmond — a campus of Georgian Revival brick buildings set around a lake, widely considered one of the most beautiful in the South. The university's endowment per student is among the highest of any national university, funding extensive merit aid and study abroad access that shapes a genuinely well-resourced student experience.",
+    lifestyle: "Richmond's campus sits on the western edge of the city, giving students access to a genuinely revitalized capital city — a real arts, food, and outdoor scene along the James River — without being fully immersed in an urban environment. The Jepson School's leadership focus and the university's substantial resources shape a polished, well-funded campus culture with strong Greek life and Division I athletics traditions.",
     lifestyle: "",
-    grad_cities: "Richmond VA (32%) | Washington DC (18%) | New York NY (12%) | Charlotte NC (7%) | Atlanta GA (5%) | Boston MA (5%) | Aca"
+    grad_cities: "Richmond VA (32%) | Washington DC (18%) | New York NY (12%) | Charlotte NC (7%) | Atlanta GA (5%) | Boston MA (5%) | Academic and other markets (21%). The Richmond and Washington DC concentration reflects the university's deep ties to Virginia's legal, government, and financial services establishment."
   },
   "Appalachian State University": {
     name: "Appalachian State University",
     location: "Boone, North Carolina",
     region: "Southeast",
-    pipeline: "Business and Supply Chain (the Walker College of Business is AACSB-accredited and produces graduates who enter the Charlotte financial services corridor, the Research Triangle technology sector, and t",
-    hidden_pathway: "The hidden pathway at Appalachian State is the renewable energy and sustainability sector's specific concentration in North Carolina combined with App",
-    the_room: "App State enrolls approximately 21,000 students on a campus in Boone — a mountain city of 20,000 at 3,300 feet elevation",
+    pipeline: "Business and Supply Chain (the Walker College of Business is AACSB-accredited and produces graduates who enter the Charlotte financial services corridor, the Research Triangle technology sector, and the broader North Carolina economy), Sustainable Technology, Education, Exercise Science, Communication.",
+    hidden_pathway: "The hidden pathway at Appalachian State is the renewable energy and sustainability sector's specific concentration in North Carolina combined with App State's own institutional commitment to renewable energy research and campus sustainability practice, giving students genuine hands-on experience in a growing regional industry most peer regional universities have not built comparable programs around.",
+    the_room: "App State enrolls approximately 21,000 students on a campus in Boone — a mountain city of 20,000 at 3,300 feet elevation, the highest elevation of any public university east of the Mississippi River. The student body draws predominantly from North Carolina, with a genuine outdoor-recreation and mountain-culture identity distinct from the state's more urban public universities.",
+    lifestyle: "Boone sits in the Blue Ridge Mountains at genuine high elevation, giving App State access to real skiing, hiking, and mountain outdoor recreation that few Southeastern universities can offer. The town's small-mountain-city character and the university's sustainability-focused culture combine to create a distinctly outdoorsy, environmentally-minded campus identity within North Carolina's broader public university system.",
     lifestyle: "",
-    grad_cities: "Asheville NC (16%) | Charlotte NC (24%) | Raleigh-Durham NC (14%) | Boone NC (8%) | Greensboro NC (6%) | Atlanta GA (5%)"
+    grad_cities: "Asheville NC (16%) | Charlotte NC (24%) | Raleigh-Durham NC (14%) | Boone NC (8%) | Greensboro NC (6%) | Atlanta GA (5%) | Other Southeast markets (27%). The Charlotte and Research Triangle concentration reflects App State's direct pipeline into North Carolina's two largest professional job markets."
   },
   "Bentley University": {
     name: "Bentley University",
     location: "Waltham, Massachusetts",
     region: "Northeast",
-    pipeline: "Accounting and Public Accounting (Bentley's accounting program is one of the most respected in New England and consistently produces graduates who enter the Big Four — Deloitte, PwC, Ernst and Young, ",
-    hidden_pathway: "The hidden pathway at Bentley is the Marketing Analytics program's specific positioning in a skill shortage that has persisted for a decade without re",
-    the_room: "Bentley enrolls approximately 4,200 undergraduates on a campus in Waltham — a suburb 9 miles west of Boston on the Route",
+    pipeline: "Accounting and Public Accounting (Bentley's accounting program is one of the most respected in New England and consistently produces graduates who enter the Big Four — Deloitte, PwC, Ernst and Young, and KPMG all recruit heavily and directly from Bentley's accounting program), Finance, Marketing Analytics, Information Technology, Actuarial Science.",
+    hidden_pathway: "The hidden pathway at Bentley is the Marketing Analytics program's specific positioning in a skill shortage that has persisted for a decade without real resolution — companies need people who can bridge marketing strategy and quantitative data analysis, and Bentley trains specifically for that intersection, giving graduates a genuine, well-paid niche most business schools still treat as two separate disciplines.",
+    the_room: "Bentley enrolls approximately 4,200 undergraduates on a campus in Waltham — a suburb 9 miles west of Boston on the Route 128 technology corridor, one of the oldest and most established tech and business hubs in the country. The student body is intensely business-focused and pre-professional, with virtually every student pursuing a business-related major.",
+    lifestyle: "Bentley's Waltham campus sits along Route 128, giving students direct proximity to both Boston and one of the country's oldest technology and business corridors. The culture here is unusually career-focused even by business-school standards — recruiting, internships, and networking are a constant, visible part of daily campus life rather than something reserved for junior and senior year.",
     lifestyle: "",
-    grad_cities: "Boston MA (35%) | New York NY (14%) | Hartford CT (8%) | Providence RI (6%) | Washington DC (5%) | San Francisco CA (5%)"
+    grad_cities: "Boston MA (35%) | New York NY (14%) | Hartford CT (8%) | Providence RI (6%) | Washington DC (5%) | San Francisco CA (5%) | Other markets (27%). The Boston concentration reflects Bentley's deep integration into the Route 128 corridor's business and technology employer base."
   },
   "California Lutheran University": {
     name: "California Lutheran University",
     location: "Thousand Oaks, California",
     region: "West",
-    pipeline: "Business and Entrepreneurship (the School of Management at Cal Lutheran is the most distinctive business program in the Conejo Valley corridor — the university's specific positioning in Thousand Oaks,",
-    hidden_pathway: "The hidden pathway at Cal Lutheran is the Center for Economic Research and Forecasting and its specific function in the regional California economic c",
-    the_room: "Cal Lutheran enrolls approximately 4,000 students on a campus in Thousand Oaks — a planned city of 130,000 in the Conejo",
+    pipeline: "Business and Entrepreneurship (the School of Management at Cal Lutheran is the most distinctive business program in the Conejo Valley corridor — the university's specific positioning in Thousand Oaks, home to a genuine concentration of biotech, aerospace, and financial services corporate headquarters in the Conejo Valley), Psychology, Biology, Communication, Exercise Science.",
+    hidden_pathway: "The hidden pathway at Cal Lutheran is the Center for Economic Research and Forecasting and its specific function in the regional California economic conversation. The Center produces widely cited economic forecasts for Ventura County and the broader region, giving business and economics students genuine, real-world applied research experience most undergraduates at similarly sized universities never get.",
+    the_room: "Cal Lutheran enrolls approximately 4,000 students on a campus in Thousand Oaks — a planned city of 130,000 in the Conejo Valley, roughly 40 miles northwest of downtown Los Angeles. The student body is genuinely diverse and predominantly Californian, with a close-knit, values-oriented culture reflecting the university's Lutheran heritage.",
+    lifestyle: "Thousand Oaks is a planned, deliberately green suburban city in the Conejo Valley, with real access to hiking in the surrounding Santa Monica Mountains alongside a genuine corporate business presence (Amgen and other biotech and aerospace headquarters are nearby). The setting is quieter and more suburban than Los Angeles proper, appealing to students who want real access to Southern California's economy without the intensity of a big-city campus.",
     lifestyle: "",
-    grad_cities: "Los Angeles CA (38%) | Ventura County CA (20%) | San Fernando Valley CA (10%) | San Diego CA (6%) | San Francisco CA (5%"
+    grad_cities: "Los Angeles CA (38%) | Ventura County CA (20%) | San Fernando Valley CA (10%) | San Diego CA (6%) | San Francisco CA (5%) | Other markets (21%). The Ventura County and Los Angeles concentration reflects Cal Lutheran's deep regional employer network across the Conejo Valley's corporate corridor."
   },
   "University of Wyoming": {
     name: "University of Wyoming",
     location: "Laramie, Wyoming",
     region: "West",
-    pipeline: "Petroleum and Energy Engineering (the University of Wyoming's College of Engineering and Applied Science has a specific and structurally irreplaceable position in Wyoming's petroleum and natural gas e",
-    hidden_pathway: "The hidden pathway at the University of Wyoming is the Wyoming Permanent Mineral Trust Fund's specific effect on the institution and its graduates. Wy",
-    the_room: "UW enrolls approximately 12,000 students on a campus in Laramie — a high plains city of 33,000 at 7,165 feet elevation o",
+    pipeline: "Petroleum and Energy Engineering (the University of Wyoming's College of Engineering and Applied Science has a specific and structurally irreplaceable position in Wyoming's petroleum and natural gas economy — the state's single largest industry and the primary source of state government revenue through severance taxes), Agriculture, Law, Business, Wildlife and Fisheries Biology.",
+    hidden_pathway: "The hidden pathway at the University of Wyoming is the Wyoming Permanent Mineral Trust Fund's specific effect on the institution and its graduates. Wyoming's severance tax revenue funds one of the most generous state scholarship programs in the country, and the university's petroleum engineering program benefits directly from the same mineral wealth that funds student tuition — a genuine, self-reinforcing economic loop most families never think to notice.",
+    the_room: "UW enrolls approximately 12,000 students on a campus in Laramie — a high plains city of 33,000 at 7,165 feet elevation on the high plains of southeastern Wyoming, making it one of the highest-elevation flagship universities in the country. As the state's only four-year public university, UW draws the overwhelming majority of Wyoming's college-bound students, creating a genuinely tight-knit, statewide community.",
+    lifestyle: "Laramie sits on Wyoming's high plains at genuine elevation, with real access to the Snowy Range Mountains for skiing and hiking, and a wide-open, rural Western character that shapes daily life. As the state's only four-year public university, UW carries a real statewide identity — students from every corner of Wyoming end up here, creating a distinctly close, small-state-university community feel despite the university's genuinely rugged, remote setting.",
     lifestyle: "",
-    grad_cities: "Cheyenne WY (18%) | Casper WY (16%) | Laramie WY (10%) | Denver CO (14%) | Salt Lake City UT (8%) | Billings MT (5%) | A"
+    grad_cities: "Cheyenne WY (18%) | Casper WY (16%) | Laramie WY (10%) | Denver CO (14%) | Salt Lake City UT (8%) | Billings MT (5%) | Academic and other markets (29%). The Denver concentration reflects the pull of a larger regional metro on Wyoming's own petroleum and business graduates."
   },
   "University of Alaska Fairbanks": {
     name: "University of Alaska Fairbanks",
     location: "Fairbanks, Alaska",
     region: "West",
-    pipeline: "Arctic and Petroleum Engineering (the University of Alaska Fairbanks College of Engineering and Mines occupies a position in the Alaska energy economy that is structurally irreplaceable — the Trans-Al",
-    hidden_pathway: "The hidden pathway at UAF is the Poker Flat Research Range and its specific function for space science and geophysics students. Poker Flat, operated b",
-    the_room: "UAF enrolls approximately 7,500 students on a campus on a ridge above Fairbanks — a city of 32,000 in the Interior of Al",
+    pipeline: "Arctic and Petroleum Engineering (the University of Alaska Fairbanks College of Engineering and Mines occupies a position in the Alaska energy economy that is structurally irreplaceable — the Trans-Alaska Pipeline System and the broader oil and gas industry that funds much of the state's economy rely directly on UAF-trained engineers), Arctic and Climate Science, Fisheries and Marine Biology, Geology, Rural Development.",
+    hidden_pathway: "The hidden pathway at UAF is the Poker Flat Research Range and its specific function for space science and geophysics students. Poker Flat, operated by UAF, is the only university-owned rocket launch facility in the world, giving students genuine hands-on access to atmospheric and space research most universities can only study from a distance.",
+    the_room: "UAF enrolls approximately 7,500 students on a campus on a ridge above Fairbanks — a city of 32,000 in the Interior of Alaska, hundreds of miles from any other major population center. The student body includes a genuinely significant Alaska Native population and a distinctive mix of students drawn specifically by Arctic research opportunities unavailable anywhere else in the country.",
+    lifestyle: "Fairbanks sits deep in Alaska's Interior, with genuine extremes — near-endless summer daylight and the aurora borealis in winter are both real, felt parts of daily life here, not tourist attractions. The isolation is real and significant, and students who thrive at UAF tend to be drawn specifically by Arctic research, wilderness access, and a genuinely different way of life than almost anywhere else in the country.",
     lifestyle: "",
-    grad_cities: "Fairbanks AK (20%) | Anchorage AK (24%) | Juneau AK (6%) | Seattle WA (12%) | Denver CO (6%) | Academic and research pro"
+    grad_cities: "Fairbanks AK (20%) | Anchorage AK (24%) | Juneau AK (6%) | Seattle WA (12%) | Denver CO (6%) | Academic and research programs (32%). The unusually high academic and research program share reflects UAF's strength in Arctic and polar research, which pulls a meaningful share of graduates directly into continued fieldwork and graduate study."
   },
   "University of Vermont": {
     name: "University of Vermont",
     location: "Burlington, Vermont",
     region: "Northeast",
-    pipeline: "Environmental Studies and Sustainable Agriculture (the Rubenstein School of Environment and Natural Resources at UVM is one of the most respected environmental programs in the Northeast — the Lake Cha",
-    hidden_pathway: "The hidden pathway at UVM is the Burlington food systems economy and its specific intersection with the university's sustainable agriculture and food ",
-    the_room: "UVM enrolls approximately 13,000 students on a campus on a hillside above Burlington — a city of 45,000 on the eastern s",
+    pipeline: "Environmental Studies and Sustainable Agriculture (the Rubenstein School of Environment and Natural Resources at UVM is one of the most respected environmental programs in the Northeast — the Lake Champlain Basin and Vermont's own farm-to-table agricultural identity give students genuine applied research access most environmental programs elsewhere can only study from a distance), Medicine, Business, Nursing, Wildlife Biology.",
+    hidden_pathway: "The hidden pathway at UVM is the Burlington food systems economy and its specific intersection with the university's sustainable agriculture and food systems research. Burlington's farm-to-table food economy and Ben & Jerry's Vermont headquarters both give UVM food systems students a genuine, working regional industry to study and enter directly, rather than an abstract academic subject.",
+    the_room: "UVM enrolls approximately 13,000 students on a campus on a hillside above Burlington — a city of 45,000 on the eastern shore of Lake Champlain, consistently ranked among the most livable small cities in America. The student body draws heavily from the Northeast, with a genuinely outdoorsy, environmentally-minded culture reflecting Vermont's own identity.",
+    lifestyle: "Burlington sits directly on Lake Champlain, with real access to skiing, hiking, and lake recreation that shape daily life as much as academics do. The city's farm-to-table food culture and progressive political identity are genuinely felt on campus, and UVM's outdoorsy, environmentally conscious student culture matches Vermont's own broader reputation closely.",
     lifestyle: "",
-    grad_cities: "Burlington VT (28%) | Boston MA (16%) | New York NY (10%) | Portland ME (6%) | Montpelier VT (5%) | Washington DC (5%) |"
+    grad_cities: "Burlington VT (28%) | Boston MA (16%) | New York NY (10%) | Portland ME (6%) | Montpelier VT (5%) | Washington DC (5%) | Other markets (30%). The Burlington retention rate reflects the city's own growing food systems, healthcare, and outdoor recreation economy."
   },
   "College of the Ozarks": {
     name: "College of the Ozarks",
     location: "Point Lookout, Missouri",
     region: "Midwest",
-    pipeline: "Business and Entrepreneurship (the Keeter School of Business produces graduates who enter the Branson tourism corridor, the Springfield business market, and the broader Midwest corporate economy with ",
-    hidden_pathway: "The hidden pathway at College of the Ozarks is the Keeter Center Lodge and its specific function as a professional hospitality training environment. T",
-    the_room: "College of the Ozarks enrolls approximately 1,500 students on a campus in Point Lookout — a community on the edge of Lak",
+    pipeline: "Business and Entrepreneurship (the Keeter School of Business produces graduates who enter the Branson tourism corridor, the Springfield business market, and the broader Midwest corporate economy with a genuinely distinctive advantage: every student works a campus job in lieu of paying tuition, graduating debt-free with real hands-on work experience), Agriculture, Education, Nursing, Hospitality Management.",
+    hidden_pathway: "The hidden pathway at College of the Ozarks is the Keeter Center Lodge and its specific function as a professional hospitality training environment. The Keeter Center functions as a fully operational hotel and restaurant staffed entirely by students, giving hospitality management students genuine, real-world operational experience most programs can only simulate.",
+    the_room: "College of the Ozarks enrolls approximately 1,500 students on a campus in Point Lookout — a community on the edge of Lake Taneycomo in the Ozark Mountains, minutes from the Branson tourism corridor. The entire student body works campus jobs to cover tuition under the college's distinctive work program, creating a genuinely values-driven, debt-free education model unlike almost any other American college.",
+    lifestyle: "College of the Ozarks sits in the Ozark Mountains near Branson, Missouri's tourism and entertainment hub, and the college's work program means every student's daily life includes a genuine campus job alongside coursework. The culture here is explicitly patriotic, Christian, and values-driven, with a debt-free education model that shapes both the institutional mission and the day-to-day student experience distinctly differently from a typical college.",
     lifestyle: "",
-    grad_cities: "Branson-Springfield MO (38%) | Kansas City MO (12%) | St. Louis MO (8%) | Tulsa OK (6%) | Little Rock AR (5%) | Academic"
+    grad_cities: "Branson-Springfield MO (38%) | Kansas City MO (12%) | St. Louis MO (8%) | Tulsa OK (6%) | Little Rock AR (5%) | Academic and other markets (31%). The Branson-Springfield retention reflects the college's deep regional tourism and hospitality industry ties, plus graduates entering the workforce debt-free."
   },
   "Vassar College": {
     name: "Vassar College",
     location: "Poughkeepsie, New York",
     region: "Northeast",
-    pipeline: "Arts and Creative Industries (Vassar's studio art, film, and drama programs are among the most respected at any liberal arts college in the Northeast — the Frances Lehman Loeb Art Center, one of the f",
-    hidden_pathway: "The hidden pathway at Vassar is the Hudson Valley arts community's specific transformation and Vassar's position at its center. The stretch of the Hud",
-    the_room: "Vassar enrolls approximately 2,400 students on a campus in Poughkeepsie — a city of 30,000 on the eastern bank of the Hu",
+    pipeline: "Arts and Creative Industries (Vassar's studio art, film, and drama programs are among the most respected at any liberal arts college in the Northeast — the Frances Lehman Loeb Art Center, one of the finest college art museums in the country, gives studio art and art history students genuine curatorial and exhibition experience most peer programs cannot offer), English and Literature, Psychology, Political Science, Environmental Studies.",
+    hidden_pathway: "The hidden pathway at Vassar is the Hudson Valley arts community's specific transformation and Vassar's position at its center. The stretch of the Hudson Valley around Poughkeepsie has become a genuine creative and artistic hub over the last two decades, and Vassar sits directly at its center, giving students real access to a working artist community beyond campus.",
+    the_room: "Vassar enrolls approximately 2,400 students on a campus in Poughkeepsie — a city of 30,000 on the eastern bank of the Hudson River, about 75 miles north of New York City. Formerly one of the Seven Sisters women's colleges, Vassar has been coeducational since 1969 and retains a genuinely intellectually serious, artistically engaged campus culture.",
+    lifestyle: "Vassar's campus sits in the Hudson Valley, close enough to New York City for weekend trips but genuinely removed from it — the surrounding region's growing arts and food scene gives students real cultural access beyond the traditional campus bubble. The college's history as a Seven Sisters school and its beautiful, arboretum-like campus create a distinctly intellectual, creatively serious atmosphere.",
     lifestyle: "",
-    grad_cities: "New York NY (38%) | Boston MA (10%) | Washington DC (8%) | Los Angeles CA (7%) | Hudson Valley NY (6%) | Academic and do"
+    grad_cities: "New York NY (38%) | Boston MA (10%) | Washington DC (8%) | Los Angeles CA (7%) | Hudson Valley NY (6%) | Academic and doctoral programs (31%). The New York concentration reflects both proximity and the density of arts, media, and publishing institutions headquartered there."
   },
   "East Carolina University": {
     name: "East Carolina University",
     location: "Greenville, North Carolina",
     region: "Southeast",
-    pipeline: "Medicine and Health Sciences (the Brody School of Medicine at ECU is one of the most mission-driven medical schools in America — founded explicitly to address North Carolina's physician shortage in ru",
-    hidden_pathway: "The hidden pathway at ECU is the Brody School of Medicine's specific rural medicine mission and its effect on medical school acceptance rates for ECU ",
-    the_room: "ECU enrolls approximately 28,000 students on a campus in Greenville — a city of 92,000 in the coastal plain of Eastern N",
+    pipeline: "Medicine and Health Sciences (the Brody School of Medicine at ECU is one of the most mission-driven medical schools in America — founded explicitly to address North Carolina's physician shortage in rural and underserved areas of the state, a mission that continues to shape the school's admissions and training priorities today), Business, Engineering, Education, Nursing.",
+    hidden_pathway: "The hidden pathway at ECU is the Brody School of Medicine's specific rural medicine mission and its effect on medical school acceptance rates for ECU undergraduates. Brody's mission-specific admissions process gives North Carolina students committed to rural and underserved medicine a genuinely more favorable path into medical school than more traditional, prestige-focused programs.",
+    the_room: "ECU enrolls approximately 28,000 students on a campus in Greenville — a city of 92,000 in the coastal plain of Eastern North Carolina, the primary economic and educational hub for the surrounding rural region. The student body draws predominantly from Eastern North Carolina, with a genuine regional identity distinct from the state's more urban Research Triangle universities.",
+    lifestyle: "Greenville sits in Eastern North Carolina's coastal plain, serving as the region's primary hub for healthcare, education, and commerce. The Pirate athletics culture and Brody School of Medicine's rural health mission both shape a genuinely community-oriented, regionally rooted campus identity, distinct from the more nationally-focused universities elsewhere in the state.",
     lifestyle: "",
-    grad_cities: "Greenville NC (24%) | Raleigh-Durham NC (22%) | Charlotte NC (10%) | Wilmington NC (7%) | Washington DC (5%) | Virginia "
+    grad_cities: "Greenville NC (24%) | Raleigh-Durham NC (22%) | Charlotte NC (10%) | Wilmington NC (7%) | Washington DC (5%) | Virginia Beach VA (5%) | Other Eastern NC markets (27%). The Greenville retention reflects ECU's mission-driven role as the primary healthcare and professional pipeline for Eastern North Carolina."
   },
   "St. John's College": {
     name: "St. John's College",
