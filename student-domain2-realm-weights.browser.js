@@ -1,55 +1,96 @@
 /**
- * student-domain2-realm-weights.browser.js
- * VECTOR — STUDENT-AGENT-002, Gate 4 Item 1
+ * VECTOR Lifescape — Domain 2 Realm-Weighting Module
+ * STUDENT-AGENT-002 Gate 4, Item 2 (map) + Item 4 (this wiring module)
+ * Built 2026-07-23.
  *
- * Classic-script twin of student-domain2-realm-weights.js, same pattern
- * as student-signal-fusion-engine.browser.js — logic and data must stay
- * byte-identical between the two; if this map is ever revised, revise
- * both files (or extract to one source) rather than letting them drift.
+ * This file does NOT define a second realm-weighting map. Gate 4 Item 2's
+ * actual, real map is TILE_REALM_WEIGHTS in lifescape_curation_map_v1.js —
+ * this file re-exports it and provides the one function the Signal Fusion
+ * Engine needs on top of it: buildWorldSelections().
+ *
+ * NAMING CORRECTION (2026-07-23): the Signal Fusion Engine call site in
+ * lifescape.html originally called this function as
+ * buildWorldSelections(profile.worlds_chosen) — but worlds_chosen holds
+ * World-card selections (the 19 IBIS_WORLD_REGISTRY worlds), a different,
+ * coarser selection layer than the activity tiles TILE_REALM_WEIGHTS is
+ * keyed by. Domain 2's own spec language ("realm-weighting... varies by
+ * tile") confirms tiles are the correct granularity. The function name is
+ * kept as buildWorldSelections for minimal disruption to the existing call
+ * site, but it now takes tile ids (selectedTileIds) and its output field is
+ * tile_id, not world_id — do not feed this function worlds_chosen.
+ *
+ * 5 realms (make, move, think, people, systems) — confirmed 2026-07-22 to
+ * match the live tile system (CLUSTER_CONFIG/TILE_POOLS in lifescape.html),
+ * not the 4-realm "make/move/think/create" language in the original spec
+ * text.
+ *
+ * COVERAGE (as of this build): TILE_REALM_WEIGHTS covers only the 10 tiles
+ * seeded so far (the 8 ALWAYS_SHOW tiles + content_creation +
+ * daily_word_puzzles) — a deliberate lightweight-first pass per OQ-1, not a
+ * full retrofit of the 100+ tiles in TILE_POOLS. Most real student sessions
+ * will therefore have selected tiles with NO weight data. This is handled
+ * as the expected common case, not a rare edge case: unweighted tiles are
+ * silently zero-weighted (Progressive Report Architecture's "missing data
+ * stays invisible, not broken"), and only a single aggregate note fires if
+ * NONE of a student's selected tiles have any weight data at all — that is
+ * the one genuinely worth-flagging degenerate case, not routine partial
+ * coverage.
  */
 
-(function (global) {
+(function (root) {
   'use strict';
 
-  var WORLD_REALM_WEIGHTS = {
-    medicine:         { make: 2, move: 0, think: 3, create: 0 },
-    healing:          { make: 3, move: 0, think: 1, create: 0 },
-    therapy:          { make: 3, move: 0, think: 1, create: 0 },
-    technology:       { make: 3, move: 0, think: 3, create: 0 },
-    money:            { make: 0, move: 0, think: 4, create: 0 },
-    ideas:            { make: 0, move: 0, think: 4, create: 0 },
-    persuasion:       { make: 0, move: 0, think: 1, create: 4 },
-    justice:          { make: 0, move: 0, think: 3, create: 1 },
-    building:         { make: 3, move: 0, think: 0, create: 2 },
-    civic:            { make: 0, move: 2, think: 2, create: 0 },
-    beauty:           { make: 0, move: 0, think: 0, create: 4 },
-    power:            { make: 0, move: 2, think: 2, create: 0 },
-    compete:          { make: 0, move: 4, think: 0, create: 0 },
-    military:         { make: 0, move: 3, think: 1, create: 0 },
-    making:           { make: 4, move: 0, think: 0, create: 0 },
-    food:             { make: 3, move: 0, think: 0, create: 1 },
-    hospitality:      { make: 0, move: 2, think: 0, create: 2 },
-    energy:           { make: 2, move: 0, think: 3, create: 0 },
-    logistics:        { make: 0, move: 3, think: 1, create: 0 },
-    biomanufacturing: { make: 3, move: 0, think: 2, create: 0 },
-  };
+  var ZERO_WEIGHTS = Object.freeze({ make: 0, move: 0, think: 0, people: 0, systems: 0 });
 
-  function buildWorldSelections(worldIds) {
-    var ids = Array.isArray(worldIds) ? worldIds : [];
-    var unknownEncountered = null;
-    var selections = ids.map(function (rawId) {
-      var id = String(rawId).toLowerCase().replace(/^\s+|\s+$/g, '');
-      var weights = WORLD_REALM_WEIGHTS[id];
-      if (!weights) {
-        unknownEncountered = unknownEncountered || id;
-        return { world_id: id, realm_weights: { make: 0, move: 0, think: 0, create: 0 } };
-      }
-      return { world_id: id, realm_weights: { make: weights.make, move: weights.move, think: weights.think, create: weights.create } };
-    });
-    return { selections: selections, unknownEncountered: unknownEncountered };
+  function getTileRealmWeightsSource() {
+    // Prefer the real map if it's loaded (lifescape_curation_map_v1.js).
+    if (typeof root !== 'undefined' && root.TILE_REALM_WEIGHTS) return root.TILE_REALM_WEIGHTS;
+    if (typeof TILE_REALM_WEIGHTS !== 'undefined') return TILE_REALM_WEIGHTS;
+    return null;
   }
 
-  global.WORLD_REALM_WEIGHTS = WORLD_REALM_WEIGHTS;
-  global.buildWorldSelections = buildWorldSelections;
+  /**
+   * buildWorldSelections(selectedTileIds)
+   * @param {Iterable<string>} selectedTileIds - LS_STATE.selectedTileIds (a Set) or any array-like of tile id strings
+   * @returns {{ selections: Array<{tile_id: string, realm_weights: object, weighted: boolean}>, unweightedCount: number, totalCount: number, allUnweighted: boolean }}
+   */
+  function buildWorldSelections(selectedTileIds) {
+    var ids = selectedTileIds ? Array.from(selectedTileIds) : [];
+    var weightsMap = getTileRealmWeightsSource();
+    var unweightedCount = 0;
 
-})(typeof window !== 'undefined' ? window : this);
+    var selections = ids.map(function (tileId) {
+      var entry = weightsMap ? weightsMap[tileId] : null;
+      if (!entry) {
+        unweightedCount += 1;
+        return { tile_id: tileId, realm_weights: ZERO_WEIGHTS, weighted: false };
+      }
+      return {
+        tile_id: tileId,
+        realm_weights: {
+          make: entry.make || 0,
+          move: entry.move || 0,
+          think: entry.think || 0,
+          people: entry.people || 0,
+          systems: entry.systems || 0
+        },
+        weighted: true
+      };
+    });
+
+    var totalCount = ids.length;
+    var allUnweighted = totalCount > 0 && unweightedCount === totalCount;
+
+    return {
+      selections: selections,
+      unweightedCount: unweightedCount,
+      totalCount: totalCount,
+      allUnweighted: allUnweighted
+    };
+  }
+
+  var api = { buildWorldSelections: buildWorldSelections, TILE_REALM_WEIGHTS_ZERO: ZERO_WEIGHTS };
+
+  if (typeof root !== 'undefined') root.buildWorldSelections = buildWorldSelections;
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+})(typeof window !== 'undefined' ? window : typeof globalThis !== 'undefined' ? globalThis : this);
