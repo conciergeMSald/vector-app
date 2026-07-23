@@ -9185,13 +9185,31 @@ function buildSchoolIntelData(schoolName) {
     if (industryBody) cats.push({ head: 'The Industry Map', body: industryBody });
   }
 
-  // 5. The World Around It — NOT YET BUILT. megaRegionIntegration does
-  // not exist per-school in this schema.
+  // 5. The World Around It — CORRECTED 2026-07-23. Verified against the
+  // real UNIVERSITY_DB_V5_MASTER.js: megaRegionIntegration exists on all
+  // 159 schools, shape { primaryMegaRegion: string, regionalRole: string
+  // (narrative) }. The earlier "does not exist" note was stale — written
+  // before this field was populated, never re-checked. Note: this is a
+  // separate, simpler, static per-school field, NOT the same thing as the
+  // Synthesis Engine's Megaregion Gravity Map (unbuilt, scored, dynamic,
+  // family-specific) — this category does not depend on that work at all.
+  if (v5 && v5.megaRegionIntegration && v5.megaRegionIntegration.regionalRole) {
+    var mri = v5.megaRegionIntegration;
+    var worldBody = mri.regionalRole + (mri.primaryMegaRegion ? ' This sits inside the ' + mri.primaryMegaRegion + '.' : '');
+    cats.push({ head: 'The World Around It', body: worldBody });
+  }
 
-  // 6. How Durable This School Is — NOT YET BUILT per-school.
-  // megaRegionDB_futureResilience.js is loaded but its shape/API is not
-  // visible from this file, so nothing is guessed here. Wire this once
-  // the real accessor function is confirmed.
+  // 6. How Durable This School Is — CORRECTED 2026-07-23. Verified against
+  // the real UNIVERSITY_DB_V5_MASTER.js: both institutionalMoat and
+  // futureResilience exist on all 159 schools (confirmed real,
+  // differentiated data — not placeholders). Per the Brunello standard, no
+  // raw score ever renders — the 11 combined numbers here only decide
+  // which 1-2 honest sentences to surface, exactly like industryPathways'
+  // strength field above.
+  if (v5 && v5.institutionalMoat && v5.futureResilience) {
+    var durabilityBody = renderDurabilityBody(v5.institutionalMoat, v5.futureResilience);
+    if (durabilityBody) cats.push({ head: 'How Durable This School Is', body: durabilityBody });
+  }
 
   // 7. What the Rankings Miss — real field: institutionNarrative.hiddenPathway
   // (this is the same intelligence the spec calls nicheRecruitingAdvantages,
@@ -9261,6 +9279,35 @@ var INDUSTRY_PATHWAY_LABELS = {
 
 function industryPathwayLabel(key) {
   return INDUSTRY_PATHWAY_LABELS[key] || key;
+}
+
+// ── Durability body builder — REPORT-UPGRADE-004, Category 6 ────────────
+// Translates institutionalMoat + futureResilience (11 combined 0-100
+// scores) into 1-2 honest sentences. Thresholds below are directional
+// judgment calls (>=90 "exceptional", >=75 "strong", else omitted as not
+// distinctive enough to be worth a family's attention) — consistent with
+// the >=55 threshold already used for industryPathways above. No raw
+// number is ever returned or rendered.
+function renderDurabilityBody(moat, resilience) {
+  var parts = [];
+
+  if (typeof moat.overallMoatScore === 'number') {
+    if (moat.overallMoatScore >= 90) {
+      parts.push('This institution has built a genuinely durable position — its brand, alumni network, and industry relationships aren\'t easily replicated, and that durability tends to compound over a career, not just at graduation.');
+    } else if (moat.overallMoatScore >= 75) {
+      parts.push('This institution has a solid, durable position — a real network and industry relationships that hold up well over time.');
+    }
+  }
+
+  if (typeof resilience.futureReadiness === 'number') {
+    if (resilience.futureReadiness >= 90) {
+      parts.push('The academic culture here is built for adaptability — strong interdisciplinary range and a track record of graduates who pivot well as industries change, which matters more than any single major choice does.');
+    } else if (resilience.futureReadiness >= 75) {
+      parts.push('The academic culture here supports adaptability reasonably well as industries shift.');
+    }
+  }
+
+  return parts.length ? parts.join(' ') : null;
 }
 
 var _schoolIntelOpenIdx = null;
@@ -9371,15 +9418,36 @@ function _catEightConsiderSentence(v5) {
 
 function _catEightTimelineSentence(v5, ctx) {
   var ai = v5.applicationIntelligence;
-  if (!ai || !ai.edDeadline) return null; // not yet in schema — no fabricated dates
+  if (!ai) return null;
 
+  // CORRECTED 2026-07-23: previously required ai.edDeadline specifically and
+  // hardcoded the sentence to say "Early Decision I deadline" — but most
+  // schools researched so far (Illinois, Wisconsin) have no binding ED at
+  // all, only a priority date or nonbinding Early Action. Labeling those as
+  // "Early Decision" would be factually wrong, and requiring edDeadline at
+  // all meant real essay-prompt data for non-ED schools never surfaced.
+  // Now uses a generic earliestDeadline + earliestDeadlineLabel pair (e.g.
+  // "Early Decision (binding)", "Early Action", "Priority") so the correct
+  // real label is used per school, and the essay-only sentence can still
+  // fire even when a school has no early round worth naming at all.
   var essayLine = '';
   if (ai.essayPromptTopic && ctx.genome && ctx.genome.dominant_domain_label) {
-    essayLine = ' The supplemental essay asks about ' + ai.essayPromptTopic +
+    essayLine = 'The supplemental essay asks about ' + ai.essayPromptTopic +
                 ' — a question your ' + ctx.genome.dominant_domain_label + ' answers particularly well.';
   }
-  return 'This school\'s Early Decision I deadline is ' + ai.edDeadline + '.' + essayLine +
-         ' If you\'re seriously considering this school, that essay should be your first priority after a campus visit confirms the fit feels right.';
+
+  var deadlineLine = '';
+  if (ai.earliestDeadline && ai.earliestDeadlineLabel) {
+    deadlineLine = 'This school\'s ' + ai.earliestDeadlineLabel + ' deadline is ' + ai.earliestDeadline + '.';
+  }
+
+  if (!deadlineLine && !essayLine) return null;
+
+  var closing = (deadlineLine || essayLine)
+    ? ' If you\'re seriously considering this school, that essay should be your first priority after a campus visit confirms the fit feels right.'
+    : '';
+
+  return [deadlineLine, essayLine].filter(Boolean).join(' ') + closing;
 }
 
 function _catEightLowerFirst(s) { return s.charAt(0).toLowerCase() + s.slice(1); }

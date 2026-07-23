@@ -6652,6 +6652,14 @@ const UNIVERSITY_DB_V5 = {
     }
   },
   "University of Illinois Urbana-Champaign": {
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Priority",
+      "rdDeadline": "January 5",
+      "essayPromptTopic": "a concrete experience tied to your first-choice major from the last 3-4 years, and how that major will help you reach your career goals",
+      "notes": "No binding Early Decision or Early Action at Illinois — a single-round model with an earlier priority date (Nov 1) for admission/scholarship consideration, then Regular Decision (Jan 5). Sourced from admissions.illinois.edu, verified 2026-07-23.",
+      "verifiedDate": "2026-07-23"
+    },
     "institutionNarrative": {
       "name": "University of Illinois Urbana-Champaign",
       "location": "Urbana-Champaign, Illinois",
@@ -7296,6 +7304,14 @@ const UNIVERSITY_DB_V5 = {
     }
   },
   "University of Michigan": {
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision (binding)",
+      "rdDeadline": "February 1",
+      "essayPromptTopic": "how you're prepared to contribute to developing leaders and citizens who challenge the present and enrich the future, plus a second required essay on fit with your specific school/college",
+      "notes": "Michigan added binding Early Decision for the first time starting the 2026-27 cycle, alongside its existing nonbinding Early Action (also Nov 1) and Regular Decision (Feb 1). Prior to this cycle Michigan had no binding ED option at all. Sourced from admissions.umich.edu, verified 2026-07-23.",
+      "verifiedDate": "2026-07-23"
+    },
     "institutionNarrative": {
       "name": "University of Michigan",
       "location": "Ann Arbor, Michigan",
@@ -20248,6 +20264,14 @@ const UNIVERSITY_DB_V5 = {
     }
   },
   "University of Wisconsin-Madison": {
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": "why you want to attend UW-Madison specifically and your interest in your selected major(s)",
+      "notes": "No binding Early Decision at Wisconsin — nonbinding Early Action (Nov 1) and Regular Decision (Jan 15) only. Note: in-state EA applicants meeting eligibility have been guaranteed admission under the 'Wisconsin Guarantee' since fall 2025 — a real, recent policy worth surfacing elsewhere in this school's narrative content, though out of scope for this field. Sourced from admissions.wisc.edu, verified 2026-07-23.",
+      "verifiedDate": "2026-07-23"
+    },
     "institutionNarrative": {
       "name": "University of Wisconsin-Madison",
       "location": "Madison, Wisconsin",
