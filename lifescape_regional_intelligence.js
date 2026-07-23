@@ -469,20 +469,20 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'Tech & Digital Media',               naics: [51, 54],     riasec: ['I','R','C'] },
     { corridorName: 'CPG, Action Sports & Lifestyle Brands', naics: [44, 71, 81], riasec: ['E','S','A'] },
     { corridorName: 'Fashion, Beauty & Cosmetics',        naics: [31, 44],     riasec: ['A','E','R'] },
-    { corridorName: 'Pharmaceutical & Biotech',           naics: [62, 54],     riasec: ['I','R','S'] },
+    { corridorName: 'Pharmaceutical & Biotech',           naics: [62, 54, 32], riasec: ['I','R','S'] },
     { corridorName: 'Startup & Venture Ecosystem',        naics: [54, 51, 81], riasec: ['E','I','C'] }
   ],
   bayarea: [
     { corridorName: 'Deep Tech, AI & Semiconductor',      naics: [51, 54, 33], riasec: ['I','R','C'] },
     { corridorName: 'Enterprise & Consumer Tech',         naics: [51, 54],     riasec: ['I','E','C'] },
-    { corridorName: 'Biotech & Life Sciences',            naics: [62, 54],     riasec: ['I','R','S'] },
+    { corridorName: 'Biotech & Life Sciences',            naics: [62, 54, 32], riasec: ['I','R','S'] },
     { corridorName: 'Financial Services & Fintech',       naics: [52, 54],     riasec: ['C','E','I'] },
     { corridorName: 'Venture Capital & Startup Ecosystem',naics: [52, 54, 81], riasec: ['E','I','C'] }
   ],
   chicago: [
     { corridorName: 'Finance, Trading & Quant',           naics: [52],         riasec: ['C','I','E'] },
     { corridorName: 'Consulting & Professional Services', naics: [54],         riasec: ['E','I','C'] },
-    { corridorName: 'Healthcare & Life Sciences',         naics: [62, 54],     riasec: ['I','S','R'] },
+    { corridorName: 'Healthcare & Life Sciences',         naics: [62, 54, 32], riasec: ['I','S','R'] },
     { corridorName: 'Manufacturing, Logistics & Supply Chain', naics: [33, 48, 42], riasec: ['R','C','I'] },
     { corridorName: 'Technology & Digital',               naics: [51, 54],     riasec: ['I','R','C'] },
     { corridorName: 'Consumer Goods & Retail',            naics: [44, 31, 72, 54], riasec: ['E','S','C'] }

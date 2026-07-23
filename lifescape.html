@@ -9172,9 +9172,18 @@ function buildSchoolIntelData(schoolName) {
     cats.push({ head: 'Where Graduates Go', body: cities });
   }
 
-  // 4. The Industry Map — NOT YET BUILT. industryPathways does not exist
-  // in this schema. Category renders nothing until that field is added —
-  // per spec's own fallback rule, this is correct behavior, not a bug.
+  // 4. The Industry Map — CORRECTED 2026-07-23. Verified against the real
+  // UNIVERSITY_DB_V5_MASTER.js: industryPathways exists on all 159 schools,
+  // shape is { keyName: { strength: number 0-100, notes: string } } — not
+  // the flat {key:number} map earlier code assumed. Coverage varies 2-27
+  // keys per school (only 1 school has all 27), and ~19 schools have
+  // strength-only entries with no notes — both handled below. Per the
+  // Brunello standard, no raw number is ever shown to family — strength
+  // only sorts and gates which industries qualify, never renders.
+  if (v5 && v5.industryPathways) {
+    var industryBody = renderIndustryMapBody(v5.industryPathways);
+    if (industryBody) cats.push({ head: 'The Industry Map', body: industryBody });
+  }
 
   // 5. The World Around It — NOT YET BUILT. megaRegionIntegration does
   // not exist per-school in this schema.
@@ -9192,6 +9201,66 @@ function buildSchoolIntelData(schoolName) {
   }
 
   return cats.length ? cats : null;
+}
+
+// ── Industry Map body builder — REPORT-UPGRADE-004, Category 4 ──────────
+// Takes the real { keyName: {strength, notes} } shape. Filters out weak
+// signal (strength < 55 — below that, the connection isn't strong enough
+// to be worth a family's attention), sorts by strength descending, caps
+// at 5 so this stays a highlight, not a spreadsheet. Prefers entries that
+// have real notes text; strength itself never renders as a number.
+function renderIndustryMapBody(pathways) {
+  var rows = Object.keys(pathways)
+    .map(function(k) { return { key: k, strength: pathways[k].strength, notes: pathways[k].notes || '' }; })
+    .filter(function(r) { return typeof r.strength === 'number' && r.strength >= 55; })
+    .sort(function(a, b) { return b.strength - a.strength; })
+    .slice(0, 5);
+
+  if (!rows.length) return null;
+
+  return rows.map(function(r) {
+    var label = industryPathwayLabel(r.key);
+    return r.notes
+      ? '<strong>' + label + ':</strong> ' + r.notes
+      : '<strong>' + label + ':</strong> a genuine pipeline strength at this school.';
+  }).join('<br><br>');
+}
+
+// Plain-language labels for the 27 confirmed industryPathways keys.
+// Manual map, not a generic camelCase-splitter — a few of these read
+// awkwardly split mechanically (e.g. "aestheticsAndBeauty").
+var INDUSTRY_PATHWAY_LABELS = {
+  aestheticsAndBeauty: 'Aesthetics and Beauty',
+  advancedManufacturing: 'Advanced Manufacturing',
+  agriculture: 'Agriculture',
+  consulting: 'Consulting',
+  consumerProducts: 'Consumer Products',
+  defense: 'Defense',
+  energy: 'Energy',
+  entertainmentMedia: 'Entertainment and Media',
+  entrepreneurship: 'Entrepreneurship',
+  healthWellness: 'Health and Wellness',
+  healthcareAdministration: 'Healthcare Administration',
+  hospitality: 'Hospitality',
+  insurance: 'Insurance',
+  investmentBanking: 'Investment Banking',
+  luxuryBrands: 'Luxury Brands',
+  medicine: 'Medicine',
+  nonprofitLeadership: 'Nonprofit Leadership',
+  nutraceuticals: 'Nutraceuticals',
+  outdoorIndustry: 'Outdoor Industry',
+  pharmaceuticalManufacturing: 'Pharmaceutical Manufacturing',
+  privateEquity: 'Private Equity',
+  publicPolicy: 'Public Policy',
+  realEstate: 'Real Estate',
+  sportsBusiness: 'Sports Business',
+  supplyChain: 'Supply Chain',
+  technology: 'Technology',
+  ventureCapital: 'Venture Capital'
+};
+
+function industryPathwayLabel(key) {
+  return INDUSTRY_PATHWAY_LABELS[key] || key;
 }
 
 var _schoolIntelOpenIdx = null;
@@ -9253,7 +9322,7 @@ function renderSchoolIntelInto(panel, idx) {
 
 function schoolIntelOrientingLine(head) {
   var lines = {
-    'The Industry Map': 'This shows how strongly this school\'s pipeline connects to different industries. A score above 70 means graduates have a genuine structural advantage entering that field. Below 30, the path is possible but not well-worn.',
+    'The Industry Map': 'These are the industries where this school\'s pipeline runs strongest — real recruiting relationships and alumni concentration, not a ranking.',
     'How Durable This School Is': 'This section answers a question every family carries but rarely asks aloud: will this school still matter in fifteen years?'
   };
   return lines[head] || '';
