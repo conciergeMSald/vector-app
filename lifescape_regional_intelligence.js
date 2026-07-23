@@ -54,168 +54,8 @@ const REGIONAL_INTELLIGENCE = {
         name: 'Pharmaceutical & Biotech',
         anchor: 'San Diego (Torrey Pines / Sorrento Valley / La Jolla)',
         industries: ['Pharmaceutical R&D','Biotech','Clinical Research','Medical Devices','Genomics'],
-        employers: ['Pfizer','J&J','Illumina','Neurocrine','Vertex Pharmaceuticals','ResMed'],
+        employers: ['Pfizer','J&J','Illumina','Neurocrine','Vertex Pharmaceuticals'],
         naics: [62, 54]
-      },
-      {
-        name: 'Pharmaceutical Manufacturing & CDMO',
-        anchor: 'Thousand Oaks / Westlake Village / Northridge / Van Nuys (Ventura County / San Fernando Valley)',
-        industries: ['Biologics Manufacturing','Contract Development & Manufacturing (CDMO)','Drug Delivery Systems','Pharmaceutical Production','Quality & Regulatory Operations'],
-        employers: ['Amgen','Baxter Healthcare','Kindeva Drug Delivery','Takeda (Van Nuys)'],
-        naics: [32, 33], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
-        note: 'Distinct from the San Diego biotech corridor above — this is Southern California\'s pharmaceutical MANUFACTURING cluster, not its research cluster. A student can move between the two without leaving the region: San Diego trains the scientists, Thousand Oaks/Van Nuys is where a meaningful share of them end up producing the drug at scale.'
-      },
-      {
-        name: 'Precision Manufacturing & Electronics',
-        anchor: 'Camarillo (Ventura County)',
-        industries: ['Precision CNC Machining','Electro-Mechanical Assembly','Power Electronics Design','Electric Motor & Generator Manufacturing','Aerospace/Defense Component Manufacturing'],
-        employers: ['Johanson Dielectrics', 'D&H Engineering', 'MAGicALL', 'Hi-Tech Engineering', 'Ridley Engineering', 'Electronic Expediters Inc.'],
-        naics: [33, 54],
-        note: 'A real, dense cluster of small, privately-held precision manufacturers sitting in the same Camarillo/Ventura County corridor as the pharma companies above (Amgen, Baxter) — genuinely different products (motors, capacitors, CNC-machined aerospace parts) rather than drugs, kept as a separate corridor since NAICS 33/54 and NAICS 32 route to different V5 pathways. None of these six companies are large enough to appear in national news or have dedicated university partnerships the way BMW-Clemson or Rockwell-UWM do — but together they represent the kind of dense, real, unglamorous manufacturing employment base that a single famous anchor company can obscure. Ridley Engineering (naics:54, design/consulting) is genuinely different in kind from the other five (naics:33, physical production) — a design/consulting door into the same industry, not a production job.'
-      },
-      {
-        name: 'Precision Manufacturing & Electronics — Orange County',
-        anchor: 'Anaheim / Santa Ana (Orange County)',
-        industries: ['Precision CNC Machining', 'Contract Manufacturing', 'Aerospace/Defense Component Manufacturing', 'Industrial Enclosure Manufacturing'],
-        employers: ['Cal Tech Precision, Inc.', 'S and S Precision', 'Pen Manufacturing'],
-        naics: [33],
-        note: 'A separate, real precision-manufacturing cluster from the Camarillo/Ventura County one above — same category of small, privately-held companies, different county, kept distinct rather than merged since they are genuinely different local labor markets. Pen Manufacturing stands out for cross-industry diversification (aerospace, medical devices, automotive, wastewater treatment, energy all served by the same AS9100-certified operation since 1982) and is actively hiring for an Aerospace & Defense role as of this research. Notably, Orange County also hosts Edwards Lifesciences (major public medical device company, Irvine) — not independently built into this database yet, a real gap worth closing in a future pass, similar to how this corridor itself started as a gap.'
-      },
-      {
-        name: 'Precision Manufacturing & Electronics — Simi Valley',
-        anchor: 'Simi Valley (Ventura County)',
-        industries: ['Aerospace/Defense Component Manufacturing', 'CNC Machining', 'Structural Assemblies'],
-        employers: ['Infinity Precision Inc', 'RTC Aerospace'],
-        naics: [33],
-        note: 'A real, confirmed two-company aerospace precision manufacturing cluster in Simi Valley, adjacent to but distinct from Camarillo (also Ventura County). Infinity Precision is a certified woman-owned commercial and military aerospace manufacturer — a genuine, real supplier-diversity credential that matters in defense contracting and that most students never learn about. Simi Valley also carries real, significant rocket-engine-testing history (the former Rocketdyne Santa Susana Field Laboratory) — not independently verified or built into this database this session, and now a site associated with ongoing environmental remediation rather than active manufacturing, so deliberately not cited as a current employer here.'
-      },
-      {
-        name: 'Precision Manufacturing & Electronics — San Fernando Valley',
-        anchor: 'Sun Valley (Los Angeles County)',
-        industries: ['Aerospace Component Manufacturing', 'Medical Component Manufacturing', 'Hydraulic Component Manufacturing', 'Precision Prototyping'],
-        employers: ['Tecfar Manufacturing, Inc.', 'Wells Manufacturing Inc'],
-        naics: [33],
-        note: 'A real, confirmed two-company precision manufacturing cluster in Sun Valley, part of the same broader San Fernando Valley corridor already anchored by Kindeva Drug Delivery and Takeda (Van Nuys) in the Pharmaceutical Manufacturing & CDMO corridor above. Tecfar is genuinely cross-industry (aerospace, medical, and hydraulic components from the same company), a real diversification example distinct from single-sector shops.'
-      },
-      {
-        name: 'Rocket Propulsion & National Space Programs — Canoga Park',
-        anchor: 'Canoga Park (San Fernando Valley)',
-        industries: ['Large Liquid Rocket Engine Development & Production', 'Missile Propulsion Systems', 'NASA Space Launch System (SLS) Engines'],
-        employers: ['Aerojet Rocketdyne (L3Harris Technologies)'],
-        naics: [33],
-        note: 'The genuine "hidden gem" of San Fernando Valley aerospace, kept as its own corridor rather than folded into the smaller Sun Valley precision-shop cluster given the real difference in scale and national significance: Aerojet Rocketdyne is the lead engines contractor for NASA\'s Space Launch System (SLS) rocket — the vehicle underpinning NASA\'s current Artemis moon program — confirmed via California\'s own state government portal. The original Rocketdyne company traces to 1955 (a division of North American Aviation); Aerojet Rocketdyne was acquired by L3Harris Technologies in 2023. Currently, actively hiring across manufacturing, quality, and turbo-machinery engineering roles (45+ open positions confirmed at time of this research) — most people would never guess NASA\'s current moon-rocket engine contractor sits in the same valley as small precision machine shops, but it does.'
-      },
-      {
-        name: 'Beauty & Cosmetics Contract Manufacturing — Chatsworth',
-        anchor: 'Chatsworth (San Fernando Valley)',
-        industries: ['Skincare Manufacturing', 'Haircare Manufacturing', 'Personal Care Product Manufacturing', 'FDA-Regulated OTC Manufacturing', 'Clean Beauty & Indie Brand Manufacturing', 'Cosmetic Chemistry & Regulatory Affairs'],
-        employers: ['KDC/one', 'Classic Cosmetics Inc.', 'ICL Contract Manufacturing', "Moe's Group", 'Above Rinaldi Labs', 'Nuno Cosmetics Lab', 'New Look Cosmetics, Inc.', 'Prisha Cosmetics, Inc.'],
-        naics: [32],
-        note: 'A real, exceptionally dense beauty/cosmetics contract manufacturing cluster in Chatsworth, now 8 confirmed companies deep — the same San Fernando Valley city bordering Canoga Park (Aerojet Rocketdyne, national rocket propulsion) and near Sun Valley (Tecfar/Wells aerospace precision shops). KDC/one (formerly Thibiant International) is the largest confirmed anchor — 330,000 sq ft, part of a global $700M+ company. The cluster spans two full decades of company ages: New Look Cosmetics (founded 2005) and Prisha Cosmetics (small, 20 employees, exceptionally well-documented) down to Nuno Cosmetics Lab (founded 2024) — real evidence this cluster is still actively growing, not a fixed set of legacy companies. IMPORTANT UPDATE: Chatsworth itself, not just the broader valley, turns out to have its OWN real, dense aerospace/defense cluster too — see the separate corridor below. Beauty and aerospace/defense genuinely coexist in the SAME city, not just the same valley. Real, famous LA-based beauty BRANDS (Huda Beauty, Haus Labs, Prose, Skylar) were identified but not built into this database yet — a genuine future-pass opportunity, since brand companies and their contract manufacturers are structurally different entities worth representing separately.'
-      },
-      {
-        name: 'Aerospace & Defense Manufacturing — Chatsworth',
-        anchor: 'Chatsworth (San Fernando Valley)',
-        industries: ['Advanced/Robotic Manufacturing', 'Aerospace Surface Coating & Materials Science', 'Defense Interconnect Systems', 'Precision Manufacturing', 'Spacecraft Mechanisms', 'Precision Bearing Manufacturing'],
-        employers: ['Machina Labs', 'Curtiss-Wright Surface Technologies', 'NewVac LLC', 'RTC Aerospace', 'Moog Inc. (Chatsworth Operations)', 'NHBB (New Hampshire Ball Bearings) — Precision Division'],
-        naics: [33],
-        note: 'A genuine, dense aerospace/defense cluster in the SAME city as this database\'s beauty manufacturing corridor above — Chatsworth hosts both industries at real scale. Machina Labs is independently ranked #33 on the Los Angeles Times\' own Aerospace & Defense Company list. Curtiss-Wright Surface Technologies is a real division of a publicly traded (NYSE: CW) aerospace company, doing coating work to named Boeing/DoD standards. NewVac LLC operates a real 43,000 sq ft defense interconnect facility. RTC Aerospace maintains a genuine second facility here. Moog Inc. runs a dedicated Space Mechanisms facility here (NYSE: MOG.A, confirmed via Moog\'s own site) — a real, direct complement to Aerojet Rocketdyne\'s NASA SLS engine work a few miles away. NHBB runs a real, named "Precision Division" here doing precision ball bearing manufacturing. FOLLOW-UP VERIFICATION RESULT (2026-07-18): of the 8 companies originally flagged from an Indeed "Companies in Chatsworth" search, only Moog and NHBB were independently confirmed to have real Chatsworth-specific facilities. Boeing, Raytheon, and Pratt & Whitney had no confirmed Chatsworth address. Triumph Group\'s confirmed CA location is Valencia, not Chatsworth. Akima returned zero independent results and could not be identified or verified. L3Harris does have a real, separate San Fernando Valley facility, but in Van Nuys, not Chatsworth (see the separate Van Nuys entry). This is reported honestly rather than force-fitting unconfirmed companies into Chatsworth specifically -- the Indeed listing likely reflected a broader commute-radius search, not literal Chatsworth addresses for all 8.'
-      },
-      {
-        name: 'Beauty & Personal Care Manufacturing — North Hollywood',
-        anchor: 'North Hollywood (San Fernando Valley)',
-        industries: ['Private-Label Beauty Manufacturing', 'Brand Development', 'Fragrance & Detergent Manufacturing', 'Nail Care Manufacturing'],
-        employers: ['Product Society LLC', 'OPI Products, Inc.'],
-        naics: [32],
-        note: 'A real, current turnkey private-label manufacturer (Product Society) covering a genuinely broad category range (fragrances, detergents, sprays, skin/sun/hair care, color cosmetics), now joined by OPI — one of the most globally recognized nail polish brands, confirmed as a subsidiary of Wella Company (whose North America HQ sits in nearby Calabasas, also in this database). Kept as its own corridor separate from the Chatsworth cluster since North Hollywood is a distinct San Fernando Valley city. HONEST DISCLOSURE, consistent with this database\'s standard throughout: the FDA issued a Warning Letter to Product Society LLC on May 20, 2025, following a November 2024 inspection, confirmed directly on the FDA\'s own government site. This is real, current regulatory information included deliberately rather than omitted — a real company\'s real compliance record, the same standard applied to Pfizer\'s Sanford layoffs and other disclosed-but-imperfect facts elsewhere in this database.'
-      },
-      {
-        name: 'Beauty Manufacturing — Van Nuys',
-        anchor: 'Van Nuys (San Fernando Valley)',
-        industries: ['Nail Care Manufacturing', 'Global Beauty Brand Operations'],
-        employers: ['Orly International'],
-        naics: [32],
-        note: 'A real, globally recognized nail care brand (employees across 4 continents, per LeadIQ) manufacturing from a single Van Nuys facility — proof that a genuinely international beauty company, not just small contract manufacturers, operates from this valley. A direct competitor to OPI (North Hollywood, also in this database), meaning a student interested in nail care specifically has two real, competing global brands within a few miles of each other.'
-      },
-      {
-        name: 'Defense Electronics — Van Nuys',
-        anchor: 'Van Nuys (San Fernando Valley)',
-        industries: ['Advanced Communication Systems', 'Electronic Systems Manufacturing'],
-        employers: ['L3Harris Technologies (Van Nuys)'],
-        naics: [33],
-        note: 'A real, separate L3Harris Technologies facility (NYSE: LHX) distinct from its Aerojet Rocketdyne subsidiary in Canoga Park, also in this database — confirming L3Harris genuinely operates multiple, functionally different real facilities across the San Fernando Valley, not just one. This site does advanced communication and electronic systems work, a different specialty than Aerojet Rocketdyne\'s rocket propulsion. Van Nuys now hosts both a real global beauty brand (Orly) and real defense electronics manufacturing in the same city.'
-      },
-      {
-        name: 'Corporate Beauty — Calabasas',
-        anchor: 'Calabasas (San Fernando Valley)',
-        industries: ['Corporate Brand Management', 'Beauty Business Strategy', 'Hair & Nail Care Brand Portfolio Management'],
-        employers: ['Wella Company', 'Garcoa, Inc.'],
-        naics: [32],
-        note: 'Genuinely distinct in KIND from every other San Fernando Valley beauty entry in this database — Calabasas hosts corporate/brand headquarters, not manufacturing floors. Wella Company\'s North America headquarters manages a real, multi-brand portfolio including OPI (confirmed subsidiary, also in this database, manufacturing in nearby North Hollywood) — a real, documented example of how a brand\'s corporate HQ and its manufacturing facility can sit in different San Fernando Valley cities. Garcoa, Inc. is a second, separate, real Calabasas beauty company, confirmed via a March 2025 national trade press feature. A student interested in beauty industry business strategy, brand management, or corporate marketing — not formulation or production — has a real, local door here, genuinely different from the hands-on manufacturing roles concentrated in Chatsworth, North Hollywood, and Van Nuys.'
-      },
-      {
-        name: 'Global Beauty Conglomerate — Culver City',
-        anchor: 'Culver City',
-        industries: ['Professional Hair Care', 'Global Consumer Goods Brand Management'],
-        employers: ['Henkel (Beauty Care Hair Professional)'],
-        naics: [32],
-        note: 'A genuinely different scale of company than anywhere else in this database\'s Southern California beauty coverage — Henkel is a massive, publicly traded German multinational (Persil, Loctite, Schwarzkopf, among many other brands), confirmed via its own 2018 press release to have consolidated its North America professional hair care headquarters here. The global corporate HQ remains in Düsseldorf, Germany — this Culver City site is a real, substantial divisional headquarters, not the whole company, an important precision to preserve.'
-      },
-      {
-        name: 'Professional Hair Care Manufacturing — Santa Clarita',
-        anchor: 'Santa Clarita',
-        industries: ['Professional Salon Hair Care', 'Styling Tool Manufacturing'],
-        employers: ['John Paul Mitchell Systems'],
-        naics: [32],
-        note: 'A globally recognized professional hair care brand (Paul Mitchell) manufacturing from Santa Clarita — its own distinct valley, adjacent to but genuinely different from the San Fernando Valley proper, worth naming precisely rather than collapsing the geography. The company maintains a real multi-site structure: manufacturing here, separate corporate offices in Century City and Santa Monica — the same "manufacturing here, corporate strategy there" pattern already found with OPI (North Hollywood) and Wella (Calabasas) elsewhere in this database.'
-      },
-      {
-        name: "L'Oréal USA West Coast Headquarters — El Segundo",
-        anchor: 'El Segundo',
-        industries: ['Cosmetics Brand Management', 'Creative Campus / Brand Innovation', 'Consumer Makeup'],
-        employers: ["L'Oréal USA (West Coast Headquarters)"],
-        naics: [32],
-        note: "The largest beauty company in the world (L'Oréal S.A.) built a genuine second American headquarters here — not a satellite office — 100,000 sq ft on 25 acres, opened August 2022, uniting West Coast brands including NYX Professional Makeup. Confirmed independently across nine sources. Notably, El Segundo is ALSO this database's existing Aerospace & Defense corridor (SpaceX, Boeing, Northrop Grumman, per the callC narrative) — the same 'rockets and beauty in the same small area' pattern already found in the San Fernando Valley (Aerojet Rocketdyne + Chatsworth cosmetics) shows up a second time here, in a completely different Southern California city."
-      },
-      {
-        name: 'Beauty Packaging Manufacturing — Simi Valley',
-        anchor: 'Simi Valley',
-        industries: ['Plastic Packaging Manufacturing', 'Sustainable/PCR Materials Engineering'],
-        employers: ['Poly-Tainer'],
-        naics: [32],
-        note: 'A real, essential piece of the beauty supply chain most students never think to look for: package manufacturing. Poly-Tainer\'s Simi Valley site is explicitly named its "Western Region" hub, confirming a genuine multi-region company, not a single isolated facility. Simi Valley already hosts Infinity Precision and RTC Aerospace (aerospace manufacturing, also in this database) — a third real industry now confirmed in this specific city, alongside aerospace and general precision manufacturing.'
-      },
-      {
-        name: 'Beauty Tools & Sustainable Packaging — Santa Monica',
-        anchor: 'Santa Monica',
-        industries: ['Beauty Tools & Accessories', 'Sustainable Packaging Design'],
-        employers: ['HCT by kdc/one'],
-        naics: [32],
-        note: 'A real, documented corporate family connection within this database: HCT was acquired by KDC/one, already a major entry here via its Chatsworth facility. This means KDC/one\'s real footprint spans at least two Southern California cities under one parent company — Chatsworth for contract beauty manufacturing, Santa Monica (via HCT) for beauty tools and sustainable packaging design.'
-      },
-      {
-        name: 'Indie Cosmetics Manufacturing — Oxnard',
-        anchor: 'Oxnard (Ventura County)',
-        industries: ['Cosmetics Manufacturing', 'Direct-to-Consumer Color Cosmetics'],
-        employers: ['Spatz Laboratories', 'ColourPop Cosmetics, LLC'],
-        naics: [32],
-        note: 'A real, confirmed corporate family: ColourPop (a well-known indie DTC cosmetics brand) and Spatz Laboratories (its manufacturer) share Nguyen family ownership and sit in the same Oxnard industrial cluster — the same city already hosting Formulated Solutions, a pharmaceutical CDMO built earlier this session. Oxnard now has confirmed real manufacturing across both pharma and beauty, a genuine "brand and manufacturer, same family, same city" story most ColourPop fans would never think to research.'
-      },
-      {
-        name: 'Beauty Manufacturing — Moorpark',
-        anchor: 'Moorpark (Ventura County)',
-        industries: ['Beauty Manufacturing'],
-        employers: ['Lifetech Resources'],
-        naics: [32],
-        note: 'A real, confirmed Moorpark beauty manufacturer — the fourth distinct Ventura County beauty/manufacturing city in this database, alongside Camarillo, Oxnard, and Simi Valley, confirming this entire county has genuine beauty manufacturing density, not just the San Fernando Valley proper.'
-      },
-      {
-        name: 'Precision Manufacturing & Electronics — San Gabriel Valley',
-        anchor: 'Baldwin Park (Los Angeles County)',
-        industries: ['Aerospace Precision Manufacturing', 'Quality Assurance & Solutions'],
-        employers: ['My Machine Inc', 'Mape Engineering Inc.'],
-        naics: [33],
-        note: 'A real, confirmed two-company aerospace precision manufacturing cluster in Baldwin Park. The San Gabriel Valley Economic Partnership\'s own materials describe the broader region as home to "many small, independent machine shops that service aerospace as well as other industries\' needs" — genuine, real confirmation of a dense small-manufacturer base distinct from the region\'s more famous Caltech/JPL research relationship (a discovery-science door, not a production-floor one).'
       },
       {
         name: 'Startup & Venture Ecosystem',
@@ -223,54 +63,6 @@ const REGIONAL_INTELLIGENCE = {
         industries: ['Early Stage Tech','D2C Brands','Health Tech','Climate Tech','Venture Capital'],
         employers: ['Distributed across consumer and entertainment tech'],
         naics: [54, 51, 81]
-      },
-      {
-        name: 'Anaheim Resort & Convention Corridor',
-        anchor: 'Anaheim',
-        industries: ['Theme Park Operations','Resort Hospitality','Convention Services','Guest Experience Management'],
-        employers: ['Disneyland Resort','Anaheim Convention Center'],
-        naics: [72, 71],
-        note: 'Disneyland Resort is Orange County\'s largest employer with 36,000 cast members (Disney\'s own January 2026 fact sheet) — though roughly 100 salaried positions were cut in October 2025, disclosed here rather than omitted, consistent with this database\'s standard of showing real, current, sometimes imperfect facts.'
-      },
-      {
-        name: 'Coastal Luxury Resorts',
-        anchor: 'Dana Point / Newport Beach / Aliso Viejo',
-        industries: ['Luxury Resort Hospitality','Hotel Investment & Management','Golf Resort Operations'],
-        employers: ['Waldorf Astoria Monarch Beach Resort & Club','The Ritz-Carlton Laguna Niguel','Balboa Bay Resort & Club','Sunstone Hotel Investors'],
-        naics: [72, 53],
-        note: 'Sunstone Hotel Investors (NYSE: SHO) is a hotel REIT genuinely headquartered in Aliso Viejo — 14 hotels, roughly 7,000 rooms — real corporate and investment infrastructure behind the resort properties, not just the hotels themselves.'
-      },
-      {
-        name: 'Tourism, Convention & Visitor Economy',
-        anchor: 'Downtown San Diego / Coronado',
-        industries: ['Convention & Meetings Hospitality','Theme Park & Attraction Operations','Hotel Management'],
-        employers: ['San Diego Convention Center','SeaWorld San Diego','Comic-Con International','Hotel del Coronado'],
-        naics: [72, 71],
-        note: 'Hospitality supports roughly 1 in 8 San Diego jobs (San Diego Tourism Authority). SeaWorld is confirmed as a major regional employer via California\'s own EDD labor market data. Comic-Con International is a genuine San Diego-headquartered 501(c)(3) nonprofit (4-star Charity Navigator rating), not a company — included because it is one of the city\'s largest annual visitor draws.'
-      },
-      {
-        name: 'La Jolla & North County Coastal Resorts',
-        anchor: 'La Jolla / Carlsbad',
-        industries: ['Luxury Boutique Hospitality','Theme Park & Family Resort Operations','Spa & Wellness Resort Management'],
-        employers: ['The Lodge at Torrey Pines','Omni La Costa Resort & Spa','LEGOLAND California Resort'],
-        naics: [72, 71],
-        note: 'The Lodge at Torrey Pines (196 employees, La Jolla) is kept separate from Hotel del Coronado (same ownership group but a distinct Coronado property) to preserve geographic precision. LEGOLAND had roughly 100 entertainment-department layoffs in January 2025 — disclosed, not omitted.'
-      },
-      {
-        name: 'Coachella Valley Resort & Festival Economy',
-        anchor: 'Palm Desert / Rancho Mirage / Indio',
-        industries: ['Desert Resort Hospitality','Golf & Spa Resort Operations','Live Music Festival Production'],
-        employers: ['JW Marriott Desert Springs Resort & Spa','The Ritz-Carlton Rancho Mirage','Goldenvoice (AEG Presents)'],
-        naics: [72, 71],
-        note: 'Goldenvoice produces Coachella and Stagecoach at Indio\'s Empire Polo Club — genuinely a live-events company (NAICS 71), included here because the festival drives the valley\'s spring resort and hotel demand.'
-      },
-      {
-        name: 'Beverly Hills Wellness, Beauty & Creator Economy',
-        anchor: 'Beverly Hills (Wilshire Blvd / Civic Center Dr)',
-        industries: ['Activewear & Athleisure Brand Management','Beauty & Skincare Brand Building','Creator Economy & Influencer Talent Management'],
-        employers: ['Alo Yoga','Rhode','United Talent Agency (UTA Creators)'],
-        naics: [44, 71],
-        note: 'A genuinely tight, walkable corridor — all three companies sit within about a mile of each other on or near Wilshire Blvd. Alo Yoga (9830 Wilshire, ~6,700 employees) bought its own $90M Beverly Hills office building in December 2025. Rhode (9300 Wilshire), Hailey Bieber\'s skincare brand, was acquired by e.l.f. Beauty in a deal valued at $1 billion. United Talent Agency (9336 Civic Center Dr) opened a dedicated "UTA Creators" office in 2024 specifically for digital talent, gaming, and influencer representation — a major legacy Hollywood agency built a physical space around the creator economy, not a side project.'
       }
     ],
     trajectories: {
@@ -285,8 +77,6 @@ const REGIONAL_INTELLIGENCE = {
           { school: 'California State University Long Beach', corridor: 'Aerospace & Defense', note: '70% LA-Long Beach concentration — SpaceX, Boeing, Northrop recruit here directly. The most efficient path into El Segundo/Hawthorne.' },
           { school: 'San Diego State University', corridor: 'Pharmaceutical & Biotech', note: '65% San Diego concentration — technology and engineering pipeline inside the biotech corridor.' },
           { school: 'University of California San Diego', corridor: 'Pharmaceutical & Biotech', note: 'Sits physically inside Torrey Pines — the center of the biotech corridor. Science programs pipeline directly into Pfizer, Illumina, and Neurocrine.' },
-          { school: 'University of California San Diego', corridor: 'Pharmaceutical Manufacturing & CDMO', note: 'A genuinely common and underappreciated path: UCSD biology or bioengineering graduates who go into large-scale manufacturing, process development, or quality operations frequently end up 100+ miles north at Amgen in Thousand Oaks or Baxter in Westlake Village, not staying in Torrey Pines. Still Southern California — still "stay close" in the broadest sense — but a real relocation within the state that most families never hear framed this way.' },
-          { school: 'San Diego State University', corridor: 'Pharmaceutical Manufacturing & CDMO', note: 'Applied science and engineering programs with a documented path into Ventura County biomanufacturing — process development and manufacturing operations roles at Amgen and the CDMO cluster around Thousand Oaks and Northridge.' },
           { school: 'Pepperdine University', corridor: 'Entertainment & Media', note: '45% LA concentration — Malibu location and business/law programs with strong LA entertainment market placement.' }
         ]
       },
@@ -317,22 +107,19 @@ This student lives in one of the most economically diverse regions in the world.
 
 KEY CORRIDORS BY PROFILE MATCH:
 - Entertainment & Media (Burbank/Culver City/Hollywood): Film, streaming, talent agencies, music, entertainment law
-- Aerospace & Defense (El Segundo/Hawthorne/Long Beach): SpaceX, Boeing, Northrop — rockets, satellites, defense systems. El Segundo is ALSO home to L'Oréal USA's West Coast headquarters (888 N. Douglas St, opened 2022) — the same "rockets and beauty in the same small area" pattern already true of the San Fernando Valley (Aerojet Rocketdyne + Chatsworth cosmetics) is true here too.
-- San Fernando Valley Aerospace & Defense (Canoga Park/Sun Valley/Simi Valley/Baldwin Park/Chatsworth): A genuine second aerospace hotbed, distinct from the El Segundo/Hawthorne corridor above, not a footnote to it — Aerojet Rocketdyne (Canoga Park) is the lead engines contractor for NASA's Space Launch System, the rocket underpinning the current Artemis moon program, tracing back to the original 1955 Rocketdyne company and now an L3Harris Technologies subsidiary. Alongside it, a real, dense base of smaller precision manufacturers (Tecfar Manufacturing, Wells Manufacturing, Infinity Precision, RTC Aerospace, My Machine Inc, Mape Engineering) does the aerospace-grade CNC machining, structural assembly, and component manufacturing that larger primes and NASA programs depend on. Chatsworth specifically carries its own dense aerospace/defense cluster — Machina Labs (independently ranked #33 on the LA Times' own Aerospace & Defense Company list, building AI/robotics-driven manufacturing), Curtiss-Wright Surface Technologies (a real division of the publicly traded NYSE: CW company, doing named Boeing/DoD coating work), NewVac LLC (defense interconnect systems), and a second RTC Aerospace facility — genuinely coexisting with the SAME city's dense beauty/cosmetics manufacturing cluster (KDC/one and 7 other companies) described in the Fashion, Beauty & Cosmetics line below. Most people would associate this valley with entertainment, not with the company building engines for America's return to the Moon, or a single city hosting both rocket-adjacent aerospace manufacturing and a meaningful share of the country's skincare production.
+- Aerospace & Defense (El Segundo/Hawthorne/Long Beach): SpaceX, Boeing, Northrop — rockets, satellites, defense systems
 - Tech & Digital Media (Santa Monica/Venice/Playa Vista): Snap, Hulu, Google LA, Riot Games — consumer and media tech
 - CPG, Action Sports & Lifestyle (Orange County): Vans, Oakley, Quiksilver — surf/skate/outdoor, brand management, consumer products
-- Fashion, Beauty & Cosmetics (Downtown LA/Chatsworth/North Hollywood): Apparel and a genuinely dense San Fernando Valley cosmetics contract manufacturing cluster (KDC/one, New Look Cosmetics, Prisha Cosmetics, Above Rinaldi Labs, and others in Chatsworth; Product Society in North Hollywood) — the same valley that builds NASA's rocket engines also formulates and manufactures a meaningful share of the country's skincare and personal care products, within a few miles of each other.
-- Pharmaceutical & Biotech (San Diego/Torrey Pines): Pfizer, Illumina, Neurocrine, ResMed — one of the top 3 biotech corridors in the US
-- Pharmaceutical Manufacturing & CDMO (Thousand Oaks/Westlake Village/Northridge/Van Nuys): Amgen, Baxter Healthcare, Kindeva Drug Delivery, Takeda (Van Nuys) — Southern California's large-scale biologics manufacturing cluster, distinct from the San Diego research corridor; a common intra-state path for UCSD/SDSU science graduates
-- Precision Manufacturing & Electronics (Camarillo/Anaheim/Santa Ana): A real, dense base of small, privately-held precision manufacturers and power-electronics designers (Johanson Dielectrics, D&H Engineering, MAGicALL, Hi-Tech Engineering, Ridley Engineering, Cal Tech Precision, S and S Precision, Pen Manufacturing) — genuinely unglamorous, real manufacturing employment that sits alongside the region's more famous anchors without ever making national news.
+- Fashion, Beauty & Cosmetics (Downtown LA/Chatsworth): Apparel, cosmetics manufacturing, personal care brands
+- Pharmaceutical & Biotech (San Diego/Torrey Pines): Pfizer, Illumina, Neurocrine — one of the top 3 biotech corridors in the US
 - Startup & Venture (distributed): Second-largest startup ecosystem in the country
 
 THREE TRAJECTORIES TO NAME EXPLICITLY:
-STAY CLOSE: UCI or Cal State Fullerton → OC lifestyle brands corridor. CSULB → aerospace in El Segundo/Hawthorne. UCSD → biotech in Torrey Pines. USC/UCLA → entertainment in Burbank/Culver City. CSUN (Cal State Northridge, physically inside the San Fernando Valley) → the SFV aerospace/defense and beauty-manufacturing corridors described above — a real, local, "you don't have to choose between Downtown and Silicon Beach" option most students overlook.
-LEAVE AND RETURN: CU Boulder aerospace → SpaceX/Boeing in Hawthorne, OR Aerojet Rocketdyne in Canoga Park, when they come home. ASU/UA tech → Silicon Beach. Northeastern biotech → San Diego corridor.
+STAY CLOSE: UCI or Cal State Fullerton → OC lifestyle brands corridor. CSULB → aerospace in El Segundo/Hawthorne. UCSD → biotech in Torrey Pines. USC/UCLA → entertainment in Burbank/Culver City.
+LEAVE AND RETURN: CU Boulder aerospace → SpaceX/Boeing in Hawthorne when they come home. ASU/UA tech → Silicon Beach. Northeastern biotech → San Diego corridor.
 LEAVE AND STAY GONE: Stanford → Bay Area (55% stay there). MIT → Boston or Bay Area. These are different geographic bets, not necessarily wrong ones.
 
-Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it. The San Fernando Valley corridors above are genuinely distinct from their more famous Southern California counterparts (El Segundo aerospace, Downtown LA fashion) — name them specifically when a student's home ZIP or interests point there, rather than defaulting to the more famous corridor with the same industry label.`
+Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it.`
   },
 
   // ── BAY AREA ──────────────────────────────────────────────────────────────
@@ -377,13 +164,6 @@ Connect this student's specific profile to the corridor that fits, name the traj
         industries: ['Venture Capital','Startup Operations','Growth Strategy','Early Stage Tech'],
         employers: ['Sequoia','Andreessen Horowitz','Kleiner Perkins','Benchmark'],
         naics: [52, 54]
-      },
-      {
-        name: 'Boutique & Independent Hospitality',
-        anchor: 'San Francisco (Union Square / Financial District)',
-        industries: ['Boutique Hotel Management','Hospitality Brand Operations'],
-        employers: ['Kimpton Hotels & Restaurants'],
-        naics: [72]
       }
     ],
     trajectories: {
@@ -433,55 +213,6 @@ LEAVE AND RETURN: UIUC → Google/Apple/Meta pipeline back to Silicon Valley (15
 LEAVE AND STAY GONE: UChicago → New York or Chicago finance (not Bay Area). Purdue → Midwest manufacturing. Notre Dame → Chicago or New York career bet.
 
 Connect this student's profile to the corridor that fits, name the trajectory type, and connect it to a specific school decision.`
-  },
-
-  // ── CENTRAL COAST ────────────────────────────────────────────────────────
-  centralcoast: {
-    name: 'California Central Coast',
-    zipPrefixes: [
-      '931','932','933','934','935','936','937','938','939'
-    ],
-    corridors: [
-      {
-        name: 'Santa Barbara Luxury Coastal Hospitality',
-        anchor: 'Montecito / Santa Barbara',
-        industries: ['Luxury Boutique Resort Hospitality','High-End Guest Services'],
-        employers: ['Rosewood Miramar Beach'],
-        naics: [72],
-        note: 'The Four Seasons Resort The Biltmore Santa Barbara is deliberately excluded — its current operating status is genuinely uncertain (closed for renovation, conflicting reopening reports across sources) and this database does not include unverified or unstable claims.'
-      },
-      {
-        name: 'Monterey Peninsula Resort & Golf Economy',
-        anchor: 'Pebble Beach / Carmel / Monterey',
-        industries: ['Luxury Golf Resort Operations','Hospitality & Guest Services','Championship Event Hosting'],
-        employers: ['Pebble Beach Company'],
-        naics: [72, 71],
-        note: 'Pebble Beach Company is confirmed via California\'s own EDD labor market data (1,000-4,999 employee size class) — a single company anchoring both Carmel and Monterey, since its 17-Mile Drive properties and golf courses sit directly between the two cities.'
-      }
-    ],
-    trajectories: {
-      stay_close: {
-        label: 'Stay Close',
-        summary: 'Central Coast placement inside a genuinely smaller, more intimate hospitality and resort economy than LA, the Bay Area, or Orange County.',
-        connections: [
-          { school: 'California Polytechnic State University, San Luis Obispo', corridor: 'Santa Barbara Luxury Coastal Hospitality', note: 'Cal Poly\'s Experience Industry Management (EIM) department — the first program of its kind in California — sits directly in the Central Coast region, covering tourism, hospitality, and event management with genuine proximity to both the Santa Barbara and Monterey resort corridors.' },
-          { school: 'California Polytechnic State University, San Luis Obispo', corridor: 'Monterey Peninsula Resort & Golf Economy', note: 'Same EIM pipeline, positioned closer to the Pebble Beach Company corridor than any out-of-region hospitality program could be.' }
-        ]
-      },
-      leave_and_return: {
-        label: 'Leave and Return',
-        summary: 'Students who leave for college and return to build a career in Central Coast hospitality, wine country, or coastal resort management.',
-        connections: []
-      },
-      leave_and_stay_gone: {
-        label: 'Leave and Stay Gone',
-        summary: 'Students whose Central Coast roots don\'t define their trajectory — the region is home, not necessarily the career destination.',
-        connections: [
-          { school: 'Cornell University', corridor: 'Santa Barbara Luxury Coastal Hospitality', note: 'Cornell\'s Hotel Administration program is the most credentialed national hospitality pipeline (already established elsewhere in this database for Florida). Included here as the honest "leave for the elite credential" path — no Central-Coast-specific placement data was found to cite a percentage, so this stays qualitative rather than invented.' }
-        ]
-      }
-    },
-    claudePromptContext: `Connect this student's profile to the Central Coast's real luxury hospitality and resort economy — Rosewood Miramar Beach in Santa Barbara, Pebble Beach Company spanning Carmel and Monterey. Name the trajectory type and connect it to a specific school decision.`
   },
 
   // ── CHICAGO ───────────────────────────────────────────────────────────────
@@ -609,23 +340,14 @@ Connect this student's specific profile to the corridor, name the trajectory typ
         anchor: 'Miami / Boca Raton / Orlando / Tampa',
         industries: ['Commercial Real Estate','Residential Development','REIT Management','Construction','Property Management'],
         employers: ['Lennar','PulteGroup','CBRE','JLL','Related Group'],
-        naics: [52, 23, 54]
+        naics: [52, 23, 53, 54]
       },
       {
         name: 'Healthcare & Life Sciences',
-        anchor: 'Tampa Bay / Miami Medical District / Orlando / Jupiter (Palm Beach) / Broward',
-        industries: ['Hospital Systems','Pharmaceutical Manufacturing','Biotech Research','Medical Devices','Health Insurance','Telehealth'],
-        employers: ['HCA Healthcare','AdventHealth','Moffitt Cancer Center','BayCare','Humana','UF Scripps','DifGen Pharmaceuticals','Formulated Solutions'],
-        naics: [62, 54],
-        note: 'Corrected from an earlier version of this corridor that named only hospital systems and one insurer despite claiming to cover "Pharmaceutical Distribution" and "Medical Devices" — UF Scripps (Jupiter, biotech research), DifGen Pharmaceuticals (Tamarac/Miramar, one of the largest pharmaceutical manufacturers in Florida per its own 2024 press materials), and Formulated Solutions (Tampa, 455,000 sq ft cGMP campus) now give this corridor real pharma/bio-manufacturing substance, not just hospital employment.'
-      },
-      {
-        name: 'Fintech & Financial Infrastructure Technology',
-        anchor: 'Jacksonville (primary) / Miami (emerging, mostly private-stage)',
-        industries: ['Core Banking Technology','Payments Infrastructure','Capital Markets Software','Digital Banking','Embedded Finance'],
-        employers: ['FIS'],
-        naics: [52, 51],
-        note: 'New corridor, deliberately separated from "Finance, Wealth Management & Private Equity" above — that corridor is about managing and deploying capital (Blackstone, Citadel, family offices); this one is about building the technology infrastructure banks and capital-markets firms run on. FIS (Jacksonville) is a genuine Fortune 500-scale anchor — $10B+ revenue, self-described as a "Fintech Company," explicitly not headquartered in Miami. Miami\'s fintech scene is real (Payabli, Bizcap, Majority, and 100+ others per Built In/Crunchbase) but currently skews private/early-stage — no comparable large public anchor confirmed there as of this pass. Worth revisiting as that scene matures.'
+        anchor: 'Tampa Bay / Miami Medical District / Orlando',
+        industries: ['Hospital Systems','Pharmaceutical Distribution','Medical Devices','Health Insurance','Telehealth'],
+        employers: ['HCA Healthcare','AdventHealth','Moffitt Cancer Center','BayCare','Humana'],
+        naics: [62, 54]
       },
       {
         name: 'Tourism, Hospitality & Entertainment',
@@ -662,13 +384,12 @@ Connect this student's specific profile to the corridor, name the trajectory typ
         summary: 'Florida schools that put you directly inside the state\'s strongest corridors.',
         connections: [
           { school: 'University of Miami', corridor: 'Finance, Wealth Management & Private Equity', note: '55% Miami concentration — Business school inside the Brickell finance corridor. Latin American business network strongest in the country for Florida-rooted students.' },
-          { school: 'University of Florida', corridor: 'Healthcare & Life Sciences', note: '45% Florida placement — #1 public in the state, direct pipeline into UF Scripps (Jupiter) biotech research, plus Tampa and Miami hospital networks. UF Scripps is now formally a UF institute, not just a nearby employer.' },
+          { school: 'University of Florida', corridor: 'Healthcare & Life Sciences', note: '45% Florida placement — #1 public in the state, direct pipeline into Gainesville biotech, Tampa and Miami hospital networks.' },
           { school: 'Florida State University', corridor: 'Finance, Wealth Management & Private Equity', note: '50% Florida placement — College of Business feeds Tallahassee government, Tampa finance, and the broader Florida professional network.' },
           { school: 'University of Central Florida', corridor: 'Tourism, Hospitality & Entertainment', note: '65% Florida concentration — sits in the backyard of Disney, Universal, and SeaWorld. Hospitality, entertainment operations, simulation and gaming pipeline.' },
           { school: 'Florida International University', corridor: 'Latin American Business & International Trade', note: '70% South Florida concentration — the undisputed pipeline into Miami\'s Latin American business corridor, international trade, and bilingual finance.' },
-          { school: 'University of South Florida', corridor: 'Healthcare & Life Sciences', note: '60% Tampa Bay concentration — inside Moffitt Cancer Center, BayCare, and Formulated Solutions\' 455,000 sq ft manufacturing campus. Health sciences, public health, biomedical engineering, and real pharmaceutical manufacturing careers, not only hospital work.' },
-          { school: 'Embry-Riddle Aeronautical University', corridor: 'Aerospace, Defense & Technology', note: '40% Florida placement — the premier aerospace university in the state, sitting between Cape Canaveral and the Melbourne corridor. NASA and SpaceX recruit directly on campus.' },
-          { school: 'University of North Florida', corridor: 'Fintech & Financial Infrastructure Technology', note: 'Jacksonville\'s primary public university, sitting directly in FIS\'s home market — a real, if not yet independently verified, campus-to-employer proximity worth confirming directly with FIS before presenting as a formal pipeline.' }
+          { school: 'University of South Florida', corridor: 'Healthcare & Life Sciences', note: '60% Tampa Bay concentration — inside Moffitt Cancer Center and BayCare recruiting zone. Health sciences, public health, biomedical engineering.' },
+          { school: 'Embry-Riddle Aeronautical University', corridor: 'Aerospace, Defense & Technology', note: '40% Florida placement — the premier aerospace university in the state, sitting between Cape Canaveral and the Melbourne corridor. NASA and SpaceX recruit directly on campus.' }
         ]
       },
       leave_and_return: {
@@ -695,187 +416,23 @@ Connect this student's specific profile to the corridor, name the trajectory typ
     },
     callc_context: `FLORIDA REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
 
-This student lives in one of the most economically complex states in the country. Florida is not a single market — it is a collection of distinct corridors sharing geography: the Brickell finance district that rivals mid-tier Wall Street, the Orlando entertainment economy, the Space Coast aerospace cluster, the Miami international trade gateway, a genuine pharmaceutical manufacturing and biotech research base spanning Tampa/Jupiter/Broward, and — as of this update — a real fintech infrastructure corridor anchored in Jacksonville.
+This student lives in one of the most economically complex states in the country. Florida is not a single market — it is a collection of distinct corridors sharing geography: the Brickell finance district that rivals mid-tier Wall Street, the Orlando entertainment economy, the Space Coast aerospace cluster, the Miami international trade gateway, and the Tampa Bay health sciences hub.
 
 KEY CORRIDORS BY PROFILE MATCH:
 - Finance, Wealth Management & Private Equity (Miami Brickell / Palm Beach): Blackstone, Apollo, Citadel, family offices — serious money, real dealmaking
 - Real Estate & Development (statewide): Lennar, Related Group, CBRE — the industry that built Florida and keeps building it
-- Healthcare & Life Sciences (Tampa / Miami Medical District / Jupiter / Broward): HCA, Moffitt, AdventHealth for hospital care; UF Scripps for biotech research; DifGen Pharmaceuticals and Formulated Solutions for real large-scale pharmaceutical manufacturing — this is not just hospitals, it's a genuine pharma production and research base
-- Fintech & Financial Infrastructure Technology (Jacksonville): FIS — a $10B+ revenue, Fortune 500-scale company building the technology banks and capital-markets firms actually run on, distinct from Brickell's wealth-management/dealmaking corridor
+- Healthcare & Life Sciences (Tampa / Miami Medical District): HCA, Moffitt, AdventHealth — one of the fastest-growing health markets in the US
 - Tourism, Hospitality & Entertainment (Orlando / Miami Beach): Disney, Universal, Royal Caribbean, Carnival — a $100B+ industry hiding in plain sight
 - Latin American Business & International Trade (Miami / Doral): The US-Latin America commerce gateway — bilingual, bicultural, globally connected
 - Aerospace, Defense & Technology (Space Coast / Cape Canaveral): NASA, SpaceX, L3Harris — a legitimate aerospace corridor
 - AgriTech, Logistics & Supply Chain (Jacksonville / Tampa Port): JAXPORT, Publix HQ — infrastructure and distribution at national scale
 
 THREE TRAJECTORIES TO NAME EXPLICITLY:
-STAY CLOSE: FIU → Latin American business in Miami (70% in-state). UCF → Disney/Universal entertainment operations. USF → Tampa Bay health systems and Formulated Solutions manufacturing careers. Embry-Riddle → NASA and SpaceX on the Space Coast. UM → Brickell finance and international business. UF → UF Scripps biotech research (now a formal UF institute, not just a nearby employer).
+STAY CLOSE: FIU → Latin American business in Miami (70% in-state). UCF → Disney/Universal entertainment operations. USF → Tampa Bay health systems. Embry-Riddle → NASA and SpaceX on the Space Coast. UM → Brickell finance and international business.
 LEAVE AND RETURN: Michigan or Georgetown finance/law → return to Brickell or Palm Beach. Cornell Hotel → return to manage Orlando or Miami resort. Vanderbilt health → return to Tampa or Miami hospital systems. Tulane → Gulf South network back to Florida finance.
 LEAVE AND STAY GONE: Wharton → Wall Street, not Brickell. Stanford → Silicon Valley, not Miami. Northwestern → Chicago, not Tampa. NYU → New York finance and media, no Florida equivalent.
 
 Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it. If this student has family in Florida but lives elsewhere, name Florida as a legitimate Leave and Return destination with the specific corridor their interests map to.`
-  },
-  alabama_huntsville: {
-    zipPrefixes: ['356','357','358','359'],
-    corridors: [
-      {
-        name: 'Pharmaceutical Manufacturing & Advanced Engineering',
-        anchor: 'Huntsville (Cummings Research Park / Redstone Arsenal vicinity)',
-        industries: ['Pharmaceutical/API Manufacturing', 'Aerospace & Defense Systems', 'Advanced Engineering'],
-        employers: ['Lilly', 'Northrop Grumman'],
-        naics: [32, 33], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
-        note: 'Huntsville is a genuinely dual-identity city: Lilly\'s $6B API manufacturing plant (largest investment in Alabama history, Dec 2025) sits in the same metro as Northrop Grumman\'s missile defense and space systems work — meaning the city\'s "science and innovation" workforce, explicitly cited by Lilly itself, spans pharma and defense simultaneously, not one or the other.'
-      }
-    ],
-    trajectories: {
-      stay_close: {
-        label: 'Stay Close',
-        summary: 'Huntsville schools that put you directly inside a real, current pharmaceutical manufacturing build-out.',
-        connections: [
-          { school: 'University of Alabama in Huntsville', corridor: 'Pharmaceutical Manufacturing & Advanced Engineering', note: 'A publicly announced, real workforce partnership with Lilly — UAH\'s engineering programs explicitly cited as part of "applying engineering excellence" to the new biopharma plant.' },
-          { school: 'Calhoun Community College', corridor: 'Pharmaceutical Manufacturing & Advanced Engineering', note: 'Named 2-year workforce partner alongside UAH — a real technician-entry pathway into Lilly\'s Huntsville plant that does not require a 4-year degree to start.' }
-        ]
-      }
-    },
-    callc_context: `ALABAMA (HUNTSVILLE) REGIONAL INTELLIGENCE:
-
-This student lives near one of the newest and largest pharmaceutical manufacturing investments in the country: Eli Lilly's $6 billion Huntsville API plant (announced Dec 2025, ~450 jobs), described by Lilly itself as chosen for "Huntsville's track record of science and innovation, supported by advanced manufacturing expertise and a skilled workforce" — the same workforce identity that has long supported Northrop Grumman's missile defense and space systems work in the same metro.
-
-KEY CORRIDOR: Pharmaceutical Manufacturing & Advanced Engineering (Cummings Research Park / Redstone Arsenal vicinity) — Lilly, Northrop Grumman. A dual-industry corridor: pharma manufacturing and defense engineering both draw on the same technical talent base.
-
-STAY CLOSE: University of Alabama in Huntsville → real, publicly announced Lilly workforce partnership. Calhoun Community College → 2-year technician pathway into the same plant, no 4-year degree required.
-
-This is a genuinely new opportunity, not a legacy corridor — the Lilly plant broke ground within the last two years. A student here doesn't have to choose between "leave for pharma" and "stay for defense" the way most regions force that choice; Huntsville's science/engineering workforce identity now spans both.`
-  },
-  georgia_atlanta: {
-    zipPrefixes: ['300','301','302','303','305','306','307','308','309'],
-    corridors: [
-      {
-        name: 'Pharmaceutical & Biologics Manufacturing',
-        anchor: 'Gwinnett County ("Rowen") / Covington-Social Circle',
-        industries: ['Biologics Manufacturing', 'Plasma-Derived Therapies', 'Pharmaceutical Production'],
-        employers: ['UCB', 'Takeda'],
-        naics: [32], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
-        note: 'Two international pharma majors, neither headquartered in the U.S. (Belgium and Japan respectively), both choosing real American manufacturing footprint in the same Georgia exurbs — UCB\'s first-ever U.S. biologics plant and Takeda\'s 1.1M sq ft plasma fractionation facility. Genuinely different therapeutic models: UCB (immunology/neurology biologics) vs. Takeda (donor-dependent plasma economics).'
-      }
-    ],
-    trajectories: {
-      stay_close: {
-        label: 'Stay Close',
-        summary: 'Atlanta-area schools with a real, company-stated connection to the new biologics manufacturing corridor.',
-        connections: [
-          { school: 'Georgia Institute of Technology', corridor: 'Pharmaceutical & Biologics Manufacturing', note: 'UCB itself explicitly cited "the Georgia Tech-Emory biomedical engineering program" as ranking "among the best in the nation" as a stated reason for choosing Georgia — a company-sourced connection, not an inferred one.' },
-          { school: 'Emory University', corridor: 'Pharmaceutical & Biologics Manufacturing', note: 'Named jointly with Georgia Tech in UCB\'s own site-selection reasoning — the Georgia Tech-Emory biomedical engineering partnership is a real, named academic program, not two separate schools loosely associated with the region.' }
-        ]
-      }
-    },
-    callc_context: `GEORGIA (ATLANTA) REGIONAL INTELLIGENCE:
-
-This student lives near a brand-new biologics manufacturing corridor that did not exist five years ago: UCB's first-ever U.S. plant ($2B, announced March 2026, Gwinnett County) and Takeda's 1.1 million sq ft plasma fractionation facility (Covington/Social Circle) — two international pharma majors choosing Georgia specifically, neither one relocating an existing American headquarters.
-
-KEY CORRIDOR: Pharmaceutical & Biologics Manufacturing (Gwinnett County "Rowen" / Covington-Social Circle) — UCB, Takeda. UCB explicitly named the Georgia Tech-Emory biomedical engineering program as a reason for the site decision, in the company's own words.
-
-STAY CLOSE: Georgia Tech → the biomedical engineering program UCB itself cited by name. Emory → named jointly with Georgia Tech in that same reasoning.
-
-This is a company-sourced, not inferred, university connection — rare in this dataset. Worth naming to a student directly: a real, named employer said this specific academic program mattered to their decision to build in Georgia.`
-  },
-  tennessee_nashville: {
-    zipPrefixes: ['370','371','372','373'],
-    corridors: [
-      {
-        name: 'Sterile Injectable & Bioprocessing Manufacturing',
-        anchor: 'Nashville / Wilson County (Mt. Juliet)',
-        industries: ['Sterile Injectable CDMO', 'Bioprocessing Technology Manufacturing'],
-        employers: ['Thermo Fisher Scientific', 'August Bioservices'],
-        naics: [32], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
-        note: 'No single headline investment number the way Alabama or Georgia has — this corridor is real depth (Thermo Fisher\'s $100M+/1,400-job Wilson County plant, August Bioservices\' $64.7M CDMO expansion) built around Nashville\'s existing healthcare-industry reputation (HCA Healthcare\'s global HQ, a massive hospital-management sector), not one university lab or one company.'
-      }
-    ],
-    trajectories: {
-      stay_close: {
-        label: 'Stay Close',
-        summary: 'Nashville schools sitting inside a real but distributed manufacturing corridor — honestly, no single confirmed university partnership exists here yet.',
-        connections: []
-      }
-    },
-    callc_context: `TENNESSEE (NASHVILLE) REGIONAL INTELLIGENCE:
-
-This student lives near a real but differently-shaped biomanufacturing corridor than Alabama or Georgia: no single headline investment number, but genuine depth — Thermo Fisher's Wilson County single-use bioprocessing plant ($100M+, 1,400 jobs, ribbon-cut ~2023) and August Bioservices' sterile injectable CDMO expansion ($64.7M, 180 jobs, 2020). Both are explicitly tied to Nashville's existing healthcare-industry reputation (HCA Healthcare's global headquarters, one of the largest hospital-management sectors in the country) rather than to one specific university lab.
-
-KEY CORRIDOR: Sterile Injectable & Bioprocessing Manufacturing (Nashville / Wilson County) — Thermo Fisher Scientific, August Bioservices.
-
-HONEST GAP: unlike Alabama (UAH/Calhoun), Georgia (Georgia Tech-Emory), or Kentucky (University of Kentucky), no confirmed university partnership surfaced for this corridor in the research behind this dataset. Do not fabricate a Vanderbilt or Belmont connection — if a student asks, the honest answer is that Nashville's biomanufacturing pull is about the city's healthcare-industry identity broadly, not a named academic pipeline yet.`
-  },
-  kentucky_lexington: {
-    zipPrefixes: ['403','404','405'],
-    corridors: [
-      {
-        name: 'Pharmaceutical Manufacturing & CDMO',
-        anchor: 'Lexington (Coldstream Research Campus)',
-        industries: ['Injectable Drug Manufacturing', 'Contract Development & Manufacturing (CDMO)'],
-        employers: ['Piramal Pharma Solutions'],
-        naics: [32], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
-        note: 'The tightest university-industry link in this entire database — Piramal doesn\'t just partner with the University of Kentucky, it physically operates inside UK\'s own Coldstream Research Campus.'
-      }
-    ],
-    trajectories: {
-      stay_close: {
-        label: 'Stay Close',
-        summary: 'A university and an employer sharing the same physical campus — as close as "stay close" can literally get.',
-        connections: [
-          { school: 'University of Kentucky', corridor: 'Pharmaceutical Manufacturing & CDMO', note: 'Piramal Pharma Solutions physically operates on UK-owned Coldstream Research Campus land — per Commerce Lexington, this "provides valuable opportunities for UK students." This is structural proximity, not a marketing partnership.' }
-        ]
-      }
-    },
-    callc_context: `KENTUCKY (LEXINGTON) REGIONAL INTELLIGENCE:
-
-This student lives near a smaller-dollar but structurally unique biomanufacturing story: Piramal Pharma Solutions' injectable manufacturing site sits physically inside the University of Kentucky's own Coldstream Research Campus — not merely partnered with UK, but literally built on university-owned research park land. The 2025 expansion ($80-90M, doubling capacity by 2027, 40 new jobs) is modest next to Alabama's or Georgia's headline numbers, but the university proximity is unmatched anywhere else in this dataset.
-
-KEY CORRIDOR: Pharmaceutical Manufacturing & CDMO (Lexington/Coldstream Research Campus) — Piramal Pharma Solutions.
-
-STAY CLOSE: University of Kentucky → the employer operates on the university's own land. For a student who wants a real biomanufacturing career without leaving home at all, this may be the single clearest "stay close" story in the entire Southeast dataset — dollar-for-dollar smaller than Alabama or Georgia, but geographically as close as it gets.`
-  },
-  north_carolina_rtp: {
-    zipPrefixes: ['275','276','277','278'],
-    corridors: [
-      {
-        name: 'Pharmaceutical & Biologics Manufacturing',
-        anchor: 'Research Triangle Park / Holly Springs / Sanford / Rocky Mount (broader Raleigh-Durham region)',
-        industries: ['Biologics Manufacturing', 'Injectable Drug Manufacturing', 'Pharmaceutical Production'],
-        employers: ['Amgen', 'Biogen', 'Lilly', 'Pfizer', 'Novo Nordisk'],
-        naics: [32], // corrected 2026-07-17: pharma manufacturing is NAICS 32 (3254), not 62 -- Chunk 4
-        note: 'The deepest, most company-dense biomanufacturing corridor in this entire dataset — five major pharma companies with real, verified NC manufacturing presence, including Biogen\'s LARGEST manufacturing footprint globally (not a satellite site) and Amgen\'s newest, most advanced U.S. facility (Holly Springs, opened Jan 2025).'
-      },
-      {
-        name: 'Academic Medicine & Health Systems',
-        anchor: 'Durham (Duke) / Chapel Hill (UNC)',
-        industries: ['Academic Medical Centers', 'Clinical Research', 'Graduate Medical Education'],
-        employers: ['Duke University Hospital', 'UNC Medical Center'],
-        naics: [62],
-        note: 'A genuinely different door into "medicine" than the manufacturing corridor above — direct patient care and academic research, not drug commercialization. A student doesn\'t have to choose between industry and academic medicine in this region; both exist at serious scale in the same commute radius.'
-      }
-    ],
-    trajectories: {
-      stay_close: {
-        label: 'Stay Close',
-        summary: 'Triangle schools sitting directly inside the deepest biomanufacturing corridor in this entire dataset.',
-        connections: [
-          { school: 'Duke University', corridor: 'Academic Medicine & Health Systems', note: 'Duke University Hospital is Durham County\'s largest employer and directly affiliated with Duke\'s own medical school — the clearest possible "stay close" academic medicine pathway.' },
-          { school: 'University of North Carolina at Chapel Hill', corridor: 'Academic Medicine & Health Systems', note: 'UNC Medical Center is a Level 1 trauma center explicitly serving patients "from all 100 NC counties" — a public-university, statewide-mission version of the same academic medicine pathway Duke represents.' },
-          { school: 'North Carolina State University', corridor: 'Pharmaceutical & Biologics Manufacturing', note: 'NC State\'s engineering and life sciences programs sit closest geographically to the RTP manufacturing corridor itself — Amgen, Biogen, Lilly, Pfizer, and Novo Nordisk all operate within the same metro.' }
-        ]
-      }
-    },
-    callc_context: `NORTH CAROLINA (RESEARCH TRIANGLE) REGIONAL INTELLIGENCE:
-
-This student lives inside the deepest, most company-dense biomanufacturing corridor in the entire Southeast: Amgen ($1B+ second NC facility, Holly Springs, opened Jan 2025), Biogen (its LARGEST manufacturing footprint globally — North Carolina's largest biotech employer, not a satellite operation), Lilly ($474M+ RTP facility on a former GSK campus), Pfizer (Sanford + Rocky Mount, though Sanford specifically has faced real recent layoffs and uncertainty), and Novo Nordisk-adjacent activity in the broader region. Alongside this sits a genuinely separate academic-medicine corridor: Duke University Hospital and UNC Medical Center, two of the region's largest employers doing direct patient care and academic research rather than drug commercialization.
-
-KEY CORRIDORS:
-- Pharmaceutical & Biologics Manufacturing (RTP) — Amgen, Biogen, Lilly, Pfizer, Novo Nordisk
-- Academic Medicine & Health Systems (Durham/Chapel Hill) — Duke University Hospital, UNC Medical Center
-
-STAY CLOSE: Duke → Duke University Hospital, Durham County's largest employer. UNC Chapel Hill → UNC Medical Center, statewide public-mission academic medicine. NC State → closest geographically to the RTP manufacturing corridor itself.
-
-This region offers something no other Southeast state in this dataset does: a genuine choice between industry biomanufacturing and academic medicine, both at serious scale, inside the same commute radius — not a forced trade-off between "go into pharma" and "stay in medicine."`
   }
 };
 
@@ -913,26 +470,6 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'CPG, Action Sports & Lifestyle Brands', naics: [44, 71, 81], riasec: ['E','S','A'] },
     { corridorName: 'Fashion, Beauty & Cosmetics',        naics: [31, 44],     riasec: ['A','E','R'] },
     { corridorName: 'Pharmaceutical & Biotech',           naics: [62, 54],     riasec: ['I','R','S'] },
-    { corridorName: 'Pharmaceutical Manufacturing & CDMO', naics: [32, 33],    riasec: ['R','C','I'] }, // corrected Chunk 4
-    { corridorName: 'Precision Manufacturing & Electronics', naics: [33, 54], riasec: ['R','C','I'] },
-    { corridorName: 'Precision Manufacturing & Electronics — Orange County', naics: [33], riasec: ['R','C','I'] },
-    { corridorName: 'Precision Manufacturing & Electronics — Simi Valley', naics: [33], riasec: ['R','C','I'] },
-    { corridorName: 'Precision Manufacturing & Electronics — San Fernando Valley', naics: [33], riasec: ['R','C','I'] },
-    { corridorName: 'Rocket Propulsion & National Space Programs — Canoga Park', naics: [33], riasec: ['I','R','C'] },
-    { corridorName: 'Beauty & Cosmetics Contract Manufacturing — Chatsworth', naics: [32], riasec: ['A','R','C'] },
-    { corridorName: 'Aerospace & Defense Manufacturing — Chatsworth', naics: [33], riasec: ['I','R','C'] },
-    { corridorName: 'Beauty & Personal Care Manufacturing — North Hollywood', naics: [32], riasec: ['A','R','C'] },
-    { corridorName: 'Beauty Manufacturing — Van Nuys', naics: [32], riasec: ['A','R','C'] },
-    { corridorName: 'Defense Electronics — Van Nuys', naics: [33], riasec: ['I','R','C'] },
-    { corridorName: 'Corporate Beauty — Calabasas', naics: [32], riasec: ['E','A','C'] },
-    { corridorName: 'Global Beauty Conglomerate — Culver City', naics: [32], riasec: ['A','C','E'] },
-    { corridorName: 'Professional Hair Care Manufacturing — Santa Clarita', naics: [32], riasec: ['A','R','C'] },
-    { corridorName: "L'Oréal USA West Coast Headquarters — El Segundo", naics: [32], riasec: ['A','C','E'] },
-    { corridorName: 'Beauty Packaging Manufacturing — Simi Valley', naics: [32], riasec: ['I','R','C'] },
-    { corridorName: 'Beauty Tools & Sustainable Packaging — Santa Monica', naics: [32], riasec: ['A','I','C'] },
-    { corridorName: 'Indie Cosmetics Manufacturing — Oxnard', naics: [32], riasec: ['A','R','C'] },
-    { corridorName: 'Beauty Manufacturing — Moorpark', naics: [32], riasec: ['A','R','C'] },
-    { corridorName: 'Precision Manufacturing & Electronics — San Gabriel Valley', naics: [33], riasec: ['R','C','I'] },
     { corridorName: 'Startup & Venture Ecosystem',        naics: [54, 51, 81], riasec: ['E','I','C'] }
   ],
   bayarea: [
@@ -952,29 +489,12 @@ const CORRIDOR_NAICS_MAP = {
   ],
   florida: [
     { corridorName: 'Finance, Wealth Management & Private Equity', naics: [52, 54],     riasec: ['E','C','I'] },
-    { corridorName: 'Real Estate & Development',                   naics: [52, 23, 54], riasec: ['E','R','C'] },
+    { corridorName: 'Real Estate & Development',                   naics: [52, 23, 53, 54], riasec: ['E','R','C'] },
     { corridorName: 'Healthcare & Life Sciences',                  naics: [62, 54],     riasec: ['I','S','R'] },
-    { corridorName: 'Fintech & Financial Infrastructure Technology', naics: [52, 51],    riasec: ['I','C','E'] },
     { corridorName: 'Tourism, Hospitality & Entertainment',        naics: [71, 72, 48], riasec: ['E','S','A'] },
     { corridorName: 'Latin American Business & International Trade',naics: [48, 52, 42],riasec: ['E','S','C'] },
     { corridorName: 'Aerospace, Defense & Technology',             naics: [33, 54, 92], riasec: ['R','I','C'] },
     { corridorName: 'AgriTech, Logistics & Supply Chain',          naics: [48, 42, 11], riasec: ['R','C','E'] }
-  ],
-  alabama_huntsville: [
-    { corridorName: 'Pharmaceutical Manufacturing & Advanced Engineering', naics: [32, 33], riasec: ['R','C','I'] } // corrected Chunk 4
-  ],
-  georgia_atlanta: [
-    { corridorName: 'Pharmaceutical & Biologics Manufacturing', naics: [32], riasec: ['R','C','I'] } // corrected Chunk 4
-  ],
-  tennessee_nashville: [
-    { corridorName: 'Sterile Injectable & Bioprocessing Manufacturing', naics: [32], riasec: ['R','C','I'] } // corrected Chunk 4
-  ],
-  kentucky_lexington: [
-    { corridorName: 'Pharmaceutical Manufacturing & CDMO', naics: [32], riasec: ['R','C','I'] } // corrected Chunk 4
-  ],
-  north_carolina_rtp: [
-    { corridorName: 'Pharmaceutical & Biologics Manufacturing', naics: [32], riasec: ['R','C','I'] }, // corrected Chunk 4
-    { corridorName: 'Academic Medicine & Health Systems', naics: [62], riasec: ['I','S','C'] }
   ]
 };
 
@@ -1042,106 +562,9 @@ function resolveStudentCorridor(naicsSectors, riasec, regionalKey) {
   return best && best.score >= 3 ? best : null;
 }
 
-// ── Anchor employer enrichment (wired in July 17 2026) ────────────────────────
-// Loads ANCHOR_EMPLOYERS as a global if already present in this environment —
-// matches how REGIONAL_INTELLIGENCE, CORRIDOR_NAICS_MAP, and every other *_DB/
-// *_MAP constant in this codebase are shared as globals across concatenated/
-// bundled files. Falls back to require() only in a Node.js test/dev context.
-// Never throws if unavailable: the enrichment is strictly additive. If
-// anchor_employers_db.js isn't loaded for any reason, getStudentCorridorContext
-// falls back to exactly its original plain-name-list behavior — nothing breaks.
-
-let __ANCHOR_EMPLOYERS = (typeof ANCHOR_EMPLOYERS !== 'undefined') ? ANCHOR_EMPLOYERS : null;
-if (!__ANCHOR_EMPLOYERS && typeof require === 'function') {
-  try {
-    __ANCHOR_EMPLOYERS = require('./anchor_employers_db.js').ANCHOR_EMPLOYERS;
-  } catch (e) {
-    __ANCHOR_EMPLOYERS = null;
-  }
-}
-
-const __ANCHOR_BY_NAME = __ANCHOR_EMPLOYERS
-  ? new Map(__ANCHOR_EMPLOYERS.map(c => [c.company_name, c]))
-  : new Map();
-
-function __findAnchorMatch(employerName) {
-  // Exact match ONLY. An earlier version of this function used loose substring
-  // matching ("Roche".includes(x) || x.includes("Roche")) intended to catch
-  // legitimate abbreviations, but it also incorrectly matched "Roche" (the
-  // bayarea corridor's generic reference to Roche/Genentech) against "Roche
-  // Diagnostics" (our distinct Indianapolis North American diagnostics entry)
-  // — two genuinely different entities that happen to share a word. Caught
-  // live in end-to-end testing before deployment. Exact-match-only trades a
-  // small amount of matching flexibility for zero cross-contamination risk;
-  // the fix for legitimate abbreviations is keeping corridor employer names
-  // and anchor_employers_db company_name fields consistent, not fuzzy string
-  // matching. All currently-working matches (Gilead Sciences, ResMed, Vertex
-  // Pharmaceuticals, FIS, UCB, Takeda, etc.) already use exact full names in
-  // both places, so this fix breaks nothing that was correctly working.
-  return __ANCHOR_BY_NAME.get(employerName) || null;
-}
-
-function __scoreCapabilityRole(riasecTags, studentTop, studentSecondary) {
-  let s = 0;
-  for (const t of riasecTags) {
-    if (studentTop.includes(t)) s += 2;
-    else if (studentSecondary.includes(t)) s += 1;
-  }
-  return s;
-}
-
-// Given a corridor's plain employer list + a student's RIASEC top/secondary
-// codes + the corridor's own region anchor (for multi-site company location
-// disambiguation — see the Vertex/San Diego correction from this session),
-// returns an array of enriched, prompt-ready employer lines. Employers with
-// no anchor_employers_db entry pass through as plain names — nothing invented.
-function enrichCorridorEmployers(employerNames, studentTop, studentSecondary, regionAnchorHint) {
-  return employerNames.map(name => {
-    const match = __findAnchorMatch(name);
-    if (!match) return name;
-
-    const scoredRoles = (match.capability_roles || [])
-      .map(r => ({ ...r, score: __scoreCapabilityRole(r.riasec_tags || [], studentTop, studentSecondary) }))
-      .sort((a, b) => b.score - a.score);
-    const best = scoredRoles[0];
-    if (!best) return name;
-
-    let locationLabel = `${match.hq_city}, ${match.hq_state}`;
-    if (regionAnchorHint) {
-      // Token-overlap check, not whole-string containment. Caught live in
-      // end-to-end testing across the Southeast regions: "Research Triangle
-      // Park (Raleigh-Durham-Chapel Hill)" and "Research Triangle Park /
-      // Concord" clearly refer to the same place, but neither string fully
-      // CONTAINS the other because each has a different qualifier appended —
-      // the earlier bidirectional-includes() fix (which correctly handled
-      // Vertex's simple "San Diego" case) silently failed here, falling back
-      // to HQ display for Amgen, Pfizer, and Lilly in the NC corridor even
-      // though all three have real, listed NC facilities.
-      const normalize = s => s.toLowerCase().replace(/[()\/,]/g, ' ').split(/\s+/).filter(w => w.length > 3);
-      const hintWords = new Set(normalize(regionAnchorHint));
-      const localFacility = (match.facility_locations || []).find(f => {
-        const cityWords = normalize(f.city_or_region);
-        return cityWords.some(w => hintWords.has(w));
-      });
-      if (localFacility && localFacility.city_or_region !== match.hq_city) {
-        locationLabel = `${localFacility.city_or_region} (${match.hq_city} HQ)`;
-      }
-    }
-
-    return `${name} [${locationLabel} — likely entry point: ${best.role}]`;
-  });
-}
-
 // ── getStudentCorridorContext ─────────────────────────────────────────────────
 // Returns a short, prompt-ready string naming the student's matched corridor
 // Used to sharpen callC prompt beyond "here are all corridors"
-//
-// UPDATED July 17 2026: employer names are now passed through enrichCorridorEmployers()
-// when anchor_employers_db data is available for a given company — this is pass #3
-// of the resolver design from this session: RIASEC-tagged functional-slice matching,
-// independent of which world/major the student selected. A student never sees this
-// happen; it just makes callC's prompt sharper when the data exists, and degrades
-// silently to the original plain-name behavior when it doesn't.
 
 function getStudentCorridorContext(naicsSectors, riasec, zip) {
   const region = resolveRegion(zip);
@@ -1154,32 +577,113 @@ function getStudentCorridorContext(naicsSectors, riasec, zip) {
   const fullCorridor = region.corridors.find(c => c.name === corridor.corridorName);
   if (!fullCorridor) return `Student corridor match: ${corridor.corridorName}`;
 
-  const studentTop = (riasec || []).slice(0, 2).map(r => r.code);
-  const studentSecondary = (riasec || []).slice(2, 3).map(r => r.code);
-
-  // Prioritize employers with real anchor_employers_db data BEFORE truncating
-  // to 4 — caught in end-to-end testing: the original slice(0,4) ran before
-  // enrichment, so richer/verified entries sitting 5th+ in a corridor's plain
-  // list (e.g. Vertex Pharmaceuticals, ResMed in socal) were silently cut
-  // even though they had the best data of anyone in that corridor.
-  const allEmployers = fullCorridor.employers;
-  const withData = allEmployers.filter(name => __ANCHOR_BY_NAME.has(name));
-  const withoutData = allEmployers.filter(name => !__ANCHOR_BY_NAME.has(name));
-  const prioritized = __ANCHOR_EMPLOYERS ? [...withData, ...withoutData] : allEmployers;
-
-  const enrichedEmployers = __ANCHOR_EMPLOYERS
-    ? enrichCorridorEmployers(prioritized.slice(0, 4), studentTop, studentSecondary, fullCorridor.anchor)
-    : prioritized.slice(0, 4);
-
   return `STUDENT CORRIDOR MATCH: ${corridor.corridorName} (${fullCorridor.anchor})
-Key employers in this corridor: ${enrichedEmployers.join(', ')}
+Key employers in this corridor: ${fullCorridor.employers.slice(0,4).join(', ')}
 Industries: ${fullCorridor.industries.slice(0,3).join(', ')}`;
 }
 
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = {
-    REGIONAL_INTELLIGENCE, CORRIDOR_NAICS_MAP,
-    resolveRegion, getRegionalCallCContext, resolveStudentCorridor, getStudentCorridorContext,
-    enrichCorridorEmployers,
-  };
+// ── resolveRegion ─────────────────────────────────────────────────────────────
+// Returns the matching REGIONAL_INTELLIGENCE entry for a given ZIP code
+// Returns null if no region matches (graceful fallback to ZIP-only geo)
+
+function resolveRegion(zip) {
+  if (!zip || typeof zip !== 'string') return null;
+  const prefix = zip.trim().slice(0, 3);
+  for (const [key, region] of Object.entries(REGIONAL_INTELLIGENCE)) {
+    if (region.zipPrefixes.includes(prefix)) return { key, ...region };
+  }
+  return null;
+}
+
+// ── getRegionalCallCContext ───────────────────────────────────────────────────
+// Returns the callC prompt context string for a given ZIP
+// Returns empty string if no region matches
+
+function getRegionalCallCContext(zip) {
+  const region = resolveRegion(zip);
+  return region ? region.callc_context : '';
+}
+
+// ── resolveStudentCorridor ────────────────────────────────────────────────────
+// Given a student's NAICS sectors, RIASEC codes, and regional key,
+// returns the single best-matching corridor for this student in this region.
+// Uses a weighted score: NAICS overlap (primary) + RIASEC affinity (secondary)
+//
+// @param naicsSectors  array of {sector, count/score} from getNAICSProfile()
+// @param riasec        array of {code, score} from getRIASECProfile()
+// @param regionalKey   'socal' | 'bayarea' | 'chicago'
+// @returns { corridorName, naics, riasec, score } | null
+
+function resolveStudentCorridor(naicsSectors, riasec, regionalKey) {
+  if (!naicsSectors || !naicsSectors.length || !regionalKey) return null;
+
+  const corridorMap = CORRIDOR_NAICS_MAP[regionalKey];
+  if (!corridorMap) return null;
+
+  // Student's top RIASEC codes (top 3, ordered)
+  const studentRIASEC = (riasec || []).slice(0, 3).map(r => r.code);
+  const studentRIASECSet = new Set(studentRIASEC);
+
+  // High-signal NAICS codes that are corridor-specific (not generic crossovers)
+  // NAICS 71 (Arts/Entertainment) almost uniquely signals Entertainment — boost it
+  // NAICS 52 (Finance) almost uniquely signals Finance — boost it
+  // NAICS 62 (Healthcare) almost uniquely signals Healthcare — boost it
+  // NAICS 44 (Retail/Consumer) almost uniquely signals CPG/Consumer — boost it
+  // NAICS 33 (Manufacturing) almost uniquely signals Aerospace/Industrial — boost it
+  const HIGH_SIGNAL_NAICS = new Set([71, 52, 62, 44, 31, 33, 48]);
+
+  // Score each corridor
+  const scored = corridorMap.map(corridor => {
+    let score = 0;
+
+    // Primary signal — NAICS overlap, weighted by position and specificity
+    naicsSectors.slice(0, 5).forEach((n, idx) => {
+      if (corridor.naics.includes(n.sector)) {
+        const baseWeight = (5 - idx) * 3; // top sector worth 15, 5th worth 3
+        // High-signal NAICS get a stronger boost when they appear in top-2 positions
+        // This ensures Finance(52), Healthcare(62), Entertainment(71) aren't beaten
+        // by generic 51/54 combinations even when both sectors are tied by count
+        const isTopPosition = idx <= 1;
+        const specificityBoost = HIGH_SIGNAL_NAICS.has(n.sector) ? (isTopPosition ? 14 : 8) : 0;
+        score += baseWeight + specificityBoost;
+      }
+    });
+
+    // Secondary signal — RIASEC affinity, ordered match matters
+    corridor.riasec.forEach((code, corridorRIASECIdx) => {
+      const studentIdx = studentRIASEC.indexOf(code);
+      if (studentIdx !== -1) {
+        // Both corridor position and student position matter
+        const corridorWeight = (3 - corridorRIASECIdx); // primary corridor code worth 3
+        const studentWeight = (3 - studentIdx);          // student's primary code worth 3
+        score += corridorWeight * studentWeight;
+      }
+    });
+
+    return { ...corridor, score };
+  });
+
+  // Return highest-scoring corridor, or null if no real match (score < 3)
+  const best = scored.sort((a, b) => b.score - a.score)[0];
+  return best && best.score >= 3 ? best : null;
+}
+
+// ── getStudentCorridorContext ─────────────────────────────────────────────────
+// Returns a short, prompt-ready string naming the student's matched corridor
+// Used to sharpen callC prompt beyond "here are all corridors"
+
+function getStudentCorridorContext(naicsSectors, riasec, zip) {
+  const region = resolveRegion(zip);
+  if (!region) return '';
+
+  const corridor = resolveStudentCorridor(naicsSectors, riasec, region.key);
+  if (!corridor) return '';
+
+  // Find the full corridor object from the region for employer/detail data
+  const fullCorridor = region.corridors.find(c => c.name === corridor.corridorName);
+  if (!fullCorridor) return `Student corridor match: ${corridor.corridorName}`;
+
+  return `STUDENT CORRIDOR MATCH: ${corridor.corridorName} (${fullCorridor.anchor})
+Key employers in this corridor: ${fullCorridor.employers.slice(0,4).join(', ')}
+Industries: ${fullCorridor.industries.slice(0,3).join(', ')}`;
 }

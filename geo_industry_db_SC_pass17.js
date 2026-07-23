@@ -38,6 +38,20 @@ const GEO_INDUSTRY_DB_SC = {
         student_connection: "Boeing's final assembly and delivery site for the 787 Dreamliner — roughly 4,000 employees, located on the joint-use grounds of Charleston Air Force Base and Charleston International Airport. A real, current signal of continued investment: Boeing recently announced moving 787 engineering work to South Carolina as well, not just final assembly."
       }
     ]
+  },
+  "29401": {
+    zip: "29401",
+    neighborhood: "Downtown Charleston (Peninsula)",
+    county: "Charleston",
+    clusters: [
+      {
+        name: "Real Estate Development & Investment",
+        naics: 53,
+        distance: "Local",
+        anchor_employers: ["The Beach Company (headquarters)"],
+        student_connection: "The Beach Company, founded in 1945, is one of the oldest and largest privately held real estate development and investment firms in the Charleston region, genuinely headquartered on the peninsula — a real, long-standing local institution rather than a national firm chasing Charleston's recent growth boom. Charleston has been one of the fastest-growing mid-size real estate markets in the country in recent years, and a student here can trace that growth to a real, named company rather than an abstract market trend. (Added 2026-07-22 — Charleston was reconsidered for real estate content given the same size/growth logic applied to Nashville, Jacksonville, Tampa Bay, and New Orleans.)"
+      }
+    ]
   }
 };
 

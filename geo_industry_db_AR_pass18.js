@@ -51,6 +51,20 @@ const GEO_INDUSTRY_DB_AR = {
         student_connection: "J.B. Hunt is a major national transportation and logistics company headquartered in the same small Northwest Arkansas cluster as Walmart and Tyson Foods — the three companies have even co-hosted real joint initiatives (a 2023 trucking-safety summit with Truckers Against Trafficking). A genuine, tight corporate ecosystem where retail, food production, and logistics careers all sit within a few miles of each other."
       }
     ]
+  },
+  "72701": {
+    zip: "72701",
+    neighborhood: "Fayetteville",
+    county: "Washington",
+    clusters: [
+      {
+        name: "Real Estate Development & Property Management",
+        naics: 53,
+        distance: "Local",
+        anchor_employers: ["Lindsey Management Co."],
+        student_connection: "Lindsey Management is one of the largest apartment development and property management companies in the region, genuinely headquartered in Fayetteville — a direct consequence of Northwest Arkansas's rapid, Walmart-driven population growth needing somewhere to actually live. A real estate career here is a direct downstream effect of the same corporate growth story as Walmart, Tyson, and J.B. Hunt, not an unrelated industry. (Added 2026-07-22 — Northwest Arkansas was reconsidered for real estate content given the same size/growth logic applied to Nashville, Jacksonville, Tampa Bay, and New Orleans.)"
+      }
+    ]
   }
 };
 

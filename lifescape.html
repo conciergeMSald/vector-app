@@ -2381,14 +2381,14 @@ const SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxmhDOrAjTtgpD9
 const LS_STATE = {
   name:'', grade:null, gpa:null, gpa_type:'weighted', voice:'student',
   pronouns: null,
-  selectedTileIds: new Set(),
+  selectedTileIds: new Set(),  // Domain 2 — World & Interest Selection (STUDENT-AGENT-002 Gate 4, Item 1: formally assigned 2026-07-22; previously functioned as an unlabeled domain)
   nextLevelSports: new Set(),
   zip:'', family_locations:[],
   reportFormat:'both',
   submitted:false,
   big_five:{O:null,C:null,E:null,A:null,N:null},
-  worlds_chosen:[],
-  academic_affinity:{subjects:[], strength:'', daypart:'', daypart_other:''},
+  worlds_chosen:[],  // Domain 2 — World & Interest Selection (IBIS_WORLD_REGISTRY tile grid); realm-weighting across all 4 realms is a separate, not-yet-built Gate 4 item
+  academic_affinity:{subjects:[], strength:'', daypart:'', daypart_other:''},  // Domain 2 — World & Interest Selection, academic-interest sub-signal
   callAResult:null, callBResult:null, callCResult:null,
   consultant_code: null,
   topUniversity: null,
@@ -2405,6 +2405,27 @@ const LS_STATE = {
   genome_geo: null,       // Domain 4 — Geographic Identity
   genome_worry: null      // Domain 5 — Student Anxiety
 };
+
+// ── STUDENT-AGENT-002 Gate 4, Item 1 — Domain 2 formal assignment note ──
+// Domain 2 (World & Interest Selection) is the existing IBIS_WORLD_REGISTRY
+// tile grid — it has been functioning as an unlabeled domain since launch.
+// This assignment is comment-only: no field was renamed, added, or moved,
+// and no screen or scoring behavior changed. Domain 2's underlying data
+// spans three existing LS_STATE fields rather than a single free-text
+// value the way Domains 1/3/4/5 do (selectedTileIds, worlds_chosen,
+// academic_affinity) — that is a genuine structural difference from the
+// other four domains, not an oversight, since Domain 2 is a selection-based
+// domain rather than a narrative-response domain. Realm-weighting across
+// all 4 realms for the tile grid (Gate 4 Item 2) and the Signal Fusion
+// Engine that will actually consume all 5 domains together (Gate 4, later
+// item) are both separate, not-yet-built work — out of scope for this step.
+function getDomain2RawInputs() {
+  return {
+    selectedTileIds: Array.from(LS_STATE.selectedTileIds || []),
+    worlds_chosen: LS_STATE.worlds_chosen || [],
+    academic_affinity: LS_STATE.academic_affinity || {subjects:[], strength:'', daypart:'', daypart_other:''}
+  };
+}
 
 // ── SCREEN NAV ─────────────────────────────────────
 const SCREEN_PROGRESS = {0:0,1:5,'1b':10,'1c':13,'1d':16,'1e':18,2:15,25:28,3:40,36:52,37:64,35:74,4:84,45:90,5:94};
@@ -5503,6 +5524,18 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
   const hasCreativeSignal = ['filmmaking','photography','art_drawing','writing_stories',
                               'music_production'].some(t => tiles.includes(t));
   const hasBusinessSignal = ['entrepreneurship','business_startups','fantasy_sports_roster'].some(t => tiles.includes(t));
+  // hasContentCreationSignal: fires directly on the tiktok_content tile itself.
+  // CORRECTED 2026-07-23: originally checked for 'content_creation', a
+  // fabricated tile ID that does not exist in the real crosswalk
+  // (crosswalk-db.js) — the real tile is 'tiktok_content'. Added 2026-07-22
+  // to close a gap flagged during the NAICS 51/beauty-industry review —
+  // audience-building, platform strategy, and algorithm-aware editing
+  // previously had no tile of their own and only ever fired combinatorially
+  // via hasCreativeSignal + hasBusinessSignal + a tech signal. This is
+  // deliberately a standalone OR alongside those, not a replacement for
+  // them — a student who selects tiktok_content should register this
+  // signal even if they selected none of the craft tiles above.
+  const hasContentCreationSignal = tiles.includes('tiktok_content') || hasCreativeSignal && hasBusinessSignal;
   const hasFaithSignal         = faith && faith !== 'no_preference' && faith !== 'secular';
   const hasChristianFaithSignal = hasFaithSignal && !['jewish','jewish_community'].includes(faith);
   const hasJewishFaithSignal    = faith === 'jewish' || faith === 'jewish_community';
@@ -5520,7 +5553,7 @@ function getUnderTheRadarPicks(profile, matchedSchools) {
     { keywords: ['human performance','athletic','recreation','outdoor'], signal: hasBodySignal || hasAthleticSignal || hasNatureSignal },
     { keywords: ['engineering','technical','tech ','innovation','industrial','manufacturing'], signal: hasTechSignal || hasBusinessSignal },
     { keywords: ['ecological','agriculture','forestry','environment'], signal: hasNatureSignal || hasEnviroSignal },
-    { keywords: ['creative','arts','media','design'], signal: hasCreativeSignal },
+    { keywords: ['creative','arts','media','design'], signal: hasCreativeSignal || hasContentCreationSignal },
     { keywords: ['music','conservatory'], signal: hasMusicSignal },
     { keywords: ['global','international'], signal: hasGlobalSignal },
     { keywords: ['leadership','elite power','wealth creation','professional prestige'], signal: hasBusinessSignal || riasec.includes('E') },
@@ -6395,18 +6428,33 @@ async function submitLifescape() {
   // Engine (student-signal-fusion-engine.browser.js), computed client-side
   // since it is a pure, deterministic function with no DB access.
   //
-  // Domain 2's realm-weighting map (Gate 4 Item 1) is now built —
-  // student-domain2-realm-weights.browser.js — so world_selections below
-  // carries real make/move/think/create weights per tile rather than the
-  // zero-weight placeholders used before that map existed.
+  // CORRECTED 2026-07-23: this comment previously claimed Domain 2's
+  // realm-weighting map was "Gate 4 Item 1" and lived in
+  // student-domain2-realm-weights.browser.js — both wrong. Realm-weighting
+  // is Gate 4 Item 2, and the actual, real, already-built map is
+  // TILE_REALM_WEIGHTS in lifescape_curation_map_v1.js (5 realms — make,
+  // move, think, people, systems — confirmed to match the live tile system
+  // in CLUSTER_CONFIG/TILE_POOLS, not the 4-realm "make/move/think/create"
+  // language in the original spec text). student-domain2-realm-weights.
+  // browser.js does not exist yet; the <script> tag loading it is itself
+  // forward-looking scaffolding, same as fuseStudentSignal/
+  // buildWorldSelections below — confirmed 2026-07-23 to be intentional
+  // placeholders for not-yet-built work, not evidence of a second,
+  // competing implementation. Whoever builds that file for real should
+  // read from or re-export TILE_REALM_WEIGHTS rather than inventing a
+  // parallel realm-weighting map.
   if (typeof fuseStudentSignal === 'function') {
+    // CORRECTED 2026-07-23: was buildWorldSelections(profile.worlds_chosen)
+    // — wrong selection layer (see comment above). profile.allTileIds is
+    // already the exact array this needs (built in assembleProfile() from
+    // LS_STATE.selectedTileIds).
     var genome_worldResult = (typeof buildWorldSelections === 'function')
-      ? buildWorldSelections(profile.worlds_chosen)
-      : { selections: (profile.worlds_chosen || []).map(function (id) {
-          return { world_id: id, realm_weights: { make: 0, move: 0, think: 0, create: 0 } };
-        }), unknownEncountered: null };
-    if (genome_worldResult.unknownEncountered) {
-      console.warn('[VECTOR Lifescape] Unknown world id in realm-weighting map (non-blocking, zero-weighted):', genome_worldResult.unknownEncountered);
+      ? buildWorldSelections(profile.allTileIds)
+      : { selections: (profile.allTileIds || []).map(function (id) {
+          return { tile_id: id, realm_weights: { make: 0, move: 0, think: 0, people: 0, systems: 0 }, weighted: false };
+        }), unweightedCount: (profile.allTileIds || []).length, totalCount: (profile.allTileIds || []).length, allUnweighted: true };
+    if (genome_worldResult.allUnweighted && genome_worldResult.totalCount > 0) {
+      console.warn('[VECTOR Lifescape] No realm-weighting data available for any of this student\'s selected tiles (non-blocking — degrades gracefully).');
     }
     var genome = fuseStudentSignal({
       studentId: LS_STATE.session_id || null,

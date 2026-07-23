@@ -38,6 +38,20 @@ const GEO_INDUSTRY_DB_TAMPABAY = {
         student_connection: "Formulated Solutions has operated as a contract development and manufacturing organization since 1999 — 1,000 employees, a 455,000 sq ft cGMP campus. It manufactures products for other companies' brands rather than developing its own drugs, a genuinely different business model than the discovery-driven biopharma majority of this database: real, well-paid manufacturing careers exist independent of who invents the product."
       }
     ]
+  },
+  "33602": {
+    zip: "33602",
+    neighborhood: "Downtown Tampa / Channel District",
+    county: "Hillsborough",
+    clusters: [
+      {
+        name: "Real Estate Development (Urban Master-Planning)",
+        naics: 53,
+        distance: "Local",
+        anchor_employers: ["Strategic Property Partners (headquarters)"],
+        student_connection: "Strategic Property Partners — founded by Tampa Bay Lightning owner Jeff Vinik alongside Bill Gates' Cascade Investment — is the developer behind Water Street Tampa, a genuine multi-billion-dollar mixed-use master-planned district built essentially from scratch in downtown Tampa, spanning office, residential, hotel, and retail. A student here can point at a real, current, still-under-construction district and understand exactly what large-scale urban real estate development looks like in practice, not as an abstract finance concept. (Added 2026-07-22 — Tampa Bay was reconsidered for real estate content given its size and growth, alongside Jacksonville and Nashville.)"
+      }
+    ]
   }
 };
 

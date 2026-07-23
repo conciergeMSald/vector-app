@@ -84,6 +84,21 @@ const GEO_INDUSTRY_DB_MIAMI = {
         student_connection: "AMWC Americas — the Aesthetic & Anti-Aging Medicine World Congress — just completed its 10th anniversary edition in Miami (February 2026), with programming on anatomy, ultrasound safety, and complication management for practicing physicians and nurse injectors. This is genuinely clinical, science-based medical education, not a consumer beauty event — a real, distinct specialty within medicine (dermatology, plastic surgery, aesthetic medicine) that Miami has become a real hub for."
       }
     ]
+  },
+
+  "33131": {
+    zip: "33131",
+    neighborhood: "Brickell",
+    county: "Miami-Dade",
+    clusters: [
+      {
+        name: "Real Estate Development",
+        naics: 53,
+        distance: "Local",
+        anchor_employers: ["The Related Group (headquarters)"],
+        student_connection: "The Related Group, founded by Jorge Pérez, is one of the largest residential real estate developers in the United States and is genuinely responsible for reshaping Miami's skyline — its condominium and mixed-use towers span Brickell, Downtown, and Miami Beach. Real estate development here is not abstract finance; a student can point at specific buildings this company built and understand the career pathway concretely. (Added 2026-07-22, closing a real estate content gap — Miami is one of only 6 metros with a dedicated real estate occupation profile in NAICS_TO_ONET, and this pass file was explicitly built to close Florida's overall content gap, but had zero real estate representation until now.)"
+      }
+    ]
   }
 };
 

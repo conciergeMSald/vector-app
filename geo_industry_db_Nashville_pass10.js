@@ -21,6 +21,13 @@ const GEO_INDUSTRY_DB_NASHVILLE = {
         distance: "Local",
         anchor_employers: ["Music Row record labels", "Grand Ole Opry", "Ryman Auditorium"],
         student_connection: "Nashville's 'Music City' identity is a genuine, sustained industry — publishing, licensing, production, and label operations, not just performance. A real, distinct career economy running parallel to the city's healthcare-management identity."
+      },
+      {
+        name: "Real Estate Development",
+        naics: 53,
+        distance: "Local",
+        anchor_employers: ["Giarratana LLC"],
+        student_connection: "Tony Giarratana and Giarratana LLC are widely credited in local business press as the developer most responsible for downtown Nashville's residential high-rise transformation over the past two decades — a genuine, named local development track record, not a national firm with a regional office. Nashville's population and downtown skyline have both grown rapidly enough in recent years that real estate development is a real, substantial career economy here in its own right, distinct from the healthcare-administration and music-industry identities this metro is better known for. (Added 2026-07-22 — this metro was initially assessed as narrowly out-of-scope for real estate given its healthcare-focused build purpose, a call reconsidered given Nashville's genuine size and growth rate.)"
       }
     ]
   },

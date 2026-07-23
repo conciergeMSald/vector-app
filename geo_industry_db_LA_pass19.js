@@ -36,6 +36,13 @@ const GEO_INDUSTRY_DB_LA_STATE = {
         distance: "Local",
         anchor_employers: ["Port of New Orleans (Port NOLA)"],
         student_connection: "Port NOLA describes itself as 'a diverse cargo and in-demand cruise port' — real careers in cargo logistics, terminal operations, and maritime trade, plus a smaller-scale cruise departure operation distinct from Miami's concentration of actual cruise-line headquarters elsewhere in this database."
+      },
+      {
+        name: "Real Estate Development (Historic Adaptive Reuse)",
+        naics: 53,
+        distance: "Local",
+        anchor_employers: ["HRI Properties (headquarters)"],
+        student_connection: "HRI Properties, founded by Pres Kabacoff, is a genuine, long-established New Orleans real estate development firm known specifically for historic adaptive reuse — converting old hotels, warehouses, and office buildings across New Orleans and the broader South into modern residential and hospitality use rather than building new from scratch. A distinctive, place-specific real estate career path that looks different from generic suburban development. (Added 2026-07-22 — New Orleans was reconsidered for real estate content given the same size/growth logic applied to Nashville, Jacksonville, and Tampa Bay.)"
       }
     ]
   }

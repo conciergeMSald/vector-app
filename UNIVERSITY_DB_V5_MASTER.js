@@ -1669,6 +1669,7 @@ const UNIVERSITY_DB_V5 = {
     "sportsBusiness": { "strength": 92, "notes": "Arguably the best sports business pipeline in the country via Nike." },
     "consumerProducts": { "strength": 82, "notes": "Strong marketing career placement, reinforced by Nike brand proximity. (Remapped 2026-07-12 from non-standard key 'marketing'.)" }
   ,
+    "realEstate": { "strength": 36, "notes": "A modest, secondary pathway — Oregon has no dedicated real estate program; Lundquist College placement runs overwhelmingly through Oregon's dominant sports business/Nike-driven marketing identity. (Added 2026-07-22.)" },
     "pharmaceuticalManufacturing": { "strength": 30, "notes": "Weaker evidence than Oregon State: University of Oregon's institutional strength skews more toward liberal arts and business than applied engineering or biosciences. Same regional Genentech Hillsboro proximity applies as OSU, but without OSU's stronger applied-science institutional profile. Scored lower accordingly." }
   },
     "wealthMobility": {
@@ -6201,6 +6202,7 @@ const UNIVERSITY_DB_V5 = {
     "privateEquity": { "strength": 95, "notes": "Deep alumni presence across mega-fund and middle-market PE, reinforced by HBS network. (Estimated during remap, not independently re-verified.)" },
     "consulting": { "strength": 100, "notes": "Highest global penetration into McKinsey, Bain, and BCG." },
     "medicine": { "strength": 100, "notes": "Harvard Medical School is among the strongest biomedical research and clinical training institutions globally." },
+    "realEstate": { "strength": 48, "notes": "A real but secondary pathway relative to Harvard's dominant finance/consulting/medicine identity — HBS's Real Estate Academic Initiative and a genuine alumni presence in real estate private equity (Blackstone and peers) exist, but Boston is a smaller real estate market than New York or similar hubs, and there is no dedicated undergraduate real estate program. (Added 2026-07-22.)" },
     "publicPolicy": { "strength": 100, "notes": "Dominant pipeline into U.S. federal government and global policy institutions; also reflects Harvard Law School's elite legal pipeline, folded in here since no standalone 'law' key exists in the standard schema. (Remapped from non-standard keys 'law' and 'government', 2026-07-12.)" },
     "entrepreneurship": { "strength": 92, "notes": "Strong but secondary to Stanford in startup ecosystem density." }
   },
@@ -6543,7 +6545,8 @@ const UNIVERSITY_DB_V5 = {
     "investmentBanking": { "strength": 88, "notes": "Strong placement into investment banking and hedge funds. (Remapped from non-standard key 'finance', 2026-07-12.)" },
     "consulting": { "strength": 90, "notes": "High placement into MBB consulting firms." },
     "medicine": { "strength": 92, "notes": "Strong pre-med pipeline and public health preparation." },
-    "entrepreneurship": { "strength": 90, "notes": "Strong startup culture driven by intellectual independence." }
+    "entrepreneurship": { "strength": 90, "notes": "Strong startup culture driven by intellectual independence." },
+    "realEstate": { "strength": 28, "notes": "A minor, secondary pathway — Brown has no business school and no real estate concentration; some alumni enter real estate through economics or entrepreneurship routes, and Providence is not a major real estate market. (Added 2026-07-22.)" }
   },
     "wealthMobility": {
       "socialMobilityIndex": 88,
@@ -6836,6 +6839,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "technology": { "strength": 96, "notes": "One of the most selective and highly-placed CS programs in the country, with strong broader engineering placement. (Remapped 2026-07-12, combined from non-standard keys 'computerScience' (96) and 'engineering' (88) into one standard key.)" }
   ,
+    "realEstate": { "strength": 64, "notes": "Gies College of Business houses a genuine, named real estate concentration within its Department of Finance, a real institutional specialty beyond general business placement, though secondary to Illinois's dominant engineering and technology identity. (Added 2026-07-22.)" },
     "pharmaceuticalManufacturing": { "strength": 48, "notes": "Self-referential evidence: UIUC is already cited in this database's own Industrial & Process Chemistry deployment_context (lifescape_major_map.js) as a school placing API chemists into pharmaceutical manufacturing roles. That citation was itself a reasonable but not independently re-verified judgment call — scored as real but not company-confirmed." }
   },
     "wealthMobility": {
@@ -7148,6 +7152,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "healthcareAdministration": { "strength": 90, "notes": "The most geographically advantaged pharmacy pipeline in the country. (Remapped 2026-07-12 from non-standard key 'pharmacy'.)" }
   ,
+    "realEstate": { "strength": 52, "notes": "Rutgers Business School houses a real estate program (Rutgers Center for Real Estate) within its Department of Finance and Economics, benefiting from proximity to the New York/New Jersey real estate market — a real but secondary pathway relative to Rutgers' dominant pharmaceutical corridor identity. (Added 2026-07-22.)" },
     "pharmaceuticalManufacturing": { "strength": 66, "notes": "Built directly on this school's own existing data: Rutgers' healthcareAdministration score (90) already describes it as 'the most geographically advantaged pharmacy pipeline in the country,' reflecting genuine embeddedness in the historic New Jersey pharmaceutical corridor (Merck, Bristol Myers Squibb, Johnson & Johnson — none independently verified this session, general industry knowledge). That existing note is about clinical pharmacy training specifically; this key is scored separately for industrial/manufacturing pathways, which a large public research university with Rutgers' engineering breadth plausibly also feeds, though not confirmed via any company citation this session." }
   },
     "wealthMobility": {
@@ -7470,6 +7475,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "technology": { "strength": 92, "notes": "Top-10 nationally across nearly every engineering discipline. (Remapped from non-standard key 'engineering', 2026-07-12.)" },
     "consulting": { "strength": 96, "notes": "Ross Business School rivals the very top private business schools for consulting placement. (Remapped from non-standard key 'business', split across consulting/investmentBanking, 2026-07-12 — judgment call, not independently verified.)" },
+    "realEstate": { "strength": 66, "notes": "Ross School of Business houses a genuine real estate concentration, reinforced by Detroit's significant urban redevelopment activity — a real, distinctive pathway beyond Ross's dominant consulting/finance placement. (Added 2026-07-22.)" },
     "investmentBanking": { "strength": 90, "notes": "Ross Business School has a strong Wall Street pipeline alongside its consulting placement. (Remapped from non-standard key 'business', 2026-07-12 — judgment call.)" },
     "publicPolicy": { "strength": 82, "notes": "Ford School is a strong, underrecognized government/policy pipeline." }
   ,
@@ -8529,7 +8535,8 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "healthcareAdministration": { "strength": 86, "notes": "Strong pre-health pipeline into UF's own medical school. (Remapped 2026-07-12 from non-standard key 'healthcare'.)" },
     "consulting": { "strength": 80, "notes": "Solid Florida-triangle business placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
-    "investmentBanking": { "strength": 72, "notes": "Real, secondary Florida-triangle finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" }
+    "investmentBanking": { "strength": 72, "notes": "Real, secondary Florida-triangle finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "realEstate": { "strength": 88, "notes": "Home to the Kelley A. Bergstrom Real Estate Center at the Warrington College of Business, a nationally recognized, top-ranked dedicated real estate program — a genuine, named institutional strength driven by Florida's sustained development and growth economy. (Added 2026-07-22.)" }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -9663,6 +9670,7 @@ const UNIVERSITY_DB_V5 = {
     "defense": { "strength": 88, "notes": "Direct Boeing/NASA Marshall aerospace pipeline. (Remapped 2026-07-12 from non-standard key 'aerospace'.)" },
     "healthWellness": { "strength": 92, "notes": "Top-5 nationally ranked veterinary medicine program. (Remapped 2026-07-12 from non-standard key 'veterinaryMedicine'.)" }
   ,
+    "realEstate": { "strength": 56, "notes": "Harbert College of Business offers a real estate concentration and Auburn/Opelika's ongoing regional growth supports meaningful commercial and residential development activity — a real but secondary pathway relative to Auburn's dominant aerospace/defense identity. (Added 2026-07-22.)" },
     "advancedManufacturing": { "strength": 50, "notes": "Moderate, general-reputation evidence: Auburn has a real, historically significant aerospace engineering program, and sits within the same Alabama aerospace/defense ecosystem as Huntsville (NASA Marshall, Northrop Grumman, Blue Origin), though no specific company partnership was independently confirmed this session the way Clemson's BMW relationship was. Scored in the moderate tier, comparable to Purdue's pharmaceuticalManufacturing score, reflecting real but unconfirmed regional/institutional strength." }
   },
     "wealthMobility": {
@@ -9977,6 +9985,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "technology": { "strength": 92, "notes": "The strongest automotive engineering pipeline of any Southeast public university. (Remapped 2026-07-12 from non-standard key 'automotiveEngineering'.)" }
   ,
+    "realEstate": { "strength": 56, "notes": "Clemson offers a genuine Master of Real Estate Development (MRED) program, a real, named specialty within the College of Business, though secondary to Clemson's dominant automotive/manufacturing engineering identity. (Added 2026-07-22.)" },
     "pharmaceuticalManufacturing": { "strength": 56, "notes": "Direct, specific industry alignment: Clemson's institutional focus on biomaterials and absorbable polymers directly matches Poly-Med, Inc. (Anderson, SC), a real company specializing in absorbable polymers for drug delivery and surgical devices. Sourced from a synthesized search summary (SCbio-attributed), not independently verified via a primary company or government source this session — treat as plausible and specific, not confirmed at the same evidence tier as Merck/Elkton or UCB/Georgia Tech." }
   ,
     "advancedManufacturing": { "strength": 88, "notes": "The strongest structural evidence found in this entire V5 database, on either buildout: BMW was a FOUNDING PARTNER of Clemson's CU-ICAR (International Center for Automotive Research) in 2007 -- not a later partnership, but present at the department's creation. BMW helped establish Clemson's Department of Automotive Engineering and funds the world's first PhD program in automotive engineering. The Vehicle Assembly Center, a physical CU-ICAR facility, is described as 'completely occupied by BMW,' where company engineers and Clemson researchers work side by side. Current as of this scoring pass: BMW just sponsored Clemson's 'Deep Orange 17' vehicle prototyping program (July 2026). A parallel 2-year pathway exists via Greenville Technical College (Clemson Manufacturing Innovation). Scored above Kentucky's Piramal relationship (82) given the depth of company involvement in creating the academic program itself, not just occupying space near it." }
@@ -10695,6 +10704,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "consulting": { "strength": 96, "notes": "McIntire rivals top private business schools for selectivity and consulting placement. (Remapped from non-standard key 'business', split across consulting/investmentBanking, 2026-07-12 — judgment call.)" },
     "investmentBanking": { "strength": 90, "notes": "McIntire has a strong Wall Street pipeline alongside its consulting placement. (Remapped from non-standard key 'business', 2026-07-12 — judgment call.)" },
+    "realEstate": { "strength": 44, "notes": "A real but secondary pathway relative to McIntire's dominant consulting/investment banking placement — no dedicated undergraduate real estate program exists, though real estate private equity and development draw a meaningful share of finance-oriented alumni. (Added 2026-07-22.)" },
     "publicPolicy": { "strength": 86, "notes": "Strong pipeline into federal government via DC proximity, and a strong pre-law track feeding into UVA's own top-10 law school. (Remapped and combined from non-standard keys 'government' (84) and 'law' (82), 2026-07-12 — no standalone 'law' key exists in the standard schema.)" }
   ,
     "pharmaceuticalManufacturing": { "strength": 68, "notes": "Strong, exceptionally well-verified underlying investment: Merck's $3 billion, 400,000 sq ft Center of Excellence for Pharmaceutical Manufacturing at its Elkton, Virginia site (confirmed directly via Merck's own October 2025 press release, corroborated independently by U.S. Senators Warner and Kaine's official statements, the Virginia Governor, and multiple business journals) — 500-600 permanent jobs, a site Merck has operated for nearly 85 years. UVA (~30-35 miles from Elkton) is closer than Virginia Tech. A specific UVA-Merck workforce-collaboration claim appeared in a synthesized search summary, not a primary source directly viewed this session — the underlying investment is rock-solid, the specific university partnership framing carries more uncertainty." }
@@ -11324,6 +11334,7 @@ const UNIVERSITY_DB_V5 = {
     "defense": { "strength": 94, "notes": "Elite space/aerospace engineering pipeline via LASP." },
     "entrepreneurship": { "strength": 84, "notes": "Leeds School of Business is genuinely known for entrepreneurship, anchored by the Deming Center for Entrepreneurship — this is Leeds' actual signature strength, not generic consulting placement. (Corrected 2026-07-12: previously mapped to generic consulting/investmentBanking.)" },
     "outdoorIndustry": { "strength": 84, "notes": "Strong pipeline into sustainability and natural products industry roles." },
+    "realEstate": { "strength": 48, "notes": "Colorado's sustained Front Range growth and Denver-Boulder corridor development support a modest, secondary real estate pathway through Leeds School of Business coursework, though this is not a named institutional specialty the way entrepreneurship and outdoor industry are. (Added 2026-07-22.)" },
     "technology": { "strength": 86, "notes": "Comprehensive mechanical and electrical engineering strength beyond aerospace specialization." },
     "entertainmentMedia": { "strength": 74, "notes": "Solid Film Studies and Journalism programs benefiting from Sundance Film Festival proximity." }
   ,
@@ -11637,6 +11648,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "entertainmentMedia": { "strength": 96, "notes": "The single most recognized media/communications program in American higher education. (Remapped 2026-07-12 from non-standard key 'media'.)" },
     "consulting": { "strength": 76, "notes": "Whitman School of Management offers solid finance, marketing, and entrepreneurship placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
+    "realEstate": { "strength": 56, "notes": "Whitman School of Management offers a real estate finance concentration, a genuine secondary specialty, though Syracuse itself is not a major real estate market. (Added 2026-07-22.)" },
     "investmentBanking": { "strength": 68, "notes": "Whitman School has a real, if secondary, finance placement pipeline. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" }
   },
     "wealthMobility": {
@@ -11949,7 +11961,8 @@ const UNIVERSITY_DB_V5 = {
       "civicEngagement": 66
     },
     "industryPathways": {
-    "consulting": { "strength": 92, "notes": "Unmatched Latin American international business and trade gateway pipeline. (Remapped 2026-07-12 from non-standard key 'internationalBusiness'.)" }
+    "consulting": { "strength": 92, "notes": "Unmatched Latin American international business and trade gateway pipeline. (Remapped 2026-07-12 from non-standard key 'internationalBusiness'.)" },
+    "realEstate": { "strength": 80, "notes": "Miami Herbert Business School houses a genuine, named Program in Real Estate, and South Florida's sustained real estate boom (development, international investment, condo/resort markets) makes this one of the strongest regional real estate ecosystems Miami students can enter directly. (Added 2026-07-22.)" }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -13560,7 +13573,8 @@ const UNIVERSITY_DB_V5 = {
       "civicEngagement": 78
     },
     "industryPathways": {
-    "publicPolicy": { "strength": 84, "notes": "Top-55 nationally ranked law school, reinforced by a unique military-adjacent peace and justice studies pipeline. (Remapped 2026-07-12, combined from non-standard keys 'law' (84) and 'peaceJusticeStudies' (82) — no dedicated law key exists in the standard schema.)" }
+    "publicPolicy": { "strength": 84, "notes": "Top-55 nationally ranked law school, reinforced by a unique military-adjacent peace and justice studies pipeline. (Remapped 2026-07-12, combined from non-standard keys 'law' (84) and 'peaceJusticeStudies' (82) — no dedicated law key exists in the standard schema.)" },
+    "realEstate": { "strength": 70, "notes": "Knauss School of Business houses the Burnham-Moores Center for Real Estate, a genuine, named research and academic center — a real institutional strength reinforced by San Diego's strong regional real estate market. (Added 2026-07-22.)" }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -14708,7 +14722,8 @@ const UNIVERSITY_DB_V5 = {
       "civicEngagement": 70
     },
     "industryPathways": {
-    "entertainmentMedia": { "strength": 84, "notes": "Structured LA and NYC media industry placement pipeline, reinforced by strong general communications/PR placement. (Remapped 2026-07-12, combined from non-standard keys 'media' (84) and 'communications' (82).)" }
+    "entertainmentMedia": { "strength": 84, "notes": "Structured LA and NYC media industry placement pipeline, reinforced by strong general communications/PR placement. (Remapped 2026-07-12, combined from non-standard keys 'media' (84) and 'communications' (82).)" },
+    "realEstate": { "strength": 32, "notes": "A minor, secondary pathway — Elon has no dedicated real estate program, and Love School of Business placement runs primarily through general business and marketing routes rather than real estate specifically. (Added 2026-07-22.)" }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -15844,6 +15859,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "consulting": { "strength": 82, "notes": "Strong Texas Triangle business placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
     "investmentBanking": { "strength": 74, "notes": "Secondary Texas Triangle finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "realEstate": { "strength": 56, "notes": "Hankamer School of Business offers real estate coursework within its finance department, benefiting from Texas's broader real estate growth economy — a real but secondary pathway relative to Baylor's dominant consulting/finance and nonprofit leadership identities. (Added 2026-07-22.)" },
     "nonprofitLeadership": { "strength": 84, "notes": "Genuine Truett Seminary leadership pipeline. (Remapped 2026-07-12 from non-standard key 'religiousLeadership' — closest available standard key for mission-driven leadership training.)" },
     "publicPolicy": { "strength": 60, "notes": "Real legal and regulatory policy ties via central Texas position, particularly energy regulation. (Corrected 2026-07-12: split from the original 'energyLegal' remap — the energy-industry portion now has its own dedicated key below.)" },
     "energy": { "strength": 68, "notes": "A real, secondary pathway — Waco sits inside the broader Texas Triangle energy corridor, with real alumni ties into Texas oil, gas, and energy regulatory law. (Added 2026-07-12: this was literally the other half of the original non-standard 'energyLegal' key, previously folded entirely into publicPolicy.)" }
@@ -16558,6 +16574,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "consulting": { "strength": 90, "notes": "Elite VSB finance/accounting placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
     "investmentBanking": { "strength": 84, "notes": "Elite VSB Wall Street placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "realEstate": { "strength": 54, "notes": "Villanova School of Business offers real estate coursework within its finance department, benefiting from the Philadelphia region's development activity — a real but secondary pathway relative to VSB's dominant Wall Street/consulting placement. (Added 2026-07-22.)" },
     "healthWellness": { "strength": 82, "notes": "Strong clinical nursing placement. (Remapped 2026-07-12 from non-standard key 'nursing'.)" },
     "technology": { "strength": 78, "notes": "Solid, underrated engineering placement. (Remapped 2026-07-12 from non-standard key 'engineering'.)" }
   },
@@ -17681,6 +17698,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "technology": { "strength": 92, "notes": "Elite, comprehensive engineering breadth plus a direct Atlanta tech-corridor pipeline. (Remapped 2026-07-12, combined from non-standard keys 'engineering' (92) and 'technology' (90) into one standard key.)" }
   ,
+    "realEstate": { "strength": 66, "notes": "Georgia Tech's School of Building Construction is a genuinely well-regarded, named program feeding directly into commercial real estate development and construction management, reinforced by Atlanta's major real estate market — a real, distinctive specialty beyond general engineering placement. (Added 2026-07-22.)" },
     "pharmaceuticalManufacturing": { "strength": 78, "notes": "Company-stated: UCB explicitly cited \"the Georgia Tech-Emory biomedical engineering program\" by name as a reason for choosing Georgia for its first-ever U.S. biologics manufacturing plant ($2B, Gwinnett County, announced March 2026). Strongest, most direct evidence in this dataset — but this reflects biomedical engineering feeding into pharma manufacturing broadly, not a dedicated pharmaceutical manufacturing program specifically." }
   ,
     "advancedManufacturing": { "strength": 74, "notes": "General institutional-reputation evidence, not a single-company citation the way pharmaceuticalManufacturing's score (78) was: Georgia Tech's mechanical, aerospace, and industrial engineering programs are consistently ranked among the top 5 nationally. Lockheed Martin's Marietta, GA plant (a real Atlanta-area aerospace anchor, surfaced in this session's Possible Vectors testing) sits in the same Piedmont Atlantic corridor Georgia Tech anchors. Scored on genuine institutional strength and regional presence rather than a confirmed company-stated partnership." }
@@ -18314,6 +18332,7 @@ const UNIVERSITY_DB_V5 = {
     "nutraceuticals": { "strength": 88, "notes": "Unique supplements/wellness manufacturing industry pipeline unmatched by peer schools." },
     "entrepreneurship": { "strength": 86, "notes": "Eccles School of Business houses the Lassonde Entrepreneur Institute, one of the most recognized university entrepreneurship centers in the country, directly tied to the Silicon Slopes startup ecosystem — this is Eccles' actual signature strength, not generic business placement. (Corrected 2026-07-12: previously mapped to generic consulting/investmentBanking.)" }
   ,
+    "realEstate": { "strength": 54, "notes": "Eccles School of Business offers real estate coursework, benefiting from Salt Lake City's sustained growth market, though this is secondary to Eccles' dominant entrepreneurship identity via the Lassonde Institute. (Added 2026-07-22.)" },
     "pharmaceuticalManufacturing": { "strength": 36, "notes": "Weakest-evidence tier, included for completeness: the University of Utah has no existing medicine key in this database at all, reflecting a generally thin overall profile. Real Salt Lake City ecosystem connections exist (Recursion Pharmaceuticals and University of Utah Health, both independently verified this session), but no company-stated or structural university partnership was found — this is a plausibility score based on geographic proximity alone, the most conservative of any school added in this pass, and a strong candidate for the university's broader V5 profile to be revisited independent of this specific key." }
   },
     "futureResilience": {
@@ -19469,6 +19488,7 @@ const UNIVERSITY_DB_V5 = {
     "technology": { "strength": 92, "notes": "Top-20 nationally, comprehensive across nearly every engineering discipline including nuclear and welding, rare specializations at this scale." },
     "medicine": { "strength": 96, "notes": "One of the largest academic medical centers in the country." },
     "consulting": { "strength": 78, "notes": "Fisher College of Business has strong Midwest corporate placement in consulting." },
+    "realEstate": { "strength": 58, "notes": "Fisher College of Business offers a real estate concentration within its finance area, reinforced by Columbus's growing commercial development market — a real but secondary pathway relative to Fisher's dominant insurance/risk management specialty. (Added 2026-07-22.)" },
     "insurance": { "strength": 88, "notes": "Fisher College of Business has a genuine, distinctive insurance and risk management specialty, reinforced by Ohio's dense insurance industry base — Nationwide, Progressive, and Grange are all Ohio-based. (Added 2026-07-12: previously dropped entirely for lack of a standard key — this was Fisher's most distinctive signal, not a generic finance placement.)" }
   ,
     "pharmaceuticalManufacturing": { "strength": 70, "notes": "Real, substantial partnership evidence: Battelle Memorial Institute (Columbus, OH) operates the largest private Biosafety Level 3 lab in the U.S. and provides agile manufacturing/scale-up engineering for the pharmaceutical industry (confirmed via Battelle's own official site). Ohio State is described as partnering with Battelle 'to drive clinical trials, medical device development, and novel drug delivery research' — sourced from a synthesized search summary rather than a single primary citation, so the specific partnership framing carries slightly more uncertainty than the Merck Elkton facts found in this same batch, but the underlying Battelle facility and Columbus location are independently confirmed." }
@@ -19799,6 +19819,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "industryPathways": {
     "consumerProducts": { "strength": 92, "notes": "The single strongest packaging engineering pipeline in the country." },
+    "realEstate": { "strength": 40, "notes": "A modest, secondary pathway — Broad College placement runs primarily through Michigan State's dominant supply chain and packaging engineering identities rather than real estate specifically. (Added 2026-07-22.)" },
     "supplyChain": { "strength": 98, "notes": "Broad Business's supply chain management program is consistently ranked #1 in the country, feeding directly into Amazon, P&G, and Whirlpool." },
     "nutraceuticals": { "strength": 86, "notes": "Elite land-grant Food Science program feeding directly into major food companies and regulatory roles." },
     "hospitality": { "strength": 88, "notes": "The School of Hospitality Business, founded in 1927, is one of the oldest and most respected hospitality management programs in the country — this was missed in the first hospitality pass despite being a genuine, distinctive MSU specialty on par with its supply chain program. (Added 2026-07-12.)" }
@@ -20101,6 +20122,7 @@ const UNIVERSITY_DB_V5 = {
     "technology": { "strength": 92, "notes": "The strongest health-tech pipeline of any Big Ten school via Epic Systems. (Remapped 2026-07-12 from non-standard key 'healthTech' — Epic Systems is health-record software, genuinely a technology pathway.)" },
     "medicine": { "strength": 86, "notes": "Elite research depth in life sciences. (Remapped 2026-07-12 from non-standard key 'lifeSciences'.)" }
   ,
+    "realEstate": { "strength": 90, "notes": "Home to the James A. Graaskamp Center for Real Estate at the Wisconsin School of Business — one of the oldest, most respected, and most influential dedicated real estate programs in the country, a genuine named institutional flagship, not a secondary business pathway. (Added 2026-07-22.)" },
     "advancedManufacturing": { "strength": 54, "notes": "IMPORTANT DISTINCTION: the strongest real Wisconsin evidence found this session belongs to a different, separate institution -- University of Wisconsin-Milwaukee, whose Connected Systems Institute has a real, current, FOUNDING partnership with Rockwell Automation (reaffirmed January 2026, per Rockwell's own press release). UW-Milwaukee is NOT present in this V5 database at all -- the same gap pattern as UAH, Calhoun Community College, UT Arlington, and Mississippi State elsewhere in this database. This entry for UW-Madison is scored on separate, more general evidence: a June 2026 'state rooted in manufacturing' engineering showcase event featuring Mercury Marine and Harley-Davidson, both real Wisconsin manufacturers with deep in-state history, but not a dedicated UW-Madison-specific company partnership program the way Rockwell-CSI is for Milwaukee." }
   },
     "wealthMobility": {
@@ -20413,6 +20435,7 @@ const UNIVERSITY_DB_V5 = {
     "publicPolicy": { "strength": 92, "notes": "One of the most DC-embedded international affairs pipelines in the country. (Remapped 2026-07-12 from non-standard key 'internationalAffairs'.)" },
     "consulting": { "strength": 74, "notes": "Solid Kogod business consulting placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
     "investmentBanking": { "strength": 66, "notes": "Real, secondary Kogod finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "realEstate": { "strength": 42, "notes": "A modest, secondary pathway — Kogod placement runs primarily through public policy/international affairs and general business routes; DC's commercial real estate market is real but not central to American's institutional identity. (Added 2026-07-22.)" },
     "entertainmentMedia": { "strength": 76, "notes": "Underrated but genuine media production pipeline. (Remapped 2026-07-12 from non-standard key 'media'.)" }
   },
     "wealthMobility": {
@@ -20725,7 +20748,8 @@ const UNIVERSITY_DB_V5 = {
       "civicEngagement": 72
     },
     "industryPathways": {
-    "entertainmentMedia": { "strength": 92, "notes": "The single most connected music-industry credential outside dedicated conservatories. (Remapped 2026-07-12 from non-standard key 'musicEntertainmentBusiness'.)" }
+    "entertainmentMedia": { "strength": 92, "notes": "The single most connected music-industry credential outside dedicated conservatories. (Remapped 2026-07-12 from non-standard key 'musicEntertainmentBusiness'.)" },
+    "realEstate": { "strength": 30, "notes": "A minor, secondary pathway — Massey College of Business placement runs overwhelmingly through Belmont's dominant music/entertainment business identity rather than real estate. (Added 2026-07-22.)" }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -21045,6 +21069,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "consulting": { "strength": 84, "notes": "Questrom has strong Boston-area corporate placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
     "investmentBanking": { "strength": 76, "notes": "Questrom has a secondary Wall Street placement pipeline. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "realEstate": { "strength": 48, "notes": "Questrom offers real estate finance coursework, benefiting from the Boston-area commercial market — a real but secondary pathway relative to Questrom's dominant consulting/finance and media placement. (Added 2026-07-22.)" },
     "entertainmentMedia": { "strength": 82, "notes": "Strong pipeline into media and journalism nationally. (Remapped 2026-07-12 from non-standard key 'communications'.)" },
     "healthWellness": { "strength": 78, "notes": "Solid pipeline into Boston's biotech and healthcare sector. (Remapped 2026-07-12 from non-standard key 'publicHealth'.)" }
   },
@@ -21359,6 +21384,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "healthWellness": { "strength": 94, "notes": "Top-5 nationally ranked veterinary medicine program." },
     "outdoorIndustry": { "strength": 84, "notes": "Alumni enter conservation, forestry, and environmental agency careers." },
+    "realEstate": { "strength": 38, "notes": "A modest, secondary pathway — Fort Collins and the broader Front Range corridor offer real but limited commercial development activity relative to Denver/Boulder, and CSU has no dedicated real estate program. (Added 2026-07-22.)" },
     "hospitality": { "strength": 86, "notes": "Genuine, distinctive pipeline into Rocky Mountain resort management, ski industry operations, and National Park Service roles. (Added 2026-07-12: previously dropped entirely for lack of a standard key.)" }
   ,
     "pharmaceuticalManufacturing": { "strength": 84, "notes": "Structural evidence, same pattern as University of Iowa: BioMARC is described in its own materials as 'a non-profit Contract Development & Manufacturing Organization for pre-clinical and clinical biologics owned and operated by Colorado State University' — not a nearby company, but a university-run manufacturing operation. Scored just below University of Iowa (88) since Iowa's own materials make a stronger 'largest in the nation' superlative claim, but this is the same class of evidence: the university itself, not an external partner." }
@@ -21667,6 +21693,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "industryPathways": {
     "publicPolicy": { "strength": 88, "notes": "Top-40 nationally ranked law school, strong NYC BigLaw and clerkship pipeline. (Remapped 2026-07-12 from non-standard key 'law' — no dedicated law key exists in the standard schema.)" },
+    "realEstate": { "strength": 60, "notes": "Gabelli School of Business real estate coursework benefits directly from the Lincoln Center campus's embeddedness in the New York City real estate market — a real, secondary pathway relative to Gabelli's dominant Wall Street placement. (Added 2026-07-22.)" },
     "investmentBanking": { "strength": 86, "notes": "Gabelli Business feeds directly into Wall Street — this is the primary, authored signal for Gabelli, not a generic consulting placement. (Corrected 2026-07-12: weighting flipped to lead with investmentBanking, matching the original authored note rather than defaulting consulting to the higher score.)" },
     "consulting": { "strength": 72, "notes": "Real, secondary Gabelli Business consulting placement." }
   },
@@ -21979,7 +22006,8 @@ const UNIVERSITY_DB_V5 = {
     },
     "industryPathways": {
     "publicPolicy": { "strength": 92, "notes": "Elite Elliott School pipeline into international affairs and foreign policy. (Remapped 2026-07-12 from non-standard key 'internationalAffairs'.)" },
-    "consulting": { "strength": 84, "notes": "Strong DC consulting placement." }
+    "consulting": { "strength": 84, "notes": "Strong DC consulting placement." },
+    "realEstate": { "strength": 62, "notes": "GW School of Business houses a genuine MS in Real Estate program, reinforced by DC's major commercial real estate and urban development market — a real, named institutional specialty. (Added 2026-07-22.)" }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -22291,7 +22319,8 @@ const UNIVERSITY_DB_V5 = {
     },
     "industryPathways": {
     "entertainmentMedia": { "strength": 84, "notes": "Strong Hollywood studio pipeline. (Remapped 2026-07-12 from non-standard key 'entertainment'.)" },
-    "technology": { "strength": 78, "notes": "Rising Silicon Beach tech pipeline, a genuine hidden advantage." }
+    "technology": { "strength": 78, "notes": "Rising Silicon Beach tech pipeline, a genuine hidden advantage." },
+    "realEstate": { "strength": 42, "notes": "A modest, secondary pathway — LMU has no dedicated real estate program, though Los Angeles's real estate market provides some regional opportunity beyond LMU's dominant entertainment/Silicon Beach identity. (Added 2026-07-22.)" }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -22604,6 +22633,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "consulting": { "strength": 80, "notes": "Strong Milwaukee corporate pipeline. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
     "investmentBanking": { "strength": 72, "notes": "Real, secondary Milwaukee finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "realEstate": { "strength": 34, "notes": "A modest, secondary pathway — Marquette has no dedicated real estate program, and Milwaukee is a smaller regional market relative to Marquette's dominant consulting/finance and law placement. (Added 2026-07-22.)" },
     "publicPolicy": { "strength": 84, "notes": "Wisconsin's most connected law school. (Remapped 2026-07-12 from non-standard key 'law' — no dedicated law key exists in the standard schema.)" },
     "technology": { "strength": 74, "notes": "Solid manufacturing-adjacent engineering pipeline. (Remapped 2026-07-12 from non-standard key 'engineering'.)" }
   },
@@ -22924,6 +22954,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "defense": { "strength": 92, "notes": "The strongest federal security agency pipeline of any public university." },
     "entrepreneurship": { "strength": 80, "notes": "Smith School of Business is specifically known for social entrepreneurship, anchored by the Center for Social Value Creation — this is a genuine, distinctive Smith specialty, not generic business placement. (Corrected 2026-07-12: previously mapped to generic consulting/investmentBanking.)" },
+    "realEstate": { "strength": 64, "notes": "Smith School of Business houses a genuine Master of Real Estate Development (MRED) program, reinforced by the DC-Baltimore corridor's major real estate market — a real, named specialty distinct from Smith's dominant social entrepreneurship identity. (Added 2026-07-22.)" },
     "technology": { "strength": 84, "notes": "Elite, underrated physics and astronomy research placement." }
   },
     "futureResilience": {
@@ -23232,6 +23263,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "technology": { "strength": 84, "notes": "Strong co-op-driven engineering placement. (Remapped 2026-07-12 from non-standard key 'engineering'.)" },
     "consulting": { "strength": 78, "notes": "Solid business placement reinforced by co-op experience. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" },
+    "realEstate": { "strength": 42, "notes": "A modest, secondary pathway — Northeastern has no dedicated real estate program; D'Amore-McKim placement runs primarily through general business and co-op-driven consulting/tech routes. (Added 2026-07-22.)" },
     "healthWellness": { "strength": 84, "notes": "Strong pipeline into Boston's biotech and healthcare sector via co-op. (Remapped 2026-07-12 from non-standard key 'healthSciences'.)" }
   },
     "wealthMobility": {
@@ -23540,6 +23572,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "investmentBanking": { "strength": 94, "notes": "Stern rivals Wharton for Wall Street placement. (Remapped from non-standard key 'business', split across investmentBanking/consulting, 2026-07-12 — judgment call.)" },
     "consulting": { "strength": 88, "notes": "Stern places strongly into MBB consulting alongside its dominant Wall Street pipeline. (Remapped from non-standard key 'business', 2026-07-12 — judgment call.)" },
+    "realEstate": { "strength": 92, "notes": "Home to the NYU Schack Institute of Real Estate, one of the most respected dedicated real estate programs in the country, with deep placement into New York City's development, REIT, and commercial brokerage ecosystem — a genuine, named institutional strength, not a generic finance-adjacent pathway. (Added 2026-07-22.)" },
     "entertainmentMedia": { "strength": 90, "notes": "Tisch is one of the top film schools in the world. (Remapped from non-standard key 'film', 2026-07-12.)" },
     "medicine": { "strength": 90, "notes": "Grossman's tuition-free model attracts top pre-med talent nationally." }
   },
@@ -23869,6 +23902,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "technology": { "strength": 86, "notes": "Strong across mechanical, electrical, and industrial engineering, with solid Mid-Atlantic corporate placement. (Remapped 2026-07-12 from non-standard key 'engineering'.)" },
     "consulting": { "strength": 84, "notes": "Smeal College of Business has strong Mid-Atlantic consulting placement." },
+    "realEstate": { "strength": 62, "notes": "Smeal College of Business houses the Institute for Real Estate Studies, a genuine, named real estate program with strong Mid-Atlantic development and REIT placement. (Added 2026-07-22.)" },
     "insurance": { "strength": 94, "notes": "One of the strongest actuarial science pipelines in the country — actuaries work primarily in insurance and pension/reinsurance, not investment banking. (Corrected 2026-07-12: previously mapped to investmentBanking for lack of a better key, which misrepresented the field. Now uses the new insurance key.)" }
   },
     "wealthMobility": {
@@ -24186,6 +24220,7 @@ const UNIVERSITY_DB_V5 = {
   ,
     "pharmaceuticalManufacturing": { "strength": 44, "notes": "General industry/geographic plausibility, NOT independently verified this session: Purdue was not named by any specific company researched in this dataset. Score reflects its strong, real chemical/biomedical engineering reputation and Indiana/Midwest proximity to Lilly's Indianapolis home base, but this is a plausibility judgment, not a confirmed pipeline the way Georgia Tech or University of Kentucky's scores are. Flagged honestly as the weaker-evidence tier." }
   ,
+    "realEstate": { "strength": 36, "notes": "A modest, secondary pathway — Purdue has no dedicated real estate program; Krannert placement runs overwhelmingly through Purdue's dominant engineering and manufacturing identity. (Added 2026-07-22.)" },
     "advancedManufacturing": { "strength": 78, "notes": "UPGRADED 2026-07-18 (Midwest scoring pass) from an initial score of 68: the original score was based on general institutional reputation alone (most astronauts of any non-service-academy school). Real, specific, multi-company evidence found this pass: Purdue's College of Engineering runs a named industrial-sponsors program (ManLab) with a real, current list including Caterpillar, Cummins Engine Company, General Motors, Rolls-Royce, and Seagate -- not historical alone, reinforced by a May 2026 Purdue-Caterpillar partnership post and Caterpillar's own October 2025 announcement naming Indiana among the first states to receive funding from its five-year, $100 million manufacturing/workforce initiative. Specific, multi-sponsor, current evidence replaces what was previously reputation-only scoring." }
   },
     "wealthMobility": {
@@ -24496,6 +24531,7 @@ const UNIVERSITY_DB_V5 = {
     "consulting": { "strength": 76, "notes": "Solid DFW business placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)" },
     "investmentBanking": { "strength": 68, "notes": "Secondary DFW finance placement. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)" }
   ,
+    "realEstate": { "strength": 58, "notes": "Neeley School of Business offers a real estate emphasis benefiting directly from the Dallas-Fort Worth market's sustained development activity — a real, secondary pathway relative to Neeley's dominant DFW consulting/finance placement. (Added 2026-07-22.)" },
     "pharmaceuticalManufacturing": { "strength": 20, "notes": "No pharmaceutical manufacturing pathway identified this session. TCU's institutional strength is in business, communications, and liberal arts rather than industrial bioscience or engineering. Included for completeness at the lowest tier in this batch, not a meaningful pathway." }
   ,
     "advancedManufacturing": { "strength": 82, "notes": "Very current, dedicated, real evidence: TCU launched a brand-new Bachelor of Science in Professional Aviation and Aviation Studies degree program in April 2026 (3 months before this scoring pass) with Lockheed Martin named directly in the program's own materials. TCU sits in Fort Worth, which is confirmed as the actual headquarters for Lockheed Martin's entire Aeronautics division -- not a satellite manufacturing site. The Fort Worth F-35 program delivered a record 191 jets in 2025 and secured over $1 billion in new contracts as recently as June 2026." }
@@ -24821,6 +24857,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
     "healthcareAdministration": { "strength": 98, "notes": "The #1 pharmacy school pipeline in the country. (Remapped from non-standard key 'pharmacy', 2026-07-12.)" },
     "consulting": { "strength": 88, "notes": "Kenan-Flagler rivals top private business schools regionally for consulting placement. (Remapped from non-standard key 'business', split across consulting/investmentBanking, 2026-07-12 — judgment call.)" },
+    "realEstate": { "strength": 66, "notes": "Kenan-Flagler Business School houses a well-regarded, named real estate concentration with strong REIT and development placement — a real institutional specialty beyond general consulting/finance strength. (Added 2026-07-22.)" },
     "investmentBanking": { "strength": 82, "notes": "Kenan-Flagler has a real, if secondary, Wall Street pipeline alongside its consulting placement. (Remapped from non-standard key 'business', 2026-07-12 — judgment call.)" },
     "medicine": { "strength": 84, "notes": "Strong pre-med pipeline reinforced by UNC's own top-tier medical school." }
   ,
@@ -25137,6 +25174,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "industryPathways": {
     "technology": { "strength": 90, "notes": "Direct Austin tech ecosystem pipeline." },
+    "realEstate": { "strength": 90, "notes": "McCombs School of Business houses a consistently top-5-ranked real estate program nationally, reinforced by Austin's sustained real estate boom — a genuine, named institutional flagship, not a secondary business pathway. (Added 2026-07-22.)" },
     "entertainmentMedia": { "strength": 94, "notes": "Elite #1-ranked public communications pipeline. (Remapped 2026-07-12 from non-standard key 'communications'.)" },
     "energy": { "strength": 62, "notes": "A real, secondary pathway — the Cockrell School of Engineering has a genuine petroleum engineering program, and Texas's broader energy corridor (Houston, Permian Basin) recruits UT Austin engineering and business graduates directly. (Added 2026-07-12. NOTE: this entry only has 2 industryPathways keys total, far thinner than peer flagship publics — worth a fuller remap pass beyond just this energy addition.)" }
   ,
@@ -25876,7 +25914,8 @@ const UNIVERSITY_DB_V5 = {
       "civicEngagement": 84
     },
     "industryPathways": {
-    "investmentBanking": { "strength": 92, "notes": "One of the strongest Boston finance pipelines of any Jesuit university. (Remapped 2026-07-12 from non-standard key 'finance'.)" }
+    "investmentBanking": { "strength": 92, "notes": "One of the strongest Boston finance pipelines of any Jesuit university. (Remapped 2026-07-12 from non-standard key 'finance'.)" },
+    "realEstate": { "strength": 44, "notes": "Carroll School of Management offers real estate finance coursework, benefiting from the Boston-area commercial market — a real but secondary pathway relative to Carroll's dominant investment banking placement. (Added 2026-07-22.)" }
   },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -55717,6 +55756,7 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
       "publicPolicy": { "strength": 92, "notes": "Historically unmatched civil rights law legacy and direct Capitol Hill proximity." },
       "medicine": { "strength": 84, "notes": "Howard University Hospital provides direct academic medicine and clinical training access." },
+    "realEstate": { "strength": 36, "notes": "A modest, secondary pathway — Howard has no dedicated real estate program; School of Business placement runs primarily through Howard's dominant public policy, medicine, and entertainment media pipelines rather than real estate specifically. (Added 2026-07-22.)" },
       "entertainmentMedia": { "strength": 80, "notes": "Chadwick A. Boseman College of Fine Arts feeds directly into film, television, and entertainment industries." },
       "investmentBanking": { "strength": 74, "notes": "Rapidly growing Wall Street recruiting pipeline as major banks have expanded HBCU-focused hiring programs." }
     },

@@ -29,29 +29,25 @@ const TILE_POOLS = {
     'cooking','baking','drawing','painting','photography','filmmaking',
     'fashion_design','graphic_design','animation','music_production',
     'playing_instrument','singing','writing_stories','nail_art','hair_makeup',
-    'woodworking','three_d_printing','roblox_building','lego_building'
+    'woodworking','three_d_printing','tiktok_content'
   ],
   move: [
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
-    'esports_gaming','horseback_riding','rock_climbing','soccer','basketball',
-    'football','flag_football','baseball','softball','volleyball','lacrosse','field_hockey',
-    'swim_team','track_relay','club_travel_sports','ride_bike'
+    'esports_gaming','horseback_riding','rock_climbing'
   ],
   think: [
     'science_experiments','psychology','biology','chemistry','coding_programming',
     'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
-    'true_crime','puzzles_brain_teasers','understanding_why_people',
-    'youtube_learning','fantasy_sports'
+    'true_crime','puzzles_brain_teasers','understanding_why_people','logic_puzzle_games'
   ],
   people: [
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
-    'teaching_tutoring','advocacy_activism','entrepreneurship','young_entrepreneur','first_aid_emergencies'
+    'teaching_tutoring','advocacy_activism','entrepreneurship','first_aid_emergencies'
   ],
   systems: [
     'cosmetic_beauty_science','cooking_chemistry','medical_science','how_body_moves',
     'learning_differences','environment_sustainability','engineering_challenges',
-    'architecture','nutrition_food_science','business_startups',
-    'supply_chain_logistics','precise_procedures','finance_investing'
+    'architecture','nutrition_food_science','business_startups'
   ]
 };
 
@@ -64,9 +60,7 @@ const ALWAYS_SHOW = [
   'animal_care',      // strong EQ indicator
   'fitness_lifting',  // universal move tile
   'writing_stories',  // strong signal across many paths
-  'photography',      // broad creative signal
-  'soccer',           // team-sport minimum — guaranteed team-sport representation
-  'basketball'        // team-sport minimum — guaranteed team-sport representation
+  'photography'       // broad creative signal
 ];
 
 // ─────────────────────────────────────────────────────────────
@@ -80,7 +74,7 @@ const FREE_TIME_MAP = {
     // Make cluster — full representation
     'cooking','baking','drawing','painting','photography','filmmaking',
     'fashion_design','graphic_design','animation','music_production',
-    'playing_instrument','nail_art','hair_makeup','woodworking','three_d_printing',
+    'playing_instrument','nail_art','hair_makeup','woodworking','three_d_printing','tiktok_content',
     // Systems tiles that connect to making
     'cosmetic_beauty_science','cooking_chemistry','architecture','engineering_challenges',
     // Think tiles that connect to making
@@ -90,9 +84,7 @@ const FREE_TIME_MAP = {
   moving: [
     // Move cluster — full representation
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
-    'esports_gaming','horseback_riding','rock_climbing','soccer','basketball',
-    'football','baseball','softball','volleyball','lacrosse','field_hockey',
-    'swim_team','track_relay','club_travel_sports',
+    'esports_gaming','horseback_riding','rock_climbing',
     // Systems tiles that connect to movement
     'how_body_moves','medical_science','nutrition_food_science',
     // People tiles that connect to movement
@@ -105,7 +97,7 @@ const FREE_TIME_MAP = {
     // Think cluster — full representation
     'science_experiments','psychology','biology','chemistry','coding_programming',
     'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
-    'true_crime','puzzles_brain_teasers','understanding_why_people',
+    'true_crime','puzzles_brain_teasers','understanding_why_people','logic_puzzle_games',
     // Systems tiles that connect to thinking
     'cosmetic_beauty_science','medical_science','engineering_challenges',
     'environment_sustainability','cooking_chemistry','architecture',
@@ -118,7 +110,7 @@ const FREE_TIME_MAP = {
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
     'teaching_tutoring','advocacy_activism','entrepreneurship','first_aid_emergencies',
     // Make tiles that connect to people
-    'filmmaking','writing_stories','photography','music_production','singing',
+    'filmmaking','writing_stories','photography','music_production','singing','tiktok_content',
     // Think tiles that connect to people
     'psychology','understanding_why_people','true_crime','philosophy',
     // Systems tiles that connect to people
@@ -196,31 +188,85 @@ const WORK_STYLE_BOOST = {
 // ─────────────────────────────────────────────────────────────
 
 function curateInitialTiles(answers) {
-  // CURATION REMOVED (per approved spec, July 2026):
-  // Previously scored tiles against free_time/self_view/work_style answers
-  // and capped the result at 32. Now returns every non-EQ tile, unfiltered —
-  // too many students span multiple activities (in-school sports, personal
-  // hobbies, club/travel teams) for a curated subset to cover everyone.
-  // Signature kept identical so existing callers don't need changes.
-  //
-  // FIXED July 2026: this function was silently discarding answers.pronoun,
-  // meaning gender-restricted tiles (nail_art, hair_makeup, dance, cheerleading
-  // -> female only; roblox_building, lego_building -> male only) were never
-  // actually filtered despite being correctly tagged and despite the caller
-  // in lifescape.html correctly passing pronoun in. getTilesForGender()
-  // already existed in crosswalk-db.js with the right logic — it just wasn't
-  // being called from anywhere. Wired in here, at the one place all tile
-  // curation flows through.
-  const allTileIds = Object.values(TILE_POOLS).flat();
-  const pronoun = answers && answers.pronoun;
-  const gender = pronoun === 'he' ? 'male' : pronoun === 'she' ? 'female' : null;
-  if (!gender || typeof VECTOR_CROSSWALK === 'undefined') return allTileIds;
+  const { free_time = [], self_view = 'both', work_style = 'depends' } = answers;
 
-  return allTileIds.filter(id => {
-    const tile = VECTOR_CROSSWALK.find(t => t.id === id);
-    if (!tile || !tile.gender || tile.gender === 'both') return true;
-    return tile.gender === gender;
+  // Score every activity tile
+  const scores = {};
+
+  // Initialize all activity tiles at 0
+  Object.values(TILE_POOLS).flat().forEach(id => { scores[id] = 0; });
+
+  // Q1 — free time answers (multi-select, each adds weight)
+  free_time.forEach(ft => {
+    const pool = FREE_TIME_MAP[ft] || [];
+    pool.forEach((id, idx) => {
+      // Earlier items in the pool get higher weight (they're more central to that path)
+      scores[id] = (scores[id] || 0) + (pool.length - idx);
+    });
   });
+
+  // Q2 — self view modifier (additive bonus)
+  const selfViewBonus = SELF_VIEW_ADDITIONS[self_view] || SELF_VIEW_ADDITIONS['both'];
+  selfViewBonus.forEach(id => { scores[id] = (scores[id] || 0) + 5; });
+
+  // Q3 — work style modifier (smaller additive bonus)
+  const workStyleBonus = WORK_STYLE_BOOST[work_style] || WORK_STYLE_BOOST['depends'];
+  workStyleBonus.forEach(id => { scores[id] = (scores[id] || 0) + 3; });
+
+  // Always-show tiles get a baseline score so they always appear
+  ALWAYS_SHOW.forEach(id => { scores[id] = Math.max(scores[id] || 0, 8); });
+
+  // If no free_time answers given — show balanced default set
+  if (free_time.length === 0) {
+    Object.values(TILE_POOLS).flat().forEach(id => {
+      scores[id] = (scores[id] || 0) + 5;
+    });
+  }
+
+  // Sort by score descending, take top 32
+  const sorted = Object.entries(scores)
+    .sort((a, b) => b[1] - a[1])
+    .map(([id]) => id);
+
+  // Ensure cluster balance — at least 2 tiles from each non-dominant cluster
+  const result = ensureClusterBalance(sorted, free_time);
+
+  return result.slice(0, 32);
+}
+
+
+// ─────────────────────────────────────────────────────────────
+// CLUSTER BALANCE ENFORCER
+// Ensures no cluster is completely absent from the initial set
+// A student who picked "making" still sees science and people tiles
+// because cross-cluster discovery is how unexpected combos fire
+// ─────────────────────────────────────────────────────────────
+
+function ensureClusterBalance(sortedIds, free_time) {
+  const MIN_PER_CLUSTER = 2;
+  const result = [...sortedIds];
+  const clusterCounts = {};
+
+  // Count how many tiles from each cluster are in top 32
+  result.slice(0, 32).forEach(id => {
+    const cluster = getCluster(id);
+    if (cluster) clusterCounts[cluster] = (clusterCounts[cluster] || 0) + 1;
+  });
+
+  // For any cluster with fewer than MIN tiles, inject the top-scored tile from that cluster
+  Object.keys(TILE_POOLS).forEach(cluster => {
+    if ((clusterCounts[cluster] || 0) < MIN_PER_CLUSTER) {
+      const clusterTiles = TILE_POOLS[cluster];
+      // Find the highest-scored tile from this cluster not already in result
+      const toAdd = clusterTiles.find(id => !result.slice(0, 32).includes(id));
+      if (toAdd) {
+        // Insert at position 30 (before the last two slots)
+        result.splice(30, 0, toAdd);
+      }
+    }
+  });
+
+  return result;
 }
 
 function getCluster(tileId) {
@@ -266,17 +312,6 @@ const TILE_ADJACENCY = {
   esports_gaming:       ['coding_programming','roblox_game_design','ai_machine_learning','data_statistics'],
   horseback_riding:     ['animal_care','how_body_moves','environment_sustainability'],
   rock_climbing:        ['fitness_lifting','environment_sustainability','how_body_moves'],
-  soccer:               ['fitness_lifting','how_body_moves','teaching_tutoring','entrepreneurship'],
-  basketball:           ['fitness_lifting','how_body_moves','teaching_tutoring','entrepreneurship'],
-  football:             ['fitness_lifting','how_body_moves','teaching_tutoring','entrepreneurship'],
-  baseball:             ['fitness_lifting','how_body_moves','data_statistics','entrepreneurship'],
-  softball:             ['fitness_lifting','how_body_moves','data_statistics','entrepreneurship'],
-  volleyball:           ['fitness_lifting','how_body_moves','teaching_tutoring'],
-  lacrosse:             ['fitness_lifting','how_body_moves','teaching_tutoring'],
-  field_hockey:         ['fitness_lifting','how_body_moves','teaching_tutoring'],
-  swim_team:            ['fitness_lifting','how_body_moves','nutrition_food_science'],
-  track_relay:          ['fitness_lifting','how_body_moves','nutrition_food_science'],
-  club_travel_sports:   ['fitness_lifting','how_body_moves','entrepreneurship'],
   science_experiments:  ['chemistry','biology','cosmetic_beauty_science','medical_science'],
   psychology:           ['mental_health_wellness','understanding_why_people','philosophy','biology'],
   biology:              ['medical_science','science_experiments','chemistry','environment_sustainability'],
@@ -451,3 +486,94 @@ if (typeof module !== 'undefined') module.exports = {
   TILE_ADJACENCY,
   ALWAYS_SHOW
 };
+
+// ─────────────────────────────────────────────────────────────
+// STUDENT-AGENT-002 Gate 4, Item 2 — Realm-Weighting Map (Parallel Tagging Layer)
+// Built 2026-07-22. Scope decision (confirmed by Matt): 5 realms, matching
+// the live tile system already shipping in lifescape.html (CLUSTER_CONFIG /
+// CLUSTER_ORDER / TILE_POOLS: make, move, think, people, systems) — NOT the
+// 4-realm "Make/Move/Think/Create" language in the original spec text, which
+// does not match what is actually live and would have silently dropped
+// People/Systems as weighting targets.
+//
+// SCOPE (per OQ-1's recommendation, confirmed by Matt): this starts as a
+// lightweight parallel tagging layer, not a full retrofit of every tile.
+// Seeded from ALWAYS_SHOW (8 tiles) — the closest honest proxy available for
+// "most commonly encountered/selected" tiles, since no real tile-selection
+// telemetry exists in this workspace. This is a disclosed proxy, not
+// measured usage data; if real selection-frequency data becomes available
+// later (e.g. from Airtable session capture), it should replace this seed
+// set rather than being treated as confirmation of it.
+//
+// WEIGHTING METHOD: each tile's weights are grounded in two real sources,
+// not invented from scratch —
+//   (1) its home cluster in TILE_POOLS above (primary weight), and
+//   (2) cross-realm evidence already live in lifescape.html's existing
+//       hasXSignal detection functions (hasCreativeSignal, hasBusinessSignal,
+//       hasTechSignal, hasBodySignal, hasNatureSignal, hasHistorySignal,
+//       mediaSignal, hasMusicSignal) — several tiles have been informally
+//       treated as multi-realm by those functions for a while; this map
+//       formalizes that existing evidence into explicit numeric weights
+//       rather than asserting new cross-realm claims.
+// Weights are directional strength estimates (not requiring uniqueness or
+// exact normalization to 1.0), consistent with how the rest of this file's
+// scoring signals (e.g. TILE_ADJACENCY) already work.
+//
+// REMAINING SCOPE: every other tile in TILE_POOLS (the ~100+ not listed
+// here) is intentionally untagged for this pass — a full retrofit is
+// explicitly out of scope per the confirmed lightweight-first approach.
+const TILE_REALM_WEIGHTS = {
+  cooking: {
+    make: 0.70, systems: 0.15, think: 0.15, people: 0, move: 0,
+    evidence: 'Home cluster: make. Secondary systems/think weight reflects technique and food-science adjacency (cooking_chemistry exists as a related but distinct tile).'
+  },
+  playing_instrument: {
+    make: 0.55, people: 0.20, move: 0.15, think: 0.10, systems: 0,
+    evidence: 'Home cluster: make. hasMusicSignal groups it with music_production/singing (make-reinforcing). People weight reflects performance-for-others; move weight reflects the physical practice/discipline component.'
+  },
+  coding_programming: {
+    think: 0.55, systems: 0.30, make: 0.15, people: 0, move: 0,
+    evidence: 'Home cluster: think. hasTechSignal groups it with ai_machine_learning/data_statistics/robotics (think-reinforcing). Systems weight reflects its appearance as a "Think tile that connects to making" in the FREE_TIME_MAP "making" pool above.'
+  },
+  entrepreneurship: {
+    systems: 0.40, people: 0.35, think: 0.15, make: 0.10, move: 0,
+    evidence: 'Home cluster: people. hasBusinessSignal groups it with business_startups (a systems-cluster tile) and fantasy_sports_roster — the strongest existing cross-realm evidence of any ALWAYS_SHOW tile, hence the higher systems weight than its home cluster alone would suggest.'
+  },
+  animal_care: {
+    people: 0.45, think: 0.30, move: 0.10, systems: 0.10, make: 0.05,
+    evidence: 'Home cluster: people. hasNatureSignal and hasEnviroSignal both group it with biology/science_experiments (think-reinforcing) and outdoor_activities/rock_climbing (a mild move-adjacency).'
+  },
+  fitness_lifting: {
+    move: 0.70, systems: 0.15, people: 0.15, think: 0, make: 0,
+    evidence: 'Home cluster: move. hasBodySignal groups it with how_body_moves/medical_science (systems-adjacent, body-as-system) and mental_health_wellness (people-adjacent).'
+  },
+  writing_stories: {
+    make: 0.45, think: 0.25, people: 0.25, systems: 0.05, move: 0,
+    evidence: 'Home cluster: make. hasHistorySignal groups it with philosophy/understanding_why_people/advocacy_activism (think/people-reinforcing); hasCreativeSignal and mediaSignal both reinforce the make weight.'
+  },
+  photography: {
+    make: 0.70, people: 0.15, think: 0.10, systems: 0.05, move: 0,
+    evidence: 'Home cluster: make. hasCreativeSignal and mediaSignal both reinforce make; no strong existing cross-realm evidence beyond a mild people weight (photography-of-people is a common real-world pattern, not independently evidenced in any existing signal function).'
+  },
+  tiktok_content: {
+    make: 0.45, systems: 0.30, people: 0.20, think: 0.05, move: 0,
+    evidence: 'CORRECTED 2026-07-23: this entry previously used a fabricated tile ID (content_creation) that does not exist in the real crosswalk (crosswalk-db.js) — the real tile is tiktok_content, cluster \'make\' (not \'systems\' as originally guessed), with authored riasec_weights {R:0,I:1,A:3,S:1,E:2,C:1}. Weights here are grounded in that real data: make gets the largest share matching the authored cluster and the strong Artistic (A:3) weight; systems reflects the real Enterprising (E:2) weight (platform/audience-growth mechanics); people reflects the modest real Social (S:1) weight; think reflects the minor Investigative (I:1) weight. This is now derived from real authored data, not an independent guess.'
+  },
+  logic_puzzle_games: {
+    think: 0.70, systems: 0.30, people: 0, make: 0, move: 0,
+    evidence: 'CORRECTED 2026-07-23: this entry previously used a fabricated tile ID (daily_word_puzzles) that does not exist in the real crosswalk (crosswalk-db.js) — the real tile is logic_puzzle_games (Wordle/Connections/Sudoku/logic games), cluster \'think\', with authored riasec_weights {R:0,I:3,A:0,S:0,E:0,C:3}. The original entry included a people weight (0.20) reasoned from friends comparing scores/streaks — that reasoning is NOT supported by the real authored data, which shows zero (0) Social weight. Removed rather than kept on speculation the data itself contradicts. Think reflects the strong real Investigative (I:3) weight; systems reflects the strong real Conventional (C:3) weight (categorization/procedural logic, especially for Connections specifically).'
+  }
+};
+
+function getTileRealmWeights(tileId) {
+  return TILE_REALM_WEIGHTS[tileId] || null;
+}
+
+if (typeof window !== 'undefined') {
+  window.TILE_REALM_WEIGHTS = TILE_REALM_WEIGHTS;
+  window.getTileRealmWeights = getTileRealmWeights;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports.TILE_REALM_WEIGHTS = TILE_REALM_WEIGHTS;
+  module.exports.getTileRealmWeights = getTileRealmWeights;
+}

@@ -676,6 +676,21 @@ const GEO_INDUSTRY_DB_BAYAREA = {
         student_connection: "San Francisco Theological Seminary, one of the oldest and most established divinity schools on the West Coast, has been based in San Anselmo since 1892 — a genuine academic and religious-studies anchor in a small Marin town."
       }
     ]
+  },
+
+  "94111": {
+    zip: "94111",
+    neighborhood: "San Francisco (Embarcadero / Financial District North)",
+    county: "San Francisco",
+    clusters: [
+      {
+        name: "Real Estate Investment (Industrial REIT)",
+        naics: 53,
+        distance: "Local",
+        anchor_employers: ["Prologis (global headquarters)"],
+        student_connection: "Prologis — the world's largest owner and developer of logistics real estate, with warehouse and distribution facilities leased to Amazon, FedEx, and thousands of other companies globally — is genuinely headquartered on San Francisco's Embarcadero, not in a more traditionally 'industrial' city. A student drawn to real estate here is not limited to Silicon Valley tech or venture capital; institutional real estate investment at global scale is a real, distinct Bay Area career path in its own right. (Added 2026-07-22, closing a real estate content gap — Bay Area is one of only 6 metros with a dedicated real estate occupation profile in NAICS_TO_ONET, but had zero real estate representation in this file until now.)"
+      }
+    ]
   }
 
 };

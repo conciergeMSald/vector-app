@@ -18,6 +18,13 @@ const GEO_INDUSTRY_DB_JACKSONVILLE = {
         distance: "Local",
         anchor_employers: ["FIS (global headquarters)"],
         student_connection: "FIS is a genuine Fortune 500-scale fintech infrastructure company — $10B+ revenue, self-described as a 'Fintech Company' building the technology banks and capital-markets firms actually run on, not managing money directly. Moved into this specific downtown Jacksonville headquarters building in July 2019 — a real, recent commitment to the city, not a legacy address."
+      },
+      {
+        name: "Real Estate Investment (Shopping Center REIT)",
+        naics: 53,
+        distance: "Local",
+        anchor_employers: ["Regency Centers (global headquarters)"],
+        student_connection: "Regency Centers is a publicly traded (NASDAQ: REG) REIT and one of the largest owners and operators of grocery-anchored shopping centers in the country, genuinely headquartered in downtown Jacksonville rather than a more traditionally expected market like New York or Chicago. A real, institutional real estate investment career path exists here alongside FIS's fintech identity, not instead of it. (Added 2026-07-22 — Jacksonville was reconsidered for real estate content given its size and growth, alongside Tampa Bay and Nashville.)"
       }
     ]
   },

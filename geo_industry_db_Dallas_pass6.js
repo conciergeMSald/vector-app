@@ -93,10 +93,10 @@ const GEO_INDUSTRY_DB_DALLAS = {
     clusters: [
       {
         name: "Real Estate Investment",
-        naics: 54,
+        naics: 53,
         distance: "Local",
         anchor_employers: ["Crow Holdings"],
-        student_connection: "Crow Holdings — the Trammell Crow family's real estate investment firm, one of the largest privately held real estate companies in the country — reflects Preston Hollow's genuine, long-standing concentration of real estate wealth and dealmaking."
+        student_connection: "Crow Holdings — the Trammell Crow family's real estate investment firm, one of the largest privately held real estate companies in the country — reflects Preston Hollow's genuine, long-standing concentration of real estate wealth and dealmaking. (Corrected 2026-07-22: previously tagged naics 54/Professional Services — Crow Holdings is a direct real estate investment pathway, not generic professional services.)"
       }
     ]
   },

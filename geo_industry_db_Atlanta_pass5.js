@@ -473,6 +473,21 @@ const GEO_INDUSTRY_DB_ATLANTA = {
         student_connection: "The University of Georgia — the state's flagship university and a College Football Playoff-caliber athletics program — is the single most common in-state destination for ambitious Atlanta-area students, and its athletics and sports management programs feed directly into the Atlanta sports-business corridor (Falcons, Hawks, Braves, Atlanta United, and the Chick-fil-A Peach Bowl)."
       }
     ]
+  },
+
+  "30326": {
+    zip: "30326",
+    neighborhood: "Buckhead",
+    county: "Fulton",
+    clusters: [
+      {
+        name: "Real Estate Investment (Office REIT)",
+        naics: 53,
+        distance: "Local",
+        anchor_employers: ["Cousins Properties (headquarters)"],
+        student_connection: "Cousins Properties — a publicly traded (NYSE: CUZ) office REIT headquartered in Buckhead — owns and develops premier office towers across the Sun Belt, giving Atlanta students a genuine, direct institutional real estate investment pathway distinct from the tech, logistics, and entertainment corridors that dominate the rest of this metro. (Added 2026-07-22, closing a real estate content gap identified during NAICS-53-BUILD-001 Step 6 — Atlanta had zero real estate representation despite being a genuinely major national real estate market.)"
+      }
+    ]
   }
 
 };

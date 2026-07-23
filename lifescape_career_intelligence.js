@@ -137,18 +137,21 @@ const IBIS_WORLD_REGISTRY = _g.IBIS_WORLD_REGISTRY = {
 
   building: {
     id: 'building',
-    label: 'The world of building things',
+    label: 'The world of building things and real estate',
     ibis_codes: ['OD2300','OD2310','OD2320','OD2390'],
     career_expressions: [
       { title: 'Civil Engineer',           years: 3, pay: '$80K–$150K',  path: 'BS Engineering → PE License → Senior engineer' },
       { title: 'Construction Project Manager', years: 4, pay: '$90K–$180K', path: 'Field experience → PMP → VP' },
       { title: 'Aerospace Engineer',       years: 4, pay: '$100K–$180K', path: 'BS Aero → Specialist → Principal engineer' },
+      { title: 'Real Estate Developer',    years: 4, pay: '$90K–$300K+', path: 'Analyst → Development Associate → Development Director' },
+      { title: 'Commercial Broker',        years: 3, pay: '$60K–$500K+ (commission-driven)', path: 'Broker associate → Senior broker → Principal' },
+      { title: 'REIT Analyst',             years: 3, pay: '$85K–$200K', path: 'Analyst → Senior analyst → Portfolio manager' },
     ],
-    top_metros: ['Houston','Detroit','Seattle','Phoenix','Dallas'],
+    top_metros: ['Houston','Detroit','Seattle','Phoenix','Dallas','New York','Miami'],
     growth: 'strong',
     v2_affinity: ['systems','analytical'],
     v4_affinity: ['work'],
-    university_pipeline: ['University of Michigan','Purdue University','Georgia Institute of Technology','Texas A&M University','California Polytechnic State University'],
+    university_pipeline: ['University of Michigan','Purdue University','Georgia Institute of Technology','Texas A&M University','California Polytechnic State University','New York University','University of Wisconsin-Madison','University of Texas at Austin','University of Maryland','University of Denver'],
   },
 
   money: {

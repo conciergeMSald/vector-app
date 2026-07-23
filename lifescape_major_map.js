@@ -1,7 +1,7 @@
 /**
  * VECTOR Lifescape — Major Map
  * File: lifescape_major_map.js
- * Version: 1.1 — Docstring correction + CIP wiring — July 10, 2026
+ * Version: 1.0 — Tier 1 Build — June 19, 2026
  *
  * PURPOSE:
  * Maps NAICS industry clusters → declared major candidates → entry careers → program keywords.
@@ -10,23 +10,10 @@
  *   — matchUniversities() D4 scorer (getProgramKeywords replaces brittle free-text matching)
  *   — Counselor View tab (primary_major, secondary_major, entry_careers rendered)
  *
- * BUILD STATUS (corrected 2026-07-10 — the "Tier 1/2/3, 4 of 19" status below was stale;
- * verified by counting actual populated MAJOR_MAP keys against naics_to_cip_bridge.json):
- * ✅ 29 NAICS sectors built with full major content: 11, 21, 22, 23, 31, 32, 33, 42, 44, 48,
- *    51, 52, 54, 61, 62, 71, 72, 81, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101
- *    (91-101 are proprietary VECTOR sectors for career clusters absent from federal NAICS —
- *    no CIP crosswalk applies to these, by design)
- * ⬜ 3 sectors pending — confirmed missing against naics_to_cip_bridge.json's 19 real federal
- *    sectors: 53 (Real Estate), 55 (Management of Companies and Enterprises),
- *    56 (Administrative and Support Services). Filed on the post-MVP content list alongside
- *    the university-content.js truncation sweep — new major/career/narrative authorship,
- *    not a mechanical fix. 2022-NAICS-to-SIC-Crosswalk.xlsx has the sub-industry detail
- *    (24 sub-industries for 53, 3 for 55, 44 for 56) to ground that authoring when it happens.
- *
- * CIP CODES: NAICS_CIP_CODES (exported below) gives the federal CIP-code list per sector,
- * sourced directly from naics_to_cip_bridge.json for the 16 sectors present in both files.
- * This is sector-level data only (the bridge doesn't distinguish which CIP applies to which
- * specific major within a sector) — treat it as sector-level grounding, not a per-major field.
+ * BUILD STATUS:
+ * ✅ Tier 1 — NAICS 51, 52, 54, 71 (complete)
+ * ⬜ Tier 2 — NAICS 62, 72, 44/45, 81 (pending)
+ * ⬜ Tier 3 — NAICS 61, 23, 33, 48/49, 92 (pending)
  *
  * STANDING SOP:
  * Requirements first → Architecture second → Code last.
@@ -57,7 +44,6 @@ const MAJOR_MAP = {
   51: [
     {
       major_label: 'Computer Science',
-      career_world: 'technology',
       riasec_affinity: ['I', 'R', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['computer science', 'software engineering', 'CS ranking', 'coding bootcamp pipeline', 'tech recruitment'],
@@ -94,7 +80,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Film & Television Production',
-      career_world: 'making',
       riasec_affinity: ['A', 'E', 'I'],
       riasec_conflict: ['C', 'R'],
       program_keywords: ['film production', 'television', 'screenwriting', 'directing', 'entertainment industry pipeline'],
@@ -127,7 +112,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Digital Media & Communication',
-      career_world: 'making',
       riasec_affinity: ['A', 'E', 'S'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['digital media', 'content strategy', 'social media', 'multimedia', 'communication'],
@@ -160,7 +144,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Information Systems',
-      career_world: 'technology',
       riasec_affinity: ['C', 'I', 'E'],
       riasec_conflict: ['A'],
       program_keywords: ['information systems', 'MIS', 'business technology', 'data management', 'enterprise software'],
@@ -189,7 +172,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Game Design & Interactive Media',
-      career_world: 'making',
       riasec_affinity: ['A', 'I', 'R'],
       riasec_conflict: ['S', 'C'],
       program_keywords: ['game design', 'interactive media', 'UX design', 'game development', 'Unity'],
@@ -218,7 +200,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Journalism',
-      career_world: 'persuasion',
       riasec_affinity: ['A', 'E', 'S'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['journalism', 'reporting', 'media', 'news', 'investigative', 'broadcast'],
@@ -253,7 +234,6 @@ const MAJOR_MAP = {
   52: [
     {
       major_label: 'Finance',
-      career_world: 'money',
       riasec_affinity: ['C', 'E', 'I'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['finance', 'investment banking', 'Wall Street recruiting', 'financial modeling', 'Bloomberg terminal'],
@@ -286,7 +266,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Accounting',
-      career_world: 'money',
       riasec_affinity: ['C', 'I', 'R'],
       riasec_conflict: ['A', 'E'],
       program_keywords: ['accounting', 'CPA pipeline', 'audit', 'tax', 'Big Four recruiting'],
@@ -315,7 +294,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Economics',
-      career_world: 'money',
       riasec_affinity: ['I', 'C', 'E'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['economics', 'econometrics', 'policy', 'quantitative analysis', 'research'],
@@ -339,16 +317,11 @@ const MAJOR_MAP = {
         {
           domain: 'Behavioral Economics & Consumer Research',
           edge: 'The field that began as an academic challenge to rational choice theory has become one of the most commercially applied disciplines in the economy. Companies use behavioral economics to design subscription pricing, retirement enrollment systems, health insurance choices, and e-commerce checkout flows — all of it structured to produce the outcome the designer intends by understanding how humans actually decide rather than how they theoretically should. An economics student who develops genuine interest in behavioral research is building toward a career that sits at the intersection of academia and industry, where the demand for people who can apply the research is growing faster than the supply of people trained to do it.'
-        },
-        {
-          domain: 'Health Economics & Outcomes Research (HEOR)',
-          edge: 'A drug that works in a clinical trial still has to prove it is worth paying for — and the people who build that case are not the scientists who discovered it. They are health economists, running budget impact models, cost-effectiveness analyses, and burden-of-illness studies that translate a clinical endpoint into the language a payer actually uses to decide who gets covered, at what price, under what criteria. The work is deliberately conservative: an economist who overstates a model\'s certainty loses credibility with the payers whose trust the entire evidence package depends on, and the ones who last in this field are the ones who can say plainly what a number does and does not prove. Pfizer, Merck, and Eli Lilly all run in-house HEOR teams, and IQVIA and Evidera are among the specialist firms built entirely around this discipline, recruiting economics graduates who bring quantitative rigor and an ability to explain a model to someone who did not build it. Tufts University\'s Center for the Study of Drug Development and the University of Washington\'s Pharmaceutical Outcomes Research program both feed directly into this pipeline.'
         }
       ]
     },
     {
       major_label: 'Business Administration',
-      career_world: 'money',
       riasec_affinity: ['E', 'C', 'S'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['business administration', 'management', 'operations', 'business fundamentals', 'MBA pipeline'],
@@ -377,7 +350,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Real Estate',
-      career_world: 'money',
       riasec_affinity: ['E', 'C', 'S'],
       riasec_conflict: ['I', 'A'],
       program_keywords: ['real estate', 'property management', 'REIT', 'development', 'commercial real estate'],
@@ -408,7 +380,6 @@ const MAJOR_MAP = {
   54: [
     {
       major_label: 'Marketing',
-      career_world: 'persuasion',
       riasec_affinity: ['E', 'A', 'S'],
       riasec_conflict: ['R', 'I'],
       program_keywords: ['marketing', 'brand management', 'consumer behavior', 'digital marketing', 'advertising'],
@@ -448,16 +419,11 @@ const MAJOR_MAP = {
         {
           domain: 'Sports Business & Athlete Brand Management',
           edge: 'The business of sport has become the business of attention — and the athletes, teams, and leagues that understand how to build and sustain audiences in a fragmented media environment are worth exponentially more than those who do not. A marketing-trained professional in sports is not doing promotions. They are building the commercial infrastructure of how sport gets watched, followed, and monetized for the next generation. Ohio State, Georgetown, and Northwestern all maintain recruiting relationships with the NFL, NBA, and major sports agencies, and all three have placed undergraduate marketing students into brand strategy roles that previously required an MBA and several years of waiting.'
-        },
-        {
-          domain: 'Creator Economy & Influencer Talent Management',
-          edge: 'The audience a creator builds is not a marketing channel — it is the product, and the people who manage the relationship between a creator and the brands that want access to that audience are doing something genuinely new in the marketing profession: negotiating deals where the media being bought is the ongoing trust one person has built with strangers. United Talent Agency built a dedicated Creators division in 2024 — a legacy Hollywood talent agency opening physical office space specifically for digital talent, gaming, and influencer representation, treated as core business rather than a side project. The 1 billion dollar acquisition of Rhode by e.l.f. Beauty, the skincare brand Hailey Bieber built on community before she had a product line, is the clearest signal yet that the marketing skill of building genuine audience trust is now worth more than traditional advertising spend at some companies. Entry into this world runs less through a formal campus-recruiting pipeline than through the agent-trainee and mailroom programs UTA itself runs — open to any academic background, notoriously demanding, and the same entry point that has produced generations of the most powerful agents in the industry — alongside a dedicated Marketing and Brand Partnerships Training Program UTA offers directly to applicants.'
         }
       ]
     },
     {
       major_label: 'Political Science / Pre-Law',
-      career_world: 'justice',
       riasec_affinity: ['E', 'S', 'I'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['political science', 'pre-law', 'law school pipeline', 'policy', 'government'],
@@ -486,7 +452,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Psychology',
-      career_world: 'power',
       riasec_affinity: ['S', 'I', 'A'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['psychology', 'behavioral science', 'human behavior', 'counseling pipeline', 'research methods'],
@@ -531,7 +496,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Communications & Public Relations',
-      career_world: 'persuasion',
       riasec_affinity: ['E', 'S', 'A'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['public relations', 'communications', 'media relations', 'corporate communications', 'messaging'],
@@ -560,7 +524,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Management Consulting (Business)',
-      career_world: 'power',
       riasec_affinity: ['E', 'I', 'C'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['consulting', 'strategy', 'management', 'McKinsey recruiting', 'case interview', 'operations'],
@@ -589,7 +552,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Architecture',
-      career_world: 'building',
       riasec_affinity: ['A', 'R', 'I'],
       riasec_conflict: ['S', 'E'],
       program_keywords: ['architecture', 'design', 'urban planning', 'studio program', 'NAAB accredited'],
@@ -618,7 +580,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Human Resources Management',
-      career_world: 'power',
       riasec_affinity: ['S', 'E', 'C'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['human resources', 'HR', 'talent management', 'organizational behavior', 'people operations'],
@@ -644,21 +605,6 @@ const MAJOR_MAP = {
           edge: 'The organizations that manage their human capital most effectively are increasingly the ones that treat workforce decisions with the same analytical rigor they apply to financial decisions. People analytics — understanding turnover patterns, predicting performance, designing experiments around management practices — is a discipline that sits at the intersection of HR and data science, and the professionals who develop both are building toward one of the fastest-growing specialties in the function. An HR management student who develops quantitative skills alongside organizational knowledge is building toward a career that most HR programs have not yet fully incorporated into their curricula — which means the people who arrive with it are still unusual enough to stand out.'
         }
       ]
-    },
-    {
-      major_label: 'Industrial-Organizational Psychology',
-      career_world: 'power',
-      riasec_affinity: ['I', 'S', 'E'],
-      riasec_conflict: ['R', 'A'],
-      program_keywords: ['industrial organizational psychology', 'IO psychology', 'organizational behavior', 'workforce psychology', 'people analytics'],
-      entry_careers: ['People Analyst', 'Talent Assessment Specialist', 'Organizational Development Consultant', 'HR Research Analyst'],
-      world_alignment: 'People',
-      cc_transfer_friendly: false,
-      emerging_role: 'People Analytics Lead — the professional who applies psychological research methods and data analysis to organizational questions — measuring what actually predicts performance, designing selection systems that reduce bias, and helping organizations understand their own culture with the same rigor they measure their financial performance.',
-      deployment_contexts: [
-        { domain: 'Talent Assessment & Selection Systems', edge: 'Most organizations hire badly — relying on unstructured interviews that predict job performance at barely better than chance. The I-O psychologist who designs selection systems that actually predict performance is delivering one of the highest-ROI interventions available to any organization. Rollins College and the University of Minnesota both have applied psychology programs with strong practitioner tracks.' },
-        { domain: 'Organizational Culture & Employee Experience', edge: 'The organizations that perform best over time are not the ones with the most sophisticated strategy. They are the ones whose people understand the strategy, believe in its purpose, and choose to give more than their contracts require. The I-O psychologist who can measure organizational culture with research-grade rigor and design interventions that move the right levers is doing work whose impact compounds across every business outcome the organization cares about.' }
-      ]
     }
   ],
 
@@ -668,7 +614,6 @@ const MAJOR_MAP = {
   62: [
     {
       major_label: 'Biology / Pre-Medicine',
-      career_world: 'medicine',
       riasec_affinity: ['I', 'R', 'S'],
       riasec_conflict: ['E', 'A'],
       program_keywords: ['pre-medicine', 'biology', 'medical school pipeline', 'MCAT prep', 'research lab'],
@@ -697,7 +642,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Nursing',
-      career_world: 'healing',
       riasec_affinity: ['S', 'I', 'R'],
       riasec_conflict: ['A', 'C'],
       program_keywords: ['nursing', 'BSN', 'clinical', 'NCLEX', 'patient care', 'RN pipeline'],
@@ -726,19 +670,14 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Public Health',
-      career_world: 'healing',
       riasec_affinity: ['S', 'I', 'E'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['public health', 'epidemiology', 'community health', 'MPH pipeline', 'health policy'],
-      entry_careers: ['Health Educator', 'Community Outreach Coordinator', 'Public Health Analyst', 'Clinical Research Associate (CRA)'],
+      entry_careers: ['Health Educator', 'Community Outreach Coordinator', 'Public Health Analyst'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
       emerging_role: 'Pandemic Preparedness & Biosurveillance Analyst — the public health professional who designs and operates the early warning systems that detect novel pathogen emergence, monitor wastewater epidemiology, analyze international disease surveillance data, and model outbreak trajectories before they become public health emergencies. The COVID-19 pandemic produced a permanent expansion of biosurveillance infrastructure at the CDC, WHO, and every major public health agency, and the professionals who staff those systems are working in a function whose importance the world now understands with a clarity it did not have before 2020.',
       deployment_contexts: [
-        {
-          domain: 'Clinical Trial Operations & Site Activation',
-          edge: 'A clinical trial does not fail because the science was wrong. It fails, most often, because the operational machinery that turns a protocol into an active enrollment site was never built with enough discipline — feasibility assumptions went unchallenged, a country was chosen for speed rather than patient access, or a site was greenlit before it could actually recruit. The professionals who own this process, usually titled Clinical Trial Manager or CRA (Clinical Research Associate), are not scientists. They are operators who manage country selection as a portfolio decision, run governance across sponsors, CROs, and hospital sites, and hold the line on activation criteria even when a study is behind schedule and everyone wants to move faster. It is one of the most consequential coordination roles in medicine and one of the least visible: the difference between a fast site that never enrolls and a disciplined one that does is decided entirely by people in this function. IQVIA, ICON, and Parexel — the major contract research organizations — recruit heavily from public health and health administration programs, and George Washington University\'s Master\'s in Clinical Research Administration and Duke\'s Clinical Research Training Program both place graduates directly into CRA and clinical operations roles at sponsors and CROs.'
-        },
         {
           domain: 'Epidemiology & Disease Surveillance',
           edge: 'The professionals who tracked the spread of COVID-19, mapped the opioid epidemic, and identified the lead contamination in Flint\'s water supply were not physicians. They were epidemiologists — people trained to understand how disease moves through populations, what patterns reveal about causation, and what interventions have a realistic chance of changing the trajectory. A public health student who develops genuine quantitative depth alongside epidemiological thinking is building toward a career that the CDC, state health departments, and the major schools of public health describe as their most critical pipeline need. Johns Hopkins Bloomberg School of Public Health and Harvard T.H. Chan School of Public Health both have undergraduate public health programs with direct pathways into MPH programs that train the epidemiologists who respond when the next crisis arrives.'
@@ -759,7 +698,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Biochemistry / Biomedical Sciences',
-      career_world: 'medicine',
       riasec_affinity: ['I', 'R', 'C'],
       riasec_conflict: ['E', 'S'],
       program_keywords: ['biochemistry', 'biomedical', 'pharmaceutical', 'lab research', 'biotech pipeline'],
@@ -788,7 +726,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Kinesiology / Exercise Science',
-      career_world: 'therapy',
       riasec_affinity: ['R', 'S', 'I'],
       riasec_conflict: ['C', 'E'],
       program_keywords: ['kinesiology', 'exercise science', 'physical therapy pipeline', 'sports medicine', 'athletic training'],
@@ -817,7 +754,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Psychology / Pre-Counseling',
-      career_world: 'therapy',
       riasec_affinity: ['S', 'I', 'A'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['psychology', 'counseling pipeline', 'mental health', 'clinical psychology', 'social work'],
@@ -846,7 +782,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Nutrition & Dietetics',
-      career_world: 'healing',
       riasec_affinity: ['I', 'S', 'R'],
       riasec_conflict: ['E', 'A'],
       program_keywords: ['nutrition', 'dietetics', 'food science', 'RD pipeline', 'clinical nutrition'],
@@ -881,7 +816,6 @@ const MAJOR_MAP = {
   72: [
     {
       major_label: 'Hospitality Management',
-      career_world: 'hospitality',
       riasec_affinity: ['E', 'S', 'C'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['hospitality management', 'hotel management', 'resort operations', 'Cornell Hotel', 'lodging industry'],
@@ -900,21 +834,16 @@ const MAJOR_MAP = {
         },
         {
           domain: 'Real Estate & Hotel Asset Management',
-          edge: 'Hotels are not just service businesses — they are real estate assets whose value is determined by the quality of their operations, and the professionals who manage the relationship between ownership and operation are doing work that requires fluency in both hospitality and finance simultaneously. The actual language of the job is USALI departmental benchmarking — comparing a hotel\'s Rooms and Food & Beverage profit margins against industry-standard reporting frameworks, then asking why a property\'s GOP (Gross Operating Profit) margin lags its comp set — and the franchise-versus-management-contract math that determines whether a hotel\'s owner captures more value paying brand fees for Marriott\'s reservation system or hiring an independent operator instead. Hotel asset management is one of the most financially consequential and least understood careers in the industry — the people who do it determine how hundreds of millions of dollars in hospitality real estate performs over time. A hospitality student who develops genuine financial literacy alongside operations knowledge is building toward a career that Marriott, Hilton, and the major hotel REITs are consistently trying to develop people for and consistently finding that the pipeline is thin.'
+          edge: 'Hotels are not just service businesses — they are real estate assets whose value is determined by the quality of their operations, and the professionals who manage the relationship between ownership and operation are doing work that requires fluency in both hospitality and finance simultaneously. Hotel asset management is one of the most financially consequential and least understood careers in the industry — the people who do it determine how hundreds of millions of dollars in hospitality real estate performs over time. A hospitality student who develops genuine financial literacy alongside operations knowledge is building toward a career that Marriott, Hilton, and the major hotel REITs are consistently trying to develop people for and consistently finding that the pipeline is thin.'
         },
         {
           domain: 'Luxury Travel & Private Client Services',
           edge: 'The clients who spend the most money on travel and hospitality are not looking for service. They are looking for recognition — for someone who understands what they value before they have articulated it and who can deliver it without being asked. The professionals who serve this market — at private aviation companies, ultra-luxury hotel groups, expedition travel companies, and yacht charter operations — are building careers where the relationship is the product and where the ability to anticipate and exceed expectation is a skill that takes years to develop and cannot be taught from a manual. Aman Resorts, Four Seasons, and the major luxury travel companies all have management associate programs that recruit from hospitality programs with genuine luxury orientation.'
-        },
-        {
-          domain: 'Revenue Management & Distribution Strategy',
-          edge: 'Every hotel room is a perishable asset — unsold tonight, that inventory is gone forever, which is why revenue managers spend their days moving between two numbers that pull against each other: ADR (average daily rate) and occupancy. Push rates too high and rooms sit empty; chase occupancy with discounts and a full hotel makes less money than a half-empty one at the right price. RevPAR — revenue per available room, the number that actually determines whether a hotel is winning — only goes up when a revenue manager gets that balance right, segment by segment: how much of tonight\'s business should be group bookings locked in months ago at negotiated rates versus transient travelers booking this week at whatever the market will bear. HSMAI\'s Certified Hospitality Revenue Management Executive (CRME) is the only globally recognized credential in the field, and Cornell now offers its own dedicated Hotel Revenue Management Certificate through eCornell — a signal that the discipline has matured into a genuine specialization, not a subset of general hotel operations. A hospitality student with a quantitative streak who\'s drawn to the pricing-and-forecasting side of the business, not just guest-facing service, is building toward one of the industry\'s most analytically demanding and best-compensated non-executive career tracks.'
         }
       ]
     },
     {
       major_label: 'Culinary Arts',
-      career_world: 'hospitality',
       riasec_affinity: ['R', 'A', 'E'],
       riasec_conflict: ['I', 'C'],
       program_keywords: ['culinary arts', 'food service', 'restaurant management', 'CIA culinary', 'chef pipeline'],
@@ -943,7 +872,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Event Management',
-      career_world: 'hospitality',
       riasec_affinity: ['E', 'S', 'A'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['event management', 'meeting planning', 'conference', 'wedding planning', 'live events'],
@@ -972,7 +900,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Tourism & Travel Management',
-      career_world: 'hospitality',
       riasec_affinity: ['E', 'S', 'C'],
       riasec_conflict: ['I', 'R'],
       program_keywords: ['tourism', 'travel management', 'destination marketing', 'cruise industry', 'travel operations'],
@@ -1003,7 +930,6 @@ const MAJOR_MAP = {
   44: [
     {
       major_label: 'Marketing',
-      career_world: 'persuasion',
       riasec_affinity: ['E', 'A', 'S'],
       riasec_conflict: ['R', 'I'],
       program_keywords: ['marketing', 'consumer behavior', 'brand management', 'retail marketing', 'e-commerce'],
@@ -1028,7 +954,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Retail Management',
-      career_world: 'logistics',
       riasec_affinity: ['E', 'S', 'C'],
       riasec_conflict: ['I', 'A'],
       program_keywords: ['retail management', 'merchandising', 'store operations', 'loss prevention', 'supply chain retail'],
@@ -1053,7 +978,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Supply Chain Management',
-      career_world: 'logistics',
       riasec_affinity: ['C', 'R', 'E'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['supply chain', 'logistics', 'procurement', 'inventory management', 'APICS'],
@@ -1082,7 +1006,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Entrepreneurship',
-      career_world: 'power',
       riasec_affinity: ['E', 'A', 'I'],
       riasec_conflict: ['C', 'R'],
       program_keywords: ['entrepreneurship', 'startup', 'small business', 'venture', 'innovation', 'founder pipeline'],
@@ -1117,7 +1040,6 @@ const MAJOR_MAP = {
   81: [
     {
       major_label: 'Health & Wellness Coaching',
-      career_world: 'healing',
       riasec_affinity: ['S', 'E', 'R'],
       riasec_conflict: ['I', 'C'],
       program_keywords: ['health coaching', 'wellness', 'fitness management', 'personal training', 'lifestyle'],
@@ -1142,7 +1064,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Social Work',
-      career_world: 'civic',
       riasec_affinity: ['S', 'I', 'E'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['social work', 'BSW pipeline', 'community services', 'case management', 'nonprofit services'],
@@ -1171,7 +1092,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Cosmetology / Esthetics (Applied)',
-      career_world: 'beauty',
       riasec_affinity: ['A', 'R', 'S'],
       riasec_conflict: ['I', 'C'],
       program_keywords: ['cosmetology', 'esthetics', 'beauty industry', 'salon management', 'personal care'],
@@ -1200,7 +1120,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Family & Consumer Sciences',
-      career_world: 'civic',
       riasec_affinity: ['S', 'I', 'R'],
       riasec_conflict: ['E', 'C'],
       program_keywords: ['family sciences', 'consumer sciences', 'child development', 'human development', 'family studies'],
@@ -1236,7 +1155,6 @@ const MAJOR_MAP = {
   71: [
     {
       major_label: 'Fine Arts / Studio Art',
-      career_world: 'making',
       riasec_affinity: ['A', 'I', 'S'],
       riasec_conflict: ['C', 'E'],
       program_keywords: ['fine arts', 'studio art', 'MFA pipeline', 'gallery', 'visual art', 'portfolio'],
@@ -1265,7 +1183,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Music / Music Industry',
-      career_world: 'beauty',
       riasec_affinity: ['A', 'E', 'S'],
       riasec_conflict: ['C', 'R'],
       program_keywords: ['music', 'music industry', 'recording', 'music business', 'Berklee', 'performance', 'music production'],
@@ -1294,7 +1211,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Theatre / Performing Arts',
-      career_world: 'beauty',
       riasec_affinity: ['A', 'S', 'E'],
       riasec_conflict: ['C', 'R'],
       program_keywords: ['theatre', 'performing arts', 'acting', 'drama', 'BFA', 'conservatory', 'stage management'],
@@ -1323,7 +1239,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Sports Management',
-      career_world: 'compete',
       riasec_affinity: ['E', 'S', 'C'],
       riasec_conflict: ['I', 'A'],
       program_keywords: ['sports management', 'athletics administration', 'sports marketing', 'sports business', 'agent pipeline'],
@@ -1352,7 +1267,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Dance',
-      career_world: 'beauty',
       riasec_affinity: ['A', 'S', 'R'],
       riasec_conflict: ['C', 'I'],
       program_keywords: ['dance', 'choreography', 'movement', 'BFA dance', 'performance', 'dance company'],
@@ -1377,7 +1291,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Graphic Design / Visual Communication',
-      career_world: 'making',
       riasec_affinity: ['A', 'I', 'R'],
       riasec_conflict: ['S', 'E'],
       program_keywords: ['graphic design', 'visual communication', 'typography', 'branding', 'portfolio', 'design studio'],
@@ -1406,7 +1319,6 @@ const MAJOR_MAP = {
     },
     {
       major_label: 'Fashion Design / Merchandising',
-      career_world: 'making',
       riasec_affinity: ['A', 'E', 'R'],
       riasec_conflict: ['I', 'C'],
       program_keywords: ['fashion design', 'fashion merchandising', 'apparel', 'FIDM', 'Parsons', 'fashion industry'],
@@ -1466,7 +1378,6 @@ if (typeof module !== 'undefined' && module.exports) {
 MAJOR_MAP[61] = [
   {
     major_label: 'Education',
-    career_world: 'civic',
     riasec_affinity: ['S', 'A', 'I'],
     riasec_conflict: ['R', 'C'],
     program_keywords: ['education', 'teaching', 'curriculum', 'instructional design', 'learning sciences'],
@@ -1499,7 +1410,6 @@ MAJOR_MAP[61] = [
   },
   {
     major_label: 'Learning Sciences & Human Development',
-    career_world: 'technology',
     riasec_affinity: ['I', 'S', 'A'],
     riasec_conflict: ['R', 'E'],
     program_keywords: ['learning sciences', 'cognitive development', 'educational psychology', 'child development', 'human development'],
@@ -1524,7 +1434,6 @@ MAJOR_MAP[61] = [
   },
   {
     major_label: 'Sports Management & Coaching Sciences',
-    career_world: 'compete',
     riasec_affinity: ['E', 'S', 'R'],
     riasec_conflict: ['I', 'A'],
     program_keywords: ['sports management', 'athletic administration', 'coaching', 'kinesiology', 'sports education'],
@@ -1545,7 +1454,6 @@ MAJOR_MAP[61] = [
   },
   {
     major_label: 'Library & Information Science',
-    career_world: 'technology',
     riasec_affinity: ['I', 'C', 'S'],
     riasec_conflict: ['E', 'R'],
     program_keywords: ['library science', 'information management', 'archival studies', 'knowledge management', 'data curation'],
@@ -1571,7 +1479,6 @@ MAJOR_MAP[61] = [
 MAJOR_MAP[23] = [
   {
     major_label: 'Architecture',
-    career_world: 'building',
     riasec_affinity: ['A', 'I', 'R'],
     riasec_conflict: ['S', 'C'],
     program_keywords: ['architecture', 'design', 'building design', 'urban design', 'sustainable architecture'],
@@ -1600,7 +1507,6 @@ MAJOR_MAP[23] = [
   },
   {
     major_label: 'Civil Engineering',
-    career_world: 'building',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['civil engineering', 'structural engineering', 'transportation engineering', 'geotechnical', 'water resources'],
@@ -1625,7 +1531,6 @@ MAJOR_MAP[23] = [
   },
   {
     major_label: 'Urban Planning & Development',
-    career_world: 'building',
     riasec_affinity: ['I', 'S', 'E'],
     riasec_conflict: ['R', 'A'],
     program_keywords: ['urban planning', 'city planning', 'land use', 'community development', 'zoning'],
@@ -1650,7 +1555,6 @@ MAJOR_MAP[23] = [
   },
   {
     major_label: 'Construction Management',
-    career_world: 'building',
     riasec_affinity: ['R', 'E', 'C'],
     riasec_conflict: ['A', 'I'],
     program_keywords: ['construction management', 'project management', 'estimating', 'scheduling', 'building systems'],
@@ -1676,7 +1580,6 @@ MAJOR_MAP[23] = [
 MAJOR_MAP[33] = [
   {
     major_label: 'Mechanical Engineering',
-    career_world: 'making',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['mechanical engineering', 'thermodynamics', 'fluid mechanics', 'manufacturing', 'product design'],
@@ -1701,7 +1604,6 @@ MAJOR_MAP[33] = [
   },
   {
     major_label: 'Electrical Engineering',
-    career_world: 'making',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['electrical engineering', 'circuits', 'power systems', 'signal processing', 'embedded systems'],
@@ -1722,7 +1624,6 @@ MAJOR_MAP[33] = [
   },
   {
     major_label: 'Industrial Engineering & Manufacturing Systems',
-    career_world: 'making',
     riasec_affinity: ['R', 'I', 'E'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['industrial engineering', 'manufacturing systems', 'operations research', 'lean manufacturing', 'quality engineering'],
@@ -1747,7 +1648,6 @@ MAJOR_MAP[33] = [
   },
   {
     major_label: 'Chemical Engineering',
-    career_world: 'making',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['chemical engineering', 'process engineering', 'thermodynamics', 'reaction engineering', 'separation processes'],
@@ -1773,7 +1673,6 @@ MAJOR_MAP[33] = [
 MAJOR_MAP[48] = [
   {
     major_label: 'Supply Chain Management',
-      career_world: 'logistics',
     riasec_affinity: ['E', 'C', 'I'],
     riasec_conflict: ['A', 'R'],
     program_keywords: ['supply chain', 'logistics', 'operations management', 'procurement', 'demand planning'],
@@ -1798,7 +1697,6 @@ MAJOR_MAP[48] = [
   },
   {
     major_label: 'Transportation & Logistics Management',
-      career_world: 'logistics',
     riasec_affinity: ['E', 'C', 'R'],
     riasec_conflict: ['A', 'I'],
     program_keywords: ['transportation', 'freight', 'intermodal', 'fleet management', 'route optimization'],
@@ -1819,7 +1717,6 @@ MAJOR_MAP[48] = [
   },
   {
     major_label: 'Aviation & Airport Management',
-      career_world: 'logistics',
     riasec_affinity: ['R', 'E', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['aviation management', 'airport operations', 'airline management', 'air traffic', 'aviation safety'],
@@ -1841,7 +1738,6 @@ MAJOR_MAP[48] = [
 MAJOR_MAP[92] = [
   {
     major_label: 'Political Science & Government',
-    career_world: 'justice',
     riasec_affinity: ['E', 'S', 'I'],
     riasec_conflict: ['R', 'C'],
     program_keywords: ['political science', 'government', 'politics', 'international relations', 'comparative politics'],
@@ -1866,7 +1762,6 @@ MAJOR_MAP[92] = [
   },
   {
     major_label: 'Public Policy & Administration',
-    career_world: 'justice',
     riasec_affinity: ['I', 'E', 'S'],
     riasec_conflict: ['R', 'A'],
     program_keywords: ['public policy', 'public administration', 'policy analysis', 'program evaluation', 'public management'],
@@ -1891,7 +1786,6 @@ MAJOR_MAP[92] = [
   },
   {
     major_label: 'Criminal Justice & Law Enforcement',
-    career_world: 'justice',
     riasec_affinity: ['S', 'E', 'R'],
     riasec_conflict: ['A', 'I'],
     program_keywords: ['criminal justice', 'criminology', 'law enforcement', 'corrections', 'forensic science'],
@@ -1912,7 +1806,6 @@ MAJOR_MAP[92] = [
   },
   {
     major_label: 'International Relations & Diplomacy',
-    career_world: 'justice',
     riasec_affinity: ['I', 'S', 'E'],
     riasec_conflict: ['R', 'C'],
     program_keywords: ['international relations', 'diplomacy', 'foreign policy', 'global affairs', 'international security'],
@@ -1942,7 +1835,6 @@ MAJOR_MAP[92] = [
 MAJOR_MAP[22] = [
   {
     major_label: 'Energy Systems Engineering',
-    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['energy systems', 'power engineering', 'renewable energy', 'grid integration', 'energy storage'],
@@ -1971,7 +1863,6 @@ MAJOR_MAP[22] = [
   },
   {
     major_label: 'Environmental Engineering',
-    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'S'],
     riasec_conflict: ['E', 'A'],
     program_keywords: ['environmental engineering', 'water treatment', 'air quality', 'remediation', 'environmental systems'],
@@ -1992,7 +1883,6 @@ MAJOR_MAP[22] = [
   },
   {
     major_label: 'Sustainability Management',
-    career_world: 'energy',
     riasec_affinity: ['I', 'E', 'S'],
     riasec_conflict: ['R', 'C'],
     program_keywords: ['sustainability', 'ESG', 'corporate sustainability', 'environmental management', 'climate strategy'],
@@ -2017,7 +1907,6 @@ MAJOR_MAP[22] = [
   },
   {
     major_label: 'Nuclear Engineering',
-    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['nuclear engineering', 'reactor design', 'radiation safety', 'nuclear materials', 'small modular reactors'],
@@ -2043,7 +1932,6 @@ MAJOR_MAP[22] = [
 MAJOR_MAP[32] = [
   {
     major_label: 'Materials Science & Engineering',
-    career_world: 'making',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['materials science', 'materials engineering', 'metallurgy', 'polymers', 'nanomaterials', 'biomaterials'],
@@ -2072,7 +1960,6 @@ MAJOR_MAP[32] = [
   },
   {
     major_label: 'Green Chemistry & Sustainable Processes',
-    career_world: 'biomanufacturing',
     riasec_affinity: ['I', 'R', 'S'],
     riasec_conflict: ['E', 'A'],
     program_keywords: ['green chemistry', 'sustainable chemistry', 'bio-based materials', 'circular economy', 'process sustainability'],
@@ -2093,7 +1980,6 @@ MAJOR_MAP[32] = [
   },
   {
     major_label: 'Polymer Engineering & Science',
-    career_world: 'biomanufacturing',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['polymer engineering', 'polymer science', 'plastics engineering', 'rubber science', 'composites'],
@@ -2114,14 +2000,13 @@ MAJOR_MAP[32] = [
   },
   {
     major_label: 'Industrial & Process Chemistry',
-    career_world: 'biomanufacturing',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['industrial chemistry', 'process chemistry', 'chemical manufacturing', 'reaction engineering', 'scale-up'],
     entry_careers: ['Process Chemist', 'Manufacturing Chemist', 'Quality Control Chemist'],
     world_alignment: 'Think',
     cc_transfer_friendly: false,
-    emerging_role: 'AI-Augmented Process Chemist — the professional who uses machine learning models to accelerate reaction screening, predict synthesis outcomes, and optimize manufacturing process parameters — reducing the experimental iterations required to move a chemical process from laboratory to pilot plant from years to months. Eli Lilly, Merck, and BASF have all built AI-assisted process chemistry programs that are actively hiring chemists who can work at this intersection — the same Eli Lilly currently building a $6 billion API manufacturing plant in Huntsville, Alabama, the largest single investment in that state\'s history, evidence that this is not a hypothetical growth area but one with real, current capital behind it.',
+    emerging_role: 'AI-Augmented Process Chemist — the professional who uses machine learning models to accelerate reaction screening, predict synthesis outcomes, and optimize manufacturing process parameters — reducing the experimental iterations required to move a chemical process from laboratory to pilot plant from years to months. Eli Lilly, Merck, and BASF have all built AI-assisted process chemistry programs that are actively hiring chemists who can work at this intersection.',
     deployment_contexts: [
       {
         domain: 'Specialty Chemicals & Formulation',
@@ -2129,7 +2014,7 @@ MAJOR_MAP[32] = [
       },
       {
         domain: 'Pharmaceutical API Manufacturing',
-        edge: 'The active pharmaceutical ingredient — the molecule that does the work in a drug — must be synthesized, purified, and characterized to a standard that the FDA will certify before a single patient can receive it. The process chemists who develop and optimize the manufacturing routes for API production are working under current Good Manufacturing Practice regulations that transform every procedure into a controlled, documented, and validated process. Pfizer, Lonza, and Cambrex all run API manufacturing chemistry programs, and this work is currently reshoring to the United States at a scale that would have seemed implausible five years ago: Eli Lilly is building a $6 billion API plant in Huntsville, Alabama — its largest initial investment in state history — with a workforce pipeline running through both the University of Alabama in Huntsville and Calhoun Community College. UCB, a Belgian company with no prior U.S. manufacturing footprint, chose Georgia for its first-ever American biologics plant, citing the Georgia Tech-Emory biomedical engineering program by name. Piramal Pharma Solutions builds injectable APIs literally inside the University of Kentucky\'s own Coldstream Research Campus — the tightest university-industry proximity of any pharmaceutical manufacturing site in the country. University of Illinois Urbana-Champaign\'s chemistry program and Purdue\'s chemistry department have both placed API chemists into pharmaceutical manufacturing roles at rates that reflect sustained employer relationships with the major pharma contract manufacturing organizations — relationships that are actively expanding into new geography, not just the traditional Midwest and Northeast pharma corridors.'
+        edge: 'The active pharmaceutical ingredient — the molecule that does the work in a drug — must be synthesized, purified, and characterized to a standard that the FDA will certify before a single patient can receive it. The process chemists who develop and optimize the manufacturing routes for API production are working under current Good Manufacturing Practice regulations that transform every procedure into a controlled, documented, and validated process. Pfizer, Lonza, and Cambrex all run API manufacturing chemistry programs, and the process chemists who arrive with strong organic synthesis skills and some exposure to GMP documentation are entering a field that has produced some of the most consistent employment records of any chemistry specialization. University of Illinois Urbana-Champaign\'s chemistry program and Purdue\'s chemistry department have both placed API chemists into pharmaceutical manufacturing roles at rates that reflect sustained employer relationships with the major pharma contract manufacturing organizations.'
       }
     ]
   }
@@ -2140,7 +2025,6 @@ MAJOR_MAP[32] = [
 MAJOR_MAP[11] = [
   {
     major_label: 'Agricultural Science & Agronomy',
-      career_world: 'food',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['agronomy', 'crop science', 'soil science', 'plant biology', 'agricultural production'],
@@ -2165,7 +2049,6 @@ MAJOR_MAP[11] = [
   },
   {
     major_label: 'Precision Agriculture & Agricultural Technology',
-      career_world: 'food',
     riasec_affinity: ['R', 'I', 'E'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['precision agriculture', 'AgTech', 'remote sensing', 'GPS technology', 'variable rate application'],
@@ -2186,7 +2069,6 @@ MAJOR_MAP[11] = [
   },
   {
     major_label: 'Food Systems Engineering & Science',
-      career_world: 'food',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['food science', 'food engineering', 'food safety', 'food processing', 'product development'],
@@ -2211,7 +2093,6 @@ MAJOR_MAP[11] = [
   },
   {
     major_label: 'Agribusiness Management',
-      career_world: 'food',
     riasec_affinity: ['E', 'C', 'I'],
     riasec_conflict: ['A', 'R'],
     program_keywords: ['agribusiness', 'agricultural economics', 'farm management', 'agricultural finance', 'commodity markets'],
@@ -2236,7 +2117,6 @@ MAJOR_MAP[11] = [
   },
   {
     major_label: 'Soil Science & Environmental Land Management',
-      career_world: 'food',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['E', 'A'],
     program_keywords: ['soil science', 'pedology', 'land management', 'environmental soil', 'soil remediation'],
@@ -2254,28 +2134,7 @@ MAJOR_MAP[11] = [
         edge: 'The agricultural carbon market is asking farmers to change how they manage their land — reducing tillage, planting cover crops, integrating livestock — and then measuring whether those changes actually put carbon into the soil. The soil scientists who design those measurement protocols and verify that carbon sequestration claims are scientifically defensible are working at the intersection of pedology, environmental science, and agricultural economics in a field that was essentially nonexistent at commercial scale five years ago. Indigo Agriculture, Nori, and the Nature Conservancy\'s agricultural programs all employ soil scientists in measurement and verification roles. UC Davis\'s Department of Land, Air and Water Resources and Cornell\'s Soil and Crop Sciences program have both produced soil carbon researchers whose methodologies are now being used to set the verification standards that agricultural carbon markets are building their credibility on.'
       }
     ]
-  },
-{
-      major_label: 'Agricultural Business',
-      career_world: 'food',
-      riasec_affinity: ['E', 'C', 'R'],
-      riasec_conflict: ['A'],
-      program_keywords: ['agricultural business', 'agribusiness', 'commodity trading', 'farm management', 'agricultural supply chain', 'food systems'],
-      entry_careers: ['Grain Merchandiser', 'Agricultural Lender', 'Farm Manager', 'Agricultural Sales Representative', 'Commodity Trader'],
-      world_alignment: 'Systems',
-      cc_transfer_friendly: true,
-      emerging_role: 'Agricultural Data Intelligence Analyst — the agribusiness professional who uses satellite imagery, soil sensor networks, weather modeling, and machine learning to optimize crop production decisions — advising farmers on planting timing, input application rates, harvest scheduling, and storage decisions based on data integration that was not available at scale a decade ago. Precision agriculture is restructuring the information asymmetry between farmers and the input suppliers, buyers, and lenders who serve them, and the analyst who can translate agricultural data into actionable operational recommendations is providing genuine value to both sides.',
-      deployment_contexts: [
-        {
-          domain: 'Commodity Trading & Grain Merchandising',
-          edge: 'The grain trader at Cargill, ADM, Bunge, or Louis Dreyfus manages commodity positions worth hundreds of millions of dollars — buying grain from farmers, hedging price risk on commodity exchanges, and selling to end users including ethanol plants, feed mills, and export elevators. The path from agricultural business undergraduate to commodity trader is one of the highest-compensation career trajectories in agriculture and one of the least visible in high school career guidance. Kansas State University, Iowa State, and the University of Illinois all have agricultural economics programs with strong commodity trading placement at the major grain companies whose operations span the agricultural supply chain from farm to export terminal.'
-        },
-        {
-          domain: 'Precision Agriculture & Farm Technology',
-          edge: 'The average American farm now uses GPS-guided equipment, variable rate input application, drone monitoring, and yield mapping technology that did not exist twenty years ago — and the adoption of these technologies is accelerating as the generational transition in farm ownership brings younger operators with higher technology comfort. The agricultural business professional who understands both the agronomic science behind precision agriculture and the business systems that make farms profitable is building toward a career where the work combines technology, science, and business at a scale that few other industries provide. Purdue\'s College of Agriculture has the strongest precision agriculture concentration in the Midwest and direct placement into the agricultural technology companies and major input suppliers who are building this capability.'
-        }
-      ]
-    }
+  }
 ];
 
 // ─── NAICS 42 — Wholesale Trade & Distribution ───────────────────────────────
@@ -2283,7 +2142,6 @@ MAJOR_MAP[11] = [
 MAJOR_MAP[42] = [
   {
     major_label: 'Distribution Management & Wholesale Operations',
-    career_world: 'logistics',
     riasec_affinity: ['E', 'C', 'R'],
     riasec_conflict: ['A', 'I'],
     program_keywords: ['distribution', 'wholesale', 'inventory management', 'warehouse operations', 'trade finance'],
@@ -2308,7 +2166,6 @@ MAJOR_MAP[42] = [
   },
   {
     major_label: 'Trade Finance & Global Commerce',
-    career_world: 'logistics',
     riasec_affinity: ['E', 'C', 'I'],
     riasec_conflict: ['R', 'A'],
     program_keywords: ['trade finance', 'international trade', 'letters of credit', 'export management', 'global sourcing'],
@@ -2329,7 +2186,6 @@ MAJOR_MAP[42] = [
   },
   {
     major_label: 'Warehouse & Fulfillment Technology Management',
-    career_world: 'logistics',
     riasec_affinity: ['R', 'C', 'I'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['warehouse management', 'WMS systems', 'fulfillment operations', 'automation systems', 'inventory technology'],
@@ -2355,7 +2211,6 @@ MAJOR_MAP[42] = [
 MAJOR_MAP[51].push(
   {
     major_label: 'Mathematics & Statistics',
-    career_world: 'technology',
     riasec_affinity: ['I', 'C', 'R'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['mathematics', 'statistics', 'applied math', 'data analysis', 'quantitative methods', 'probability'],
@@ -2384,7 +2239,6 @@ MAJOR_MAP[51].push(
   },
   {
     major_label: 'AI Infrastructure & Systems Design',
-    career_world: 'technology',
     riasec_affinity: ['I', 'R', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['artificial intelligence', 'machine learning infrastructure', 'MLOps', 'distributed systems', 'AI systems'],
@@ -2420,7 +2274,6 @@ MAJOR_MAP[51].push(
 MAJOR_MAP[21] = [
   {
     major_label: 'Mining Engineering',
-    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['mining engineering', 'mine design', 'rock mechanics', 'blasting', 'mineral extraction'],
@@ -2445,7 +2298,6 @@ MAJOR_MAP[21] = [
   },
   {
     major_label: 'Geological Engineering & Earth Sciences',
-    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['geology', 'geoscience', 'mineralogy', 'geophysics', 'earth sciences', 'hydrogeology'],
@@ -2466,7 +2318,6 @@ MAJOR_MAP[21] = [
   },
   {
     major_label: 'Petroleum Engineering',
-    career_world: 'energy',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['S', 'A'],
     program_keywords: ['petroleum engineering', 'reservoir engineering', 'drilling engineering', 'production engineering', 'well completion'],
@@ -2492,7 +2343,6 @@ MAJOR_MAP[21] = [
 MAJOR_MAP[31] = [
   {
     major_label: 'Food Manufacturing & Processing Engineering',
-      career_world: 'food',
     riasec_affinity: ['R', 'I', 'C'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['food manufacturing', 'food processing', 'food engineering', 'plant operations', 'food production'],
@@ -2517,7 +2367,6 @@ MAJOR_MAP[31] = [
   },
   {
     major_label: 'Food Quality Systems & Safety Engineering',
-      career_world: 'food',
     riasec_affinity: ['I', 'C', 'R'],
     riasec_conflict: ['A', 'S'],
     program_keywords: ['food quality', 'HACCP', 'food safety systems', 'quality assurance', 'food microbiology', 'regulatory compliance'],
@@ -2538,7 +2387,6 @@ MAJOR_MAP[31] = [
   },
   {
     major_label: 'Culinary Science & Product Innovation',
-      career_world: 'food',
     riasec_affinity: ['A', 'I', 'R'],
     riasec_conflict: ['C', 'S'],
     program_keywords: ['culinary science', 'food product development', 'sensory science', 'flavor chemistry', 'culinary arts'],
@@ -2568,7 +2416,6 @@ MAJOR_MAP[31] = [
 
 MAJOR_MAP[31].push({
   major_label: 'Packaging Engineering & Design',
-  career_world: 'making',
   riasec_affinity: ['R', 'I', 'A'],
   riasec_conflict: ['S', 'C'],
   program_keywords: ['packaging engineering', 'packaging design', 'materials packaging', 'sustainable packaging', 'package development'],
@@ -2600,7 +2447,6 @@ MAJOR_MAP[31].push({
 
 MAJOR_MAP[62].push({
   major_label: 'Integrative Skin Biology & Dermatology',
-  career_world: 'beauty',
   riasec_affinity: ['I', 'R', 'S'],
   riasec_conflict: ['E', 'C'],
   program_keywords: ['dermatology', 'skin biology', 'cellular biology', 'DNA repair', 'microbiome', 'photobiology'],
@@ -2628,7 +2474,6 @@ MAJOR_MAP[62].push({
 
 MAJOR_MAP[62].push({
   major_label: 'Biomedical Informatics & Computational Medicine',
-  career_world: 'technology',
   riasec_affinity: ['I', 'C', 'R'],
   riasec_conflict: ['A', 'S'],
   program_keywords: ['biomedical informatics', 'computational biology', 'health data science', 'systems biology', 'clinical informatics', 'bioinformatics'],
@@ -2660,7 +2505,6 @@ MAJOR_MAP[62].push({
 
 MAJOR_MAP[62].push({
   major_label: 'Human Performance Science & Enhancement Medicine',
-  career_world: 'medicine',
   riasec_affinity: ['I', 'R', 'E'],
   riasec_conflict: ['A', 'C'],
   program_keywords: ['exercise physiology', 'human performance', 'neuroscience', 'endocrinology', 'sport science', 'performance optimization'],
@@ -2688,39 +2532,10 @@ MAJOR_MAP[62].push({
   ]
 });
 
-// ─── NAICS 62 Amendment — Public Health / Regulatory Science ──────────────────
-
-MAJOR_MAP[62].push({
-  major_label: 'Public Health / Regulatory Science',
-  career_world: 'medicine',
-  riasec_affinity: ['I', 'C', 'S'],
-  riasec_conflict: ['R', 'A'],
-  program_keywords: ['public health', 'regulatory affairs', 'regulatory science', 'epidemiology', 'health policy', 'biostatistics', 'drug safety'],
-  entry_careers: ['Pharmacovigilance Case Processor', 'Regulatory Affairs Associate', 'Clinical Safety Associate'],
-  world_alignment: 'Systems',
-  cc_transfer_friendly: true,
-  emerging_role: 'Pharmacovigilance Safety Scientist — the professional who monitors a drug\'s real-world safety profile for the entire length of its commercial life, reviewing incoming case reports, coding adverse events, and making the clinical judgment calls about seriousness and causality that determine whether a signal gets escalated toward a labeling change or dismissed as noise. Where clinical trial research asks whether a drug works on a few thousand carefully selected patients, pharmacovigilance asks what happens when a million different people with different conditions, ages, and other medications take it — and that question never stops being asked as long as the drug is on the market. The undergraduate foundation is public health, regulatory science, or biochemistry, with adverse event terminology, MedDRA coding, and clinical reasoning layered on through entry-level case processing roles at the specialist safety vendors — IQVIA, ICON plc, Parexel, Syneos Health — that now perform the majority of this work on behalf of the pharmaceutical companies that hold the products. It is a field that has grown faster than almost any other life sciences service line over the past five years, driven by every new drug approval and every new market entry creating another permanent stream of safety data that has to be caught and assessed within days — and it remains one of the least visible career paths in the industry relative to how much hiring it actually generates.',
-  deployment_contexts: [
-    {
-      domain: 'PV Systems, Data & Automation',
-      edge: 'The safety database that sits behind every pharmacovigilance operation is becoming one of the more interesting automation frontiers in healthcare technology — companies are now building tools that use natural language processing to draft case narratives, flag likely duplicate reports, and triage incoming adverse events before a human ever opens the file, but every one of those tools still requires a person who understands both the underlying medical judgment and the system logic well enough to know when the automation is wrong. This is a genuinely new role that safety database vendors and larger pharmaceutical companies are still defining as they build it — part public health science, part data and systems literacy — and it did not exist in its current form five years ago. A regulatory science or public health student who pairs their coursework with even modest data analysis or systems training is positioned for a function that most life sciences graduates do not know exists yet, at companies ranging from Veeva Systems and Oracle Health Sciences, which build the safety databases themselves, to the pharmaceutical companies and CROs that configure and operate them.'
-    },
-    {
-      domain: 'CRO & Distributor Safety Oversight',
-      edge: 'As pharmaceutical companies increasingly rely on distributors, licensing partners, and contract research organizations to sell and study their products across dozens of countries, someone inside the company has to confirm that every one of those partners is actually catching and reporting safety information the way their contracts require — and that job, vendor and partner safety oversight, sits at the unusual intersection of clinical judgment, contract literacy, and operational auditing. It is not a role most undergraduates have heard of, but it is one that every mid-size and large pharmaceutical company is actively building out as their commercial footprint expands into new markets, because a distributor that fails to report a serious adverse event on time becomes the company\'s regulatory problem, not the distributor\'s. Regulatory science and public health graduates who can speak credibly about clinical safety data while also being comfortable auditing a partner\'s performance against a contract are unusually well positioned for this work at companies like Bristol Myers Squibb, Novartis, and the specialist safety vendors who increasingly perform this oversight function on a company\'s behalf.'
-    },
-    {
-      domain: 'Health Authority Submissions & Regulatory Strategy',
-      edge: 'Every drug approval, every labeling change, and every post-marketing safety commitment eventually becomes a document that has to be submitted to the FDA or an equivalent health authority in a specific format, on a specific timeline, built from safety and clinical evidence that regulatory affairs professionals have to organize and defend. This is not administrative paperwork — it is the function that determines whether years of clinical and safety work actually translates into a product patients can access, and it requires someone equally comfortable reading a safety database export and negotiating with a health authority reviewer. Genentech, Regeneron, and regulatory-focused specialty firms like Certara run structured regulatory affairs programs that recruit directly from public health and regulatory science graduate programs, and the professionals who enter this track with genuine safety-data fluency move into submission strategy roles faster than those who arrive with policy background alone.'
-    }
-  ]
-});
-
 // ─── NAICS 32 Amendment — Cosmetic Science & Formulation Chemistry ────────────
 
 MAJOR_MAP[32].push({
   major_label: 'Cosmetic Science & Formulation Chemistry',
-  career_world: 'beauty',
   riasec_affinity: ['I', 'R', 'A'],
   riasec_conflict: ['E', 'S'],
   program_keywords: ['cosmetic science', 'formulation chemistry', 'skin care', 'personal care', 'cosmetic chemistry', 'active ingredients'],
@@ -2752,7 +2567,6 @@ MAJOR_MAP[32].push({
 
 MAJOR_MAP[44].push({
   major_label: 'Beauty Industry Management & Commerce',
-  career_world: 'beauty',
   riasec_affinity: ['E', 'A', 'S'],
   riasec_conflict: ['R', 'I'],
   program_keywords: ['beauty industry', 'cosmetics business', 'beauty brand management', 'retail beauty', 'social commerce', 'beauty marketing'],
@@ -2785,7 +2599,6 @@ Object.assign(MAJOR_MAP, {
   91: [
     {
       major_label: 'Construction Management',
-      career_world: 'building',
       riasec_affinity: ['R', 'E', 'C'],
       riasec_conflict: ['A'],
       program_keywords: ['construction management', 'project management', 'building systems', 'construction science', 'civil technology'],
@@ -2802,7 +2615,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Electrical Engineering Technology',
-      career_world: 'making',
       riasec_affinity: ['R', 'I', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['electrical technology', 'power systems', 'building automation', 'electrical engineering technology', 'EET'],
@@ -2818,7 +2630,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Mechanical Engineering Technology',
-      career_world: 'making',
       riasec_affinity: ['R', 'I'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['mechanical technology', 'HVAC', 'CNC machining', 'manufacturing technology', 'mechatronics'],
@@ -2834,7 +2645,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Sustainable Energy Technology',
-      career_world: 'energy',
       riasec_affinity: ['R', 'I', 'E'],
       riasec_conflict: ['A'],
       program_keywords: ['renewable energy', 'solar installation', 'wind energy', 'energy systems', 'clean energy technology'],
@@ -2849,7 +2659,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Industrial Technology',
-      career_world: 'making',
       riasec_affinity: ['R', 'E', 'I'],
       riasec_conflict: ['A'],
       program_keywords: ['industrial technology', 'manufacturing management', 'operations technology', 'industrial supervision'],
@@ -2870,7 +2679,6 @@ Object.assign(MAJOR_MAP, {
   93: [
     {
       major_label: 'Organizational Communication',
-      career_world: 'power',
       riasec_affinity: ['E', 'S', 'A'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['organizational communication', 'communication studies', 'corporate communication', 'leadership communication', 'interpersonal communication'],
@@ -2886,7 +2694,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Human Resources Management',
-      career_world: 'power',
       riasec_affinity: ['S', 'E', 'C'],
       riasec_conflict: ['R', 'A'],
       program_keywords: ['human resources', 'HR management', 'talent management', 'people operations', 'workforce development'],
@@ -2901,7 +2708,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Operations Management',
-      career_world: 'power',
       riasec_affinity: ['E', 'C', 'I'],
       riasec_conflict: ['A'],
       program_keywords: ['operations management', 'process improvement', 'project management', 'supply chain operations', 'business operations'],
@@ -2914,6 +2720,20 @@ Object.assign(MAJOR_MAP, {
         { domain: 'Healthcare Operations', edge: 'Hospitals and health systems are among the most operationally complex organizations in existence — with patient safety, regulatory compliance, labor relations, supply chain management, and financial performance all running simultaneously under conditions where the consequences of failure are measured in human lives. The operations professional who chooses healthcare is entering a field where the demand for management talent is persistent and the stakes make the work feel consequential in a way most business environments cannot match.' }
       ]
     },
+    {
+      major_label: 'Industrial-Organizational Psychology',
+      riasec_affinity: ['I', 'S', 'E'],
+      riasec_conflict: ['R', 'A'],
+      program_keywords: ['industrial organizational psychology', 'IO psychology', 'organizational behavior', 'workforce psychology', 'people analytics'],
+      entry_careers: ['People Analyst', 'Talent Assessment Specialist', 'Organizational Development Consultant', 'HR Research Analyst'],
+      world_alignment: 'People',
+      cc_transfer_friendly: false,
+      emerging_role: 'People Analytics Lead — the professional who applies psychological research methods and data analysis to organizational questions — measuring what actually predicts performance, designing selection systems that reduce bias, and helping organizations understand their own culture with the same rigor they measure their financial performance.',
+      deployment_contexts: [
+        { domain: 'Talent Assessment & Selection Systems', edge: 'Most organizations hire badly — relying on unstructured interviews that predict job performance at barely better than chance. The I-O psychologist who designs selection systems that actually predict performance is delivering one of the highest-ROI interventions available to any organization. Rollins College and the University of Minnesota both have applied psychology programs with strong practitioner tracks.' },
+        { domain: 'Organizational Culture & Employee Experience', edge: 'The organizations that perform best over time are not the ones with the most sophisticated strategy. They are the ones whose people understand the strategy, believe in its purpose, and choose to give more than their contracts require. The I-O psychologist who can measure organizational culture with research-grade rigor and design interventions that move the right levers is doing work whose impact compounds across every business outcome the organization cares about.' }
+      ]
+    }
   ]
 });
 
@@ -2922,7 +2742,6 @@ Object.assign(MAJOR_MAP, {
   94: [
     {
       major_label: 'Finance',
-      career_world: 'money',
       riasec_affinity: ['E', 'I', 'C'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['finance', 'investment banking', 'private equity', 'financial modeling', 'corporate finance', 'deal structuring'],
@@ -2951,7 +2770,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Economics',
-      career_world: 'money',
       riasec_affinity: ['I', 'E', 'C'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['economics', 'microeconomics', 'market analysis', 'valuation', 'quantitative analysis', 'economic modeling'],
@@ -2972,7 +2790,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Accounting',
-      career_world: 'money',
       riasec_affinity: ['C', 'E', 'I'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['accounting', 'financial reporting', 'audit', 'due diligence', 'forensic accounting', 'transaction advisory'],
@@ -2993,7 +2810,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Real Estate',
-      career_world: 'money',
       riasec_affinity: ['E', 'I', 'C'],
       riasec_conflict: ['A'],
       program_keywords: ['real estate', 'real estate finance', 'property investment', 'commercial real estate', 'real estate development'],
@@ -3014,7 +2830,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Business Administration',
-      career_world: 'money',
       riasec_affinity: ['E', 'C', 'I'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['business administration', 'entrepreneurship', 'deal making', 'negotiation', 'strategy', 'general management'],
@@ -3041,7 +2856,6 @@ Object.assign(MAJOR_MAP, {
   95: [
     {
       major_label: 'Biology / Pre-Medicine (Longevity Track)',
-      career_world: 'medicine',
       riasec_affinity: ['I', 'R', 'S'],
       riasec_conflict: ['A', 'C'],
       program_keywords: ['longevity medicine', 'preventive medicine', 'gerontology', 'biogerontology', 'aging biology', 'healthspan'],
@@ -3062,7 +2876,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Gerontology',
-      career_world: 'healing',
       riasec_affinity: ['S', 'I', 'E'],
       riasec_conflict: ['R', 'A'],
       program_keywords: ['gerontology', 'aging studies', 'elder care', 'aging policy', 'senior services', 'USC Davis'],
@@ -3083,7 +2896,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Nursing (Gerontological Specialty)',
-      career_world: 'healing',
       riasec_affinity: ['S', 'I', 'R'],
       riasec_conflict: ['A', 'C'],
       program_keywords: ['nursing', 'gerontological nursing', 'adult-gerontology nurse practitioner', 'AGNP', 'geriatric care', 'long-term care nursing'],
@@ -3104,7 +2916,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Public Health',
-      career_world: 'healing',
       riasec_affinity: ['I', 'S', 'E'],
       riasec_conflict: ['R', 'A'],
       program_keywords: ['public health', 'population health', 'aging policy', 'health equity', 'epidemiology', 'aging demographics'],
@@ -3125,7 +2936,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Kinesiology / Exercise Science (Longevity Track)',
-      career_world: 'healing',
       riasec_affinity: ['R', 'I', 'S'],
       riasec_conflict: ['A', 'C'],
       program_keywords: ['exercise science', 'kinesiology', 'longevity fitness', 'strength conditioning', 'fall prevention', 'physical therapy pathway'],
@@ -3152,7 +2962,6 @@ Object.assign(MAJOR_MAP, {
   96: [
     {
       major_label: 'Finance (Wealth Management Track)',
-      career_world: 'money',
       riasec_affinity: ['C', 'E', 'I'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['wealth management', 'financial planning', 'estate planning', 'family office', 'fiduciary advisory', 'CFP'],
@@ -3177,7 +2986,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Accounting (Trust & Estate Track)',
-      career_world: 'money',
       riasec_affinity: ['C', 'I', 'E'],
       riasec_conflict: ['A', 'S'],
       program_keywords: ['estate accounting', 'trust administration', 'fiduciary accounting', 'tax planning', 'CPA', 'estate tax'],
@@ -3198,7 +3006,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Pre-Law (Estate & Trust Law)',
-      career_world: 'justice',
       riasec_affinity: ['E', 'I', 'C'],
       riasec_conflict: ['R', 'A'],
       program_keywords: ['estate law', 'trust law', 'elder law', 'estate planning attorney', 'wealth transfer law', 'probate'],
@@ -3219,7 +3026,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Philosophy (Wealth Ethics & Fiduciary Track)',
-      career_world: 'ideas',
       riasec_affinity: ['I', 'E', 'A'],
       riasec_conflict: ['R', 'C'],
       program_keywords: ['philosophy', 'ethics', 'fiduciary duty', 'pre-law', 'bioethics', 'values-based investing'],
@@ -3240,7 +3046,6 @@ Object.assign(MAJOR_MAP, {
     },
     {
       major_label: 'Financial Planning',
-      career_world: 'money',
       riasec_affinity: ['C', 'E', 'S'],
       riasec_conflict: ['A', 'R'],
       program_keywords: ['financial planning', 'CFP certification', 'retirement planning', 'tax planning', 'insurance planning', 'investment planning'],
@@ -3262,1520 +3067,70 @@ Object.assign(MAJOR_MAP, {
   ]
 });
 
-// ── NAICS 101 — The Planning Economy ─────────────────────────────────────────
-// The cognitive profile the system has never named as a career asset:
-// the person who turns chaos into a sequence without being asked.
+// ── NAICS 53 — Real Estate & Property ────────────────────────────────────────
+// Built under NAICS-53-BUILD-001, Step 4a — majors and entry careers drawn
+// directly from NAICS_TO_ONET[53] (lifescape_onet_map.js), whose 8 occupation
+// titles split cleanly across two majors: the analytical/capital side
+// (Developer, Investment Analyst, Asset Manager, REIT Analyst) and the
+// relationship/operations side (Broker, Property Manager, Leasing Director).
+// Real Estate Attorney is folded into the second major as a JD-track note
+// rather than a standalone major, consistent with how this file handles
+// other law-track careers elsewhere. Every deployment_context below carries
+// forward NAICS_TO_ONET[53]'s counselor note as the throughline: real estate
+// has no single dominant academic pipeline the way law or medicine does — it
+// is genuinely relationship- and network-driven, and family connections in
+// the industry accelerate entry more than in almost any other cluster covered
+// in this file. School-level scoring for this sector was completed across all
+// 159 V5 schools prior to this build (Step 3, July 22 2026).
 Object.assign(MAJOR_MAP, {
-  101: [
+  53: [
     {
-      major_label: 'Supply Chain Management',
-      career_world: 'logistics',
-      riasec_affinity: ['C', 'E', 'I'],
-      riasec_conflict: ['A'],
-      program_keywords: ['supply chain management', 'logistics', 'operations management', 'procurement', 'inventory management', 'demand planning'],
-      entry_careers: ['Supply Chain Analyst', 'Demand Planner', 'Procurement Associate', 'Operations Coordinator', 'Logistics Coordinator'],
+      major_label: 'Real Estate Development & Investment',
+      riasec_affinity: ['E', 'C', 'I'],
+      riasec_conflict: ['A', 'S'],
+      program_keywords: ['real estate development', 'real estate finance', 'REIT', 'real estate investment', 'commercial real estate', 'asset management'],
+      entry_careers: ['Real Estate Developer', 'Real Estate Investment Analyst', 'Asset Manager', 'REIT Analyst'],
       world_alignment: 'Systems',
       cc_transfer_friendly: true,
-      emerging_role: 'Supply Chain Resilience Architect — the professional who redesigns supply chain networks after the COVID-era disruptions revealed that the just-in-time, single-source, offshore-optimized supply chain model was fragile in ways that most companies had not modeled. Every major manufacturer, retailer, and healthcare system is rebuilding its supply chain with redundancy, nearshoring, and visibility tools that did not exist or were not prioritized five years ago. The supply chain professional who understands both the optimization logic of the old model and the resilience requirements of the new one is one of the most sought-after profiles in operations.',
+      emerging_role: 'Proptech Investment Analyst — the professional who underwrites real estate deals using data platforms, AI-driven valuation models, and building-performance sensors alongside the traditional metrics every real estate analyst has to know cold — cap rate, net operating income (NOI), and internal rate of return (IRR) — determining not just what a property is worth today but how technology adoption, energy performance, and tenant-experience data will move NOI and, through it, exit value over a hold period. Blackstone Real Estate, Brookfield, and a growing set of real estate private equity funds are building analyst roles that require both classical underwriting and genuine data fluency, a combination most finance programs do not yet teach together.',
       deployment_contexts: [
         {
-          domain: 'Demand Planning & Inventory Optimization',
-          edge: 'Getting demand right — knowing how much product to have, where, and when — is the difference between a supply chain that serves customers and one that either runs out of stock or drowns in inventory carrying costs. The demand planner who combines statistical modeling with genuine business judgment — who can build the forecast and also explain to a merchant why the model says to buy 40% more inventory than last year — is doing some of the highest-leverage analytical work in retail and consumer products. Michigan State, Penn State, and the University of Tennessee\'s Global Supply Chain Institute all have demand planning concentrations that most students never encounter until they are already on a different career path.'
+          domain: 'Real Estate Development & Urban Growth',
+          edge: 'Real estate has no single dominant academic pipeline the way law or medicine does — it is one of the most relationship- and network-driven fields a student can enter, and family connections in the industry genuinely accelerate entry more than in almost any other cluster. For students without that network, a real, named academic path exists to build one deliberately: the NYU Schack Institute of Real Estate, the University of Denver\'s Franklin L. Burns School of Real Estate and Construction Management, and the University of Maryland\'s Smith School Master of Real Estate Development program all place graduates directly into development roles at firms like Related Group and Lennar, the companies that are physically building the cities their students will spend a career shaping.'
         },
         {
-          domain: 'Procurement & Supplier Relationship Management',
-          edge: 'Every dollar saved in procurement falls directly to the bottom line. The procurement professional who can negotiate supplier contracts, manage supplier performance, develop alternative sources, and build the relationship infrastructure that makes a supply chain reliable under stress is providing one of the most direct and measurable financial contributions available in any business function. As supply chains have become more complex and more strategic, procurement has evolved from a transactional function into a strategic one — and the professionals who have made that transition with it are among the most valued in operations. Michigan State and Penn State both have procurement concentrations with Fortune 500 recruiting relationships.'
+          domain: 'REIT & Institutional Real Estate Investment',
+          edge: 'The capital that owns most of the commercial real estate in America does not sit with individual landlords anymore — it sits with publicly traded REITs and institutional funds whose analysts decide which buildings get bought, held, or sold based on models that blend real estate fundamentals with capital markets discipline. The two numbers every analyst on these deals has to model correctly are net operating income (NOI) — the income a property throws off after operating expenses, before debt service — and the cap rate, the ratio of that NOI to purchase price that determines whether a building is priced to make money or priced on hope. Wharton\'s real estate finance concentration and the University of Wisconsin\'s James A. Graaskamp Center for Real Estate — one of the oldest and most respected dedicated real estate programs in the country — both feed directly into REIT analyst and institutional acquisitions roles at firms like CBRE and JLL, whose research and capital markets teams recruit specifically for the blend of finance rigor and real estate specificity that a generic finance degree does not provide.'
         },
         {
-          domain: 'Consumer Packaged Goods Operations',
-          edge: 'The independent CPG brand — the food, beverage, supplement, or personal care company building from zero to $50M in revenue — needs supply chain professionals who can do everything simultaneously: find co-manufacturers, negotiate ingredient contracts, manage inventory across a limited warehouse footprint, coordinate distribution relationships, and plan production schedules with the imperfect demand signal that an early-stage brand provides. Michigan State\'s School of Packaging and supply chain programs together provide the most complete undergraduate preparation for this specific career path that exists anywhere.'
+          domain: 'Real Estate Private Equity & Proptech',
+          edge: 'The same forces reshaping every other industry — data, automation, AI-driven forecasting — are reshaping how real estate capital gets deployed, and the analysts entering real estate private equity today are expected to build models that account for building-technology adoption and energy performance alongside the return metrics that actually decide whether a deal gets funded: internal rate of return (IRR), which captures how the timing of cash flows across a multi-year hold period compounds into a single annualized return, and cash-on-cash return, the simpler, unlevered-feeling number that tells an investor what their actual cash outlay is earning them this year, not five years from now. UT Austin\'s McCombs School of Business, home to a consistently top-5-ranked real estate program nationally, and Stanford\'s proptech-adjacent entrepreneurship track both place graduates into real estate private equity and proptech venture roles where the ability to model both a building and the software running it is the actual differentiator.'
         }
       ]
     },
     {
-      major_label: 'Event Management',
-      career_world: 'hospitality',
-      riasec_affinity: ['E', 'C', 'S'],
-      riasec_conflict: ['I', 'R'],
-      program_keywords: ['event management', 'event planning', 'hospitality management', 'conference management', 'meeting planning', 'CMP certification'],
-      entry_careers: ['Event Coordinator', 'Conference Manager', 'Wedding Planner', 'Corporate Event Planner', 'Festival Operations Coordinator'],
-      world_alignment: 'People',
-      cc_transfer_friendly: true,
-      emerging_role: 'Experience Economy Designer — the professional who designs and produces live experiences — corporate events, brand activations, trade show presences, festivals, conferences — as strategic business tools rather than logistical necessities. As the experience economy has grown and live events have demonstrated higher engagement and conversion than digital marketing across almost every industry, the event professional who understands both the operational execution and the strategic objective behind an event is providing far more value than a coordinator who simply books the venue and the catering.',
-      deployment_contexts: [
-        {
-          domain: 'Corporate Events & Conference Management',
-          edge: 'Every major corporation runs an annual meeting, a sales kickoff, a product launch, a user conference, or a combination of all four — and the professionals who produce these events are managing budgets from $100,000 to $50,000,000, coordinating hundreds of vendors, and delivering experiences on which a significant portion of the company\'s culture and business development depends. The Certified Meeting Professional designation is the field standard; the undergraduate programs at Belmont University, Johnson & Wales, and the University of Nevada Las Vegas all have event management concentrations with direct placement into corporate event planning roles.'
-        },
-        {
-          domain: 'Trade Show & Exhibition Management',
-          edge: 'The trade show industry generates more than $100 billion in economic activity annually in the United States alone. Informa, Reed Exhibitions, and the independent show organizers who run the thousands of annual trade shows across every industry all need operations professionals who can build a temporary city — with power, connectivity, logistics, catering, security, and 200 exhibitors — and take it down again in 72 hours. The event management professional who specializes in trade show operations is working in a segment of the industry that is growing, that pays well, and that almost no high school student considers as a career path.'
-        },
-        {
-          domain: 'Live Music & Entertainment Production',
-          edge: 'The tour manager who moves a band and forty tons of equipment across twenty cities. The festival producer who creates Coachella or Bonnaroo. The venue operations director who runs the Hollywood Bowl or Madison Square Garden. All of these roles require the planning mind at its most demanding — managing hundreds of vendors, thousands of moving parts, and the absolute deadline of showtime that cannot be moved. Johnson & Wales, Belmont, and Full Sail University all have event management programs with live entertainment concentrations that place students directly into the touring and festival production industry.'
-        }
-      ]
-    },
-    {
-      major_label: 'Operations Management',
-      career_world: 'power',
-      riasec_affinity: ['C', 'E', 'I'],
-      riasec_conflict: ['A'],
-      program_keywords: ['operations management', 'project management', 'process improvement', 'lean management', 'operations planning', 'PMP'],
-      entry_careers: ['Operations Analyst', 'Project Manager', 'Process Improvement Specialist', 'Operations Planner', 'Business Operations Manager'],
-      world_alignment: 'Systems',
-      cc_transfer_friendly: true,
-      emerging_role: 'AI-Augmented Operations Manager — the operations professional who manages workflows that combine human judgment with AI-generated planning, scheduling, and optimization outputs — deciding when to follow the algorithm, when to override it, and how to design the human review layer that makes automated operations reliable in the situations the algorithm has not encountered before. Every logistics company, healthcare system, and manufacturer deploying AI planning tools needs this function and most are building it from scratch.',
-      deployment_contexts: [
-        {
-          domain: 'Healthcare Operations & Care Coordination',
-          edge: 'The hospital that runs well — where patients move efficiently from admission to discharge, where supplies are available when clinicians need them, where the schedule runs close to plan — is a direct function of operational management quality. The operations professional in healthcare is managing complexity that rivals military logistics, under regulatory constraints that rival pharmaceutical manufacturing, with human stakes that most business environments do not impose. Ohio State, Indiana University, and the University of Florida all have healthcare administration programs that combine operations management with healthcare-specific training and place graduates into hospital operations roles with starting salaries that most undergraduate programs do not approach.'
-        },
-        {
-          domain: 'Retail & E-Commerce Operations',
-          edge: 'The customer who clicks buy and receives the package the next day is experiencing the output of an operations system that involves demand forecasting, inventory positioning, warehouse management, carrier selection, last-mile routing, and return processing — all coordinated in real time, at scale, with a cost structure that determines whether the business is profitable. The operations professional who understands e-commerce fulfillment at the system level — who can see where a process is failing and redesign it — is among the most in-demand profiles in retail. Ohio State Fisher and Indiana University Kelley both have operations management programs with strong e-commerce and retail placement.'
-        }
-      ]
-    },
-    {
-      major_label: 'Hospitality Management',
-      career_world: 'hospitality',
+      major_label: 'Real Estate Brokerage & Property Management',
       riasec_affinity: ['E', 'S', 'C'],
-      riasec_conflict: ['I', 'R'],
-      program_keywords: ['hospitality management', 'hotel management', 'food and beverage management', 'tourism', 'resort management'],
-      entry_careers: ['Hotel Management Trainee', 'Food & Beverage Manager', 'Event Services Manager', 'Resort Operations Associate'],
+      riasec_conflict: ['R', 'I'],
+      program_keywords: ['real estate brokerage', 'commercial leasing', 'property management', 'real estate sales', 'facilities management', 'tenant representation'],
+      entry_careers: ['Commercial Broker', 'Property Manager', 'Leasing Director'],
       world_alignment: 'People',
       cc_transfer_friendly: true,
-      emerging_role: 'Hospitality Technology Experience Director — the professional who integrates technology into guest experiences in ways that feel like service rather than self-service — from mobile check-in and keyless entry to AI-powered personalization and predictive maintenance that prevents the problems guests would otherwise encounter. As hospitality companies have invested heavily in technology to reduce labor cost and improve consistency, the professional who ensures that technology serves the human experience of hospitality rather than replacing it is providing the most important quality control function in the industry.',
+      emerging_role: 'Real Estate Portfolio Technology Manager — the professional who manages the tenant-experience apps, smart building systems, and portfolio-wide data platforms that a modern property management company runs on top of its physical buildings — translating between the operations team that runs the property and the technology stack that increasingly determines tenant satisfaction and lease renewal. CBRE, JLL, and the major property management platforms are all building this function as a bridge between traditional facilities management and the proptech layer tenants now expect.',
       deployment_contexts: [
         {
-          domain: 'Hotel & Resort Operations',
-          edge: 'The hotel general manager oversees a physical plant, a food and beverage operation, a housekeeping department, a sales and marketing function, a human resources operation, and a technology infrastructure — simultaneously, every day, in a business where the product expires every night and cannot be stored. The hospitality management graduate who earns their stripes in the management trainee programs at Marriott, Hilton, and Hyatt is building general management competency at a speed that most industries cannot match. Cornell\'s School of Hotel Administration and the University of Nevada Las Vegas both have placement rates and alumni networks in hotel operations that are unmatched in undergraduate business education.'
+          domain: 'Commercial Brokerage & Tenant Representation',
+          edge: 'Brokerage is the purest expression of real estate\'s relationship-driven character — a broker\'s value is not a credential, it is a network, a track record, and the trust of both sides of a deal. USC\'s Lusk Center for Real Estate and the broader real estate programs feeding CBRE and JLL\'s brokerage teams do not promise a dominant, singular pipeline the way a law school does; they promise a real head start on building the relationships that determine who gets the next deal. A student drawn to this field should understand upfront that the degree opens the door, but the career is built on who trusts you once you are inside it.'
         },
         {
-          domain: 'Food & Beverage Operations',
-          edge: 'Restaurant and food service management requires every operational skill that exists — purchasing, inventory, staffing, scheduling, quality control, customer service, financial management — compressed into an environment where the product is perishable, the customer is present, and the margin for error is measured in minutes. The food and beverage manager who can run a profitable operation at scale is building competency that transfers to every other operations environment. Johnson & Wales, the Culinary Institute of America, and Cornell Hotel School all have food and beverage management tracks with strong corporate placement in contract food service, restaurant groups, and hotel F&B operations.'
-        }
-      ]
-    },
-    {
-      major_label: 'Family & Consumer Sciences',
-      career_world: 'civic',
-      riasec_affinity: ['S', 'C', 'E'],
-      riasec_conflict: ['I', 'R'],
-      program_keywords: ['family and consumer sciences', 'human ecology', 'consumer economics', 'family resource management', 'community services'],
-      entry_careers: ['Family Resource Specialist', 'Community Program Coordinator', 'Consumer Affairs Manager', 'Financial Counselor'],
-      world_alignment: 'People',
-      cc_transfer_friendly: true,
-      emerging_role: 'Household Systems Manager — the professional who applies organizational, financial, and operational management skills to household and family management at a high level — and who transitions those skills into the workforce through roles in financial counseling, community resource coordination, nonprofit program management, and consumer advocacy. The platform names household management explicitly as a full and legitimate deployment of the planning mind — not a lesser path, not a backup plan, but the most complex and most consequential organizational environment many planning-oriented people will ever manage.',
-      deployment_contexts: [
-        {
-          domain: 'Community Resource Management & Nonprofit Operations',
-          edge: 'Nonprofit organizations that serve families — food banks, childcare resource networks, family support programs, community health organizations — are run on operational management and resource allocation skills that are identical to the planning skills that manage a household well. The Family and Consumer Sciences graduate who brings genuine organizational and financial management competency to a mission-driven context is often the most operationally capable person in the organization, because the skills they developed managing complex family systems transfer directly to managing complex service delivery systems. Iowa State and Ohio State both have strong FCS programs with direct placement into nonprofit management, extension services, and community program coordination.'
+          domain: 'Property & Portfolio Management Operations',
+          edge: 'Someone has to actually run the building after it is developed and financed — managing tenants, maintenance, budgets, and the day-to-day operations that determine whether an asset performs the way the investment model said it would. Every decision a property manager makes, from renewing a lease to deferring a repair, ultimately shows up in one number the owner actually cares about — net operating income (NOI) — which means property management is where real estate\'s finance side meets its operations side, and the professionals who do it well combine genuine people skills with real operational and financial literacy — reading a budget as fluently as they read a tenant\'s frustration with a slow maintenance request.'
         },
         {
-          domain: 'Consumer Financial Counseling',
-          edge: 'The financial counselor who helps families navigate debt, build budgets, understand credit, plan for education costs, and make the financial decisions that compound over a lifetime is providing one of the most meaningful and most needed services in American personal finance. The AFCPE (Association for Financial Counseling and Planning Education) credential and the AFC designation are the professional standards for this function. The Family and Consumer Sciences graduate who develops genuine financial planning competency is building toward a career that serves families across the income spectrum — not just the wealthy families served by the traditional financial advisory industry — and that addresses a genuine gap in financial services access.'
+          domain: 'Real Estate Law & Regulatory Practice',
+          edge: 'Real estate attorneys — the professionals who close deals, resolve title disputes, and navigate zoning and land-use regulation — typically reach that role via law school after an undergraduate foundation in real estate, business, or finance, the same JD-track pattern this file uses elsewhere for pre-law students with a specific substantive interest. A student drawn to real estate\'s legal and regulatory side is building toward one of the most consistently in-demand specializations within real estate practice, since every development, financing, and leasing transaction requires legal review that a purely business-side professional cannot provide.'
         }
       ]
     }
   ]
 });
-
-// ── NAICS 97 — The Physical Logistics Economy ────────────────────────────────
-// Ports, maritime, rail, trucking, warehousing, cold chain
-Object.assign(MAJOR_MAP, {
-  97: [
-    {
-      major_label: 'Transportation & Logistics Management',
-      career_world: 'logistics',
-      riasec_affinity: ['E', 'C', 'R'],
-      riasec_conflict: ['A'],
-      program_keywords: ['transportation management', 'logistics', 'freight', 'carrier management', 'TMS', 'transportation operations'],
-      entry_careers: ['Transportation Analyst', 'Freight Broker', 'Carrier Relations Manager', 'Load Planner', 'Logistics Coordinator'],
-      world_alignment: 'Systems',
-      cc_transfer_friendly: true,
-      emerging_role: 'Autonomous Fleet Operations Supervisor — the professional who monitors, manages exceptions for, and ensures the regulatory compliance of autonomous and semi-autonomous commercial vehicle fleets as the technology scales from pilot programs to full commercial deployment. Tesla Semi, Aurora, and Kodiak are deploying autonomous long-haul trucks on specific corridors; the human role is shifting from operator to supervisor — and the operations professional who understands both the transportation fundamentals and the technology layer is building the playbook for a transition that the industry does not yet have trained people to manage.',
-      deployment_contexts: [
-        {
-          domain: 'Freight Brokerage & Digital Freight Matching',
-          edge: 'The freight broker matches shippers who need to move cargo with carriers who have available capacity — and the digitization of that process, through platforms like Uber Freight, Convoy, and Echo Global Logistics, has transformed what was a phone-and-fax business into a data-driven commercial operation. The freight broker who combines relationship skills with technology fluency — who can use digital freight platforms to manage more loads with better data than a traditional broker — is building toward one of the most accessible and highest-earning entry points in the logistics industry. Michigan State, Penn State, and the University of Tennessee all have transportation and logistics programs with direct freight brokerage recruiting relationships.'
-        },
-        {
-          domain: 'Fleet Management & Transportation Operations',
-          edge: 'Every company that operates a fleet — of trucks, of vans, of rail cars, of ships — needs professionals who can manage the safety, maintenance, routing, regulatory compliance, and cost performance of that fleet simultaneously. The fleet management professional who develops fluency in telematics data, hours of service regulations, preventive maintenance systems, and driver management is building toward a career that exists in every industry and geography in the country. Samsara, Geotab, and Motive are the telematics platforms that most fleet managers use daily; familiarity with these systems is increasingly a baseline expectation in fleet operations hiring.'
-        },
-        {
-          domain: 'Cold Chain & Pharmaceutical Logistics',
-          edge: 'The cold chain — temperature-controlled logistics for food, pharmaceuticals, and biologics — is among the most technically demanding and fastest-growing logistics segments. The COVID-19 vaccine distribution demonstrated that cold chain logistics is a national security asset, and the pharmaceutical cold chain for mRNA vaccines, biologics, and cell and gene therapies is growing at more than 15% annually. The logistics professional who develops cold chain expertise — who understands refrigeration technology, temperature monitoring requirements, regulatory documentation, and the carrier qualification standards that pharmaceutical companies impose — is building toward a specialty that commands significant premiums over general logistics roles.'
-        }
-      ]
-    },
-    {
-      major_label: 'Maritime Transportation',
-      career_world: 'logistics',
-      riasec_affinity: ['R', 'E', 'C'],
-      riasec_conflict: ['A'],
-      program_keywords: ['maritime transportation', 'marine operations', 'port management', 'maritime law', 'vessel operations', 'USCG license'],
-      entry_careers: ['Deck Officer', 'Port Operations Coordinator', 'Maritime Logistics Analyst', 'Marine Transportation Specialist'],
-      world_alignment: 'Systems',
-      cc_transfer_friendly: false,
-      emerging_role: 'Port Electrification & Sustainability Manager — the professional who manages the transition of port operations from diesel to electric power — shore power infrastructure for vessels at berth, electric cargo handling equipment, zero-emission yard vehicles, and the utility interconnection and grid management complexity that comes with electrifying one of the most power-intensive industrial environments that exists. The Port of Los Angeles runs the most aggressive clean air program of any port in the world and is the leading edge of a transition that every major US port will undergo.',
-      deployment_contexts: [
-        {
-          domain: 'US Merchant Marine & Vessel Operations',
-          edge: 'The US Merchant Marine operates the vessels that carry cargo between US ports under the Jones Act and to international destinations — and its officers are among the most credentialed and highest-compensated maritime professionals in the world. A deck officer or engineer officer license requires a four-year program at a US maritime academy — the US Merchant Marine Academy at Kings Point, Maine Maritime, Massachusetts Maritime, Texas A&M Galveston, or Cal Maritime — and provides a full federal scholarship in exchange for a service obligation. The maritime officer who transitions to a commercial career has credentials and sea experience that make them immediately valuable in port operations, maritime law, vessel management, and logistics management roles that shore-side candidates cannot access.'
-        },
-        {
-          domain: 'Port Operations & Terminal Management',
-          edge: 'The Port of Los Angeles and Long Beach together handle 40% of all US containerized imports. The Port of Savannah has grown faster than any other major US port in the last decade. The Port of Houston handles more cargo by tonnage than any other port in America. Every one of these operations requires professionals who manage vessel scheduling, berth allocation, crane operations, container tracking, gate management, and labor coordination simultaneously. Port operations management is among the highest-compensated non-executive roles in the logistics industry and among the most undersurfaced career paths in undergraduate education. Old Dominion University in Norfolk — adjacent to the largest naval station in the world and the Port of Virginia — has the strongest port and maritime logistics program on the East Coast.'
-        }
-      ]
-    },
-    {
-      major_label: 'Supply Chain Management (Physical Infrastructure Track)',
-      career_world: 'logistics',
-      riasec_affinity: ['R', 'C', 'E'],
-      riasec_conflict: ['A'],
-      program_keywords: ['warehouse management', 'distribution operations', 'fulfillment', 'WMS', 'inventory management', 'cold storage'],
-      entry_careers: ['Warehouse Operations Manager', 'Distribution Center Supervisor', 'Fulfillment Operations Analyst', 'Inventory Control Specialist'],
-      world_alignment: 'Systems',
-      cc_transfer_friendly: true,
-      emerging_role: 'Warehouse Automation Operations Manager — the professional who commissions, operates, and continuously improves automated warehouse systems — integrating robotic picking systems from Symbotic, 6 River Systems, or Geek+, autonomous mobile robots, and AI-driven fulfillment orchestration software into a physical operation that still requires human judgment for exception management, system maintenance, and the continuous improvement of human-robot collaboration. Amazon operates 1,000+ fulfillment centers and is deploying automation faster than the industry has trained people to manage it.',
-      deployment_contexts: [
-        {
-          domain: 'Distribution Center & Fulfillment Operations',
-          edge: 'The distribution center that runs well — where orders ship on time, where inventory is where it is supposed to be, where safety incidents are rare and labor turnover is manageable — is a function of operational management quality as much as technology investment. The operations professional who can run a mid-size distribution center is managing a business with millions of dollars in inventory, hundreds of employees, sophisticated technology systems, and an external commitment to service levels that has zero tolerance for failure. Michigan State, Ohio State, and Penn State all have supply chain programs with direct recruiting relationships at the major retailers, e-commerce companies, and third-party logistics providers who run these operations.'
-        },
-        {
-          domain: 'Agricultural & Food Distribution',
-          edge: 'The food supply chain — from farm to processing plant to distribution center to store — is the most essential logistics system in the economy and one of the most technically demanding. Temperature control, food safety documentation, FSMA compliance, short product shelf lives, and the seasonal variability of agricultural supply all create operational challenges that do not exist in the same combination in any other logistics environment. The supply chain professional who specializes in food and agricultural distribution is building toward a career where the work is consequential, the demand is non-cyclical, and the specialized expertise is difficult to replicate. Michigan State and the University of Tennessee both have food supply chain concentrations with strong industry placement.'
-        }
-      ]
-    },
-    {
-      major_label: 'Civil Engineering (Infrastructure Track)',
-      career_world: 'logistics',
-      riasec_affinity: ['R', 'I', 'C'],
-      riasec_conflict: ['A', 'S'],
-      program_keywords: ['civil engineering', 'infrastructure', 'transportation engineering', 'port engineering', 'structural engineering'],
-      entry_careers: ['Transportation Engineer', 'Port Infrastructure Engineer', 'Structural Engineer', 'Civil Engineering Associate'],
-      world_alignment: 'Make',
-      cc_transfer_friendly: false,
-      emerging_role: 'Port Infrastructure Electrification Engineer — the civil and electrical engineer who designs the power infrastructure, shore power connections, and electrical distribution systems that enable ports to eliminate diesel emissions from vessels at berth and cargo handling equipment. The Port of Baltimore reconstruction following the Francis Scott Key Bridge collapse is the largest active port infrastructure project in the United States and requires engineers who understand both the civil engineering of port structures and the electrical engineering of modern electrified port operations.',
-      deployment_contexts: [
-        {
-          domain: 'Port & Marine Infrastructure Development',
-          edge: 'Ports are among the most capital-intensive infrastructure environments in existence — cranes that cost $15M each, berths that require dredging to accommodate the largest vessels afloat, rail connections that integrate with national freight networks, and road infrastructure that handles thousands of truck movements per day. The civil engineer who specializes in port and marine infrastructure is working on projects whose scale, technical complexity, and economic consequence rival any civil engineering environment. The Port of Baltimore reconstruction, the ongoing expansion of the Port of Savannah, and the infrastructure programs at every major US port all represent multi-billion dollar civil engineering programs. Penn State and Texas A&M both have civil engineering programs with strong infrastructure and transportation concentrations.'
-        },
-        {
-          domain: 'Transportation Infrastructure & Highway Engineering',
-          edge: 'The Infrastructure Investment and Jobs Act committed $110 billion to roads and bridges — the largest federal investment in surface transportation in a generation. The transportation engineer who designs, analyzes, and manages the construction of this infrastructure is doing work that will outlast their career by decades. Traffic modeling, pavement design, bridge engineering, and the increasingly important integration of transportation infrastructure with autonomous vehicle requirements are all active specializations within transportation engineering. Purdue, Penn State, and Georgia Tech all have transportation engineering concentrations with strong state DOT and federal agency placement.'
-        }
-      ]
-    },
-    {
-      major_label: 'Industrial Engineering (Logistics Systems Track)',
-      career_world: 'logistics',
-      riasec_affinity: ['I', 'R', 'C'],
-      riasec_conflict: ['A', 'S'],
-      program_keywords: ['industrial engineering', 'operations research', 'logistics optimization', 'network design', 'systems engineering'],
-      entry_careers: ['Industrial Engineer', 'Logistics Systems Analyst', 'Network Optimization Engineer', 'Operations Research Analyst'],
-      world_alignment: 'Think',
-      cc_transfer_friendly: false,
-      emerging_role: 'Logistics Network Optimization Engineer — the industrial engineer who applies operations research techniques — linear programming, simulation, stochastic modeling — to the design of distribution networks, the routing of freight, the layout of warehouses, and the allocation of inventory across supply chain nodes. Every major retailer, e-commerce company, and logistics service provider is continuously redesigning its network to balance cost, service, and resilience — and the engineer who can model those tradeoffs quantitatively is doing some of the highest-leverage analytical work in operations.',
-      deployment_contexts: [
-        {
-          domain: 'Supply Chain Network Design & Optimization',
-          edge: 'The location of distribution centers, the allocation of inventory across nodes, the selection of transportation modes, and the tradeoff between service speed and cost are all network design decisions that determine whether a supply chain is a competitive advantage or a competitive liability. The industrial engineer who can model these decisions quantitatively — who can run a facility location optimization, simulate the impact of a network redesign, and communicate the results to business leaders who did not study operations research — is among the most valued analytical professionals in logistics and supply chain management. Georgia Tech\'s Stewart School of Industrial and Systems Engineering has the strongest operations research and supply chain optimization program in the country for undergraduates who want to specialize in logistics network design.'
-        },
-        {
-          domain: 'Warehouse Layout & Material Flow Engineering',
-          edge: 'The layout of a warehouse — where products are stored, how they flow through the building, how picking routes are designed, how receiving and shipping docks are positioned — determines a significant portion of the labor cost and throughput capacity of the operation. The industrial engineer who specializes in warehouse design and material flow is doing work that has immediate and measurable financial impact. As automated warehouse systems have become more complex, the integration of robotics systems with physical warehouse layout has become a specialized engineering discipline in its own right. Purdue and Georgia Tech both have industrial engineering programs with warehouse and material handling concentrations.'
-        }
-      ]
-    }
-  ]
-});
-
-// ── NAICS 98 — The Systems & Automation Economy ──────────────────────────────
-// Fleet management software, autonomous operations, warehouse automation,
-// supply chain technology, digital freight, demand planning
-Object.assign(MAJOR_MAP, {
-  98: [
-    {
-      major_label: 'Information Systems',
-      career_world: 'technology',
-      riasec_affinity: ['I', 'C', 'E'],
-      riasec_conflict: ['A', 'R'],
-      program_keywords: ['information systems', 'ERP', 'TMS', 'WMS', 'supply chain technology', 'enterprise systems', 'SAP', 'Oracle'],
-      entry_careers: ['Supply Chain Systems Analyst', 'ERP Implementation Consultant', 'TMS Analyst', 'WMS Specialist', 'IT Business Analyst'],
-      world_alignment: 'Systems',
-      cc_transfer_friendly: true,
-      emerging_role: 'Supply Chain Technology Implementation Consultant — the professional who implements and optimizes Transportation Management Systems, Warehouse Management Systems, and supply chain visibility platforms for the shippers, carriers, and logistics service providers who are replacing legacy systems with cloud-native logistics technology. The consultant who can configure a TMS to a specific operational reality — who understands both the software and the business process it is replacing — is in persistent demand across every industry that moves physical goods.',
-      deployment_contexts: [
-        {
-          domain: 'TMS & WMS Implementation',
-          edge: 'The Transportation Management System and Warehouse Management System are the operational nervous system of any company that moves significant physical inventory. Implementing these systems — configuring them to a specific business, training the users, managing the data migration, and troubleshooting the integrations with carriers, ERP systems, and customer platforms — is a project that takes months and costs millions of dollars, and getting it wrong has operational consequences that are immediately visible. The information systems professional who develops logistics domain knowledge alongside technical implementation competency is building toward consulting roles that bill at rates most undergraduate career guidance never names. University of Arkansas graduates enter Walmart\'s technology and supply chain organizations at rates that are unmatched by any other program in the country.'
-        },
-        {
-          domain: 'Supply Chain Visibility & Control Tower',
-          edge: 'Real-time supply chain visibility — knowing where every shipment, every container, every component is at every moment — is the most sought-after capability in supply chain management. Project44, FourKites, Descartes, and Flexport provide this visibility through platforms that aggregate data from carriers, tracking devices, and port systems. The information systems professional who can implement and optimize these platforms — who can connect the data feeds, configure the exception alerts, and build the reporting that gives a supply chain team genuine situational awareness — is building toward roles that did not exist five years ago and are now in significant demand. Indiana University Kelley and Michigan State both have information systems concentrations with strong supply chain technology placement.'
-        }
-      ]
-    },
-    {
-      major_label: 'Computer Science (Supply Chain & Logistics Track)',
-      career_world: 'technology',
-      riasec_affinity: ['I', 'R', 'C'],
-      riasec_conflict: ['A', 'S'],
-      program_keywords: ['supply chain data science', 'logistics AI', 'route optimization', 'demand forecasting ML', 'autonomous vehicle technology'],
-      entry_careers: ['Supply Chain Data Scientist', 'Logistics Software Engineer', 'Route Optimization Engineer', 'Demand Forecasting Analyst'],
-      world_alignment: 'Think',
-      cc_transfer_friendly: false,
-      emerging_role: 'Autonomous Vehicle Systems Engineer — the software engineer who builds, tests, and validates the perception, planning, and control systems that enable autonomous commercial vehicles to navigate real-world freight corridors safely. Aurora, Kodiak, Waymo Via, and Plus.ai are all deploying autonomous long-haul trucks on specific routes and are hiring software engineers who understand both the machine learning foundations of autonomous driving and the specific operational requirements of commercial freight. Carnegie Mellon\'s robotics program and Georgia Tech\'s computing program both have direct research relationships with autonomous vehicle companies.',
-      deployment_contexts: [
-        {
-          domain: 'Supply Chain AI & Machine Learning',
-          edge: 'Supply chain is one of the highest-value applications of machine learning in the enterprise. Demand forecasting with neural networks, route optimization with reinforcement learning, predictive maintenance with sensor data models, anomaly detection for supply chain disruptions, and supplier risk scoring with NLP on news feeds are all active production ML systems at major retailers and logistics companies. The computer science student who develops supply chain domain knowledge alongside machine learning competency is building toward a profile that is rare and extremely valuable — the data scientist who understands both the algorithm and the operational context that makes the algorithm\'s output either trustworthy or dangerous. University of Arkansas graduates working inside Walmart\'s data organization are solving supply chain ML problems at a scale no other retailer can offer.'
-        },
-        {
-          domain: 'Logistics Platform Engineering',
-          edge: 'Flexport, Uber Freight, Project44, Samsara, and a generation of logistics technology companies are building the software infrastructure of the modern supply chain — and they need software engineers who understand freight well enough to build products that freight professionals actually use. The computer science student who has spent time learning how logistics operations work — who has done an internship inside a carrier, a 3PL, or a shipper\'s transportation team — arrives at a logistics technology company with a perspective that engineers without that background cannot replicate. Northeastern University\'s co-op program is the most systematic way to develop both technical and domain competency before graduation.'
-        }
-      ]
-    },
-    {
-      major_label: 'Data Science (Supply Chain Track)',
-      career_world: 'technology',
-      riasec_affinity: ['I', 'C', 'R'],
-      riasec_conflict: ['A', 'S'],
-      program_keywords: ['supply chain analytics', 'demand forecasting', 'inventory optimization', 'logistics data', 'operations research'],
-      entry_careers: ['Demand Planner', 'Supply Chain Analyst', 'Operations Data Analyst', 'Inventory Optimization Analyst'],
-      world_alignment: 'Think',
-      cc_transfer_friendly: true,
-      emerging_role: 'Supply Chain Control Tower Analyst — the data professional who operates a supply chain visibility center — monitoring shipment status in real time, identifying exceptions before they become failures, and coordinating the cross-functional response when a disruption occurs. As supply chain visibility platforms have matured and the data they generate has become richer, the analyst who can interpret that data in real time and translate it into operational decisions is doing some of the highest-leverage work in logistics management.',
-      deployment_contexts: [
-        {
-          domain: 'Demand Forecasting & Inventory Optimization',
-          edge: 'A 1% improvement in demand forecast accuracy at Walmart is worth hundreds of millions of dollars in reduced inventory cost and improved in-stock performance. The data scientist who can build better forecasts — who can integrate weather data, promotional calendars, social media signals, and historical patterns into a model that outperforms naive statistical methods — is doing some of the most financially consequential analytical work in retail and consumer products. University of Arkansas graduates in supply chain analytics roles at Walmart headquarters in Bentonville are solving problems at a scale and complexity that no other retailer can offer as a development environment.'
-        },
-        {
-          domain: 'Logistics Network Analytics',
-          edge: 'The decisions about where to locate distribution centers, which carriers to use for which lanes, how to allocate inventory across a network, and how to route the last mile efficiently are all fundamentally data problems — problems where the right analysis can identify millions of dollars in cost reduction or service improvement that is invisible to the intuition of even experienced operators. The supply chain data analyst who develops genuine operations research competency alongside data science tools is building toward one of the most valued analytical roles in the logistics industry. Georgia Tech\'s industrial engineering program has the strongest undergraduate preparation for this specific work of any program in the country.'
-        }
-      ]
-    },
-    {
-      major_label: 'Business Analytics',
-      career_world: 'technology',
-      riasec_affinity: ['I', 'C', 'E'],
-      riasec_conflict: ['A', 'R'],
-      program_keywords: ['business analytics', 'supply chain analytics', 'operations analytics', 'digital transformation', 'process automation'],
-      entry_careers: ['Business Analyst', 'Operations Analyst', 'Process Automation Analyst', 'Digital Transformation Associate'],
-      world_alignment: 'Think',
-      cc_transfer_friendly: true,
-      emerging_role: 'Process Intelligence Analyst — the professional who uses process mining tools — Celonis, UiPath Process Mining, SAP Signavio — to map, analyze, and improve business processes by extracting event data from ERP and operational systems and identifying where processes deviate from their intended design, where bottlenecks create delays, and where automation can remove friction. Process mining is one of the fastest-growing enterprise software categories, and the analyst who can both run the analysis and translate the findings into operational recommendations that business leaders will act on is building toward a career in digital transformation that is in persistent demand.',
-      deployment_contexts: [
-        {
-          domain: 'Digital Transformation & Process Automation',
-          edge: 'Every large organization has processes that could be partially or fully automated — and the business analyst who can identify those processes, assess their automation potential, manage the vendor selection, and oversee the implementation is providing one of the highest-return investments available in enterprise operations. RPA (Robotic Process Automation) tools from UiPath, Automation Anywhere, and Blue Prism have created an entire category of automation that operates at the business process layer rather than the infrastructure layer — automating the repetitive manual tasks that knowledge workers do every day. Indiana University Kelley, Ohio State Fisher, and the University of Michigan Ross all have business analytics programs with digital transformation concentrations.'
-        },
-        {
-          domain: 'E-Commerce & Omnichannel Operations Analytics',
-          edge: 'The e-commerce operation that runs profitably — where fulfillment cost per order, return rate, carrier cost per zone, and inventory carrying cost are all measured, managed, and continuously improved — is a data operation as much as a logistics operation. The business analyst who develops e-commerce operations fluency alongside data analytics competency is building toward one of the most in-demand roles in retail and direct-to-consumer businesses. Every brand that sells online needs someone who can read the operational data and identify why orders are being delivered late, why return rates are rising, and what the last-mile cost structure looks like by geography.'
-        }
-      ]
-    },
-    {
-      major_label: 'Mechanical Engineering (Automation Track)',
-      career_world: 'making',
-      riasec_affinity: ['R', 'I', 'C'],
-      riasec_conflict: ['A', 'S'],
-      program_keywords: ['robotics', 'automation engineering', 'warehouse robotics', 'autonomous systems', 'mechatronics', 'systems integration'],
-      entry_careers: ['Robotics Systems Engineer', 'Automation Engineer', 'Systems Integration Engineer', 'Field Service Engineer'],
-      world_alignment: 'Make',
-      cc_transfer_friendly: false,
-      emerging_role: 'Warehouse Robotics Systems Integrator — the mechanical and systems engineer who designs, installs, commissions, and optimizes the robotic picking, autonomous mobile robot, and automated conveyor systems that are being deployed across the warehouse and fulfillment center industry. Symbotic, 6 River Systems, Fetch Robotics, and Geek+ are the leading systems providers; the engineer who can integrate these systems with a specific warehouse\'s physical layout, WMS software, and labor model is doing work that is in significant demand and that requires a rare combination of mechanical, electrical, and software competency.',
-      deployment_contexts: [
-        {
-          domain: 'Warehouse Automation & Robotics Deployment',
-          edge: 'Amazon, Walmart, Target, and every major retailer are deploying warehouse automation systems faster than the industry has trained engineers to implement and maintain them. The mechanical engineer who develops automation systems competency — who understands both the mechanical design of robotic systems and the software integration that makes them work with WMS platforms and human workers — is building toward a career that is in structural shortage relative to demand. Carnegie Mellon\'s robotics program and Worcester Polytechnic Institute\'s robotics engineering program are the two strongest undergraduate preparations for warehouse robotics systems integration.'
-        },
-        {
-          domain: 'Autonomous Vehicle Systems & Validation',
-          edge: 'Every autonomous truck on a freight corridor is a complex mechanical and software system that must be tested, validated, and maintained to a reliability standard that commercial freight operations require. The mechanical engineer who develops competency in autonomous vehicle systems — in sensor integration, in vehicle dynamics modeling, in the safety validation processes that regulators require before commercial deployment — is working at the most technically demanding frontier of transportation automation. Carnegie Mellon\'s National Robotics Engineering Center and Georgia Tech\'s Institute for Robotics and Intelligent Machines both have undergraduate research programs with direct relationships to autonomous vehicle companies.'
-        }
-      ]
-    }
-  ]
-});
-
-// ── NAICS 99 — The Reshoring & Domestic Supply Chain Economy ─────────────────
-// Chip fabs, battery gigafactories, pharmaceutical manufacturing,
-// defense supply chain, agricultural supply chain
-Object.assign(MAJOR_MAP, {
-  99: [
-    {
-      major_label: 'Chemical Engineering',
-      career_world: 'making',
-      riasec_affinity: ['I', 'R', 'C'],
-      riasec_conflict: ['A', 'S'],
-      program_keywords: ['chemical engineering', 'process engineering', 'pharmaceutical manufacturing', 'semiconductor process', 'battery chemistry', 'GMP'],
-      entry_careers: ['Process Engineer', 'Manufacturing Engineer', 'Quality Engineer', 'Pharmaceutical Process Scientist', 'Battery Cell Engineer'],
-      world_alignment: 'Make',
-      cc_transfer_friendly: false,
-      emerging_role: 'Battery Cell Manufacturing Process Engineer — the chemical engineer who develops and optimizes the manufacturing processes for lithium-ion and next-generation battery cells in the gigafactories being built across the American battery belt in Tennessee, Kentucky, Indiana, Ohio, and Michigan. Panasonic, Samsung SDI, LG Energy Solution, and the Ford-SK and GM-Ultium joint ventures all need process engineers who understand electrochemistry, materials science, and the manufacturing engineering required to produce battery cells at scale with consistent quality. This is one of the most consequential manufacturing engineering roles being created in the American economy right now.',
-      deployment_contexts: [
-        {
-          domain: 'Semiconductor & Advanced Manufacturing Process Chemistry',
-          edge: 'The chip fabrication plants being built by TSMC in Phoenix, Intel in Ohio, and Samsung in Texas require chemical engineers who understand the ultra-pure chemical processes that deposit, etch, and clean the nanometer-scale features on semiconductor wafers. The chemical engineers who specialize in semiconductor process chemistry — who understand CVD, ALD, wet etch chemistries, and the contamination control requirements of cleanroom manufacturing — are entering one of the most technically demanding and most consequential manufacturing environments in the American economy. Arizona State University and MIT both have chemical engineering programs with semiconductor process concentrations that have direct recruiting relationships with the major chip manufacturers.'
-        },
-        {
-          domain: 'Pharmaceutical Manufacturing & Process Development',
-          edge: 'The active pharmaceutical ingredient shortage that COVID revealed — more than 90% of APIs used in American drugs were manufactured in China or India — has driven the largest domestic pharmaceutical manufacturing investment in a generation. Eli Lilly\'s Lebanon, Indiana facility for GLP-1 medications, Pfizer\'s domestic mRNA manufacturing expansion, and Civica Rx\'s generic drug manufacturing program all need chemical engineers who understand pharmaceutical process development, FDA cGMP compliance, and the validation requirements that govern pharmaceutical manufacturing. Purdue and Rutgers University both have chemical engineering programs with pharmaceutical manufacturing concentrations that have direct placement into the companies building this capacity.'
-        },
-        {
-          domain: 'Clean Energy Chemistry & Materials',
-          edge: 'The solar panels, wind turbines, and energy storage systems that comprise the clean energy transition all require materials and chemicals that someone has to engineer, manufacture, and quality-control. The chemical engineer who develops fluency in energy materials — in photovoltaic chemistry, in battery electrolyte formulation, in hydrogen production catalysis — is working at the intersection of chemistry and the most consequential infrastructure transition of the current generation. Colorado School of Mines has the strongest undergraduate program in energy materials chemistry for students who want to specialize in the clean energy supply chain.'
-        }
-      ]
-    },
-    {
-      major_label: 'Electrical Engineering (Semiconductor Track)',
-      career_world: 'making',
-      riasec_affinity: ['I', 'R', 'C'],
-      riasec_conflict: ['A', 'S'],
-      program_keywords: ['semiconductor engineering', 'VLSI', 'chip design', 'fab operations', 'electrical engineering', 'microelectronics'],
-      entry_careers: ['Semiconductor Process Engineer', 'Yield Engineer', 'Equipment Engineer', 'IC Design Engineer', 'Test Engineer'],
-      world_alignment: 'Make',
-      cc_transfer_friendly: false,
-      emerging_role: 'AI Chip Architecture Engineer — the electrical engineer who designs the specialized semiconductor architectures optimized for artificial intelligence workloads — the GPUs, TPUs, and custom AI accelerators that train and run the large language models and computer vision systems that are restructuring the economy. NVIDIA, AMD, Intel, and the hyperscalers including Google, Amazon, and Microsoft are all designing custom silicon for AI inference and training, and the demand for engineers who understand both semiconductor design and AI systems architecture is structurally in excess of the supply of trained engineers.',
-      deployment_contexts: [
-        {
-          domain: 'Semiconductor Fabrication & Process Engineering',
-          edge: 'The Semiconductor Industry Association projects a shortage of 67,000 engineers and technicians in the US semiconductor workforce by 2030. The electrical engineer who specializes in semiconductor fabrication — who understands the photolithography, deposition, etching, and metrology processes that create transistors at nanometer scale — is entering a field where the demand is guaranteed by geopolitical necessity, the investment is funded by federal legislation, and the shortage of qualified professionals is structural enough that it will not resolve in their working lifetime. Arizona State University sits adjacent to TSMC\'s Phoenix fab complex and has developed direct partnership programs that give undergraduates access to semiconductor manufacturing environments that most programs cannot offer.'
-        },
-        {
-          domain: 'Power Electronics & Energy Systems',
-          edge: 'Every electric vehicle, every renewable energy system, every battery storage installation, and every data center requires power electronics — the circuits and systems that convert, control, and distribute electrical power efficiently. The electrical engineer who specializes in power electronics is working across the most active hardware investment categories in the American economy simultaneously. Wide-bandgap semiconductors including silicon carbide and gallium nitride are enabling power electronics performance improvements that are restructuring everything from EV powertrains to grid-scale inverters. Purdue, Georgia Tech, and MIT all have power electronics research groups with strong industry placement.'
-        }
-      ]
-    },
-    {
-      major_label: 'Regulatory Affairs',
-      career_world: 'justice',
-      riasec_affinity: ['C', 'I', 'E'],
-      riasec_conflict: ['A', 'R'],
-      program_keywords: ['regulatory affairs', 'FDA compliance', 'GMP', 'ITAR', 'drug approval', 'medical device regulation', 'RAC certification'],
-      entry_careers: ['Regulatory Affairs Associate', 'Quality Systems Specialist', 'Compliance Analyst', 'Regulatory Submissions Associate'],
-      world_alignment: 'Systems',
-      cc_transfer_friendly: false,
-      emerging_role: 'AI Medical Device Regulatory Specialist — the regulatory professional who navigates FDA\'s evolving framework for artificial intelligence and machine learning-based medical devices — software as a medical device, clinical decision support tools, and autonomous diagnostic systems that learn and change their behavior after deployment. FDA has published guidance and is developing a regulatory framework for AI/ML-based software as a medical device that does not yet have established precedent, and the regulatory professional who develops expertise in this area is building toward a specialty that is in significant demand and almost entirely absent from current regulatory affairs training programs.',
-      deployment_contexts: [
-        {
-          domain: 'Pharmaceutical & Biologics Regulatory Affairs',
-          edge: 'Every drug and biologic approved by the FDA has a regulatory submission behind it — hundreds of pages of chemistry, manufacturing, and controls documentation, clinical trial data, and safety information assembled by regulatory affairs professionals who understand both the science and the regulatory framework well enough to present them in a way that FDA reviewers can efficiently evaluate. The regulatory affairs professional who develops genuine pharmaceutical and biologics expertise is building toward one of the most specialized and best-compensated non-clinical careers in the life sciences industry. Rutgers University and the University of the Sciences in Philadelphia both have regulatory affairs programs with direct placement into pharmaceutical companies and the contract regulatory organizations that serve them.'
-        },
-        {
-          domain: 'Defense Procurement & ITAR Compliance',
-          edge: 'International Traffic in Arms Regulations governs the export of defense-related materials, technology, and information — and every defense contractor, dual-use technology company, and university research program that touches defense-related work needs regulatory professionals who understand ITAR compliance. The compliance professional who understands both the regulatory framework and the operational reality of a manufacturing or research environment is providing a specialized and in-demand service that most organizations struggle to fill from within their existing workforce. Defense contractors including Lockheed Martin, Raytheon, and Northrop Grumman all maintain significant ITAR compliance functions and recruit from business, law, and technical programs with regulatory concentrations.'
-        }
-      ]
-    },
-    {
-      major_label: 'Materials Science & Engineering',
-      career_world: 'making',
-      riasec_affinity: ['I', 'R', 'C'],
-      riasec_conflict: ['A', 'S'],
-      program_keywords: ['materials science', 'materials engineering', 'battery materials', 'semiconductor materials', 'advanced manufacturing materials'],
-      entry_careers: ['Materials Engineer', 'Process Development Engineer', 'Battery Materials Researcher', 'Quality Engineer', 'R&D Engineer'],
-      world_alignment: 'Make',
-      cc_transfer_friendly: false,
-      emerging_role: 'Critical Minerals Supply Chain Engineer — the materials professional who manages the supply chain for the critical minerals — lithium, cobalt, nickel, manganese, rare earth elements — that are essential to battery manufacturing, semiconductor production, and clean energy systems. The United States currently imports more than 80% of its critical mineral supply from China and other potentially adversarial sources, and the domestic mining, processing, and recycling infrastructure required to change that dependency is being built now. Colorado School of Mines is the definitive educational institution for this work.',
-      deployment_contexts: [
-        {
-          domain: 'Battery Materials & Electrochemistry',
-          edge: 'The performance, cost, and longevity of a lithium-ion battery is determined almost entirely by the materials — the cathode active material, the anode, the electrolyte, the separator, and the current collectors. The materials scientist who understands battery electrochemistry at a fundamental level — who can characterize degradation mechanisms, develop new cathode formulations, and translate laboratory discoveries into manufacturable processes — is doing the foundational work that determines whether the energy transition achieves its cost and performance targets. Colorado School of Mines, MIT, and Stanford all have materials science programs with battery materials research groups that have produced graduates who are now leading the battery development programs at the major gigafactory operators.'
-        },
-        {
-          domain: 'Advanced Manufacturing Materials & Process Development',
-          edge: 'The semiconductor, pharmaceutical, aerospace, and defense manufacturing facilities being built or expanded in America all require materials engineers who understand the specific material properties and process requirements of their industry. The semiconductor fab engineer who understands thin film deposition, the pharmaceutical materials scientist who understands polymorphism and drug formulation stability, and the aerospace materials engineer who understands composite structures and fatigue life are all applying materials science in environments where getting the material wrong has consequences ranging from product failure to human harm. Purdue, MIT, and the University of Michigan all have materials science programs with advanced manufacturing concentrations.'
-        }
-      ]
-    }
-  ]
-});
-
-// ── NAICS 100 — The Service Economy: Military & Post-Service ─────────────────
-// Active duty, reserve, veterans, ROTC, service academies,
-// federal service, defense contractors, military children
-Object.assign(MAJOR_MAP, {
-  100: [
-    {
-      major_label: 'Criminal Justice & Homeland Security',
-      career_world: 'military',
-      riasec_affinity: ['E', 'S', 'R'],
-      riasec_conflict: ['A', 'I'],
-      program_keywords: ['criminal justice', 'homeland security', 'law enforcement', 'intelligence', 'emergency management', 'public safety'],
-      entry_careers: ['Law Enforcement Officer', 'Homeland Security Analyst', 'Intelligence Analyst', 'Emergency Management Coordinator', 'Federal Agent'],
-      world_alignment: 'People',
-      cc_transfer_friendly: true,
-      emerging_role: 'Cybersecurity & Critical Infrastructure Protection Specialist — the federal or defense professional who protects the digital and physical infrastructure that American society depends on — power grids, water systems, financial networks, transportation systems, and communications infrastructure — from nation-state cyber actors, ransomware groups, and other adversarial threats. The Colonial Pipeline attack, the SolarWinds intrusion, and the ongoing targeting of critical infrastructure by China, Russia, Iran, and North Korea have made this the most consequential homeland security function in the current threat environment, and the shortage of professionals with both technical competency and security clearances is structural.',
-      deployment_contexts: [
-        {
-          domain: 'Federal Law Enforcement & Intelligence',
-          edge: 'The FBI, DEA, ATF, Secret Service, US Marshals, and the intelligence community agencies including the CIA, NSA, DIA, and NGA together employ tens of thousands of special agents, analysts, and operations officers whose work spans law enforcement, counterterrorism, counterintelligence, and foreign intelligence collection. The criminal justice student who develops genuine analytical competency alongside the physical and character requirements for federal service is building toward a career where the work is consequential, the training is extraordinary, and the mission is unlike anything available in the private sector. Veterans with security clearances and operational experience have a significant advantage in federal law enforcement and intelligence community hiring. American University and George Washington University both have strong intelligence and homeland security programs with direct placement into federal agencies.'
-        },
-        {
-          domain: 'Emergency Management & Disaster Response',
-          edge: 'FEMA, state emergency management agencies, and the local emergency management offices that coordinate disaster response across every county in America need professionals who can manage complex multi-agency operations under conditions of extreme time pressure and incomplete information — which is precisely what military service develops. The emergency management professional who combines military operational experience with civilian emergency management training is one of the most qualified profiles for the roles that matter most when disasters occur. North Carolina State and the University of Central Florida both have emergency management programs with strong veteran enrollment and direct placement into FEMA and state emergency management careers.'
-        }
-      ]
-    },
-    {
-      major_label: 'Political Science & International Relations',
-      career_world: 'military',
-      riasec_affinity: ['E', 'I', 'S'],
-      riasec_conflict: ['R', 'A'],
-      program_keywords: ['political science', 'international relations', 'national security', 'foreign policy', 'defense policy', 'military affairs'],
-      entry_careers: ['Policy Analyst', 'Defense Analyst', 'Foreign Service Officer', 'Intelligence Analyst', 'Congressional Staffer'],
-      world_alignment: 'Think',
-      cc_transfer_friendly: true,
-      emerging_role: 'Indo-Pacific Strategy Analyst — the national security professional who specializes in the geopolitics, military balance, economic interdependencies, and alliance relationships that define the most consequential theater of great power competition in the current international environment. As the United States reorients its national security strategy toward China, the demand for professionals who understand the region\'s history, languages, military capabilities, and political dynamics with genuine depth — rather than as a secondary specialization — is growing faster than the national security community\'s ability to develop them.',
-      deployment_contexts: [
-        {
-          domain: 'Defense Policy & National Security',
-          edge: 'The professionals who shape American defense policy — who write the National Defense Strategy, who staff the Office of the Secretary of Defense, who manage the relationships between the military services and the civilian leadership — come disproportionately from the military academies, ROTC programs at strong political science institutions, and the handful of graduate programs in national security policy at Georgetown, Johns Hopkins SAIS, and the war colleges. The political science student who combines military service or strong ROTC participation with genuine national security academic preparation is building toward the most consequential policy roles in American government. Georgetown\'s School of Foreign Service and American University\'s School of International Service both have direct placement into defense policy and national security roles.'
-        },
-        {
-          domain: 'Diplomacy & Foreign Service',
-          edge: 'The United States Foreign Service — the diplomatic corps that staffs American embassies and consulates around the world — is one of the most selective and most distinguished career paths in public service. The Foreign Service Officer exam tests candidates on economics, history, political science, and cultural awareness at a level that rewards genuine breadth of preparation rather than narrow specialization. The political science student who has developed language skills, international experience, and a genuine understanding of a specific region or functional area — whether trade policy, consular affairs, public diplomacy, or political reporting — is building the profile that the Foreign Service selects for. Georgetown, American University, and the service academies all have strong Foreign Service placement.'
-        }
-      ]
-    },
-    {
-      major_label: 'Business Administration (Military Leadership Track)',
-      career_world: 'military',
-      riasec_affinity: ['E', 'C', 'S'],
-      riasec_conflict: ['A', 'R'],
-      program_keywords: ['military leadership', 'defense acquisition', 'veteran business', 'program management', 'military transition', 'SBA Boots to Business'],
-      entry_careers: ['Defense Acquisition Officer', 'Military Program Manager', 'Veterans Affairs Coordinator', 'Defense Contractor Manager', 'Veteran Entrepreneur'],
-      world_alignment: 'Systems',
-      cc_transfer_friendly: true,
-      emerging_role: 'Defense Acquisition Professional — the civilian or military officer who manages the procurement of major weapons systems, vehicles, aircraft, and technology for the United States military — overseeing contracts worth billions of dollars, managing programs that span decades, and navigating the intersection of military requirements, industry capability, and congressional oversight that makes defense acquisition one of the most complex program management environments in existence. Defense Acquisition University provides the professional training; the undergraduate preparation is business administration, engineering, or any technical field combined with military service or ROTC.',
-      deployment_contexts: [
-        {
-          domain: 'Veteran Entrepreneurship & Business Ownership',
-          edge: 'Veterans start businesses at a rate 45% higher than non-veterans, and the outcomes of those businesses are disproportionately strong — driven by the discipline, mission orientation, team-building capability, and comfort with uncertainty that military service develops. The SBA\'s Boots to Business program, the Bunker Labs network, and the Venture for America veteran fellowship all support veteran entrepreneurs who want to translate their military leadership experience into business ownership. The business administration student who completes military service before or after their degree is building toward one of the most entrepreneurially successful demographic profiles in the American economy. Babson College\'s entrepreneurship program has the strongest veteran entrepreneurship community among undergraduate business schools.'
-        },
-        {
-          domain: 'Defense Contracting & Program Management',
-          edge: 'The defense industrial base — the network of prime contractors and suppliers that produces weapons systems, vehicles, aircraft, and electronics for the military — employs hundreds of thousands of professionals across program management, engineering, supply chain, finance, and regulatory compliance roles. Veterans with security clearances and operational experience have a significant advantage in defense contractor hiring — a clearance that takes 12-18 months and significant cost to obtain for a civilian candidate is immediately available from a veteran who maintained one during service. Lockheed Martin, Raytheon, Boeing Defense, Northrop Grumman, General Dynamics, and L3Harris all actively recruit veterans and have structured transition programs that provide career pathways from military service into defense industry roles.'
-        }
-      ]
-    },
-    {
-      major_label: 'Organizational Leadership',
-      career_world: 'military',
-      riasec_affinity: ['E', 'S', 'C'],
-      riasec_conflict: ['A', 'R'],
-      program_keywords: ['organizational leadership', 'military leadership', 'leadership development', 'team leadership', 'applied leadership'],
-      entry_careers: ['Operations Manager', 'Team Leader', 'Program Coordinator', 'Leadership Development Specialist', 'Management Associate'],
-      world_alignment: 'People',
-      cc_transfer_friendly: true,
-      emerging_role: 'Veteran Transition Specialist — the career counselor and organizational development professional who helps military veterans translate their service experience into civilian professional language, navigate the cultural differences between military and civilian work environments, and build the professional networks that accelerate career placement in sectors where veteran competency is valued but not always recognized. As the veteran transition challenge has become better understood, organizations including American Corporate Partners, Hire Heroes USA, and the veteran business resource centers at major universities have developed professional roles for people who can bridge the military-civilian cultural divide.',
-      deployment_contexts: [
-        {
-          domain: 'Military-to-Civilian Leadership Transition',
-          edge: 'The sergeant first class who managed thirty people, a $15 million equipment accountability, and a training program that deployed 200 soldiers typically writes on their resume that they managed personnel and equipment. The organizational leadership professional who has studied both military leadership frameworks and civilian management practice — who can help a veteran translate what they actually did into language that civilian hiring managers can evaluate — is providing one of the most consequential career development services available to the veteran community. The University of Central Florida, Arizona State, and Old Dominion University all have veteran-specific organizational development programs with strong transition support infrastructure.'
-        },
-        {
-          domain: 'Leadership Development & Executive Coaching',
-          edge: 'The leadership skills that military service develops — decision-making under uncertainty, team cohesion under stress, mission focus, and the ability to communicate clearly across hierarchical levels — are among the most sought-after qualities in corporate leadership, and among the most difficult to develop without the experiences that produce them. The veteran who formalizes their leadership development through an organizational leadership degree is building a credential that complements their service record and provides the conceptual framework to teach what they know from experience. The veteran who becomes a leadership development professional or executive coach is translating military leadership capital into a civilian career that serves organizations seeking to develop these same qualities in their own people.'
-        }
-      ]
-    },
-    {
-      major_label: 'Engineering (Military Applications Track)',
-      career_world: 'military',
-      riasec_affinity: ['R', 'I', 'C'],
-      riasec_conflict: ['A', 'S'],
-      program_keywords: ['military engineering', 'aerospace engineering', 'systems engineering', 'nuclear engineering', 'defense technology'],
-      entry_careers: ['Systems Engineer', 'Aerospace Engineer', 'Defense Technology Analyst', 'Nuclear Technician', 'Military Research Engineer'],
-      world_alignment: 'Make',
-      cc_transfer_friendly: false,
-      emerging_role: 'Space Domain Awareness Engineer — the aerospace and systems engineer who develops the sensor systems, data processing architectures, and operational concepts for tracking objects in orbit and detecting adversarial actions in the space domain. The United States Space Force is building the professional and technical community for space domain awareness from scratch, and the engineer who develops expertise in orbital mechanics, radar and optical sensor systems, and the data fusion required to maintain the catalog of objects in orbit is working at the frontier of a new military domain that has no established career path or training program.',
-      deployment_contexts: [
-        {
-          domain: 'Defense Aerospace & Systems Engineering',
-          edge: 'Lockheed Martin\'s F-35, Boeing\'s B-21 Raider, Northrop Grumman\'s next-generation ICBM, and the hypersonic weapons programs being developed across multiple defense contractors all require systems engineers who understand the technical complexity of integrating avionics, propulsion, stealth, and weapons systems into platforms that must operate at the edge of physical possibility. The engineering student who combines strong technical preparation with security clearance eligibility and either military service or ROTC participation is building toward one of the most technically demanding and most consequential engineering careers available. The service academies, Virginia Tech, Penn State, and Texas A&M all have strong aerospace and systems engineering programs with direct defense contractor placement.'
-        },
-        {
-          domain: 'Nuclear Engineering & Naval Nuclear Power',
-          edge: 'The United States Navy operates the world\'s largest fleet of nuclear-powered vessels — eleven aircraft carriers and more than seventy submarines. The nuclear propulsion program that trains Navy nuclear officers and enlisted nuclear operators runs the most rigorous technical training program in the American military, producing professionals whose quality and process discipline is unmatched in any civilian industry. The naval nuclear veteran who transitions to civilian nuclear power, pharmaceutical manufacturing, or semiconductor manufacturing brings a quality standard and operational discipline that civilian training programs cannot replicate. The University of Michigan, Penn State, and the University of Tennessee all have nuclear engineering programs with strong Navy nuclear veteran enrollment and placement in civilian nuclear and advanced manufacturing careers.'
-        }
-      ]
-    }
-  ]
-});
-
-// ── ENERGY-001 v3 additions — appended to existing MAJOR_MAP[21]/[22] (NOT overwritten) ──
-// Existing 21/22 content (Mining/Geological/Petroleum Engineering, Energy Systems
-// Engineering, Environmental Engineering, Sustainability Management, Nuclear Engineering)
-// already covers Traditional Energy upstream + most of Transition Energy.
-// This adds only the genuinely missing spec content:
-//   - Section 3B: oil & gas trading/maritime-logistics depth (NAICS 486/483/424-425
-//     folded in as career_world tagging per OQ2 — Traditional Energy depth, not a
-//     Logistics-connector precedent)
-//   - Policy & Regulatory tile (not previously covered — Sustainability Management is
-//     corporate ESG, not energy regulatory/FERC/utility law)
-//   - Battery Tech & AI Power micro-tile (energy storage was a keyword only, no
-//     dedicated battery/materials major existed)
-//   - Section 3A: Plant Operations/Fuel & Supply Chain/Asset Lifecycle/Risk depth
-
-MAJOR_MAP[21].push(
-  {
-    major_label: 'Energy Trading & Commodities',
-    career_world: 'energy',
-    riasec_affinity: ['E', 'C', 'I'],
-    riasec_conflict: ['A', 'S'],
-    program_keywords: ['commodity trading', 'energy finance', 'energy markets', 'derivatives', 'trading desk', 'risk management'],
-    entry_careers: ['Energy Trader', 'Market Analyst', 'Crude & Products Trader', 'Corporate Development Analyst'],
-    world_alignment: 'Systems',
-    cc_transfer_friendly: true,
-    emerging_role: 'Energy Transition Risk Analyst — the trading-desk analyst who prices and hedges the financial risk created by the shift between traditional and renewable power generation, a role energy trading desks are building out as more of the physical grid becomes weather-dependent and volatile.',
-    deployment_contexts: [
-      { domain: 'Crude & Products Trading', edge: 'Houston runs the commercial side of the American energy business the way New York runs finance — every major trading house recruits directly from Oklahoma State\'s Spears School energy finance program and Texas A&M\'s Mays Business School energy concentration.' },
-      { domain: 'Corporate Development & Market Strategy', edge: 'The market and financial strategy function inside an electricity generation company — corporate development, market analysis, energy trading — is where the Enterprising-forward business student meets the physical energy business, a genuine, well-compensated bridge between finance and engineering that most students never hear about until an internship.' }
-    ]
-  },
-  {
-    major_label: 'Maritime & Energy Logistics Management',
-    career_world: 'energy',
-    riasec_affinity: ['E', 'C', 'R'],
-    riasec_conflict: ['A'],
-    program_keywords: ['maritime logistics', 'supply chain', 'international business', 'chartering', 'trade compliance', 'terminal operations', 'petroleum wholesale', 'pipeline transportation'],
-    entry_careers: ['Chartering Desk Analyst', 'Terminal Operations Manager', 'Trade Compliance Analyst', 'Freight Broker (Energy)'],
-    world_alignment: 'Systems',
-    cc_transfer_friendly: true,
-    emerging_role: 'Sanctions & Trade Compliance Analyst — the commercial specialist who screens crude and refined-product cargoes and counterparties against evolving sanctions regimes, a function that has grown sharply as energy trade compliance has become one of the most consequential legal-commercial intersections in the industry.',
-    deployment_contexts: [
-      { domain: 'Oil Shipping, Pipelines & Chartering', edge: 'Moving crude and refined products from field to market runs through pipeline operators, tanker charterers, and terminal managers — a genuine commercial logistics career sitting between extraction and the refinery gate. Texas A&M Galveston and the maritime academies feed directly into this pipeline alongside supply chain and international business graduates.' }
-    ]
-  }
-);
-
-MAJOR_MAP[22].push(
-  {
-    major_label: 'Energy Storage & Battery Systems',
-    career_world: 'energy',
-    riasec_affinity: ['I', 'R', 'C'],
-    riasec_conflict: ['A', 'S'],
-    program_keywords: ['battery technology', 'energy storage', 'materials science', 'electrochemistry', 'battery manufacturing', 'grid-scale storage'],
-    entry_careers: ['Storage Systems Analyst', 'Battery Materials Engineer', 'Storage Systems Design Engineer'],
-    world_alignment: 'Systems',
-    cc_transfer_friendly: false,
-    emerging_role: 'Grid-Scale Battery Systems Engineer — the engineer who designs and commissions the utility-scale battery installations now being built alongside renewable projects and directly at data centers, sitting at the exact intersection of Battery Tech and AI Power this micro-tile is named for.',
-    deployment_contexts: [
-      { domain: 'Battery Materials Research', edge: 'UC Berkeley\'s proximity to Lawrence Berkeley National Lab and Stanford\'s battery materials research pipeline are two of the strongest undergraduate entry points in the country into battery science, both placing graduates directly into battery manufacturing and grid storage firms racing to scale up production.' }
-    ]
-  },
-  {
-    major_label: 'Energy Policy & Regulatory Affairs',
-    career_world: 'energy',
-    riasec_affinity: ['E', 'S', 'I'],
-    riasec_conflict: ['R'],
-    program_keywords: ['energy policy', 'energy law', 'public policy', 'regulatory affairs', 'utility regulation', 'FERC'],
-    entry_careers: ['Regulatory Affairs Analyst', 'Compliance Officer', 'Energy Policy Analyst', 'Legislative Aide (Energy)'],
-    world_alignment: 'People',
-    cc_transfer_friendly: true,
-    emerging_role: 'Grid Interconnection Policy Analyst — the regulatory specialist who works the interconnection queue backlogs now delaying renewable and data center projects nationally, a bottleneck significant enough it has become its own policy specialty inside FERC and state utility commissions.',
-    deployment_contexts: [
-      { domain: 'Utility Regulation & Compliance', edge: 'Every power plant, pipeline, and transmission line in America operates inside a regulatory structure that determines whether it gets built at all. The University of Virginia\'s energy policy coursework and Georgetown\'s energy law offerings both feed this pipeline directly.' }
-    ]
-  },
-  {
-    major_label: 'Power Plant Operations & Systems Management',
-    career_world: 'energy',
-    riasec_affinity: ['R', 'C', 'I'],
-    riasec_conflict: ['A'],
-    program_keywords: ['power plant operations', 'energy systems management', 'asset management', 'fuel procurement', 'plant performance engineering'],
-    entry_careers: ['Power Plant Operations Engineer', 'Performance Engineer', 'Fuel Procurement Analyst', 'Asset Manager'],
-    world_alignment: 'Systems',
-    cc_transfer_friendly: true,
-    emerging_role: 'Plant Performance Data Engineer — the operations engineer who applies predictive analytics to power plant performance and asset lifecycle management, replacing scheduled maintenance with condition-based maintenance across an aging US generation fleet.',
-    deployment_contexts: [
-      { domain: 'Plant Operations & Asset Lifecycle', edge: 'Running a power plant profitably takes the same operational discipline as running any large industrial asset — performance engineering, fuel procurement, weather and fuel-volatility risk management, and CapEx/decommissioning planning across the asset\'s full lifecycle. LSU\'s Gulf Coast energy corridor placement and Texas A&M\'s energy engineering programs both send graduates directly into utility and independent power producer operations roles.' }
-    ]
-  }
-);
-
-// ─────────────────────────────────────────────────────────────────────────────
-// getMajorsForWorld(worldId)
-// ─────────────────────────────────────────────────────────────────────────────
-// Returns only the majors tagged with career_world === worldId, searching
-// across every NAICS bucket in MAJOR_MAP. Untagged majors are never returned
-// by this function (per OQ-2: they stay visible via the old raw-NAICS path
-// until explicitly tagged — this function is additive, not a replacement).
-//
-// Per OQ-1: this should be called LATE in the pipeline, after the student's
-// full profile has been collected — not as an early filter.
-//
-// Per OQ-4: military-tagged majors carry no extra scoring weight here.
-// This function only returns majors; it does not touch school/academy
-// match scoring. Any weighting guardrail belongs in the scoring engine,
-// not in this lookup.
-
-function getMajorsForWorld(worldId) {
-  if (!worldId) return [];
-  const results = [];
-  for (const naics in MAJOR_MAP) {
-    const majors = MAJOR_MAP[naics];
-    if (!Array.isArray(majors)) continue;
-    for (const major of majors) {
-      if (major.career_world === worldId) results.push(major);
-    }
-  }
-  return results;
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// getNAICSSectorsForWorlds(worldIds) — connects Worlds selection to school matching
-// ─────────────────────────────────────────────────────────────────────────────
-// Previously, worlds_chosen only influenced career narrative (callB) and major
-// suggestions (callD via getMajorsForWorld). It never touched which schools got
-// ranked — matchUniversities() only saw naicsSectors, a separate signal.
-// This closes that gap: for each World the student picked, find the NAICS
-// sectors that contain majors tagged to that World, so a student who picks
-// "Logistics" gets a real scoring boost toward schools strong in logistics
-// majors — not just narrative text about logistics careers.
-
-function getNAICSSectorsForWorlds(worldIds) {
-  if (!worldIds || worldIds.length === 0) return [];
-  const sectors = new Set();
-  worldIds.forEach(function(worldId) {
-    for (const naics in MAJOR_MAP) {
-      const majors = MAJOR_MAP[naics];
-      if (!Array.isArray(majors)) continue;
-      if (majors.some(function(m) { return m.career_world === worldId; })) {
-        sectors.add(Number(naics));
-      }
-    }
-  });
-  return Array.from(sectors).map(function(s) { return { sector: s, source: 'world' }; });
-}
-
-if (typeof window !== 'undefined') {
-  window.getNAICSSectorsForWorlds = getNAICSSectorsForWorlds;
-}
-
-
-if (typeof window !== 'undefined') {
-  window.getMajorsForWorld = getMajorsForWorld;
-}
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports.getMajorsForWorld = getMajorsForWorld;
-  module.exports.getNAICSSectorsForWorlds = getNAICSSectorsForWorlds;
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// NAICS_CIP_CODES — federal CIP code list per NAICS sector
-// Source: naics_to_cip_bridge.json (verified 760/760 pairs bidirectionally clean).
-// Sector-level only -- the bridge does not distinguish which CIP applies to which
-// specific major_label within a sector, so this is grounding/reference data, not
-// a per-major field. Only sectors present in both MAJOR_MAP and the bridge are
-// included (16 of MAJOR_MAP's 29 sectors); the 11 proprietary VECTOR sectors
-// (91-101) have no federal CIP crosswalk by design.
-// ─────────────────────────────────────────────────────────────────────────────
-
-const NAICS_CIP_CODES = {
-  "54": [
-    "03.0103",
-    "03.0104",
-    "09.0100",
-    "09.0101",
-    "09.0102",
-    "11.0101",
-    "11.0102",
-    "11.0103",
-    "11.0104",
-    "11.0105",
-    "11.0199",
-    "13.0403",
-    "13.1201",
-    "14.1001",
-    "14.1003",
-    "14.1004",
-    "14.1099",
-    "14.1901",
-    "16.0900",
-    "16.0901",
-    "16.0902",
-    "16.0904",
-    "16.0905",
-    "16.0906",
-    "16.0907",
-    "16.0908",
-    "16.0999",
-    "26.0101",
-    "26.0102",
-    "26.0202",
-    "26.0203",
-    "26.0204",
-    "26.0205",
-    "26.0206",
-    "26.0207",
-    "26.0208",
-    "26.0209",
-    "26.0210",
-    "26.0299",
-    "27.0101",
-    "27.0102",
-    "27.0103",
-    "27.0104",
-    "27.0105",
-    "27.0199",
-    "38.0102",
-    "40.0501",
-    "40.0502",
-    "40.0503",
-    "40.0504",
-    "40.0506",
-    "40.0507",
-    "40.0508",
-    "40.0509",
-    "40.0510",
-    "40.0511",
-    "40.0512",
-    "40.0599",
-    "40.0601",
-    "40.0602",
-    "40.0603",
-    "40.0604",
-    "40.0605",
-    "40.0606",
-    "40.0607",
-    "40.0699",
-    "40.0801",
-    "40.0802",
-    "40.0804",
-    "40.0805",
-    "40.0806",
-    "40.0807",
-    "40.0808",
-    "40.0809",
-    "40.0810",
-    "40.0899",
-    "42.0101",
-    "45.0201",
-    "45.0202",
-    "45.0203",
-    "45.0204",
-    "45.0205",
-    "45.0299",
-    "45.0601",
-    "45.0602",
-    "45.0603",
-    "45.0604",
-    "45.0605",
-    "45.0699",
-    "45.1001",
-    "45.1002",
-    "45.1003",
-    "45.1004",
-    "45.1099",
-    "45.1101",
-    "45.1102",
-    "45.1103",
-    "45.1199",
-    "50.0701",
-    "50.0706",
-    "51.2202",
-    "51.2205",
-    "52.0201",
-    "52.0205",
-    "52.0206",
-    "52.0208",
-    "52.0210",
-    "52.0211",
-    "52.0212",
-    "52.0213",
-    "52.0214",
-    "52.0215",
-    "52.0216",
-    "52.0301",
-    "52.0302",
-    "52.0303",
-    "52.0304",
-    "52.0305",
-    "54.0101",
-    "54.0102",
-    "54.0103",
-    "54.0104",
-    "54.0105",
-    "54.0106",
-    "54.0107",
-    "54.0108",
-    "54.0199"
-  ],
-  "44": [
-    "50.0701",
-    "50.0705",
-    "50.0708",
-    "50.0709",
-    "50.0710",
-    "50.0711",
-    "50.0712",
-    "50.0713",
-    "50.0714",
-    "52.0201",
-    "52.0205",
-    "52.0206",
-    "52.0208",
-    "52.0212",
-    "52.0215"
-  ],
-  "42": [
-    "52.0201",
-    "52.0202",
-    "52.0203",
-    "52.0209"
-  ],
-  "92": [
-    "03.0101",
-    "03.0103",
-    "03.0104",
-    "11.0101",
-    "11.0102",
-    "11.0103",
-    "11.0104",
-    "11.0199",
-    "13.0401",
-    "13.0402",
-    "13.0403",
-    "13.0404",
-    "13.0406",
-    "13.0410",
-    "13.0411",
-    "13.0412",
-    "13.0413",
-    "13.0499",
-    "13.1207",
-    "13.1208",
-    "13.1211",
-    "13.1304",
-    "13.1334",
-    "13.1399",
-    "14.1003",
-    "14.1004",
-    "26.0101",
-    "26.0202",
-    "26.0203",
-    "26.0204",
-    "26.0205",
-    "26.0206",
-    "26.0207",
-    "26.0208",
-    "26.0209",
-    "26.0210",
-    "26.0299",
-    "27.0101",
-    "27.0102",
-    "27.0103",
-    "27.0104",
-    "27.0105",
-    "27.0199",
-    "38.0102",
-    "40.0501",
-    "40.0502",
-    "40.0503",
-    "40.0504",
-    "40.0506",
-    "40.0507",
-    "40.0508",
-    "40.0509",
-    "40.0510",
-    "40.0511",
-    "40.0512",
-    "40.0599",
-    "40.0601",
-    "40.0602",
-    "40.0603",
-    "40.0604",
-    "40.0605",
-    "40.0606",
-    "40.0607",
-    "40.0699",
-    "40.0801",
-    "40.0802",
-    "40.0804",
-    "40.0805",
-    "40.0806",
-    "40.0807",
-    "40.0808",
-    "40.0809",
-    "40.0810",
-    "40.0899",
-    "42.0101",
-    "45.0201",
-    "45.0202",
-    "45.0203",
-    "45.0204",
-    "45.0205",
-    "45.0299",
-    "45.0601",
-    "45.0602",
-    "45.0603",
-    "45.0604",
-    "45.0605",
-    "45.0699",
-    "45.1001",
-    "45.1002",
-    "45.1003",
-    "45.1004",
-    "45.1099",
-    "45.1101",
-    "45.1102",
-    "45.1103",
-    "45.1199",
-    "50.0702",
-    "50.0703",
-    "50.0799",
-    "51.2201",
-    "51.2202",
-    "51.2206",
-    "51.2207",
-    "51.2208",
-    "51.2209",
-    "51.2210",
-    "51.2212",
-    "51.2213",
-    "52.0201",
-    "52.0202",
-    "52.0203",
-    "52.0204",
-    "52.0205",
-    "52.0206",
-    "52.0207",
-    "52.0208",
-    "52.0210",
-    "52.0211",
-    "52.0213",
-    "52.0214",
-    "52.0216",
-    "52.0301",
-    "52.0303",
-    "52.0304",
-    "52.0305",
-    "54.0101",
-    "54.0102",
-    "54.0103",
-    "54.0104",
-    "54.0105",
-    "54.0106",
-    "54.0107",
-    "54.0108",
-    "54.0199"
-  ],
-  "62": [
-    "13.0401",
-    "13.0404",
-    "13.0411",
-    "13.0412",
-    "13.0414",
-    "13.1201",
-    "13.1206",
-    "13.1207",
-    "13.1208",
-    "13.1209",
-    "13.1210",
-    "13.1212",
-    "26.0102",
-    "26.0202",
-    "26.0203",
-    "26.0204",
-    "26.0205",
-    "42.0101",
-    "45.0205",
-    "51.2201",
-    "51.2202",
-    "51.2207",
-    "51.2208",
-    "51.2209",
-    "51.2210",
-    "51.2211",
-    "51.2212",
-    "51.2213",
-    "51.2214",
-    "51.2299",
-    "51.3801",
-    "51.3802",
-    "51.3803",
-    "51.3804",
-    "51.3805",
-    "51.3806",
-    "51.3807",
-    "51.3808",
-    "51.3809",
-    "51.3810",
-    "51.3811",
-    "51.3812",
-    "51.3813",
-    "51.3814",
-    "51.3815",
-    "51.3816",
-    "51.3818",
-    "51.3819",
-    "51.3820",
-    "51.3821",
-    "51.3822",
-    "51.3824",
-    "51.3899",
-    "52.0201",
-    "52.0202",
-    "52.0204",
-    "52.0206",
-    "52.0207",
-    "52.0208",
-    "52.0210",
-    "52.0214",
-    "52.0216"
-  ],
-  "61": [
-    "03.0101",
-    "03.0103",
-    "03.0104",
-    "09.0100",
-    "09.0101",
-    "09.0102",
-    "11.0101",
-    "11.0102",
-    "11.0199",
-    "13.0401",
-    "13.0402",
-    "13.0403",
-    "13.0404",
-    "13.0406",
-    "13.0407",
-    "13.0408",
-    "13.0409",
-    "13.0410",
-    "13.0411",
-    "13.0412",
-    "13.0413",
-    "13.0414",
-    "13.0499",
-    "13.1201",
-    "13.1202",
-    "13.1203",
-    "13.1205",
-    "13.1206",
-    "13.1207",
-    "13.1208",
-    "13.1209",
-    "13.1210",
-    "13.1211",
-    "13.1212",
-    "13.1213",
-    "13.1214",
-    "13.1301",
-    "13.1302",
-    "13.1303",
-    "13.1304",
-    "13.1305",
-    "13.1306",
-    "13.1307",
-    "13.1308",
-    "13.1309",
-    "13.1310",
-    "13.1311",
-    "13.1312",
-    "13.1314",
-    "13.1315",
-    "13.1316",
-    "13.1317",
-    "13.1318",
-    "13.1319",
-    "13.1320",
-    "13.1321",
-    "13.1322",
-    "13.1323",
-    "13.1324",
-    "13.1325",
-    "13.1326",
-    "13.1327",
-    "13.1328",
-    "13.1329",
-    "13.1330",
-    "13.1331",
-    "13.1332",
-    "13.1333",
-    "13.1334",
-    "13.1335",
-    "13.1337",
-    "13.1338",
-    "13.1339",
-    "13.1399",
-    "14.1001",
-    "14.1003",
-    "14.1004",
-    "14.1099",
-    "14.1901",
-    "16.0900",
-    "16.0901",
-    "16.0902",
-    "16.0904",
-    "16.0905",
-    "16.0906",
-    "16.0907",
-    "16.0908",
-    "16.0999",
-    "23.0101",
-    "24.0101",
-    "24.0102",
-    "24.0103",
-    "26.0101",
-    "26.0102",
-    "26.0202",
-    "26.0203",
-    "26.0204",
-    "26.0205",
-    "26.0206",
-    "26.0207",
-    "26.0208",
-    "26.0209",
-    "26.0210",
-    "26.0299",
-    "27.0101",
-    "27.0102",
-    "27.0103",
-    "27.0104",
-    "27.0105",
-    "27.0199",
-    "38.0101",
-    "38.0102",
-    "38.0103",
-    "38.0104",
-    "38.0199",
-    "40.0501",
-    "40.0502",
-    "40.0503",
-    "40.0504",
-    "40.0506",
-    "40.0507",
-    "40.0508",
-    "40.0509",
-    "40.0510",
-    "40.0511",
-    "40.0512",
-    "40.0599",
-    "40.0601",
-    "40.0602",
-    "40.0603",
-    "40.0604",
-    "40.0605",
-    "40.0606",
-    "40.0607",
-    "40.0699",
-    "40.0801",
-    "40.0802",
-    "40.0804",
-    "40.0805",
-    "40.0806",
-    "40.0807",
-    "40.0808",
-    "40.0809",
-    "40.0810",
-    "40.0899",
-    "42.0101",
-    "45.0201",
-    "45.0202",
-    "45.0203",
-    "45.0204",
-    "45.0205",
-    "45.0299",
-    "45.0601",
-    "45.0602",
-    "45.0603",
-    "45.0604",
-    "45.0605",
-    "45.0699",
-    "45.1001",
-    "45.1002",
-    "45.1003",
-    "45.1004",
-    "45.1099",
-    "45.1101",
-    "45.1102",
-    "45.1103",
-    "45.1199",
-    "50.0701",
-    "50.0702",
-    "50.0703",
-    "50.0705",
-    "50.0706",
-    "50.0708",
-    "50.0709",
-    "50.0710",
-    "50.0711",
-    "50.0712",
-    "50.0713",
-    "50.0714",
-    "50.0799",
-    "50.0901",
-    "50.0902",
-    "50.0903",
-    "50.0904",
-    "50.0905",
-    "50.0906",
-    "50.0907",
-    "50.0908",
-    "50.0910",
-    "50.0911",
-    "50.0912",
-    "50.0913",
-    "50.0914",
-    "50.0915",
-    "50.0916",
-    "50.0917",
-    "50.0999",
-    "51.2201",
-    "51.2202",
-    "51.2205",
-    "51.2206",
-    "51.2207",
-    "51.2208",
-    "51.2209",
-    "51.2212",
-    "51.2213",
-    "51.2214",
-    "51.2299",
-    "51.3801",
-    "51.3803",
-    "51.3804",
-    "51.3805",
-    "51.3806",
-    "51.3807",
-    "51.3808",
-    "51.3809",
-    "51.3810",
-    "51.3811",
-    "51.3812",
-    "51.3813",
-    "51.3814",
-    "51.3815",
-    "51.3816",
-    "51.3818",
-    "51.3819",
-    "51.3820",
-    "51.3821",
-    "51.3822",
-    "51.3824",
-    "51.3899",
-    "52.0201",
-    "52.0202",
-    "52.0203",
-    "52.0205",
-    "52.0206",
-    "52.0210",
-    "52.0211",
-    "52.0212",
-    "52.0213",
-    "52.0214",
-    "52.0301",
-    "52.0302",
-    "52.0303",
-    "52.0304",
-    "52.0305",
-    "54.0101",
-    "54.0102",
-    "54.0103",
-    "54.0104",
-    "54.0105",
-    "54.0106",
-    "54.0107",
-    "54.0108",
-    "54.0199"
-  ],
-  "31": [
-    "14.1001",
-    "14.1003",
-    "14.1004",
-    "14.1099",
-    "14.1901",
-    "26.0101",
-    "26.0202",
-    "26.0203",
-    "26.0205",
-    "26.0206",
-    "26.0207",
-    "26.0210",
-    "40.0501",
-    "40.0502",
-    "40.0503",
-    "40.0504",
-    "40.0506",
-    "40.0507",
-    "40.0508",
-    "40.0509",
-    "40.0510",
-    "40.0511",
-    "40.0512",
-    "40.0599",
-    "50.0713",
-    "50.0714",
-    "51.2202",
-    "51.2206",
-    "51.2213",
-    "52.0201",
-    "52.0202",
-    "52.0203",
-    "52.0205",
-    "52.0216"
-  ],
-  "48": [
-    "51.2202",
-    "51.2206",
-    "51.2213",
-    "52.0201",
-    "52.0203",
-    "52.0209"
-  ],
-  "52": [
-    "03.0103",
-    "03.0104",
-    "11.0101",
-    "11.0102",
-    "11.0103",
-    "27.0101",
-    "40.0512",
-    "45.0603",
-    "51.2213",
-    "52.0201",
-    "52.0204",
-    "52.0205",
-    "52.0206",
-    "52.0207",
-    "52.0208",
-    "52.0215",
-    "52.0301",
-    "52.0302",
-    "52.0303",
-    "52.0304",
-    "52.0305"
-  ],
-  "23": [
-    "14.1901",
-    "52.0201",
-    "52.0205",
-    "52.0211",
-    "52.0216"
-  ],
-  "71": [
-    "13.1314",
-    "50.0701",
-    "50.0702",
-    "50.0703",
-    "50.0705",
-    "50.0706",
-    "50.0708",
-    "50.0709",
-    "50.0710",
-    "50.0711",
-    "50.0712",
-    "50.0713",
-    "50.0714",
-    "50.0799",
-    "50.0901",
-    "50.0903",
-    "50.0904",
-    "50.0905",
-    "50.0906",
-    "50.0907",
-    "50.0908",
-    "50.0910",
-    "50.0911",
-    "50.0912",
-    "50.0913",
-    "50.0914",
-    "50.0915",
-    "50.0916",
-    "50.0917",
-    "50.0999",
-    "52.0201",
-    "52.0202",
-    "54.0101",
-    "54.0105"
-  ],
-  "81": [
-    "03.0101",
-    "09.0100",
-    "09.0101",
-    "09.0102",
-    "13.0401",
-    "13.0404",
-    "13.0411",
-    "13.0412",
-    "13.0414",
-    "13.1201",
-    "13.1211",
-    "13.1314",
-    "50.0901",
-    "50.0903",
-    "50.0904",
-    "50.0905",
-    "50.0906",
-    "50.0907",
-    "50.0908",
-    "50.0910",
-    "50.0911",
-    "50.0912",
-    "50.0913",
-    "50.0914",
-    "50.0915",
-    "50.0916",
-    "50.0917",
-    "50.0999",
-    "52.0201",
-    "52.0206",
-    "52.0212",
-    "52.0213",
-    "52.0214"
-  ],
-  "11": [
-    "03.0101",
-    "26.0101",
-    "26.0202",
-    "40.0501"
-  ],
-  "51": [
-    "09.0100",
-    "09.0101",
-    "09.0102",
-    "11.0101",
-    "11.0102",
-    "11.0103",
-    "11.0104",
-    "11.0105",
-    "23.0101",
-    "50.0705",
-    "50.0706",
-    "50.0708",
-    "50.0913"
-  ],
-  "72": [
-    "50.0913"
-  ],
-  "21": [
-    "40.0601"
-  ]
-};
-
-if (typeof window !== 'undefined') {
-  window.NAICS_CIP_CODES = NAICS_CIP_CODES;
-}
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports.NAICS_CIP_CODES = NAICS_CIP_CODES;
-}
