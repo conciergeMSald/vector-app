@@ -721,6 +721,23 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .counselor-prompt{padding:.6rem 0;border-bottom:0.5px solid rgba(196,168,130,0.25);font-size:15px;color:var(--ink2);line-height:1.7;}
 .counselor-prompt:last-child{border-bottom:none;}
 
+/* ── School Intelligence Layer — REPORT-UPGRADE-004 ── */
+.school-intel-toggle{display:block;width:100%;text-align:left;font-size:15px;font-family:var(--serif);font-style:italic;color:var(--gold);cursor:pointer;margin-top:14px;padding-top:12px;border-top:0.5px solid var(--rule);background:none;border-left:none;border-right:none;border-bottom:none;}
+.school-intel-toggle:hover{color:var(--ink);}
+.school-intel-panel{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.school-intel-panel.open{max-height:4000px;}
+.school-intel-inner{padding-top:1.25rem;margin-top:.5rem;border-top:0.5px solid var(--rule);}
+.school-intel-cat{margin-bottom:1.5rem;}
+.school-intel-cat:last-child{margin-bottom:0;}
+.school-intel-cat-head{font-size:var(--type-meta);letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;font-family:var(--sans);}
+.school-intel-cat-body{font-size:15px;color:var(--ink2);line-height:1.7;font-weight:300;}
+.school-intel-orient{font-size:14px;color:var(--ink4);font-weight:300;font-style:italic;margin-bottom:.6rem;line-height:1.6;}
+.intel-industry-row{margin-bottom:8px;}
+.intel-industry-label{display:flex;justify-content:space-between;font-size:15px;color:var(--ink2);margin-bottom:3px;}
+.intel-industry-bar-wrap{height:3px;background:var(--rule);}
+.intel-industry-bar-fill{height:3px;background:var(--gold);}
+.school-intel-protect{font-size:14px;font-style:italic;color:var(--ink4);margin-top:10px;padding-top:10px;border-top:0.5px solid rgba(201,168,76,0.25);}
+
 /* Report tab toggle */
 .report-tabs{display:flex;gap:0;margin-bottom:2rem;border-bottom:0.5px solid var(--rule);}
 .rtab{flex:1;padding:10px 12px;font-size:var(--type-meta);letter-spacing:0.8px;text-transform:uppercase;border:none;background:transparent;cursor:pointer;color:var(--ink3);border-bottom:2px solid transparent;transition:all .2s;font-family:var(--sans);text-align:center;line-height:1.4;white-space:normal;}
@@ -2192,6 +2209,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <div class="rpanel" id="rpanel-schools">
     <div class="report-section">
       <div class="section-eyebrow">Schools matched to your Lifescape</div>
+      <!-- ── THE WORLD YOU'RE WALKING INTO — REPORT-UPGRADE-004, additive ── -->
+      <div class="geo-block" id="world-walking-into-block" style="display:none;margin-bottom:2rem">
+        <div>
+          <div class="geo-name">The World You're Walking Into</div>
+          <div class="geo-text" id="world-walking-into-text"></div>
+        </div>
+      </div>
       <div class="portrait-text" style="margin-bottom:1.5rem" id="schools-intro"></div>
       <div id="schools-list">
         <div class="industry-block">
@@ -2237,6 +2261,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   <!-- ── COUNSELOR VIEW ─────────────────────────────── -->
   <div class="rpanel" id="rpanel-counselor">
 
+    <!-- ── FAMILY SYNTHESIS INTELLIGENCE — REPORT-UPGRADE-004, additive ── -->
+    <div style="margin-bottom:2rem;display:none" id="counselor-family-synthesis-section">
+      <div class="section-eyebrow">Family synthesis</div>
+      <div id="counselor-family-synthesis"></div>
+    </div>
+
     <div style="margin-bottom:2rem">
       <div class="section-eyebrow">Student profile</div>
       <table class="meta-table" id="counselor-meta"></table>
@@ -2266,6 +2296,18 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div style="margin-bottom:2rem" id="counselor-synthesis-brief-section">
       <div class="section-eyebrow">Synthesis brief</div>
       <div id="counselor-synthesis-brief"><div style="font-size:15px;color:var(--ink4);font-style:italic">Generating...</div></div>
+    </div>
+
+    <!-- ── ROUND TWO PROBE SHEET — REPORT-UPGRADE-004, additive ── -->
+    <div style="margin-bottom:2rem;display:none" id="counselor-probe-sheet-section">
+      <div class="section-eyebrow">Round two probe sheet</div>
+      <div id="counselor-probe-sheet"></div>
+    </div>
+
+    <!-- ── CONFIDENCE AND DATA QUALITY — REPORT-UPGRADE-004, additive ── -->
+    <div style="margin-bottom:2rem;display:none" id="counselor-confidence-section">
+      <div class="section-eyebrow">Confidence and data quality</div>
+      <div id="counselor-confidence"></div>
     </div>
 
     <div style="margin-bottom:2rem">
@@ -4381,12 +4423,25 @@ FORBIDDEN: assessment, results, data, score, ranked, you should become, most stu
 MINIMUM LISTS: Any list of careers, roles, or pathways must contain a minimum of 3 items. Never output fewer than 3 career examples.`;
 }
 
+// ── REPORT-UPGRADE-004: "The World You're Walking Into" — Tab 3 tab-level
+// section. Additive to callC — no new Claude call. Only requested when
+// synthesis megaregion data exists; sessions without it get no ---WORLD---
+// divider at all, and parseCallC below simply leaves world: null.
+function buildWorldSectionPrompt(ctx) {
+  if (!ctx.synthesis || !ctx.synthesis.megaregion_gravity) return '';
+  return `
+---WORLD---
+One paragraph, never more. Name this student's megaregion gravity in plain language — what economic ecosystem they are most likely to enter, using their own words about what they said they wanted. Do not say "megaregion," do not name a score, do not use a field name. End by connecting it to the fact that several schools on this list sit inside that ecosystem, not adjacent to it. ${ctx.voice==='parent'?`Third person about ${ctx.name}.`:`Second person to ${ctx.name}.`}
+`;
+}
+
 function buildCallCPrompt(ctx) {
   var _longevityCtx = buildLongevityLensContext(ctx);
   var _longevityC = _longevityCtx && _longevityCtx.fires ? _longevityCtx.callC_injection : '';
   var _competeCtx = buildCompeteLensContext(ctx);
   var _competeC = _competeCtx && _competeCtx.fires ? _competeCtx.callC_injection : '';
   var _reportUpgradeC = buildReportUpgradeContext(ctx, 'C');
+  var _worldSection = buildWorldSectionPrompt(ctx);
   const geoList = ctx.geoIndustries ? ctx.geoIndustries.join(', ') : 'No geo data available';
   const regionalContext = ctx.regionalIntel ? ctx.regionalIntel.callc_context : '';
   const corridorContext = typeof getStudentCorridorContext === 'function'
@@ -4448,7 +4503,7 @@ ${(()=>{
     }
   } catch(e) {}
   return '';
-})()}---COUNSELOR---
+})()}${_worldSection}---COUNSELOR---
 Four items, one expert to another:
 
 NOTE: 2-3 sentences. The single most important insight from this profile. What the counselor must know before their next session.
@@ -4522,11 +4577,16 @@ function parseCallB(text) {
 }
 function parseCallC(text) {
   try {
+    // GEO stops at WORLD if present, otherwise falls back to stopping at
+    // COUNSELOR exactly as before — sessions without synthesis data see
+    // no behavior change at all.
     return {
-      geo:       stripMD((text.match(/---GEO---([\s\S]*?)---COUNSELOR---/)||[])[1]?.trim()||null),
+      geo:       stripMD((text.match(/---GEO---([\s\S]*?)---WORLD---/)||
+                          text.match(/---GEO---([\s\S]*?)---COUNSELOR---/)||[])[1]?.trim()||null),
+      world:     stripMD((text.match(/---WORLD---([\s\S]*?)---COUNSELOR---/)||[])[1]?.trim()||null),
       counselor: stripMD((text.match(/---COUNSELOR---([\s\S]*?)$/)||[])[1]?.trim()||null)
     };
-  } catch(e) { return {geo:null,counselor:null}; }
+  } catch(e) { return {geo:null,world:null,counselor:null}; }
 }
 
 // ── API CALL ───────────────────────────────────────
@@ -5884,8 +5944,14 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
         ${schoolData ? `<span class="school-badge">${schoolData.region}</span>` : ''}
         ${faithTradition ? `<span class="school-badge-faith">${faithTradition}</span>` : ''}
       </div>
+      <button class="school-intel-toggle" onclick="toggleSchoolIntel(${i})">Explore this school in depth &#8595;</button>
+      <div class="school-intel-panel" id="school-intel-panel-${i}"></div>
     </div>`;
   }).join('');
+
+  // Names indexed to the card position above, for the lazy School
+  // Intelligence Layer render (REPORT-UPGRADE-004) — click reads by index.
+  LS_STATE.renderedSchoolNames = callDData.map(function(s) { return s.name; });
 
   // ── Adjacent pick — "One more worth knowing" (Where You Fit tab) ─────────
   if(adjacentPicks && adjacentPicks.length > 0 && schoolsList) {
@@ -7348,6 +7414,20 @@ function renderFullReport(profile, callAData, callBData, callCData, essayParsed)
     }
   }
 
+  // ── THE WORLD YOU'RE WALKING INTO — REPORT-UPGRADE-004, additive ────────
+  // Pre-Phase-3 sessions (no synthesis object) never get a ---WORLD---
+  // section from callC, so callCData.world is null and this block stays
+  // display:none — no empty box, no placeholder, exactly the current
+  // Tab 3 opening experience.
+  if (callCData?.world) {
+    var _worldEl = document.getElementById('world-walking-into-text');
+    var _worldBlock = document.getElementById('world-walking-into-block');
+    if (_worldEl && _worldBlock) {
+      _worldEl.textContent = callCData.world;
+      _worldBlock.style.display = 'flex';
+    }
+  }
+
   if(callCData?.geo) {
     // Parse geo into four sections
     (function() {
@@ -7874,7 +7954,216 @@ function saveCounselorSynthesisBrief(brief, profile) {
   });
 }
 
+// ══════════════════════════════════════════════════════════════════════
+// REPORT-UPGRADE-004 — Counselor View panels, all reading SESSION.synthesis
+// .counselor_intelligence (produced by SYNTHESIS-ENGINE-003). Pure render
+// functions — no Claude call, no new API cost. Every panel stays hidden
+// (not empty) when the object or a sub-field is absent.
+// ══════════════════════════════════════════════════════════════════════
+
+// ── Family Synthesis Intelligence Panel ──────────────────────────────────
+function buildFamilySynthesisPanel(ctx) {
+  var ci = ctx.synthesis && ctx.synthesis.counselor_intelligence;
+  if (!ci) return null;
+
+  return {
+    classification: ci.family_dynamic_classification || null,
+    alignmentScore: (typeof ci.alignment_score === 'number') ? ci.alignment_score : null,
+    strengths: ci.alignment_strengths || [],
+    flags: ci.divergence_flags || [],
+    framing: ci.report_framing_instructions || null
+  };
+}
+
+function renderFamilySynthesisPanel(ctx) {
+  var section = document.getElementById('counselor-family-synthesis-section');
+  var el = document.getElementById('counselor-family-synthesis');
+  if (!section || !el) return;
+
+  var panel = buildFamilySynthesisPanel(ctx);
+  if (!panel) return; // section stays display:none — correct, not a bug
+
+  var classificationLabels = {
+    ALIGNED: 'Aligned',
+    ASPIRATIONALLY_DIVERGENT: 'Aspirationally divergent',
+    IDENTITY_DIVERGENT: 'Identity divergent',
+    GEOGRAPHICALLY_DIVERGENT: 'Geographically divergent',
+    FINANCIALLY_CONSTRAINED: 'Financially constrained'
+  };
+
+  var html = '<div class="counselor-block">';
+  html += '<div class="counselor-label">Family Synthesis</div>';
+
+  html += '<div class="counselor-section">';
+  html += '<div class="counselor-section-head">Family Dynamic</div>';
+  html += '<div class="counselor-section-body">' +
+            (classificationLabels[panel.classification] || 'Not yet classified') +
+          '</div>';
+  if (panel.alignmentScore !== null) {
+    html += '<div class="riasec-row" style="margin-top:.75rem;max-width:140px">' +
+              '<div class="riasec-col">' +
+                '<div class="riasec-score">' + panel.alignmentScore + '</div>' +
+                '<div class="riasec-bar-wrap"><div class="riasec-bar-fill" style="width:' + panel.alignmentScore + '%"></div></div>' +
+                '<div class="riasec-code">Alignment</div>' +
+              '</div>' +
+            '</div>';
+  }
+  html += '</div>';
+
+  if (panel.strengths.length) {
+    html += '<div class="counselor-section">';
+    html += '<div class="counselor-section-head">Alignment Strengths</div>';
+    panel.strengths.forEach(function(s) {
+      html += '<div class="counselor-section-body">' + s + '</div>';
+    });
+    html += '</div>';
+  }
+
+  if (panel.flags.length) {
+    html += '<div class="counselor-section">';
+    html += '<div class="counselor-section-head">Divergence Flags</div>';
+    panel.flags.forEach(function(f) {
+      html += '<div class="flag-badges" style="margin-bottom:.4rem"><span class="flag-yes">' + f.label + '</span></div>';
+      html += '<div class="action-prompt"><div class="action-text">' + f.note + '</div></div>';
+    });
+    html += '</div>';
+  }
+
+  if (panel.framing) {
+    html += '<div class="counselor-section">';
+    html += '<div class="counselor-section-head">Report Framing</div>';
+    html += '<div class="counselor-section-body">' + panel.framing.reason + '</div>';
+    html += '</div>';
+  }
+
+  html += '</div>';
+  el.innerHTML = html;
+  section.style.display = 'block';
+}
+
+// ── Round Two Probe Sheet ────────────────────────────────────────────────
+function buildRoundTwoProbeSheet(ctx) {
+  var ci = ctx.synthesis && ctx.synthesis.counselor_intelligence;
+  var sheet = ci && ci.round_two_probe_sheet;
+  if (!sheet) return null;
+
+  return {
+    high: sheet.high_priority || [],
+    moderate: sheet.moderate_priority || [],
+    optional: sheet.optional_priority || []
+  };
+}
+
+function renderRoundTwoProbeSheet(ctx) {
+  var section = document.getElementById('counselor-probe-sheet-section');
+  var el = document.getElementById('counselor-probe-sheet');
+  if (!section || !el) return;
+
+  var sheet = buildRoundTwoProbeSheet(ctx);
+  if (!sheet) return;
+
+  var tiers = [
+    { label: 'High Priority', items: sheet.high },
+    { label: 'Moderate Priority', items: sheet.moderate },
+    { label: 'Optional — Consultant Judgment', items: sheet.optional }
+  ];
+
+  var hasAnyItems = tiers.some(function(t) { return t.items.length > 0; });
+  if (!hasAnyItems) return;
+
+  var html = '<div class="counselor-block">';
+  html += '<div class="counselor-label">Round Two Probe Sheet</div>';
+
+  tiers.forEach(function(tier) {
+    if (!tier.items.length) return;
+    html += '<div class="counselor-section">';
+    html += '<div class="counselor-section-head">' + tier.label + '</div>';
+    tier.items.forEach(function(item) {
+      html += '<div class="action-prompt">' +
+                '<div class="action-text">' + item.question + '</div>' +
+                '<div class="counselor-section-body" style="margin-top:.4rem;font-style:normal">' + item.context + '</div>' +
+              '</div>';
+    });
+    html += '</div>';
+  });
+
+  html += '</div>';
+  el.innerHTML = html;
+  section.style.display = 'block';
+}
+
+// ── Confidence and Data Quality ──────────────────────────────────────────
+function buildConfidencePanel(ctx) {
+  var ci = ctx.synthesis && ctx.synthesis.counselor_intelligence;
+  var conf = ci && ci.confidence_summary;
+  if (!conf) return null;
+
+  return {
+    high: conf.high_confidence || [],
+    moderate: conf.moderate_confidence || [],
+    low: conf.low_confidence || []
+  };
+}
+
+function renderConfidencePanel(ctx) {
+  var section = document.getElementById('counselor-confidence-section');
+  var el = document.getElementById('counselor-confidence');
+  if (!section || !el) return;
+
+  var conf = buildConfidencePanel(ctx);
+  if (!conf) return;
+
+  var hasAny = conf.high.length || conf.moderate.length || conf.low.length;
+  if (!hasAny) return;
+
+  var html = '<div class="counselor-block">';
+  html += '<div class="counselor-label">Confidence and Data Quality</div>';
+
+  if (conf.high.length) {
+    html += '<div class="counselor-section">';
+    html += '<div class="counselor-section-head">High Confidence</div>';
+    html += '<div class="flag-badges">' + conf.high.map(function(s) {
+      return '<span class="flag-yes">' + s.label + '</span>';
+    }).join('') + '</div>';
+    conf.high.forEach(function(s) {
+      if (s.note) html += '<div class="counselor-section-body">' + s.note + '</div>';
+    });
+    html += '</div>';
+  }
+
+  if (conf.moderate.length) {
+    html += '<div class="counselor-section">';
+    html += '<div class="counselor-section-head">Moderate Confidence</div>';
+    conf.moderate.forEach(function(s) {
+      html += '<div class="counselor-section-body">' + (s.note || s.label) + '</div>';
+    });
+    html += '</div>';
+  }
+
+  if (conf.low.length) {
+    html += '<div class="counselor-section">';
+    html += '<div class="counselor-section-head">Low Confidence</div>';
+    html += '<div class="flag-badges">' + conf.low.map(function(s) {
+      return '<span class="flag-no">' + s.label + '</span>';
+    }).join('') + '</div>';
+    conf.low.forEach(function(s) {
+      if (s.note) html += '<div class="counselor-section-body">' + s.note + '</div>';
+    });
+    html += '</div>';
+  }
+
+  html += '</div>';
+  el.innerHTML = html;
+  section.style.display = 'block';
+}
+
 function renderCounselorView(profile, callAData, callBData, callCData, essayParsed, callDData) {
+  // ── REPORT-UPGRADE-004 Counselor panels — additive, run first ───────────
+  var _rupCtx = { synthesis: (typeof LS_STATE !== 'undefined' && LS_STATE.synthesis) || null };
+  renderFamilySynthesisPanel(_rupCtx);
+  renderRoundTwoProbeSheet(_rupCtx);
+  renderConfidencePanel(_rupCtx);
+
   // ── Counselor Synthesis Brief — new section, not a replacement ──────────
   // Runs after callD completes. Reads from the same school-match data
   // already displayed elsewhere; adds no new AI call, no new API cost.
@@ -8829,7 +9118,202 @@ function getFlatSchoolData(schoolName) {
 }
 // ─────────────────────────────────────────────────────────────────────────────
 
+// ══════════════════════════════════════════════════════════════════════
+// SCHOOL INTELLIGENCE LAYER — REPORT-UPGRADE-004, Section 4
+//
+// SCHEMA NOTE: the spec (Section 4.3) assumes v5 fields industryPathways,
+// megaRegionIntegration, institutionalMoat, futureResilience, and
+// hiddenOpportunities.nicheRecruitingAdvantages. None of those exist
+// anywhere in this file or its loaded scripts — grep confirms only
+// megaRegionDB_futureResilience.js is loaded (megaregion-level, shape
+// unknown from here). What DOES exist and is used below: studentFit
+// .thrivesIf/.strugglesIf (confirmed real, already powering the card's
+// honest-conditions note), and institutionNarrative's flat fields via
+// getFlatSchoolData() — bestFitPersonality, comparableInstitutions,
+// economicOutcome, hiddenPathway, gradCities. Categories 4, 5, and 6
+// (Industry Map, World Around It, Durability) are wired to gracefully
+// render nothing until those fields are actually built into the V5
+// schema — per the spec's own fallback rule, a missing category simply
+// doesn't appear. This is a real gap to close, not a rendering bug.
+// ══════════════════════════════════════════════════════════════════════
 
+function buildSchoolIntelData(schoolName) {
+  var v5 = typeof getDbV5Entry === 'function' ? getDbV5Entry(schoolName) : null;
+  var flat = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(schoolName) : null;
+  if (!v5 && !flat) return null;
+
+  var cats = [];
+
+  // 1. What Makes This School Distinct — composed from real flat fields,
+  // not a single institutionNarrative prose paragraph (that field doesn't
+  // hold prose in this schema — it holds the structured sub-fields below).
+  if (flat && (flat.best_fit_personality || flat.comparable_institutions || flat.economic_outcome)) {
+    var distinctParts = [];
+    if (flat.best_fit_personality) distinctParts.push(flat.best_fit_personality);
+    if (flat.comparable_institutions) distinctParts.push('Comparable institutions: ' + flat.comparable_institutions + '.');
+    if (flat.economic_outcome) distinctParts.push(flat.economic_outcome);
+    cats.push({ head: 'What Makes This School Distinct', body: distinctParts.join(' ') });
+  }
+
+  // 2. Who Thrives Here — confirmed real: v5.studentFit.thrivesIf/strugglesIf
+  if (v5 && v5.studentFit && (v5.studentFit.thrivesIf || v5.studentFit.strugglesIf)) {
+    var thrives = (v5.studentFit.thrivesIf || []).join(' ');
+    var struggles = (v5.studentFit.strugglesIf || []).join(' ');
+    cats.push({
+      head: 'Who Thrives Here',
+      body: (thrives ? '<strong>You will thrive here if:</strong> ' + thrives + ' ' : '') +
+            (struggles ? '<strong>One thing to know:</strong> ' + struggles : '')
+    });
+  }
+
+  // 3. Where Graduates Go — real field, already used elsewhere in the card
+  if (flat && flat.grad_cities) {
+    var cities = Array.isArray(flat.grad_cities) ? flat.grad_cities.join(', ') : flat.grad_cities;
+    cats.push({ head: 'Where Graduates Go', body: cities });
+  }
+
+  // 4. The Industry Map — NOT YET BUILT. industryPathways does not exist
+  // in this schema. Category renders nothing until that field is added —
+  // per spec's own fallback rule, this is correct behavior, not a bug.
+
+  // 5. The World Around It — NOT YET BUILT. megaRegionIntegration does
+  // not exist per-school in this schema.
+
+  // 6. How Durable This School Is — NOT YET BUILT per-school.
+  // megaRegionDB_futureResilience.js is loaded but its shape/API is not
+  // visible from this file, so nothing is guessed here. Wire this once
+  // the real accessor function is confirmed.
+
+  // 7. What the Rankings Miss — real field: institutionNarrative.hiddenPathway
+  // (this is the same intelligence the spec calls nicheRecruitingAdvantages,
+  // under the name this schema actually uses)
+  if (flat && flat.hidden_pathway) {
+    cats.push({ head: 'What the Rankings Miss', body: flat.hidden_pathway });
+  }
+
+  return cats.length ? cats : null;
+}
+
+var _schoolIntelOpenIdx = null;
+
+function toggleSchoolIntel(idx) {
+  var panel = document.getElementById('school-intel-panel-' + idx);
+  if (!panel) return;
+
+  if (_schoolIntelOpenIdx !== null && _schoolIntelOpenIdx !== idx) {
+    var prev = document.getElementById('school-intel-panel-' + _schoolIntelOpenIdx);
+    if (prev) prev.classList.remove('open');
+  }
+
+  var opening = !panel.classList.contains('open');
+  if (opening && !panel.dataset.rendered) {
+    renderSchoolIntelInto(panel, idx);
+    panel.dataset.rendered = 'true';
+  }
+  panel.classList.toggle('open', opening);
+  _schoolIntelOpenIdx = opening ? idx : null;
+}
+
+function renderSchoolIntelInto(panel, idx) {
+  var schoolName = LS_STATE.renderedSchoolNames && LS_STATE.renderedSchoolNames[idx];
+  if (!schoolName) { panel.innerHTML = ''; return; }
+
+  var cats = buildSchoolIntelData(schoolName);
+  if (!cats) { panel.innerHTML = ''; return; }
+
+  var independent = !(typeof SESSION !== 'undefined' && SESSION.consultant_paired);
+  var html = '<div class="school-intel-inner">';
+
+  cats.forEach(function(c) {
+    var orienting = independent ? schoolIntelOrientingLine(c.head) : '';
+    var protect = (!independent && (c.head === 'The Industry Map' || c.head === 'How Durable This School Is'))
+      ? '<div class="school-intel-protect">Your consultant can speak to how this specifically applies to your family\'s situation — including factors that may not be visible in the data alone.</div>'
+      : '';
+    html += '<div class="school-intel-cat">' +
+              '<div class="school-intel-cat-head">' + c.head + '</div>' +
+              (orienting ? '<div class="school-intel-orient">' + orienting + '</div>' : '') +
+              '<div class="school-intel-cat-body">' + c.body + '</div>' +
+              protect +
+            '</div>';
+  });
+
+  if (independent) {
+    var cat8 = buildCategoryEight(schoolName);
+    if (cat8) {
+      html += '<div class="school-intel-cat">' +
+                '<div class="school-intel-cat-head">How to Think About This School</div>' +
+                '<div class="school-intel-cat-body">' + cat8 + '</div>' +
+              '</div>';
+    }
+  }
+
+  html += '</div>';
+  panel.innerHTML = html;
+}
+
+function schoolIntelOrientingLine(head) {
+  var lines = {
+    'The Industry Map': 'This shows how strongly this school\'s pipeline connects to different industries. A score above 70 means graduates have a genuine structural advantage entering that field. Below 30, the path is possible but not well-worn.',
+    'How Durable This School Is': 'This section answers a question every family carries but rarely asks aloud: will this school still matter in fifteen years?'
+  };
+  return lines[head] || '';
+}
+
+// ── Category 8 — How to Think About This School (independent tier only) ──
+// Rules-based composition, not a Claude call, per spec Section 4.7.
+// SCHEMA NOTE: v5.applicationIntelligence (edDeadline, essayPromptTopic)
+// does not exist in this codebase either — the timeline sentence below
+// degrades to nothing without it, exactly as designed, until that field
+// is added to the schema.
+function buildCategoryEight(schoolName) {
+  var v5 = typeof getDbV5Entry === 'function' ? getDbV5Entry(schoolName) : null;
+  if (!v5) return null;
+
+  var ctx = { synthesis: (typeof LS_STATE !== 'undefined' && LS_STATE.synthesis) || null };
+
+  var fit = _catEightFitSentence(v5, ctx);
+  if (!fit) return null;
+  var consider = _catEightConsiderSentence(v5);
+  var timeline = _catEightTimelineSentence(v5, ctx);
+
+  var parts = [fit];
+  if (consider) parts.push(consider);
+  if (timeline) parts.push(timeline);
+  return parts.join(' ');
+}
+
+function _catEightFitSentence(v5, ctx) {
+  var thrives = v5.studentFit && v5.studentFit.thrivesIf && v5.studentFit.thrivesIf[0];
+  if (!thrives) return null;
+
+  var geoNote = '';
+  var gravity = ctx.synthesis && ctx.synthesis.megaregion_gravity;
+  if (gravity && v5.megaRegionIntegration && gravity.top_zone === v5.megaRegionIntegration.zoneKey) {
+    geoNote = ' That fit is reinforced by geography — this campus sits inside the same world you described wanting to be part of.';
+  }
+  return 'The fit here is genuine and specific: ' + _catEightLowerFirst(thrives) + geoNote;
+}
+
+function _catEightConsiderSentence(v5) {
+  var struggles = v5.studentFit && v5.studentFit.strugglesIf && v5.studentFit.strugglesIf[0];
+  if (!struggles) return null;
+  return 'One thing worth sitting with before this goes on the final list: ' + _catEightLowerFirst(struggles);
+}
+
+function _catEightTimelineSentence(v5, ctx) {
+  var ai = v5.applicationIntelligence;
+  if (!ai || !ai.edDeadline) return null; // not yet in schema — no fabricated dates
+
+  var essayLine = '';
+  if (ai.essayPromptTopic && ctx.genome && ctx.genome.dominant_domain_label) {
+    essayLine = ' The supplemental essay asks about ' + ai.essayPromptTopic +
+                ' — a question your ' + ctx.genome.dominant_domain_label + ' answers particularly well.';
+  }
+  return 'This school\'s Early Decision I deadline is ' + ai.edDeadline + '.' + essayLine +
+         ' If you\'re seriously considering this school, that essay should be your first priority after a campus visit confirms the fit feels right.';
+}
+
+function _catEightLowerFirst(s) { return s.charAt(0).toLowerCase() + s.slice(1); }
 
 </script>
 
