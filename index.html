@@ -218,6 +218,44 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .screen.active{display:block;animation:fadeUp .4s ease forwards;}
 #screen-home.active{animation:fadeIntro .5s ease forwards;}
 @keyframes fadeIntro{from{opacity:0;}to{opacity:1;}}
+
+/* ══ INTRO ANIMATION — compass / signal / statement / reveal ══ */
+#screen-home{position:relative;min-height:calc(100dvh - var(--space-header-h));overflow:hidden;}
+
+.ih-compass-wrap{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(30vw,120px);height:min(30vw,120px);opacity:0;transition:opacity 2.4s ease;z-index:5;pointer-events:none;}
+.ih-compass-wrap.show{opacity:.75;}
+.ih-compass-wrap.hide{opacity:0;transition:opacity 1.6s ease;}
+.ih-compass-svg{width:100%;height:100%;animation:ihCompassSpin 12s cubic-bezier(.15,.35,.35,1) forwards;}
+.ih-compass-svg.settle{animation:none;}
+@keyframes ihCompassSpin{0%{transform:rotate(-180deg);}60%{transform:rotate(8deg);}80%{transform:rotate(-3deg);}90%{transform:rotate(1deg);}100%{transform:rotate(0);}}
+
+.ih-signal-ring{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);width:min(50vw,200px);height:min(50vw,200px);border-radius:50%;border:.5px solid rgba(201,168,76,.4);opacity:0;z-index:4;pointer-events:none;}
+.ih-ring2{width:min(75vw,300px);height:min(75vw,300px);border-color:rgba(201,168,76,.2);}
+.ih-ring3{width:min(100vw,420px);height:min(100vw,420px);border-color:rgba(201,168,76,.1);}
+.ih-signal-ring.fire{animation:ihSignalPulse 2s ease-out forwards;}
+.ih-ring2.fire{animation:ihSignalPulse 2s ease-out .3s forwards;}
+.ih-ring3.fire{animation:ihSignalPulse 2s ease-out .6s forwards;}
+@keyframes ihSignalPulse{0%{transform:translate(-50%,-50%) scale(0);opacity:.8;}100%{transform:translate(-50%,-50%) scale(1);opacity:0;}}
+
+.ih-statement{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;font-family:var(--serif);font-size:clamp(1.4rem,5vw,2.4rem);font-style:italic;font-weight:300;color:var(--ink);line-height:1.5;letter-spacing:.02em;opacity:0;transition:opacity 1.8s ease;z-index:10;width:88vw;max-width:520px;padding:0 1rem;pointer-events:none;}
+
+.ih-brand-reveal{position:relative;z-index:10;opacity:0;text-align:center;width:100%;max-width:640px;margin:0 auto;padding:min(12vh,5rem) 1.25rem 3rem;}
+.ih-wordmark-svg{display:block;margin:0 auto 1rem;width:min(78vw,480px);height:auto;}
+.ih-rule{width:40px;height:.5px;background:var(--gold);margin:0 auto 1rem;opacity:.7;}
+.ih-tagline{font-family:var(--sans);font-size:clamp(11px,3vw,13px);font-weight:300;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);}
+.ih-begin{opacity:0;transition:opacity .8s ease;}
+.ih-begin.show{opacity:1;}
+
+.ih-tile-row{display:flex;justify-content:center;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;opacity:0;transition:opacity 1s ease;}
+.ih-tile-row.show{opacity:1;}
+.ih-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:min(220px,44vw);min-height:44px;padding:1rem .75rem;border:1px solid var(--rule);text-decoration:none;}
+.ih-tile-title{font-family:var(--serif);font-size:18px;color:var(--ink);}
+.ih-tile-sub{font-family:var(--sans);font-size:12px;color:var(--ink3);text-align:center;}
+
+@media (max-width:480px){
+  .ih-tile-row{gap:.6rem;}
+  .ih-tile{width:100%;max-width:340px;}
+}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── ESSAY-ENGINE-003 v1.2 Pacing Addendum ────────────────────────────────
@@ -1049,38 +1087,60 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- SCREEN HOME — WELCOME / MARKETING LANDING          -->
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen active" id="screen-home">
-<div class="container" style="padding-top:5rem;text-align:center;">
-  <svg viewBox="0 0 1200 400" role="img" aria-label="VECTOR" style="width:min(90vw,640px);height:auto;display:block;margin:0 auto 1.5rem;">
-    <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="var(--ink)" x="600" y="257.6" text-anchor="middle">VECTOR</text>
-    <line x1="700.15" y1="231.24" x2="721.49" y2="172.60" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round"/>
-    <polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="var(--gold)"/>
-  </svg>
-  <div class="q-sub" style="font-size:17px;letter-spacing:.02em;">Clarity for college. Confidence for life.</div>
 
-  <button class="ls-btn" style="max-width:340px;margin:2.5rem auto 0;" onclick="goTo(0)">Build my Lifescape</button>
-
-  <div style="display:flex;justify-content:center;gap:1.5rem;margin-top:3.5rem;flex-wrap:wrap;">
-    <a href="/family.html" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:220px;padding:1.25rem;border:1px solid var(--rule);text-decoration:none;">
-      <span style="font-family:var(--serif);font-size:20px;color:var(--ink);">Family</span>
-      <span style="font-family:var(--sans);font-size:13px;color:var(--ink3);">Enter as a student or parent</span>
-    </a>
-    <a href="/portal.html" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:220px;padding:1.25rem;border:1px solid var(--rule);text-decoration:none;">
-      <span style="font-family:var(--serif);font-size:20px;color:var(--ink);">Consultant</span>
-      <span style="font-family:var(--sans);font-size:13px;color:var(--ink3);">Enter your dashboard</span>
-    </a>
+  <div class="ih-compass-wrap" id="ihCompassWrap">
+    <svg class="ih-compass-svg" id="ihCompassSvg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="32" cy="32" r="28" stroke="var(--gold)" stroke-width="0.4" opacity="0.18"/>
+      <circle cx="32" cy="32" r="19" stroke="var(--gold)" stroke-width="0.5" opacity="0.14"/>
+      <line x1="32" y1="4" x2="32" y2="9" stroke="var(--gold)" stroke-width="0.7" opacity="0.4" stroke-linecap="round"/>
+      <line x1="4" y1="32" x2="9" y2="32" stroke="var(--gold)" stroke-width="0.5" opacity="0.12" stroke-linecap="round"/>
+      <line x1="55" y1="32" x2="60" y2="32" stroke="var(--gold)" stroke-width="0.5" opacity="0.12" stroke-linecap="round"/>
+      <path d="M 29.8 44 L 32 12 L 34.2 44 Z" fill="var(--gold)" opacity="1.0"/>
+      <path d="M 30.4 44 L 32 54 L 33.6 44 Z" fill="var(--gold)" opacity="0.3"/>
+      <circle cx="32" cy="44" r="4.5" stroke="var(--gold)" stroke-width="0.4" opacity="0.18" fill="none"/>
+      <circle cx="32" cy="44" r="2.4" fill="var(--gold)" opacity="0.85"/>
+    </svg>
   </div>
 
-  <div style="display:flex;justify-content:center;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap;">
-    <a href="/five_lives.html" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:220px;padding:1.25rem;border:1px solid var(--rule);text-decoration:none;">
-      <span style="font-family:var(--serif);font-size:20px;color:var(--ink);">Five Lives</span>
-      <span style="font-family:var(--sans);font-size:13px;color:var(--ink3);">Five decisions, five paths</span>
-    </a>
-    <a href="/the_shift.html" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:220px;padding:1.25rem;border:1px solid var(--rule);text-decoration:none;">
-      <span style="font-family:var(--serif);font-size:20px;color:var(--ink);">The Shift</span>
-      <span style="font-family:var(--sans);font-size:13px;color:var(--ink3);">Where the map is splitting</span>
-    </a>
+  <div class="ih-signal-ring" id="ihRing1"></div>
+  <div class="ih-signal-ring ih-ring2" id="ihRing2"></div>
+  <div class="ih-signal-ring ih-ring3" id="ihRing3"></div>
+
+  <div class="ih-statement" id="ihStatement"></div>
+
+  <div class="ih-brand-reveal" id="ihBrandReveal">
+    <svg class="ih-wordmark-svg" viewBox="0 0 1200 400" role="img" aria-label="VECTOR">
+      <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="var(--ink)" x="600" y="257.6" text-anchor="middle">VECTOR</text>
+      <line x1="700.15" y1="231.24" x2="721.49" y2="172.60" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round"/>
+      <polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="var(--gold)"/>
+    </svg>
+    <div class="ih-rule"></div>
+    <div class="ih-tagline">Clarity for college. Confidence for life.</div>
+
+    <button class="ls-btn ih-begin" id="ihBeginBtn" style="max-width:340px;margin:2rem auto 0;" onclick="goTo(0)">Build my Lifescape</button>
+
+    <div class="ih-tile-row">
+      <a href="/family.html" class="ih-tile">
+        <span class="ih-tile-title">Family</span>
+        <span class="ih-tile-sub">Enter as a student or parent</span>
+      </a>
+      <a href="/portal.html" class="ih-tile">
+        <span class="ih-tile-title">Consultant</span>
+        <span class="ih-tile-sub">Enter your dashboard</span>
+      </a>
+    </div>
+    <div class="ih-tile-row">
+      <a href="/five_lives.html" class="ih-tile">
+        <span class="ih-tile-title">Five Lives</span>
+        <span class="ih-tile-sub">Five decisions, five paths</span>
+      </a>
+      <a href="/the_shift.html" class="ih-tile">
+        <span class="ih-tile-title">The Shift</span>
+        <span class="ih-tile-sub">Where the map is splitting</span>
+      </a>
+    </div>
   </div>
-</div>
+
 </div>
 
 <!-- ══════════════════════════════════════════════════ -->
@@ -2446,6 +2506,90 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- SCRIPTS                                           -->
 <!-- ══════════════════════════════════════════════════ -->
 <script>
+
+// ── INTRO ANIMATION SEQUENCE (screen-home) — runs once on load ──
+(function(){
+  function pause(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
+  function fadeIn(el, text){
+    if (text !== undefined) el.innerHTML = text.replace(/\n/g,'<br>');
+    el.style.opacity = '0';
+    el.style.transition = 'opacity 2.4s ease';
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ el.style.opacity = '1'; }); });
+  }
+  function fadeOut(el){ el.style.transition = 'opacity 1.2s ease'; el.style.opacity = '0'; }
+  function playTone(){
+    try {
+      var ctx = new (window.AudioContext || window.webkitAudioContext)();
+      var osc = ctx.createOscillator(), gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.frequency.value = 432; osc.type = 'sine';
+      gain.gain.setValueAtTime(0, ctx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.06, ctx.currentTime + 0.3);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 2.5);
+      osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 2.5);
+    } catch(e) {}
+  }
+
+  var STATEMENTS = [
+    "You don't have to decide\nyour future today.",
+    "You only need\na place to begin.",
+    "We'll discover\nthe rest together."
+  ];
+
+  async function runIntroSequence(){
+    var compassWrap = document.getElementById('ihCompassWrap');
+    var compassSvg  = document.getElementById('ihCompassSvg');
+    var statement   = document.getElementById('ihStatement');
+    var brandReveal = document.getElementById('ihBrandReveal');
+    var beginBtn    = document.getElementById('ihBeginBtn');
+    var tileRows    = document.querySelectorAll('.ih-tile-row');
+    var ring1 = document.getElementById('ihRing1');
+    var ring2 = document.getElementById('ihRing2');
+    var ring3 = document.getElementById('ihRing3');
+    if (!compassWrap) return; // screen-home not present on this build
+
+    await pause(400);
+    compassWrap.classList.add('show');
+    await pause(4200);
+    compassSvg.classList.add('settle');
+
+    playTone();
+    ring1.classList.add('fire');
+    await pause(300);
+    ring2.classList.add('fire');
+    await pause(300);
+    ring3.classList.add('fire');
+
+    await pause(400);
+    compassWrap.classList.remove('show');
+    compassWrap.classList.add('hide');
+
+    await pause(1400);
+    fadeIn(statement, STATEMENTS[0]);
+    await pause(3200);
+    fadeOut(statement);
+    await pause(1200);
+    fadeIn(statement, STATEMENTS[1]);
+    await pause(3200);
+    fadeOut(statement);
+    await pause(1200);
+    fadeIn(statement, STATEMENTS[2]);
+    await pause(4200);
+    fadeOut(statement);
+
+    await pause(1200);
+    fadeIn(brandReveal);
+    await pause(2200);
+    beginBtn.classList.add('show');
+    tileRows.forEach(function(row){ row.classList.add('show'); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runIntroSequence);
+  } else {
+    runIntroSequence();
+  }
+})();
 
 // ── STATE — defined first so all functions can reference safely ──
 const COLLEGE_PREFS = {
