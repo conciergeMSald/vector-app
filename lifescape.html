@@ -216,6 +216,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 /* ── SCREENS ─────────────────────────────────────────── */
 .screen{display:none;min-height:100vh;padding:3rem 0;}
 .screen.active{display:block;animation:fadeUp .4s ease forwards;}
+#screen-home.active{animation:fadeIntro .5s ease forwards;}
+@keyframes fadeIntro{from{opacity:0;}to{opacity:1;}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── ESSAY-ENGINE-003 v1.2 Pacing Addendum ────────────────────────────────
@@ -1044,7 +1046,34 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- ══════════════════════════════════════════════════ -->
-<div class="screen active" id="screen-0">
+<!-- SCREEN HOME — WELCOME / MARKETING LANDING          -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen active" id="screen-home">
+<div class="container" style="padding-top:5rem;text-align:center;">
+  <svg viewBox="0 0 1200 400" role="img" aria-label="VECTOR" style="width:min(90vw,640px);height:auto;display:block;margin:0 auto 1.5rem;">
+    <text font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-weight="300" font-size="120px" letter-spacing="18px" fill="var(--ink)" x="600" y="257.6" text-anchor="middle">VECTOR</text>
+    <line x1="700.15" y1="231.24" x2="721.49" y2="172.60" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round"/>
+    <polygon points="721.49,172.60 717.16,176.39 722.37,178.29" fill="var(--gold)"/>
+  </svg>
+  <div class="q-sub" style="font-size:17px;letter-spacing:.02em;">Clarity for college. Confidence for life.</div>
+
+  <button class="ls-btn" style="max-width:340px;margin:2.5rem auto 0;" onclick="goTo(0)">Build my Lifescape</button>
+
+  <div style="display:flex;justify-content:center;gap:1.5rem;margin-top:3.5rem;flex-wrap:wrap;">
+    <a href="/family.html" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:220px;padding:1.25rem;border:1px solid var(--rule);text-decoration:none;">
+      <span style="font-family:var(--serif);font-size:20px;color:var(--ink);">Family</span>
+      <span style="font-family:var(--sans);font-size:13px;color:var(--ink3);">Enter as a student or parent</span>
+    </a>
+    <a href="/portal.html" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:220px;padding:1.25rem;border:1px solid var(--rule);text-decoration:none;">
+      <span style="font-family:var(--serif);font-size:20px;color:var(--ink);">Consultant</span>
+      <span style="font-family:var(--sans);font-size:13px;color:var(--ink3);">Enter your dashboard</span>
+    </a>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<div class="screen" id="screen-0">
 <div class="container" style="padding-top:7rem">
   <div class="gold-rule"></div>
   <div class="q">Have a beta invite code?</div>
@@ -9443,7 +9472,13 @@ function _catEightTimelineSentence(v5, ctx) {
 
   if (!deadlineLine && !essayLine) return null;
 
-  var closing = (deadlineLine || essayLine)
+  // FIXED (found via real Batch 1 data, 2026-07-23): closing sentence
+  // references "that essay" specifically — it must only fire when an essay
+  // was actually mentioned. The prior version fired whenever EITHER a
+  // deadline or an essay existed, producing a dangling "that essay should
+  // be your first priority" for deadline-only schools (ASU, UW, Gonzaga)
+  // with no essayPromptTopic data yet.
+  var closing = essayLine
     ? ' If you\'re seriously considering this school, that essay should be your first priority after a campus visit confirms the fit feels right.'
     : '';
 
