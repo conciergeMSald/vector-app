@@ -1,5 +1,13 @@
 const UNIVERSITY_DB_V5 = {
   "Arizona State University": {
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Priority",
+      "rdDeadline": "February 1",
+      "essayPromptTopic": null,
+      "notes": "No binding ED or EA at ASU — a rolling model with a priority date (Nov 1, gives admission/scholarship consideration) and a regular date (Feb 1). Consistent with the 'Priority' label already used for Illinois' identical situation. No supplemental essay required for general admission (Common App personal statement only; Barrett Honors College has its own separate essay requirement, out of scope here). Sourced from admission.asu.edu, verified 2026-07-23.",
+      "verifiedDate": "2026-07-23"
+    },
     "institutionNarrative": {
       "name": "Arizona State University",
       "location": "Tempe, Arizona",
@@ -469,6 +477,14 @@ const UNIVERSITY_DB_V5 = {
     }
   },
   "University of Washington": {
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Application",
+      "rdDeadline": null,
+      "essayPromptTopic": null,
+      "notes": "UW has a single hard deadline (Nov 15) — no ED/EA/priority/rolling distinction at all. Labeled 'Application' rather than 'Regular Decision' since there is no earlier round it's 'regular' relative to. Essay prompt not yet researched. Sourced from admit.washington.edu, verified 2026-07-23.",
+      "verifiedDate": "2026-07-23"
+    },
     "institutionNarrative": {
       "name": "University of Washington",
       "location": "Seattle, Washington",
@@ -938,6 +954,14 @@ const UNIVERSITY_DB_V5 = {
     }
   },
   "University of Arizona": {
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Recently overhauled its admissions model — moved off open/rolling admission onto a real EA (Nov 1, nonbinding) / RD (decisions by Jan 15) structure, tied to merit aid and Honors College consideration. Worth knowing this is a genuine, recent institutional change, not a longstanding policy. Essay prompt not yet researched. Sourced from enrollmentmanagement.arizona.edu, verified 2026-07-23.",
+      "verifiedDate": "2026-07-23"
+    },
     "institutionNarrative": {
       "name": "University of Arizona",
       "location": "Tucson, Arizona",
@@ -1407,6 +1431,14 @@ const UNIVERSITY_DB_V5 = {
     }
   },
   "University of Oregon": {
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Straightforward EA (Nov 1, nonbinding) / RD (Jan 15) model. Essay prompt not yet researched. Sourced from admissions.uoregon.edu, verified 2026-07-23.",
+      "verifiedDate": "2026-07-23"
+    },
     "institutionNarrative": {
       "name": "University of Oregon",
       "location": "Eugene, Oregon",
@@ -1734,6 +1766,14 @@ const UNIVERSITY_DB_V5 = {
     }
   },
   "Reed College": {
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision (binding) / Early Action",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": "Paideia — a real week at Reed where students teach their own classes on anything they love, no faculty involved",
+      "notes": "Both ED I and EA share the Nov 1 deadline; both ED II and RD share Jan 15. Genuinely distinctive essay topic (Paideia) — real, specific, well-suited to Category 8's framing since it's concrete and unlike a generic 'why us' prompt. Sourced from reed.edu, verified 2026-07-23.",
+      "verifiedDate": "2026-07-23"
+    },
     "institutionNarrative": {
       "name": "Reed College",
       "location": "Portland, Oregon",
@@ -2192,6 +2232,14 @@ const UNIVERSITY_DB_V5 = {
     }
   },
   "Gonzaga University": {
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Early Action",
+      "rdDeadline": "February 1",
+      "essayPromptTopic": null,
+      "notes": "Gonzaga only added Early Action starting the 2024-25 cycle — it did not have an early round before that. Worth noting as a recent change, similar in shape to Arizona's. Essay prompt not yet researched. Sourced verified 2026-07-23.",
+      "verifiedDate": "2026-07-23"
+    },
     "institutionNarrative": {
       "name": "Gonzaga University",
       "location": "Spokane, Washington",
@@ -2653,6 +2701,14 @@ const UNIVERSITY_DB_V5 = {
     }
   },
   "Indiana University Bloomington": {
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action",
+      "rdDeadline": "February 1",
+      "essayPromptTopic": null,
+      "notes": "EA (Nov 1, nonbinding) / RD (Feb 1). IU explicitly requires an essay as part of the general application review (transcript + essay + scores) — unlike many large publics that only require the Common App personal statement — but the specific supplemental prompt itself wasn't captured in this pass. Sourced from bloomington.iu.edu, verified 2026-07-23.",
+      "verifiedDate": "2026-07-23"
+    },
     "institutionNarrative": {
       "name": "Indiana University Bloomington",
       "location": "Bloomington, Indiana",
