@@ -992,6 +992,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   data-clerk-publishable-key="pk_live_Y2xlcmsuYWJldHRlcmNvbGxlZ2Vjb25zdWx0YW50LmNvbSQ"
   src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@6/dist/clerk.browser.js"
 ></script>
+<!-- STRIPE-BETA-001 Addendum A — Stripe.js, loaded directly from Stripe per
+     their own guidance (never bundled), needed for the embedded Payment
+     Element used in the family subscription flow. -->
+<script src="https://js.stripe.com/v3/"></script>
 <script>
   window.__clerkReady = false;
   window.addEventListener('load', function() {
@@ -2603,6 +2607,16 @@ const COLLEGE_PREFS = {
 const API_ENDPOINT = 'https://api.abettercollegeconsultant.com/v1/messages';
 const SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxmhDOrAjTtgpD9WfP1pnMlcBd9cgl-U1bo6RS2i82tGb3t4eB3fO1sE3i3JgLIot38Cg/exec';
 
+// ── STRIPE-BETA-001 Addendum A — publishable key, safe to embed client-side ──
+const STRIPE_PUBLISHABLE_KEY = 'pk_live_51R5ockGGKZNoACrKiYBk0p7ObXxjEaf9OIrrIjswfUmRpuI0BEiAHu3uSE1W3SDGAAxtcYUhvOcmSsQZn5luu1yl00244EU1jX';
+let __vectorStripeInstance = null;
+function getVectorStripe() {
+  if (!__vectorStripeInstance && window.Stripe) {
+    __vectorStripeInstance = window.Stripe(STRIPE_PUBLISHABLE_KEY);
+  }
+  return __vectorStripeInstance;
+}
+
 // ── STATE ──────────────────────────────────────────
 const LS_STATE = {
   name:'', grade:null, gpa:null, gpa_type:'weighted', voice:'student',
@@ -2795,49 +2809,121 @@ async function checkAssessmentEligibilityAndProceed() {
   goTo(1);
 }
 
+/* ── loadFamilySubscriptionPaymentInto ─────────────────────────────────────
+   STRIPE-BETA-001 Addendum A — shared embedded Payment Element loader, used
+   by both showSubscribeRequiredScreen (returning-family gate) and the
+   post-signup upsell flow (onFamilySignedIn). Fetches a client_secret from
+   /create-family-subscription, mounts a Stripe Payment Element styled to
+   VECTOR's own tokens (Addendum A Section 5), and wires confirmPayment on
+   submit. Calls onSuccess() once payment is confirmed. Never navigates
+   away from the page — Addendum A's entire point is that the visitor
+   never leaves lifescape.html or sees a Stripe-branded surface.
+   ───────────────────────────────────────────────────────────────────────── */
+async function loadFamilySubscriptionPaymentInto(containerId, onSuccess) {
+  var container = document.getElementById(containerId);
+  if (!container) return;
+
+  var token = (window.Clerk && window.Clerk.session) ? await window.Clerk.session.getToken() : null;
+
+  var res, data;
+  try {
+    res = await fetch('https://api.abettercollegeconsultant.com/create-family-subscription', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+      body:    JSON.stringify({ plan_key: 'family_beta_129' }),
+    });
+    data = await res.json();
+  } catch (err) {
+    console.error('[VECTOR Lifescape] create-family-subscription request failed:', err);
+    container.innerHTML = '<div style="font-family:var(--sans);font-size:14px;color:#c0392b;">Payment is temporarily unavailable. Please try again shortly.</div>';
+    return;
+  }
+
+  if (!data || !data.client_secret) {
+    console.error('[VECTOR Lifescape] create-family-subscription did not return a client_secret:', data);
+    container.innerHTML = '<div style="font-family:var(--sans);font-size:14px;color:#c0392b;">Payment is temporarily unavailable. Please try again shortly.</div>';
+    return;
+  }
+
+  var stripe = getVectorStripe();
+  if (!stripe) {
+    container.innerHTML = '<div style="font-family:var(--sans);font-size:14px;color:#c0392b;">Payment is temporarily unavailable. Please try again shortly.</div>';
+    return;
+  }
+
+  container.innerHTML =
+    '<div id="paymentElementMount" style="text-align:left;margin-bottom:1.25rem;"></div>' +
+    '<button id="paymentSubmitBtn" class="ls-btn" style="width:100%;">Confirm &amp; Continue — $129/mo</button>' +
+    '<div id="paymentErrorMsg" style="color:#c0392b;font-family:var(--sans);font-size:13px;margin-top:.75rem;"></div>';
+
+  var elements = stripe.elements({
+    clientSecret: data.client_secret,
+    appearance: {
+      theme: 'stripe',
+      variables: {
+        colorPrimary:    '#C9A84C',
+        colorBackground: '#FDFAF4',
+        colorText:       '#111111',
+        fontFamily:      "'DM Sans', system-ui, sans-serif",
+        borderRadius:    '0px',
+      },
+    },
+  });
+  var paymentElement = elements.create('payment');
+  paymentElement.mount('#paymentElementMount');
+
+  var submitBtn = document.getElementById('paymentSubmitBtn');
+  submitBtn.addEventListener('click', async function() {
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Processing…';
+    var errEl = document.getElementById('paymentErrorMsg');
+    if (errEl) errEl.textContent = '';
+
+    var result = await stripe.confirmPayment({
+      elements:      elements,
+      confirmParams: { return_url: window.location.href },
+      redirect:      'if_required',
+    });
+
+    if (result.error) {
+      if (errEl) errEl.textContent = result.error.message || 'Something went wrong. Please try again.';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Confirm & Continue — $129/mo';
+      return;
+    }
+
+    if (typeof onSuccess === 'function') onSuccess();
+  });
+}
+
 /* ── showSubscribeRequiredScreen ──────────────────────────────────────────
    LOCKED IN per IMPL-PLAN-003 Section 6 step 11: identical message on
    every return visit while unpaid, no grace period, no partial access.
+   STRIPE-BETA-001 Addendum A / OQ-A1: redesigned for the embedded flow —
+   the payment form loads directly inside this same overlay rather than a
+   separate click-then-redirect step.
    ───────────────────────────────────────────────────────────────────────── */
 function showSubscribeRequiredScreen(message) {
   var overlay = document.createElement('div');
   overlay.id  = 'subscribeRequiredGate';
-  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(253,250,245,0.97);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box;';
+  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(253,250,245,0.97);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box;overflow:auto;';
 
   overlay.innerHTML = `
     <div style="max-width:440px;width:100%;font-family:Georgia,serif;text-align:center;">
       <div style="font-family:var(--sans);font-size:var(--type-meta);letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Your Lifescape</div>
-      <div style="font-size:18px;font-weight:400;letter-spacing:1px;color:#0a0a0a;margin-bottom:.75rem;">` + (message || 'You have an account, but need to subscribe to continue.') + `</div>
-      <button id="subscribeNowBtn" onclick="startFamilyCheckoutFromGate()"
-        style="width:100%;padding:15px 36px;background:#0a0a0a;color:#fafaf8;border:none;font-family:var(--sans);font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-top:1.5rem;">
-        Subscribe to Continue
-      </button>
+      <div style="font-size:18px;font-weight:400;letter-spacing:1px;color:#0a0a0a;margin-bottom:1.5rem;">` + (message || 'You have an account, but need to subscribe to continue.') + `</div>
+      <div id="subscribeGateBody">
+        <div style="font-family:var(--sans);font-size:14px;color:#6a6a6a;">Loading payment form…</div>
+      </div>
     </div>`;
 
   document.body.appendChild(overlay);
-}
 
-async function startFamilyCheckoutFromGate() {
-  var btn = document.getElementById('subscribeNowBtn');
-  if (btn) { btn.disabled = true; btn.textContent = 'Redirecting…'; }
-  try {
-    var token = (window.Clerk && window.Clerk.session) ? await window.Clerk.session.getToken() : null;
-    var res = await fetch('https://api.abettercollegeconsultant.com/create-checkout', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
-      body:    JSON.stringify({ plan_key: 'family_monthly', account_type: 'family' }),
-    });
-    var data = await res.json();
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      console.error('[VECTOR Lifescape] create-checkout did not return a url:', data);
-      if (btn) { btn.disabled = false; btn.textContent = 'Subscribe to Continue'; }
-    }
-  } catch (err) {
-    console.error('[VECTOR Lifescape] startFamilyCheckoutFromGate error:', err);
-    if (btn) { btn.disabled = false; btn.textContent = 'Subscribe to Continue'; }
-  }
+  loadFamilySubscriptionPaymentInto('subscribeGateBody', function() {
+    var gate = document.getElementById('subscribeRequiredGate');
+    if (gate) gate.parentNode.removeChild(gate);
+    goTo(1);
+  });
 }
 
 // ── GENOME NARRATIVE (Domain 1 — Narrative & Ideas) ──
@@ -6514,18 +6600,28 @@ async function onFamilySignedIn() {
       }
     }
 
-    var checkoutRes  = await fetch('https://api.abettercollegeconsultant.com/create-checkout', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
-      body:    JSON.stringify({ plan_key: 'family_monthly', account_type: 'family' }),
-    });
-    var checkoutData = await checkoutRes.json();
+    // ── STRIPE-BETA-001 Addendum A: embedded flow replaces the hosted-
+    //    checkout redirect below. Beta-code branch above is unchanged — it
+    //    already returns early on a successful grant, so this only ever
+    //    runs for families who need to actually pay. ──
+    var overlay = document.createElement('div');
+    overlay.id  = 'familySubscriptionOverlay';
+    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(253,250,245,0.97);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box;overflow:auto;';
+    overlay.innerHTML = `
+      <div style="max-width:440px;width:100%;font-family:Georgia,serif;text-align:center;">
+        <div style="font-family:var(--sans);font-size:var(--type-meta);letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Your Lifescape</div>
+        <div style="font-size:18px;font-weight:400;letter-spacing:1px;color:#0a0a0a;margin-bottom:1.5rem;">Your report is ready — continue to your full Lifescape.</div>
+        <div id="familyPaymentBody">
+          <div style="font-family:var(--sans);font-size:14px;color:#6a6a6a;">Loading payment form…</div>
+        </div>
+      </div>`;
+    document.body.appendChild(overlay);
 
-    if (checkoutData.url) {
-      window.location.href = checkoutData.url;
-    } else {
-      console.error('[VECTOR Lifescape] create-checkout did not return a url:', checkoutData);
-    }
+    loadFamilySubscriptionPaymentInto('familyPaymentBody', function() {
+      var el = document.getElementById('familySubscriptionOverlay');
+      if (el) el.parentNode.removeChild(el);
+      // Report is already rendered behind this overlay — nothing further needed.
+    });
   } catch (err) {
     console.error('[VECTOR Lifescape] onFamilySignedIn error:', err);
   }
