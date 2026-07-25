@@ -1160,7 +1160,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="ih-rule"></div>
     <div class="ih-tagline">Clarity for college. Confidence for life.</div>
 
-    <button class="ls-btn ih-begin" id="ihBeginBtn" style="max-width:340px;margin:2rem auto 0;" onclick="goTo(0)">Build my Lifescape</button>
+    <button class="ls-btn ih-begin" id="ihBeginBtn" style="max-width:340px;margin:2rem auto 0;" onclick="goTo(0)">Begin a VECTOR Account</button>
 
     <div class="ih-tile-row">
       <a href="/family.html" class="ih-tile">
@@ -1188,12 +1188,22 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
 <!-- ══════════════════════════════════════════════════ -->
 <div class="screen" id="screen-0">
-<div class="container" style="padding-top:7rem">
+<div class="container" style="padding-top:7rem;max-width:480px;">
   <div class="gold-rule"></div>
-  <div class="q">Have a beta invite code?</div>
-  <div class="q-sub">If a friend gave you an early access code, enter it here. Otherwise, skip and continue — Lifescape is free to explore either way.</div>
 
-  <div style="margin-top:2rem;">
+  <!-- ── Pricing block — always visible ── -->
+  <div style="text-align:center;margin-bottom:2rem;">
+    <div class="q" style="margin-bottom:.5rem;">Begin your VECTOR account</div>
+    <div class="q-sub">Full access to Lifescape — your student's complete college and career trajectory, built from a real conversation, not a quiz.</div>
+    <div style="margin:1.5rem 0;font-family:Georgia,serif;">
+      <span style="font-size:36px;color:var(--ink);">$129</span>
+      <span style="font-size:15px;color:var(--muted);">/month</span>
+    </div>
+  </div>
+
+  <!-- ── Step 1: optional code, non-blocking ── -->
+  <div id="gateCodeSection">
+    <div style="font-family:var(--sans);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#8B7355;margin-bottom:.5rem;text-align:center;">Have a code?</div>
     <input
       id="consultant-code-input"
       class="ls-input"
@@ -1201,16 +1211,29 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       maxlength="20"
       autocomplete="off"
       autocapitalize="characters"
-      style="text-transform:uppercase;letter-spacing:4px;font-size:22px;text-align:center;"
+      style="text-transform:uppercase;letter-spacing:4px;font-size:20px;text-align:center;"
       oninput="this.value=this.value.toUpperCase()"
     >
+    <div id="code-feedback" style="min-height:1.5rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;letter-spacing:1px;text-align:center;color:var(--muted);"></div>
+    <button id="code-submit-btn" class="ls-btn" style="margin-top:.5rem;" onclick="submitConsultantCode()">Apply code</button>
   </div>
-  <div id="code-feedback" style="min-height:1.5rem;margin-top:0.75rem;font-family:var(--sans);font-size:15px;letter-spacing:1px;text-align:center;color:var(--muted);"></div>
 
-  <button id="code-submit-btn" class="ls-btn" style="margin-top:1rem" onclick="submitConsultantCode()">Continue with code</button>
-  <div style="text-align:center;margin-top:1rem;">
-    <button onclick="skipConsultantCode()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip — I'm exploring on my own</button>
+  <!-- ── Step 2: account creation — mounted once code step resolves ── -->
+  <div id="gateAccountSection" style="margin-top:2rem;display:none;">
+    <div class="gold-rule"></div>
+    <div style="font-family:var(--sans);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#8B7355;margin:1.5rem 0 1rem;text-align:center;">Create your account</div>
+    <div id="gateClerkSignUpMount"></div>
   </div>
+
+  <!-- ── Step 3: payment — mounted after signup, only if no beta code redeemed ── -->
+  <div id="gatePaymentSection" style="margin-top:2rem;display:none;">
+    <div class="gold-rule"></div>
+    <div id="gatePaymentBody" style="margin-top:1.5rem;">
+      <div style="font-family:var(--sans);font-size:14px;color:#6a6a6a;text-align:center;">Loading payment form…</div>
+    </div>
+  </div>
+
+  <div id="gateStatusMsg" style="min-height:1.5rem;margin-top:1rem;font-family:var(--sans);font-size:14px;text-align:center;color:var(--muted);"></div>
 </div>
 </div>
 
@@ -2714,6 +2737,7 @@ function goTo(n) {
   document.getElementById('screen-'+n).classList.add('active');
   document.getElementById('progress-fill').style.width = (SCREEN_PROGRESS[n]||0)+'%';
   window.scrollTo(0,0);
+  if(n===0) initAccountGate();
   if(n===3) { renderTileGrid(); updateS2Voice(); }
   if(n===2) updateS2Voice();
   if(n===25) updateOrientVoice();
@@ -2740,30 +2764,80 @@ function goToEE(target) {
   }, 350);
 }
 
-// ── CONSULTANT CODE (SCREEN 0) ────────────────────────
+// ── ACCOUNT GATE (SCREEN 0) — replaces the old optional beta-code screen.
+// IMPL-PLAN — Homepage Gate Rebuild, 2026-07-25. Every first-time visitor
+// must create an account and either pay $129/mo or redeem a valid beta
+// code before reaching Screen 1. Returning, already-signed-in visitors
+// skip straight to the existing, unmodified checkAssessmentEligibilityAndProceed()
+// path (handles active-subscription / lapsed-subscription / resubscribe
+// correctly already — untouched by this change).
+//
+// KNOWN LIMITATION, deliberate: a valid consultant_code here still LINKS
+// the family to that consultant (existing, live mechanism), but does NOT
+// bypass payment. The real "family covered under consultant's plan"
+// mechanism (STRIPE-BETA-001 Addendum C, billing_relationship state
+// machine) does not exist server-side yet — /claim-family-billing and the
+// billing_relationship field are confirmed absent from worker.js as of
+// this session. Only a code with code_type === 'beta' bypasses payment,
+// since /redeem-invite-code is the only piece of this that's actually
+// live. Revisit once Addendum C's consultant-claim flow is built.
+async function initAccountGate() {
+  if (window.__clerkReady && window.Clerk && window.Clerk.user) {
+    // Already signed in — reuse the existing, unmodified eligibility path.
+    checkAssessmentEligibilityAndProceed();
+    return;
+  }
+  document.getElementById('gateAccountSection').style.display = '';
+  mountGateClerkSignUp();
+}
+
+function mountGateClerkSignUp() {
+  var mount = document.getElementById('gateClerkSignUpMount');
+  if (!mount) return;
+  if (window.__clerkReady && window.Clerk) {
+    window.Clerk.mountSignUp(mount, {
+      afterSignUpUrl: window.location.href,
+      afterSignInUrl: window.location.href,
+    });
+    if (!window.__accountGateListenerBound) {
+      window.__accountGateListenerBound = true;
+      window.Clerk.addListener(function(payload) {
+        if (payload.user && !window.__accountGateSignedIn && document.getElementById('screen-0').classList.contains('active')) {
+          window.__accountGateSignedIn = true;
+          onAccountGateSignedIn();
+        }
+      });
+    }
+  } else {
+    mount.innerHTML = '<div style="font-family:var(--sans);font-size:15px;color:#c0392b;text-align:center;">Account creation is temporarily unavailable. Please try again shortly.</div>';
+  }
+}
+
+// ── CODE VALIDATION (SCREEN 0) ────────────────────────
+// No longer advances the screen on success/skip — only validates and
+// stores the code, then reveals the account-creation step. The actual
+// code_type branch (beta bypass vs. still-must-pay) is resolved later in
+// onAccountGateSignedIn(), once a real account exists — same ordering
+// principle as the old flow (IMPL-PLAN-004: redemption only happens after
+// a real account exists).
 async function submitConsultantCode() {
   var inp = document.getElementById('consultant-code-input');
   var code = inp ? inp.value.trim().toUpperCase() : '';
   var feedback = document.getElementById('code-feedback');
   var btn = document.getElementById('code-submit-btn');
 
-  // No code entered — treat same as skip
   if (!code) {
     LS_STATE.consultant_code = null;
-    checkAssessmentEligibilityAndProceed();
+    document.getElementById('gateAccountSection').style.display = '';
+    mountGateClerkSignUp();
     return;
   }
 
-  // Validate against Worker
   btn.disabled = true;
   btn.textContent = 'Checking…';
   if (feedback) feedback.textContent = '';
 
   try {
-    // Fixed: WORKER_URL was never defined anywhere in this file — every
-    // call here threw a ReferenceError, silently caught below, meaning
-    // invite-code validation never actually validated anything. Using the
-    // same literal API domain every other fetch() in this file already uses.
     var res = await fetch('https://api.abettercollegeconsultant.com/validate-invite-code', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -2773,11 +2847,7 @@ async function submitConsultantCode() {
 
     if (data.valid) {
       LS_STATE.consultant_code = code;
-      // IMPL-PLAN-004: stored so onFamilySignedIn() knows whether this code
-      // is a beta invite code (code_type === 'beta') vs. a future consultant
-      // referral code — only 'beta' codes trigger /redeem-invite-code.
       LS_STATE.invite_code_type = data.code_type || null;
-      // Store personalization context for agent use if present
       if (data.personalization_context && Object.keys(data.personalization_context).length) {
         LS_STATE.personalization_context = data.personalization_context;
       }
@@ -2786,14 +2856,13 @@ async function submitConsultantCode() {
         feedback.textContent = 'Connected to ' + data.consultant_name + '’s practice.';
       } else if (data.code_type === 'beta' && feedback) {
         feedback.style.color = 'var(--gold)';
-        feedback.textContent = 'Code accepted — beta access will activate after you create your free account.';
+        feedback.textContent = 'Code accepted — beta access will activate after you create your account.';
       }
-      // Brief moment to show confirmation before advancing
-      setTimeout(function() { goTo(1); }, (data.consultant_name || data.code_type === 'beta') ? 900 : 0);
+      btn.textContent = 'Applied ✓';
     } else {
       LS_STATE.consultant_code = null;
       btn.disabled = false;
-      btn.textContent = 'Continue with code';
+      btn.textContent = 'Apply code';
       if (feedback) {
         feedback.style.color = '#c0392b';
         var messages = {
@@ -2805,16 +2874,77 @@ async function submitConsultantCode() {
       }
     }
   } catch (err) {
-    // Network error — fail open so a connectivity issue never blocks a family
     console.warn('[VECTOR] Code validation failed, continuing without code:', err);
     LS_STATE.consultant_code = code;
-    goTo(1);
   }
+
+  document.getElementById('gateAccountSection').style.display = '';
+  mountGateClerkSignUp();
 }
 
 function skipConsultantCode() {
   LS_STATE.consultant_code = null;
-  checkAssessmentEligibilityAndProceed();
+  document.getElementById('gateAccountSection').style.display = '';
+  mountGateClerkSignUp();
+}
+
+/* ── onAccountGateSignedIn ─────────────────────────────────────────────────
+   Fires once, right after a first-time visitor completes Clerk sign-up on
+   the new Screen 0 gate. Mirrors onFamilySignedIn()'s steps 1-3, but runs
+   BEFORE the assessment instead of after the report, and — critically —
+   BLOCKS on payment/beta-redemption rather than treating it as optional.
+   ───────────────────────────────────────────────────────────────────────── */
+async function onAccountGateSignedIn() {
+  var statusMsg = document.getElementById('gateStatusMsg');
+  try {
+    var token = await window.Clerk.session.getToken();
+
+    var meRes  = await fetch('https://api.abettercollegeconsultant.com/family-me', {
+      headers: { 'Authorization': 'Bearer ' + token },
+    });
+    var meData = await meRes.json();
+    if (meData && meData.id) window.__familyAccountId = meData.id;
+
+    if (LS_STATE.session_id) {
+      await fetch('https://api.abettercollegeconsultant.com/link-family-account', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+        body:    JSON.stringify({ session_id: LS_STATE.session_id }),
+      });
+    }
+
+    // Beta code bypass — the only real payment-skip mechanism that exists
+    // server-side today. Consultant codes still link (above, via /family-me
+    // + consultant_code already stored server-side elsewhere) but do not
+    // bypass payment — see the KNOWN LIMITATION note on initAccountGate().
+    if (LS_STATE.consultant_code && LS_STATE.invite_code_type === 'beta') {
+      if (statusMsg) statusMsg.textContent = 'Activating beta access…';
+      var redeemRes = await fetch('https://api.abettercollegeconsultant.com/redeem-invite-code', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+        body:    JSON.stringify({ code: LS_STATE.consultant_code }),
+      });
+      var redeemData = await redeemRes.json();
+      if (redeemData && redeemData.success) {
+        if (statusMsg) statusMsg.textContent = '';
+        goTo(1);
+        return;
+      }
+      // Beta redemption failed (e.g. exhausted between validation and now)
+      // — fail through to payment rather than block the family entirely.
+      if (statusMsg) { statusMsg.style.color = '#c0392b'; statusMsg.textContent = 'That beta code could not be applied — continuing to payment.'; }
+    }
+
+    // No code, non-beta code, or beta redemption failed above — payment required.
+    document.getElementById('gatePaymentSection').style.display = '';
+    loadFamilySubscriptionPaymentInto('gatePaymentBody', function() {
+      goTo(1);
+    });
+
+  } catch (err) {
+    console.error('[VECTOR] Account gate post-signup flow failed:', err);
+    if (statusMsg) { statusMsg.style.color = '#c0392b'; statusMsg.textContent = 'Something went wrong setting up your account. Please refresh and try again.'; }
+  }
 }
 
 /* ── checkAssessmentEligibilityAndProceed ─────────────────────────────────
