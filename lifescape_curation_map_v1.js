@@ -29,7 +29,7 @@ const TILE_POOLS = {
     'cooking','baking','drawing','painting','photography','filmmaking',
     'fashion_design','graphic_design','animation','music_production',
     'playing_instrument','singing','writing_stories','nail_art','hair_makeup',
-    'woodworking','three_d_printing','tiktok_content'
+    'woodworking','three_d_printing'
   ],
   move: [
     'dance','cheerleading','fitness_lifting','yoga','martial_arts',
@@ -38,7 +38,7 @@ const TILE_POOLS = {
   think: [
     'science_experiments','psychology','biology','chemistry','coding_programming',
     'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
-    'true_crime','puzzles_brain_teasers','understanding_why_people','logic_puzzle_games'
+    'true_crime','puzzles_brain_teasers','understanding_why_people'
   ],
   people: [
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
@@ -47,7 +47,9 @@ const TILE_POOLS = {
   systems: [
     'cosmetic_beauty_science','cooking_chemistry','medical_science','how_body_moves',
     'learning_differences','environment_sustainability','engineering_challenges',
-    'architecture','nutrition_food_science','business_startups'
+    'architecture','nutrition_food_science','business_startups',
+    'running_a_minecraft_server','building_ai_workflows','coding_discord_bots',
+    'managing_a_simulation_game','making_study_systems'
   ]
 };
 
@@ -74,11 +76,13 @@ const FREE_TIME_MAP = {
     // Make cluster — full representation
     'cooking','baking','drawing','painting','photography','filmmaking',
     'fashion_design','graphic_design','animation','music_production',
-    'playing_instrument','nail_art','hair_makeup','woodworking','three_d_printing','tiktok_content',
+    'playing_instrument','nail_art','hair_makeup','woodworking','three_d_printing',
     // Systems tiles that connect to making
     'cosmetic_beauty_science','cooking_chemistry','architecture','engineering_challenges',
     // Think tiles that connect to making
-    'roblox_game_design','ai_machine_learning'
+    'roblox_game_design','ai_machine_learning',
+    // Systems tiles (technical build) that connect to making
+    'running_a_minecraft_server','building_ai_workflows','coding_discord_bots'
   ],
 
   moving: [
@@ -97,10 +101,12 @@ const FREE_TIME_MAP = {
     // Think cluster — full representation
     'science_experiments','psychology','biology','chemistry','coding_programming',
     'ai_machine_learning','roblox_game_design','data_statistics','philosophy',
-    'true_crime','puzzles_brain_teasers','understanding_why_people','logic_puzzle_games',
+    'true_crime','puzzles_brain_teasers','understanding_why_people',
     // Systems tiles that connect to thinking
     'cosmetic_beauty_science','medical_science','engineering_challenges',
     'environment_sustainability','cooking_chemistry','architecture',
+    'running_a_minecraft_server','building_ai_workflows','coding_discord_bots',
+    'managing_a_simulation_game','making_study_systems',
     // People tiles that connect to thinking
     'advocacy_activism','teaching_tutoring','mental_health_wellness'
   ],
@@ -110,7 +116,7 @@ const FREE_TIME_MAP = {
     'volunteering','animal_care','mental_health_wellness','working_with_little_kids',
     'teaching_tutoring','advocacy_activism','entrepreneurship','first_aid_emergencies',
     // Make tiles that connect to people
-    'filmmaking','writing_stories','photography','music_production','singing','tiktok_content',
+    'filmmaking','writing_stories','photography','music_production','singing',
     // Think tiles that connect to people
     'psychology','understanding_why_people','true_crime','philosophy',
     // Systems tiles that connect to people
@@ -162,7 +168,7 @@ const WORK_STYLE_BOOST = {
     'drawing','painting','writing_stories','coding_programming','photography',
     'animation','woodworking','three_d_printing','science_experiments',
     'data_statistics','ai_machine_learning','philosophy','music_production',
-    'roblox_game_design','architecture'
+    'roblox_game_design','architecture','making_study_systems'
   ],
 
   with_people: [
@@ -437,6 +443,29 @@ function validateCurationMap() {
   let allValid = true;
   const results = [];
 
+  // TILE-SYSTEMS-002 Part 3, July 24 2026: this function previously never
+  // cross-checked TILE_POOLS/TILE_ADJACENCY against VECTOR_CROSSWALK, so it
+  // could not detect a phantom-tile-ID regression (an ID present here but
+  // never built as a real tile) -- confirmed by testing that this function
+  // reported allValid: true even against the crosswalk that shipped with 9
+  // undefined tile IDs. Added as an explicit, separate check so this class
+  // of bug fails loudly here instead of silently at render time.
+  const crosswalkIds = (typeof VECTOR_CROSSWALK !== 'undefined')
+    ? new Set(VECTOR_CROSSWALK.map(t => t.id))
+    : null;
+  const phantomIds = [];
+  if (crosswalkIds) {
+    Object.values(TILE_POOLS).flat().forEach(id => { if (!crosswalkIds.has(id)) phantomIds.push(id); });
+    Object.entries(TILE_ADJACENCY).forEach(([key, adj]) => {
+      if (!crosswalkIds.has(key)) phantomIds.push(key);
+      adj.forEach(id => { if (!crosswalkIds.has(id)) phantomIds.push(id); });
+    });
+  }
+  if (phantomIds.length > 0) {
+    allValid = false;
+    results.push({ FAIL: true, phantomTileIds: Array.from(new Set(phantomIds)) });
+  }
+
   // Test all single free-time selections
   freeTimeOptions.forEach(ft => {
     selfViewOptions.forEach(sv => {
@@ -447,7 +476,14 @@ function validateCurationMap() {
           const c = getCluster(id);
           if (c) clusters[c] = (clusters[c]||0)+1;
         });
-        const valid = tiles.length >= 28 && tiles.length <= 36 &&
+        // TILE-SYSTEMS-002 Part 3, July 24 2026: tightened from a 28-36
+        // acceptance band to an exact 32 assertion. Confirmed via real
+        // testing (post phantom-tile fix) that curateInitialTiles() -- via
+        // its own result.slice(0, 32) -- already returns exactly 32 for
+        // every combination given a large enough tile pool. 32 is the
+        // official hard count; this now catches a genuine regression
+        // instead of passing anything in a 9-tile-wide band.
+        const valid = tiles.length === 32 &&
           Object.keys(clusters).length >= 4; // at least 4 clusters represented
         if (!valid) {
           allValid = false;
@@ -469,7 +505,7 @@ function validateCurationMap() {
     const tiles = curateInitialTiles(answers);
     const clusters = {};
     tiles.forEach(id => { const c=getCluster(id); if(c) clusters[c]=(clusters[c]||0)+1; });
-    const valid = tiles.length >= 28 && tiles.length <= 36 && Object.keys(clusters).length >= 4;
+    const valid = tiles.length === 32 && Object.keys(clusters).length >= 4;
     results.push({ valid, ft: answers.free_time.join('+'), count: tiles.length, clusters });
     if (!valid) allValid = false;
   });
@@ -486,94 +522,3 @@ if (typeof module !== 'undefined') module.exports = {
   TILE_ADJACENCY,
   ALWAYS_SHOW
 };
-
-// ─────────────────────────────────────────────────────────────
-// STUDENT-AGENT-002 Gate 4, Item 2 — Realm-Weighting Map (Parallel Tagging Layer)
-// Built 2026-07-22. Scope decision (confirmed by Matt): 5 realms, matching
-// the live tile system already shipping in lifescape.html (CLUSTER_CONFIG /
-// CLUSTER_ORDER / TILE_POOLS: make, move, think, people, systems) — NOT the
-// 4-realm "Make/Move/Think/Create" language in the original spec text, which
-// does not match what is actually live and would have silently dropped
-// People/Systems as weighting targets.
-//
-// SCOPE (per OQ-1's recommendation, confirmed by Matt): this starts as a
-// lightweight parallel tagging layer, not a full retrofit of every tile.
-// Seeded from ALWAYS_SHOW (8 tiles) — the closest honest proxy available for
-// "most commonly encountered/selected" tiles, since no real tile-selection
-// telemetry exists in this workspace. This is a disclosed proxy, not
-// measured usage data; if real selection-frequency data becomes available
-// later (e.g. from Airtable session capture), it should replace this seed
-// set rather than being treated as confirmation of it.
-//
-// WEIGHTING METHOD: each tile's weights are grounded in two real sources,
-// not invented from scratch —
-//   (1) its home cluster in TILE_POOLS above (primary weight), and
-//   (2) cross-realm evidence already live in lifescape.html's existing
-//       hasXSignal detection functions (hasCreativeSignal, hasBusinessSignal,
-//       hasTechSignal, hasBodySignal, hasNatureSignal, hasHistorySignal,
-//       mediaSignal, hasMusicSignal) — several tiles have been informally
-//       treated as multi-realm by those functions for a while; this map
-//       formalizes that existing evidence into explicit numeric weights
-//       rather than asserting new cross-realm claims.
-// Weights are directional strength estimates (not requiring uniqueness or
-// exact normalization to 1.0), consistent with how the rest of this file's
-// scoring signals (e.g. TILE_ADJACENCY) already work.
-//
-// REMAINING SCOPE: every other tile in TILE_POOLS (the ~100+ not listed
-// here) is intentionally untagged for this pass — a full retrofit is
-// explicitly out of scope per the confirmed lightweight-first approach.
-const TILE_REALM_WEIGHTS = {
-  cooking: {
-    make: 0.70, systems: 0.15, think: 0.15, people: 0, move: 0,
-    evidence: 'Home cluster: make. Secondary systems/think weight reflects technique and food-science adjacency (cooking_chemistry exists as a related but distinct tile).'
-  },
-  playing_instrument: {
-    make: 0.55, people: 0.20, move: 0.15, think: 0.10, systems: 0,
-    evidence: 'Home cluster: make. hasMusicSignal groups it with music_production/singing (make-reinforcing). People weight reflects performance-for-others; move weight reflects the physical practice/discipline component.'
-  },
-  coding_programming: {
-    think: 0.55, systems: 0.30, make: 0.15, people: 0, move: 0,
-    evidence: 'Home cluster: think. hasTechSignal groups it with ai_machine_learning/data_statistics/robotics (think-reinforcing). Systems weight reflects its appearance as a "Think tile that connects to making" in the FREE_TIME_MAP "making" pool above.'
-  },
-  entrepreneurship: {
-    systems: 0.40, people: 0.35, think: 0.15, make: 0.10, move: 0,
-    evidence: 'Home cluster: people. hasBusinessSignal groups it with business_startups (a systems-cluster tile) and fantasy_sports_roster — the strongest existing cross-realm evidence of any ALWAYS_SHOW tile, hence the higher systems weight than its home cluster alone would suggest.'
-  },
-  animal_care: {
-    people: 0.45, think: 0.30, move: 0.10, systems: 0.10, make: 0.05,
-    evidence: 'Home cluster: people. hasNatureSignal and hasEnviroSignal both group it with biology/science_experiments (think-reinforcing) and outdoor_activities/rock_climbing (a mild move-adjacency).'
-  },
-  fitness_lifting: {
-    move: 0.70, systems: 0.15, people: 0.15, think: 0, make: 0,
-    evidence: 'Home cluster: move. hasBodySignal groups it with how_body_moves/medical_science (systems-adjacent, body-as-system) and mental_health_wellness (people-adjacent).'
-  },
-  writing_stories: {
-    make: 0.45, think: 0.25, people: 0.25, systems: 0.05, move: 0,
-    evidence: 'Home cluster: make. hasHistorySignal groups it with philosophy/understanding_why_people/advocacy_activism (think/people-reinforcing); hasCreativeSignal and mediaSignal both reinforce the make weight.'
-  },
-  photography: {
-    make: 0.70, people: 0.15, think: 0.10, systems: 0.05, move: 0,
-    evidence: 'Home cluster: make. hasCreativeSignal and mediaSignal both reinforce make; no strong existing cross-realm evidence beyond a mild people weight (photography-of-people is a common real-world pattern, not independently evidenced in any existing signal function).'
-  },
-  tiktok_content: {
-    make: 0.45, systems: 0.30, people: 0.20, think: 0.05, move: 0,
-    evidence: 'CORRECTED 2026-07-23: this entry previously used a fabricated tile ID (content_creation) that does not exist in the real crosswalk (crosswalk-db.js) — the real tile is tiktok_content, cluster \'make\' (not \'systems\' as originally guessed), with authored riasec_weights {R:0,I:1,A:3,S:1,E:2,C:1}. Weights here are grounded in that real data: make gets the largest share matching the authored cluster and the strong Artistic (A:3) weight; systems reflects the real Enterprising (E:2) weight (platform/audience-growth mechanics); people reflects the modest real Social (S:1) weight; think reflects the minor Investigative (I:1) weight. This is now derived from real authored data, not an independent guess.'
-  },
-  logic_puzzle_games: {
-    think: 0.70, systems: 0.30, people: 0, make: 0, move: 0,
-    evidence: 'CORRECTED 2026-07-23: this entry previously used a fabricated tile ID (daily_word_puzzles) that does not exist in the real crosswalk (crosswalk-db.js) — the real tile is logic_puzzle_games (Wordle/Connections/Sudoku/logic games), cluster \'think\', with authored riasec_weights {R:0,I:3,A:0,S:0,E:0,C:3}. The original entry included a people weight (0.20) reasoned from friends comparing scores/streaks — that reasoning is NOT supported by the real authored data, which shows zero (0) Social weight. Removed rather than kept on speculation the data itself contradicts. Think reflects the strong real Investigative (I:3) weight; systems reflects the strong real Conventional (C:3) weight (categorization/procedural logic, especially for Connections specifically).'
-  }
-};
-
-function getTileRealmWeights(tileId) {
-  return TILE_REALM_WEIGHTS[tileId] || null;
-}
-
-if (typeof window !== 'undefined') {
-  window.TILE_REALM_WEIGHTS = TILE_REALM_WEIGHTS;
-  window.getTileRealmWeights = getTileRealmWeights;
-}
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports.TILE_REALM_WEIGHTS = TILE_REALM_WEIGHTS;
-  module.exports.getTileRealmWeights = getTileRealmWeights;
-}

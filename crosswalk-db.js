@@ -735,6 +735,121 @@ const VECTOR_CROSSWALK = [
     label_parent:"Shows up when it actually matters",
     cluster:'eq', riasec_weights:{R:0,I:0,A:0,S:2,E:2,C:2}, naics_sectors:[92,81,62], eq_multiplier:true },
 
+  // ── BATCH 1 (TILE-SYSTEMS-002 Part 3, July 24 2026) — 8 phantom tile IDs,
+  //    referenced by lifescape_curation_map_v1.js but never built. Sourced
+  //    from Teen_Activity.docx. See crosswalk_phantom_tiles_batch1.js. ──
+  { id:'fashion_design', label:'I design or make my own clothing',
+    label_parent:'Designs or makes their own clothing',
+    cluster:'make',
+    riasec_weights:{R:1,I:0,A:3,S:0,E:1,C:1},
+    naics_sectors:[71,44] },
+
+  { id:'filmmaking', label:'I write, shoot, or edit short films or videos',
+    label_parent:'Writes, shoots, or edits short films or videos',
+    cluster:'make',
+    riasec_weights:{R:0,I:1,A:3,S:0,E:1,C:0},
+    naics_sectors:[71,51] },
+
+  { id:'woodworking', label:'I build things out of wood',
+    label_parent:'Builds things out of wood',
+    cluster:'make',
+    riasec_weights:{R:3,I:0,A:1,S:0,E:0,C:2},
+    naics_sectors:[23,31] },
+
+  { id:'horseback_riding', label:'I ride horses',
+    label_parent:'Rides horses',
+    cluster:'move',
+    sport_type:'individual',
+    riasec_weights:{R:3,I:1,A:0,S:2,E:0,C:0},
+    naics_sectors:[11,54] },
+
+  { id:'roblox_game_design', label:'I design Roblox games, maps, or obstacle courses',
+    label_parent:'Designs Roblox games, maps, or obstacle courses',
+    cluster:'think',
+    riasec_weights:{R:2,I:3,A:2,S:0,E:1,C:0},
+    naics_sectors:[51] },
+
+  { id:'puzzles_brain_teasers', label:'I do puzzles, brain teasers, or logic games for fun',
+    label_parent:'Does puzzles, brain teasers, or logic games for fun',
+    cluster:'think',
+    riasec_weights:{R:0,I:3,A:0,S:0,E:0,C:2},
+    naics_sectors:[54] },
+
+  { id:'journalism', label:'I follow the news and like understanding why things happen',
+    label_parent:'Follows the news and likes understanding why things happen',
+    cluster:'think',
+    riasec_weights:{R:0,I:3,A:0,S:2,E:1,C:0},
+    naics_sectors:[51,54] },
+
+  { id:'law_justice', label:'I follow legal cases, court shows, or debates about justice and law',
+    label_parent:'Follows legal cases, court shows, or debates about justice and law',
+    cluster:'think',
+    riasec_weights:{R:0,I:2,A:0,S:2,E:2,C:1},
+    naics_sectors:[92,54] },
+
+  { id:'economics', label:'I like understanding how money, markets, or economies work',
+    label_parent:'Likes understanding how money, markets, or economies work',
+    cluster:'think',
+    riasec_weights:{R:0,I:3,A:0,S:0,E:2,C:1},
+    naics_sectors:[52,54] },
+
+  // ── BATCH 2 (TILE-SYSTEMS-002 Part 2.5, July 24 2026) — 3 Planning
+  //    Economy tiles proposed in vector_philosophy_layer.md, never built.
+  //    naics_sectors are provisional (see crosswalk_planning_economy_batch2.js) —
+  //    NAICS 96/101 collision tracked separately, not resolved here. ──
+  { id:'planning_trips_adventures', label:"I'm the one who plans where we go and how we get there",
+    label_parent:"Is the one who plans where the group goes and how they get there",
+    cluster:'people',
+    riasec_weights:{R:0,I:0,A:0,S:1,E:1,C:3},
+    naics_sectors:[42,48,97] },
+
+  { id:'organizing_people', label:'I naturally take charge of making sure things run smoothly',
+    label_parent:'Naturally takes charge of making sure things run smoothly',
+    cluster:'people',
+    riasec_weights:{R:0,I:0,A:0,S:2,E:3,C:1},
+    naics_sectors:[54,72] },
+
+  { id:'running_the_household', label:"I'm the one who makes sure everything gets done",
+    label_parent:"Is the one who makes sure everything gets done",
+    cluster:'eq',
+    eq_multiplier:true,
+    riasec_weights:{R:0,I:0,A:0,S:2,E:2,C:2},
+    naics_sectors:[54,72,42] },
+
+  // ── BATCH 3 (TILE-SYSTEMS-002 Part 2.2/2.5 follow-on, July 24 2026) —
+  //    5 systems-cluster tiles, chosen to close the identified imbalance
+  //    (systems was smallest non-EQ cluster, 13, zero net-new from Batches
+  //    1-2). Sourced from Teen_Activity.docx. See crosswalk_systems_batch3.js. ──
+  { id:'running_a_minecraft_server', label:'I run a Minecraft server for my friends or a community',
+    label_parent:'Runs a Minecraft server for their friends or a community',
+    cluster:'systems',
+    riasec_weights:{R:0,I:2,A:0,S:2,E:2,C:1},
+    naics_sectors:[51,54] },
+
+  { id:'building_ai_workflows', label:'I build workflows or automations using AI tools',
+    label_parent:'Builds workflows or automations using AI tools',
+    cluster:'systems',
+    riasec_weights:{R:0,I:3,A:0,S:0,E:2,C:1},
+    naics_sectors:[51,54] },
+
+  { id:'coding_discord_bots', label:'I code bots or automations for Discord or other apps',
+    label_parent:'Codes bots or automations for Discord or other apps',
+    cluster:'systems',
+    riasec_weights:{R:2,I:3,A:0,S:0,E:0,C:1},
+    naics_sectors:[51] },
+
+  { id:'managing_a_simulation_game', label:'I manage or optimize a simulation game like a city or theme park builder',
+    label_parent:'Manages or optimizes a simulation game like a city or theme park builder',
+    cluster:'systems',
+    riasec_weights:{R:0,I:3,A:0,S:0,E:2,C:2},
+    naics_sectors:[54,23] },
+
+  { id:'making_study_systems', label:'I build my own systems for studying or staying on top of schoolwork',
+    label_parent:'Builds their own systems for studying or staying on top of schoolwork',
+    cluster:'systems',
+    riasec_weights:{R:0,I:2,A:0,S:0,E:0,C:3},
+    naics_sectors:[54,61] },
+
 ];
 
 // ── Helper functions expected by lifescape.html ────────────────────────────

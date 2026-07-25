@@ -11,6 +11,7 @@
 <script src="lifescape_onet_map.js"></script>
 <script src="UNIVERSITY_DB_V5_MASTER.js"></script>
 <script src="lifescape_major_map.js"></script>
+<script src="world_naics_crosswalk.js"></script>
 <script src="lifescape_regional_intelligence.js"></script>
 <script src="crosswalk-db.js"></script>
 <script src="geo_industry_db_LA_pass1.js"></script>
@@ -669,6 +670,30 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .cluster-section{margin-bottom:2rem;}
 .cluster-section-header{font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;color:var(--ink4);margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--rule);}
 .cluster-section .tile-grid{margin-bottom:0;}
+
+/* ── CLUSTER REVEAL MOTION (TILE-SYSTEMS-002 Part 4, July 24 2026) ──
+   One motion signature, one easing curve, held moment ~700ms, triggers
+   once via IntersectionObserver, never re-fires. Restraint over motion:
+   the felt premium comes from the whitespace before each realm and the
+   confidence of a single serif title moment, not animation richness —
+   matches the existing single-gold-frame-per-card principle. */
+.cluster-reveal{padding:2.5rem 0 1.5rem;text-align:center;}
+.cluster-reveal-rule{width:0;height:.5px;background:var(--gold);margin:0 auto 1.1rem;transition:width .5s cubic-bezier(.16,1,.3,1);}
+.cluster-reveal-eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(10px);transition:opacity .5s cubic-bezier(.16,1,.3,1) .1s,transform .5s cubic-bezier(.16,1,.3,1) .1s;margin-bottom:.75rem;}
+.cluster-reveal-title{font-family:var(--serif);font-weight:400;font-size:clamp(22px,4vw,30px);color:var(--ink);opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.16,1,.3,1) .18s,transform .6s cubic-bezier(.16,1,.3,1) .18s;margin:0 0 1.5rem;}
+.cluster-section .tile-grid{opacity:0;transform:translateY(10px);transition:opacity .5s cubic-bezier(.16,1,.3,1) .38s,transform .5s cubic-bezier(.16,1,.3,1) .38s;}
+.cluster-more-link{display:block;background:none;border:none;font-family:var(--sans);font-size:13px;color:var(--ink4);cursor:pointer;padding:.5rem 0 0;margin:0;text-align:left;opacity:0;transition:opacity .5s cubic-bezier(.16,1,.3,1) .38s,color .2s;}
+.cluster-more-link:hover{color:var(--gold);}
+.cluster-section.in-view .cluster-more-link{opacity:1;}
+.cluster-section.in-view .cluster-reveal-rule{width:48px;}
+.cluster-section.in-view .cluster-reveal-eyebrow,
+.cluster-section.in-view .cluster-reveal-title{opacity:1;transform:translateY(0);}
+.cluster-section.in-view .tile-grid{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion:reduce){
+  .cluster-reveal-rule,.cluster-reveal-eyebrow,.cluster-reveal-title,.cluster-section .tile-grid{transition:none;}
+  .cluster-reveal-rule{width:48px;}
+  .cluster-reveal-eyebrow,.cluster-reveal-title,.cluster-section .tile-grid{opacity:1;transform:none;}
+}
 
 /* ── ZIP INPUT ─────────────────────────────────────── */
 .zip-reveal{background:var(--gold-pale);border:0.5px solid var(--gl);padding:1rem 1.25rem;margin-top:1rem;min-height:48px;}
@@ -3575,6 +3600,66 @@ const CLUSTER_CONFIG = {
 };
 const CLUSTER_ORDER = ['make','move','think','people','systems'];
 
+// ── Cluster reveal copy (TILE-SYSTEMS-002 Part 4.4, July 24 2026) ──
+// Question-form eyebrow/title per cluster, addressing the student directly
+// rather than naming a UI category. Make/Think/Move confirmed; People and
+// Systems not yet finalized — fall back to CLUSTER_CONFIG's existing label
+// rather than guessing at a question form that hasn't been decided.
+const CLUSTER_REVEAL_COPY = {
+  make:    { eyebrow: 'Make',    title: 'What do you enjoy making with your hands?' },
+  move:    { eyebrow: 'Move',    title: 'How do you stay active?' },
+  think:   { eyebrow: 'Think',   title: 'What keeps your brain active?' },
+  people:  { eyebrow: 'People',  title: 'How are you with people?' },
+  systems: { eyebrow: 'Systems', title: 'What interests you?' },
+  // all 5 clusters confirmed July 24 2026 — no fallback path needed at
+  // runtime anymore, but renderClusterHeader() keeps the CLUSTER_CONFIG
+  // fallback as defensive code in case a 6th cluster is ever added
+  // without reveal copy ready yet.
+};
+
+function renderClusterHeader(clusterKey) {
+  const copy = CLUSTER_REVEAL_COPY[clusterKey];
+  const cfg = CLUSTER_CONFIG[clusterKey];
+  const header = document.createElement('div');
+  header.className = 'cluster-reveal';
+  const rule = document.createElement('div');
+  rule.className = 'cluster-reveal-rule';
+  const eyebrow = document.createElement('div');
+  eyebrow.className = 'cluster-reveal-eyebrow';
+  eyebrow.textContent = copy ? copy.eyebrow : cfg.label;
+  const title = document.createElement('div');
+  title.className = 'cluster-reveal-title';
+  title.textContent = copy ? copy.title : cfg.label;
+  header.appendChild(rule);
+  header.appendChild(eyebrow);
+  header.appendChild(title);
+  return header;
+}
+
+// Fires each cluster-section's entrance once as it scrolls into view.
+// Single IntersectionObserver instance, re-created per renderTileGrid()
+// call so stale sections from a prior render never linger as observed
+// targets. Never re-triggers a section once shown (unobserve on first hit).
+let _clusterRevealObserver = null;
+function observeClusterReveal(sections) {
+  if (_clusterRevealObserver) _clusterRevealObserver.disconnect();
+  if (typeof IntersectionObserver === 'undefined') {
+    // No IntersectionObserver support — show everything immediately
+    // rather than leaving sections permanently hidden.
+    sections.forEach(s => s.classList.add('in-view'));
+    return;
+  }
+  _clusterRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        _clusterRevealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(s => _clusterRevealObserver.observe(s));
+}
+
 function renderTileGrid() {
   if(typeof VECTOR_CROSSWALK === 'undefined' || typeof curateInitialTiles === 'undefined') {
     document.getElementById('activity-tile-grid').innerHTML =
@@ -3600,6 +3685,7 @@ function renderTileGrid() {
   _shownTileIds = [...curatedIds];
 
   // ── Render curated activity tiles grouped by cluster ──
+  const _renderedSections = [];
   CLUSTER_ORDER.forEach(clusterKey => {
     const clusterTiles = curatedIds
       .map(id => VECTOR_CROSSWALK.find(t => t.id === id))
@@ -3607,27 +3693,48 @@ function renderTileGrid() {
 
     if(clusterTiles.length === 0) return; // skip empty clusters
 
-    const cfg = CLUSTER_CONFIG[clusterKey];
-
     // Create cluster section
     const section = document.createElement('div');
     section.className = 'cluster-section';
     section.id = 'cluster-' + clusterKey;
 
-    // Header
-    const header = document.createElement('div');
-    header.className = 'cluster-section-header';
-    header.textContent = cfg.label;
-    section.appendChild(header);
+    // Header — gold hairline + eyebrow + question-form title (Part 4.4)
+    section.appendChild(renderClusterHeader(clusterKey));
 
-    // Tile grid within this cluster
+    // Tile grid within this cluster — capped at 8 visible in the initial
+    // held reveal (Part 4, Step 12). Real per-cluster group sizes were
+    // measured up to 17 tiles for some answer combinations; at that scale
+    // the single fade-up-as-one-group moment stops reading as a considered
+    // pause and starts reading as a list dump. No signal is lost — every
+    // scored tile is still present and tappable, just staggered visually
+    // rather than forced into one 700ms moment.
     const grid = document.createElement('div');
     grid.className = 'tile-grid';
-    clusterTiles.forEach(tile => grid.appendChild(makeTileEl(tile)));
+    const VISIBLE_CAP = 8;
+    clusterTiles.slice(0, VISIBLE_CAP).forEach(tile => grid.appendChild(makeTileEl(tile)));
     section.appendChild(grid);
 
+    if (clusterTiles.length > VISIBLE_CAP) {
+      const remaining = clusterTiles.slice(VISIBLE_CAP);
+      const moreLink = document.createElement('button');
+      moreLink.type = 'button';
+      moreLink.className = 'cluster-more-link';
+      moreLink.textContent = '+' + remaining.length + ' more';
+      moreLink.onclick = function() {
+        remaining.forEach(tile => grid.appendChild(makeTileEl(tile)));
+        moreLink.remove();
+      };
+      section.appendChild(moreLink);
+    }
+
     actGrid.appendChild(section);
+    _renderedSections.push(section);
   });
+
+  // Cluster-level scroll reveal (Part 4.2) — one motion signature per
+  // section, triggers once, never re-fires. Must run after all sections
+  // are in the DOM so IntersectionObserver has real elements to watch.
+  observeClusterReveal(_renderedSections);
 
   // Show "show me everything" link
   document.getElementById('show-all-link').style.display = 'block';
