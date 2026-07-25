@@ -476,35 +476,35 @@ const GEO_ZIP_TO_MEGAREGION = {
     "pass": "Dallas-Fort Worth (pass 6)"
   },
   "80202": {
-    "megaregion": "Rocky Mountains",
+    "megaregion": "Front Range",
     "pass": "Rocky Mountains (pass 7)"
   },
   "80301": {
-    "megaregion": "Rocky Mountains",
+    "megaregion": "Front Range",
     "pass": "Rocky Mountains (pass 7)"
   },
   "80401": {
-    "megaregion": "Rocky Mountains",
+    "megaregion": "Front Range",
     "pass": "Rocky Mountains (pass 7)"
   },
   "80903": {
-    "megaregion": "Rocky Mountains",
+    "megaregion": "Front Range",
     "pass": "Rocky Mountains (pass 7)"
   },
   "84043": {
-    "megaregion": "Rocky Mountains",
+    "megaregion": "Front Range",
     "pass": "Rocky Mountains (pass 7)"
   },
   "84101": {
-    "megaregion": "Rocky Mountains",
+    "megaregion": "Front Range",
     "pass": "Rocky Mountains (pass 7)"
   },
   "84604": {
-    "megaregion": "Rocky Mountains",
+    "megaregion": "Front Range",
     "pass": "Rocky Mountains (pass 7)"
   },
   "89109": {
-    "megaregion": "Southwest",
+    "megaregion": "Southern California",
     "pass": "Rocky Mountains (pass 7) - Las Vegas special-cased"
   },
   "90024": {
@@ -522,6 +522,10 @@ const GEO_ZIP_TO_MEGAREGION = {
   "90210": {
     "megaregion": "Southern California",
     "pass": "LA Basin (pass 1)"
+  },
+  "90067": {
+    "megaregion": "Southern California",
+    "pass": "LA Basin (pass 1) — NEW 2026-07-25, NAICS-93 geo gap fix, Century City / Korn Ferry"
   },
   "90266": {
     "megaregion": "Southern California",
@@ -744,23 +748,23 @@ const GEO_ZIP_TO_MEGAREGION = {
     "pass": "Bay Area (pass 2) - COMPLETE"
   },
   "98004": {
-    "megaregion": "Pacific Northwest",
+    "megaregion": "Cascadia",
     "pass": "Pacific Northwest (pass 8)"
   },
   "98052": {
-    "megaregion": "Pacific Northwest",
+    "megaregion": "Cascadia",
     "pass": "Pacific Northwest (pass 8)"
   },
   "98101": {
-    "megaregion": "Pacific Northwest",
+    "megaregion": "Cascadia",
     "pass": "Pacific Northwest (pass 8)"
   },
   "98109": {
-    "megaregion": "Pacific Northwest",
+    "megaregion": "Cascadia",
     "pass": "Pacific Northwest (pass 8)"
   },
   "98121": {
-    "megaregion": "Pacific Northwest",
+    "megaregion": "Cascadia",
     "pass": "Pacific Northwest (pass 8)"
   },
   "06830": {
@@ -850,6 +854,7 @@ const GEO_ZIP_TO_MEGAREGION = {
   "40213": { "megaregion": "Great Lakes", "subgroup": "Louisville (RPA area of influence, extended from Lexington's classification — not independently re-verified for Louisville specifically)", "pass": "Southeast biomanufacturing pass, 2026-07-18 (Chunk C+) — airport-adjacent ZIP, UPS Worldport's approximate location (911 Grade Ln) -- exact ZIP not independently confirmed, flagged honestly", "county": "Jefferson" },
   "41011": { "megaregion": "Great Lakes", "subgroup": "Northern Kentucky/Covington (Cincinnati metro-adjacent — extended classification, not independently re-verified)", "pass": "Southeast biomanufacturing pass, 2026-07-18 (Chunk C, user-directed) — Covington, Kenton County, home to CVG Airport: Amazon Air's primary U.S. hub ($1.5B) and DHL's Global Super Hub for the Americas", "county": "Kenton" },
   "33132": { "megaregion": "Florida", "subgroup": "Miami", "pass": "Florida mega region pass, 2026-07-18 (Chunk FL-A) — downtown Miami/PortMiami, Royal Caribbean Group HQ", "county": "Miami-Dade" },
+  "33131": { "megaregion": "Florida", "subgroup": "Miami", "pass": "Florida mega region pass, 2026-07-22 (real estate content addition) — Brickell, The Related Group HQ", "county": "Miami-Dade" },
   "33178": { "megaregion": "Florida", "subgroup": "Miami", "pass": "Florida mega region pass, 2026-07-18 (Chunk FL-A) — Carnival Corporation world HQ (world's largest cruise company)", "county": "Miami-Dade" },
   "33126": { "megaregion": "Florida", "subgroup": "Miami", "pass": "Florida mega region pass, 2026-07-18 (Chunk FL-A) — Norwegian Cruise Line Holdings HQ", "county": "Miami-Dade" },
   "33139": { "megaregion": "Florida", "subgroup": "Miami", "pass": "Florida mega region pass, 2026-07-18 (Chunk FL-A) — Miami Beach Convention Center, host of Cosmoprof North America Miami", "county": "Miami-Dade" },
@@ -859,6 +864,7 @@ const GEO_ZIP_TO_MEGAREGION = {
   "32920": { "megaregion": "Florida", "subgroup": "Space Coast", "pass": "Florida mega region pass, 2026-07-18 (Chunk FL-B) — Cape Canaveral, SpaceX launch/office facility", "county": "Brevard" },
   "32899": { "megaregion": "Florida", "subgroup": "Space Coast", "pass": "Florida mega region pass, 2026-07-18 (Chunk FL-B) — Kennedy Space Center (NASA's own confirmed address)", "county": "Brevard" },
   "33612": { "megaregion": "Florida", "subgroup": "Tampa Bay", "pass": "Florida mega region pass, 2026-07-18 (Chunk FL-C) — Moffitt Cancer Center Magnolia Campus, Tampa", "county": "Hillsborough" },
+  "33602": { "megaregion": "Florida", "subgroup": "Tampa Bay", "pass": "Florida mega region pass, 2026-07-22 (real estate content addition) — Downtown Tampa/Channel District, Strategic Property Partners HQ (Water Street Tampa)", "county": "Hillsborough" },
   "33773": { "megaregion": "Florida", "subgroup": "Tampa Bay", "pass": "Florida mega region pass, 2026-07-18 (Chunk FL-C) — Largo (Pinellas County), Formulated Solutions global HQ -- corrected from earlier session work that described this generally as \"Tampa\"; the precise city is Largo, part of the Tampa Bay metro but a different city than Tampa proper", "county": "Pinellas" },
   "32202": { "megaregion": "Florida", "subgroup": "Jacksonville", "pass": "Florida mega region pass, 2026-07-18 (Chunk FL-D) — downtown Jacksonville, FIS global headquarters (Fortune 500-scale fintech, $10B+ revenue)", "county": "Duval" },
   "32206": { "megaregion": "Florida", "subgroup": "Jacksonville", "pass": "Florida mega region pass, 2026-07-18 (Chunk FL-D) — JAXPORT (Jacksonville Port Authority) corporate headquarters", "county": "Duval" },
@@ -870,16 +876,51 @@ const GEO_ZIP_TO_MEGAREGION = {
   "72712": { "megaregion": "Piedmont Atlantic", "subgroup": "Northwest Arkansas (extended classification, not independently RPA-confirmed the same way Piedmont Atlantic core members are)", "pass": "Southeast completion pass, 2026-07-18 -- Bentonville, Walmart global HQ (world's largest private employer, largest company by revenue)", "county": "Benton" },
   "72762": { "megaregion": "Piedmont Atlantic", "subgroup": "Northwest Arkansas (extended classification, not independently RPA-confirmed the same way Piedmont Atlantic core members are)", "pass": "Southeast completion pass, 2026-07-18 -- Springdale, Tyson Foods global HQ (~139,000 employees company-wide), verified via SEC EDGAR filings", "county": "Washington" },
   "72745": { "megaregion": "Piedmont Atlantic", "subgroup": "Northwest Arkansas (extended classification, not independently RPA-confirmed the same way Piedmont Atlantic core members are)", "pass": "Southeast completion pass, 2026-07-18 -- Lowell, J.B. Hunt Transport Services HQ, verified via SEC proxy filing", "county": "Benton" },
-  "70805": { "megaregion": "Piedmont Atlantic", "subgroup": "Louisiana (extended classification, not independently RPA-confirmed)", "pass": "Southeast completion pass, 2026-07-18 -- Baton Rouge, ExxonMobil Refinery (6th-largest oil refinery in the US, 17th-largest in the world, 2,100 acres)", "county": "East Baton Rouge" },
-  "70130": { "megaregion": "Piedmont Atlantic", "subgroup": "Louisiana (extended classification, not independently RPA-confirmed)", "pass": "Southeast completion pass, 2026-07-18 -- Port of New Orleans (Port NOLA), diverse cargo and cruise port", "county": "Orleans" },
-  "39567": { "megaregion": "Piedmont Atlantic", "subgroup": "Mississippi (extended classification, not independently RPA-confirmed)", "pass": "Southeast completion pass, 2026-07-18 -- Pascagoula, Ingalls Shipbuilding, the largest private employer in the entire state of Mississippi (confirmed via Wikipedia, 2023)", "county": "Jackson" },
-  "39046": { "megaregion": "Piedmont Atlantic", "subgroup": "Mississippi (extended classification, not independently RPA-confirmed)", "pass": "Southeast completion pass, 2026-07-18 -- Canton, Nissan North America vehicle assembly plant, verified via Nissan's own global corporate site", "county": "Madison" },
+  "70805": { "megaregion": "Gulf Coast", "subgroup": "Louisiana (reclassified 2026-07-25 from Piedmont Atlantic -- Baton Rouge is genuinely Gulf Coast geography, not Piedmont; the original tag was a pragmatic placeholder from the Southeast-completion pass, not a real classification)", "pass": "Southeast completion pass, 2026-07-18 -- Baton Rouge, ExxonMobil Refinery (6th-largest oil refinery in the US, 17th-largest in the world, 2,100 acres)", "county": "East Baton Rouge" },
+  "70130": { "megaregion": "Gulf Coast", "subgroup": "Louisiana (reclassified 2026-07-25 from Piedmont Atlantic -- New Orleans is genuinely Gulf Coast geography, not Piedmont; the original tag was a pragmatic placeholder from the Southeast-completion pass, not a real classification)", "pass": "Southeast completion pass, 2026-07-18 -- Port of New Orleans (Port NOLA), diverse cargo and cruise port", "county": "Orleans" },
+  "39567": { "megaregion": "Gulf Coast", "subgroup": "Mississippi (reclassified 2026-07-25 from Piedmont Atlantic -- Pascagoula is coastal Mississippi, genuinely Gulf Coast geography; the original tag was a pragmatic placeholder from the Southeast-completion pass, not a real classification)", "pass": "Southeast completion pass, 2026-07-18 -- Pascagoula, Ingalls Shipbuilding, the largest private employer in the entire state of Mississippi (confirmed via Wikipedia, 2023)", "county": "Jackson" },
+  "39046": { "megaregion": "Piedmont Atlantic", "subgroup": "Mississippi (STILL UNRESOLVED as of 2026-07-25 -- Canton is inland central Mississippi, not coastal, so unlike Baton Rouge/New Orleans/Pascagoula it does not cleanly fit Gulf Coast either; left as Piedmont Atlantic pending a real decision rather than force-fit into either region)", "pass": "Southeast completion pass, 2026-07-18 -- Canton, Nissan North America vehicle assembly plant, verified via Nissan's own global corporate site", "county": "Madison" },
 
   "40502": { "megaregion": "Great Lakes", "subgroup": "Lexington (RPA area of influence, not core membership)", "pass": "Southeast biomanufacturing pass, 2026-07-17 — per RPA/America 2050, Lexington-Fayette-Frankfort-Richmond KY CSA is explicitly an 'area of influence' of Great Lakes, not a core megaregion member; flagged honestly rather than force-fit into Piedmont Atlantic despite its Southeast geography", "county": "Fayette" },
   "40503": { "megaregion": "Great Lakes", "subgroup": "Lexington (RPA area of influence, not core membership)", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Fayette" },
   "40504": { "megaregion": "Great Lakes", "subgroup": "Lexington (RPA area of influence, not core membership)", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Fayette" },
   "40505": { "megaregion": "Great Lakes", "subgroup": "Lexington (RPA area of influence, not core membership)", "pass": "Southeast biomanufacturing pass, 2026-07-17", "county": "Fayette" },
-  "40511": { "megaregion": "Great Lakes", "subgroup": "Lexington (RPA area of influence, not core membership)", "pass": "Southeast biomanufacturing pass, 2026-07-17 — closest ZIP to UK's Coldstream Research Campus, the Piramal Pharma Solutions site", "county": "Fayette" }
+  "40511": { "megaregion": "Great Lakes", "subgroup": "Lexington (RPA area of influence, not core membership)", "pass": "Southeast biomanufacturing pass, 2026-07-17 — closest ZIP to UK's Coldstream Research Campus, the Piramal Pharma Solutions site", "county": "Fayette" },
+  "85248": { "megaregion": "Arizona Sun Corridor", "subgroup": "Chandler / Ocotillo, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Intel Ocotillo Campus, semiconductor manufacturing", "county": "Maricopa" },
+  "85083": { "megaregion": "Arizona Sun Corridor", "subgroup": "North Phoenix, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- TSMC Arizona Fab 21, advanced semiconductor manufacturing", "county": "Maricopa" },
+  "85034": { "megaregion": "Arizona Sun Corridor", "subgroup": "Phoenix (Sky Harbor), AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Honeywell Aerospace global headquarters", "county": "Maricopa" },
+  "85040": { "megaregion": "Arizona Sun Corridor", "subgroup": "Phoenix (Cotton Center), AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Freeport-McMoRan headquarters (address confidence-noted, see file header)", "county": "Maricopa" },
+  "85756": { "megaregion": "Arizona Sun Corridor", "subgroup": "Tucson, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Raytheon Missiles & Defense (RTX)", "county": "Pima" },
+  "85012": { "megaregion": "Arizona Sun Corridor", "subgroup": "Phoenix (Central Ave), AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Banner Health corporate headquarters", "county": "Maricopa" },
+  "85054": { "megaregion": "Arizona Sun Corridor", "subgroup": "Phoenix (Desert Ridge), AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- American Express Desert Ridge campus", "county": "Maricopa" },
+  "85303": { "megaregion": "Arizona Sun Corridor", "subgroup": "Glendale, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Villa Dolce Gelato manufacturing", "county": "Maricopa" },
+  "85224": { "megaregion": "Arizona Sun Corridor", "subgroup": "Chandler, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- CoValence Laboratories cosmetic manufacturing", "county": "Maricopa" },
+  "85050": { "megaregion": "Arizona Sun Corridor", "subgroup": "Phoenix (Beardsley Rd), AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Cohere Beauty (formerly Arizona Natural Resources)", "county": "Maricopa" },
+  "85281": { "megaregion": "Arizona Sun Corridor", "subgroup": "Tempe, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- JPMorgan Chase Building and Discovery Center", "county": "Maricopa" },
+  "85027": { "megaregion": "Arizona Sun Corridor", "subgroup": "Phoenix (27th Ave corridor), AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- PetSmart corporate headquarters", "county": "Maricopa" },
+  "85284": { "megaregion": "Arizona Sun Corridor", "subgroup": "Tempe (South), AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Arizona Cardinals training facility (relocation pending, see file confidence note)", "county": "Maricopa" },
+  "85004": { "megaregion": "Arizona Sun Corridor", "subgroup": "Downtown Phoenix, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Arizona Diamondbacks / Chase Field", "county": "Maricopa" },
+  "85018": { "megaregion": "Arizona Sun Corridor", "subgroup": "Phoenix (Camelback Rd corridor), AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Shamrock Foods Company", "county": "Maricopa" },
+  "85305": { "megaregion": "Arizona Sun Corridor", "subgroup": "Glendale (Westgate), AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Cactus League Baseball Association", "county": "Maricopa" },
+  "85250": { "megaregion": "Arizona Sun Corridor", "subgroup": "Scottsdale, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- onsemi (ON Semiconductor) global headquarters", "county": "Maricopa" },
+  "85258": { "megaregion": "Arizona Sun Corridor", "subgroup": "Scottsdale, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- DMB Associates real estate development", "county": "Maricopa" },
+  "85739": { "megaregion": "Arizona Sun Corridor", "subgroup": "Tucson, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Miraval Arizona Resort & Spa", "county": "Pima" },
+  "85750": { "megaregion": "Arizona Sun Corridor", "subgroup": "Tucson, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Canyon Ranch Tucson", "county": "Pima" },
+  "86336": { "megaregion": "Arizona Sun Corridor", "subgroup": "Sedona, AZ (extended tourism corridor, NOT core Phoenix-Tucson RPA membership -- geographically well north of the actual corridor, included here for the hospitality narrative only)", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Enchantment Resort and Mii amo Spa", "county": "Yavapai" },
+  "85255": { "megaregion": "Arizona Sun Corridor", "subgroup": "Scottsdale, AZ", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Fairmont Scottsdale Princess", "county": "Maricopa" },
+  "86023": { "megaregion": "Arizona Sun Corridor", "subgroup": "Grand Canyon Village, AZ (extended tourism corridor, NOT core Phoenix-Tucson RPA membership -- geographically far north of the actual corridor, included here for the hospitality narrative only)", "pass": "Arizona Sun Corridor pass, 2026-07-25 -- Grand Canyon National Park Lodges (Xanterra)", "county": "Coconino" },
+  "33301": { "megaregion": "Florida", "subgroup": "Fort Lauderdale", "pass": "Florida gap-fill pass, 2026-07-25 -- AutoNation corporate headquarters", "county": "Broward" },
+  "33316": { "megaregion": "Florida", "subgroup": "Fort Lauderdale", "pass": "Florida gap-fill pass, 2026-07-25 -- Denison Yachting global headquarters", "county": "Broward" },
+  "32399": { "megaregion": "Florida", "subgroup": "Tallahassee", "pass": "Florida gap-fill pass, 2026-07-25 -- Florida State Capitol / state government", "county": "Leon" },
+  "32306": { "megaregion": "Florida", "subgroup": "Tallahassee", "pass": "Florida gap-fill pass, 2026-07-25 -- Florida State University", "county": "Leon" },
+  "33811": { "megaregion": "Florida", "subgroup": "Lakeland", "pass": "Florida food/retail pass, 2026-07-25 -- Publix corporate headquarters", "county": "Polk" },
+  "34243": { "megaregion": "Florida", "subgroup": "Sarasota", "pass": "Florida food/retail pass, 2026-07-25 -- UNFI Sarasota North Distribution Center", "county": "Manatee" },
+  "32033": { "megaregion": "Florida", "subgroup": "St. Augustine (Elkton)", "pass": "Florida food/retail pass, 2026-07-25 -- KeHE Distributors (Tree of Life successor)", "county": "St. Johns" },
+  "33853": { "megaregion": "Florida", "subgroup": "Lake Wales", "pass": "Florida food/retail pass, 2026-07-25 -- Florida's Natural Growers citrus processing", "county": "Polk" },
+  "33928": { "megaregion": "Florida", "subgroup": "Estero", "pass": "Florida hospitality/tourism pass, 2026-07-25 -- Hertz Global Holdings headquarters", "county": "Lee" },
+  "32836": { "megaregion": "Florida", "subgroup": "Orlando", "pass": "Florida hospitality/tourism pass, 2026-07-25 -- Marriott Vacations Worldwide headquarters", "county": "Orange" },
+  "32835": { "megaregion": "Florida", "subgroup": "Orlando", "pass": "Florida hospitality/tourism pass, 2026-07-25 -- Hilton Grand Vacations headquarters", "county": "Orange" },
+  "32821": { "megaregion": "Florida", "subgroup": "Orlando", "pass": "Florida hospitality/tourism pass, 2026-07-25 -- United Parks & Resorts (SeaWorld) headquarters", "county": "Orange" }
 };
 
 if (typeof window !== 'undefined') window.GEO_ZIP_TO_MEGAREGION = GEO_ZIP_TO_MEGAREGION;

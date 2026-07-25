@@ -340,7 +340,7 @@ Connect this student's specific profile to the corridor, name the trajectory typ
         anchor: 'Miami / Boca Raton / Orlando / Tampa',
         industries: ['Commercial Real Estate','Residential Development','REIT Management','Construction','Property Management'],
         employers: ['Lennar','PulteGroup','CBRE','JLL','Related Group'],
-        naics: [52, 23, 53, 54]
+        naics: [52, 23, 54]
       },
       {
         name: 'Healthcare & Life Sciences',
@@ -433,7 +433,169 @@ LEAVE AND RETURN: Michigan or Georgetown finance/law → return to Brickell or P
 LEAVE AND STAY GONE: Wharton → Wall Street, not Brickell. Stanford → Silicon Valley, not Miami. Northwestern → Chicago, not Tampa. NYU → New York finance and media, no Florida equivalent.
 
 Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it. If this student has family in Florida but lives elsewhere, name Florida as a legitimate Leave and Return destination with the specific corridor their interests map to.`
-  }
+  },
+  arizona: {
+  name: 'Arizona Sun Corridor',
+  zipPrefixes: ['850','852','853','857'],
+  corridors: [
+    {
+      name: 'Semiconductor Manufacturing & Design',
+      anchor: 'Chandler / Scottsdale / North Phoenix',
+      industries: ['Semiconductor Manufacturing','Chip Design','Foundry Services','Power Electronics'],
+      employers: ['Intel','TSMC','onsemi','Microchip Technology'],
+      naics: [33]
+    },
+    {
+      name: 'Aerospace, Defense & Mining',
+      anchor: 'Phoenix (Sky Harbor) / Tucson',
+      industries: ['Aerospace Systems','Avionics','Missile Defense Systems','Copper Mining & Natural Resources'],
+      employers: ['Honeywell Aerospace','Raytheon Missiles & Defense (RTX)','Freeport-McMoRan'],
+      naics: [33, 21]
+    },
+    {
+      name: 'Real Estate & Master-Planned Development',
+      anchor: 'Scottsdale',
+      industries: ['Real Estate Development','Master-Planned Communities','Land Development'],
+      employers: ['DMB Associates'],
+      naics: [53]
+    },
+    {
+      name: 'Retail, Grocery & Consumer Products',
+      anchor: 'Phoenix / Chandler / Glendale',
+      industries: ['Grocery Retail','Specialty Retail','Retail Corporate Strategy'],
+      employers: ["PetSmart","Bashas' Family of Stores","Sprouts Farmers Market"],
+      naics: [44]
+    },
+    {
+      name: 'Financial Services & Banking',
+      anchor: 'Tempe / Scottsdale',
+      industries: ['Banking Operations','Corporate Finance','Financial Technology'],
+      employers: ['JPMorgan Chase','American Express'],
+      naics: [52]
+    },
+    {
+      name: 'Wellness Tourism & Luxury Hospitality',
+      anchor: 'Tucson / Scottsdale',
+      industries: ['Destination Wellness Resorts','Luxury Resort Hospitality','Spa & Wellness Program Management'],
+      employers: ['Miraval Arizona Resort & Spa','Canyon Ranch Tucson','Fairmont Scottsdale Princess'],
+      naics: [72]
+    },
+    {
+      name: 'Professional Sports & Spring Training Business',
+      anchor: 'Glendale / Phoenix / Tempe',
+      industries: ['Professional Sports Franchises','Spring Training / Sports Tourism','Stadium & Event Operations'],
+      employers: ['Arizona Cardinals','Arizona Diamondbacks','Cactus League Baseball Association'],
+      naics: [71]
+    },
+    {
+      name: 'Healthcare Systems & Specialty Manufacturing',
+      anchor: 'Phoenix / Chandler / Glendale',
+      industries: ['Hospital System Management','Cosmetic & Personal Care Manufacturing','Specialty Food Manufacturing'],
+      employers: ['Banner Health','CoValence Laboratories','Cohere Beauty','Villa Dolce Gelato'],
+      naics: [62, 32, 31]
+    }
+  ],
+  callc_context: `ARIZONA SUN CORRIDOR REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
+
+REGIONAL CORRIDORS:
+- Semiconductor Manufacturing & Design (Chandler / Scottsdale / North Phoenix): Intel, TSMC, onsemi, Microchip Technology — genuine corporate-headquarters and leading-edge manufacturing depth, not just satellite fabs
+- Aerospace, Defense & Mining (Phoenix / Tucson): Honeywell Aerospace, Raytheon Missiles & Defense, Freeport-McMoRan — real division headquarters and industrial-scale operations
+- Real Estate & Master-Planned Development (Scottsdale): DMB Associates — the developer behind DC Ranch, Verrado, and Eastmark
+- Retail, Grocery & Consumer Products (Phoenix / Chandler / Glendale): PetSmart, Bashas', Sprouts Farmers Market
+- Financial Services & Banking (Tempe / Scottsdale): JPMorgan Chase, American Express
+- Wellness Tourism & Luxury Hospitality (Tucson / Scottsdale): Miraval, Canyon Ranch, Fairmont Scottsdale Princess
+- Professional Sports & Spring Training Business (Glendale / Phoenix / Tempe): Arizona Cardinals, Arizona Diamondbacks, and the Cactus League's real, organized 10-stadium spring training economy
+- Healthcare Systems & Specialty Manufacturing (Phoenix / Chandler / Glendale): Banner Health, plus a real, underrecognized cosmetic and specialty food manufacturing base (CoValence Laboratories, Cohere Beauty, Villa Dolce Gelato)
+
+THREE TRAJECTORIES TO NAME EXPLICITLY:
+STAY CLOSE: Arizona State University's own stated regional role names semiconductors, aerospace, defense, healthcare, fintech, logistics, AI, and advanced manufacturing directly — ASU engineering graduates have a genuinely short commute into Intel's or TSMC's Chandler/North Phoenix campuses. University of Arizona's own stated regional role names aerospace, defense, optics, healthcare, mining, and environmental science — UArizona engineering and optical sciences graduates have an equally short path into Raytheon Missiles & Defense or Freeport-McMoRan, both genuinely headquartered in the same metro area the student grew up in.
+LEAVE AND RETURN: Georgia Tech or Purdue aerospace engineering → return to Honeywell Aerospace or Raytheon Missiles & Defense, both real Arizona division headquarters, not branch offices. MIT or Stanford semiconductor engineering → return to Intel Ocotillo or TSMC's Arizona fab specifically to work on leading-edge process technology the state is actively investing billions to build. Cornell hospitality → return to manage a Scottsdale or Tucson luxury resort, a real, distinct wellness-tourism identity separate from Florida's cruise-and-theme-park hospitality economy.
+LEAVE AND STAY GONE: Wharton finance → Wall Street or Chicago trading, not Tempe banking operations — the scale difference is real, not a matter of preference. Stanford or Berkeley semiconductor engineering → Silicon Valley chip design roles, not Arizona manufacturing-and-fab roles specifically, if the student's actual interest is chip architecture rather than the physical process of building chips. USC or UCLA entertainment/media → Los Angeles, with no real Arizona equivalent in the same way Florida has no real West Coast entertainment-industry equivalent either.
+
+Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it. If this student has family in Arizona but lives elsewhere, name Arizona as a legitimate Leave and Return destination with the specific corridor their interests map to.`
+},
+  texas: {
+  name: 'Texas Triangle (Dallas-Fort Worth)',
+  zipPrefixes: ['750','752','760','761'],
+  corridors: [
+    {
+      name: 'Corporate Headquarters & Telecommunications',
+      anchor: 'Downtown Dallas / Southlake',
+      industries: ['Telecommunications','Corporate Travel Technology','Enterprise Software'],
+      employers: ['AT&T','Sabre Corporation'],
+      naics: [51, 54]
+    },
+    {
+      name: 'Finance & Banking',
+      anchor: 'Uptown/Downtown Dallas / Plano',
+      industries: ['Regional Banking','Investment Management','Corporate Finance'],
+      employers: ['Comerica','JPMorgan Chase','Capital One','Fidelity Investments'],
+      naics: [52]
+    },
+    {
+      name: 'Aviation & Transportation',
+      anchor: 'DFW Airport / Dallas Love Field / Fort Worth (North)',
+      industries: ['Commercial Aviation','Airline Management','Freight Rail & Logistics'],
+      employers: ['American Airlines','Southwest Airlines','BNSF Railway'],
+      naics: [48]
+    },
+    {
+      name: 'Energy & Utilities',
+      anchor: 'Downtown Dallas / Fort Worth / Highland Park',
+      industries: ['Electric Utility & Grid Operations','Oil & Gas','Energy Infrastructure'],
+      employers: ['Oncor Electric Delivery','XTO Energy (ExxonMobil)','Energy Transfer'],
+      naics: [21, 22]
+    },
+    {
+      name: 'Technology & Semiconductor Manufacturing',
+      anchor: 'North Dallas / Irving (Las Colinas) / Plano',
+      industries: ['Semiconductor Design & Manufacturing','Enterprise Cloud Technology','Automotive Corporate Operations'],
+      employers: ['Texas Instruments','Microsoft (Las Colinas)','Toyota North America'],
+      naics: [33, 51]
+    },
+    {
+      name: 'Real Estate, Engineering & Legal Services',
+      anchor: 'Preston Hollow / Downtown Dallas',
+      industries: ['Real Estate Investment','Civil & Infrastructure Engineering','Corporate Law'],
+      employers: ['Crow Holdings','Jacobs Engineering Group','Haynes and Boone LLP'],
+      naics: [53, 54]
+    },
+    {
+      name: 'Retail, Consumer Products & Credit Analytics',
+      anchor: 'Downtown Dallas / Plano / Addison',
+      industries: ['Luxury & Department Store Retail','Direct Sales / Consumer Products','Credit & Data Analytics'],
+      employers: ['Neiman Marcus','JCPenney','Mary Kay','Experian','Rent-A-Center / Upbound Group'],
+      naics: [44, 52]
+    },
+    {
+      name: 'Sports Business & Entertainment',
+      anchor: 'Frisco',
+      industries: ['Professional Sports Franchises','Sports Governing Bodies','Event & Venue Operations'],
+      employers: ['Dallas Cowboys','PGA of America'],
+      naics: [71]
+    }
+  ],
+  callc_context: `TEXAS TRIANGLE (DALLAS-FORT WORTH) REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
+
+SCOPE NOTE: This entry covers the Dallas-Fort Worth metro specifically, not the full Texas Triangle megaregion (which also spans Houston, San Antonio, and Austin) — those metros are not yet built out in this database and should not be assumed covered by this entry.
+
+REGIONAL CORRIDORS:
+- Corporate Headquarters & Telecommunications (Downtown Dallas / Southlake): AT&T, Sabre Corporation — genuine global headquarters, not regional offices
+- Finance & Banking (Uptown/Downtown Dallas / Plano): Comerica, JPMorgan Chase, Capital One, Fidelity Investments
+- Aviation & Transportation (DFW Airport / Love Field / Fort Worth): American Airlines and Southwest Airlines, two genuinely distinct major-airline headquarters in the same metro, plus BNSF Railway's real freight rail headquarters
+- Energy & Utilities (Downtown Dallas / Fort Worth / Highland Park): Oncor Electric Delivery, XTO Energy, Energy Transfer
+- Technology & Semiconductor Manufacturing (North Dallas / Irving / Plano): Texas Instruments' real chip design and manufacturing headquarters, alongside Microsoft's substantial Las Colinas campus and Toyota's North American headquarters
+- Real Estate, Engineering & Legal Services (Preston Hollow / Downtown Dallas): Crow Holdings, Jacobs Engineering Group, Haynes and Boone
+- Retail, Consumer Products & Credit Analytics (Downtown Dallas / Plano / Addison): Neiman Marcus, JCPenney, Mary Kay, Experian
+- Sports Business & Entertainment (Frisco): The Dallas Cowboys' headquarters and the PGA of America's relocated national headquarters, both genuinely anchoring Frisco's sports-business identity
+
+THREE TRAJECTORIES TO NAME EXPLICITLY:
+STAY CLOSE: SMU's Cox School of Business sits directly beside University Park and Highland Park — one of the most direct university-to-corporate pipelines in North Texas, feeding AT&T, Comerica, and the broader Dallas finance and corporate-headquarters corridor without a student ever leaving the metro. TCU in Fort Worth sits close to XTO Energy and American Airlines' real Fort Worth-area headquarters presence, a genuine local pipeline into energy and aviation corporate roles.
+LEAVE AND RETURN: Georgia Tech or Purdue engineering → return to Texas Instruments' real chip design and manufacturing headquarters in North Dallas. Wharton or Kellogg finance → return to Comerica or JPMorgan Chase's major Plano campus. Cornell hotel/real estate → return to Crow Holdings or the broader Dallas commercial real estate corridor.
+LEAVE AND STAY GONE: Stanford or Berkeley semiconductor engineering → Silicon Valley chip design roles, not Dallas manufacturing-and-headquarters roles specifically, if the student's real interest is cutting-edge process research rather than Texas Instruments' more established analog and embedded chip business. NYU or Columbia high-finance/trading → New York, not Dallas regional banking, given the real scale difference between the two finance ecosystems. USC or UCLA entertainment/media → Los Angeles, with no real Dallas equivalent.
+
+Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it. If this student has family in the Dallas-Fort Worth area but lives elsewhere, name it as a legitimate Leave and Return destination with the specific corridor their interests map to.`
+}
 };
 
 // ── resolveRegion ─────────────────────────────────────────────────────────────
@@ -469,33 +631,53 @@ const CORRIDOR_NAICS_MAP = {
     { corridorName: 'Tech & Digital Media',               naics: [51, 54],     riasec: ['I','R','C'] },
     { corridorName: 'CPG, Action Sports & Lifestyle Brands', naics: [44, 71, 81], riasec: ['E','S','A'] },
     { corridorName: 'Fashion, Beauty & Cosmetics',        naics: [31, 44],     riasec: ['A','E','R'] },
-    { corridorName: 'Pharmaceutical & Biotech',           naics: [62, 54, 32], riasec: ['I','R','S'] },
+    { corridorName: 'Pharmaceutical & Biotech',           naics: [62, 54],     riasec: ['I','R','S'] },
     { corridorName: 'Startup & Venture Ecosystem',        naics: [54, 51, 81], riasec: ['E','I','C'] }
   ],
   bayarea: [
     { corridorName: 'Deep Tech, AI & Semiconductor',      naics: [51, 54, 33], riasec: ['I','R','C'] },
     { corridorName: 'Enterprise & Consumer Tech',         naics: [51, 54],     riasec: ['I','E','C'] },
-    { corridorName: 'Biotech & Life Sciences',            naics: [62, 54, 32], riasec: ['I','R','S'] },
+    { corridorName: 'Biotech & Life Sciences',            naics: [62, 54],     riasec: ['I','R','S'] },
     { corridorName: 'Financial Services & Fintech',       naics: [52, 54],     riasec: ['C','E','I'] },
     { corridorName: 'Venture Capital & Startup Ecosystem',naics: [52, 54, 81], riasec: ['E','I','C'] }
   ],
   chicago: [
     { corridorName: 'Finance, Trading & Quant',           naics: [52],         riasec: ['C','I','E'] },
     { corridorName: 'Consulting & Professional Services', naics: [54],         riasec: ['E','I','C'] },
-    { corridorName: 'Healthcare & Life Sciences',         naics: [62, 54, 32], riasec: ['I','S','R'] },
+    { corridorName: 'Healthcare & Life Sciences',         naics: [62, 54],     riasec: ['I','S','R'] },
     { corridorName: 'Manufacturing, Logistics & Supply Chain', naics: [33, 48, 42], riasec: ['R','C','I'] },
     { corridorName: 'Technology & Digital',               naics: [51, 54],     riasec: ['I','R','C'] },
     { corridorName: 'Consumer Goods & Retail',            naics: [44, 31, 72, 54], riasec: ['E','S','C'] }
   ],
   florida: [
     { corridorName: 'Finance, Wealth Management & Private Equity', naics: [52, 54],     riasec: ['E','C','I'] },
-    { corridorName: 'Real Estate & Development',                   naics: [52, 23, 53, 54], riasec: ['E','R','C'] },
+    { corridorName: 'Real Estate & Development',                   naics: [52, 23, 54], riasec: ['E','R','C'] },
     { corridorName: 'Healthcare & Life Sciences',                  naics: [62, 54],     riasec: ['I','S','R'] },
     { corridorName: 'Tourism, Hospitality & Entertainment',        naics: [71, 72, 48], riasec: ['E','S','A'] },
     { corridorName: 'Latin American Business & International Trade',naics: [48, 52, 42],riasec: ['E','S','C'] },
     { corridorName: 'Aerospace, Defense & Technology',             naics: [33, 54, 92], riasec: ['R','I','C'] },
     { corridorName: 'AgriTech, Logistics & Supply Chain',          naics: [48, 42, 11], riasec: ['R','C','E'] }
-  ]
+  ],
+  arizona: [
+  { corridorName: 'Semiconductor Manufacturing & Design',        naics: [33],         riasec: ['I','R','C'] },
+  { corridorName: 'Aerospace, Defense & Mining',                 naics: [33, 21],     riasec: ['R','I','C'] },
+  { corridorName: 'Real Estate & Master-Planned Development',    naics: [53],         riasec: ['E','R','C'] },
+  { corridorName: 'Retail, Grocery & Consumer Products',         naics: [44],         riasec: ['E','S','C'] },
+  { corridorName: 'Financial Services & Banking',                naics: [52],         riasec: ['C','E','I'] },
+  { corridorName: 'Wellness Tourism & Luxury Hospitality',       naics: [72],         riasec: ['S','E','A'] },
+  { corridorName: 'Professional Sports & Spring Training Business', naics: [71],      riasec: ['E','S','R'] },
+  { corridorName: 'Healthcare Systems & Specialty Manufacturing',naics: [62, 32, 31], riasec: ['I','S','R'] }
+],
+  texas: [
+  { corridorName: 'Corporate Headquarters & Telecommunications',      naics: [51, 54], riasec: ['E','C','I'] },
+  { corridorName: 'Finance & Banking',                                naics: [52],     riasec: ['C','E','I'] },
+  { corridorName: 'Aviation & Transportation',                        naics: [48],     riasec: ['R','C','E'] },
+  { corridorName: 'Energy & Utilities',                               naics: [21, 22], riasec: ['R','I','C'] },
+  { corridorName: 'Technology & Semiconductor Manufacturing',         naics: [33, 51], riasec: ['I','R','C'] },
+  { corridorName: 'Real Estate, Engineering & Legal Services',        naics: [53, 54], riasec: ['E','R','C'] },
+  { corridorName: 'Retail, Consumer Products & Credit Analytics',     naics: [44, 52], riasec: ['E','S','C'] },
+  { corridorName: 'Sports Business & Entertainment',                  naics: [71],     riasec: ['E','S','R'] }
+]
 };
 
 // ── resolveStudentCorridor ────────────────────────────────────────────────────

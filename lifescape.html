@@ -22,6 +22,20 @@
 <script src="geo_industry_db_Dallas_pass6.js"></script>
 <script src="geo_industry_db_RockyMountains_pass7.js"></script>
 <script src="geo_industry_db_PacificNW_pass8.js"></script>
+<script src="geo_industry_db_Arizona_pass21.js"></script>
+<script src="geo_industry_db_Miami_pass12.js"></script>
+<script src="geo_industry_db_TampaBay_pass14.js"></script>
+<script src="geo_industry_db_Jacksonville_pass15.js"></script>
+<script src="geo_industry_db_FL_AgEnergy_pass16.js"></script>
+<!-- ANCHOR_EMPLOYERS: consumed as of 2026-07-25 by major_regional_resolver.js's
+     enriched_employers field. When a Possible Vectors result's anchor_employers
+     name matches a company_name here, the full structured profile (capability_roles,
+     growth_initiative_note, competitors, etc.) is attached. Confirmed 32 of 641
+     unique geo employer names match, verified false-positive-free. Report/display
+     rendering that surfaces enriched_employers to families is a separate,
+     not-yet-built step — this wiring makes the data available to the resolver,
+     it does not yet change what's shown in the report UI. -->
+<script src="anchor_employers_db.js"></script>
 <script src="geo_zip_to_megaregion.js"></script>
 <script src="megaRegionDB_futureResilience.js"></script>
 <script src="naics_to_industry_pathways.js"></script>
@@ -8153,7 +8167,12 @@ function renderPossibleVectors(profile) {
     typeof GEO_INDUSTRY_DB_ATLANTA !== 'undefined' ? { data: GEO_INDUSTRY_DB_ATLANTA } : null,
     typeof GEO_INDUSTRY_DB_DALLAS !== 'undefined' ? { data: GEO_INDUSTRY_DB_DALLAS } : null,
     typeof GEO_INDUSTRY_DB_ROCKYMOUNTAINS !== 'undefined' ? { data: GEO_INDUSTRY_DB_ROCKYMOUNTAINS } : null,
-    typeof GEO_INDUSTRY_DB_PACIFICNW !== 'undefined' ? { data: GEO_INDUSTRY_DB_PACIFICNW } : null
+    typeof GEO_INDUSTRY_DB_PACIFICNW !== 'undefined' ? { data: GEO_INDUSTRY_DB_PACIFICNW } : null,
+    typeof GEO_INDUSTRY_DB_ARIZONA !== 'undefined' ? { data: GEO_INDUSTRY_DB_ARIZONA } : null,
+    typeof GEO_INDUSTRY_DB_MIAMI !== 'undefined' ? { data: GEO_INDUSTRY_DB_MIAMI } : null,
+    typeof GEO_INDUSTRY_DB_TAMPABAY !== 'undefined' ? { data: GEO_INDUSTRY_DB_TAMPABAY } : null,
+    typeof GEO_INDUSTRY_DB_JACKSONVILLE !== 'undefined' ? { data: GEO_INDUSTRY_DB_JACKSONVILLE } : null,
+    typeof GEO_INDUSTRY_DB_FL_AGENERGY !== 'undefined' ? { data: GEO_INDUSTRY_DB_FL_AGENERGY } : null
   ].filter(Boolean);
 
   var opts = {
@@ -8161,6 +8180,7 @@ function renderPossibleVectors(profile) {
     geoPasses: geoPasses,
     zipToMegaregion: GEO_ZIP_TO_MEGAREGION,
     megaregionResilience: MEGAREGION_FUTURE_RESILIENCE,
+    anchorEmployers: (typeof ANCHOR_EMPLOYERS !== 'undefined') ? ANCHOR_EMPLOYERS : null,
     v5Schools: (typeof UNIVERSITY_DB_V5 !== 'undefined') ? UNIVERSITY_DB_V5 : null,
     naicsToIndustryPathways: NAICS_TO_INDUSTRY_PATHWAYS,
     clusterKeywordFilters: (typeof MAJOR_CLUSTER_KEYWORD_FILTERS !== 'undefined') ? MAJOR_CLUSTER_KEYWORD_FILTERS : null,
@@ -8187,9 +8207,18 @@ function renderPossibleVectors(profile) {
     'southeast':       [{ megaregion: 'Piedmont Atlantic', subgroup: 'Atlanta' }],
     'midwest':         [{ megaregion: 'Great Lakes', subgroup: null }],
     'california':      [{ megaregion: 'Northern California', subgroup: null }, { megaregion: 'Southern California', subgroup: null }],
-    'southwest':       [{ megaregion: 'Texas Triangle', subgroup: null }, { megaregion: 'Southwest', subgroup: null }],
+    // FIXED 2026-07-25: both entries below previously referenced megaregion
+    // names that don't exist anywhere in GEO_ZIP_TO_MEGAREGION.js's real
+    // data, which meant _megaregionAllowed() could never match and these
+    // two region preferences silently returned zero Possible Vectors
+    // results. 'Southwest' was never a valid official megaregion (Las
+    // Vegas was already corrected to 'Southern California' separately) --
+    // dropped rather than remapped, since Texas Triangle already covers
+    // this region's real content. 'Pacific Northwest' -> 'Cascadia' to
+    // match the real crosswalk naming exactly.
+    'southwest':       [{ megaregion: 'Texas Triangle', subgroup: null }],
     'rocky_mountains': [{ megaregion: 'Rocky Mountains', subgroup: null }],
-    'pacific_nw':      [{ megaregion: 'Pacific Northwest', subgroup: null }]
+    'pacific_nw':      [{ megaregion: 'Cascadia', subgroup: null }]
     // military_academies intentionally omitted — it's an interest flag,
     // not a geographic constraint, so it never restricts megaregion results.
   };

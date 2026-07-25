@@ -1128,6 +1128,13 @@ const GEO_INDUSTRY_DB_EAST = {
         student_connection: "This is Wall Street — the most significant financial address in the world. Goldman Sachs, JPMorgan, Citigroup, and American Express are headquartered within blocks of each other. The global flow of capital, the pricing of risk, and the allocation of investment that shapes the world economy happens here."
       },
       {
+        name: "Management & Organizational Consulting",
+        naics: 93,
+        distance: "Local",
+        anchor_employers: ["McKinsey & Company (New York City)"],
+        student_connection: "McKinsey & Company — the largest and most established management consulting firm in the world — is genuinely headquartered in New York City. Organizational strategy, operating-model redesign, and leadership consulting are core to what McKinsey does, not a side practice: this is the literal center of the profession that studies how large organizations should actually be structured and run. ADDRESS NOTE: placed at city level (New York City / Financial District) only — the exact building was not independently verified before this entry was added and should be confirmed before this goes live, consistent with this file's standard of real, verified addresses."
+      },
+      {
         name: "Law & Legal Services",
         naics: 54,
         distance: "Local",

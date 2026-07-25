@@ -396,6 +396,43 @@ const IBIS_WORLD_REGISTRY = _g.IBIS_WORLD_REGISTRY = {
     hidden_pathway: true,
     hidden_pathway_note: 'The most under-the-radar career acceleration track available to a student today. No 4-year degree required to start — a 6-week community college program (available in 26+ states) leads directly to hire at major pharmaceutical and biotech manufacturers. Real career ladder from technician to plant leadership, and many employers pay for further education once a student has shown workplace commitment — a hidden pathway most families never hear about. Strong tailwind, not a guarantee: backed by federal workforce policy (NIIMBL, NSF ATE) and documented demand growth (US Senate Commission: cell/gene therapy workforce demand doubled in 5 years), but no industry is immune to future shifts.',
   },
+
+  // ── compete ── ADDED 2026-07-25, closing the gap flagged during the
+  // MEGATREND-NAICS-POPULATION-001 File 6 check: this World tile has been
+  // live and selectable since compete_lens_chunk1.md/chunk2.md were built
+  // (June 21 2026) — buildCompeteLensContext() in lifescape.html already
+  // wires 7 full tracks into every Claude call — but the tile had zero
+  // entry here, so resolveWorldId('compete') returned null and the
+  // student got no career_expressions/university_pipeline content.
+  // career_expressions and university_pipeline below are drawn directly
+  // from the approved chunk1/chunk2 spec (front office, sports marketing,
+  // sports analytics, sports psychology/CMPC, sports law tracks; school
+  // adds UMass Amherst McCormack, Ohio University, Springfield College,
+  // Syracuse Falk College, Marquette National Sports Law Institute,
+  // University of Tennessee sport psychology doctoral program).
+  // ibis_codes intentionally left empty: every other entry in this
+  // registry cites a real, specific IBISWorld classification code, and I
+  // do not have a verified source for the correct code(s) for sports
+  // business/sports management. Inventing a plausible-looking code would
+  // be fabrication. Needs a real IBISWorld lookup before this field can
+  // be populated — flagged here rather than guessed.
+  compete: {
+    id: 'compete',
+    label: 'The world of competition',
+    ibis_codes: [], // UNSOURCED — see note above, do not fabricate
+    career_expressions: [
+      { title: 'Sports Front Office Executive (GM/Player Personnel)', years: 10, pay: '$150K–$500K+', path: 'Scouting/Analytics → Front Office → General Manager' },
+      { title: 'Sports Marketing & Sponsorship Director', years: 6, pay: '$90K–$220K', path: 'Marketing → Sponsorship Activation → Director' },
+      { title: 'Sports Analytics Manager', years: 5, pay: '$85K–$180K', path: 'Data Science → Sports Analytics → Director of Analytics' },
+      { title: 'Mental Performance Consultant (CMPC)', years: 7, pay: '$70K–$150K', path: 'Psychology/Kinesiology → CMPC certification → Athletic dept/team consultant' },
+      { title: 'Sports Attorney', years: 7, pay: '$120K–$300K', path: 'Pre-law → JD → Sports law practice or agency' },
+    ],
+    top_metros: ['New York','Los Angeles','Chicago','Dallas','Atlanta'],
+    growth: 'strong',
+    v2_affinity: ['analytical','human'],
+    v4_affinity: ['self','work'],
+    university_pipeline: ['University of Massachusetts Amherst','Ohio University','Springfield College','Syracuse University','Marquette University','University of Tennessee'],
+  },
 };
 
 // ── WORLD_ALIAS ──
@@ -408,9 +445,18 @@ const IBIS_WORLD_REGISTRY = _g.IBIS_WORLD_REGISTRY = {
 
 const WORLD_ALIAS = _g.WORLD_ALIAS = {
   // Direct IBIS IDs (pass-through)
-  'defense':         'defense',
-  'intelligence':    'defense',
-  'law_enforcement': 'defense',
+  // REMOVED 2026-07-25: 'defense'/'intelligence'/'law_enforcement',
+  // 'environment'/'conservation'/'ecology', 'service'/'ministry'/'nonprofit'
+  // (9 entries) — confirmed dead code. None of these three world IDs exist
+  // among the 20 official, selectable World tiles in world_naics_crosswalk.js,
+  // and a full trace of every resolveWorldId() call site in lifescape.html
+  // confirmed the function is only ever called with a real worlds_chosen ID
+  // or a raw NAICS sector number — never one of these strings. Leftover from
+  // an earlier World taxonomy iteration, never reachable in the current
+  // 20-tile system. Matt's call: delete rather than build out unreachable
+  // content. (WORLD_KEYWORDS, a separate table with its own defense/
+  // environment/service entries used for free-text keyword detection, is
+  // still actively consumed elsewhere and was NOT touched by this change.)
   'military':        'military',
   'making':          'making',
   'biomanufacturing':'biomanufacturing',
@@ -420,12 +466,6 @@ const WORLD_ALIAS = _g.WORLD_ALIAS = {
   'logistics':       'logistics',
   'military_service':'military',
   'armed_forces':    'military',
-  'environment':     'environment',
-  'conservation':    'environment',
-  'ecology':         'environment',
-  'service':         'service',
-  'ministry':        'service',
-  'nonprofit':       'service',
   'healing':         'healing',
   'medicine':        'medicine',
   'therapy':         'therapy',
@@ -438,6 +478,7 @@ const WORLD_ALIAS = _g.WORLD_ALIAS = {
   'justice':    'justice',
   'ideas':      'ideas',
   'power':      'power',
+  'compete':    'compete',
 
   // Common-language aliases used in assessment / v8_gravity
   'healthcare':  'healing',

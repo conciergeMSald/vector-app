@@ -3081,6 +3081,10 @@ const UNIVERSITY_DB_V5 = {
         "strength": 88,
         "notes": "Kelley produces outstanding graduates for commercial real estate, development, REITs, investment sales, and corporate real estate leadership."
       },
+      "organizationalOperations": {
+        "strength": 68,
+        "notes": "Kelley School's Operations Management concentration is one of the most specifically branded tracks in the school's portfolio -- a direct, named pipeline into the operations half of this cluster, not a generic business degree. (Added 2026-07-25, MEGATREND-NAICS-POPULATION-001 follow-on.)"
+      },
       "luxuryBrands": {
         "strength": 48,
         "notes": "Marketing graduates occasionally enter luxury retail, fashion, and premium consumer brands, though this is not a dominant recruiting sector."
@@ -7629,6 +7633,10 @@ const UNIVERSITY_DB_V5 = {
       "realEstate": {
         "strength": 66,
         "notes": "Ross School of Business houses a genuine real estate concentration, reinforced by Detroit's significant urban redevelopment activity — a real, distinctive pathway beyond Ross's dominant consulting/finance placement. (Added 2026-07-22.)"
+      },
+      "organizationalOperations": {
+        "strength": 71,
+        "notes": "LSA's Organizational Studies program is a genuine, specifically-named interdisciplinary major (sociology, psychology, and economics of organizations) -- a distinctive, real pipeline into this cluster beyond Ross's general business strength, and one of the few undergraduate programs in the country with this exact framing. (Added 2026-07-25, MEGATREND-NAICS-POPULATION-001 follow-on.)"
       },
       "investmentBanking": {
         "strength": 90,
@@ -15055,6 +15063,10 @@ const UNIVERSITY_DB_V5 = {
         "strength": 32,
         "notes": "A minor, secondary pathway — Elon has no dedicated real estate program, and Love School of Business placement runs primarily through general business and marketing routes rather than real estate specifically. (Added 2026-07-22.)"
       },
+      "organizationalOperations": {
+        "strength": 57,
+        "notes": "Elon's School of Communications is genuinely well-regarded, and the university's broader institutional identity emphasizes experiential learning and leadership development across its curriculum -- Communication plus Business integration, with strong placement in people-facing corporate roles. (Added 2026-07-25, MEGATREND-NAICS-POPULATION-001 follow-on.)"
+      },
       "pharmaceuticalManufacturing": {
         "strength": 34,
         "notes": "Weak and partly off-target: Elon's career services staff participate generally in the North Carolina Biotechnology Center's Career Development Network, and Pfizer's own recruiting materials list Elon among schools it recruits from — but specifically for ABSN (nursing), DPT (physical therapy), and PA (physician assistant) programs, which are clinical healthcare roles, not pharmaceutical manufacturing. No manufacturing-specific connection found. Reinforced only modestly by small real Biochemistry (12 students) and Chemistry (2) programs."
@@ -19912,6 +19924,10 @@ const UNIVERSITY_DB_V5 = {
         "strength": 58,
         "notes": "Fisher College of Business offers a real estate concentration within its finance area, reinforced by Columbus's growing commercial development market — a real but secondary pathway relative to Fisher's dominant insurance/risk management specialty. (Added 2026-07-22.)"
       },
+      "organizationalOperations": {
+        "strength": 47,
+        "notes": "Fisher College offers general management coursework relevant to this cluster, but has no specifically named organizational-operations track the way its insurance/risk management or real estate concentrations are branded -- a real but secondary, broad-based fit. (Added 2026-07-25, MEGATREND-NAICS-POPULATION-001 follow-on.)"
+      },
       "insurance": {
         "strength": 88,
         "notes": "Fisher College of Business has a genuine, distinctive insurance and risk management specialty, reinforced by Ohio's dense insurance industry base — Nationwide, Progressive, and Grange are all Ohio-based. (Added 2026-07-12: previously dropped entirely for lack of a standard key — this was Fisher's most distinctive signal, not a generic finance placement.)"
@@ -20911,6 +20927,10 @@ const UNIVERSITY_DB_V5 = {
       "realEstate": {
         "strength": 42,
         "notes": "A modest, secondary pathway — Kogod placement runs primarily through public policy/international affairs and general business routes; DC's commercial real estate market is real but not central to American's institutional identity. (Added 2026-07-22.)"
+      },
+      "organizationalOperations": {
+        "strength": 64,
+        "notes": "American's School of Communication is a genuinely well-regarded school, separate from Kogod Business, and DC's density of trade associations, nonprofits, and government-adjacent organizations creates real demand for exactly the connective-tissue coordination function this cluster describes -- a distinctive angle even though DC isn't among this cluster's own top metros elsewhere in this database (New York, Chicago, Atlanta, San Francisco). (Added 2026-07-25, MEGATREND-NAICS-POPULATION-001 follow-on.)"
       },
       "entertainmentMedia": {
         "strength": 76,

@@ -5,11 +5,62 @@
  * resolving the bridge deferred 2026-07-10. See that file's header for
  * confidence levels and disclosed gaps.
  *
+ * ANCHOR_EMPLOYERS enrichment added 2026-07-25 — scoped integration for
+ * anchor_employers_db.js, which previously loaded but had zero consumption
+ * code anywhere in the app. When a geo cluster's anchor_employers name
+ * matches a company_name in ANCHOR_EMPLOYERS, the full structured profile
+ * (org_functions, capability_roles, growth_initiative_note, competitors,
+ * etc.) is attached to that result group as enriched_employers. Purely
+ * additive — anchor_employers (plain name strings) is unchanged, this is
+ * a new field alongside it. Confirmed 18 of 83 ANCHOR_EMPLOYERS profiles
+ * have a real name-match in the currently-loaded geo files at build time;
+ * the other 65 simply produce no enrichment (invisible, not broken — same
+ * discipline as every other GAP/no-match case in this resolver).
+ *
  * Pure function, no data mutation — mirrors the Family Synthesis Engine
  * pattern. Does NOT modify MAJOR_MAP, GEO_INDUSTRY_DB_*, or any source file.
  */
 
 'use strict';
+
+// Strips parenthetical suffixes ("(headquarters)", "(HQ)", "(Fab 21)", etc.)
+// and normalizes for matching. Geo-file employer strings carry real
+// descriptive detail (addresses, "(global headquarters)") that
+// ANCHOR_EMPLOYERS' plain company_name doesn't — this strips that noise
+// without altering either source file.
+function normalizeEmployerName(name) {
+  return String(name || '')
+    .split('(')[0]
+    .replace(/[,.]/g, '')
+    .trim()
+    .toLowerCase();
+}
+
+// Matches only on a normalized core of at least 4 characters, in either
+// direction, to avoid spurious short-string matches (e.g. a 3-letter
+// abbreviation colliding with an unrelated company).
+function employerNamesMatch(geoText, anchorCompanyName) {
+  const a = normalizeEmployerName(geoText);
+  const b = normalizeEmployerName(anchorCompanyName);
+  if (a.length < 4 || b.length < 4) return false;
+  return a.includes(b) || b.includes(a);
+}
+
+function findAnchorEmployerMatches(geoEmployerNames, anchorEmployers) {
+  if (!anchorEmployers || !anchorEmployers.length) return [];
+  const matches = [];
+  const matchedIds = new Set();
+  geoEmployerNames.forEach(geoName => {
+    anchorEmployers.forEach(company => {
+      if (matchedIds.has(company.company_name)) return;
+      if (employerNamesMatch(geoName, company.company_name)) {
+        matches.push(company);
+        matchedIds.add(company.company_name);
+      }
+    });
+  });
+  return matches;
+}
 
 function resolveMajorRegionalFit(majorLabel, options) {
   const {
@@ -20,6 +71,7 @@ function resolveMajorRegionalFit(majorLabel, options) {
     v5Schools = null,       // UNIVERSITY_DB_V5 object — school scoring runs only if provided
     naicsToIndustryPathways = null,  // NAICS_TO_INDUSTRY_PATHWAYS — required for real aligned_schools
     clusterKeywordFilters = null,    // MAJOR_CLUSTER_KEYWORD_FILTERS — optional, narrows broad NAICS sectors
+    anchorEmployers = null,          // ANCHOR_EMPLOYERS — optional, enriches matching employer names
     schoolCap = 3
   } = options;
 
@@ -110,6 +162,7 @@ function resolveMajorRegionalFit(majorLabel, options) {
       subgroup: g.subgroup,
       zip_count: g.zips.size,
       anchor_employers: Array.from(g.anchor_employers),
+      enriched_employers: findAnchorEmployerMatches(Array.from(g.anchor_employers), anchorEmployers),
       resilience_score: resilience ? resilience.score : null,
       aligned_schools,
       schoolsDataAvailable,

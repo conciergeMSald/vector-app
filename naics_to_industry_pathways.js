@@ -109,6 +109,7 @@ const NAICS_TO_INDUSTRY_PATHWAYS = {
   "22": { keys: ["energy"], confidence: "HIGH", note: "Utilities — routed to the same new energy key as NAICS 21." },
   "54": { keys: ["consulting"], confidence: "HIGH" },
   "62": { keys: ["medicine", "healthcareAdministration", "healthWellness"], confidence: "HIGH" },
+  "53": { keys: ["realEstate"], confidence: "HIGH", note: "Real Estate & Rental and Leasing — added 2026-07-25 during the Arizona V5 industryPathways audit. Direct, unambiguous semantic match — more direct than the MEDIUM-confidence 91/23/96 entries below, which route to realEstate as a weak-fit proxy. This sector had NO crosswalk entry at all (not even a disclosed GAP), silently zeroing out aligned_schools for both NAICS-53 MAJOR_MAP majors (Real Estate Development & Investment, Real Estate Brokerage & Property Management) across every region — 10 real employer clusters affected across LA, NY/Boston/DC, Arizona, Miami, Tampa Bay, Jacksonville, and Dallas (Brookfield, Related Companies, Compass, Crow Holdings, Regency Centers, and others). All 159 V5 schools already carry a nonzero realEstate score, so this fix activates immediately with no further school-scoring work needed." },
   "81": { keys: ["aestheticsAndBeauty"], confidence: "HIGH" },
   "71": { keys: ["sportsBusiness", "entertainmentMedia"], confidence: "HIGH" },
   "94": { keys: ["privateEquity", "investmentBanking"], confidence: "HIGH", note: "Acquisition Economy — confirmed via actual major content (M&A/PE/IB tracks)" },
@@ -129,9 +130,19 @@ const NAICS_TO_INDUSTRY_PATHWAYS = {
   "32": { keys: ["pharmaceuticalManufacturing"], confidence: "HIGH", note: "Pharmaceutical manufacturing (NAICS 3254) lives under the NAICS 32 Chemical Manufacturing supersector — semantic match to the new pharmaceuticalManufacturing key is direct and unambiguous. SCHEMA-ONLY as of 2026-07-17: this key exists and routes correctly, but zero V5 schools have been scored on it yet (Chunk 2/3, not done here). Every company built into anchor_employers_db this session under the old naics: 62 convention (Amgen, Lilly, UCB, Takeda, DifGen, Piramal, etc.) should eventually be corrected to naics: 32 to actually benefit from this routing — that re-tagging is scoped as its own later chunk, not done here either." },
 
   // ── GAP — no V5 key exists, majors here get no aligned_schools ──
-  "93": { keys: [], confidence: "GAP", note: "The Orchestration Layer (org communication/ops) — no V5 key" },
+  "93": { keys: ["organizationalOperations"], confidence: "HIGH", note: "The Orchestration Layer (org communication/ops) -- key created 2026-07-25 (MEGATREND-NAICS-POPULATION-001 follow-on, Step 2). Semantic match is direct: the key name and cluster meaning are the same concept, not a stretched fit like the MEDIUM-confidence entries elsewhere in this file. SCHEMA-ONLY as of 2026-07-25: this key exists and routes correctly, but zero V5 schools have been scored on it yet (Step 3, not done here). Confirmed via direct schema check that no school in UNIVERSITY_DB_V5_MASTER.js carries this or any equivalent key today -- this is a genuine from-scratch addition, not a rename of existing content." },
   "99": { keys: [], confidence: "GAP", note: "Reshoring & Domestic Supply Chain Economy (manufacturing) — no V5 key" },
-  "101": { keys: [], confidence: "GAP", note: "The Planning Economy — no V5 key" },
+  // "101" (The Planning Economy) RETIRED 2026-07-24, not just left GAP:
+  // resolved as a cross-cutting behavioral trait (a kid who likes planning
+  // things — an event, a computer program, a household), not an industry
+  // cluster. It does not need its own NAICS code. This also closes the
+  // long-tracked 96/101 collision — Legacy Economy keeps 96 uncontested;
+  // Planning Economy signal instead routes through whichever domain-
+  // specific cluster the student's actual interest falls under (events →
+  // 72, software → 51, etc.), matching how the Planning Economy activity
+  // tiles (planning_trips_adventures, organizing_people,
+  // running_the_household in crosswalk-db.js) are already built. See
+  // TILE-SYSTEMS-002 v2.1 Section 1.3.
   "31": { keys: [], confidence: "GAP", note: "Manufacturing — no V5 key" },
   "33": { keys: ["advancedManufacturing"], confidence: "HIGH", note: "General mechanical/electrical/industrial/chemical engineering manufacturing (MAJOR_MAP['33'] holds exactly these four broad majors) -- semantic match to the new advancedManufacturing key is direct. SCHEMA-ONLY as of 2026-07-18: this key exists and routes correctly, but zero V5 schools have been scored on it yet (Chunk 2/3, not done here). Employer-side naics:33 tagging in anchor_employers_db.js and every relevant geo_industry_db pass file was already correct before this fix -- no re-tagging chunk needed, unlike the earlier pharmaceuticalManufacturing buildout which required correcting naics:62 to naics:32 across 14 companies." },
 };

@@ -45,13 +45,13 @@ const WORLD_TO_NAICS = Object.freeze({
 
   // Expression/argument worlds.
   persuasion:  Object.freeze({ sectors: [51], confidence: 'HIGH', note: 'Media/brand/storytelling -- NAICS 51 (Technology & Media) carries entertainmentMedia as a key; 71 also plausible as secondary.' }),
-  justice:     Object.freeze({ sectors: [92], confidence: 'GAP', note: 'Legal reasoning/policy maps conceptually to NAICS 92 (Government), but no V5 industryPathways key exists for it -- returns no majors until that content is built, not a crosswalk error.' }),
+  justice:     Object.freeze({ sectors: [92], confidence: 'HIGH', note: 'CORRECTED July 24, 2026: NAICS 92 is real Public Administration content in MAJOR_MAP (Political Science & Government, Public Policy & Administration, Criminal Justice & Law Enforcement, International Relations & Diplomacy) -- a direct match for the justice worlds legal-reasoning/policy realm weighting, not a GAP. Previous GAP label incorrectly assumed 92 was the empty custom "Orchestration Layer" slot -- it is not; that content actually lives at NAICS 93 (see megatrend_naics_spec.md audit, July 24 2026).' }),
 
   // Design + physical production.
   building:    Object.freeze({ sectors: [23], confidence: 'MEDIUM', note: 'Matches naics_to_industry_pathways.js -- already flagged there as a weak fit (realEstate is the closest available V5 key).' }),
 
   // Coordination/community worlds.
-  civic:       Object.freeze({ sectors: [93], confidence: 'GAP', note: 'Coordinating people/institutions maps to the proprietary "Orchestration Layer" sector -- no V5 key exists yet (same GAP status as in naics_to_industry_pathways.js).' }),
+  civic:       Object.freeze({ sectors: [93], confidence: 'HIGH', note: 'CORRECTED July 24, 2026: NAICS 93 is real Orchestration Layer content in MAJOR_MAP (Organizational Communication, Human Resources Management, Operations Management, Industrial-Organizational Psychology, plus Business Administration/Management/Supply Chain Management added July 24 2026) -- a direct match for civic\\u2019s coordinating-people-and-institutions realm weighting, not a GAP. Same class of correction as the justice fix: the GAP label incorrectly assumed no content existed at this sector. Note: naics_to_industry_pathways.js still lists NAICS 93 as GAP -- but that reflects a separate layer (V5 school-scoring industryPathways keys), not whether MAJOR_MAP has majors here. Left unresolved there deliberately, pending confirmation of the real V5 industryPathways schema.' }),
 
   beauty:      Object.freeze({ sectors: [81], confidence: 'HIGH' }),
 

@@ -1126,6 +1126,28 @@ const GEO_INDUSTRY_DB_LA = {
         student_connection: "San Diego's venture capital community is heavily focused on life sciences — and the intersection of biotech, defense tech, and software is creating a distinctive investment ecosystem unique to this region."
       }
     ]
+  },
+
+  // ── NEW ENTRY, 2026-07-25 (NAICS-93 Orchestration Layer geo gap fix) ──
+  // Century City ZIP not previously in this file. 90067 is well-established,
+  // widely-known public knowledge (same confidence tier as "Beverly Hills is
+  // 90210") — added at that confidence level only. No street-address-level
+  // claim made or verified for Korn Ferry's exact building; flagged for
+  // verification before this goes live, per the same standard held for
+  // McKinsey's entry in the NY/Boston/DC file this session.
+  "90067": {
+    zip: "90067",
+    neighborhood: "Century City",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Organizational & Leadership Consulting",
+        naics: 93,
+        distance: "Local",
+        anchor_employers: ["Korn Ferry (Los Angeles)"],
+        student_connection: "Korn Ferry is one of the largest organizational consulting and executive search firms in the world, genuinely headquartered in Century City — its core business is literally the design of leadership structures, talent strategy, and organizational effectiveness for large companies, not a generic HR vendor. A student drawn to how organizations actually decide who leads and how they're structured has a real, major-firm career pathway here. ADDRESS NOTE: city/neighborhood level only, exact building not independently verified."
+      }
+    ]
   }
 
 };

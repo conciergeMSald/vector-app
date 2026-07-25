@@ -1,8 +1,10 @@
 /**
  * VECTOR Lifescape — Geographic Industry Intelligence Database
  * Pass 7: Rocky Mountains (Denver/Boulder/Golden/Colorado Springs, CO +
- * Salt Lake City/Provo/Lehi, UT) + Las Vegas, NV (tagged Southwest, not
- * Rocky Mountains, per 2026-07-13 region-mapping decision).
+ * Salt Lake City/Provo/Lehi, UT) + Las Vegas, NV (tagged Southern
+ * California, not Rocky Mountains, due to geographic proximity, per
+ * 2026-07-25 correction — was previously mistagged "Southwest," an
+ * invalid megaregion name not among the 11 official ones).
  * Version: 1.0 — 2026-07-13
  *
  * Built without a market-cap spreadsheet (unlike the CA passes) — anchors
@@ -153,9 +155,11 @@ const GEO_INDUSTRY_DB_ROCKYMOUNTAINS = {
   },
 
   // ─────────────────────────────────────────────────────────────
-  // LAS VEGAS, NEVADA — tagged megaregion "Southwest" per 2026-07-13
-  // decision, NOT "Rocky Mountains", even though it lives in this file.
-  // Ties directly to UNLV (already built in V5, hospitality score 100).
+  // LAS VEGAS, NEVADA — tagged megaregion "Southern California"
+  // per 2026-07-25 correction (proximity), NOT "Rocky Mountains" and
+  // NOT the earlier invalid "Southwest" tag, even though it lives in
+  // this file. Ties directly to UNLV (already built in V5, hospitality
+  // score 100).
   // ─────────────────────────────────────────────────────────────
 
   "89109": {
@@ -184,7 +188,7 @@ const GEO_INDUSTRY_DB_ROCKYMOUNTAINS = {
 const GEO_ZIP_TO_MEGAREGION_ADDITIONS_ROCKYMOUNTAINS = {
   "80202": "Rocky Mountains", "80301": "Rocky Mountains", "80401": "Rocky Mountains", "80903": "Rocky Mountains",
   "84101": "Rocky Mountains", "84604": "Rocky Mountains", "84043": "Rocky Mountains",
-  "89109": "Southwest"
+  "89109": "Southern California"
 };
 
 if (typeof window !== 'undefined') {
