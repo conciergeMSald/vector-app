@@ -886,6 +886,11 @@ async function doLogin() {
     var data = await res.json();
 
     if (!res.ok || !data.access_token) {
+      // FIXED 2026-07-26: this path (request succeeded, Supabase rejected
+      // the credentials/request) previously logged nothing to console —
+      // only the network-exception catch block below did. Logging the full
+      // response here closes that gap.
+      console.error('[VECTOR Portal] Supabase rejected login. Status:', res.status, 'Response:', data);
       var msg = data.error_description || data.msg || 'Invalid email or password.';
       errEl.textContent = msg;
       errEl.style.display = 'block';
