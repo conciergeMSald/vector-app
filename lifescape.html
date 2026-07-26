@@ -3828,13 +3828,18 @@ function renderTileGrid() {
   actGrid.innerHTML = '';
   eqGrid.innerHTML = '';
 
-  // ── Curated initial tile set from orienting answers ──
-  // Pass pronoun and grade into curation so gender-weighted tiles surface correctly
-  const curatedIds = curateInitialTiles({
-    ...ORIENT_ANSWERS,
-    pronoun: LS_STATE.pronouns || null,
-    grade: LS_STATE.grade || null
-  });
+  // ── Full tile set, always — no gating on orienting answers ──
+  // Previously curateInitialTiles() (lifescape_curation_map_v1.js) scored and
+  // filtered VECTOR_CROSSWALK down to ~28-36 tiles based on free_time/self_view/
+  // work_style, meaning the same student answers always produced a capped
+  // subset — never the full assortment of activity choices. curateInitialTiles
+  // itself is untouched (still used elsewhere / available if curation is ever
+  // wanted again) — this just stops using it as the initial render gate.
+  // Per-cluster VISIBLE_CAP + "+N more" below still paces the reveal so this
+  // doesn't read as one giant list dump; it just no longer hides real choices.
+  const curatedIds = VECTOR_CROSSWALK
+    .filter(t => t.cluster !== 'eq')
+    .map(t => t.id);
   _shownTileIds = [...curatedIds];
 
   // ── Render curated activity tiles grouped by cluster ──
@@ -3889,8 +3894,11 @@ function renderTileGrid() {
   // are in the DOM so IntersectionObserver has real elements to watch.
   observeClusterReveal(_renderedSections);
 
-  // Show "show me everything" link
-  document.getElementById('show-all-link').style.display = 'block';
+  // "Show me everything" link is now redundant — every tile already renders
+  // above (with per-cluster "+N more" for pacing) — so it stays hidden rather
+  // than offering a click that reveals nothing new. showAllTiles() itself is
+  // untouched and harmless to call if this is ever wired back up.
+  document.getElementById('show-all-link').style.display = 'none';
 
   // ── EQ tiles — ordered by relevance to orienting answers ──
   const eqOrder = typeof getEQPriority !== 'undefined'
