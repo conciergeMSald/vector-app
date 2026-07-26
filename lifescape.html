@@ -7144,7 +7144,18 @@ async function submitLifescape() {
     // Build parallel call array — callB + callC always, callE conditionally
     var _parallelCalls = [
       fireCall(buildCallBPrompt(ctx), 1600, 0, 45000, 'callB'),
-      fireCall(buildCallCPrompt(ctx), 2400, 0, 30000, 'callC')
+      // Timeout raised 30000 → 45000ms — callC has the largest max_tokens
+      // budget of the three parallel calls (2400, vs. callB's 1600) and does
+      // the most generation work (GEO paragraphs + 3 full scenario sections
+      // with mandatory school recs + World section + Counselor notes), yet
+      // previously had the *shortest* timeout of the three. That mismatch
+      // was the root cause of the recurring "[callC] failed: AbortError"
+      // console warning — a genuine client-side timeout, not a server or
+      // parent-portal error. Promise.allSettled() already handles the
+      // failure gracefully (report still renders, just missing GEO/World/
+      // Counselor content) — this fix addresses the cause, not just the
+      // symptom.
+      fireCall(buildCallCPrompt(ctx), 2400, 0, 45000, 'callC')
     ];
     if (_ccShouldShow && _ccContext && _ccContext.hasCCPathway) {
       console.log('[callE] CC pathway triggered — source:', _ccContext.source, 'CC:', _ccContext.ccName);
