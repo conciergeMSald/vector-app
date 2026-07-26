@@ -2899,7 +2899,16 @@ async function onAccountGateSignedIn() {
   try {
     var token = await window.Clerk.session.getToken();
 
-    var meRes  = await fetch('https://api.abettercollegeconsultant.com/family-me', {
+    // consultant_code passed as a query param so /family-me can validate
+    // and persist it on first account creation — see worker.js's
+    // matching 2026-07-25 update for the full reasoning (families vs.
+    // family_accounts table split, and why this needs to happen here now
+    // that account creation runs before any assessment session exists).
+    var familyMeUrl = 'https://api.abettercollegeconsultant.com/family-me';
+    if (LS_STATE.consultant_code) {
+      familyMeUrl += '?consultant_code=' + encodeURIComponent(LS_STATE.consultant_code);
+    }
+    var meRes  = await fetch(familyMeUrl, {
       headers: { 'Authorization': 'Bearer ' + token },
     });
     var meData = await meRes.json();

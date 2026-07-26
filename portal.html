@@ -6,7 +6,7 @@
 <title>VECTOR — Consultant Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
 
 <style>
 /* ── DESIGN TOKENS — ENTERPRISE ──────────────────────────────────────── */
@@ -701,7 +701,19 @@ body::before {
 <!-- ── LOGIN SCREEN ──────────────────────────────────────────────────── -->
 <div class="screen active" id="screen-login">
   <div class="login-wrap">
-    <div class="login-mark">Vector · Consultant Portal</div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" style="width:360px;max-width:100%;height:auto;border-radius:4px;display:block;margin-bottom:1.5rem;" role="img" aria-label="VECTOR — A Better College Consultant">
+      <rect width="1200" height="400" fill="#0D0D0B"/>
+      <text font-family="'Cormorant Garamond', 'Cormorant', Georgia, serif"
+        font-weight="300" font-size="120px" letter-spacing="18px"
+        fill="#FDF8F0"
+        x="600" y="257.6"
+        text-anchor="middle">VECTOR</text>
+      <line x1="700.15" y1="231.24" x2="721.49" y2="172.60"
+        stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
+      <polygon points="721.49,172.60 717.16,176.39 722.37,178.29"
+        fill="#C8A97A" opacity="1"/>
+    </svg>
+    <div class="login-mark">Consultant Portal</div>
     <h1 class="login-title">Intelligence<br>for the advisor.</h1>
     <p class="login-sub">Your paired families. Their scores, trajectories, and reports — in one place.</p>
 
@@ -803,9 +815,21 @@ body::before {
 'use strict';
 
 // ── CONFIGURATION ──────────────────────────────────────────────────────────
-// Replace with your actual Supabase project URL and anon key
+// SUPABASE_URL / SUPABASE_ANON_KEY: used ONLY by doLogin() below, for native
+// Supabase Auth password-grant sign-in. Replace with your actual Supabase
+// project URL and anon key.
 const SUPABASE_URL      = 'https://YOUR_PROJECT.supabase.co';
 const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY_HERE';
+
+// WORKER_API_BASE: added 2026-07-26 per CONSULTANT-PORTAL-001. All data
+// loading (consultant profile, family list) now routes through worker.js
+// instead of querying Supabase directly with the anon key. worker.js's
+// /consultant-me and /consultant-families already enforce the correct
+// consultant->family ownership check server-side (resolveConsultantAndFamily
+// / consultant_code matching) using a trusted service-role key — this
+// closes the RLS-bypass risk the direct-Supabase version had, without
+// requiring any new Row Level Security policies to be designed or tested.
+const WORKER_API_BASE = 'https://api.abettercollegeconsultant.com';
 
 // ── STATE ──────────────────────────────────────────────────────────────────
 var SESSION_TOKEN    = null;
@@ -907,22 +931,21 @@ async function showDashboard() {
 // ── LOAD CONSULTANT PROFILE ────────────────────────────────────────────────
 async function loadConsultantProfile() {
   try {
-    // Get the consultant record from Supabase using their auth user id
-    var res = await fetch(
-      SUPABASE_URL + '/rest/v1/consultants?select=*',
-      {
-        headers: {
-          'apikey':        SUPABASE_ANON_KEY,
-          'Authorization': 'Bearer ' + SESSION_TOKEN,
-        },
-      }
-    );
+    // Routed through worker.js (CONSULTANT-PORTAL-001) — server-side
+    // authorized via verifySupabaseJWT(), not the browser-side anon key.
+    var res = await fetch(WORKER_API_BASE + '/consultant-me', {
+      headers: {
+        'Authorization': 'Bearer ' + SESSION_TOKEN,
+      },
+    });
 
     if (res.status === 401) { doSignOut(); return; }
 
     var data = await res.json();
-    if (data && data.length > 0) {
-      CONSULTANT_DATA = data[0];
+    // /consultant-me returns the consultant row directly (not wrapped in an
+    // array the way the old raw Supabase REST list-query response was).
+    if (data && data.id) {
+      CONSULTANT_DATA = data;
       document.getElementById('navName').textContent =
         (CONSULTANT_DATA.first_name || '') + ' ' + (CONSULTANT_DATA.last_name || '');
       document.getElementById('statCode').textContent =
@@ -938,24 +961,25 @@ async function loadFamilies() {
   var wrap = document.getElementById('familyTableWrap');
 
   try {
-    // Query families where consultant_code matches this consultant's access_code
-    var code = CONSULTANT_DATA ? CONSULTANT_DATA.access_code : null;
-    var url  = SUPABASE_URL + '/rest/v1/families?select=*&order=created_at.desc';
-    if (code) {
-      url += '&consultant_code=eq.' + encodeURIComponent(code);
-    }
-
-    var res = await fetch(url, {
+    // Routed through worker.js (CONSULTANT-PORTAL-001) — /consultant-families
+    // already filters to this consultant's own families server-side via
+    // resolveConsultantAndFamily()'s consultant_code match, using the
+    // Worker's trusted service-role key. No client-side filter needed or
+    // trusted anymore — the old version's consultant_code=eq. query param
+    // was a client-side-only restriction that RLS would have had to enforce
+    // independently; this version can't be bypassed the same way.
+    var res = await fetch(WORKER_API_BASE + '/consultant-families', {
       headers: {
-        'apikey':        SUPABASE_ANON_KEY,
         'Authorization': 'Bearer ' + SESSION_TOKEN,
       },
     });
 
     if (res.status === 401) { doSignOut(); return; }
 
-    ALL_FAMILIES = await res.json();
-    if (!Array.isArray(ALL_FAMILIES)) ALL_FAMILIES = [];
+    var data = await res.json();
+    // /consultant-families returns { families: [...] }, not a raw array
+    // the way the old direct Supabase REST list-query response was.
+    ALL_FAMILIES = (data && Array.isArray(data.families)) ? data.families : [];
 
     renderStats();
     ACTIVE_FILTER = 'all';
