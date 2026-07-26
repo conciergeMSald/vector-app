@@ -2,7 +2,21 @@
 // Maps NAICS sector codes → grounded occupation titles + counselor intelligence
 // Source: VECTOR.html career DB (verified, not model-generated)
 // Consumer: buildCallBPrompt() + renderCounselorView()
-// Version: 1.0 | Built: June 2026
+// Version: 1.1 | Built: June 2026 | SOC codes added: July 2026
+//
+// `soc` (added v1.1): official O*NET-SOC 2019 code per title, sourced from
+// 2019_Occupations.csv (1,016 codes) and manually mapped/verified — not a
+// mechanical string join. 178 of 241 titles across all 29 clusters have a
+// code; 63 titles (mostly executive/founder/ownership titles — e.g. Chief of
+// Staff, Startup Founder, Brand Manager) have no defensible federal SOC
+// analog and were deliberately left uncoded rather than forced. See
+// ONET_SOC_Mapping_Review.md for the full title-by-title confidence rationale
+// (EXACT / CLOSE / BROAD / NO CLEAN MATCH) and the invalid-code catch that
+// preceded this patch (Supply Chain Managers corrected to 11-3071.04).
+// Additive only — does not alter titles, riasecAffinity, counselorPay,
+// counselorNote, metros, or any function below (getONETClusters,
+// buildONETPromptBlock, buildONETCounselorBlock, getCareerMetroMatch all
+// byte-identical to v1.0).
 // ─────────────────────────────────────────────────────────────────────────────
 
 const NAICS_TO_ONET = {
@@ -26,6 +40,20 @@ const NAICS_TO_ONET = {
       'Tax Advisor / CPA',
       'Compliance Officer'
     ],
+    soc: {
+      'Investment Banker': '13-2051.00',
+      'Portfolio Manager': '11-3031.00',
+      'Financial Analyst': '13-2051.00',
+      'Quantitative Trader': '13-2099.01',
+      'Venture Capital Analyst': '13-2051.00',
+      'Private Equity Associate': '13-2051.00',
+      'Family Office Advisor': '13-2052.00',
+      'Wealth Manager': '13-2052.00',
+      'Economist': '19-3011.00',
+      'Actuary': '15-2011.00',
+      'Tax Advisor / CPA': '13-2011.00',
+      'Compliance Officer': '13-1041.00'
+    },
     counselorPay: '$200K–$3M+ (varies by role and seniority)',
     counselorNote: 'Institutional proximity at the undergraduate level is the single highest-leverage variable in finance. Target school placement — Penn, Columbia, Chicago, NYU Stern — matters more here than almost any other field.'
   },
@@ -48,6 +76,18 @@ const NAICS_TO_ONET = {
       'Standards & Practices Manager',
       'Design Systems Manager'
     ],
+    soc: {
+      'Software Engineer': '15-1252.00',
+      'Product Manager': '11-2021.00',
+      'AI Research Scientist': '15-1221.00',
+      'Chief Technology Officer': '11-3021.00',
+      'Cybersecurity Analyst': '15-1212.00',
+      'Data Scientist': '15-2051.00',
+      'UX Designer': '15-1255.00',
+      'Content Strategist': '27-3041.00',
+      'Tech Policy / Regulatory Affairs Analyst': '13-1041.07',
+      'Design Systems Manager': '15-1255.00'
+    },
     counselorPay: '$120K–$600K+ (FAANG staff engineer to CPO)',
     counselorNote: 'CS and engineering programs at research universities with strong recruiting pipelines to tech companies — CMU, Georgia Tech, UT Austin, UIUC, Cal Poly — outperform prestige alone. Portfolio matters as much as GPA.'
   },
@@ -69,6 +109,18 @@ const NAICS_TO_ONET = {
       'Cybersecurity Consultant',
       'Lobbyist / Government Relations Specialist'
     ],
+    soc: {
+      'Management Consultant': '13-1111.00',
+      'Data Scientist': '15-2051.00',
+      'Research Scientist': '19-1099.00',
+      'Policy Analyst': '13-1111.00',
+      'Environmental Scientist': '19-2041.00',
+      'Aerospace Engineer': '17-2011.00',
+      'Biomedical Engineer': '17-2031.00',
+      'UX Researcher': '19-3022.00',
+      'Cybersecurity Consultant': '15-1212.00',
+      'Lobbyist / Government Relations Specialist': '13-1075.00'
+    },
     counselorPay: '$90K–$2M (research scientist to McKinsey partner)',
     counselorNote: 'This sector spans the widest pay range of any NAICS cluster. Specialization is the differentiator — a generalist consultant earns 30-40% less than one with deep sector expertise. Graduate degree ROI is highest in this cluster.'
   },
@@ -88,6 +140,16 @@ const NAICS_TO_ONET = {
       'Occupational Therapist',
       'Biomedical Engineer'
     ],
+    soc: {
+      'Physician': '29-1229.00',
+      'Nurse Practitioner': '29-1171.00',
+      'Physician Assistant': '29-1071.00',
+      'Physical Therapist': '29-1123.00',
+      'Pharmacist': '29-1051.00',
+      'CRNA': '29-1151.00',
+      'Occupational Therapist': '29-1122.00',
+      'Biomedical Engineer': '17-2031.00'
+    },
     counselorPay: '$70K–$900K+ (respiratory therapist to neurosurgeon)',
     counselorNote: 'Healthcare is the most credential-driven field in America. Path clarity matters enormously — a student who decides on PA school vs. medical school at 16 has a measurable advantage in undergraduate preparation and application timing.'
   },
@@ -111,6 +173,19 @@ const NAICS_TO_ONET = {
       'Learning Specialist',
       'Independent Educational Consultant'
     ],
+    soc: {
+      'School Administrator': '11-9032.00',
+      'Education Policy Director': '11-9039.00',
+      'Nonprofit Executive Director': '11-9151.00',
+      'City Manager': '11-1021.00',
+      'Chief Learning Officer': '11-3131.00',
+      'Foundation Program Officer': '11-9151.00',
+      'University Dean': '11-9033.00',
+      'Teacher': '25-2031.00',
+      'Curriculum Designer': '25-9031.00',
+      'Learning Specialist': '25-9031.00',
+      'Independent Educational Consultant': '21-1012.00'
+    },
     counselorPay: '$55K–$500K (Foreign Service officer to school superintendent)',
     counselorNote: 'Education and public service careers are among the most mission-driven in the database. Network and institutional affiliation are the primary leverage points. DC policy track and urban education leadership have meaningfully different preparation paths.'
   },
@@ -136,6 +211,22 @@ const NAICS_TO_ONET = {
       'Content Producer',
       'Content Distribution Manager'
     ],
+    soc: {
+      'Film Director': '27-2012.00',
+      'Music Producer': '27-2041.00',
+      'Creative Director': '27-1011.00',
+      'Industrial Designer': '27-1021.00',
+      'Architect': '17-1011.00',
+      'Interior Designer': '27-1025.00',
+      'Sports Manager': '13-1011.00',
+      'Entertainment Attorney': '23-1011.00',
+      'Content Creator': '27-3099.00',
+      'Community Manager': '27-3031.00',
+      'Brand Storyteller': '27-3043.00',
+      'Copywriter / Editor': '27-3043.00',
+      'Content Producer': '27-2012.00',
+      'Content Distribution Manager': '11-3071.00'
+    },
     counselorPay: '$80K–$20M+ (staff designer to studio film director)',
     counselorNote: 'Creative careers have the widest outcome variance of any field. Portfolio and output matter more than credentials after the first job. The school matters most for network access and early opportunity — USC film, RISD, Parsons, and Berklee have specific industry pipelines that generalist universities cannot replicate.'
   },
@@ -159,6 +250,20 @@ const NAICS_TO_ONET = {
       'Ingredient Processing Technician',
       'Food Safety & Quality Manager'
     ],
+    soc: {
+      'Agricultural Scientist': '19-1013.00',
+      'Farm Manager': '11-9013.00',
+      'Agronomist': '19-1013.00',
+      'Veterinarian': '29-1131.00',
+      'Food Safety Specialist': '19-4013.00',
+      'Sustainable Agriculture Consultant': '19-1031.00',
+      'Forestry Technician': '19-4071.00',
+      'Agribusiness Manager': '11-9013.00',
+      'Food Scientist': '19-1012.00',
+      'Food Production Manager': '11-3051.00',
+      'Ingredient Processing Technician': '51-3099.00',
+      'Food Safety & Quality Manager': '19-1012.00'
+    },
     counselorPay: '$45K–$150K+ (farm technician to agribusiness executive)',
     counselorNote: 'Agriculture is undergoing a technology-driven transformation — precision agriculture, biotech crop science, and food safety are growing faster than traditional farm labor. Land-grant universities (Purdue, Iowa State, UC Davis, Texas A&M) have the strongest pipelines.'
   },
@@ -180,6 +285,17 @@ const NAICS_TO_ONET = {
       'Landman',
       'Heavy Equipment Operator'
     ],
+    soc: {
+      'Petroleum Engineer': '17-2171.00',
+      'Geologist': '19-2042.00',
+      'Mining Engineer': '17-2151.00',
+      'Environmental Compliance Specialist': '13-1041.01',
+      'Energy Trader': '41-3031.00',
+      'Reservoir Engineer': '17-2171.00',
+      'Safety & Operations Manager': '11-1021.00',
+      'Renewable Energy Analyst': '19-2041.00',
+      'Heavy Equipment Operator': '47-2073.00'
+    },
     counselorPay: '$65K–$250K+ (field technician to senior petroleum engineer)',
     counselorNote: 'Traditional oil & gas remains a strong-pay, high-demand field, especially in Texas Triangle and Rocky Mountain regions, while renewable energy analyst roles are the fastest-growing sub-track within this same cluster. Engineering programs at Texas A&M, Colorado School of Mines, and University of Houston have the deepest industry pipelines.'
   },
@@ -199,6 +315,16 @@ const NAICS_TO_ONET = {
       'Plant Manager',
       'Manufacturing Assistant'
     ],
+    soc: {
+      'Biomanufacturing Technician': '19-4021.00',
+      'Quality Control Technician': '19-4099.01',
+      'Quality Assurance Specialist': '19-4099.01',
+      'Manufacturing Supervisor': '51-1011.00',
+      'Validation Specialist': '17-2112.02',
+      'Process Development Associate': '17-2112.03',
+      'Plant Manager': '11-3051.00',
+      'Manufacturing Assistant': '51-9199.00'
+    },
     counselorPay: '$40K–$80K entry (technician) up to $150K+ (plant manager/director)',
     counselorNote: 'A hidden pathway most families never hear about: entry-level biomanufacturing technician roles require no 4-year degree — a 6-week community college program (available in 26+ states) leads directly to hire at major pharmaceutical and biotech manufacturers. Real career ladder exists from technician to plant leadership, and many employers pay for further education once a student has shown workplace commitment. This affinity set is broader than a typical STEM cluster — it rewards precision and procedure (Conventional), hands-on floor work (Realistic), leadership track potential (Enterprising), and increasingly design/packaging/quality-visual work (Artistic), not just lab-science aptitude.'
   },
@@ -218,6 +344,16 @@ const NAICS_TO_ONET = {
       'Real Estate Developer',
       'Landscape Architect'
     ],
+    soc: {
+      'Architect': '17-1011.00',
+      'Civil Engineer': '17-2051.00',
+      'Structural Engineer': '17-2051.00',
+      'Construction Manager': '11-9021.00',
+      'Urban Planner': '19-3051.00',
+      'Interior Designer': '27-1025.00',
+      'Real Estate Developer': '11-9141.00',
+      'Landscape Architect': '17-1012.00'
+    },
     counselorPay: '$70K–$5M+ (landscape architect to principal architect)',
     counselorNote: 'Architecture requires a 5-year B.Arch or 4+2 M.Arch path plus licensure — one of the longer credentialing timelines among creative fields. Engineering sub-tracks (civil, structural) have cleaner ROI and faster licensure. Real estate development is the entrepreneurial exit with the highest wealth ceiling.'
   },
@@ -237,6 +373,15 @@ const NAICS_TO_ONET = {
       'Federal Policy Analyst',
       'Judge Advocate (JAG)'
     ],
+    soc: {
+      'Military Officer': '55-1019.00',
+      'Intelligence Analyst': '33-3021.06',
+      'FBI Special Agent': '33-3021.00',
+      'City Manager': '11-1021.00',
+      'State Legislator': '11-1031.00',
+      'Federal Policy Analyst': '19-3094.00',
+      'Judge Advocate (JAG)': '23-1011.00'
+    },
     counselorPay: '$55K–$280K (federal civilian to four-star general)',
     counselorNote: 'Military and government careers offer unmatched structural clarity — promotion timelines, retirement benefits, and advancement criteria are published and predictable. Service academy admission (West Point, Annapolis, Air Force) requires congressional nomination and is a distinct application process from standard college admissions.'
   },
@@ -256,6 +401,15 @@ const NAICS_TO_ONET = {
       'Business Development Manager',
       'Franchise Owner'
     ],
+    soc: {
+      'Management Consultant': '13-1111.00',
+      'Supply Chain Director': '11-3071.04',
+      'Chief Human Resources Officer': '11-3121.00',
+      'Brand Manager': '11-2021.00',
+      'Operations Director': '11-1021.00',
+      'Chief of Staff': '11-1011.00',
+      'Business Development Manager': '11-2021.00'
+    },
     counselorPay: '$80K–$500K+ (operations analyst to Fortune 500 CMO)',
     counselorNote: 'Business operations is the broadest cluster in the database — it is the destination for students whose profile is strong but not yet specialized. MBA programs (Wharton, Booth, Kellogg, Ross) are the traditional accelerant. Franchise ownership is the most underrated wealth-building path in this cluster.'
   },
@@ -275,6 +429,13 @@ const NAICS_TO_ONET = {
       'Retail Buyer',
       'Consumer Insights Analyst'
     ],
+    soc: {
+      'Startup Founder': '11-1011.00',
+      'Real Estate Developer': '11-9141.00',
+      'Brand Strategist': '11-2021.00',
+      'Retail Buyer': '13-1022.00',
+      'Consumer Insights Analyst': '13-1161.00'
+    },
     counselorPay: '$0–$1B+ (early-stage founder to serial entrepreneur exit)',
     counselorNote: 'Entrepreneurship has no credential gate and unlimited upside. The school matters for network access, not credentials. Students with this profile benefit from programs with strong entrepreneurship ecosystems — Babson, Northeastern co-op, Wharton, Indiana Kelley, and schools in startup-dense metros.'
   },
@@ -294,6 +455,16 @@ const NAICS_TO_ONET = {
       'Culinary Entrepreneur',
       'Private Club Manager'
     ],
+    soc: {
+      'Hotel General Manager': '11-9081.00',
+      'Restaurant Group Owner': '11-9051.00',
+      'Event Director': '13-1121.00',
+      'Hospitality Consultant': '13-1111.00',
+      'Food & Beverage Director': '11-9051.00',
+      'Travel Industry Executive': '41-3041.00',
+      'Culinary Entrepreneur': '35-1011.00',
+      'Private Club Manager': '11-9081.00'
+    },
     counselorPay: '$60K–$2M+ (food service manager to hospitality group owner)',
     counselorNote: 'Hospitality management programs (Cornell Hotel, UNLV, Johnson & Wales) have specific industry pipelines that general business programs do not. The wealth ceiling is in ownership — hotel operators, restaurant groups, and private club owners in premium markets earn 3-5x the employed equivalent.'
   },
@@ -315,6 +486,16 @@ const NAICS_TO_ONET = {
       'Omnichannel Strategy Manager',
       'International Retail Expansion Manager'
     ],
+    soc: {
+      'Brand Manager': '11-2021.00',
+      'Retail Buyer': '13-1022.00',
+      'Category Manager': '13-1022.00',
+      'E-Commerce Director': '11-2021.00',
+      'Consumer Insights Analyst': '13-1161.00',
+      'Merchandise Planner': '13-1022.00',
+      'Luxury Retail Executive': '41-1011.00',
+      'International Retail Expansion Manager': '11-2021.00'
+    },
     counselorPay: '$70K–$500K+ (category analyst to CMO)',
     counselorNote: 'Retail and consumer products is undergoing a structural shift toward DTC and e-commerce. Students with this profile who combine business fundamentals with digital marketing and data skills are positioned for the growth segment of this industry.'
   },
@@ -334,6 +515,16 @@ const NAICS_TO_ONET = {
       'Fleet Manager',
       'Maritime Officer'
     ],
+    soc: {
+      'Commercial Pilot': '53-2012.00',
+      'Logistics Director': '13-1081.00',
+      'Supply Chain Manager': '11-3071.04',
+      'Port Operations Director': '11-3071.00',
+      'Aviation Safety Engineer': '53-6051.01',
+      'Transportation Planner': '19-3099.01',
+      'Fleet Manager': '11-3071.00',
+      'Maritime Officer': '53-5021.00'
+    },
     counselorPay: '$75K–$350K (transportation planner to airline captain)',
     counselorNote: 'Aviation is experiencing a significant pilot shortage — commercial pilot pay has risen 40-60% since 2020. Embry-Riddle, Purdue, and UND are the primary aviation pipelines. Logistics and supply chain roles at Amazon, FedEx, and UPS now pay at technology company rates for quantitative candidates.'
   },
@@ -353,6 +544,16 @@ const NAICS_TO_ONET = {
       'Nuclear Plant Operator',
       'Utility Rate Analyst'
     ],
+    soc: {
+      'Power Systems Engineer': '17-2071.00',
+      'Grid Operations Manager': '51-8012.00',
+      'Utility Regulatory Affairs Analyst': '13-1041.07',
+      'Renewable Energy Project Manager': '13-1082.00',
+      'Smart Grid Analyst': '17-2071.00',
+      'Water Systems Engineer': '17-2051.02',
+      'Nuclear Plant Operator': '51-8011.00',
+      'Utility Rate Analyst': '13-2061.00'
+    },
     counselorPay: '$65K–$220K+ (systems engineer to VP of operations)',
     counselorNote: 'Utilities is a regulated, stable-pay industry undergoing a genuine transformation — grid modernization and renewable integration are creating engineering roles that did not exist a decade ago. Unlike most fields on this list, career stability here is a real differentiator, not a compromise. Engineering programs near a major utility headquarters (Georgia Tech near Southern Company, NC State near Duke Energy) have direct recruiting pipelines.'
   },
@@ -372,6 +573,16 @@ const NAICS_TO_ONET = {
       'Logistics Coordinator',
       'Regional Sales Director'
     ],
+    soc: {
+      'Supply Chain Analyst': '13-1081.02',
+      'Distribution Center Director': '11-3071.00',
+      'Procurement Manager': '11-3061.00',
+      'Import/Export Specialist': '13-1041.08',
+      'Category Manager': '13-1022.00',
+      'Wholesale Account Manager': '41-4012.00',
+      'Logistics Coordinator': '13-1081.02',
+      'Regional Sales Director': '11-2022.00'
+    },
     counselorPay: '$55K–$300K+ (distribution coordinator to VP of supply chain)',
     counselorNote: 'Wholesale is the invisible middle layer of the economy most families never think to name — it is the actual business of moving goods from manufacturers to the retailers and businesses that use them, and it has a genuine, well-paid career ladder from operations analyst to regional leadership. Supply chain management programs (Michigan State, Arizona State, Penn State) have specific recruiting pipelines here that general business programs do not.'
   },
@@ -391,6 +602,16 @@ const NAICS_TO_ONET = {
       'REIT Analyst',
       'Real Estate Attorney'
     ],
+    soc: {
+      'Real Estate Developer': '11-9141.00',
+      'Commercial Broker': '41-9021.00',
+      'Real Estate Investment Analyst': '13-2051.00',
+      'Property Manager': '11-9141.00',
+      'Asset Manager': '11-3031.00',
+      'Leasing Director': '11-9141.00',
+      'REIT Analyst': '13-2051.00',
+      'Real Estate Attorney': '23-1011.00'
+    },
     counselorPay: '$50K–$10M+ (leasing agent to major developer — heavily commission and equity-driven upside)',
     counselorNote: 'Real estate has no single dominant academic pipeline the way law or medicine does — it is one of the most relationship- and network-driven fields on this list, and family connections in the industry genuinely accelerate entry more than in almost any other cluster. For students without that network, real estate finance and development programs (Wharton, USC Lusk, NYU Schack) build one deliberately.'
   },
@@ -409,6 +630,14 @@ const NAICS_TO_ONET = {
       'Holding Company Executive',
       'Board Governance Analyst'
     ],
+    soc: {
+      'Corporate Strategy Director': '11-1021.00',
+      'M&A Analyst': '13-2051.00',
+      'Corporate Development Manager': '11-1021.00',
+      'Chief of Staff': '11-1011.00',
+      'Investor Relations Director': '11-2032.00',
+      'Holding Company Executive': '11-1011.00'
+    },
     counselorPay: '$90K–$2M+ (corporate strategy analyst to holding company executive)',
     counselorNote: 'This sector is genuinely distinct from NAICS 56 (Business Operations) — it is specifically the "parent company" layer that owns and directs other businesses, not the operating business itself (think Berkshire Hathaway\'s headquarters staff, not one of its subsidiaries). It is an unusually MBA-heavy track, and corporate strategy or M&A analyst roles are the most common entry point for a student aiming at this cluster.'
   },
@@ -440,6 +669,15 @@ const NAICS_TO_ONET = {
       'Construction Estimator',
       'Construction Safety Manager'
     ],
+    soc: {
+      'Construction Project Manager': '11-9021.00',
+      'General Contractor': '11-9021.00',
+      'Construction Technology Specialist': '11-9021.00',
+      'BIM (Building Information Modeling) Manager': '17-3011.00',
+      'Site Superintendent': '47-1011.00',
+      'Construction Estimator': '13-1051.00',
+      'Construction Safety Manager': '17-2111.00'
+    },
     counselorPay: '$55K–$400K+ (project coordinator to general contracting business owner)',
     counselorNote: 'The trades carry a real, underrated wealth-building path most families overlook — ownership (running your own contracting business) has a higher ceiling than almost any salaried track in this database. Construction management programs bridge hands-on trades knowledge with real project and business leadership, and there is a genuine, persistent national shortage of skilled construction management talent.'
   },
@@ -457,6 +695,14 @@ const NAICS_TO_ONET = {
       'Change Management Consultant',
       'Cross-Functional Program Manager'
     ],
+    soc: {
+      'Internal Communications Director': '11-2032.00',
+      'Chief of Staff': '11-1011.00',
+      'Organizational Development Manager': '11-3131.00',
+      'People Operations Director': '11-3121.00',
+      'Change Management Consultant': '13-1111.00',
+      'Cross-Functional Program Manager': '13-1082.00'
+    },
     counselorPay: '$65K–$350K (program coordinator to Chief of Staff)',
     counselorNote: 'This is the "connective tissue" role inside large organizations — coordinating communication and operations across teams that would otherwise not talk to each other. It has a less defined academic pipeline than most fields on this list; a generalist skill set (communication plus systems thinking) matters more than a specific major, and real demand tends to appear once a company scales past a certain size.'
   },
@@ -474,6 +720,12 @@ const NAICS_TO_ONET = {
       'Investment Banking Analyst',
       'Post-Merger Integration Manager'
     ],
+    soc: {
+      'M&A Analyst': '13-2051.00',
+      'Private Equity Associate': '13-2051.00',
+      'Corporate Development Analyst': '13-2051.00',
+      'Investment Banking Analyst': '13-2051.00'
+    },
     counselorPay: '$100K–$3M+ (first-year analyst to PE partner)',
     counselorNote: 'Closely related to NAICS 52\'s finance cluster, but centered specifically on acquiring and integrating companies rather than trading or portfolio management. Target-school recruiting and rigorous quantitative preparation matter as much here as anywhere in finance — this is one of the more credential- and pedigree-sensitive tracks in the database.'
   },
@@ -491,6 +743,13 @@ const NAICS_TO_ONET = {
       'Aging-in-Place Technology Designer',
       'Elder Care Systems Consultant'
     ],
+    soc: {
+      'Biogerontology Researcher': '19-1042.00',
+      'Longevity Biotech Scientist': '19-1042.00',
+      'Geriatric Care Innovation Specialist': '29-1141.00',
+      'Clinical Research Scientist (Aging)': '19-1042.00',
+      'Elder Care Systems Consultant': '11-9111.00'
+    },
     counselorPay: '$70K–$400K+ (research associate to longevity-focused biotech executive)',
     counselorNote: 'A genuinely emerging field, driven by an aging population and real biotech investment specifically in aging biology and lifespan research — distinct from general healthcare because the focus is aging itself, not acute care. Programs with strong gerontology or aging-biology research (USC Leonard Davis School among them) are the real pipeline, not a generic pre-med track.'
   },
@@ -508,6 +767,13 @@ const NAICS_TO_ONET = {
       'Private Banker',
       'Multi-Generational Wealth Consultant'
     ],
+    soc: {
+      'Family Office Advisor': '13-2052.00',
+      'Wealth Manager': '13-2052.00',
+      'Estate Planning Attorney': '23-1011.00',
+      'Trust Officer': '13-2052.00',
+      'Private Banker': '13-2052.00'
+    },
     counselorPay: '$80K–$1.5M+ (private banking associate to family office principal)',
     counselorNote: 'This centers on managing and transferring wealth across generations, not growing it through active investing — a relationship- and discretion-driven field where trust and long-term client relationships matter more than deal volume. It often intersects with both law (estate planning) and finance (wealth management) rather than sitting cleanly in one academic track.'
   },
@@ -525,6 +791,14 @@ const NAICS_TO_ONET = {
       'Terminal Operations Director',
       'Customs & Trade Compliance Specialist'
     ],
+    soc: {
+      'Port Operations Manager': '11-3071.00',
+      'Rail Logistics Coordinator': '13-1081.02',
+      'Warehouse Automation Manager': '17-2112.03',
+      'Freight Network Analyst': '13-1081.02',
+      'Terminal Operations Director': '11-3071.00',
+      'Customs & Trade Compliance Specialist': '13-1041.08'
+    },
     counselorPay: '$55K–$300K+ (logistics coordinator to terminal operations director)',
     counselorNote: 'The physical infrastructure side of supply chain — actual ports, rail yards, and warehouses — distinct from the more corporate/analytical supply chain roles in wholesale and transportation (NAICS 42/48). Hands-on operations experience often matters as much as a degree, and the sector is seeing real wage growth amid a persistent skilled-labor shortage.'
   },
@@ -542,6 +816,14 @@ const NAICS_TO_ONET = {
       'PLC Programmer',
       'Process Automation Specialist'
     ],
+    soc: {
+      'Automation Engineer': '17-2199.05',
+      'Robotics Systems Engineer': '17-2199.08',
+      'Industrial Controls Engineer': '17-2112.00',
+      'Manufacturing Systems Integrator': '17-2112.03',
+      'PLC Programmer': '17-3024.00',
+      'Process Automation Specialist': '17-2112.03'
+    },
     counselorPay: '$65K–$220K+ (automation technician to senior controls engineer)',
     counselorNote: 'The industrial side of "technology" — programming and maintaining the robotics and control systems that run modern factories and logistics centers. A genuinely different skill set from consumer or software technology despite the surface-level overlap. Mechatronics and industrial engineering programs (Georgia Tech, Purdue, Kettering) are the real pipeline.'
   },
@@ -559,6 +841,13 @@ const NAICS_TO_ONET = {
       'Plant Startup Manager',
       'Onshore Procurement Specialist'
     ],
+    soc: {
+      'Domestic Manufacturing Site Director': '11-3051.00',
+      'Supply Chain Resilience Manager': '11-3071.04',
+      'Manufacturing Workforce Development Specialist': '13-1151.00',
+      'Plant Startup Manager': '11-3051.00',
+      'Onshore Procurement Specialist': '13-1023.00'
+    },
     counselorPay: '$60K–$280K+ (production supervisor to site director)',
     counselorNote: 'A genuinely growing category driven by real corporate and policy shifts bringing manufacturing capital back to the U.S. — distinct from traditional manufacturing because it specifically involves standing up NEW domestic capacity, not operating established plants. States investing heavily in workforce pipelines (community-college partnerships in Alabama, Georgia, Kentucky) are creating fast, non-four-year entry paths alongside the traditional engineering track.'
   },
@@ -576,6 +865,12 @@ const NAICS_TO_ONET = {
       'Veteran Transition Consultant',
       'Post-Service Government Contractor'
     ],
+    soc: {
+      'Military Officer': '55-1019.00',
+      'Defense Contractor Program Manager': '13-1082.00',
+      'Military Intelligence Analyst': '33-3021.06',
+      'Defense Systems Engineer': '17-2072.00'
+    },
     counselorPay: '$50K–$250K+ (junior officer to senior defense program executive — veteran benefits and pension not reflected in salary alone)',
     counselorNote: 'Spans both active military service and the "second career" defense/government-contracting path many service members build afterward. Service academy admission (West Point, Annapolis, Air Force Academy) and ROTC scholarships are separate, distinct application processes from standard college admissions — and veteran status itself becomes a real career asset in defense-adjacent civilian roles.'
   }
