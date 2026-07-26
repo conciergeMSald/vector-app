@@ -457,6 +457,18 @@ body::before {
   background: none;
 }
 
+.unclaimed-badge {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border: 0.5px solid var(--green);
+  color: var(--green);
+  background: rgba(74,124,89,0.08);
+  margin-left: 0.5rem;
+}
+
 /* ── FAMILY DETAIL PANEL ──────────────────────────────────────────────── */
 .detail-overlay {
   display: none;
@@ -1081,11 +1093,12 @@ function renderTable(families) {
       ? new Date(f.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
       : '—';
     var name = f.family_last_name ? 'The ' + f.family_last_name + ' Family' : (f.email || 'Family Record');
+    var unclaimedBadge = !f.consultant_code ? '<span class="unclaimed-badge">Unclaimed</span>' : '';
     var career = f.career || '—';
     var grade  = f.children ? getFirstGrade(f.children) : '—';
 
     return '<tr onclick="openPanel(\'' + i + '\')">' +
-      '<td class="td-name">' + escHtml(name) + '</td>' +
+      '<td class="td-name">' + escHtml(name) + unclaimedBadge + '</td>' +
       '<td>' + escHtml(career) + '</td>' +
       '<td><span class="score-pill ' + scoreClass + '">' + scoreVal + '</span></td>' +
       '<td>' + ccBadge + '</td>' +
@@ -1111,9 +1124,42 @@ function getFirstGrade(children) {
 }
 
 // ── DETAIL PANEL ───────────────────────────────────────────────────────────
-function openPanel(idx) {
+async function openPanel(idx) {
   var f = FILTERED[parseInt(idx)];
   if (!f) return;
+
+  // CONSULTANT-IDENTITY-002 Phase 2: unclaimed families (linked to this
+  // consultant's firm via a shared code, not yet claimed by anyone) get
+  // claimed the moment they're opened — "first to open, claims it," per
+  // Matt's resolution of the firm-code assignment mechanism.
+  if (!f.consultant_code) {
+    try {
+      var claimRes = await fetch(WORKER_API_BASE + '/claim-family', {
+        method: 'POST',
+        headers: {
+          'Content-Type':  'application/json',
+          'Authorization': 'Bearer ' + SESSION_TOKEN,
+        },
+        body: JSON.stringify({ family_id: f.id }),
+      });
+      var claimData = await claimRes.json();
+
+      if (claimData.claimed) {
+        f.consultant_code = claimData.family.consultant_code;
+        var allIdx = ALL_FAMILIES.findIndex(function(x) { return x.id === f.id; });
+        if (allIdx !== -1) ALL_FAMILIES[allIdx].consultant_code = f.consultant_code;
+        renderTable(FILTERED); // refresh so the "Unclaimed" badge disappears
+      } else {
+        alert('This family was just claimed by another consultant at your practice a moment ago.');
+        await loadFamilies(); // refresh — it's no longer visible to you
+        return;
+      }
+    } catch (err) {
+      console.error('[VECTOR Portal] Claim failed:', err);
+      alert('Could not claim this family right now. Please try again.');
+      return;
+    }
+  }
 
   var score     = parseInt(f.vector_score) || 0;
   var scoreClass = score >= 70 ? 'score-high' : score >= 50 ? 'score-mid' : 'score-low';
