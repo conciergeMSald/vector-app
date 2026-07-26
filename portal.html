@@ -899,7 +899,13 @@ async function doLogin() {
     showDashboard();
 
   } catch (err) {
-    errEl.textContent = 'Connection error. Please try again.';
+    // FIXED 2026-07-26: err was previously discarded entirely, making every
+    // fetch-level failure (bad SUPABASE_URL, CORS, DNS) indistinguishable
+    // from a real network outage. Logged here so the browser console shows
+    // the actual cause instead of requiring a guess.
+    console.error('[VECTOR Portal] Login fetch failed:', err);
+    console.error('[VECTOR Portal] SUPABASE_URL currently set to:', SUPABASE_URL);
+    errEl.textContent = 'Connection error. Please try again. (See browser console for details.)';
     errEl.style.display = 'block';
     btn.disabled = false;
     btn.textContent = 'Sign in';
