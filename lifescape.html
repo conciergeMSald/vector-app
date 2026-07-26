@@ -6984,6 +6984,19 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
     // accumulated by fireCall() during report generation. Worker writes
     // these to report_token_usage using the just-created family id.
     token_usage:       LS_STATE.tokenUsage                 || [],
+    // ── report_versions payload (added alongside the schema addition) ──
+    // report_data is the full assembled report (callA/B/C/E, essay,
+    // schools) built in the finalSnapshot IIFE above — this is what
+    // finally makes report_text's one-sentence fragment durable as a
+    // complete, renderable report. engine_version/report_source are
+    // required, not-null columns on report_versions by design — every
+    // insert must say which engine produced it and why. The Worker's
+    // handleSaveFamily needs a corresponding patch to actually insert
+    // these three fields into report_versions rather than only writing
+    // to families — that patch is server-side and out of scope here.
+    report_data:       stateSnapshot.reportData            || null,
+    engine_version:    stateSnapshot.engineVersion          || 'lifescape-v1.0',
+    report_source:     stateSnapshot.reportSource           || 'initial',
   };
 
   var headers = { 'Content-Type': 'application/json' };
@@ -7694,6 +7707,21 @@ async function submitLifescape() {
             // Build compiled school sheet and show print trigger
             buildCompiledSheet(profile, callDData, adjacentPicks, profileAdjacentPicks, radarPicks, LS_STATE._scenarioSchools || [], sizeAdjacentPicks);
             showPrintTrigger();
+
+            // ── Persist school section for report_versions ──────────────
+            // callDData/adjacentPicks/profileAdjacentPicks/radarPicks were
+            // local to this try block and never survived past it — meaning
+            // the actual school recommendations (arguably the report's most
+            // important section) were never available to persist. Captured
+            // here, alongside sizeAdjacentPicks (already stored above), so
+            // the report_data payload built at the end of submitLifescape()
+            // can include the real school list, not just LS_STATE.topUniversity.
+            LS_STATE.reportSchools = {
+              primary:          callDData || [],
+              adjacent:         adjacentPicks || [],
+              profileAdjacent:  profileAdjacentPicks || [],
+              underTheRadar:    radarPicks || [],
+            };
           } else {
             console.warn('[callD] parseCallD returned 0 schools — check raw response format');
           }
@@ -7719,12 +7747,43 @@ async function submitLifescape() {
     (function() {
       if (LS_STATE.topUniversity) {
         var finalBridgePath = (typeof findBridgePath === 'function') ? findBridgePath({zip: LS_STATE.zip}) : null;
+
+        // ── Full report_data payload for report_versions ─────────────────
+        // Previously only callAData.trajectory (one sentence) ever reached
+        // Supabase, via the families.report_text column. report_versions
+        // needs the actual assembled report — every call's parsed output,
+        // plus the school section captured above (LS_STATE.reportSchools)
+        // and sizeAdjacentPicks (already on LS_STATE). Each key here maps
+        // 1:1 to a real report section already rendered on-screen; nothing
+        // here is newly computed, just gathered into one durable object.
+        var reportData = {
+          callA: LS_STATE.callAResult   || null,   // lifePathDeclaration, quote, portrait, trajectory
+          callB: LS_STATE.callBResult   || null,   // activity, industries, combinations, college
+          callC: LS_STATE.callCResult   || null,   // geo, world, counselor
+          callE: LS_STATE.callEResult   || null,   // actIX (CC pathway), ccName
+          essay: LS_STATE.essayResult   || null,
+          schools: {
+            primary:          (LS_STATE.reportSchools && LS_STATE.reportSchools.primary)         || [],
+            adjacent:         (LS_STATE.reportSchools && LS_STATE.reportSchools.adjacent)         || [],
+            profileAdjacent:  (LS_STATE.reportSchools && LS_STATE.reportSchools.profileAdjacent)  || [],
+            underTheRadar:    (LS_STATE.reportSchools && LS_STATE.reportSchools.underTheRadar)    || [],
+            sizeAdjacent:     LS_STATE.sizeAdjacentPicks || [],
+          },
+          careerMetroMatch: LS_STATE.careerMetroMatch || null,
+        };
+
         var finalSnapshot = {
           profile:        profile,
           callAData:      LS_STATE.callAResult,
           topUniversity:  LS_STATE.topUniversity || null,
           reportText:     (LS_STATE.callAResult && LS_STATE.callAResult.trajectory) || null,
           ccPathwayShown: (LS_STATE.callEResult && LS_STATE.callEResult.actIX) ? 'Y' : (finalBridgePath ? 'Y' : 'N'),
+          reportData:     reportData,
+          // Bump this string when prompt structure, call sequence, or
+          // parsing changes meaningfully — lets report_versions distinguish
+          // "old report, current engine" from "current report, old engine".
+          engineVersion:  'lifescape-v1.0',
+          reportSource:   'initial',
         };
         saveToSupabase(finalSnapshot, true);
       }
