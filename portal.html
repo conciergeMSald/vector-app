@@ -717,18 +717,20 @@ body::before {
     <h1 class="login-title">Intelligence<br>for the advisor.</h1>
     <p class="login-sub">Your paired families. Their scores, trajectories, and reports — in one place.</p>
 
-    <div class="field">
-      <label for="loginEmail">Email address</label>
-      <input type="email" id="loginEmail" placeholder="you@yourpractice.com" autocomplete="email">
-    </div>
+    <form id="loginForm" onsubmit="event.preventDefault(); doLogin(); return false;">
+      <div class="field">
+        <label for="loginEmail">Email address</label>
+        <input type="email" id="loginEmail" name="email" placeholder="you@yourpractice.com" autocomplete="email" required>
+      </div>
 
-    <div class="field">
-      <label for="loginPassword">Password</label>
-      <input type="password" id="loginPassword" placeholder="••••••••••" autocomplete="current-password">
-    </div>
+      <div class="field">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" name="password" placeholder="••••••••••" autocomplete="current-password" required>
+      </div>
 
-    <button class="btn-primary" id="loginBtn" onclick="doLogin()">Sign in</button>
-    <div class="login-error" id="loginError"></div>
+      <button class="btn-primary" id="loginBtn" type="submit">Sign in</button>
+      <div class="login-error" id="loginError"></div>
+    </form>
 
     <div class="login-footer">
       Access is provisioned by A Better College Consultant. If you have not received credentials, contact <strong style="color:var(--muted)">matt@abettercollegeconsultant.com</strong>
@@ -846,12 +848,22 @@ var ACTIVE_FILTER    = 'all';
     SESSION_TOKEN = stored;
     showDashboard();
   }
-  // Enter key on password field
-  document.getElementById('loginPassword').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') doLogin();
-  });
+  // Enter on the email field moves focus to password instead of submitting
+  // early with only one field filled. preventDefault() is required here
+  // now that both fields live inside a real <form> (added 2026-07-26,
+  // Chromium password-forms guidance) — without it, Enter in this field
+  // would also trigger native form submission, double-firing doLogin()
+  // once from here and once from the form's own onsubmit.
+  //
+  // No equivalent listener needed on loginPassword anymore: pressing Enter
+  // there now correctly triggers the form's native submit event on its
+  // own, which calls doLogin() exactly once via onsubmit above. A manual
+  // keydown-triggered doLogin() call here would have double-fired it.
   document.getElementById('loginEmail').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') document.getElementById('loginPassword').focus();
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      document.getElementById('loginPassword').focus();
+    }
   });
 })();
 
