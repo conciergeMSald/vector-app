@@ -1163,7 +1163,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <button class="ls-btn ih-begin" id="ihBeginBtn" style="max-width:340px;margin:2rem auto 0;" onclick="goTo(0)">Begin a VECTOR Account</button>
 
     <div class="ih-tile-row">
-      <a href="/family.html" class="ih-tile">
+      <a href="/family.html" class="ih-tile" id="ihFamilyPortalLink"
+         onclick="return window.__handleFamilyPortalClick ? window.__handleFamilyPortalClick(event) : true;">
         <span class="ih-tile-title">Family</span>
         <span class="ih-tile-sub">Enter as a student or parent</span>
       </a>
@@ -2729,10 +2730,21 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     }
   }
 
-  async function runIntroSequence(){
-    var shortCircuited = await checkForExistingReport();
-    if (shortCircuited) return; // returning family/consultant — intro/intake never shown
+  // Triggered by clicking the existing "Family" tile (formerly a bare link
+  // straight to /family.html). preventDefault immediately since the check
+  // is async and we can't decide synchronously whether to navigate; if
+  // checkForExistingReport() didn't short-circuit (not signed in, or no
+  // family_accounts row at all — OQ-4), fall through to the original
+  // default navigation manually.
+  window.__handleFamilyPortalClick = function(event) {
+    event.preventDefault();
+    checkForExistingReport().then(function(shortCircuited) {
+      if (!shortCircuited) window.location.href = '/family.html';
+    });
+    return false;
+  };
 
+  async function runIntroSequence(){
     var compassWrap = document.getElementById('ihCompassWrap');
     var statement   = document.getElementById('ihStatement');
     var brandReveal = document.getElementById('ihBrandReveal');
