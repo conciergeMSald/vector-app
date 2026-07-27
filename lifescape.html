@@ -611,7 +611,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .tile-eq{
   font-style:italic;
   font-family:var(--serif);
-  font-size:16px;
+  font-size:18px;   /* was 16px — bumped for readability, confirmed 2026-07-27. Color (--tile-txt, #9A9588) held pending further notes. */
   letter-spacing:0.2px;
   text-transform:none;
   display:block;           /* single column — not wrapped in a flex grid */
@@ -7486,11 +7486,31 @@ async function submitLifescape() {
           const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0, _schoolCount), schoolContentBlockFull);
           console.log('[callD] firing Claude, prompt length:', callDPrompt.length);
 
-          const callDText = await fireCall(callDPrompt, 3000, 0, 55000, 'callD');
-          console.log('[callD] raw response length:', callDText?.length);
-          console.log('[callD] raw response preview:', callDText?.slice(0,200));
-
-          callDData = parseCallD(callDText);
+          // ── callD fetch+parse, isolated from the pipeline below ──────────
+          // Previously the outer try/catch (catch(callDErr) further down)
+          // wrapped this AND the entire backfill/GPA-gate/adjacent-picks/
+          // render pipeline that follows. A timeout here jumped straight
+          // past all of it — meaning the report's school section, and now
+          // also its persisted report_versions row, ended up completely
+          // empty on any callD timeout, even though backfillMissingSchools()
+          // below already knows how to construct real V5-sourced content
+          // for schools Claude didn't return. Narrowing the catch to just
+          // this fetch+parse step means a timeout can set callDData = []
+          // and fall through into that same existing pipeline unchanged —
+          // backfillMissingSchools() already computes "missing = sent minus
+          // returned," so an empty returned set means everything gets
+          // backfilled automatically. No new backfill logic required.
+          let callDText = null;
+          try {
+            callDText = await fireCall(callDPrompt, 3000, 0, 55000, 'callD');
+            console.log('[callD] raw response length:', callDText?.length);
+            console.log('[callD] raw response preview:', callDText?.slice(0,200));
+            callDData = parseCallD(callDText);
+          } catch (callDFetchErr) {
+            console.warn('[callD] fetch/parse failed — falling through to full V5 backfill for all',
+              matchedSchools.slice(0, _schoolCount).length, 'candidate school(s):', callDFetchErr.message);
+            callDData = []; // triggers full backfill below, not a silent empty section
+          }
 
           // callD is the last call in the report-generation sequence —
           // every earlier call (callA/B/C/E/essayTopics) has already
