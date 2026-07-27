@@ -6937,7 +6937,27 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
   var callA   = stateSnapshot.callAData || {};
   var hasSupabaseSession = !!(window.sbSession && window.sbSession.user);
 
+  // ── FAMILY-PORTAL-001 Addendum A4.1 — resolve the real sign-in email ────
+  // Never sent before this patch, despite being available client-side —
+  // confirmed by captureToAirtable() (a separate save path) already
+  // reading window.sbSession.user.email, while this function read neither
+  // identity system's email at all. Clerk is the current auth system,
+  // checked first; the legacy Supabase Auth session (window.sbSession —
+  // see its own "pre-Phase-3 users only" comment above) is the fallback,
+  // for anyone who signed up before the Clerk migration. This is the
+  // single fix Addendum A identifies as the actual gap: email is the one
+  // identity fact that survived that migration unchanged, and is meant to
+  // become the canonical anchor tying a family's full history together —
+  // not clerk_user_id or supabase_user_id, both of which are opaque and
+  // provider-specific.
+  var resolvedEmail =
+    (window.Clerk && window.Clerk.user && window.Clerk.user.primaryEmailAddress
+      && window.Clerk.user.primaryEmailAddress.emailAddress) ||
+    (hasSupabaseSession && window.sbSession.user.email) ||
+    null;
+
   var payload = {
+    email:             resolvedEmail                     || null,
     student_name:      LS_STATE.name                     || null,
     zip:               LS_STATE.zip                      || null,
     gpa:               LS_STATE.gpa                      || null,
