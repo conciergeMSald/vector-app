@@ -2604,33 +2604,25 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
   async function runIntroSequence(){
     var compassWrap = document.getElementById('ihCompassWrap');
-    var compassSvg  = document.getElementById('ihCompassSvg');
     var statement   = document.getElementById('ihStatement');
     var brandReveal = document.getElementById('ihBrandReveal');
     var beginBtn    = document.getElementById('ihBeginBtn');
     var tileRows    = document.querySelectorAll('.ih-tile-row');
-    var ring1 = document.getElementById('ihRing1');
-    var ring2 = document.getElementById('ihRing2');
-    var ring3 = document.getElementById('ihRing3');
     if (!compassWrap) return; // screen-home not present on this build
 
+    // ── Compass + signal stages removed (2026-07-27) ──────────────────────
+    // The Framer intro page already shows its own compass before this file
+    // ever loads, making this one a duplicate. Sequence now goes straight
+    // from page load into the statement stage — same internal timing as
+    // before (3200ms holds, 1200ms gaps, fade durations all unchanged),
+    // just starting ~400ms in instead of ~7 seconds in. Reveal stage below
+    // is untouched either way. Compass/ring DOM and CSS (.ih-compass-wrap,
+    // .ih-compass-svg, ihCompassSpin, #ihRing1-3, playTone()) intentionally
+    // left in place, just no longer called from here — a scoped JS-only
+    // change, not a full markup/CSS teardown. Safe to remove later as a
+    // separate cleanup pass if wanted.
+
     await pause(400);
-    compassWrap.classList.add('show');
-    await pause(4200);
-    compassSvg.classList.add('settle');
-
-    playTone();
-    ring1.classList.add('fire');
-    await pause(300);
-    ring2.classList.add('fire');
-    await pause(300);
-    ring3.classList.add('fire');
-
-    await pause(400);
-    compassWrap.classList.remove('show');
-    compassWrap.classList.add('hide');
-
-    await pause(1400);
     fadeIn(statement, STATEMENTS[0]);
     await pause(3200);
     fadeOut(statement);
