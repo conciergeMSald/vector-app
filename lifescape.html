@@ -2602,7 +2602,137 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     "We'll discover\nthe rest together."
   ];
 
+  // ── FAMILY-PORTAL-001 Step 2 — session-check-and-short-circuit ─────────
+  // Reuses renderFullReport()/renderCounselorView()/renderQuickRead()/
+  // buildCompiledSheet() unchanged — this is a new *caller* of those
+  // functions, not a new rendering path. Same .screen/.active pattern the
+  // live flow already uses (document.getElementById('screen-report').
+  // classList.add('active')) to switch away from intake, reused as-is.
+  //
+  // waitForClerkReady() exists because Clerk becomes ready via the
+  // window 'load' event, which fires AFTER DOMContentLoaded — the event
+  // runIntroSequence() itself waits for. Without this, the check would
+  // race Clerk's own load and nearly always lose, so it polls briefly
+  // (3s ceiling) rather than assuming readiness.
+  //
+  // Deliberately NOT polling for report readiness (Section 7 Step 3 /
+  // CTO review: "no polling, no websocket") — 'not_generated_yet' shows a
+  // static message with a manual refresh, once, here.
+  function waitForClerkReady(maxWaitMs) {
+    return new Promise(function(resolve) {
+      var waited = 0;
+      var iv = setInterval(function() {
+        waited += 100;
+        if (window.__clerkReady || waited >= maxWaitMs) {
+          clearInterval(iv);
+          resolve(window.__clerkReady === true);
+        }
+      }, 100);
+    });
+  }
+
+  function showPortalStatusMessage(html) {
+    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+    var home = document.getElementById('screen-home');
+    if (home) {
+      home.classList.add('active');
+      home.innerHTML = '<div style="max-width:520px;margin:20vh auto 0;text-align:center;' +
+        'font-family:var(--serif);font-size:20px;line-height:1.6;color:var(--ink2);">' + html + '</div>';
+    }
+  }
+
+  // Renders a fetched report_versions row through the exact same functions
+  // the live flow uses, then switches to #screen-report the same way the
+  // live flow does. Returns nothing — this is a terminal render, not
+  // something the caller needs to react further to.
+  function renderFetchedReport(reportData) {
+    var profile = reportData.profile || {};
+    // Mirror what the live flow sets on LS_STATE after each call, so any
+    // downstream code reading LS_STATE.* (print, navigation) behaves the
+    // same whether the report was just generated or fetched from history.
+    LS_STATE.callAResult   = reportData.callA   || null;
+    LS_STATE.callBResult   = reportData.callB   || null;
+    LS_STATE.callCResult   = reportData.callC   || null;
+    LS_STATE.callEResult   = reportData.callE   || null;
+    LS_STATE.essayResult   = reportData.essay   || null;
+    LS_STATE.careerMetroMatch = reportData.careerMetroMatch || null;
+    var schools = reportData.schools || {};
+    LS_STATE.reportSchools = {
+      primary:         schools.primary        || [],
+      adjacent:        schools.adjacent       || [],
+      profileAdjacent: schools.profileAdjacent|| [],
+      underTheRadar:   schools.underTheRadar  || [],
+    };
+    LS_STATE.sizeAdjacentPicks = schools.sizeAdjacent || [];
+    if (schools.primary && schools.primary[0]) LS_STATE.topUniversity = schools.primary[0].name || null;
+
+    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+    renderQuickRead(profile, reportData.callA || {});
+    document.getElementById('screen-report').classList.add('active');
+    window.scrollTo(0, 0);
+
+    renderFullReport(profile, reportData.callA, reportData.callB, reportData.callC, reportData.essay);
+    if (window.__familyReportIdentity === 'consultant') {
+      renderCounselorView(profile, reportData.callA, reportData.callB, reportData.callC, reportData.essay, schools.primary || []);
+    }
+    if (schools.primary && schools.primary.length > 0 && typeof buildCompiledSheet === 'function') {
+      buildCompiledSheet(profile, schools.primary, schools.adjacent || [], schools.profileAdjacent || [],
+        schools.underTheRadar || [], schools.scenario || [], schools.sizeAdjacent || []);
+      if (typeof showPrintTrigger === 'function') showPrintTrigger();
+    }
+  }
+
+  async function checkForExistingReport(studentId) {
+    var ready = await waitForClerkReady(3000);
+    if (!ready || !window.Clerk || !window.Clerk.user || !window.Clerk.session) {
+      return false; // not signed in, or Clerk failed to load — normal intake proceeds (OQ-4)
+    }
+    try {
+      var token = await window.Clerk.session.getToken();
+      var url = 'https://api.abettercollegeconsultant.com/family-report' +
+        (studentId ? ('?student_id=' + encodeURIComponent(studentId)) : '');
+      var res = await fetch(url, { headers: { 'Authorization': 'Bearer ' + token } });
+      if (!res.ok) return false; // no family_accounts row at all → normal intake (OQ-4)
+      var data = await res.json();
+
+      if (data.status === 'ok' && Array.isArray(data.reports) && data.reports.length > 0) {
+        window.__familyReportIdentity = data.identity || 'family';
+        renderFetchedReport(data.reports[0].report_data || {});
+        return true;
+      }
+      if (data.status === 'student_selection_required') {
+        var buttons = (data.students || []).map(function(s) {
+          var label = (s.student_first_name || '') + (s.student_last_name ? (' ' + s.student_last_name) : '');
+          return '<button onclick="window.__selectStudentAndReload(\'' + s.id + '\')" ' +
+            'style="display:block;width:100%;margin:12px 0;padding:14px;font-size:17px;' +
+            'font-family:var(--serif);background:var(--tile-bg);border:0.5px solid var(--tile-bdr);' +
+            'cursor:pointer;">' + (label.trim() || 'Student') + '</button>';
+        }).join('');
+        window.__selectStudentAndReload = function(id) { checkForExistingReport(id); };
+        showPortalStatusMessage('Which student would you like to view?<br><br>' + buttons);
+        return true;
+      }
+      if (data.status === 'subscription_required') {
+        showPortalStatusMessage('Your subscription is currently inactive.<br>Reactivate your plan to view past and current Lifescape reports.');
+        return true;
+      }
+      if (data.status === 'not_generated_yet') {
+        showPortalStatusMessage('Your Lifescape is being prepared.<br><br>' +
+          '<button onclick="location.reload()" style="margin-top:12px;padding:12px 24px;' +
+          'font-family:var(--serif);font-size:16px;background:var(--tile-bg);border:0.5px solid var(--tile-bdr);cursor:pointer;">Check again</button>');
+        return true;
+      }
+      return false; // unrecognized status → fall through to normal intake rather than block silently
+    } catch (err) {
+      console.warn('[VECTOR Lifescape] family-report check failed, proceeding with normal intake:', err.message);
+      return false;
+    }
+  }
+
   async function runIntroSequence(){
+    var shortCircuited = await checkForExistingReport();
+    if (shortCircuited) return; // returning family/consultant — intro/intake never shown
+
     var compassWrap = document.getElementById('ihCompassWrap');
     var statement   = document.getElementById('ihStatement');
     var brandReveal = document.getElementById('ihBrandReveal');
@@ -7789,6 +7919,14 @@ async function submitLifescape() {
         // 1:1 to a real report section already rendered on-screen; nothing
         // here is newly computed, just gathered into one durable object.
         var reportData = {
+          // profile is required for Step 2 (portal short-circuit) to
+          // actually work — renderFullReport()/renderCounselorView()/
+          // buildCompiledSheet() all read directly from `profile` (name,
+          // gpa, zip, worlds_chosen, riasec, naicsSectors, and more for
+          // the counselor view). Missing until now — reportData was built
+          // before Step 2 existed and only ever captured the call results,
+          // not the profile object those renders also depend on.
+          profile: profile,
           callA: LS_STATE.callAResult   || null,   // lifePathDeclaration, quote, portrait, trajectory
           callB: LS_STATE.callBResult   || null,   // activity, industries, combinations, college
           callC: LS_STATE.callCResult   || null,   // geo, world, counselor
@@ -7800,6 +7938,9 @@ async function submitLifescape() {
             profileAdjacent:  (LS_STATE.reportSchools && LS_STATE.reportSchools.profileAdjacent)  || [],
             underTheRadar:    (LS_STATE.reportSchools && LS_STATE.reportSchools.underTheRadar)    || [],
             sizeAdjacent:     LS_STATE.sizeAdjacentPicks || [],
+            // Also missing until now — buildCompiledSheet()'s scenarioSchools
+            // param, needed to fully re-render the schools tab from a fetch.
+            scenario:         LS_STATE._scenarioSchools  || [],
           },
           careerMetroMatch: LS_STATE.careerMetroMatch || null,
         };
