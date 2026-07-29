@@ -4,6 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VECTOR — A Better College Consultant</title>
+
+<!-- Meta Pixel Code — base PageView only. Advanced Matching (hashed email
+     + ZIP) is added later via a second fbq('init', ...) call once that
+     data is actually available — see fireMetaAdvancedMatch(), called from
+     validateZIPAndGoTo() at Screen 4, not at account creation, since ZIP
+     isn't collected until then. -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1567792854753910');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1567792854753910&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -3851,10 +3873,60 @@ function validateZIPAndGoTo(n) {
   if(zip.length < 5) { showHint('s4-hint','Enter a 5-digit ZIP code'); return; }
   LS_STATE.zip = zip;
   clearHint('s4-hint');
+  fireMetaAdvancedMatch(zip);
   // Screen 45 (trajectory questions) is student-only.
   // Parent path skips directly to screen 5.
   if(n === 45 && LS_STATE.voice === 'parent') { goTo(5); return; }
   goTo(n);
+}
+
+// ── META ADVANCED MATCHING ──────────────────────────────────────────────
+// Per Meta's spec: normalize (trim + lowercase) then SHA-256 hash before
+// ever sending. Never send raw PII to fbq.
+async function sha256Hex(str) {
+  var normalized = (str || '').toString().trim().toLowerCase();
+  if (!normalized) return null;
+  var enc = new TextEncoder().encode(normalized);
+  var buf = await crypto.subtle.digest('SHA-256', enc);
+  return Array.prototype.map.call(new Uint8Array(buf), function(b) {
+    return b.toString(16).padStart(2, '0');
+  }).join('');
+}
+
+// Fired from validateZIPAndGoTo() rather than at account creation (Screen
+// 0) — email is all Clerk provides at signup, but ZIP isn't collected
+// until Screen 4, so the conversion is deliberately deferred here to carry
+// both em + zp together in one Advanced Matching update. Guarded to fire
+// once per session; a returning family retaking Screen 4 (rare — most
+// return through checkForExistingReport() and never see this screen
+// again) won't double-count.
+async function fireMetaAdvancedMatch(zip) {
+  if (window.__metaAMFired) return;
+  if (typeof fbq === 'undefined') return; // Pixel script blocked/failed to load — fail silent, don't break intake
+  window.__metaAMFired = true;
+
+  try {
+    var email = (window.Clerk && window.Clerk.user && window.Clerk.user.primaryEmailAddress)
+      ? window.Clerk.user.primaryEmailAddress.emailAddress
+      : null;
+
+    var hashedEm = email ? await sha256Hex(email) : null;
+    var hashedZp = zip   ? await sha256Hex(zip)   : null;
+
+    var matchParams = {};
+    if (hashedEm) matchParams.em = hashedEm;
+    if (hashedZp) matchParams.zp = hashedZp;
+
+    if (Object.keys(matchParams).length > 0) {
+      // Re-init with matching params — Meta's documented pattern for
+      // adding Advanced Matching data after the initial base PageView init.
+      fbq('init', '1567792854753910', matchParams);
+    }
+
+    fbq('track', 'CompleteRegistration');
+  } catch (err) {
+    console.warn('[VECTOR Lifescape] Meta Advanced Matching fire failed (non-blocking):', err.message);
+  }
 }
 
 
