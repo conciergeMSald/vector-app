@@ -6,7 +6,7 @@
 <title>VECTOR — Consultant Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 /* ── DESIGN TOKENS — ENTERPRISE ──────────────────────────────────────── */
@@ -57,7 +57,8 @@ body::before {
 .screen.active { display: flex; }
 
 /* ── LOGIN SCREEN ─────────────────────────────────────────────────────── */
-#screen-login {
+#screen-login,
+#screen-org-setup {
   align-items: center;
   justify-content: center;
   padding: 2rem;
@@ -457,18 +458,6 @@ body::before {
   background: none;
 }
 
-.unclaimed-badge {
-  font-family: var(--mono);
-  font-size: 8px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 0.2rem 0.5rem;
-  border: 0.5px solid var(--green);
-  color: var(--green);
-  background: rgba(74,124,89,0.08);
-  margin-left: 0.5rem;
-}
-
 /* ── FAMILY DETAIL PANEL ──────────────────────────────────────────────── */
 .detail-overlay {
   display: none;
@@ -713,39 +702,42 @@ body::before {
 <!-- ── LOGIN SCREEN ──────────────────────────────────────────────────── -->
 <div class="screen active" id="screen-login">
   <div class="login-wrap">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" style="width:360px;max-width:100%;height:auto;border-radius:4px;display:block;margin-bottom:1.5rem;" role="img" aria-label="VECTOR — A Better College Consultant">
-      <rect width="1200" height="400" fill="#0D0D0B"/>
-      <text font-family="'Cormorant Garamond', 'Cormorant', Georgia, serif"
-        font-weight="300" font-size="120px" letter-spacing="18px"
-        fill="#FDF8F0"
-        x="600" y="257.6"
-        text-anchor="middle">VECTOR</text>
-      <line x1="700.15" y1="231.24" x2="721.49" y2="172.60"
-        stroke="#C8A97A" stroke-width="1.8" stroke-linecap="round" opacity="1"/>
-      <polygon points="721.49,172.60 717.16,176.39 722.37,178.29"
-        fill="#C8A97A" opacity="1"/>
-    </svg>
-    <div class="login-mark">Consultant Portal</div>
+    <div class="login-mark">Vector · Consultant Portal</div>
     <h1 class="login-title">Intelligence<br>for the advisor.</h1>
     <p class="login-sub">Your paired families. Their scores, trajectories, and reports — in one place.</p>
 
-    <form id="loginForm" onsubmit="event.preventDefault(); doLogin(); return false;">
-      <div class="field">
-        <label for="loginEmail">Email address</label>
-        <input type="email" id="loginEmail" name="email" placeholder="you@yourpractice.com" autocomplete="email" required>
-      </div>
-
-      <div class="field">
-        <label for="loginPassword">Password</label>
-        <input type="password" id="loginPassword" name="password" placeholder="••••••••••" autocomplete="current-password" required>
-      </div>
-
-      <button class="btn-primary" id="loginBtn" type="submit">Sign in</button>
-      <div class="login-error" id="loginError"></div>
-    </form>
+    <!-- CONSULTANT-IDENTITY-002 — Clerk sign-in, replacing the old
+         Supabase-password form. Mirrors the family flow's mountSignUp
+         pattern in lifescape.html. -->
+    <div id="consultantClerkSignInMount"></div>
+    <div class="login-error" id="loginError"></div>
 
     <div class="login-footer">
       Access is provisioned by A Better College Consultant. If you have not received credentials, contact <strong style="color:var(--muted)">matt@abettercollegeconsultant.com</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ── ORG SETUP SCREEN ─────────────────────────────────────────────────
+     Shown when a signed-in Clerk consultant has no Organization on their
+     token yet (GET /consultant-me returns needs_org_setup: true). Covers
+     two cases: (1) a solo/first consultant creating their own practice,
+     via Clerk's prebuilt CreateOrganization component, and (2) a fallback
+     message for a consultant expecting to join a colleague's existing
+     practice — normally Clerk's own invitation-acceptance flow attaches
+     them to that org before they'd ever land here, but this handles the
+     stale-link / signed-up-cold edge case rather than leaving them stuck
+     with no explanation. ────────────────────────────────────────────── -->
+<div class="screen" id="screen-org-setup">
+  <div class="login-wrap" style="max-width:460px;">
+    <div class="login-mark">Vector · Consultant Portal</div>
+    <h1 class="login-title">Set up<br>your practice.</h1>
+    <p class="login-sub">Every VECTOR practice runs as an Organization — even a solo practice. This takes a moment and only needs to happen once.</p>
+
+    <div id="consultantCreateOrgMount"></div>
+
+    <div class="login-footer">
+      Expecting to join a colleague's practice instead? Ask them to send you an invitation from their VECTOR dashboard — accepting it will bring you here with your practice already set up, no need to create a new one.
     </div>
   </div>
 </div>
@@ -825,170 +817,138 @@ body::before {
   </div>
 </div>
 
+<!-- ── Clerk Auth (Consultants) — CONSULTANT-IDENTITY-002 ─────────────────────
+     Replaces the old plain-Supabase-Auth password login. Same Clerk
+     instance/publishable key as the family flow in lifescape.html (Clerk
+     Organizations enabled on that one instance, not a separate project) —
+     the Worker's verifyClerkJWTWithOrg() distinguishes a consultant token
+     from a family token purely by whether org_id is present in the claims.
+
+     Same two-script requirement as lifescape.html: @clerk/ui for the
+     prebuilt components (mountSignIn, mountCreateOrganization), clerk-js
+     for the core SDK — loaded separately as of Clerk's current
+     architecture. Both from jsdelivr per the same finding already recorded
+     in lifescape.html (the custom-domain path 503s/hangs for these
+     bundles; jsdelivr reliably serves them with CORS headers). -->
+<script
+  defer
+  crossorigin="anonymous"
+  src="https://cdn.jsdelivr.net/npm/@clerk/ui@1/dist/ui.browser.js"
+></script>
+<script
+  defer
+  crossorigin="anonymous"
+  data-clerk-publishable-key="pk_live_Y2xlcmsuYWJldHRlcmNvbGxlZ2Vjb25zdWx0YW50LmNvbSQ"
+  src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@6/dist/clerk.browser.js"
+></script>
 <script>
 'use strict';
 
 // ── CONFIGURATION ──────────────────────────────────────────────────────────
-// SUPABASE_URL / SUPABASE_ANON_KEY: used ONLY by doLogin() below, for native
-// Supabase Auth password-grant sign-in. Replace with your actual Supabase
-// project URL and anon key.
-const SUPABASE_URL      = 'https://pbtyanwkmbrcumwunxrv.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_1-441ulmvTM1kayxgo-C2g_ywYOg1Tc';
-
-// WORKER_API_BASE: added 2026-07-26 per CONSULTANT-PORTAL-001. All data
-// loading (consultant profile, family list) now routes through worker.js
-// instead of querying Supabase directly with the anon key. worker.js's
-// /consultant-me and /consultant-families already enforce the correct
-// consultant->family ownership check server-side (resolveConsultantAndFamily
-// / consultant_code matching) using a trusted service-role key — this
-// closes the RLS-bypass risk the direct-Supabase version had, without
-// requiring any new Row Level Security policies to be designed or tested.
-const WORKER_API_BASE = 'https://api.abettercollegeconsultant.com';
+const API_BASE = 'https://api.abettercollegeconsultant.com';
 
 // ── STATE ──────────────────────────────────────────────────────────────────
-var SESSION_TOKEN    = null;
 var CONSULTANT_DATA  = null;
 var ALL_FAMILIES     = [];
 var FILTERED         = [];
 var ACTIVE_FILTER    = 'all';
+var __clerkReady     = false;
 
 // ── INIT ───────────────────────────────────────────────────────────────────
-(function() {
-  // Check for existing session in localStorage
-  var stored = localStorage.getItem('vx_consultant_token');
-  if (stored) {
-    SESSION_TOKEN = stored;
-    showDashboard();
-  }
-  // Enter on the email field moves focus to password instead of submitting
-  // early with only one field filled. preventDefault() is required here
-  // now that both fields live inside a real <form> (added 2026-07-26,
-  // Chromium password-forms guidance) — without it, Enter in this field
-  // would also trigger native form submission, double-firing doLogin()
-  // once from here and once from the form's own onsubmit.
-  //
-  // No equivalent listener needed on loginPassword anymore: pressing Enter
-  // there now correctly triggers the form's native submit event on its
-  // own, which calls doLogin() exactly once via onsubmit above. A manual
-  // keydown-triggered doLogin() call here would have double-fired it.
-  document.getElementById('loginEmail').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      document.getElementById('loginPassword').focus();
+window.addEventListener('load', function() {
+  if (typeof window.Clerk === 'undefined') {
+    console.warn('[VECTOR Portal] Clerk script did not load — consultant portal unavailable this session.');
+    var errEl = document.getElementById('loginError');
+    if (errEl) {
+      errEl.textContent = 'Could not load sign-in. Please refresh or try again shortly.';
+      errEl.style.display = 'block';
     }
-  });
-})();
-
-// ── LOGIN ──────────────────────────────────────────────────────────────────
-async function doLogin() {
-  var email = document.getElementById('loginEmail').value.trim();
-  var pass  = document.getElementById('loginPassword').value;
-  var errEl = document.getElementById('loginError');
-  var btn   = document.getElementById('loginBtn');
-
-  errEl.style.display = 'none';
-
-  if (!email || !pass) {
-    errEl.textContent = 'Please enter your email and password.';
-    errEl.style.display = 'block';
     return;
   }
-
-  btn.disabled = true;
-  btn.textContent = 'Signing in…';
-
-  try {
-    var res = await fetch(SUPABASE_URL + '/auth/v1/token?grant_type=password', {
-      method: 'POST',
-      headers: {
-        'apikey':        SUPABASE_ANON_KEY,
-        'Content-Type':  'application/json',
-      },
-      body: JSON.stringify({ email: email, password: pass }),
+  // Same ui.ClerkUI requirement as lifescape.html — without it, mountSignIn/
+  // mountCreateOrganization fail with "Clerk was not loaded with Ui components".
+  window.Clerk.load({ ui: { ClerkUI: window.__internal_ClerkUICtor } }).then(function() {
+    __clerkReady = true;
+    if (window.Clerk.user && window.Clerk.session) {
+      onConsultantSignedIn();
+    } else {
+      mountConsultantSignIn();
+    }
+    // Catches both a fresh sign-in on screen-login and an org becoming
+    // active after CreateOrganization completes on screen-org-setup —
+    // re-running the same resolution step either way rather than two
+    // separate listeners.
+    window.Clerk.addListener(function(payload) {
+      if (payload.user && payload.session) onConsultantSignedIn();
     });
+  }).catch(function(err) {
+    console.error('[VECTOR Portal] Clerk load error:', err);
+  });
+});
 
+function mountConsultantSignIn() {
+  var mount = document.getElementById('consultantClerkSignInMount');
+  if (!mount || !window.Clerk) return;
+  window.Clerk.mountSignIn(mount, {
+    afterSignInUrl: window.location.href,
+  });
+}
+
+// ── RESOLVE IDENTITY (replaces old doLogin + loadConsultantProfile) ────────
+async function onConsultantSignedIn() {
+  try {
+    var token = await window.Clerk.session.getToken();
+    var res   = await fetch(API_BASE + '/consultant-me', {
+      headers: { 'Authorization': 'Bearer ' + token },
+    });
+    if (res.status === 401) { doSignOut(); return; }
     var data = await res.json();
 
-    if (!res.ok || !data.access_token) {
-      // FIXED 2026-07-26: this path (request succeeded, Supabase rejected
-      // the credentials/request) previously logged nothing to console —
-      // only the network-exception catch block below did. Logging the full
-      // response here closes that gap.
-      console.error('[VECTOR Portal] Supabase rejected login. Status:', res.status, 'Response:', data);
-      var msg = data.error_description || data.msg || 'Invalid email or password.';
-      errEl.textContent = msg;
-      errEl.style.display = 'block';
-      btn.disabled = false;
-      btn.textContent = 'Sign in';
+    if (data && data.needs_org_setup) {
+      showOrgSetupScreen();
       return;
     }
 
-    SESSION_TOKEN = data.access_token;
-    localStorage.setItem('vx_consultant_token', SESSION_TOKEN);
-    showDashboard();
+    CONSULTANT_DATA = data;
+    document.getElementById('navName').textContent =
+      (CONSULTANT_DATA.first_name || '') + ' ' + (CONSULTANT_DATA.last_name || '');
+    document.getElementById('statCode').textContent =
+      CONSULTANT_DATA.access_code || '—';
 
+    showDashboard();
+    await loadFamilies();
   } catch (err) {
-    // FIXED 2026-07-26: err was previously discarded entirely, making every
-    // fetch-level failure (bad SUPABASE_URL, CORS, DNS) indistinguishable
-    // from a real network outage. Logged here so the browser console shows
-    // the actual cause instead of requiring a guess.
-    console.error('[VECTOR Portal] Login fetch failed:', err);
-    console.error('[VECTOR Portal] SUPABASE_URL currently set to:', SUPABASE_URL);
-    errEl.textContent = 'Connection error. Please try again. (See browser console for details.)';
-    errEl.style.display = 'block';
-    btn.disabled = false;
-    btn.textContent = 'Sign in';
+    console.warn('[VECTOR Portal] Identity resolution error:', err);
+  }
+}
+
+function showOrgSetupScreen() {
+  document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+  document.getElementById('screen-org-setup').classList.add('active');
+  var mount = document.getElementById('consultantCreateOrgMount');
+  if (mount && window.Clerk && !mount.hasChildNodes()) {
+    window.Clerk.mountCreateOrganization(mount, {
+      afterCreateOrganizationUrl: window.location.href,
+    });
   }
 }
 
 // ── SIGN OUT ───────────────────────────────────────────────────────────────
 function doSignOut() {
-  localStorage.removeItem('vx_consultant_token');
-  SESSION_TOKEN   = null;
+  if (window.Clerk) window.Clerk.signOut();
   CONSULTANT_DATA = null;
   ALL_FAMILIES    = [];
-  document.getElementById('screen-dashboard').classList.remove('active');
+  document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
   document.getElementById('screen-login').classList.add('active');
-  document.getElementById('loginBtn').disabled = false;
-  document.getElementById('loginBtn').textContent = 'Sign in';
-  document.getElementById('loginEmail').value = '';
-  document.getElementById('loginPassword').value = '';
+  var mount = document.getElementById('consultantClerkSignInMount');
+  if (mount) mount.innerHTML = '';
+  mountConsultantSignIn();
 }
 
 // ── SHOW DASHBOARD ─────────────────────────────────────────────────────────
-async function showDashboard() {
-  document.getElementById('screen-login').classList.remove('active');
+function showDashboard() {
+  document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
   document.getElementById('screen-dashboard').classList.add('active');
-  await loadConsultantProfile();
-  await loadFamilies();
-}
-
-// ── LOAD CONSULTANT PROFILE ────────────────────────────────────────────────
-async function loadConsultantProfile() {
-  try {
-    // Routed through worker.js (CONSULTANT-PORTAL-001) — server-side
-    // authorized via verifySupabaseJWT(), not the browser-side anon key.
-    var res = await fetch(WORKER_API_BASE + '/consultant-me', {
-      headers: {
-        'Authorization': 'Bearer ' + SESSION_TOKEN,
-      },
-    });
-
-    if (res.status === 401) { doSignOut(); return; }
-
-    var data = await res.json();
-    // /consultant-me returns the consultant row directly (not wrapped in an
-    // array the way the old raw Supabase REST list-query response was).
-    if (data && data.id) {
-      CONSULTANT_DATA = data;
-      document.getElementById('navName').textContent =
-        (CONSULTANT_DATA.first_name || '') + ' ' + (CONSULTANT_DATA.last_name || '');
-      document.getElementById('statCode').textContent =
-        CONSULTANT_DATA.access_code || '—';
-    }
-  } catch (err) {
-    console.warn('[VECTOR Portal] Profile load error:', err);
-  }
 }
 
 // ── LOAD FAMILIES ──────────────────────────────────────────────────────────
@@ -996,24 +956,14 @@ async function loadFamilies() {
   var wrap = document.getElementById('familyTableWrap');
 
   try {
-    // Routed through worker.js (CONSULTANT-PORTAL-001) — /consultant-families
-    // already filters to this consultant's own families server-side via
-    // resolveConsultantAndFamily()'s consultant_code match, using the
-    // Worker's trusted service-role key. No client-side filter needed or
-    // trusted anymore — the old version's consultant_code=eq. query param
-    // was a client-side-only restriction that RLS would have had to enforce
-    // independently; this version can't be bypassed the same way.
-    var res = await fetch(WORKER_API_BASE + '/consultant-families', {
-      headers: {
-        'Authorization': 'Bearer ' + SESSION_TOKEN,
-      },
+    var token = await window.Clerk.session.getToken();
+    var res   = await fetch(API_BASE + '/consultant-families', {
+      headers: { 'Authorization': 'Bearer ' + token },
     });
 
     if (res.status === 401) { doSignOut(); return; }
 
     var data = await res.json();
-    // /consultant-families returns { families: [...] }, not a raw array
-    // the way the old direct Supabase REST list-query response was.
     ALL_FAMILIES = (data && Array.isArray(data.families)) ? data.families : [];
 
     renderStats();
@@ -1093,12 +1043,11 @@ function renderTable(families) {
       ? new Date(f.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
       : '—';
     var name = f.family_last_name ? 'The ' + f.family_last_name + ' Family' : (f.email || 'Family Record');
-    var unclaimedBadge = !f.consultant_code ? '<span class="unclaimed-badge">Unclaimed</span>' : '';
     var career = f.career || '—';
     var grade  = f.children ? getFirstGrade(f.children) : '—';
 
     return '<tr onclick="openPanel(\'' + i + '\')">' +
-      '<td class="td-name">' + escHtml(name) + unclaimedBadge + '</td>' +
+      '<td class="td-name">' + escHtml(name) + '</td>' +
       '<td>' + escHtml(career) + '</td>' +
       '<td><span class="score-pill ' + scoreClass + '">' + scoreVal + '</span></td>' +
       '<td>' + ccBadge + '</td>' +
@@ -1124,42 +1073,9 @@ function getFirstGrade(children) {
 }
 
 // ── DETAIL PANEL ───────────────────────────────────────────────────────────
-async function openPanel(idx) {
+function openPanel(idx) {
   var f = FILTERED[parseInt(idx)];
   if (!f) return;
-
-  // CONSULTANT-IDENTITY-002 Phase 2: unclaimed families (linked to this
-  // consultant's firm via a shared code, not yet claimed by anyone) get
-  // claimed the moment they're opened — "first to open, claims it," per
-  // Matt's resolution of the firm-code assignment mechanism.
-  if (!f.consultant_code) {
-    try {
-      var claimRes = await fetch(WORKER_API_BASE + '/claim-family', {
-        method: 'POST',
-        headers: {
-          'Content-Type':  'application/json',
-          'Authorization': 'Bearer ' + SESSION_TOKEN,
-        },
-        body: JSON.stringify({ family_id: f.id }),
-      });
-      var claimData = await claimRes.json();
-
-      if (claimData.claimed) {
-        f.consultant_code = claimData.family.consultant_code;
-        var allIdx = ALL_FAMILIES.findIndex(function(x) { return x.id === f.id; });
-        if (allIdx !== -1) ALL_FAMILIES[allIdx].consultant_code = f.consultant_code;
-        renderTable(FILTERED); // refresh so the "Unclaimed" badge disappears
-      } else {
-        alert('This family was just claimed by another consultant at your practice a moment ago.');
-        await loadFamilies(); // refresh — it's no longer visible to you
-        return;
-      }
-    } catch (err) {
-      console.error('[VECTOR Portal] Claim failed:', err);
-      alert('Could not claim this family right now. Please try again.');
-      return;
-    }
-  }
 
   var score     = parseInt(f.vector_score) || 0;
   var scoreClass = score >= 70 ? 'score-high' : score >= 50 ? 'score-mid' : 'score-low';
