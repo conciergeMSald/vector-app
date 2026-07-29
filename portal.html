@@ -1109,6 +1109,19 @@ function openPanel(idx) {
       '</div>'
     : '';
 
+  // FAMILY-PORTAL-001 item 1 — opens the real Lifescape report render
+  // (Tab 1–4, history picker, everything) rather than the flat report_text
+  // preview above. Same Clerk instance/domain as this portal, so the
+  // consultant stays signed in as themselves on the other side; the Worker
+  // resolves family_account_id via their existing consultant auth branch.
+  // No fallback built for rows without family_account_id (pre-self-serve
+  // families) — not a live concern yet, so the button simply doesn't
+  // render for those rows.
+  var viewReportHtml = f.family_account_id
+    ? '<a class="btn-primary" style="display:inline-block;text-decoration:none;margin-top:1.5rem;" ' +
+      'href="lifescape.html?family_account_id=' + encodeURIComponent(f.family_account_id) + '" target="_blank">View Full Report</a>'
+    : '';
+
   document.getElementById('panelBody').innerHTML =
     '<div class="panel-name">' + escHtml(name) + '</div>' +
     '<div class="panel-meta">' + dateStr + ' · ' + escHtml(f.email || '') + '</div>' +
@@ -1120,6 +1133,7 @@ function openPanel(idx) {
       '</div>' +
     '</div>' +
     '<div class="panel-fields">' + fieldsHtml + '</div>' +
+    viewReportHtml +
     reportHtml;
 
   document.getElementById('detailOverlay').classList.add('open');

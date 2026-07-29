@@ -2748,6 +2748,15 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     renderReportHistoryPicker(window.__familyReportHistory || [], historyIndex || 0);
   }
 
+  // FAMILY-PORTAL-001 item 1 / CONSULTANT-IDENTITY-002 — a consultant
+  // arrives here via consultant-portal.html's "View Full Report" link,
+  // which passes ?family_account_id=... Takes priority over studentId
+  // (which is only ever used by the family's own student-selection loop)
+  // since a consultant request always names an exact family explicitly.
+  function getConsultantViewFamilyId() {
+    return new URLSearchParams(window.location.search).get('family_account_id');
+  }
+
   async function checkForExistingReport(studentId) {
     var ready = await waitForClerkReady(3000);
     if (!ready || !window.Clerk || !window.Clerk.user || !window.Clerk.session) {
@@ -2755,8 +2764,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     }
     try {
       var token = await window.Clerk.session.getToken();
+      var consultantFamilyId = getConsultantViewFamilyId();
       var url = 'https://api.abettercollegeconsultant.com/family-report' +
-        (studentId ? ('?student_id=' + encodeURIComponent(studentId)) : '');
+        (consultantFamilyId
+          ? ('?family_account_id=' + encodeURIComponent(consultantFamilyId))
+          : (studentId ? ('?student_id=' + encodeURIComponent(studentId)) : ''));
       var res = await fetch(url, { headers: { 'Authorization': 'Bearer ' + token } });
       if (!res.ok) return false; // no family_accounts row at all → normal intake (OQ-4)
       var data = await res.json();
@@ -2811,6 +2823,16 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     });
     return false;
   };
+
+  // A consultant arriving via consultant-portal.html's "View Full Report"
+  // link has no "Family" tile to click — this is their only entry point
+  // into the app, so the check runs immediately rather than waiting for
+  // a click that will never come.
+  if (getConsultantViewFamilyId()) {
+    document.addEventListener('DOMContentLoaded', function() {
+      checkForExistingReport();
+    });
+  }
 
   async function runIntroSequence(){
     var compassWrap = document.getElementById('ihCompassWrap');
