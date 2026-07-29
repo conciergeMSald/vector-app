@@ -26,6 +26,15 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1567792854753910&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9H3X5K37PZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9H3X5K37PZ');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -3874,13 +3883,25 @@ function validateZIPAndGoTo(n) {
   LS_STATE.zip = zip;
   clearHint('s4-hint');
   fireMetaAdvancedMatch(zip);
+  fireGA4SignUp();
   // Screen 45 (trajectory questions) is student-only.
   // Parent path skips directly to screen 5.
   if(n === 45 && LS_STATE.voice === 'parent') { goTo(5); return; }
   goTo(n);
 }
 
-// ── META ADVANCED MATCHING ──────────────────────────────────────────────
+// ── GA4 SIGN-UP EVENT ────────────────────────────────────────────────────
+// Fired at the same trigger point as fireMetaAdvancedMatch() — Screen 4,
+// once ZIP is captured — rather than at account creation, for consistency
+// with that decision rather than a data-availability requirement (GA4
+// doesn't need email/ZIP the way Meta's Advanced Matching does; it's just
+// kept at the same moment so both platforms count the same conversion).
+function fireGA4SignUp() {
+  if (window.__ga4SignUpFired) return;
+  if (typeof gtag === 'undefined') return; // gtag.js blocked/failed to load — fail silent, don't break intake
+  window.__ga4SignUpFired = true;
+  gtag('event', 'sign_up', { method: 'email' });
+}
 // Per Meta's spec: normalize (trim + lowercase) then SHA-256 hash before
 // ever sending. Never send raw PII to fbq.
 async function sha256Hex(str) {
