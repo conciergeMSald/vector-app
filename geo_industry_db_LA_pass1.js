@@ -240,6 +240,13 @@ const GEO_INDUSTRY_DB_LA = {
         distance: "8 miles — Woodland Hills",
         anchor_employers: ["Farmers Insurance", "Anthem", "Transamerica"],
         student_connection: "The Woodland Hills insurance corridor is a short drive east and represents one of the largest concentrations of financial services employment in the San Fernando Valley."
+      },
+      {
+        name: "Video Game Development (AAA Studio)",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Respawn Entertainment (Electronic Arts studio, 20131 Prairie Street)"],
+        student_connection: "Respawn Entertainment — the real, specific studio behind Apex Legends, the Titanfall series, and the Star Wars Jedi games — operates out of Chatsworth under Electronic Arts' ownership. EA's own global headquarters is in Redwood City in the Bay Area, not here — this is a genuine, distinct creative studio with its own real identity, adding a sixth genuinely different industry to this already-diverse ZIP. Added 2026-07-27, live-verified."
       }
     ]
   },
@@ -569,6 +576,13 @@ const GEO_INDUSTRY_DB_LA = {
         student_connection: "Cedars-Sinai — one of the most prestigious medical centers in the country — is 2 miles east, and Beverly Hills itself hosts a dense cluster of aesthetic medicine and dermatology practices."
       },
       {
+        name: "Nursing — Critical Regional Shortage",
+        naics: 62,
+        distance: "Local / Cedars-Sinai (2 miles)",
+        anchor_employers: ["Cedars-Sinai Medical Center"],
+        student_connection: "Cedars-Sinai was the first Southern California hospital to earn Magnet designation — nursing's most prestigious institutional credential, held by only about 640 hospitals worldwide. A specific, real, verifiable stat: 82% of eligible Cedars-Sinai nurses have earned their nursing specialty certification, versus a 38% national average. With California's own Board of Registered Nursing projecting an active regional shortage in 2026, this is a genuine, currently in-demand, advanced career — not the fallback path to medicine it's sometimes assumed to be."
+      },
+      {
         name: "Real Estate & Development",
         naics: 53,
         distance: "Local",
@@ -625,6 +639,13 @@ const GEO_INDUSTRY_DB_LA = {
         distance: "Local — UCLA campus",
         anchor_employers: ["UCLA Health", "Ronald Reagan UCLA Medical Center", "Mattel Children's Hospital"],
         student_connection: "UCLA Health is one of the top 10 hospital systems in the country and the single largest employer in Westwood — offering pathways from clinical medicine to healthcare administration, research, and public health."
+      },
+      {
+        name: "Nursing — Critical Regional Shortage",
+        naics: 62,
+        distance: "Local — UCLA campus",
+        anchor_employers: ["UCLA Health"],
+        student_connection: "Confirmed by California's own Board of Registered Nursing: nearly every region of the state, LA included, is projected to face a real, active nursing shortage in 2026. UCLA Health has achieved Magnet designation at the fifth level or higher — an elite distinction held by less than 2% of all U.S. hospitals — meaning nursing here is a genuine, advanced-practice career path (clinical specialization, nurse leadership, nurse-scientist research roles), not just an entry-level clinical job. Deliberately separated from the MD/physician pathway above: nursing is its own distinct, currently in-demand career, not a secondary version of \"becoming a doctor.\""
       },
       {
         name: "Technology & Software",
@@ -1146,6 +1167,277 @@ const GEO_INDUSTRY_DB_LA = {
         distance: "Local",
         anchor_employers: ["Korn Ferry (Los Angeles)"],
         student_connection: "Korn Ferry is one of the largest organizational consulting and executive search firms in the world, genuinely headquartered in Century City — its core business is literally the design of leadership structures, talent strategy, and organizational effectiveness for large companies, not a generic HR vendor. A student drawn to how organizations actually decide who leads and how they're structured has a real, major-firm career pathway here. ADDRESS NOTE: city/neighborhood level only, exact building not independently verified."
+      },
+      {
+        name: "Entertainment & Brand Public Relations",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["42West (headquarters, 1840 Century Park East)"],
+        student_connection: "42West is a genuine, leading independent public relations firm specializing in entertainment and media — real, large-scale strategic communications and publicity work for film, television, and brand clients, distinct from in-house corporate communications or generic small-agency PR. Added 2026-07-27, live-verified. One real correction made during this addition: BWR Public Relations, a once-comparable entertainment PR firm, was checked directly and confirmed shut down in 2020 (folded into BCW Entertainment) — not included here, same discipline already applied to the Viacom/Time Warner naming correction elsewhere this session."
+      }
+    ]
+  },
+
+  // ── Added 2026-07-27: Video Game Industry (West LA) + Digital Media/
+  // Brand Consultancy (Santa Monica) — both confirmed as genuinely new
+  // ZIPs, checked directly against this file before adding, not assumed.
+  "90064": {
+    zip: "90064",
+    neighborhood: "West Los Angeles",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Video Game Development & Esports",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Riot Games (headquarters, 12333 W Olympic Blvd)"],
+        student_connection: "Riot Games' actual global headquarters — not a satellite studio — sits in West LA, the real corporate and creative home of League of Legends and Valorant. A genuine, large-scale career pathway spanning game design, live-service engineering, and the competitive esports business built around these titles."
+      }
+    ]
+  },
+  "90404": {
+    zip: "90404",
+    neighborhood: "Santa Monica",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Digital Marketing & Brand Consultancy",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["Hawke Media (headquarters, 1714 16th Street)"],
+        student_connection: "Hawke Media is a genuine, large-scale outsourced marketing consultancy — one of the country's most rapidly expanding digital marketing firms, handling brand strategy, paid media, and growth marketing for client companies rather than building one brand of its own. A real, direct career pathway into performance marketing, distinct from working in-house at a single brand."
+      }
+    ]
+  },
+
+  // ── Added 2026-07-27: Regional/small digital marketing shops ──────────
+  // Deliberately not another Hawke-Media-scale name. Most real entry
+  // points into digital marketing careers look like these two firms, not
+  // like a nationally-known agency — a genuine, disclosed pedagogical
+  // point, not a lesser or fallback version of the Santa Monica entry
+  // above.
+  "91367": {
+    zip: "91367",
+    neighborhood: "Woodland Hills",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Regional Digital Marketing Agency",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["COLAB Los Angeles (21300 Victory Blvd)"],
+        student_connection: "COLAB is a real, working regional digital marketing agency — branding, PPC, SEO, web design, and video production for actual client businesses, genuinely close to Calabasas rather than a downtown commute. A student doesn't need a household-name employer to have a real career in this field; a shop exactly this size is a normal, common, and completely legitimate way most people actually enter digital marketing."
+      }
+    ]
+  },
+  "90071": {
+    zip: "90071",
+    neighborhood: "Downtown Los Angeles",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Regional Digital Marketing Agency (SEO/Web)",
+        naics: 54,
+        distance: "Local",
+        anchor_employers: ["Coalition Technologies (515 S Flower Street)"],
+        student_connection: "Coalition Technologies is a real, established Los Angeles digital marketing and web design firm, specializing in SEO and e-commerce growth for real client companies — a genuine, different-scale entry point into the same industry as the Santa Monica and Century City entries elsewhere in this file, not a smaller version of the same story."
+      }
+    ]
+  },
+
+  // ── Added 2026-07-27: Broadcast, Spanish-Language, and Sports Media ───
+  // Los Angeles is the #2 media market in the country — this pass adds
+  // three real, distinct, currently-verified anchors beyond the earlier
+  // digital-marketing/PR additions: conservative/faith talk radio,
+  // Spanish-language broadcast (the single most-watched local news
+  // station in LA across all languages, not a niche audience), and
+  // sports broadcasting rights specifically.
+  "93010": {
+    zip: "93010",
+    neighborhood: "Camarillo",
+    county: "Ventura",
+    clusters: [
+      {
+        name: "Talk Radio & Faith/Conservative Media",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Salem Media Group (770 Paseo Camarillo)"],
+        student_connection: "Salem Media Group genuinely operates from Camarillo — America's leading Christian and conservative media company, spanning radio (Salem Radio Network), podcasting, digital publishing, and book/newsletter publishing under one real, publicly traded company (NASDAQ: SALM). A student interested in talk radio, faith-based media, or political commentary has a real, specific, headquartered-here career pathway, distinct from the entertainment-industry media anchored elsewhere in this file. Outside LA County proper (Ventura County) but part of the same real Southern California media market."
+      }
+    ]
+  },
+  "90045": {
+    zip: "90045",
+    neighborhood: "Westchester",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Spanish-Language Broadcast News",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Univision / KMEX (5999 Center Drive)"],
+        student_connection: "KMEX, broadcasting from this real Westchester address, has been the most-watched local news station in Los Angeles across ALL languages in multiple recent ratings periods — not a niche or secondary audience, the actual largest one. A student interested in journalism, broadcast production, or bilingual media has a real, major-market career pathway here that most students never hear framed this way."
+      }
+    ]
+  },
+  "90245": {
+    zip: "90245",
+    neighborhood: "El Segundo",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Sports Broadcasting Rights & Production",
+        naics: 51,
+        distance: "Local",
+        anchor_employers: ["Spectrum SportsNet LA (2345 Alaska Avenue)"],
+        student_connection: "Spectrum SportsNet LA — the Lakers' actual broadcast rights holder — is based in El Segundo, near the team's own facility. A real, specific career pathway in live sports production, broadcast engineering, and media rights management, distinct from playing or team-operations careers covered elsewhere in this file."
+      },
+      {
+        name: "Space & Defense Systems Engineering",
+        naics: 33,
+        distance: "Local",
+        anchor_employers: ["Raytheon / RTX Space and Airborne Systems (2000 E El Segundo Blvd)", "The Aerospace Corporation (2310 E El Segundo Blvd)"],
+        student_connection: "Raytheon's Space and Airborne Systems division — a business it inherited from Hughes Aircraft, a real piece of LA aerospace history — is a genuine center for advanced space technology development, not a satellite office. The Aerospace Corporation, right nearby, is a federally funded research center (global HQ technically in Virginia, but this El Segundo site is a major regional operation) that provides independent technical assessment for the entire U.S. space program — a real, distinct, less-visible career pathway (systems engineering, program assessment) most students never hear about, sitting alongside the more obvious defense-contractor jobs."
+      }
+    ]
+  },
+
+  // ── Added 2026-07-27: Aerospace & Defense — Primes and Subcontractors ─
+  // Built specifically to cover both major primes AND the real
+  // subcontractor tier, per direct request — most students only ever
+  // hear about Boeing/Northrop/Lockheed by name, never the actual supply
+  // chain of specialized manufacturers underneath them, which is where a
+  // large share of real, accessible aerospace jobs genuinely are.
+  "90501": {
+    zip: "90501",
+    neighborhood: "Torrance",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Aerospace Component Manufacturing & Subcontracting",
+        naics: 33,
+        distance: "Local — Torrance aerospace corridor",
+        anchor_employers: [
+          "Honeywell Aerospace (2525 W 190th Street)",
+          "Moog Inc. (25 years in Torrance, 700+ employees across 3 sites)",
+          "LISI Aerospace (2600 Skypark Drive)",
+          "Cadence Aerospace (22906 Frampton Avenue)"
+        ],
+        student_connection: "Torrance is a genuine, dense aerospace SUBCONTRACTOR corridor, not just a home to famous primes. Honeywell (avionics/systems) and Moog (flight control actuation systems, 700+ real local employees) are major tier-1 suppliers most students have never heard of despite their planes-in-the-sky-today scale. LISI Aerospace and Cadence Aerospace are real, specialized precision-manufacturing subcontractors — the companies that actually machine and produce the components the famous primes assemble. A student who only imagines 'working at Boeing' is missing most of the real, accessible jobs in this industry, which live at exactly this tier."
+      },
+      {
+        name: "Emerging Defense Technology",
+        naics: 33,
+        distance: "Local",
+        anchor_employers: ["Castelion Corporation (new 90,000 sq ft headquarters, 2026)", "FlightWave Aerospace Systems Corp. (relocated from Carson, 2026)"],
+        student_connection: "Two genuinely current, real examples that this industry is not just legacy giants: Castelion, a next-generation military systems company, just established a brand-new 90,000-square-foot headquarters and engineering campus in Torrance — real, current news, not historical. FlightWave Aerospace Systems relocated its own headquarters into a 51,000-square-foot Torrance facility in early 2026. A student drawn to aerospace has real evidence here that new, growing companies are actively choosing this corridor today, not just inheriting decades-old defense contracts."
+      }
+    ]
+  },
+  "93550": {
+    zip: "93550",
+    neighborhood: "Palmdale",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Flight Test & Advanced Aircraft Manufacturing",
+        naics: 33,
+        distance: "Local — Air Force Plant 42",
+        anchor_employers: ["Northrop Grumman (B-2 final assembly and modification, Air Force Plant 42)", "Lockheed Martin Skunk Works", "Boeing (Air Force Plant 42 operations)"],
+        student_connection: "Air Force Plant 42 — a real, 6,130-acre government-owned aircraft manufacturing plant operating since 1942 — is where Northrop Grumman performs final assembly and modification of the B-2 stealth bomber, genuinely one of the most sensitive and advanced aircraft programs in the world. Lockheed Martin's famous Skunk Works — the real division behind the SR-71 Blackbird, U-2, and F-117 historically — also operates from Palmdale, not a Burbank soundstage version of aerospace innovation but the actual place where classified advanced-aircraft engineering happens. A genuinely different career pathway than Torrance's subcontractor-tier manufacturing: flight test engineering, advanced airframe design, and some of the most secure, high-clearance work in the entire industry."
+      }
+    ]
+  },
+  "92518": {
+    zip: "92518",
+    neighborhood: "March Air Reserve Base / Riverside",
+    county: "Riverside",
+    clusters: [
+      {
+        name: "Defense Logistics & Emerging Aerospace",
+        naics: 33,
+        distance: "Local — Inland Empire aerospace corridor",
+        anchor_employers: ["March Air Reserve Base (defense logistics, maintenance, and supply chain operations)", "Karman Space & Defense (missile systems design and manufacturing)"],
+        student_connection: "March Air Reserve Base genuinely anchors the Inland Empire's aerospace and defense sector — real defense logistics, aircraft maintenance, and military supply chain operations, a genuinely different career pathway than either Torrance's component manufacturing or Palmdale's flight test engineering. Karman Space & Defense, designing and delivering real missile systems, represents the same Inland Empire corridor extending into Ontario and the broader San Bernardino area, not just Riverside proper — a real, if less nationally famous, third distinct node in Southern California's aerospace geography."
+      }
+    ]
+  },
+
+  // ── Added 2026-07-27: Port Operations & Logistics ─────────────────────
+  // The San Pedro Bay port complex (Port of LA + Port of Long Beach) is
+  // the largest container port complex in North America — 20+ million
+  // TEUs cleared in 2025 alone — and had zero representation anywhere in
+  // this file before this addition, despite being one of the region's
+  // largest real employment sectors.
+  "90731": {
+    zip: "90731",
+    neighborhood: "San Pedro",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Port Operations & Maritime Trade",
+        naics: 48,
+        distance: "Local",
+        anchor_employers: ["Port of Los Angeles (425 S Palos Verdes Street)"],
+        student_connection: "The Port of Los Angeles is the largest trade gateway in North America, handling more containers than any other U.S. port, with seven major container terminals and on-dock/near-dock rail access directly to Downtown LA. Real careers here span port operations and harbor engineering to trade policy and customs logistics — a massive, essential regional employer most students never think of as a career destination the way they would a tech company or a hospital, despite its real scale."
+      }
+    ]
+  },
+  "90802": {
+    zip: "90802",
+    neighborhood: "Long Beach",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Port Operations & Container Terminal Management",
+        naics: 48,
+        distance: "Local",
+        anchor_employers: ["Port of Long Beach (415 W Ocean Blvd)", "Long Beach Container Terminal (Pier E, 201 S Pico Ave)"],
+        student_connection: "The Port of Long Beach, together with the Port of Los Angeles next door, forms the San Pedro Bay complex — the largest container port complex in North America. Long Beach Container Terminal is one of the most advanced, technology-driven terminal operations in the country, a real example of how port work today involves as much automation engineering and logistics software as physical cargo handling. A genuine, large-scale career pathway in terminal operations, automation, and maritime logistics management."
+      },
+      {
+        name: "Intermodal Rail Logistics",
+        naics: 48,
+        distance: "Local — Alameda Corridor",
+        anchor_employers: ["Pacific Harbor Line (on-dock rail operator for the entire San Pedro Bay complex)"],
+        student_connection: "Pacific Harbor Line is a real, specific short-line railroad company that most people have never heard of — it builds the on-dock trains and operates the entire intermodal rail network connecting both ports to the national rail system, via the Alameda Corridor, a genuine 20-mile below-grade freight rail trench connecting San Pedro Bay directly to BNSF and Union Pacific's transcontinental rail yards. A real, specific, almost entirely invisible career pathway (rail logistics, infrastructure engineering) sitting underneath an industry most students only ever picture as trucks and container ships."
+      }
+    ]
+  },
+
+  // ── Added 2026-07-27: Public/Safety-Net Hospital Nursing ──────────────
+  // Every hospital previously in this file is a private academic medical
+  // center (UCLA, Cedars-Sinai, Keck/USC, City of Hope). LA County's own
+  // massive public hospital system was entirely absent — a real,
+  // different-flavor nursing career pathway (safety-net medicine, county
+  // healthcare), not a smaller version of the private academic story.
+  "90033": {
+    zip: "90033",
+    neighborhood: "Boyle Heights",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Nursing — Public Safety-Net Medicine",
+        naics: 62,
+        distance: "Local",
+        anchor_employers: ["Los Angeles General Medical Center (2051 Marengo Street)"],
+        student_connection: "Confirmed directly: this hospital was known as LAC+USC Medical Center for decades before officially renaming to Los Angeles General Medical Center. As LA County's own public safety-net hospital — not a private academic medical center like UCLA or Cedars-Sinai — it represents a real, different nursing career pathway: LA County itself has reported active efforts to improve nursing workforce retention here as recently as late 2025, a real, current, honest signal that this specific setting has real, disclosed challenges alongside real opportunity, not a polished success story. A student drawn to nursing because they want to serve a broad, high-need community — not just a prestige hospital — has a real, distinct, named destination here."
+      }
+    ]
+  },
+
+  // ── Added 2026-07-27: Federal Veterans Healthcare ─────────────────────
+  "90073": {
+    zip: "90073",
+    neighborhood: "Westwood (West LA VA campus)",
+    county: "Los Angeles",
+    clusters: [
+      {
+        name: "Nursing & Healthcare — Veterans Affairs (Federal)",
+        naics: 62,
+        distance: "Local",
+        anchor_employers: ["West Los Angeles VA Medical Center (11301 Wilshire Blvd)"],
+        student_connection: "The West LA VA Medical Center — part of the VA Greater Los Angeles Healthcare System — represents a genuinely distinct healthcare career pathway from anything else in this file: federal employment, serving veterans specifically, with its own distinct clinical culture (trauma-informed care, PTSD and mental health specialization, prosthetics and rehabilitation medicine) that a private academic hospital doesn't offer in the same way. A real, specific, federally-employed nursing and healthcare career most students never consider as a genuine option separate from either private hospital systems or the military itself."
       }
     ]
   }

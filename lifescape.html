@@ -2198,6 +2198,17 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <div class="report-eyebrow" id="report-eyebrow" style="display:none;">VECTOR</div>
     <div class="report-name" id="report-name"></div>
     <div class="report-opening">This is what we found in this moment, based on what you shared. Your Lifescape is not fixed. It evolves when you do.</div>
+
+    <!-- FAMILY-PORTAL-001 — persistent report history picker. Hidden unless
+         a family/consultant session has more than one report_versions row.
+         Populated by renderFetchedReport(); never shown on a freshly
+         generated (not-yet-persisted) report. -->
+    <div class="report-history-picker" id="report-history-picker" style="display:none;margin-top:0.75rem;">
+      <label for="report-history-select" style="font-family:var(--sans);font-size:13px;color:var(--ink2);margin-right:8px;">Viewing:</label>
+      <select id="report-history-select" onchange="window.__switchReportVersion(this.value)"
+        style="font-family:var(--sans);font-size:13px;padding:6px 10px;background:var(--tile-bg);border:0.5px solid var(--tile-bdr);cursor:pointer;">
+      </select>
+    </div>
   </div>
 
   <!-- Report tabs -->
@@ -2649,7 +2660,53 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   // the live flow uses, then switches to #screen-report the same way the
   // live flow does. Returns nothing — this is a terminal render, not
   // something the caller needs to react further to.
-  function renderFetchedReport(reportData) {
+  // Formats a report_versions row's created_at into the plain-language
+  // label the spec requires ("Generated March 2026") — never the raw
+  // engine_version string. Falls back gracefully if created_at is missing
+  // or unparseable, since older rows may not have it populated cleanly.
+  function formatReportHistoryLabel(row, index, total) {
+    var when = null;
+    if (row && row.created_at) {
+      var d = new Date(row.created_at);
+      if (!isNaN(d.getTime())) {
+        when = d.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+      }
+    }
+    var label = when ? ('Generated ' + when) : ('Report ' + (total - index));
+    if (index === 0) label += ' (most recent)';
+    return label;
+  }
+
+  // Populates and shows the persistent history picker when there's more
+  // than one report_versions row for this family/student. Called once on
+  // initial load and left alone after that — switching versions re-renders
+  // the report but does not rebuild this control.
+  function renderReportHistoryPicker(reports, activeIndex) {
+    var wrap = document.getElementById('report-history-picker');
+    var select = document.getElementById('report-history-select');
+    if (!wrap || !select) return;
+    if (!Array.isArray(reports) || reports.length < 2) {
+      wrap.style.display = 'none';
+      return;
+    }
+    select.innerHTML = reports.map(function(row, i) {
+      var label = formatReportHistoryLabel(row, i, reports.length);
+      return '<option value="' + i + '"' + (i === activeIndex ? ' selected' : '') + '>' + label + '</option>';
+    }).join('');
+    wrap.style.display = 'block';
+  }
+
+  // Switches the currently rendered report to a different history entry.
+  // No re-fetch — window.__familyReportHistory already holds every
+  // report_versions row returned by the initial GET /family-report call.
+  window.__switchReportVersion = function(indexStr) {
+    var idx = parseInt(indexStr, 10);
+    var history = window.__familyReportHistory;
+    if (!Array.isArray(history) || !history[idx]) return;
+    renderFetchedReport(history[idx].report_data || {}, idx);
+  };
+
+  function renderFetchedReport(reportData, historyIndex) {
     var profile = reportData.profile || {};
     // Mirror what the live flow sets on LS_STATE after each call, so any
     // downstream code reading LS_STATE.* (print, navigation) behaves the
@@ -2684,6 +2741,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
         schools.underTheRadar || [], schools.scenario || [], schools.sizeAdjacent || []);
       if (typeof showPrintTrigger === 'function') showPrintTrigger();
     }
+
+    // Only ever meaningful when this report came from the family/consultant
+    // portal fetch (window.__familyReportHistory populated) — a freshly
+    // generated report has no history array set, so the picker stays hidden.
+    renderReportHistoryPicker(window.__familyReportHistory || [], historyIndex || 0);
   }
 
   async function checkForExistingReport(studentId) {
@@ -2701,7 +2763,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
       if (data.status === 'ok' && Array.isArray(data.reports) && data.reports.length > 0) {
         window.__familyReportIdentity = data.identity || 'family';
-        renderFetchedReport(data.reports[0].report_data || {});
+        // Retained in full here (not just reports[0]) so the persistent
+        // history picker can switch between them without a re-fetch.
+        window.__familyReportHistory = data.reports;
+        renderFetchedReport(data.reports[0].report_data || {}, 0);
         return true;
       }
       if (data.status === 'student_selection_required') {
