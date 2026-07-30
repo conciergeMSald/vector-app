@@ -7864,7 +7864,20 @@ async function submitLifescape() {
           // backfilled automatically. No new backfill logic required.
           let callDText = null;
           try {
-            callDText = await fireCall(callDPrompt, 3000, 0, 55000, 'callD');
+            // max_tokens raised 3000 -> 6000 (2026-07-30). 3000 was shared
+            // across up to 6 schools (_schoolCount) each needing MATCH + a
+            // 3-sentence WHY + THRIVES + WATCH + RESILIENCE + CULTURE, plus
+            // optional CC_PATH blocks. A data-rich V5 entry (e.g. Indiana
+            // University Bloomington — confirmed the 2nd-largest entry in
+            // the entire 159-school database) gives Claude more specific,
+            // quotable material to draw from, which tends to produce longer
+            // output for that school specifically per the prompt's own
+            // "reference something real" instruction — consuming a
+            // disproportionate share of a fixed shared budget and risking
+            // truncation of that school or whatever followed it in the
+            // response. See also the hardened backfill check below, which
+            // now catches partial truncation, not just fully-omitted schools.
+            callDText = await fireCall(callDPrompt, 6000, 0, 55000, 'callD');
             console.log('[callD] raw response length:', callDText?.length);
             console.log('[callD] raw response preview:', callDText?.slice(0,200));
             callDData = parseCallD(callDText);
@@ -7926,13 +7939,41 @@ async function submitLifescape() {
           // sent candidate missing from Claude's response gets a real,
           // V5-sourced block constructed deterministically, not silently
           // dropped. Added 2026-07-12.
+          //
+          // HARDENED 2026-07-30: the original check only caught schools
+          // entirely ABSENT from callDData (name comparison against what
+          // Claude returned). It did not catch a school that received a
+          // SCHOOL: line and a partial MATCH: before the response was cut
+          // off by max_tokens — that entry passes parseCallD's own filter
+          // (name present, match.length > 5) and therefore counted as
+          // "returned," even with why/thrivesIf/watchFor/resilience all
+          // empty. Observed directly with Indiana University Bloomington,
+          // one of the largest, most detail-rich V5 entries in the database
+          // (2nd of 159 by size) — richer source material tends to produce
+          // longer Claude output for that school specifically, increasing
+          // truncation risk for it or whatever followed it in the same
+          // response. isCallDEntryIncomplete() below now flags any entry
+          // missing its substantive fields, and such entries are REPLACED
+          // with a real V5-backfilled block rather than left half-empty.
+          function isCallDEntryIncomplete(s) {
+            return !s || !s.why || s.why.trim().length < 20
+              || !s.thrivesIf || !s.watchFor || !s.resilience;
+          }
+
           (function backfillMissingSchools() {
             var sentNames = matchedSchools.slice(0, _schoolCount);
             var returnedNames = new Set(callDData.map(function(s) { return s.name; }));
-            var missing = sentNames.filter(function(n) { return !returnedNames.has(n); });
+            var missingNames = sentNames.filter(function(n) { return !returnedNames.has(n); });
+            var incompleteNames = sentNames.filter(function(n) {
+              if (!returnedNames.has(n)) return false; // already in missingNames, don't double-handle
+              var entry = callDData.find(function(s) { return s.name === n; });
+              return isCallDEntryIncomplete(entry);
+            });
+            var missing = missingNames.concat(incompleteNames);
             if (!missing.length) return;
 
-            console.warn('[callD] Backfilling', missing.length, 'school(s) Claude omitted:', missing);
+            if (missingNames.length) console.warn('[callD] Backfilling', missingNames.length, 'school(s) Claude omitted entirely:', missingNames);
+            if (incompleteNames.length) console.warn('[callD] Backfilling', incompleteNames.length, 'school(s) with partial/truncated content (likely max_tokens cutoff):', incompleteNames);
 
             missing.forEach(function(name) {
               var src = (typeof UNIVERSITY_CONTENT !== 'undefined') ? UNIVERSITY_CONTENT[name] : null;
@@ -7946,14 +7987,25 @@ async function submitLifescape() {
               var thrivesArr = (src.studentFit && src.studentFit.thrivesIf) || [];
               var strugglesArr = (src.studentFit && src.studentFit.strugglesIf) || [];
 
-              callDData.push({
+              var backfilledEntry = {
                 name: name,
                 match: summary ? stripMD(summary) : ('A strong fit worth a real look based on your profile.'),
                 why: [summary, hidden].filter(Boolean).map(stripMD).join(' ') || 'This school surfaced as a strong match for your profile — worth a direct conversation with your counselor about why.',
                 thrivesIf: thrivesArr.length ? stripMD(thrivesArr[0]) : 'Students who want what this school is genuinely known for tend to do well here.',
                 watchFor: strugglesArr.length ? stripMD(strugglesArr[0]) : 'Worth a direct conversation with your counselor about whether the day-to-day fit is right.',
                 resilience: 'Ask your counselor to walk through why this one surfaced — it\'s a real match, not a filler pick.'
-              });
+              };
+
+              // Partially-truncated entries already exist in callDData (they
+              // passed parseCallD's filter) — replace in place rather than
+              // push, or the school would appear twice. Fully-missing
+              // entries just get appended, same as before.
+              var existingIdx = callDData.findIndex(function(s) { return s.name === name; });
+              if (existingIdx >= 0) {
+                callDData[existingIdx] = backfilledEntry;
+              } else {
+                callDData.push(backfilledEntry);
+              }
             });
 
             console.log('[callD] After backfill:', callDData.length, callDData.map(function(s){return s.name;}));
