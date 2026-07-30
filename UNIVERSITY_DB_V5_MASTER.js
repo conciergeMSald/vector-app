@@ -11275,6 +11275,82 @@ const UNIVERSITY_DB_V5 = {
       "realEstate": {
         "strength": 80,
         "notes": "Strong, distinctive architecture placement. (Remapped 2026-07-12 from non-standard key 'architecture' — closest available standard key, no dedicated architecture key exists.)"
+      },
+      "nonprofitLeadership": {
+        "strength": 74,
+        "notes": "Tulane's mandatory public service requirement for every undergraduate -- already substantiated elsewhere in this entry -- is a genuine, distinctive institutional commitment, not a marketing claim. (Added 2026-07-29 -- high confidence, builds on already-verified in-file content.)"
+      },
+      "medicine": {
+        "strength": 70,
+        "notes": "Tulane School of Public Health and Tropical Medicine is one of the oldest and most respected public health schools in the country; Tulane also has its own School of Medicine. This is a genuine, longstanding institutional strength. (Added 2026-07-29 -- high confidence, well-established named schools.)"
+      },
+      "healthcareAdministration": {
+        "strength": 54,
+        "notes": "Public health administration track through the School of Public Health and Tropical Medicine. (Added 2026-07-29 -- moderate-high confidence, tied to the same real school.)"
+      },
+      "healthWellness": {
+        "strength": 58,
+        "notes": "General wellness/public-health pipeline, distinct from the clinical/medicine track above. (Added 2026-07-29 -- moderate confidence.)"
+      },
+      "entertainmentMedia": {
+        "strength": 68,
+        "notes": "Louisiana's film tax incentive program has made New Orleans a genuine production hub (sometimes called 'Hollywood South'). Tulane Law has real, documented entertainment and intellectual-property law programming, including student visits to Warner Bros., MGM, and Sony -- sourced from prior alumni-network research in this project. (Added 2026-07-29 -- moderate-high confidence: tax-incentive fact is well known, Tulane Law specifics carry forward from already-researched material.)"
+      },
+      "publicPolicy": {
+        "strength": 50,
+        "notes": "Political science plus the global-health-policy angle from the School of Public Health gives Tulane a real, if secondary, public-policy identity. (Added 2026-07-29 -- moderate confidence.)"
+      },
+      "sportsBusiness": {
+        "strength": 46,
+        "notes": "New Orleans hosts both an NFL team (Saints) and an NBA team (Pelicans); Tulane fields D1 athletics in the American Athletic Conference. Proximity is real, but a direct institutional sports-business pipeline is not confirmed. (Added 2026-07-29 -- moderate confidence: teams are certainly real, Tulane-specific pipeline is not.)"
+      },
+      "entrepreneurship": {
+        "strength": 48,
+        "notes": "Freeman School of Business has an entrepreneurship-focused center; exact name and program depth pending verification. (Added 2026-07-29 -- moderate confidence, real but under-verified, same caveat pattern as Elon.)"
+      },
+      "consumerProducts": {
+        "strength": 48,
+        "notes": "Popeyes Louisiana Kitchen was founded in the New Orleans area (Arabi, LA) in 1972 -- a real, well-known regional fact -- but a direct Tulane alumni/academic pipeline to the company is not confirmed. (Added 2026-07-29 -- moderate confidence on the fact, low-moderate on the institutional tie -- flagging a lead, not asserting it.)"
+      },
+      "consulting": {
+        "strength": 44,
+        "notes": "Freeman School placement into regional and national consulting roles exists but is not a named institutional specialty. (Added 2026-07-29 -- moderate-low confidence.)"
+      },
+      "defense": {
+        "strength": 36,
+        "notes": "Huntington Ingalls Industries operates Gulf Coast shipbuilding for the U.S. Navy, and the region has a real defense-industrial presence -- but a direct Tulane engineering/co-op pipeline into this sector is not confirmed. (Added 2026-07-29 -- moderate confidence on the regional fact, low on the Tulane-specific tie -- flagging a lead.)"
+      },
+      "technology": {
+        "strength": 36,
+        "notes": "A modest, growing New Orleans tech and startup scene exists, but no distinctive Tulane-specific pipeline was identified. (Added 2026-07-29 -- moderate-low confidence.)"
+      },
+      "luxuryBrands": {
+        "strength": 26,
+        "notes": "No identified luxury-brand industry connection. New Orleans has a genuine luxury hospitality and fine-dining scene, but this is a place-based amenity, not a Tulane institutional pipeline -- left as a low, honest score rather than forcing a swap. (Added 2026-07-29 -- high confidence this is genuinely weak as an industry pathway.)"
+      },
+      "privateEquity": {
+        "strength": 30,
+        "notes": "No institutional signature or notable pipeline identified. (Added 2026-07-29 -- high confidence this is genuinely weak.)"
+      },
+      "ventureCapital": {
+        "strength": 28,
+        "notes": "No identified accelerator or startup-ecosystem presence at or near Tulane comparable to CU Boulder's Techstars/Foundry Group density. (Added 2026-07-29 -- high confidence this is genuinely weak.)"
+      },
+      "aestheticsAndBeauty": {
+        "strength": 22,
+        "notes": "No notable beauty/aesthetics industry pipeline identified. (Added 2026-07-29 -- high confidence this is genuinely weak.)"
+      },
+      "outdoorIndustry": {
+        "strength": 20,
+        "notes": "No distinctive outdoor-recreation-industry identity; New Orleans' economy and geography do not support this pathway. (Added 2026-07-29 -- high confidence this is genuinely weak.)"
+      },
+      "nutraceuticals": {
+        "strength": 20,
+        "notes": "No identified connection to the natural-products/supplement industry. (Added 2026-07-29 -- high confidence this is genuinely weak.)"
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 24,
+        "notes": "No identified pharmaceutical-manufacturing hub or pipeline tied to Tulane specifically, despite the strong public-health/medicine presence noted above. (Added 2026-07-29 -- high confidence this is genuinely weak as a manufacturing, not clinical, pathway.)"
       }
     },
     "wealthMobility": {
@@ -11617,6 +11693,62 @@ const UNIVERSITY_DB_V5 = {
       "advancedManufacturing": {
         "strength": 80,
         "notes": "Long-standing, real, well-funded evidence: the Lockheed Martin Engineering Management Program (EMP) at CU Boulder was established in 1987 -- 38 years, comparable in longevity to Ohio State's Honda relationship. Lockheed Martin Space Systems is named directly as a real industry partner on CU's own aerospace industry-partnerships page. A 2016 agreement added $3 million for new academic programs in radio frequency systems, aerospace, and electrical engineering, on top of roughly $7 million in prior sponsored research."
+      },
+      "consulting": {
+        "strength": 56,
+        "notes": "Leeds School places graduates into regional and national consulting firms (Deloitte, Accenture Denver offices), but this is not a named institutional specialty the way entrepreneurship and outdoor industry are. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
+      },
+      "investmentBanking": {
+        "strength": 46,
+        "notes": "Modest Wall Street placement through Leeds finance concentration; stronger presence in Denver regional banking than coastal investment banking. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
+      },
+      "publicPolicy": {
+        "strength": 62,
+        "notes": "CU Boulder's School of Public Affairs, combined with proximity to Colorado state government in Denver, supports a real if secondary public-policy pathway. (Added 2026-07-29 -- high confidence, named program.)"
+      },
+      "medicine": {
+        "strength": 55,
+        "notes": "No medical school on the Boulder campus itself -- CU's medical program sits at the Anschutz Medical Campus in Aurora, a separate campus in the same University of Colorado system. Boulder undergrads pipeline there via pre-med tracks rather than a Boulder-based clinical presence. (Added 2026-07-29 -- high confidence on the structural fact.)"
+      },
+      "healthcareAdministration": {
+        "strength": 48,
+        "notes": "Secondary pathway via the Anschutz system affiliation; not a Boulder-campus specialty. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
+      },
+      "healthWellness": {
+        "strength": 79,
+        "notes": "Department of Integrative Physiology (formerly Kinesiology) is a genuinely well-regarded program, reinforced by Boulder's broader cultural identity as an elite endurance-sport and wellness city. (Added 2026-07-29 -- high confidence, named program.)"
+      },
+      "nutraceuticals": {
+        "strength": 68,
+        "notes": "Celestial Seasonings is headquartered and manufactures in Boulder. New Hope Network (formerly New Hope Natural Media), headquartered in Boulder and now part of Informa Markets, runs the Natural Products Expo West/East trade shows and publishes Nutrition Business Journal / Natural Products Insider -- the natural-products industry's own trade infrastructure sits in Boulder. This gives the broader natural-foods/supplement cluster noted under outdoorIndustry real institutional weight beyond a single company. (Updated 2026-07-29 -- New Hope Network confirmed via multi-source research; strength raised from initial 64 draft.)"
+      },
+      "consumerProducts": {
+        "strength": 70,
+        "notes": "Justin's Nut Butter was founded and is headquartered in Boulder; Crocs is headquartered nearby in Broomfield/Niwot in Boulder County. Consistent with the natural-products/consumer-brand density noted under nutraceuticals. (Added 2026-07-29 -- high confidence on company HQ facts, moderate on direct CU alumni pipeline.)"
+      },
+      "sportsBusiness": {
+        "strength": 44,
+        "notes": "D1 athletics (Big 12) present, but sports-business career pipeline is not a named institutional strength the way it is at schools with dedicated sport-management programs. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
+      },
+      "nonprofitLeadership": {
+        "strength": 56,
+        "notes": "Boulder's dense environmental and conservation-nonprofit sector (adjacent to NCAR and federal science agencies) supports a real, if secondary, nonprofit pathway distinct from Leeds' business focus. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
+      },
+      "privateEquity": {
+        "strength": 40,
+        "notes": "Not a named CU signature; some Denver-based private equity recruiting exists but is not institutionally distinctive. (Added 2026-07-29 -- moderate-low confidence, weakest entry in this batch, pending verification pass.)"
+      },
+      "ventureCapital": {
+        "strength": 88,
+        "notes": "Techstars, one of the most influential startup accelerators in the country, was founded in and is headquartered in downtown Boulder near Pearl Street. Foundry Group, a well-known venture capital firm, is also Boulder-based. Beyond these two, Boulder Ventures Ltd. (1941 Pearl Street, founded 1995) is an early-stage information-technology and life-science VC firm with five partnerships totaling over $300 million in committed capital historically, and Ridgeline Ventures (Boulder, founded 2015) provides patient, founder-friendly capital specifically to natural-foods and active-lifestyle consumer companies -- a direct fit with CU's own natural-products and outdoor-industry strengths. This gives CU Boulder unusually direct proximity to real venture infrastructure most universities only have through alumni networks elsewhere. (Updated 2026-07-29 -- Boulder Ventures and Ridgeline Ventures confirmed via multi-source research; strength raised from initial 84 draft. Note: Access Venture Partners considered but excluded -- confirmed HQ is Westminster, CO, not Boulder. 'SeedPod Capital' and 'Boulder Products' could not be verified as real Boulder entities and are excluded.)"
+      },
+      "aestheticsAndBeauty": {
+        "strength": 32,
+        "notes": "Weak institutional fit -- no notable beauty/aesthetics industry pipeline identified for CU Boulder. (Added 2026-07-29 -- high confidence that this is genuinely weak, not under-researched.)"
+      },
+      "luxuryBrands": {
+        "strength": 87,
+        "notes": "Reframed as High-End Ski and Active given CU's actual profile: direct proximity to Aspen, Vail, Steamboat, and Telluride supports a real pipeline into high-end ski resort operations, luxury outdoor-gear brands, and alpine hospitality -- distinct from (and higher-tier than) the broader outdoorIndustry pathway already scored at 84. (Added 2026-07-29 -- high confidence on the regional logic; uses the existing canonical key rather than a new schema key. RESOLVED 2026-07-29: Cotopaxi confirmed headquartered in Salt Lake City, Utah -- no genuine Boulder/CU connection. Permanently excluded from this entry; do not re-add without a new, verified Colorado tie.)"
       }
     },
     "futureResilience": {
@@ -15070,6 +15202,78 @@ const UNIVERSITY_DB_V5 = {
       "pharmaceuticalManufacturing": {
         "strength": 34,
         "notes": "Weak and partly off-target: Elon's career services staff participate generally in the North Carolina Biotechnology Center's Career Development Network, and Pfizer's own recruiting materials list Elon among schools it recruits from — but specifically for ABSN (nursing), DPT (physical therapy), and PA (physician assistant) programs, which are clinical healthcare roles, not pharmaceutical manufacturing. No manufacturing-specific connection found. Reinforced only modestly by small real Biochemistry (12 students) and Chemistry (2) programs."
+      },
+      "medicine": {
+        "strength": 66,
+        "notes": "Elon's Accelerated BSN (nursing), Doctor of Physical Therapy, and Physician Assistant programs are real, named clinical-professional pipelines -- already substantiated elsewhere in this entry via the NC Biotechnology Center's Career Development Network connection. This is Elon's actual healthcare fit, not manufacturing. (Added 2026-07-29 -- high confidence, builds on already-verified in-file content.)"
+      },
+      "healthWellness": {
+        "strength": 60,
+        "notes": "Same DPT/PA/ABSN clinical pipeline supports a genuine health-and-wellness professional track, distinct from a fitness/lifestyle-brand angle. (Added 2026-07-29 -- high confidence, same basis as medicine above.)"
+      },
+      "healthcareAdministration": {
+        "strength": 50,
+        "notes": "Secondary pathway via the same clinical programs; not a dedicated healthcare-management specialty. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
+      },
+      "publicPolicy": {
+        "strength": 58,
+        "notes": "The Elon University Poll is a real, established public-opinion research institute with a genuine regional and national media presence, giving Elon an actual (if narrow) public-policy/political-research identity beyond its size. (Added 2026-07-29 -- high confidence, well-known institution.)"
+      },
+      "nonprofitLeadership": {
+        "strength": 54,
+        "notes": "Elon holds a strong institutional identity around civic engagement and community-based learning, consistent with its Carnegie Community Engagement classification. Specific center name pending verification. (Added 2026-07-29 -- moderate confidence: civic-engagement identity is solid, named center is not yet verified.)"
+      },
+      "consulting": {
+        "strength": 42,
+        "notes": "Love School of Business places some graduates into regional consulting roles; not a named institutional specialty. (Added 2026-07-29 -- moderate-low confidence, pending verification pass.)"
+      },
+      "investmentBanking": {
+        "strength": 34,
+        "notes": "Modest finance-concentration placement; no distinctive Wall Street pipeline identified. (Added 2026-07-29 -- moderate-low confidence, pending verification pass.)"
+      },
+      "entrepreneurship": {
+        "strength": 46,
+        "notes": "Love School of Business has an entrepreneurship-focused center; exact name and program depth pending verification before treating this as a named signature strength. (Added 2026-07-29 -- moderate confidence, real but under-verified.)"
+      },
+      "technology": {
+        "strength": 38,
+        "notes": "Computer science exists but is not a headline program; no distinctive tech-industry placement pattern identified. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
+      },
+      "consumerProducts": {
+        "strength": 44,
+        "notes": "VF Corporation (The North Face, Vans, Timberland) has historical Greensboro, NC ties, roughly 25 minutes from Elon -- but VF's more recent headquarters history needs verification before asserting a current, direct connection. (Added 2026-07-29 -- low-moderate confidence, flagging a real lead, not asserting it as confirmed.)"
+      },
+      "sportsBusiness": {
+        "strength": 40,
+        "notes": "D1 athletics in the Colonial Athletic Association (CAA), but no dedicated sport-management program or industry brand identified. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
+      },
+      "privateEquity": {
+        "strength": 28,
+        "notes": "No institutional signature or notable pipeline identified. (Added 2026-07-29 -- high confidence this is genuinely weak, not under-researched.)"
+      },
+      "ventureCapital": {
+        "strength": 26,
+        "notes": "No startup-ecosystem or accelerator presence identified at or near Elon, unlike CU Boulder's Techstars/Foundry Group density. (Added 2026-07-29 -- high confidence this is genuinely weak.)"
+      },
+      "nutraceuticals": {
+        "strength": 22,
+        "notes": "No identified connection to the natural-products/supplement industry. (Added 2026-07-29 -- high confidence this is genuinely weak.)"
+      },
+      "outdoorIndustry": {
+        "strength": 30,
+        "notes": "No distinctive outdoor-recreation-industry identity or pipeline, unlike schools with a strong regional outdoor-brand presence. (Added 2026-07-29 -- high confidence this is genuinely weak.)"
+      },
+      "luxuryBrands": {
+        "strength": 24,
+        "notes": "No identified luxury-brand industry connection. Unlike CU Boulder, no natural regional reframing candidate was identified -- left as a low, honest score rather than forcing a swap. (Added 2026-07-29 -- high confidence this is genuinely weak; no swap needed here.)"
+      },
+      "aestheticsAndBeauty": {
+        "strength": 24,
+        "notes": "No notable beauty/aesthetics industry pipeline identified. (Added 2026-07-29 -- high confidence this is genuinely weak.)"
+      },
+      "defense": {
+        "strength": 18,
+        "notes": "No identified defense-industry connection or pipeline. (Added 2026-07-29 -- high confidence this is genuinely weak.)"
       }
     },
     "wealthMobility": {
