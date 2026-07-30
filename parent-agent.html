@@ -4,6 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VECTOR — Parent Conversation</title>
+<!-- SELF-SERVE-PARENT-FLOW-001 Section 4 — Clerk, needed only for the
+     self-serve entry mode (?mode=self_serve). The PIN-based flow
+     (PARENT-AGENT-001, unchanged) never touches this. Same two-script
+     loading pattern as lifescape.html (see that file for why both scripts
+     are required and why they load from jsdelivr) — kept identical rather
+     than reinventing it. -->
+<script
+  defer
+  crossorigin="anonymous"
+  src="https://cdn.jsdelivr.net/npm/@clerk/ui@1/dist/ui.browser.js"
+></script>
+<script
+  defer
+  crossorigin="anonymous"
+  data-clerk-publishable-key="pk_live_Y2xlcmsuYWJldHRlcmNvbGxlZ2Vjb25zdWx0YW50LmNvbSQ"
+  src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@6/dist/clerk.browser.js"
+></script>
+<script>
+  window.__clerkReady = false;
+  window.addEventListener('load', function () {
+    if (typeof window.Clerk === 'undefined') {
+      console.warn('[VECTOR Parent Agent] Clerk script did not load — self-serve mode unavailable this session.');
+      return;
+    }
+    window.Clerk.load({ ui: { ClerkUI: window.__internal_ClerkUICtor } }).then(function () {
+      window.__clerkReady = true;
+    }).catch(function (err) {
+      console.error('[VECTOR Parent Agent] Clerk load error:', err);
+    });
+  });
+</script>
 <style>
   :root {
     --cream: #F4F1EC;
@@ -155,6 +186,29 @@
   }
   .pa-depth-probe.visible { display: block; }
 
+  .pa-openness-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .pa-openness-option {
+    text-align: left;
+    background: transparent;
+    border: 1px solid var(--gold-dim);
+    border-radius: 2px;
+    padding: 18px 20px;
+    font-family: var(--serif);
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink);
+    cursor: pointer;
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+  .pa-openness-option:hover { border-color: var(--gold); background: var(--gold-glow); }
+  .pa-openness-option.sel { border-color: var(--gold); background: var(--gold-dim); }
+
   .pa-closing {
     text-align: center;
     padding-top: 64px;
@@ -268,8 +322,24 @@
     </div>
   </div>
 
-  <!-- SCREEN 6 — Domain 7: Closing Question -->
-  <div class="pa-screen" data-screen="6" data-domain="hidden_constraints">
+  <!-- SCREEN 6 — FAMILY-ALIGNMENT-001 Section 3 (LOCKED, Option A) — openness_indicator.
+       Placed after Domain 6, asked of every parent unconditionally (never a conditional
+       follow-up). No data-domain attribute: this is a pinned button selection, not a
+       free-text transcript domain, so captureCurrentScreen() correctly skips it — the
+       value is written straight to state.openness_indicator by PA.selectOpenness(). -->
+  <div class="pa-screen" data-screen="6">
+    <div class="pa-eyebrow">Before We Continue</div>
+    <div class="pa-prompt" id="opennessPromptText">If your student's own answer to this ends up different from what you're picturing right now — which of these feels closest to how you'd handle that?</div>
+    <div class="pa-openness-options">
+      <button class="pa-openness-option" data-value="1" onclick="PA.selectOpenness(1)">"I'd want to understand it before I made up my mind."</button>
+      <button class="pa-openness-option" data-value="2" onclick="PA.selectOpenness(2)">"I'd probably need some time, but I'd come around."</button>
+      <button class="pa-openness-option" data-value="3" onclick="PA.selectOpenness(3)">"I'd worry, but I'd try to support them."</button>
+      <button class="pa-openness-option" data-value="4" onclick="PA.selectOpenness(4)">"I'd have real concerns I'd want to voice directly."</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 7 — Domain 7: Closing Question -->
+  <div class="pa-screen" data-screen="7" data-domain="hidden_constraints">
     <div class="pa-eyebrow">Domain 6 of 7</div>
     <div class="pa-prompt">We've covered a great deal of ground together. Before we finish — is there something about your family that you think is important for us to understand before we make any recommendations? Something that might not fit neatly into what we've discussed?</div>
     <textarea class="pa-input" placeholder="Anything at all, or nothing — both are fine." data-field="hidden_constraints"></textarea>
@@ -279,8 +349,8 @@
     </div>
   </div>
 
-  <!-- SCREEN 7 — Closing -->
-  <div class="pa-screen" data-screen="7">
+  <!-- SCREEN 8 — Closing -->
+  <div class="pa-screen" data-screen="8">
     <div class="pa-closing">
       <div class="pa-closing-mark">—</div>
       <div class="pa-prompt" id="paClosingText"></div>
@@ -305,14 +375,17 @@
  */
 const PA = (function () {
   const DOMAIN_ORDER = ["alumni", "professional", "network_geography", "aspiration", "child_perception", "hidden_constraints"];
-  const TOTAL_SCREENS = 8; // 0=opening, 1-6=domains, 7=closing
+  const TOTAL_SCREENS = 9; // 0=opening, 1-5=domains 1-6, 6=openness_indicator (FAMILY-ALIGNMENT-001), 7=domain7, 8=closing
 
   let state = {
     currentScreen: 0,
     parentFirstName: null,
     studentFirstName: null,
-    familyMemberId: null,     // set by consultant setup flow before this page loads
-    transcriptByDomain: {}
+    familyMemberId: null,     // PIN path only — set by consultant setup flow before this page loads
+    selfServe: false,         // SELF-SERVE-PARENT-FLOW-001 — true when arrived via ?mode=self_serve
+    selfServeFamilyId: null,  // the real families.id, already ownership-verified server-side on submit
+    transcriptByDomain: {},
+    openness_indicator: null  // FAMILY-ALIGNMENT-001 Section 3 — pinned 1-4, never inferred from text
   };
 
   function init() {
@@ -321,9 +394,19 @@ const PA = (function () {
     state.studentFirstName = params.get("student") || "your student";
     state.familyMemberId = params.get("fmid") || null;
 
+    // SELF-SERVE-PARENT-FLOW-001 — arrived from the report view's "Add
+    // parent thoughts" banner, not a consultant-delivered PIN link.
+    state.selfServe = params.get("mode") === "self_serve";
+    state.selfServeFamilyId = params.get("family_id") || null;
+    if (state.selfServe && !state.selfServeFamilyId) {
+      console.error("[VECTOR Parent Agent] self-serve mode with no family_id in URL — submission will fail server-side ownership check.");
+    }
+
     document.getElementById("paOpeningText").innerHTML = buildOpeningScript();
     document.getElementById("childPromptText").textContent =
       `Tell me about ${state.studentFirstName} — not their resume, not their grades. Who are they?`;
+    document.getElementById("opennessPromptText").textContent =
+      `If ${state.studentFirstName}'s own answer to this ends up different from what you're picturing right now — which of these feels closest to how you'd handle that?`;
 
     renderProgress();
   }
@@ -349,7 +432,7 @@ const PA = (function () {
   function renderProgress() {
     const el = document.getElementById("paProgress");
     el.innerHTML = "";
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 7; i++) {
       const dot = document.createElement("div");
       dot.className = "pa-progress-dot";
       if (i < state.currentScreen) dot.classList.add("done");
@@ -393,6 +476,21 @@ const PA = (function () {
     }
   }
 
+  // FAMILY-ALIGNMENT-001 Section 3 (LOCKED) — the parent selects a statement,
+  // not a number. Each option pre-maps to a fixed value; no language
+  // inference step at any point. This is the entire reason Option A exists.
+  function selectOpenness(value) {
+    state.openness_indicator = value;
+
+    document.querySelectorAll(".pa-openness-option").forEach(btn => {
+      btn.classList.toggle("sel", btn.getAttribute("data-value") === String(value));
+    });
+
+    // Brief visual confirmation before advancing, same feel as the rest of
+    // this conversation — not an abrupt jump the moment a button is tapped.
+    setTimeout(() => advance(), 300);
+  }
+
   function skip() {
     // Explicitly clears any partial text in this domain's field(s) before
     // advancing — skip means skip, not "save whatever was half-typed."
@@ -409,6 +507,22 @@ const PA = (function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  // Mirrors lifescape.html's waitForClerkReady() — needed only for the
+  // self-serve submit path below; the PIN path never calls this.
+  function waitForClerkReady(maxWaitMs) {
+    return new Promise((resolve) => {
+      const start = Date.now();
+      const check = () => {
+        if (window.__clerkReady || (Date.now() - start) >= maxWaitMs) {
+          resolve(window.__clerkReady === true);
+        } else {
+          setTimeout(check, 100);
+        }
+      };
+      check();
+    });
+  }
+
   // ─────────────────────────────────────────────────────────────
   // SINGLE WRITE ENTRY POINT
   // Per CTO checklist: "Single write entry point enforced — all
@@ -417,19 +531,44 @@ const PA = (function () {
   // it posts to the worker, which owns persistence.
   // ─────────────────────────────────────────────────────────────
   async function submitToWorker() {
-    if (!state.familyMemberId) {
+    if (!state.selfServe && !state.familyMemberId) {
       console.warn("[VECTOR Parent Agent] No familyMemberId in URL — session will not be linked. This should not happen in production; consultant setup must supply ?fmid=.");
     }
+
+    let authHeader = {};
+    if (state.selfServe) {
+      // Self-serve requires a real Clerk token — the worker verifies
+      // ownership of self_serve_family_id against this token server-side
+      // (SELF-SERVE-PARENT-FLOW-001 Section 4). Give Clerk a moment to
+      // finish loading (it's deferred) before giving up.
+      const ready = await waitForClerkReady(4000);
+      if (!ready || !window.Clerk || !window.Clerk.session) {
+        console.error("[VECTOR Parent Agent] Self-serve submit attempted with no active Clerk session — submission will fail auth.");
+      } else {
+        const token = await window.Clerk.session.getToken();
+        authHeader = { "Authorization": "Bearer " + token };
+      }
+    }
+
+    const body = state.selfServe
+      ? {
+          self_serve_family_id: state.selfServeFamilyId,
+          parent_first_name: state.parentFirstName,
+          transcriptByDomain: state.transcriptByDomain,
+          openness_indicator: state.openness_indicator
+        }
+      : {
+          family_member_id: state.familyMemberId,
+          parent_first_name: state.parentFirstName,
+          transcriptByDomain: state.transcriptByDomain,
+          openness_indicator: state.openness_indicator
+        };
 
     try {
       const res = await fetch("https://api.abettercollegeconsultant.com/parent-session", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          family_member_id: state.familyMemberId,
-          parent_first_name: state.parentFirstName,
-          transcriptByDomain: state.transcriptByDomain
-        })
+        headers: Object.assign({ "Content-Type": "application/json" }, authHeader),
+        body: JSON.stringify(body)
       });
       if (!res.ok) {
         console.error("[VECTOR Parent Agent] Submission failed:", res.status);
@@ -444,7 +583,7 @@ const PA = (function () {
 
   document.addEventListener("DOMContentLoaded", init);
 
-  return { advance, skip };
+  return { advance, skip, selectOpenness };
 })();
 </script>
 

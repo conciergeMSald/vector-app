@@ -1278,21 +1278,19 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="screen" id="screen-1">
 <div class="container" style="padding-top:7rem">
   <div class="gold-rule"></div>
-  <div class="q">Who's filling this out?</div>
+  <div class="q">Let's begin.</div>
+  <!-- SELF-SERVE-PARENT-FLOW-001 Section 2 (confirmed, built): the parent
+       door that used to redirect straight to a full Parent Agent interview
+       (goToParentAgent()) is removed from this screen entirely. Self-serve
+       families now have exactly one order: student completes the
+       assessment first. The option to add parent input appears only
+       afterward, automatically, inside the report view once the
+       student's first report exists — never here. -->
   <div class="q-sub" id="s1-sub">This shapes how we ask questions and how we write your results. Nothing is permanent. Nothing commits you to anything.</div>
-
-  <div class="voice-row">
-    <button class="vbtn active" id="vbtn-student" onclick="setVoice('student')">I'm the student</button>
-    <button class="vbtn" id="vbtn-parent" onclick="goToParentAgent()">I'm a parent</button>
-  </div>
 
   <div class="path-card sel" id="pc-student" onclick="selectPath('student')">
     <div class="pc-title">Student</div>
     <div class="pc-desc">We'll ask you directly. You tell us what you love, what comes easy, what makes you lose track of time.</div>
-  </div>
-  <div class="path-card" id="pc-parent" onclick="selectPath('parent')">
-    <div class="pc-title">Parent</div>
-    <div class="pc-desc">You tell us about your child. We'll translate what you share into a profile that reflects who they really are.</div>
   </div>
 
   <button class="ls-btn" onclick="goTo('1b')">Continue</button>
@@ -2240,6 +2238,18 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
         style="font-family:var(--sans);font-size:13px;padding:6px 10px;background:var(--tile-bg);border:0.5px solid var(--tile-bdr);cursor:pointer;">
       </select>
     </div>
+
+    <!-- SELF-SERVE-PARENT-FLOW-001 Section 2 — appears automatically once the
+         student's first report exists, self-serve family identity only.
+         Never shown pre-assessment, never a separate invitation — the report
+         view itself is where this option now lives. Hidden by default;
+         shown by renderFetchedReport() only when parentProfileExists is
+         false for this family. -->
+    <div id="add-parent-thoughts-banner" style="display:none;margin-top:1rem;padding:1rem 1.25rem;background:var(--tile-bg);border:0.5px solid var(--tile-bdr);">
+      <div style="font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:0.5rem;">Want to add a parent's perspective?</div>
+      <div style="font-family:var(--sans);font-size:13px;color:var(--ink2);margin-bottom:0.75rem;">A short conversation with a parent or guardian can add real context to this report. Completely optional — this report stands on its own either way.</div>
+      <button class="ls-btn" onclick="goToParentAgentSelfServe()" style="width:auto;padding:10px 20px;">Add parent thoughts</button>
+    </div>
   </div>
 
   <!-- Report tabs -->
@@ -2739,6 +2749,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
   function renderFetchedReport(reportData, historyIndex) {
     var profile = reportData.profile || {};
+    window.__familyReportStudentFirstName = profile.name || null;
     // Mirror what the live flow sets on LS_STATE after each call, so any
     // downstream code reading LS_STATE.* (print, navigation) behaves the
     // same whether the report was just generated or fetched from history.
@@ -2791,6 +2802,18 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     // portal fetch (window.__familyReportHistory populated) — a freshly
     // generated report has no history array set, so the picker stays hidden.
     renderReportHistoryPicker(window.__familyReportHistory || [], historyIndex || 0);
+
+    // SELF-SERVE-PARENT-FLOW-001 Section 2 — self-serve family identity only
+    // (never shown in consultant view — the consultant already sees
+    // everything via Tab 4). Shown only when no parent profile exists yet
+    // for this family; a family who already added one doesn't see it again.
+    var addParentBanner = document.getElementById('add-parent-thoughts-banner');
+    if (addParentBanner) {
+      var showBanner = window.__familyReportIdentity === 'family' &&
+        window.__familyReportParentProfileExists === false &&
+        !!window.__familyReportSelfServeFamilyId;
+      addParentBanner.style.display = showBanner ? 'block' : 'none';
+    }
   }
 
   // FAMILY-PORTAL-001 item 1 / CONSULTANT-IDENTITY-002 — a consultant
@@ -2820,6 +2843,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 
       if (data.status === 'ok' && Array.isArray(data.reports) && data.reports.length > 0) {
         window.__familyReportIdentity = data.identity || 'family';
+        // SELF-SERVE-PARENT-FLOW-001 Section 2 — needed to decide whether to
+        // show "Add parent thoughts" and to build its link. Both default to
+        // a safe non-showing state if the worker response is older/missing
+        // these fields, rather than assuming a family should see the banner.
+        window.__familyReportParentProfileExists = (typeof data.parentProfileExists === 'boolean') ? data.parentProfileExists : true;
+        window.__familyReportSelfServeFamilyId = data.selfServeFamilyId || null;
         // Retained in full here (not just reports[0]) so the persistent
         // history picker can switch between them without a re-fetch.
         window.__familyReportHistory = data.reports;
@@ -3706,6 +3735,24 @@ function returnToReportFromEssayEvidence() {
   }
 }
 
+// ── SELF-SERVE-PARENT-FLOW-001 Section 2 — self-serve entry point ──
+// Only ever called from the report view's "Add parent thoughts" banner,
+// never pre-assessment. No PIN involved — the family is already
+// authenticated via Clerk, and parent-agent.html re-establishes its own
+// Clerk session on load (same cookie, same domain) rather than passing a
+// token through the URL.
+function goToParentAgentSelfServe() {
+  var familyId = window.__familyReportSelfServeFamilyId;
+  if (!familyId) {
+    console.error('[VECTOR Lifescape] goToParentAgentSelfServe called with no selfServeFamilyId available.');
+    return;
+  }
+  var student = window.__familyReportStudentFirstName || '';
+  var url = 'parent-agent.html?mode=self_serve&family_id=' + encodeURIComponent(familyId) +
+    (student ? ('&student=' + encodeURIComponent(student)) : '');
+  window.location.href = url;
+}
+
 // ── VOICE FORK ─────────────────────────────────────
 function goToParentAgent() {
   // Parents get their own real interview, not a relabeled student flow.
@@ -3717,10 +3764,14 @@ function goToParentAgent() {
 
 function setVoice(v) {
   LS_STATE.voice = v;
-  document.getElementById('vbtn-student').classList.toggle('active', v==='student');
-  document.getElementById('vbtn-parent').classList.toggle('active', v==='parent');
-  document.getElementById('pc-student').classList.toggle('sel', v==='student');
-  document.getElementById('pc-parent').classList.toggle('sel', v==='parent');
+  var vbtnStudent = document.getElementById('vbtn-student');
+  var vbtnParent  = document.getElementById('vbtn-parent');
+  var pcStudent   = document.getElementById('pc-student');
+  var pcParent    = document.getElementById('pc-parent');
+  if (vbtnStudent) vbtnStudent.classList.toggle('active', v==='student');
+  if (vbtnParent)  vbtnParent.classList.toggle('active', v==='parent');
+  if (pcStudent)   pcStudent.classList.toggle('sel', v==='student');
+  if (pcParent)    pcParent.classList.toggle('sel', v==='parent');
   const p = v === 'parent';
   const s1sub = document.getElementById('s1-sub');
   if(s1sub) s1sub.textContent = p
