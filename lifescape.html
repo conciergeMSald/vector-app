@@ -2767,6 +2767,20 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     if (window.__familyReportIdentity === 'consultant') {
       renderCounselorView(profile, reportData.callA, reportData.callB, reportData.callC, reportData.essay, schools.primary || []);
     }
+    // FIX: renderSchoolRecommendations() was never called on this path — the
+    // only function that builds the interactive .uni-card elements (school
+    // name, narrative, and the existing School Intelligence toggle). Without
+    // it, a family/consultant viewing a report through the portal saw the
+    // narrative sections and the printable compiled sheet below, but never
+    // the actual interactive "Where You Fit" card list — it silently never
+    // rendered. consultantExpansion (6th param) isn't persisted in
+    // report_data (it's a live-only counselor-view computation), so it's
+    // passed as [] here — matches the existing empty-state convention used
+    // throughout this file rather than attempting to recompute it.
+    if (schools.primary && schools.primary.length > 0 && typeof renderSchoolRecommendations === 'function') {
+      renderSchoolRecommendations(profile, reportData.callA, schools.primary || [],
+        schools.adjacent || [], schools.profileAdjacent || [], [], schools.sizeAdjacent || []);
+    }
     if (schools.primary && schools.primary.length > 0 && typeof buildCompiledSheet === 'function') {
       buildCompiledSheet(profile, schools.primary, schools.adjacent || [], schools.profileAdjacent || [],
         schools.underTheRadar || [], schools.scenario || [], schools.sizeAdjacent || []);
@@ -2910,6 +2924,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
   } else {
     runIntroSequence();
   }
+
+  // Exposed for toggleAlumniNetwork()/fetchAlumniNetwork(), defined later in
+  // this file outside this IIFE (ALUMNI-NETWORK-ARCH-001 v1) — same pattern
+  // already used for window.__selectStudentAndReload above, not a new
+  // exposure convention.
+  window.waitForClerkReady = waitForClerkReady;
+  window.getConsultantViewFamilyId = getConsultantViewFamilyId;
 })();
 
 // ── STATE — defined first so all functions can reference safely ──
@@ -6801,6 +6822,10 @@ function renderSchoolRecommendations(profile, callAData, callDData, adjacentPick
       </div>
       <button class="school-intel-toggle" onclick="toggleSchoolIntel(${i})">Explore this school in depth &#8595;</button>
       <div class="school-intel-panel" id="school-intel-panel-${i}"></div>
+      ${(typeof window !== 'undefined' && window.__familyReportIdentity && ALUMNI_NETWORK_SCHOOL_SLUGS[s.name])
+        ? `<button class="school-intel-toggle" onclick="toggleAlumniNetwork(${i})">Alumni in Los Angeles &#8595;</button>
+           <div class="school-intel-panel" id="alumni-network-panel-${i}"></div>`
+        : ''}
     </div>`;
   }).join('');
 
@@ -10312,6 +10337,103 @@ function renderDurabilityBody(moat, resilience) {
 }
 
 var _schoolIntelOpenIdx = null;
+
+/* ── Alumni Network (Los Angeles) — ALUMNI-NETWORK-ARCH-001 v1 ───────────
+   Client-side counterpart to the School Intelligence toggle above. Only
+   ever shown when window.__familyReportIdentity is set (i.e. viewing via
+   the family/consultant portal, per checkForExistingReport above) — the
+   endpoint itself requires a Clerk session, so there's no live-intake-flow
+   case where this button would ever succeed.
+
+   ALUMNI_NETWORK_SCHOOL_SLUGS is a client-side gate: only schools already
+   ingested into the alumni database get the button at all, rather than
+   showing it everywhere and having most clicks return "not available yet."
+   This is now the THIRD copy of this same six-school mapping (worker.js has
+   one inline for the same single-file-Worker reason; alumni_school_slug_map.js
+   is the source of truth for the ingestion script). Flagged clearly: if a
+   metro/cohort expansion happens, this list needs updating in all three
+   places until/unless a shared config endpoint replaces the duplication.
+   ───────────────────────────────────────────────────────────────────────── */
+var ALUMNI_NETWORK_SCHOOL_SLUGS = {
+  'Indiana University': 'indiana-university',
+  'Vanderbilt University': 'vanderbilt',
+  'Tulane University': 'tulane',
+  'University of Colorado Boulder': 'cu-boulder',
+  'Elon University': 'elon',
+  'University of Missouri': 'missouri',
+};
+
+var _alumniNetworkOpenIdx = null;
+
+async function fetchAlumniNetwork(schoolSlug) {
+  var ready = await window.waitForClerkReady(3000);
+  if (!ready || !window.Clerk || !window.Clerk.session) return null;
+  try {
+    var token = await window.Clerk.session.getToken();
+    var consultantFamilyId = (typeof window.getConsultantViewFamilyId === 'function') ? window.getConsultantViewFamilyId() : null;
+    var url = 'https://api.abettercollegeconsultant.com/family-alumni-network?school_slug=' + encodeURIComponent(schoolSlug)
+      + (consultantFamilyId ? ('&family_account_id=' + encodeURIComponent(consultantFamilyId)) : '');
+    var res = await fetch(url, { headers: { 'Authorization': 'Bearer ' + token } });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (e) {
+    console.warn('[alumniNetwork] fetch failed:', e.message);
+    return null;
+  }
+}
+
+function toggleAlumniNetwork(idx) {
+  var panel = document.getElementById('alumni-network-panel-' + idx);
+  if (!panel) return;
+
+  if (_alumniNetworkOpenIdx !== null && _alumniNetworkOpenIdx !== idx) {
+    var prev = document.getElementById('alumni-network-panel-' + _alumniNetworkOpenIdx);
+    if (prev) prev.classList.remove('open');
+  }
+
+  var opening = !panel.classList.contains('open');
+  if (opening && !panel.dataset.rendered) {
+    renderAlumniNetworkInto(panel, idx);
+    panel.dataset.rendered = 'true';
+  }
+  panel.classList.toggle('open', opening);
+  _alumniNetworkOpenIdx = opening ? idx : null;
+}
+
+async function renderAlumniNetworkInto(panel, idx) {
+  var schoolName = LS_STATE.renderedSchoolNames && LS_STATE.renderedSchoolNames[idx];
+  var slug = schoolName && ALUMNI_NETWORK_SCHOOL_SLUGS[schoolName];
+  if (!slug) { panel.innerHTML = ''; return; }
+
+  panel.innerHTML = '<div class="school-intel-inner"><div class="school-intel-cat-body">Loading…</div></div>';
+
+  var data = await fetchAlumniNetwork(slug);
+
+  // available:false (or a failed/blocked fetch) degrades to nothing shown —
+  // same "architecturally invisible" convention used for missing V5/report
+  // data everywhere else in this file, not an error state the family sees.
+  if (!data || !data.available) { panel.innerHTML = ''; return; }
+
+  var html = '<div class="school-intel-inner">';
+  html += '<div class="school-intel-cat">';
+  html += '<div class="school-intel-cat-head">Alumni in Los Angeles</div>';
+  if (data.family_facing_summary) {
+    html += '<div class="school-intel-cat-body">' + data.family_facing_summary + '</div>';
+  }
+  if (data.chapter_name) {
+    html += '<div class="card-traj-note" style="margin-top:8px;"><strong>Chapter:</strong> ' + data.chapter_name + '</div>';
+  }
+  if (data.signature_pipeline_name) {
+    html += '<div class="card-traj-note" style="margin-top:4px;"><strong>' + data.signature_pipeline_name + ':</strong> '
+      + (data.signature_pipeline_description || '') + '</div>';
+  }
+  if (Array.isArray(data.neighborhoods) && data.neighborhoods.length > 0) {
+    html += '<div class="card-traj-note" style="margin-top:8px;"><strong>Where alumni cluster:</strong> '
+      + data.neighborhoods.join(', ') + '</div>';
+  }
+  html += '</div></div>';
+  panel.innerHTML = html;
+}
 
 function toggleSchoolIntel(idx) {
   var panel = document.getElementById('school-intel-panel-' + idx);
