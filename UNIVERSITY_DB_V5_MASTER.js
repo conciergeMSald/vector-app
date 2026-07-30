@@ -77,19 +77,6 @@ const UNIVERSITY_DB_V5 = {
       "socialClimate": "Large, energetic, professionally ambitious, socially active, and exceptionally diverse.",
       "leadershipStyle": "Leadership through innovation, experimentation, interdisciplinary collaboration, and entrepreneurial thinking."
     },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Arizona Sun Corridor",
-      "regionalRole": "One of the Southwest's primary talent engines supporting semiconductors, aerospace, defense, healthcare, fintech, logistics, artificial intelligence, and advanced manufacturing."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 26,
-      "BosWash": 24,
-      "TorBuffChester": 10,
-      "TexasTriangle": 76,
-      "CharLanta": 20,
-      "NorCalInnovationCorridor": 62,
-      "SoCalCreativeEconomy": 84
-    },
     "comparativePositioning": {
       "versusUniversityOfArizona": "The University of Arizona has stronger historical strengths in astronomy, optics, and certain life sciences, while ASU has become substantially larger, more entrepreneurial, and more deeply integrated into engineering, semiconductors, business, artificial intelligence, and the Phoenix corporate economy.",
       "versusNCState": "Both are outstanding public innovation universities. NC State maintains stronger historical engineering prestige, while ASU offers a broader entrepreneurship ecosystem, larger scale, stronger sustainability initiatives, and greater integration with one of America's fastest-growing metropolitan economies.",
@@ -474,7 +461,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Barrett, The Honors College",
       "strength": 100,
       "notes": "Barrett is widely regarded as the premier honors college in American public higher education. It provides small seminar-style classes, dedicated residential communities, priority registration, undergraduate research, national fellowship advising, honors thesis requirements, and a liberal arts experience embedded within one of the country's largest research universities. Barrett significantly alters the undergraduate experience and serves as one of ASU's defining competitive advantages."
-    }
+    },
+    "primaryMegaRegionSlug": "arizona-sun-corridor",
+    "regionalRole": "One of the Southwest's primary talent engines supporting semiconductors, aerospace, defense, healthcare, fintech, logistics, artificial intelligence, and advanced manufacturing.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 26
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 76
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 62
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 84
+      }
+    ]
   },
   "University of Washington": {
     "applicationIntelligence": {
@@ -554,19 +569,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "One of the world's premier public universities across medicine, computer science, engineering, public health, and scientific research.",
       "socialClimate": "Intellectually ambitious, collaborative, globally diverse, research-oriented, and professionally driven.",
       "leadershipStyle": "Leadership through discovery, scientific excellence, technological innovation, and public impact."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Cascadia",
-      "regionalRole": "One of the world's primary talent generators for cloud computing, artificial intelligence, biotechnology, aerospace, healthcare, and Pacific Rim commerce."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 18,
-      "BosWash": 52,
-      "TorBuffChester": 20,
-      "TexasTriangle": 42,
-      "CharLanta": 16,
-      "NorCalInnovationCorridor": 88,
-      "SoCalCreativeEconomy": 42
     },
     "comparativePositioning": {
       "versusBerkeley": "Berkeley possesses stronger integration with venture capital, startup formation, economics, and the Silicon Valley founder ecosystem, while UW has deeper relationships with cloud computing, enterprise software, biotechnology, medicine, and global health through Seattle's technology economy.",
@@ -951,7 +953,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Interdisciplinary Honors Program",
       "strength": 90,
       "notes": "UW's Interdisciplinary Honors Program provides small seminar-based coursework, priority access to faculty, research opportunities, and an academically intimate liberal arts experience within a major research university. Departmental Honors programs further allow high-achieving students to complete advanced research and honors theses within their majors."
-    }
+    },
+    "primaryMegaRegionSlug": "cascadia",
+    "regionalRole": "One of the world's primary talent generators for cloud computing, artificial intelligence, biotechnology, aerospace, healthcare, and Pacific Rim commerce.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 52
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 42
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 88
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 42
+      }
+    ]
   },
   "University of Arizona": {
     "applicationIntelligence": {
@@ -1031,19 +1061,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Globally respected across astronomy, optics, engineering, medicine, environmental science, and space research.",
       "socialClimate": "Collaborative, spirited, research-focused, outdoors-oriented, and professionally ambitious.",
       "leadershipStyle": "Leadership through scientific excellence, innovation, exploration, and interdisciplinary collaboration."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Arizona Sun Corridor",
-      "regionalRole": "A leading scientific and research institution powering aerospace, defense, optics, healthcare, mining, environmental science, and advanced manufacturing throughout the American Southwest."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 30,
-      "BosWash": 20,
-      "TorBuffChester": 10,
-      "TexasTriangle": 72,
-      "CharLanta": 18,
-      "NorCalInnovationCorridor": 58,
-      "SoCalCreativeEconomy": 82
     },
     "comparativePositioning": {
       "versusArizonaState": "ASU emphasizes entrepreneurship, business, semiconductors, and the rapidly expanding Phoenix innovation economy, while Arizona possesses deeper historical strengths in astronomy, optics, planetary science, environmental research, aerospace engineering, and biomedical research.",
@@ -1428,7 +1445,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "W.A. Franke Honors College",
       "strength": 94,
       "notes": "The W.A. Franke Honors College provides an academically rigorous, small-college experience within the University of Arizona. Students benefit from honors seminars, dedicated advising, priority registration, undergraduate research, faculty mentorship, honors housing, national fellowship support, and interdisciplinary thesis opportunities. It significantly enhances the undergraduate experience, particularly for students pursuing STEM, medicine, business, and research careers."
-    }
+    },
+    "primaryMegaRegionSlug": "arizona-sun-corridor",
+    "regionalRole": "A leading scientific and research institution powering aerospace, defense, optics, healthcare, mining, environmental science, and advanced manufacturing throughout the American Southwest.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 30
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 72
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 58
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 82
+      }
+    ]
   },
   "University of Oregon": {
     "applicationIntelligence": {
@@ -1497,19 +1542,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in sports business; solid regional business prestige more broadly.",
       "socialClimate": "Laid-back, outdoorsy, ambitious undercurrent via Nike ties.",
       "leadershipStyle": "Leadership through Nike-alumni network access and Pacific Northwest business relationships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Cascadia",
-      "regionalRole": "The primary sports business talent engine for the Pacific Northwest, anchored by Nike."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 14,
-      "TorBuffChester": 6,
-      "TexasTriangle": 8,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 38,
-      "SoCalCreativeEconomy": 16
     },
     "comparativePositioning": {
       "versusWashington": "Washington offers stronger CS/tech ties to Seattle; Oregon offers the unmatched Nike sports business pipeline.",
@@ -1763,7 +1795,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Clark Honors College",
       "strength": 76,
       "notes": "Provides smaller seminars and priority registration within Oregon's larger flagship structure."
-    }
+    },
+    "primaryMegaRegionSlug": "cascadia",
+    "regionalRole": "The primary sports business talent engine for the Pacific Northwest, anchored by Nike.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 38
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 16
+      }
+    ]
   },
   "Reed College": {
     "applicationIntelligence": {
@@ -1838,19 +1898,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Exceptionally respected within academia, graduate education, and intellectual professions despite intentionally maintaining a relatively low public profile.",
       "socialClimate": "Highly intellectual, unconventional, collaborative, intensely academic, and community-oriented.",
       "leadershipStyle": "Leadership through intellectual rigor, original thinking, scholarship, and independent inquiry."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Cascadia",
-      "regionalRole": "A distinctive liberal arts institution producing scholars, scientists, physicians, researchers, and intellectually oriented leaders for graduate education, technology, healthcare, and public service."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 52,
-      "TorBuffChester": 18,
-      "TexasTriangle": 12,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 82,
-      "SoCalCreativeEconomy": 42
     },
     "comparativePositioning": {
       "versusSwarthmore": "Both are among America's most intellectually rigorous liberal arts colleges with exceptional PhD production. Swarthmore maintains stronger engineering options, East Coast institutional connectivity, and somewhat broader national prestige, while Reed embraces an even more unconventional academic culture centered on independent scholarship, conference-style learning, and the senior thesis.",
@@ -2229,7 +2276,35 @@ const UNIVERSITY_DB_V5 = {
       "strength": 0,
       "notes": "Reed does not maintain a separate honors college because the entire institution functions as an honors-level academic experience. Every student participates in an interdisciplinary humanities sequence, completes an original senior thesis, and studies within small discussion-based classes emphasizing scholarship, writing, and independent inquiry.",
       "wholeInstitutionRigor": true
-    }
+    },
+    "primaryMegaRegionSlug": "cascadia",
+    "regionalRole": "A distinctive liberal arts institution producing scholars, scientists, physicians, researchers, and intellectually oriented leaders for graduate education, technology, healthcare, and public service.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 52
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 82
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 42
+      }
+    ]
   },
   "Gonzaga University": {
     "applicationIntelligence": {
@@ -2309,19 +2384,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Highly respected throughout the Pacific Northwest, particularly in business, healthcare, education, engineering, and leadership development.",
       "socialClimate": "Welcoming, collaborative, spirited, residential, and values-driven.",
       "leadershipStyle": "Leadership through service, ethical decision-making, personal integrity, and community engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Cascadia",
-      "regionalRole": "A leading private university developing business, healthcare, engineering, and civic leaders for the Inland Northwest and broader Pacific Northwest economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 22,
-      "TorBuffChester": 8,
-      "TexasTriangle": 18,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 74,
-      "SoCalCreativeEconomy": 34
     },
     "comparativePositioning": {
       "versusSantaClara": "Both are highly respected Catholic universities with strong business programs and close faculty relationships. Santa Clara benefits from direct integration with Silicon Valley and technology recruiting, while Gonzaga offers a more traditional residential campus, stronger school spirit, and deeper influence throughout the Inland Northwest.",
@@ -2698,7 +2760,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Gonzaga University Honors Program",
       "strength": 90,
       "notes": "The Gonzaga Honors Program creates a liberal arts, seminar-based experience within the university through interdisciplinary coursework, close faculty mentorship, priority registration, undergraduate research, and a senior thesis. The program emphasizes critical thinking, ethics, writing, and leadership while allowing students to complete majors across business, engineering, sciences, and the humanities."
-    }
+    },
+    "primaryMegaRegionSlug": "cascadia",
+    "regionalRole": "A leading private university developing business, healthcare, engineering, and civic leaders for the Inland Northwest and broader Pacific Northwest economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 74
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 34
+      }
+    ]
   },
   "Indiana University Bloomington": {
     "applicationIntelligence": {
@@ -2778,19 +2868,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Internationally respected for business, accounting, public affairs, music, and professional education, with strong national recognition across a wide range of disciplines.",
       "socialClimate": "Highly engaged, collaborative, spirited, professionally ambitious, and deeply connected through residential traditions and student organizations.",
       "leadershipStyle": "Leadership through professional excellence, collaboration, service, integrity, and lifelong relationships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "One of the Midwest's leading talent engines for corporate leadership, finance, healthcare administration, consulting, public policy, accounting, and professional services."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 96,
-      "BosWash": 72,
-      "TorBuffChester": 48,
-      "TexasTriangle": 64,
-      "CharLanta": 52,
-      "NorCalInnovationCorridor": 38,
-      "SoCalCreativeEconomy": 34
     },
     "comparativePositioning": {
       "versusWisconsin": "Both are elite flagship public universities with outstanding undergraduate experiences. Wisconsin offers broader engineering and STEM strength, while Indiana distinguishes itself through the Kelley School of Business, public affairs, music, media, and a stronger pipeline into corporate leadership and finance.",
@@ -3175,7 +3252,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Hutton Honors College",
       "strength": 98,
       "notes": "The Hutton Honors College is one of the nation's premier honors programs at a public university. Students receive honors seminars, priority registration, dedicated advising, research funding, scholarships, international study support, and close faculty mentorship while retaining access to the full resources of Indiana University and schools such as Kelley, O'Neill, Jacobs, and Luddy."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "One of the Midwest's leading talent engines for corporate leadership, finance, healthcare administration, consulting, public policy, accounting, and professional services.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 96
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 72
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 64
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 52
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 38
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 34
+      }
+    ]
   },
   "Iowa State University": {
     "institutionNarrative": {
@@ -3247,19 +3352,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally respected for engineering, agriculture, veterinary medicine, design, and applied research with an exceptionally strong employer reputation.",
       "socialClimate": "Collaborative, welcoming, hardworking, highly involved, and deeply connected through Big 12 traditions and student organizations.",
       "leadershipStyle": "Leadership through innovation, technical excellence, collaboration, practical problem-solving, and service."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "One of America's leading talent engines for engineering, advanced manufacturing, agriculture, food systems, renewable energy, infrastructure, and industrial innovation."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 100,
-      "BosWash": 38,
-      "TorBuffChester": 52,
-      "TexasTriangle": 70,
-      "CharLanta": 26,
-      "NorCalInnovationCorridor": 28,
-      "SoCalCreativeEconomy": 20
     },
     "comparativePositioning": {
       "versusPurdue": "Both are elite engineering-focused public universities with exceptional employer reputations. Purdue has greater national prestige in engineering and aerospace, while Iowa State offers stronger agriculture, agricultural engineering, veterinary medicine, and a more collaborative campus culture.",
@@ -3644,7 +3736,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program",
       "strength": 92,
       "notes": "The University Honors Program provides honors seminars, faculty mentoring, undergraduate research, priority registration, international experiences, and interdisciplinary learning. Honors students benefit from smaller academic communities while maintaining access to Iowa State's extensive engineering, agriculture, design, and research ecosystem."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "One of America's leading talent engines for engineering, advanced manufacturing, agriculture, food systems, renewable energy, infrastructure, and industrial innovation.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 38
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 70
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 26
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 28
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 20
+      }
+    ]
   },
   "Oklahoma State University": {
     "institutionNarrative": {
@@ -3716,19 +3836,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Highly respected by employers in engineering, energy, agriculture, aviation, veterinary medicine, and business, with an employer reputation that exceeds its national public profile.",
       "socialClimate": "Welcoming, spirited, collaborative, tradition-rich, and strongly connected through alumni, athletics, Greek life, and student organizations.",
       "leadershipStyle": "Leadership through service, technical excellence, entrepreneurship, resilience, and community engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "One of the leading talent producers for the energy industry, advanced manufacturing, aviation, engineering, agriculture, and business leadership across the South-Central United States."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 98,
-      "TexasTriangle": 90,
-      "CharLanta": 30,
-      "BosWash": 28,
-      "TorBuffChester": 24,
-      "NorCalInnovationCorridor": 22,
-      "SoCalCreativeEconomy": 16
     },
     "comparativePositioning": {
       "versusTexasTech": "Both are major public universities serving the South-Central economy with strengths in engineering, agriculture, and business. Oklahoma State has stronger employer loyalty in energy, agriculture, veterinary medicine, and aviation, while Texas Tech benefits from greater scale in health sciences and West Texas regional influence.",
@@ -4117,7 +4224,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "OSU Honors College",
       "strength": 90,
       "notes": "The Honors College offers smaller seminar courses, priority enrollment, faculty mentorship, undergraduate research, honors housing, and interdisciplinary academic opportunities. Students combine the personalized honors experience with the extensive resources of a major land-grant research university."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "One of the leading talent producers for the energy industry, advanced manufacturing, aviation, engineering, agriculture, and business leadership across the South-Central United States.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 98
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 90
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 30
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 28
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 16
+      }
+    ]
   },
   "University of Kansas": {
     "institutionNarrative": {
@@ -4189,19 +4324,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally respected for pharmacy, journalism, special education, architecture, healthcare, and several professional programs, with a particularly strong regional employer reputation.",
       "socialClimate": "Highly spirited, collaborative, welcoming, and deeply connected through athletics, traditions, student organizations, and the Lawrence community.",
       "leadershipStyle": "Leadership through service, scholarship, innovation, collaboration, and civic engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "One of the Midwest's leading talent producers for healthcare, engineering, architecture, journalism, business, education, and public leadership."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 92,
-      "TexasTriangle": 58,
-      "TorBuffChester": 48,
-      "BosWash": 40,
-      "CharLanta": 32,
-      "NorCalInnovationCorridor": 28,
-      "SoCalCreativeEconomy": 24
     },
     "comparativePositioning": {
       "versusMissouri": "Both are flagship universities with broad academic offerings and strong SEC/Big 12 traditions. Kansas has stronger pharmacy, journalism, architecture, and special education, while Missouri has greater influence in agriculture, animal sciences, and statewide political leadership.",
@@ -4582,7 +4704,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program",
       "strength": 90,
       "notes": "KU's University Honors Program provides interdisciplinary seminars, faculty mentorship, undergraduate research, priority enrollment, global learning opportunities, and honors housing. Students gain the benefits of a close academic community while leveraging the resources of a comprehensive flagship research university."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "One of the Midwest's leading talent producers for healthcare, engineering, architecture, journalism, business, education, and public leadership.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 92
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 58
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 40
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 32
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 28
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 24
+      }
+    ]
   },
   "University of Houston": {
     "institutionNarrative": {
@@ -4654,19 +4804,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Highly respected by employers throughout Texas in engineering, business, hospitality, law, architecture, healthcare, and energy, with rising national research visibility.",
       "socialClimate": "Highly diverse, professionally focused, entrepreneurial, and less residential than traditional flagship universities, with student life deeply connected to the surrounding city.",
       "leadershipStyle": "Leadership through innovation, resilience, entrepreneurship, technical expertise, and civic engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "One of the Texas Triangle's leading producers of engineering, healthcare, energy, business, architecture, logistics, and technology talent."
-    },
-    "megaRegionExposure": {
-      "TexasTriangle": 100,
-      "MidContinentIndustrialEnergyCorridor": 82,
-      "CharLanta": 56,
-      "BosWash": 42,
-      "NorCalInnovationCorridor": 34,
-      "TorBuffChester": 28,
-      "SoCalCreativeEconomy": 26
     },
     "comparativePositioning": {
       "versusUTDallas": "Both universities are deeply connected to major Texas metropolitan economies and produce outstanding outcomes in business, engineering, computer science, and technology. UT Dallas has stronger national visibility in computer science and research, while Houston offers broader strength in energy, architecture, hospitality, law, logistics, healthcare, and access to the nation's largest medical center.",
@@ -5043,7 +5180,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "The Honors College",
       "strength": 94,
       "notes": "The Honors College is one of UH's signature academic assets. It offers interdisciplinary seminars, priority registration, undergraduate research, close faculty mentoring, prestigious scholarship advising, and specialized programs in medicine, law, public policy, entrepreneurship, and the humanities. The Honors College creates a small-college academic experience within one of the nation's largest urban research universities."
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "One of the Texas Triangle's leading producers of engineering, healthcare, energy, business, architecture, logistics, and technology talent.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 82
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 56
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 42
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 34
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 26
+      }
+    ]
   },
   "The University of Texas at Dallas": {
     "institutionNarrative": {
@@ -5115,19 +5280,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Rapidly rising national reputation in STEM disciplines, with particularly strong employer recognition in Texas and among technology companies.",
       "socialClimate": "Academically focused, globally diverse, collaborative, and career-oriented. Student engagement centers more on research, innovation, and professional organizations than on traditional college traditions.",
       "leadershipStyle": "Leadership through innovation, technical expertise, entrepreneurship, research, and collaborative problem-solving."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "One of the Texas Triangle's premier producers of technology, engineering, AI, finance, and data science talent."
-    },
-    "megaRegionExposure": {
-      "TexasTriangle": 100,
-      "NorCalInnovationCorridor": 84,
-      "MidContinentIndustrialEnergyCorridor": 76,
-      "BosWash": 52,
-      "SoCalCreativeEconomy": 38,
-      "CharLanta": 36,
-      "TorBuffChester": 28
     },
     "comparativePositioning": {
       "versusUniversityOfHouston": "Both universities leverage major Texas metropolitan economies to create exceptional career outcomes. UTD has greater strength in computer science, artificial intelligence, semiconductors, cybersecurity, and quantitative finance, while Houston has broader advantages in energy, healthcare, architecture, hospitality, and logistics.",
@@ -5508,7 +5660,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Hobson Wildenthal Honors College",
       "strength": 96,
       "notes": "The Hobson Wildenthal Honors College is one of UTD's signature differentiators. It provides small interdisciplinary seminars, priority registration, faculty mentorship, undergraduate research, generous scholarship opportunities, and accelerated pathways into graduate study. Combined with UTD's STEM focus, it creates an elite academic experience within a rapidly ascending public research university."
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "One of the Texas Triangle's premier producers of technology, engineering, AI, finance, and data science talent.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 84
+      },
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 76
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 52
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 38
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 36
+      }
+    ]
   },
   "The University of Alabama": {
     "institutionNarrative": {
@@ -5580,19 +5760,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally respected across the Southeast with particularly strong employer recognition in business, accounting, engineering, law, communications, and healthcare. The Honors College significantly elevates the academic experience for high-achieving students.",
       "socialClimate": "Highly residential, socially active, tradition-rich, and exceptionally spirited, with one of the nation's strongest campus communities centered around athletics, Greek life, and student organizations.",
       "leadershipStyle": "Leadership through service, tradition, professional excellence, and community engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A leading producer of business, engineering, healthcare, accounting, communications, and public-sector talent across the Southeast."
-    },
-    "megaRegionExposure": {
-      "CharLanta": 98,
-      "TexasTriangle": 66,
-      "MidContinentIndustrialEnergyCorridor": 72,
-      "BosWash": 42,
-      "NorCalInnovationCorridor": 26,
-      "SoCalCreativeEconomy": 22,
-      "TorBuffChester": 18
     },
     "comparativePositioning": {
       "versusAuburn": "Both are premier public universities in Alabama with deeply loyal alumni and strong SEC traditions. Auburn has broader national recognition in engineering, architecture, aviation, and agriculture, while Alabama offers stronger accounting, communications, public relations, law, honors education, and a larger national out-of-state student population driven by merit scholarships.",
@@ -5973,7 +6140,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "The Honors College",
       "strength": 98,
       "notes": "The Honors College is widely regarded as one of the premier public honors programs in the United States. Students benefit from small seminars, priority registration, undergraduate research, nationally competitive fellowships, specialized housing, close faculty mentorship, and programs such as Randall Research Scholars and Blount Scholars. For many high-achieving students, it delivers an honors experience comparable to far more selective institutions while paired with substantial merit scholarships."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A leading producer of business, engineering, healthcare, accounting, communications, and public-sector talent across the Southeast.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 98
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 66
+      },
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 72
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 42
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 26
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 22
+      }
+    ]
   },
   "Harvard University": {
     "institutionNarrative": {
@@ -6040,19 +6235,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Highest global academic prestige across multiple disciplines",
       "socialClimate": "Highly ambitious, network-aware, leadership-focused, and globally oriented",
       "leadershipStyle": "Leadership through institutional placement, intellectual authority, and global network leverage"
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "Anchor institution in the Boston-Cambridge ecosystem spanning academia, biotech, finance, venture capital, and government policy"
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 18,
-      "BosWash": 100,
-      "TorBuffChester": 35,
-      "TexasTriangle": 40,
-      "CharLanta": 28,
-      "NorCalInnovationCorridor": 75,
-      "SoCalCreativeEconomy": 45
     },
     "comparativePositioning": {
       "versusStanford": "Harvard dominates in global institutional leadership, law, government, and traditional elite networks, while Stanford dominates in venture capital adjacency and modern tech founder ecosystems.",
@@ -6349,7 +6531,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 95,
       "geographicLockIn": "low",
       "alumniDispersalPattern": "global elite concentration"
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "Anchor institution in the Boston-Cambridge ecosystem spanning academia, biotech, finance, venture capital, and government policy",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 40
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 28
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 75
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 45
+      }
+    ]
   },
   "Brown University": {
     "institutionNarrative": {
@@ -6419,19 +6629,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite Ivy League prestige with distinctive emphasis on intellectual independence",
       "socialClimate": "Creative, collaborative, intellectually curious, socially engaged",
       "leadershipStyle": "Leadership through intellectual originality, innovation, and self-directed exploration"
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "Academic anchor feeding talent into Boston biotech, New York finance/media, and national/global innovation ecosystems"
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 20,
-      "BosWash": 95,
-      "TorBuffChester": 30,
-      "TexasTriangle": 40,
-      "CharLanta": 25,
-      "NorCalInnovationCorridor": 70,
-      "SoCalCreativeEconomy": 60
     },
     "comparativePositioning": {
       "versusHarvard": "Harvard offers stronger institutional power networks and global elite pipeline density, while Brown offers greater intellectual freedom and interdisciplinary creativity.",
@@ -6709,7 +6906,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 95,
       "geographicLockIn": "low",
       "alumniDispersalPattern": "highly distributed global professionals"
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "Academic anchor feeding talent into Boston biotech, New York finance/media, and national/global innovation ecosystems",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 95
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 40
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 25
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 70
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 60
+      }
+    ]
   },
   "University of Illinois Urbana-Champaign": {
     "applicationIntelligence": {
@@ -6777,19 +7002,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite CS-specific prestige rivaling top private universities.",
       "socialClimate": "Big Ten spirited, technically serious.",
       "leadershipStyle": "Leadership through technical excellence and direct tech-industry recruiting relationships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A primary CS/tech talent engine feeding Chicago and Silicon Valley."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 78,
-      "BosWash": 24,
-      "TorBuffChester": 12,
-      "TexasTriangle": 10,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 58,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusGeorgiaTech": "Georgia Tech offers stronger Atlanta startup ties; Illinois offers a more selective CS admissions bar and stronger direct Silicon Valley pipeline.",
@@ -7040,7 +7252,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Campus Honors Program",
       "strength": 78,
       "notes": "Provides smaller seminars and priority registration within UIUC's larger structure."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A primary CS/tech talent engine feeding Chicago and Silicon Valley.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 78
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 58
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Rutgers University": {
     "institutionNarrative": {
@@ -7100,19 +7340,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional prestige, especially in pharmacy.",
       "socialClimate": "Big Ten spirited, practical, diverse.",
       "leadershipStyle": "Leadership through scale and direct pharmaceutical industry partnership."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A key pharmaceutical industry talent engine for the NJ corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 86,
-      "TorBuffChester": 14,
-      "TexasTriangle": 6,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusMaryland": "Maryland offers stronger DC federal ties; Rutgers offers a more concentrated NJ pharmaceutical industry pipeline."
@@ -7361,7 +7588,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 76,
       "notes": "Provides smaller cohorts within Rutgers' larger multi-campus structure."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A key pharmaceutical industry talent engine for the NJ corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 86
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "University of Michigan": {
     "applicationIntelligence": {
@@ -7431,19 +7686,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite national prestige rivaling top private universities.",
       "socialClimate": "Ambitious, Big Ten spirited, intellectually serious.",
       "leadershipStyle": "Leadership through academic rigor, research excellence, and elite corporate placement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "The Midwest's top academic talent engine, feeding elite consulting, finance, and Detroit's automotive/mobility economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 68,
-      "BosWash": 58,
-      "TorBuffChester": 24,
-      "TexasTriangle": 16,
-      "CharLanta": 14,
-      "NorCalInnovationCorridor": 52,
-      "SoCalCreativeEconomy": 22
     },
     "comparativePositioning": {
       "versusBerkeley": "Both are elite public research universities. Berkeley leans slightly more toward tech/Silicon Valley; Michigan leans more toward consulting, finance, and Detroit's automotive economy.",
@@ -7717,7 +7959,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "LSA Honors Program",
       "strength": 86,
       "notes": "Provides smaller seminar classes, research opportunities, and priority registration within Michigan's large scale."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "The Midwest's top academic talent engine, feeding elite consulting, finance, and Detroit's automotive/mobility economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 68
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 58
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 52
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 22
+      }
+    ]
   },
   "University of South Carolina": {
     "institutionNarrative": {
@@ -7820,10 +8090,6 @@ const UNIVERSITY_DB_V5 = {
       "name": "South Carolina Honors College",
       "strength": 92,
       "notes": "Consistently ranked among the top public honors colleges nationally. Offers dedicated honors housing, priority registration, smaller seminar-style general education, and its own study abroad and research funding — a genuinely distinct smaller-school experience within USC's large undergraduate population."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "SEC flagship university supplying business, communications, and regional leadership talent across the Southeast."
     },
     "studentFit": {
       "bigFiveProfile": {
@@ -8146,7 +8412,10 @@ const UNIVERSITY_DB_V5 = {
     },
     "humanOutcomes": {
       "narrative": "R1 status, Darla Moore School (#1 international business among publics for decades), ~92% retention, $323M FY25 research funding. In-state tuition ~$12k/yr, ~80% receive grants. Two-thirds of in-state alumni live outside Columbia metro -- strong statewide reach."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "SEC flagship university supplying business, communications, and regional leadership talent across the Southeast.",
+    "secondaryMegaRegionExposure": []
   },
   "University of Georgia": {
     "institutionNarrative": {
@@ -8206,19 +8475,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional prestige, especially in business, amplified by Atlanta proximity.",
       "socialClimate": "Football-first, Greek-heavy, genuinely culturally rich via Athens.",
       "leadershipStyle": "Leadership through tradition, school spirit, and direct Atlanta corporate partnership."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The primary business talent engine feeding Atlanta's Fortune 500 concentration."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 20,
-      "TorBuffChester": 8,
-      "TexasTriangle": 16,
-      "CharLanta": 92,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusAuburn": "Auburn offers stronger aerospace/veterinary niches; Georgia offers the strongest direct Atlanta Fortune 500 corporate pipeline.",
@@ -8474,7 +8730,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "UGA Honors Program",
       "strength": 78,
       "notes": "Provides smaller seminars and priority registration within UGA's larger SEC flagship structure."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The primary business talent engine feeding Atlanta's Fortune 500 concentration.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 92
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "University of Florida": {
     "institutionNarrative": {
@@ -8534,19 +8818,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Genuinely strong academic prestige hidden behind football-first public reputation.",
       "socialClimate": "Football-dominant, Greek-heavy, genuinely academically serious once inside.",
       "leadershipStyle": "Leadership through school spirit and deep in-state Florida corporate/medical partnerships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Florida",
-      "regionalRole": "The primary business/healthcare talent engine for Florida's Miami-Tampa-Orlando corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 16,
-      "TorBuffChester": 6,
-      "TexasTriangle": 12,
-      "CharLanta": 60,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusGeorgia": "Georgia offers stronger Atlanta Fortune 500 ties; Florida offers a more concentrated Florida-triangle network across Miami, Tampa, and Orlando.",
@@ -8805,7 +9076,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program",
       "strength": 80,
       "notes": "Provides smaller seminars and priority registration within UF's larger flagship structure."
-    }
+    },
+    "primaryMegaRegionSlug": "florida",
+    "regionalRole": "The primary business/healthcare talent engine for Florida's Miami-Tampa-Orlando corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 60
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "University of Oklahoma": {
     "institutionNarrative": {
@@ -8907,10 +9206,6 @@ const UNIVERSITY_DB_V5 = {
       "name": "University of Oklahoma Honors College",
       "strength": 88,
       "notes": "One of the oldest and most established honors colleges among public flagships, founded 1961. Offers small-seminar general education, priority registration, and dedicated honors housing — a genuinely smaller-school experience within OU's large undergraduate population."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "Public flagship supplying energy, business, and meteorology talent across the South Central region."
     },
     "studentFit": {
       "bigFiveProfile": {
@@ -9224,7 +9519,10 @@ const UNIVERSITY_DB_V5 = {
       "alumniMoat": 84,
       "brandDurability": 74,
       "overallMoatScore": 80
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "Public flagship supplying energy, business, and meteorology talent across the South Central region.",
+    "secondaryMegaRegionExposure": []
   },
   "Louisiana State University": {
     "institutionNarrative": {
@@ -9320,10 +9618,6 @@ const UNIVERSITY_DB_V5 = {
         "Baton Rouge is not a major national economic hub",
         "Student-to-faculty ratio is higher than peer institutions"
       ]
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "Public flagship supplying energy, agriculture, and business talent across the Gulf South."
     },
     "studentFit": {
       "bigFiveProfile": {
@@ -9627,7 +9921,10 @@ const UNIVERSITY_DB_V5 = {
       "alumniMoat": 86,
       "brandDurability": 72,
       "overallMoatScore": 78
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "Public flagship supplying energy, agriculture, and business talent across the Gulf South.",
+    "secondaryMegaRegionExposure": []
   },
   "Auburn University": {
     "institutionNarrative": {
@@ -9687,19 +9984,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in specific niches (aerospace, veterinary medicine) inside a broader SEC flagship identity.",
       "socialClimate": "Intensely communal, football-centric, Greek-heavy.",
       "leadershipStyle": "Leadership through tradition, school spirit, and deep technical/veterinary industry partnerships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A regional aerospace/defense and veterinary medicine talent engine for the Southeast."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 18,
-      "TorBuffChester": 8,
-      "TexasTriangle": 18,
-      "CharLanta": 78,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusClemson": "Clemson offers a stronger automotive manufacturing tie via CU-ICAR; Auburn offers stronger aerospace/defense and veterinary medicine pathways.",
@@ -9958,7 +10242,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Auburn University Honors College",
       "strength": 76,
       "notes": "Provides smaller seminars and priority registration within Auburn's larger SEC flagship structure."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A regional aerospace/defense and veterinary medicine talent engine for the Southeast.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 78
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "Clemson University": {
     "institutionNarrative": {
@@ -10018,19 +10330,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in automotive engineering niche inside a broader ACC flagship identity.",
       "socialClimate": "Loud, proud, football-centric, manufacturing-serious.",
       "leadershipStyle": "Leadership through school spirit and direct automotive industry partnership."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The primary automotive manufacturing engineering talent engine for the Greenville-Spartanburg corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 16,
-      "TorBuffChester": 8,
-      "TexasTriangle": 12,
-      "CharLanta": 84,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusAuburn": "Auburn offers stronger aerospace/defense ties; Clemson offers a more concentrated automotive manufacturing pipeline via CU-ICAR.",
@@ -10285,7 +10584,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Clemson University Honors College",
       "strength": 76,
       "notes": "Provides smaller seminars and priority registration within Clemson's larger flagship structure."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The primary automotive manufacturing engineering talent engine for the Greenville-Spartanburg corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 84
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Vanderbilt University": {
     "institutionNarrative": {
@@ -10347,19 +10674,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "High, elite nationally in medicine, education, and law.",
       "socialClimate": "Active Greek system, strong school spirit, Nashville nightlife and culture deeply integrated.",
       "leadershipStyle": "Leadership through professional credentialing, campus involvement, and social visibility."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "Elite research university supplying medicine, education, law, and business leadership anchored by Nashville's fast-growing healthcare and entertainment economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 24,
-      "BosWash": 34,
-      "TorBuffChester": 12,
-      "TexasTriangle": 20,
-      "CharLanta": 100,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
       "versusNotreDame": "Notre Dame offers a more explicitly Catholic institutional identity and football-driven national alumni loyalty; Vanderbilt offers a similarly nationally-recruited elite Southern identity with strong healthcare and finance placement in Nashville.",
@@ -10687,7 +11001,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 62,
       "geographicLockIn": "medium",
       "alumniDispersalPattern": "regional_southeast_national"
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "Elite research university supplying medicine, education, law, and business leadership anchored by Nashville's fast-growing healthcare and entertainment economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 34
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 14
+      }
+    ]
   },
   "University of Virginia": {
     "institutionNarrative": {
@@ -10750,19 +11092,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite public prestige rivaling top private universities, especially in business and government.",
       "socialClimate": "Polished, tradition-bound, ambitious.",
       "leadershipStyle": "Leadership through tradition, historical gravitas, and elite selective-program excellence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A primary talent engine for the DC corridor's consulting, government, and finance sectors."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 20,
-      "BosWash": 82,
-      "TorBuffChester": 14,
-      "TexasTriangle": 12,
-      "CharLanta": 34,
-      "NorCalInnovationCorridor": 18,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusUNC": "UNC offers stronger Southeast regional ties and Research Triangle access; UVA offers stronger DC-corridor placement and McIntire's elite selectivity.",
@@ -11024,7 +11353,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Echols Scholars Program",
       "strength": 84,
       "notes": "Provides curricular flexibility, priority registration, and a close-knit intellectual community within UVA's broader student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A primary talent engine for the DC corridor's consulting, government, and finance sectors.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 82
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 34
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Tulane University": {
     "institutionNarrative": {
@@ -11084,19 +11441,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Underrated in energy finance and architecture relative to broader party-school reputation.",
       "socialClimate": "Culturally rich, present, civically engaged.",
       "leadershipStyle": "Leadership through civic engagement and distinctive New Orleans immersion."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "A Gulf Coast energy finance talent engine, distinctive for its New Orleans cultural identity."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 20,
-      "TorBuffChester": 6,
-      "TexasTriangle": 48,
-      "CharLanta": 16,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusVanderbilt": "Vanderbilt offers stronger Nashville healthcare ties; Tulane offers Gulf Coast energy finance and a uniquely immersive New Orleans civic experience."
@@ -11418,7 +11762,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors Program",
       "strength": 74,
       "notes": "Provides smaller seminars within Tulane's broader civically-engaged structure."
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "A Gulf Coast energy finance talent engine, distinctive for its New Orleans cultural identity.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 48
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "University of Colorado Boulder": {
     "institutionNarrative": {
@@ -11479,19 +11851,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in aerospace/space research; strong regional prestige in business and environmental studies.",
       "socialClimate": "Outdoorsy, free-spirited, technically serious.",
       "leadershipStyle": "Leadership through research excellence, environmental engagement, and outdoor-lifestyle balance."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Front Range",
-      "regionalRole": "A significant aerospace research talent engine, plus a uniquely positioned hub for the natural products and wellness industry."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 24,
-      "BosWash": 20,
-      "TorBuffChester": 10,
-      "TexasTriangle": 16,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 42,
-      "SoCalCreativeEconomy": 18
     },
     "comparativePositioning": {
       "versusColoradoMines": "Colorado Mines is more concentrated on energy/mining engineering; CU Boulder offers broader program breadth including aerospace, business, and a unique natural products/wellness pipeline.",
@@ -11810,7 +12169,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "CU Boulder Honors Program",
       "strength": 76,
       "notes": "Provides smaller seminars and priority registration within CU Boulder's larger flagship structure."
-    }
+    },
+    "primaryMegaRegionSlug": "front-range-silicon-slopes",
+    "regionalRole": "A significant aerospace research talent engine, plus a uniquely positioned hub for the natural products and wellness industry.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 42
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 18
+      }
+    ]
   },
   "Syracuse University": {
     "institutionNarrative": {
@@ -11870,19 +12257,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "The single most recognized media/communications brand in American higher education.",
       "socialClimate": "Media-obsessed, resilient, Orange athletics-proud.",
       "leadershipStyle": "Leadership through media industry tribal loyalty and shared institutional identity."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The primary media/communications talent engine feeding New York City's newsrooms and networks."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 18,
-      "BosWash": 78,
-      "TorBuffChester": 24,
-      "TexasTriangle": 8,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 22
     },
     "comparativePositioning": {
       "versusNorthwestern": "Northwestern's Medill offers stronger elite journalism prestige; Syracuse's Newhouse offers a more tribally loyal, broader media industry hiring network.",
@@ -12141,7 +12515,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Renée Crown University Honors Program",
       "strength": 76,
       "notes": "Provides smaller seminars and enhanced advising within Syracuse's broader student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The primary media/communications talent engine feeding New York City's newsrooms and networks.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 78
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 22
+      }
+    ]
   },
   "University of Miami": {
     "institutionNarrative": {
@@ -12201,19 +12603,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong international business prestige, especially in Latin American markets.",
       "socialClimate": "Glamorous, international, beach-adjacent.",
       "leadershipStyle": "Leadership through global business fluency and Latin American market relationships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Florida",
-      "regionalRole": "The primary Latin American business gateway university in the country."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 6,
-      "BosWash": 18,
-      "TorBuffChester": 6,
-      "TexasTriangle": 14,
-      "CharLanta": 62,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 12
     },
     "comparativePositioning": {
       "versusFlorida": "Florida offers stronger in-state Florida triangle placement; Miami offers a uniquely international Latin American business gateway.",
@@ -12464,7 +12853,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Foote Honors College",
       "strength": 76,
       "notes": "Provides smaller seminars and enhanced advising within Miami's broader student body."
-    }
+    },
+    "primaryMegaRegionSlug": "florida",
+    "regionalRole": "The primary Latin American business gateway university in the country.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 62
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 12
+      }
+    ]
   },
   "Williams College": {
     "institutionNarrative": {
@@ -12535,19 +12952,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite globally within liberal arts education and consistently ranked #1 liberal arts college in America.",
       "socialClimate": "Tight-knit, athletic, collaborative, and deeply residential due to geographic isolation.",
       "leadershipStyle": "Leadership through intellectual rigor, direct communication, athletic team culture, and lifelong institutional loyalty."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "Elite liberal arts institution supplying leaders to finance, consulting, graduate education, and the Northeast knowledge economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 100,
-      "TorBuffChester": 54,
-      "TexasTriangle": 24,
-      "CharLanta": 20,
-      "NorCalInnovationCorridor": 68,
-      "SoCalCreativeEconomy": 30
     },
     "comparativePositioning": {
       "versusAmherst": "Amherst offers a fully open curriculum and the Five College Consortium; Williams differentiates itself through the tutorial system, a more athletics-centered culture, and a more remote mountain-town setting.",
@@ -12909,7 +13313,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 98,
       "geographicLockIn": "very_low",
       "alumniDispersalPattern": "national_international"
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "Elite liberal arts institution supplying leaders to finance, consulting, graduate education, and the Northeast knowledge economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 68
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 30
+      }
+    ]
   },
   "Pomona College": {
     "institutionNarrative": {
@@ -12980,19 +13412,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite nationally within liberal arts education, consistently ranked among the top handful of liberal arts colleges in America.",
       "socialClimate": "Collaborative, intellectually ambitious, outdoors-oriented, and integrated with the broader Claremont Consortium social ecosystem.",
       "leadershipStyle": "Leadership through intellectual curiosity, interdisciplinary thinking, and consortium-wide collaboration."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "Elite liberal arts institution supplying leaders to finance, consulting, technology, entertainment, and graduate education across Southern California and nationally."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 58,
-      "TorBuffChester": 22,
-      "TexasTriangle": 20,
-      "CharLanta": 14,
-      "NorCalInnovationCorridor": 62,
-      "SoCalCreativeEconomy": 100
     },
     "comparativePositioning": {
       "versusWilliams": "Williams offers the tutorial system and a Northeast finance pipeline; Pomona differentiates itself through the Claremont Consortium's academic breadth and direct access to the Los Angeles entertainment, technology, and venture capital ecosystems.",
@@ -13355,7 +13774,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 96,
       "geographicLockIn": "low",
       "alumniDispersalPattern": "west_coast_national"
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "Elite liberal arts institution supplying leaders to finance, consulting, technology, entertainment, and graduate education across Southern California and nationally.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 58
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 62
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 100
+      }
+    ]
   },
   "Saint Mary's College of California": {
     "institutionNarrative": {
@@ -13425,19 +13872,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Regional reputation strongest within the San Francisco Bay Area and Northern California.",
       "socialClimate": "Tight-knit, supportive, mission-driven, and residential.",
       "leadershipStyle": "Leadership through service, community engagement, and values-based decision-making."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northern California",
-      "regionalRole": "Small Catholic liberal arts college supplying regionally-focused business, education, and healthcare professionals to the Bay Area."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 6,
-      "BosWash": 20,
-      "TorBuffChester": 8,
-      "TexasTriangle": 10,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 100,
-      "SoCalCreativeEconomy": 28
     },
     "comparativePositioning": {
       "versusSantaClara": "Santa Clara offers a larger enrollment, a nationally-recognized business school, and deep Silicon Valley technology recruiting; Saint Mary's is smaller, more intimate, and more regionally focused with a distinctive four-year seminar core.",
@@ -13772,7 +14206,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 46,
       "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_bay_area"
-    }
+    },
+    "primaryMegaRegionSlug": "northern-california",
+    "regionalRole": "Small Catholic liberal arts college supplying regionally-focused business, education, and healthcare professionals to the Bay Area.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 28
+      }
+    ]
   },
   "University of San Diego": {
     "institutionNarrative": {
@@ -13833,19 +14295,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional prestige in law and business, distinctive national reputation via Kroc Institute.",
       "socialClimate": "Faith-centered, scenic, community-oriented.",
       "leadershipStyle": "Leadership through Catholic formation and peace/justice-oriented global engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "A values-driven business and legal talent engine for San Diego, distinctive for its peace/justice studies niche."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 6,
-      "BosWash": 14,
-      "TorBuffChester": 4,
-      "TexasTriangle": 10,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 18,
-      "SoCalCreativeEconomy": 68
     },
     "comparativePositioning": {
       "versusPepperdine": "Pepperdine offers a more luxury/Malibu-coded setting; USD offers comparable coastal beauty with a stronger law school and the unique Kroc Peace Institute.",
@@ -14098,7 +14547,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors Program",
       "strength": 72,
       "notes": "Provides smaller seminars within USD's broader Catholic university structure."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "A values-driven business and legal talent engine for San Diego, distinctive for its peace/justice studies niche.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 68
+      }
+    ]
   },
   "Santa Clara University": {
     "institutionNarrative": {
@@ -14167,19 +14644,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional and growing national reputation, particularly within technology and business circles.",
       "socialClimate": "Professionally ambitious, entrepreneurial, residential, and increasingly diverse given Silicon Valley's demographic makeup.",
       "leadershipStyle": "Leadership through technical competence, ethical reasoning, and entrepreneurial initiative."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northern California",
-      "regionalRole": "Jesuit university supplying technology, business, and engineering talent directly into the Silicon Valley innovation economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 30,
-      "TorBuffChester": 12,
-      "TexasTriangle": 16,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 100,
-      "SoCalCreativeEconomy": 36
     },
     "comparativePositioning": {
       "versusUniversityOfSanDiego": "USD offers a more beach-lifestyle-forward campus and a built-in law school pipeline; Santa Clara offers unmatched Silicon Valley proximity and a stronger technology and business recruiting pipeline.",
@@ -14526,7 +14990,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 58,
       "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_silicon_valley"
-    }
+    },
+    "primaryMegaRegionSlug": "northern-california",
+    "regionalRole": "Jesuit university supplying technology, business, and engineering talent directly into the Silicon Valley innovation economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 30
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 36
+      }
+    ]
   },
   "California State University Chico": {
     "institutionNarrative": {
@@ -14595,19 +15087,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional reputation within Northern California, particularly in business and agriculture.",
       "socialClimate": "Community-centered, traditionally residential, and outdoors-oriented.",
       "leadershipStyle": "Leadership through practical experience, community involvement, and regional workforce readiness."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northern California",
-      "regionalRole": "Regional public university supplying business, agriculture, construction, and education professionals to Northern California and the Sacramento Valley."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 6,
-      "BosWash": 8,
-      "TorBuffChester": 4,
-      "TexasTriangle": 6,
-      "CharLanta": 4,
-      "NorCalInnovationCorridor": 68,
-      "SoCalCreativeEconomy": 18
     },
     "comparativePositioning": {
       "versusFresnoState": "Fresno State offers a larger, more urban campus with stronger Central Valley agricultural industry ties; Chico offers a more traditional, walkable college-town experience with Bidwell Park integration.",
@@ -14941,7 +15420,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 34,
       "geographicLockIn": "very_high",
       "alumniDispersalPattern": "regional_northern_california"
-    }
+    },
+    "primaryMegaRegionSlug": "northern-california",
+    "regionalRole": "Regional public university supplying business, agriculture, construction, and education professionals to Northern California and the Sacramento Valley.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 68
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 18
+      }
+    ]
   },
   "Elon University": {
     "institutionNarrative": {
@@ -15001,19 +15508,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Rising national reputation in communications/media, an unexpected strength relative to its Southern campus image.",
       "socialClimate": "Warm, polished, experientially-driven.",
       "leadershipStyle": "Leadership through structured experiential learning and direct media industry placement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A regional Southeast talent engine with an unusually direct pipeline into LA and NYC media industries."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 28,
-      "TorBuffChester": 8,
-      "TexasTriangle": 10,
-      "CharLanta": 66,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 22
     },
     "comparativePositioning": {
       "versusSyracuse": "Syracuse's Newhouse offers a more tribally loyal media alumni network; Elon offers a more structured, built-in LA immersion experience via Elon in LA.",
@@ -15341,7 +15835,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Elon College Fellows Program",
       "strength": 74,
       "notes": "Provides smaller cohorts and enhanced advising within Elon's broader experiential-learning-focused structure."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A regional Southeast talent engine with an unusually direct pipeline into LA and NYC media industries.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 28
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 66
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 22
+      }
+    ]
   },
   "Drake University": {
     "institutionNarrative": {
@@ -15408,19 +15930,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional reputation with genuine national niche strength in pharmacy, law, and journalism.",
       "socialClimate": "Professionally focused, civically engaged, and residential.",
       "leadershipStyle": "Leadership through professional competence, civic engagement, and direct industry relationships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "Professional university supplying law, pharmacy, business, and journalism talent directly into the Des Moines insurance and financial services corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 100,
-      "BosWash": 18,
-      "TorBuffChester": 10,
-      "TexasTriangle": 12,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusCreighton": "Creighton offers a larger health sciences and medical school presence in Omaha; Drake offers a stronger law and journalism program with direct access to Des Moines's insurance and financial services industry.",
@@ -15754,7 +16263,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 46,
       "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_midwest"
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "Professional university supplying law, pharmacy, business, and journalism talent directly into the Des Moines insurance and financial services corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "Creighton University": {
     "institutionNarrative": {
@@ -15821,19 +16358,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional reputation with genuine national niche strength in health sciences and medicine.",
       "socialClimate": "Values-driven, health-sciences-focused, and residential.",
       "leadershipStyle": "Leadership through service, clinical competence, and Jesuit mission-based values."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "Jesuit health sciences university supplying medicine, pharmacy, dentistry, and nursing talent to Nebraska and the broader Midwest."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 100,
-      "BosWash": 16,
-      "TorBuffChester": 8,
-      "TexasTriangle": 10,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusDrake": "Drake offers a stronger law and journalism program with direct Des Moines insurance-industry access; Creighton offers a substantially stronger integrated health sciences pipeline with its own medical, dental, and pharmacy schools.",
@@ -16165,7 +16689,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 44,
       "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_midwest"
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "Jesuit health sciences university supplying medicine, pharmacy, dentistry, and nursing talent to Nebraska and the broader Midwest.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Baylor University": {
     "institutionNarrative": {
@@ -16224,19 +16776,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional Texas prestige in business; distinctive national reputation in religious leadership training.",
       "socialClimate": "Faith-centered, football-proud, warm.",
       "leadershipStyle": "Leadership through faith integration and Texas Triangle business/legal relationships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "A faith-driven business and religious leadership talent engine at the center of the Dallas-Austin-Houston triangle."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 10,
-      "TorBuffChester": 4,
-      "TexasTriangle": 92,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 4,
-      "SoCalCreativeEconomy": 4
     },
     "comparativePositioning": {
       "versusTCU": "TCU offers a stronger nursing/healthcare niche; Baylor offers unmatched religious leadership training alongside solid business and Texas Triangle energy/legal ties."
@@ -16502,7 +17041,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 78,
       "notes": "Provides smaller seminars and priority registration within Baylor's broader faith-centered structure."
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "A faith-driven business and religious leadership talent engine at the center of the Dallas-Austin-Houston triangle.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 92
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
   },
   "Southern Methodist University": {
     "institutionNarrative": {
@@ -16569,19 +17136,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Professional Success and Influence",
       "socialClimate": "Ambitious, Status-Conscious, Highly Networked",
       "leadershipStyle": "Executive Leadership Development"
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "Private university supplying finance, real estate, and executive leadership talent directly into the Dallas wealth economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 20,
-      "BosWash": 28,
-      "TorBuffChester": 10,
-      "TexasTriangle": 100,
-      "CharLanta": 24,
-      "NorCalInnovationCorridor": 16,
-      "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
       "versusTCU": "TCU offers a more traditional, community-oriented Fort Worth campus; SMU is more explicitly finance- and executive-track focused, embedded directly in Dallas's wealth corridor.",
@@ -16898,7 +17452,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 48,
       "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_texas"
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "Private university supplying finance, real estate, and executive leadership talent directly into the Dallas wealth economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 28
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 14
+      }
+    ]
   },
   "Villanova University": {
     "institutionNarrative": {
@@ -16958,19 +17540,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in business; strong in nursing and engineering, all boosted by basketball-driven national visibility.",
       "socialClimate": "Warm, basketball-proud, polished.",
       "leadershipStyle": "Leadership through Catholic community values and elite business school placement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A key business talent engine feeding Philadelphia and NYC financial services."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 12,
-      "BosWash": 88,
-      "TorBuffChester": 18,
-      "TexasTriangle": 6,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusBostonCollege": "Both are Catholic business-strong universities. BC leans more Boston finance; Villanova leans more Philadelphia/NYC with a stronger basketball brand."
@@ -17229,7 +17798,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Villanova Honors Program",
       "strength": 78,
       "notes": "Provides smaller seminars and enhanced advising within Villanova's broader Catholic university structure."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A key business talent engine feeding Philadelphia and NYC financial services.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 88
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "University of Southern California": {
     "institutionNarrative": {
@@ -17296,19 +17893,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite nationally, especially in entertainment, business, and engineering.",
       "socialClimate": "High-energy, ambitious, industry-connected, socially vibrant.",
       "leadershipStyle": "Leadership through industry connection, entrepreneurial initiative, and network activation."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "Major research university supplying entertainment, business, and technology leadership directly to the Los Angeles economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 40,
-      "TorBuffChester": 14,
-      "TexasTriangle": 18,
-      "CharLanta": 12,
-      "NorCalInnovationCorridor": 50,
-      "SoCalCreativeEconomy": 100
     },
     "comparativePositioning": {
       "versusUCLA": "UCLA offers a lower cost as a public flagship with similarly strong LA access; USC offers a smaller private-school network density and a stronger entertainment industry pipeline.",
@@ -17653,7 +18237,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 62,
       "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_los_angeles"
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "Major research university supplying entertainment, business, and technology leadership directly to the Los Angeles economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 40
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 50
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 100
+      }
+    ]
   },
   "Washington University in St. Louis": {
     "institutionNarrative": {
@@ -17716,19 +18328,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite nationally, especially in medicine and research.",
       "socialClimate": "Intellectually intense, less socially competitive, research-driven.",
       "leadershipStyle": "Leadership through academic rigor and research excellence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "Elite research university supplying medicine, research, and business leadership to St. Louis and nationally."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 100,
-      "BosWash": 46,
-      "TorBuffChester": 22,
-      "TexasTriangle": 16,
-      "CharLanta": 14,
-      "NorCalInnovationCorridor": 22,
-      "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
       "versusRice": "Rice offers a smaller residential college culture and direct access to Houston's three-industry economy (energy, medicine, aerospace) that WashU's St. Louis location cannot replicate; Washington University in St. Louis offers a similarly elite pre-med and STEM identity with strong need-based aid.",
@@ -18044,7 +18643,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 84,
       "geographicLockIn": "low",
       "alumniDispersalPattern": "national"
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "Elite research university supplying medicine, research, and business leadership to St. Louis and nationally.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 46
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 14
+      }
+    ]
   },
   "Georgia Institute of Technology": {
     "institutionNarrative": {
@@ -18104,19 +18731,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite engineering-specific prestige at exceptional value.",
       "socialClimate": "Urban, driven, technically serious.",
       "leadershipStyle": "Leadership through technical rigor and structured Co-op industry experience."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The primary engineering/tech talent engine for Atlanta's booming tech and startup corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 18,
-      "BosWash": 30,
-      "TorBuffChester": 12,
-      "TexasTriangle": 20,
-      "CharLanta": 92,
-      "NorCalInnovationCorridor": 34,
-      "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
       "versusPurdue": "Purdue has stronger aerospace legacy; Georgia Tech offers stronger urban tech-corridor access and Co-op integration.",
@@ -18373,7 +18987,35 @@ const UNIVERSITY_DB_V5 = {
       "strength": 0,
       "notes": "Georgia Tech does not have a formal honors college; research opportunities and the Grand Challenges program serve a similar function.",
       "selectiveRigorAlternative": true
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The primary engineering/tech talent engine for Atlanta's booming tech and startup corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 30
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 92
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 34
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 14
+      }
+    ]
   },
   "University of Denver": {
     "institutionNarrative": {
@@ -18432,19 +19074,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in international affairs via Korbel; solid regional business prestige via Daniels.",
       "socialClimate": "Outdoorsy, intimate, globally curious.",
       "leadershipStyle": "Leadership through small-school mentorship and genuine international affairs depth."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Front Range",
-      "regionalRole": "A notable international affairs and business talent engine for the Denver region."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 20,
-      "BosWash": 24,
-      "TorBuffChester": 8,
-      "TexasTriangle": 14,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 30,
-      "SoCalCreativeEconomy": 12
     },
     "comparativePositioning": {
       "versusCUBoulder": "CU Boulder offers larger scale and aerospace research; DU offers a smaller, more intimate experience with the uniquely strong Korbel international affairs program."
@@ -18687,7 +19316,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "DU Honors Program",
       "strength": 70,
       "notes": "Provides smaller cohorts within DU's already intimate structure."
-    }
+    },
+    "primaryMegaRegionSlug": "front-range-silicon-slopes",
+    "regionalRole": "A notable international affairs and business talent engine for the Denver region.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 30
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 12
+      }
+    ]
   },
   "University of Utah": {
     "institutionNarrative": {
@@ -18748,19 +19405,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Rapidly rising national reputation in tech and entrepreneurship.",
       "socialClimate": "Tech-forward, outdoorsy, entrepreneurial energy.",
       "leadershipStyle": "Leadership through entrepreneurial ambition and direct tech/supplement industry access."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Front Range",
-      "regionalRole": "The anchor talent engine for Silicon Slopes, one of the fastest-growing tech corridors in the country."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 14,
-      "TorBuffChester": 6,
-      "TexasTriangle": 10,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 44,
-      "SoCalCreativeEconomy": 12
     },
     "comparativePositioning": {
       "versusCUBoulder": "CU Boulder offers stronger aerospace research; Utah offers a more concentrated tech-corridor (Silicon Slopes) plus the unique supplement manufacturing pipeline.",
@@ -19020,7 +19664,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 74,
       "notes": "Provides smaller cohorts and enhanced advising within Utah's larger research flagship structure."
-    }
+    },
+    "primaryMegaRegionSlug": "front-range-silicon-slopes",
+    "regionalRole": "The anchor talent engine for Silicon Slopes, one of the fastest-growing tech corridors in the country.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 44
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 12
+      }
+    ]
   },
   "Weber State University": {
     "institutionNarrative": {
@@ -19080,19 +19752,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Regional reputation focused on applied and health sciences programs.",
       "socialClimate": "Practical, commuter-influenced, outdoors-oriented.",
       "leadershipStyle": "Leadership through practical competence and regional workforce readiness."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Front Range",
-      "regionalRole": "Regional public university supplying healthcare, business, and technical talent to the Wasatch Front corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 8,
-      "TorBuffChester": 4,
-      "TexasTriangle": 8,
-      "CharLanta": 4,
-      "NorCalInnovationCorridor": 34,
-      "SoCalCreativeEconomy": 12
     },
     "comparativePositioning": {
       "versusUVU": "UVU is larger with a broader program catalog; Weber State offers stronger specialization in respiratory therapy and applied health sciences.",
@@ -19400,7 +20059,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 28,
       "geographicLockIn": "very_high",
       "alumniDispersalPattern": "regional_wasatch_front"
-    }
+    },
+    "primaryMegaRegionSlug": "front-range-silicon-slopes",
+    "regionalRole": "Regional public university supplying healthcare, business, and technical talent to the Wasatch Front corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 34
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 12
+      }
+    ]
   },
   "Towson University": {
     "institutionNarrative": {
@@ -19470,19 +20157,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Highly respected throughout Maryland and the Mid-Atlantic, particularly among employers in healthcare, education, business, and government.",
       "socialClimate": "Friendly, inclusive, professionally ambitious, and commuter-residential hybrid.",
       "leadershipStyle": "Leadership through service, professionalism, applied learning, and community engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A major workforce university supporting the Baltimore-Washington healthcare, government, cybersecurity, education, and business economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 28,
-      "BosWash": 100,
-      "TorBuffChester": 46,
-      "TexasTriangle": 26,
-      "CharLanta": 24,
-      "NorCalInnovationCorridor": 36,
-      "SoCalCreativeEconomy": 20
     },
     "comparativePositioning": {
       "versusJamesMadison": "James Madison offers a more residential college-town experience and stronger national alumni network, while Towson provides greater proximity to Baltimore-Washington employers throughout the academic year.",
@@ -19843,7 +20517,35 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 72,
       "geographicLockIn": "high",
       "alumniDispersalPattern": "regional"
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A major workforce university supporting the Baltimore-Washington healthcare, government, cybersecurity, education, and business economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 28
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 26
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 36
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 20
+      }
+    ]
   },
   "The Ohio State University": {
     "institutionNarrative": {
@@ -19910,19 +20612,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite public flagship prestige, especially strong in engineering, medicine, and business, amplified by massive scale and Big Ten visibility.",
       "socialClimate": "Large, spirited, football-centric, Greek-heavy, and increasingly professionally ambitious.",
       "leadershipStyle": "Leadership through scale, tradition, school spirit, and increasingly through innovation and economic development partnerships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "One of the Midwest's primary talent engines, now central to the reshoring of American semiconductor manufacturing alongside traditional strength in medicine, insurance, and engineering."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 92,
-      "BosWash": 22,
-      "TorBuffChester": 18,
-      "TexasTriangle": 14,
-      "CharLanta": 16,
-      "NorCalInnovationCorridor": 20,
-      "SoCalCreativeEconomy": 12
     },
     "comparativePositioning": {
       "versusPennState": "Both are massive Big Ten flagships with strong engineering and business programs. Ohio State has a larger academic medical center and the emerging Intel semiconductor advantage, while Penn State has a broader alumni network across the Northeast corridor.",
@@ -20204,7 +20893,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors and Scholars Program",
       "strength": 84,
       "notes": "Ohio State's Honors and Scholars program provides smaller cohort communities, priority registration, dedicated advising, and research opportunities inside the university's massive scale, meaningfully altering the undergraduate experience for students who opt in."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "One of the Midwest's primary talent engines, now central to the reshoring of American semiconductor manufacturing alongside traditional strength in medicine, insurance, and engineering.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 92
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 12
+      }
+    ]
   },
   "Michigan State University": {
     "institutionNarrative": {
@@ -20264,19 +20981,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite and largely unmatched in packaging engineering; solid broader business prestige via Broad College.",
       "socialClimate": "Big Ten spirited, practical, food-science-forward.",
       "leadershipStyle": "Leadership through niche technical specialization and direct consumer goods industry partnership."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "The nation's primary packaging engineering talent engine, feeding consumer goods companies with nowhere else to recruit at this depth."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 78,
-      "BosWash": 22,
-      "TorBuffChester": 14,
-      "TexasTriangle": 10,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusUNLV": "UNLV offers unmatched direct access to the world's largest concentration of casino resort operators specifically; Michigan State's School of Hospitality Business offers a longer institutional history (founded 1927) and broader Midwest hospitality and foodservice industry connections.",
@@ -20537,7 +21241,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 76,
       "notes": "Provides smaller cohorts and enhanced research opportunities within MSU's larger Big Ten structure."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "The nation's primary packaging engineering talent engine, feeding consumer goods companies with nowhere else to recruit at this depth.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 78
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "University of Wisconsin-Madison": {
     "applicationIntelligence": {
@@ -20606,19 +21338,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite public research prestige, especially strong in life sciences and health-tech.",
       "socialClimate": "Progressive, lake-adjacent, Big Ten spirited.",
       "leadershipStyle": "Leadership through research excellence and civic/activist engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A primary health-tech and research talent engine for the Upper Midwest, anchored by Epic Systems."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 82,
-      "BosWash": 26,
-      "TorBuffChester": 14,
-      "TexasTriangle": 10,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 20,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusMichigan": "Michigan offers stronger elite consulting/finance placement; Wisconsin offers the unique Epic Systems health-tech pipeline and a more progressive campus culture.",
@@ -20874,7 +21593,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Wisconsin Honors Program",
       "strength": 78,
       "notes": "Provides smaller cohorts and enhanced research opportunities within UW's larger research structure."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A primary health-tech and research talent engine for the Upper Midwest, anchored by Epic Systems.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 82
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 26
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "American University": {
     "institutionNarrative": {
@@ -20932,19 +21679,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in international affairs; solid business; underrated in media production.",
       "socialClimate": "Politically engaged, ambitious, globally minded.",
       "leadershipStyle": "Leadership through policy engagement and DC proximity."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A key international affairs and policy talent engine embedded directly in DC."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 8,
-      "TorBuffChester": 10,
-      "TexasTriangle": 6,
-      "CharLanta": 92,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusGW": "GW is larger with a stronger business/law reputation; AU offers a more concentrated international affairs focus via SIS."
@@ -21206,7 +21940,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program",
       "strength": 74,
       "notes": "Provides smaller seminars within AU's broader policy-focused structure."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A key international affairs and policy talent engine embedded directly in DC.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 92
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "Belmont University": {
     "institutionNarrative": {
@@ -21266,19 +22028,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in music/entertainment business, drawing students well beyond musicians.",
       "socialClimate": "Creative, industry-embedded, welcoming.",
       "leadershipStyle": "Leadership through real industry access and values-driven community."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The primary entertainment business talent engine for Nashville's music and creative economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 18,
-      "TorBuffChester": 8,
-      "TexasTriangle": 14,
-      "CharLanta": 68,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 26
     },
     "comparativePositioning": {
       "versusBerklee": "Berklee focuses on music performance/production; Belmont's Curb College focuses more on the business, legal, and royalty side of entertainment.",
@@ -21529,7 +22278,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors Program",
       "strength": 70,
       "notes": "Provides smaller seminars within Belmont's broader entertainment-business-focused structure."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The primary entertainment business talent engine for Nashville's music and creative economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 68
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 26
+      }
+    ]
   },
   "Boston University": {
     "institutionNarrative": {
@@ -21592,19 +22369,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong national reputation, especially in communications, business, and public health.",
       "socialClimate": "Independent, urban, self-assembled.",
       "leadershipStyle": "Leadership through independence and direct professional-industry proximity."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A major talent engine for Boston's finance, biotech, and media industries."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 88,
-      "TorBuffChester": 20,
-      "TexasTriangle": 8,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 18,
-      "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
       "versusNYU": "NYU offers stronger Wall Street proximity; BU offers stronger biotech ties and a somewhat more traditional campus feel within an urban setting.",
@@ -21870,7 +22634,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Kilachand Honors College",
       "strength": 78,
       "notes": "Provides interdisciplinary seminars, dedicated housing, and mentorship within BU's broader urban campus."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A major talent engine for Boston's finance, biotech, and media industries.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 88
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 14
+      }
+    ]
   },
   "Colorado State University": {
     "institutionNarrative": {
@@ -21930,19 +22722,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in veterinary medicine; strong regional prestige in hospitality and environmental science.",
       "socialClimate": "Outdoorsy, health-conscious, genuinely livable.",
       "leadershipStyle": "Leadership through land-grant practicality and direct outdoor-industry/veterinary partnerships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Front Range",
-      "regionalRole": "A key talent engine for Colorado's outdoor recreation, hospitality, and agricultural/veterinary economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 18,
-      "BosWash": 14,
-      "TorBuffChester": 6,
-      "TexasTriangle": 12,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 28,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusCUBoulder": "CU Boulder offers stronger aerospace research and Leeds Business; CSU offers a top-5 veterinary program and a more concentrated hospitality/tourism and agricultural pipeline."
@@ -22193,7 +22972,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "CSU Honors Program",
       "strength": 72,
       "notes": "Provides smaller cohorts and priority registration within CSU's larger land-grant structure."
-    }
+    },
+    "primaryMegaRegionSlug": "front-range-silicon-slopes",
+    "regionalRole": "A key talent engine for Colorado's outdoor recreation, hospitality, and agricultural/veterinary economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 28
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Fordham University": {
     "institutionNarrative": {
@@ -22253,19 +23060,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional NYC prestige, especially in law and finance.",
       "socialClimate": "Jesuit values meet Manhattan ambition.",
       "leadershipStyle": "Leadership through values-driven formation and direct NYC industry proximity."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A key talent engine feeding NYC's legal and financial sectors via Fordham Law and Gabelli Business."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 90,
-      "TorBuffChester": 16,
-      "TexasTriangle": 6,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusBostonCollege": "Boston College offers stronger Boston financial services ties; Fordham offers direct Wall Street and NYC legal-district proximity.",
@@ -22524,7 +23318,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Fordham College Honors Program",
       "strength": 76,
       "notes": "Provides smaller seminars and enhanced advising within Fordham's broader Jesuit university structure."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A key talent engine feeding NYC's legal and financial sectors via Fordham Law and Gabelli Business.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 90
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "George Washington University": {
     "institutionNarrative": {
@@ -22583,19 +23405,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in international affairs; strong business/consulting via DC proximity.",
       "socialClimate": "Politically engaged, ambitious, DC-embedded.",
       "leadershipStyle": "Leadership through policy engagement and DC government/consulting proximity."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The most DC-embedded international affairs talent engine in the country."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 8,
-      "TorBuffChester": 10,
-      "TexasTriangle": 6,
-      "CharLanta": 94,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusAmerican": "AU offers a more concentrated international affairs focus; GW offers larger scale and stronger business/law/consulting placement."
@@ -22845,7 +23654,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program",
       "strength": 76,
       "notes": "Provides smaller seminars within GW's broader DC-embedded structure."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The most DC-embedded international affairs talent engine in the country.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 94
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "Loyola Marymount University": {
     "institutionNarrative": {
@@ -22904,19 +23741,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Overlooked regional prestige with genuine dual-industry access most peers can't match.",
       "socialClimate": "Polished, entrepreneurial, dual-industry-embedded.",
       "leadershipStyle": "Leadership through Catholic formation and dual entertainment/tech industry access."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "An overlooked dual talent engine feeding both LA entertainment and Silicon Beach tech."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 6,
-      "BosWash": 12,
-      "TorBuffChester": 4,
-      "TexasTriangle": 8,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 20,
-      "SoCalCreativeEconomy": 84
     },
     "comparativePositioning": {
       "versusUSC": "USC offers larger scale and stronger name recognition; LMU offers a genuinely closer Silicon Beach tech proximity often overlooked by families fixated on USC.",
@@ -23171,7 +23995,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program",
       "strength": 70,
       "notes": "Provides smaller seminars within LMU's broader Catholic university structure."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "An overlooked dual talent engine feeding both LA entertainment and Silicon Beach tech.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 84
+      }
+    ]
   },
   "Marquette University": {
     "institutionNarrative": {
@@ -23231,19 +24083,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional Wisconsin prestige, especially in law and business.",
       "socialClimate": "Urban, Jesuit-values-driven, practically minded.",
       "leadershipStyle": "Leadership through Jesuit values and Milwaukee corporate/legal relationships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A key business and legal talent engine for Milwaukee and Wisconsin."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 74,
-      "BosWash": 20,
-      "TorBuffChester": 10,
-      "TexasTriangle": 8,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusBostonCollege": "Boston College offers stronger Boston financial services ties; Marquette offers a more concentrated Milwaukee business/legal pipeline at a lower cost."
@@ -23501,7 +24340,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors Program",
       "strength": 72,
       "notes": "Provides smaller seminars within Marquette's broader Jesuit university structure."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A key business and legal talent engine for Milwaukee and Wisconsin.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 74
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "University of Maryland, College Park": {
     "institutionNarrative": {
@@ -23560,19 +24427,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in federal security tech; strong business; underrated in astronomy/physics.",
       "socialClimate": "Big Ten spirited, career-focused, federal-serious.",
       "leadershipStyle": "Leadership through federal proximity and technical/business excellence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The primary federal security talent engine for the DC-Maryland-Virginia corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 10,
-      "TorBuffChester": 12,
-      "TexasTriangle": 6,
-      "CharLanta": 90,
-      "NorCalInnovationCorridor": 12,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusGW": "GW is more explicitly policy/international-affairs-focused; Maryland offers a stronger technical/security pipeline via CS."
@@ -23827,7 +24681,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors",
       "strength": 80,
       "notes": "Provides smaller cohorts within Maryland's larger flagship structure."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The primary federal security talent engine for the DC-Maryland-Virginia corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 90
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Northeastern University": {
     "institutionNarrative": {
@@ -23886,19 +24768,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Rapidly rising national reputation driven by measurable co-op outcomes.",
       "socialClimate": "Urban, career-focused, constantly in motion.",
       "leadershipStyle": "Leadership through practical experience and direct industry co-op relationships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A major talent engine for Boston's biotech and engineering sectors, with co-op reach extending nationally."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 12,
-      "BosWash": 86,
-      "TorBuffChester": 16,
-      "TexasTriangle": 8,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 22,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusBU": "BU offers a more traditional four-year rhythm; Northeastern's co-op model builds real work experience directly into the degree.",
@@ -24158,7 +25027,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Northeastern Honors Program",
       "strength": 76,
       "notes": "Provides smaller seminars and enhanced advising within Northeastern's co-op-centered structure."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A major talent engine for Boston's biotech and engineering sectors, with co-op reach extending nationally.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 86
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "New York University": {
     "institutionNarrative": {
@@ -24221,19 +25118,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite global prestige, especially strong in finance, film, and international business.",
       "socialClimate": "Independent, urban, self-assembled, ambitious.",
       "leadershipStyle": "Leadership through independence, global network access, and direct industry proximity."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "One of the primary talent engines for Wall Street, global media, and entertainment industries centered in New York City."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 96,
-      "TorBuffChester": 18,
-      "TexasTriangle": 12,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 24,
-      "SoCalCreativeEconomy": 34
     },
     "comparativePositioning": {
       "versusColumbia": "Columbia offers a traditional quad-based campus and Ivy League prestige; NYU offers no campus at all but comparable Wall Street proximity and a stronger film/media identity via Tisch.",
@@ -24488,7 +25372,35 @@ const UNIVERSITY_DB_V5 = {
       "strength": 0,
       "notes": "NYU does not have a formal honors college; selective programs like Stern and Tisch function as de facto honors experiences.",
       "selectiveRigorAlternative": true
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "One of the primary talent engines for Wall Street, global media, and entertainment industries centered in New York City.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 96
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 34
+      }
+    ]
   },
   "Penn State University": {
     "institutionNarrative": {
@@ -24553,19 +25465,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional and Mid-Atlantic prestige, amplified nationally by an unusually loyal and dispersed alumni network.",
       "socialClimate": "Large, spirited, football-centric, Greek-heavy, genuinely self-contained college-town culture.",
       "leadershipStyle": "Leadership through tradition, scale, and one of the most active alumni-to-student mentorship cultures in the country."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A major talent engine for the Mid-Atlantic corridor, feeding Philadelphia, Pittsburgh, New York, and Washington DC with engineering, business, and actuarial science graduates."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 28,
-      "BosWash": 78,
-      "TorBuffChester": 22,
-      "TexasTriangle": 10,
-      "CharLanta": 14,
-      "NorCalInnovationCorridor": 16,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusOhioState": "Both are massive Big Ten flagships with strong engineering and business programs. Penn State's self-contained college town and legendarily loyal alumni network contrast with Ohio State's more urban Columbus setting and emerging Intel semiconductor advantage.",
@@ -24828,7 +25727,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Schreyer Honors College",
       "strength": 88,
       "notes": "Schreyer Honors College provides smaller cohort communities, priority registration, dedicated advising, and enhanced research opportunities inside Penn State's massive scale, meaningfully altering the undergraduate experience for students who opt in."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A major talent engine for the Mid-Atlantic corridor, feeding Philadelphia, Pittsburgh, New York, and Washington DC with engineering, business, and actuarial science graduates.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 28
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 78
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Purdue University": {
     "institutionNarrative": {
@@ -24888,19 +25815,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite engineering-specific prestige, historically astronaut-linked, now semiconductor-linked.",
       "socialClimate": "Boilermaker-proud, technically serious, Big Ten spirited.",
       "leadershipStyle": "Leadership through engineering rigor and deep aerospace/manufacturing industry partnerships."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A primary engineering talent engine for the Midwest, now central to the semiconductor manufacturing reshoring wave."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 88,
-      "BosWash": 22,
-      "TorBuffChester": 16,
-      "TexasTriangle": 12,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 24,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusGeorgiaTech": "Georgia Tech is more selective with stronger Atlanta-area ties; Purdue offers comparable engineering rigor with a stronger aerospace/astronaut legacy and rising semiconductor role.",
@@ -25156,7 +26070,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Purdue Honors College",
       "strength": 80,
       "notes": "Provides smaller cohort communities and enhanced research opportunities within Purdue's engineering-first structure."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A primary engineering talent engine for the Midwest, now central to the semiconductor manufacturing reshoring wave.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 88
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "Texas Christian University": {
     "institutionNarrative": {
@@ -25213,19 +26155,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in nurse anesthesia; solid regional business prestige.",
       "socialClimate": "Warm, Greek-heavy, Fort Worth-proud.",
       "leadershipStyle": "Leadership through genuine community and direct DFW industry access."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "A healthcare and business talent engine for Dallas-Fort Worth."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 10,
-      "TorBuffChester": 4,
-      "TexasTriangle": 86,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 4,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusSMU": "SMU offers unmatched Dallas wealth-network scale; TCU offers greater intimacy, real faculty access, and an elite nurse anesthesia program."
@@ -25485,7 +26414,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "John V. Roach Honors College",
       "strength": 76,
       "notes": "Provides smaller seminars and priority registration within TCU's already intimate structure."
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "A healthcare and business talent engine for Dallas-Fort Worth.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 86
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "University of North Carolina at Chapel Hill": {
     "institutionNarrative": {
@@ -25548,19 +26505,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite public prestige, especially strong in pharmacy and business.",
       "socialClimate": "Warm, basketball-proud, achievement-oriented.",
       "leadershipStyle": "Leadership through community, tradition, and direct research/industry proximity."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A primary talent engine for the Research Triangle's biotech, pharma, and business ecosystem alongside Duke and NC State."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 44,
-      "TorBuffChester": 12,
-      "TexasTriangle": 14,
-      "CharLanta": 88,
-      "NorCalInnovationCorridor": 18,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusVirginia": "UVA offers stronger DC-corridor placement; UNC offers the #1 pharmacy school and deeper Research Triangle biotech ties.",
@@ -25830,7 +26774,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors Carolina",
       "strength": 82,
       "notes": "Provides smaller seminar classes, research opportunities, and priority registration within UNC's broader student body."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A primary talent engine for the Research Triangle's biotech, pharma, and business ecosystem alongside Duke and NC State.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 44
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 88
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "The University of Texas at Austin": {
     "institutionNarrative": {
@@ -25890,19 +26862,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in communications; rapidly rising in tech via Austin's boom.",
       "socialClimate": "Massive, creative, tech-forward.",
       "leadershipStyle": "Leadership through scale and direct Austin tech-industry proximity."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "The primary tech and communications talent engine for Austin's booming economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 12,
-      "BosWash": 16,
-      "TorBuffChester": 6,
-      "TexasTriangle": 94,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 24,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusTexasAM": "Texas A&M offers stronger military/engineering tradition; UT Austin offers unmatched tech-boom proximity and communications prestige."
@@ -26165,7 +27124,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Plan II Honors",
       "strength": 88,
       "notes": "One of the most respected honors programs at any public university, providing small seminars within UT's massive scale."
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "The primary tech and communications talent engine for Austin's booming economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 94
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "University of California-Los Angeles": {
     "institutionNarrative": {
@@ -26225,19 +27212,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite across nearly every field — genuinely one of the most complete public universities in the country.",
       "socialClimate": "Diverse, ambitious, entertainment-adjacent.",
       "leadershipStyle": "Leadership through academic excellence and direct LA industry access across multiple sectors simultaneously."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "The most complete talent engine in Los Angeles, spanning entertainment, tech, medicine, and business simultaneously."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 20,
-      "TorBuffChester": 6,
-      "TexasTriangle": 10,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 30,
-      "SoCalCreativeEconomy": 94
     },
     "comparativePositioning": {
       "versusUSC": "USC offers a more concentrated entertainment-industry alumni network (the 'Trojan Network'); UCLA offers broader academic excellence across medicine, business, and sciences alongside comparable entertainment access, at public-school cost.",
@@ -26593,7 +27567,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "College Honors Program",
       "strength": 84,
       "notes": "Provides smaller seminars, priority registration, and research opportunities within UCLA's larger scale."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "The most complete talent engine in Los Angeles, spanning entertainment, tech, medicine, and business simultaneously.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 30
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 94
+      }
+    ]
   },
   "Boston College": {
     "institutionNarrative": {
@@ -26653,19 +27655,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in business/finance, reinforced by genuine values-driven reputation.",
       "socialClimate": "Polished, spirited, pre-professional.",
       "leadershipStyle": "Leadership through Jesuit values and elite Boston finance placement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A key business talent engine feeding Boston's dense financial services sector."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 90,
-      "TorBuffChester": 16,
-      "TexasTriangle": 6,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 12,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusVillanova": "Both are Catholic business-strong universities. BC leans more Boston finance; Villanova leans more Philadelphia/NYC with a stronger basketball brand."
@@ -26915,7 +27904,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "BC Honors Program",
       "strength": 78,
       "notes": "Provides smaller seminars within BC's broader Jesuit university structure."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A key business talent engine feeding Boston's dense financial services sector.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 90
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "University of California-San Diego": {
     "institutionNarrative": {
@@ -26985,19 +28002,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "One of the world's premier institutions for biological sciences, bioengineering, oceanography, and genomics research.",
       "socialClimate": "Studious, research-intensive, outdoor-oriented, and less socially traditional than other UC campuses.",
       "leadershipStyle": "Leadership through scientific discovery, technical excellence, and research output."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "The nation's premier undergraduate feeder into biotechnology, genomics, and life sciences research, anchored by direct proximity to the Torrey Pines biotech mesa."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 30,
-      "TorBuffChester": 12,
-      "TexasTriangle": 22,
-      "CharLanta": 12,
-      "NorCalInnovationCorridor": 46,
-      "SoCalCreativeEconomy": 92
     },
     "comparativePositioning": {
       "versusUCLA": "UCLA offers broader national brand recognition, entertainment industry ties, and a larger alumni network across business and law, while UCSD maintains substantially deeper integration with biotechnology, genomics, and life sciences research through the Torrey Pines mesa.",
@@ -27369,7 +28373,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Sixth College and Revelle College Honors Programs",
       "strength": 70,
       "notes": "UCSD does not have a single unified honors college; instead, several of its six residential colleges (notably Revelle and Sixth) offer honors-style research seminars, priority research access, and smaller cohort experiences within the broader research university."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "The nation's premier undergraduate feeder into biotechnology, genomics, and life sciences research, anchored by direct proximity to the Torrey Pines biotech mesa.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 30
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 46
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 92
+      }
+    ]
   },
   "University of California-Santa Barbara": {
     "institutionNarrative": {
@@ -27438,19 +28470,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "One of the world's leading institutions for physics and materials science research relative to its size.",
       "socialClimate": "Socially vibrant and outdoor-centered, balanced against serious academic rigor in STEM fields.",
       "leadershipStyle": "Leadership through scientific research excellence and environmental stewardship."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "A physics and materials science research engine bridging the Los Angeles entertainment-technology economy and the Bay Area innovation corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 22,
-      "TorBuffChester": 8,
-      "TexasTriangle": 16,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 42,
-      "SoCalCreativeEconomy": 84
     },
     "comparativePositioning": {
       "versusUCLA": "UCLA offers a larger alumni network, stronger entertainment and business ties, and greater national brand recognition, while UCSB provides a more concentrated physics and materials science research environment and a distinctly coastal, outdoor-oriented culture.",
@@ -27811,7 +28830,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "College of Creative Studies",
       "strength": 88,
       "notes": "The College of Creative Studies functions as UCSB's honors college equivalent, offering a genuinely graduate-school-style research experience with small seminars, direct faculty collaboration, and minimal formal grading in select majors."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "A physics and materials science research engine bridging the Los Angeles entertainment-technology economy and the Bay Area innovation corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 42
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 84
+      }
+    ]
   },
   "University of California-Davis": {
     "institutionNarrative": {
@@ -27880,19 +28927,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "The world's top-ranked veterinary program and one of the leading agricultural and environmental research universities globally.",
       "socialClimate": "Earnest, community-oriented, bike-centric, and grounded in sustainability values.",
       "leadershipStyle": "Leadership through applied scientific research and service to California's agricultural and environmental future."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northern California",
-      "regionalRole": "The nation's leading land-grant research university for agriculture, veterinary medicine, and food systems, anchored in California's Central Valley."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 20,
-      "BosWash": 18,
-      "TorBuffChester": 8,
-      "TexasTriangle": 20,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 62,
-      "SoCalCreativeEconomy": 40
     },
     "comparativePositioning": {
       "versusBerkeley": "Berkeley offers greater breadth across the humanities, business, and venture-backed technology entrepreneurship, while UC Davis provides unmatched depth in agriculture, veterinary medicine, and environmental science.",
@@ -28258,7 +29292,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program",
       "strength": 74,
       "notes": "UC Davis's University Honors Program offers smaller seminar coursework, priority research opportunities, and closer faculty mentorship, though it functions as a supplemental track rather than a fully separate residential honors college."
-    }
+    },
+    "primaryMegaRegionSlug": "northern-california",
+    "regionalRole": "The nation's leading land-grant research university for agriculture, veterinary medicine, and food systems, anchored in California's Central Valley.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 62
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 40
+      }
+    ]
   },
   "University of California-Irvine": {
     "institutionNarrative": {
@@ -28327,19 +29389,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "A rapidly ascending UC campus with particular strength in computer science, biological sciences, and biomedical engineering.",
       "socialClimate": "Orderly, academically intense, and pre-professionally focused, with a large and highly engaged Greek and student organization scene.",
       "leadershipStyle": "Leadership through structured academic achievement and professional preparation."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "Orange County's primary technology, biomedical device, and business talent pipeline, bridging Los Angeles and San Diego's innovation economies."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 20,
-      "TorBuffChester": 8,
-      "TexasTriangle": 18,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 34,
-      "SoCalCreativeEconomy": 90
     },
     "comparativePositioning": {
       "versusUCLA": "UCLA offers a larger national alumni network and deeper entertainment and business industry ties, while UCI provides more direct proximity to Orange County's biomedical device and technology corridor at a somewhat less competitive admission tier.",
@@ -28701,7 +29750,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Campuswide Honors Collegium",
       "strength": 76,
       "notes": "UCI's Campuswide Honors Collegium provides smaller interdisciplinary seminars, priority registration, and research mentorship for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "Orange County's primary technology, biomedical device, and business talent pipeline, bridging Los Angeles and San Diego's innovation economies.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 34
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 90
+      }
+    ]
   },
   "University of California-Riverside": {
     "institutionNarrative": {
@@ -28770,19 +29847,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Less prestige-driven than sister UC campuses; oriented instead toward access, mobility, and community impact.",
       "socialClimate": "Diverse, community-oriented, and supportive, with a strong first-generation student culture.",
       "leadershipStyle": "Leadership through access, equity, and mission-driven community impact."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "The Inland Empire's primary access-oriented research university, training physicians and scientists to serve the region's underserved communities."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 12,
-      "TorBuffChester": 6,
-      "TexasTriangle": 12,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 20,
-      "SoCalCreativeEconomy": 74
     },
     "comparativePositioning": {
       "versusUCLA": "UCLA offers dramatically greater national prestige, alumni network density, and entertainment/business industry ties, while UCR offers significantly higher accessibility and a mission-driven medical school focused on underserved communities.",
@@ -29138,7 +30202,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program",
       "strength": 66,
       "notes": "UCR's University Honors Program offers smaller seminar coursework and priority research opportunities for high-achieving students, functioning as a supplemental distinction rather than a separate residential college."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "The Inland Empire's primary access-oriented research university, training physicians and scientists to serve the region's underserved communities.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 74
+      }
+    ]
   },
   "University of California-Santa Cruz": {
     "institutionNarrative": {
@@ -29207,19 +30299,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "An increasingly respected computer science and marine science research institution operating within a distinctly non-traditional academic culture.",
       "socialClimate": "Independent, intellectually alternative, and community-oriented, with strong environmental and social-justice engagement.",
       "leadershipStyle": "Leadership through independent scholarship, environmental stewardship, and quiet technical excellence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northern California",
-      "regionalRole": "A Silicon Valley-adjacent research campus combining an emerging computer science and game design pipeline with world-class marine science access via the Monterey Bay."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 20,
-      "TorBuffChester": 8,
-      "TexasTriangle": 14,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 78,
-      "SoCalCreativeEconomy": 32
     },
     "comparativePositioning": {
       "versusUCSB": "UC Santa Barbara offers a more socially traditional, beach-centered campus culture with stronger physics research, while UCSC provides a more unconventional academic culture, closer Silicon Valley proximity, and a stronger computer science and game design pipeline.",
@@ -29576,7 +30655,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "College Nine and College Ten Honors Seminars",
       "strength": 62,
       "notes": "UCSC does not have a unified honors college; instead, honors-style opportunities are distributed through individual residential college seminars and departmental honors thesis programs."
-    }
+    },
+    "primaryMegaRegionSlug": "northern-california",
+    "regionalRole": "A Silicon Valley-adjacent research campus combining an emerging computer science and game design pipeline with world-class marine science access via the Monterey Bay.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 78
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 32
+      }
+    ]
   },
   "Stanford University": {
     "institutionNarrative": {
@@ -29643,19 +30750,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most prestigious universities in the world, particularly dominant in computer science, engineering, and entrepreneurship.",
       "socialClimate": "Ambitious, collaborative, and quietly competitive, with founder culture as a defining social force.",
       "leadershipStyle": "Leadership through innovation, company-building, and technological influence at global scale."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northern California",
-      "regionalRole": "The intellectual and entrepreneurial origin point of Silicon Valley, producing an outsized share of the world's most influential technology companies and venture capital firms."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 46,
-      "TorBuffChester": 14,
-      "TexasTriangle": 24,
-      "CharLanta": 14,
-      "NorCalInnovationCorridor": 100,
-      "SoCalCreativeEconomy": 56
     },
     "comparativePositioning": {
       "versusMIT": "MIT offers a more intensely technical, engineering-first culture with a similarly strong entrepreneurial ecosystem in Boston, while Stanford provides more direct, physical proximity to venture capital and a broader interdisciplinary range spanning business, law, and the humanities.",
@@ -30020,7 +31114,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Stanford does not have a separate honors college; instead, its small size, low student-faculty ratio, and extensive undergraduate research opportunities function as an honors-level experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northern-california",
+    "regionalRole": "The intellectual and entrepreneurial origin point of Silicon Valley, producing an outsized share of the world's most influential technology companies and venture capital firms.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 46
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 56
+      }
+    ]
   },
   "California Institute of Technology": {
     "institutionNarrative": {
@@ -30087,19 +31209,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "One of the most academically prestigious institutions in the world for pure science, mathematics, and engineering, despite its small size.",
       "socialClimate": "Intensely academic, quirky, and tight-knit, organized around a shared identity as elite scientific problem-solvers.",
       "leadershipStyle": "Leadership through scientific discovery, technical mastery, and research excellence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "The nation's most concentrated pure-science research engine, anchored by its management of NASA's Jet Propulsion Laboratory."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 12,
-      "BosWash": 24,
-      "TorBuffChester": 8,
-      "TexasTriangle": 16,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 44,
-      "SoCalCreativeEconomy": 82
     },
     "comparativePositioning": {
       "versusMIT": "MIT offers a larger scale with greater breadth across engineering disciplines and a stronger entrepreneurial and business culture, while Caltech provides an even more concentrated, smaller-scale pure-science environment with unmatched undergraduate access to JPL.",
@@ -30455,7 +31564,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Caltech has no separate honors college; its entire undergraduate program functions at an honors-equivalent level of rigor and research access given the university's extremely small size and 3:1 student-faculty ratio."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "The nation's most concentrated pure-science research engine, anchored by its management of NASA's Jet Propulsion Laboratory.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 44
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 82
+      }
+    ]
   },
   "University of Iowa": {
     "institutionNarrative": {
@@ -30520,19 +31657,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally elite in creative writing; solid regional flagship prestige elsewhere.",
       "socialClimate": "Spirited, close-knit, and centered around Big Ten athletics and college-town traditions.",
       "leadershipStyle": "Leadership through literary influence, health sciences excellence, and community engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A Midwestern flagship anchoring literary arts and health sciences for Iowa and the broader agricultural Midwest."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 58,
-      "BosWash": 14,
-      "TorBuffChester": 10,
-      "TexasTriangle": 12,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusWisconsin": "Wisconsin offers a larger, more urban flagship experience with broader research breadth, while Iowa offers the nation's most prestigious creative writing tradition and a more intimate college-town feel.",
@@ -30878,7 +32002,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University of Iowa Honors Program",
       "strength": 70,
       "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A Midwestern flagship anchoring literary arts and health sciences for Iowa and the broader agricultural Midwest.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 58
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "University of Missouri": {
     "institutionNarrative": {
@@ -30943,19 +32095,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally elite in journalism; strong regional flagship prestige in agriculture and veterinary medicine.",
       "socialClimate": "Spirited, athletics-driven, and community-oriented.",
       "leadershipStyle": "Leadership through journalistic influence, agricultural science excellence, and community engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A Midwestern flagship anchoring journalism education and agricultural science for Missouri and the broader Midwest."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 56,
-      "BosWash": 12,
-      "TorBuffChester": 8,
-      "TexasTriangle": 16,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusKansas": "Kansas offers a comparable Midwestern flagship experience with stronger basketball tradition, while Missouri offers the world's first journalism school and stronger veterinary medicine programs.",
@@ -31306,7 +32445,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 68,
       "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A Midwestern flagship anchoring journalism education and agricultural science for Missouri and the broader Midwest.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 56
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "University of Arkansas": {
     "institutionNarrative": {
@@ -31371,19 +32538,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally elite in supply chain management and retail; solid regional flagship prestige elsewhere.",
       "socialClimate": "Spirited, business-minded, and athletics-driven.",
       "leadershipStyle": "Leadership through corporate pragmatism, retail industry excellence, and SEC school spirit."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The nation's premier undergraduate feeder into retail management and supply chain careers, anchored by direct proximity to Walmart's global headquarters."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 20,
-      "BosWash": 14,
-      "TorBuffChester": 8,
-      "TexasTriangle": 26,
-      "CharLanta": 30,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusTennessee": "Tennessee offers a broader general business and finance placement across Nashville's growing corporate economy, while Arkansas offers an unmatched supply chain and retail management pipeline tied directly to Walmart.",
@@ -31733,7 +32887,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 74,
       "notes": "Offers smaller seminar coursework, priority registration, research opportunities, and dedicated honors housing for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The nation's premier undergraduate feeder into retail management and supply chain careers, anchored by direct proximity to Walmart's global headquarters.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 26
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 30
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "University of Mississippi": {
     "institutionNarrative": {
@@ -31798,19 +32980,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Regionally elite in law and pharmacy; nationally recognized literary heritage tied to Oxford's Faulkner legacy.",
       "socialClimate": "Intensely spirited, socially traditional, and steeped in Southern social ritual, particularly around football tailgating.",
       "leadershipStyle": "Leadership through legal and pharmaceutical professional excellence and Southern cultural stewardship."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A Deep South flagship anchoring legal education, pharmaceutical sciences, and Southern literary tradition for Mississippi and the Mid-South."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 10,
-      "TorBuffChester": 6,
-      "TexasTriangle": 20,
-      "CharLanta": 42,
-      "NorCalInnovationCorridor": 6,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusMississippiState": "Mississippi State offers stronger engineering and agricultural programs with a more rural, agriculturally grounded culture, while Ole Miss offers stronger law, pharmacy, and a more socially prominent Greek and tailgating culture.",
@@ -32151,7 +33320,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Sally McDonnell Barksdale Honors College",
       "strength": 76,
       "notes": "One of the more developed honors colleges among Southern flagships, offering smaller seminar coursework, dedicated honors housing, thesis research, and priority faculty access."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A Deep South flagship anchoring legal education, pharmaceutical sciences, and Southern literary tradition for Mississippi and the Mid-South.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 42
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "University of Nebraska-Lincoln": {
     "institutionNarrative": {
@@ -32216,19 +33413,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally elite in actuarial science; strong regional flagship prestige in agriculture and engineering.",
       "socialClimate": "Community-oriented, practical, and centered around Husker football tradition.",
       "leadershipStyle": "Leadership through practical excellence, agricultural stewardship, and mathematical rigor."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A Great Plains flagship anchoring actuarial science and agricultural engineering for Nebraska's insurance and farming economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 54,
-      "BosWash": 10,
-      "TorBuffChester": 6,
-      "TexasTriangle": 14,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 6,
-      "SoCalCreativeEconomy": 4
     },
     "comparativePositioning": {
       "versusIowa": "Iowa offers stronger creative writing and literary arts prestige, while Nebraska offers a stronger actuarial science pipeline directly tied to Omaha's insurance industry.",
@@ -32573,7 +33757,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program",
       "strength": 72,
       "notes": "Offers smaller seminar coursework, priority registration, dedicated honors housing, and research opportunities for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A Great Plains flagship anchoring actuarial science and agricultural engineering for Nebraska's insurance and farming economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 54
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
   },
   "University of Tennessee": {
     "institutionNarrative": {
@@ -32638,19 +33850,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally elite in nuclear engineering; growing regional prestige in business tied to Nashville's economic boom.",
       "socialClimate": "Spirited, outdoorsy, and increasingly ambitious given Nashville's growth.",
       "leadershipStyle": "Leadership through engineering research excellence and growing corporate ambition."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A Southeastern flagship anchoring nuclear engineering research and increasingly feeding into Nashville's booming corporate economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 12,
-      "TorBuffChester": 8,
-      "TexasTriangle": 16,
-      "CharLanta": 44,
-      "NorCalInnovationCorridor": 6,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusAlabama": "Alabama offers a larger, more nationally visible football brand, while Tennessee offers a stronger nuclear engineering pipeline through Oak Ridge and closer proximity to Nashville's booming corporate economy.",
@@ -32995,7 +34194,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Haslam Scholars Program and Chancellor's Honors Program",
       "strength": 74,
       "notes": "Offers smaller seminar coursework, priority research access, and dedicated honors housing for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A Southeastern flagship anchoring nuclear engineering research and increasingly feeding into Nashville's booming corporate economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 44
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "University of Vermont": {
     "institutionNarrative": {
@@ -33059,19 +34286,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally recognized in environmental studies and sustainability; solid regional prestige in medicine and business.",
       "socialClimate": "Outdoorsy, community-minded, and environmentally engaged.",
       "leadershipStyle": "Leadership through environmental stewardship, rural healthcare mission, and sustainable community engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "New England's leading environmental sustainability research university, combined with a mission-driven rural medicine program."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 56,
-      "TorBuffChester": 20,
-      "TexasTriangle": 6,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 4
     },
     "comparativePositioning": {
       "versusUNH": "UNH offers a stronger engineering and business identity, while UVM offers deeper environmental studies prestige and a stronger rural medicine mission.",
@@ -33411,7 +34625,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "UVM Honors College",
       "strength": 76,
       "notes": "Offers smaller seminar coursework, dedicated honors housing, thesis research, and priority faculty access for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "New England's leading environmental sustainability research university, combined with a mission-driven rural medicine program.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 56
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
   },
   "Florida State University": {
     "institutionNarrative": {
@@ -33476,19 +34718,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally elite in criminology; strong and growing reputation in film production.",
       "socialClimate": "Spirited, socially vibrant, and centered around ACC athletics and Greek life.",
       "leadershipStyle": "Leadership through criminal justice policy influence, creative production, and public administration excellence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Florida",
-      "regionalRole": "Florida's public policy and criminology capital, anchored by direct proximity to the state capitol in Tallahassee."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 14,
-      "TorBuffChester": 6,
-      "TexasTriangle": 18,
-      "CharLanta": 46,
-      "NorCalInnovationCorridor": 6,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusFlorida": "The University of Florida offers a broader research profile and stronger STEM prestige, while FSU offers a nationally top-ranked criminology program and direct proximity to Florida's state government.",
@@ -33832,7 +35061,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors Program",
       "strength": 70,
       "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "florida",
+    "regionalRole": "Florida's public policy and criminology capital, anchored by direct proximity to the state capitol in Tallahassee.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 46
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "University of Central Florida": {
     "institutionNarrative": {
@@ -33897,19 +35154,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally distinctive in modeling and simulation and hospitality management; growing overall research profile.",
       "socialClimate": "Large, energetic, and increasingly professionally ambitious.",
       "leadershipStyle": "Leadership through industry-connected innovation and applied technical excellence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Florida",
-      "regionalRole": "The academic center of Orlando's themed entertainment and military simulation technology economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 12,
-      "TorBuffChester": 6,
-      "TexasTriangle": 16,
-      "CharLanta": 44,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusFlorida": "The University of Florida offers greater general research prestige and a more traditional flagship identity, while UCF offers an unmatched pipeline into modeling, simulation, gaming, and themed entertainment.",
@@ -34262,7 +35506,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Burnett Honors College",
       "strength": 72,
       "notes": "Offers smaller seminar coursework, priority registration, dedicated honors housing, and research opportunities, providing a more intimate experience within UCF's very large student body."
-    }
+    },
+    "primaryMegaRegionSlug": "florida",
+    "regionalRole": "The academic center of Orlando's themed entertainment and military simulation technology economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 44
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Georgia State University": {
     "institutionNarrative": {
@@ -34327,19 +35599,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Growing national reputation for student success innovation and strong regional business school prestige.",
       "socialClimate": "Urban, diverse, and professionally pragmatic, with a commuter-influenced but increasingly residential campus culture.",
       "leadershipStyle": "Leadership through student success innovation, urban economic integration, and social mobility impact."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A rapidly rising urban research university providing direct downtown Atlanta corporate access and pioneering student success innovation nationally."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 16,
-      "TorBuffChester": 8,
-      "TexasTriangle": 20,
-      "CharLanta": 62,
-      "NorCalInnovationCorridor": 6,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusGeorgiaTech": "Georgia Tech offers a much stronger engineering and STEM research identity, while Georgia State offers stronger business, public health, and a more accessible admissions profile with direct downtown corporate proximity.",
@@ -34685,7 +35944,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 68,
       "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors within the university's large urban student body."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A rapidly rising urban research university providing direct downtown Atlanta corporate access and pioneering student success innovation nationally.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 62
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Temple University": {
     "institutionNarrative": {
@@ -34750,19 +36037,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional and national reputation in journalism and law; solid value-oriented reputation overall.",
       "socialClimate": "Urban, pragmatic, and diverse, with a strong first-generation and commuter-adjacent student population.",
       "leadershipStyle": "Leadership through pragmatic professional excellence and urban civic engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A pragmatic, access-oriented urban research university anchoring journalism and legal education in Philadelphia."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 78,
-      "TorBuffChester": 24,
-      "TexasTriangle": 8,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 6,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusDrexel": "Drexel offers a stronger STEM and co-op-based engineering identity, while Temple offers deeper journalism and law prestige and a lower overall cost of attendance.",
@@ -35103,7 +36377,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors Program",
       "strength": 68,
       "notes": "Offers smaller seminar coursework, priority registration, and research opportunities for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A pragmatic, access-oriented urban research university anchoring journalism and legal education in Philadelphia.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 78
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "James Madison University": {
     "institutionNarrative": {
@@ -35168,19 +36470,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally recognized for undergraduate teaching quality and student satisfaction rather than research prestige.",
       "socialClimate": "Spirited, warm, and deliberately community-oriented, with unusually strong school pride relative to peer institutions.",
       "leadershipStyle": "Leadership through teaching excellence, student engagement, and community-building."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A teaching-focused public university feeding polished, professionally prepared graduates into the Washington DC metro area's government and consulting economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 62,
-      "TorBuffChester": 12,
-      "TexasTriangle": 8,
-      "CharLanta": 22,
-      "NorCalInnovationCorridor": 6,
-      "SoCalCreativeEconomy": 4
     },
     "comparativePositioning": {
       "versusWilliamAndMary": "William and Mary offers greater research prestige and a more selective, historically elite identity, while JMU offers a more deliberately student-centered teaching culture and stronger business and health sciences placement.",
@@ -35521,7 +36810,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 76,
       "notes": "Offers smaller seminar coursework, dedicated honors housing, thesis research, and priority faculty access for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A teaching-focused public university feeding polished, professionally prepared graduates into the Washington DC metro area's government and consulting economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 62
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
   },
   "University of Richmond": {
     "institutionNarrative": {
@@ -35585,19 +36902,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite among small liberal arts universities, with a nationally distinctive leadership studies program.",
       "socialClimate": "Polished, well-resourced, and pre-professionally ambitious, with a close-knit campus community.",
       "leadershipStyle": "Leadership through principled organizational leadership training and pre-professional excellence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A well-resourced small liberal arts university anchoring leadership studies education and feeding Virginia's legal, business, and government economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 68,
-      "TorBuffChester": 14,
-      "TexasTriangle": 8,
-      "CharLanta": 24,
-      "NorCalInnovationCorridor": 6,
-      "SoCalCreativeEconomy": 4
     },
     "comparativePositioning": {
       "versusWashingtonAndLee": "Washington and Lee offers a similarly small, well-resourced experience with a stronger traditional liberal arts identity, while Richmond offers the distinctive Jepson School of Leadership Studies and a somewhat larger, more urban-adjacent setting.",
@@ -35938,7 +37242,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Richmond does not have a separate honors college; its small size, low student-faculty ratio, and Jepson School of Leadership Studies function as an honors-level experience for much of the student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A well-resourced small liberal arts university anchoring leadership studies education and feeding Virginia's legal, business, and government economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 68
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
   },
   "Princeton University": {
     "institutionNarrative": {
@@ -36002,19 +37334,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most prestigious universities in the world, particularly dominant in mathematics, physics, economics, and public policy.",
       "socialClimate": "Traditionally elite, intellectually intense, and residentially cohesive, with the eating club system as a defining social institution.",
       "leadershipStyle": "Leadership through public service, theoretical research excellence, and policy influence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "An undergraduate-focused Ivy League research university anchoring theoretical scholarship and public policy education within the Boston-Washington corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 96,
-      "TorBuffChester": 18,
-      "TexasTriangle": 8,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusHarvard": "Harvard offers greater breadth through its law, business, and medical schools and a larger global brand, while Princeton offers a more concentrated undergraduate focus and a mandatory independent senior thesis tradition.",
@@ -36360,7 +37679,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Princeton has no separate honors college; the university's small size, low student-faculty ratio, and mandatory senior thesis function as an honors-level experience for the entire undergraduate student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "An undergraduate-focused Ivy League research university anchoring theoretical scholarship and public policy education within the Boston-Washington corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 96
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Yale University": {
     "institutionNarrative": {
@@ -36424,19 +37771,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most prestigious universities in the world, particularly dominant in law, drama, and the humanities.",
       "socialClimate": "Intellectually vibrant, artistically engaged, and residentially intimate through the college system.",
       "leadershipStyle": "Leadership through legal and judicial influence, artistic excellence, and public service tradition."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "An elite Ivy League research university anchoring legal education and the arts within the Boston-Washington corridor, with an outsized influence on the federal judiciary."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 94,
-      "TorBuffChester": 22,
-      "TexasTriangle": 6,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 12,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusHarvard": "Harvard offers greater breadth through its business and medical schools and a larger global brand, while Yale offers a more intimate residential college system and an unmatched pipeline into the federal judiciary through its law school.",
@@ -36778,7 +38112,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Yale has no separate honors college; the residential college system and small seminar culture function as an honors-level experience for the entire undergraduate student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "An elite Ivy League research university anchoring legal education and the arts within the Boston-Washington corridor, with an outsized influence on the federal judiciary.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 94
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Columbia University": {
     "institutionNarrative": {
@@ -36843,19 +38205,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most prestigious universities in the world, particularly dominant in journalism, finance, and international affairs.",
       "socialClimate": "Intellectually intense, cosmopolitan, and professionally accelerated given constant proximity to Manhattan's institutions.",
       "leadershipStyle": "Leadership through intellectual rigor, professional acceleration, and global urban engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The most urban-integrated Ivy League university, providing direct daily access to Manhattan's financial, media, and international affairs institutions."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 12,
-      "BosWash": 100,
-      "TorBuffChester": 20,
-      "TexasTriangle": 10,
-      "CharLanta": 12,
-      "NorCalInnovationCorridor": 16,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusNYU": "NYU offers a larger, more sprawling urban university experience without a mandatory shared curriculum, while Columbia offers a smaller, more traditionally elite Ivy League identity combined with the same Manhattan access.",
@@ -37201,7 +38550,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Columbia has no separate honors college; the mandatory Core Curriculum and small seminar structure function as an honors-level shared experience for the entire undergraduate student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The most urban-integrated Ivy League university, providing direct daily access to Manhattan's financial, media, and international affairs institutions.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 100
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "Cornell University": {
     "institutionNarrative": {
@@ -37265,19 +38642,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most prestigious universities in the world, with the singular distinction of being the top-ranked hospitality management program globally.",
       "socialClimate": "Academically intense and practically minded, with genuinely distinct sub-cultures across the university's seven undergraduate colleges.",
       "leadershipStyle": "Leadership through practical excellence, applied research, and comprehensive academic breadth."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The most academically comprehensive Ivy League university, combining land-grant practical education with elite research across engineering, hospitality, and agriculture."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 82,
-      "TorBuffChester": 30,
-      "TexasTriangle": 10,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 16,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusUNLV": "UNLV's Harrah College offers deeper, more direct industry embedding literally inside the Las Vegas Strip resort industry, with faculty frequently drawn from former resort executives; Cornell offers Ivy League prestige and a broader liberal-arts context alongside the hospitality specialty.",
@@ -37628,7 +38992,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "College Scholar Program and Honors Programs by College",
       "strength": 70,
       "notes": "Cornell does not have a single unified honors college; instead, individual colleges (Arts and Sciences, Engineering, Agriculture and Life Sciences) offer their own honors and research distinction programs."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The most academically comprehensive Ivy League university, combining land-grant practical education with elite research across engineering, hospitality, and agriculture.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 82
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "Dartmouth College": {
     "institutionNarrative": {
@@ -37692,19 +39084,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most prestigious undergraduate-focused institutions in the world, with disproportionate alumni influence in finance and consulting.",
       "socialClimate": "Outdoorsy, tightly bonded, and traditionally spirited, anchored by Greek life and the Dartmouth Outing Club.",
       "leadershipStyle": "Leadership through close alumni network activation, business excellence, and outdoor wilderness stewardship."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The smallest and most undergraduate-focused Ivy League institution, producing a disproportionately powerful alumni network in finance and consulting relative to its size."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 88,
-      "TorBuffChester": 26,
-      "TexasTriangle": 6,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 4
     },
     "comparativePositioning": {
       "versusWilliams": "Williams offers a similarly small, undergraduate-focused liberal arts experience without Ivy League branding, while Dartmouth offers comparable intimacy plus Ivy League prestige and the Tuck School of Business.",
@@ -38045,7 +39424,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Dartmouth has no separate honors college; the college's small size, low student-faculty ratio, and departmental honors thesis programs function as an honors-level experience for high-achieving students."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The smallest and most undergraduate-focused Ivy League institution, producing a disproportionately powerful alumni network in finance and consulting relative to its size.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 88
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
   },
   "University of Pennsylvania": {
     "institutionNarrative": {
@@ -38109,19 +39516,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most prestigious universities in the world, with Wharton representing the single most influential undergraduate business credential globally.",
       "socialClimate": "Professionally ambitious, socially vibrant, and pragmatically pre-professional, with a prominent Greek life culture.",
       "leadershipStyle": "Leadership through business excellence, interdisciplinary innovation, and professional network activation."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The most explicitly pre-professional Ivy League university, anchored by the world's most influential undergraduate business program."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 92,
-      "TorBuffChester": 26,
-      "TexasTriangle": 8,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusHarvard": "Harvard offers a broader liberal arts identity and larger global brand, while Penn offers a more explicitly pre-professional focus anchored by Wharton's undergraduate business program.",
@@ -38467,7 +39861,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Penn has no separate honors college; its four distinct undergraduate schools and structured dual-degree programs function as honors-equivalent pathways for high-achieving students."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The most explicitly pre-professional Ivy League university, anchored by the world's most influential undergraduate business program.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 92
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Amherst College": {
     "institutionNarrative": {
@@ -38530,19 +39952,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most prestigious liberal arts colleges in the country.",
       "socialClimate": "Intellectually intense and tight-knit, with a small residential community.",
       "leadershipStyle": "Leadership through independent scholarship and quiet institutional prestige."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "An elite, open-curriculum liberal arts college anchoring the Five College Consortium in western Massachusetts."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 84,
-      "TorBuffChester": 20,
-      "TexasTriangle": 6,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusWilliams": "Williams offers a similarly small, elite experience with a distribution-requirement curriculum and a stronger athletics culture, while Amherst offers a completely open curriculum with zero requirements.",
@@ -38881,7 +40290,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Amherst has no honors college; the open curriculum and small size mean every student already has honors-level access to independent study and thesis work."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "An elite, open-curriculum liberal arts college anchoring the Five College Consortium in western Massachusetts.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 84
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Bowdoin College": {
     "institutionNarrative": {
@@ -38943,19 +40380,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most prestigious liberal arts colleges in the country, with a distinctive polar and environmental research legacy.",
       "socialClimate": "Outdoorsy, close-knit, and quietly intense, with a well-known dining hall culture.",
       "leadershipStyle": "Leadership through public service, environmental stewardship, and quiet institutional prestige."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A coastal Maine liberal arts college with a distinctive environmental and polar research legacy, feeding Boston's finance and consulting economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 6,
-      "BosWash": 78,
-      "TorBuffChester": 16,
-      "TexasTriangle": 4,
-      "CharLanta": 4,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 4
     },
     "comparativePositioning": {
       "versusColby": "Colby offers a similarly small, environmentally-focused Maine liberal arts experience, while Bowdoin offers a more generous no-loan aid policy and a stronger legacy in polar and government studies.",
@@ -39292,7 +40716,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Bowdoin has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A coastal Maine liberal arts college with a distinctive environmental and polar research legacy, feeding Boston's finance and consulting economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 78
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
   },
   "Middlebury College": {
     "institutionNarrative": {
@@ -39354,19 +40806,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most prestigious liberal arts colleges in the country, with a globally unmatched reputation in language education.",
       "socialClimate": "Globally-minded, outdoorsy, and intellectually serious, with a genuinely multilingual campus culture.",
       "leadershipStyle": "Leadership through global engagement, language fluency, and environmental stewardship."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The nation's leading undergraduate language immersion institution, anchoring international affairs education within a Green Mountains setting."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 76,
-      "TorBuffChester": 18,
-      "TexasTriangle": 4,
-      "CharLanta": 4,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusWilliams": "Williams offers a stronger athletics and arts culture with a larger endowment, while Middlebury offers an unmatched language immersion program and international affairs pipeline.",
@@ -39703,7 +41142,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Middlebury has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The nation's leading undergraduate language immersion institution, anchoring international affairs education within a Green Mountains setting.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 76
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Wesleyan University": {
     "institutionNarrative": {
@@ -39766,19 +41233,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most artistically influential liberal arts colleges in the country, particularly in film and music.",
       "socialClimate": "Artistically alternative, intellectually intense, and socially progressive.",
       "leadershipStyle": "Leadership through creative and artistic influence, disproportionate to the university's small size."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "An artistically experimental liberal arts university with an outsized influence on American film, television, and music relative to its size."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 82,
-      "TorBuffChester": 20,
-      "TexasTriangle": 4,
-      "CharLanta": 4,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 12
     },
     "comparativePositioning": {
       "versusVassar": "Vassar offers a similarly artistic and progressive culture with a stronger visual arts identity, while Wesleyan offers a more powerful film and television industry alumni network.",
@@ -40114,7 +41568,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Wesleyan has no honors college; the university's small size and thesis-based senior year function as an honors-level experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "An artistically experimental liberal arts university with an outsized influence on American film, television, and music relative to its size.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 82
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 12
+      }
+    ]
   },
   "Carleton College": {
     "institutionNarrative": {
@@ -40177,19 +41659,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most academically rigorous liberal arts colleges in the country, with a nationally top-ranked PhD production rate.",
       "socialClimate": "Quirky, intellectually earnest, and unpretentious, with a strong sense of self-deprecating humor.",
       "leadershipStyle": "Leadership through genuine scholarly rigor and quiet intellectual seriousness."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "The Upper Midwest's leading undergraduate feeder into PhD programs and academic research careers."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 58,
-      "BosWash": 14,
-      "TorBuffChester": 8,
-      "TexasTriangle": 6,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusGrinnell": "Grinnell offers a larger endowment per student and a more overtly progressive activist culture, while Carleton offers a slightly more quirky, less politically intense intellectual atmosphere.",
@@ -40526,7 +41995,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Carleton has no honors college; the college's small size and comprehensive exercise/thesis requirements function as an honors-level experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "The Upper Midwest's leading undergraduate feeder into PhD programs and academic research careers.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 58
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Grinnell College": {
     "institutionNarrative": {
@@ -40589,19 +42086,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most academically rigorous and well-resourced liberal arts colleges in the country.",
       "socialClimate": "Intellectually intense, deeply progressive, and socially engaged, in a small, isolated rural setting.",
       "leadershipStyle": "Leadership through social justice engagement, intellectual independence, and institutional resource stewardship."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "An exceptionally well-resourced Midwestern liberal arts college anchoring social-justice-oriented intellectual culture in rural Iowa."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 56,
-      "BosWash": 12,
-      "TorBuffChester": 6,
-      "TexasTriangle": 6,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusCarleton": "Carleton offers a quirkier, slightly less overtly activist culture with a stronger PhD production rate, while Grinnell offers a more explicitly social-justice-oriented culture and an even more generous per-student endowment.",
@@ -40937,7 +42421,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Grinnell has no honors college; the college's open curriculum and generous funded research opportunities function as an honors-level experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "An exceptionally well-resourced Midwestern liberal arts college anchoring social-justice-oriented intellectual culture in rural Iowa.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 56
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Vassar College": {
     "institutionNarrative": {
@@ -40999,19 +42511,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most artistically and academically prestigious liberal arts colleges in the country, with deep historical significance.",
       "socialClimate": "Artistically vibrant, intellectually serious, and socially progressive.",
       "leadershipStyle": "Leadership through artistic and literary influence and historically-grounded intellectual seriousness."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A historically significant Hudson Valley liberal arts college with an outsized influence on American theater, film, and letters."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 88,
-      "TorBuffChester": 22,
-      "TexasTriangle": 4,
-      "CharLanta": 4,
-      "NorCalInnovationCorridor": 12,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusWesleyan": "Wesleyan offers a stronger film industry alumni network and a more artistically alternative culture, while Vassar offers deeper theater and English program strength and closer proximity to New York City.",
@@ -41351,7 +42850,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Vassar has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A historically significant Hudson Valley liberal arts college with an outsized influence on American theater, film, and letters.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 88
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "Claremont McKenna College": {
     "institutionNarrative": {
@@ -41414,19 +42941,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most pre-professionally successful liberal arts colleges in the country, particularly in finance and government.",
       "socialClimate": "Pre-professionally ambitious and politically engaged, structured through eating houses rather than traditional Greek life.",
       "leadershipStyle": "Leadership through structured leadership development and pre-professional excellence in government and finance."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "The Claremont Consortium's most pre-professionally focused college, anchoring government, economics, and finance training in Southern California."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 22,
-      "TorBuffChester": 6,
-      "TexasTriangle": 8,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 20,
-      "SoCalCreativeEconomy": 78
     },
     "comparativePositioning": {
       "versusPomona": "Pomona offers a more traditionally liberal arts, less overtly pre-professional culture with broader prestige, while CMC offers a more concentrated government, economics, and finance identity with stronger Wall Street placement.",
@@ -41766,7 +43280,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "CMC has no honors college; the college's small size and structured leadership programs function as an honors-level experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "The Claremont Consortium's most pre-professionally focused college, anchoring government, economics, and finance training in Southern California.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 78
+      }
+    ]
   },
   "Harvey Mudd College": {
     "institutionNarrative": {
@@ -41828,19 +43370,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most academically rigorous STEM-focused undergraduate institutions in the country, with Caltech-level technical intensity.",
       "socialClimate": "Intensely academic and quirky, with a strong culture of collaboration over competition.",
       "leadershipStyle": "Leadership through technical excellence balanced with genuine humanistic and interdisciplinary awareness."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "A STEM-exclusive liberal arts college anchoring Southern California's aerospace and technology talent pipeline within the Claremont Consortium."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 20,
-      "TorBuffChester": 6,
-      "TexasTriangle": 8,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 34,
-      "SoCalCreativeEconomy": 82
     },
     "comparativePositioning": {
       "versusCaltech": "Caltech offers a larger scale with more extensive graduate research programs and JPL access, while Harvey Mudd offers a genuinely required humanities and social science core alongside comparable undergraduate technical rigor.",
@@ -42181,7 +43710,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Harvey Mudd has no honors college; the entire undergraduate program functions at an honors-equivalent level of rigor given the college's small size and low student-faculty ratio."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "A STEM-exclusive liberal arts college anchoring Southern California's aerospace and technology talent pipeline within the Claremont Consortium.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 34
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 82
+      }
+    ]
   },
   "Hamilton College": {
     "institutionNarrative": {
@@ -42244,19 +43801,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most respected liberal arts colleges in the country for writing instruction and open curricular design.",
       "socialClimate": "Intellectually serious and socially traditional, with a close-knit residential community.",
       "leadershipStyle": "Leadership through clear communication, intellectual independence, and quiet institutional prestige."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "An open-curriculum liberal arts college anchoring elite writing instruction and finance/government placement in upstate New York."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 80,
-      "TorBuffChester": 24,
-      "TexasTriangle": 4,
-      "CharLanta": 4,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 4
     },
     "comparativePositioning": {
       "versusColgate": "Colgate offers a similar upstate New York setting with distribution requirements and a stronger Greek life culture, while Hamilton offers a fully open curriculum and a more writing-centered academic identity.",
@@ -42596,7 +44140,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Hamilton has no honors college; the open curriculum and small size function as an honors-level experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "An open-curriculum liberal arts college anchoring elite writing instruction and finance/government placement in upstate New York.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 80
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
   },
   "Oberlin College": {
     "institutionNarrative": {
@@ -42659,19 +44231,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most artistically and academically distinguished liberal arts colleges in the country, with a globally respected conservatory.",
       "socialClimate": "Deeply progressive, artistically vibrant, and intellectually intense.",
       "leadershipStyle": "Leadership through artistic excellence, social justice engagement, and historically-grounded progressive values."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A historically progressive liberal arts college and conservatory anchoring music, sciences, and social justice education in Northeast Ohio."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 52,
-      "BosWash": 18,
-      "TorBuffChester": 14,
-      "TexasTriangle": 4,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusCarleton": "Carleton offers a stronger PhD production rate and a quirkier, less overtly activist culture, while Oberlin offers a world-class conservatory and a deeper historical progressive identity.",
@@ -43008,7 +44567,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Oberlin has no honors college; the college's small size and rigorous conservatory/academic standards function as an honors-level experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A historically progressive liberal arts college and conservatory anchoring music, sciences, and social justice education in Northeast Ohio.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 52
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Kenyon College": {
     "institutionNarrative": {
@@ -43070,19 +44657,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most literarily distinguished liberal arts colleges in the country, home to one of America's most influential literary journals.",
       "socialClimate": "Literary, intellectually earnest, and genuinely isolated, with Middle Path as the social and physical spine of campus life.",
       "leadershipStyle": "Leadership through literary and intellectual distinction, disproportionate to the college's small size and remote setting."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A literarily distinguished liberal arts college anchoring creative writing and the humanities in rural central Ohio."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 54,
-      "BosWash": 16,
-      "TorBuffChester": 10,
-      "TexasTriangle": 4,
-      "CharLanta": 6,
-      "NorCalInnovationCorridor": 6,
-      "SoCalCreativeEconomy": 4
     },
     "comparativePositioning": {
       "versusOberlin": "Oberlin offers a world-class conservatory and a more overtly activist culture, while Kenyon offers a more concentrated literary tradition and an even more isolated, self-contained rural setting.",
@@ -43418,7 +44992,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Kenyon has no honors college; the college's small size and thesis-based senior year function as an honors-level experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A literarily distinguished liberal arts college anchoring creative writing and the humanities in rural central Ohio.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 54
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
   },
   "Case Western Reserve University": {
     "institutionNarrative": {
@@ -43481,19 +45083,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in biomedical engineering and medical research, with strong regional and growing national prestige.",
       "socialClimate": "Academically intense and research-driven, enriched by University Circle's cultural institutions.",
       "leadershipStyle": "Leadership through interdisciplinary research excellence and medical-engineering innovation."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "The Midwest's leading medicine-engineering fusion research university, anchored by direct Cleveland Clinic integration."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 56,
-      "BosWash": 22,
-      "TorBuffChester": 16,
-      "TexasTriangle": 6,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusCarnegieMellon": "Carnegie Mellon offers a stronger computer science and robotics identity, while Case Western offers deeper medical and biomedical engineering integration through the Cleveland Clinic.",
@@ -43837,7 +45426,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Susan and John Major Scholars Program and Themed Living Communities",
       "strength": 66,
       "notes": "Offers smaller cohort experiences and priority research access, though functions as a supplemental distinction rather than a fully separate honors college."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "The Midwest's leading medicine-engineering fusion research university, anchored by direct Cleveland Clinic integration.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 56
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Lehigh University": {
     "institutionNarrative": {
@@ -43900,19 +45517,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in integrated business-engineering education, with strong regional and growing national prestige.",
       "socialClimate": "Academically rigorous and pre-professionally ambitious, with a strong Greek life presence.",
       "leadershipStyle": "Leadership through technical-business integration and pragmatic professional excellence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A historically industrial engineering university that has evolved into a strong integrated business-engineering pipeline into New York and Philadelphia finance."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 76,
-      "TorBuffChester": 22,
-      "TexasTriangle": 6,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusLafayette": "Lafayette offers a smaller, more purely liberal-arts-adjacent engineering experience, while Lehigh offers a larger scale and a more explicitly integrated business-engineering pipeline into Wall Street.",
@@ -44255,7 +45859,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Lehigh University Honors Program",
       "strength": 68,
       "notes": "Offers smaller seminar coursework and priority research opportunities for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A historically industrial engineering university that has evolved into a strong integrated business-engineering pipeline into New York and Philadelphia finance.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 76
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Drexel University": {
     "institutionNarrative": {
@@ -44318,19 +45950,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in cooperative education and professional placement, with strong regional prestige in engineering, business, and design.",
       "socialClimate": "Pragmatic, professionally focused, and urban, with a five-year degree structure shaping campus culture and social rhythms.",
       "leadershipStyle": "Leadership through applied professional readiness and cooperative education innovation."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The nation's leading cooperative education university, embedding professional experience directly into undergraduate degrees from a Philadelphia base."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 74,
-      "TorBuffChester": 20,
-      "TexasTriangle": 6,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusNortheastern": "Northeastern offers a larger, more nationally prominent co-op brand and stronger overall prestige, while Drexel offers a comparably extensive co-op program with a somewhat more accessible admissions tier.",
@@ -44673,7 +46292,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Pennoni Honors College",
       "strength": 68,
       "notes": "Offers smaller seminar coursework, priority research access, and interdisciplinary programming for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The nation's leading cooperative education university, embedding professional experience directly into undergraduate degrees from a Philadelphia base.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 74
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Worcester Polytechnic Institute": {
     "institutionNarrative": {
@@ -44736,19 +46383,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in project-based STEM education, with a distinctive and long-standing pedagogical identity.",
       "socialClimate": "Intensely project-driven and collaborative, oriented around applied problem-solving.",
       "leadershipStyle": "Leadership through applied project execution and pragmatic technical innovation."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A project-based STEM pioneer anchoring applied robotics and engineering education within New England's technology corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 12,
-      "BosWash": 78,
-      "TorBuffChester": 20,
-      "TexasTriangle": 4,
-      "CharLanta": 4,
-      "NorCalInnovationCorridor": 12,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusRPI": "RPI offers a larger scale and broader graduate research program, while WPI offers a more distinctively project-based undergraduate curriculum structured around the WPI Plan.",
@@ -45095,7 +46729,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "WPI has no separate honors college; the mandatory project-based WPI Plan functions as an honors-level applied research experience for the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A project-based STEM pioneer anchoring applied robotics and engineering education within New England's technology corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 78
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Rochester Institute of Technology": {
     "institutionNarrative": {
@@ -45158,19 +46820,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite and globally unique in imaging science and deaf education; strong regional and national prestige in design and game development.",
       "socialClimate": "Pragmatic and design-focused, with a genuinely integrated, inclusive campus culture given the deaf and hard-of-hearing student population.",
       "leadershipStyle": "Leadership through design innovation, technical imaging expertise, and institutional commitment to accessibility and inclusion."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The nation's leading imaging science and inclusive design-technology university, anchored in Rochester's historic optics and photography industry."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 24,
-      "TorBuffChester": 62,
-      "TexasTriangle": 4,
-      "CharLanta": 4,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusRPI": "RPI offers a stronger traditional engineering research identity, while RIT offers unmatched imaging science, game design, and a globally unique deaf education program.",
@@ -45510,7 +47159,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "RIT Honors Program",
       "strength": 62,
       "notes": "Offers smaller seminar coursework and priority research opportunities for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The nation's leading imaging science and inclusive design-technology university, anchored in Rochester's historic optics and photography industry.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Stevens Institute of Technology": {
     "institutionNarrative": {
@@ -45573,19 +47250,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in quantitative finance and engineering, with growing national prestige in cybersecurity.",
       "socialClimate": "Technically rigorous and quietly ambitious, shaped by proximity to Manhattan's finance and technology economy.",
       "leadershipStyle": "Leadership through quantitative rigor, technical excellence, and pragmatic proximity to major financial markets."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "An engineering-first technical university providing the most direct undergraduate access to Wall Street of any university not physically located in Manhattan."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 96,
-      "TorBuffChester": 20,
-      "TexasTriangle": 6,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 6
     },
     "comparativePositioning": {
       "versusRPI": "RPI offers a larger scale and broader engineering research program, while Stevens offers unmatched direct proximity to Manhattan's finance industry.",
@@ -45924,7 +47588,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Pinnacle Scholars Program",
       "strength": 64,
       "notes": "Offers smaller seminar coursework and priority research opportunities for high-achieving students across all majors."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "An engineering-first technical university providing the most direct undergraduate access to Wall Street of any university not physically located in Manhattan.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 96
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 6
+      }
+    ]
   },
   "Georgetown University": {
     "institutionNarrative": {
@@ -45988,19 +47680,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Globally elite in international affairs and foreign service; highly elite in finance and consulting via McDonough; historic Jesuit institutional prestige.",
       "socialClimate": "Preppy, politically engaged, ambitious, tradition-conscious.",
       "leadershipStyle": "Leadership framed through public service and direct access to DC's actual power corridor."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The nation's most direct undergraduate pipeline into the State Department, the White House, the World Bank, and Capitol Hill — the establishment engine of BosWash's policy economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 10,
-      "TorBuffChester": 8,
-      "TexasTriangle": 6,
-      "CharLanta": 97,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusJohnsHopkins": "Hopkins offers a stronger academic medicine and public health research identity, with SAIS providing genuine international affairs depth; Georgetown offers an unmatched Foreign Service and DC policy pipeline through SFS without Hopkins' medicine-first focus.",
@@ -46349,7 +48028,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Georgetown does not operate a separate honors college; the entire undergraduate institution functions at a uniformly high selectivity level, and rigor is delivered through SFS's cohort structure and departmental honors programs rather than a dedicated honors college."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The nation's most direct undergraduate pipeline into the State Department, the White House, the World Bank, and Capitol Hill — the establishment engine of BosWash's policy economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 97
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "University of California-Berkeley": {
     "institutionNarrative": {
@@ -46412,19 +48119,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in engineering, computer science, and technology; genuinely elite in business via Haas; strong national reach in public policy and law.",
       "socialClimate": "Intellectually intense, politically engaged, technically ambitious.",
       "leadershipStyle": "Leadership through technical excellence and direct engagement with Silicon Valley's innovation economy."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northern California",
-      "regionalRole": "The single largest volume pipeline of engineering and technology talent into Silicon Valley of any university, public or private."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 22,
-      "TorBuffChester": 6,
-      "TexasTriangle": 12,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 96,
-      "SoCalCreativeEconomy": 26
     },
     "comparativePositioning": {
       "versusStanford": "Stanford holds the more prestigious brand and a denser venture capital founder network; Berkeley offers a substantially larger EECS program that places more total engineers into Silicon Valley companies annually, at public-school cost.",
@@ -46779,7 +48473,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Berkeley Honors and various departmental honors programs",
       "strength": 62,
       "notes": "Berkeley does not operate a single unified honors college on the ASU Barrett or UCLA College Honors model; honors experiences are distributed across departmental programs (e.g. Regents' and Chancellor's Scholars, College Honors within Letters & Science), making the honors experience less centralized than at peer institutions."
-    }
+    },
+    "primaryMegaRegionSlug": "northern-california",
+    "regionalRole": "The single largest volume pipeline of engineering and technology talent into Silicon Valley of any university, public or private.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 96
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 26
+      }
+    ]
   },
   "Texas A&M University": {
     "institutionNarrative": {
@@ -46842,19 +48564,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in engineering and veterinary medicine; nationally unmatched in military officer commissioning; strong regional prestige in business and agriculture.",
       "socialClimate": "Spirited, tradition-bound, loyal, disciplined.",
       "leadershipStyle": "Leadership through tradition, service, and the Corps of Cadets' structured leadership development model."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "The primary engineering, energy, and agricultural talent engine for the Texas Triangle, with a nationally unmatched military-officer commissioning pipeline layered on top."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 10,
-      "TorBuffChester": 6,
-      "TexasTriangle": 96,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 12,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusUTAustin": "UT Austin offers unmatched Austin tech-boom proximity and the #1 public communications program in the country; Texas A&M offers a stronger military and engineering tradition, a genuinely elite veterinary program, and an alumni network with unusually high career-placement loyalty.",
@@ -47211,7 +48920,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program / Terry Foundation",
       "strength": 68,
       "notes": "Provides smaller seminars, priority course access, and undergraduate research opportunities within A&M's very large scale; less centralized than a dedicated honors college like ASU's Barrett."
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "The primary engineering, energy, and agricultural talent engine for the Texas Triangle, with a nationally unmatched military-officer commissioning pipeline layered on top.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 96
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "Massachusetts Institute of Technology": {
     "institutionNarrative": {
@@ -47274,19 +49011,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most academically prestigious institutions in the world for engineering, computer science, and technology entrepreneurship.",
       "socialClimate": "Intensely technical, hacking-culture-driven, entrepreneurial, irreverent.",
       "leadershipStyle": "Leadership through technical mastery, building real systems, and entrepreneurial execution."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The single most influential engineering and technology-entrepreneurship engine in BosWash, with a startup ecosystem influence extending well beyond the corridor itself."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 92,
-      "TorBuffChester": 10,
-      "TexasTriangle": 10,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 48,
-      "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
       "versusJohnsHopkins": "Hopkins offers the single strongest medicine and public health research identity of any American university, with biomedical engineering as its clearest technical overlap with MIT; MIT offers a stronger engineering and technology entrepreneurship identity across nearly every discipline.",
@@ -47646,7 +49370,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "MIT has no separate honors college; its entire undergraduate program functions at an honors-equivalent level of rigor and research access given the university's small size, 3:1 student-faculty ratio, and universal UROP research participation."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The single most influential engineering and technology-entrepreneurship engine in BosWash, with a startup ecosystem influence extending well beyond the corridor itself.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 92
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 48
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 14
+      }
+    ]
   },
   "Carnegie Mellon University": {
     "institutionNarrative": {
@@ -47707,19 +49459,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most academically prestigious institutions in the world for computer science and robotics; genuinely elite in conservatory drama training.",
       "socialClimate": "Intensely technical, demanding, collaborative, quietly dual-identity between engineering and the arts.",
       "leadershipStyle": "Leadership through technical mastery, research output, and — within Drama — genuine conservatory-level artistic training."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "The research engine that substantially built Pittsburgh's transformation from a former steel city into a genuine robotics and autonomous-vehicle technology hub."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 68,
-      "BosWash": 34,
-      "TorBuffChester": 22,
-      "TexasTriangle": 10,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 42,
-      "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
       "versusMIT": "MIT offers broader engineering breadth across nearly every discipline and a substantially larger, more mature entrepreneurship ecosystem; Carnegie Mellon offers a more concentrated computer science and robotics identity at a smaller scale, with strong direct industry ties to Pittsburgh's robotics and autonomous-vehicle sector, plus a genuinely elite drama program MIT does not offer.",
@@ -48066,7 +49805,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "CMU has no separate honors college; rigor is delivered through each school's own demanding curriculum (especially Computer Science and Drama's conservatory model) rather than a centralized honors program."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "The research engine that substantially built Pittsburgh's transformation from a former steel city into a genuine robotics and autonomous-vehicle technology hub.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 68
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 34
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 42
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 14
+      }
+    ]
   },
   "University of Chicago": {
     "institutionNarrative": {
@@ -48127,19 +49894,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most academically prestigious universities in the world, particularly dominant in economics, law, and the social sciences.",
       "socialClimate": "Intensely intellectual, self-deprecating, proudly countercultural relative to peer Ivies.",
       "leadershipStyle": "Leadership through rigorous analysis and intellectual depth rather than pre-professional networking."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "The most intellectually rigorous economics and analytical-thinking engine in the Mid-Continent corridor, with an outsized national influence on economic policy relative to its regional footprint."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 88,
-      "BosWash": 30,
-      "TorBuffChester": 18,
-      "TexasTriangle": 10,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 20,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusColumbia": "Columbia offers unmatched daily immersion in Manhattan's financial and media institutions with a similarly mandatory Core Curriculum; UChicago offers an even more intensely analytical, discussion-based intellectual culture and the strongest economics department in the country, inside a quieter, more self-contained Hyde Park campus.",
@@ -48479,7 +50233,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "UChicago has no separate honors college; the mandatory Core Curriculum functions as an honors-level shared intellectual experience for the entire undergraduate student body."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "The most intellectually rigorous economics and analytical-thinking engine in the Mid-Continent corridor, with an outsized national influence on economic policy relative to its regional footprint.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 88
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 30
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Duke University": {
     "institutionNarrative": {
@@ -48541,19 +50323,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite national prestige in medicine, finance, and consulting, with placement rates comparable to the Ivy League.",
       "socialClimate": "Intensely spirited, tradition-proud, achievement-oriented.",
       "leadershipStyle": "Leadership through achievement, tradition, and elite professional placement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A primary national-recruiting talent engine for the Research Triangle's biotech, pharma, and academic medicine ecosystem, alongside UNC and NC State."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 46,
-      "TorBuffChester": 12,
-      "TexasTriangle": 14,
-      "CharLanta": 90,
-      "NorCalInnovationCorridor": 18,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusJohnsHopkins": "Johns Hopkins offers the single strongest academic medicine and public health research reputation in the world, reinforced by four decades as the top recipient of federal research funding; Duke offers a more nationally-recruited, broadly prestigious student body and a more prominent basketball tradition.",
@@ -48904,7 +50673,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Duke has no separate honors college; the entire undergraduate institution functions at a uniformly high selectivity level, with rigor delivered through Pratt Engineering, Sanford Public Policy, and pre-med program structures rather than a dedicated honors college."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A primary national-recruiting talent engine for the Research Triangle's biotech, pharma, and academic medicine ecosystem, alongside UNC and NC State.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 46
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 90
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Northwestern University": {
     "institutionNarrative": {
@@ -48965,19 +50762,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite and nationally dominant in journalism; strong in engineering, business, and performance; a more conventionally pre-professional culture than UChicago.",
       "socialClimate": "Ambitious, media-attuned, conventionally pre-professional with genuine creative strength.",
       "leadershipStyle": "Leadership through media influence, professional achievement, and creative and technical excellence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "The nation's most dominant journalism and media talent engine, layered on top of direct access to Chicago's consulting and financial-services economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 84,
-      "BosWash": 34,
-      "TorBuffChester": 18,
-      "TexasTriangle": 10,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 22,
-      "SoCalCreativeEconomy": 20
     },
     "comparativePositioning": {
       "versusRice": "Rice offers a smaller, more STEM-concentrated environment with unmatched Texas Medical Center and Houston energy-sector access; Northwestern offers nationally dominant journalism and stronger direct Chicago corporate access.",
@@ -49324,7 +51108,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Northwestern has no separate honors college; rigor is delivered through Medill's cohort-based journalism training, McCormick Engineering, and the School of Communication's performance programs rather than a centralized honors program."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "The nation's most dominant journalism and media talent engine, layered on top of direct access to Chicago's consulting and financial-services economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 84
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 34
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 20
+      }
+    ]
   },
   "Virginia Tech": {
     "institutionNarrative": {
@@ -49386,19 +51198,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional and national prestige in engineering; a genuinely distinctive, growing prestige asset in Northern Virginia tech and defense via the Innovation Campus.",
       "socialClimate": "Traditional, spirited, engineering-focused in Blacksburg; career-focused and corridor-embedded at the Innovation Campus.",
       "leadershipStyle": "Leadership through engineering competence, military tradition, and — increasingly — direct technology-corridor positioning."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A large-scale engineering talent engine with a genuinely unusual, purpose-built foothold inside the Northern Virginia tech and defense-contracting corridor via the Innovation Campus."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 62,
-      "TorBuffChester": 14,
-      "TexasTriangle": 14,
-      "CharLanta": 48,
-      "NorCalInnovationCorridor": 20,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusGeorgiaTech": "Georgia Tech offers stronger Atlanta startup and fintech access; Virginia Tech offers stronger Northern Virginia defense-tech ties, reinforced directly by the Innovation Campus's physical presence inside that corridor.",
@@ -49745,7 +51544,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 62,
       "notes": "Provides smaller seminars and priority course access within Virginia Tech's very large scale; less centralized than a dedicated honors college like ASU's Barrett."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A large-scale engineering talent engine with a genuinely unusual, purpose-built foothold inside the Northern Virginia tech and defense-contracting corridor via the Innovation Campus.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 62
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 48
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "North Carolina State University": {
     "institutionNarrative": {
@@ -49807,19 +51634,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong national prestige in engineering and the single strongest textile engineering program in the country; less broadly prestigious than UNC or Duke outside technical fields.",
       "socialClimate": "Applied, practical, Wolfpack-proud, industry-oriented.",
       "leadershipStyle": "Leadership through applied technical competence and direct industry partnership."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The Research Triangle's applied engineering and corporate R&D partnership engine, distinct from UNC's biotech/pharma identity and Duke's academic medicine identity."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 32,
-      "TorBuffChester": 12,
-      "TexasTriangle": 16,
-      "CharLanta": 92,
-      "NorCalInnovationCorridor": 20,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusUNC": "UNC offers the #1-ranked pharmacy school in the country and a broader liberal-arts-plus-business identity; NC State offers a larger, more applied engineering program and the country's leading textile engineering program, with Centennial Campus's direct corporate R&D partnerships UNC does not have in the same form.",
@@ -50163,7 +51977,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program",
       "strength": 64,
       "notes": "Provides smaller seminars and priority course access within NC State's very large scale; less centralized than a dedicated honors college like ASU's Barrett."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The Research Triangle's applied engineering and corporate R&D partnership engine, distinct from UNC's biotech/pharma identity and Duke's academic medicine identity.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 32
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 92
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Emory University": {
     "institutionNarrative": {
@@ -50225,19 +52067,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in public health, given unmatched CDC proximity; strong in medicine and business, reinforced by deep Atlanta corporate integration.",
       "socialClimate": "Academically serious, service-oriented, corporately connected.",
       "leadershipStyle": "Leadership through public health impact, corporate integration, and civic service."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The nation's most direct undergraduate pipeline into public health policy via unmatched CDC proximity, layered on top of deep Atlanta corporate integration through Goizueta."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 32,
-      "TorBuffChester": 12,
-      "TexasTriangle": 16,
-      "CharLanta": 96,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusVanderbilt": "Vanderbilt has stronger pre-med outcomes and a more vibrant Greek/athletics social scene; Emory has stronger public health and deeper Atlanta integration.",
@@ -50581,7 +52410,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Emory has no separate honors college; rigor is delivered through Emory College's own selective structure and departmental honors programs rather than a centralized honors college."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The nation's most direct undergraduate pipeline into public health policy via unmatched CDC proximity, layered on top of deep Atlanta corporate integration through Goizueta.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 32
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 96
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Wake Forest University": {
     "institutionNarrative": {
@@ -50642,19 +52499,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite pre-professional outcomes in finance, consulting, and law disproportionate to its small size, reinforced by a genuine undergraduate business school.",
       "socialClimate": "Ambitious, tight-knit, socially active, Greek-life-present.",
       "leadershipStyle": "Leadership through pre-professional achievement and close-knit community involvement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A small-scale but disproportionately strong finance and consulting talent pipeline, benefiting from Charlotte's banking economy and broader CharLanta corporate access."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 40,
-      "TorBuffChester": 12,
-      "TexasTriangle": 14,
-      "CharLanta": 90,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusVanderbilt": "Vanderbilt offers a larger scale, a top-10 academic medical center directly on campus, and Nashville's faster-growing economy; Wake Forest offers a smaller, more personalized undergraduate experience with a genuine undergraduate business school most peer institutions don't have.",
@@ -50997,7 +52841,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Wake Forest has no separate honors college; its small overall scale and low student-faculty ratio deliver an honors-equivalent experience across the undergraduate population."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A small-scale but disproportionately strong finance and consulting talent pipeline, benefiting from Charlotte's banking economy and broader CharLanta corporate access.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 40
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 90
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Pepperdine University": {
     "institutionNarrative": {
@@ -51059,19 +52931,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally elite specifically in dispute resolution law; strong regional prestige in international business and communication.",
       "socialClimate": "Values-driven, polished, beach-adjacent, internationally minded.",
       "leadershipStyle": "Leadership through Christian values, service, and international engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "A values-driven talent engine combining LA entertainment and business proximity with a nationally elite dispute resolution law program and an unusually extensive international study-abroad network."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 16,
-      "TorBuffChester": 6,
-      "TexasTriangle": 12,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 18,
-      "SoCalCreativeEconomy": 78
     },
     "comparativePositioning": {
       "versusLMU": "LMU offers a genuinely closer Silicon Beach tech proximity and a Jesuit rather than Church of Christ institutional identity; Pepperdine offers a more scenic, higher-cost Malibu setting, a top-ranked dispute resolution law program, and a more extensive international study-abroad network.",
@@ -51410,7 +53269,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Seaver College Honors Program",
       "strength": 60,
       "notes": "Provides smaller seminars and priority course access within Seaver College's broader undergraduate structure."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "A values-driven talent engine combining LA entertainment and business proximity with a nationally elite dispute resolution law program and an unusually extensive international study-abroad network.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 78
+      }
+    ]
   },
   "Rice University": {
     "institutionNarrative": {
@@ -51471,19 +53358,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite nationally in engineering and architecture, with genuine strength across humanities — MIT/Caltech-caliber STEM rigor without the narrow technical focus.",
       "socialClimate": "Quietly intense, collaborative, tight-knit.",
       "leadershipStyle": "Leadership through technical mastery and close-knit community involvement rather than large-scale institutional visibility."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "The most academically elite small STEM university inside the Texas Triangle, with direct pipelines into Houston's energy, medicine, and aerospace economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 32,
-      "TorBuffChester": 10,
-      "TexasTriangle": 94,
-      "CharLanta": 14,
-      "NorCalInnovationCorridor": 18,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusVanderbilt": "Vanderbilt offers a larger scale and Nashville's faster-growing economy; Rice offers a smaller, more STEM-concentrated environment with unmatched direct access to the Texas Medical Center and Houston's energy sector.",
@@ -51844,7 +53718,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Rice has no separate honors college; the entire undergraduate institution functions at an honors-equivalent level of rigor given its small size, 6:1 student-faculty ratio, and residential college structure."
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "The most academically elite small STEM university inside the Texas Triangle, with direct pipelines into Houston's energy, medicine, and aerospace economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 32
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 94
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "University of Notre Dame": {
     "institutionNarrative": {
@@ -51905,19 +53807,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in finance and consulting through Mendoza, disproportionately strong relative to cohort size; strong national prestige reinforced by football culture and Catholic identity.",
       "socialClimate": "Spirited, tradition-bound, values-driven, ambitious.",
       "leadershipStyle": "Leadership through tradition, Catholic values, and an intensely loyal, reciprocal alumni network."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A nationally-recruited Catholic elite institution whose alumni network and finance/consulting placement extend well beyond its Great Lakes location, reinforced by football-driven national visibility."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 68,
-      "BosWash": 44,
-      "TorBuffChester": 16,
-      "TexasTriangle": 14,
-      "CharLanta": 14,
-      "NorCalInnovationCorridor": 16,
-      "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
       "versusGeorgetown": "Georgetown offers an unmatched Foreign Service and DC policy pipeline through SFS; Notre Dame offers a stronger, more disproportionately elite finance and consulting pipeline through Mendoza, reinforced by football-driven national alumni loyalty Georgetown's DC-centered identity doesn't replicate.",
@@ -52277,7 +54166,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Glynn Family Honors Program",
       "strength": 66,
       "notes": "Provides smaller seminars and priority course access within Notre Dame's broader undergraduate structure."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A nationally-recruited Catholic elite institution whose alumni network and finance/consulting placement extend well beyond its Great Lakes location, reinforced by football-driven national visibility.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 68
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 44
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 14
+      }
+    ]
   },
   "Johns Hopkins University": {
     "institutionNarrative": {
@@ -52338,19 +54255,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Among the most academically prestigious institutions in the world for medicine, public health, and biomedical engineering.",
       "socialClimate": "Intensely academic, research-driven, achievement-focused.",
       "leadershipStyle": "Leadership through research excellence and technical mastery in medicine, public health, and biomedical science."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The world's leading academic medicine and public health research engine inside the BosWash corridor, with genuine DC-adjacent international affairs and federal policy reach through SAIS."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 92,
-      "TorBuffChester": 12,
-      "TexasTriangle": 10,
-      "CharLanta": 22,
-      "NorCalInnovationCorridor": 18,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusDuke": "Duke offers a more nationally-recruited, broadly prestigious student body and a more prominent basketball tradition; Hopkins offers the single strongest academic medicine and public health research reputation in the world, reinforced by four decades as the top recipient of federal research funding.",
@@ -52711,7 +54615,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Hopkins has no separate honors college; the entire undergraduate institution functions at an honors-equivalent level given its small size, 6:1 student-faculty ratio, and extensive undergraduate research participation."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The world's leading academic medicine and public health research engine inside the BosWash corridor, with genuine DC-adjacent international affairs and federal policy reach through SAIS.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 92
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "University of Nevada, Las Vegas": {
     "institutionNarrative": {
@@ -52771,19 +54703,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Globally elite specifically in hospitality and gaming management; a solid, unremarkable regional public university outside that specialty.",
       "socialClimate": "Practical, industry-oriented, accessible.",
       "leadershipStyle": "Leadership through direct industry competence and hands-on operational experience."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "The world's most specialized hospitality and gaming management talent engine, embedded directly inside the Las Vegas Strip resort industry."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 12,
-      "TorBuffChester": 6,
-      "TexasTriangle": 16,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 52
     },
     "comparativePositioning": {
       "versusCornell": "Cornell's Nolan School of Hotel Administration offers Ivy League prestige and a broader liberal-arts context; UNLV's Harrah College offers deeper, more direct industry embedding — literally inside the Las Vegas Strip resort industry — with faculty frequently drawn from former resort executives, a specialization Cornell's context cannot fully replicate.",
@@ -53139,7 +55058,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Barrick Honors College",
       "strength": 58,
       "notes": "Provides smaller seminars and priority course access within UNLV's very large scale; less centralized than a dedicated honors college like ASU's Barrett."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "The world's most specialized hospitality and gaming management talent engine, embedded directly inside the Las Vegas Strip resort industry.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 52
+      }
+    ]
   },
   "University of Minnesota": {
     "institutionNarrative": {
@@ -53199,19 +55146,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional and Big Ten prestige, elite specifically in consumer products and healthcare management via direct Fortune 500 access.",
       "socialClimate": "Practical, spirited, corporately-connected.",
       "leadershipStyle": "Leadership through direct corporate access and applied business competence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "The Upper Midwest's most corporate-connected flagship public, with unmatched direct access to the Twin Cities' Fortune 500 headquarters density."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 88,
-      "BosWash": 24,
-      "TorBuffChester": 14,
-      "TexasTriangle": 10,
-      "CharLanta": 12,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusWisconsin": "Wisconsin offers the strongest health-tech pipeline of any Big Ten school via Epic Systems; Minnesota offers a denser, more diverse Fortune 500 corporate backyard spanning consumer products, healthcare, and industrials.",
@@ -53565,7 +55499,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors Program",
       "strength": 62,
       "notes": "Provides smaller seminars and priority course access within Minnesota's very large scale; less centralized than a dedicated honors college like ASU's Barrett."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "The Upper Midwest's most corporate-connected flagship public, with unmatched direct access to the Twin Cities' Fortune 500 headquarters density.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 88
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "University of Pittsburgh": {
     "institutionNarrative": {
@@ -53626,19 +55588,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite in academic medicine and health sciences research, reinforced by consistent top-10 national NIH funding rankings.",
       "socialClimate": "Practical, health-sciences-driven, spirited.",
       "leadershipStyle": "Leadership through clinical and research competence in academic medicine."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A top-10 nationally funded academic medicine research engine, directly integrated with UPMC, inside Pittsburgh's transformed healthcare-and-technology economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 72,
-      "BosWash": 42,
-      "TorBuffChester": 22,
-      "TexasTriangle": 10,
-      "CharLanta": 14,
-      "NorCalInnovationCorridor": 16,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusMaryland": "Maryland offers the strongest federal security agency pipeline of any public university; Pitt offers a stronger, more directly integrated academic medicine pipeline through UPMC.",
@@ -53990,7 +55939,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors College",
       "strength": 68,
       "notes": "Provides smaller seminars, priority course access, and enhanced research opportunities within Pitt's large scale."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A top-10 nationally funded academic medicine research engine, directly integrated with UPMC, inside Pittsburgh's transformed healthcare-and-technology economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 72
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 42
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "University of Connecticut": {
     "institutionNarrative": {
@@ -54050,19 +56027,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Genuine Public Ivy reputation, elite specifically in actuarial science and risk management via direct Hartford insurance industry access.",
       "socialClimate": "Spirited, athletics-driven, practical.",
       "leadershipStyle": "Leadership through athletics-driven school pride and applied industry competence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The most direct undergraduate pipeline into Hartford's national insurance industry capital of any university in the country."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 12,
-      "BosWash": 88,
-      "TorBuffChester": 14,
-      "TexasTriangle": 8,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 12,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusPennState": "Penn State offers one of the strongest actuarial science pipelines in the country at a larger scale; UConn offers more direct, walkable proximity to Hartford's actual insurance industry headquarters, not just the academic training.",
@@ -54417,7 +56381,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors Program",
       "strength": 62,
       "notes": "Provides smaller seminars and priority course access within UConn's large public-flagship scale."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The most direct undergraduate pipeline into Hartford's national insurance industry capital of any university in the country.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 88
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "College of William and Mary": {
     "institutionNarrative": {
@@ -54478,19 +56470,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Genuine Public Ivy reputation rivaling private elite universities academically, delivered at public-school cost.",
       "socialClimate": "Intellectually serious, close-knit, historically minded.",
       "leadershipStyle": "Leadership through civic engagement and genuine academic rigor."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A genuinely elite small public university with direct access to both Virginia state government (Richmond) and federal government (Washington DC), anchored by the country's oldest law school."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 58,
-      "TorBuffChester": 12,
-      "TexasTriangle": 10,
-      "CharLanta": 76,
-      "NorCalInnovationCorridor": 12,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusGeorgetown": "Georgetown offers an unmatched Foreign Service and DC-embedded policy pipeline through SFS; William and Mary offers a smaller, more intimate small-college culture and genuine public-school cost with comparable law and government placement strength.",
@@ -54840,7 +56819,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "William and Mary has no separate honors college; its small overall scale and low student-faculty ratio deliver an honors-equivalent experience across the undergraduate population."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A genuinely elite small public university with direct access to both Virginia state government (Richmond) and federal government (Washington DC), anchored by the country's oldest law school.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 58
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 76
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "University of Kentucky": {
     "institutionNarrative": {
@@ -54901,19 +56908,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Regionally strong, genuinely elite and nationally distinctive specifically in equine science.",
       "socialClimate": "Spirited, basketball-driven, Southern-hospitable.",
       "leadershipStyle": "Leadership through athletics-driven school pride and applied regional-industry competence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The country's most academically distinctive equine science program, combined with a major regional academic medical center, inside the Bluegrass region's genuinely unique horse and bourbon industries."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 38,
-      "BosWash": 16,
-      "TorBuffChester": 10,
-      "TexasTriangle": 14,
-      "CharLanta": 68,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusTennessee": "Tennessee offers a larger scale and stronger overall Southeast Conference national visibility; Kentucky offers a genuinely unmatched equine science program and direct bourbon industry ties unavailable at any other university.",
@@ -55269,7 +57263,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Lewis Honors College",
       "strength": 66,
       "notes": "A genuinely well-regarded, centralized honors college providing dedicated housing, smaller seminars, and priority course access within Kentucky's large public-flagship scale."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The country's most academically distinctive equine science program, combined with a major regional academic medical center, inside the Bluegrass region's genuinely unique horse and bourbon industries.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 38
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 68
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Texas Tech University": {
     "institutionNarrative": {
@@ -55330,19 +57352,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally elite specifically in personal financial planning; regionally strong in petroleum engineering and agricultural economics.",
       "socialClimate": "Spirited, practical, West-Texas-proud.",
       "leadershipStyle": "Leadership through applied industry competence and Red Raider school spirit."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "The nation's #1-ranked personal financial planning program, combined with direct access to West Texas's petroleum, wind energy, and agriculture economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 24,
-      "BosWash": 14,
-      "TorBuffChester": 8,
-      "TexasTriangle": 82,
-      "CharLanta": 12,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusTexasAM": "Texas A&M offers a larger scale, a legendary Aggie Network alumni culture, and stronger overall national prestige; Texas Tech offers the single #1-ranked personal financial planning program in the country and more direct Permian Basin petroleum engineering proximity.",
@@ -55701,7 +57710,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 60,
       "notes": "Provides smaller seminars and priority course access within Texas Tech's very large public-flagship scale."
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "The nation's #1-ranked personal financial planning program, combined with direct access to West Texas's petroleum, wind energy, and agriculture economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 82
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "San Diego State University": {
     "institutionNarrative": {
@@ -55762,19 +57799,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional prestige, growing national reputation, genuinely distinctive in border-region public affairs and homeland security.",
       "socialClimate": "Sunny, spirited, outdoorsy.",
       "leadershipStyle": "Leadership through applied competence and border-region civic engagement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "A growing biotech-and-public-affairs talent engine anchored by San Diego's life sciences corridor and its uniquely direct U.S.-Mexico border proximity."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 14,
-      "TorBuffChester": 8,
-      "TexasTriangle": 12,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 16,
-      "SoCalCreativeEconomy": 78
     },
     "comparativePositioning": {
       "versusSanJoseState": "San Jose State offers direct Silicon Valley tech proximity; San Diego State offers direct San Diego biotech corridor access and a genuinely distinctive border-region public affairs pipeline San Jose State doesn't have.",
@@ -56129,7 +58153,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Weber Honors College",
       "strength": 58,
       "notes": "Provides smaller seminars and priority course access within SDSU's very large public-university scale."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "A growing biotech-and-public-affairs talent engine anchored by San Diego's life sciences corridor and its uniquely direct U.S.-Mexico border proximity.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 78
+      }
+    ]
   },
   "California Polytechnic State University, San Luis Obispo": {
     "institutionNarrative": {
@@ -56189,19 +58241,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Elite specifically in engineering and architecture, with placement rates and industry reputations rivaling private technical universities.",
       "socialClimate": "Practical, hands-on, quietly prestigious.",
       "leadershipStyle": "Leadership through applied technical competence and hands-on project execution."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northern California",
-      "regionalRole": "The most selective, most industry-placed public engineering and architecture program on the West Coast, with a direct pipeline into both Silicon Valley technology and Southern California aerospace."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 12,
-      "TorBuffChester": 6,
-      "TexasTriangle": 10,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 62,
-      "SoCalCreativeEconomy": 44
     },
     "comparativePositioning": {
       "versusRoseHulman": "Rose-Hulman offers a smaller, more intensely STEM-focused private university experience; Cal Poly SLO offers genuine public-school cost with placement rates and industry reputation rivaling Rose-Hulman, plus a well-regarded architecture program Rose-Hulman doesn't have.",
@@ -56556,7 +58595,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Cal Poly SLO has no separate honors college; its impacted-major structure and hands-on, project-based curriculum deliver an honors-equivalent rigor across engineering and architecture without a centralized program."
-    }
+    },
+    "primaryMegaRegionSlug": "northern-california",
+    "regionalRole": "The most selective, most industry-placed public engineering and architecture program on the West Coast, with a direct pipeline into both Silicon Valley technology and Southern California aerospace.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 62
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 44
+      }
+    ]
   },
   "Oregon State University": {
     "institutionNarrative": {
@@ -56616,19 +58683,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally elite specifically in forestry and oceanography; genuinely distinctive in fermentation science.",
       "socialClimate": "Practical, outdoorsy, environmentally minded.",
       "leadershipStyle": "Leadership through environmental stewardship and applied research competence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northern California",
-      "regionalRole": "The Pacific Northwest's most research-distinctive land-, sea-, and space-grant university, anchoring elite forestry and oceanography programs alongside growing Silicon Forest technology proximity."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 12,
-      "TorBuffChester": 8,
-      "TexasTriangle": 8,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 58,
-      "SoCalCreativeEconomy": 18
     },
     "comparativePositioning": {
       "versusColoradoState": "Colorado State offers a top-5 nationally ranked veterinary medicine program; Oregon State offers a genuinely rare land-sea-space-grant research designation and elite forestry and oceanography programs Colorado State doesn't have.",
@@ -56983,7 +59037,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "University Honors College",
       "strength": 64,
       "notes": "Provides smaller seminars, priority course access, and enhanced research opportunities within Oregon State's large public-flagship scale."
-    }
+    },
+    "primaryMegaRegionSlug": "northern-california",
+    "regionalRole": "The Pacific Northwest's most research-distinctive land-, sea-, and space-grant university, anchoring elite forestry and oceanography programs alongside growing Silicon Forest technology proximity.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 58
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 18
+      }
+    ]
   },
   "Brigham Young University": {
     "institutionNarrative": {
@@ -57043,19 +59125,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally elite specifically in accounting and actuarial science placement, reinforced by a distinctive missionary-driven multilingual student body.",
       "socialClimate": "Values-driven, community-oriented, mission-minded.",
       "leadershipStyle": "Leadership through religious values, service (missionary tradition), and applied pre-professional competence."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "A genuinely elite accounting and actuarial science pipeline, explicitly organized around LDS religious identity, with growing Silicon Slopes technology corridor proximity."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 14,
-      "TorBuffChester": 8,
-      "TexasTriangle": 14,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 20,
-      "SoCalCreativeEconomy": 42
     },
     "comparativePositioning": {
       "versusUtah": "The University of Utah offers a secular public-university identity with direct Silicon Slopes tech corridor access; BYU offers explicit LDS religious identity and values-driven community, alongside genuinely elite accounting placement Utah doesn't match.",
@@ -57408,7 +59477,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors Program",
       "strength": 56,
       "notes": "Provides smaller seminars and priority course access within BYU's very large scale."
-    }
+    },
+    "primaryMegaRegionSlug": "front-range-silicon-slopes",
+    "regionalRole": "A genuinely elite accounting and actuarial science pipeline, explicitly organized around LDS religious identity, with growing Silicon Slopes technology corridor proximity.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 42
+      }
+    ]
   },
   "Babson College": {
     "institutionNarrative": {
@@ -57468,19 +59565,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "The single most category-dominant, consistently #1-ranked entrepreneurship program in the country for over three decades.",
       "socialClimate": "Intensely entrepreneurial, single-minded, founder-oriented.",
       "leadershipStyle": "Leadership through venture creation and applied entrepreneurial risk-taking."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The single most category-dominant entrepreneurship education engine in the country, embedded directly inside Boston's dense startup and venture capital ecosystem."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 12,
-      "BosWash": 88,
-      "TorBuffChester": 14,
-      "TexasTriangle": 10,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 24,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusBentley": "Bentley offers a broader general business curriculum with strong analytics and finance placement; Babson offers an entirely entrepreneurship-first curriculum where every student launches a real business as a graduation requirement, a genuinely different institutional model.",
@@ -57828,7 +59912,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Babson has no separate honors college; its very small scale and entrepreneurship-first curriculum deliver an intensive, applied rigor across the entire undergraduate population without a centralized honors program."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The single most category-dominant entrepreneurship education engine in the country, embedded directly inside Boston's dense startup and venture capital ecosystem.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 88
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Bentley University": {
     "institutionNarrative": {
@@ -57888,19 +60000,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional and growing national reputation, particularly elite in business analytics specifically.",
       "socialClimate": "Practical, pre-professionally focused, intellectually broader than typical business-only peers.",
       "leadershipStyle": "Leadership through applied business competence integrated with genuine liberal arts perspective."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "A specialized business analytics and corporate finance talent engine directly embedded in Boston's financial services and growing technology corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 84,
-      "TorBuffChester": 14,
-      "TexasTriangle": 8,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 18,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusBabson": "Babson offers total, singular institutional focus on entrepreneurship specifically, with required hands-on venture creation; Bentley offers broader corporate finance and business analytics placement with deliberate liberal arts integration Babson's entrepreneurship-first curriculum doesn't emphasize the same way."
@@ -58246,7 +60345,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Bentley has no separate honors college; its small, specialized scale delivers a consistently rigorous experience across the undergraduate population."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A specialized business analytics and corporate finance talent engine directly embedded in Boston's financial services and growing technology corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 84
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "Occidental College": {
     "institutionNarrative": {
@@ -58306,19 +60433,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional and national liberal arts college reputation, particularly elite in diplomacy and world affairs.",
       "socialClimate": "Intellectually engaged, politically active, close-knit despite urban setting.",
       "leadershipStyle": "Leadership through civic engagement and political activism."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Southern California",
-      "regionalRole": "A small, politically engaged liberal arts college with a genuinely rare direct-urban location inside Los Angeles, giving students real entertainment and civic industry access most LACs can't replicate."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 16,
-      "TorBuffChester": 6,
-      "TexasTriangle": 8,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 80
     },
     "comparativePositioning": {
       "versusColoradoCollege": "Colorado College offers a distinctive block-plan academic calendar and direct Rocky Mountain outdoor access; Occidental offers direct Los Angeles urban and entertainment industry access Colorado College's mountain setting doesn't have.",
@@ -58669,7 +60783,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Occidental has no separate honors college; its very small scale and low student-faculty ratio deliver an honors-equivalent experience across the entire undergraduate population."
-    }
+    },
+    "primaryMegaRegionSlug": "southern-california",
+    "regionalRole": "A small, politically engaged liberal arts college with a genuinely rare direct-urban location inside Los Angeles, giving students real entertainment and civic industry access most LACs can't replicate.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 80
+      }
+    ]
   },
   "Colorado College": {
     "institutionNarrative": {
@@ -58729,19 +60871,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong national liberal arts college reputation, genuinely distinctive for its unconventional Block Plan academic model.",
       "socialClimate": "Intensely outdoorsy, environmentally engaged, unconventionally structured.",
       "leadershipStyle": "Leadership through environmental stewardship and intensive academic focus."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Front Range",
-      "regionalRole": "A genuinely distinctive liberal arts college whose Block Plan academic model and direct Rocky Mountain access produce field-based, immersive learning unavailable almost anywhere else."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 18,
-      "BosWash": 14,
-      "TorBuffChester": 8,
-      "TexasTriangle": 14,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 16,
-      "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
       "versusOccidental": "Occidental offers direct Los Angeles urban and entertainment industry access; Colorado College offers a genuinely unique Block Plan academic structure and direct Rocky Mountain outdoor immersion Occidental's urban setting doesn't have.",
@@ -59092,7 +61221,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Colorado College has no separate honors college; the Block Plan's intensive, single-subject structure delivers an honors-equivalent rigor across the entire undergraduate population."
-    }
+    },
+    "primaryMegaRegionSlug": "front-range-silicon-slopes",
+    "regionalRole": "A genuinely distinctive liberal arts college whose Block Plan academic model and direct Rocky Mountain access produce field-based, immersive learning unavailable almost anywhere else.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 14
+      }
+    ]
   },
   "Dickinson College": {
     "institutionNarrative": {
@@ -59152,19 +61309,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional liberal arts college reputation, genuinely distinctive for its exceptional study-abroad infrastructure.",
       "socialClimate": "Globally minded, sustainability-conscious, intellectually curious.",
       "leadershipStyle": "Leadership through global engagement and environmental sustainability commitment."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "A genuinely globally-oriented liberal arts college whose exceptional study-abroad infrastructure and sustainability-first curriculum produce a distinctive international and environmental focus."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 62,
-      "TorBuffChester": 16,
-      "TexasTriangle": 8,
-      "CharLanta": 40,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusGettysburg": "Gettysburg offers a strong Civil War-adjacent history program and direct battlefield access; Dickinson offers exceptional study-abroad infrastructure and a genuinely structural sustainability commitment Gettysburg's curriculum doesn't emphasize the same way.",
@@ -59510,7 +61654,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Dickinson has no separate honors college; its very small scale and low student-faculty ratio deliver an honors-equivalent experience across the entire undergraduate population."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "A genuinely globally-oriented liberal arts college whose exceptional study-abroad infrastructure and sustainability-first curriculum produce a distinctive international and environmental focus.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 62
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 40
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "Colorado School of Mines": {
     "institutionNarrative": {
@@ -59570,19 +61742,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "The single most specialized, most respected mining and petroleum engineering program in the country, with starting salaries rivaling much larger technical universities.",
       "socialClimate": "Intensely technical, close-knit, hardworking.",
       "leadershipStyle": "Leadership through applied technical mastery and quantitative rigor."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Front Range",
-      "regionalRole": "The single most specialized, most singularly focused mining and energy engineering institution in the country, anchoring the Rocky Mountain region's natural resources economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 24,
-      "BosWash": 14,
-      "TorBuffChester": 8,
-      "TexasTriangle": 22,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 18,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusRoseHulman": "Rose-Hulman offers broader mechanical, electrical, and general engineering breadth; Mines offers the single most specialized mining, petroleum, and geological engineering program in the country, essentially unmatched in depth.",
@@ -59944,7 +62103,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Mines has no separate honors college; its small, singularly STEM-focused scale delivers an honors-equivalent rigor across the entire undergraduate population."
-    }
+    },
+    "primaryMegaRegionSlug": "front-range-silicon-slopes",
+    "regionalRole": "The single most specialized, most singularly focused mining and energy engineering institution in the country, anchoring the Rocky Mountain region's natural resources economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 24
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "United States Military Academy": {
     "institutionNarrative": {
@@ -60002,19 +62189,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Nationally elite, entirely distinctive institutional model unmatched by any civilian university.",
       "socialClimate": "Intensely disciplined, service-oriented, leadership-focused.",
       "leadershipStyle": "Leadership through military command structure and formalized officer development."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The country's most formalized, most intensely developed leadership pipeline, producing commissioned military officers who go on to disproportionate civilian leadership roles in business, consulting, and government."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 14,
-      "BosWash": 76,
-      "TorBuffChester": 18,
-      "TexasTriangle": 14,
-      "CharLanta": 16,
-      "NorCalInnovationCorridor": 12,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusNavalAcademy": "The Naval Academy commissions officers into the Navy and Marine Corps with a maritime-focused curriculum; West Point commissions officers into the Army with a more land-warfare-focused curriculum, though both share the same zero-tuition, guaranteed-commission institutional model."
@@ -60360,7 +62534,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "West Point has no separate honors college; the entire curriculum is uniformly rigorous and required of all cadets, delivering an honors-equivalent standard across the entire student body."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The country's most formalized, most intensely developed leadership pipeline, producing commissioned military officers who go on to disproportionate civilian leadership roles in business, consulting, and government.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 76
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Rhode Island School of Design": {
     "institutionNarrative": {
@@ -60420,19 +62622,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "The single most respected standalone art and design institution in the country, with selectivity and rigor rivaling Ivy League institutions.",
       "socialClimate": "Intensely creative, studio-focused, critique-driven.",
       "leadershipStyle": "Leadership through creative vision and design craft mastery."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Northeast",
-      "regionalRole": "The single most respected standalone art and design education engine in the country, with a unique cross-registration relationship with Brown University giving students research-university academic breadth alongside specialized studio intensity."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 10,
-      "BosWash": 82,
-      "TorBuffChester": 14,
-      "TexasTriangle": 8,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 20,
-      "SoCalCreativeEconomy": 24
     },
     "comparativePositioning": {
       "versusPratt": "Pratt offers a larger scale and direct New York City location; RISD offers a smaller, more intensely selective program with a unique Brown University cross-registration relationship Pratt doesn't have.",
@@ -60781,7 +62970,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "RISD has no separate honors college; its very small, specialized scale and rigorous foundational curriculum deliver an honors-equivalent standard across the entire undergraduate population."
-    }
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "The single most respected standalone art and design education engine in the country, with a unique cross-registration relationship with Brown University giving students research-university academic breadth alongside specialized studio intensity.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 82
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 24
+      }
+    ]
   },
   "Rose-Hulman Institute of Technology": {
     "institutionNarrative": {
@@ -60841,19 +63058,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "The #1-ranked undergraduate engineering-focused institution in the country for over two decades consecutively.",
       "socialClimate": "Intensely academic, quantitatively rigorous, close-knit.",
       "leadershipStyle": "Leadership through applied technical mastery and hands-on project execution."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "The country's single most intensely undergraduate-focused engineering institution, producing hands-on, immediately job-ready engineers for the aerospace, automotive, and technology industries nationally."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 72,
-      "BosWash": 20,
-      "TorBuffChester": 14,
-      "TexasTriangle": 14,
-      "CharLanta": 14,
-      "NorCalInnovationCorridor": 22,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusColoradoMines": "Colorado School of Mines offers deep specialization in mining, petroleum, and geological engineering specifically; Rose-Hulman offers broader excellence across nearly every engineering discipline with a total undergraduate-first teaching focus Mines' research-active graduate programs don't replicate as purely.",
@@ -61204,7 +63408,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "",
       "strength": 0,
       "notes": "Rose-Hulman has no separate honors college; its very small, singularly STEM-focused scale delivers an honors-equivalent rigor across the entire undergraduate population."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "The country's single most intensely undergraduate-focused engineering institution, producing hands-on, immediately job-ready engineers for the aerospace, automotive, and technology industries nationally.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 72
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "University of Tulsa": {
     "institutionNarrative": {
@@ -61264,19 +63496,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Historically elite specifically in petroleum engineering, with a genuinely distinctive, less-known strength in creative writing.",
       "socialClimate": "Practical, energy-connected, intellectually broader than expected.",
       "leadershipStyle": "Leadership through applied technical competence and, distinctively, creative and intellectual achievement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Texas Triangle",
-      "regionalRole": "A historically elite, energy-industry-embedded petroleum engineering program with genuine intellectual breadth, anchored in a city whose identity was built directly on the oil industry."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 48,
-      "BosWash": 12,
-      "TorBuffChester": 8,
-      "TexasTriangle": 62,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusColoradoMines": "Mines offers the single most specialized mining AND petroleum engineering program in the country at public-school scale; Tulsa offers a smaller, private-university experience with a historically elite petroleum-specific reputation and genuine breadth (including creative writing) Mines' entirely STEM-focused curriculum doesn't have.",
@@ -61627,7 +63846,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors Program",
       "strength": 58,
       "notes": "Provides smaller seminars and priority course access within Tulsa's already small overall scale."
-    }
+    },
+    "primaryMegaRegionSlug": "texas-triangle",
+    "regionalRole": "A historically elite, energy-industry-embedded petroleum engineering program with genuine intellectual breadth, anchored in a city whose identity was built directly on the oil industry.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 48
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 62
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "North Dakota State University": {
     "institutionNarrative": {
@@ -61687,19 +63934,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional land-grant reputation, genuinely significant national impact in spring wheat agricultural research.",
       "socialClimate": "Practical, spirited, hardworking.",
       "leadershipStyle": "Leadership through applied agricultural and engineering competence and Bison football-driven school pride."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A land-grant agricultural research engine sitting directly on one of the most significant American oil discoveries in decades, giving students a genuine dual-industry regional economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 84,
-      "BosWash": 12,
-      "TorBuffChester": 10,
-      "TexasTriangle": 14,
-      "CharLanta": 10,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusSouthDakotaState": "South Dakota State offers a comparable land-grant agricultural identity without the Bakken shale oil proximity; NDSU offers the genuine dual-industry advantage of agriculture plus direct oil boom access South Dakota State doesn't have.",
@@ -62050,7 +64284,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors Program",
       "strength": 52,
       "notes": "Provides smaller seminars and priority course access within NDSU's large public land-grant scale."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A land-grant agricultural research engine sitting directly on one of the most significant American oil discoveries in decades, giving students a genuine dual-industry regional economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 84
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "South Dakota State University": {
     "institutionNarrative": {
@@ -62110,19 +64372,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional land-grant reputation, genuinely elite national reputation specifically in pharmacy.",
       "socialClimate": "Practical, hardworking, agriculturally proud.",
       "leadershipStyle": "Leadership through applied agricultural competence and Jackrabbits athletics-driven school pride."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Great Lakes",
-      "regionalRole": "A land-grant dairy and precision agriculture research engine with a disproportionately strong national pharmacy program, anchoring South Dakota's agricultural economy."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 82,
-      "BosWash": 10,
-      "TorBuffChester": 8,
-      "TexasTriangle": 12,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 10,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusNorthDakotaState": "North Dakota State offers direct Bakken shale oil boom proximity alongside agriculture; South Dakota State offers a more purely agriculture-and-dairy-focused identity with a genuinely elite, disproportionately strong pharmacy program North Dakota State doesn't match.",
@@ -62473,7 +64722,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 50,
       "notes": "Provides smaller seminars and priority course access within SDSU's large public land-grant scale."
-    }
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A land-grant dairy and precision agriculture research engine with a disproportionately strong national pharmacy program, anchoring South Dakota's agricultural economy.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 82
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "University of Wyoming": {
     "institutionNarrative": {
@@ -62533,19 +64810,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional flagship reputation, genuinely distinctive nationally for its comprehensive School of Energy Resources.",
       "socialClimate": "Practical, outdoorsy, energy-industry-aligned.",
       "leadershipStyle": "Leadership through applied energy-industry competence and ranching-culture self-reliance."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Front Range",
-      "regionalRole": "The only public four-year university in America's leading coal-producing state, with a genuinely comprehensive School of Energy Resources spanning coal, uranium, oil and gas, and wind."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 32,
-      "BosWash": 8,
-      "TorBuffChester": 6,
-      "TexasTriangle": 16,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 12,
-      "SoCalCreativeEconomy": 8
     },
     "comparativePositioning": {
       "versusColoradoMines": "Colorado School of Mines offers the single most specialized mining and petroleum engineering program in the country at a private-tier, entirely STEM-focused institution; Wyoming offers a broader public flagship experience with a genuinely comprehensive energy program spanning coal, uranium, oil and gas, and wind, reflecting the state's actual energy economy directly.",
@@ -62898,7 +65162,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 54,
       "notes": "Provides smaller seminars and priority course access within Wyoming's flagship public university scale."
-    }
+    },
+    "primaryMegaRegionSlug": "front-range-silicon-slopes",
+    "regionalRole": "The only public four-year university in America's leading coal-producing state, with a genuinely comprehensive School of Energy Resources spanning coal, uranium, oil and gas, and wind.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 32
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 8
+      }
+    ]
   },
   "University of Montana": {
     "institutionNarrative": {
@@ -62958,19 +65250,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional flagship reputation, genuinely elite national reputation specifically in creative writing.",
       "socialClimate": "Intellectually curious, outdoors-oriented, literary.",
       "leadershipStyle": "Leadership through conservation stewardship and creative and intellectual achievement."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Front Range",
-      "regionalRole": "Montana's humanities-and-wilderness-focused flagship, anchoring a genuinely elite creative writing tradition alongside direct Northern Rockies field research access."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 12,
-      "TorBuffChester": 8,
-      "TexasTriangle": 10,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 14,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusMontanaState": "Montana State offers stronger engineering, agriculture, and a notable NASA-adjacent space science program; University of Montana offers a genuinely elite creative writing MFA and stronger humanities identity Montana State's STEM-first culture doesn't emphasize.",
@@ -63321,7 +65600,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Davidson Honors College",
       "strength": 56,
       "notes": "Provides smaller seminars and priority course access within Montana's public flagship scale."
-    }
+    },
+    "primaryMegaRegionSlug": "front-range-silicon-slopes",
+    "regionalRole": "Montana's humanities-and-wilderness-focused flagship, anchoring a genuinely elite creative writing tradition alongside direct Northern Rockies field research access.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Montana State University": {
     "institutionNarrative": {
@@ -63381,19 +65688,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "Strong regional land-grant reputation, genuinely distinctive niche national reputation in small satellite aerospace research and photonics.",
       "socialClimate": "Practically minded, STEM-oriented, outdoors-connected.",
       "leadershipStyle": "Leadership through applied engineering competence and genuine research innovation."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Front Range",
-      "regionalRole": "Montana's STEM-and-agriculture land-grant flagship, anchoring a genuinely real NASA-funded small satellite research program alongside a growing Bozeman technology sector."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 16,
-      "BosWash": 12,
-      "TorBuffChester": 8,
-      "TexasTriangle": 10,
-      "CharLanta": 8,
-      "NorCalInnovationCorridor": 20,
-      "SoCalCreativeEconomy": 10
     },
     "comparativePositioning": {
       "versusMontana": "University of Montana offers a genuinely elite creative writing MFA and stronger humanities identity; Montana State offers stronger engineering, agriculture, and a genuinely real NASA-funded aerospace research program Montana's humanities-first culture doesn't have.",
@@ -63745,7 +66039,35 @@ const UNIVERSITY_DB_V5 = {
       "name": "Honors College",
       "strength": 56,
       "notes": "Provides smaller seminars and priority course access within Montana State's large land-grant scale."
-    }
+    },
+    "primaryMegaRegionSlug": "front-range-silicon-slopes",
+    "regionalRole": "Montana's STEM-and-agriculture land-grant flagship, anchoring a genuinely real NASA-funded small satellite research program alongside a growing Bozeman technology sector.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 20
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 10
+      }
+    ]
   },
   "Howard University": {
     "institutionNarrative": {
@@ -63806,19 +66128,6 @@ const UNIVERSITY_DB_V5 = {
       "prestigeOrientation": "The most prestigious HBCU in the country, with a law school whose historical consequence rivals any in America.",
       "socialClimate": "Proud, celebratory, high-achieving, deeply connected to Black cultural and professional legacy.",
       "leadershipStyle": "Leadership through legacy, historical consequence, and an alumni network defined by returning to lift up the next generation."
-    },
-    "megaRegionIntegration": {
-      "primaryMegaRegion": "Piedmont Atlantic",
-      "regionalRole": "The nation's most consequential HBCU talent engine, embedded directly in the federal government and law corridor."
-    },
-    "megaRegionExposure": {
-      "MidContinentIndustrialEnergyCorridor": 8,
-      "BosWash": 22,
-      "TorBuffChester": 6,
-      "TexasTriangle": 8,
-      "CharLanta": 62,
-      "NorCalInnovationCorridor": 8,
-      "SoCalCreativeEconomy": 14
     },
     "comparativePositioning": {
       "versusSpelmanMorehouse": "Spelman and Morehouse offer a smaller, single-gender, historically intimate HBCU experience; Howard offers a larger, coeducational research-university scale with an unmatched law school legacy and direct DC federal government access.",
@@ -64078,9 +66387,36 @@ const UNIVERSITY_DB_V5 = {
       "name": "Howard University Honors Program",
       "strength": 76,
       "notes": "Provides smaller cohorts, priority advising, and enhanced research opportunities within Howard's broader structure."
-    }
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "The nation's most consequential HBCU talent engine, embedded directly in the federal government and law corridor.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 22
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 62
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 14
+      }
+    ]
   }
 };
 
-if (typeof window !== 'undefined') { window.UNIVERSITY_DB_V5 = UNIVERSITY_DB_V5; }
-if (typeof module !== 'undefined' && module.exports) { module.exports = { UNIVERSITY_DB_V5 }; }
+if (typeof module !== 'undefined') { module.exports = { UNIVERSITY_DB_V5 }; }

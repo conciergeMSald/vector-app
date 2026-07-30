@@ -10263,17 +10263,18 @@ function buildSchoolIntelData(schoolName) {
     if (industryBody) cats.push({ head: 'The Industry Map', body: industryBody });
   }
 
-  // 5. The World Around It — CORRECTED 2026-07-23. Verified against the
-  // real UNIVERSITY_DB_V5_MASTER.js: megaRegionIntegration exists on all
-  // 159 schools, shape { primaryMegaRegion: string, regionalRole: string
-  // (narrative) }. The earlier "does not exist" note was stale — written
-  // before this field was populated, never re-checked. Note: this is a
-  // separate, simpler, static per-school field, NOT the same thing as the
-  // Synthesis Engine's Megaregion Gravity Map (unbuilt, scored, dynamic,
+  // 5. The World Around It — UPDATED 2026-07-30 for the Mega Region
+  // Database migration (MEGA-REGION-ARCH-001 v1). v5.megaRegionIntegration
+  // no longer exists -- regionalRole is now a top-level field, and
+  // primaryMegaRegion was replaced by primaryMegaRegionSlug. Confirmed via
+  // direct grep against the migrated UNIVERSITY_DB_V5_MASTER.js before
+  // making this edit, not assumed. Note: this is still the separate,
+  // simpler, static per-school field, NOT the same thing as the Synthesis
+  // Engine's Megaregion Gravity Map (unbuilt, scored, dynamic,
   // family-specific) — this category does not depend on that work at all.
-  if (v5 && v5.megaRegionIntegration && v5.megaRegionIntegration.regionalRole) {
-    var mri = v5.megaRegionIntegration;
-    var worldBody = mri.regionalRole + (mri.primaryMegaRegion ? ' This sits inside the ' + mri.primaryMegaRegion + '.' : '');
+  if (v5 && v5.regionalRole) {
+    var regionDisplayName = MEGA_REGION_SLUG_TO_NAME[v5.primaryMegaRegionSlug] || null;
+    var worldBody = v5.regionalRole + (regionDisplayName ? ' This sits inside the ' + regionDisplayName + '.' : '');
     cats.push({ head: 'The World Around It', body: worldBody });
   }
 
@@ -10387,6 +10388,27 @@ function renderDurabilityBody(moat, resilience) {
 
   return parts.length ? parts.join(' ') : null;
 }
+
+// ── Mega Region slug -> display name — MEGA-REGION-ARCH-001 v1 ──────────
+// Same rationale as ALUMNI_NETWORK_SCHOOL_SLUGS: inlined here because this
+// Worker/client has no shared import system with worker.js or the Node-side
+// migration scripts. This is now the THIRD place a slug/name mapping lives
+// in this codebase (migrate_v5_megaregions.js, and this file) — flagged for
+// the same reason the alumni slug triplication was flagged: worth
+// centralizing if it needs to change again, not urgent today.
+var MEGA_REGION_SLUG_TO_NAME = {
+  'northeast': 'Northeast',
+  'great-lakes': 'Great Lakes',
+  'great-plains': 'Great Plains',
+  'piedmont-atlantic': 'Piedmont Atlantic',
+  'florida': 'Florida',
+  'texas-triangle': 'Texas Triangle',
+  'front-range-silicon-slopes': 'Front Range & Silicon Slopes',
+  'arizona-sun-corridor': 'Arizona Sun Corridor',
+  'southern-california': 'Southern California',
+  'northern-california': 'Northern California',
+  'cascadia': 'Cascadia',
+};
 
 var _schoolIntelOpenIdx = null;
 
@@ -10579,7 +10601,18 @@ function _catEightFitSentence(v5, ctx) {
 
   var geoNote = '';
   var gravity = ctx.synthesis && ctx.synthesis.megaregion_gravity;
-  if (gravity && v5.megaRegionIntegration && gravity.top_zone === v5.megaRegionIntegration.zoneKey) {
+  // UPDATED 2026-07-30: v5.megaRegionIntegration.zoneKey never actually
+  // existed on any school (confirmed by direct inspection before this
+  // migration — Indiana, CU Boulder, and Vanderbilt only ever had
+  // primaryMegaRegion and regionalRole) — this comparison was silently dead
+  // code even before today. Now points at primaryMegaRegionSlug, the real,
+  // populated field from the Mega Region Database migration. This hook
+  // still does nothing until the Synthesis Engine's Megaregion Gravity Map
+  // actually produces a real gravity.top_zone value using the same
+  // region_slug convention — that work is unbuilt (see the standing punch
+  // list) — but the naming now actually lines up for when it exists,
+  // instead of comparing against a field that was never real.
+  if (gravity && v5.primaryMegaRegionSlug && gravity.top_zone === v5.primaryMegaRegionSlug) {
     geoNote = ' That fit is reinforced by geography — this campus sits inside the same world you described wanting to be part of.';
   }
   return 'The fit here is genuine and specific: ' + _catEightLowerFirst(thrives) + geoNote;
