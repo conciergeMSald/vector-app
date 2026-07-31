@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#F4F1EC">
+<title>VECTOR — The Future of Communication</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased;}
+
+:root{
+  --cream:    #F4F1EC;
+  --cream-2:  #EDE9E2;
+  --ink:      #1C1C1A;
+  --mid:      #2C2C2A;
+  --soft:     #5A5248;
+  --muted:    #8A8278;
+  --ghost:    #B0A89E;
+  --gold:     #C8A97A;
+  --deep:     #8B7355;
+  --rule:     rgba(44,44,42,0.08);
+  --rule-gold:rgba(200,169,122,0.35);
+  --serif:    'Cormorant Garamond',Georgia,serif;
+  --sans:     'DM Sans',system-ui,sans-serif;
+  --lux:      cubic-bezier(0.25,0.1,0.25,1);
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+
+  /* Section accent colors — warm palette for cream background */
+  --c1: #9E8E6E;   /* The Old Metric — warm sand */
+  --c2: #7A9E8E;   /* The Signal — teal */
+  --c3: #9E6E7A;   /* The Narrative — dusty rose */
+  --c4: #7A9E6E;   /* The Craft — sage */
+  --c5: #6E7A9E;   /* The Discipline That's Coming — slate */
+}
+
+html{ scroll-behavior:smooth; }
+
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:300;
+  min-height:100vh;
+  overflow-x:clip;
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* ── NAV — identical to five_lives.html / index.html ── */
+nav{
+  position:fixed;top:0;left:0;right:0;
+  padding:1.2rem clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  z-index:90;background:var(--cream);
+  border-bottom:0.5px solid transparent;
+  transition:border-color 0.5s var(--lux);
+}
+nav.scrolled{ border-color:var(--rule); }
+.nav-wordmark{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(12px,2.5vw,14px);
+  letter-spacing:0.26em;color:var(--ink);
+  text-decoration:none;text-transform:uppercase;
+}
+.nav-back{
+  font-family:var(--sans);font-weight:300;
+  font-size:clamp(9px,1.8vw,11px);
+  letter-spacing:0.18em;color:var(--gold);
+  text-decoration:none;text-transform:uppercase;
+  transition:color 0.4s var(--lux);
+}
+.nav-back:hover{ color:var(--deep); }
+
+/* ── REVEAL ANIMATION ── */
+.v-rise{
+  opacity:0;transform:translateY(10px);
+  transition:opacity 1.1s var(--lux),transform 1.1s var(--lux);
+}
+.v-rise.visible{ opacity:1;transform:translateY(0); }
+
+/* ── CONTAINERS ── */
+.container{
+  max-width:1100px;margin:0 auto;
+  padding:0 clamp(1.5rem,5vw,4rem);
+}
+.container-narrow{
+  max-width:680px;margin:0 auto;
+  padding:0 clamp(1.5rem,5vw,4rem);
+}
+
+/* ── GOLD RULE ── */
+.g-rule{
+  width:28px;height:0.5px;
+  background:var(--gold);
+  margin-bottom:clamp(1.5rem,3.5vw,2.5rem);
+}
+
+/* ── EYEBROW ── */
+.eyebrow{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(8px,1.8vw,10px);
+  letter-spacing:0.26em;color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:clamp(1.2rem,3vw,2rem);
+}
+
+/* ══════════════════════════════════════
+   COVER — cream, editorial
+══════════════════════════════════════ */
+.cover{
+  padding:clamp(10rem,18vw,14rem) 0 clamp(5rem,10vw,8rem);
+  border-bottom:0.5px solid var(--rule);
+  text-align:center;
+}
+.cover-eyebrow{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(8px,1.8vw,10px);
+  letter-spacing:0.26em;color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:clamp(2rem,5vw,3.5rem);
+}
+.cover-title{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(48px,8.5vw,108px);
+  line-height:1.05;color:var(--mid);
+  margin-bottom:clamp(1rem,2.5vw,1.5rem);
+}
+.cover-title em{font-style:italic;color:var(--gold);}
+.cover-sub{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(17px,3vw,24px);
+  color:var(--muted);line-height:1.8;
+  max-width:620px;margin:0 auto clamp(3rem,6vw,5rem);
+}
+
+/* Five section nav — horizontal pill row */
+.cover-stories{
+  display:flex;justify-content:center;gap:0;
+  flex-wrap:wrap;
+  border:0.5px solid var(--rule);
+  max-width:960px;margin:0 auto clamp(2rem,5vw,3rem);
+  background:var(--rule);
+}
+.cs-pill{
+  flex:1;min-width:140px;
+  background:var(--cream);
+  padding:clamp(0.8rem,2vw,1.2rem) clamp(0.6rem,1.5vw,1rem);
+  cursor:pointer;text-decoration:none;
+  transition:background 0.3s var(--lux);
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;gap:6px;
+}
+.cs-pill:hover{ background:var(--cream-2); }
+.cs-pill-dot{
+  width:8px;height:8px;border-radius:50%;
+  margin-bottom:2px;
+}
+.cs-pill-num{
+  font-family:var(--sans);font-weight:200;
+  font-size:9px;letter-spacing:0.18em;
+  color:var(--gold);text-transform:uppercase;
+}
+.cs-pill-name{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(13px,2vw,15px);
+  color:var(--mid);
+}
+
+.cover-scroll{
+  font-family:var(--sans);font-weight:200;
+  font-size:9px;letter-spacing:0.22em;
+  color:var(--ghost);text-transform:uppercase;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  animation:breathe 2.5s ease-in-out infinite;
+}
+.scroll-line{
+  width:32px;height:0.5px;background:var(--ghost);
+  position:relative;overflow:hidden;
+}
+.scroll-line::after{
+  content:'';position:absolute;top:0;left:-100%;
+  width:100%;height:100%;background:var(--gold);
+  animation:slide-right 2.5s ease-in-out infinite;
+}
+@keyframes slide-right{ 0%{left:-100%} 100%{left:100%} }
+@keyframes breathe{ 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+/* ══════════════════════════════════════
+   SECTIONS
+══════════════════════════════════════ */
+.story-section{
+  padding:clamp(6rem,12vw,10rem) 0 clamp(4rem,8vw,6rem);
+  border-bottom:0.5px solid var(--rule);
+  position:relative;
+  overflow:hidden;
+}
+
+/* Subtle color wash per section */
+.story-section::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  opacity:0.6;
+}
+.story-section.c1::before{ background:var(--c1); }
+.story-section.c2::before{ background:var(--c2); }
+.story-section.c3::before{ background:var(--c3); }
+.story-section.c4::before{ background:var(--c4); }
+.story-section.c5::before{ background:var(--c5); }
+
+/* Two-column layout */
+.story-grid{
+  display:grid;
+  grid-template-columns:1fr 480px;
+  gap:clamp(3rem,7vw,6rem);
+  align-items:start;
+  max-width:1100px;margin:0 auto;
+  padding:0 clamp(1.5rem,5vw,4rem);
+}
+@media(max-width:900px){
+  .story-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* Left: narrative */
+.story-narrative{}
+.story-num{
+  font-family:var(--sans);font-weight:200;
+  font-size:9px;letter-spacing:0.22em;
+  color:var(--ghost);text-transform:uppercase;
+  margin-bottom:clamp(0.8rem,2vw,1.2rem);
+}
+.story-accent{
+  width:28px;height:1px;
+  margin-bottom:clamp(1.2rem,3vw,2rem);
+  transition:width 0.8s var(--ease-out);
+}
+.story-section.visible .story-accent{ width:80px; }
+.c1 .story-accent{ background:var(--c1); }
+.c2 .story-accent{ background:var(--c2); }
+.c3 .story-accent{ background:var(--c3); }
+.c4 .story-accent{ background:var(--c4); }
+.c5 .story-accent{ background:var(--c5); }
+
+.story-name{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(28px,5vw,44px);
+  line-height:1.1;color:var(--mid);
+  margin-bottom:clamp(0.4rem,1vw,0.6rem);
+}
+.story-archetype{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(9px,1.8vw,11px);
+  letter-spacing:0.2em;text-transform:uppercase;
+  margin-bottom:clamp(2rem,5vw,3rem);
+}
+.c1 .story-archetype{ color:var(--c1); }
+.c2 .story-archetype{ color:var(--c2); }
+.c3 .story-archetype{ color:var(--c3); }
+.c4 .story-archetype{ color:var(--c4); }
+.c5 .story-archetype{ color:var(--c5); }
+
+.story-para{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(16px,2.5vw,19px);
+  color:var(--soft);line-height:1.95;
+  margin-bottom:clamp(1.2rem,3vw,2rem);
+}
+.story-para strong{ color:var(--ink);font-weight:400; }
+.story-para em{ font-style:italic; }
+
+.story-pivot{
+  font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(17px,2.8vw,22px);
+  color:var(--mid);line-height:1.6;
+  padding:clamp(1rem,2.5vw,1.5rem) 0
+    clamp(1rem,2.5vw,1.5rem) clamp(1.2rem,3vw,2rem);
+  border-left:1px solid var(--gold);
+  margin:clamp(1.5rem,4vw,2.5rem) 0;
+}
+
+/* VECTOR intelligence panel — dark inset */
+.vector-intel{
+  background:var(--ink);
+  padding:clamp(1.5rem,4vw,2.5rem);
+  margin:clamp(2rem,5vw,3rem) 0;
+}
+.vi-label{
+  font-family:var(--sans);font-weight:200;
+  font-size:9px;letter-spacing:0.22em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.vi-text{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(15px,2.5vw,18px);
+  color:rgba(244,241,236,0.72);
+  line-height:1.9;
+}
+.vi-text strong{ color:rgba(244,241,236,0.92);font-weight:400; }
+
+/* Job title grid — reuses var-grid pattern */
+.var-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:1px;background:rgba(244,241,236,0.12);
+  margin-top:clamp(1.2rem,3vw,1.8rem);
+}
+@media(max-width:520px){ .var-grid{ grid-template-columns:1fr; } }
+.var-cell{
+  background:rgba(244,241,236,0.03);
+  padding:clamp(0.9rem,2vw,1.2rem) clamp(0.9rem,2vw,1.2rem);
+}
+.var-cell-name{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(8px,1.4vw,10px);
+  letter-spacing:0.14em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:0.35rem;
+}
+.var-cell-score{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(14px,2vw,16px);color:rgba(244,241,236,0.88);
+  line-height:1.4;
+}
+
+/* Right: visual column (sticky) */
+.story-visual-col{
+  position:sticky;top:calc(clamp(4rem,8vw,7rem));
+}
+.visual-label-row{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:12px;
+}
+.visual-label{
+  font-family:var(--sans);font-weight:200;
+  font-size:9px;letter-spacing:0.2em;
+  color:var(--muted);text-transform:uppercase;
+}
+
+/* Photographic frame — used in Sections 1 & 4 */
+.photo-frame{
+  border:0.5px solid var(--rule);
+  overflow:hidden;background:var(--cream-2);
+}
+.photo-frame img{
+  width:100%;height:auto;display:block;
+  aspect-ratio:9/16;object-fit:cover;
+}
+.photo-caption{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(10px,1.6vw,12px);
+  color:var(--muted);line-height:1.6;
+  margin-top:0.9rem;font-style:italic;
+}
+
+canvas.story-canvas{
+  width:100%;display:block;
+  border:0.5px solid var(--rule);
+  background:rgba(244,241,236,0.5);
+}
+
+/* ══════════════════════════════════════
+   CLOSING
+══════════════════════════════════════ */
+.closing-section{
+  padding:clamp(7rem,14vw,12rem) 0;
+  text-align:center;
+  border-bottom:0.5px solid var(--rule);
+}
+.closing-statement{
+  font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(22px,4vw,42px);
+  color:var(--mid);line-height:1.4;
+  max-width:680px;margin:0 auto clamp(2rem,5vw,3.5rem);
+}
+.closing-sub{
+  font-family:var(--sans);font-weight:300;
+  font-size:clamp(14px,2.4vw,17px);
+  color:var(--muted);line-height:1.8;
+  max-width:480px;margin:0 auto clamp(2.5rem,6vw,4rem);
+}
+.closing-cta{
+  display:inline-block;
+  font-family:var(--sans);font-weight:300;
+  font-size:clamp(9px,1.8vw,11px);
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);text-decoration:none;
+  border:0.5px solid rgba(200,169,122,0.5);
+  padding:clamp(0.9rem,2vw,1.2rem) clamp(2rem,4vw,3rem);
+  transition:all 0.4s var(--lux);
+}
+.closing-cta:hover{
+  background:rgba(200,169,122,0.06);
+  border-color:var(--gold);
+}
+.closing-rule{
+  width:0.5px;height:60px;
+  background:linear-gradient(to bottom,transparent,var(--gold));
+  margin:clamp(3rem,6vw,5rem) auto 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  .v-rise{ transition:none; opacity:1; transform:none; }
+  .cover-scroll{ animation:none; }
+  .scroll-line::after{ animation:none; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-wordmark">VECTOR</a>
+  <a href="lifescape.html" class="nav-back">← Return</a>
+</nav>
+
+<!-- ══════════════════════════════════════
+     COVER
+══════════════════════════════════════ -->
+<section class="cover">
+  <div class="container">
+    <div class="cover-eyebrow v-rise">VECTOR — The Next Discipline</div>
+    <h1 class="cover-title v-rise">The Future<br><em>of Communication.</em></h1>
+    <p class="cover-sub v-rise">
+      It is not 1996. The next generation of marketing, communications, and PR talent will not be chosen because they wrote for the school paper. They are already practicing the discipline — on a phone, in a bedroom, for an audience of strangers who don't grade on a curve.
+    </p>
+
+    <div class="cover-stories v-rise">
+      <a class="cs-pill" href="#section-1">
+        <div class="cs-pill-dot" style="background:var(--c1);"></div>
+        <div class="cs-pill-num">01</div>
+        <div class="cs-pill-name">The Old<br>Metric</div>
+      </a>
+      <a class="cs-pill" href="#section-2">
+        <div class="cs-pill-dot" style="background:var(--c2);"></div>
+        <div class="cs-pill-num">02</div>
+        <div class="cs-pill-name">The<br>Signal</div>
+      </a>
+      <a class="cs-pill" href="#section-3">
+        <div class="cs-pill-dot" style="background:var(--c3);"></div>
+        <div class="cs-pill-num">03</div>
+        <div class="cs-pill-name">The<br>Narrative</div>
+      </a>
+      <a class="cs-pill" href="#section-4">
+        <div class="cs-pill-dot" style="background:var(--c4);"></div>
+        <div class="cs-pill-num">04</div>
+        <div class="cs-pill-name">The<br>Craft</div>
+      </a>
+      <a class="cs-pill" href="#section-5">
+        <div class="cs-pill-dot" style="background:var(--c5);"></div>
+        <div class="cs-pill-num">05</div>
+        <div class="cs-pill-name">The Discipline<br>That's Coming</div>
+      </a>
+    </div>
+
+    <div class="cover-scroll v-rise">
+      <div class="scroll-line"></div>
+      Scroll to read
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 1 — THE OLD METRIC
+══════════════════════════════════════ -->
+<section class="story-section c1" id="section-1">
+  <div class="story-grid">
+
+    <div class="story-narrative">
+      <div class="story-num v-rise">Section One of Five</div>
+      <div class="story-accent"></div>
+      <h2 class="story-name v-rise">The Old<br>Metric</h2>
+      <div class="story-archetype v-rise">Two Numbers, No Person</div>
+
+      <p class="story-para v-rise">
+        For fifty years, the pipeline into marketing, communications, and public relations ran through a narrow set of credentials: editor of the school paper, a seat on the yearbook committee, a summer internship secured through a parent's phone call. It rewarded proximity to institutions, not proximity to an audience.
+      </p>
+      <p class="story-para v-rise">
+        <strong>That pipeline assumes it is still 1996.</strong> It reduces a person to two numbers — a GPA, an SAT score — and calls that the measure of who they are and what they're capable of building.
+      </p>
+
+      <div class="story-pivot v-rise">
+        In the room, a girl is dancing for a phone on a tripod. A laptop sits open beside her, timeline scrubbed, cuts already marked. The old model sees GPA and SAT. It does not see any of this.
+      </div>
+
+      <p class="story-para v-rise">
+        <em>Every teenager who is genuinely active on social media has already been practicing something the old model has no column for.</em> Reading what an audience responds to. Building a story around it. Translating that story into something people actually stop scrolling for.
+      </p>
+      <p class="story-para v-rise">
+        That is not a hobby waiting to be legitimized by a resume line. It is the discipline itself, already underway.
+      </p>
+    </div>
+
+    <div class="story-visual-col">
+      <div class="visual-label-row">
+        <div class="visual-label">What The Old Model Sees</div>
+      </div>
+      <div class="photo-frame">
+        <img src="asset-a-old-metric.jpg" alt="Two figures rendered as gold silhouettes labeled GPA and SAT, a real content-creation scene reduced to two metrics" loading="lazy">
+      </div>
+      <div class="photo-caption">Two people. Two labels. Everything else made invisible.</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 2 — THE SIGNAL
+══════════════════════════════════════ -->
+<section class="story-section c2" id="section-2">
+  <div class="story-grid">
+
+    <div class="story-narrative">
+      <div class="story-num v-rise">Section Two of Five</div>
+      <div class="story-accent"></div>
+      <h2 class="story-name v-rise">The<br>Signal</h2>
+      <div class="story-archetype v-rise">Reading What No One Taught Them</div>
+
+      <p class="story-para v-rise">
+        Before a communications strategist writes a single word, they have to know something true: what is this audience actually responding to, right now, and why. In most industries, that takes years of training and a research budget.
+      </p>
+      <p class="story-para v-rise">
+        <strong>A teenager who posts regularly already has this instinct.</strong> They know, without anyone explaining it, which fifteen seconds made people stay and which made them scroll past. They have run more real-time audience experiments before their eighteenth birthday than most junior strategists run in their first two years on the job.
+      </p>
+
+      <div class="story-pivot v-rise">
+        Nobody calls it data literacy when a fifteen-year-old does it for free, at midnight, for an audience of strangers. But that is exactly what it is.
+      </div>
+
+      <p class="story-para v-rise">
+        This is the raw material the entire field now runs on — <em>audience intelligence</em>, in the industry's own language. The companies competing hardest for talent are the ones who have realized that the person who already knows how to read a signal is worth more than the person who was simply taught to write a press release.
+      </p>
+    </div>
+
+    <div class="story-visual-col">
+      <div class="visual-label-row">
+        <div class="visual-label">Noise Becoming Signal</div>
+      </div>
+      <canvas class="story-canvas" id="c-signal" width="480" height="300"></canvas>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 3 — THE NARRATIVE
+══════════════════════════════════════ -->
+<section class="story-section c3" id="section-3">
+  <div class="story-grid">
+
+    <div class="story-narrative">
+      <div class="story-num v-rise">Section Three of Five</div>
+      <div class="story-accent"></div>
+      <h2 class="story-name v-rise">The<br>Narrative</h2>
+      <div class="story-archetype v-rise">Synthesis, Not Collection</div>
+
+      <p class="story-para v-rise">
+        A signal on its own is just noise with a pattern in it. The next step — the one that actually defines a communications strategist — is synthesis: taking what the data shows and building a story around it that a person will feel something about.
+      </p>
+      <p class="story-para v-rise">
+        <strong>This is where art and science stop being two separate departments.</strong> Every well-timed caption, every post that catches a moment right as it's forming, is a small act of narrative construction. Most teenagers who do this well have never been told it has a name, let alone that companies pay for it.
+      </p>
+
+      <div class="story-pivot v-rise">
+        The essence of the job, going forward: take the data, synthesize it into a narrative, then carry that narrative through into something visual and audible. That is the whole discipline in one sentence.
+      </div>
+
+      <p class="story-para v-rise">
+        <em>This is not writing for the sake of writing.</em> It is deciding what story the numbers are actually telling, and having the judgment to tell it well.
+      </p>
+    </div>
+
+    <div class="story-visual-col">
+      <div class="visual-label-row">
+        <div class="visual-label">Signal → Story → Audience</div>
+      </div>
+      <canvas class="story-canvas" id="c-narrative" width="480" height="300"></canvas>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 4 — THE CRAFT
+══════════════════════════════════════ -->
+<section class="story-section c4" id="section-4">
+  <div class="story-grid">
+
+    <div class="story-narrative">
+      <div class="story-num v-rise">Section Four of Five</div>
+      <div class="story-accent"></div>
+      <h2 class="story-name v-rise">The<br>Craft</h2>
+      <div class="story-archetype v-rise">Where Data Becomes Something You Can Feel</div>
+
+      <p class="story-para v-rise">
+        Look again at the room from Section One — not as two numbers this time, but as what it actually is. A performer, mid-movement, fully committed. A director, framing the shot, phone locked to a tripod. A laptop open to an editing timeline, cuts already marked, color already considered. A mood board and fabric swatches on the floor, because brand thinking was happening here too, whether anyone called it that or not.
+      </p>
+      <p class="story-para v-rise">
+        <strong>This is the full production workflow of a modern brand, running inside a bedroom.</strong> Performer. Director. Editor. Brand strategist. Self-taught, all of it, by two people who have probably never used those job titles.
+      </p>
+
+      <div class="story-pivot v-rise">
+        This is where the narrative gets translated into visual and audio form. This is the new digital way of life — and it is a serious craft, not a phase.
+      </div>
+
+      <p class="story-para v-rise">
+        Companies need people who can do the data side. They need people who can do the creative side. <em>What they need most, and have the hardest time finding, are the people who can do both — because they grew up doing both, without a curriculum, before anyone had a name for it.</em>
+      </p>
+    </div>
+
+    <div class="story-visual-col">
+      <div class="visual-label-row">
+        <div class="visual-label">The Same Room, Unlabeled</div>
+      </div>
+      <div class="photo-frame">
+        <img src="asset-b-the-craft.jpg" alt="Two teenagers filming and directing a content video, laptop open to an editing timeline, mood board and fabric swatches nearby" loading="lazy">
+      </div>
+      <div class="photo-caption">Performer. Director. Editor. Brand strategist. All in one room, self-taught.</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 5 — THE DISCIPLINE THAT'S COMING
+══════════════════════════════════════ -->
+<section class="story-section c5" id="section-5">
+  <div class="story-grid">
+
+    <div class="story-narrative">
+      <div class="story-num v-rise">Section Five of Five</div>
+      <div class="story-accent"></div>
+      <h2 class="story-name v-rise">The Discipline<br>That's Coming</h2>
+      <div class="story-archetype v-rise">This Already Has A Name</div>
+
+      <p class="story-para v-rise">
+        Everything described in the last four sections — reading a signal, synthesizing a narrative, translating it into craft — is not a set of hobbies. It is a job description that companies across every industry are actively trying to fill, and struggling to.
+      </p>
+      <p class="story-para v-rise">
+        <strong>Every teenager who is genuinely active on social media right now is a viable candidate for this career, and this life-scape.</strong> Not despite the time spent making content. Because of it.
+      </p>
+
+      <div class="vector-intel v-rise">
+        <div class="vi-label">Where this actually leads</div>
+        <div class="vi-text">The same instincts practiced for free, for an audience of strangers, are the foundation of real, well-compensated roles across nearly every industry that communicates with a public — not job titles someone has to invent, but ones already being hired for today.</div>
+        <div class="var-grid">
+          <div class="var-cell"><div class="var-cell-name">Data → Narrative</div><div class="var-cell-score">Audience Intelligence Analyst</div></div>
+          <div class="var-cell"><div class="var-cell-name">Story, At Scale</div><div class="var-cell-score">Brand Content Strategist</div></div>
+          <div class="var-cell"><div class="var-cell-name">Full Craft</div><div class="var-cell-score">Communications Director</div></div>
+          <div class="var-cell"><div class="var-cell-name">Voice + Precision</div><div class="var-cell-score">Public Relations Strategist</div></div>
+        </div>
+      </div>
+
+      <p class="story-para v-rise">
+        This is not a smaller or lesser path than the one the old model recognized. <em>It is the discipline the field is already reorganizing itself around.</em>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     CLOSING
+══════════════════════════════════════ -->
+<section class="closing-section">
+  <div class="container">
+    <p class="closing-statement v-rise">
+      The skill was never missing. It just didn't have a name yet.
+    </p>
+    <p class="closing-sub v-rise">
+      VECTOR names it — and shows where it actually leads.
+    </p>
+    <a href="lifescape.html" class="closing-cta v-rise">Begin your assessment</a>
+    <div class="closing-rule"></div>
+  </div>
+</section>
+
+
+<script>
+
+/* ── NAV SCROLL ── */
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll', function(){
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, {passive:true});
+
+/* ── SCROLL REVEAL ── */
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e, i){
+    if(e.isIntersecting){
+      setTimeout(function(){ e.target.classList.add('visible'); }, i * 60);
+      obs.unobserve(e.target);
+    }
+  });
+}, {threshold:0.06, rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.v-rise').forEach(function(el){ obs.observe(el); });
+
+/* ── SECTION OBSERVER — triggers accent line + canvas ── */
+var drawn = {};
+var sectionObs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      var id = e.target.id;
+      if(!drawn[id]){
+        drawn[id] = true;
+        if(id === 'section-2') animateSignal();
+        if(id === 'section-3') animateNarrative();
+      }
+    }
+  });
+}, {threshold:0.15});
+
+document.querySelectorAll('.story-section').forEach(function(s){
+  sectionObs.observe(s);
+});
+
+function easeOut(t){ return 1 - Math.pow(1-t, 3); }
+
+/* ══════════════════════════════════════
+   SECTION 2 CANVAS — noise becoming signal
+   A scatter of faint gold points resolves into
+   a single readable ascending pattern.
+══════════════════════════════════════ */
+function animateSignal(){
+  var canvas = document.getElementById('c-signal');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+  var PAD = {t:24,r:24,b:24,l:24};
+
+  var N = 42;
+  var points = [];
+  for(var i=0;i<N;i++){
+    points.push({
+      noiseX: PAD.l + Math.random()*(W-PAD.l-PAD.r),
+      noiseY: PAD.t + Math.random()*(H-PAD.t-PAD.b),
+      targetX: PAD.l + (i/(N-1))*(W-PAD.l-PAD.r),
+      targetY: H - PAD.b - Math.pow(i/(N-1), 1.15) * (H-PAD.t-PAD.b)
+    });
+  }
+
+  var start=null, dur=2200;
+  function step(ts){
+    if(!start) start = ts;
+    var p = Math.min((ts-start)/dur, 1);
+    var e = easeOut(p);
+    ctx.clearRect(0,0,W,H);
+
+    // faint grid
+    ctx.strokeStyle = 'rgba(44,44,42,0.06)'; ctx.lineWidth = 0.5;
+    [0.25,0.5,0.75].forEach(function(f){
+      var y = PAD.t + f*(H-PAD.t-PAD.b);
+      ctx.beginPath(); ctx.moveTo(PAD.l,y); ctx.lineTo(W-PAD.r,y); ctx.stroke();
+    });
+
+    points.forEach(function(pt){
+      var x = pt.noiseX + (pt.targetX - pt.noiseX) * e;
+      var y = pt.noiseY + (pt.targetY - pt.noiseY) * e;
+      ctx.beginPath();
+      ctx.fillStyle = '#7A9E8E';
+      ctx.globalAlpha = 0.35 + 0.5*e;
+      ctx.arc(x,y, 2 + 1.2*e, 0, Math.PI*2);
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+
+    // emerging connective line once mostly resolved
+    if(e > 0.6){
+      var lineAlpha = (e-0.6)/0.4;
+      ctx.save();
+      ctx.strokeStyle = '#7A9E8E';
+      ctx.globalAlpha = lineAlpha * 0.7;
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      points.forEach(function(pt,i){
+        i===0 ? ctx.moveTo(pt.targetX,pt.targetY) : ctx.lineTo(pt.targetX,pt.targetY);
+      });
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    if(p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* ══════════════════════════════════════
+   SECTION 3 CANVAS — signal to story to audience
+   A single thread connecting four labeled points.
+══════════════════════════════════════ */
+function animateNarrative(){
+  var canvas = document.getElementById('c-narrative');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+
+  var labels = ['Signal','Theme','Story','Audience'];
+  var pts = [
+    {x: W*0.12, y: H*0.62},
+    {x: W*0.38, y: H*0.30},
+    {x: W*0.64, y: H*0.55},
+    {x: W*0.88, y: H*0.24}
+  ];
+
+  var start=null, dur=1900;
+  function step(ts){
+    if(!start) start = ts;
+    var p = Math.min((ts-start)/dur, 1);
+    var e = easeOut(p);
+    ctx.clearRect(0,0,W,H);
+
+    ctx.strokeStyle = 'rgba(44,44,42,0.06)'; ctx.lineWidth = 0.5;
+    [0.25,0.5,0.75].forEach(function(f){
+      var y = H*f;
+      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
+    });
+
+    // draw thread progressively across the four points
+    var segCount = pts.length - 1;
+    var totalProgress = e * segCount;
+    ctx.save();
+    ctx.strokeStyle = '#9E6E7A';
+    ctx.globalAlpha = 0.8;
+    ctx.lineWidth = 2;
+    ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for(var i=0;i<segCount;i++){
+      var segP = Math.max(0, Math.min(1, totalProgress - i));
+      var x = pts[i].x + (pts[i+1].x - pts[i].x) * segP;
+      var y = pts[i].y + (pts[i+1].y - pts[i].y) * segP;
+      ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+    ctx.restore();
+
+    // points + labels, appear as thread reaches them
+    pts.forEach(function(pt,i){
+      var reached = totalProgress >= i - 0.05;
+      if(!reached) return;
+      var localAlpha = Math.min(1, (totalProgress - (i-1))*3);
+      ctx.save();
+      ctx.globalAlpha = Math.max(0,localAlpha);
+      ctx.fillStyle = '#9E6E7A';
+      ctx.beginPath(); ctx.arc(pt.x,pt.y,4,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle = 'rgba(44,44,42,0.55)';
+      ctx.font = "9px 'DM Sans'";
+      ctx.textAlign = i === pts.length-1 ? 'right' : (i===0 ? 'left' : 'center');
+      ctx.fillText(labels[i], pt.x, pt.y - 12);
+      ctx.restore();
+    });
+
+    if(p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+</script>
+</body>
+</html>
