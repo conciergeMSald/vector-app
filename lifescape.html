@@ -10655,7 +10655,18 @@ async function regenerateReportFromProfile(profile, selfServeFamilyId) {
   // ── Fetch real Synthesis — the actual new ingredient ──────────────────
   let synthesisData = null;
   try {
-    const token = window.Clerk && window.Clerk.session ? await window.Clerk.session.getToken() : null;
+    // FIXED (2026-08-01): this previously did a synchronous truthy check
+    // on window.Clerk.session instead of actually waiting for Clerk's
+    // async load to finish (window.waitForClerkReady() — the pattern every
+    // OTHER authenticated call in this file already uses, e.g. line ~2830,
+    // ~3216, ~3288, and parent-agent.html's submitToWorker). If this ran
+    // before Clerk's window 'load'-triggered init completed, getToken()
+    // was never called at all, no Authorization header went out, and the
+    // worker correctly returned 401 — confirmed as the real cause of a
+    // live "[Round Two] Save failed: 401" observed in production.
+    const ready = await window.waitForClerkReady(4000);
+    const token = (ready && window.Clerk && window.Clerk.session) ? await window.Clerk.session.getToken() : null;
+    console.log('[Round Two] get-family-synthesis auth — clerkReady:', ready, '| token obtained:', !!token);
     const synthRes = await fetch(
       'https://api.abettercollegeconsultant.com/get-family-synthesis?family_id=' + encodeURIComponent(selfServeFamilyId),
       { headers: token ? { Authorization: 'Bearer ' + token } : {} }
@@ -11013,7 +11024,17 @@ async function checkAndRunRoundTwoRegeneration(reportData, selfServeFamilyId) {
   console.log('[Round Two] Starting headless regeneration for family', selfServeFamilyId);
   try {
     const result = await regenerateReportFromProfile(reportData.profile, selfServeFamilyId);
-    const token = window.Clerk && window.Clerk.session ? await window.Clerk.session.getToken() : null;
+    // Same fix as the get-family-synthesis call above — wait for Clerk's
+    // async init to actually finish rather than a synchronous truthy check.
+    // Also worth noting: by this point regenerateReportFromProfile() has
+    // likely run for a while (real sequential/parallel Claude calls,
+    // callD alone has a 55s timeout) — if the tab was backgrounded during
+    // that time, browsers can throttle JS execution, which is a second
+    // plausible contributor to a stale Clerk state here. Re-waiting for
+    // readiness handles both causes with one fix.
+    const ready = await window.waitForClerkReady(4000);
+    const token = (ready && window.Clerk && window.Clerk.session) ? await window.Clerk.session.getToken() : null;
+    console.log('[Round Two] save auth — clerkReady:', ready, '| token obtained:', !!token);
     const res = await fetch('https://api.abettercollegeconsultant.com/save-regenerated-report', {
       method: 'POST',
       headers: Object.assign({ 'Content-Type': 'application/json' }, token ? { Authorization: 'Bearer ' + token } : {}),
@@ -11024,7 +11045,12 @@ async function checkAndRunRoundTwoRegeneration(reportData, selfServeFamilyId) {
       }),
     });
     if (!res.ok) {
-      console.error('[Round Two] Save failed:', res.status);
+      // Log the actual response body, not just the status code — if this
+      // recurs, we get the worker's real error message (e.g. "Unauthorized"
+      // vs "This family record does not belong to your account" vs a
+      // database error) instead of a bare, ambiguous "401".
+      const bodyText = await res.text().catch(function() { return '(could not read response body)'; });
+      console.error('[Round Two] Save failed:', res.status, '| body:', bodyText);
       return;
     }
     console.log('[Round Two] Regeneration complete and saved.');
