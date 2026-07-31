@@ -31,6 +31,25 @@
  * Psychology's career_world was also corrected from 'healing' to 'power'
  * to match its real content. Psychology / Pre-Counseling (NAICS 62,
  * 'therapy') is the actual clinical-track major and was left untouched.
+ *
+ * UPDATE 2026-07-31 — BATCH 1: Journalism (NAICS 51) breadth fix.
+ * Surveyed cluster names actually used under naics:51 across the LA,
+ * NY/Boston/DC, and Manhattan Media pass files. NAICS 51 legitimately
+ * covers journalism/publishing AND general information technology under
+ * one federal code — a "Journalism" major with NAICS-only matching was
+ * surfacing Google, Snap, Hulu, Amazon HQ2, cybersecurity firms, and cloud
+ * infrastructure clusters alongside real journalism content (NYT, Bloomberg,
+ * Condé Nast, Hearst). Filter keeps the journalism/media/publishing
+ * clusters and drops the generic tech clusters.
+ *
+ * UPDATE 2026-07-31 — BATCH 3: Dance (NAICS 71) breadth fix.
+ * Surveyed cluster names actually used under naics:71 across the LA and
+ * NY/Boston/DC pass files. Confirmed real bleed: "Professional Sports
+ * Business" (LA Rams team headquarters, 91302) is tagged naics:71 alongside
+ * genuine arts/performing-arts content (Lincoln Center, Met Museum,
+ * Guggenheim). A "Dance" major with NAICS-only matching was surfacing an
+ * NFL front office. Filter keeps arts/culture/performing-arts clusters and
+ * drops the sports-business cluster.
  */
 
 const MAJOR_CLUSTER_KEYWORD_FILTERS = {
@@ -40,8 +59,10 @@ const MAJOR_CLUSTER_KEYWORD_FILTERS = {
   "Management Consulting (Business)": ["consulting", "tax", "audit"],
   "Architecture": ["architecture", "design", "civil", "urban"],
   "Psychology": ["consulting"],
-  "Industrial-Organizational Psychology": ["consulting"]
+  "Industrial-Organizational Psychology": ["consulting"],
   // Human Resources Management: still deliberately unfiltered — see header
+  "Journalism": ["journalism", "media", "publishing", "news", "broadcast"],
+  "Dance": ["arts", "culture", "performing", "dance", "museum"]
 };
 
 if (typeof window !== 'undefined') {
