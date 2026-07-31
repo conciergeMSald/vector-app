@@ -74,6 +74,7 @@ src="https://www.facebook.com/tr?id=1567792854753910&ev=PageView&noscript=1"
 <script src="major_regional_resolver.js"></script>
 <script src="lifescape_curation_map_v1.js"></script>
 <script src="school_scorecard_simplified.js"></script>
+<script src="school_major_outcomes.js"></script>
 <script src="cultural_fit_lens.js"></script>
 <script src="university-content.js"></script>
 <script src="student-domain2-realm-weights.browser.js"></script>
@@ -6208,9 +6209,48 @@ function buildCultureContext(matchedSchools) {
 // ── Federal Scorecard data block for callD ──────────────────────────────────
 // Reads SCHOOL_SCORECARD (real admission rate, tuition, debt, earnings-adjacent
 // outcomes) and formats it as terse factual context alongside V5 prose.
+//
+// SCORECARD_NAME_FIX — verified 2026-07-30 by checking every school in both
+// university-content.js (221) and UNIVERSITY_DB_V5_MASTER.js (159) directly
+// against SCHOOL_SCORECARD's real keys. NOT VECTOR_NAME_CROSSWALK.js — that
+// file targets federal INSTNM-style hyphenated names (e.g. "University of
+// California-Los Angeles"); SCHOOL_SCORECARD went through its own separate
+// normalization pass and uses different forms (e.g. "University of
+// California Los Angeles", no hyphen, and "UC Berkeley" for V5's
+// "University of California-Berkeley"). Reusing that crosswalk here would
+// not have worked — confirmed empirically, not assumed.
+//
+// Only 3 entries because only 3 were real naming mismatches. The other 25
+// candidate misses found during the same audit (Oklahoma State, Houston,
+// UT Dallas, WashU St. Louis, Weber State, Towson, Loyola Marymount, Barnard,
+// Gettysburg, Dickinson, Wesleyan, and others) are genuinely absent from
+// SCHOOL_SCORECARD under any spelling — a real data-coverage gap requiring
+// that file to be extended with real federal data, not a naming bug this
+// alias can fix. Left as-is rather than papering over with a fabricated
+// fallback.
+const SCORECARD_NAME_FIX = {
+  'UCLA':                          'University of California Los Angeles',
+  'UT Austin':                     'University of Texas at Austin',
+  'University of California-Berkeley': 'UC Berkeley', // V5's own spelling for Berkeley
+  'USC':                           'University of Southern California',
+  'SMU':                           'Southern Methodist University',
+  'TCU':                           'Texas Christian University',
+  // Added 2026-07-31 — V5's own comma-punctuated spelling for these two
+  // schools, confirmed to differ from the canonical form used consistently
+  // across university-content.js, SCHOOL_SCORECARD, AND
+  // SCHOOL_MAJOR_OUTCOMES (checked all three before fixing, not assumed).
+  // Same underlying bug class as the Berkeley/USC/SMU/TCU entries above:
+  // a V5-sourced candidate's raw name field doesn't match the canonical
+  // key these lookup functions expect. VECTOR_NAME_CROSSWALK.js's
+  // V5_ALIAS_MAP is missing these two as well (checked) but that file
+  // isn't loaded anywhere in production, so fixing it wouldn't change
+  // real behavior -- this map is the one that actually runs.
+  'University of Nevada, Las Vegas': 'University of Nevada Las Vegas',
+  'California Polytechnic State University, San Luis Obispo': 'California Polytechnic State University San Luis Obispo',
+};
 function buildScorecardBlock(schoolName) {
   if (typeof SCHOOL_SCORECARD === 'undefined') return '';
-  const sc = SCHOOL_SCORECARD[schoolName];
+  const sc = SCHOOL_SCORECARD[SCORECARD_NAME_FIX[schoolName] || schoolName];
   if (!sc) return '';
 
   const lines = [];
@@ -6226,6 +6266,47 @@ function buildScorecardBlock(schoolName) {
 
   if (!lines.length) return '';
   return `[Federal Data — ${schoolName}]\n${lines.join('\n')}`;
+}
+
+// ── Real per-major outcomes data (school_major_outcomes.js) ─────────────────
+// Added 2026-07-31 to close the Tier 2 gap: 19 schools confirmed to have
+// NEITHER V5 content NOR SCHOOL_SCORECARD coverage — the thinnest possible
+// recommendation in the system. This file gives real federal Field of Study
+// data (major-level earnings/debt/program size, sourced 2026-07-10) for 271
+// of VECTOR's 282 schools, including all 19 Tier 2 schools — confirmed by
+// direct cross-check before wiring this in, not assumed.
+//
+// Picks up to 3 majors per school, preferring ones with BOTH real earnings
+// AND debt figures (roughly half of records are federally suppressed for
+// small cohorts — this is normal Scorecard behavior, not a defect), sorted
+// by programSize as a proxy for "this is a real, established program here."
+// Falls back to programSize-only majors rather than returning nothing when
+// no major has both figures — for the smallest schools in Tier 2 (St. John's
+// College: 4 majors total; U.S. Merchant Marine Academy: 3 majors total)
+// some real signal beats none, and every number here is real, never invented.
+function buildMajorOutcomesBlock(schoolName) {
+  if (typeof getSchoolMajorOutcomes === 'undefined') return '';
+  const majors = getSchoolMajorOutcomes(SCORECARD_NAME_FIX[schoolName] || schoolName);
+  if (!majors || !majors.length) return '';
+
+  const withBoth = majors.filter(m => m.medianEarnings4yr != null && m.medianDebt != null);
+  const pool = withBoth.length ? withBoth : majors.filter(m => m.programSize != null);
+  if (!pool.length) return '';
+
+  const top = pool
+    .slice()
+    .sort((a, b) => (b.programSize || 0) - (a.programSize || 0))
+    .slice(0, 3);
+
+  const lines = top.map(m => {
+    const parts = [m.major];
+    if (m.programSize != null) parts.push(`${m.programSize} students`);
+    if (m.medianEarnings4yr != null) parts.push(`median earnings 4yr: $${m.medianEarnings4yr.toLocaleString()}`);
+    if (m.medianDebt != null) parts.push(`median debt: $${m.medianDebt.toLocaleString()}`);
+    return '- ' + parts.join(', ');
+  });
+
+  return `[Real Major Outcomes — ${schoolName}]\n${lines.join('\n')}`;
 }
 
 function buildCallDPrompt(ctx, matchedSchools, schoolContentBlock) {
@@ -7505,10 +7586,31 @@ async function submitLifescape() {
       domain4: { geographicIdentity: profile.genome_geo },
       domain5: { rawWorry: profile.genome_worry },
     });
+    // ── Gate 4, Item 8 fix (2026-07-30): dominant_domain_label ───────────
+    // The Essay Engine (buildEssayContextSentence, ~line 10720) reads
+    // ctx.genome.dominant_domain_label to complete the sentence "a question
+    // your ___ answers particularly well" — but nothing ever set this
+    // field; only claude_genome_context existed here. That condition could
+    // never fire. REALM_LABELS itself ("Systems & How Things Work") doesn't
+    // fit that sentence's grammatical slot directly, so this is a separate,
+    // natural-language phrasing rather than a reuse of REALM_LABELS —
+    // first-draft copy, worth a content review, not treated as final.
+    var DOMINANT_DOMAIN_LABEL_BY_REALM = {
+      make:    'hands-on, creative instinct',
+      move:    'competitive drive and physical discipline',
+      think:   'analytical curiosity',
+      people:  'instinct for people and connection',
+      systems: 'systems-oriented way of thinking'
+    };
+    var dominantDomainLabel = (genome.domain2 && genome.domain2.dominantRealm)
+      ? DOMINANT_DOMAIN_LABEL_BY_REALM[genome.domain2.dominantRealm] || null
+      : null;
+
     profile.genome = {
       claude_genome_context: typeof formatGenomeContextBlock === 'function'
         ? formatGenomeContextBlock(genome)
-        : ''
+        : '',
+      dominant_domain_label: dominantDomainLabel
     };
     profile._studentGenome = genome; // full object retained for the /save-family payload, not sent to Claude directly
   }
@@ -7872,6 +7974,14 @@ async function submitLifescape() {
             .map(function(s) { return buildScorecardBlock(s.name); })
             .filter(Boolean);
 
+          // ── Append real per-major outcomes data per school (2026-07-31) ──
+          // Closes the Tier 2 gap: schools with no SCHOOL_SCORECARD entry at
+          // all still get real numbers here when school_major_outcomes.js
+          // covers them (confirmed: all 19 Tier 2 schools are covered).
+          var _majorOutcomeBlocks = schoolContent.slice(0, _promptCount)
+            .map(function(s) { return buildMajorOutcomesBlock(s.name); })
+            .filter(Boolean);
+
           // NOTE 2026-07-10: a duplicate cultural-fit injection (_cultureBlocks, using a
           // newly-implemented getCultureNarrative() in cultural_fit_lens.js) was removed
           // from here. buildCultureContext()/_cultureD (defined above, injected into the
@@ -7883,7 +7993,8 @@ async function submitLifescape() {
           // twice in one prompt.
 
           var schoolContentBlockFull = schoolContentBlock
-            + (_scorecardBlocks.length ? '\n\n' + _scorecardBlocks.join('\n\n') : '');
+            + (_scorecardBlocks.length ? '\n\n' + _scorecardBlocks.join('\n\n') : '')
+            + (_majorOutcomeBlocks.length ? '\n\n' + _majorOutcomeBlocks.join('\n\n') : '');
           console.log('[callD] Scorecard blocks attached:', _scorecardBlocks.length, '/', _promptCount);
 
           console.log('[callD] prompt block length:', schoolContentBlockFull.length);

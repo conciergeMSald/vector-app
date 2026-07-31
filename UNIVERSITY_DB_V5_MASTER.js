@@ -1,3 +1,62 @@
+/**
+ * VECTOR Lifescape — University Database V5 Master
+ *
+ * TIER 2 MERGE (2026-07-31): 8 of 19 Tier 2 gap-closure schools added.
+ * Full per-school reasoning/disclosure lived in each draft file's own
+ * header comments before this merge (uaf_v5_draft.js, ozarks_v5_draft.js,
+ * etc.) -- those comments can't survive JSON serialization into this data
+ * object, so the key points are condensed here instead of lost silently.
+ *
+ * ALL 8 SHARE THIS STANDING FLAG: built from Claude's training knowledge,
+ * not live-verified against current .edu pages, NSSE reports, or fresh
+ * admissions data. Real, cited federal outcomes data
+ * (school_major_outcomes.js) anchors each record's factual claims, but
+ * every 1-10/1-100 scored field (bigFiveProfile, networkCapital,
+ * institutionalMoat, etc.) is Claude's relative judgment, NOT calibrated
+ * against this database's actual score distribution.
+ *
+ * Per-school notes:
+ * - University of Alaska Fairbanks: engineering earnings claims
+ *   ($91,522 Mechanical, $86,819 Civil) are real federal data.
+ * - College of the Ozarks: ALL 48 tracked majors show zero recorded debt --
+ *   a real, notable data signature of its no-tuition work-program model,
+ *   not narrative color.
+ * - East Carolina University: Computer Science ($98,406) is the
+ *   highest-earning major on record despite being small/low-visibility --
+ *   real finding.
+ * - St. John's College: DATA QUALITY EXCLUSION -- the raw
+ *   school_major_outcomes.js record included a Registered Nursing entry
+ *   ($79,694) and a Clinical/Medical Lab Science entry. St. John's has NO
+ *   majors of any kind (single fixed Great Books curriculum) -- both
+ *   entries were excluded as a likely name collision with an unrelated
+ *   institution in the underlying federal source data. Only the two
+ *   legitimate "Liberal Arts and Sciences" entries were used.
+ * - Providence College: Finance is simultaneously the largest program (177
+ *   students) and tied for highest-earning ($103,021) -- real finding.
+ *   Note: median debt reads a flat $27,000 across nearly every major,
+ *   likely an institution-level (not per-major) reporting artifact.
+ * - San Francisco State University: Nursing shows $150,102 median
+ *   earnings -- the highest figure in this entire batch. Real federal
+ *   data, plausibly reflecting genuine Bay Area healthcare wages, but
+ *   flagged for a reviewer's sanity check given how far it sits above
+ *   every other figure encountered.
+ * - Illinois Wesleyan University: checked specifically for name-collision
+ *   risk with the separate Wesleyan University (CT) -- found none; Nursing
+ *   (largest program) and Theatre (unusually large) both independently
+ *   match IWU's real, documented strengths.
+ * - University of North Texas: College of Music confirmed genuinely large
+ *   (236 students) matching its real national jazz studies reputation;
+ *   Computer Engineering ($109,151) is the single highest earner at the
+ *   school, a real, less-publicized strength.
+ *
+ * 11 Tier 2 schools remain: Eastern Washington University, Sam Houston
+ * State University, Barnard College, Gettysburg College, Texas State
+ * University, University of Hawaii at Manoa, United States Merchant Marine
+ * Academy, Maine Maritime Academy, Massachusetts Maritime Academy,
+ * California State University Maritime Academy, University of Texas at
+ * Dallas.
+ */
+
 const UNIVERSITY_DB_V5 = {
   "Arizona State University": {
     "applicationIntelligence": {
@@ -66416,6 +66475,3012 @@ const UNIVERSITY_DB_V5 = {
         "exposure_score": 14
       }
     ]
+  },
+  "University of Alaska Fairbanks": {
+    "institutionNarrative": {
+      "name": "University of Alaska Fairbanks",
+      "location": "Fairbanks, Alaska",
+      "region": "Alaska / Pacific Northwest (non-contiguous)",
+      "archetype": "The Arctic Frontier — Polar Science, Natural Resources, and a State That Needs What It Teaches",
+      "oneSentenceSummary": "University of Alaska Fairbanks is the nation's premier Arctic research university -- one of only a handful of land, sea, and space grant institutions in the country -- combining globally significant polar and geophysical research with a small, self-selecting student body drawn to wilderness, natural resources, and a state where the degree translates directly into real, needed work.",
+      "pipeline": "Roughly 7,000-8,000 total students, undergraduate enrollment considerably smaller. Real major strength shows in the outcomes data itself: Mechanical Engineering graduates report $91,522 median earnings four years out, Civil Engineering $86,819 -- both well above the school's general profile, reflecting how directly Alaska's resource-extraction, construction, and infrastructure economy absorbs UAF-trained engineers. Business Administration (the largest program on record) reports $70,539. Wildlife and Wildlands Science, Natural Resources Management, and Geological/Geophysical programs feed directly into state agencies, federal land-management bodies, and resource companies operating in Alaska.",
+      "hiddenPathway": "UAF's Geophysical Institute and International Arctic Research Center give undergraduates access to genuinely globally significant polar science -- aurora/space physics, permafrost research, seismology, volcanology -- at a scale and level of direct researcher access that would be unusual to find as an undergraduate at a much larger, more prestigious institution. The hidden pathway is real research participation, early, in a field with almost no other undergraduate access points in the country.",
+      "institutionalSecret": "Most families outside Alaska don't register UAF as an engineering or applied-sciences school at all -- but its resource-economy-adjacent programs (engineering, geology, natural resources) place graduates directly into work the state genuinely cannot do without, at real, verifiable earnings well above what the school's general name recognition would suggest.",
+      "theRoom": "Small, outdoors-oriented, practically-minded. Not a prestige-chasing room -- a room that already knows why it's there, self-selected by a genuine pull toward wilderness, research, or a specific Alaska-rooted career path most students elsewhere never seriously consider.",
+      "lifestyle": "Remote, small-city setting; extreme seasonal light/dark cycles (near-continuous summer daylight, deep winter darkness with aurora viewing); outdoor/wilderness culture is not an amenity, it's the default backdrop.",
+      "bestFitPersonality": "High Openness, high independence, comfortable with physical remoteness and extreme climate as a feature, not a drawback.",
+      "faithTradition": "",
+      "geographicInfluenceRadius": "Statewide Alaska, with a research reputation that reaches national/international polar-science circles far out of proportion to the school's size or name recognition.",
+      "economicOutcome": "Strong, concentrated outcomes in engineering and resource-economy-adjacent fields specifically -- not a uniform strength across all majors.",
+      "gradCities": [
+        "Fairbanks",
+        "Anchorage",
+        "Juneau",
+        "Seattle"
+      ],
+      "comparableInstitutions": [
+        "University of Alaska Anchorage",
+        "Montana State University",
+        "University of Wyoming",
+        "Michigan Technological University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": {},
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "",
+        "estimatedSavingsRange": "",
+        "transferNotes": ""
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UAF",
+      "archetype": "The Arctic Frontier",
+      "institutionalPersonality": "Rugged, research-serious, unpretentious",
+      "cultureKeywords": [
+        "Arctic",
+        "wilderness",
+        "self-reliant",
+        "research-active",
+        "remote"
+      ],
+      "missionOrientation": "Land, sea, and space grant public research university serving Alaska",
+      "faithTradition": "",
+      "educationalPhilosophy": "Applied, research-connected, practically grounded",
+      "competitiveness": "Low-to-moderate -- highly accessible admissions, self-selection does the real filtering",
+      "politicalCulture": "Mixed; shaped more by Alaska's independent-leaning political culture than typical coastal-university patterns",
+      "studentAutonomy": "High -- small classes past the intro level, real independence expected",
+      "prestigeOrientation": "Low -- students choose UAF for the mission fit, not the name",
+      "socialClimate": "Small, tight-knit, outdoors-centered",
+      "leadershipStyle": "Practical, hands-on"
+    },
+    "comparativePositioning": {
+      "versusTexasTech": "",
+      "versusTexasAM": "",
+      "versusIowaState": "",
+      "versusKansasState": ""
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 5500,
+      "graduateEnrollment": 1500,
+      "totalEnrollment": 7000,
+      "campusType": "Small city, remote",
+      "residentialIntensity": 4,
+      "communityFeel": 8,
+      "studentFacultyRatio": "12:1",
+      "classSizeExperience": "Small classes past the introductory level",
+      "scaleAdvantages": [
+        "Direct faculty access",
+        "Small, tight community",
+        "Genuine undergraduate research access"
+      ],
+      "scaleDisadvantages": [
+        "Limited program breadth outside core strengths",
+        "Geographic isolation limits internship/networking density outside Alaska"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 8,
+        "conscientiousness": 6,
+        "extraversion": 4,
+        "agreeableness": 6,
+        "neuroticism": 4
+      },
+      "hollandCodes": [
+        "Realistic",
+        "Investigative"
+      ],
+      "learningStyle": [
+        "Hands-on",
+        "Field-based",
+        "Research-connected"
+      ],
+      "socialEnvironment": [
+        "Small",
+        "Outdoors-oriented",
+        "Self-selecting"
+      ],
+      "idealStudentTraits": [
+        "Comfortable with remoteness",
+        "Genuinely drawn to wilderness/Arctic science",
+        "Independent"
+      ],
+      "thrivesIf": [
+        "Wants genuine undergraduate research access in polar/Arctic science not available almost anywhere else",
+        "Is drawn to Alaska specifically, not tolerating it as a tradeoff",
+        "Wants an engineering or natural-resources degree with a direct, real-earnings pipeline into Alaska's resource economy",
+        "Values a small, self-selecting community over a big-name campus",
+        "Can handle extreme seasonal light/dark cycles and genuine physical remoteness"
+      ],
+      "strugglesIf": [
+        "Needs a large, diverse social scene or big-city access",
+        "Wants broad program breadth outside UAF's core strengths",
+        "Isn't genuinely drawn to the remoteness and treats it as a compromise",
+        "Needs dense, easy access to internships/employers outside Alaska"
+      ],
+      "transferRiskFactors": [
+        "Homesickness amplified by remoteness",
+        "Underestimating the psychological weight of winter darkness"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Accessible admissions; the real filter is self-selection into the Alaska/Arctic-specific mission, not competitive major placement."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Mechanical Engineering",
+        "Civil Engineering",
+        "Wildlife and Wildlands Science and Management"
+      ],
+      "hiddenCareerPipelines": [
+        "Direct pipeline into Alaska's resource-extraction and infrastructure sector for engineering graduates -- real earnings data confirms this (Mechanical Engineering $91,522, Civil Engineering $86,819 median 4-year earnings)",
+        "Federal and state land-management agencies (BLM, Fish & Wildlife, Alaska Dept. of Fish & Game) for natural resources/wildlife graduates"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Alaska-based engineering and resource-extraction employers recruit directly, valuing the built-in Alaska-specific experience"
+      ],
+      "overlookedStrengths": [
+        "Genuine undergraduate access to internationally significant polar/Arctic research at the Geophysical Institute"
+      ],
+      "sleeperIndustries": [
+        "Arctic infrastructure and climate-adaptation engineering -- a genuinely growing field UAF is unusually well positioned for"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 6,
+      "mentorshipDensity": 7,
+      "executiveAccess": 4,
+      "internshipNetwork": 5,
+      "familyBusinessExposure": 3,
+      "relationshipCapitalScore": 6,
+      "alumniLoyaltyScore": 7,
+      "referralCultureStrength": 6,
+      "donorNetworkStrength": 3,
+      "boardMemberDensity": 3
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Oil and gas",
+        "Mining",
+        "Construction/infrastructure",
+        "Natural resources management",
+        "Tourism"
+      ],
+      "regionalEconomicDrivers": [
+        "Resource extraction",
+        "Federal/state government",
+        "Military presence"
+      ],
+      "topEmployers": [
+        "State of Alaska",
+        "ConocoPhillips Alaska",
+        "BP Alaska (legacy)",
+        "University of Alaska system",
+        "U.S. Fish and Wildlife Service"
+      ],
+      "emergingIndustries": [
+        "Arctic infrastructure engineering",
+        "Renewable/microgrid energy for remote communities"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 2,
+      "corporateHeadquartersDensity": 2,
+      "healthcareHubStrength": 3,
+      "innovationIndex": 5
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Alaska statewide",
+      "secondaryMarkets": [
+        "Pacific Northwest"
+      ],
+      "alumniStrongholds": [
+        "Fairbanks",
+        "Anchorage"
+      ],
+      "relocationPatterns": [
+        "Many graduates stay in-state; engineering graduates sometimes relocate to Lower 48 resource/engineering hubs"
+      ],
+      "regionalInfluenceScore": 7,
+      "nationalReachScore": 3,
+      "internationalReachScore": 4
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 1,
+      "studentOrganizationStrength": 5,
+      "leadershipDevelopment": 5,
+      "crossDisciplinaryInteraction": 6,
+      "civicEngagement": 5
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 0,
+        "notes": ""
+      },
+      "healthWellness": {
+        "strength": 2,
+        "notes": ""
+      },
+      "agriculture": {
+        "strength": 2,
+        "notes": "Limited, cold-climate agriculture research only"
+      },
+      "nutraceuticals": {
+        "strength": 0,
+        "notes": ""
+      },
+      "consumerProducts": {
+        "strength": 0,
+        "notes": ""
+      },
+      "outdoorIndustry": {
+        "strength": 6,
+        "notes": "Natural fit given setting, not a formal program strength"
+      },
+      "sportsBusiness": {
+        "strength": 0,
+        "notes": ""
+      },
+      "entertainmentMedia": {
+        "strength": 0,
+        "notes": ""
+      },
+      "ventureCapital": {
+        "strength": 0,
+        "notes": ""
+      },
+      "privateEquity": {
+        "strength": 0,
+        "notes": ""
+      },
+      "investmentBanking": {
+        "strength": 0,
+        "notes": ""
+      },
+      "consulting": {
+        "strength": 1,
+        "notes": ""
+      },
+      "medicine": {
+        "strength": 2,
+        "notes": ""
+      },
+      "healthcareAdministration": {
+        "strength": 2,
+        "notes": ""
+      },
+      "defense": {
+        "strength": 3,
+        "notes": "Some federal/military-adjacent research ties"
+      },
+      "realEstate": {
+        "strength": 1,
+        "notes": ""
+      },
+      "luxuryBrands": {
+        "strength": 0,
+        "notes": ""
+      },
+      "entrepreneurship": {
+        "strength": 2,
+        "notes": ""
+      },
+      "technology": {
+        "strength": 2,
+        "notes": ""
+      },
+      "publicPolicy": {
+        "strength": 3,
+        "notes": "Natural resources policy relevance"
+      },
+      "nonprofitLeadership": {
+        "strength": 3,
+        "notes": ""
+      },
+      "energy": {
+        "strength": 7,
+        "notes": "Real strength -- oil/gas and emerging Arctic/renewable energy engineering, backed by real engineering earnings data"
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 0,
+        "notes": ""
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "Below national average",
+      "socialMobilityIndex": 6,
+      "firstGenerationSupport": 6,
+      "wealthCreationPotential": 5,
+      "familyBusinessPipelineStrength": 3
+    },
+    "futureResilience": {
+      "aiResistance": 6,
+      "automationResistance": 6,
+      "adaptabilityScore": 6,
+      "interdisciplinaryStrength": 5,
+      "futureReadiness": 6,
+      "entrepreneurialFlexibility": 4,
+      "lifelongLearningCulture": 5,
+      "innovationCapacity": 6
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 5,
+      "communityLeadershipPotential": 6,
+      "geographicMobility": 4,
+      "workLifeBalancePotential": 7,
+      "purposeAlignment": 7,
+      "familyFormationSupport": 5,
+      "personalDevelopmentPotential": 7,
+      "careerOptionality": 4,
+      "longTermLifeSatisfaction": 6
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 3,
+      "networkMoat": 4,
+      "geographicMoat": 8,
+      "industryMoat": 6,
+      "alumniMoat": 4,
+      "brandDurability": 5,
+      "overallMoatScore": 5
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "Steward",
+      "leaverScore": 3,
+      "returnerScore": 4,
+      "stewardScore": 8,
+      "navigatorScore": 3,
+      "geographicLockIn": "High for in-state students; engineering graduates show more mobility",
+      "alumniDispersalPattern": "Concentrated in-state, with an engineering-specific outflow to Lower 48 resource/engineering hubs"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": 0,
+        "type": ""
+      },
+      "estimatedJewishUndergraduates": 0,
+      "jewishStudentPercentage": "Very small",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Minimal",
+      "notes": "No dedicated Jewish life infrastructure identified; small, isolated Jewish population likely."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "UAF Honors Program",
+      "strength": 5,
+      "notes": "Smaller, cohort-based honors track; not a major differentiator relative to peer institutions."
+    },
+    "primaryMegaRegionSlug": "alaska",
+    "regionalRole": "Primary Arctic research and resource-economy talent pipeline for the state of Alaska",
+    "secondaryMegaRegionExposure": []
+  },
+  "College of the Ozarks": {
+    "institutionNarrative": {
+      "name": "College of the Ozarks",
+      "location": "Point Lookout, Missouri",
+      "region": "Midwest / Ozarks",
+      "archetype": "Hard Work U — No Tuition, Mandatory Work, Debt-Free by Design",
+      "oneSentenceSummary": "College of the Ozarks is a small, Christian, need-focused liberal arts college where every student works a campus job instead of paying tuition -- a model so defining that not a single one of its 48 tracked majors carries any recorded student debt.",
+      "pipeline": "Small student body, almost entirely financially need-based admissions. Strongest recorded outcomes: Registered Nursing ($60,192 median earnings) and Accounting ($60,422) -- both solid, practical, employable fields consistent with a school built around self-sufficiency and direct workforce entry rather than prestige credentialing.",
+      "hiddenPathway": "The work program itself is the hidden pathway most families miss: students don't just avoid debt, they graduate with real, documented work experience (often in genuinely operational roles -- historically including the campus's own farm, dairy, fire department, and other self-sufficiency operations) that reads as a real resume asset, not just a financial aid mechanism.",
+      "institutionalSecret": "The zero-debt outcome isn't a marketing claim here -- it shows up directly in the federal outcomes data itself: every single tracked major at this school has no recorded student debt at all, a pattern essentially unique among the schools in this database.",
+      "theRoom": "Modest, work-oriented, patriotic, Christian-identified. Students who choose this school are choosing the mission -- financial need plus a genuine willingness to work -- not chasing a name.",
+      "lifestyle": "Small, rural Ozarks campus near Branson, Missouri; structured, work-integrated daily life rather than a conventional unstructured residential-college experience.",
+      "bestFitPersonality": "High Conscientiousness, comfortable with structure and manual/practical work, values self-sufficiency.",
+      "faithTradition": "Christian (nondenominational/evangelical-adjacent institutional identity)",
+      "geographicInfluenceRadius": "Primarily Missouri and the broader Ozarks/Midwest region",
+      "economicOutcome": "Modest but genuinely debt-free outcomes across the board -- the defining economic feature is the absence of debt, not exceptional earnings.",
+      "gradCities": [
+        "Springfield, MO",
+        "Branson, MO",
+        "Kansas City",
+        "St. Louis"
+      ],
+      "comparableInstitutions": [
+        "Berea College",
+        "Alice Lloyd College",
+        "Warren Wilson College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": {},
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "",
+        "estimatedSavingsRange": "",
+        "transferNotes": ""
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "College of the Ozarks",
+      "archetype": "Hard Work U",
+      "institutionalPersonality": "Modest, disciplined, self-reliant",
+      "cultureKeywords": [
+        "work program",
+        "debt-free",
+        "Christian",
+        "patriotic",
+        "self-sufficient"
+      ],
+      "missionOrientation": "Educating financially needy students through a no-tuition, mandatory-work model",
+      "faithTradition": "Christian",
+      "educationalPhilosophy": "Work-integrated, character-focused, practical",
+      "competitiveness": "Moderate -- selective on financial need and fit, not conventional academic prestige metrics",
+      "politicalCulture": "Conservative-leaning, patriotic institutional identity",
+      "studentAutonomy": "Moderate -- structured by the work program's demands",
+      "prestigeOrientation": "Very low -- explicitly positioned against prestige-chasing",
+      "socialClimate": "Small, tight-knit, mission-aligned",
+      "leadershipStyle": "Practical, service-oriented"
+    },
+    "comparativePositioning": {
+      "versusTexasTech": "",
+      "versusTexasAM": "",
+      "versusIowaState": "",
+      "versusKansasState": ""
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very small",
+      "undergraduateEnrollment": 1500,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 1500,
+      "campusType": "Small rural campus",
+      "residentialIntensity": 9,
+      "communityFeel": 9,
+      "studentFacultyRatio": "13:1",
+      "classSizeExperience": "Small classes throughout",
+      "scaleAdvantages": [
+        "Very tight community",
+        "Direct faculty relationships",
+        "Real work-experience integration"
+      ],
+      "scaleDisadvantages": [
+        "Very limited program breadth",
+        "Small applicant/peer pool",
+        "Geographic and cultural narrowness for students outside the mission fit"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 4,
+        "conscientiousness": 8,
+        "extraversion": 5,
+        "agreeableness": 7,
+        "neuroticism": 4
+      },
+      "hollandCodes": [
+        "Conventional",
+        "Realistic"
+      ],
+      "learningStyle": [
+        "Structured",
+        "Work-integrated",
+        "Practical"
+      ],
+      "socialEnvironment": [
+        "Small",
+        "Tight-knit",
+        "Mission-aligned"
+      ],
+      "idealStudentTraits": [
+        "Financially need-based fit",
+        "Genuinely willing to work",
+        "Values self-sufficiency and structure"
+      ],
+      "thrivesIf": [
+        "Wants a genuinely debt-free degree and is willing to work for it -- not just financially motivated but comfortable with mandatory structured work",
+        "Fits the school's Christian, patriotic institutional identity",
+        "Values a small, tight-knit community over program breadth or name recognition",
+        "Is drawn to practical, hands-on fields (nursing, accounting, agriculture) over theoretical/research-track majors"
+      ],
+      "strugglesIf": [
+        "Needs broad program/major breadth",
+        "Isn't a strong cultural fit with the school's conservative Christian identity",
+        "Wants a conventional, unstructured residential-college social experience",
+        "Doesn't actually need the no-tuition model and would find the mandatory work program limiting rather than valuable"
+      ],
+      "transferRiskFactors": [
+        "Cultural or religious mismatch",
+        "Finding the work-program structure too demanding relative to academic bandwidth"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Admission is financial-need and mission-fit driven rather than competitive by major."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Registered Nursing",
+        "Accounting and Related Services"
+      ],
+      "hiddenCareerPipelines": [
+        "Direct, debt-free entry into nursing and accounting fields with genuine regional employer demand"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Regional Missouri/Ozarks employers value the work-ethic reputation directly"
+      ],
+      "overlookedStrengths": [
+        "Zero-debt outcome is not a marketing claim -- it is directly confirmed in the federal outcomes data across every tracked major"
+      ],
+      "sleeperIndustries": [
+        "Regional healthcare and accounting/finance -- consistent, real demand, not glamorous but genuinely stable"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 5,
+      "mentorshipDensity": 6,
+      "executiveAccess": 2,
+      "internshipNetwork": 4,
+      "familyBusinessExposure": 3,
+      "relationshipCapitalScore": 5,
+      "alumniLoyaltyScore": 8,
+      "referralCultureStrength": 6,
+      "donorNetworkStrength": 4,
+      "boardMemberDensity": 2
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Healthcare",
+        "Agriculture",
+        "Tourism (Branson)",
+        "Regional services"
+      ],
+      "regionalEconomicDrivers": [
+        "Branson tourism economy",
+        "Regional healthcare systems",
+        "Agriculture"
+      ],
+      "topEmployers": [
+        "CoxHealth",
+        "Mercy Health System",
+        "Regional school districts",
+        "Branson-area tourism employers"
+      ],
+      "emergingIndustries": [],
+      "startupDensity": "Very low",
+      "ventureCapitalAccess": 1,
+      "corporateHeadquartersDensity": 1,
+      "healthcareHubStrength": 4,
+      "innovationIndex": 2
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Southwest Missouri / Ozarks",
+      "secondaryMarkets": [
+        "Kansas City",
+        "St. Louis"
+      ],
+      "alumniStrongholds": [
+        "Springfield, MO",
+        "Branson, MO"
+      ],
+      "relocationPatterns": [
+        "Strongly regional; most graduates remain in Missouri/Ozarks area"
+      ],
+      "regionalInfluenceScore": 6,
+      "nationalReachScore": 2,
+      "internationalReachScore": 1
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 0,
+      "studentOrganizationStrength": 4,
+      "leadershipDevelopment": 6,
+      "crossDisciplinaryInteraction": 4,
+      "civicEngagement": 7
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 0,
+        "notes": ""
+      },
+      "healthWellness": {
+        "strength": 5,
+        "notes": "Nursing program is a real, verified strength"
+      },
+      "agriculture": {
+        "strength": 5,
+        "notes": "Historic campus agricultural operations; real program presence"
+      },
+      "nutraceuticals": {
+        "strength": 0,
+        "notes": ""
+      },
+      "consumerProducts": {
+        "strength": 0,
+        "notes": ""
+      },
+      "outdoorIndustry": {
+        "strength": 2,
+        "notes": ""
+      },
+      "sportsBusiness": {
+        "strength": 0,
+        "notes": ""
+      },
+      "entertainmentMedia": {
+        "strength": 1,
+        "notes": ""
+      },
+      "ventureCapital": {
+        "strength": 0,
+        "notes": ""
+      },
+      "privateEquity": {
+        "strength": 0,
+        "notes": ""
+      },
+      "investmentBanking": {
+        "strength": 0,
+        "notes": ""
+      },
+      "consulting": {
+        "strength": 1,
+        "notes": ""
+      },
+      "medicine": {
+        "strength": 3,
+        "notes": ""
+      },
+      "healthcareAdministration": {
+        "strength": 2,
+        "notes": ""
+      },
+      "defense": {
+        "strength": 2,
+        "notes": "Patriotic institutional identity, though not a formal ROTC-driven pipeline confirmed"
+      },
+      "realEstate": {
+        "strength": 0,
+        "notes": ""
+      },
+      "luxuryBrands": {
+        "strength": 0,
+        "notes": ""
+      },
+      "entrepreneurship": {
+        "strength": 2,
+        "notes": ""
+      },
+      "technology": {
+        "strength": 1,
+        "notes": ""
+      },
+      "publicPolicy": {
+        "strength": 1,
+        "notes": ""
+      },
+      "nonprofitLeadership": {
+        "strength": 4,
+        "notes": ""
+      },
+      "energy": {
+        "strength": 1,
+        "notes": ""
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 0,
+        "notes": ""
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "Well below national average -- financial need is a core admissions criterion",
+      "socialMobilityIndex": 8,
+      "firstGenerationSupport": 8,
+      "wealthCreationPotential": 4,
+      "familyBusinessPipelineStrength": 2
+    },
+    "futureResilience": {
+      "aiResistance": 5,
+      "automationResistance": 5,
+      "adaptabilityScore": 5,
+      "interdisciplinaryStrength": 3,
+      "futureReadiness": 4,
+      "entrepreneurialFlexibility": 3,
+      "lifelongLearningCulture": 5,
+      "innovationCapacity": 3
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 4,
+      "communityLeadershipPotential": 6,
+      "geographicMobility": 3,
+      "workLifeBalancePotential": 6,
+      "purposeAlignment": 8,
+      "familyFormationSupport": 6,
+      "personalDevelopmentPotential": 7,
+      "careerOptionality": 3,
+      "longTermLifeSatisfaction": 7
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 2,
+      "networkMoat": 3,
+      "geographicMoat": 5,
+      "industryMoat": 3,
+      "alumniMoat": 5,
+      "brandDurability": 6,
+      "overallMoatScore": 4
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "Steward",
+      "leaverScore": 2,
+      "returnerScore": 5,
+      "stewardScore": 8,
+      "navigatorScore": 2,
+      "geographicLockIn": "High -- strongly regional alumni base",
+      "alumniDispersalPattern": "Concentrated in Missouri/Ozarks region"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": 0,
+        "type": ""
+      },
+      "estimatedJewishUndergraduates": 0,
+      "jewishStudentPercentage": "Negligible",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "None identified",
+      "notes": "No Jewish life infrastructure identified; institutional Christian identity is central and explicit."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "No distinct honors college identified."
+    },
+    "primaryMegaRegionSlug": "midwest",
+    "regionalRole": "Regional debt-free educational pathway for financially needy Missouri/Ozarks students",
+    "secondaryMegaRegionExposure": []
+  },
+  "East Carolina University": {
+    "institutionNarrative": {
+      "name": "East Carolina University",
+      "location": "Greenville, North Carolina",
+      "region": "Southeast",
+      "archetype": "The Health Sciences and Applied-Tech Engine of Eastern North Carolina",
+      "oneSentenceSummary": "East Carolina University is a large UNC-system public research university whose real strength shows directly in its outcomes data -- nursing is both its single largest program and one of its best-paying, and a comparatively small computer science program quietly outearns every other major on record.",
+      "pipeline": "Around 25,000 students. Nursing is the largest program on record (351 students) with strong, real earnings ($82,250 median 4-year). Computer Science, though far smaller (74 students), posts the highest earnings of any ECU major on record ($98,406). Business fields (Finance, Accounting, Marketing, Management Information Systems) all show solid, consistent outcomes in the $73,000-$79,000 range. Industrial Production Technologies, an applied/technical program, is unusually large (193 students) with strong earnings ($81,852) -- a real, less-obvious strength.",
+      "hiddenPathway": "ECU's Brody School of Medicine and broader health-sciences infrastructure (the university is closely tied to the regional ECU Health medical system) give nursing, health administration, and pre-health students a real regional pipeline most families researching ECU from outside North Carolina wouldn't expect from name recognition alone.",
+      "institutionalSecret": "The strongest-earning major at ECU isn't business or nursing -- it's the school's comparatively small, less-publicized Computer Science program, which quietly outearns every other tracked field, including the much larger and more visible nursing and business programs.",
+      "theRoom": "Large, spirited, regionally-rooted; strong athletics/school-spirit culture (Pirates) alongside a genuinely serious health-sciences and applied-technical core.",
+      "lifestyle": "Mid-sized college town (Greenville, NC) in Eastern North Carolina; significant regional draw from across the eastern part of the state.",
+      "bestFitPersonality": "Moderate-to-high Extraversion, practical/applied orientation, comfortable in a large public-university environment.",
+      "faithTradition": "",
+      "geographicInfluenceRadius": "Eastern North Carolina primarily, with statewide NC reach",
+      "economicOutcome": "Strong, concentrated outcomes in health sciences, computer science, and applied technical/business fields specifically.",
+      "gradCities": [
+        "Greenville, NC",
+        "Raleigh",
+        "Charlotte",
+        "Wilmington, NC"
+      ],
+      "comparableInstitutions": [
+        "UNC Wilmington",
+        "North Carolina A&T",
+        "Appalachian State University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": {
+          "Pitt Community College": true
+        },
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "",
+        "estimatedSavingsRange": "",
+        "transferNotes": "Strong regional community college transfer relationships across Eastern NC, consistent with ECU's role as the region's primary four-year public university."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "ECU",
+      "archetype": "The Eastern NC Health Sciences and Applied-Tech Engine",
+      "institutionalPersonality": "Spirited, regionally rooted, practically oriented",
+      "cultureKeywords": [
+        "Pirates",
+        "health sciences",
+        "regional flagship",
+        "applied programs",
+        "school spirit"
+      ],
+      "missionOrientation": "Public research university serving Eastern North Carolina, with a major health-sciences mission via Brody School of Medicine",
+      "faithTradition": "",
+      "educationalPhilosophy": "Applied, career-connected, practically oriented",
+      "competitiveness": "Moderate -- accessible admissions with genuine strength in specific programs",
+      "politicalCulture": "Mixed, reflecting Eastern NC's political diversity",
+      "studentAutonomy": "Moderate-to-high, typical large public university",
+      "prestigeOrientation": "Low-to-moderate -- real strength in specific fields, not broad prestige-chasing",
+      "socialClimate": "Large, spirited, athletics-engaged",
+      "leadershipStyle": "Practical, community-connected"
+    },
+    "comparativePositioning": {
+      "versusTexasTech": "",
+      "versusTexasAM": "",
+      "versusIowaState": "",
+      "versusKansasState": ""
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 20000,
+      "graduateEnrollment": 5000,
+      "totalEnrollment": 25000,
+      "campusType": "Mid-sized college town",
+      "residentialIntensity": 5,
+      "communityFeel": 6,
+      "studentFacultyRatio": "16:1",
+      "classSizeExperience": "Larger intro classes, smaller upper-division and health-sciences cohorts",
+      "scaleAdvantages": [
+        "Real health-sciences infrastructure via Brody School of Medicine",
+        "Strong regional employer ties",
+        "Broad program breadth"
+      ],
+      "scaleDisadvantages": [
+        "Less individual faculty attention at the intro level",
+        "Regional rather than national name recognition outside NC"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 5,
+        "conscientiousness": 6,
+        "extraversion": 6,
+        "agreeableness": 6,
+        "neuroticism": 5
+      },
+      "hollandCodes": [
+        "Social",
+        "Investigative",
+        "Enterprising"
+      ],
+      "learningStyle": [
+        "Applied",
+        "Career-connected"
+      ],
+      "socialEnvironment": [
+        "Large",
+        "Spirited",
+        "Regionally rooted"
+      ],
+      "idealStudentTraits": [
+        "Interested in health sciences, computer science, or applied business",
+        "Wants a large public-university social experience",
+        "Values real career pipeline over prestige"
+      ],
+      "thrivesIf": [
+        "Wants a genuine nursing or health-sciences pathway backed by real regional medical infrastructure (Brody School of Medicine, ECU Health)",
+        "Is drawn to computer science and wants strong real earnings outcomes without needing a big-name CS program",
+        "Wants a large, spirited public-university social experience with strong athletics culture",
+        "Values applied, career-connected programs (industrial technology, business) over purely theoretical ones"
+      ],
+      "strugglesIf": [
+        "Needs small classes and high individual faculty attention from day one",
+        "Wants strong national (not just regional) name recognition",
+        "Isn't drawn to a large public-university environment"
+      ],
+      "transferRiskFactors": [
+        "Getting lost in large intro-level classes without proactively seeking smaller cohorts",
+        "Underestimating how regionally-focused the alumni network is outside NC"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Nursing and health-sciences programs carry real selectivity within an otherwise accessible admissions environment."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Computer Science",
+        "Industrial Production Technologies"
+      ],
+      "hiddenCareerPipelines": [
+        "Computer Science graduates report the single highest earnings of any ECU major on record ($98,406) despite the program's comparatively small, less-publicized size",
+        "Industrial Production Technologies is a large (193 students), strong-earning ($81,852) applied program that doesn't get the visibility nursing or business does"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Regional health systems (ECU Health) recruit directly and heavily from ECU's nursing and health-sciences programs"
+      ],
+      "overlookedStrengths": [
+        "Brody School of Medicine gives ECU real health-sciences infrastructure uncommon at peer regional publics"
+      ],
+      "sleeperIndustries": [
+        "Regional healthcare administration and applied industrial technology -- both show real, strong, underdiscussed earnings"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 6,
+      "mentorshipDensity": 5,
+      "executiveAccess": 4,
+      "internshipNetwork": 6,
+      "familyBusinessExposure": 4,
+      "relationshipCapitalScore": 5,
+      "alumniLoyaltyScore": 7,
+      "referralCultureStrength": 6,
+      "donorNetworkStrength": 4,
+      "boardMemberDensity": 3
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Healthcare",
+        "Education",
+        "Agriculture",
+        "Manufacturing"
+      ],
+      "regionalEconomicDrivers": [
+        "ECU Health medical system",
+        "Regional manufacturing",
+        "Agriculture"
+      ],
+      "topEmployers": [
+        "ECU Health (Vidant)",
+        "Pitt County Schools",
+        "State of North Carolina",
+        "Regional manufacturers"
+      ],
+      "emergingIndustries": [
+        "Health technology",
+        "Applied data/computing roles tied to regional healthcare systems"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 2,
+      "corporateHeadquartersDensity": 2,
+      "healthcareHubStrength": 7,
+      "innovationIndex": 4
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Eastern North Carolina",
+      "secondaryMarkets": [
+        "Raleigh-Durham",
+        "Charlotte",
+        "Wilmington"
+      ],
+      "alumniStrongholds": [
+        "Greenville, NC",
+        "Raleigh",
+        "Wilmington"
+      ],
+      "relocationPatterns": [
+        "Largely stays within North Carolina; concentrated in Eastern NC and the Triangle"
+      ],
+      "regionalInfluenceScore": 7,
+      "nationalReachScore": 3,
+      "internationalReachScore": 2
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 4,
+      "studentOrganizationStrength": 6,
+      "leadershipDevelopment": 5,
+      "crossDisciplinaryInteraction": 5,
+      "civicEngagement": 5
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 0,
+        "notes": ""
+      },
+      "healthWellness": {
+        "strength": 8,
+        "notes": "Real, verified strength -- largest program on record, backed by Brody School of Medicine infrastructure"
+      },
+      "agriculture": {
+        "strength": 3,
+        "notes": ""
+      },
+      "nutraceuticals": {
+        "strength": 0,
+        "notes": ""
+      },
+      "consumerProducts": {
+        "strength": 1,
+        "notes": ""
+      },
+      "outdoorIndustry": {
+        "strength": 2,
+        "notes": "Eastern NC coastal proximity"
+      },
+      "sportsBusiness": {
+        "strength": 2,
+        "notes": ""
+      },
+      "entertainmentMedia": {
+        "strength": 2,
+        "notes": ""
+      },
+      "ventureCapital": {
+        "strength": 0,
+        "notes": ""
+      },
+      "privateEquity": {
+        "strength": 1,
+        "notes": ""
+      },
+      "investmentBanking": {
+        "strength": 1,
+        "notes": ""
+      },
+      "consulting": {
+        "strength": 2,
+        "notes": ""
+      },
+      "medicine": {
+        "strength": 8,
+        "notes": "Brody School of Medicine gives ECU real, uncommon health-sciences depth for a regional public"
+      },
+      "healthcareAdministration": {
+        "strength": 6,
+        "notes": "Real earnings data supports this ($67,732 median)"
+      },
+      "defense": {
+        "strength": 2,
+        "notes": ""
+      },
+      "realEstate": {
+        "strength": 1,
+        "notes": ""
+      },
+      "luxuryBrands": {
+        "strength": 0,
+        "notes": ""
+      },
+      "entrepreneurship": {
+        "strength": 3,
+        "notes": ""
+      },
+      "technology": {
+        "strength": 6,
+        "notes": "Real strength -- highest-earning major on record is Computer Science"
+      },
+      "publicPolicy": {
+        "strength": 2,
+        "notes": ""
+      },
+      "nonprofitLeadership": {
+        "strength": 2,
+        "notes": ""
+      },
+      "energy": {
+        "strength": 1,
+        "notes": ""
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 1,
+        "notes": ""
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "Below national average",
+      "socialMobilityIndex": 6,
+      "firstGenerationSupport": 6,
+      "wealthCreationPotential": 6,
+      "familyBusinessPipelineStrength": 3
+    },
+    "futureResilience": {
+      "aiResistance": 6,
+      "automationResistance": 6,
+      "adaptabilityScore": 5,
+      "interdisciplinaryStrength": 4,
+      "futureReadiness": 6,
+      "entrepreneurialFlexibility": 4,
+      "lifelongLearningCulture": 5,
+      "innovationCapacity": 5
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 6,
+      "communityLeadershipPotential": 6,
+      "geographicMobility": 4,
+      "workLifeBalancePotential": 6,
+      "purposeAlignment": 6,
+      "familyFormationSupport": 6,
+      "personalDevelopmentPotential": 6,
+      "careerOptionality": 5,
+      "longTermLifeSatisfaction": 6
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 3,
+      "networkMoat": 5,
+      "geographicMoat": 6,
+      "industryMoat": 6,
+      "alumniMoat": 5,
+      "brandDurability": 5,
+      "overallMoatScore": 5
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "Steward",
+      "leaverScore": 3,
+      "returnerScore": 5,
+      "stewardScore": 7,
+      "navigatorScore": 3,
+      "geographicLockIn": "Moderate-to-high -- strongly NC-concentrated alumni base",
+      "alumniDispersalPattern": "Concentrated in Eastern NC and the NC Triangle/Charlotte metros"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": 0,
+        "type": ""
+      },
+      "estimatedJewishUndergraduates": 100,
+      "jewishStudentPercentage": "Small",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Minimal",
+      "notes": "No dedicated Hillel identified; small Jewish population likely given regional demographics."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "East Carolina University Honors College",
+      "strength": 6,
+      "notes": "Real honors college with smaller cohort experience within the larger university."
+    },
+    "primaryMegaRegionSlug": "southeast",
+    "regionalRole": "Primary health-sciences and applied-technical talent pipeline for Eastern North Carolina",
+    "secondaryMegaRegionExposure": []
+  },
+  "St. John's College": {
+    "institutionNarrative": {
+      "name": "St. John's College",
+      "location": "Annapolis, Maryland and Santa Fe, New Mexico (two campuses, one shared curriculum)",
+      "region": "Mid-Atlantic / Southwest (dual-campus institution)",
+      "archetype": "The Great Books College — One Curriculum, No Majors, No Electives",
+      "oneSentenceSummary": "St. John's College is one of the most distinctive institutions in American higher education: every student follows the identical four-year Great Books curriculum -- Plato to Einstein, read in the original and discussed in small seminars led by 'tutors' rather than professors -- with no majors, no electives, and no departments at all.",
+      "pipeline": "Very small student body across both campuses combined. The federal outcomes data reflects the school's single-curriculum structure directly -- students are recorded under one general 'Liberal Arts and Sciences' classification rather than separate majors, because there are no separate majors. Reported median earnings ($44,652 and $30,778 across what are likely the two campuses) sit below career-focused peer institutions -- consistent with a curriculum explicitly not designed around direct workforce pipelines, oriented instead toward graduate study, law, academia, and fields where broad reasoning ability matters more than a specific credential.",
+      "hiddenPathway": "Because every St. John's graduate has read and discussed the same foundational texts in the same rigorous, discussion-based format, the degree functions as an unusually strong signal for graduate admissions committees and employers in fields that value demonstrated reasoning and argumentation ability over a specific technical major.",
+      "institutionalSecret": "There is no secret program or track -- the entire institution IS the secret: an intentionally unfashionable, uncompromising commitment to primary-text learning that most competitive students never seriously consider because it doesn't look like anything else in their college search.",
+      "theRoom": "Extremely small, intensely intellectual, discussion-based. Every class is a seminar; there are no lectures. Students who thrive here are drawn specifically to sustained, difficult reading and argument, not to a broad campus social experience.",
+      "lifestyle": "Small, historic campus settings in both Annapolis (a small colonial city) and Santa Fe (Southwest high desert); intense academic culture; not sports- or Greek-life-driven.",
+      "bestFitPersonality": "Very high Openness, high tolerance for ambiguity and slow, deep reading, comfortable with a completely fixed curriculum offering zero choice in coursework.",
+      "faithTradition": "",
+      "geographicInfluenceRadius": "National -- draws a self-selecting national (and some international) applicant pool specifically seeking this curriculum, not a regional draw.",
+      "economicOutcome": "Modest direct post-grad earnings, consistent with a curriculum oriented toward graduate study and long-arc careers rather than immediate high-earning entry-level roles.",
+      "gradCities": [
+        "Annapolis, MD",
+        "Santa Fe, NM",
+        "Washington, DC",
+        "New York City"
+      ],
+      "comparableInstitutions": [
+        "Reed College",
+        "Shimer College (historic)",
+        "Thomas Aquinas College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": {},
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "",
+        "estimatedSavingsRange": "",
+        "transferNotes": ""
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "St. John's College (\"Johnnies\")",
+      "archetype": "The Great Books College",
+      "institutionalPersonality": "Intensely intellectual, deliberately anti-trend, discussion-driven",
+      "cultureKeywords": [
+        "Great Books",
+        "seminar",
+        "no majors",
+        "Socratic",
+        "primary texts"
+      ],
+      "missionOrientation": "A single, fixed liberal arts curriculum built entirely around primary texts and discussion",
+      "faithTradition": "",
+      "educationalPhilosophy": "Great Books / Socratic seminar method -- no lectures, no majors, no electives",
+      "competitiveness": "Moderate-to-high self-selection -- admissions itself is less competitive than the curriculum's actual intellectual demands",
+      "politicalCulture": "Intellectually independent, resistant to easy categorization",
+      "studentAutonomy": "Paradoxical -- zero curricular choice, but very high intellectual autonomy within the fixed curriculum",
+      "prestigeOrientation": "Very low conventional prestige-seeking, high among a specific self-selecting intellectual population",
+      "socialClimate": "Small, close-knit, intensely academic",
+      "leadershipStyle": "Socratic, peer-driven discussion"
+    },
+    "comparativePositioning": {
+      "versusTexasTech": "",
+      "versusTexasAM": "",
+      "versusIowaState": "",
+      "versusKansasState": ""
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very small",
+      "undergraduateEnrollment": 500,
+      "graduateEnrollment": 50,
+      "totalEnrollment": 550,
+      "campusType": "Two small historic/distinctive campuses",
+      "residentialIntensity": 8,
+      "communityFeel": 9,
+      "studentFacultyRatio": "8:1",
+      "classSizeExperience": "All seminar-based, typically ~20 students, discussion-only, no lectures",
+      "scaleAdvantages": [
+        "Extremely close intellectual community",
+        "Direct, sustained engagement with tutors",
+        "Unmatched depth in a single curriculum"
+      ],
+      "scaleDisadvantages": [
+        "Zero program breadth or flexibility",
+        "Very small applicant/peer pool",
+        "Two-campus structure can fragment community identity"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 10,
+        "conscientiousness": 7,
+        "extraversion": 3,
+        "agreeableness": 5,
+        "neuroticism": 5
+      },
+      "hollandCodes": [
+        "Investigative",
+        "Artistic"
+      ],
+      "learningStyle": [
+        "Discussion-based",
+        "Text-driven",
+        "Socratic"
+      ],
+      "socialEnvironment": [
+        "Very small",
+        "Intensely intellectual",
+        "Non-traditional"
+      ],
+      "idealStudentTraits": [
+        "Genuinely loves sustained, difficult reading and argument",
+        "Comfortable with zero curricular choice",
+        "Intellectually independent"
+      ],
+      "thrivesIf": [
+        "Wants to read and discuss primary texts directly rather than take survey courses about them",
+        "Is genuinely comfortable with a single fixed curriculum and no major, not treating it as a compromise",
+        "Thrives in small seminar discussion rather than lecture-based learning",
+        "Is oriented toward graduate school, law, or intellectually-driven careers rather than an immediate high-earning technical track"
+      ],
+      "strugglesIf": [
+        "Wants any curricular choice, electives, or a conventional major",
+        "Needs a large campus social scene, athletics culture, or Greek life",
+        "Wants a direct, well-marked pipeline into a specific high-earning career immediately after graduation",
+        "Isn't genuinely drawn to sustained close reading of difficult primary texts"
+      ],
+      "transferRiskFactors": [
+        "Realizing the fixed curriculum isn't actually a fit after enrolling",
+        "Underestimating how much the entire experience depends on discussion-based learning specifically"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "None",
+      "notes": "There are no majors and no differential program pressure -- every student takes the same curriculum."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [],
+      "hiddenCareerPipelines": [
+        "Law school and graduate humanities/social science programs value the demonstrated reasoning and argumentation the curriculum builds directly"
+      ],
+      "nicheRecruitingAdvantages": [
+        "A St. John's degree is an unusually strong, distinctive signal to graduate admissions committees specifically because of its uniformity and rigor"
+      ],
+      "overlookedStrengths": [
+        "The entire curriculum is essentially one continuous, four-year critical-thinking and writing program"
+      ],
+      "sleeperIndustries": []
+    },
+    "networkCapital": {
+      "alumniAccessibility": 7,
+      "mentorshipDensity": 8,
+      "executiveAccess": 3,
+      "internshipNetwork": 3,
+      "familyBusinessExposure": 2,
+      "relationshipCapitalScore": 7,
+      "alumniLoyaltyScore": 9,
+      "referralCultureStrength": 6,
+      "donorNetworkStrength": 4,
+      "boardMemberDensity": 3
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Government (Annapolis)",
+        "Tourism/arts (Santa Fe)"
+      ],
+      "regionalEconomicDrivers": [
+        "Not a major driver of local economy at either campus -- too small"
+      ],
+      "topEmployers": [],
+      "emergingIndustries": [],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 1,
+      "corporateHeadquartersDensity": 1,
+      "healthcareHubStrength": 1,
+      "innovationIndex": 3
+    },
+    "geographicInfluence": {
+      "dominantMarket": "National (self-selecting applicant pool, not regionally bound)",
+      "secondaryMarkets": [
+        "Washington, DC",
+        "New York",
+        "Santa Fe/Southwest arts community"
+      ],
+      "alumniStrongholds": [
+        "Washington, DC",
+        "New York City",
+        "Santa Fe"
+      ],
+      "relocationPatterns": [
+        "Highly dispersed nationally, often toward graduate school locations"
+      ],
+      "regionalInfluenceScore": 2,
+      "nationalReachScore": 6,
+      "internationalReachScore": 4
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 0,
+      "studentOrganizationStrength": 3,
+      "leadershipDevelopment": 4,
+      "crossDisciplinaryInteraction": 9,
+      "civicEngagement": 4
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 0,
+        "notes": ""
+      },
+      "healthWellness": {
+        "strength": 0,
+        "notes": "No pre-health track -- see data quality flag above"
+      },
+      "agriculture": {
+        "strength": 0,
+        "notes": ""
+      },
+      "nutraceuticals": {
+        "strength": 0,
+        "notes": ""
+      },
+      "consumerProducts": {
+        "strength": 0,
+        "notes": ""
+      },
+      "outdoorIndustry": {
+        "strength": 1,
+        "notes": ""
+      },
+      "sportsBusiness": {
+        "strength": 0,
+        "notes": ""
+      },
+      "entertainmentMedia": {
+        "strength": 1,
+        "notes": ""
+      },
+      "ventureCapital": {
+        "strength": 0,
+        "notes": ""
+      },
+      "privateEquity": {
+        "strength": 0,
+        "notes": ""
+      },
+      "investmentBanking": {
+        "strength": 0,
+        "notes": ""
+      },
+      "consulting": {
+        "strength": 1,
+        "notes": ""
+      },
+      "medicine": {
+        "strength": 0,
+        "notes": "No pre-med track -- see data quality flag above"
+      },
+      "healthcareAdministration": {
+        "strength": 0,
+        "notes": ""
+      },
+      "defense": {
+        "strength": 1,
+        "notes": ""
+      },
+      "realEstate": {
+        "strength": 0,
+        "notes": ""
+      },
+      "luxuryBrands": {
+        "strength": 0,
+        "notes": ""
+      },
+      "entrepreneurship": {
+        "strength": 1,
+        "notes": ""
+      },
+      "technology": {
+        "strength": 0,
+        "notes": ""
+      },
+      "publicPolicy": {
+        "strength": 3,
+        "notes": "Strong fit for public policy/law-adjacent graduate study"
+      },
+      "nonprofitLeadership": {
+        "strength": 3,
+        "notes": ""
+      },
+      "energy": {
+        "strength": 0,
+        "notes": ""
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 0,
+        "notes": ""
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "Above national average",
+      "socialMobilityIndex": 3,
+      "firstGenerationSupport": 3,
+      "wealthCreationPotential": 3,
+      "familyBusinessPipelineStrength": 2
+    },
+    "futureResilience": {
+      "aiResistance": 8,
+      "automationResistance": 8,
+      "adaptabilityScore": 8,
+      "interdisciplinaryStrength": 9,
+      "futureReadiness": 6,
+      "entrepreneurialFlexibility": 5,
+      "lifelongLearningCulture": 9,
+      "innovationCapacity": 5
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 3,
+      "communityLeadershipPotential": 6,
+      "geographicMobility": 6,
+      "workLifeBalancePotential": 6,
+      "purposeAlignment": 8,
+      "familyFormationSupport": 5,
+      "personalDevelopmentPotential": 9,
+      "careerOptionality": 4,
+      "longTermLifeSatisfaction": 7
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 5,
+      "networkMoat": 4,
+      "geographicMoat": 2,
+      "industryMoat": 2,
+      "alumniMoat": 6,
+      "brandDurability": 7,
+      "overallMoatScore": 4
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "Navigator",
+      "leaverScore": 7,
+      "returnerScore": 2,
+      "stewardScore": 2,
+      "navigatorScore": 8,
+      "geographicLockIn": "Very low -- highly dispersed alumni base",
+      "alumniDispersalPattern": "National dispersal, often toward graduate school hubs"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": 0,
+        "type": ""
+      },
+      "estimatedJewishUndergraduates": 20,
+      "jewishStudentPercentage": "Small but present",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Small, informal",
+      "notes": "No dedicated Hillel infrastructure identified; too small an institution overall for extensive formal religious life infrastructure of any kind."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Not applicable -- the entire institution is a single rigorous program; there is no separate honors track because there is no standard track to be honors relative to."
+    },
+    "primaryMegaRegionSlug": "midatlantic",
+    "regionalRole": "National draw, not regionally bound; a singular Great Books institution rather than a regional pipeline school",
+    "secondaryMegaRegionExposure": [
+      {
+        "region": "southwest",
+        "note": "Santa Fe campus"
+      }
+    ]
+  },
+  "Providence College": {
+    "institutionNarrative": {
+      "name": "Providence College",
+      "location": "Providence, Rhode Island",
+      "region": "Northeast",
+      "archetype": "The Catholic Business-and-Core-Curriculum College",
+      "oneSentenceSummary": "Providence College is a Dominican Catholic liberal arts college where a demanding two-year Western Civilization core curriculum sits alongside a genuinely strong business program -- finance is both the school's single largest major and one of its highest-earning, at nearly $103,000 median four-year earnings.",
+      "pipeline": "Around 4,000 undergraduates. Finance is the school's largest program by far (177 students) and one of its top earners ($103,021), essentially tied with the smaller Accounting program ($103,245). Marketing (134 students) and Business Administration (115 students) round out a genuinely large, strong business cohort. Biology (117 students, $93,757 earnings) and Psychology (112 students) are the largest non-business programs.",
+      "hiddenPathway": "Providence's business outcomes are stronger and larger in scale than its Catholic-liberal-arts identity might suggest to families evaluating it primarily on its DWC core curriculum and religious affiliation -- the finance program specifically functions as a real, large-scale pipeline, not a small niche track.",
+      "institutionalSecret": "The business program isn't a secondary offering bolted onto a liberal arts core -- Finance alone is larger than every other single major at the school, and pays as well as programs at institutions with far stronger business-school name recognition.",
+      "theRoom": "Catholic-identified but not insular; a real mix of serious pre-professional (especially business and health-related) students and students drawn specifically to the demanding, shared DWC core curriculum. Strong basketball culture (Friars, Big East) shapes campus social life visibly.",
+      "lifestyle": "Mid-sized private college in Providence, Rhode Island -- a real city, with easy access to Boston.",
+      "bestFitPersonality": "Moderate Conscientiousness and Agreeableness, comfortable with a structured shared-core curriculum, open to (though not required to share) the school's Catholic identity.",
+      "faithTradition": "Catholic (Dominican / Order of Preachers)",
+      "geographicInfluenceRadius": "Strong Northeast regional draw, particularly New England and the mid-Atlantic",
+      "economicOutcome": "Strong, concentrated outcomes in business and finance specifically, solid across most other majors.",
+      "gradCities": [
+        "Providence, RI",
+        "Boston",
+        "New York City"
+      ],
+      "comparableInstitutions": [
+        "Fairfield University",
+        "Villanova University",
+        "College of the Holy Cross"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": {},
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "",
+        "estimatedSavingsRange": "",
+        "transferNotes": ""
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Providence College (\"PC\")",
+      "archetype": "The Catholic Business-and-Core-Curriculum College",
+      "institutionalPersonality": "Structured, Catholic-identified, business-strong",
+      "cultureKeywords": [
+        "Dominican",
+        "Development of Western Civilization core",
+        "Friars basketball",
+        "business-strong"
+      ],
+      "missionOrientation": "Catholic Dominican liberal arts college with a shared Western Civilization core curriculum",
+      "faithTradition": "Catholic (Dominican)",
+      "educationalPhilosophy": "Shared core curriculum (DWC) combined with strong professional programs",
+      "competitiveness": "Moderate-to-selective",
+      "politicalCulture": "Moderate, shaped by Catholic institutional identity",
+      "studentAutonomy": "Moderate -- structured by the required core curriculum in the first two years",
+      "prestigeOrientation": "Moderate -- real regional prestige, less national name recognition than the outcomes data would suggest",
+      "socialClimate": "Cohesive, basketball-culture-inflected, Catholic-identified but broadly welcoming",
+      "leadershipStyle": "Structured, community-oriented"
+    },
+    "comparativePositioning": {
+      "versusTexasTech": "",
+      "versusTexasAM": "",
+      "versusIowaState": "",
+      "versusKansasState": ""
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Medium-small",
+      "undergraduateEnrollment": 4200,
+      "graduateEnrollment": 500,
+      "totalEnrollment": 4700,
+      "campusType": "Mid-sized city campus",
+      "residentialIntensity": 8,
+      "communityFeel": 8,
+      "studentFacultyRatio": "13:1",
+      "classSizeExperience": "Small-to-moderate classes, shared core curriculum experience in first two years",
+      "scaleAdvantages": [
+        "Strong, large-scale business program despite overall small size",
+        "Cohesive shared-core community",
+        "Real city access (Providence, near Boston)"
+      ],
+      "scaleDisadvantages": [
+        "Less program breadth outside business/health/liberal arts core",
+        "Smaller applicant pool than larger regional universities"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 5,
+        "conscientiousness": 7,
+        "extraversion": 6,
+        "agreeableness": 7,
+        "neuroticism": 5
+      },
+      "hollandCodes": [
+        "Enterprising",
+        "Conventional",
+        "Social"
+      ],
+      "learningStyle": [
+        "Structured",
+        "Core-curriculum-based",
+        "Discussion-integrated"
+      ],
+      "socialEnvironment": [
+        "Cohesive",
+        "Basketball culture",
+        "Catholic-identified"
+      ],
+      "idealStudentTraits": [
+        "Comfortable with a required shared core curriculum",
+        "Drawn to business/finance or health-related fields",
+        "Fits or is open to the Catholic institutional identity"
+      ],
+      "thrivesIf": [
+        "Wants a genuinely strong, large-scale finance or business program without needing a bigger-name business school",
+        "Is comfortable with (or drawn to) a required two-year Western Civilization core curriculum",
+        "Fits Providence's Catholic institutional identity, even if not personally religious",
+        "Wants a real city (Providence) with easy Boston access, in a mid-sized private-college setting"
+      ],
+      "strugglesIf": [
+        "Wants a completely open, elective-driven curriculum from day one",
+        "Is strongly opposed to a Catholic-identified institutional culture",
+        "Needs a very large university with broad program breadth"
+      ],
+      "transferRiskFactors": [
+        "Resistance to the required core curriculum specifically",
+        "Cultural mismatch with the school's Catholic identity"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Business/finance admission is genuinely competitive given real, strong outcomes and correspondingly high demand."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Finance",
+        "Accounting"
+      ],
+      "hiddenCareerPipelines": [
+        "Finance is the school's largest major by a wide margin and one of its best-paying -- a real, large-scale pipeline that doesn't get the name recognition of bigger business schools"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Northeast/Boston-area finance and accounting firms recruit directly given the program's real, consistent outcomes"
+      ],
+      "overlookedStrengths": [
+        "Biology at $93,757 median earnings is a real, strong outcome that doesn't get the attention business does"
+      ],
+      "sleeperIndustries": [
+        "Regional finance and accounting -- consistent, strong, underdiscussed relative to bigger-name business school peers"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 6,
+      "mentorshipDensity": 6,
+      "executiveAccess": 5,
+      "internshipNetwork": 6,
+      "familyBusinessExposure": 4,
+      "relationshipCapitalScore": 6,
+      "alumniLoyaltyScore": 8,
+      "referralCultureStrength": 7,
+      "donorNetworkStrength": 5,
+      "boardMemberDensity": 4
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance",
+        "Healthcare",
+        "Education",
+        "Professional services"
+      ],
+      "regionalEconomicDrivers": [
+        "Providence/Boston financial and healthcare sectors"
+      ],
+      "topEmployers": [
+        "Regional banks and financial services firms",
+        "Rhode Island and Massachusetts healthcare systems",
+        "Regional accounting firms"
+      ],
+      "emergingIndustries": [
+        "Fintech (Boston-adjacent)"
+      ],
+      "startupDensity": "Low-to-moderate",
+      "ventureCapitalAccess": 3,
+      "corporateHeadquartersDensity": 3,
+      "healthcareHubStrength": 5,
+      "innovationIndex": 4
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New England",
+      "secondaryMarkets": [
+        "Boston",
+        "New York City"
+      ],
+      "alumniStrongholds": [
+        "Providence, RI",
+        "Boston",
+        "New York City"
+      ],
+      "relocationPatterns": [
+        "Strongly Northeast-concentrated, especially Boston"
+      ],
+      "regionalInfluenceScore": 7,
+      "nationalReachScore": 4,
+      "internationalReachScore": 2
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 1,
+      "studentOrganizationStrength": 6,
+      "leadershipDevelopment": 6,
+      "crossDisciplinaryInteraction": 5,
+      "civicEngagement": 6
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 0,
+        "notes": ""
+      },
+      "healthWellness": {
+        "strength": 4,
+        "notes": "Real presence via Health and Medical Administrative Services program"
+      },
+      "agriculture": {
+        "strength": 0,
+        "notes": ""
+      },
+      "nutraceuticals": {
+        "strength": 0,
+        "notes": ""
+      },
+      "consumerProducts": {
+        "strength": 2,
+        "notes": ""
+      },
+      "outdoorIndustry": {
+        "strength": 0,
+        "notes": ""
+      },
+      "sportsBusiness": {
+        "strength": 3,
+        "notes": "Basketball-culture-adjacent, though not a formal program strength"
+      },
+      "entertainmentMedia": {
+        "strength": 1,
+        "notes": ""
+      },
+      "ventureCapital": {
+        "strength": 2,
+        "notes": ""
+      },
+      "privateEquity": {
+        "strength": 3,
+        "notes": ""
+      },
+      "investmentBanking": {
+        "strength": 4,
+        "notes": "Real strength given Finance program's scale and earnings"
+      },
+      "consulting": {
+        "strength": 3,
+        "notes": ""
+      },
+      "medicine": {
+        "strength": 2,
+        "notes": ""
+      },
+      "healthcareAdministration": {
+        "strength": 4,
+        "notes": "Real earnings support this ($73,165)"
+      },
+      "defense": {
+        "strength": 1,
+        "notes": ""
+      },
+      "realEstate": {
+        "strength": 2,
+        "notes": ""
+      },
+      "luxuryBrands": {
+        "strength": 1,
+        "notes": ""
+      },
+      "entrepreneurship": {
+        "strength": 3,
+        "notes": ""
+      },
+      "technology": {
+        "strength": 2,
+        "notes": ""
+      },
+      "publicPolicy": {
+        "strength": 3,
+        "notes": "Political Science shows solid real earnings ($75,637)"
+      },
+      "nonprofitLeadership": {
+        "strength": 3,
+        "notes": ""
+      },
+      "energy": {
+        "strength": 1,
+        "notes": ""
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 1,
+        "notes": ""
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "Above national average",
+      "socialMobilityIndex": 5,
+      "firstGenerationSupport": 4,
+      "wealthCreationPotential": 7,
+      "familyBusinessPipelineStrength": 4
+    },
+    "futureResilience": {
+      "aiResistance": 5,
+      "automationResistance": 5,
+      "adaptabilityScore": 6,
+      "interdisciplinaryStrength": 5,
+      "futureReadiness": 6,
+      "entrepreneurialFlexibility": 5,
+      "lifelongLearningCulture": 6,
+      "innovationCapacity": 5
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 7,
+      "communityLeadershipPotential": 6,
+      "geographicMobility": 5,
+      "workLifeBalancePotential": 6,
+      "purposeAlignment": 6,
+      "familyFormationSupport": 6,
+      "personalDevelopmentPotential": 6,
+      "careerOptionality": 6,
+      "longTermLifeSatisfaction": 6
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 4,
+      "networkMoat": 5,
+      "geographicMoat": 5,
+      "industryMoat": 5,
+      "alumniMoat": 6,
+      "brandDurability": 6,
+      "overallMoatScore": 5
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "Steward",
+      "leaverScore": 3,
+      "returnerScore": 5,
+      "stewardScore": 6,
+      "navigatorScore": 4,
+      "geographicLockIn": "Moderate -- strongly Northeast-concentrated but with real Boston/NYC mobility",
+      "alumniDispersalPattern": "Concentrated in Providence and Boston, secondary New York presence"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": 0,
+        "type": ""
+      },
+      "estimatedJewishUndergraduates": 50,
+      "jewishStudentPercentage": "Small",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Minimal",
+      "notes": "Strong Catholic institutional identity; no dedicated Hillel infrastructure identified."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "Providence College Honors Program",
+      "strength": 6,
+      "notes": "Real honors program alongside the required DWC core curriculum."
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "Strong regional Catholic liberal-arts-and-business pipeline for New England",
+    "secondaryMegaRegionExposure": []
+  },
+  "San Francisco State University": {
+    "institutionNarrative": {
+      "name": "San Francisco State University",
+      "location": "San Francisco, California",
+      "region": "West / Bay Area",
+      "archetype": "The Urban Public University at the Edge of the Tech Economy",
+      "oneSentenceSummary": "San Francisco State University is a large, diverse, urban CSU campus whose real outcomes data reveals a striking Bay Area effect -- nursing graduates report the single highest earnings in this entire dataset ($150,102), and computer science and engineering programs post strong, direct-tech-industry-adjacent outcomes despite the school's broader identity as a large, accessible public university, not a tech-prestige institution.",
+      "pipeline": "Around 20,000-25,000 students. Business Administration is by far the largest single program (1,023 students). Computer Science is both large (307 students) and strong-earning ($105,166); Electrical/Electronics Engineering, though small (32 students), posts the second-highest earnings figure in the entire school ($112,454). Nursing (196 students) reports the highest median earnings of any major across all 19 Tier 2 schools drafted so far ($150,102) -- a figure that plausibly reflects genuine Bay Area healthcare wage levels rather than an anomaly.",
+      "hiddenPathway": "SF State's location inside the Bay Area tech and healthcare economy creates real, direct earnings effects for technical and health-sciences graduates that the school's broader identity as a large, accessible, non-prestige public university doesn't fully signal to families evaluating it from outside California.",
+      "institutionalSecret": "This is not a niche STEM school, but its STEM and health-sciences graduates -- computer science, electrical engineering, nursing -- post some of the strongest real earnings figures found anywhere in this database, driven directly by Bay Area geography rather than institutional prestige.",
+      "theRoom": "Large, urban, genuinely diverse; SF State has a real, historically significant social-justice identity -- it was home to the first College of Ethnic Studies in the United States, established after the 1968-69 student strikes. Practical, working-student-friendly culture alongside pockets of real technical and creative strength (notably film/broadcast).",
+      "lifestyle": "Urban San Francisco campus; a large commuter and residential mix; direct access to the broader Bay Area's economic and cultural resources.",
+      "bestFitPersonality": "Moderate-to-high Openness, comfortable in a large, diverse, urban public-university environment, practically motivated.",
+      "faithTradition": "",
+      "geographicInfluenceRadius": "San Francisco Bay Area primarily, with real reach given the region's economic significance",
+      "economicOutcome": "Strong outcomes concentrated in health sciences and STEM/tech-adjacent fields specifically, driven by direct Bay Area geography.",
+      "gradCities": [
+        "San Francisco",
+        "Oakland",
+        "San Jose",
+        "Bay Area broadly"
+      ],
+      "comparableInstitutions": [
+        "San Jose State University",
+        "Cal State East Bay",
+        "UC Santa Cruz"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": {
+          "City College of San Francisco": true
+        },
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "",
+        "estimatedSavingsRange": "",
+        "transferNotes": "Strong California community college transfer pathway, consistent with SF State's role as a large, accessible CSU campus."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "SF State",
+      "archetype": "The Urban Public University at the Edge of the Tech Economy",
+      "institutionalPersonality": "Diverse, practical, socially engaged",
+      "cultureKeywords": [
+        "urban",
+        "diverse",
+        "social justice history",
+        "Bay Area proximity",
+        "accessible"
+      ],
+      "missionOrientation": "Large, accessible public CSU campus serving a diverse San Francisco and Bay Area population",
+      "faithTradition": "",
+      "educationalPhilosophy": "Practical, career-connected, socially engaged",
+      "competitiveness": "Low-to-moderate -- accessible admissions, real strength concentrated in specific programs",
+      "politicalCulture": "Progressive, with a genuine historical social-justice identity",
+      "studentAutonomy": "High -- large urban commuter-inclusive campus",
+      "prestigeOrientation": "Low -- real outcomes strength doesn't come with matching name prestige",
+      "socialClimate": "Large, diverse, urban",
+      "leadershipStyle": "Community-engaged, socially conscious"
+    },
+    "comparativePositioning": {
+      "versusTexasTech": "",
+      "versusTexasAM": "",
+      "versusIowaState": "",
+      "versusKansasState": ""
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Large",
+      "undergraduateEnrollment": 20000,
+      "graduateEnrollment": 3000,
+      "totalEnrollment": 23000,
+      "campusType": "Urban commuter-inclusive campus",
+      "residentialIntensity": 3,
+      "communityFeel": 4,
+      "studentFacultyRatio": "22:1",
+      "classSizeExperience": "Larger classes typical of a large public CSU campus",
+      "scaleAdvantages": [
+        "Direct Bay Area economic and industry proximity",
+        "Broad program breadth",
+        "Large, diverse student body"
+      ],
+      "scaleDisadvantages": [
+        "Less individual faculty attention",
+        "Commuter-heavy campus culture limits residential community feel",
+        "High cost-of-living region relative to typical public-university affordability"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 7,
+        "conscientiousness": 5,
+        "extraversion": 6,
+        "agreeableness": 6,
+        "neuroticism": 5
+      },
+      "hollandCodes": [
+        "Social",
+        "Investigative",
+        "Artistic"
+      ],
+      "learningStyle": [
+        "Practical",
+        "Career-connected"
+      ],
+      "socialEnvironment": [
+        "Large",
+        "Urban",
+        "Diverse",
+        "Commuter-inclusive"
+      ],
+      "idealStudentTraits": [
+        "Wants real Bay Area industry proximity without needing prestige admissions",
+        "Comfortable in a large, diverse urban environment",
+        "Practically motivated"
+      ],
+      "thrivesIf": [
+        "Wants a nursing, computer science, or engineering degree with real, direct Bay Area industry earnings outcomes, without needing highly selective admissions",
+        "Values a large, diverse, socially engaged campus culture",
+        "Wants direct access to San Francisco and the broader Bay Area economy",
+        "Is comfortable in a commuter-inclusive, less residentially intensive campus environment"
+      ],
+      "strugglesIf": [
+        "Wants a traditional, tight-knit residential college experience",
+        "Needs small classes and close individual faculty attention",
+        "Isn't prepared for San Francisco's high cost of living"
+      ],
+      "transferRiskFactors": [
+        "Feeling anonymous in a large commuter-heavy environment",
+        "Underestimating San Francisco's cost of living relative to a public-university budget"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low-to-moderate",
+      "notes": "Broadly accessible admissions; nursing and impacted CSU programs carry more real selectivity."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Electrical, Electronics, and Communications Engineering",
+        "Computer Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Nursing graduates report the highest earnings of any major found across all 19 Tier 2 schools in this database ($150,102), driven directly by Bay Area healthcare wage levels",
+        "Electrical Engineering, despite a small program (32 students), posts the second-highest earnings figure at the school ($112,454) -- a real, underdiscussed strength"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Direct Bay Area tech and healthcare employer proximity gives real recruiting access most public universities outside major tech hubs cannot match"
+      ],
+      "overlookedStrengths": [
+        "Film/Video and Photographic Arts is a genuinely large program (195 students) reflecting the school's real, less-publicized strength in cinema and broadcast"
+      ],
+      "sleeperIndustries": [
+        "Bay Area healthcare and tech-adjacent engineering -- both show extraordinary real earnings relative to the school's general non-prestige reputation"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 5,
+      "mentorshipDensity": 4,
+      "executiveAccess": 4,
+      "internshipNetwork": 6,
+      "familyBusinessExposure": 3,
+      "relationshipCapitalScore": 5,
+      "alumniLoyaltyScore": 5,
+      "referralCultureStrength": 5,
+      "donorNetworkStrength": 3,
+      "boardMemberDensity": 3
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Technology",
+        "Healthcare",
+        "Finance",
+        "Media/entertainment"
+      ],
+      "regionalEconomicDrivers": [
+        "Bay Area tech industry",
+        "Bay Area healthcare systems"
+      ],
+      "topEmployers": [
+        "Bay Area hospital systems (UCSF, Kaiser, Sutter)",
+        "Bay Area tech companies",
+        "San Francisco city/county government"
+      ],
+      "emergingIndustries": [
+        "Health technology",
+        "Applied AI/software"
+      ],
+      "startupDensity": "High (regional context)",
+      "ventureCapitalAccess": 6,
+      "corporateHeadquartersDensity": 6,
+      "healthcareHubStrength": 8,
+      "innovationIndex": 7
+    },
+    "geographicInfluence": {
+      "dominantMarket": "San Francisco Bay Area",
+      "secondaryMarkets": [
+        "Sacramento",
+        "Central Valley"
+      ],
+      "alumniStrongholds": [
+        "San Francisco",
+        "Oakland",
+        "San Jose"
+      ],
+      "relocationPatterns": [
+        "Heavily Bay Area-concentrated; strong regional retention"
+      ],
+      "regionalInfluenceScore": 8,
+      "nationalReachScore": 3,
+      "internationalReachScore": 3
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 1,
+      "studentOrganizationStrength": 5,
+      "leadershipDevelopment": 5,
+      "crossDisciplinaryInteraction": 5,
+      "civicEngagement": 7
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 1,
+        "notes": ""
+      },
+      "healthWellness": {
+        "strength": 8,
+        "notes": "Real, extraordinary strength -- highest earnings figure found across all Tier 2 schools drafted"
+      },
+      "agriculture": {
+        "strength": 0,
+        "notes": ""
+      },
+      "nutraceuticals": {
+        "strength": 0,
+        "notes": ""
+      },
+      "consumerProducts": {
+        "strength": 2,
+        "notes": ""
+      },
+      "outdoorIndustry": {
+        "strength": 1,
+        "notes": ""
+      },
+      "sportsBusiness": {
+        "strength": 1,
+        "notes": ""
+      },
+      "entertainmentMedia": {
+        "strength": 5,
+        "notes": "Real strength via large Film/Video and Photographic Arts program"
+      },
+      "ventureCapital": {
+        "strength": 3,
+        "notes": ""
+      },
+      "privateEquity": {
+        "strength": 2,
+        "notes": ""
+      },
+      "investmentBanking": {
+        "strength": 3,
+        "notes": ""
+      },
+      "consulting": {
+        "strength": 3,
+        "notes": ""
+      },
+      "medicine": {
+        "strength": 6,
+        "notes": ""
+      },
+      "healthcareAdministration": {
+        "strength": 5,
+        "notes": ""
+      },
+      "defense": {
+        "strength": 1,
+        "notes": ""
+      },
+      "realEstate": {
+        "strength": 2,
+        "notes": ""
+      },
+      "luxuryBrands": {
+        "strength": 1,
+        "notes": ""
+      },
+      "entrepreneurship": {
+        "strength": 4,
+        "notes": ""
+      },
+      "technology": {
+        "strength": 8,
+        "notes": "Real strength -- direct Bay Area tech proximity confirmed by CS and EE earnings data"
+      },
+      "publicPolicy": {
+        "strength": 3,
+        "notes": ""
+      },
+      "nonprofitLeadership": {
+        "strength": 4,
+        "notes": ""
+      },
+      "energy": {
+        "strength": 1,
+        "notes": ""
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 2,
+        "notes": ""
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "Below national average, though Bay Area cost of living skews this",
+      "socialMobilityIndex": 7,
+      "firstGenerationSupport": 7,
+      "wealthCreationPotential": 7,
+      "familyBusinessPipelineStrength": 3
+    },
+    "futureResilience": {
+      "aiResistance": 5,
+      "automationResistance": 5,
+      "adaptabilityScore": 6,
+      "interdisciplinaryStrength": 5,
+      "futureReadiness": 7,
+      "entrepreneurialFlexibility": 5,
+      "lifelongLearningCulture": 6,
+      "innovationCapacity": 6
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 7,
+      "communityLeadershipPotential": 6,
+      "geographicMobility": 5,
+      "workLifeBalancePotential": 5,
+      "purposeAlignment": 6,
+      "familyFormationSupport": 4,
+      "personalDevelopmentPotential": 6,
+      "careerOptionality": 6,
+      "longTermLifeSatisfaction": 6
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 2,
+      "networkMoat": 4,
+      "geographicMoat": 8,
+      "industryMoat": 6,
+      "alumniMoat": 4,
+      "brandDurability": 5,
+      "overallMoatScore": 5
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "Steward",
+      "leaverScore": 3,
+      "returnerScore": 4,
+      "stewardScore": 7,
+      "navigatorScore": 4,
+      "geographicLockIn": "High -- strongly Bay Area-concentrated alumni base",
+      "alumniDispersalPattern": "Heavily concentrated within the Bay Area"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 4,
+        "type": "Campus Hillel presence"
+      },
+      "estimatedJewishUndergraduates": 300,
+      "jewishStudentPercentage": "Small-to-moderate",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate, typical of a large urban CSU campus",
+      "notes": "General knowledge of a Hillel presence at SF State; specific current program details not independently verified this session."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "SF State Honors College",
+      "strength": 5,
+      "notes": "Real honors program within the larger university."
+    },
+    "primaryMegaRegionSlug": "bayarea",
+    "regionalRole": "Large, accessible public-university talent pipeline directly embedded in the Bay Area tech and healthcare economy",
+    "secondaryMegaRegionExposure": []
+  },
+  "Illinois Wesleyan University": {
+    "institutionNarrative": {
+      "name": "Illinois Wesleyan University",
+      "location": "Bloomington, Illinois",
+      "region": "Midwest",
+      "archetype": "The Small Liberal Arts College with a Real Nursing and Arts Core",
+      "oneSentenceSummary": "Illinois Wesleyan University is a small private liberal arts college where nursing is the single largest program on record, a genuinely strong theatre program sits alongside it at real scale, and a compact business/finance track quietly produces the school's highest earners.",
+      "pipeline": "Around 1,700 undergraduates. Nursing is the largest single program (46 students, $84,527 median earnings) -- a real, well-regarded School of Nursing, not an incidental offering. Theatre is unusually large for a school this size (33 students), consistent with Illinois Wesleyan's genuine reputation in theatre and music. Finance ($101,609) and Accounting ($97,022), though small programs, are the school's strongest earners.",
+      "hiddenPathway": "The School of Nursing and a genuinely respected School of Music/theatre program give Illinois Wesleyan two real, distinct strengths -- health sciences and performing arts -- that don't fit the generic 'small Midwest liberal arts college' expectation many families default to.",
+      "institutionalSecret": "The single largest major at Illinois Wesleyan isn't a traditional liberal arts subject at all -- it's nursing, reflecting a real, substantial health-sciences track most families researching a small liberal arts college wouldn't expect to be the campus's biggest program.",
+      "theRoom": "Small, close-knit, genuinely balancing serious pre-professional tracks (nursing, business) with real arts strength (theatre, music) -- not purely a traditional-humanities liberal arts environment.",
+      "lifestyle": "Small college town (Bloomington-Normal, Illinois), distinctive May Term (a dedicated short experiential-learning term between spring and fall semesters).",
+      "bestFitPersonality": "Moderate-to-high Openness and Conscientiousness, comfortable in a small, close community that blends professional and artistic tracks.",
+      "faithTradition": "Historically United Methodist-affiliated, largely secular in current practice",
+      "geographicInfluenceRadius": "Primarily Midwest, especially Illinois",
+      "economicOutcome": "Strong, concentrated outcomes in nursing and finance/accounting specifically; theatre reflects a genuine arts-career track rather than a weak outcome.",
+      "gradCities": [
+        "Chicago",
+        "Bloomington-Normal, IL",
+        "St. Louis"
+      ],
+      "comparableInstitutions": [
+        "Knox College",
+        "Millikin University",
+        "Illinois College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": {},
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "",
+        "estimatedSavingsRange": "",
+        "transferNotes": ""
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Illinois Wesleyan (\"IWU\")",
+      "archetype": "The Small Liberal Arts College with a Real Nursing and Arts Core",
+      "institutionalPersonality": "Close-knit, dual-strength (health sciences + arts), practically oriented",
+      "cultureKeywords": [
+        "nursing",
+        "theatre and music",
+        "May Term",
+        "small liberal arts",
+        "Midwest"
+      ],
+      "missionOrientation": "Small private liberal arts university with genuine strength in nursing and performing arts",
+      "faithTradition": "Historically Methodist",
+      "educationalPhilosophy": "Liberal arts core combined with real professional (nursing, business) and artistic (theatre, music) tracks",
+      "competitiveness": "Moderate",
+      "politicalCulture": "Moderate, typical of Midwest small private colleges",
+      "studentAutonomy": "High -- small classes, close faculty relationships",
+      "prestigeOrientation": "Low-to-moderate -- real regional reputation, especially in nursing and performing arts",
+      "socialClimate": "Small, close-knit",
+      "leadershipStyle": "Collaborative, small-community"
+    },
+    "comparativePositioning": {
+      "versusTexasTech": "",
+      "versusTexasAM": "",
+      "versusIowaState": "",
+      "versusKansasState": ""
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very small",
+      "undergraduateEnrollment": 1700,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 1700,
+      "campusType": "Small college town",
+      "residentialIntensity": 8,
+      "communityFeel": 9,
+      "studentFacultyRatio": "11:1",
+      "classSizeExperience": "Small classes throughout",
+      "scaleAdvantages": [
+        "Real nursing program at meaningful scale for the school's size",
+        "Genuine performing arts strength",
+        "Close faculty relationships"
+      ],
+      "scaleDisadvantages": [
+        "Limited overall program breadth",
+        "Small applicant/peer pool",
+        "Less name recognition outside the Midwest"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 6,
+        "conscientiousness": 7,
+        "extraversion": 5,
+        "agreeableness": 6,
+        "neuroticism": 5
+      },
+      "hollandCodes": [
+        "Social",
+        "Artistic",
+        "Conventional"
+      ],
+      "learningStyle": [
+        "Small-class",
+        "Experiential (May Term)",
+        "Practically-connected"
+      ],
+      "socialEnvironment": [
+        "Small",
+        "Close-knit",
+        "Dual professional/arts identity"
+      ],
+      "idealStudentTraits": [
+        "Interested in nursing, finance/accounting, or theatre/music specifically",
+        "Wants a small, close community",
+        "Values the distinctive May Term experiential model"
+      ],
+      "thrivesIf": [
+        "Wants a genuine, real-scale nursing program within a small liberal arts setting",
+        "Is drawn to theatre or music and wants a program taken seriously at real institutional scale, not treated as a minor offering",
+        "Wants a compact, strong finance/accounting track without needing a large business school",
+        "Values a small, tight-knit Midwest college community"
+      ],
+      "strugglesIf": [
+        "Wants broad program breadth or a large university environment",
+        "Needs strong name recognition outside the Midwest",
+        "Isn't genuinely interested in nursing, business, or performing arts specifically"
+      ],
+      "transferRiskFactors": [
+        "Program too narrow for a student whose interests shift outside nursing/business/arts",
+        "Feeling isolated in a very small community if not finding the right fit socially"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Nursing admission carries real selectivity within an otherwise moderately selective overall admissions environment."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Finance",
+        "Accounting"
+      ],
+      "hiddenCareerPipelines": [
+        "Nursing is the school's largest program by enrollment, not an afterthought -- a real, substantial health-sciences pipeline within a small liberal arts identity"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Regional Illinois healthcare systems and Chicago-area finance/accounting firms recruit directly given consistent real outcomes"
+      ],
+      "overlookedStrengths": [
+        "Theatre program is unusually large for the school's overall size -- a real, not incidental, institutional strength"
+      ],
+      "sleeperIndustries": [
+        "Regional healthcare (nursing) and Chicago-adjacent finance/accounting -- both underdiscussed relative to the school's general small-liberal-arts profile"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 6,
+      "mentorshipDensity": 7,
+      "executiveAccess": 3,
+      "internshipNetwork": 5,
+      "familyBusinessExposure": 3,
+      "relationshipCapitalScore": 6,
+      "alumniLoyaltyScore": 7,
+      "referralCultureStrength": 6,
+      "donorNetworkStrength": 4,
+      "boardMemberDensity": 3
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Healthcare",
+        "Finance/insurance (Bloomington-Normal is a major insurance hub -- State Farm headquarters)",
+        "Education"
+      ],
+      "regionalEconomicDrivers": [
+        "State Farm Insurance headquarters",
+        "Regional healthcare systems"
+      ],
+      "topEmployers": [
+        "State Farm Insurance",
+        "Regional hospital systems",
+        "Illinois State University (adjacent)"
+      ],
+      "emergingIndustries": [],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 1,
+      "corporateHeadquartersDensity": 4,
+      "healthcareHubStrength": 5,
+      "innovationIndex": 3
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Central Illinois",
+      "secondaryMarkets": [
+        "Chicago",
+        "St. Louis"
+      ],
+      "alumniStrongholds": [
+        "Bloomington-Normal, IL",
+        "Chicago"
+      ],
+      "relocationPatterns": [
+        "Largely stays within Illinois, with a real Chicago-area concentration"
+      ],
+      "regionalInfluenceScore": 5,
+      "nationalReachScore": 2,
+      "internationalReachScore": 1
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 3,
+      "studentOrganizationStrength": 5,
+      "leadershipDevelopment": 5,
+      "crossDisciplinaryInteraction": 6,
+      "civicEngagement": 5
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 0,
+        "notes": ""
+      },
+      "healthWellness": {
+        "strength": 7,
+        "notes": "Real, verified strength -- largest program on record"
+      },
+      "agriculture": {
+        "strength": 1,
+        "notes": ""
+      },
+      "nutraceuticals": {
+        "strength": 0,
+        "notes": ""
+      },
+      "consumerProducts": {
+        "strength": 1,
+        "notes": ""
+      },
+      "outdoorIndustry": {
+        "strength": 0,
+        "notes": ""
+      },
+      "sportsBusiness": {
+        "strength": 1,
+        "notes": ""
+      },
+      "entertainmentMedia": {
+        "strength": 5,
+        "notes": "Real strength via unusually large theatre program"
+      },
+      "ventureCapital": {
+        "strength": 0,
+        "notes": ""
+      },
+      "privateEquity": {
+        "strength": 1,
+        "notes": ""
+      },
+      "investmentBanking": {
+        "strength": 3,
+        "notes": "Finance is the school's top earner"
+      },
+      "consulting": {
+        "strength": 2,
+        "notes": ""
+      },
+      "medicine": {
+        "strength": 3,
+        "notes": ""
+      },
+      "healthcareAdministration": {
+        "strength": 3,
+        "notes": ""
+      },
+      "defense": {
+        "strength": 0,
+        "notes": ""
+      },
+      "realEstate": {
+        "strength": 1,
+        "notes": ""
+      },
+      "luxuryBrands": {
+        "strength": 0,
+        "notes": ""
+      },
+      "entrepreneurship": {
+        "strength": 2,
+        "notes": ""
+      },
+      "technology": {
+        "strength": 1,
+        "notes": ""
+      },
+      "publicPolicy": {
+        "strength": 2,
+        "notes": ""
+      },
+      "nonprofitLeadership": {
+        "strength": 3,
+        "notes": ""
+      },
+      "energy": {
+        "strength": 0,
+        "notes": ""
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 0,
+        "notes": ""
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "Above national average",
+      "socialMobilityIndex": 4,
+      "firstGenerationSupport": 4,
+      "wealthCreationPotential": 5,
+      "familyBusinessPipelineStrength": 3
+    },
+    "futureResilience": {
+      "aiResistance": 6,
+      "automationResistance": 6,
+      "adaptabilityScore": 5,
+      "interdisciplinaryStrength": 5,
+      "futureReadiness": 5,
+      "entrepreneurialFlexibility": 4,
+      "lifelongLearningCulture": 6,
+      "innovationCapacity": 4
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 5,
+      "communityLeadershipPotential": 6,
+      "geographicMobility": 4,
+      "workLifeBalancePotential": 6,
+      "purposeAlignment": 6,
+      "familyFormationSupport": 6,
+      "personalDevelopmentPotential": 7,
+      "careerOptionality": 4,
+      "longTermLifeSatisfaction": 6
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 3,
+      "networkMoat": 4,
+      "geographicMoat": 4,
+      "industryMoat": 4,
+      "alumniMoat": 5,
+      "brandDurability": 5,
+      "overallMoatScore": 4
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "Steward",
+      "leaverScore": 3,
+      "returnerScore": 5,
+      "stewardScore": 6,
+      "navigatorScore": 4,
+      "geographicLockIn": "Moderate -- Illinois-concentrated with Chicago mobility",
+      "alumniDispersalPattern": "Concentrated in Central Illinois and Chicago"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": 0,
+        "type": ""
+      },
+      "estimatedJewishUndergraduates": 30,
+      "jewishStudentPercentage": "Small",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Minimal",
+      "notes": "No dedicated Hillel infrastructure identified; small Jewish population likely given size and location."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "No distinct honors college identified; small overall class sizes reduce the need for a separate honors track."
+    },
+    "primaryMegaRegionSlug": "midwest",
+    "regionalRole": "Regional nursing and performing-arts pipeline for Central Illinois",
+    "secondaryMegaRegionExposure": []
+  },
+  "University of North Texas": {
+    "institutionNarrative": {
+      "name": "University of North Texas",
+      "location": "Denton, Texas",
+      "region": "Southwest / Texas",
+      "archetype": "The Comprehensive Research University with a World-Class Music School Inside It",
+      "oneSentenceSummary": "University of North Texas is a large, comprehensive Texas research university whose real outcomes data shows genuine strength in computer science and engineering -- while its College of Music, nationally famous for jazz studies, sits alongside them as one of the school's largest programs by enrollment.",
+      "pipeline": "Around 40,000+ students, one of the largest universities in Texas. Computer and Information Sciences is both enormous (371 students) and among the highest-earning programs at the school ($104,024); Computer Engineering posts the single highest earnings figure ($109,151). Psychology is the largest program overall (616 students). Music (236 students) is genuinely large -- reflecting UNT's real, nationally significant College of Music, especially its famous jazz studies program.",
+      "hiddenPathway": "UNT's College of Music, and specifically its jazz studies program (home to the internationally recognized One O'Clock Lab Band), gives music students access to a genuinely elite program most families researching UNT primarily as a large, accessible Texas public university wouldn't expect.",
+      "institutionalSecret": "This isn't primarily a tech school by reputation, but Computer Engineering and Computer Science graduates post some of the strongest real earnings at the university -- a genuine, large-scale technical pipeline operating alongside the university's more visible music and liberal arts identity.",
+      "theRoom": "Large, comprehensive, genuinely diverse in program strength -- serious technical/business students alongside a nationally elite music conservatory-caliber program, within one large public research university.",
+      "lifestyle": "Denton, Texas -- a real college town north of Dallas-Fort Worth, shared with Texas Woman's University, with easy DFW metro access.",
+      "bestFitPersonality": "Moderate-to-high Openness, comfortable in a large public research university, drawn to either strong technical programs or serious arts training.",
+      "faithTradition": "",
+      "geographicInfluenceRadius": "Statewide Texas, with the music program carrying real national reach",
+      "economicOutcome": "Strong outcomes concentrated in computer science/engineering and business specifically; music program strength is real but reflects an arts career path, not direct high earnings.",
+      "gradCities": [
+        "Dallas",
+        "Fort Worth",
+        "Denton, TX",
+        "Austin"
+      ],
+      "comparableInstitutions": [
+        "Texas State University",
+        "University of Houston",
+        "Texas Tech University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": true,
+        "ccFeederNames": {
+          "Dallas College": true,
+          "Tarrant County College": true
+        },
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "",
+        "estimatedSavingsRange": "",
+        "transferNotes": "Strong DFW-area community college transfer pipeline, consistent with UNT's role as a major regional public research university."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UNT",
+      "archetype": "The Comprehensive Research University with a World-Class Music School Inside It",
+      "institutionalPersonality": "Large, comprehensive, genuinely dual-strength (technical + arts)",
+      "cultureKeywords": [
+        "College of Music",
+        "jazz studies",
+        "DFW-adjacent",
+        "comprehensive research university"
+      ],
+      "missionOrientation": "Large Texas public research university with genuine strength across technical and arts programs",
+      "faithTradition": "",
+      "educationalPhilosophy": "Broad comprehensive research university curriculum with standout specific programs",
+      "competitiveness": "Moderate -- accessible general admissions, real selectivity within specific programs (especially music)",
+      "politicalCulture": "Mixed, typical of a large Texas public university",
+      "studentAutonomy": "High -- large research university environment",
+      "prestigeOrientation": "Moderate -- real national prestige specifically in music, broader university reputation still growing (recently attained R1 research designation)",
+      "socialClimate": "Large, diverse, college-town-embedded",
+      "leadershipStyle": "Decentralized, program-specific strength"
+    },
+    "comparativePositioning": {
+      "versusTexasTech": "Both large Texas public research universities; UNT's specific strength in music and computer science contrasts with Texas Tech's broader engineering/agriculture identity",
+      "versusTexasAM": "",
+      "versusIowaState": "",
+      "versusKansasState": ""
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very large",
+      "undergraduateEnrollment": 33000,
+      "graduateEnrollment": 8000,
+      "totalEnrollment": 41000,
+      "campusType": "College town, DFW-metro-adjacent",
+      "residentialIntensity": 4,
+      "communityFeel": 4,
+      "studentFacultyRatio": "19:1",
+      "classSizeExperience": "Larger classes typical of a large public research university, smaller within the College of Music",
+      "scaleAdvantages": [
+        "Broad program breadth",
+        "Genuine national-caliber music program",
+        "Strong DFW metro industry proximity",
+        "Recently attained R1 research designation"
+      ],
+      "scaleDisadvantages": [
+        "Less individual attention outside specific strong programs",
+        "Large campus can dilute community feel"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 6,
+        "conscientiousness": 6,
+        "extraversion": 6,
+        "agreeableness": 5,
+        "neuroticism": 5
+      },
+      "hollandCodes": [
+        "Artistic",
+        "Investigative",
+        "Enterprising"
+      ],
+      "learningStyle": [
+        "Varies widely by program -- conservatory-intensive in music, large-lecture in general education"
+      ],
+      "socialEnvironment": [
+        "Large",
+        "Diverse",
+        "College-town"
+      ],
+      "idealStudentTraits": [
+        "Wants either a genuinely elite music program or a strong computer science/engineering track",
+        "Comfortable in a large public research university"
+      ],
+      "thrivesIf": [
+        "Wants a nationally recognized music program (especially jazz) within a large, comprehensive university rather than a standalone conservatory",
+        "Wants a strong, large-scale computer science or engineering program with real DFW-metro industry proximity",
+        "Is comfortable navigating a large public research university to find the right specific program fit",
+        "Wants Texas in-state affordability with real program depth"
+      ],
+      "strugglesIf": [
+        "Needs small classes and close faculty attention outside a specific strong program like music",
+        "Wants a single, unified small-college identity rather than a large multi-program university",
+        "Isn't drawn to either of the school's two clearest strengths (music, tech/engineering)"
+      ],
+      "transferRiskFactors": [
+        "Getting lost in a large general-education environment outside a strong specific program",
+        "Underestimating how program-dependent the real UNT experience is"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate-to-high for music specifically",
+      "notes": "The College of Music, especially jazz studies, carries real national-level selectivity and audition requirements distinct from the university's broader accessible admissions."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Computer Engineering",
+        "Computer and Information Sciences"
+      ],
+      "hiddenCareerPipelines": [
+        "Computer Engineering posts the single highest earnings at UNT ($109,151), a real, less-publicized strength relative to the school's music-program fame",
+        "Computer and Information Sciences is both enormous (371 students) and among the highest-earning programs -- a genuine large-scale tech pipeline"
+      ],
+      "nicheRecruitingAdvantages": [
+        "DFW metro tech and business employers recruit directly given real program scale and outcomes"
+      ],
+      "overlookedStrengths": [
+        "Music program's real national reputation (jazz studies, One O'Clock Lab Band) operates within a large public university most families don't associate with conservatory-caliber training"
+      ],
+      "sleeperIndustries": [
+        "DFW-area technology and business -- genuinely strong, underdiscussed relative to the school's music-program name recognition"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 5,
+      "mentorshipDensity": 5,
+      "executiveAccess": 4,
+      "internshipNetwork": 6,
+      "familyBusinessExposure": 3,
+      "relationshipCapitalScore": 5,
+      "alumniLoyaltyScore": 6,
+      "referralCultureStrength": 5,
+      "donorNetworkStrength": 4,
+      "boardMemberDensity": 3
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Technology",
+        "Finance",
+        "Aviation",
+        "Music/entertainment"
+      ],
+      "regionalEconomicDrivers": [
+        "DFW metro technology and corporate sector",
+        "DFW airport-adjacent aviation industry"
+      ],
+      "topEmployers": [
+        "DFW-area technology companies",
+        "Regional financial services firms",
+        "American Airlines (DFW-based)"
+      ],
+      "emergingIndustries": [
+        "DFW tech sector growth",
+        "Applied AI/software"
+      ],
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 3,
+      "corporateHeadquartersDensity": 5,
+      "healthcareHubStrength": 3,
+      "innovationIndex": 5
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Dallas-Fort Worth metroplex",
+      "secondaryMarkets": [
+        "Austin",
+        "Houston"
+      ],
+      "alumniStrongholds": [
+        "Dallas",
+        "Fort Worth",
+        "Denton, TX"
+      ],
+      "relocationPatterns": [
+        "Strongly Texas-concentrated, especially DFW; music alumni disperse more nationally/internationally"
+      ],
+      "regionalInfluenceScore": 7,
+      "nationalReachScore": 4,
+      "internationalReachScore": 3
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 3,
+      "studentOrganizationStrength": 6,
+      "leadershipDevelopment": 5,
+      "crossDisciplinaryInteraction": 5,
+      "civicEngagement": 5
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 0,
+        "notes": ""
+      },
+      "healthWellness": {
+        "strength": 2,
+        "notes": ""
+      },
+      "agriculture": {
+        "strength": 0,
+        "notes": ""
+      },
+      "nutraceuticals": {
+        "strength": 0,
+        "notes": ""
+      },
+      "consumerProducts": {
+        "strength": 2,
+        "notes": ""
+      },
+      "outdoorIndustry": {
+        "strength": 1,
+        "notes": ""
+      },
+      "sportsBusiness": {
+        "strength": 2,
+        "notes": ""
+      },
+      "entertainmentMedia": {
+        "strength": 6,
+        "notes": "Real, nationally significant strength via College of Music/jazz studies"
+      },
+      "ventureCapital": {
+        "strength": 2,
+        "notes": ""
+      },
+      "privateEquity": {
+        "strength": 2,
+        "notes": ""
+      },
+      "investmentBanking": {
+        "strength": 3,
+        "notes": ""
+      },
+      "consulting": {
+        "strength": 3,
+        "notes": ""
+      },
+      "medicine": {
+        "strength": 1,
+        "notes": ""
+      },
+      "healthcareAdministration": {
+        "strength": 2,
+        "notes": ""
+      },
+      "defense": {
+        "strength": 2,
+        "notes": ""
+      },
+      "realEstate": {
+        "strength": 2,
+        "notes": ""
+      },
+      "luxuryBrands": {
+        "strength": 0,
+        "notes": ""
+      },
+      "entrepreneurship": {
+        "strength": 3,
+        "notes": ""
+      },
+      "technology": {
+        "strength": 8,
+        "notes": "Real strength -- Computer Engineering and CS earnings confirm this directly"
+      },
+      "publicPolicy": {
+        "strength": 2,
+        "notes": ""
+      },
+      "nonprofitLeadership": {
+        "strength": 2,
+        "notes": ""
+      },
+      "energy": {
+        "strength": 2,
+        "notes": "Texas-adjacent, though not a specific confirmed program strength"
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 0,
+        "notes": ""
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "Near national average",
+      "socialMobilityIndex": 6,
+      "firstGenerationSupport": 6,
+      "wealthCreationPotential": 6,
+      "familyBusinessPipelineStrength": 3
+    },
+    "futureResilience": {
+      "aiResistance": 6,
+      "automationResistance": 5,
+      "adaptabilityScore": 6,
+      "interdisciplinaryStrength": 6,
+      "futureReadiness": 7,
+      "entrepreneurialFlexibility": 5,
+      "lifelongLearningCulture": 5,
+      "innovationCapacity": 6
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 6,
+      "communityLeadershipPotential": 5,
+      "geographicMobility": 5,
+      "workLifeBalancePotential": 6,
+      "purposeAlignment": 6,
+      "familyFormationSupport": 5,
+      "personalDevelopmentPotential": 6,
+      "careerOptionality": 6,
+      "longTermLifeSatisfaction": 6
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 4,
+      "networkMoat": 4,
+      "geographicMoat": 6,
+      "industryMoat": 6,
+      "alumniMoat": 4,
+      "brandDurability": 5,
+      "overallMoatScore": 5
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "Steward",
+      "leaverScore": 4,
+      "returnerScore": 4,
+      "stewardScore": 6,
+      "navigatorScore": 5,
+      "geographicLockIn": "Moderate -- strongly Texas-concentrated, though music alumni disperse more widely",
+      "alumniDispersalPattern": "Concentrated in DFW, with a national/international outflow specifically among music graduates"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 4,
+        "type": "Campus Hillel presence"
+      },
+      "estimatedJewishUndergraduates": 400,
+      "jewishStudentPercentage": "Small-to-moderate",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Moderate, typical of a large Texas public research university",
+      "notes": "General knowledge of a Hillel presence at UNT; specific current program details not independently verified this session."
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "UNT Honors College",
+      "strength": 6,
+      "notes": "Real honors college offering a smaller-cohort experience within the larger university."
+    },
+    "primaryMegaRegionSlug": "texastriangle",
+    "regionalRole": "Major DFW-metro comprehensive research university with a nationally significant music program",
+    "secondaryMegaRegionExposure": []
   }
 };
 
