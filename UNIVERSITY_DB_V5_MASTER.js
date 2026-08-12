@@ -4939,6 +4939,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only Texas clears the 1% threshold (next highest, Illinois, is 0.5%). TX share (96.6%) closely matches this record's existing homeStateEnrollmentPct (98%, 2024-25 CDS first-time first-year cohort)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Priority (Scholarship) Deadline",
+      "rdDeadline": "June 2",
+      "essayPromptTopic": null,
+      "notes": "UH's own admissions page returned dates for a prior cycle in this pass (Nov 1, 2024 priority / June 2, 2025 regular, both for Fall 2025 entry) rather than the current cycle -- recorded here as the best available sourced data, with the month/day pattern (Nov 1 priority-scholarship, early June regular) flagged as likely stable year-over-year but the exact current-cycle dates unconfirmed. Recommend a re-check closer to the actual deadline. Verified against uh.edu/undergraduate-admissions/apply/freshman, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "University of Houston",
       "location": "Houston, Texas",
@@ -5326,6 +5334,11 @@ const UNIVERSITY_DB_V5 = {
         "strength": 82,
         "notes": "Houston's large nonprofit sector and the university's civic engagement programs create meaningful pathways into philanthropic and community leadership."
       }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 48,
+        "notes": "Real, moderate evidence: UH operates its own College of Pharmacy (PharmD and graduate programs), and Houston is home to the Texas Medical Center, the world's largest medical complex -- though TMC's scale is overwhelmingly clinical/hospital care and biomedical research rather than pharmaceutical manufacturing specifically, which caps this below the top range. No documented large-scale pharma manufacturing facility tied directly to UH was found in this pass."
+      }
     },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -5433,6 +5446,14 @@ const UNIVERSITY_DB_V5 = {
       "dataSource": "University of Texas at Dallas Common Data Set 2024-2025, Section F1 (primary source, direct PDF via dox.utdallas.edu/report44675).",
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "December 1",
+      "earliestDeadlineLabel": "Priority Deadline",
+      "rdDeadline": "May 1",
+      "essayPromptTopic": null,
+      "notes": "Priority deadline (Dec 1) receives early review for admission and scholarship purposes; regular/final deadline is May 1, with a $75 late fee for applications submitted after that date. Verified against catalog.utdallas.edu/2026/undergraduate/admission/application-fees-and-deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionNarrative": {
       "name": "The University of Texas at Dallas",
@@ -10347,11 +10368,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~44%",
         "estimatedSavingsRange": "$10,000-$25,000",
         "transferNotes": "Auburn maintains transfer agreements with Alabama's community college system."
-      },
-      "institutionIdentity": {
-        "commonName": "Auburn University",
-        "archetype": "Large Public SEC Flagship with Elite Technical Niches"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Auburn University",
+      "archetype": "Large Public SEC Flagship with Elite Technical Niches",
       "institutionalPersonality": "spirited, traditional, technically capable, communal",
       "cultureKeywords": [
         "SEC Football",
@@ -10361,6 +10382,7 @@ const UNIVERSITY_DB_V5 = {
         "Toomer's Corner"
       ],
       "missionOrientation": "Delivering strong technical and veterinary education inside a deeply traditional SEC flagship community.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Rigorous technical and veterinary education reinforced by deep aerospace/defense industry ties.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly conservative, tradition-focused.",
@@ -10704,11 +10726,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~43%",
         "estimatedSavingsRange": "$10,000-$26,000",
         "transferNotes": "Clemson maintains transfer agreements with South Carolina's technical college system."
-      },
-      "institutionIdentity": {
-        "commonName": "Clemson University",
-        "archetype": "Large Public ACC Flagship, Automotive Engineering Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Clemson University",
+      "archetype": "Large Public ACC Flagship, Automotive Engineering Anchor",
       "institutionalPersonality": "spirited, manufacturing-savvy, traditional, technically capable",
       "cultureKeywords": [
         "CU-ICAR",
@@ -10718,6 +10740,7 @@ const UNIVERSITY_DB_V5 = {
         "Manufacturing"
       ],
       "missionOrientation": "Delivering strong automotive/manufacturing engineering education inside a spirited ACC flagship community.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Applied engineering education reinforced by direct automotive industry co-location.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate to conservative, tradition-focused.",
@@ -11404,9 +11427,20 @@ const UNIVERSITY_DB_V5 = {
       "brandDurability": 82,
       "overallMoatScore": 80
     },
-    "hillel_strength": "tier_2",
-    "jewish_enrollment": "~10-12% Jewish undergraduate enrollment",
-    "hillel_note": "Vanderbilt maintains an active Jewish community with a well-established Hillel and consistent programming, supplemented by Nashville's broader Jewish community.",
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 66,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "~10-12%",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Solid",
+      "notes": "Migrated from legacy hillel_strength/jewish_enrollment/hillel_note fields during v1.1.0 reconciliation, not independently re-verified against a live source in this pass. Original note: \"Vanderbilt maintains an active Jewish community with a well-established Hillel and consistent programming, supplemented by Nashville's broader Jewish community.\""
+    },
     "trajectoryProfile": {
       "dominantTrajectory": "STEWARD",
       "leaverScore": 44,
@@ -12748,11 +12782,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~50%",
         "estimatedSavingsRange": "$14,000-$34,000",
         "transferNotes": "Syracuse maintains transfer agreements with Central New York community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "Syracuse University",
-        "archetype": "Private Media-First University, Newhouse Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Syracuse University",
+      "archetype": "Private Media-First University, Newhouse Anchor",
       "institutionalPersonality": "media-driven, resilient, tribal, spirited",
       "cultureKeywords": [
         "Newhouse",
@@ -12762,6 +12796,7 @@ const UNIVERSITY_DB_V5 = {
         "Journalism"
       ],
       "missionOrientation": "Producing the most professionally connected media and communications graduates in the country.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Practical, industry-embedded media education reinforced by an unusually active alumni network.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly progressive, media-engaged.",
@@ -13105,11 +13140,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~19%",
         "estimatedSavingsRange": "$14,000-$36,000",
         "transferNotes": "Miami maintains strong articulation agreements with Miami Dade College."
-      },
-      "institutionIdentity": {
-        "commonName": "University of Miami",
-        "archetype": "Private Global Business University, Latin America Gateway"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Miami",
+      "archetype": "Private Global Business University, Latin America Gateway",
       "institutionalPersonality": "international, glamorous, business-ambitious, cosmopolitan",
       "cultureKeywords": [
         "Latin America Gateway",
@@ -13119,6 +13154,7 @@ const UNIVERSITY_DB_V5 = {
         "Coral Gables"
       ],
       "missionOrientation": "Delivering elite international business education at the crossroads of North and South America.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Business education reinforced by direct Latin American trade and finance relationships.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, internationally minded.",
@@ -13836,9 +13872,20 @@ const UNIVERSITY_DB_V5 = {
       "brandDurability": 100,
       "overallMoatScore": 96
     },
-    "hillel_strength": "tier_2",
-    "jewish_enrollment": "~12-15% Jewish undergraduate enrollment",
-    "hillel_note": "Williams maintains an active Jewish community relative to its small size, with a dedicated Jewish Religious Center and consistent Hillel programming. Given the school's remote Berkshires location, the Jewish community functions as a close-knit, highly engaged group rather than a large dispersed population — students who want an intimate, high-trust Jewish community will find it here, though the surrounding region offers minimal off-campus Jewish infrastructure.",
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 64,
+        "type": "Campus Hillel with dedicated Jewish Religious Center"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "~12-15%",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Solid",
+      "notes": "Migrated from legacy hillel_strength/jewish_enrollment/hillel_note fields during v1.1.0 reconciliation, not independently re-verified against a live source in this pass. Original note: \"Williams maintains an active Jewish community relative to its small size, with a dedicated Jewish Religious Center and consistent Hillel programming. Given the school's remote Berkshires location, the Jewish community functions as a close-knit, highly engaged group rather than a large one.\""
+    },
     "trajectoryProfile": {
       "dominantTrajectory": "LEAVE",
       "leaverScore": 96,
@@ -16281,11 +16328,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~72%",
         "estimatedSavingsRange": "$14,000-$32,000",
         "transferNotes": "Elon maintains transfer agreements with North Carolina community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "Elon University",
-        "archetype": "Private University, Southern Campus with National Media Pipeline"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Elon University",
+      "archetype": "Private University, Southern Campus with National Media Pipeline",
       "institutionalPersonality": "warm, polished, media-ambitious, experientially-driven",
       "cultureKeywords": [
         "Elon in LA",
@@ -16295,6 +16342,7 @@ const UNIVERSITY_DB_V5 = {
         "Southern Charm"
       ],
       "missionOrientation": "Delivering a genuinely structured pipeline into media and entertainment careers via built-in experiential learning.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Every student completes real-world experiential learning as a graduation requirement, not an optional extra.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, career-pragmatic.",
@@ -17057,9 +17105,20 @@ const UNIVERSITY_DB_V5 = {
       "brandDurability": 54,
       "overallMoatScore": 53
     },
-    "hillel_strength": "tier_3",
-    "jewish_enrollment": "Small Jewish population, no dedicated Hillel chapter",
-    "hillel_note": "Drake has a small Jewish student population without a dedicated on-campus Hillel chapter. Students seeking active Jewish community life typically connect with the established Des Moines Jewish community, which maintains a synagogue and community organizations within the metro area.",
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": null,
+        "type": "No dedicated Hillel chapter; small Jewish student population; nearest established Jewish community resources are in the Des Moines metro area."
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Limited -- small Jewish student population with no dedicated on-campus Hillel chapter",
+      "notes": "Migrated from legacy hillel_strength/jewish_enrollment/hillel_note fields during v1.1.0 reconciliation, not independently re-verified against a live source in this pass. Original note: \"Drake has a small Jewish student population without a dedicated on-campus Hillel chapter. Students seeking active Jewish community life typically connect with the established Des Moines Jewish community, which maintains a synagogue and community organizations within the metro area.\""
+    },
     "trajectoryProfile": {
       "dominantTrajectory": "STEWARD",
       "leaverScore": 34,
@@ -17582,11 +17641,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~45%",
         "estimatedSavingsRange": "$14,000-$32,000",
         "transferNotes": "Baylor maintains transfer agreements with central Texas community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "Baylor University",
-        "archetype": "Private Baptist University, Texas Triangle Business and Ministry Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Baylor University",
+      "archetype": "Private Baptist University, Texas Triangle Business and Ministry Anchor",
       "institutionalPersonality": "faith-driven, warm, community-oriented, business-ambitious",
       "cultureKeywords": [
         "Hankamer Business",
@@ -17596,6 +17655,7 @@ const UNIVERSITY_DB_V5 = {
         "Energy/Legal"
       ],
       "missionOrientation": "Delivering values-driven business and religious leadership education across Texas's core economic triangle.",
+      "faithTradition": "Baptist (Christian, values-driven campus culture)",
       "educationalPhilosophy": "Faith-integrated education reinforced by real Texas business, energy, and legal industry ties.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly conservative, faith-informed.",
@@ -18279,9 +18339,20 @@ const UNIVERSITY_DB_V5 = {
       "brandDurability": 68,
       "overallMoatScore": 72
     },
-    "hillel_strength": "tier_3",
-    "jewish_enrollment": "Small Jewish population, active Hillel presence",
-    "hillel_note": "SMU maintains a small but active Jewish student community with Hillel programming, supplemented by Dallas's well-established broader Jewish community nearby.",
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 40,
+        "type": "Small Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Modest",
+      "notes": "Migrated from legacy hillel_strength/jewish_enrollment/hillel_note fields during v1.1.0 reconciliation, not independently re-verified against a live source in this pass. Original note: \"SMU maintains a small but active Jewish student community with Hillel programming, supplemented by Dallas's well-established broader Jewish community nearby.\""
+    },
     "trajectoryProfile": {
       "dominantTrajectory": "STEWARD",
       "leaverScore": 38,
@@ -18368,11 +18439,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~24%",
         "estimatedSavingsRange": "$14,000-$34,000",
         "transferNotes": "Villanova transfer admission is competitive, reflecting overall selectivity."
-      },
-      "institutionIdentity": {
-        "commonName": "Villanova University",
-        "archetype": "Private Catholic University, Business School Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Villanova University",
+      "archetype": "Private Catholic University, Business School Anchor",
       "institutionalPersonality": "polished, spirited, community-oriented, Catholic-formed",
       "cultureKeywords": [
         "March Madness",
@@ -18382,6 +18453,7 @@ const UNIVERSITY_DB_V5 = {
         "Nursing"
       ],
       "missionOrientation": "Delivering elite business, nursing, and engineering education inside a warm Catholic community.",
+      "faithTradition": "Roman Catholic (Augustinian)",
       "educationalPhilosophy": "Rigorous pre-professional education reinforced by Augustinian values and Philadelphia industry proximity.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly moderate, values-informed.",
@@ -19511,9 +19583,20 @@ const UNIVERSITY_DB_V5 = {
       "brandDurability": 82,
       "overallMoatScore": 76
     },
-    "hillel_strength": "tier_2",
-    "jewish_enrollment": "~20-24% Jewish undergraduate enrollment",
-    "hillel_note": "WashU has one of the highest proportions of Jewish undergraduates among elite research universities, with an active Hillel and robust Jewish campus life.",
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 84,
+        "type": "Independent Campus Hillel"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "~20-24%",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Exceptional",
+      "notes": "Migrated from legacy hillel_strength/jewish_enrollment/hillel_note fields during v1.1.0 reconciliation, not independently re-verified against a live source in this pass. Original note: \"WashU has one of the highest proportions of Jewish undergraduates among elite research universities, with an active Hillel and robust Jewish campus life.\""
+    },
     "trajectoryProfile": {
       "dominantTrajectory": "LEAVE",
       "leaverScore": 74,
@@ -19963,11 +20046,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~72%",
         "estimatedSavingsRange": "$14,000-$34,000",
         "transferNotes": "DU maintains transfer agreements with Denver-area community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "University of Denver",
-        "archetype": "Private Mid-Sized University, International Affairs Hidden Gem"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Denver",
+      "archetype": "Private Mid-Sized University, International Affairs Hidden Gem",
       "institutionalPersonality": "outdoorsy, globally curious, intimate",
       "cultureKeywords": [
         "Korbel International Affairs",
@@ -19977,6 +20060,7 @@ const UNIVERSITY_DB_V5 = {
         "Global"
       ],
       "missionOrientation": "Delivering an intimate private-school experience with genuinely elite international affairs depth.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Small-cohort education paired with serious global affairs and business training.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, globally engaged.",
@@ -20304,11 +20388,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~78%",
         "estimatedSavingsRange": "$10,000-$26,000",
         "transferNotes": "Utah maintains strong transfer agreements with Salt Lake Community College."
-      },
-      "institutionIdentity": {
-        "commonName": "University of Utah",
-        "archetype": "Large Public Research Flagship, Silicon Slopes Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Utah",
+      "archetype": "Large Public Research Flagship, Silicon Slopes Anchor",
       "institutionalPersonality": "entrepreneurial, tech-forward, outdoor-obsessed, rapidly rising",
       "cultureKeywords": [
         "Silicon Slopes",
@@ -20319,6 +20403,7 @@ const UNIVERSITY_DB_V5 = {
         "Out-of-State Growth"
       ],
       "missionOrientation": "Delivering elite tech and business education inside one of the fastest-rising innovation economies in the country.",
+      "faithTradition": "None (state institution, though LDS culture influences broader Utah/Provo region)",
       "educationalPhilosophy": "Applied, entrepreneurial education reinforced by direct Silicon Slopes and supplement industry access.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, business-pragmatic.",
@@ -21926,11 +22011,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~85%",
         "estimatedSavingsRange": "$10,000-$26,000",
         "transferNotes": "MSU maintains transfer agreements with Michigan's community college system."
-      },
-      "institutionIdentity": {
-        "commonName": "Michigan State University",
-        "archetype": "Large Public Big Ten Flagship, Packaging Engineering Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Michigan State University",
+      "archetype": "Large Public Big Ten Flagship, Packaging Engineering Anchor",
       "institutionalPersonality": "practical, specialized, Big Ten spirited, underrated",
       "cultureKeywords": [
         "School of Packaging",
@@ -21940,6 +22025,7 @@ const UNIVERSITY_DB_V5 = {
         "Underrated Niche"
       ],
       "missionOrientation": "Delivering a rare, highly specialized packaging engineering credential alongside strong general business education.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Applied, industry-embedded education reinforced by a near-monopoly packaging program and strong supply chain ties.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, practically minded.",
@@ -22648,11 +22734,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~38%",
         "estimatedSavingsRange": "$14,000-$34,000",
         "transferNotes": "AU maintains transfer agreements with DC-area community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "American University",
-        "archetype": "Private University, DC Policy Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "American University",
+      "archetype": "Private University, DC Policy Anchor",
       "institutionalPersonality": "politically engaged, ambitious, globally minded",
       "cultureKeywords": [
         "SIS International Affairs",
@@ -22661,6 +22747,7 @@ const UNIVERSITY_DB_V5 = {
         "Hidden Media Program"
       ],
       "missionOrientation": "Delivering elite international affairs education with constant DC political immersion.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Policy-focused education reinforced by direct DC government proximity.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly progressive, politically engaged.",
@@ -23007,11 +23094,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~78%",
         "estimatedSavingsRange": "$14,000-$34,000",
         "transferNotes": "Belmont maintains transfer agreements with Nashville-area community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "Belmont University",
-        "archetype": "Private Christian University, Music Row Entertainment Business Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Belmont University",
+      "archetype": "Private Christian University, Music Row Entertainment Business Anchor",
       "institutionalPersonality": "creative, values-driven, industry-embedded, welcoming",
       "cultureKeywords": [
         "Music Row",
@@ -23021,6 +23108,7 @@ const UNIVERSITY_DB_V5 = {
         "Nashville"
       ],
       "missionOrientation": "Delivering elite entertainment business education with direct Music Row industry access, open to students beyond just performers.",
+      "faithTradition": "Christian (Church of Christ heritage, welcoming to broader faiths)",
       "educationalPhilosophy": "Industry-embedded education reinforced by real royalty-system and label training from working professionals.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, values-informed but welcoming.",
@@ -23807,11 +23895,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~85%",
         "estimatedSavingsRange": "$10,000-$26,000",
         "transferNotes": "CSU maintains strong transfer agreements with Colorado's community college system."
-      },
-      "institutionIdentity": {
-        "commonName": "Colorado State University",
-        "archetype": "Large Public Land-Grant University, Outdoor Recreation Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Colorado State University",
+      "archetype": "Large Public Land-Grant University, Outdoor Recreation Anchor",
       "institutionalPersonality": "outdoorsy, health-conscious, practically minded, land-grant-serious",
       "cultureKeywords": [
         "Veterinary Medicine",
@@ -23821,6 +23909,7 @@ const UNIVERSITY_DB_V5 = {
         "Outdoors"
       ],
       "missionOrientation": "Delivering elite veterinary and environmental education alongside a genuinely strong hospitality/tourism management pipeline.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Applied, land-grant education reinforced by direct ties to Colorado's outdoor recreation and agricultural economy.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, environmentally engaged.",
@@ -24156,11 +24245,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~45%",
         "estimatedSavingsRange": "$14,000-$36,000",
         "transferNotes": "Fordham maintains transfer agreements with NYC-area community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "Fordham University",
-        "archetype": "Private Jesuit University, NYC Wall Street/Legal Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Fordham University",
+      "archetype": "Private Jesuit University, NYC Wall Street/Legal Anchor",
       "institutionalPersonality": "values-driven, ambitious, Jesuit-formed, NYC-embedded",
       "cultureKeywords": [
         "Jesuit Values",
@@ -24170,6 +24259,7 @@ const UNIVERSITY_DB_V5 = {
         "NYC"
       ],
       "missionOrientation": "Delivering values-driven education with direct pipeline access to NYC's legal and financial core.",
+      "faithTradition": "Roman Catholic (Jesuit)",
       "educationalPhilosophy": "Jesuit-formed education reinforced by direct Wall Street and legal-district proximity.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, values-informed.",
@@ -24512,11 +24602,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~44%",
         "estimatedSavingsRange": "$14,000-$34,000",
         "transferNotes": "GW maintains transfer agreements with DC-area community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "George Washington University",
-        "archetype": "Private University, DC Policy Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "George Washington University",
+      "archetype": "Private University, DC Policy Anchor",
       "institutionalPersonality": "politically engaged, ambitious, internationally minded",
       "cultureKeywords": [
         "Elliott School",
@@ -24526,6 +24616,7 @@ const UNIVERSITY_DB_V5 = {
         "Consulting"
       ],
       "missionOrientation": "Delivering elite international affairs and government education with unmatched DC proximity.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Policy-focused education reinforced by constant DC political immersion.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly progressive, intensely politically engaged.",
@@ -25302,11 +25393,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~85%",
         "estimatedSavingsRange": "$12,000-$28,000",
         "transferNotes": "Marquette maintains transfer agreements with Milwaukee-area technical colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "Marquette University",
-        "archetype": "Private Jesuit University, Milwaukee Corporate Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Marquette University",
+      "archetype": "Private Jesuit University, Milwaukee Corporate Anchor",
       "institutionalPersonality": "values-driven, urban, practical, Jesuit-formed",
       "cultureKeywords": [
         "Jesuit Catholic",
@@ -25316,6 +25407,7 @@ const UNIVERSITY_DB_V5 = {
         "Alumni Reciprocity"
       ],
       "missionOrientation": "Delivering values-driven education with direct pipeline access to Milwaukee's business and legal community.",
+      "faithTradition": "Roman Catholic (Jesuit)",
       "educationalPhilosophy": "Jesuit-formed education reinforced by Milwaukee corporate and manufacturing industry ties.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, values-informed.",
@@ -25658,11 +25750,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~44%",
         "estimatedSavingsRange": "$12,000-$30,000",
         "transferNotes": "Maryland maintains transfer agreements with Maryland community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "University of Maryland",
-        "archetype": "Large Public Flagship, Federal Security Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Maryland",
+      "archetype": "Large Public Flagship, Federal Security Anchor",
       "institutionalPersonality": "career-focused, federal-serious, Big Ten spirited",
       "cultureKeywords": [
         "NSA Pipeline",
@@ -25671,6 +25763,7 @@ const UNIVERSITY_DB_V5 = {
         "Underrated Astronomy"
       ],
       "missionOrientation": "Delivering strong federal, business, and science education directly adjacent to Washington DC.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Applied education reinforced by direct federal agency and business industry proximity.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly progressive, federally engaged.",
@@ -27108,11 +27201,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~53%",
         "estimatedSavingsRange": "$12,000-$32,000",
         "transferNotes": "Purdue maintains strong articulation agreements with Indiana's Ivy Tech system, particularly for engineering transfer students."
-      },
-      "institutionIdentity": {
-        "commonName": "Purdue University",
-        "archetype": "Large Public Engineering-First Flagship"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Purdue University",
+      "archetype": "Large Public Engineering-First Flagship",
       "institutionalPersonality": "technical, humble, rigorous, Midwest-practical",
       "cultureKeywords": [
         "Astronauts",
@@ -27122,6 +27215,7 @@ const UNIVERSITY_DB_V5 = {
         "Boilermaker Pride"
       ],
       "missionOrientation": "Producing elite engineering talent at public-school scale, now central to America's semiconductor reshoring effort.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Rigorous, hands-on engineering education reinforced by deep aerospace and manufacturing industry ties.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, practically minded.",
@@ -27459,11 +27553,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~48%",
         "estimatedSavingsRange": "$14,000-$32,000",
         "transferNotes": "TCU maintains transfer agreements with Fort Worth-area community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "TCU",
-        "archetype": "Private University, Intimate DFW Alternative to SMU"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "TCU",
+      "archetype": "Private University, Intimate DFW Alternative to SMU",
       "institutionalPersonality": "warm, intimate, Fort Worth-proud, Greek-heavy",
       "cultureKeywords": [
         "Nurse Anesthesia",
@@ -27473,6 +27567,7 @@ const UNIVERSITY_DB_V5 = {
         "Greek Life"
       ],
       "missionOrientation": "Delivering strong nursing and business education in a genuinely intimate Texas community.",
+      "faithTradition": "Disciples of Christ (historically affiliated, broadly ecumenical today)",
       "educationalPhilosophy": "Small-cohort education reinforced by real faculty mentorship and DFW industry proximity.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate to conservative, community-oriented.",
@@ -29013,11 +29108,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~16%",
         "estimatedSavingsRange": "$16,000-$36,000",
         "transferNotes": "BC transfer admission is competitive, reflecting overall selectivity."
-      },
-      "institutionIdentity": {
-        "commonName": "Boston College",
-        "archetype": "Private Jesuit University, Boston Finance Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Boston College",
+      "archetype": "Private Jesuit University, Boston Finance Anchor",
       "institutionalPersonality": "polished, values-driven, pre-professional, spirited",
       "cultureKeywords": [
         "Carroll Business",
@@ -29027,6 +29122,7 @@ const UNIVERSITY_DB_V5 = {
         "Pre-Professional"
       ],
       "missionOrientation": "Delivering elite business education with genuine Jesuit values, feeding directly into Boston finance.",
+      "faithTradition": "Roman Catholic (Jesuit)",
       "educationalPhilosophy": "Rigorous business education reinforced by Jesuit formation and Boston financial services proximity.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly moderate, values-informed.",
@@ -34056,6 +34152,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Priority Deadline",
+      "rdDeadline": "August 1",
+      "essayPromptTopic": null,
+      "notes": "Priority deadline (Nov 1) is for early housing/orientation advantages; final fall-admission deadline is August 1. Separate scholarship priority deadline is November 15 (final Feb 1). The source page's own year label read '2024-2025' in this pass, which appears to be a stale artifact on the source page rather than this record's actual cycle -- flagged for a re-check closer to the admissions cycle rather than silently corrected. Verified against admissions.uark.edu/apply/new-freshman.php, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "University of Arkansas",
       "location": "Fayetteville, Arkansas",
@@ -37244,6 +37348,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Early Action / Honors & Scholarship Priority Deadline",
+      "rdDeadline": "May 1",
+      "essayPromptTopic": null,
+      "notes": "Early Action (Nov 15) is also the Honors College and scholarship priority deadline; Regular Decision/final deadline is May 1, with a June 1 cutoff for supporting transcripts/scores. GSU's own page carries a disclaimer that deadlines are subject to change. Verified against admissions.gsu.edu/bachelors-degree/apply/high-school, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Georgia State University",
       "location": "Atlanta, Georgia",
@@ -37693,6 +37805,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2022,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action (Priority)",
+      "rdDeadline": "February 1",
+      "essayPromptTopic": null,
+      "notes": "Early Action/priority applicants (Nov 1) receive decisions by January 10; Regular Decision due February 1, with decisions taking up to eight weeks during peak season (Oct-Mar). Enrollment deposit due May 1. Verified against admissions.temple.edu/apply/first-year-students, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Temple University",
       "location": "Philadelphia, Pennsylvania",
@@ -38028,6 +38148,11 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 52,
         "notes": "Meaningful pathway tied to Philadelphia's civic and public health organizations."
+      }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 62,
+        "notes": "Real, distinctive evidence: Temple's School of Pharmacy offers a dedicated 'Pharmaceutical Manufacturing: Process Development and Analysis' graduate certificate -- a credential specifically named for this industry, not a generic pharmacy program -- alongside a full undergraduate Pharmaceutical Sciences BS. Philadelphia is also a recognized life-sciences/pharma hub region. This is more manufacturing-specific evidence than most schools in this pass."
       }
     },
     "wealthMobility": {
@@ -39023,6 +39148,14 @@ const UNIVERSITY_DB_V5 = {
       "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set. Princeton's own hosted CDS PDF (2022-2023, document/486) was discarded as unreliable: it reported implausible figures (100% out-of-state for first-years, 81% living off-campus for a school known for near-universal on-campus housing), indicating a table misread/misalignment in that source document.",
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Single-Choice Early Action",
+      "rdDeadline": "January 1",
+      "essayPromptTopic": null,
+      "notes": "Single-Choice Early Action (Nov 1, non-binding but restrictive -- applicants may not apply early to other private US institutions). Regular Decision due January 1. Both rounds share a May 1 reply deadline. Verified against admission.princeton.edu/apply/first-year-application-dates-deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionNarrative": {
       "name": "Princeton University",
@@ -40074,7 +40207,7 @@ const UNIVERSITY_DB_V5 = {
       ]
     },
     "competitiveMajorPressure": {
-      "level": "Low to Moderate",
+      "level": "Moderate",
       "notes": "Columbia does not impact most majors at the undergraduate level, though the Fu Foundation School of Engineering has separate admission from Columbia College."
     },
     "hiddenOpportunities": {
@@ -40778,7 +40911,7 @@ const UNIVERSITY_DB_V5 = {
       "returnerScore": 36,
       "stewardScore": 28,
       "navigatorScore": 84,
-      "geographicLockIn": "low_to_moderate",
+      "geographicLockIn": "moderate",
       "alumniDispersalPattern": "national_with_global_hospitality_dispersal"
     },
     "jewishLife": {
@@ -40841,6 +40974,14 @@ const UNIVERSITY_DB_V5 = {
       "dataSource": "Dartmouth College Common Data Set 2024-2025, Section F1 (primary source, direct PDF: dartmouth.edu/oir/pdfs/cds_2024-2025.pdf).",
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 1",
+      "essayPromptTopic": null,
+      "notes": "Early Decision (binding) due November 1, decision mid-December. Regular Decision due January 1, decision late March/early April. Verified against admissions.dartmouth.edu/apply-dartmouth, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionNarrative": {
       "name": "Dartmouth College",
@@ -41177,6 +41318,11 @@ const UNIVERSITY_DB_V5 = {
         "strength": 50,
         "notes": "Moderate pathway, often tied to environmental and outdoor conservation organizations."
       }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 58,
+        "notes": "Real, substantial evidence, concentrated in commercialization rather than large-scale manufacturing: Dartmouth engineering professor Tillman Gerngross has founded multiple real biotech companies out of Dartmouth research, most notably GlycoFi (sold to Merck for $400 million in 2006) and Adimab (over $350 million in venture capital raised), plus Arsanis, Avitide, and Alector. Dartmouth also participates in two federally-funded biomaterials initiatives (NH BioMade, $20M NSF grant; NH-INBRE, $18.1M NIH grant) and adopted a distinctive 2016 IP policy giving faculty full IP rights in exchange for 4% founders' equity, specifically to encourage this kind of commercialization. Strong evidence of pharma-adjacent entrepreneurship; scored just below the top range since it's concentrated in a handful of faculty ventures rather than a broad regional manufacturing cluster."
+      }
     },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -41361,7 +41507,7 @@ const UNIVERSITY_DB_V5 = {
       "versusCornell": "Cornell offers broader academic breadth across seven distinct colleges including hospitality and agriculture, while Penn offers a more concentrated, business-and-professionally-focused Ivy League identity."
     },
     "institutionScale": {
-      "enrollmentCategory": "Medium to Large",
+      "enrollmentCategory": "Large",
       "undergraduateEnrollment": 10500,
       "graduateEnrollment": 12000,
       "totalEnrollment": 22500,
@@ -41740,6 +41886,14 @@ const UNIVERSITY_DB_V5 = {
       "dataSource": "Amherst College Common Data Set 2024-2025, Section F (Student Life) (primary source, direct PDF: amherst.edu/system/files/F Student Life_7.pdf).",
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 9",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 5",
+      "essayPromptTopic": null,
+      "notes": "For Fall 2027 enrollment: Early Decision due November 9, 2026 (financial aid materials Nov 13); Regular Decision due January 5, 2027 (financial aid materials Jan 15), decisions released March 20, enrollment commitment May 1. Verified against amherst.edu/admission/apply/firstyear/calendar_deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionNarrative": {
       "name": "Amherst College",
@@ -42618,6 +42772,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2025,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 2",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 4",
+      "essayPromptTopic": null,
+      "notes": "Early Decision I due November 2 (financial aid Nov 15), decision mid-December. Early Decision II and Regular Decision share a January 4 deadline (ED II financial aid also Jan 4; RD financial aid Feb 1), recorded here as rdDeadline. Test-optional; senior-year grades required at all deadlines. Verified against middlebury.edu/college/admissions/application-instructions-and-deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Middlebury College",
       "location": "Middlebury, Vermont",
@@ -42947,6 +43109,11 @@ const UNIVERSITY_DB_V5 = {
         "strength": 70,
         "notes": "Strong pathway, particularly for international development and human rights organizations."
       }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 20,
+        "notes": "Limited institutional emphasis: Middlebury offers general Biology and Molecular Biology & Biochemistry majors and runs an Innovation Hub with Vermont-focused entrepreneurship programming, but no pharmaceutical-manufacturing-specific research center, industry partnership, or notable alumni company was found in this pass. Vermont itself has no major pharmaceutical manufacturing presence. Scored low to reflect a genuine gap rather than guessed at a higher number."
+      }
     },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -43054,6 +43221,14 @@ const UNIVERSITY_DB_V5 = {
       "dataSource": "Wesleyan University Common Data Set 2022-2023, Section F1 (primary source, direct PDF: wesleyan.edu/ir/data-sets/CDS_2022-2023.pdf). Note: this was the most recent Wesleyan CDS located; no 2023-24 or 2024-25 version was found.",
       "dataYear": 2022,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 1",
+      "essayPromptTopic": null,
+      "notes": "Early Decision I due November 15, decision mid-December. Early Decision II and Regular Decision share a January 1 deadline, recorded here as rdDeadline. Verified against wesleyan.edu/admission/application-process.html, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionNarrative": {
       "name": "Wesleyan University",
@@ -43383,6 +43558,11 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 56,
         "notes": "Meaningful pathway, often tied to arts and social justice organizations."
+      }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 25,
+        "notes": "Limited direct institutional evidence: Connecticut has a real, documented life-sciences/pharma industry presence at the state level (Pfizer, Boehringer Ingelheim, and others), but no Wesleyan-specific pharmaceutical manufacturing research center, degree program, or company connection was found in this pass. Scored low-moderate to reflect regional industry proximity without a confirmed direct institutional tie -- flagged as a gap for a more targeted follow-up search rather than assumed absent."
       }
     },
     "wealthMobility": {
@@ -43930,6 +44110,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2023,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Early Decision I due November 15 (deposit Jan 5). Early Decision II due January 5 (deposit Feb 20). Regular Decision due January 15 (deposit May 1), recorded here as rdDeadline. Domestic students get merit-scholarship priority (up to $30,000) by submitting via December 1, a separate scholarship-priority date distinct from any admission deadline. No application fee or required supplement beyond standard materials. Verified against grinnell.edu/admission/apply/first-year/requirements, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Grinnell College",
       "location": "Grinnell, Iowa",
@@ -44258,6 +44446,11 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 76,
         "notes": "One of the college's defining strengths, reinforced by its deeply progressive, socially engaged culture."
+      }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 18,
+        "notes": "Limited institutional emphasis: Grinnell offers a Biological Chemistry major and documented biology/pre-health graduate outcomes, but no pharmaceutical-manufacturing-specific program, research center, or notable industry partnership was found in this pass, consistent with its small rural-Iowa liberal-arts setting. Scored low to reflect a genuine gap rather than guessed at a higher number."
       }
     },
     "wealthMobility": {
@@ -47020,6 +47213,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action / Early Decision I",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "For the 2026-2027 academic year (per the school's own page): Early Action (non-binding) and Early Decision I (binding) share a November 1 deadline; Early Decision II and Regular Decision share a January 15 deadline, recorded here as rdDeadline. Separate spring-entry deadline is November 15. Verified against case.edu/admission, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Case Western Reserve University",
       "location": "Cleveland, Ohio",
@@ -47356,6 +47557,11 @@ const UNIVERSITY_DB_V5 = {
       "advancedManufacturing": {
         "strength": 96,
         "notes": "The highest-scored, most current single finding across this entire advancedManufacturing buildout. Case Western Reserve led a winning entry for a National Science Foundation Regional Innovation Engine grant of up to $160 million -- confirmed via CWRU's own site, Ideastream public radio, Signal Akron, a local development blog (NEOtrans), and a sitting U.S. Representative's own social media -- all dated within 3-4 days of this research pass. The award, branded NEO-SMART (Northeast Ohio Strengthening Manufacturing for American Resilience through Technology), funds advanced manufacturing of polymers, metals, chemicals, and coatings across an entire regional consortium that CWRU leads, not just its own campus. Scored above Carnegie Mellon (94) given the combination of federal NSF-level prestige, dollar scale, lead-institution status for a multi-organization region, and the extraordinary freshness of the finding."
+      }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 60,
+        "notes": "Real, substantial evidence: a CWRU-originated biotech startup, Rodeo Therapeutics, was acquired by Amgen (a major pharmaceutical manufacturer), and the university operates the 11000 Cedar Street biotech incubator described in industry press as central to Cleveland's emerging biotech cluster. CWRU's Biomedical Engineering department and biotechnology graduate programs are also well-established. Scored just below the top range since Cleveland's cluster is still described as 'emerging' by trade coverage rather than an established top-tier hub."
       }
     },
     "wealthMobility": {
@@ -47909,6 +48115,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2022,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action I",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Drexel's own admissions pages (drexel.edu/admissions/undergrad/first-year and the linked important-dates page) did not render specific deadline dates in this pass -- both are JS-rendered pages that returned only decision-timeline text (ED/EA decisions mid-December), not the actual due dates. These dates (Early Action I Nov 1, Early Action II Dec 1, Regular Decision Jan 15) come from a secondary aggregator (CollegeVine) citing Drexel's published deadlines, not verified directly against drexel.edu. Recommend re-verifying directly once the primary page is reachable, following the same disclosure pattern already used for Virginia Tech in this project. Verified via CollegeVine, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Drexel University",
       "location": "Philadelphia, Pennsylvania",
@@ -48352,6 +48566,14 @@ const UNIVERSITY_DB_V5 = {
       "dataSource": "Worcester Polytechnic Institute Common Data Set 2024-2025, Section F1 (primary source, direct PDF: wpi.edu/sites/default/files/2025-02/WPI_CDS_2024-2025_2-27-25.pdf).",
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action I / Early Decision I",
+      "rdDeadline": "February 1",
+      "essayPromptTopic": null,
+      "notes": "Three-round structure: Early Action I/Early Decision I (Nov 1), Early Action II/Early Decision II (Jan 5), Regular Decision (Feb 1, recorded here as rdDeadline). WPI's own page did not explicitly state which admission cycle/year these deadlines apply to. Verified against wpi.edu/admissions/undergraduate/apply/college-application-timeline, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionNarrative": {
       "name": "Worcester Polytechnic Institute",
@@ -48800,6 +49022,14 @@ const UNIVERSITY_DB_V5 = {
       "dataSource": "Rochester Institute of Technology Common Data Set 2023-2024, Section F1 (primary source, direct PDF: rit.edu/institutionalresearch/.../CDS 2023-24 FINAL for PDF 20240617.pdf).",
       "dataYear": 2023,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I / Early Action",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "RIT runs four parallel tracks: Early Decision I (Nov 1, binding) and Early Action (Nov 1, non-binding) share the earliest deadline; Early Decision II (Jan 1) is also available; Regular Decision (Jan 15) recorded here as rdDeadline. Applications after the deadline are reviewed space-available. Verified against rit.edu/admissions/first-year-application, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionNarrative": {
       "name": "Rochester Institute of Technology",
@@ -49682,6 +49912,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action",
+      "rdDeadline": "January 1",
+      "essayPromptTopic": null,
+      "notes": "Early Action (non-binding) due November 1, decision by December 15. Regular Decision due January 1, decision by April 1. Both share a May 1 reply deadline. Verified against uadmissions.georgetown.edu/apply/first-year-applicants, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Georgetown University",
       "location": "Washington, DC",
@@ -50024,6 +50262,11 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 74,
         "notes": "A genuinely strong, distinctive pathway — Jesuit values and SFS's international-development orientation produce real placement into NGO leadership and international development careers."
+      }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 42,
+        "notes": "Real, moderate evidence, biotech/policy-leaning rather than manufacturing-scale: Georgetown offers a Master of Science in Biotechnology and a BioBusiness Certificate program (Biomedical Graduate Education division), and Georgetown University Medical Center anchors real biomedical research. However, no large-scale pharmaceutical manufacturing facility or industry partnership tied directly to the university was found in this pass -- DC itself is not a major pharma manufacturing hub. Scored moderate to reflect real academic infrastructure without manufacturing-scale evidence."
       }
     },
     "wealthMobility": {
@@ -50597,6 +50840,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "December 1",
+      "earliestDeadlineLabel": "Priority (Application) Deadline",
+      "rdDeadline": "May 1",
+      "essayPromptTopic": null,
+      "notes": "Priority/application deadline for College Station fall admission is December 1 (documents due Dec 15); May 1 is the deadline to accept/confirm an admission offer, recorded here as rdDeadline since Texas A&M does not publish a separate later application-round deadline -- decisions are rolling, and applying early does not guarantee an early decision. Verified against admissions.tamu.edu/apply/freshman, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Texas A&M University",
       "location": "College Station, Texas",
@@ -51054,6 +51305,14 @@ const UNIVERSITY_DB_V5 = {
       "dataSource": "MIT Common Data Set 2024-2025, Section F1 (primary source, HTML document: ir.mit.edu/projects/2024-25-common-data-set/).",
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action",
+      "rdDeadline": "January 4",
+      "essayPromptTopic": null,
+      "notes": "Early Action (non-binding, decision mid-December) due November 1; Regular Action due January 4, decision mid-March. Both share a May 1 enrollment confirmation deadline; financial aid materials due February 15. Applicants may only apply once per entry year (no reapplying EA then RA the same cycle). Verified against mitadmissions.org/apply/firstyear/deadlines-requirements, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionNarrative": {
       "name": "Massachusetts Institute of Technology",
@@ -51516,6 +51775,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 2",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 4",
+      "essayPromptTopic": null,
+      "notes": "Early Decision (binding) due November 2, decision by December 15, enrollment deadline February 1; not available for School of Drama, BXA Design, or School of Music. Regular Decision due January 4, decision by April 1. College of Fine Arts programs (architecture, art, design, drama, music) may have separate audition/portfolio procedures. Verified against cmu.edu/admission/admission/application-plans-deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Carnegie Mellon University",
       "location": "Pittsburgh, Pennsylvania",
@@ -51853,6 +52120,11 @@ const UNIVERSITY_DB_V5 = {
       "advancedManufacturing": {
         "strength": 94,
         "notes": "The richest, most current, and most multi-sourced single-school finding across this entire advancedManufacturing buildout, and the highest score in the database. CMU's National Robotics Engineering Center (NREC) has operated for 25+ years and has a confirmed, current partnership with U.S. Steel itself (verified via U.S. Steel's own site, March 2024). CMU announced a brand-new Autonomous Systems Manufacturing partnership with Carnegie Foundry and American drone manufacturers literally 2-4 days before this research pass. CMU also runs the ARM Institute (Advanced Robotics for Manufacturing) and the Robotics Innovation Center at Hazelwood Green, a dedicated physical robotics/automation/AI research facility. Multiple concurrent, real, currently-active relationships rather than a single flagship partnership -- scored above Caltech's JPL relationship (92) given the sheer breadth and currency of activity, not just depth of any one relationship."
+      }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 50,
+        "notes": "Real, distinctive academic evidence: CMU offers a dedicated M.S. in Biotechnology and Pharmaceutical Engineering (Mellon College of Science), a specifically-named program. Trade coverage (Pharma Manufacturing magazine) credits CMU's AI/robotics/computational-biology strength as a factor in Pittsburgh's broader biotech growth, with Pittsburgh Life Sciences Alliance leadership citing CMU's data-analytics and chemical-engineering capabilities. That same coverage explicitly notes CMU has fewer direct biotech-manufacturing partnerships than the University of Pittsburgh, so this is scored as real but adjacent -- strong on the academic-program side, thinner on direct manufacturing partnerships."
       }
     },
     "wealthMobility": {
@@ -52488,7 +52760,6 @@ const UNIVERSITY_DB_V5 = {
       "versusUNC": "UNC offers comparable Research Triangle access at meaningfully lower cost with the #1-ranked pharmacy school in the country; Duke is more selective and privately funded, with stronger national (rather than primarily in-state) recruiting and a more prominent basketball and national-prestige identity.",
       "versusNorthwestern": "Northwestern offers stronger journalism and a Chicago-based recruiting economy; Duke offers a stronger academic medicine pipeline through its own major medical center and deeper Research Triangle biotech ties.",
       "versusVanderbilt": "Vanderbilt offers a similarly nationally-recruited elite Southern identity with strong healthcare and finance placement in Nashville; Duke offers a stronger academic medical center and denser Research Triangle biotech and pharma proximity.",
-      "versusNCState": "NC State offers a larger, more applied engineering program at meaningfully lower cost, with direct corporate R&D partnerships through Centennial Campus; Duke offers an elite academic medical center and a nationally-recruited, more broadly prestigious student body."
     },
     "institutionScale": {
       "enrollmentCategory": "Medium",
@@ -53780,6 +54051,14 @@ const UNIVERSITY_DB_V5 = {
       "dataSource": "North Carolina State University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: report.isa.ncsu.edu/ir/cds/pdfs/CDS_2024-25.v3.pdf). Consistent with North Carolina's statutory cap limiting out-of-state first-year enrollment system-wide.",
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Early Action (Nov 1 application / Nov 10 materials) gives priority scholarship/financial-aid consideration; Regular Decision due January 15 (materials Feb 1). Enrollment confirmation deadline is May 1. Verified against admissions.ncsu.edu/apply/deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionNarrative": {
       "name": "North Carolina State University",
@@ -55566,6 +55845,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 4",
+      "essayPromptTopic": null,
+      "notes": "For the 2026-2027 cycle (fall 2027 entry, per Rice's own page): Early Decision I (Nov 1, binding) and Early Decision II (Jan 4, binding) bracket a Regular Decision round that shares the same January 4 deadline as ED II (non-binding). Verified against admission.rice.edu/apply/first-year-domestic-applicants, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Rice University",
       "location": "Houston, Texas",
@@ -56485,6 +56772,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 2",
+      "essayPromptTopic": null,
+      "notes": "Early Decision I (binding) due November 1, decision mid-December. Early Decision II and Regular Decision share a January 2 deadline, recorded here as rdDeadline (ED II is binding, RD is not). Financial aid deadline is November 15 for ED I, January 15 for ED II/RD; all plans receive the same financial aid offer and merit-scholarship consideration regardless of round. Verified against apply.jhu.edu/how-to-apply/application-deadlines-requirements/early-decision, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Johns Hopkins University",
       "location": "Baltimore, Maryland",
@@ -56836,6 +57131,11 @@ const UNIVERSITY_DB_V5 = {
       "advancedManufacturing": {
         "strength": 88,
         "notes": "Real, historically significant, JPL-like government-facility relationship: the Johns Hopkins Applied Physics Laboratory (APL) designed, built, and managed NASA's Double Asteroid Redirection Test (DART) -- the world's first-ever successful planetary defense mission, which successfully altered an asteroid's orbit in October 2022, confirmed via NASA's own site and Johns Hopkins' own reporting. APL has also built and operated other real NASA spacecraft (NEAR Shoemaker, the Advanced Composition Explorer). Scored comparably to Caltech's JPL relationship (92) given the structural similarity -- a university-affiliated lab managing real, flagship NASA missions -- though the specific contractual arrangement (ownership percentage, contract renewal timeline) was not independently verified this session the way Caltech's 2028 JPL contract competition was, so no equivalent uncertainty flag is applied here without that same level of confirmation."
+      }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 68,
+        "notes": "Real, strong, and directly manufacturing-specific evidence: Johns Hopkins partnered with biotech company Orgenesis to build the Maryland Center for Cell Therapy Manufacturing, a real 7,000-sq-ft facility on the East Baltimore campus (backed by a $5M Maryland matching grant, construction begun 2022) that manufactures clinical cell and gene therapy products, initially staffed with ~30 employees. This is a genuine, named, on-campus manufacturing operation -- stronger and more specific than a general biotech-cluster claim. JHU also hosts the Hopkins Biotech Network and a Science + Technology Park."
       }
     },
     "wealthMobility": {
@@ -57872,6 +58172,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "December 1",
+      "earliestDeadlineLabel": "Priority (Scholarship) Deadline",
+      "rdDeadline": "December 1",
+      "essayPromptTopic": null,
+      "notes": "Pitt operates rolling admission with no confirmed hard final deadline for first-year applicants -- December 1 is the priority deadline for automatic academic-scholarship consideration (also relevant for Honors College and Guaranteed Admission Programs), the substantive date for most applicants, so it is recorded in both fields per this project's established single-deadline convention. Verified against admissions.pitt.edu/first-year-student, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "University of Pittsburgh",
       "location": "Pittsburgh, Pennsylvania",
@@ -58214,6 +58522,11 @@ const UNIVERSITY_DB_V5 = {
       "agriculture": {
         "strength": 16,
         "notes": "Not a meaningful institutional pathway."
+      }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 55,
+        "notes": "Real, solid evidence: Pitt's School of Pharmacy runs dedicated Pharmaceutical Science graduate programs, and UPMC (the region's dominant health system, closely tied to Pitt) founded its own pharmaceutical company in 2020. The Pittsburgh Life Sciences Alliance also documents a broader regional life-sciences/healthcare cluster. Scored solidly above the regional-cluster baseline given the direct UPMC pharma-company connection, though below the top range since it's one company rather than an established large-scale manufacturing base."
       }
     },
     "wealthMobility": {
@@ -61997,6 +62310,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I / Early Action",
+      "rdDeadline": "January 2",
+      "essayPromptTopic": null,
+      "notes": "For the 2025-2026 cycle (per Babson's own page): ED I (binding) and EA (non-binding) share a November 1 deadline; ED II and Regular Decision share a January 2 deadline, recorded here as rdDeadline. Financial aid deadlines trail each round (Nov 15 for ED I/EA; Feb 1 for ED II/RD). Verified against undergraduatecatalog.babson.edu/application-dates-and-deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Babson College",
       "location": "Wellesley, Massachusetts",
@@ -62334,6 +62655,11 @@ const UNIVERSITY_DB_V5 = {
       "agriculture": {
         "strength": 16,
         "notes": "Not a meaningful institutional pathway."
+      }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 28,
+        "notes": "Real but narrow evidence: Babson's Health and Biotech Innovation and Entrepreneurship badge and intensity track exist within its broader entrepreneurship curriculum (the school's defining institutional focus), giving students a real pathway into biotech/health startups -- but this is an entrepreneurship-education angle, not a pharmaceutical manufacturing research or industry-partnership angle, and no manufacturing-specific facility or partnership was found. Scored moderate-low to reflect a genuine but tangential connection."
       }
     },
     "wealthMobility": {
@@ -63793,6 +64119,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2023,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Early Decision I / Early Action",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "ED I (binding) and Early Action (non-binding) share a November 15 deadline. ED II and Regular Decision share a January 15 deadline, recorded here as rdDeadline (RD applicants may convert to ED II by January 28). Dickinson's page notes there will be no spring 2026 first-year admissions cycle. Verified against dickinson.edu/info/20256/apply/1024/application_deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Dickinson College",
       "location": "Carlisle, Pennsylvania",
@@ -64128,6 +64462,11 @@ const UNIVERSITY_DB_V5 = {
       "agriculture": {
         "strength": 62,
         "notes": "A real, distinctive pathway reinforced directly by Dickinson's own working farm, integrated into coursework across multiple departments."
+      }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 35,
+        "notes": "Real, specific evidence tied to one notable alumnus rather than an institutional program: Young Park '87 leads GeneOne Life Science, whose subsidiary VGXI manufactured a vaccine for Inovio Pharmaceutical and developed vaccines for Zika, Ebola, and MERS; GeneOne also developed a COVID-era nasal-spray candidate (GLS-1200) and secured a South Korean government vaccine-development contract. This is a real, documented pharmaceutical-manufacturing connection, but it runs through one alumnus's company rather than a Dickinson research center or degree program, capping the score below the institutional-infrastructure range."
       }
     },
     "wealthMobility": {
@@ -65139,6 +65478,14 @@ const UNIVERSITY_DB_V5 = {
       "dataYear": 2024,
       "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
     },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 20",
+      "essayPromptTopic": null,
+      "notes": "Early Decision (binding) due November 1, decision mid-December, financial aid deadline Nov 15. Regular Decision due January 20, decision mid-March, financial aid deadline Jan 25. Verified against risd.edu/admissions/first-year/apply-risd, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "Rhode Island School of Design",
       "location": "Providence, Rhode Island",
@@ -65477,6 +65824,11 @@ const UNIVERSITY_DB_V5 = {
       "agriculture": {
         "strength": 10,
         "notes": "Not a meaningful institutional pathway."
+      }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 15,
+        "notes": "Limited institutional emphasis: RISD is an art and design school with no biology, chemistry, or life-sciences infrastructure, and no pharmaceutical-manufacturing-specific program, research center, or notable industry partnership was found in this pass. Its Industrial Design and Graphic Design departments occasionally intersect with medical-device or pharmaceutical packaging work in the broader design field, but no RISD-specific evidence of this was located. Scored low to reflect a genuine, expected gap given the institution's focus, rather than guessed at a higher number."
       }
     },
     "wealthMobility": {
@@ -68769,11 +69121,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~38%",
         "estimatedSavingsRange": "$16,000-$38,000",
         "transferNotes": "Howard maintains transfer pathways with DC-area community colleges and select HBCU feeder programs."
-      },
-      "institutionIdentity": {
-        "commonName": "Howard University",
-        "archetype": "Private HBCU Research University, Washington DC's Black Excellence Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Howard University",
+      "archetype": "Private HBCU Research University, Washington DC's Black Excellence Anchor",
       "institutionalPersonality": "proud, legacy-conscious, ambitious, culturally rich",
       "cultureKeywords": [
         "The Mecca",
@@ -68783,6 +69135,7 @@ const UNIVERSITY_DB_V5 = {
         "Capitol Hill Proximity"
       ],
       "missionOrientation": "Producing the next generation of Black leadership across law, medicine, government, business, and the arts, rooted in a 150+ year legacy of civil rights consequence.",
+      "faithTradition": "None (historically rooted in Black church tradition broadly, non-denominational as an institution)",
       "educationalPhilosophy": "Rigorous professional and pre-professional training reinforced by an unmatched Black alumni network and direct proximity to federal power.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly progressive, civically and politically engaged.",
