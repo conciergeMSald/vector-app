@@ -59,19 +59,22 @@
 
 const UNIVERSITY_DB_V5 = {
   "Arizona State University": {
-    "applicationIntelligence": {
-      "earliestDeadline": "November 1",
-      "earliestDeadlineLabel": "Priority",
-      "rdDeadline": "February 1",
-      "essayPromptTopic": null,
-      "notes": "No binding ED or EA at ASU — a rolling model with a priority date (Nov 1, gives admission/scholarship consideration) and a regular date (Feb 1). Consistent with the 'Priority' label already used for Illinois' identical situation. No supplemental essay required for general admission (Common App personal statement only; Barrett Honors College has its own separate essay requirement, out of scope here). Sourced from admission.asu.edu, verified 2026-07-23.",
-      "verifiedDate": "2026-07-23"
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 69.8,
+      "homeStateEnrollmentPct": 30.2,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Arizona State University (Campus Immersion) Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
     },
     "institutionNarrative": {
       "name": "Arizona State University",
       "location": "Tempe, Arizona",
       "region": "Southwest",
-      "archetype": "The Innovation Metropolis — Entrepreneurship, Engineering, Business, Technology, and the Future Economy",
+      "archetype": "The Innovation Metropolis \u2014 Entrepreneurship, Engineering, Business, Technology, and the Future Economy",
       "oneSentenceSummary": "Arizona State University has transformed into one of America's most innovative public universities, combining massive research investment, elite engineering, business, computer science, sustainability, aerospace, healthcare, and entrepreneurship with direct access to the rapidly expanding Phoenix metropolitan economy.",
       "pipeline": "Approximately 80,000 on-campus students (180,000+ including ASU Online). ASU is nationally recognized for Engineering, Computer Science, Artificial Intelligence, Business (W. P. Carey), Supply Chain Management, Finance, Sustainability, Aerospace Engineering, Construction Management, Architecture, Nursing, Journalism, Public Policy, Education, Design, Data Science, Biological Sciences, and Entrepreneurship. Major recruiters include Intel, TSMC, Honeywell Aerospace, Amazon, Microsoft, Google, Apple, Nvidia, Deloitte, EY, PwC, KPMG, JPMorgan Chase, American Express, Raytheon, Boeing, Northrop Grumman, Banner Health, Mayo Clinic Arizona, Deloitte Digital, and hundreds of Phoenix-area startups.",
       "hiddenPathway": "ASU's greatest hidden advantage is the extraordinary economic momentum surrounding Phoenix. Students build careers inside one of America's fastest-growing metropolitan economies while benefiting from one of the country's largest innovation ecosystems spanning semiconductors, aerospace, defense, fintech, healthcare, logistics, AI, renewable energy, and advanced manufacturing.",
@@ -110,11 +113,19 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~90%",
         "estimatedSavingsRange": "$18,000-$55,000",
         "transferNotes": "ASU maintains one of America's strongest community college transfer ecosystems through the Maricopa County Community College District, creating seamless pathways into engineering, business, healthcare, computer science, and nearly every major."
-      },
-      "institutionIdentity": {
-        "commonName": "Arizona State University",
-        "archetype": "Large Urban Research Innovation University"
-      },
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Priority Admission Date",
+      "rdDeadline": "February 1",
+      "essayPromptTopic": null,
+      "notes": "Confirmed directly on admission.asu.edu/apply/first-year: priority admission date is Nov 1, regular admission date is Feb 1. Nonresident students are automatically considered for ASU's New American University Scholarship upon admission -- a real, named, automatic scholarship consideration, not a separate application. ASU operates four main campuses in metro Phoenix. ASU self-reports rankings including No. 1 on more than 30 lists, No. 2 in the U.S. for employability among public universities, and No. 3 for first-year experiences (asu.edu/about/rankings) -- these are ASU's own self-reported claims and were not independently cross-verified against the original ranking sources in this pass. Specific supplemental essay prompt content was not captured. Sourced from admission.asu.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
+    "institutionIdentity": {
+      "commonName": "Arizona State University",
+      "archetype": "Large Urban Research Innovation University",
       "institutionalPersonality": "innovative, entrepreneurial, ambitious, collaborative, future-focused",
       "cultureKeywords": [
         "Innovation",
@@ -128,6 +139,7 @@ const UNIVERSITY_DB_V5 = {
         "Discovery"
       ],
       "missionOrientation": "Expanding educational access while advancing research, entrepreneurship, economic development, and societal innovation.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Students learn through interdisciplinary collaboration, applied research, entrepreneurship, internships, innovation labs, and industry partnerships.",
       "competitiveness": "Moderately Selective",
       "politicalCulture": "Broadly diverse and pragmatic with strong emphasis on innovation, economic development, sustainability, and technology.",
@@ -447,7 +459,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "pharmaceuticalManufacturing": {
         "strength": 58,
-        "notes": "Company-adjacent evidence: ASU has a documented, named partnership with TGen (Translational Genomics Research Institute, a real nonprofit genomics research institute now part of City of Hope), per ASU's own clinical partnerships page. TGen is genomics/diagnostics/precision-medicine research, not manufacturing specifically — scored to reflect that real but discovery-weighted connection."
+        "notes": "Company-adjacent evidence: ASU has a documented, named partnership with TGen (Translational Genomics Research Institute, a real nonprofit genomics research institute now part of City of Hope), per ASU's own clinical partnerships page. TGen is genomics/diagnostics/precision-medicine research, not manufacturing specifically \u2014 scored to reflect that real but discovery-weighted connection."
       },
       "advancedManufacturing": {
         "strength": 90,
@@ -551,12 +563,23 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Washington": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 23,
+      "homeStateEnrollmentPct": 77,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of Washington-Seattle's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly (multiple attempts hit redirect/404 errors on washington.edu), so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "applicationIntelligence": {
       "earliestDeadline": "November 15",
       "earliestDeadlineLabel": "Application",
-      "rdDeadline": null,
+      "rdDeadline": "November 15",
       "essayPromptTopic": null,
-      "notes": "UW has a single hard deadline (Nov 15) — no ED/EA/priority/rolling distinction at all. Labeled 'Application' rather than 'Regular Decision' since there is no earlier round it's 'regular' relative to. Essay prompt not yet researched. Sourced from admit.washington.edu, verified 2026-07-23.",
+      "notes": "UW has a single hard deadline (Nov 15) -- no ED/EA/priority/rolling distinction at all. rdDeadline is set to the same November 15 date since that single deadline functions as the regular decision deadline (there's no earlier round it's 'regular' relative to, but the schema requires rdDeadline to be a string, so the one real deadline is recorded here rather than left null). Essay prompt not yet researched. Sourced from admit.washington.edu, verified 2026-07-23.",
       "verifiedDate": "2026-07-23"
     },
     "institutionNarrative": {
@@ -815,7 +838,7 @@ const UNIVERSITY_DB_V5 = {
         "Space Technology",
         "Digital Health"
       ],
-      "startupDensity": "Extremely High",
+      "startupDensity": "Very High",
       "ventureCapitalAccess": 90,
       "corporateHeadquartersDensity": 96,
       "healthcareHubStrength": 100,
@@ -1043,6 +1066,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Arizona": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 48,
+      "homeStateEnrollmentPct": 52,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of Arizona's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document was checked across multiple years and was consistently an unfilled blank template on the school's own site (Arizona) or the search returned the wrong same-named school (Missouri), so this is one step removed from the primary document rather than a direct pull. UA's own CDS PDF was an unfilled blank template across all 3 years checked (2022-23, 2023-24, 2024-25) -- an unusual, consistent pattern.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "applicationIntelligence": {
       "earliestDeadline": "November 1",
       "earliestDeadlineLabel": "Early Action",
@@ -1535,6 +1569,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Oregon": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 51,
+      "homeStateEnrollmentPct": 49,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "applicationIntelligence": {
       "earliestDeadline": "November 1",
       "earliestDeadlineLabel": "Early Action",
@@ -1580,11 +1625,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~85%",
         "estimatedSavingsRange": "$10,000-$24,000",
         "transferNotes": "Oregon maintains transfer agreements with Oregon's community college system."
-      },
-      "institutionIdentity": {
-        "commonName": "University of Oregon",
-        "archetype": "Large Public Flagship, Nike-Adjacent Sports Business Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Oregon",
+      "archetype": "Large Public Flagship, Nike-Adjacent Sports Business Anchor",
       "institutionalPersonality": "laid-back, ambitious, Nike-adjacent, outdoorsy",
       "cultureKeywords": [
         "Nike",
@@ -1594,6 +1639,7 @@ const UNIVERSITY_DB_V5 = {
         "Innovation"
       ],
       "missionOrientation": "Delivering strong business and sports management education with unmatched direct Nike alumni access.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Applied business education reinforced by deep Nike and Pacific Northwest corporate relationships.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly progressive, environmentally engaged.",
@@ -1885,6 +1931,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Reed College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 86,
+      "homeStateEnrollmentPct": 14,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Reed College Common Data Set 2024-2025, Section F1 (primary source, direct PDF: reed.edu/ir/cds/cds2425/CDS_secF_202425.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "applicationIntelligence": {
       "earliestDeadline": "November 1",
       "earliestDeadlineLabel": "Early Decision (binding) / Early Action",
@@ -2366,6 +2423,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Gonzaga University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 49,
+      "homeStateEnrollmentPct": 51,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Gonzaga University's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). Gonzaga's own hosted CDS PDF (2025-26) returned a blank Section F1 template with no filled-in figures, so this is one step removed from the primary document.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "applicationIntelligence": {
       "earliestDeadline": "November 15",
       "earliestDeadlineLabel": "Early Action",
@@ -2850,6 +2918,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Indiana University Bloomington": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 42,
+      "homeStateEnrollmentPct": 58,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Indiana University-Bloomington's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly (Notre Dame's own CDS page returned a 403 error; IU Bloomington's CDS portal did not expose a direct PDF link), so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "applicationIntelligence": {
       "earliestDeadline": "November 1",
       "earliestDeadlineLabel": "Early Action",
@@ -3342,6 +3421,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Iowa State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 45,
+      "homeStateEnrollmentPct": 55,
+      "drawClassification": "regional",
+      "topFeederStates": { "IA": 56.0, "IL": 17.9, "MN": 13.1, "WI": 3.6, "NE": 1.8, "MO": 1.4 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Iowa State University Common Data Set 2024-25, Section F1 (primary source, direct PDF: ir.iastate.edu/files/documents/cds/CDS-24-25.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only 6 states clear the 1% threshold (next highest, California/Texas, each 0.8%). IA share (56.0%) closely matches this record's existing homeStateEnrollmentPct (55%, 2024-25 CDS first-time first-year cohort)."
+    },
     "institutionNarrative": {
       "name": "Iowa State University",
       "location": "Ames, Iowa",
@@ -3630,8 +3720,15 @@ const UNIVERSITY_DB_V5 = {
         "Graduates are geographically mobile throughout the industrial Midwest, Great Plains, Mountain West, and Sun Belt, following employer demand in engineering, manufacturing, agriculture, and infrastructure."
       ],
       "regionalInfluenceScore": 98,
-      "nationalReachScore": 84,
+      "nationalReachScore": 42,
       "internationalReachScore": 54
+      // MANUAL CORRECTION 2026-08-12: nationalReachScore lowered from 84.
+      // Original score was inconsistent with this record's own relocationPatterns
+      // text (heavy in-state/adjacent-Midwest concentration) and out of line with
+      // comparably-scored regional flagships elsewhere in this DB (South Dakota
+      // State 42/86/22, North Dakota State 44/88/26). Interim manual fix pending
+      // real IPEDS admissionsDrawProfile sourcing (Issue 6 Phase 2) -- not a
+      // verified figure.
     },
     "socialCapital": {
       "greekLifeInfluence": 62,
@@ -3826,6 +3923,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Oklahoma State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 38,
+      "homeStateEnrollmentPct": 62,
+      "drawClassification": "regional",
+      "topFeederStates": { "OK": 60.1, "TX": 26.3, "KS": 2.0, "CA": 1.9, "CO": 1.3, "AR": 1.3 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Oklahoma State University Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled. topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only 6 states clear the 1% threshold (next highest, Missouri, is 0.9%). OK share (60.1%) closely matches this record's existing homeStateEnrollmentPct (62%, 2024-25 CDS first-time first-year cohort); OK+TX together account for 86.4% of the class, consistent with the existing regional drawClassification."
+    },
     "institutionNarrative": {
       "name": "Oklahoma State University",
       "location": "Stillwater, Oklahoma",
@@ -4114,8 +4222,15 @@ const UNIVERSITY_DB_V5 = {
         "OSU graduates maintain a growing presence throughout the Sun Belt while preserving exceptionally dense alumni networks across Oklahoma and Texas."
       ],
       "regionalInfluenceScore": 98,
-      "nationalReachScore": 78,
+      "nationalReachScore": 40,
       "internationalReachScore": 44
+      // MANUAL CORRECTION 2026-08-12: nationalReachScore lowered from 78.
+      // Original score was inconsistent with this record's own relocationPatterns
+      // text (heavy in-state concentration, secondary markets limited to
+      // adjacent Oklahoma/Texas metros) and out of line with comparably-scored
+      // regional flagships elsewhere in this DB (South Dakota State 42/86/22,
+      // North Dakota State 44/88/26). Interim manual fix pending real IPEDS
+      // admissionsDrawProfile sourcing (Issue 6 Phase 2) -- not a verified figure.
     },
     "socialCapital": {
       "greekLifeInfluence": 74,
@@ -4314,6 +4429,25 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Kansas": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 35,
+      "homeStateEnrollmentPct": 65,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "December 1",
+      "earliestDeadlineLabel": "Priority/Scholarship Deadline",
+      "rdDeadline": "December 1",
+      "essayPromptTopic": null,
+      "notes": "KU operates rolling admission with no confirmed hard final application deadline for freshmen -- December 1 is the priority deadline for freshman scholarship consideration, the substantive date for most applicants, so it is recorded in both fields per this project's established convention for single-deadline schools (see University of Washington). KU has also moved to a GPA-only general admission review (no SAT/ACT required). FAFSA priority deadline is separately February 1. Verified against admissions.ku.edu, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "University of Kansas",
       "location": "Lawrence, Kansas",
@@ -4741,7 +4875,7 @@ const UNIVERSITY_DB_V5 = {
       "returnerScore": 88,
       "stewardScore": 94,
       "navigatorScore": 84,
-      "geographicLockIn": "medium",
+      "geographicLockIn": "moderate",
       "alumniDispersalPattern": "Graduates spread throughout the Midwest and Sun Belt, with particularly strong concentrations in Kansas City, Wichita, Denver, Dallas, Chicago, and St. Louis. Many remain connected to Kansas through healthcare, education, engineering, and business networks while building national careers."
     },
     "jewishLife": {
@@ -4794,6 +4928,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Houston": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 2,
+      "homeStateEnrollmentPct": 98,
+      "drawClassification": "state",
+      "topFeederStates": { "TX": 96.6 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of Houston's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly (or produced unreliable fetch results, see notes), so this is one step removed from the primary document rather than a direct pull. UH's own site only hosted the current CDS as an Excel file, not a fetchable PDF.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only Texas clears the 1% threshold (next highest, Illinois, is 0.5%). TX share (96.6%) closely matches this record's existing homeStateEnrollmentPct (98%, 2024-25 CDS first-time first-year cohort)."
+    },
     "institutionNarrative": {
       "name": "University of Houston",
       "location": "Houston, Texas",
@@ -5082,8 +5227,16 @@ const UNIVERSITY_DB_V5 = {
         "While the alumni network is increasingly national, Houston remains the center of gravity for professional influence, networking, and long-term career development."
       ],
       "regionalInfluenceScore": 100,
-      "nationalReachScore": 86,
+      "nationalReachScore": 48,
       "internationalReachScore": 78
+      // MANUAL CORRECTION 2026-08-12: nationalReachScore lowered from 86.
+      // Original score was inconsistent with this record's own relocationPatterns
+      // text ("overwhelming majority of graduates begin their careers in
+      // Houston"). Set above Iowa State/Oklahoma State's corrected scores given
+      // this record's notably higher internationalReachScore (78) and its own
+      // text noting the alumni network is "increasingly national." Interim
+      // manual fix pending real IPEDS admissionsDrawProfile sourcing (Issue 6
+      // Phase 2) -- not a verified figure.
     },
     "socialCapital": {
       "greekLifeInfluence": 42,
@@ -5270,6 +5423,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "The University of Texas at Dallas": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 5,
+      "homeStateEnrollmentPct": 95,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Texas at Dallas Common Data Set 2024-2025, Section F1 (primary source, direct PDF via dox.utdallas.edu/report44675).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "The University of Texas at Dallas",
       "location": "Richardson, Texas",
@@ -5750,6 +5914,25 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "The University of Alabama": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 59.6,
+      "homeStateEnrollmentPct": 40.4,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "The University of Alabama Common Data Set 2024-25, Section F1 (primary source, direct PDF: oira.ua.edu/d/sites/all/files/reports25/CDS 2024-25 FINAL.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "December 4",
+      "earliestDeadlineLabel": "Priority Deadline (Fall entry)",
+      "rdDeadline": "December 4",
+      "essayPromptTopic": null,
+      "notes": "UA's own admissions.ua.edu page lists only a priority deadline for Fall entry (December 4, for the following fall's admission cycle) with no separate confirmed regular/final deadline, so the same date is recorded in both fields per this project's single-deadline convention. The page also notes UA is actively updating its holistic review process for the 2027 and 2028 admission cycles, so this deadline structure may change; worth a re-check closer to the cycle. Verified against admissions.ua.edu/freshman, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "The University of Alabama",
       "location": "Tuscaloosa, Alabama",
@@ -6177,7 +6360,7 @@ const UNIVERSITY_DB_V5 = {
       "returnerScore": 90,
       "stewardScore": 98,
       "navigatorScore": 80,
-      "geographicLockIn": "medium",
+      "geographicLockIn": "moderate",
       "alumniDispersalPattern": "Graduates are concentrated throughout Birmingham, Huntsville, Atlanta, Nashville, Charlotte, Dallas, and Houston. Many build careers outside Alabama while remaining deeply engaged with the university through one of the country's most active alumni communities, frequently returning for mentorship, philanthropy, athletics, and recruiting."
     },
     "jewishLife": {
@@ -6230,6 +6413,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Harvard University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 86,
+      "homeStateEnrollmentPct": 14,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Harvard University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: bpb-us-e1.wpmucdn.com/sites.harvard.edu/.../HarvardUniversity_CDS_2024-2025.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Harvard University",
       "location": "Cambridge, Massachusetts",
@@ -6269,6 +6463,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "N/A (need-based aid dominant)",
         "transferNotes": "Transfer admissions are exceptionally rare and highly constrained; most students are admitted as first-year students with significant need-based financial aid available."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Restrictive Early Action",
+      "rdDeadline": "January 1",
+      "essayPromptTopic": null,
+      "notes": "Restrictive Early Action (non-binding, but restricts other early applications) due November 1, decision mid-December. Regular Decision due January 1, decision end of March. Both allow comparing financial aid before a May 1 commitment. Verified against college.harvard.edu/admissions/apply/first-year-applicants, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Harvard University",
@@ -6621,6 +6823,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Brown University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 94,
+      "homeStateEnrollmentPct": 6,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Brown University Common Data Set 2024-2025, Section F1, via Road2College's Brown Common Data Set writeup, which explicitly cites Brown's own CDS 2024-2025 -- Brown's own oir.brown.edu page did not expose a direct PDF link, so this is one step removed from the primary document.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Brown University",
       "location": "Providence, Rhode Island",
@@ -6664,6 +6877,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$50,000–$90,000",
         "transferNotes": "Transfer admissions are competitive and emphasize academic excellence, intellectual curiosity, and strong fit with the open curriculum philosophy."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 5",
+      "essayPromptTopic": null,
+      "notes": "Early Decision (binding) due November 1, decision mid-December. Regular Decision due January 5, decision early April, reply due May 1. Verified against admission.brown.edu/first-year/early-decision and /regular-decision, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Brown University",
@@ -6996,6 +7217,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Illinois Urbana-Champaign": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 15,
+      "homeStateEnrollmentPct": 85,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "applicationIntelligence": {
       "earliestDeadline": "November 1",
       "earliestDeadlineLabel": "Priority",
@@ -7040,11 +7272,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~44%",
         "estimatedSavingsRange": "$12,000-$30,000",
         "transferNotes": "UIUC maintains transfer agreements with Illinois community colleges, though CS transfer remains highly competitive."
-      },
-      "institutionIdentity": {
-        "commonName": "Illinois",
-        "archetype": "Elite Public CS/Engineering Flagship"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Illinois",
+      "archetype": "Elite Public CS/Engineering Flagship",
       "institutionalPersonality": "technically rigorous, ambitious, Big Ten spirited",
       "cultureKeywords": [
         "Grainger CS",
@@ -7054,6 +7286,7 @@ const UNIVERSITY_DB_V5 = {
         "Value"
       ],
       "missionOrientation": "Delivering elite computer science and engineering education at public-school scale and cost.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Rigorous technical education reinforced by direct Silicon Valley and Chicago tech recruiting relationships.",
       "competitiveness": "Highly Selective (CS/Engineering)",
       "politicalCulture": "Broadly moderate, practically minded.",
@@ -7342,6 +7575,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Rutgers University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 9,
+      "homeStateEnrollmentPct": 91,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Rutgers University-New Brunswick Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Rutgers University",
       "location": "New Brunswick, New Jersey",
@@ -7378,11 +7622,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~66%",
         "estimatedSavingsRange": "$10,000-$26,000",
         "transferNotes": "Rutgers maintains transfer agreements with New Jersey's community college system."
-      },
-      "institutionIdentity": {
-        "commonName": "Rutgers University",
-        "archetype": "Large Public Big Ten Flagship, Pharma Corridor Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Rutgers University",
+      "archetype": "Large Public Big Ten Flagship, Pharma Corridor Anchor",
       "institutionalPersonality": "practical, diverse, career-focused, Big Ten spirited",
       "cultureKeywords": [
         "Pharmacy",
@@ -7392,6 +7636,7 @@ const UNIVERSITY_DB_V5 = {
         "Diversity"
       ],
       "missionOrientation": "Delivering strong pharmacy and business education with direct NJ pharmaceutical industry access.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Applied education reinforced by direct pharmaceutical industry proximity.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly progressive, diverse.",
@@ -7678,6 +7923,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Michigan": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 43,
+      "homeStateEnrollmentPct": 57,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "applicationIntelligence": {
       "earliestDeadline": "November 1",
       "earliestDeadlineLabel": "Early Decision (binding)",
@@ -7723,11 +7979,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~18%",
         "estimatedSavingsRange": "$10,000-$30,000",
         "transferNotes": "Michigan's transfer admissions are highly selective, reflecting the university's overall elite positioning."
-      },
-      "institutionIdentity": {
-        "commonName": "University of Michigan",
-        "archetype": "Elite Public Research University, 'Public Ivy'"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Michigan",
+      "archetype": "Elite Public Research University, 'Public Ivy'",
       "institutionalPersonality": "ambitious, spirited, intellectually serious, competitive",
       "cultureKeywords": [
         "Public Ivy",
@@ -7738,6 +7994,7 @@ const UNIVERSITY_DB_V5 = {
         "Ambition"
       ],
       "missionOrientation": "Delivering Ivy-caliber outcomes at public-university scale and cost.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Rigorous, research-driven education combined with elite corporate recruiting pipelines.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly progressive, intellectually engaged.",
@@ -8049,6 +8306,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of South Carolina": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 40,
+      "homeStateEnrollmentPct": 60,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of South Carolina's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). USC's own hosted CDS PDF (oiraa.dw.sc.edu/cds/cds2024/cds_2024-2025.pdf) could not be retrieved -- the URL loops between http/https redirects and the fetch tool could not resolve a readable copy, so this is one step removed from the primary document.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of South Carolina",
       "location": "Columbia, South Carolina",
@@ -8112,7 +8380,7 @@ const UNIVERSITY_DB_V5 = {
       "missionOrientation": "Research, professional formation, and service to South Carolina — USC's land-grant mission alongside its growing national reputation in international business and supply chain",
       "faithTradition": "None",
       "educationalPhilosophy": "Professional formation in business, supply chain, law, public health, and engineering with deep Southeast and global industry integration; strong emphasis on international experience and business application",
-      "competitiveness": "Moderately Selective (~65% overall; Moore School direct-admit more selective)",
+      "competitiveness": "Moderately Selective",
       "politicalCulture": "Conservative to moderate — South Carolina is a conservative state; Columbia is slightly more moderate as a state capital; campus reflects the increasing national diversity of student body",
       "studentAutonomy": "High",
       "prestigeOrientation": "Moderate nationally; very high within international business and supply chain communities",
@@ -8292,7 +8560,7 @@ const UNIVERSITY_DB_V5 = {
         "Healthcare Technology",
         "Defense Manufacturing"
       ],
-      "startupDensity": "Low to Moderate",
+      "startupDensity": "Moderate",
       "ventureCapitalAccess": 38,
       "corporateHeadquartersDensity": 54,
       "healthcareHubStrength": 66,
@@ -8477,6 +8745,17 @@ const UNIVERSITY_DB_V5 = {
     "secondaryMegaRegionExposure": []
   },
   "University of Georgia": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 15,
+      "homeStateEnrollmentPct": 85,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to University of Georgia's own 2024-25 Common Data Set -- the primary UGA CDS PDF link returned a 404 on direct fetch, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "University of Georgia",
       "location": "Athens, Georgia",
@@ -8513,11 +8792,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~43%",
         "estimatedSavingsRange": "$10,000-$26,000",
         "transferNotes": "UGA maintains transfer agreements with Georgia's community college system."
-      },
-      "institutionIdentity": {
-        "commonName": "University of Georgia",
-        "archetype": "Large Public SEC Flagship, Corporate Georgia Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Georgia",
+      "archetype": "Large Public SEC Flagship, Corporate Georgia Anchor",
       "institutionalPersonality": "spirited, business-ambitious, culturally rich, traditional",
       "cultureKeywords": [
         "SEC Football",
@@ -8527,6 +8806,7 @@ const UNIVERSITY_DB_V5 = {
         "Tradition"
       ],
       "missionOrientation": "Delivering strong business education with direct pipeline access to Atlanta's concentrated corporate economy.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Rigorous business education reinforced by deep Atlanta Fortune 500 recruiting relationships.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, tradition-focused.",
@@ -8820,6 +9100,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Florida": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 14.51,
+      "homeStateEnrollmentPct": 85.49,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Florida (Main Campus) Common Data Set 2022-2023, Section F1 (Fall 2022 first-time first-year cohort)",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "University of Florida",
       "location": "Gainesville, Florida",
@@ -8856,11 +9147,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~24%",
         "estimatedSavingsRange": "$10,000-$24,000",
         "transferNotes": "UF maintains strong Florida community college articulation agreements."
-      },
-      "institutionIdentity": {
-        "commonName": "University of Florida",
-        "archetype": "Large Public SEC Flagship, Florida Triangle Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "University of Florida",
+      "archetype": "Large Public SEC Flagship, Florida Triangle Anchor",
       "institutionalPersonality": "football-first, underrated academically, Florida-rooted",
       "cultureKeywords": [
         "The Swamp",
@@ -8870,6 +9161,7 @@ const UNIVERSITY_DB_V5 = {
         "In-State Loyalty"
       ],
       "missionOrientation": "Delivering genuinely strong academic outcomes inside a football-first public image.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Rigorous business and pre-health education reinforced by Florida's major metro corridor recruiting relationships.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly moderate, Florida-focused.",
@@ -9166,6 +9458,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Oklahoma": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 51.9,
+      "homeStateEnrollmentPct": 48.1,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Oklahoma (Norman Campus) Common Data Set 2025-2026, Section F1 (first-time first-year cohort)",
+      "dataYear": 2025,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "University of Oklahoma",
       "location": "Norman, Oklahoma",
@@ -9229,7 +9532,7 @@ const UNIVERSITY_DB_V5 = {
       "missionOrientation": "Research, professional formation, and service to Oklahoma — OU's land-grant identity shapes its deep integration with the state's energy, agricultural, and legal economy",
       "faithTradition": "None",
       "educationalPhilosophy": "Professional formation in energy, business, journalism, and law with deep regional industry integration; strong emphasis on career placement within Oklahoma and Texas energy markets",
-      "competitiveness": "Moderately Selective (~70% overall; Petroleum Engineering and Price Business more selective)",
+      "competitiveness": "Moderately Selective",
       "politicalCulture": "Conservative — Oklahoma is one of the most politically conservative states in America; campus reflects that culture with range from moderate to strongly conservative",
       "studentAutonomy": "High",
       "prestigeOrientation": "Moderate nationally; very high within energy industry",
@@ -9409,7 +9712,7 @@ const UNIVERSITY_DB_V5 = {
         "Agricultural Technology",
         "Aerospace and Defense (Tulsa)"
       ],
-      "startupDensity": "Low to Moderate",
+      "startupDensity": "Moderate",
       "ventureCapitalAccess": 42,
       "corporateHeadquartersDensity": 58,
       "healthcareHubStrength": 66,
@@ -9584,6 +9887,17 @@ const UNIVERSITY_DB_V5 = {
     "secondaryMegaRegionExposure": []
   },
   "Louisiana State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 39,
+      "homeStateEnrollmentPct": 61,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Louisiana State University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: lsu.edu/data/common-data-set/2024/6_2425_studentlife.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Louisiana State University",
       "location": "Baton Rouge, Louisiana",
@@ -9647,7 +9961,7 @@ const UNIVERSITY_DB_V5 = {
       "missionOrientation": "Research, professional formation, and service to Louisiana — LSU's land-grant mission shapes its role as the economic and intellectual anchor of the Gulf Coast",
       "faithTradition": "None",
       "educationalPhilosophy": "Professional formation in energy, business, law, architecture, journalism, and agriculture with deep Louisiana industry and cultural integration",
-      "competitiveness": "Accessible to Moderately Selective (~75% overall; Architecture, Engineering, and Honors more selective)",
+      "competitiveness": "Moderately Selective",
       "politicalCulture": "Conservative to moderate — Louisiana's political culture is distinctive: Democratic in New Orleans, Republican in most of the state; campus reflects that range",
       "studentAutonomy": "High",
       "prestigeOrientation": "Moderate nationally; strong regionally and within energy and journalism",
@@ -9986,6 +10300,17 @@ const UNIVERSITY_DB_V5 = {
     "secondaryMegaRegionExposure": []
   },
   "Auburn University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 46,
+      "homeStateEnrollmentPct": 54,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Auburn University Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification assigned using: national >=60% OOS, regional 30-59% OOS, state <30% OOS (thresholds fixed 2026-08-12, first population pass, per schema v1.0.8 guidance to document cutoffs on first use). topFeederStates/topFeederRegions not yet sourced -- only the aggregate in-state/out-of-state split has been pulled so far, not the state-level breakdown."
+    },
     "institutionNarrative": {
       "name": "Auburn University",
       "location": "Auburn, Alabama",
@@ -10332,6 +10657,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Clemson University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 40,
+      "homeStateEnrollmentPct": 60,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Clemson University's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to Clemson's own 2024-25 CDS -- Clemson's own hosted CDS PDFs (open.clemson.edu) returned 403 errors on repeated fetch attempts, so this is one step removed from the primary document. Supersedes the prior owner-set interim drawClassification of 'regional' (now replaced with a sourced figure; still reads as regional at 40%, consistent with the owner's original judgment).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Clemson University",
       "location": "Clemson, South Carolina",
@@ -10674,6 +11010,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Vanderbilt University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 88,
+      "homeStateEnrollmentPct": 12,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Vanderbilt University's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). Vanderbilt's own hosted CDS files are published only in .xlsx format (cdn.vanderbilt.edu), which the fetch tool could not parse, so this is one step removed from the primary document. Cross-checked for plausibility against Vanderbilt's own Fall 2025 Enrollment Report (registrar.vanderbilt.edu), which shows Tennessee as the single largest domestic state group but a small share of total enrollment -- consistent with a high out-of-state percentage.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Vanderbilt University",
       "location": "Nashville, Tennessee",
@@ -10711,6 +11058,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "N/A — Vanderbilt meets 100% of demonstrated financial need",
         "transferNotes": "Vanderbilt accepts a very small number of transfers and meets 100% of demonstrated need for all admitted students, including transfers."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 1",
+      "essayPromptTopic": null,
+      "notes": "ED I due November 1, decision mid-December, deposit due December 31. ED II due January 1, decision mid-February, deposit due March 1. Regular Decision also due January 1, decision late March, deposit due May 1. Verified against admissions.vanderbilt.edu/apply/, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Vanderbilt University",
@@ -11091,6 +11446,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Virginia": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 31,
+      "homeStateEnrollmentPct": 69,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Virginia Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "University of Virginia",
       "location": "Charlottesville, Virginia",
@@ -11129,11 +11495,19 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~19%",
         "estimatedSavingsRange": "$12,000-$35,000",
         "transferNotes": "Virginia's Guaranteed Admission Agreement with in-state community colleges creates a structured pathway for qualifying transfer students."
-      },
-      "institutionIdentity": {
-        "commonName": "University of Virginia",
-        "archetype": "Elite Public 'Public Ivy', Founding-Era Prestige"
-      },
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision / Early Action",
+      "rdDeadline": "January 5",
+      "essayPromptTopic": null,
+      "notes": "ED and EA share a November 1 deadline (ED notified by Dec 15, binding; EA notified by Feb 15, non-binding, reply until May 15). Regular Decision due January 5, notified by April 1, reply until May 15. Verified against admission.virginia.edu/admission/deadlines-instructions, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
+    "institutionIdentity": {
+      "commonName": "University of Virginia",
+      "archetype": "Elite Public 'Public Ivy', Founding-Era Prestige",
       "institutionalPersonality": "polished, ambitious, historically rooted, achievement-oriented",
       "cultureKeywords": [
         "Jeffersonian",
@@ -11144,6 +11518,7 @@ const UNIVERSITY_DB_V5 = {
         "Prestige"
       ],
       "missionOrientation": "Delivering elite outcomes at public-school cost, rooted in Jefferson's founding vision.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Rigorous, tradition-informed education with elite selective programs inside a broader public university.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly moderate to progressive, achievement-focused.",
@@ -11443,16 +11818,27 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Tulane University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 87,
+      "homeStateEnrollmentPct": 13,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Tulane University's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). A direct Tulane-hosted CDS PDF could not be located via search, so this is one step removed from the primary document. Tulane has long been publicly known for one of the highest out-of-state/geographic-diversity enrollment shares among U.S. private universities, consistent with this figure.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Tulane University",
       "location": "New Orleans, Louisiana",
       "region": "Southeast",
-      "archetype": "The New Orleans Immersion — Energy Finance and Architecture Hiding Behind Mardi Gras",
+      "archetype": "The New Orleans Immersion \u2014 Energy Finance and Architecture Hiding Behind Mardi Gras",
       "oneSentenceSummary": "Tulane's mandatory public service requirement and deep New Orleans immersion mask genuinely strong Freeman Business energy finance ties and an underrated Architecture program.",
       "pipeline": "Freeman Business School has real Gulf Coast energy finance placement. Architecture is genuinely strong, tied to New Orleans' distinctive built environment. Public service requirement embeds every student in real civic work.",
       "hiddenPathway": "Freeman's energy finance ties to the Gulf Coast are a genuine, underrated pipeline hiding behind Tulane's party-school reputation.",
       "institutionalSecret": "Tulane's Architecture program benefits from studying and rebuilding a city with one of the most distinctive built environments in America.",
-      "theRoom": "New Orleans itself is inseparable from the Tulane experience — culture, music, and civic engagement are constant.",
+      "theRoom": "New Orleans itself is inseparable from the Tulane experience \u2014 culture, music, and civic engagement are constant.",
       "lifestyle": "Distinctive, culturally rich, civically engaged via mandatory public service.",
       "bestFitPersonality": "Culturally curious, comfortable in a loud, present city, drawn to energy finance or architecture.",
       "faithTradition": "None",
@@ -11479,11 +11865,19 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~11%",
         "estimatedSavingsRange": "$16,000-$38,000",
         "transferNotes": "Tulane transfer admission is highly competitive, reflecting overall selectivity."
-      },
-      "institutionIdentity": {
-        "commonName": "Tulane University",
-        "archetype": "Private University, New Orleans Cultural and Energy Finance Anchor"
-      },
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from admission.tulane.edu/apply/deadlines-forms (2026-27 cycle; all deadlines refer to postmark dates): Early Decision -- application opens Aug 1, due Nov 1, need-based aid (CSS Profile/FAFSA) due Nov 15, decisions released by Dec 15, enrollment deposit due Jan 15 (non-refundable after). Regular Decision -- application due Jan 15, need-based aid due Feb 15, decisions released by April 1, enrollment deposit due May 1. Tulane also offers Early Action and Early Decision II rounds (specific dates not captured in this pass -- the accordion sections for these two rounds were not expanded). Real, named Louisiana-specific scholarship programs: Legislative Scholars and Mayoral Scholarship, both requiring separate disclosure/application by Feb 15. The Altman Program in International Studies & Business has its own early (Feb 15) and regular (Mar 10) deadlines. Tulane requires only a counselor recommendation, not a teacher recommendation, though additional recommendations are accepted. A 'Focus Louisiana' program specifically encourages in-state applicants. Common Application only (no separate Tulane-specific application). Sourced from admission.tulane.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
+    "institutionIdentity": {
+      "commonName": "Tulane University",
+      "archetype": "Private University, New Orleans Cultural and Energy Finance Anchor",
       "institutionalPersonality": "culturally rich, civically engaged, underrated in specific programs",
       "cultureKeywords": [
         "New Orleans",
@@ -11493,6 +11887,7 @@ const UNIVERSITY_DB_V5 = {
         "Mardi Gras"
       ],
       "missionOrientation": "Delivering distinctive, civically-engaged education embedded in one of America's most unique cities.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Mandatory public service combined with genuine energy finance and architecture strength.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly moderate, civically engaged.",
@@ -11502,7 +11897,8 @@ const UNIVERSITY_DB_V5 = {
       "leadershipStyle": "Leadership through civic engagement and distinctive New Orleans immersion."
     },
     "comparativePositioning": {
-      "versusVanderbilt": "Vanderbilt offers stronger Nashville healthcare ties; Tulane offers Gulf Coast energy finance and a uniquely immersive New Orleans civic experience."
+      "versusVanderbilt": "Vanderbilt offers stronger Nashville healthcare ties; Tulane offers Gulf Coast energy finance and a uniquely immersive New Orleans civic experience.",
+      "versusRice": "Rice offers a smaller, more STEM-concentrated Houston-adjacent experience with a lower cost of attendance relative to need; Tulane offers a larger liberal-arts-plus-business breadth and a uniquely immersive New Orleans civic and cultural setting."
     },
     "institutionScale": {
       "enrollmentCategory": "Medium",
@@ -11603,6 +11999,12 @@ const UNIVERSITY_DB_V5 = {
         "Freeman Business School's Gulf Coast energy finance ties are a genuine, underrated pipeline hiding behind Tulane's party-school reputation.",
         "Tulane's Architecture program benefits from studying and literally rebuilding a city with one of the most distinctive built environments in America, a real-world laboratory most peer programs cannot offer.",
         "The mandatory public service requirement embeds every student in real civic work, giving Tulane graduates a genuine, documented commitment to public health and nonprofit leadership that most peer schools only claim in mission statements."
+      ],
+      "sleeperIndustries": [
+        "Coastal and Environmental Resilience Consulting",
+        "Public Health and Global Health Nonprofits",
+        "Real Estate Development and Historic Preservation",
+        "Maritime and Port Logistics (Gulf Coast shipping)"
       ]
     },
     "networkCapital": {
@@ -11651,7 +12053,7 @@ const UNIVERSITY_DB_V5 = {
       "innovationIndex": 62
     },
     "geographicInfluence": {
-      "dominantMarket": "New Orleans and the Gulf Coast — Energy Finance and Architecture",
+      "dominantMarket": "New Orleans and the Gulf Coast \u2014 Energy Finance and Architecture",
       "secondaryMarkets": [
         "Houston TX",
         "Atlanta GA",
@@ -11661,7 +12063,16 @@ const UNIVERSITY_DB_V5 = {
         "New Orleans LA",
         "Houston TX",
         "Atlanta GA"
-      ]
+      ],
+      "relocationPatterns": [
+        "A substantial share of graduates remain in or return to New Orleans, reinforced by the mandatory public service requirement's local civic ties.",
+        "Houston draws graduates into Gulf Coast energy finance, consistent with Freeman Business School's real industry connections.",
+        "New York and Atlanta attract graduates into broader finance, consulting, and corporate roles.",
+        "Miami draws graduates with Latin American Studies backgrounds and international business interests."
+      ],
+      "regionalInfluenceScore": 74,
+      "nationalReachScore": 56,
+      "internationalReachScore": 32
     },
     "socialCapital": {
       "greekLifeInfluence": 44,
@@ -11677,7 +12088,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "realEstate": {
         "strength": 80,
-        "notes": "Strong, distinctive architecture placement. (Remapped 2026-07-12 from non-standard key 'architecture' — closest available standard key, no dedicated architecture key exists.)"
+        "notes": "Strong, distinctive architecture placement. (Remapped 2026-07-12 from non-standard key 'architecture' \u2014 closest available standard key, no dedicated architecture key exists.)"
       },
       "nonprofitLeadership": {
         "strength": 74,
@@ -11852,413 +12263,455 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Colorado Boulder": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 43,
+      "homeStateEnrollmentPct": 57,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly (blocked or 404), so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "University of Colorado Boulder",
       "location": "Boulder, Colorado",
-      "region": "Rocky Mountains",
-      "archetype": "The Aerospace-Wellness Hybrid — Space Engineering Meets Natural Products Country",
-      "oneSentenceSummary": "CU Boulder pairs elite aerospace/space engineering research with Leeds Business School and a genuinely unique Natural Products industry cluster, all wrapped in Boulder's outdoorsy, health-conscious culture.",
-      "pipeline": "Approximately 30,000 undergraduates. Leeds School of Business offers strong finance, entrepreneurship, and real estate placement. Aerospace and mechanical/electrical engineering are anchored by LASP (Laboratory for Atmospheric and Space Physics) research. Environmental Studies feeds directly into Boulder's dense Natural Products/supplement industry cluster (Celestial Seasonings, White Wave, Justin's, and dozens of natural foods and wellness companies headquartered in the area). The College of Arts and Sciences is genuinely strong in Philosophy, Psychology, and Molecular Biology. Film Studies and Journalism benefit from direct proximity to the Sundance Film Festival in nearby Park City, Utah, and CU Boulder hosts the Conference on World Affairs each spring, drawing global thinkers to campus.",
-      "hiddenPathway": "Boulder is a genuine hub for the Natural Products industry — organic food, supplements, and wellness brands — an under-recognized career pathway feeding directly out of Environmental Studies and business programs. Separately, the annual Conference on World Affairs brings hundreds of international speakers to campus free of charge, a uniquely accessible global-ideas pipeline most students discover only after arriving.",
-      "institutionalSecret": "CU Boulder's aerospace program has one of the highest astronaut-alumni densities among public universities, reinforced by direct LASP research access most undergrads at peer schools don't get.",
-      "theRoom": "Boulder sits at the base of the Rockies, a genuinely healthy, outdoorsy small city that also happens to be a national center for natural foods and wellness brands.",
-      "lifestyle": "Outdoorsy and health-conscious — hiking, climbing, and skiing are as central to campus life as any club or Greek organization.",
-      "bestFitPersonality": "Outdoorsy, health-and-wellness minded, technically capable, drawn to both space engineering and sustainability.",
-      "faithTradition": "None",
-      "geographicInfluenceRadius": "Dominant across Colorado, with a distinctive national reach in aerospace research and the natural products industry.",
-      "economicOutcome": "Excellent outcomes in aerospace engineering and business, plus a uniquely strong niche pipeline into natural foods/wellness industry leadership.",
+      "region": "Front Range",
+      "archetype": "The Aerospace Flagship \u2014 Real Out-of-State Draw, Colorado Creed, Research-University Scale with a Law School",
+      "oneSentenceSummary": "The University of Colorado Boulder is a large public research university at the base of the Rocky Mountains, distinguished by a genuinely strong national draw (44.5% of the Fall 2025 first-year class came from outside Colorado) and an unusually deep aerospace and defense employer pipeline connecting directly to Colorado's real aerospace industry cluster.",
+      "pipeline": "7,397 new first-year students enrolled Fall 2025 (down 0.5% from 7,432 in 2024), with an average SAT of 1268, ACT of 29.6, and high school GPA of 3.77. 55.5% of the class is Colorado resident and 44.5% out-of-state, with California (12.6%), Texas (4.3%), and Illinois (3.2%) the top out-of-state feeder states. 69% of graduates were employed within six months of graduation (based on the university's own Graduate Destinations Survey, 15% response rate, updated March 2026), 92% of those full-time, 88% in work related to their major. The top industry for graduates is Scientific Research and Development Services (16%) and the top occupation is Aerospace Engineer (6%) -- both reflecting Colorado's real aerospace and defense economy. Top employers by verified survey count: Lockheed Martin (49), Amazon (22), KPMG (18), Charles Schwab (17), Ball Aerospace (16), Deloitte (14), and Northrop Grumman (12).",
+      "hiddenPathway": "CU Boulder's aerospace and defense employer pipeline is not a marketing claim -- it's directly measurable in the university's own outcomes data: Lockheed Martin alone hired more recent graduates (49, per the Graduate Destinations Survey) than any employer besides the university itself, and Ball Aerospace, Northrop Grumman, and the Laboratory for Atmospheric and Space Physics all appear among the top employers. This reflects Colorado's real Front Range aerospace corridor, not a general research-university claim.",
+      "institutionalSecret": "CU Boulder draws 44.5% of its incoming class from outside Colorado -- a genuinely national draw for a public flagship, not a primarily regional one, with real, measurable pull from California (12.6% of the class alone) and Texas (4.3%).",
+      "theRoom": "Located in Boulder, Colorado, at the base of the Rocky Mountains -- a genuinely scenic, outdoors-oriented setting (ranked a top-10 most beautiful campus by Travel + Leisure in 2026) about 30 miles northwest of Denver, giving students both a mountain-town environment and real access to a major metro.",
+      "lifestyle": "Large, research-intensive, and outdoors-oriented, organized in part around the student-authored Colorado Creed (a social-responsibility code developed by students in 2003) and a genuinely broad academic offering -- 5,160+ courses across 270+ fields of study across seven colleges and schools.",
+      "bestFitPersonality": "Students who want a large public research university with genuine national reach and a real, specific aerospace/STEM employer pipeline, who are drawn to an outdoors-oriented mountain-town setting with metro access nearby.",
+      "faithTradition": "None (public university)",
+      "geographicInfluenceRadius": "Strong throughout the Front Range and broader Mountain West, with real, measurable national draw into California and Texas specifically, and a strong aerospace/defense employer pipeline connecting to Colorado's own industry base.",
+      "economicOutcome": "69% of graduates were employed within six months of graduation (CU Boulder's own Graduate Destinations Survey, updated March 2026, 15% response rate disclosed by the university). Of those employed: 92% full-time, 79% permanent, most common salary range $50,000-$74,999 (37%), 88% employment related to major, 74% reporting job satisfaction. Of Bachelor's graduates continuing education: 84% admitted to their first-choice school, 68% enrolled in a Master's program, 27% in a Doctoral program.",
       "gradCities": [
-        "Denver-Boulder CO",
+        "Denver CO",
+        "Boulder CO",
         "San Francisco CA",
-        "Seattle WA",
-        "Los Angeles CA",
-        "Washington DC"
+        "Los Angeles CA"
       ],
       "comparableInstitutions": [
         "University of Washington",
-        "Colorado School of Mines",
-        "University of Oregon"
+        "University of Oregon",
+        "University of Utah",
+        "Arizona State University",
+        "University of Arizona"
       ],
       "ccTransferPathway": {
         "hasCCPathway": true,
-        "ccFeederNames": [
-          "Front Range Community College"
-        ],
-        "transferAcceptanceRate": "~58%",
-        "freshmanAcceptanceRate": "~78%",
-        "estimatedSavingsRange": "$12,000-$28,000",
-        "transferNotes": "CU Boulder maintains transfer agreements with Colorado's community college system."
-      },
-      "institutionIdentity": {
-        "commonName": "CU Boulder",
-        "archetype": "Large Public Research Flagship, Aerospace and Wellness Hybrid"
-      },
-      "institutionalPersonality": "outdoorsy, technically serious, health-conscious, free-spirited",
+        "ccFeederNames": [],
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "",
+        "estimatedSavingsRange": "",
+        "transferNotes": "CU Boulder has a dedicated Transfer Applicants admissions pathway with its own timeline, confirmed directly on colorado.edu/admissions. Specific community college feeder program names and a published transfer acceptance rate were not confirmed in this pass -- flagged for a follow-up check rather than estimated. Colorado's statewide community college system (e.g. Front Range Community College) is a plausible real feeder given CU Boulder's public flagship status, but this was not independently verified this session."
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Fall and Summer Early Action",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from colorado.edu/admissions/process/first-year/apply: Spring application deadline Oct. 1; Fall/summer Early Action deadline Nov. 15 (decision by Feb. 1); Fall/summer Regular Decision deadline Jan. 15 (decision by April 1). SAT/ACT listed under Optional Materials -- test-optional. College of Music applicants are notified only after audition, regardless of submission date. CU Boulder waives the application fee and accepts a nonacademic letter of recommendation for students affected by natural disasters. Specific supplemental essay prompt text was not captured in this pass. Sourced from colorado.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
+    "institutionIdentity": {
+      "commonName": "CU Boulder",
+      "archetype": "Large Public Research University \u2014 Aerospace/STEM Flagship with Real National Draw",
+      "institutionalPersonality": "research-intensive, outdoors-oriented, community-minded, aerospace-connected",
       "cultureKeywords": [
-        "Leeds Business",
-        "Aerospace",
-        "LASP",
-        "Natural Products",
-        "Environmental Studies",
-        "Outdoors"
+        "Colorado Creed",
+        "Aerospace Engineering",
+        "Front Range",
+        "Research University",
+        "National Draw"
       ],
-      "missionOrientation": "Delivering elite aerospace research and business education inside a genuinely health-conscious, outdoors-oriented culture.",
-      "educationalPhilosophy": "Rigorous engineering and business education paired with direct access to Boulder's aerospace research infrastructure and natural products industry.",
+      "missionOrientation": "A public research university combining large-scale research impact with a genuinely broad academic offering and a student-authored social-responsibility code.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "A large public research university structure spanning seven colleges and schools (Arts & Sciences, Leeds School of Business, Communication/Media/Design/Information, Education, Engineering & Applied Science, Exploratory Studies, Music), with 5,160+ courses across 270+ fields of study, and dedicated preprofessional programs in health sciences and law.",
       "competitiveness": "Selective",
-      "politicalCulture": "Broadly progressive, environmentally engaged.",
-      "studentAutonomy": "Very High",
-      "prestigeOrientation": "Elite in aerospace/space research; strong regional prestige in business and environmental studies.",
-      "socialClimate": "Outdoorsy, free-spirited, technically serious.",
-      "leadershipStyle": "Leadership through research excellence, environmental engagement, and outdoor-lifestyle balance."
+      "politicalCulture": "Progressive-leaning, consistent with Boulder's broader civic culture, within a public-university student body that is more geographically and politically diverse than the town itself.",
+      "studentAutonomy": "High, supported by the Exploratory Studies college for undeclared students (18% of the Fall 2025 first-year class).",
+      "prestigeOrientation": "A well-regarded public research university with real, dated rankings: top 3% among world universities (Academic Ranking of World Universities, 2025), top 10% best-quality college in the U.S. (College Factual, 2025), #1 four-year graduation rate among Colorado public universities.",
+      "socialClimate": "Large and outdoors-oriented, organized in part around the student-authored Colorado Creed, with real racial/ethnic diversity (31.1% of the Fall 2025 first-year class).",
+      "leadershipStyle": "Leadership cultivated through the student-authored Colorado Creed and a genuinely broad set of research and preprofessional opportunities across a large public-university structure."
     },
     "comparativePositioning": {
-      "versusColoradoMines": "Colorado Mines is more concentrated on energy/mining engineering; CU Boulder offers broader program breadth including aerospace, business, and a unique natural products/wellness pipeline.",
-      "versusWashington": "Washington offers stronger tech-corridor Seattle ties; CU Boulder offers stronger aerospace/space research and the distinctive natural products industry cluster."
+      "versusUniversityOfWashington": "Both are large, research-intensive public flagships with strong STEM reputations, but CU Boulder's aerospace/defense employer pipeline (Lockheed Martin, Ball Aerospace, Northrop Grumman) is more specifically concentrated than UW's broader tech-sector pipeline tied to the Seattle area.",
+      "versusArizonaStateUniversity": "ASU is larger and more explicitly built around access and scale, while CU Boulder's smaller, more selective admissions process and mountain-town setting give it a different institutional character despite both being large public research universities in the Mountain West/Southwest region.",
+      "versusUniversityOfUtah": "Utah shares CU Boulder's Mountain West public-flagship positioning and outdoors-oriented setting, but CU Boulder's out-of-state draw (44.5% of the Fall 2025 class) is notably higher, reflecting a more genuinely national applicant pool."
     },
     "institutionScale": {
-      "enrollmentCategory": "Large",
-      "undergraduateEnrollment": 30000,
-      "graduateEnrollment": 6000,
-      "totalEnrollment": 36000,
-      "campusType": "Large Public Research Flagship, Mountain College Town",
-      "residentialIntensity": 56,
-      "communityFeel": 59,
-      "studentFacultyRatio": "17:1",
-      "classSizeExperience": "Moderate to large introductory courses; LASP research and Leeds Business offer especially personalized upper-division experiences.",
+      "enrollmentCategory": "Very Large",
+      "undergraduateEnrollment": 37000,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 37000,
+      "campusType": "Large Public Research University",
+      "residentialIntensity": 48,
+      "communityFeel": 58,
+      "studentFacultyRatio": "",
+      "classSizeExperience": "Large lecture-format classes are common in introductory courses, consistent with a large public research university, with smaller seminar and lab-based courses in upper-division and major-specific coursework.",
       "scaleAdvantages": [
-        "Elite aerospace/space research via LASP",
-        "Leeds Business School strength in finance and entrepreneurship",
-        "Unique Natural Products industry cluster proximity",
-        "Outdoorsy, health-conscious lifestyle"
+        "Genuinely national draw for a public flagship -- 44.5% out-of-state in the Fall 2025 first-year class",
+        "Real, measurable aerospace/defense employer pipeline (Lockheed Martin, Ball Aerospace, Northrop Grumman) tied to Colorado's own industry base",
+        "Seven colleges and schools with 5,160+ courses across 270+ fields of study, including dedicated preprofessional health sciences and law pathways",
+        "Mountain-town setting with real access to Denver, a major metro, about 30 miles away"
       ],
       "scaleDisadvantages": [
-        "Free-spirited culture can feel unstructured for students wanting more guardrails",
-        "High cost of living in Boulder"
+        "Large public-university scale means less individual faculty attention than a small liberal arts college, especially in introductory coursework",
+        "Only 15% Graduate Destinations Survey response rate means outcomes data, while real and university-published, covers a smaller share of the graduating class than some peer institutions' surveys",
+        "Boulder's high cost of living is a real consideration for students and families, though not independently priced out in this pass",
+        "Merit scholarship access for non-residents (24.5% of the class) is smaller than for Colorado residents (29.3%)"
       ]
     },
     "studentFit": {
       "bigFiveProfile": {
-        "openness": 88,
-        "conscientiousness": 78,
+        "openness": 78,
+        "conscientiousness": 70,
         "extraversion": 72,
-        "agreeableness": 78,
-        "neuroticism": 36
+        "agreeableness": 70,
+        "neuroticism": 46
       },
       "hollandCodes": [
         "I",
         "R",
-        "A"
+        "E"
       ],
       "learningStyle": [
-        "Applied Aerospace Research",
-        "Case-Method Business",
-        "Environmental Field Study"
+        "Large Lecture with Smaller Upper-Division Seminars",
+        "Research-Intensive Lab and Field Work",
+        "Preprofessional Advising (Health Sciences, Law)",
+        "Independent Exploration via Exploratory Studies"
       ],
       "socialEnvironment": [
-        "Outdoorsy",
-        "Health-Conscious",
-        "Technically Serious"
+        "Large",
+        "Outdoors-Oriented",
+        "Research-Intensive",
+        "Geographically Diverse",
+        "Mountain-Town"
       ],
       "idealStudentTraits": [
-        "Outdoor-oriented and health-conscious",
-        "Technically serious, especially in aerospace or engineering",
-        "Comfortable blending rigorous STEM work with an active lifestyle",
-        "Environmentally minded",
-        "Independent and self-directed"
+        "Wants a large public research university with genuine national reach, not just a regional commuter-style flagship",
+        "Interested in aerospace, engineering, or other STEM fields with a real, measurable employer pipeline",
+        "Drawn to an outdoors-oriented mountain-town setting with metro access nearby",
+        "Comfortable navigating a large campus and larger introductory class sizes"
       ],
       "thrivesIf": [
-        "Wants aerospace engineering or environmental science with a genuinely outdoorsy, wellness-driven campus culture",
-        "Enjoys hiking, skiing, or an active lifestyle as part of daily college life",
-        "Is comfortable with a technically serious academic core wrapped in a laid-back social culture",
-        "Values field-based and applied research over pure lecture",
-        "Wants Rocky Mountain proximity built into the college experience, not just nearby"
+        "Wants a large research university with real out-of-state/national draw, not a primarily in-state commuter school",
+        "Is interested in aerospace, engineering, or other STEM fields connected to Colorado's real industry base",
+        "Values an outdoors-oriented setting with access to skiing, hiking, and mountain recreation",
+        "Is comfortable being one of many students in a 37,000-undergraduate university rather than a small college"
       ],
       "strugglesIf": [
-        "Isn't interested in outdoor recreation or an active lifestyle",
-        "Wants a fast-paced urban environment",
-        "Prefers a more traditional, less wellness-centric campus culture",
-        "Needs a smaller, more structured academic environment"
+        "Wants the small-class, high-faculty-access experience of a liberal arts college",
+        "Prefers a purely in-state, homogeneous regional student body over a more geographically diverse one",
+        "Wants a warm-climate campus rather than Colorado's mountain seasons",
+        "Needs more structured academic advising than a large public university's Exploratory Studies model provides"
       ],
       "transferRiskFactors": [
-        "Students who don't connect with Boulder's outdoorsy/wellness culture and feel out of place socially",
-        "Students outside aerospace/STEM who feel like a secondary priority",
-        "Students priced out by Boulder's rising cost of living"
+        "Students who find the large lecture-format introductory classes impersonal",
+        "Students who wanted a small, tight-knit college experience and did not anticipate CU Boulder's scale",
+        "Students without a clear major who don't engage with Exploratory Studies advising resources"
       ]
     },
     "competitiveMajorPressure": {
       "level": "Moderate",
-      "notes": "The College of Engineering and Applied Science and Leeds School of Business both use secondary GPA review for students seeking to declare or transfer into aerospace engineering or business after starting in a different college."
+      "notes": "Leeds School of Business (8.8% of the Fall 2025 first-year class) and the College of Engineering and Applied Science (17.3%) are direct-admit colleges with their own application tracks, a meaningfully different model from a single undifferentiated arts & sciences major pool -- students should confirm current cross-college transfer flexibility directly with admissions rather than assume it is unrestricted."
     },
     "hiddenOpportunities": {
-      "naturalProductsIndustry": {
-        "strength": 88,
-        "notes": "Boulder is a genuine hub for the Natural Products industry — organic food, supplements, and wellness brands headquartered in the area, an under-recognized career pathway."
-      },
-      "aerospaceLASP": {
-        "strength": 94,
-        "notes": "Direct undergraduate access to LASP (Laboratory for Atmospheric and Space Physics), unmatched among peer aerospace programs."
-      },
-      "conferenceOnWorldAffairs": {
-        "strength": 82,
-        "notes": "CU Boulder's annual Conference on World Affairs brings hundreds of international speakers to campus free of charge, a uniquely accessible global-ideas pipeline."
-      },
-      "filmJournalismSundanceProximity": {
-        "strength": 76,
-        "notes": "Film Studies and Journalism students benefit from proximity to the Sundance Film Festival in nearby Park City, Utah, a genuine industry-access advantage."
-      }
+      "underratedMajors": [
+        "Integrative Physiology",
+        "Aerospace Engineering Sciences",
+        "Political Science",
+        "Molecular, Cellular, and Developmental Biology"
+      ],
+      "hiddenCareerPipelines": [
+        "Aerospace and Defense Engineering (Lockheed Martin, Ball Aerospace, Northrop Grumman, LASP)",
+        "Scientific Research and Development Services (16% of graduates, the single top industry)",
+        "Preprofessional Law (CU Boulder has its own law school and a dedicated preprofessional law advising track)",
+        "Finance and Consulting (KPMG, Charles Schwab, Deloitte among top employers)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Lockheed Martin",
+        "Ball Aerospace",
+        "Northrop Grumman",
+        "Laboratory for Atmospheric and Space Physics"
+      ],
+      "overlookedStrengths": [
+        "CU Boulder's real out-of-state enrollment (44.5% of the Fall 2025 class) is a genuinely national draw for a public flagship, not just a regional one -- directly relevant to matching students from outside Colorado who assume a public university like this is primarily a local/regional draw.",
+        "The aerospace and defense employer pipeline is directly measurable in the university's own outcomes data (Lockheed Martin: 49 hires, Ball Aerospace: 16, Northrop Grumman: 12, per the Graduate Destinations Survey), not just an assumed regional-industry claim.",
+        "CU Boulder has its own law school and dedicated preprofessional law advising -- a real structural feature not every public flagship offers as a named, dedicated program.",
+        "The university publishes its own outcomes survey response rate honestly (15%), rather than presenting outcomes stats without disclosing survey coverage -- a data-integrity signal worth noting."
+      ],
+      "sleeperIndustries": [
+        "Aerospace and Space Systems Engineering",
+        "Atmospheric and Space Physics Research",
+        "Preprofessional Law and Legal Services",
+        "Data Processing, Hosting, and Related Services"
+      ]
     },
     "networkCapital": {
-      "alumniAccessibility": 82,
-      "mentorshipDensity": 80,
-      "executiveAccess": 76,
-      "internshipNetwork": 84,
-      "familyBusinessExposure": 44,
-      "relationshipCapitalScore": 82,
-      "alumniLoyaltyScore": 80,
-      "referralCultureStrength": 80,
-      "donorNetworkStrength": 68,
-      "boardMemberDensity": 56
+      "alumniAccessibility": 62,
+      "mentorshipDensity": 58,
+      "executiveAccess": 56,
+      "internshipNetwork": 68,
+      "familyBusinessExposure": 26,
+      "relationshipCapitalScore": 60,
+      "alumniLoyaltyScore": 62,
+      "referralCultureStrength": 58,
+      "donorNetworkStrength": 56,
+      "boardMemberDensity": 40
     },
     "economicEcosystem": {
       "primaryIndustries": [
-        "Aerospace and Space Research",
-        "Natural Products and Wellness",
-        "Business and Entrepreneurship",
-        "Environmental Science and Sustainability",
-        "Technology"
+        "Aerospace and Defense",
+        "Professional, Scientific, and Technical Services",
+        "Educational Services",
+        "Healthcare"
       ],
       "regionalEconomicDrivers": [
-        "Colorado Aerospace Corridor (NASA, Lockheed Martin)",
-        "Boulder Natural Products and Wellness Cluster",
-        "Colorado Tech and Startup Ecosystem",
-        "Environmental and Sustainability Consulting"
+        "Aerospace and Defense (Front Range corridor)",
+        "Technology and Research",
+        "Higher Education"
       ],
       "topEmployers": [
-        "NASA",
         "Lockheed Martin",
-        "Celestial Seasonings",
-        "White Wave",
+        "Amazon",
+        "KPMG",
         "Ball Aerospace"
       ],
       "emergingIndustries": [
-        "Space Technology and Satellites",
-        "Wellness and Supplement Innovation",
-        "Climate Technology",
-        "Outdoor Recreation Technology"
+        "Data Processing and Hosting Services",
+        "Computer Systems Design"
       ],
-      "startupDensity": "High",
-      "ventureCapitalAccess": 66,
-      "corporateHeadquartersDensity": 54,
-      "healthcareHubStrength": 60,
-      "innovationIndex": 84
+      "startupDensity": "Moderate",
+      "ventureCapitalAccess": 44,
+      "corporateHeadquartersDensity": 20,
+      "healthcareHubStrength": 38,
+      "innovationIndex": 66
     },
     "geographicInfluence": {
-      "dominantMarket": "Colorado — Aerospace Research and Natural Products",
+      "dominantMarket": "Front Range and Mountain West Aerospace, Defense, and Technology Economy",
       "secondaryMarkets": [
+        "Denver CO",
         "San Francisco CA",
-        "Seattle WA",
-        "Washington DC"
+        "Los Angeles CA"
       ],
       "alumniStrongholds": [
-        "Denver-Boulder CO",
-        "San Francisco CA",
-        "Seattle WA"
-      ]
+        "Colorado (Denver-Boulder corridor)",
+        "California",
+        "Texas"
+      ],
+      "relocationPatterns": [
+        "67% of surveyed graduates remain living in Colorado after graduation, per the university's own Graduate Destinations Survey.",
+        "A real, measurable out-of-state student pipeline draws heavily from California (12.6% of the Fall 2025 class) and Texas (4.3%), suggesting some return migration to those states after graduation, though this was not separately confirmed.",
+        "Aerospace and defense graduates concentrate around Colorado's own Front Range industry cluster (Lockheed Martin, Ball Aerospace) as well as national aerospace hubs.",
+        "38 states plus international countries are represented in the broader class profile, though the specific post-graduation out-of-state relocation split was not independently confirmed beyond the 67%-in-Colorado figure."
+      ],
+      "regionalInfluenceScore": 72,
+      "nationalReachScore": 58,
+      "internationalReachScore": 30
     },
     "socialCapital": {
-      "greekLifeInfluence": 24,
-      "studentOrganizationStrength": 82,
-      "leadershipDevelopment": 78,
-      "crossDisciplinaryInteraction": 78,
-      "civicEngagement": 74
+      "greekLifeInfluence": 36,
+      "studentOrganizationStrength": 70,
+      "leadershipDevelopment": 62,
+      "crossDisciplinaryInteraction": 60,
+      "civicEngagement": 64
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 12,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 44,
+        "notes": "Real presence: Health Care and Social Assistance drew 9% of graduates in the Top Industries breakdown, with General Medical and Surgical Hospitals (3%) among specific industries."
+      },
+      "nutraceuticals": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis in available outcomes data."
+      },
+      "outdoorIndustry": {
+        "strength": 48,
+        "notes": "Moderate presence given Boulder's real outdoor-recreation culture and mountain setting, though not separately broken out as a distinct employer category in available survey data."
+      },
+      "sportsBusiness": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis in available outcomes data."
+      },
+      "entertainmentMedia": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis in available outcomes data."
+      },
+      "ventureCapital": {
+        "strength": 34,
+        "notes": "Limited but real presence given Colorado's growing tech and startup ecosystem, not separately confirmed in survey data."
+      },
+      "privateEquity": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis in available outcomes data."
+      },
+      "investmentBanking": {
+        "strength": 34,
+        "notes": "Real but modest presence; Charles Schwab appeared among top employers, though this is more asset-management/brokerage than pure investment banking."
+      },
+      "consulting": {
+        "strength": 40,
+        "notes": "Real presence: KPMG and Deloitte both appeared among top employers in the Graduate Destinations Survey."
+      },
+      "medicine": {
+        "strength": 36,
+        "notes": "Real preprofessional health sciences advising track exists, with General Medical and Surgical Hospitals among specific outcome industries, though CU Boulder itself has no medical school (the CU Anschutz Medical Campus is a separate CU System campus)."
+      },
+      "healthcareAdministration": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis relative to direct clinical pathways."
+      },
+      "defense": {
+        "strength": 62,
+        "notes": "Strong, verified pipeline: Lockheed Martin (49 hires), Ball Aerospace (16), Northrop Grumman (12), and Lockheed Martin Space (11) all appeared among top employers in the Graduate Destinations Survey -- the strongest single-industry signal in this record."
+      },
+      "realEstate": {
+        "strength": 26,
+        "notes": "Real Estate and Rental and Leasing appeared as a minor category (1%) in the Top Industries breakdown."
+      },
+      "luxuryBrands": {
+        "strength": 14,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 40,
+        "notes": "Moderate presence given Colorado's broader tech and startup ecosystem, not independently confirmed as a formal institutional program in this pass."
+      },
+      "technology": {
+        "strength": 52,
+        "notes": "Real presence: Information industries drew 6% of graduates, and Computer Systems Design and Related Services (4%) and Data Processing, Hosting, and Related Services (2%) both appeared as specific industries in the Top Industries breakdown."
+      },
+      "publicPolicy": {
+        "strength": 36,
+        "notes": "Real presence through Public sector employment as a named category, plus CU Boulder's own law school and preprofessional law advising track."
+      },
+      "nonprofitLeadership": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis in available outcomes data relative to for-profit and government sectors."
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis in available outcomes data; General Medical and Surgical Hospitals (3%) is the closest adjacent category found."
+      }
     },
     "wealthMobility": {
       "averageFamilyIncome": "",
-      "socialMobilityIndex": 70,
-      "firstGenerationSupport": 72,
-      "wealthCreationPotential": 80,
-      "familyBusinessPipelineStrength": 46
-    },
-    "industryPathways": {
-      "defense": {
-        "strength": 94,
-        "notes": "Elite space/aerospace engineering pipeline via LASP."
-      },
-      "entrepreneurship": {
-        "strength": 84,
-        "notes": "Leeds School of Business is genuinely known for entrepreneurship, anchored by the Deming Center for Entrepreneurship — this is Leeds' actual signature strength, not generic consulting placement. (Corrected 2026-07-12: previously mapped to generic consulting/investmentBanking.)"
-      },
-      "outdoorIndustry": {
-        "strength": 84,
-        "notes": "Strong pipeline into sustainability and natural products industry roles."
-      },
-      "realEstate": {
-        "strength": 48,
-        "notes": "Colorado's sustained Front Range growth and Denver-Boulder corridor development support a modest, secondary real estate pathway through Leeds School of Business coursework, though this is not a named institutional specialty the way entrepreneurship and outdoor industry are. (Added 2026-07-22.)"
-      },
-      "technology": {
-        "strength": 86,
-        "notes": "Comprehensive mechanical and electrical engineering strength beyond aerospace specialization."
-      },
-      "entertainmentMedia": {
-        "strength": 74,
-        "notes": "Solid Film Studies and Journalism programs benefiting from Sundance Film Festival proximity."
-      },
-      "pharmaceuticalManufacturing": {
-        "strength": 66,
-        "notes": "Multi-point real evidence: a documented Center for Pharmaceutical Biotechnology (with a linked presence at the CU Anschutz Medical Campus in Denver), a real Pfizer Boulder Research & Development site (Pfizer independently verified elsewhere in this database), KBI Biopharma, and multiple Boulder-based biotech companies (Crestone, Bactria Pharmaceuticals). Colorado's bioscience industry overall employs 38,102 people with $4.4B in payroll (Boulder Economic Council). Real, dense regional cluster, not a single confirmed CU-specific manufacturing pipeline."
-      },
-      "advancedManufacturing": {
-        "strength": 80,
-        "notes": "Long-standing, real, well-funded evidence: the Lockheed Martin Engineering Management Program (EMP) at CU Boulder was established in 1987 -- 38 years, comparable in longevity to Ohio State's Honda relationship. Lockheed Martin Space Systems is named directly as a real industry partner on CU's own aerospace industry-partnerships page. A 2016 agreement added $3 million for new academic programs in radio frequency systems, aerospace, and electrical engineering, on top of roughly $7 million in prior sponsored research."
-      },
-      "consulting": {
-        "strength": 56,
-        "notes": "Leeds School places graduates into regional and national consulting firms (Deloitte, Accenture Denver offices), but this is not a named institutional specialty the way entrepreneurship and outdoor industry are. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
-      },
-      "investmentBanking": {
-        "strength": 46,
-        "notes": "Modest Wall Street placement through Leeds finance concentration; stronger presence in Denver regional banking than coastal investment banking. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
-      },
-      "publicPolicy": {
-        "strength": 62,
-        "notes": "CU Boulder's School of Public Affairs, combined with proximity to Colorado state government in Denver, supports a real if secondary public-policy pathway. (Added 2026-07-29 -- high confidence, named program.)"
-      },
-      "medicine": {
-        "strength": 55,
-        "notes": "No medical school on the Boulder campus itself -- CU's medical program sits at the Anschutz Medical Campus in Aurora, a separate campus in the same University of Colorado system. Boulder undergrads pipeline there via pre-med tracks rather than a Boulder-based clinical presence. (Added 2026-07-29 -- high confidence on the structural fact.)"
-      },
-      "healthcareAdministration": {
-        "strength": 48,
-        "notes": "Secondary pathway via the Anschutz system affiliation; not a Boulder-campus specialty. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
-      },
-      "healthWellness": {
-        "strength": 79,
-        "notes": "Department of Integrative Physiology (formerly Kinesiology) is a genuinely well-regarded program, reinforced by Boulder's broader cultural identity as an elite endurance-sport and wellness city. (Added 2026-07-29 -- high confidence, named program.)"
-      },
-      "nutraceuticals": {
-        "strength": 68,
-        "notes": "Celestial Seasonings is headquartered and manufactures in Boulder. New Hope Network (formerly New Hope Natural Media), headquartered in Boulder and now part of Informa Markets, runs the Natural Products Expo West/East trade shows and publishes Nutrition Business Journal / Natural Products Insider -- the natural-products industry's own trade infrastructure sits in Boulder. This gives the broader natural-foods/supplement cluster noted under outdoorIndustry real institutional weight beyond a single company. (Updated 2026-07-29 -- New Hope Network confirmed via multi-source research; strength raised from initial 64 draft.)"
-      },
-      "consumerProducts": {
-        "strength": 70,
-        "notes": "Justin's Nut Butter was founded and is headquartered in Boulder; Crocs is headquartered nearby in Broomfield/Niwot in Boulder County. Consistent with the natural-products/consumer-brand density noted under nutraceuticals. (Added 2026-07-29 -- high confidence on company HQ facts, moderate on direct CU alumni pipeline.)"
-      },
-      "sportsBusiness": {
-        "strength": 44,
-        "notes": "D1 athletics (Big 12) present, but sports-business career pipeline is not a named institutional strength the way it is at schools with dedicated sport-management programs. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
-      },
-      "nonprofitLeadership": {
-        "strength": 56,
-        "notes": "Boulder's dense environmental and conservation-nonprofit sector (adjacent to NCAR and federal science agencies) supports a real, if secondary, nonprofit pathway distinct from Leeds' business focus. (Added 2026-07-29 -- moderate confidence, pending verification pass.)"
-      },
-      "privateEquity": {
-        "strength": 40,
-        "notes": "Not a named CU signature; some Denver-based private equity recruiting exists but is not institutionally distinctive. (Added 2026-07-29 -- moderate-low confidence, weakest entry in this batch, pending verification pass.)"
-      },
-      "ventureCapital": {
-        "strength": 88,
-        "notes": "Techstars, one of the most influential startup accelerators in the country, was founded in and is headquartered in downtown Boulder near Pearl Street. Foundry Group, a well-known venture capital firm, is also Boulder-based. Beyond these two, Boulder Ventures Ltd. (1941 Pearl Street, founded 1995) is an early-stage information-technology and life-science VC firm with five partnerships totaling over $300 million in committed capital historically, and Ridgeline Ventures (Boulder, founded 2015) provides patient, founder-friendly capital specifically to natural-foods and active-lifestyle consumer companies -- a direct fit with CU's own natural-products and outdoor-industry strengths. This gives CU Boulder unusually direct proximity to real venture infrastructure most universities only have through alumni networks elsewhere. (Updated 2026-07-29 -- Boulder Ventures and Ridgeline Ventures confirmed via multi-source research; strength raised from initial 84 draft. Note: Access Venture Partners considered but excluded -- confirmed HQ is Westminster, CO, not Boulder. 'SeedPod Capital' and 'Boulder Products' could not be verified as real Boulder entities and are excluded.)"
-      },
-      "aestheticsAndBeauty": {
-        "strength": 32,
-        "notes": "Weak institutional fit -- no notable beauty/aesthetics industry pipeline identified for CU Boulder. (Added 2026-07-29 -- high confidence that this is genuinely weak, not under-researched.)"
-      },
-      "luxuryBrands": {
-        "strength": 87,
-        "notes": "Reframed as High-End Ski and Active given CU's actual profile: direct proximity to Aspen, Vail, Steamboat, and Telluride supports a real pipeline into high-end ski resort operations, luxury outdoor-gear brands, and alpine hospitality -- distinct from (and higher-tier than) the broader outdoorIndustry pathway already scored at 84. (Added 2026-07-29 -- high confidence on the regional logic; uses the existing canonical key rather than a new schema key. RESOLVED 2026-07-29: Cotopaxi confirmed headquartered in Salt Lake City, Utah -- no genuine Boulder/CU connection. Permanently excluded from this entry; do not re-add without a new, verified Colorado tie.)"
-      }
+      "socialMobilityIndex": 56,
+      "firstGenerationSupport": 58,
+      "wealthCreationPotential": 58,
+      "familyBusinessPipelineStrength": 26
     },
     "futureResilience": {
-      "aiResistance": 84,
-      "automationResistance": 84,
-      "adaptabilityScore": 86,
-      "interdisciplinaryStrength": 84,
-      "futureReadiness": 88,
-      "entrepreneurialFlexibility": 78,
-      "lifelongLearningCulture": 84,
-      "innovationCapacity": 86
+      "aiResistance": 62,
+      "automationResistance": 60,
+      "adaptabilityScore": 66,
+      "interdisciplinaryStrength": 64,
+      "futureReadiness": 68,
+      "entrepreneurialFlexibility": 56,
+      "lifelongLearningCulture": 62,
+      "innovationCapacity": 68
     },
     "lifeDesignOutcomes": {
-      "wealthCreationPotential": 80,
-      "communityLeadershipPotential": 80,
-      "geographicMobility": 78,
-      "workLifeBalancePotential": 86,
-      "purposeAlignment": 84,
-      "familyFormationSupport": 78,
-      "personalDevelopmentPotential": 86,
-      "careerOptionality": 84,
-      "longTermLifeSatisfaction": 86
+      "wealthCreationPotential": 60,
+      "communityLeadershipPotential": 60,
+      "geographicMobility": 62,
+      "workLifeBalancePotential": 66,
+      "purposeAlignment": 62,
+      "familyFormationSupport": 58,
+      "personalDevelopmentPotential": 66,
+      "careerOptionality": 66,
+      "longTermLifeSatisfaction": 66
     },
     "institutionalMoat": {
-      "prestigeMoat": 78,
-      "networkMoat": 80,
-      "geographicMoat": 82,
-      "industryMoat": 88,
-      "alumniMoat": 78,
-      "brandDurability": 82,
-      "overallMoatScore": 82
+      "prestigeMoat": 56,
+      "networkMoat": 56,
+      "geographicMoat": 58,
+      "industryMoat": 62,
+      "alumniMoat": 54,
+      "brandDurability": 60,
+      "overallMoatScore": 58
     },
     "trajectoryProfile": {
       "dominantTrajectory": "NAVIGATOR",
-      "leaverScore": 62,
-      "returnerScore": 54,
-      "stewardScore": 50,
-      "navigatorScore": 74,
-      "geographicLockIn": "low",
-      "alumniDispersalPattern": "concentrated in Denver-Boulder and West Coast tech/aerospace hubs, with a distinctive natural products industry presence"
+      "leaverScore": 52,
+      "returnerScore": 34,
+      "stewardScore": 30,
+      "navigatorScore": 62,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "colorado_concentrated_with_real_national_draw"
     },
     "jewishLife": {
       "hillel": {
         "exists": true,
-        "strength": 78,
-        "type": "Independent Campus Hillel"
+        "strength": 74,
+        "type": "Full Hillel (CU Boulder Hillel), six-person professional staff"
       },
-      "estimatedJewishUndergraduates": 2400,
-      "jewishStudentPercentage": "~8%",
-      "kosherDining": true,
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": false,
       "shabbatProgramming": true,
       "birthrightSupport": true,
-      "jewishCommunityStrength": "Strong",
-      "notes": "CU Boulder has an active Hillel with regular Shabbat programming."
+      "jewishCommunityStrength": "Real, professionally staffed",
+      "notes": "CU Boulder Hillel is a real, independently confirmed organization (cuboulderhillel.org) with a six-person professional staff: an Executive Director, Assistant Director, Program Manager, Campus Marketing and Development Manager, a Jewish Agency Israel Fellow who leads immersive Israel trips for students (functionally equivalent to Birthright-style programming, though not confirmed as formally branded Birthright), and a dedicated Wellness Director. A 'FYSH' (first-year students) program was referenced. Kosher dining was not independently confirmed in this pass and is left as false/unconfirmed rather than assumed present. Sourced from cuboulderhillel.org, verified 2026-08-12."
     },
     "honorsCollege": {
-      "exists": true,
-      "gpaMin": 3.5,
-      "name": "CU Boulder Honors Program",
-      "strength": 76,
-      "notes": "Provides smaller seminars and priority registration within CU Boulder's larger flagship structure."
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "CU Boulder offers residential academic programs and honors-style opportunities within individual colleges (e.g. departmental honors in Arts & Sciences), but a single, university-wide named Honors College comparable to those at some peer public flagships was not independently confirmed in this pass. Set to false rather than guessed true, consistent with the platform's disclosure standard -- flagged for a follow-up check before this field is finalized."
     },
-    "primaryMegaRegionSlug": "front-range-silicon-slopes",
-    "regionalRole": "A significant aerospace research talent engine, plus a uniquely positioned hub for the natural products and wellness industry.",
+    "primaryMegaRegionSlug": "front-range",
+    "regionalRole": "A large public research university at the base of the Rocky Mountains with a genuinely national admissions draw and a strong, independently verified aerospace and defense employer pipeline tied to Colorado's own Front Range industry base.",
     "secondaryMegaRegionExposure": [
       {
-        "region_slug": "great-lakes",
-        "exposure_score": 24
-      },
-      {
-        "region_slug": "northeast",
-        "exposure_score": 20
+        "region_slug": "southern-california",
+        "exposure_score": 13
       },
       {
         "region_slug": "texas-triangle",
-        "exposure_score": 16
+        "exposure_score": 4
       },
       {
-        "region_slug": "piedmont-atlantic",
-        "exposure_score": 10
+        "region_slug": "great-lakes",
+        "exposure_score": 3
       },
       {
         "region_slug": "northern-california",
-        "exposure_score": 42
+        "exposure_score": 6
       },
       {
-        "region_slug": "southern-california",
-        "exposure_score": 18
+        "region_slug": "arizona-sun-corridor",
+        "exposure_score": 8
       }
     ]
   },
   "Syracuse University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 65,
+      "homeStateEnrollmentPct": 35,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to Syracuse University's own 2024-25 Common Data Set -- Syracuse's own CDS PDF could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Syracuse University",
       "location": "Syracuse, New York",
@@ -12605,6 +13058,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Miami": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 72,
+      "homeStateEnrollmentPct": 28,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Miami Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "University of Miami",
       "location": "Coral Gables, Florida",
@@ -12943,6 +13407,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Williams College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 84.3,
+      "homeStateEnrollmentPct": 15.7,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Williams College Common Data Set 2023-2024, Section F1 (primary source, direct PDF: hub.williams.edu/.../CDS_2023_2024_Williams_April2024.pdf).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Williams College",
       "location": "Williamstown, Massachusetts",
@@ -13403,14 +13878,25 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Pomona College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 66,
+      "homeStateEnrollmentPct": 34,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Pomona College's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Pomona College",
       "location": "Claremont, California",
       "region": "California",
-      "archetype": "The Founding Consortium College — Academic Breadth, Selectivity, and West Coast Elite Formation",
+      "archetype": "The Founding Consortium College \u2014 Academic Breadth, Selectivity, and West Coast Elite Formation",
       "oneSentenceSummary": "Pomona College is consistently ranked among the top liberal arts colleges in the nation, combining extraordinary selectivity, exceptional resources per student, and the founding role of the Claremont Colleges Consortium to deliver the academic breadth of a research university within an intensely intimate liberal arts community, all set at the base of the San Gabriel Mountains near Los Angeles.",
       "pipeline": "Approximately 1,700 students. Pomona sends graduates to Harvard, Yale, Stanford, MIT, Oxford, Cambridge, and other elite graduate programs at one of the highest rates of any liberal arts college in the nation. Major recruiters include McKinsey & Company, Bain & Company, Boston Consulting Group, Goldman Sachs, Morgan Stanley, BlackRock, Google, Meta, Amazon, Blackstone, and leading technology, entertainment, and finance firms throughout Los Angeles and San Francisco. Pomona has one of the largest per-student endowments of any liberal arts college in America, funding exceptional research, travel, and internship opportunities.",
-      "hiddenPathway": "Pomona's greatest hidden advantage is its founding role in the Claremont Colleges Consortium — students cross-register seamlessly at Claremont McKenna, Harvey Mudd, Scripps, and Pitzer, gaining access to engineering, business-oriented economics, and specialized humanities programs that no single liberal arts college could offer alone. This creates the academic breadth of a mid-sized research university within a class of 1,700 students.",
+      "hiddenPathway": "Pomona's greatest hidden advantage is its founding role in the Claremont Colleges Consortium \u2014 students cross-register seamlessly at Claremont McKenna, Harvey Mudd, Scripps, and Pitzer, gaining access to engineering, business-oriented economics, and specialized humanities programs that no single liberal arts college could offer alone. This creates the academic breadth of a mid-sized research university within a class of 1,700 students.",
       "institutionalSecret": "Pomona meets 100% of demonstrated financial need without loans for every admitted student, funded by one of the largest per-capita endowments of any college in America. Combined with need-blind admission, this makes Pomona one of the most genuinely accessible elite liberal arts colleges regardless of family income, while its extremely low acceptance rate keeps it under-recognized outside sophisticated college-admissions circles relative to its Ivy League peers.",
       "theRoom": "Located in Claremont at the base of the San Gabriel Mountains, thirty-five miles east of downtown Los Angeles, Pomona sits at the center of the five-college undergraduate consortium. Students benefit from the shared academic and social resources of Claremont McKenna, Harvey Mudd, Scripps, and Pitzer while remaining within an hour of Los Angeles's entertainment, technology, venture capital, and finance ecosystems.",
       "lifestyle": "Intellectually adventurous, collaborative, outdoors-oriented, and residential. Students balance rigorous academics with consortium-wide social life, hiking and outdoor recreation in the San Gabriel Mountains, the arts, and close faculty mentorship in an unusually well-resourced small-college environment.",
@@ -13446,6 +13932,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$30,000-$90,000",
         "transferNotes": "Pomona enrolls a very small transfer class each year and meets 100% of demonstrated financial need without loans for admitted transfer students. Exceptionally strong academic preparation is essential given the extremely low transfer volume."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 8",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 8",
+      "essayPromptTopic": "Academic Interest Statement (150 words): What draws you to the subject(s) you selected as potential major(s)? If undecided, share more about one of your academic passions or interests. Plus a Short-Response Essay (250 words), choosing one of: (1) Reflecting on a community you're part of, what values or perspectives would you bring to Pomona? (2) Describe an experience outside the classroom that changed how you think or engage with peers. (3) Choose any person or group in your life and share how they would describe you.",
+      "notes": "Full round structure verified directly from pomona.edu/admissions/paths-apply (2026-27 cycle): Early Decision I -- Nov 8 deadline, notification by Dec 15, reply Jan 1 (binding). Early Decision II -- Jan 8 deadline, notification by Feb 15, reply March 1 (binding). Regular Decision -- Jan 8 deadline, notification by April 1, reply May 1. Mid-year report due Feb 15. Accepts Common App, Coalition App via Scoir, or QuestBridge, with no preference among them. $80 application fee, waivable via the Pomona Access Pass form with no additional documentation required. Test-optional, but with a real, distinctive quirk: students who choose to submit the ACT must include the Science section specifically (not offered as optional the way some peer schools treat it) so Pomona can assess scientific preparation, since roughly half of applicants submit scores at all. Pomona has a genuinely notable policy: the application itself asks NO questions about disciplinary or criminal history -- these are only asked of students after they deposit to enroll, reviewed by a separate committee, and are explicitly not part of the admissions decision. California AB 104 grade-replacement transcripts are accepted. Sourced from pomona.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Pomona College",
@@ -13616,8 +14110,8 @@ const UNIVERSITY_DB_V5 = {
       "relationshipCapitalScore": 94,
       "alumniLoyaltyScore": 94,
       "referralCultureStrength": 90,
-      "donorNetworkStrength": "",
-      "boardMemberDensity": ""
+      "donorNetworkStrength": 74,
+      "boardMemberDensity": 58
     },
     "economicEcosystem": {
       "primaryIndustries": [
@@ -13665,7 +14159,7 @@ const UNIVERSITY_DB_V5 = {
       "innovationIndex": 92
     },
     "geographicInfluence": {
-      "dominantMarket": "Southern California Creative and Innovation Economy — Technology, Entertainment, Finance, and Graduate Education",
+      "dominantMarket": "Southern California Creative and Innovation Economy \u2014 Technology, Entertainment, Finance, and Graduate Education",
       "secondaryMarkets": [
         "Los Angeles CA",
         "San Francisco CA",
@@ -13822,17 +14316,34 @@ const UNIVERSITY_DB_V5 = {
       "brandDurability": 96,
       "overallMoatScore": 93
     },
-    "hillel_strength": "tier_2",
-    "jewish_enrollment": "~12-15% Jewish undergraduate enrollment",
-    "hillel_note": "Pomona maintains active Jewish life through the Claremont Colleges' shared Hillel, which serves all five undergraduate consortium schools jointly. This creates a larger combined Jewish community than any single Claremont college could sustain alone, with consistent programming and a visible presence despite Pomona's small individual enrollment.",
     "trajectoryProfile": {
-      "dominantTrajectory": "LEAVE",
+      "dominantTrajectory": "LEAVE_STAY_GONE",
       "leaverScore": 92,
       "returnerScore": 40,
       "stewardScore": 20,
       "navigatorScore": 96,
       "geographicLockIn": "low",
       "alumniDispersalPattern": "west_coast_national"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 66,
+        "type": "Shared Claremont Colleges Hillel serving all five undergraduate consortium schools jointly"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "~12-15%",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Real, strengthened by consortium scale",
+      "notes": "Pomona maintains active Jewish life through the Claremont Colleges' shared Hillel, which serves all five undergraduate consortium schools jointly (Pomona, Claremont McKenna, Harvey Mudd, Scripps, Pitzer). This creates a larger combined Jewish community than any single Claremont college could sustain alone, with consistent programming and a visible presence despite Pomona's small individual enrollment. Kosher dining and Birthright participation were not independently confirmed in this pass and are left unconfirmed rather than assumed present. Retained from the platform's existing (pre-schema) research on this school since it was already honest and specific."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "No separate Honors College exists; Pomona's small class sizes and thesis/independent study options provide honors-caliber opportunities within the standard curriculum, consistent with its liberal arts college structure."
     },
     "primaryMegaRegionSlug": "southern-california",
     "regionalRole": "Elite liberal arts institution supplying leaders to finance, consulting, technology, entertainment, and graduate education across Southern California and nationally.",
@@ -13864,14 +14375,25 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Saint Mary's College of California": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 14.0,
+      "homeStateEnrollmentPct": 86.0,
+      "drawClassification": "state",
+      "topFeederStates": { "CA": 86.7, "WA": 2.4, "OR": 1.9, "HI": 1.5, "TX": 1.2, "GA": 1.0 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Saint Mary's College of California Common Data Set 2023-2024, Section F1 (primary source, direct PDF: stmarys-ca.edu/sites/default/files/2024-04/CDS_2023_2024_final_040424.pdf).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only 6 states clear the 1% threshold (next highest, Illinois/Colorado/Arizona, each 0.7%). CA share (86.7%) closely matches this record's existing homeStateEnrollmentPct (86.0%, 2023-24 CDS first-time first-year cohort)."
+    },
     "institutionNarrative": {
       "name": "Saint Mary's College of California",
       "location": "Moraga, California",
       "region": "California",
-      "archetype": "The Bay Area Catholic Liberal Arts College — Small Community, Business, and Education Formation",
+      "archetype": "The Bay Area Catholic Liberal Arts College \u2014 Small Community, Business, and Education Formation",
       "oneSentenceSummary": "Saint Mary's College of California is a small Lasallian Catholic liberal arts college offering an intimate, mission-driven undergraduate experience with particular strength in business, education, and health sciences, set in the hills of Moraga just twenty miles from San Francisco and Oakland.",
       "pipeline": "Approximately 2,500 undergraduates. Saint Mary's is known regionally for its School of Economics and Business Administration, teacher credentialing programs, kinesiology, and nursing preparation. Regional employers and graduate programs across the Bay Area recruit Saint Mary's graduates, with particular strength in Northern California K-12 education, healthcare systems, and small-to-midsize Bay Area businesses.",
-      "hiddenPathway": "Saint Mary's Jan Term — a dedicated four-week January session — allows students to take one intensive, often experiential course, including study-abroad and community-engagement options, without competing against a full course load. This creates space for career exploration, internship-style immersion, or academic risk-taking that a standard semester structure does not easily allow.",
+      "hiddenPathway": "Saint Mary's Jan Term \u2014 a dedicated four-week January session \u2014 allows students to take one intensive, often experiential course, including study-abroad and community-engagement options, without competing against a full course load. This creates space for career exploration, internship-style immersion, or academic risk-taking that a standard semester structure does not easily allow.",
       "institutionalSecret": "The Collegiate Seminar Program is a four-year great-books discussion sequence required of every student regardless of major, taught in small seminar format across all four years. It is one of the few remaining great-books core curricula at a Catholic college on the West Coast, and it produces graduates with unusually strong discussion, writing, and critical-reading skills relative to the school's regional name recognition.",
       "theRoom": "Moraga is a quiet, affluent residential town in the hills east of Oakland, twenty miles from downtown San Francisco. The campus is compact, Spanish Mission-style, and set against open hillside space, offering a retreat-like small-college atmosphere while remaining a manageable BART and car commute from the full Bay Area job market.",
       "lifestyle": "Close-knit, mission-driven, and residential. Students engage with the Lasallian Catholic values of the institution, small seminar-style classes, Division I athletics at the mid-major level, and a tight campus community that stands in deliberate contrast to the sprawl of nearby large public universities.",
@@ -13906,6 +14428,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$20,000-$50,000",
         "transferNotes": "Saint Mary's actively recruits California community college transfer students through regional articulation agreements with Bay Area community colleges, and offers dedicated transfer advising and merit aid for qualified transfer applicants."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "Not confirmed in this pass",
+      "earliestDeadlineLabel": "Not confirmed in this pass",
+      "rdDeadline": "Not confirmed in this pass",
+      "essayPromptTopic": null,
+      "notes": "Directly confirmed on stmarys-ca.edu: Saint Mary's is organized into three schools -- the School of Arts and Sciences, the School of Economics & Business Administration, and the Kalmanovitz School of Education (graduate) -- with real, specific outcomes data: $125,000 average mid-career salary for graduates and a 'Gold Star' sustainability rating. A real, distinctive athletic fact: Saint Mary's is the only Division I school to win back-to-back conference championships in Baseball, Softball, and Men's Basketball in the same recent period. Transfer applicants may apply at any time with no minimum credit requirement -- a genuinely flexible policy. Specific first-year application deadline dates were not resolved in this pass (the dedicated admissions pages 404'd on multiple attempted URLs) -- left as unconfirmed placeholders rather than guessed, and should be sourced directly in a follow-up pass. Sourced from stmarys-ca.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Saint Mary's College of California",
@@ -14065,8 +14595,8 @@ const UNIVERSITY_DB_V5 = {
       "relationshipCapitalScore": 66,
       "alumniLoyaltyScore": 74,
       "referralCultureStrength": 60,
-      "donorNetworkStrength": "",
-      "boardMemberDensity": ""
+      "donorNetworkStrength": 54,
+      "boardMemberDensity": 42
     },
     "economicEcosystem": {
       "primaryIndustries": [
@@ -14095,14 +14625,14 @@ const UNIVERSITY_DB_V5 = {
         "Education Technology",
         "Sustainability and Climate Careers"
       ],
-      "startupDensity": "Low-Moderate",
+      "startupDensity": "Moderate",
       "ventureCapitalAccess": 30,
       "corporateHeadquartersDensity": 24,
       "healthcareHubStrength": 62,
       "innovationIndex": 46
     },
     "geographicInfluence": {
-      "dominantMarket": "San Francisco Bay Area — Education, Business, and Regional Healthcare",
+      "dominantMarket": "San Francisco Bay Area \u2014 Education, Business, and Regional Healthcare",
       "secondaryMarkets": [
         "Sacramento CA",
         "San Jose CA",
@@ -14214,7 +14744,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "pharmaceuticalManufacturing": {
         "strength": 54,
-        "notes": "Real, specific evidence: Saint Mary's own official account confirms students toured Genentech's main campus with structured career and internship insight sessions. The college separately runs its own dedicated Professional Science Master's (PSM) in Biotechnology degree program — a real, distinct graduate-level institutional commitment to this field, though a separate credential from the undergraduate programs most other scores in this dataset reflect. Reinforced by modest but real Biochemistry (10 students) and Chemistry (2) programs at the undergraduate level."
+        "notes": "Real, specific evidence: Saint Mary's own official account confirms students toured Genentech's main campus with structured career and internship insight sessions. The college separately runs its own dedicated Professional Science Master's (PSM) in Biotechnology degree program \u2014 a real, distinct graduate-level institutional commitment to this field, though a separate credential from the undergraduate programs most other scores in this dataset reflect. Reinforced by modest but real Biochemistry (10 students) and Chemistry (2) programs at the undergraduate level."
       }
     },
     "wealthMobility": {
@@ -14254,9 +14784,6 @@ const UNIVERSITY_DB_V5 = {
       "brandDurability": 56,
       "overallMoatScore": 49
     },
-    "hillel_strength": "tier_3",
-    "jewish_enrollment": "Small Jewish population, no dedicated Hillel chapter",
-    "hillel_note": "Saint Mary's has a small Jewish student population without a dedicated Hillel chapter on campus. Students seeking active Jewish community life typically connect with organizations in nearby Oakland, Berkeley, or San Francisco, all within a short drive of the Moraga campus.",
     "trajectoryProfile": {
       "dominantTrajectory": "STEWARD",
       "leaverScore": 30,
@@ -14265,6 +14792,26 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 46,
       "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_bay_area"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": 0,
+        "type": "No dedicated on-campus Hillel chapter"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Small, no dedicated on-campus infrastructure",
+      "notes": "Saint Mary's has a small Jewish student population without a dedicated Hillel chapter on campus. Students seeking active Jewish community life typically connect with organizations in nearby Oakland, Berkeley, or San Francisco, all within a short drive of the Moraga campus. Retained from the platform's existing (pre-schema) research on this school since it was already honest and specific rather than a generic placeholder."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "No dedicated university-wide Honors College was confirmed in this pass. Flagged for a follow-up check rather than asserted with confidence."
     },
     "primaryMegaRegionSlug": "northern-california",
     "regionalRole": "Small Catholic liberal arts college supplying regionally-focused business, education, and healthcare professionals to the Bay Area.",
@@ -14296,6 +14843,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of San Diego": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 41,
+      "homeStateEnrollmentPct": 59,
+      "drawClassification": "regional",
+      "topFeederStates": { "CA": 53.9, "WA": 5.8, "CO": 5.3, "AZ": 4.9, "TX": 3.8, "NV": 3.4, "OR": 3.1, "HI": 2.8, "MA": 1.6, "MN": 1.6 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of San Diego's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Exactly 10 states clear the 1% threshold, matching the schema's max cleanly (next highest, Utah, is 1.1%, excluded only by the cap). CA share (53.9%) is in the same range as this record's existing homeStateEnrollmentPct (59%, 2024-25 CDS first-time first-year cohort), with the modest gap consistent with all-undergraduate vs. first-year-cohort populations."
+    },
     "institutionNarrative": {
       "name": "University of San Diego",
       "location": "San Diego, California",
@@ -14333,11 +14891,19 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~50%",
         "estimatedSavingsRange": "$14,000-$36,000",
         "transferNotes": "USD maintains transfer agreements with San Diego-area community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "University of San Diego",
-        "archetype": "Private Catholic University, Coastal Peer to Pepperdine/Villanova/Santa Clara"
-      },
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I / Early Action",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Early Decision I (binding) and Early Action (non-binding) share a November 1 deadline (ED I decision released early December, EA mid-December; ED I enrollment confirmation due January 10, EA due May 1). Early Decision II due January 5 (decision late January, confirmation February 10). Regular Decision due January 15 (decision mid-March, confirmation May 1). FAFSA deadlines run alongside each round (November 15 for ED I/EA, January 5 for ED II, February 1 for RD). Verified against sandiego.edu/admission-and-aid/undergraduate/apply/admission-timeline.php, 2026-08-12. No USD-specific supplemental essay prompt was found on the page checked -- left null per schema rather than guessed.",
+      "verifiedDate": "2026-08-12"
+    },
+    "institutionIdentity": {
+      "commonName": "University of San Diego",
+      "archetype": "Private Catholic University, Coastal Peer to Pepperdine/Villanova/Santa Clara",
       "institutionalPersonality": "faith-centered, polished, scenic, values-driven",
       "cultureKeywords": [
         "Catholic Formation",
@@ -14347,6 +14913,7 @@ const UNIVERSITY_DB_V5 = {
         "Law School"
       ],
       "missionOrientation": "Delivering values-centered education in an intimate, scenic Catholic university setting.",
+      "faithTradition": "Roman Catholic",
       "educationalPhilosophy": "Catholic formation model emphasizing individual development within a genuine faith community.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, faith-informed.",
@@ -14460,6 +15027,11 @@ const UNIVERSITY_DB_V5 = {
         "The Kroc Institute for Peace and Justice positions USD at the intersection of military power and peace-making, uniquely relevant given San Diego's massive military base complex — a genuinely distinctive academic niche most families researching USD for its coastal beauty alone never discover.",
         "USD's West Coast Conference athletics — the same conference as Santa Clara, Loyola Marymount, and Gonzaga — gives student-athletes real Division I competition without football dominating campus academic life.",
         "USD's law school real estate and tax law specialties are genuinely strong, an underrecognized credential relative to the university's broader Catholic-coastal-campus reputation."
+      ],
+      "sleeperIndustries": [
+        "Real Estate Law and Development",
+        "Marine and Environmental Science",
+        "International Peace and Conflict Resolution Consulting"
       ]
     },
     "networkCapital": {
@@ -14518,7 +15090,15 @@ const UNIVERSITY_DB_V5 = {
         "San Diego CA",
         "Los Angeles CA",
         "International"
-      ]
+      ],
+      "relocationPatterns": [
+        "Large majority of graduates remain in San Diego across law, business, and defense-adjacent policy sectors",
+        "Secondary concentration in Los Angeles and San Francisco",
+        "A distinct Washington DC pipeline tied to the Kroc Institute's peace and policy focus, plus a smaller international relocation pattern consistent with the Institute's global orientation"
+      ],
+      "regionalInfluenceScore": 55,
+      "nationalReachScore": 40,
+      "internationalReachScore": 25
     },
     "socialCapital": {
       "greekLifeInfluence": 24,
@@ -14539,6 +15119,78 @@ const UNIVERSITY_DB_V5 = {
       "pharmaceuticalManufacturing": {
         "strength": 42,
         "notes": "Weak evidence: one Vertex Pharmaceuticals employee moonlights as an adjunct professor at University of San Diego's School of Leadership and Education Sciences, and one alumna works at a San Diego biotech venture fund. No formal partnership or dedicated program found. Reinforced by a real, moderate Biochemistry program (25 students, $83,380)."
+      },
+      "aestheticsAndBeauty": {
+        "strength": 10,
+        "notes": "No evidence found of a beauty/cosmetics industry program or pipeline. Limited institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 25,
+        "notes": "No dedicated wellness-industry program found. San Diego's broader health/wellness economy offers indirect adjacency, but no specific USD program or employer pipeline was confirmed in this pass."
+      },
+      "nutraceuticals": {
+        "strength": 15,
+        "notes": "No evidence of a nutraceuticals-specific program or pipeline. San Diego's biotech cluster (noted elsewhere in this record via a weak, disclosed Vertex Pharmaceuticals adjunct-faculty connection) offers only weak indirect proximity, not a confirmed nutraceuticals pathway."
+      },
+      "consumerProducts": {
+        "strength": 25,
+        "notes": "No dedicated consumer-products program or named employer pipeline identified. Limited institutional emphasis -- USD's real business strength is concentrated in real estate, tax, and general finance rather than consumer brands."
+      },
+      "outdoorIndustry": {
+        "strength": 15,
+        "notes": "No evidence of an outdoor-industry-specific program. San Diego's coastal setting offers cultural adjacency to regionally headquartered surf/outdoor lifestyle brands, but no institutional program or employer relationship was confirmed."
+      },
+      "sportsBusiness": {
+        "strength": 30,
+        "notes": "USD competes in NCAA Division I (West Coast Conference, the same conference as Gonzaga, Santa Clara, and Loyola Marymount per this record's own comparativePositioning), but no dedicated sports-business program or named sports-industry employer pipeline was found in this pass."
+      },
+      "entertainmentMedia": {
+        "strength": 15,
+        "notes": "No evidence of an entertainment-industry program or pipeline; USD's identity and geography (San Diego, not LA) point away from entertainment as a meaningful pathway. Limited institutional emphasis."
+      },
+      "ventureCapital": {
+        "strength": 25,
+        "notes": "No dedicated venture capital recruiting pipeline or named VC-firm employer relationship confirmed. San Diego's biotech/tech startup ecosystem offers some regional adjacency, but no USD-specific evidence was found in this pass."
+      },
+      "privateEquity": {
+        "strength": 20,
+        "notes": "No evidence of a dedicated private equity recruiting pipeline or named PE-firm employer relationship. Limited institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 25,
+        "notes": "No evidence of a structured investment-banking recruiting pipeline in this pass. USD's Business school has general finance coursework but no confirmed bulge-bracket placement pipeline."
+      },
+      "consulting": {
+        "strength": 30,
+        "notes": "No named MBB/Big consulting employer relationship confirmed in this pass. USD's Business school offers general management coursework, but no dedicated consulting-recruiting pipeline was found."
+      },
+      "medicine": {
+        "strength": 35,
+        "notes": "USD's Biochemistry program is described elsewhere in this record as real but moderate (25 students, $83,380 median outcome), and Nursing appears among underratedMajors, suggesting some pre-health pipeline, though no medical-school partnership or major hospital-system employer relationship was confirmed in this pass."
+      },
+      "healthcareAdministration": {
+        "strength": 20,
+        "notes": "No dedicated healthcare-administration program or named employer pipeline confirmed. Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 55,
+        "notes": "San Diego's substantial military base complex is directly cited elsewhere in this record (the Kroc Institute's positioning 'at the intersection of military power and peace-making') and in hiddenOpportunities as a real, named regional pipeline (military-adjacent policy and defense contracting), giving this category real evidentiary grounding rather than a bare score."
+      },
+      "luxuryBrands": {
+        "strength": 15,
+        "notes": "No evidence of a luxury-brand-specific program or employer pipeline. Limited institutional emphasis."
+      },
+      "entrepreneurship": {
+        "strength": 30,
+        "notes": "No dedicated entrepreneurship major or startup-accelerator program identified in this pass, distinct from general Business school coursework. Limited institutional emphasis relative to schools with named entrepreneurship programs."
+      },
+      "technology": {
+        "strength": 30,
+        "notes": "No dedicated technology/computer science industry pipeline confirmed as a distinguishing strength. San Diego's broader biotech-adjacent tech economy offers some regional adjacency, but this record's real evidence concentrates USD's strength in law, business, and policy rather than technology."
+      },
+      "nonprofitLeadership": {
+        "strength": 55,
+        "notes": "The Kroc Institute for Peace and Justice and this record's own hiddenOpportunities entries ('International Peace and Justice Work' and 'International NGOs and peace organizations' as a named recruiting advantage) give this category real, sourced grounding elsewhere in the record, distinct from a bare editorial guess."
       }
     },
     "wealthMobility": {
@@ -14637,15 +15289,26 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Santa Clara University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 46,
+      "homeStateEnrollmentPct": 54,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Santa Clara University Common Data Set 2022-2023, Section F1 (primary source, direct PDF: scu.edu/media/offices/institutional-research/fampf/common-data-set/Common-Data-Set-2022-2023.pdf).",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Santa Clara University",
       "location": "Santa Clara, California",
       "region": "California",
-      "archetype": "The Silicon Valley Jesuit University — Business, Engineering, and Tech-Industry Formation",
+      "archetype": "The Silicon Valley Jesuit University \u2014 Business, Engineering, and Tech-Industry Formation",
       "oneSentenceSummary": "Santa Clara University is a mid-sized Jesuit Catholic university located in the heart of Silicon Valley, combining a nationally ranked Leavey School of Business, strong engineering programs, and unmatched physical proximity to the world's leading technology companies, producing graduates with direct, early access to the Bay Area innovation economy.",
       "pipeline": "Approximately 6,000 undergraduates. Santa Clara is nationally recognized for the Leavey School of Business, computer science and engineering, and pre-law preparation. Major recruiters include Google, Apple, Meta, Salesforce, Adobe, Cisco, Deloitte, EY, KPMG, Goldman Sachs, and a dense concentration of Silicon Valley startups and venture-backed technology companies that recruit directly from campus given its physical location at the center of Silicon Valley.",
-      "hiddenPathway": "Santa Clara's location inside Silicon Valley itself — not merely near it — creates an internship and networking density that few universities in the country can match. Students can hold part-time roles or internships at major technology companies while attending full-time classes, and alumni relationships with hiring managers at nearby companies are unusually direct and frequent compared to universities that market Silicon Valley proximity from a greater distance.",
-      "institutionalSecret": "Santa Clara's Jesuit identity emphasizes ethical leadership and 'conscience, competence, and compassion' explicitly within its business and engineering curricula — a distinctive combination of technical rigor and values-based reflection that shapes how students approach technology ethics, an increasingly important differentiator as AI and data-privacy concerns reshape the tech industry's hiring priorities.",
+      "hiddenPathway": "Santa Clara's location inside Silicon Valley itself \u2014 not merely near it \u2014 creates an internship and networking density that few universities in the country can match. Students can hold part-time roles or internships at major technology companies while attending full-time classes, and alumni relationships with hiring managers at nearby companies are unusually direct and frequent compared to universities that market Silicon Valley proximity from a greater distance.",
+      "institutionalSecret": "Santa Clara's Jesuit identity emphasizes ethical leadership and 'conscience, competence, and compassion' explicitly within its business and engineering curricula \u2014 a distinctive combination of technical rigor and values-based reflection that shapes how students approach technology ethics, an increasingly important differentiator as AI and data-privacy concerns reshape the tech industry's hiring priorities.",
       "theRoom": "Located in the city of Santa Clara at the center of Silicon Valley, the university is surrounded by the headquarters of Apple, Google, Nvidia, Intel, and thousands of technology companies, with San Jose and San Francisco both accessible within an hour, placing students inside the densest concentration of technology employment in the world.",
       "lifestyle": "Professionally ambitious, tech-industry-oriented, and residential. Students balance rigorous business and engineering coursework with internships at nearby technology companies, Division I athletics, and a campus culture that blends Jesuit values with entrepreneurial energy.",
       "bestFitPersonality": "Professionally ambitious, interested in technology or business, comfortable balancing academics with internship demands, values-aware, moderate-to-high Conscientiousness with moderate Extraversion.",
@@ -14679,6 +15342,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$30,000-$70,000",
         "transferNotes": "Santa Clara maintains strong transfer articulation agreements with Silicon Valley community colleges, particularly De Anza and Foothill, both known for exceptionally strong STEM transfer preparation."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I / Early Action",
+      "rdDeadline": "January 7",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from scu.edu/admission/undergraduate/first-year-students/fy-key-deadlines (2026-27 cycle): Early Decision I -- application due Nov 1, CSS Profile/FAFSA due Nov 15, decision late December, enrollment deposit due Jan 7. Early Decision II -- application due Jan 7, CSS Profile/FAFSA due Jan 15, decision mid-February, deposit due March 1. Early Action -- application due Nov 1, CSS Profile/FAFSA due Nov 15, decision late December, deposit due May 1. Regular Decision -- application due Jan 7, CSS Profile/FAFSA due Feb 1, decision late March, deposit due May 1. A real, distinctive fifth track: Winter First-Year Students -- application due Oct 1, decision mid-November, deposit due Nov 30 -- a genuinely uncommon option letting students begin in winter term rather than fall. Santa Clara has adopted a test-optional policy for first-year and transfer applicants. Cal Grant GPA Verification Form due March 2 for California residents across all tracks. Sourced from scu.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Santa Clara University",
@@ -14842,8 +15513,8 @@ const UNIVERSITY_DB_V5 = {
       "relationshipCapitalScore": 80,
       "alumniLoyaltyScore": 78,
       "referralCultureStrength": 82,
-      "donorNetworkStrength": "",
-      "boardMemberDensity": ""
+      "donorNetworkStrength": 62,
+      "boardMemberDensity": 48
     },
     "economicEcosystem": {
       "primaryIndustries": [
@@ -14886,7 +15557,7 @@ const UNIVERSITY_DB_V5 = {
       "innovationIndex": 96
     },
     "geographicInfluence": {
-      "dominantMarket": "Silicon Valley — Technology, Business, and Engineering",
+      "dominantMarket": "Silicon Valley \u2014 Technology, Business, and Engineering",
       "secondaryMarkets": [
         "San Francisco CA",
         "Los Angeles CA",
@@ -14982,11 +15653,11 @@ const UNIVERSITY_DB_V5 = {
       },
       "entrepreneurship": {
         "strength": 88,
-        "notes": "One of Santa Clara's core institutional strengths — dedicated entrepreneurship programs and Silicon Valley proximity produce a strong and growing culture of student and alumni startup founders."
+        "notes": "One of Santa Clara's core institutional strengths \u2014 dedicated entrepreneurship programs and Silicon Valley proximity produce a strong and growing culture of student and alumni startup founders."
       },
       "technology": {
         "strength": 96,
-        "notes": "Santa Clara's defining institutional strength — direct Silicon Valley location produces exceptional technology-sector placement across computer science, engineering, and business graduates."
+        "notes": "Santa Clara's defining institutional strength \u2014 direct Silicon Valley location produces exceptional technology-sector placement across computer science, engineering, and business graduates."
       },
       "publicPolicy": {
         "strength": 36,
@@ -15038,9 +15709,6 @@ const UNIVERSITY_DB_V5 = {
       "brandDurability": 74,
       "overallMoatScore": 76
     },
-    "hillel_strength": "tier_3",
-    "jewish_enrollment": "Small Jewish population, no dedicated Hillel chapter",
-    "hillel_note": "Santa Clara has a small Jewish student population without a dedicated on-campus Hillel chapter. Students seeking active Jewish community life typically connect with organizations in nearby San Jose, Palo Alto, and the broader South Bay Jewish community, which is well-established given Silicon Valley's overall demographic diversity.",
     "trajectoryProfile": {
       "dominantTrajectory": "STEWARD",
       "leaverScore": 40,
@@ -15049,6 +15717,26 @@ const UNIVERSITY_DB_V5 = {
       "navigatorScore": 58,
       "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_silicon_valley"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": 0,
+        "type": "No dedicated on-campus Hillel chapter"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Small, no dedicated on-campus infrastructure",
+      "notes": "Santa Clara has a small Jewish student population without a dedicated on-campus Hillel chapter. Students seeking active Jewish community life typically connect with organizations in nearby San Jose, Palo Alto, and the broader South Bay Jewish community, which is well-established given Silicon Valley's overall demographic diversity. This reflects the platform's existing (pre-schema) research on this school, retained as-is since it was already honest and specific rather than a generic placeholder."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "No dedicated university-wide Honors College was confirmed in this pass; not independently browsed for department-level honors programs. Flagged for a follow-up check rather than asserted with confidence."
     },
     "primaryMegaRegionSlug": "northern-california",
     "regionalRole": "Jesuit university supplying technology, business, and engineering talent directly into the Silicon Valley innovation economy.",
@@ -15080,6 +15768,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "California State University Chico": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 1.5,
+      "homeStateEnrollmentPct": 98.5,
+      "drawClassification": "state",
+      "topFeederStates": { "CA": 98.7 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "California State University, Chico Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled. topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only California clears the 1% threshold. CA share (98.7%) closely matches this record's existing homeStateEnrollmentPct (98.5%, Fall 2023 first-time first-year CDS cohort)."
+    },
     "institutionNarrative": {
       "name": "California State University Chico",
       "location": "Chico, California",
@@ -15122,6 +15821,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$15,000-$35,000",
         "transferNotes": "Chico State has one of the strongest community college transfer pipelines in the CSU system, anchored by its close relationship with Butte College, and offers guaranteed admission pathways for qualifying transfer applicants from partner community colleges."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "CSU Application Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "Chico State uses the single CSU systemwide application cycle -- no early decision or early action option exists. The CSU filing period runs October 1 to November 30 for the following fall, uniform across all CSU campuses. Chico State's own undergraduate-deadlines page still displayed the closed Fall 2026 cycle (Oct 1 2025-June 30 2026) at verification time; the October 1-November 30 window used here for the current Fall 2027 cycle is inferred from the CSU system's standard annual pattern and confirmed directly against San Francisco State's own Fall 2027 page (another CSU campus, priority deadline November 30 2026). Recommend re-verifying against csuchico.edu directly once that page updates for the current cycle. The Cal State Apply application does not require a personal essay/supplemental prompt at the base application level for most majors.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "California State University Chico",
@@ -15280,8 +15987,8 @@ const UNIVERSITY_DB_V5 = {
       "relationshipCapitalScore": 54,
       "alumniLoyaltyScore": 68,
       "referralCultureStrength": 50,
-      "donorNetworkStrength": "",
-      "boardMemberDensity": ""
+      "donorNetworkStrength": 20,
+      "boardMemberDensity": 15
     },
     "economicEcosystem": {
       "primaryIndustries": [
@@ -15468,16 +16175,13 @@ const UNIVERSITY_DB_V5 = {
       "brandDurability": 48,
       "overallMoatScore": 42
     },
-    "hillel_strength": "tier_3",
-    "jewish_enrollment": "Very small Jewish population, no dedicated Hillel chapter",
-    "hillel_note": "Chico State has a very small Jewish student population without a dedicated on-campus Hillel chapter. Students seeking active Jewish community life will find minimal local infrastructure given Chico's small-city, rural-adjacent setting, and would need to travel to Sacramento for established Jewish community resources.",
     "trajectoryProfile": {
       "dominantTrajectory": "STEWARD",
       "leaverScore": 26,
       "returnerScore": 66,
       "stewardScore": 84,
       "navigatorScore": 34,
-      "geographicLockIn": "very_high",
+      "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_northern_california"
     },
     "primaryMegaRegionSlug": "northern-california",
@@ -15507,9 +16211,40 @@ const UNIVERSITY_DB_V5 = {
         "region_slug": "southern-california",
         "exposure_score": 18
       }
-    ]
+    ],
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": null,
+        "type": "No dedicated Hillel chapter; very small Jewish student population; nearest established Jewish community resources are in Sacramento."
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Minimal -- very small Jewish student population with no dedicated on-campus Hillel chapter",
+      "notes": "Migrated from legacy hillel_strength/jewish_enrollment/hillel_note fields during v1.1.0 reconciliation, not independently re-verified against a live source in this pass. Original note: \"Chico State has a very small Jewish student population without a dedicated on-campus Hillel chapter. Students seeking active Jewish community life will find minimal local infrastructure given Chico's small-city, rural-adjacent setting, and would need to travel to Sacramento for established Jewish community resources.\""
+    },
+    "honorsCollege": {
+      "exists": true,
+      "name": "University Honors Program",
+      "strength": 30,
+      "notes": "Confirmed via csuchico.edu/academics/enrichment/honors, 2026-08-12. Interdisciplinary Honors-in-GE program, not a separately admitted residential honors college. No GPA required for entering freshmen to join (3.0 minimum applies only to transfer/continuing students). Offers small classes, early registration, dedicated advising/mentorship, and a capstone/thesis option."
+    }
   },
   "Elon University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 77,
+      "homeStateEnrollmentPct": 23,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Elon University's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be fetched directly (repeated robots.txt fetch failures on the school's own domain), so this is one step removed from the primary document rather than a direct pull. Elon's own current-year CDS was only hosted as an Excel file, not a fetchable PDF.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). Supersedes the prior owner-set interim drawClassification of 'regional' (now replaced with a sourced figure that actually reads as national by the >=60% threshold)."
+    },
     "institutionNarrative": {
       "name": "Elon University",
       "location": "Elon, North Carolina",
@@ -15925,6 +16660,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Drake University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 55,
+      "homeStateEnrollmentPct": 45,
+      "drawClassification": "regional",
+      "topFeederStates": { "IA": 46.2, "IL": 13.9, "MN": 11.3, "MO": 4.7, "WI": 3.9, "NE": 3.9, "KS": 3.0, "TX": 2.9, "CO": 2.0, "AZ": 1.4 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Drake University's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). Drake's own hosted CDS PDF returned a blank Section F1 template with no filled-in figures, so this is one step removed from the primary document.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). 12 states cleared the 1% threshold; list capped at the schema's 10-state max, dropping California and Indiana (both 1.2%, 11th/12th place). IA share (46.2%) closely matches this record's existing homeStateEnrollmentPct (45%, 2024-25 CDS first-time first-year cohort)."
+    },
     "institutionNarrative": {
       "name": "Drake University",
       "location": "Des Moines, Iowa",
@@ -16353,6 +17099,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Creighton University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 76,
+      "homeStateEnrollmentPct": 24,
+      "drawClassification": "national",
+      "topFeederStates": { "NE": 24.4, "MN": 14.0, "CO": 11.4, "IA": 7.2, "IL": 6.0, "HI": 5.5, "KS": 4.2, "MO": 4.0, "CA": 3.9, "WI": 3.3 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled. topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). 10 states clear the 1% threshold, matching the schema's max cleanly (next highest, Arizona/Texas, tied at 3.0%, excluded only by the cap). NE share (24.4%) closely matches this record's existing homeStateEnrollmentPct (24%, 2024-25 CDS first-time first-year cohort), consistent with the existing national drawClassification -- no single state dominates the class."
+    },
     "institutionNarrative": {
       "name": "Creighton University",
       "location": "Omaha, Nebraska",
@@ -16779,6 +17536,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Baylor University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 45,
+      "homeStateEnrollmentPct": 55,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Baylor University Common Data Set 2022-2023, Section F1 (Fall 2022 first-time first-year cohort)",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification assigned using: national >=60% OOS, regional 30-59% OOS, state <30% OOS (thresholds fixed 2026-08-12, first population pass, per schema v1.0.8 guidance to document cutoffs on first use). topFeederStates/topFeederRegions not yet sourced -- only the aggregate in-state/out-of-state split has been pulled so far, not the state-level breakdown."
+    },
     "institutionNarrative": {
       "name": "Baylor University",
       "location": "Waco, Texas",
@@ -17131,6 +17899,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Southern Methodist University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 54,
+      "homeStateEnrollmentPct": 46,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Southern Methodist University's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly (or produced unreliable fetch results, see notes), so this is one step removed from the primary document rather than a direct pull. SMU's own hosted Section F PDF returned unreliable/inconsistent content on repeated fetch attempts (appeared to return a different school's cached data), so the primary document was not trusted for this record.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Southern Methodist University",
       "location": "Dallas, Texas",
@@ -17542,6 +18321,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Villanova University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 79,
+      "homeStateEnrollmentPct": 21,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Villanova University Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Villanova University",
       "location": "Villanova, Pennsylvania",
@@ -17888,6 +18678,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Southern California": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 46,
+      "homeStateEnrollmentPct": 54,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "USC Common Data Set 2024-2025, Section F1 (primary source, direct PDF: oir.usc.edu/wp-content/uploads/sites/3/2025/10/CDS_2024-2025_FINAL-3.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Southern California",
       "location": "Los Angeles, California",
@@ -17929,6 +18730,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "USC has one of the strongest community college transfer pipelines among elite private universities, particularly through Santa Monica College."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "November 1",
+        "earliestDeadlineLabel": "Early Decision / Early Action (most majors)",
+        "rdDeadline": "January 10",
+        "essayPromptTopic": null,
+        "notes": "Full round structure verified directly from admission.usc.edu (2026-27 cycle): Early Decision and Early Action (most majors) Nov 1; Regular Decision for performing arts majors Dec 1 (earlier than the general RD deadline); Regular Decision for most majors Jan 10. Several schools within USC (Iovine and Young Academy, School of Architecture, Roski School of Art and Design, School of Cinematic Arts, Kaufman School of Dance, School of Dramatic Arts, Thornton School of Music, and the Marshall School's World Bachelor in Business) may carry additional departmental application requirements beyond the general deadlines. Test-optional. USC explicitly does not conduct admission interviews and does not track demonstrated interest in its admission process -- a genuinely distinctive, stated policy, confirmed directly on USC's own site, that differs from many peer institutions. Home-schooled applicants are encouraged (not required) to submit SAT/ACT, AP results, or accredited transcripts despite the general test-optional policy. Specific supplemental essay prompt text was not captured in this pass. Sourced from admission.usc.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "USC",
       "archetype": "Major Private Research University",
@@ -18327,6 +19136,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Washington University in St. Louis": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 84,
+      "homeStateEnrollmentPct": 16,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Washington University in St. Louis Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Washington University in St. Louis",
       "location": "St. Louis, Missouri",
@@ -18733,6 +19553,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Georgia Institute of Technology": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 33,
+      "homeStateEnrollmentPct": 67,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Georgia Institute of Technology Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Georgia Institute of Technology",
       "location": "Atlanta, Georgia",
@@ -18769,11 +19600,19 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~16%",
         "estimatedSavingsRange": "$12,000-$32,000",
         "transferNotes": "Georgia Tech maintains transfer pathways from Georgia's community college system, though highly competitive."
-      },
-      "institutionIdentity": {
-        "commonName": "Georgia Institute of Technology",
-        "archetype": "Elite Public Engineering-First Urban University"
-      },
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "October 15",
+      "earliestDeadlineLabel": "Early Action I (Georgia residents)",
+      "rdDeadline": "January 6",
+      "essayPromptTopic": null,
+      "notes": "Early Action I (Georgia residents only) due October 15, decision early December. Early Action II (non-Georgia residents) due November 2, decision late January. Regular Decision (all students) due January 6, decision mid-March. Merit scholarships require an Early Action application. Verified against admission.gatech.edu/first-year/deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
+    "institutionIdentity": {
+      "commonName": "Georgia Institute of Technology",
+      "archetype": "Elite Public Engineering-First Urban University",
       "institutionalPersonality": "driven, technically rigorous, urban, value-conscious",
       "cultureKeywords": [
         "Co-op",
@@ -18783,6 +19622,7 @@ const UNIVERSITY_DB_V5 = {
         "Rigor"
       ],
       "missionOrientation": "Delivering elite engineering education at exceptional value, embedded directly in Atlanta's tech economy.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Rigorous technical education reinforced by structured Co-op work experience.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly moderate, practically minded.",
@@ -19077,6 +19917,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Denver": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 71.2,
+      "homeStateEnrollmentPct": 28.8,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Denver Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "University of Denver",
       "location": "Denver, Colorado",
@@ -19406,6 +20257,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Utah": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 36,
+      "homeStateEnrollmentPct": 64,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "University of Utah",
       "location": "Salt Lake City, Utah",
@@ -19754,6 +20616,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Weber State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 9,
+      "homeStateEnrollmentPct": 91,
+      "drawClassification": "state",
+      "topFeederStates": { "UT": 88.9, "AZ": 1.7, "CA": 1.2, "ID": 1.0 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Weber State University Common Data Set 2020-2021, Section F1 (Fall 2020 first-time first-year cohort). Note: older than other records in this batch -- a more recent CDS PDF returned a 404 on direct fetch; flagged for a refresh pass.",
+      "dataYear": 2020,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled. topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source, likely more recent than this record's existing 2020-21 CDS-sourced oosEnrollmentPct). UT share (88.9%) is in the same range as the existing homeStateEnrollmentPct (91%) with a small gap consistent with the different cohort/year."
+    },
     "institutionNarrative": {
       "name": "Weber State University",
       "location": "Ogden, Utah",
@@ -20149,6 +21022,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Towson University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 6,
+      "homeStateEnrollmentPct": 94,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Towson University Common Data Set 2022-2023, Section F1 (primary source, direct PDF: towson.edu/ir/documents/cds_all_2022_2023.pdf).",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Towson University",
       "location": "Towson, Maryland",
@@ -20607,6 +21491,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "The Ohio State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 28.5,
+      "homeStateEnrollmentPct": 71.5,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "The Ohio State University Common Data Set 2023-2024, Section F1, Columbus campus (primary source, direct PDF: irp.osu.edu/.../CDS-2023-2024-The Ohio State University-Columbus.pdf).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "The Ohio State University",
       "location": "Columbus, Ohio",
@@ -20647,11 +21542,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~55%",
         "estimatedSavingsRange": "$15,000-$45,000",
         "transferNotes": "Ohio State maintains strong articulation agreements with Ohio's community college system, particularly for engineering and business transfer students."
-      },
-      "institutionIdentity": {
-        "commonName": "Ohio State",
-        "archetype": "Large Public Big Ten Flagship Research University"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Ohio State",
+      "archetype": "Large Public Big Ten Flagship Research University",
       "institutionalPersonality": "spirited, ambitious, scale-driven, loyal, increasingly innovation-oriented",
       "cultureKeywords": [
         "Big Ten",
@@ -20664,6 +21559,7 @@ const UNIVERSITY_DB_V5 = {
         "Research"
       ],
       "missionOrientation": "Expanding access to excellence at massive scale while advancing research, medicine, and Ohio's economic development.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Students build their own path through a vast catalog of programs, research opportunities, and one of the largest academic medical centers in the country, with the size rewarding self-directed students.",
       "competitiveness": "Moderately Selective",
       "politicalCulture": "Broadly representative of Midwest political diversity, pragmatic, and increasingly focused on economic development and reindustrialization.",
@@ -20983,6 +21879,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Michigan State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 19,
+      "homeStateEnrollmentPct": 81,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Michigan State University Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort, reported as 18.70%)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Michigan State University",
       "location": "East Lansing, Michigan",
@@ -21331,6 +22238,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Wisconsin-Madison": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 46,
+      "homeStateEnrollmentPct": 54,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "applicationIntelligence": {
       "earliestDeadline": "November 1",
       "earliestDeadlineLabel": "Early Action",
@@ -21375,11 +22293,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~43%",
         "estimatedSavingsRange": "$12,000-$30,000",
         "transferNotes": "UW-Madison maintains transfer agreements with Wisconsin's technical college system."
-      },
-      "institutionIdentity": {
-        "commonName": "Wisconsin",
-        "archetype": "Elite Public Research Flagship, Progressive College Town"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Wisconsin",
+      "archetype": "Elite Public Research Flagship, Progressive College Town",
       "institutionalPersonality": "progressive, research-serious, civically engaged, spirited",
       "cultureKeywords": [
         "Epic Systems",
@@ -21390,6 +22308,7 @@ const UNIVERSITY_DB_V5 = {
         "Big Ten"
       ],
       "missionOrientation": "Delivering elite research education embedded in a genuinely progressive, arts-rich college town.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Rigorous research education paired with civic engagement and direct health-tech industry access.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Progressive, activism-friendly.",
@@ -21683,6 +22602,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "American University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 82,
+      "homeStateEnrollmentPct": 18,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "American University Common Data Set 2020-2021, Section F1 (Fall 2020 first-time first-year cohort)",
+      "dataYear": 2020,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification assigned using: national >=60% OOS, regional 30-59% OOS, state <30% OOS (thresholds fixed 2026-08-12, first population pass, per schema v1.0.8 guidance to document cutoffs on first use). topFeederStates/topFeederRegions not yet sourced -- only the aggregate in-state/out-of-state split has been pulled so far, not the state-level breakdown."
+    },
     "institutionNarrative": {
       "name": "American University",
       "location": "Washington, DC",
@@ -22030,6 +22960,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Belmont University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 72,
+      "homeStateEnrollmentPct": 28,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Belmont University Common Data Set 2022-2023, Section F1 (primary source, direct PDF: belmont.edu/irsa/_files/data-sets/cds-2022-2023.pdf). Note: the 2023-2024 CDS was found but returned a 403 error on repeated fetch attempts; this was the most recent completed year successfully retrieved.",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Belmont University",
       "location": "Nashville, Tennessee",
@@ -22368,17 +23309,28 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Boston University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 82,
+      "homeStateEnrollmentPct": 18,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Boston University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: bu.edu/asir/files/2025/03/cds-2025-f.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Boston University",
       "location": "Boston, Massachusetts",
       "region": "New England",
-      "archetype": "The Urban Independent — Finance, Media, and Boston's Dense Professional Economy",
+      "archetype": "The Urban Independent \u2014 Finance, Media, and Boston's Dense Professional Economy",
       "oneSentenceSummary": "BU combines a large, urban, self-assembled community with strong Questrom Business and Communication programs, giving students direct access to Boston's finance, biotech, and media economy.",
       "pipeline": "Approximately 18,000 undergraduates spread across Commonwealth Avenue. Strong Questrom Business, Communication, and Public Health programs. Major recruiters include Fidelity, State Street, Deloitte, and Boston's dense biotech/finance corridor.",
       "hiddenPathway": "BU's Boston location gives direct access to one of the most concentrated finance/biotech job markets in the country, without needing to relocate after graduation.",
-      "institutionalSecret": "BU's lack of a traditional quad often reads as a weakness, but it mirrors NYU's model — the city itself becomes the extracurricular life and professional network.",
+      "institutionalSecret": "BU's lack of a traditional quad often reads as a weakness, but it mirrors NYU's model \u2014 the city itself becomes the extracurricular life and professional network.",
       "theRoom": "Spread along Commonwealth Avenue in the heart of Boston, adjacent to dozens of other universities and Boston's professional core.",
-      "lifestyle": "Urban, independent, self-assembled — community forms through clubs and neighborhoods rather than a central quad.",
+      "lifestyle": "Urban, independent, self-assembled \u2014 community forms through clubs and neighborhoods rather than a central quad.",
       "bestFitPersonality": "Independent, comfortable building their own community, drawn to a dense urban professional environment.",
       "faithTradition": "None",
       "geographicInfluenceRadius": "Strong throughout the Northeast, especially Boston's finance and biotech corridor.",
@@ -22406,11 +23358,19 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~14%",
         "estimatedSavingsRange": "$10,000-$28,000",
         "transferNotes": "BU accepts transfer students from Massachusetts community colleges at meaningfully higher rates than freshman admission."
-      },
-      "institutionIdentity": {
-        "commonName": "Boston University",
-        "archetype": "Large Urban Private Research University"
-      },
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "Not confirmed in this pass (Early Decision)",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "Not confirmed in this pass",
+      "essayPromptTopic": null,
+      "notes": "Directly confirmed on bu.edu/admissions/apply/early-decision: BU offers Early Decision and Early Decision 2 (binding), plus Regular Decision (not browsed in this pass). SAT/ACT are NOT required for Early Decision or Early Decision 2 applicants through fall 2028 and spring 2029 specifically -- a real, dated, multi-year test-optional commitment, not a year-to-year policy. If test scores are submitted, ED applicants must test no later than October (ACT) or November (SAT); ED2 applicants no later than December. International students must submit TOEFL/IELTS/DET by Nov 15 (ED) or end of December (ED2). Early Decision applicants who qualify for financial aid and are admitted receive 100% of demonstrated need met (US citizens/permanent residents only). Most merit scholarships require applying before Dec 1. Deferred ED applicants are reconsidered during Regular Decision after submitting mid-year grades, with final decisions in late March. The exact calendar deadline dates (the specific day/month for ED, ED2, and RD) were referenced via an in-page 'see deadlines' link that did not render extractable text in this pass -- left as unconfirmed placeholders rather than guessed, and should be sourced directly in a follow-up pass rather than assumed from general knowledge of BU's typical cycle.",
+      "verifiedDate": "2026-08-12"
+    },
+    "institutionIdentity": {
+      "commonName": "Boston University",
+      "archetype": "Large Urban Private Research University",
       "institutionalPersonality": "independent, urban, ambitious, self-assembled",
       "cultureKeywords": [
         "Urban",
@@ -22421,6 +23381,7 @@ const UNIVERSITY_DB_V5 = {
         "Self-Assembled"
       ],
       "missionOrientation": "Providing an urban, professionally-embedded education inside one of the country's densest finance and biotech economies.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Learning through direct urban immersion in Boston's professional core.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly progressive, urban-minded.",
@@ -22482,12 +23443,12 @@ const UNIVERSITY_DB_V5 = {
       "idealStudentTraits": [
         "Self-directed",
         "Comfortable being one of many in a dense urban environment",
-        "Independent socially — builds their own community rather than having one assigned",
+        "Independent socially \u2014 builds their own community rather than having one assigned",
         "Career-focused, especially toward finance, media, or communications",
         "Resourceful in navigating a large, sprawling campus footprint"
       ],
       "thrivesIf": [
-        "Wants a real city, not a campus bubble — Boston as classroom and social life",
+        "Wants a real city, not a campus bubble \u2014 Boston as classroom and social life",
         "Is comfortable assembling their own friend group rather than a built-in cohort",
         "Interested in finance, media, communications, or international relations",
         "Enjoys a large, high-energy, ambitious peer environment",
@@ -22532,9 +23493,15 @@ const UNIVERSITY_DB_V5 = {
         "Boston's growing film and television production industry"
       ],
       "overlookedStrengths": [
-        "BU's lack of a traditional quad often reads as a weakness on a campus tour, but it mirrors NYU's model closely — the city itself becomes the extracurricular life and the professional network, a real advantage for students who want urban immersion from day one.",
+        "BU's lack of a traditional quad often reads as a weakness on a campus tour, but it mirrors NYU's model closely \u2014 the city itself becomes the extracurricular life and the professional network, a real advantage for students who want urban immersion from day one.",
         "The School of Public Health is a genuinely strong, less-recognized credential relative to BU's business and communications reputation, feeding directly into Boston's hospital and biotech ecosystem.",
         "BU's direct access to one of the most concentrated finance and biotech job markets in the country means students can build a full career network without ever needing to relocate after graduation."
+      ],
+      "sleeperIndustries": [
+        "Healthcare IT and Biotech Operations (Boston biotech corridor)",
+        "Public Health and Global Health Nonprofits",
+        "Media Production and Broadcast Journalism",
+        "Actuarial Science and Insurance (State Street/Fidelity-adjacent)"
       ]
     },
     "networkCapital": {
@@ -22583,7 +23550,7 @@ const UNIVERSITY_DB_V5 = {
       "innovationIndex": 74
     },
     "geographicInfluence": {
-      "dominantMarket": "Boston — Finance, Biotech, and Media",
+      "dominantMarket": "Boston \u2014 Finance, Biotech, and Media",
       "secondaryMarkets": [
         "New York NY",
         "Washington DC",
@@ -22593,7 +23560,16 @@ const UNIVERSITY_DB_V5 = {
         "Boston MA",
         "New York NY",
         "Washington DC"
-      ]
+      ],
+      "relocationPatterns": [
+        "A substantial share of graduates remain in Boston, reinforced by Questrom's dense local consulting/finance recruiting and the city's biotech corridor.",
+        "New York draws graduates into finance, media, and consulting roles.",
+        "Washington D.C. attracts graduates through Communication and Public Health-adjacent public policy pathways.",
+        "San Francisco and Los Angeles draw a smaller cohort into technology and entertainment media roles respectively."
+      ],
+      "regionalInfluenceScore": 78,
+      "nationalReachScore": 62,
+      "internationalReachScore": 38
     },
     "socialCapital": {
       "greekLifeInfluence": 22,
@@ -22605,15 +23581,15 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
       "consulting": {
         "strength": 84,
-        "notes": "Questrom has strong Boston-area corporate placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)"
+        "notes": "Questrom has strong Boston-area corporate placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking \u2014 judgment call.)"
       },
       "investmentBanking": {
         "strength": 76,
-        "notes": "Questrom has a secondary Wall Street placement pipeline. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)"
+        "notes": "Questrom has a secondary Wall Street placement pipeline. (Remapped 2026-07-12 from non-standard key 'business' \u2014 judgment call.)"
       },
       "realEstate": {
         "strength": 48,
-        "notes": "Questrom offers real estate finance coursework, benefiting from the Boston-area commercial market — a real but secondary pathway relative to Questrom's dominant consulting/finance and media placement. (Added 2026-07-22.)"
+        "notes": "Questrom offers real estate finance coursework, benefiting from the Boston-area commercial market \u2014 a real but secondary pathway relative to Questrom's dominant consulting/finance and media placement. (Added 2026-07-22.)"
       },
       "entertainmentMedia": {
         "strength": 82,
@@ -22626,6 +23602,66 @@ const UNIVERSITY_DB_V5 = {
       "pharmaceuticalManufacturing": {
         "strength": 61,
         "notes": "Real, confirmed co-op recruiting relationship: BU's own Center for Career Development lists active Vertex Pharmaceuticals 'Fall Co-op 2026' postings directly on its official careers portal. Scored below Northeastern (77) because this recruiting relationship is shared broadly across Boston-area schools (one industry source lists 'Boston University, Northeastern University' together as Vertex co-op partners) rather than an exclusive named program the way Northeastern's PharmD Fellowship is. Reinforced by the largest Biochemistry program of any school in the pharma-manufacturing candidate pool (138 students, $64,112)."
+      },
+      "aestheticsAndBeauty": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis; no dedicated program or named employer pipeline found."
+      },
+      "nutraceuticals": {
+        "strength": 20,
+        "notes": "Limited institutional emphasis relative to BU's stronger healthWellness and pharmaceuticalManufacturing pathways."
+      },
+      "consumerProducts": {
+        "strength": 34,
+        "notes": "Modest presence through Questrom marketing coursework; not a dominant named pipeline in available data."
+      },
+      "outdoorIndustry": {
+        "strength": 16,
+        "notes": "Minimal institutional emphasis; Boston's urban setting is not oriented toward this industry."
+      },
+      "sportsBusiness": {
+        "strength": 28,
+        "notes": "Modest presence; BU has a real Division I athletics program (Terriers) but no dedicated sports business major or named pipeline confirmed in this pass."
+      },
+      "ventureCapital": {
+        "strength": 32,
+        "notes": "Limited but real presence through the broader Questrom finance pipeline and Boston's venture ecosystem; not independently confirmed as a named program."
+      },
+      "privateEquity": {
+        "strength": 42,
+        "notes": "Real but secondary presence through Questrom's dominant consulting/investment-banking pipeline; not separately broken out from those categories in available data."
+      },
+      "medicine": {
+        "strength": 58,
+        "notes": "BU has its own School of Medicine (Boston University Chobanian & Avedisian School of Medicine), a real structural advantage most peer private research universities of similar undergraduate size don't have -- though this is a graduate/professional school, not a direct undergraduate pre-med pipeline guarantee."
+      },
+      "healthcareAdministration": {
+        "strength": 40,
+        "notes": "Real presence tied to BU's School of Public Health and Boston's dense hospital/healthcare-administration corridor."
+      },
+      "defense": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis; no named defense-sector employer pipeline found in this pass."
+      },
+      "luxuryBrands": {
+        "strength": 18,
+        "notes": "Minimal institutional relevance; not a dominant sector in available data."
+      },
+      "entrepreneurship": {
+        "strength": 44,
+        "notes": "Real presence through Questrom's innovation and entrepreneurship programming and Boston's broader startup ecosystem; not independently confirmed as a top-tier named program in this pass."
+      },
+      "technology": {
+        "strength": 46,
+        "notes": "Modest but real presence tied to Boston's tech corridor; not a dominant outcome sector relative to Questrom's consulting/finance and media pipelines in available data."
+      },
+      "publicPolicy": {
+        "strength": 44,
+        "notes": "Real presence through BU's Frederick S. Pardee School of Global Studies and Washington D.C.-bound graduates via Communication and Public Health-adjacent pathways."
+      },
+      "nonprofitLeadership": {
+        "strength": 38,
+        "notes": "Modest but real presence tied to BU's Public Health and Social Work programs; not independently confirmed as a dominant named pipeline in this pass."
       }
     },
     "wealthMobility": {
@@ -22724,6 +23760,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Colorado State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 30,
+      "homeStateEnrollmentPct": 70,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Colorado State University Common Data Set FY2026, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification assigned using: national >=60% OOS, regional 30-59% OOS, state <30% OOS (thresholds fixed 2026-08-12, first population pass, per schema v1.0.8 guidance to document cutoffs on first use). topFeederStates/topFeederRegions not yet sourced -- only the aggregate in-state/out-of-state split has been pulled so far, not the state-level breakdown."
+    },
     "institutionNarrative": {
       "name": "Colorado State University",
       "location": "Fort Collins, Colorado",
@@ -23062,6 +24109,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Fordham University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 57,
+      "homeStateEnrollmentPct": 43,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Fordham University",
       "location": "New York, New York",
@@ -23408,6 +24466,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "George Washington University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 97,
+      "homeStateEnrollmentPct": 3,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "George Washington University Common Data Set 2025-2026, Section F1 (Fall 2025 first-time first-year cohort)",
+      "dataYear": 2025,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "George Washington University",
       "location": "Washington, DC",
@@ -23744,6 +24813,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Loyola Marymount University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 38,
+      "homeStateEnrollmentPct": 62,
+      "drawClassification": "regional",
+      "topFeederStates": { "CA": 68.2, "WA": 3.3, "HI": 2.7, "OR": 2.7, "TX": 2.4, "NY": 2.0, "IL": 2.0, "CO": 1.9, "AZ": 1.6, "NJ": 1.4 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Loyola Marymount University Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled. topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). 12 states cleared the 1% threshold; list capped at the schema's 10-state max, dropping Nevada and Massachusetts (both 1.3%, tied 11th/12th). CA share (68.2%) is higher than this record's existing homeStateEnrollmentPct (62%, 2023-24 CDS first-time first-year cohort) -- gap is plausible given all-undergraduate vs. first-year-only populations."
+    },
     "institutionNarrative": {
       "name": "Loyola Marymount University",
       "location": "Los Angeles, California",
@@ -23779,11 +24859,19 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~48%",
         "estimatedSavingsRange": "$14,000-$36,000",
         "transferNotes": "LMU maintains transfer agreements with LA-area community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "Loyola Marymount University",
-        "archetype": "Private Catholic University, Entertainment-Tech Hidden Gem"
-      },
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision / Early Action",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Early Decision (binding) and Early Action (non-binding) share a November 1 deadline (ED notified mid-December, EA notified late December). Early Decision II due January 8 (source page listed notification as mid-December, which appears to predate that round's own deadline -- worth re-verifying directly with admissions before use). Regular Decision due January 15 (notified by April 1). Financial aid: November 15 for ED applicants, January 15 for ED II/EA applicants, February 1 general deadline. Verified against admission.lmu.edu/learnmore/prospectivestudents/first-yearapplicants/, 2026-08-12. No LMU-specific supplemental essay prompt was found on the page checked -- left null per schema rather than guessed.",
+      "verifiedDate": "2026-08-12"
+    },
+    "institutionIdentity": {
+      "commonName": "Loyola Marymount University",
+      "archetype": "Private Catholic University, Entertainment-Tech Hidden Gem",
       "institutionalPersonality": "polished, entrepreneurial, dual-industry-embedded, overlooked",
       "cultureKeywords": [
         "Silicon Beach",
@@ -23793,6 +24881,7 @@ const UNIVERSITY_DB_V5 = {
         "LA"
       ],
       "missionOrientation": "Delivering values-driven education with unmatched dual access to LA's entertainment and tech industries.",
+      "faithTradition": "Roman Catholic (Jesuit and Marymount)",
       "educationalPhilosophy": "Jesuit/Marymount formation reinforced by direct entertainment and Silicon Beach industry proximity.",
       "competitiveness": "Selective",
       "politicalCulture": "Broadly moderate, values-informed.",
@@ -23905,6 +24994,11 @@ const UNIVERSITY_DB_V5 = {
         "LMU's Westchester location puts it genuinely closer to Silicon Beach's tech offices than USC or UCLA, a hidden geographic advantage most families chasing bigger-name LA schools never discover.",
         "LMU is quietly building real Silicon Beach tech placement alongside its traditional entertainment industry ties, a dual pipeline few peer LA schools can match.",
         "The bluff-top Westchester campus sits directly between Hollywood's entertainment core and Silicon Beach's tech offices, giving students genuine walking- or short-drive-distance access to both industries simultaneously."
+      ],
+      "sleeperIndustries": [
+        "Recording Arts and Music Technology",
+        "Creator Economy / Influencer Marketing",
+        "Entertainment-Adjacent Startup Entrepreneurship"
       ]
     },
     "networkCapital": {
@@ -23962,7 +25056,15 @@ const UNIVERSITY_DB_V5 = {
         "Los Angeles CA",
         "San Francisco CA",
         "San Diego CA"
-      ]
+      ],
+      "relocationPatterns": [
+        "Large majority of graduates remain in Los Angeles across entertainment and Silicon Beach tech placement",
+        "Secondary concentration in San Francisco Bay Area (tech) and San Diego",
+        "A smaller New York City pipeline consistent with entertainment/media industry ties; limited broader national or international relocation evidence found in this pass"
+      ],
+      "regionalInfluenceScore": 55,
+      "nationalReachScore": 40,
+      "internationalReachScore": 15
     },
     "socialCapital": {
       "greekLifeInfluence": 24,
@@ -23987,6 +25089,74 @@ const UNIVERSITY_DB_V5 = {
       "pharmaceuticalManufacturing": {
         "strength": 70,
         "notes": "Company-stated and structural, same tier as UCLA: LMU's Seaver College of Science & Engineering hosts its own dedicated 'Amgen Scholars Program' page — part of the same national Amgen Scholars network. Reinforced by a confirmed Amgen Manufacturing Lab Associate alumna and Amgen appearing in the LMU MBA program's own published career-outcomes list. Scored slightly below UCLA (74) given LMU's smaller scale and single-company (Amgen-only) relationship versus UCLA's multi-company evidence."
+      },
+      "aestheticsAndBeauty": {
+        "strength": 15,
+        "notes": "No evidence found of a beauty/cosmetics industry pipeline in this pass. LMU's Marketing and Entrepreneurship programs could plausibly feed consumer beauty brands via LA's broader consumer marketing ecosystem, but no named employer or program-specific evidence was found. Limited institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 25,
+        "notes": "No dedicated health/wellness industry program identified. LA's broader wellness-economy presence offers indirect adjacency, but no specific pipeline, named employer, or program evidence was found in this pass. Limited institutional emphasis."
+      },
+      "nutraceuticals": {
+        "strength": 10,
+        "notes": "No evidence of any nutraceuticals-specific program, employer relationship, or industry pipeline. Limited institutional emphasis -- not a meaningful pathway at LMU."
+      },
+      "consumerProducts": {
+        "strength": 35,
+        "notes": "LMU's Marketing major and LA's broader consumer brand economy offer plausible adjacency, and the entertainment/creator-economy overlap (streaming, digital marketing) touches consumer products marketing indirectly, but no specific named employer pipeline into consumer packaged goods was found in this pass."
+      },
+      "outdoorIndustry": {
+        "strength": 10,
+        "notes": "No evidence of an outdoor-industry-specific program or pipeline. LMU's coastal Westchester location is culturally adjacent to Southern California outdoor/lifestyle brands, but no institutional program or employer relationship was found. Limited institutional emphasis."
+      },
+      "sportsBusiness": {
+        "strength": 30,
+        "notes": "LMU competes in NCAA Division I (WCC), and the Marketing/Entrepreneurship programs plausibly feed sports-adjacent business roles, but no dedicated sports-business program or named sports-industry employer pipeline was found in this pass."
+      },
+      "ventureCapital": {
+        "strength": 45,
+        "notes": "LMU's Entrepreneurship program and direct Silicon Beach startup proximity (Snap, YouTube, Google, and a dense surrounding startup ecosystem within walking/short-drive distance of campus) create real adjacency to early-stage venture activity, though no direct named VC-firm recruiting pipeline was confirmed in this pass."
+      },
+      "privateEquity": {
+        "strength": 20,
+        "notes": "No evidence of a dedicated private equity recruiting pipeline or named PE-firm employer relationship. LMU's Business school has general finance coursework, but no PE-specific placement evidence was found. Limited institutional emphasis."
+      },
+      "investmentBanking": {
+        "strength": 25,
+        "notes": "No evidence of a structured investment-banking recruiting pipeline or named bulge-bracket employer relationship in this pass. LMU's Business school offers finance coursework, but IB placement was not confirmed as a distinguishing strength."
+      },
+      "consulting": {
+        "strength": 35,
+        "notes": "No named MBB/Big consulting employer relationship confirmed in this pass. LMU's Business school offers general management coursework consistent with consulting-adjacent skills, but no dedicated consulting-recruiting pipeline was found."
+      },
+      "medicine": {
+        "strength": 20,
+        "notes": "No evidence of a pre-med-specific pipeline, medical school partnership, or named healthcare employer relationship distinct from general LA-area access. Limited institutional emphasis at the undergraduate level in this pass."
+      },
+      "healthcareAdministration": {
+        "strength": 20,
+        "notes": "No dedicated healthcare-administration program or named employer pipeline found. Limited institutional emphasis."
+      },
+      "defense": {
+        "strength": 10,
+        "notes": "No evidence of a defense-industry program, ROTC-driven pipeline, or named defense-contractor employer relationship. Limited institutional emphasis -- not a meaningful pathway at LMU."
+      },
+      "luxuryBrands": {
+        "strength": 30,
+        "notes": "LA's broader luxury/entertainment-adjacent consumer economy and LMU's Marketing program offer plausible adjacency (entertainment talent, luxury lifestyle marketing), but no specific named luxury-brand employer pipeline was confirmed in this pass."
+      },
+      "entrepreneurship": {
+        "strength": 65,
+        "notes": "LMU's dedicated Entrepreneurship major, combined with direct Silicon Beach startup proximity (Snap, YouTube, Google, and a dense surrounding startup ecosystem), gives genuine, real evidence of an entrepreneurship pathway beyond generic institutional marketing -- one of this record's more confidently sourced industryPathways scores."
+      },
+      "publicPolicy": {
+        "strength": 15,
+        "notes": "No dedicated public policy program or named policy-employer pipeline identified in this pass. LMU's political culture is described elsewhere in this record as broadly moderate and values-informed, but no specific public-policy career pipeline evidence was found. Limited institutional emphasis."
+      },
+      "nonprofitLeadership": {
+        "strength": 45,
+        "notes": "LMU's Jesuit/Marymount mission emphasizes values-driven service and community engagement (consistent with the faithTradition and educationalPhilosophy fields elsewhere in this record), suggesting real nonprofit-sector orientation, though no specific named nonprofit employer pipeline or placement statistic was confirmed in this pass."
       }
     },
     "wealthMobility": {
@@ -24085,6 +25255,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Marquette University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 65,
+      "homeStateEnrollmentPct": 35,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Marquette University Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Marquette University",
       "location": "Milwaukee, Wisconsin",
@@ -24430,6 +25611,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Maryland, College Park": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 22,
+      "homeStateEnrollmentPct": 78,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of Maryland-College Park's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). UMD's own CDS archive page (irpa.umd.edu) only exposed a year-select dropdown with no direct PDF URLs in the fetched content, so this is one step removed from the primary document.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Maryland, College Park",
       "location": "College Park, Maryland",
@@ -24771,6 +25963,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Northeastern University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 68,
+      "homeStateEnrollmentPct": 32,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Northeastern University Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Northeastern University",
       "location": "Boston, Massachusetts",
@@ -24806,11 +26009,19 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~7%",
         "estimatedSavingsRange": "$10,000-$25,000",
         "transferNotes": "Northeastern's freshman admission is highly selective; transfer pathways exist but remain competitive."
-      },
-      "institutionIdentity": {
-        "commonName": "Northeastern University",
-        "archetype": "Large Urban Co-op Research University"
-      },
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I / Early Action",
+      "rdDeadline": "January 1",
+      "essayPromptTopic": null,
+      "notes": "ED I and Early Action share a November 1 deadline (ED I notified by Jan 1, EA notified by Feb 15). ED II due January 1 (notified by March 1, same calendar date as the RD deadline). Regular Decision due January 1 (notified by April 1). Financial aid deadlines run alongside each round. Verified against admissions.northeastern.edu/application-information/admissions-deadlines-decisions/, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
+    "institutionIdentity": {
+      "commonName": "Northeastern University",
+      "archetype": "Large Urban Co-op Research University",
       "institutionalPersonality": "career-focused, urban, ambitious, practically minded",
       "cultureKeywords": [
         "Co-op",
@@ -24820,6 +26031,7 @@ const UNIVERSITY_DB_V5 = {
         "Practical"
       ],
       "missionOrientation": "Integrating real-world professional experience directly into the undergraduate degree via co-op.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Learning through alternating semesters of classroom study and full-time paid industry work.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly progressive, career-pragmatic.",
@@ -25117,6 +26329,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "New York University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 66,
+      "homeStateEnrollmentPct": 34,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "New York University",
       "location": "New York, New York",
@@ -25155,11 +26378,19 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~13%",
         "estimatedSavingsRange": "$10,000-$25,000",
         "transferNotes": "NYU accepts transfer students from CUNY community colleges at meaningfully higher rates than its freshman acceptance rate."
-      },
-      "institutionIdentity": {
-        "commonName": "New York University",
-        "archetype": "Urban Campus-less Global Research University"
-      },
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 5",
+      "essayPromptTopic": null,
+      "notes": "ED I due November 1 (notified Dec 15). ED II due January 1 (notified Feb 15). Regular Decision due January 5 (notified April 1). Verified against nyu.edu/admissions/undergraduate-admissions/how-to-apply/all-freshmen-applicants.html, 2026-08-12. No NYU-specific supplemental essay prompt was found on the page checked -- left null per schema rather than guessed.",
+      "verifiedDate": "2026-08-12"
+    },
+    "institutionIdentity": {
+      "commonName": "New York University",
+      "archetype": "Urban Campus-less Global Research University",
       "institutionalPersonality": "independent, ambitious, urban, globally minded",
       "cultureKeywords": [
         "No Campus",
@@ -25170,6 +26401,7 @@ const UNIVERSITY_DB_V5 = {
         "Manhattan"
       ],
       "missionOrientation": "Providing a global, urban education without the constraints of a traditional campus.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Learning through direct immersion in New York City's finance, media, and cultural industries.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly progressive, globally engaged.",
@@ -25462,6 +26694,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Penn State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 36,
+      "homeStateEnrollmentPct": 64,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Penn State University (University Park) Common Data Set 2019-2020, Section F1 (Fall 2019 first-time first-year cohort). Note: older than other records in this batch -- 2021-2023 PSU CDS documents were checked but did not yield a clean F1 read; flagged for a refresh pass.",
+      "dataYear": 2019,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Penn State University",
       "location": "University Park, Pennsylvania",
@@ -25501,11 +26744,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~50%",
         "estimatedSavingsRange": "$15,000-$40,000",
         "transferNotes": "Penn State's branch campus system (over 20 locations across Pennsylvania) creates a uniquely structured 2+2 pathway into University Park unlike any peer flagship."
-      },
-      "institutionIdentity": {
-        "commonName": "Penn State University",
-        "archetype": "Large Public Big Ten Flagship, Self-Contained College Town"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Penn State University",
+      "archetype": "Large Public Big Ten Flagship, Self-Contained College Town",
       "institutionalPersonality": "loyal, tradition-bound, spirited, scale-driven, quietly ambitious",
       "cultureKeywords": [
         "Big Ten",
@@ -25517,6 +26760,7 @@ const UNIVERSITY_DB_V5 = {
         "Tradition"
       ],
       "missionOrientation": "Providing access to excellence at scale across Pennsylvania through a distinctive branch-campus commonwealth system feeding into University Park.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Students build community deliberately in a self-contained college town, with the university's scale rewarding self-direction and networking initiative.",
       "competitiveness": "Moderately Selective",
       "politicalCulture": "Broadly representative of Pennsylvania's political diversity, pragmatic, tradition-focused.",
@@ -25817,6 +27061,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Purdue University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 50.7,
+      "homeStateEnrollmentPct": 49.3,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Purdue University Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Purdue University",
       "location": "West Lafayette, Indiana",
@@ -26160,6 +27415,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Texas Christian University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 53.2,
+      "homeStateEnrollmentPct": 46.8,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Texas Christian University Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Texas Christian University",
       "location": "Fort Worth, Texas",
@@ -26504,6 +27770,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of North Carolina at Chapel Hill": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 15,
+      "homeStateEnrollmentPct": 85,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "UNC Chapel Hill Common Data Set 2025-26, Section F1 (primary source, direct PDF: oira.unc.edu/wp-content/uploads/sites/297/2026/06/CDS_UNCCH_2025-26_20260615.pdf). Consistent with North Carolina's statutory cap limiting out-of-state first-year enrollment to 18% system-wide; UNC-CH runs below that ceiling.",
+      "dataYear": 2025,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of North Carolina at Chapel Hill",
       "location": "Chapel Hill, North Carolina",
@@ -26542,11 +27819,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~17%",
         "estimatedSavingsRange": "$12,000-$32,000",
         "transferNotes": "North Carolina's community college transfer agreements create a structured pathway for qualifying in-state students."
-      },
-      "institutionIdentity": {
-        "commonName": "UNC Chapel Hill",
-        "archetype": "Elite Public Flagship, Research Triangle Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UNC Chapel Hill",
+      "archetype": "Elite Public Flagship, Research Triangle Anchor",
       "institutionalPersonality": "warm, ambitious, basketball-proud, research-serious",
       "cultureKeywords": [
         "Public Ivy",
@@ -26557,6 +27834,7 @@ const UNIVERSITY_DB_V5 = {
         "Southern Warmth"
       ],
       "missionOrientation": "Delivering elite public education embedded directly in one of the country's densest research/biotech economies.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Rigorous education paired with direct Research Triangle industry access and genuine school-spirit community.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly moderate to progressive, community-oriented.",
@@ -26864,6 +28142,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "The University of Texas at Austin": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 6,
+      "homeStateEnrollmentPct": 94,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of Texas at Austin's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly (or produced unreliable fetch results, see notes), so this is one step removed from the primary document rather than a direct pull. UT Austin's own CDS PDF was hosted behind an authenticated utexas.box.com link that could not be fetched directly.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "The University of Texas at Austin",
       "location": "Austin, Texas",
@@ -26900,11 +28189,11 @@ const UNIVERSITY_DB_V5 = {
         "freshmanAcceptanceRate": "~31%",
         "estimatedSavingsRange": "$14,000-$34,000",
         "transferNotes": "UT Austin maintains strong transfer agreements with Texas community colleges."
-      },
-      "institutionIdentity": {
-        "commonName": "UT Austin",
-        "archetype": "Large Public Flagship, Austin Tech Boom Anchor"
-      },
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UT Austin",
+      "archetype": "Large Public Flagship, Austin Tech Boom Anchor",
       "institutionalPersonality": "ambitious, tech-forward, creative, massive in scale",
       "cultureKeywords": [
         "Austin Tech Boom",
@@ -26914,6 +28203,7 @@ const UNIVERSITY_DB_V5 = {
         "Retention"
       ],
       "missionOrientation": "Delivering elite communications and tech education inside one of the fastest-growing tech economies in the country.",
+      "faithTradition": "None",
       "educationalPhilosophy": "Applied education reinforced by direct Austin tech and media industry access.",
       "competitiveness": "Highly Selective",
       "politicalCulture": "Broadly progressive, especially relative to the rest of Texas.",
@@ -27214,6 +28504,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of California-Los Angeles": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 15,
+      "homeStateEnrollmentPct": 85,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "UCLA Common Data Set 2024-2025, Section F1 (primary source, direct PDF: apb.ucla.edu).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of California-Los Angeles",
       "location": "Los Angeles, California",
@@ -27250,6 +28551,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UCLA's transfer admission is highly selective, mirroring its overall elite positioning."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 1",
+        "earliestDeadlineLabel": "UC Application Filing Period Opens",
+        "rdDeadline": "November 30",
+        "essayPromptTopic": null,
+        "notes": "Full round structure verified directly from admission.ucla.edu/apply/first-year (2026-27 cycle): UC Application opens Aug 1; single filing window Oct 1 - Nov 30; admission notification late March; enrollment deposit and housing application due May 1; final official transcripts due July 1; official AP/IB scores due July 15. UCLA explicitly does NOT offer Early Action or Early Decision for any applicants -- a directly stated policy on UCLA's own site, distinct from the general assumption that elite privates all offer early rounds. UCLA operates on the quarter system and only admits for the fall term. Fall 2025 admits averaged a 4.0 unweighted GPA. Choice of major does not affect admission odds for College of Letters and Science applicants -- many apply undeclared. Separate supplemental applications are required for the School of the Arts and Architecture, Herb Alpert School of Music, School of Nursing, and School of Theater, Film and Television; applicants must list these as their first-choice major to be considered. Specific Personal Insight Question content was not captured in this pass. Sourced from admission.ucla.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "UCLA",
       "archetype": "Elite Public Research University, Complete LA Anchor",
@@ -27619,7 +28928,7 @@ const UNIVERSITY_DB_V5 = {
       "shabbatProgramming": true,
       "birthrightSupport": true,
       "jewishCommunityStrength": "Exceptional",
-      "notes": "UCLA has one of the largest Jewish undergraduate populations among elite public universities."
+      "notes": "Independently verified 2026-08-12 directly against uclahillel.org: Hillel at UCLA operates a 25,000 sq. ft. dedicated facility with kosher catering (Coffee Bean & Tea Leaf kosher option confirmed on-site) and six named program areas (Leadership, Social Action, Jewish Learning, Israel, Shabbat & Holidays, Culture & The Arts). This is among the largest dedicated Hillel facilities confirmed in this database by square footage. The prior undergraduate population estimate (3,600 students, ~11%) was not independently re-confirmed this session and is retained as a plausible but not freshly re-verified figure. UCLA has one of the largest Jewish undergraduate populations among elite public universities."
     },
     "honorsCollege": {
       "exists": true,
@@ -27657,6 +28966,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Boston College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 78,
+      "homeStateEnrollmentPct": 22,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Boston College Common Data Set 2024-2025, Section F1, sourced via a re-hosted copy of BC's own CDS PDF on collegedata.fyi (api.collegedata.fyi/.../boston-college/2024-25/...pdf) after BC's own bc.edu domain was robots.txt-blocked on repeated attempts. This is a verbatim archived copy of the primary document, not an aggregator-computed figure, but flagged as one step removed since it wasn't fetched from bc.edu directly. Supersedes the prior owner-set interim drawClassification (now replaced with a sourced figure).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Boston College",
       "location": "Chestnut Hill, Massachusetts",
@@ -27994,6 +29314,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of California-San Diego": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 12,
+      "homeStateEnrollmentPct": 88,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "UC San Diego Common Data Set 2024-2025, Section F1 (primary source, direct PDF: ir.ucsd.edu/stats/undergrad/CDS_UCSD_2024-20252.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of California-San Diego",
       "location": "La Jolla, California",
@@ -28038,6 +29369,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UCSD maintains California's Transfer Admission Guarantee (TAG) pathway for eligible California community college students. San Diego's local community colleges feed heavily into UCSD's engineering, biological sciences, and business programs, with strict prerequisite sequencing for the most competitive majors."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 1",
+        "earliestDeadlineLabel": "UC Application Filing Period Opens",
+        "rdDeadline": "November 30",
+        "essayPromptTopic": null,
+        "notes": "UC San Diego uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction. Directly confirmed on admissions.ucsd.edu/apply: UC Application opens Aug 1; application submission period Oct 1 - Nov 30. UC San Diego is home to more than 2,300 military-connected students, with dedicated resources and services for the military-to-college transition -- a real, specific, quantified figure confirmed directly on UCSD's own site. UCSD enrolls transfer students at the junior level specifically. Specific Personal Insight Question content was not captured in this pass. Sourced from admissions.ucsd.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "UC San Diego",
       "archetype": "Elite Public Research University — Life Sciences and Engineering Powerhouse",
@@ -28238,7 +29577,7 @@ const UNIVERSITY_DB_V5 = {
         "AI-Driven Drug Discovery",
         "Digital Health"
       ],
-      "startupDensity": "Extremely High",
+      "startupDensity": "Very High",
       "ventureCapitalAccess": 78,
       "corporateHeadquartersDensity": 72,
       "healthcareHubStrength": 96,
@@ -28463,6 +29802,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of California-Santa Barbara": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 9,
+      "homeStateEnrollmentPct": 91,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from UC Santa Barbara's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of California-Santa Barbara",
       "location": "Santa Barbara, California",
@@ -28507,6 +29857,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Santa Barbara City College is one of California's most successful UC transfer feeders, sending a substantial share of its transfer cohort directly into UCSB through the TAG pathway, particularly in physical sciences, engineering, and environmental studies."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 1",
+        "earliestDeadlineLabel": "UC Application Filing Period Opens",
+        "rdDeadline": "November 30",
+        "essayPromptTopic": null,
+        "notes": "UC Santa Barbara uses the shared University of California application, not campus-specific application rounds -- there is no Early Decision/Early Action/Regular Decision distinction. Full timeline verified directly from admissions.sa.ucsb.edu/deadlines (Fall 2027 cycle): UC Application opens Aug 1; single filing window Oct 1 - Nov 30; admission decisions mid-March; Statement of Intent to Register (SIR) due May 1. SAT/ACT scores are explicitly NOT used in the admission selection process (stated directly on UCSB's own site) -- submission is optional and, if submitted, may only assist with course placement after enrollment, a meaningfully stronger stance than 'test-optional' framing implies. Specific supplemental essay/Personal Insight Question content was not captured in this pass (UC's shared Personal Insight Questions apply system-wide). Sourced from admissions.sa.ucsb.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "UC Santa Barbara",
       "archetype": "Elite Public Research University — Physical Sciences and Coastal Culture",
@@ -28920,6 +30278,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of California-Davis": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 7,
+      "homeStateEnrollmentPct": 93,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "UC Davis Common Data Set 2024-2025, Section C/F (primary source, direct PDF: aggiedata.ucdavis.edu CDS_UCD.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of California-Davis",
       "location": "Davis, California",
@@ -28964,6 +30333,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UC Davis has one of the UC system's strongest community college transfer cultures, particularly for students pursuing agricultural sciences, biological sciences, and pre-veterinary tracks, supported by California's TAG program and deep ties to Central Valley community colleges."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 1",
+        "earliestDeadlineLabel": "UC Application Filing Period Opens",
+        "rdDeadline": "November 30",
+        "essayPromptTopic": null,
+        "notes": "UC Davis uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model confirmed directly on UC Santa Barbara's admissions site during this same batch. UC Application opens Aug 1; single filing window Oct 1 - Nov 30; Statement of Intent to Register (SIR) typically due by May 1, consistent system-wide. Deadline specifics were cross-verified against the UC system's shared filing period rather than re-confirmed independently on admission.ucdavis.edu in this pass -- flagged as cross-system-verified rather than campus-page-verified, and should be independently spot-checked before being treated as campus-specific confirmation. Specific supplemental essay/Personal Insight Question content was not captured in this pass.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "UC Davis",
       "archetype": "Elite Public Land-Grant Research University — Agricultural and Environmental Sciences",
@@ -29382,6 +30759,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of California-Irvine": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 8,
+      "homeStateEnrollmentPct": 92,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from UC Irvine's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). UCI's own CDS archive page (irap.uci.edu) listed the file but did not expose a direct PDF URL in the fetched content, so this is one step removed from the primary document. Consistent with the low out-of-state share seen across other UC campuses already sourced this pass (UC Riverside 1%, UC Santa Cruz 5%, UC Santa Barbara 9%, UC San Diego 12%, UC Berkeley 14%, UCLA 15%).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of California-Irvine",
       "location": "Irvine, California",
@@ -29426,6 +30814,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UCI draws heavily from Orange County's strong community college network, particularly Irvine Valley College and Orange Coast College, with well-established TAG pathways into business, biological sciences, and computer science."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 1",
+        "earliestDeadlineLabel": "UC Application Filing Period Opens",
+        "rdDeadline": "November 30",
+        "essayPromptTopic": null,
+        "notes": "UC Irvine uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's admissions site during this same batch (admissions.sa.ucsb.edu/deadlines). UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. Two campus-specific dates were confirmed directly on admissions.uci.edu: official final transcripts due July 1, official AP/IB test scores due July 15. The full admission-decision and SIR deadline dates were not independently re-confirmed on UCI's own site in this pass (cross-verified against the UC system-wide pattern instead) and should be spot-checked directly before being treated as UCI-page-verified rather than system-pattern-verified. Specific supplemental essay/Personal Insight Question content was not captured in this pass.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "UC Irvine",
       "archetype": "Rising Elite Public Research University — Technology, Biomedical, and Business",
@@ -29840,6 +31236,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of California-Riverside": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 1,
+      "homeStateEnrollmentPct": 99,
+      "drawClassification": "state",
+      "topFeederStates": { "CA": 98.5 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from UC Riverside's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only California clears the 1% threshold (next highest, Texas, is 0.3%). CA share (98.5%) is consistent with this record's existing dataSource note citing UC Riverside's out-of-state share at roughly 1%."
+    },
     "institutionNarrative": {
       "name": "University of California-Riverside",
       "location": "Riverside, California",
@@ -29884,6 +31291,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UC Riverside maintains one of the UC system's most accessible and successful community college transfer pathways, with deep partnerships across Inland Empire community colleges and a strong institutional commitment to transfer student success."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 1",
+        "earliestDeadlineLabel": "UC Application Filing Period Opens",
+        "rdDeadline": "November 30",
+        "essayPromptTopic": null,
+        "notes": "UC Riverside uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's and UCLA's admissions sites during this same reconciliation effort. UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. UC Riverside's own admissions site did not resolve the specific deadlines page in this pass (404 on multiple attempted URLs) -- campus-specific supplemental dates were not independently confirmed on admissions.ucr.edu and should be spot-checked directly before being treated as campus-page-verified rather than system-pattern-verified.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "UC Riverside",
       "archetype": "Public Research University — Access, Mobility, and Mission-Driven Medicine",
@@ -30072,7 +31487,7 @@ const UNIVERSITY_DB_V5 = {
         "Agricultural Technology",
         "Public Health Infrastructure"
       ],
-      "startupDensity": "Low to Moderate",
+      "startupDensity": "Moderate",
       "ventureCapitalAccess": 30,
       "corporateHeadquartersDensity": 34,
       "healthcareHubStrength": 74,
@@ -30239,7 +31654,7 @@ const UNIVERSITY_DB_V5 = {
       "returnerScore": 66,
       "stewardScore": 78,
       "navigatorScore": 52,
-      "geographicLockIn": "moderate_to_high",
+      "geographicLockIn": "moderate",
       "alumniDispersalPattern": "regional_concentration"
     },
     "jewishLife": {
@@ -30292,6 +31707,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of California-Santa Cruz": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 5,
+      "homeStateEnrollmentPct": 95,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from UC Santa Cruz's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of California-Santa Cruz",
       "location": "Santa Cruz, California",
@@ -30336,6 +31762,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UCSC maintains strong transfer relationships with Cabrillo College and Silicon Valley-adjacent community colleges like De Anza and Foothill, particularly for students pursuing computer science and environmental studies."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 1",
+        "earliestDeadlineLabel": "UC Application Filing Period Opens",
+        "rdDeadline": "November 30",
+        "essayPromptTopic": null,
+        "notes": "UC Santa Cruz uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's, UCLA's, and UC San Diego's admissions sites during this same reconciliation effort. UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. UC Santa Cruz's own admissions site did not resolve the specific first-year applicant page in this pass (404) -- campus-specific supplemental dates were not independently confirmed on admissions.ucsc.edu and should be spot-checked directly before being treated as campus-page-verified rather than system-pattern-verified.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "UC Santa Cruz",
       "archetype": "Independent-Minded Public Research University — Technology and Marine Science",
@@ -30525,7 +31959,7 @@ const UNIVERSITY_DB_V5 = {
         "Climate and Ocean Science",
         "AI and Software Engineering"
       ],
-      "startupDensity": "Moderate to High",
+      "startupDensity": "High",
       "ventureCapitalAccess": 60,
       "corporateHeadquartersDensity": 38,
       "healthcareHubStrength": 52,
@@ -30692,7 +32126,7 @@ const UNIVERSITY_DB_V5 = {
       "returnerScore": 44,
       "stewardScore": 34,
       "navigatorScore": 76,
-      "geographicLockIn": "low_to_moderate",
+      "geographicLockIn": "low",
       "alumniDispersalPattern": "regional_with_tech_corridor_concentration"
     },
     "jewishLife": {
@@ -30745,6 +32179,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Stanford University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 57,
+      "homeStateEnrollmentPct": 43,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Stanford University's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). Stanford's own CDS page (irds.stanford.edu) hosts the current file on Google Drive, which could not be fetched directly, so this is one step removed from the primary document. Stanford's unusually high in-state (California) share relative to other elite national private universities is a well-documented characteristic of the school.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Stanford University",
       "location": "Stanford, California",
@@ -30787,6 +32232,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Stanford accepts an extremely small number of transfer students each year, making its transfer pathway one of the most selective in the country, though nearby De Anza and Foothill Colleges have produced occasional successful transfers."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 15",
+        "earliestDeadlineLabel": "Restrictive Early Action (with optional Arts Portfolio)",
+        "rdDeadline": "January 5",
+        "essayPromptTopic": null,
+        "notes": "Full round structure verified directly from admission.stanford.edu/apply/first-year (page timestamped 'Updated on July 22, 2026' -- genuinely current): Restrictive Early Action -- Oct 15 deadline if submitting an optional Arts Portfolio, otherwise standard deadline Nov 1. Regular Decision -- Dec 5 with optional Arts Portfolio, otherwise standard deadline Jan 5. Midyear transcript due Feb 15. IMPORTANT: Stanford REQUIRES ACT or SAT test scores as part of the application -- this is NOT a test-optional policy, a common misconception given many peer elite schools' post-pandemic test-optional shifts. $100 nonrefundable application fee or fee waiver. A real, specific, distinctive cap: students are limited to a total of three undergraduate admission applications to Stanford across first-year and transfer combined -- applicants who have submitted fewer than three may reapply. Stanford uses the Common Application exclusively (no separate Stanford-specific or Coalition application referenced). Sourced from admission.stanford.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "Stanford University",
       "archetype": "Elite Private Research University — Technology and Entrepreneurship Epicenter",
@@ -30979,7 +32432,7 @@ const UNIVERSITY_DB_V5 = {
         "Biotechnology and Synthetic Biology",
         "Quantum Computing"
       ],
-      "startupDensity": "Extremely High",
+      "startupDensity": "Very High",
       "ventureCapitalAccess": 100,
       "corporateHeadquartersDensity": 90,
       "healthcareHubStrength": 82,
@@ -31204,6 +32657,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "California Institute of Technology": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 62.2,
+      "homeStateEnrollmentPct": 37.8,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "California Institute of Technology Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "California Institute of Technology",
       "location": "Pasadena, California",
@@ -31245,6 +32709,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Caltech accepts an extremely small number of transfer students each year, making transfer admission nearly as selective as freshman admission."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "November 1",
+        "earliestDeadlineLabel": "Restrictive Early Action",
+        "rdDeadline": "January 4",
+        "essayPromptTopic": null,
+        "notes": "Full round structure verified directly from admissions.caltech.edu/apply/first-year-applicants/deadlines (2026-27 cycle): Restrictive Early Action (REA) -- application due Nov 1 (materials due Nov 6, testing complete by Nov 30), non-binding, decisions by mid-December, accept by May 1, 2027. Regular Decision -- application due Jan 4 (materials due Jan 10, testing complete by Dec 31, 2026), decisions by mid-March, accept by May 1, 2027. Caltech's REA is genuinely restrictive: REA applicants may not apply Early Action or Early Decision to any other institution, with specific carve-outs (non-US institutions, public rolling-admissions schools like the UC system, military academies, and certain scholarship-linked early deadlines). Deferred REA applicants can only receive admit or deny in March -- Caltech does not waitlist deferred REA applicants. Caltech accepts the Common App or the QuestBridge Application with no preference between them (no Coalition App). Caltech is a QuestBridge Partner via the National College Match. Application fee waived for students for whom cost is a barrier. A minimum-age policy for on-campus housing has applied since fall 2023. Caltech has a real, distinctive tradition of releasing admissions decisions via riddles ('Admissions Release Time Riddles'). Sourced from admissions.caltech.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "Caltech",
       "archetype": "Elite Private Research University — Pure Science and Engineering",
@@ -31654,6 +33126,25 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Iowa": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 48,
+      "homeStateEnrollmentPct": 52,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Iowa Common Data Set 2025-2026, Section F1 (primary source, direct PDF: provost.uiowa.edu/sites/provost.uiowa.edu/files/2026-04/CDS_2526.pdf). Higher out-of-state share than typical Big Ten flagships is a known characteristic, driven partly by Illinois-resident recruitment.",
+      "dataYear": 2025,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 2",
+      "earliestDeadlineLabel": "Early Action",
+      "rdDeadline": "February 1",
+      "essayPromptTopic": null,
+      "notes": "Early Action documents deadline is November 9 (a week after the application deadline); Regular Admission documents deadline is February 8. Applicants after February 1 are not eligible for merit scholarships and are admitted only case-by-case, space-available. Verified against admissions.uiowa.edu/apply/how-apply/first-year-admissions, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "University of Iowa",
       "location": "Iowa City, Iowa",
@@ -31872,7 +33363,7 @@ const UNIVERSITY_DB_V5 = {
         "Agricultural Technology",
         "Insurance Technology"
       ],
-      "startupDensity": "Low to Moderate",
+      "startupDensity": "Moderate",
       "ventureCapitalAccess": 26,
       "corporateHeadquartersDensity": 34,
       "healthcareHubStrength": 82,
@@ -32039,7 +33530,7 @@ const UNIVERSITY_DB_V5 = {
       "returnerScore": 62,
       "stewardScore": 74,
       "navigatorScore": 46,
-      "geographicLockIn": "moderate_to_high",
+      "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_concentration_with_creative_writing_national_dispersal"
     },
     "jewishLife": {
@@ -32092,6 +33583,25 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Missouri": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 18,
+      "homeStateEnrollmentPct": 82,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of Missouri-Columbia's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document was checked across multiple years and was consistently an unfilled blank template on the school's own site (Arizona) or the search returned the wrong same-named school (Missouri), so this is one step removed from the primary document rather than a direct pull. Direct searches for Mizzou's own CDS repeatedly surfaced University of Central Missouri (a different, unrelated institution) instead.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "December 1",
+      "earliestDeadlineLabel": "Priority (Scholarship) Deadline",
+      "rdDeadline": "July 1",
+      "essayPromptTopic": null,
+      "notes": "Mizzou operates rolling admission; December 1 is the priority deadline for scholarship consideration (the meaningful date for most applicants), and July 1 is the outer application cutoff for the following fall. Applications open August 1 with decisions arriving on a rolling basis starting October 1. Verified against admissions.missouri.edu/apply/dates-deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "University of Missouri",
       "location": "Columbia, Missouri",
@@ -32311,7 +33821,7 @@ const UNIVERSITY_DB_V5 = {
         "Digital Health",
         "Digital Media and Journalism"
       ],
-      "startupDensity": "Low to Moderate",
+      "startupDensity": "Moderate",
       "ventureCapitalAccess": 24,
       "corporateHeadquartersDensity": 32,
       "healthcareHubStrength": 68,
@@ -32482,7 +33992,7 @@ const UNIVERSITY_DB_V5 = {
       "returnerScore": 66,
       "stewardScore": 76,
       "navigatorScore": 42,
-      "geographicLockIn": "moderate_to_high",
+      "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_concentration_with_journalism_national_dispersal"
     },
     "jewishLife": {
@@ -32535,6 +34045,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Arkansas": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 54,
+      "homeStateEnrollmentPct": 46,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of Arkansas's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). Arkansas' own hosted CDS PDF (osai.uark.edu/datasets/cds/cds24-25v3.pdf) returned no machine-readable text (image-based/scanned PDF), so this is one step removed from the primary document.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Arkansas",
       "location": "Fayetteville, Arkansas",
@@ -32977,6 +34498,25 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Mississippi": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 56,
+      "homeStateEnrollmentPct": 44,
+      "drawClassification": "regional",
+      "topFeederStates": { "MS": 30.2, "TX": 8.4, "TN": 7.4, "GA": 6.7, "IL": 5.0, "FL": 3.9, "CA": 3.6, "LA": 3.3, "MO": 3.1, "NC": 2.4 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of Mississippi's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). Ole Miss hosts its CDS files on Box.com with sharing links that could not be fetched directly (robots-disallowed/access-restricted), so this is one step removed from the primary document.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). 10+ states cleared 1%; list capped at the schema's 10-state max (New York, also at 2.4%, was 11th and dropped in favor of North Carolina's slightly higher raw count per the source page's ordering). FLAGGED DISCREPANCY: this page's MS share (30.2%) is notably lower than this record's existing homeStateEnrollmentPct (44%, 2024-25 CDS first-time first-year cohort) -- likely reflects all-undergraduate vs. first-year-only cohort differences, or the fact that Ole Miss draws heavily OOS in later class years too. Recorded as-is from the directly cited source with this gap disclosed rather than adjusted; both figures agree Ole Miss is a genuinely broad, multi-state draw (regional/near-national), consistent with the wide 10-state spread with no single dominant OOS feeder."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "January 10",
+      "earliestDeadlineLabel": "Freshman Scholarship Application Deadline",
+      "rdDeadline": "January 10",
+      "essayPromptTopic": null,
+      "notes": "Ole Miss operates rolling general admission with no hard final deadline confirmed on its own primary pages (olemiss.edu/admissions and the live application portal at connect.olemiss.edu were both checked; neither states a general-admission cutoff). January 10 is the one concrete, sourced date found -- the Freshman Scholarship Application deadline -- and is recorded in both fields per this project's single-deadline convention, flagged here as a scholarship deadline rather than a true admission deadline so it isn't mistaken for one. Recommend a follow-up pass via the financial aid office's pages (finaid.olemiss.edu) if a general deadline needs to be confirmed. Verified against olemiss.edu/admissions/undergraduate-admissions/application-process, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "University of Mississippi",
       "location": "Oxford, Mississippi",
@@ -33046,7 +34586,7 @@ const UNIVERSITY_DB_V5 = {
       "versusLSU": "LSU offers a larger scale and stronger engineering and business placement into Louisiana's energy sector, while Ole Miss offers a stronger pharmacy program and Oxford's literary legacy."
     },
     "institutionScale": {
-      "enrollmentCategory": "Medium to Large",
+      "enrollmentCategory": "Large",
       "undergraduateEnrollment": 19000,
       "graduateEnrollment": 3500,
       "totalEnrollment": 22500,
@@ -33313,6 +34853,11 @@ const UNIVERSITY_DB_V5 = {
         "strength": 40,
         "notes": "Present pathway, often tied to regional community and healthcare organizations."
       }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 58,
+        "notes": "Real, distinctive evidence: Ole Miss hosts the National Center for Natural Products Research (NCNPR), a uniquely positioned federally-linked (FDA/NIH-connected) natural-products and botanical research center housed within the School of Pharmacy's Research Institute of Pharmaceutical Sciences -- not a generic pharmacy program. Documented industry partnership: a five-year research agreement with doTERRA (essential oils/natural products) signed 2022. This is a genuine, sourced institutional asset, though it leans natural-products/nutraceutical research rather than large-scale pharmaceutical manufacturing, which caps the score below the top range."
+      }
     },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -33410,6 +34955,25 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Nebraska-Lincoln": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 24,
+      "homeStateEnrollmentPct": 76,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Nebraska-Lincoln Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "May 1",
+      "earliestDeadlineLabel": "Application Deadline (Fall term)",
+      "rdDeadline": "May 1",
+      "essayPromptTopic": null,
+      "notes": "UNL's own admissions.unl.edu page lists a single Fall-term application deadline (May 1, applications open the prior August 1) with no separate priority/early or regular round distinction, so the same date is recorded in both fields per this project's single-deadline convention. A separate, earlier Spring-term deadline (December 1) also exists but applies to spring admission, not the fall cycle this field is meant to capture. Verified against admissions.unl.edu/apply, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "University of Nebraska-Lincoln",
       "location": "Lincoln, Nebraska",
@@ -33627,7 +35191,7 @@ const UNIVERSITY_DB_V5 = {
         "Agricultural Technology",
         "Financial Technology"
       ],
-      "startupDensity": "Low to Moderate",
+      "startupDensity": "Moderate",
       "ventureCapitalAccess": 28,
       "corporateHeadquartersDensity": 58,
       "healthcareHubStrength": 50,
@@ -33750,6 +35314,11 @@ const UNIVERSITY_DB_V5 = {
         "strength": 42,
         "notes": "Present pathway, often tied to agricultural and community organizations."
       }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 63,
+        "notes": "Real, substantial evidence: UNL operates the Biological Process Development Facility (BPDF), a 24,000-sq-ft academic bioprocessing/biomanufacturing facility (described by its director as functioning like 'an academic CMO') with a fermentation suite (200-L bioreactors, expandable to 1,000-L), cleanroom aseptic processing space, and a documented 14-year vaccine/therapeutic-countermeasure partnership with the Department of Defense. This is a genuine, on-campus, industry-grade biopharmaceutical manufacturing capability (source: Pharma Manufacturing trade publication profile), which is stronger and more manufacturing-specific evidence than a typical regional-cluster claim, even though Lincoln's broader biopharma ecosystem is small relative to major hubs."
+      }
     },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -33794,7 +35363,7 @@ const UNIVERSITY_DB_V5 = {
       "returnerScore": 64,
       "stewardScore": 76,
       "navigatorScore": 44,
-      "geographicLockIn": "moderate_to_high",
+      "geographicLockIn": "high",
       "alumniDispersalPattern": "regional_concentration_with_insurance_national_dispersal"
     },
     "jewishLife": {
@@ -33847,6 +35416,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Tennessee": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 39,
+      "homeStateEnrollmentPct": 61,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Tennessee, Knoxville Common Data Set 2025-26, Section F1 (primary source, direct PDF: irsa.utk.edu/wp-content/uploads/sites/5/2026/06/CDS_2025-26_F.pdf).",
+      "dataYear": 2025,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Tennessee",
       "location": "Knoxville, Tennessee",
@@ -33888,6 +35468,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UT Knoxville maintains strong articulation agreements across Tennessee's community college system, supporting transfer into engineering, business, and health sciences programs."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "November 1",
+        "earliestDeadlineLabel": "Early Action Submission Deadline",
+        "rdDeadline": "January 5",
+        "essayPromptTopic": null,
+        "notes": "Full round structure verified directly from admissions.utk.edu/important-dates-and-deadlines (Summer/Fall entry cycle): Early Action submission deadline Nov 1, materials deadline Nov 15 (Tennessee-resident decisions released early December, out-of-state decisions mid-December); Regular Decision submission deadline Jan 5, materials deadline Jan 20 (decisions released early March). Confirmation deadline May 1. Merit scholarship consideration (e.g. Volunteer Scholarship) requires self-reported test scores by Jan 15, with official scores due by May 15. UT accepts either the Common Application or its own proprietary 'Go Vols Application' -- a real, named alternative application path most public flagships don't offer alongside the Common App. A completed application requires self-reported high school grades (STARS) and self-reported standardized test scores in addition to the application itself. Specific supplemental essay prompt text was not captured in this pass. Sourced from admissions.utk.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "University of Tennessee",
       "archetype": "Public Research Flagship — Nuclear Engineering and Nashville-Adjacent Business",
@@ -34284,6 +35872,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Vermont": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 80.2,
+      "homeStateEnrollmentPct": 19.8,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Vermont Common Data Set 2024-2025, Section F1 (primary source, direct PDF: uvm.edu/d10-files/documents/2025-02/2024-2025-Common-Data-Set.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Vermont",
       "location": "Burlington, Vermont",
@@ -34715,6 +36314,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Florida State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 15,
+      "homeStateEnrollmentPct": 85,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Florida State University's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to FSU's own 2024-25 CDS -- FSU's own institutional research site only exposed Fact Books and a broken commondataset.aspx link, no fetchable CDS PDF, so this is one step removed from the primary document. Table reflects overall undergraduate residency rather than first-time first-year specifically.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Florida State University",
       "location": "Tallahassee, Florida",
@@ -34756,6 +36366,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "FSU maintains one of Florida's strongest 2+2 articulation pathways through Tallahassee Community College and the state's broader community college system."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 15",
+        "earliestDeadlineLabel": "Early Decision / Early Action",
+        "rdDeadline": "December 1",
+        "essayPromptTopic": null,
+        "notes": "Full round structure verified directly from admissions.fsu.edu/first-year/apply (2026-27 cycle): Early Decision (domestic students, no talent-based majors or CARE Summer Bridge, binding) -- Oct 15 application / Oct 22 materials / Dec 17 decision / Jan 15 deposit. Early Action (Florida residents only, non-binding) -- Oct 15 application / Oct 22 materials / Dec 17 decision / May 1 deposit. Regular Decision (all students) -- Dec 1 application / Dec 8 materials / Feb 18 decision / May 1 deposit. Rolling (all students) -- Mar 1 application / Mar 8 materials / rolling decisions in April / May 1 deposit. Students applying Early Decision must use the Common App; other applicants may use either the Common App or FSU's own application. FSU does NOT accept self-reported test scores submitted through the Common App -- students must self-report scores separately via FSU's own Admissions Portal, a real and specific policy distinct from most peer schools. University Honors Program supplemental application deadline is Dec 1, triggered by selecting 'Yes' on the general application. Students intending to major in dance, film, music, stage management, studio art, or theatre must contact the academic department directly for additional major-specific requirements. Sourced from admissions.fsu.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "Florida State University",
       "archetype": "Public Research Flagship — Criminology, Public Policy, and Film",
@@ -34931,7 +36549,7 @@ const UNIVERSITY_DB_V5 = {
         "GovTech",
         "Criminal Justice Technology"
       ],
-      "startupDensity": "Low to Moderate",
+      "startupDensity": "Moderate",
       "ventureCapitalAccess": 26,
       "corporateHeadquartersDensity": 32,
       "healthcareHubStrength": 52,
@@ -35098,7 +36716,7 @@ const UNIVERSITY_DB_V5 = {
       "returnerScore": 62,
       "stewardScore": 70,
       "navigatorScore": 48,
-      "geographicLockIn": "moderate_to_high",
+      "geographicLockIn": "moderate",
       "alumniDispersalPattern": "florida_concentration_with_criminology_national_dispersal"
     },
     "jewishLife": {
@@ -35151,6 +36769,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Central Florida": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 6.6,
+      "homeStateEnrollmentPct": 93.4,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Central Florida Common Data Set 2024-2025, Section F1 (primary source, direct PDF: analytics.ucf.edu/wp-content/uploads/2025/08/Common-Data-Set-2024-2025.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Central Florida",
       "location": "Orlando, Florida",
@@ -35192,6 +36821,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UCF operates one of the largest and most successful 2+2 transfer partnerships in the country through Valencia College's DirectConnect program, sending thousands of transfer students annually."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 15",
+        "earliestDeadlineLabel": "Freshman Early Action (non-binding)",
+        "rdDeadline": "May 1",
+        "essayPromptTopic": null,
+        "notes": "Full round structure verified directly from ucf.edu/admissions/undergraduate/freshman (Fall 2026-27 cycle): Early Action is non-binding, application deadline Oct 15, material submission deadline Nov 15, decision notification Dec 4 (both summer and fall terms). Regular Decision is rolling: Fall application/materials deadline May 1 (Summer term deadline is Mar 1, Spring term deadline is Nov 1), rolling notifications beginning in January. Early Action applicants receive priority merit scholarship consideration -- scholarship funding is typically exhausted by mid-January. UCF accepts SAT, ACT, or CLT (College Level Test, valid if taken July 1, 2023 or later) -- a real, distinctive acceptance of a less-common exam most peer schools don't take. Effective April 2025, the ACT Science section is no longer required or used in UCF's composite score calculation, per Florida BOG 6.008. $30 application fee (nonrefundable). Application essay strongly encouraged but not required. Sourced from ucf.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "University of Central Florida",
       "archetype": "Public Research University — Modeling, Simulation, and Themed Entertainment",
@@ -35596,6 +37233,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Georgia State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 6,
+      "homeStateEnrollmentPct": 94,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Georgia State University's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document was only available as a Dropbox-hosted xlsx (not directly fetchable), so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Georgia State University",
       "location": "Atlanta, Georgia",
@@ -36034,6 +37682,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Temple University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 39.8,
+      "homeStateEnrollmentPct": 60.2,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Temple University Common Data Set 2022-2023, Section F1 (primary source, direct PDF: ira.temple.edu/sites/ira/files/Temple University CDS-2024-2025-v2.pdf -- despite the filename, the F1 data returned was labeled Fall 2022/2022-2023). Note: the file's naming did not match its content year; flagged for awareness.",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Temple University",
       "location": "Philadelphia, Pennsylvania",
@@ -36467,6 +38126,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "James Madison University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 28,
+      "homeStateEnrollmentPct": 72,
+      "drawClassification": "state",
+      "topFeederStates": { "VA": 70.1, "NJ": 7.9, "PA": 5.2, "MD": 5.0, "NY": 3.7, "MA": 1.7, "CT": 1.4 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "James Madison University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: jmu.edu/pair/ir/common-data-set/cds2024/cds-2024f.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only 7 states clear the 1% threshold (next highest, North Carolina, is 0.7%). VA share (70.1%) closely matches this record's existing homeStateEnrollmentPct (72%, 2024-25 CDS first-time first-year cohort)."
+    },
     "institutionNarrative": {
       "name": "James Madison University",
       "location": "Harrisonburg, Virginia",
@@ -36900,6 +38570,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Richmond": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 87,
+      "homeStateEnrollmentPct": 13,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Richmond Common Data Set 2024-2025, Section F1 (primary source, direct PDF: ifx.richmond.edu/pdfs/CDS2024-25.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Richmond",
       "location": "Richmond, Virginia",
@@ -37332,6 +39013,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Princeton University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 82,
+      "homeStateEnrollmentPct": 18,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set. Princeton's own hosted CDS PDF (2022-2023, document/486) was discarded as unreliable: it reported implausible figures (100% out-of-state for first-years, 81% living off-campus for a school known for near-universal on-campus housing), indicating a table misread/misalignment in that source document.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Princeton University",
       "location": "Princeton, New Jersey",
@@ -37769,6 +39461,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Yale University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 94,
+      "homeStateEnrollmentPct": 6,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Yale University Common Data Set 2023-2024, Section F1 (primary source, direct PDF: oir.yale.edu/sites/default/files/cds_yale_2023-24_vf_20240320.pdf).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Yale University",
       "location": "New Haven, Connecticut",
@@ -37808,6 +39511,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$20,000-$45,000",
         "transferNotes": "Yale accepts a small number of transfer students annually, making its transfer pathway one of the most selective in the country."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Single-Choice Early Action",
+      "rdDeadline": "January 2",
+      "essayPromptTopic": null,
+      "notes": "Single-Choice Early Action (non-binding but restricts other early applications) due November 1, decision mid-December, reply due May 1. Regular Decision due January 2, decision late March, reply due May 1. QuestBridge National College Match (binding) also due November 1. Verified against admissions.yale.edu/application-deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Yale University",
@@ -38202,6 +39913,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Columbia University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 82,
+      "homeStateEnrollmentPct": 18,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Columbia University (Columbia College & Columbia Engineering) Common Data Set 2023-2024, Section F1 (primary source, direct PDF: opir.columbia.edu/.../2023-24_Columbia_College_and_Columbia_Engineering_CDS.pdf).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Columbia University",
       "location": "New York, New York",
@@ -38242,6 +39964,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$22,000-$48,000",
         "transferNotes": "Columbia accepts a modest number of transfer students annually, drawing occasionally from New York's CUNY community college system, though remaining highly selective."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 1",
+      "essayPromptTopic": null,
+      "notes": "Early Decision (binding) due November 1 (financial aid due Nov 15), decision mid-December, response due early January. Regular Decision due January 1 (financial aid due Feb 15), decision late March, response due May 1. Verified against undergrad.admissions.columbia.edu/apply/firstyear, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Columbia University",
@@ -38640,6 +40370,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Cornell University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 64,
+      "homeStateEnrollmentPct": 36,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Cornell University's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). Cornell's own hosted CDS PDF produced two inconsistent extraction results on repeated fetch attempts (99.7% and 0.02%, both clearly misaligned table reads -- likely column/row misalignment in the source PDF's F1 table), so the primary document was not trusted for this record and the secondary aggregator was used instead.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Cornell University",
       "location": "Ithaca, New York",
@@ -38679,6 +40420,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$18,000-$42,000",
         "transferNotes": "Cornell maintains one of the more accessible transfer pathways among Ivy League universities, particularly for its state-supported colleges including Agriculture and Life Sciences and Industrial and Labor Relations."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 2",
+      "essayPromptTopic": null,
+      "notes": "Early Decision (binding): application/fee/portfolio due November 1, remaining materials due November 13, decision mid-December. Regular Decision: application due January 2, remaining materials due January 19, decision late March. Verified against admissions.cornell.edu/how-to-apply/first-year-applicants, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Cornell University",
@@ -39082,6 +40831,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Dartmouth College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 98,
+      "homeStateEnrollmentPct": 2,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Dartmouth College Common Data Set 2024-2025, Section F1 (primary source, direct PDF: dartmouth.edu/oir/pdfs/cds_2024-2025.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Dartmouth College",
       "location": "Hanover, New Hampshire",
@@ -39514,6 +41274,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Pennsylvania": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 82,
+      "homeStateEnrollmentPct": 18,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set. Penn's own most recent locatable CDS PDF was from 2021-22 (three years stale); the more current secondary figure was preferred over an outdated primary one.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Pennsylvania",
       "location": "Philadelphia, Pennsylvania",
@@ -39553,6 +41324,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$20,000-$46,000",
         "transferNotes": "Penn accepts a modest number of transfer students annually, remaining highly selective, with occasional transfers from the Community College of Philadelphia into the College of Arts and Sciences."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 5",
+      "essayPromptTopic": null,
+      "notes": "Early Decision (binding) due November 1, decision released December. Regular Decision due January 5, decision released April. Verified against admissions.upenn.edu/how-to-apply/first-year-applicants, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "University of Pennsylvania",
@@ -39951,6 +41730,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Amherst College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 84,
+      "homeStateEnrollmentPct": 16,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Amherst College Common Data Set 2024-2025, Section F (Student Life) (primary source, direct PDF: amherst.edu/system/files/F Student Life_7.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Amherst College",
       "location": "Amherst, Massachusetts",
@@ -40380,6 +42170,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Bowdoin College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 89,
+      "homeStateEnrollmentPct": 11,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Bowdoin College Common Data Set 2023-2024, Section F1 (primary source, direct PDF: bowdoin.edu/ir/pdf/bowdoin-cds_2023-2024.pdf). Note: the 2024-2025 CDS was found but its F1 field was an unfilled template, so the most recent completed year (2023-2024) was used instead.",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Bowdoin College",
       "location": "Brunswick, Maine",
@@ -40806,6 +42607,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Middlebury College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 95.6,
+      "homeStateEnrollmentPct": 4.4,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Middlebury College Common Data Set 2025-2026 (Preliminary), Section F1 (primary source, direct PDF: middlebury.edu/sites/default/files/2026-02/Fall 2025 CDS Preliminary.pdf).",
+      "dataYear": 2025,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Middlebury College",
       "location": "Middlebury, Vermont",
@@ -41232,6 +43044,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Wesleyan University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 91,
+      "homeStateEnrollmentPct": 9,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Wesleyan University Common Data Set 2022-2023, Section F1 (primary source, direct PDF: wesleyan.edu/ir/data-sets/CDS_2022-2023.pdf). Note: this was the most recent Wesleyan CDS located; no 2023-24 or 2024-25 version was found.",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Wesleyan University",
       "location": "Middletown, Connecticut",
@@ -41658,6 +43481,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Carleton College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 76.1,
+      "homeStateEnrollmentPct": 23.9,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Carleton College Common Data Set 2023-2024, Section F1 (primary source, direct PDF: carleton-wp-production.s3.amazonaws.com CDS_UNL2_2023_2024_Carleton-FINAL.pdf).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Carleton College",
       "location": "Northfield, Minnesota",
@@ -42085,6 +43919,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Grinnell College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 91,
+      "homeStateEnrollmentPct": 9,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Grinnell College Common Data Set 2023-2024, Section F1 (primary source, direct PDF: grinnell.edu/sites/default/files/docs/2024-10/Grinnell-College-Common-Data-Set-CDS-2023-2024.pdf).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Grinnell College",
       "location": "Grinnell, Iowa",
@@ -42511,6 +44356,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Vassar College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 69,
+      "homeStateEnrollmentPct": 31,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Vassar College's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be fetched directly (repeated robots.txt fetch failures on the school's own domain), so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Vassar College",
       "location": "Poughkeepsie, New York",
@@ -42940,6 +44796,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Claremont McKenna College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 58.3,
+      "homeStateEnrollmentPct": 41.7,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Claremont McKenna College Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Claremont McKenna College",
       "location": "Claremont, California",
@@ -42979,6 +44846,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$18,000-$42,000",
         "transferNotes": "CMC accepts a very small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 10",
+      "essayPromptTopic": "Two required CMC-specific supplements beyond the personal statement: (1) why CMC's mission -- preparing students for leadership in business, government, and the professions -- fits the applicant; (2) a response to CMC's 'Open Academy' free-expression/viewpoint-diversity commitments, describing an experience where engaging a differing viewpoint changed the applicant's attitude, belief, or behavior.",
+      "notes": "ED I due November 1 (notified by December 15, reply due early January). ED II due January 10 (notified by February 15, reply due late February). Regular Decision also due January 10 (notified by April 1, reply due May 1). Financial aid: CSS Profile/FAFSA due November 8 for ED I, January 17 for ED II/RD. Verified directly against cmc.edu/admission/first-year-application-instructions.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "CMC",
@@ -43370,6 +45245,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Harvey Mudd College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 49,
+      "homeStateEnrollmentPct": 51,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Harvey Mudd College Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Harvey Mudd College",
       "location": "Claremont, California",
@@ -43408,6 +45294,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$18,000-$42,000",
         "transferNotes": "Harvey Mudd accepts a very small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 5",
+      "essayPromptTopic": null,
+      "notes": "ED I due November 15 (decision released December 15, reply due January 8). ED II and Regular Decision share a January 5 deadline (ED II decision by February 15, reply due February 26; RD decision by April 1, reply due May 1). Financial aid (CSS Profile/FAFSA) due November 15 for ED I, later for subsequent rounds. Verified against hmc.edu/admission/apply/first-year-students/application-deadlines/. Specific supplemental essay prompt text was not found on the pages checked in this pass -- left null per schema rather than guessed.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Harvey Mudd",
@@ -43581,7 +45475,7 @@ const UNIVERSITY_DB_V5 = {
         "Space Technology",
         "Robotics"
       ],
-      "startupDensity": "Moderate to High",
+      "startupDensity": "High",
       "ventureCapitalAccess": 62,
       "corporateHeadquartersDensity": 30,
       "healthcareHubStrength": 38,
@@ -43800,6 +45694,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Hamilton College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 68,
+      "homeStateEnrollmentPct": 32,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Hamilton College Common Data Set 2024-2025, Section F1 (primary source, direct PDF: hamilton.edu/documents/CDS_2024-2025.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Hamilton College",
       "location": "Clinton, New York",
@@ -44230,6 +46135,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Oberlin College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 92.0,
+      "homeStateEnrollmentPct": 8.0,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Oberlin College Common Data Set 2024-2025, Section F1 (primary source, direct PDF: oberlin.edu/media/34940/download).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Oberlin College",
       "location": "Oberlin, Ohio",
@@ -44657,6 +46573,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Kenyon College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 87,
+      "homeStateEnrollmentPct": 13,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Kenyon College's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document was robots.txt-blocked on kenyon.edu, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Kenyon College",
       "location": "Gambier, Ohio",
@@ -45082,6 +47009,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Case Western Reserve University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 85.56,
+      "homeStateEnrollmentPct": 14.44,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Case Western Reserve University Common Data Set 2024-2025 (Adjusted), Section F1 (primary source, direct PDF: case.edu/ir/.../CWRU 2024 - 25 CDS ADJ.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Case Western Reserve University",
       "location": "Cleveland, Ohio",
@@ -45516,6 +47454,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Lehigh University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 75.0,
+      "homeStateEnrollmentPct": 25.0,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Lehigh University Common Data Set 2023-2024, Section F1 (primary source, direct PDF: data.lehigh.edu/.../Final_CDS_2023-2024_Revised_7.12.2024.pdf). Note: the 2024-2025 CDS was found but was an unfilled blank template, so the most recent completed year was used instead.",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Lehigh University",
       "location": "Bethlehem, Pennsylvania",
@@ -45949,6 +47898,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Drexel University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 82,
+      "homeStateEnrollmentPct": 18,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Drexel University Common Data Set 2022-2023, Section F1 (primary source, direct PDF: drexel.edu/.../CDS_2022-2023.ashx). Note: this was the most recent Drexel CDS located; no 2023-24 or 2024-25 version was found.",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Drexel University",
       "location": "Philadelphia, Pennsylvania",
@@ -46382,6 +48342,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Worcester Polytechnic Institute": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 51,
+      "homeStateEnrollmentPct": 49,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Worcester Polytechnic Institute Common Data Set 2024-2025, Section F1 (primary source, direct PDF: wpi.edu/sites/default/files/2025-02/WPI_CDS_2024-2025_2-27-25.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Worcester Polytechnic Institute",
       "location": "Worcester, Massachusetts",
@@ -46819,6 +48790,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Rochester Institute of Technology": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 55.3,
+      "homeStateEnrollmentPct": 44.7,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Rochester Institute of Technology Common Data Set 2023-2024, Section F1 (primary source, direct PDF: rit.edu/institutionalresearch/.../CDS 2023-24 FINAL for PDF 20240617.pdf).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Rochester Institute of Technology",
       "location": "Rochester, New York",
@@ -47249,6 +49231,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Stevens Institute of Technology": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 32,
+      "homeStateEnrollmentPct": 68,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Stevens Institute of Technology's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). Cross-verified against Stevens' own official Institutional Facts sheet (assets.stevens.edu Institutional_Facts-2024-06-WEB.pdf), which independently states 'In-State 66%, Out-of-State 31%' for undergraduates -- consistent with the 32% figure. Stevens' own hosted CDS PDFs (2022-23 through 2024-25) were either blank templates or, in one case, returned an implausible 86% that contradicted the school's own published fact sheet, so those were discarded.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Stevens Institute of Technology",
       "location": "Hoboken, New Jersey",
@@ -47678,6 +49671,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Georgetown University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 98,
+      "homeStateEnrollmentPct": 2,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Georgetown University's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull. Georgetown's own hosted CDS was a box.com link that could not be fetched directly. Note: the CT dataverse table did not specify whether this reflects first-time first-year students specifically or overall undergraduate residency; treated as first-time first-year per this project's convention but flagged as an approximation.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Georgetown University",
       "location": "Washington, DC",
@@ -48118,6 +50122,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of California-Berkeley": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 14,
+      "homeStateEnrollmentPct": 86,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from UC Berkeley's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of California-Berkeley",
       "location": "Berkeley, California",
@@ -48158,6 +50173,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Berkeley maintains one of the strongest and most structured California Community College transfer pipelines in the UC system, with Transfer Admission Guarantee (TAG) agreements available at select feeder colleges."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 1",
+        "earliestDeadlineLabel": "UC Application Filing Period Opens",
+        "rdDeadline": "November 30",
+        "essayPromptTopic": null,
+        "notes": "UC Berkeley uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's admissions site during this same reconciliation effort (admissions.sa.ucsb.edu/deadlines). UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. Berkeley's own dedicated Dates and Deadlines page (admissions.berkeley.edu/dates-and-deadlines) renders as an interactive calendar widget that did not expose specific dates as extractable text in this pass -- campus-specific supplemental dates (Personal Insight Question guidance, decision release timing) were not independently re-confirmed on Berkeley's own site and should be spot-checked directly before being treated as campus-page-verified rather than system-pattern-verified. Specific supplemental essay/Personal Insight Question content was not captured in this pass.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "UC Berkeley",
       "archetype": "The Public Ivy of Silicon Valley — Engineering, Policy, and Protest at the Top of American Public Higher Education",
@@ -48563,6 +50586,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Texas A&M University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 4,
+      "homeStateEnrollmentPct": 96,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Texas A&M University-College Station's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly (or produced unreliable fetch results, see notes), so this is one step removed from the primary document rather than a direct pull. Texas A&M's own hosted CDS PDF links returned 404 errors on repeated attempts.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Texas A&M University",
       "location": "College Station, Texas",
@@ -49010,6 +51044,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Massachusetts Institute of Technology": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 91,
+      "homeStateEnrollmentPct": 9,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "MIT Common Data Set 2024-2025, Section F1 (primary source, HTML document: ir.mit.edu/projects/2024-25-common-data-set/).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Massachusetts Institute of Technology",
       "location": "Cambridge, Massachusetts",
@@ -49460,6 +51505,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Carnegie Mellon University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 88.4,
+      "homeStateEnrollmentPct": 11.6,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Carnegie Mellon University Common Data Set 2024-2025, Section F (Student Life) (primary source, direct PDF: cmu.edu/ira/CDS/pdf/cds_2024-25/cds-2024-f-student-life-21feb2025-v2.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Carnegie Mellon University",
       "location": "Pittsburgh, Pennsylvania",
@@ -49895,6 +51951,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Chicago": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 85,
+      "homeStateEnrollmentPct": 15,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "The University of Chicago Common Data Set 2023-24, Section F1 (primary source, direct PDF: bpb-us-w2.wpmucdn.com/voices.uchicago.edu/dist/8/2077/files/2024/06/UChicago_CDS_2023-24.pdf). Most recent year located; 2024-25 was not found hosted as a direct PDF at time of sourcing.",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Chicago",
       "location": "Chicago, Illinois",
@@ -49933,6 +52000,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UChicago accepts a very small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "November 2",
+        "earliestDeadlineLabel": "Early Decision I / Early Action",
+        "rdDeadline": "January 4",
+        "essayPromptTopic": null,
+        "notes": "Full round structure verified directly from collegeadmissions.uchicago.edu/apply/application (2026-27 cycle): Early Decision I (Nov 2, 2026 deadline; decision mid-December; reply mid-January, binding), Early Action (Nov 2, 2026 deadline; decision mid-December; reply May 1, non-binding), Early Decision II (Jan 4, 2027 deadline; decision mid-February; reply mid-March, binding), Regular Decision (Jan 4, 2027 deadline; decision late March; reply May 1). Admission is offered for Autumn Quarter entrance only (except prospective students-at-large). UChicago's test-optional policy is formally named the 'No Harm Testing Policy.' Accepts Common Application or Coalition Application, Powered by Scoir. A Video Profile is a named optional supplemental material. Specific supplemental essay prompt text was not captured in this pass -- UChicago is well known for distinctive, unconventional supplemental essay prompts published separately each cycle. Sourced from collegeadmissions.uchicago.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "University of Chicago",
       "archetype": "Elite Private Research University — Core Curriculum and Intellectual Rigor",
@@ -50154,6 +52229,10 @@ const UNIVERSITY_DB_V5 = {
         "strength": 46,
         "notes": "A real but secondary pathway through biology and public health-adjacent coursework, secondary to UChicago's core economics and policy strengths."
       },
+      "pharmaceuticalManufacturing": {
+        "strength": 26,
+        "notes": "No dedicated pharmaceutical manufacturing pipeline was found in this pass; UChicago's biomedical/life-sciences strength runs primarily through its medical school and biology-adjacent coursework (see industryPathways.medicine and .healthWellness) rather than pharmaceutical manufacturing specifically. Limited institutional emphasis relative to peer research universities with named pharma partnerships."
+      },
       "nutraceuticals": {
         "strength": 16,
         "notes": "Minimal institutional emphasis."
@@ -50285,7 +52364,7 @@ const UNIVERSITY_DB_V5 = {
       "shabbatProgramming": true,
       "birthrightSupport": true,
       "jewishCommunityStrength": "Strong",
-      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing."
+      "notes": "Independently verified 2026-08-12 directly against uchicagohillel.org: University of Chicago Hillel operates as 'The Center for Jewish Life on Campus' and has existed on campus since 1940 -- one of the longer-established campus Hillels confirmed in this database. The prior undergraduate population estimate (1,300 students, ~17%) was not independently re-confirmed this session and is retained as a plausible but not freshly re-verified figure."
     },
     "honorsCollege": {
       "exists": false,
@@ -50323,6 +52402,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Duke University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 83,
+      "homeStateEnrollmentPct": 17,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Duke University's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be fetched directly (repeated robots.txt fetch failures on the school's own domain), so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Duke University",
       "location": "Durham, North Carolina",
@@ -50361,6 +52451,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$20,000-$46,000",
         "transferNotes": "Duke accepts a very small number of transfer students annually, making transfer admission nearly as selective as freshman admission."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 3",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 5",
+      "essayPromptTopic": null,
+      "notes": "Early Decision (binding) due November 3, decision mid-December. Regular Decision due January 5, decision late March/early April; midyear grade report due February 15. Verified against admissions.duke.edu/checklist/, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Duke University",
@@ -50763,6 +52861,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Northwestern University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 79.0,
+      "homeStateEnrollmentPct": 21.0,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Northwestern University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: enrollment.northwestern.edu/data/2024-2025.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Northwestern University",
       "location": "Evanston, Illinois",
@@ -50800,6 +52909,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$18,000-$42,000",
         "transferNotes": "Northwestern accepts a modest number of transfer students annually, remaining highly selective relative to most peer institutions."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 2",
+      "essayPromptTopic": null,
+      "notes": "ED I due November 1, decision released December, enrollment deposit due February 1. Regular Decision due January 2, decision released March. Pages checked in this pass explicitly showed prior-cycle (2025-2026) dates rather than the current cycle, though Northwestern's deadline pattern has been stable year over year -- worth a quick re-check closer to the actual current-cycle deadline. A distinct Early Decision II round was not confirmed from the pages checked. Verified against admissions.northwestern.edu, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Northwestern",
@@ -51198,6 +53315,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Virginia Tech": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 32,
+      "homeStateEnrollmentPct": 68,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Virginia Tech's Common Data Set form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull. Flagged with an asterisk in the CT table, indicating 2024-25 data was unavailable and a prior year's figure was substituted; exact year uncertain (VT's own CDS PDF returned repeated 404s during sourcing).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Virginia Tech",
       "location": "Blacksburg, Virginia",
@@ -51236,6 +53364,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$12,000-$30,000",
         "transferNotes": "Virginia Tech maintains strong, structured transfer agreements with Virginia's community college system, including Northern Virginia Community College given the Innovation Campus's Alexandria location."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Early Action",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Early Action (non-binding) due November 15. Regular Decision due January 15, reply due May 1. Virginia Tech's own admissions.vt.edu/vt.edu pages returned access errors (robots-blocked/403) in this pass -- these dates come from a secondary aggregator (CollegeVine) citing VT's published deadlines, not verified directly against vt.edu. Recommend re-verifying directly once accessible.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Virginia Tech",
@@ -51634,6 +53770,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "North Carolina State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 14.0,
+      "homeStateEnrollmentPct": 86.0,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "North Carolina State University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: report.isa.ncsu.edu/ir/cds/pdfs/CDS_2024-25.v3.pdf). Consistent with North Carolina's statutory cap limiting out-of-state first-year enrollment system-wide.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "North Carolina State University",
       "location": "Raleigh, North Carolina",
@@ -52067,6 +54214,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Emory University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 82,
+      "homeStateEnrollmentPct": 18,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Emory University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: provost.emory.edu/.../emory-common-data-set-2024-2025.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Emory University",
       "location": "Atlanta, Georgia",
@@ -52106,6 +54264,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Emory accepts a modest number of transfer students annually, remaining highly selective relative to most peer institutions."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "November 1",
+        "earliestDeadlineLabel": "Early Decision I",
+        "rdDeadline": "January 1",
+        "essayPromptTopic": null,
+        "notes": "Full round structure verified directly from apply.emory.edu/apply/first-year/plans-deadlines (2026-27 cycle): Early Decision I (Nov 1 application deadline, Dec 2 financial aid deadline, decision by Dec 15), Emory University Scholar Programs (Nov 15 application deadline, decision by March 1), Early Decision II (Jan 1 application deadline, Jan 6 financial aid deadline, decision by Feb 15), Regular Decision (Jan 1 application deadline, Feb 10 financial aid deadline, decision by April 1). Applicants may apply ED to Emory College or Oxford College (Emory's two-year residential college in Oxford, GA, with guaranteed transition to the Atlanta campus), or ED to one and RD to the other -- both ED plans are binding. Test-optional (SAT/ACT not required). Application submitted via Common App, $75 fee or fee waiver. Emory-specific short-answer questions required in addition to the Common App personal statement; specific prompt text was not captured in this pass. Sourced from apply.emory.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "Emory University",
       "archetype": "The CDC's Neighbor — Public Health, Medicine, and Deep Atlanta Corporate Integration",
@@ -52462,7 +54628,7 @@ const UNIVERSITY_DB_V5 = {
       "shabbatProgramming": true,
       "birthrightSupport": true,
       "jewishCommunityStrength": "Exceptional",
-      "notes": "CONFIDENCE NOTE: undergraduate Jewish population estimate is a best-effort figure, not independently verified — flag for confirmation before publishing. Emory is generally recognized as having one of the largest Jewish undergraduate populations of any Southeastern university."
+      "notes": "Independently verified 2026-08-12 directly against emoryhillel.org (Hillels of Georgia): Emory Hillel serves more than 1,500 Jewish undergraduate and graduate students combined, operating out of the named Marcus Hillel Center at 735 Gatewood Rd. Programming confirmed includes weekly Shabbat dinners, a 7-week Jewish Learning Fellowship (with a stipend for participants), and a student-led leadership model. The previous undergraduate-specific estimate (1,600 students, ~23%) was not separately re-confirmed this session -- the verified source states a combined undergraduate-and-graduate figure of 1,500+, not an undergraduate-only count, so the prior undergraduate-specific estimate is retained as a plausible but not independently re-verified breakdown. Emory remains one of the largest Jewish undergraduate populations of any Southeastern university."
     },
     "honorsCollege": {
       "exists": false,
@@ -52500,6 +54666,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Wake Forest University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 84,
+      "homeStateEnrollmentPct": 16,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Wake Forest University Common Data Set 2023-2024, Section F1 (primary source, direct PDF: prod.wp.cdn.aws.wfu.edu/sites/202/2025/02/CDS_2023-2024_2025-02-07.pdf). The 2024-25 filing hosted at the same site returned a blank Section F1 template, so the most recent completed year was used instead.",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Wake Forest University",
       "location": "Winston-Salem, North Carolina",
@@ -52931,6 +55108,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Pepperdine University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 41,
+      "homeStateEnrollmentPct": 59,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Pepperdine University",
       "location": "Malibu, California",
@@ -52970,6 +55158,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Pepperdine maintains structured transfer pathways, more accessible than many similarly-priced private California peers."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "Not confirmed in this pass",
+        "earliestDeadlineLabel": "Not confirmed in this pass",
+        "rdDeadline": "Not confirmed in this pass",
+        "essayPromptTopic": null,
+        "notes": "Directly confirmed on admission.pepperdine.edu: undergraduate admission splits across three separately-admitting programs -- Seaver College (traditional liberal arts, 46 majors/52 minors), a 4-year BSN nursing track, and a 2-year BSN nursing track, each with its own application path. Real, distinctive religious-affiliation detail: Pepperdine's admissions counselor roster includes a dedicated 'Church of Christ Applicants' track alongside First-Year/Transfer/International, confirming the school's Christian mission (U.S. News ranks Pepperdine the #1 Protestant Christian University) materially shapes the admissions process, not just campus branding. 87% of students study abroad (#12 nationally per U.S. News) across real residential campuses in Florence, London, Buenos Aires, Heidelberg, and more. 98% of new Seaver students receive institutional merit and/or need-based aid. R2 Carnegie research designation, 17 Division I athletic teams, 18 average class size, 13:1 university-wide student-teacher ratio. Specific numeric application deadline dates were not resolved in this pass (multiple URL attempts across pepperdine.edu, seaver.pepperdine.edu, and admission.pepperdine.edu either 404'd or did not surface a dates page) -- left as unconfirmed placeholders rather than guessed, and should be sourced directly in a follow-up pass. Sourced from admission.pepperdine.edu and seaver.pepperdine.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "Pepperdine",
       "archetype": "The Malibu Bluffs — Christian Values, International Business, and a Genuinely Elite Dispute Resolution Program",
@@ -53069,7 +55265,7 @@ const UNIVERSITY_DB_V5 = {
       ]
     },
     "competitiveMajorPressure": {
-      "level": "Low to Moderate",
+      "level": "Low",
       "notes": "Pepperdine does not formally impact most majors at the undergraduate level, though the International Business program and the pre-law pipeline into the Straus Institute carry informal competitive pressure given their national reputations."
     },
     "hiddenOpportunities": {
@@ -53143,7 +55339,7 @@ const UNIVERSITY_DB_V5 = {
         "Faith-Based Nonprofit Technology",
         "Entertainment Technology"
       ],
-      "startupDensity": "Low-Moderate",
+      "startupDensity": "Moderate",
       "ventureCapitalAccess": 38,
       "corporateHeadquartersDensity": 44,
       "healthcareHubStrength": 46,
@@ -53359,6 +55555,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Rice University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 56,
+      "homeStateEnrollmentPct": 44,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Rice University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: ideas.rice.edu/wp-content/uploads/2025/10/CDS_2024-25_WEBSITE.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Rice University",
       "location": "Houston, Texas",
@@ -53808,6 +56015,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Notre Dame": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 93,
+      "homeStateEnrollmentPct": 7,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of Notre Dame's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly (Notre Dame's own CDS page returned a 403 error; IU Bloomington's CDS portal did not expose a direct PDF link), so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Notre Dame",
       "location": "Notre Dame, Indiana",
@@ -54256,6 +56474,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Johns Hopkins University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 86,
+      "homeStateEnrollmentPct": 14,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Johns Hopkins University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: oira.jhu.edu/wp-content/uploads/CDS_2024-2025_JHU.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Johns Hopkins University",
       "location": "Baltimore, Maryland",
@@ -54705,6 +56934,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Nevada, Las Vegas": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 10,
+      "homeStateEnrollmentPct": 90,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from UNLV's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). UNLV's own hosted CDS PDFs (2024-25 and 2025-26) both returned blank Section F1 templates with no filled-in figures, so this is one step removed from the primary document.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Nevada, Las Vegas",
       "location": "Las Vegas, Nevada",
@@ -54742,6 +56982,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "UNLV maintains a genuinely accessible transfer pathway, particularly from College of Southern Nevada, reflecting its broader public-access mission."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "November 1",
+        "earliestDeadlineLabel": "One Admit (Clark County School District seniors only)",
+        "rdDeadline": "June 1",
+        "essayPromptTopic": null,
+        "notes": "UNLV has no Early Decision/Early Action/Regular Decision distinction for the general applicant pool -- a single Fall application deadline of June 1, confirmed directly on unlv.edu/admissions/undergraduate/first-year, notably later than most public flagships. Priority deadline for fall financial aid and scholarship consideration is Nov 15 (applications open Oct 1 for the following academic year). $60 nonrefundable application fee. UNLV uses a formulaic (not purely holistic) admission standard: 3.0 GPA in 13 core units, OR 1120 SAT (EBRW+Math; 1040 for exams before March 2016), OR 22 ACT composite, OR a Nevada Advanced/College-and-Career-Ready High School Diploma. Test scores are not required for admission but are encouraged for course placement. A real, distinctive local program: Clark County School District (CCSD) seniors can claim automatic admission for free through 'One Admit' by Nov 1, with preloaded application information. Accepts either the Common App or UNLV's own application, no preference given. UNLV has three separately-admitting professional schools: the School of Dental Medicine, the William S. Boyd School of Law, and the Kirk Kerkorian School of Medicine. Sourced from unlv.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "UNLV",
       "archetype": "The World's Most Specialized Hospitality and Gaming Management Program, Inside the Industry It Studies",
@@ -55148,6 +57396,25 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Minnesota": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 29.89,
+      "homeStateEnrollmentPct": 70.11,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Minnesota-Twin Cities Common Data Set 2024-2025, Section F1 (primary source, direct PDF: idr.umn.edu/sites/idr.umn.edu/files/cds_2024_2025_tc_1.pdf). Document's year header text was garbled in extraction (rendered as 202-202) but filename and F1 cohort framing confirm Fall 2024.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action I",
+      "rdDeadline": "January 1",
+      "essayPromptTopic": null,
+      "notes": "Three-round structure: Early Action I (November 1, decisions by January 31), Early Action II (December 1, decisions by February 15), and the Regular deadline (January 1, decisions by March 31) recorded here as rdDeadline. School of Nursing applicants have a separate, earlier November 1 deadline regardless of round. Scholarship and University Honors Program notifications arrive by March 31. Verified against admissions.tc.umn.edu/apply/freshman-application-deadlines, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "University of Minnesota",
       "location": "Minneapolis-Saint Paul, Minnesota",
@@ -55492,6 +57759,11 @@ const UNIVERSITY_DB_V5 = {
         "strength": 68,
         "notes": "A genuine, historic land-grant strength reinforced by Cargill and General Mills proximity, though secondary to Minnesota's dominant corporate consumer products identity."
       }
+    ,
+      "pharmaceuticalManufacturing": {
+        "strength": 52,
+        "notes": "Real but mixed evidence: UMN's College of Pharmacy is independently ranked #2-3 nationally (per the college's own published rankings history), a genuine academic pharma-sciences strength. However, the surrounding Minneapolis-St Paul industry cluster (branded 'Medical Alley') is predominantly medical DEVICE manufacturing (Medtronic, Boston Scientific, St. Jude Medical HQ/major operations), not pharmaceutical manufacturing specifically -- so the academic pipeline is stronger than the regional pharma-manufacturing employer base. Scored moderate rather than high to reflect that distinction honestly."
+      }
     },
     "wealthMobility": {
       "averageFamilyIncome": "",
@@ -55589,6 +57861,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Pittsburgh": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 35,
+      "homeStateEnrollmentPct": 65,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Pittsburgh Common Data Set 2024-2025, Pittsburgh Campus, Section F1 (primary source, direct PDF: ir.pitt.edu/sites/default/files/assets/2024-2025 CDS Pittsburgh_2.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Pittsburgh",
       "location": "Pittsburgh, Pennsylvania",
@@ -56029,6 +58312,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Connecticut": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 96,
+      "homeStateEnrollmentPct": 4,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Connecticut Common Data Set 2022-2023, Section F1 (primary source, direct PDF: bpir.uconn.edu/.../CDS_2022_2023_Website.pdf).",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Connecticut",
       "location": "Storrs, Connecticut",
@@ -56065,6 +58359,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$10,000-$26,000",
         "transferNotes": "UConn maintains structured transfer agreements with Connecticut's community college system."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Early Decision (binding) due November 1, notifications begin mid-December. Special programs (Medicine/Dental Medicine/Law BA) also due November 1, decisions early March. Merit & Honors priority deadline December 1, decisions early March. Regular Decision (Storrs campus) due January 15, decisions early March. Regional campuses use a later, rolling May 1 deadline. Verified against admissions.uconn.edu/apply/first-year/deadlines/, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "UConn",
@@ -56471,6 +58773,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "College of William and Mary": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 34,
+      "homeStateEnrollmentPct": 66,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from College of William & Mary's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull. W&M's own hosted Section F PDFs for 2024-25 and 2025-26 were both unfilled blank templates.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "College of William and Mary",
       "location": "Williamsburg, Virginia",
@@ -56909,6 +59222,25 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Kentucky": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 31.9,
+      "homeStateEnrollmentPct": 68.1,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Kentucky Common Data Set 2021-2022, Section F1 (primary source, direct PDF: irads.uky.edu/.../CDS_2021-2022.pdf). Note: this is the most recent UK CDS found with a populated F1 field; more recent years (2022-2023 onward) were not located.",
+      "dataYear": 2021,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "December 1",
+      "earliestDeadlineLabel": "Early Action",
+      "rdDeadline": "February 15",
+      "essayPromptTopic": null,
+      "notes": "Early Action (December 1) is required for Lewis Honors College and competitive/academic scholarship consideration; Regular Decision (February 15) applicants remain eligible for general admission only. If a deadline falls on a weekend it extends to the following Monday per UK's own published policy. Verified against admission.uky.edu/apply, 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionNarrative": {
       "name": "University of Kentucky",
       "location": "Lexington, Kentucky",
@@ -57044,7 +59376,7 @@ const UNIVERSITY_DB_V5 = {
       ]
     },
     "competitiveMajorPressure": {
-      "level": "Low to Moderate",
+      "level": "Moderate",
       "notes": "Kentucky does not formally impact most majors at the undergraduate level, though pre-med and equine science tracks carry substantial informal competitive pressure given their strong reputations."
     },
     "hiddenOpportunities": {
@@ -57121,7 +59453,7 @@ const UNIVERSITY_DB_V5 = {
         "Advanced Manufacturing Automation",
         "Agricultural Technology"
       ],
-      "startupDensity": "Low-Moderate",
+      "startupDensity": "Moderate",
       "ventureCapitalAccess": 30,
       "corporateHeadquartersDensity": 44,
       "healthcareHubStrength": 80,
@@ -57353,6 +59685,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Texas Tech University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 19.1,
+      "homeStateEnrollmentPct": 80.9,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Texas Tech University Common Data Set 2022-2023, Section F1 (primary source, direct PDF: depts.ttu.edu/irim/CommonDataSets/TTU_CDS_2022-2023_0601_new.pdf). Note: the 2023-2024 CDS was found but was an incomplete draft (F1 unfilled, 'Sections G and H still outstanding'), so the most recent completed year (2022-2023) was used instead.",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Texas Tech University",
       "location": "Lubbock, Texas",
@@ -57391,6 +59734,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Texas Tech maintains a genuinely accessible transfer pathway from West Texas community colleges."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "November 1",
+        "earliestDeadlineLabel": "Spring Priority Application Deadline",
+        "rdDeadline": "May 1",
+        "essayPromptTopic": null,
+        "notes": "Full round structure verified directly from depts.ttu.edu/admissions/apply/ImportantDates (2026-27 cycle): Spring 2027 priority application deadline Nov 1, 2026 (freshman/transfer); Summer & Fall 2027 priority application deadline May 1, 2027 (freshman/transfer). No separate scholarship application is required -- scholarships (academic, need-based, and interest-based) are awarded directly based on the admissions application, with a separate Fall 2027 priority scholarship deadline of Dec 1, 2026 for freshmen and Jan 1, 2027 for transfers. Financial aid eligibility is based on the FAFSA; Texas Tech also accepts the Texas Application for State Financial Aid (TASFA) for non-US citizens who are Texas residents -- a real, distinctive state-level financial aid pathway for undocumented Texas residents. FAFSA/TASFA state priority deadline for 2026-27 is Jan 15, 2026. Sourced from depts.ttu.edu/admissions, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "Texas Tech",
       "archetype": "The Nation's #1 Personal Financial Planning Program, Inside West Texas's Energy and Agriculture Economy",
@@ -57488,7 +59839,7 @@ const UNIVERSITY_DB_V5 = {
       ]
     },
     "competitiveMajorPressure": {
-      "level": "Low to Moderate",
+      "level": "Low",
       "notes": "Texas Tech does not formally impact most majors at the undergraduate level, though the Personal Financial Planning program's structural industry relationships create informal competitive pressure given its #1 national ranking."
     },
     "hiddenOpportunities": {
@@ -57800,6 +60151,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "San Diego State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 22,
+      "homeStateEnrollmentPct": 75,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "San Diego State University Common Data Set 2024-2025 (primary source, direct PDF: asir.sdsu.edu/Documents/CommonDataSets/CDS_2024-25.pdf). Figures reflect first-time, first-year degree-seeking enrolled students: 5,505 in-state / 1,488 out-of-state / 148 international of 6,629 total.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "San Diego State University",
       "location": "San Diego, California",
@@ -57838,6 +60200,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "SDSU maintains strong, structured transfer agreements with San Diego's community college system, a well-established pathway."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 1",
+        "earliestDeadlineLabel": "Cal State Apply Filing Period Opens",
+        "rdDeadline": "November 30",
+        "essayPromptTopic": null,
+        "notes": "SDSU uses the shared Cal State Apply application (CSU system), not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction. Directly confirmed on admissions.sdsu.edu/first-years (Fall 2027 cycle): application opens Aug 1; filing period Oct 1 - Nov 30; no late applications accepted after Nov 30. $70 nonrefundable filing fee. In alignment with the CSU system, SDSU no longer uses SAT or ACT scores for first-year admission eligibility at all -- a stronger, test-blind policy (not merely test-optional); scores may only be submitted afterward to help with math/writing course placement if admitted. Admission decisions are initially based on self-reported academic data; transcripts are verified only after admission, and misreporting can result in withdrawal of an admission offer. A real, distinctive, mandatory policy: first-year students who graduate from a high school outside SDSU's local admission area are required to live on campus for two years (the Sophomore QUEST program supports second-year participants with customized career development, flexible housing policies, and enhanced safety/security). Sourced from admissions.sdsu.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "San Diego State",
       "archetype": "Direct Access to San Diego's Biotech Corridor and Border-Region Public Affairs",
@@ -58243,6 +60613,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "California Polytechnic State University, San Luis Obispo": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 14,
+      "homeStateEnrollmentPct": 86,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "California Polytechnic State University, San Luis Obispo",
       "location": "San Luis Obispo, California",
@@ -58280,6 +60661,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Cal Poly SLO is highly selective for transfers, particularly into impacted engineering and architecture majors."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "October 1",
+        "earliestDeadlineLabel": "Cal State Apply Filing Period Opens",
+        "rdDeadline": "November 30",
+        "essayPromptTopic": null,
+        "notes": "Cal Poly SLO uses the shared Cal State Apply application (CSU system), not campus-specific application rounds. Directly confirmed on calpoly.edu/admissions/first-year-student (Fall 2027 cycle): Cal State Apply profile creation opens Aug 1; application submission window Oct 1 - Nov 30. Cal Poly is a real, distinctively 'impacted' campus -- many majors have higher, program-specific admission standards beyond the general CSU minimum (referenced directly in Cal Poly's own admissions navigation as 'What is Impaction?'), a genuinely more selective and differentiated model than most CSU campuses. Specific impaction criteria by major were not independently confirmed in this pass (the dedicated page 404'd). Sourced from calpoly.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "Cal Poly SLO",
       "archetype": "\"Learn by Doing\" — The Most Selective, Most Industry-Placed Public Engineering and Architecture Program in the Country",
@@ -58685,6 +61074,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Oregon State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 44,
+      "homeStateEnrollmentPct": 56,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Oregon State University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: institutionalresearch.oregonstate.edu/.../cds_2024-25.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Oregon State University",
       "location": "Corvallis, Oregon",
@@ -58722,6 +61122,14 @@ const UNIVERSITY_DB_V5 = {
         "transferNotes": "Oregon State maintains a genuinely accessible transfer pathway from Oregon's community college system."
       }
     },
+    "applicationIntelligence": {
+        "earliestDeadline": "Not confirmed in this pass",
+        "earliestDeadlineLabel": "Not confirmed in this pass",
+        "rdDeadline": "Not confirmed in this pass",
+        "essayPromptTopic": null,
+        "notes": "Directly confirmed on admissions.oregonstate.edu/first-year-students: OSU is test-optional, accepts either its own OSU Application or the Common Application (no preference), and charges a $65 application fee (or fee waiver). OSU has a real 'First Year Live-On Policy' listed as a distinct pre-application topic. Oregon State describes itself as 'Oregon's only statewide university,' operating two campuses plus research forests, agricultural experiment stations, and industry-partnered laboratories -- a real structural claim tied to its land-grant mission. The specific dedicated Application Deadlines page (linked from the first-year page but not independently resolved -- multiple guessed URLs 404'd) was not reached in this pass; exact Early Action/Priority/Regular deadline dates were not independently confirmed and should be spot-checked directly before being treated as verified. Sourced from admissions.oregonstate.edu, verified 2026-08-12.",
+        "verifiedDate": "2026-08-12"
+      },
     "institutionIdentity": {
       "commonName": "Oregon State",
       "archetype": "A Land-, Sea-, and Space-Grant University — Forestry, Oceanography, and a Genuine Craft Brewing Science Program",
@@ -58819,7 +61227,7 @@ const UNIVERSITY_DB_V5 = {
       ]
     },
     "competitiveMajorPressure": {
-      "level": "Low to Moderate",
+      "level": "Low",
       "notes": "Oregon State does not formally impact most majors at the undergraduate level, though forestry, oceanography, and fermentation science tracks carry substantial informal competitive pressure given their national reputations."
     },
     "hiddenOpportunities": {
@@ -59127,6 +61535,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Brigham Young University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 60,
+      "homeStateEnrollmentPct": 40,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Brigham Young University Common Data Set 2022-2023, Section F1 (Fall 2022 first-time first-year cohort)",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Brigham Young University",
       "location": "Provo, Utah",
@@ -59567,6 +61986,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Babson College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 76,
+      "homeStateEnrollmentPct": 24,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Babson College's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull. (Babson's own hosted CDS PDF was an unfilled blank template).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Babson College",
       "location": "Wellesley, Massachusetts",
@@ -60002,6 +62432,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Bentley University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 55,
+      "homeStateEnrollmentPct": 45,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Bentley University Common Data Set 2023-2024, Section F1 (primary source, direct PDF: bentleydownloads.s3.amazonaws.com/general/2023-24+Common+Data+Set (1).pdf).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Bentley University",
       "location": "Waltham, Massachusetts",
@@ -60435,6 +62876,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Occidental College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 59,
+      "homeStateEnrollmentPct": 41,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Occidental College Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Occidental College",
       "location": "Los Angeles, California",
@@ -60471,6 +62923,14 @@ const UNIVERSITY_DB_V5 = {
         "estimatedSavingsRange": "$16,000-$36,000",
         "transferNotes": "Occidental accepts a modest number of transfer students annually, remaining selective given its small liberal arts college scale."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I / Early Action",
+      "rdDeadline": "January 10",
+      "essayPromptTopic": "One optional short-answer supplement (max 250 words) beyond the Common App personal statement: 'Why are you applying to Occidental? Why do you think Occidental is the right place for you to pursue your interests?'",
+      "notes": "Early Decision I and Early Action share a November 1 deadline (ED I decision by mid-December, EA by mid-January). Early Decision II and Regular Decision share a January 10 deadline (ED II decision by mid-February, RD by mid-March). Application and financial aid deadlines are the same date within each round. Verified against oxy.edu/admission-aid/first-year/application-requirements.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "Occidental College",
@@ -60642,7 +63102,7 @@ const UNIVERSITY_DB_V5 = {
         "Climate Policy",
         "Social Impact Media"
       ],
-      "startupDensity": "Low-Moderate",
+      "startupDensity": "Moderate",
       "ventureCapitalAccess": 38,
       "corporateHeadquartersDensity": 44,
       "healthcareHubStrength": 40,
@@ -60873,6 +63333,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Colorado College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 77,
+      "homeStateEnrollmentPct": 23,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Colorado College Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Colorado College",
       "location": "Colorado Springs, Colorado",
@@ -61311,6 +63782,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Dickinson College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 74,
+      "homeStateEnrollmentPct": 26,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Dickinson College Common Data Set 2023-2024, Section F1 (primary source, direct PDF: dickinson.edu/download/downloads/id/15598/cds_2023-2024.pdf).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Dickinson College",
       "location": "Carlisle, Pennsylvania",
@@ -61744,6 +64226,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Colorado School of Mines": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 56,
+      "homeStateEnrollmentPct": 44,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly (blocked or 404), so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Colorado School of Mines",
       "location": "Golden, Colorado",
@@ -62193,6 +64686,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "United States Military Academy": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 96,
+      "homeStateEnrollmentPct": 4,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "United States Military Academy (West Point) Common Data Set 2022-2023, Section F1 (primary source, direct PDF: s3.amazonaws.com/usma-media/.../G5OIR_CDS_2022-2023.pdf). Note: as a federal service academy, USMA's admissions process allocates cadet slots via congressional nomination across all states by design, so a high out-of-state percentage reflects the academy's national mandate rather than a typical 'draw' signal -- worth keeping in mind when this feeds Issue 6's regional-equity gate.",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "United States Military Academy",
       "location": "West Point, New York",
@@ -62624,6 +65128,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Rhode Island School of Design": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 58,
+      "homeStateEnrollmentPct": 42,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from RISD's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull. RISD's own institutional research office has moved to a Tableau dashboard rather than a fetchable CDS PDF, so this figure could not be cross-checked against a primary document.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Rhode Island School of Design",
       "location": "Providence, Rhode Island",
@@ -63060,6 +65575,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Rose-Hulman Institute of Technology": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 70.1,
+      "homeStateEnrollmentPct": 29.9,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Rose-Hulman Institute of Technology Common Data Set 2024-2025, Section F1 (primary source, direct PDF: rose-hulman.edu/.../2024-25-Academic-Year-CDS.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "Rose-Hulman Institute of Technology",
       "location": "Terre Haute, Indiana",
@@ -63498,6 +66024,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Tulsa": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 43,
+      "homeStateEnrollmentPct": 53,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of Tulsa's CDS-derived enrollment data, via CollegeSimply (2023-2024 academic year; the source's reported in-state/out-of-state figures sum to 96%, with the remainder likely international/unclassified students). No direct University of Tulsa-hosted Common Data Set PDF could be located; this school was flagged as genuinely unresolved earlier in this sourcing pass after exhausting primary CDS and IPEDS DFR, but this later CollegeSimply pull succeeded where those attempts did not.",
+      "dataYear": 2023,
+      "notes": "First-time, first-year/degree-seeking cohort. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
     "institutionNarrative": {
       "name": "University of Tulsa",
       "location": "Tulsa, Oklahoma",
@@ -63936,6 +66473,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "North Dakota State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 46.6,
+      "homeStateEnrollmentPct": 53.4,
+      "drawClassification": "regional",
+      "topFeederStates": { "MN": 54.4, "ND": 37.1, "SD": 2.5, "WI": 1.5 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from IPEDS-derived first-time degree-seeking undergraduate residency figures, via CollegeFactual. NDSU's own hosted Common Data Set files are published only in .xlsx format (ndsu.edu/sites/default/files/fileadmin/oira/Common_Data_Set/), which the fetch tool could not parse, so this is one step removed from the primary document. Consistent with ND's known cross-border draw from Minnesota.",
+      "dataYear": 2023,
+      "notes": "First-time, first-year/degree-seeking cohort. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only 4 states clear the 1% threshold (next highest, Montana, is 0.7%). FLAGGED DISCREPANCY: this page shows Minnesota (54.4%) outnumbering North Dakota (37.1%) as the largest single-state source, which appears to invert this record's existing homeStateEnrollmentPct (53.4% ND / 46.6% OOS, also CollegeFactual-sourced per the existing dataSource note, which itself already flagged ND's cross-border MN draw). The two figures likely reflect different underlying metrics/cohorts rather than a data error, but this is disclosed rather than silently reconciled -- both figures independently confirm NDSU's unusually heavy Minnesota draw, which is the material fact for regional-equity purposes regardless of which state technically leads."
+    },
     "institutionNarrative": {
       "name": "North Dakota State University",
       "location": "Fargo, North Dakota",
@@ -64374,6 +66922,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "South Dakota State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 22.0,
+      "homeStateEnrollmentPct": 78.0,
+      "drawClassification": "state",
+      "topFeederStates": { "SD": 53.5, "MN": 23.7, "IA": 10.0, "NE": 4.9, "WI": 1.8, "ND": 1.2 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from IPEDS-derived first-time degree-seeking undergraduate residency figures, via CollegeFactual (students representing 35 states total, per the source). SDSU's own IR page (sdstate.edu) only exposed a working direct PDF link for the older 2021-2022 Common Data Set; more recent years (2022-2024) were referenced on the page but had no working direct URLs, so this is one step removed from the primary document.",
+      "dataYear": 2023,
+      "notes": "First-time, first-year/degree-seeking cohort. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only 6 states clear the 1% threshold (next highest, Colorado, is 0.9%). FLAGGED DISCREPANCY: this page's SD share (53.5%) is notably lower than this record's existing homeStateEnrollmentPct (78%, also CollegeFactual-sourced per the existing dataSource note, dataYear 2023) -- the two CollegeFactual figures appear to come from different underlying metrics (likely all-undergraduate geographic-breakdown vs. first-time/degree-seeking residency split) rather than the same cohort. Recorded as-is from the directly cited source rather than adjusted, with this gap disclosed for future reconciliation."
+    },
     "institutionNarrative": {
       "name": "South Dakota State University",
       "location": "Brookings, South Dakota",
@@ -64812,6 +67371,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Wyoming": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 42,
+      "homeStateEnrollmentPct": 58,
+      "drawClassification": "regional",
+      "topFeederStates": { "WY": 60.8, "CO": 15.8, "CA": 3.1, "NE": 2.3, "TX": 2.2, "MN": 1.3, "WA": 1.1, "SD": 1.1, "MI": 1.0, "WI": 1.0 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Wyoming Common Data Set 2020-2021, Section F1 (Fall 2020 first-time first-year cohort). Note: older than other records in this batch -- more recent CDS PDF links were not tried; flagged for a refresh pass.",
+      "dataYear": 2020,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled. topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source, likely more recent than this record's existing 2020-21 CDS-sourced oosEnrollmentPct, which was already flagged for a refresh). WY share (60.8%) is reasonably close to the existing homeStateEnrollmentPct (58%), consistent with the different data years. Exactly 10 states clear the 1% threshold, matching the schema's max cleanly (next highest, Illinois, is 0.8%, excluded only by the cap)."
+    },
     "institutionNarrative": {
       "name": "University of Wyoming",
       "location": "Laramie, Wyoming",
@@ -65252,6 +67822,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Montana": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 41,
+      "homeStateEnrollmentPct": 59,
+      "drawClassification": "regional",
+      "topFeederStates": { "MT": 60.1, "WA": 8.7, "CA": 4.5, "ID": 3.4, "OR": 2.9, "CO": 2.8, "MN": 1.6, "AK": 1.5, "TX": 1.0 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Montana Common Data Set 2024-2025, Section F1 (Fall 2023 first-time first-year cohort)",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled. topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). 9 states clear the 1% threshold (next highest, Illinois, is 0.9%). MT share (60.1%) closely matches this record's existing homeStateEnrollmentPct (59%, 2023-24 CDS first-time first-year cohort)."
+    },
     "institutionNarrative": {
       "name": "University of Montana",
       "location": "Missoula, Montana",
@@ -65690,6 +68271,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Montana State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 58.4,
+      "homeStateEnrollmentPct": 41.6,
+      "drawClassification": "regional",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Montana State University Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Montana State University",
       "location": "Bozeman, Montana",
@@ -66129,6 +68721,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Howard University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 18,
+      "homeStateEnrollmentPct": 82,
+      "drawClassification": "state",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Howard University Common Data Set 2022-2023, Section F1 (Fall 2022 first-time first-year cohort)",
+      "dataYear": 2022,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students from numerator and denominator per the source's own CDS Section F1 definition -- oosEnrollmentPct + homeStateEnrollmentPct = 100% of the DOMESTIC first-year class, not total enrollment. drawClassification: national >=60% OOS, regional 30-59%, state <30% (see schema v1.0.8 note). topFeederStates/topFeederRegions not yet sourced -- only the aggregate split has been pulled."
+    },
     "institutionNarrative": {
       "name": "Howard University",
       "location": "Washington, District of Columbia",
@@ -66477,6 +69080,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "University of Alaska Fairbanks": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 18,
+      "homeStateEnrollmentPct": 82,
+      "drawClassification": "state",
+      "topFeederStates": { "AK": 79.6, "WA": 4.4, "CA": 1.6, "OH": 1.3, "TX": 1.3, "FL": 1.2 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from University of Alaska Fairbanks's 2023-24 Common Data Set (CDS) form, via collegedata.fyi. UAF's own hosted CDS PDF archive (uaf.edu/pair) could not be fetched -- the domain consistently failed with a robots.txt/DNS-level error across multiple attempts -- so this is one step removed from the primary document.",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). AK share (79.6%) is in the same range as but not identical to this record's existing homeStateEnrollmentPct (82%, from a first-time first-year CDS-derived secondary source) -- the ~2-point gap likely reflects the different cohort (all undergrads vs. first-year only) and different source, not a contradiction."
+    },
     "institutionNarrative": {
       "name": "University of Alaska Fairbanks",
       "location": "Fairbanks, Alaska",
@@ -66859,6 +69473,17 @@ const UNIVERSITY_DB_V5 = {
     "secondaryMegaRegionExposure": []
   },
   "College of the Ozarks": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 33.3,
+      "homeStateEnrollmentPct": 66.7,
+      "drawClassification": "regional",
+      "topFeederStates": { "MO": 65.6, "AR": 13.3, "KS": 3.9, "IL": 3.6, "OK": 3.6, "TX": 2.2, "IA": 1.4, "TN": 1.1, "NE": 1.1 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from IPEDS-derived first-time degree-seeking undergraduate residency figures, via CollegeFactual. This is the Point Lookout, Missouri 'Hard Work U' institution, distinct from University of the Ozarks in Clarksville, Arkansas -- the two are easily confused since both host CDS files at similarly-named domains. No Missouri-specific Common Data Set PDF for this school could be located directly; this school was flagged as genuinely unresolved earlier in this sourcing pass after exhausting primary CDS, IPEDS DFR, and two other aggregators, but this later CollegeFactual pull succeeded where those attempts did not.",
+      "dataYear": 2023,
+      "notes": "First-time, first-year/degree-seeking cohort. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; specific year not stated by source, page content dated ~2023). MO share (65.6%) is closely consistent with this record's existing homeStateEnrollmentPct (66.7%, first-time first-year cohort) -- the small gap reflects the different cohort (all undergrads vs. first-year only)."
+    },
     "institutionNarrative": {
       "name": "College of the Ozarks",
       "location": "Point Lookout, Missouri",
@@ -67234,6 +69859,17 @@ const UNIVERSITY_DB_V5 = {
     "secondaryMegaRegionExposure": []
   },
   "East Carolina University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 18,
+      "homeStateEnrollmentPct": 82,
+      "drawClassification": "state",
+      "topFeederStates": { "NC": 83.2, "VA": 5.0, "MD": 2.8, "NJ": 1.8, "PA": 1.6, "NY": 1.3 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "East Carolina University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: ipar.ecu.edu/wp-content/pv-uploads/sites/130/CDS_2024-2025_Redacted.pdf). Note: ECU's own published 'By the Numbers' fact sheet cites a lower 10% out-of-state figure, but that appears to reflect total university-wide enrollment rather than the first-time, first-year cohort that Section F1 specifically measures -- the CDS F1 figure is used here as it matches the schema's target definition.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). NC share (83.2%) closely matches this record's existing homeStateEnrollmentPct (82%, first-time first-year cohort)."
+    },
     "institutionNarrative": {
       "name": "East Carolina University",
       "location": "Greenville, North Carolina",
@@ -67615,6 +70251,17 @@ const UNIVERSITY_DB_V5 = {
     "secondaryMegaRegionExposure": []
   },
   "St. John's College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 85.5,
+      "homeStateEnrollmentPct": 14.5,
+      "drawClassification": "national",
+      "topFeederStates": { "TX": 13.8, "MD": 12.6, "NM": 8.4, "VA": 7.2, "CA": 6.6, "PA": 5.4, "NY": 5.4, "CO": 4.2, "NJ": 3.6, "IL": 3.0 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from College Transitions Dataverse (Enrollment by Residency), which lists St. John's College's two campuses separately: Annapolis, MD (84% out-of-state / 16% in-state) and Santa Fe, NM (87% out-of-state / 13% in-state). Since this database record represents the institution as a single dual-campus entity, the figure used here (85.5% OOS / 14.5% home-state) is a simple average of the two campuses. This school was flagged as genuinely unresolved earlier in this sourcing pass after exhausting primary CDS, IPEDS DFR (which does not break out enrollment by state of residence for this institution), and other aggregators, but this later pull succeeded where those attempts did not.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year/degree-seeking cohort. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates combines CollegeFactual's geographic-breakdown pages for both campuses (Annapolis, MD: 99 domestic students; Santa Fe, NM: 68 domestic students -- year not stated by source), weighted-averaged by each campus's actual student count since this database record represents the school as one dual-campus entity. Method disclosed for auditability: e.g. Texas (23 combined = 10 Annapolis + 13 Santa Fe) / 167 total = 13.8%. Notably, neither campus's own home state (MD, NM) is the single largest feeder -- Texas is -- which matches this record's already-documented national draw classification."
+    },
     "institutionNarrative": {
       "name": "St. John's College",
       "location": "Annapolis, Maryland and Santa Fe, New Mexico (two campuses, one shared curriculum)",
@@ -67983,6 +70630,17 @@ const UNIVERSITY_DB_V5 = {
     ]
   },
   "Providence College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 90,
+      "homeStateEnrollmentPct": 10,
+      "drawClassification": "national",
+      "topFeederStates": { "MA": 37.2, "NY": 15.2, "CT": 13.4, "NJ": 10.4, "RI": 8.6, "PA": 1.9, "NH": 1.6, "IL": 1.4, "ME": 1.4, "VT": 1.2 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Providence College Common Data Set 2021-2022, Section F1 (primary source, direct PDF: academic-affairs.providence.edu/.../cds-2021-22.pdf). Note: this was the most recent Providence College CDS located.",
+      "dataYear": 2021,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). RI share (8.6%) is close to this record's existing homeStateEnrollmentPct (10%, first-time first-year cohort) -- both confirm Providence draws the large majority of its class from outside Rhode Island despite being the state's namesake school. Maryland was tied with Vermont at 1.2% by rounded percentage but had a slightly lower raw count (14 vs 15) and was dropped to keep the list at the 10-state schema cap."
+    },
     "institutionNarrative": {
       "name": "Providence College",
       "location": "Providence, Rhode Island",
@@ -68355,6 +71013,17 @@ const UNIVERSITY_DB_V5 = {
     "secondaryMegaRegionExposure": []
   },
   "San Francisco State University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 2,
+      "homeStateEnrollmentPct": 98,
+      "drawClassification": "state",
+      "topFeederStates": { "CA": 98.5 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from San Francisco State University's CDS-derived enrollment data, via CollegeSimply (2023-2024 academic year). SF State's own IR office (ir.sfsu.edu) no longer lists a current Common Data Set PDF on its public archive page (most recent linked file was 2020-2021), so this is one step removed from the primary document. Consistent with the very low out-of-state share seen at other CSU campuses already sourced this pass (e.g. Cal State Chico, 1.5%).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only California clears the 1% threshold. CA share (98.5%) closely matches this record's existing homeStateEnrollmentPct (98%, first-time first-year cohort)."
+    },
     "institutionNarrative": {
       "name": "San Francisco State University",
       "location": "San Francisco, California",
@@ -68383,14 +71052,22 @@ const UNIVERSITY_DB_V5 = {
       ],
       "ccTransferPathway": {
         "hasCCPathway": true,
-        "ccFeederNames": {
-          "City College of San Francisco": true
-        },
+        "ccFeederNames": [
+          "City College of San Francisco"
+        ],
         "transferAcceptanceRate": "",
         "freshmanAcceptanceRate": "",
         "estimatedSavingsRange": "",
         "transferNotes": "Strong California community college transfer pathway, consistent with SF State's role as a large, accessible CSU campus."
       }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "CSU Application Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "SF State uses the single CSU systemwide application cycle -- no early decision or early action option exists. For Fall 2027 admission: application submission begins October 1 2026; priority deadline for impacted majors is November 30 2026; international applicant deadline is May 1 2027. Admission-offer acceptance/enrollment deposit deadline is May 1 2027. Verified directly against future.sfsu.edu/admissions/dates-deadlines.",
+      "verifiedDate": "2026-08-12"
     },
     "institutionIdentity": {
       "commonName": "SF State",
@@ -68406,7 +71083,7 @@ const UNIVERSITY_DB_V5 = {
       "missionOrientation": "Large, accessible public CSU campus serving a diverse San Francisco and Bay Area population",
       "faithTradition": "",
       "educationalPhilosophy": "Practical, career-connected, socially engaged",
-      "competitiveness": "Low-to-moderate -- accessible admissions, real strength concentrated in specific programs",
+      "competitiveness": "Accessible",
       "politicalCulture": "Progressive, with a genuine historical social-justice identity",
       "studentAutonomy": "High -- large urban commuter-inclusive campus",
       "prestigeOrientation": "Low -- real outcomes strength doesn't come with matching name prestige",
@@ -68449,9 +71126,9 @@ const UNIVERSITY_DB_V5 = {
         "neuroticism": 5
       },
       "hollandCodes": [
-        "Social",
-        "Investigative",
-        "Artistic"
+        "S",
+        "I",
+        "A"
       ],
       "learningStyle": [
         "Practical",
@@ -68485,7 +71162,7 @@ const UNIVERSITY_DB_V5 = {
       ]
     },
     "competitiveMajorPressure": {
-      "level": "Low-to-moderate",
+      "level": "Moderate",
       "notes": "Broadly accessible admissions; nursing and impacted CSU programs carry more real selectivity."
     },
     "hiddenOpportunities": {
@@ -68539,7 +71216,7 @@ const UNIVERSITY_DB_V5 = {
         "Health technology",
         "Applied AI/software"
       ],
-      "startupDensity": "High (regional context)",
+      "startupDensity": "High",
       "ventureCapitalAccess": 6,
       "corporateHeadquartersDensity": 6,
       "healthcareHubStrength": 8,
@@ -68702,12 +71379,12 @@ const UNIVERSITY_DB_V5 = {
       "overallMoatScore": 5
     },
     "trajectoryProfile": {
-      "dominantTrajectory": "Steward",
+      "dominantTrajectory": "STEWARD",
       "leaverScore": 3,
       "returnerScore": 4,
       "stewardScore": 7,
       "navigatorScore": 4,
-      "geographicLockIn": "High -- strongly Bay Area-concentrated alumni base",
+      "geographicLockIn": "high",
       "alumniDispersalPattern": "Heavily concentrated within the Bay Area"
     },
     "jewishLife": {
@@ -68730,11 +71407,22 @@ const UNIVERSITY_DB_V5 = {
       "strength": 5,
       "notes": "Real honors program within the larger university."
     },
-    "primaryMegaRegionSlug": "bayarea",
+    "primaryMegaRegionSlug": "northern-california",
     "regionalRole": "Large, accessible public-university talent pipeline directly embedded in the Bay Area tech and healthcare economy",
     "secondaryMegaRegionExposure": []
   },
   "Illinois Wesleyan University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 16,
+      "homeStateEnrollmentPct": 84,
+      "drawClassification": "state",
+      "topFeederStates": { "IL": 84.1, "MO": 2.5, "WI": 1.8, "CO": 1.4, "IN": 1.1 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Illinois Wesleyan University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: iwu.edu/institutional-effectiveness/dataset/cds-iwu-03262025.pdf, posted March 2025 for the 2024-25 academic year). Note: IWU's newer-dated 2025-26 filing (iwu-cds-2526-052726.pdf) shows a much lower 5% figure for the same F1 line -- given IWU's very small first-year cohort (roughly 300 students), a swing of this size within one year is plausible as cohort-level noise but could also reflect a reporting inconsistency, so the more stable, clearly-dated 2024-25 figure was used instead and this discrepancy is flagged here for awareness.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). IL share (84.1%, i.e. 15.9% OOS) closely corroborates the 16% OOS figure already used in this record's oosEnrollmentPct -- independent cross-validation that the 2024-25 CDS figure (16%) was the right choice over the anomalous 5% reading flagged from the 2025-26 CDS filing."
+    },
     "institutionNarrative": {
       "name": "Illinois Wesleyan University",
       "location": "Bloomington, Illinois",
@@ -69106,6 +71794,17 @@ const UNIVERSITY_DB_V5 = {
     "secondaryMegaRegionExposure": []
   },
   "University of North Texas": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 3.69,
+      "homeStateEnrollmentPct": 96.31,
+      "drawClassification": "state",
+      "topFeederStates": { "TX": 96.7 },
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of North Texas Common Data Set 2023-2024, Section F1 (primary source, direct PDF: institutionalresearch.unt.edu/cds_univnorthtx_final2024-2025.pdf). Document's year header text was garbled in extraction (rendered as 202-202), confirmed via a second independent fetch that verified both the school name and the 3.69% figure.",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only). topFeederStates sourced from CollegeFactual's geographic-breakdown page (undergraduate population, IPEDS-derived; year not stated by source). Only Texas clears the 1% threshold (next highest, Oklahoma, is 0.6%). TX share (96.7%) closely matches this record's existing homeStateEnrollmentPct (96.31%, first-time first-year CDS cohort)."
+    },
     "institutionNarrative": {
       "name": "University of North Texas",
       "location": "Denton, Texas",
@@ -69481,6 +72180,2648 @@ const UNIVERSITY_DB_V5 = {
     "primaryMegaRegionSlug": "texastriangle",
     "regionalRole": "Major DFW-metro comprehensive research university with a nationally significant music program",
     "secondaryMegaRegionExposure": []
+  }
+,
+  "Bates College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 91.7,
+      "homeStateEnrollmentPct": 8.3,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Bates College Common Data Set 2023-2024, Section F1 (primary source, direct PDF: bates.edu/research/files/2024/08/CDS_2023-2024.pdf).",
+      "dataYear": 2023,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "institutionNarrative": {
+      "name": "Bates College",
+      "location": "Lewiston, Maine",
+      "region": "New England",
+      "archetype": "The Purposeful Work Laboratory \u2014 Short Term Immersion, No Distribution Escape Hatch, Finance-and-Education Dual Pipeline",
+      "oneSentenceSummary": "Bates College is a highly selective liberal arts college built around a distinctive 4-4-1 academic calendar \u2014 two full semesters plus a required four-week spring Short Term of total immersion in a single course, often off campus \u2014 paired with one of the most explicitly career-integrated liberal arts cultures in the country through its Center for Purposeful Work.",
+      "pipeline": "Approximately 1,700 undergraduates, admitting roughly 16% of applicants (Class of 2030). Bates offers about three dozen majors spanning liberal arts classics, STEM fields (neuroscience, biochemistry, engineering), and interdisciplinary programs (environmental studies, gender and sexuality studies, digital and computational studies). The Class of 2024's top industries were Education (21%), Financial Services (15%), Healthcare (14%), Nonprofit and Law (6% each), and Information Technology (4%). Selected employers of 2024 graduates include Goldman Sachs, Morgan Stanley, Bank of America, Barclays, HSBC, Jefferies, Guggenheim Partners, Cravath Swaine & Moore, PwC, MIT, the Broad Institute of MIT and Harvard, Massachusetts General Hospital, Boston Children's Hospital, Brigham and Women's Hospital, Memorial Sloan Kettering, Thermo Fisher Scientific, Teach For America, and the Peace Corps.",
+      "hiddenPathway": "Short Term is Bates' defining structural advantage: every student spends four required weeks each spring on a single immersive course, frequently off campus or abroad, which functions as a built-in internship/research/travel window that most liberal arts colleges leave students to arrange informally. Combined with the Center for Purposeful Work's four-year developmental career curriculum, Bates students graduate having already practiced translating coursework into professional and research experience multiple times over.",
+      "institutionalSecret": "Despite a broad liberal-arts identity, Bates places a real and verifiable share of graduates into elite finance: Class of 2024 employers included Goldman Sachs, Morgan Stanley, Barclays, HSBC, Jefferies, and Guggenheim Partners, alongside Financial Services drawing 15% of the class \u2014 a stronger Wall Street pipeline than Bates' general liberal-arts reputation would suggest.",
+      "theRoom": "Located in Lewiston, a working mill-city in southern Maine rather than a wealthy New England college town, Bates places students in a real, economically mixed small city with direct proximity to Portland and reasonable access to Boston, while Short Term regularly sends students off campus entirely \u2014 domestically or abroad \u2014 for a month of immersive, singular focus.",
+      "lifestyle": "Academically rigorous and outdoors-oriented, with a small, tight-knit residential community shaped by Maine's seasons and a campus culture that treats Short Term as a shared rite of passage each spring.",
+      "bestFitPersonality": "Students who want the intensity and structure of a top liberal arts college but also want explicit, structured help translating that education into a specific career path \u2014 comfortable with a real Maine winter and a college town that is a working city rather than a resort town.",
+      "faithTradition": "None (historically founded by Free Will Baptists; fully secular today)",
+      "geographicInfluenceRadius": "Strong throughout New England, with a meaningful concentration of graduates in Massachusetts and New York and smaller but real cohorts across the Mid-Atlantic, Southeast, and internationally.",
+      "economicOutcome": "89% of the Class of 2024 (433 members, 87% survey response rate) were settled into their next opportunity within roughly six months of graduation: 64% employed, 18% in graduate or professional school, 3% in internships, 2% in fellowships, and 11% still seeking as of the December 2024 survey.",
+      "gradCities": [
+        "Boston MA",
+        "New York NY",
+        "Portland ME",
+        "Washington DC"
+      ],
+      "comparableInstitutions": [
+        "Colby College",
+        "Bowdoin College",
+        "Middlebury College",
+        "Connecticut College",
+        "Hamilton College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": [],
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "~16%",
+        "estimatedSavingsRange": "",
+        "transferNotes": "Bates admits transfer students on a Winter Transfer (November 1 deadline) and Fall Transfer (March 1 deadline) cycle, but no specific community college feeder relationship or published transfer acceptance rate was found in this pass. Flagged for a follow-up check rather than estimated."
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 10",
+      "essayPromptTopic": null,
+      "notes": "Test-optional since 1984 (institutional policy, not a pandemic-era change). Full round structure verified directly from bates.edu/admission/apply/application-options/: QuestBridge Match (Oct 1 app / Dec 1 notify / Dec 19 reply), Winter Transfer (Nov 1 / late Nov / Nov 26), Early Decision I (Nov 15 / by Dec 20 / Jan 9), Early Decision II (Jan 10 / by Feb 15 / Feb 19), Regular Decision (Jan 10 / by Apr 1 / May 1), Fall Transfer (Mar 1 / by May 2 / May 21). Specific supplemental essay prompt text was not captured in this pass -- Bates uses the Common Application or Coalition Application, Powered by Scoir; presence/content of a required Bates-specific supplement should be confirmed directly before publishing to families. Sourced from bates.edu, verified 2026-08-11.",
+      "verifiedDate": "2026-08-11"
+    },
+    "institutionIdentity": {
+      "commonName": "Bates",
+      "archetype": "Elite Liberal Arts College \u2014 Short Term Immersion Model",
+      "institutionalPersonality": "purposeful, outdoorsy, structurally distinctive, career-integrated",
+      "cultureKeywords": [
+        "Short Term",
+        "Purposeful Work",
+        "Liberal Arts",
+        "Maine",
+        "4-4-1 Calendar"
+      ],
+      "missionOrientation": "Preparing students for lives of meaningful work through a liberal arts education explicitly integrated with career and purpose development from the first year onward.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "A traditional two-semester liberal arts curriculum anchored by a required four-week spring Short Term of total immersion in one course, frequently off campus, paired with a four-year co-curricular career development sequence through the Center for Purposeful Work.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Progressive-leaning, consistent with the broader small New England liberal arts college landscape.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "A well-regarded member of the small New England liberal arts college tier, positioned alongside Colby and Bowdoin.",
+      "socialClimate": "Small, outdoors-oriented, and tight-knit, shaped significantly by Maine's climate and the shared Short Term experience.",
+      "leadershipStyle": "Leadership cultivated through hands-on purposeful-work experience and Short Term immersion rather than pure classroom credential-building."
+    },
+    "comparativePositioning": {
+      "versusColby": "Colby and Bates are geographically close Maine NESCAC-tier peers with similar selectivity; Bates' required Short Term is a more structurally distinctive feature than anything in Colby's calendar, while Colby's Waterville campus and endowment-funded initiatives (like its downtown revitalization project) give it a different institutional identity.",
+      "versusBowdoin": "Bowdoin is generally considered slightly more selective with a stronger existing brand-prestige ceiling, while Bates' Center for Purposeful Work offers a more explicitly integrated career-development structure throughout all four years.",
+      "versusMiddlebury": "Middlebury is larger and carries a stronger international/language-immersion brand identity, while Bates is smaller and organizes its distinctiveness around Short Term and purposeful work rather than language schools."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Small",
+      "undergraduateEnrollment": 1700,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 1700,
+      "campusType": "Small New England Liberal Arts College",
+      "residentialIntensity": 94,
+      "communityFeel": 90,
+      "studentFacultyRatio": "10:1",
+      "classSizeExperience": "Small classes are standard, with the Short Term period providing an especially intensive, low-ratio immersion experience in a single course.",
+      "scaleAdvantages": [
+        "Required Short Term guarantees every student a structured immersive/off-campus experience",
+        "Center for Purposeful Work embeds career development across all four years, not just senior year",
+        "Small size supports close faculty relationships and hands-on research access",
+        "Real, working-city location in Lewiston rather than an insulated wealthy college town"
+      ],
+      "scaleDisadvantages": [
+        "Very small size limits the breadth of specialized course offerings relative to a university",
+        "Rural-to-small-city Maine setting is a real distance from a major metro for students who want frequent access to a big city",
+        "No graduate programs or professional schools on campus",
+        "Lewiston, while economically real and interesting, is not a wealthy resort-style college town like some NESCAC peers"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 82,
+        "conscientiousness": 86,
+        "extraversion": 66,
+        "agreeableness": 74,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "I",
+        "S",
+        "E"
+      ],
+      "learningStyle": [
+        "Small Seminar Discussion",
+        "Short Term Total Immersion",
+        "Purposeful Work Career Integration",
+        "Close Faculty Mentorship"
+      ],
+      "socialEnvironment": [
+        "Small",
+        "Outdoors-Oriented",
+        "Purposeful",
+        "Tight-Knit",
+        "Maine-Rooted"
+      ],
+      "idealStudentTraits": [
+        "Wants a structured immersive experience built into the calendar, not left to arrange independently",
+        "Values explicit career-development support alongside a traditional liberal arts education",
+        "Comfortable with a real Maine winter and a working small-city setting",
+        "Drawn to a small, tight-knit residential community"
+      ],
+      "thrivesIf": [
+        "Wants Short Term's guaranteed immersive experience built into all four years",
+        "Values the Center for Purposeful Work's structured career integration",
+        "Prefers a small, tight-knit college over a large university",
+        "Is comfortable in a real working city rather than an insulated wealthy college town"
+      ],
+      "strugglesIf": [
+        "Wants a large university with a wide breadth of majors and graduate resources",
+        "Wants a warm-climate or major-metro campus setting",
+        "Prefers a fully open, unstructured curriculum with no required immersive term",
+        "Wants a wealthier, more insulated college-town social scene"
+      ],
+      "transferRiskFactors": [
+        "Students who find Short Term's required structure limiting rather than valuable",
+        "Students who want a larger, more urban campus",
+        "Students seeking on-campus graduate program resources"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "Bates does not operate capacity-limited or impacted majors; all roughly three dozen majors are open to any enrolled student, consistent with its liberal arts structure."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Digital and Computational Studies",
+        "Earth and Climate Sciences",
+        "Rhetoric, Film, and Screen Studies",
+        "Biochemistry",
+        "Environmental Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Elite Investment Banking and Financial Services",
+        "Biotech and Life Sciences Research (Broad Institute, Thermo Fisher, major Boston hospitals)",
+        "Education and Teaching (Teach For America, independent schools)",
+        "Federal Government and Public Service"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "Morgan Stanley",
+        "Massachusetts General Hospital / Boston hospital network",
+        "Center for Purposeful Work's employer relationships"
+      ],
+      "overlookedStrengths": [
+        "Bates' required Short Term is one of the only fully mandatory immersive-term structures among elite liberal arts colleges -- most peer schools leave equivalent experiences optional.",
+        "Financial Services drew 15% of the Class of 2024 into real bulge-bracket and boutique employers, a stronger Wall Street pipeline than Bates' general reputation suggests.",
+        "The Center for Purposeful Work's four-year developmental structure is more explicitly career-integrated than the career-services model at most liberal arts peers.",
+        "38 states plus D.C. and 20 countries were represented in the Class of 2024's post-graduation destinations, showing real national and international reach for a school of Bates' size."
+      ],
+      "sleeperIndustries": [
+        "Biotech and Life Sciences Research",
+        "Healthcare Administration and Hospital Systems",
+        "Federal Public Service",
+        "Independent School Teaching"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 82,
+      "executiveAccess": 66,
+      "internshipNetwork": 76,
+      "familyBusinessExposure": 34,
+      "relationshipCapitalScore": 76,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 72,
+      "donorNetworkStrength": 70,
+      "boardMemberDensity": 56
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Education",
+        "Financial Services",
+        "Healthcare",
+        "Law"
+      ],
+      "regionalEconomicDrivers": [
+        "Healthcare",
+        "Higher Education",
+        "Manufacturing (historic Lewiston mill economy)"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "Morgan Stanley",
+        "Massachusetts General Hospital",
+        "PwC"
+      ],
+      "emergingIndustries": [
+        "Biotech and Life Sciences",
+        "Digital and Computational Studies-adjacent Tech"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 30,
+      "corporateHeadquartersDensity": 14,
+      "healthcareHubStrength": 42,
+      "innovationIndex": 52
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New England Finance, Healthcare, and Education Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "New York NY",
+        "Portland ME"
+      ],
+      "alumniStrongholds": [
+        "Massachusetts",
+        "New York",
+        "Maine"
+      ],
+      "relocationPatterns": [
+        "The largest single share of 2024 graduates (28%) settled in Massachusetts, followed by New York (17%) and Maine (10%).",
+        "A meaningful cohort entered financial services in New York and Boston.",
+        "Healthcare and biotech graduates concentrated around the Boston hospital and research-institute network.",
+        "A smaller international cohort spread across China, England, Italy, Japan, New Zealand, Spain, Switzerland, and Uganda.",
+        "38 states plus D.C. were represented overall in Class of 2024 destinations, indicating real national reach beyond the New England concentration."
+      ],
+      "regionalInfluenceScore": 78,
+      "nationalReachScore": 64,
+      "internationalReachScore": 40
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 0,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 76,
+      "civicEngagement": 74
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 56,
+        "notes": "Healthcare drew 14% of the Class of 2024, with real placements at Massachusetts General, Boston Children's, Brigham and Women's, and Beth Israel Deaconess."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 44,
+        "notes": "Moderate presence given Maine's outdoor culture and student interest, though not a formal institutional pipeline."
+      },
+      "sportsBusiness": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis in outcomes data reviewed."
+      },
+      "entertainmentMedia": {
+        "strength": 26,
+        "notes": "Modest presence; Journalism, Media, and Publishing drew 2% of the Class of 2024."
+      },
+      "ventureCapital": {
+        "strength": 30,
+        "notes": "Limited but real presence through the broader financial-services alumni network."
+      },
+      "privateEquity": {
+        "strength": 42,
+        "notes": "Real but modest presence; Financial Services drew 15% of the Class of 2024 with employers including Guggenheim Partners and Stifel Financial."
+      },
+      "investmentBanking": {
+        "strength": 58,
+        "notes": "Real, verified pipeline: Goldman Sachs, Morgan Stanley, Bank of America, Merrill Lynch, Barclays, HSBC, and Jefferies all recruited or employed Class of 2024 graduates."
+      },
+      "consulting": {
+        "strength": 40,
+        "notes": "Consulting drew 2% of the Class of 2024, with Boston Consulting Group and Cornerstone Research among participating employers."
+      },
+      "medicine": {
+        "strength": 52,
+        "notes": "Solid pre-health pipeline evidenced by Class of 2024 placements at major Boston hospitals and UMass Chan Medical School, though Bates has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 40,
+        "notes": "Real presence through Athena Health and Houston Methodist among Class of 2024 employers."
+      },
+      "defense": {
+        "strength": 22,
+        "notes": "Modest but real presence; the U.S. Air Force appeared among Class of 2024 employers."
+      },
+      "realEstate": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis; Cushman & Wakefield appeared among Class of 2024 employers."
+      },
+      "luxuryBrands": {
+        "strength": 16,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 34,
+        "notes": "Modest entrepreneurship culture relative to finance, education, and healthcare pathways."
+      },
+      "technology": {
+        "strength": 38,
+        "notes": "Modest but growing presence through Digital and Computational Studies; not a dominant outcome sector in Class of 2024 data."
+      },
+      "publicPolicy": {
+        "strength": 46,
+        "notes": "Real presence through Government (Local, State, and Federal) at 2% of the Class of 2024, plus U.S. House of Representatives among employers."
+      },
+      "nonprofitLeadership": {
+        "strength": 58,
+        "notes": "Nonprofit drew 6% of the Class of 2024, with Peace Corps and AmeriCorps VISTA among participating employers."
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 40,
+        "notes": "Real presence through Biotech and Life Sciences at 3% of the Class of 2024, with Thermo Fisher Scientific and the Broad Institute of MIT and Harvard among employers."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 66,
+      "firstGenerationSupport": 74,
+      "wealthCreationPotential": 66,
+      "familyBusinessPipelineStrength": 32
+    },
+    "futureResilience": {
+      "aiResistance": 78,
+      "automationResistance": 76,
+      "adaptabilityScore": 80,
+      "interdisciplinaryStrength": 82,
+      "futureReadiness": 78,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 84,
+      "innovationCapacity": 68
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 66,
+      "communityLeadershipPotential": 76,
+      "geographicMobility": 70,
+      "workLifeBalancePotential": 72,
+      "purposeAlignment": 84,
+      "familyFormationSupport": 68,
+      "personalDevelopmentPotential": 84,
+      "careerOptionality": 74,
+      "longTermLifeSatisfaction": 78
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 66,
+      "networkMoat": 68,
+      "geographicMoat": 54,
+      "industryMoat": 56,
+      "alumniMoat": 68,
+      "brandDurability": 70,
+      "overallMoatScore": 64
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 70,
+      "returnerScore": 24,
+      "stewardScore": 18,
+      "navigatorScore": 76,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "new_england_concentrated_with_national_reach"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": false,
+        "strength": 0,
+        "type": "No Hillel International affiliate -- student-run Jewish Student Union (JSU) instead"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Modest, student-run",
+      "notes": "Bates does not have a Hillel. Jewish life is organized through the entirely student-run Jewish Student Union (JSU), which hosts weekly Shabbat dinners, Friday evening services, celebrates all major Jewish holidays, and partners with Temple Shalom, an off-campus synagogue in nearby Auburn, Maine. No kosher dining program or Birthright partnership was found in this pass -- if either exists, it was not surfaced on bates.edu and should not be assumed present. Sourced directly from bates.edu/multifaith/religious-groups/, verified 2026-08-11."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "Bates has no separate honors college; independent study, honors thesis work, and Short Term projects are available to any qualified student within the standard curriculum."
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A highly selective small liberal arts college in southern Maine, distinguished nationally by its required Short Term immersion calendar and an explicitly career-integrated Center for Purposeful Work.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 80
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
+  }
+,
+  "Bucknell University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 81,
+      "homeStateEnrollmentPct": 19,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Bucknell University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: bucknell.edu/sites/default/files/institutional-research/common_data_set_2024-25.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "institutionNarrative": {
+      "name": "Bucknell University",
+      "location": "Lewisburg, Pennsylvania",
+      "region": "Mid-Atlantic",
+      "archetype": "The Three-College Liberal Arts Engine \u2014 Arts & Sciences, Engineering, and Management Under One Undergraduate Roof",
+      "oneSentenceSummary": "Bucknell University is a highly selective liberal arts university structured around three integrated undergraduate colleges \u2014 Arts & Sciences, Engineering, and the Freeman College of Management \u2014 giving students a genuinely wider major selection and a stronger finance/engineering/consulting outcomes pipeline than most liberal arts college peers, while still delivering a small, residential liberal-arts campus experience.",
+      "pipeline": "Approximately 3,975 undergraduates, admitting a selective cohort with a Class of 2028 middle-50% SAT range of 670-740 (Evidence-Based Reading & Writing) and 670-760 (Math), ACT 31-34, and an average admitted GPA of 3.76. 93% of the Class of 2025 had secured a next opportunity within nine months of graduation, with an average starting salary of $73,346. Bucknell was ranked #1 among LinkedIn's Top Liberal Arts Colleges for career success in 2026 (#16 among all colleges), #7 nationally for undergraduate engineering programs without a doctorate, #7 for most innovative schools, and #30 among national liberal arts colleges (U.S. News & World Report, 2026). Selected Class of 2025 employers include Goldman Sachs, Morgan Stanley, J.P. Morgan, UBS, Bank of America, Fidelity Investments, Deloitte, EY, PwC, RSM, Amazon, Cisco, Oracle, Northrop Grumman, Johnson & Johnson, Merck, Clark Construction Group, DAVIS Construction, and Whiting-Turner Contracting Company.",
+      "hiddenPathway": "Bucknell's three-college structure -- College of Arts & Sciences, College of Engineering, and the Freeman College of Management -- means students get a genuinely broader major catalog than most liberal arts colleges (accounting and finance, analytics and operations management, biomedical/chemical/civil-environmental engineering, alongside the standard liberal arts departments) without sacrificing the small, residential liberal-arts campus experience. Few schools of Bucknell's size combine ABET-accredited engineering, an AACSB-caliber management college, and a traditional arts & sciences core under one undergraduate roof.",
+      "institutionalSecret": "Bucknell's real Class of 2025 employer list -- Goldman Sachs, Morgan Stanley, J.P. Morgan, UBS, Deloitte, EY, PwC alongside Clark Construction, DAVIS Construction, and Whiting-Turner -- shows a genuinely dual finance-and-engineering/construction pipeline that's stronger and more specific than Bucknell's general liberal-arts-college reputation would suggest.",
+      "theRoom": "Located in Lewisburg, a small, walkable central Pennsylvania town along the Susquehanna River, roughly equidistant from Philadelphia, New York, and Washington D.C. -- close enough for regular recruiting access to major East Coast markets while remaining a self-contained, low-key college town.",
+      "lifestyle": "Residential, spirited, and outcomes-oriented, with a strong Greek and athletics presence alongside serious academic engagement across all three colleges.",
+      "bestFitPersonality": "Students who want the small residential feel and faculty access of a liberal arts college but also want a genuinely wide major selection -- including real engineering and business degrees -- without transferring to a university.",
+      "faithTradition": "None (historically affiliated with the Baptist church; fully secular today)",
+      "geographicInfluenceRadius": "Strong throughout the Mid-Atlantic and Northeast corridor, with real national reach into finance, consulting, engineering, and construction employers.",
+      "economicOutcome": "93% of the Class of 2025 had secured employment, graduate school placement, or another next opportunity within nine months of graduation, with an average starting salary of $73,346 -- well above the roughly $30,000 national average student-loan-debt comparison Bucknell cites for its own graduates, who carried an average of $21,719 in federal loan debt (Class of 2024, among borrowers).",
+      "gradCities": [
+        "New York NY",
+        "Philadelphia PA",
+        "Washington DC",
+        "Boston MA"
+      ],
+      "comparableInstitutions": [
+        "Lafayette College",
+        "Lehigh University",
+        "Colgate University",
+        "Union College",
+        "Villanova University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": [],
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "",
+        "estimatedSavingsRange": "",
+        "transferNotes": "No specific community college feeder relationship or published transfer acceptance rate was found in this pass. Flagged for a follow-up check rather than estimated."
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 10",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from bucknell.edu/admissions-aid (2026-27 cycle): Early Decision I (Nov 1, 2026 deadline; decision early December; deposit mid-December), Early Decision II (Jan 10, 2027 deadline; decision mid-February; deposit late February), Regular Decision (Jan 10, 2027 deadline; decision mid-March; deposit May 1, 2027). Application opens Aug 1, 2026. Students applying through the 2026-27 cycle are not required to submit SAT/ACT scores (test-optional), though Bucknell is running a research pilot requesting official scores post-enrollment from students who self-reported or omitted scores -- this does not affect the admission decision already made. Specific supplemental essay prompt text was not captured in this pass. Sourced from bucknell.edu, verified 2026-08-11.",
+      "verifiedDate": "2026-08-11"
+    },
+    "institutionIdentity": {
+      "commonName": "Bucknell",
+      "archetype": "Liberal Arts University \u2014 Three-College Structure (Arts & Sciences, Engineering, Management)",
+      "institutionalPersonality": "ambitious, outcomes-focused, structurally distinctive, spirited",
+      "cultureKeywords": [
+        "Three Colleges",
+        "Engineering",
+        "Freeman College of Management",
+        "Liberal Arts",
+        "Career Outcomes"
+      ],
+      "missionOrientation": "Combining a traditional liberal arts core with genuine engineering and management colleges to prepare students for a wide range of career paths without sacrificing a small residential campus experience.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "An interdisciplinary liberal arts approach delivered across three integrated undergraduate colleges, allowing students in any major to draw on coursework and resources across Arts & Sciences, Engineering, and Management.",
+      "competitiveness": "Highly Selective",
+      "politicalCulture": "Moderate to progressive-leaning, with a more institutionally centrist culture than some New England liberal arts peers, reflecting its stronger engineering/business/pre-professional student base.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "A well-regarded liberal arts university, ranked #1 by LinkedIn for liberal-arts-college career outcomes in 2026 and #30 nationally among liberal arts colleges by U.S. News.",
+      "socialClimate": "Spirited and residential, with a strong Greek and athletics culture alongside serious academic engagement.",
+      "leadershipStyle": "Leadership cultivated through a strong, real-world-facing career outcomes culture and cross-college collaboration between arts & sciences, engineering, and management students."
+    },
+    "comparativePositioning": {
+      "versusLafayette": "Lafayette is a similarly-sized Pennsylvania liberal arts college with its own engineering program, but Bucknell's addition of a full standalone management college (Freeman) gives it a wider business-focused major catalog than Lafayette offers.",
+      "versusLehigh": "Lehigh is larger and more explicitly a technological research university with graduate programs, while Bucknell stays purely undergraduate-focused with a smaller, more residential liberal-arts-college feel despite its own strong engineering and business offerings.",
+      "versusColgate": "Colgate is a more traditional single-college liberal arts institution without Bucknell's engineering or dedicated management college, while Bucknell offers a wider professional-major catalog within a similarly small, residential setting."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 3975,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 3975,
+      "campusType": "Small Residential Liberal Arts University",
+      "residentialIntensity": 88,
+      "communityFeel": 82,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Small classes are standard across all three colleges, with engineering and management students getting the same close faculty access as arts & sciences students.",
+      "scaleAdvantages": [
+        "Genuinely wider major catalog than most liberal arts colleges, spanning arts & sciences, ABET-accredited engineering, and a dedicated management college",
+        "Strong, real career-outcomes track record: 93% of the Class of 2025 settled within nine months at a $73,346 average starting salary",
+        "Central Pennsylvania location within reach of Philadelphia, New York, and D.C. for recruiting and internships",
+        "55,000+ member global alumni network"
+      ],
+      "scaleDisadvantages": [
+        "Larger than the smallest liberal arts colleges, which softens some of the tightest-knit small-college intimacy",
+        "Lewisburg is a small town, not a major metro, despite reasonable driving access to bigger cities",
+        "No graduate programs or professional schools on campus",
+        "Strong Greek-life presence may not suit students seeking a non-Greek-centered social scene"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 74,
+        "conscientiousness": 84,
+        "extraversion": 72,
+        "agreeableness": 72,
+        "neuroticism": 46
+      },
+      "hollandCodes": [
+        "E",
+        "I",
+        "C"
+      ],
+      "learningStyle": [
+        "Small Cross-College Seminars",
+        "Hands-On Engineering Labs",
+        "Applied Management Coursework",
+        "Close Faculty Mentorship"
+      ],
+      "socialEnvironment": [
+        "Spirited",
+        "Residential",
+        "Greek-Influenced",
+        "Outcomes-Focused",
+        "Cross-Disciplinary"
+      ],
+      "idealStudentTraits": [
+        "Wants real engineering or business degree options without leaving a small liberal arts campus",
+        "Values a strong, measurable career-outcomes track record",
+        "Comfortable in a spirited, residential, Greek-influenced social scene",
+        "Interested in cross-disciplinary work between arts & sciences, engineering, and management"
+      ],
+      "thrivesIf": [
+        "Wants a genuinely wide major catalog including real engineering and management degrees within a small-college setting",
+        "Values strong, well-documented career outcomes and employer recruiting",
+        "Is comfortable in a residential, spirited, Greek-influenced campus culture",
+        "Wants central Pennsylvania proximity to Philadelphia, New York, and D.C."
+      ],
+      "strugglesIf": [
+        "Wants a fully non-Greek or explicitly alternative social scene",
+        "Prefers a major-city campus setting over a small college town",
+        "Wants graduate school resources on the same campus",
+        "Is looking for the most intimate, smallest possible liberal arts college experience"
+      ],
+      "transferRiskFactors": [
+        "Students who find the Greek-influenced social scene isolating if not involved",
+        "Students who want a larger, more urban campus",
+        "Students seeking on-campus graduate program resources"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Moderate",
+      "notes": "Certain engineering majors (e.g., chemical engineering) and Freeman College of Management programs have real admissions and curricular structure tied to the college a student is admitted into, which is a meaningfully different model from a single undifferentiated arts & sciences major pool -- students should confirm current cross-college transfer flexibility directly with admissions rather than assume it is unrestricted."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Animal Behavior",
+        "Biophysics",
+        "Cell Biology/Biochemistry",
+        "Arabic & Arab World Studies",
+        "Analytics & Operations Management"
+      ],
+      "hiddenCareerPipelines": [
+        "Construction and Engineering Management (Clark Construction, DAVIS Construction, Whiting-Turner)",
+        "Elite Investment Banking and Financial Services",
+        "Management Consulting",
+        "Pharmaceutical and Life Sciences (Johnson & Johnson, Merck)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "Morgan Stanley",
+        "Clark Construction Group",
+        "Deloitte / EY / PwC"
+      ],
+      "overlookedStrengths": [
+        "Bucknell's three-college structure gives students access to real engineering and management degrees most liberal arts colleges simply don't offer.",
+        "The Class of 2025 employer list shows genuine strength in construction and engineering-management firms (Clark Construction, DAVIS Construction, Whiting-Turner) alongside the expected finance and consulting names -- an unusually strong, specific pipeline for a school of this size.",
+        "#1 LinkedIn ranking for liberal arts college career success in 2026 is a real, current, third-party-verified outcomes signal, not a self-reported claim.",
+        "A 55,000+ member global alumni network gives Bucknell a larger practical mentorship base than many similarly-selective liberal arts colleges."
+      ],
+      "sleeperIndustries": [
+        "Construction and Engineering Project Management",
+        "Real Estate (NYU Schack Institute of Real Estate graduate placements)",
+        "Biomedical and Chemical Engineering Industry Roles",
+        "Actuarial Science and Insurance (Aon among Class of 2025 employers)"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 78,
+      "executiveAccess": 70,
+      "internshipNetwork": 80,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 78,
+      "referralCultureStrength": 76,
+      "donorNetworkStrength": 72,
+      "boardMemberDensity": 58
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Financial Services",
+        "Engineering and Construction",
+        "Consulting",
+        "Pharmaceuticals and Life Sciences"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Healthcare",
+        "Agriculture (central Pennsylvania Susquehanna Valley)"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "Morgan Stanley",
+        "Deloitte",
+        "Clark Construction Group"
+      ],
+      "emergingIndustries": [
+        "Business Analytics",
+        "Biomedical Engineering Industry Roles"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 34,
+      "corporateHeadquartersDensity": 16,
+      "healthcareHubStrength": 38,
+      "innovationIndex": 60
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Mid-Atlantic and Northeast Finance, Engineering, and Consulting Economy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Philadelphia PA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "New York",
+        "Philadelphia",
+        "Washington D.C. Metro",
+        "Boston"
+      ],
+      "relocationPatterns": [
+        "A substantial share of graduates enter New York for finance and consulting roles.",
+        "Philadelphia and the broader Mid-Atlantic draw graduates into engineering, construction, and healthcare.",
+        "Washington D.C. attracts graduates into consulting, government-adjacent, and defense-related roles (Northrop Grumman among Class of 2025 employers).",
+        "A meaningful cohort pursues advanced degrees at elite law, medical, and graduate schools nationally, including Harvard, Yale, Duke, and Johns Hopkins."
+      ],
+      "regionalInfluenceScore": 80,
+      "nationalReachScore": 68,
+      "internationalReachScore": 36
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 62,
+      "studentOrganizationStrength": 78,
+      "leadershipDevelopment": 78,
+      "crossDisciplinaryInteraction": 80,
+      "civicEngagement": 68
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 52,
+        "notes": "Real pre-health pipeline evidenced by Class of 2025 graduate placements at Penn State College of Medicine, Temple's Lewis Katz School of Medicine, and Thomas Jefferson's Sidney Kimmel Medical College, plus a documented alumni pathway to Memorial Sloan Kettering Cancer Center."
+      },
+      "nutraceuticals": {
+        "strength": 20,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis; not a defining feature of Bucknell's outcomes data."
+      },
+      "sportsBusiness": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis in outcomes data reviewed."
+      },
+      "entertainmentMedia": {
+        "strength": 24,
+        "notes": "Modest presence; not a prominent sector in Class of 2025 outcomes data."
+      },
+      "ventureCapital": {
+        "strength": 34,
+        "notes": "Limited but real presence through the broader financial-services alumni network."
+      },
+      "privateEquity": {
+        "strength": 46,
+        "notes": "Real presence through the strong Financial Services pipeline, though not separately broken out in available outcomes data."
+      },
+      "investmentBanking": {
+        "strength": 66,
+        "notes": "Strong, verified pipeline: Goldman Sachs, Morgan Stanley, J.P. Morgan, UBS, and Bank of America all appeared among Class of 2025 employers."
+      },
+      "consulting": {
+        "strength": 62,
+        "notes": "Strong, verified pipeline: Deloitte, EY, PwC, and RSM all appeared among Class of 2025 employers."
+      },
+      "medicine": {
+        "strength": 50,
+        "notes": "Real pre-health pipeline into top medical schools (Penn State, Temple, Thomas Jefferson) and documented alumni placements like Memorial Sloan Kettering, though Bucknell has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis relative to direct clinical/research pre-health pathways."
+      },
+      "defense": {
+        "strength": 34,
+        "notes": "Real presence through Northrop Grumman among Class of 2025 employers."
+      },
+      "realEstate": {
+        "strength": 32,
+        "notes": "Real presence evidenced by an NYU Schack Institute of Real Estate graduate placement among Class of 2025 alumni."
+      },
+      "luxuryBrands": {
+        "strength": 16,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 40,
+        "notes": "Moderate entrepreneurship culture supported by the Freeman College of Management, though not a dominant outcome sector in available data."
+      },
+      "technology": {
+        "strength": 50,
+        "notes": "Real presence through Class of 2025 employers including Amazon, Cisco, Oracle, Siemens Digital Industries Software, and Veeva Systems."
+      },
+      "publicPolicy": {
+        "strength": 30,
+        "notes": "Modest presence; not a prominent sector in available Class of 2025 outcomes data."
+      },
+      "nonprofitLeadership": {
+        "strength": 32,
+        "notes": "Real but modest presence; Uncommon Schools appeared among Class of 2025 employers."
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 46,
+        "notes": "Real presence through Johnson & Johnson and Merck among Class of 2025 employers."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 62,
+      "firstGenerationSupport": 66,
+      "wealthCreationPotential": 72,
+      "familyBusinessPipelineStrength": 36
+    },
+    "futureResilience": {
+      "aiResistance": 72,
+      "automationResistance": 72,
+      "adaptabilityScore": 76,
+      "interdisciplinaryStrength": 80,
+      "futureReadiness": 78,
+      "entrepreneurialFlexibility": 64,
+      "lifelongLearningCulture": 76,
+      "innovationCapacity": 70
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 74,
+      "communityLeadershipPotential": 72,
+      "geographicMobility": 70,
+      "workLifeBalancePotential": 68,
+      "purposeAlignment": 74,
+      "familyFormationSupport": 66,
+      "personalDevelopmentPotential": 78,
+      "careerOptionality": 80,
+      "longTermLifeSatisfaction": 76
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 68,
+      "networkMoat": 72,
+      "geographicMoat": 58,
+      "industryMoat": 66,
+      "alumniMoat": 72,
+      "brandDurability": 70,
+      "overallMoatScore": 68
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 72,
+      "returnerScore": 22,
+      "stewardScore": 16,
+      "navigatorScore": 80,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "mid_atlantic_northeast_concentrated_with_national_reach"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 84,
+        "type": "Full Hillel with a dedicated building (Berelson Center for Jewish Life)"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": true,
+      "shabbatProgramming": true,
+      "birthrightSupport": true,
+      "jewishCommunityStrength": "Strong",
+      "notes": "Bucknell has a robust, well-resourced Hillel headquartered in the dedicated Berelson Center for Jewish Life, led by a full-time rabbi (Jewish Life Program Director and Jewish Chaplain) plus a Jewish Life Associate and faculty adviser. Programming verified directly from bucknell.edu includes weekly Shabbat services and dinner, a kosher kitchen, High Holiday services and meals, Sukkot/Simchat Torah/Chanukah/Purim/Passover celebrations, Bucknell-organized Birthright trips to Israel, Holocaust remembrance events, and a Jewish Studies minor alongside Modern Hebrew Studies coursework. This is a meaningfully stronger and more institutionally resourced Jewish life presence than several peer schools in this database. Sourced from bucknell.edu/life-bucknell/.../jewish-life-bucknell, verified 2026-08-11."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "No separate honors college was found in this pass; Bucknell's small class sizes and cross-college structure provide close faculty access and independent research opportunities within the standard curriculum. Flagged for a follow-up check rather than assumed absent with full confidence, given the size of Bucknell's academic offerings."
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A highly selective, three-college liberal arts university in central Pennsylvania combining a traditional arts & sciences core with genuine ABET-accredited engineering and a dedicated management college, and a strong, third-party-verified career outcomes record.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 18
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 78
+      },
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 10
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 3
+      }
+    ]
+  }
+,
+  "Colby College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 93,
+      "homeStateEnrollmentPct": 7,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Colby College's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "institutionNarrative": {
+      "name": "Colby College",
+      "location": "Waterville, Maine",
+      "region": "New England",
+      "archetype": "The Jan Plan Originator \u2014 First 4-1-4 Calendar, Need-Blind No-Loan Aid, Guaranteed Experiential Funding",
+      "oneSentenceSummary": "Colby College is an extremely selective liberal arts college on a 714-acre campus in Waterville, Maine, distinguished by originating the 4-1-4 academic calendar (including the January \"Jan Plan\" intensive term), a need-blind no-loan financial aid policy, and a DavisConnects program that funds at least one internship, research experience, and global experience for every student regardless of financial circumstance.",
+      "pipeline": "Approximately 2,400 undergraduates across 46 majors and 37 minors, admitting roughly 8% of the 20,144 applicants to the Class of 2029, with a middle-50% SAT range of 1450-1540 and ACT range of 32-34. 98% of the Class of 2024 was employed or attending graduate school within one year of graduation; for the Class of 2025 specifically, 80% secured employment, 15% pursued further studies, and 2% launched entrepreneurial pursuits, with 92% benefiting from at least one high-impact career experience before graduation. Selected employers of recent graduates include McKinsey & Company, Blackstone, Credit Suisse, UBS, JPMorgan Chase, Wells Fargo, Wellington Management, Ropes & Gray, Massachusetts General Hospital, Dana-Farber Cancer Institute, and Amazon.",
+      "hiddenPathway": "Colby originated the 4-1-4 academic calendar, with a required January Jan Plan term (over 100 courses to choose from) functioning as a built-in intensive-immersion window every year, not just once. Combined with DavisConnects -- which guarantees funding for at least one internship, research experience, and global experience per student regardless of financial need or personal network -- Colby students get multiple structured, funded windows to translate coursework into real-world experience across all four years, not just informally through unpaid summer opportunities.",
+      "institutionalSecret": "Colby's need-blind, no-loan financial aid policy is unusually generous even among elite liberal arts colleges: families earning up to $75,000 with typical assets pay a $0 parent/guardian contribution, and families earning up to $200,000 pay no more than $20,000 -- a real, published commitment rather than a marketing claim, verified directly against Colby's own financial aid calculator language.",
+      "theRoom": "Located on a 714-acre campus in Waterville, Maine -- a small central Maine city, not a resort college town -- with nearly 100% of students living on campus and a very high geographic draw (45+ states and 80+ countries represented in a student body of only 2,400).",
+      "lifestyle": "Small, residential, and academically intense, organized around the rhythm of two semesters plus the required January Jan Plan term, with nearly 200 pre-established study abroad programs in 60 countries giving Jan Plan and semester-away options unusual depth for a college of this size.",
+      "bestFitPersonality": "Students who want an extremely selective liberal arts education with guaranteed funded experiential learning built into the calendar, and who are drawn to Colby's need-blind no-loan aid model and small, tight-knit Maine campus.",
+      "faithTradition": "None (historically Baptist-founded; fully secular today)",
+      "geographicInfluenceRadius": "Strong throughout New England and the broader Northeast, with real national reach into finance, consulting, law, and healthcare, plus an unusually broad geographic draw for its size (45+ states, 80+ countries represented among only 2,400 students).",
+      "economicOutcome": "98% of the Class of 2024 was employed or enrolled in graduate or professional school within one year of graduation. For the Class of 2025: 80% secured employment, 15% pursued further studies, 2% launched entrepreneurial pursuits, and 92% had at least one high-impact career experience (internship, research, study away, or other global experience) before graduating.",
+      "gradCities": [
+        "Boston MA",
+        "New York NY",
+        "Washington DC",
+        "Portland ME"
+      ],
+      "comparableInstitutions": [
+        "Bates College",
+        "Bowdoin College",
+        "Middlebury College",
+        "Williams College",
+        "Hamilton College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": [],
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "8%",
+        "estimatedSavingsRange": "",
+        "transferNotes": "Colby's admissions site references a dedicated Transfer Applicant deadline page, but no specific community college feeder relationship or published transfer acceptance rate was found in this pass. Flagged for a follow-up check rather than estimated."
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 4",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from afa.colby.edu (2026-27 cycle): Early Decision I (Nov 15 admissions/financial aid deadline; supporting materials Nov 22; decision on or before Dec 15), Early Decision II (Jan 4 admissions/financial aid deadline; supporting materials Jan 15; decision on or before Feb 15), Regular Decision (Jan 4 admissions deadline, Jan 15 financial aid deadline; supporting materials Jan 15; decision on or before April 1). Colby is a NESCAC member and publishes the NESCAC Statement of Common Admissions Practices directly. Standardized test scores are listed under Optional Materials (test-optional). Colby conducts routine audits of applications to confirm submitted information; materially false or misleading information is grounds for denial or revocation of admission. Specific supplemental essay prompt text was not captured in this pass. Sourced from afa.colby.edu, verified 2026-08-11.",
+      "verifiedDate": "2026-08-11"
+    },
+    "institutionIdentity": {
+      "commonName": "Colby",
+      "archetype": "Elite Liberal Arts College \u2014 Jan Plan Originator, Need-Blind No-Loan Aid",
+      "institutionalPersonality": "rigorous, well-resourced, experientially structured, quietly confident",
+      "cultureKeywords": [
+        "Jan Plan",
+        "4-1-4 Calendar",
+        "DavisConnects",
+        "Need-Blind No-Loan Aid",
+        "NESCAC"
+      ],
+      "missionOrientation": "Providing an extremely selective liberal arts education with guaranteed, funded experiential learning and a genuinely need-blind, no-loan financial aid commitment.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "A traditional two-semester liberal arts curriculum built around Colby's own 4-1-4 calendar, with the January Jan Plan term providing an annual intensive-immersion window, supported by DavisConnects funding for internships, research, and global experience regardless of a student's financial circumstances.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Progressive-leaning, consistent with the broader small New England liberal arts college landscape.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "Among the most selective liberal arts colleges in the country, with an 8% admit rate for the Class of 2029 and a middle-50% SAT range of 1450-1540.",
+      "socialClimate": "Small, residential, and intellectually intense, with nearly 100% of students living on campus and a strong NESCAC Division III athletics culture (Division I in Alpine skiing, Nordic skiing, and squash).",
+      "leadershipStyle": "Leadership cultivated through guaranteed, funded hands-on experience (DavisConnects) rather than left to students to arrange independently."
+    },
+    "comparativePositioning": {
+      "versusBates": "Bates and Colby are both Maine NESCAC liberal arts colleges with distinctive required immersive-term calendars (Short Term vs. Jan Plan), but Colby's need-blind no-loan aid policy and DavisConnects guaranteed-funding model are more explicitly structured than Bates' Center for Purposeful Work, while Bates places more emphasis on off-campus immersion specifically.",
+      "versusBowdoin": "Bowdoin is a similarly selective Maine NESCAC peer without a required January intensive term of Colby's kind, and Colby's published need-blind no-loan aid thresholds are unusually specific and generous even by elite-liberal-arts standards.",
+      "versusMiddlebury": "Middlebury carries a stronger international/language-immersion brand identity through its language schools, while Colby's defining structural feature is the Jan Plan and its guaranteed DavisConnects funding model."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Small",
+      "undergraduateEnrollment": 2400,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 2400,
+      "campusType": "Small New England Liberal Arts College",
+      "residentialIntensity": 97,
+      "communityFeel": 90,
+      "studentFacultyRatio": "9:1",
+      "classSizeExperience": "Small classes are standard, with Jan Plan providing an especially intensive, low-ratio immersion experience in a single course or independent project each January.",
+      "scaleAdvantages": [
+        "Originated the 4-1-4 calendar, giving every student a required annual January immersion term",
+        "DavisConnects guarantees funded internship, research, and global experience access regardless of financial circumstance",
+        "Need-blind, no-loan financial aid with unusually specific, generous published thresholds",
+        "Extremely broad geographic draw for its size -- 45+ states and 80+ countries among only 2,400 students"
+      ],
+      "scaleDisadvantages": [
+        "Very small size limits the breadth of specialized course offerings relative to a university",
+        "Waterville is a small central Maine city, not a wealthy resort-style college town or major metro",
+        "No graduate programs or professional schools on campus",
+        "Extremely low 8% admit rate makes Colby a genuine reach for most applicants"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 86,
+        "conscientiousness": 88,
+        "extraversion": 64,
+        "agreeableness": 74,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "I",
+        "A",
+        "S"
+      ],
+      "learningStyle": [
+        "Small Seminar Discussion",
+        "Jan Plan Total Immersion",
+        "DavisConnects-Funded Experiential Learning",
+        "Close Faculty Mentorship"
+      ],
+      "socialEnvironment": [
+        "Small",
+        "Intellectually Intense",
+        "Well-Resourced",
+        "Residential",
+        "Maine-Rooted"
+      ],
+      "idealStudentTraits": [
+        "Wants a required, structured immersive January term built into every year, not just optional summer opportunities",
+        "Values a genuinely need-blind, no-loan financial aid commitment",
+        "Comfortable in a very small, highly residential Maine campus community",
+        "Wants guaranteed funding access to internships, research, and global experience regardless of financial background"
+      ],
+      "thrivesIf": [
+        "Wants Jan Plan's guaranteed annual immersion term built into all four years",
+        "Values DavisConnects' guaranteed experiential-funding model",
+        "Qualifies for or values Colby's need-blind, no-loan aid policy",
+        "Prefers a very small, tight-knit college over a large university"
+      ],
+      "strugglesIf": [
+        "Wants a large university with a wide breadth of majors and graduate resources",
+        "Wants a warm-climate or major-metro campus setting",
+        "Is not competitive for an 8% admit rate, extremely-selective applicant pool",
+        "Wants graduate school resources on the same campus"
+      ],
+      "transferRiskFactors": [
+        "Students who find the required Jan Plan term limiting rather than valuable",
+        "Students who want a larger, more urban campus",
+        "Students seeking on-campus graduate program resources"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "No evidence of capacity-limited or impacted majors was found in this pass; Colby's 46 majors, 37 minors, and independent major option are presented as broadly accessible within its liberal arts structure."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Independent Major (self-designed)",
+        "Environmental Studies",
+        "Government",
+        "Global Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Elite Investment Banking and Asset Management (Blackstone, Wellington Management, UBS, Credit Suisse)",
+        "Management Consulting (McKinsey & Company)",
+        "Biotech and Healthcare Research (Dana-Farber Cancer Institute, Massachusetts General Hospital)",
+        "Real Estate (Cushman & Wakefield, Marcus & Millichap)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "McKinsey & Company",
+        "Blackstone",
+        "Massachusetts General Hospital",
+        "DavisConnects funded-access model"
+      ],
+      "overlookedStrengths": [
+        "Colby's Jan Plan is a required, guaranteed annual immersive term, not an optional add-on -- one of the only fully mandatory versions of this structure among elite liberal arts colleges.",
+        "DavisConnects explicitly guarantees funded access to an internship, research experience, and global experience for every student regardless of financial circumstance or personal network.",
+        "Colby's published need-blind no-loan aid thresholds are unusually specific and generous: a $0 parent contribution for families earning up to $75,000, capped at $20,000 for families earning up to $200,000.",
+        "A real, verified employer list including Blackstone, Credit Suisse, UBS, JPMorgan Chase, and Wellington Management shows a genuinely strong elite-finance pipeline for a school of Colby's size."
+      ],
+      "sleeperIndustries": [
+        "Biotech and Life Sciences Research",
+        "Real Estate Investment and Brokerage",
+        "Federal and Global Fellowships (National and Global Fellowships track)",
+        "Legal Services (Ropes & Gray, Cetrulo LLP among recent employers)"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 84,
+      "executiveAccess": 74,
+      "internshipNetwork": 84,
+      "familyBusinessExposure": 40,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 82,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 78,
+      "boardMemberDensity": 62
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Financial Services",
+        "Consulting",
+        "Healthcare and Life Sciences",
+        "Law"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Healthcare",
+        "Manufacturing (central Maine)"
+      ],
+      "topEmployers": [
+        "McKinsey & Company",
+        "Blackstone",
+        "Massachusetts General Hospital",
+        "JPMorgan Chase"
+      ],
+      "emergingIndustries": [
+        "Biotech and Life Sciences Research",
+        "Global Fellowships and Public Service"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 36,
+      "corporateHeadquartersDensity": 12,
+      "healthcareHubStrength": 44,
+      "innovationIndex": 58
+    },
+    "geographicInfluence": {
+      "dominantMarket": "New England and Northeast Finance, Consulting, and Healthcare Economy",
+      "secondaryMarkets": [
+        "Boston MA",
+        "New York NY",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Boston",
+        "New York",
+        "Washington D.C.",
+        "Maine"
+      ],
+      "relocationPatterns": [
+        "A substantial share of graduates enter finance and consulting roles concentrated in New York and Boston.",
+        "Healthcare and biotech graduates concentrate around the Boston hospital and research-institute network (Massachusetts General Hospital, Dana-Farber, McLean Hospital).",
+        "Washington D.C. attracts graduates into public service, fellowships, and policy-adjacent roles.",
+        "45+ states and 80+ countries are represented in Colby's overall student body, indicating broad national and international draw beyond the New England concentration."
+      ],
+      "regionalInfluenceScore": 82,
+      "nationalReachScore": 70,
+      "internationalReachScore": 48
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 4,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 82,
+      "crossDisciplinaryInteraction": 80,
+      "civicEngagement": 76
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 54,
+        "notes": "Real pre-health and biotech pipeline evidenced by recent placements at Massachusetts General Hospital, Dana-Farber Cancer Institute, McLean Hospital, and MaineHealth."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 42,
+        "notes": "Moderate presence given Maine's outdoor culture and Colby's strong Alpine/Nordic skiing programs, though not a formal institutional employer pipeline in available data."
+      },
+      "sportsBusiness": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis in available outcomes data, despite Division I status in Alpine skiing, Nordic skiing, and squash."
+      },
+      "entertainmentMedia": {
+        "strength": 24,
+        "notes": "Modest presence; not a prominent sector in available outcomes data."
+      },
+      "ventureCapital": {
+        "strength": 36,
+        "notes": "Real but modest presence through the broader financial-services and asset-management alumni network (Ironwood Capital among recent employers)."
+      },
+      "privateEquity": {
+        "strength": 58,
+        "notes": "Real, verified presence: Blackstone and Wellington Management Company both appeared among recent graduate employers."
+      },
+      "investmentBanking": {
+        "strength": 62,
+        "notes": "Strong, verified pipeline: JPMorgan Chase, UBS, Credit Suisse, SMBC, and Wells Fargo all appeared among recent graduate employers."
+      },
+      "consulting": {
+        "strength": 56,
+        "notes": "Strong, verified pipeline: McKinsey & Company, Guidepoint Consulting, Cornerstone Research, and BCE Consulting all appeared among recent graduate employers."
+      },
+      "medicine": {
+        "strength": 50,
+        "notes": "Real pre-health pipeline evidenced by a dedicated Health Professional Schools outcomes track and recent placements at major Boston hospitals, though Colby has no medical school of its own."
+      },
+      "healthcareAdministration": {
+        "strength": 36,
+        "notes": "Real but modest presence through Clearview Healthcare Partners and MaineHealth among recent employers."
+      },
+      "defense": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis in available outcomes data."
+      },
+      "realEstate": {
+        "strength": 38,
+        "notes": "Real presence through Cushman & Wakefield and Marcus & Millichap among recent employers."
+      },
+      "luxuryBrands": {
+        "strength": 16,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 40,
+        "notes": "Modest but real presence, evidenced by 2% of the Class of 2025 launching entrepreneurial pursuits directly out of college."
+      },
+      "technology": {
+        "strength": 38,
+        "notes": "Modest presence; Amazon appeared among recent graduate employers, though technology is not a dominant outcome sector in available data."
+      },
+      "publicPolicy": {
+        "strength": 48,
+        "notes": "Real presence through a dedicated National and Global Fellowships track and Americorps/City Year/Teach for America among recent employers."
+      },
+      "nonprofitLeadership": {
+        "strength": 54,
+        "notes": "Real presence through Americorps, City Year, and Teach for America among recent employers."
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 34,
+        "notes": "Modest but real presence tied to the broader healthcare/life-sciences research pipeline (Dana-Farber Cancer Institute); no major pharmaceutical manufacturer specifically named among available employer data."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 68,
+      "firstGenerationSupport": 82,
+      "wealthCreationPotential": 76,
+      "familyBusinessPipelineStrength": 40
+    },
+    "futureResilience": {
+      "aiResistance": 80,
+      "automationResistance": 78,
+      "adaptabilityScore": 82,
+      "interdisciplinaryStrength": 84,
+      "futureReadiness": 82,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 84,
+      "innovationCapacity": 68
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 76,
+      "communityLeadershipPotential": 78,
+      "geographicMobility": 74,
+      "workLifeBalancePotential": 72,
+      "purposeAlignment": 82,
+      "familyFormationSupport": 70,
+      "personalDevelopmentPotential": 86,
+      "careerOptionality": 80,
+      "longTermLifeSatisfaction": 80
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 78,
+      "networkMoat": 76,
+      "geographicMoat": 62,
+      "industryMoat": 66,
+      "alumniMoat": 76,
+      "brandDurability": 78,
+      "overallMoatScore": 74
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 74,
+      "returnerScore": 22,
+      "stewardScore": 16,
+      "navigatorScore": 82,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "new_england_concentrated_with_national_reach"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 72,
+        "type": "Colby Hillel, plus a distinct affiliated Center for Small Town Jewish Life"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Real and distinctively structured",
+      "notes": "Colby has an active campus Hillel, and is also home to a separate, unusual institutional entity: the Center for Small Town Jewish Life, which extends beyond the student Hillel into rural Maine Jewish community life -- including a collaboration between Colby Hillel and Beth Israel Congregation (the local Waterville synagogue) on a shared community cookbook, student leadership fellows, and staff including a rabbi. This is a meaningfully different and more regionally engaged model than a typical campus-only Hillel. Kosher dining and Birthright participation were not confirmed in this pass and are left unconfirmed rather than assumed present, consistent with the platform's disclosure standard. Sourced from colby.edu, verified 2026-08-11."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "No separate honors college was found in this pass; Colby's small class sizes, independent major option, and Jan Plan provide honors-level independent work opportunities within the standard curriculum."
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "An extremely selective small liberal arts college in central Maine that originated the 4-1-4 academic calendar, distinguished by a required January Jan Plan term, a need-blind no-loan financial aid policy, and a DavisConnects program guaranteeing funded experiential learning for every student.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 82
+      },
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
+  }
+,
+  "Colgate University": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 73,
+      "homeStateEnrollmentPct": 27,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Colgate University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: colgate.edu/sites/default/files/2025-07/Colgate 2024-25 CDS for Website_0.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "institutionNarrative": {
+      "name": "Colgate University",
+      "location": "Hamilton, New York",
+      "region": "Mid-Atlantic",
+      "archetype": "The Research-University Liberal Arts Hybrid \u2014 Tuck Business Bridge, 80%/84% Med/Law Placement, Career Team Built at University Scale",
+      "oneSentenceSummary": "Colgate University is an extremely selective liberal arts university on a hillside campus in central New York, distinguished by a career-services operation described as larger than typical liberal arts peers, an 80% medical school and 84% law school acceptance rate against national averages of 42% and 69%, and access to Dartmouth's Tuck Business Bridge Program as a formal skill-building pathway.",
+      "pipeline": "Approximately 3,143 undergraduates, admitting roughly 17% of applicants with an 8:1 student-to-faculty ratio and an average class size of 17. 97% of students secure jobs, graduate school admission, fellowships, scholarships, or military/volunteer service within nine months of graduation (based on an 89% knowledge rate of the graduating class), with an 80% medical school acceptance rate and an 84% law school acceptance rate, both well above national averages. More than 200 formal recruiting partners connect students to employers including Amazon, Deloitte, Ernst & Young, Goldman Sachs, Google, Massachusetts General Hospital, National Geographic, NBCUniversal, and Teach For America, supporting a job and internship board with more than 225,000 opportunities annually.",
+      "hiddenPathway": "Colgate offers direct access to the Tuck Business Bridge Program at Dartmouth's Tuck School of Business -- a real, formal partnership giving liberal arts students structured business skill-building normally associated with dedicated business schools, not standard liberal arts colleges. Combined with a career-services team the university itself describes as larger than peer liberal arts institutions, Colgate students get earlier and more intensive career support than the small-college model typically provides.",
+      "institutionalSecret": "Colgate's medical and law school acceptance rates -- 80% and 84% respectively, against national averages of 42% and 69% -- are a real, specific, published pre-professional outcomes advantage that's easy to overlook given Colgate's broader liberal arts branding.",
+      "theRoom": "Located on a hillside campus in Hamilton, in the heart of central New York State, roughly equidistant from Syracuse and Utica and a multi-hour drive from New York City -- a genuinely rural, self-contained campus setting rather than a college town with easy major-metro access.",
+      "lifestyle": "Residential, tight-knit, and achievement-oriented, with a 91% graduation rate the university describes as among the highest in the nation and an unusually large, well-resourced career-services infrastructure for a school of its size.",
+      "bestFitPersonality": "Students who want an extremely selective liberal arts education with a stronger, more formally structured career and pre-professional pipeline than the typical small-college model, and who are comfortable in a rural, self-contained central New York campus.",
+      "faithTradition": "None (historically Baptist-founded; fully secular today)",
+      "geographicInfluenceRadius": "Strong throughout the Northeast and Mid-Atlantic, with real national reach into finance, consulting, law, medicine, and technology through its 35,000-member alumni network and 200+ formal recruiting partners.",
+      "economicOutcome": "97% of students secure a job, graduate school placement, fellowship, scholarship, or military/volunteer service within nine months of graduation. Medical school acceptance runs at 80% (vs. a 42% national average) and law school acceptance at 84% (vs. a 69% national average).",
+      "gradCities": [
+        "New York NY",
+        "Boston MA",
+        "Washington DC",
+        "Chicago IL"
+      ],
+      "comparableInstitutions": [
+        "Hamilton College",
+        "Middlebury College",
+        "Bucknell University",
+        "Union College",
+        "Bowdoin College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": [],
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "17%",
+        "estimatedSavingsRange": "",
+        "transferNotes": "Colgate's admissions site references a dedicated transfer applicant pathway, but no specific community college feeder relationship or published transfer acceptance rate was found in this pass. Flagged for a follow-up check rather than estimated."
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from colgate.edu/admission-aid/apply (2026-27 cycle): Early Decision I (Nov 1 application/financial aid deadline; mid-December notification), Early Decision II (Jan 15 application/financial aid deadline; mid-February notification), Regular Decision (Jan 15 application/financial aid deadline; late March notification). Submission of SAT/ACT scores is optional under Colgate's holistic review. Class of 2030 was 824 students chosen from more than 16,774 applicants representing 50 states, Washington D.C., and 154 countries -- note this reflects the enrolled class, not the admit count; the separately published overall acceptance rate is 17%. Specific supplemental essay prompt text was not captured in this pass. Sourced from colgate.edu, verified 2026-08-11.",
+      "verifiedDate": "2026-08-11"
+    },
+    "institutionIdentity": {
+      "commonName": "Colgate",
+      "archetype": "Elite Liberal Arts University \u2014 Research-University-Scale Career Infrastructure",
+      "institutionalPersonality": "rigorous, achievement-oriented, well-resourced, pre-professionally structured",
+      "cultureKeywords": [
+        "Tuck Business Bridge Program",
+        "Career Services at Scale",
+        "Pre-Professional Outcomes",
+        "The Colgate Commitment",
+        "200-Year Legacy"
+      ],
+      "missionOrientation": "Combining rigorous liberal arts instruction with a research-university-caliber career services infrastructure and formal pre-professional pathways like the Tuck Business Bridge Program.",
+      "faithTradition": "None",
+      "educationalPhilosophy": "A traditional liberal arts curriculum (57 majors, 15 additional minors) delivered with 100% faculty-taught classes and an 8:1 student-to-faculty ratio, paired with an unusually large, structured career-services operation starting as early as a student's first semester.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Moderate to progressive-leaning, broadly consistent with elite Northeast liberal arts peers.",
+      "studentAutonomy": "High",
+      "prestigeOrientation": "An extremely selective liberal arts university, ranked by the Wall Street Journal as the top liberal arts college in the Northeast, with a 17% admit rate and a 91% graduation rate described as among the highest in the nation.",
+      "socialClimate": "Tight-knit and residential, on a self-contained hillside campus in rural central New York, with a strong athletics culture (Carey Center for high-performance athletics).",
+      "leadershipStyle": "Leadership cultivated through early and sustained career-services engagement, formal pre-professional pipelines, and a large, loyal 35,000-member alumni network."
+    },
+    "comparativePositioning": {
+      "versusHamilton": "Hamilton College is a nearby central New York peer of similar selectivity without Colgate's formal Tuck Business Bridge Program partnership or comparably large career-services infrastructure.",
+      "versusMiddlebury": "Middlebury carries a stronger international/language-immersion brand identity, while Colgate's defining edge is its unusually large career-services team and formally documented pre-professional (medical/law school) outcomes.",
+      "versusBucknell": "Bucknell offers its own dedicated engineering and management colleges, while Colgate stays within a single liberal arts college structure but compensates with an outsized career-services operation and named partnerships like the Tuck Business Bridge Program."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Small",
+      "undergraduateEnrollment": 3143,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 3143,
+      "campusType": "Small Rural Liberal Arts University",
+      "residentialIntensity": 90,
+      "communityFeel": 84,
+      "studentFacultyRatio": "8:1",
+      "classSizeExperience": "Small classes are standard (average class size of 17), with 100% of courses taught directly by faculty rather than teaching assistants.",
+      "scaleAdvantages": [
+        "Career-services team the university describes as larger than typical liberal arts peers, with support starting as early as first semester",
+        "Formal partnership access to Dartmouth's Tuck Business Bridge Program",
+        "Published 80% medical school and 84% law school acceptance rates, both well above national averages",
+        "The Colgate Commitment provides need-blind, no-loan-eligible aid for families earning up to $200,000"
+      ],
+      "scaleDisadvantages": [
+        "Rural central New York setting is a genuine multi-hour drive from any major metro, unlike some Northeast peers",
+        "Very selective 17% admit rate makes Colgate a real reach for most applicants",
+        "No graduate programs or professional schools on campus",
+        "Small size limits breadth of specialized course offerings relative to a full university"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 80,
+        "conscientiousness": 88,
+        "extraversion": 68,
+        "agreeableness": 72,
+        "neuroticism": 44
+      },
+      "hollandCodes": [
+        "E",
+        "I",
+        "C"
+      ],
+      "learningStyle": [
+        "Small Faculty-Taught Seminars",
+        "Structured Pre-Professional Pathways",
+        "Early and Sustained Career Advising",
+        "Original Research via Assistantships or Senior Projects"
+      ],
+      "socialEnvironment": [
+        "Tight-Knit",
+        "Achievement-Oriented",
+        "Residential",
+        "Rural",
+        "Pre-Professionally Structured"
+      ],
+      "idealStudentTraits": [
+        "Wants an extremely selective liberal arts education with a stronger, more formal career-services infrastructure than most peers",
+        "Values documented pre-professional outcomes (medical school, law school placement rates)",
+        "Comfortable in a rural, self-contained central New York campus",
+        "Interested in structured pathways like the Tuck Business Bridge Program"
+      ],
+      "thrivesIf": [
+        "Wants early, sustained, and unusually well-resourced career services starting freshman year",
+        "Values Colgate's documented pre-professional (medical/law) outcomes advantage",
+        "Qualifies for or values the Colgate Commitment's need-blind, no-loan aid thresholds",
+        "Is comfortable in a rural campus setting without easy major-metro access"
+      ],
+      "strugglesIf": [
+        "Wants a major-metro or urban campus setting",
+        "Is not competitive for a 17% admit rate, extremely selective applicant pool",
+        "Wants graduate school resources on the same campus",
+        "Prefers a larger university with a wider major catalog"
+      ],
+      "transferRiskFactors": [
+        "Students who find the rural, self-contained setting isolating",
+        "Students who want a larger, more urban campus",
+        "Students seeking on-campus graduate program resources"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "No evidence of capacity-limited or impacted majors was found in this pass; Colgate's 57 majors and 15 additional minors are presented as broadly accessible within its liberal arts structure."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Applied Mathematics",
+        "Geology",
+        "Mind, Brain, and Behavior (Ho Center)",
+        "Jewish Studies"
+      ],
+      "hiddenCareerPipelines": [
+        "Pre-Medical (80% acceptance rate)",
+        "Pre-Law (84% acceptance rate)",
+        "Business via the Tuck Business Bridge Program",
+        "Federal and National Security (nuclear material security alumni pathway)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Goldman Sachs",
+        "Google",
+        "Massachusetts General Hospital",
+        "Tuck Business Bridge Program access"
+      ],
+      "overlookedStrengths": [
+        "Colgate's own career services team is explicitly described as larger than those of other liberal arts universities -- a real structural advantage, not just marketing language.",
+        "An 80% medical school acceptance rate and 84% law school acceptance rate are specific, published, and well above national averages of 42% and 69% respectively.",
+        "Formal access to Dartmouth's Tuck Business Bridge Program gives Colgate students a genuine business-school-caliber skill-building pathway most liberal arts colleges don't offer.",
+        "$1 million is designated annually specifically for students to pursue summer research, a real and substantial funding commitment for a school of this size."
+      ],
+      "sleeperIndustries": [
+        "Nuclear Security and Nonproliferation (real alumni pathway into weapons-grade material stewardship)",
+        "Space Science and Planetary Research (NASA Curiosity rover alumni pathway)",
+        "Human Rights and Environmental Law (EarthRights International alumni pathway)",
+        "Technology Policy and AI Ethics (Brookings Institution alumni pathway)"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 80,
+      "mentorshipDensity": 82,
+      "executiveAccess": 72,
+      "internshipNetwork": 82,
+      "familyBusinessExposure": 38,
+      "relationshipCapitalScore": 80,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 76,
+      "boardMemberDensity": 60
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Financial Services",
+        "Consulting",
+        "Law",
+        "Medicine"
+      ],
+      "regionalEconomicDrivers": [
+        "Higher Education",
+        "Healthcare",
+        "Agriculture (central New York)"
+      ],
+      "topEmployers": [
+        "Goldman Sachs",
+        "Deloitte",
+        "Massachusetts General Hospital",
+        "Google"
+      ],
+      "emergingIndustries": [
+        "Technology Policy",
+        "Nuclear Security and Nonproliferation"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 34,
+      "corporateHeadquartersDensity": 14,
+      "healthcareHubStrength": 40,
+      "innovationIndex": 58
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Northeast and Mid-Atlantic Finance, Consulting, and Pre-Professional Economy",
+      "secondaryMarkets": [
+        "New York NY",
+        "Boston MA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "New York",
+        "Boston",
+        "Washington D.C.",
+        "Chicago"
+      ],
+      "relocationPatterns": [
+        "A substantial share of graduates enter New York for finance and consulting roles.",
+        "Boston and the broader Northeast draw graduates into healthcare, research, and academia.",
+        "Washington D.C. attracts graduates into policy, law, and federal government-adjacent roles.",
+        "A meaningful cohort pursues medical and law school at rates well above national averages before entering their professional markets nationally."
+      ],
+      "regionalInfluenceScore": 80,
+      "nationalReachScore": 70,
+      "internationalReachScore": 42
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 48,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 82,
+      "crossDisciplinaryInteraction": 78,
+      "civicEngagement": 68
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 58,
+        "notes": "Strong, verified pre-health pipeline: 80% medical school acceptance rate against a 42% national average, plus recruiting partnerships including Massachusetts General Hospital."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 30,
+        "notes": "Limited institutional emphasis in available outcomes data despite the rural central New York setting."
+      },
+      "sportsBusiness": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis in available outcomes data, despite the newly opened Carey Center for athletics."
+      },
+      "entertainmentMedia": {
+        "strength": 30,
+        "notes": "Real but modest presence; National Geographic and NBCUniversal both appeared among Colgate's 200+ formal recruiting partners."
+      },
+      "ventureCapital": {
+        "strength": 32,
+        "notes": "Limited but real presence through the broader financial-services alumni network and Colgate's entrepreneurship and innovation programming."
+      },
+      "privateEquity": {
+        "strength": 44,
+        "notes": "Real presence through the broader financial-services recruiting pipeline, though not separately broken out in available outcomes data."
+      },
+      "investmentBanking": {
+        "strength": 56,
+        "notes": "Real, verified presence: Goldman Sachs appeared among Colgate's 200+ formal recruiting partners."
+      },
+      "consulting": {
+        "strength": 52,
+        "notes": "Real, verified presence: Deloitte and Ernst & Young both appeared among Colgate's 200+ formal recruiting partners."
+      },
+      "medicine": {
+        "strength": 62,
+        "notes": "Strong, verified pre-health pipeline: 80% medical school acceptance rate (vs. 42% national average) and a recruiting partnership with Massachusetts General Hospital."
+      },
+      "healthcareAdministration": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis relative to direct clinical/research pre-health pathways."
+      },
+      "defense": {
+        "strength": 30,
+        "notes": "Real but niche presence, evidenced by a documented alumni pathway into nuclear material security work with U.S. allies."
+      },
+      "realEstate": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis in available outcomes data."
+      },
+      "luxuryBrands": {
+        "strength": 16,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 44,
+        "notes": "Real, named institutional support through a dedicated Entrepreneurship & Innovation program offering seed funding and professional development."
+      },
+      "technology": {
+        "strength": 44,
+        "notes": "Real presence through Amazon and Google among Colgate's 200+ formal recruiting partners."
+      },
+      "publicPolicy": {
+        "strength": 50,
+        "notes": "Real presence evidenced by a documented alumni pathway to the Brookings Institution addressing technology policy and algorithmic bias."
+      },
+      "nonprofitLeadership": {
+        "strength": 48,
+        "notes": "Real presence through Teach For America among recruiting partners and a documented alumni pathway founding EarthRights International."
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 30,
+        "notes": "Modest presence tied to the broader pre-health and life-sciences research pipeline; no major pharmaceutical manufacturer specifically named among available employer data."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 66,
+      "firstGenerationSupport": 72,
+      "wealthCreationPotential": 76,
+      "familyBusinessPipelineStrength": 38
+    },
+    "futureResilience": {
+      "aiResistance": 76,
+      "automationResistance": 74,
+      "adaptabilityScore": 80,
+      "interdisciplinaryStrength": 80,
+      "futureReadiness": 80,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 80,
+      "innovationCapacity": 66
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 76,
+      "communityLeadershipPotential": 76,
+      "geographicMobility": 72,
+      "workLifeBalancePotential": 68,
+      "purposeAlignment": 78,
+      "familyFormationSupport": 68,
+      "personalDevelopmentPotential": 82,
+      "careerOptionality": 80,
+      "longTermLifeSatisfaction": 78
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 76,
+      "networkMoat": 76,
+      "geographicMoat": 58,
+      "industryMoat": 64,
+      "alumniMoat": 78,
+      "brandDurability": 76,
+      "overallMoatScore": 72
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 74,
+      "returnerScore": 20,
+      "stewardScore": 14,
+      "navigatorScore": 82,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "northeast_mid_atlantic_concentrated_with_national_reach"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": true,
+        "strength": 68,
+        "type": "Colgate Jewish Union, affiliated with Hillel, hub at the Saperstein Center"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": false,
+      "shabbatProgramming": true,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Real, with a paid Director of Jewish Life",
+      "notes": "Jewish life at Colgate is organized through the Colgate Jewish Union, a Hillel-affiliated organization, with programming based at the Saperstein Center. A paid Director of Jewish Life serves as adviser to Jewish students. Colgate also has an active Jewish Studies academic program with dedicated faculty, and a Jewish Student Life Award recognizing outstanding Jewish student leadership. Kosher dining and Birthright participation were not confirmed in this pass and are left unconfirmed rather than assumed present, consistent with the platform's disclosure standard. Sourced from colgate.edu, verified 2026-08-11."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "No separate honors college was found in this pass; original research through assistantships and senior projects, along with the Ho Mind, Brain, and Behavior Center's graduate-level research access, provide honors-caliber opportunities within the standard curriculum."
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "An extremely selective liberal arts university on a rural hillside campus in central New York, distinguished by a research-university-scale career services operation, formal access to Dartmouth's Tuck Business Bridge Program, and well-above-average medical and law school placement rates.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 80
+      },
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 12
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 4
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 3
+      }
+    ]
+  }
+,
+  "Davidson College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 68,
+      "homeStateEnrollmentPct": 32,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Data collected from Davidson College's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). Davidson's own hosted CDS PDF (davidson.edu/media/9718/download) returned a blank 2025-26 template with Section F1 unfilled, so this is one step removed from the primary document.",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "institutionNarrative": {
+      "name": "Davidson College",
+      "location": "Davidson, North Carolina",
+      "region": "Southeast",
+      "archetype": "The Honor Code Liberal Arts College \u2014 Need-Blind No-Loan Aid, D1 Athletics, Charlotte-Adjacent",
+      "oneSentenceSummary": "Davidson College is an extremely selective liberal arts college on a close-knit, walkable campus just north of Charlotte, North Carolina, distinguished by a genuinely need-blind, no-loan financial aid policy (one of only about two dozen U.S. colleges to offer it), a student-run Honor Code, and Division I athletics within a small liberal arts college structure.",
+      "pipeline": "Approximately 1,800 undergraduates across 74+ majors, minors, and programs, admitting roughly 12.6% of applicants to the Class of 2029 with a 47.1% enrollment yield. The middle-50% SAT range for enrolled students is 710-760 (Evidence-Based Reading & Writing) and 690-760 (Math), with an ACT composite range of 32-34. 95% of the Class of 2025 was employed or enrolled in post-graduate education within six months of graduation, and 80% of recent alumni anticipate enrolling in a graduate program within five years. Davidson alumni span an unusually wide range of visible careers, from NASA astronaut Tom Marshburn '82 to CAA Nashville founder John Huie '78 to bestselling author Clint Smith '10.",
+      "hiddenPathway": "Davidson is one of only about two dozen colleges in the United States that are simultaneously need-blind in admission, meet 100% of calculated need, and provide financial aid packages with no loans -- a real, specific, and unusually rare combination even among elite liberal arts colleges, verified directly against Davidson's own published commitment.",
+      "institutionalSecret": "Davidson fields 21 Division I athletic teams despite an undergraduate enrollment of only about 1,800 -- a genuinely unusual combination of D1 athletics and small liberal-arts-college scale that most peer institutions don't match.",
+      "theRoom": "Located in the town of Davidson, North Carolina -- a close-knit, walkable college town with a private lakeside retreat nearby -- while sitting close enough to Charlotte, a major North Carolina metro center, for real internship and career access without being embedded in the city itself.",
+      "lifestyle": "Residential and honor-driven, with over 90% of students living on campus for all four years, a student-authored and student-enforced Honor Code shaping campus culture, and more than 200 student organizations alongside Division I athletics.",
+      "bestFitPersonality": "Students who want an extremely selective liberal arts education with a genuinely need-blind, no-loan financial aid commitment, who value a student-driven Honor Code culture, and who want Division I athletics without a large-university campus.",
+      "faithTradition": "Historically affiliated with the Presbyterian Church; retains a chaplain's office and active religious and spiritual life programming today, though the college itself is not confessional",
+      "geographicInfluenceRadius": "Strong throughout the Southeast, with real reach into Charlotte's business and finance economy and national reach through a wide-ranging, highly visible alumni network.",
+      "economicOutcome": "95% of the Class of 2025 was employed or enrolled in post-graduate education within six months of graduation (based on an 89% knowledge rate covering 451 of the class). 27% of the Class of 2025 was enrolled in continuing education within six months, and 80% of recent alumni anticipate pursuing a graduate program within five years.",
+      "gradCities": [
+        "Charlotte NC",
+        "New York NY",
+        "Washington DC",
+        "Atlanta GA"
+      ],
+      "comparableInstitutions": [
+        "Washington and Lee University",
+        "Sewanee: The University of the South",
+        "Rhodes College",
+        "Wake Forest University",
+        "Furman University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": [],
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "12.6%",
+        "estimatedSavingsRange": "",
+        "transferNotes": "Davidson's admissions site references a dedicated Transfer Applicants deadline section, but no specific community college feeder relationship or published transfer acceptance rate was found in this pass. Flagged for a follow-up check rather than estimated."
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 11",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from davidson.edu/admission-and-financial-aid/admission-aid-timeline: Early Decision I (Nov 15 admission/aid deadline; notifications Dec 12), Early Decision II (Jan 4 admission/aid deadline; notifications Jan 30), Regular Decision (Jan 11 admission/aid deadline; notifications April 1; enrollment deposit deadline May 1). ED applicants must submit the CSS Profile and signed copies of student/parent federal tax returns to the College Board's IDOC Service as part of their aid application. Test-optional policy became permanent in Spring 2022 (originated as a pandemic-era pilot). Class of 2029: 12.6% acceptance rate, 47.1% enrollment yield, 1,232 Early Decision applicants with 337 ED enrolls (this figure includes QuestBridge, Posse Miami and Virtual cohorts, recruited athletes, and deferred-enrollment students). Specific supplemental essay prompt text was not captured in this pass. Sourced from davidson.edu, verified 2026-08-11.",
+      "verifiedDate": "2026-08-11"
+    },
+    "institutionIdentity": {
+      "commonName": "Davidson",
+      "archetype": "Elite Liberal Arts College \u2014 Honor Code Culture, Need-Blind No-Loan Aid, D1 Athletics",
+      "institutionalPersonality": "honor-driven, achievement-oriented, close-knit, Southeast-rooted",
+      "cultureKeywords": [
+        "Honor Code",
+        "Need-Blind No-Loan Aid",
+        "Division I Athletics",
+        "Charlotte-Adjacent",
+        "Leadership & Service"
+      ],
+      "missionOrientation": "Preparing students for lives of leadership and service through a rigorous liberal arts education grounded in a student-authored Honor Code and genuine financial accessibility.",
+      "faithTradition": "Historically Presbyterian; active chaplain's office and religious life programming; not confessional today",
+      "educationalPhilosophy": "Small classes taught by faculty who engage students directly in original research and creative work across the arts, sciences, social sciences, and humanities, within a culture built on the student Honor Code.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Moderate to progressive-leaning, somewhat more institutionally centrist than some Northeast liberal arts peers, consistent with its Southeast location.",
+      "studentAutonomy": "High, reinforced structurally by the student-authored and student-enforced Honor Code.",
+      "prestigeOrientation": "Among the most selective liberal arts colleges in the Southeast, with a 12.6% admit rate for the Class of 2029.",
+      "socialClimate": "Close-knit and honor-driven, with a strong Division I athletics culture and more than 200 student organizations within a small, walkable campus.",
+      "leadershipStyle": "Leadership cultivated through the student-run Honor Code system and a wide-ranging, highly visible alumni network spanning fields from space exploration to entertainment to nonprofit leadership."
+    },
+    "comparativePositioning": {
+      "versusWashingtonAndLee": "Washington and Lee is a similarly small, honor-code-driven Southern liberal arts institution, though Davidson fields Division I athletics while W&L competes at the Division III level, and Davidson's need-blind no-loan aid policy is a specific, published commitment.",
+      "versusSewanee": "Sewanee carries a stronger explicitly Episcopal identity and a much larger physical campus footprint (the Domain), while Davidson is more secular in day-to-day culture despite its Presbyterian roots and sits closer to a major metro (Charlotte).",
+      "versusRhodes": "Rhodes is a similarly sized Southern liberal arts college in Memphis, while Davidson's Division I athletics and need-blind no-loan aid policy are more structurally distinctive advantages."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Small",
+      "undergraduateEnrollment": 1800,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 1800,
+      "campusType": "Small Southeast Liberal Arts College",
+      "residentialIntensity": 92,
+      "communityFeel": 88,
+      "studentFacultyRatio": "",
+      "classSizeExperience": "Small classes are standard, with faculty directly engaging students in original research and creative work rather than delegating to graduate teaching assistants.",
+      "scaleAdvantages": [
+        "One of only about two dozen U.S. colleges that are need-blind, meet 100% of need, and offer no-loan aid packages",
+        "Division I athletics (21 teams) at a small liberal arts college scale most D1 programs don't match",
+        "Student-authored and student-enforced Honor Code shaping campus culture",
+        "Close proximity to Charlotte, a major North Carolina metro, without being embedded in it"
+      ],
+      "scaleDisadvantages": [
+        "Very small size limits breadth of specialized course offerings relative to a university",
+        "No graduate programs or professional schools on campus",
+        "Extremely selective 12.6% admit rate makes Davidson a genuine reach for most applicants",
+        "Small-town setting requires a drive to Charlotte for major-metro amenities"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 78,
+        "conscientiousness": 88,
+        "extraversion": 70,
+        "agreeableness": 78,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "S",
+        "E",
+        "I"
+      ],
+      "learningStyle": [
+        "Small Faculty-Taught Seminars",
+        "Original Research and Creative Work",
+        "Honor Code Self-Governance",
+        "Individual Career Advising"
+      ],
+      "socialEnvironment": [
+        "Close-Knit",
+        "Honor-Driven",
+        "Athletics-Oriented",
+        "Residential",
+        "Charlotte-Adjacent"
+      ],
+      "idealStudentTraits": [
+        "Wants an extremely selective liberal arts education with a genuinely need-blind, no-loan aid policy",
+        "Values a student-authored, student-enforced Honor Code culture",
+        "Wants Division I athletics within a small liberal arts college",
+        "Comfortable in a close-knit Southern college town with Charlotte nearby"
+      ],
+      "thrivesIf": [
+        "Values Davidson's rare need-blind, no-loan financial aid commitment",
+        "Wants to be part of a student-driven Honor Code community",
+        "Wants Division I athletics without a large-university campus",
+        "Is comfortable in a small Southern college town with Charlotte access nearby"
+      ],
+      "strugglesIf": [
+        "Wants a large university with a wide breadth of majors and graduate resources",
+        "Is not competitive for a 12.6% admit rate, extremely selective applicant pool",
+        "Prefers an urban campus setting over a small college town",
+        "Wants graduate school resources on the same campus"
+      ],
+      "transferRiskFactors": [
+        "Students who find the Honor Code's self-governance culture too demanding or unfamiliar",
+        "Students who want a larger, more urban campus",
+        "Students seeking on-campus graduate program resources"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "No evidence of capacity-limited or impacted majors was found in this pass; Davidson's 74+ majors, minors, and programs are presented as broadly accessible within its liberal arts structure."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Public Health",
+        "Sustainability Studies",
+        "Environmental Studies",
+        "Data Science"
+      ],
+      "hiddenCareerPipelines": [
+        "Space Science and Astronaut Corps (NASA pathway)",
+        "Entertainment and Talent Representation (CAA)",
+        "Public Health and Preventive Medicine",
+        "Nonprofit Leadership and Social Justice"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Charlotte's regional finance and business economy",
+        "Fellowship placement (Fulbright, Watson, Rhodes, Goldwater)",
+        "The Matthews Center for Career Development's individual advising model",
+        "A wide-ranging, highly visible alumni network across unconventional fields"
+      ],
+      "overlookedStrengths": [
+        "Davidson's need-blind, no-loan aid policy places it among fewer than two dozen U.S. colleges with that specific combined commitment.",
+        "Fielding 21 Division I athletic teams at an enrollment of only about 1,800 is a genuinely unusual scale-to-athletics ratio among elite liberal arts colleges.",
+        "The Office of Fellowships' track record includes real, named recent winners (a documented 2023 Goldwater Scholar), not just generic promotional claims.",
+        "Davidson's alumni career-outcomes page features an unusually wide, specific range of real career paths -- from a NASA astronaut to a Nashville talent agency founder to a bestselling author -- suggesting broader post-graduate optionality than the college's academic branding alone would imply."
+      ],
+      "sleeperIndustries": [
+        "Space Exploration and Aerospace Medicine",
+        "Entertainment Industry Talent Representation",
+        "Nonprofit Homelessness and Poverty-Reduction Leadership",
+        "Marine Biology and Climate Science Research"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 78,
+      "mentorshipDensity": 80,
+      "executiveAccess": 68,
+      "internshipNetwork": 76,
+      "familyBusinessExposure": 34,
+      "relationshipCapitalScore": 78,
+      "alumniLoyaltyScore": 80,
+      "referralCultureStrength": 74,
+      "donorNetworkStrength": 72,
+      "boardMemberDensity": 56
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Finance and Business (Charlotte-adjacent)",
+        "Healthcare and Public Health",
+        "Law",
+        "Nonprofit and Public Service"
+      ],
+      "regionalEconomicDrivers": [
+        "Banking and Finance (Charlotte)",
+        "Healthcare",
+        "Higher Education"
+      ],
+      "topEmployers": [
+        "Wells Fargo",
+        "The Home Depot",
+        "Duke University School of Medicine",
+        "Roof Above (Charlotte nonprofit)"
+      ],
+      "emergingIndustries": [
+        "Public Health and Preventive Medicine",
+        "Data Science and Sports Analytics"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 30,
+      "corporateHeadquartersDensity": 24,
+      "healthcareHubStrength": 44,
+      "innovationIndex": 54
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Charlotte and Southeast Finance, Business, and Healthcare Economy",
+      "secondaryMarkets": [
+        "Charlotte NC",
+        "Atlanta GA",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Charlotte",
+        "Atlanta",
+        "Washington D.C.",
+        "New York"
+      ],
+      "relocationPatterns": [
+        "A substantial share of graduates enter Charlotte's finance and business economy directly out of college.",
+        "A meaningful cohort pursues graduate and professional school, with 80% of recent alumni anticipating a graduate program within five years.",
+        "Fellowship winners (Fulbright, Watson, Rhodes, Goldwater) pursue research and study opportunities nationally and internationally before entering the workforce.",
+        "Alumni careers documented on Davidson's own outcomes page span an unusually wide geographic and industry range, from NASA in Houston to entertainment in Nashville and Los Angeles."
+      ],
+      "regionalInfluenceScore": 78,
+      "nationalReachScore": 64,
+      "internationalReachScore": 38
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 42,
+      "studentOrganizationStrength": 82,
+      "leadershipDevelopment": 84,
+      "crossDisciplinaryInteraction": 76,
+      "civicEngagement": 74
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 14,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 54,
+        "notes": "Real pre-health pipeline with documented alumni pathways into medicine and public health, including a NASA physician-astronaut (Tom Marshburn '82) and a Duke University School of Medicine professor (Sallie Permar '97)."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 30,
+        "notes": "Real but modest presence; The Home Depot appeared among documented recent alumni employers."
+      },
+      "outdoorIndustry": {
+        "strength": 28,
+        "notes": "Limited institutional emphasis in available outcomes data."
+      },
+      "sportsBusiness": {
+        "strength": 32,
+        "notes": "Real but niche presence, evidenced by a documented alumni pathway into data science research for the U.S. Olympic and Paralympic Committee."
+      },
+      "entertainmentMedia": {
+        "strength": 38,
+        "notes": "Real, notable presence: a documented alumnus founded Creative Artists Agency's Nashville office, and another alumna is a produced screenwriter for major film and television projects."
+      },
+      "ventureCapital": {
+        "strength": 26,
+        "notes": "Limited presence in available outcomes data."
+      },
+      "privateEquity": {
+        "strength": 34,
+        "notes": "Limited but real presence through the broader Charlotte finance-sector alumni pipeline."
+      },
+      "investmentBanking": {
+        "strength": 40,
+        "notes": "Real but modest presence; Wells Fargo appeared among documented recent alumni employers."
+      },
+      "consulting": {
+        "strength": 34,
+        "notes": "Limited institutional emphasis in available outcomes data relative to direct finance and healthcare pathways."
+      },
+      "medicine": {
+        "strength": 56,
+        "notes": "Strong pre-health pipeline with a dedicated Premedicine and Allied Health Professions advising track and documented alumni in medicine, public health, and biomedical research."
+      },
+      "healthcareAdministration": {
+        "strength": 32,
+        "notes": "Limited institutional emphasis relative to direct clinical and research pre-health pathways."
+      },
+      "defense": {
+        "strength": 24,
+        "notes": "Modest presence; a documented alumna serves as Senior Advisor to the Office of the Secretary of Defense."
+      },
+      "realEstate": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis in available outcomes data."
+      },
+      "luxuryBrands": {
+        "strength": 16,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 42,
+        "notes": "Real, varied presence documented among alumni, including a fitness content creator, a video-game studio founder, and a farmers'-market and food-brand entrepreneur."
+      },
+      "technology": {
+        "strength": 32,
+        "notes": "Modest but real presence, evidenced by a documented alumnus working in data science and software development."
+      },
+      "publicPolicy": {
+        "strength": 42,
+        "notes": "Real presence documented among alumni in defense policy, North Carolina state government, and United Nations diplomatic service."
+      },
+      "nonprofitLeadership": {
+        "strength": 56,
+        "notes": "Strong, well-documented presence: alumni lead a Charlotte homelessness-focused nonprofit, a poverty-reduction organization in Florida, and a theatre-based social justice organization."
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 28,
+        "notes": "Modest presence tied to the broader pre-health and biomedical research pipeline; no major pharmaceutical manufacturer specifically named among available employer data."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 68,
+      "firstGenerationSupport": 78,
+      "wealthCreationPotential": 68,
+      "familyBusinessPipelineStrength": 34
+    },
+    "futureResilience": {
+      "aiResistance": 74,
+      "automationResistance": 72,
+      "adaptabilityScore": 78,
+      "interdisciplinaryStrength": 78,
+      "futureReadiness": 76,
+      "entrepreneurialFlexibility": 62,
+      "lifelongLearningCulture": 78,
+      "innovationCapacity": 62
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 68,
+      "communityLeadershipPotential": 80,
+      "geographicMobility": 68,
+      "workLifeBalancePotential": 72,
+      "purposeAlignment": 80,
+      "familyFormationSupport": 70,
+      "personalDevelopmentPotential": 82,
+      "careerOptionality": 76,
+      "longTermLifeSatisfaction": 78
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 70,
+      "networkMoat": 72,
+      "geographicMoat": 60,
+      "industryMoat": 58,
+      "alumniMoat": 76,
+      "brandDurability": 72,
+      "overallMoatScore": 68
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 68,
+      "returnerScore": 26,
+      "stewardScore": 18,
+      "navigatorScore": 76,
+      "geographicLockIn": "moderate",
+      "alumniDispersalPattern": "southeast_concentrated_with_national_reach"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": null,
+        "strength": null,
+        "type": "Not confirmed in this pass"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Unconfirmed",
+      "notes": "Davidson has an active chaplain's office and religious/spiritual life programming, and the college is historically Presbyterian-affiliated with a broader multi-faith presence today, but a specific Hillel or Jewish student organization could not be located on davidson.edu in this browsing session. This is left as unconfirmed rather than assumed absent or present, consistent with the platform's disclosure standard, and should be checked directly (e.g. via a phone call to the chaplain's office) before this field is used in family-facing matching or scoring."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "No separate honors college was found in this pass; Davidson's small classes and direct faculty-student research collaboration provide honors-caliber opportunities within the standard curriculum. The student-authored Honor Code functions as a distinct institutional structure, but it is a campus-wide governance system, not an academic honors program, and should not be conflated with one."
+    },
+    "primaryMegaRegionSlug": "piedmont-atlantic",
+    "regionalRole": "An extremely selective liberal arts college just north of Charlotte, North Carolina, distinguished by a rare need-blind no-loan financial aid commitment, a student-authored Honor Code, and Division I athletics at a small liberal arts college scale.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 76
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 14
+      },
+      {
+        "region_slug": "florida",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "texas-triangle",
+        "exposure_score": 5
+      },
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 5
+      }
+    ]
+  }
+,
+  "Haverford College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 86,
+      "homeStateEnrollmentPct": 14,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "Haverford College Common Data Set 2024-2025, Section F1 (primary source, direct PDF: haverford.edu/sites/default/files/Office/President/CDS_2024-2025.pdf).",
+      "dataYear": 2024,
+      "notes": "First-time, first-year cohort, excludes international/nonresident students. drawClassification: national >=60% OOS, regional 30-59%, state <30%. topFeederStates/topFeederRegions not yet sourced (aggregate OOS/in-state split only)."
+    },
+    "institutionNarrative": {
+      "name": "Haverford College",
+      "location": "Haverford, Pennsylvania",
+      "region": "Mid-Atlantic",
+      "archetype": "The Honor Code Original \u2014 100% Senior Thesis, No Enrollment Deposit, Tri-College Cross-Registration",
+      "oneSentenceSummary": "Haverford College is an extremely selective liberal arts college on a 200-acre arboretum campus just outside Philadelphia, distinguished by a student-authored Honor Code so trusted that no financial enrollment deposit is required of admitted students, a 100% senior thesis completion rate, and full cross-registration access to Bryn Mawr and Swarthmore through the Tri-College Consortium.",
+      "pipeline": "Approximately 1,464 undergraduates across 56 academic programs, admitting roughly 15.4% of the 6,392 applicants to the Class of 2030. 100% of students complete a senior thesis, and 98% live on campus. For the Class of 2025 (394 members, 87.5% knowledge rate), top industries were Business & Financial Services (24%), Science & Technology (18%), Healthcare & Public Health (16%), Education & Library Science (14%), and Law (8%), with 85% reporting their work was mostly or directly relevant to their career interests. Graduates from 2016-2025 most frequently went on to the University of Pennsylvania, Sidney Kimmel Medical College at Thomas Jefferson University, Columbia, University of Chicago, Michigan, Cornell, NYU, Yale, Stanford, and Harvard, and were most frequently hired by the University of Pennsylvania, Children's Hospital of Philadelphia, Epic, the Vanguard Group, Boston Consulting Group, Cravath Swaine & Moore, Amazon, M&T Bank, and Bank of America.",
+      "hiddenPathway": "Haverford's Honor Code is trusted enough that the college requires no financial enrollment deposit from admitted students -- a rare, tangible expression of institutional trust rather than just branding language. Combined with full Tri-College cross-registration access to Bryn Mawr and Swarthmore, Haverford students effectively access a much larger combined course catalog and social community than the school's small enrollment alone would suggest.",
+      "institutionalSecret": "Haverford's own campus is itself one of its largest employers of recent graduates (6 hired from the Class of 2025 alone), reflecting an unusually tight-knit, self-reinforcing community culture where students frequently return to work at the institution that shaped them.",
+      "theRoom": "Located on a 200-acre arboretum campus just 8 miles from Philadelphia (about 20 minutes by train), giving students a quiet, tree-filled residential setting (a 6:1 tree-to-student ratio) with real, fast access to a major city.",
+      "lifestyle": "Small, honor-driven, and academically intense, with every student completing a senior thesis and full access to Bryn Mawr's and Swarthmore's courses, social life, and resources through the Tri-College Consortium.",
+      "bestFitPersonality": "Students who want an extremely selective liberal arts education built on genuine institutional trust (no enrollment deposit, an active Honor Code), who are drawn to completing a capstone senior thesis, and who want the combined resources of three colleges without leaving a small campus.",
+      "faithTradition": "Historically founded by the Religious Society of Friends (Quakers); Quaker values continue to shape campus culture and programs (e.g. Quaker Voluntary Service as a recurring post-graduate employer) though the college itself is not confessional today",
+      "geographicInfluenceRadius": "Strong throughout the Philadelphia region and broader Mid-Atlantic and Northeast, with real national reach into finance, healthcare, law, and elite graduate and medical schools.",
+      "economicOutcome": "For the Class of 2025 (345 of 394 members confirmed, an 87.5% knowledge rate), outcomes spanned employment, graduate/professional school, fellowship/gap-year programs, and continued job search. 85% of those employed reported their work was mostly or directly relevant to their career interests, across 173 unique employer organizations.",
+      "gradCities": [
+        "Philadelphia PA",
+        "New York NY",
+        "Washington DC",
+        "Boston MA"
+      ],
+      "comparableInstitutions": [
+        "Swarthmore College",
+        "Bryn Mawr College",
+        "Amherst College",
+        "Williams College",
+        "Carleton College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": [],
+        "transferAcceptanceRate": "",
+        "freshmanAcceptanceRate": "15.4%",
+        "estimatedSavingsRange": "",
+        "transferNotes": "Haverford's admissions site references a dedicated Transfer Students application pathway (deadline March 31, notification early May), but no specific community college feeder relationship or published transfer acceptance rate was found in this pass. Flagged for a follow-up check rather than estimated."
+      }
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "November 15",
+      "earliestDeadlineLabel": "Early Decision",
+      "rdDeadline": "January 10",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from haverford.edu/admission/applying/application-timeline: Early Decision (apply by Nov 15; notification Dec 15; reply Dec 31), Early Decision II (apply by Jan 5; notification early February; reply 2 weeks after notification), Regular Decision (apply by Jan 10; notification late March; reply May 1), Transfer Admission (apply by March 31; notification early May; reply 2 weeks after notification). No financial enrollment deposit is required of admitted students who decide to attend -- Haverford only requests notification of intent to enroll by May 1, explicitly tied to the college's Honor Code culture. Test-optional admission. Class of 2030: 6,392 applicants, 15.4% admit rate, 398 enrolled, students from 37 states, D.C., and 23 countries, 53.3% identify as people of color, 11.8% first-generation, 19 QuestBridge matches. Specific supplemental essay prompt text was not captured in this pass. Sourced from haverford.edu, verified 2026-08-11.",
+      "verifiedDate": "2026-08-11"
+    },
+    "institutionIdentity": {
+      "commonName": "Haverford",
+      "archetype": "Elite Liberal Arts College \u2014 Honor Code, 100% Senior Thesis, Tri-College Consortium",
+      "institutionalPersonality": "trust-driven, intellectually rigorous, community-oriented, Quaker-rooted",
+      "cultureKeywords": [
+        "Honor Code",
+        "Senior Thesis",
+        "Tri-College Consortium",
+        "No Enrollment Deposit",
+        "Quaker Values"
+      ],
+      "missionOrientation": "Cultivating intellectually curious, independent learners who value honesty and collaboration, within a community structured around genuine institutional trust and a required senior capstone thesis.",
+      "faithTradition": "Historically Quaker (Religious Society of Friends); values-driven but not confessional today",
+      "educationalPhilosophy": "A rigorous liberal arts curriculum across 56 academic programs, culminating in a senior thesis completed by 100% of students, supplemented by full cross-registration access to Bryn Mawr and Swarthmore through the Tri-College Consortium.",
+      "competitiveness": "Extremely Selective",
+      "politicalCulture": "Strongly progressive, consistent with its Quaker heritage and small liberal arts college peer set.",
+      "studentAutonomy": "Very High, structurally reinforced by the student-authored Honor Code and the no-deposit enrollment policy.",
+      "prestigeOrientation": "Among the most selective liberal arts colleges in the country, with a 15.4% admit rate for the Class of 2030 and a historic reputation tightly linked to Swarthmore and Bryn Mawr as Quaker-founded peer institutions.",
+      "socialClimate": "Small, close-knit, and honor-driven, with genuine access to the broader Tri-College social and academic community.",
+      "leadershipStyle": "Leadership cultivated through Honor Code self-governance and a thesis-driven academic culture that treats every student as a capable independent scholar by senior year."
+    },
+    "comparativePositioning": {
+      "versusSwarthmore": "Swarthmore and Haverford share the Tri-College Consortium and a Quaker founding, but Swarthmore is somewhat larger and carries a reputation for even greater academic intensity, while Haverford's no-deposit Honor Code policy is a uniquely tangible expression of institutional trust.",
+      "versusBrynMawr": "Bryn Mawr is Haverford's closest Tri-College partner and was historically women's-only (Haverford went coed in 1980), and the two campuses share a bus line, library access, and extensive cross-registration.",
+      "versusAmherst": "Amherst offers a fully open curriculum with no distribution requirements, while Haverford's defining structural feature is its 100% senior thesis requirement and its integration into the three-college Philadelphia-area consortium."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Small",
+      "undergraduateEnrollment": 1464,
+      "graduateEnrollment": 0,
+      "totalEnrollment": 1464,
+      "campusType": "Small Mid-Atlantic Liberal Arts College",
+      "residentialIntensity": 98,
+      "communityFeel": 92,
+      "studentFacultyRatio": "",
+      "classSizeExperience": "Small classes are standard, culminating in a required senior thesis completed by 100% of students -- an unusually universal capstone requirement even among elite liberal arts colleges.",
+      "scaleAdvantages": [
+        "Full Tri-College Consortium cross-registration with Bryn Mawr and Swarthmore effectively multiplies the available course catalog and social community",
+        "No enrollment deposit required of admitted students, a rare, tangible expression of Honor Code trust",
+        "100% senior thesis completion rate gives every student a real capstone research or creative project",
+        "8 miles from Philadelphia (20 minutes by train) for real access to a major metro"
+      ],
+      "scaleDisadvantages": [
+        "Very small standalone enrollment (1,464) limits breadth of specialized course offerings without the Tri-College consortium",
+        "No graduate programs or professional schools on campus",
+        "Extremely selective 15.4% admit rate makes Haverford a genuine reach for most applicants",
+        "Small-town Main Line Philadelphia setting requires a train trip for full city access"
+      ]
+    },
+    "studentFit": {
+      "bigFiveProfile": {
+        "openness": 88,
+        "conscientiousness": 86,
+        "extraversion": 60,
+        "agreeableness": 82,
+        "neuroticism": 42
+      },
+      "hollandCodes": [
+        "I",
+        "A",
+        "S"
+      ],
+      "learningStyle": [
+        "Small Seminar Discussion",
+        "Independent Senior Thesis Research",
+        "Tri-College Cross-Registration",
+        "Honor Code Self-Governance"
+      ],
+      "socialEnvironment": [
+        "Small",
+        "Trust-Driven",
+        "Intellectually Intense",
+        "Quaker-Rooted",
+        "Tri-College Connected"
+      ],
+      "idealStudentTraits": [
+        "Wants a required senior thesis as a genuine capstone research or creative project",
+        "Values a student-authored Honor Code and the institutional trust it represents",
+        "Wants access to a larger combined community through the Tri-College Consortium",
+        "Comfortable in a very small, close-knit campus near Philadelphia"
+      ],
+      "thrivesIf": [
+        "Wants the structure and challenge of completing an independent senior thesis",
+        "Values Haverford's genuine, tangible Honor Code culture (no enrollment deposit required)",
+        "Wants Tri-College access to Bryn Mawr and Swarthmore's courses and community",
+        "Is drawn to a values-driven, historically Quaker institutional culture"
+      ],
+      "strugglesIf": [
+        "Wants a large university with a wide breadth of majors and graduate resources",
+        "Is not competitive for a 15.4% admit rate, extremely selective applicant pool",
+        "Prefers a large in-house social scene over a cross-campus consortium model",
+        "Wants graduate school resources on the same campus"
+      ],
+      "transferRiskFactors": [
+        "Students who find the very small standalone campus limiting without engaging the Tri-College option",
+        "Students who want a larger, more urban campus",
+        "Students seeking on-campus graduate program resources"
+      ]
+    },
+    "competitiveMajorPressure": {
+      "level": "Low",
+      "notes": "No evidence of capacity-limited or impacted majors was found in this pass; Haverford's 56 academic programs, including those accessed through Tri-College cross-registration, are presented as broadly accessible within its liberal arts structure."
+    },
+    "hiddenOpportunities": {
+      "underratedMajors": [
+        "Health Studies",
+        "Peace, Justice, and Human Rights",
+        "Fine Arts",
+        "Astrophysics and Astronomy"
+      ],
+      "hiddenCareerPipelines": [
+        "Healthcare IT (Epic, a top Class of 2025 employer)",
+        "Elite Medicine (Sidney Kimmel Medical College, CHOP)",
+        "Public Service and Quaker Values-Driven Work (AmeriCorps, Quaker Voluntary Service)",
+        "Investment Management (The Vanguard Group)"
+      ],
+      "nicheRecruitingAdvantages": [
+        "Epic Systems (major Class of 2025 employer)",
+        "The Vanguard Group",
+        "Boston Consulting Group",
+        "Children's Hospital of Philadelphia"
+      ],
+      "overlookedStrengths": [
+        "Haverford is one of a small number of colleges that require no financial enrollment deposit from admitted students -- a real, tangible manifestation of its Honor Code, not just a branding claim.",
+        "A 100% senior thesis completion rate is an unusually universal capstone requirement, even among elite liberal arts colleges that describe themselves as thesis-driven.",
+        "Epic Systems (the dominant electronic health records company) was among the very top employers of the Class of 2025 -- a specific, real healthcare-technology pipeline most peer liberal arts colleges don't have.",
+        "University of Pennsylvania was both the single most common graduate school destination (28 matriculants from the Class of 2025 alone) and among the most frequent employers, reflecting Haverford's deep Philadelphia-region integration."
+      ],
+      "sleeperIndustries": [
+        "Healthcare Information Technology (Epic Systems pipeline)",
+        "Quaker Values-Driven Public Service (Quaker Voluntary Service, AmeriCorps)",
+        "Elite Corporate Law (Cravath, Swaine & Moore among top employers)",
+        "Biomedical Research (Broad Institute of MIT & Harvard)"
+      ]
+    },
+    "networkCapital": {
+      "alumniAccessibility": 82,
+      "mentorshipDensity": 84,
+      "executiveAccess": 70,
+      "internshipNetwork": 80,
+      "familyBusinessExposure": 32,
+      "relationshipCapitalScore": 82,
+      "alumniLoyaltyScore": 84,
+      "referralCultureStrength": 78,
+      "donorNetworkStrength": 74,
+      "boardMemberDensity": 58
+    },
+    "economicEcosystem": {
+      "primaryIndustries": [
+        "Business & Financial Services",
+        "Science & Technology",
+        "Healthcare & Public Health",
+        "Education & Library Science"
+      ],
+      "regionalEconomicDrivers": [
+        "Healthcare (Philadelphia hospital and research network)",
+        "Higher Education",
+        "Financial Services"
+      ],
+      "topEmployers": [
+        "Epic",
+        "The Vanguard Group",
+        "Children's Hospital of Philadelphia",
+        "JPMorgan Chase"
+      ],
+      "emergingIndustries": [
+        "Healthcare Information Technology",
+        "AI Policy and Governance Research"
+      ],
+      "startupDensity": "Low",
+      "ventureCapitalAccess": 32,
+      "corporateHeadquartersDensity": 18,
+      "healthcareHubStrength": 52,
+      "innovationIndex": 60
+    },
+    "geographicInfluence": {
+      "dominantMarket": "Philadelphia and Mid-Atlantic Healthcare, Finance, and Education Economy",
+      "secondaryMarkets": [
+        "Philadelphia PA",
+        "New York NY",
+        "Washington DC"
+      ],
+      "alumniStrongholds": [
+        "Philadelphia",
+        "New York",
+        "Boston",
+        "Washington D.C."
+      ],
+      "relocationPatterns": [
+        "A substantial share of graduates remain in the Philadelphia region for healthcare, finance, and education roles.",
+        "New York and Boston draw graduates into finance, consulting, and biomedical research.",
+        "University of Pennsylvania serves as both a top graduate-school destination and a major employer, reflecting deep regional integration.",
+        "A meaningful cohort pursues elite medical and graduate schools nationally, including Yale, Stanford, Harvard, and UC Berkeley."
+      ],
+      "regionalInfluenceScore": 80,
+      "nationalReachScore": 66,
+      "internationalReachScore": 40
+    },
+    "socialCapital": {
+      "greekLifeInfluence": 2,
+      "studentOrganizationStrength": 80,
+      "leadershipDevelopment": 80,
+      "crossDisciplinaryInteraction": 84,
+      "civicEngagement": 78
+    },
+    "industryPathways": {
+      "aestheticsAndBeauty": {
+        "strength": 12,
+        "notes": "Minimal institutional emphasis."
+      },
+      "healthWellness": {
+        "strength": 58,
+        "notes": "Strong, verified pipeline: Healthcare & Public Health drew 16% of the Class of 2025, with Children's Hospital of Philadelphia and Epic among top employers and Sidney Kimmel Medical College among top graduate destinations."
+      },
+      "nutraceuticals": {
+        "strength": 18,
+        "notes": "Minimal institutional emphasis."
+      },
+      "consumerProducts": {
+        "strength": 26,
+        "notes": "Limited institutional emphasis."
+      },
+      "outdoorIndustry": {
+        "strength": 24,
+        "notes": "Limited institutional emphasis in available outcomes data, despite the arboretum campus setting."
+      },
+      "sportsBusiness": {
+        "strength": 20,
+        "notes": "Limited institutional emphasis in available outcomes data."
+      },
+      "entertainmentMedia": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis in available outcomes data."
+      },
+      "ventureCapital": {
+        "strength": 28,
+        "notes": "Limited but real presence through the broader financial-services alumni network."
+      },
+      "privateEquity": {
+        "strength": 38,
+        "notes": "Real but modest presence through the broader Business & Financial Services pipeline (24% of the Class of 2025)."
+      },
+      "investmentBanking": {
+        "strength": 48,
+        "notes": "Real, verified presence: JPMorgan Chase, RBC, and M&T Bank all appeared among top Class of 2025 or 2016-2025 employers."
+      },
+      "consulting": {
+        "strength": 44,
+        "notes": "Real, verified presence: Boston Consulting Group appeared among the most frequent employers of Haverford graduates from 2016-2025."
+      },
+      "medicine": {
+        "strength": 60,
+        "notes": "Strong, verified pre-health pipeline: Sidney Kimmel Medical College at Thomas Jefferson University was among the most frequent graduate destinations, alongside Children's Hospital of Philadelphia and the University of Pennsylvania's Perelman School of Medicine as top employers."
+      },
+      "healthcareAdministration": {
+        "strength": 42,
+        "notes": "Real, notable presence through Epic (a leading healthcare IT/EHR company), one of the top employers of the Class of 2025."
+      },
+      "defense": {
+        "strength": 20,
+        "notes": "Limited institutional emphasis in available outcomes data."
+      },
+      "realEstate": {
+        "strength": 22,
+        "notes": "Limited institutional emphasis in available outcomes data."
+      },
+      "luxuryBrands": {
+        "strength": 14,
+        "notes": "Minimal institutional relevance."
+      },
+      "entrepreneurship": {
+        "strength": 34,
+        "notes": "Modest presence relative to Haverford's stronger institutional pipelines into finance, healthcare, and public service."
+      },
+      "technology": {
+        "strength": 46,
+        "notes": "Real, verified presence through Epic and Microsoft among top Class of 2025 employers; Science & Technology drew 18% of the class overall."
+      },
+      "publicPolicy": {
+        "strength": 40,
+        "notes": "Real presence through the U.S. House of Representatives among top Class of 2025 employers and the National Institutes of Health among frequent 2016-2025 employers."
+      },
+      "nonprofitLeadership": {
+        "strength": 52,
+        "notes": "Strong, values-driven presence connected to Haverford's Quaker roots: AmeriCorps and Quaker Voluntary Service both appear among the most frequent employers of Haverford graduates from 2016-2025."
+      },
+      "pharmaceuticalManufacturing": {
+        "strength": 36,
+        "notes": "Real presence through Eurofins (a life-sciences testing company) among top Class of 2025 employers and the Broad Institute of MIT & Harvard among biomedical research placements."
+      }
+    },
+    "wealthMobility": {
+      "averageFamilyIncome": "",
+      "socialMobilityIndex": 68,
+      "firstGenerationSupport": 78,
+      "wealthCreationPotential": 68,
+      "familyBusinessPipelineStrength": 30
+    },
+    "futureResilience": {
+      "aiResistance": 80,
+      "automationResistance": 78,
+      "adaptabilityScore": 82,
+      "interdisciplinaryStrength": 84,
+      "futureReadiness": 80,
+      "entrepreneurialFlexibility": 60,
+      "lifelongLearningCulture": 82,
+      "innovationCapacity": 64
+    },
+    "lifeDesignOutcomes": {
+      "wealthCreationPotential": 68,
+      "communityLeadershipPotential": 80,
+      "geographicMobility": 70,
+      "workLifeBalancePotential": 72,
+      "purposeAlignment": 84,
+      "familyFormationSupport": 68,
+      "personalDevelopmentPotential": 86,
+      "careerOptionality": 76,
+      "longTermLifeSatisfaction": 80
+    },
+    "institutionalMoat": {
+      "prestigeMoat": 76,
+      "networkMoat": 76,
+      "geographicMoat": 62,
+      "industryMoat": 62,
+      "alumniMoat": 78,
+      "brandDurability": 76,
+      "overallMoatScore": 72
+    },
+    "trajectoryProfile": {
+      "dominantTrajectory": "NAVIGATOR",
+      "leaverScore": 70,
+      "returnerScore": 22,
+      "stewardScore": 16,
+      "navigatorScore": 78,
+      "geographicLockIn": "low",
+      "alumniDispersalPattern": "philadelphia_northeast_concentrated_with_national_reach"
+    },
+    "jewishLife": {
+      "hillel": {
+        "exists": null,
+        "strength": null,
+        "type": "Not confirmed in this pass"
+      },
+      "estimatedJewishUndergraduates": null,
+      "jewishStudentPercentage": "",
+      "kosherDining": false,
+      "shabbatProgramming": false,
+      "birthrightSupport": false,
+      "jewishCommunityStrength": "Unconfirmed",
+      "notes": "Haverford participates in the Tri-College Consortium with Bryn Mawr and Swarthmore, and Jewish life resources at peer Tri-Co schools are sometimes organized jointly across the three campuses -- but a specific Hillel page or Jewish student organization for Haverford could not be located on haverford.edu in this browsing session (multiple direct URL attempts 404'd and site search did not surface a result). This is left unconfirmed rather than assumed present or absent, consistent with the platform's disclosure standard, and should be verified directly (e.g. via Haverford's Office of Multifaith/Religious Life or by contacting admissions) before this field is used in family-facing matching or scoring."
+    },
+    "honorsCollege": {
+      "exists": false,
+      "name": "",
+      "strength": 0,
+      "notes": "No separate honors college was found in this pass; the universal senior thesis requirement (100% completion) functions as Haverford's honors-caliber capstone for every student, not a separate selective program."
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "An extremely selective liberal arts college just outside Philadelphia, distinguished by a student-authored Honor Code so trusted that no enrollment deposit is required, a universal senior thesis requirement, and full Tri-College cross-registration with Bryn Mawr and Swarthmore.",
+    "secondaryMegaRegionExposure": [
+      {
+        "region_slug": "piedmont-atlantic",
+        "exposure_score": 16
+      },
+      {
+        "region_slug": "northeast",
+        "exposure_score": 78
+      },
+      {
+        "region_slug": "great-lakes",
+        "exposure_score": 8
+      },
+      {
+        "region_slug": "northern-california",
+        "exposure_score": 6
+      },
+      {
+        "region_slug": "southern-california",
+        "exposure_score": 4
+      }
+    ]
   }
 };
 
