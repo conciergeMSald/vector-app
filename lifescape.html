@@ -4731,7 +4731,15 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
     var payload = {
       session_id:       sessionId,
       session_hash:     sessionId,
-      email:            (window.sbSession && window.sbSession.user && window.sbSession.user.email) || '',
+      // BUGFIX (2026-08-14): only checked the legacy Supabase session, never
+      // Clerk (the current auth system) — same root cause confirmed in
+      // saveToSupabase() above. Real production Airtable data showed the
+      // same near-zero email capture this caused. Clerk checked first now,
+      // legacy session as fallback, matching saveToSupabase()'s resolution.
+      email:            ((window.Clerk && window.Clerk.user && window.Clerk.user.primaryEmailAddress
+                            && window.Clerk.user.primaryEmailAddress.emailAddress)
+                          || (window.sbSession && window.sbSession.user && window.sbSession.user.email)
+                          || ''),
       student_name:     LS_STATE.name                                                              || '',
       grade:            LS_STATE.grade                                                             || null,
       zip_code:         LS_STATE.zip                                                               || '',
@@ -6385,7 +6393,40 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
   var callA   = stateSnapshot.callAData || {};
   var hasSupabaseSession = !!(window.sbSession && window.sbSession.user);
 
+  // ── FAMILY-PORTAL-001 Addendum A4.1 — resolve the real sign-in email ────
+  // BUGFIX (2026-08-14): this function never sent email at all — confirmed
+  // by direct inspection, not the broken-but-present check the spec
+  // describes elsewhere. captureToAirtable() (a separate save path) reads
+  // window.sbSession.user.email; this function read neither identity
+  // system's email. Clerk is the current auth system, checked first; the
+  // legacy Supabase Auth session (window.sbSession, pre-Clerk-migration
+  // users only) is the fallback. Confirmed via direct Supabase query this
+  // session: 0% of families rows have ever gotten an email through this
+  // path, including submissions from today — this was a live gap, not
+  // stale historical data.
+  var resolvedEmail =
+    (window.Clerk && window.Clerk.user && window.Clerk.user.primaryEmailAddress
+      && window.Clerk.user.primaryEmailAddress.emailAddress) ||
+    (hasSupabaseSession && window.sbSession.user.email) ||
+    null;
+
+  // ── family_last_name — NEW (2026-08-14), not a port ──────────────────────
+  // No prior version of this function ever sent this field — confirmed by
+  // direct search across every available copy of this file. Per
+  // FAMILY-PORTAL-001-v2 Section 2c, intake is deliberately first-name-only
+  // by product design ("This is just for your Lifescape. Nothing is
+  // permanent."), so family_last_name has no student-facing source and was
+  // never meant to have one — Clerk is the only real source. window.Clerk.
+  // user.lastName is Clerk's standard client-side property, parallel to
+  // primaryEmailAddress above and to firstName. No legacy-session fallback:
+  // the pre-Clerk Supabase Auth session never collected a name at all, only
+  // email, so there is nothing to fall back to for pre-migration users.
+  var resolvedLastName =
+    (window.Clerk && window.Clerk.user && window.Clerk.user.lastName) || null;
+
   var payload = {
+    email:             resolvedEmail                     || null,
+    family_last_name:  resolvedLastName                  || null,
     student_name:      LS_STATE.name                     || null,
     zip:               LS_STATE.zip                      || null,
     gpa:               LS_STATE.gpa                      || null,
@@ -6499,9 +6540,7 @@ async function submitLifescape() {
     // ── callE (CC Pathway) — fires conditionally before parallel calls ──
     var _matchedForCC = (typeof matchUniversities !== 'undefined' && typeof UNIVERSITY_CONTENT !== 'undefined')
       ? matchUniversities(profile.college_prefs, profile.riasec, profile.naicsSectors, profile.comboUnlocks,
-          profile.gpa ? { raw: profile.gpa, type: profile.gpa_type, normalized: profile.gpa_normalized } : null,
-          LS_STATE.trajectoryResolved,
-          (typeof UNIVERSITY_DB_V5 !== 'undefined') ? UNIVERSITY_DB_V5 : null
+          profile.gpa ? { raw: profile.gpa, type: profile.gpa_type, normalized: profile.gpa_normalized } : null
         ).slice(0, 12)
       : [];
     var _ccShouldShow = shouldShowCCPathway(profile, _matchedForCC);
@@ -6698,9 +6737,7 @@ async function submitLifescape() {
           profile.riasec,
           _naicsForMatch,
           profile.comboUnlocks,
-          gpaData,
-          LS_STATE.trajectoryResolved,
-          (typeof UNIVERSITY_DB_V5 !== 'undefined') ? UNIVERSITY_DB_V5 : null
+          gpaData
         );
 
         // Jewish-track religious exclusion (SCHOOL-MATCH-INTEGRITY-001, Issue 5) —
