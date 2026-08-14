@@ -6859,12 +6859,39 @@ async function submitLifescape() {
         const matchedSchools = _rawMatches.slice(0, Math.max(12, _schoolCount * 2));
 
         console.log('[callD] matchedSchools:', matchedSchools.slice(0,5));
-        console.log('[callD] UNIVERSITY_CONTENT keys sample:', Object.keys(UNIVERSITY_CONTENT).slice(0,3));
+        console.log('[callD] UNIVERSITY_CONTENT keys sample:', typeof UNIVERSITY_CONTENT !== 'undefined' ? Object.keys(UNIVERSITY_CONTENT).slice(0,3) : '(UNIVERSITY_CONTENT undefined)');
 
         // Get content for matched schools
-        const schoolContent = typeof getSchoolContent !== 'undefined'
-          ? getSchoolContent(matchedSchools)
-          : [];
+        // FIX (2026-08-14, BUG-AUDIT-002): the previous "resilience" version of
+        // this block used getSchoolContent() (raw UNIVERSITY_CONTENT[name]) as
+        // its primary source, only falling back to getFlatSchoolData() when a
+        // name was entirely missing from UNIVERSITY_CONTENT. That assumed
+        // UNIVERSITY_CONTENT[name] is always flat-shaped — but
+        // mergeUniversityDatabases() does Object.assign(UNIVERSITY_CONTENT,
+        // UNIVERSITY_DB_V5) at load time, so for any school whose name is an
+        // EXACT string match in both files (150 of the current 167 V5-matched
+        // schools — most flagship names), UNIVERSITY_CONTENT[name] silently
+        // becomes V5's nested object instead. getSchoolContent() happily
+        // returned that nested object as "found" (it's truthy), and
+        // formatSchoolsForPrompt() then read undefined .name/.pipeline/
+        // .the_room off it — producing a "SCHOOL: undefined (undefined)"
+        // block sent straight into the AI prompt, DUPLICATED alongside a
+        // correct block from the old fallback path. Confirmed live via
+        // simulation against the real files before this fix.
+        //
+        // Fix: never read UNIVERSITY_CONTENT[name] directly here. Source
+        // every matched school through getFlatSchoolData() — the same
+        // V5-first, alias-normalized, shape-safe accessor already used by
+        // every other school-data call site in this file (~12 places) — so
+        // there is exactly one code path and it cannot return a
+        // wrongly-shaped object.
+        const schoolContent = matchedSchools
+          .map(function(name) {
+            const flat = (typeof getFlatSchoolData === 'function') ? getFlatSchoolData(name) : null;
+            if (!flat) return null;
+            return Object.assign({ name: name }, flat);
+          })
+          .filter(Boolean);
 
         console.log('[callD] schoolContent.length:', schoolContent.length);
         console.log('[callD] schoolContent sample:', schoolContent[0]?.name);
@@ -8956,7 +8983,14 @@ function getFlatSchoolData(schoolName) {
       location: n.location || '',
       region: n.region || '',
       vector_region: n.region || '',
-      grad_cities: n.gradCities || ''
+      grad_cities: n.gradCities || '',
+      // BUGFIX (2026-08-14, Phase 1 audit): V5's institutionNarrative has
+      // always had theRoom/lifestyle, fully populated for all 173 schools —
+      // this accessor just never read them. Wiring them in here fixes the
+      // callD fallback (getFlatSchoolData() as backup to getSchoolContent())
+      // for any V5-matched school missing from university-content.js.
+      the_room: n.theRoom || '',
+      lifestyle: n.lifestyle || ''
     };
   }
   var legacy = (typeof UNIVERSITY_CONTENT !== 'undefined') ? UNIVERSITY_CONTENT[schoolName] : null;
@@ -8974,7 +9008,9 @@ function getFlatSchoolData(schoolName) {
     location: legacy.location || '',
     region: legacy.region || '',
     vector_region: legacy.vector_region || legacy.region || '',
-    grad_cities: legacy.grad_cities || ''
+    grad_cities: legacy.grad_cities || '',
+    the_room: legacy.the_room || '',
+    lifestyle: legacy.lifestyle || ''
   };
 }
 // ─────────────────────────────────────────────────────────────────────────────
