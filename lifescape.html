@@ -4037,9 +4037,21 @@ function shouldShowCCPathway(profile, matches) {
   if (grade >= 11 && wealthTier >= 3) return true;
 
   // Track A: any matched school has CC pathway data
+  //
+  // BUGFIX (2026-08-14): matchUniversities() (lifescape_college_prefs_v3.js)
+  // returns a plain array of school-name STRINGS — see its own final line,
+  // `return scored.sort(...).map(s => s.school)` — and every other call
+  // site in this file (e.g. the _rawMatches.forEach(function(name){...})
+  // region-equity pass below) treats entries that way. This site alone
+  // assumed an object with a .name property, which doesn't exist on a
+  // string, so u.name was undefined and blew up inside normalizeV5Name()
+  // the moment it tried undefined.match(...). Accept either shape so a
+  // future caller passing real {name} objects (e.g. callD's parsed
+  // results) still works.
   if (matches && matches.length > 0) {
     var hasDelta = matches.some(function(u) {
-      var schoolData = typeof getFlatSchoolData === 'function' ? getFlatSchoolData(u.name) : null;
+      var uName = typeof u === 'string' ? u : (u && u.name);
+      var schoolData = (uName && typeof getFlatSchoolData === 'function') ? getFlatSchoolData(uName) : null;
       var ctx = extractCCContext(schoolData, zip);
       return ctx.hasCCPathway;
     });
@@ -4051,7 +4063,11 @@ function shouldShowCCPathway(profile, matches) {
 
 function buildCallEPrompt(profile, ccContext, targetSchool) {
   var ccName      = ccContext.ccName || 'local community college';
-  var target      = (targetSchool && targetSchool.name) || 'your target university';
+  // BUGFIX (2026-08-14): targetSchool is a plain school-name string from
+  // matchUniversities() (see shouldShowCCPathway() above for the full
+  // explanation) — targetSchool.name doesn't exist on a string. Accept
+  // either shape.
+  var target      = (targetSchool && (typeof targetSchool === 'string' ? targetSchool : targetSchool.name)) || 'your target university';
   var transferRate = ccContext.transferRate ? ccContext.transferRate + '%' : 'a materially higher rate than direct freshman admission';
   var freshmanRate = ccContext.freshmanRate ? ccContext.freshmanRate + '%' : null;
   var rateClause  = freshmanRate
@@ -6479,8 +6495,14 @@ async function submitLifescape() {
       : [];
     var _ccShouldShow = shouldShowCCPathway(profile, _matchedForCC);
     var _ccTargetSchool = _matchedForCC.length > 0 ? _matchedForCC[0] : null;
-    var _ccTargetData = _ccTargetSchool && typeof getFlatSchoolData === 'function'
-      ? getFlatSchoolData(_ccTargetSchool.name) : null;
+    // BUGFIX (2026-08-14): _ccTargetSchool is a plain school-name string
+    // from matchUniversities() — see shouldShowCCPathway() for the full
+    // explanation. .name doesn't exist on a string, so this was always
+    // calling getFlatSchoolData(undefined), which throws inside
+    // normalizeV5Name(). Accept either shape.
+    var _ccTargetSchoolName = _ccTargetSchool && (typeof _ccTargetSchool === 'string' ? _ccTargetSchool : _ccTargetSchool.name);
+    var _ccTargetData = _ccTargetSchoolName && typeof getFlatSchoolData === 'function'
+      ? getFlatSchoolData(_ccTargetSchoolName) : null;
     var _ccContext = _ccShouldShow ? extractCCContext(_ccTargetData, profile.zip) : null;
 
     // Build parallel call array — callB + callC always, callE conditionally
