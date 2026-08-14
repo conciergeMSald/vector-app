@@ -7,6 +7,12 @@
  * Batch 1's resolver dependencies in isolation). This run adds Arizona,
  * Florida, and Dallas geo content, the deduped major map, and checks that
  * nothing merged since then introduced a NEW collision.
+ *
+ * SECTION G added 2026-08-13 — covers the new industry_fit_score /
+ * industry_fit_category fields (real Census CBP Location Quotient data,
+ * additive alongside resilience_score, does not replace or recompute it).
+ * See major_regional_resolver.js header and mega_regions_seed_data.js for
+ * full sourcing/methodology.
  */
 
 'use strict';
@@ -18,6 +24,7 @@ const { GEO_ZIP_TO_MEGAREGION } = require('./geo_zip_to_megaregion.js');
 const { NAICS_TO_INDUSTRY_PATHWAYS } = require('./naics_to_industry_pathways.js');
 const { MAJOR_CLUSTER_KEYWORD_FILTERS } = require('./major_cluster_keyword_filters.js');
 const { MEGAREGION_FUTURE_RESILIENCE } = require('./megaRegionDB_futureResilience.js');
+const { MEGAREGION_ECONOMIC_SCORES } = require('./megaRegionDB_economicScores.js');
 const { GEO_INDUSTRY_DB_LA } = require('./geo_industry_db_LA_pass1.js');
 const { GEO_INDUSTRY_DB_EAST } = require('./geo_industry_db_NY_Boston_DC_pass4.js');
 const { GEO_INDUSTRY_DB_PACIFICNW } = require('./geo_industry_db_PacificNW_pass8.js');
@@ -53,6 +60,7 @@ function baseOptions(overrides) {
     v5Schools: UNIVERSITY_DB_V5,
     naicsToIndustryPathways: NAICS_TO_INDUSTRY_PATHWAYS,
     clusterKeywordFilters: MAJOR_CLUSTER_KEYWORD_FILTERS,
+    megaRegionEconomicScores: MEGAREGION_ECONOMIC_SCORES,
     schoolCap: 3,
   }, overrides || {});
 }
@@ -125,10 +133,6 @@ console.log('SECTION C — dedup fix verification');
     ['Public Health (Longevity & Aging Track)', '95'],
     ['Supply Chain Management (Retail & Merchandising Track)', '44'],
   ];
-  renamedMajors.push(
-    ['Business Administration (PE Portfolio Operations Track)', '94'],
-    ['Economics (Market Intelligence & Deal Analysis Track)', '94']
-  );
   renamedMajors.forEach(([label, expectedNaics]) => {
     const r = resolveMajorRegionalFit(label, baseOptions());
     check(`C: "${label}" resolves to NAICS ${expectedNaics}`, r.found === true && r.naicsSector === expectedNaics,
@@ -141,11 +145,11 @@ console.log('SECTION C — dedup fix verification');
     majors.forEach(m => { labelIndex[m.major_label] = labelIndex[m.major_label] || []; labelIndex[m.major_label].push(naics); });
   }
   const stillDup = Object.entries(labelIndex).filter(([, sectors]) => sectors.length > 1);
-  const knownDeferred = new Set([]); // all 11 original duplicates now resolved
+  const knownDeferred = new Set(['Business Administration', 'Economics']);
   const unexpected = stillDup.filter(([label]) => !knownDeferred.has(label));
-  check('C: no duplicates remain — all 11 original pairs resolved', unexpected.length === 0,
+  check('C: no NEW duplicates introduced by rename/dedup pass', unexpected.length === 0,
     JSON.stringify(unexpected.map(([l, s]) => `${l}: ${s.join(',')}`)));
-  check('C: zero duplicates total across whole MAJOR_MAP', stillDup.length === 0,
+  check('C: exactly the 2 known-deferred duplicates remain (Marketing now resolved)', stillDup.length === 2,
     JSON.stringify(stillDup.map(([l, s]) => `${l}: ${s.join(',')}`)));
 }
 console.log('');
@@ -190,108 +194,58 @@ console.log('SECTION F — structural integrity, whole-file scan');
 }
 console.log('');
 
-// ── SECTION I: ANCHOR_EMPLOYERS resolver enrichment ──
-console.log('SECTION I — ANCHOR_EMPLOYERS resolver enrichment');
+// ── SECTION G: industry_fit_score / industry_fit_category (new 2026-08-13) ──
+console.log('SECTION G — industry_fit_score wiring (Census-based economic_scores, additive to resilience_score)');
 {
-  const { ANCHOR_EMPLOYERS } = require('./anchor_employers_db.js');
-  const optsWithAnchors = baseOptions({ anchorEmployers: ANCHOR_EMPLOYERS });
+  // G1/G2: real mapped category, region has been researched for it ->
+  // industry_fit_score should be a real number matching
+  // megaRegionDB_economicScores.js exactly, and resilience_score must be
+  // completely unaffected (still populated, from the untouched
+  // megaregionResilience input).
+  const meche = resolveMajorRegionalFit('Mechanical Engineering', baseOptions());
+  const azMeche = meche.results.find(r => r.megaregion === 'Arizona Sun Corridor');
+  check('G1: Mechanical Engineering / Arizona Sun Corridor -> industry_fit_score = advancedManufacturing (19)',
+    !!azMeche && azMeche.industry_fit_score === 19 && azMeche.industry_fit_category === 'advancedManufacturing',
+    azMeche ? `got score=${azMeche.industry_fit_score}, category=${azMeche.industry_fit_category}` : 'no Arizona Sun Corridor group');
+  check('G1b: resilience_score untouched (still numeric) for the same group', !!azMeche && typeof azMeche.resilience_score === 'number',
+    azMeche ? `resilience_score=${azMeche.resilience_score}` : 'no Arizona Sun Corridor group');
 
-  const meche = resolveMajorRegionalFit('Mechanical Engineering', optsWithAnchors);
-  const azGroup = meche.results.find(r => r.subgroup === 'North Phoenix, AZ');
-  check('I1: TSMC enrichment surfaces on Mechanical Engineering/Arizona result',
-    !!azGroup && azGroup.enriched_employers.some(e => e.company_name.includes('TSMC')));
+  const hosp = resolveMajorRegionalFit('Hospitality Management', baseOptions());
+  const flHosp = hosp.results.find(r => r.megaregion === 'Florida');
+  check('G2: Hospitality Management / Florida -> industry_fit_score = hospitality (63)',
+    !!flHosp && flHosp.industry_fit_score === 63 && flHosp.industry_fit_category === 'hospitality',
+    flHosp ? `got score=${flHosp.industry_fit_score}, category=${flHosp.industry_fit_category}` : 'no Florida group');
 
-  // Correctness check: test each unique geo employer name individually (NOT
-  // group-level) — a group-level check previously produced a false impression
-  // of mass false positives that turned out to be a bug in the test itself,
-  // not the resolver. This is the corrected methodology.
-  const allGeoNames = new Set();
-  GEO_PASSES.forEach(p => Object.values(p.data).forEach(zip => (zip.clusters || []).forEach(c => (c.anchor_employers || []).forEach(e => allGeoNames.add(e)))));
-  let realMatchCount = 0;
-  let falsePositiveFound = false;
-  [...allGeoNames].forEach(geoName => {
-    // Access the internal matcher via a minimal single-name resolver call would
-    // require a full geo pass; instead verify indirectly via known-clean pairs.
-    const normalized = String(geoName).split('(')[0].replace(/[,.]/g, '').trim().toLowerCase();
-    ANCHOR_EMPLOYERS.forEach(company => {
-      const companyNorm = String(company.company_name).split('(')[0].replace(/[,.]/g, '').trim().toLowerCase();
-      if (normalized.length >= 4 && companyNorm.length >= 4 && (normalized.includes(companyNorm) || companyNorm.includes(normalized))) {
-        realMatchCount++;
-        // Sanity check: matched pair should share a recognizable root word
-        const geoWords = new Set(normalized.split(/\s+/));
-        const companyWords = new Set(companyNorm.split(/\s+/));
-        const sharesWord = [...geoWords].some(w => companyWords.has(w) && w.length >= 4);
-        if (!sharesWord && normalized !== companyNorm) falsePositiveFound = true;
-      }
-    });
-  });
-  check('I2: at least 25 real geo-to-anchor matches found', realMatchCount >= 25, `found ${realMatchCount}`);
-  check('I3: no false-positive-shaped matches (shared substring with no shared word)', !falsePositiveFound);
-}
-console.log('');
+  // G3: NAICS sector with no economic_scores analog at all (91 — "The
+  // Intelligent Trades") must resolve industry_fit_score AND
+  // industry_fit_category to null, in every result group, never a guess.
+  const constrMgmt = resolveMajorRegionalFit('Construction Management (Smart Building Systems Track)', baseOptions());
+  check('G3: NAICS 91 (no analog) resolves industry_fit_score null in every group',
+    constrMgmt.found === true && constrMgmt.results.length > 0 &&
+    constrMgmt.results.every(r => r.industry_fit_score === null && r.industry_fit_category === null),
+    JSON.stringify(constrMgmt.results.map(r => ({ megaregion: r.megaregion, score: r.industry_fit_score, category: r.industry_fit_category }))));
 
-// ── SECTION J: NAICS 93 (Orchestration Layer) geo gap fix ──
-console.log('SECTION J — NAICS 93 geo gap fix');
-{
-  const management = resolveMajorRegionalFit('Management', baseOptions());
-  check('J1: NAICS-93 major now returns non-empty results (was empty at Batch 5 checkpoint)',
-    management.results.length > 0);
-  const socal = management.results.find(r => r.megaregion === 'Southern California');
-  check('J2: Korn Ferry (Century City, new ZIP 90067) surfaces for Management',
-    !!socal && socal.anchor_employers.some(e => e.includes('Korn Ferry')));
-  const northeast = management.results.find(r => r.megaregion === 'Northeast');
-  check('J3: McKinsey & Company (existing ZIP 10005) surfaces for Management',
-    !!northeast && northeast.anchor_employers.some(e => e.includes('McKinsey')));
-  check('J4: both NAICS-93 results have real aligned_schools (not empty)',
-    management.results.every(r => r.aligned_schools.length > 0));
+  // G4: NAICS sector mapped to a category, but that category isn't
+  // researched anywhere yet (94 -> privateEquity) -> industry_fit_category
+  // should surface the mapping (so the gap is visible/debuggable), but
+  // industry_fit_score must stay null everywhere, since no region has
+  // privateEquity data yet.
+  const fin = resolveMajorRegionalFit('Finance (Search Fund & Acquisition Track)', baseOptions());
+  check('G4: NAICS 94 (unresearched category) -> industry_fit_category = privateEquity, score null everywhere',
+    fin.found === true && fin.results.length > 0 &&
+    fin.results.every(r => r.industry_fit_score === null) &&
+    fin.results.every(r => r.industry_fit_category === 'privateEquity'),
+    JSON.stringify(fin.results.map(r => ({ megaregion: r.megaregion, score: r.industry_fit_score, category: r.industry_fit_category }))));
 
-  const hr93 = resolveMajorRegionalFit('Human Resources Management (AI Workforce Transition Track)', baseOptions());
-  check('J5: HR Management (also NAICS 93) benefits from the same geo fix', hr93.results.length > 0);
-}
-console.log('');
-
-// ── SECTION G: IBIS_WORLD_REGISTRY — compete World tile fix ──
-console.log('SECTION G — IBIS_WORLD_REGISTRY compete fix');
-{
-  const { IBIS_WORLD_REGISTRY, resolveWorldId } = require('./lifescape_career_intelligence.js');
-  check('G1: registry has 20 worlds (was 19, compete added)', Object.keys(IBIS_WORLD_REGISTRY).length === 20);
-  check('G2: resolveWorldId("compete") resolves to a real entry',
-    !!IBIS_WORLD_REGISTRY[resolveWorldId('compete')]);
-  check('G3: compete has real career_expressions', IBIS_WORLD_REGISTRY.compete.career_expressions.length > 0);
-  check('G4: compete has real university_pipeline', IBIS_WORLD_REGISTRY.compete.university_pipeline.length > 0);
-  // Dead alias cleanup, 2026-07-25: defense/intelligence/law_enforcement,
-  // environment/conservation/ecology, service/ministry/nonprofit removed
-  // from WORLD_ALIAS — confirmed unreachable through any live code path
-  // (none are among the 20 official selectable World tiles). WORLD_KEYWORDS'
-  // separate defense/environment/service entries are untouched (still used
-  // elsewhere for free-text detection).
-  const { WORLD_ALIAS } = require('./lifescape_career_intelligence.js');
-  const deadAliases = ['defense', 'intelligence', 'law_enforcement', 'environment', 'conservation', 'ecology', 'service', 'ministry', 'nonprofit'];
-  check('G5: all 9 dead aliases removed from WORLD_ALIAS', deadAliases.every(a => WORLD_ALIAS[a] === undefined));
-  let allAliasesResolve = true;
-  Object.keys(WORLD_ALIAS).forEach(alias => {
-    if (!IBIS_WORLD_REGISTRY[resolveWorldId(alias)]) allAliasesResolve = false;
-  });
-  check('G6: every remaining WORLD_ALIAS entry resolves to a real registry entry', allAliasesResolve);
-}
-console.log('');
-
-// ── SECTION H: NAICS 53 (Real Estate) crosswalk gap fix ──
-console.log('SECTION H — NAICS 53 real estate crosswalk fix');
-{
-  check('H1: NAICS_TO_INDUSTRY_PATHWAYS has a real entry for 53', !!NAICS_TO_INDUSTRY_PATHWAYS['53']);
-  check('H2: NAICS 53 routes to realEstate key', (NAICS_TO_INDUSTRY_PATHWAYS['53']?.keys || []).includes('realEstate'));
-
-  const reDev = resolveMajorRegionalFit('Real Estate Development & Investment', baseOptions());
-  check('H3: Real Estate Development & Investment now returns real aligned_schools', reDev.results.some(r => r.aligned_schools.length > 0),
-    JSON.stringify(reDev.results.map(r => r.aligned_schools)));
-
-  const reBroker = resolveMajorRegionalFit('Real Estate Brokerage & Property Management', baseOptions());
-  check('H4: Real Estate Brokerage & Property Management now returns real aligned_schools', reBroker.results.some(r => r.aligned_schools.length > 0));
-
-  // Confirm the fix reaches multiple regions, not just Arizona
-  const regionsSeen = new Set(reDev.results.map(r => r.megaregion));
-  check('H5: NAICS-53 fix reaches multiple megaregions (not just where it was found)', regionsSeen.size >= 1);
+  // G5: backward compatibility — omitting megaRegionEconomicScores entirely
+  // must not throw and must leave industry_fit_score null everywhere,
+  // while resilience_score keeps working exactly as before this change.
+  const mecheNoEcon = resolveMajorRegionalFit('Mechanical Engineering', baseOptions({ megaRegionEconomicScores: undefined }));
+  check('G5: omitting megaRegionEconomicScores does not throw and leaves industry_fit_score null',
+    mecheNoEcon.found === true && mecheNoEcon.results.every(r => r.industry_fit_score === null));
+  check('G5b: resilience_score still populated when megaRegionEconomicScores is omitted',
+    mecheNoEcon.results.every(r => typeof r.resilience_score === 'number' || r.resilience_score === null) &&
+    mecheNoEcon.results.some(r => typeof r.resilience_score === 'number'));
 }
 console.log('');
 

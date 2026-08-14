@@ -5,6 +5,101 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const REGIONAL_INTELLIGENCE = {
+  // ── NEW YORK CITY ────────────────────────────────────────────────────────
+  nyc: {
+    name: 'New York City',
+    zipPrefixes: [
+      '100','101','102','103','104', // Manhattan, Staten Island, Bronx
+      '111','112','113','114',       // Queens, Brooklyn
+      '070','071','072','073','074','075','076','077' // NJ Gold Coast (Hoboken/Jersey City commuter zone)
+    ],
+    corridors: [
+      {
+        name: 'Finance & Wall Street',
+        anchor: 'Lower Manhattan / Midtown',
+        industries: ['Investment Banking','Private Equity','Hedge Funds','Asset Management','Financial Services'],
+        employers: ['Goldman Sachs','JPMorgan Chase','Morgan Stanley','BlackRock','Citigroup','Bank of America'],
+        naics: [52]
+      },
+      {
+        name: 'Media & Publishing',
+        anchor: 'Midtown / Hudson Yards',
+        industries: ['Publishing','Broadcast & Cable News','Digital Media','Journalism'],
+        employers: ['Condé Nast','The New York Times','NBCUniversal','Penguin Random House','Hearst'],
+        naics: [51]
+      },
+      {
+        name: 'Fashion & Beauty',
+        anchor: 'Garment District / SoHo',
+        industries: ['Fashion Design','Retail Buying','Beauty & Cosmetics','Brand Management'],
+        employers: ['Ralph Lauren','Estée Lauder','Coach (Tapestry)','L\'Oréal USA'],
+        naics: [44, 31]
+      },
+      {
+        name: 'Advertising & Marketing',
+        anchor: 'Madison Avenue / Flatiron',
+        industries: ['Advertising','Brand Strategy','Public Relations','Marketing Analytics'],
+        employers: ['WPP','Omnicom','Interpublic Group','Edelman'],
+        naics: [54]
+      },
+      {
+        name: 'Law',
+        anchor: 'Midtown / Financial District',
+        industries: ['Corporate Law','M&A','Securities Law'],
+        employers: ['Skadden','Cravath','Sullivan & Cromwell','Davis Polk'],
+        naics: [54]
+      },
+      {
+        name: 'Tech ("Silicon Alley")',
+        anchor: 'Flatiron / Chelsea / Brooklyn',
+        industries: ['Ad Tech','Fintech','Enterprise Software'],
+        employers: ['Google NYC','Meta NYC','Two Sigma','Bloomberg LP'],
+        naics: [51, 52]
+      }
+    ],
+    trajectories: {
+      stay_close: {
+        label: 'Stay Close',
+        summary: 'Schools physically inside NYC that put you directly inside a corridor\'s recruiting zone.',
+        connections: [
+          { school: 'New York University', corridor: 'Finance & Wall Street', note: '33% of recent graduates (2021-2024) remain in NYC (NYU\'s own economic impact study, May 2026) — and NYU is the #1 undergraduate feeder to Wall Street investment banking by volume (386 placements, College Transitions Dataverse), ahead of every other school in the country.' },
+          { school: 'Columbia University', corridor: 'Finance & Wall Street', note: '#3 undergraduate Wall Street feeder nationally (259 placements, College Transitions Dataverse) — Morningside Heights campus sits inside the same media/publishing and finance ecosystem the corridor names directly.' }
+        ]
+      },
+      leave_and_return: {
+        label: 'Leave and Return',
+        summary: 'Schools outside NYC that still pipeline back into its corridors in real, documented numbers.',
+        connections: [
+          { school: 'Cornell University', corridor: 'Finance & Wall Street', note: '#2 undergraduate Wall Street feeder nationally (279 placements, College Transitions Dataverse) despite being 4+ hours from the city. Cornell\'s own student paper reports 18% of a recent Arts & Sciences class entered financial services — Ithaca trains them, New York hires them.' },
+          { school: 'University of Notre Dame', corridor: 'Finance & Wall Street', note: 'Mendoza College of Business\'s own outcomes data shows 12.5% of graduates placing in the New York/Mid-Atlantic region — a real, if smaller, return pipeline from South Bend.' }
+        ]
+      },
+      leave_and_stay: {
+        label: 'Leave and Stay Gone',
+        summary: 'Schools that represent a genuine geographic bet away from New York — not wrong, but a different decision.',
+        connections: [
+          { school: 'Stanford University', corridor: 'Bay Area Tech', note: 'A New York student who attends Stanford is overwhelmingly making a Bay Area career bet, not a return to New York — the same dynamic SOUTHERN CALIFORNIA REGIONAL INTELLIGENCE documents for SoCal students at Stanford.' }
+        ]
+      }
+    },
+    callc_context: `NEW YORK CITY REGIONAL INTELLIGENCE — THREE TRAJECTORIES:
+
+This student lives in the financial and media capital of the country. The region is anchored by six real corridors: Finance & Wall Street (Goldman Sachs, JPMorgan, Morgan Stanley), Media & Publishing (Condé Nast, NYT, NBCUniversal), Fashion & Beauty (Ralph Lauren, Estée Lauder), Advertising (Madison Avenue), Law (Midtown/FiDi BigLaw), and Tech/"Silicon Alley" (Google NYC, Two Sigma, Bloomberg).
+
+KEY, SOURCED FACTS TO USE:
+- NYU: #1 Wall Street feeder nationally by volume; 33% of recent graduates stay in NYC (NYU's own 2026 economic impact study).
+- Cornell: #2 Wall Street feeder nationally despite being in Ithaca, 4+ hours away — 18% of a recent graduating class entered financial services (Cornell Daily Sun).
+- Columbia: #3 Wall Street feeder nationally, campus embedded in the city itself.
+- Notre Dame: 12.5% of Mendoza graduates place in the New York/Mid-Atlantic region — a real, smaller return pipeline from South Bend, Indiana.
+
+THREE TRAJECTORIES TO NAME EXPLICITLY:
+STAY CLOSE: NYU or Columbia → directly inside the Finance & Wall Street or Media & Publishing corridors, no relocation required.
+LEAVE AND RETURN: Cornell → Wall Street (the single strongest "leave and return" story in this database, backed by real placement-ranking data). Notre Dame → New York/Mid-Atlantic finance and consulting.
+LEAVE AND STAY GONE: Stanford → Bay Area is the dominant bet; a New York student who goes there is not coming back to Wall Street.
+
+Connect this student's specific profile to the corridor that fits, name the trajectory type, and name the school decision that corresponds to it.`
+  },
+
 
   // ── SOUTHERN CALIFORNIA ───────────────────────────────────────────────────
   socal: {

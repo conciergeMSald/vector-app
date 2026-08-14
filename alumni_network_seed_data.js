@@ -9,21 +9,33 @@
 // ("a reasonable current estimate", "not an official census") is load-
 // bearing and must be preserved exactly.
 //
-// school_slug values below are a first draft using the short-name convention
-// seen in the family-portal demo mockup (e.g. 'amherst', 'michigan'). CONFIRM
-// against whatever slug convention the live resolver (major_regional_resolver.js)
-// and V5 actually expect before this ships — flagged as an open assumption,
-// not a verified fact, consistent with everything else flagged this session.
+// school_slug values below are confirmed against alumni_school_slug_map.js
+// (single source of truth as of the pass-2 addition below) rather than
+// assumed — the earlier "first draft" caveat is resolved for all ten schools
+// currently in this file.
 //
 // engine_version stamps every row from this ingestion pass so future
 // corrections or re-ingestion are traceable, matching report_versions'
 // existing engine_version convention.
+//
+// PASS 2 (2026-08-13): added Syracuse, NYU, Berkeley, and Stanford to
+// complete the 10-school LA cohort (ALUMNI-NETWORK-ARCH-001). None of these
+// four schools publish an official or reliably current Los Angeles-specific
+// alumni headcount, so population_confidence is 'unavailable' for all four —
+// consistent with how Tulane and Missouri were already handled in pass 1,
+// not a lowering of the bar. family_facing_summary text for these four is
+// newly authored from public university/chapter sources (not verbatim from
+// Alumni_Network_Database.docx, which only covered the original six) and
+// should get the same CIO review pass 1's summaries received before it ships
+// as protected/verbatim text.
 // ============================================================================
 
 'use strict';
 
 const ENGINE_VERSION = 'alumni-la-cohort-v1-2026-07-29';
 const RESEARCHED_AT = '2026-07-29';
+const ENGINE_VERSION_PASS2 = 'alumni-la-cohort-v1-pass2-2026-08-13';
+const RESEARCHED_AT_PASS2 = '2026-08-13';
 
 const ALUMNI_NETWORK_SEED_LA = [
   {
@@ -211,6 +223,124 @@ const ALUMNI_NETWORK_SEED_LA = [
       { neighborhood: 'Orange County', relevance_notes: 'Business, finance, healthcare, real estate, established family households.' },
     ],
   },
+
+  {
+    school_slug: 'syracuse',
+    school_name: 'Syracuse University',
+    metro_area: 'Los Angeles',
+    population_low: null,
+    population_high: null,
+    population_confidence: 'unavailable',
+    population_source_note: "Syracuse's own Los Angeles program materials describe the region's alumni base only in general terms ('thousands' of graduates), with no specific published headcount, so no numerical estimate is offered here.",
+    chapter_name: 'SoCal Orange Alumni Club, supported by a 21-member LA Regional Council and the SU in LA regional office',
+    chapter_strength: 'strong',
+    signature_pipeline_name: 'SU in LA',
+    signature_pipeline_description: "Syracuse operates a permanent 22,000-square-foot regional campus in North Hollywood — established in 2005 and expanded in 2024 through a gift honoring alumnus Dick Clark's legacy — that runs the SULA and Newhouse LA Semester programs, placing students directly with entertainment and media companies before graduation and giving the university an on-the-ground presence most peer schools address only through a club.",
+    network_character: 'Media- and entertainment-concentrated, anchored by a physical West Coast campus rather than a chapter alone',
+    family_facing_summary: "Syracuse University maintains an unusually developed Los Angeles presence for a school its size, anchored by a permanent 22,000-square-foot regional campus in North Hollywood — established in 2005 and expanded in 2024 through a gift honoring alumnus Dick Clark's legacy — rather than a chapter alone. Syracuse's own materials describe its Los Angeles alumni base only in general terms ('thousands' of graduates), without a specific published count, so no numerical estimate is offered here. The network is organized through the SoCal Orange Alumni Club and a 21-member LA Regional Council, and its defining strength is Newhouse School of Public Communications alumni working across entertainment, journalism, television and media, reinforced by the SULA and Newhouse LA Semester programs that place students directly with entertainment and media companies before graduation. Geographic nodes include North Hollywood, Hollywood, Burbank and Studio City, plus a Westside professional cluster.",
+    researched_at: RESEARCHED_AT_PASS2,
+    engine_version: ENGINE_VERSION_PASS2,
+    industries: [
+      { industry_label: 'Journalism, Broadcast & Media (Newhouse)', strength_rating: 'exceptional', notes: 'Newhouse School of Public Communications is the defining institutional strength.' },
+      { industry_label: 'Entertainment, Film & Television', strength_rating: 'very_strong', notes: 'Reinforced by the North Hollywood campus and Newhouse LA Semester.' },
+      { industry_label: 'Sports Media & Communications', strength_rating: 'strong', notes: 'Newhouse has a nationally recognized sports media concentration.' },
+      { industry_label: 'Business & Management (Whitman)', strength_rating: 'moderate', notes: null },
+    ],
+    geo_nodes: [
+      { neighborhood: 'North Hollywood', relevance_notes: 'Site of the SU in LA regional campus — the network\'s physical center of gravity.' },
+      { neighborhood: 'Hollywood, Burbank & Studio City', relevance_notes: 'Film, television, and studio employment.' },
+      { neighborhood: 'Westside Los Angeles', relevance_notes: 'Media, advertising, and entertainment-adjacent business (inferred, not a documented alumni count).' },
+    ],
+  },
+
+  {
+    school_slug: 'nyu',
+    school_name: 'New York University',
+    metro_area: 'Los Angeles',
+    population_low: null,
+    population_high: null,
+    population_confidence: 'unavailable',
+    population_source_note: "NYU does not publish a Los Angeles-specific alumni count. NYU is one of the largest private universities in the country by total alumni, so its LA diaspora is presumed substantial, but that is an inference from institutional scale, not a metro-level figure.",
+    chapter_name: 'NYU Alumni Club in Los Angeles, alongside Tisch West (Tisch School of the Arts alumni alliance)',
+    chapter_strength: 'strong',
+    signature_pipeline_name: 'Tisch West',
+    signature_pipeline_description: "Tisch West is a volunteer-led alliance of Los Angeles-based Tisch School of the Arts alumni, formally supported by NYU's Alumni Relations office. It exists specifically to raise the visibility of Tisch alumni in entertainment, build cross-generational and cross-department industry connections, and ease the transition for New York-trained graduates moving into the LA industry — running professional panels, an 'NYU in LA' networking group, and working alongside Tisch Represents, a parallel initiative for underrepresented voices in media.",
+    network_character: 'Very large by raw population given NYU\'s overall size, but its distinct LA identity is organized around entertainment and media (Tisch) rather than the university\'s broader New York-centric business identity',
+    family_facing_summary: "New York University does not publish a Los Angeles-specific alumni count, but given NYU's overall size — one of the largest private universities in the country — its Los Angeles diaspora is presumed substantial, even though that is an inference from institutional scale rather than a confirmed metro figure. The network is organized through a general NYU Alumni Club in Los Angeles and, more distinctively, Tisch West, a volunteer-led alliance of Los Angeles-based Tisch School of the Arts alumni formally supported by NYU's Alumni Relations office. Tisch West exists specifically to raise the visibility of Tisch alumni in entertainment, connect alumni across generations and departments, and ease the transition for New York-trained graduates moving into the Los Angeles industry, working alongside Tisch Represents, a parallel initiative for underrepresented voices in media. NYU's Los Angeles identity is therefore concentrated in film, television and entertainment (Tisch), with secondary strength in media, journalism and education (Steinhardt) and business (Stern) — reflecting the six NYU schools, including Stern, Tisch, Steinhardt and Gallatin, that jointly run NYU's Los Angeles study-away program for entertainment- and media-track students.",
+    researched_at: RESEARCHED_AT_PASS2,
+    engine_version: ENGINE_VERSION_PASS2,
+    industries: [
+      { industry_label: 'Film, Television & Entertainment (Tisch)', strength_rating: 'exceptional', notes: 'Tisch West is the defining LA-specific asset.' },
+      { industry_label: 'Media, Journalism & Education (Steinhardt)', strength_rating: 'strong', notes: null },
+      { industry_label: 'Business, Finance & Management (Stern)', strength_rating: 'moderate', notes: 'Present but less LA-specific a pull than NYU\'s New York identity.' },
+      { industry_label: 'Law', strength_rating: 'moderate', notes: 'Cultural/career-fit inference from NYU Law\'s overall scale, not a measured LA concentration.' },
+    ],
+    geo_nodes: [
+      { neighborhood: 'Hollywood & Silver Lake / Los Feliz', relevance_notes: 'Entertainment and creative-industry concentration (inferred from Tisch West\'s focus, not a documented alumni count).' },
+      { neighborhood: 'Downtown LA & Arts District', relevance_notes: 'Independent film, media production, and creative business (inferred, not a documented alumni count).' },
+      { neighborhood: 'Westside Los Angeles', relevance_notes: 'Studios, streaming, and entertainment-adjacent business.' },
+    ],
+  },
+
+  {
+    school_slug: 'berkeley',
+    school_name: 'University of California-Berkeley',
+    metro_area: 'Los Angeles',
+    population_low: null,
+    population_high: null,
+    population_confidence: 'unavailable',
+    population_source_note: "Berkeley's own alumni-association materials described its Los Angeles chapter as the association's second-largest nationally as of the 2016-2017 membership cycle — the most recent figure identified in this pass — but that is a relative ranking from nearly a decade ago, not a current headcount, so no numerical estimate is offered here.",
+    chapter_name: 'Cal Alumni Association Los Angeles Chapter (CLAA LA), alongside the Berkeley Haas Alumni Network of LA',
+    chapter_strength: 'strong',
+    signature_pipeline_name: null,
+    signature_pipeline_description: null,
+    network_character: 'Large and civically engaged, spanning both a general-alumni chapter and a distinct business-school (Haas) chapter, without one single named industry pipeline in the way some smaller schools have',
+    family_facing_summary: "The University of California, Berkeley maintains a large Los Angeles alumni presence organized through the Cal Alumni Association's Los Angeles chapter (CLAA LA), which the university's own materials described as its second-largest chapter nationally as of the 2016-2017 membership cycle — the most recent figure identified, and a relative ranking rather than a confirmed current headcount. A separate Berkeley Haas Alumni Network of LA serves business-school alumni specifically. CLAA LA's programming spans social and networking events, workforce development, and community-service partnerships in South Central, East LA and Watts, alongside collaborative events with other West Coast university chapters, including an annual Big Game gathering with Stanford alumni. Alumni are professionally concentrated in technology and engineering, business and finance, law, government and entertainment, with Haas alumni forming a distinct hub around the Westside and South Bay tech and finance corridor.",
+    researched_at: RESEARCHED_AT_PASS2,
+    engine_version: ENGINE_VERSION_PASS2,
+    industries: [
+      { industry_label: 'Technology & Engineering', strength_rating: 'very_strong', notes: 'Reflects Berkeley\'s broader College of Engineering reputation, not an LA-specific measured count.' },
+      { industry_label: 'Business, Finance & Management (Haas)', strength_rating: 'strong', notes: 'Berkeley Haas Alumni Network of LA is a distinct, active chapter.' },
+      { industry_label: 'Law & Government', strength_rating: 'moderate', notes: null },
+      { industry_label: 'Entertainment & Media', strength_rating: 'moderate', notes: null },
+      { industry_label: 'Nonprofit & Civic Engagement', strength_rating: 'strong', notes: 'CLAA LA\'s South Central, East LA, and Watts community-service partnerships are a distinctive chapter identity.' },
+    ],
+    geo_nodes: [
+      { neighborhood: 'Westside Los Angeles', relevance_notes: 'Technology, finance, and Haas alumni concentration (inferred, not a documented alumni count).' },
+      { neighborhood: 'South Bay', relevance_notes: 'Engineering and technology employment (inferred, not a documented alumni count).' },
+      { neighborhood: 'South Central, East LA & Watts', relevance_notes: 'CLAA LA\'s community-service and scholarship programming footprint, not a residential/professional alumni concentration.' },
+    ],
+  },
+
+  {
+    school_slug: 'stanford',
+    school_name: 'Stanford University',
+    metro_area: 'Los Angeles',
+    population_low: null,
+    population_high: null,
+    population_confidence: 'unavailable',
+    population_source_note: 'Stanford does not publish a consolidated Los Angeles-area alumni count; its Southern California presence is instead organized across several geographically distinct clubs, which makes a single metro-wide figure difficult to source even directionally.',
+    chapter_name: 'Stanford Club of West Los Angeles, Stanford Club of Pasadena, and Stanford Club of Palos Verdes/South Bay, alongside Stanford Young Alumni - LA and GSB regional programming',
+    chapter_strength: 'strong',
+    signature_pipeline_name: 'Stanford in Entertainment - LA',
+    signature_pipeline_description: "Stanford in Entertainment - LA is a nonprofit alumni professional organization dedicated to serving Stanford graduates across film, television, music, theater, interactive media and other entertainment fields, promoting members' careers through community-building, networking and industry programming — Stanford's most distinctive asset for entertainment-oriented families, though smaller and less centrally administered than comparable programs at Vanderbilt or NYU.",
+    network_character: 'Large and geographically dispersed across multiple distinct sub-metro clubs rather than one central chapter, professionally concentrated in technology, venture capital and finance, with meaningful law, aerospace/engineering, and — via a dedicated affinity group — entertainment presence',
+    family_facing_summary: "Stanford University does not publish a consolidated Los Angeles-area alumni count; its Southern California presence is instead organized across several geographically distinct clubs — the Stanford Club of West Los Angeles, Stanford Club of Pasadena, and Stanford Club of Palos Verdes/South Bay, alongside Stanford Young Alumni - LA and dedicated Graduate School of Business regional programming — which makes a single metro-wide figure difficult to source even directionally. Its most distinctive asset for entertainment-oriented families is Stanford in Entertainment - LA, a nonprofit alumni professional organization serving Stanford graduates across film, television, music, theater and interactive media. Beyond entertainment, the broader Los Angeles network is professionally concentrated in technology, venture capital and finance — reflecting Stanford's core institutional identity — along with law, and, through the Pasadena and Palos Verdes/South Bay clubs, aerospace and engineering. Geographic nodes include West Los Angeles and the Westside, Pasadena and the San Gabriel Valley, and the South Bay/Palos Verdes peninsula.",
+    researched_at: RESEARCHED_AT_PASS2,
+    engine_version: ENGINE_VERSION_PASS2,
+    industries: [
+      { industry_label: 'Technology & Venture Capital', strength_rating: 'exceptional', notes: 'Reflects Stanford\'s core institutional identity, not an LA-specific measured count.' },
+      { industry_label: 'Business, Finance & Consulting (GSB)', strength_rating: 'strong', notes: 'Supported by dedicated GSB regional alumni programming.' },
+      { industry_label: 'Entertainment, Film & Media', strength_rating: 'strong', notes: 'Stanford in Entertainment - LA is a distinct, active affinity organization.' },
+      { industry_label: 'Aerospace & Engineering', strength_rating: 'moderate', notes: 'Reflected in the Pasadena and Palos Verdes/South Bay club footprints.' },
+      { industry_label: 'Law', strength_rating: 'moderate', notes: null },
+    ],
+    geo_nodes: [
+      { neighborhood: 'West Los Angeles & the Westside', relevance_notes: 'Technology, entertainment, law, and finance — Stanford Club of West LA territory.' },
+      { neighborhood: 'Pasadena & San Gabriel Valley', relevance_notes: 'Engineering, aerospace, and scientific research — Stanford Club of Pasadena territory, with JPL-adjacent professional concentration (inferred, not a documented alumni count).' },
+      { neighborhood: 'Palos Verdes & South Bay', relevance_notes: 'Aerospace, engineering, and established professional households — Stanford Club of Palos Verdes/South Bay territory.' },
+    ],
+  },
 ];
 
 const ALUMNI_NETWORK_COMPARISONS_LA = [
@@ -228,6 +358,28 @@ const ALUMNI_NETWORK_COMPARISONS_LA = [
 | Elon | Small | Highly structured undergraduate entertainment access | Intimate and hands-on |
 | Tulane | Medium | Entertainment law, business and cultural cohesion | Social and relationship-driven |
 | Missouri | Large regional presence | Journalism, television, sports media and strategic communications | Professionally concentrated around media |`,
+  },
+
+  {
+    metro_area: 'Los Angeles',
+    comparison_title: 'Ten-School Los Angeles Alumni Network Comparison (Full Cohort)',
+    schools_included: ['indiana-university', 'cu-boulder', 'vanderbilt', 'elon', 'tulane', 'missouri', 'syracuse', 'nyu', 'berkeley', 'stanford'],
+    researched_at: RESEARCHED_AT_PASS2,
+    comparison_content:
+`| University | Relative LA Scale | Defining LA Advantage | Network Character |
+|---|---|---|---|
+| Indiana University | Large | Entertainment, media, music and business | Broad and industry-diverse |
+| CU Boulder | Large | Aerospace, engineering, media and lifestyle industries | Technically diverse |
+| Vanderbilt | Medium | Formal entertainment pipeline, law and executive access | Selective and relationship-driven |
+| Elon | Small | Highly structured undergraduate entertainment access | Intimate and hands-on |
+| Tulane | Medium | Entertainment law, business and cultural cohesion | Social and relationship-driven |
+| Missouri | Large regional presence | Journalism, television, sports media and strategic communications | Professionally concentrated around media |
+| Syracuse | Unknown (population unpublished) | Physical North Hollywood campus, journalism and entertainment (Newhouse) | Media-concentrated, anchored by a real campus footprint |
+| NYU | Unknown (population unpublished; presumed large from institutional scale) | Tisch West entertainment pipeline | Large and diverse, entertainment-led via Tisch |
+| Berkeley | Unknown (population unpublished; described as a top chapter as of 2016-17) | Technology/engineering plus a distinct Haas business chapter | Large, civically engaged, no single dominant industry |
+| Stanford | Unknown (population unpublished; multiple sub-metro clubs) | Technology/VC plus a dedicated entertainment affinity group | Large but decentralized across several geographic clubs |
+
+Note: Syracuse, NYU, Berkeley and Stanford lack a published Los Angeles-specific alumni headcount (see each school's population_source_note), so "Relative LA Scale" for these four is a qualitative characterization, not a like-for-like ranking against the six schools with documented or estimated figures.`,
   },
 ];
 

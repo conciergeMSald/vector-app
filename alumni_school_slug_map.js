@@ -26,6 +26,15 @@ const SCHOOL_SLUG_MAP = [
   { slug: 'cu-boulder', v5Name: 'University of Colorado Boulder', reportName: 'University of Colorado Boulder' },
   { slug: 'elon', v5Name: 'Elon University', reportName: 'Elon University' },
   { slug: 'missouri', v5Name: 'University of Missouri', reportName: 'University of Missouri' },
+  // Added for LA cohort expansion pass 2 (August 2026) — all four confirmed
+  // against the live UNIVERSITY_DB_V5_MASTER.js, not assumed. Berkeley in
+  // particular would have broken silently: the natural name is hyphenated
+  // ("University of California-Berkeley"), not "UC Berkeley" or "Berkeley"
+  // — exactly the mismatch class this file exists to catch.
+  { slug: 'syracuse', v5Name: 'Syracuse University', reportName: 'Syracuse University' },
+  { slug: 'nyu', v5Name: 'New York University', reportName: 'New York University' },
+  { slug: 'berkeley', v5Name: 'University of California-Berkeley', reportName: 'University of California-Berkeley' },
+  { slug: 'stanford', v5Name: 'Stanford University', reportName: 'Stanford University' },
 ];
 
 const SLUG_BY_V5_NAME = Object.fromEntries(SCHOOL_SLUG_MAP.map((r) => [r.v5Name, r.slug]));
