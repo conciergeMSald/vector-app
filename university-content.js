@@ -2273,7 +2273,18 @@ function formatSchoolsForPrompt(schools) {
   ).join("\n\n---\n\n");
 }
 
-if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolContent,formatSchoolsForPrompt};
+// BUGFIX (2026-08-14): the 5 maritime-academy entries below were appended
+// AFTER module.exports and after UNIVERSITY_CONTENT's closing `};` — five
+// bare `"Name": { ... }` pairs sitting at the top level of the script. That
+// is not valid JavaScript (a string literal followed by `:` outside of an
+// object/label context throws `Unexpected token ':'`), so the entire
+// script failed to parse and UNIVERSITY_CONTENT was never defined at all —
+// hence "[VECTOR] UNIVERSITY_CONTENT not found" and 0 schools ever
+// resolving. Object.assign() merges these 5 schools into the SAME
+// UNIVERSITY_CONTENT object as if they'd been written inline in the
+// literal — same runtime result, but as a syntactically valid statement
+// instead of dangling object-literal fragments.
+Object.assign(UNIVERSITY_CONTENT, {
   "United States Merchant Marine Academy": {
     name: "United States Merchant Marine Academy",
     location: "Kings Point, New York",
@@ -2284,7 +2295,6 @@ if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolCont
     lifestyle: "",
     grad_cities: "New York, Houston, Washington DC, Los Angeles, Seattle — wherever major ports and maritime commercial operations concentrate"
   },
-
   "Maine Maritime Academy": {
     name: "Maine Maritime Academy",
     location: "Castine, Maine",
@@ -2295,7 +2305,6 @@ if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolCont
     lifestyle: "",
     grad_cities: "Portland ME, Boston, New York, Houston, Seattle — distributed across port cities and industrial facilities throughout the Northeast and Gulf Coast"
   },
-
   "Massachusetts Maritime Academy": {
     name: "Massachusetts Maritime Academy",
     location: "Buzzards Bay, Massachusetts",
@@ -2306,7 +2315,6 @@ if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolCont
     lifestyle: "",
     grad_cities: "Boston, New York, Providence, Washington DC — Northeast concentration, with energy and facilities engineering graduates distributed nationally across power infrastructure"
   },
-
   "Texas A&M University at Galveston": {
     name: "Texas A&M University at Galveston",
     location: "Galveston, Texas",
@@ -2317,7 +2325,6 @@ if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolCont
     lifestyle: "",
     grad_cities: "Houston, Galveston, Corpus Christi, New Orleans — Gulf Coast concentration, with maritime business graduates distributed across global shipping and trade companies"
   },
-
   "California State University Maritime Academy": {
     name: "California State University Maritime Academy",
     location: "Vallejo, California",
@@ -2327,4 +2334,7 @@ if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolCont
     the_room: "A 67-acre waterfront campus on the San Pablo Bay north of San Francisco, with the 500-foot Training Ship Golden Bear as the centerpiece of a Summer Sea Term that takes cadets on a 60-day Pacific Rim voyage. Approximately 800 students — the most intimate of the state maritime academies, with faculty-to-student relationships that larger institutions cannot provide. San Francisco Bay proximity means recruiting relationships with the Port of Oakland, the Pacific shipping lines, and the West Coast energy infrastructure that connects California ports to global trade. The Cal Poly merger opens new academic pathways and Co-op/internship pipelines that the standalone academy could not access.",
     lifestyle: "",
     grad_cities: "San Francisco, Los Angeles, Seattle, Portland, Oakland — West Coast port city concentration, with International Strategy graduates distributed through federal agencies and defense contractors"
-  },
+  }
+});
+
+if(typeof module!=="undefined") module.exports={UNIVERSITY_CONTENT,getSchoolContent,formatSchoolsForPrompt};
