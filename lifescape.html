@@ -217,6 +217,20 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .screen.active{display:block;animation:fadeUp .4s ease forwards;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
+/* ── ESSAY-ENGINE-003 v1.2 Pacing Addendum ────────────────────────────────
+   Scoped to .ee-screen only (screens ee1-ee6) via the extra class raising
+   selector specificity — does NOT alter .screen.active above, which every
+   other screen in the app still uses unchanged. Pure opacity fade only,
+   no transform — the addendum is explicit that this should read as
+   unhurried, not decorative (no float/bounce/slide). Reuses existing
+   tokens only (--gold, --rule) — no new design tokens introduced. */
+.screen.ee-screen.active{animation:eeFadeIn 700ms ease-in forwards;}
+@keyframes eeFadeIn{from{opacity:0;}to{opacity:1;}}
+.ee-screen.ee-leaving{transition:opacity .35s ease;opacity:.12;}
+.ee-dots{display:flex;gap:8px;margin:1.5rem 0 0;}
+.ee-dot{width:6px;height:6px;border-radius:50%;background:var(--rule);transition:background .3s ease;}
+.ee-dot.ee-dot-filled{background:var(--gold);}
+
 /* ── PROGRESS BAR ──────────────────────────────────── */
 .progress-track{position:fixed;top:0;left:0;right:0;height:2px;background:var(--rule);z-index:100;}
 .progress-fill{height:2px;background:var(--gold);transition:width .5s ease;}
@@ -614,6 +628,30 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 .cluster-section{margin-bottom:2rem;}
 .cluster-section-header{font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;color:var(--ink4);margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--rule);}
 .cluster-section .tile-grid{margin-bottom:0;}
+
+/* ── CLUSTER REVEAL MOTION (TILE-SYSTEMS-002 Part 4, July 24 2026) ──
+   One motion signature, one easing curve, held moment ~700ms, triggers
+   once via IntersectionObserver, never re-fires. Restraint over motion:
+   the felt premium comes from the whitespace before each realm and the
+   confidence of a single serif title moment, not animation richness —
+   matches the existing single-gold-frame-per-card principle. */
+.cluster-reveal{padding:2.5rem 0 1.5rem;text-align:center;}
+.cluster-reveal-rule{width:0;height:.5px;background:var(--gold);margin:0 auto 1.1rem;transition:width .5s cubic-bezier(.16,1,.3,1);}
+.cluster-reveal-eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(10px);transition:opacity .5s cubic-bezier(.16,1,.3,1) .1s,transform .5s cubic-bezier(.16,1,.3,1) .1s;margin-bottom:.75rem;}
+.cluster-reveal-title{font-family:var(--serif);font-weight:400;font-size:clamp(22px,4vw,30px);color:var(--ink);opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.16,1,.3,1) .18s,transform .6s cubic-bezier(.16,1,.3,1) .18s;margin:0 0 1.5rem;}
+.cluster-section .tile-grid{opacity:0;transform:translateY(10px);transition:opacity .5s cubic-bezier(.16,1,.3,1) .38s,transform .5s cubic-bezier(.16,1,.3,1) .38s;}
+.cluster-more-link{display:block;background:none;border:none;font-family:var(--sans);font-size:13px;color:var(--ink4);cursor:pointer;padding:.5rem 0 0;margin:0;text-align:left;opacity:0;transition:opacity .5s cubic-bezier(.16,1,.3,1) .38s,color .2s;}
+.cluster-more-link:hover{color:var(--gold);}
+.cluster-section.in-view .cluster-more-link{opacity:1;}
+.cluster-section.in-view .cluster-reveal-rule{width:48px;}
+.cluster-section.in-view .cluster-reveal-eyebrow,
+.cluster-section.in-view .cluster-reveal-title{opacity:1;transform:translateY(0);}
+.cluster-section.in-view .tile-grid{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion:reduce){
+  .cluster-reveal-rule,.cluster-reveal-eyebrow,.cluster-reveal-title,.cluster-section .tile-grid{transition:none;}
+  .cluster-reveal-rule{width:48px;}
+  .cluster-reveal-eyebrow,.cluster-reveal-title,.cluster-section .tile-grid{opacity:1;transform:none;}
+}
 
 /* ── ZIP INPUT ─────────────────────────────────────── */
 .zip-reveal{background:var(--gold-pale);border:0.5px solid var(--gl);padding:1rem 1.25rem;margin-top:1rem;min-height:48px;}
@@ -1045,21 +1083,19 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="screen" id="screen-1">
 <div class="container" style="padding-top:7rem">
   <div class="gold-rule"></div>
-  <div class="q">Who's filling this out?</div>
+  <div class="q">Let's begin.</div>
+  <!-- SELF-SERVE-PARENT-FLOW-001 Section 2 (confirmed, built): the parent
+       door that used to redirect straight to a full Parent Agent interview
+       (goToParentAgent()) is removed from this screen entirely. Self-serve
+       families now have exactly one order: student completes the
+       assessment first. The option to add parent input appears only
+       afterward, automatically, inside the report view once the
+       student's first report exists — never here. -->
   <div class="q-sub" id="s1-sub">This shapes how we ask questions and how we write your results. Nothing is permanent. Nothing commits you to anything.</div>
-
-  <div class="voice-row">
-    <button class="vbtn active" id="vbtn-student" onclick="setVoice('student')">I'm the student</button>
-    <button class="vbtn" id="vbtn-parent" onclick="goToParentAgent()">I'm a parent</button>
-  </div>
 
   <div class="path-card sel" id="pc-student" onclick="selectPath('student')">
     <div class="pc-title">Student</div>
     <div class="pc-desc">We'll ask you directly. You tell us what you love, what comes easy, what makes you lose track of time.</div>
-  </div>
-  <div class="path-card" id="pc-parent" onclick="selectPath('parent')">
-    <div class="pc-title">Parent</div>
-    <div class="pc-desc">You tell us about your child. We'll translate what you share into a profile that reflects who they really are.</div>
   </div>
 
   <button class="ls-btn" onclick="goTo('1b')">Continue</button>
@@ -1072,21 +1108,47 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="screen" id="screen-1b">
 <div class="container" style="padding-top:7rem">
   <div class="gold-rule"></div>
-  <div class="q">Tell me about something you made, built, wrote, or figured out that you are proud of.</div>
-  <div class="q-sub">It does not have to be big. It just has to be yours.</div>
-  <div style="margin-top:2rem;">
-    <textarea
-      id="genome-narrative-input"
-      class="ls-input"
-      rows="5"
-      placeholder="Take your time. Write as much or as little as feels right."
-      style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
-    ></textarea>
+  <div id="genome-narrative-primary">
+    <div class="q">Tell me about something you made, built, wrote, or figured out that you are proud of.</div>
+    <div class="q-sub">It does not have to be big. It just has to be yours.</div>
+    <div style="margin-top:2rem;">
+      <textarea
+        id="genome-narrative-input"
+        class="ls-input"
+        rows="5"
+        placeholder="Take your time. Write as much or as little as feels right."
+        style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+      ></textarea>
+    </div>
+    <div id="genome-narrative-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;"></div>
+    <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeNarrative()">Continue</button>
+    <div style="text-align:center;margin-top:1rem;">
+      <button onclick="skipGenomeNarrative()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+    </div>
   </div>
-  <div id="genome-narrative-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;"></div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeNarrative()">Continue</button>
-  <div style="text-align:center;margin-top:1rem;">
-    <button onclick="skipGenomeNarrative()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+  <!-- ── STUDENT-AGENT-002 Section 4 verb-based follow-up (Gate 4, Item 3) ──
+       Revealed inline on the same screen per OQ-2 ("adds depth without
+       adding screens") — no new .screen div, no change to goTo() navigation.
+       Only shown when the primary question was actually answered; a
+       skipped primary has nothing to follow up on. Question text is
+       Section 4's own "Better Question" example for Domain 1/2 verbatim,
+       not invented here. -->
+  <div id="genome-narrative-followup" style="display:none;">
+    <div class="q">What do you customize, tweak, or redo even when no one asks you to?</div>
+    <div class="q-sub">Could be anything — a setup, a routine, a document, a room. What do you keep adjusting?</div>
+    <div style="margin-top:2rem;">
+      <textarea
+        id="genome-narrative-followup-input"
+        class="ls-input"
+        rows="4"
+        placeholder="A sentence or two is plenty."
+        style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+      ></textarea>
+    </div>
+    <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeNarrativeFollowup()">Continue</button>
+    <div style="text-align:center;margin-top:1rem;">
+      <button onclick="skipGenomeNarrativeFollowup()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this part</button>
+    </div>
   </div>
 </div>
 </div>
@@ -1097,21 +1159,43 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <div class="screen" id="screen-1c">
 <div class="container" style="padding-top:7rem">
   <div class="gold-rule"></div>
-  <div class="q">What have you built, designed, or created — digital or physical — where you surprised yourself with what you finished?</div>
-  <div class="q-sub">Could be something you made for fun, for school, for someone else, or just to see if you could.</div>
-  <div style="margin-top:2rem;">
-    <textarea
-      id="genome-building-input"
-      class="ls-input"
-      rows="5"
-      placeholder="Describe what it was, how you made it, and what surprised you."
-      style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
-    ></textarea>
+  <div id="genome-building-primary">
+    <div class="q">What have you built, designed, or created — digital or physical — where you surprised yourself with what you finished?</div>
+    <div class="q-sub">Could be something you made for fun, for school, for someone else, or just to see if you could.</div>
+    <div style="margin-top:2rem;">
+      <textarea
+        id="genome-building-input"
+        class="ls-input"
+        rows="5"
+        placeholder="Describe what it was, how you made it, and what surprised you."
+        style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+      ></textarea>
+    </div>
+    <div id="genome-building-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;"></div>
+    <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeBuilding()">Continue</button>
+    <div style="text-align:center;margin-top:1rem;">
+      <button onclick="skipGenomeBuilding()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+    </div>
   </div>
-  <div id="genome-building-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;"></div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeBuilding()">Continue</button>
-  <div style="text-align:center;margin-top:1rem;">
-    <button onclick="skipGenomeBuilding()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip for now</button>
+  <!-- ── STUDENT-AGENT-002 Section 4 verb-based follow-up (Gate 4, Item 3) ──
+       Same inline-reveal pattern as screen-1b. Question text is Section 4's
+       own "Better Question" example for Domain 3 verbatim. -->
+  <div id="genome-building-followup" style="display:none;">
+    <div class="q">What have you built that didn't work the first time?</div>
+    <div class="q-sub">Do you enjoy figuring out why something broke? What did you do about it?</div>
+    <div style="margin-top:2rem;">
+      <textarea
+        id="genome-building-followup-input"
+        class="ls-input"
+        rows="4"
+        placeholder="A sentence or two is plenty."
+        style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
+      ></textarea>
+    </div>
+    <button class="ls-btn" style="margin-top:1.5rem" onclick="submitGenomeBuildingFollowup()">Continue</button>
+    <div style="text-align:center;margin-top:1rem;">
+      <button onclick="skipGenomeBuildingFollowup()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this part</button>
+    </div>
   </div>
 </div>
 </div>
@@ -1189,7 +1273,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 <!-- ══════════════════════════════════════════════════ -->
 
 <!-- EE-1 — ACCOMPLISHMENT EVIDENCE -->
-<div class="screen" id="screen-ee1">
+<div class="screen ee-screen" id="screen-ee1">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1204,7 +1288,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee2')">Continue</button>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goToEE('ee2')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
     <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
@@ -1212,7 +1297,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- EE-2 — PRIDE WITHOUT BRAGGING -->
-<div class="screen" id="screen-ee2">
+<div class="screen ee-screen" id="screen-ee2">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1227,9 +1312,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee3')">Continue</button>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goToEE('ee3')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee1')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goToEE('ee1')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
     <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
@@ -1237,7 +1323,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- EE-3 — INTELLECTUAL CURIOSITY -->
-<div class="screen" id="screen-ee3">
+<div class="screen ee-screen" id="screen-ee3">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1252,9 +1338,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee4')">Continue</button>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot"></div><div class="ee-dot"></div><div class="ee-dot"></div></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goToEE('ee4')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee2')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goToEE('ee2')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
     <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
@@ -1262,7 +1349,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- EE-4 — FAMILY AND CONTEXT (explicitly optional/sensitive) -->
-<div class="screen" id="screen-ee4">
+<div class="screen ee-screen" id="screen-ee4">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1277,9 +1364,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee5')">Continue</button>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot"></div><div class="ee-dot"></div></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goToEE('ee5')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee3')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goToEE('ee3')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
     <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
@@ -1287,7 +1375,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- EE-5 — ENVIRONMENT AND BELONGING -->
-<div class="screen" id="screen-ee5">
+<div class="screen ee-screen" id="screen-ee5">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1302,9 +1390,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
       style="width:100%;resize:vertical;font-size:16px;line-height:1.6;padding:1rem;box-sizing:border-box;"
     ></textarea>
   </div>
-  <button class="ls-btn" style="margin-top:1.5rem" onclick="goTo('ee6')">Continue</button>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot"></div></div>
+  <button class="ls-btn" style="margin-top:1.5rem" onclick="goToEE('ee6')">Continue</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee4')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goToEE('ee4')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
     &nbsp;&nbsp;
     <button onclick="skipEssayEvidence()" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;text-decoration:underline;">Skip this whole section</button>
   </div>
@@ -1312,7 +1401,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
 </div>
 
 <!-- EE-6 — VOICE CAPTURE -->
-<div class="screen" id="screen-ee6">
+<div class="screen ee-screen" id="screen-ee6">
 <div class="container" style="padding-top:7rem">
   <div class="ls-eyebrow">Deepen Your Essay — Optional</div>
   <div class="gold-rule"></div>
@@ -1328,9 +1417,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     ></textarea>
   </div>
   <div id="essay-evidence-msg" style="min-height:1.2rem;margin-top:0.5rem;font-family:var(--sans);font-size:14px;color:var(--muted);text-align:center;"></div>
+  <div class="ee-dots"><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div><div class="ee-dot ee-dot-filled"></div></div>
   <button class="ls-btn" style="margin-top:1.5rem" onclick="submitEssayEvidence()">Finish</button>
   <div style="text-align:center;margin-top:1rem;">
-    <button onclick="goTo('ee5')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
+    <button onclick="goToEE('ee5')" style="background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:var(--muted);cursor:pointer;">Back</button>
   </div>
 </div>
 </div>
@@ -2350,6 +2440,21 @@ function goTo(n) {
   if(n===4) updateS2Voice();
 }
 
+// ── ESSAY-ENGINE-003 v1.2 Pacing Addendum ──────────────
+// Wraps goTo() for the ee1-ee6 sequence only: briefly fades the current
+// question first (.ee-leaving, .35s), then swaps screens via the
+// existing, unmodified goTo(). Every other screen in the app still
+// navigates via goTo() directly and is unaffected.
+function goToEE(target) {
+  var current = document.querySelector('.screen.ee-screen.active');
+  if (!current) { goTo(target); return; }
+  current.classList.add('ee-leaving');
+  setTimeout(function() {
+    current.classList.remove('ee-leaving');
+    goTo(target);
+  }, 350);
+}
+
 // ── CONSULTANT CODE (SCREEN 0) ────────────────────────
 async function submitConsultantCode() {
   var inp = document.getElementById('consultant-code-input');
@@ -2506,16 +2611,34 @@ async function startFamilyCheckoutFromGate() {
 // ── GENOME NARRATIVE (Domain 1 — Narrative & Ideas) ──
 function submitGenomeNarrative() {
   var inp = document.getElementById('genome-narrative-input');
-  var msg = document.getElementById('genome-narrative-msg');
   var text = inp ? inp.value.trim() : '';
   if (text.length > 0) {
     LS_STATE.genome_narrative = text;
+    // Verb-based follow-up (Section 4, Gate 4 Item 3) — reveal inline,
+    // same screen, per OQ-2. Only asked when there is a primary answer
+    // to build depth on.
+    document.getElementById('genome-narrative-primary').style.display = 'none';
+    document.getElementById('genome-narrative-followup').style.display = '';
+    return;
   }
   goTo('1c');
 }
 
 function skipGenomeNarrative() {
   LS_STATE.genome_narrative = null;
+  LS_STATE.genome_narrative_followup = null;
+  goTo('1c');
+}
+
+function submitGenomeNarrativeFollowup() {
+  var inp = document.getElementById('genome-narrative-followup-input');
+  var text = inp ? inp.value.trim() : '';
+  LS_STATE.genome_narrative_followup = text.length > 0 ? text : null;
+  goTo('1c');
+}
+
+function skipGenomeNarrativeFollowup() {
+  LS_STATE.genome_narrative_followup = null;
   goTo('1c');
 }
 
@@ -2523,12 +2646,30 @@ function skipGenomeNarrative() {
 function submitGenomeBuilding() {
   var inp = document.getElementById('genome-building-input');
   var text = inp ? inp.value.trim() : '';
-  if (text.length > 0) { LS_STATE.genome_building = text; }
+  if (text.length > 0) {
+    LS_STATE.genome_building = text;
+    document.getElementById('genome-building-primary').style.display = 'none';
+    document.getElementById('genome-building-followup').style.display = '';
+    return;
+  }
   goTo('1d');
 }
 
 function skipGenomeBuilding() {
   LS_STATE.genome_building = null;
+  LS_STATE.genome_building_followup = null;
+  goTo('1d');
+}
+
+function submitGenomeBuildingFollowup() {
+  var inp = document.getElementById('genome-building-followup-input');
+  var text = inp ? inp.value.trim() : '';
+  LS_STATE.genome_building_followup = text.length > 0 ? text : null;
+  goTo('1d');
+}
+
+function skipGenomeBuildingFollowup() {
+  LS_STATE.genome_building_followup = null;
   goTo('1d');
 }
 
@@ -2695,10 +2836,19 @@ function goToParentAgent() {
 
 function setVoice(v) {
   LS_STATE.voice = v;
-  document.getElementById('vbtn-student').classList.toggle('active', v==='student');
-  document.getElementById('vbtn-parent').classList.toggle('active', v==='parent');
-  document.getElementById('pc-student').classList.toggle('sel', v==='student');
-  document.getElementById('pc-parent').classList.toggle('sel', v==='parent');
+  // SELF-SERVE-PARENT-FLOW-001: screen-1's voice-row and parent path-card
+  // were removed (student-only, self-serve order). These elements no
+  // longer exist in the DOM, so every lookup here is null-guarded rather
+  // than assumed present — setVoice() is still called elsewhere (e.g.
+  // selectPath('student') on screen-1) and must not throw.
+  var vbtnStudent = document.getElementById('vbtn-student');
+  var vbtnParent  = document.getElementById('vbtn-parent');
+  var pcStudent   = document.getElementById('pc-student');
+  var pcParent    = document.getElementById('pc-parent');
+  if (vbtnStudent) vbtnStudent.classList.toggle('active', v==='student');
+  if (vbtnParent)  vbtnParent.classList.toggle('active', v==='parent');
+  if (pcStudent)   pcStudent.classList.toggle('sel', v==='student');
+  if (pcParent)    pcParent.classList.toggle('sel', v==='parent');
   const p = v === 'parent';
   const s1sub = document.getElementById('s1-sub');
   if(s1sub) s1sub.textContent = p
@@ -3007,6 +3157,63 @@ const CLUSTER_CONFIG = {
 };
 const CLUSTER_ORDER = ['make','move','think','people','systems'];
 
+// ── Cluster reveal copy (TILE-SYSTEMS-002 Part 4.4, July 24 2026) ──
+// Question-form eyebrow/title per cluster, addressing the student directly
+// rather than naming a UI category. All 5 clusters confirmed July 24 2026 —
+// no fallback path needed at runtime anymore, but renderClusterHeader()
+// keeps the CLUSTER_CONFIG fallback as defensive code in case a 6th
+// cluster is ever added without reveal copy ready yet.
+const CLUSTER_REVEAL_COPY = {
+  make:    { eyebrow: 'Make',    title: 'What do you enjoy making with your hands?' },
+  move:    { eyebrow: 'Move',    title: 'How do you stay active?' },
+  think:   { eyebrow: 'Think',   title: 'What keeps your brain active?' },
+  people:  { eyebrow: 'People',  title: 'How are you with people?' },
+  systems: { eyebrow: 'Systems', title: 'What interests you?' },
+};
+
+function renderClusterHeader(clusterKey) {
+  const copy = CLUSTER_REVEAL_COPY[clusterKey];
+  const cfg = CLUSTER_CONFIG[clusterKey];
+  const header = document.createElement('div');
+  header.className = 'cluster-reveal';
+  const rule = document.createElement('div');
+  rule.className = 'cluster-reveal-rule';
+  const eyebrow = document.createElement('div');
+  eyebrow.className = 'cluster-reveal-eyebrow';
+  eyebrow.textContent = copy ? copy.eyebrow : cfg.label;
+  const title = document.createElement('div');
+  title.className = 'cluster-reveal-title';
+  title.textContent = copy ? copy.title : cfg.label;
+  header.appendChild(rule);
+  header.appendChild(eyebrow);
+  header.appendChild(title);
+  return header;
+}
+
+// Fires each cluster-section's entrance once as it scrolls into view.
+// Single IntersectionObserver instance, re-created per renderTileGrid()
+// call so stale sections from a prior render never linger as observed
+// targets. Never re-triggers a section once shown (unobserve on first hit).
+let _clusterRevealObserver = null;
+function observeClusterReveal(sections) {
+  if (_clusterRevealObserver) _clusterRevealObserver.disconnect();
+  if (typeof IntersectionObserver === 'undefined') {
+    // No IntersectionObserver support — show everything immediately
+    // rather than leaving sections permanently hidden.
+    sections.forEach(s => s.classList.add('in-view'));
+    return;
+  }
+  _clusterRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        _clusterRevealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(s => _clusterRevealObserver.observe(s));
+}
+
 function renderTileGrid() {
   if(typeof VECTOR_CROSSWALK === 'undefined' || typeof curateInitialTiles === 'undefined') {
     document.getElementById('activity-tile-grid').innerHTML =
@@ -3022,16 +3229,22 @@ function renderTileGrid() {
   actGrid.innerHTML = '';
   eqGrid.innerHTML = '';
 
-  // ── Curated initial tile set from orienting answers ──
-  // Pass pronoun and grade into curation so gender-weighted tiles surface correctly
-  const curatedIds = curateInitialTiles({
-    ...ORIENT_ANSWERS,
-    pronoun: LS_STATE.pronouns || null,
-    grade: LS_STATE.grade || null
-  });
+  // ── Full tile set, always — no gating on orienting answers ──
+  // Previously curateInitialTiles() (lifescape_curation_map_v1.js) scored and
+  // filtered VECTOR_CROSSWALK down to ~28-36 tiles based on free_time/self_view/
+  // work_style, meaning the same student answers always produced a capped
+  // subset — never the full assortment of activity choices. curateInitialTiles
+  // itself is untouched (still used elsewhere / available if curation is ever
+  // wanted again) — this just stops using it as the initial render gate.
+  // Per-cluster VISIBLE_CAP + "+N more" below still paces the reveal so this
+  // doesn't read as one giant list dump; it just no longer hides real choices.
+  const curatedIds = VECTOR_CROSSWALK
+    .filter(t => t.cluster !== 'eq')
+    .map(t => t.id);
   _shownTileIds = [...curatedIds];
 
   // ── Render curated activity tiles grouped by cluster ──
+  const _renderedSections = [];
   CLUSTER_ORDER.forEach(clusterKey => {
     const clusterTiles = curatedIds
       .map(id => VECTOR_CROSSWALK.find(t => t.id === id))
@@ -3039,30 +3252,54 @@ function renderTileGrid() {
 
     if(clusterTiles.length === 0) return; // skip empty clusters
 
-    const cfg = CLUSTER_CONFIG[clusterKey];
-
     // Create cluster section
     const section = document.createElement('div');
     section.className = 'cluster-section';
     section.id = 'cluster-' + clusterKey;
 
-    // Header
-    const header = document.createElement('div');
-    header.className = 'cluster-section-header';
-    header.textContent = cfg.label;
-    section.appendChild(header);
+    // Header — gold hairline + eyebrow + question-form title (Part 4.4)
+    section.appendChild(renderClusterHeader(clusterKey));
 
-    // Tile grid within this cluster
+    // Tile grid within this cluster — capped at 8 visible in the initial
+    // held reveal (Part 4, Step 12). Real per-cluster group sizes were
+    // measured up to 17 tiles for some answer combinations; at that scale
+    // the single fade-up-as-one-group moment stops reading as a considered
+    // pause and starts reading as a list dump. No signal is lost — every
+    // scored tile is still present and tappable, just staggered visually
+    // rather than forced into one 700ms moment.
     const grid = document.createElement('div');
     grid.className = 'tile-grid';
-    clusterTiles.forEach(tile => grid.appendChild(makeTileEl(tile)));
+    const VISIBLE_CAP = 8;
+    clusterTiles.slice(0, VISIBLE_CAP).forEach(tile => grid.appendChild(makeTileEl(tile)));
     section.appendChild(grid);
 
+    if (clusterTiles.length > VISIBLE_CAP) {
+      const remaining = clusterTiles.slice(VISIBLE_CAP);
+      const moreLink = document.createElement('button');
+      moreLink.type = 'button';
+      moreLink.className = 'cluster-more-link';
+      moreLink.textContent = '+' + remaining.length + ' more';
+      moreLink.onclick = function() {
+        remaining.forEach(tile => grid.appendChild(makeTileEl(tile)));
+        moreLink.remove();
+      };
+      section.appendChild(moreLink);
+    }
+
     actGrid.appendChild(section);
+    _renderedSections.push(section);
   });
 
-  // Show "show me everything" link
-  document.getElementById('show-all-link').style.display = 'block';
+  // Cluster-level scroll reveal (Part 4.2) — one motion signature per
+  // section, triggers once, never re-fires. Must run after all sections
+  // are in the DOM so IntersectionObserver has real elements to watch.
+  observeClusterReveal(_renderedSections);
+
+  // "Show me everything" link is now redundant — every tile already renders
+  // above (with per-cluster "+N more" for pacing) — so it stays hidden rather
+  // than offering a click that reveals nothing new. showAllTiles() itself is
+  // untouched and harmless to call if this is ever wired back up.
+  document.getElementById('show-all-link').style.display = 'none';
 
   // ── EQ tiles — ordered by relevance to orienting answers ──
   const eqOrder = typeof getEQPriority !== 'undefined'
