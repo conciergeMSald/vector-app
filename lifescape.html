@@ -4663,6 +4663,15 @@ async function fireCall(prompt, maxTokens, retryCount=0, timeoutMs=30000) {
     const data = await res.json();
     const text = data.content?.[0]?.text;
     if(!text) throw new Error('Empty response');
+    // VISIBILITY (2026-08-14): previously stop_reason was never read, so a
+    // response truncated by hitting max_tokens looked identical in the logs
+    // to one that finished normally — no way to diagnose "content is
+    // missing/cut off" after the fact. Anthropic's Messages API sets
+    // stop_reason:'max_tokens' when this happens; surface it loudly so a
+    // truncated response is visible in console instead of silent.
+    if (data.stop_reason === 'max_tokens') {
+      console.warn('[fireCall] TRUNCATED — response hit max_tokens (' + maxTokens + '). Output was cut off mid-generation. Prompt preview:', prompt.slice(0, 120));
+    }
     return text;
   } catch(e) {
     clearTimeout(timeout);
@@ -6506,13 +6515,21 @@ async function submitLifescape() {
     var _ccContext = _ccShouldShow ? extractCCContext(_ccTargetData, profile.zip) : null;
 
     // Build parallel call array — callB + callC always, callE conditionally
+    // TIMEOUT FIX (2026-08-14): these were already thin under normal
+    // conditions, not just today's degraded case — callB requests up to
+    // 1600 output tokens against a 45s ceiling, which at a conservative
+    // (not even slow) 40 tok/s throughput needs ~40s, leaving almost no
+    // margin. Live-tested same day: callB aborted with the exact same
+    // "signal is aborted without reason" AbortController signature as
+    // callD's confirmed timeout failure. Same fix, same reasoning, applied
+    // consistently across every fireCall() site that hits this endpoint.
     var _parallelCalls = [
-      fireCall(buildCallBPrompt(ctx), 1600, 0, 45000),
-      fireCall(buildCallCPrompt(ctx), 1000, 0, 30000)
+      fireCall(buildCallBPrompt(ctx), 1600, 0, 90000),
+      fireCall(buildCallCPrompt(ctx), 1000, 0, 60000)
     ];
     if (_ccShouldShow && _ccContext && _ccContext.hasCCPathway) {
       console.log('[callE] CC pathway triggered — source:', _ccContext.source, 'CC:', _ccContext.ccName);
-      _parallelCalls.push(fireCall(buildCallEPrompt(profile, _ccContext, _ccTargetSchool), 800, 0, 30000));
+      _parallelCalls.push(fireCall(buildCallEPrompt(profile, _ccContext, _ccTargetSchool), 800, 0, 60000));
     }
 
     // ── ESSAY-ENGINE-003 Stage 1: normalize Essay Evidence Layer ──
@@ -6542,7 +6559,10 @@ async function submitLifescape() {
     var _essayPrompt = (typeof buildEssayTopicPrompt === 'function') ? buildEssayTopicPrompt(ctx, _essayEvidenceStructured, _narrativeThemeInstructions, _promptMatchInstructions, _scoringRubricInstructions, _writingPacketInstructions) : null;
     var _essayCallIndex = _parallelCalls.length;
     if (_essayPrompt) {
-      _parallelCalls.push(fireCall(_essayPrompt, 1400, 0, 30000));
+      // TIMEOUT FIX (2026-08-14): same reasoning as callB/C/E above — 1400
+      // tokens against a 30s ceiling needed ~35s at conservative throughput,
+      // already past the old timeout before any real-world slowness.
+      _parallelCalls.push(fireCall(_essayPrompt, 1400, 0, 90000));
     }
 
     const _parallelResults = await Promise.allSettled(_parallelCalls);
@@ -6934,7 +6954,35 @@ async function submitLifescape() {
           const callDPrompt = buildCallDPrompt(ctxD, matchedSchools.slice(0, _schoolCount), schoolContentBlockFull);
           console.log('[callD] firing Claude, prompt length:', callDPrompt.length);
 
-          const callDText = await fireCall(callDPrompt, 3000, 0, 55000);
+          // HEADROOM (2026-08-14): max_tokens raised from 3000. Worst case is
+          // 6 schools (max _schoolCount) each with a full MATCH/WHY/THRIVES/
+          // WATCH/RESILIENCE block plus optional CC_PATH/CULTURE lines —
+          // estimated ~2300 tokens minimum, leaving only ~700 tokens of
+          // margin at the old cap. Real Claude output regularly runs longer
+          // than template estimates, and richer school-intelligence input
+          // (real theRoom/lifestyle content now, vs. blank strings before
+          // today's earlier fix) makes longer per-school output more likely.
+          // 4500 keeps a real safety margin without materially changing cost
+          // (only consumed if actually needed — max_tokens is a ceiling, not
+          // a target).
+          //
+          // TIMEOUT FIX (2026-08-14, same day, live-tested): raising
+          // max_tokens without raising timeoutMs caused a regression, caught
+          // in the very next live test — client-side AbortController was
+          // still firing at the OLD 55s ceiling, which was already tight at
+          // 3000 tokens. Console showed "signal is aborted without reason"
+          // with no [fireCall] TRUNCATED warning (the request never got a
+          // response at all, so stop_reason was never read) — and because
+          // callD's catch block leaves the schools tab on its "generating"
+          // state with no further fallback, an abort here means the schools
+          // section never renders. This is a strictly worse failure mode
+          // than the truncation this change was meant to fix. Raised to
+          // 100s: conservative Claude Sonnet throughput (~40 tok/s under
+          // load) puts 4500 tokens at up to ~112s; 100s covers the realistic
+          // range without being unbounded. fireCall() already retries once
+          // on failure, so a genuinely stuck request still fails within
+          // ~200s rather than hanging forever.
+          const callDText = await fireCall(callDPrompt, 4500, 0, 100000);
           console.log('[callD] raw response length:', callDText?.length);
           console.log('[callD] raw response preview:', callDText?.slice(0,200));
 
@@ -7010,7 +7058,19 @@ async function submitLifescape() {
             console.warn('[callD] Backfilling', missing.length, 'school(s) Claude omitted:', missing);
 
             missing.forEach(function(name) {
-              var src = (typeof UNIVERSITY_CONTENT !== 'undefined') ? UNIVERSITY_CONTENT[name] : null;
+              // CONSISTENCY FIX (2026-08-14, BUG-AUDIT-002 follow-up): this was
+              // the one remaining raw UNIVERSITY_CONTENT[name] read in the
+              // callD pipeline — no alias normalization, unlike every other
+              // school-data access in this file. Try the alias-aware V5
+              // lookup first (getDbV5Entry — same one getFlatSchoolData()
+              // uses), then fall back to a direct UNIVERSITY_CONTENT read for
+              // schools V5 doesn't have at all. Keeps this function's
+              // existing field usage (studentFit.thrivesIf/strugglesIf, which
+              // getFlatSchoolData() doesn't expose) untouched — just fixes
+              // the lookup itself so a school needing alias resolution to be
+              // found doesn't silently fail to backfill.
+              var v5Entry = (typeof getDbV5Entry === 'function') ? getDbV5Entry(name) : null;
+              var src = v5Entry || ((typeof UNIVERSITY_CONTENT !== 'undefined') ? UNIVERSITY_CONTENT[name] : null);
               if (!src) {
                 console.warn('[callD] Cannot backfill "' + name + '" — no V5/UNIVERSITY_CONTENT entry found. Omitting rather than fabricating.');
                 return;
