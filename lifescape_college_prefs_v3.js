@@ -1162,7 +1162,7 @@ const SCHOOL_GPA_RANGES = {
   "Kennesaw State University":{"min":3.1}
 };
 
-function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData) {
+function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpaData, trajectoryResolved = null, v5Schools = null) {
   const { campus_scale, regions, conference, social_scene, religion } = collegePrefs;
   const gpa = gpaData ? gpaData.normalized : null;
 
@@ -1300,6 +1300,51 @@ function matchUniversities(collegePrefs, riasec, naicsSectors, comboUnlocks, gpa
         if (gpa >= range.min) score += 5;
         if (gpa >= range.min + 0.2) score += 3;
         if (gpa < range.min - 0.3) score -= 8;
+      }
+    }
+
+    // ── Trajectory-fit scoring (SCHOOL-MATCH-INTEGRITY-001, Issue 4 fix,
+    // 2026-08-14) ──────────────────────────────────────────────────────────
+    // This exact comparison — trajectoryResolved against a school's
+    // trajectoryProfile scoreMap — already existed in lifescape.html as
+    // _trajNote, generating a display-only sentence AFTER schools were
+    // already selected (e.g. "Strong match for your trajectory"). It never
+    // fed back into which schools got selected in the first place — the
+    // original bug this issue reported (North Dakota State/Marquette
+    // surfacing ahead of Wisconsin-Madison for a California returning-home
+    // student) happened because matchUniversities() had no geographic or
+    // trajectory awareness at all. This promotes the same signal, same
+    // thresholds, into a real scoring dimension, so the sentence a family
+    // sees and the ranking that produced their list are finally the same
+    // computation instead of two disconnected ones.
+    //
+    // trajectoryResolved is one of LEAVE_STAY_GONE / LEAVE_COME_BACK /
+    // STEWARD / NAVIGATOR / AMBIGUOUS (see resolveTrajectory() in
+    // lifescape.html) or null if not yet resolved. AMBIGUOUS and null both
+    // correctly fall through to no bonus — this only fires on a real,
+    // resolved trajectory signal, never a guess.
+    //
+    // v5Schools is optional (matches the pattern every other V5-dependent
+    // dimension in this codebase uses) — omitting it just means this
+    // dimension doesn't fire, same "not yet researched, never a fabricated
+    // score" discipline as admissionsDrawProfile and every other V5 field.
+    if (trajectoryResolved && trajectoryResolved !== 'AMBIGUOUS' && v5Schools) {
+      const v5Entry = v5Schools[school];
+      const trajProfile = v5Entry && v5Entry.trajectoryProfile;
+      if (trajProfile) {
+        const trajScoreMap = {
+          LEAVE_STAY_GONE: trajProfile.leaverScore,
+          LEAVE_COME_BACK: trajProfile.returnerScore,
+          STEWARD: trajProfile.stewardScore,
+          NAVIGATOR: trajProfile.navigatorScore
+        };
+        const trajScore = trajScoreMap[trajectoryResolved];
+        // Same 80/65 bands as the existing _trajNote display text, now
+        // translated into score deltas instead of just words.
+        if (typeof trajScore === 'number') {
+          if (trajScore >= 80) score += 15;
+          else if (trajScore >= 65) score += 8;
+        }
       }
     }
 
@@ -1577,6 +1622,7 @@ function getProfileAdjacentMatches(primaryMatches, riasec, naicsSectors, max=3, 
 if (typeof module !== 'undefined') {
   module.exports = Object.assign(module.exports || {}, {
     getAdjacentMatches,
-    getProfileAdjacentMatches
+    getProfileAdjacentMatches,
+    matchUniversities
   });
 }

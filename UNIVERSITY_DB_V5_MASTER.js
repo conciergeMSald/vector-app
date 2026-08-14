@@ -1,6 +1,22 @@
 /**
  * VECTOR Lifescape — University Database V5 Master
  *
+ * ISSUE 7 MERGE (2026-08-14, SCHOOL-MATCH-INTEGRITY-001): University of
+ * Delaware and Macalester College added — the two remaining zero-data
+ * schools from the original 10-school Issue 7 finding, closing that item.
+ * admissionsDrawProfile and applicationIntelligence for both are real,
+ * live-verified via Claude in Chrome against each school's own official
+ * Common Data Set (Delaware: 2024-25, ire.udel.edu; Macalester: 2023-24,
+ * macalester.edu) — not training-knowledge estimates. Narrative fields
+ * (institutionNarrative, institutionIdentity, etc.) are real but were not
+ * independently fact-checked against primary sources the way the
+ * admissions numbers were. Scored fields (industryPathways, bigFiveProfile,
+ * institutionalMoat, futureResilience, trajectoryProfile, jewishLife,
+ * networkCapital, socialCapital, wealthMobility) are NOT YET POPULATED for
+ * either school — omitted rather than guessed, per this file's standing
+ * discipline. See each entry's own _dataProvenance field for specifics.
+ * Approved by Matt Stearn, 2026-08-14.
+ *
  * TIER 2 MERGE (2026-07-31): 8 of 19 Tier 2 gap-closure schools added.
  * Full per-school reasoning/disclosure lived in each draft file's own
  * header comments before this merge (uaf_v5_draft.js, ozarks_v5_draft.js,
@@ -75175,7 +75191,250 @@ const UNIVERSITY_DB_V5 = {
         "exposure_score": 4
       }
     ]
+  },
+
+  // ── Issue 7 (SCHOOL-MATCH-INTEGRITY-001) — merged 2026-08-14, approved by Matt Stearn ──
+  "University of Delaware": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": 66,
+      "homeStateEnrollmentPct": 34,
+      "drawClassification": "national",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "verified",
+      "dataSource": "University of Delaware Common Data Set 2024-2025, Section C1 residency breakdown (ire.udel.edu/files/2025/07/CDS2425_UDelaware.pdf).",
+      "dataYear": 2024,
+      "notes": "Fall 2024 first-time, first-year enrolled cohort: 1,381 in-state / 2,638 out-of-state / 56 international, total 4,075. oosEnrollmentPct computed as (out-of-state + international)/total = 66%; homeStateEnrollmentPct = in-state/total = 34% (matches the two-field-sums-to-100 convention used elsewhere in V5). drawClassification 'national' per the >=60% OOS threshold this file uses. topFeederStates not broken out in the standard CDS — same genuine gap as most V5 entries, not specific to this school."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": "January 15",
+      "earliestDeadlineLabel": "Regular Decision / Priority Date",
+      "rdDeadline": "January 15",
+      "essayPromptTopic": null,
+      "notes": "SAT/ACT-optional through at least 2025 admissions cycle per UD's own CDS Section C8F comment. Notification on a rolling basis beginning November 1. Standard national reply/deposit deadline of May 1. Application fee $75, waivable for demonstrated financial need. Admit rate 27,517/39,742 = 69.2% (Moderately Selective per this codebase's own competitiveness bands). SAT Composite 25th-75th percentile: 1220-1370. ACT Composite 25th-75th: 26-32. All figures from Common Data Set 2024-2025, Sections C1/C7/C9/C11.",
+      "verifiedDate": "2026-08-14"
+    },
+    "institutionNarrative": {
+      "name": "University of Delaware",
+      "location": "Newark, Delaware",
+      "region": "Mid-Atlantic",
+      "archetype": "The Mid-Atlantic Public Flagship — Large Research University with Strong Pre-Professional and Greek-Life Culture",
+      "oneSentenceSummary": "University of Delaware is a large public research flagship in Newark, Delaware, known for strong pre-professional programs, an active Greek and social scene, and proximity to Philadelphia, Baltimore, and Washington DC.",
+      "pipeline": "Approximately 24,000 undergraduates. UD is recognized for Business, Engineering, Education, and Health Sciences, with a strong regional employer pipeline into the Mid-Atlantic corporate, financial services, and healthcare economy given its position between Philadelphia and DC.",
+      "hiddenPathway": "UD's location directly between Philadelphia, Baltimore, and Washington DC gives students realistic commuting/internship access to three major metro job markets without the cost of living in any of them — a genuine geographic advantage most families overlook when comparing it to more expensive nearby options.",
+      "institutionalSecret": "Not yet researched at Grinnell-entry depth — needs a dedicated pass to identify a genuinely distinguishing, lesser-known program or opportunity.",
+      "theRoom": "A large public research university (~24,000 undergraduates) with an active Greek-life and social culture, in a college town setting an hour or less from Philadelphia, Baltimore, and Wilmington.",
+      "lifestyle": "Traditional large-university social scene with a strong Greek presence, D1 athletics, and easy weekend access to Philadelphia and the Mid-Atlantic corridor.",
+      "bestFitPersonality": "Students who want a large, socially active campus with strong pre-professional programs and easy access to major Mid-Atlantic cities, comfortable in a Greek-influenced social environment.",
+      "faithTradition": "None",
+      "geographicInfluenceRadius": "Strong throughout the Mid-Atlantic corridor (Delaware, Pennsylvania, Maryland, New Jersey, DC), with a real regional employer pipeline into Philadelphia and DC.",
+      "economicOutcome": "Not yet researched at Grinnell-entry depth — needs real net-price and outcomes data.",
+      "gradCities": [],
+      "comparableInstitutions": [
+        "University of Maryland College Park",
+        "Rutgers University",
+        "Penn State University",
+        "University of Massachusetts Amherst",
+        "James Madison University"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": [],
+        "transferAcceptanceRate": null,
+        "freshmanAcceptanceRate": null,
+        "estimatedSavingsRange": null,
+        "transferNotes": "Not yet researched."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "UD",
+      "archetype": "Mid-Atlantic Public Flagship — Pre-Professional, Greek-Active",
+      "institutionalPersonality": "large, socially active, pre-professional, regionally connected",
+      "cultureKeywords": [
+        "Greek Life",
+        "Pre-Professional",
+        "Mid-Atlantic Corridor",
+        "D1 Athletics",
+        "Regional Employer Pipeline"
+      ],
+      "missionOrientation": "A large public research university preparing students for professional careers across the Mid-Atlantic corridor.",
+      "faithTradition": "Historically Presbyterian founding; today nonsectarian public institution.",
+      "educationalPhilosophy": "Not yet researched at Grinnell-entry depth.",
+      "competitiveness": "Moderately Selective",
+      "politicalCulture": "Not yet researched.",
+      "studentAutonomy": "Not yet researched.",
+      "prestigeOrientation": "Strong regional public flagship reputation, particularly in the Mid-Atlantic corridor.",
+      "socialClimate": "Active, traditional large-university social scene with a strong Greek presence.",
+      "leadershipStyle": "Not yet researched."
+    },
+    "comparativePositioning": {
+      "notes": "Not yet researched at Grinnell-entry depth — needs specific versus-comparisons against Maryland, Rutgers, Penn State."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Large",
+      "undergraduateEnrollment": 24000,
+      "graduateEnrollment": null,
+      "totalEnrollment": null,
+      "campusType": "Large Suburban/College-Town Public Research University",
+      "residentialIntensity": null,
+      "communityFeel": null,
+      "studentFacultyRatio": null,
+      "classSizeExperience": "Not yet researched — large public university, likely a mix of large lecture and smaller upper-division courses, unconfirmed.",
+      "scaleAdvantages": [
+        "Large course/major breadth typical of a public flagship",
+        "Active Greek life and D1 athletics social scene",
+        "Real geographic access to Philadelphia, Baltimore, and DC job markets"
+      ],
+      "scaleDisadvantages": [
+        "Large class sizes likely in introductory courses (unconfirmed)",
+        "Less individualized attention than a small liberal arts college"
+      ]
+    },
+    "studentFit": {
+      "idealStudentTraits": [
+        "Wants a large, socially active campus",
+        "Interested in pre-professional programs (business, engineering, health sciences)",
+        "Comfortable with Greek-influenced social culture",
+        "Values geographic access to Philadelphia/Baltimore/DC over a small-campus feel"
+      ],
+      "thrivesIf": [
+        "Wants D1 athletics and an active Greek/social scene",
+        "Is self-directed enough to navigate a large public university",
+        "Wants real access to Mid-Atlantic internships and employers"
+      ],
+      "strugglesIf": [
+        "Needs small class sizes and close faculty relationships",
+        "Wants to opt out of a Greek-influenced social culture entirely",
+        "Prefers a small, tight-knit campus community"
+      ],
+      "note": "bigFiveProfile, hollandCodes, and other scored fields intentionally omitted — not yet researched, and this codebase treats missing scored fields as 'not applicable to this matching dimension' rather than a fabricated default."
+    },
+    "primaryMegaRegionSlug": "northeast",
+    "regionalRole": "A large Mid-Atlantic public flagship with real geographic access to Philadelphia, Baltimore, and Washington DC — not yet scored on the fuller V5 taxonomy (industryPathways, institutionalMoat, futureResilience, etc.); this entry establishes real matchability, not full parity with researched schools.",
+    "_dataProvenance": "MERGED 2026-08-14 (Issue 7, SCHOOL-MATCH-INTEGRITY-001), approved by Matt Stearn. admissionsDrawProfile and applicationIntelligence real and CDS-cited (2024-25 Common Data Set, ire.udel.edu). Narrative fields real. Scored/statistical fields (industryPathways, bigFiveProfile, institutionalMoat, futureResilience, trajectoryProfile, jewishLife, networkCapital) intentionally not yet populated — treat as not-yet-researched, not zero, same discipline as every other gap in this file."
+  },
+
+  "Macalester College": {
+    "admissionsDrawProfile": {
+      "oosEnrollmentPct": null,
+      "homeStateEnrollmentPct": null,
+      "drawClassification": "unavailable",
+      "topFeederStates": {},
+      "topFeederRegions": {},
+      "dataConfidence": "partial",
+      "dataSource": "Macalester College Common Data Set 2023-2024, Section C1 (macalester.edu/institutional-research/wp-content/uploads/sites/515/CDS_2023_2024.pdf).",
+      "dataYear": 2023,
+      "notes": "PARTIAL, not 'unavailable' — real admit-rate and enrollment figures ARE sourced below (see applicationIntelligence), but the specific in-state/out-of-state/international residency breakdown table (CDS Section C1 residency page) was filed blank by Macalester for 2023-24 — genuinely not published this cycle, not an extraction failure. dataConfidence deliberately NOT set to 'verified' so Issue 6's feeder-override logic still correctly skips this school on the OOS/home-state dimension specifically, even though other fields here are real. Widely reported secondary sources describe Macalester as drawing heavily from outside Minnesota (consistent with its international-student emphasis in institutionNarrative), but no primary-source percentage was found this pass — do not backfill a number without one."
+    },
+    "applicationIntelligence": {
+      "earliestDeadline": null,
+      "earliestDeadlineLabel": null,
+      "rdDeadline": null,
+      "essayPromptTopic": null,
+      "notes": "Admit rate: 2,285 admitted / 8,099 applied (894 of 3,521 men; 1,391 of 4,578 women) = 28.2% for Fall 2023, cross-confirmed against an independently reported 28% figure (Scholarships360). This is right at this codebase's Highly Selective/Selective boundary (10-25% vs. 25-50%) — technically 'Selective' by a fraction of a point, flagged rather than rounded down. Enrolled: 518 first-time first-year (239 men, 279 women). First-year retention rate 95% (Macalester's own CDS Section B22, corroborated by the college's own published 92% figure for a different, more recent cohort — both real, just different cohort years, not a conflict). Application deadline dates were not reached in this pass (CDS Section C9/C14) — still genuinely unverified, unlike the numbers above.",
+      "verifiedDate": "2026-08-14"
+    },
+    "institutionNarrative": {
+      "name": "Macalester College",
+      "location": "Saint Paul, Minnesota",
+      "region": "Midwest",
+      "archetype": "The Internationally-Minded Elite Liberal Arts College — Global Citizenship and Progressive Twin Cities Culture",
+      "oneSentenceSummary": "Macalester College is a small, highly selective liberal arts college in Saint Paul, Minnesota, distinctive for an unusually international student body and a strong institutional emphasis on global citizenship, civic engagement, and study abroad, within reach of the full Twin Cities metro economy.",
+      "pipeline": "Approximately 2,100 undergraduates. Macalester is nationally recognized for International Studies, Political Science, Economics, and the sciences, with a notably international alumni network (Kofi Annan is its best-known alumnus) and strong placement into international affairs, nonprofit, and graduate/PhD paths.",
+      "hiddenPathway": "Macalester's location directly in the Twin Cities — rather than a small isolated college town — gives students real access to a major metro economy (Target, UnitedHealth Group, US Bank, 3M, General Mills all headquartered in the metro) that most peer liberal arts colleges of its size and character (Grinnell, Carleton, Oberlin) can't match.",
+      "institutionalSecret": "Not yet researched at Grinnell-entry depth — needs a dedicated pass to identify a genuinely distinguishing, lesser-known program.",
+      "theRoom": "A small, highly selective liberal arts college (~2,100 undergraduates) with an unusually international student body, located directly in Saint Paul rather than an isolated college town.",
+      "lifestyle": "Intellectually engaged, internationally-minded, and progressive, with real access to the Twin Cities' restaurants, arts, and internship economy rather than small-town isolation.",
+      "bestFitPersonality": "Globally curious, politically and civically engaged, drawn to international affairs or public policy, and wanting an urban-adjacent small-college experience rather than rural isolation.",
+      "faithTradition": "Historically Presbyterian founding; today nonsectarian.",
+      "geographicInfluenceRadius": "Strong throughout the Twin Cities and Upper Midwest, with a notably international and coastal-city alumni dispersal given the college's global-citizenship orientation.",
+      "economicOutcome": "Not yet researched at Grinnell-entry depth — needs real net-price and outcomes data.",
+      "gradCities": [],
+      "comparableInstitutions": [
+        "Grinnell College",
+        "Carleton College",
+        "Oberlin College",
+        "Kenyon College",
+        "Reed College"
+      ],
+      "ccTransferPathway": {
+        "hasCCPathway": false,
+        "ccFeederNames": [],
+        "transferAcceptanceRate": null,
+        "freshmanAcceptanceRate": null,
+        "estimatedSavingsRange": null,
+        "transferNotes": "Not yet researched."
+      }
+    },
+    "institutionIdentity": {
+      "commonName": "Mac",
+      "archetype": "Elite Small Liberal Arts College — Internationally-Minded, Twin Cities-Located",
+      "institutionalPersonality": "globally-minded, civically engaged, progressive, urban-adjacent",
+      "cultureKeywords": [
+        "Global Citizenship",
+        "International Student Body",
+        "Twin Cities Access",
+        "Civic Engagement",
+        "Progressive"
+      ],
+      "missionOrientation": "Cultivating globally-minded, civically engaged graduates through a rigorous liberal arts education with an unusually international campus community.",
+      "faithTradition": "Historically Presbyterian; today nonsectarian.",
+      "educationalPhilosophy": "Not yet researched at Grinnell-entry depth.",
+      "competitiveness": "Selective",
+      "politicalCulture": "Strongly progressive, civically and internationally engaged.",
+      "studentAutonomy": "Not yet researched.",
+      "prestigeOrientation": "Among the more internationally recognized small liberal arts colleges, distinctive for its global-citizenship identity.",
+      "socialClimate": "Intellectually engaged and progressive, with real access to Twin Cities urban life.",
+      "leadershipStyle": "Not yet researched."
+    },
+    "comparativePositioning": {
+      "versusGrinnell": "Grinnell offers a larger per-student endowment and a fully open curriculum in a rural Iowa setting, while Macalester offers direct access to the Twin Cities metro economy and a more internationally-oriented student body.",
+      "versusCarleton": "Carleton (also in Minnesota) offers a quirkier, more isolated small-town setting, while Macalester offers real urban access and a stronger institutional emphasis on international/global-citizenship identity."
+    },
+    "institutionScale": {
+      "enrollmentCategory": "Very Small",
+      "undergraduateEnrollment": 2100,
+      "graduateEnrollment": null,
+      "totalEnrollment": null,
+      "campusType": "Small Urban-Adjacent Liberal Arts College (Twin Cities)",
+      "residentialIntensity": null,
+      "communityFeel": null,
+      "studentFacultyRatio": null,
+      "classSizeExperience": "Not yet researched — small liberal arts college, seminar-style classes likely typical, unconfirmed.",
+      "scaleAdvantages": [
+        "Unusually international student body for a school its size",
+        "Direct Twin Cities metro access, unlike most peer rural LACs",
+        "Strong global-citizenship/international affairs institutional identity"
+      ],
+      "scaleDisadvantages": [
+        "Small size limits breadth of majors, same tradeoff as any elite small LAC",
+        "Highly selective — real academic fit bar (GPA floor 3.7 per this codebase's own data)"
+      ]
+    },
+    "studentFit": {
+      "idealStudentTraits": [
+        "Globally curious, interested in international affairs or public policy",
+        "Wants real access to a major metro area, not rural isolation",
+        "Politically and civically engaged",
+        "Comfortable in a small, highly selective academic environment"
+      ],
+      "thrivesIf": [
+        "Wants an internationally-minded peer community",
+        "Values direct access to a major metro's internship/cultural economy",
+        "Plans for international affairs, public policy, or graduate study"
+      ],
+      "strugglesIf": [
+        "Wants a large university with more majors and bigger classes",
+        "Prefers a politically moderate or apolitical campus culture",
+        "Needs a rural or isolated small-town setting specifically"
+      ],
+      "note": "bigFiveProfile, hollandCodes, and other scored fields intentionally omitted — not yet researched, and this codebase treats missing scored fields as 'not applicable to this matching dimension' rather than a fabricated default."
+    },
+    "primaryMegaRegionSlug": "great-lakes",
+    "regionalRole": "A small, internationally-minded elite liberal arts college with real Twin Cities metro access — not yet scored on the fuller V5 taxonomy (industryPathways, institutionalMoat, futureResilience, etc.); this entry establishes real matchability, not full parity with researched schools.",
+    "_dataProvenance": "MERGED 2026-08-14 (Issue 7, SCHOOL-MATCH-INTEGRITY-001), approved by Matt Stearn. admissionsDrawProfile partial (real admit/enroll figures from 2023-24 Common Data Set, macalester.edu; residency split genuinely blank in that source, not an extraction gap). applicationIntelligence real and CDS-cited. Narrative fields real. Scored/statistical fields intentionally not yet populated — treat as not-yet-researched, not zero, same discipline as every other gap in this file."
   }
+
 };
 
 if (typeof module !== 'undefined') { module.exports = { UNIVERSITY_DB_V5 }; }

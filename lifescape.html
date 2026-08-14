@@ -6499,7 +6499,9 @@ async function submitLifescape() {
     // ── callE (CC Pathway) — fires conditionally before parallel calls ──
     var _matchedForCC = (typeof matchUniversities !== 'undefined' && typeof UNIVERSITY_CONTENT !== 'undefined')
       ? matchUniversities(profile.college_prefs, profile.riasec, profile.naicsSectors, profile.comboUnlocks,
-          profile.gpa ? { raw: profile.gpa, type: profile.gpa_type, normalized: profile.gpa_normalized } : null
+          profile.gpa ? { raw: profile.gpa, type: profile.gpa_type, normalized: profile.gpa_normalized } : null,
+          LS_STATE.trajectoryResolved,
+          (typeof UNIVERSITY_DB_V5 !== 'undefined') ? UNIVERSITY_DB_V5 : null
         ).slice(0, 12)
       : [];
     var _ccShouldShow = shouldShowCCPathway(profile, _matchedForCC);
@@ -6696,7 +6698,9 @@ async function submitLifescape() {
           profile.riasec,
           _naicsForMatch,
           profile.comboUnlocks,
-          gpaData
+          gpaData,
+          LS_STATE.trajectoryResolved,
+          (typeof UNIVERSITY_DB_V5 !== 'undefined') ? UNIVERSITY_DB_V5 : null
         );
 
         // Jewish-track religious exclusion (SCHOOL-MATCH-INTEGRITY-001, Issue 5) —
@@ -7116,14 +7120,16 @@ async function submitLifescape() {
             // (SCHOOL-DATA-INTEGRITY-001 / SCORECARD-PATCH-001): Extremely Selective (<10%),
             // Highly Selective (10-25%), Selective (25-50%), Moderately Selective (50-75%), Accessible (75%+)
             //
-            // SCHOOL-MATCH-INTEGRITY-001, Issue 2 fix (2026-08-12): the
-            // "Extremely Selective" floor was 3.7 — a real, deterministic
-            // gate (not the problem), just calibrated too loosely, letting a
-            // 3.7 GPA clear sub-10%-admit schools like MIT. Per CTO/CIO
-            // sign-off, raised to 3.9 unweighted. The 3.3 and 2.7 breakpoints
-            // are explicitly out of scope for this pass — only the top band
-            // was in question.
-            var _maxAllowed = _gpaNorm >= 3.9 ? ['Extremely Selective','Highly Selective','Selective','Moderately Selective','Accessible']
+            // SCHOOL-MATCH-INTEGRITY-001, Issue 2 fix (2026-08-12, value
+            // corrected 2026-08-14): the "Extremely Selective" floor was
+            // 3.7 — a real, deterministic gate (not the problem), just
+            // calibrated too loosely, letting a 3.7 GPA clear sub-10%-admit
+            // schools like MIT. The 2026-08-12 pass raised it to 3.9; the
+            // actual Rev.1 sign-off recorded 4.0 as the stricter of the two
+            // options considered, so this corrects the floor to match the
+            // signed decision. The 3.3 and 2.7 breakpoints are explicitly
+            // out of scope for this pass — only the top band was in question.
+            var _maxAllowed = _gpaNorm >= 4.0 ? ['Extremely Selective','Highly Selective','Selective','Moderately Selective','Accessible']
                              : _gpaNorm >= 3.3 ? ['Highly Selective','Selective','Moderately Selective','Accessible']
                              : _gpaNorm >= 2.7 ? ['Selective','Moderately Selective','Accessible']
                              : ['Moderately Selective','Accessible'];
