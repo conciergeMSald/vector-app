@@ -513,6 +513,198 @@ function validateCurationMap() {
   return { allValid, results };
 }
 
+/**
+ * TILE_REALM_WEIGHTS — STUDENT-AGENT-002 Gate 4, Item 2.
+ * Built 2026-07-30, closing the gap confirmed open since 2026-07-23 across
+ * console warnings, student-domain2-realm-weights.browser.js (the wiring
+ * module, correct and already live), and student-signal-fusion-engine.
+ * browser.js (the Signal Fusion Engine, correct and already live) — all
+ * three were real and wired correctly; only this data was ever missing.
+ *
+ * EXPANDED 2026-07-30 (same day) from an initial 10-tile first-pass seed to
+ * full coverage of all 138 tiles in crosswalk-db.js, per explicit go-ahead.
+ * The 10-tile version shipped first and was verified end-to-end (real
+ * console warning gone, real dominant-realm/RIASEC-blend output traced all
+ * the way into a Claude-prompt-ready text block) before expanding — the
+ * derivation method did not change between the two passes.
+ *
+ * METHOD: NOT hand-picked. Mathematically derived by inverting the
+ * REALM_TO_RIASEC crosswalk already disclosed and shipped in
+ * student-signal-fusion-engine.browser.js (the same crosswalk that file
+ * uses to turn realm weights INTO a riasec_blend) and running it in
+ * reverse against each tile's own already-approved riasec_weights in
+ * crosswalk-db.js. Internally consistent with logic already signed off on
+ * elsewhere in this codebase, not a fabricated dataset. Same disclosure
+ * standard as that original crosswalk: "a defensible mapping, not a
+ * verified psychometric equivalence" — worth calibrating against real
+ * behavioral data once available, not treated as ground truth forever.
+ *
+ * KNOWN, EXPECTED CHARACTERISTIC (not a bug): a tile's derived dominant
+ * realm does not always match its own `cluster` tag in crosswalk-db.js.
+ * E.g. fitness_lifting is clustered 'move' but derives highest on
+ * 'systems' — because its riasec_weights carry meaningful C (conventional/
+ * process) signal, and C maps 100% to 'systems' in this crosswalk with
+ * nothing to dilute it. This is a real, traceable consequence of the
+ * tile's own RIASEC profile, confirmed by hand-checking the math on
+ * several tiles before shipping — not a derivation error. Cluster tags
+ * describe curation-UI grouping; derived realm weights describe genome
+ * signal — the two systems are related but not required to agree tile by
+ * tile.
+ *
+ * SCOPE: full 138-tile crosswalk-db.js coverage. Includes the 2 tiles used
+ * as best-inferred replacements for the original 10-tile seed's renamed
+ * IDs (content_creation -> tiktok_content, daily_word_puzzles ->
+ * logic_puzzle_games — label-matched, not certain, flagged for a 30-second
+ * confirm). Does NOT include the 'compete' World tile — that lives in
+ * IBIS_WORLD_REGISTRY (Domain 2's World-selection layer), a different
+ * system from this file's activity-tile layer; not an omission.
+ *
+ * Sanity-checked before shipping: 138/138 tiles derived, zero NaN values,
+ * zero all-zero-weight tiles, spot-checked across multiple clusters
+ * including eq. Full derivation script (re-runnable against any future
+ * tile additions) kept alongside this file as derive_tile_realm_weights.js.
+ */
+const TILE_REALM_WEIGHTS = {
+  "tiktok_content": { make: 2.57, move: 0.2, think: 1.43, people: 1.37, systems: 2.43 },
+  "drawing": { make: 2.9, move: 0.67, think: 1.43, people: 0, systems: 1 },
+  "painting": { make: 2.9, move: 0.67, think: 0.43, people: 0, systems: 1 },
+  "photography": { make: 2.9, move: 0.67, think: 1.43, people: 0.29, systems: 1.71 },
+  "graphic_design": { make: 2.57, move: 0, think: 1.43, people: 0.29, systems: 2.71 },
+  "animation": { make: 2.57, move: 0, think: 1.43, people: 0.29, systems: 1.71 },
+  "fashion_inspiration": { make: 2.57, move: 0.2, think: 1.43, people: 1.37, systems: 2.43 },
+  "wardrobe_styling": { make: 2.57, move: 0.4, think: 1.43, people: 2.17, systems: 2.43 },
+  "music_production": { make: 2.9, move: 0.67, think: 1.43, people: 0.29, systems: 1.71 },
+  "playing_instrument": { make: 2.9, move: 0.67, think: 1.43, people: 0, systems: 2 },
+  "singing": { make: 2.57, move: 0.2, think: 0.43, people: 1.09, systems: 0.71 },
+  "writing_stories": { make: 2.57, move: 0.2, think: 2.43, people: 0.8, systems: 1 },
+  "cooking": { make: 2.38, move: 1.53, think: 1.29, people: 1.09, systems: 1.71 },
+  "baking": { make: 2.38, move: 1.53, think: 1.29, people: 0.8, systems: 2 },
+  "nail_art": { make: 2.9, move: 0.87, think: 0.43, people: 1.09, systems: 2.71 },
+  "hair_makeup": { make: 2.9, move: 1.07, think: 0.43, people: 1.89, systems: 1.71 },
+  "roblox_building": { make: 2.05, move: 0.87, think: 2.29, people: 1.09, systems: 1.71 },
+  "lego_building": { make: 2.71, move: 2, think: 1.29, people: 0, systems: 1 },
+  "three_d_printing": { make: 1.86, move: 2, think: 2.14, people: 0, systems: 2 },
+  "football": { make: 1, move: 2.2, think: 0, people: 1.37, systems: 2.43 },
+  "flag_football": { make: 1, move: 2.2, think: 0, people: 1.37, systems: 2.43 },
+  "baseball": { make: 1, move: 2.2, think: 1, people: 1.09, systems: 1.71 },
+  "softball": { make: 1, move: 2.2, think: 1, people: 1.09, systems: 1.71 },
+  "basketball": { make: 1, move: 2.2, think: 0, people: 1.37, systems: 2.43 },
+  "soccer": { make: 1, move: 2.2, think: 0, people: 1.09, systems: 1.71 },
+  "volleyball": { make: 1, move: 2.4, think: 0, people: 1.89, systems: 1.71 },
+  "lacrosse": { make: 1, move: 2.2, think: 0, people: 1.37, systems: 2.43 },
+  "field_hockey": { make: 1, move: 2.2, think: 0, people: 1.09, systems: 1.71 },
+  "swim_team": { make: 1, move: 2.2, think: 1, people: 1.09, systems: 2.71 },
+  "track_relay": { make: 1, move: 2.2, think: 0, people: 1.37, systems: 2.43 },
+  "cheerleading": { make: 2.38, move: 1.73, think: 0.29, people: 1.89, systems: 1.71 },
+  "club_travel_sports": { make: 1, move: 2.4, think: 0, people: 2.17, systems: 2.43 },
+  "dance": { make: 3.24, move: 1.53, think: 0.43, people: 1.09, systems: 1.71 },
+  "ride_bike": { make: 1, move: 2.2, think: 0, people: 0.8, systems: 0 },
+  "yoga": { make: 1.19, move: 0.87, think: 1.14, people: 0.8, systems: 1 },
+  "pilates": { make: 0.67, move: 1.53, think: 1, people: 0.8, systems: 2 },
+  "fitness_f45": { make: 0.67, move: 1.73, think: 0, people: 1.89, systems: 1.71 },
+  "fitness_lifting": { make: 1, move: 2, think: 1, people: 0.29, systems: 2.71 },
+  "running_fitness_classes": { make: 0.67, move: 1.53, think: 0, people: 0.8, systems: 1 },
+  "martial_arts": { make: 1.86, move: 2, think: 1.14, people: 0.57, systems: 3.43 },
+  "rock_climbing": { make: 1, move: 2, think: 1, people: 0.29, systems: 1.71 },
+  "ebike_outdoor_adventure": { make: 1.86, move: 2, think: 0.14, people: 0.29, systems: 0.71 },
+  "esports_gaming": { make: 0.86, move: 0.2, think: 2.14, people: 1.37, systems: 3.43 },
+  "science_experiments": { make: 0.67, move: 1.33, think: 3, people: 0, systems: 1 },
+  "psychology": { make: 0.86, move: 0.4, think: 3.14, people: 1.6, systems: 0 },
+  "biology": { make: 0.33, move: 0.87, think: 3, people: 0.8, systems: 1 },
+  "chemistry": { make: 0.33, move: 0.67, think: 3, people: 0, systems: 2 },
+  "coding_programming": { make: 1.19, move: 0.67, think: 3.14, people: 0.29, systems: 3.71 },
+  "ai_machine_learning": { make: 0.86, move: 0, think: 3.14, people: 0.57, systems: 3.43 },
+  "data_statistics": { make: 0, move: 0, think: 3, people: 0.29, systems: 3.71 },
+  "logic_puzzle_games": { make: 0, move: 0, think: 3, people: 0, systems: 3 },
+  "youtube_learning": { make: 1.19, move: 0.67, think: 2.14, people: 0, systems: 1 },
+  "fantasy_sports": { make: 0, move: 0.2, think: 2, people: 1.66, systems: 4.14 },
+  "philosophy": { make: 0.86, move: 0.2, think: 3.14, people: 0.8, systems: 0 },
+  "true_crime": { make: 0.86, move: 0.2, think: 3.14, people: 0.8, systems: 1 },
+  "understanding_why_people": { make: 0.86, move: 0.6, think: 2.14, people: 2.4, systems: 0 },
+  "volunteering": { make: 0.33, move: 1.27, think: 0, people: 2.69, systems: 1.71 },
+  "animal_care": { make: 0.67, move: 1.93, think: 1, people: 2.4, systems: 1 },
+  "mental_health_wellness": { make: 0.86, move: 0.6, think: 2.14, people: 2.4, systems: 0 },
+  "working_with_little_kids": { make: 1.19, move: 1.27, think: 1.14, people: 2.4, systems: 1 },
+  "teaching_tutoring": { make: 0, move: 0.6, think: 2, people: 2.69, systems: 1.71 },
+  "advocacy_activism": { make: 0.86, move: 0.4, think: 2.14, people: 2.46, systems: 2.14 },
+  "entrepreneurship": { make: 1.19, move: 0.87, think: 2.14, people: 1.66, systems: 3.14 },
+  "young_entrepreneur": { make: 1.52, move: 1.53, think: 1.14, people: 1.66, systems: 2.14 },
+  "first_aid_emergencies": { make: 0.67, move: 1.93, think: 2, people: 2.69, systems: 1.71 },
+  "reading_biographies": { make: 1.71, move: 0.4, think: 2.29, people: 1.89, systems: 0.71 },
+  "attending_events_concerts": { make: 1.71, move: 0.4, think: 0.29, people: 2.46, systems: 2.14 },
+  "public_speaking_debate": { make: 0.86, move: 0.4, think: 2.14, people: 2.46, systems: 3.14 },
+  "community_organizing": { make: 0.33, move: 1.27, think: 1, people: 2.97, systems: 2.43 },
+  "cosmetic_beauty_science": { make: 2.05, move: 0.67, think: 3.29, people: 0.29, systems: 1.71 },
+  "cooking_chemistry": { make: 1.52, move: 1.33, think: 3.14, people: 0, systems: 1 },
+  "medical_science": { make: 0.33, move: 1.07, think: 3, people: 1.6, systems: 2 },
+  "how_body_moves": { make: 0.67, move: 1.53, think: 3, people: 0.8, systems: 1 },
+  "learning_differences": { make: 0, move: 0.6, think: 2, people: 2.4, systems: 1 },
+  "environment_sustainability": { make: 0.67, move: 1.53, think: 3, people: 1.09, systems: 1.71 },
+  "engineering_challenges": { make: 1, move: 2, think: 3, people: 0.29, systems: 2.71 },
+  "architecture": { make: 3.24, move: 1.33, think: 2.43, people: 0, systems: 2 },
+  "nutrition_food_science": { make: 0.33, move: 1.07, think: 3, people: 1.6, systems: 2 },
+  "business_startups": { make: 0, move: 0, think: 2, people: 0.86, systems: 4.14 },
+  "supply_chain_logistics": { make: 0.33, move: 0.67, think: 2, people: 0.57, systems: 4.43 },
+  "precise_procedures": { make: 1.52, move: 1.33, think: 1.14, people: 0.29, systems: 3.71 },
+  "finance_investing": { make: 0, move: 0, think: 3, people: 0.57, systems: 4.43 },
+  "i_feel_things_deeply": { make: 1.71, move: 0.6, think: 1.29, people: 2.4, systems: 0 },
+  "i_notice_when_left_out": { make: 0, move: 0.6, think: 1, people: 2.4, systems: 0 },
+  "i_stay_calm_when_things_go_wrong": { make: 0, move: 0.4, think: 1, people: 2.17, systems: 2.43 },
+  "i_cant_ignore_unfairness": { make: 0, move: 0.4, think: 1, people: 2.46, systems: 2.14 },
+  "i_am_person_people_call": { make: 0, move: 0.6, think: 0, people: 2.97, systems: 1.43 },
+  "i_slow_down_for_people": { make: 0, move: 0.6, think: 0, people: 2.4, systems: 0 },
+  "i_like_figuring_out_different_way": { make: 1.19, move: 0.67, think: 3.14, people: 0.29, systems: 0.71 },
+  "little_kids_love_me": { make: 0, move: 0.6, think: 0, people: 2.4, systems: 0 },
+  "animals_trust_me": { make: 0.33, move: 1.27, think: 0, people: 2.4, systems: 0 },
+  "i_like_explaining_things": { make: 0.86, move: 0.6, think: 2.14, people: 2.69, systems: 0.71 },
+  "id_rather_listen_than_talk": { make: 0, move: 0.6, think: 2, people: 2.4, systems: 0 },
+  "i_notice_things_others_miss": { make: 1.71, move: 0, think: 3.29, people: 0, systems: 1 },
+  "want_to_fix_it_not_talk_about_it": { make: 0.67, move: 1.33, think: 2, people: 0.57, systems: 2.43 },
+  "i_lose_track_of_time_making": { make: 2.9, move: 0.67, think: 1.43, people: 0, systems: 0 },
+  "im_one_who_holds_group_together": { make: 0, move: 0.6, think: 0, people: 2.97, systems: 2.43 },
+  "i_ask_why": { make: 0.86, move: 0, think: 3.14, people: 0, systems: 0 },
+  "i_remember_details_about_people": { make: 0, move: 0.6, think: 2, people: 2.4, systems: 1 },
+  "i_process_through_art_music": { make: 2.57, move: 0.2, think: 0.43, people: 0.8, systems: 0 },
+  "i_can_tell_when_upset": { make: 0, move: 0.6, think: 1, people: 2.4, systems: 0 },
+  "i_think_of_others_feelings": { make: 0, move: 0.6, think: 1, people: 2.4, systems: 1 },
+  "i_can_talk_to_anyone": { make: 0.86, move: 0.4, think: 0.14, people: 2.46, systems: 2.14 },
+  "i_know_everyone": { make: 0, move: 0.4, think: 0, people: 2.46, systems: 2.14 },
+  "i_remember_everything_about_people": { make: 0, move: 0.6, think: 1, people: 2.69, systems: 2.71 },
+  "i_talk_to_new_people_first": { make: 0, move: 0.4, think: 0, people: 2.46, systems: 2.14 },
+  "i_fix_friend_group_drama": { make: 0, move: 0.6, think: 1, people: 2.97, systems: 1.43 },
+  "im_friends_with_older_people": { make: 0, move: 0.4, think: 1, people: 2.17, systems: 1.43 },
+  "i_make_the_group_chat": { make: 0.86, move: 0.4, think: 0.14, people: 2.46, systems: 3.14 },
+  "people_tell_me_personal_stuff": { make: 0, move: 0.6, think: 1, people: 2.4, systems: 0 },
+  "i_feel_the_vibe_immediately": { make: 0.86, move: 0.4, think: 2.14, people: 1.89, systems: 0.71 },
+  "i_see_connections_others_miss": { make: 0.86, move: 0, think: 3.14, people: 0.29, systems: 0.71 },
+  "i_know_before_it_happens": { make: 0.86, move: 0.2, think: 3.14, people: 0.8, systems: 0 },
+  "i_usually_right_about_people": { make: 0, move: 0.4, think: 2, people: 1.89, systems: 0.71 },
+  "my_friends_say_i_have_good_instincts": { make: 0, move: 0.4, think: 2, people: 2.17, systems: 1.43 },
+  "i_notice_trends_early": { make: 1.71, move: 0, think: 2.29, people: 0.57, systems: 1.43 },
+  "still_figuring_it_out": { make: 0, move: 0, think: 1, people: 0, systems: 0 },
+  "good_at_a_lot_not_great_at_one": { make: 0, move: 0, think: 1, people: 0.29, systems: 0.71 },
+  "get_into_things_then_move_on": { make: 0.86, move: 0, think: 2.14, people: 0.29, systems: 0.71 },
+  "people_always_want_me_on_their_team": { make: 0.33, move: 1.07, think: 0, people: 2.17, systems: 2.43 },
+  "i_show_up_when_it_matters": { make: 0, move: 0.4, think: 0, people: 2.17, systems: 3.43 },
+  "fashion_design": { make: 2.9, move: 0.67, think: 0.43, people: 0.29, systems: 1.71 },
+  "filmmaking": { make: 2.57, move: 0, think: 1.43, people: 0.29, systems: 0.71 },
+  "woodworking": { make: 1.86, move: 2, think: 0.14, people: 0, systems: 2 },
+  "horseback_riding": { make: 1, move: 2.4, think: 1, people: 1.6, systems: 0 },
+  "roblox_game_design": { make: 2.38, move: 1.33, think: 3.29, people: 0.29, systems: 0.71 },
+  "puzzles_brain_teasers": { make: 0, move: 0, think: 3, people: 0, systems: 2 },
+  "journalism": { make: 0, move: 0.4, think: 3, people: 1.89, systems: 0.71 },
+  "law_justice": { make: 0, move: 0.4, think: 2, people: 2.17, systems: 2.43 },
+  "economics": { make: 0, move: 0, think: 3, people: 0.57, systems: 2.43 },
+  "planning_trips_adventures": { make: 0, move: 0.2, think: 0, people: 1.09, systems: 3.71 },
+  "organizing_people": { make: 0, move: 0.4, think: 0, people: 2.46, systems: 3.14 },
+  "running_the_household": { make: 0, move: 0.4, think: 0, people: 2.17, systems: 3.43 },
+  "running_a_minecraft_server": { make: 0, move: 0.4, think: 2, people: 2.17, systems: 2.43 },
+  "building_ai_workflows": { make: 0, move: 0, think: 3, people: 0.57, systems: 2.43 },
+  "coding_discord_bots": { make: 0.67, move: 1.33, think: 3, people: 0, systems: 1 },
+  "managing_a_simulation_game": { make: 0, move: 0, think: 3, people: 0.57, systems: 3.43 },
+  "making_study_systems": { make: 0, move: 0, think: 2, people: 0, systems: 3 },
+};
+
 if (typeof module !== 'undefined') module.exports = {
   curateInitialTiles,
   surfaceRelatedTiles,
@@ -520,5 +712,6 @@ if (typeof module !== 'undefined') module.exports = {
   validateCurationMap,
   TILE_POOLS,
   TILE_ADJACENCY,
-  ALWAYS_SHOW
+  ALWAYS_SHOW,
+  TILE_REALM_WEIGHTS
 };
