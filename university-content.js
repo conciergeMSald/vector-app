@@ -2274,11 +2274,11 @@ function formatSchoolsForPrompt(schools) {
 }
 
 // BUGFIX (2026-08-14): the 5 maritime-academy entries below were appended
-// AFTER module.exports and after UNIVERSITY_CONTENT's closing `};` — five
+// AFTER module.exports and after UNIVERSITY_CONTENT's closing `}` five
 // bare `"Name": { ... }` pairs sitting at the top level of the script. That
 // is not valid JavaScript (a string literal followed by `:` outside of an
 // object/label context throws `Unexpected token ':'`), so the entire
-// script failed to parse and UNIVERSITY_CONTENT was never defined at all —
+// script failed to parse and UNIVERSITY_CONTENT was never defined at all -
 // hence "[VECTOR] UNIVERSITY_CONTENT not found" and 0 schools ever
 // resolving. Object.assign() merges these 5 schools into the SAME
 // UNIVERSITY_CONTENT object as if they'd been written inline in the
