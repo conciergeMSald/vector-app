@@ -6515,17 +6515,28 @@ async function submitLifescape() {
     var _ccContext = _ccShouldShow ? extractCCContext(_ccTargetData, profile.zip) : null;
 
     // Build parallel call array — callB + callC always, callE conditionally
-    // TIMEOUT FIX (2026-08-14): these were already thin under normal
-    // conditions, not just today's degraded case — callB requests up to
-    // 1600 output tokens against a 45s ceiling, which at a conservative
-    // (not even slow) 40 tok/s throughput needs ~40s, leaving almost no
-    // margin. Live-tested same day: callB aborted with the exact same
-    // "signal is aborted without reason" AbortController signature as
-    // callD's confirmed timeout failure. Same fix, same reasoning, applied
-    // consistently across every fireCall() site that hits this endpoint.
+    // TOKEN CAP FIX (2026-08-14, second round): the timeout fix above solved
+    // the abort problem, but the very next live test — with truncation now
+    // actually visible thanks to today's [fireCall] TRUNCATED logging —
+    // showed both callB and callC hitting their TOKEN ceilings and getting
+    // cut off mid-generation, not timing out. Their required output is
+    // denser than it looks: callB alone asks for 3 full industry clusters
+    // (name + why + careers + unexpected each), 1-2 "ALSO WORTH KNOWING"
+    // paragraphs, an optional HIDDEN PATHWAY paragraph, one paragraph per
+    // combination unlock fired, a Pathway Hack line per matched school with
+    // CC data, and a college paragraph — a hand-built realistic sample of
+    // that shape alone estimates ~800 tokens, and real prompts with more
+    // combos/schools than the sample run higher still; 1600 was cutting it
+    // close even before accounting for real Claude verbosity. callC asks for
+    // three full STAY CLOSE / LEAVE AND RETURN / LEAVE AND STAY GONE
+    // scenarios (narrative + school recommendations each) plus a 4-part
+    // counselor section — a same-shape sample estimates ~580 tokens against
+    // only a 1000 cap. Raised both with real margin, and raised their
+    // timeouts again to match (same conservative ~40 tok/s throughput math
+    // used for callD/callB/callC/callE earlier today).
     var _parallelCalls = [
-      fireCall(buildCallBPrompt(ctx), 1600, 0, 90000),
-      fireCall(buildCallCPrompt(ctx), 1000, 0, 60000)
+      fireCall(buildCallBPrompt(ctx), 3000, 0, 120000),
+      fireCall(buildCallCPrompt(ctx), 2000, 0, 90000)
     ];
     if (_ccShouldShow && _ccContext && _ccContext.hasCCPathway) {
       console.log('[callE] CC pathway triggered — source:', _ccContext.source, 'CC:', _ccContext.ccName);
