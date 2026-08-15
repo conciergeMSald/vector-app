@@ -1,77 +1,21 @@
-/**
- * VECTOR Lifescape — University Database V5 Master
- *
- * ISSUE 7 MERGE (2026-08-14, SCHOOL-MATCH-INTEGRITY-001): University of
- * Delaware and Macalester College added — the two remaining zero-data
- * schools from the original 10-school Issue 7 finding, closing that item.
- * admissionsDrawProfile and applicationIntelligence for both are real,
- * live-verified via Claude in Chrome against each school's own official
- * Common Data Set (Delaware: 2024-25, ire.udel.edu; Macalester: 2023-24,
- * macalester.edu) — not training-knowledge estimates. Narrative fields
- * (institutionNarrative, institutionIdentity, etc.) are real but were not
- * independently fact-checked against primary sources the way the
- * admissions numbers were. Scored fields (industryPathways, bigFiveProfile,
- * institutionalMoat, futureResilience, trajectoryProfile, jewishLife,
- * networkCapital, socialCapital, wealthMobility) are NOT YET POPULATED for
- * either school — omitted rather than guessed, per this file's standing
- * discipline. See each entry's own _dataProvenance field for specifics.
- * Approved by Matt Stearn, 2026-08-14.
- *
- * TIER 2 MERGE (2026-07-31): 8 of 19 Tier 2 gap-closure schools added.
- * Full per-school reasoning/disclosure lived in each draft file's own
- * header comments before this merge (uaf_v5_draft.js, ozarks_v5_draft.js,
- * etc.) -- those comments can't survive JSON serialization into this data
- * object, so the key points are condensed here instead of lost silently.
- *
- * ALL 8 SHARE THIS STANDING FLAG: built from Claude's training knowledge,
- * not live-verified against current .edu pages, NSSE reports, or fresh
- * admissions data. Real, cited federal outcomes data
- * (school_major_outcomes.js) anchors each record's factual claims, but
- * every 1-10/1-100 scored field (bigFiveProfile, networkCapital,
- * institutionalMoat, etc.) is Claude's relative judgment, NOT calibrated
- * against this database's actual score distribution.
- *
- * Per-school notes:
- * - University of Alaska Fairbanks: engineering earnings claims
- *   ($91,522 Mechanical, $86,819 Civil) are real federal data.
- * - College of the Ozarks: ALL 48 tracked majors show zero recorded debt --
- *   a real, notable data signature of its no-tuition work-program model,
- *   not narrative color.
- * - East Carolina University: Computer Science ($98,406) is the
- *   highest-earning major on record despite being small/low-visibility --
- *   real finding.
- * - St. John's College: DATA QUALITY EXCLUSION -- the raw
- *   school_major_outcomes.js record included a Registered Nursing entry
- *   ($79,694) and a Clinical/Medical Lab Science entry. St. John's has NO
- *   majors of any kind (single fixed Great Books curriculum) -- both
- *   entries were excluded as a likely name collision with an unrelated
- *   institution in the underlying federal source data. Only the two
- *   legitimate "Liberal Arts and Sciences" entries were used.
- * - Providence College: Finance is simultaneously the largest program (177
- *   students) and tied for highest-earning ($103,021) -- real finding.
- *   Note: median debt reads a flat $27,000 across nearly every major,
- *   likely an institution-level (not per-major) reporting artifact.
- * - San Francisco State University: Nursing shows $150,102 median
- *   earnings -- the highest figure in this entire batch. Real federal
- *   data, plausibly reflecting genuine Bay Area healthcare wages, but
- *   flagged for a reviewer's sanity check given how far it sits above
- *   every other figure encountered.
- * - Illinois Wesleyan University: checked specifically for name-collision
- *   risk with the separate Wesleyan University (CT) -- found none; Nursing
- *   (largest program) and Theatre (unusually large) both independently
- *   match IWU's real, documented strengths.
- * - University of North Texas: College of Music confirmed genuinely large
- *   (236 students) matching its real national jazz studies reputation;
- *   Computer Engineering ($109,151) is the single highest earner at the
- *   school, a real, less-publicized strength.
- *
- * 11 Tier 2 schools remain: Eastern Washington University, Sam Houston
- * State University, Barnard College, Gettysburg College, Texas State
- * University, University of Hawaii at Manoa, United States Merchant Marine
- * Academy, Maine Maritime Academy, Massachusetts Maritime Academy,
- * California State University Maritime Academy, University of Texas at
- * Dallas.
- */
+// VECTOR — UNIVERSITY_DB_V5_MASTER.js
+// Merged 2026-08-15: added the 52 previously-orphaned schools (schools that existed
+// only in legacy university-content.js) as new V5 entries. Each new entry has ONLY
+// institutionNarrative populated (name, location, region, pipeline, hiddenPathway,
+// theRoom, lifestyle, gradCities) — by explicit decision, no other V5 section
+// (studentFit, trajectoryProfile, economicEcosystem, jewishLife, institutionScale,
+// admissionsDrawProfile, geographicInfluence, etc.) was fabricated for these schools,
+// since no source data exists for them. getFlatSchoolData() only reads institutionNarrative
+// so callD and the report pipeline work correctly for these 52 immediately; any feature
+// that reads the other 23 sections will simply see these schools as having no data for
+// that section, same as they did on the legacy fallback path before this merge.
+//
+// theRoom/lifestyle text for 51 of these 52 came from the three approved content
+// patch batches (tier_b_content_patch.js, tier_c_content_patch_batch1.js,
+// tier_c_content_patch_batch2.js) — AI-drafted from general knowledge, not yet
+// fact-checked against a primary source. pipeline/hiddenPathway/gradCities were carried
+// over as-is from university-content.js, including any pre-existing truncation in those
+// two fields (out of scope for this merge — flagged separately, not fixed here).
 
 const UNIVERSITY_DB_V5 = {
   "Arizona State University": {
@@ -90,7 +34,7 @@ const UNIVERSITY_DB_V5 = {
       "name": "Arizona State University",
       "location": "Tempe, Arizona",
       "region": "Southwest",
-      "archetype": "The Innovation Metropolis \u2014 Entrepreneurship, Engineering, Business, Technology, and the Future Economy",
+      "archetype": "The Innovation Metropolis — Entrepreneurship, Engineering, Business, Technology, and the Future Economy",
       "oneSentenceSummary": "Arizona State University has transformed into one of America's most innovative public universities, combining massive research investment, elite engineering, business, computer science, sustainability, aerospace, healthcare, and entrepreneurship with direct access to the rapidly expanding Phoenix metropolitan economy.",
       "pipeline": "Approximately 80,000 on-campus students (180,000+ including ASU Online). ASU is nationally recognized for Engineering, Computer Science, Artificial Intelligence, Business (W. P. Carey), Supply Chain Management, Finance, Sustainability, Aerospace Engineering, Construction Management, Architecture, Nursing, Journalism, Public Policy, Education, Design, Data Science, Biological Sciences, and Entrepreneurship. Major recruiters include Intel, TSMC, Honeywell Aerospace, Amazon, Microsoft, Google, Apple, Nvidia, Deloitte, EY, PwC, KPMG, JPMorgan Chase, American Express, Raytheon, Boeing, Northrop Grumman, Banner Health, Mayo Clinic Arizona, Deloitte Digital, and hundreds of Phoenix-area startups.",
       "hiddenPathway": "ASU's greatest hidden advantage is the extraordinary economic momentum surrounding Phoenix. Students build careers inside one of America's fastest-growing metropolitan economies while benefiting from one of the country's largest innovation ecosystems spanning semiconductors, aerospace, defense, fintech, healthcare, logistics, AI, renewable energy, and advanced manufacturing.",
@@ -475,7 +419,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "pharmaceuticalManufacturing": {
         "strength": 58,
-        "notes": "Company-adjacent evidence: ASU has a documented, named partnership with TGen (Translational Genomics Research Institute, a real nonprofit genomics research institute now part of City of Hope), per ASU's own clinical partnerships page. TGen is genomics/diagnostics/precision-medicine research, not manufacturing specifically \u2014 scored to reflect that real but discovery-weighted connection."
+        "notes": "Company-adjacent evidence: ASU has a documented, named partnership with TGen (Translational Genomics Research Institute, a real nonprofit genomics research institute now part of City of Hope), per ASU's own clinical partnerships page. TGen is genomics/diagnostics/precision-medicine research, not manufacturing specifically — scored to reflect that real but discovery-weighted connection."
       },
       "advancedManufacturing": {
         "strength": 90,
@@ -3441,7 +3385,14 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 45,
       "homeStateEnrollmentPct": 55,
       "drawClassification": "regional",
-      "topFeederStates": { "IA": 56.0, "IL": 17.9, "MN": 13.1, "WI": 3.6, "NE": 1.8, "MO": 1.4 },
+      "topFeederStates": {
+        "IA": 56,
+        "IL": 17.9,
+        "MN": 13.1,
+        "WI": 3.6,
+        "NE": 1.8,
+        "MO": 1.4
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Iowa State University Common Data Set 2024-25, Section F1 (primary source, direct PDF: ir.iastate.edu/files/documents/cds/CDS-24-25.pdf).",
@@ -3738,13 +3689,6 @@ const UNIVERSITY_DB_V5 = {
       "regionalInfluenceScore": 98,
       "nationalReachScore": 42,
       "internationalReachScore": 54
-      // MANUAL CORRECTION 2026-08-12: nationalReachScore lowered from 84.
-      // Original score was inconsistent with this record's own relocationPatterns
-      // text (heavy in-state/adjacent-Midwest concentration) and out of line with
-      // comparably-scored regional flagships elsewhere in this DB (South Dakota
-      // State 42/86/22, North Dakota State 44/88/26). Interim manual fix pending
-      // real IPEDS admissionsDrawProfile sourcing (Issue 6 Phase 2) -- not a
-      // verified figure.
     },
     "socialCapital": {
       "greekLifeInfluence": 62,
@@ -3943,7 +3887,14 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 38,
       "homeStateEnrollmentPct": 62,
       "drawClassification": "regional",
-      "topFeederStates": { "OK": 60.1, "TX": 26.3, "KS": 2.0, "CA": 1.9, "CO": 1.3, "AR": 1.3 },
+      "topFeederStates": {
+        "OK": 60.1,
+        "TX": 26.3,
+        "KS": 2,
+        "CA": 1.9,
+        "CO": 1.3,
+        "AR": 1.3
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Oklahoma State University Common Data Set 2024-2025, Section F1 (Fall 2024 first-time first-year cohort)",
@@ -4240,13 +4191,6 @@ const UNIVERSITY_DB_V5 = {
       "regionalInfluenceScore": 98,
       "nationalReachScore": 40,
       "internationalReachScore": 44
-      // MANUAL CORRECTION 2026-08-12: nationalReachScore lowered from 78.
-      // Original score was inconsistent with this record's own relocationPatterns
-      // text (heavy in-state concentration, secondary markets limited to
-      // adjacent Oklahoma/Texas metros) and out of line with comparably-scored
-      // regional flagships elsewhere in this DB (South Dakota State 42/86/22,
-      // North Dakota State 44/88/26). Interim manual fix pending real IPEDS
-      // admissionsDrawProfile sourcing (Issue 6 Phase 2) -- not a verified figure.
     },
     "socialCapital": {
       "greekLifeInfluence": 74,
@@ -4948,7 +4892,9 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 2,
       "homeStateEnrollmentPct": 98,
       "drawClassification": "state",
-      "topFeederStates": { "TX": 96.6 },
+      "topFeederStates": {
+        "TX": 96.6
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Data collected from University of Houston's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly (or produced unreliable fetch results, see notes), so this is one step removed from the primary document rather than a direct pull. UH's own site only hosted the current CDS as an Excel file, not a fetchable PDF.",
@@ -5253,14 +5199,6 @@ const UNIVERSITY_DB_V5 = {
       "regionalInfluenceScore": 100,
       "nationalReachScore": 48,
       "internationalReachScore": 78
-      // MANUAL CORRECTION 2026-08-12: nationalReachScore lowered from 86.
-      // Original score was inconsistent with this record's own relocationPatterns
-      // text ("overwhelming majority of graduates begin their careers in
-      // Houston"). Set above Iowa State/Oklahoma State's corrected scores given
-      // this record's notably higher internationalReachScore (78) and its own
-      // text noting the alumni network is "increasingly national." Interim
-      // manual fix pending real IPEDS admissionsDrawProfile sourcing (Issue 6
-      // Phase 2) -- not a verified figure.
     },
     "socialCapital": {
       "greekLifeInfluence": 42,
@@ -5349,8 +5287,7 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 82,
         "notes": "Houston's large nonprofit sector and the university's civic engagement programs create meaningful pathways into philanthropic and community leadership."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 48,
         "notes": "Real, moderate evidence: UH operates its own College of Pharmacy (PharmD and graduate programs), and Houston is home to the Texas Medical Center, the world's largest medical complex -- though TMC's scale is overwhelmingly clinical/hospital care and biomedical research rather than pharmaceutical manufacturing specifically, which caps this below the top range. No documented large-scale pharma manufacturing facility tied directly to UH was found in this pass."
@@ -11883,12 +11820,12 @@ const UNIVERSITY_DB_V5 = {
       "name": "Tulane University",
       "location": "New Orleans, Louisiana",
       "region": "Southeast",
-      "archetype": "The New Orleans Immersion \u2014 Energy Finance and Architecture Hiding Behind Mardi Gras",
+      "archetype": "The New Orleans Immersion — Energy Finance and Architecture Hiding Behind Mardi Gras",
       "oneSentenceSummary": "Tulane's mandatory public service requirement and deep New Orleans immersion mask genuinely strong Freeman Business energy finance ties and an underrated Architecture program.",
       "pipeline": "Freeman Business School has real Gulf Coast energy finance placement. Architecture is genuinely strong, tied to New Orleans' distinctive built environment. Public service requirement embeds every student in real civic work.",
       "hiddenPathway": "Freeman's energy finance ties to the Gulf Coast are a genuine, underrated pipeline hiding behind Tulane's party-school reputation.",
       "institutionalSecret": "Tulane's Architecture program benefits from studying and rebuilding a city with one of the most distinctive built environments in America.",
-      "theRoom": "New Orleans itself is inseparable from the Tulane experience \u2014 culture, music, and civic engagement are constant.",
+      "theRoom": "New Orleans itself is inseparable from the Tulane experience — culture, music, and civic engagement are constant.",
       "lifestyle": "Distinctive, culturally rich, civically engaged via mandatory public service.",
       "bestFitPersonality": "Culturally curious, comfortable in a loud, present city, drawn to energy finance or architecture.",
       "faithTradition": "None",
@@ -12103,7 +12040,7 @@ const UNIVERSITY_DB_V5 = {
       "innovationIndex": 62
     },
     "geographicInfluence": {
-      "dominantMarket": "New Orleans and the Gulf Coast \u2014 Energy Finance and Architecture",
+      "dominantMarket": "New Orleans and the Gulf Coast — Energy Finance and Architecture",
       "secondaryMarkets": [
         "Houston TX",
         "Atlanta GA",
@@ -12138,7 +12075,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "realEstate": {
         "strength": 80,
-        "notes": "Strong, distinctive architecture placement. (Remapped 2026-07-12 from non-standard key 'architecture' \u2014 closest available standard key, no dedicated architecture key exists.)"
+        "notes": "Strong, distinctive architecture placement. (Remapped 2026-07-12 from non-standard key 'architecture' — closest available standard key, no dedicated architecture key exists.)"
       },
       "nonprofitLeadership": {
         "strength": 74,
@@ -12328,7 +12265,7 @@ const UNIVERSITY_DB_V5 = {
       "name": "University of Colorado Boulder",
       "location": "Boulder, Colorado",
       "region": "Front Range",
-      "archetype": "The Aerospace Flagship \u2014 Real Out-of-State Draw, Colorado Creed, Research-University Scale with a Law School",
+      "archetype": "The Aerospace Flagship — Real Out-of-State Draw, Colorado Creed, Research-University Scale with a Law School",
       "oneSentenceSummary": "The University of Colorado Boulder is a large public research university at the base of the Rocky Mountains, distinguished by a genuinely strong national draw (44.5% of the Fall 2025 first-year class came from outside Colorado) and an unusually deep aerospace and defense employer pipeline connecting directly to Colorado's real aerospace industry cluster.",
       "pipeline": "7,397 new first-year students enrolled Fall 2025 (down 0.5% from 7,432 in 2024), with an average SAT of 1268, ACT of 29.6, and high school GPA of 3.77. 55.5% of the class is Colorado resident and 44.5% out-of-state, with California (12.6%), Texas (4.3%), and Illinois (3.2%) the top out-of-state feeder states. 69% of graduates were employed within six months of graduation (based on the university's own Graduate Destinations Survey, 15% response rate, updated March 2026), 92% of those full-time, 88% in work related to their major. The top industry for graduates is Scientific Research and Development Services (16%) and the top occupation is Aerospace Engineer (6%) -- both reflecting Colorado's real aerospace and defense economy. Top employers by verified survey count: Lockheed Martin (49), Amazon (22), KPMG (18), Charles Schwab (17), Ball Aerospace (16), Deloitte (14), and Northrop Grumman (12).",
       "hiddenPathway": "CU Boulder's aerospace and defense employer pipeline is not a marketing claim -- it's directly measurable in the university's own outcomes data: Lockheed Martin alone hired more recent graduates (49, per the Graduate Destinations Survey) than any employer besides the university itself, and Ball Aerospace, Northrop Grumman, and the Laboratory for Atmospheric and Space Physics all appear among the top employers. This reflects Colorado's real Front Range aerospace corridor, not a general research-university claim.",
@@ -12371,7 +12308,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "CU Boulder",
-      "archetype": "Large Public Research University \u2014 Aerospace/STEM Flagship with Real National Draw",
+      "archetype": "Large Public Research University — Aerospace/STEM Flagship with Real National Draw",
       "institutionalPersonality": "research-intensive, outdoors-oriented, community-minded, aerospace-connected",
       "cultureKeywords": [
         "Colorado Creed",
@@ -13956,10 +13893,10 @@ const UNIVERSITY_DB_V5 = {
       "name": "Pomona College",
       "location": "Claremont, California",
       "region": "California",
-      "archetype": "The Founding Consortium College \u2014 Academic Breadth, Selectivity, and West Coast Elite Formation",
+      "archetype": "The Founding Consortium College — Academic Breadth, Selectivity, and West Coast Elite Formation",
       "oneSentenceSummary": "Pomona College is consistently ranked among the top liberal arts colleges in the nation, combining extraordinary selectivity, exceptional resources per student, and the founding role of the Claremont Colleges Consortium to deliver the academic breadth of a research university within an intensely intimate liberal arts community, all set at the base of the San Gabriel Mountains near Los Angeles.",
       "pipeline": "Approximately 1,700 students. Pomona sends graduates to Harvard, Yale, Stanford, MIT, Oxford, Cambridge, and other elite graduate programs at one of the highest rates of any liberal arts college in the nation. Major recruiters include McKinsey & Company, Bain & Company, Boston Consulting Group, Goldman Sachs, Morgan Stanley, BlackRock, Google, Meta, Amazon, Blackstone, and leading technology, entertainment, and finance firms throughout Los Angeles and San Francisco. Pomona has one of the largest per-student endowments of any liberal arts college in America, funding exceptional research, travel, and internship opportunities.",
-      "hiddenPathway": "Pomona's greatest hidden advantage is its founding role in the Claremont Colleges Consortium \u2014 students cross-register seamlessly at Claremont McKenna, Harvey Mudd, Scripps, and Pitzer, gaining access to engineering, business-oriented economics, and specialized humanities programs that no single liberal arts college could offer alone. This creates the academic breadth of a mid-sized research university within a class of 1,700 students.",
+      "hiddenPathway": "Pomona's greatest hidden advantage is its founding role in the Claremont Colleges Consortium — students cross-register seamlessly at Claremont McKenna, Harvey Mudd, Scripps, and Pitzer, gaining access to engineering, business-oriented economics, and specialized humanities programs that no single liberal arts college could offer alone. This creates the academic breadth of a mid-sized research university within a class of 1,700 students.",
       "institutionalSecret": "Pomona meets 100% of demonstrated financial need without loans for every admitted student, funded by one of the largest per-capita endowments of any college in America. Combined with need-blind admission, this makes Pomona one of the most genuinely accessible elite liberal arts colleges regardless of family income, while its extremely low acceptance rate keeps it under-recognized outside sophisticated college-admissions circles relative to its Ivy League peers.",
       "theRoom": "Located in Claremont at the base of the San Gabriel Mountains, thirty-five miles east of downtown Los Angeles, Pomona sits at the center of the five-college undergraduate consortium. Students benefit from the shared academic and social resources of Claremont McKenna, Harvey Mudd, Scripps, and Pitzer while remaining within an hour of Los Angeles's entertainment, technology, venture capital, and finance ecosystems.",
       "lifestyle": "Intellectually adventurous, collaborative, outdoors-oriented, and residential. Students balance rigorous academics with consortium-wide social life, hiking and outdoor recreation in the San Gabriel Mountains, the arts, and close faculty mentorship in an unusually well-resourced small-college environment.",
@@ -14222,7 +14159,7 @@ const UNIVERSITY_DB_V5 = {
       "innovationIndex": 92
     },
     "geographicInfluence": {
-      "dominantMarket": "Southern California Creative and Innovation Economy \u2014 Technology, Entertainment, Finance, and Graduate Education",
+      "dominantMarket": "Southern California Creative and Innovation Economy — Technology, Entertainment, Finance, and Graduate Education",
       "secondaryMarkets": [
         "Los Angeles CA",
         "San Francisco CA",
@@ -14439,10 +14376,17 @@ const UNIVERSITY_DB_V5 = {
   },
   "Saint Mary's College of California": {
     "admissionsDrawProfile": {
-      "oosEnrollmentPct": 14.0,
-      "homeStateEnrollmentPct": 86.0,
+      "oosEnrollmentPct": 14,
+      "homeStateEnrollmentPct": 86,
       "drawClassification": "state",
-      "topFeederStates": { "CA": 86.7, "WA": 2.4, "OR": 1.9, "HI": 1.5, "TX": 1.2, "GA": 1.0 },
+      "topFeederStates": {
+        "CA": 86.7,
+        "WA": 2.4,
+        "OR": 1.9,
+        "HI": 1.5,
+        "TX": 1.2,
+        "GA": 1
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Saint Mary's College of California Common Data Set 2023-2024, Section F1 (primary source, direct PDF: stmarys-ca.edu/sites/default/files/2024-04/CDS_2023_2024_final_040424.pdf).",
@@ -14453,10 +14397,10 @@ const UNIVERSITY_DB_V5 = {
       "name": "Saint Mary's College of California",
       "location": "Moraga, California",
       "region": "California",
-      "archetype": "The Bay Area Catholic Liberal Arts College \u2014 Small Community, Business, and Education Formation",
+      "archetype": "The Bay Area Catholic Liberal Arts College — Small Community, Business, and Education Formation",
       "oneSentenceSummary": "Saint Mary's College of California is a small Lasallian Catholic liberal arts college offering an intimate, mission-driven undergraduate experience with particular strength in business, education, and health sciences, set in the hills of Moraga just twenty miles from San Francisco and Oakland.",
       "pipeline": "Approximately 2,500 undergraduates. Saint Mary's is known regionally for its School of Economics and Business Administration, teacher credentialing programs, kinesiology, and nursing preparation. Regional employers and graduate programs across the Bay Area recruit Saint Mary's graduates, with particular strength in Northern California K-12 education, healthcare systems, and small-to-midsize Bay Area businesses.",
-      "hiddenPathway": "Saint Mary's Jan Term \u2014 a dedicated four-week January session \u2014 allows students to take one intensive, often experiential course, including study-abroad and community-engagement options, without competing against a full course load. This creates space for career exploration, internship-style immersion, or academic risk-taking that a standard semester structure does not easily allow.",
+      "hiddenPathway": "Saint Mary's Jan Term — a dedicated four-week January session — allows students to take one intensive, often experiential course, including study-abroad and community-engagement options, without competing against a full course load. This creates space for career exploration, internship-style immersion, or academic risk-taking that a standard semester structure does not easily allow.",
       "institutionalSecret": "The Collegiate Seminar Program is a four-year great-books discussion sequence required of every student regardless of major, taught in small seminar format across all four years. It is one of the few remaining great-books core curricula at a Catholic college on the West Coast, and it produces graduates with unusually strong discussion, writing, and critical-reading skills relative to the school's regional name recognition.",
       "theRoom": "Moraga is a quiet, affluent residential town in the hills east of Oakland, twenty miles from downtown San Francisco. The campus is compact, Spanish Mission-style, and set against open hillside space, offering a retreat-like small-college atmosphere while remaining a manageable BART and car commute from the full Bay Area job market.",
       "lifestyle": "Close-knit, mission-driven, and residential. Students engage with the Lasallian Catholic values of the institution, small seminar-style classes, Division I athletics at the mid-major level, and a tight campus community that stands in deliberate contrast to the sprawl of nearby large public universities.",
@@ -14695,7 +14639,7 @@ const UNIVERSITY_DB_V5 = {
       "innovationIndex": 46
     },
     "geographicInfluence": {
-      "dominantMarket": "San Francisco Bay Area \u2014 Education, Business, and Regional Healthcare",
+      "dominantMarket": "San Francisco Bay Area — Education, Business, and Regional Healthcare",
       "secondaryMarkets": [
         "Sacramento CA",
         "San Jose CA",
@@ -14807,7 +14751,7 @@ const UNIVERSITY_DB_V5 = {
       },
       "pharmaceuticalManufacturing": {
         "strength": 54,
-        "notes": "Real, specific evidence: Saint Mary's own official account confirms students toured Genentech's main campus with structured career and internship insight sessions. The college separately runs its own dedicated Professional Science Master's (PSM) in Biotechnology degree program \u2014 a real, distinct graduate-level institutional commitment to this field, though a separate credential from the undergraduate programs most other scores in this dataset reflect. Reinforced by modest but real Biochemistry (10 students) and Chemistry (2) programs at the undergraduate level."
+        "notes": "Real, specific evidence: Saint Mary's own official account confirms students toured Genentech's main campus with structured career and internship insight sessions. The college separately runs its own dedicated Professional Science Master's (PSM) in Biotechnology degree program — a real, distinct graduate-level institutional commitment to this field, though a separate credential from the undergraduate programs most other scores in this dataset reflect. Reinforced by modest but real Biochemistry (10 students) and Chemistry (2) programs at the undergraduate level."
       }
     },
     "wealthMobility": {
@@ -14910,7 +14854,18 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 41,
       "homeStateEnrollmentPct": 59,
       "drawClassification": "regional",
-      "topFeederStates": { "CA": 53.9, "WA": 5.8, "CO": 5.3, "AZ": 4.9, "TX": 3.8, "NV": 3.4, "OR": 3.1, "HI": 2.8, "MA": 1.6, "MN": 1.6 },
+      "topFeederStates": {
+        "CA": 53.9,
+        "WA": 5.8,
+        "CO": 5.3,
+        "AZ": 4.9,
+        "TX": 3.8,
+        "NV": 3.4,
+        "OR": 3.1,
+        "HI": 2.8,
+        "MA": 1.6,
+        "MN": 1.6
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Data collected from University of San Diego's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
@@ -15367,11 +15322,11 @@ const UNIVERSITY_DB_V5 = {
       "name": "Santa Clara University",
       "location": "Santa Clara, California",
       "region": "California",
-      "archetype": "The Silicon Valley Jesuit University \u2014 Business, Engineering, and Tech-Industry Formation",
+      "archetype": "The Silicon Valley Jesuit University — Business, Engineering, and Tech-Industry Formation",
       "oneSentenceSummary": "Santa Clara University is a mid-sized Jesuit Catholic university located in the heart of Silicon Valley, combining a nationally ranked Leavey School of Business, strong engineering programs, and unmatched physical proximity to the world's leading technology companies, producing graduates with direct, early access to the Bay Area innovation economy.",
       "pipeline": "Approximately 6,000 undergraduates. Santa Clara is nationally recognized for the Leavey School of Business, computer science and engineering, and pre-law preparation. Major recruiters include Google, Apple, Meta, Salesforce, Adobe, Cisco, Deloitte, EY, KPMG, Goldman Sachs, and a dense concentration of Silicon Valley startups and venture-backed technology companies that recruit directly from campus given its physical location at the center of Silicon Valley.",
-      "hiddenPathway": "Santa Clara's location inside Silicon Valley itself \u2014 not merely near it \u2014 creates an internship and networking density that few universities in the country can match. Students can hold part-time roles or internships at major technology companies while attending full-time classes, and alumni relationships with hiring managers at nearby companies are unusually direct and frequent compared to universities that market Silicon Valley proximity from a greater distance.",
-      "institutionalSecret": "Santa Clara's Jesuit identity emphasizes ethical leadership and 'conscience, competence, and compassion' explicitly within its business and engineering curricula \u2014 a distinctive combination of technical rigor and values-based reflection that shapes how students approach technology ethics, an increasingly important differentiator as AI and data-privacy concerns reshape the tech industry's hiring priorities.",
+      "hiddenPathway": "Santa Clara's location inside Silicon Valley itself — not merely near it — creates an internship and networking density that few universities in the country can match. Students can hold part-time roles or internships at major technology companies while attending full-time classes, and alumni relationships with hiring managers at nearby companies are unusually direct and frequent compared to universities that market Silicon Valley proximity from a greater distance.",
+      "institutionalSecret": "Santa Clara's Jesuit identity emphasizes ethical leadership and 'conscience, competence, and compassion' explicitly within its business and engineering curricula — a distinctive combination of technical rigor and values-based reflection that shapes how students approach technology ethics, an increasingly important differentiator as AI and data-privacy concerns reshape the tech industry's hiring priorities.",
       "theRoom": "Located in the city of Santa Clara at the center of Silicon Valley, the university is surrounded by the headquarters of Apple, Google, Nvidia, Intel, and thousands of technology companies, with San Jose and San Francisco both accessible within an hour, placing students inside the densest concentration of technology employment in the world.",
       "lifestyle": "Professionally ambitious, tech-industry-oriented, and residential. Students balance rigorous business and engineering coursework with internships at nearby technology companies, Division I athletics, and a campus culture that blends Jesuit values with entrepreneurial energy.",
       "bestFitPersonality": "Professionally ambitious, interested in technology or business, comfortable balancing academics with internship demands, values-aware, moderate-to-high Conscientiousness with moderate Extraversion.",
@@ -15620,7 +15575,7 @@ const UNIVERSITY_DB_V5 = {
       "innovationIndex": 96
     },
     "geographicInfluence": {
-      "dominantMarket": "Silicon Valley \u2014 Technology, Business, and Engineering",
+      "dominantMarket": "Silicon Valley — Technology, Business, and Engineering",
       "secondaryMarkets": [
         "San Francisco CA",
         "Los Angeles CA",
@@ -15716,11 +15671,11 @@ const UNIVERSITY_DB_V5 = {
       },
       "entrepreneurship": {
         "strength": 88,
-        "notes": "One of Santa Clara's core institutional strengths \u2014 dedicated entrepreneurship programs and Silicon Valley proximity produce a strong and growing culture of student and alumni startup founders."
+        "notes": "One of Santa Clara's core institutional strengths — dedicated entrepreneurship programs and Silicon Valley proximity produce a strong and growing culture of student and alumni startup founders."
       },
       "technology": {
         "strength": 96,
-        "notes": "Santa Clara's defining institutional strength \u2014 direct Silicon Valley location produces exceptional technology-sector placement across computer science, engineering, and business graduates."
+        "notes": "Santa Clara's defining institutional strength — direct Silicon Valley location produces exceptional technology-sector placement across computer science, engineering, and business graduates."
       },
       "publicPolicy": {
         "strength": 36,
@@ -15835,7 +15790,9 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 1.5,
       "homeStateEnrollmentPct": 98.5,
       "drawClassification": "state",
-      "topFeederStates": { "CA": 98.7 },
+      "topFeederStates": {
+        "CA": 98.7
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "California State University, Chico Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
@@ -16728,7 +16685,18 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 55,
       "homeStateEnrollmentPct": 45,
       "drawClassification": "regional",
-      "topFeederStates": { "IA": 46.2, "IL": 13.9, "MN": 11.3, "MO": 4.7, "WI": 3.9, "NE": 3.9, "KS": 3.0, "TX": 2.9, "CO": 2.0, "AZ": 1.4 },
+      "topFeederStates": {
+        "IA": 46.2,
+        "IL": 13.9,
+        "MN": 11.3,
+        "MO": 4.7,
+        "WI": 3.9,
+        "NE": 3.9,
+        "KS": 3,
+        "TX": 2.9,
+        "CO": 2,
+        "AZ": 1.4
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Data collected from Drake University's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). Drake's own hosted CDS PDF returned a blank Section F1 template with no filled-in figures, so this is one step removed from the primary document.",
@@ -17178,7 +17146,18 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 76,
       "homeStateEnrollmentPct": 24,
       "drawClassification": "national",
-      "topFeederStates": { "NE": 24.4, "MN": 14.0, "CO": 11.4, "IA": 7.2, "IL": 6.0, "HI": 5.5, "KS": 4.2, "MO": 4.0, "CA": 3.9, "WI": 3.3 },
+      "topFeederStates": {
+        "NE": 24.4,
+        "MN": 14,
+        "CO": 11.4,
+        "IA": 7.2,
+        "IL": 6,
+        "HI": 5.5,
+        "KS": 4.2,
+        "MO": 4,
+        "CA": 3.9,
+        "WI": 3.3
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
@@ -18819,13 +18798,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "November 1",
-        "earliestDeadlineLabel": "Early Decision / Early Action (most majors)",
-        "rdDeadline": "January 10",
-        "essayPromptTopic": null,
-        "notes": "Full round structure verified directly from admission.usc.edu (2026-27 cycle): Early Decision and Early Action (most majors) Nov 1; Regular Decision for performing arts majors Dec 1 (earlier than the general RD deadline); Regular Decision for most majors Jan 10. Several schools within USC (Iovine and Young Academy, School of Architecture, Roski School of Art and Design, School of Cinematic Arts, Kaufman School of Dance, School of Dramatic Arts, Thornton School of Music, and the Marshall School's World Bachelor in Business) may carry additional departmental application requirements beyond the general deadlines. Test-optional. USC explicitly does not conduct admission interviews and does not track demonstrated interest in its admission process -- a genuinely distinctive, stated policy, confirmed directly on USC's own site, that differs from many peer institutions. Home-schooled applicants are encouraged (not required) to submit SAT/ACT, AP results, or accredited transcripts despite the general test-optional policy. Specific supplemental essay prompt text was not captured in this pass. Sourced from admission.usc.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision / Early Action (most majors)",
+      "rdDeadline": "January 10",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from admission.usc.edu (2026-27 cycle): Early Decision and Early Action (most majors) Nov 1; Regular Decision for performing arts majors Dec 1 (earlier than the general RD deadline); Regular Decision for most majors Jan 10. Several schools within USC (Iovine and Young Academy, School of Architecture, Roski School of Art and Design, School of Cinematic Arts, Kaufman School of Dance, School of Dramatic Arts, Thornton School of Music, and the Marshall School's World Bachelor in Business) may carry additional departmental application requirements beyond the general deadlines. Test-optional. USC explicitly does not conduct admission interviews and does not track demonstrated interest in its admission process -- a genuinely distinctive, stated policy, confirmed directly on USC's own site, that differs from many peer institutions. Home-schooled applicants are encouraged (not required) to submit SAT/ACT, AP results, or accredited transcripts despite the general test-optional policy. Specific supplemental essay prompt text was not captured in this pass. Sourced from admission.usc.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "USC",
       "archetype": "Major Private Research University",
@@ -20721,7 +20700,12 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 9,
       "homeStateEnrollmentPct": 91,
       "drawClassification": "state",
-      "topFeederStates": { "UT": 88.9, "AZ": 1.7, "CA": 1.2, "ID": 1.0 },
+      "topFeederStates": {
+        "UT": 88.9,
+        "AZ": 1.7,
+        "CA": 1.2,
+        "ID": 1
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Weber State University Common Data Set 2020-2021, Section F1 (Fall 2020 first-time first-year cohort). Note: older than other records in this batch -- a more recent CDS PDF returned a 404 on direct fetch; flagged for a refresh pass.",
@@ -23428,13 +23412,13 @@ const UNIVERSITY_DB_V5 = {
       "name": "Boston University",
       "location": "Boston, Massachusetts",
       "region": "New England",
-      "archetype": "The Urban Independent \u2014 Finance, Media, and Boston's Dense Professional Economy",
+      "archetype": "The Urban Independent — Finance, Media, and Boston's Dense Professional Economy",
       "oneSentenceSummary": "BU combines a large, urban, self-assembled community with strong Questrom Business and Communication programs, giving students direct access to Boston's finance, biotech, and media economy.",
       "pipeline": "Approximately 18,000 undergraduates spread across Commonwealth Avenue. Strong Questrom Business, Communication, and Public Health programs. Major recruiters include Fidelity, State Street, Deloitte, and Boston's dense biotech/finance corridor.",
       "hiddenPathway": "BU's Boston location gives direct access to one of the most concentrated finance/biotech job markets in the country, without needing to relocate after graduation.",
-      "institutionalSecret": "BU's lack of a traditional quad often reads as a weakness, but it mirrors NYU's model \u2014 the city itself becomes the extracurricular life and professional network.",
+      "institutionalSecret": "BU's lack of a traditional quad often reads as a weakness, but it mirrors NYU's model — the city itself becomes the extracurricular life and professional network.",
       "theRoom": "Spread along Commonwealth Avenue in the heart of Boston, adjacent to dozens of other universities and Boston's professional core.",
-      "lifestyle": "Urban, independent, self-assembled \u2014 community forms through clubs and neighborhoods rather than a central quad.",
+      "lifestyle": "Urban, independent, self-assembled — community forms through clubs and neighborhoods rather than a central quad.",
       "bestFitPersonality": "Independent, comfortable building their own community, drawn to a dense urban professional environment.",
       "faithTradition": "None",
       "geographicInfluenceRadius": "Strong throughout the Northeast, especially Boston's finance and biotech corridor.",
@@ -23547,12 +23531,12 @@ const UNIVERSITY_DB_V5 = {
       "idealStudentTraits": [
         "Self-directed",
         "Comfortable being one of many in a dense urban environment",
-        "Independent socially \u2014 builds their own community rather than having one assigned",
+        "Independent socially — builds their own community rather than having one assigned",
         "Career-focused, especially toward finance, media, or communications",
         "Resourceful in navigating a large, sprawling campus footprint"
       ],
       "thrivesIf": [
-        "Wants a real city, not a campus bubble \u2014 Boston as classroom and social life",
+        "Wants a real city, not a campus bubble — Boston as classroom and social life",
         "Is comfortable assembling their own friend group rather than a built-in cohort",
         "Interested in finance, media, communications, or international relations",
         "Enjoys a large, high-energy, ambitious peer environment",
@@ -23597,7 +23581,7 @@ const UNIVERSITY_DB_V5 = {
         "Boston's growing film and television production industry"
       ],
       "overlookedStrengths": [
-        "BU's lack of a traditional quad often reads as a weakness on a campus tour, but it mirrors NYU's model closely \u2014 the city itself becomes the extracurricular life and the professional network, a real advantage for students who want urban immersion from day one.",
+        "BU's lack of a traditional quad often reads as a weakness on a campus tour, but it mirrors NYU's model closely — the city itself becomes the extracurricular life and the professional network, a real advantage for students who want urban immersion from day one.",
         "The School of Public Health is a genuinely strong, less-recognized credential relative to BU's business and communications reputation, feeding directly into Boston's hospital and biotech ecosystem.",
         "BU's direct access to one of the most concentrated finance and biotech job markets in the country means students can build a full career network without ever needing to relocate after graduation."
       ],
@@ -23654,7 +23638,7 @@ const UNIVERSITY_DB_V5 = {
       "innovationIndex": 74
     },
     "geographicInfluence": {
-      "dominantMarket": "Boston \u2014 Finance, Biotech, and Media",
+      "dominantMarket": "Boston — Finance, Biotech, and Media",
       "secondaryMarkets": [
         "New York NY",
         "Washington DC",
@@ -23685,15 +23669,15 @@ const UNIVERSITY_DB_V5 = {
     "industryPathways": {
       "consulting": {
         "strength": 84,
-        "notes": "Questrom has strong Boston-area corporate placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking \u2014 judgment call.)"
+        "notes": "Questrom has strong Boston-area corporate placement. (Remapped 2026-07-12 from non-standard key 'business', split across consulting/investmentBanking — judgment call.)"
       },
       "investmentBanking": {
         "strength": 76,
-        "notes": "Questrom has a secondary Wall Street placement pipeline. (Remapped 2026-07-12 from non-standard key 'business' \u2014 judgment call.)"
+        "notes": "Questrom has a secondary Wall Street placement pipeline. (Remapped 2026-07-12 from non-standard key 'business' — judgment call.)"
       },
       "realEstate": {
         "strength": 48,
-        "notes": "Questrom offers real estate finance coursework, benefiting from the Boston-area commercial market \u2014 a real but secondary pathway relative to Questrom's dominant consulting/finance and media placement. (Added 2026-07-22.)"
+        "notes": "Questrom offers real estate finance coursework, benefiting from the Boston-area commercial market — a real but secondary pathway relative to Questrom's dominant consulting/finance and media placement. (Added 2026-07-22.)"
       },
       "entertainmentMedia": {
         "strength": 82,
@@ -24924,7 +24908,18 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 38,
       "homeStateEnrollmentPct": 62,
       "drawClassification": "regional",
-      "topFeederStates": { "CA": 68.2, "WA": 3.3, "HI": 2.7, "OR": 2.7, "TX": 2.4, "NY": 2.0, "IL": 2.0, "CO": 1.9, "AZ": 1.6, "NJ": 1.4 },
+      "topFeederStates": {
+        "CA": 68.2,
+        "WA": 3.3,
+        "HI": 2.7,
+        "OR": 2.7,
+        "TX": 2.4,
+        "NY": 2,
+        "IL": 2,
+        "CO": 1.9,
+        "AZ": 1.6,
+        "NJ": 1.4
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Loyola Marymount University Common Data Set 2023-2024, Section F1 (Fall 2023 first-time first-year cohort)",
@@ -28663,13 +28658,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 1",
-        "earliestDeadlineLabel": "UC Application Filing Period Opens",
-        "rdDeadline": "November 30",
-        "essayPromptTopic": null,
-        "notes": "Full round structure verified directly from admission.ucla.edu/apply/first-year (2026-27 cycle): UC Application opens Aug 1; single filing window Oct 1 - Nov 30; admission notification late March; enrollment deposit and housing application due May 1; final official transcripts due July 1; official AP/IB scores due July 15. UCLA explicitly does NOT offer Early Action or Early Decision for any applicants -- a directly stated policy on UCLA's own site, distinct from the general assumption that elite privates all offer early rounds. UCLA operates on the quarter system and only admits for the fall term. Fall 2025 admits averaged a 4.0 unweighted GPA. Choice of major does not affect admission odds for College of Letters and Science applicants -- many apply undeclared. Separate supplemental applications are required for the School of the Arts and Architecture, Herb Alpert School of Music, School of Nursing, and School of Theater, Film and Television; applicants must list these as their first-choice major to be considered. Specific Personal Insight Question content was not captured in this pass. Sourced from admission.ucla.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "UC Application Filing Period Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from admission.ucla.edu/apply/first-year (2026-27 cycle): UC Application opens Aug 1; single filing window Oct 1 - Nov 30; admission notification late March; enrollment deposit and housing application due May 1; final official transcripts due July 1; official AP/IB scores due July 15. UCLA explicitly does NOT offer Early Action or Early Decision for any applicants -- a directly stated policy on UCLA's own site, distinct from the general assumption that elite privates all offer early rounds. UCLA operates on the quarter system and only admits for the fall term. Fall 2025 admits averaged a 4.0 unweighted GPA. Choice of major does not affect admission odds for College of Letters and Science applicants -- many apply undeclared. Separate supplemental applications are required for the School of the Arts and Architecture, Herb Alpert School of Music, School of Nursing, and School of Theater, Film and Television; applicants must list these as their first-choice major to be considered. Specific Personal Insight Question content was not captured in this pass. Sourced from admission.ucla.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "UCLA",
       "archetype": "Elite Public Research University, Complete LA Anchor",
@@ -29482,13 +29477,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 1",
-        "earliestDeadlineLabel": "UC Application Filing Period Opens",
-        "rdDeadline": "November 30",
-        "essayPromptTopic": null,
-        "notes": "UC San Diego uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction. Directly confirmed on admissions.ucsd.edu/apply: UC Application opens Aug 1; application submission period Oct 1 - Nov 30. UC San Diego is home to more than 2,300 military-connected students, with dedicated resources and services for the military-to-college transition -- a real, specific, quantified figure confirmed directly on UCSD's own site. UCSD enrolls transfer students at the junior level specifically. Specific Personal Insight Question content was not captured in this pass. Sourced from admissions.ucsd.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "UC Application Filing Period Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "UC San Diego uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction. Directly confirmed on admissions.ucsd.edu/apply: UC Application opens Aug 1; application submission period Oct 1 - Nov 30. UC San Diego is home to more than 2,300 military-connected students, with dedicated resources and services for the military-to-college transition -- a real, specific, quantified figure confirmed directly on UCSD's own site. UCSD enrolls transfer students at the junior level specifically. Specific Personal Insight Question content was not captured in this pass. Sourced from admissions.ucsd.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "UC San Diego",
       "archetype": "Elite Public Research University — Life Sciences and Engineering Powerhouse",
@@ -29970,13 +29965,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 1",
-        "earliestDeadlineLabel": "UC Application Filing Period Opens",
-        "rdDeadline": "November 30",
-        "essayPromptTopic": null,
-        "notes": "UC Santa Barbara uses the shared University of California application, not campus-specific application rounds -- there is no Early Decision/Early Action/Regular Decision distinction. Full timeline verified directly from admissions.sa.ucsb.edu/deadlines (Fall 2027 cycle): UC Application opens Aug 1; single filing window Oct 1 - Nov 30; admission decisions mid-March; Statement of Intent to Register (SIR) due May 1. SAT/ACT scores are explicitly NOT used in the admission selection process (stated directly on UCSB's own site) -- submission is optional and, if submitted, may only assist with course placement after enrollment, a meaningfully stronger stance than 'test-optional' framing implies. Specific supplemental essay/Personal Insight Question content was not captured in this pass (UC's shared Personal Insight Questions apply system-wide). Sourced from admissions.sa.ucsb.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "UC Application Filing Period Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "UC Santa Barbara uses the shared University of California application, not campus-specific application rounds -- there is no Early Decision/Early Action/Regular Decision distinction. Full timeline verified directly from admissions.sa.ucsb.edu/deadlines (Fall 2027 cycle): UC Application opens Aug 1; single filing window Oct 1 - Nov 30; admission decisions mid-March; Statement of Intent to Register (SIR) due May 1. SAT/ACT scores are explicitly NOT used in the admission selection process (stated directly on UCSB's own site) -- submission is optional and, if submitted, may only assist with course placement after enrollment, a meaningfully stronger stance than 'test-optional' framing implies. Specific supplemental essay/Personal Insight Question content was not captured in this pass (UC's shared Personal Insight Questions apply system-wide). Sourced from admissions.sa.ucsb.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "UC Santa Barbara",
       "archetype": "Elite Public Research University — Physical Sciences and Coastal Culture",
@@ -30446,13 +30441,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 1",
-        "earliestDeadlineLabel": "UC Application Filing Period Opens",
-        "rdDeadline": "November 30",
-        "essayPromptTopic": null,
-        "notes": "UC Davis uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model confirmed directly on UC Santa Barbara's admissions site during this same batch. UC Application opens Aug 1; single filing window Oct 1 - Nov 30; Statement of Intent to Register (SIR) typically due by May 1, consistent system-wide. Deadline specifics were cross-verified against the UC system's shared filing period rather than re-confirmed independently on admission.ucdavis.edu in this pass -- flagged as cross-system-verified rather than campus-page-verified, and should be independently spot-checked before being treated as campus-specific confirmation. Specific supplemental essay/Personal Insight Question content was not captured in this pass.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "UC Application Filing Period Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "UC Davis uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model confirmed directly on UC Santa Barbara's admissions site during this same batch. UC Application opens Aug 1; single filing window Oct 1 - Nov 30; Statement of Intent to Register (SIR) typically due by May 1, consistent system-wide. Deadline specifics were cross-verified against the UC system's shared filing period rather than re-confirmed independently on admission.ucdavis.edu in this pass -- flagged as cross-system-verified rather than campus-page-verified, and should be independently spot-checked before being treated as campus-specific confirmation. Specific supplemental essay/Personal Insight Question content was not captured in this pass.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "UC Davis",
       "archetype": "Elite Public Land-Grant Research University — Agricultural and Environmental Sciences",
@@ -30927,13 +30922,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 1",
-        "earliestDeadlineLabel": "UC Application Filing Period Opens",
-        "rdDeadline": "November 30",
-        "essayPromptTopic": null,
-        "notes": "UC Irvine uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's admissions site during this same batch (admissions.sa.ucsb.edu/deadlines). UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. Two campus-specific dates were confirmed directly on admissions.uci.edu: official final transcripts due July 1, official AP/IB test scores due July 15. The full admission-decision and SIR deadline dates were not independently re-confirmed on UCI's own site in this pass (cross-verified against the UC system-wide pattern instead) and should be spot-checked directly before being treated as UCI-page-verified rather than system-pattern-verified. Specific supplemental essay/Personal Insight Question content was not captured in this pass.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "UC Application Filing Period Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "UC Irvine uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's admissions site during this same batch (admissions.sa.ucsb.edu/deadlines). UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. Two campus-specific dates were confirmed directly on admissions.uci.edu: official final transcripts due July 1, official AP/IB test scores due July 15. The full admission-decision and SIR deadline dates were not independently re-confirmed on UCI's own site in this pass (cross-verified against the UC system-wide pattern instead) and should be spot-checked directly before being treated as UCI-page-verified rather than system-pattern-verified. Specific supplemental essay/Personal Insight Question content was not captured in this pass.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "UC Irvine",
       "archetype": "Rising Elite Public Research University — Technology, Biomedical, and Business",
@@ -31352,7 +31347,9 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 1,
       "homeStateEnrollmentPct": 99,
       "drawClassification": "state",
-      "topFeederStates": { "CA": 98.5 },
+      "topFeederStates": {
+        "CA": 98.5
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Data collected from UC Riverside's 2024-25 Common Data Set (CDS) form, via Sourced via College Transitions Dataverse (Enrollment by Residency), which attributes this figure to the school's own 2024-25 Common Data Set -- the primary CDS document could not be located/fetched directly, so this is one step removed from the primary document rather than a direct pull.",
@@ -31404,13 +31401,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 1",
-        "earliestDeadlineLabel": "UC Application Filing Period Opens",
-        "rdDeadline": "November 30",
-        "essayPromptTopic": null,
-        "notes": "UC Riverside uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's and UCLA's admissions sites during this same reconciliation effort. UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. UC Riverside's own admissions site did not resolve the specific deadlines page in this pass (404 on multiple attempted URLs) -- campus-specific supplemental dates were not independently confirmed on admissions.ucr.edu and should be spot-checked directly before being treated as campus-page-verified rather than system-pattern-verified.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "UC Application Filing Period Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "UC Riverside uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's and UCLA's admissions sites during this same reconciliation effort. UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. UC Riverside's own admissions site did not resolve the specific deadlines page in this pass (404 on multiple attempted URLs) -- campus-specific supplemental dates were not independently confirmed on admissions.ucr.edu and should be spot-checked directly before being treated as campus-page-verified rather than system-pattern-verified.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "UC Riverside",
       "archetype": "Public Research University — Access, Mobility, and Mission-Driven Medicine",
@@ -31875,13 +31872,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 1",
-        "earliestDeadlineLabel": "UC Application Filing Period Opens",
-        "rdDeadline": "November 30",
-        "essayPromptTopic": null,
-        "notes": "UC Santa Cruz uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's, UCLA's, and UC San Diego's admissions sites during this same reconciliation effort. UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. UC Santa Cruz's own admissions site did not resolve the specific first-year applicant page in this pass (404) -- campus-specific supplemental dates were not independently confirmed on admissions.ucsc.edu and should be spot-checked directly before being treated as campus-page-verified rather than system-pattern-verified.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "UC Application Filing Period Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "UC Santa Cruz uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's, UCLA's, and UC San Diego's admissions sites during this same reconciliation effort. UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. UC Santa Cruz's own admissions site did not resolve the specific first-year applicant page in this pass (404) -- campus-specific supplemental dates were not independently confirmed on admissions.ucsc.edu and should be spot-checked directly before being treated as campus-page-verified rather than system-pattern-verified.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "UC Santa Cruz",
       "archetype": "Independent-Minded Public Research University — Technology and Marine Science",
@@ -32345,13 +32342,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 15",
-        "earliestDeadlineLabel": "Restrictive Early Action (with optional Arts Portfolio)",
-        "rdDeadline": "January 5",
-        "essayPromptTopic": null,
-        "notes": "Full round structure verified directly from admission.stanford.edu/apply/first-year (page timestamped 'Updated on July 22, 2026' -- genuinely current): Restrictive Early Action -- Oct 15 deadline if submitting an optional Arts Portfolio, otherwise standard deadline Nov 1. Regular Decision -- Dec 5 with optional Arts Portfolio, otherwise standard deadline Jan 5. Midyear transcript due Feb 15. IMPORTANT: Stanford REQUIRES ACT or SAT test scores as part of the application -- this is NOT a test-optional policy, a common misconception given many peer elite schools' post-pandemic test-optional shifts. $100 nonrefundable application fee or fee waiver. A real, specific, distinctive cap: students are limited to a total of three undergraduate admission applications to Stanford across first-year and transfer combined -- applicants who have submitted fewer than three may reapply. Stanford uses the Common Application exclusively (no separate Stanford-specific or Coalition application referenced). Sourced from admission.stanford.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 15",
+      "earliestDeadlineLabel": "Restrictive Early Action (with optional Arts Portfolio)",
+      "rdDeadline": "January 5",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from admission.stanford.edu/apply/first-year (page timestamped 'Updated on July 22, 2026' -- genuinely current): Restrictive Early Action -- Oct 15 deadline if submitting an optional Arts Portfolio, otherwise standard deadline Nov 1. Regular Decision -- Dec 5 with optional Arts Portfolio, otherwise standard deadline Jan 5. Midyear transcript due Feb 15. IMPORTANT: Stanford REQUIRES ACT or SAT test scores as part of the application -- this is NOT a test-optional policy, a common misconception given many peer elite schools' post-pandemic test-optional shifts. $100 nonrefundable application fee or fee waiver. A real, specific, distinctive cap: students are limited to a total of three undergraduate admission applications to Stanford across first-year and transfer combined -- applicants who have submitted fewer than three may reapply. Stanford uses the Common Application exclusively (no separate Stanford-specific or Coalition application referenced). Sourced from admission.stanford.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "Stanford University",
       "archetype": "Elite Private Research University — Technology and Entrepreneurship Epicenter",
@@ -32822,13 +32819,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "November 1",
-        "earliestDeadlineLabel": "Restrictive Early Action",
-        "rdDeadline": "January 4",
-        "essayPromptTopic": null,
-        "notes": "Full round structure verified directly from admissions.caltech.edu/apply/first-year-applicants/deadlines (2026-27 cycle): Restrictive Early Action (REA) -- application due Nov 1 (materials due Nov 6, testing complete by Nov 30), non-binding, decisions by mid-December, accept by May 1, 2027. Regular Decision -- application due Jan 4 (materials due Jan 10, testing complete by Dec 31, 2026), decisions by mid-March, accept by May 1, 2027. Caltech's REA is genuinely restrictive: REA applicants may not apply Early Action or Early Decision to any other institution, with specific carve-outs (non-US institutions, public rolling-admissions schools like the UC system, military academies, and certain scholarship-linked early deadlines). Deferred REA applicants can only receive admit or deny in March -- Caltech does not waitlist deferred REA applicants. Caltech accepts the Common App or the QuestBridge Application with no preference between them (no Coalition App). Caltech is a QuestBridge Partner via the National College Match. Application fee waived for students for whom cost is a barrier. A minimum-age policy for on-campus housing has applied since fall 2023. Caltech has a real, distinctive tradition of releasing admissions decisions via riddles ('Admissions Release Time Riddles'). Sourced from admissions.caltech.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Restrictive Early Action",
+      "rdDeadline": "January 4",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from admissions.caltech.edu/apply/first-year-applicants/deadlines (2026-27 cycle): Restrictive Early Action (REA) -- application due Nov 1 (materials due Nov 6, testing complete by Nov 30), non-binding, decisions by mid-December, accept by May 1, 2027. Regular Decision -- application due Jan 4 (materials due Jan 10, testing complete by Dec 31, 2026), decisions by mid-March, accept by May 1, 2027. Caltech's REA is genuinely restrictive: REA applicants may not apply Early Action or Early Decision to any other institution, with specific carve-outs (non-US institutions, public rolling-admissions schools like the UC system, military academies, and certain scholarship-linked early deadlines). Deferred REA applicants can only receive admit or deny in March -- Caltech does not waitlist deferred REA applicants. Caltech accepts the Common App or the QuestBridge Application with no preference between them (no Coalition App). Caltech is a QuestBridge Partner via the National College Match. Application fee waived for students for whom cost is a barrier. A minimum-age policy for on-campus housing has applied since fall 2023. Caltech has a real, distinctive tradition of releasing admissions decisions via riddles ('Admissions Release Time Riddles'). Sourced from admissions.caltech.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "Caltech",
       "archetype": "Elite Private Research University — Pure Science and Engineering",
@@ -34622,7 +34619,18 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 56,
       "homeStateEnrollmentPct": 44,
       "drawClassification": "regional",
-      "topFeederStates": { "MS": 30.2, "TX": 8.4, "TN": 7.4, "GA": 6.7, "IL": 5.0, "FL": 3.9, "CA": 3.6, "LA": 3.3, "MO": 3.1, "NC": 2.4 },
+      "topFeederStates": {
+        "MS": 30.2,
+        "TX": 8.4,
+        "TN": 7.4,
+        "GA": 6.7,
+        "IL": 5,
+        "FL": 3.9,
+        "CA": 3.6,
+        "LA": 3.3,
+        "MO": 3.1,
+        "NC": 2.4
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Data collected from University of Mississippi's 2024-25 Common Data Set (CDS) form, via College Transitions Dataverse (Enrollment by Residency). Ole Miss hosts its CDS files on Box.com with sharing links that could not be fetched directly (robots-disallowed/access-restricted), so this is one step removed from the primary document.",
@@ -34972,8 +34980,7 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 40,
         "notes": "Present pathway, often tied to regional community and healthcare organizations."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 58,
         "notes": "Real, distinctive evidence: Ole Miss hosts the National Center for Natural Products Research (NCNPR), a uniquely positioned federally-linked (FDA/NIH-connected) natural-products and botanical research center housed within the School of Pharmacy's Research Institute of Pharmaceutical Sciences -- not a generic pharmacy program. Documented industry partnership: a five-year research agreement with doTERRA (essential oils/natural products) signed 2022. This is a genuine, sourced institutional asset, though it leans natural-products/nutraceutical research rather than large-scale pharmaceutical manufacturing, which caps the score below the top range."
@@ -35433,8 +35440,7 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 42,
         "notes": "Present pathway, often tied to agricultural and community organizations."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 63,
         "notes": "Real, substantial evidence: UNL operates the Biological Process Development Facility (BPDF), a 24,000-sq-ft academic bioprocessing/biomanufacturing facility (described by its director as functioning like 'an academic CMO') with a fermentation suite (200-L bioreactors, expandable to 1,000-L), cleanroom aseptic processing space, and a documented 14-year vaccine/therapeutic-countermeasure partnership with the Department of Defense. This is a genuine, on-campus, industry-grade biopharmaceutical manufacturing capability (source: Pharma Manufacturing trade publication profile), which is stronger and more manufacturing-specific evidence than a typical regional-cluster claim, even though Lincoln's broader biopharma ecosystem is small relative to major hubs."
@@ -35589,13 +35595,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "November 1",
-        "earliestDeadlineLabel": "Early Action Submission Deadline",
-        "rdDeadline": "January 5",
-        "essayPromptTopic": null,
-        "notes": "Full round structure verified directly from admissions.utk.edu/important-dates-and-deadlines (Summer/Fall entry cycle): Early Action submission deadline Nov 1, materials deadline Nov 15 (Tennessee-resident decisions released early December, out-of-state decisions mid-December); Regular Decision submission deadline Jan 5, materials deadline Jan 20 (decisions released early March). Confirmation deadline May 1. Merit scholarship consideration (e.g. Volunteer Scholarship) requires self-reported test scores by Jan 15, with official scores due by May 15. UT accepts either the Common Application or its own proprietary 'Go Vols Application' -- a real, named alternative application path most public flagships don't offer alongside the Common App. A completed application requires self-reported high school grades (STARS) and self-reported standardized test scores in addition to the application itself. Specific supplemental essay prompt text was not captured in this pass. Sourced from admissions.utk.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Action Submission Deadline",
+      "rdDeadline": "January 5",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from admissions.utk.edu/important-dates-and-deadlines (Summer/Fall entry cycle): Early Action submission deadline Nov 1, materials deadline Nov 15 (Tennessee-resident decisions released early December, out-of-state decisions mid-December); Regular Decision submission deadline Jan 5, materials deadline Jan 20 (decisions released early March). Confirmation deadline May 1. Merit scholarship consideration (e.g. Volunteer Scholarship) requires self-reported test scores by Jan 15, with official scores due by May 15. UT accepts either the Common Application or its own proprietary 'Go Vols Application' -- a real, named alternative application path most public flagships don't offer alongside the Common App. A completed application requires self-reported high school grades (STARS) and self-reported standardized test scores in addition to the application itself. Specific supplemental essay prompt text was not captured in this pass. Sourced from admissions.utk.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "University of Tennessee",
       "archetype": "Public Research Flagship — Nuclear Engineering and Nashville-Adjacent Business",
@@ -36487,13 +36493,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 15",
-        "earliestDeadlineLabel": "Early Decision / Early Action",
-        "rdDeadline": "December 1",
-        "essayPromptTopic": null,
-        "notes": "Full round structure verified directly from admissions.fsu.edu/first-year/apply (2026-27 cycle): Early Decision (domestic students, no talent-based majors or CARE Summer Bridge, binding) -- Oct 15 application / Oct 22 materials / Dec 17 decision / Jan 15 deposit. Early Action (Florida residents only, non-binding) -- Oct 15 application / Oct 22 materials / Dec 17 decision / May 1 deposit. Regular Decision (all students) -- Dec 1 application / Dec 8 materials / Feb 18 decision / May 1 deposit. Rolling (all students) -- Mar 1 application / Mar 8 materials / rolling decisions in April / May 1 deposit. Students applying Early Decision must use the Common App; other applicants may use either the Common App or FSU's own application. FSU does NOT accept self-reported test scores submitted through the Common App -- students must self-report scores separately via FSU's own Admissions Portal, a real and specific policy distinct from most peer schools. University Honors Program supplemental application deadline is Dec 1, triggered by selecting 'Yes' on the general application. Students intending to major in dance, film, music, stage management, studio art, or theatre must contact the academic department directly for additional major-specific requirements. Sourced from admissions.fsu.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 15",
+      "earliestDeadlineLabel": "Early Decision / Early Action",
+      "rdDeadline": "December 1",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from admissions.fsu.edu/first-year/apply (2026-27 cycle): Early Decision (domestic students, no talent-based majors or CARE Summer Bridge, binding) -- Oct 15 application / Oct 22 materials / Dec 17 decision / Jan 15 deposit. Early Action (Florida residents only, non-binding) -- Oct 15 application / Oct 22 materials / Dec 17 decision / May 1 deposit. Regular Decision (all students) -- Dec 1 application / Dec 8 materials / Feb 18 decision / May 1 deposit. Rolling (all students) -- Mar 1 application / Mar 8 materials / rolling decisions in April / May 1 deposit. Students applying Early Decision must use the Common App; other applicants may use either the Common App or FSU's own application. FSU does NOT accept self-reported test scores submitted through the Common App -- students must self-report scores separately via FSU's own Admissions Portal, a real and specific policy distinct from most peer schools. University Honors Program supplemental application deadline is Dec 1, triggered by selecting 'Yes' on the general application. Students intending to major in dance, film, music, stage management, studio art, or theatre must contact the academic department directly for additional major-specific requirements. Sourced from admissions.fsu.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "Florida State University",
       "archetype": "Public Research Flagship — Criminology, Public Policy, and Film",
@@ -36942,13 +36948,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 15",
-        "earliestDeadlineLabel": "Freshman Early Action (non-binding)",
-        "rdDeadline": "May 1",
-        "essayPromptTopic": null,
-        "notes": "Full round structure verified directly from ucf.edu/admissions/undergraduate/freshman (Fall 2026-27 cycle): Early Action is non-binding, application deadline Oct 15, material submission deadline Nov 15, decision notification Dec 4 (both summer and fall terms). Regular Decision is rolling: Fall application/materials deadline May 1 (Summer term deadline is Mar 1, Spring term deadline is Nov 1), rolling notifications beginning in January. Early Action applicants receive priority merit scholarship consideration -- scholarship funding is typically exhausted by mid-January. UCF accepts SAT, ACT, or CLT (College Level Test, valid if taken July 1, 2023 or later) -- a real, distinctive acceptance of a less-common exam most peer schools don't take. Effective April 2025, the ACT Science section is no longer required or used in UCF's composite score calculation, per Florida BOG 6.008. $30 application fee (nonrefundable). Application essay strongly encouraged but not required. Sourced from ucf.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 15",
+      "earliestDeadlineLabel": "Freshman Early Action (non-binding)",
+      "rdDeadline": "May 1",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from ucf.edu/admissions/undergraduate/freshman (Fall 2026-27 cycle): Early Action is non-binding, application deadline Oct 15, material submission deadline Nov 15, decision notification Dec 4 (both summer and fall terms). Regular Decision is rolling: Fall application/materials deadline May 1 (Summer term deadline is Mar 1, Spring term deadline is Nov 1), rolling notifications beginning in January. Early Action applicants receive priority merit scholarship consideration -- scholarship funding is typically exhausted by mid-January. UCF accepts SAT, ACT, or CLT (College Level Test, valid if taken July 1, 2023 or later) -- a real, distinctive acceptance of a less-common exam most peer schools don't take. Effective April 2025, the ACT Science section is no longer required or used in UCF's composite score calculation, per Florida BOG 6.008. $30 application fee (nonrefundable). Application essay strongly encouraged but not required. Sourced from ucf.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "University of Central Florida",
       "archetype": "Public Research University — Modeling, Simulation, and Themed Entertainment",
@@ -38164,8 +38170,7 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 52,
         "notes": "Meaningful pathway tied to Philadelphia's civic and public health organizations."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 62,
         "notes": "Real, distinctive evidence: Temple's School of Pharmacy offers a dedicated 'Pharmaceutical Manufacturing: Process Development and Analysis' graduate certificate -- a credential specifically named for this industry, not a generic pharmacy program -- alongside a full undergraduate Pharmaceutical Sciences BS. Philadelphia is also a recognized life-sciences/pharma hub region. This is more manufacturing-specific evidence than most schools in this pass."
@@ -38271,7 +38276,15 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 28,
       "homeStateEnrollmentPct": 72,
       "drawClassification": "state",
-      "topFeederStates": { "VA": 70.1, "NJ": 7.9, "PA": 5.2, "MD": 5.0, "NY": 3.7, "MA": 1.7, "CT": 1.4 },
+      "topFeederStates": {
+        "VA": 70.1,
+        "NJ": 7.9,
+        "PA": 5.2,
+        "MD": 5,
+        "NY": 3.7,
+        "MA": 1.7,
+        "CT": 1.4
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "James Madison University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: jmu.edu/pair/ir/common-data-set/cds2024/cds-2024f.pdf).",
@@ -41333,8 +41346,7 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 50,
         "notes": "Moderate pathway, often tied to environmental and outdoor conservation organizations."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 58,
         "notes": "Real, substantial evidence, concentrated in commercialization rather than large-scale manufacturing: Dartmouth engineering professor Tillman Gerngross has founded multiple real biotech companies out of Dartmouth research, most notably GlycoFi (sold to Merck for $400 million in 2006) and Adimab (over $350 million in venture capital raised), plus Arsanis, Avitide, and Alector. Dartmouth also participates in two federally-funded biomaterials initiatives (NH BioMade, $20M NSF grant; NH-INBRE, $18.1M NIH grant) and adopted a distinctive 2016 IP policy giving faculty full IP rights in exchange for 4% founders' equity, specifically to encourage this kind of commercialization. Strong evidence of pharma-adjacent entrepreneurship; scored just below the top range since it's concentrated in a handful of faculty ventures rather than a broad regional manufacturing cluster."
@@ -43124,8 +43136,7 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 70,
         "notes": "Strong pathway, particularly for international development and human rights organizations."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 20,
         "notes": "Limited institutional emphasis: Middlebury offers general Biology and Molecular Biology & Biochemistry majors and runs an Innovation Hub with Vermont-focused entrepreneurship programming, but no pharmaceutical-manufacturing-specific research center, industry partnership, or notable alumni company was found in this pass. Vermont itself has no major pharmaceutical manufacturing presence. Scored low to reflect a genuine gap rather than guessed at a higher number."
@@ -43574,8 +43585,7 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 56,
         "notes": "Meaningful pathway, often tied to arts and social justice organizations."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 25,
         "notes": "Limited direct institutional evidence: Connecticut has a real, documented life-sciences/pharma industry presence at the state level (Pfizer, Boehringer Ingelheim, and others), but no Wesleyan-specific pharmaceutical manufacturing research center, degree program, or company connection was found in this pass. Scored low-moderate to reflect regional industry proximity without a confirmed direct institutional tie -- flagged as a gap for a more targeted follow-up search rather than assumed absent."
@@ -44462,8 +44472,7 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 76,
         "notes": "One of the college's defining strengths, reinforced by its deeply progressive, socially engaged culture."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 18,
         "notes": "Limited institutional emphasis: Grinnell offers a Biological Chemistry major and documented biology/pre-health graduate outcomes, but no pharmaceutical-manufacturing-specific program, research center, or notable industry partnership was found in this pass, consistent with its small rural-Iowa liberal-arts setting. Scored low to reflect a genuine gap rather than guessed at a higher number."
@@ -46345,8 +46354,8 @@ const UNIVERSITY_DB_V5 = {
   },
   "Oberlin College": {
     "admissionsDrawProfile": {
-      "oosEnrollmentPct": 92.0,
-      "homeStateEnrollmentPct": 8.0,
+      "oosEnrollmentPct": 92,
+      "homeStateEnrollmentPct": 8,
       "drawClassification": "national",
       "topFeederStates": {},
       "topFeederRegions": {},
@@ -47573,8 +47582,7 @@ const UNIVERSITY_DB_V5 = {
       "advancedManufacturing": {
         "strength": 96,
         "notes": "The highest-scored, most current single finding across this entire advancedManufacturing buildout. Case Western Reserve led a winning entry for a National Science Foundation Regional Innovation Engine grant of up to $160 million -- confirmed via CWRU's own site, Ideastream public radio, Signal Akron, a local development blog (NEOtrans), and a sitting U.S. Representative's own social media -- all dated within 3-4 days of this research pass. The award, branded NEO-SMART (Northeast Ohio Strengthening Manufacturing for American Resilience through Technology), funds advanced manufacturing of polymers, metals, chemicals, and coatings across an entire regional consortium that CWRU leads, not just its own campus. Scored above Carnegie Mellon (94) given the combination of federal NSF-level prestige, dollar scale, lead-institution status for a multi-organization region, and the extraordinary freshness of the finding."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 60,
         "notes": "Real, substantial evidence: a CWRU-originated biotech startup, Rodeo Therapeutics, was acquired by Amgen (a major pharmaceutical manufacturer), and the university operates the 11000 Cedar Street biotech incubator described in industry press as central to Cleveland's emerging biotech cluster. CWRU's Biomedical Engineering department and biotechnology graduate programs are also well-established. Scored just below the top range since Cleveland's cluster is still described as 'emerging' by trade coverage rather than an established top-tier hub."
@@ -47677,8 +47685,8 @@ const UNIVERSITY_DB_V5 = {
   },
   "Lehigh University": {
     "admissionsDrawProfile": {
-      "oosEnrollmentPct": 75.0,
-      "homeStateEnrollmentPct": 25.0,
+      "oosEnrollmentPct": 75,
+      "homeStateEnrollmentPct": 25,
       "drawClassification": "national",
       "topFeederStates": {},
       "topFeederRegions": {},
@@ -50278,8 +50286,7 @@ const UNIVERSITY_DB_V5 = {
       "nonprofitLeadership": {
         "strength": 74,
         "notes": "A genuinely strong, distinctive pathway — Jesuit values and SFS's international-development orientation produce real placement into NGO leadership and international development careers."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 42,
         "notes": "Real, moderate evidence, biotech/policy-leaning rather than manufacturing-scale: Georgetown offers a Master of Science in Biotechnology and a BioBusiness Certificate program (Biomedical Graduate Education division), and Georgetown University Medical Center anchors real biomedical research. However, no large-scale pharmaceutical manufacturing facility or industry partnership tied directly to the university was found in this pass -- DC itself is not a major pharma manufacturing hub. Scored moderate to reflect real academic infrastructure without manufacturing-scale evidence."
@@ -50433,13 +50440,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 1",
-        "earliestDeadlineLabel": "UC Application Filing Period Opens",
-        "rdDeadline": "November 30",
-        "essayPromptTopic": null,
-        "notes": "UC Berkeley uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's admissions site during this same reconciliation effort (admissions.sa.ucsb.edu/deadlines). UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. Berkeley's own dedicated Dates and Deadlines page (admissions.berkeley.edu/dates-and-deadlines) renders as an interactive calendar widget that did not expose specific dates as extractable text in this pass -- campus-specific supplemental dates (Personal Insight Question guidance, decision release timing) were not independently re-confirmed on Berkeley's own site and should be spot-checked directly before being treated as campus-page-verified rather than system-pattern-verified. Specific supplemental essay/Personal Insight Question content was not captured in this pass.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "UC Application Filing Period Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "UC Berkeley uses the shared University of California application, not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction, consistent with the UC system-wide model directly confirmed on UC Santa Barbara's admissions site during this same reconciliation effort (admissions.sa.ucsb.edu/deadlines). UC Application opens Aug 1; single filing window Oct 1 - Nov 30, system-wide. Berkeley's own dedicated Dates and Deadlines page (admissions.berkeley.edu/dates-and-deadlines) renders as an interactive calendar widget that did not expose specific dates as extractable text in this pass -- campus-specific supplemental dates (Personal Insight Question guidance, decision release timing) were not independently re-confirmed on Berkeley's own site and should be spot-checked directly before being treated as campus-page-verified rather than system-pattern-verified. Specific supplemental essay/Personal Insight Question content was not captured in this pass.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "UC Berkeley",
       "archetype": "The Public Ivy of Silicon Valley — Engineering, Policy, and Protest at the Top of American Public Higher Education",
@@ -52136,8 +52143,7 @@ const UNIVERSITY_DB_V5 = {
       "advancedManufacturing": {
         "strength": 94,
         "notes": "The richest, most current, and most multi-sourced single-school finding across this entire advancedManufacturing buildout, and the highest score in the database. CMU's National Robotics Engineering Center (NREC) has operated for 25+ years and has a confirmed, current partnership with U.S. Steel itself (verified via U.S. Steel's own site, March 2024). CMU announced a brand-new Autonomous Systems Manufacturing partnership with Carnegie Foundry and American drone manufacturers literally 2-4 days before this research pass. CMU also runs the ARM Institute (Advanced Robotics for Manufacturing) and the Robotics Innovation Center at Hazelwood Green, a dedicated physical robotics/automation/AI research facility. Multiple concurrent, real, currently-active relationships rather than a single flagship partnership -- scored above Caltech's JPL relationship (92) given the sheer breadth and currency of activity, not just depth of any one relationship."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 50,
         "notes": "Real, distinctive academic evidence: CMU offers a dedicated M.S. in Biotechnology and Pharmaceutical Engineering (Mellon College of Science), a specifically-named program. Trade coverage (Pharma Manufacturing magazine) credits CMU's AI/robotics/computational-biology strength as a factor in Pittsburgh's broader biotech growth, with Pittsburgh Life Sciences Alliance leadership citing CMU's data-analytics and chemical-engineering capabilities. That same coverage explicitly notes CMU has fewer direct biotech-manufacturing partnerships than the University of Pittsburgh, so this is scored as real but adjacent -- strong on the academic-program side, thinner on direct manufacturing partnerships."
@@ -52289,13 +52295,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "November 2",
-        "earliestDeadlineLabel": "Early Decision I / Early Action",
-        "rdDeadline": "January 4",
-        "essayPromptTopic": null,
-        "notes": "Full round structure verified directly from collegeadmissions.uchicago.edu/apply/application (2026-27 cycle): Early Decision I (Nov 2, 2026 deadline; decision mid-December; reply mid-January, binding), Early Action (Nov 2, 2026 deadline; decision mid-December; reply May 1, non-binding), Early Decision II (Jan 4, 2027 deadline; decision mid-February; reply mid-March, binding), Regular Decision (Jan 4, 2027 deadline; decision late March; reply May 1). Admission is offered for Autumn Quarter entrance only (except prospective students-at-large). UChicago's test-optional policy is formally named the 'No Harm Testing Policy.' Accepts Common Application or Coalition Application, Powered by Scoir. A Video Profile is a named optional supplemental material. Specific supplemental essay prompt text was not captured in this pass -- UChicago is well known for distinctive, unconventional supplemental essay prompts published separately each cycle. Sourced from collegeadmissions.uchicago.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "November 2",
+      "earliestDeadlineLabel": "Early Decision I / Early Action",
+      "rdDeadline": "January 4",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from collegeadmissions.uchicago.edu/apply/application (2026-27 cycle): Early Decision I (Nov 2, 2026 deadline; decision mid-December; reply mid-January, binding), Early Action (Nov 2, 2026 deadline; decision mid-December; reply May 1, non-binding), Early Decision II (Jan 4, 2027 deadline; decision mid-February; reply mid-March, binding), Regular Decision (Jan 4, 2027 deadline; decision late March; reply May 1). Admission is offered for Autumn Quarter entrance only (except prospective students-at-large). UChicago's test-optional policy is formally named the 'No Harm Testing Policy.' Accepts Common Application or Coalition Application, Powered by Scoir. A Video Profile is a named optional supplemental material. Specific supplemental essay prompt text was not captured in this pass -- UChicago is well known for distinctive, unconventional supplemental essay prompts published separately each cycle. Sourced from collegeadmissions.uchicago.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "University of Chicago",
       "archetype": "Elite Private Research University — Core Curriculum and Intellectual Rigor",
@@ -52775,7 +52781,7 @@ const UNIVERSITY_DB_V5 = {
       "versusRice": "Rice offers a smaller, more personalized STEM-elite experience with direct Texas Medical Center proximity rather than an on-campus hospital; Duke offers a stronger academic medical center of its own and greater national prestige.",
       "versusUNC": "UNC offers comparable Research Triangle access at meaningfully lower cost with the #1-ranked pharmacy school in the country; Duke is more selective and privately funded, with stronger national (rather than primarily in-state) recruiting and a more prominent basketball and national-prestige identity.",
       "versusNorthwestern": "Northwestern offers stronger journalism and a Chicago-based recruiting economy; Duke offers a stronger academic medicine pipeline through its own major medical center and deeper Research Triangle biotech ties.",
-      "versusVanderbilt": "Vanderbilt offers a similarly nationally-recruited elite Southern identity with strong healthcare and finance placement in Nashville; Duke offers a stronger academic medical center and denser Research Triangle biotech and pharma proximity.",
+      "versusVanderbilt": "Vanderbilt offers a similarly nationally-recruited elite Southern identity with strong healthcare and finance placement in Nashville; Duke offers a stronger academic medical center and denser Research Triangle biotech and pharma proximity."
     },
     "institutionScale": {
       "enrollmentCategory": "Medium",
@@ -53149,8 +53155,8 @@ const UNIVERSITY_DB_V5 = {
   },
   "Northwestern University": {
     "admissionsDrawProfile": {
-      "oosEnrollmentPct": 79.0,
-      "homeStateEnrollmentPct": 21.0,
+      "oosEnrollmentPct": 79,
+      "homeStateEnrollmentPct": 21,
       "drawClassification": "national",
       "topFeederStates": {},
       "topFeederRegions": {},
@@ -54058,8 +54064,8 @@ const UNIVERSITY_DB_V5 = {
   },
   "North Carolina State University": {
     "admissionsDrawProfile": {
-      "oosEnrollmentPct": 14.0,
-      "homeStateEnrollmentPct": 86.0,
+      "oosEnrollmentPct": 14,
+      "homeStateEnrollmentPct": 86,
       "drawClassification": "state",
       "topFeederStates": {},
       "topFeederRegions": {},
@@ -54560,13 +54566,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "November 1",
-        "earliestDeadlineLabel": "Early Decision I",
-        "rdDeadline": "January 1",
-        "essayPromptTopic": null,
-        "notes": "Full round structure verified directly from apply.emory.edu/apply/first-year/plans-deadlines (2026-27 cycle): Early Decision I (Nov 1 application deadline, Dec 2 financial aid deadline, decision by Dec 15), Emory University Scholar Programs (Nov 15 application deadline, decision by March 1), Early Decision II (Jan 1 application deadline, Jan 6 financial aid deadline, decision by Feb 15), Regular Decision (Jan 1 application deadline, Feb 10 financial aid deadline, decision by April 1). Applicants may apply ED to Emory College or Oxford College (Emory's two-year residential college in Oxford, GA, with guaranteed transition to the Atlanta campus), or ED to one and RD to the other -- both ED plans are binding. Test-optional (SAT/ACT not required). Application submitted via Common App, $75 fee or fee waiver. Emory-specific short-answer questions required in addition to the Common App personal statement; specific prompt text was not captured in this pass. Sourced from apply.emory.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Early Decision I",
+      "rdDeadline": "January 1",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from apply.emory.edu/apply/first-year/plans-deadlines (2026-27 cycle): Early Decision I (Nov 1 application deadline, Dec 2 financial aid deadline, decision by Dec 15), Emory University Scholar Programs (Nov 15 application deadline, decision by March 1), Early Decision II (Jan 1 application deadline, Jan 6 financial aid deadline, decision by Feb 15), Regular Decision (Jan 1 application deadline, Feb 10 financial aid deadline, decision by April 1). Applicants may apply ED to Emory College or Oxford College (Emory's two-year residential college in Oxford, GA, with guaranteed transition to the Atlanta campus), or ED to one and RD to the other -- both ED plans are binding. Test-optional (SAT/ACT not required). Application submitted via Common App, $75 fee or fee waiver. Emory-specific short-answer questions required in addition to the Common App personal statement; specific prompt text was not captured in this pass. Sourced from apply.emory.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "Emory University",
       "archetype": "The CDC's Neighbor — Public Health, Medicine, and Deep Atlanta Corporate Integration",
@@ -55454,13 +55460,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "Not confirmed in this pass",
-        "earliestDeadlineLabel": "Not confirmed in this pass",
-        "rdDeadline": "Not confirmed in this pass",
-        "essayPromptTopic": null,
-        "notes": "Directly confirmed on admission.pepperdine.edu: undergraduate admission splits across three separately-admitting programs -- Seaver College (traditional liberal arts, 46 majors/52 minors), a 4-year BSN nursing track, and a 2-year BSN nursing track, each with its own application path. Real, distinctive religious-affiliation detail: Pepperdine's admissions counselor roster includes a dedicated 'Church of Christ Applicants' track alongside First-Year/Transfer/International, confirming the school's Christian mission (U.S. News ranks Pepperdine the #1 Protestant Christian University) materially shapes the admissions process, not just campus branding. 87% of students study abroad (#12 nationally per U.S. News) across real residential campuses in Florence, London, Buenos Aires, Heidelberg, and more. 98% of new Seaver students receive institutional merit and/or need-based aid. R2 Carnegie research designation, 17 Division I athletic teams, 18 average class size, 13:1 university-wide student-teacher ratio. Specific numeric application deadline dates were not resolved in this pass (multiple URL attempts across pepperdine.edu, seaver.pepperdine.edu, and admission.pepperdine.edu either 404'd or did not surface a dates page) -- left as unconfirmed placeholders rather than guessed, and should be sourced directly in a follow-up pass. Sourced from admission.pepperdine.edu and seaver.pepperdine.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "Not confirmed in this pass",
+      "earliestDeadlineLabel": "Not confirmed in this pass",
+      "rdDeadline": "Not confirmed in this pass",
+      "essayPromptTopic": null,
+      "notes": "Directly confirmed on admission.pepperdine.edu: undergraduate admission splits across three separately-admitting programs -- Seaver College (traditional liberal arts, 46 majors/52 minors), a 4-year BSN nursing track, and a 2-year BSN nursing track, each with its own application path. Real, distinctive religious-affiliation detail: Pepperdine's admissions counselor roster includes a dedicated 'Church of Christ Applicants' track alongside First-Year/Transfer/International, confirming the school's Christian mission (U.S. News ranks Pepperdine the #1 Protestant Christian University) materially shapes the admissions process, not just campus branding. 87% of students study abroad (#12 nationally per U.S. News) across real residential campuses in Florence, London, Buenos Aires, Heidelberg, and more. 98% of new Seaver students receive institutional merit and/or need-based aid. R2 Carnegie research designation, 17 Division I athletic teams, 18 average class size, 13:1 university-wide student-teacher ratio. Specific numeric application deadline dates were not resolved in this pass (multiple URL attempts across pepperdine.edu, seaver.pepperdine.edu, and admission.pepperdine.edu either 404'd or did not surface a dates page) -- left as unconfirmed placeholders rather than guessed, and should be sourced directly in a follow-up pass. Sourced from admission.pepperdine.edu and seaver.pepperdine.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "Pepperdine",
       "archetype": "The Malibu Bluffs — Christian Values, International Business, and a Genuinely Elite Dispute Resolution Program",
@@ -57147,8 +57153,7 @@ const UNIVERSITY_DB_V5 = {
       "advancedManufacturing": {
         "strength": 88,
         "notes": "Real, historically significant, JPL-like government-facility relationship: the Johns Hopkins Applied Physics Laboratory (APL) designed, built, and managed NASA's Double Asteroid Redirection Test (DART) -- the world's first-ever successful planetary defense mission, which successfully altered an asteroid's orbit in October 2022, confirmed via NASA's own site and Johns Hopkins' own reporting. APL has also built and operated other real NASA spacecraft (NEAR Shoemaker, the Advanced Composition Explorer). Scored comparably to Caltech's JPL relationship (92) given the structural similarity -- a university-affiliated lab managing real, flagship NASA missions -- though the specific contractual arrangement (ownership percentage, contract renewal timeline) was not independently verified this session the way Caltech's 2028 JPL contract competition was, so no equivalent uncertainty flag is applied here without that same level of confirmation."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 68,
         "notes": "Real, strong, and directly manufacturing-specific evidence: Johns Hopkins partnered with biotech company Orgenesis to build the Maryland Center for Cell Therapy Manufacturing, a real 7,000-sq-ft facility on the East Baltimore campus (backed by a $5M Maryland matching grant, construction begun 2022) that manufactures clinical cell and gene therapy products, initially staffed with ~30 employees. This is a genuine, named, on-campus manufacturing operation -- stronger and more specific than a general biotech-cluster claim. JHU also hosts the Hopkins Biotech Network and a Science + Technology Park."
@@ -57299,13 +57304,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "November 1",
-        "earliestDeadlineLabel": "One Admit (Clark County School District seniors only)",
-        "rdDeadline": "June 1",
-        "essayPromptTopic": null,
-        "notes": "UNLV has no Early Decision/Early Action/Regular Decision distinction for the general applicant pool -- a single Fall application deadline of June 1, confirmed directly on unlv.edu/admissions/undergraduate/first-year, notably later than most public flagships. Priority deadline for fall financial aid and scholarship consideration is Nov 15 (applications open Oct 1 for the following academic year). $60 nonrefundable application fee. UNLV uses a formulaic (not purely holistic) admission standard: 3.0 GPA in 13 core units, OR 1120 SAT (EBRW+Math; 1040 for exams before March 2016), OR 22 ACT composite, OR a Nevada Advanced/College-and-Career-Ready High School Diploma. Test scores are not required for admission but are encouraged for course placement. A real, distinctive local program: Clark County School District (CCSD) seniors can claim automatic admission for free through 'One Admit' by Nov 1, with preloaded application information. Accepts either the Common App or UNLV's own application, no preference given. UNLV has three separately-admitting professional schools: the School of Dental Medicine, the William S. Boyd School of Law, and the Kirk Kerkorian School of Medicine. Sourced from unlv.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "One Admit (Clark County School District seniors only)",
+      "rdDeadline": "June 1",
+      "essayPromptTopic": null,
+      "notes": "UNLV has no Early Decision/Early Action/Regular Decision distinction for the general applicant pool -- a single Fall application deadline of June 1, confirmed directly on unlv.edu/admissions/undergraduate/first-year, notably later than most public flagships. Priority deadline for fall financial aid and scholarship consideration is Nov 15 (applications open Oct 1 for the following academic year). $60 nonrefundable application fee. UNLV uses a formulaic (not purely holistic) admission standard: 3.0 GPA in 13 core units, OR 1120 SAT (EBRW+Math; 1040 for exams before March 2016), OR 22 ACT composite, OR a Nevada Advanced/College-and-Career-Ready High School Diploma. Test scores are not required for admission but are encouraged for course placement. A real, distinctive local program: Clark County School District (CCSD) seniors can claim automatic admission for free through 'One Admit' by Nov 1, with preloaded application information. Accepts either the Common App or UNLV's own application, no preference given. UNLV has three separately-admitting professional schools: the School of Dental Medicine, the William S. Boyd School of Law, and the Kirk Kerkorian School of Medicine. Sourced from unlv.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "UNLV",
       "archetype": "The World's Most Specialized Hospitality and Gaming Management Program, Inside the Industry It Studies",
@@ -58074,8 +58079,7 @@ const UNIVERSITY_DB_V5 = {
       "agriculture": {
         "strength": 68,
         "notes": "A genuine, historic land-grant strength reinforced by Cargill and General Mills proximity, though secondary to Minnesota's dominant corporate consumer products identity."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 52,
         "notes": "Real but mixed evidence: UMN's College of Pharmacy is independently ranked #2-3 nationally (per the college's own published rankings history), a genuine academic pharma-sciences strength. However, the surrounding Minneapolis-St Paul industry cluster (branded 'Medical Alley') is predominantly medical DEVICE manufacturing (Medtronic, Boston Scientific, St. Jude Medical HQ/major operations), not pharmaceutical manufacturing specifically -- so the academic pipeline is stronger than the regional pharma-manufacturing employer base. Scored moderate rather than high to reflect that distinction honestly."
@@ -58538,8 +58542,7 @@ const UNIVERSITY_DB_V5 = {
       "agriculture": {
         "strength": 16,
         "notes": "Not a meaningful institutional pathway."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 55,
         "notes": "Real, solid evidence: Pitt's School of Pharmacy runs dedicated Pharmaceutical Science graduate programs, and UPMC (the region's dominant health system, closely tied to Pitt) founded its own pharmaceutical company in 2020. The Pittsburgh Life Sciences Alliance also documents a broader regional life-sciences/healthcare cluster. Scored solidly above the regional-cluster baseline given the direct UPMC pharma-company connection, though below the top range since it's one company rather than an established large-scale manufacturing base."
@@ -60064,13 +60067,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "November 1",
-        "earliestDeadlineLabel": "Spring Priority Application Deadline",
-        "rdDeadline": "May 1",
-        "essayPromptTopic": null,
-        "notes": "Full round structure verified directly from depts.ttu.edu/admissions/apply/ImportantDates (2026-27 cycle): Spring 2027 priority application deadline Nov 1, 2026 (freshman/transfer); Summer & Fall 2027 priority application deadline May 1, 2027 (freshman/transfer). No separate scholarship application is required -- scholarships (academic, need-based, and interest-based) are awarded directly based on the admissions application, with a separate Fall 2027 priority scholarship deadline of Dec 1, 2026 for freshmen and Jan 1, 2027 for transfers. Financial aid eligibility is based on the FAFSA; Texas Tech also accepts the Texas Application for State Financial Aid (TASFA) for non-US citizens who are Texas residents -- a real, distinctive state-level financial aid pathway for undocumented Texas residents. FAFSA/TASFA state priority deadline for 2026-27 is Jan 15, 2026. Sourced from depts.ttu.edu/admissions, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "November 1",
+      "earliestDeadlineLabel": "Spring Priority Application Deadline",
+      "rdDeadline": "May 1",
+      "essayPromptTopic": null,
+      "notes": "Full round structure verified directly from depts.ttu.edu/admissions/apply/ImportantDates (2026-27 cycle): Spring 2027 priority application deadline Nov 1, 2026 (freshman/transfer); Summer & Fall 2027 priority application deadline May 1, 2027 (freshman/transfer). No separate scholarship application is required -- scholarships (academic, need-based, and interest-based) are awarded directly based on the admissions application, with a separate Fall 2027 priority scholarship deadline of Dec 1, 2026 for freshmen and Jan 1, 2027 for transfers. Financial aid eligibility is based on the FAFSA; Texas Tech also accepts the Texas Application for State Financial Aid (TASFA) for non-US citizens who are Texas residents -- a real, distinctive state-level financial aid pathway for undocumented Texas residents. FAFSA/TASFA state priority deadline for 2026-27 is Jan 15, 2026. Sourced from depts.ttu.edu/admissions, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "Texas Tech",
       "archetype": "The Nation's #1 Personal Financial Planning Program, Inside West Texas's Energy and Agriculture Economy",
@@ -60530,13 +60533,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 1",
-        "earliestDeadlineLabel": "Cal State Apply Filing Period Opens",
-        "rdDeadline": "November 30",
-        "essayPromptTopic": null,
-        "notes": "SDSU uses the shared Cal State Apply application (CSU system), not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction. Directly confirmed on admissions.sdsu.edu/first-years (Fall 2027 cycle): application opens Aug 1; filing period Oct 1 - Nov 30; no late applications accepted after Nov 30. $70 nonrefundable filing fee. In alignment with the CSU system, SDSU no longer uses SAT or ACT scores for first-year admission eligibility at all -- a stronger, test-blind policy (not merely test-optional); scores may only be submitted afterward to help with math/writing course placement if admitted. Admission decisions are initially based on self-reported academic data; transcripts are verified only after admission, and misreporting can result in withdrawal of an admission offer. A real, distinctive, mandatory policy: first-year students who graduate from a high school outside SDSU's local admission area are required to live on campus for two years (the Sophomore QUEST program supports second-year participants with customized career development, flexible housing policies, and enhanced safety/security). Sourced from admissions.sdsu.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "Cal State Apply Filing Period Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "SDSU uses the shared Cal State Apply application (CSU system), not campus-specific application rounds -- no Early Decision/Early Action/Regular Decision distinction. Directly confirmed on admissions.sdsu.edu/first-years (Fall 2027 cycle): application opens Aug 1; filing period Oct 1 - Nov 30; no late applications accepted after Nov 30. $70 nonrefundable filing fee. In alignment with the CSU system, SDSU no longer uses SAT or ACT scores for first-year admission eligibility at all -- a stronger, test-blind policy (not merely test-optional); scores may only be submitted afterward to help with math/writing course placement if admitted. Admission decisions are initially based on self-reported academic data; transcripts are verified only after admission, and misreporting can result in withdrawal of an admission offer. A real, distinctive, mandatory policy: first-year students who graduate from a high school outside SDSU's local admission area are required to live on campus for two years (the Sophomore QUEST program supports second-year participants with customized career development, flexible housing policies, and enhanced safety/security). Sourced from admissions.sdsu.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "San Diego State",
       "archetype": "Direct Access to San Diego's Biotech Corridor and Border-Region Public Affairs",
@@ -60991,13 +60994,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "October 1",
-        "earliestDeadlineLabel": "Cal State Apply Filing Period Opens",
-        "rdDeadline": "November 30",
-        "essayPromptTopic": null,
-        "notes": "Cal Poly SLO uses the shared Cal State Apply application (CSU system), not campus-specific application rounds. Directly confirmed on calpoly.edu/admissions/first-year-student (Fall 2027 cycle): Cal State Apply profile creation opens Aug 1; application submission window Oct 1 - Nov 30. Cal Poly is a real, distinctively 'impacted' campus -- many majors have higher, program-specific admission standards beyond the general CSU minimum (referenced directly in Cal Poly's own admissions navigation as 'What is Impaction?'), a genuinely more selective and differentiated model than most CSU campuses. Specific impaction criteria by major were not independently confirmed in this pass (the dedicated page 404'd). Sourced from calpoly.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "October 1",
+      "earliestDeadlineLabel": "Cal State Apply Filing Period Opens",
+      "rdDeadline": "November 30",
+      "essayPromptTopic": null,
+      "notes": "Cal Poly SLO uses the shared Cal State Apply application (CSU system), not campus-specific application rounds. Directly confirmed on calpoly.edu/admissions/first-year-student (Fall 2027 cycle): Cal State Apply profile creation opens Aug 1; application submission window Oct 1 - Nov 30. Cal Poly is a real, distinctively 'impacted' campus -- many majors have higher, program-specific admission standards beyond the general CSU minimum (referenced directly in Cal Poly's own admissions navigation as 'What is Impaction?'), a genuinely more selective and differentiated model than most CSU campuses. Specific impaction criteria by major were not independently confirmed in this pass (the dedicated page 404'd). Sourced from calpoly.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "Cal Poly SLO",
       "archetype": "\"Learn by Doing\" — The Most Selective, Most Industry-Placed Public Engineering and Architecture Program in the Country",
@@ -61452,13 +61455,13 @@ const UNIVERSITY_DB_V5 = {
       }
     },
     "applicationIntelligence": {
-        "earliestDeadline": "Not confirmed in this pass",
-        "earliestDeadlineLabel": "Not confirmed in this pass",
-        "rdDeadline": "Not confirmed in this pass",
-        "essayPromptTopic": null,
-        "notes": "Directly confirmed on admissions.oregonstate.edu/first-year-students: OSU is test-optional, accepts either its own OSU Application or the Common Application (no preference), and charges a $65 application fee (or fee waiver). OSU has a real 'First Year Live-On Policy' listed as a distinct pre-application topic. Oregon State describes itself as 'Oregon's only statewide university,' operating two campuses plus research forests, agricultural experiment stations, and industry-partnered laboratories -- a real structural claim tied to its land-grant mission. The specific dedicated Application Deadlines page (linked from the first-year page but not independently resolved -- multiple guessed URLs 404'd) was not reached in this pass; exact Early Action/Priority/Regular deadline dates were not independently confirmed and should be spot-checked directly before being treated as verified. Sourced from admissions.oregonstate.edu, verified 2026-08-12.",
-        "verifiedDate": "2026-08-12"
-      },
+      "earliestDeadline": "Not confirmed in this pass",
+      "earliestDeadlineLabel": "Not confirmed in this pass",
+      "rdDeadline": "Not confirmed in this pass",
+      "essayPromptTopic": null,
+      "notes": "Directly confirmed on admissions.oregonstate.edu/first-year-students: OSU is test-optional, accepts either its own OSU Application or the Common Application (no preference), and charges a $65 application fee (or fee waiver). OSU has a real 'First Year Live-On Policy' listed as a distinct pre-application topic. Oregon State describes itself as 'Oregon's only statewide university,' operating two campuses plus research forests, agricultural experiment stations, and industry-partnered laboratories -- a real structural claim tied to its land-grant mission. The specific dedicated Application Deadlines page (linked from the first-year page but not independently resolved -- multiple guessed URLs 404'd) was not reached in this pass; exact Early Action/Priority/Regular deadline dates were not independently confirmed and should be spot-checked directly before being treated as verified. Sourced from admissions.oregonstate.edu, verified 2026-08-12.",
+      "verifiedDate": "2026-08-12"
+    },
     "institutionIdentity": {
       "commonName": "Oregon State",
       "archetype": "A Land-, Sea-, and Space-Grant University — Forestry, Oceanography, and a Genuine Craft Brewing Science Program",
@@ -62671,8 +62674,7 @@ const UNIVERSITY_DB_V5 = {
       "agriculture": {
         "strength": 16,
         "notes": "Not a meaningful institutional pathway."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 28,
         "notes": "Real but narrow evidence: Babson's Health and Biotech Innovation and Entrepreneurship badge and intensity track exist within its broader entrepreneurship curriculum (the school's defining institutional focus), giving students a real pathway into biotech/health startups -- but this is an entrepreneurship-education angle, not a pharmaceutical manufacturing research or industry-partnership angle, and no manufacturing-specific facility or partnership was found. Scored moderate-low to reflect a genuine but tangential connection."
@@ -64478,8 +64480,7 @@ const UNIVERSITY_DB_V5 = {
       "agriculture": {
         "strength": 62,
         "notes": "A real, distinctive pathway reinforced directly by Dickinson's own working farm, integrated into coursework across multiple departments."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 35,
         "notes": "Real, specific evidence tied to one notable alumnus rather than an institutional program: Young Park '87 leads GeneOne Life Science, whose subsidiary VGXI manufactured a vaccine for Inovio Pharmaceutical and developed vaccines for Zika, Ebola, and MERS; GeneOne also developed a COVID-era nasal-spray candidate (GLS-1200) and secured a South Korean government vaccine-development contract. This is a real, documented pharmaceutical-manufacturing connection, but it runs through one alumnus's company rather than a Dickinson research center or degree program, capping the score below the institutional-infrastructure range."
@@ -65840,8 +65841,7 @@ const UNIVERSITY_DB_V5 = {
       "agriculture": {
         "strength": 10,
         "notes": "Not a meaningful institutional pathway."
-      }
-    ,
+      },
       "pharmaceuticalManufacturing": {
         "strength": 15,
         "notes": "Limited institutional emphasis: RISD is an art and design school with no biology, chemistry, or life-sciences infrastructure, and no pharmaceutical-manufacturing-specific program, research center, or notable industry partnership was found in this pass. Its Industrial Design and Graphic Design departments occasionally intersect with medical-device or pharmaceutical packaging work in the broader design field, but no RISD-specific evidence of this was located. Scored low to reflect a genuine, expected gap given the institution's focus, rather than guessed at a higher number."
@@ -66845,7 +66845,12 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 46.6,
       "homeStateEnrollmentPct": 53.4,
       "drawClassification": "regional",
-      "topFeederStates": { "MN": 54.4, "ND": 37.1, "SD": 2.5, "WI": 1.5 },
+      "topFeederStates": {
+        "MN": 54.4,
+        "ND": 37.1,
+        "SD": 2.5,
+        "WI": 1.5
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Data collected from IPEDS-derived first-time degree-seeking undergraduate residency figures, via CollegeFactual. NDSU's own hosted Common Data Set files are published only in .xlsx format (ndsu.edu/sites/default/files/fileadmin/oira/Common_Data_Set/), which the fetch tool could not parse, so this is one step removed from the primary document. Consistent with ND's known cross-border draw from Minnesota.",
@@ -67291,10 +67296,17 @@ const UNIVERSITY_DB_V5 = {
   },
   "South Dakota State University": {
     "admissionsDrawProfile": {
-      "oosEnrollmentPct": 22.0,
-      "homeStateEnrollmentPct": 78.0,
+      "oosEnrollmentPct": 22,
+      "homeStateEnrollmentPct": 78,
       "drawClassification": "state",
-      "topFeederStates": { "SD": 53.5, "MN": 23.7, "IA": 10.0, "NE": 4.9, "WI": 1.8, "ND": 1.2 },
+      "topFeederStates": {
+        "SD": 53.5,
+        "MN": 23.7,
+        "IA": 10,
+        "NE": 4.9,
+        "WI": 1.8,
+        "ND": 1.2
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Data collected from IPEDS-derived first-time degree-seeking undergraduate residency figures, via CollegeFactual (students representing 35 states total, per the source). SDSU's own IR page (sdstate.edu) only exposed a working direct PDF link for the older 2021-2022 Common Data Set; more recent years (2022-2024) were referenced on the page but had no working direct URLs, so this is one step removed from the primary document.",
@@ -67743,7 +67755,18 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 42,
       "homeStateEnrollmentPct": 58,
       "drawClassification": "regional",
-      "topFeederStates": { "WY": 60.8, "CO": 15.8, "CA": 3.1, "NE": 2.3, "TX": 2.2, "MN": 1.3, "WA": 1.1, "SD": 1.1, "MI": 1.0, "WI": 1.0 },
+      "topFeederStates": {
+        "WY": 60.8,
+        "CO": 15.8,
+        "CA": 3.1,
+        "NE": 2.3,
+        "TX": 2.2,
+        "MN": 1.3,
+        "WA": 1.1,
+        "SD": 1.1,
+        "MI": 1,
+        "WI": 1
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "University of Wyoming Common Data Set 2020-2021, Section F1 (Fall 2020 first-time first-year cohort). Note: older than other records in this batch -- more recent CDS PDF links were not tried; flagged for a refresh pass.",
@@ -68194,7 +68217,17 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 41,
       "homeStateEnrollmentPct": 59,
       "drawClassification": "regional",
-      "topFeederStates": { "MT": 60.1, "WA": 8.7, "CA": 4.5, "ID": 3.4, "OR": 2.9, "CO": 2.8, "MN": 1.6, "AK": 1.5, "TX": 1.0 },
+      "topFeederStates": {
+        "MT": 60.1,
+        "WA": 8.7,
+        "CA": 4.5,
+        "ID": 3.4,
+        "OR": 2.9,
+        "CO": 2.8,
+        "MN": 1.6,
+        "AK": 1.5,
+        "TX": 1
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "University of Montana Common Data Set 2024-2025, Section F1 (Fall 2023 first-time first-year cohort)",
@@ -69453,7 +69486,14 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 18,
       "homeStateEnrollmentPct": 82,
       "drawClassification": "state",
-      "topFeederStates": { "AK": 79.6, "WA": 4.4, "CA": 1.6, "OH": 1.3, "TX": 1.3, "FL": 1.2 },
+      "topFeederStates": {
+        "AK": 79.6,
+        "WA": 4.4,
+        "CA": 1.6,
+        "OH": 1.3,
+        "TX": 1.3,
+        "FL": 1.2
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Data collected from University of Alaska Fairbanks's 2023-24 Common Data Set (CDS) form, via collegedata.fyi. UAF's own hosted CDS PDF archive (uaf.edu/pair) could not be fetched -- the domain consistently failed with a robots.txt/DNS-level error across multiple attempts -- so this is one step removed from the primary document.",
@@ -69846,7 +69886,17 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 33.3,
       "homeStateEnrollmentPct": 66.7,
       "drawClassification": "regional",
-      "topFeederStates": { "MO": 65.6, "AR": 13.3, "KS": 3.9, "IL": 3.6, "OK": 3.6, "TX": 2.2, "IA": 1.4, "TN": 1.1, "NE": 1.1 },
+      "topFeederStates": {
+        "MO": 65.6,
+        "AR": 13.3,
+        "KS": 3.9,
+        "IL": 3.6,
+        "OK": 3.6,
+        "TX": 2.2,
+        "IA": 1.4,
+        "TN": 1.1,
+        "NE": 1.1
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Data collected from IPEDS-derived first-time degree-seeking undergraduate residency figures, via CollegeFactual. This is the Point Lookout, Missouri 'Hard Work U' institution, distinct from University of the Ozarks in Clarksville, Arkansas -- the two are easily confused since both host CDS files at similarly-named domains. No Missouri-specific Common Data Set PDF for this school could be located directly; this school was flagged as genuinely unresolved earlier in this sourcing pass after exhausting primary CDS, IPEDS DFR, and two other aggregators, but this later CollegeFactual pull succeeded where those attempts did not.",
@@ -70232,7 +70282,14 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 18,
       "homeStateEnrollmentPct": 82,
       "drawClassification": "state",
-      "topFeederStates": { "NC": 83.2, "VA": 5.0, "MD": 2.8, "NJ": 1.8, "PA": 1.6, "NY": 1.3 },
+      "topFeederStates": {
+        "NC": 83.2,
+        "VA": 5,
+        "MD": 2.8,
+        "NJ": 1.8,
+        "PA": 1.6,
+        "NY": 1.3
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "East Carolina University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: ipar.ecu.edu/wp-content/pv-uploads/sites/130/CDS_2024-2025_Redacted.pdf). Note: ECU's own published 'By the Numbers' fact sheet cites a lower 10% out-of-state figure, but that appears to reflect total university-wide enrollment rather than the first-time, first-year cohort that Section F1 specifically measures -- the CDS F1 figure is used here as it matches the schema's target definition.",
@@ -70624,7 +70681,18 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 85.5,
       "homeStateEnrollmentPct": 14.5,
       "drawClassification": "national",
-      "topFeederStates": { "TX": 13.8, "MD": 12.6, "NM": 8.4, "VA": 7.2, "CA": 6.6, "PA": 5.4, "NY": 5.4, "CO": 4.2, "NJ": 3.6, "IL": 3.0 },
+      "topFeederStates": {
+        "TX": 13.8,
+        "MD": 12.6,
+        "NM": 8.4,
+        "VA": 7.2,
+        "CA": 6.6,
+        "PA": 5.4,
+        "NY": 5.4,
+        "CO": 4.2,
+        "NJ": 3.6,
+        "IL": 3
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Data collected from College Transitions Dataverse (Enrollment by Residency), which lists St. John's College's two campuses separately: Annapolis, MD (84% out-of-state / 16% in-state) and Santa Fe, NM (87% out-of-state / 13% in-state). Since this database record represents the institution as a single dual-campus entity, the figure used here (85.5% OOS / 14.5% home-state) is a simple average of the two campuses. This school was flagged as genuinely unresolved earlier in this sourcing pass after exhausting primary CDS, IPEDS DFR (which does not break out enrollment by state of residence for this institution), and other aggregators, but this later pull succeeded where those attempts did not.",
@@ -71003,7 +71071,18 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 90,
       "homeStateEnrollmentPct": 10,
       "drawClassification": "national",
-      "topFeederStates": { "MA": 37.2, "NY": 15.2, "CT": 13.4, "NJ": 10.4, "RI": 8.6, "PA": 1.9, "NH": 1.6, "IL": 1.4, "ME": 1.4, "VT": 1.2 },
+      "topFeederStates": {
+        "MA": 37.2,
+        "NY": 15.2,
+        "CT": 13.4,
+        "NJ": 10.4,
+        "RI": 8.6,
+        "PA": 1.9,
+        "NH": 1.6,
+        "IL": 1.4,
+        "ME": 1.4,
+        "VT": 1.2
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Providence College Common Data Set 2021-2022, Section F1 (primary source, direct PDF: academic-affairs.providence.edu/.../cds-2021-22.pdf). Note: this was the most recent Providence College CDS located.",
@@ -71386,7 +71465,9 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 2,
       "homeStateEnrollmentPct": 98,
       "drawClassification": "state",
-      "topFeederStates": { "CA": 98.5 },
+      "topFeederStates": {
+        "CA": 98.5
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Data collected from San Francisco State University's CDS-derived enrollment data, via CollegeSimply (2023-2024 academic year). SF State's own IR office (ir.sfsu.edu) no longer lists a current Common Data Set PDF on its public archive page (most recent linked file was 2020-2021), so this is one step removed from the primary document. Consistent with the very low out-of-state share seen at other CSU campuses already sourced this pass (e.g. Cal State Chico, 1.5%).",
@@ -71785,7 +71866,13 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 16,
       "homeStateEnrollmentPct": 84,
       "drawClassification": "state",
-      "topFeederStates": { "IL": 84.1, "MO": 2.5, "WI": 1.8, "CO": 1.4, "IN": 1.1 },
+      "topFeederStates": {
+        "IL": 84.1,
+        "MO": 2.5,
+        "WI": 1.8,
+        "CO": 1.4,
+        "IN": 1.1
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "Illinois Wesleyan University Common Data Set 2024-2025, Section F1 (primary source, direct PDF: iwu.edu/institutional-effectiveness/dataset/cds-iwu-03262025.pdf, posted March 2025 for the 2024-25 academic year). Note: IWU's newer-dated 2025-26 filing (iwu-cds-2526-052726.pdf) shows a much lower 5% figure for the same F1 line -- given IWU's very small first-year cohort (roughly 300 students), a swing of this size within one year is plausible as cohort-level noise but could also reflect a reporting inconsistency, so the more stable, clearly-dated 2024-25 figure was used instead and this discrepancy is flagged here for awareness.",
@@ -72167,7 +72254,9 @@ const UNIVERSITY_DB_V5 = {
       "oosEnrollmentPct": 3.69,
       "homeStateEnrollmentPct": 96.31,
       "drawClassification": "state",
-      "topFeederStates": { "TX": 96.7 },
+      "topFeederStates": {
+        "TX": 96.7
+      },
       "topFeederRegions": {},
       "dataConfidence": "verified",
       "dataSource": "University of North Texas Common Data Set 2023-2024, Section F1 (primary source, direct PDF: institutionalresearch.unt.edu/cds_univnorthtx_final2024-2025.pdf). Document's year header text was garbled in extraction (rendered as 202-202), confirmed via a second independent fetch that verified both the school name and the 3.69% figure.",
@@ -72549,8 +72638,7 @@ const UNIVERSITY_DB_V5 = {
     "primaryMegaRegionSlug": "texastriangle",
     "regionalRole": "Major DFW-metro comprehensive research university with a nationally significant music program",
     "secondaryMegaRegionExposure": []
-  }
-,
+  },
   "Bates College": {
     "admissionsDrawProfile": {
       "oosEnrollmentPct": 91.7,
@@ -72567,14 +72655,14 @@ const UNIVERSITY_DB_V5 = {
       "name": "Bates College",
       "location": "Lewiston, Maine",
       "region": "New England",
-      "archetype": "The Purposeful Work Laboratory \u2014 Short Term Immersion, No Distribution Escape Hatch, Finance-and-Education Dual Pipeline",
-      "oneSentenceSummary": "Bates College is a highly selective liberal arts college built around a distinctive 4-4-1 academic calendar \u2014 two full semesters plus a required four-week spring Short Term of total immersion in a single course, often off campus \u2014 paired with one of the most explicitly career-integrated liberal arts cultures in the country through its Center for Purposeful Work.",
+      "archetype": "The Purposeful Work Laboratory — Short Term Immersion, No Distribution Escape Hatch, Finance-and-Education Dual Pipeline",
+      "oneSentenceSummary": "Bates College is a highly selective liberal arts college built around a distinctive 4-4-1 academic calendar — two full semesters plus a required four-week spring Short Term of total immersion in a single course, often off campus — paired with one of the most explicitly career-integrated liberal arts cultures in the country through its Center for Purposeful Work.",
       "pipeline": "Approximately 1,700 undergraduates, admitting roughly 16% of applicants (Class of 2030). Bates offers about three dozen majors spanning liberal arts classics, STEM fields (neuroscience, biochemistry, engineering), and interdisciplinary programs (environmental studies, gender and sexuality studies, digital and computational studies). The Class of 2024's top industries were Education (21%), Financial Services (15%), Healthcare (14%), Nonprofit and Law (6% each), and Information Technology (4%). Selected employers of 2024 graduates include Goldman Sachs, Morgan Stanley, Bank of America, Barclays, HSBC, Jefferies, Guggenheim Partners, Cravath Swaine & Moore, PwC, MIT, the Broad Institute of MIT and Harvard, Massachusetts General Hospital, Boston Children's Hospital, Brigham and Women's Hospital, Memorial Sloan Kettering, Thermo Fisher Scientific, Teach For America, and the Peace Corps.",
       "hiddenPathway": "Short Term is Bates' defining structural advantage: every student spends four required weeks each spring on a single immersive course, frequently off campus or abroad, which functions as a built-in internship/research/travel window that most liberal arts colleges leave students to arrange informally. Combined with the Center for Purposeful Work's four-year developmental career curriculum, Bates students graduate having already practiced translating coursework into professional and research experience multiple times over.",
-      "institutionalSecret": "Despite a broad liberal-arts identity, Bates places a real and verifiable share of graduates into elite finance: Class of 2024 employers included Goldman Sachs, Morgan Stanley, Barclays, HSBC, Jefferies, and Guggenheim Partners, alongside Financial Services drawing 15% of the class \u2014 a stronger Wall Street pipeline than Bates' general liberal-arts reputation would suggest.",
-      "theRoom": "Located in Lewiston, a working mill-city in southern Maine rather than a wealthy New England college town, Bates places students in a real, economically mixed small city with direct proximity to Portland and reasonable access to Boston, while Short Term regularly sends students off campus entirely \u2014 domestically or abroad \u2014 for a month of immersive, singular focus.",
+      "institutionalSecret": "Despite a broad liberal-arts identity, Bates places a real and verifiable share of graduates into elite finance: Class of 2024 employers included Goldman Sachs, Morgan Stanley, Barclays, HSBC, Jefferies, and Guggenheim Partners, alongside Financial Services drawing 15% of the class — a stronger Wall Street pipeline than Bates' general liberal-arts reputation would suggest.",
+      "theRoom": "Located in Lewiston, a working mill-city in southern Maine rather than a wealthy New England college town, Bates places students in a real, economically mixed small city with direct proximity to Portland and reasonable access to Boston, while Short Term regularly sends students off campus entirely — domestically or abroad — for a month of immersive, singular focus.",
       "lifestyle": "Academically rigorous and outdoors-oriented, with a small, tight-knit residential community shaped by Maine's seasons and a campus culture that treats Short Term as a shared rite of passage each spring.",
-      "bestFitPersonality": "Students who want the intensity and structure of a top liberal arts college but also want explicit, structured help translating that education into a specific career path \u2014 comfortable with a real Maine winter and a college town that is a working city rather than a resort town.",
+      "bestFitPersonality": "Students who want the intensity and structure of a top liberal arts college but also want explicit, structured help translating that education into a specific career path — comfortable with a real Maine winter and a college town that is a working city rather than a resort town.",
       "faithTradition": "None (historically founded by Free Will Baptists; fully secular today)",
       "geographicInfluenceRadius": "Strong throughout New England, with a meaningful concentration of graduates in Massachusetts and New York and smaller but real cohorts across the Mid-Atlantic, Southeast, and internationally.",
       "economicOutcome": "89% of the Class of 2024 (433 members, 87% survey response rate) were settled into their next opportunity within roughly six months of graduation: 64% employed, 18% in graduate or professional school, 3% in internships, 2% in fellowships, and 11% still seeking as of the December 2024 survey.",
@@ -72610,7 +72698,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Bates",
-      "archetype": "Elite Liberal Arts College \u2014 Short Term Immersion Model",
+      "archetype": "Elite Liberal Arts College — Short Term Immersion Model",
       "institutionalPersonality": "purposeful, outdoorsy, structurally distinctive, career-integrated",
       "cultureKeywords": [
         "Short Term",
@@ -72990,8 +73078,7 @@ const UNIVERSITY_DB_V5 = {
         "exposure_score": 4
       }
     ]
-  }
-,
+  },
   "Bucknell University": {
     "admissionsDrawProfile": {
       "oosEnrollmentPct": 81,
@@ -73008,8 +73095,8 @@ const UNIVERSITY_DB_V5 = {
       "name": "Bucknell University",
       "location": "Lewisburg, Pennsylvania",
       "region": "Mid-Atlantic",
-      "archetype": "The Three-College Liberal Arts Engine \u2014 Arts & Sciences, Engineering, and Management Under One Undergraduate Roof",
-      "oneSentenceSummary": "Bucknell University is a highly selective liberal arts university structured around three integrated undergraduate colleges \u2014 Arts & Sciences, Engineering, and the Freeman College of Management \u2014 giving students a genuinely wider major selection and a stronger finance/engineering/consulting outcomes pipeline than most liberal arts college peers, while still delivering a small, residential liberal-arts campus experience.",
+      "archetype": "The Three-College Liberal Arts Engine — Arts & Sciences, Engineering, and Management Under One Undergraduate Roof",
+      "oneSentenceSummary": "Bucknell University is a highly selective liberal arts university structured around three integrated undergraduate colleges — Arts & Sciences, Engineering, and the Freeman College of Management — giving students a genuinely wider major selection and a stronger finance/engineering/consulting outcomes pipeline than most liberal arts college peers, while still delivering a small, residential liberal-arts campus experience.",
       "pipeline": "Approximately 3,975 undergraduates, admitting a selective cohort with a Class of 2028 middle-50% SAT range of 670-740 (Evidence-Based Reading & Writing) and 670-760 (Math), ACT 31-34, and an average admitted GPA of 3.76. 93% of the Class of 2025 had secured a next opportunity within nine months of graduation, with an average starting salary of $73,346. Bucknell was ranked #1 among LinkedIn's Top Liberal Arts Colleges for career success in 2026 (#16 among all colleges), #7 nationally for undergraduate engineering programs without a doctorate, #7 for most innovative schools, and #30 among national liberal arts colleges (U.S. News & World Report, 2026). Selected Class of 2025 employers include Goldman Sachs, Morgan Stanley, J.P. Morgan, UBS, Bank of America, Fidelity Investments, Deloitte, EY, PwC, RSM, Amazon, Cisco, Oracle, Northrop Grumman, Johnson & Johnson, Merck, Clark Construction Group, DAVIS Construction, and Whiting-Turner Contracting Company.",
       "hiddenPathway": "Bucknell's three-college structure -- College of Arts & Sciences, College of Engineering, and the Freeman College of Management -- means students get a genuinely broader major catalog than most liberal arts colleges (accounting and finance, analytics and operations management, biomedical/chemical/civil-environmental engineering, alongside the standard liberal arts departments) without sacrificing the small, residential liberal-arts campus experience. Few schools of Bucknell's size combine ABET-accredited engineering, an AACSB-caliber management college, and a traditional arts & sciences core under one undergraduate roof.",
       "institutionalSecret": "Bucknell's real Class of 2025 employer list -- Goldman Sachs, Morgan Stanley, J.P. Morgan, UBS, Deloitte, EY, PwC alongside Clark Construction, DAVIS Construction, and Whiting-Turner -- shows a genuinely dual finance-and-engineering/construction pipeline that's stronger and more specific than Bucknell's general liberal-arts-college reputation would suggest.",
@@ -73051,7 +73138,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Bucknell",
-      "archetype": "Liberal Arts University \u2014 Three-College Structure (Arts & Sciences, Engineering, Management)",
+      "archetype": "Liberal Arts University — Three-College Structure (Arts & Sciences, Engineering, Management)",
       "institutionalPersonality": "ambitious, outcomes-focused, structurally distinctive, spirited",
       "cultureKeywords": [
         "Three Colleges",
@@ -73431,8 +73518,7 @@ const UNIVERSITY_DB_V5 = {
         "exposure_score": 3
       }
     ]
-  }
-,
+  },
   "Colby College": {
     "admissionsDrawProfile": {
       "oosEnrollmentPct": 93,
@@ -73449,7 +73535,7 @@ const UNIVERSITY_DB_V5 = {
       "name": "Colby College",
       "location": "Waterville, Maine",
       "region": "New England",
-      "archetype": "The Jan Plan Originator \u2014 First 4-1-4 Calendar, Need-Blind No-Loan Aid, Guaranteed Experiential Funding",
+      "archetype": "The Jan Plan Originator — First 4-1-4 Calendar, Need-Blind No-Loan Aid, Guaranteed Experiential Funding",
       "oneSentenceSummary": "Colby College is an extremely selective liberal arts college on a 714-acre campus in Waterville, Maine, distinguished by originating the 4-1-4 academic calendar (including the January \"Jan Plan\" intensive term), a need-blind no-loan financial aid policy, and a DavisConnects program that funds at least one internship, research experience, and global experience for every student regardless of financial circumstance.",
       "pipeline": "Approximately 2,400 undergraduates across 46 majors and 37 minors, admitting roughly 8% of the 20,144 applicants to the Class of 2029, with a middle-50% SAT range of 1450-1540 and ACT range of 32-34. 98% of the Class of 2024 was employed or attending graduate school within one year of graduation; for the Class of 2025 specifically, 80% secured employment, 15% pursued further studies, and 2% launched entrepreneurial pursuits, with 92% benefiting from at least one high-impact career experience before graduation. Selected employers of recent graduates include McKinsey & Company, Blackstone, Credit Suisse, UBS, JPMorgan Chase, Wells Fargo, Wellington Management, Ropes & Gray, Massachusetts General Hospital, Dana-Farber Cancer Institute, and Amazon.",
       "hiddenPathway": "Colby originated the 4-1-4 academic calendar, with a required January Jan Plan term (over 100 courses to choose from) functioning as a built-in intensive-immersion window every year, not just once. Combined with DavisConnects -- which guarantees funding for at least one internship, research experience, and global experience per student regardless of financial need or personal network -- Colby students get multiple structured, funded windows to translate coursework into real-world experience across all four years, not just informally through unpaid summer opportunities.",
@@ -73492,7 +73578,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Colby",
-      "archetype": "Elite Liberal Arts College \u2014 Jan Plan Originator, Need-Blind No-Loan Aid",
+      "archetype": "Elite Liberal Arts College — Jan Plan Originator, Need-Blind No-Loan Aid",
       "institutionalPersonality": "rigorous, well-resourced, experientially structured, quietly confident",
       "cultureKeywords": [
         "Jan Plan",
@@ -73871,8 +73957,7 @@ const UNIVERSITY_DB_V5 = {
         "exposure_score": 4
       }
     ]
-  }
-,
+  },
   "Colgate University": {
     "admissionsDrawProfile": {
       "oosEnrollmentPct": 73,
@@ -73889,7 +73974,7 @@ const UNIVERSITY_DB_V5 = {
       "name": "Colgate University",
       "location": "Hamilton, New York",
       "region": "Mid-Atlantic",
-      "archetype": "The Research-University Liberal Arts Hybrid \u2014 Tuck Business Bridge, 80%/84% Med/Law Placement, Career Team Built at University Scale",
+      "archetype": "The Research-University Liberal Arts Hybrid — Tuck Business Bridge, 80%/84% Med/Law Placement, Career Team Built at University Scale",
       "oneSentenceSummary": "Colgate University is an extremely selective liberal arts university on a hillside campus in central New York, distinguished by a career-services operation described as larger than typical liberal arts peers, an 80% medical school and 84% law school acceptance rate against national averages of 42% and 69%, and access to Dartmouth's Tuck Business Bridge Program as a formal skill-building pathway.",
       "pipeline": "Approximately 3,143 undergraduates, admitting roughly 17% of applicants with an 8:1 student-to-faculty ratio and an average class size of 17. 97% of students secure jobs, graduate school admission, fellowships, scholarships, or military/volunteer service within nine months of graduation (based on an 89% knowledge rate of the graduating class), with an 80% medical school acceptance rate and an 84% law school acceptance rate, both well above national averages. More than 200 formal recruiting partners connect students to employers including Amazon, Deloitte, Ernst & Young, Goldman Sachs, Google, Massachusetts General Hospital, National Geographic, NBCUniversal, and Teach For America, supporting a job and internship board with more than 225,000 opportunities annually.",
       "hiddenPathway": "Colgate offers direct access to the Tuck Business Bridge Program at Dartmouth's Tuck School of Business -- a real, formal partnership giving liberal arts students structured business skill-building normally associated with dedicated business schools, not standard liberal arts colleges. Combined with a career-services team the university itself describes as larger than peer liberal arts institutions, Colgate students get earlier and more intensive career support than the small-college model typically provides.",
@@ -73932,7 +74017,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Colgate",
-      "archetype": "Elite Liberal Arts University \u2014 Research-University-Scale Career Infrastructure",
+      "archetype": "Elite Liberal Arts University — Research-University-Scale Career Infrastructure",
       "institutionalPersonality": "rigorous, achievement-oriented, well-resourced, pre-professionally structured",
       "cultureKeywords": [
         "Tuck Business Bridge Program",
@@ -74311,8 +74396,7 @@ const UNIVERSITY_DB_V5 = {
         "exposure_score": 3
       }
     ]
-  }
-,
+  },
   "Davidson College": {
     "admissionsDrawProfile": {
       "oosEnrollmentPct": 68,
@@ -74329,7 +74413,7 @@ const UNIVERSITY_DB_V5 = {
       "name": "Davidson College",
       "location": "Davidson, North Carolina",
       "region": "Southeast",
-      "archetype": "The Honor Code Liberal Arts College \u2014 Need-Blind No-Loan Aid, D1 Athletics, Charlotte-Adjacent",
+      "archetype": "The Honor Code Liberal Arts College — Need-Blind No-Loan Aid, D1 Athletics, Charlotte-Adjacent",
       "oneSentenceSummary": "Davidson College is an extremely selective liberal arts college on a close-knit, walkable campus just north of Charlotte, North Carolina, distinguished by a genuinely need-blind, no-loan financial aid policy (one of only about two dozen U.S. colleges to offer it), a student-run Honor Code, and Division I athletics within a small liberal arts college structure.",
       "pipeline": "Approximately 1,800 undergraduates across 74+ majors, minors, and programs, admitting roughly 12.6% of applicants to the Class of 2029 with a 47.1% enrollment yield. The middle-50% SAT range for enrolled students is 710-760 (Evidence-Based Reading & Writing) and 690-760 (Math), with an ACT composite range of 32-34. 95% of the Class of 2025 was employed or enrolled in post-graduate education within six months of graduation, and 80% of recent alumni anticipate enrolling in a graduate program within five years. Davidson alumni span an unusually wide range of visible careers, from NASA astronaut Tom Marshburn '82 to CAA Nashville founder John Huie '78 to bestselling author Clint Smith '10.",
       "hiddenPathway": "Davidson is one of only about two dozen colleges in the United States that are simultaneously need-blind in admission, meet 100% of calculated need, and provide financial aid packages with no loans -- a real, specific, and unusually rare combination even among elite liberal arts colleges, verified directly against Davidson's own published commitment.",
@@ -74372,7 +74456,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Davidson",
-      "archetype": "Elite Liberal Arts College \u2014 Honor Code Culture, Need-Blind No-Loan Aid, D1 Athletics",
+      "archetype": "Elite Liberal Arts College — Honor Code Culture, Need-Blind No-Loan Aid, D1 Athletics",
       "institutionalPersonality": "honor-driven, achievement-oriented, close-knit, Southeast-rooted",
       "cultureKeywords": [
         "Honor Code",
@@ -74751,8 +74835,7 @@ const UNIVERSITY_DB_V5 = {
         "exposure_score": 5
       }
     ]
-  }
-,
+  },
   "Haverford College": {
     "admissionsDrawProfile": {
       "oosEnrollmentPct": 86,
@@ -74769,7 +74852,7 @@ const UNIVERSITY_DB_V5 = {
       "name": "Haverford College",
       "location": "Haverford, Pennsylvania",
       "region": "Mid-Atlantic",
-      "archetype": "The Honor Code Original \u2014 100% Senior Thesis, No Enrollment Deposit, Tri-College Cross-Registration",
+      "archetype": "The Honor Code Original — 100% Senior Thesis, No Enrollment Deposit, Tri-College Cross-Registration",
       "oneSentenceSummary": "Haverford College is an extremely selective liberal arts college on a 200-acre arboretum campus just outside Philadelphia, distinguished by a student-authored Honor Code so trusted that no financial enrollment deposit is required of admitted students, a 100% senior thesis completion rate, and full cross-registration access to Bryn Mawr and Swarthmore through the Tri-College Consortium.",
       "pipeline": "Approximately 1,464 undergraduates across 56 academic programs, admitting roughly 15.4% of the 6,392 applicants to the Class of 2030. 100% of students complete a senior thesis, and 98% live on campus. For the Class of 2025 (394 members, 87.5% knowledge rate), top industries were Business & Financial Services (24%), Science & Technology (18%), Healthcare & Public Health (16%), Education & Library Science (14%), and Law (8%), with 85% reporting their work was mostly or directly relevant to their career interests. Graduates from 2016-2025 most frequently went on to the University of Pennsylvania, Sidney Kimmel Medical College at Thomas Jefferson University, Columbia, University of Chicago, Michigan, Cornell, NYU, Yale, Stanford, and Harvard, and were most frequently hired by the University of Pennsylvania, Children's Hospital of Philadelphia, Epic, the Vanguard Group, Boston Consulting Group, Cravath Swaine & Moore, Amazon, M&T Bank, and Bank of America.",
       "hiddenPathway": "Haverford's Honor Code is trusted enough that the college requires no financial enrollment deposit from admitted students -- a rare, tangible expression of institutional trust rather than just branding language. Combined with full Tri-College cross-registration access to Bryn Mawr and Swarthmore, Haverford students effectively access a much larger combined course catalog and social community than the school's small enrollment alone would suggest.",
@@ -74812,7 +74895,7 @@ const UNIVERSITY_DB_V5 = {
     },
     "institutionIdentity": {
       "commonName": "Haverford",
-      "archetype": "Elite Liberal Arts College \u2014 Honor Code, 100% Senior Thesis, Tri-College Consortium",
+      "archetype": "Elite Liberal Arts College — Honor Code, 100% Senior Thesis, Tri-College Consortium",
       "institutionalPersonality": "trust-driven, intellectually rigorous, community-oriented, Quaker-rooted",
       "cultureKeywords": [
         "Honor Code",
@@ -75192,8 +75275,6 @@ const UNIVERSITY_DB_V5 = {
       }
     ]
   },
-
-  // ── Issue 7 (SCHOOL-MATCH-INTEGRITY-001) — merged 2026-08-14, approved by Matt Stearn ──
   "University of Delaware": {
     "admissionsDrawProfile": {
       "oosEnrollmentPct": 66,
@@ -75313,7 +75394,6 @@ const UNIVERSITY_DB_V5 = {
     "regionalRole": "A large Mid-Atlantic public flagship with real geographic access to Philadelphia, Baltimore, and Washington DC — not yet scored on the fuller V5 taxonomy (industryPathways, institutionalMoat, futureResilience, etc.); this entry establishes real matchability, not full parity with researched schools.",
     "_dataProvenance": "MERGED 2026-08-14 (Issue 7, SCHOOL-MATCH-INTEGRITY-001), approved by Matt Stearn. admissionsDrawProfile and applicationIntelligence real and CDS-cited (2024-25 Common Data Set, ire.udel.edu). Narrative fields real. Scored/statistical fields (industryPathways, bigFiveProfile, institutionalMoat, futureResilience, trajectoryProfile, jewishLife, networkCapital) intentionally not yet populated — treat as not-yet-researched, not zero, same discipline as every other gap in this file."
   },
-
   "Macalester College": {
     "admissionsDrawProfile": {
       "oosEnrollmentPct": null,
@@ -75433,8 +75513,633 @@ const UNIVERSITY_DB_V5 = {
     "primaryMegaRegionSlug": "great-lakes",
     "regionalRole": "A small, internationally-minded elite liberal arts college with real Twin Cities metro access — not yet scored on the fuller V5 taxonomy (industryPathways, institutionalMoat, futureResilience, etc.); this entry establishes real matchability, not full parity with researched schools.",
     "_dataProvenance": "MERGED 2026-08-14 (Issue 7, SCHOOL-MATCH-INTEGRITY-001), approved by Matt Stearn. admissionsDrawProfile partial (real admit/enroll figures from 2023-24 Common Data Set, macalester.edu; residency split genuinely blank in that source, not an extraction gap). applicationIntelligence real and CDS-cited. Narrative fields real. Scored/statistical fields intentionally not yet populated — treat as not-yet-researched, not zero, same discipline as every other gap in this file."
+  },
+  "Indiana University": {
+    "institutionNarrative": {
+      "name": "Indiana University",
+      "location": "Bloomington, Indiana",
+      "region": "Midwest",
+      "pipeline": "Finance and Investment Banking, Consulting, Technology, Media and Journalism, Music Performance and Music Business, Law, Education, Healthcare, Data Science. Kelley School of Business (Goldman Sachs, J.P. Morgan, Deloitte, PwC, Big 4 accounting -",
+      "hiddenPathway": "The Kelley School of Business at IU Bloomington is consistently ranked top 10 undergraduate business nationally. Kelley sends more graduates to the Chicago financial services sector per capita than any non-Ivy school except Michigan Ross.",
+      "theRoom": "49% of students are Indiana residents and 51% are from out of state or international - a ratio consistent for three years.",
+      "lifestyle": "Bloomington is the quintessential college town: IU is the entire economy, culture, and social infrastructure. Kirkwood Avenue, the Sample Gates, the Lilly Library, and Assembly Hall anchor a downtown built entirely around student life, and the Jacobs School of Music — one of the top conservatories in the country — gives Bloomington a classical-music culture rare in a town of 85,000.",
+      "gradCities": "Chicago IL (35%) | Indianapolis IN (20%) | New York NY (15%) | Washington DC (8%) | Columbus OH (5%)."
+    }
+  },
+  "California State University Long Beach": {
+    "institutionNarrative": {
+      "name": "California State University Long Beach",
+      "location": "Long Beach, California",
+      "region": "California",
+      "pipeline": "Engineering (College of Engineering - top-50 nationally among regional universities - aerospace, civil, electrical, mechanical, chemical, computer science, biomedical - major Southern California aerospace and defense employers including Boeing, Northrop Grumman, Raytheon, SpaceX,",
+      "hiddenPathway": "The Long Beach College Promise is the hidden pathway that makes CSULB the most consequential access institution in Southern California and one of the most important equity mechanisms in American higher education. The Long Beach College Promise -",
+      "theRoom": "CSULB enrolls approximately 32,000 undergraduates - the second largest CSU campus and one of the largest universities in California.",
+      "lifestyle": "Long Beach, California is the second largest city in the Los Angeles metropolitan area - a city of 460,000 with a working harbor, the Queen Mary, the Long Beach Convention Center, and a downtown revitalized around the Pike Outlets and East Village Arts District. The Port of Long Beach, one of the busiest container ports in the world, anchors a logistics and trade economy that runs alongside the city's growing aerospace and biotech presence.",
+      "gradCities": "Los Angeles-Long Beach CA (70%) | Orange County CA (10%) | San Diego CA (4%) | San Francisco CA (3%) | International (3%"
+    }
+  },
+  "California State University Fullerton": {
+    "institutionNarrative": {
+      "name": "California State University Fullerton",
+      "location": "Fullerton, California",
+      "region": "California",
+      "pipeline": "Business and Finance (Mihaylo College of Business and Economics - top-40 nationally among regional universities and the largest business school in California - finance, accounting, marketing, supply chain, entrepreneurship, real estate, international business -",
+      "hiddenPathway": "Mihaylo College of Business is the hidden pathway that delivers Big 4 accounting placement volume at the lowest tuition in the database - and the mechanism is specific and consequential.",
+      "theRoom": "CSUF enrolls approximately 35,000 undergraduates - the largest CSU campus by undergraduate enrollment and one of the largest universities in California.",
+      "lifestyle": "Fullerton, California sits in the northern edge of Orange County - a city of 140,000 2 miles from Disneyland, 30 miles from downtown Los Angeles, 15 miles from the Pacific Ocean beaches at Huntington and Newport. Downtown Fullerton's Craft Corridor has become one of Orange County's densest concentrations of breweries and live-music venues, giving CSUF students a walkable social scene rare among commuter-heavy CSU campuses.",
+      "gradCities": "Orange County CA (55%) | Los Angeles CA (25%) | San Diego CA (5%) | Inland Empire CA (4%) | International (3%)."
+    }
+  },
+  "California State University Fresno": {
+    "institutionNarrative": {
+      "name": "California State University Fresno",
+      "location": "Fresno, California",
+      "region": "California",
+      "pipeline": "Agriculture and Food Science (Jordan College of Agricultural Sciences and Technology - top-15 nationally among regional universities and the most consequential agricultural college in the San Joaquin Valley -",
+      "hiddenPathway": "The Wonderful Company connection is the hidden pathway that makes Fresno State's agricultural business and viticulture programs uniquely consequential in the San Joaquin Valley economy. The Wonderful Company -",
+      "theRoom": "Fresno State enrolls approximately 22,000 undergraduates - a large CSU campus serving the most geographically central and demographically significant city in the San Joaquin Valley.",
+      "lifestyle": "Fresno, California is the agricultural and commercial capital of the San Joaquin Valley - a city of 540,000 and the fifth largest in California, surrounded by some of the most productive farmland in the world - grapes, almonds, citrus, and dairy that make the Valley the country's leading agricultural region by dollar value. Downtown Fresno's Tower District supplies the college-town nightlife, and Bulldog fan culture around Fresno State athletics is among the most intense of any Group of Five program.",
+      "gradCities": "Fresno CA (45%) | Sacramento CA (12%) | Los Angeles CA (8%) | Bakersfield CA (5%) | San Francisco CA (4%)."
+    }
+  },
+  "California State University Northridge": {
+    "institutionNarrative": {
+      "name": "California State University Northridge",
+      "location": "Northridge, California",
+      "region": "California",
+      "pipeline": "Business and Finance (David Nazarian College of Business and Economics - top-55 nationally among regional universities - accounting, finance, marketing, real estate, entrepreneurship, management information systems -",
+      "hiddenPathway": "The National Center on Deafness at CSUN is the hidden pathway that makes CSUN the most specific and irreplaceable institution in the database for one particular professional mission -",
+      "theRoom": "CSUN enrolls approximately 33,000 undergraduates - one of the largest CSU campuses and the largest university in the San Fernando Valley. The student body is approximately 45% Hispanic - CSUN is one of the largest Hispanic-Serving Institutions in the country, with a significant first-generation population and one of the CSU system's most active veteran student services offices. The National Center on Deafness gives the campus one of the largest Deaf and Hard-of-Hearing student populations of any mainstream university in America, with American Sign Language interpretation built into daily campus life rather than treated as an accommodation.",
+      "lifestyle": "Northridge, California sits in the central San Fernando Valley - a suburban community of 60,000 within the city of Los Angeles, surrounded by the Santa Susana Mountains to the north and the rest of the sprawling Valley in every other direction. The campus itself still bears the legacy of the 1994 Northridge earthquake, which reshaped much of the surrounding architecture, and students rely on cars and the Metro Orange Line busway to reach entertainment-industry jobs concentrated in Burbank, Studio City, and Hollywood twenty minutes south.",
+      "gradCities": "Los Angeles CA (65%) | San Fernando Valley CA (15%) | Ventura County CA (5%) | Orange County CA (4%) | International (3%"
+    }
+  },
+  "California State University Los Angeles": {
+    "institutionNarrative": {
+      "name": "California State University Los Angeles",
+      "location": "Los Angeles, California",
+      "region": "California",
+      "pipeline": "Business and Finance (College of Business and Economics - top-65 nationally among regional universities - accounting, finance, marketing, entrepreneurship, international business, real estate -",
+      "hiddenPathway": "The 2028 Los Angeles Olympics infrastructure buildout is the hidden pathway that makes CSULA's engineering and construction management programs uniquely consequential at this specific moment in Los Angeles history.",
+      "theRoom": "CSULA enrolls approximately 24,000 undergraduates - a large CSU campus serving the most economically challenged and racially diverse urban community of any institution in the database.",
+      "lifestyle": "Los Angeles, California - the CSULA campus sits on a hillside in the unincorporated East Los Angeles corridor of the San Gabriel Valley, at the intersection of the 10 and 710 freeways, giving commuter students direct access to downtown LA in twenty minutes. The surrounding communities - East LA, Alhambra, Monterey Park - are among the most historically significant Mexican-American and Asian-American neighborhoods in Southern California, and CSULA's identity is inseparable from that immigrant, first-generation civic fabric.",
+      "gradCities": "Los Angeles CA (75%) | East Los Angeles CA (12%) | Pasadena-San Gabriel Valley CA (6%) | Long Beach CA (3%) | Internatio"
+    }
+  },
+  "Boise State University": {
+    "institutionNarrative": {
+      "name": "Boise State University",
+      "location": "Boise, Idaho",
+      "region": "Rocky Mountains",
+      "pipeline": "Engineering (College of Engineering - top-65 nationally among regional universities - electrical, mechanical, civil, computer science, materials science, construction management -",
+      "hiddenPathway": "The Micron Technology partnership is the hidden pathway that makes Boise State's engineering and computer science programs consequential in a way that no regional university ranking captures. Micron Technology -",
+      "theRoom": "Boise State enrolls approximately 21,000 undergraduates - a large regional university that has grown dramatically alongside Boise's population explosion.",
+      "lifestyle": "Boise, Idaho has undergone the most dramatic transformation of any American city in the 2020s - a city of 240,000 in the Treasure Valley that grew 16% in a decade, attracted California transplants and tech relocations around Micron and HP, and turned downtown Boise into a genuinely walkable restaurant and brewery district anchored by the blue turf of Albertsons Stadium and the Boise River Greenbelt.",
+      "gradCities": "Boise ID (45%) | Portland OR (8%) | Seattle WA (6%) | Salt Lake City UT (5%) | San Francisco CA (4%)."
+    }
+  },
+  "University of Louisville": {
+    "institutionNarrative": {
+      "name": "University of Louisville",
+      "location": "Louisville, Kentucky",
+      "region": "Southeast",
+      "pipeline": "Medicine and Health Sciences (School of Medicine - top-50 nationally - UofL Health is one of the premier academic medical centers in the mid-South - pre-medicine pipeline with direct clinical access at a Level I trauma center serving the Louisville metropolitan area -",
+      "hiddenPathway": "UofL Health performs more heart transplants than any hospital in the world - and this single clinical fact is the hidden pathway that reframes UofL's medical school from a regional institution into a global cardiovascular medicine leader.",
+      "theRoom": "UofL enrolls approximately 17,000 undergraduates - a mid-sized metropolitan research university with the full professional school infrastructure of a comprehensive university.",
+      "lifestyle": "Louisville, Kentucky is a city of 630,000 on the Ohio River - the largest city in Kentucky, the bourbon capital of the world, and a city that has been nationally recognized in the last decade for its restaurant scene, its bourbon-tourism economy along the Kentucky Bourbon Trail, and the Highlands and NuLu neighborhoods that give students a genuine city social life distinct from a typical college town.",
+      "gradCities": "Louisville KY (50%) | Lexington KY (10%) | Cincinnati OH (8%) | Nashville TN (6%) | Indianapolis IN (5%)."
+    }
+  },
+  "Butler University": {
+    "institutionNarrative": {
+      "name": "Butler University",
+      "location": "Indianapolis, Indiana",
+      "region": "Midwest",
+      "pipeline": "Business (Lacy School of Business - top-50 nationally among private universities - finance, accounting, marketing, entrepreneurship, international business - major Indianapolis employers including Eli Lilly, Salesforce, Anthem, Allison Transmission, and the rapidly growing Indian",
+      "hiddenPathway": "The Eli Lilly relationship is the hidden pathway that makes Butler's pharmacy and pre-medicine programs categorically different from every peer private university in Indiana. Eli Lilly and Company -",
+      "theRoom": "Butler enrolls approximately 4,500 undergraduates - the most intimate of any private university in the database with a top-30 pharmacy school.",
+      "lifestyle": "Indianapolis, Indiana is a city of 900,000 and the most sports-event-dense mid-sized city in America - the Super Bowl, the Big Ten Championship, the NCAA Men's Basketball Tournament, and the Indianapolis 500 all rotate through downtown, and Butler's own Hinkle Fieldhouse, the gym from the movie Hoosiers, sits inside the leafy, walkable Butler-Tarkington neighborhood minutes from the Indianapolis Museum of Art and the Broad Ripple entertainment district.",
+      "gradCities": "Indianapolis IN (55%) | Chicago IL (10%) | Columbus OH (6%) | Cincinnati OH (5%) | New York NY (4%)."
+    }
+  },
+  "University of the South": {
+    "institutionNarrative": {
+      "name": "University of the South",
+      "location": "Sewanee, Tennessee",
+      "region": "Southeast",
+      "pipeline": "Liberal Arts (College of Arts and Sciences - top-40 nationally among liberal arts colleges - English, history, philosophy, political science, economics, natural sciences, classics, religious studies -",
+      "hiddenPathway": "The Sewanee Domain is the hidden pathway that makes Sewanee's environmental science and outdoor experience categorically different from every peer liberal arts college in the database.",
+      "theRoom": "Sewanee enrolls approximately 1,800 undergraduates - among the most intimate of any liberal arts college in the South and similar in size to Bowdoin and Amherst.",
+      "lifestyle": "Sewanee, Tennessee sits on the Cumberland Plateau at 2,000 feet elevation - a mountaintop community of 2,500 people whose entire existence is organized around the University of the South. The 13,000-acre Domain surrounding campus is owned outright by the university, giving students unmatched access to hiking and climbing and the isolation of an Oxford-style residential college three hours from Nashville or Atlanta.",
+      "gradCities": "Nashville TN (20%) | Atlanta GA (15%) | New York NY (12%) | Washington DC (8%) | Charlotte NC (6%)."
+    }
+  },
+  "Mississippi State University": {
+    "institutionNarrative": {
+      "name": "Mississippi State University",
+      "location": "Starkville, Mississippi",
+      "region": "Southeast",
+      "pipeline": "Engineering (Bagley College of Engineering - top-50 nationally - aerospace, civil, electrical, mechanical, chemical, computer science, biomedical, industrial - major Mississippi and regional employers including Raytheon, Northrop Grumman, Toyota, Nissan, the NASA Stennis Space Ce",
+      "hiddenPathway": "The catfish aquaculture connection is the hidden pathway that makes MSU's veterinary and agricultural programs uniquely consequential for one of the most economically significant regional food industries in America.",
+      "theRoom": "MSU enrolls approximately 21,000 undergraduates - a large SEC flagship with the Bulldogs athletic identity that competes in one of the most athletically competitive conferences in college sports.",
+      "lifestyle": "Starkville, Mississippi is a small city of 25,000 in the eastern Mississippi hills - a college town built entirely around Mississippi State with a growing restaurant and arts scene along Main Street, and a football-Saturday culture built around the cowbells at Davis Wade Stadium that defines the town's identity nine months of the year for a student body drawn heavily from the rural South.",
+      "gradCities": "Jackson MS (20%) | Starkville MS (10%) | Memphis TN (15%) | Nashville TN (8%) | Atlanta GA (7%)."
+    }
+  },
+  "University of South Florida": {
+    "institutionNarrative": {
+      "name": "University of South Florida",
+      "location": "Tampa, Florida",
+      "region": "Southeast",
+      "pipeline": "Engineering (College of Engineering - top-50 nationally - biomedical, civil, chemical, computer science, electrical, mechanical, industrial - major Tampa Bay employers including Lockheed Martin, L3Harris, TECO Energy, Raymond James, and the rapidly growing Tampa Bay technology an",
+      "hiddenPathway": "Tampa General Hospital's organ transplant volume is the hidden pathway that makes USF's medical and health sciences programs clinically consequential in ways that peer Florida institutions cannot match. Tampa General Hospital -",
+      "theRoom": "USF enrolls approximately 37,000 undergraduates - a large preeminent research university with the Bulls athletic identity in the American Athletic Conference competing in football, basketball, and a full slate of Olympic sports. USF is one of only a handful of Florida institutions designated a \"preeminent\" research university by the state, a status tied to research expenditure and graduation-rate benchmarks that unlocks additional state funding, and the undergraduate population is drawn heavily from Florida's I-4 corridor with a fast-growing out-of-state and international cohort.",
+      "lifestyle": "Tampa, Florida is one of the great American success stories of the 2020s - a city of 400,000 in a metropolitan area of 3.2 million that has attracted financial-services headquarters relocations from the Northeast, a booming Water Street downtown redevelopment anchored by the Tampa Bay Lightning's arena district, and a Gulf Coast lifestyle with Clearwater and St. Pete beaches thirty minutes away.",
+      "gradCities": "Tampa-St. Petersburg FL (55%) | Orlando FL (10%) | Miami FL (8%) | Atlanta GA (5%) | Washington DC (4%)."
+    }
+  },
+  "Florida Atlantic University": {
+    "institutionNarrative": {
+      "name": "Florida Atlantic University",
+      "location": "Boca Raton, Florida",
+      "region": "Southeast",
+      "pipeline": "Business and Finance (College of Business - top-65 nationally - finance, accounting, marketing, real estate, entrepreneurship, international business - major South Florida employers including the Boca Raton financial services corridor, major Palm Beach County real estate companie",
+      "hiddenPathway": "The IBM Boca Raton campus - where the personal computer was invented in 1981 - is the hidden pathway that contextualizes FAU's technology identity within Silicon Valley-level computing history at a South Florida campus.",
+      "theRoom": "FAU enrolls approximately 25,000 undergraduates - a large regional research university serving the most economically productive coastal corridor in Florida outside Miami.",
+      "lifestyle": "Boca Raton, Florida is one of the most affluent and architecturally distinctive mid-sized cities in America - a planned city of 100,000 in Palm Beach County with Mediterranean Revival architecture mandated citywide since the 1920s, oceanfront wealth along A1A, and a fast-growing finance and tech corridor that gives FAU students internship access most public universities in Florida can't match.",
+      "gradCities": "Boca Raton-West Palm Beach FL (45%) | Fort Lauderdale FL (15%) | Miami FL (12%) | Orlando FL (5%) | New York NY (4%)."
+    }
+  },
+  "Stetson University": {
+    "institutionNarrative": {
+      "name": "Stetson University",
+      "location": "DeLand, Florida",
+      "region": "Southeast",
+      "pipeline": "Law (Stetson University College of Law - top-60 nationally with top-3 nationally for trial advocacy and top-5 nationally for legal writing - the most decorated trial advocacy program in America -",
+      "hiddenPathway": "The Stetson trial advocacy program is the hidden pathway that makes Stetson Law the most specifically powerful litigation credential in Florida - and possibly in America - for the student who wants to be a trial lawyer.",
+      "theRoom": "Stetson enrolls approximately 3,000 undergraduates - the most intimate private university in Central Florida and one of the smallest in the database with a law school.",
+      "lifestyle": "DeLand, Florida is one of the most architecturally distinguished small cities in Florida - a city of 35,000 in Volusia County that was named the most beautiful small city in America by Southern Living for its brick-paved, oak-canopied downtown. DeLand sits twenty minutes from Daytona Beach and forty-five minutes from Orlando, giving Stetson students small-town quiet with quick access to both the coast and a major metro.",
+      "gradCities": "Orlando FL (25%) | Tampa FL (15%) | Jacksonville FL (10%) | DeLand FL (8%) | Miami FL (6%)."
+    }
+  },
+  "Webb Institute": {
+    "institutionNarrative": {
+      "name": "Webb Institute",
+      "location": "Glen Cove, New York",
+      "region": "Northeast",
+      "pipeline": "Naval Architecture and Marine Engineering (the only degree Webb Institute grants - naval architecture and marine engineering - top-1 nationally and globally by definition because Webb is the only institution in America that grants exclusively this degree at the undergraduate leve",
+      "hiddenPathway": "Webb's full-tuition scholarship for every student is the hidden pathway that makes Webb the most financially transformative engineering education in America -",
+      "theRoom": "Webb enrolls exactly 100 students at any given time - the smallest accredited engineering institution in the database and one of the smallest four-year institutions in America.",
+      "lifestyle": "Glen Cove, New York is a small city of 27,000 on the north shore of Long Island - the Gold Coast of Long Island, the setting for The Great Gatsby, a community of Victorian-era estates and waterfront mansions thirty miles from Manhattan. Webb's own campus is a former Gilded Age estate on Long Island Sound, and the tight-knit culture of a 100-student engineering school means campus life and social life are functionally the same thing.",
+      "gradCities": "New York NY (35%) | Washington DC (15%) | Bath ME (10%) | Newport News VA (10%) | International (10%)."
+    }
+  },
+  "Deep Springs College": {
+    "institutionNarrative": {
+      "name": "Deep Springs College",
+      "location": "Deep Springs, California",
+      "region": "California",
+      "pipeline": "Liberal Arts and Great Books (the most radical liberal arts curriculum in America - every Deep Springs student reads primary texts across philosophy, literature, political theory, science, and history in seminars led by visiting faculty who are among the most distinguished schola",
+      "hiddenPathway": "Deep Springs Valley is the hidden pathway that is not a pathway at all - it is a total environment. The Deep Springs College campus is located in Deep Springs Valley, a high desert valley in the White Mountains of eastern California at 5,200 feet ele",
+      "theRoom": "Deep Springs enrolls 26 students total at any given time - 13 in each of two year-groups. The student body has been all-male since the college's founding in 1917 and became co-educational in 2018 following a lawsuit and a vote by the student body and trustees to admit women. Admission is among the most selective in the country by acceptance rate, and every student, regardless of background, works roughly 20 hours a week on the college's cattle ranch and alfalfa farm as a graduation requirement alongside a full academic course load.",
+      "lifestyle": "Deep Springs Valley, California is one of the most remote and geologically spectacular locations of any educational institution in the world.",
+      "gradCities": "Deep Springs Valley CA (during enrollment) | New York NY (25%) | Boston MA (20%) | Chicago IL (10%) | San Francisco CA ("
+    }
+  },
+  "Kettering University": {
+    "institutionNarrative": {
+      "name": "Kettering University",
+      "location": "Flint, Michigan",
+      "region": "Midwest",
+      "pipeline": "Engineering (College of Engineering - top-40 nationally among regional universities - mechanical, electrical, computer, chemical, industrial, materials science, robotics -",
+      "hiddenPathway": "The General Motors relationship is the hidden pathway that makes Kettering engineering the most institutionally connected automotive engineering credential in America. Kettering University -",
+      "theRoom": "Kettering enrolls approximately 2,000 undergraduates - among the smallest engineering-focused institutions in the database and one of the most specifically purposeful.",
+      "lifestyle": "Flint, Michigan is a city of 81,000 with a complex and consequential history - the birthplace of General Motors, the site of the 1936-37 Flint Sit-Down Strike that helped establish the modern American labor movement, and more recently the water crisis that made Flint a national symbol of infrastructure failure. Kettering students live inside that story directly - most spend alternating terms on paid co-op jobs at GM and other manufacturers before returning to a campus rebuilding alongside the city.",
+      "gradCities": "Detroit-Metro MI (35%) | Flint MI (10%) | Chicago IL (8%) | Cincinnati OH (6%) | Dayton OH (5%)."
+    }
+  },
+  "University of San Francisco": {
+    "institutionNarrative": {
+      "name": "University of San Francisco",
+      "location": "San Francisco, California",
+      "region": "California",
+      "pipeline": "Business and Management (School of Management - top-50 nationally among Jesuit universities - finance, accounting, marketing, entrepreneurship, international business, nonprofit management -",
+      "hiddenPathway": "San Francisco nursing wages are the hidden pathway that makes USF's nursing program the most financially consequential nursing credential in the database - and it is a pathway defined entirely by geography.",
+      "theRoom": "USF enrolls approximately 6,500 undergraduates - a mid-sized Jesuit university in the heart of San Francisco. The student body is approximately 40% California residents with significant national and international representation, reflecting the university's position as one of the most diverse private universities in the country by federal diversity index rankings. Jesuit values of service and social justice run through the curriculum, and the small undergraduate class size gives students direct faculty access unusual for a university embedded in a major city.",
+      "lifestyle": "San Francisco, California - USF's campus on Lone Mountain in the Inner Richmond neighborhood sits on one of the highest points in San Francisco with panoramic views of the city, the Golden Gate Bridge, and the Pacific beyond. Students are minutes from Golden Gate Park and the Presidio, and a short Muni ride from downtown's tech and finance offices, giving USF undergraduates direct proximity to internship access at the city's software, biotech, and venture capital firms.",
+      "gradCities": "San Francisco CA (60%) | Silicon Valley CA (15%) | Los Angeles CA (5%) | Seattle WA (3%) | International (6%)."
+    }
+  },
+  "Binghamton University": {
+    "institutionNarrative": {
+      "name": "Binghamton University",
+      "location": "Binghamton, New York",
+      "region": "Northeast",
+      "pipeline": "Business and Finance (School of Management - top-75 nationally and among the most cost-efficient business schools in the Northeast for students seeking Wall Street access at public university tuition ",
+      "hiddenPathway": "The hidden pathway at Binghamton is the School of Management's specific Wall Street and Big 4 accounting recruiting depth relative to its public unive",
+      "theRoom": "Binghamton enrolls approximately 17,000 undergraduates on a campus set in the hills south of the Susquehanna River, 3 miles from downtown Binghamton. As one of the four SUNY university centers, Binghamton draws a highly selective, largely in-state New York applicant pool alongside a substantial New York City and Long Island commuter-adjacent population, and the university's honors college and Division I athletics give it a flagship feel within the SUNY system despite its public tuition.",
+      "lifestyle": "Binghamton, New York is a small city of 47,000 in the Southern Tier near the Pennsylvania border - the birthplace of IBM and the historic home of the carousel, with a revitalized downtown restaurant scene along Court Street. Winters are long and genuinely cold, and much of student social life happens on or immediately around campus, with New York City a three-hour drive for weekend trips.",
+      "gradCities": "New York NY (42%) | Albany NY (10%) | Philadelphia PA (7%) | Boston MA (7%) | Washington DC (6%) | San Francisco-Bay Are"
+    }
+  },
+  "Denison University": {
+    "institutionNarrative": {
+      "name": "Denison University",
+      "location": "Granville, Ohio",
+      "region": "Midwest",
+      "pipeline": "Business Economics and Finance (Denison's economics and financial economics programs have produced a disproportionate concentration of Wall Street analysts, investment bankers, and financial services ",
+      "hiddenPathway": "The hidden pathway at Denison is the alumni mentorship culture that the college's development office and alumni relations program have deliberately cu",
+      "theRoom": "Denison enrolls approximately 2,400 undergraduates on a hillside campus above Granville, Ohio — a New England-style village-green town that regularly ranks among the most charming small towns in the Midwest. Denison's endowment per student is among the largest of any liberal arts college in the country, funding the kind of need-blind financial aid and research support usually associated with wealthier East Coast peers, and the student body skews national and coastal despite the rural Ohio setting.",
+      "lifestyle": "Granville, Ohio is a village of 6,000 twenty-five miles northeast of Columbus - brick sidewalks, a historic Broadway lined with independent shops, and a slower pace that puts Denison firmly in the rural-idyll category of liberal arts colleges. Columbus supplies the nearest real city social life and internship access, a straightforward thirty-minute drive for students who want it.",
+      "gradCities": "New York NY (22%) | Columbus OH (20%) | Chicago IL (10%) | Washington DC (8%) | Cleveland OH (7%) | Los Angeles CA (6%) "
+    }
+  },
+  "Flagler College": {
+    "institutionNarrative": {
+      "name": "Flagler College",
+      "location": "St. Augustine, Florida",
+      "region": "Southeast",
+      "pipeline": "Education (Flagler's education program is among the strongest in Northeast Florida and produces the largest share of certified teachers for the St. Johns County and Duval County school systems — St. J",
+      "hiddenPathway": "The hidden pathway at Flagler is the Ponce de León Hotel campus itself as a professional credential for art history, interior design, and hospitality ",
+      "theRoom": "Flagler enrolls approximately 2,800 undergraduates on a campus that is, without serious competition, the most architecturally distinctive in the database: the former Hotel Ponce de León, a Gilded Age Henry Flagler resort building that is itself a National Historic Landmark, serves as the primary academic building. Tuition remains notably below the private-college median, and the student body is drawn heavily from Florida and the broader Southeast.",
+      "lifestyle": "St. Augustine, Florida is the oldest continuously occupied European-founded city in the United States - a compact historic downtown of cobblestone streets, Spanish colonial architecture, and the Castillo de San Marcos fort, thirty-five minutes south of Jacksonville. The city runs on tourism, giving Flagler students an unusually walkable, postcard-pretty college-town setting on the Atlantic coast.",
+      "gradCities": "St. Augustine-Jacksonville FL (42%) | Orlando FL (10%) | Daytona Beach FL (8%) | Tampa FL (7%) | Atlanta GA (5%) | New Y"
+    }
+  },
+  "Furman University": {
+    "institutionNarrative": {
+      "name": "Furman University",
+      "location": "Greenville, South Carolina",
+      "region": "Southeast",
+      "pipeline": "Business and Advanced Manufacturing (the Greenville-Spartanburg upstate South Carolina corridor is one of the most concentrated advanced manufacturing regions in the Southeast and Furman occupies the ",
+      "hiddenPathway": "The hidden pathway at Furman is the Furman Advantage program combined with the BMW and Michelin employer relationships in the Greenville-Spartanburg c",
+      "theRoom": "Furman enrolls approximately 2,800 undergraduates on what is consistently described as one of the most beautiful college campuses in the country - a 750-acre campus with its own lake, Japanese garden, and golf course. Furman's endowment and small size support the Furman Advantage program, a guaranteed funded internship or research experience for every student, and the applicant pool draws heavily from the Southeast alongside a growing national cohort.",
+      "lifestyle": "Greenville, South Carolina has become one of the most cited small-city revitalization stories in the Southeast - a walkable downtown along the Reedy River, a growing restaurant and arts scene, and the international manufacturing presence of BMW and Michelin that anchors the regional economy. Furman sits just north of downtown, giving students city access without a big-university footprint.",
+      "gradCities": "Greenville-Spartanburg SC (30%) | Charlotte NC (18%) | Atlanta GA (12%) | Washington DC (7%) | New York NY (6%) | Raleig"
+    }
+  },
+  "High Point University": {
+    "institutionNarrative": {
+      "name": "High Point University",
+      "location": "High Point, North Carolina",
+      "region": "Southeast",
+      "pipeline": "Business and Entrepreneurship (the Nido R. Qubein School of Communication and the Earl N. Phillips School of Business are the institutional core of High Point University's career preparation model — H",
+      "hiddenPathway": "The hidden pathway at High Point University is the High Point Market combined with the university's entrepreneurship ecosystem. The High Point Market ",
+      "theRoom": "High Point University enrolls approximately 5,000 undergraduates on a campus that President Qubein has deliberately designed as a hospitality-grade student experience - a resort-style student union and concierge-level services built into the operating budget. The university has quadrupled its enrollment and campus footprint since Qubein's arrival in 2005, and its distinctive service-driven model draws a student body concentrated in business and hospitality programs.",
+      "lifestyle": "High Point, North Carolina is the self-declared furniture capital of the world - a city of 115,000 that transforms twice a year for the High Point Market, the largest furnishings trade show on the planet, drawing tens of thousands of industry visitors and giving HPU's business and design students direct access to the event. The Piedmont Triad region (Greensboro and Winston-Salem nearby) supplies additional internship depth.",
+      "gradCities": "Charlotte NC (22%) | Greensboro-Winston Salem-High Point NC (28%) | Raleigh-Durham NC (14%) | Washington DC (6%) | New Y"
+    }
+  },
+  "Ithaca College": {
+    "institutionNarrative": {
+      "name": "Ithaca College",
+      "location": "Ithaca, New York",
+      "region": "Northeast",
+      "pipeline": "Communications and Media (the Roy H. Park School of Communications is consistently ranked among the top five undergraduate communications schools in America and is the defining institutional credentia",
+      "hiddenPathway": "The hidden pathway at Ithaca College is the Park School's sports broadcasting alumni network combined with the college's partnership with Cornell Univ",
+      "theRoom": "Ithaca College enrolls approximately 5,500 undergraduates on a campus on the south hill above Ithaca, New York — a city of about 32,000 that is also home to Cornell University on the opposite hill. The Roy H. Park School of Communications draws a nationally recruited cohort of students specifically for its broadcasting, film, and journalism programs, giving the college a professional-conservatory feel within an otherwise traditional liberal arts structure.",
+      "lifestyle": "Ithaca, New York sits at the southern tip of Cayuga Lake in the Finger Lakes region - a small city defined by its waterfalls and gorges, a lively Commons pedestrian downtown, and a college-town culture doubled by Cornell's presence across the valley. Winters are long and the city is remote - a genuinely rural setting three-plus hours from New York City.",
+      "gradCities": "New York NY (38%) | Los Angeles CA (14%) | Boston MA (7%) | Washington DC (6%) | Chicago IL (5%) | Ithaca-Binghamton NY "
+    }
+  },
+  "University of Memphis": {
+    "institutionNarrative": {
+      "name": "University of Memphis",
+      "location": "Memphis, Tennessee",
+      "region": "Southeast",
+      "pipeline": "Business and Supply Chain Management (Fogelman College of Business and Economics - top-50 nationally for supply chain management - Memphis is the logistics capital of America and the Fogelman supply c",
+      "hiddenPathway": "The hidden pathway at the University of Memphis is the FedEx corporate relationship combined with the supply chain management program's proximity to t",
+      "theRoom": "The University of Memphis enrolls approximately 21,000 students on a campus in the Midtown neighborhood of Memphis - a historic, walkable district of bungalows and tree-lined streets a few miles east of downtown. The university's supply chain and logistics programs draw directly on Memphis's status as a global logistics hub, and the student body is predominantly Tennessee and Mid-South residents with a substantial commuter population.",
+      "lifestyle": "Memphis, Tennessee is a city of 630,000 on the Mississippi River - the birthplace of rock and roll and the blues, home to Beale Street, Sun Studio, and Stax Records, and the headquarters of FedEx, whose overnight sorting hub at Memphis International Airport makes the city the logistics capital of the country. Midtown and Cooper-Young supply the city's arts and restaurant culture closest to campus.",
+      "gradCities": "Memphis TN (58%) | Nashville TN (10%) | Atlanta GA (8%) | Dallas TX (6%) | Chicago IL (5%) | Washington DC (4%) | Housto"
+    }
+  },
+  "Ohio Wesleyan University": {
+    "institutionNarrative": {
+      "name": "Ohio Wesleyan University",
+      "location": "Delaware, Ohio",
+      "region": "Midwest",
+      "pipeline": "Pre-Medicine and Health Sciences (Ohio Wesleyan's pre-medical program has consistently produced medical school acceptance rates that exceed national averages for liberal arts colleges — the combinatio",
+      "hiddenPathway": "The hidden pathway at Ohio Wesleyan is the Sagan National Colloquium combined with the university's extraordinary study abroad participation rate. The",
+      "theRoom": "Ohio Wesleyan enrolls approximately 1,400 undergraduates on a campus in Delaware, Ohio — a county seat of 40,000 that is itself a quiet, tree-lined Columbus suburb rather than an isolated college town. The small class sizes and the university's historically strong pre-medical placement give OWU a personal, advising-heavy culture, and the student body draws nationally despite the college's modest size and central Ohio location.",
+      "lifestyle": "Delaware, Ohio is a small city twenty-five miles north of Columbus, close enough for regular access to a major metro's internships, sports, and nightlife without living inside it. Downtown Delaware's Sandusky Street has a small but genuine restaurant and shopping strip, and the Columbus outer suburbs blend into Delaware County's more rural edges just beyond campus.",
+      "gradCities": "Columbus OH (35%) | Cleveland OH (10%) | New York NY (10%) | Chicago IL (8%) | Washington DC (7%) | International (8%) |"
+    }
+  },
+  "Quinnipiac University": {
+    "institutionNarrative": {
+      "name": "Quinnipiac University",
+      "location": "Hamden, Connecticut",
+      "region": "New England",
+      "pipeline": "Health Sciences and Pre-Medicine (Quinnipiac's Frank H. Netter MD School of Medicine and the comprehensive health science programs — physician assistant studies, physical therapy, occupational therapy",
+      "hiddenPathway": "The hidden pathway at Quinnipiac is the Polling Institute's specific contribution to journalism and political science students. The Quinnipiac Univers",
+      "theRoom": "Quinnipiac enrolls approximately 7,000 undergraduates on two connected campuses in Hamden — the Mount Carmel campus on a hillside overlooking New Haven, and the York Hill campus a short shuttle ride away, home to the Division I hockey and basketball arena. Quinnipiac's health sciences and physician assistant programs are among the most heavily enrolled, reflecting its close relationship with the Frank H. Netter MD School of Medicine, and the student body draws heavily from the Northeast corridor.",
+      "lifestyle": "Hamden, Connecticut is a suburb of New Haven, home to Yale University fifteen minutes away and an hour and a half from both New York City and Boston by train. Students get suburban campus quiet with quick access to New Haven's restaurant scene and, via Metro-North, weekend trips to Manhattan - a common draw for the Northeast-heavy student body.",
+      "gradCities": "New Haven-Hartford CT (38%) | New York NY (22%) | Boston MA (8%) | Providence RI (6%) | Philadelphia PA (5%) | Washingto"
+    }
+  },
+  "Rollins College": {
+    "institutionNarrative": {
+      "name": "Rollins College",
+      "location": "Winter Park, Florida",
+      "region": "Southeast",
+      "pipeline": "Business and Entrepreneurship (the Crummer Graduate School of Business at Rollins is the highest-ranked MBA program in Florida outside Miami and is housed on the same campus as the undergraduate colle",
+      "hiddenPathway": "The hidden pathway at Rollins is the Crummer Graduate School of Business's physical presence on the undergraduate campus. Most liberal arts colleges a",
+      "theRoom": "Rollins enrolls approximately 1,900 undergraduates on a campus on the shores of Lake Virginia in Winter Park — one of the most affluent and architecturally polished small cities in Florida. The Crummer Graduate School of Business shares the undergraduate campus, an unusual arrangement that gives Rollins business students direct exposure to MBA-level programming and networking, and the student body is drawn heavily from the Northeast and Florida's own affluent suburbs.",
+      "lifestyle": "Winter Park, Florida is an affluent village of 30,000 immediately north of Orlando - Park Avenue's boutiques and sidewalk cafes, the Morse Museum's Tiffany glass collection, and a lakefront setting that feels a world away from the theme parks fifteen minutes south. Orlando's broader economy and airport access give Rollins students a genuine city within reach without campus itself feeling urban.",
+      "gradCities": "Orlando FL (40%) | Miami FL (12%) | Tampa FL (8%) | Atlanta GA (7%) | New York NY (7%) | Washington DC (5%) | Academic a"
+    }
+  },
+  "San Jose State University": {
+    "institutionNarrative": {
+      "name": "San Jose State University",
+      "location": "San Jose, California",
+      "region": "California",
+      "pipeline": "Engineering and Computer Science (the Charles W. Davidson College of Engineering is the most Silicon Valley-integrated engineering program in the California State University system — San Jose State's ",
+      "hiddenPathway": "The hidden pathway at San Jose State is the NASA Ames Research Center relationship combined with the university's aerospace engineering and aviation p",
+      "theRoom": "SJSU enrolls approximately 33,000 students on a campus in downtown San Jose — the urban campus occupies multiple city blocks in the heart of downtown San Jose, the unofficial capital of Silicon Valley. SJSU's location gives its engineering and computer science students direct proximity to major tech employers, and the university has one of the highest rates in the country of graduates hired directly into Silicon Valley tech jobs.",
+      "lifestyle": "San Jose, California is the largest city in Silicon Valley - a metro of two million people that is home to more tech company headquarters than anywhere else in the world, from Google's North San Jose campus to Adobe's downtown towers a few blocks from SJSU itself. Housing costs are among the highest in the country, and most students commute or live off-campus in the surrounding South Bay.",
+      "gradCities": "San Jose-Silicon Valley CA (52%) | San Francisco CA (18%) | Oakland-East Bay CA (8%) | Los Angeles CA (5%) | Seattle WA "
+    }
+  },
+  "University of Idaho": {
+    "institutionNarrative": {
+      "name": "University of Idaho",
+      "location": "Moscow, Idaho",
+      "region": "Rocky Mountains",
+      "pipeline": "Law (University of Idaho College of Law - one of only two law schools in Idaho and the oldest law school in the Pacific Northwest - Idaho's legal profession is almost entirely trained at UIdaho Law or",
+      "hiddenPathway": "The hidden pathway at UIdaho is the Western Undergraduate Exchange program combined with the law school's natural resources and water law specializati",
+      "theRoom": "UIdaho enrolls approximately 11,000 students in Moscow, a college town of 26,000 in the Palouse region of northern Idaho's rolling wheat and lentil farmland. As Idaho's land-grant flagship, UIdaho draws the state's largest concentration of engineering, natural resources, and agricultural science students, and the College of Law's position as one of only two law schools in the state gives it an outsized role training Idaho's legal profession.",
+      "lifestyle": "Moscow, Idaho sits in the Palouse, one of the most distinctive agricultural landscapes in America - rolling golden wheat hills that draw photographers from around the world every harvest season. The town is genuinely small and remote, ninety minutes from Spokane, but shares a close cross-border relationship with Washington State University eight miles away in Pullman, giving students a second college town's worth of social life and cross-enrollment options.",
+      "gradCities": "Boise ID (38%) | Seattle WA (12%) | Portland OR (10%) | Spokane WA (8%) | Twin Falls-Magic Valley ID (7%) | Salt Lake Ci"
+    }
+  },
+  "Union College": {
+    "institutionNarrative": {
+      "name": "Union College",
+      "location": "Schenectady, New York",
+      "region": "Northeast",
+      "pipeline": "Engineering and Liberal Arts Integration (Union is one of the oldest and most distinctive institutions in the country that specifically integrates engineering education with liberal arts formation — f",
+      "hiddenPathway": "The hidden pathway at Union is the early assurance medical program with the Icahn School of Medicine at Mount Sinai, which is one of the most prestigi",
+      "theRoom": "Union enrolls approximately 2,300 undergraduates on a campus that is one of the oldest and most physically coherent in the country, designed by French architect Joseph-Jacques Ramée in 1813 in one of the first examples of comprehensive campus planning in America. Union's engineering programs sit inside a liberal arts college rather than a standalone technical school, a structure the college has maintained since the 1840s, and the student body is drawn heavily from the Northeast.",
+      "lifestyle": "Schenectady, New York is a small city of 65,000 in the Capital Region, twenty minutes from Albany - the historic home of General Electric, whose research legacy still shapes the city's identity even as its manufacturing presence has receded. Union's campus is self-contained and walkable, and students rely on Albany for a larger city's restaurants, nightlife, and the regional airport.",
+      "gradCities": "New York NY (30%) | Albany-Schenectady NY (18%) | Boston MA (10%) | Washington DC (8%) | Hartford-Springfield CT (6%) | "
+    }
+  },
+  "University of Nevada Reno": {
+    "institutionNarrative": {
+      "name": "University of Nevada Reno",
+      "location": "Reno, Nevada",
+      "region": "Rocky Mountains",
+      "pipeline": "Mining and Metallurgical Engineering (Mackay School of Earth Sciences and Engineering - top-10 nationally for mining engineering - one of only a handful of programs in America that specifically trains",
+      "hiddenPathway": "The hidden pathway at UNR is the intersection of the Reno-Tahoe technology corridor and the university's engineering programs. The region that locals ",
+      "theRoom": "UNR enrolls approximately 21,000 students on a campus that is genuinely beautiful by Mountain West public university standards - a hillside campus overlooking downtown Reno with the Sierra Nevada visible on clear days. The Mackay School of Earth Sciences and Engineering, funded originally by mining money, gives UNR one of the strongest mining engineering programs in the country, and the university draws a mix of Nevada residents paying some of the lowest public tuition in the West and a fast-growing out-of-state cohort chasing Reno's tech-corridor growth.",
+      "lifestyle": "Reno, Nevada has rebranded itself over the past decade from a fading casino town into \"The Biggest Little City,\" anchored by Tesla's Gigafactory and a wave of logistics and tech companies filling the industrial parks east of town. Lake Tahoe is a forty-minute drive for skiing and hiking, and downtown Reno's casino core sits alongside a growing Midtown district of breweries and restaurants that has little to do with gambling.",
+      "gradCities": "Reno-Sparks NV (45%) | Las Vegas NV (12%) | San Francisco-Bay Area CA (14%) | Sacramento CA (8%) | Los Angeles CA (6%) |"
+    }
+  },
+  "University of Rhode Island": {
+    "institutionNarrative": {
+      "name": "University of Rhode Island",
+      "location": "Kingston, Rhode Island",
+      "region": "New England",
+      "pipeline": "Ocean Engineering and Marine Sciences (URI is one of the preeminent ocean and marine science research institutions in America — the Graduate School of Oceanography is consistently ranked among the top",
+      "hiddenPathway": "The hidden pathway at URI is the intersection of the CVS Health headquarters proximity and the pharmacy program's direct recruiting pipeline. CVS Heal",
+      "theRoom": "URI enrolls approximately 17,000 undergraduates on a campus in Kingston, a college village in the rural South County region of Rhode Island. The Graduate School of Oceanography and the broader marine and ocean engineering programs give URI a research profile disproportionate to its size, tied to Narragansett Bay's marine science infrastructure just a few miles from campus, and the student body draws heavily from New England and a growing out-of-state population.",
+      "lifestyle": "Kingston, Rhode Island is a quiet, rural village in South County, closer to Rhode Island's beaches than to any city - Narragansett and the URI Bay Campus are a short drive away, and South Kingstown's coastline is among the most popular summer destinations in New England. Providence is forty minutes north for students who want a city, and Newport's beaches and mansions are a similar distance east.",
+      "gradCities": "Providence RI (28%) | Boston MA (25%) | New York NY (15%) | Hartford CT (8%) | Washington DC (6%) | San Diego CA (4%) | "
+    }
+  },
+  "University of Tennessee at Chattanooga": {
+    "institutionNarrative": {
+      "name": "University of Tennessee at Chattanooga",
+      "location": "Chattanooga, Tennessee",
+      "region": "Southeast",
+      "pipeline": "Engineering and Advanced Manufacturing (College of Engineering and Computer Science - the Chattanooga manufacturing corridor is among the most technologically advanced in America - Volkswagen's 3.7-mi",
+      "hiddenPathway": "The hidden pathway at UTC is the Volkswagen co-op program combined with the Gig City technology infrastructure. Volkswagen's Chattanooga facility is t",
+      "theRoom": "UTC enrolls approximately 11,500 students on a campus that occupies the Stringer's Ridge area of Chattanooga — positioned between downtown and the North Shore neighborhood, giving students walkable access to both. UTC's engineering and computer science programs benefit directly from Volkswagen's Chattanooga manufacturing plant and the city's fast-growing \"Gig City\" tech sector, built on some of the fastest municipal internet in the country, and the student body draws primarily from Tennessee and the broader Southeast.",
+      "lifestyle": "Chattanooga, Tennessee is a mid-sized city of 185,000 on the Tennessee River, ringed by Lookout Mountain and Signal Mountain - a former industrial city that has reinvented itself around outdoor recreation (rock climbing, whitewater, and an extensive riverfront greenway) and a revitalized downtown anchored by the Tennessee Aquarium. Volkswagen's plant and a growing startup scene give the city an economic identity beyond tourism.",
+      "gradCities": "Chattanooga TN (48%) | Nashville TN (14%) | Atlanta GA (12%) | Knoxville TN (8%) | Birmingham AL (5%) | Charlotte NC (5%"
+    }
+  },
+  "Washington and Lee University": {
+    "institutionNarrative": {
+      "name": "Washington and Lee University",
+      "location": "Lexington, Virginia",
+      "region": "Mid-Atlantic",
+      "pipeline": "Law (Washington and Lee School of Law - top-25 nationally - one of the most consistently placed law schools for Virginia, DC, and the broader Southeast legal market - the law school and the undergradu",
+      "hiddenPathway": "The hidden pathway at Washington and Lee is the Honor System's specific effect on employer trust and graduate school admission outcomes. The W&L Honor",
+      "theRoom": "Washington and Lee enrolls approximately 1,850 undergraduates on the Colonnade — one of the most architecturally distinguished collections of Greek Revival buildings on any American campus, a National Historic Landmark. W&L's undergraduate Honor System, one of the oldest single-sanction honor codes in the country, shapes daily campus life directly (unproctored exams, unlocked dorm rooms), and the small student body combined with the law school gives pre-law students unusually direct faculty and alumni access.",
+      "lifestyle": "Lexington, Virginia is a small city of 7,000 in the Shenandoah Valley, shared with the Virginia Military Institute next door - a genuinely small, historic Southern college town with Civil War-era architecture and the Blue Ridge Mountains framing the valley on both sides. Roanoke, forty-five minutes south, is the nearest real city.",
+      "gradCities": "Washington DC (28%) | New York NY (16%) | Richmond VA (12%) | Charlotte NC (8%) | Atlanta GA (7%) | Boston MA (5%) | Roa"
+    }
+  },
+  "Wofford College": {
+    "institutionNarrative": {
+      "name": "Wofford College",
+      "location": "Spartanburg, South Carolina",
+      "region": "Southeast",
+      "pipeline": "Finance and Business (Wofford's business economics and finance programs have produced a Wall Street and financial services alumni network that is disproportionate for a college of 1,800 in Spartanburg",
+      "hiddenPathway": "The hidden pathway at Wofford is the college's specific positioning at the intersection of the Greenville-Spartanburg BMW and Michelin industrial corr",
+      "theRoom": "Wofford enrolls approximately 1,800 undergraduates on a campus of remarkable physical coherence in the heart of Spartanburg, South Carolina - a compact, tree-lined campus of historic brick buildings a short walk from downtown. Wofford's endowment per student ranks among the highest of any liberal arts college in the country relative to its size, and the college's Interim term each January sends nearly every student off campus for internships, research, or travel.",
+      "lifestyle": "Spartanburg, South Carolina sits at the center of the Upstate manufacturing corridor between Greenville and Charlotte, anchored by BMW's only U.S. manufacturing plant and Michelin's North American headquarters. Downtown Spartanburg has undergone its own smaller-scale revitalization alongside Greenville's, and Wofford students are a fifteen-minute drive from that larger city's restaurant and arts scene.",
+      "gradCities": "Charlotte NC (22%) | Greenville-Spartanburg SC (18%) | Atlanta GA (12%) | Washington DC (8%) | New York NY (8%) | Columb"
+    }
+  },
+  "College of Wooster": {
+    "institutionNarrative": {
+      "name": "College of Wooster",
+      "location": "Wooster, Ohio",
+      "region": "Midwest",
+      "pipeline": "Independent Study and Research (the College of Wooster's defining institutional characteristic is the Independent Study program — every Wooster student completes a year-long senior IS project under fa",
+      "hiddenPathway": "The hidden pathway at Wooster is the IS program's cumulative effect on graduate and professional school admission outcomes. The Independent Study requ",
+      "theRoom": "Wooster enrolls approximately 1,900 undergraduates on a campus in Wooster, Ohio — the county seat of Wayne County in the rural, heavily Amish-influenced farm country of north-central Ohio. Wooster's defining feature is the year-long Independent Study project required of every senior, a research or creative capstone that gives graduates a genuine thesis-writing credential most peer colleges reserve for honors students only, and the college draws a national, research-minded applicant pool despite its small-town setting.",
+      "lifestyle": "Wooster, Ohio is a small city of 27,000 in Amish country, roughly an hour south of Cleveland and fifty minutes from Akron. The surrounding countryside includes some of the largest Amish and Mennonite communities in the country, giving the region a distinct rural character, and downtown Wooster's small but active restaurant scene sits a short walk from campus.",
+      "gradCities": "Cleveland OH (22%) | Columbus OH (14%) | Pittsburgh PA (8%) | New York NY (10%) | Chicago IL (7%) | Washington DC (8%) |"
+    }
+  },
+  "University of New Mexico": {
+    "institutionNarrative": {
+      "name": "University of New Mexico",
+      "location": "Albuquerque, New Mexico",
+      "region": "Southwest",
+      "pipeline": "Engineering and National Laboratory Science (UNM's School of Engineering has a specific and structurally irreplaceable relationship with Sandia National Laboratories and Kirtland Air Force Base — both",
+      "hiddenPathway": "The hidden pathway at UNM is the Sandia National Laboratories security clearance pipeline combined with the Intel semiconductor workforce access. Sand",
+      "theRoom": "UNM enrolls approximately 22,000 students on a campus in central Albuquerque designed by John Gaw Meem in the Pueblo Revival style, giving the campus a distinctive adobe-and-vigas architectural identity found at few other American research universities. UNM's engineering programs benefit directly from proximity to Sandia National Laboratories and Kirtland Air Force Base, and the university enrolls one of the largest Hispanic and Native American undergraduate populations of any flagship research university in the country.",
+      "lifestyle": "Albuquerque, New Mexico is a high-desert city of 560,000 at 5,300 feet elevation, framed by the Sandia Mountains to the east and the Rio Grande running through downtown. The city blends a deep Native American and Hispanic cultural heritage - Old Town's adobe plaza dates to 1706 - with a growing film and technology industry drawn by Sandia and Kirtland, and the Balloon Fiesta each October is the largest hot air balloon event in the world.",
+      "gradCities": "Albuquerque NM (48%) | Santa Fe NM (10%) | Phoenix AZ (7%) | Denver CO (6%) | Los Angeles CA (5%) | Washington DC (5%) |"
+    }
+  },
+  "New Mexico State University": {
+    "institutionNarrative": {
+      "name": "New Mexico State University",
+      "location": "Las Cruces, New Mexico",
+      "region": "Southwest",
+      "pipeline": "Engineering and Space Technology (NMSU's College of Engineering is anchored by a specific and unusual asset — White Sands Missile Range, the largest military installation in the United States at 3,200",
+      "hiddenPathway": "The hidden pathway at NMSU is the chile pepper research program's intersection with the global specialty food industry. The Fabian Garcia Science Cent",
+      "theRoom": "NMSU enrolls approximately 14,000 students on a campus in Las Cruces — a city of 115,000 in the Mesilla Valley at the edge of the Chihuahuan Desert, forty-five minutes north of the Mexican border. NMSU's College of Engineering benefits directly from White Sands Missile Range, the largest military installation in the United States, and from proximity to Spaceport America, giving aerospace and mechanical engineering students access to testing and launch infrastructure unavailable at almost any other public university.",
+      "lifestyle": "Las Cruces, New Mexico sits in the Mesilla Valley beneath the jagged Organ Mountains, a fifty-minute drive from El Paso, Texas and Ciudad Juárez, Mexico. The region's chile pepper agriculture (Hatch, New Mexico's chile capital, is thirty minutes north) and its border-adjacent bilingual culture give NMSU a genuinely binational character, and the desert climate means year-round outdoor access with mild winters.",
+      "gradCities": "Las Cruces NM (32%) | Albuquerque NM (12%) | El Paso TX (14%) | Santa Fe NM (7%) | Phoenix AZ (6%) | Denver CO (5%) | Ac"
+    }
+  },
+  "Berklee College of Music": {
+    "institutionNarrative": {
+      "name": "Berklee College of Music",
+      "location": "Boston, Massachusetts",
+      "region": "New England",
+      "pipeline": "Music Production and Recording Arts (Berklee is the most influential music production institution in the world — the alumni who have engineered, produced, and mixed the most commercially significant r",
+      "hiddenPathway": "The hidden pathway at Berklee is the global alumni network's specific density in the rooms where music is actually made. Every major recording studio ",
+      "theRoom": "Berklee enrolls approximately 6,000 students on a campus that occupies multiple buildings along Massachusetts Avenue in Boston's Back Bay and Fenway neighborhoods, integrated directly into the city rather than set apart on a traditional quad. Every Berklee student auditions for admission regardless of academic credentials, making it one of the only institutions in the database where a conservatory-style audition, not GPA or test scores, is the primary admission filter, and the international student population is among the largest of any American college by percentage.",
+      "lifestyle": "Boston, Massachusetts gives Berklee students a working professional music scene rather than a campus bubble - the city's clubs, recording studios, and the dozens of other colleges packed into the Fenway and Back Bay area create a constant flow of collaborators, gigs, and industry contacts within walking distance of Berklee's own buildings.",
+      "gradCities": "Boston MA (22%) | Los Angeles CA (32%) | New York NY (20%) | Nashville TN (7%) | London UK (4%) | International music ma"
+    }
+  },
+  "Fashion Institute of Technology": {
+    "institutionNarrative": {
+      "name": "Fashion Institute of Technology",
+      "location": "New York, New York",
+      "region": "Northeast",
+      "pipeline": "Fashion Design and Product Development (FIT is the most institutionally connected fashion education program in America to the actual infrastructure of the global fashion industry — the school sits in ",
+      "hiddenPathway": "The hidden pathway at FIT is the Cosmetics and Fragrance Marketing program's monopoly position in the beauty industry management pipeline. The $600 bi",
+      "theRoom": "FIT enrolls approximately 8,500 students on a campus that occupies a full city block in the Chelsea neighborhood of Manhattan, blocks from the Garment District and the fashion showrooms of Seventh Avenue. As a SUNY school, FIT charges public in-state tuition for a fashion education that sits inside the actual infrastructure of the global fashion industry, and the student body is unusually split between traditional undergraduates and industry professionals returning for specialized credentials.",
+      "lifestyle": "New York, New York places FIT students inside the literal geography of the fashion industry - the Garment District's fabric and trim shops are a short walk from campus, the city's ready-to-wear showrooms and design houses recruit directly from FIT's graduating classes, and Chelsea's gallery scene and the High Line sit immediately adjacent. Manhattan's cost of living is the tradeoff for that proximity.",
+      "gradCities": "New York NY (58%) | Los Angeles CA (10%) | Miami FL (6%) | London UK (4%) | Paris France (3%) | International fashion ca"
+    }
+  },
+  "Pratt Institute": {
+    "institutionNarrative": {
+      "name": "Pratt Institute",
+      "location": "Brooklyn, New York",
+      "region": "Northeast",
+      "pipeline": "Architecture (the Pratt School of Architecture is one of the most respected and critically engaged architecture programs in the United States — the Pratt architecture faculty is drawn from New York Ci",
+      "hiddenPathway": "The hidden pathway at Pratt is the Pratt sculpture garden combined with the Clinton Hill and Bushwick community access for fine arts students. The Pra",
+      "theRoom": "Pratt enrolls approximately 4,700 students on a 25-acre wooded campus in the Clinton Hill neighborhood of Brooklyn — one of the few genuinely green, tree-lined campuses in New York City, a deliberate contrast to the surrounding dense brownstone blocks. Pratt's architecture, fine arts, and design programs draw heavily on New York City's working design and art-world professionals as adjunct faculty, and the student body is admitted primarily on portfolio strength rather than traditional academic metrics.",
+      "lifestyle": "Brooklyn, New York - Pratt's Clinton Hill campus sits between Fort Greene and Bedford-Stuyvesant, two of Brooklyn's most historically significant Black cultural neighborhoods, with the borough's gallery and studio scene a short subway ride away. Manhattan is twenty minutes by train, close enough for internships without the Manhattan cost of living.",
+      "gradCities": "New York NY (52%) | Los Angeles CA (14%) | San Francisco CA (6%) | Chicago IL (5%) | Boston MA (4%) | London UK (4%) | I"
+    }
+  },
+  "Marshall University": {
+    "institutionNarrative": {
+      "name": "Marshall University",
+      "location": "Huntington, West Virginia",
+      "region": "Mid-Atlantic",
+      "pipeline": "Health Sciences and Medicine (the Joan C. Edwards School of Medicine is one of only two allopathic medical schools in West Virginia and the primary physician training institution for the tri-state reg",
+      "hiddenPathway": "The hidden pathway at Marshall is the forensic accounting program's specific pipeline into federal financial crime investigation. The FBI's Financial ",
+      "theRoom": "Marshall enrolls approximately 13,000 students on a campus in downtown Huntington — a city of 48,000 at the confluence of the Ohio and Guyandotte rivers, where West Virginia, Ohio, and Kentucky meet. Marshall's Joan C. Edwards School of Medicine, one of only two allopathic medical schools in the state, gives the university an outsized regional healthcare role, and the campus's history, including the 1970 plane crash that killed much of the football team and coaching staff, remains central to the university's identity.",
+      "lifestyle": "Huntington, West Virginia is a former railroad and manufacturing city that has leaned into a health-sciences and recovery-economy identity in recent years, alongside a walkable downtown of restored early-20th-century buildings. The tri-state location gives Marshall students easy access to Ohio and Kentucky as well as West Virginia, and Pullman Square anchors the city's restaurant and entertainment district a short walk from campus.",
+      "gradCities": "Huntington-Charleston WV (35%) | Columbus OH (12%) | Pittsburgh PA (8%) | Lexington KY (7%) | Cincinnati OH (7%) | Washi"
+    }
+  },
+  "Spelman College": {
+    "institutionNarrative": {
+      "name": "Spelman College",
+      "location": "Atlanta, Georgia",
+      "region": "Southeast",
+      "pipeline": "Medicine and STEM (Spelman is the most productive institution in America for producing Black women who go on to earn PhDs in science and engineering — the NSF data is unambiguous and has been consiste",
+      "hiddenPathway": "The hidden pathway at Spelman is the Atlanta University Center Consortium's collective resources combined with the specific professional network that ",
+      "theRoom": "Spelman enrolls approximately 2,200 women on a campus in the West End neighborhood of Atlanta adjacent to Morehouse College, Clark Atlanta University, and Morris Brown College, together forming the Atlanta University Center, the largest contiguous consortium of historically Black colleges in the country. Spelman is consistently the top-ranked HBCU in the nation and one of the most productive undergraduate institutions anywhere for Black women who go on to earn STEM PhDs, and cross-registration across the AUC schools gives students social and academic life well beyond Spelman's own gates.",
+      "lifestyle": "Atlanta, Georgia's West End is one of the city's most historically significant Black neighborhoods, walking distance from the Atlanta BeltLine and a short MARTA ride from downtown and Midtown. Atlanta's broader economy - Fortune 500 headquarters, a major film and television production industry, and one of the largest concentrations of Black-owned businesses of any major American city - gives Spelman students internship and networking access that few HBCUs anywhere can match.",
+      "gradCities": "Atlanta GA (42%) | New York NY (12%) | Washington DC (10%) | Los Angeles CA (7%) | Charlotte NC (5%) | Chicago IL (4%) |"
+    }
+  },
+  "Morehead State University": {
+    "institutionNarrative": {
+      "name": "Morehead State University",
+      "location": "Morehead, Kentucky",
+      "region": "Southeast",
+      "pipeline": "Space Science and Satellite Technology (the Morehead State University Space Science Center is one of the most distinctive assets of any regional public university in America — the 21-meter dish antenn",
+      "hiddenPathway": "The hidden pathway at Morehead State is the Space Science Center's CubeSat program and its specific positioning in the small satellite industry. The c",
+      "theRoom": "MSU enrolls approximately 10,000 students on a campus in Morehead — a city of 7,500 at the gateway to the Daniel Boone National Forest in eastern Kentucky's Appalachian foothills. Morehead State's Space Science Center, home to a 21-meter radio telescope and an active CubeSat satellite program, is a genuinely unusual research asset for a regional public university of this size, and the student body is drawn heavily from Appalachian Kentucky, including a substantial number of first-generation college students.",
+      "lifestyle": "Morehead, Kentucky is a small Appalachian town built almost entirely around the university, surrounded by the forested hills and lakes of eastern Kentucky - Cave Run Lake and the Daniel Boone National Forest are both minutes away for hiking, boating, and rock climbing. The town is remote (Lexington is an hour west), and campus life is the center of the surrounding community's social and economic life.",
+      "gradCities": "Morehead-Eastern Kentucky (30%) | Lexington KY (20%) | Ashland-Huntington KY/WV (10%) | Louisville KY (8%) | Cincinnati "
+    }
+  },
+  "Franklin and Marshall College": {
+    "institutionNarrative": {
+      "name": "Franklin and Marshall College",
+      "location": "Lancaster, Pennsylvania",
+      "region": "Northeast",
+      "pipeline": "Pre-Medicine and Health Sciences (Franklin and Marshall has one of the most documented and consistently strong pre-medical programs of any liberal arts college in the Northeast — the medical school ac",
+      "hiddenPathway": "The hidden pathway at F&M is the Ware Institute for Civic Life and its specific connection to the Lancaster civic community as a professional and rese",
+      "theRoom": "F&M enrolls approximately 2,400 students on a campus in Lancaster, Pennsylvania — a campus of Georgian and Federal-style buildings a short walk from downtown Lancaster. F&M's pre-medical placement rate is among the strongest of any liberal arts college in the Northeast, supported by a dedicated health professions advising office, and the college's need-blind admission policy and substantial financial aid budget give it an economically diverse student body relative to many private-college peers.",
+      "lifestyle": "Lancaster, Pennsylvania is the heart of Pennsylvania Dutch Country, home to one of the largest Amish and Mennonite populations in the country and a historic downtown built around Central Market, one of the oldest continuously operating farmers markets in the United States. The city has developed a genuine restaurant and arts scene in recent years, and Philadelphia is about ninety minutes east.",
+      "gradCities": "Philadelphia PA (28%) | New York NY (18%) | Washington DC (10%) | Lancaster PA (8%) | Baltimore MD (6%) | Boston MA (6%)"
+    }
+  },
+  "Bryn Mawr College": {
+    "institutionNarrative": {
+      "name": "Bryn Mawr College",
+      "location": "Bryn Mawr, Pennsylvania",
+      "region": "Northeast",
+      "pipeline": "Graduate and Professional School Placement (Bryn Mawr's defining institutional characteristic is its extraordinary graduate and professional school placement rate — the percentage of Bryn Mawr graduat",
+      "hiddenPathway": "The hidden pathway at Bryn Mawr is the Graduate School of Arts and Sciences and its specific effect on undergraduate intellectual life. Bryn Mawr is t",
+      "theRoom": "Bryn Mawr enrolls approximately 1,800 undergraduates on a campus in the Main Line suburb of Bryn Mawr — one of the most affluent and historic suburbs on Philadelphia's Main Line. Bryn Mawr's graduate and professional school placement rate is among the highest of any liberal arts college in the country, and its participation in the Tri-College Consortium with Haverford and Swarthmore, plus cross-registration with the University of Pennsylvania, gives students academic access well beyond a single campus of under 2,000.",
+      "lifestyle": "Bryn Mawr, Pennsylvania is a leafy, affluent Main Line suburb of Philadelphia, reachable from campus by a regional rail line that runs directly into Center City in about twenty-five minutes. The Main Line's historic estates and walkable town centers give students a quiet residential setting with real city access whenever they want it.",
+      "gradCities": "Philadelphia PA (25%) | New York NY (18%) | Washington DC (10%) | Boston MA (8%) | San Francisco CA (7%) | Academic and "
+    }
+  },
+  "California State University San Bernardino": {
+    "institutionNarrative": {
+      "name": "California State University San Bernardino",
+      "location": "San Bernardino, California",
+      "region": "California",
+      "pipeline": "Business and Logistics (CSUSB's Jack H. Brown College of Business and Public Administration serves the Inland Empire's specific economic infrastructure — the San Bernardino and Riverside counties cons",
+      "hiddenPathway": "The hidden pathway at CSUSB is the Inland Empire logistics ecosystem's specific career economics for supply chain and operations management graduates.",
+      "theRoom": "CSUSB enrolls approximately 20,000 students on a campus at the base of the San Bernardino Mountains in San Bernardino — one of the CSU system's most significant access institutions for the Inland Empire, one of the fastest-growing and most logistics-dependent regions in the country. CSUSB's business and logistics programs feed directly into the Inland Empire's massive warehouse and distribution economy, and the university enrolls a predominantly first-generation, Hispanic-majority student body.",
+      "lifestyle": "San Bernardino, California sits at the base of the San Bernardino Mountains, an hour east of downtown Los Angeles in the Inland Empire - one of the largest warehousing and logistics hubs in the country, home to massive distribution centers for major national retailers. The mountains themselves (Big Bear and Lake Arrowhead) are less than an hour away for skiing and hiking, a contrast to the valley's industrial economy below.",
+      "gradCities": "Inland Empire CA (55%) | Los Angeles CA (18%) | San Diego CA (8%) | Phoenix AZ (5%) | Las Vegas NV (4%) | Academic progr"
+    }
+  },
+  "Regent University": {
+    "institutionNarrative": {
+      "name": "Regent University",
+      "location": "Virginia Beach, Virginia",
+      "region": "Mid-Atlantic",
+      "pipeline": "Law and Government (Regent University School of Law is one of the most politically connected law schools in America within the conservative Christian legal and policy community — the American Center f",
+      "hiddenPathway": "The hidden pathway at Regent is the Federalist Society pipeline's specific function within the conservative legal movement. The Federalist Society — t",
+      "theRoom": "Regent enrolls approximately 11,000 students — predominantly online and graduate — on a campus in Virginia Beach adjacent to the Christian Broadcasting Network's headquarters, the university's founding institution. The undergraduate, on-campus population is a small fraction of Regent's total enrollment, and the university's law school and government programs are closely tied to the conservative Christian legal and policy movement, giving graduates a specific and well-networked pipeline into that world.",
+      "lifestyle": "Virginia Beach, Virginia is the largest city in Virginia and a major Atlantic Coast resort destination, with a three-mile oceanfront boardwalk that draws millions of tourists each summer. The broader Hampton Roads region is home to one of the largest concentrations of U.S. military installations in the country, and Regent's undergraduate campus sits in a quiet, suburban section of the city away from the tourist strip.",
+      "gradCities": "Virginia Beach-Norfolk VA (45%) | Washington DC (14%) | Richmond VA (8%) | Charlotte NC (5%) | Raleigh NC (5%) | Academi"
+    }
+  },
+  "Appalachian State University": {
+    "institutionNarrative": {
+      "name": "Appalachian State University",
+      "location": "Boone, North Carolina",
+      "region": "Southeast",
+      "pipeline": "Business and Supply Chain (the Walker College of Business is AACSB-accredited and produces graduates who enter the Charlotte financial services corridor, the Research Triangle technology sector, and t",
+      "hiddenPathway": "The hidden pathway at Appalachian State is the renewable energy and sustainability sector's specific concentration in North Carolina combined with App",
+      "theRoom": "App State enrolls approximately 21,000 students on a campus in Boone — a mountain city of 20,000 at 3,300 feet elevation in the Blue Ridge Mountains of western North Carolina, one of the highest-elevation college towns east of the Mississippi. App State's renewable energy and sustainable technology programs draw on the university's own solar and wind research facilities, and the outdoor-recreation culture shapes campus life as much as academics do.",
+      "lifestyle": "Boone, North Carolina sits in the High Country of the Blue Ridge Mountains, a mountain town of 20,000 built around App State with a walkable downtown of outdoor gear shops, breweries, and live music venues. Winters bring genuine skiing and snowboarding minutes from campus, summers bring cool mountain temperatures relative to the rest of the state, and Charlotte and the Research Triangle are both about two hours away for internships.",
+      "gradCities": "Asheville NC (16%) | Charlotte NC (24%) | Raleigh-Durham NC (14%) | Boone NC (8%) | Greensboro NC (6%) | Atlanta GA (5%)"
+    }
+  },
+  "California Lutheran University": {
+    "institutionNarrative": {
+      "name": "California Lutheran University",
+      "location": "Thousand Oaks, California",
+      "region": "California",
+      "pipeline": "Business and Entrepreneurship (the School of Management at Cal Lutheran is the most distinctive business program in the Conejo Valley corridor — the university's specific positioning in Thousand Oaks,",
+      "hiddenPathway": "The hidden pathway at Cal Lutheran is the Center for Economic Research and Forecasting and its specific function in the regional California economic c",
+      "theRoom": "Cal Lutheran enrolls approximately 4,000 students on a campus in Thousand Oaks — a planned city of 130,000 in the Conejo Valley, roughly forty minutes from both downtown Los Angeles and the Malibu coastline. Cal Lutheran's business and psychology programs are its largest, and the university's affiliation with the Evangelical Lutheran Church shapes campus culture without imposing a strict religious requirement on non-Lutheran students, who make up the large majority of the student body.",
+      "lifestyle": "Thousand Oaks, California is one of the most consistently ranked safest and most affluent cities of its size in the country, a planned suburban community in the Conejo Valley surrounded by the Santa Monica Mountains' open space preserves. The Amgen biotech campus and a growing media and entertainment production presence give Cal Lutheran students a distinctly white-collar Ventura County internship market minutes from campus.",
+      "gradCities": "Los Angeles CA (38%) | Ventura County CA (20%) | San Fernando Valley CA (10%) | San Diego CA (6%) | San Francisco CA (5%"
+    }
+  },
+  "University of Massachusetts Amherst": {
+    "institutionNarrative": {
+      "name": "University of Massachusetts Amherst",
+      "location": "Amherst, Massachusetts",
+      "region": "New England",
+      "pipeline": "The flagship of the UMass system and the largest public research university in New England, with roughly 24,000 undergraduates. For the fall 2024 entering class, UMass Amherst received 50,207 applications and admitted 59.7%, with 71.6% of undergraduates from in-state and 28.4% from out of state (umass.edu admissions statistics). UMass Amherst's own Career Development office reports 500+ unique employers hiring recent graduating classes, with Massachusetts General Hospital, Dana-Farber Cancer Institute, Boston Children's Hospital, UMass Chan Medical School, and the University of Massachusetts itself among the most consistent top employers across multiple recent graduating classes (umass.edu Undergraduate First Destination Reports).",
+      "hiddenPathway": "The healthcare and biomedical research concentration in UMass Amherst's own top-employer lists — Mass General, Dana-Farber, Boston Children's, UMass Chan Medical School, and (in the Class of 2021 report) Moderna and the Broad Institute — reflects a real, direct pipeline into the Boston biotech and hospital corridor that a flagship public university two hours west of Boston isn't automatically assumed to have.",
+      "theRoom": "A large public flagship (roughly 24,000 undergraduates) set in the Pioneer Valley college town of Amherst, within the Five College Consortium alongside Amherst College, Smith, Mount Holyoke, and Hampshire College — giving students cross-registration access to four additional campuses' courses and social scenes without transferring.",
+      "lifestyle": "Classic large-public-flagship energy — Division I athletics, a lively Amherst downtown, and a Five College cross-registration culture that lets students supplement a big-university experience with small-college classroom access when they want it.",
+      "gradCities": "Boston MA | Worcester MA | Springfield MA | New York NY | Washington DC."
+    }
   }
-
 };
 
-if (typeof module !== 'undefined') { module.exports = { UNIVERSITY_DB_V5 }; }
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { UNIVERSITY_DB_V5 };
+}
