@@ -1030,6 +1030,177 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     });
   })();
 </script>
+<!-- ── STRIPE-PRICING-002 — embedded Payment Element checkout for the new
+     two-charge family tiers (family_beta / family_real). The backend
+     (handleCreateFamilySubscription) only supports this embedded flow —
+     it returns a SetupIntent client_secret to confirm client-side, not a
+     Checkout Session URL, so this replaces the old Stripe Checkout
+     redirect for family signups. See showFamilyEmbeddedCheckout below. -->
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  // TEST/LIVE publishable key toggle — mirrors the same _TEST/_LIVE/_ACTIVE
+  // pattern already used for Price IDs in the Worker (STRIPE_PRICE_*_ACTIVE).
+  // ACTIVE is TEST now to match the Worker's current TEST-mode Price
+  // pointers for family_beta/assessment_beta (Day 1–8 sandbox testing).
+  // Flip to LIVE at the Day 9–10 flip — nothing else needs to change.
+  // TODO(Matt): fill in both real publishable keys from
+  // https://dashboard.stripe.com/acct_1R5ockGGKZNoACrK/apikeys — these are
+  // NOT secret (publishable keys are safe to ship client-side) but this
+  // session has no way to read them; only you can copy them from the
+  // Dashboard.
+  var STRIPE_PUBLISHABLE_KEY_TEST   = 'REPLACE_ME_pk_test_...';
+  var STRIPE_PUBLISHABLE_KEY_LIVE   = 'REPLACE_ME_pk_live_...';
+  var STRIPE_PUBLISHABLE_KEY_ACTIVE = STRIPE_PUBLISHABLE_KEY_TEST;
+
+  var __stripeClient = null;
+  function getStripeClient() {
+    if (!__stripeClient) {
+      if (typeof Stripe === 'undefined') {
+        console.error('[VECTOR Lifescape] Stripe.js did not load.');
+        return null;
+      }
+      __stripeClient = Stripe(STRIPE_PUBLISHABLE_KEY_ACTIVE);
+    }
+    return __stripeClient;
+  }
+
+  /* ── showFamilyEmbeddedCheckout ───────────────────────────────────────
+     STRIPE-PRICING-002 — the new two-charge embedded checkout. Flow:
+       1. POST /create-family-subscription — creates the Subscription
+          (trial_end delayed to the next billing cycle) and returns a
+          SetupIntent client_secret (confirmation_mode: 'setup' for both
+          new family tiers — trial_end is always set for them).
+       2. Mount Stripe's Payment Element, collect card details.
+       3. stripe.confirmSetup — saves the card, charges nothing yet.
+       4. POST /confirm-family-assessment-charge — charges the one-time
+          Assessment fee now that a payment method exists on the customer
+          (Option C, client-driven half; the setup_intent.succeeded
+          webhook is the safety net if this call never fires — e.g. the
+          tab closes right here. Both share one atomic Supabase claim, so
+          calling this is always safe even if the webhook already fired).
+     planKey: 'family_beta' | 'family_real'.
+     onDone: optional callback, invoked with no args on full success.
+     ─────────────────────────────────────────────────────────────────── */
+  async function showFamilyEmbeddedCheckout(planKey, onDone) {
+    var stripe = getStripeClient();
+    if (!stripe) {
+      alert('Payment could not be initialized. Please refresh and try again.');
+      return;
+    }
+    if (!window.__clerkReady || !window.Clerk || !window.Clerk.session) {
+      console.error('[VECTOR Lifescape] showFamilyEmbeddedCheckout called with no Clerk session.');
+      return;
+    }
+
+    var overlay = document.createElement('div');
+    overlay.id  = 'familyEmbeddedCheckout';
+    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(253,250,245,0.97);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box;overflow:auto;';
+    overlay.innerHTML = `
+      <div style="max-width:460px;width:100%;font-family:Georgia,serif;text-align:center;">
+        <div style="font-family:var(--sans);font-size:var(--type-meta);letter-spacing:4px;text-transform:uppercase;color:#8B7355;margin-bottom:1.5rem;">Your Lifescape</div>
+        <div id="familyCheckoutHeadline" style="font-size:18px;font-weight:400;letter-spacing:1px;color:#0a0a0a;margin-bottom:1.5rem;">Setting up your subscription…</div>
+        <div id="familyCheckoutPaymentElement" style="text-align:left;margin-bottom:1.25rem;"></div>
+        <div id="familyCheckoutError" style="display:none;color:#c0392b;font-family:var(--sans);font-size:13px;margin-bottom:1rem;text-align:left;"></div>
+        <button id="familyCheckoutSubmit" disabled style="width:100%;padding:15px 36px;background:#0a0a0a;color:#fafaf8;border:none;font-family:var(--sans);font-size:var(--type-meta);letter-spacing:3px;text-transform:uppercase;cursor:pointer;opacity:.5;">Subscribe</button>
+        <button onclick="dismissFamilyEmbeddedCheckout()" style="margin-top:1.25rem;background:none;border:none;font-family:var(--sans);font-size:14px;letter-spacing:1px;color:#6a6a6a;cursor:pointer;text-decoration:underline;">Cancel</button>
+      </div>`;
+    document.body.appendChild(overlay);
+
+    try {
+      var token = await window.Clerk.session.getToken();
+      var subRes = await fetch('https://api.abettercollegeconsultant.com/create-family-subscription', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+        body:    JSON.stringify({ plan_key: planKey }),
+      });
+      var subData = await subRes.json();
+      if (!subRes.ok || !subData.client_secret) {
+        console.error('[VECTOR Lifescape] create-family-subscription failed:', subData);
+        showFamilyCheckoutError((subData && subData.error) || 'Could not start checkout. Please try again.');
+        return;
+      }
+
+      var elements = stripe.elements({ clientSecret: subData.client_secret, appearance: {
+        theme: 'stripe',
+        variables: { colorPrimary: '#0a0a0a', fontFamily: 'DM Sans, system-ui, sans-serif', borderRadius: '0px' },
+      }});
+      var paymentElement = elements.create('payment');
+      paymentElement.mount('#familyCheckoutPaymentElement');
+
+      var headline = document.getElementById('familyCheckoutHeadline');
+      if (headline) headline.textContent = 'Enter your card to get started.';
+      var submitBtn = document.getElementById('familyCheckoutSubmit');
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
+      submitBtn.onclick = function() {
+        confirmFamilyEmbeddedCheckout(stripe, elements, subData.confirmation_mode, onDone);
+      };
+    } catch (err) {
+      console.error('[VECTOR Lifescape] showFamilyEmbeddedCheckout setup error:', err);
+      showFamilyCheckoutError('Something went wrong. Please try again.');
+    }
+  }
+
+  async function confirmFamilyEmbeddedCheckout(stripe, elements, confirmationMode, onDone) {
+    var submitBtn = document.getElementById('familyCheckoutSubmit');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Processing…'; submitBtn.style.opacity = '.7'; }
+    showFamilyCheckoutError('');
+
+    try {
+      // confirmationMode is 'setup' for every family_beta/family_real
+      // signup (trial_end is always set for both — see Workstream B). The
+      // confirmPayment fallback exists only as defensive coverage for an
+      // unexpected 'payment' mode, matching the same fallback the backend
+      // itself carries.
+      var result = (confirmationMode === 'payment')
+        ? await stripe.confirmPayment({ elements: elements, redirect: 'if_required' })
+        : await stripe.confirmSetup({ elements: elements, redirect: 'if_required' });
+
+      if (result.error) {
+        showFamilyCheckoutError(result.error.message || 'Your card could not be confirmed. Please try again.');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Subscribe'; submitBtn.style.opacity = '1'; }
+        return;
+      }
+
+      // ── Option C, client-driven half. The setup_intent.succeeded webhook
+      // is the safety net if this call never completes (tab closed,
+      // network drop right here) — both share one atomic Supabase claim,
+      // so this is always safe to call even if the webhook already fired. ──
+      var token = await window.Clerk.session.getToken();
+      var chargeRes = await fetch('https://api.abettercollegeconsultant.com/confirm-family-assessment-charge', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+      });
+      var chargeData = await chargeRes.json();
+      if (!chargeRes.ok && !(chargeData && chargeData.already_charged)) {
+        // Setup succeeded, so the family IS subscribed — the Assessment
+        // charge failing here is a billing follow-up, not a signup
+        // failure. The webhook safety net will retry it; don't block the
+        // family on it.
+        console.error('[VECTOR Lifescape] confirm-family-assessment-charge failed (webhook safety net will retry):', chargeData);
+      }
+
+      dismissFamilyEmbeddedCheckout();
+      if (typeof onDone === 'function') onDone();
+    } catch (err) {
+      console.error('[VECTOR Lifescape] confirmFamilyEmbeddedCheckout error:', err);
+      showFamilyCheckoutError('Something went wrong confirming your payment. Please try again.');
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Subscribe'; submitBtn.style.opacity = '1'; }
+    }
+  }
+
+  function showFamilyCheckoutError(msg) {
+    var el = document.getElementById('familyCheckoutError');
+    if (!el) return;
+    el.textContent = msg || '';
+    el.style.display = msg ? 'block' : 'none';
+  }
+
+  function dismissFamilyEmbeddedCheckout() {
+    var el = document.getElementById('familyEmbeddedCheckout');
+    if (el) el.parentNode.removeChild(el);
+  }
+</script>
 </head>
 
 <body>
@@ -2585,27 +2756,17 @@ function showSubscribeRequiredScreen(message) {
   document.body.appendChild(overlay);
 }
 
-async function startFamilyCheckoutFromGate() {
-  var btn = document.getElementById('subscribeNowBtn');
-  if (btn) { btn.disabled = true; btn.textContent = 'Redirecting…'; }
-  try {
-    var token = (window.Clerk && window.Clerk.session) ? await window.Clerk.session.getToken() : null;
-    var res = await fetch('https://api.abettercollegeconsultant.com/create-checkout', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
-      body:    JSON.stringify({ plan_key: 'family_monthly', account_type: 'family' }),
-    });
-    var data = await res.json();
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      console.error('[VECTOR Lifescape] create-checkout did not return a url:', data);
-      if (btn) { btn.disabled = false; btn.textContent = 'Subscribe to Continue'; }
-    }
-  } catch (err) {
-    console.error('[VECTOR Lifescape] startFamilyCheckoutFromGate error:', err);
-    if (btn) { btn.disabled = false; btn.textContent = 'Subscribe to Continue'; }
-  }
+function startFamilyCheckoutFromGate() {
+  // ── STRIPE-PRICING-002 — replaces the old create-checkout redirect. The
+  // gate overlay (subscribeRequiredGate) stays visible underneath the new
+  // checkout overlay (both are position:fixed, z-index:9999 — the later
+  // one in DOM order wins), so cancelling or failing the embedded checkout
+  // naturally leaves the family still blocked, exactly as before. ──
+  showFamilyEmbeddedCheckout('family_beta', function() {
+    var gate = document.getElementById('subscribeRequiredGate');
+    if (gate) gate.parentNode.removeChild(gate);
+    goTo(1);
+  });
 }
 
 // ── GENOME NARRATIVE (Domain 1 — Narrative & Ideas) ──
@@ -4731,15 +4892,7 @@ function captureToAirtable(profile, callAData, callDData, adjacentPicks, profile
     var payload = {
       session_id:       sessionId,
       session_hash:     sessionId,
-      // BUGFIX (2026-08-14): only checked the legacy Supabase session, never
-      // Clerk (the current auth system) — same root cause confirmed in
-      // saveToSupabase() above. Real production Airtable data showed the
-      // same near-zero email capture this caused. Clerk checked first now,
-      // legacy session as fallback, matching saveToSupabase()'s resolution.
-      email:            ((window.Clerk && window.Clerk.user && window.Clerk.user.primaryEmailAddress
-                            && window.Clerk.user.primaryEmailAddress.emailAddress)
-                          || (window.sbSession && window.sbSession.user && window.sbSession.user.email)
-                          || ''),
+      email:            (window.sbSession && window.sbSession.user && window.sbSession.user.email) || '',
       student_name:     LS_STATE.name                                                              || '',
       grade:            LS_STATE.grade                                                             || null,
       zip_code:         LS_STATE.zip                                                               || '',
@@ -6326,18 +6479,11 @@ async function onFamilySignedIn() {
       }
     }
 
-    var checkoutRes  = await fetch('https://api.abettercollegeconsultant.com/create-checkout', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
-      body:    JSON.stringify({ plan_key: 'family_monthly', account_type: 'family' }),
-    });
-    var checkoutData = await checkoutRes.json();
-
-    if (checkoutData.url) {
-      window.location.href = checkoutData.url;
-    } else {
-      console.error('[VECTOR Lifescape] create-checkout did not return a url:', checkoutData);
-    }
+    // ── STRIPE-PRICING-002 — replaces the old create-checkout redirect.
+    // The report is already visible behind this (see file header above),
+    // so this is purely a monetization step after a free look, not a
+    // blocking gate — same framing as before, new mechanism. ──
+    showFamilyEmbeddedCheckout('family_beta');
   } catch (err) {
     console.error('[VECTOR Lifescape] onFamilySignedIn error:', err);
   }
@@ -6393,40 +6539,7 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
   var callA   = stateSnapshot.callAData || {};
   var hasSupabaseSession = !!(window.sbSession && window.sbSession.user);
 
-  // ── FAMILY-PORTAL-001 Addendum A4.1 — resolve the real sign-in email ────
-  // BUGFIX (2026-08-14): this function never sent email at all — confirmed
-  // by direct inspection, not the broken-but-present check the spec
-  // describes elsewhere. captureToAirtable() (a separate save path) reads
-  // window.sbSession.user.email; this function read neither identity
-  // system's email. Clerk is the current auth system, checked first; the
-  // legacy Supabase Auth session (window.sbSession, pre-Clerk-migration
-  // users only) is the fallback. Confirmed via direct Supabase query this
-  // session: 0% of families rows have ever gotten an email through this
-  // path, including submissions from today — this was a live gap, not
-  // stale historical data.
-  var resolvedEmail =
-    (window.Clerk && window.Clerk.user && window.Clerk.user.primaryEmailAddress
-      && window.Clerk.user.primaryEmailAddress.emailAddress) ||
-    (hasSupabaseSession && window.sbSession.user.email) ||
-    null;
-
-  // ── family_last_name — NEW (2026-08-14), not a port ──────────────────────
-  // No prior version of this function ever sent this field — confirmed by
-  // direct search across every available copy of this file. Per
-  // FAMILY-PORTAL-001-v2 Section 2c, intake is deliberately first-name-only
-  // by product design ("This is just for your Lifescape. Nothing is
-  // permanent."), so family_last_name has no student-facing source and was
-  // never meant to have one — Clerk is the only real source. window.Clerk.
-  // user.lastName is Clerk's standard client-side property, parallel to
-  // primaryEmailAddress above and to firstName. No legacy-session fallback:
-  // the pre-Clerk Supabase Auth session never collected a name at all, only
-  // email, so there is nothing to fall back to for pre-migration users.
-  var resolvedLastName =
-    (window.Clerk && window.Clerk.user && window.Clerk.user.lastName) || null;
-
   var payload = {
-    email:             resolvedEmail                     || null,
-    family_last_name:  resolvedLastName                  || null,
     student_name:      LS_STATE.name                     || null,
     zip:               LS_STATE.zip                      || null,
     gpa:               LS_STATE.gpa                      || null,
@@ -7157,16 +7270,14 @@ async function submitLifescape() {
             // (SCHOOL-DATA-INTEGRITY-001 / SCORECARD-PATCH-001): Extremely Selective (<10%),
             // Highly Selective (10-25%), Selective (25-50%), Moderately Selective (50-75%), Accessible (75%+)
             //
-            // SCHOOL-MATCH-INTEGRITY-001, Issue 2 fix (2026-08-12, value
-            // corrected 2026-08-14): the "Extremely Selective" floor was
-            // 3.7 — a real, deterministic gate (not the problem), just
-            // calibrated too loosely, letting a 3.7 GPA clear sub-10%-admit
-            // schools like MIT. The 2026-08-12 pass raised it to 3.9; the
-            // actual Rev.1 sign-off recorded 4.0 as the stricter of the two
-            // options considered, so this corrects the floor to match the
-            // signed decision. The 3.3 and 2.7 breakpoints are explicitly
-            // out of scope for this pass — only the top band was in question.
-            var _maxAllowed = _gpaNorm >= 4.0 ? ['Extremely Selective','Highly Selective','Selective','Moderately Selective','Accessible']
+            // SCHOOL-MATCH-INTEGRITY-001, Issue 2 fix (2026-08-12): the
+            // "Extremely Selective" floor was 3.7 — a real, deterministic
+            // gate (not the problem), just calibrated too loosely, letting a
+            // 3.7 GPA clear sub-10%-admit schools like MIT. Per CTO/CIO
+            // sign-off, raised to 3.9 unweighted. The 3.3 and 2.7 breakpoints
+            // are explicitly out of scope for this pass — only the top band
+            // was in question.
+            var _maxAllowed = _gpaNorm >= 3.9 ? ['Extremely Selective','Highly Selective','Selective','Moderately Selective','Accessible']
                              : _gpaNorm >= 3.3 ? ['Highly Selective','Selective','Moderately Selective','Accessible']
                              : _gpaNorm >= 2.7 ? ['Selective','Moderately Selective','Accessible']
                              : ['Moderately Selective','Accessible'];
