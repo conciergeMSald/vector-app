@@ -6522,6 +6522,29 @@ function dismissBetaAccessActivatedMessage() {
   if (el) el.parentNode.removeChild(el);
 }
 
+/* ── resolveFamilyEmail ───────────────────────────────────────────────────
+   Fail-open email resolution for saveToSupabase(). Clerk's own primary
+   email is preferred — Worker-side email-fallback matching in
+   /family-report and /family-alumni-network both already key off it —
+   with the legacy Supabase Auth session email (window.sbSession) as a
+   fallback for the pre-Clerk-migration path, same precedence order used
+   for supabase_user_id just below in the payload.
+
+   Returns null rather than throwing when Clerk hasn't loaded yet or the
+   user has no session — this must never block an anonymous family's
+   report from saving, matching this file's existing fail-open convention.
+   ───────────────────────────────────────────────────────────────────── */
+function resolveFamilyEmail() {
+  try {
+    if (window.__clerkReady && window.Clerk && window.Clerk.user && window.Clerk.user.primaryEmailAddress) {
+      return window.Clerk.user.primaryEmailAddress.emailAddress || null;
+    }
+  } catch (err) {
+    console.warn('[VECTOR Lifescape] resolveFamilyEmail Clerk lookup failed (non-blocking):', err);
+  }
+  return (window.sbSession && window.sbSession.user && window.sbSession.user.email) || null;
+}
+
 /* ── saveToSupabase ──────────────────────────────────────────────────────────
    Writes the family record to Supabase via /save-family. Fire-and-forget —
    never blocks report render.
@@ -6540,6 +6563,7 @@ function saveToSupabase(stateSnapshot, consentGiven, consentTimestamp) {
   var hasSupabaseSession = !!(window.sbSession && window.sbSession.user);
 
   var payload = {
+    email:             resolveFamilyEmail()              || null,
     student_name:      LS_STATE.name                     || null,
     zip:               LS_STATE.zip                      || null,
     gpa:               LS_STATE.gpa                      || null,
