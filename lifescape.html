@@ -985,6 +985,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
           .then(function(d) { if (d && d.id) window.__familyAccountId = d.id; })
           .catch(function(err) { console.warn('[VECTOR Lifescape] family-me prefetch failed:', err); });
       }
+
+      // SECURITY-001 Section 4.3 — Counselor view, server-gated. Only does
+      // anything when a family_id query param is present (a link opened
+      // from portal.html); a no-op for every ordinary family session.
+      loadCounselorReportIfConsultant();
     }).catch(function(err) {
       console.error('[VECTOR Lifescape] Clerk load error:', err);
     });
@@ -2210,10 +2215,12 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <button class="rtab active" id="rtab-quick" onclick="showReportTab('quick')">A first look</button>
     <button class="rtab" id="rtab-full" onclick="showReportTab('full')">In full</button>
     <button class="rtab" id="rtab-schools" onclick="showReportTab('schools')">Where you may fit</button>
-  <!-- SECURITY-001 interim mitigation (deployed 2026-08-20): Counselor view
-       tab button removed from the render path pending the durable,
-       server-verified GET /counselor-report gate. Do not restore this
-       button until that endpoint ships — see SECURITY-001 Section 4. -->
+  <!-- SECURITY-001 Section 4.3 (shipped, 2026-08-20): the Counselor view
+       tab button is intentionally NOT static markup — loadCounselorReportIfConsultant()
+       inserts it at runtime, only after a real, authenticated GET /counselor-report
+       200 confirms the signed-in user is a paired consultant for this family.
+       Do not add a static button here — that would recreate the exact
+       unauthenticated-exposure bug this spec exists to close. -->
   </div>
 
   <!-- ── QUICK READ ────────────────────────────────── -->
@@ -6797,12 +6804,15 @@ async function submitLifescape() {
 
     // Render Full Report + Counselor View progressively
     renderFullReport(profile, callAData, callBData, callCData, essayParsed);
-    // SECURITY-001 interim mitigation (deployed 2026-08-20): renderCounselorView()
-    // call suspended — this function populated rpanel-counselor client-side with
-    // full diagnostic data (GPA, ZIP, RIASEC scores, combos fired, synthesis brief)
-    // with no access control. Restore only once GET /counselor-report replaces
-    // this client-side path entirely (SECURITY-001 Section 4.3) — never restore
-    // this bare call on its own.
+    // SECURITY-001 Section 4.3 (shipped, 2026-08-20): renderCounselorView()
+    // is retired permanently, not just suspended — it populated rpanel-counselor
+    // client-side with full diagnostic data (GPA, ZIP, RIASEC scores, combos
+    // fired, synthesis brief) with no access control, which was the original
+    // bug. The Counselor view now only ever renders via
+    // renderCounselorReportFromServer(), fed by a server-verified
+    // GET /counselor-report response — see loadCounselorReportIfConsultant()
+    // below. Do not uncomment the line below; it is left only as a record of
+    // what used to run here.
     // renderCounselorView(profile, callAData, callBData, callCData, essayParsed, callDData);
 
     // ── CALL D — School recommendations ──────────────
@@ -7466,6 +7476,16 @@ async function submitLifescape() {
       }
     })();
 
+    // ── SECURITY-001 Section 4.1 — Counselor report, server-persisted ────
+    // Fires here, not where renderCounselorView() used to run above:
+    // callDData isn't populated until this point (CALL D runs and
+    // completes after that old call site) — same reason captureToAirtable
+    // just above guards it with typeof callDData !== 'undefined'. Only
+    // writes to counselor_synthesis_briefs, never touches the family's own
+    // report_versions/family record — see the Worker patch's own header
+    // note on why that separation matters.
+    saveCounselorReportToServer(profile, typeof callDData !== 'undefined' ? callDData : []);
+
   } catch(err) {
     console.error('Lifescape error:', err);
     stopLoadingMessages();
@@ -7480,12 +7500,14 @@ async function submitLifescape() {
 
 // ── REPORT TABS ────────────────────────────────────
 function showReportTab(tab) {
-  // SECURITY-001 interim mitigation (deployed 2026-08-20): block the
-  // counselor tab even if triggered programmatically (console, stray
-  // reference) since its button no longer exists in markup and its panel
-  // is never populated. Remove this guard only alongside restoring the
-  // button above, when GET /counselor-report ships.
-  if (tab === 'counselor') return;
+  // SECURITY-001 Section 4.3 (shipped): the counselor tab only exists once
+  // loadCounselorReportIfConsultant() has confirmed, via a real
+  // GET /counselor-report round-trip, that the signed-in user is a
+  // consultant actually paired to this family. window.__counselorViewAuthorized
+  // is the ONLY thing that ever flips this open, and it is only ever set
+  // after a 200 from the server — never by client-side profile data, and
+  // never by the button simply existing in the DOM.
+  if (tab === 'counselor' && !window.__counselorViewAuthorized) return;
   ['quick','full','schools','counselor'].forEach(t=>{
     const tabEl = document.getElementById('rtab-'+t);
     const panelEl = document.getElementById('rpanel-'+t);
@@ -8141,6 +8163,322 @@ function updateQuickReadClusters(industriesText) {
 }
 
 // ── RENDER: COUNSELOR VIEW ─────────────────────────
+/* ── loadCounselorReportIfConsultant ──────────────────────────────────────
+   SECURITY-001 Section 4.3. The ONLY path that can ever make the
+   Counselor view tab appear — replaces the retired renderCounselorView()
+   entirely. Runs once, right after Clerk finishes loading.
+
+   No-op unless a family_id query param is present — i.e. unless this page
+   was opened from a link (portal.html's "View Full Report"), not from a
+   family taking their own assessment. Fails closed at every step: any
+   missing session, any non-2xx response, or any thrown error simply
+   leaves the tab absent. window.__counselorViewAuthorized is flipped to
+   true ONLY after a real 200 from GET /counselor-report — the server,
+   not this function, is the actual gate. A signed-in consultant whose
+   org isn't paired to this family gets the exact same 403
+   ('not_a_consultant') as an ordinary family session
+   (see handleCounselorReport's own header note) — that response never
+   reaches this far, the tab just never shows.
+   ───────────────────────────────────────────────────────────────────────── */
+window.__counselorViewAuthorized = false;
+
+async function loadCounselorReportIfConsultant() {
+  try {
+    var familyId = new URLSearchParams(window.location.search).get('family_id');
+    if (!familyId) return;
+    if (!window.__clerkReady || !window.Clerk || !window.Clerk.session || !window.Clerk.user) return;
+
+    var token = await window.Clerk.session.getToken();
+    var res = await fetch(
+      'https://api.abettercollegeconsultant.com/counselor-report?family_id=' + encodeURIComponent(familyId),
+      { headers: { 'Authorization': 'Bearer ' + token } }
+    );
+
+    if (!res.ok) {
+      // 403 not_a_consultant, 404 not_generated_yet / version_not_found,
+      // or anything else non-2xx — no distinction surfaced beyond this
+      // log line, matching the endpoint's own deliberately
+      // indistinguishable-403 design. Tab stays absent.
+      console.log('[VECTOR Lifescape] Counselor report unavailable for this session (' + res.status + ').');
+      return;
+    }
+
+    var data = await res.json();
+    if (data.status !== 'ok' || !data.report) return;
+
+    window.__counselorViewAuthorized = true;
+
+    // Insert the tab button now — never present in static markup, only
+    // ever added here, only after the server round-trip above succeeds.
+    var tabsEl = document.querySelector('.report-tabs');
+    if (tabsEl && !document.getElementById('rtab-counselor')) {
+      var btn = document.createElement('button');
+      btn.className = 'rtab';
+      btn.id = 'rtab-counselor';
+      btn.setAttribute('onclick', "showReportTab('counselor')");
+      btn.textContent = 'Counselor view';
+      tabsEl.appendChild(btn);
+    }
+
+    renderCounselorReportFromServer(data.report);
+
+    // This is a direct link with no assessment session behind it in this
+    // browser, so quick/full/schools have nothing to show — bring the
+    // consultant straight to the report screen, on the counselor tab,
+    // which is the entire point of this link.
+    goTo('report');
+    showReportTab('counselor');
+  } catch (err) {
+    // Fail closed — any error here must never expose the tab.
+    console.warn('[VECTOR Lifescape] loadCounselorReportIfConsultant failed (fails closed, no tab shown):', err);
+  }
+}
+
+/* ── renderCounselorReportFromServer ──────────────────────────────────────
+   SECURITY-001 Section 4.3. Populates rpanel-counselor from the
+   server-verified GET /counselor-report response only — never from live
+   client state, unlike the retired renderCounselorView(). Defensive
+   against any field being missing so an older or partially-populated
+   brief still renders whatever is actually there.
+
+   Expected shape of `report` (a counselor_synthesis_briefs row, written
+   by the Worker's handleSaveCounselorReport):
+     student_name, top_shared_fit_schools[], mismatch_warnings[],
+     recommended_counselor_actions[], comparison_insights,
+     counselor_payload: {
+       meta: [[label, value], ...],
+       riasec: { scores:[{code,score}], topCode, interpretation },
+       academic_affinity: { subjects[], strength, daypart, daypart_other },
+       occupation_intelligence: '<pre-rendered html>' | null,
+       size_adjacent_picks: [{name, reason}],
+       flags: { interdisciplinary, creativeScience, eqSignal, geoMatch }
+     }
+   This is the contract the save-side of Section 4 (POST /save-counselor-report,
+   not yet wired from this file) needs to honor.
+   ───────────────────────────────────────────────────────────────────────── */
+function renderCounselorReportFromServer(report) {
+  var cp = report.counselor_payload || {};
+
+  var briefEl = document.getElementById('counselor-synthesis-brief');
+  if (briefEl) {
+    briefEl.innerHTML =
+      '<div class="counselor-section-head">Synthesis Brief</div>' +
+      '<div class="counselor-section-body"><strong>Top Shared Fit Schools:</strong> ' + ((report.top_shared_fit_schools || []).join(', ') || 'None yet') + '</div>' +
+      '<div class="counselor-section-body"><strong>Mismatch Warnings:</strong> ' + ((report.mismatch_warnings || []).join(' ') || 'None flagged') + '</div>' +
+      '<div class="counselor-section-body"><strong>Recommended Actions:</strong> ' + (report.recommended_counselor_actions || []).join(' · ') + '</div>' +
+      '<div class="counselor-section-body"><strong>Comparison Insight:</strong> ' + (report.comparison_insights || '—') + '</div>';
+  }
+
+  var occupationEl = document.getElementById('counselor-occupations');
+  if (occupationEl) {
+    occupationEl.innerHTML = cp.occupation_intelligence || '<div style="font-size:15px;color:var(--ink4)">No occupation data available.</div>';
+  }
+
+  var sizeAdjEl = document.getElementById('counselor-size-adjacent');
+  if (sizeAdjEl) {
+    var picks = cp.size_adjacent_picks || [];
+    sizeAdjEl.innerHTML = picks.length > 0
+      ? picks.map(function(p) { return '<div style="margin-bottom:8px"><strong>' + p.name + '</strong> — ' + p.reason + '</div>'; }).join('')
+      : '<div style="font-size:15px;color:var(--ink4)">No same-region, same-social-scene alternative at a different size was found for this student\'s selections.</div>';
+  }
+
+  var metaEl = document.getElementById('counselor-meta');
+  if (metaEl) {
+    metaEl.innerHTML = (cp.meta || []).map(function(pair) {
+      return '<tr><td>' + pair[0] + '</td><td>' + pair[1] + '</td></tr>';
+    }).join('');
+  }
+
+  var riasecEl = document.getElementById('counselor-riasec');
+  var riasecInterpEl = document.getElementById('riasec-interp');
+  var riasecData = (cp.riasec && cp.riasec.scores) || [];
+  if (riasecEl && riasecData.length) {
+    var maxScore = Math.max.apply(null, riasecData.map(function(r) { return r.score; }).concat([1]));
+    riasecEl.innerHTML = riasecData.map(function(r) {
+      return '<div class="riasec-col">' +
+        '<div class="riasec-score">' + r.score + '</div>' +
+        '<div class="riasec-bar-wrap"><div class="riasec-bar-fill" style="width:' + Math.round((r.score / maxScore) * 100) + '%"></div></div>' +
+        '<div class="riasec-code">' + r.code + '</div></div>';
+    }).join('');
+    if (riasecInterpEl) riasecInterpEl.textContent = (cp.riasec && cp.riasec.interpretation) || '';
+  }
+
+  var flagsEl = document.getElementById('counselor-flags');
+  if (flagsEl) {
+    var f = cp.flags || {};
+    flagsEl.innerHTML = [
+      [f.interdisciplinary, 'Interdisciplinary signal: yes', 'Interdisciplinary signal: no signal'],
+      [f.creativeScience,   'Creative + science bridge: yes', 'Creative + science bridge: no signal'],
+      [f.eqSignal,           'EQ signal: strong', 'EQ signal: not detected'],
+      [f.geoMatch,           'Geo match: yes', 'Geo match: default region']
+    ].map(function(t) { return '<span class="' + (t[0] ? 'flag-yes' : 'flag-no') + '">' + (t[0] ? t[1] : t[2]) + '</span>'; }).join('');
+  }
+
+  var aa = cp.academic_affinity;
+  var aaEl = document.getElementById('counselor-academic');
+  var aaBlock = document.getElementById('counselor-academic-block');
+  if (aa && aaEl && aaBlock) {
+    var subjectLabels = {
+      english: 'English', history: 'History / Social Studies', math: 'Math',
+      biology: 'Biology', chem_physics: 'Chemistry / Physics', foreign_language: 'Foreign Language',
+      art_design: 'Art / Design', music_theater: 'Music / Theater', computer_science: 'Computer Science',
+      business_econ: 'Business / Economics', engineering_shop: 'Engineering / Shop', psychology: 'Psychology'
+    };
+    var daypartLabels = {
+      class: 'A specific class', activity: 'Sports or a club',
+      social: 'Lunch — the social, relational part of the day',
+      freeperiod: 'Free period / time to think', other: aa.daypart_other || 'Something else'
+    };
+    var hasAnyData = (aa.subjects && aa.subjects.length > 0) || (aa.strength && aa.strength.trim()) || aa.daypart;
+    if (!hasAnyData) {
+      aaEl.innerHTML = '<div style="font-size:var(--type-body);color:var(--ink4);font-style:italic">Student skipped this step — no academic affinity data collected.</div>';
+    } else {
+      var rows = [];
+      if (aa.subjects && aa.subjects.length && !aa.subjects.includes('none_stand_out')) {
+        rows.push('<tr><td>Subjects that come easily</td><td>' + aa.subjects.map(function(s) { return subjectLabels[s] || s; }).join(', ') + '</td></tr>');
+      } else if (aa.subjects && aa.subjects.includes('none_stand_out')) {
+        rows.push('<tr><td>Subjects that come easily</td><td>None stand out — not an academic disengagement flag, just no clear subject anchor yet</td></tr>');
+      }
+      if (aa.strength && aa.strength.trim()) {
+        rows.push('<tr><td>Self-identified strength</td><td>' + aa.strength.trim() + '</td></tr>');
+      }
+      if (aa.daypart) {
+        rows.push('<tr><td>Looks forward to</td><td>' + (daypartLabels[aa.daypart] || aa.daypart) + '</td></tr>');
+      }
+      aaEl.innerHTML = '<table class="meta-table">' + rows.join('') + '</table>';
+      if (aa.daypart === 'social') {
+        aaEl.innerHTML += '<div class="action-prompt" style="margin-top:12px"><div class="action-text">' +
+          '<strong style="font-weight:500;color:var(--ink)">Reading the social signal:</strong> ' +
+          (report.student_name || 'This student') + '\'s strongest pull toward the school day is relational, not academic — a real, useful data point, not an absence of one.</div></div>';
+      }
+    }
+  }
+}
+
+/* ── saveCounselorReportToServer ──────────────────────────────────────────
+   SECURITY-001 Section 4.1. Replaces the retired client-side
+   renderCounselorView() as the thing that runs "after callD completes" —
+   but persists to counselor_synthesis_briefs via POST /save-counselor-report
+   instead of rendering anything in this browser. This is what makes
+   loadCounselorReportIfConsultant() / GET /counselor-report have a row
+   to find later — before this, nothing wrote to that table at all.
+
+   Builds the exact counselor_payload shape renderCounselorReportFromServer()
+   expects to read back (see that function's own header comment for the
+   full contract) — every field here is precomputed plain data or a
+   pre-rendered HTML string, never a live profile/LS_STATE reference, so a
+   consultant's browser in a completely different session can redisplay it
+   with zero dependency on this family's assessment-session globals.
+
+   Fire-and-forget, fails open: a save failure here must never surface to
+   the family or affect the report already on their screen — matching
+   saveToSupabase()'s own convention elsewhere in this file.
+   ───────────────────────────────────────────────────────────────────────── */
+function saveCounselorReportToServer(profile, callDData) {
+  try {
+    var synthesisBrief = buildCounselorSynthesisBrief(profile, callDData);
+
+    var metaLabels = {
+      big_university: 'Large university', medium_university: 'Medium university',
+      small_campus: 'Small campus', no_preference: 'No preference',
+      greek_heavy: 'Greek / social', balanced: 'Balanced', focused: 'Focused / low-key'
+    };
+    function mapMetaVal(v) { return metaLabels[v] || v; }
+
+    var metaRows = [
+      ['Name', profile.name],
+      ['Grade', 'Grade ' + profile.grade],
+      ['ZIP code', profile.zip],
+      ['Family geography', profile.family_locations && profile.family_locations.length > 0 ? profile.family_locations.join(', ') : '—'],
+      ['Report pronouns', profile.pronouns ? profile.pronouns.replace('_', '/') : 'they/them (default)'],
+      ['Voice path', profile.voice === 'parent' ? 'Parent completed' : 'Student completed'],
+      ['GPA', profile.gpa ? profile.gpa + ' (' + (profile.gpa_type || 'weighted') + ')' : 'not provided'],
+      ['Report format', profile.reportFormat],
+      ['Tiles selected', profile._meta.tileCount],
+      ['EQ tiles selected', profile.eqTiles.length],
+      ['Combos fired', profile._meta.combosFireCount],
+      ['Geo neighborhood', profile.geoNeighborhood],
+      ['Generated', new Date(profile._meta.timestamp).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) + ' at ' + new Date(profile._meta.timestamp).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })],
+      ['Mega-region', profile.college_prefs && profile.college_prefs.regions && profile.college_prefs.regions.length ? profile.college_prefs.regions.map(stripUnderscores).join(', ') : 'not set'],
+      ['Campus size', mapMetaVal((profile.college_prefs && profile.college_prefs.campus_scale) || 'not set')],
+      ['Regions', (profile.college_prefs && profile.college_prefs.regions && profile.college_prefs.regions.map(stripUnderscores).join(', ')) || 'Open'],
+      ['Social scene', mapMetaVal((profile.college_prefs && profile.college_prefs.social_scene) || 'not set')],
+      ['Worlds selected', profile.worlds_chosen && profile.worlds_chosen.length > 0 ? profile.worlds_chosen.map(function(w) { return w.charAt(0).toUpperCase() + w.slice(1); }).join(', ') : 'none']
+    ].map(function(pair) { return [pair[0], mapMetaVal(pair[1])]; });
+
+    var riasecInterpMap = {
+      A: 'Artistic dominant — creative, expressive, values originality. Resists convention.',
+      S: 'Social dominant — people-oriented, empathetic, drawn to helping professions.',
+      I: 'Investigative dominant — analytical, curious, drawn to research and problem-solving.',
+      R: 'Realistic dominant — hands-on, practical, drawn to building and fixing.',
+      E: 'Enterprising dominant — leadership oriented, persuasive, business and advocacy driven.',
+      C: 'Conventional dominant — organized, detail-oriented, drawn to structured systems.'
+    };
+    var riasecTop = (profile.riasec && profile.riasec[0]) ? profile.riasec[0].code : null;
+
+    var hasCreativeScience = profile.riasec.some(function(r) { return r.code === 'A' && r.score >= 2; }) &&
+      profile.naicsSectors.some(function(n) { return [62, 54].includes(n.sector); });
+    var hasInterdisciplinary = profile._meta.combosFireCount > 0 ||
+      new Set(profile.allTileIds.map(function(id) {
+        var t = typeof VECTOR_CROSSWALK !== 'undefined' ? VECTOR_CROSSWALK.find(function(x) { return x.id === id; }) : null;
+        return t ? t.cluster : null;
+      }).filter(Boolean)).size >= 3;
+
+    // Pre-rendered once, here — same reasoning as `meta` above: a future
+    // consultant session has no access to profile.naicsSectors etc, only
+    // to whatever gets stored.
+    var occupationHtml = (typeof buildONETCounselorBlock === 'function')
+      ? (buildONETCounselorBlock(profile.naicsSectors, profile.riasec, profile.name) || null)
+      : null;
+
+    var payload = {
+      session_id: LS_STATE.session_id,
+      engine_version: 'counselor-v1.0',
+
+      top_shared_fit_schools: synthesisBrief.topSharedFitSchools,
+      mismatch_warnings: synthesisBrief.mismatchWarnings,
+      recommended_counselor_actions: synthesisBrief.recommendedCounselorActions,
+      comparison_insights: synthesisBrief.comparisonInsights,
+
+      meta: metaRows,
+      riasec: {
+        scores: profile.riasec || [],
+        topCode: riasecTop,
+        interpretation: riasecTop ? (riasecInterpMap[riasecTop] || '') : ''
+      },
+      academic_affinity: profile.academic_affinity || null,
+      occupation_intelligence: occupationHtml,
+      size_adjacent_picks: LS_STATE.sizeAdjacentPicks || [],
+      flags: {
+        interdisciplinary: hasInterdisciplinary,
+        creativeScience: hasCreativeScience,
+        eqSignal: !!profile._meta.hasEQSignal,
+        geoMatch: profile.geoNeighborhood !== 'your area'
+      }
+    };
+
+    fetch('https://api.abettercollegeconsultant.com/save-counselor-report', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, d: d }; }); })
+      .then(function(res) {
+        if (res.ok && res.d.success) {
+          console.log('[VECTOR Lifescape] Counselor report saved:', res.d.id);
+        } else {
+          console.warn('[VECTOR Lifescape] Counselor report save failed (non-blocking):', res.d.detail || res.d.error);
+        }
+      })
+      .catch(function(err) {
+        console.warn('[VECTOR Lifescape] Counselor report save fetch error (non-blocking):', err);
+      });
+  } catch (err) {
+    // Fail open — must never block or affect the family's own report.
+    console.warn('[VECTOR Lifescape] saveCounselorReportToServer failed (non-blocking):', err);
+  }
+}
+
 // ── Counselor Synthesis Brief ────────────────────────────────────────────
 // Pure function: reads already-generated callD school matches, produces
 // a short, focused counselor-only summary. No new AI call, no new cost.
