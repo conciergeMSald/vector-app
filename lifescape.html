@@ -2210,7 +2210,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:10
     <button class="rtab active" id="rtab-quick" onclick="showReportTab('quick')">A first look</button>
     <button class="rtab" id="rtab-full" onclick="showReportTab('full')">In full</button>
     <button class="rtab" id="rtab-schools" onclick="showReportTab('schools')">Where you may fit</button>
-  <button class="rtab" id="rtab-counselor" onclick="showReportTab('counselor')">Counselor view</button>
+  <!-- SECURITY-001 interim mitigation (deployed 2026-08-20): Counselor view
+       tab button removed from the render path pending the durable,
+       server-verified GET /counselor-report gate. Do not restore this
+       button until that endpoint ships — see SECURITY-001 Section 4. -->
   </div>
 
   <!-- ── QUICK READ ────────────────────────────────── -->
@@ -6794,7 +6797,13 @@ async function submitLifescape() {
 
     // Render Full Report + Counselor View progressively
     renderFullReport(profile, callAData, callBData, callCData, essayParsed);
-    renderCounselorView(profile, callAData, callBData, callCData, essayParsed, callDData);
+    // SECURITY-001 interim mitigation (deployed 2026-08-20): renderCounselorView()
+    // call suspended — this function populated rpanel-counselor client-side with
+    // full diagnostic data (GPA, ZIP, RIASEC scores, combos fired, synthesis brief)
+    // with no access control. Restore only once GET /counselor-report replaces
+    // this client-side path entirely (SECURITY-001 Section 4.3) — never restore
+    // this bare call on its own.
+    // renderCounselorView(profile, callAData, callBData, callCData, essayParsed, callDData);
 
     // ── CALL D — School recommendations ──────────────
     // Only fire if we have matched schools and university content
@@ -7471,6 +7480,12 @@ async function submitLifescape() {
 
 // ── REPORT TABS ────────────────────────────────────
 function showReportTab(tab) {
+  // SECURITY-001 interim mitigation (deployed 2026-08-20): block the
+  // counselor tab even if triggered programmatically (console, stray
+  // reference) since its button no longer exists in markup and its panel
+  // is never populated. Remove this guard only alongside restoring the
+  // button above, when GET /counselor-report ships.
+  if (tab === 'counselor') return;
   ['quick','full','schools','counselor'].forEach(t=>{
     const tabEl = document.getElementById('rtab-'+t);
     const panelEl = document.getElementById('rpanel-'+t);

@@ -419,6 +419,22 @@ body::before {
   font-weight: 400 !important;
 }
 
+.td-name .student-first {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--cream);
+}
+
+.td-name .family-sub {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
 .td-mono {
   font-family: var(--mono) !important;
   font-size: 11px !important;
@@ -1042,12 +1058,22 @@ function renderTable(families) {
     var dateStr = f.created_at
       ? new Date(f.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
       : '—';
-    var name = f.family_last_name ? 'The ' + f.family_last_name + ' Family' : (f.email || 'Family Record');
+    var familyLabel = f.family_last_name ? 'The ' + f.family_last_name + ' Family' : (f.email || 'Family Record');
+    // Student first name — distinguishes siblings under the same family
+    // once the family_account_id -> students linking fix landed (families
+    // sharing one family_last_name previously rendered as identical,
+    // indistinguishable rows). Sourced straight from families.student_name,
+    // the field collected at intake; underscores stripped defensively since
+    // some existing rows store multi-word names that way.
+    var studentFirst = f.student_name ? String(f.student_name).replace(/_/g, ' ').trim() : '';
+    var nameCellHtml = studentFirst
+      ? '<div class="student-first">' + escHtml(studentFirst) + '</div><div class="family-sub">' + escHtml(familyLabel) + '</div>'
+      : escHtml(familyLabel);
     var career = f.career || '—';
     var grade  = f.children ? getFirstGrade(f.children) : '—';
 
     return '<tr onclick="openPanel(\'' + i + '\')">' +
-      '<td class="td-name">' + escHtml(name) + '</td>' +
+      '<td class="td-name">' + nameCellHtml + '</td>' +
       '<td>' + escHtml(career) + '</td>' +
       '<td><span class="score-pill ' + scoreClass + '">' + scoreVal + '</span></td>' +
       '<td>' + ccBadge + '</td>' +
@@ -1079,10 +1105,19 @@ function openPanel(idx) {
 
   var score     = parseInt(f.vector_score) || 0;
   var scoreClass = score >= 70 ? 'score-high' : score >= 50 ? 'score-mid' : 'score-low';
-  var name      = f.family_last_name ? 'The ' + f.family_last_name + ' Family' : (f.email || 'Family Record');
+  var familyLabel = f.family_last_name ? 'The ' + f.family_last_name + ' Family' : (f.email || 'Family Record');
+  // Same student-vs-family disambiguation as the table row above — the
+  // panel header previously showed only the family label, so opening two
+  // different siblings' records from the same household looked identical.
+  var studentFirst = f.student_name ? String(f.student_name).replace(/_/g, ' ').trim() : '';
+  var name      = studentFirst || familyLabel;
   var dateStr   = f.created_at
     ? new Date(f.created_at).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })
     : 'Date unknown';
+  var metaParts = [];
+  if (studentFirst) metaParts.push(familyLabel);
+  metaParts.push(dateStr);
+  if (f.email) metaParts.push(f.email);
 
   var fields = [
     { label: 'Email',         value: f.email || '—' },
@@ -1112,19 +1147,25 @@ function openPanel(idx) {
   // FAMILY-PORTAL-001 item 1 — opens the real Lifescape report render
   // (Tab 1–4, history picker, everything) rather than the flat report_text
   // preview above. Same Clerk instance/domain as this portal, so the
-  // consultant stays signed in as themselves on the other side; the Worker
-  // resolves family_account_id via their existing consultant auth branch.
-  // No fallback built for rows without family_account_id (pre-self-serve
-  // families) — not a live concern yet, so the button simply doesn't
-  // render for those rows.
-  var viewReportHtml = f.family_account_id
-    ? '<a class="btn-primary" style="display:inline-block;text-decoration:none;margin-top:1.5rem;" ' +
-      'href="lifescape.html?family_account_id=' + encodeURIComponent(f.family_account_id) + '" target="_blank">View Full Report</a>'
-    : '';
+  // consultant stays signed in as themselves on the other side.
+  //
+  // SECURITY-001 correction (2026-08-20): was keyed on f.family_account_id,
+  // which requires the family to have gone through Clerk signup. Verified
+  // directly against production data: 22 of 23 families rows are
+  // consultant-paired, but only 2 of those 22 have family_account_id set —
+  // this button was silently not rendering for the other 20 real paired
+  // families, not just a theoretical edge case as the prior comment here
+  // assumed. f.id (families.id) is the key every sibling table already
+  // uses (report_versions.family_id, counselor_synthesis_briefs.family_id)
+  // and is never null, so this now renders unconditionally. Param renamed
+  // family_id to match GET /counselor-report's actual contract.
+  var viewReportHtml =
+    '<a class="btn-primary" style="display:inline-block;text-decoration:none;margin-top:1.5rem;" ' +
+    'href="lifescape.html?family_id=' + encodeURIComponent(f.id) + '" target="_blank">View Full Report</a>';
 
   document.getElementById('panelBody').innerHTML =
     '<div class="panel-name">' + escHtml(name) + '</div>' +
-    '<div class="panel-meta">' + dateStr + ' · ' + escHtml(f.email || '') + '</div>' +
+    '<div class="panel-meta">' + escHtml(metaParts.join(' · ')) + '</div>' +
     '<div class="panel-score-block">' +
       '<div class="panel-score-num ' + scoreClass + '">' + (score || '—') + '</div>' +
       '<div>' +
