@@ -35,7 +35,6 @@
   .section-divider .sd-rule{ height:1px; background:var(--rule); flex:1; }
 
   /* ═══════════════════════ HERO ═══════════════════════ */
-  #hero{ padding-top:64px; }
   h1{
     font-family:var(--serif); font-weight:400; font-size:clamp(36px,5.6vw,62px);
     letter-spacing:0.2px; line-height:1.12; color:var(--ink); max-width:960px; margin-bottom:24px;
@@ -43,6 +42,81 @@
   h1 em{ font-style:italic; color:var(--gold-deep); }
   .sub{ font-size:17px; color:var(--ink3); max-width:660px; font-weight:300; margin-bottom:56px; }
   .sub b{ color:var(--ink2); font-weight:500; }
+
+  /* full-bleed image hero */
+  #hero{
+    position:relative; padding:0; min-height:88vh; display:flex; align-items:flex-end;
+    background:#141008; overflow:hidden;
+  }
+  #hero .hero-media{ position:absolute; inset:0; }
+  #hero .hero-media img{ width:100%; height:100%; object-fit:cover; object-position:50% 32%; }
+  #hero .hero-scrim{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(20,16,10,0.04) 0%, rgba(20,16,10,0.14) 38%, rgba(21,16,9,0.68) 76%, rgba(18,14,8,0.84) 100%);
+  }
+  #hero .hero-content{ position:relative; z-index:2; width:100%; padding:96px 0 76px; }
+  #hero .eyebrow{ color:var(--gold); }
+  #hero .eyebrow::before{ background:var(--gold); opacity:.8; }
+  #hero h1{ color:var(--cream); margin-bottom:22px; }
+  #hero h1 em{ color:var(--gold); }
+  #hero .sub{ color:rgba(251,247,239,0.86); margin-bottom:36px; }
+  #hero .sub b{ color:var(--cream); font-weight:600; }
+  #hero .hero-cta{
+    display:inline-flex; align-items:center; gap:9px; font-family:var(--mono); font-size:11px;
+    letter-spacing:2px; text-transform:uppercase; color:var(--cream); text-decoration:none;
+    border-bottom:1px solid rgba(251,247,239,0.38); padding-bottom:5px; transition:border-color .2s, color .2s;
+  }
+  #hero .hero-cta:hover{ border-color:var(--gold); color:var(--gold); }
+  #hero .hero-cta svg{ width:12px; height:12px; margin-left:1px; }
+
+  /* ── ACCESSIBILITY: visible focus for keyboard navigation ───── */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:2px;
+  }
+  #hero .hero-cta:focus-visible, .btn-primary:focus-visible{
+    outline-color:var(--gold);
+  }
+
+  /* the headline reveals one line at a time — slow, unhurried, matching the site's intro motion.
+     Only animates for visitors who haven't asked for reduced motion; otherwise it's simply present. */
+  .hl-line{ display:block; }
+  @media (prefers-reduced-motion: no-preference){
+    .hl-line{ opacity:0; transform:translateY(12px); animation:hlFadeUp 1.8s cubic-bezier(0.32,0.04,0.28,1) forwards; }
+    .hl-line:nth-child(1){ animation-delay:.15s; }
+    .hl-line:nth-child(2){ animation-delay:1.75s; }
+    .hl-line:nth-child(3){ animation-delay:3.35s; }
+    @keyframes hlFadeUp{ to{ opacity:1; transform:translateY(0); } }
+  }
+
+  /* timeline block now lives in its own quiet section below the hero image */
+  #timeline{ padding:80px 0 72px; }
+
+  /* ═══════════════════════ BREATHERS (full-bleed & letterboxed image moments) ═══════════════════════ */
+  .breather{
+    position:relative; height:66vh; min-height:380px; max-height:640px;
+    display:flex; align-items:flex-end; overflow:hidden;
+  }
+  .breather img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .breather::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(12,9,5,0) 55%, rgba(12,9,5,0.32) 100%);
+  }
+  .chapter-mark{
+    position:relative; z-index:2; width:100%; padding:0 32px 26px; text-align:right;
+    font-family:var(--mono); font-size:11px; letter-spacing:3px; color:rgba(255,255,255,0.75);
+    text-shadow:0 1px 6px rgba(0,0,0,0.45);
+  }
+  .breather-quiet-wrap{ padding:96px 0; }
+  .breather-quiet{ max-width:900px; margin:0 auto; overflow:hidden; border-radius:2px; }
+  .breather-quiet img{ width:100%; height:auto; display:block; }
+  .breather-quiet-mark{
+    max-width:900px; margin:14px auto 0; text-align:right; padding:0 4px;
+    font-family:var(--mono); font-size:11px; letter-spacing:3px; color:var(--ink4);
+  }
+  @media (max-width:640px){
+    .breather{ height:52vh; min-height:300px; }
+    .breather-quiet-wrap{ padding:64px 0; }
+  }
 
   /* ── TIMELINE ─────────────────────────────────────────── */
   .tl-label{ font-family:var(--mono); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--ink4); margin-bottom:20px; }
@@ -249,11 +323,23 @@
 
 <!-- ═══════════════════════════════════════════ HERO ═══════════════════════════════════════════ -->
 <section id="hero">
-  <div class="wrap">
-    <div class="eyebrow">Vector · Why We Exist</div>
-    <h1>College is four years.<br>Applying is <em>two or three</em>.<br>Living with it is fifty.</h1>
-    <p class="sub">The essay isn't a formality anymore — it's the deciding factor. Which means the work that actually matters now happens <b>before</b> senior year: knowing who your child actually is, honestly, before anyone has to perform it for an admissions officer. That's the work we do first.</p>
+  <div class="hero-media">
+    <img src="img/hero-capri.jpg" alt="A woman stands at a stone railing above the sea, looking out at small wooden boats anchored beneath the limestone cliffs of Capri.">
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="hero-content">
+    <div class="wrap">
+      <div class="eyebrow">Vector · Why We Exist</div>
+      <h1><span class="hl-line">College is four years.</span><span class="hl-line">Applying is <em>two or three</em>.</span><span class="hl-line">Living with it is fifty.</span></h1>
+      <p class="sub">The essay isn't a formality anymore — it's the deciding factor. Which means the work that actually matters now happens <b>before</b> senior year: knowing who your child actually is, honestly, before anyone has to perform it for an admissions officer. That's the work we do first.</p>
+      <a class="hero-cta" href="#timeline">See the timeline<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+    </div>
+  </div>
+</section>
 
+<!-- ═══════════════════════════════════════════ TIMELINE ═══════════════════════════════════════════ -->
+<section id="timeline">
+  <div class="wrap">
     <div class="tl-label">One life, drawn to scale</div>
     <div class="vector-marker-row">
       <div class="tag">Vector starts here — before the applications do</div>
@@ -320,6 +406,12 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ BREATHER — COASTLINE ═══════════════════════════════════════════ -->
+<section class="breather">
+  <img src="img/breather-coastline.jpg" alt="A rocky coastline curves away into a hazy blue sea, terraced hillside town above the water, seen from high on the cliffside.">
+  <div class="chapter-mark">i. leaving what was assumed</div>
 </section>
 
 <!-- ═══════════════════════════════════════════ VIGNETTES ═══════════════════════════════════════════ -->
@@ -463,6 +555,12 @@
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════ BREATHER — ARRIVAL ═══════════════════════════════════════════ -->
+<section class="breather">
+  <img src="img/arrival-villa.jpg" alt="A stone villa wrapped in climbing ivy, warm afternoon light across the facade and an arched doorway standing open.">
+  <div class="chapter-mark">ii. finding where it fits</div>
+</section>
+
 <!-- ═══════════════════════════════════════════ EXPLORE MORE (Five Lives / The Shift) ═══════════════════════════════════════════ -->
 <section id="explore-more">
   <div class="wrap">
@@ -480,6 +578,15 @@
         <div class="explore-desc">One in five Americans over 65 by 2030. An $84 trillion wealth transfer already underway. Entire industries with no name yet in the course catalog. The map families are applying against is already out of date.</div>
         <div class="explore-link">Read The Shift →</div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ BREATHER — HOME (quiet, unlabeled) ═══════════════════════════════════════════ -->
+<section class="breather-quiet-wrap">
+  <div class="wrap">
+    <div class="breather-quiet">
+      <img src="img/closing-vineyard.jpg" alt="Rolling vineyard hills under soft afternoon light, rows of vines stretching toward a distant farmhouse.">
     </div>
   </div>
 </section>
