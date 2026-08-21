@@ -235,10 +235,12 @@ var SCHOOL_LIST      = [];   // cache for the Key Dates "school" dropdown
 
 var __clerkReady = false;
 
-// TEST/LIVE publishable key toggle — same pattern and same TODO as
-// lifescape.html. Keep both files' _ACTIVE constant in sync when flipping.
-var STRIPE_PUBLISHABLE_KEY_TEST   = 'REPLACE_ME_pk_test_...';
-var STRIPE_PUBLISHABLE_KEY_LIVE   = 'REPLACE_ME_pk_live_...';
+// TEST/LIVE publishable key toggle — same pattern as lifescape.html. Real
+// keys filled in 2026-08-21, from https://dashboard.stripe.com/acct_1R5ockGGKZNoACrK/apikeys
+// (publishable keys are not secret). Keep both files' _ACTIVE constant in
+// sync when flipping.
+var STRIPE_PUBLISHABLE_KEY_TEST   = 'pk_test_51R5ockGGKZNoACrKkFhjr8wh3MsnMYV2ML73Euc6sZvroRboKzMqXBisjigy8QoGOhVoMr3ywKZw23plADViTexS00y5HugMap';
+var STRIPE_PUBLISHABLE_KEY_LIVE   = 'pk_live_51R5ockGGKZNoACrKiYBk0p7ObXxjEaf9OIrrIjswfUmRpuI0BEiAHu3uSE1W3SDGAAxtcYUhvOcmSsQZn5luu1yl00244EU1jX';
 var STRIPE_PUBLISHABLE_KEY_ACTIVE = STRIPE_PUBLISHABLE_KEY_TEST;
 
 var __stripeClient = null;
