@@ -928,6 +928,15 @@ function getComboUnlocks(selectedIds) {
     { triggered_by:['club_travel_sports','leadership'], unlocks:['Athletic Training','Sports Management'] },
     { triggered_by:['advocacy_activism','writing_stories'], unlocks:['Political Communications','Nonprofit Leadership'] },
     { triggered_by:['architecture','engineering_challenges'], unlocks:['Architectural Engineering','Urban Planning'] },
+    // PHASE3-WORLD-OF-MAKING-001 (signed off 2026-08-21), Section 4 —
+    // the one cross-world connector shipping with this World: fires on
+    // strong Realistic/technical signal (engineering_challenges) plus
+    // Enterprising/entrepreneurship signal. Surfaces business ownership
+    // in a technical field — founding a manufacturing or specialty
+    // engineering company — same reasoning-language mechanism as the
+    // existing QA→Industrial Engineering-style connectors above, not a
+    // program recommendation.
+    { triggered_by:['engineering_challenges','entrepreneurship'], unlocks:['Manufacturing Entrepreneur','Technical Founder'] },
     { triggered_by:['environment_sustainability','engineering_challenges'], unlocks:['Environmental Engineering','Clean Energy'] },
     { triggered_by:['entrepreneurship','data_statistics'], unlocks:['Business Analytics','Startup Strategy'] },
     { triggered_by:['teaching_tutoring','psychology'], unlocks:['Educational Psychology','Curriculum Design'] },

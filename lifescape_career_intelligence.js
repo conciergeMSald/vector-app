@@ -320,6 +320,36 @@ const IBIS_WORLD_REGISTRY = _g.IBIS_WORLD_REGISTRY = {
     university_pipeline: ['Rhode Island School of Design','Savannah College of Art and Design','Carnegie Mellon University','Massachusetts Institute of Technology','Fashion Institute of Technology','University of Iowa'],
   },
 
+  // ── PHASE3-WORLD-OF-MAKING-001 (signed off 2026-08-21) ────────────────
+  // New id, deliberately distinct from the existing `making` entry above —
+  // that entry is a creative/craft world (Product/UX Designer, Master
+  // Artisan, Fine Artist), not Trades & Engineering. Confirmed via direct
+  // comparison before writing this: `making`'s live world-card copy
+  // ("Manufacturing, engineering, hands-on production") had never actually
+  // matched its own registry content — routing that button through here
+  // instead, rather than repurposing `making` itself, per Matt's call that
+  // a new id is the least disruptive path for whatever real session data
+  // may already reference `making`. Four-year-degree pathways only, per
+  // the spec's explicit scope boundary — no trade-school/certification/
+  // apprenticeship content (that's its own deferred future spec).
+  trades_engineering: {
+    id: 'trades_engineering',
+    label: 'The world of trades and engineering',
+    ibis_codes: ['OT7700','OT7710','OT7720','OT7730'],
+    career_expressions: [
+      { title: 'Mechanical Engineer',                years: 4, pay: '$75K–$140K',  path: 'BS Mechanical Engineering → EIT → PE License → Senior/Principal engineer' },
+      { title: 'Industrial / Manufacturing Engineer', years: 4, pay: '$70K–$135K',  path: 'BS Industrial/Manufacturing Engineering → Process engineer → Plant/Ops engineering lead' },
+      { title: 'Manufacturing Operations Manager',    years: 6, pay: '$85K–$160K',  path: 'Engineering degree → Line supervisor → Plant manager' },
+      { title: 'Quality / Process Engineer',          years: 4, pay: '$70K–$130K',  path: 'BS Engineering → QA/Process engineer → Quality systems lead' },
+      { title: 'Automation & Controls Engineer',      years: 4, pay: '$80K–$150K',  path: 'BS Electrical/Mechanical Engineering → Controls engineer → Automation lead' },
+    ],
+    top_metros: ['Detroit','Milwaukee','Pittsburgh','Houston','Cincinnati','Charlotte'],
+    growth: 'strong',
+    v2_affinity: ['systems','analytical'],
+    v4_affinity: ['work'],
+    university_pipeline: ['Georgia Institute of Technology','Purdue University','University of Michigan','Rose-Hulman Institute of Technology','Kettering University','Milwaukee School of Engineering','Texas A&M University','Cal Poly San Luis Obispo'],
+  },
+
   food: {
     id: 'food',
     label: 'The world of food',
@@ -459,6 +489,7 @@ const WORLD_ALIAS = _g.WORLD_ALIAS = {
   // still actively consumed elsewhere and was NOT touched by this change.)
   'military':        'military',
   'making':          'making',
+  'trades_engineering': 'trades_engineering',
   'biomanufacturing':'biomanufacturing',
   'bioprocessing':   'biomanufacturing',
   'food':            'food',
